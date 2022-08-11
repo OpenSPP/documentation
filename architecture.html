@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architecture &mdash; OpenSPP Documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/debug.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Features" href="features.html" />
+    <link rel="prev" title="Installation" href="installing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> OpenSPP
+          </a>
+              <div class="version">
+                2.0-dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#principles">Principles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ecosystem-approach">Ecosystem approach</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configurability">Configurability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extensibility">Extensibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modularity">Modularity</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#functional-architecture">Functional Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modular-architecture">Modular Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-components-for-a-mid-size-project">Example components for a mid-size project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-components-for-a-large-project">Example components for a large project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hosting">Hosting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Registrants</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="registrants/concepts.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registrants/exporting.html">Exporting Registrants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registrants/importing.html">Importing Registrants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registrants/api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="programs/concepts.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programs/dashboards.html">Dashboards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programs/program_manager.html">Program Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programs/cycle_manager.html">Cycle Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programs/eligibility_manager.html">Eligibility Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programs/entitlement_manager.html">Entitlement Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programs/deduplication_manager.html">Deduplication Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programs/notification_manager.html">Notification Manager</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Disbursement Service</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="disbursement/index.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="using/managing_users.html">Managing Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using/audit_logs.html">Audit Logs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">OpenSPP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Architecture</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/openspp-project/documentation/blob/main/docs/architecture.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="architecture">
+<h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline"></a></h1>
+<section id="principles">
+<h2>Principles<a class="headerlink" href="#principles" title="Permalink to this headline"></a></h2>
+<blockquote>
+<div><p>(Inspired by <a class="reference external" href="https://docs.mosip.io/1.1.5/architecture/architecture-principles">MOSIP’s principles</a>)</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>OpenSPP must follow <strong>platform based approach</strong> so that all common features can be extended or the
+functionality can be extended by other parties</p></li>
+<li><p>OpenSPP must <strong>not use proprietary</strong> or commercial license frameworks. Where deemed essential, such
+components must be encapsulated to enable their replacement if necessary (to avoid vendor lock-in)</p></li>
+<li><p>OpenSPP must use <strong>open standards</strong> whenever possible to expose its functionality (to avoid technology
+lock-in)</p></li>
+<li><p>OpenSPP must use <strong>commodity computing</strong> hardware &amp; software to build the platform</p></li>
+<li><p>OpenSPP must be simple to deploy and use</p></li>
+<li><p>OpenSPP must be able to work for small projects with few thousand beneficiaries up to tens of millions of
+beneficiaries</p></li>
+<li><p>Data must be <strong>encrypted</strong> in-flight and at-rest. All requests must be authenticated and authorized. Privacy
+of Identity Data is an absolute must in OpenSPP</p></li>
+<li><p>OpenSPP must follow the following manageability principles:</p>
+<ul>
+<li><p><strong>Auditability &amp; monitor ability</strong> of every action in the system</p></li>
+<li><p><strong>Testability</strong> of every feature of the platform</p></li>
+<li><p><strong>Easy upgrade</strong> ability of the platform</p></li>
+</ul>
+</li>
+<li><p>OpenSPP should work with different locales so that that Social Protection systems can be localized for
+languages and cultures easily</p></li>
+<li><p>The key sub-systems of OpenSPP should be designed for <strong>extensibility</strong>. For example, if an external system
+has to be integrated for entitlement determination, it should be easy to do so</p></li>
+</ul>
+<section id="ecosystem-approach">
+<h3>Ecosystem approach<a class="headerlink" href="#ecosystem-approach" title="Permalink to this headline"></a></h3>
+<p>The OpenSPP platform can work as a standalone system or as a part of a larger ecosystem. Every information
+stored in the platform must have a corresponding API to access that can be used by other systems. For example,
+if you want to integrate OpenSPP with mobile money, you can leverage Payment Hub EE from Mifos. Through a
+well-defined set of standard interfaces OpenSPP allows for integration of such components and offers choice of
+providers for the same.</p>
+<p>So, key parameters are:</p>
+<ul class="simple">
+<li><p>All public/external facing interfaces of OpenSPP must be standards-based for interoperability whenever
+possible.</p></li>
+<li><p>3rd party components should be integrated via well-defined interfaces and be easily installable.</p></li>
+</ul>
+</section>
+<section id="configurability">
+<h3>Configurability<a class="headerlink" href="#configurability" title="Permalink to this headline"></a></h3>
+<p>OpenSPP should be flexible for countries/organizations to configure the base platform according to their
+specific requirements. Some of the examples of configurability are:</p>
+<ul class="simple">
+<li><p>Be able to choose the features required.</p></li>
+<li><p>Be able to configure the attributes of the beneficiaries.</p></li>
+<li><p>Be able to define the criteria used to determine the beneficiaries.</p></li>
+<li><p>Be able to define how entitlement is calculated</p></li>
+<li><p>…</p></li>
+</ul>
+</section>
+<section id="extensibility">
+<h3>Extensibility<a class="headerlink" href="#extensibility" title="Permalink to this headline"></a></h3>
+<p>OpenSPP should be flexible to extend functionality on top of the basic platform. Some of the examples of
+extensibility are:</p>
+<ul class="simple">
+<li><p>Ability to add a grievance system</p></li>
+<li><p>Ability to use third party solutions such as MOSIP to store part of the information of registrants</p></li>
+<li><p>Ability to Integrate data from other systems</p></li>
+</ul>
+</section>
+<section id="modularity">
+<h3>Modularity<a class="headerlink" href="#modularity" title="Permalink to this headline"></a></h3>
+<p>All components in OpenSPP should be extensible and their features exposed via interfaces such that the
+implementation behind the interface can be changed without affecting other modules. Some examples of
+modularity are:</p>
+<ul class="simple">
+<li><p>Determination of eligibility to a program</p></li>
+<li><p>Calculation of entitlement</p></li>
+<li><p>Deduplication of beneficiaries</p></li>
+</ul>
+</section>
+</section>
+<section id="functional-architecture">
+<h2>Functional Architecture<a class="headerlink" href="#functional-architecture" title="Permalink to this headline"></a></h2>
+<p>OpenSPP is designed with the registrants at the core of the processes. Registrants then go through processes
+defined in the programs and cycles to determine the benefits they are entitled to.</p>
+<p><img alt="OpenSPP Overview" src="_images/openspp_core.jpg" /></p>
+</section>
+<section id="modular-architecture">
+<h2>Modular Architecture<a class="headerlink" href="#modular-architecture" title="Permalink to this headline"></a></h2>
+<p>OpenSPP is designed to be used standalone with just the core functionalities or with other components.</p>
+<p>The previous diagram shows the core components of OpenSPP. Those components provide APIs that allow you to
+replace the default implementation with your own.</p>
+<p>For example, the eligibility calculation can be delegated to a third-party service that has access to other
+data and just return the eligibility result to OpenSPP.</p>
+<p><img alt="" src="_images/openspp_modular_architecture.png" /></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="programs/eligibility_manager.html"><span class="doc std std-doc">Eligibility Manager</span></a></p></li>
+<li><p><a class="reference internal" href="programs/entitlement_manager.html"><span class="doc std std-doc">Entitlement Manager</span></a></p></li>
+<li><p><a class="reference internal" href="programs/deduplication_manager.html"><span class="doc std std-doc">Deduplication Manager</span></a></p></li>
+<li><p><a class="reference internal" href="programs/notification_manager.html"><span class="doc std std-doc">Notification Manager</span></a></p></li>
+<li><p><a class="reference internal" href="programs/program_manager.html"><span class="doc std std-doc">Program Manager</span></a></p></li>
+<li><p><a class="reference internal" href="programs/cycle_manager.html"><span class="doc std std-doc">Cycle Manager</span></a></p></li>
+</ul>
+<p>Furthermore, as OpenSPP is based on the ERP Odoo and use the standard models provided by Odoo, you have access
+to the thousands of applications available in the <a class="reference external" href="https://apps.odoo.com/apps">Odoo App Store</a> or build your
+<a class="reference external" href="https://www.odoo.com/documentation/15.0/developer.html">own</a>.</p>
+<section id="example-components-for-a-mid-size-project">
+<h3>Example components for a mid-size project<a class="headerlink" href="#example-components-for-a-mid-size-project" title="Permalink to this headline"></a></h3>
+<p><img alt="" src="_images/architecture_ecosystem_1.png" /></p>
+</section>
+<section id="example-components-for-a-large-project">
+<h3>Example components for a large project<a class="headerlink" href="#example-components-for-a-large-project" title="Permalink to this headline"></a></h3>
+<p><img alt="" src="_images/architecture_ecosystem_2.png" /></p>
+</section>
+<section id="hosting">
+<h3>Hosting<a class="headerlink" href="#hosting" title="Permalink to this headline"></a></h3>
+<p><img alt="OpenSPP Hosting" src="_images/openspp_hosting.png" /></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installing.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="features.html" class="btn btn-neutral float-right" title="Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 OpenSPP.org Licensed under CC BY 4.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> OpenSPP</span>
+    v: latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <!--    <dl>-->
+    <!--      <dt>Versions</dt>-->
+    <!---->
+    <!--      <dd><a href="#">latest</a></dd>-->
+    <!--      <dd><a href="#">1.0</a></dd>-->
+    <!--      <dd><a href="#">1.1</a></dd>-->
+    <!---->
+    <!--    </dl>-->
+    <!--    <dl>-->
+    <!--      <dt>Downloads</dt>-->
+    <!--      <dd><a href="#">PDF</a></dd>-->
+    <!--      <dd><a href="#">ePub</a></dd>-->
+    <!--      <dd><a href="#">HTML</a></dd>-->
+    <!--    </dl>-->
+    <dl>
+      <dt>OpenSPP</dt>
+      <dd>
+        <a href="https://github.com/openspp-project/documentation/">Project Home</a>
+      </dd>
+      <!-- <dd>
+        <a href="https://github.com/openspp-project/documentation/releases">Releases</a>
+      </dd> -->
+    </dl>
+    <!--    <dl>-->
+    <!--      <dt>Debug</dt>-->
+    <!--      <dd><a href="#" data-toggle="rst-debug-badge">Swap badge position</a></dd>-->
+    <!--    </dl>-->
+  </div>
+</div>
+
+</body>
+</html>
