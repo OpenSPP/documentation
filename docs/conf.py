@@ -17,7 +17,9 @@ version = "2.0-dev"
 # release = theme_version_full
 author = "OpenSPP.org"
 # copyright = author
-copyright = "2022 OpenSPP.org Licensed under CC BY 4.0"  # pylint: disable=redefined-builtin
+copyright = (
+    "2022 OpenSPP.org Licensed under CC BY 4.0"  # pylint: disable=redefined-builtin
+)
 language = "en"
 
 extensions = [
