@@ -24,8 +24,8 @@ The easiest way to get a OpenSPP server is by using OpenSPP's Cloud.
 OpenSPP Cloud provides fast OpenSPP servers with regular feature updates, automatic security patches, daily
 backups, uptime management, enterprise security, and guaranteed support on any issues.
 
-By choosing OpenSPP Cloud, you are also directly supporting future development on OpenSPP and helping make
-it better for everyone.
+By choosing OpenSPP Cloud, you are also directly supporting future development on OpenSPP and helping make it
+better for everyone.
 
 ### Using Docker
 
