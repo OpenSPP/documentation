@@ -84,7 +84,7 @@ html_context = {
 
 
 # Used by sphinx.ext.githubpages to generate docs/CNAME
-html_baseurl = 'https://docs.openspp.org'
+html_baseurl = "https://docs.openspp.org"
 
 if "READTHEDOCS" not in os.environ:
     html_static_path = ["_static/"]
