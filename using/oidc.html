@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Audit Logs &mdash; OpenSPP Documentation</title>
+  <title>Configuring Keycloak for OAuth &mdash; OpenSPP Documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,7 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Configuring Keycloak for OAuth" href="oidc.html" /> 
+    <link rel="next" title="Audit Logs" href="audit_logs.html" />
+    <link rel="prev" title="Managing Users" href="managing_users.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -75,12 +76,21 @@
 <p class="caption" role="heading"><span class="caption-text">Using</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="managing_users.html">Managing Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oidc.html">Configuring Keycloak for OAuth</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Audit Logs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installing">Installing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuring Keycloak for OAuth</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configure-keycloak">Configure Keycloak</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-odoo">Configure Odoo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#customizing-the-login-page-optional">Customizing the login page (Optional)</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#using">Using</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#existing-users">Existing users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-users">New users</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="audit_logs.html">Audit Logs</a></li>
 </ul>
 
         </div>
@@ -97,9 +107,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Audit Logs</li>
+      <li>Configuring Keycloak for OAuth</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/openspp-project/documentation/blob/main/docs/using/audit_logs.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/openspp-project/documentation/blob/main/docs/using/oidc.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -107,20 +117,69 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="audit-logs">
-<h1>Audit Logs<a class="headerlink" href="#audit-logs" title="Permalink to this headline"></a></h1>
-<section id="installing">
-<h2>Installing<a class="headerlink" href="#installing" title="Permalink to this headline"></a></h2>
-<p>The module <code class="docutils literal notranslate"><span class="pre">audit_log</span></code> should be installed in the Odoo system.</p>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="configuring-keycloak-for-oauth">
+<h1>Configuring Keycloak for OAuth<a class="headerlink" href="#configuring-keycloak-for-oauth" title="Permalink to this headline"></a></h1>
 <section id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h2>
-<p>TODO</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you activate audit logs for view, it will create a lot of entries in the database as each object viewed
-will be stored individually including for list view.</p>
-</div>
+<h2>configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h2>
+<p>If you are using the <a class="reference external" href="https://github.com/openspp-project/openspp-docker">docker-compose setup</a>, you already
+have the <code class="docutils literal notranslate"><span class="pre">auth_oidc</span></code> from <a class="reference external" href="https://github.com/OCA/server-auth">OCA</a> installed, otherwise you will need to
+install it.</p>
+<section id="configure-keycloak">
+<h3>Configure Keycloak<a class="headerlink" href="#configure-keycloak" title="Permalink to this headline"></a></h3>
+<ol class="arabic simple">
+<li><p>Go to the admin console of your keycloak instance</p></li>
+<li><p>Create a new realm (if needed), in our example we use <code class="docutils literal notranslate"><span class="pre">odoo</span></code>.</p></li>
+<li><p>Create a new client, in our example we use <code class="docutils literal notranslate"><span class="pre">odoo</span></code>.</p></li>
+<li><p>Enable <code class="docutils literal notranslate"><span class="pre">standard</span> <span class="pre">flow</span></code> and save.</p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">Valid</span> <span class="pre">redirect</span> <span class="pre">URIs</span></code> to be “<url of your server>/auth_oauth/signin”.</p></li>
+<li><p>Enable <code class="docutils literal notranslate"><span class="pre">Client</span> <span class="pre">authentication</span></code>.</p></li>
+<li><p>Go to the “Credentials” tab and copy the <code class="docutils literal notranslate"><span class="pre">Client</span> <span class="pre">secret</span></code> to be used later.</p></li>
+</ol>
+</section>
+<section id="configure-odoo">
+<h3>Configure Odoo<a class="headerlink" href="#configure-odoo" title="Permalink to this headline"></a></h3>
+<ol class="arabic simple">
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">Authentication</span> <span class="pre">OpenID</span> <span class="pre">Connect</span></code> from the Apps menu.</p></li>
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">Settings</span> <span class="pre">&gt;</span> <span class="pre">General</span> <span class="pre">Settings</span> <span class="pre">&gt;</span> <span class="pre">Integrations</span> <span class="pre">&gt;</span> <span class="pre">oAuth</span> <span class="pre">Authentication</span> <span class="pre">&gt;</span> <span class="pre">oAuth</span> <span class="pre">Providers</span></code> and configure
+it as following:</p>
+<ul class="simple">
+<li><p><strong>Provider name</strong>: Keycloak (or any name you like that identify your keycloak provider)</p></li>
+<li><p><strong>Auth Flow</strong>: OpenID Connect (authorization code flow)</p></li>
+<li><p><strong>Client ID</strong>: the same Client ID you entered when configuring the client in Keycloak</p></li>
+<li><p><strong>Client Secret</strong>: found in keycloak on the client Credentials tab</p></li>
+<li><p><strong>Allowed</strong>: yes</p></li>
+<li><p><strong>Body</strong>: the link text to appear on the login page, such as Login with Keycloak</p></li>
+<li><p><strong>Scope</strong>: openid email</p></li>
+<li><p><strong>Authentication URL</strong>: The “authorization_endpoint” URL found in the OpenID Endpoint Configuration of
+your Keycloak realm</p></li>
+<li><p><strong>Token URL</strong>: The “token_endpoint” URL found in the OpenID Endpoint Configuration of your Keycloak realm</p></li>
+<li><p><strong>JWKS URL</strong>: The “jwks_uri” URL found in the OpenID Endpoint Configuration of your Keycloak realm</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>For example:</strong></p>
+<p><img alt="" src="../_images/openspp_oidc_configuration.png" /></p>
+</section>
+<section id="customizing-the-login-page-optional">
+<h3>Customizing the login page (Optional)<a class="headerlink" href="#customizing-the-login-page-optional" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p><strong>Enable Developer Settings</strong>: “Settings” &gt; “Activate The Developer Mode”</p></li>
+<li><p><strong>Edit The Login Template</strong>: “Settings” &gt; “Technical” &gt; “User Interface &gt; Views” &gt; Search for “Login”</p></li>
+</ul>
+</section>
+</section>
+<section id="using">
+<h2>Using<a class="headerlink" href="#using" title="Permalink to this headline"></a></h2>
+<section id="existing-users">
+<h3>Existing users<a class="headerlink" href="#existing-users" title="Permalink to this headline"></a></h3>
+<p>For users that already exist before the configuration, they need to go through the reset password process to
+configure their account to use OpenID Connect.</p>
+</section>
+<section id="new-users">
+<h3>New users<a class="headerlink" href="#new-users" title="Permalink to this headline"></a></h3>
+<p>For new users, create their user account in odoo with the same email address used in <code class="docutils literal notranslate"><span class="pre">Keycloak</span></code> and they will
+be able to login.</p>
+</section>
 </section>
 </section>
 
@@ -128,7 +187,8 @@ will be stored individually including for list view.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="oidc.html" class="btn btn-neutral float-left" title="Configuring Keycloak for OAuth" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="managing_users.html" class="btn btn-neutral float-left" title="Managing Users" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="audit_logs.html" class="btn btn-neutral float-right" title="Audit Logs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

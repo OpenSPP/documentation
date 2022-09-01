@@ -89,4 +89,5 @@ Development
     :hidden:
 
     using/managing_users
+    using/oidc
     using/audit_logs
