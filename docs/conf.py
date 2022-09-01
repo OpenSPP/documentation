@@ -27,6 +27,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.mathjax",
     "sphinx.ext.viewcode",
+    "sphinx.ext.githubpages"
     "sphinxcontrib.httpdomain",
     "sphinx_rtd_theme",
     "myst_parser",
@@ -80,6 +81,10 @@ html_context = {
     "github_version": "main",  # Version
     "conf_py_path": "/docs/",  # Path in the checkout to the docs root
 }
+
+
+# Used by sphinx.ext.githubpages to generate docs/CNAME
+html_baseurl = 'https://docs.openspp.org'
 
 if "READTHEDOCS" not in os.environ:
     html_static_path = ["_static/"]
