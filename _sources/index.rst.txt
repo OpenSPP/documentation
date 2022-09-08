@@ -44,6 +44,7 @@ Development
    architecture
    features
    contributing
+   glossary
 
 .. toctree::
    :maxdepth: 1
