@@ -5,15 +5,14 @@
 ### Quick start
 
 You need to have Docker and docker-compose installed on your system.
+You also need to have Python installed and pip packages `invoke` and `pre-commit`.
 
 ```bash
-$ git clone git@github.com:newlogic/newlogic-g2p-docker.git
-$ git submodule init
-$ git submodule update
-$ docker-compose -f docker-compose.yml  -f dev-standalone.yml up
+$ git clone git@github.com:openspp-project/openspp-docker.git
+$ invoke develop img-pull img-build git-aggregate resetdb start
 ```
 
-Then open `http://localhost:8069/` in your browser.
+Then open `http://localhost15069/` in your browser.
 
 ## Installing for production
 
@@ -53,7 +52,7 @@ instructions below.
 
 After installing Docker and Docker Compose you can follow our DigitalOcean instructions from running:
 
-`git clone https://github.com/newlogic/newlogic-g2p-docker`
+`git clone https://github.com/openspp-project/openspp-docker.git`
 
 Continue with the Docker instructions.
 
