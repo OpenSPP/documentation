@@ -124,14 +124,13 @@
 <h2>Installing using Docker for development<a class="headerlink" href="#installing-using-docker-for-development" title="Permalink to this headline"></a></h2>
 <section id="quick-start">
 <h3>Quick start<a class="headerlink" href="#quick-start" title="Permalink to this headline"></a></h3>
-<p>You need to have Docker and docker-compose installed on your system.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone git@github.com:newlogic/newlogic-g2p-docker.git
-$ git submodule init
-$ git submodule update
-$ docker-compose -f docker-compose.yml  -f dev-standalone.yml up
+<p>You need to have Docker and docker-compose installed on your system.
+You also need to have Python installed and pip packages <code class="docutils literal notranslate"><span class="pre">invoke</span></code> and <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone git@github.com:openspp-project/openspp-docker.git
+$ invoke develop img-pull img-build git-aggregate resetdb start
 </pre></div>
 </div>
-<p>Then open <code class="docutils literal notranslate"><span class="pre">http://localhost:8069/</span></code> in your browser.</p>
+<p>Then open <code class="docutils literal notranslate"><span class="pre">http://localhost15069/</span></code> in your browser.</p>
 </section>
 </section>
 <section id="installing-for-production">
@@ -165,7 +164,7 @@ instructions below.</p>
 <li><p>Install <a class="reference external" href="https://docs.docker.com/compose/install/">Docker Compose</a>.</p></li>
 </ol>
 <p>After installing Docker and Docker Compose you can follow our DigitalOcean instructions from running:</p>
-<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/newlogic/newlogic-g2p-docker</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/openspp-project/openspp-docker.git</span></code></p>
 <p>Continue with the Docker instructions.</p>
 <p>Finally, configure an e-mail service such as
 <a class="reference external" href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-smtp.html">Amazon SES</a> because Amazon
