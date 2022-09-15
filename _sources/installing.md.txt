@@ -12,7 +12,7 @@ $ git clone git@github.com:openspp-project/openspp-docker.git
 $ invoke develop img-pull img-build git-aggregate resetdb start
 ```
 
-Then open `http://localhost15069/` in your browser.
+Then open `http://localhost:15069/` in your browser.
 
 ## Installing for production
 
