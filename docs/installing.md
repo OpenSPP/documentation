@@ -4,8 +4,8 @@
 
 ### Quick start
 
-You need to have Docker and docker-compose installed on your system.
-You also need to have Python installed and pip packages `invoke` and `pre-commit`.
+You need to have Docker and docker-compose installed on your system. You also need to have Python installed
+and pip packages `invoke` and `pre-commit`.
 
 ```bash
 $ git clone git@github.com:openspp-project/openspp-docker.git
