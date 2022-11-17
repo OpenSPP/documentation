@@ -1,5 +1,7 @@
 # Glossary
 
+## 
+
 ### Authentication.
 
 Process of establishing confidence that a person is who they claim to be. Digital authentication generally
@@ -181,9 +183,7 @@ implementation.)
 Programs that provide cash transfer benefits to individuals, families, or households without imposing any
 conditions on the beneficiaries.
 
-Note: Most definitions are coming from the World Bank Source Book:
-https://openknowledge.worldbank.org/bitstream/handle/10986/34044/9781464815775.pdf?sequence=9&isAllowed=y
+Most definitions are coming from those sources:
 
-Other resources:
-
-- https://www.calpnetwork.org/resources/glossary-of-terms/
+- [World Bank Source Book](https://openknowledge.worldbank.org/bitstream/handle/10986/34044/9781464815775.pdf?sequence=9&isAllowed=y)
+- [Calp Glossary](https://www.calpnetwork.org/resources/glossary-of-terms/)

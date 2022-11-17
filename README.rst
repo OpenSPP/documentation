@@ -13,3 +13,14 @@ the project to take advantage of a vast ecosystem of existing integrations and m
 `OpenSPP` is currently in development, and everything is evolving rapidly as a result of our users' comments.
 If you have any questions or needs, please do not hesitate to contact the team through Github
 issues or our `Website <https://openspp.org/>`_.
+
+
+Building the documentation
+==========================
+
+::
+
+  cd docs
+  pip install -r requirements.txt
+  make html
+
