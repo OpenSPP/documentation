@@ -52,7 +52,7 @@ instructions below.
 
 After installing Docker and Docker Compose you can follow our DigitalOcean instructions from running:
 
-`git clone https://github.com/openspp-project/openspp-docker.git`
+`git clone https://github.com/openspp/openspp-docker.git`
 
 Continue with the Docker instructions.
 
