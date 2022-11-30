@@ -8,8 +8,8 @@ development version and by reporting any bugs you might encounter.
 
 ## **Did you find a bug?**
 
-- **Do not open up a GitHub issue if the bug is a security vulnerability in OpenSPP**, and instead contact
-  directly the maintainers of the project.
+- **Do not open up a GitHub issue if the bug is a security vulnerability in OpenSPP**, and instead follow the
+  [security disclosure policy](security-report).
 
 - **Ensure the bug was not already reported** by searching on GitHub under
   [Issues](https://github.com/openspp/documentation/issues).

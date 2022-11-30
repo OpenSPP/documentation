@@ -6,6 +6,7 @@ from sphinx.locale import _
 
 # Prefer to use the version of the theme in this repo
 # and not the installed version of the theme.
+sys.path.insert(0, os.path.abspath("../../../openg2p-program/"))
 sys.path.insert(0, os.path.abspath(".."))
 sys.path.append(os.path.abspath("./demo/"))
 sys.path.append(os.path.abspath("./using/"))
@@ -31,6 +32,7 @@ extensions = [
     "sphinxcontrib.httpdomain",
     "sphinx_rtd_theme",
     "myst_parser",
+    "autodocsumm",
 ]
 
 templates_path = ["_templates"]
@@ -137,8 +139,11 @@ def setup(app):
         ],
     )
 
-
-autodoc_mock_imports = ["odoo"]
+# import odoo
+autodoc_mock_imports = ["odoo.addons.phone_validation"]
+# autodoc_default_options = {
+#     'autosummary': True,
+# }
 
 todo_include_todos = True
 
