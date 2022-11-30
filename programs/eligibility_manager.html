@@ -44,6 +44,8 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_architecture.html">Functional Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
@@ -80,6 +82,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../using/oidc.html">Configuring Keycloak for OAuth</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../using/audit_logs.html">Audit Logs</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Community</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contribution/module_lifecycle_development_status.html">Modules Maturity Levels and Development Status Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribution/module_lifecycle_maintainer_role.html">Module Lifecycle - Maintainer Role Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Contributor Covenant Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security-report.html">OpenSPP Vulnerability Disclosure Policy</a></li>
+</ul>
 
         </div>
       </div>
@@ -109,9 +118,50 @@
 <h1>Eligibility Manager<a class="headerlink" href="#eligibility-manager" title="Permalink to this headline"></a></h1>
 <p>The eligibility manager verifies if a beneficiary is eligible for a given program. The eligibility
 determination can be based on data stored in OpenSPP or on an external system using API calls.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">g2p_programs.models.managers.eligibility_manager</span></code> provides the class  <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseEligibilityManager</span></code> define
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">odoo.addons.g2p_programs.models.managers.eligibility_manager</span></code> provides the class  <a class="reference internal" href="#odoo.addons.g2p_programs.models.managers.eligibility_manager.BaseEligibilityManager" title="odoo.addons.g2p_programs.models.managers.eligibility_manager.BaseEligibilityManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseEligibilityManager</span></code></a> define
 the interface for this manager. <code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultEligibilityManager</span></code> is the default implementation of this class
 that should be used in most of the cases.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.eligibility_manager.BaseEligibilityManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">odoo.addons.g2p_programs.models.managers.eligibility_manager.</span></span><span class="sig-name descname"><span class="pre">BaseEligibilityManager</span></span><a class="reference internal" href="../_modules/odoo/addons/g2p_programs/models/managers/eligibility_manager.html#BaseEligibilityManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.eligibility_manager.BaseEligibilityManager" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.eligibility_manager.BaseEligibilityManager.enroll_eligible_registrants">
+<span class="sig-name descname"><span class="pre">enroll_eligible_registrants</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">program_memberships</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/odoo/addons/g2p_programs/models/managers/eligibility_manager.html#BaseEligibilityManager.enroll_eligible_registrants"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.eligibility_manager.BaseEligibilityManager.enroll_eligible_registrants" title="Permalink to this definition"></a></dt>
+<dd><p>This method is used to validate if a user match the criteria needed to be enrolled in a program.
+Args:</p>
+<blockquote>
+<div><p>program_membership:</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>bool: True if the user match the criterias, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.eligibility_manager.BaseEligibilityManager.import_eligible_registrants">
+<span class="sig-name descname"><span class="pre">import_eligible_registrants</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/odoo/addons/g2p_programs/models/managers/eligibility_manager.html#BaseEligibilityManager.import_eligible_registrants"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.eligibility_manager.BaseEligibilityManager.import_eligible_registrants" title="Permalink to this definition"></a></dt>
+<dd><p>This method is used to import the beneficiaries in a program.
+Returns:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.eligibility_manager.BaseEligibilityManager.verify_cycle_eligibility">
+<span class="sig-name descname"><span class="pre">verify_cycle_eligibility</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cycle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">program_memberships</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/odoo/addons/g2p_programs/models/managers/eligibility_manager.html#BaseEligibilityManager.verify_cycle_eligibility"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.eligibility_manager.BaseEligibilityManager.verify_cycle_eligibility" title="Permalink to this definition"></a></dt>
+<dd><p>This method is used to validate if a beneficiary match the criteria needed to be enrolled in a cycle.
+Args:</p>
+<blockquote>
+<div><p>cycle:
+program_membership:</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>bool: True if the cycle match the criterias, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 

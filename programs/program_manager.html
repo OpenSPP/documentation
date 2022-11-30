@@ -44,6 +44,8 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_architecture.html">Functional Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
@@ -80,6 +82,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../using/oidc.html">Configuring Keycloak for OAuth</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../using/audit_logs.html">Audit Logs</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Community</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contribution/module_lifecycle_development_status.html">Modules Maturity Levels and Development Status Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribution/module_lifecycle_maintainer_role.html">Module Lifecycle - Maintainer Role Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Contributor Covenant Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security-report.html">OpenSPP Vulnerability Disclosure Policy</a></li>
+</ul>
 
         </div>
       </div>
@@ -108,8 +117,58 @@
   <section id="program-manager">
 <h1>Program Manager<a class="headerlink" href="#program-manager" title="Permalink to this headline"></a></h1>
 <p>The entitlement manager determines what a beneficiary is entitled to for a given cycle.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">g2p_programs.models.managers.program_manager</span></code> provides the class  <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseProgramManager</span></code> define
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">odoo.addons.g2p_programs.models.managers.program_manager</span></code> provides the class  <a class="reference internal" href="#id0" title="odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseProgramManager</span></code></a> define
 the interface for this manager. <code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultProgramManager</span></code> is the default implementation.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">odoo.addons.g2p_programs.models.managers.program_manager.</span></span><span class="sig-name descname"><span class="pre">BaseProgramManager</span></span><a class="reference internal" href="../_modules/odoo/addons/g2p_programs/models/managers/program_manager.html#BaseProgramManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager.last_cycle">
+<span class="sig-name descname"><span class="pre">last_cycle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/odoo/addons/g2p_programs/models/managers/program_manager.html#BaseProgramManager.last_cycle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager.last_cycle" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the last cycle of the program
+Returns:</p>
+<blockquote>
+<div><p>cycle: the last cycle of the program</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager.new_cycle">
+<span class="sig-name descname"><span class="pre">new_cycle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/odoo/addons/g2p_programs/models/managers/program_manager.html#BaseProgramManager.new_cycle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager.new_cycle" title="Permalink to this definition"></a></dt>
+<dd><p>Create the next cycle of the program
+Returns:</p>
+<blockquote>
+<div><p>cycle: the newly created cycle</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">odoo.addons.g2p_programs.models.managers.program_manager.</span></span><span class="sig-name descname"><span class="pre">BaseProgramManager</span></span><a class="reference internal" href="../_modules/odoo/addons/g2p_programs/models/managers/program_manager.html#BaseProgramManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">last_cycle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/odoo/addons/g2p_programs/models/managers/program_manager.html#BaseProgramManager.last_cycle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the last cycle of the program
+Returns:</p>
+<blockquote>
+<div><p>cycle: the last cycle of the program</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">new_cycle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/odoo/addons/g2p_programs/models/managers/program_manager.html#BaseProgramManager.new_cycle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Permalink to this definition"></a></dt>
+<dd><p>Create the next cycle of the program
+Returns:</p>
+<blockquote>
+<div><p>cycle: the newly created cycle</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 

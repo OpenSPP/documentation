@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Features" href="features.html" />
-    <link rel="prev" title="OpenSPP - Social Protection Platform" href="index.html" /> 
+    <link rel="prev" title="Functional Architecture" href="functional_architecture.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,6 +44,8 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functional_architecture.html">Functional Architecture</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Architecture</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#principles">Principles</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ecosystem-approach">Ecosystem approach</a></li>
@@ -52,7 +54,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#modularity">Modularity</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#functional-architecture">Functional Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#modular-architecture">Modular Architecture</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#example-components-for-a-mid-size-project">Example components for a mid-size project</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example-components-for-a-large-project">Example components for a large project</a></li>
@@ -96,6 +97,13 @@
 <li class="toctree-l1"><a class="reference internal" href="using/oidc.html">Configuring Keycloak for OAuth</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using/audit_logs.html">Audit Logs</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Community</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contribution/module_lifecycle_development_status.html">Modules Maturity Levels and Development Status Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution/module_lifecycle_maintainer_role.html">Module Lifecycle - Maintainer Role Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Contributor Covenant Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security-report.html">OpenSPP Vulnerability Disclosure Policy</a></li>
+</ul>
 
         </div>
       </div>
@@ -125,20 +133,17 @@
 <h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline"></a></h1>
 <section id="principles">
 <h2>Principles<a class="headerlink" href="#principles" title="Permalink to this headline"></a></h2>
-<blockquote>
-<div><p>(Inspired by <a class="reference external" href="https://docs.mosip.io/1.1.5/architecture/architecture-principles">MOSIP’s principles</a>)</p>
-</div></blockquote>
 <ul class="simple">
-<li><p>OpenSPP must follow <strong>platform based approach</strong> so that all common features can be extended or the
-functionality can be extended by other parties</p></li>
+<li><p>OpenSPP must follow <strong>platform based approach</strong> so that all common features can be configured or the
+functionality can be extended by other parties.</p></li>
 <li><p>OpenSPP must <strong>not use proprietary</strong> or commercial license frameworks. Where deemed essential, such
 components must be encapsulated to enable their replacement if necessary (to avoid vendor lock-in)</p></li>
 <li><p>OpenSPP must use <strong>open standards</strong> whenever possible to expose its functionality (to avoid technology
 lock-in)</p></li>
 <li><p>OpenSPP must use <strong>commodity computing</strong> hardware &amp; software to build the platform</p></li>
-<li><p>OpenSPP must be simple to deploy and use</p></li>
-<li><p>OpenSPP must be able to work for small projects with few thousand beneficiaries up to tens of millions of
-beneficiaries</p></li>
+<li><p>OpenSPP must be <strong>simple to deploy and use</strong></p></li>
+<li><p>OpenSPP must be able to <strong>work for small projects</strong> with few thousand beneficiaries up to  large ones with tens
+of millions of beneficiaries</p></li>
 <li><p>Data must be <strong>encrypted</strong> in-flight and at-rest. All requests must be authenticated and authorized. Privacy
 of Identity Data is an absolute must in OpenSPP</p></li>
 <li><p>OpenSPP must follow the following manageability principles:</p>
@@ -148,18 +153,19 @@ of Identity Data is an absolute must in OpenSPP</p></li>
 <li><p><strong>Easy upgrade</strong> ability of the platform</p></li>
 </ul>
 </li>
-<li><p>OpenSPP should work with different locales so that that Social Protection systems can be localized for
+<li><p>OpenSPP should <strong>work with different locales</strong> so that that Social Protection systems can be localized for
 languages and cultures easily</p></li>
 <li><p>The key sub-systems of OpenSPP should be designed for <strong>extensibility</strong>. For example, if an external system
 has to be integrated for entitlement determination, it should be easy to do so</p></li>
 </ul>
 <section id="ecosystem-approach">
 <h3>Ecosystem approach<a class="headerlink" href="#ecosystem-approach" title="Permalink to this headline"></a></h3>
-<p>The OpenSPP platform can work as a standalone system or as a part of a larger ecosystem. Every information
-stored in the platform must have a corresponding API to access that can be used by other systems. For example,
-if you want to integrate OpenSPP with mobile money, you can leverage Payment Hub EE from Mifos. Through a
-well-defined set of standard interfaces OpenSPP allows for integration of such components and offers choice of
-providers for the same.</p>
+<p>The OpenSPP platform can work as a standalone system or as a part of a larger ecosystem. It needs to be
+interoperable with other government systems.</p>
+<p>Every information stored in the platform must have a corresponding API to access that can be used by other
+systems. For example, if you want to integrate OpenSPP with mobile money, you can leverage Payment Hub EE.
+Through a well-defined set of standard interfaces OpenSPP allows for integration of such components and offers
+choice of providers for the same.</p>
 <p>So, key parameters are:</p>
 <ul class="simple">
 <li><p>All public/external facing interfaces of OpenSPP must be standards-based for interoperability whenever
@@ -176,6 +182,7 @@ specific requirements. Some of the examples of configurability are:</p>
 <li><p>Be able to configure the attributes of the beneficiaries.</p></li>
 <li><p>Be able to define the criteria used to determine the beneficiaries.</p></li>
 <li><p>Be able to define how entitlement is calculated</p></li>
+<li></li>
 <li><p>…</p></li>
 </ul>
 </section>
@@ -200,12 +207,6 @@ modularity are:</p>
 <li><p>Deduplication of beneficiaries</p></li>
 </ul>
 </section>
-</section>
-<section id="functional-architecture">
-<h2>Functional Architecture<a class="headerlink" href="#functional-architecture" title="Permalink to this headline"></a></h2>
-<p>OpenSPP is designed with the registrants at the core of the processes. Registrants then go through processes
-defined in the programs and cycles to determine the benefits they are entitled to.</p>
-<p><img alt="OpenSPP Overview" src="images/openspp_core.jpg" /></p>
 </section>
 <section id="modular-architecture">
 <h2>Modular Architecture<a class="headerlink" href="#modular-architecture" title="Permalink to this headline"></a></h2>
@@ -232,11 +233,14 @@ to the thousands of applications available in the <a class="reference external" 
 </section>
 <section id="example-components-for-a-large-project">
 <h3>Example components for a large project<a class="headerlink" href="#example-components-for-a-large-project" title="Permalink to this headline"></a></h3>
-<p><img alt="" src="_images/architecture_ecosystem_2.png" /></p>
+<p><img alt="" src="_images/openspp_architecture_large_project.png" /></p>
 </section>
 <section id="hosting">
 <h3>Hosting<a class="headerlink" href="#hosting" title="Permalink to this headline"></a></h3>
 <p><img alt="OpenSPP Hosting" src="_images/openspp_hosting.png" /></p>
+<blockquote>
+<div><p>Principles are inspired by <a class="reference external" href="https://docs.mosip.io/1.1.5/architecture/architecture-principles">MOSIP’s principles</a></p>
+</div></blockquote>
 </section>
 </section>
 </section>
@@ -245,7 +249,7 @@ to the thousands of applications available in the <a class="reference external" 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="OpenSPP - Social Protection Platform" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="functional_architecture.html" class="btn btn-neutral float-left" title="Functional Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="features.html" class="btn btn-neutral float-right" title="Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

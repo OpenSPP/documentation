@@ -2,36 +2,37 @@
 
 ## Principles
 
-> (Inspired by [MOSIP's principles](https://docs.mosip.io/1.1.5/architecture/architecture-principles))
 
-- OpenSPP must follow **platform based approach** so that all common features can be extended or the
-  functionality can be extended by other parties
+- OpenSPP must follow **platform based approach** so that all common features can be configured or the
+  functionality can be extended by other parties.
 - OpenSPP must **not use proprietary** or commercial license frameworks. Where deemed essential, such
   components must be encapsulated to enable their replacement if necessary (to avoid vendor lock-in)
 - OpenSPP must use **open standards** whenever possible to expose its functionality (to avoid technology
   lock-in)
 - OpenSPP must use **commodity computing** hardware & software to build the platform
-- OpenSPP must be simple to deploy and use
-- OpenSPP must be able to work for small projects with few thousand beneficiaries up to tens of millions of
-  beneficiaries
+- OpenSPP must be **simple to deploy and use**
+- OpenSPP must be able to **work for small projects** with few thousand beneficiaries up to  large ones with tens
+  of millions of beneficiaries
 - Data must be **encrypted** in-flight and at-rest. All requests must be authenticated and authorized. Privacy
   of Identity Data is an absolute must in OpenSPP
 - OpenSPP must follow the following manageability principles:
   - **Auditability & monitor ability** of every action in the system
   - **Testability** of every feature of the platform
   - **Easy upgrade** ability of the platform
-- OpenSPP should work with different locales so that that Social Protection systems can be localized for
+- OpenSPP should **work with different locales** so that that Social Protection systems can be localized for
   languages and cultures easily
 - The key sub-systems of OpenSPP should be designed for **extensibility**. For example, if an external system
   has to be integrated for entitlement determination, it should be easy to do so
 
 ### Ecosystem approach
 
-The OpenSPP platform can work as a standalone system or as a part of a larger ecosystem. Every information
-stored in the platform must have a corresponding API to access that can be used by other systems. For example,
-if you want to integrate OpenSPP with mobile money, you can leverage Payment Hub EE from Mifos. Through a
-well-defined set of standard interfaces OpenSPP allows for integration of such components and offers choice of
-providers for the same.
+The OpenSPP platform can work as a standalone system or as a part of a larger ecosystem. It needs to be
+interoperable with other government systems.
+
+Every information stored in the platform must have a corresponding API to access that can be used by other
+systems. For example, if you want to integrate OpenSPP with mobile money, you can leverage Payment Hub EE.
+Through a well-defined set of standard interfaces OpenSPP allows for integration of such components and offers
+choice of providers for the same.
 
 So, key parameters are:
 
@@ -48,6 +49,7 @@ specific requirements. Some of the examples of configurability are:
 - Be able to configure the attributes of the beneficiaries.
 - Be able to define the criteria used to determine the beneficiaries.
 - Be able to define how entitlement is calculated
+-
 - ...
 
 ### Extensibility
@@ -68,13 +70,6 @@ modularity are:
 - Determination of eligibility to a program
 - Calculation of entitlement
 - Deduplication of beneficiaries
-
-## Functional Architecture
-
-OpenSPP is designed with the registrants at the core of the processes. Registrants then go through processes
-defined in the programs and cycles to determine the benefits they are entitled to.
-
-![OpenSPP Overview](images/openspp_core.jpg)
 
 ## Modular Architecture
 
@@ -105,8 +100,11 @@ to the thousands of applications available in the [Odoo App Store](https://apps.
 
 ### Example components for a large project
 
-![](images/architecture_ecosystem_2.png)
+![](images/openspp_architecture_large_project.png)
 
 ### Hosting
 
 ![OpenSPP Hosting](images/openspp_hosting.png)
+
+
+> Principles are inspired by [MOSIP's principles](https://docs.mosip.io/1.1.5/architecture/architecture-principles)

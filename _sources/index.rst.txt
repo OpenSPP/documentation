@@ -4,8 +4,10 @@ OpenSPP - Social Protection Platform
 `OpenSPP` is an open-source project that aims to streamline the management of social protection programs.
 It can be used on its own or in conjunction with other services.
 
-.. image:: programs/images/openspp_overview.png
+.. image:: images/openspp_process.png
   :alt: OpenSPP overview
+
+
 
 `OpenSPP` is based on an open-source ERP called `Odoo 15.0 <https://odoo.com/documentation/15.0/>`_. It allows
 the project to take advantage of a vast ecosystem of existing integrations and modules.
@@ -14,11 +16,34 @@ the project to take advantage of a vast ecosystem of existing integrations and m
 If you have any questions or needs, please do not hesitate to contact the team through Github
 issues or our `Website <https://openspp.org/>`_.
 
+Principles
+----------
+
+`OpenSPP` is based on the following principles:
+
+- **Design for the user**: the project is designed to be easy to use and to meet the needs of the users in the field.
+- **Focused on the needs of low to middle income countries**: the project is designed to meet the needs of low to
+  middle income countries.
+- **Open source**: the project is open source and free to use for any purpose, including commercial use.
+- **Modular**: the project is modular and can be used on its own or in conjunction with other services.
+
+Technical information
+---------------------
+
+`OpenSPP` is built on top of `Odoo 15.0 <https://odoo.com/documentation/15.0/>`_, a popular open-source ERP.
+It is designed to be easy to install and maintain, and can be run on any Linux distribution.
+
+The project is currently under development, and everything is evolving rapidly as a result of our users' comments.
+If you have any questions or needs, please do not hesitate to contact the team through Github
+issues or our `Website <https://openspp.org/>`_.
+
+To learn more, take a look at the :doc:`architecture` pages.
+
 
 Getting started with OpenSPP
 ---------------------------------
 
-:doc:`installing`
+:doc:`installation`
     How to install this project on your server.
 
 :doc:`configuring`
@@ -40,7 +65,8 @@ Development
    :maxdepth: 2
    :hidden:
 
-   installing
+   installation
+   functional_architecture
    architecture
    features
    contributing
@@ -92,3 +118,13 @@ Development
     using/managing_users
     using/oidc
     using/audit_logs
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Community
+    :hidden:
+
+    contribution/module_lifecycle_development_status
+    contribution/module_lifecycle_maintainer_role
+    code_of_conduct
+    security-report

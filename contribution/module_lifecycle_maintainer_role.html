@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module Lifecycle - Maintainer Role Policy &mdash; OpenSPP Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="canonical" href="https://docs.openspp.org/contribution/module_lifecycle_maintainer_role.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/debug.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Contributor Covenant Code of Conduct" href="../code_of_conduct.html" />
+    <link rel="prev" title="Modules Maturity Levels and Development Status Policy" href="module_lifecycle_development_status.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> OpenSPP
+          </a>
+              <div class="version">
+                2.0-dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_architecture.html">Functional Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Registrants</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../registrants/concepts.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../registrants/exporting.html">Exporting Registrants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../registrants/importing.html">Importing Registrants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../registrants/api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../programs/concepts.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/dashboards.html">Dashboards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/program_manager.html">Program Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/cycle_manager.html">Cycle Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/eligibility_manager.html">Eligibility Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/entitlement_manager.html">Entitlement Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/deduplication_manager.html">Deduplication Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/notification_manager.html">Notification Manager</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Disbursement Service</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../disbursement/index.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../using/managing_users.html">Managing Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using/oidc.html">Configuring Keycloak for OAuth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using/audit_logs.html">Audit Logs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="module_lifecycle_development_status.html">Modules Maturity Levels and Development Status Policy</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module Lifecycle - Maintainer Role Policy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#maintainer-role-and-responsibilities">Maintainer role and responsibilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-removing-maintainers">Adding, removing maintainers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Contributor Covenant Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security-report.html">OpenSPP Vulnerability Disclosure Policy</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenSPP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Module Lifecycle - Maintainer Role Policy</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/openspp-project/documentation/blob/main/docs/contribution/module_lifecycle_maintainer_role.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-lifecycle-maintainer-role-policy">
+<h1><a class="toc-backref" href="#id1">Module Lifecycle - Maintainer Role Policy</a><a class="headerlink" href="#module-lifecycle-maintainer-role-policy" title="Permalink to this headline"></a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#module-lifecycle-maintainer-role-policy" id="id1">Module Lifecycle - Maintainer Role Policy</a></p>
+<ul>
+<li><p><a class="reference internal" href="#introduction" id="id2">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#maintainer-role-and-responsibilities" id="id3">Maintainer role and responsibilities</a></p></li>
+<li><p><a class="reference internal" href="#adding-removing-maintainers" id="id4">Adding, removing maintainers</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id2">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>A Maintainer is responsible to ensure the coordination of specific addon
+modules in order to ensure the quality and consistency of the
+contributions. For a particular repository, this could be one, a few, or
+even all the modules in that repository.</p>
+<p>Typically, the maintainer role for OpenSPP repositories is expected to be
+done by the Project Steering Committee (PSC) members.  Their main role is
+project oversight, and one PSC can be responsible for one or more project
+repositories.</p>
+<p>In large repositories it is sometimes difficult to identify who are the
+active maintainers of a given addon. This creates the following
+problems:</p>
+<ul class="simple">
+<li><p>the maintainer does not easily notice PR and Issues concerning
+his/her addons;</p></li>
+<li><p>when addons have no active maintainers, PSC members must take care of
+it, but they may be too busy or may not feel concerned by all
+addons in their repositories;</p></li>
+<li><p>it is difficult for contributors to detect addons which have no
+active maintainer.</p></li>
+</ul>
+<p>In small, focused repositories this issue does not arise since
+the repo maintainers and addons maintainers are the same.</p>
+<p>In larger repos it happens that some or all PSC members are not
+interested in all addons and the repo suffers of the above drawbacks,
+therefore giving a negative impression on the whole repo.</p>
+<p>Splitting large repositories so they all become focused with a
+homogeneous content seems to be impractical, due to the difficulty to
+manage a large amount of repositories.</p>
+<p>The maintainer role has been introduced to alleviate the above issues.</p>
+<p>Being the maintainer of an addon module bears some responsibilities
+towards the community. This document aims at clarifying those.</p>
+</section>
+<section id="maintainer-role-and-responsibilities">
+<h2><a class="toc-backref" href="#id3">Maintainer role and responsibilities</a><a class="headerlink" href="#maintainer-role-and-responsibilities" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Maintainers main role is to foster efficient community collaboration
+on the addons they are responsible for. This includes</p>
+<ul>
+<li><p><strong>Communication:</strong> Ensuring that discussions and reviews don’t
+stall, intervening to ping the people involved, or ask for
+next steps whenever communication stops.</p></li>
+<li><p><strong>Control:</strong> Doing final checks and merging approved pull
+requests.</p></li>
+<li><p><strong>Versioning:</strong></p>
+<ul>
+<li><p>Bumping version numbers during merge or immediately after.</p></li>
+</ul>
+</li>
+<li><p><strong>Support:</strong> Handling support requests and questions.</p></li>
+<li><p><strong>Documentation:</strong> Documenting and managing the roadmap (future
+improvement ideas, known issues).</p></li>
+<li><p><strong>Guidance:</strong> Keeping an eye on contributions in related areas to
+help ensure functional consistency in OpenSPP. This may include
+helping to merge new feature in the addons they maintain, or
+guiding contributors towards the creation of new extension
+modules. This must not preclude the creation of addons
+providing a competing approach, fostering innovation.</p></li>
+</ul>
+</li>
+<li><p>Declared maintainers are given write access to the repository. If
+they are not PSC member they are trusted not to do write
+operations (eg merging pull requests) that have impact on other
+addons than the one they maintain.</p></li>
+<li><p>Maintainers may proceed to some maintenance operation with relaxed
+code review rules (eg performing simple, low risk, forward and
+backports, maintaining documentation, applying cosmetic
+improvements to the code such as linting). Maintainers are
+expected to follow the highest quality standard when performing
+such operations.</p></li>
+<li><p>If there is more than one declared maintainer, they must ensure good
+coordination between them (for instance, ensure no task are left
+unattended on the assumption that another maintainer will do it).</p></li>
+<li><p>PSC members should not merge PR concerning modules with declared
+maintainers, unless the maintainer is unreactive.</p></li>
+<li><p>Addons with no declared maintainers are managed by the PSC.</p></li>
+</ul>
+</section>
+<section id="adding-removing-maintainers">
+<h2><a class="toc-backref" href="#id4">Adding, removing maintainers</a><a class="headerlink" href="#adding-removing-maintainers" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>The maintainers of an addon are declared in the <strong>maintainers</strong> key
+of the manifest. This key is a list of github logins. The list of
+declared maintainers is expected to be short (one or two in
+general).</p></li>
+<li><p>New candidate maintainers can propose themselves by adding their
+github login in the manifest, with a PR, to be approved by the
+PSC.</p></li>
+<li><p>Maintainers who do not wish to continue maintaining a module must
+remove themselves from the list through a PR, and announce it on
+the contributors mailing list, calling for volunteers.</p></li>
+<li><p>PSC may remove maintainers who do not follow OpenSPP rules or fail to
+their maintenance duties. Such action must be taken in
+coordination with the board.</p></li>
+<li><p>Current maintainers are displayed (using their avatar) in the addon
+README.rst.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This document is based on the OCA Module Lifecycle - Maintainer Role Policy  <a class="reference external" href="https://odoo-community.org/page/maintainer-role">https://odoo-community.org/page/maintainer-role</a>.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="module_lifecycle_development_status.html" class="btn btn-neutral float-left" title="Modules Maturity Levels and Development Status Policy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../code_of_conduct.html" class="btn btn-neutral float-right" title="Contributor Covenant Code of Conduct" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 OpenSPP.org Licensed under CC BY 4.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> OpenSPP</span>
+    v: latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <!--    <dl>-->
+    <!--      <dt>Versions</dt>-->
+    <!---->
+    <!--      <dd><a href="#">latest</a></dd>-->
+    <!--      <dd><a href="#">1.0</a></dd>-->
+    <!--      <dd><a href="#">1.1</a></dd>-->
+    <!---->
+    <!--    </dl>-->
+    <!--    <dl>-->
+    <!--      <dt>Downloads</dt>-->
+    <!--      <dd><a href="#">PDF</a></dd>-->
+    <!--      <dd><a href="#">ePub</a></dd>-->
+    <!--      <dd><a href="#">HTML</a></dd>-->
+    <!--    </dl>-->
+    <dl>
+      <dt>OpenSPP</dt>
+      <dd>
+        <a href="https://github.com/openspp/documentation/">Project Home</a>
+      </dd>
+      <!-- <dd>
+        <a href="https://github.com/openspp/documentation/releases">Releases</a>
+      </dd> -->
+    </dl>
+    <!--    <dl>-->
+    <!--      <dt>Debug</dt>-->
+    <!--      <dd><a href="#" data-toggle="rst-debug-badge">Swap badge position</a></dd>-->
+    <!--    </dl>-->
+  </div>
+</div>
+
+</body>
+</html>

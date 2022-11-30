@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>odoo.addons.g2p_programs.models.managers.entitlement_manager &mdash; OpenSPP Documentation</title>
+      <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
+    <link rel="canonical" href="https://docs.openspp.org/_modules/odoo/addons/g2p_programs/models/managers/entitlement_manager.html" />
+  <!--[if lt IE 9]>
+    <script src="../../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../_static/jquery.js"></script>
+        <script src="../../../../../../_static/underscore.js"></script>
+        <script src="../../../../../../_static/doctools.js"></script>
+        <script src="../../../../../../_static/debug.js"></script>
+    <script src="../../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../../index.html" class="icon icon-home"> OpenSPP
+          </a>
+              <div class="version">
+                2.0-dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../functional_architecture.html">Functional Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../glossary.html">Glossary</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../changelog.html">Changelog</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Registrants</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../registrants/concepts.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../registrants/exporting.html">Exporting Registrants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../registrants/importing.html">Importing Registrants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../registrants/api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../programs/concepts.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../programs/dashboards.html">Dashboards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../programs/program_manager.html">Program Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../programs/cycle_manager.html">Cycle Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../programs/eligibility_manager.html">Eligibility Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../programs/entitlement_manager.html">Entitlement Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../programs/deduplication_manager.html">Deduplication Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../programs/notification_manager.html">Notification Manager</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Disbursement Service</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../disbursement/index.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../using/managing_users.html">Managing Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../using/oidc.html">Configuring Keycloak for OAuth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../using/audit_logs.html">Audit Logs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contribution/module_lifecycle_development_status.html">Modules Maturity Levels and Development Status Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../contribution/module_lifecycle_maintainer_role.html">Module Lifecycle - Maintainer Role Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../code_of_conduct.html">Contributor Covenant Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../security-report.html">OpenSPP Vulnerability Disclosure Policy</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../index.html">OpenSPP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">odoo.addons.g2p_programs.models.managers.entitlement_manager</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for odoo.addons.g2p_programs.models.managers.entitlement_manager</h1><div class="highlight"><pre>
+<span></span><span class="c1"># Part of OpenG2P. See LICENSE file for full copyright and licensing details.</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">_</span><span class="p">,</span> <span class="n">api</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">odoo.exceptions</span> <span class="kn">import</span> <span class="n">UserError</span>
+
+<span class="n">_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">EntitlementManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;g2p.program.entitlement.manager&quot;</span>
+    <span class="n">_description</span> <span class="o">=</span> <span class="s2">&quot;Entitlement Manager&quot;</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;g2p.manager.mixin&quot;</span>
+
+    <span class="n">program_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s2">&quot;g2p.program&quot;</span><span class="p">,</span> <span class="s2">&quot;Program&quot;</span><span class="p">)</span>
+
+    <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
+    <span class="k">def</span> <span class="nf">_selection_manager_ref_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">selection</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_selection_manager_ref_id</span><span class="p">()</span>
+        <span class="n">new_manager</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;g2p.program.entitlement.manager.default&quot;</span><span class="p">,</span> <span class="s2">&quot;Default&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">new_manager</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">selection</span><span class="p">:</span>
+            <span class="n">selection</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_manager</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">selection</span>
+
+
+<div class="viewcode-block" id="BaseEntitlementManager"><a class="viewcode-back" href="../../../../../../programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.BaseEntitlementManager">[docs]</a><span class="k">class</span> <span class="nc">BaseEntitlementManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">AbstractModel</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;g2p.base.program.entitlement.manager&quot;</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;base.programs.manager&quot;</span>
+    <span class="n">_description</span> <span class="o">=</span> <span class="s2">&quot;Base Entitlement Manager&quot;</span>
+
+    <span class="n">IS_CASH_ENTITLEMENT</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="s2">&quot;Manager Name&quot;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">program_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s2">&quot;g2p.program&quot;</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="s2">&quot;Program&quot;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<div class="viewcode-block" id="BaseEntitlementManager.prepare_entitlements"><a class="viewcode-back" href="../../../../../../programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.BaseEntitlementManager.prepare_entitlements">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">cycle_memberships</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method is used to prepare the entitlement list of the beneficiaries.</span>
+<span class="sd">        :param cycle: The cycle.</span>
+<span class="sd">        :param cycle_memberships: The beneficiaries.</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="BaseEntitlementManager.validate_entitlements"><a class="viewcode-back" href="../../../../../../programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.BaseEntitlementManager.validate_entitlements">[docs]</a>    <span class="k">def</span> <span class="nf">validate_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">cycle_memberships</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method is used to validate the entitlement list of the beneficiaries.</span>
+<span class="sd">        :param cycle: The cycle.</span>
+<span class="sd">        :param cycle_memberships: The beneficiaries.</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="BaseEntitlementManager.approve_entitlements"><a class="viewcode-back" href="../../../../../../programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.BaseEntitlementManager.approve_entitlements">[docs]</a>    <span class="k">def</span> <span class="nf">approve_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entitlements</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method is used to approve the entitlement list of the beneficiaries.</span>
+<span class="sd">        :param cycle: The cycle.</span>
+<span class="sd">        :param cycle_memberships: The beneficiaries.</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="BaseEntitlementManager.open_entitlements_form"><a class="viewcode-back" href="../../../../../../programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.BaseEntitlementManager.open_entitlements_form">[docs]</a>    <span class="k">def</span> <span class="nf">open_entitlements_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method is used to open the list view of entitlements in a cycle.</span>
+<span class="sd">        :param cycle: The cycle.</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="BaseEntitlementManager.open_entitlement_form"><a class="viewcode-back" href="../../../../../../programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.BaseEntitlementManager.open_entitlement_form">[docs]</a>    <span class="k">def</span> <span class="nf">open_entitlement_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rec</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method is used to open the form view of a selected entitlement.</span>
+<span class="sd">        :param rec: The entitlement.</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
+
+    <span class="k">def</span> <span class="nf">check_fund_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">program_id</span><span class="p">):</span>
+        <span class="n">company_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">company_id</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">company_id</span><span class="o">.</span><span class="n">id</span> <span class="ow">or</span> <span class="kc">None</span>
+        <span class="n">retval</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">if</span> <span class="n">company_id</span><span class="p">:</span>
+            <span class="n">params</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">company_id</span><span class="p">,</span>
+                <span class="n">program_id</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Get the current fund balance</span>
+            <span class="n">fund_bal</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                select sum(amount) as total_fund</span>
+<span class="s2">                from g2p_program_fund</span>
+<span class="s2">                where company_id = </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">                    AND program_id = </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">                    AND state = &#39;posted&#39;</span>
+<span class="s2">                &quot;&quot;&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cr</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+            <span class="n">program_funds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cr</span><span class="o">.</span><span class="n">dictfetchall</span><span class="p">()</span>
+            <span class="n">fund_bal</span> <span class="o">=</span> <span class="n">program_funds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;total_fund&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="mf">0.0</span>
+
+            <span class="c1"># Get the current entitlement totals</span>
+            <span class="n">total_entitlements</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                select sum(a.initial_amount) as total_entitlement</span>
+<span class="s2">                from g2p_entitlement a</span>
+<span class="s2">                    left join g2p_cycle b on b.id = a.cycle_id</span>
+<span class="s2">                where a.company_id = </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">                    AND b.program_id = </span><span class="si">%s</span><span class="s2"></span>
+<span class="s2">                    AND a.state = &#39;approved&#39;</span>
+<span class="s2">                &quot;&quot;&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cr</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+            <span class="n">entitlements</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cr</span><span class="o">.</span><span class="n">dictfetchall</span><span class="p">()</span>
+            <span class="n">total_entitlements</span> <span class="o">=</span> <span class="n">entitlements</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;total_entitlement&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="mf">0.0</span>
+
+            <span class="n">retval</span> <span class="o">=</span> <span class="n">fund_bal</span> <span class="o">-</span> <span class="n">total_entitlements</span>
+        <span class="k">return</span> <span class="n">retval</span></div>
+
+
+<div class="viewcode-block" id="DefaultCashEntitlementManager"><a class="viewcode-back" href="../../../../../../programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager">[docs]</a><span class="k">class</span> <span class="nc">DefaultCashEntitlementManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;g2p.program.entitlement.manager.default&quot;</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;g2p.base.program.entitlement.manager&quot;</span><span class="p">,</span> <span class="s2">&quot;g2p.manager.source.mixin&quot;</span><span class="p">]</span>
+    <span class="n">_description</span> <span class="o">=</span> <span class="s2">&quot;Default Entitlement Manager&quot;</span>
+
+    <span class="c1"># Set to True so that the UI will display the payment management components</span>
+    <span class="n">IS_CASH_ENTITLEMENT</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">amount_per_cycle</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Monetary</span><span class="p">(</span>
+        <span class="n">currency_field</span><span class="o">=</span><span class="s2">&quot;currency_id&quot;</span><span class="p">,</span>
+        <span class="n">group_operator</span><span class="o">=</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">amount_per_individual_in_group</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Monetary</span><span class="p">(</span>
+        <span class="n">currency_field</span><span class="o">=</span><span class="s2">&quot;currency_id&quot;</span><span class="p">,</span>
+        <span class="n">group_operator</span><span class="o">=</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">max_individual_in_group</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">string</span><span class="o">=</span><span class="s2">&quot;Maximum number of individual in group&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;0 means no limit&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">currency_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span>
+        <span class="s2">&quot;res.currency&quot;</span><span class="p">,</span> <span class="n">related</span><span class="o">=</span><span class="s2">&quot;program_id.journal_id.currency_id&quot;</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Transfer Fees</span>
+    <span class="n">transfer_fee_pct</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span>
+        <span class="s2">&quot;Transfer Fee(%)&quot;</span><span class="p">,</span>
+        <span class="n">digits</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+        <span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Transfer fee will be a percentage of amount&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">transfer_fee_amt</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Monetary</span><span class="p">(</span>
+        <span class="s2">&quot;Transfer Fee Amount&quot;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">currency_field</span><span class="o">=</span><span class="s2">&quot;currency_id&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Set fixed transfer fee amount&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Group able to validate the payment</span>
+    <span class="c1"># Todo: Create a record rule for payment_validation_group</span>
+    <span class="n">entitlement_validation_group_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span>
+        <span class="s2">&quot;res.groups&quot;</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="s2">&quot;Entitlement Validation Group&quot;</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="DefaultCashEntitlementManager.on_transfer_fee_pct_change"><a class="viewcode-back" href="../../../../../../programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.on_transfer_fee_pct_change">[docs]</a>    <span class="nd">@api</span><span class="o">.</span><span class="n">onchange</span><span class="p">(</span><span class="s2">&quot;transfer_fee_pct&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">on_transfer_fee_pct_change</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transfer_fee_pct</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">transfer_fee_amt</span> <span class="o">=</span> <span class="mf">0.0</span></div>
+
+<div class="viewcode-block" id="DefaultCashEntitlementManager.on_transfer_fee_amt_change"><a class="viewcode-back" href="../../../../../../programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.on_transfer_fee_amt_change">[docs]</a>    <span class="nd">@api</span><span class="o">.</span><span class="n">onchange</span><span class="p">(</span><span class="s2">&quot;transfer_fee_amt&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">on_transfer_fee_amt_change</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transfer_fee_amt</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">transfer_fee_pct</span> <span class="o">=</span> <span class="mf">0.0</span></div>
+
+<div class="viewcode-block" id="DefaultCashEntitlementManager.prepare_entitlements"><a class="viewcode-back" href="../../../../../../programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.prepare_entitlements">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries</span><span class="p">):</span>
+        <span class="c1"># TODO: create a Entitlement of `amount_per_cycle` for each member that do not have one yet for the cycle and</span>
+        <span class="n">benecifiaries_ids</span> <span class="o">=</span> <span class="n">beneficiaries</span><span class="o">.</span><span class="n">mapped</span><span class="p">(</span><span class="s2">&quot;partner_id.id&quot;</span><span class="p">)</span>
+
+        <span class="n">benecifiaries_with_entitlements</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;g2p.entitlement&quot;</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">search</span><span class="p">(</span>
+                <span class="p">[(</span><span class="s2">&quot;cycle_id&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">cycle</span><span class="o">.</span><span class="n">id</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;partner_id&quot;</span><span class="p">,</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span> <span class="n">benecifiaries_ids</span><span class="p">)]</span>
+            <span class="p">)</span>
+            <span class="o">.</span><span class="n">mapped</span><span class="p">(</span><span class="s2">&quot;partner_id.id&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">entitlements_to_create</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">benecifiaries_id</span>
+            <span class="k">for</span> <span class="n">benecifiaries_id</span> <span class="ow">in</span> <span class="n">benecifiaries_ids</span>
+            <span class="k">if</span> <span class="n">benecifiaries_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">benecifiaries_with_entitlements</span>
+        <span class="p">]</span>
+
+        <span class="n">entitlement_start_validity</span> <span class="o">=</span> <span class="n">cycle</span><span class="o">.</span><span class="n">start_date</span>
+        <span class="n">entitlement_end_validity</span> <span class="o">=</span> <span class="n">cycle</span><span class="o">.</span><span class="n">end_date</span>
+        <span class="n">entitlement_currency</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currency_id</span><span class="o">.</span><span class="n">id</span>
+
+        <span class="n">beneficiaries_with_entitlements_to_create</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;res.partner&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">browse</span><span class="p">(</span>
+            <span class="n">entitlements_to_create</span>
+        <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">beneficiary_id</span> <span class="ow">in</span> <span class="n">beneficiaries_with_entitlements_to_create</span><span class="p">:</span>
+            <span class="n">amount</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_amount</span><span class="p">(</span><span class="n">beneficiary_id</span><span class="p">)</span>
+            <span class="n">transfer_fee</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transfer_fee_pct</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+                <span class="n">transfer_fee</span> <span class="o">=</span> <span class="n">amount</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">transfer_fee_pct</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">transfer_fee_amt</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+                <span class="n">transfer_fee</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transfer_fee_amt</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;g2p.entitlement&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;cycle_id&quot;</span><span class="p">:</span> <span class="n">cycle</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="s2">&quot;partner_id&quot;</span><span class="p">:</span> <span class="n">beneficiary_id</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="s2">&quot;initial_amount&quot;</span><span class="p">:</span> <span class="n">amount</span><span class="p">,</span>
+                    <span class="s2">&quot;transfer_fee&quot;</span><span class="p">:</span> <span class="n">transfer_fee</span><span class="p">,</span>
+                    <span class="s2">&quot;currency_id&quot;</span><span class="p">:</span> <span class="n">entitlement_currency</span><span class="p">,</span>
+                    <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;draft&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;is_cash_entitlement&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                    <span class="s2">&quot;valid_from&quot;</span><span class="p">:</span> <span class="n">entitlement_start_validity</span><span class="p">,</span>
+                    <span class="s2">&quot;valid_until&quot;</span><span class="p">:</span> <span class="n">entitlement_end_validity</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_calculate_amount</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">beneficiary</span><span class="p">):</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">amount_per_cycle</span>
+        <span class="k">if</span> <span class="n">beneficiary</span><span class="o">.</span><span class="n">is_group</span><span class="p">:</span>
+            <span class="n">num_individuals</span> <span class="o">=</span> <span class="n">beneficiary</span><span class="o">.</span><span class="n">count_individuals</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">num_individuals</span><span class="p">:</span>
+                <span class="n">result_map</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">num_individuals</span><span class="p">)</span>
+                <span class="n">num_individuals</span> <span class="o">=</span> <span class="n">result_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">beneficiary</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="c1"># if (</span>
+                <span class="c1">#    self.max_individual_in_group</span>
+                <span class="c1">#    and num_individuals &gt; self.max_individual_in_group</span>
+                <span class="c1"># ):</span>
+                <span class="c1">#    num_individuals = self.max_individual_in_group</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_individual_in_group</span><span class="p">:</span>
+                    <span class="n">num_individuals</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">num_individuals</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_individual_in_group</span><span class="p">)</span>
+
+                <span class="n">total</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">amount_per_individual_in_group</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_individuals</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">total</span>
+
+<div class="viewcode-block" id="DefaultCashEntitlementManager.validate_entitlements"><a class="viewcode-back" href="../../../../../../programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.validate_entitlements">[docs]</a>    <span class="k">def</span> <span class="nf">validate_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">cycle_memberships</span><span class="p">):</span>
+        <span class="c1"># TODO: Change the status of the entitlements to `validated` for this members.</span>
+        <span class="c1"># move the funds from the program&#39;s wallet to the wallet of each Beneficiary that are validated</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="DefaultCashEntitlementManager.approve_entitlements"><a class="viewcode-back" href="../../../../../../programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.approve_entitlements">[docs]</a>    <span class="k">def</span> <span class="nf">approve_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entitlements</span><span class="p">):</span>
+        <span class="n">amt</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">state_err</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">sw</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="n">entitlements</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">rec</span><span class="o">.</span><span class="n">state</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;draft&quot;</span><span class="p">,</span> <span class="s2">&quot;pending_validation&quot;</span><span class="p">):</span>
+                <span class="n">fund_balance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_fund_balance</span><span class="p">(</span><span class="n">rec</span><span class="o">.</span><span class="n">cycle_id</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="o">-</span> <span class="n">amt</span>
+                <span class="k">if</span> <span class="n">fund_balance</span> <span class="o">&gt;=</span> <span class="n">rec</span><span class="o">.</span><span class="n">initial_amount</span><span class="p">:</span>
+                    <span class="n">amt</span> <span class="o">+=</span> <span class="n">rec</span><span class="o">.</span><span class="n">initial_amount</span>
+                    <span class="c1"># Prepare journal entry (account.move) via account.payment</span>
+                    <span class="n">amount</span> <span class="o">=</span> <span class="n">rec</span><span class="o">.</span><span class="n">initial_amount</span>
+                    <span class="n">new_service_fee</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="k">if</span> <span class="n">rec</span><span class="o">.</span><span class="n">transfer_fee</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+                        <span class="n">amount</span> <span class="o">-=</span> <span class="n">rec</span><span class="o">.</span><span class="n">transfer_fee</span>
+                        <span class="c1"># Incurred Fees (transfer fees)</span>
+                        <span class="n">payment</span> <span class="o">=</span> <span class="p">{</span>
+                            <span class="s2">&quot;partner_id&quot;</span><span class="p">:</span> <span class="n">rec</span><span class="o">.</span><span class="n">partner_id</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                            <span class="s2">&quot;payment_type&quot;</span><span class="p">:</span> <span class="s2">&quot;outbound&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="n">rec</span><span class="o">.</span><span class="n">transfer_fee</span><span class="p">,</span>
+                            <span class="s2">&quot;currency_id&quot;</span><span class="p">:</span> <span class="n">rec</span><span class="o">.</span><span class="n">journal_id</span><span class="o">.</span><span class="n">currency_id</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                            <span class="s2">&quot;journal_id&quot;</span><span class="p">:</span> <span class="n">rec</span><span class="o">.</span><span class="n">journal_id</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                            <span class="s2">&quot;partner_type&quot;</span><span class="p">:</span> <span class="s2">&quot;supplier&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;Service Fee: Code: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">rec</span><span class="o">.</span><span class="n">code</span><span class="p">,</span>
+                        <span class="p">}</span>
+                        <span class="n">new_service_fee</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;account.payment&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">payment</span><span class="p">)</span>
+
+                    <span class="c1"># Fund Disbursed (amount - transfer fees)</span>
+                    <span class="n">payment</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s2">&quot;partner_id&quot;</span><span class="p">:</span> <span class="n">rec</span><span class="o">.</span><span class="n">partner_id</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                        <span class="s2">&quot;payment_type&quot;</span><span class="p">:</span> <span class="s2">&quot;outbound&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="n">amount</span><span class="p">,</span>
+                        <span class="s2">&quot;currency_id&quot;</span><span class="p">:</span> <span class="n">rec</span><span class="o">.</span><span class="n">journal_id</span><span class="o">.</span><span class="n">currency_id</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                        <span class="s2">&quot;journal_id&quot;</span><span class="p">:</span> <span class="n">rec</span><span class="o">.</span><span class="n">journal_id</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                        <span class="s2">&quot;partner_type&quot;</span><span class="p">:</span> <span class="s2">&quot;supplier&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;Fund disbursed to beneficiary: Code: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">rec</span><span class="o">.</span><span class="n">code</span><span class="p">,</span>
+                    <span class="p">}</span>
+                    <span class="n">new_payment</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;account.payment&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">payment</span><span class="p">)</span>
+
+                    <span class="n">rec</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                        <span class="p">{</span>
+                            <span class="s2">&quot;disbursement_id&quot;</span><span class="p">:</span> <span class="n">new_payment</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                            <span class="s2">&quot;service_fee_disbursement_id&quot;</span><span class="p">:</span> <span class="n">new_service_fee</span>
+                            <span class="ow">and</span> <span class="n">new_service_fee</span><span class="o">.</span><span class="n">id</span>
+                            <span class="ow">or</span> <span class="kc">None</span><span class="p">,</span>
+                            <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;approved&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;date_approved&quot;</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">today</span><span class="p">(),</span>
+                        <span class="p">}</span>
+                    <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">UserError</span><span class="p">(</span>
+                        <span class="n">_</span><span class="p">(</span>
+                            <span class="s2">&quot;The fund for the program: </span><span class="si">%(program)s</span><span class="s2"> [</span><span class="si">%(fund).2f</span><span class="s2">] &quot;</span>
+                            <span class="o">+</span> <span class="s2">&quot;is insufficient for the entitlement: </span><span class="si">%(entitlement)s</span><span class="s2">&quot;</span>
+                        <span class="p">)</span>
+                        <span class="o">%</span> <span class="p">{</span>
+                            <span class="s2">&quot;program&quot;</span><span class="p">:</span> <span class="n">rec</span><span class="o">.</span><span class="n">cycle_id</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                            <span class="s2">&quot;fund&quot;</span><span class="p">:</span> <span class="n">fund_balance</span><span class="p">,</span>
+                            <span class="s2">&quot;entitlement&quot;</span><span class="p">:</span> <span class="n">rec</span><span class="o">.</span><span class="n">code</span><span class="p">,</span>
+                        <span class="p">}</span>
+                    <span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">state_err</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">sw</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">sw</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="n">message</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span>
+                        <span class="s2">&quot;Entitlement State Error! Entitlements not in &#39;pending validation&#39; state:</span><span class="se">\n</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+                <span class="n">message</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Program: </span><span class="si">%(prg)s</span><span class="s2">, Beneficiary: </span><span class="si">%(partner)s</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">%</span> <span class="p">{</span>
+                    <span class="s2">&quot;prg&quot;</span><span class="p">:</span> <span class="n">rec</span><span class="o">.</span><span class="n">cycle_id</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                    <span class="s2">&quot;partner&quot;</span><span class="p">:</span> <span class="n">rec</span><span class="o">.</span><span class="n">partner_id</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="p">}</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="n">state_err</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DefaultCashEntitlementManager.open_entitlements_form"><a class="viewcode-back" href="../../../../../../programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.open_entitlements_form">[docs]</a>    <span class="k">def</span> <span class="nf">open_entitlements_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ensure_one</span><span class="p">()</span>
+        <span class="n">action</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Cycle Entitlements&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ir.actions.act_window&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;res_model&quot;</span><span class="p">:</span> <span class="s2">&quot;g2p.entitlement&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;context&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;create&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="s2">&quot;default_cycle_id&quot;</span><span class="p">:</span> <span class="n">cycle</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="c1"># &quot;search_default_approved_state&quot;: 1,</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;view_mode&quot;</span><span class="p">:</span> <span class="s2">&quot;list,form&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;views&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="s2">&quot;g2p_programs.view_entitlement_tree&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s2">&quot;tree&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="s2">&quot;g2p_programs.view_entitlement_form&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s2">&quot;form&quot;</span><span class="p">],</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;domain&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="s2">&quot;cycle_id&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">cycle</span><span class="o">.</span><span class="n">id</span><span class="p">)],</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">action</span></div>
+
+<div class="viewcode-block" id="DefaultCashEntitlementManager.open_entitlement_form"><a class="viewcode-back" href="../../../../../../programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.open_entitlement_form">[docs]</a>    <span class="k">def</span> <span class="nf">open_entitlement_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rec</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Entitlement&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;view_mode&quot;</span><span class="p">:</span> <span class="s2">&quot;form&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;res_model&quot;</span><span class="p">:</span> <span class="s2">&quot;g2p.entitlement&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;res_id&quot;</span><span class="p">:</span> <span class="n">rec</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="s2">&quot;view_id&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="s2">&quot;g2p_programs.view_entitlement_form&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ir.actions.act_window&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;new&quot;</span><span class="p">,</span>
+        <span class="p">}</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 OpenSPP.org Licensed under CC BY 4.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> OpenSPP</span>
+    v: latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <!--    <dl>-->
+    <!--      <dt>Versions</dt>-->
+    <!---->
+    <!--      <dd><a href="#">latest</a></dd>-->
+    <!--      <dd><a href="#">1.0</a></dd>-->
+    <!--      <dd><a href="#">1.1</a></dd>-->
+    <!---->
+    <!--    </dl>-->
+    <!--    <dl>-->
+    <!--      <dt>Downloads</dt>-->
+    <!--      <dd><a href="#">PDF</a></dd>-->
+    <!--      <dd><a href="#">ePub</a></dd>-->
+    <!--      <dd><a href="#">HTML</a></dd>-->
+    <!--    </dl>-->
+    <dl>
+      <dt>OpenSPP</dt>
+      <dd>
+        <a href="https://github.com/openspp/documentation/">Project Home</a>
+      </dd>
+      <!-- <dd>
+        <a href="https://github.com/openspp/documentation/releases">Releases</a>
+      </dd> -->
+    </dl>
+    <!--    <dl>-->
+    <!--      <dt>Debug</dt>-->
+    <!--      <dd><a href="#" data-toggle="rst-debug-badge">Swap badge position</a></dd>-->
+    <!--    </dl>-->
+  </div>
+</div>
+
+</body>
+</html>
