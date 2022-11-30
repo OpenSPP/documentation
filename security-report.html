@@ -4,10 +4,10 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; OpenSPP Documentation</title>
+  <title>OpenSPP Vulnerability Disclosure Policy &mdash; OpenSPP Documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="canonical" href="https://docs.openspp.org/installing.html" />
+    <link rel="canonical" href="https://docs.openspp.org/security-report.html" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -19,9 +19,7 @@
         <script src="_static/debug.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Architecture" href="architecture.html" />
-    <link rel="prev" title="OpenSPP - Social Protection Platform" href="index.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,20 +41,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installing-using-docker-for-development">Installing using Docker for development</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#quick-start">Quick start</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#installing-for-production">Installing for production</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#using-openspp-cloud-recommended">Using OpenSPP Cloud (recommended)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#using-docker">Using Docker</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#installing-on-amazon-ec2">Installing on Amazon EC2</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
@@ -108,9 +93,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Installation</li>
+      <li class="breadcrumb-item active">OpenSPP Vulnerability Disclosure Policy</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/openspp-project/documentation/blob/main/docs/installing.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/openspp-project/documentation/blob/main/docs/security-report.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -118,68 +103,73 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h1>
-<section id="installing-using-docker-for-development">
-<h2>Installing using Docker for development<a class="headerlink" href="#installing-using-docker-for-development" title="Permalink to this headline"></a></h2>
-<section id="quick-start">
-<h3>Quick start<a class="headerlink" href="#quick-start" title="Permalink to this headline"></a></h3>
-<p>You need to have Docker and docker-compose installed on your system. You also need to have Python installed
-and pip packages <code class="docutils literal notranslate"><span class="pre">invoke</span></code> and <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone git@github.com:openspp-project/openspp-docker.git
-$ invoke develop img-pull img-build git-aggregate resetdb start
-</pre></div>
-</div>
-<p>Then open <code class="docutils literal notranslate"><span class="pre">http://localhost:15069/</span></code> in your browser.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="openspp-vulnerability-disclosure-policy">
+<h1>OpenSPP Vulnerability Disclosure Policy<a class="headerlink" href="#openspp-vulnerability-disclosure-policy" title="Permalink to this headline"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>OpenSPP welcomes feedback from security researchers and the general public to help improve our security. If you believe you have discovered a vulnerability, privacy issue, exposed data, or other security issues in any of our assets, we want to hear from you. This policy outlines steps for reporting vulnerabilities to us, what we expect, what you can expect from us.</p>
 </section>
+<section id="systems-in-scope">
+<h2>Systems in Scope<a class="headerlink" href="#systems-in-scope" title="Permalink to this headline"></a></h2>
+<p>This policy applies to any digital assets owned, operated, or maintained by OpenSPP.</p>
 </section>
-<section id="installing-for-production">
-<h2>Installing for production<a class="headerlink" href="#installing-for-production" title="Permalink to this headline"></a></h2>
-<section id="using-openspp-cloud-recommended">
-<h3>Using OpenSPP Cloud (recommended)<a class="headerlink" href="#using-openspp-cloud-recommended" title="Permalink to this headline"></a></h3>
-<p>The easiest way to get a OpenSPP server is by using OpenSPP’s Cloud.</p>
-<p>OpenSPP Cloud provides fast OpenSPP servers with regular feature updates, automatic security patches, daily
-backups, uptime management, enterprise security, and guaranteed support on any issues.</p>
-<p>By choosing OpenSPP Cloud, you are also directly supporting future development on OpenSPP and helping make it
-better for everyone.</p>
+<section id="out-of-scope">
+<h2>Out of Scope<a class="headerlink" href="#out-of-scope" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Assets or other equipment not owned by parties participating in this policy.</p></li>
+</ul>
+<p>Vulnerabilities discovered or suspected in out-of-scope systems should be reported to the appropriate vendor or applicable authority.</p>
 </section>
-<section id="using-docker">
-<h3>Using Docker<a class="headerlink" href="#using-docker" title="Permalink to this headline"></a></h3>
-<p>TODO</p>
+<section id="our-commitments">
+<h2>Our Commitments<a class="headerlink" href="#our-commitments" title="Permalink to this headline"></a></h2>
+<p>When working with us, according to this policy, you can expect us to:</p>
+<ul class="simple">
+<li><p>Respond to your report promptly, and work with you to understand and validate your report;</p></li>
+<li><p>Strive to keep you informed about the progress of a vulnerability as it is processed;</p></li>
+<li><p>Work to remediate discovered vulnerabilities in a timely manner, within our operational constraints; and</p></li>
+<li><p>Extend Safe Harbor for your vulnerability research that is related to this policy.</p></li>
+</ul>
 </section>
-<section id="installing-on-amazon-ec2">
-<h3>Installing on Amazon EC2<a class="headerlink" href="#installing-on-amazon-ec2" title="Permalink to this headline"></a></h3>
-<p>Amazon Web Services (AWS) is one of the many other options for installing OpenSPP. It’s a good idea to read
-through the Docker instructions, as many of the steps remain the same or similar.</p>
-<p>To obtain a server you will need to first <code class="docutils literal notranslate"><span class="pre">create</span> <span class="pre">an</span> <span class="pre">AWS</span> <span class="pre">account</span> <span class="pre">&lt;https://aws.amazon.com/&gt;</span></code>. When launching
-your instance, select the Ubuntu Server 20.04 LTS AMI in step 1. The <code class="docutils literal notranslate"><span class="pre">t2.micro</span></code> instance type has the 1GB of
-memory recommended for if you don’t expect many registrants and you don’t expect many large activities.</p>
-<p>When adjusting the security settings open up the ports for SSH, HTTP, and HTTPS. Once you have launched your
-instance, go to the Elastic IPs menu option under Network &amp; Security, then allocate a new address and
-associate it with your server in order to keep the IP address for your server consistent.</p>
-<p>Before installing OpenSPP on your server, you need to install Docker and Docker Compose. Follow the
-instructions below.</p>
-<ol class="arabic simple">
-<li><p>Install Docker Engine on <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Ubuntu</a>.</p></li>
-<li><p>Install <a class="reference external" href="https://docs.docker.com/compose/install/">Docker Compose</a>.</p></li>
-</ol>
-<p>After installing Docker and Docker Compose you can follow our DigitalOcean instructions from running:</p>
-<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/openspp/openspp-docker.git</span></code></p>
-<p>Continue with the Docker instructions.</p>
-<p>Finally, configure an e-mail service such as
-<a class="reference external" href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-smtp.html">Amazon SES</a> because Amazon
-restricts emails sent from EC2.</p>
+<section id="our-expectations">
+<h2>Our Expectations<a class="headerlink" href="#our-expectations" title="Permalink to this headline"></a></h2>
+<p>In participating in our vulnerability disclosure program in good faith, we ask that you:</p>
+<ul class="simple">
+<li><p>Play by the rules, including following this policy and any other relevant agreements. If there is any inconsistency between this policy and any other applicable terms, the terms of this policy will prevail;</p></li>
+<li><p>Report any vulnerability you’ve discovered promptly;</p></li>
+<li><p>Avoid violating the privacy of others, disrupting our systems, destroying data, and/or harming user experience;</p></li>
+<li><p>Use only the Official Channels to discuss vulnerability information with us;</p></li>
+<li><p>Provide us a reasonable amount of time (at least 120 days from the initial report) to resolve the issue before you disclose it publicly;</p></li>
+<li><p>Perform testing only on in-scope systems, and respect systems and activities which are out-of-scope;</p></li>
+<li><p>If a vulnerability provides unintended access to data: Limit the amount of data you access to the minimum required for effectively demonstrating a Proof of Concept; and cease testing and submit a report immediately if you encounter any user data during testing, such as Personally Identifiable Information (PII), Personal Healthcare Information (PHI), credit card data, or proprietary information;</p></li>
+<li><p>You should only interact with test accounts you own or with explicit permission from the account holder; and</p></li>
+<li><p>Do not engage in extortion.</p></li>
+</ul>
 </section>
+<section id="official-channels">
+<h2>Official Channels<a class="headerlink" href="#official-channels" title="Permalink to this headline"></a></h2>
+<p>Please report security issues via email: disclosure&#64;openspp.org, providing all relevant information. The more details you provide, the easier it will be for us to triage and fix the issue.</p>
+</section>
+<section id="safe-harbor">
+<h2>Safe Harbor<a class="headerlink" href="#safe-harbor" title="Permalink to this headline"></a></h2>
+<p>When conducting vulnerability research, according to this policy, we consider this research conducted under this policy to be:</p>
+<ul class="simple">
+<li><p>Authorized concerning any applicable anti-hacking laws, and we will not initiate or support legal action against you for accidental, good-faith violations of this policy;</p></li>
+<li><p>Authorized concerning any relevant anti-circumvention laws, and we will not bring a claim against you for circumvention of technology controls;</p></li>
+<li><p>Exempt from restrictions in our Terms of Service (TOS) and/or Acceptable Usage Policy (AUP) that would interfere with conducting security research, and we waive those restrictions on a limited basis; and</p></li>
+<li><p>Lawful, helpful to the overall security of the Internet, and conducted in good faith.</p></li>
+</ul>
+<p>You are expected, as always, to comply with all applicable laws. If legal action is initiated by a third party against you and you have complied with this policy, we will take steps to make it known that your actions were conducted in compliance with this policy.</p>
+<p>If at any time you have concerns or are uncertain whether your security research is consistent with this policy, please submit a report through one of our Official Channels before going any further.</p>
+<blockquote>
+<div><p>Note that the Safe Harbor applies only to legal claims under the control of the organization participating in this policy, and that the policy does not bind independent third parties.</p>
+</div></blockquote>
 </section>
 </section>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="OpenSPP - Social Protection Platform" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="architecture.html" class="btn btn-neutral float-right" title="Architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
