@@ -118,3 +118,13 @@ Development
     using/managing_users
     using/oidc
     using/audit_logs
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Community
+    :hidden:
+
+    contribution/module_lifecycle_development_status
+    contribution/module_lifecycle_maintainer_role
+    code_of_conduct
+    security-report
