@@ -12,9 +12,9 @@ development version and by reporting any bugs you might encounter.
   [Issues](https://github.com/openspp/documentation/issues).
 
 - If you're unable to find an open issue addressing the problem,
-  [open a new one](https://github.com/openspp/documentation/issues/new). Be sure to include a **title
-  and clear description**, as much relevant information as possible demonstrating the expected behavior that
-  is not occurring.
+  [open a new one](https://github.com/openspp/documentation/issues/new). Be sure to include a **title and
+  clear description**, as much relevant information as possible demonstrating the expected behavior that is
+  not occurring.
 
 #### **Did you write a patch that fixes a bug?**
 

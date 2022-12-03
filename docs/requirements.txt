@@ -1,3 +1,4 @@
+pre-commit
 sphinx>=3.0
 autodocsumm>=0.2.9
 sphinxcontrib-httpdomain

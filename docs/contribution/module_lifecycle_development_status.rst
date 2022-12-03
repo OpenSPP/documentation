@@ -180,4 +180,3 @@ Mature modules:
 
    .. note::
       This document is based on the OCA module maturity levels https://github.com/OCA/odoo-community.org/blob/master/website/Contribution/oca_module_lifecycle_development_status.rst
-

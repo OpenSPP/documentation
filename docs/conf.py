@@ -139,6 +139,7 @@ def setup(app):
         ],
     )
 
+
 # import odoo
 autodoc_mock_imports = ["odoo.addons.phone_validation"]
 # autodoc_default_options = {
