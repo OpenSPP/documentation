@@ -18,9 +18,16 @@ issues or our `Website <https://openspp.org/>`_.
 Building the documentation
 ==========================
 
+It is recommended that you use a virtual environment to build the documentation. This will allow you to install
+the required dependencies without affecting your system.
+
+Python 3.10 should be used to build the documentation. You can install it using your package manager or by
+following the instructions on the `pyenv GitHub page <https://github.com/pyenv/pyenv>`_.
+
 ::
 
   cd docs
   pip install -r requirements.txt
   make html
 
+::
