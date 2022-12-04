@@ -2,7 +2,7 @@
 Changelog
 *********
 
-0.1
-=====
+0.1 - ongoing development
+==========================
 
-* Start keeping changelog :)
+* First release is currently in development.

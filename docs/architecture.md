@@ -28,10 +28,11 @@
 The OpenSPP platform can work as a standalone system or as a part of a larger ecosystem. It needs to be
 interoperable with other government systems.
 
-Every information stored in the platform must have a corresponding API to access that can be used by other
-systems. For example, if you want to integrate OpenSPP with mobile money, you can leverage Payment Hub EE.
-Through a well-defined set of standard interfaces OpenSPP allows for integration of such components and offers
-choice of providers for the same.
+Every piece of information stored in the platform must have a corresponding API to access it, so that it can
+be used by other systems. For example, if you want to integrate OpenSPP with mobile money, you can leverage
+[Payment Hub EE](https://mifos.gitbook.io/docs/payment-hub-ee/business-overview). Through a well-defined set
+of standard interfaces OpenSPP allows for integration of such components and offers choice of providers for
+the same.
 
 So, key parameters are:
 
@@ -48,8 +49,6 @@ specific requirements. Some of the examples of configurability are:
 - Be able to configure the attributes of the beneficiaries.
 - Be able to define the criteria used to determine the beneficiaries.
 - Be able to define how entitlement is calculated
--
-- ...
 
 ### Extensibility
 
@@ -57,12 +56,13 @@ OpenSPP should be flexible to extend functionality on top of the basic platform.
 extensibility are:
 
 - Ability to add a grievance system
-- Ability to use third party solutions such as MOSIP to store part of the information of registrants
+- Ability to use third party solutions such as [MOSIP](https://mosip.io/) to store part of the information of
+  registrants
 - Ability to Integrate data from other systems
 
 ### Modularity
 
-All components in OpenSPP should be extensible and their features exposed via interfaces such that the
+All components of OpenSPP should be extensible and their features exposed via interfaces such that the
 implementation behind the interface can be changed without affecting other modules. Some examples of
 modularity are:
 
@@ -70,7 +70,7 @@ modularity are:
 - Calculation of entitlement
 - Deduplication of beneficiaries
 
-## Modular Architecture
+## Modular architecture
 
 OpenSPP is designed to be used standalone with just the core functionalities or with other components.
 

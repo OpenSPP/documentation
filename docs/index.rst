@@ -12,7 +12,7 @@ It can be used on its own or in conjunction with other services.
 `OpenSPP` is based on an open-source ERP called `Odoo 15.0 <https://odoo.com/documentation/15.0/>`_. It allows
 the project to take advantage of a vast ecosystem of existing integrations and modules.
 
-`OpenSPP` is currently in development, and everything is evolving rapidly as a result of our users' comments.
+`OpenSPP` is currently in development, and everything is evolving rapidly thanks to the input provided by our users.
 If you have any questions or needs, please do not hesitate to contact the team through Github
 issues or our `Website <https://openspp.org/>`_.
 

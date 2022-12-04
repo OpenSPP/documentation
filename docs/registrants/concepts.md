@@ -93,11 +93,11 @@ For example:
 
 ## ID Documents
 
-Registrants can have one or more ID Document.
+Registrants can have one or more ID Documents.
 
 ![](images/registrant_ids.png)
 
 The system does not enforce uniqueness of Document ID by default. If uniqueness is required, deduplication
 should be performed.
 
-ID Document types can be configured by an admin.
+ID Document types can be configured by an administrator.
