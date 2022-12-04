@@ -2,7 +2,6 @@
 
 ## Principles
 
-
 - OpenSPP must follow **platform based approach** so that all common features can be configured or the
   functionality can be extended by other parties.
 - OpenSPP must **not use proprietary** or commercial license frameworks. Where deemed essential, such
@@ -11,8 +10,8 @@
   lock-in)
 - OpenSPP must use **commodity computing** hardware & software to build the platform
 - OpenSPP must be **simple to deploy and use**
-- OpenSPP must be able to **work for small projects** with few thousand beneficiaries up to  large ones with tens
-  of millions of beneficiaries
+- OpenSPP must be able to **work for small projects** with few thousand beneficiaries up to large ones with
+  tens of millions of beneficiaries
 - Data must be **encrypted** in-flight and at-rest. All requests must be authenticated and authorized. Privacy
   of Identity Data is an absolute must in OpenSPP
 - OpenSPP must follow the following manageability principles:
@@ -29,10 +28,11 @@
 The OpenSPP platform can work as a standalone system or as a part of a larger ecosystem. It needs to be
 interoperable with other government systems.
 
-Every information stored in the platform must have a corresponding API to access that can be used by other
-systems. For example, if you want to integrate OpenSPP with mobile money, you can leverage Payment Hub EE.
-Through a well-defined set of standard interfaces OpenSPP allows for integration of such components and offers
-choice of providers for the same.
+Every piece of information stored in the platform must have a corresponding API to access it, so that it can
+be used by other systems. For example, if you want to integrate OpenSPP with mobile money, you can leverage
+[Payment Hub EE](https://mifos.gitbook.io/docs/payment-hub-ee/business-overview). Through a well-defined set
+of standard interfaces OpenSPP allows for integration of such components and offers choice of providers for
+the same.
 
 So, key parameters are:
 
@@ -49,8 +49,6 @@ specific requirements. Some of the examples of configurability are:
 - Be able to configure the attributes of the beneficiaries.
 - Be able to define the criteria used to determine the beneficiaries.
 - Be able to define how entitlement is calculated
--
-- ...
 
 ### Extensibility
 
@@ -58,12 +56,13 @@ OpenSPP should be flexible to extend functionality on top of the basic platform.
 extensibility are:
 
 - Ability to add a grievance system
-- Ability to use third party solutions such as MOSIP to store part of the information of registrants
+- Ability to use third party solutions such as [MOSIP](https://mosip.io/) to store part of the information of
+  registrants
 - Ability to Integrate data from other systems
 
 ### Modularity
 
-All components in OpenSPP should be extensible and their features exposed via interfaces such that the
+All components of OpenSPP should be extensible and their features exposed via interfaces such that the
 implementation behind the interface can be changed without affecting other modules. Some examples of
 modularity are:
 
@@ -71,7 +70,7 @@ modularity are:
 - Calculation of entitlement
 - Deduplication of beneficiaries
 
-## Modular Architecture
+## Modular architecture
 
 OpenSPP is designed to be used standalone with just the core functionalities or with other components.
 
@@ -106,5 +105,5 @@ to the thousands of applications available in the [Odoo App Store](https://apps.
 
 ![OpenSPP Hosting](images/openspp_hosting.png)
 
-
-> Principles are inspired by [MOSIP's principles](https://docs.mosip.io/1.1.5/architecture/architecture-principles)
+> Principles are inspired by
+> [MOSIP's principles](https://docs.mosip.io/1.1.5/architecture/architecture-principles)

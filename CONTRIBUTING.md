@@ -5,16 +5,16 @@ development version and by reporting any bugs you might encounter.
 
 #### **Did you find a bug?**
 
-- **Do not open up a GitHub issue if the bug is a security vulnerability in OpenSPP**, and instead contact
-  directly the maintainers of the project by email: jeremi@openspp.org.
+- **Do not open up a GitHub issue if the bug is a security vulnerability in OpenSPP**, and instead follow the
+  [security disclosure policy](docs/security-report).
 
 - **Ensure the bug was not already reported** by searching on GitHub under
   [Issues](https://github.com/openspp/documentation/issues).
 
 - If you're unable to find an open issue addressing the problem,
-  [open a new one](https://github.com/openspp/documentation/issues/new). Be sure to include a **title
-  and clear description**, as much relevant information as possible demonstrating the expected behavior that
-  is not occurring.
+  [open a new one](https://github.com/openspp/documentation/issues/new). Be sure to include a **title and
+  clear description**, as much relevant information as possible demonstrating the expected behavior that is
+  not occurring.
 
 #### **Did you write a patch that fixes a bug?**
 
@@ -25,7 +25,7 @@ development version and by reporting any bugs you might encounter.
 
 <!-- #### **Do you have questions about the source code?**
 
-- Ask any question about how to use Newlogic G2P in the
-  [Discussions](https://github.com/newlogic/newlogic-g2p/discussions). -->
+- Ask any question about how to use OpenSPP in the
+  [Discussions](https://github.com/openspp/documentation/discussions). -->
 
 Thanks! :heart: :heart: :heart:

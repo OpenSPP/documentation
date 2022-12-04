@@ -4,9 +4,9 @@
 
 ## Programs
 
-Programs, sometimes also called a campaign, define a social program. A program is organizing when, what and
-how beneficiaries receive as entitlements. In itself, a program does not do much, but use various managers to
-define the journey of beneficiaries in a program.
+Programs, sometimes also called a campaign, define a social program. A program is defining when, what and how
+beneficiaries receive entitlements. In itself, a program does not do much. The power comes through the use of
+"managers", which define the journey of beneficiaries in a program.
 
 Currently, few types of programs are supported:
 
@@ -42,15 +42,17 @@ The available managers are:
 
 ## Type of payment instruments
 
-## Cash Transfer
+### Cash Transfer
 
 **STATUS**: Work In Progress.
 
 OpenSPP can generate payment lists that can be shared with a bank to verify or execute transfers.
 
-## Mobile money
+### Mobile money
 
-## Voucher program
+TBD
+
+### Voucher program
 
 OpenSPP can generate nominative vouchers in batches ready to be printed.
 
@@ -65,7 +67,7 @@ We recommend the use of online verification when the voucher is received or the 
 
 ::::
 
-## Voucher for restricted cash programs
+### Voucher for restricted cash programs
 
-Vouchers can be used in conjunction with Odoo POS to provide restricted cash solutions. Merchant can use the
+Vouchers can be used in conjunction with Odoo POS to provide restricted cash solutions. A merchant can use the
 Odoo POS to record what is distributed against a given voucher.

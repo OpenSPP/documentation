@@ -2,9 +2,8 @@
 
 ## configuration
 
-If you are using the [docker-compose setup](https://github.com/openspp/openspp-docker), you already
-have the `auth_oidc` from [OCA](https://github.com/OCA/server-auth) installed, otherwise you will need to
-install it.
+If you are using the [docker-compose setup](https://github.com/openspp/openspp-docker), you already have the
+`auth_oidc` from [OCA](https://github.com/OCA/server-auth) installed, otherwise you will need to install it.
 
 ### Configure Keycloak
 

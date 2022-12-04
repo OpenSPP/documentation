@@ -1,6 +1,6 @@
 # Contributing
 
-This project follows the OpenSPP [Code of Conduct](code_of_conduct). If you are not familiar with our code of
+The project follows the OpenSPP [Code of Conduct](code_of_conduct). If you are not familiar with our code of
 conduct policy, take a minute to read the policy before starting with your first contribution.
 
 Bug reports and code and documentation patches are welcome. You can help this project also by using the
@@ -15,9 +15,9 @@ development version and by reporting any bugs you might encounter.
   [Issues](https://github.com/openspp/documentation/issues).
 
 - If you're unable to find an open issue addressing the problem,
-  [open a new one](https://github.com/openspp/documentation/issues/new). Be sure to include a **title
-  and clear description**, as much relevant information as possible demonstrating the expected behavior that
-  is not occurring.
+  [open a new one](https://github.com/openspp/documentation/issues/new). Be sure to include a **title and
+  clear description**, as much relevant information as possible demonstrating the expected behavior that is
+  not occurring.
 
 ## **Did you write a patch that fixes a bug?**
 
