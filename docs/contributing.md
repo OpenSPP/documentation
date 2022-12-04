@@ -1,6 +1,6 @@
 # Contributing
 
-This project follows the OpenSPP [Code of Conduct](code_of_conduct). If you are not familiar with our code of
+The project follows the OpenSPP [Code of Conduct](code_of_conduct). If you are not familiar with our code of
 conduct policy, take a minute to read the policy before starting with your first contribution.
 
 Bug reports and code and documentation patches are welcome. You can help this project also by using the
