@@ -115,9 +115,16 @@ Development
     :caption: Using
     :hidden:
 
+    using/manging_programs
     using/managing_users
-    using/oidc
-    using/audit_logs
+
+.. toctree::
+    :maxdepth: 2
+    :caption: System Configuration and Administration
+    :hidden:
+
+    config_and_admin/oidc
+    config_and_admin/audit_logs
 
 .. toctree::
     :maxdepth: 2
