@@ -2,7 +2,6 @@
 
 ## Principles
 
-
 - OpenSPP must follow **platform based approach** so that all common features can be configured or the
   functionality can be extended by other parties.
 - OpenSPP must **not use proprietary** or commercial license frameworks. Where deemed essential, such
@@ -11,8 +10,8 @@
   lock-in)
 - OpenSPP must use **commodity computing** hardware & software to build the platform
 - OpenSPP must be **simple to deploy and use**
-- OpenSPP must be able to **work for small projects** with few thousand beneficiaries up to  large ones with tens
-  of millions of beneficiaries
+- OpenSPP must be able to **work for small projects** with few thousand beneficiaries up to large ones with
+  tens of millions of beneficiaries
 - Data must be **encrypted** in-flight and at-rest. All requests must be authenticated and authorized. Privacy
   of Identity Data is an absolute must in OpenSPP
 - OpenSPP must follow the following manageability principles:
@@ -106,5 +105,5 @@ to the thousands of applications available in the [Odoo App Store](https://apps.
 
 ![OpenSPP Hosting](images/openspp_hosting.png)
 
-
-> Principles are inspired by [MOSIP's principles](https://docs.mosip.io/1.1.5/architecture/architecture-principles)
+> Principles are inspired by
+> [MOSIP's principles](https://docs.mosip.io/1.1.5/architecture/architecture-principles)
