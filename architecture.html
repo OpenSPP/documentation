@@ -54,7 +54,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#modularity">Modularity</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#modular-architecture">Modular Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#modular-architecture">Modular architecture</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#example-components-for-a-mid-size-project">Example components for a mid-size project</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example-components-for-a-large-project">Example components for a large project</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#hosting">Hosting</a></li>
@@ -162,10 +162,11 @@ has to be integrated for entitlement determination, it should be easy to do so</
 <h3>Ecosystem approach<a class="headerlink" href="#ecosystem-approach" title="Permalink to this headline"></a></h3>
 <p>The OpenSPP platform can work as a standalone system or as a part of a larger ecosystem. It needs to be
 interoperable with other government systems.</p>
-<p>Every information stored in the platform must have a corresponding API to access that can be used by other
-systems. For example, if you want to integrate OpenSPP with mobile money, you can leverage Payment Hub EE.
-Through a well-defined set of standard interfaces OpenSPP allows for integration of such components and offers
-choice of providers for the same.</p>
+<p>Every piece of information stored in the platform must have a corresponding API to access it, so that it can
+be used by other systems. For example, if you want to integrate OpenSPP with mobile money, you can leverage
+<a class="reference external" href="https://mifos.gitbook.io/docs/payment-hub-ee/business-overview">Payment Hub EE</a>. Through a well-defined set
+of standard interfaces OpenSPP allows for integration of such components and offers choice of providers for
+the same.</p>
 <p>So, key parameters are:</p>
 <ul class="simple">
 <li><p>All public/external facing interfaces of OpenSPP must be standards-based for interoperability whenever
@@ -182,8 +183,6 @@ specific requirements. Some of the examples of configurability are:</p>
 <li><p>Be able to configure the attributes of the beneficiaries.</p></li>
 <li><p>Be able to define the criteria used to determine the beneficiaries.</p></li>
 <li><p>Be able to define how entitlement is calculated</p></li>
-<li></li>
-<li><p>…</p></li>
 </ul>
 </section>
 <section id="extensibility">
@@ -192,13 +191,14 @@ specific requirements. Some of the examples of configurability are:</p>
 extensibility are:</p>
 <ul class="simple">
 <li><p>Ability to add a grievance system</p></li>
-<li><p>Ability to use third party solutions such as MOSIP to store part of the information of registrants</p></li>
+<li><p>Ability to use third party solutions such as <a class="reference external" href="https://mosip.io/">MOSIP</a> to store part of the information of
+registrants</p></li>
 <li><p>Ability to Integrate data from other systems</p></li>
 </ul>
 </section>
 <section id="modularity">
 <h3>Modularity<a class="headerlink" href="#modularity" title="Permalink to this headline"></a></h3>
-<p>All components in OpenSPP should be extensible and their features exposed via interfaces such that the
+<p>All components of OpenSPP should be extensible and their features exposed via interfaces such that the
 implementation behind the interface can be changed without affecting other modules. Some examples of
 modularity are:</p>
 <ul class="simple">
@@ -209,7 +209,7 @@ modularity are:</p>
 </section>
 </section>
 <section id="modular-architecture">
-<h2>Modular Architecture<a class="headerlink" href="#modular-architecture" title="Permalink to this headline"></a></h2>
+<h2>Modular architecture<a class="headerlink" href="#modular-architecture" title="Permalink to this headline"></a></h2>
 <p>OpenSPP is designed to be used standalone with just the core functionalities or with other components.</p>
 <p>The previous diagram shows the core components of OpenSPP. Those components provide APIs that allow you to
 replace the default implementation with your own.</p>

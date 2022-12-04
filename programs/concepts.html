@@ -68,11 +68,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#cycle">Cycle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#beneficiary">Beneficiary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#managers">Managers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#type-of-payment-instruments">Type of payment instruments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cash-transfer">Cash Transfer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mobile-money">Mobile money</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#voucher-program">Voucher program</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#voucher-for-restricted-cash-programs">Voucher for restricted cash programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#type-of-payment-instruments">Type of payment instruments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cash-transfer">Cash Transfer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mobile-money">Mobile money</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#voucher-program">Voucher program</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#voucher-for-restricted-cash-programs">Voucher for restricted cash programs</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dashboards.html">Dashboards</a></li>
@@ -130,9 +132,9 @@
 <p><img alt="OpenSPP Overview" src="../_images/openspp_overview.png" /></p>
 <section id="programs">
 <h2>Programs<a class="headerlink" href="#programs" title="Permalink to this headline"></a></h2>
-<p>Programs, sometimes also called a campaign, define a social program. A program is organizing when, what and
-how beneficiaries receive as entitlements. In itself, a program does not do much, but use various managers to
-define the journey of beneficiaries in a program.</p>
+<p>Programs, sometimes also called a campaign, define a social program. A program is defining when, what and how
+beneficiaries receive entitlements. In itself, a program does not do much. The power comes through the use of
+“managers”, which define the journey of beneficiaries in a program.</p>
 <p>Currently, few types of programs are supported:</p>
 <ul class="simple">
 <li><p>Cash transfer</p></li>
@@ -167,17 +169,17 @@ easily add your managers if those do not fit your needs.</p>
 </section>
 <section id="type-of-payment-instruments">
 <h2>Type of payment instruments<a class="headerlink" href="#type-of-payment-instruments" title="Permalink to this headline"></a></h2>
-</section>
 <section id="cash-transfer">
-<h2>Cash Transfer<a class="headerlink" href="#cash-transfer" title="Permalink to this headline"></a></h2>
+<h3>Cash Transfer<a class="headerlink" href="#cash-transfer" title="Permalink to this headline"></a></h3>
 <p><strong>STATUS</strong>: Work In Progress.</p>
 <p>OpenSPP can generate payment lists that can be shared with a bank to verify or execute transfers.</p>
 </section>
 <section id="mobile-money">
-<h2>Mobile money<a class="headerlink" href="#mobile-money" title="Permalink to this headline"></a></h2>
+<h3>Mobile money<a class="headerlink" href="#mobile-money" title="Permalink to this headline"></a></h3>
+<p>TBD</p>
 </section>
 <section id="voucher-program">
-<h2>Voucher program<a class="headerlink" href="#voucher-program" title="Permalink to this headline"></a></h2>
+<h3>Voucher program<a class="headerlink" href="#voucher-program" title="Permalink to this headline"></a></h3>
 <p>OpenSPP can generate nominative vouchers in batches ready to be printed.</p>
 <p>The design of the vouchers can be customized by updating the voucher template.</p>
 <div class="admonition important">
@@ -188,9 +190,10 @@ you should think about what security features you need to implement to avoid hav
 </div>
 </section>
 <section id="voucher-for-restricted-cash-programs">
-<h2>Voucher for restricted cash programs<a class="headerlink" href="#voucher-for-restricted-cash-programs" title="Permalink to this headline"></a></h2>
-<p>Vouchers can be used in conjunction with Odoo POS to provide restricted cash solutions. Merchant can use the
+<h3>Voucher for restricted cash programs<a class="headerlink" href="#voucher-for-restricted-cash-programs" title="Permalink to this headline"></a></h3>
+<p>Vouchers can be used in conjunction with Odoo POS to provide restricted cash solutions. A merchant can use the
 Odoo POS to record what is distributed against a given voucher.</p>
+</section>
 </section>
 </section>
 
