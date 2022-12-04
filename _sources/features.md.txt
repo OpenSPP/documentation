@@ -64,7 +64,7 @@
 
 ## Management and Security
 
-- Fine grained access right customization
+- Fine-grained access right customization
 - Multi-tenant
 - Audit log of agent's activity
 - OpenID Connect
