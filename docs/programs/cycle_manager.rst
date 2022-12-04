@@ -10,6 +10,7 @@ in most of the cases.
 
 
 .. autoclass:: BaseCycleManager
+    :no-members: create
     :members:
 
 .. autoclass:: DefaultCycleManager

@@ -29,6 +29,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.viewcode",
     "sphinx.ext.githubpages",
+    "sphinx.ext.graphviz",
     "sphinxcontrib.httpdomain",
     "sphinx_rtd_theme",
     "myst_parser",
