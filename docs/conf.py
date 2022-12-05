@@ -18,8 +18,8 @@ version = "2.0-dev"
 # release = theme_version_full
 author = "OpenSPP.org"
 # copyright = author
-copyright = (
-    "2022 OpenSPP.org Licensed under CC BY 4.0"  # pylint: disable=redefined-builtin
+copyright = (  # pylint: disable=redefined-builtin
+    "2022 OpenSPP.org Licensed under CC BY 4.0"
 )
 language = "en"
 
@@ -75,6 +75,7 @@ html_title = "OpenSPP Documentation"
 html_theme_options = {
     "logo_only": False,
     "navigation_depth": 5,
+    "style_external_links": True,
 }
 html_context = {
     "display_github": True,

@@ -1,12 +1,15 @@
-## Contributing to OpenSPP
+# Contributing to OpenSPP
+
+The project follows the OpenSPP [Code of Conduct](CODE_OF_CONDUCT.md). If you are not familiar with our code
+of conduct policy, take a minute to read the policy before starting with your first contribution.
 
 Bug reports and code and documentation patches are welcome. You can help this project also by using the
 development version and by reporting any bugs you might encounter.
 
-#### **Did you find a bug?**
+## **Did you find a bug?**
 
 - **Do not open up a GitHub issue if the bug is a security vulnerability in OpenSPP**, and instead follow the
-  [security disclosure policy](docs/security-report).
+  [security disclosure policy](docs/security-report.md).
 
 - **Ensure the bug was not already reported** by searching on GitHub under
   [Issues](https://github.com/openspp/documentation/issues).
@@ -16,7 +19,7 @@ development version and by reporting any bugs you might encounter.
   clear description**, as much relevant information as possible demonstrating the expected behavior that is
   not occurring.
 
-#### **Did you write a patch that fixes a bug?**
+## **Did you write a patch that fixes a bug?**
 
 - Open a new GitHub pull request with the patch.
 

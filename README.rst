@@ -7,12 +7,12 @@ It can be used on its own or in conjunction with other services.
 .. image:: docs/programs/images/openspp_overview.png
   :alt: OpenSPP overview
 
-`OpenSPP` is based on an open-source ERP called `Odoo 15.0 <https://odoo.com/documentation/15.0/>`_. It allows
+`OpenSPP` is based on an open-source `ERP <https://en.wikipedia.org/wiki/Enterprise_resource_planning>`_ called `Odoo 15.0 <https://odoo.com/documentation/15.0/>`_. It allows
 the project to take advantage of a vast ecosystem of existing integrations and modules.
 
 `OpenSPP` is currently in development, and everything is evolving rapidly as a result of our users' comments.
 If you have any questions or needs, please do not hesitate to contact the team through Github
-issues or our `Website <https://openspp.org/>`_.
+issues or the `OpenSPP website <https://openspp.org/>`_.
 
 
 Building the documentation
@@ -31,3 +31,19 @@ following the instructions on the `pyenv GitHub page <https://github.com/pyenv/p
   make html
 
 ::
+
+Contributing to the documentation
+=================================
+
+If you want to contribute to the documentation, you can do so by following the steps below:
+
+- Fork the repository
+- Create a virtual environment and install the dependencies as described in the previous section.
+- Set up pre-commit hooks to ensure that your code is compliant with the project's standards.
+  ::
+
+    pre-commit install
+
+- Create a new branch
+- Make your changes and commit them to your branch
+- Submit a pull request
