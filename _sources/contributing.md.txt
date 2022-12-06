@@ -31,4 +31,32 @@ development version and by reporting any bugs you might encounter.
 - Ask any question about how to use OpenSPP in the
   [Discussions](https://github.com/openspp/documentation/discussions). -->
 
-Thanks!
+## Contributing to the documentation
+
+If you want to contribute to the documentation, you can do so by following the steps below:
+
+- Fork the repository.
+- Create a virtual environment and install the dependencies as described in the next section.
+- Set up pre-commit hooks to ensure that your code is compliant with the project's standards.
+
+  ```
+  pre-commit install
+  ```
+
+- Create a new branch.
+- Make your changes and commit them to your branch.
+- Submit a pull request.
+
+### Building the documentation
+
+It is recommended that you use a virtual environment to build the documentation. This will allow you to
+install the required dependencies without affecting your system.
+
+Python 3.10 should be used to build the documentation. You can install it using your package manager or by
+following the instructions on the [pyenv GitHub page](https://github.com/pyenv/pyenv).
+
+```bash
+cd docs
+pip install -r requirements.txt
+make html
+```

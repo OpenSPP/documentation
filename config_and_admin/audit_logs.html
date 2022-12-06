@@ -7,7 +7,7 @@
   <title>Audit Logs &mdash; OpenSPP Documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="canonical" href="https://docs.openspp.org/using/audit_logs.html" />
+    <link rel="canonical" href="https://docs.openspp.org/config_and_admin/audit_logs.html" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -49,6 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Licensing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 </ul>
 <ul>
@@ -77,8 +78,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../disbursement/index.html">Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Using</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../using/managing_programs.html">Managing Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using/managing_users.html">Managing Users</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">System Configuration and Administration</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="managing_users.html">Managing Users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="oidc.html">Configuring Keycloak for OAuth</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Audit Logs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installing">Installing</a></li>
@@ -104,13 +109,13 @@
       </nav>
 
       <div class="wy-nav-content">
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a></li>
       <li class="breadcrumb-item active">Audit Logs</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/openspp-project/documentation/blob/main/docs/using/audit_logs.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/openspp-project/documentation/blob/main/docs/config_and_admin/audit_logs.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -120,18 +125,19 @@
              
   <section class="tex2jax_ignore mathjax_ignore" id="audit-logs">
 <h1>Audit Logs<a class="headerlink" href="#audit-logs" title="Permalink to this headline"></a></h1>
+<p>The ability to audit the actions performed by users is a key feature of OpenSPP. It allows to track the
+changes made to the system and to the data stored in the system. It is also part of the architecture
+priniciples of OpenSPP.</p>
+<p>We recommend using the <a class="reference external" href="https://apps.odoo.com/apps/modules/15.0/smile_audit/">Audit Trail by Smile</a> module.</p>
 <section id="installing">
 <h2>Installing<a class="headerlink" href="#installing" title="Permalink to this headline"></a></h2>
-<p>The module <code class="docutils literal notranslate"><span class="pre">audit_log</span></code> should be installed in the Odoo system.</p>
+<p>Smile Audit installed using the technical name <code class="docutils literal notranslate"><span class="pre">smile_audit</span></code></p>
 </section>
 <section id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h2>
-<p>TODO</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you activate audit logs for view, it will create a lot of entries in the database as each object viewed
-will be stored individually including for list view.</p>
-</div>
+<p>After installation, the administrator can configure the audit rules required by the specific OpenSPP
+implementation. Detailed configuration instructions are available in the
+<a class="reference external" href="https://apps.odoo.com/apps/modules/15.0/smile_audit/">Smile Audit documentation</a>.</p>
 </section>
 </section>
 

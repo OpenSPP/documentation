@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Glossary" href="glossary.html" />
+    <link rel="next" title="Licensing" href="license.html" />
     <link rel="prev" title="Features" href="features.html" /> 
 </head>
 
@@ -51,8 +51,13 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#did-you-find-a-bug"><strong>Did you find a bug?</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#did-you-write-a-patch-that-fixes-a-bug"><strong>Did you write a patch that fixes a bug?</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributing-to-the-documentation">Contributing to the documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#building-the-documentation">Building the documentation</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">Licensing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 </ul>
 <ul>
@@ -82,9 +87,13 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Using</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="using/managing_programs.html">Managing Programs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using/managing_users.html">Managing Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="using/oidc.html">Configuring Keycloak for OAuth</a></li>
-<li class="toctree-l1"><a class="reference internal" href="using/audit_logs.html">Audit Logs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">System Configuration and Administration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="config_and_admin/oidc.html">Configuring Keycloak for OAuth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config_and_admin/audit_logs.html">Audit Logs</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Community</span></p>
 <ul>
@@ -104,7 +113,7 @@
       </nav>
 
       <div class="wy-nav-content">
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a></li>
@@ -148,7 +157,34 @@ applicable.</p></li>
 
 - Ask any question about how to use OpenSPP in the
   [Discussions](https://github.com/openspp/documentation/discussions). -->
-<p>Thanks!</p>
+</section>
+<section id="contributing-to-the-documentation">
+<h2>Contributing to the documentation<a class="headerlink" href="#contributing-to-the-documentation" title="Permalink to this headline"></a></h2>
+<p>If you want to contribute to the documentation, you can do so by following the steps below:</p>
+<ul>
+<li><p>Fork the repository.</p></li>
+<li><p>Create a virtual environment and install the dependencies as described in the next section.</p></li>
+<li><p>Set up pre-commit hooks to ensure that your code is compliant with the project’s standards.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pre</span><span class="o">-</span><span class="n">commit</span> <span class="n">install</span>
+</pre></div>
+</div>
+</li>
+<li><p>Create a new branch.</p></li>
+<li><p>Make your changes and commit them to your branch.</p></li>
+<li><p>Submit a pull request.</p></li>
+</ul>
+<section id="building-the-documentation">
+<h3>Building the documentation<a class="headerlink" href="#building-the-documentation" title="Permalink to this headline"></a></h3>
+<p>It is recommended that you use a virtual environment to build the documentation. This will allow you to
+install the required dependencies without affecting your system.</p>
+<p>Python 3.10 should be used to build the documentation. You can install it using your package manager or by
+following the instructions on the <a class="reference external" href="https://github.com/pyenv/pyenv">pyenv GitHub page</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> docs
+pip install -r requirements.txt
+make html
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -157,7 +193,7 @@ applicable.</p></li>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="features.html" class="btn btn-neutral float-left" title="Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="glossary.html" class="btn btn-neutral float-right" title="Glossary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="license.html" class="btn btn-neutral float-right" title="Licensing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

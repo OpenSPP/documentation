@@ -7,7 +7,7 @@
   <title>Configuring Keycloak for OAuth &mdash; OpenSPP Documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-    <link rel="canonical" href="https://docs.openspp.org/using/oidc.html" />
+    <link rel="canonical" href="https://docs.openspp.org/config_and_admin/oidc.html" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Audit Logs" href="audit_logs.html" />
-    <link rel="prev" title="Managing Users" href="managing_users.html" /> 
+    <link rel="prev" title="Managing Users" href="../using/managing_users.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,6 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Licensing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 </ul>
 <ul>
@@ -77,10 +78,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../disbursement/index.html">Overview</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Using</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../using/managing_programs.html">Managing Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using/managing_users.html">Managing Users</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">System Configuration and Administration</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="managing_users.html">Managing Users</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Configuring Keycloak for OAuth</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#configuration">configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#configure-keycloak">Configure Keycloak</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#configure-odoo">Configure Odoo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#customizing-the-login-page-optional">Customizing the login page (Optional)</a></li>
@@ -113,13 +118,13 @@
       </nav>
 
       <div class="wy-nav-content">
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a></li>
       <li class="breadcrumb-item active">Configuring Keycloak for OAuth</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/openspp-project/documentation/blob/main/docs/using/oidc.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/openspp-project/documentation/blob/main/docs/config_and_admin/oidc.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -129,10 +134,16 @@
              
   <section class="tex2jax_ignore mathjax_ignore" id="configuring-keycloak-for-oauth">
 <h1>Configuring Keycloak for OAuth<a class="headerlink" href="#configuring-keycloak-for-oauth" title="Permalink to this headline"></a></h1>
+<p>We recommend using Keycloak as the authentication provider for OpenSPP. This allows for a single sign-on
+experience for users and ensures that the authentication mechanism can evolve independently of the systems
+using it, thus ensuring that the authentication mechanism can be secured and act as a shield in front of the
+systems.</p>
+<p>Although other OIDC-compliant providers can be used, we have only tested Keycloak.</p>
 <section id="configuration">
-<h2>configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h2>
-<p>If you are using the <a class="reference external" href="https://github.com/openspp/openspp-docker">docker-compose setup</a>, you already have the
-<code class="docutils literal notranslate"><span class="pre">auth_oidc</span></code> from <a class="reference external" href="https://github.com/OCA/server-auth">OCA</a> installed, otherwise you will need to install it.</p>
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h2>
+<p>If you are using OpenSPP’s <a class="reference external" href="https://github.com/openspp/openspp-docker">docker-compose setup</a>, you already have
+the <code class="docutils literal notranslate"><span class="pre">auth_oidc</span></code> from <a class="reference external" href="https://github.com/OCA/server-auth">OCA</a> installed, otherwise you will need to install
+it.</p>
 <section id="configure-keycloak">
 <h3>Configure Keycloak<a class="headerlink" href="#configure-keycloak" title="Permalink to this headline"></a></h3>
 <ol class="arabic simple">
@@ -140,7 +151,7 @@
 <li><p>Create a new realm (if needed), in our example we use <code class="docutils literal notranslate"><span class="pre">odoo</span></code>.</p></li>
 <li><p>Create a new client, in our example we use <code class="docutils literal notranslate"><span class="pre">odoo</span></code>.</p></li>
 <li><p>Enable <code class="docutils literal notranslate"><span class="pre">standard</span> <span class="pre">flow</span></code> and save.</p></li>
-<li><p>Set the <code class="docutils literal notranslate"><span class="pre">Valid</span> <span class="pre">redirect</span> <span class="pre">URIs</span></code> to be “<url of your server>/auth_oauth/signin”.</p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">Valid</span> <span class="pre">redirect</span> <span class="pre">URIs</span></code> to be “&lt;url of your server&gt;/auth_oauth/signin”.</p></li>
 <li><p>Enable <code class="docutils literal notranslate"><span class="pre">Client</span> <span class="pre">authentication</span></code>.</p></li>
 <li><p>Go to the “Credentials” tab and copy the <code class="docutils literal notranslate"><span class="pre">Client</span> <span class="pre">secret</span></code> to be used later.</p></li>
 </ol>
@@ -171,6 +182,8 @@ your Keycloak realm</p></li>
 </section>
 <section id="customizing-the-login-page-optional">
 <h3>Customizing the login page (Optional)<a class="headerlink" href="#customizing-the-login-page-optional" title="Permalink to this headline"></a></h3>
+<p>To align with corporate branding, you can customize the login page by adding a custom logo and a custom
+background image.</p>
 <ul class="simple">
 <li><p><strong>Enable Developer Settings</strong>: “Settings” &gt; “Activate The Developer Mode”</p></li>
 <li><p><strong>Edit The Login Template</strong>: “Settings” &gt; “Technical” &gt; “User Interface &gt; Views” &gt; Search for “Login”</p></li>
@@ -181,13 +194,15 @@ your Keycloak realm</p></li>
 <h2>Using<a class="headerlink" href="#using" title="Permalink to this headline"></a></h2>
 <section id="existing-users">
 <h3>Existing users<a class="headerlink" href="#existing-users" title="Permalink to this headline"></a></h3>
-<p>For users that already exist before the configuration, they need to go through the reset password process to
-configure their account to use OpenID Connect.</p>
+<p>For users that already existed before the OIDC-integration was configured, there is a need for them to go
+through the reset password process. This is because the password is not stored in Odoo, but in Keycloak.
+Depending on the configuration, the user may have to perform 2FA setup.</p>
 </section>
 <section id="new-users">
 <h3>New users<a class="headerlink" href="#new-users" title="Permalink to this headline"></a></h3>
-<p>For new users, create their user account in odoo with the same email address used in <code class="docutils literal notranslate"><span class="pre">Keycloak</span></code> and they will
-be able to login.</p>
+<p>For new users, create their user account in OpenSPP/Odoo with the same email address used in <code class="docutils literal notranslate"><span class="pre">Keycloak</span></code> and
+they will be able to login. Note that in order to be able to get past the self-service user management page,
+permissions need to be set for the user.</p>
 </section>
 </section>
 </section>
@@ -196,7 +211,7 @@ be able to login.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="managing_users.html" class="btn btn-neutral float-left" title="Managing Users" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../using/managing_users.html" class="btn btn-neutral float-left" title="Managing Users" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="audit_logs.html" class="btn btn-neutral float-right" title="Audit Logs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
