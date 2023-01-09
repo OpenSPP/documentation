@@ -45,6 +45,10 @@ exclude_patterns = []
 locale_dirs = ["locale/"]
 gettext_compact = False
 
+# add the config to make sure the file ".well-known/security.txt" is not converted to html by sphinx
+html_extra_path = [".well-known/"]
+
+
 myst_enable_extensions = [
     "amsmath",
     "colon_fence",
