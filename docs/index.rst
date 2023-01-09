@@ -148,6 +148,7 @@ Development
     :caption: Community
     :hidden:
 
+    contribution/index
     contribution/module_lifecycle_development_status
     contribution/module_lifecycle_maintainer_role
     code_of_conduct
