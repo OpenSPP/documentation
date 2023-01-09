@@ -8,7 +8,7 @@ You need to have Docker and docker-compose installed on your system. You also ne
 and pip packages `invoke` and `pre-commit`.
 
 ```bash
-$ git clone git@github.com:openspp-project/openspp-docker.git
+$ git clone git@github.com:openspp/openspp-docker.git
 $ invoke develop img-pull img-build git-aggregate resetdb start
 ```
 

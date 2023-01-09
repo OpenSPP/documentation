@@ -83,7 +83,7 @@ html_theme_options = {
 }
 html_context = {
     "display_github": True,
-    "github_user": "openspp-project",  # Username
+    "github_user": "openspp",  # Username
     "github_repo": "documentation",  # Repo name
     "github_version": "main",  # Version
     "conf_py_path": "/docs/",  # Path in the checkout to the docs root
