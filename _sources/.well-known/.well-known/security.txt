@@ -1,0 +1,10 @@
+# OpenSPP security contacts and policy
+
+# Our security contact channels
+Contact: mailto:disclosure@openspp.org
+
+# Link to our vulnerability disclosure policy
+Policy: https://docs.openspp.org/security-report.html
+
+# Languages that our team speaks and understands
+Preferred-Languages: en-US, fr-FR
