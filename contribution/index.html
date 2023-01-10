@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contributing &mdash; OpenSPP Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="canonical" href="https://docs.openspp.org/contribution/index.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/debug.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Modules Maturity Levels and Development Status Policy" href="module_lifecycle_development_status.html" />
+    <link rel="prev" title="Audit Logs" href="../config_and_admin/audit_logs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> OpenSPP
+          </a>
+              <div class="version">
+                2.0-dev
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../functional_architecture.html">Functional Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Licensing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Registrants</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../registrants/concepts.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../registrants/exporting.html">Exporting Registrants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../registrants/importing.html">Importing Registrants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../registrants/api.html">API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../programs/concepts.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/dashboards.html">Dashboards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/program_manager.html">Program Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/cycle_manager.html">Cycle Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/eligibility_manager.html">Eligibility Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/entitlement_manager.html">Entitlement Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/deduplication_manager.html">Deduplication Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/notification_manager.html">Notification Manager</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Disbursement Service</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../disbursement/index.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Using</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../using/managing_programs.html">Managing Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using/managing_users.html">Managing Users</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">System Configuration and Administration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../config_and_admin/oidc.html">Configuring Keycloak for OAuth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../config_and_admin/audit_logs.html">Audit Logs</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Community</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#code-of-conduct">Code of Conduct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submitting-a-pull-request">Submitting a Pull Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation-update">Documentation Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#review-process">Review Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#merging-a-pull-request">Merging a Pull Request</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="module_lifecycle_development_status.html">Modules Maturity Levels and Development Status Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_lifecycle_maintainer_role.html">Module Lifecycle - Maintainer Role Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Contributor Covenant Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security-report.html">OpenSPP Vulnerability Disclosure Policy</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OpenSPP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Contributing</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/openspp-project/documentation/blob/main/docs/contribution/index.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="contributing">
+<h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline"></a></h1>
+<p>Thank you for considering contributing to the OpenSPP project! We welcome and appreciate contributions from
+the community, and are grateful for the time and effort that people put into improving the project.</p>
+<section id="code-of-conduct">
+<h2>Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Permalink to this headline"></a></h2>
+<p>We expect all contributors to the OpenSPP project to adhere to our <a class="reference internal" href="../code_of_conduct.html"><span class="doc std std-doc">Code of Conduct</span></a>.
+This document outlines the standards of behavior that we expect from all members of the community, and
+provides guidance on how to report any incidents of misconduct.</p>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h2>
+<p>Before you start working on a new feature or bug fix, it’s a good idea to check the project’s issue tracker to
+see if someone else is already working on it. If you find an open issue that you’d like to work on, you can
+comment on the issue to let people know that you’re planning to take it on.</p>
+<p>If you don’t see any open issues that match your area of expertise, feel free to open a new issue to propose a
+new feature or report a bug. Make sure to include as much detail as possible, and to clearly describe the
+problem or feature that you’re proposing.</p>
+</section>
+<section id="submitting-a-pull-request">
+<h2>Submitting a Pull Request<a class="headerlink" href="#submitting-a-pull-request" title="Permalink to this headline"></a></h2>
+<p>Once you have made your changes, you can submit a pull request (PR) to propose your changes for review and
+inclusion in the project. Here are some tips for making a successful PR:</p>
+<ul class="simple">
+<li><p>Make sure that your PR is focused on a single issue or feature. Avoid bundling multiple unrelated changes in
+a single PR.</p></li>
+<li><p>Write clear and concise commit messages that explain the purpose of each change.</p></li>
+<li><p>Follow the project’s coding style and conventions.</p></li>
+<li><p>Test your code thoroughly before submitting your PR. Make sure that all unit tests pass, and consider adding
+additional tests if necessary.</p></li>
+<li><p>Ensure that your code is well-documented using reStructuredText markup, with clear and concise comments
+explaining any non-obvious code.</p></li>
+<li><p>Make sure that your PR is reviewed by at least one other contributor before submitting.</p></li>
+<li><p>Address any feedback or issues raised during the review process in a timely manner.</p></li>
+<li><p>If your PR involves any significant changes or new features, consider writing documentation or updating the
+project’s README to reflect these changes.</p></li>
+<li><p>Make sure that your PR is up to date with the latest version of the codebase before submitting.</p></li>
+<li><p>If your PR is large or complex, consider breaking it down into smaller, more manageable chunks that can be
+reviewed and merged more easily.</p></li>
+</ul>
+</section>
+<section id="documentation-update">
+<h2>Documentation Update<a class="headerlink" href="#documentation-update" title="Permalink to this headline"></a></h2>
+<p>If your PR involves any significant changes or new features, it is important to update the project’s
+documentation to reflect these changes. This will help users and developers understand how to use and work
+with the updated code.</p>
+<p>To update the documentation, you should edit the relevant documentation and submit a separate PR with your
+documentation changes to the <a class="reference external" href="https://github.com/openspp/documentation">documentation</a> project.</p>
+<p>When updating the documentation, make sure to:</p>
+<ul class="simple">
+<li><p>Clearly and concisely describe the changes that have been made.</p></li>
+<li><p>Provide examples or code snippets to illustrate how to use the new or updated features.</p></li>
+<li><p>Update any relevant reference documentation or API documentation.</p></li>
+<li><p>Test the documentation to ensure that it is accurate and up-to-date.</p></li>
+</ul>
+<p>Updating the documentation is an important part of the PR process, and will help to ensure that the project is
+easy to use and understand for all users and developers.</p>
+</section>
+<section id="review-process">
+<h2>Review Process<a class="headerlink" href="#review-process" title="Permalink to this headline"></a></h2>
+<p>Once you have submitted your PR, it will be reviewed by one or more contributors to the project. The review
+process is an opportunity for the project maintainers to provide feedback on your code, and for you to address
+any issues or concerns that are raised.</p>
+<p>During the review process, you may be asked to make changes to your code, or to provide additional information
+or clarification. It’s important to be responsive to these requests, as it will help to ensure that your PR is
+accepted and merged in a timely manner.</p>
+<p>Some things to keep in mind during the review process:</p>
+<ul class="simple">
+<li><p>Be open to feedback and suggestions. The review process is meant to help improve the quality and reliability
+of the project, and to ensure that all code meets the standards of the project.</p></li>
+<li><p>Address all issues and concerns raised during the review process. If you disagree with a suggestion or
+comment, feel free to engage in a constructive dialogue to reach a resolution.</p></li>
+<li><p>If you are asked to make changes to your code, try to make these changes as soon as possible. This will help
+to keep the review process moving forward and ensure that your PR is reviewed and merged in a timely manner.</p></li>
+</ul>
+<p>Once all issues have been addressed and the code has been approved by the reviewers, your PR will be ready to
+be merged into the project.</p>
+</section>
+<section id="merging-a-pull-request">
+<h2>Merging a Pull Request<a class="headerlink" href="#merging-a-pull-request" title="Permalink to this headline"></a></h2>
+<p>Once your PR has been reviewed and all issues have been addressed, it can be merged into the project. In most
+cases, PRs will be merged by the project maintainers, but in some cases, contributors may be granted the
+ability to merge their own PRs.</p>
+<p>Before merging a PR, it is important to double-check that all of the following conditions have been met:</p>
+<ul class="simple">
+<li><p>The PR has been reviewed and approved by at least one other contributor.</p></li>
+<li><p>All issues and concerns raised during the review process have been addressed.</p></li>
+<li><p>The code has been tested and is known to be in good working order.</p></li>
+<li><p>The PR is up to date with the latest version of the codebase.</p></li>
+<li><p>Once these conditions have been met, the PR can be safely merged into the project. This can usually be done
+with a single click using the “Merge” button in the GitHub interface.</p></li>
+</ul>
+<p>After your PR has been merged, it will become part of the official project codebase, and will be included in
+the next release of OpenSPP. Congratulations on your contribution!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../config_and_admin/audit_logs.html" class="btn btn-neutral float-left" title="Audit Logs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="module_lifecycle_development_status.html" class="btn btn-neutral float-right" title="Modules Maturity Levels and Development Status Policy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022 OpenSPP.org Licensed under CC BY 4.0.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> OpenSPP</span>
+    v: latest
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <!--    <dl>-->
+    <!--      <dt>Versions</dt>-->
+    <!---->
+    <!--      <dd><a href="#">latest</a></dd>-->
+    <!--      <dd><a href="#">1.0</a></dd>-->
+    <!--      <dd><a href="#">1.1</a></dd>-->
+    <!---->
+    <!--    </dl>-->
+    <!--    <dl>-->
+    <!--      <dt>Downloads</dt>-->
+    <!--      <dd><a href="#">PDF</a></dd>-->
+    <!--      <dd><a href="#">ePub</a></dd>-->
+    <!--      <dd><a href="#">HTML</a></dd>-->
+    <!--    </dl>-->
+    <dl>
+      <dt>OpenSPP</dt>
+      <dd>
+        <a href="https://github.com/openspp/documentation/">Project Home</a>
+      </dd>
+      <!-- <dd>
+        <a href="https://github.com/openspp/documentation/releases">Releases</a>
+      </dd> -->
+    </dl>
+    <!--    <dl>-->
+    <!--      <dt>Debug</dt>-->
+    <!--      <dd><a href="#" data-toggle="rst-debug-badge">Swap badge position</a></dd>-->
+    <!--    </dl>-->
+  </div>
+</div>
+
+</body>
+</html>
