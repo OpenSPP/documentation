@@ -49,8 +49,16 @@
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#code-of-conduct">Code of Conduct</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#did-you-find-a-bug"><strong>Did you find a bug?</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#did-you-write-a-patch-that-fixes-a-bug"><strong>Did you write a patch that fixes a bug?</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributing-to-the-code">Contributing to the code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#submitting-a-pull-request">Submitting a Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-update">Documentation Update</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#review-process">Review Process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#merging-a-pull-request">Merging a Pull Request</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#contributing-to-the-documentation">Contributing to the documentation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#building-the-documentation">Building the documentation</a></li>
 </ul>
@@ -97,7 +105,6 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Community</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="contribution/index.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribution/module_lifecycle_development_status.html">Modules Maturity Levels and Development Status Policy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribution/module_lifecycle_maintainer_role.html">Module Lifecycle - Maintainer Role Policy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Contributor Covenant Code of Conduct</a></li>
@@ -120,7 +127,7 @@
       <li><a href="index.html" class="icon icon-home"></a></li>
       <li class="breadcrumb-item active">Contributing</li>
       <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/openspp-project/documentation/blob/main/docs/contributing.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/openspp/documentation/blob/main/docs/contributing.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -130,10 +137,14 @@
              
   <section class="tex2jax_ignore mathjax_ignore" id="contributing">
 <h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline"></a></h1>
-<p>The project follows the OpenSPP <a class="reference internal" href="code_of_conduct.html"><span class="doc std std-doc">Code of Conduct</span></a>. If you are not familiar with our code of
-conduct policy, take a minute to read the policy before starting with your first contribution.</p>
-<p>Bug reports and code and documentation patches are welcome. You can help this project also by using the
-development version and by reporting any bugs you might encounter.</p>
+<p>Thank you for considering contributing to the OpenSPP project! We welcome and appreciate contributions from
+the community, and are grateful for the time and effort that people put into improving the project.</p>
+<section id="code-of-conduct">
+<h2>Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Permalink to this headline"></a></h2>
+<p>We expect all contributors to the OpenSPP project to adhere to our <a class="reference internal" href="code_of_conduct.html"><span class="doc std std-doc">Code of Conduct</span></a>.
+This document outlines the standards of behavior that we expect from all members of the community, and
+provides guidance on how to report any incidents of misconduct.</p>
+</section>
 <section id="did-you-find-a-bug">
 <h2><strong>Did you find a bug?</strong><a class="headerlink" href="#did-you-find-a-bug" title="Permalink to this headline"></a></h2>
 <ul class="simple">
@@ -147,32 +158,112 @@ clear description</strong>, as much relevant information as possible demonstrati
 not occurring.</p></li>
 </ul>
 </section>
-<section id="did-you-write-a-patch-that-fixes-a-bug">
-<h2><strong>Did you write a patch that fixes a bug?</strong><a class="headerlink" href="#did-you-write-a-patch-that-fixes-a-bug" title="Permalink to this headline"></a></h2>
+<section id="contributing-to-the-code">
+<h2>Contributing to the code<a class="headerlink" href="#contributing-to-the-code" title="Permalink to this headline"></a></h2>
+<section id="getting-started">
+<h3>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h3>
+<p>Before you start working on a new feature or bug fix, it’s a good idea to check the project’s issue tracker to
+see if someone else is already working on it. If you find an open issue that you’d like to work on, you can
+comment on the issue to let people know that you’re planning to take it on.</p>
+<p>If you don’t see any open issues that match your area of expertise, feel free to open a new issue to propose a
+new feature or report a bug. Make sure to include as much detail as possible, and to clearly describe the
+problem or feature that you’re proposing.</p>
+</section>
+<section id="submitting-a-pull-request">
+<h3>Submitting a Pull Request<a class="headerlink" href="#submitting-a-pull-request" title="Permalink to this headline"></a></h3>
+<p>Once you have made your changes, you can submit a pull request (PR) to propose your changes for review and
+inclusion in the project. Here are some tips for making a successful PR:</p>
 <ul class="simple">
-<li><p>Open a new GitHub pull request with the patch.</p></li>
-<li><p>Ensure the PR description clearly describes the problem and solution. Include the relevant issue number if
-applicable.</p></li>
+<li><p>Make sure that your PR is focused on a single issue or feature. Avoid bundling multiple unrelated changes in
+a single PR.</p></li>
+<li><p>Write clear and concise commit messages that explain the purpose of each change.</p></li>
+<li><p>Follow the project’s coding style and conventions.</p></li>
+<li><p>Test your code thoroughly before submitting your PR. Make sure that all unit tests pass, and consider adding
+additional tests if necessary.</p></li>
+<li><p>Ensure that your code is well-documented using reStructuredText markup, with clear and concise comments
+explaining any non-obvious code.</p></li>
+<li><p>Make sure that your PR is reviewed by at least one other contributor before submitting.</p></li>
+<li><p>Address any feedback or issues raised during the review process in a timely manner.</p></li>
+<li><p>If your PR involves any significant changes or new features, consider writing documentation or updating the
+project’s README to reflect these changes.</p></li>
+<li><p>Make sure that your PR is up to date with the latest version of the codebase before submitting.</p></li>
+<li><p>If your PR is large or complex, consider breaking it down into smaller, more manageable chunks that can be
+reviewed and merged more easily.</p></li>
 </ul>
-<!-- ## **Do you have questions about the source code?**
-
-- Ask any question about how to use OpenSPP in the
-  [Discussions](https://github.com/openspp/documentation/discussions). -->
+</section>
+<section id="documentation-update">
+<h3>Documentation Update<a class="headerlink" href="#documentation-update" title="Permalink to this headline"></a></h3>
+<p>If your PR involves any significant changes or new features, it is important to update the project’s
+documentation to reflect these changes. This will help users and developers understand how to use and work
+with the updated code.</p>
+<p>To update the documentation, you should edit the relevant documentation and submit a separate PR with your
+documentation changes to the <a class="reference external" href="https://github.com/openspp/documentation">documentation</a> project.</p>
+<p>When updating the documentation, make sure to:</p>
+<ul class="simple">
+<li><p>Clearly and concisely describe the changes that have been made.</p></li>
+<li><p>Provide examples or code snippets to illustrate how to use the new or updated features.</p></li>
+<li><p>Update any relevant reference documentation or API documentation.</p></li>
+<li><p>Test the documentation to ensure that it is accurate and up-to-date.</p></li>
+</ul>
+<p>Updating the documentation is an important part of the PR process, and will help to ensure that the project is
+easy to use and understand for all users and developers.</p>
+</section>
+<section id="review-process">
+<h3>Review Process<a class="headerlink" href="#review-process" title="Permalink to this headline"></a></h3>
+<p>Once you have submitted your PR, it will be reviewed by one or more contributors to the project. The review
+process is an opportunity for the project maintainers to provide feedback on your code, and for you to address
+any issues or concerns that are raised.</p>
+<p>During the review process, you may be asked to make changes to your code, or to provide additional information
+or clarification. It’s important to be responsive to these requests, as it will help to ensure that your PR is
+accepted and merged in a timely manner.</p>
+<p>Some things to keep in mind during the review process:</p>
+<ul class="simple">
+<li><p>Be open to feedback and suggestions. The review process is meant to help improve the quality and reliability
+of the project, and to ensure that all code meets the standards of the project.</p></li>
+<li><p>Address all issues and concerns raised during the review process. If you disagree with a suggestion or
+comment, feel free to engage in a constructive dialogue to reach a resolution.</p></li>
+<li><p>If you are asked to make changes to your code, try to make these changes as soon as possible. This will help
+to keep the review process moving forward and ensure that your PR is reviewed and merged in a timely manner.</p></li>
+</ul>
+<p>Once all issues have been addressed and the code has been approved by the reviewers, your PR will be ready to
+be merged into the project.</p>
+</section>
+<section id="merging-a-pull-request">
+<h3>Merging a Pull Request<a class="headerlink" href="#merging-a-pull-request" title="Permalink to this headline"></a></h3>
+<p>Once your PR has been reviewed and all issues have been addressed, it can be merged into the project. In most
+cases, PRs will be merged by the project maintainers, but in some cases, contributors may be granted the
+ability to merge their own PRs.</p>
+<p>Before merging a PR, it is important to double-check that all of the following conditions have been met:</p>
+<ul class="simple">
+<li><p>The PR has been reviewed and approved by at least one other contributor.</p></li>
+<li><p>All issues and concerns raised during the review process have been addressed.</p></li>
+<li><p>The code has been tested and is known to be in good working order.</p></li>
+<li><p>The PR is up to date with the latest version of the codebase.</p></li>
+<li><p>Once these conditions have been met, the PR can be safely merged into the project. This can usually be done
+with a single click using the “Merge” button in the GitHub interface.</p></li>
+</ul>
+<p>After your PR has been merged, it will become part of the official project codebase, and will be included in
+the next release of OpenSPP. Congratulations on your contribution!</p>
+</section>
 </section>
 <section id="contributing-to-the-documentation">
 <h2>Contributing to the documentation<a class="headerlink" href="#contributing-to-the-documentation" title="Permalink to this headline"></a></h2>
-<p>If you want to contribute to the documentation, you can do so by following the steps below:</p>
-<ul>
-<li><p>Fork the repository.</p></li>
-<li><p>Create a virtual environment and install the dependencies as described in the next section.</p></li>
-<li><p>Set up pre-commit hooks to ensure that your code is compliant with the project’s standards.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pre</span><span class="o">-</span><span class="n">commit</span> <span class="n">install</span>
-</pre></div>
-</div>
-</li>
-<li><p>Create a new branch.</p></li>
-<li><p>Make your changes and commit them to your branch.</p></li>
-<li><p>Submit a pull request.</p></li>
+<p>If you want to contribute to the <a class="reference external" href="https://docs.openspp.org/">documentation</a>, you can do so by following the steps below:</p>
+<ul class="simple">
+<li><p>Fork the <a class="reference external" href="https://github.com/OpenSPP/documentation">documentation repository</a>.</p></li>
+<li><p>Fork the project’s <a class="reference external" href="https://github.com/OpenSPP/documentation">documentation repository</a></p></li>
+<li><p>Make your changes in a new branch. It is recommended to name your branch something descriptive, such as “feature/new-section” or “bugfix/typo-correction”.</p></li>
+<li><p>Before making any changes, ensure that you have the necessary dependencies installed and that you have a local version of the documentation set up. This can typically be done by installing Sphinx, and then running the command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> to build the documentation.</p></li>
+<li><p>Install pre-commit by running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pre-commit</span></code> or <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">pre-commit</span></code> depending on your system.</p></li>
+<li><p>Once you have made your changes, use the command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> again to rebuild the documentation and check that your changes display correctly.</p></li>
+<li><p>Configure pre-commit by running <code class="docutils literal notranslate"><span class="pre">pre-commit</span> <span class="pre">install</span></code>.</p></li>
+<li><p>Before committing any changes, make sure to run the project’s pre-commit checks: <code class="docutils literal notranslate"><span class="pre">pre-commit</span> <span class="pre">run</span> <span class="pre">--all-files</span></code>. These checks will ensure that the code adheres to the project’s style guidelines and that there are no obvious errors or issues.</p></li>
+<li><p>Commit your changes with a clear and descriptive commit message.</p></li>
+<li><p>Push your branch to your fork of the repository.</p></li>
+<li><p>Submit a pull request to the main repository for review.</p></li>
+<li><p>Make sure that you have explained in the pull request what changes you’ve made and why. And if there’s any specific instructions or dependencies need to be followed.</p></li>
+<li><p>The project lead or maintainers will review the pull request and provide feedback. If any revisions are requested, make the necessary changes and push them to the same branch on your fork.</p></li>
+<li><p>Once your pull request is approved, it will be merged into the main repository.</p></li>
 </ul>
 <section id="building-the-documentation">
 <h3>Building the documentation<a class="headerlink" href="#building-the-documentation" title="Permalink to this headline"></a></h3>
