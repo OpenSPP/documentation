@@ -4,6 +4,15 @@ autodocsumm>=0.2.9
 sphinxcontrib-httpdomain
 sphinx_rtd_theme
 myst_parser
+sphinx-reredirects
+sphinx-design
+sphinx-book-theme
+sphinxcontrib.youtube
+sphinxcontrib.bibtex
+sphinx_copybutton
+sphinx_tabs
+sphinx_togglebutton
+sphinxext.opengraph
 git+https://github.com/odoo/odoo@15.0
 git+https://github.com/OpenG2P/openg2p-registry@15.0#subdirectory=setup/g2p_registry_base
 git+https://github.com/OpenG2P/openg2p-registry@15.0#subdirectory=setup/g2p_registry_group

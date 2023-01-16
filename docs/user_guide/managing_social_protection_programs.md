@@ -1,4 +1,4 @@
-# Managing Programs
+# Managing Social Protection Programs
 
 `Programs` and `Cycles` are at the heart of OpenSPP.
 

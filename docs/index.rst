@@ -1,14 +1,3 @@
-.. image:: images/openspp_logo.png
-  :alt: OpenSPP logo
-  :align: center
-  :width: 300px
-
-.. |br| raw:: html
-
-  <br/>
-
-|br|
-
 OpenSPP - Social Protection Platform
 ====================================
 
@@ -53,26 +42,7 @@ The project is currently under development, and everything is evolving rapidly a
 If you have any questions or needs, please do not hesitate to contact the team through Github
 issues or our `Website <https://openspp.org/>`_.
 
-To learn more, take a look at the :doc:`architecture` pages.
-
-
-Getting started with OpenSPP
----------------------------------
-
-:doc:`installation`
-    How to install this project on your server.
-
-:doc:`configuring`
-    Project configuration and customization options.
-
-Development
------------
-
-:doc:`contributing`
-    How to contribute changes to the project.
-
-:doc:`changelog`
-    The project development changelog.
+To learn more, take a look at the :doc:`technical_reference/architecture` pages.
 
 .. Hidden TOCs
 
@@ -81,74 +51,61 @@ Development
    :maxdepth: 2
    :hidden:
 
-   installation
-   functional_architecture
-   architecture
-   features
-   contributing
-   license
-   glossary
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   changelog
+   getting_started/installation_guide
 
 .. toctree::
     :maxdepth: 2
-    :caption: Registrants
+    :caption: User guide
     :hidden:
 
-    registrants/concepts
-    registrants/exporting
-    registrants/importing
-    registrants/api
+    user_guide/Registering_individuals_and_groups
+    user_guide/managing_social_protection_programs
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Programs
-    :hidden:
+.. comment::
+  .. toctree::
+      :maxdepth: 2
+      :caption: Best Practices
+      :hidden:
 
-    programs/concepts
-    programs/dashboards
-    programs/program_manager
-    programs/cycle_manager
-    programs/eligibility_manager
-    programs/entitlement_manager
-    programs/deduplication_manager
-    programs/notification_manager
+    .. toctree::
+      :maxdepth: 2
+      :caption: Case studies
+      :hidden:
 
 
 .. toctree::
     :maxdepth: 2
-    :caption: Disbursement Service
+    :caption: Technical reference
     :hidden:
 
-    disbursement/index
+    technical_reference/architecture
+    technical_reference/programs/concepts
+    technical_reference/programs/dashboards
+    technical_reference/programs/program_manager
+    technical_reference/programs/cycle_manager
+    technical_reference/programs/eligibility_manager
+    technical_reference/programs/entitlement_manager
+    technical_reference/programs/deduplication_manager
+    technical_reference/programs/notification_manager
+    technical_reference/audit_log
+    technical_reference/oidc
+    technical_reference/licenses
+
 
 .. toctree::
     :maxdepth: 2
-    :caption: Using
+    :caption: Glossary
     :hidden:
 
-    using/managing_programs
-    using/managing_users
+    glossary/index
 
 .. toctree::
     :maxdepth: 2
-    :caption: System Configuration and Administration
+    :caption: Community and support
     :hidden:
 
-    config_and_admin/oidc
-    config_and_admin/audit_logs
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Community
-    :hidden:
-
-    contribution/module_lifecycle_development_status
-    contribution/module_lifecycle_maintainer_role
-    code_of_conduct
-    security-report
+    community_and_support/how_to_contribute_to_the_project
+    community_and_support/module_lifecycle_development_status
+    community_and_support/module_lifecycle_maintainer_role
+    community_and_support/code_of_conduct
+    community_and_support/security_report

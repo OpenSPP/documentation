@@ -1,4 +1,4 @@
-# Installation
+# Installation Guide
 
 ## Installing using Docker for development
 
