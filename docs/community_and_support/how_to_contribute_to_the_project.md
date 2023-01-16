@@ -24,7 +24,6 @@ provides guidance on how to report any incidents of misconduct.
 
 ## Contributing to the code
 
-
 ### Getting Started
 
 Before you start working on a new feature or bug fix, it's a good idea to check the project's issue tracker to
@@ -115,25 +114,34 @@ Before merging a PR, it is important to double-check that all of the following c
 After your PR has been merged, it will become part of the official project codebase, and will be included in
 the next release of OpenSPP. Congratulations on your contribution!
 
-
 ## Contributing to the documentation
 
-If you want to contribute to the [documentation](https://docs.openspp.org/), you can do so by following the steps below:
+If you want to contribute to the [documentation](https://docs.openspp.org/), you can do so by following the
+steps below:
 
 - Fork the [documentation repository](https://github.com/OpenSPP/documentation).
 
 - Fork the project's [documentation repository](https://github.com/OpenSPP/documentation)
-- Make your changes in a new branch. It is recommended to name your branch something descriptive, such as "feature/new-section" or "bugfix/typo-correction".
-- Before making any changes, ensure that you have the necessary dependencies installed and that you have a local version of the documentation set up. This can typically be done by installing Sphinx, and then running the command `make html` to build the documentation.
-- Install pre-commit by running `pip install pre-commit` or `brew install pre-commit` depending on your system.
-- Once you have made your changes, use the command `make html` again to rebuild the documentation and check that your changes display correctly.
+- Make your changes in a new branch. It is recommended to name your branch something descriptive, such as
+  "feature/new-section" or "bugfix/typo-correction".
+- Before making any changes, ensure that you have the necessary dependencies installed and that you have a
+  local version of the documentation set up. This can typically be done by installing Sphinx, and then running
+  the command `make html` to build the documentation.
+- Install pre-commit by running `pip install pre-commit` or `brew install pre-commit` depending on your
+  system.
+- Once you have made your changes, use the command `make html` again to rebuild the documentation and check
+  that your changes display correctly.
 - Configure pre-commit by running `pre-commit install`.
-- Before committing any changes, make sure to run the project's pre-commit checks: `pre-commit run --all-files`. These checks will ensure that the code adheres to the project's style guidelines and that there are no obvious errors or issues.
+- Before committing any changes, make sure to run the project's pre-commit checks:
+  `pre-commit run --all-files`. These checks will ensure that the code adheres to the project's style
+  guidelines and that there are no obvious errors or issues.
 - Commit your changes with a clear and descriptive commit message.
 - Push your branch to your fork of the repository.
 - Submit a pull request to the main repository for review.
-- Make sure that you have explained in the pull request what changes you've made and why. And if there's any specific instructions or dependencies need to be followed.
-- The project lead or maintainers will review the pull request and provide feedback. If any revisions are requested, make the necessary changes and push them to the same branch on your fork.
+- Make sure that you have explained in the pull request what changes you've made and why. And if there's any
+  specific instructions or dependencies need to be followed.
+- The project lead or maintainers will review the pull request and provide feedback. If any revisions are
+  requested, make the necessary changes and push them to the same branch on your fork.
 - Once your pull request is approved, it will be merged into the main repository.
 
 ### Building the documentation

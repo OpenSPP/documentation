@@ -39,8 +39,7 @@ extensions = [
     # "sphinx_rtd_theme",
     "myst_parser",
     "autodocsumm",
-    'sphinx_reredirects',
-
+    "sphinx_reredirects",
     "sphinx_copybutton",
     "sphinx_tabs.tabs",
     "sphinx_togglebutton",
@@ -176,6 +175,7 @@ redirects = {
     "installation": "getting_started/installation_guide",
 }
 
+
 # Extensions to theme docs
 def setup(app):
     from sphinx.domains.python import PyField
@@ -209,7 +209,8 @@ def setup(app):
     #     app.add_css_file("https://assets.readthedocs.org/static/css/badge_only.css")
     #
     #     # Create the dummy data file so we can link it
-    #     # ref: https://github.com/readthedocs/readthedocs.org/blob/bc3e147770e5740314a8e8c33fec5d111c850498/readthedocs/core/static-src/core/js/doc-embed/footer.js  # noqa: E501
+    #     # ref: https://github.com/readthedocs/readthedocs.org/blob/bc3e147770e5740314a8e8c33fec5d111c850498/readthed
+    #     ocs/core/static-src/core/js/doc-embed/footer.js  # noqa: E501
     #     app.add_js_file("rtd-data.js")
     #     app.add_js_file(
     #         "https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js",
