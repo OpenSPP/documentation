@@ -1,6 +1,11 @@
 import os
 import re
 import sys
+import logging
+
+from pathlib import Path
+_logger = logging.getLogger(__name__)
+
 
 from sphinx.locale import _
 
@@ -8,8 +13,97 @@ from sphinx.locale import _
 # and not the installed version of the theme.
 sys.path.insert(0, os.path.abspath("../../../openg2p-program/"))
 sys.path.insert(0, os.path.abspath(".."))
-sys.path.append(os.path.abspath("./demo/"))
-sys.path.append(os.path.abspath("./using/"))
+# sys.path.append(os.path.abspath("./demo/"))
+# sys.path.append(os.path.abspath("./using/"))
+
+
+#=== Odoo configuration ===#
+
+odoo_current_branch = '15.0'
+# `current_version` is the Odoo version linked to the current branch.
+# E.g., saas-15.4 -> 15.4; 12.0 -> 12; master -> master (*).
+odoo_current_version = odoo_current_branch.replace('saas-', '').replace('.0', '')
+# `current_major_branch` is the technical name of the major branch before the current branch.
+# E.g., saas-15.4 -> 15.0; 12.0 -> 12.0; master -> master (*).
+odoo_current_major_branch = re.sub(r'\.\d', '.0', odoo_current_branch.replace('saas-', ''))
+# `current_major_version` is the Odoo version linked to the current major branch.
+# E.g., saas-15.4 -> 15; 12.0 -> 12; master -> master (*).
+odoo_current_major_version = odoo_current_major_branch.replace('.0', '')
+# (*): We don't care for master.
+
+
+odoo_source_read_replace_vals = {
+    'BRANCH': odoo_current_branch,
+    'CURRENT_BRANCH': odoo_current_branch,
+    'CURRENT_VERSION': odoo_current_version,
+    'CURRENT_MAJOR_BRANCH': odoo_current_major_branch,
+    'CURRENT_MAJOR_VERSION': odoo_current_major_version,
+    'GITHUB_PATH': f'https://github.com/odoo/odoo/blob/{odoo_current_branch}',
+    'GITHUB_ENT_PATH': f'https://github.com/odoo/enterprise/blob/{odoo_current_branch}',
+}
+
+
+# Search for the directory of odoo sources to know whether autodoc should be used on the dev doc
+odoo_sources_candidate_dirs = (Path('odoo'), Path('../odoo'), Path('../../dockerdoo/src/odoo'))
+odoo_sources_dirs = [
+    d for d in odoo_sources_candidate_dirs if d.is_dir() and (d / 'odoo-bin').exists()
+]
+odoo_dir_in_path = False
+
+
+if not odoo_sources_dirs:
+    _logger.warning(
+        "Could not find Odoo sources directory in neither of the following folders:\n"
+        "%(dir_list)s\n"
+        "The 'Developer' documentation will be built but autodoc directives will be skipped.\n"
+        "In order to fully build the 'Developer' documentation, clone the repository with "
+        "`git clone https://github.com/odoo/odoo` or create a symbolic link.",
+        {'dir_list': '\n'.join([f'\t- {d.resolve()}' for d in odoo_sources_candidate_dirs])},
+    )
+else:
+    if (3, 6) < sys.version_info < (3, 7):
+        # Running odoo needs python 3.7 min but monkey patch version_info to be compatible with 3.6.
+        sys.version_info = (3, 7, 0)
+    odoo_dir = odoo_sources_dirs[0].resolve()
+    odoo_source_read_replace_vals['ODOO_RELPATH'] = '/../' + str(odoo_sources_dirs[0])
+    sys.path.insert(0, str(odoo_dir))
+    print(f"Found Odoo sources in {odoo_dir}.")
+    import odoo.addons
+
+    # import my addons
+    if "dockerdoo" in str(odoo_dir):
+        print("Found Odoo sources in dockerdoo dev environment.")
+        my_addons_dir = os.path.abspath(os.path.join(odoo_dir, '..', '..', 'custom'))
+        my_addons_dir = Path(my_addons_dir)
+        # my_addons_dir = odoo_dir.__parent__.__parent__ / "custom"
+        for folder in my_addons_dir.iterdir():
+            if folder.is_dir():
+                sys.path.insert(0, str(folder))
+                odoo.addons.__path__.append(str(folder))
+                print(f"Found custom addon in {folder}.")
+
+
+    odoo.addons.__path__.append(str(odoo_dir) + '/addons')
+    from odoo import release as odoo_release  # Don't collide with Sphinx's 'release' config option
+    odoo_version = odoo_release.version.replace('~', '-') \
+        if 'alpha' not in odoo_release.version else 'master'
+    if odoo_release != odoo_version:
+        _logger.warning(
+            "Found Odoo sources in %(directory)s but with version '%(odoo_version)s' incompatible "
+            "with documentation version '%(doc_version)s'.\n"
+            "The 'Developer' documentation will be built but autodoc directives will be skipped.\n"
+            "In order to fully build the 'Developer' documentation, checkout the matching branch"
+            " with `cd odoo && git checkout %(doc_version)s`.",
+            {'directory': odoo_dir, 'odoo_version': odoo_version, 'doc_version': odoo_version},
+        )
+    else:
+        _logger.info(
+            "Found Odoo sources in %(directory)s matching documentation version '%(version)s'.",
+            {'directory': odoo_dir, 'version': odoo_release},
+        )
+        odoo_dir_in_path = True
+
+#### End of Odoo
 
 
 project = "OpenSPP"

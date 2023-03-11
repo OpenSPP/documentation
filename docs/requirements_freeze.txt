@@ -34,15 +34,6 @@ mdurl==0.1.2
 mock==5.0.1
 myst-parser==0.18.1
 nodeenv==1.7.0
-odoo @ git+https://github.com/odoo/odoo@6d04ee7b09fa79556e2ed3487fa769164093f468
-odoo-addon-g2p-bank @ git+https://github.com/OpenG2P/openg2p-registry@df459d140e1232fbc6249cfc2652fd527a6b4798#subdirectory=setup/g2p_bank
-odoo-addon-g2p-programs @ git+https://github.com/OpenG2P/openg2p-program@5b6ddd40ffb226f1dd1ce1e9954e2f519a3dbc14#subdirectory=setup/g2p_programs
-odoo-addon-g2p-registry-base @ git+https://github.com/OpenG2P/openg2p-registry@df459d140e1232fbc6249cfc2652fd527a6b4798#subdirectory=setup/g2p_registry_base
-odoo-addon-g2p-registry-group @ git+https://github.com/OpenG2P/openg2p-registry@df459d140e1232fbc6249cfc2652fd527a6b4798#subdirectory=setup/g2p_registry_group
-odoo-addon-g2p-registry-individual @ git+https://github.com/OpenG2P/openg2p-registry@df459d140e1232fbc6249cfc2652fd527a6b4798#subdirectory=setup/g2p_registry_individual
-odoo-addon-g2p-registry-membership @ git+https://github.com/OpenG2P/openg2p-registry@df459d140e1232fbc6249cfc2652fd527a6b4798#subdirectory=setup/g2p_registry_membership
-odoo-addon-odoo-dynamic-dashboard @ git+https://github.com/openspp/openspp-odoo-external-dependencies@8a74bb1e1f8ed93b7982304771cfb2e18e61e5cb#subdirectory=setup/odoo_dynamic_dashboard
-odoo-addon-queue-job==15.0.2.0.2
 ofxparse==0.21
 packaging==21.3
 passlib==1.7.4
@@ -110,3 +101,11 @@ zeep==4.2.1
 zipp==3.7.0
 zope.event==4.6
 zope.interface==5.5.2
+git+https://github.com/odoo/odoo@15.0
+git+https://github.com/OpenG2P/openg2p-registry@15.0#subdirectory=setup/g2p_registry_base
+git+https://github.com/OpenG2P/openg2p-registry@15.0#subdirectory=setup/g2p_registry_group
+git+https://github.com/OpenG2P/openg2p-registry@15.0#subdirectory=setup/g2p_registry_individual
+git+https://github.com/OpenG2P/openg2p-registry@15.0#subdirectory=setup/g2p_registry_membership
+git+https://github.com/OpenG2P/openg2p-registry@15.0#subdirectory=setup/g2p_bank
+git+https://github.com/openspp/openspp-odoo-external-dependencies@15.0#subdirectory=setup/odoo_dynamic_dashboard
+git+https://github.com/OpenG2P/openg2p-program@15.0#subdirectory=setup/g2p_programs
