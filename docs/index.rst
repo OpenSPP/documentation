@@ -58,10 +58,20 @@ To learn more, take a look at the :doc:`technical_reference/architecture` pages.
     :caption: User guide
     :hidden:
 
-    user_guide/Registering_individuals_and_groups
+    user_guide/access_management
+    user_guide/audit_log
+    user_guide/change_requests
+    user_guide/consent_management
+    user_guide/dashboards_and_reports
+    user_guide/geotargeting
+    user_guide/grievance_redressal_management
+    user_guide/hardware_integration
     user_guide/managing_social_protection_programs
+    user_guide/proxy_means_test
+    user_guide/Registering_individuals_and_groups
+    user_guide/vouchers
 
-.. comment::
+..
   .. toctree::
       :maxdepth: 2
       :caption: Best Practices
@@ -87,9 +97,9 @@ To learn more, take a look at the :doc:`technical_reference/architecture` pages.
     technical_reference/programs/entitlement_manager
     technical_reference/programs/deduplication_manager
     technical_reference/programs/notification_manager
-    technical_reference/audit_log
+    technical_reference/audit_logs
     technical_reference/oidc
-    technical_reference/licenses
+    technical_reference/license
 
 
 .. toctree::

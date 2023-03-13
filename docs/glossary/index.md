@@ -2,6 +2,10 @@
 
 ##
 
+### Area
+
+In the context of geotargeting for social protection programs, an area refers to a defined geographic region or territory, which can be of any size or shape. Areas can be hierarchical, meaning that they can be subdivided into smaller sub-areas, or aggregated into larger areas. For example, an area hierarchy could consist of country, state/province, district, sub-district, and village/ward. Areas can be defined using boundaries such as administrative divisions, natural features, or other criteria, and can be used to target social protection interventions to specific geographic regions.
+
 ### Authentication
 
 Process of establishing confidence that a person is who they claim to be. Digital authentication generally
@@ -66,6 +70,10 @@ Compliance refers to the carrying out of specific conditionalities or co-respons
 participation in the program by beneficiaries. Noncompliance refers to the failure to carry out said
 conditionalities.
 
+### Compliance conditions
+
+The conditions that a beneficiary must meet in order to continue receiving social protection benefits. These conditions are typically designed to ensure that beneficiaries are using the benefits appropriately and that they are meeting their obligations under the program. Compliance conditions may include requirements such as attending school, seeking employment, receiving healthcare services, or participating in training programs. Compliance conditions are used to ensure that beneficiaries are using the benefits as intended and that the program is achieving its goals. By defining compliance conditions, organizations can monitor and ensure that beneficiaries are complying with program requirements and using the benefits as intended.
+
 ### Conditional cash transfers (CCTs)
 
 Social assistance programs that make receipt of benefits conditional upon beneficiary actions (such as school
@@ -90,8 +98,7 @@ service because they satisfy certain criteria.
 
 ### Eligibility criteria
 
-Factors used to determine whether an individual, family, or household is eligible (inclusion criteria) or not
-eligible (exclusion criteria) to participate in a program.
+Eligibility criteria are factors used to determine whether an individual, family, or household is eligible (inclusion criteria) or not eligible (exclusion criteria) to participate in a program, such as social protection benefits. These criteria are typically defined by the government or organization implementing the program and may include factors such as age, income level, household size, employment status, or disability status. By defining eligibility criteria, organizations can determine which individuals or households are eligible to receive benefits under the program.
 
 ### Family
 
@@ -127,23 +134,31 @@ The continual process of understanding and meeting user needs. More specifically
 multidisciplinary approach to solving the needs and problems of the end-user (people) and the government’s
 capabilities for transformation.
 
-### Payment service provider.
+### In-kind transfers
+
+In-kind transfers refer to the provision of goods or services directly to social protection beneficiaries instead of cash payments. In-kind transfers may include items such as food, clothing, or housing, as well as services such as healthcare or education. In-kind transfers can be particularly useful in contexts where cash transfers may not be feasible or effective, and can help ensure that beneficiaries receive the support they need.
+
+### Payment service provider
 
 The public or private sector organization tasked with delivering the social protection program’s payments,
 such as a bank, post office, mobile network operator, nongovernmental organization, savings and credit
 cooperative organization, or microfinance institution.
 
-### Payments provision.
+### Payments provision
 
 Processes to transfer and deliver benefits to recipients.
 
-### Payments reconciliation.
+### Payments reconciliation
 
 An accounting process that uses two sets of records to ensure figures are correct and in agreement. It
 confirms whether the money leaving an account matches the amount that has been spent and makes sure the two
 are balanced at the end of the recording period. For cash benefits, reconciliation confirms whether the funds
 transferred to the service provider match the amounts paid out to beneficiaries for that implementation cycle,
 and identifies any amounts not disbursed.
+
+### Proxy Means Test (PMT)
+
+A statistical method used to determine the poverty status of a household, based on a set of indicators that are correlated with household income or consumption. PMTs are commonly used in social protection programs to identify beneficiaries who are eligible for support. PMTs are typically calculated using a set of criteria that may include household assets, housing conditions, education and occupation, and demographic characteristics such as household size, age, and gender composition. The specific criteria used to calculate PMTs may vary depending on the context and objectives of the social protection program. The results of the PMT can be used to identify households that are most in need of support, and to target social protection programs to those households.
 
 ### Registrant
 
@@ -182,6 +197,11 @@ implementation.)
 
 Programs that provide cash transfer benefits to individuals, families, or households without imposing any
 conditions on the beneficiaries.
+
+### Vouchers
+
+Vouchers are a type of non-cash payment that can be used to redeem specific goods or services. In the context of social protection programs, vouchers may be provided to beneficiaries to enable them to purchase essential items such as food, healthcare services, or other goods or services. Vouchers can help promote choice and autonomy for beneficiaries, while also providing targeted support for specific needs. Vouchers may be distributed in paper or electronic form and may be redeemable at specific retailers or service providers.
+
 
 Most definitions are coming from those sources:
 
