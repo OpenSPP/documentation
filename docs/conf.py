@@ -148,6 +148,7 @@ extensions = [
     "sphinx.ext.ifconfig",
     "sphinx.ext.intersphinx",
     "sphinx.ext.todo",
+    "sphinx.ext.githubpages",
     "sphinx_copybutton",
     "sphinx_design",
     "sphinx_sitemap",
@@ -325,15 +326,15 @@ html_sidebars = {
 html_theme_options = {
     "path_to_docs": "docs",
     "repository_url": "https://github.com/openspp/documentation",
-    "repository_branch": "docs_v3",
+    "repository_branch": "main",
     "use_repository_button": True,
     "use_issues_button": True,
     "use_edit_page_button": True,
     "search_bar_text": "Search",
-    "switcher": {
-        "json_url": "/_static/switcher.json",
-        "version_match": version,
-    },
+    # "switcher": {
+    #     "json_url": "/_static/switcher.json",
+    #     "version_match": version,
+    # },
     "extra_navbar": """
     <p class="openspporglink">
         <a href="https://openspp.org">
@@ -381,7 +382,12 @@ latex_logo = "_static/logo_2x.png"
 # suggest edit link
 # remark: {{ file_name }} is mandatory in "edit_page_url_template"
 html_context = {
-    "edit_page_url_template": "https://docs.openspp.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
+    #"edit_page_url_template": "https://docs.openspp.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
+    "display_github": True,
+    "github_user": "openspp",  # Username
+    "github_repo": "documentation",  # Repo name
+    "github_version": "main",  # Version
+    "conf_py_path": "/docs/",  # Path in the checkout to the docs root
 }
 
 # An extension that allows replacements for code blocks that
