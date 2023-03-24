@@ -1,8 +1,8 @@
 [![Testing Status](https://github.com/openspp/documentation/actions/workflows/test.yml/badge.svg?branch=doc_v3 "Testing Status")](https://github.com/openspp/documentation/actions/workflows/test.yml)
 
-# OpenSPP Documentation
+# OpenSPP - Social Protection Platform Documentation
 
-This is the repository for OpenSPP Documentation.
+OpenSPP is an open-source project that aims to streamline the management of social protection programs. It can be used on its own or in conjunction with other services.
 
 
 ## OpenSPP

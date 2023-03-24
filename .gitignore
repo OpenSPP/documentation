@@ -8,6 +8,8 @@
 pyvenv.cfg
 /_build
 /styles/Microsoft
+/styles/alex
+/styles/write-good
 
 .DS_Store
 *.pyc

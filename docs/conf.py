@@ -382,7 +382,7 @@ latex_logo = "_static/logo_2x.png"
 # suggest edit link
 # remark: {{ file_name }} is mandatory in "edit_page_url_template"
 html_context = {
-    #"edit_page_url_template": "https://docs.openspp.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
+    "edit_page_url_template": "https://docs.openspp.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
     "display_github": True,
     "github_user": "openspp",  # Username
     "github_repo": "documentation",  # Repo name
