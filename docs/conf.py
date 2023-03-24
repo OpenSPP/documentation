@@ -331,10 +331,6 @@ html_theme_options = {
     "use_issues_button": True,
     "use_edit_page_button": True,
     "search_bar_text": "Search",
-    # "switcher": {
-    #     "json_url": "/_static/switcher.json",
-    #     "version_match": version,
-    # },
     "extra_navbar": """
     <p class="openspporglink">
         <a href="https://openspp.org">
