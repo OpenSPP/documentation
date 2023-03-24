@@ -4,10 +4,12 @@
  *
  * Sphinx JavaScript utilities for the full-text search.
  *
- * :copyright: Copyright 2007-2022 by the Sphinx team, see AUTHORS.
+ * :copyright: Copyright 2007-2021 by the Sphinx team, see AUTHORS.
  * :license: BSD, see LICENSE for details.
  *
  */
+
+var title_documentation = 'OpenSPP Documentation';
 
 if (!Scorer) {
   /**
@@ -73,10 +75,13 @@ var Search = {
 
   init : function() {
       var params = $.getQueryParameters();
+      let doc_section = params.doc_section ? params.doc_section[0] : 'all';
+      $('input[id="doc_section_' + doc_section + '"]').prop("checked", true)
       if (params.q) {
           var query = params.q[0];
           $('input[name="q"]')[0].value = query;
-          this.performSearch(query);
+          $('input[name="q"]')[1].value = query;
+          this.performSearch(query, doc_section);
       }
   },
 
@@ -130,10 +135,10 @@ var Search = {
   /**
    * perform a search for something (or wait until index is loaded)
    */
-  performSearch : function(query) {
+  performSearch : function(query, doc_section) {
     // create the required interface elements
     this.out = $('#search-results');
-    this.title = $('<h2>' + _('Searching') + '</h2>').appendTo(this.out);
+    this.title = $('').appendTo(this.out);
     this.dots = $('<span></span>').appendTo(this.title);
     this.status = $('<p class="search-summary">&nbsp;</p>').appendTo(this.out);
     this.output = $('<ul class="search"/>').appendTo(this.out);
@@ -142,16 +147,17 @@ var Search = {
     this.startPulse();
 
     // index already loaded, the browser was quick!
-    if (this.hasIndex())
-      this.query(query);
-    else
+    if (this.hasIndex()) {
+      this.query(query, doc_section);
+    } else {
       this.deferQuery(query);
+    }
   },
 
   /**
    * execute search (requires search index to be loaded)
    */
-  query : function(query) {
+  query : function(query, doc_section) {
     var i;
 
     // stem the searchterms and add them to the correct list
@@ -172,6 +178,10 @@ var Search = {
       }
       // stem the word
       var word = stemmer.stemWord(tmp[i].toLowerCase());
+      // prevent stemmer from cutting word smaller than two chars
+      if(word.length < 3 && tmp[i].length >= 3) {
+        word = tmp[i];
+      }
       var toAppend;
       // select the correct list
       if (word[0] == '-') {
@@ -187,10 +197,6 @@ var Search = {
         toAppend.push(word);
     }
     var highlightstring = '?highlight=' + $.urlencode(hlterms.join(" "));
-
-    // console.debug('SEARCH: searching for:');
-    // console.info('required: ', searchterms);
-    // console.info('excluded: ', excluded);
 
     // prepare search
     var terms = this._index.terms;
@@ -216,6 +222,18 @@ var Search = {
         results[i][4] = Scorer.score(results[i]);
     }
 
+    // Filter results by doc_section
+    if (doc_section && doc_section !== 'all') {
+      results = results.filter(result => {
+        let condition = result[0].split('/')[0] === doc_section;
+        return condition
+      })
+    }
+
+    // Enrich item with parent doc_section title
+    for (i = 0; i < results.length; i++) 
+      results[i][6] = results[i][6] || title_documentation;
+
     // now sort the results by score (in opposite order of appearance, since the
     // display function below uses pop() to retrieve items) and then
     // alphabetically
@@ -234,11 +252,31 @@ var Search = {
       }
     });
 
-    // for debugging
-    //Search.lastresults = results.slice();  // a copy
-    //console.info('search results:', Search.lastresults);
+    function _getBreadcrumbs(item, linkUrl) {
+      let parentTitles = item[6];
+      let opensppApiTitles = [
+        "An OpenSPP API",
+        "List of all API methods with descriptions"
+      ];
+      // ugly hack for documentation integrated via git submodule
+      parentTitles = Array.isArray(parentTitles) ? parentTitles : opensppApiTitles;      
+      let path = item[0].split('/')
+        .slice(0, -1);
+      path = path.map((el, index) => {
+        return {
+          "path": path.slice(0, index+1).join('/'),
+          "title": parentTitles[index]
+        }
+      })
+      let markup = path
+        .map((el, idx) => {
+            return `<a href="/${el.path}">${el.title}</a>` 
+          })
+      markup.push(`<span class="lastbreadcrumb">${item[1]}</span>`)
+      return markup.join('<span class="pathseparator">&gt;</span>');
+    }
 
-    // print the results
+    // Print the results.
     var resultCount = results.length;
     function displayNextItem() {
       // results left, load the summary and display it
@@ -263,25 +301,29 @@ var Search = {
           requestUrl = DOCUMENTATION_OPTIONS.URL_ROOT + item[0] + DOCUMENTATION_OPTIONS.FILE_SUFFIX;
           linkUrl = item[0] + DOCUMENTATION_OPTIONS.LINK_SUFFIX;
         }
-        listItem.append($('<a/>').attr('href',
-            linkUrl +
-            highlightstring + item[2]).html(item[1]));
+        let breadcrumbs = _getBreadcrumbs(item, linkUrl);
+        breadcrumbs = $("<div class='breadcrumbs'>" + breadcrumbs + "</div>");
+        listItem.append(breadcrumbs);
+        let headline = $('<h3/>');
+        headline.append($('<a/>').attr('href',
+          linkUrl +
+          highlightstring + item[2]).html(item[1]));
+        
+        listItem.append(headline);
+
         if (item[3]) {
           listItem.append($('<span> (' + item[3] + ')</span>'));
           Search.output.append(listItem);
           setTimeout(function() {
             displayNextItem();
           }, 5);
-        } else if (DOCUMENTATION_OPTIONS.SHOW_SEARCH_SUMMARY) {
+        } else if (DOCUMENTATION_OPTIONS.HAS_SOURCE) {
           $.ajax({url: requestUrl,
                   dataType: "text",
                   complete: function(jqxhr, textstatus) {
                     var data = jqxhr.responseText;
                     if (data !== '' && data !== undefined) {
-                      var summary = Search.makeSearchSummary(data, searchterms, hlterms);
-                      if (summary) {
-                        listItem.append(summary);
-                      }
+                      listItem.append(Search.makeSearchSummary(data, searchterms, hlterms));
                     }
                     Search.output.append(listItem);
                     setTimeout(function() {
@@ -289,7 +331,7 @@ var Search = {
                     }, 5);
                   }});
         } else {
-          // just display title
+          // no source available, just display title
           Search.output.append(listItem);
           setTimeout(function() {
             displayNextItem();
@@ -300,10 +342,13 @@ var Search = {
       else {
         Search.stopPulse();
         Search.title.text(_('Search Results'));
-        if (!resultCount)
-          Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly and that you\'ve selected enough categories.'));
+        if (query === '') {
+          Search.status.text(_('No query, no results.'));
+        }
+        else if (!resultCount)
+          Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly. Searching for multiple words only shows matches that contain all words.'));
         else
-            Search.status.text(_('Search finished, found %s page(s) matching the search query.').replace('%s', resultCount));
+            Search.status.text(_('Found %s page(s) matching the search query.').replace('%s', resultCount));
         Search.status.fadeIn(500);
       }
     }
@@ -477,13 +522,40 @@ var Search = {
           break;
         }
       }
-
       // if we have still a valid result we can add it to the result list
       if (valid) {
+        /**
+         * file: index
+         * docnames: array of paths
+         * titles: array of titles
+         */
+
         // select one (max) score for the file.
         // for better ranking, we should calculate ranking by using words statistics like basic tf-idf...
         var score = $u.max($u.map(fileMap[file], function(w){return scoreMap[file][w]}));
-        results.push([docnames[file], titles[file], '', null, score, filenames[file]]);
+
+        /**
+         * Return array with titles of ancestors of file.
+         * @param {number} idx - The index of the result item in global list of files
+         * @returns array
+         */
+        function getParentTitles(idx) {
+          let path = docnames[idx]
+
+          let foo = path.split('/').slice(0, -1);
+          foo = foo.map((el, index) => {
+            return `${foo.slice(0, index+1).join('/')}/index`
+          })
+      
+          let parentTitles = foo.map(el => {
+            let parentId = docnames.indexOf(el);
+            let title = parentId === -1 ? title_documentation : titles[parentId];
+            return title
+          })
+          return parentTitles
+        }
+
+        results.push([docnames[file], titles[file], '', null, score, filenames[file], getParentTitles(file)]);
       }
     }
     return results;
@@ -498,9 +570,6 @@ var Search = {
    */
   makeSearchSummary : function(htmlText, keywords, hlwords) {
     var text = Search.htmlToText(htmlText);
-    if (text == "") {
-      return null;
-    }
     var textLower = text.toLowerCase();
     var start = 0;
     $.each(keywords, function() {
@@ -522,4 +591,14 @@ var Search = {
 
 $(document).ready(function() {
   Search.init();
+  $('#q').focus();
+  $('input[name="doc_section"]').change(function() {
+    this.form.submit();
+  });
+  
+  function clearSearchField() {
+    $('#q').val('');
+    this.form.submit();
+  }
+  $( "button.clear_search" ).on( "click", clearSearchField );
 });

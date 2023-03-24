@@ -1,0 +1,1099 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Authors' guide to writing OpenSPP Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors." name="description" />
+<meta content="Authors' guide to writing OpenSPP Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors." property="og:description" />
+<meta content="Authors Guide" property="og:title" />
+<meta content="OpenSPP, Documentation, SEO, meta, Vale, spell, grammar, style, check, linkcheck, lexer" name="keywords" />
+<meta property="og:title" content="Authors guide" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.openspp.org/contributing/authors.html" />
+<meta property="og:site_name" content="OpenSPP Documentation" />
+<meta property="og:description" content="This guide is for authors of OpenSPP Documentation. It covers how to run a live preview of documentation while editing, build documentation, and perform quality checks. For general markup syntax, s..." />
+<meta property="og:image" content="https://docs.openspp.org/_static/openspp_logo.png" />
+<meta property="og:image:alt" content="OpenSPP Documentation" />
+<meta property="og:locale" content="en_US" />
+
+<title>Authors guide – Contributing to documentation &#8212; OpenSPP Documentation v1.0</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-httpexample.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinxcontrib-httpexample.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/patch_scrollToActive.js"></script>
+    <script src="../_static/search_shortcut.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="canonical" href="https://docs.openspp.org/contributing/authors.html" />
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within OpenSPP Documentation v1.0"
+          href="../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../_static/icon_192.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MyST reference" href="myst-reference.html" />
+    <link rel="prev" title="Building and checking the quality of documentation" href="setup-build.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="100">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">OpenSPP Documentation v1.0</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <div class="input-group">
+    <label for="q" class="sr-only">Search string
+    </label>
+    <i class="fa fa-search fa-lg search-icon" aria-hidden="true"></i>
+    <input
+    type="search" name="q" id="search-input"
+    class="form-control"
+    placeholder="Search"
+    aria-labelledby="Search"
+    value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+    />
+    <div class="input-group-append">
+      <span class="input-group-text" id="shortcut">
+        <kbd id="search-shortcut">⌘</kbd>&nbsp;<kbd>K</kbd>
+      </span>
+    </div>
+  </div>
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tutorials/index.html">
+   Getting started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/installation_guide.html">
+     Installation Guide
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../user_guide/index.html">
+   User guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/access_management.html">
+     Access management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/audit_log.html">
+     Audit log
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/change_requests.html">
+     Change Requests
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/consent_management.html">
+     Consent management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/custom_fields.html">
+     Custom fields
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/dashboards_and_reports.html">
+     Dashboards and reports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/event_data.html">
+     Event data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/geotargeting.html">
+     Geotargeting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/grievance_redressal_management.html">
+     Grievance Redressal Management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/indicators.html">
+     Indicators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/hardware_integration.html">
+     Hardware integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/programs_and_cycles.html">
+     Programs and cycles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/proxy_means_test.html">
+     Proxy Mean Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/Registering_individuals_and_groups.html">
+     Registring individuals and groups
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/vouchers.html">
+     Vouchers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../howto/index.html">
+   Howto
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/developer_mode.html">
+     Developer mode (debug mode)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../technical_reference/index.html">
+   Technical Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/external_api.html">
+     External API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/architecture.html">
+     Architecture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/programs/concepts.html">
+     Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/programs/dashboards.html">
+     Dashboards
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/programs/program_manager.html">
+     Program Manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/programs/cycle_manager.html">
+     Cycle Manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/programs/eligibility_manager.html">
+     Eligibility Manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/programs/entitlement_manager.html">
+     Entitlement Manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/programs/deduplication_manager.html">
+     Deduplication Manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/programs/notification_manager.html">
+     Notification Manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/audit_logs.html">
+     Audit Logs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/oidc.html">
+     Configuring Keycloak for OAuth
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/license.html">
+     Licensing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../community_and_support/index.html">
+   Community and Support
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../community_and_support/how_to_contribute_to_the_project.html">
+     Contributing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../community_and_support/i18n_l10n.html">
+     Internationalization and Localization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../community_and_support/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../community_and_support/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../community_and_support/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../community_and_support/security_report.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Contributing to documentation
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="setup-build.html">
+     Building and checking the quality of documentation
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Authors guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="myst-reference.html">
+     MyST reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sphinx-extensions.html">
+     Sphinx extensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="admins.html">
+     Administrators Guide
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary/index.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav><div class="dropdown" id="version_switcher">
+    <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="version_switcher_button" data-toggle="dropdown">
+        1.0  <!-- this text may get changed later by javascript -->
+        <span class="caret"></span>
+    </button>
+    <div id="version_switcher_menu" class="dropdown-menu list-group-flush py-0" aria-labelledby="version_switcher_button">
+    <!-- dropdown will be populated by javascript on page load -->
+    </div>
+</div>
+
+<!-- NOTE: this JS must live here (not in our global JS file) because it relies
+     on being processed by Jinja before it is run (specifically for replacing
+     variables contributing/authors and {'json_url': '/_static/switcher.json', 'version_match': '1.0'}.
+-->
+
+<script type="text/javascript">
+// Check if corresponding page path exists in other version of docs
+// and, if so, go there instead of the homepage of the other docs version
+function checkPageExistsAndRedirect(event) {
+    const currentFilePath = "contributing/authors.html",
+          tryUrl = event.target.getAttribute("href");
+    let otherDocsHomepage = tryUrl.replace(currentFilePath, "");
+    $.ajax({
+        type: 'HEAD',
+        url: tryUrl,
+        // if the page exists, go there
+        success: function() {
+            location.href = tryUrl;
+        }
+    }).fail(function() {
+        location.href = otherDocsHomepage;
+    });
+    // this prevents the browser from following the href of the clicked node
+    // (which is fine because this function takes care of redirecting)
+    return false;
+}
+
+// Populate the version switcher from the JSON config file
+(function () {
+    $.getJSON("/_static/switcher.json", function(data, textStatus, jqXHR) {
+        const currentFilePath = "contributing/authors.html";
+        // create links to the corresponding page in the other docs versions
+        $.each(data, function(index, entry) {
+            // if no custom name specified (e.g., "latest"), use version string
+            if (!("name" in entry)) {
+                entry.name = entry.version;
+            }
+            // create the node
+            const node = document.createElement("a");
+            node.setAttribute("class", "list-group-item list-group-item-action py-1");
+            node.textContent = `${entry.name}`;
+            node.setAttribute("href", `${entry.url}${currentFilePath}`);
+            // on click, AJAX calls will check if the linked page exists before
+            // trying to redirect, and if not, will redirect to the homepage
+            // for that version of the docs.
+            node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
+            $("#version_switcher_menu").append(node);
+            // replace dropdown button text with the preferred display name of
+            // this version, rather than using sphinx's 1.0 variable.
+            // also highlight the dropdown entry for the currently-viewed
+            // version's entry
+            if (entry.version == "1.0") {
+                node.classList.add("active");
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
+            }
+        });
+    });
+})();
+</script></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            
+    <p class="openspporglink">
+        <a href="https://openspp.org">
+            <img src="/_static/openspp_logo.png" alt="openspp.org" /> openspp.org</a>
+    </p>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__label">
+        <span>Authors guide – Contributing to documentation</span>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/openspp/documentation"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fcontributing/authors.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://docs.openspp.org/contributing/index.html?contributing/authors.md#making-contributions-on-github"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/contributing/authors.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synchronize-the-browser-while-editing">
+   Synchronize the browser while editing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quality-checks">
+   Quality checks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#markup-syntax-must-be-valid">
+     Markup syntax must be valid
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#american-english-spelling-grammar-and-syntax-and-style-guide">
+     American English spelling, grammar, and syntax, and style guide
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#all-links-must-be-valid">
+     All links must be valid
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#syntax-highlighting">
+     Syntax highlighting
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#choosing-a-lexer">
+       Choosing a Lexer
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#validate-the-lexer">
+       Validate the lexer
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#html-and-open-graph-metadata">
+     HTML and Open Graph metadata
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#openspp-documentation-styleguide">
+   OpenSPP documentation styleguide
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-documentation-writing-references">
+   General documentation writing references
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Authors guide</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synchronize-the-browser-while-editing">
+   Synchronize the browser while editing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quality-checks">
+   Quality checks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#markup-syntax-must-be-valid">
+     Markup syntax must be valid
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#american-english-spelling-grammar-and-syntax-and-style-guide">
+     American English spelling, grammar, and syntax, and style guide
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#all-links-must-be-valid">
+     All links must be valid
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#syntax-highlighting">
+     Syntax highlighting
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#choosing-a-lexer">
+       Choosing a Lexer
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#validate-the-lexer">
+       Validate the lexer
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#html-and-open-graph-metadata">
+     HTML and Open Graph metadata
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#openspp-documentation-styleguide">
+   OpenSPP documentation styleguide
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-documentation-writing-references">
+   General documentation writing references
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="authors-guide">
+<span id="authors-guide-label"></span><h1>Authors guide<a class="headerlink" href="#authors-guide" title="Permalink to this headline">#</a></h1>
+<p>This guide is for authors of OpenSPP Documentation.
+It covers how to run a live preview of documentation while editing, build documentation, and perform quality checks.
+For general markup syntax, see <a class="reference internal" href="myst-reference.html"><span class="doc">MyST reference</span></a>.</p>
+<div class="section" id="synchronize-the-browser-while-editing">
+<h2>Synchronize the browser while editing<a class="headerlink" href="#synchronize-the-browser-while-editing" title="Permalink to this headline">#</a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">sphinx-autobuild</span></code> to view changes in the browser while you edit documentation.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>livehtml
+</pre></div>
+</div>
+<p>You can open a browser at <a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> to preview the documentation.</p>
+</div>
+<div class="section" id="quality-checks">
+<span id="authors-quality-checks-label"></span><h2>Quality checks<a class="headerlink" href="#quality-checks" title="Permalink to this headline">#</a></h2>
+<p>We strive for high quality documentation, setting the following minimum standards.</p>
+<div class="section" id="markup-syntax-must-be-valid">
+<span id="authors-markup-syntax-label"></span><h3>Markup syntax must be valid<a class="headerlink" href="#markup-syntax-must-be-valid" title="Permalink to this headline">#</a></h3>
+<p>See both the specific markup syntax above and general markup in <a class="reference internal" href="myst-reference.html"><span class="doc">MyST reference</span></a>.</p>
+<p>To validate markup, run the following command.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>html
+</pre></div>
+</div>
+<p>Open <code class="docutils literal notranslate"><span class="pre">/_build/html/index.html</span></code> in a web browser.</p>
+</div>
+<div class="section" id="american-english-spelling-grammar-and-syntax-and-style-guide">
+<span id="authors-english-label"></span><h3>American English spelling, grammar, and syntax, and style guide<a class="headerlink" href="#american-english-spelling-grammar-and-syntax-and-style-guide" title="Permalink to this headline">#</a></h3>
+<p>Spellings are enforced through <a class="reference external" href="https://vale.sh/"><code class="docutils literal notranslate"><span class="pre">Vale</span></code></a>.
+OpenSPP uses American English.</p>
+<p>Spelling is configured in <code class="file docutils literal notranslate"><span class="pre">Makefile</span></code>, <code class="file docutils literal notranslate"><span class="pre">.vale.ini</span></code>, and in files in <code class="docutils literal notranslate"><span class="pre">styles/Vocab/OpenSPP/</span></code>.</p>
+<p>Authors should add new words and proper names using correct casing to <code class="file docutils literal notranslate"><span class="pre">styles/Vocab/OpenSPP/accept.txt</span></code>, sorted alphabetically and case-insensitive.</p>
+<p>Vale also provides English grammar and syntax checking, as well as a Style Guide.
+We follow the <a class="reference external" href="https://learn.microsoft.com/en-us/style-guide/welcome/">Microsoft Writing Style Guide</a>.</p>
+<p>To perform all these checks, run the following command.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>vale
+</pre></div>
+</div>
+<p>Because it is difficult to automate good American English grammar and syntax, we do not strictly enforce it.
+We also understand that contributors might not be fluent in English.
+We encourage contributors to make a reasonable effort, and to request a review of their pull request from community members who are fluent in English to fix grammar and syntax.
+Please ask!</p>
+</div>
+<div class="section" id="all-links-must-be-valid">
+<span id="authors-linkcheck-label"></span><h3>All links must be valid<a class="headerlink" href="#all-links-must-be-valid" title="Permalink to this headline">#</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Before you add a link, consider whether you really need it for the documentation.
+Avoid linking to blog posts because they rapidly succumb to bitrot.
+It is preferred to copy the content from the source and add a link to the source as a reference through a <code class="docutils literal notranslate"><span class="pre">seealso</span></code> admonition or footnote, than to merely link to the source.</p>
+</div>
+<p>Valid links are enforced automatically through Sphinx's <code class="docutils literal notranslate"><span class="pre">linkcheck</span></code> builder.</p>
+<p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder">Configuration of the <code class="docutils literal notranslate"><span class="pre">linkcheck</span></code> builder</a> is in <code class="file docutils literal notranslate"><span class="pre">Makefile</span></code> and <code class="file docutils literal notranslate"><span class="pre">docs/conf.py</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">linkcheck_ignore</span></code> supports regular expression syntax.</p>
+<p>When authors add a link to the documentation, it must be a valid public URL without requiring authentication.</p>
+<p>If it is not a valid link, or is private or local, then you must exclude it from <code class="docutils literal notranslate"><span class="pre">linkcheck</span></code> by wrapping it in single backticks.</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Visit the URL <span class="sb">`http://www.example.com`</span> for an example.
+</pre></div>
+</div>
+<p>This will render as follows.</p>
+<blockquote>
+<div><p>Visit the URL <code class="docutils literal notranslate"><span class="pre">http://www.example.com</span></code> for an example.</p>
+</div></blockquote>
+<p>If a link has succumbed to bit rot, then try finding the most recently scraped version on the <a class="reference external" href="https://web.archive.org/">Internet Archive Wayback Machine</a>, and update the link.</p>
+<p>To validate links, run the following command.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>linkcheck
+</pre></div>
+</div>
+<p>Open <code class="docutils literal notranslate"><span class="pre">/_build/linkcheck/output.txt</span></code> for a list of broken links.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Please do not abuse <code class="docutils literal notranslate"><span class="pre">linkcheck_ignore</span></code>.</p>
+<p>There is a special place in hell reserved for contributors who do not bother to update bad links, either dead ones or redirects, causing <code class="docutils literal notranslate"><span class="pre">linkcheck</span></code> to fail.
+And there is a doubly punishing place for those who disable <code class="docutils literal notranslate"><span class="pre">linkcheck</span></code> because there are too many bad links.</p>
+<p>Please do not be &quot;that person&quot;.</p>
+</div>
+</div>
+<div class="section" id="syntax-highlighting">
+<span id="authors-syntax-highlighting-label"></span><h3>Syntax highlighting<a class="headerlink" href="#syntax-highlighting" title="Permalink to this headline">#</a></h3>
+<p>Pygments provides syntax highlighting in Sphinx.</p>
+<p>When including code snippets, you should specify the language.
+Authors must use a proper <a class="reference external" href="https://pygments.org/docs/lexers/">Pygments lexer</a> and not generate warnings.</p>
+<p>The snippet must be valid syntax for the language you specify, else it will not be highlighted properly.
+Avoid adding comments to code snippets, unless you use valid comment syntax for that language.
+For example, JSON does not allow comments.</p>
+<p>Do not indicate elided or omitted code with ellipses (<code class="docutils literal notranslate"><span class="pre">...</span></code> or <code class="docutils literal notranslate"><span class="pre">…</span></code>).
+These are almost never valid syntax and will cause syntax highlighting to fail for the code block.</p>
+<div class="section" id="choosing-a-lexer">
+<h4>Choosing a Lexer<a class="headerlink" href="#choosing-a-lexer" title="Permalink to this headline">#</a></h4>
+<p>Some lexers are less than perfect.
+If your code block does not highlight well, then consider specifying a less ambitious lexer, such as <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">shell</span></code> for commands to be issued in a terminal session.
+Do not include shell prompts.
+This will make commands easy to copy and paste for readers.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">console</span></code> for output of a shell session.
+If you have a mix of a shell command and its output, then use <code class="docutils literal notranslate"><span class="pre">console</span></code>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">xml</span></code> does not work well, then try <code class="docutils literal notranslate"><span class="pre">html</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">jsx</span></code> has a complex syntax that is difficult to parse.
+We have high hopes for the project <a class="reference external" href="https://github.com/fcurella/jsx-lexer"><code class="docutils literal notranslate"><span class="pre">jsx-lexer</span></code></a>.
+We include it in our <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file.
+Please contribute to its further development.</p>
+<p>The lexers <code class="docutils literal notranslate"><span class="pre">html+ng2</span></code>, <code class="docutils literal notranslate"><span class="pre">scss</span></code>, <code class="docutils literal notranslate"><span class="pre">http</span></code>, <code class="docutils literal notranslate"><span class="pre">less</span></code> are also suboptimal and particular.</p>
+<p>If no other lexer works well, then fall back to <code class="docutils literal notranslate"><span class="pre">text</span></code>.
+At least then the build will succeed without warnings, although syntax highlighting for such snippets will not appear.</p>
+</div>
+<div class="section" id="validate-the-lexer">
+<h4>Validate the lexer<a class="headerlink" href="#validate-the-lexer" title="Permalink to this headline">#</a></h4>
+<p>Always build the page to validate syntax.
+The change should not be merged if there are any Sphinx warnings.
+The Sphinx console will display any warnings, such as the following.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/OpenSPP/documentation/classic-ui/bodyclasses.md:10: WARNING: Could not lex literal_block as &quot;python&quot;. Highlighting skipped.</span>
+</pre></div>
+</div>
+<p>The above warning indicates that the syntax is not valid.
+Common mistakes include:</p>
+<ul class="simple">
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">...</span></code> or <code class="docutils literal notranslate"><span class="pre">…</span></code> to indicate omitted code.
+It is preferable to never use ellipses.
+If you must do that, comment it out using the language's comment syntax.</p></li>
+<li><p>Using comments in JSON.</p></li>
+<li><p>A previous code block bleeds through to the next due to invalid MyST syntax.</p></li>
+</ul>
+<p>To validate code block syntax, run the following command.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>html
+</pre></div>
+</div>
+<p>An <a class="reference external" href="https://pygments.org/demo/">online demo of all lexers that Pygments supports</a> may be helpful to test out your code blocks and snippets for syntax highlighting.
+You can also use the <a class="reference external" href="https://pygments.org/docs/cmdline/"><code class="docutils literal notranslate"><span class="pre">pygmentize</span></code></a> binary.</p>
+<p>When using the online lexer, if any red-bordered rectangles appear, then the lexer for Pygments interprets your snippet as not valid.
+You can search the <a class="reference external" href="https://github.com/pygments/pygments/search">Pygments issue tracker</a> for possible solutions, or submit a pull request to enhance the lexer.</p>
+</div>
+</div>
+<div class="section" id="html-and-open-graph-metadata">
+<span id="authors-html-meta-data-label"></span><h3>HTML and Open Graph metadata<a class="headerlink" href="#html-and-open-graph-metadata" title="Permalink to this headline">#</a></h3>
+<p>All documents must have a <code class="docutils literal notranslate"><span class="pre">myst</span></code> topmatter key with an <code class="docutils literal notranslate"><span class="pre">html_meta</span></code> directive at the top of every page.
+When rendered to HTML, it inserts <code class="docutils literal notranslate"><span class="pre">&lt;meta&gt;</span></code> tags for improved search engine results and nicer social media posts.
+Authors should include at least <code class="docutils literal notranslate"><span class="pre">description</span></code>, <code class="docutils literal notranslate"><span class="pre">property=og:description</span></code>, <code class="docutils literal notranslate"><span class="pre">property=og:title</span></code>, and <code class="docutils literal notranslate"><span class="pre">keywords</span></code> meta tags.</p>
+<p>The following is an example of <code class="docutils literal notranslate"><span class="pre">html_meta</span></code>.
+Note that the content of the two tags <code class="docutils literal notranslate"><span class="pre">description</span></code> and <code class="docutils literal notranslate"><span class="pre">property=og:description</span></code> should be identical.</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>---
+myst:
+  html_meta:
+    &quot;description&quot;: &quot;Authors&#39; guide to writing OpenSPP Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors.&quot;
+    &quot;property=og:description&quot;: &quot;Authors&#39; guide to writing OpenSPP Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors.&quot;
+    &quot;property=og:title&quot;: &quot;Authors Guide&quot;
+<span class="gu">    &quot;keywords&quot;: &quot;OpenSPP, Documentation, SEO, meta, Vale, spell, grammar, style, check, linkcheck, lexer&quot;</span>
+<span class="gu">---</span>
+</pre></div>
+</div>
+<p>This renders in the HTML <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> section as follows.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Authors&#39; guide to writing OpenSPP Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors.&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Authors&#39; guide to writing OpenSPP Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors.&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:description&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;Authors Guide&quot;</span> <span class="na">property</span><span class="o">=</span><span class="s">&quot;og:title&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;OpenSPP, Documentation, SEO, meta, Vale, spell, grammar, style, check, linkcheck, lexer&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;keywords&quot;</span> <span class="p">/&gt;</span>
+</pre></div>
+</div>
+<p>Additional Open Graph metadata is implemented through the Sphinx extension <a class="reference external" href="https://github.com/wpilibsuite/sphinxext-opengraph"><code class="docutils literal notranslate"><span class="pre">sphinxext-opengraph</span></code></a> and the <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/configuration.html#setting-html-metadata">MyST <code class="docutils literal notranslate"><span class="pre">html_meta</span></code> directive</a>, which resolves to the <a class="reference external" href="https://docutils.sourceforge.io/docs/ref/rst/directives.html#metadata">Docutils <code class="docutils literal notranslate"><span class="pre">meta</span></code> directive</a>.
+See the site-wide configuration in <code class="file docutils literal notranslate"><span class="pre">conf.py</span></code>.</p>
+</div>
+</div>
+<div class="section" id="openspp-documentation-styleguide">
+<h2>OpenSPP documentation styleguide<a class="headerlink" href="#openspp-documentation-styleguide" title="Permalink to this headline">#</a></h2>
+<p>We follow <a class="reference external" href="https://learn.microsoft.com/en-us/style-guide/welcome/">Microsoft Writing Style Guide</a>.</p>
+<p>Key concepts from that guide include the following.</p>
+<ul class="simple">
+<li><p>Documentation should be informational, but friendly.</p></li>
+<li><p>Address the reader by using &quot;you&quot; instead of &quot;the user&quot;.</p></li>
+<li><p>Headings should be Sentence cased, not Title Cased.</p></li>
+</ul>
+<p>The OpenSPP Documentation Team adopted additional guidelines.</p>
+<ul class="simple">
+<li><p>Use one sentence per line.
+Keep sentences short and understandable.
+This will greatly improve the editing and maintenance of your documentation.</p></li>
+<li><p>Do not follow PEP8 maximum line length standard.
+Documentation is narrative text and images, not Python code.</p></li>
+<li><p>Use dashes <code class="docutils literal notranslate"><span class="pre">-</span></code> in filenames and avoid underscores.</p></li>
+<li><p>Images should be no wider than 740 pixels to fit within the documentation's main view port.
+This avoids scaling and reducing legibility of images.
+To make that work in Volto, set your browser width to 1180 pixels.
+You will notice that the drag and trash icons for each block move inside the block from outside.</p></li>
+<li><p>In user documentation, provide screenshots of each step where the interface changes.
+It is painstaking, but worth the effort.
+Provide sufficient detail of what each option is and does.</p></li>
+</ul>
+</div>
+<div class="section" id="general-documentation-writing-references">
+<h2>General documentation writing references<a class="headerlink" href="#general-documentation-writing-references" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.writethedocs.org/guide/">Write the Docs - Documentation Guide</a></p></li>
+<li><p><a class="reference external" href="https://www.merriam-webster.com/words-at-play/em-dash-en-dash-how-to-use">A Guide to Em Dashes, En Dashes, and Hyphens</a></p></li>
+</ul>
+</div>
+</div>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="setup-build.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Building and checking the quality of documentation</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="myst-reference.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">MyST reference</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      &copy; Copyright OpenSPP.<br/>
+    <div class="extra_footer">
+      <p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+    
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            if ($.trim($(".sticky-top .bd-toc").html()) === "") {
+                $(".sticky-top .bd-toc").css("visibility", "hidden");
+            }
+        });
+    </script>
+
+
+  </body>
+</html>
