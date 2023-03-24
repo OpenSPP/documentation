@@ -1,0 +1,17 @@
+[submodule "submodules/openg2p-registry"]
+	path = submodules/openg2p-registry
+	url = git@github.com:OpenG2P/openg2p-registry.git
+	branch = 15.0-1.0-develop
+[submodule "submodules/openg2p-program"]
+	path = submodules/openg2p-program
+	url = git@github.com:OpenG2P/openg2p-program.git
+	branch = 15.0-1.0-develop
+[submodule "submodules/odoo"]
+	path = submodules/odoo
+	url = git@github.com:odoo/odoo.git
+	branch = 15.0
+	shallow = true
+[submodule "submodules/queue"]
+	path = submodules/queue
+	url = git@github.com:OCA/queue
+	branch = 15.0
