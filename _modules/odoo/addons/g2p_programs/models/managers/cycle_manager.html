@@ -740,8 +740,10 @@ title="Open an issue"
             <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;The Cycle is not in draft mode&quot;</span><span class="p">))</span>
 
 <div class="viewcode-block" id="BaseCycleManager.mark_import_as_done"><a class="viewcode-back" href="../../../../../../technical_reference/programs/cycle_manager.html#odoo.addons.g2p_programs.models.managers.cycle_manager.BaseCycleManager.mark_import_as_done">[docs]</a>    <span class="k">def</span> <span class="nf">mark_import_as_done</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Base :meth:`mark_import_as_done`</span>
-<span class="sd">        Post a message in the chatter</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Complete the import of beneficiaries.</span>
+<span class="sd">        Base :meth:`mark_import_as_done`.</span>
+<span class="sd">        This is executed when all the jobs are completed.</span>
+<span class="sd">        Post a message in the chatter.</span>
 
 <span class="sd">        :param cycle: A recordset of cycle</span>
 <span class="sd">        :param msg: A string to be posted in the chatter</span>
@@ -750,7 +752,28 @@ title="Open an issue"
         <span class="bp">self</span><span class="o">.</span><span class="n">ensure_one</span><span class="p">()</span>
         <span class="n">cycle</span><span class="o">.</span><span class="n">locked</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="n">cycle</span><span class="o">.</span><span class="n">locked_reason</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="n">cycle</span><span class="o">.</span><span class="n">message_post</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="n">msg</span><span class="p">)</span></div></div>
+        <span class="n">cycle</span><span class="o">.</span><span class="n">message_post</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="c1"># Update Statistics</span>
+        <span class="n">cycle</span><span class="o">.</span><span class="n">_compute_members_count</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="BaseCycleManager.mark_prepare_entitlement_as_done"><a class="viewcode-back" href="../../../../../../technical_reference/programs/cycle_manager.html#odoo.addons.g2p_programs.models.managers.cycle_manager.BaseCycleManager.mark_prepare_entitlement_as_done">[docs]</a>    <span class="k">def</span> <span class="nf">mark_prepare_entitlement_as_done</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Complete the preparation of entitlements.</span>
+<span class="sd">        Base :meth:`mark_prepare_entitlement_as_done`.</span>
+<span class="sd">        This is executed when all the jobs are completed.</span>
+<span class="sd">        Post a message in the chatter.</span>
+
+<span class="sd">        :param cycle: A recordset of cycle</span>
+<span class="sd">        :param msg: A string to be posted in the chatter</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ensure_one</span><span class="p">()</span>
+        <span class="n">cycle</span><span class="o">.</span><span class="n">locked</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">cycle</span><span class="o">.</span><span class="n">locked_reason</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">cycle</span><span class="o">.</span><span class="n">message_post</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="c1"># Update Statistics</span>
+        <span class="n">cycle</span><span class="o">.</span><span class="n">_compute_entitlements_count</span><span class="p">()</span></div></div>
 
 
 <div class="viewcode-block" id="DefaultCycleManager"><a class="viewcode-back" href="../../../../../../technical_reference/programs/cycle_manager.html#odoo.addons.g2p_programs.models.managers.cycle_manager.DefaultCycleManager">[docs]</a><span class="k">class</span> <span class="nc">DefaultCycleManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
@@ -843,7 +866,7 @@ title="Open an issue"
             <span class="n">beneficiaries_count</span> <span class="o">=</span> <span class="n">cycle</span><span class="o">.</span><span class="n">get_beneficiaries</span><span class="p">([</span><span class="s2">&quot;enrolled&quot;</span><span class="p">],</span> <span class="n">count</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="n">rec</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">get_manager</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">MANAGER_ENTITLEMENT</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">beneficiaries_count</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">MIN_ROW_JOB_QUEUE</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_entitlements</span><span class="p">(</span><span class="n">cycle</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_entitlements</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">do_count</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_entitlements_async</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries_count</span><span class="p">)</span></div>
 
@@ -862,49 +885,37 @@ title="Open an issue"
         <span class="p">)</span>
 
         <span class="n">jobs</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="c1"># Get the last iteration</span>
-        <span class="n">last_iter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">beneficiaries_count</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span>
-            <span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="n">beneficiaries_count</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
-        <span class="p">)</span>
-        <span class="n">ctr</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">beneficiaries_count</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">):</span>
-            <span class="n">ctr</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">if</span> <span class="n">ctr</span> <span class="o">==</span> <span class="n">last_iter</span><span class="p">:</span>
-                <span class="c1"># Last iteration, do not skip computing the total entitlements to update the total entitlement fields</span>
-                <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">_prepare_entitlements</span><span class="p">(</span>
-                        <span class="n">cycle</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">,</span> <span class="n">skip_count</span><span class="o">=</span><span class="kc">False</span>
-                    <span class="p">)</span>
-                <span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">_prepare_entitlements</span><span class="p">(</span>
-                        <span class="n">cycle</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">,</span> <span class="n">skip_count</span><span class="o">=</span><span class="kc">True</span>
-                    <span class="p">)</span>
-                <span class="p">)</span>
+            <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">_prepare_entitlements</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">)</span>
+            <span class="p">)</span>
         <span class="n">main_job</span> <span class="o">=</span> <span class="n">group</span><span class="p">(</span><span class="o">*</span><span class="n">jobs</span><span class="p">)</span>
         <span class="n">main_job</span><span class="o">.</span><span class="n">on_done</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">mark_import_as_done</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Entitlement Ready.&quot;</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">mark_prepare_entitlement_as_done</span><span class="p">(</span>
+                <span class="n">cycle</span><span class="p">,</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Entitlement Ready.&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
         <span class="p">)</span>
         <span class="n">main_job</span><span class="o">.</span><span class="n">delay</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">_prepare_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skip_count</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_prepare_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">do_count</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Prepare Entitlements</span>
 <span class="sd">        Get the beneficiaries and generate their entitlements.</span>
 
 <span class="sd">        :param cycle: The cycle</span>
 <span class="sd">        :param offset: Optional integer value for the ORM search offset</span>
 <span class="sd">        :param limit: Optional integer value for the ORM search limit</span>
-<span class="sd">        :param skip_count: Skip compute total entitlements</span>
+<span class="sd">        :param do_count: Boolean - set to False to not run compute function</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">beneficiaries</span> <span class="o">=</span> <span class="n">cycle</span><span class="o">.</span><span class="n">get_beneficiaries</span><span class="p">(</span>
             <span class="p">[</span><span class="s2">&quot;enrolled&quot;</span><span class="p">],</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;id&quot;</span>
         <span class="p">)</span>
         <span class="n">entitlement_manager</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">get_manager</span><span class="p">(</span><span class="n">constants</span><span class="o">.</span><span class="n">MANAGER_ENTITLEMENT</span><span class="p">)</span>
-        <span class="n">entitlement_manager</span><span class="o">.</span><span class="n">prepare_entitlements</span><span class="p">(</span>
-            <span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries</span><span class="p">,</span> <span class="n">skip_count</span><span class="o">=</span><span class="n">skip_count</span>
-        <span class="p">)</span>
+        <span class="n">entitlement_manager</span><span class="o">.</span><span class="n">prepare_entitlements</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">do_count</span><span class="p">:</span>
+            <span class="c1"># Update Statistics</span>
+            <span class="n">cycle</span><span class="o">.</span><span class="n">_compute_entitlements_count</span><span class="p">()</span>
 
 <div class="viewcode-block" id="DefaultCycleManager.mark_distributed"><a class="viewcode-back" href="../../../../../../technical_reference/programs/cycle_manager.html#odoo.addons.g2p_programs.models.managers.cycle_manager.DefaultCycleManager.mark_distributed">[docs]</a>    <span class="k">def</span> <span class="nf">mark_distributed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">):</span>
         <span class="n">cycle</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="n">constants</span><span class="o">.</span><span class="n">STATE_DISTRIBUTED</span><span class="p">})</span></div>
@@ -993,7 +1004,7 @@ title="Open an issue"
             <span class="n">message</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;No beneficiaries to import.&quot;</span><span class="p">)</span>
             <span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;warning&quot;</span>
         <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">beneficiaries</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">MIN_ROW_JOB_QUEUE</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_add_beneficiaries</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_add_beneficiaries</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">do_count</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="n">message</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> beneficiaries imported.&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">beneficiaries</span><span class="p">))</span>
             <span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;success&quot;</span>
         <span class="k">else</span><span class="p">:</span>
@@ -1024,32 +1035,14 @@ title="Open an issue"
 
         <span class="n">beneficiaries_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">beneficiaries</span><span class="p">)</span>
         <span class="n">jobs</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="c1"># Get the last iteration</span>
-        <span class="n">last_iter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">beneficiaries_count</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span>
-            <span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="n">beneficiaries_count</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
-        <span class="p">)</span>
-        <span class="n">ctr</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">beneficiaries_count</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">):</span>
-            <span class="n">ctr</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">if</span> <span class="n">ctr</span> <span class="o">==</span> <span class="n">last_iter</span><span class="p">:</span>
-                <span class="c1"># Last iteration, do not skip computing the total beneficiaries to update the total beneficiaries fields</span>
-                <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">_add_beneficiaries</span><span class="p">(</span>
-                        <span class="n">cycle</span><span class="p">,</span>
-                        <span class="n">beneficiaries</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">],</span>
-                        <span class="n">state</span><span class="p">,</span>
-                        <span class="n">skip_count</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                    <span class="p">)</span>
+            <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">_add_beneficiaries</span><span class="p">(</span>
+                    <span class="n">cycle</span><span class="p">,</span>
+                    <span class="n">beneficiaries</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">],</span>
+                    <span class="n">state</span><span class="p">,</span>
                 <span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">_add_beneficiaries</span><span class="p">(</span>
-                        <span class="n">cycle</span><span class="p">,</span>
-                        <span class="n">beneficiaries</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">],</span>
-                        <span class="n">state</span><span class="p">,</span>
-                        <span class="n">skip_count</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                    <span class="p">)</span>
-                <span class="p">)</span>
+            <span class="p">)</span>
 
         <span class="n">main_job</span> <span class="o">=</span> <span class="n">group</span><span class="p">(</span><span class="o">*</span><span class="n">jobs</span><span class="p">)</span>
         <span class="n">main_job</span><span class="o">.</span><span class="n">on_done</span><span class="p">(</span>
@@ -1059,7 +1052,15 @@ title="Open an issue"
         <span class="p">)</span>
         <span class="n">main_job</span><span class="o">.</span><span class="n">delay</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">_add_beneficiaries</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s2">&quot;draft&quot;</span><span class="p">,</span> <span class="n">skip_count</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_add_beneficiaries</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s2">&quot;draft&quot;</span><span class="p">,</span> <span class="n">do_count</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add Beneficiaries</span>
+
+<span class="sd">        :param cycle: Recordset of cycle</span>
+<span class="sd">        :param beneficiaries: Recordset of beneficiaries</span>
+<span class="sd">        :param state: String state to be set to beneficiary</span>
+<span class="sd">        :param do_count: Boolean - set to False to not run compute functions</span>
+<span class="sd">        :return: Integer - count of not enrolled members</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">new_beneficiaries</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">beneficiaries</span><span class="p">:</span>
             <span class="n">new_beneficiaries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
@@ -1074,8 +1075,9 @@ title="Open an issue"
                 <span class="p">]</span>
             <span class="p">)</span>
         <span class="n">cycle</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;cycle_membership_ids&quot;</span><span class="p">:</span> <span class="n">new_beneficiaries</span><span class="p">})</span>
-        <span class="c1"># Compute total cycle members</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">skip_count</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">do_count</span><span class="p">:</span>
+            <span class="c1"># Update Statistics</span>
             <span class="n">cycle</span><span class="o">.</span><span class="n">_compute_members_count</span><span class="p">()</span>
 
     <span class="nd">@api</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">&quot;cycle_duration&quot;</span><span class="p">)</span>

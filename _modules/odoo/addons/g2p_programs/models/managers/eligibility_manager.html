@@ -591,12 +591,12 @@ title="Open an issue"
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="BaseEligibilityManager.verify_cycle_eligibility"><a class="viewcode-back" href="../../../../../../technical_reference/programs/eligibility_manager.html#odoo.addons.g2p_programs.models.managers.eligibility_manager.BaseEligibilityManager.verify_cycle_eligibility">[docs]</a>    <span class="k">def</span> <span class="nf">verify_cycle_eligibility</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">program_memberships</span><span class="p">):</span>
+<div class="viewcode-block" id="BaseEligibilityManager.verify_cycle_eligibility"><a class="viewcode-back" href="../../../../../../technical_reference/programs/eligibility_manager.html#odoo.addons.g2p_programs.models.managers.eligibility_manager.BaseEligibilityManager.verify_cycle_eligibility">[docs]</a>    <span class="k">def</span> <span class="nf">verify_cycle_eligibility</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">membership</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method is used to validate if a beneficiary match the criteria needed to be enrolled in a cycle.</span>
 <span class="sd">        Args:</span>
 <span class="sd">            cycle:</span>
-<span class="sd">            program_membership:</span>
+<span class="sd">            membership:</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            bool: True if the cycle match the criterias, False otherwise.</span>
@@ -629,12 +629,15 @@ title="Open an issue"
             <span class="n">ids</span> <span class="o">=</span> <span class="n">membership</span><span class="o">.</span><span class="n">mapped</span><span class="p">(</span><span class="s2">&quot;partner_id.id&quot;</span><span class="p">)</span>
             <span class="n">domain</span> <span class="o">+=</span> <span class="p">[(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;in&quot;</span><span class="p">,</span> <span class="n">ids</span><span class="p">)]</span>
 
+        <span class="c1"># Do not include disabled registrants</span>
+        <span class="n">domain</span> <span class="o">+=</span> <span class="p">[(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)]</span>
         <span class="c1"># TODO: use the config of the program</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">target_type</span> <span class="o">==</span> <span class="s2">&quot;group&quot;</span><span class="p">:</span>
             <span class="n">domain</span> <span class="o">+=</span> <span class="p">[(</span><span class="s2">&quot;is_group&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)]</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">target_type</span> <span class="o">==</span> <span class="s2">&quot;individual&quot;</span><span class="p">:</span>
             <span class="n">domain</span> <span class="o">+=</span> <span class="p">[(</span><span class="s2">&quot;is_group&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)]</span>
         <span class="n">domain</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_safe_eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eligibility_domain</span><span class="p">)</span>
+        <span class="c1"># _logger.debug(&quot;DOMAIN: %s&quot; % domain)</span>
         <span class="k">return</span> <span class="n">domain</span>
 
     <span class="k">def</span> <span class="nf">enroll_eligible_registrants</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">program_memberships</span><span class="p">):</span>

@@ -584,12 +584,11 @@ title="Open an issue"
     <span class="n">name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="s2">&quot;Manager Name&quot;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">program_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s2">&quot;g2p.program&quot;</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="s2">&quot;Program&quot;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<div class="viewcode-block" id="BaseEntitlementManager.prepare_entitlements"><a class="viewcode-back" href="../../../../../../technical_reference/programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.BaseEntitlementManager.prepare_entitlements">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries</span><span class="p">,</span> <span class="n">skip_count</span><span class="p">):</span>
+<div class="viewcode-block" id="BaseEntitlementManager.prepare_entitlements"><a class="viewcode-back" href="../../../../../../technical_reference/programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.BaseEntitlementManager.prepare_entitlements">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This method is used to prepare the entitlement list of the beneficiaries.</span>
 <span class="sd">        :param cycle: The cycle.</span>
 <span class="sd">        :param beneficiaries: The beneficiaries.</span>
-<span class="sd">        :param skip_count: Skip compute total entitlements</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
@@ -604,15 +603,16 @@ title="Open an issue"
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
 
-    <span class="k">def</span> <span class="nf">_set_pending_validation_entitlements_async</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">entitlements_count</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_set_pending_validation_entitlements_async</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">entitlements</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set Entitlements to Pending Validation</span>
 <span class="sd">        Base Entitlement Manager :meth:`_set_pending_validation_entitlements_async`</span>
 <span class="sd">        Asynchronous setting of entitlements to pending_validation in a cycle using `job_queue`</span>
 
 <span class="sd">        :param cycle: A recordset of cycle</span>
-<span class="sd">        :param entitlements_count: Integer value of total entitlements to process</span>
+<span class="sd">        :param entitlements: A recordset of entitlements to process</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">entitlements_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">entitlements</span><span class="p">)</span>
         <span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Set entitlements to pending validation asynchronously&quot;</span><span class="p">)</span>
         <span class="n">cycle</span><span class="o">.</span><span class="n">message_post</span><span class="p">(</span>
             <span class="n">body</span><span class="o">=</span><span class="n">_</span><span class="p">(</span>
@@ -631,7 +631,7 @@ title="Open an issue"
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">entitlements_count</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">):</span>
             <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">_set_pending_validation_entitlements</span><span class="p">(</span>
-                    <span class="n">cycle</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span>
+                    <span class="n">entitlements</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">]</span>
                 <span class="p">)</span>
             <span class="p">)</span>
         <span class="n">main_job</span> <span class="o">=</span> <span class="n">group</span><span class="p">(</span><span class="o">*</span><span class="n">jobs</span><span class="p">)</span>
@@ -642,15 +642,13 @@ title="Open an issue"
         <span class="p">)</span>
         <span class="n">main_job</span><span class="o">.</span><span class="n">delay</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">_set_pending_validation_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_set_pending_validation_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entitlements</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Base Entitlement Manager :meth:`_set_pending_validation_entitlements`</span>
 <span class="sd">        Synchronous setting of entitlements to pending_validation in a cycle</span>
 <span class="sd">        Override in entitlement manager</span>
 
-<span class="sd">        :param cycle: A recordset of cycle</span>
-<span class="sd">        :param offset: An integer value to be used in :meth:`cycle.get_entitlements` for setting the query offset</span>
-<span class="sd">        :param limit: An integer value to be used in :meth:`cycle.get_entitlements` for setting the query limit</span>
+<span class="sd">        :param entitlements: A recordset of entitlements</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
@@ -665,13 +663,14 @@ title="Open an issue"
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
 
-    <span class="k">def</span> <span class="nf">_validate_entitlements_async</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">entitlements_count</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_validate_entitlements_async</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">entitlements</span><span class="p">,</span> <span class="n">entitlements_count</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate Entitlements</span>
 <span class="sd">        Base Entitlement Manager :meth:`_validate_entitlements_async`</span>
 <span class="sd">        Asynchronous validation of entitlements in a cycle using `job_queue`</span>
 
 <span class="sd">        :param cycle: A recordset of cycle</span>
-<span class="sd">        :param entitlements_count: Integer value of total entitlements to validate</span>
+<span class="sd">        :param entitlements: A recordset of entitlements to validate</span>
+<span class="sd">        :param entitlements_count: Integer count of entitlements to validate</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Validate entitlements asynchronously&quot;</span><span class="p">)</span>
@@ -689,7 +688,7 @@ title="Open an issue"
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">entitlements_count</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">):</span>
             <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">_validate_entitlements</span><span class="p">(</span>
-                    <span class="n">cycle</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span>
+                    <span class="n">entitlements</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">]</span>
                 <span class="p">)</span>
             <span class="p">)</span>
         <span class="n">main_job</span> <span class="o">=</span> <span class="n">group</span><span class="p">(</span><span class="o">*</span><span class="n">jobs</span><span class="p">)</span>
@@ -700,15 +699,13 @@ title="Open an issue"
         <span class="p">)</span>
         <span class="n">main_job</span><span class="o">.</span><span class="n">delay</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">_validate_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_validate_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entitlements</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Base Entitlement Manager :meth:`_validate_entitlements`</span>
 <span class="sd">        Synchronous validation of entitlements in a cycle</span>
 <span class="sd">        Override in entitlement manager</span>
 
-<span class="sd">        :param cycle: A recordset of cycle</span>
-<span class="sd">        :param offset: An integer value to be used in :meth:`cycle.get_entitlements` for setting the query offset</span>
-<span class="sd">        :param limit: An integer value to be used in :meth:`cycle.get_entitlements` for setting the query limit</span>
+<span class="sd">        :param entitlements: A recordset of entitlements to validate</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># Call the program&#39;s entitlement manager and validate the entitlements</span>
@@ -736,12 +733,13 @@ title="Open an issue"
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
 
-    <span class="k">def</span> <span class="nf">_cancel_entitlements_async</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">entitlements_count</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_cancel_entitlements_async</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">entitlements</span><span class="p">,</span> <span class="n">entitlements_count</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Cancel Entitlements</span>
 <span class="sd">        Base Entitlement Manager :meth:`_cancel_entitlements_async`</span>
 <span class="sd">        Asynchronous cancellation of entitlements in a cycle using `job_queue`</span>
 
 <span class="sd">        :param cycle: A recordset of cycle</span>
+<span class="sd">        :param entitlements: A recordset of entitlements to cancel</span>
 <span class="sd">        :param entitlements_count: Integer value of total entitlements to process</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -759,7 +757,9 @@ title="Open an issue"
         <span class="n">jobs</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">entitlements_count</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">):</span>
             <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">_cancel_entitlements</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">_cancel_entitlements</span><span class="p">(</span>
+                    <span class="n">entitlements</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">]</span>
+                <span class="p">)</span>
             <span class="p">)</span>
         <span class="n">main_job</span> <span class="o">=</span> <span class="n">group</span><span class="p">(</span><span class="o">*</span><span class="n">jobs</span><span class="p">)</span>
         <span class="n">main_job</span><span class="o">.</span><span class="n">on_done</span><span class="p">(</span>
@@ -767,15 +767,13 @@ title="Open an issue"
         <span class="p">)</span>
         <span class="n">main_job</span><span class="o">.</span><span class="n">delay</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">_cancel_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_cancel_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entitlements</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Base Entitlement Manager :meth:`_cancel_entitlements`</span>
 <span class="sd">        Synchronous cancellation of entitlements in a cycle</span>
 <span class="sd">        Override in entitlement manager</span>
 
-<span class="sd">        :param cycle: A recordset of cycle</span>
-<span class="sd">        :param offset: An integer value to be used in :meth:`cycle.get_entitlements` for setting the query offset</span>
-<span class="sd">        :param limit: An integer value to be used in :meth:`cycle.get_entitlements` for setting the query limit</span>
+<span class="sd">        :param entitlements: A recordset of entitlements to cancel</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
@@ -908,12 +906,11 @@ title="Open an issue"
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transfer_fee_amt</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">transfer_fee_pct</span> <span class="o">=</span> <span class="mf">0.0</span></div>
 
-<div class="viewcode-block" id="DefaultCashEntitlementManager.prepare_entitlements"><a class="viewcode-back" href="../../../../../../technical_reference/programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.prepare_entitlements">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries</span><span class="p">,</span> <span class="n">skip_count</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="DefaultCashEntitlementManager.prepare_entitlements"><a class="viewcode-back" href="../../../../../../technical_reference/programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.prepare_entitlements">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Prepare entitlements.</span>
 <span class="sd">        This method is used to prepare the entitlement list of the beneficiaries.</span>
 <span class="sd">        :param cycle: The cycle.</span>
 <span class="sd">        :param beneficiaries: The beneficiaries.</span>
-<span class="sd">        :param skip_count: Skip compute total entitlements</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">benecifiaries_ids</span> <span class="o">=</span> <span class="n">beneficiaries</span><span class="o">.</span><span class="n">mapped</span><span class="p">(</span><span class="s2">&quot;partner_id.id&quot;</span><span class="p">)</span>
@@ -966,14 +963,10 @@ title="Open an issue"
                 <span class="p">}</span>
             <span class="p">)</span>
         <span class="k">if</span> <span class="n">entitlements</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;g2p.entitlement&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">entitlements</span><span class="p">)</span>
-
-        <span class="c1"># Compute total entitlements</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">skip_count</span><span class="p">:</span>
-            <span class="n">cycle</span><span class="o">.</span><span class="n">_compute_entitlements_count</span><span class="p">()</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;g2p.entitlement&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">entitlements</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="DefaultCashEntitlementManager.set_pending_validation_entitlements"><a class="viewcode-back" href="../../../../../../technical_reference/programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.set_pending_validation_entitlements">[docs]</a>    <span class="k">def</span> <span class="nf">set_pending_validation_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set entitlements to pending validation.</span>
 <span class="sd">        Default Entitlement Manager :meth:`set_pending_validation_entitlements`</span>
 <span class="sd">        Set entitlements to pending_validation in a cycle</span>
 
@@ -981,38 +974,29 @@ title="Open an issue"
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># Get the number of entitlements in cycle</span>
-        <span class="n">entitlements_count</span> <span class="o">=</span> <span class="n">cycle</span><span class="o">.</span><span class="n">get_entitlements</span><span class="p">(</span>
-            <span class="p">[</span><span class="s2">&quot;draft&quot;</span><span class="p">],</span>
-            <span class="n">entitlement_model</span><span class="o">=</span><span class="s2">&quot;g2p.entitlement&quot;</span><span class="p">,</span>
-            <span class="n">count</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="k">if</span> <span class="n">entitlements_count</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">MIN_ROW_JOB_QUEUE</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_set_pending_validation_entitlements</span><span class="p">(</span><span class="n">cycle</span><span class="p">)</span>
-
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_set_pending_validation_entitlements_async</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">entitlements_count</span><span class="p">)</span></div>
-
-    <span class="k">def</span> <span class="nf">_set_pending_validation_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Default Entitlement Manager :meth:`_set_pending_validation_entitlements`</span>
-<span class="sd">        Synchronous setting of entitlements to pending_validation in a cycle</span>
-
-<span class="sd">        :param cycle: A recordset of cycle</span>
-<span class="sd">        :param offset: An integer value to be used in :meth:`cycle.get_entitlements` for setting the query offset</span>
-<span class="sd">        :param limit: An integer value to be used in :meth:`cycle.get_entitlements` for setting the query limit</span>
-<span class="sd">        :return:</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1"># Get the entitlements in the cycle</span>
         <span class="n">entitlements</span> <span class="o">=</span> <span class="n">cycle</span><span class="o">.</span><span class="n">get_entitlements</span><span class="p">(</span>
             <span class="p">[</span><span class="s2">&quot;draft&quot;</span><span class="p">],</span>
             <span class="n">entitlement_model</span><span class="o">=</span><span class="s2">&quot;g2p.entitlement&quot;</span><span class="p">,</span>
-            <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span>
-            <span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span>
         <span class="p">)</span>
+        <span class="n">entitlements_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">entitlements</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">entitlements_count</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">MIN_ROW_JOB_QUEUE</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_set_pending_validation_entitlements</span><span class="p">(</span><span class="n">entitlements</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_set_pending_validation_entitlements_async</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">entitlements</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_set_pending_validation_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entitlements</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set entitlements to pending validation.</span>
+<span class="sd">        Default Entitlement Manager :meth:`_set_pending_validation_entitlements`</span>
+<span class="sd">        Synchronous setting of entitlements to pending_validation in a cycle</span>
+
+<span class="sd">        :param entitlements: A recordset of entitlements</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">entitlements</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;pending_validation&quot;</span><span class="p">})</span>
 
 <div class="viewcode-block" id="DefaultCashEntitlementManager.validate_entitlements"><a class="viewcode-back" href="../../../../../../technical_reference/programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.validate_entitlements">[docs]</a>    <span class="k">def</span> <span class="nf">validate_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate entitlements.</span>
 <span class="sd">        Default Entitlement Manager :meth:`validate_entitlements`</span>
 <span class="sd">        Validate entitlements in a cycle</span>
 
@@ -1020,13 +1004,13 @@ title="Open an issue"
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># Get the number of entitlements in cycle</span>
-        <span class="n">entitlements_count</span> <span class="o">=</span> <span class="n">cycle</span><span class="o">.</span><span class="n">get_entitlements</span><span class="p">(</span>
+        <span class="n">entitlements</span> <span class="o">=</span> <span class="n">cycle</span><span class="o">.</span><span class="n">get_entitlements</span><span class="p">(</span>
             <span class="p">[</span><span class="s2">&quot;draft&quot;</span><span class="p">,</span> <span class="s2">&quot;pending_validation&quot;</span><span class="p">],</span>
             <span class="n">entitlement_model</span><span class="o">=</span><span class="s2">&quot;g2p.entitlement&quot;</span><span class="p">,</span>
-            <span class="n">count</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="p">)</span>
+        <span class="n">entitlements_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">entitlements</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">entitlements_count</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">MIN_ROW_JOB_QUEUE</span><span class="p">:</span>
-            <span class="n">err</span><span class="p">,</span> <span class="n">message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_entitlements</span><span class="p">(</span><span class="n">cycle</span><span class="p">)</span>
+            <span class="n">err</span><span class="p">,</span> <span class="n">message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_entitlements</span><span class="p">(</span><span class="n">entitlements</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">err</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;danger&quot;</span>
                 <span class="k">return</span> <span class="p">{</span>
@@ -1058,26 +1042,17 @@ title="Open an issue"
                     <span class="p">},</span>
                 <span class="p">}</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_validate_entitlements_async</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">entitlements_count</span><span class="p">)</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_validate_entitlements_async</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">entitlements</span><span class="p">,</span> <span class="n">entitlements_count</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">_validate_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">_validate_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entitlements</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate entitlements.</span>
 <span class="sd">        Default Entitlement Manager :meth:`_validate_entitlements`</span>
 <span class="sd">        Synchronous validation of entitlements in a cycle</span>
 
-<span class="sd">        :param cycle: A recordset of cycle</span>
-<span class="sd">        :param offset: An integer value to be used in :meth:`cycle.get_entitlements` for setting the query offset</span>
-<span class="sd">        :param limit: An integer value to be used in :meth:`cycle.get_entitlements` for setting the query limit</span>
+<span class="sd">        :param entitlements: A recordset of entitlements to validate</span>
 <span class="sd">        :return err: Integer number of errors</span>
 <span class="sd">        :return message: String description of the error</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1"># Get the entitlements in the cycle</span>
-        <span class="n">entitlements</span> <span class="o">=</span> <span class="n">cycle</span><span class="o">.</span><span class="n">get_entitlements</span><span class="p">(</span>
-            <span class="p">[</span><span class="s2">&quot;draft&quot;</span><span class="p">,</span> <span class="s2">&quot;pending_validation&quot;</span><span class="p">],</span>
-            <span class="n">entitlement_model</span><span class="o">=</span><span class="s2">&quot;g2p.entitlement&quot;</span><span class="p">,</span>
-            <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span>
-            <span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span>
-        <span class="p">)</span>
         <span class="n">err</span><span class="p">,</span> <span class="n">message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">approve_entitlements</span><span class="p">(</span><span class="n">entitlements</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">err</span><span class="p">,</span> <span class="n">message</span>
 
@@ -1090,33 +1065,24 @@ title="Open an issue"
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># Get the number of entitlements in cycle</span>
-        <span class="n">entitlements_count</span> <span class="o">=</span> <span class="n">cycle</span><span class="o">.</span><span class="n">get_entitlements</span><span class="p">(</span>
+        <span class="n">entitlements</span> <span class="o">=</span> <span class="n">cycle</span><span class="o">.</span><span class="n">get_entitlements</span><span class="p">(</span>
             <span class="p">[</span><span class="s2">&quot;draft&quot;</span><span class="p">,</span> <span class="s2">&quot;pending_validation&quot;</span><span class="p">,</span> <span class="s2">&quot;approved&quot;</span><span class="p">],</span>
             <span class="n">entitlement_model</span><span class="o">=</span><span class="s2">&quot;g2p.entitlement&quot;</span><span class="p">,</span>
-            <span class="n">count</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="p">)</span>
+        <span class="n">entitlements_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">entitlements</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">entitlements_count</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">MIN_ROW_JOB_QUEUE</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_cancel_entitlements</span><span class="p">(</span><span class="n">cycle</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cancel_entitlements</span><span class="p">(</span><span class="n">entitlements</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_cancel_entitlements_async</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">entitlements_count</span><span class="p">)</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cancel_entitlements_async</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">entitlements</span><span class="p">,</span> <span class="n">entitlements_count</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">_cancel_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_cancel_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entitlements</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Default Entitlement Manager :meth:`_cancel_entitlements`</span>
 <span class="sd">        Synchronous cancellation of entitlements in a cycle</span>
 
-<span class="sd">        :param cycle: A recordset of cycle</span>
-<span class="sd">        :param offset: An integer value to be used in :meth:`cycle.get_entitlements` for setting the query offset</span>
-<span class="sd">        :param limit: An integer value to be used in :meth:`cycle.get_entitlements` for setting the query limit</span>
+<span class="sd">        :param entitlements: A recordset of entitlements to cancel</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1"># Get the entitlements in the cycle</span>
-        <span class="n">entitlements</span> <span class="o">=</span> <span class="n">cycle</span><span class="o">.</span><span class="n">get_entitlements</span><span class="p">(</span>
-            <span class="p">[</span><span class="s2">&quot;draft&quot;</span><span class="p">,</span> <span class="s2">&quot;pending_validation&quot;</span><span class="p">,</span> <span class="s2">&quot;approved&quot;</span><span class="p">],</span>
-            <span class="n">entitlement_model</span><span class="o">=</span><span class="s2">&quot;g2p.entitlement&quot;</span><span class="p">,</span>
-            <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span>
-            <span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span>
-        <span class="p">)</span>
         <span class="n">entitlements</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;cancelled&quot;</span><span class="p">})</span>
 
     <span class="k">def</span> <span class="nf">_calculate_amount</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">beneficiary</span><span class="p">,</span> <span class="n">num_individuals</span><span class="p">):</span>
@@ -1130,8 +1096,8 @@ title="Open an issue"
         <span class="k">return</span> <span class="n">total</span>
 
 <div class="viewcode-block" id="DefaultCashEntitlementManager.approve_entitlements"><a class="viewcode-back" href="../../../../../../technical_reference/programs/entitlement_manager.html#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.approve_entitlements">[docs]</a>    <span class="k">def</span> <span class="nf">approve_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entitlements</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Default Entitlement Manager :meth:`_approve_entitlements`</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Approve entitlements.</span>
+<span class="sd">        Default Entitlement Manager :meth:`approve_entitlements`</span>
 <span class="sd">        Approve selected entitlements</span>
 
 <span class="sd">        :param entitlements: Selected entitlements to approve</span>

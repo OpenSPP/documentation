@@ -682,8 +682,30 @@ in most of the cases.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.cycle_manager.BaseCycleManager.mark_import_as_done">
 <span class="sig-name descname"><span class="pre">mark_import_as_done</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cycle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/cycle_manager.html#BaseCycleManager.mark_import_as_done"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.cycle_manager.BaseCycleManager.mark_import_as_done" title="Permalink to this definition">#</a></dt>
-<dd><p>Base <a class="reference internal" href="#odoo.addons.g2p_programs.models.managers.cycle_manager.BaseCycleManager.mark_import_as_done" title="odoo.addons.g2p_programs.models.managers.cycle_manager.BaseCycleManager.mark_import_as_done"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mark_import_as_done()</span></code></a>
-Post a message in the chatter</p>
+<dd><p>Complete the import of beneficiaries.
+Base <a class="reference internal" href="#odoo.addons.g2p_programs.models.managers.cycle_manager.BaseCycleManager.mark_import_as_done" title="odoo.addons.g2p_programs.models.managers.cycle_manager.BaseCycleManager.mark_import_as_done"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mark_import_as_done()</span></code></a>.
+This is executed when all the jobs are completed.
+Post a message in the chatter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cycle</strong> -- A recordset of cycle</p></li>
+<li><p><strong>msg</strong> -- A string to be posted in the chatter</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.cycle_manager.BaseCycleManager.mark_prepare_entitlement_as_done">
+<span class="sig-name descname"><span class="pre">mark_prepare_entitlement_as_done</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cycle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/cycle_manager.html#BaseCycleManager.mark_prepare_entitlement_as_done"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.cycle_manager.BaseCycleManager.mark_prepare_entitlement_as_done" title="Permalink to this definition">#</a></dt>
+<dd><p>Complete the preparation of entitlements.
+Base <a class="reference internal" href="#odoo.addons.g2p_programs.models.managers.cycle_manager.BaseCycleManager.mark_prepare_entitlement_as_done" title="odoo.addons.g2p_programs.models.managers.cycle_manager.BaseCycleManager.mark_prepare_entitlement_as_done"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mark_prepare_entitlement_as_done()</span></code></a>.
+This is executed when all the jobs are completed.
+Post a message in the chatter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">

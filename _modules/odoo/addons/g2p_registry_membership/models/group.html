@@ -585,9 +585,44 @@ title="Open an issue"
     <span class="k">def</span> <span class="nf">_compute_ind_grp_num_individuals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">compute_count_and_set_indicator</span><span class="p">(</span><span class="s2">&quot;z_ind_grp_num_individuals&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">[])</span>
 
-    <span class="k">def</span> <span class="nf">recompute_indicators</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_calculated_group_fields</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">recompute_indicators_for_all_records</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">recomputed_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># Set the batch size to 10000</span>
+        <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">10000</span>
+        <span class="c1"># Get the total number of records</span>
+        <span class="n">total_records</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;res.partner&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">search_count</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="p">(</span><span class="s2">&quot;is_group&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+                <span class="p">(</span><span class="s2">&quot;is_registrant&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+                <span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Iterate through the records in batches of 10000</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">total_records</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">with_delay</span><span class="p">(</span>
+                <span class="n">priority</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">channel</span><span class="o">=</span><span class="s2">&quot;root.recompute_indicators&quot;</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">recompute_indicators_for_batch</span><span class="p">(</span>
+                <span class="n">i</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">recomputed_fields</span><span class="o">=</span><span class="n">recomputed_fields</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">recompute_indicators_for_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">recomputed_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># Get the records</span>
+        <span class="n">partners</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;res.partner&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="p">(</span><span class="s2">&quot;is_group&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+                <span class="p">(</span><span class="s2">&quot;is_registrant&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+                <span class="p">(</span><span class="s2">&quot;disabled&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+            <span class="p">],</span>
+            <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span>
+            <span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span>
+            <span class="n">order</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">partners</span><span class="o">.</span><span class="n">recompute_indicators</span><span class="p">(</span><span class="n">recomputed_fields</span><span class="o">=</span><span class="n">recomputed_fields</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">recompute_indicators</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">recomputed_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">recomputed_fields</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">recomputed_fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_calculated_group_fields</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">recomputed_fields</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">add_to_compute</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_get_calculated_group_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -737,12 +772,18 @@ title="Open an issue"
         <span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">kinds</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">presence_only</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This method is used to compute the count then set it.</span>
-<span class="sd">        :param field_name: The Field Name.</span>
-<span class="sd">        :param kinds: The Kinds.</span>
-<span class="sd">        :param domain: The domain.</span>
-<span class="sd">        :param presence_only: True for boolean field, False for integer field.</span>
-<span class="sd">        :return: The count then set it on the Field Name.</span>
+<span class="sd">        This method computes the count matching a domain, then sets the indicator on the field name.</span>
+
+<span class="sd">        :param field_name: The name of the field.</span>
+<span class="sd">        :type field_name: str</span>
+<span class="sd">        :param kinds: The kinds of roles in the group</span>
+<span class="sd">        :type kinds: list</span>
+<span class="sd">        :param domain: The domain to filter group members.</span>
+<span class="sd">        :type domain: list</span>
+<span class="sd">        :param presence_only: A boolean value to define if we return a boolean instead of the count</span>
+<span class="sd">        :type presence_only: bool</span>
+<span class="sd">        :return: The count of the specified field, then sets the indicator on the field name.</span>
+<span class="sd">        :rtype: int, bool</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="c1"># _logger.info(</span>

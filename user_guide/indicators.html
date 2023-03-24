@@ -736,12 +736,23 @@ Search domain are like a simplified SQL query. They're used to filter the data t
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">G2PMembershipGroup.</span></span><span class="sig-name descname"><span class="pre">compute_count_and_set_indicator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kinds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">presence_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/odoo/addons/g2p_registry_membership/models/group.html#G2PMembershipGroup.compute_count_and_set_indicator"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
-<dd><p>This method is used to compute the count then set it.
-:param field_name: The Field Name.
-:param kinds: The Kinds.
-:param domain: The domain.
-:param presence_only: True for boolean field, False for integer field.
-:return: The count then set it on the Field Name.</p>
+<dd><p>This method computes the count matching a domain, then sets the indicator on the field name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>field_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) -- The name of the field.</p></li>
+<li><p><strong>kinds</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) -- The kinds of roles in the group</p></li>
+<li><p><strong>domain</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><em>list</em></a>) -- The domain to filter group members.</p></li>
+<li><p><strong>presence_only</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) -- A boolean value to define if we return a boolean instead of the count</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The count of the specified field, then sets the indicator on the field name.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)">bool</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>

@@ -609,7 +609,23 @@ title="Open an issue"
 <span class="sd">        Returns:</span>
 <span class="sd">            bool: True if the beneficiaries were enrolled, False otherwise.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div></div>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="BaseProgramManager.mark_enroll_eligible_as_done"><a class="viewcode-back" href="../../../../../../technical_reference/programs/program_manager.html#odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager.mark_enroll_eligible_as_done">[docs]</a>    <span class="k">def</span> <span class="nf">mark_enroll_eligible_as_done</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Complete the enrollment of eligible beneficiaries.</span>
+<span class="sd">        Base :meth:`mark_enroll_eligible_as_done`.</span>
+<span class="sd">        This is executed when all the jobs are completed.</span>
+<span class="sd">        Post a message in the chatter.</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ensure_one</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">locked</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">locked_reason</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">message_post</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Eligibility check finished.&quot;</span><span class="p">))</span>
+
+        <span class="c1"># Compute Statistics</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">_compute_eligible_beneficiary_count</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">_compute_beneficiary_count</span><span class="p">()</span></div></div>
 
 
 <span class="k">class</span> <span class="nc">DefaultProgramManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
@@ -689,7 +705,7 @@ title="Open an issue"
             <span class="n">message</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;No Eligibility Manager defined.&quot;</span><span class="p">)</span>
             <span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;danger&quot;</span>
         <span class="k">elif</span> <span class="n">members_count</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">MIN_ROW_JOB_QUEUE</span><span class="p">:</span>
-            <span class="n">count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enroll_eligible_registrants</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enroll_eligible_registrants</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">do_count</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="n">message</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> Beneficiaries enrolled.&quot;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
             <span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;success&quot;</span>
         <span class="k">else</span><span class="p">:</span>
@@ -722,33 +738,27 @@ title="Open an issue"
         <span class="p">)</span>
 
         <span class="n">jobs</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="c1"># Get the last iteration</span>
-        <span class="n">last_iter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">members_count</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span>
-            <span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="n">members_count</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
-        <span class="p">)</span>
-        <span class="n">ctr</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">members_count</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">):</span>
-            <span class="n">ctr</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">if</span> <span class="n">ctr</span> <span class="o">==</span> <span class="n">last_iter</span><span class="p">:</span>
-                <span class="c1"># Last iteration, do not skip computing the total eligible registrants fields</span>
-                <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">_enroll_eligible_registrants</span><span class="p">(</span>
-                        <span class="n">states</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">,</span> <span class="n">skip_count</span><span class="o">=</span><span class="kc">False</span>
-                    <span class="p">)</span>
+            <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">_enroll_eligible_registrants</span><span class="p">(</span>
+                    <span class="n">states</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span>
                 <span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">_enroll_eligible_registrants</span><span class="p">(</span>
-                        <span class="n">states</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">MAX_ROW_JOB_QUEUE</span><span class="p">,</span> <span class="n">skip_count</span><span class="o">=</span><span class="kc">True</span>
-                    <span class="p">)</span>
-                <span class="p">)</span>
+            <span class="p">)</span>
         <span class="n">main_job</span> <span class="o">=</span> <span class="n">group</span><span class="p">(</span><span class="o">*</span><span class="n">jobs</span><span class="p">)</span>
         <span class="n">main_job</span><span class="o">.</span><span class="n">on_done</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">mark_enroll_eligible_as_done</span><span class="p">())</span>
         <span class="n">main_job</span><span class="o">.</span><span class="n">delay</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">_enroll_eligible_registrants</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">states</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skip_count</span><span class="o">=</span><span class="kc">False</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">states</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">do_count</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Enroll Eligible Registrants</span>
+
+<span class="sd">        :param states: List of states to be used in domain filter</span>
+<span class="sd">        :param offset: Optional integer value for the ORM search offset</span>
+<span class="sd">        :param limit: Optional integer value for the ORM search limit</span>
+<span class="sd">        :param do_count: Boolean - set to False to not run compute functions</span>
+<span class="sd">        :return: Integer - count of not enrolled members</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">program</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">program_id</span>
         <span class="n">members</span> <span class="o">=</span> <span class="n">program</span><span class="o">.</span><span class="n">get_beneficiaries</span><span class="p">(</span>
             <span class="n">state</span><span class="o">=</span><span class="n">states</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s2">&quot;id&quot;</span>
@@ -780,18 +790,13 @@ title="Open an issue"
                 <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;not_eligible&quot;</span><span class="p">,</span>
             <span class="p">}</span>
         <span class="p">)</span>
-        <span class="c1"># Compute total beneficiaries</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">skip_count</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">do_count</span><span class="p">:</span>
+            <span class="c1"># Compute Statistics</span>
             <span class="n">program</span><span class="o">.</span><span class="n">_compute_eligible_beneficiary_count</span><span class="p">()</span>
             <span class="n">program</span><span class="o">.</span><span class="n">_compute_beneficiary_count</span><span class="p">()</span>
 
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">not_enrolled</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">mark_enroll_eligible_as_done</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ensure_one</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">locked</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">locked_reason</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">message_post</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Eligibility check finished.&quot;</span><span class="p">))</span>
 </pre></div>
 
               </div>

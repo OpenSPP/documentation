@@ -696,11 +696,10 @@ Post a message in the chatter</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.entitlement_manager.BaseEntitlementManager.prepare_entitlements">
-<span class="sig-name descname"><span class="pre">prepare_entitlements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cycle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beneficiaries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_count</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/entitlement_manager.html#BaseEntitlementManager.prepare_entitlements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.BaseEntitlementManager.prepare_entitlements" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">prepare_entitlements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cycle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beneficiaries</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/entitlement_manager.html#BaseEntitlementManager.prepare_entitlements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.BaseEntitlementManager.prepare_entitlements" title="Permalink to this definition">#</a></dt>
 <dd><p>This method is used to prepare the entitlement list of the beneficiaries.
 :param cycle: The cycle.
 :param beneficiaries: The beneficiaries.
-:param skip_count: Skip compute total entitlements
 :return:</p>
 </dd></dl>
 
@@ -779,7 +778,8 @@ this monetary field is expressed in (default: <code class="docutils literal notr
 <dl class="py method">
 <dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.approve_entitlements">
 <span class="sig-name descname"><span class="pre">approve_entitlements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entitlements</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/entitlement_manager.html#DefaultCashEntitlementManager.approve_entitlements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.approve_entitlements" title="Permalink to this definition">#</a></dt>
-<dd><p>Default Entitlement Manager <code class="xref py py-meth docutils literal notranslate"><span class="pre">_approve_entitlements()</span></code>
+<dd><p>Approve entitlements.
+Default Entitlement Manager <a class="reference internal" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.approve_entitlements" title="odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.approve_entitlements"><code class="xref py py-meth docutils literal notranslate"><span class="pre">approve_entitlements()</span></code></a>
 Approve selected entitlements</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -954,18 +954,19 @@ domain depending on the field attributes.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.prepare_entitlements">
-<span class="sig-name descname"><span class="pre">prepare_entitlements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cycle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beneficiaries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/entitlement_manager.html#DefaultCashEntitlementManager.prepare_entitlements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.prepare_entitlements" title="Permalink to this definition">#</a></dt>
-<dd><p>This method is used to prepare the entitlement list of the beneficiaries.
+<span class="sig-name descname"><span class="pre">prepare_entitlements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cycle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beneficiaries</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/entitlement_manager.html#DefaultCashEntitlementManager.prepare_entitlements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.prepare_entitlements" title="Permalink to this definition">#</a></dt>
+<dd><p>Prepare entitlements.
+This method is used to prepare the entitlement list of the beneficiaries.
 :param cycle: The cycle.
 :param beneficiaries: The beneficiaries.
-:param skip_count: Skip compute total entitlements
 :return:</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.set_pending_validation_entitlements">
 <span class="sig-name descname"><span class="pre">set_pending_validation_entitlements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cycle</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/entitlement_manager.html#DefaultCashEntitlementManager.set_pending_validation_entitlements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.set_pending_validation_entitlements" title="Permalink to this definition">#</a></dt>
-<dd><p>Default Entitlement Manager <a class="reference internal" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.set_pending_validation_entitlements" title="odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.set_pending_validation_entitlements"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_pending_validation_entitlements()</span></code></a>
+<dd><p>Set entitlements to pending validation.
+Default Entitlement Manager <a class="reference internal" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.set_pending_validation_entitlements" title="odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.set_pending_validation_entitlements"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_pending_validation_entitlements()</span></code></a>
 Set entitlements to pending_validation in a cycle</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1036,7 +1037,8 @@ if result &gt; 0, the first float is greater than the second</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.validate_entitlements">
 <span class="sig-name descname"><span class="pre">validate_entitlements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cycle</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/entitlement_manager.html#DefaultCashEntitlementManager.validate_entitlements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.validate_entitlements" title="Permalink to this definition">#</a></dt>
-<dd><p>Default Entitlement Manager <a class="reference internal" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.validate_entitlements" title="odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.validate_entitlements"><code class="xref py py-meth docutils literal notranslate"><span class="pre">validate_entitlements()</span></code></a>
+<dd><p>Validate entitlements.
+Default Entitlement Manager <a class="reference internal" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.validate_entitlements" title="odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.validate_entitlements"><code class="xref py py-meth docutils literal notranslate"><span class="pre">validate_entitlements()</span></code></a>
 Validate entitlements in a cycle</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
