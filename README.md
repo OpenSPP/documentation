@@ -1,4 +1,4 @@
-[![Testing Status](https://github.com/openspp/documentation/actions/workflows/test.yml/badge.svg?branch=doc_v3 "Testing Status")](https://github.com/openspp/documentation/actions/workflows/test.yml)
+[![OpenSPP documentation build](https://github.com/OpenSPP/documentation/actions/workflows/build_deploy.yml/badge.svg)](https://github.com/OpenSPP/documentation/actions/workflows/build_deploy.yml)
 
 # OpenSPP - Social Protection Platform Documentation
 
