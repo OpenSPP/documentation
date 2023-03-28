@@ -7,6 +7,7 @@
 :hidden: true
 
 external_api
+extensibility
 architecture
 programs/concepts
 programs/dashboards
