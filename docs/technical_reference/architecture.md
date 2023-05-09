@@ -26,7 +26,7 @@
 ### High-level Functional Reference Architecture
 
 <p align="center">
-  <img src="images/high_level_architecture.jpg" width="80%" height="80%">
+  <img src="./images/high_level_architecture.jpg" width="80%" height="80%">
 </p>
 
 The OpenSPP functional architecture diagram above presents an overview of the components and layers of a typical OpenSPP implementation. 
