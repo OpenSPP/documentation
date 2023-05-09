@@ -23,9 +23,6 @@
 - The key sub-systems of OpenSPP should be designed for **extensibility**. For example, if an external system
   has to be integrated for entitlement determination, it should be easy to do so
 
-### High-level Functional Reference Architecture
-
-
 
 ### Ecosystem approach
 
