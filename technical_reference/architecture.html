@@ -627,11 +627,6 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#high-level-functional-reference-architecture">
-     High-level Functional Reference Architecture
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ecosystem-approach">
      Ecosystem approach
     </a>
@@ -652,6 +647,11 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#high-level-functional-reference-architecture">
+   High-level Functional Reference Architecture
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modular-architecture">
@@ -700,11 +700,6 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#high-level-functional-reference-architecture">
-     High-level Functional Reference Architecture
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ecosystem-approach">
      Ecosystem approach
     </a>
@@ -725,6 +720,11 @@ title="Print to PDF"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#high-level-functional-reference-architecture">
+   High-level Functional Reference Architecture
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modular-architecture">
@@ -787,8 +787,58 @@ languages and cultures easily</p></li>
 <li><p>The key sub-systems of OpenSPP should be designed for <strong>extensibility</strong>. For example, if an external system
 has to be integrated for entitlement determination, it should be easy to do so</p></li>
 </ul>
+<div class="section" id="ecosystem-approach">
+<h3>Ecosystem approach<a class="headerlink" href="#ecosystem-approach" title="Permalink to this headline">#</a></h3>
+<p>The OpenSPP platform can work as a standalone system or as a part of a larger ecosystem. It needs to be
+interoperable with other government systems.</p>
+<p>Every piece of information stored in the platform must have a corresponding API to access it, so that it can
+be used by other systems. For example, if you want to integrate OpenSPP with mobile money, you can leverage
+<a class="reference external" href="https://mifos.gitbook.io/docs/payment-hub-ee/business-overview">Payment Hub EE</a>. Through a well-defined set
+of standard interfaces OpenSPP allows for integration of such components and offers choice of providers for
+the same.</p>
+<p>So, key parameters are:</p>
+<ul class="simple">
+<li><p>All public/external facing interfaces of OpenSPP must be standards-based for interoperability whenever
+possible.</p></li>
+<li><p>3rd party components should be integrated via well-defined interfaces and be easily installable.</p></li>
+</ul>
+</div>
+<div class="section" id="configurability">
+<h3>Configurability<a class="headerlink" href="#configurability" title="Permalink to this headline">#</a></h3>
+<p>OpenSPP should be flexible for countries/organizations to configure the base platform according to their
+specific requirements. Some of the examples of configurability are:</p>
+<ul class="simple">
+<li><p>Be able to choose the features required.</p></li>
+<li><p>Be able to configure the attributes of the beneficiaries.</p></li>
+<li><p>Be able to define the criteria used to determine the beneficiaries.</p></li>
+<li><p>Be able to define how entitlement is calculated</p></li>
+</ul>
+</div>
+<div class="section" id="extensibility">
+<h3>Extensibility<a class="headerlink" href="#extensibility" title="Permalink to this headline">#</a></h3>
+<p>OpenSPP should be flexible to extend functionality on top of the basic platform. Some of the examples of
+extensibility are:</p>
+<ul class="simple">
+<li><p>Ability to add a grievance system</p></li>
+<li><p>Ability to use third party solutions such as <a class="reference external" href="https://mosip.io/">MOSIP</a> to store part of the information of
+registrants</p></li>
+<li><p>Ability to Integrate data from other systems</p></li>
+</ul>
+</div>
+<div class="section" id="modularity">
+<h3>Modularity<a class="headerlink" href="#modularity" title="Permalink to this headline">#</a></h3>
+<p>All components of OpenSPP should be extensible and their features exposed via interfaces such that the
+implementation behind the interface can be changed without affecting other modules. Some examples of
+modularity are:</p>
+<ul class="simple">
+<li><p>Determination of eligibility to a program</p></li>
+<li><p>Calculation of entitlement</p></li>
+<li><p>Deduplication of beneficiaries</p></li>
+</ul>
+</div>
+</div>
 <div class="section" id="high-level-functional-reference-architecture">
-<h3>High-level Functional Reference Architecture<a class="headerlink" href="#high-level-functional-reference-architecture" title="Permalink to this headline">#</a></h3>
+<h2>High-level Functional Reference Architecture<a class="headerlink" href="#high-level-functional-reference-architecture" title="Permalink to this headline">#</a></h2>
 <p><img alt="" src="../_images/high_level_architecture.jpg" /></p>
 <p>The OpenSPP functional architecture diagram above presents an overview of the components and layers of a typical OpenSPP implementation.</p>
 <ul class="simple">
@@ -843,56 +893,6 @@ has to be integrated for entitlement determination, it should be easy to do so</
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="ecosystem-approach">
-<h3>Ecosystem approach<a class="headerlink" href="#ecosystem-approach" title="Permalink to this headline">#</a></h3>
-<p>The OpenSPP platform can work as a standalone system or as a part of a larger ecosystem. It needs to be
-interoperable with other government systems.</p>
-<p>Every piece of information stored in the platform must have a corresponding API to access it, so that it can
-be used by other systems. For example, if you want to integrate OpenSPP with mobile money, you can leverage
-<a class="reference external" href="https://mifos.gitbook.io/docs/payment-hub-ee/business-overview">Payment Hub EE</a>. Through a well-defined set
-of standard interfaces OpenSPP allows for integration of such components and offers choice of providers for
-the same.</p>
-<p>So, key parameters are:</p>
-<ul class="simple">
-<li><p>All public/external facing interfaces of OpenSPP must be standards-based for interoperability whenever
-possible.</p></li>
-<li><p>3rd party components should be integrated via well-defined interfaces and be easily installable.</p></li>
-</ul>
-</div>
-<div class="section" id="configurability">
-<h3>Configurability<a class="headerlink" href="#configurability" title="Permalink to this headline">#</a></h3>
-<p>OpenSPP should be flexible for countries/organizations to configure the base platform according to their
-specific requirements. Some of the examples of configurability are:</p>
-<ul class="simple">
-<li><p>Be able to choose the features required.</p></li>
-<li><p>Be able to configure the attributes of the beneficiaries.</p></li>
-<li><p>Be able to define the criteria used to determine the beneficiaries.</p></li>
-<li><p>Be able to define how entitlement is calculated</p></li>
-</ul>
-</div>
-<div class="section" id="extensibility">
-<h3>Extensibility<a class="headerlink" href="#extensibility" title="Permalink to this headline">#</a></h3>
-<p>OpenSPP should be flexible to extend functionality on top of the basic platform. Some of the examples of
-extensibility are:</p>
-<ul class="simple">
-<li><p>Ability to add a grievance system</p></li>
-<li><p>Ability to use third party solutions such as <a class="reference external" href="https://mosip.io/">MOSIP</a> to store part of the information of
-registrants</p></li>
-<li><p>Ability to Integrate data from other systems</p></li>
-</ul>
-</div>
-<div class="section" id="modularity">
-<h3>Modularity<a class="headerlink" href="#modularity" title="Permalink to this headline">#</a></h3>
-<p>All components of OpenSPP should be extensible and their features exposed via interfaces such that the
-implementation behind the interface can be changed without affecting other modules. Some examples of
-modularity are:</p>
-<ul class="simple">
-<li><p>Determination of eligibility to a program</p></li>
-<li><p>Calculation of entitlement</p></li>
-<li><p>Deduplication of beneficiaries</p></li>
-</ul>
-</div>
 </div>
 <div class="section" id="modular-architecture">
 <h2>Modular architecture<a class="headerlink" href="#modular-architecture" title="Permalink to this headline">#</a></h2>
