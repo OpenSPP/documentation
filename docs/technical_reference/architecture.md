@@ -207,6 +207,16 @@ In configuring your OpenSPP deployment, there are three principal infrastructure
 
 The selection among these options should align with the organization's/countries’s specific requirements, budget constraints, and overarching IT strategy.
 
+### C. The single-node deployment
+
+The single-node deployment refers to installing and configuring OpenSPP on a single VM, typically for testing or small-scale production purposes. This deployment type involves setting up all the required OpenSPP modules on a single physical or virtual machine, ensuring simplified management and a reduced resource footprint.
+
+![](images/deployment_architecture_on_prem_single_node.jpg)
+
+The specifications required for a single-node deployment of OpenSPP largely depend on the intended use case of the system. The requirements may be relatively minimal for a testing or development setting, entailing a multi-core processor, adequate RAM, and sufficient storage capacity. However, for small-scale production environments, the requirements can escalate significantly, mandating top-tier multicore processors, substantial amounts of RAM, and high-performance, capacity-rich storage. The network interface should be correspondingly high-speed. These recommendations should be adapted based on the specific computational load and throughput anticipated for the system. For instance, systems expected to handle high traffic volumes will necessitate more robust hardware and expanded network capabilities to ensure seamless operation.
+
+A thorough assessment of your system usage should be carried out to determine hardware specifications for deployment.
+
 ## Modular architecture
 
 OpenSPP is designed to be used standalone with just the core functionalities or with other components.
