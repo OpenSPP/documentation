@@ -72,7 +72,7 @@ modularity are:
 
 ## High-level Functional Reference Architecture
 
-![](images/high_level_architecture.jpg)
+![](images/highlevel_architecture.jpg)
 
 The OpenSPP functional architecture diagram above presents an overview of the components and layers of a typical OpenSPP implementation.
 
@@ -115,7 +115,69 @@ The OpenSPP functional architecture diagram above presents an overview of the co
 
 ## High-level Deployment Reference Architecture
 
+The on-premises deployment of OpenSPP encompasses a suite of interconnected components, each playing a vital role in delivering secure, robust, and highly efficient service. This document is intended to provide an high-level understanding of the OpenSPP on-premises deployment architecture and its key components.
+
 ![](images/deployment_architecture_onprem.jpg)
+
+A. The components description
+
+**Firewall**
+
+Serving as the entry point, the Firewall regulates the inbound and outbound network traffic based on predetermined security rules. It protects the system’s integrity by preventing unauthorized access and mitigating potential security threats.
+
+**Application Load Balancer**
+
+The Load Balancer optimizes the performance of OpenSPP application servers by evenly distributing the incoming network traffic across multiple servers. This not only enhances resource utilization and throughput but also prevents server overload. The presence of active and passive nodes ensures failover protection and high availability.
+
+**Identity Server**
+
+The Identity Server effectively manages user identities and controls access to resources. It employs advanced features such as single sign-on, access delegation, and identity federation to ensure secure and compliant access to system resources.
+
+**API Manager**
+
+The API Manager in OpenSPP manages and secures APIs, controls access, and collects usage analytics. Acting as a gateway, it validates and routes API calls, manages request rates, and supports API versioning. It's instrumental in enhancing system security and optimizing service quality.
+
+**OpenSPP Application Servers**
+
+These servers form the nucleus of the OpenSPP system. They execute the OpenSPP application and coordinate with databases and the API Gateway. The use of active and passive nodes guarantees continuous service and failover protection.
+
+**Database Load Balancer**
+
+The Database Load Balancer facilitates the efficient distribution of database queries across various instances. This ensures optimal resource usage and high availability of database services.
+
+**Databases**
+
+Databases serve as the data storage centers of the system. They interact directly with the application servers and are crucial for OpenSPP's functioning. Given the large volume of data handled by OpenSPP, a scalable and highly available database system is indispensable.
+
+**Caching Databases**
+
+Caching Databases enhances system performance by temporarily storing frequently accessed data. This reduces the strain on primary databases and expedites data retrieval processes.
+
+**Object Storage**
+
+This component caters to storing unstructured data such as files. Its high scalability makes it an ideal solution for storing large data volumes.
+
+**File Storage**
+
+File Storage manages the storage of structured data in a hierarchical file system. It handles files such as documents and spreadsheets.
+
+**Email Gateway**
+
+The Email Gateway is tasked with managing email communications in a secure and efficient manner. It plays a pivotal role in sending and receiving emails within the system.
+
+**SMS Gateway**
+
+The SMS Gateway allows the system to send and receive SMS messages, ensuring a seamless channel for alerts, notifications, and two-factor authentication.
+
+**Monitoring and Alerting System**
+
+This component vigilantly monitors the health and performance of the system. It promptly issues alerts for any detected anomalies or performance issues, ensuring rapid response and resolution.
+
+**Log Aggregation**
+
+The Log Aggregation component centralizes log data collection from all system components. It is a critical tool for analyzing system behavior, aiding in diagnosing and troubleshooting issues.
+
+Understanding the OpenSPP on-premises deployment architecture and its components is essential for effective system management and maintenance. This architecture, focusing on performance, scalability, and fault tolerance, provides a comprehensive solution for the on-premises deployment of OpenSPP.
 
 ## Modular architecture
 
