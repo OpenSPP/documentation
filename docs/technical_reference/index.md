@@ -8,6 +8,7 @@ external_api
 extensibility
 architecture
 integrations
+security
 programs/concepts
 programs/dashboards
 programs/program_manager
