@@ -6,8 +6,6 @@
 - [Code of Conduct](code_of_conduct)
 - [Security Report](security_report)
 
-
-
 ```{toctree}
 :maxdepth: 2
 :hidden: true
@@ -18,5 +16,6 @@ module_lifecycle_development_status
 module_lifecycle_maintainer_role
 code_of_conduct
 security_report
+l3_support
 
 ```
