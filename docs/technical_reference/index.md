@@ -1,7 +1,5 @@
 # Technical Reference
 
-
-
 ```{toctree}
 :maxdepth: 2
 :hidden: true
@@ -9,6 +7,7 @@
 external_api
 extensibility
 architecture
+integrations
 programs/concepts
 programs/dashboards
 programs/program_manager
