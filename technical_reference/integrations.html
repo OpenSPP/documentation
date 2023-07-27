@@ -8,10 +8,10 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.openspp.org/technical_reference/integrations.html" />
 <meta property="og:site_name" content="OpenSPP Documentation" />
-<meta property="og:description" content="The following diagram depicts the integration mindmap of OpenSPP." />
+<meta property="og:description" content="The following diagram depicts the integration mindmap of OpenSPP. OpenSPP, as a digital public good, is designed with interoperability in mind. It recognizes the interconnected landscape of digital..." />
 <meta property="og:image" content="https://docs.openspp.org/_static/openspp_logo.png" />
 <meta property="og:image:alt" content="OpenSPP Documentation" />
-<meta name="description" content="The following diagram depicts the integration mindmap of OpenSPP." />
+<meta name="description" content="The following diagram depicts the integration mindmap of OpenSPP. OpenSPP, as a digital public good, is designed with interoperability in mind. It recognizes the interconnected landscape of digital..." />
 <meta property="og:locale" content="en_US" />
 
 <title>Integrations – Technical Reference &#8212; OpenSPP Documentation v1.0</title>
@@ -604,12 +604,36 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#api-design">
+   API Design
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -621,6 +645,19 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#api-design">
+   API Design
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -632,6 +669,17 @@ title="Print to PDF"
 <h1>Integrations<a class="headerlink" href="#integrations" title="Permalink to this headline">#</a></h1>
 <p>The following diagram depicts the integration mindmap of OpenSPP.</p>
 <p><img alt="" src="../_images/integrations_mindmap.jpg" /></p>
+<p>OpenSPP, as a digital public good, is designed with interoperability in mind. It recognizes the interconnected landscape of digital solutions and strives to ensure smooth, seamless interaction with many other systems as shown above. This commitment to broad compatibility is reflected in the system's ability to easily exchange data in widely recognized, non-proprietary formats and its support for API-based integrations leveraging XML-RPC and REST APIs. One of the key aspects that makes OpenSPP a versatile solution is its ability to exchange data with other systems. This is not just about sending and receiving data but doing so in a manner that is universally understood and broadly accessible. This high-level API-based integration support provides flexibility, allowing OpenSPP to fit neatly into various digital ecosystems without requiring extensive customization or proprietary interfaces.</p>
+<div class="section" id="api-design">
+<h2>API Design<a class="headerlink" href="#api-design" title="Permalink to this headline">#</a></h2>
+<p>One cornerstone of OpenSPP's architecture is its API design, implementation, and governance approach. This page explains OpenSPP's key API-related capabilities and practices, evidencing its commitment to interoperability, security, and flexibility.</p>
+<p>Starting with API design, OpenSPP implements Open API Specifications. Further, it adheres to the guidelines of G2P Connect, a comprehensive solution architectural blueprint, ensuring it can seamlessly interact with various systems involved in G2P delivery.</p>
+<p>On the security front, OpenSPP lays considerable emphasis on ensuring the robustness of its APIs. The APIs are designed to be secure, incorporating various techniques to ward off potential threats. The goal is to reduce the amount of data shared via APIs based on the context, ensuring only necessary information is exchanged, thereby bolstering privacy protection.</p>
+<p>API governance, which is the process of controlling, monitoring, and analyzing the usage and performance of APIs, is presently manually managed in OpenSPP. This rigorous manual process ensures that all APIs adhere to set standards and perform optimally. However, OpenSPP plans to enhance its API governance capabilities by deploying an API Manager product. This tool will automate many governance tasks, ensuring API compliance and performance.</p>
+<p>OpenSPP is versatile regarding API communication, supporting various methods such as synchronous, asynchronous, and WebSocket API communications. This versatility enables OpenSPP to adapt its communication methods based on the specific needs of a given interaction, thereby ensuring optimal performance and user experience.</p>
+<p>With respect to API versioning management, OpenSPP currently manages this aspect manually. This approach ensures backward compatibility, allowing older API versions to continue functioning alongside newer ones. It also fosters forward innovation, facilitating the development of new API features. However, to further streamline this process, OpenSPP plans to deploy an API Manager.</p>
+<p>OpenSPP supports sandboxing for API testing, ensuring APIs perform optimally in real-world scenarios. Invitation-only access is provided to <a class="reference external" href="http://demo.openspp.org">demo.openspp.org</a>, allowing prospective integrations to be thoroughly tested and tweaked in a controlled environment before they are deployed in production.</p>
+</div>
 </div>
 
 
