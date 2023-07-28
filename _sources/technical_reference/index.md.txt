@@ -11,6 +11,7 @@ integrations
 security
 code
 release_management
+monitoring
 programs/concepts
 programs/dashboards
 programs/program_manager
