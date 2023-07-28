@@ -10,6 +10,7 @@ architecture
 integrations
 security
 code
+release_management
 programs/concepts
 programs/dashboards
 programs/program_manager
