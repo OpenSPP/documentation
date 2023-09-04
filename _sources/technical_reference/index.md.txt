@@ -19,6 +19,7 @@ release_management
 
 # Monitoring and Analytics
 monitoring
+programs/dashboards
 
 # Integrations
 integrations
@@ -26,7 +27,6 @@ external_api
 
 # Managers and Modules
 programs/concepts
-programs/dashboards
 programs/program_manager
 programs/cycle_manager
 programs/eligibility_manager
