@@ -4,23 +4,37 @@
 :maxdepth: 2
 :hidden: true
 
-external_api
+# General Information
+overview
+license
+
+# Configuration and Customization
 extensibility
 architecture
 integrations
+
+# Security and Compliance
 security
+oidc
+audit_logs
+
+# Code and Release Management
 code
 release_management
+
+# Monitoring and Analytics
 monitoring
-programs/concepts
 programs/dashboards
+
+# Managers and Modules
+programs/concepts
 programs/program_manager
 programs/cycle_manager
 programs/eligibility_manager
 programs/entitlement_manager
 programs/deduplication_manager
 programs/notification_manager
-audit_logs
-oidc
-license
+
+# Additional Resources
+external_api
 ```
