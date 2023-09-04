@@ -6,7 +6,6 @@
 
 # Configuration and Customization
 architecture
-integrations
 extensibility
 
 # Security and Compliance
@@ -21,7 +20,8 @@ release_management
 # Monitoring and Analytics
 monitoring
 
-# Additional Resources
+# Integrations
+integrations
 external_api
 
 # Managers and Modules
