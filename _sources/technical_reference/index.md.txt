@@ -1,58 +1,28 @@
 # Technical Reference
 
-.. toctree::
+```{toctree}
 :maxdepth: 2
-:hidden:
+:hidden: true
 
-self
-
-**General Information**
-
-.. toctree::
-:maxdepth: 2
-
-overview
-license
-
-**Configuration and Customization**
-
-.. toctree::
-:maxdepth: 2
-
-extensibility
+# Configuration and Customization
 architecture
 integrations
+extensibility
 
-**Security and Compliance**
-
-.. toctree::
-:maxdepth: 2
-
+# Security and Compliance
 security
 oidc
 audit_logs
 
-**Code and Release Management**
-
-.. toctree::
-:maxdepth: 2
-
+# Code and Release Management
 code
 release_management
 
-**Monitoring and Analytics**
-
-.. toctree::
-:maxdepth: 2
-
+# Monitoring and Analytics
 monitoring
 programs/dashboards
 
-**Managers and Modules**
-
-.. toctree::
-:maxdepth: 2
-
+# Managers and Modules
 programs/concepts
 programs/program_manager
 programs/cycle_manager
@@ -61,9 +31,9 @@ programs/entitlement_manager
 programs/deduplication_manager
 programs/notification_manager
 
-**Additional Resources**
+# License
+license
 
-.. toctree::
-:maxdepth: 2
-
+# Additional Resources
 external_api
+```
