@@ -1,4 +1,4 @@
-# Overview
+# Manager Overview
 
 ![OpenSPP Overview](images/openspp_overview.png)
 
