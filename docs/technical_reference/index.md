@@ -4,7 +4,7 @@
 :maxdepth: 2
 :hidden: true
 
-# Configuration and Customization
+# Configuration and Architecture
 architecture
 extensibility
 
