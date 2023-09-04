@@ -20,10 +20,13 @@ release_management
 
 # Monitoring and Analytics
 monitoring
-programs/dashboards
+
+# Additional Resources
+external_api
 
 # Managers and Modules
 programs/concepts
+programs/dashboards
 programs/program_manager
 programs/cycle_manager
 programs/eligibility_manager
@@ -33,7 +36,4 @@ programs/notification_manager
 
 # License
 license
-
-# Additional Resources
-external_api
 ```
