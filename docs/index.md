@@ -15,7 +15,7 @@ OpenSPP is an open-source project that aims to streamline the management of soci
 ## How the documentation is organized
 A high-level overview of how OpenSPP’s documentation is organized will help you know where to look for certain things:
 
-- [Tutorials](tutorials/index) take you by the hand through a series of steps to create a web application. Start here if you’re new to Django or web application development. Also look at the “First steps”.
+- [Tutorials](tutorials/index) take you by the hand through a series of steps to create a web application. Start here if you’re new to OpenSPP. 
 - [User guides](user_guide/index) discuss key topics and concepts at a fairly high level and provide useful background information and explanation.
 - [Technical guides](technical_reference/index) contain technical reference for APIs and other aspects of OpenSPP's machinery. They describe how it works and how to use it but assume that you have a basic understanding of key concepts.
 - [How-to guides](howto/index) are recipes. They guide you through the steps involved in addressing key problems and use-cases. They are more advanced than tutorials and assume some knowledge of how OpenSPP works.
