@@ -127,11 +127,33 @@
     <div class="bd-toc-item active">
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../tutorials/index.html">
-   Getting started
+  <a class="reference internal" href="../../learn/index.html">
+   Learn
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../learn/digital_public_infrastructure.html">
+     Digital Public Infrastructure (DPI) and OpenSPP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../learn/social_registry.html">
+     Social Registry
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../tutorials/index.html">
+   Getting started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -147,8 +169,8 @@
   <a class="reference internal" href="../../user_guide/index.html">
    User guide
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -234,8 +256,8 @@
   <a class="reference internal" href="../../howto/index.html">
    Howto
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -251,8 +273,8 @@
   <a class="reference internal" href="../index.html">
    Technical Reference
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -358,8 +380,8 @@
   <a class="reference internal" href="../../community_and_support/index.html">
    Community and Support
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -405,8 +427,8 @@
   <a class="reference internal" href="../../contributing/index.html">
    Contributing to documentation
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -446,8 +468,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../glossary/index.html">
-   Glossary
+  <a class="reference internal" href="../../glossary.html">
+   Social Protection Glossary
   </a>
  </li>
 </ul>
@@ -783,12 +805,12 @@ Override in entitlement manager</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.amount_per_cycle">
 <span class="sig-name descname"><span class="pre">amount_per_cycle</span></span><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.amount_per_cycle" title="Permalink to this definition">#</a></dt>
-<dd><p>Encapsulates a <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> expressed in a given
+<dd><p>Encapsulates a <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> expressed in a given
 <code class="xref py py-class docutils literal notranslate"><span class="pre">res_currency</span></code>.</p>
 <p>The decimal precision and currency symbol are taken from the <code class="docutils literal notranslate"><span class="pre">currency_field</span></code> attribute.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency_field</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) -- name of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Many2one</span></code> field
+<dd class="field-odd"><p><strong>currency_field</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) -- name of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Many2one</span></code> field
 holding the <code class="xref py py-class docutils literal notranslate"><span class="pre">res_currency</span></code>
 this monetary field is expressed in (default: <code class="docutils literal notranslate"><span class="pre">'currency_id'</span></code>)</p>
 </dd>
@@ -798,12 +820,12 @@ this monetary field is expressed in (default: <code class="docutils literal notr
 <dl class="py attribute">
 <dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.amount_per_individual_in_group">
 <span class="sig-name descname"><span class="pre">amount_per_individual_in_group</span></span><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.amount_per_individual_in_group" title="Permalink to this definition">#</a></dt>
-<dd><p>Encapsulates a <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> expressed in a given
+<dd><p>Encapsulates a <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> expressed in a given
 <code class="xref py py-class docutils literal notranslate"><span class="pre">res_currency</span></code>.</p>
 <p>The decimal precision and currency symbol are taken from the <code class="docutils literal notranslate"><span class="pre">currency_field</span></code> attribute.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency_field</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) -- name of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Many2one</span></code> field
+<dd class="field-odd"><p><strong>currency_field</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) -- name of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Many2one</span></code> field
 holding the <code class="xref py py-class docutils literal notranslate"><span class="pre">res_currency</span></code>
 this monetary field is expressed in (default: <code class="docutils literal notranslate"><span class="pre">'currency_id'</span></code>)</p>
 </dd>
@@ -847,7 +869,7 @@ Cancel entitlements in a cycle</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.create_date">
 <span class="sig-name descname"><span class="pre">create_date</span></span><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.create_date" title="Permalink to this definition">#</a></dt>
-<dd><p>Encapsulates a python <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> object.</p>
+<dd><p>Encapsulates a python <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> object.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -858,19 +880,19 @@ record) or 1 (a single record).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>comodel_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) -- name of the target model
+<li><p><strong>comodel_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) -- name of the target model
 <code class="docutils literal notranslate"><span class="pre">Mandatory</span></code> except for related or extended fields.</p></li>
 <li><p><strong>domain</strong> -- an optional domain to set on candidate values on the
 client side (domain or string)</p></li>
-<li><p><strong>context</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><em>dict</em></a>) -- an optional context to use on the client side when
+<li><p><strong>context</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><em>dict</em></a>) -- an optional context to use on the client side when
 handling that field</p></li>
-<li><p><strong>ondelete</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) -- what to do when the referred record is deleted;
+<li><p><strong>ondelete</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) -- what to do when the referred record is deleted;
 possible values are: <code class="docutils literal notranslate"><span class="pre">'set</span> <span class="pre">null'</span></code>, <code class="docutils literal notranslate"><span class="pre">'restrict'</span></code>, <code class="docutils literal notranslate"><span class="pre">'cascade'</span></code></p></li>
-<li><p><strong>auto_join</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) -- whether JOINs are generated upon search through that
+<li><p><strong>auto_join</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- whether JOINs are generated upon search through that
 field (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
-<li><p><strong>delegate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) -- set it to <code class="docutils literal notranslate"><span class="pre">True</span></code> to make fields of the target model
+<li><p><strong>delegate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- set it to <code class="docutils literal notranslate"><span class="pre">True</span></code> to make fields of the target model
 accessible from the current model (corresponds to <code class="docutils literal notranslate"><span class="pre">_inherits</span></code>)</p></li>
-<li><p><strong>check_company</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) -- Mark the field to be verified in
+<li><p><strong>check_company</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- Mark the field to be verified in
 <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/howtos/company.html#odoo.models.Model._check_company" title="(in Odoo v15.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_check_company()</span></code></a>. Add a default company
 domain depending on the field attributes.</p></li>
 </ul>
@@ -886,19 +908,19 @@ record) or 1 (a single record).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>comodel_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) -- name of the target model
+<li><p><strong>comodel_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) -- name of the target model
 <code class="docutils literal notranslate"><span class="pre">Mandatory</span></code> except for related or extended fields.</p></li>
 <li><p><strong>domain</strong> -- an optional domain to set on candidate values on the
 client side (domain or string)</p></li>
-<li><p><strong>context</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><em>dict</em></a>) -- an optional context to use on the client side when
+<li><p><strong>context</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><em>dict</em></a>) -- an optional context to use on the client side when
 handling that field</p></li>
-<li><p><strong>ondelete</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) -- what to do when the referred record is deleted;
+<li><p><strong>ondelete</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) -- what to do when the referred record is deleted;
 possible values are: <code class="docutils literal notranslate"><span class="pre">'set</span> <span class="pre">null'</span></code>, <code class="docutils literal notranslate"><span class="pre">'restrict'</span></code>, <code class="docutils literal notranslate"><span class="pre">'cascade'</span></code></p></li>
-<li><p><strong>auto_join</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) -- whether JOINs are generated upon search through that
+<li><p><strong>auto_join</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- whether JOINs are generated upon search through that
 field (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
-<li><p><strong>delegate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) -- set it to <code class="docutils literal notranslate"><span class="pre">True</span></code> to make fields of the target model
+<li><p><strong>delegate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- set it to <code class="docutils literal notranslate"><span class="pre">True</span></code> to make fields of the target model
 accessible from the current model (corresponds to <code class="docutils literal notranslate"><span class="pre">_inherits</span></code>)</p></li>
-<li><p><strong>check_company</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) -- Mark the field to be verified in
+<li><p><strong>check_company</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- Mark the field to be verified in
 <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/howtos/company.html#odoo.models.Model._check_company" title="(in Odoo v15.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_check_company()</span></code></a>. Add a default company
 domain depending on the field attributes.</p></li>
 </ul>
@@ -914,10 +936,10 @@ single-line string in clients.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) -- the maximum size of values stored for that field</p></li>
-<li><p><strong>trim</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) -- states whether the value is trimmed or not (by default,
+<li><p><strong>size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) -- the maximum size of values stored for that field</p></li>
+<li><p><strong>trim</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- states whether the value is trimmed or not (by default,
 <code class="docutils literal notranslate"><span class="pre">True</span></code>). Note that the trim operation is applied only by the web client.</p></li>
-<li><p><strong>translate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a><em> or </em><em>callable</em>) -- enable the translation of the field's values; use
+<li><p><strong>translate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a><em> or </em><em>callable</em>) -- enable the translation of the field's values; use
 <code class="docutils literal notranslate"><span class="pre">translate=True</span></code> to translate field values as a whole; <code class="docutils literal notranslate"><span class="pre">translate</span></code>
 may also be a callable such that <code class="docutils literal notranslate"><span class="pre">translate(callback,</span> <span class="pre">value)</span></code>
 translates <code class="docutils literal notranslate"><span class="pre">value</span></code> by using <code class="docutils literal notranslate"><span class="pre">callback(term)</span></code> to retrieve the
@@ -935,19 +957,19 @@ record) or 1 (a single record).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>comodel_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) -- name of the target model
+<li><p><strong>comodel_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) -- name of the target model
 <code class="docutils literal notranslate"><span class="pre">Mandatory</span></code> except for related or extended fields.</p></li>
 <li><p><strong>domain</strong> -- an optional domain to set on candidate values on the
 client side (domain or string)</p></li>
-<li><p><strong>context</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><em>dict</em></a>) -- an optional context to use on the client side when
+<li><p><strong>context</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><em>dict</em></a>) -- an optional context to use on the client side when
 handling that field</p></li>
-<li><p><strong>ondelete</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) -- what to do when the referred record is deleted;
+<li><p><strong>ondelete</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) -- what to do when the referred record is deleted;
 possible values are: <code class="docutils literal notranslate"><span class="pre">'set</span> <span class="pre">null'</span></code>, <code class="docutils literal notranslate"><span class="pre">'restrict'</span></code>, <code class="docutils literal notranslate"><span class="pre">'cascade'</span></code></p></li>
-<li><p><strong>auto_join</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) -- whether JOINs are generated upon search through that
+<li><p><strong>auto_join</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- whether JOINs are generated upon search through that
 field (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
-<li><p><strong>delegate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) -- set it to <code class="docutils literal notranslate"><span class="pre">True</span></code> to make fields of the target model
+<li><p><strong>delegate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- set it to <code class="docutils literal notranslate"><span class="pre">True</span></code> to make fields of the target model
 accessible from the current model (corresponds to <code class="docutils literal notranslate"><span class="pre">_inherits</span></code>)</p></li>
-<li><p><strong>check_company</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) -- Mark the field to be verified in
+<li><p><strong>check_company</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- Mark the field to be verified in
 <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/howtos/company.html#odoo.models.Model._check_company" title="(in Odoo v15.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_check_company()</span></code></a>. Add a default company
 domain depending on the field attributes.</p></li>
 </ul>
@@ -964,7 +986,7 @@ domain depending on the field attributes.</p></li>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.max_individual_in_group">
 <span class="sig-name descname"><span class="pre">max_individual_in_group</span></span><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.max_individual_in_group" title="Permalink to this definition">#</a></dt>
-<dd><p>Encapsulates an <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>.</p>
+<dd><p>Encapsulates an <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1016,12 +1038,12 @@ Set entitlements to pending_validation in a cycle</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.transfer_fee_amt">
 <span class="sig-name descname"><span class="pre">transfer_fee_amt</span></span><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.transfer_fee_amt" title="Permalink to this definition">#</a></dt>
-<dd><p>Encapsulates a <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> expressed in a given
+<dd><p>Encapsulates a <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> expressed in a given
 <code class="xref py py-class docutils literal notranslate"><span class="pre">res_currency</span></code>.</p>
 <p>The decimal precision and currency symbol are taken from the <code class="docutils literal notranslate"><span class="pre">currency_field</span></code> attribute.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>currency_field</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) -- name of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Many2one</span></code> field
+<dd class="field-odd"><p><strong>currency_field</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) -- name of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Many2one</span></code> field
 holding the <code class="xref py py-class docutils literal notranslate"><span class="pre">res_currency</span></code>
 this monetary field is expressed in (default: <code class="docutils literal notranslate"><span class="pre">'currency_id'</span></code>)</p>
 </dd>
@@ -1031,11 +1053,11 @@ this monetary field is expressed in (default: <code class="docutils literal notr
 <dl class="py attribute">
 <dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.transfer_fee_pct">
 <span class="sig-name descname"><span class="pre">transfer_fee_pct</span></span><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.transfer_fee_pct" title="Permalink to this definition">#</a></dt>
-<dd><p>Encapsulates a <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>.</p>
+<dd><p>Encapsulates a <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>.</p>
 <p>The precision digits are given by the (optional) <code class="docutils literal notranslate"><span class="pre">digits</span></code> attribute.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>digits</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a><em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>,</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>) or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) -- a pair (total, decimal) or a string referencing a
+<dd class="field-odd"><p><strong>digits</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><em>tuple</em></a><em>(</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a><em>,</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a><em>) or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) -- a pair (total, decimal) or a string referencing a
 <code class="xref py py-class docutils literal notranslate"><span class="pre">DecimalPrecision</span></code> record name.</p>
 </dd>
 </dl>
@@ -1088,7 +1110,7 @@ Validate entitlements in a cycle</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.write_date">
 <span class="sig-name descname"><span class="pre">write_date</span></span><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.entitlement_manager.DefaultCashEntitlementManager.write_date" title="Permalink to this definition">#</a></dt>
-<dd><p>Encapsulates a python <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> object.</p>
+<dd><p>Encapsulates a python <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> object.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -1099,19 +1121,19 @@ record) or 1 (a single record).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>comodel_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) -- name of the target model
+<li><p><strong>comodel_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) -- name of the target model
 <code class="docutils literal notranslate"><span class="pre">Mandatory</span></code> except for related or extended fields.</p></li>
 <li><p><strong>domain</strong> -- an optional domain to set on candidate values on the
 client side (domain or string)</p></li>
-<li><p><strong>context</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><em>dict</em></a>) -- an optional context to use on the client side when
+<li><p><strong>context</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><em>dict</em></a>) -- an optional context to use on the client side when
 handling that field</p></li>
-<li><p><strong>ondelete</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) -- what to do when the referred record is deleted;
+<li><p><strong>ondelete</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) -- what to do when the referred record is deleted;
 possible values are: <code class="docutils literal notranslate"><span class="pre">'set</span> <span class="pre">null'</span></code>, <code class="docutils literal notranslate"><span class="pre">'restrict'</span></code>, <code class="docutils literal notranslate"><span class="pre">'cascade'</span></code></p></li>
-<li><p><strong>auto_join</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) -- whether JOINs are generated upon search through that
+<li><p><strong>auto_join</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- whether JOINs are generated upon search through that
 field (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
-<li><p><strong>delegate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) -- set it to <code class="docutils literal notranslate"><span class="pre">True</span></code> to make fields of the target model
+<li><p><strong>delegate</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- set it to <code class="docutils literal notranslate"><span class="pre">True</span></code> to make fields of the target model
 accessible from the current model (corresponds to <code class="docutils literal notranslate"><span class="pre">_inherits</span></code>)</p></li>
-<li><p><strong>check_company</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) -- Mark the field to be verified in
+<li><p><strong>check_company</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- Mark the field to be verified in
 <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/howtos/company.html#odoo.models.Model._check_company" title="(in Odoo v15.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_check_company()</span></code></a>. Add a default company
 domain depending on the field attributes.</p></li>
 </ul>

@@ -130,11 +130,33 @@
     <div class="bd-toc-item active">
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../tutorials/index.html">
-   Getting started
+  <a class="reference internal" href="../learn/index.html">
+   Learn
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../learn/digital_public_infrastructure.html">
+     Digital Public Infrastructure (DPI) and OpenSPP
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../learn/social_registry.html">
+     Social Registry
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tutorials/index.html">
+   Getting started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -150,8 +172,8 @@
   <a class="reference internal" href="../user_guide/index.html">
    User guide
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -237,8 +259,8 @@
   <a class="reference internal" href="../howto/index.html">
    Howto
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -254,8 +276,8 @@
   <a class="reference internal" href="../technical_reference/index.html">
    Technical Reference
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -361,8 +383,8 @@
   <a class="reference internal" href="../community_and_support/index.html">
    Community and Support
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -408,8 +430,8 @@
   <a class="reference internal" href="index.html">
    Contributing to documentation
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -449,8 +471,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../glossary/index.html">
-   Glossary
+  <a class="reference internal" href="../glossary.html">
+   Social Protection Glossary
   </a>
  </li>
 </ul>
@@ -917,7 +939,7 @@ title="Print to PDF"
 <div class="section" id="myst-restructuredtext-and-markdown">
 <h2>MyST, reStructuredText, and Markdown<a class="headerlink" href="#myst-restructuredtext-and-markdown" title="Permalink to this headline">#</a></h2>
 <p>We use <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/">MyST, or Markedly Structured Text</a>, a rich and extensible flavor of Markdown, for authoring training documentation.</p>
-<p>MyST extends <a class="reference internal" href="../glossary/index.html#term-Markdown"><span class="xref std std-term">Markdown</span></a> by incorporating all the features of <a class="reference internal" href="../glossary/index.html#term-reStructuredText"><span class="xref std std-term">reStructuredText</span></a> and <a class="reference internal" href="../glossary/index.html#term-Sphinx"><span class="xref std std-term">Sphinx</span></a> and its extensions.
+<p>MyST extends <span class="xref std std-term">Markdown</span> by incorporating all the features of <span class="xref std std-term">reStructuredText</span> and <span class="xref std std-term">Sphinx</span> and its extensions.
 Contributors are welcome to use either Markdown or MyST syntax.</p>
 <p>MyST may be more familiar to reStructuredText authors.
 MyST allows the use of a fence and <code class="docutils literal notranslate"><span class="pre">{rst-eval}</span></code> to evaluate native reStructuredText.
@@ -1201,12 +1223,12 @@ print(f&quot;my {a}nd line&quot;)
 </div>
 <div class="section" id="glossary-terms">
 <h3>Glossary terms<a class="headerlink" href="#glossary-terms" title="Permalink to this headline">#</a></h3>
-<p>Add a term to the <a class="reference internal" href="../glossary/index.html#glossary-label"><span class="std std-ref">Glossary</span></a>, located at <code class="file docutils literal notranslate"><span class="pre">/glossary.md</span></code>.</p>
+<p>Add a term to the <span class="xref std std-ref">glossary-label</span>, located at <code class="file docutils literal notranslate"><span class="pre">/glossary.md</span></code>.</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span>React
     [<span class="nt">React</span>](<span class="na">https://reactjs.org/</span>) is a JavaScript library for building user interfaces.
 </pre></div>
 </div>
-<p>Reference a term in the <a class="reference internal" href="../glossary/index.html#glossary-label"><span class="std std-ref">Glossary</span></a>.</p>
+<p>Reference a term in the <span class="xref std std-ref">glossary-label</span>.</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Using {term}`React` makes frontends fun again!
 </pre></div>
 </div>
