@@ -43,6 +43,7 @@ To learn more, take a look at the [Architecture](technical_reference/architectur
 :maxdepth: 2
 :hidden: true
 
+learn/index
 tutorials/index
 user_guide/index
 howto/index
@@ -56,7 +57,7 @@ contributing/index
 :maxdepth: 1
 :hidden: true
 
-glossary/index
+glossary
 ```
 
 {ref}`genindex`
