@@ -1,4 +1,4 @@
-# Digital Public Infrastructure (DPI) and OpenSPP
+# Digital Public Infrastructure
 
 ## Introduction to DPI
 Just as railroads built with public money helped society grow in the past, today's digital systems, known as Digital Public Infrastructure (DPI), play a similar role in our modern world. DPI facilitates the movement of people, money, and information in the digital realm.
@@ -15,10 +15,10 @@ DPI integrates critical components for secure, efficient, and accessible digital
 - **Data Exchange**: Fluid data flows between government and private sector, with robust personal data protection measures.
 
 ## DPI in Social Protection
-DPI plays a pivotal role in social protection, especially in low-and-middle-income countries (LMICs). It facilitates a rights-based and inclusive digital transformation by intertwining technology, governance, and local digital ecosystems. Implementing DPI in social protection schemes ensures adaptability, efficiency, and inclusivity, addressing diverse societal needs ([UNDP](https://www.undp.org/blog/human-and-economic-impact-digital-public-infrastructure)).
+DPI plays a pivotal role in social protection, especially in low-and-middle-income countries (LMICs). It facilitates a rights-based and inclusive digital transformation by intertwining technology, governance, and local digital ecosystems. Implementing DPI in social protection schemes ensures adaptability, efficiency, and inclusivity, addressing diverse societal needs.
 
 ### Real-World Examples and Impact
-India has seen transformative impacts from DPI, with digital IDs provided to over a billion people, enhancing government service accessibility. In Mauritius, DPI has led to the development of over 500 new electronic services for citizens and businesses through robust data exchange mechanisms ([UNDP](https://www.undp.org/blog/human-and-economic-impact-digital-public-infrastructure)).
+India has seen transformative impacts from DPI, with digital IDs provided to over a billion people, enhancing government service accessibility. In Mauritius, DPI has led to the development of over 500 new electronic services for citizens and businesses through robust data exchange mechanisms.
 
 ### The COVID-19 Pandemic and DPI
 During the COVID-19 pandemic, DPI was invaluable in scaling social assistance rapidly. Countries with established digital infrastructures, like digital IDs and payment systems, effectively expanded social assistance, including to previously uncovered populations. This underscored DPI's role in agile crisis response and its potential in future social protection strategies ([World Bank](https://openknowledge.worldbank.org/handle/10986/34710)).
