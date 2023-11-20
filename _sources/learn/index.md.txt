@@ -12,5 +12,6 @@ hidden: true
 
 digital_public_infrastructure
 social_registry
+integrated_beneficiary_registry
 
 ```
