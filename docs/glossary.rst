@@ -48,21 +48,21 @@ Social Protection Glossary
        | 🇸🇦 المصادقة
 
    Beneficiary, beneficiaries
-       
+       In the context of social protection, beneficiaries are the individuals or households targeted by a programme to benefit from a transfer. See also: Recipients
 
        | 🇫🇷 Bénéficiaire, bénéficiaires
        | 🇪🇸 Beneficiario, beneficiarios
        | 🇸🇦 المستفيد، المستفيدين
 
    Beneficiary operations management
-       A stage along the social protection delivery chain that involves the activity of continuously engaging and collecting information from the field or other sources (such as other databases), which is then processed through a set of protocols, recorded, and used to make decisions. This simple pattern of engaging, collecting, processing, and deciding is the common thread that ties together the set of activities that occur continuously in the implementation of a program. Beneficiary operations management includes three main functions, which are implemented simultaneously: beneficiary data management, monitoring of conditionalities, and implementation of a mechanism for the redress of grievances.
+       Stage along the social protection delivery chain that involves the activity of continuously engaging and collecting information from the field or other sources (such as other databases), which is then processed through a set of protocols, recorded, and used to make decisions. This simple pattern of engaging, collecting, processing, and deciding is the common thread that ties together the set of activities that occur continuously in the implementation of a program. Beneficiary operations management includes three main functions, which are implemented simultaneously: beneficiary data management, monitoring of conditionalities, and implementation of a mechanism for the redress of grievances.
 
        | 🇫🇷 Gestion des opérations des bénéficiaires
        | 🇪🇸 Gestión de las operaciones de los beneficiarios
        | 🇸🇦 إدارة عمليات المستفيدين
 
    Beneficiary registry
-       A database of beneficiaries of a social protection program. It is also a component of the beneficiary operations management system. These beneficiary registries contain information on program beneficiaries. Registries that contain information on beneficiaries of multiple programs are known as integrated beneficiary registries.
+       Database of beneficiaries of a social protection program. It is also a component of the beneficiary operations management system. These beneficiary registries contain information on program beneficiaries. Registries that contain information on beneficiaries of multiple programs are known as integrated beneficiary registries.
 
        | 🇫🇷 Registre des bénéficiaires
        | 🇪🇸 Registro de beneficiarios
@@ -76,7 +76,7 @@ Social Protection Glossary
        | 🇸🇦 فوائد
 
    Biometrics or biometric data
-       Physiological or behavioral characteristics that are unique to an individual (e.g., fingerprints, voice patterns) and that can be used as a means of automatic verification of identity.
+        Physiological or behavioral characteristics that are unique to an individual (e.g., fingerprints, voice patterns) and that can be used as a means of automatic verification of identity.
 
        | 🇫🇷 Biométrie ou données biométriques
        | 🇪🇸 Biometría o datos biométricos
@@ -104,7 +104,7 @@ Social Protection Glossary
        | 🇸🇦 التحويلات النقدية
 
    Categorical targeting
-       A targeting mechanism in which eligibility is defined for groups of the population on the basis of specific observable characteristics, such as age. Examples include social pensions for the elderly, child allowances, birth allowances, family allowances, and orphan benefits.
+       Targeting mechanism in which eligibility is defined for groups of the population on the basis of specific observable characteristics, such as age. Examples include social pensions for the elderly, child allowances, birth allowances, family allowances, and orphan benefits.
 
        | 🇫🇷 Ciblage catégoriel
        | 🇪🇸 Focalización categórica
@@ -118,7 +118,7 @@ Social Protection Glossary
        | 🇸🇦 طريقة التسجيل بالمسح الإحصائي
 
    Child allowance
-       A cash benefit provided to families based on the presence and number of children in the family. The benefit may vary by the ordinal position of the child, the age of the child, or the employment status of the parent. Eligibility can be universal or based on an assessment of socioeconomic status (such as means testing).
+       Cash benefit provided to families based on the presence and number of children in the family. The benefit may vary by the ordinal position of the child, the age of the child, or the employment status of the parent. Eligibility can be universal or based on an assessment of socioeconomic status (such as means testing).
 
        | 🇫🇷 Allocation pour enfant
        | 🇪🇸 Asignación por hijo
@@ -153,7 +153,7 @@ Social Protection Glossary
        | 🇸🇦 التسجيل المدني
 
    Community-based targeting
-       A mechanism by which local communities are given discretion to determine which individuals, families, or households will be selected as beneficiaries of a particular program—or to determine which would be registered into a social registry for further assessment of their needs and conditions and eventual consideration for potential eligibility in social programs.
+       Mechanism by which local communities are given discretion to determine which individuals, families, or households will be selected as beneficiaries of a particular program—or to determine which would be registered into a social registry for further assessment of their needs and conditions and eventual consideration for potential eligibility in social programs.
 
        | 🇫🇷 Ciblage communautaire
        | 🇪🇸 Focalización comunitaria
@@ -328,7 +328,7 @@ Social Protection Glossary
        | 🇸🇦 رسم خريطة لعملية سلسلة التوصيل
 
    Delivery systems
-       see social protection delivery systems.
+       See Social Protection Delivery systems.
 
        | 🇫🇷 Systèmes de mise en œuvre
        | 🇪🇸 Sistemas de implementación
@@ -353,10 +353,10 @@ Social Protection Glossary
 
        | 🇫🇷 Travailleurs découragés (ou demandeurs d'emploi potentiels disponibles)
        | 🇪🇸 Trabajadores desmotivados (también denominados potenciales buscadores de empleo disponibles)
-       | 🇸🇦 العمال المحبطون (ويعرف أيضًا باسم الباحثين المحتملين عن عمل)
+       | 🇸🇦 العمال المثبطين (ويعرف أيضًا باسم الباحثين المحتملين عن عمل)
 
    Dynamic data or transactional data
-       
+       Data that change as a result of an event (a transaction). The data have a time dimension, a numerical value, and refer to one or more reference data objects such as orders, invoices, and payments.
 
        | 🇫🇷 Données dynamiques ou transactionnelles
        | 🇪🇸 Datos dinámicos o datos transaccionales
@@ -377,21 +377,21 @@ Social Protection Glossary
        | 🇸🇦 الكفاءة
 
    Eligibility
-       
+       Eligibility in the context of social protection refers to the criteria that determine who can access social protection programs. These criteria vary based on the specific program's goals and the context in which it operates.
 
        | 🇫🇷 Éligibilité
        | 🇪🇸 Elegibilidad
        | 🇸🇦 الأهلية
 
    Eligibility criteria
-       
+       Eligibility criteria in social protection refer to the specific conditions or requirements that individuals or households must meet to qualify for assistance or benefits under social protection programs. These criteria are crucial in ensuring that support is targeted effectively towards those who need it most. 
 
        | 🇫🇷 Critères d'éligibilité
        | 🇪🇸 Criterios de elegibilidad
        | 🇸🇦 معايير الأهلية
 
    Employment incentives
-       
+       are strategies or measures designed to encourage individuals to seek, obtain, or retain employment. These incentives are often part of broader social protection policies and programs.
 
        | 🇫🇷 Incitations à l'emploi
        | 🇪🇸 Incentivos al empleo
@@ -538,7 +538,7 @@ Social Protection Glossary
        | 🇸🇦 خطة العمل الفردية (IAP)
 
    Ineligible
-       
+       Refers to a state or condition where a person, entity, or item does not meet the set criteria or requirements to qualify for a particular status, benefit, program, or activity.
 
        | 🇫🇷 Inéligible
        | 🇪🇸 Inelegible
@@ -580,7 +580,7 @@ Social Protection Glossary
        | 🇸🇦 خدمات الرعاية المؤسسية
 
    Integrated beneficiary registry
-       
+       "Integrated beneficiary registries incorporate data from programme beneficiary registries of several different schemes. They provide a consolidated overview of data collected by different programmes, showing “who receives what” benefits (focusing on beneficiaries alone). These are also variously described as ‘single registry’ or ‘unified beneficiary registry’. [Definition adapted from https://socialprotection.org/learn/glossary/I]"
 
        | 🇫🇷 Registre de bénéficiaires intégré
        | 🇪🇸 Registro integrado de beneficiarios
@@ -594,357 +594,361 @@ Social Protection Glossary
        | 🇸🇦 إطار إدارة المعلومات المتكامل
 
    Intended population
-       
+       The group of individuals, families, or households who are meant to be included as potential beneficiaries of a program. Also referred to as a ""target group.""
 
        | 🇫🇷 Population ciblée
        | 🇪🇸 Población objetivo
        | 🇸🇦 السكان المستهدفون
 
    Intermediation
-       
+       An integrated service-provision approach used in both labor and social services. Inter- mediation is a service in its own right—and it also con- nects people (workers) to other services. It is the process of informing clients about a range of benefits and ser- vices relevant to their needs, and directing them to the corresponding access point, based on agreed protocols with service provider agencies, sometimes with indi- vidualized action plans (IAPs), to help them overcome multiple socioeconomic barriers. Intermediation con- nects the demand and supply of social or labor services. The role of the mediator (social caseworker or public employment officer) is to correctly identify the needs of the participant (demand side—through risk screen- ing and profiling) and then to identify the availabil- ity of services and service providers (supply side) and then connect them with referrals and counter-referrals (monitoring and follow-up) on the basis of an action plan, protocols, service contracts, and service standards.
+
 
        | 🇫🇷 Intermédiation
        | 🇪🇸 Intermediación
        | 🇸🇦 الوساطة
 
    Labor markets
-       
+       Actual pools of skilled or unskilled labor available within local, national, or global economies, and activities intended to reduce risk and to improve the efficiency of the labor market and to increase the employability of workers, including employment secu- rity and protection. Includes employment and advisory services, training and retraining, and labor market infor- mation systems, including the design, purchase, and implementation of computer software and hardware.
 
        | 🇫🇷 Marchés du travail
        | 🇪🇸 Mercados laborales
        | 🇸🇦 أسواق العمل
 
    Long-term unemployment
-       
+       Refers to those who have been unemployed for more than a certain time period, such as 52 weeks (1 year, International Labour Orga- nization, Organisation for Economic Co-operation and Development) or 27 weeks (US Bureau of Labor Statistics).
 
        | 🇫🇷 Chômage de longue durée
        | 🇪🇸 Desempleo de largo plazo (DLP)
        | 🇸🇦 البطالة طويلة الأجل
 
    Master data
-       
+       A single source of common business data that are agreed upon and shared across the organization, and are used across multiple systems, applications, and processes. Examples include data about customers, products, employees, suppliers, materials, vendors, and so on.
 
        | 🇫🇷 Données de base
        | 🇪🇸 Datos maestros
        | 🇸🇦 البيانات الرئيسية
 
    Means testing (MT)
-       
+       A methodology that determines potential eligibility or computes benefit levels based upon some assessment of the incomes and assets of a family or household.
 
        | 🇫🇷 Évaluation des ressources (ER)
        | 🇪🇸 Comprobación de los medios de vida (CM)
        | 🇸🇦 اختبار الوساذل
 
    Metadata
-       
+       Data that describes other data.
 
        | 🇫🇷 Métadonnées
        | 🇪🇸 Metadatos
        | 🇸🇦 البيانات الوصفية
 
    Migrant worker
-       
+       A person who is to be engaged, is engaged, or has been engaged in remunerated activity in a state or country of which he or she is not a citizen.
 
        | 🇫🇷 Travailleur migrant
        | 🇪🇸 Trabajador migrante
        | 🇸🇦 عامل مهاجر
 
    Notification and onboarding
-       
+       Notification involves informing applicants of their enrollment decisions (in, wait-listed, or out), and onboarding involves finaliz- ing the enrollment process for those who have been selected (conducting orientation, collecting additional information, providing option to opt-out, etc.).
 
        | 🇫🇷 Notification et intégration
        | 🇪🇸 Notificación e incorporación en el sistema
        | 🇸🇦 إشعار والاندماج في النظام
 
    On-demand approach for intake and registration
-       
+       Approach that allows anyone to apply and register their information to be considered for potential inclusion in one or more programs. Three key features characterize on-demand approaches: (1) the impetus for initiating the engagement is driven by the clients (not the “state”), who take the initiative to apply; (2) specific clients engage on their own; and (3) timing: with the on-demand approach, specific clients engage in intake and registration on their own timing. While on-demand approaches are driven largely by the way intake and registration is carried out, they also influence other phases of the delivery chain. See also administrator-driven approach.
 
        | 🇫🇷 Approche à la demande pour l'accueil et l'enregistrement
        | 🇪🇸 Enfoque por demanda para la recepción y el registro
        | 🇸🇦 النهج حسب الطلب للتسجيل والتسجيل
 
    One-stop shops/service centers
-       
+       One form of “integrated service provision” whereby all services are co-located, so the client needs to go to only one place for support. In some cases, these may be for both labor and social ben- efits and services together. In other cases, they may be for labor services separately (e.g., job centers). Other modal- ities combine social and health benefits and services (such as the “department of health and human services” that is common in the United States and Australia).
 
        | 🇫🇷 Guichets uniques/centres de services
        | 🇪🇸 Ventanillas únicas/centros de servicios integrados
        | 🇸🇦 متاجر/مراكز خدمات شاملة
 
    Open-source software
-       
+       Software developed by infor- mal collaborative networks of programmers and are usually free. Anyone is freely licensed to use, copy, study, distribute, and change the software in any way, and the source code is openly shared so that peo- ple are encouraged to voluntarily improve the design of the software.19 For more details and examples of open-source software, visit https://opensource.com/ resources/what-open-source.
 
        | 🇫🇷 Logiciel open source
        | 🇪🇸 Software de código abierto
        | 🇸🇦 البرمجيات مفتوحة المصدر
 
    Outreach
-       
+       Deliberate efforts to reach and inform intended populations and vulnerable groups about social protec- tion programs and delivery systems so that they are aware, informed, able, and encouraged to engage.
 
        | 🇫🇷 Sensibilisation
        | 🇪🇸 Difusión
        | 🇸🇦 التوعية
 
    Outsourcing
-       
+       An arrangement where an entity decides to contract out the supply of services (sometimes goods) necessary to its operation to another entity, which then carries out the work using its own staff and equipment.
 
        | 🇫🇷 Externalisation
        | 🇪🇸 Externalización
        | 🇸🇦 التعهيد
 
    Oversight and controls
-       
+       Measures, tools, and systems to prevent, detect, deter, and monitor error, fraud, and cor- ruption (EFC).
 
        | 🇫🇷 Supervision et contrôle
        | 🇪🇸 Supervisión y controles
        | 🇸🇦 الرقابة والضوابط
 
    Passive labor market programs
-       
+       Programs that provide income replacement to unemployed workers with- out requiring any job-search or work-related activation efforts.
 
        | 🇫🇷 Programme passif d'emploi
        | 🇪🇸 Programas pasivos del mercado laboral
        | 🇸🇦 برامج سوق العمل السلبية
 
    Payments administration
-       
+       The required steps to transfer cash to beneficiaries or into the beneficiaries’ accounts. Payments administration includes establishing and ver- ifying the payroll and setting up the payment schedule, requesting the inter-account transfer (by the overseeing ministry to the treasury), issuing the inter-account pay- ment order (by the treasury to the payment service pro- vider), issuing the payment instruction (by the overseeing ministry to the payment service provider), and providing the payments to the beneficiaries (by the payment ser- vice provider).
 
        | 🇫🇷 Administration des paiements
        | 🇪🇸 Administración de los pagos
        | 🇸🇦 إدارة المدفوعات
 
    Payment service provider
-       
+       The public or private sector organization tasked with delivering the social protection program’s payments, such as a bank, post office, mobile network operator, nongovernmental organization, sav- ings and credit cooperative organization, or microfi- nance institution.
 
        | 🇫🇷 Prestataire des services de paiement
        | 🇪🇸 Proveedor de servicios de pago
        | 🇸🇦 مزود خدمة الدفع
 
    Payments provision
-       
+        Processes to transfer and deliver benefits to recipients.
 
        | 🇫🇷 Modalités de paiement
        | 🇪🇸 Provisión de pagos
        | 🇸🇦 اعتماد المدفوعات
 
    Payments reconciliation
-       
+       An accounting process that uses two sets of records to ensure figures are correct and in agreement. It confirms whether the money leav- ing an account matches the amount that has been spent and makes sure the two are balanced at the end of the recording period. For cash benefits, recon- ciliation confirms whether the funds transferred to the service provider match the amounts paid out to benefi- ciaries for that implementation cycle, and identifies any amounts not disbursed.
 
        | 🇫🇷 Rapprochement des paiements
        | 🇪🇸 Conciliación de pagos
        | 🇸🇦 تسوية المدفوعات
 
    Performance measurement framework
-       
+       Serves three main purposes. First, performance indicators that are monitored regularly can help diagnose bottlenecks in the delivery chain early on and help correct course to prevent systemic challenges. Second, paired with other evaluative techniques, performance indicator frame- works can also help identify alternative channels, pro- cesses, or practices that enable the system to be more effective or save clients time or money. Performance measures of delivery systems can feed into a broader set of evaluative evidence on the program, including impact evaluations, and contribute to a broader learn- ing agenda to refine and improve a program’s impact. Third, a performance measurement system is an important part of a wider oversight function for social protection programs, ensuring that public funds are allocated effectively.
 
        | 🇫🇷 Cadre de mesure de la performance
        | 🇪🇸 Marco de medición del desempeño
        | 🇸🇦 إطار قياس الأداء
 
    Personal data
-       
+       Any information relating to an individual who can be identified, directly or indirectly, in particu- lar by reference to an identifier (e.g., name, identification number, location data, online identifier, or one or more factors specific to the physical, physiological, genetic, mental, economic, cultural, or social identity of that indi- vidual).
 
        | 🇫🇷 Donnée personnelle
        | 🇪🇸 Datos personales
        | 🇸🇦 البيانات الشخصية
 
    Procedure of payments
-       
+       Refers to the systematic method through which financial benefits or assistance are disbursed to eligible individuals or households. This procedure is a critical component of social protection systems, as it ensures that support reaches those in need in an efficient, timely, and secure manner. 
 
        | 🇫🇷 Modalités de paiement
        | 🇪🇸 Provisión de pagos
        | 🇸🇦 إجراءات الدفع
 
    Provision of services
-       
+       Refers to the delivery of various forms of assistance and support to individuals and communities to enhance their social welfare and protect them against certain risks and vulnerabilities. These services are an integral part of social protection systems and can include a wide range of interventions
 
        | 🇫🇷 Prestation de services
        | 🇪🇸 Provisión de servicios
        | 🇸🇦 تقديم الخدمات
 
    Proxy means testing
-       
+       A tool used to assess a family’s socioeconomic status using a composite measure that calculates a weighted score based on observable house- hold characteristics, such as demographic structures, education levels, location and quality of the household’s dwelling, and ownership of durable goods and other assets. These variables are all considered “proxies” for incomes or consumption, which may be more difficult to measure and observe in situations of high informality.
 
        | 🇫🇷 Évaluation des ressources par approximation (Proxy Means Testing – PMT – en anglais)
        | 🇪🇸 Comprobación sustitutiva de los medios de vida (CSM)
        | 🇸🇦 اختبار الوكيل
 
    Recruitment incentives/wage subsidies
-       
+       Measures providing incentives for the creation and take-up of new jobs or that promote opportunities for improving employability through work experience, and which are payable for a limited period only. Recruitment incentives may include benefits provided exclusively to persons from labor market program target group and that are conditional upon the take-up of a new job (back-to- work bonus, mobility/relocation allowance, or the like).
 
        | 🇫🇷 Aide à l'embauche/aide salariale
        | 🇪🇸 Incentivos a la contratación/subvenciones salariales
        | 🇸🇦 حوافز التوظيف/إعانات الأجور
 
    Reduction of benefits for noncompliance with conditionalities
-       
+       When a beneficiary repeatedly fails to comply with conditionalities or co-responsibilities in a condi- tional cash transfer program, some countries impose a penalty on benefits, meaning that the beneficiary will lose all or part of the household benefits for some period until compliance resumes.
 
        | 🇫🇷 Réduction des prestations pour non-respect des conditions d'éligibilité
        | 🇪🇸 Reducción de los beneficios por incumplimiento de las condicionalidades
        | 🇸🇦 تخفيض المزايا لعدم الامتثال للشروط
 
    Refugee
-       
+       Someone who has been forced to flee their country because of persecution, war, or violence.
+
 
        | 🇫🇷 Réfugié(e)
        | 🇪🇸 Persona refugiada
        | 🇸🇦 لاجئ
 
    Registrant
-       
+       Individuals, families, or households who have provided their information during the intake and registration phase of the delivery chain. They may have provided their information at their own initiative (on demand; see applicants) or at the initiative of a pub- lic agency or program (as in the case of en masse reg- istration/census sweeps). In the latter case, we do not call them applicants because they did not technically “apply” for benefits and services.
 
        | 🇫🇷 Enregistré(e)
        | 🇪🇸 Persona registrada
        | 🇸🇦 المسجل
 
    Registration
-       
+       The process of recording and verifying the information collected from the intake process. It can also involve pulling additional information from other administrative systems. Intake and registration usually happen simultaneously.
 
        | 🇫🇷 Enregistrement
        | 🇪🇸 Registro
        | 🇸🇦 التسجيل
 
    Registration quotas
-       
+       Explicit caps (limits) on the number of households that can be registered in a specific district.
 
        | 🇫🇷 Quota d'enregistrement
        | 🇪🇸 Cuotas de registro
        | 🇸🇦 حصص التسجيل
 
    Registration targets
-       
+       Planned number of households that would be registered in a specific district, but with- out operating as a fixed or rigid quota (cap or limit).
 
        | 🇫🇷 Nombre ciblé d'enregistrés
        | 🇪🇸 Objetivos de registro
        | 🇸🇦 أهداف التسجيل
 
    Services
-       
+       Intangible acts, activities, or works provided to, or with the participation of, beneficiaries as a contribu- tion to their well-being (such as to reduce poverty, pro- vide opportunities, enhance employability, reduce social risks, etc.). They may be administered by public agencies or outsourced to third parties using government fund- ing. See also definitions of employment services, active labor market programs, and social services.
 
        | 🇫🇷 Services
        | 🇪🇸 Servicios
        | 🇸🇦 الخدمات
 
    Social assistance
-       
+       Social safety net programs that are noncontributory transfers in cash or in-kind and are usually targeted to the poor and vulnerable but may also support other groups (such as the long-term unem- ployed, disabled, etc.). Some programs are focused on improving chronic poverty or providing equality of opportunity; others more on protecting families from shocks and longstanding losses they can inflict for the unprotected poor. These programs, also known as social welfare, include cash transfers (conditional and unconditional), in-kind transfers, such as school feeding and targeted food assistance, and near cash benefits such as fee waivers and food vouchers.
+
 
        | 🇫🇷 Assistance sociale
        | 🇪🇸 Asistencia social
        | 🇸🇦 المساعدة الاجتماعية
 
    Social insurance
-       
+       Composed of programs that mini- mize the negative impact of economic shocks on indi- viduals and families. They include publicly provided or mandated insurance schemes against old age, disabil- ity, death of the main household provider, maternity leave and sickness cash benefits, and social health insurance. Social insurance programs are contributory, and beneficiaries receive benefits or services in recog- nition of contributions to an insurance scheme.
+
 
        | 🇫🇷 Assurance sociale
        | 🇪🇸 Seguridad social
        | 🇸🇦 التأمين الاجتماعي
 
    Social pensions
-       
+       Social assistance (noncontributory) benefits paid to categorical groups of the population, such as the elderly or disabled. They may be universal (paid to all in that category) or targeted (paid to those in that category who are also poor).
 
        | 🇫🇷 Pension sociale
        | 🇪🇸 Pensiones sociales
        | 🇸🇦 معاشات اجتماعية
 
    Social protection
-       
+       Systems that help individuals, fami- lies, and households, especially the poor and vulnera- ble, cope with crises and shocks, find jobs, invest in the health and education of their children, and protect the aging population.
 
        | 🇫🇷 Protection sociale
        | 🇪🇸 Protección social
        | 🇸🇦 الحماية الاجتماعية
 
    Social protection (SP) payments
-       
+       The transfer of cash or near cash to social protection program recipients (whether contributory or noncontributory programs). They include government-to-person (G2P) and person- to-government (P2G) payments.
 
        | 🇫🇷 Paiement de protection sociale (PS)
        | 🇪🇸 Pagos de protección social (PS)
        | 🇸🇦 مدفوعات الحماية الاجتماعية (SP)
 
    Social registry
-       
+        Information systems that support the processes of outreach, intake and registration, and assessment of needs and conditions to determine potential eligibility for social programs. They maintain information on all registered households regardless of whether they eventually benefit from a social program. As such, we do not refer to households in social registries as “beneficiaries” but as “registered households.”
 
        | 🇫🇷 Registre social
        | 🇪🇸 Registro social
        | 🇸🇦 سجل اجتماعي
 
    Social services
-       
+       A wide variety of programs made avail- able by public or private agencies to support individuals or families in addressing their particular risks and improv- ing their overall well-being.
 
        | 🇫🇷 Services sociaux
        | 🇪🇸 Servicios sociales
        | 🇸🇦 الخدمات الاجتماعية
 
    Target group
-       
+       refers to the specific segment of the population identified as the primary recipients of social welfare programs and interventions. These groups are usually determined based on certain characteristics or vulnerabilities that make them more in need of support. Understanding and accurately identifying target groups is crucial for the effective design and implementation of social protection policies.
 
        | 🇫🇷 Groupes ciblés
        | 🇪🇸 Grupo objetivo
        | 🇸🇦 المجموعة المستهدفة
 
    Targeting
-       
+       Targeting in social protection refers to the process or method used to determine which individuals or groups within a population will receive social protection benefits and services. The objective of targeting is to ensure that these resources are allocated efficiently and effectively, reaching those who are most in need. In social protection, targeting is a critical concept, as resources are often limited and the needs are high. Effective targeting can significantly impact the overall success and fairness of social protection programs.
 
        | 🇫🇷 Ciblage
        | 🇪🇸 Focalización
        | 🇸🇦 توجيه
 
    Targeting criteria
-       
+       A policy that seeks to direct an intervention (benefit or service) to the intended population, to minimize the coverage of those not intended to be beneficia- ries (errors of inclusion) and the noncoverage of intended beneficiaries (errors of exclusion). (We prefer to avoid using the term targeting in relation to an act of implementation.)
 
        | 🇫🇷 Critères de ciblage
        | 🇪🇸 Criterios de focalización
        | 🇸🇦 معايير الاستهداف
 
    Termination of benefits for conditionalities noncompliance
-       
+       When a beneficiary continuously fails to comply with conditionalities or co-responsibilities over a longer period, some countries cancel or terminate benefits and exit the family from the program (usually permanently or for a significant duration of time before one can reapply, barring appeals).
 
        | 🇫🇷 Arrêt des prestations pour non-respect des conditions d'éligibilité
        | 🇪🇸 Cese de los beneficios por incumplimiento de las condicionalidades
        | 🇸🇦 إنهاء المزايا لعدم الامتثال للشروط
 
    Three-tier architecture
-       
+       A client-server architecture that is made up of three layers: the data layer, busi- ness logic layer, and presentation layer. This is also known as model view controller (MVC) architecture.
 
        | 🇫🇷 Architecture à trois niveaux
        | 🇪🇸 Arquitectura de tres niveles
        | 🇸🇦 بنيه ثلاثيه الطبقات
 
    Time, costs, visits (TCV)
-       
+       An indicator of the amount of time people spend on the process, the amount of money they spend to participate (such as transport costs, childcare costs, missed work, and notary fees), and the number of visits they must make to the local office or other agencies.
 
        | 🇫🇷 Temps, coûts, visites (TCV)
        | 🇪🇸 Tiempo, gastos y visitas (TGV)
        | 🇸🇦 الوقت، التكاليف، الزيارات (TCV)
 
    Training
-       
+       Measures that aim to improve employability and are financed by public bodies. All training measures should include some evidence of classroom teaching, or if in the workplace, supervision specifically for the purpose of instruction. Includes institutional training, and workplace training, alternate training, and appren- ticeships.
 
        | 🇫🇷 Formation
        | 🇪🇸 Capacitación
        | 🇸🇦 تدريب
 
    Turnkey system
-       
+       A complete system solution, includ- ing software and hardware, that is sold to the pur- chasing organization as a complete product without the need for additional configuration and can be used immediately once installed or implemented.
 
        | 🇫🇷 Système clé en main
        | 🇪🇸 Sistema completo «llave en mano»
        | 🇸🇦 نظام مفتاح في اليد
 
    Unconditional cash transfers (UCTs)
-       
+       Programs that provide cash transfer benefits to individuals, families, or households without imposing any conditions on the beneficiaries.
 
        | 🇫🇷 Transfert monétaire inconditionnel (TMI)
        | 🇪🇸 Transferencias monetarias no condicionadas (TMNC)
        | 🇸🇦 التحويلات النقدية غير المشروطة
 
    Unemployment, unemployed
-       
+       People who are jobless, actively looking for work, and currently available for work. See also long-term unemployment.
 
        | 🇫🇷 Chômage, sans emploi
        | 🇪🇸 Desempleo, desempleados
        | 🇸🇦 البطالة، العاطلين عن العمل
 
    Unemployment benefits
-       
+       All forms of cash benefit to compensate for unemployment, including unemploy- ment assistance (noncontributory) or unemployment insurance (based on contributions and earning history). Benefits may be included as components of activation programs.
 
        | 🇫🇷 Prestation de chômage
        | 🇪🇸 Beneficios de desempleo
