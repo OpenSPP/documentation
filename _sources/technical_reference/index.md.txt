@@ -25,6 +25,9 @@ programs/dashboards
 integrations
 external_api
 
+# Other
+backup
+
 # Managers and Modules
 programs/concepts
 programs/program_manager
