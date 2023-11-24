@@ -162,3 +162,4 @@ zc.lockfile==3.0.post1
 zc.relation==1.1.post2
 ZConfig==3.6.1
 sphinx-tabs==3.2.0
+sphinxcontrib-googleanalytics==0.4
