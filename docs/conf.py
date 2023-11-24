@@ -154,6 +154,7 @@ extensions = [
     "sphinx_sitemap",
     "sphinxcontrib.httpdomain", 
     "sphinxcontrib.httpexample",
+    'sphinxcontrib.googleanalytics',
     "sphinxcontrib.video",
     "sphinxext.opengraph",
     "sphinx.ext.viewcode",
@@ -339,6 +340,8 @@ html_theme_options = {
     "extra_footer": """<p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
     """,
 }
+
+googleanalytics_id = 'G-RS4T4ZPG52'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".

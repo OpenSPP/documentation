@@ -19,3 +19,4 @@ sphinxext-opengraph
 sphinx-design
 sphinxcontrib-video
 sphinx-tabs==3.2.0
+sphinxcontrib-googleanalytics
