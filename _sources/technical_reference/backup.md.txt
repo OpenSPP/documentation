@@ -12,19 +12,22 @@ The key advantages are:
 In the implementation of OpenSPP, the backup can be implemented at different layers
 
 1. Infrastructure Layer
+
    This layer focuses on the physical and virtual components of an IT environment, including servers, network equipment, and storage systems.
 
    - Backup Methods: Full system backups, snapshots, and replication.
    - Challenges: Managing the sheer volume of data and ensuring minimal impact on performance during backup operations.
 
 2. Application Layer
+
    The application layer encompasses the specific data and configurations of OpenSPP.
 
    - Backup Considerations: It's important to capture application states and configurations, ensuring applications can be restored to a specific point in time.
    - Challenges: Countries often have unique backup requirements and may require specialized tools.
 
 3. Database Layer
-   Involves protecting the data stored in databases.
+
+   This layer Involves protecting the data stored in databases.
 
    - Backup Techniques: Includes consistent backups, log backups, and hot/cold backups.
    - Challenges: Ensuring data consistency and managing the recovery of large databases without impacting performance.

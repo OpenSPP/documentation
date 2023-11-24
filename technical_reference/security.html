@@ -13,17 +13,17 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-    <meta property="og:title" content="Trust & Security" />
+    <meta property="og:title" content="Security Implementations & Practices" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.openspp.org/technical_reference/security.html" />
 <meta property="og:site_name" content="OpenSPP Documentation" />
-<meta property="og:description" content="Security Architecture & Practices: This page delves into the security architecture and practices of OpenSPP, highlighting its adherence to the principles of zero-trust architecture, user authentica..." />
+<meta property="og:description" content="This page delves into the implementation and practices of OpenSPP, highlighting its adherence to the principles of zero-trust architecture, user authentication, input/output validation, session man..." />
 <meta property="og:image" content="https://docs.openspp.org/_static/openspp_logo.png" />
 <meta property="og:image:alt" content="OpenSPP Documentation" />
-<meta name="description" content="Security Architecture & Practices: This page delves into the security architecture and practices of OpenSPP, highlighting its adherence to the principles of zero-trust architecture, user authentica..." />
+<meta name="description" content="This page delves into the implementation and practices of OpenSPP, highlighting its adherence to the principles of zero-trust architecture, user authentication, input/output validation, session man..." />
 <meta property="og:locale" content="en_US" />
 
-<title>Trust &amp; Security – Technical Reference &#8212; OpenSPP Documentation v1.0</title>
+<title>Security Implementations &amp; Practices – Technical Reference &#8212; OpenSPP Documentation v1.0</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -310,7 +310,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Trust &amp; Security
+     Security Implementations &amp; Practices
     </a>
    </li>
    <li class="toctree-l2">
@@ -413,6 +413,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../explanation/user_mgt.html">
      User Management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../explanation/security_archi.html">
+     Security Architecture
     </a>
    </li>
   </ul>
@@ -568,7 +573,7 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__label">
-        <span>Trust &amp; Security – Technical Reference</span>
+        <span>Security Implementations &amp; Practices – Technical Reference</span>
     </div>
     <div class="header-article__right">
 <button onclick="toggleFullScreen()"
@@ -715,11 +720,6 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#security-architecture-practices">
-   Security Architecture &amp; Practices
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#privacy">
    Privacy
   </a>
@@ -738,7 +738,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Trust & Security</h1>
+                <h1>Security Implementations & Practices</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -748,11 +748,6 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#security-architecture-practices">
-   Security Architecture &amp; Practices
-  </a>
- </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#privacy">
    Privacy
@@ -773,11 +768,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="trust-security">
-<h1>Trust &amp; Security<a class="headerlink" href="#trust-security" title="Permalink to this headline">#</a></h1>
-<div class="section" id="security-architecture-practices">
-<h2>Security Architecture &amp; Practices<a class="headerlink" href="#security-architecture-practices" title="Permalink to this headline">#</a></h2>
-<p>This page delves into the security architecture and practices of OpenSPP, highlighting its adherence to the principles of zero-trust architecture, user authentication, input/output validation, session management, cryptographic management, file management, and robust logging.</p>
+  <div class="section" id="security-implementations-practices">
+<h1>Security Implementations &amp; Practices<a class="headerlink" href="#security-implementations-practices" title="Permalink to this headline">#</a></h1>
+<p>This page delves into the implementation and practices of OpenSPP, highlighting its adherence to the principles of zero-trust architecture, user authentication, input/output validation, session management, cryptographic management, file management, and robust logging.</p>
 <p>OpenSPP has been designed around the zero-trust architecture principle. This principle involves the fundamental premise of not automatically trusting anything inside or outside its perimeters. Instead, it verifies everything trying to connect to its systems before granting access. This approach fortifies OpenSPP's security framework, protecting it from both internal and external threats.</p>
 <p>The solution accommodates multiple authentication systems, allowing for integration with external ID systems such as Keycloak, MOSIP. This multi-authentication support facilitates seamless interaction with various identity systems while ensuring user authenticity. Moreover, OpenSPP clearly articulates each functionality’s scope and role capabilities, effectively decoupling them from the main business logic, thereby promoting system clarity and integrity.</p>
 <p>OpenSPP promotes sophisticated tools for monitoring user behavior, devices, and services. It supports log analysis and event monitoring, enabling proactive identification and response to potential security incidents. This level of surveillance enhances the platform's overall security, providing real-time insights into system activities.</p>
@@ -787,7 +780,6 @@ title="Print to PDF"
 <p>In the realm of file management, OpenSPP whitelists file formats and limits file sizes for uploaded documents, ensuring system efficiency and security. Additionally, OpenSPP is designed not to store confidential data while logging, safeguarding sensitive information from potential exposure.</p>
 <p>OpenSPP has a configurable logging mechanism covering all assets, with selectable log levels per configurations. This robust logging mechanism is integral to the platform's security strategy, offering valuable insights into system activities.</p>
 <p>OpenSPP is committed to maintaining its security posture by conducting regular vulnerability assessments and penetration testing (VAPT) of its applications, APIs, and infrastructure. Security assessments are carried out during the development stage and post-deployment, ensuring that the platform consistently adheres to the highest security standards.</p>
-</div>
 <div class="section" id="privacy">
 <h2>Privacy<a class="headerlink" href="#privacy" title="Permalink to this headline">#</a></h2>
 <p>The following section elaborates on OpenSPP's consent management framework and its emphasis on data privacy principles.</p>

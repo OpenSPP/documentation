@@ -1,8 +1,6 @@
-# Trust & Security
+# Security Implementations & Practices
 
-## Security Architecture & Practices
-
-This page delves into the security architecture and practices of OpenSPP, highlighting its adherence to the principles of zero-trust architecture, user authentication, input/output validation, session management, cryptographic management, file management, and robust logging.
+This page delves into the implementation and practices of OpenSPP, highlighting its adherence to the principles of zero-trust architecture, user authentication, input/output validation, session management, cryptographic management, file management, and robust logging.
 
 OpenSPP has been designed around the zero-trust architecture principle. This principle involves the fundamental premise of not automatically trusting anything inside or outside its perimeters. Instead, it verifies everything trying to connect to its systems before granting access. This approach fortifies OpenSPP's security framework, protecting it from both internal and external threats.
 

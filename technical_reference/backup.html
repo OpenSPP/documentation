@@ -310,7 +310,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="security.html">
-     Trust &amp; Security
+     Security Implementations &amp; Practices
     </a>
    </li>
    <li class="toctree-l2">
@@ -413,6 +413,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../explanation/user_mgt.html">
      User Management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../explanation/security_archi.html">
+     Security Architecture
     </a>
    </li>
   </ul>
@@ -727,23 +732,23 @@ title="Print to PDF"
 <li><p>Reduces the risk associated with data breaches and cyber threats.</p></li>
 </ol>
 <p>In the implementation of OpenSPP, the backup can be implemented at different layers</p>
-<ol class="arabic simple">
-<li><p>Infrastructure Layer
-This layer focuses on the physical and virtual components of an IT environment, including servers, network equipment, and storage systems.</p>
+<ol class="arabic">
+<li><p>Infrastructure Layer</p>
+<p>This layer focuses on the physical and virtual components of an IT environment, including servers, network equipment, and storage systems.</p>
 <ul class="simple">
 <li><p>Backup Methods: Full system backups, snapshots, and replication.</p></li>
 <li><p>Challenges: Managing the sheer volume of data and ensuring minimal impact on performance during backup operations.</p></li>
 </ul>
 </li>
-<li><p>Application Layer
-The application layer encompasses the specific data and configurations of OpenSPP.</p>
+<li><p>Application Layer</p>
+<p>The application layer encompasses the specific data and configurations of OpenSPP.</p>
 <ul class="simple">
 <li><p>Backup Considerations: It's important to capture application states and configurations, ensuring applications can be restored to a specific point in time.</p></li>
 <li><p>Challenges: Countries often have unique backup requirements and may require specialized tools.</p></li>
 </ul>
 </li>
-<li><p>Database Layer
-Involves protecting the data stored in databases.</p>
+<li><p>Database Layer</p>
+<p>This layer Involves protecting the data stored in databases.</p>
 <ul class="simple">
 <li><p>Backup Techniques: Includes consistent backups, log backups, and hot/cold backups.</p></li>
 <li><p>Challenges: Ensuring data consistency and managing the recovery of large databases without impacting performance.</p></li>
