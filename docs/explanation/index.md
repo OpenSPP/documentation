@@ -10,5 +10,6 @@ hidden: true
 ---
 
 user_mgt
+security_archi
 
 ```
