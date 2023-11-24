@@ -720,30 +720,35 @@ title="Print to PDF"
 <h1>Backup and Recovery<a class="headerlink" href="#backup-and-recovery" title="Permalink to this headline">#</a></h1>
 <p>Backup and Recovery encompasses strategies and techniques designed to protect and restore data, applications, and infrastructure in the event of data loss, corruption, or disasters in OpenSPP deployments. This process is essential for maintaining data integrity, ensuring availability, and facilitating business continuity. As data is critical for business operations, the loss of data can disrupt business activities, incur financial penalties, harm reputation, and even lead to legal consequences. An effective Backup and Recovery strategy mitigates these risks by ensuring that data is not permanently lost and can be recovered quickly to minimize downtime.</p>
 <p>The key advantages are:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. Ensures minimal disruption to business operations in case of data loss.
-2. Protects the integrity and reliability of data.
-3. Meets legal and regulatory data protection requirements.
-4. Reduces the risk associated with data breaches and cyber threats.
-</pre></div>
-</div>
+<ol class="arabic simple">
+<li><p>Ensures minimal disruption to business operations in case of data loss.</p></li>
+<li><p>Protects the integrity and reliability of data.</p></li>
+<li><p>Meets legal and regulatory data protection requirements.</p></li>
+<li><p>Reduces the risk associated with data breaches and cyber threats.</p></li>
+</ol>
 <p>In the implementation of OpenSPP, the backup can be implemented at different layers</p>
 <ol class="arabic simple">
 <li><p>Infrastructure Layer
-This layer focuses on the physical and virtual components of an IT environment, including servers, network equipment, and storage systems.</p></li>
-</ol>
-<p>Backup Methods: Full system backups, snapshots, and replication.
-Challenges: Managing the sheer volume of data and ensuring minimal impact on performance during backup operations.</p>
-<ol class="arabic simple" start="2">
+This layer focuses on the physical and virtual components of an IT environment, including servers, network equipment, and storage systems.</p>
+<ul class="simple">
+<li><p>Backup Methods: Full system backups, snapshots, and replication.</p></li>
+<li><p>Challenges: Managing the sheer volume of data and ensuring minimal impact on performance during backup operations.</p></li>
+</ul>
+</li>
 <li><p>Application Layer
-The application layer encompasses the specific data and configurations of OpenSPP.</p></li>
-</ol>
-<p>Backup Considerations: It's important to capture application states and configurations, ensuring applications can be restored to a specific point in time.
-Challenges: Countries often have unique backup requirements and may require specialized tools.</p>
-<ol class="arabic simple" start="3">
+The application layer encompasses the specific data and configurations of OpenSPP.</p>
+<ul class="simple">
+<li><p>Backup Considerations: It's important to capture application states and configurations, ensuring applications can be restored to a specific point in time.</p></li>
+<li><p>Challenges: Countries often have unique backup requirements and may require specialized tools.</p></li>
+</ul>
+</li>
 <li><p>Database Layer
-Involves protecting the data stored in databases.
-Backup Techniques: Includes consistent backups, log backups, and hot/cold backups.
-Challenges: Ensuring data consistency and managing the recovery of large databases without impacting performance.</p></li>
+Involves protecting the data stored in databases.</p>
+<ul class="simple">
+<li><p>Backup Techniques: Includes consistent backups, log backups, and hot/cold backups.</p></li>
+<li><p>Challenges: Ensuring data consistency and managing the recovery of large databases without impacting performance.</p></li>
+</ul>
+</li>
 </ol>
 <p>As a product, OpenSPP considers Backup and Recovery tools to be out of scope, but implementing a robust strategy is still possible and recommended as follows.</p>
 <ol class="arabic simple">
