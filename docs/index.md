@@ -8,14 +8,16 @@ myst:
 ---
 
 (index-label)=
+
 # OpenSPP - Social Protection Platform
 
 OpenSPP is an open-source project that aims to streamline the management of social protection programs. It can be used on its own or in conjunction with other services.
 
 ## How the documentation is organized
+
 A high-level overview of how OpenSPP’s documentation is organized will help you know where to look for certain things:
 
-- [Tutorials](tutorials/index) take you by the hand through a series of steps to create a web application. Start here if you’re new to OpenSPP. 
+- [Tutorials](tutorials/index) take you by the hand through a series of steps to create a web application. Start here if you’re new to OpenSPP.
 - [User guides](user_guide/index) discuss key topics and concepts at a fairly high level and provide useful background information and explanation.
 - [Technical guides](technical_reference/index) contain technical reference for APIs and other aspects of OpenSPP's machinery. They describe how it works and how to use it but assume that you have a basic understanding of key concepts.
 - [How-to guides](howto/index) are recipes. They guide you through the steps involved in addressing key problems and use-cases. They are more advanced than tutorials and assume some knowledge of how OpenSPP works.
@@ -38,7 +40,6 @@ The project is currently under development, and everything is evolving rapidly a
 
 To learn more, take a look at the [Architecture](technical_reference/architecture) page.
 
-
 ```{toctree}
 :maxdepth: 2
 :hidden: true
@@ -48,6 +49,7 @@ tutorials/index
 user_guide/index
 howto/index
 technical_reference/index
+explanation/index
 community_and_support/index
 contributing/index
 ```
