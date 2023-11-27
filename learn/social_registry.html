@@ -17,10 +17,10 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.openspp.org/learn/social_registry.html" />
 <meta property="og:site_name" content="OpenSPP Documentation" />
-<meta property="og:description" content="What is a Social Registry?: A Social Registry is an information system critical in the early stages of social protection program delivery. It manages outreach, intake, registration, and assessment ..." />
+<meta property="og:description" content="What is a Social Registry?: A social registry is a database or system that contains information about individuals or households within a specific population. Its purpose is to provide a centralized..." />
 <meta property="og:image" content="https://docs.openspp.org/_static/openspp_logo.png" />
 <meta property="og:image:alt" content="OpenSPP Documentation" />
-<meta name="description" content="What is a Social Registry?: A Social Registry is an information system critical in the early stages of social protection program delivery. It manages outreach, intake, registration, and assessment ..." />
+<meta name="description" content="What is a Social Registry?: A social registry is a database or system that contains information about individuals or households within a specific population. Its purpose is to provide a centralized..." />
 <meta property="og:locale" content="en_US" />
 
 <title>Social Registry – Learn &#8212; OpenSPP Documentation v1.0</title>
@@ -730,8 +730,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#relation-to-integrated-beneficiary-registry">
-   Relation to Integrated Beneficiary Registry
+  <a class="reference internal nav-link" href="#integration-and-interoperability">
+   Integration and interoperability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#social-registries-and-integrated-beneficiary-registries">
+   Social registries and integrated beneficiary registries
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -798,8 +803,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#relation-to-integrated-beneficiary-registry">
-   Relation to Integrated Beneficiary Registry
+  <a class="reference internal nav-link" href="#integration-and-interoperability">
+   Integration and interoperability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#social-registries-and-integrated-beneficiary-registries">
+   Social registries and integrated beneficiary registries
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -850,26 +860,39 @@ title="Print to PDF"
 <h1>Social Registry<a class="headerlink" href="#social-registry" title="Permalink to this headline">#</a></h1>
 <div class="section" id="what-is-a-social-registry">
 <h2>What is a Social Registry?<a class="headerlink" href="#what-is-a-social-registry" title="Permalink to this headline">#</a></h2>
-<p>A Social Registry is an information system critical in the early stages of social protection program delivery. It manages outreach, intake, registration, and assessment of potential eligibility for social programs. Its primary role is to facilitate the inclusion of targeted populations into social programs, ensuring equitable access to social benefits. In social registries, individuals or households are referred to as &quot;registrants.&quot;</p>
+<p>A social registry is a database or system that contains information about individuals or households within a specific population. Its purpose is to provide a centralized and up-to-date source of data that can be used for targeting, planning, and implementing social protection programs. Social registries are designed to enhance fairness and equity in the targeting of social protection programs by introducing systematic and transparent approaches to identify those in need. Social registries are most commonly used in poverty-targeted social protection programs.</p>
+<p>One of the first examples of a social registry was developed in the late 1990s for the Bolsa Familia social protection program in Brazil. The Cadastro Único collects and stores information about Brazil’s low-income and vulnerable populations. It is now used as a key tool by the Government, not only for identifying and selecting households for the Bolsa Familia, but also to identify and provide assistance to the most vulnerable Brazilians via 27 other social programs.</p>
+<p>Social registries are now used in social protection programs across the world. Well-known examples include Mexico’s &quot;Padrón Único de Beneficiarios&quot; (Unified Beneficiary Registry), often abbreviated as PUB, which is part of the Prospera social protection program, and the Philippines’ Listahan which plays a crucial role in the implementation of the Pantawid Pamilyang Pilipino Program (4Ps).</p>
 </div>
 <div class="section" id="operational-functionality-of-social-registries">
 <h2>Operational Functionality of Social Registries<a class="headerlink" href="#operational-functionality-of-social-registries" title="Permalink to this headline">#</a></h2>
-<p>Social Registries serve as complex information systems, vital to the operational aspects of social protection programs. They encompass:</p>
+<p>The operational functions of social registries differ among the countries using them, depending on what is required of the system, and the existing broader systems of information management. In general, social registries have the following operational functions:</p>
 <ol class="arabic simple">
-<li><p><strong>Data Collection and Management</strong>: Collecting diverse information to determine potential eligibility, including identification, socio-economic background, housing, and assets.</p></li>
-<li><p><strong>Data Standardization</strong>: Transforming collected data into standardized formats and indicators to facilitate eligibility assessment for various social programs.</p></li>
+<li><p><strong>Data Collection.</strong> The most important part of a social registry is the standardized registration questionnaire used to gather information on a given population’s demographic, socio-economic and household information. Identification documents or certificates may also be checked and scanned at this stage. At this stage, individuals or households are referred to as registrants.</p></li>
+<li><p><strong>Data validation and verification.</strong> Applicant data can be validated through cross checks with documents, other administrative systems, or through local community validation processes.</p></li>
 <li><p><strong>Information Intermediation</strong>: Bridging the gap between citizen-provided data and the requirements of social programs, integrating with systems like National IDs, CRVS and disability registries.</p></li>
-<li><p><strong>Dynamic Inclusion and Continuous Registration</strong>: Social Registries provide an on-demand data collection mechanism, crucial for addressing both chronic and transient poverty. Open and continuous registration windows ensure user-friendly intake procedures and dynamic responsiveness to changing needs.</p></li>
-<li><p><strong>Data Validation and Verification</strong>: Ensuring data accuracy and consistency, including cross-referencing with other systems and managing grievances.</p></li>
-<li><p><strong>Architectural Components</strong>: Comprising data intake and exchange, data protection, management interfaces, interoperability focus, and necessary ICT infrastructure.</p></li>
-<li><p><strong>Integration with Wider Social Program Systems</strong>: Typically part of broader information systems supporting social programs, distinct from beneficiary registries, to manage both potential and actual beneficiaries effectively.</p></li>
-<li><p><strong>Interoperability with Other Systems</strong>: Varying in their degree of interoperability, some registries are self-contained, while others integrate extensively with centralized data stores for enhanced data management capabilities.</p></li>
-<li><p><strong>Governance and Accountability</strong>: Incorporating mechanisms for governance and accountability, such as grievance redress systems and monitoring and evaluation processes to ensure transparency and responsiveness.</p></li>
+<li><p><strong>Inclusion and exclusion criteria.</strong> Clear criteria, formats and indicators are defined to facilitate transparent and standardized eligibility assessment for social programs. Specific criteria can be used to identify and target vulnerable groups, such as pregnant women, children, or individuals with disabilities. Households can be ranked based on assessment of their needs and conditions, such as with a proxy means test.</p></li>
+<li><p><strong>Decentralized eligibility determination.</strong> Lists of potentially eligible households or ranked lists of all households can be shared with individual program implementers of decentralized counterparts, and adapted to local contexts and needs.</p></li>
+<li><p><strong>Ongoing registration and information updates.</strong> Social registries provide on-demand registrations through local government or program offices. Periodic data collections can be carried out to capture changes in circumstances or new information such as births, death, migrations or changes in economic conditions.</p></li>
+<li><p><strong>Privacy and confidentiality.</strong> Social registries hold large amounts of sensitive personal data. The privacy and confidentiality of individuals' data must be protected in accordance with a country’s legal and ethical standards.</p></li>
+<li><p><strong>Appeals and grievances</strong> Social registries must provide feedback mechanisms or be integrated with separate grievance redress mechanisms (GRM) so that registrants can appeal against eligibility decisions or report inaccuracies or errors.</p></li>
+<li><p><strong>Reporting and analysis.</strong> Social registries may have self-contained functions to generate reports and analyze registry data. Or they may be integrated with separate data analysis tools and dashboards to inform policy decisions, program planning, and resource allocation.</p></li>
+<li><p><strong>Architectural components.</strong> Comprise of data intake and exchange, data protection, management interfaces, interoperability focus, and necessary ICT infrastructure.</p></li>
 </ol>
 </div>
-<div class="section" id="relation-to-integrated-beneficiary-registry">
-<h2>Relation to Integrated Beneficiary Registry<a class="headerlink" href="#relation-to-integrated-beneficiary-registry" title="Permalink to this headline">#</a></h2>
-<p>The relationship between Social Registries and Integrated Beneficiary Registries (IBRs) is fundamental to the architecture of social protection systems. These two entities, while distinct, work in tandem to ensure a seamless flow of data and services.</p>
+<div class="section" id="integration-and-interoperability">
+<h2>Integration and interoperability<a class="headerlink" href="#integration-and-interoperability" title="Permalink to this headline">#</a></h2>
+<p>Social registries can be stand-alone or they may form part of a broader system of information management for the implementation and delivery of social protection. In the latter case, integration and interoperability are key aspects.</p>
+<ul class="simple">
+<li><p><strong>Interoperability with other administrative systems.</strong> Social registries vary in their degree of interoperability. Some are self-contained, while others are interoperable with systems such as national identity systems, civil registries, and disability registries.</p></li>
+<li><p><strong>Integration with broader information systems.</strong> System integration can improve coordination with integrated beneficiary registries (also known as single registries), program management, payment systems, program monitoring and data analytics, and grievance and redress mechanisms.</p></li>
+<li><p><strong>Stand-alone social registries may be preferred.</strong> In certain situations, stand-alone social registries may be preferred due to legal and ethical considerations where integration may raise concerns about data security and privacy.</p></li>
+</ul>
+</div>
+<div class="section" id="social-registries-and-integrated-beneficiary-registries">
+<h2>Social registries and integrated beneficiary registries<a class="headerlink" href="#social-registries-and-integrated-beneficiary-registries" title="Permalink to this headline">#</a></h2>
+<p>Integrated beneficiary registries (IBR), also known as <strong>single registries</strong>, are also considered to be a fundamental approach to information management in social protection systems. IBRs bring together data from different social protection programs or other sources into a unified system, with the purpose of creating a more efficient and coordinated approach to managing and delivering social protection and other social services.
+Social registries and IBRs may be used in tandem within broader information systems for social protection. But they may also function independently: social registries can be stand-alone, and IBRs can function without social registries.</p>
 <div class="section" id="key-aspects">
 <h3>Key Aspects<a class="headerlink" href="#key-aspects" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
@@ -911,10 +934,12 @@ title="Print to PDF"
 <div class="section" id="references-and-resources">
 <h2>References and Resources<a class="headerlink" href="#references-and-resources" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
+<li><p><a class="reference external" href="https://socialprotection.org/sites/default/files/publications_files/GIZ_DFID_IIMS%20in%20social%20protection_long_02-2020.pdf">Chirchir R and Barca V (2020). Building an integrated and digital social protection information system. GIZ</a></p></li>
+<li><p><a class="reference external" href="https://www.developmentpathways.co.uk/wp-content/uploads/2016/11/Single-and-Social-Registries-1.pdf">Chirchir R and Farooq S (2016) Single Registries and Social Registries: clarifying the terminological confusion. Development Pathways</a></p></li>
+<li><p><a class="reference external" href="https://www.developmentpathways.co.uk/wp-content/uploads/2021/06/Social-registries-a-short-history-of-abject-failure-June.pdf">Kidd S, Athias D and Mohamud I (2021) Social registries: a short history of abject failure. Development Pathways and Act Church of Sweden</a></p></li>
+<li><p><a class="reference external" href="https://spdci.org/resources/interoperability-in-action-6-social-registry-workshop-recording/multimedia_files/2023%2008%2024%20Interoperability%20in%20Action%20%237%20Final.pdf">Digital Convergence Initiative (2023) Social protection management information system interacting with social registry. Social Protection Interoperability Series:  Interoperability in Action #6.</a></p></li>
+<li><p><a class="reference external" href="https://www.researchgate.net/publication/340858942_Social_Registries_for_Social_Assistance_and_Beyond_A_Guidance_Note_and_Assessment_Tool">Leite, P, Karippacheril, T and Lindert, K (2017). Social Registries for Social Assistance and Beyond: A Guidance Note &amp; Assessment Tool. World Bank</a></p></li>
 <li><p><a class="reference external" href="https://openknowledge.worldbank.org/entities/publication/c44dc506-72dd-5428-a088-6fb7aea53095">World Bank Group. (2020). &quot;The World Bank Sourcebook on the Foundations of Social Protection Delivery Systems.&quot;</a></p></li>
-<li><p><a class="reference external" href="https://documents1.worldbank.org/curated/en/698441502095248081/pdf/117971-REVISED-PUBLIC-Discussion-paper-1704.pdf">World Bank Group. (2017). Social Registries for Social Assistance and Beyond: A Guidance Note &amp; Assessment Tool</a></p></li>
-<li><p><a class="reference external" href="https://socialprotection.org/sites/default/files/multimedia_files/2023%2008%2024%20Interoperability%20in%20Action%20%237%20Final.pdf">Social Protection Interoperability Series. (2023). &quot;Interoperability in Action #7.&quot;</a></p></li>
-<li><p><a class="reference external" href="https://socialprotection.org/sites/default/files/publications_files/GIZ_DFID_IIMS%20in%20social%20protection_long_02-2020.pdf">GIZ. (2020). Building an integrated and digital social protection information system</a></p></li>
 </ul>
 </div>
 </div>
