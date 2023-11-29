@@ -4,11 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="How to set up the OpenSPP Documentation locally" name="description" />
-<meta content="How to set up the OpenSPP Documentation locally" property="og:description" />
-<meta content="Building and Checking the Quality of Documentation" property="og:title" />
-<meta content="setup, build, documentation, quality, development, Vale, spell, grammar, style, check, linkcheck" name="keywords" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -17,16 +13,17 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-    <meta property="og:title" content="Building and checking the quality of documentation" />
+    <meta property="og:title" content="Implementation of DCI Specification" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.openspp.org/contributing/setup-build.html" />
+<meta property="og:url" content="https://docs.openspp.org/technical_reference/dci.html" />
 <meta property="og:site_name" content="OpenSPP Documentation" />
-<meta property="og:description" content="This document covers how to build the OpenSPP Documentation and check it for quality. Installation: Installation of OpenSPP Documentation includes pre-requisites and the repository itself. Python: ..." />
+<meta property="og:description" content="In the rapidly evolving landscape of digital public infrastructure (DPI), the principle of interoperability stands as an important for building efficient, inclusive, and sustainable systems in a co..." />
 <meta property="og:image" content="https://docs.openspp.org/_static/openspp_logo.png" />
 <meta property="og:image:alt" content="OpenSPP Documentation" />
+<meta name="description" content="In the rapidly evolving landscape of digital public infrastructure (DPI), the principle of interoperability stands as an important for building efficient, inclusive, and sustainable systems in a co..." />
 <meta property="og:locale" content="en_US" />
 
-<title>Building and checking the quality of documentation – Contributing to documentation &#8212; OpenSPP Documentation v1.0</title>
+<title>Implementation of DCI Specification – Technical Reference &#8212; OpenSPP Documentation v1.0</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -63,15 +60,15 @@
     <script src="../_static/patch_scrollToActive.js"></script>
     <script src="../_static/search_shortcut.js"></script>
     <script src="../_static/design-tabs.js"></script>
-    <link rel="canonical" href="https://docs.openspp.org/contributing/setup-build.html" />
+    <link rel="canonical" href="https://docs.openspp.org/technical_reference/dci.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.0"
           href="../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../_static/icon_192.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Authors guide" href="authors.html" />
-    <link rel="prev" title="Contributing to documentation" href="index.html" />
+    <link rel="next" title="External API" href="external_api.html" />
+    <link rel="prev" title="Integrations" href="integrations.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -291,118 +288,118 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../technical_reference/index.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
    Technical Reference
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/architecture.html">
+    <a class="reference internal" href="architecture.html">
      Architecture
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/extensibility.html">
+    <a class="reference internal" href="extensibility.html">
      Customisable, Configurable, and Extensible
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/security.html">
+    <a class="reference internal" href="security.html">
      Security Implementations &amp; Practices
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/oidc.html">
+    <a class="reference internal" href="oidc.html">
      Configuring Keycloak for OAuth
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/audit_logs.html">
+    <a class="reference internal" href="audit_logs.html">
      Audit Logs
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/code.html">
+    <a class="reference internal" href="code.html">
      Code &amp; Repository Management
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/release_management.html">
+    <a class="reference internal" href="release_management.html">
      Release Management
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/monitoring.html">
+    <a class="reference internal" href="monitoring.html">
      Monitoring
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/programs/dashboards.html">
+    <a class="reference internal" href="programs/dashboards.html">
      Dashboards
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/integrations.html">
+    <a class="reference internal" href="integrations.html">
      Integrations
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/dci.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Implementation of DCI Specification
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/external_api.html">
+    <a class="reference internal" href="external_api.html">
      External API
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/backup.html">
+    <a class="reference internal" href="backup.html">
      Backup and Recovery
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/programs/concepts.html">
+    <a class="reference internal" href="programs/concepts.html">
      Manager Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/programs/program_manager.html">
+    <a class="reference internal" href="programs/program_manager.html">
      Program Manager
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/programs/cycle_manager.html">
+    <a class="reference internal" href="programs/cycle_manager.html">
      Cycle Manager
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/programs/eligibility_manager.html">
+    <a class="reference internal" href="programs/eligibility_manager.html">
      Eligibility Manager
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/programs/entitlement_manager.html">
+    <a class="reference internal" href="programs/entitlement_manager.html">
      Entitlement Manager
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/programs/deduplication_manager.html">
+    <a class="reference internal" href="programs/deduplication_manager.html">
      Deduplication Manager
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/programs/notification_manager.html">
+    <a class="reference internal" href="programs/notification_manager.html">
      Notification Manager
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../technical_reference/license.html">
+    <a class="reference internal" href="license.html">
      Licensing
     </a>
    </li>
@@ -477,38 +474,38 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="index.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../contributing/index.html">
    Contributing to documentation
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../contributing/setup-build.html">
      Building and checking the quality of documentation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="authors.html">
+    <a class="reference internal" href="../contributing/authors.html">
      Authors guide
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="myst-reference.html">
+    <a class="reference internal" href="../contributing/myst-reference.html">
      MyST reference
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="sphinx-extensions.html">
+    <a class="reference internal" href="../contributing/sphinx-extensions.html">
      Sphinx extensions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="admins.html">
+    <a class="reference internal" href="../contributing/admins.html">
      Administrators Guide
     </a>
    </li>
@@ -581,7 +578,7 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__label">
-        <span>Building and checking the quality of documentation – Contributing to documentation</span>
+        <span>Implementation of DCI Specification – Technical Reference</span>
     </div>
     <div class="header-article__right">
 <button onclick="toggleFullScreen()"
@@ -623,7 +620,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fcontributing/setup-build.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Ftechnical_reference/dci.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -640,7 +637,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://docs.openspp.org/contributing/index.html?contributing/setup-build.md#making-contributions-on-github"
+        <a href="https://docs.openspp.org/contributing/index.html?technical_reference/dci.md#making-contributions-on-github"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -668,7 +665,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/contributing/setup-build.md.txt"
+        <a href="../_sources/technical_reference/dci.md.txt"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -705,218 +702,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installation">
-   Installation
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#python">
-     Python
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vale">
-     Vale
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graphviz">
-     Graphviz
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#clone-openspp-documentation">
-     Clone
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       OpenSPP/documentation
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#available-documentation-builds">
-   Available documentation builds
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       html
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#livehtml">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       livehtml
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linkcheck">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       linkcheck
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       vale
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#html-meta">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       html_meta
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Building and checking the quality of documentation</h1>
+                <h1>Implementation of DCI Specification</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installation">
-   Installation
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#python">
-     Python
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vale">
-     Vale
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#graphviz">
-     Graphviz
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#clone-openspp-documentation">
-     Clone
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       OpenSPP/documentation
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#available-documentation-builds">
-   Available documentation builds
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#html">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       html
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#livehtml">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       livehtml
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linkcheck">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       linkcheck
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       vale
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#html-meta">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       html_meta
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -924,121 +726,70 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="section" id="building-and-checking-the-quality-of-documentation">
-<span id="setup-build-label"></span><h1>Building and checking the quality of documentation<a class="headerlink" href="#building-and-checking-the-quality-of-documentation" title="Permalink to this headline">#</a></h1>
-<p>This document covers how to build the OpenSPP Documentation and check it for quality.</p>
-<div class="section" id="installation">
-<span id="setup-build-installation-label"></span><h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
-<p>Installation of OpenSPP Documentation includes pre-requisites and the repository itself.</p>
-<div class="section" id="python">
-<span id="setup-build-installation-python-label"></span><h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h3>
-<p>Python 3.8 or later is required.
-A more recent Python is preferred.
-Use your system's package manager or <a class="reference external" href="https://github.com/pyenv/pyenv">pyenv</a> to install an appropriate version of Python.</p>
+  <div class="section" id="implementation-of-dci-specification">
+<h1>Implementation of DCI Specification<a class="headerlink" href="#implementation-of-dci-specification" title="Permalink to this headline">#</a></h1>
+<p>In the rapidly evolving landscape of digital public infrastructure (DPI), the principle of interoperability stands as an important for building efficient, inclusive, and sustainable systems in a country. This article delves into how OpenSPP implemented APIs outlined in the <a class="reference external" href="https://spdci.github.io/standards/release/html/registry_core_api_v1.0.0.html">DCI Interface Standards v1.0</a> under Registry to enable interoperability with other systems such as CRVS.</p>
+<p>The implementation can be categorized into two sections where OpenSPP operates as the client and OpenSPP operates as the server. Note that currently OpenSPP has only completed the sync implementation.</p>
+<ol class="arabic simple">
+<li><p>Server Implementation</p></li>
+</ol>
+<p>This section focuses on utilizing OpenSPP as the source of truth for beneficiary information where OpenSPP acts as the server. Such integration allows OpenSPP to seamlessly interact with other critical systems by providing data, thereby enhancing data exchange and operational efficiency. The following steps elaborate how the module can be configured.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1.1 Deployment and Installation
+</pre></div>
 </div>
-<div class="section" id="vale">
-<span id="setup-build-installation-vale-label"></span><h3>Vale<a class="headerlink" href="#vale" title="Permalink to this headline">#</a></h3>
-<p>Vale is a linter for narrative text.
-It checks spelling, English grammar, and style guides.
-OpenSPP documentation uses a custom spelling dictionary, with accepted and rejected spellings in <code class="docutils literal notranslate"><span class="pre">styles/Vocab/OpenSPP</span></code>.</p>
-<p>Use your operating system's package manager to <a class="reference external" href="https://vale.sh/docs/vale-cli/installation/">install Vale</a>.</p>
-<p>Vale also has <a class="reference external" href="https://vale.sh/docs/integrations/guide/">integrations</a> with various IDEs.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://vale.sh/docs/integrations/jetbrains/">JetBrains</a></p></li>
-<li><p><a class="reference external" href="https://github.com/dense-analysis/ale">Vim</a></p></li>
-<li><p><a class="reference external" href="https://github.com/errata-ai/vale-vscode">VS Code</a></p></li>
+<ul>
+<li><p>Deploy this branch on a server <a class="reference external" href="https://github.com/OpenSPP/openspp-api/tree/spp_dci_api_server">https://github.com/OpenSPP/openspp-api/tree/spp_dci_api_server</a></p></li>
+<li><p>Generate RSA Private and Public key.</p></li>
+<li><p>Save the RSA private key to spp_dci_api_server/tools/private_key.pem.</p></li>
+<li><p>Save the RSA public key to spp_dci_api_server/tools/public_key.pub</p></li>
+<li><p>Login to OpenSPP, Go to Apps, Search “OpenSPP API: DCI Server” and Install.</p>
+<p>1.2 How to use</p>
+</li>
+<li><p>Login to OpenSPP</p></li>
+<li><p>Navigate to Settings -&gt; DCI API Client Credentials</p></li>
+<li><p>Click Create button and fill-up the Client Name field then click Save.</p></li>
+<li><p>“Show” button will appear.</p></li>
+<li><p>Click the “Show” button to reveal the Client ID and Client Secret.</p></li>
+<li><p>Make sure to copy the Client ID and Client Secret.</p></li>
+<li><p>Upon closing the modal, “Show” button will not appear anymore and will not be able to reveal the Client ID and Client Secret.</p></li>
+<li><p>Client ID and Client Secret will be used to retrieve Access Token.</p></li>
+<li><p>Access Token will be used to authenticate in the search Registry API.</p></li>
+<li><p>To retrieve Access Token, Send a POST request to the url <domain>/oauth2/client/token with a body client_id, client_secret, and grant_type=’client_credentials’</p></li>
+<li><p>Copy the access_token in the response.</p></li>
+<li><p>To retrieve registry data, Send a POST request to the url <domain>/registry/sync/search.</p></li>
+<li><p>Header should have a key “Authorization” with a value “Bearer &lt;access_token&gt;”</p></li>
+<li><p>Refer the DCI API spec for the request and response structure <a class="reference external" href="https://spdci.github.io/standards/release/html/registry_core_api_v1.0.0.html">https://spdci.github.io/standards/release/html/registry_core_api_v1.0.0.html</a></p></li>
 </ul>
-<p>OpenSPP documentation uses a file located at the root of the repository, <code class="docutils literal notranslate"><span class="pre">.vale.ini</span></code>, to configure Vale.
-This file allows overriding rules or changing their severity.</p>
-<p>The OpenSPP Documentation Team selected the <a class="reference external" href="https://learn.microsoft.com/en-us/style-guide/welcome/">Microsoft Writing Style Guide</a> for its ease of use—especially for non-native English readers and writers—and attention to non-technical audiences.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>More corrections to spellings and Vale's configuration are welcome by submitting a pull request.
-This is an easy way to become a contributor to OpenSPP.</p>
-</div>
-</div>
-<div class="section" id="graphviz">
-<span id="setup-build-installation-graphviz-label"></span><h3>Graphviz<a class="headerlink" href="#graphviz" title="Permalink to this headline">#</a></h3>
-<p>Install <a class="reference external" href="https://graphviz.org/download/">Graphviz</a> for graph visualization.</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
-macOS</label><div class="sd-tab-content docutils">
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>graphviz
+<ol class="arabic simple" start="2">
+<li><p>Client Implementation</p></li>
+</ol>
+<p>This section focuses on utilizing another registry as the source for truth to get beneficiary information. The following steps elaborate how the module can be configured to fetch data where OpenSPP acts as the client.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2.1 Deployment and Installation
 </pre></div>
 </div>
-</div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
-Ubuntu</label><div class="sd-tab-content docutils">
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>graphviz
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="clone-openspp-documentation">
-<span id="setup-build-installation-clone-openspp-documentation-label"></span><h3>Clone <code class="docutils literal notranslate"><span class="pre">OpenSPP/documentation</span></code><a class="headerlink" href="#clone-openspp-documentation" title="Permalink to this headline">#</a></h3>
-<p>Clone the OpenSPP Documentation repository, and change your working directory into the cloned project.
-Then with a single command using <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>, create a Python virtual environment, install project dependencies, pull in Volto documentation as a git submodule, build the docs, and view the results in a web browser by opening <code class="docutils literal notranslate"><span class="pre">/_build/html/index.html</span></code>.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/OpenSPP/documentation.git
-<span class="nb">cd</span><span class="w"> </span>documentation
-make<span class="w"> </span>html
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="available-documentation-builds">
-<span id="setup-build-available-documentation-builds-label"></span><h2>Available documentation builds<a class="headerlink" href="#available-documentation-builds" title="Permalink to this headline">#</a></h2>
-<p>All build and check documentation commands use the file <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>.</p>
-<p>To see the most frequently used builds, use the following command.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span><span class="nb">help</span>
-</pre></div>
-</div>
-<p>Else you can open <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> to see other build formats, including PDF.</p>
-<div class="section" id="html">
-<h3><code class="docutils literal notranslate"><span class="pre">html</span></code><a class="headerlink" href="#html" title="Permalink to this headline">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">html</span></code> is the HTML version of the documentation.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>html
-</pre></div>
-</div>
-<p>Open <code class="docutils literal notranslate"><span class="pre">/_build/html/index.html</span></code> in a web browser.</p>
-</div>
-<div class="section" id="livehtml">
-<h3><code class="docutils literal notranslate"><span class="pre">livehtml</span></code><a class="headerlink" href="#livehtml" title="Permalink to this headline">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">livehtml</span></code> rebuilds Sphinx documentation on changes, with live-reload in the browser.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>livehtml
-</pre></div>
-</div>
-<p>Open <a class="reference external" href="http://0.0.0.0:8000/">http://0.0.0.0:8000/</a> in a web browser.</p>
-</div>
-<div class="section" id="linkcheck">
-<h3><code class="docutils literal notranslate"><span class="pre">linkcheck</span></code><a class="headerlink" href="#linkcheck" title="Permalink to this headline">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">linkcheck</span></code> checks all links.
-See <a class="reference internal" href="authors.html#authors-linkcheck-label"><span class="std std-ref">All links must be valid</span></a> for configuration.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>linkcheck
-</pre></div>
-</div>
-<p>Open <code class="docutils literal notranslate"><span class="pre">/_build/linkcheck/output.txt</span></code> for a list of broken links.</p>
-</div>
-<div class="section" id="id1">
-<h3><code class="docutils literal notranslate"><span class="pre">vale</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">vale</span></code> checks for American English spelling, grammar, syntax, and the Microsoft Developer Style Guide.
-See <a class="reference internal" href="authors.html#authors-english-label"><span class="std std-ref">American English spelling, grammar, and syntax, and style guide</span></a> for configuration.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>vale
-</pre></div>
-</div>
-<p>See the output on the console for suggestions.</p>
-</div>
-<div class="section" id="html-meta">
-<h3><code class="docutils literal notranslate"><span class="pre">html_meta</span></code><a class="headerlink" href="#html-meta" title="Permalink to this headline">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">html_meta</span></code> adds a meta data section to each chapter if missing.
-See <a class="reference internal" href="authors.html#authors-html-meta-data-label"><span class="std std-ref">HTML and Open Graph metadata</span></a> for more info.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>html_meta
-</pre></div>
-</div>
-</div>
-</div>
+<ul>
+<li><p>Deploy these two branches on a server <a class="reference external" href="https://github.com/OpenSPP/openspp-api/tree/spp_crvs_import">https://github.com/OpenSPP/openspp-api/tree/spp_crvs_import</a> <a class="reference external" href="https://github.com/OpenSPP/openspp-base/tree/spp_data_source">https://github.com/OpenSPP/openspp-base/tree/spp_data_source</a></p></li>
+<li><p>Get client_id and client_secret from CRVS(or from server).</p></li>
+<li><p>Login to OpenSPP</p></li>
+<li><p>Navigate to the Apps page, Search “OpenSPP Import: DCI API” and Install it.</p></li>
+<li><p>Upon installing “OpenSPP Import: DCI API”, a data source is automatically created.</p></li>
+<li><p>Navigate to Settings -&gt; Data Source to view the created data source.</p></li>
+<li><p>Input the credentials in the client_id, client_secret, and grant_type field inside the Data Source record.</p></li>
+<li><p>The only supported grant_type for now is “client_credentials”.</p></li>
+<li><p>Be careful on updating the Data Source since it may affect the process of importing.</p>
+<p>2.2 How to use</p>
+</li>
+<li><p>Navigate to Programs -&gt; Import From Registry</p></li>
+<li><p>Create Search Criteria, Enter Search Criteria Name, Location, and Birthdate Range</p></li>
+<li><p>Click Fetch Button.</p></li>
+<li><p>Individual records will be imported from OpenCRVS Lab to OpenSPP.</p></li>
+<li><p>Fetch Button is now disabled but it can be enabled by clicking the “Enable Fetching”.</p></li>
+<li><p>Once an individual record is already fetched, They are now created and visible to the Registry page.</p></li>
+<li><p>Navigate to Registry -&gt; Individual to check the individuals.</p></li>
+<li><p>Navigate to Registry -&gt; Group to check the groups.</p></li>
+<li><p>Refer the DCI API spec for the request and response structure <a class="reference external" href="https://spdci.github.io/standards/release/html/registry_core_api_v1.0.0.html">https://spdci.github.io/standards/release/html/registry_core_api_v1.0.0.html</a></p></li>
+</ul>
+<p><em>NOTE: This documentation/implementation should be considered as an alpha release of the implementation of the DCI Interface Standards v1.0.</em></p>
 </div>
 
 
@@ -1049,17 +800,17 @@ See <a class="reference internal" href="authors.html#authors-html-meta-data-labe
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="integrations.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Contributing to documentation</p>
+            <p class="prev-next-title">Integrations</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="authors.html" title="next page">
+    <a class='right-next' id="next-link" href="external_api.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Authors guide</p>
+        <p class="prev-next-title">External API</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
