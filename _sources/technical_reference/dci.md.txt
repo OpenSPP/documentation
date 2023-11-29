@@ -4,19 +4,19 @@ In the rapidly evolving landscape of digital public infrastructure (DPI), the pr
 
 The implementation can be categorized into two sections where OpenSPP operates as the client and OpenSPP operates as the server. Note that currently OpenSPP has only completed the sync implementation.
 
-1. Server Implementation
+## 1. Server Implementation
 
 This section focuses on utilizing OpenSPP as the source of truth for beneficiary information where OpenSPP acts as the server. Such integration allows OpenSPP to seamlessly interact with other critical systems by providing data, thereby enhancing data exchange and operational efficiency. The following steps elaborate how the module can be configured.
 
-    1.1 Deployment and Installation
+### 1.1 Deployment and Installation
 
-- Deploy this branch on a server https://github.com/OpenSPP/openspp-api/tree/spp_dci_api_server
+- Deploy [this branch](https://github.com/OpenSPP/openspp-api/tree/spp_dci_api_server) on a server
 - Generate RSA Private and Public key.
 - Save the RSA private key to spp_dci_api_server/tools/private_key.pem.
 - Save the RSA public key to spp_dci_api_server/tools/public_key.pub
 - Login to OpenSPP, Go to Apps, Search “OpenSPP API: DCI Server” and Install.
 
-  1.2 How to use
+### 1.2 How to use
 
 - Login to OpenSPP
 - Navigate to Settings -> DCI API Client Credentials
@@ -31,15 +31,15 @@ This section focuses on utilizing OpenSPP as the source of truth for beneficiary
 - Copy the access_token in the response.
 - To retrieve registry data, Send a POST request to the url <domain>/registry/sync/search.
 - Header should have a key “Authorization” with a value “Bearer <access_token>”
-- Refer the DCI API spec for the request and response structure https://spdci.github.io/standards/release/html/registry_core_api_v1.0.0.html
+- Refer the DCI API spec for the request and response structure
 
-2. Client Implementation
+## 2. Client Implementation
 
 This section focuses on utilizing another registry as the source for truth to get beneficiary information. The following steps elaborate how the module can be configured to fetch data where OpenSPP acts as the client.
 
-    2.1 Deployment and Installation
+### 2.1 Deployment and Installation
 
-- Deploy these two branches on a server https://github.com/OpenSPP/openspp-api/tree/spp_crvs_import https://github.com/OpenSPP/openspp-base/tree/spp_data_source
+- Deploy these two branches([1](https://github.com/OpenSPP/openspp-api/tree/spp_crvs_import),[2](https://github.com/OpenSPP/openspp-base/tree/spp_data_source)) on a server
 - Get client_id and client_secret from CRVS(or from server).
 - Login to OpenSPP
 - Navigate to the Apps page, Search “OpenSPP Import: DCI API” and Install it.
@@ -49,7 +49,7 @@ This section focuses on utilizing another registry as the source for truth to ge
 - The only supported grant_type for now is “client_credentials”.
 - Be careful on updating the Data Source since it may affect the process of importing.
 
-  2.2 How to use
+### 2.2 How to use
 
 - Navigate to Programs -> Import From Registry
 - Create Search Criteria, Enter Search Criteria Name, Location, and Birthdate Range
@@ -59,6 +59,6 @@ This section focuses on utilizing another registry as the source for truth to ge
 - Once an individual record is already fetched, They are now created and visible to the Registry page.
 - Navigate to Registry -> Individual to check the individuals.
 - Navigate to Registry -> Group to check the groups.
-- Refer the DCI API spec for the request and response structure https://spdci.github.io/standards/release/html/registry_core_api_v1.0.0.html
+- Refer the DCI API spec for the request and response structure
 
 _NOTE: This documentation/implementation should be considered as an alpha release of the implementation of the DCI Interface Standards v1.0._

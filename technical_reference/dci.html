@@ -702,12 +702,65 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#server-implementation">
+   1. Server Implementation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deployment-and-installation">
+     1.1 Deployment and Installation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-use">
+     1.2 How to use
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#client-implementation">
+   2. Client Implementation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     2.1 Deployment and Installation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     2.2 How to use
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -719,6 +772,48 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#server-implementation">
+   1. Server Implementation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deployment-and-installation">
+     1.1 Deployment and Installation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-use">
+     1.2 How to use
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#client-implementation">
+   2. Client Implementation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     2.1 Deployment and Installation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     2.2 How to use
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -730,21 +825,22 @@ title="Print to PDF"
 <h1>Implementation of DCI Specification<a class="headerlink" href="#implementation-of-dci-specification" title="Permalink to this headline">#</a></h1>
 <p>In the rapidly evolving landscape of digital public infrastructure (DPI), the principle of interoperability stands as an important for building efficient, inclusive, and sustainable systems in a country. This article delves into how OpenSPP implemented APIs outlined in the <a class="reference external" href="https://spdci.github.io/standards/release/html/registry_core_api_v1.0.0.html">DCI Interface Standards v1.0</a> under Registry to enable interoperability with other systems such as CRVS.</p>
 <p>The implementation can be categorized into two sections where OpenSPP operates as the client and OpenSPP operates as the server. Note that currently OpenSPP has only completed the sync implementation.</p>
-<ol class="arabic simple">
-<li><p>Server Implementation</p></li>
-</ol>
+<div class="section" id="server-implementation">
+<h2>1. Server Implementation<a class="headerlink" href="#server-implementation" title="Permalink to this headline">#</a></h2>
 <p>This section focuses on utilizing OpenSPP as the source of truth for beneficiary information where OpenSPP acts as the server. Such integration allows OpenSPP to seamlessly interact with other critical systems by providing data, thereby enhancing data exchange and operational efficiency. The following steps elaborate how the module can be configured.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1.1 Deployment and Installation
-</pre></div>
-</div>
-<ul>
-<li><p>Deploy this branch on a server <a class="reference external" href="https://github.com/OpenSPP/openspp-api/tree/spp_dci_api_server">https://github.com/OpenSPP/openspp-api/tree/spp_dci_api_server</a></p></li>
+<div class="section" id="deployment-and-installation">
+<h3>1.1 Deployment and Installation<a class="headerlink" href="#deployment-and-installation" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Deploy <a class="reference external" href="https://github.com/OpenSPP/openspp-api/tree/spp_dci_api_server">this branch</a> on a server</p></li>
 <li><p>Generate RSA Private and Public key.</p></li>
 <li><p>Save the RSA private key to spp_dci_api_server/tools/private_key.pem.</p></li>
 <li><p>Save the RSA public key to spp_dci_api_server/tools/public_key.pub</p></li>
-<li><p>Login to OpenSPP, Go to Apps, Search “OpenSPP API: DCI Server” and Install.</p>
-<p>1.2 How to use</p>
-</li>
+<li><p>Login to OpenSPP, Go to Apps, Search “OpenSPP API: DCI Server” and Install.</p></li>
+</ul>
+</div>
+<div class="section" id="how-to-use">
+<h3>1.2 How to use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
 <li><p>Login to OpenSPP</p></li>
 <li><p>Navigate to Settings -&gt; DCI API Client Credentials</p></li>
 <li><p>Click Create button and fill-up the Client Name field then click Save.</p></li>
@@ -758,17 +854,17 @@ title="Print to PDF"
 <li><p>Copy the access_token in the response.</p></li>
 <li><p>To retrieve registry data, Send a POST request to the url <domain>/registry/sync/search.</p></li>
 <li><p>Header should have a key “Authorization” with a value “Bearer &lt;access_token&gt;”</p></li>
-<li><p>Refer the DCI API spec for the request and response structure <a class="reference external" href="https://spdci.github.io/standards/release/html/registry_core_api_v1.0.0.html">https://spdci.github.io/standards/release/html/registry_core_api_v1.0.0.html</a></p></li>
+<li><p>Refer the DCI API spec for the request and response structure</p></li>
 </ul>
-<ol class="arabic simple" start="2">
-<li><p>Client Implementation</p></li>
-</ol>
-<p>This section focuses on utilizing another registry as the source for truth to get beneficiary information. The following steps elaborate how the module can be configured to fetch data where OpenSPP acts as the client.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2.1 Deployment and Installation
-</pre></div>
 </div>
-<ul>
-<li><p>Deploy these two branches on a server <a class="reference external" href="https://github.com/OpenSPP/openspp-api/tree/spp_crvs_import">https://github.com/OpenSPP/openspp-api/tree/spp_crvs_import</a> <a class="reference external" href="https://github.com/OpenSPP/openspp-base/tree/spp_data_source">https://github.com/OpenSPP/openspp-base/tree/spp_data_source</a></p></li>
+</div>
+<div class="section" id="client-implementation">
+<h2>2. Client Implementation<a class="headerlink" href="#client-implementation" title="Permalink to this headline">#</a></h2>
+<p>This section focuses on utilizing another registry as the source for truth to get beneficiary information. The following steps elaborate how the module can be configured to fetch data where OpenSPP acts as the client.</p>
+<div class="section" id="id1">
+<h3>2.1 Deployment and Installation<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Deploy these two branches(<a class="reference external" href="https://github.com/OpenSPP/openspp-api/tree/spp_crvs_import">1</a>,<a class="reference external" href="https://github.com/OpenSPP/openspp-base/tree/spp_data_source">2</a>) on a server</p></li>
 <li><p>Get client_id and client_secret from CRVS(or from server).</p></li>
 <li><p>Login to OpenSPP</p></li>
 <li><p>Navigate to the Apps page, Search “OpenSPP Import: DCI API” and Install it.</p></li>
@@ -776,9 +872,12 @@ title="Print to PDF"
 <li><p>Navigate to Settings -&gt; Data Source to view the created data source.</p></li>
 <li><p>Input the credentials in the client_id, client_secret, and grant_type field inside the Data Source record.</p></li>
 <li><p>The only supported grant_type for now is “client_credentials”.</p></li>
-<li><p>Be careful on updating the Data Source since it may affect the process of importing.</p>
-<p>2.2 How to use</p>
-</li>
+<li><p>Be careful on updating the Data Source since it may affect the process of importing.</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>2.2 How to use<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
 <li><p>Navigate to Programs -&gt; Import From Registry</p></li>
 <li><p>Create Search Criteria, Enter Search Criteria Name, Location, and Birthdate Range</p></li>
 <li><p>Click Fetch Button.</p></li>
@@ -787,9 +886,11 @@ title="Print to PDF"
 <li><p>Once an individual record is already fetched, They are now created and visible to the Registry page.</p></li>
 <li><p>Navigate to Registry -&gt; Individual to check the individuals.</p></li>
 <li><p>Navigate to Registry -&gt; Group to check the groups.</p></li>
-<li><p>Refer the DCI API spec for the request and response structure <a class="reference external" href="https://spdci.github.io/standards/release/html/registry_core_api_v1.0.0.html">https://spdci.github.io/standards/release/html/registry_core_api_v1.0.0.html</a></p></li>
+<li><p>Refer the DCI API spec for the request and response structure</p></li>
 </ul>
 <p><em>NOTE: This documentation/implementation should be considered as an alpha release of the implementation of the DCI Interface Standards v1.0.</em></p>
+</div>
+</div>
 </div>
 
 
