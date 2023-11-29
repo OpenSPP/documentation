@@ -23,6 +23,7 @@ programs/dashboards
 
 # Integrations
 integrations
+dci
 external_api
 
 # Other
