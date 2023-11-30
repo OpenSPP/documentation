@@ -1,0 +1,1013 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+    <meta property="og:title" content="Social Registry" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.openspp.org/learn/social_registry.html" />
+<meta property="og:site_name" content="OpenSPP Documentation" />
+<meta property="og:description" content="What is a Social Registry?: A social registry is a database or system that contains information about individuals or households within a specific population. Its purpose is to provide a centralized..." />
+<meta property="og:image" content="https://docs.openspp.org/_static/openspp_logo.png" />
+<meta property="og:image:alt" content="OpenSPP Documentation" />
+<meta name="description" content="What is a Social Registry?: A social registry is a database or system that contains information about individuals or households within a specific population. Its purpose is to provide a centralized..." />
+<meta property="og:locale" content="en_US" />
+
+<title>Social Registry – Learn &#8212; OpenSPP Documentation v1.0</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-httpexample.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinxcontrib-httpexample.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/patch_scrollToActive.js"></script>
+    <script src="../_static/search_shortcut.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="canonical" href="https://docs.openspp.org/learn/social_registry.html" />
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within OpenSPP Documentation v1.0"
+          href="../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../_static/icon_192.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Integrated Beneficiary Registry" href="integrated_beneficiary_registry.html" />
+    <link rel="prev" title="Digital Public Infrastructure" href="digital_public_infrastructure.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="100">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">OpenSPP Documentation v1.0</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <div class="input-group">
+    <label for="q" class="sr-only">Search string
+    </label>
+    <i class="fa fa-search fa-lg search-icon" aria-hidden="true"></i>
+    <input
+    type="search" name="q" id="search-input"
+    class="form-control"
+    placeholder="Search"
+    aria-labelledby="Search"
+    value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+    />
+    <div class="input-group-append">
+      <span class="input-group-text" id="shortcut">
+        <kbd id="search-shortcut">⌘</kbd>&nbsp;<kbd>K</kbd>
+      </span>
+    </div>
+  </div>
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Learn
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="digital_public_infrastructure.html">
+     Digital Public Infrastructure
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Social Registry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="integrated_beneficiary_registry.html">
+     Integrated Beneficiary Registry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="social_protection_management_information_systems.html">
+     Social Protection Management Information Systems
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tutorials/index.html">
+   Getting started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/installation_guide.html">
+     Installation Guide
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../user_guide/index.html">
+   User guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/access_management.html">
+     Access management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/audit_log.html">
+     Audit log
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/change_requests.html">
+     Change Requests
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/consent_management.html">
+     Consent management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/custom_fields.html">
+     Custom fields
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/dashboards_and_reports.html">
+     Dashboards and reports
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/event_data.html">
+     Event data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/geotargeting.html">
+     Geotargeting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/grievance_redressal_management.html">
+     Grievance Redressal Management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/indicators.html">
+     Indicators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/hardware_integration.html">
+     Hardware integration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/programs_and_cycles.html">
+     Programs and cycles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/proxy_means_test.html">
+     Proxy Mean Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/Registering_individuals_and_groups.html">
+     Registring individuals and groups
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../user_guide/vouchers.html">
+     Vouchers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../howto/index.html">
+   Howto
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/developer_mode.html">
+     Developer mode (debug mode)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../technical_reference/index.html">
+   Technical Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/architecture.html">
+     Architecture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/extensibility.html">
+     Customisable, Configurable, and Extensible
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/security.html">
+     Security Implementations &amp; Practices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/oidc.html">
+     Configuring Keycloak for OAuth
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/audit_logs.html">
+     Audit Logs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/code.html">
+     Code &amp; Repository Management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/release_management.html">
+     Release Management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/monitoring.html">
+     Monitoring
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/programs/dashboards.html">
+     Dashboards
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/integrations.html">
+     Integrations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/dci.html">
+     Implementation of DCI Specification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/external_api.html">
+     External API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/backup.html">
+     Backup and Recovery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/programs/concepts.html">
+     Manager Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/programs/program_manager.html">
+     Program Manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/programs/cycle_manager.html">
+     Cycle Manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/programs/eligibility_manager.html">
+     Eligibility Manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/programs/entitlement_manager.html">
+     Entitlement Manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/programs/deduplication_manager.html">
+     Deduplication Manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/programs/notification_manager.html">
+     Notification Manager
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_reference/license.html">
+     Licensing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../explanation/index.html">
+   Explanation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../explanation/user_mgt.html">
+     User Management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../explanation/security_archi.html">
+     Security Architecture
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../community_and_support/index.html">
+   Community and Support
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../community_and_support/how_to_contribute_to_the_project.html">
+     Contributing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../community_and_support/i18n_l10n.html">
+     Internationalization and Localization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../community_and_support/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../community_and_support/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../community_and_support/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../community_and_support/security_report.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../community_and_support/l3_support.html">
+     Support Model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../contributing/index.html">
+   Contributing to documentation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../contributing/setup-build.html">
+     Building and checking the quality of documentation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../contributing/authors.html">
+     Authors guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../contributing/myst-reference.html">
+     MyST reference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../contributing/sphinx-extensions.html">
+     Sphinx extensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../contributing/admins.html">
+     Administrators Guide
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   Social Protection Glossary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            
+    <p class="openspporglink">
+        <a href="https://openspp.org">
+            <img src="/_static/openspp_logo.png" alt="openspp.org" /> openspp.org</a>
+    </p>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__label">
+        <span>Social Registry – Learn</span>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/openspp/documentation"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Flearn/social_registry.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://docs.openspp.org/contributing/index.html?learn/social_registry.md#making-contributions-on-github"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/learn/social_registry.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-social-registry">
+   What is a Social Registry?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operational-functionality-of-social-registries">
+   Operational Functionality of Social Registries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integration-and-interoperability">
+   Integration and interoperability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#social-registries-and-integrated-beneficiary-registries">
+   Social registries and integrated beneficiary registries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#key-aspects">
+     Key Aspects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-about-openspp">
+   What about OpenSPP?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#openspp-as-a-social-registry">
+     OpenSPP as a Social Registry
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#openspp-s-integration-with-integrated-beneficiary-registries">
+     OpenSPP's Integration with Integrated Beneficiary Registries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusion">
+     Conclusion
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references-and-resources">
+   References and Resources
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Social Registry</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-social-registry">
+   What is a Social Registry?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operational-functionality-of-social-registries">
+   Operational Functionality of Social Registries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integration-and-interoperability">
+   Integration and interoperability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#social-registries-and-integrated-beneficiary-registries">
+   Social registries and integrated beneficiary registries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#key-aspects">
+     Key Aspects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-about-openspp">
+   What about OpenSPP?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#openspp-as-a-social-registry">
+     OpenSPP as a Social Registry
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#openspp-s-integration-with-integrated-beneficiary-registries">
+     OpenSPP's Integration with Integrated Beneficiary Registries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusion">
+     Conclusion
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references-and-resources">
+   References and Resources
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="social-registry">
+<h1>Social Registry<a class="headerlink" href="#social-registry" title="Permalink to this headline">#</a></h1>
+<div class="section" id="what-is-a-social-registry">
+<h2>What is a Social Registry?<a class="headerlink" href="#what-is-a-social-registry" title="Permalink to this headline">#</a></h2>
+<p>A social registry is a database or system that contains information about individuals or households within a specific population. Its purpose is to provide a centralized and up-to-date source of data that can be used for targeting, planning, and implementing social protection programs. Social registries are designed to enhance fairness and equity in the targeting of social protection programs by introducing systematic and transparent approaches to identify those in need. Social registries are most commonly used in poverty-targeted social protection programs.</p>
+<p>One of the first examples of a social registry was developed in the late 1990s for the Bolsa Familia social protection program in Brazil. The Cadastro Único collects and stores information about Brazil’s low-income and vulnerable populations. It is now used as a key tool by the Government, not only for identifying and selecting households for the Bolsa Familia, but also to identify and provide assistance to the most vulnerable Brazilians via 27 other social programs.</p>
+<p>Social registries are now used in social protection programs across the world. Well-known examples include Mexico’s &quot;Padrón Único de Beneficiarios&quot; (Unified Beneficiary Registry), often abbreviated as PUB, which is part of the Prospera social protection program, and the Philippines’ Listahan which plays a crucial role in the implementation of the Pantawid Pamilyang Pilipino Program (4Ps).</p>
+</div>
+<div class="section" id="operational-functionality-of-social-registries">
+<h2>Operational Functionality of Social Registries<a class="headerlink" href="#operational-functionality-of-social-registries" title="Permalink to this headline">#</a></h2>
+<p>The operational functions of social registries differ among the countries using them, depending on what is required of the system, and the existing broader systems of information management. In general, social registries have the following operational functions:</p>
+<ol class="arabic simple">
+<li><p><strong>Data Collection.</strong> The most important part of a social registry is the standardized registration questionnaire used to gather information on a given population’s demographic, socio-economic and household information. Identification documents or certificates may also be checked and scanned at this stage. At this stage, individuals or households are referred to as registrants.</p></li>
+<li><p><strong>Data validation and verification.</strong> Applicant data can be validated through cross checks with documents, other administrative systems, or through local community validation processes.</p></li>
+<li><p><strong>Information Intermediation</strong>: Bridging the gap between citizen-provided data and the requirements of social programs, integrating with systems like National IDs, CRVS and disability registries.</p></li>
+<li><p><strong>Inclusion and exclusion criteria.</strong> Clear criteria, formats and indicators are defined to facilitate transparent and standardized eligibility assessment for social programs. Specific criteria can be used to identify and target vulnerable groups, such as pregnant women, children, or individuals with disabilities. Households can be ranked based on assessment of their needs and conditions, such as with a proxy means test.</p></li>
+<li><p><strong>Decentralized eligibility determination.</strong> Lists of potentially eligible households or ranked lists of all households can be shared with individual program implementers of decentralized counterparts, and adapted to local contexts and needs.</p></li>
+<li><p><strong>Ongoing registration and information updates.</strong> Social registries provide on-demand registrations through local government or program offices. Periodic data collections can be carried out to capture changes in circumstances or new information such as births, death, migrations or changes in economic conditions.</p></li>
+<li><p><strong>Privacy and confidentiality.</strong> Social registries hold large amounts of sensitive personal data. The privacy and confidentiality of individuals' data must be protected in accordance with a country’s legal and ethical standards.</p></li>
+<li><p><strong>Appeals and grievances</strong> Social registries must provide feedback mechanisms or be integrated with separate grievance redress mechanisms (GRM) so that registrants can appeal against eligibility decisions or report inaccuracies or errors.</p></li>
+<li><p><strong>Reporting and analysis.</strong> Social registries may have self-contained functions to generate reports and analyze registry data. Or they may be integrated with separate data analysis tools and dashboards to inform policy decisions, program planning, and resource allocation.</p></li>
+<li><p><strong>Architectural components.</strong> Comprise of data intake and exchange, data protection, management interfaces, interoperability focus, and necessary ICT infrastructure.</p></li>
+</ol>
+</div>
+<div class="section" id="integration-and-interoperability">
+<h2>Integration and interoperability<a class="headerlink" href="#integration-and-interoperability" title="Permalink to this headline">#</a></h2>
+<p>Social registries can be stand-alone or they may form part of a broader system of information management for the implementation and delivery of social protection. In the latter case, integration and interoperability are key aspects.</p>
+<ul class="simple">
+<li><p><strong>Interoperability with other administrative systems.</strong> Social registries vary in their degree of interoperability. Some are self-contained, while others are interoperable with systems such as national identity systems, civil registries, and disability registries.</p></li>
+<li><p><strong>Integration with broader information systems.</strong> System integration can improve coordination with integrated beneficiary registries (also known as single registries), program management, payment systems, program monitoring and data analytics, and grievance and redress mechanisms.</p></li>
+<li><p><strong>Stand-alone social registries may be preferred.</strong> In certain situations, stand-alone social registries may be preferred due to legal and ethical considerations where integration may raise concerns about data security and privacy.</p></li>
+</ul>
+</div>
+<div class="section" id="social-registries-and-integrated-beneficiary-registries">
+<h2>Social registries and integrated beneficiary registries<a class="headerlink" href="#social-registries-and-integrated-beneficiary-registries" title="Permalink to this headline">#</a></h2>
+<p>Integrated beneficiary registries (IBR), also known as <strong>single registries</strong>, are also considered to be a fundamental approach to information management in social protection systems. IBRs bring together data from different social protection programs or other sources into a unified system, with the purpose of creating a more efficient and coordinated approach to managing and delivering social protection and other social services.
+Social registries and IBRs may be used in tandem within broader information systems for social protection. But they may also function independently: social registries can be stand-alone, and IBRs can function without social registries.</p>
+<div class="section" id="key-aspects">
+<h3>Key Aspects<a class="headerlink" href="#key-aspects" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>From Potential to Actual Beneficiaries</strong>: Social Registries encompass a broader scope, including all individuals assessed for potential eligibility. Once individuals or households are deemed eligible and start receiving benefits, they transition from being registrants in the Social Registry to beneficiaries in the IBR.</p></li>
+<li><p><strong>Data Flow and Utilization</strong>: Information from the Social Registry is pivotal in populating the IBR. As individuals become program beneficiaries, their data moves from the potential eligibility pool of the Social Registry to the active beneficiary management system of the IBR.</p></li>
+<li><p><strong>Complementarity in Function</strong>: While the Social Registry is geared towards identifying and assessing potential beneficiaries, the IBR focuses on managing and monitoring current beneficiaries. This complementarity ensures that social protection systems are both inclusive (identifying all potential beneficiaries) and efficient (effectively managing those who receive benefits).</p></li>
+<li><p><strong>Policy and Operational Insights</strong>: The integration of these registries provides a comprehensive view of the social protection landscape. The Social Registry offers insights into the broader demographic and socioeconomic profiles of potential beneficiaries, while the IBR offers detailed information on current beneficiaries, aiding in policy formulation and program management.</p></li>
+<li><p><strong>Challenges in Integration</strong>: Ensuring seamless data exchange and maintaining data integrity between these systems are key challenges. Addressing issues of data privacy, real-time data updating, and interoperability is crucial for the effective functioning of both registries.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="what-about-openspp">
+<h2>What about OpenSPP?<a class="headerlink" href="#what-about-openspp" title="Permalink to this headline">#</a></h2>
+<div class="section" id="openspp-as-a-social-registry">
+<h3>OpenSPP as a Social Registry<a class="headerlink" href="#openspp-as-a-social-registry" title="Permalink to this headline">#</a></h3>
+<p>OpenSPP's robust architecture makes it an ideal candidate for functioning as a Social Registry, with the following key features:</p>
+<ol class="arabic simple">
+<li><p><strong>Initial Intake and Registration</strong>: OpenSPP effectively manages outreach and intake processes, handling a wide range of data crucial for assessing potential eligibility for social programs.</p></li>
+<li><p><strong>Data Management and Standardization</strong>: It is equipped to efficiently manage diverse information, transforming it into standardized formats for integration into various social programs.</p></li>
+<li><p><strong>Dynamic Data Collection</strong>: OpenSPP addresses both chronic and transient poverty through dynamic data collection, essential for identifying households affected by sudden economic or personal changes.</p></li>
+<li><p><strong>Enhanced Interoperability</strong>: OpenSPP is particularly strong in its interoperability capabilities. The initial focus will be on integrating with Civil Registration and Vital Statistics (CRVS) and national ID systems to pull data, forming a foundational layer for efficient data management and verification in the Social Registry context.</p></li>
+<li><p><strong>Governance and Accountability</strong>: OpenSPP supports essential governance and accountability features, ensuring data integrity, privacy, and responsiveness to grievances and monitoring needs.</p></li>
+</ol>
+</div>
+<div class="section" id="openspp-s-integration-with-integrated-beneficiary-registries">
+<h3>OpenSPP's Integration with Integrated Beneficiary Registries<a class="headerlink" href="#openspp-s-integration-with-integrated-beneficiary-registries" title="Permalink to this headline">#</a></h3>
+<p>OpenSPP's integration with Integrated Beneficiary Registries (IBRs) is characterized by:</p>
+<ol class="arabic simple">
+<li><p><strong>Seamless Data Flow</strong>: Its architecture ensures seamless connectivity with existing IBRs, facilitating accurate and efficient data transfer from potential to actual beneficiaries.</p></li>
+<li><p><strong>Comprehensive Information System</strong>: The integration of OpenSPP with IBRs contributes significantly to creating a comprehensive social protection information system, effectively bridging the gap between identifying potential beneficiaries and managing current beneficiaries.</p></li>
+<li><p><strong>Ongoing Enhancements in Interoperability</strong>: OpenSPP continues to evolve, enhancing its interoperability with various components of social protection systems, including IBRs, to foster a more inclusive and effective social protection ecosystem.</p></li>
+</ol>
+</div>
+<div class="section" id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h3>
+<p>OpenSPP stands out for its versatility as a Social Registry and its integration with IBRs, playing a vital role in the efficient management and delivery of social protection services. Its advanced features and focus on interoperability position it as a key tool in fostering a more robust and responsive social protection framework.</p>
+</div>
+</div>
+<div class="section" id="references-and-resources">
+<h2>References and Resources<a class="headerlink" href="#references-and-resources" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://socialprotection.org/sites/default/files/publications_files/GIZ_DFID_IIMS%20in%20social%20protection_long_02-2020.pdf">Chirchir R and Barca V (2020). Building an integrated and digital social protection information system. GIZ</a></p></li>
+<li><p><a class="reference external" href="https://www.developmentpathways.co.uk/wp-content/uploads/2016/11/Single-and-Social-Registries-1.pdf">Chirchir R and Farooq S (2016) Single Registries and Social Registries: clarifying the terminological confusion. Development Pathways</a></p></li>
+<li><p><a class="reference external" href="https://www.developmentpathways.co.uk/wp-content/uploads/2021/06/Social-registries-a-short-history-of-abject-failure-June.pdf">Kidd S, Athias D and Mohamud I (2021) Social registries: a short history of abject failure. Development Pathways and Act Church of Sweden</a></p></li>
+<li><p><a class="reference external" href="https://spdci.org/resources/interoperability-in-action-6-social-registry-workshop-recording/multimedia_files/2023%2008%2024%20Interoperability%20in%20Action%20%237%20Final.pdf">Digital Convergence Initiative (2023) Social protection management information system interacting with social registry. Social Protection Interoperability Series:  Interoperability in Action #6.</a></p></li>
+<li><p><a class="reference external" href="https://www.researchgate.net/publication/340858942_Social_Registries_for_Social_Assistance_and_Beyond_A_Guidance_Note_and_Assessment_Tool">Leite, P, Karippacheril, T and Lindert, K (2017). Social Registries for Social Assistance and Beyond: A Guidance Note &amp; Assessment Tool. World Bank</a></p></li>
+<li><p><a class="reference external" href="https://openknowledge.worldbank.org/entities/publication/c44dc506-72dd-5428-a088-6fb7aea53095">World Bank Group. (2020). &quot;The World Bank Sourcebook on the Foundations of Social Protection Delivery Systems.&quot;</a></p></li>
+</ul>
+</div>
+</div>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="digital_public_infrastructure.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Digital Public Infrastructure</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="integrated_beneficiary_registry.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Integrated Beneficiary Registry</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      &copy; Copyright OpenSPP.<br/>
+    <div class="extra_footer">
+      <p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+    
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            if ($.trim($(".sticky-top .bd-toc").html()) === "") {
+                $(".sticky-top .bd-toc").css("visibility", "hidden");
+            }
+        });
+    </script>
+
+
+  </body>
+</html>
