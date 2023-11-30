@@ -3,6 +3,7 @@
 
 
 # -- Path setup --------------------------------------------------------------
+import xml.etree.ElementTree as ET
 
 from datetime import datetime
 import os
@@ -398,3 +399,22 @@ def source_replace(app, docname, source):
     for key in app.config.source_replacements:
         result = result.replace(key, app.config.source_replacements[key])
     source[0] = result
+
+
+def modify_sitemap(app, exception):
+    if exception is None:  # Only run if the build was successful
+        sitemap_path = os.path.join(app.outdir, 'sitemap.xml')
+        if os.path.exists(sitemap_path):
+            tree = ET.parse(sitemap_path)
+            root = tree.getroot()
+            namespace = {'ns': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+
+            for url in root.findall('ns:url', namespace):
+                loc = url.find('ns:loc', namespace)
+                if loc.text and loc.text.endswith('/index.html'):
+                    loc.text = loc.text[:-10]  # Remove 'index.html'
+
+            tree.write(sitemap_path, xml_declaration=True, encoding='utf-8')
+
+def setup(app):
+    app.connect('build-finished', modify_sitemap)
