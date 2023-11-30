@@ -180,14 +180,14 @@ doctest: deps
 test: clean linkcheckbroken  ## Clean docs build, then run linkcheckbroken
 
 .PHONY: deploy
-deploy: clean dirhtml
+deploy: clean html
 
 .PHONY: livehtml
 livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in the browser
 	cd "$(DOCS_DIR)" && ${SPHINXAUTOBUILD} \
 		--ignore "*.swp" \
 		--port 8050 \
-		-b dirhtml . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
+		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
 
 .PHONY: storybook
 storybook:
