@@ -7,7 +7,7 @@ Social Protection Glossary
     :sorted: true
    
    Administrator-driven approach for intake and registration (aka supply-driven approach or en masse registration approach)
-       Approaches sometimes used to register groups of :term:`household<household>` to be assessed and considered for potential inclusion in one or more programs. Three key features characterize administrator-driven approaches: (1) the impetus for initiating the engagement is driven by administrators, not the people being registered (state ≥ people); (2) :term:`registration<registration>` is usually carried out en masse (groups or cohorts of :term:`household<household>`); and (3) timing: the timetable for administrator-driven approaches is typically driven by financing and capacity, not by the timing or needs of specific :term:`household<household>`. See also on-demand approach.
+       Approaches sometimes used to register groups of :term:`household<household>` to be assessed and considered for potential inclusion in one or more programs. Three key features characterize administrator-driven approaches: (1) the impetus for initiating the engagement is driven by administrators, not the people being registered (state ≥ people); (2) :term:`registration<registration>` is usually carried out en masse (groups or cohorts of households); and (3) timing: the timetable for administrator-driven approaches is typically driven by financing and capacity, not by the timing or needs of specific households. See also on-demand approach.
 
        | 🇫🇷 Approche impulsée par les gestionnaires de programmes pour l'accueil et l'enregistrement (aussi appelée approche axée sur l'offre ou approche d'enregistrement collectif)
        | 🇪🇸 Enfoque dirigido por las administraciones de programas para la recepción y el registro (también conocido como enfoque impulsado por la oferta o enfoque de registro masivo)
@@ -55,7 +55,7 @@ Social Protection Glossary
 
    
    Beneficiary operations management
-       Stage along the :term:`social protection<social protection>` :term:`delivery chain<delivery chain>` that involves the activity of continuously engaging and collecting :term:`information<information>` from the field or other sources (such as other databases), which is then processed through a set of protocols, recorded, and used to make decisions. This simple pattern of engaging, collecting, processing, and deciding is the common thread that ties together the set of activities that occur continuously in the implementation of a program. :term:`beneficiary<beneficiary>` operations management includes three main functions, which are implemented simultaneously: :term:`beneficiary<beneficiary>` data management, monitoring of :term:`conditionalities<conditionalities>`, and implementation of a mechanism for the redress of :term:`grievance<grievance>`.
+       Stage along the :term:`social protection<social protection>` :term:`delivery chain<delivery chain>` that involves the activity of continuously engaging and collecting :term:`information<information>` from the field or other sources (such as other databases), which is then processed through a set of protocols, recorded, and used to make decisions. This simple pattern of engaging, collecting, processing, and deciding is the common thread that ties together the set of activities that occur continuously in the implementation of a program. :term:`beneficiary<beneficiary>` operations management includes three main functions, which are implemented simultaneously: beneficiary data management, monitoring of :term:`conditionalities<conditionalities>`, and implementation of a mechanism for the redress of :term:`grievance<grievance>`.
 
        | 🇫🇷 Gestion des opérations des bénéficiaires
        | 🇪🇸 Gestión de las operaciones de los beneficiarios
@@ -63,7 +63,7 @@ Social Protection Glossary
 
    
    Beneficiary registry
-       Database of :term:`beneficiaries<beneficiaries>` of a :term:`social protection<social protection>` program. It is also a component of the :term:`beneficiary operations management<beneficiary operations management>` system. These :term:`beneficiary<beneficiary>` registries contain :term:`information<information>` on program :term:`beneficiaries<beneficiaries>`. Registries that contain :term:`information<information>` on :term:`beneficiaries<beneficiaries>` of multiple programs are known as integrated :term:`beneficiary<beneficiary>` registries.
+       Database of :term:`beneficiaries<beneficiaries>` of a :term:`social protection<social protection>` program. It is also a component of the :term:`beneficiary operations management<beneficiary operations management>` system. These :term:`beneficiary<beneficiary>` registries contain :term:`information<information>` on program beneficiaries. Registries that contain information on beneficiaries of multiple programs are known as integrated beneficiary registries.
 
        | 🇫🇷 Registre des bénéficiaires
        | 🇪🇸 Registro de beneficiarios
@@ -129,7 +129,7 @@ Social Protection Glossary
 
    
    Census-sweep registration method
-       Mass :term:`registration<registration>` of :term:`household<household>` into the :term:`social registry<social registry>`. With the census sweep approach, all or most :term:`household<household>` in specific areas (or the entire country) are registered en masse. In contrast to the on-demand approach (see below), with the census-sweep approach, enumerator teams go to the communities and conduct intake and :term:`registration<registration>` using door-to-door methods.
+       Mass :term:`registration<registration>` of :term:`household<household>` into the :term:`social registry<social registry>`. With the census sweep approach, all or most households in specific areas (or the entire country) are registered en masse. In contrast to the on-demand approach (see below), with the census-sweep approach, enumerator teams go to the communities and conduct intake and registration using door-to-door methods.
 
        | 🇫🇷 Méthode d'enregistrement basée sur un recensement
        | 🇪🇸 Método de registro mediante barrido censal
@@ -161,7 +161,7 @@ Social Protection Glossary
 
    
    Child welfare services
-       :term:`social services<social services>` for children at-risk and their families, including child protective :term:`services<services>`, adoption and foster care, :term:`family<family>` preservation, and care :term:`services<services>` (home, community, or residential/institutional care).
+       :term:`social services<social services>` for children at-risk and their families, including child protective :term:`services<services>`, adoption and foster care, :term:`family<family>` preservation, and care services (home, community, or residential/institutional care).
 
        | 🇫🇷 Aide à l'enfance
        | 🇪🇸 Servicios de bienestar de menores
@@ -185,7 +185,7 @@ Social Protection Glossary
 
    
    Complaint
-       :term:`grievance<grievance>` about the quality or type of processes for delivering :term:`benefits<benefits>` and/or :term:`services<services>`. They can arise due to delays, wait times, long lines, excessive documentation requirements, program staff behavior, public office accommodation, lack of :term:`information<information>` about the program decisions, difficulty accessing :term:`social protection<social protection>` :term:`benefits<benefits>` and/or :term:`services<services>`, and so on.
+       :term:`grievance<grievance>` about the quality or type of processes for delivering :term:`benefits<benefits>` and/or :term:`services<services>`. They can arise due to delays, wait times, long lines, excessive documentation requirements, program staff behavior, public office accommodation, lack of :term:`information<information>` about the program decisions, difficulty accessing :term:`social protection<social protection>` benefits and/or services, and so on.
 
        | 🇫🇷 Réclamation
        | 🇪🇸 Reclamo
@@ -193,7 +193,7 @@ Social Protection Glossary
 
    
    Compliance and noncompliance (of conditionalities)
-       Compliance refers to the carrying out of specific :term:`conditionalities<conditionalities>` or :term:`co-responsibilities<co-responsibilities>` required for participation in the program by :term:`beneficiaries<beneficiaries>`. Noncompliance refers to the failure to carry out said :term:`conditionalities<conditionalities>`.
+       Compliance refers to the carrying out of specific :term:`conditionalities<conditionalities>` or :term:`co-responsibilities<co-responsibilities>` required for participation in the program by :term:`beneficiaries<beneficiaries>`. Noncompliance refers to the failure to carry out said conditionalities.
 
        | 🇫🇷 Conformité et non-conformité (aux conditionnalités)
        | 🇪🇸 Cumplimiento e incumplimiento (de las condicionalidades)
@@ -225,7 +225,7 @@ Social Protection Glossary
 
    
    Compliance verification processing
-       The process of verifying that :term:`beneficiaries<beneficiaries>` have complied with program :term:`conditionalities<conditionalities>`. This process could include preparation and distribution of :term:`beneficiary<beneficiary>` lists; gathering, recording, entering, processing, and transmittal of data on compliance (or on noncompliance); and taking decisions as to whether :term:`beneficiaries<beneficiaries>` have complied with the :term:`conditionalities<conditionalities>`.
+       The process of verifying that :term:`beneficiaries<beneficiaries>` have complied with program :term:`conditionalities<conditionalities>`. This process could include preparation and distribution of :term:`beneficiary<beneficiary>` lists; gathering, recording, entering, processing, and transmittal of data on compliance (or on noncompliance); and taking decisions as to whether beneficiaries have complied with the conditionalities.
 
        | 🇫🇷 Processus de vérification de la conformité
        | 🇪🇸 Procesamiento de la verificación del cumplimiento
@@ -249,7 +249,7 @@ Social Protection Glossary
 
    
    Conditionalities monitoring cycle
-       The recurring period that begins with the latest roster of :term:`beneficiary<beneficiary>` :term:`household<household>`, with :term:`information<information>` on pertinent :term:`family<family>` members (inputs), and ends with a revised :term:`beneficiary<beneficiary>` roster that updates with :term:`information<information>` on compliance for that cycle, as well as any decisions on consequences for noncompliance (outputs), which would link back to the payroll for the next payment cycle (outputs). The :term:`conditionalities monitoring<conditionalities monitoring>` cycle includes both the :term:`compliance period<compliance period>` and the :term:`compliance verification period<compliance verification period>`.
+       The recurring period that begins with the latest roster of :term:`beneficiary<beneficiary>` :term:`household<household>`, with :term:`information<information>` on pertinent :term:`family<family>` members (inputs), and ends with a revised beneficiary roster that updates with information on compliance for that cycle, as well as any decisions on consequences for noncompliance (outputs), which would link back to the payroll for the next payment cycle (outputs). The :term:`conditionalities monitoring<conditionalities monitoring>` cycle includes both the :term:`compliance period<compliance period>` and the :term:`compliance verification period<compliance verification period>`.
 
        | 🇫🇷 Cycle de contrôle des conditionnalités
        | 🇪🇸 Ciclo de monitoreo de las condicionalidades
@@ -274,7 +274,7 @@ Social Protection Glossary
 
    
    Corruption
-       Commonly involves manipulation of :term:`beneficiary<beneficiary>` rosters, for example, registering :term:`ineligible<ineligible>` :term:`beneficiaries<beneficiaries>` to garner political support, staff accepting illegal payments from eligible or :term:`ineligible<ineligible>` :term:`beneficiaries<beneficiaries>`, or diversion of funds to ghost :term:`beneficiaries<beneficiaries>` or other illegal channels.
+       Commonly involves manipulation of :term:`beneficiary<beneficiary>` rosters, for example, registering :term:`ineligible<ineligible>` :term:`beneficiaries<beneficiaries>` to garner political support, staff accepting illegal payments from eligible or ineligible beneficiaries, or diversion of funds to ghost beneficiaries or other illegal channels.
 
        | 🇫🇷 Corruption
        | 🇪🇸 Corrupción
@@ -290,7 +290,7 @@ Social Protection Glossary
 
    
    Data integration
-       Combines data from different sources and provides users with a unified view of these data for service integration. When :term:`services<services>` are provided by multiple suppliers, the service integration challenge is to seamlessly integrate them into end-to-end :term:`services<services>` that operate as a single IT service delivery model. Data integration involves the practice of applying architectural techniques and tools to provide access and delivery of data with varied data types and structures in order to meet the data needs of the applications and business processes within an organization.
+       Combines data from different sources and provides users with a unified view of these data for service integration. When :term:`services<services>` are provided by multiple suppliers, the service integration challenge is to seamlessly integrate them into end-to-end services that operate as a single IT service delivery model. Data integration involves the practice of applying architectural techniques and tools to provide access and delivery of data with varied data types and structures in order to meet the data needs of the applications and business processes within an organization.
 
        | 🇫🇷 Intégration des données
        | 🇪🇸 Integración de datos
@@ -339,7 +339,7 @@ Social Protection Glossary
 
    
    Decision on benefits and service packages
-       Setting benefit levels (for cash or in-kind :term:`benefits<benefits>`) and/or defining the service package (for :term:`services<services>`) that will be provided to eligible :term:`beneficiaries<beneficiaries>` of social program(s) and establishing and notifying :term:`beneficiaries<beneficiaries>` of such decisions (and any associated conditions on their participation).
+       Setting benefit levels (for cash or in-kind :term:`benefits<benefits>`) and/or defining the service package (for :term:`services<services>`) that will be provided to eligible :term:`beneficiaries<beneficiaries>` of social program(s) and establishing and notifying beneficiaries of such decisions (and any associated conditions on their participation).
 
        | 🇫🇷 Décisions relatives à l'ensemble des prestations et des services
        | 🇪🇸 Determinación del paquete de beneficios y servicios
@@ -364,7 +364,7 @@ Social Protection Glossary
 
    
    Delivery chain
-       :term:`social protection<social protection>` (including labor) :term:`benefits<benefits>` and :term:`services<services>` pass through common implementation phases along the delivery chain, including :term:`outreach<outreach>`, intake and :term:`registration<registration>`, :term:`assessment of needs and conditions<assessment of needs and conditions>`, :term:`eligibility<eligibility>` and :term:`enrollment decisions<enrollment decisions>`, determination of :term:`benefits<benefits>` or service package, :term:`notification and onboarding<notification and onboarding>`, provision of payments or :term:`services<services>`, and :term:`beneficiary operations management<beneficiary operations management>`.
+       :term:`social protection<social protection>` (including labor) :term:`benefits<benefits>` and :term:`services<services>` pass through common implementation phases along the delivery chain, including :term:`outreach<outreach>`, intake and :term:`registration<registration>`, :term:`assessment of needs and conditions<assessment of needs and conditions>`, :term:`eligibility<eligibility>` and :term:`enrollment decisions<enrollment decisions>`, determination of benefits or service package, :term:`notification and onboarding<notification and onboarding>`, provision of payments or services, and :term:`beneficiary operations management<beneficiary operations management>`.
 
        | 🇫🇷 Chaîne de mise en œuvre
        | 🇪🇸 Cadena de implementación
@@ -388,7 +388,7 @@ Social Protection Glossary
 
    
    Designated recipient
-       The individual in the :term:`beneficiary<beneficiary>` :term:`family<family>` or :term:`household<household>` who is designated as the grantee or recipient of :term:`benefits<benefits>` when they are paid out (for :term:`authentication<authentication>` and payment purposes). A designated recipient should be named for all :term:`benefits<benefits>` for which the :term:`assistance unit<assistance unit>` is a group (:term:`family<family>` or :term:`household<household>`). A designated recipient may also be needed for individual-based :term:`benefits<benefits>` if the :term:`beneficiary<beneficiary>` requires some guardian to act on their behalf (such as with orphans or severely :term:`disabled<disabled>` individuals).
+       The individual in the :term:`beneficiary<beneficiary>` :term:`family<family>` or :term:`household<household>` who is designated as the grantee or recipient of :term:`benefits<benefits>` when they are paid out (for :term:`authentication<authentication>` and payment purposes). A designated recipient should be named for all benefits for which the :term:`assistance unit<assistance unit>` is a group (family or household). A designated recipient may also be needed for individual-based benefits if the beneficiary requires some guardian to act on their behalf (such as with orphans or severely :term:`disabled<disabled>` individuals).
 
        | 🇫🇷 Récipiendaire désigné
        | 🇪🇸 Destinatario designado
@@ -428,7 +428,7 @@ Social Protection Glossary
 
    
    Efficiency
-       Another important dimension of the performance of :term:`delivery systems<delivery systems>`, albeit one that is difficult to measure. Ensuring that outcomes are achieved at reasonable costs, including moving clients through the various phases of the :term:`delivery chain<delivery chain>` at minimal cost in terms of time and money both for administrators and clients, is critical to evaluating performance. Alternative measures of efficiency include processing times for various phases or stages along the :term:`delivery chain<delivery chain>`.
+       Another important dimension of the performance of :term:`delivery systems<delivery systems>`, albeit one that is difficult to measure. Ensuring that outcomes are achieved at reasonable costs, including moving clients through the various phases of the :term:`delivery chain<delivery chain>` at minimal cost in terms of time and money both for administrators and clients, is critical to evaluating performance. Alternative measures of efficiency include processing times for various phases or stages along the delivery chain.
 
        | 🇫🇷 Efficience
        | 🇪🇸 Eficiencia
@@ -436,7 +436,7 @@ Social Protection Glossary
 
    
    Eligibility
-       Eligibility in the context of :term:`social protection<social protection>` refers to the criteria that determine who can access :term:`social protection<social protection>` programs. These criteria vary based on the specific program's goals and the context in which it operates.
+       Eligibility in the context of :term:`social protection<social protection>` refers to the criteria that determine who can access social protection programs. These criteria vary based on the specific program's goals and the context in which it operates.
 
        | 🇫🇷 Éligibilité
        | 🇪🇸 Elegibilidad
@@ -444,7 +444,7 @@ Social Protection Glossary
 
    
    Eligibility criteria
-       :term:`eligibility<eligibility>` criteria in :term:`social protection<social protection>` refer to the specific conditions or requirements that individuals or :term:`household<household>` must meet to qualify for assistance or :term:`benefits<benefits>` under :term:`social protection<social protection>` programs. These criteria are crucial in ensuring that support is targeted effectively towards those who need it most.
+       :term:`eligibility<eligibility>` criteria in :term:`social protection<social protection>` refer to the specific conditions or requirements that individuals or :term:`household<household>` must meet to qualify for assistance or :term:`benefits<benefits>` under social protection programs. These criteria are crucial in ensuring that support is targeted effectively towards those who need it most.
 
        | 🇫🇷 Critères d'éligibilité
        | 🇪🇸 Criterios de elegibilidad
@@ -516,7 +516,7 @@ Social Protection Glossary
 
    
    Grievance redress mechanism (GRM)
-       A formalized way to accept, sort, assess, and resolve :term:`complaint<complaint>`, :term:`appeals<appeals>`, and queries from the program :term:`beneficiaries<beneficiaries>` and other stakeholders. The GRM is composed of a set of institutional structures, mandated rules, procedures, and processes through which :term:`complaint<complaint>`, :term:`appeals<appeals>`, and queries about the :term:`social protection<social protection>` program(s) are resolved.
+       A formalized way to accept, sort, assess, and resolve :term:`complaint<complaint>`, :term:`appeals<appeals>`, and queries from the program :term:`beneficiaries<beneficiaries>` and other stakeholders. The GRM is composed of a set of institutional structures, mandated rules, procedures, and processes through which complaints, appeals, and queries about the :term:`social protection<social protection>` program(s) are resolved.
 
        | 🇫🇷 Mécanisme de gestion des réclamations (MGR)
        | 🇪🇸 Mecanismo de quejas y reclamos (MQR)
@@ -572,7 +572,7 @@ Social Protection Glossary
 
    
    Hybrid means testing (HMT)
-       A type of socioeconomic assessment that combines means testing with :term:`proxy means testing<proxy means testing>` by gathering :term:`information<information>` on a :term:`household<household>`’s observable income as verifiable welfare (as in means testing) and :term:`information<information>` on certain :term:`household<household>` assets to predict nonverifiable welfare (as in :term:`proxy means testing<proxy means testing>`).
+       A type of socioeconomic assessment that combines means testing with :term:`proxy means testing<proxy means testing>` by gathering :term:`information<information>` on a :term:`household<household>`’s observable income as verifiable welfare (as in means testing) and information on certain household assets to predict nonverifiable welfare (as in proxy means testing).
 
        | 🇫🇷 Évaluation hybride des ressources (EHR)
        | 🇪🇸 Comprobación híbrida de los medios de vida (CHM)
@@ -580,7 +580,7 @@ Social Protection Glossary
 
    
    Identification
-       Action or process of identifying a person (cf. “:term:`authentication<authentication>`”). In its initial occurrence, it typically involves the assignation of an identity number (which is often unique) and the issuance of an identity credential which, alone or with the support of some other :term:`authentication<authentication>` factor (e.g., biometrics), is subsequently used to prove or authenticate a person’s identity.
+       Action or process of identifying a person (cf. “:term:`authentication<authentication>`”). In its initial occurrence, it typically involves the assignation of an identity number (which is often unique) and the issuance of an identity credential which, alone or with the support of some other authentication factor (e.g., biometrics), is subsequently used to prove or authenticate a person’s identity.
 
        | 🇫🇷 Identification
        | 🇪🇸 Identificación
@@ -612,7 +612,7 @@ Social Protection Glossary
 
    
    Individualized action plan (IAP)
-       Also referred to as a service plan, :term:`family<family>` action plan, mutual responsibilities agreement, or personal progression plan, it is an agreement between a caseworker and :term:`beneficiary<beneficiary>` that typically includes a summary of the individual assessment including profiling results; goals and agreed steps toward the goals; :term:`benefits<benefits>` (if any); the list of :term:`services<services>` assigned or referred; required actions and commitments of both parties (the :term:`beneficiary<beneficiary>` and the caseworker); rules and procedures regarding sanctions for noncompliance with required actions; :term:`beneficiary<beneficiary>` rights and responsibilities; and :term:`information<information>` on :term:`grievance<grievance>` redress mechanism (GRM) procedures. During the enrollment onboarding phase, the IAP would be signed by both the :term:`beneficiary<beneficiary>` and the caseworker.
+       Also referred to as a service plan, :term:`family<family>` action plan, mutual responsibilities agreement, or personal progression plan, it is an agreement between a caseworker and :term:`beneficiary<beneficiary>` that typically includes a summary of the individual assessment including profiling results; goals and agreed steps toward the goals; :term:`benefits<benefits>` (if any); the list of :term:`services<services>` assigned or referred; required actions and commitments of both parties (the beneficiary and the caseworker); rules and procedures regarding sanctions for noncompliance with required actions; beneficiary rights and responsibilities; and :term:`information<information>` on :term:`grievance<grievance>` redress mechanism (GRM) procedures. During the enrollment onboarding phase, the IAP would be signed by both the beneficiary and the caseworker.
 
        | 🇫🇷 Plan d'action individualisé (PAI)
        | 🇪🇸 Plan de acción individualizado (PAI)
@@ -636,7 +636,7 @@ Social Protection Glossary
 
    
    Information security
-       The practice of defending electronic or physical :term:`information<information>` from unauthorized access, use, disclosure, disruption, modification, perusal, inspection, recording, or destruction. :term:`information<information>` security relates to the preservation of confidentiality, integrity, and availability of :term:`information<information>`, in addition to other properties such as authenticity, accountability, nonrepudiation and reliability (ISO/IEC 27000:2009). :term:`information<information>` security ensures that only authorized users (confidentiality) have access to accurate and complete :term:`information<information>` (integrity) when required (availability).
+       The practice of defending electronic or physical :term:`information<information>` from unauthorized access, use, disclosure, disruption, modification, perusal, inspection, recording, or destruction. Information security relates to the preservation of confidentiality, integrity, and availability of information, in addition to other properties such as authenticity, accountability, nonrepudiation and reliability (ISO/IEC 27000:2009). Information security ensures that only authorized users (confidentiality) have access to accurate and complete information (integrity) when required (availability).
 
        | 🇫🇷 Sécurité de l'information
        | 🇪🇸 Seguridad de la información
@@ -644,7 +644,7 @@ Social Protection Glossary
 
    
    Information systems
-       A discrete set of :term:`information<information>` resources, such as personnel, equipment, funds, and :term:`information technology<information technology>`, organized for the collection, processing, maintenance, use, sharing, dissemination, or disposition of :term:`information<information>`.
+       A discrete set of :term:`information<information>` resources, such as personnel, equipment, funds, and :term:`information technology<information technology>`, organized for the collection, processing, maintenance, use, sharing, dissemination, or disposition of information.
 
        | 🇫🇷 Système d'information
        | 🇪🇸 Sistemas de información
@@ -660,7 +660,7 @@ Social Protection Glossary
 
    
    Institutional care services
-       A type of treatment provided to an individual in a formal residential environment by an institute, other :term:`family<family>`, or other organized form aiming at providing care :term:`services<services>` (social or health :term:`services<services>`).
+       A type of treatment provided to an individual in a formal residential environment by an institute, other :term:`family<family>`, or other organized form aiming at providing care :term:`services<services>` (social or health services).
 
        | 🇫🇷 Services de soins institutionnels
        | 🇪🇸 Servicios de cuidado institucional
@@ -668,7 +668,7 @@ Social Protection Glossary
 
    
    Integrated beneficiary registry
-       "Integrated :term:`beneficiary<beneficiary>` registries incorporate data from programme :term:`beneficiary<beneficiary>` registries of several different schemes. They provide a consolidated overview of data collected by different programmes, showing “who receives what” :term:`benefits<benefits>` (focusing on :term:`beneficiaries<beneficiaries>` alone). These are also variously described as ‘single registry’ or ‘unified :term:`beneficiary registry<beneficiary registry>`’. [Definition adapted from https://socialprotection.org/learn/glossary/I]"
+       "Integrated :term:`beneficiary<beneficiary>` registries incorporate data from programme beneficiary registries of several different schemes. They provide a consolidated overview of data collected by different programmes, showing “who receives what” :term:`benefits<benefits>` (focusing on :term:`beneficiaries<beneficiaries>` alone). These are also variously described as ‘single registry’ or ‘unified :term:`beneficiary registry<beneficiary registry>`’. [Definition adapted from https://socialprotection.org/learn/glossary/I]"
 
        | 🇫🇷 Registre de bénéficiaires intégré
        | 🇪🇸 Registro integrado de beneficiarios
@@ -676,7 +676,7 @@ Social Protection Glossary
 
    
    Integrated information management framework
-       A framework that integrates all of an organization's systems and processes, enabling an organization to work as a single unit with unified objective. It links :term:`information<information>` across different :term:`services<services>`/systems and integrates :term:`information<information>` across agencies for a given user.
+       A framework that integrates all of an organization's systems and processes, enabling an organization to work as a single unit with unified objective. It links :term:`information<information>` across different :term:`services<services>`/systems and integrates information across agencies for a given user.
 
        | 🇫🇷 Cadre intégré de gestion de l'information
        | 🇪🇸 Marco integrado de gestión de la información
@@ -692,7 +692,7 @@ Social Protection Glossary
 
    
    Intermediation
-       An integrated service-provision approach used in both labor and :term:`social services<social services>`. Intermediation is a service in its own right—and it also connects people (workers) to other :term:`services<services>`. It is the process of informing clients about a range of :term:`benefits<benefits>` and :term:`services<services>` relevant to their needs, and directing them to the corresponding access point, based on agreed protocols with service provider agencies, sometimes with individualized action plans (IAPs), to help them overcome multiple socioeconomic barriers. Intermediation connects the demand and supply of social or labor :term:`services<services>`. The role of the mediator (social caseworker or public employment officer) is to correctly identify the needs of the participant (demand side—through risk screening and profiling) and then to identify the availability of :term:`services<services>` and service providers (supply side) and then connect them with referrals and counter-referrals (monitoring and follow-up) on the basis of an action plan, protocols, service contracts, and service standards.
+       An integrated service-provision approach used in both labor and :term:`social services<social services>`. Intermediation is a service in its own right—and it also connects people (workers) to other :term:`services<services>`. It is the process of informing clients about a range of :term:`benefits<benefits>` and services relevant to their needs, and directing them to the corresponding access point, based on agreed protocols with service provider agencies, sometimes with individualized action plans (IAPs), to help them overcome multiple socioeconomic barriers. Intermediation connects the demand and supply of social or labor services. The role of the mediator (social caseworker or public employment officer) is to correctly identify the needs of the participant (demand side—through risk screening and profiling) and then to identify the availability of services and service providers (supply side) and then connect them with referrals and counter-referrals (monitoring and follow-up) on the basis of an action plan, protocols, service contracts, and service standards.
 
        | 🇫🇷 Intermédiation
        | 🇪🇸 Intermediación
@@ -756,7 +756,7 @@ Social Protection Glossary
 
    
    On-demand approach for intake and registration
-       Approach that allows anyone to apply and register their :term:`information<information>` to be considered for potential inclusion in one or more programs. Three key features characterize on-demand approaches: (1) the impetus for initiating the engagement is driven by the clients (not the “state”), who take the initiative to apply; (2) specific clients engage on their own; and (3) timing: with the on-demand approach, specific clients engage in intake and :term:`registration<registration>` on their own timing. While on-demand approaches are driven largely by the way intake and :term:`registration<registration>` is carried out, they also influence other phases of the :term:`delivery chain<delivery chain>`. See also administrator-driven approach.
+       Approach that allows anyone to apply and register their :term:`information<information>` to be considered for potential inclusion in one or more programs. Three key features characterize on-demand approaches: (1) the impetus for initiating the engagement is driven by the clients (not the “state”), who take the initiative to apply; (2) specific clients engage on their own; and (3) timing: with the on-demand approach, specific clients engage in intake and :term:`registration<registration>` on their own timing. While on-demand approaches are driven largely by the way intake and registration is carried out, they also influence other phases of the :term:`delivery chain<delivery chain>`. See also administrator-driven approach.
 
        | 🇫🇷 Approche à la demande pour l'accueil et l'enregistrement
        | 🇪🇸 Enfoque por demanda para la recepción y el registro
@@ -764,7 +764,7 @@ Social Protection Glossary
 
    
    One-stop shops/service centers
-       One form of “integrated service provision” whereby all :term:`services<services>` are co-located, so the client needs to go to only one place for support. In some cases, these may be for both labor and social :term:`benefits<benefits>` and :term:`services<services>` together. In other cases, they may be for labor :term:`services<services>` separately (e.g., job centers). Other modalities combine social and health :term:`benefits<benefits>` and :term:`services<services>` (such as the “department of health and human :term:`services<services>`” that is common in the United States and Australia).
+       One form of “integrated service provision” whereby all :term:`services<services>` are co-located, so the client needs to go to only one place for support. In some cases, these may be for both labor and social :term:`benefits<benefits>` and services together. In other cases, they may be for labor services separately (e.g., job centers). Other modalities combine social and health benefits and services (such as the “department of health and human services” that is common in the United States and Australia).
 
        | 🇫🇷 Guichets uniques/centres de services
        | 🇪🇸 Ventanillas únicas/centros de servicios integrados
@@ -820,7 +820,7 @@ Social Protection Glossary
 
    
    Payments administration
-       The required steps to transfer cash to :term:`beneficiaries<beneficiaries>` or into the :term:`beneficiaries<beneficiaries>`’ accounts. Payments administration includes establishing and verifying the payroll and setting up the payment schedule, requesting the inter-account transfer (by the overseeing ministry to the treasury), issuing the inter-account payment order (by the treasury to the :term:`payment service provider<payment service provider>`), issuing the payment instruction (by the overseeing ministry to the :term:`payment service provider<payment service provider>`), and providing the payments to the :term:`beneficiaries<beneficiaries>` (by the :term:`payment service provider<payment service provider>`).
+       The required steps to transfer cash to :term:`beneficiaries<beneficiaries>` or into the beneficiaries’ accounts. Payments administration includes establishing and verifying the payroll and setting up the payment schedule, requesting the inter-account transfer (by the overseeing ministry to the treasury), issuing the inter-account payment order (by the treasury to the :term:`payment service provider<payment service provider>`), issuing the payment instruction (by the overseeing ministry to the payment service provider), and providing the payments to the beneficiaries (by the payment service provider).
 
        | 🇫🇷 Administration des paiements
        | 🇪🇸 Administración de los pagos
@@ -876,7 +876,7 @@ Social Protection Glossary
 
    
    Proxy means testing
-       A tool used to assess a :term:`family<family>`’s socioeconomic status using a composite measure that calculates a weighted score based on observable :term:`household<household>` characteristics, such as demographic structures, education levels, location and quality of the :term:`household<household>`’s dwelling, and ownership of durable goods and other assets. These variables are all considered “proxies” for incomes or consumption, which may be more difficult to measure and observe in situations of high informality.
+       A tool used to assess a :term:`family<family>`’s socioeconomic status using a composite measure that calculates a weighted score based on observable :term:`household<household>` characteristics, such as demographic structures, education levels, location and quality of the household’s dwelling, and ownership of durable goods and other assets. These variables are all considered “proxies” for incomes or consumption, which may be more difficult to measure and observe in situations of high informality.
 
        | 🇫🇷 Évaluation des ressources par approximation (Proxy Means Testing – PMT – en anglais)
        | 🇪🇸 Comprobación sustitutiva de los medios de vida (CSM)
@@ -892,7 +892,7 @@ Social Protection Glossary
 
    
    Reduction of benefits for noncompliance with conditionalities
-       When a :term:`beneficiary<beneficiary>` repeatedly fails to comply with :term:`conditionalities<conditionalities>` or :term:`co-responsibilities<co-responsibilities>` in a conditional cash transfer program, some countries impose a penalty on :term:`benefits<benefits>`, meaning that the :term:`beneficiary<beneficiary>` will lose all or part of the :term:`household<household>` :term:`benefits<benefits>` for some period until compliance resumes.
+       When a :term:`beneficiary<beneficiary>` repeatedly fails to comply with :term:`conditionalities<conditionalities>` or :term:`co-responsibilities<co-responsibilities>` in a conditional cash transfer program, some countries impose a penalty on :term:`benefits<benefits>`, meaning that the beneficiary will lose all or part of the :term:`household<household>` benefits for some period until compliance resumes.
 
        | 🇫🇷 Réduction des prestations pour non-respect des conditions d'éligibilité
        | 🇪🇸 Reducción de los beneficios por incumplimiento de las condicionalidades
@@ -908,7 +908,7 @@ Social Protection Glossary
 
    
    Registrant
-       Individuals, families, or :term:`household<household>` who have provided their :term:`information<information>` during the intake and :term:`registration<registration>` phase of the :term:`delivery chain<delivery chain>`. They may have provided their :term:`information<information>` at their own initiative (on demand; see :term:`applicants<applicants>`) or at the initiative of a public agency or program (as in the case of en masse :term:`registration<registration>`/census sweeps). In the latter case, we do not call them :term:`applicants<applicants>` because they did not technically “apply” for :term:`benefits<benefits>` and :term:`services<services>`.
+       Individuals, families, or :term:`household<household>` who have provided their :term:`information<information>` during the intake and :term:`registration<registration>` phase of the :term:`delivery chain<delivery chain>`. They may have provided their information at their own initiative (on demand; see :term:`applicants<applicants>`) or at the initiative of a public agency or program (as in the case of en masse registration/census sweeps). In the latter case, we do not call them applicants because they did not technically “apply” for :term:`benefits<benefits>` and :term:`services<services>`.
 
        | 🇫🇷 Enregistré(e)
        | 🇪🇸 Persona registrada
@@ -916,7 +916,7 @@ Social Protection Glossary
 
    
    Registration
-       The process of recording and verifying the :term:`information<information>` collected from the intake process. It can also involve pulling additional :term:`information<information>` from other administrative systems. Intake and registration usually happen simultaneously.
+       The process of recording and verifying the :term:`information<information>` collected from the intake process. It can also involve pulling additional information from other administrative systems. Intake and registration usually happen simultaneously.
 
        | 🇫🇷 Enregistrement
        | 🇪🇸 Registro
@@ -940,7 +940,7 @@ Social Protection Glossary
 
    
    Service Point
-       A Service Point is a designated physical or virtual location where individuals can access and receive :term:`social protection<social protection>` :term:`services<services>` and :term:`benefits<benefits>`. It facilitates key functions like application processing, :term:`information<information>` provision, benefit distribution, and program enrollment assistance. These points ensure accessibility and convenience for :term:`beneficiaries<beneficiaries>`, serving as essential hubs for direct interaction between :term:`social protection<social protection>` programs and their users.
+       A Service Point is a designated physical or virtual location where individuals can access and receive :term:`social protection<social protection>` :term:`services<services>` and :term:`benefits<benefits>`. It facilitates key functions like application processing, :term:`information<information>` provision, benefit distribution, and program enrollment assistance. These points ensure accessibility and convenience for :term:`beneficiaries<beneficiaries>`, serving as essential hubs for direct interaction between social protection programs and their users.
 
        | 🇫🇷 Guichet de services
        | 🇪🇸 Punto de Servicio
@@ -964,7 +964,7 @@ Social Protection Glossary
 
    
    Social insurance
-       Composed of programs that minimize the negative impact of economic shocks on individuals and families. They include publicly provided or mandated insurance schemes against old age, disability, death of the main :term:`household<household>` provider, maternity leave and sickness cash :term:`benefits<benefits>`, and social health insurance. Social insurance programs are contributory, and :term:`beneficiaries<beneficiaries>` receive :term:`benefits<benefits>` or :term:`services<services>` in recognition of contributions to an insurance scheme.
+       Composed of programs that minimize the negative impact of economic shocks on individuals and families. They include publicly provided or mandated insurance schemes against old age, disability, death of the main :term:`household<household>` provider, maternity leave and sickness cash :term:`benefits<benefits>`, and social health insurance. Social insurance programs are contributory, and :term:`beneficiaries<beneficiaries>` receive benefits or :term:`services<services>` in recognition of contributions to an insurance scheme.
 
        | 🇫🇷 Assurance sociale
        | 🇪🇸 Seguridad social
@@ -996,7 +996,7 @@ Social Protection Glossary
 
    
    Social registry
-       :term:`information systems<information systems>` that support the processes of :term:`outreach<outreach>`, intake and :term:`registration<registration>`, and :term:`assessment of needs and conditions<assessment of needs and conditions>` to determine potential :term:`eligibility<eligibility>` for social programs. They maintain :term:`information<information>` on all registered :term:`household<household>` regardless of whether they eventually benefit from a social program. As such, we do not refer to :term:`household<household>` in social registries as “:term:`beneficiaries<beneficiaries>`” but as “registered :term:`household<household>`.”
+       :term:`information systems<information systems>` that support the processes of :term:`outreach<outreach>`, intake and :term:`registration<registration>`, and :term:`assessment of needs and conditions<assessment of needs and conditions>` to determine potential :term:`eligibility<eligibility>` for social programs. They maintain :term:`information<information>` on all registered :term:`household<household>` regardless of whether they eventually benefit from a social program. As such, we do not refer to households in social registries as “:term:`beneficiaries<beneficiaries>`” but as “registered households.”
 
        | 🇫🇷 Registre social
        | 🇪🇸 Registro social
@@ -1020,7 +1020,7 @@ Social Protection Glossary
 
    
    Targeting
-       Targeting in :term:`social protection<social protection>` refers to the process or method used to determine which individuals or groups within a population will receive :term:`social protection<social protection>` :term:`benefits<benefits>` and :term:`services<services>`. The objective of targeting is to ensure that these resources are allocated efficiently and effectively, reaching those who are most in need. In :term:`social protection<social protection>`, targeting is a critical concept, as resources are often limited and the needs are high. Effective targeting can significantly impact the overall success and fairness of :term:`social protection<social protection>` programs.
+       Targeting in :term:`social protection<social protection>` refers to the process or method used to determine which individuals or groups within a population will receive social protection :term:`benefits<benefits>` and :term:`services<services>`. The objective of targeting is to ensure that these resources are allocated efficiently and effectively, reaching those who are most in need. In social protection, targeting is a critical concept, as resources are often limited and the needs are high. Effective targeting can significantly impact the overall success and fairness of social protection programs.
 
        | 🇫🇷 Ciblage
        | 🇪🇸 Focalización
@@ -1028,7 +1028,7 @@ Social Protection Glossary
 
    
    Targeting criteria
-       A policy that seeks to direct an intervention (benefit or service) to the :term:`intended population<intended population>`, to minimize the coverage of those not intended to be :term:`beneficiaries<beneficiaries>` (errors of inclusion) and the noncoverage of intended :term:`beneficiaries<beneficiaries>` (errors of exclusion). (We prefer to avoid using the term :term:`targeting<targeting>` in relation to an act of implementation.)
+       A policy that seeks to direct an intervention (benefit or service) to the :term:`intended population<intended population>`, to minimize the coverage of those not intended to be :term:`beneficiaries<beneficiaries>` (errors of inclusion) and the noncoverage of intended beneficiaries (errors of exclusion). (We prefer to avoid using the term :term:`targeting<targeting>` in relation to an act of implementation.)
 
        | 🇫🇷 Critères de ciblage
        | 🇪🇸 Criterios de focalización
@@ -1084,7 +1084,7 @@ Social Protection Glossary
 
    
    Unemployment benefits
-       All forms of cash benefit to compensate for :term:`unemployment<unemployment>`, including :term:`unemployment<unemployment>` assistance (noncontributory) or :term:`unemployment<unemployment>` insurance (based on contributions and earning history). :term:`benefits<benefits>` may be included as components of activation programs.
+       All forms of cash benefit to compensate for :term:`unemployment<unemployment>`, including unemployment assistance (noncontributory) or unemployment insurance (based on contributions and earning history). :term:`benefits<benefits>` may be included as components of activation programs.
 
        | 🇫🇷 Prestation de chômage
        | 🇪🇸 Beneficios de desempleo
