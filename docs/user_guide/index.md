@@ -15,10 +15,10 @@ myst:
 - [Consent Management](consent_management)
 - [Dashboards and Reports](dashboards_and_reports)
 - [Geotargeting](geotargeting)
-- [Grievance Redressal Management](grievance_redressal_management)
+- [{term}`grievance` Redressal Management](grievance_redressal_management)
 - [Hardware Integration](hardware_integration)
 - [Indicators](indicators)
-- [Social protection programs and cycles](programs_and_cycles)
+- [{term}`social protection` programs and cycles](programs_and_cycles)
 - [Proxy Means Test](proxy_means_test)
 - [Programs and Cycles](programs_and_cycles)
 - [Registering Individuals and Groups](Registering_individuals_and_groups)
@@ -26,7 +26,7 @@ myst:
 
 
 <!-- - [User Management]
-- [Registrant Management]
+- [{term}`registrant` Management]
 - [Proxy Mean Test]
 - [Geotargeting]
 - [Vouchers]
@@ -35,7 +35,7 @@ myst:
 - [Security and Compliance]
 - Registering individuals and groups
 - Managing social protection programs
-- Grievance and appeals management
+- Grievance and {term}`appeals` management
 - Mass campaigns
 - Monitoring and analytics
 - ID card issuance

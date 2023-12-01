@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The Audit Log is a powerful tool for tracking user activity and system events in OpenSPP. It records information about who has accessed the system, what actions they performed, and when those actions took place. This information can be used to monitor user activity, detect potential security breaches, and investigate incidents or issues that arise within the system.
+The Audit Log is a powerful tool for tracking user activity and system events in OpenSPP. It records {term}`information` about who has accessed the system, what actions they performed, and when those actions took place. This information can be used to monitor user activity, detect potential security breaches, and investigate incidents or issues that arise within the system.
 
 It is important to note that the Audit Log is not enabled by default and must be enabled and configured by an administrator. Once enabled, the Audit Log can be customized to record specific events and activities based on the needs of the organization.
 

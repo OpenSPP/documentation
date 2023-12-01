@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The Proxy Means Test (PMT) is a statistical method used to determine the poverty status of a household, using a set of indicators that are correlated with household income or consumption. The PMT is often used to identify beneficiaries who are eligible for support.
+The Proxy Means Test (PMT) is a statistical method used to determine the poverty status of a {term}`household`, using a set of indicators that are correlated with household income or consumption. The PMT is often used to identify {term}`beneficiaries` who are eligible for support.
 
 Here are some typical criteria that may be used to calculate the Proxy Means Test:
 
@@ -11,7 +11,7 @@ Here are some typical criteria that may be used to calculate the Proxy Means Tes
 - **Education and occupation**: The PMT may consider the education level and occupation of household members as proxies for income or consumption, as these factors can be correlated with higher income levels.
 - **Demographic characteristics**: The PMT may consider demographic characteristics such as household size, age, and gender composition as proxies for income or consumption. For example, households with larger numbers of children or elderly members may be considered more vulnerable to poverty.
 
-Overall, the specific criteria used to calculate the PMT may vary depending on the context and objectives of the social protection program. It is important to select indicators that are relevant and meaningful in the local context and that accurately reflect household income or consumption levels.
+Overall, the specific criteria used to calculate the PMT may vary depending on the context and objectives of the {term}`social protection` program. It is important to select indicators that are relevant and meaningful in the local context and that accurately reflect household income or consumption levels.
 
 ## How to configure a proxy mean test
 
@@ -27,7 +27,7 @@ For example, if a household has a size of 4, an education level of 12 (out of a 
 
 PMT score = (0.5 x 4) + (0.3 x 12) + (0.2 x 5000) = 2 + 3.6 + 1000 = 1005.6
 
-In this example, the PMT score for the household is 1005.6. This score can then be used to determine the household's poverty status and eligibility for social protection programs.
+In this example, the PMT score for the household is 1005.6. This score can then be used to determine the household's poverty status and {term}`eligibility` for social protection programs.
 
 ### Implementation
 

@@ -5,7 +5,7 @@
 ## Programs
 
 Programs, sometimes also called a campaign, define a social program. A program is defining when, what and how
-beneficiaries receive entitlements. In itself, a program does not do much. The power comes through the use of
+{term}`beneficiaries` receive {term}`entitlements`. In itself, a program does not do much. The power comes through the use of
 "managers", which define the journey of beneficiaries in a program.
 
 Currently, few types of programs are supported:
@@ -19,9 +19,9 @@ Currently, few types of programs are supported:
 
 Cycles represent a distribution cycle.
 
-## Beneficiary
+## beneficiary
 
-A beneficiary is a registrant that is part of a program/cycle.
+A beneficiary is a {term}`registrant` that is part of a program/cycle.
 
 ## Managers
 
@@ -33,9 +33,9 @@ easily add your managers if those do not fit your needs.
 
 The available managers are:
 
-- [Eligibility Manager](eligibility_manager.rst)
+- [{term}`eligibility` Manager](eligibility_manager.rst)
 - [Entitlement Manager](entitlement_manager.rst)
-- [Deduplication Manager](deduplication_manager.md)
+- [{term}`deduplication` Manager](deduplication_manager.md)
 - [Notification Manager](notification_manager.rst)
 - [Program Manager](program_manager.rst)
 - [Cycle Manager](cycle_manager.rst)

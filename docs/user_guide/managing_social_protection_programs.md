@@ -1,4 +1,4 @@
-# Managing Social Protection Programs
+# Managing social protection Programs
 
 `Programs` and `Cycles` are at the heart of OpenSPP.
 
@@ -9,7 +9,7 @@
 ### Programs
 
 Programs, sometimes also called a campaign, define a social program. A program is organizing when, what and
-how beneficiaries receive as entitlements. In itself, a program does not do much, but use various managers to
+how {term}`beneficiaries` receive as {term}`entitlements`. In itself, a program does not do much, but use various managers to
 define the journey of beneficiaries in a program.
 
 Currently, few types of programs are supported:
@@ -23,9 +23,9 @@ Currently, few types of programs are supported:
 
 Cycles represent a distribution cycle.
 
-### Beneficiary
+### beneficiary
 
-A beneficiary is a registrant that is part of a program/cycle.
+A beneficiary is a {term}`registrant` that is part of a program/cycle.
 
 ### Managers
 
@@ -35,7 +35,7 @@ defined programming API that needs to be implemented in order to define how the 
 For all the managers, a default implementation is designed to support the most common use cases. You can
 easily add your managers if those do not fit your needs.
 
-#### Eligibility Manager
+#### eligibility Manager
 
 The eligibility manager verifies if a beneficiary is eligible for a given program. The eligibility
 determination can be based on data stored in OpenSPP or on an external system using API calls.
@@ -47,7 +47,7 @@ The entitlement manager determines what a beneficiary is entitled to for a given
 Currently, entitlement managers only support monetary value. It is planned to add support for in-kind
 distribution in the near future.
 
-#### Deduplication Manager
+#### deduplication Manager
 
 The deduplication manager allows to define how beneficiaries are deduplicated within a program.
 

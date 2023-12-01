@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This section will discuss the importance of Indicators in OpenSPP. Indicators are a powerful tool that creates abstraction and simplifies targeting, allowing for the calculation of the number of children under 18 years old, the number of elderly women, or whether a household is headed by a single woman.
+This section will discuss the importance of Indicators in OpenSPP. Indicators are a powerful tool that creates abstraction and simplifies {term}`targeting`, allowing for the calculation of the number of children under 18 years old, the number of elderly women, or whether a {term}`household` is headed by a single woman.
 
-The Indicators play a crucial role in determining the eligibility of registrants for social protection programs, as they're computed based on the information available in the social registry. By using Indicators, errors and inaccuracies can be avoided.
+The Indicators play a crucial role in determining the {term}`eligibility` of registrants for {term}`social protection` programs, as they're computed based on the {term}`information` available in the {term}`social registry`. By using Indicators, errors and inaccuracies can be avoided.
 
 ## Technical considerations
 

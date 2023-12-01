@@ -1,15 +1,15 @@
 # Registring individuals and groups
 
 Registrants are at the heart of OpenSPP. They are the people or groups that are being registered to be
-included in social protection programs.
+included in {term}`social protection` programs.
 
-A registrant can be:
+A {term}`registrant` can be:
 
 - A `group`
 - An `individual`
 
 Depending on the project's requirements, a registrant can simply contain a `name` or full biographic
-information, ID document numbers, pictures, bank account numbers, phone numbers and more.
+{term}`information`, ID document numbers, pictures, bank account numbers, phone numbers and more.
 
 ::::{important}
 
@@ -42,8 +42,8 @@ plus some additional ones.
 
 For example, groups could represent:
 
-- A household
-- A family
+- A {term}`household`
+- A {term}`family`
 - A school
 - ...
 
@@ -100,7 +100,7 @@ Registrants can have one or more ID Documents.
 
 ![](images/registrants/registrant_ids.png)
 
-The system does not enforce uniqueness of Document ID by default. If uniqueness is required, deduplication
+The system does not enforce uniqueness of Document ID by default. If uniqueness is required, {term}`deduplication`
 should be performed.
 
 ID Document types can be configured by an administrator.
@@ -108,7 +108,7 @@ ID Document types can be configured by an administrator.
 ### Event Data
 
 Event data is a way to store information about a registrant that is not part of the registrant's profile. It
-allows to store information without the need to modify the registrant's profile, providing few benefits:
+allows to store information without the need to modify the registrant's profile, providing few {term}`benefits`:
 
 - Store multiple version of the data
 - Manage separate data lifecycle, sharing agreements, etc.

@@ -22,7 +22,7 @@ OpenSPP also supports blackbox testing, a method wherein the functionality of an
 
 OpenSPP is equipped to handle various deployment models, including containers and virtual machines. The platform's versatility allows it to adapt to various infrastructure needs, thereby offering more options to organizations in terms of how they wish to run the solution.
 
-The solution is designed with scalability at its core, making it an ideal choice for growing organizations. It can scale up and down with ease to accommodate varying requirements while maintaining the same level of reliability. OpenSPP supports deployment across multiple platforms, such as cloud, on-premise, and hybrid deployments. Moreover, it can manage multiple deployments from a single interface, simplifying the process and increasing efficiency. It also provides tools for monitoring and managing performance across all deployments, ensuring consistent and reliable service levels.
+The solution is designed with scalability at its core, making it an ideal choice for growing organizations. It can scale up and down with ease to accommodate varying requirements while maintaining the same level of reliability. OpenSPP supports deployment across multiple platforms, such as cloud, on-premise, and hybrid deployments. Moreover, it can manage multiple deployments from a single interface, simplifying the process and increasing {term}`efficiency`. It also provides tools for monitoring and managing performance across all deployments, ensuring consistent and reliable service levels.
 
 ## Integration with CI/CD Tools
 

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Dashboard and reporting are essential components of social protection program management. They provide program administrators with the information they need to make informed decisions and improve the effectiveness of their programs.
+Dashboard and reporting are essential components of {term}`social protection` program management. They provide program administrators with the {term}`information` they need to make informed decisions and improve the {term}`effectiveness` of their programs.
 
 In OpenSPP, users have access to a range of dashboard and reporting features that can help them gain insights into their social protection programs. These features allow users to generate customized reports and dashboards that track key performance indicators and provide real-time data on program performance.
 

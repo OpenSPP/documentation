@@ -1,12 +1,12 @@
 # Backup and Recovery
 
-Backup and Recovery encompasses strategies and techniques designed to protect and restore data, applications, and infrastructure in the event of data loss, corruption, or disasters in OpenSPP deployments. This process is essential for maintaining data integrity, ensuring availability, and facilitating business continuity. As data is critical for business operations, the loss of data can disrupt business activities, incur financial penalties, harm reputation, and even lead to legal consequences. An effective Backup and Recovery strategy mitigates these risks by ensuring that data is not permanently lost and can be recovered quickly to minimize downtime.
+Backup and Recovery encompasses strategies and techniques designed to protect and restore data, applications, and infrastructure in the event of data loss, {term}`corruption`, or disasters in OpenSPP deployments. This process is essential for maintaining data integrity, ensuring availability, and facilitating business continuity. As data is critical for business operations, the loss of data can disrupt business activities, incur financial penalties, harm reputation, and even lead to legal consequences. An effective Backup and Recovery strategy mitigates these risks by ensuring that data is not permanently lost and can be recovered quickly to minimize downtime.
 
 The key advantages are:
 
 1. Ensures minimal disruption to business operations in case of data loss.
 2. Protects the integrity and reliability of data.
-3. Meets legal and regulatory data protection requirements.
+3. Meets legal and regulatory {term}`data protection` requirements.
 4. Reduces the risk associated with data breaches and cyber threats.
 
 In the implementation of OpenSPP, the backup can be implemented at different layers
