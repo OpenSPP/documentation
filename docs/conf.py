@@ -418,20 +418,30 @@ def modify_sitemap(app, exception):
             tree.write(sitemap_path, xml_declaration=True, encoding='utf-8')
 
 
-def update_canonical_url(app, exception):
+def update_html_files(app, exception):
     if exception is None:  # Only run if the build was successful
         for root, dirs, files in os.walk(app.outdir):
             for file in files:
-                if file == 'index.html':
+                if file.endswith('.html'):
                     file_path = os.path.join(root, file)
                     with open(file_path, 'r', encoding='utf-8') as file:
                         soup = BeautifulSoup(file, 'html.parser')
 
-                    # Find and modify the canonical link
+                    # Update the canonical link
                     canonical_link = soup.find('link', {'rel': 'canonical'})
-                    if canonical_link:
-                        new_url = canonical_link['href'].replace('/index.html', '/')
-                        canonical_link['href'] = new_url
+                    if canonical_link and canonical_link['href'].endswith('/index.html'):
+                        canonical_link['href'] = canonical_link['href'][:-10]
+
+                    # Update internal reference links
+                    for a_tag in soup.find_all('a', {'class': 'reference internal'}):
+                        href = a_tag.get('href', '')
+                        if href.endswith('index.html'):
+                            a_tag['href'] = href[:-10]
+
+                    # update home logo link
+                    home_link = soup.find('a', {'class': 'navbar-brand text-wrap'})
+                    if home_link and home_link['href'].endswith('/index.html'):
+                        home_link['href'] = home_link['href'][:-10]
 
                     # Write the changes back to the file
                     with open(file_path, 'w', encoding='utf-8') as file:
@@ -439,4 +449,4 @@ def update_canonical_url(app, exception):
 
 def setup(app):
     app.connect('build-finished', modify_sitemap)
-    app.connect('build-finished', update_canonical_url)
+    app.connect('build-finished', update_html_files)
