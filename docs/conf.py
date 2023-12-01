@@ -4,6 +4,7 @@
 
 # -- Path setup --------------------------------------------------------------
 import xml.etree.ElementTree as ET
+from bs4 import BeautifulSoup
 
 from datetime import datetime
 import os
@@ -416,5 +417,26 @@ def modify_sitemap(app, exception):
 
             tree.write(sitemap_path, xml_declaration=True, encoding='utf-8')
 
+
+def update_canonical_url(app, exception):
+    if exception is None:  # Only run if the build was successful
+        for root, dirs, files in os.walk(app.outdir):
+            for file in files:
+                if file == 'index.html':
+                    file_path = os.path.join(root, file)
+                    with open(file_path, 'r', encoding='utf-8') as file:
+                        soup = BeautifulSoup(file, 'html.parser')
+
+                    # Find and modify the canonical link
+                    canonical_link = soup.find('link', {'rel': 'canonical'})
+                    if canonical_link:
+                        new_url = canonical_link['href'].replace('/index.html', '/')
+                        canonical_link['href'] = new_url
+
+                    # Write the changes back to the file
+                    with open(file_path, 'w', encoding='utf-8') as file:
+                        file.write(str(soup))
+
 def setup(app):
     app.connect('build-finished', modify_sitemap)
+    app.connect('build-finished', update_canonical_url)
