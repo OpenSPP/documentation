@@ -1,27 +1,27 @@
 # Digital Public Infrastructure
 
 ## Introduction to DPI
-Just as railroads built with public money helped society grow in the past, today's digital systems, known as Digital Public Infrastructure (DPI), play a similar role in our modern world. DPI facilitates the movement of people, money, and information in the digital realm.
+Just as railroads built with public money helped society grow in the past, today's digital systems, known as Digital Public Infrastructure (DPI), play a similar role in our modern world. DPI facilitates the movement of people, money, and {term}`information` in the digital realm.
 
 DPI is powerful as it spans various areas, leveraging universally accessible technology, adhering to clear and fair rules, and fostering innovation. This approach transcends technology, encompassing good governance and local environmental adaptation.
 
-DPI enhances digital services in countries, aiding in achieving global objectives like the Sustainable Development Goals (SDGs). It enables transformative service delivery, prioritizing safety, inclusivity, and respect for individual rights and ideas. Nations including Brazil, India, and Singapore are employing DPI to realize significant advancements.
+DPI enhances digital {term}`services` in countries, aiding in achieving global objectives like the Sustainable Development Goals (SDGs). It enables transformative service delivery, prioritizing safety, inclusivity, and respect for individual rights and ideas. Nations including Brazil, India, and Singapore are employing DPI to realize significant advancements.
 
 ## Components of DPI
 DPI integrates critical components for secure, efficient, and accessible digital services:
-- **Digital Identity**: Reliable online identification systems for individuals and businesses.
-- **Registries**: Specialized systems, such as Civil Registration and Vital Statistics (CRVS) and social registries, that maintain comprehensive and official records.
+- **Digital Identity**: Reliable online {term}`identification` systems for individuals and businesses.
+- **Registries**: Specialized systems, such as {term}`civil registration` and Vital Statistics (CRVS) and social registries, that maintain comprehensive and official records.
 - **Payments**: Systems for straightforward monetary transactions among people, businesses, and governments.
-- **Data Exchange**: Fluid data flows between government and private sector, with robust personal data protection measures.
+- **Data Exchange**: Fluid data flows between government and private sector, with robust personal {term}`data protection` measures.
 
-## DPI in Social Protection
-DPI plays a pivotal role in social protection, especially in low-and-middle-income countries (LMICs). It facilitates a rights-based and inclusive digital transformation by intertwining technology, governance, and local digital ecosystems. Implementing DPI in social protection schemes ensures adaptability, efficiency, and inclusivity, addressing diverse societal needs.
+## DPI in social protection
+DPI plays a pivotal role in social protection, especially in low-and-middle-income countries (LMICs). It facilitates a rights-based and inclusive digital transformation by intertwining technology, governance, and local digital ecosystems. Implementing DPI in social protection schemes ensures adaptability, {term}`efficiency`, and inclusivity, addressing diverse societal needs.
 
 ### Real-World Examples and Impact
 India has seen transformative impacts from DPI, with digital IDs provided to over a billion people, enhancing government service accessibility. In Mauritius, DPI has led to the development of over 500 new electronic services for citizens and businesses through robust data exchange mechanisms.
 
 ### The COVID-19 Pandemic and DPI
-During the COVID-19 pandemic, DPI was invaluable in scaling social assistance rapidly. Countries with established digital infrastructures, like digital IDs and payment systems, effectively expanded social assistance, including to previously uncovered populations. This underscored DPI's role in agile crisis response and its potential in future social protection strategies ([World Bank](https://openknowledge.worldbank.org/handle/10986/34710)).
+During the COVID-19 pandemic, DPI was invaluable in scaling {term}`social assistance` rapidly. Countries with established digital infrastructures, like digital IDs and payment systems, effectively expanded social assistance, including to previously uncovered populations. This underscored DPI's role in agile crisis response and its potential in future social protection strategies ([World Bank](https://openknowledge.worldbank.org/handle/10986/34710)).
 
 ## Open Source
 DPI often relies on open-source technologies, making its code available for public use, adaptation, and improvement. This fosters flexibility and customization for diverse social protection programs. Note that, like proprietary solutions, open-source technologies may require local adaptations.
@@ -29,7 +29,7 @@ DPI often relies on open-source technologies, making its code available for publ
 ## Architecture of DPI Technology
 
 ### Interoperability
-Interoperability in DPI, particularly in social protection systems, enables efficient data exchange across diverse platforms. Beneficiaries can receive cash transfers through preferred channels, be it mobile money or a bank.
+Interoperability in DPI, particularly in social protection systems, enables efficient data exchange across diverse platforms. {term}`beneficiaries` can receive {term}`cash transfers` through preferred channels, be it mobile money or a bank.
 
 **Approaches**:
 - Adoption of open standards and specifications for various payment methods.
@@ -65,7 +65,7 @@ A zero-trust architecture is essential to protect users from digital threats and
 - Tokenization and data masking techniques.
 - End-to-end data encryption.
 - Granular electronic consent mechanisms.
-- Digital signatures for authentication and data integrity.
+- Digital signatures for {term}`authentication` and data integrity.
 
 ## OpenSPP and DPI
 
@@ -75,7 +75,7 @@ OpenSPP is an open-source, scalable, and modular digital social protection infor
 ### Alignment with DPIs
 OpenSPP offers diverse DPI building blocks like Social, Farmer, and Disability Registries, and Scheme Management, enabling comprehensive data management and service delivery.
 
-It integrates with Civil Registration and Vital Statistics (CRVS) systems for accurate beneficiary data and national identity systems for secure verification and authentication. OpenSPP's link with digital payment systems facilitates efficient benefit disbursement, ensuring timely support and reduced operational complexities. The team's involvement in G2P-Connect and Social Protection Digital Convergence Initiatives ensures robust, secure, and user-centric integrations.
+It integrates with Civil {term}`registration` and Vital Statistics (CRVS) systems for accurate {term}`beneficiary` data and national identity systems for secure verification and authentication. OpenSPP's link with digital payment systems facilitates efficient benefit disbursement, ensuring timely support and reduced operational complexities. The team's involvement in G2P-Connect and Social Protection Digital Convergence Initiatives ensures robust, secure, and user-centric integrations.
 
 
 ## References and Resources
