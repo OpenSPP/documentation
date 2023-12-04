@@ -1,6 +1,6 @@
 # User Management
 
-User management focuses on safeguarding user data and controls how users access and interact with modules implemented. This system administers user identities, authenticates them, and authorizes them for certain roles and privileges. Effective user management includes several layers, such as user authentication, authorization, and auditing, each serving a unique purpose in maintaining integrity and security.
+User management focuses on safeguarding user data and controls how users access and interact with modules implemented. This system administers user identities, authenticates them, and authorizes them for certain roles and privileges. Effective user management includes several layers, such as user {term}`authentication`, authorization, and auditing, each serving a unique purpose in maintaining integrity and security.
 
 Roles in OpenSPP are central to its user management framework. These roles are essentially a set of permissions that define what actions users can perform within the system. This allows users’ permissions to be managed and administrated easily. These roles can vary, typically including administrators, managers, and general users, each with distinct privileges. Administrators usually have the highest level of access, capable of modifying system settings and managing other users, while general users may have limited access, focused on specific tasks.
 

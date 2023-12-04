@@ -126,12 +126,12 @@
 </li>
 <li class="toctree-l2">
 <a class="reference internal" href="../learn/integrated_beneficiary_registry.html">
-     Integrated Beneficiary Registry
+     integrated beneficiary registry
     </a>
 </li>
 <li class="toctree-l2">
 <a class="reference internal" href="../learn/social_protection_management_information_systems.html">
-     Social Protection Management Information Systems
+     social protection Management information systems
     </a>
 </li>
 </ul>
@@ -205,7 +205,7 @@
 </li>
 <li class="toctree-l2">
 <a class="reference internal" href="../user_guide/grievance_redressal_management.html">
-     Grievance Redressal Management
+     grievance Redressal Management
     </a>
 </li>
 <li class="toctree-l2">
@@ -359,7 +359,7 @@
 </li>
 <li class="toctree-l2">
 <a class="reference internal" href="../technical_reference/programs/deduplication_manager.html">
-     Deduplication Manager
+     deduplication Manager
     </a>
 </li>
 <li class="toctree-l2">
@@ -859,7 +859,7 @@
 <div class="section" id="myst-restructuredtext-and-markdown">
 <h2>MyST, reStructuredText, and Markdown<a class="headerlink" href="#myst-restructuredtext-and-markdown" title="Permalink to this headline">#</a></h2>
 <p>We use <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/">MyST, or Markedly Structured Text</a>, a rich and extensible flavor of Markdown, for authoring training documentation.</p>
-<p>MyST extends <span class="xref std std-term">Markdown</span> by incorporating all the features of <span class="xref std std-term">reStructuredText</span> and <span class="xref std std-term">Sphinx</span> and its extensions.
+<p>MyST extends Markdown by incorporating all the features of reStructuredText and Sphinx and its extensions.
 Contributors are welcome to use either Markdown or MyST syntax.</p>
 <p>MyST may be more familiar to reStructuredText authors.
 MyST allows the use of a fence and <code class="docutils literal notranslate"><span class="pre">{rst-eval}</span></code> to evaluate native reStructuredText.
@@ -991,7 +991,8 @@ This will preserve legibility of images.</p>
 <h4>Inline images<a class="headerlink" href="#inline-images" title="Permalink to this headline">#</a></h4>
 <p>For inline images, we use the MyST extension <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images"><code class="docutils literal notranslate"><span class="pre">html_image</span></code></a>.
 Example syntax is shown below.</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>You can copy <span class="p">&lt;</span><span class="nt">img</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Copy icon"</span> <span class="na">src</span><span class="o">=</span><span class="s">"../../_images/copy.svg"</span> <span class="na">class</span><span class="o">=</span><span class="s">"inline"</span><span class="p">&gt;</span> blocks.
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>You can copy
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Copy icon"</span> <span class="na">src</span><span class="o">=</span><span class="s">"../../_images/copy.svg"</span> <span class="na">class</span><span class="o">=</span><span class="s">"inline"</span> <span class="p">/&gt;</span> blocks.
 </pre></div>
 </div>
 <p>Note that the HTML attribute <code class="docutils literal notranslate"><span class="pre">class</span></code> must be set to <code class="docutils literal notranslate"><span class="pre">inline</span></code> to render the image inline at <code class="docutils literal notranslate"><span class="pre">1rem</span></code>.</p>
@@ -1006,10 +1007,10 @@ Example syntax is shown below.</p>
     :alt: Voting flowchart
 
     This is a caption in a single paragraph.
-    
+
     This is a legend, which consists of all elements after the caption.
     It can include a table.
-    
+
     ======  =======
     Symbol  Meaning
     ======  =======
@@ -1135,23 +1136,23 @@ print(f"my {a}nd line")
 </div>
 <div class="section" id="escape-literal-backticks-inline">
 <h3>Escape literal backticks inline<a class="headerlink" href="#escape-literal-backticks-inline" title="Permalink to this headline">#</a></h3>
-<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>This is MyST syntax for term ``{term}`React` ``
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>This is MyST syntax for term <span class="sb">`React `</span>
 </pre></div>
 </div>
-<p>This is MyST syntax for term <code class="docutils literal notranslate"><span class="pre">{term}`React`</span> </code></p>
+<p>This is MyST syntax for term <code class="docutils literal notranslate"><span class="pre">React</span> </code></p>
 </div>
 <div class="section" id="glossary-terms">
 <h3>Glossary terms<a class="headerlink" href="#glossary-terms" title="Permalink to this headline">#</a></h3>
 <p>Add a term to the <span class="xref std std-ref">glossary-label</span>, located at <code class="file docutils literal notranslate"><span class="pre">/glossary.md</span></code>.</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span>React
-    [<span class="nt">React</span>](<span class="na">https://reactjs.org/</span>) is a JavaScript library for building user interfaces.
+[<span class="nt">React</span>](<span class="na">https://reactjs.org/</span>) is a JavaScript library for building user interfaces.
 </pre></div>
 </div>
 <p>Reference a term in the <span class="xref std std-ref">glossary-label</span>.</p>
-<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Using {term}`React` makes frontends fun again!
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>Using React makes frontends fun again!
 </pre></div>
 </div>
-<p>Using <span class="xref std std-term">React</span> makes frontends fun again!</p>
+<p>Using React makes frontends fun again!</p>
 </div>
 <div class="section" id="nesting-directives">
 <h3>Nesting directives<a class="headerlink" href="#nesting-directives" title="Permalink to this headline">#</a></h3>

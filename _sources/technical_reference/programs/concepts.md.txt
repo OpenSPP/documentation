@@ -5,7 +5,7 @@
 ## Programs
 
 Programs, sometimes also called a campaign, define a social program. A program is defining when, what and how
-beneficiaries receive entitlements. In itself, a program does not do much. The power comes through the use of
+{term}`beneficiaries` receive {term}`entitlements`. In itself, a program does not do much. The power comes through the use of
 "managers", which define the journey of beneficiaries in a program.
 
 Currently, few types of programs are supported:
@@ -19,9 +19,9 @@ Currently, few types of programs are supported:
 
 Cycles represent a distribution cycle.
 
-## Beneficiary
+## beneficiary
 
-A beneficiary is a registrant that is part of a program/cycle.
+A beneficiary is a {term}`registrant` that is part of a program/cycle.
 
 ## Managers
 
