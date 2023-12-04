@@ -69,7 +69,7 @@ OpenSPP's robust architecture makes it an ideal candidate for functioning as a S
 
 3. **Dynamic Data Collection**: OpenSPP addresses both chronic and transient poverty through dynamic data collection, essential for identifying households affected by sudden economic or personal changes.
 
-4. **Enhanced Interoperability**: OpenSPP is particularly strong in its interoperability capabilities. The initial focus will be on integrating with {term}`civil registration` and Vital Statistics (CRVS) and national ID systems to pull data, forming a foundational layer for efficient data management and verification in the Social Registry context.
+4. **Enhanced Interoperability**: OpenSPP is particularly strong in its interoperability capabilities. The initial focus will be on integrating with {term}`Civil Registration and Vital Statistics` (CRVS) and national ID systems to pull data, forming a foundational layer for efficient data management and verification in the Social Registry context.
 
 5. **Governance and Accountability**: OpenSPP supports essential governance and accountability features, ensuring data integrity, privacy, and responsiveness to grievances and monitoring needs.
 
