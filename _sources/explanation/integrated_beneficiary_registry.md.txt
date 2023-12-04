@@ -1,4 +1,4 @@
-# integrated beneficiary registry
+# Integrated Beneficiary Registry
 
 In the realm of {term}`social protection`, an {term}`Integrated beneficiary registry` (IBR) plays a pivotal role. It acts as a comprehensive {term}`information` warehouse, consolidating data about {term}`beneficiaries` from multiple programs across various stages of life. This integration not only streamlines processes but also enhances the {term}`effectiveness` and {term}`efficiency` of social protection systems.
 
@@ -47,13 +47,11 @@ A {term}`social registry` is a comprehensive informational tool that collects, s
 
 Together, these registries form a comprehensive information system for social protection. The Social Registry identifies and assesses potential beneficiaries, while the IBR manages and monitors those who receive benefits. This complementary relationship enhances the overall effectiveness and efficiency of social protection programs, ensuring that resources are appropriately allocated and that eligible individuals receive the support they need.
 
-
 ## Conclusion
 
 The Integrated Beneficiary Registry is a cornerstone in modern social protection {term}`information systems`. By providing a unified view of beneficiary information, it not only enhances the effectiveness of social protection programs but also contributes to better policy-making and improved service delivery. As social protection systems evolve, the role of an IBR will become increasingly critical in ensuring equitable and efficient distribution of social benefits.
 
-
 ## References
 
 - [SPDCI - Social Protection Information System Interacting with Integrated
-Beneficiary Registry](https://socialprotection.org/sites/default/files/multimedia_files/2023%2008%2024%20Interoperability%20in%20Action%20%237%20Final.pdf)
+  Beneficiary Registry](https://socialprotection.org/sites/default/files/multimedia_files/2023%2008%2024%20Interoperability%20in%20Action%20%237%20Final.pdf)
