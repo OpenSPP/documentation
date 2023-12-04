@@ -13,7 +13,7 @@ DPI enhances digital services in countries, aiding in achieving global objective
 DPI integrates critical components for secure, efficient, and accessible digital services:
 
 - **Digital Identity**: Reliable online {term}`identification` systems for individuals and businesses.
-- **Registries**: Specialized systems, such as {term}`civil registration` and Vital Statistics (CRVS) and social registries, that maintain comprehensive and official records.
+- **Registries**: Specialized systems, such as {term}`Civil Registration and Vital Statistics` (CRVS) and social registries, that maintain comprehensive and official records.
 - **Payments**: Systems for straightforward monetary transactions among people, businesses, and governments.
 - **Data Exchange**: Fluid data flows between government and private sector, with robust personal {term}`data protection` measures.
 

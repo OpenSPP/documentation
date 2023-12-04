@@ -1,6 +1,6 @@
 # social protection Management information systems
 
-Social Protection Management information Systems (SP-MIS) are integrated digital platforms that facilitate the administration, coordination, and monitoring of social protection programs. They are designed to streamline the processes involved in delivering social protection {term}`services`, from {term}`beneficiary` {term}`identification` to program evaluation, ensuring efficient and effective implementation of these programs.
+Social Protection Management information Systems (SP-MIS) are integrated digital platforms that facilitate the administration, coordination, and monitoring of social protection programs. They are designed to streamline the processes involved in delivering social protection services, from {term}`beneficiary` {term}`identification` to program evaluation, ensuring efficient and effective implementation of these programs.
 
 ## Operational Functionality of SP-MIS
 
@@ -34,7 +34,7 @@ SP-MIS and Social Registries are complementary systems in social protection fram
 
 3. **Beneficiary Lifecycle Management**: SP-MIS track the entire lifecycle of beneficiaries within programs, from initial enrollment to exit, ensuring timely and appropriate service delivery.
 
-4. **Integration for Policy and Operational efficiency**: The linkage between Social Registries and SP-MIS is crucial for achieving policy coherence and operational efficiency in social protection systems.
+4. **Integration for Policy and Operational Efficiency**: The linkage between Social Registries and SP-MIS is crucial for achieving policy coherence and operational efficiency in social protection systems.
 
 ## SP-MIS in Action
 
@@ -72,9 +72,9 @@ The Social Protection Management Information Systems (SP-MIS) are known by vario
 
 2. **Beneficiary Management Systems (BMS)**: Highlighting the management of beneficiaries in social protection programs.
 
-3. **{term}`social assistance` Information Systems (SAIS)**: Used for systems primarily dealing with social assistance and poverty alleviation.
+3. **Social Assistance Information Systems (SAIS)**: Used for systems primarily dealing with social assistance and poverty alleviation.
 
-4. **Integrated {term}`social services` Systems (ISSS)**: When the system integrates a range of social services including healthcare and education.
+4. **Integrated Social Services Systems (ISSS)**: When the system integrates a range of social services including healthcare and education.
 
 5. **Public Assistance Information Systems (PAIS)**: Pertaining to information management in public assistance programs.
 
