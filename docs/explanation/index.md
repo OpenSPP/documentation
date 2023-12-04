@@ -9,6 +9,11 @@ maxdepth: 2
 hidden: true
 ---
 
+
+digital_public_infrastructure
+social_registry
+integrated_beneficiary_registry
+social_protection_management_information_systems
 user_mgt
 security_archi
 
