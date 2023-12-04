@@ -14,9 +14,9 @@ The operational functions of social registries differ among the countries using 
 
 1. **Data Collection.** The most important part of a social registry is the standardized {term}`registration` questionnaire used to gather information on a given population’s demographic, socio-economic and {term}`household` information. {term}`identification` documents or certificates may also be checked and scanned at this stage. At this stage, individuals or households are referred to as registrants.
 
-2. **{term}`data validation` and verification.** Applicant data can be validated through cross checks with documents, other administrative systems, or through local community validation processes.
+2. **Ddata Validation and verification.** Applicant data can be validated through cross checks with documents, other administrative systems, or through local community validation processes.
 
-3. **Information {term}`intermediation`**: Bridging the gap between citizen-provided data and the requirements of social programs, integrating with systems like National IDs, CRVS and disability registries.
+3. **Information Intermediation**: Bridging the gap between citizen-provided data and the requirements of social programs, integrating with systems like National IDs, {term}`CRVS` and disability registries.
 
 4. **Inclusion and exclusion criteria.** Clear criteria, formats and indicators are defined to facilitate transparent and standardized {term}`eligibility` assessment for social programs. Specific criteria can be used to identify and target vulnerable groups, such as pregnant women, children, or individuals with disabilities. Households can be ranked based on assessment of their needs and conditions, such as with a proxy means test.
 
