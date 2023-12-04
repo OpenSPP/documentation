@@ -24,7 +24,6 @@ myst:
 - [Registering Individuals and Groups](Registering_individuals_and_groups)
 - [Vouchers](vouchers)
 
-
 <!-- - [User Management]
 - [Registrant Management]
 - [Proxy Mean Test]
@@ -35,14 +34,12 @@ myst:
 - [Security and Compliance]
 - Registering individuals and groups
 - Managing social protection programs
-- Grievance and appeals management
+- Grievance and Appeals management
 - Mass campaigns
 - Monitoring and analytics
 - ID card issuance
 - Integrations and APIs
 - User interface tour -->
-
-
 
 ```{toctree}
 :maxdepth: 2

@@ -1,14 +1,14 @@
 # Security Implementations & Practices
 
-This page delves into the implementation and practices of OpenSPP, highlighting its adherence to the principles of zero-trust architecture, user authentication, input/output validation, session management, cryptographic management, file management, and robust logging.
+This page delves into the implementation and practices of OpenSPP, highlighting its adherence to the principles of zero-trust architecture, user {term}`authentication`, input/output validation, session management, cryptographic management, file management, and robust logging.
 
 OpenSPP has been designed around the zero-trust architecture principle. This principle involves the fundamental premise of not automatically trusting anything inside or outside its perimeters. Instead, it verifies everything trying to connect to its systems before granting access. This approach fortifies OpenSPP's security framework, protecting it from both internal and external threats.
 
 The solution accommodates multiple authentication systems, allowing for integration with external ID systems such as Keycloak, MOSIP. This multi-authentication support facilitates seamless interaction with various identity systems while ensuring user authenticity. Moreover, OpenSPP clearly articulates each functionality’s scope and role capabilities, effectively decoupling them from the main business logic, thereby promoting system clarity and integrity.
 
-OpenSPP promotes sophisticated tools for monitoring user behavior, devices, and services. It supports log analysis and event monitoring, enabling proactive identification and response to potential security incidents. This level of surveillance enhances the platform's overall security, providing real-time insights into system activities.
+OpenSPP promotes sophisticated tools for monitoring user behavior, devices, and services. It supports log analysis and event monitoring, enabling proactive {term}`identification` and response to potential security incidents. This level of surveillance enhances the platform's overall security, providing real-time insights into system activities.
 
-In OpenSPP, data inputs are strongly typed, sanitized, and parameterized, ensuring input validation. This process prevents malicious data from entering the system, thereby guarding against potential vulnerabilities. Additionally, the solution meticulously sanitizes and encodes all outputs, including error messages, to prevent unintended disclosure of confidential or internal information.
+In OpenSPP, data inputs are strongly typed, sanitized, and parameterized, ensuring input validation. This process prevents malicious data from entering the system, thereby guarding against potential vulnerabilities. Additionally, the solution meticulously sanitizes and encodes all outputs, including error messages, to prevent unintended disclosure of confidential or internal {term}`information`.
 
 OpenSPP ensures secure session management by utilizing well-vetted algorithms that generate random session identifiers. These algorithms create new session identifiers upon re-authentication and terminate session identifiers post-logout, reinforcing the overall security framework.
 
@@ -22,7 +22,7 @@ OpenSPP is committed to maintaining its security posture by conducting regular v
 
 ## Privacy
 
-The following section elaborates on OpenSPP's consent management framework and its emphasis on data privacy principles.
+The following section elaborates on OpenSPP's consent management framework and its emphasis on {term}`data privacy` principles.
 
 A comprehensive consent management framework lies at the core of OpenSPP’s user-centric approach. This built-in mechanism ensures that user consent is sought, stored, and managed appropriately. By actively incorporating user consent into its operations, OpenSPP ensures that users retain control over their data, fostering trust and transparency.
 

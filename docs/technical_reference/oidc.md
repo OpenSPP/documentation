@@ -1,6 +1,6 @@
 # Configuring Keycloak for OAuth
 
-We recommend using Keycloak as the authentication provider for OpenSPP. This allows for a single sign-on
+We recommend using Keycloak as the {term}`authentication` provider for OpenSPP. This allows for a single sign-on
 experience for users and ensures that the authentication mechanism can evolve independently of the systems
 using it, thus ensuring that the authentication mechanism can be secured and act as a shield in front of the
 systems.

@@ -6,7 +6,7 @@ The implementation can be categorized into two sections where OpenSPP operates a
 
 ## 1. Server Implementation
 
-This section focuses on utilizing OpenSPP as the source of truth for beneficiary information where OpenSPP acts as the server. Such integration allows OpenSPP to seamlessly interact with other critical systems by providing data, thereby enhancing data exchange and operational efficiency. The following steps elaborate how the module can be configured.
+This section focuses on utilizing OpenSPP as the source of truth for beneficiary information where OpenSPP acts as the server. Such integration allows OpenSPP to seamlessly interact with other critical systems by providing data, thereby enhancing data exchange and operational {term}`efficiency`. The following steps elaborate how the module can be configured.
 
 ### 1.1 Deployment and Installation
 
@@ -55,7 +55,7 @@ This section focuses on utilizing another registry as the source for truth to ge
 - Create Search Criteria, Enter Search Criteria Name, Location, and Birthdate Range
 - Click Fetch Button.
 - Individual records will be imported from OpenCRVS Lab to OpenSPP.
-- Fetch Button is now disabled but it can be enabled by clicking the “Enable Fetching”.
+- Fetch Button is now {term}`disabled` but it can be enabled by clicking the “Enable Fetching”.
 - Once an individual record is already fetched, They are now created and visible to the Registry page.
 - Navigate to Registry -> Individual to check the individuals.
 - Navigate to Registry -> Group to check the groups.
