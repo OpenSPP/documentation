@@ -28,7 +28,7 @@
 The OpenSPP platform can work as a standalone system or as a part of a larger ecosystem. It needs to be
 interoperable with other government systems.
 
-Every piece of {term}`information` stored in the platform must have a corresponding API to access it, so that it can
+Every piece of information stored in the platform must have a corresponding API to access it, so that it can
 be used by other systems. For example, if you want to integrate OpenSPP with mobile money, you can leverage
 [Payment Hub EE](https://mifos.gitbook.io/docs/payment-hub-ee/business-overview). Through a well-defined set
 of standard interfaces OpenSPP allows for integration of such components and offers choice of providers for

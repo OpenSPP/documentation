@@ -33,9 +33,9 @@ easily add your managers if those do not fit your needs.
 
 The available managers are:
 
-- [{term}`eligibility` Manager](eligibility_manager.rst)
+- [Eligibility Manager](eligibility_manager.rst)
 - [Entitlement Manager](entitlement_manager.rst)
-- [{term}`deduplication` Manager](deduplication_manager.md)
+- [Deduplication Manager](deduplication_manager.md)
 - [Notification Manager](notification_manager.rst)
 - [Program Manager](program_manager.rst)
 - [Cycle Manager](cycle_manager.rst)

@@ -1,6 +1,6 @@
 # social protection Management information systems
 
-Social Protection Management {term}`information` Systems (SP-MIS) are integrated digital platforms that facilitate the administration, coordination, and monitoring of social protection programs. They are designed to streamline the processes involved in delivering social protection {term}`services`, from {term}`beneficiary` {term}`identification` to program evaluation, ensuring efficient and effective implementation of these programs.
+Social Protection Management information Systems (SP-MIS) are integrated digital platforms that facilitate the administration, coordination, and monitoring of social protection programs. They are designed to streamline the processes involved in delivering social protection {term}`services`, from {term}`beneficiary` {term}`identification` to program evaluation, ensuring efficient and effective implementation of these programs.
 
 ## Operational Functionality of SP-MIS
 
@@ -34,7 +34,7 @@ SP-MIS and Social Registries are complementary systems in social protection fram
 
 3. **Beneficiary Lifecycle Management**: SP-MIS track the entire lifecycle of beneficiaries within programs, from initial enrollment to exit, ensuring timely and appropriate service delivery.
 
-4. **Integration for Policy and Operational {term}`efficiency`**: The linkage between Social Registries and SP-MIS is crucial for achieving policy coherence and operational efficiency in social protection systems.
+4. **Integration for Policy and Operational efficiency**: The linkage between Social Registries and SP-MIS is crucial for achieving policy coherence and operational efficiency in social protection systems.
 
 ## SP-MIS in Action
 

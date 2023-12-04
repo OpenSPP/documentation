@@ -6,7 +6,7 @@ OpenSPP has been designed around the zero-trust architecture principle. This pri
 
 The solution accommodates multiple authentication systems, allowing for integration with external ID systems such as Keycloak, MOSIP. This multi-authentication support facilitates seamless interaction with various identity systems while ensuring user authenticity. Moreover, OpenSPP clearly articulates each functionality’s scope and role capabilities, effectively decoupling them from the main business logic, thereby promoting system clarity and integrity.
 
-OpenSPP promotes sophisticated tools for monitoring user behavior, devices, and {term}`services`. It supports log analysis and event monitoring, enabling proactive {term}`identification` and response to potential security incidents. This level of surveillance enhances the platform's overall security, providing real-time insights into system activities.
+OpenSPP promotes sophisticated tools for monitoring user behavior, devices, and services. It supports log analysis and event monitoring, enabling proactive {term}`identification` and response to potential security incidents. This level of surveillance enhances the platform's overall security, providing real-time insights into system activities.
 
 In OpenSPP, data inputs are strongly typed, sanitized, and parameterized, ensuring input validation. This process prevents malicious data from entering the system, thereby guarding against potential vulnerabilities. Additionally, the solution meticulously sanitizes and encodes all outputs, including error messages, to prevent unintended disclosure of confidential or internal {term}`information`.
 
@@ -14,7 +14,7 @@ OpenSPP ensures secure session management by utilizing well-vetted algorithms th
 
 It uses cryptographic algorithms vetted for encryption/hashing during data transit or at rest. The encryption keys are generated, protected, and stored securely. Depending on a country's requirements during implementation, a Hardware Security Module (HSM) or SoftHSM can be deployed for added cryptographic security.
 
-In the realm of file management, OpenSPP whitelists file formats and limits file sizes for uploaded documents, ensuring system {term}`efficiency` and security. Additionally, OpenSPP is designed not to store confidential data while logging, safeguarding sensitive information from potential exposure.
+In the realm of file management, OpenSPP whitelists file formats and limits file sizes for uploaded documents, ensuring system efficiency and security. Additionally, OpenSPP is designed not to store confidential data while logging, safeguarding sensitive information from potential exposure.
 
 OpenSPP has a configurable logging mechanism covering all assets, with selectable log levels per configurations. This robust logging mechanism is integral to the platform's security strategy, offering valuable insights into system activities.
 
@@ -38,7 +38,7 @@ One of the core facets of OpenSPP's design is its robust approach toward data ma
 
 Data anonymization is a fundamental principle that OpenSPP aligns with, taking substantial measures to protect sensitive and identifiable data. The solution incorporates various principles such as minimizing identifiability, protecting sensitive data, ensuring data security, and implementing constant data monitoring. However, OpenSPP acknowledges that there's a need for more extensive implementation of data anonymization principles. Strategies, including data masking and randomization, are planned for future deployment, fortifying OpenSPP's commitment to preserving data privacy.
 
-At the architectural level, OpenSPP's logical data architecture facilitates layers of separation across various data types, including transactional, workflow, operational, audit, analytical, and {term}`master data` Management (MDM) data. This segregation is accomplished by distributing data across multiple tables per specific business requirements, allowing for enhanced data management and improved system performance.
+At the architectural level, OpenSPP's logical data architecture facilitates layers of separation across various data types, including transactional, workflow, operational, audit, analytical, and Master Data Management (MDM) data. This segregation is accomplished by distributing data across multiple tables per specific business requirements, allowing for enhanced data management and improved system performance.
 
 OpenSPP is built with a strong emphasis on data security and integrity. The solution supports encryption for data both at rest and in motion, which prevents unauthorized access and ensures data confidentiality. Measures such as strong authentication, access control, data backup, and recovery plans, along with regular monitoring and auditing of data, are implemented to guarantee data integrity. OpenSPP plans to implement additional data integrity checks like checksums, hashes, and digital signatures, further enhancing the security framework.
 

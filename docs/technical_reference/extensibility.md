@@ -1,17 +1,14 @@
 # Customisable, Configurable, and Extensible
 
-OpenSPP is a highly adaptable digital {term}`social protection` {term}`information` system designed to improve the {term}`efficiency` and {term}`effectiveness` of social protection programs in low and middle-income countries. Thanks to its foundation on the widely used {term}`ERP` platform, Odoo, OpenSPP offers unparalleled customizability, configurability, and extensibility. This page aims to give technical personnel a thorough understanding of these key features.
-
+OpenSPP is a highly adaptable digital social protection information system designed to improve the {term}`efficiency` and {term}`effectiveness` of social protection programs in low and middle-income countries. Thanks to its foundation on the widely used ERP platform, Odoo, OpenSPP offers unparalleled customizability, configurability, and extensibility. This page aims to give technical personnel a thorough understanding of these key features.
 
 ## Customisable
 
 OpenSPP's customizability is deeply rooted in its underlying Odoo framework, an open-source ERP platform known for its modular architecture and flexibility. This section will delve into the details of how Odoo empowers the customizability of OpenSPP.
 
-
 ### Modular Architecture
 
 Odoo's modular architecture enables developers to create, change, and extend functionalities by working with individual modules. Each module encapsulates specific features, making it easier to develop, support, and upgrade the system without disrupting its core functionality. In OpenSPP, this modular approach allows countries to implement custom solutions that address their unique social protection requirements.
-
 
 ### Inheritance and Overrides
 
@@ -39,7 +36,6 @@ OpenSPP's configurability allows implementers to adapt the system's functionalit
 
 OpenSPP's extensibility is in part a direct result of its foundation on the Odoo framework, which has been designed with extensibility and adaptability in mind. This section will explore the various aspects of Odoo that make OpenSPP a highly extensible solution.
 
-
 ### Large Ecosystem
 
 Odoo boasts a vast ecosystem of pre-built modules and third-party applications developed by its extensive community. This wealth of resources enables OpenSPP users to access a wide range of functionalities and integrations, helping them address specific needs without starting from scratch. With over 15,000 modules available, the possibilities for extending OpenSPP are nearly endless.
@@ -51,7 +47,6 @@ OpenSPP provides powerful web services and REST APIs, allowing external applicat
 ### Custom add-ons path
 
 Odoo enables administrators to specify custom add-ons paths, allowing the installation of third-party modules and extensions without modifying the core platform. This feature ensures that any added extensions or modules can be maintained separately from the core system, preserving the integrity of OpenSPP while allowing for future updates and enhancements.
-
 
 ## Summary
 

@@ -10,12 +10,12 @@ Two primary approaches can be adopted for managing users in OpenSPP, each with i
 
 2. Keycloak Integration: For organizations seeking more advanced user management features, integrating Keycloak with OpenSPP is recommended. Keycloak provides additional layers of security and flexibility, including federated identities (linking user identities across different systems), fine-grained access control, and comprehensive single sign-on capabilities. This approach is particularly beneficial for larger deployments or those requiring more sophisticated identity management solutions.
 
-Despite the approach selected, adhering to best practices in user management is essential for maximizing the {term}`efficiency` and security of OpenSPP.
+Despite the approach selected, adhering to best practices in user management is essential for maximizing the efficiency and security of OpenSPP.
 
 1. Regular Review and Update of User Access: It's crucial to audit user accounts and their access levels regularly. This practice helps in identifying redundant accounts or inappropriate access privileges that could pose security risks.
 2. Implementing the Principle of Least Privilege: By ensuring that users have only the access necessary to perform their job functions, organizations can significantly reduce the risk of internal and external breaches.
 3. Enforcing Strong Password Policies: Implement policies that require complex passwords, encourage users to change passwords regularly, and use multi-factor authentication where possible.
-4. Educating Users: Regular {term}`training` sessions and updates on security practices and system usage guidelines can significantly reduce the risk of accidental breaches or misuse.
+4. Educating Users: Regular training sessions and updates on security practices and system usage guidelines can significantly reduce the risk of accidental breaches or misuse.
 5. Monitoring User Activities: Implementing tools for real-time monitoring and generating periodic reports helps in identifying unusual activities potential security threats, and ensuring compliance with policies.
 
 Expanding and focusing on each of these aspects will be vital to enable proper user management.

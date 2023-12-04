@@ -12,7 +12,7 @@ One cornerstone of OpenSPP's architecture is its API design, implementation, and
 
 Starting with API design, OpenSPP implements Open API Specifications. Further, it adheres to the guidelines of G2P Connect, a comprehensive solution architectural blueprint, ensuring it can seamlessly interact with various systems involved in G2P delivery.
 
-On the security front, OpenSPP lays considerable emphasis on ensuring the robustness of its APIs. The APIs are designed to be secure, incorporating various techniques to ward off potential threats. The goal is to reduce the amount of data shared via APIs based on the context, ensuring only necessary {term}`information` is exchanged, thereby bolstering privacy protection.
+On the security front, OpenSPP lays considerable emphasis on ensuring the robustness of its APIs. The APIs are designed to be secure, incorporating various techniques to ward off potential threats. The goal is to reduce the amount of data shared via APIs based on the context, ensuring only necessary information is exchanged, thereby bolstering privacy protection.
 
 API governance, which is the process of controlling, monitoring, and analyzing the usage and performance of APIs, is presently manually managed in OpenSPP. This rigorous manual process ensures that all APIs adhere to set standards and perform optimally. However, OpenSPP plans to enhance its API governance capabilities by deploying an API Manager product. This tool will automate many governance tasks, ensuring API compliance and performance.
 

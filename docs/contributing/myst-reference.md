@@ -13,18 +13,16 @@ myst:
 
 This chapter provides information and examples for how to write proper MyST syntax—with references to Sphinx extensions for their specific directives—in OpenSPP Documentation.
 
-
 ## MyST, reStructuredText, and Markdown
 
 We use [MyST, or Markedly Structured Text](https://myst-parser.readthedocs.io/en/latest/), a rich and extensible flavor of Markdown, for authoring training documentation.
 
-MyST extends {term}`Markdown` by incorporating all the features of {term}`reStructuredText` and {term}`Sphinx` and its extensions.
+MyST extends Markdown by incorporating all the features of reStructuredText and Sphinx and its extensions.
 Contributors are welcome to use either Markdown or MyST syntax.
 
 MyST may be more familiar to reStructuredText authors.
 MyST allows the use of a fence and `{rst-eval}` to evaluate native reStructuredText.
 This may be useful when Markdown does not provide sufficient flexibility, such as for `figure`.
-
 
 ## MyST syntax reference
 
@@ -37,7 +35,6 @@ Official MyST documentation
 - [The MyST Syntax Guide](https://myst-parser.readthedocs.io/en/latest/syntax/syntax.html)
 - [MyST Syntax Reference](https://myst-parser.readthedocs.io/en/latest/syntax/reference.html)
 ```
-
 
 ### Cross-references
 
@@ -52,7 +49,6 @@ Here is how to set up and build the documentation locally {doc}`/contributing/se
 ```
 
 Here is how to set up and build the documentation locally {doc}`/contributing/setup-build`.
-
 
 (myst-reference-link-heading-label)=
 
@@ -72,7 +68,6 @@ Read the section {ref}`myst-reference-link-heading-label`.
 
 Read the section {ref}`myst-reference-hello-heading-label`.
 
-
 #### Link to an arbitrary location
 
 ```md
@@ -89,7 +84,6 @@ I have an HTML anchor above me.
 
 Click the link to visit {ref}`my text <example-target-label>`.
 
-
 #### Link to external page
 
 ```md
@@ -97,7 +91,6 @@ Use [Shimmer](http://example.com) for cleaner whiter teeth.
 ```
 
 Use [Shimmer](http://example.com) for cleaner whiter teeth.
-
 
 ### Images and figures
 
@@ -107,7 +100,6 @@ However we can {ref}`enhance images with cards <enhance-images-label>` to add a 
 Use `image` for anything but diagrams.
 
 Use `figure` for diagrams.
-
 
 (static-assets-label)=
 
@@ -122,13 +114,11 @@ Don't use file-relative paths.
 
 Configuration in the `conf.py` files for the main documentation and its submodules handle the resolution of `docs`-root-relative paths for you.
 
-
 #### Width of media
 
 The main content area of a page in the documentation is 743 pixels wide.
 When taking screenshots or videos, resize your browser window, or try to limit the width of your media to 740 pixels.
 This will preserve legibility of images.
-
 
 (enhance-images-label)=
 
@@ -160,12 +150,12 @@ _Caching Control Panel_
 _Caching Control Panel_
 ````
 
-
 #### Accessibility with `alt` text
 
 From [Web Accessibility In Mind (WebAIM)](https://webaim.org/techniques/alttext/):
 
 > Alternative text serves several functions:
+>
 > - It is read by screen readers in place of images allowing the content and function of the image to be accessible to those with visual or certain cognitive disabilities.
 > - It is displayed in place of the image in browsers if the image file is not loaded or when the user has chosen not to view images.
 > - It provides a semantic meaning and description to images which can be read by search engines or be used to later determine the content of the image from page context alone.
@@ -182,17 +172,17 @@ The following MyST example will display as shown below.
 :alt: XKCD "Standards" comic strip
 ```
 
-
 #### Inline images
 
 For inline images, we use the MyST extension [`html_image`](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images).
 Example syntax is shown below.
 
 ```html
-You can copy <img alt="Copy icon" src="../../_images/copy.svg" class="inline"> blocks.
+You can copy
+<img alt="Copy icon" src="../../_images/copy.svg" class="inline" /> blocks.
 ```
 
-Note that the HTML attribute `class` must be set to `inline` to render the image inline at `1rem`. 
+Note that the HTML attribute `class` must be set to `inline` to render the image inline at `1rem`.
 
 The above syntax renders as shown below.
 
@@ -208,10 +198,10 @@ The following MyST example will display as shown below.
     :alt: Voting flowchart
 
     This is a caption in a single paragraph.
-    
+
     This is a legend, which consists of all elements after the caption.
     It can include a table.
-    
+
     ======  =======
     Symbol  Meaning
     ======  =======
@@ -227,10 +217,10 @@ The following MyST example will display as shown below.
     :alt: Voting flowchart
 
     This is a caption in a single paragraph.
-    
+
     This is a legend, which consists of all elements after the caption.
     It can include a table.
-    
+
     ======  =======
     Symbol  Meaning
     ======  =======
@@ -239,7 +229,6 @@ The following MyST example will display as shown below.
     ➞       Flow
     ======  =======
 ```
-
 
 ### Video
 
@@ -270,7 +259,6 @@ The above MyST markup renders as shown below.
 ```{video} /_static/user-manual/blocks/block-copy-cut.mp4
     :width: 100%
 ```
-
 
 ### Diagrams and graphs with Graphviz
 
@@ -303,7 +291,6 @@ The following MyST example will display as shown below.
       ZCML -> {Python, Template};
     }
 ```
-
 
 ### Code block
 
@@ -348,11 +335,10 @@ print(f"my {a}nd line")
 ### Escape literal backticks inline
 
 ```md
-This is MyST syntax for term ``{term}`React` ``
+This is MyST syntax for term `React `
 ```
 
-This is MyST syntax for term ``{term}`React` ``
-
+This is MyST syntax for term `React `
 
 ### Glossary terms
 
@@ -360,17 +346,16 @@ Add a term to the {ref}`glossary-label`, located at {file}`/glossary.md`.
 
 ```md
 React
-    [React](https://reactjs.org/) is a JavaScript library for building user interfaces.
+[React](https://reactjs.org/) is a JavaScript library for building user interfaces.
 ```
 
 Reference a term in the {ref}`glossary-label`.
 
 ```md
-Using {term}`React` makes frontends fun again!
+Using React makes frontends fun again!
 ```
 
-Using {term}`React` makes frontends fun again!
-
+Using React makes frontends fun again!
 
 ### Nesting directives
 

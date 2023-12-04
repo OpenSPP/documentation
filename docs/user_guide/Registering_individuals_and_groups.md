@@ -9,7 +9,7 @@ A {term}`registrant` can be:
 - An `individual`
 
 Depending on the project's requirements, a registrant can simply contain a `name` or full biographic
-{term}`information`, ID document numbers, pictures, bank account numbers, phone numbers and more.
+information, ID document numbers, pictures, bank account numbers, phone numbers and more.
 
 ::::{important}
 

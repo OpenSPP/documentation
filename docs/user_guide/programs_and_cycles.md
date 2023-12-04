@@ -1,11 +1,10 @@
 # Programs and cycles
 
-
 # Introduction
 
 OpenSPP centers around {term}`social protection` {term}`Program` and {term}`Cycle` Management, using the World Bank Sourcebook Model, a widely accepted framework for designing and implementing programs.
 
-OpenSPP enables program administrators to define {term}`eligibility criteria`, configure payment schemes, manage {term}`grievance` redress mechanisms, track inventory and distribution of goods, and generate reports and dashboards for monitoring and evaluation 
+OpenSPP enables program administrators to define {term}`eligibility criteria`, configure payment schemes, manage {term}`grievance` redress mechanisms, track inventory and distribution of goods, and generate reports and dashboards for monitoring and evaluation
 purposes.
 
 # Program components
@@ -17,7 +16,6 @@ In OpenSPP, a program is composed of multiple components that can be installed a
 The eligibility manager verifies if a {term}`beneficiary` is eligible for a given program. The eligibility determination can be based on data stored in OpenSPP or on an external system using API calls.
 
 The eligibility manager allows to select one or multiple areas and different categorical or threshold based criteria based on the data stored in OpenSPP.
-
 
 ## Cycle manager
 

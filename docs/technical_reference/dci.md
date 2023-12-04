@@ -6,7 +6,7 @@ The implementation can be categorized into two sections where OpenSPP operates a
 
 ## 1. Server Implementation
 
-This section focuses on utilizing OpenSPP as the source of truth for {term}`beneficiary` {term}`information` where OpenSPP acts as the server. Such integration allows OpenSPP to seamlessly interact with other critical systems by providing data, thereby enhancing data exchange and operational {term}`efficiency`. The following steps elaborate how the module can be configured.
+This section focuses on utilizing OpenSPP as the source of truth for beneficiary information where OpenSPP acts as the server. Such integration allows OpenSPP to seamlessly interact with other critical systems by providing data, thereby enhancing data exchange and operational {term}`efficiency`. The following steps elaborate how the module can be configured.
 
 ### 1.1 Deployment and Installation
 
