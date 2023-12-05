@@ -41,7 +41,7 @@ The project is currently under development, and everything is evolving rapidly a
 To learn more, take a look at the [Architecture](technical_reference/architecture) page.
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 :hidden: true
 
 tutorials/index
