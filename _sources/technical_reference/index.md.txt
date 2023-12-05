@@ -30,7 +30,13 @@ external_api
 backup
 
 # Managers and Modules
-programs
+programs/concepts
+programs/program_manager
+programs/cycle_manager
+programs/eligibility_manager
+programs/entitlement_manager
+programs/deduplication_manager
+programs/notification_manager
 
 # License
 license
