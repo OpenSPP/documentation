@@ -1,4 +1,4 @@
-name: Build and deploy OpenSPP documentation
+name: Run Vale
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get install libsasl2-dev libldap2-dev libssl-dev &&
-          pip install -q -r requirements_frozen.txt
+          pip install -q -r requirements_frozen.txt && pip install vale
 
       - name: Run Vale
         run: make vale
