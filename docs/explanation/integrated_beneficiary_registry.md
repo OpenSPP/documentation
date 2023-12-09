@@ -54,4 +54,4 @@ The Integrated Beneficiary Registry is a cornerstone in modern social protection
 ## References
 
 - [SPDCI - Social Protection Information System Interacting with Integrated
-  Beneficiary Registry](https://spdci.org/resources/interoperability-in-action-6-social-registry-workshop-recording/)
+  Beneficiary Registry](https://spdci.org/resources/interoperability-in-action-7-integrated-beneficiary-registry-english-recording/)
