@@ -5,6 +5,10 @@ on:
     branches:
       - "main"
 
+  schedule:
+    # First day of month at 05:46 in every 2nd month
+    - cron: '46 5 * * 1'
+
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
