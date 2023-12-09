@@ -187,6 +187,8 @@ linkcheck_ignore = [
     r"http://0.0.0.0",
     r"http://127.0.0.1",
     r"^/_static/",
+    r"https://www.researchgate.net/",
+    
 ]
 linkcheck_anchors = True
 # linkcheck_timeout = 10
