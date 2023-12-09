@@ -191,10 +191,10 @@ linkcheck_ignore = [
     
 ]
 linkcheck_anchors = True
-# linkcheck_timeout = 10
-# linkcheck_retries = 2
-linkcheck_timeout = 5
-linkcheck_retries = 1
+linkcheck_timeout = 10
+linkcheck_retries = 2
+# linkcheck_timeout = 5
+# linkcheck_retries = 1
 
 # The suffix of source filenames.
 source_suffix = {
