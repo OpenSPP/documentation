@@ -22,7 +22,7 @@ A high-level overview of how OpenSPP’s documentation is organized will help yo
 - [Reference guides](technical_reference/index) are technical descriptions of the software, and describe how OpenSPP works and how to use it. They are technical documents and assume that you have a basic understanding of key software concepts.
 - [How-to guides](howto/index) provide detailed instructions on how to use the specific features and modules of OpenSPP. They provide step by step guidance on how to perform a specific task or achieve a particular goal. They are more advanced than tutorials and assume some knowledge of how OpenSPP works.
 - [Explanations](explanation/index) help to clarify, deepen and broaden understanding of a subject. They help to explain the background and context of why certain things are done e.g. design decisions, historical reasons, technical constraints. Explanations help to give a bigger picture and join things together.
-- [Glossary](glossary/index) provides definitions and explanations of terms or specialized language used in social protection. Translations are provided in French, Spanish and Arabic.
+- [Glossary](glossary) provides definitions and explanations of terms or specialized language used in social protection. Translations are provided in French, Spanish and Arabic.
 
 ## Guiding principles
 
