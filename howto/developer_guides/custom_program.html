@@ -22,7 +22,7 @@
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
 <meta content="This guide provides a structured approach for implementing and customising the program in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, XM..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Customize Program – Howto — OpenSPP Documentation v1.0</title>
+<title>Customize Program – How to — OpenSPP Documentation v1.0</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -55,7 +55,7 @@
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
-<link href="../../technical_reference/index.html" rel="next" title="Technical Reference"/>
+<link href="custom_cycle.html" rel="next" title="Customize Cycle"/>
 <link href="custom_service_points.html" rel="prev" title="Customize Service Points"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
@@ -208,7 +208,7 @@
 </li>
 <li class="toctree-l1 current active has-children">
 <a class="reference internal" href="../">
-   Howto
+   How to
   </a>
 <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
 <label for="toctree-checkbox-3">
@@ -254,6 +254,11 @@
 <li class="toctree-l2 current active">
 <a class="current reference internal" href="#">
      Customize Program
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="custom_cycle.html">
+     Customize Cycle
     </a>
 </li>
 </ul>
@@ -557,7 +562,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Customize Program – Howto</span>
+<span>Customize Program – How to</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -760,15 +765,15 @@
 <div class="section" id="odoo-setup-from-source">
 <h2>Odoo Setup from source<a class="headerlink" href="#odoo-setup-from-source" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Existence of openg2p-program folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-program.git">https://github.com/OpenG2P/openg2p-program.git</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
+<li><p>Existence of openg2p-program folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-program.git">here</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
 <li><p>Availability of modules: g2p_programs.</p></li>
-<li><p>Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-registry.git">https://github.com/OpenG2P/openg2p-registry.git</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
+<li><p>Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-registry.git">here</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
 <li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership, g2p_bank.</p></li>
-<li><p>Existence of openspp-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenSPP/openspp-registry.git">https://github.com/OpenSPP/openspp-registry.git</a> into odoo/custom, navigate to the openspp-registry folder, and switch to the specified branch.</p></li>
+<li><p>Existence of openspp-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenSPP/openspp-registry.git">here</a> into odoo/custom, navigate to the openspp-registry folder, and switch to the specified branch.</p></li>
 <li><p>Availability of modules: spp_programs, spp_programs_sp, g2p_entitlement_cash, spp_entitlement_inkind, spp_eligibility_sql, spp_eligibility_tags, spp_area, spp_service_point.</p></li>
-<li><p>Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/queue.git">https://github.com/OCA/queue.git</a> into odoo/custom, navigate to the queue, and switch to the specified branch.</p></li>
+<li><p>Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/queue.git">here</a> into odoo/custom, navigate to the queue, and switch to the specified branch.</p></li>
 <li><p>Availability of modules: queue_job.</p></li>
-<li><p>Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/web.git">https://github.com/OCA/web.git</a> into odoo/custom, navigate to the web, and switch to the specified branch.</p></li>
+<li><p>Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/web.git">here</a> into odoo/custom, navigate to the web, and switch to the specified branch.</p></li>
 <li><p>Availability of modules: web, web_domain_field</p></li>
 </ul>
 </div>
@@ -871,10 +876,10 @@
 <p class="prev-next-title">Customize Service Points</p>
 </div>
 </a>
-<a class="right-next" href="../../technical_reference/index.html" id="next-link" title="next page">
+<a class="right-next" href="custom_cycle.html" id="next-link" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Technical Reference</p>
+<p class="prev-next-title">Customize Cycle</p>
 </div>
 <i class="fas fa-angle-right"></i>
 </a>

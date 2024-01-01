@@ -1,4 +1,4 @@
-# Howto
+# How to
 
 Here you’ll find short answers to “How do I….?” types of questions. These how-to guides don’t cover topics in depth – you’ll find that material in the Using OpenSPP and the API Reference. However, these guides will help you quickly accomplish common tasks.
 
@@ -20,5 +20,6 @@ developer_guides/custom_registry
 developer_guides/custom_areas
 developer_guides/custom_service_points
 developer_guides/custom_program
+developer_guides/custom_cycle
 
 ```

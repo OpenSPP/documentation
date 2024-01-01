@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Program Manager" property="og:title"/>
+<meta content="Customize Cycle" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/technical_reference/programs/program_manager.html" property="og:url"/>
+<meta content="https://docs.openspp.org/howto/developer_guides/custom_cycle.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="The program manager determines which registrants/groups are included in the program. odoo.addons.g2p_programs.models.managers.program_manager provides the class BaseProgramManager define the interf..." property="og:description"/>
+<meta content="This guide provides a structured approach for implementing and customising the cycle in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, XML,..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="The program manager determines which registrants/groups are included in the program. odoo.addons.g2p_programs.models.managers.program_manager provides the class BaseProgramManager define the interf..." name="description"/>
+<meta content="This guide provides a structured approach for implementing and customising the cycle in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, XML,..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Program Manager – Technical Reference — OpenSPP Documentation v1.0</title>
+<title>Customize Cycle – How to — OpenSPP Documentation v1.0</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -50,13 +50,13 @@
 <script src="../../_static/patch_scrollToActive.js"></script>
 <script src="../../_static/search_shortcut.js"></script>
 <script src="../../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/technical_reference/programs/program_manager.html" rel="canonical">
+<link href="https://docs.openspp.org/howto/developer_guides/custom_cycle.html" rel="canonical">
 <link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.0" type="application/opensearchdescription+xml"/>
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
-<link href="cycle_manager.html" rel="next" title="Cycle Manager"/>
-<link href="concepts.html" rel="prev" title="Manager Overview"/>
+<link href="../../technical_reference/index.html" rel="next" title="Technical Reference"/>
+<link href="custom_program.html" rel="prev" title="Customize Program"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -206,180 +206,180 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children">
-<a class="reference internal" href="../../howto/">
-   How to
-  </a>
-<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-<label for="toctree-checkbox-3">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l2">
-<a class="reference internal" href="../../howto/developer_mode.html">
-     Developer mode (debug mode)
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../../howto/user_guides/implementing_pmt.html">
-     Implementing Proxy Means Testing (PMT)
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../../howto/developer_guides/development_setup.html">
-     Development Setup
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../../howto/developer_guides/troubleshooting.html">
-     Troubleshooting
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../../howto/developer_guides/custom_registry.html">
-     Customize Registry
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../../howto/developer_guides/custom_areas.html">
-     Customize Areas
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../../howto/developer_guides/custom_service_points.html">
-     Customize Service Points
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../../howto/developer_guides/custom_program.html">
-     Customize Program
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../../howto/developer_guides/custom_cycle.html">
-     Customize Cycle
-    </a>
-</li>
-</ul>
-</li>
 <li class="toctree-l1 current active has-children">
 <a class="reference internal" href="../">
-   Technical Reference
+   How to
   </a>
-<input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-<label for="toctree-checkbox-4">
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<label for="toctree-checkbox-3">
 <i class="fas fa-chevron-down">
 </i>
 </label>
 <ul class="current">
 <li class="toctree-l2">
-<a class="reference internal" href="../architecture.html">
-     Architecture
+<a class="reference internal" href="../developer_mode.html">
+     Developer mode (debug mode)
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../extensibility.html">
-     Customisable, Configurable, and Extensible
+<a class="reference internal" href="../user_guides/implementing_pmt.html">
+     Implementing Proxy Means Testing (PMT)
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../security.html">
-     Security Implementations &amp; Practices
+<a class="reference internal" href="development_setup.html">
+     Development Setup
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../oidc.html">
-     Configuring Keycloak for OAuth
+<a class="reference internal" href="troubleshooting.html">
+     Troubleshooting
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../audit_logs.html">
-     Audit Logs
+<a class="reference internal" href="custom_registry.html">
+     Customize Registry
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../code.html">
-     Code &amp; Repository Management
+<a class="reference internal" href="custom_areas.html">
+     Customize Areas
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../release_management.html">
-     Release Management
+<a class="reference internal" href="custom_service_points.html">
+     Customize Service Points
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../monitoring.html">
-     Monitoring
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="dashboards.html">
-     Dashboards
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../integrations.html">
-     Integrations
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../dci.html">
-     Implementation of DCI Specification
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../external_api.html">
-     External API
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../backup.html">
-     Backup and Recovery
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../performance_optimization.html">
-     Performance Optimization
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../module.html">
-     Module Development
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="concepts.html">
-     Manager Overview
+<a class="reference internal" href="custom_program.html">
+     Customize Program
     </a>
 </li>
 <li class="toctree-l2 current active">
 <a class="current reference internal" href="#">
+     Customize Cycle
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../technical_reference/">
+   Technical Reference
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/architecture.html">
+     Architecture
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/extensibility.html">
+     Customisable, Configurable, and Extensible
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/security.html">
+     Security Implementations &amp; Practices
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/oidc.html">
+     Configuring Keycloak for OAuth
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/audit_logs.html">
+     Audit Logs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/code.html">
+     Code &amp; Repository Management
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/release_management.html">
+     Release Management
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/monitoring.html">
+     Monitoring
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/programs/dashboards.html">
+     Dashboards
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/integrations.html">
+     Integrations
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/dci.html">
+     Implementation of DCI Specification
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/external_api.html">
+     External API
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/backup.html">
+     Backup and Recovery
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/performance_optimization.html">
+     Performance Optimization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/module.html">
+     Module Development
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/programs/concepts.html">
+     Manager Overview
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/programs/program_manager.html">
      Program Manager
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="cycle_manager.html">
+<a class="reference internal" href="../../technical_reference/programs/cycle_manager.html">
      Cycle Manager
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="eligibility_manager.html">
+<a class="reference internal" href="../../technical_reference/programs/eligibility_manager.html">
      Eligibility Manager
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="entitlement_manager.html">
+<a class="reference internal" href="../../technical_reference/programs/entitlement_manager.html">
      Entitlement Manager
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="deduplication_manager.html">
+<a class="reference internal" href="../../technical_reference/programs/deduplication_manager.html">
      Deduplication Manager
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="notification_manager.html">
+<a class="reference internal" href="../../technical_reference/programs/notification_manager.html">
      Notification Manager
     </a>
 </li>
@@ -562,7 +562,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Program Manager – Technical Reference</span>
+<span>Customize Cycle – How to</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -585,7 +585,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Ftechnical_reference/programs/program_manager.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/custom_cycle.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -593,7 +593,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?technical_reference/programs/program_manager.rst#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/developer_guides/custom_cycle.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -610,11 +610,11 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/technical_reference/programs/program_manager.rst.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/developer_guides/custom_cycle.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
-<span class="headerbtn__text-container">.rst</span>
+<span class="headerbtn__text-container">.md</span>
 </a>
 </li>
 <li>
@@ -628,127 +628,218 @@
 </ul>
 </div>
 </div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
 </div>
 </div>
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
+   Odoo Setup from Docker using doodba
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-source">
+   Odoo Setup from source
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#utilising-the-cycle-module">
+   Utilising the Cycle Module
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#customise-cycle">
+   Customise Cycle
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#additional-references">
+   Additional References
+  </a>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 <div class="article row">
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Program Manager</h1>
+<h1>Customize Cycle</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
+   Odoo Setup from Docker using doodba
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-source">
+   Odoo Setup from source
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#utilising-the-cycle-module">
+   Utilising the Cycle Module
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#customise-cycle">
+   Customise Cycle
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#additional-references">
+   Additional References
+  </a>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="program-manager">
-<h1>Program Manager<a class="headerlink" href="#program-manager" title="Permalink to this headline">#</a></h1>
-<p>The program manager determines which registrants/groups are included in the program.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">odoo.addons.g2p_programs.models.managers.program_manager</span></code> provides the class  <a class="reference internal" href="#id0" title="odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseProgramManager</span></code></a> define
-the interface for this manager. <code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultProgramManager</span></code> is the default implementation.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">odoo.addons.g2p_programs.models.managers.program_manager.</span></span><span class="sig-name descname"><span class="pre">BaseProgramManager</span></span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/program_manager.html#BaseProgramManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager" title="Permalink to this definition">#</a></dt>
-<dd><dl class="py method">
-<dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager.enroll_eligible_registrants">
-<span class="sig-name descname"><span class="pre">enroll_eligible_registrants</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/program_manager.html#BaseProgramManager.enroll_eligible_registrants"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager.enroll_eligible_registrants" title="Permalink to this definition">#</a></dt>
-<dd><p>This method is used to enroll the beneficiaries in a program.
-Returns:</p>
-<blockquote>
-<div><p>bool: True if the beneficiaries were enrolled, False otherwise.</p>
-</div></blockquote>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager.last_cycle">
-<span class="sig-name descname"><span class="pre">last_cycle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/program_manager.html#BaseProgramManager.last_cycle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager.last_cycle" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the last cycle of the program
-Returns:</p>
-<blockquote>
-<div><p>cycle: the last cycle of the program</p>
-</div></blockquote>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager.mark_enroll_eligible_as_done">
-<span class="sig-name descname"><span class="pre">mark_enroll_eligible_as_done</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/program_manager.html#BaseProgramManager.mark_enroll_eligible_as_done"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager.mark_enroll_eligible_as_done" title="Permalink to this definition">#</a></dt>
-<dd><p>Complete the enrollment of eligible beneficiaries.
-Base <a class="reference internal" href="#id3" title="odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager.mark_enroll_eligible_as_done"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mark_enroll_eligible_as_done()</span></code></a>.
-This is executed when all the jobs are completed.
-Post a message in the chatter.
-:return:</p>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager.new_cycle">
-<span class="sig-name descname"><span class="pre">new_cycle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/program_manager.html#BaseProgramManager.new_cycle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager.new_cycle" title="Permalink to this definition">#</a></dt>
-<dd><p>Create the next cycle of the program
-Returns:</p>
-<blockquote>
-<div><p>cycle: the newly created cycle</p>
-</div></blockquote>
-</dd></dl>
-</dd></dl>
-<dl class="py class">
-<dt class="sig sig-object py" id="id0">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">odoo.addons.g2p_programs.models.managers.program_manager.</span></span><span class="sig-name descname"><span class="pre">BaseProgramManager</span></span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/program_manager.html#BaseProgramManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition">#</a></dt>
-<dd><dl class="py method">
-<dt class="sig sig-object py" id="id1">
-<span class="sig-name descname"><span class="pre">enroll_eligible_registrants</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/program_manager.html#BaseProgramManager.enroll_eligible_registrants"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Permalink to this definition">#</a></dt>
-<dd><p>This method is used to enroll the beneficiaries in a program.
-Returns:</p>
-<blockquote>
-<div><p>bool: True if the beneficiaries were enrolled, False otherwise.</p>
-</div></blockquote>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="id2">
-<span class="sig-name descname"><span class="pre">last_cycle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/program_manager.html#BaseProgramManager.last_cycle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Permalink to this definition">#</a></dt>
-<dd><p>Returns the last cycle of the program
-Returns:</p>
-<blockquote>
-<div><p>cycle: the last cycle of the program</p>
-</div></blockquote>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="id3">
-<span class="sig-name descname"><span class="pre">mark_enroll_eligible_as_done</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/program_manager.html#BaseProgramManager.mark_enroll_eligible_as_done"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Permalink to this definition">#</a></dt>
-<dd><p>Complete the enrollment of eligible beneficiaries.
-Base <a class="reference internal" href="#id3" title="odoo.addons.g2p_programs.models.managers.program_manager.BaseProgramManager.mark_enroll_eligible_as_done"><code class="xref py py-meth docutils literal notranslate"><span class="pre">mark_enroll_eligible_as_done()</span></code></a>.
-This is executed when all the jobs are completed.
-Post a message in the chatter.
-:return:</p>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="id4">
-<span class="sig-name descname"><span class="pre">new_cycle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/odoo/addons/g2p_programs/models/managers/program_manager.html#BaseProgramManager.new_cycle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id4" title="Permalink to this definition">#</a></dt>
-<dd><p>Create the next cycle of the program
-Returns:</p>
-<blockquote>
-<div><p>cycle: the newly created cycle</p>
-</div></blockquote>
-</dd></dl>
-</dd></dl>
+<div class="section" id="customize-cycle">
+<h1>Customize Cycle<a class="headerlink" href="#customize-cycle" title="Permalink to this headline">#</a></h1>
+<p>This guide provides a structured approach for implementing and customising the cycle in OpenSPP through the development of a custom module.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<p>Knowledge in Python, Odoo, OOP, HTML, XML, Xpaths.
+A functional OpenSPP installation.
+Administrative access to the OpenSPP backend.</p>
+</div>
+<div class="section" id="odoo-setup-from-docker-using-doodba">
+<h2>Odoo Setup from Docker using doodba<a class="headerlink" href="#odoo-setup-from-docker-using-doodba" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Existence of openg2p_program folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: g2p_programs.</p></li>
+<li><p>Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>vailability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership, g2p_bank.</p></li>
+<li><p>Existence of queue folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: queue_job</p></li>
+<li><p>Existence of web folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: web, web_domain_field.</p></li>
+</ul>
+</div>
+<div class="section" id="odoo-setup-from-source">
+<h2>Odoo Setup from source<a class="headerlink" href="#odoo-setup-from-source" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Existence of openg2p-program folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-program.git">here</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: g2p_programs.</p></li>
+<li><p>Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-registry.git">here</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership, g2p_bank.</p></li>
+<li><p>Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/queue.git">here</a> into odoo/custom, navigate to the queue, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: queue_job.</p></li>
+<li><p>Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/web.git">here</a> into odoo/custom, navigate to the web, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: web, web_domain_field</p></li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Log into OpenSPP with administrative rights.</p></li>
+<li><p>Access the “Apps” menu from the dashboard to manage OpenSPP modules.</p></li>
+<li><p>Choose “Update Apps List” to refresh the module list.</p></li>
+<li><p>Search for “OpenG2P Programs” and initiate installation. This process will also install associated modules: G2P Registry: Groups, G2P Registry: Individual, G2P Registry: Base.</p></li>
+</ul>
+</div>
+<div class="section" id="utilising-the-cycle-module">
+<h2>Utilising the Cycle Module<a class="headerlink" href="#utilising-the-cycle-module" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>If a new Cycle is required to be added, enter one of the Programs.</p></li>
+<li><p>Click “Create New Cycle” in the top corner of the page.</p></li>
+<li><p>A cycle will be created and added to the table inside the Cycles tab.</p></li>
+<li><p>A program can create multiple cycles.</p></li>
+<li><p>Click on the green button beside the cycle name of a cycle.</p></li>
+<li><p>Upon clicking the green button, the system will be redirected to the cycle page where the information of the cycle can be seen.</p></li>
+<li><p>Several buttons can be seen in the top corner of the cycle page.</p></li>
+<li><p>“Copy Beneficiaries from Program” button will copy all of the enrolled registry from the program to the cycle.</p></li>
+<li><p>“Verify Eligibility” button will verify all of the enrolled registry in the cycle if they are still eligible for this cycle and program.</p></li>
+<li><p>“To Approve” button will change the state of the cycle from “Draft” to “To approve”.</p></li>
+<li><p>Once the cycle’s state is in “To Approve”, only the “Approve” and “Reset to Draft” button will be visible in the top corner of the page.</p></li>
+<li><p>“Approve” button will change the state of the cycle from “To approve” to “Approve”.</p></li>
+<li><p>“Reset to Draft” button will revert back the state of the cycle from “To approve” to “Draft”.</p></li>
+<li><p>Once the cycle’s state is in “Approve”, only the “Validate Entitlements” button will be visible in the top corner of the page.</p></li>
+<li><p>“Validate Entitlements” button changes the status of entitlements from “Draft” to “Pending Validation”.</p></li>
+<li><p>Start date and End date of a cycle depends on the Recurrence settings that were setup in Cycle Manager.</p></li>
+</ul>
+</div>
+<div class="section" id="customise-cycle">
+<h2>Customise Cycle<a class="headerlink" href="#customise-cycle" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>To introduce new fields or functions in a new module, develop a Python file extending the model “g2p.cycle” and integrate this file into <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>.</p></li>
+<li><p>Upgrade the module incorporating the new Python file.</p></li>
+<li><p>To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.</p></li>
+</ul>
+</div>
+<div class="section" id="additional-references">
+<h2>Additional References<a class="headerlink" href="#additional-references" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Below are some Odoo references that may help in adding the field both in models and in UI. For further guidance on model creation, inheritance, and UI integration, the following Odoo documentation may be useful:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html">Views</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">Chapter 4: Models And Basic Fields</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/07_basicviews.html#chapter-7-basic-views">Chapter 7: Basic Views</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">Chapter 13: Inheritance</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">Chapter 14: Interact With Other Modules</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </main>
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
-<a class="left-prev" href="concepts.html" id="prev-link" title="previous page">
+<a class="left-prev" href="custom_program.html" id="prev-link" title="previous page">
 <i class="fas fa-angle-left"></i>
 <div class="prev-next-info">
 <p class="prev-next-subtitle">previous</p>
-<p class="prev-next-title">Manager Overview</p>
+<p class="prev-next-title">Customize Program</p>
 </div>
 </a>
-<a class="right-next" href="cycle_manager.html" id="next-link" title="next page">
+<a class="right-next" href="../../technical_reference/index.html" id="next-link" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Cycle Manager</p>
+<p class="prev-next-title">Technical Reference</p>
 </div>
 <i class="fas fa-angle-right"></i>
 </a>
