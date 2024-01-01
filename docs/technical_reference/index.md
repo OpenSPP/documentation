@@ -7,6 +7,7 @@
 # Configuration and Architecture
 architecture
 extensibility
+performance
 
 # Security and Compliance
 security
