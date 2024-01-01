@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Customize Program" property="og:title"/>
+<meta content="Customize Audit Logs" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/howto/developer_guides/custom_program.html" property="og:url"/>
+<meta content="https://docs.openspp.org/howto/developer_guides/custom_audit.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="This guide provides a structured approach for implementing and customising the program in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, XM..." property="og:description"/>
+<meta content="This guide provides a structured approach for implementing and customising the audit log in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, ..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="This guide provides a structured approach for implementing and customising the program in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, XM..." name="description"/>
+<meta content="This guide provides a structured approach for implementing and customising the audit log in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, ..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Customize Program – How to — OpenSPP Documentation v1.0</title>
+<title>Customize Audit Logs – How to — OpenSPP Documentation v1.0</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -50,13 +50,13 @@
 <script src="../../_static/patch_scrollToActive.js"></script>
 <script src="../../_static/search_shortcut.js"></script>
 <script src="../../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/howto/developer_guides/custom_program.html" rel="canonical">
+<link href="https://docs.openspp.org/howto/developer_guides/custom_audit.html" rel="canonical">
 <link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.0" type="application/opensearchdescription+xml"/>
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
-<link href="custom_cycle.html" rel="next" title="Customize Cycle"/>
-<link href="custom_service_points.html" rel="prev" title="Customize Service Points"/>
+<link href="../../technical_reference/index.html" rel="next" title="Technical Reference"/>
+<link href="custom_cr.html" rel="prev" title="Customize Change Request"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -251,8 +251,8 @@
      Customize Service Points
     </a>
 </li>
-<li class="toctree-l2 current active">
-<a class="current reference internal" href="#">
+<li class="toctree-l2">
+<a class="reference internal" href="custom_program.html">
      Customize Program
     </a>
 </li>
@@ -266,8 +266,8 @@
      Customize Change Request
     </a>
 </li>
-<li class="toctree-l2">
-<a class="reference internal" href="custom_audit.html">
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
      Customize Audit Logs
     </a>
 </li>
@@ -572,7 +572,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Customize Program – How to</span>
+<span>Customize Audit Logs – How to</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -595,7 +595,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/custom_program.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/custom_audit.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -603,7 +603,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/developer_guides/custom_program.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/developer_guides/custom_audit.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -620,7 +620,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/developer_guides/custom_program.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/developer_guides/custom_audit.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -673,13 +673,13 @@
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#utilising-the-program-module">
-   Utilising the Program Module
+<a class="reference internal nav-link" href="#utilising-the-audit-log-module">
+   Utilising the Audit Log Module
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#customise-program">
-   Customise Program
+<a class="reference internal nav-link" href="#customise-audit-log-module">
+   Customise Audit Log Module
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
@@ -695,7 +695,7 @@
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Customize Program</h1>
+<h1>Customize Audit Logs</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
@@ -725,13 +725,13 @@
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#utilising-the-program-module">
-   Utilising the Program Module
+<a class="reference internal nav-link" href="#utilising-the-audit-log-module">
+   Utilising the Audit Log Module
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#customise-program">
-   Customise Program
+<a class="reference internal nav-link" href="#customise-audit-log-module">
+   Customise Audit Log Module
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
@@ -746,9 +746,9 @@
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="customize-program">
-<h1>Customize Program<a class="headerlink" href="#customize-program" title="Permalink to this headline">#</a></h1>
-<p>This guide provides a structured approach for implementing and customising the program in OpenSPP through the development of a custom module.</p>
+<div class="section" id="customize-audit-logs">
+<h1>Customize Audit Logs<a class="headerlink" href="#customize-audit-logs" title="Permalink to this headline">#</a></h1>
+<p>This guide provides a structured approach for implementing and customising the audit log in OpenSPP through the development of a custom module.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
@@ -763,13 +763,13 @@
 <li><p>Existence of openg2p_program folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
 <li><p>Availability of modules: g2p_programs.</p></li>
 <li><p>Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership, g2p_bank.</p></li>
+<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership.</p></li>
 <li><p>Existence of openspp_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: spp_programs, spp_programs_sp, g2p_entitlement_cash, spp_entitlement_inkind, spp_eligibility_sql, spp_eligibility_tags.</p></li>
-<li><p>Existence of queue folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: queue_job</p></li>
+<li><p>Availability of modules: spp_audit_log, spp_audit_config, spp_audit_post, spp_programs, spp_service_points, spp_area.</p></li>
 <li><p>Existence of web folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
 <li><p>Availability of modules: web, web_domain_field.</p></li>
+<li><p>Existence of queue folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: queue_job.</p></li>
 </ul>
 </div>
 <div class="section" id="odoo-setup-from-source">
@@ -778,13 +778,13 @@
 <li><p>Existence of openg2p-program folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-program.git">here</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
 <li><p>Availability of modules: g2p_programs.</p></li>
 <li><p>Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-registry.git">here</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership, g2p_bank.</p></li>
+<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership.</p></li>
 <li><p>Existence of openspp-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenSPP/openspp-registry.git">here</a> into odoo/custom, navigate to the openspp-registry folder, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: spp_programs, spp_programs_sp, g2p_entitlement_cash, spp_entitlement_inkind, spp_eligibility_sql, spp_eligibility_tags, spp_area, spp_service_point.</p></li>
+<li><p>Availability of modules: spp_audit_log, spp_audit_config, spp_audit_post, spp_programs, spp_service_points, spp_area.</p></li>
+<li><p>Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/web.git">here</a> into odoo/custom, navigate to the web, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: web, web_domain_field.</p></li>
 <li><p>Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/queue.git">here</a> into odoo/custom, navigate to the queue, and switch to the specified branch.</p></li>
 <li><p>Availability of modules: queue_job.</p></li>
-<li><p>Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/web.git">here</a> into odoo/custom, navigate to the web, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: web, web_domain_field</p></li>
 </ul>
 </div>
 <div class="section" id="installation">
@@ -795,68 +795,35 @@
 <li><p>Choose “Update Apps List” to refresh the module list.</p></li>
 <li><p>Search and initiate installation of the following modules, this process will also install all of their associated modules:</p>
 <ul>
-<li><p>OpenSPP Program Entitlement (In-Kind)</p></li>
-<li><p>SPP Program Entitlement (Cash)</p></li>
-<li><p>OpenSPP Tag Based Eligibility Manager</p></li>
-<li><p>OpenSPP SQL Query Eligibility Manager</p></li>
+<li><p>SPP Audit Config</p></li>
+<li><p>SPP Audit Log</p></li>
+<li><p>SPP Audit Post</p></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="utilising-the-program-module">
-<h2>Utilising the Program Module<a class="headerlink" href="#utilising-the-program-module" title="Permalink to this headline">#</a></h2>
+<div class="section" id="utilising-the-audit-log-module">
+<h2>Utilising the Audit Log Module<a class="headerlink" href="#utilising-the-audit-log-module" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>If a new Program is required to be added, Select “Program” menu.</p></li>
-<li><p>Select the “Create Program” button and a modal to set the program settings will appear.</p></li>
-<li><p>Fill-up name field.</p></li>
-<li><p>Select a Target Type: Group is for Group Registry while Individual is for Individual Registry.</p></li>
-<li><p>In the “Configure the Default Eligibility Criteria” will set who are the individuals or groups that are eligible for this program.</p></li>
-<li><p>There are 3 Eligibility Managers that can be selected namely “Default”, “SQL-base Eligibility”, and “Tag-based Eligibility”</p></li>
-<li><p>In “Default”, a registry will be determined based on the filter that is setup on the domain. To set up the domain, Click the “Add filter” button.</p></li>
-<li><p>Upon clicking the button, 3 fields will appear. First field is the name of the model’s field, Second field is the operator, while the 3rd field is the value.</p></li>
-<li><p>Based on the filter that is setup is what will be the eligible registrant for this program</p></li>
-<li><p>In “SQL-base Eligibility”, a registry will be determined based on the SQL Query that will be input in the SQL Query field</p></li>
-<li><p>Upon inputting the SQL Query, click the “Validate Query” button to validate the query if it is a valid sql query</p></li>
-<li><p>The result if its valid or invalid will show and the registry record count if its valid.</p></li>
-<li><p>In “Tag-based Eligibility”, a registry will be determined based on the Tags and Area provided.</p></li>
-<li><p>In the “Configure the Cycle Manager” tab will set the recurrence, approvers, etc., of the program’s cycle.</p></li>
-<li><p>Check the One-time Distribution to only create one cycle and no recurrence to a program.</p></li>
-<li><p>In the “Configure the Entitlement Manager” tab will set the entitlements that the registry will receive.</p></li>
-<li><p>There are 3 Entitlement Managers that can be selected namely “Default”, “Cash”, and “In-kind”</p></li>
-<li><p>Upon setting up all of the managers of the program, click the Next button, model will redirect to the “Import Registrant” page</p></li>
-<li><p>In this page will set if the program will import the registrants after creating or not. Select “Yes” to import registrant, otherwise select “No”.</p></li>
-<li><p>Click Create button to create the Program.</p></li>
-<li><p>Inside the Program, there are many buttons in the top part of the page.</p></li>
-<li><p>“Import Eligible Registrants” button is to import all registrants based on the eligible criteria. This registrants is still not enrolled in the Program.</p></li>
-<li><p>“Enroll Eligible Registrants” button will enroll all imported registrants.</p></li>
-<li><p>“Verify eligibility” button will verify if all enrolled registrants is still eligible for the program. If they are not eligible anymore then they will be removed from the program.</p></li>
-<li><p>“Create New Cycle” will create a cycle and the cycle that was created will be added in the Cycles Tab.</p></li>
-<li><p>To modify the managers of the Program, go to the Configurations tab.</p></li>
-<li><p>In this tab will show all of the managers of the program, click the green button to modify the managers.</p></li>
-<li><p>Click the green button on Eligibility Managers to modify the eligibility criteria of the program.</p></li>
-<li><p>Click the green button on Cycle Managers to modify the settings of the program’s cycle.</p></li>
-<li><p>Click the green button on Entitlement Managers to modify the settings of the entitlements.</p></li>
+<li><p>Navigate to the “Rule” page inside the “Audit Log” menu.</p></li>
+<li><p>Audit rules are already in place. They are created when installing or upgrading the module “SPP Audit Config”.</p></li>
+<li><p>Select the Create button to add new rules.</p></li>
+<li><p>To test the Audit Rule, go to Individual or Group Registry.</p></li>
+<li><p>Create or Update Registry.</p></li>
+<li><p>An audit log will show in the bottom part of the page indicating the fields that were changed and their corresponding old and new values.</p></li>
+<li><p>Audit logs can also be viewed by navigating to Audit Log then Log menu.</p></li>
+<li><p>This page will show all of the audit logs from every model that is indicated in the audit rules.</p></li>
+<li><p>Another way to see the audit logs is to enter a record and click Action then click the “View Logs”.</p></li>
+<li><p>It will redirect to the audit logs page that is automatically filtered to the record.</p></li>
+<li><p>When you add an audit rule to a model, it effectively patches a specialized function into the model's key events - create, write, and unlink. This function operates as a gatekeeper, first verifying if an audit rule is set for the specific model, then determining which events to log and which fields to display in the audit log. This integration transforms the model into recording and showcasing relevant changes and activities for enhanced data management and integrity.</p></li>
 </ul>
 </div>
-<div class="section" id="customise-program">
-<h2>Customise Program<a class="headerlink" href="#customise-program" title="Permalink to this headline">#</a></h2>
+<div class="section" id="customise-audit-log-module">
+<h2>Customise Audit Log Module<a class="headerlink" href="#customise-audit-log-module" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>To introduce new fields or functions in a new module, develop a Python file extending the following models:</p>
-<ul>
-<li><p>“g2p.program” for Program.</p></li>
-<li><p>“g2p.program.create.wizard” for the creation of a Program.</p></li>
-<li><p>“g2p.program_membership.manager.default” for the default eligibility criteria.</p></li>
-<li><p>“g2p.program_membership.manager.tags” for the tag-based eligibility criteria.</p></li>
-<li><p>“g2p.program_membership.manager.sql” for the sql-base eligibility criteria.</p></li>
-<li><p>“g2p.cycle.manager.default” for the cycle manager.</p></li>
-<li><p>“g2p.program.entitlement.manager.default” for the default entitlement manager.</p></li>
-<li><p>“g2p.program.entitlement.manager.cash” for the cash entitlement manager.</p></li>
-<li><p>“g2p.program.entitlement.manager.inkind” for the in-kind entitlement manager.</p></li>
-</ul>
-</li>
-<li><p>Integrate this file into <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>.</p></li>
+<li><p>To introduce new fields or functions in a new module, develop a Python file extending the model “spp.audit.rule” for the Audit Rules while “spp.audit.log” for the Audit Logs and integrate this file into <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>.</p></li>
 <li><p>Upgrade the module incorporating the new Python file.</p></li>
-<li><p>To integrate new fields into the UI, developers should familiar themselves with the view, view inheritance, and the use of xpath in Odoo.</p></li>
+<li><p>To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.</p></li>
 </ul>
 </div>
 <div class="section" id="additional-references">
@@ -879,17 +846,17 @@
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
-<a class="left-prev" href="custom_service_points.html" id="prev-link" title="previous page">
+<a class="left-prev" href="custom_cr.html" id="prev-link" title="previous page">
 <i class="fas fa-angle-left"></i>
 <div class="prev-next-info">
 <p class="prev-next-subtitle">previous</p>
-<p class="prev-next-title">Customize Service Points</p>
+<p class="prev-next-title">Customize Change Request</p>
 </div>
 </a>
-<a class="right-next" href="custom_cycle.html" id="next-link" title="next page">
+<a class="right-next" href="../../technical_reference/index.html" id="next-link" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Customize Cycle</p>
+<p class="prev-next-title">Technical Reference</p>
 </div>
 <i class="fas fa-angle-right"></i>
 </a>
