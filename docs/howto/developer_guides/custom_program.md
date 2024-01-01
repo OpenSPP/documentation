@@ -23,15 +23,15 @@ This guide provides a structured approach for implementing and customising the p
 
 ## Odoo Setup from source
 
-- Existence of openg2p-program folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from https://github.com/OpenG2P/openg2p-program.git into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.
+- Existence of openg2p-program folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from [here](https://github.com/OpenG2P/openg2p-program.git) into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.
 - Availability of modules: g2p_programs.
-- Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from https://github.com/OpenG2P/openg2p-registry.git into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.
+- Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from [here](https://github.com/OpenG2P/openg2p-registry.git) into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.
 - Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership, g2p_bank.
-- Existence of openspp-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, clone the repository from https://github.com/OpenSPP/openspp-registry.git into odoo/custom, navigate to the openspp-registry folder, and switch to the specified branch.
+- Existence of openspp-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, clone the repository from [here](https://github.com/OpenSPP/openspp-registry.git) into odoo/custom, navigate to the openspp-registry folder, and switch to the specified branch.
 - Availability of modules: spp_programs, spp_programs_sp, g2p_entitlement_cash, spp_entitlement_inkind, spp_eligibility_sql, spp_eligibility_tags, spp_area, spp_service_point.
-- Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from https://github.com/OCA/queue.git into odoo/custom, navigate to the queue, and switch to the specified branch.
+- Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from [here](https://github.com/OCA/queue.git) into odoo/custom, navigate to the queue, and switch to the specified branch.
 - Availability of modules: queue_job.
-- Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from https://github.com/OCA/web.git into odoo/custom, navigate to the web, and switch to the specified branch.
+- Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from [here](https://github.com/OCA/web.git) into odoo/custom, navigate to the web, and switch to the specified branch.
 - Availability of modules: web, web_domain_field
 
 ## Installation
