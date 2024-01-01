@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Backup and Recovery" property="og:title"/>
+<meta content="Module Development" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/technical_reference/backup.html" property="og:url"/>
+<meta content="https://docs.openspp.org/technical_reference/module.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="Backup and Recovery encompasses strategies and techniques designed to protect and restore data, applications, and infrastructure in the event of data loss, corruption, or disasters in OpenSPP deplo..." property="og:description"/>
+<meta content="Module development is a crucial aspect of extending the functionality of OpenSPP. When developing a module for OpenSPP, it's important to adhere to certain principles and guidelines to ensure compa..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="Backup and Recovery encompasses strategies and techniques designed to protect and restore data, applications, and infrastructure in the event of data loss, corruption, or disasters in OpenSPP deplo..." name="description"/>
+<meta content="Module development is a crucial aspect of extending the functionality of OpenSPP. When developing a module for OpenSPP, it's important to adhere to certain principles and guidelines to ensure compa..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Backup and Recovery – Technical Reference — OpenSPP Documentation v1.0</title>
+<title>Module Development – Technical Reference — OpenSPP Documentation v1.0</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -50,13 +50,13 @@
 <script src="../_static/patch_scrollToActive.js"></script>
 <script src="../_static/search_shortcut.js"></script>
 <script src="../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/technical_reference/backup.html" rel="canonical">
+<link href="https://docs.openspp.org/technical_reference/module.html" rel="canonical">
 <link href="../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.0" type="application/opensearchdescription+xml"/>
 <link href="../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../genindex.html" rel="index" title="Index"/>
 <link href="../search.html" rel="search" title="Search"/>
-<link href="module.html" rel="next" title="Module Development"/>
-<link href="external_api.html" rel="prev" title="External API"/>
+<link href="programs/concepts.html" rel="next" title="Manager Overview"/>
+<link href="backup.html" rel="prev" title="Backup and Recovery"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -293,13 +293,13 @@
      External API
     </a>
 </li>
-<li class="toctree-l2 current active">
-<a class="current reference internal" href="#">
+<li class="toctree-l2">
+<a class="reference internal" href="backup.html">
      Backup and Recovery
     </a>
 </li>
-<li class="toctree-l2">
-<a class="reference internal" href="module.html">
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
      Module Development
     </a>
 </li>
@@ -512,7 +512,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Backup and Recovery – Technical Reference</span>
+<span>Module Development – Technical Reference</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -535,7 +535,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Ftechnical_reference/backup.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Ftechnical_reference/module.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -543,7 +543,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?technical_reference/backup.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?technical_reference/module.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -560,7 +560,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/technical_reference/backup.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/technical_reference/module.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -578,110 +578,92 @@
 </ul>
 </div>
 </div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
 </div>
 </div>
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#understanding-openspp-architecture">
+   Understanding OpenSPP Architecture
+  </a>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 <div class="article row">
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Backup and Recovery</h1>
+<h1>Module Development</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#understanding-openspp-architecture">
+   Understanding OpenSPP Architecture
+  </a>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="backup-and-recovery">
-<h1>Backup and Recovery<a class="headerlink" href="#backup-and-recovery" title="Permalink to this headline">#</a></h1>
-<p>Backup and Recovery encompasses strategies and techniques designed to protect and restore data, applications, and infrastructure in the event of data loss, <a class="reference internal" href="../glossary.html#term-Corruption"><span class="xref std std-term">corruption</span></a>, or disasters in OpenSPP deployments. This process is essential for maintaining data integrity, ensuring availability, and facilitating business continuity. As data is critical for business operations, the loss of data can disrupt business activities, incur financial penalties, harm reputation, and even lead to legal consequences. An effective Backup and Recovery strategy mitigates these risks by ensuring that data is not permanently lost and can be recovered quickly to minimize downtime.</p>
-<p>The key advantages are:</p>
+<div class="section" id="module-development">
+<h1>Module Development<a class="headerlink" href="#module-development" title="Permalink to this headline">#</a></h1>
+<p>Module development is a crucial aspect of extending the functionality of OpenSPP. When developing a module for OpenSPP, it's important to adhere to certain principles and guidelines to ensure compatibility and performance.</p>
+<div class="section" id="understanding-openspp-architecture">
+<h2>Understanding OpenSPP Architecture<a class="headerlink" href="#understanding-openspp-architecture" title="Permalink to this headline">#</a></h2>
+<p>Before diving into module development, familiarize yourself with the <a class="reference external" href="https://docs.openspp.org/technical_reference/architecture.html">OpenSPP architecture</a>. OpenSPP is structured to support modular additions, allowing for seamless integration of new features or enhancements.</p>
+<p>Key Steps in Module Development</p>
 <ol class="arabic simple">
-<li><p>Ensures minimal disruption to business operations in case of data loss.</p></li>
-<li><p>Protects the integrity and reliability of data.</p></li>
-<li><p>Meets legal and regulatory <a class="reference internal" href="../glossary.html#term-Data-protection"><span class="xref std std-term">data protection</span></a> requirements.</p></li>
-<li><p>Reduces the risk associated with data breaches and cyber threats.</p></li>
+<li><p>Understand the specific functionality that your module will provide.</p></li>
+<li><p>Outline the functionality, user interfaces, data interactions, and how your module will integrate with the existing OpenSPP modules.</p></li>
+<li><p>Use the OpenSPP SDK and follow the guidelines provided in the OpenSPP documentation to set up your development environment.</p></li>
+<li><p>Write the code, adhering to OpenSPP's coding standards. Focus on creating clean, maintainable, and efficient code.</p></li>
+<li><p>Rigorously test your module for functionality, performance, and compatibility with different parts of the OpenSPP system.</p></li>
+<li><p>Write clear and comprehensive documentation for your module. This should include setup instructions, usage guidelines, and troubleshooting tips.</p></li>
+<li><p>Ensure your module complies with security standards and does not compromise the integrity of the OpenSPP platform.</p></li>
+<li><p>Have your code reviewed by peers or other OpenSPP developers. This can help identify potential issues and areas for improvement.</p></li>
+<li><p>Once your module is ready and tested, you can proceed with the production use of your module.</p></li>
+<li><p>Regularly update your module for new OpenSPP versions and address any bugs or security issues.</p></li>
 </ol>
-<p>In the implementation of OpenSPP, the backup can be implemented at different layers</p>
-<ol class="arabic">
-<li><p>Infrastructure Layer</p>
-<p>This layer focuses on the physical and virtual components of an IT environment, including servers, network equipment, and storage systems.</p>
-<ul class="simple">
-<li><p>Backup Methods: Full system backups, snapshots, and replication.</p></li>
-<li><p>Challenges: Managing the sheer volume of data and ensuring minimal impact on performance during backup operations.</p></li>
-</ul>
-</li>
-<li><p>Application Layer</p>
-<p>The application layer encompasses the specific data and configurations of OpenSPP.</p>
-<ul class="simple">
-<li><p>Backup Considerations: It's important to capture application states and configurations, ensuring applications can be restored to a specific point in time.</p></li>
-<li><p>Challenges: Countries often have unique backup requirements and may require specialized tools.</p></li>
-</ul>
-</li>
-<li><p>Database Layer</p>
-<p>This layer Involves protecting the data stored in databases.</p>
-<ul class="simple">
-<li><p>Backup Techniques: Includes consistent backups, log backups, and hot/cold backups.</p></li>
-<li><p>Challenges: Ensuring data consistency and managing the recovery of large databases without impacting performance.</p></li>
-</ul>
-</li>
-</ol>
-<p>As a product, OpenSPP considers Backup and Recovery tools to be out of scope, but implementing a robust strategy is still possible and recommended as follows.</p>
-<ol class="arabic simple">
-<li><p>Assessment and Planning</p>
-<ul class="simple">
-<li><p>Identify critical data points. Understand the impact of data loss on different segments of the business.</p></li>
-<li><p>Establish clear Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO).</p></li>
-</ul>
-</li>
-<li><p>Choosing Backup Solutions</p>
-<ul class="simple">
-<li><p>Select solutions that cater to the diverse environments within OpenSPP.</p></li>
-<li><p>Choose solution(s) that offer automation and scalability to adapt to growing data needs.</p></li>
-</ul>
-</li>
-<li><p>Regular Backups and Testing</p>
-<ul class="simple">
-<li><p>Implement a backup schedule that aligns with business needs without impacting system performance.</p></li>
-<li><p>Regular backup drills should be done to ensure data can be restored effectively.</p></li>
-</ul>
-</li>
-<li><p>Secure Backup Storage</p>
-<ul class="simple">
-<li><p>Utilize offsite or cloud storage for added security and flexibility.</p></li>
-<li><p>Ensure backups are encrypted, and access is tightly controlled.</p></li>
-</ul>
-</li>
-<li><p>Monitoring and Maintenance</p>
-<ul class="simple">
-<li><p>Implement monitoring tools to track backup processes and alert for any failures.</p></li>
-<li><p>Regularly update the backup solutions and adapt strategies to accommodate changes.</p></li>
-</ul>
-</li>
-</ol>
-<p>While OpenSPP does not inherently provide Backup and Recovery functionalities, integrating a comprehensive and tailored Backup and Recovery strategy is crucial for safeguarding data. This approach ensures resilience in the face of data loss and supports the continuity of business operations.</p>
+<p>For detailed guidelines, coding standards, and API references, visit the OpenSPP documentation at <a class="reference external" href="https://docs.openspp.org/technical_reference/external_api.html">docs.openspp.org</a>.</p>
+</div>
 </div>
 </div>
 </main>
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
-<a class="left-prev" href="external_api.html" id="prev-link" title="previous page">
+<a class="left-prev" href="backup.html" id="prev-link" title="previous page">
 <i class="fas fa-angle-left"></i>
 <div class="prev-next-info">
 <p class="prev-next-subtitle">previous</p>
-<p class="prev-next-title">External API</p>
+<p class="prev-next-title">Backup and Recovery</p>
 </div>
 </a>
-<a class="right-next" href="module.html" id="next-link" title="next page">
+<a class="right-next" href="programs/concepts.html" id="next-link" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Module Development</p>
+<p class="prev-next-title">Manager Overview</p>
 </div>
 <i class="fas fa-angle-right"></i>
 </a>
