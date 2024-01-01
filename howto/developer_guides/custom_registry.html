@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Implementing Proxy Means Testing (PMT)" property="og:title"/>
+<meta content="Customize Registry" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/howto/user_guides/implementing_pmt.html" property="og:url"/>
+<meta content="https://docs.openspp.org/howto/developer_guides/custom_registry.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="This guide elucidates the steps required to implement Proxy Means Testing (PMT) within the OpenSPP system, leveraging Odoo's user interface customization features. By following through, one will le..." property="og:description"/>
+<meta content="This guide provides a structured approach for implementing and customising the registry in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, X..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="This guide elucidates the steps required to implement Proxy Means Testing (PMT) within the OpenSPP system, leveraging Odoo's user interface customization features. By following through, one will le..." name="description"/>
+<meta content="This guide provides a structured approach for implementing and customising the registry in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, X..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Implementing Proxy Means Testing (PMT) – Howto — OpenSPP Documentation v1.0</title>
+<title>Customize Registry – Howto — OpenSPP Documentation v1.0</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -50,13 +50,13 @@
 <script src="../../_static/patch_scrollToActive.js"></script>
 <script src="../../_static/search_shortcut.js"></script>
 <script src="../../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/howto/user_guides/implementing_pmt.html" rel="canonical">
+<link href="https://docs.openspp.org/howto/developer_guides/custom_registry.html" rel="canonical">
 <link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.0" type="application/opensearchdescription+xml"/>
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
-<link href="../developer_guides/development_setup.html" rel="next" title="Development Setup"/>
-<link href="../developer_mode.html" rel="prev" title="Developer mode (debug mode)"/>
+<link href="../../technical_reference/index.html" rel="next" title="Technical Reference"/>
+<link href="troubleshooting.html" rel="prev" title="Troubleshooting Guide"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -221,23 +221,23 @@
      Developer mode (debug mode)
     </a>
 </li>
-<li class="toctree-l2 current active">
-<a class="current reference internal" href="#">
+<li class="toctree-l2">
+<a class="reference internal" href="../user_guides/implementing_pmt.html">
      Implementing Proxy Means Testing (PMT)
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../developer_guides/development_setup.html">
+<a class="reference internal" href="development_setup.html">
      Development Setup
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../developer_guides/troubleshooting.html">
+<a class="reference internal" href="troubleshooting.html">
      Troubleshooting Guide
     </a>
 </li>
-<li class="toctree-l2">
-<a class="reference internal" href="../developer_guides/custom_registry.html">
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
      Customize Registry
     </a>
 </li>
@@ -542,7 +542,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Implementing Proxy Means Testing (PMT) – Howto</span>
+<span>Customize Registry – Howto</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -565,7 +565,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/user_guides/implementing_pmt.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/custom_registry.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -573,7 +573,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/user_guides/implementing_pmt.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/developer_guides/custom_registry.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -590,7 +590,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/user_guides/implementing_pmt.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/developer_guides/custom_registry.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -608,99 +608,217 @@
 </ul>
 </div>
 </div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
 </div>
 </div>
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
+   Odoo Setup from Docker using doodba
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-source">
+   Odoo Setup from source
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#utilising-the-registry-module">
+   Utilising the Registry Module
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#customise-registry">
+   Customise Registry
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#additional-references">
+   Additional References
+  </a>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 <div class="article row">
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Implementing Proxy Means Testing (PMT)</h1>
+<h1>Customize Registry</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
+   Odoo Setup from Docker using doodba
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-source">
+   Odoo Setup from source
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#utilising-the-registry-module">
+   Utilising the Registry Module
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#customise-registry">
+   Customise Registry
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#additional-references">
+   Additional References
+  </a>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="implementing-proxy-means-testing-pmt">
-<h1>Implementing Proxy Means Testing (PMT)<a class="headerlink" href="#implementing-proxy-means-testing-pmt" title="Permalink to this headline">#</a></h1>
-<p>This guide elucidates the steps required to implement Proxy Means Testing (PMT) within the OpenSPP system, leveraging Odoo's user interface customization features. By following through, one will learn how to add custom fields to models and modify views to accommodate the newly introduced data fields to implement PMT.</p>
-<ol class="arabic">
-<li><p>Activation of Developer Mode</p>
+<div class="section" id="customize-registry">
+<h1>Customize Registry<a class="headerlink" href="#customize-registry" title="Permalink to this headline">#</a></h1>
+<p>This guide provides a structured approach for implementing and customising the registry in OpenSPP through the development of a custom module.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Ensure administrative access is granted.</p></li>
-<li><p>Navigate to the Settings module.</p></li>
-<li><p>Scroll towards the bottom and select "Activate the developer mode".</p></li>
+<li><p>Knowledge in Python, Odoo, OOP, HTML, XML, Xpaths.</p></li>
+<li><p>A functional OpenSPP installation.</p></li>
+<li><p>Administrative access to the OpenSPP backend.</p></li>
 </ul>
-</li>
-<li><p>Model Customization</p>
-<ul class="simple">
-<li><p>With the objective of adding fields to the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model, proceed to Settings -&gt; Technical -&gt; Models (located under Database Structure) and choose the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model.</p></li>
-<li><p>Fields such as x_education_level and x_household_size are to be added.</p></li>
-<li><p>Upon pressing <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">a</span> <span class="pre">line</span></code>, a properties panel unveils, facilitating the specification of Field Name, Field Label, Field Type, among other attributes.</p></li>
-<li><p>Choose the field type (e.g., Integer, Selection, Float) from the left-hand panel and fill the Field Name(x_education_level, x_household_size) ,and the Field Label.</p></li>
-<li><p>Following the addition of each field, select “Save and Close”.</p></li>
-<li><p>An additional computed field named x_pmt_score is to be introduced. Adhere to the preceding steps, with the added configurations outlined below:</p>
-<ul>
-<li><p>Dependencies: x_education_level, x_household_size</p></li>
-<li><p>Function:
-for record in self:
-record['x_pmt_score'] = record['x_education_level'] * record['x_household_size']</p></li>
-</ul>
-</li>
-<li><p>Click "Save" situated on the top right to retain the modifications.</p></li>
-</ul>
-</li>
-<li><p>View Modification</p>
-<ul class="simple">
-<li><p>Aiming to integrate fields into the individual view, opt for <code class="docutils literal notranslate"><span class="pre">view_individuals_form</span></code> view. Navigate via Settings -&gt; Technical -&gt; View (found under User Interface) and select the view.</p></li>
-<li><p>Edit the view, incorporating the following:</p></li>
-</ul>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;page</span><span class="w"> </span><span class="na">name=</span><span class="s">"PMT"</span><span class="w"> </span><span class="na">string=</span><span class="s">"Proxy Means Testing"</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;group</span><span class="w"> </span><span class="na">col=</span><span class="s">"4"</span><span class="w"> </span><span class="na">colspan=</span><span class="s">"4"</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"x_education_level"</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"x_household_size"</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"x_pmt_score"</span><span class="w"> </span><span class="na">readonly=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/group&gt;</span>
-<span class="nt">&lt;/page&gt;</span>
-</pre></div>
 </div>
+<div class="section" id="odoo-setup-from-docker-using-doodba">
+<h2>Odoo Setup from Docker using doodba<a class="headerlink" href="#odoo-setup-from-docker-using-doodba" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Select "Save" on the top right to preserve the alterations.</p></li>
+<li><p>Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership.</p></li>
+<li><p>Existence of web folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: web, web_domain_field.</p></li>
+<li><p>Existence of queue folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: queue_job</p></li>
+</ul>
+</div>
+<div class="section" id="odoo-setup-from-source">
+<h2>Odoo Setup from source<a class="headerlink" href="#odoo-setup-from-source" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-registry.git">here</a> into odoo/custom, navigate to the openg2p-registry folder, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership.</p></li>
+<li><p>Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/web.git">here</a> into odoo/custom, navigate to the web, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: web, web_domain_field.</p></li>
+<li><p>Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/queue.git">here</a> into odoo/custom, navigate to the queue, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: queue_job.</p></li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Log into OpenSPP with administrative rights.</p></li>
+<li><p>Access the “Apps” menu from the dashboard to manage OpenSPP modules.</p></li>
+<li><p>Choose “Update Apps List ” to refresh the module list.</p></li>
+<li><p>Search for “G2P Registry: Membership” and initiate installation. This process will also install associated modules: G2P Registry: Groups, G2P Registry: Individual, G2P Registry: Base.</p></li>
+</ul>
+</div>
+<div class="section" id="utilising-the-registry-module">
+<h2>Utilising the Registry Module<a class="headerlink" href="#utilising-the-registry-module" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>If a new individual is required to be added, Under the “Registry” menu, select “Individuals”.</p></li>
+<li><p>If a new individual is required to be added, select the Create button to add new individuals, ensuring all required fields are completed.</p></li>
+<li><p>If a new group is required to be added, Navigate to “Groups” within the “Registry” menu.</p></li>
+<li><p>Create a new group and add members by using the “Add a line” option in the “Members” panel. Search and select individuals previously created.</p></li>
+<li><p>Save changes. Added members and groups will be visible in their respective panels.</p></li>
+<li><p>To add custom filter, navigate to the tree/list view of the registry in either Group or Individual then click the “Filter” button below the search field, then click custom filter.</p></li>
+<li><p>Select the field, operator, and the value for the custom filter.</p></li>
+<li><p>To add custom group by, navigate to the tree/lsit view of the registry page then click the “Group by” button then click the “Add Custom Group” and select the field you want to use in Group by.</p></li>
+</ul>
+</div>
+<div class="section" id="customise-registry">
+<h2>Customise Registry<a class="headerlink" href="#customise-registry" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>To introduce new fields or functions in a new module, develop a Python file extending the res.partner model and integrate this file into <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>.</p></li>
+<li><p>Upgrade the module incorporating the new Python file.</p></li>
+<li><p>Follow naming conventions for new registry fields:</p>
+<ul>
+<li><p>Prefix individual-specific fields with <code class="docutils literal notranslate"><span class="pre">ind_</span></code> (e.g., “ind_hobbies”).</p></li>
+<li><p>Prefix group-specific fields with <code class="docutils literal notranslate"><span class="pre">grp_</span></code> (e.g., “grp_number_of_members”).</p></li>
+<li><p>Use no prefix for universally applicable fields (e.g., “name”, “address”).</p></li>
 </ul>
 </li>
-<li><p>Access Registry</p>
+<li><p>For relational fields like many2one to <code class="docutils literal notranslate"><span class="pre">res.partner</span></code>, apply appropriate domain parameters to filter registry records.</p></li>
+<li><p>To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.</p></li>
+<li><p>To add a new tab, inherit the form view of the registry page and then xpath to the “page” element under the “notebook” element with the position preferred.</p></li>
+</ul>
+</div>
+<div class="section" id="additional-references">
+<h2>Additional References<a class="headerlink" href="#additional-references" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Click on the "Registry" menu item situated at the screen’s top.</p></li>
-<li><p>Choose "Individuals".</p></li>
-<li><p>Pick a record to view the aforementioned changes.</p></li>
-<li><p>Now the PMT score will be calculated according to the given function defined above.</p></li>
+<li><p>Below are some Odoo references that may help in adding the field both in models and in UI. For further guidance on model creation, inheritance, and UI integration, the following Odoo documentation may be useful:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html">Views</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">Chapter 4: Models And Basic Fields</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/07_basicviews.html#chapter-7-basic-views">Chapter 7: Basic Views</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">Chapter 13: Inheritance</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">Chapter 14: Interact With Other Modules</a></p></li>
 </ul>
 </li>
-</ol>
-<p>Upon completion, a new tab titled "Proxy Means Testing" should now be present within the Registry in the individual’s record as a new tab.</p>
+</ul>
+</div>
 </div>
 </div>
 </main>
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
-<a class="left-prev" href="../developer_mode.html" id="prev-link" title="previous page">
+<a class="left-prev" href="troubleshooting.html" id="prev-link" title="previous page">
 <i class="fas fa-angle-left"></i>
 <div class="prev-next-info">
 <p class="prev-next-subtitle">previous</p>
-<p class="prev-next-title">Developer mode (debug mode)</p>
+<p class="prev-next-title">Troubleshooting Guide</p>
 </div>
 </a>
-<a class="right-next" href="../developer_guides/development_setup.html" id="next-link" title="next page">
+<a class="right-next" href="../../technical_reference/index.html" id="next-link" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Development Setup</p>
+<p class="prev-next-title">Technical Reference</p>
 </div>
 <i class="fas fa-angle-right"></i>
 </a>
