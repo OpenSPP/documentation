@@ -13,4 +13,7 @@ developer_mode
 #User Guides
 user_guides/implementing_pmt
 
+#Developer Guides
+developer_guides/development_setup
+
 ```
