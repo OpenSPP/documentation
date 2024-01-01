@@ -30,6 +30,7 @@ external_api
 backup
 
 # Managers and Modules
+module
 programs/concepts
 programs/program_manager
 programs/cycle_manager
