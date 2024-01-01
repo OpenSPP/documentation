@@ -10,4 +10,7 @@ Here you’ll find short answers to “How do I….?” types of questions. Thes
 
 developer_mode
 
+#User Guides
+user_guides/implementing_pmt
+
 ```
