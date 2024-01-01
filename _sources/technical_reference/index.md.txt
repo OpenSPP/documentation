@@ -29,6 +29,7 @@ external_api
 
 # Other
 backup
+performance_optimization
 
 # Managers and Modules
 module
