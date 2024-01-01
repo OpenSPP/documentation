@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Troubleshooting" property="og:title"/>
+<meta content="Customize Areas" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/howto/developer_guides/troubleshooting.html" property="og:url"/>
+<meta content="https://docs.openspp.org/howto/developer_guides/custom_areas.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="This guide offers insights and solutions for common errors encountered in Odoo application development. Understanding these errors and knowing how to address them efficiently is crucial for maintai..." property="og:description"/>
+<meta content="This guide provides a structured approach for implementing and customising the area in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, XML, ..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="This guide offers insights and solutions for common errors encountered in Odoo application development. Understanding these errors and knowing how to address them efficiently is crucial for maintai..." name="description"/>
+<meta content="This guide provides a structured approach for implementing and customising the area in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, XML, ..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Troubleshooting – Howto — OpenSPP Documentation v1.0</title>
+<title>Customize Areas — OpenSPP Documentation v1.0</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -50,13 +50,11 @@
 <script src="../../_static/patch_scrollToActive.js"></script>
 <script src="../../_static/search_shortcut.js"></script>
 <script src="../../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/howto/developer_guides/troubleshooting.html" rel="canonical">
+<link href="https://docs.openspp.org/howto/developer_guides/custom_areas.html" rel="canonical">
 <link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.0" type="application/opensearchdescription+xml"/>
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
-<link href="custom_registry.html" rel="next" title="Customize Registry"/>
-<link href="development_setup.html" rel="prev" title="Development Setup"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -101,7 +99,7 @@
 </input></div>
 </form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item active">
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children">
 <a class="reference internal" href="../../tutorials/">
    Getting started
@@ -206,16 +204,16 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children">
+<li class="toctree-l1 has-children">
 <a class="reference internal" href="../">
    Howto
   </a>
-<input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
 <label for="toctree-checkbox-3">
 <i class="fas fa-chevron-down">
 </i>
 </label>
-<ul class="current">
+<ul>
 <li class="toctree-l2">
 <a class="reference internal" href="../developer_mode.html">
      Developer mode (debug mode)
@@ -231,8 +229,8 @@
      Development Setup
     </a>
 </li>
-<li class="toctree-l2 current active">
-<a class="current reference internal" href="#">
+<li class="toctree-l2">
+<a class="reference internal" href="troubleshooting.html">
      Troubleshooting
     </a>
 </li>
@@ -542,7 +540,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Troubleshooting – Howto</span>
+<span>Customize Areas</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -565,7 +563,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/troubleshooting.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/custom_areas.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -573,7 +571,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/developer_guides/troubleshooting.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/developer_guides/custom_areas.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -590,7 +588,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/developer_guides/troubleshooting.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/developer_guides/custom_areas.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -608,86 +606,198 @@
 </ul>
 </div>
 </div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
 </div>
 </div>
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
+   Odoo Setup from Docker using doodba
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-source">
+   Odoo Setup from source
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#utilising-the-area-module">
+   Utilising the Area Module
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#customise-area">
+   Customise Area
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#additional-references">
+   Additional References
+  </a>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 <div class="article row">
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Troubleshooting</h1>
+<h1>Customize Areas</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
+   Odoo Setup from Docker using doodba
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-source">
+   Odoo Setup from source
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#utilising-the-area-module">
+   Utilising the Area Module
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#customise-area">
+   Customise Area
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#additional-references">
+   Additional References
+  </a>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="troubleshooting">
-<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">#</a></h1>
-<p>This guide offers insights and solutions for common errors encountered in Odoo application development. Understanding these errors and knowing how to address them efficiently is crucial for maintaining a smooth development process.</p>
-<ol class="arabic simple">
-<li><p>Error: Field “x” does not exist in model “y”</p></li>
-</ol>
+<div class="section" id="customize-areas">
+<h1>Customize Areas<a class="headerlink" href="#customize-areas" title="Permalink to this headline">#</a></h1>
+<p>This guide provides a structured approach for implementing and customising the area in OpenSPP through the development of a custom module.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Confirm the field's presence in the model.</p></li>
-<li><p>Ensure the Python file is listed in <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>.</p></li>
-<li><p>Verify the existence of from . import models in the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file.</p></li>
-<li><p>Consider upgrading the module.</p></li>
-<li><p>Double-check the field name for any spelling errors.</p></li>
+<li><p>Knowledge in Python, Odoo, OOP, HTML, XML, Xpaths.</p></li>
+<li><p>A functional OpenSPP installation.</p></li>
+<li><p>Administrative access to the OpenSPP backend.</p></li>
 </ul>
-<ol class="arabic simple" start="2">
-<li><p>Error: Unable to install module “x” due to an unmet external dependency: Missing Python library “y”, “z”</p></li>
-</ol>
+</div>
+<div class="section" id="odoo-setup-from-docker-using-doodba">
+<h2>Odoo Setup from Docker using doodba<a class="headerlink" href="#odoo-setup-from-docker-using-doodba" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Execute pip install -r requirements.txt to install the module's required Python libraries.</p></li>
-<li><p>If specific libraries are mentioned in the error, install them individually using pip.</p></li>
+<li><p>Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group.</p></li>
+<li><p>Existence of openspp_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: spp_area.</p></li>
+<li><p>Existence of queue folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: queue_job</p></li>
+<li><p>Existence of web folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: web, web_domain_field.</p></li>
 </ul>
-<ol class="arabic simple" start="3">
-<li><p>Error: Invalid field “x” on model “y”</p></li>
-</ol>
+</div>
+<div class="section" id="odoo-setup-from-source">
+<h2>Odoo Setup from source<a class="headerlink" href="#odoo-setup-from-source" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Ensure the field exists within the model.</p></li>
-<li><p>Restart the Odoo server and then upgrade the module.</p></li>
+<li><p>Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-registry.git">here</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group.</p></li>
+<li><p>Existence of openspp-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenSPP/openspp-registry.git">here</a> into odoo/custom, navigate to the openspp-registry folder, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: spp_area.</p></li>
+<li><p>Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/queue.git">here</a> into odoo/custom, navigate to the queue, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: queue_job.</p></li>
+<li><p>Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/web.git">here</a> into odoo/custom, navigate to the web, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: web, web_domain_field</p></li>
 </ul>
-<ol class="arabic simple" start="4">
-<li><p>Error: Some modules are not loaded, potentially due to missing dependencies or manifests: [“x”]</p></li>
-</ol>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Check if the module is located in the custom/ or custom/src/ folder. If absent, add the module, restart the Odoo server, and attempt reinstallation.</p></li>
-<li><p>Confirm the existence of the dependency module of the missing module in either the custom/ or custom/src/ folder.</p></li>
+<li><p>Log into OpenSPP with administrative rights.</p></li>
+<li><p>Access the “Apps” menu from the dashboard to manage OpenSPP modules.</p></li>
+<li><p>Choose “Update Apps List” to refresh the module list.</p></li>
+<li><p>Search for “OpenSPP Area” and initiate installation. This process will also install associated modules: G2P Registry: Groups, G2P Registry: Individual, G2P Registry: Base.</p></li>
 </ul>
-<ol class="arabic simple" start="5">
-<li><p>Error: Inconsistent module states, possibly due to missing dependencies: [“x”]</p></li>
-</ol>
+</div>
+<div class="section" id="utilising-the-area-module">
+<h2>Utilising the Area Module<a class="headerlink" href="#utilising-the-area-module" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>This issue often arises when a dependency of the “x” module encounters an error.</p></li>
-<li><p>Explore and rectify errors in other related modules.</p></li>
+<li><p>If a new Area is required to be added, Select “Area” menu.</p></li>
+<li><p>Select the Create button to add a new Area, ensuring all required fields are completed.</p></li>
+<li><p>Click the Save button. An Area record is now created.</p></li>
+<li><p>An Area have a hierarchy mechanism by utilising the Parent field.</p></li>
+<li><p>Parent dropdown field consists of Area records.</p></li>
 </ul>
+</div>
+<div class="section" id="customise-area">
+<h2>Customise Area<a class="headerlink" href="#customise-area" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>To introduce new fields or functions in a new module, develop a Python file extending the “spp.area” and integrate this file into <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>.</p></li>
+<li><p>Upgrade the module incorporating the new Python file.</p></li>
+<li><p>To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.</p></li>
+</ul>
+</div>
+<div class="section" id="additional-references">
+<h2>Additional References<a class="headerlink" href="#additional-references" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Below are some Odoo references that may help in adding the field both in models and in UI. For further guidance on model creation, inheritance, and UI integration, the following Odoo documentation may be useful:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html">Views</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">Chapter 4: Models And Basic Fields</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/07_basicviews.html#chapter-7-basic-views">Chapter 7: Basic Views</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">Chapter 13: Inheritance</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">Chapter 14: Interact With Other Modules</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </main>
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
-<a class="left-prev" href="development_setup.html" id="prev-link" title="previous page">
-<i class="fas fa-angle-left"></i>
-<div class="prev-next-info">
-<p class="prev-next-subtitle">previous</p>
-<p class="prev-next-title">Development Setup</p>
-</div>
-</a>
-<a class="right-next" href="custom_registry.html" id="next-link" title="next page">
-<div class="prev-next-info">
-<p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Customize Registry</p>
-</div>
-<i class="fas fa-angle-right"></i>
-</a>
 </div>
 </footer>
 </div>
