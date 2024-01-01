@@ -47,7 +47,7 @@ This guide provides a structured approach for implementing and customising the C
 - Select the Create button to add a new Change Request, ensuring all required fields are completed.
 - At this point, Request Type dropdown field does not have any values yet since there is still no new module for the request type.
 
-## Customise change Request
+## Customise Change Request
 
 - To add a value to the Request Type dropdown field, create a new module and a new model for the request type.
 - Add fields and functions to the newly created model that corresponds to the requirements of that particular request type.
