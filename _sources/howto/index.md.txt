@@ -15,5 +15,6 @@ user_guides/implementing_pmt
 
 #Developer Guides
 developer_guides/development_setup
+troubleshooting
 
 ```

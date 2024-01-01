@@ -1,4 +1,4 @@
-# Development Setup of OpenSPP
+# Development Setup
 
 Setting up a local Odoo environment can be accomplished through two distinct methodologies.
 
