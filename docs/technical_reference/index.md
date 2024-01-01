@@ -6,7 +6,6 @@
 
 # Configuration and Architecture
 architecture
-performance
 extensibility
 
 # Security and Compliance
@@ -40,7 +39,4 @@ programs/eligibility_manager
 programs/entitlement_manager
 programs/deduplication_manager
 programs/notification_manager
-
-# License
-license
 ```
