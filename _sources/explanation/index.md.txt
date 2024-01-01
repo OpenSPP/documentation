@@ -16,6 +16,6 @@ integrated_beneficiary_registry
 social_protection_management_information_systems
 user_mgt
 security_archi
-data_collection_validation.md
+data_collection_validation
 
 ```
