@@ -26,13 +26,17 @@ This guide elucidates the steps required to implement Proxy Means Testing (PMT) 
 
    - Aiming to integrate fields into the individual view, opt for `view_individuals_form` view. Navigate via Settings -> Technical -> View (found under User Interface) and select the view.
    - Edit the view, incorporating the following:
-     <page name="PMT" string="Proxy Means Testing">
-     <group col="4" colspan="4">
-     <field name="x_education_level"/>
-     <field name="x_household_size"/>
-     <field name="x_pmt_score" readonly="1"/>
-     </group>
-     </page>
+
+   ```xml
+   <page name="PMT" string="Proxy Means Testing">
+       <group col="4" colspan="4">
+           <field name="x_education_level"/>
+           <field name="x_household_size"/>
+           <field name="x_pmt_score" readonly="1"/>
+       </group>
+   </page>
+   ```
+
    - Select "Save" on the top right to preserve the alterations.
 
 4. Access Registry

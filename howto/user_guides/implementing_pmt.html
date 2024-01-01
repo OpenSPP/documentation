@@ -615,7 +615,7 @@
 <div class="section" id="implementing-proxy-means-testing-pmt">
 <h1>Implementing Proxy Means Testing (PMT)<a class="headerlink" href="#implementing-proxy-means-testing-pmt" title="Permalink to this headline">#</a></h1>
 <p>This guide elucidates the steps required to implement Proxy Means Testing (PMT) within the OpenSPP system, leveraging Odoo's user interface customization features. By following through, one will learn how to add custom fields to models and modify views to accommodate the newly introduced data fields to implement PMT.</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Activation of Developer Mode</p>
 <ul class="simple">
 <li><p>Ensure administrative access is granted.</p></li>
@@ -644,14 +644,18 @@ record['x_pmt_score'] = record['x_education_level'] * record['x_household_size']
 <li><p>View Modification</p>
 <ul class="simple">
 <li><p>Aiming to integrate fields into the individual view, opt for <code class="docutils literal notranslate"><span class="pre">view_individuals_form</span></code> view. Navigate via Settings -&gt; Technical -&gt; View (found under User Interface) and select the view.</p></li>
-<li><p>Edit the view, incorporating the following:
-<page name="PMT" string="Proxy Means Testing">
-<group col="4" colspan="4">
-<field name="x_education_level"></field>
-<field name="x_household_size"></field>
-<field name="x_pmt_score" readonly="1"></field>
-</group>
-</page></p></li>
+<li><p>Edit the view, incorporating the following:</p></li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;page</span><span class="w"> </span><span class="na">name=</span><span class="s">"PMT"</span><span class="w"> </span><span class="na">string=</span><span class="s">"Proxy Means Testing"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;group</span><span class="w"> </span><span class="na">col=</span><span class="s">"4"</span><span class="w"> </span><span class="na">colspan=</span><span class="s">"4"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"x_education_level"</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"x_household_size"</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"x_pmt_score"</span><span class="w"> </span><span class="na">readonly=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/group&gt;</span>
+<span class="nt">&lt;/page&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>Select "Save" on the top right to preserve the alterations.</p></li>
 </ul>
 </li>
