@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Implementing Proxy Means Testing (PMT)" property="og:title"/>
+<meta content="Customize Program" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/howto/user_guides/implementing_pmt.html" property="og:url"/>
+<meta content="https://docs.openspp.org/howto/developer_guides/custom_program.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="This guide elucidates the steps required to implement Proxy Means Testing (PMT) within the OpenSPP system, leveraging Odoo's user interface customization features. By following through, one will le..." property="og:description"/>
+<meta content="This guide provides a structured approach for implementing and customising the program in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, XM..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="This guide elucidates the steps required to implement Proxy Means Testing (PMT) within the OpenSPP system, leveraging Odoo's user interface customization features. By following through, one will le..." name="description"/>
+<meta content="This guide provides a structured approach for implementing and customising the program in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, XM..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Implementing Proxy Means Testing (PMT) – Howto — OpenSPP Documentation v1.0</title>
+<title>Customize Program – Howto — OpenSPP Documentation v1.0</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -50,13 +50,13 @@
 <script src="../../_static/patch_scrollToActive.js"></script>
 <script src="../../_static/search_shortcut.js"></script>
 <script src="../../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/howto/user_guides/implementing_pmt.html" rel="canonical">
+<link href="https://docs.openspp.org/howto/developer_guides/custom_program.html" rel="canonical">
 <link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.0" type="application/opensearchdescription+xml"/>
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
-<link href="../developer_guides/development_setup.html" rel="next" title="Development Setup"/>
-<link href="../developer_mode.html" rel="prev" title="Developer mode (debug mode)"/>
+<link href="../../technical_reference/index.html" rel="next" title="Technical Reference"/>
+<link href="custom_service_points.html" rel="prev" title="Customize Service Points"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -221,38 +221,38 @@
      Developer mode (debug mode)
     </a>
 </li>
-<li class="toctree-l2 current active">
-<a class="current reference internal" href="#">
+<li class="toctree-l2">
+<a class="reference internal" href="../user_guides/implementing_pmt.html">
      Implementing Proxy Means Testing (PMT)
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../developer_guides/development_setup.html">
+<a class="reference internal" href="development_setup.html">
      Development Setup
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../developer_guides/troubleshooting.html">
+<a class="reference internal" href="troubleshooting.html">
      Troubleshooting
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../developer_guides/custom_registry.html">
+<a class="reference internal" href="custom_registry.html">
      Customize Registry
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../developer_guides/custom_areas.html">
+<a class="reference internal" href="custom_areas.html">
      Customize Areas
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../developer_guides/custom_service_points.html">
+<a class="reference internal" href="custom_service_points.html">
      Customize Service Points
     </a>
 </li>
-<li class="toctree-l2">
-<a class="reference internal" href="../developer_guides/custom_program.html">
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
      Customize Program
     </a>
 </li>
@@ -557,7 +557,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Implementing Proxy Means Testing (PMT) – Howto</span>
+<span>Customize Program – Howto</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -580,7 +580,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/user_guides/implementing_pmt.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/custom_program.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -588,7 +588,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/user_guides/implementing_pmt.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/developer_guides/custom_program.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -605,7 +605,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/user_guides/implementing_pmt.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/developer_guides/custom_program.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -623,99 +623,258 @@
 </ul>
 </div>
 </div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
 </div>
 </div>
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
+   Odoo Setup from Docker using doodba
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-source">
+   Odoo Setup from source
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#utilising-the-program-module">
+   Utilising the Program Module
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#customise-program">
+   Customise Program
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#additional-references">
+   Additional References
+  </a>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 <div class="article row">
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Implementing Proxy Means Testing (PMT)</h1>
+<h1>Customize Program</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
+   Odoo Setup from Docker using doodba
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-source">
+   Odoo Setup from source
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#utilising-the-program-module">
+   Utilising the Program Module
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#customise-program">
+   Customise Program
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#additional-references">
+   Additional References
+  </a>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="implementing-proxy-means-testing-pmt">
-<h1>Implementing Proxy Means Testing (PMT)<a class="headerlink" href="#implementing-proxy-means-testing-pmt" title="Permalink to this headline">#</a></h1>
-<p>This guide elucidates the steps required to implement Proxy Means Testing (PMT) within the OpenSPP system, leveraging Odoo's user interface customization features. By following through, one will learn how to add custom fields to models and modify views to accommodate the newly introduced data fields to implement PMT.</p>
-<ol class="arabic">
-<li><p>Activation of Developer Mode</p>
+<div class="section" id="customize-program">
+<h1>Customize Program<a class="headerlink" href="#customize-program" title="Permalink to this headline">#</a></h1>
+<p>This guide provides a structured approach for implementing and customising the program in OpenSPP through the development of a custom module.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Ensure administrative access is granted.</p></li>
-<li><p>Navigate to the Settings module.</p></li>
-<li><p>Scroll towards the bottom and select "Activate the developer mode".</p></li>
+<li><p>Knowledge in Python, Odoo, OOP, HTML, XML, Xpaths.</p></li>
+<li><p>A functional OpenSPP installation.</p></li>
+<li><p>Administrative access to the OpenSPP backend.</p></li>
 </ul>
-</li>
-<li><p>Model Customization</p>
-<ul class="simple">
-<li><p>With the objective of adding fields to the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model, proceed to Settings -&gt; Technical -&gt; Models (located under Database Structure) and choose the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model.</p></li>
-<li><p>Fields such as x_education_level and x_household_size are to be added.</p></li>
-<li><p>Upon pressing <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">a</span> <span class="pre">line</span></code>, a properties panel unveils, facilitating the specification of Field Name, Field Label, Field Type, among other attributes.</p></li>
-<li><p>Choose the field type (e.g., Integer, Selection, Float) from the left-hand panel and fill the Field Name(x_education_level, x_household_size) ,and the Field Label.</p></li>
-<li><p>Following the addition of each field, select “Save and Close”.</p></li>
-<li><p>An additional computed field named x_pmt_score is to be introduced. Adhere to the preceding steps, with the added configurations outlined below:</p>
-<ul>
-<li><p>Dependencies: x_education_level, x_household_size</p></li>
-<li><p>Function:
-for record in self:
-record['x_pmt_score'] = record['x_education_level'] * record['x_household_size']</p></li>
-</ul>
-</li>
-<li><p>Click "Save" situated on the top right to retain the modifications.</p></li>
-</ul>
-</li>
-<li><p>View Modification</p>
-<ul class="simple">
-<li><p>Aiming to integrate fields into the individual view, opt for <code class="docutils literal notranslate"><span class="pre">view_individuals_form</span></code> view. Navigate via Settings -&gt; Technical -&gt; View (found under User Interface) and select the view.</p></li>
-<li><p>Edit the view, incorporating the following:</p></li>
-</ul>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;page</span><span class="w"> </span><span class="na">name=</span><span class="s">"PMT"</span><span class="w"> </span><span class="na">string=</span><span class="s">"Proxy Means Testing"</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;group</span><span class="w"> </span><span class="na">col=</span><span class="s">"4"</span><span class="w"> </span><span class="na">colspan=</span><span class="s">"4"</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"x_education_level"</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"x_household_size"</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"x_pmt_score"</span><span class="w"> </span><span class="na">readonly=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/group&gt;</span>
-<span class="nt">&lt;/page&gt;</span>
-</pre></div>
 </div>
+<div class="section" id="odoo-setup-from-docker-using-doodba">
+<h2>Odoo Setup from Docker using doodba<a class="headerlink" href="#odoo-setup-from-docker-using-doodba" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Select "Save" on the top right to preserve the alterations.</p></li>
+<li><p>Existence of openg2p_program folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: g2p_programs.</p></li>
+<li><p>Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership, g2p_bank.</p></li>
+<li><p>Existence of openspp_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: spp_programs, spp_programs_sp, g2p_entitlement_cash, spp_entitlement_inkind, spp_eligibility_sql, spp_eligibility_tags.</p></li>
+<li><p>Existence of queue folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: queue_job</p></li>
+<li><p>Existence of web folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: web, web_domain_field.</p></li>
+</ul>
+</div>
+<div class="section" id="odoo-setup-from-source">
+<h2>Odoo Setup from source<a class="headerlink" href="#odoo-setup-from-source" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Existence of openg2p-program folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-program.git">https://github.com/OpenG2P/openg2p-program.git</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: g2p_programs.</p></li>
+<li><p>Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-registry.git">https://github.com/OpenG2P/openg2p-registry.git</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership, g2p_bank.</p></li>
+<li><p>Existence of openspp-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenSPP/openspp-registry.git">https://github.com/OpenSPP/openspp-registry.git</a> into odoo/custom, navigate to the openspp-registry folder, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: spp_programs, spp_programs_sp, g2p_entitlement_cash, spp_entitlement_inkind, spp_eligibility_sql, spp_eligibility_tags, spp_area, spp_service_point.</p></li>
+<li><p>Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/queue.git">https://github.com/OCA/queue.git</a> into odoo/custom, navigate to the queue, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: queue_job.</p></li>
+<li><p>Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/web.git">https://github.com/OCA/web.git</a> into odoo/custom, navigate to the web, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: web, web_domain_field</p></li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Log into OpenSPP with administrative rights.</p></li>
+<li><p>Access the “Apps” menu from the dashboard to manage OpenSPP modules.</p></li>
+<li><p>Choose “Update Apps List” to refresh the module list.</p></li>
+<li><p>Search and initiate installation of the following modules, this process will also install all of their associated modules:</p>
+<ul>
+<li><p>OpenSPP Program Entitlement (In-Kind)</p></li>
+<li><p>SPP Program Entitlement (Cash)</p></li>
+<li><p>OpenSPP Tag Based Eligibility Manager</p></li>
+<li><p>OpenSPP SQL Query Eligibility Manager</p></li>
 </ul>
 </li>
-<li><p>Access Registry</p>
+</ul>
+</div>
+<div class="section" id="utilising-the-program-module">
+<h2>Utilising the Program Module<a class="headerlink" href="#utilising-the-program-module" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Click on the "Registry" menu item situated at the screen’s top.</p></li>
-<li><p>Choose "Individuals".</p></li>
-<li><p>Pick a record to view the aforementioned changes.</p></li>
-<li><p>Now the PMT score will be calculated according to the given function defined above.</p></li>
+<li><p>If a new Program is required to be added, Select “Program” menu.</p></li>
+<li><p>Select the “Create Program” button and a modal to set the program settings will appear.</p></li>
+<li><p>Fill-up name field.</p></li>
+<li><p>Select a Target Type: Group is for Group Registry while Individual is for Individual Registry.</p></li>
+<li><p>In the “Configure the Default Eligibility Criteria” will set who are the individuals or groups that are eligible for this program.</p></li>
+<li><p>There are 3 Eligibility Managers that can be selected namely “Default”, “SQL-base Eligibility”, and “Tag-based Eligibility”</p></li>
+<li><p>In “Default”, a registry will be determined based on the filter that is setup on the domain. To set up the domain, Click the “Add filter” button.</p></li>
+<li><p>Upon clicking the button, 3 fields will appear. First field is the name of the model’s field, Second field is the operator, while the 3rd field is the value.</p></li>
+<li><p>Based on the filter that is setup is what will be the eligible registrant for this program</p></li>
+<li><p>In “SQL-base Eligibility”, a registry will be determined based on the SQL Query that will be input in the SQL Query field</p></li>
+<li><p>Upon inputting the SQL Query, click the “Validate Query” button to validate the query if it is a valid sql query</p></li>
+<li><p>The result if its valid or invalid will show and the registry record count if its valid.</p></li>
+<li><p>In “Tag-based Eligibility”, a registry will be determined based on the Tags and Area provided.</p></li>
+<li><p>In the “Configure the Cycle Manager” tab will set the recurrence, approvers, etc., of the program’s cycle.</p></li>
+<li><p>Check the One-time Distribution to only create one cycle and no recurrence to a program.</p></li>
+<li><p>In the “Configure the Entitlement Manager” tab will set the entitlements that the registry will receive.</p></li>
+<li><p>There are 3 Entitlement Managers that can be selected namely “Default”, “Cash”, and “In-kind”</p></li>
+<li><p>Upon setting up all of the managers of the program, click the Next button, model will redirect to the “Import Registrant” page</p></li>
+<li><p>In this page will set if the program will import the registrants after creating or not. Select “Yes” to import registrant, otherwise select “No”.</p></li>
+<li><p>Click Create button to create the Program.</p></li>
+<li><p>Inside the Program, there are many buttons in the top part of the page.</p></li>
+<li><p>“Import Eligible Registrants” button is to import all registrants based on the eligible criteria. This registrants is still not enrolled in the Program.</p></li>
+<li><p>“Enroll Eligible Registrants” button will enroll all imported registrants.</p></li>
+<li><p>“Verify eligibility” button will verify if all enrolled registrants is still eligible for the program. If they are not eligible anymore then they will be removed from the program.</p></li>
+<li><p>“Create New Cycle” will create a cycle and the cycle that was created will be added in the Cycles Tab.</p></li>
+<li><p>To modify the managers of the Program, go to the Configurations tab.</p></li>
+<li><p>In this tab will show all of the managers of the program, click the green button to modify the managers.</p></li>
+<li><p>Click the green button on Eligibility Managers to modify the eligibility criteria of the program.</p></li>
+<li><p>Click the green button on Cycle Managers to modify the settings of the program’s cycle.</p></li>
+<li><p>Click the green button on Entitlement Managers to modify the settings of the entitlements.</p></li>
+</ul>
+</div>
+<div class="section" id="customise-program">
+<h2>Customise Program<a class="headerlink" href="#customise-program" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>To introduce new fields or functions in a new module, develop a Python file extending the following models:</p>
+<ul>
+<li><p>“g2p.program” for Program.</p></li>
+<li><p>“g2p.program.create.wizard” for the creation of a Program.</p></li>
+<li><p>“g2p.program_membership.manager.default” for the default eligibility criteria.</p></li>
+<li><p>“g2p.program_membership.manager.tags” for the tag-based eligibility criteria.</p></li>
+<li><p>“g2p.program_membership.manager.sql” for the sql-base eligibility criteria.</p></li>
+<li><p>“g2p.cycle.manager.default” for the cycle manager.</p></li>
+<li><p>“g2p.program.entitlement.manager.default” for the default entitlement manager.</p></li>
+<li><p>“g2p.program.entitlement.manager.cash” for the cash entitlement manager.</p></li>
+<li><p>“g2p.program.entitlement.manager.inkind” for the in-kind entitlement manager.</p></li>
 </ul>
 </li>
-</ol>
-<p>Upon completion, a new tab titled "Proxy Means Testing" should now be present within the Registry in the individual’s record as a new tab.</p>
+<li><p>Integrate this file into <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>.</p></li>
+<li><p>Upgrade the module incorporating the new Python file.</p></li>
+<li><p>To integrate new fields into the UI, developers should familiar themselves with the view, view inheritance, and the use of xpath in Odoo.</p></li>
+</ul>
+</div>
+<div class="section" id="additional-references">
+<h2>Additional References<a class="headerlink" href="#additional-references" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Below are some Odoo references that may help in adding the field both in models and in UI. For further guidance on model creation, inheritance, and UI integration, the following Odoo documentation may be useful:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html">Views</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">Chapter 4: Models And Basic Fields</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/07_basicviews.html#chapter-7-basic-views">Chapter 7: Basic Views</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">Chapter 13: Inheritance</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">Chapter 14: Interact With Other Modules</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </main>
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
-<a class="left-prev" href="../developer_mode.html" id="prev-link" title="previous page">
+<a class="left-prev" href="custom_service_points.html" id="prev-link" title="previous page">
 <i class="fas fa-angle-left"></i>
 <div class="prev-next-info">
 <p class="prev-next-subtitle">previous</p>
-<p class="prev-next-title">Developer mode (debug mode)</p>
+<p class="prev-next-title">Customize Service Points</p>
 </div>
 </a>
-<a class="right-next" href="../developer_guides/development_setup.html" id="next-link" title="next page">
+<a class="right-next" href="../../technical_reference/index.html" id="next-link" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Development Setup</p>
+<p class="prev-next-title">Technical Reference</p>
 </div>
 <i class="fas fa-angle-right"></i>
 </a>
