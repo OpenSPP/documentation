@@ -4,9 +4,9 @@ This guide provides a structured approach for implementing and customising the c
 
 ## Prerequisites
 
-Knowledge in Python, Odoo, OOP, HTML, XML, Xpaths.
-A functional OpenSPP installation.
-Administrative access to the OpenSPP backend.
+- Knowledge in Python, Odoo, OOP, HTML, XML, Xpaths.
+- A functional OpenSPP installation.
+- Administrative access to the OpenSPP backend.
 
 ## Odoo Setup from Docker using doodba
 
