@@ -21,5 +21,6 @@ developer_guides/custom_areas
 developer_guides/custom_service_points
 developer_guides/custom_program
 developer_guides/custom_cycle
+developer_guides/custom_cr
 
 ```
