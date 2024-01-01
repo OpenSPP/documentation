@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Prerequisites" property="og:title"/>
+<meta content="Customize Service Points" property="og:title"/>
 <meta content="website" property="og:type"/>
 <meta content="https://docs.openspp.org/howto/developer_guides/custom_service_points.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="Customize Service Points This guide provides a structured approach for implementing and customising the service points in OpenSPP through the development of a custom module. Knowledge in Python, Od..." property="og:description"/>
+<meta content="This guide provides a structured approach for implementing and customising the service points in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, H..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="Customize Service Points This guide provides a structured approach for implementing and customising the service points in OpenSPP through the development of a custom module. Knowledge in Python, Od..." name="description"/>
+<meta content="This guide provides a structured approach for implementing and customising the service points in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, H..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Prerequisites – Howto — OpenSPP Documentation v1.0</title>
+<title>Customize Service Points – Howto — OpenSPP Documentation v1.0</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -248,7 +248,7 @@
 </li>
 <li class="toctree-l2 current active">
 <a class="current reference internal" href="#">
-     Prerequisites
+     Customize Service Points
     </a>
 </li>
 </ul>
@@ -552,7 +552,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Prerequisites – Howto</span>
+<span>Customize Service Points – Howto</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -632,32 +632,32 @@
     </div>
 <nav aria-label="Page" id="bd-toc-nav">
 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry">
-<a class="reference internal nav-link" href="#">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
    Prerequisites
   </a>
 </li>
-<li class="toc-h1 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
    Odoo Setup from Docker using doodba
   </a>
 </li>
-<li class="toc-h1 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#installation">
    Installation
   </a>
 </li>
-<li class="toc-h1 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#utilising-the-service-points-module">
    Utilising the Service Points Module
   </a>
 </li>
-<li class="toc-h1 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#customise-service-point-and-service-point-device">
    Customise Service Point and Service Point Device
   </a>
 </li>
-<li class="toc-h1 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#additional-references">
    Additional References
   </a>
@@ -670,7 +670,7 @@
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Prerequisites</h1>
+<h1>Customize Service Points</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
@@ -679,32 +679,32 @@
 </div>
 <nav aria-label="Page">
 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry">
-<a class="reference internal nav-link" href="#">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
    Prerequisites
   </a>
 </li>
-<li class="toc-h1 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
    Odoo Setup from Docker using doodba
   </a>
 </li>
-<li class="toc-h1 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#installation">
    Installation
   </a>
 </li>
-<li class="toc-h1 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#utilising-the-service-points-module">
    Utilising the Service Points Module
   </a>
 </li>
-<li class="toc-h1 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#customise-service-point-and-service-point-device">
    Customise Service Point and Service Point Device
   </a>
 </li>
-<li class="toc-h1 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#additional-references">
    Additional References
   </a>
@@ -716,10 +716,11 @@
 </div>
 <main id="main-content" role="main">
 <div>
-<p>Customize Service Points</p>
+<div class="section" id="customize-service-points">
+<h1>Customize Service Points<a class="headerlink" href="#customize-service-points" title="Permalink to this headline">#</a></h1>
 <p>This guide provides a structured approach for implementing and customising the service points in OpenSPP through the development of a custom module.</p>
 <div class="section" id="prerequisites">
-<h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h1>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Knowledge in Python, Odoo, OOP, HTML, XML, Xpaths.</p></li>
 <li><p>A working OpenSPP installation</p></li>
@@ -727,7 +728,7 @@
 </ul>
 </div>
 <div class="section" id="odoo-setup-from-docker-using-doodba">
-<h1>Odoo Setup from Docker using doodba<a class="headerlink" href="#odoo-setup-from-docker-using-doodba" title="Permalink to this headline">#</a></h1>
+<h2>Odoo Setup from Docker using doodba<a class="headerlink" href="#odoo-setup-from-docker-using-doodba" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
 <li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group.</p></li>
@@ -741,7 +742,7 @@ Odoo Setup from source</p></li>
 </ul>
 </div>
 <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h1>
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Log into OpenSPP with administrative rights.</p></li>
 <li><p>Access the “Apps” menu from the dashboard to manage OpenSPP modules.</p></li>
@@ -750,7 +751,7 @@ Odoo Setup from source</p></li>
 </ul>
 </div>
 <div class="section" id="utilising-the-service-points-module">
-<h1>Utilising the Service Points Module<a class="headerlink" href="#utilising-the-service-points-module" title="Permalink to this headline">#</a></h1>
+<h2>Utilising the Service Points Module<a class="headerlink" href="#utilising-the-service-points-module" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>If a new Service Point is required to be added, Select “Service Point” menu.</p></li>
 <li><p>Select the Create button to add a new Service Point, ensuring all required fields are completed.</p></li>
@@ -763,7 +764,7 @@ Odoo Setup from source</p></li>
 </ul>
 </div>
 <div class="section" id="customise-service-point-and-service-point-device">
-<h1>Customise Service Point and Service Point Device<a class="headerlink" href="#customise-service-point-and-service-point-device" title="Permalink to this headline">#</a></h1>
+<h2>Customise Service Point and Service Point Device<a class="headerlink" href="#customise-service-point-and-service-point-device" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>To introduce new fields or functions in a new module, develop a Python file extending the “spp.service.point” for Service Point or “spp.service.point.device” for Service Point Device and integrate this file into <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>.</p>
 <ul>
@@ -776,7 +777,7 @@ Odoo Setup from source</p></li>
 </ul>
 </div>
 <div class="section" id="additional-references">
-<h1>Additional References<a class="headerlink" href="#additional-references" title="Permalink to this headline">#</a></h1>
+<h2>Additional References<a class="headerlink" href="#additional-references" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Below are some Odoo references that may help in adding the field both in models and in UI. For further guidance on model creation, inheritance, and UI integration, the following Odoo documentation may be useful:</p>
 <ul>
@@ -788,6 +789,7 @@ Odoo Setup from source</p></li>
 </ul>
 </li>
 </ul>
+</div>
 </div>
 </div>
 </main>
