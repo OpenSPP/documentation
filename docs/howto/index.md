@@ -17,5 +17,7 @@ user_guides/implementing_pmt
 developer_guides/development_setup
 developer_guides/troubleshooting
 developer_guides/custom_registry
+developer_guides/custom_areas
+developer_guides/custom_service_points
 
 ```
