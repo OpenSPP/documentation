@@ -18,4 +18,7 @@ code_of_conduct
 security_report
 l3_support
 
+# License
+license
+
 ```
