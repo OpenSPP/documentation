@@ -13,14 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Managers" property="og:title"/>
+<meta content="Prerequisites" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/technical_reference/programs/index.html" property="og:url"/>
+<meta content="https://docs.openspp.org/howto/developer_guides/custom_service_points.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
+<meta content="Customize Service Points This guide provides a structured approach for implementing and customising the service points in OpenSPP through the development of a custom module. Knowledge in Python, Od..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
+<meta content="Customize Service Points This guide provides a structured approach for implementing and customising the service points in OpenSPP through the development of a custom module. Knowledge in Python, Od..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Managers — OpenSPP Documentation v1.0</title>
+<title>Prerequisites – Howto — OpenSPP Documentation v1.0</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -48,11 +50,13 @@
 <script src="../../_static/patch_scrollToActive.js"></script>
 <script src="../../_static/search_shortcut.js"></script>
 <script src="../../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/technical_reference/programs/" rel="canonical">
+<link href="https://docs.openspp.org/howto/developer_guides/custom_service_points.html" rel="canonical">
 <link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.0" type="application/opensearchdescription+xml"/>
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
+<link href="../../technical_reference/index.html" rel="next" title="Technical Reference"/>
+<link href="custom_areas.html" rel="prev" title="Customize Areas"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -97,7 +101,7 @@
 </input></div>
 </form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item active">
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children">
 <a class="reference internal" href="../../tutorials/">
    Getting started
@@ -202,55 +206,55 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children">
-<a class="reference internal" href="../../howto/">
+<li class="toctree-l1 current active has-children">
+<a class="reference internal" href="../">
    Howto
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
 <label for="toctree-checkbox-3">
 <i class="fas fa-chevron-down">
 </i>
 </label>
-<ul>
+<ul class="current">
 <li class="toctree-l2">
-<a class="reference internal" href="../../howto/developer_mode.html">
+<a class="reference internal" href="../developer_mode.html">
      Developer mode (debug mode)
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../../howto/user_guides/implementing_pmt.html">
+<a class="reference internal" href="../user_guides/implementing_pmt.html">
      Implementing Proxy Means Testing (PMT)
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../../howto/developer_guides/development_setup.html">
+<a class="reference internal" href="development_setup.html">
      Development Setup
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../../howto/developer_guides/troubleshooting.html">
+<a class="reference internal" href="troubleshooting.html">
      Troubleshooting
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../../howto/developer_guides/custom_registry.html">
+<a class="reference internal" href="custom_registry.html">
      Customize Registry
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../../howto/developer_guides/custom_areas.html">
+<a class="reference internal" href="custom_areas.html">
      Customize Areas
     </a>
 </li>
-<li class="toctree-l2">
-<a class="reference internal" href="../../howto/developer_guides/custom_service_points.html">
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
      Prerequisites
     </a>
 </li>
 </ul>
 </li>
 <li class="toctree-l1 has-children">
-<a class="reference internal" href="../">
+<a class="reference internal" href="../../technical_reference/">
    Technical Reference
   </a>
 <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -260,112 +264,112 @@
 </label>
 <ul>
 <li class="toctree-l2">
-<a class="reference internal" href="../architecture.html">
+<a class="reference internal" href="../../technical_reference/architecture.html">
      Architecture
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../extensibility.html">
+<a class="reference internal" href="../../technical_reference/extensibility.html">
      Customisable, Configurable, and Extensible
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../security.html">
+<a class="reference internal" href="../../technical_reference/security.html">
      Security Implementations &amp; Practices
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../oidc.html">
+<a class="reference internal" href="../../technical_reference/oidc.html">
      Configuring Keycloak for OAuth
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../audit_logs.html">
+<a class="reference internal" href="../../technical_reference/audit_logs.html">
      Audit Logs
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../code.html">
+<a class="reference internal" href="../../technical_reference/code.html">
      Code &amp; Repository Management
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../release_management.html">
+<a class="reference internal" href="../../technical_reference/release_management.html">
      Release Management
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../monitoring.html">
+<a class="reference internal" href="../../technical_reference/monitoring.html">
      Monitoring
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="dashboards.html">
+<a class="reference internal" href="../../technical_reference/programs/dashboards.html">
      Dashboards
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../integrations.html">
+<a class="reference internal" href="../../technical_reference/integrations.html">
      Integrations
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../dci.html">
+<a class="reference internal" href="../../technical_reference/dci.html">
      Implementation of DCI Specification
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../external_api.html">
+<a class="reference internal" href="../../technical_reference/external_api.html">
      External API
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../backup.html">
+<a class="reference internal" href="../../technical_reference/backup.html">
      Backup and Recovery
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../performance_optimization.html">
+<a class="reference internal" href="../../technical_reference/performance_optimization.html">
      Performance Optimization
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../module.html">
+<a class="reference internal" href="../../technical_reference/module.html">
      Module Development
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="concepts.html">
+<a class="reference internal" href="../../technical_reference/programs/concepts.html">
      Manager Overview
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="program_manager.html">
+<a class="reference internal" href="../../technical_reference/programs/program_manager.html">
      Program Manager
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="cycle_manager.html">
+<a class="reference internal" href="../../technical_reference/programs/cycle_manager.html">
      Cycle Manager
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="eligibility_manager.html">
+<a class="reference internal" href="../../technical_reference/programs/eligibility_manager.html">
      Eligibility Manager
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="entitlement_manager.html">
+<a class="reference internal" href="../../technical_reference/programs/entitlement_manager.html">
      Entitlement Manager
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="deduplication_manager.html">
+<a class="reference internal" href="../../technical_reference/programs/deduplication_manager.html">
      Deduplication Manager
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="notification_manager.html">
+<a class="reference internal" href="../../technical_reference/programs/notification_manager.html">
      Notification Manager
     </a>
 </li>
@@ -548,7 +552,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Managers</span>
+<span>Prerequisites – Howto</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -571,7 +575,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Ftechnical_reference/programs/index.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/custom_service_points.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -579,7 +583,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?technical_reference/programs/index.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/developer_guides/custom_service_points.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -596,7 +600,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/technical_reference/programs/index.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/developer_guides/custom_service_points.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -614,35 +618,196 @@
 </ul>
 </div>
 </div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
 </div>
 </div>
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#">
+   Prerequisites
+  </a>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
+   Odoo Setup from Docker using doodba
+  </a>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#utilising-the-service-points-module">
+   Utilising the Service Points Module
+  </a>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#customise-service-point-and-service-point-device">
+   Customise Service Point and Service Point Device
+  </a>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#additional-references">
+   Additional References
+  </a>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 <div class="article row">
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Managers</h1>
+<h1>Prerequisites</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#">
+   Prerequisites
+  </a>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
+   Odoo Setup from Docker using doodba
+  </a>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#utilising-the-service-points-module">
+   Utilising the Service Points Module
+  </a>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#customise-service-point-and-service-point-device">
+   Customise Service Point and Service Point Device
+  </a>
+</li>
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#additional-references">
+   Additional References
+  </a>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="managers">
-<h1>Managers<a class="headerlink" href="#managers" title="Permalink to this headline">#</a></h1>
-<div class="toctree-wrapper compound">
+<p>Customize Service Points</p>
+<p>This guide provides a structured approach for implementing and customising the service points in OpenSPP through the development of a custom module.</p>
+<div class="section" id="prerequisites">
+<h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Knowledge in Python, Odoo, OOP, HTML, XML, Xpaths.</p></li>
+<li><p>A working OpenSPP installation</p></li>
+<li><p>Administrator access to the OpenSPP backend.</p></li>
+</ul>
 </div>
+<div class="section" id="odoo-setup-from-docker-using-doodba">
+<h1>Odoo Setup from Docker using doodba<a class="headerlink" href="#odoo-setup-from-docker-using-doodba" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group.</p></li>
+<li><p>Existence of openspp_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: spp_service_points, spp_service_point_device, spp_area.
+Odoo Setup from source</p></li>
+<li><p>Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-registry.git">here</a> into odoo/custom, navigate to the openg2p-registry folder, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group.</p></li>
+<li><p>Existence of openspp-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenSPP/openspp-registry.git">here</a> into odoo/custom, navigate to the openspp-registry folder, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: spp_service_points, spp_service_point_device, spp_area.</p></li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Log into OpenSPP with administrative rights.</p></li>
+<li><p>Access the “Apps” menu from the dashboard to manage OpenSPP modules.</p></li>
+<li><p>Choose “Update Apps List” to refresh the module list.</p></li>
+<li><p>Search for “OpenSPP Service Point Device” and initiate installation. This process will also install associated modules: OpenSPP Service Points</p></li>
+</ul>
+</div>
+<div class="section" id="utilising-the-service-points-module">
+<h1>Utilising the Service Points Module<a class="headerlink" href="#utilising-the-service-points-module" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>If a new Service Point is required to be added, Select “Service Point” menu.</p></li>
+<li><p>Select the Create button to add a new Service Point, ensuring all required fields are completed.</p></li>
+<li><p>Click the Save button. A Service Point record is now created.</p></li>
+<li><p>If a Service Point Device is required to view, Select “Devices” on the top right corner of the Service Point Page.</p></li>
+<li><p>Upon clicking, the page will be directed to the page consisting of a table of all the Terminal Devices of the Service Point.</p></li>
+<li><p>If a Service Point user is required, go back to the Service Point page, select the Edit button, and fill-up the company field.</p></li>
+<li><p>Upon adding value to the company field, a new button will appear in the top right corner named “Create SP Users”.</p></li>
+<li><p>Click “Create SP Users” to create users for all contacts under the company.</p></li>
+</ul>
+</div>
+<div class="section" id="customise-service-point-and-service-point-device">
+<h1>Customise Service Point and Service Point Device<a class="headerlink" href="#customise-service-point-and-service-point-device" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>To introduce new fields or functions in a new module, develop a Python file extending the “spp.service.point” for Service Point or “spp.service.point.device” for Service Point Device and integrate this file into <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>.</p>
+<ul>
+<li><p>e.g. service_point_location = fields.Char(required=True) or</p></li>
+<li><p>e.g. service_point_location = fields.Many2one(“service.point.location”, required=True) assuming there is a model for service point location.</p></li>
+</ul>
+</li>
+<li><p>Upgrade the module incorporating the new Python file.</p></li>
+<li><p>To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.</p></li>
+</ul>
+</div>
+<div class="section" id="additional-references">
+<h1>Additional References<a class="headerlink" href="#additional-references" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Below are some Odoo references that may help in adding the field both in models and in UI. For further guidance on model creation, inheritance, and UI integration, the following Odoo documentation may be useful:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html">Views</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">Chapter 4: Models And Basic Fields</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/07_basicviews.html#chapter-7-basic-views">Chapter 7: Basic Views</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">Chapter 13: Inheritance</a></p></li>
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">Chapter 14: Interact With Other Modules</a></p></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 </main>
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
+<a class="left-prev" href="custom_areas.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Customize Areas</p>
+</div>
+</a>
+<a class="right-next" href="../../technical_reference/index.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Technical Reference</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
 </div>
 </footer>
 </div>
