@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Customize Cycle" property="og:title"/>
+<meta content="Implementing Proxy Means Testing (PMT)" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/howto/developer_guides/custom_cycle.html" property="og:url"/>
+<meta content="https://docs.openspp.org/howto/developer_guides/implmenting_pmt.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="This guide provides a structured approach for implementing and customising the cycle in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, XML,..." property="og:description"/>
+<meta content="This tutorial guides you through installing and implementing the Proxy Means Testing (PMT) module in OpenSPP with the help of custom module development. By following these steps, you will be able t..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="This guide provides a structured approach for implementing and customising the cycle in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, XML,..." name="description"/>
+<meta content="This tutorial guides you through installing and implementing the Proxy Means Testing (PMT) module in OpenSPP with the help of custom module development. By following these steps, you will be able t..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Customize Cycle – How to — OpenSPP Documentation v1.0</title>
+<title>Implementing Proxy Means Testing (PMT) – How to — OpenSPP Documentation v1.0</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -50,13 +50,13 @@
 <script src="../../_static/patch_scrollToActive.js"></script>
 <script src="../../_static/search_shortcut.js"></script>
 <script src="../../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/howto/developer_guides/custom_cycle.html" rel="canonical">
+<link href="https://docs.openspp.org/howto/developer_guides/implmenting_pmt.html" rel="canonical">
 <link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.0" type="application/opensearchdescription+xml"/>
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
-<link href="custom_cr.html" rel="next" title="Customize Change Request"/>
-<link href="custom_program.html" rel="prev" title="Customize Program"/>
+<link href="../../technical_reference/index.html" rel="next" title="Technical Reference"/>
+<link href="custom_audit.html" rel="prev" title="Customize Audit Logs"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -256,8 +256,8 @@
      Customize Program
     </a>
 </li>
-<li class="toctree-l2 current active">
-<a class="current reference internal" href="#">
+<li class="toctree-l2">
+<a class="reference internal" href="custom_cycle.html">
      Customize Cycle
     </a>
 </li>
@@ -271,8 +271,8 @@
      Customize Audit Logs
     </a>
 </li>
-<li class="toctree-l2">
-<a class="reference internal" href="implmenting_pmt.html">
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
      Implementing Proxy Means Testing (PMT)
     </a>
 </li>
@@ -577,7 +577,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Customize Cycle – How to</span>
+<span>Implementing Proxy Means Testing (PMT) – How to</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -600,7 +600,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/custom_cycle.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/implmenting_pmt.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -608,7 +608,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/developer_guides/custom_cycle.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/developer_guides/implmenting_pmt.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -625,7 +625,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/developer_guides/custom_cycle.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/developer_guides/implmenting_pmt.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -663,33 +663,18 @@
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
-   Odoo Setup from Docker using doodba
+<a class="reference internal nav-link" href="#installation-of-the-pmt-module">
+   1. Installation of the PMT Module
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-source">
-   Odoo Setup from source
+<a class="reference internal nav-link" href="#understanding-module-structure">
+   2. Understanding Module Structure
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#installation">
-   Installation
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#utilising-the-cycle-module">
-   Utilising the Cycle Module
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#customise-cycle">
-   Customise Cycle
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#additional-references">
-   Additional References
+<a class="reference internal nav-link" href="#using-the-pmt-features">
+   3. Using the PMT Features
   </a>
 </li>
 </ul>
@@ -700,7 +685,7 @@
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Customize Cycle</h1>
+<h1>Implementing Proxy Means Testing (PMT)</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
@@ -715,33 +700,18 @@
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
-   Odoo Setup from Docker using doodba
+<a class="reference internal nav-link" href="#installation-of-the-pmt-module">
+   1. Installation of the PMT Module
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-source">
-   Odoo Setup from source
+<a class="reference internal nav-link" href="#understanding-module-structure">
+   2. Understanding Module Structure
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#installation">
-   Installation
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#utilising-the-cycle-module">
-   Utilising the Cycle Module
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#customise-cycle">
-   Customise Cycle
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#additional-references">
-   Additional References
+<a class="reference internal nav-link" href="#using-the-pmt-features">
+   3. Using the PMT Features
   </a>
 </li>
 </ul>
@@ -751,94 +721,47 @@
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="customize-cycle">
-<h1>Customize Cycle<a class="headerlink" href="#customize-cycle" title="Permalink to this headline">#</a></h1>
-<p>This guide provides a structured approach for implementing and customising the cycle in OpenSPP through the development of a custom module.</p>
+<div class="section" id="implementing-proxy-means-testing-pmt">
+<h1>Implementing Proxy Means Testing (PMT)<a class="headerlink" href="#implementing-proxy-means-testing-pmt" title="Permalink to this headline">#</a></h1>
+<p>This tutorial guides you through installing and implementing the Proxy Means Testing (PMT) module in OpenSPP with the help of custom module development. By following these steps, you will be able to extend the functionality of the OpenSPP with PMT features.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Knowledge in Python, Odoo, OOP, HTML, XML, Xpaths.</p></li>
-<li><p>A functional OpenSPP installation.</p></li>
-<li><p>Administrative access to the OpenSPP backend.</p></li>
+<li><p>A working OpenSPP installation.</p></li>
+<li><p>Administrator access to install and configure new modules.</p></li>
+<li><p>Download and deploy the spp_pmt module from the Github repository[Link] into “custom/src/openspp_registry” folder in “odoo” in your OpenSPP installation.</p></li>
 </ul>
 </div>
-<div class="section" id="odoo-setup-from-docker-using-doodba">
-<h2>Odoo Setup from Docker using doodba<a class="headerlink" href="#odoo-setup-from-docker-using-doodba" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Existence of openg2p_program folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: g2p_programs.</p></li>
-<li><p>Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>vailability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership, g2p_bank.</p></li>
-<li><p>Existence of queue folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: queue_job</p></li>
-<li><p>Existence of web folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: web, web_domain_field.</p></li>
-</ul>
+<div class="section" id="installation-of-the-pmt-module">
+<h2>1. Installation of the PMT Module<a class="headerlink" href="#installation-of-the-pmt-module" title="Permalink to this headline">#</a></h2>
+<p>1.1. Start by logging into your OpenSPP instance with administrative privileges.</p>
+<p>1.2. Navigate to the "Apps" menu from the dashboard. Here, modules are managed for your OpenSPP environment.</p>
+<p>1.3. In the "Apps" menu, select "Update Apps List" to ensure all recently added modules are visible.</p>
+<p>1.4. In the search bar, type "Proxy Means Testing" and press enter. Locate the module from the list that appears.</p>
+<p>1.5. Click on the "Install" button next to the PMT module. The system will automatically handle the installation, managing any dependencies as declared in the module's manifest file.</p>
 </div>
-<div class="section" id="odoo-setup-from-source">
-<h2>Odoo Setup from source<a class="headerlink" href="#odoo-setup-from-source" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Existence of openg2p-program folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-program.git">here</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: g2p_programs.</p></li>
-<li><p>Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-registry.git">here</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership, g2p_bank.</p></li>
-<li><p>Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/queue.git">here</a> into odoo/custom, navigate to the queue, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: queue_job.</p></li>
-<li><p>Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/web.git">here</a> into odoo/custom, navigate to the web, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: web, web_domain_field</p></li>
-</ul>
-</div>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Log into OpenSPP with administrative rights.</p></li>
-<li><p>Access the “Apps” menu from the dashboard to manage OpenSPP modules.</p></li>
-<li><p>Choose “Update Apps List” to refresh the module list.</p></li>
-<li><p>Search for “OpenG2P Programs” and initiate installation. This process will also install associated modules: G2P Registry: Groups, G2P Registry: Individual, G2P Registry: Base.</p></li>
-</ul>
-</div>
-<div class="section" id="utilising-the-cycle-module">
-<h2>Utilising the Cycle Module<a class="headerlink" href="#utilising-the-cycle-module" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>If a new Cycle is required to be added, enter one of the Programs.</p></li>
-<li><p>Click “Create New Cycle” in the top corner of the page.</p></li>
-<li><p>A cycle will be created and added to the table inside the Cycles tab.</p></li>
-<li><p>A program can create multiple cycles.</p></li>
-<li><p>Click on the green button beside the cycle name of a cycle.</p></li>
-<li><p>Upon clicking the green button, the system will be redirected to the cycle page where the information of the cycle can be seen.</p></li>
-<li><p>Several buttons can be seen in the top corner of the cycle page.</p></li>
-<li><p>“Copy Beneficiaries from Program” button will copy all of the enrolled registry from the program to the cycle.</p></li>
-<li><p>“Verify Eligibility” button will verify all of the enrolled registry in the cycle if they are still eligible for this cycle and program.</p></li>
-<li><p>“To Approve” button will change the state of the cycle from “Draft” to “To approve”.</p></li>
-<li><p>Once the cycle’s state is in “To Approve”, only the “Approve” and “Reset to Draft” button will be visible in the top corner of the page.</p></li>
-<li><p>“Approve” button will change the state of the cycle from “To approve” to “Approve”.</p></li>
-<li><p>“Reset to Draft” button will revert back the state of the cycle from “To approve” to “Draft”.</p></li>
-<li><p>Once the cycle’s state is in “Approve”, only the “Validate Entitlements” button will be visible in the top corner of the page.</p></li>
-<li><p>“Validate Entitlements” button changes the status of entitlements from “Draft” to “Pending Validation”.</p></li>
-<li><p>Start date and End date of a cycle depends on the Recurrence settings that were setup in Cycle Manager.</p></li>
-</ul>
-</div>
-<div class="section" id="customise-cycle">
-<h2>Customise Cycle<a class="headerlink" href="#customise-cycle" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>To introduce new fields or functions in a new module, develop a Python file extending the model “g2p.cycle” and integrate this file into <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>.</p></li>
-<li><p>Upgrade the module incorporating the new Python file.</p></li>
-<li><p>To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.</p></li>
-</ul>
-</div>
-<div class="section" id="additional-references">
-<h2>Additional References<a class="headerlink" href="#additional-references" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Below are some Odoo references that may help in adding the field both in models and in UI. For further guidance on model creation, inheritance, and UI integration, the following Odoo documentation may be useful:</p>
+<div class="section" id="understanding-module-structure">
+<h2>2. Understanding Module Structure<a class="headerlink" href="#understanding-module-structure" title="Permalink to this headline">#</a></h2>
+<p>2.1 <strong>init</strong>.py: This file indicates that its containing directory, <code class="docutils literal notranslate"><span class="pre">spp_pmt</span></code>, is a Odoo module. It imports the <code class="docutils literal notranslate"><span class="pre">models</span></code> package, suggesting the main business logic resides there.</p>
+<p>2.2 <strong>manifest</strong>.py: The manifest file defines essential metadata about the module. Key points include:</p>
 <ul>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html">Views</a></p></li>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">Chapter 4: Models And Basic Fields</a></p></li>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/07_basicviews.html#chapter-7-basic-views">Chapter 7: Basic Views</a></p></li>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">Chapter 13: Inheritance</a></p></li>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">Chapter 14: Interact With Other Modules</a></p></li>
-</ul>
+<li><p>The module's name is "Proxy Means Testing".</p></li>
+<li><p>It belongs to the "OpenSPP" category.</p></li>
+<li><p>Current version is "15.0.0.0.0".</p></li>
+<li><p>The module is still in "Beta" development status.</p></li>
+<li><p>Dependencies include "base", "g2p_registry_base", and "g2p_registry_group".</p>
+<p>2.3. <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>: This file signifies that the <code class="docutils literal notranslate"><span class="pre">models</span></code> directory is a Python package and imports <code class="docutils literal notranslate"><span class="pre">pmt.py</span></code>, where the PMT model is defined.</p>
+<p>2.4. models/pmt.py: This file defines the PMT feature's business logic. It extends the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model (standard in Odoo). It also computes a PMT score based on these fields.</p>
 </li>
 </ul>
+</div>
+<div class="section" id="using-the-pmt-features">
+<h2>3. Using the PMT Features<a class="headerlink" href="#using-the-pmt-features" title="Permalink to this headline">#</a></h2>
+<p>3.1. Navigate to the “Individual” under "Registry" menu.</p>
+<p>3.2. Select a entry. With the PMT module installed, under “Additional Details”, an individual data fields related to PMT calculation can be modified.</p>
+<p>3.4. Save the entry. The PMT score should be calculated and shown under the “Indicators” menu in the “Groups” where the individual is part of the group.</p>
+<p>3.5. Utilize the PMT score as needed within your OpenSPP operations, noting that it's calculated using the specific logic defined within the PMT module.</p>
+<p>By following this tutorial, the Proxy Means Testing module should now be fully integrated into your OpenSPP instance, providing additional functionality to your social protection operations.</p>
 </div>
 </div>
 </div>
@@ -846,17 +769,17 @@
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
-<a class="left-prev" href="custom_program.html" id="prev-link" title="previous page">
+<a class="left-prev" href="custom_audit.html" id="prev-link" title="previous page">
 <i class="fas fa-angle-left"></i>
 <div class="prev-next-info">
 <p class="prev-next-subtitle">previous</p>
-<p class="prev-next-title">Customize Program</p>
+<p class="prev-next-title">Customize Audit Logs</p>
 </div>
 </a>
-<a class="right-next" href="custom_cr.html" id="next-link" title="next page">
+<a class="right-next" href="../../technical_reference/index.html" id="next-link" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Customize Change Request</p>
+<p class="prev-next-title">Technical Reference</p>
 </div>
 <i class="fas fa-angle-right"></i>
 </a>
