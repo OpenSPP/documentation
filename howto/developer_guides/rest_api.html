@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Development Setup" property="og:title"/>
+<meta content="Implementing Custom REST API" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/howto/developer_guides/development_setup.html" property="og:url"/>
+<meta content="https://docs.openspp.org/howto/developer_guides/rest_api.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="Setting up a local Odoo environment can be accomplished through two distinct methodologies. 1. Docker Odoo Setup Using Doodba: This technique utilizes Docker, simplifying the installation of Odoo a..." property="og:description"/>
+<meta content="This comprehensive guide is designed to assist you in implementing and customizing the REST API within OpenSPP by developing a custom module. It is tailored for individuals with a specific set of p..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="Setting up a local Odoo environment can be accomplished through two distinct methodologies. 1. Docker Odoo Setup Using Doodba: This technique utilizes Docker, simplifying the installation of Odoo a..." name="description"/>
+<meta content="This comprehensive guide is designed to assist you in implementing and customizing the REST API within OpenSPP by developing a custom module. It is tailored for individuals with a specific set of p..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Development Setup – How to — OpenSPP Documentation v1.0</title>
+<title>Implementing Custom REST API – How to — OpenSPP Documentation v1.0</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -50,13 +50,13 @@
 <script src="../../_static/patch_scrollToActive.js"></script>
 <script src="../../_static/search_shortcut.js"></script>
 <script src="../../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/howto/developer_guides/development_setup.html" rel="canonical">
+<link href="https://docs.openspp.org/howto/developer_guides/rest_api.html" rel="canonical">
 <link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.0" type="application/opensearchdescription+xml"/>
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
-<link href="troubleshooting.html" rel="next" title="Troubleshooting"/>
-<link href="../user_guides/implementing_pmt.html" rel="prev" title="Implementing Proxy Means Testing (PMT)"/>
+<link href="implmenting_pmt.html" rel="next" title="Implementing Proxy Means Testing (PMT)"/>
+<link href="custom_audit.html" rel="prev" title="Customize Audit Logs"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -226,8 +226,8 @@
      Implementing Proxy Means Testing (PMT)
     </a>
 </li>
-<li class="toctree-l2 current active">
-<a class="current reference internal" href="#">
+<li class="toctree-l2">
+<a class="reference internal" href="development_setup.html">
      Development Setup
     </a>
 </li>
@@ -271,8 +271,8 @@
      Customize Audit Logs
     </a>
 </li>
-<li class="toctree-l2">
-<a class="reference internal" href="rest_api.html">
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
      Implementing Custom REST API
     </a>
 </li>
@@ -582,7 +582,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Development Setup – How to</span>
+<span>Implementing Custom REST API – How to</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -605,7 +605,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/development_setup.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/rest_api.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -613,7 +613,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/developer_guides/development_setup.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/developer_guides/rest_api.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -630,7 +630,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/developer_guides/development_setup.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/developer_guides/rest_api.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -663,38 +663,24 @@
 <nav aria-label="Page" id="bd-toc-nav">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#docker-odoo-setup-using-doodba">
-   1. Docker Odoo Setup Using Doodba
+<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
+   Odoo Setup from Docker using doodba
   </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#prerequisites">
-     Prerequisites
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#setup">
-     Setup
-    </a>
-</li>
-</ul>
 </li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#odoo-setup-from-source">
-   2. Odoo Setup from source
+   Odoo Setup from source
   </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#id1">
-     Prerequisites
-    </a>
 </li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#id2">
-     Setup
-    </a>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
 </li>
-</ul>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#utilising-the-rest-api-module">
+   Utilising the REST API Module
+  </a>
 </li>
 </ul>
 </nav>
@@ -704,7 +690,7 @@
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Development Setup</h1>
+<h1>Implementing Custom REST API</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
@@ -714,38 +700,24 @@
 <nav aria-label="Page">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#docker-odoo-setup-using-doodba">
-   1. Docker Odoo Setup Using Doodba
+<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
+   Odoo Setup from Docker using doodba
   </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#prerequisites">
-     Prerequisites
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#setup">
-     Setup
-    </a>
-</li>
-</ul>
 </li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#odoo-setup-from-source">
-   2. Odoo Setup from source
+   Odoo Setup from source
   </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#id1">
-     Prerequisites
-    </a>
 </li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#id2">
-     Setup
-    </a>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
 </li>
-</ul>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#utilising-the-rest-api-module">
+   Utilising the REST API Module
+  </a>
 </li>
 </ul>
 </nav>
@@ -754,94 +726,85 @@
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="development-setup">
-<h1>Development Setup<a class="headerlink" href="#development-setup" title="Permalink to this headline">#</a></h1>
-<p>Setting up a local Odoo environment can be accomplished through two distinct methodologies.</p>
-<div class="section" id="docker-odoo-setup-using-doodba">
-<h2>1. Docker Odoo Setup Using Doodba<a class="headerlink" href="#docker-odoo-setup-using-doodba" title="Permalink to this headline">#</a></h2>
-<p>This technique utilizes Docker, simplifying the installation of Odoo and its dependencies, with the added benefits offered by Doodba.</p>
-<div class="section" id="prerequisites">
-<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h3>
+<div class="section" id="implementing-custom-rest-api">
+<h1>Implementing Custom REST API<a class="headerlink" href="#implementing-custom-rest-api" title="Permalink to this headline">#</a></h1>
+<p>This comprehensive guide is designed to assist you in implementing and customizing the REST API within OpenSPP by developing a custom module. It is tailored for individuals with a specific set of prerequisites, including proficiency in Python, Odoo, OOP, HTML, XML, Xpaths, REST API concepts, and tools like Postman or curl. Moreover, a functional OpenSPP installation and administrative backend access are essential.</p>
+<div class="section" id="odoo-setup-from-docker-using-doodba">
+<h2>Odoo Setup from Docker using doodba<a class="headerlink" href="#odoo-setup-from-docker-using-doodba" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Basic understanding of Git, Docker, Docker Compose, Git-aggregator, Invoke, Odoo, and Python</p></li>
-<li><p>Terminal access</p></li>
-<li><p>Visual Studio Code (VSCode)</p></li>
+<li><p>Existence of openg2p_program folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: g2p_programs.</p></li>
+<li><p>Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership.</p></li>
+<li><p>Existence of openspp_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: spp_api, spp_api_records, spp_oauth, spp_service_points, spp_service_point_device, spp_programs, g2p_entitlement_cash, spp_entitlement_in_kind, spp_ent_trans, spp_area, spp_programs_sp.</p></li>
+<li><p>Existence of queue folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: queue_job</p></li>
+<li><p>Existence of web folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
+<li><p>Availability of modules: web, web_domain_field.</p></li>
 </ul>
-</div>
-<div class="section" id="setup">
-<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Begin by cloning the OpenSPP Docker repository from (<a class="reference external" href="https://github.com/OpenSPP/openspp-docker.git">https://github.com/OpenSPP/openspp-docker.git</a>)</p></li>
-<li><p>Switch to the openspp-docker directory.</p></li>
-<li><p>Execute the following commands:</p>
-<ul>
-<li><p>invoke develop - Sets up a VSCode development environment.</p></li>
-<li><p>invoke img-pull - Retrieves Docker images as per .yaml file specifications.</p></li>
-<li><p>invoke img-build - Constructs Docker images locally.</p></li>
-<li><p>invoke img-build --pull - Builds or pulls images from a remote repository as needed.</p></li>
-<li><p>invoke resetdb - Generates a new, demo-data-free database.</p></li>
-<li><p>invoke resetdb --demo - Creates a new database inclusive of demo data.</p></li>
-<li><p>invoke start - Activates Odoo.</p></li>
-</ul>
-</li>
-<li><p>Combine these commands for a single execution if desired.</p>
-<ul>
-<li><p>e.g. invoke develop img-pull img-build git-aggregate resetdb start.</p></li>
-</ul>
-</li>
-<li><p>Browse the following in a preferred browser:</p>
-<ul>
-<li><p>Odoo: <a class="reference external" href="http://localhost:15069/">http://localhost:15069/</a></p></li>
-<li><p>Mailhog: <a class="reference external" href="http://localhost:15025/">http://localhost:15025/</a></p></li>
-<li><p>Wdb: <a class="reference external" href="http://localhost:15984/">http://localhost:15984/</a></p></li>
-<li><p>Pgweb: <a class="reference external" href="http://localhost:15081/">http://localhost:15081/</a></p></li>
-</ul>
-</li>
-</ul>
-<p>Refer to the <a class="reference external" href="http://Readme.md">Readme.md</a> in the repository for more detailed instructions on Docker Odoo and Invoke commands</p>
-</div>
 </div>
 <div class="section" id="odoo-setup-from-source">
-<h2>2. Odoo Setup from source<a class="headerlink" href="#odoo-setup-from-source" title="Permalink to this headline">#</a></h2>
-<p>This method is the traditional way of installing Odoo, involving manual installation and configuration.</p>
-<div class="section" id="id1">
-<h3>Prerequisites<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h2>Odoo Setup from source<a class="headerlink" href="#odoo-setup-from-source" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Knowledge of your current Operating System</p></li>
-<li><p>Terminal access</p></li>
+<li><p>Existence of openg2p-program folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-program.git">here</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: g2p_programs.</p></li>
+<li><p>Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-registry.git">here</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership.</p></li>
+<li><p>Existence of openspp-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenSPP/openspp-registry.git">here</a> into odoo/custom, navigate to the openspp-registry folder, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: spp_api, spp_api_records, spp_oauth, spp_service_points, spp_service_point_device, spp_programs, g2p_entitlement_cash, spp_entitlement_in_kind, spp_ent_trans, spp_area, spp_programs_sp.</p></li>
+<li><p>Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/queue.git">here</a> into odoo/custom, navigate to the queue, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: queue_job.</p></li>
+<li><p>Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/web.git">here</a> into odoo/custom, navigate to the web, and switch to the specified branch.</p></li>
+<li><p>Availability of modules: web, web_domain_field</p></li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h3>Setup<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Follow the official Odoo installation guide suitable for your Operating System. <a class="reference external" href="https://www.odoo.com/documentation/15.0/administration/install.html">https://www.odoo.com/documentation/15.0/administration/install.html</a></p></li>
-<li><p>Inside the Odoo folder, create a new directory named custom.</p></li>
-<li><p>Other Odoo repositories or Odoo modules should be added to the “custom” folder.</p></li>
-<li><p>Navigate to “custom” and git clone all of the following repositories and their corresponding branches:</p>
+<li><p>Log into OpenSPP with administrative rights.</p></li>
+<li><p>Access the “Apps” menu from the dashboard to manage OpenSPP modules.</p></li>
+<li><p>Choose “Update Apps List” to refresh the module list.</p></li>
+<li><p>Search and initiate installation of the following modules, this process will also install all of their associated modules:</p>
 <ul>
-<li><p>git clone –branch 15.0 <a class="reference external" href="https://github.com/OCA/connector.git">https://github.com/OCA/connector.git</a></p></li>
-<li><p>git clone –branch 15.0 <a class="reference external" href="https://github.com/OCA/dms.git">https://github.com/OCA/dms.git</a></p></li>
-<li><p>git clone –branch 15.0-1.0-develop <a class="reference external" href="https://github.com/OpenG2P/openg2p-program.git">https://github.com/OpenG2P/openg2p-program.git</a></p></li>
-<li><p>git clone –branch 15.0-1.0-develop <a class="reference external" href="https://github.com/OpenG2P/openg2p-registry.git">https://github.com/OpenG2P/openg2p-registry.git</a></p></li>
-<li><p>git clone –branch 15.1.1-mono-repo <a class="reference external" href="https://github.com/OpenSPP/openspp-registry.git">https://github.com/OpenSPP/openspp-registry.git</a></p></li>
-<li><p>git clone –branch 15.0 <a class="reference external" href="https://github.com/OCA/queue.git">https://github.com/OCA/queue.git</a></p></li>
-<li><p>git clone –branch 15.0 <a class="reference external" href="https://github.com/OCA/rest-framework.git">https://github.com/OCA/rest-framework.git</a></p></li>
-<li><p>git clone –branch 15.0 <a class="reference external" href="https://github.com/OCA/server-auth.git">https://github.com/OCA/server-auth.git</a></p></li>
-<li><p>git clone –branch 15.0 <a class="reference external" href="https://github.com/OCA/server-backend.git">https://github.com/OCA/server-backend.git</a></p></li>
-<li><p>git clone –branch 15.0 <a class="reference external" href="https://github.com/Smile-SA/odoo_addons.git">https://github.com/Smile-SA/odoo_addons.git</a></p></li>
-<li><p>git clone –branch 15.0 <a class="reference external" href="https://github.com/OCA/social.git">https://github.com/OCA/social.git</a></p></li>
-<li><p>git clone –branch 15.0 <a class="reference external" href="https://github.com/OCA/web.git">https://github.com/OCA/web.git</a></p></li>
+<li><p>OpenSPP API: Oauth</p></li>
+<li><p>OpenSPP REST API</p></li>
+<li><p>OpenSPP REST API: API Records</p></li>
 </ul>
 </li>
-<li><p>pip install the requirements in requirements.txt in each of the repositories if there is a requirements.txt.</p></li>
-<li><p>Open odoo.conf in a preferred IDE.</p></li>
-<li><p>Add in the addons_path the absolute path of the “custom” folder</p></li>
-<li><p>e.g. addons_path = /Users/username/odoo/addons,/Users/username/odoo/custom</p></li>
-<li><p>Execute python3 odoo-bin -c odoo.conf to run Odoo.</p></li>
-<li><p>Open <a class="reference external" href="http://localhost:8069/">http://localhost:8069/</a> in a browser to use OpenSPP.</p></li>
 </ul>
-<p>To learn more about Odoo command, visit this documentation <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/reference/cli.html">https://www.odoo.com/documentation/15.0/developer/reference/cli.html</a></p>
 </div>
+<div class="section" id="utilising-the-rest-api-module">
+<h2>Utilising the REST API Module<a class="headerlink" href="#utilising-the-rest-api-module" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Navigate to OpenAPI then open the record “spp_api”.</p></li>
+<li><p>Check API Paths in the “Paths” tab and their respective models and methods.</p></li>
+<li><p>Check users in the Allowed Users.</p></li>
+<li><p>Navigate to Settings -&gt; Users &amp; Companies -&gt; Users and search one user that is in the “Allowed Users” in the OpenAPI page then enter that record.</p></li>
+<li><p>Select the “Allowed APIs” tab and copy the value in the field OpenAPI Token.</p></li>
+<li><p>Browse <a class="reference external" href="https://www.base64encode.org/">https://www.base64encode.org/</a></p></li>
+<li><p>Encode the combination of database name and OpenAPI Token in this format &lt;db_name&gt;:<token>. e.g. odoo15:1d9fd9db-705a-42cc-830c-88d6edc7bfe5</token></p>
+<ul>
+<li><p>Copy the encoded result.</p></li>
+<li><p>Send a request to one of the paths by using the encoded token as authentication.</p></li>
+<li><p>Open Postman and use the following information to send request.</p>
+<ul>
+<li><p>url: <a class="reference external" href="http://localhost:8069/api/spp_api/1/Group">http://localhost:8069/api/spp_api/1/Group</a></p></li>
+</ul>
+</li>
+<li><p>method: GET</p></li>
+<li><p>parameters: request_id=<any alphanumeric="" unique="" value=""></any></p></li>
+<li><p>headers:</p>
+<ul>
+<li><p>Authorization = Basic <encoded token=""></encoded></p></li>
+<li><p>Accept = application/json</p></li>
+</ul>
+</li>
+<li><p>Send a request.</p></li>
+</ul>
+</li>
+<li><p>Click the API Document Link in the OpenAPI page to learn more about REST API.</p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -849,17 +812,17 @@
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
-<a class="left-prev" href="../user_guides/implementing_pmt.html" id="prev-link" title="previous page">
+<a class="left-prev" href="custom_audit.html" id="prev-link" title="previous page">
 <i class="fas fa-angle-left"></i>
 <div class="prev-next-info">
 <p class="prev-next-subtitle">previous</p>
-<p class="prev-next-title">Implementing Proxy Means Testing (PMT)</p>
+<p class="prev-next-title">Customize Audit Logs</p>
 </div>
 </a>
-<a class="right-next" href="troubleshooting.html" id="next-link" title="next page">
+<a class="right-next" href="implmenting_pmt.html" id="next-link" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Troubleshooting</p>
+<p class="prev-next-title">Implementing Proxy Means Testing (PMT)</p>
 </div>
 <i class="fas fa-angle-right"></i>
 </a>
