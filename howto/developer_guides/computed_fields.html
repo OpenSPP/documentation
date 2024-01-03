@@ -718,33 +718,33 @@
 <h2>Creating a Computed Field<a class="headerlink" href="#creating-a-computed-field" title="Permalink to this headline">#</a></h2>
 <p>To define a computed field, you'll need to establish your field and assign a computation method to its compute attribute. This method calculates the field's value for every record.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SampleModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-\<span class="n">_name</span> <span class="o">=</span> <span class="s2">"sample.model"</span>
+<span class="n">_name</span> <span class="o">=</span> <span class="s2">"sample.model"</span>
 
-<span class="n">total</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="s2">"\_compute_total"</span><span class="p">)</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_total"</span><span class="p">)</span>
 <span class="n">amount</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">()</span>
 
-<span class="k">def</span> \<span class="n">_compute_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-<span class="n">record</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="mf">2.0</span> \<span class="o">*</span> <span class="n">record</span><span class="o">.</span><span class="n">amount</span>
+<span class="k">def</span> <span class="nf">_compute_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+        <span class="n">record</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">record</span><span class="o">.</span><span class="n">amount</span>
 </pre></div>
 </div>
 <p>Key Points</p>
 <ul class="simple">
-<li><p>The computation method, conventionally named with a _compute prefix, is responsible for setting the field's value.</p></li>
+<li><p>The computation method, conventionally named with a <code class="docutils literal notranslate"><span class="pre">_compute</span></code> prefix, is responsible for setting the field's value.</p></li>
 <li><p>Within this method, self represents a recordset and should be iterable.</p></li>
 <li><p>Computed fields are executed only when accessed and their values are not stored in the database by default.</p></li>
 </ul>
 <p>In this example, the value of the computed field is based on the value of the “amount” field but it will only execute if the “total” field is called. In this case, the value of the “total” field will not update even after changing the value of the “amount” field. To solve this problem, add dependencies to the method.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SampleModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-\<span class="n">_name</span> <span class="o">=</span> <span class="s2">"sample.model"</span>
+<span class="n">_name</span> <span class="o">=</span> <span class="s2">"sample.model"</span>
 
-<span class="n">total</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="s2">"\_compute_total"</span><span class="p">)</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_total"</span><span class="p">)</span>
 <span class="n">amount</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">()</span>
 
 <span class="nd">@api</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">"amount"</span><span class="p">)</span>
-<span class="k">def</span> \<span class="n">_compute_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-<span class="n">record</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="mf">2.0</span> \<span class="o">*</span> <span class="n">record</span><span class="o">.</span><span class="n">amount</span>
+<span class="k">def</span> <span class="nf">_compute_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+        <span class="n">record</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">record</span><span class="o">.</span><span class="n">amount</span>
 </pre></div>
 </div>
 <p>In this example, the method have a decorator “api.depends” with an argument “amount” which corresponds to the “amount” field, it declares that this method depends on the value of the “amount” field and this method will execute if “amount” field’s value is change thus “total” field will be updated.</p>
@@ -753,15 +753,15 @@
 <h2>Create a Stored Computed Field<a class="headerlink" href="#create-a-stored-computed-field" title="Permalink to this headline">#</a></h2>
 <p>While a regular computed field's value is calculated on-the-fly, a stored computed field allows its computed value to be stored in the database. To create a stored computed field, add the store=True parameter to your field declaration.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SampleModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-\<span class="n">_name</span> <span class="o">=</span> <span class="s2">"sample.model"</span>
+<span class="n">_name</span> <span class="o">=</span> <span class="s2">"sample.model"</span>
 
-<span class="n">total</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="s2">"\_compute_total"</span><span class="p">,</span> <span class="n">store</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_total"</span><span class="p">,</span> <span class="n">store</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">amount</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">()</span>
 
 <span class="nd">@api</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">"amount"</span><span class="p">)</span>
-<span class="k">def</span> \<span class="n">_compute_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-<span class="n">record</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="mf">2.0</span> \<span class="o">*</span> <span class="n">record</span><span class="o">.</span><span class="n">amount</span>
+<span class="k">def</span> <span class="nf">_compute_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+        <span class="n">record</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">record</span><span class="o">.</span><span class="n">amount</span>
 </pre></div>
 </div>
 <p>This approach ensures that the value of total is persisted in the database, reducing computation needs for repeated access.</p>
