@@ -41,8 +41,20 @@ This guide provides a structured approach for implementing and customising the s
 ## Customise Service Point and Service Point Device
 
 - To introduce new fields or functions in a new module, develop a Python file extending the “spp.service.point” for Service Point or “spp.service.point.device” for Service Point Device and integrate this file into `models/__init__.py`.
+
   - e.g. service_point_location = fields.Char(required=True) or
   - e.g. service_point_location = fields.Many2one(“service.point.location”, required=True) assuming there is a model for service point location.
+
+  ```python
+  class CustomServicePoint(models.Model):
+   _inherit = "spp.service.point"
+
+   service_point_location = fields.Char(required=True)
+
+   # assumining service.point.location model is existing
+   service_point_location_id = fields.Many2one("service.point.location", required=True)
+  ```
+
 - Upgrade the module incorporating the new Python file.
 - To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.
 
