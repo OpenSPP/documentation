@@ -55,7 +55,7 @@ This guide provides a structured approach for implementing and customising the a
   ![](./custom_audit/1.png)
 - Audit logs can also be viewed by navigating to Audit Log then Log menu.
 - This page will show all of the audit logs from every model that is indicated in the audit rules.
-  ![](./custom_audit/2.png)
+  <img src="./custom_audit/2.png" width="327" height="333">
 - Another way to see the audit logs is to enter a record and click Action then click the “View Logs”.
   ![](./custom_audit/3.png)
 - It will redirect to the audit logs page that is automatically filtered to the record.
