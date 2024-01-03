@@ -58,6 +58,6 @@ This comprehensive guide is designed to assist you in implementing and customizi
     - Authorization = Basic <encoded token>
     - Accept = application/json
   - Send a request.
-    ![](./rest_api/3.png)
+    ![](./rest_api/1.png)
 
 - Click the API Document Link in the OpenAPI page to learn more about REST API.
