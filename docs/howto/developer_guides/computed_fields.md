@@ -8,19 +8,19 @@ To define a computed field, you'll need to establish your field and assign a com
 
 ```python
 class SampleModel(models.Model):
-\_name = "sample.model"
+_name = "sample.model"
 
-total = fields.Float(compute="\_compute_total")
+total = fields.Float(compute="_compute_total")
 amount = fields.Float()
 
-def \_compute_total(self):
-for record in self:
-record.total = 2.0 \* record.amount
+def _compute_total(self):
+    for record in self:
+        record.total = 2.0 * record.amount
 ```
 
 Key Points
 
-- The computation method, conventionally named with a \_compute prefix, is responsible for setting the field's value.
+- The computation method, conventionally named with a `_compute` prefix, is responsible for setting the field's value.
 - Within this method, self represents a recordset and should be iterable.
 - Computed fields are executed only when accessed and their values are not stored in the database by default.
 
@@ -28,15 +28,15 @@ In this example, the value of the computed field is based on the value of the �
 
 ```python
 class SampleModel(models.Model):
-\_name = "sample.model"
+_name = "sample.model"
 
-total = fields.Float(compute="\_compute_total")
+total = fields.Float(compute="_compute_total")
 amount = fields.Float()
 
 @api.depends("amount")
-def \_compute_total(self):
-for record in self:
-record.total = 2.0 \* record.amount
+def _compute_total(self):
+    for record in self:
+        record.total = 2.0 * record.amount
 ```
 
 In this example, the method have a decorator “api.depends” with an argument “amount” which corresponds to the “amount” field, it declares that this method depends on the value of the “amount” field and this method will execute if “amount” field’s value is change thus “total” field will be updated.
@@ -47,15 +47,15 @@ While a regular computed field's value is calculated on-the-fly, a stored comput
 
 ```python
 class SampleModel(models.Model):
-\_name = "sample.model"
+_name = "sample.model"
 
-total = fields.Float(compute="\_compute_total", store=True)
+total = fields.Float(compute="_compute_total", store=True)
 amount = fields.Float()
 
 @api.depends("amount")
-def \_compute_total(self):
-for record in self:
-record.total = 2.0 \* record.amount
+def _compute_total(self):
+    for record in self:
+        record.total = 2.0 * record.amount
 ```
 
 This approach ensures that the value of total is persisted in the database, reducing computation needs for repeated access.
