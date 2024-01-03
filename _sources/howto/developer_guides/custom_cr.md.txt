@@ -50,8 +50,35 @@ This guide provides a structured approach for implementing and customising the C
 ## Customise Change Request
 
 - To add a value to the Request Type dropdown field, create a new module and a new model for the request type.
+  ```python
+  class ChangeRequestDeactivate(models.Model):
+    _name = "pds.change.request.deactivate"
+    _inherit = [
+        "spp.change.request.source.mixin",
+        "spp.change.request.validation.sequence.mixin",
+    ]
+    _description = "Deactivate Member Change Request Type"
+    _order = "id desc"
+  ```
 - Add fields and functions to the newly created model that corresponds to the requirements of that particular request type.
 - Inherit model “spp.change.request” then extend the function `_selection_request_type_ref_id` to add the newly created request type model to the Request Type dropdown field.
+
+  ```python
+  class ChangeRequestTypeCustomDeactivate(models.Model):
+    _inherit = "spp.change.request"
+
+    @api.model
+    def _selection_request_type_ref_id(self):
+        selection = super()._selection_request_type_ref_id()
+        new_request_type = (
+            "pds.change.request.deactivate",
+            "Deactivate Members",
+        )
+        if new_request_type not in selection:
+            selection.append(new_request_type)
+        return selection
+  ```
+
 - Make sure that the python file where the newly created model and the inherited model is already added in the `models/__init__.py`.
 - In the view part, create the following views for the request type.
   - Tree View

@@ -800,12 +800,21 @@ Odoo Setup from source</p></li>
 </div>
 <div class="section" id="customise-service-point-and-service-point-device">
 <h2>Customise Service Point and Service Point Device<a class="headerlink" href="#customise-service-point-and-service-point-device" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>To introduce new fields or functions in a new module, develop a Python file extending the “spp.service.point” for Service Point or “spp.service.point.device” for Service Point Device and integrate this file into <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>.</p>
 <ul>
+<li><p>To introduce new fields or functions in a new module, develop a Python file extending the “spp.service.point” for Service Point or “spp.service.point.device” for Service Point Device and integrate this file into <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>.</p>
+<ul class="simple">
 <li><p>e.g. service_point_location = fields.Char(required=True) or</p></li>
 <li><p>e.g. service_point_location = fields.Many2one(“service.point.location”, required=True) assuming there is a model for service point location.</p></li>
 </ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CustomServicePoint</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+ <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"spp.service.point"</span>
+
+ <span class="n">service_point_location</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+ <span class="c1"># assumining service.point.location model is existing</span>
+ <span class="n">service_point_location_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s2">"service.point.location"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
 </li>
 <li><p>Upgrade the module incorporating the new Python file.</p></li>
 <li><p>To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.</p></li>

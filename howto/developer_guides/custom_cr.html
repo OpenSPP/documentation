@@ -821,13 +821,40 @@
 </div>
 <div class="section" id="customise-change-request">
 <h2>Customise Change Request<a class="headerlink" href="#customise-change-request" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>To add a value to the Request Type dropdown field, create a new module and a new model for the request type.</p></li>
+<ul>
+<li><p>To add a value to the Request Type dropdown field, create a new module and a new model for the request type.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ChangeRequestDeactivate</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+  <span class="n">_name</span> <span class="o">=</span> <span class="s2">"pds.change.request.deactivate"</span>
+  <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="s2">"spp.change.request.source.mixin"</span><span class="p">,</span>
+      <span class="s2">"spp.change.request.validation.sequence.mixin"</span><span class="p">,</span>
+  <span class="p">]</span>
+  <span class="n">_description</span> <span class="o">=</span> <span class="s2">"Deactivate Member Change Request Type"</span>
+  <span class="n">_order</span> <span class="o">=</span> <span class="s2">"id desc"</span>
+</pre></div>
+</div>
+</li>
 <li><p>Add fields and functions to the newly created model that corresponds to the requirements of that particular request type.</p></li>
-<li><p>Inherit model “spp.change.request” then extend the function <code class="docutils literal notranslate"><span class="pre">_selection_request_type_ref_id</span></code> to add the newly created request type model to the Request Type dropdown field.</p></li>
+<li><p>Inherit model “spp.change.request” then extend the function <code class="docutils literal notranslate"><span class="pre">_selection_request_type_ref_id</span></code> to add the newly created request type model to the Request Type dropdown field.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ChangeRequestTypeCustomDeactivate</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+  <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"spp.change.request"</span>
+
+  <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
+  <span class="k">def</span> <span class="nf">_selection_request_type_ref_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="n">selection</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_selection_request_type_ref_id</span><span class="p">()</span>
+      <span class="n">new_request_type</span> <span class="o">=</span> <span class="p">(</span>
+          <span class="s2">"pds.change.request.deactivate"</span><span class="p">,</span>
+          <span class="s2">"Deactivate Members"</span><span class="p">,</span>
+      <span class="p">)</span>
+      <span class="k">if</span> <span class="n">new_request_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">selection</span><span class="p">:</span>
+          <span class="n">selection</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_request_type</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">selection</span>
+</pre></div>
+</div>
+</li>
 <li><p>Make sure that the python file where the newly created model and the inherited model is already added in the <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>.</p></li>
 <li><p>In the view part, create the following views for the request type.</p>
-<ul>
+<ul class="simple">
 <li><p>Tree View</p></li>
 <li><p>Form View</p></li>
 <li><p>Validation Form View</p></li>

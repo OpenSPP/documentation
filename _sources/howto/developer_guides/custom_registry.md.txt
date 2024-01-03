@@ -49,12 +49,54 @@ This guide provides a structured approach for implementing and customising the r
 - To introduce new fields or functions in a new module, develop a Python file extending the res.partner model and integrate this file into `models/__init__.py`.
 - Upgrade the module incorporating the new Python file.
 - Follow naming conventions for new registry fields:
+
   - Prefix individual-specific fields with `ind_` (e.g., “ind_hobbies”).
   - Prefix group-specific fields with `grp_` (e.g., “grp_number_of_members”).
   - Use no prefix for universally applicable fields (e.g., “name”, “address”).
+    ```python
+    class Registry(models.Model):
+      ind_hobbies = fields.Char()
+      grp_number_of_membership = fields.Integer()
+      address = fields.Text()
+    ```
+
 - For relational fields like many2one to `res.partner`, apply appropriate domain parameters to filter registry records.
+
+  ```python
+  applicant_id = fields.Many2one(
+   "res.partner",
+   "Applicant",
+   domain=[("is_registrant", "=", True), ("is_group", "=", False)],
+  )
+  ```
+
 - To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.
 - To add a new tab, inherit the form view of the registry page and then xpath to the “page” element under the “notebook” element with the position preferred.
+
+  ```xml
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <odoo>
+   <record id="view_farmer_form" model="ir.ui.view">
+       <field name="name">view_farmer_form</field>
+       <field name="model">res.partner</field>
+       <field name="inherit_id" ref="g2p_registry_group.view_groups_form" />
+       <field name="arch" type="xml">
+           <xpath expr="//page[@name='basic_info']" position="after">
+               <page string="Geolocation" name="geolocation">
+                   <div name="geo_coordinates">
+                       <span class="oe_inline"> ( </span>
+                       <span> Lat : </span>
+                       <field name="latitude" class="oe_inline" no_label="1" />
+                       <span> : Long : </span>
+                       <field name="longitude" class="oe_inline" nolabel="1" />
+                       <span>) </span>
+                   </div>
+               </page>
+           </xpath>
+       </field>
+   </record>
+  </odoo>
+  ```
 
 ## Additional References
 
