@@ -677,6 +677,11 @@
    Create a Stored Computed Field
   </a>
 </li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sample-use-case">
+   Sample Use-case
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -702,6 +707,11 @@
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#create-a-stored-computed-field">
    Create a Stored Computed Field
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sample-use-case">
+   Sample Use-case
   </a>
 </li>
 </ul>
@@ -765,6 +775,26 @@
 </pre></div>
 </div>
 <p>This approach ensures that the value of total is persisted in the database, reducing computation needs for repeated access.</p>
+</div>
+<div class="section" id="sample-use-case">
+<h2>Sample Use-case<a class="headerlink" href="#sample-use-case" title="Permalink to this headline">#</a></h2>
+<p>In many form applications, the birthdate is collected rather than the age. To dynamically calculate the age, a field named 'birthdate' is paired with a computed field 'age'. The 'age' field is generated using the '_compute_age' function, which calculates the age based on the current date and the input birthdate. This field is automatically updated whenever the 'birthdate' field changes, owing to its dependency on the birthdate data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+<span class="k">class</span> <span class="nc">ResPartner</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+   <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"res.partner"</span>
+
+   <span class="n">birthdate</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="s2">"Date of Birth"</span><span class="p">)</span>
+   <span class="n">age</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Int</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_age"</span><span class="p">)</span>
+
+   <span class="nd">@api</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">"birthdate"</span><span class="p">)</span>
+   <span class="k">def</span> <span class="nf">_compute_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+       <span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+       <span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+           <span class="n">rec</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">rec</span><span class="o">.</span><span class="n">birthdate</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="p">((</span><span class="n">today</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">rec</span><span class="o">.</span><span class="n">birthdate</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">rec</span><span class="o">.</span><span class="n">birthdate</span><span class="o">.</span><span class="n">day</span><span class="p">))</span>
+
+</pre></div>
+</div>
 <p>This overview covers the basics of computed fields in Odoo. For a more in-depth understanding, including advanced techniques and best practices, refer to the official Odoo documentation on computed fields <a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/09_compute_onchange.html#">here</a></p>
 </div>
 </div>

@@ -698,6 +698,11 @@
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sample-use-case">
+   Sample Use-case
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#additional-references">
    Additional References
   </a>
@@ -747,6 +752,11 @@
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#customise-area">
    Customise Area
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sample-use-case">
+   Sample Use-case
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
@@ -824,6 +834,30 @@
 <li><p>Upgrade the module incorporating the new Python file.</p></li>
 <li><p>To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.</p></li>
 </ul>
+</div>
+<div class="section" id="sample-use-case">
+<h2>Sample Use-case<a class="headerlink" href="#sample-use-case" title="Permalink to this headline">#</a></h2>
+<p>A city may be included in an area, below is the sample model for this scenario</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">City</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+   <span class="n">_name</span> <span class="o">=</span> <span class="s2">"spp.city"</span>
+
+   <span class="n">name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+   <span class="n">area_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s2">"spp.area"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A city may have multiple area, below is the sample model for this scenario</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">City</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+   <span class="n">_name</span> <span class="o">=</span> <span class="s2">"spp.city"</span>
+
+   <span class="n">name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+   <span class="n">area_ids</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">One2many</span><span class="p">(</span><span class="s2">"spp.area"</span><span class="p">,</span> <span class="s2">"city_id"</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Area</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+   <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"spp.area"</span>
+
+   <span class="n">city_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s2">"spp.city"</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="additional-references">
 <h2>Additional References<a class="headerlink" href="#additional-references" title="Permalink to this headline">#</a></h2>

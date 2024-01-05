@@ -693,6 +693,11 @@
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sample-use-case">
+   Sample Use-case
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#additional-references">
    Additional References
   </a>
@@ -737,6 +742,11 @@
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#customise-service-point-and-service-point-device">
    Customise Service Point and Service Point Device
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sample-use-case">
+   Sample Use-case
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
@@ -819,6 +829,28 @@ Odoo Setup from source</p></li>
 <li><p>Upgrade the module incorporating the new Python file.</p></li>
 <li><p>To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.</p></li>
 </ul>
+</div>
+<div class="section" id="sample-use-case">
+<h2>Sample Use-case<a class="headerlink" href="#sample-use-case" title="Permalink to this headline">#</a></h2>
+<p>A contact may have a service point, below is the sample model for this scenario</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ResPartner</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+   <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"res.partner"</span>
+
+   <span class="n">service_point_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s2">"spp.service.point"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A contact is included in multiple service point, below is the sample model for this scenario.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ResPartner</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+   <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"res.partner"</span>
+
+   <span class="n">service_point_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">One2many</span><span class="p">(</span><span class="s2">"spp.service.point"</span><span class="p">,</span> <span class="s2">"res_partner_id"</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">ServicePoint</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+   <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"spp.service.point"</span>
+
+   <span class="n">res_partner_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s2">"res.partner"</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="additional-references">
 <h2>Additional References<a class="headerlink" href="#additional-references" title="Permalink to this headline">#</a></h2>

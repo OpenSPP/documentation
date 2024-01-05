@@ -58,6 +58,31 @@ This guide provides a structured approach for implementing and customising the s
 - Upgrade the module incorporating the new Python file.
 - To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.
 
+## Sample Use-case
+
+A contact may have a service point, below is the sample model for this scenario
+
+```python
+class ResPartner(models.Model):
+   _inherit = "res.partner"
+
+   service_point_id = fields.Many2one("spp.service.point")
+```
+
+A contact is included in multiple service point, below is the sample model for this scenario.
+
+```python
+class ResPartner(models.Model):
+   _inherit = "res.partner"
+
+   service_point_id = fields.One2many("spp.service.point", "res_partner_id")
+
+class ServicePoint(models.Model):
+   _inherit = "spp.service.point"
+
+   res_partner_id = fields.Many2one("res.partner")
+```
+
 ## Additional References
 
 - Below are some Odoo references that may help in adding the field both in models and in UI. For further guidance on model creation, inheritance, and UI integration, the following Odoo documentation may be useful:
