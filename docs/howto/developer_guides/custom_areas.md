@@ -51,6 +51,33 @@ This guide provides a structured approach for implementing and customising the a
 - Upgrade the module incorporating the new Python file.
 - To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.
 
+## Sample Use-case
+
+A city may be included in an area, below is the sample model for this scenario
+
+```python
+class City(models.Model):
+   _name = "spp.city"
+
+   name = fields.Char(required=True)
+   area_id = fields.Many2one("spp.area")
+```
+
+A city may have multiple area, below is the sample model for this scenario
+
+```python
+class City(models.Model):
+   _name = "spp.city"
+
+   name = fields.Char(required=True)
+   area_ids = fields.One2many("spp.area", "city_id")
+
+class Area(models.Model):
+   _inherit = "spp.area"
+
+   city_id = fields.Many2one("spp.city")
+```
+
 ## Additional References
 
 - Below are some Odoo references that may help in adding the field both in models and in UI. For further guidance on model creation, inheritance, and UI integration, the following Odoo documentation may be useful:

@@ -60,4 +60,25 @@ def _compute_total(self):
 
 This approach ensures that the value of total is persisted in the database, reducing computation needs for repeated access.
 
+## Sample Use-case
+
+In many form applications, the birthdate is collected rather than the age. To dynamically calculate the age, a field named 'birthdate' is paired with a computed field 'age'. The 'age' field is generated using the '\_compute_age' function, which calculates the age based on the current date and the input birthdate. This field is automatically updated whenever the 'birthdate' field changes, owing to its dependency on the birthdate data.
+
+```python
+from datetime import date
+
+class ResPartner(models.Model):
+   _inherit = "res.partner"
+
+   birthdate = fields.Date("Date of Birth")
+   age = fields.Int(compute="_compute_age")
+
+   @api.depends("birthdate")
+   def _compute_age(self):
+       today = date.today()
+       for rec in self:
+           rec.age = today.year - rec.birthdate.year - ((today.month, today.day) < (rec.birthdate.month, rec.birthdate.day))
+
+```
+
 This overview covers the basics of computed fields in Odoo. For a more in-depth understanding, including advanced techniques and best practices, refer to the official Odoo documentation on computed fields [here](https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/09_compute_onchange.html#)
