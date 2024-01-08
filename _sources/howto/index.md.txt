@@ -24,7 +24,7 @@ developer_guides/troubleshooting
 #developer_guides/custom_cr
 #developer_guides/custom_audit
 #developer_guides/computed_fields
-developer_guides/rest_api
+#developer_guides/rest_api
 developer_guides/implmenting_pmt
 
 ```
