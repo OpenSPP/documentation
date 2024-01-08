@@ -11,7 +11,7 @@ Here you’ll find short answers to “How do I….?” types of questions. Thes
 developer_mode
 
 #User Guides
-user_guides/implementing_pmt
+#user_guides/implementing_pmt
 
 #Developer Guides
 developer_guides/development_setup
@@ -25,6 +25,7 @@ developer_guides/troubleshooting
 #developer_guides/custom_audit
 #developer_guides/computed_fields
 #developer_guides/rest_api
-developer_guides/implmenting_pmt
+
+#developer_guides/implmenting_pmt
 
 ```
