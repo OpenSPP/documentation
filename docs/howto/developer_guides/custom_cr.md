@@ -71,7 +71,7 @@ This guide provides a structured approach for implementing and customising the C
     def _selection_request_type_ref_id(self):
         selection = super()._selection_request_type_ref_id()
         new_request_type = (
-            "pds.change.request.deactivate",
+            "spp.change.request.deactivate",
             "Deactivate Members",
         )
         if new_request_type not in selection:
