@@ -12,7 +12,7 @@ One of the first examples of a social registry was developed in the late 1990s f
 
 Social registries are now used in 50 countries across the world. Examples include Pakistan’s National Social Economic Registry (NSER), Indonesia’s Data Terpadu Kesejahteran Sosial (DTKS) and Colombia’s Sistema de Identificación de Potenciales Beneficiarios de Programas Sociales (Sisbén).
 
-While earlier designs of social registries were static or ‘fixed’ due to the data being collected at a particular period in time through mass registrations, social registries are now increasingly designed to be dynamic, in recognition of the fluctuating nature of poverty and vulnerability. Social registries which use a dynamic approach to registration, through on-demand registration, periodic active outreach, registration at local government offices, integration with civil registries, national identification systems, and other registries are better able to adjust their social protection programs accordingly and meet the needs of vulnerable populations. Brazil’s Cadastro Único is considered an example of a dynamic registry, while Pakistan’s NSER is currently a static registry.
+While earlier designs of social registries were static or ‘fixed’ due to the data being collected at a particular period in time through mass registrations, social registries are now increasingly designed to be **dynamic**, in recognition of the fluctuating nature of poverty and vulnerability. Social registries which use a dynamic approach to registration, through on-demand registration, periodic active outreach, registration at local government offices, integration with civil registries, national identification systems, and other registries are better able to adjust their social protection programs accordingly and meet the needs of vulnerable populations. Brazil’s Cadastro Único is considered an example of a dynamic registry, while Pakistan’s NSER is currently a static registry.
 
 ## Operational Functionality of Social Registries
 
@@ -38,7 +38,7 @@ The operational functions of social registries differ among the countries using 
 
 ## Integration and interoperability of social registries
 
-Social registries can be used to identify beneficiaries for single or multiple social protection programs. They may also be designed to be interoperable and integrated with other critical systems as part of a broader {term}`information system`. Social registry data can be exchanged and coordinated with various government databases such as integrated beneficiary registries, farmer registries, disability registries, health records, education systems, and employment databases. This contributes to more precise targeting, reduces redundancy in data collection, and ensures a unified and efficient delivery of social protection and other public services. However, in certain situations, self-contained social registries may be preferred due to legal and ethical considerations where integration may raise concerns about {term}`information security` and {term}`data privacy`.
+Social registries can be used to identify beneficiaries for single or multiple social protection programs. They may also be designed to be interoperable and integrated with other critical systems as part of a broader {term}`information systems`. Social registry data can be exchanged and coordinated with various government databases such as integrated beneficiary registries, farmer registries, disability registries, health records, education systems, and employment databases. This contributes to more precise targeting, reduces redundancy in data collection, and ensures a unified and efficient delivery of social protection and other public services. However, in certain situations, self-contained social registries may be preferred due to legal and ethical considerations where integration may raise concerns about {term}`information security` and {term}`data privacy`.
 
 ## Social Registry in the OpenSPP platform
 
@@ -52,12 +52,11 @@ The open-source Social Registry software developed by OpenSPP offers comprehensi
 
 For more information about OpenSPP’s Social Registry contact us through our [website](https://openspp.org/contact-us/).
 
-## References and Resources
+## References
 
 - [Barca V and Hebbar M (2020) On-Demand and Up-to-Date? Dynamic Inclusion and Data Updating for Social Assistance. GIZ](https://socialprotection.org/sites/default/files/publications_files/GIZ_DataUpdatingForSocialAssistance_3.pdf)
 - [Chirchir R and Barca V (2020). Building an integrated and digital social protection information system. GIZ](https://socialprotection.org/sites/default/files/publications_files/GIZ_DFID_IIMS%20in%20social%20protection_long_02-2020.pdf)
 - [Chirchir R and Farooq S (2016) Single Registries and Social Registries: clarifying the terminological confusion. Development Pathways](https://www.developmentpathways.co.uk/wp-content/uploads/2016/11/Single-and-Social-Registries-1.pdf)
-- [Kidd S, Athias D and Mohamud I (2021) Social registries: a short history of abject failure. Development Pathways and Act Church of Sweden](https://www.developmentpathways.co.uk/wp-content/uploads/2021/06/Social-registries-a-short-history-of-abject-failure-June.pdf)
 - [Digital Convergence Initiative (2023) Social protection management information system interacting with social registry. Social Protection Interoperability Series: Interoperability in Action #6.](https://spdci.org/resources/interoperability-in-action-6-social-registry-workshop-recording/)
 - [Leite, P, Karippacheril, T and Lindert, K (2017). Social Registries for social assistance and Beyond: A Guidance Note & Assessment Tool. World Bank](https://www.researchgate.net/publication/340858942_Social_Registries_for_Social_Assistance_and_Beyond_A_Guidance_Note_and_Assessment_Tool)
 - [World Bank Group. (2020). "The World Bank Sourcebook on the Foundations of Social Protection delivery systems."](https://openknowledge.worldbank.org/entities/publication/c44dc506-72dd-5428-a088-6fb7aea53095)
