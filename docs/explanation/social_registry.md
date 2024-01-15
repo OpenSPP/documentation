@@ -12,7 +12,7 @@ One of the first examples of a social registry was developed in the late 1990s f
 
 Social registries are now used in 50 countries across the world. Examples include Pakistan’s National Social Economic Registry (NSER), Indonesia’s Data Terpadu Kesejahteran Sosial (DTKS) and Colombia’s Sistema de Identificación de Potenciales Beneficiarios de Programas Sociales (Sisbén).
 
-While earlier designs of social registries were static or ‘fixed’ due to the data being collected at a particular period in time through mass registrations, social registries are now increasingly designed to be dynamic, in recognition of the fluctuating nature of poverty and vulnerability. Social registries which use a dynamic approach to registration, through on-demand registration, periodic active outreach, registration at local government offices, integration with civil registries, national identification systems, and other registries are better able to adjust their social protection programs accordingly and meet the needs of vulnerable populations. Brazil’s Cadastro Único is considered an example of a dynamic registry, while Pakistan’s NSER is currently a static registry.
+While earlier designs of social registries were static or ‘fixed’ due to the data being collected at a particular period in time through mass registrations, social registries are now increasingly designed to be **dynamic**, in recognition of the fluctuating nature of poverty and vulnerability. Social registries which use a dynamic approach to registration, through on-demand registration, periodic active outreach, registration at local government offices, integration with civil registries, national identification systems, and other registries are better able to adjust their social protection programs accordingly and meet the needs of vulnerable populations. Brazil’s Cadastro Único is considered an example of a dynamic registry, while Pakistan’s NSER is currently a static registry.
 
 ## Operational Functionality of Social Registries
 
@@ -52,7 +52,7 @@ The open-source Social Registry software developed by OpenSPP offers comprehensi
 
 For more information about OpenSPP’s Social Registry contact us through our [website](https://openspp.org/contact-us/).
 
-## References and Resources
+## References
 
 - [Barca V and Hebbar M (2020) On-Demand and Up-to-Date? Dynamic Inclusion and Data Updating for Social Assistance. GIZ](https://socialprotection.org/sites/default/files/publications_files/GIZ_DataUpdatingForSocialAssistance_3.pdf)
 - [Chirchir R and Barca V (2020). Building an integrated and digital social protection information system. GIZ](https://socialprotection.org/sites/default/files/publications_files/GIZ_DFID_IIMS%20in%20social%20protection_long_02-2020.pdf)
