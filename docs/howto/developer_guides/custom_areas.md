@@ -45,7 +45,7 @@ The key steps in module development are as follows:
 ")
 ```
 
-3. To add the new field in the new module, develop a Python file named area.py that extends "spp.area" and incorporate this file into models/init.py. The definition of the population fields should be implemented as demonstrated below.
+3. To add the new field in the new module, develop a Python file named `area.py` that extends `spp.area` and incorporate this file into `models/init.py`. The definition of the population fields should be implemented as demonstrated below.
 
 ```python
 class SPPArea(models.Model):
