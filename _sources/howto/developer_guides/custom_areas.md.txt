@@ -1,36 +1,13 @@
 # Customize Areas
 
-This guide provides a structured approach for implementing and customising the area in OpenSPP through the development of a custom module.
+The following article guides the reader to understand how the area module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. The area module is used to set up the administration areas in OpenSPP, which can be used in programs and other modules.
 
 ## Prerequisites
 
-- Knowledge in Python, Odoo, OOP, HTML, XML, Xpaths.
-- A functional OpenSPP installation.
-- Administrative access to the OpenSPP backend.
+- Knowledge in Python, Odoo, XML, Xpaths.
+- To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html).
 
-## Odoo Setup from Docker using doodba
-
-- Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group.
-- Existence of openspp_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- Availability of modules: spp_area.
-- Existence of queue folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- Availability of modules: queue_job
-- Existence of web folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- Availability of modules: web, web_domain_field.
-
-## Odoo Setup from source
-
-- Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from [here](https://github.com/OpenG2P/openg2p-registry.git) into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.
-- Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group.
-- Existence of openspp-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, clone the repository from [here](https://github.com/OpenSPP/openspp-registry.git) into odoo/custom, navigate to the openspp-registry folder, and switch to the specified branch.
-- Availability of modules: spp_area.
-- Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from [here](https://github.com/OCA/queue.git) into odoo/custom, navigate to the queue, and switch to the specified branch.
-- Availability of modules: queue_job.
-- Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from [here](https://github.com/OCA/web.git) into odoo/custom, navigate to the web, and switch to the specified branch.
-- Availability of modules: web, web_domain_field
-
-## Installation
+## If the Area module is not installed
 
 - Log into OpenSPP with administrative rights.
 - Access the “Apps” menu from the dashboard to manage OpenSPP modules.
@@ -39,50 +16,78 @@ This guide provides a structured approach for implementing and customising the a
 
 ## Utilising the Area Module
 
-- If a new Area is required to be added, Select “Area” menu.
-- Select the Create button to add a new Area, ensuring all required fields are completed.
-- Click the Save button. An Area record is now created.
-- An Area have a hierarchy mechanism by utilising the Parent field.
-- Parent dropdown field consists of Area records.
+- Log into OpenSPP with administrative rights.
+- Access the “Apps” menu from the dashboard to manage OpenSPP modules.
+- Choose “Update Apps List” to refresh the module list.
+- Search for “Area” and initiate installation. This will also install the other modules required.
 
-## Customise Area
+![](custom_areas/1.png)
 
-- To introduce new fields or functions in a new module, develop a Python file extending the “spp.area” and integrate this file into `models/__init__.py`.
-- Upgrade the module incorporating the new Python file.
-- To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.
+## Utilizing the Area Module
 
-## Sample Use-case
+For more detailed guidance on utilizing the Area module in OpenSPP, please refer to the information available at the provided link which will be publish soon.
 
-A city may be included in an area, below is the sample model for this scenario
+## Customize Area
+
+In a hypothetical scenario, customizing the areas module to include the population of the created areas serves as a practical example. This could involve recording the population of an area such as province or district, providing valuable insights for reporting and dashboard analysis.
+
+A working sample module for the described scenario can be accessed at the provided [link](https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_custom_area).
+
+The key steps in module development are as follows:
+
+1. To customize areas, a new module can be developed.
+2. To initiate the development of a custom module for area customization, begin by creating a manifest file. This file should include fields like name, category, and version. Additionally, it's crucial to define the dependencies of the new module as outlined below.
 
 ```python
-class City(models.Model):
-   _name = "spp.city"
-
-   name = fields.Char(required=True)
-   area_id = fields.Many2one("spp.area")
+ "depends": [
+       "spp_area",
+   ],
+")
 ```
 
-A city may have multiple area, below is the sample model for this scenario
+3. To add the new field in the new module, develop a Python file named `area.py` that extends `spp.area` and incorporate this file into `models/init.py`. The definition of the population fields should be implemented as demonstrated below.
 
 ```python
-class City(models.Model):
-   _name = "spp.city"
-
-   name = fields.Char(required=True)
-   area_ids = fields.One2many("spp.area", "city_id")
-
-class Area(models.Model):
+class SPPArea(models.Model):
    _inherit = "spp.area"
 
-   city_id = fields.Many2one("spp.city")
+   population = fields.Integer()
+
 ```
 
-## Additional References
+The code mentioned above will introduce a new field to the spp_area table for storing the province name of an area. To understand further, refer to the following documentation [1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html),[2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html),[3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
 
-- Below are some Odoo references that may help in adding the field both in models and in UI. For further guidance on model creation, inheritance, and UI integration, the following Odoo documentation may be useful:
-  - [Views](https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html)
-  - [Chapter 4: Models And Basic Fields](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html)
-  - [Chapter 7: Basic Views](https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/07_basicviews.html#chapter-7-basic-views)
-  - [Chapter 13: Inheritance](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
-  - [Chapter 14: Interact With Other Modules](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html)
+4. To integrate new fields into the UI, the following steps should be followed.
+
+   - Create a new file called `views/custom_area_view.xml` in the module
+   - Add the below code to the manifest file.
+
+   ```python
+   "data": [
+       "views/custom_area_view.xml",
+   ],
+
+   ```
+
+   - The following code can be added to the custom_area_view.xml file to show the province name in the UI.
+
+     ```xml
+     <record id="spp_area_view_form_inherit" model="ir.ui.view">
+       <field name="name">spp.area.view.form.inherit</field>
+       <field name="model">spp.area</field>
+       <field name="inherit_id" ref="spp_area.view_spparea_form" />
+       <field name="arch" type="xml">
+           <xpath expr="//field[@name='kind']" position="after">
+               <field name="population" />
+           </xpath>
+       </field>
+     </record>
+     ```
+
+   Further references [1](https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/07_basicviews.html),[2](https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html)
+
+5. Install the module to include the new changes, then apply these updates through the backend App by selecting 'Update' in the Area module.
+
+The following screenshot shows the added field population in the newly developed module.
+
+![](custom_areas/2.png)
