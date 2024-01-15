@@ -17,7 +17,7 @@ developer_mode
 developer_guides/development_setup
 developer_guides/troubleshooting
 #developer_guides/custom_registry
-#developer_guides/custom_areas
+developer_guides/custom_areas
 #developer_guides/custom_service_points
 #developer_guides/custom_program
 #developer_guides/custom_cycle
