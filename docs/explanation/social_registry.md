@@ -34,16 +34,11 @@ The operational functions of social registries differ among the countries using 
 
 8. **Architectural components.** Comprise of data intake and exchange, {term}`data protection and protection`, management interfaces, interoperability focus, and necessary ICT infrastructure.
 
-**Privacy and confidentiality.** Social registries hold large amounts of sensitive {term}`personal data`. The privacy and confidentiality of individuals' data must be protected in accordance with a country’s legal and ethical standards. Social registries must also provide accessible feedback mechanisms (usually this is via the corresponding social protection program), or through integration with {term}`Grievance Redress Mechanisms` (GRM) so that registrants can appeal against eligibility decisions or report inaccuracies or errors.
+**Privacy and confidentiality.** Social registries hold large amounts of sensitive {term}`personal data`. The privacy and confidentiality of individuals' data must be protected in accordance with a country’s legal and ethical standards. Social registries must also provide accessible feedback mechanisms (usually this is via the corresponding social protection program), or through integration with {term}`Grievance redress mechanisms` (GRM) so that registrants can appeal against eligibility decisions or report inaccuracies or errors.
 
 ## Integration and interoperability of social registries
 
 Social registries can be used to identify beneficiaries for single or multiple social protection programs. They may also be designed to be interoperable and integrated with other critical systems as part of a broader {term}`information system`. Social registry data can be exchanged and coordinated with various government databases such as integrated beneficiary registries, farmer registries, disability registries, health records, education systems, and employment databases. This contributes to more precise targeting, reduces redundancy in data collection, and ensures a unified and efficient delivery of social protection and other public services. However, in certain situations, self-contained social registries may be preferred due to legal and ethical considerations where integration may raise concerns about {term}`information security` and {term}`data privacy`.
-
-## Social registries and integrated beneficiary registries
-
-Integrated beneficiary registries (IBR), also known as **single registries**, are also considered to be a fundamental approach to information management in social protection systems. IBRs bring together data from different social protection programs or other sources into a unified system, with the purpose of creating a more efficient and coordinated approach to managing and delivering social protection and other {term}`social services`.
-Social registries and IBRs may be used in tandem within broader information systems for social protection. But they may also function independently: social registries can be stand-alone, and IBRs can function without social registries.
 
 ## Social Registry in the OpenSPP platform
 
