@@ -25,7 +25,7 @@ The following article guides the reader to understand how the area module will w
 
 ## Utilizing the Area Module
 
-For more detailed guidance on utilizing the Area module in OpenSPP, please refer to the information available at the provided link(will publish soon).
+For more detailed guidance on utilizing the Area module in OpenSPP, please refer to the information available at the provided link which will be publish soon.
 
 ## Customize Area
 
