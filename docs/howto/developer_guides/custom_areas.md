@@ -12,13 +12,6 @@ The following article guides the reader to understand how the area module will w
 - Log into OpenSPP with administrative rights.
 - Access the “Apps” menu from the dashboard to manage OpenSPP modules.
 - Choose “Update Apps List” to refresh the module list.
-- Search for “OpenSPP Area” and initiate installation. This process will also install associated modules: G2P Registry: Groups, G2P Registry: Individual, G2P Registry: Base.
-
-## Utilising the Area Module
-
-- Log into OpenSPP with administrative rights.
-- Access the “Apps” menu from the dashboard to manage OpenSPP modules.
-- Choose “Update Apps List” to refresh the module list.
 - Search for “Area” and initiate installation. This will also install the other modules required.
 
 ![](custom_areas/1.png)
