@@ -24,7 +24,7 @@ For more detailed guidance on utilizing the Registry module in OpenSPP, please r
 
 In this hypothetical scenario, we will look at the following customizations
 
-- Storing a new field salary of an individual to be used for indicators
+- Storing a new field salary of an individual to be used as a indicator
 - Adding an indicator in the group of the registry
 - To show the salary of every individual in the group member view.
 
