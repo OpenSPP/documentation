@@ -17,12 +17,12 @@
 <meta content="website" property="og:type"/>
 <meta content="https://docs.openspp.org/howto/developer_guides/custom_cr.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="This guide provides a structured approach for implementing and customising the Change Request in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, H..." property="og:description"/>
+<meta content="The following article guides the reader to understand how the change request module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. Prerequis..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="This guide provides a structured approach for implementing and customising the Change Request in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, H..." name="description"/>
+<meta content="The following article guides the reader to understand how the change request module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. Prerequis..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Customize Change Request — OpenSPP Documentation v1.1</title>
+<title>Customize Change Request – How to — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -55,6 +55,8 @@
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
+<link href="../../technical_reference/index.html" rel="next" title="Technical Reference"/>
+<link href="custom_areas.html" rel="prev" title="Customize Areas"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -99,7 +101,7 @@
 </input></div>
 </form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item active">
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children">
 <a class="reference internal" href="../../tutorials/">
    Getting started
@@ -204,16 +206,16 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children">
+<li class="toctree-l1 current active has-children">
 <a class="reference internal" href="../">
    How to
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
 <label for="toctree-checkbox-3">
 <i class="fas fa-chevron-down">
 </i>
 </label>
-<ul>
+<ul class="current">
 <li class="toctree-l2">
 <a class="reference internal" href="../developer_mode.html">
      Developer mode (debug mode)
@@ -232,6 +234,11 @@
 <li class="toctree-l2">
 <a class="reference internal" href="custom_areas.html">
      Customize Areas
+    </a>
+</li>
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
+     Customize Change Request
     </a>
 </li>
 </ul>
@@ -535,7 +542,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Customize Change Request</span>
+<span>Customize Change Request – How to</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -621,33 +628,18 @@
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
-   Odoo Setup from Docker using doodba
+<a class="reference internal nav-link" href="#if-the-change-request-module-is-not-installed">
+   If the Change Request module is not installed
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-source">
-   Odoo Setup from source
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#installation">
-   Installation
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#utilising-the-change-request-module">
-   Utilising the Change Request Module
+<a class="reference internal nav-link" href="#utilizing-the-area-module">
+   Utilizing the Area Module
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#customise-change-request">
    Customise Change Request
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#additional-references">
-   Additional References
   </a>
 </li>
 </ul>
@@ -673,33 +665,18 @@
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
-   Odoo Setup from Docker using doodba
+<a class="reference internal nav-link" href="#if-the-change-request-module-is-not-installed">
+   If the Change Request module is not installed
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-source">
-   Odoo Setup from source
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#installation">
-   Installation
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#utilising-the-change-request-module">
-   Utilising the Change Request Module
+<a class="reference internal nav-link" href="#utilizing-the-area-module">
+   Utilizing the Area Module
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#customise-change-request">
    Customise Change Request
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#additional-references">
-   Additional References
   </a>
 </li>
 </ul>
@@ -711,125 +688,135 @@
 <div>
 <div class="section" id="customize-change-request">
 <h1>Customize Change Request<a class="headerlink" href="#customize-change-request" title="Permalink to this headline">#</a></h1>
-<p>This guide provides a structured approach for implementing and customising the Change Request in OpenSPP through the development of a custom module.</p>
+<p>The following article guides the reader to understand how the change request module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Knowledge in Python, Odoo, OOP, HTML, XML, Xpaths.</p></li>
-<li><p>A functional OpenSPP installation.</p></li>
-<li><p>Administrative access to the OpenSPP backend.</p></li>
+<li><p>Knowledge in Python, Odoo, XML, Xpaths.</p></li>
+<li><p>To set up OpenSPP for development, please refer to the <a class="reference external" href="https://docs.openspp.org/howto/developer_guides/development_setup.html">Developer Guide</a></p></li>
 </ul>
 </div>
-<div class="section" id="odoo-setup-from-docker-using-doodba">
-<h2>Odoo Setup from Docker using doodba<a class="headerlink" href="#odoo-setup-from-docker-using-doodba" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership</p></li>
-<li><p>Existence of openspp_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: spp_change_request, spp_service_points, spp_area, spp_scan_id_document, spp_id_pass, spp_event_data.</p></li>
-<li><p>Existence of dms folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: dms_field, dms.</p></li>
-<li><p>Existence of web folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: web, web_domain_field.</p></li>
-<li><p>Existence of queue folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: queue_job</p></li>
-</ul>
-</div>
-<div class="section" id="odoo-setup-from-source">
-<h2>Odoo Setup from source<a class="headerlink" href="#odoo-setup-from-source" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>xistence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-registry.git">here</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership.</p></li>
-<li><p>Existence of openspp-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenSPP/openspp-registry.git">here</a> into odoo/custom, navigate to the openspp-registry folder, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: spp_change_request, spp_service_points, spp_area, spp_scan_id_document, spp_id_pass, spp_event_data.</p></li>
-<li><p>Existence of dms folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from [here](<a class="reference external" href="https://github.com/OCA/dms.git">https://github.com/OCA/dms.git</a> into odoo/custom), navigate to the dms, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: dms_field, dms.</p></li>
-<li><p>Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/web.git">here</a> into odoo/custom, navigate to the web, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: web, web_domain_field.</p></li>
-<li><p>Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/queue.git">here</a> into odoo/custom, navigate to the queue, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: queue_job.</p></li>
-</ul>
-</div>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
+<div class="section" id="if-the-change-request-module-is-not-installed">
+<h2>If the Change Request module is not installed<a class="headerlink" href="#if-the-change-request-module-is-not-installed" title="Permalink to this headline">#</a></h2>
+<ul>
 <li><p>Log into OpenSPP with administrative rights.</p></li>
 <li><p>Access the “Apps” menu from the dashboard to manage OpenSPP modules.</p></li>
 <li><p>Choose “Update Apps List” to refresh the module list.</p></li>
-<li><p>Search for “OpenSPP Change Request” and initiate installation. This process will also install all associated modules.</p></li>
+<li><p>Search for “OpenSPP Change Request” and initiate installation.</p>
+<p><img alt="" src="../../_images/change_request_module_in_apps.png"/></p>
+</li>
 </ul>
 </div>
-<div class="section" id="utilising-the-change-request-module">
-<h2>Utilising the Change Request Module<a class="headerlink" href="#utilising-the-change-request-module" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>If a new Change Request is required to be added, Select “Change Request” menu.</p></li>
-<li><p>Select the Create button to add a new Change Request, ensuring all required fields are completed.</p></li>
-<li><p>At this point, Request Type dropdown field does not have any values yet since there is still no new module for the request type.</p></li>
-</ul>
+<div class="section" id="utilizing-the-area-module">
+<h2>Utilizing the Area Module<a class="headerlink" href="#utilizing-the-area-module" title="Permalink to this headline">#</a></h2>
+<p>For more detailed guidance on utilizing the Change Request module in OpenSPP, please refer to the information available at the provided link which will be publish soon.</p>
 </div>
 <div class="section" id="customise-change-request">
 <h2>Customise Change Request<a class="headerlink" href="#customise-change-request" title="Permalink to this headline">#</a></h2>
-<ul>
-<li><p>To add a value to the Request Type dropdown field, create a new module and a new model for the request type.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ChangeRequestDeactivate</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-  <span class="n">_name</span> <span class="o">=</span> <span class="s2">"pds.change.request.deactivate"</span>
-  <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span>
-      <span class="s2">"spp.change.request.source.mixin"</span><span class="p">,</span>
-      <span class="s2">"spp.change.request.validation.sequence.mixin"</span><span class="p">,</span>
-  <span class="p">]</span>
-  <span class="n">_description</span> <span class="o">=</span> <span class="s2">"Deactivate Member Change Request Type"</span>
-  <span class="n">_order</span> <span class="o">=</span> <span class="s2">"id desc"</span>
+<ol class="arabic simple">
+<li><p>If a new Change Request is required to be added, Select “Change Request” menu.</p></li>
+<li><p>Click on the Create button to add a new Change Request, ensuring all required fields are completed.</p></li>
+<li><p>At this point, the Request Type dropdown field does not have any values yet since there is still no new module for the request type.</p></li>
+</ol>
+<p><img alt="" src="../../_images/blank_request_type.png"/></p>
+<ol class="arabic simple" start="4">
+<li><p>To customize change requests, a new module can be developed.</p></li>
+<li><p>To initiate the development of a custom module for change request customization, begin by creating a manifest file. This file should include fields like name, category, and version. Additionally, it's crucial to define the dependencies of the new module as outlined below.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="s2">"depends"</span><span class="p">:</span> <span class="p">[</span>
+       <span class="s2">"spp_change_request"</span><span class="p">,</span>
+   <span class="p">],</span>
+<span class="s2">")</span>
 </pre></div>
 </div>
-</li>
-<li><p>Add fields and functions to the newly created model that corresponds to the requirements of that particular request type.</p></li>
-<li><p>Inherit model “spp.change.request” then extend the function <code class="docutils literal notranslate"><span class="pre">_selection_request_type_ref_id</span></code> to add the newly created request type model to the Request Type dropdown field.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ChangeRequestTypeCustomDeactivate</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-  <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"spp.change.request"</span>
+<ol class="arabic simple" start="6">
+<li><p>To add a value to the Request Type dropdown field, create a new model with the file name <code class="docutils literal notranslate"><span class="pre">models/change_request_add_children.py</span></code> for the request type and inherit the mixins <code class="docutils literal notranslate"><span class="pre">spp.change.request.source.mixin</span></code> and <code class="docutils literal notranslate"><span class="pre">spp.change.request.validation.sequence.mixin</span></code>.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ChangeRequestAddChildren</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+   <span class="n">_name</span> <span class="o">=</span> <span class="s2">"spp.change.request.add.children"</span>
+   <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span>
+       <span class="s2">"spp.change.request.source.mixin"</span><span class="p">,</span>
+       <span class="s2">"spp.change.request.validation.sequence.mixin"</span><span class="p">,</span>
 
-  <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
-  <span class="k">def</span> <span class="nf">_selection_request_type_ref_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-      <span class="n">selection</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_selection_request_type_ref_id</span><span class="p">()</span>
-      <span class="n">new_request_type</span> <span class="o">=</span> <span class="p">(</span>
-          <span class="s2">"spp.change.request.deactivate"</span><span class="p">,</span>
-          <span class="s2">"Deactivate Members"</span><span class="p">,</span>
-      <span class="p">)</span>
-      <span class="k">if</span> <span class="n">new_request_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">selection</span><span class="p">:</span>
-          <span class="n">selection</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_request_type</span><span class="p">)</span>
-      <span class="k">return</span> <span class="n">selection</span>
+
+   <span class="p">]</span>
+   <span class="n">_description</span> <span class="o">=</span> <span class="s2">"Add Child/Member Change Request Type"</span>
+   <span class="n">_order</span> <span class="o">=</span> <span class="s2">"id desc"</span>
 </pre></div>
 </div>
-</li>
-<li><p>Make sure that the python file where the newly created model and the inherited model is already added in the <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>.</p></li>
-<li><p>In the view part, create the following views for the request type.</p>
-<ul class="simple">
-<li><p>Tree View</p></li>
-<li><p>Form View</p></li>
-<li><p>Validation Form View</p></li>
-<li><p>Pending Validation Tree View</p></li>
-<li><p>Pending Validation Form View</p></li>
-<li><p>Filter</p></li>
-</ul>
-</li>
-<li><p>Navigate to the “Apps” Menu from the dashboard to manage OpenSPP modules.</p></li>
-<li><p>Choose “Update Apps List” to refresh the module list.</p></li>
-<li><p>Search for the newly created module and initiate installation.</p></li>
-<li><p>Navigate again to the Change Request page and a new value to the Request Type dropdown field is now added.</p></li>
-</ul>
+<ol class="arabic simple" start="7">
+<li><p>This is an example of request type to add a child in a family</p></li>
+<li><p>In the same model, the following code can be added to add fields and functions to the newly created model that corresponds to the requirements of that particular request type.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="n">full_name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_full_name"</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+   <span class="n">family_name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">()</span>
+   <span class="n">given_name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">()</span>
+   <span class="n">addl_name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="s2">"Additional Name"</span><span class="p">)</span>
+
+
+   <span class="nd">@api</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">"given_name"</span><span class="p">,</span> <span class="s2">"addl_name"</span><span class="p">,</span> <span class="s2">"family_name"</span><span class="p">)</span>
+   <span class="k">def</span> <span class="nf">_compute_full_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+       <span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+           <span class="n">full_name</span> <span class="o">=</span> <span class="p">(</span>
+               <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">rec</span><span class="o">.</span><span class="n">family_name</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">''</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">rec</span><span class="o">.</span><span class="n">given_name</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">''</span><span class="si">}</span><span class="s2">"</span>
+               <span class="sa">f</span><span class="s2">" </span><span class="si">{</span><span class="n">rec</span><span class="o">.</span><span class="n">addl_name</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">''</span><span class="si">}</span><span class="s2">"</span>
+           <span class="p">)</span>
+           <span class="n">rec</span><span class="o">.</span><span class="n">full_name</span> <span class="o">=</span> <span class="n">full_name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+
+</pre></div>
 </div>
-<div class="section" id="additional-references">
-<h2>Additional References<a class="headerlink" href="#additional-references" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple" start="9">
+<li><p>In the same file, Inherit model <code class="docutils literal notranslate"><span class="pre">spp.change.request</span></code> then extend the function <code class="docutils literal notranslate"><span class="pre">_selection_request_type_ref_id</span></code> to add the newly created request type model to the Request Type dropdown field.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ChangeRequestTypeCustomAddChildren</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+   <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"spp.change.request"</span>
+
+
+   <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
+   <span class="k">def</span> <span class="nf">_selection_request_type_ref_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+       <span class="n">selection</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_selection_request_type_ref_id</span><span class="p">()</span>
+       <span class="n">new_request_type</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"spp.change.request.add.children"</span><span class="p">,</span> <span class="s2">"Add Child/Member"</span><span class="p">)</span>
+       <span class="k">if</span> <span class="n">new_request_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">selection</span><span class="p">:</span>
+           <span class="n">selection</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_request_type</span><span class="p">)</span>
+       <span class="k">return</span> <span class="n">selection</span>
+
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Make sure that the python file where the newly created model and the inherited model is already added in the <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>. To understand more about these. Refer to the following links <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">1</a>, <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">2</a></p></li>
+<li><p>In the view, create a file <code class="docutils literal notranslate"><span class="pre">views/change_request_add_children_view.xml</span></code> and add the following views.</p></li>
+</ol>
 <ul class="simple">
-<li><p>Below are some Odoo references that may help in adding the field both in models and in UI. For further guidance on model creation, inheritance, and UI integration, the following Odoo documentation may be useful:</p>
-<ul>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html">Views</a></p></li>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">Chapter 4: Models And Basic Fields</a></p></li>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/07_basicviews.html#chapter-7-basic-views">Chapter 7: Basic Views</a></p></li>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">Chapter 13: Inheritance</a></p></li>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">Chapter 14: Interact With Other Modules</a></p></li>
+<li><p>Tree View - shows the list of change request records</p></li>
+<li><p>Form View - form view of a particular change request type record where information will be added</p></li>
+<li><p>Validation Form View - form view where the validator can see and validate the change request</p></li>
+<li><p>Pending Validation Tree View - shows the list of change request that is in pending validation state</p></li>
 </ul>
-</li>
+<p>Refer to the <code class="docutils literal notranslate"><span class="pre">change_request_add_children_view.xml</span></code> to understand how the views are created</p>
+<ul class="simple">
+<li><p>the record id “view_change_request_add_children_tree” is the Tree View</p></li>
+<li><p>the record id “view_change_request_add_children_form” is the Form View</p></li>
+<li><p>the record id “view_change_request_add_children_validation_form” is the Validation Form View</p></li>
+<li><p>the record id “action_change_request_add_children_pending” is the Pending Validation Tree View</p></li>
 </ul>
+<ol class="arabic simple" start="12">
+<li><p>Add the below code to the manifest file.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="s2">"data"</span><span class="p">:</span> <span class="p">[</span>
+       <span class="s2">"views/change_request_add_children_view.xml"</span><span class="p">,</span>
+   <span class="p">],</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="13">
+<li><p>Navigate to the “Apps” Menu from the dashboard to manage OpenSPP modules. Choose “Update Apps List” to refresh the module list. Search for the newly created module and initiate installation.</p></li>
+<li><p>Navigate again to the Change Request page and a new value to the Request Type dropdown field is now added.</p></li>
+</ol>
+<p><img alt="" src="../../_images/with_request_type.png"/></p>
+<ol class="arabic simple" start="15">
+<li><p>After filling-up the fields, click the Create button to create the change request record and redirect to the request form view.</p></li>
+</ol>
+<p><img alt="" src="../../_images/request_form_view.png"/></p>
+<p>A working sample module for the described above can be accessed at the provided <a class="reference external" href="https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_change_request_add_children">link</a>.</p>
 </div>
 </div>
 </div>
@@ -837,6 +824,20 @@
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
+<a class="left-prev" href="custom_areas.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Customize Areas</p>
+</div>
+</a>
+<a class="right-next" href="../../technical_reference/index.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Technical Reference</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
 </div>
 </footer>
 </div>
