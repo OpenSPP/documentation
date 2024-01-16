@@ -38,7 +38,7 @@ For more detailed guidance on utilizing the Change Request module in OpenSPP, pl
 ")
 ```
 
-6. To add a value to the Request Type dropdown field, create a new model with the file name “models/change_request_add_children.py” for the request type and inherit the mixins “spp.change.request.source.mixin” and “spp.change.request.validation.sequence.mixin”.
+6. To add a value to the Request Type dropdown field, create a new model with the file name `models/change_request_add_children.py` for the request type and inherit the mixins `spp.change.request.source.mixin` and `spp.change.request.validation.sequence.mixin`.
 
 ```python
 class ChangeRequestAddChildren(models.Model):
@@ -74,7 +74,7 @@ class ChangeRequestAddChildren(models.Model):
 
 ```
 
-9. In the same file, Inherit model “spp.change.request” then extend the function \_selection_request_type_ref_id to add the newly created request type model to the Request Type dropdown field.
+9. In the same file, Inherit model `spp.change.request` then extend the function `_selection_request_type_ref_id` to add the newly created request type model to the Request Type dropdown field.
 
 ```python
 class ChangeRequestTypeCustomAddChildren(models.Model):
@@ -93,14 +93,14 @@ class ChangeRequestTypeCustomAddChildren(models.Model):
 
 10. Make sure that the python file where the newly created model and the inherited model is already added in the `models/__init__.py`. To understand more about these. Refer to the following links [1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html), [2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html)
 
-11. In the view, create a file “views/change_request_add_children_view.xml” and add the following views.
+11. In the view, create a file `views/change_request_add_children_view.xml` and add the following views.
 
 - Tree View - shows the list of change request records
 - Form View - form view of a particular change request type record where information will be added
 - Validation Form View - form view where the validator can see and validate the change request
 - Pending Validation Tree View - shows the list of change request that is in pending validation state
 
-Refer to the change_request_add_children_view.xml to understand how the views are created
+Refer to the `change_request_add_children_view.xml` to understand how the views are created
 
 - the record id “view_change_request_add_children_tree” is the Tree View
 - the record id “view_change_request_add_children_form” is the Form View
