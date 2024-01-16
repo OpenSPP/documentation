@@ -1,108 +1,170 @@
 # Customize Registry
 
-This guide provides a structured approach for implementing and customising the registry in OpenSPP through the development of a custom module.
+The following article guides the reader in understanding how the registry module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example.
 
 ## Prerequisites
 
-- Knowledge in Python, Odoo, OOP, HTML, XML, Xpaths.
-- A functional OpenSPP installation.
-- Administrative access to the OpenSPP backend.
+- Knowledge of Python, Odoo, XML, Xpaths.
+- To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
 
-## Odoo Setup from Docker using doodba
-
-- Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership.
-- Existence of web folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- Availability of modules: web, web_domain_field.
-- Existence of queue folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- Availability of modules: queue_job
-
-## Odoo Setup from source
-
-- Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from [here](https://github.com/OpenG2P/openg2p-registry.git) into odoo/custom, navigate to the openg2p-registry folder, and switch to the specified branch.
-- Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership.
-- Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from [here](https://github.com/OCA/web.git) into odoo/custom, navigate to the web, and switch to the specified branch.
-- Availability of modules: web, web_domain_field.
-- Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from [here](https://github.com/OCA/queue.git) into odoo/custom, navigate to the queue, and switch to the specified branch.
-- Availability of modules: queue_job.
-
-## Installation
+## If the Registry module is not installed
 
 - Log into OpenSPP with administrative rights.
 - Access the “Apps” menu from the dashboard to manage OpenSPP modules.
-- Choose “Update Apps List ” to refresh the module list.
-- Search for “G2P Registry: Membership” and initiate installation. This process will also install associated modules: G2P Registry: Groups, G2P Registry: Individual, G2P Registry: Base.
+- Choose “Update Apps List” to refresh the module list.
+- Search for the following modules that are required to be installed such as G2P Registry: Groups, G2P Registry: Individual and G2P Registry: Membership.
 
-## Utilising the Registry Module
+![](custom_registry/1.png)
 
-- If a new individual is required to be added, Under the “Registry” menu, select “Individuals”.
-- If a new individual is required to be added, select the Create button to add new individuals, ensuring all required fields are completed.
-- If a new group is required to be added, Navigate to “Groups” within the “Registry” menu.
-- Create a new group and add members by using the “Add a line” option in the “Members” panel. Search and select individuals previously created.
-- Save changes. Added members and groups will be visible in their respective panels.
-- To add custom filter, navigate to the tree/list view of the registry in either Group or Individual then click the “Filter” button below the search field, then click custom filter.
-- Select the field, operator, and the value for the custom filter.
-- To add custom group by, navigate to the tree/lsit view of the registry page then click the “Group by” button then click the “Add Custom Group” and select the field you want to use in Group by.
+## Utilizing the Registry Module
+
+For more detailed guidance on utilizing the Registry module in OpenSPP, please refer to the information available at the provided link, which will be published soon.
 
 ## Customise Registry
 
-- To introduce new fields or functions in a new module, develop a Python file extending the res.partner model and integrate this file into `models/__init__.py`.
-- Upgrade the module incorporating the new Python file.
-- Follow naming conventions for new registry fields:
+In this hypothetical scenario, we will look at the following customizations
 
-  - Prefix individual-specific fields with `ind_` (e.g., “ind_hobbies”).
-  - Prefix group-specific fields with `grp_` (e.g., “grp_number_of_members”).
-  - Use no prefix for universally applicable fields (e.g., “name”, “address”).
-    ```python
-    class Registry(models.Model):
-      ind_hobbies = fields.Char()
-      grp_number_of_membership = fields.Integer()
-      address = fields.Text()
-    ```
+- Storing a new field salary of an individual to be used for indicators
+- Adding an indicator in the group of the registry
+- To show the salary of every individual in the group member view.
 
-- For relational fields like many2one to `res.partner`, apply appropriate domain parameters to filter registry records.
+A working sample module for the described scenario can be accessed at the provided [link](https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_registry_custom).
 
-  ```python
-  applicant_id = fields.Many2one(
-   "res.partner",
-   "Applicant",
-   domain=[("is_registrant", "=", True), ("is_group", "=", False)],
-  )
-  ```
+The key steps in module development are as follows:
 
-- To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.
-- To add a new tab, inherit the form view of the registry page and then xpath to the “page” element under the “notebook” element with the position preferred.
+1. To do the above customizations, a new module can be developed.
 
-  ```xml
-  <?xml version="1.0" encoding="UTF-8" ?>
-  <odoo>
-   <record id="view_farmer_form" model="ir.ui.view">
-       <field name="name">view_farmer_form</field>
+2. To initiate the development of the custom module for registry customization, begin by creating a manifest file. This file should include fields like name, category, and version. Additionally, it's important to define the dependencies of the new module as outlined below.
+
+```python
+  "depends": [
+       "g2p_registry_group",
+       "g2p_registry_individual",
+       "g2p_registry_membership",
+   ],
+```
+
+3. To add the new field for salary in the registry, develop a Python file named `individual.py` that extends `res.partner` and incorporate this file into `models/init.py`. The definition of the salary and currency fields should be implemented as demonstrated below.
+
+```python
+from odoo import fields, models
+
+class OpenSPPIndividualCustom(models.Model):
+   _inherit = "res.partner"
+
+
+   ind_currency_id = fields.Many2one(
+       "res.currency",
+       "Currency",
+       default=lambda self: self.env.user.company_id.currency_id or None,
+   )
+   ind_salary = fields.Monetary("Salary", currency_field="ind_currency_id", default=0.0)
+```
+
+Note that when adding fields that are specific for individual It should have the prefix `ind_`
+
+4. To add the new column in the Members table in the groups, develop a Python file named `group_membership.py` that extends `g2p.group.membership` and incorporate this file into `models/__init__.py`. The definition of the salary and currency fields should be implemented as demonstrated below.
+
+```python
+from odoo import fields, models
+
+class OpenSPPMembershipCustom(models.Model):
+   _inherit = "g2p.group.membership"
+
+   currency_id = fields.Many2one(
+       "res.currency",
+       related="individual.ind_currency_id",
+   )
+
+
+   salary = fields.Monetary(
+       "Salary",
+       currency_field="currency_id",
+       related="individual.ind_salary",
+   )
+
+```
+
+5. To add the salary as an indicator in the group-level, develop a Python file named `group.py` that extends `res.partner` and incorporate this file into `models/init.py`. The definition of the number of individuals with a salary below 100 USD should be implemented as demonstrated below.
+
+```python
+from odoo import api, fields, models
+
+class OpenSPPGroupCustom(models.Model):
+   _inherit = "res.partner"
+
+
+   z_ind_grp_count_below_salary = fields.Integer(
+       "Number of members with below 100 salary",
+       compute="_compute_count_below_salary",
+   )
+
+
+   @api.depends("group_membership_ids", "group_membership_ids.salary")
+   def _compute_count_below_salary(self):
+       for rec in self:
+           below_salary_count = 0
+           for membership in rec.group_membership_ids:
+               if membership.salary < 100:
+                   below_salary_count += 1
+
+
+           rec.z_ind_grp_count_below_salary = below_salary_count
+
+```
+
+To understand further, refer to the following documentation [1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html),[2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html),[3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
+
+6. The following steps should be followed to integrate the new fields into the UI. Create new files named `views/individual_views.xml` and `views/group_membership_views.xml` in the module. Add the below code to the manifest file.
+
+```python
+   "data": [
+       "views/group_membership_views.xml",
+       "views/individual_views.xml",
+   ],
+
+```
+
+7. The following code can be added to the `individual_views.xml` file to show the currency and salary in the UI.
+
+```xml
+   <record id="view_individuals_salary_detail" model="ir.ui.view">
+       <field name="name">view_individuals_salary_detail</field>
        <field name="model">res.partner</field>
-       <field name="inherit_id" ref="g2p_registry_group.view_groups_form" />
+       <field name="inherit_id" ref="g2p_registry_individual.view_individuals_form" />
        <field name="arch" type="xml">
-           <xpath expr="//page[@name='basic_info']" position="after">
-               <page string="Geolocation" name="geolocation">
-                   <div name="geo_coordinates">
-                       <span class="oe_inline"> ( </span>
-                       <span> Lat : </span>
-                       <field name="latitude" class="oe_inline" no_label="1" />
-                       <span> : Long : </span>
-                       <field name="longitude" class="oe_inline" nolabel="1" />
-                       <span>) </span>
-                   </div>
-               </page>
+           <xpath expr="//field[@name='email']" position="after">
+               <field name="ind_currency_id" />
+               <field name="ind_salary" />
            </xpath>
        </field>
    </record>
-  </odoo>
-  ```
+```
 
-## Additional References
+8. The following code can be added to the `group_membership_views.xml` to show the salary of every member of a group.
 
-- Below are some Odoo references that may help in adding the field both in models and in UI. For further guidance on model creation, inheritance, and UI integration, the following Odoo documentation may be useful:
-  - [Views](https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html)
-  - [Chapter 4: Models And Basic Fields](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html)
-  - [Chapter 7: Basic Views](https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/07_basicviews.html#chapter-7-basic-views)
-  - [Chapter 13: Inheritance](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
-  - [Chapter 14: Interact With Other Modules](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html)
+```xml
+   <record id="view_group_membership_salary_indicator" model="ir.ui.view">
+       <field name="name">view_group_membership_salary_indicator</field>
+       <field name="model">res.partner</field>
+       <field name="inherit_id" ref="g2p_registry_group.view_groups_form" />
+       <field name="arch" type="xml">
+           <xpath expr="//field[@name='group_membership_ids']/tree/field[@name='ended_date']" position="after">
+               <field name="salary" />
+           </xpath>
+       </field>
+   </record>
+```
+
+9. Install the module to include the new changes.
+
+10. The following screenshot shows the added field in the newly developed module.
+
+See the following for the Individual view.
+![](custom_registry/2.png)
+
+See the following for the Members table in Groups.
+![](custom_registry/3.png)
+
+See the following for the Indicators in Groups
+![](custom_registry/4.png)
