@@ -5,7 +5,7 @@ The following article guides the reader to understand how the change request mod
 ## Prerequisites
 
 - Knowledge in Python, Odoo, XML, Xpaths.
-- To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.htm
+- To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
 
 ## If the Change Request module is not installed
 
