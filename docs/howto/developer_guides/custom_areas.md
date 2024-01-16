@@ -1,10 +1,10 @@
 # Customize Areas
 
-The following article guides the reader to understand how the area module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. The area module is used to set up the administration areas in OpenSPP, which can be used in programs and other modules.
+The following article guides the reader in understanding how the area module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. The area module is used to set up the administration areas in OpenSPP, which can be used in programs and other modules.
 
 ## Prerequisites
 
-- Knowledge in Python, Odoo, XML, Xpaths.
+- Knowledge of Python, Odoo, XML, Xpaths.
 - To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html).
 
 ## If the Area module is not installed

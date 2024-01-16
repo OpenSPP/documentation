@@ -8,17 +8,21 @@ Here you’ll find short answers to “How do I….?” types of questions. Thes
 :maxdepth: 2
 :hidden: true
 
-developer_mode
+
 
 #User Guides
 #user_guides/implementing_pmt
 
 #Developer Guides
+developer_mode
 developer_guides/development_setup
-developer_guides/troubleshooting
+
 developer_guides/custom_areas
 developer_guides/custom_cr
-#developer_guides/custom_registry
+developer_guides/custom_registry
+
+developer_guides/troubleshooting
+
 #developer_guides/custom_service_points
 #developer_guides/custom_program
 #developer_guides/custom_cycle

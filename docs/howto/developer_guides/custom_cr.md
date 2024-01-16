@@ -1,10 +1,10 @@
 # Customize Change Request
 
-The following article guides the reader to understand how the change request module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example.
+The following article guides the reader in understanding how the change request module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example.
 
 ## Prerequisites
 
-- Knowledge in Python, Odoo, XML, Xpaths.
+- Knowledge of Python, Odoo, XML, Xpaths.
 - To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
 
 ## If the Change Request module is not installed
@@ -121,7 +121,7 @@ Refer to the `change_request_add_children_view.xml` to understand how the views 
 
 ![](custom_cr/with_request_type.png)
 
-15. After filling-up the fields, click the Create button to create the change request record and redirect to the request form view.
+15. After filling-up the fields, click the Create button to create the change request record.
 
 ![](custom_cr/request_form_view.png)
 
