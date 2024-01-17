@@ -749,7 +749,6 @@
 <span class="k">class</span> <span class="nc">OpenSPPIndividualCustom</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
    <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"res.partner"</span>
 
-
    <span class="n">ind_currency_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span>
        <span class="s2">"res.currency"</span><span class="p">,</span>
        <span class="s2">"Currency"</span><span class="p">,</span>
@@ -772,7 +771,6 @@
        <span class="n">related</span><span class="o">=</span><span class="s2">"individual.ind_currency_id"</span><span class="p">,</span>
    <span class="p">)</span>
 
-
    <span class="n">salary</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Monetary</span><span class="p">(</span>
        <span class="s2">"Salary"</span><span class="p">,</span>
        <span class="n">currency_field</span><span class="o">=</span><span class="s2">"currency_id"</span><span class="p">,</span>
@@ -789,12 +787,10 @@
 <span class="k">class</span> <span class="nc">OpenSPPGroupCustom</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
    <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"res.partner"</span>
 
-
    <span class="n">z_ind_grp_count_below_salary</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span>
        <span class="s2">"Number of members with below 100 salary"</span><span class="p">,</span>
        <span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_count_below_salary"</span><span class="p">,</span>
    <span class="p">)</span>
-
 
    <span class="nd">@api</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">"group_membership_ids"</span><span class="p">,</span> <span class="s2">"group_membership_ids.salary"</span><span class="p">)</span>
    <span class="k">def</span> <span class="nf">_compute_count_below_salary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -809,7 +805,7 @@
 
 </pre></div>
 </div>
-<p>To understand further, refer to the following documentation given here <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">Link 1</a>,<a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">Link 2</a>,<a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">Link 3</a></p>
+<p>To understand further, refer to the following documentation given here <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">Link 1</a>, <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">Link 2</a>, <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">Link 3</a></p>
 <ol class="arabic simple" start="6">
 <li><p>The following steps should be followed to integrate the new fields into the UI. Create new files named <code class="docutils literal notranslate"><span class="pre">views/individual_views.xml</span></code> and <code class="docutils literal notranslate"><span class="pre">views/group_membership_views.xml</span></code> in the module. Add the below code to the manifest file.</p></li>
 </ol>

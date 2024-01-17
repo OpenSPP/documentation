@@ -747,8 +747,6 @@
    <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span>
        <span class="s2">"spp.change.request.source.mixin"</span><span class="p">,</span>
        <span class="s2">"spp.change.request.validation.sequence.mixin"</span><span class="p">,</span>
-
-
    <span class="p">]</span>
    <span class="n">_description</span> <span class="o">=</span> <span class="s2">"Add Child/Member Change Request Type"</span>
    <span class="n">_order</span> <span class="o">=</span> <span class="s2">"id desc"</span>
@@ -767,7 +765,6 @@
    <span class="n">given_name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">()</span>
    <span class="n">addl_name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="s2">"Additional Name"</span><span class="p">)</span>
 
-
    <span class="nd">@api</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">"given_name"</span><span class="p">,</span> <span class="s2">"addl_name"</span><span class="p">,</span> <span class="s2">"family_name"</span><span class="p">)</span>
    <span class="k">def</span> <span class="nf">_compute_full_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
        <span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
@@ -784,7 +781,6 @@
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ChangeRequestTypeCustomAddChildren</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
    <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"spp.change.request"</span>
-
 
    <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
    <span class="k">def</span> <span class="nf">_selection_request_type_ref_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>

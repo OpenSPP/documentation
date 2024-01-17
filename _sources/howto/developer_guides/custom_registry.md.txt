@@ -52,7 +52,6 @@ from odoo import fields, models
 class OpenSPPIndividualCustom(models.Model):
    _inherit = "res.partner"
 
-
    ind_currency_id = fields.Many2one(
        "res.currency",
        "Currency",
@@ -76,7 +75,6 @@ class OpenSPPMembershipCustom(models.Model):
        related="individual.ind_currency_id",
    )
 
-
    salary = fields.Monetary(
        "Salary",
        currency_field="currency_id",
@@ -93,12 +91,10 @@ from odoo import api, fields, models
 class OpenSPPGroupCustom(models.Model):
    _inherit = "res.partner"
 
-
    z_ind_grp_count_below_salary = fields.Integer(
        "Number of members with below 100 salary",
        compute="_compute_count_below_salary",
    )
-
 
    @api.depends("group_membership_ids", "group_membership_ids.salary")
    def _compute_count_below_salary(self):
@@ -113,7 +109,7 @@ class OpenSPPGroupCustom(models.Model):
 
 ```
 
-To understand further, refer to the following documentation given here [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html),[Link 2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html),[Link 3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
+To understand further, refer to the following documentation given here [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html), [Link 2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html), [Link 3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
 
 6. The following steps should be followed to integrate the new fields into the UI. Create new files named `views/individual_views.xml` and `views/group_membership_views.xml` in the module. Add the below code to the manifest file.
 

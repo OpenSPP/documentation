@@ -46,8 +46,6 @@ class ChangeRequestAddChildren(models.Model):
    _inherit = [
        "spp.change.request.source.mixin",
        "spp.change.request.validation.sequence.mixin",
-
-
    ]
    _description = "Add Child/Member Change Request Type"
    _order = "id desc"
@@ -66,7 +64,6 @@ class ChangeRequestAddChildren(models.Model):
    given_name = fields.Char()
    addl_name = fields.Char("Additional Name")
 
-
    @api.depends("given_name", "addl_name", "family_name")
    def _compute_full_name(self):
        for rec in self:
@@ -83,7 +80,6 @@ class ChangeRequestAddChildren(models.Model):
 ```python
 class ChangeRequestTypeCustomAddChildren(models.Model):
    _inherit = "spp.change.request"
-
 
    @api.model
    def _selection_request_type_ref_id(self):

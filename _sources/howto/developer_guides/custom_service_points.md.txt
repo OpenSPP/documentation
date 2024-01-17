@@ -54,7 +54,7 @@ class OpenSPPServicePoint(models.Model):
 
 ```
 
-The code mentioned above will introduce the new fields to the `spp_service_point` table for storing the operating hours for weekdays and weekends. To understand further, refer to the following documentation given here [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html),[Link 2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html),[Link 3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
+The code mentioned above will introduce the new fields to the `spp_service_point` table for storing the operating hours for weekdays and weekends. To understand further, refer to the following documentation given here [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html), [Link 2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html), [Link 3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
 
 4. To integrate new fields into the UI, the following steps should be followed. Create a new file called `views/service_point_views.xml` in the module. Add the below code to the manifest file.
 
