@@ -33,7 +33,7 @@ The key steps in module development are as follows:
    ],
 ```
 
-3. To integrate new endpoint and the response data needed into the system, the following steps should be followed. Create a new file called “data/spp_api_path_data.xml” in the module and add the below code to the manifest file.
+3. To integrate new endpoint and the response data needed into the system, the following steps should be followed. Create a new file called `data/spp_api_path_data.xml` in the module and add the below code to the manifest file.
 
 ```python
    "data": [
@@ -41,7 +41,7 @@ The key steps in module development are as follows:
    ],
 ```
 
-The following code can be added to the spp_api_path_data.xml file to create a new endpoint.
+The following code can be added to the `spp_api_path_data.xml` file to create a new endpoint.
 
 ```xml
    <record id="area_path" model="spp_api.path">
@@ -64,12 +64,12 @@ The following code can be added to the spp_api_path_data.xml file to create a ne
    </record>
 ```
 
-The above code will create a new record for the model spp_api.path with the information about the endpoint’s model, fields, and http method.
+The above code will create a new record for the model `spp_api.path` with the information about the endpoint’s model, fields, and HTTP method.
 
 4. Now install the new module.
 
 The following screenshot shows the response data after sending the request using Postman.
-NOTE: “request_id” parameter is required and should be unique or else the response will return an error.
+NOTE: `request_id` parameter is required and should be unique. Else the response will return an error.
 
 Successful Response
 
