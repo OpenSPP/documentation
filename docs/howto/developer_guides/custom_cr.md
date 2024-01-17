@@ -57,7 +57,7 @@ class ChangeRequestAddChildren(models.Model):
 8. In the same model, the following code can be added to add fields and functions to the newly created model that corresponds to the requirements of that particular request type.
 
 ```python
-   class ChangeRequestAddChildren(models.Model):
+class ChangeRequestAddChildren(models.Model):
    _name = "spp.change.request.add.children"
    ...
 
