@@ -17,12 +17,12 @@
 <meta content="website" property="og:type"/>
 <meta content="https://docs.openspp.org/howto/developer_guides/custom_service_points.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="This guide provides a structured approach for implementing and customising the service points in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, H..." property="og:description"/>
+<meta content="The following article guides the reader in understanding how the service point module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. Prerequ..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="This guide provides a structured approach for implementing and customising the service points in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, H..." name="description"/>
+<meta content="The following article guides the reader in understanding how the service point module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. Prerequ..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Customize Service Points — OpenSPP Documentation v1.1</title>
+<title>Customize Service Points – How to — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -55,6 +55,8 @@
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
+<link href="troubleshooting.html" rel="next" title="Troubleshooting"/>
+<link href="custom_registry.html" rel="prev" title="Customize Registry"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -99,7 +101,7 @@
 </input></div>
 </form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item active">
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children">
 <a class="reference internal" href="../../tutorials/">
    Getting started
@@ -204,16 +206,16 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children">
+<li class="toctree-l1 current active has-children">
 <a class="reference internal" href="../">
    How to
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
 <label for="toctree-checkbox-3">
 <i class="fas fa-chevron-down">
 </i>
 </label>
-<ul>
+<ul class="current">
 <li class="toctree-l2">
 <a class="reference internal" href="../developer_mode.html">
      Developer mode (debug mode)
@@ -237,6 +239,11 @@
 <li class="toctree-l2">
 <a class="reference internal" href="custom_registry.html">
      Customize Registry
+    </a>
+</li>
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
+     Customize Service Points
     </a>
 </li>
 <li class="toctree-l2">
@@ -545,7 +552,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Customize Service Points</span>
+<span>Customize Service Points – How to</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -625,40 +632,34 @@
     </div>
 <nav aria-label="Page" id="bd-toc-nav">
 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#">
+   Customize Service Points
+  </a>
+<ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites
-  </a>
+     Prerequisites
+    </a>
 </li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
-   Odoo Setup from Docker using doodba
-  </a>
+</ul>
 </li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#installation">
-   Installation
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#if-the-service-points-module-is-not-installed">
+   If the Service Points module is not installed
   </a>
-</li>
+<ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#utilising-the-service-points-module">
-   Utilising the Service Points Module
-  </a>
+     Utilising the Service Points Module
+    </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#customise-service-point-and-service-point-device">
-   Customise Service Point and Service Point Device
-  </a>
+<a class="reference internal nav-link" href="#id1">
+     Customize Service Points
+    </a>
 </li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#sample-use-case">
-   Sample Use-case
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#additional-references">
-   Additional References
-  </a>
+</ul>
 </li>
 </ul>
 </nav>
@@ -677,40 +678,34 @@
 </div>
 <nav aria-label="Page">
 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#">
+   Customize Service Points
+  </a>
+<ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites
-  </a>
+     Prerequisites
+    </a>
 </li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
-   Odoo Setup from Docker using doodba
-  </a>
+</ul>
 </li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#installation">
-   Installation
+<li class="toc-h1 nav-item toc-entry">
+<a class="reference internal nav-link" href="#if-the-service-points-module-is-not-installed">
+   If the Service Points module is not installed
   </a>
-</li>
+<ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#utilising-the-service-points-module">
-   Utilising the Service Points Module
-  </a>
+     Utilising the Service Points Module
+    </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#customise-service-point-and-service-point-device">
-   Customise Service Point and Service Point Device
-  </a>
+<a class="reference internal nav-link" href="#id1">
+     Customize Service Points
+    </a>
 </li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#sample-use-case">
-   Sample Use-case
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#additional-references">
-   Additional References
-  </a>
+</ul>
 </li>
 </ul>
 </nav>
@@ -721,108 +716,127 @@
 <div>
 <div class="section" id="customize-service-points">
 <h1>Customize Service Points<a class="headerlink" href="#customize-service-points" title="Permalink to this headline">#</a></h1>
-<p>This guide provides a structured approach for implementing and customising the service points in OpenSPP through the development of a custom module.</p>
+<p>The following article guides the reader in understanding how the service point module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Knowledge in Python, Odoo, OOP, HTML, XML, Xpaths.</p></li>
-<li><p>A working OpenSPP installation</p></li>
-<li><p>Administrator access to the OpenSPP backend.</p></li>
+<li><p>Knowledge of Python, Odoo, XML, Xpaths.</p></li>
+<li><p>To set up OpenSPP for development, please refer to the <a class="reference external" href="https://docs.openspp.org/howto/developer_guides/development_setup.html">Developer Guide</a></p></li>
 </ul>
 </div>
-<div class="section" id="odoo-setup-from-docker-using-doodba">
-<h2>Odoo Setup from Docker using doodba<a class="headerlink" href="#odoo-setup-from-docker-using-doodba" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group.</p></li>
-<li><p>Existence of openspp_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: spp_service_points, spp_service_point_device, spp_area.
-Odoo Setup from source</p></li>
-<li><p>Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-registry.git">here</a> into odoo/custom, navigate to the openg2p-registry folder, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group.</p></li>
-<li><p>Existence of openspp-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenSPP/openspp-registry.git">here</a> into odoo/custom, navigate to the openspp-registry folder, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: spp_service_points, spp_service_point_device, spp_area.</p></li>
-</ul>
 </div>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<div class="section" id="if-the-service-points-module-is-not-installed">
+<h1>If the Service Points module is not installed<a class="headerlink" href="#if-the-service-points-module-is-not-installed" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Log into OpenSPP with administrative rights.</p></li>
 <li><p>Access the “Apps” menu from the dashboard to manage OpenSPP modules.</p></li>
 <li><p>Choose “Update Apps List” to refresh the module list.</p></li>
-<li><p>Search for “OpenSPP Service Point Device” and initiate installation. This process will also install associated modules: OpenSPP Service Points</p></li>
+<li><p>Search for the following modules that are required to be installed such as G2P Registry: Groups, G2P Registry: Individual and G2P Registry: Membership.</p></li>
 </ul>
-</div>
+<p><img alt="" src="howto/developer_guides/custom_service_points.md/1.png"/></p>
 <div class="section" id="utilising-the-service-points-module">
 <h2>Utilising the Service Points Module<a class="headerlink" href="#utilising-the-service-points-module" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>If a new Service Point is required to be added, Select “Service Point” menu.</p></li>
-<li><p>Select the Create button to add a new Service Point, ensuring all required fields are completed.</p></li>
-<li><p>Click the Save button. A Service Point record is now created.</p></li>
-<li><p>If a Service Point Device is required to view, Select “Devices” on the top right corner of the Service Point Page.</p></li>
-<li><p>Upon clicking, the page will be directed to the page consisting of a table of all the Terminal Devices of the Service Point.</p></li>
-<li><p>If a Service Point user is required, go back to the Service Point page, select the Edit button, and fill-up the company field.</p></li>
-<li><p>Upon adding value to the company field, a new button will appear in the top right corner named “Create SP Users”.</p></li>
-<li><p>Click “Create SP Users” to create users for all contacts under the company.</p></li>
-</ul>
+<p>For more detailed guidance on utilizing the Service Point module in OpenSPP, please refer to the information available at the provided link, which will be published soon.</p>
 </div>
-<div class="section" id="customise-service-point-and-service-point-device">
-<h2>Customise Service Point and Service Point Device<a class="headerlink" href="#customise-service-point-and-service-point-device" title="Permalink to this headline">#</a></h2>
-<ul>
-<li><p>To introduce new fields or functions in a new module, develop a Python file extending the “spp.service.point” for Service Point or “spp.service.point.device” for Service Point Device and integrate this file into <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>.</p>
-<ul class="simple">
-<li><p>e.g. service_point_location = fields.Char(required=True) or</p></li>
-<li><p>e.g. service_point_location = fields.Many2one(“service.point.location”, required=True) assuming there is a model for service point location.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CustomServicePoint</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
- <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"spp.service.point"</span>
+<div class="section" id="id1">
+<h2>Customize Service Points<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>In this hypothetical scenario, we will add the dropdown service point type and service point operating hours, which can be shown to the beneficiaries so they can redeem their entitlements by knowing the operation hours and service point type.</p>
+<p>A working sample module for the described scenario can be accessed at the provided <a class="reference external" href="https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_service_point_custom">link</a>.</p>
+<p>The key steps in module development are as follows:</p>
+<ol class="arabic simple">
+<li><p>To customize service point, a new module can be developed.</p></li>
+<li><p>To initiate the development of a custom module for service point customization, begin by creating a manifest file. This file should include fields like name, category, and version. Additionally, it's crucial to define the dependencies of the new module as outlined below.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="s2">"depends"</span><span class="p">:</span> <span class="p">[</span>
+       <span class="s2">"spp_service_points"</span><span class="p">,</span>
+   <span class="p">],</span>
 
- <span class="n">service_point_location</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
- <span class="c1"># assumining service.point.location model is existing</span>
- <span class="n">service_point_location_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s2">"service.point.location"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-</li>
-<li><p>Upgrade the module incorporating the new Python file.</p></li>
-<li><p>To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.</p></li>
-</ul>
-</div>
-<div class="section" id="sample-use-case">
-<h2>Sample Use-case<a class="headerlink" href="#sample-use-case" title="Permalink to this headline">#</a></h2>
-<p>A contact may have a service point, below is the sample model for this scenario</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ResPartner</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-   <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"res.partner"</span>
+<ol class="arabic simple" start="3">
+<li><p>To add the new field in the new module, develop a Python file named <code class="docutils literal notranslate"><span class="pre">service_point.py</span></code> that extends <code class="docutils literal notranslate"><span class="pre">spp.service.point</span></code> and incorporate this file into <code class="docutils literal notranslate"><span class="pre">models/init.py</span></code>. The definition of the fields should be implemented as demonstrated below.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
 
-   <span class="n">service_point_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s2">"spp.service.point"</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>A contact is included in multiple service point, below is the sample model for this scenario.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ResPartner</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-   <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"res.partner"</span>
-
-   <span class="n">service_point_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">One2many</span><span class="p">(</span><span class="s2">"spp.service.point"</span><span class="p">,</span> <span class="s2">"res_partner_id"</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">ServicePoint</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">OpenSPPServicePoint</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
    <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"spp.service.point"</span>
 
-   <span class="n">res_partner_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s2">"res.partner"</span><span class="p">)</span>
+   <span class="n">weekday_time_start</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s1">'Start Time'</span><span class="p">)</span>
+   <span class="n">weekday_time_end</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s1">'End Time'</span><span class="p">)</span>
+
+
+   <span class="n">weekend_time_start</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s1">'Start Time'</span><span class="p">)</span>
+   <span class="n">weekend_time_end</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s1">'End Time'</span><span class="p">)</span>
+
 </pre></div>
 </div>
+<p>The code mentioned above will introduce the new fields to the <code class="docutils literal notranslate"><span class="pre">spp_service_point</span></code> table for storing the operating hours for weekdays and weekends. To understand further, refer to the following documentation given <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">1</a>,<a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">2</a>,<a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">3</a></p>
+<ol class="arabic simple" start="4">
+<li><p>To integrate new fields into the UI, the following steps should be followed. Create a new file called <code class="docutils literal notranslate"><span class="pre">views/service_point_views.xml</span></code> in the module. Add the below code to the manifest file.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="s2">"data"</span><span class="p">:</span> <span class="p">[</span>
+       <span class="s2">"views/service_point_views.xml"</span><span class="p">,</span>
+   <span class="p">],</span>
+</pre></div>
 </div>
-<div class="section" id="additional-references">
-<h2>Additional References<a class="headerlink" href="#additional-references" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Below are some Odoo references that may help in adding the field both in models and in UI. For further guidance on model creation, inheritance, and UI integration, the following Odoo documentation may be useful:</p>
-<ul>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html">Views</a></p></li>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">Chapter 4: Models And Basic Fields</a></p></li>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/07_basicviews.html#chapter-7-basic-views">Chapter 7: Basic Views</a></p></li>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">Chapter 13: Inheritance</a></p></li>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">Chapter 14: Interact With Other Modules</a></p></li>
-</ul>
-</li>
-</ul>
+<p>The following code can be added to the <code class="docutils literal notranslate"><span class="pre">service_point_views.xml</span></code> file to show the fields in the UI.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span>
+<span class="nt">&lt;odoo&gt;</span>
+<span class="w">   </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"view_service_points_custom"</span><span class="w"> </span><span class="na">model=</span><span class="s">"ir.ui.view"</span><span class="nt">&gt;</span>
+<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>view_service_points_custom<span class="nt">&lt;/field&gt;</span>
+<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"model"</span><span class="nt">&gt;</span>spp.service.point<span class="nt">&lt;/field&gt;</span>
+<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"inherit_id"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"spp_service_points.view_service_points_form"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"arch"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xml"</span><span class="nt">&gt;</span>
+<span class="w">           </span><span class="nt">&lt;xpath</span><span class="w"> </span><span class="na">expr=</span><span class="s">"//field[@name='disabled_reason']"</span><span class="w"> </span><span class="na">position=</span><span class="s">"after"</span><span class="nt">&gt;</span>
+<span class="w">               </span><span class="nt">&lt;div</span><span class="w"> </span><span class="nt">&gt;</span>
+<span class="w">                   </span><span class="nt">&lt;h2&gt;</span>Weekdays<span class="nt">&lt;/h2&gt;</span>
+<span class="w">               </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">               </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"weekday_time_start"</span><span class="w"> </span><span class="na">widget=</span><span class="s">"float_time"</span><span class="w"> </span><span class="na">colspan=</span><span class="s">"4"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">               </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"weekday_time_end"</span><span class="w"> </span><span class="na">widget=</span><span class="s">"float_time"</span><span class="w"> </span><span class="na">colspan=</span><span class="s">"4"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">               </span><span class="nt">&lt;div&gt;</span>
+<span class="w">                   </span><span class="nt">&lt;h2&gt;</span>Weekends<span class="nt">&lt;/h2&gt;</span>
+<span class="w">               </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">               </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"weekend_time_start"</span><span class="w"> </span><span class="na">widget=</span><span class="s">"float_time"</span><span class="w"> </span><span class="na">colspan=</span><span class="s">"4"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">               </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"weekend_time_end"</span><span class="w"> </span><span class="na">widget=</span><span class="s">"float_time"</span><span class="w"> </span><span class="na">colspan=</span><span class="s">"4"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">           </span><span class="nt">&lt;/xpath&gt;</span>
+<span class="w">       </span><span class="nt">&lt;/field&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/record&gt;</span>
+<span class="nt">&lt;/odoo&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>To add the service types in the service type dropdown field, the following steps should be followed. Create a new file called <code class="docutils literal notranslate"><span class="pre">data/service_type_data.xml</span></code> in the module and ddd the below code to the manifest file.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="s2">"data"</span><span class="p">:</span> <span class="p">[</span>
+       <span class="s2">"data/service_type_data.xml"</span><span class="p">,</span>
+       <span class="s2">"views/service_point_views.xml"</span><span class="p">,</span>
+   <span class="p">],</span>
+</pre></div>
+</div>
+<p>The following code can be added to the <code class="docutils literal notranslate"><span class="pre">service_type_data.xml</span></code> file to add the service types.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span>
+<span class="nt">&lt;odoo&gt;</span>
+<span class="w">   </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"voucher_redemption_center"</span><span class="w"> </span><span class="na">model=</span><span class="s">"spp.service.type"</span><span class="nt">&gt;</span>
+<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>Voucher<span class="w"> </span>Redemption<span class="w"> </span>Center<span class="nt">&lt;/field&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/record&gt;</span>
+
+
+<span class="w">   </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"in_kind_goods_distribution"</span><span class="w"> </span><span class="na">model=</span><span class="s">"spp.service.type"</span><span class="nt">&gt;</span>
+<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>In-Kind<span class="w"> </span>Goods<span class="w"> </span>Distribution<span class="nt">&lt;/field&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/record&gt;</span>
+
+
+<span class="w">   </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"information_desk"</span><span class="w"> </span><span class="na">model=</span><span class="s">"spp.service.type"</span><span class="nt">&gt;</span>
+<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>Information<span class="w"> </span>Desk<span class="nt">&lt;/field&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/record&gt;</span>
+<span class="nt">&lt;/odoo&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Install the module to include the new changes.</p></li>
+</ol>
+<p>The following screenshot shows the added newly fields in the newly developed module.</p>
+<p><img alt="" src="howto/developer_guides/custom_service_points.md/2.png"/></p>
 </div>
 </div>
 </div>
@@ -830,6 +844,20 @@ Odoo Setup from source</p></li>
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
+<a class="left-prev" href="custom_registry.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Customize Registry</p>
+</div>
+</a>
+<a class="right-next" href="troubleshooting.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Troubleshooting</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
 </div>
 </footer>
 </div>
