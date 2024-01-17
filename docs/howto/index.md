@@ -18,7 +18,7 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 
 **Specifications**
 
-- {doc}`eveloper_guides/dci`
+- {doc}`developer_guides/dci`
 
 ```{toctree}
 :maxdepth: 2
