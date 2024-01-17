@@ -2,40 +2,39 @@
 
 The Technical Reference is a detailed document outlining the system's architecture and technical specifications. It serves as a resource for architects and developers to understand the system's functionalities and operations.
 
-### Configuration and Architecture
+Configuration and Architecture
 
 - {doc}`architecture`
-- {doc}`performance`
 - {doc}`extensibility`
 
-### Security and Compliance
+Security and Compliance
 
 - {doc}`security`
 - {doc}`oidc`
 - {doc}`audit_logs`
 
-### Code and Release Management
+Code and Release Management
 
 - {doc}`code`
 - {doc}`release_management`
 
-### Monitoring and Analytics
+Monitoring and Analytics
 
 - {doc}`monitoring`
 - {doc}`programs/dashboards`
 
-### Integrations
+Integrations
 
 - {doc}`integrations`
 - {doc}`dci`
 - {doc}`external_api`
 
-### Other
+Other
 
 - {doc}`backup`
 - {doc}`performance_optimization`
 
-### Managers and Modules
+Managers and Modules
 
 - {doc}`module`
 - {doc}`programs/concepts`
@@ -52,7 +51,6 @@ The Technical Reference is a detailed document outlining the system's architectu
 
 # Configuration and Architecture
 architecture
-performance
 extensibility
 
 # Security and Compliance
