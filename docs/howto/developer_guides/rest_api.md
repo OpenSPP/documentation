@@ -69,6 +69,7 @@ The above code will create a new record for the model `spp_api.path` with the in
 4. Now install the new module.
 
 The following screenshot shows the response data after sending the request using Postman. The URL used here is `http://localhost:8069/api/spp_api/1/Area?request_id=12345` but it may differ based on your configuration in your local development environment.
+
 NOTE: `request_id` parameter is required and should be unique. Else the response will return an error.
 
 Successful Response
