@@ -1,4 +1,4 @@
-# How to
+# How To
 
 Here you’ll find articles on “How do I….?” types of questions. It addresses the task of traversing through a practical problem area, from one aspect to another.
 
