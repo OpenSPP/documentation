@@ -49,13 +49,12 @@ class OpenSPPServicePoint(models.Model):
    weekday_time_start = fields.Float(string='Start Time')
    weekday_time_end = fields.Float(string='End Time')
 
-
    weekend_time_start = fields.Float(string='Start Time')
    weekend_time_end = fields.Float(string='End Time')
 
 ```
 
-The code mentioned above will introduce the new fields to the `spp_service_point` table for storing the operating hours for weekdays and weekends. To understand further, refer to the following documentation given [1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html),[2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html),[3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
+The code mentioned above will introduce the new fields to the `spp_service_point` table for storing the operating hours for weekdays and weekends. To understand further, refer to the following documentation given here [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html),[Link 2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html),[Link 3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
 
 4. To integrate new fields into the UI, the following steps should be followed. Create a new file called `views/service_point_views.xml` in the module. Add the below code to the manifest file.
 
@@ -92,7 +91,7 @@ The following code can be added to the `service_point_views.xml` file to show th
 </odoo>
 ```
 
-5. To add the service types in the service type dropdown field, the following steps should be followed. Create a new file called `data/service_type_data.xml` in the module and ddd the below code to the manifest file.
+5. To add the service types in the service type dropdown field, the following steps should be followed. Create a new file called `data/service_type_data.xml` in the module and add the below code to the manifest file.
 
 ```python
    "data": [
@@ -124,6 +123,6 @@ The following code can be added to the `service_type_data.xml` file to add the s
 
 6. Install the module to include the new changes.
 
-The following screenshot shows the added newly fields in the above developed module.
+The following screenshot shows the newly added fields in the above developed module.
 
 ![](custom_service_points/2.png)

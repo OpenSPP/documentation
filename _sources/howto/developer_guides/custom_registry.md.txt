@@ -113,7 +113,7 @@ class OpenSPPGroupCustom(models.Model):
 
 ```
 
-To understand further, refer to the following documentation given [1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html),[2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html),[3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
+To understand further, refer to the following documentation given here [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html),[Link 2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html),[Link 3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
 
 6. The following steps should be followed to integrate the new fields into the UI. Create new files named `views/individual_views.xml` and `views/group_membership_views.xml` in the module. Add the below code to the manifest file.
 
@@ -141,7 +141,7 @@ To understand further, refer to the following documentation given [1](https://ww
    </record>
 ```
 
-8. The following code can be added to the `group_membership_views.xml` to show the salary of every member of a group.
+8. The following code can be added to the `group_membership_views.xml` to show the salary of every member of the group.
 
 ```xml
    <record id="view_group_membership_salary_indicator" model="ir.ui.view">
