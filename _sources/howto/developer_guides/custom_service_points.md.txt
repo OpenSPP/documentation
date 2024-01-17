@@ -12,7 +12,7 @@ The following article guides the reader in understanding how the service point m
 - Log into OpenSPP with administrative rights.
 - Access the “Apps” menu from the dashboard to manage OpenSPP modules.
 - Choose “Update Apps List” to refresh the module list.
-- Search for the following modules that are required to be installed such as G2P Registry: Groups, G2P Registry: Individual and G2P Registry: Membership.
+- Search for “OpenSPP Service Points” and initiate installation. This will also install the other modules required
 
 ![](custom_service_points/1.png)
 
