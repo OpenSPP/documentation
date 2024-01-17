@@ -753,7 +753,11 @@
 <li><p>This is an example of request type to add a child in a family</p></li>
 <li><p>In the same model, the following code can be added to add fields and functions to the newly created model that corresponds to the requirements of that particular request type.</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="n">full_name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_full_name"</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="k">class</span> <span class="nc">ChangeRequestAddChildren</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+   <span class="n">_name</span> <span class="o">=</span> <span class="s2">"spp.change.request.add.children"</span>
+   <span class="o">...</span>
+
+   <span class="n">full_name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_full_name"</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
    <span class="n">family_name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">()</span>
    <span class="n">given_name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">()</span>
    <span class="n">addl_name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="s2">"Additional Name"</span><span class="p">)</span>
@@ -821,7 +825,7 @@
 <li><p>After filling-up the fields, click the Create button to create the change request record.</p></li>
 </ol>
 <p><img alt="" src="../../_images/request_form_view.png"/></p>
-<p>A working sample module for the described above can be accessed at the provided <a class="reference external" href="https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_change_request_add_children">link</a>.</p>
+<p>A working sample module for the described above can be accessed at the provided <a class="reference external" href="https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_change_request_add_children">link</a> which is a comprehensive module with addional functionalities.</p>
 </div>
 </div>
 </div>

@@ -57,7 +57,11 @@ class ChangeRequestAddChildren(models.Model):
 8. In the same model, the following code can be added to add fields and functions to the newly created model that corresponds to the requirements of that particular request type.
 
 ```python
-  full_name = fields.Char(compute="_compute_full_name", readonly=True)
+   class ChangeRequestAddChildren(models.Model):
+   _name = "spp.change.request.add.children"
+   ...
+
+   full_name = fields.Char(compute="_compute_full_name", readonly=True)
    family_name = fields.Char()
    given_name = fields.Char()
    addl_name = fields.Char("Additional Name")
@@ -125,4 +129,4 @@ Refer to the `change_request_add_children_view.xml` to understand how the views 
 
 ![](custom_cr/request_form_view.png)
 
-A working sample module for the described above can be accessed at the provided [link](https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_change_request_add_children).
+A working sample module for the described above can be accessed at the provided [link](https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_change_request_add_children) which is a comprehensive module with addional functionalities.
