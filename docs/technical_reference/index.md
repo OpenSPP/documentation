@@ -26,7 +26,6 @@ Monitoring and Analytics
 Integrations
 
 - {doc}`integrations`
-- {doc}`dci`
 - {doc}`external_api`
 
 Other
