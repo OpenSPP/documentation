@@ -22,15 +22,14 @@ developer_guides/custom_cr
 developer_guides/custom_registry
 developer_guides/custom_service_points
 
-developer_guides/troubleshooting
+developer_guides/rest_api
 
+developer_guides/troubleshooting
 
 #developer_guides/custom_program
 #developer_guides/custom_cycle
 #developer_guides/custom_audit
 #developer_guides/computed_fields
-#developer_guides/rest_api
-
 #developer_guides/implmenting_pmt
 
 ```
