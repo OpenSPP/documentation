@@ -2,20 +2,20 @@
 
 Here you’ll find articles on “How do I….?” types of questions. It addresses the task of traversing through a practical problem area, from one aspect to another.
 
-Development
+**Development**
 
 - {doc}`developer_mode`
 - {doc}`developer_guides/development_setup`
 - {doc}`developer_guides/troubleshooting`
 
-Customizations
+**Customizations**
 
 - {doc}`developer_guides/custom_areas`
 - {doc}`developer_guides/custom_cr`
 - {doc}`developer_guides/custom_registry`
 - {doc}`developer_guides/custom_service_points`
 - {doc}`developer_guides/rest_api`
-- {doc}`dci`
+- {doc}`eveloper_guides/dci`
 
 ```{toctree}
 :maxdepth: 2
