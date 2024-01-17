@@ -1,6 +1,6 @@
 # Community and Support
 
-This section encompasses essential information and guidelines pertinent to the project. hese topics are presented to provide clarity and support to those engaged in the project, ensuring a structured and secure approach to participation and development.
+This section encompasses essential information and guidelines pertinent to OpenSPP. These topics are presented to provide clarity and support to those engaged in the project, ensuring a structured and secure approach to participation and development.
 
 - {doc}`how_to_contribute_to_the_project`
 - {doc}`i18n_l10n`
