@@ -726,14 +726,14 @@
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>To integrate new endpoint and the response data needed into the system, the following steps should be followed. Create a new file called “data/spp_api_path_data.xml” in the module and add the below code to the manifest file.</p></li>
+<li><p>To integrate new endpoint and the response data needed into the system, the following steps should be followed. Create a new file called <code class="docutils literal notranslate"><span class="pre">data/spp_api_path_data.xml</span></code> in the module and add the below code to the manifest file.</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="s2">"data"</span><span class="p">:</span> <span class="p">[</span>
        <span class="s2">"data/spp_api_path_data.xml"</span><span class="p">,</span>
    <span class="p">],</span>
 </pre></div>
 </div>
-<p>The following code can be added to the spp_api_path_data.xml file to create a new endpoint.</p>
+<p>The following code can be added to the <code class="docutils literal notranslate"><span class="pre">spp_api_path_data.xml</span></code> file to create a new endpoint.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w">   </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"area_path"</span><span class="w"> </span><span class="na">model=</span><span class="s">"spp_api.path"</span><span class="nt">&gt;</span>
 <span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>Area<span class="nt">&lt;/field&gt;</span>
 <span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"model_id"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"spp_area.model_spp_area"</span><span class="w"> </span><span class="nt">/&gt;</span>
@@ -754,12 +754,12 @@
 <span class="w">   </span><span class="nt">&lt;/record&gt;</span>
 </pre></div>
 </div>
-<p>The above code will create a new record for the model spp_api.path with the information about the endpoint’s model, fields, and http method.</p>
+<p>The above code will create a new record for the model <code class="docutils literal notranslate"><span class="pre">spp_api.path</span></code> with the information about the endpoint’s model, fields, and HTTP method.</p>
 <ol class="arabic simple" start="4">
 <li><p>Now install the new module.</p></li>
 </ol>
 <p>The following screenshot shows the response data after sending the request using Postman.
-NOTE: “request_id” parameter is required and should be unique or else the response will return an error.</p>
+NOTE: <code class="docutils literal notranslate"><span class="pre">request_id</span></code> parameter is required and should be unique. Else the response will return an error.</p>
 <p>Successful Response</p>
 <p><img alt="" src="../../_images/24.png"/></p>
 <p>Error Response</p>
