@@ -95,7 +95,7 @@ class ChangeRequestTypeCustomAddChildren(models.Model):
 
 ```
 
-10. Make sure that the python file where the newly created model and the inherited model is already added in the `models/__init__.py`. To understand more about these. Refer to the following links [1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html), [2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html)
+10. Make sure that the python file where the newly created model and the inherited model is already added in the `models/__init__.py`. To understand more about these. Refer to the following links [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html), [Link 2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html)
 
 11. In the view, create a file `views/change_request_add_children_view.xml` and add the following views.
 

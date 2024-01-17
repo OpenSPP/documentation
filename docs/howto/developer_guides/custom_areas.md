@@ -48,7 +48,7 @@ class SPPArea(models.Model):
 
 ```
 
-The code mentioned above will introduce a new field to the spp_area table for storing the province name of an area. To understand further, refer to the following documentation [1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html),[2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html),[3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
+The code mentioned above will introduce a new field to the spp_area table for storing the province name of an area. To understand further, refer to the following documentation [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html),[Link 2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html),[Link 3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
 
 4. To integrate new fields into the UI, the following steps should be followed.
 
