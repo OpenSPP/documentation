@@ -9,6 +9,8 @@ myst:
 
 # User guide
 
+This User Guide serves as a detailed manual for the utilization and navigation of OpenSPP. It is designed to offer clear, step-by-step instructions and essential tips for users of varying expertise levels. The guide aims to facilitate a thorough understanding and proficient use of the system's features.
+
 - [Access Management](access_management)
 - [Audit Log](audit_log)
 - [Change Requests](change_requests)
