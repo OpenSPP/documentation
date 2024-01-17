@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Implementing Custom REST API" property="og:title"/>
+<meta content="Customize REST API" property="og:title"/>
 <meta content="website" property="og:type"/>
 <meta content="https://docs.openspp.org/howto/developer_guides/rest_api.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="This comprehensive guide is designed to assist you in implementing and customizing the REST API within OpenSPP by developing a custom module. It is tailored for individuals with a specific set of p..." property="og:description"/>
+<meta content="The following article guides the reader to understand how the REST API module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. Prerequisites: ..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="This comprehensive guide is designed to assist you in implementing and customizing the REST API within OpenSPP by developing a custom module. It is tailored for individuals with a specific set of p..." name="description"/>
+<meta content="The following article guides the reader to understand how the REST API module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. Prerequisites: ..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Implementing Custom REST API — OpenSPP Documentation v1.1</title>
+<title>Customize REST API – How to — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -55,6 +55,8 @@
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
+<link href="troubleshooting.html" rel="next" title="Troubleshooting"/>
+<link href="custom_service_points.html" rel="prev" title="Customize Service Points"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -99,7 +101,7 @@
 </input></div>
 </form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item active">
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children">
 <a class="reference internal" href="../../tutorials/">
    Getting started
@@ -204,16 +206,16 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children">
+<li class="toctree-l1 current active has-children">
 <a class="reference internal" href="../">
    How to
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
 <label for="toctree-checkbox-3">
 <i class="fas fa-chevron-down">
 </i>
 </label>
-<ul>
+<ul class="current">
 <li class="toctree-l2">
 <a class="reference internal" href="../developer_mode.html">
      Developer mode (debug mode)
@@ -242,6 +244,11 @@
 <li class="toctree-l2">
 <a class="reference internal" href="custom_service_points.html">
      Customize Service Points
+    </a>
+</li>
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
+     Customize REST API
     </a>
 </li>
 <li class="toctree-l2">
@@ -550,7 +557,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Implementing Custom REST API</span>
+<span>Customize REST API – How to</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -631,23 +638,18 @@
 <nav aria-label="Page" id="bd-toc-nav">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
-   Odoo Setup from Docker using doodba
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-source">
-   Odoo Setup from source
+<a class="reference internal nav-link" href="#if-the-rest-api-module-is-not-installed">
+   If the REST API module is not installed
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#installation">
-   Installation
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#utilising-the-rest-api-module">
-   Utilising the REST API Module
+<a class="reference internal nav-link" href="#id1">
+   Customize REST API
   </a>
 </li>
 </ul>
@@ -658,7 +660,7 @@
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Implementing Custom REST API</h1>
+<h1>Customize REST API</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
@@ -668,23 +670,18 @@
 <nav aria-label="Page">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
-   Odoo Setup from Docker using doodba
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-source">
-   Odoo Setup from source
+<a class="reference internal nav-link" href="#if-the-rest-api-module-is-not-installed">
+   If the REST API module is not installed
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#installation">
-   Installation
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#utilising-the-rest-api-module">
-   Utilising the REST API Module
+<a class="reference internal nav-link" href="#id1">
+   Customize REST API
   </a>
 </li>
 </ul>
@@ -694,86 +691,79 @@
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="implementing-custom-rest-api">
-<h1>Implementing Custom REST API<a class="headerlink" href="#implementing-custom-rest-api" title="Permalink to this headline">#</a></h1>
-<p>This comprehensive guide is designed to assist you in implementing and customizing the REST API within OpenSPP by developing a custom module. It is tailored for individuals with a specific set of prerequisites, including proficiency in Python, Odoo, OOP, HTML, XML, Xpaths, REST API concepts, and tools like Postman or curl. Moreover, a functional OpenSPP installation and administrative backend access are essential.</p>
-<div class="section" id="odoo-setup-from-docker-using-doodba">
-<h2>Odoo Setup from Docker using doodba<a class="headerlink" href="#odoo-setup-from-docker-using-doodba" title="Permalink to this headline">#</a></h2>
+<div class="section" id="customize-rest-api">
+<h1>Customize REST API<a class="headerlink" href="#customize-rest-api" title="Permalink to this headline">#</a></h1>
+<p>The following article guides the reader to understand how the REST API module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Existence of openg2p_program folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: g2p_programs.</p></li>
-<li><p>Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership.</p></li>
-<li><p>Existence of openspp_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: spp_api, spp_api_records, spp_oauth, spp_service_points, spp_service_point_device, spp_programs, g2p_entitlement_cash, spp_entitlement_in_kind, spp_ent_trans, spp_area, spp_programs_sp.</p></li>
-<li><p>Existence of queue folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: queue_job</p></li>
-<li><p>Existence of web folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: web, web_domain_field.</p></li>
+<li><p>Knowledge of Python, Odoo, XML, Xpaths.</p></li>
+<li><p>To set up OpenSPP for development, please refer to the <a class="reference external" href="https://docs.openspp.org/howto/developer_guides/development_setup.html">Developer Guide</a></p></li>
 </ul>
 </div>
-<div class="section" id="odoo-setup-from-source">
-<h2>Odoo Setup from source<a class="headerlink" href="#odoo-setup-from-source" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Existence of openg2p-program folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-program.git">here</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: g2p_programs.</p></li>
-<li><p>Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-registry.git">here</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership.</p></li>
-<li><p>Existence of openspp-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenSPP/openspp-registry.git">here</a> into odoo/custom, navigate to the openspp-registry folder, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: spp_api, spp_api_records, spp_oauth, spp_service_points, spp_service_point_device, spp_programs, g2p_entitlement_cash, spp_entitlement_in_kind, spp_ent_trans, spp_area, spp_programs_sp.</p></li>
-<li><p>Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/queue.git">here</a> into odoo/custom, navigate to the queue, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: queue_job.</p></li>
-<li><p>Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/web.git">here</a> into odoo/custom, navigate to the web, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: web, web_domain_field</p></li>
-</ul>
-</div>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<div class="section" id="if-the-rest-api-module-is-not-installed">
+<h2>If the REST API module is not installed<a class="headerlink" href="#if-the-rest-api-module-is-not-installed" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Log into OpenSPP with administrative rights.</p></li>
 <li><p>Access the “Apps” menu from the dashboard to manage OpenSPP modules.</p></li>
 <li><p>Choose “Update Apps List” to refresh the module list.</p></li>
-<li><p>Search and initiate installation of the following modules, this process will also install all of their associated modules:</p>
-<ul>
-<li><p>OpenSPP API: Oauth</p></li>
-<li><p>OpenSPP REST API</p></li>
-<li><p>OpenSPP REST API: API Records</p></li>
+<li><p>Search for “OpenSPP REST API: API Records” and initiate installation. This will also install the other modules required.</p></li>
 </ul>
-</li>
-</ul>
+<p><img alt="" src="../../_images/14.png"/></p>
 </div>
-<div class="section" id="utilising-the-rest-api-module">
-<h2>Utilising the REST API Module<a class="headerlink" href="#utilising-the-rest-api-module" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Navigate to OpenAPI then open the record “spp_api”.</p></li>
-<li><p>Check API Paths in the “Paths” tab and their respective models and methods.</p></li>
-<li><p>Check users in the Allowed Users.</p></li>
-<li><p>Navigate to Settings -&gt; Users &amp; Companies -&gt; Users and search one user that is in the “Allowed Users” in the OpenAPI page then enter that record.</p></li>
-<li><p>Select the “Allowed APIs” tab and copy the value in the field OpenAPI Token.</p></li>
-<li><p>Browse <a class="reference external" href="https://www.base64encode.org/">https://www.base64encode.org/</a></p></li>
-<li><p>Encode the combination of database name and OpenAPI Token in this format &lt;db_name&gt;:<token>. e.g. odoo15:1d9fd9db-705a-42cc-830c-88d6edc7bfe5</token></p>
-<ul>
-<li><p>Copy the encoded result.</p></li>
-<li><p>Send a request to one of the paths by using the encoded token as authentication.</p></li>
-<li><p>Open Postman and use the following information to send request.</p>
-<ul>
-<li><p>url: <a class="reference external" href="http://localhost:8069/api/spp_api/1/Group">http://localhost:8069/api/spp_api/1/Group</a></p></li>
-</ul>
-</li>
-<li><p>method: GET</p></li>
-<li><p>parameters: request_id=<any alphanumeric="" unique="" value=""></any></p></li>
-<li><p>headers:</p>
-<ul>
-<li><p>Authorization = Basic <encoded token=""></encoded></p></li>
-<li><p>Accept = application/json</p></li>
-</ul>
-</li>
-<li><p>Send a request.
-<img alt="" src="../../_images/14.png"/></p></li>
-</ul>
-</li>
-<li><p>Click the API Document Link in the OpenAPI page to learn more about REST API.</p></li>
-</ul>
+<div class="section" id="id1">
+<h2>Customize REST API<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>In this hypothetical scenario, the REST API will be customized to add an GET endpoint to respond with Area data.</p>
+<p>A working sample module for the described scenario can be accessed at the provided <span class="xref myst">link</span>.</p>
+<p>The key steps in module development are as follows:</p>
+<ol class="arabic simple">
+<li><p>To customize REST API, a new module can be developed.</p></li>
+<li><p>To initiate the development of a custom module for REST API customization, begin by creating a manifest file. This file should include fields like name, category, and version. Additionally, it's crucial to define the dependencies of the new module as outlined below.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="s2">"depends"</span><span class="p">:</span> <span class="p">[</span>
+       <span class="s2">"spp_api_records"</span><span class="p">,</span>
+   <span class="p">],</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>To integrate new endpoint and the response data needed into the system, the following steps should be followed. Create a new file called “data/spp_api_path_data.xml” in the module and add the below code to the manifest file.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="s2">"data"</span><span class="p">:</span> <span class="p">[</span>
+       <span class="s2">"data/spp_api_path_data.xml"</span><span class="p">,</span>
+   <span class="p">],</span>
+</pre></div>
+</div>
+<p>The following code can be added to the spp_api_path_data.xml file to create a new endpoint.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w">   </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"area_path"</span><span class="w"> </span><span class="na">model=</span><span class="s">"spp_api.path"</span><span class="nt">&gt;</span>
+<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>Area<span class="nt">&lt;/field&gt;</span>
+<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"model_id"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"spp_area.model_spp_area"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"namespace_id"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"spp_api_records.spp_api_namespace"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"description"</span><span class="nt">&gt;</span>GET<span class="w"> </span>Area<span class="nt">&lt;/field&gt;</span>
+<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"method"</span><span class="nt">&gt;</span>get<span class="nt">&lt;/field&gt;</span>
+<span class="w">       </span><span class="nt">&lt;field</span>
+<span class="w">           </span><span class="na">name=</span><span class="s">"field_ids"</span>
+<span class="w">           </span><span class="na">eval=</span><span class="s">"[(</span>
+<span class="s">           6, 0, [</span>
+<span class="s">               ref('spp_area.field_spp_area__parent_id'),</span>
+<span class="s">               ref('spp_area.field_spp_area__name'),</span>
+<span class="s">               ref('spp_area.field_spp_area__draft_name'),</span>
+<span class="s">               ref('spp_area.field_spp_area__code'),</span>
+<span class="s">           ]</span>
+<span class="s">       )]"</span>
+<span class="w">       </span><span class="nt">/&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+<p>The above code will create a new record for the model spp_api.path with the information about the endpoint’s model, fields, and http method.</p>
+<ol class="arabic simple" start="4">
+<li><p>Now install the new module.</p></li>
+</ol>
+<p>The following screenshot shows the response data after sending the request using Postman.
+NOTE: “request_id” parameter is required and should be unique or else the response will return an error.</p>
+<p>Successful Response</p>
+<p><img alt="" src="../../_images/24.png"/></p>
+<p>Error Response</p>
+<p><img alt="" src="../../_images/32.png"/></p>
 </div>
 </div>
 </div>
@@ -781,6 +771,20 @@
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
+<a class="left-prev" href="custom_service_points.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Customize Service Points</p>
+</div>
+</a>
+<a class="right-next" href="troubleshooting.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Troubleshooting</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
 </div>
 </footer>
 </div>
