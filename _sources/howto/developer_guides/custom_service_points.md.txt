@@ -14,7 +14,7 @@ The following article guides the reader in understanding how the service point m
 - Choose “Update Apps List” to refresh the module list.
 - Search for the following modules that are required to be installed such as G2P Registry: Groups, G2P Registry: Individual and G2P Registry: Membership.
 
-![](custom_service_points.md/1.png)
+![](custom_service_points/1.png)
 
 ## Utilising the Service Points Module
 
@@ -124,6 +124,6 @@ The following code can be added to the `service_type_data.xml` file to add the s
 
 6. Install the module to include the new changes.
 
-The following screenshot shows the added newly fields in the newly developed module.
+The following screenshot shows the added newly fields in the above developed module.
 
-![](custom_service_points.md/2.png)
+![](custom_service_points/2.png)
