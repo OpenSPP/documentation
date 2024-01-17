@@ -20,10 +20,11 @@ developer_guides/development_setup
 developer_guides/custom_areas
 developer_guides/custom_cr
 developer_guides/custom_registry
+developer_guides/custom_service_points
 
 developer_guides/troubleshooting
 
-#developer_guides/custom_service_points
+
 #developer_guides/custom_program
 #developer_guides/custom_cycle
 #developer_guides/custom_audit
