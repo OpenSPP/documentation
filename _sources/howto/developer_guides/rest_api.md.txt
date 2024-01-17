@@ -20,7 +20,7 @@ The following article guides the reader to understand how the REST API module wi
 
 In this hypothetical scenario, the REST API will be customized to add an GET endpoint to respond with Area data.
 
-A working sample module for the described scenario can be accessed at the provided [link]().
+A working sample module for the described scenario can be accessed at the provided [link](https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_api_records_custom).
 
 The key steps in module development are as follows:
 
