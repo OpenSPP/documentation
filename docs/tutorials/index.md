@@ -1,7 +1,6 @@
-# Getting started
+# Getting Started
 
 New to OpenSPP? Well, you came to the right place: read this material to quickly get up and running.
-
 
 ![OpenSPP overview](/_static/openspp_process.png)
 
