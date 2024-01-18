@@ -10,7 +10,6 @@ The Technical Reference is a detailed document outlining the system's architectu
 **Security and Compliance**
 
 - {doc}`security`
-- {doc}`oidc`
 - {doc}`audit_logs`
 
 **Code and Release Management**
@@ -35,7 +34,6 @@ The Technical Reference is a detailed document outlining the system's architectu
 
 **Managers and Modules**
 
-- {doc}`module`
 - {doc}`programs/concepts`
 - {doc}`programs/program_manager`
 - {doc}`programs/cycle_manager`

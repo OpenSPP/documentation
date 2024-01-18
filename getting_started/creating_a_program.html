@@ -13,16 +13,14 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Installation Guide" property="og:title"/>
+<meta content="Creating a Program" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/tutorials/installation_guide.html" property="og:url"/>
+<meta content="https://docs.openspp.org/getting_started/creating_a_program.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="Installing using Docker for development: Quick start: You need to have Docker and docker-compose installed on your system. You also need to have Python installed and pip packages invoke and pre-com..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="Installing using Docker for development: Quick start: You need to have Docker and docker-compose installed on your system. You also need to have Python installed and pip packages invoke and pre-com..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Installation Guide – Getting Started — OpenSPP Documentation v1.1</title>
+<title>Creating a Program — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -50,13 +48,11 @@
 <script src="../_static/patch_scrollToActive.js"></script>
 <script src="../_static/search_shortcut.js"></script>
 <script src="../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/tutorials/installation_guide.html" rel="canonical">
+<link href="https://docs.openspp.org/getting_started/creating_a_program.html" rel="canonical">
 <link href="../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.1" type="application/opensearchdescription+xml"/>
 <link href="../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../genindex.html" rel="index" title="Index"/>
 <link href="../search.html" rel="search" title="Search"/>
-<link href="../user_guide/index.html" rel="next" title="User Guide"/>
-<link href="index.html" rel="prev" title="Getting Started"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -101,19 +97,19 @@
 </input></div>
 </form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item active">
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children">
 <a class="reference internal" href="">
    Getting Started
   </a>
-<input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
 <label for="toctree-checkbox-1">
 <i class="fas fa-chevron-down">
 </i>
 </label>
-<ul class="current">
-<li class="toctree-l2 current active">
-<a class="current reference internal" href="#">
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="installation_guide.html">
      Installation Guide
     </a>
 </li>
@@ -227,6 +223,11 @@
     </a>
 </li>
 <li class="toctree-l2">
+<a class="reference internal" href="../howto/developer_guides/module.html">
+     Module Development
+    </a>
+</li>
+<li class="toctree-l2">
 <a class="reference internal" href="../howto/developer_guides/custom_areas.html">
      Customize Areas
     </a>
@@ -254,6 +255,11 @@
 <li class="toctree-l2">
 <a class="reference internal" href="../howto/developer_guides/dci.html">
      Implementation of DCI Specification
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../howto/developer_guides/oidc.html">
+     Configuring Keycloak for OAuth
     </a>
 </li>
 <li class="toctree-l2">
@@ -286,11 +292,6 @@
 <li class="toctree-l2">
 <a class="reference internal" href="../technical_reference/security.html">
      Security Implementations &amp; Practices
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../technical_reference/oidc.html">
-     Configuring Keycloak for OAuth
     </a>
 </li>
 <li class="toctree-l2">
@@ -336,11 +337,6 @@
 <li class="toctree-l2">
 <a class="reference internal" href="../technical_reference/performance_optimization.html">
      Performance Optimization
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../technical_reference/module.html">
-     Module Development
     </a>
 </li>
 <li class="toctree-l2">
@@ -557,7 +553,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Installation Guide – Getting Started</span>
+<span>Creating a Program</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -580,7 +576,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Ftutorials/installation_guide.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fgetting_started/creating_a_program.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -588,7 +584,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?tutorials/installation_guide.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?getting_started/creating_a_program.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -605,7 +601,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/tutorials/installation_guide.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/getting_started/creating_a_program.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -623,140 +619,33 @@
 </ul>
 </div>
 </div>
-<label class="headerbtn headerbtn-page-toc" for="__page-toc">
-<span class="headerbtn__icon-container">
-<i class="fas fa-list"></i>
-</span>
-</label>
 </div>
 </div>
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-<div class="tocsection onthispage pt-5 pb-3">
-<i class="fas fa-list"></i> Contents
-    </div>
-<nav aria-label="Page" id="bd-toc-nav">
-<ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#installing-using-docker-for-development">
-   Installing using Docker for development
-  </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#quick-start">
-     Quick start
-    </a>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#installing-for-production">
-   Installing for production
-  </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#using-openspp-cloud-coming-soon">
-     Using OpenSPP Cloud (Coming soon)
-    </a>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
 </div>
 </div>
 <div class="article row">
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Installation Guide</h1>
+<h1>Creating a Program</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
-<div>
-<h2> Contents </h2>
-</div>
-<nav aria-label="Page">
-<ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#installing-using-docker-for-development">
-   Installing using Docker for development
-  </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#quick-start">
-     Quick start
-    </a>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#installing-for-production">
-   Installing for production
-  </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#using-openspp-cloud-coming-soon">
-     Using OpenSPP Cloud (Coming soon)
-    </a>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
 </div>
 </div>
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="installation-guide">
-<h1>Installation Guide<a class="headerlink" href="#installation-guide" title="Permalink to this headline">#</a></h1>
-<div class="section" id="installing-using-docker-for-development">
-<h2>Installing using Docker for development<a class="headerlink" href="#installing-using-docker-for-development" title="Permalink to this headline">#</a></h2>
-<div class="section" id="quick-start">
-<h3>Quick start<a class="headerlink" href="#quick-start" title="Permalink to this headline">#</a></h3>
-<p>You need to have Docker and docker-compose installed on your system. You also need to have Python installed
-and pip packages <code class="docutils literal notranslate"><span class="pre">invoke</span></code> and <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:openspp/openspp-docker.git
-$<span class="w"> </span>invoke<span class="w"> </span>develop<span class="w"> </span>img-pull<span class="w"> </span>img-build<span class="w"> </span>git-aggregate<span class="w"> </span>resetdb<span class="w"> </span>start
-</pre></div>
-</div>
-<p>Then open <code class="docutils literal notranslate"><span class="pre">http://localhost:15069/</span></code> in your browser.</p>
-<p>For more details, see <a class="reference external" href="https://github.com/OpenSPP/openspp-docker">OpenSPP Docker</a> Readme file.</p>
-</div>
-</div>
-<div class="section" id="installing-for-production">
-<h2>Installing for production<a class="headerlink" href="#installing-for-production" title="Permalink to this headline">#</a></h2>
-<div class="section" id="using-openspp-cloud-coming-soon">
-<h3>Using OpenSPP Cloud (Coming soon)<a class="headerlink" href="#using-openspp-cloud-coming-soon" title="Permalink to this headline">#</a></h3>
-<p>The easiest way to get a OpenSPP server is by using OpenSPP's Cloud.</p>
-<p>OpenSPP Cloud provides fast OpenSPP servers with regular feature updates, automatic security patches, daily
-backups, uptime management, enterprise security, and guaranteed support on any issues.</p>
-<p>By choosing OpenSPP Cloud, you are also directly supporting future development on OpenSPP and helping make it
-better for everyone.</p>
-<p><a class="reference external" href="https://openspp.org/contact/">Contact us</a> if you want to get early access.</p>
-</div>
-</div>
+<div class="section" id="creating-a-program">
+<h1>Creating a Program<a class="headerlink" href="#creating-a-program" title="Permalink to this headline">#</a></h1>
 </div>
 </div>
 </main>
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
-<a class="left-prev" href="index.html" id="prev-link" title="previous page">
-<i class="fas fa-angle-left"></i>
-<div class="prev-next-info">
-<p class="prev-next-subtitle">previous</p>
-<p class="prev-next-title">Getting Started</p>
-</div>
-</a>
-<a class="right-next" href="../user_guide/index.html" id="next-link" title="next page">
-<div class="prev-next-info">
-<p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">User Guide</p>
-</div>
-<i class="fas fa-angle-right"></i>
-</a>
 </div>
 </footer>
 </div>

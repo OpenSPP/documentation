@@ -13,14 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Creating a Program" property="og:title"/>
+<meta content="Getting Started" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/tutorials/creating_a_program.html" property="og:url"/>
+<meta content="https://docs.openspp.org/getting_started/index.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
+<meta content="New to OpenSPP? Well, you came to the right place: read this material to quickly get up and running. OpenSPP overview OpenSPP is based on an open-source ERP called Odoo 15.0. It allows the project ..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
+<meta content="New to OpenSPP? Well, you came to the right place: read this material to quickly get up and running. OpenSPP overview OpenSPP is based on an open-source ERP called Odoo 15.0. It allows the project ..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Creating a Program — OpenSPP Documentation v1.1</title>
+<title>Getting Started — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -48,11 +50,13 @@
 <script src="../_static/patch_scrollToActive.js"></script>
 <script src="../_static/search_shortcut.js"></script>
 <script src="../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/tutorials/creating_a_program.html" rel="canonical">
+<link href="https://docs.openspp.org/getting_started/" rel="canonical">
 <link href="../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.1" type="application/opensearchdescription+xml"/>
 <link href="../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../genindex.html" rel="index" title="Index"/>
 <link href="../search.html" rel="search" title="Search"/>
+<link href="installation_guide.html" rel="next" title="Installation Guide"/>
+<link href="../index.html" rel="prev" title="OpenSPP - Social Protection Platform"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -97,12 +101,12 @@
 </input></div>
 </form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item active">
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children">
-<a class="reference internal" href="">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children">
+<a class="current reference internal" href="#">
    Getting Started
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
 <label for="toctree-checkbox-1">
 <i class="fas fa-chevron-down">
 </i>
@@ -223,6 +227,11 @@
     </a>
 </li>
 <li class="toctree-l2">
+<a class="reference internal" href="../howto/developer_guides/module.html">
+     Module Development
+    </a>
+</li>
+<li class="toctree-l2">
 <a class="reference internal" href="../howto/developer_guides/custom_areas.html">
      Customize Areas
     </a>
@@ -250,6 +259,11 @@
 <li class="toctree-l2">
 <a class="reference internal" href="../howto/developer_guides/dci.html">
      Implementation of DCI Specification
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../howto/developer_guides/oidc.html">
+     Configuring Keycloak for OAuth
     </a>
 </li>
 <li class="toctree-l2">
@@ -282,11 +296,6 @@
 <li class="toctree-l2">
 <a class="reference internal" href="../technical_reference/security.html">
      Security Implementations &amp; Practices
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../technical_reference/oidc.html">
-     Configuring Keycloak for OAuth
     </a>
 </li>
 <li class="toctree-l2">
@@ -332,11 +341,6 @@
 <li class="toctree-l2">
 <a class="reference internal" href="../technical_reference/performance_optimization.html">
      Performance Optimization
-    </a>
-</li>
-<li class="toctree-l2">
-<a class="reference internal" href="../technical_reference/module.html">
-     Module Development
     </a>
 </li>
 <li class="toctree-l2">
@@ -553,7 +557,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Creating a Program</span>
+<span>Getting Started</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -576,7 +580,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Ftutorials/creating_a_program.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fgetting_started/index.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -584,7 +588,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?tutorials/creating_a_program.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?getting_started/index.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -601,7 +605,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/tutorials/creating_a_program.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/getting_started/index.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -629,7 +633,7 @@
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Creating a Program</h1>
+<h1>Getting Started</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
@@ -638,14 +642,36 @@
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="creating-a-program">
-<h1>Creating a Program<a class="headerlink" href="#creating-a-program" title="Permalink to this headline">#</a></h1>
+<div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h1>
+<p>New to OpenSPP? Well, you came to the right place: read this material to quickly get up and running.</p>
+<p><img alt="OpenSPP overview" src="../_images/openspp_process.png"/></p>
+<p><code class="docutils literal notranslate"><span class="pre">OpenSPP</span></code> is based on an open-source <a class="reference external" href="https://en.wikipedia.org/wiki/Enterprise_resource_planning">ERP</a> called <a class="reference external" href="https://odoo.com/documentation/15.0/">Odoo 15.0</a>. It allows the project to take advantage of a vast ecosystem of existing integrations and modules.</p>
+<p>It is a <a class="reference external" href="https://digitalpublicgoods.net/">Digital Public Good (DPG)</a> and is building on top of other DPGs such as <a class="reference external" href="https://openg2p.org/">OpenG2P</a>.</p>
+<p><img alt="OpenSPP components and licensing" src="../_images/openspp_components_with_licensing.png"/></p>
+<p><code class="docutils literal notranslate"><span class="pre">OpenSPP</span></code> is currently in development, and everything is evolving rapidly thanks to the input provided by our users. If you have any questions or needs, please do not hesitate to contact the team through Github issues or the <a class="reference external" href="https://openspp.org/">OpenSPP website</a>.</p>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 </main>
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
+<a class="left-prev" href="../index.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">OpenSPP - Social Protection Platform</p>
+</div>
+</a>
+<a class="right-next" href="installation_guide.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Installation Guide</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
 </div>
 </footer>
 </div>

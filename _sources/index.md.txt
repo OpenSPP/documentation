@@ -46,7 +46,7 @@ To learn more, take a look at the [Architecture](technical_reference/architectur
 :maxdepth: 3
 :hidden: true
 
-tutorials/index
+getting_started/index
 user_guide/index
 howto/index
 technical_reference/index

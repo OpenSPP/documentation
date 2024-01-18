@@ -8,17 +8,22 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 - {doc}`developer_guides/development_setup`
 - {doc}`developer_guides/troubleshooting`
 
-**Customizations**
+**Customization**
 
+- {doc}`module`
 - {doc}`developer_guides/custom_areas`
 - {doc}`developer_guides/custom_cr`
 - {doc}`developer_guides/custom_registry`
 - {doc}`developer_guides/custom_service_points`
 - {doc}`developer_guides/rest_api`
 
-**Specifications**
+**Specification**
 
 - {doc}`developer_guides/dci`
+
+**Integration**
+
+- {doc}`developer_guides/oidc`
 
 ```{toctree}
 :maxdepth: 2
@@ -31,6 +36,7 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 developer_mode
 developer_guides/development_setup
 
+developer_guides/module
 developer_guides/custom_areas
 developer_guides/custom_cr
 developer_guides/custom_registry
@@ -38,6 +44,8 @@ developer_guides/custom_service_points
 
 developer_guides/rest_api
 developer_guides/dci
+
+developer_guides/oidc
 
 developer_guides/troubleshooting
 
