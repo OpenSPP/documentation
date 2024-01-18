@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Custom fields" property="og:title"/>
+<meta content="Indicators" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/user_guide/custom_fields.html" property="og:url"/>
+<meta content="https://docs.openspp.org/tutorial/indicators.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="Introduction: Todo" property="og:description"/>
+<meta content="Introduction: This section will discuss the importance of Indicators in OpenSPP. Indicators are a powerful tool that creates abstraction and simplifies targeting, allowing for the calculation of th..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="Introduction: Todo" name="description"/>
+<meta content="Introduction: This section will discuss the importance of Indicators in OpenSPP. Indicators are a powerful tool that creates abstraction and simplifies targeting, allowing for the calculation of th..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Custom fields – User Guide — OpenSPP Documentation v1.1</title>
+<title>Indicators – User Guide — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -50,13 +50,13 @@
 <script src="../_static/patch_scrollToActive.js"></script>
 <script src="../_static/search_shortcut.js"></script>
 <script src="../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/user_guide/custom_fields.html" rel="canonical">
+<link href="https://docs.openspp.org/tutorial/indicators.html" rel="canonical">
 <link href="../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.1" type="application/opensearchdescription+xml"/>
 <link href="../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../genindex.html" rel="index" title="Index"/>
 <link href="../search.html" rel="search" title="Search"/>
-<link href="dashboards_and_reports.html" rel="next" title="Dashboards and reports"/>
-<link href="consent_management.html" rel="prev" title="Consent management"/>
+<link href="hardware_integration.html" rel="next" title="Hardware integration"/>
+<link href="grievance_redressal_management.html" rel="prev" title="Grievance Redressal Management"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -149,8 +149,8 @@
      Consent management
     </a>
 </li>
-<li class="toctree-l2 current active">
-<a class="current reference internal" href="#">
+<li class="toctree-l2">
+<a class="reference internal" href="custom_fields.html">
      Custom fields
     </a>
 </li>
@@ -174,8 +174,8 @@
      Grievance Redressal Management
     </a>
 </li>
-<li class="toctree-l2">
-<a class="reference internal" href="indicators.html">
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
      Indicators
     </a>
 </li>
@@ -557,7 +557,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Custom fields – User Guide</span>
+<span>Indicators – User Guide</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -580,7 +580,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fuser_guide/custom_fields.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Ftutorial/indicators.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -588,7 +588,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?user_guide/custom_fields.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?tutorial/indicators.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -605,7 +605,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/user_guide/custom_fields.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/tutorial/indicators.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -642,6 +642,28 @@
    Introduction
   </a>
 </li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#technical-considerations">
+   Technical considerations
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#creating-an-indicator-field">
+   Creating an indicator field
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#through-the-ui">
+     Through the UI
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#through-the-code">
+     Through the code
+    </a>
+</li>
+</ul>
+</li>
 </ul>
 </nav>
 </div>
@@ -650,7 +672,7 @@
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Custom fields</h1>
+<h1>Indicators</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
@@ -664,6 +686,28 @@
    Introduction
   </a>
 </li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#technical-considerations">
+   Technical considerations
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#creating-an-indicator-field">
+   Creating an indicator field
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#through-the-ui">
+     Through the UI
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#through-the-code">
+     Through the code
+    </a>
+</li>
+</ul>
+</li>
 </ul>
 </nav>
 </div>
@@ -671,11 +715,87 @@
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="custom-fields">
-<h1>Custom fields<a class="headerlink" href="#custom-fields" title="Permalink to this headline">#</a></h1>
+<div class="section" id="indicators">
+<h1>Indicators<a class="headerlink" href="#indicators" title="Permalink to this headline">#</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>Todo</p>
+<p>This section will discuss the importance of Indicators in OpenSPP. Indicators are a powerful tool that creates abstraction and simplifies <a class="reference internal" href="../glossary.html#term-Targeting"><span class="xref std std-term">targeting</span></a>, allowing for the calculation of the number of children under 18 years old, the number of elderly women, or whether a <a class="reference internal" href="../glossary.html#term-Household"><span class="xref std std-term">household</span></a> is headed by a single woman.</p>
+<p>The Indicators play a crucial role in determining the <a class="reference internal" href="../glossary.html#term-Eligibility"><span class="xref std std-term">eligibility</span></a> of registrants for <a class="reference internal" href="../glossary.html#term-Social-protection"><span class="xref std std-term">social protection</span></a> programs, as they're computed based on the <a class="reference internal" href="../glossary.html#term-Information"><span class="xref std std-term">information</span></a> available in the <a class="reference internal" href="../glossary.html#term-Social-registry"><span class="xref std std-term">social registry</span></a>. By using Indicators, errors and inaccuracies can be avoided.</p>
+</div>
+<div class="section" id="technical-considerations">
+<h2>Technical considerations<a class="headerlink" href="#technical-considerations" title="Permalink to this headline">#</a></h2>
+<p>Indicators are fields added to the group or individual table. In Odoo those are computed fields. To reduce the performance impact of those, those fields are recomputed. in an asynchronous job, only when the data they depend on changes. This means that the value of the field won't be available immediately after the data it depends on is changed. It will be available after the next time the job is run, usually within a second.</p>
+<p>The indicator fields are stored as fields in the database, but they're not editable. They're computed based on the data in the registry.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Indicators computation, if not properly written can use a lot of resources.
+While Odoo developers often write a for loop in the compute method to fetch some data, this is not a good practice.
+It is recommended to fetch the data for all the records in one query and then set the value to each record.</p>
+</div>
+</div>
+<div class="section" id="creating-an-indicator-field">
+<h2>Creating an indicator field<a class="headerlink" href="#creating-an-indicator-field" title="Permalink to this headline">#</a></h2>
+<div class="section" id="through-the-ui">
+<h3>Through the UI<a class="headerlink" href="#through-the-ui" title="Permalink to this headline">#</a></h3>
+<p>Go to <strong>Registry → Configuration → Custom Fields</strong> and click <strong>Create</strong>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/indicator-1.png"><img alt="Indicator creation interface in OpenSPP" src="../_images/indicator-1.png" style="height: 300px;"/></a>
+</div>
+<p>TODO</p>
+</div>
+<div class="section" id="through-the-code">
+<h3>Through the code<a class="headerlink" href="#through-the-code" title="Permalink to this headline">#</a></h3>
+<p>Create a model that inherits from <code class="docutils literal notranslate"><span class="pre">res.partner</span></code>. In this example, we will count the number of children in a group.</p>
+<p>To learn more about search domain, see the Odoo documentation on <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/reference/backend/orm.html#search-domains">search domains</a>.
+Search domain are like a simplified SQL query. They're used to filter the data that is used to compute the indicator.</p>
+<p>To simplify the count of members in a group, we created a helper method <code class="docutils literal notranslate"><span class="pre">compute_count_and_set_indicator</span></code> that takes the name of the indicator field, the domain to filter the members of the group, and the domain to filter the members of the group that are used to compute the indicator.</p>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">G2PMembershipGroup.</span></span><span class="sig-name descname"><span class="pre">compute_count_and_set_indicator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kinds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">presence_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/odoo/addons/g2p_registry_membership/models/group.html#G2PMembershipGroup.compute_count_and_set_indicator"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>This method computes the count matching a domain, then sets the indicator on the field name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>field_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) -- The name of the field.</p></li>
+<li><p><strong>kinds</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a>) -- The kinds of roles in the group</p></li>
+<li><p><strong>domain</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><em>list</em></a>) -- The domain to filter group members.</p></li>
+<li><p><strong>presence_only</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><em>bool</em></a>) -- A boolean value to define if we return a boolean instead of the count</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The count of the specified field, then sets the indicator on the field name.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)">int</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="kn">import</span> <span class="n">relativedelta</span>
+
+<span class="n">CHILDREN_AGE_LIMIT</span> <span class="o">=</span> <span class="mi">18</span>
+
+<span class="k">class</span> <span class="nc">G2PGroup</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"res.partner"</span>
+
+    <span class="n">z_ind_grp_num_children</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span>
+        <span class="s2">"Number of children"</span><span class="p">,</span>
+        <span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_ind_grp_num_children"</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"Number of children"</span><span class="p">,</span>
+        <span class="n">store</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">allow_filter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_compute_ind_grp_num_children</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="n">children</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="n">CHILDREN_AGE_LIMIT</span><span class="p">)</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"birthdate"</span><span class="p">,</span> <span class="s2">"&gt;="</span><span class="p">,</span> <span class="n">children</span><span class="p">)]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">compute_count_and_set_indicator</span><span class="p">(</span><span class="s2">"z_ind_grp_num_children"</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">domain</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -683,17 +803,17 @@
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
-<a class="left-prev" href="consent_management.html" id="prev-link" title="previous page">
+<a class="left-prev" href="grievance_redressal_management.html" id="prev-link" title="previous page">
 <i class="fas fa-angle-left"></i>
 <div class="prev-next-info">
 <p class="prev-next-subtitle">previous</p>
-<p class="prev-next-title">Consent management</p>
+<p class="prev-next-title">Grievance Redressal Management</p>
 </div>
 </a>
-<a class="right-next" href="dashboards_and_reports.html" id="next-link" title="next page">
+<a class="right-next" href="hardware_integration.html" id="next-link" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Dashboards and reports</p>
+<p class="prev-next-title">Hardware integration</p>
 </div>
 <i class="fas fa-angle-right"></i>
 </a>

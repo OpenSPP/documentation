@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Audit log" property="og:title"/>
+<meta content="Consent management" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/user_guide/audit_log.html" property="og:url"/>
+<meta content="https://docs.openspp.org/tutorial/consent_management.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="Introduction: The Audit Log is a powerful tool for tracking user activity and system events in OpenSPP. It records information about who has accessed the system, what actions they performed, and wh..." property="og:description"/>
+<meta content="Introduction: Consent management is an essential component of social protection programs that deal with personal data. In order to protect the privacy of beneficiaries and ensure that their persona..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="Introduction: The Audit Log is a powerful tool for tracking user activity and system events in OpenSPP. It records information about who has accessed the system, what actions they performed, and wh..." name="description"/>
+<meta content="Introduction: Consent management is an essential component of social protection programs that deal with personal data. In order to protect the privacy of beneficiaries and ensure that their persona..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Audit log – User Guide — OpenSPP Documentation v1.1</title>
+<title>Consent management – User Guide — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -50,13 +50,13 @@
 <script src="../_static/patch_scrollToActive.js"></script>
 <script src="../_static/search_shortcut.js"></script>
 <script src="../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/user_guide/audit_log.html" rel="canonical">
+<link href="https://docs.openspp.org/tutorial/consent_management.html" rel="canonical">
 <link href="../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.1" type="application/opensearchdescription+xml"/>
 <link href="../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../genindex.html" rel="index" title="Index"/>
 <link href="../search.html" rel="search" title="Search"/>
-<link href="change_requests.html" rel="next" title="Change Requests"/>
-<link href="access_management.html" rel="prev" title="Access management"/>
+<link href="custom_fields.html" rel="next" title="Custom fields"/>
+<link href="change_requests.html" rel="prev" title="Change Requests"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -134,8 +134,8 @@
      Access management
     </a>
 </li>
-<li class="toctree-l2 current active">
-<a class="current reference internal" href="#">
+<li class="toctree-l2">
+<a class="reference internal" href="audit_log.html">
      Audit log
     </a>
 </li>
@@ -144,8 +144,8 @@
      Change Requests
     </a>
 </li>
-<li class="toctree-l2">
-<a class="reference internal" href="consent_management.html">
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
      Consent management
     </a>
 </li>
@@ -557,7 +557,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Audit log – User Guide</span>
+<span>Consent management – User Guide</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -580,7 +580,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fuser_guide/audit_log.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Ftutorial/consent_management.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -588,7 +588,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?user_guide/audit_log.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?tutorial/consent_management.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -605,7 +605,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/user_guide/audit_log.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/tutorial/consent_management.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -650,7 +650,7 @@
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Audit log</h1>
+<h1>Consent management</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
@@ -671,14 +671,13 @@
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="audit-log">
-<h1>Audit log<a class="headerlink" href="#audit-log" title="Permalink to this headline">#</a></h1>
+<div class="section" id="consent-management">
+<h1>Consent management<a class="headerlink" href="#consent-management" title="Permalink to this headline">#</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>The Audit Log is a powerful tool for tracking user activity and system events in OpenSPP. It records information about who has accessed the system, what actions they performed, and when those actions took place. This information can be used to monitor user activity, detect potential security breaches, and investigate incidents or issues that arise within the system.</p>
-<p>It is important to note that the Audit Log is not enabled by default and must be enabled and configured by an administrator. Once enabled, the Audit Log can be customized to record specific events and activities based on the needs of the organization.</p>
-<p>While strict access rights are important to ensure that only authorized users have access to data, it is also important to allow users access to enough information to be able to perform their work effectively. The Audit Log can help strike this balance by providing a comprehensive record of user activity without compromising data security.</p>
-<p>In this user guide, we will provide step-by-step instructions on how to enable, configure, and use the Audit Log in OpenSPP. We will cover everything from setting up audit policies and filters to reviewing and analyzing audit log data. By the end of this tutorial, you should have a solid understanding of how the Audit Log can be used to monitor and secure your OpenSPP system.</p>
+<p>Consent management is an essential component of <a class="reference internal" href="../glossary.html#term-Social-protection"><span class="xref std std-term">social protection</span></a> programs that deal with <a class="reference internal" href="../glossary.html#term-Personal-data"><span class="xref std std-term">personal data</span></a>. In order to protect the privacy of <a class="reference internal" href="../glossary.html#term-Beneficiaries"><span class="xref std std-term">beneficiaries</span></a> and ensure that their personal information is being used and shared appropriately, it is important to obtain their consent for data processing and sharing.</p>
+<p>OpenSPP provides a built-in consent management system that enables program administrators to manage and track consent from beneficiaries. With OpenSPP's consent management, administrators can easily obtain, store, and manage consent from beneficiaries for data processing and sharing.</p>
+<p>By giving beneficiaries control over how their data is used and shared, OpenSPP's consent management helps to build trust and confidence in social protection programs. This not only ensures compliance with <a class="reference internal" href="../glossary.html#term-Data-protection"><span class="xref std std-term">data protection</span></a> regulations, but also improves the overall <a class="reference internal" href="../glossary.html#term-Effectiveness"><span class="xref std std-term">effectiveness</span></a> of social protection programs by promoting transparency and accountability. In this user guide, we will provide step-by-step instructions on how to use OpenSPP's consent management system to obtain and manage consent from beneficiaries.</p>
 </div>
 </div>
 </div>
@@ -686,17 +685,17 @@
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
-<a class="left-prev" href="access_management.html" id="prev-link" title="previous page">
+<a class="left-prev" href="change_requests.html" id="prev-link" title="previous page">
 <i class="fas fa-angle-left"></i>
 <div class="prev-next-info">
 <p class="prev-next-subtitle">previous</p>
-<p class="prev-next-title">Access management</p>
+<p class="prev-next-title">Change Requests</p>
 </div>
 </a>
-<a class="right-next" href="change_requests.html" id="next-link" title="next page">
+<a class="right-next" href="custom_fields.html" id="next-link" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Change Requests</p>
+<p class="prev-next-title">Custom fields</p>
 </div>
 <i class="fas fa-angle-right"></i>
 </a>
