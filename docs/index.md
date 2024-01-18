@@ -47,7 +47,7 @@ To learn more, take a look at the [Architecture](technical_reference/architectur
 :hidden: true
 
 getting_started/index
-user_guide/index
+tutorial/index
 howto/index
 technical_reference/index
 explanation/index

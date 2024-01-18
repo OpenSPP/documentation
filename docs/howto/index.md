@@ -10,7 +10,7 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 
 **Customization**
 
-- {doc}`module`
+- {doc}`developer_guides/module`
 - {doc}`developer_guides/custom_areas`
 - {doc}`developer_guides/custom_cr`
 - {doc}`developer_guides/custom_registry`
