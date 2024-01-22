@@ -35,7 +35,6 @@ The key steps in module development are as follows:
  "depends": [
        "spp_programs",
    ],
-")
 ```
 
 3. To add the new field in the new module, develop a Python file named `entitlement.py` that extends `g2p.entitlement` and incorporate this file into `models/init.py`. The definition of the fields should be implemented as demonstrated below.
@@ -46,7 +45,6 @@ from odoo import api, fields, models
 class G2PEntitlementCustom(models.Model):
    _inherit = "g2p.entitlement"
 
-
    day_duration = fields.Integer("Valid Duration (Days)", compute="_compute_day_duration")
 
    @api.depends("valid_from", "valid_until")
@@ -55,17 +53,16 @@ class G2PEntitlementCustom(models.Model):
            valid_from = rec.valid_from or fields.Date.today()
            delta = rec.valid_until - valid_from
            rec.day_duration = delta.days
-
 ```
 
-The code mentioned above will introduce a new field to the g2p_entitlement table for storing the duration of an entitlement. To understand further, refer to the following documentation [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html), [Link 2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html), [Link 3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
+The code mentioned above will introduce a new field to the `g2p_entitlement` table for storing the duration of an entitlement. To understand further, refer to the following documentation [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html), [Link 2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html), [Link 3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
 
-4.To integrate new fields into the UI, the following steps should be followed. Create a new file called `views/entitlement_view.xml` in the module. Add the below code to the manifest file.
+4. To integrate new fields into the UI, the following steps should be followed. Create a new file called `views/entitlement_view.xml` in the module. Add the below code to the manifest file.
 
 ```python
-  "data": [
-       "views/entitlement_view.xml",
-   ],
+"data": [
+    "views/entitlement_view.xml",
+],
 ```
 
 5. The following code can be added to the `entitlement_view.xml` file to show the duration in the UI.
