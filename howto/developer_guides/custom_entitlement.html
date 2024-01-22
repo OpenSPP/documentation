@@ -742,7 +742,6 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="s2">"depends"</span><span class="p">:</span> <span class="p">[</span>
        <span class="s2">"spp_programs"</span><span class="p">,</span>
    <span class="p">],</span>
-<span class="s2">")</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
@@ -753,7 +752,6 @@
 <span class="k">class</span> <span class="nc">G2PEntitlementCustom</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
    <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"g2p.entitlement"</span>
 
-
    <span class="n">day_duration</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="s2">"Valid Duration (Days)"</span><span class="p">,</span> <span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_day_duration"</span><span class="p">)</span>
 
    <span class="nd">@api</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">"valid_from"</span><span class="p">,</span> <span class="s2">"valid_until"</span><span class="p">)</span>
@@ -762,14 +760,15 @@
            <span class="n">valid_from</span> <span class="o">=</span> <span class="n">rec</span><span class="o">.</span><span class="n">valid_from</span> <span class="ow">or</span> <span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
            <span class="n">delta</span> <span class="o">=</span> <span class="n">rec</span><span class="o">.</span><span class="n">valid_until</span> <span class="o">-</span> <span class="n">valid_from</span>
            <span class="n">rec</span><span class="o">.</span><span class="n">day_duration</span> <span class="o">=</span> <span class="n">delta</span><span class="o">.</span><span class="n">days</span>
-
 </pre></div>
 </div>
-<p>The code mentioned above will introduce a new field to the g2p_entitlement table for storing the duration of an entitlement. To understand further, refer to the following documentation <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">Link 1</a>, <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">Link 2</a>, <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">Link 3</a></p>
-<p><a class="reference external" href="http://4.To">4.To</a> integrate new fields into the UI, the following steps should be followed. Create a new file called <code class="docutils literal notranslate"><span class="pre">views/entitlement_view.xml</span></code> in the module. Add the below code to the manifest file.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="s2">"data"</span><span class="p">:</span> <span class="p">[</span>
-       <span class="s2">"views/entitlement_view.xml"</span><span class="p">,</span>
-   <span class="p">],</span>
+<p>The code mentioned above will introduce a new field to the <code class="docutils literal notranslate"><span class="pre">g2p_entitlement</span></code> table for storing the duration of an entitlement. To understand further, refer to the following documentation <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">Link 1</a>, <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">Link 2</a>, <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">Link 3</a></p>
+<ol class="arabic simple" start="4">
+<li><p>To integrate new fields into the UI, the following steps should be followed. Create a new file called <code class="docutils literal notranslate"><span class="pre">views/entitlement_view.xml</span></code> in the module. Add the below code to the manifest file.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">"data"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">"views/entitlement_view.xml"</span><span class="p">,</span>
+<span class="p">],</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
