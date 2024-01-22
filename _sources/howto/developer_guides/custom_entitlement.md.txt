@@ -14,7 +14,7 @@ The following article guides the reader in understanding how the entitlement can
 - Choose “Update Apps List” to refresh the module list.
 - Search for “Programs” and initiate installation. This will also install the other modules required.
 
-![](custom_areas/1.png)
+![](custom_entitlement/1.png)
 
 ## Utilising the Entitlement
 
@@ -86,4 +86,4 @@ The code mentioned above will introduce a new field to the g2p_entitlement table
 
 6. Install the module to include the new changes. The following screenshot shows the added field duration in the newly developed module.
 
-![](custom_areas/2.png)
+![](custom_entitlement/2.png)
