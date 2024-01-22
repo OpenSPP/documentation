@@ -40,6 +40,7 @@ developer_guides/development_setup
 developer_guides/module
 developer_guides/custom_areas
 developer_guides/custom_cr
+developer_guides/custom_entitlement
 developer_guides/custom_registry
 developer_guides/custom_service_points
 
