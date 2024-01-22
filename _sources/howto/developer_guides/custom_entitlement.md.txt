@@ -1,4 +1,4 @@
-# Customize Areas
+# Customize Entitlement
 
 The following article guides the reader in understanding how the entitlement can be customized by providing a sample scenario and a working example.
 
@@ -7,7 +7,7 @@ The following article guides the reader in understanding how the entitlement can
 - Knowledge of Python, Odoo, XML, Xpaths.
 - To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html).
 
-## If the Area module is not installed
+## If the Programs module is not installed
 
 - Log into OpenSPP with administrative rights.
 - Access the “Apps” menu from the dashboard to manage OpenSPP modules.
