@@ -1,48 +1,24 @@
 # Customize Audit Logs
 
-This guide provides a structured approach for implementing and customising the audit log in OpenSPP through the development of a custom module.
+The following article guides the reader in understanding how the existing audit module can be customized by providing a sample scenario and a working example.
 
 ## Prerequisites
 
-- Knowledge in Python, Odoo, OOP, HTML, XML, Xpaths.
-- A functional OpenSPP installation.
-- Administrative access to the OpenSPP backend.
+- Knowledge of Python, Odoo, XML, Xpaths.
+- To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html).
 
-## Odoo Setup from Docker using doodba
-
-- Existence of openg2p_program folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- Availability of modules: g2p_programs.
-- Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership.
-- Existence of openspp_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- Availability of modules: spp_audit_log, spp_audit_config, spp_audit_post, spp_programs, spp_service_points, spp_area.
-- Existence of web folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- Availability of modules: web, web_domain_field.
-- Existence of queue folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- Availability of modules: queue_job.
-
-## Odoo Setup from source
-
-- Existence of openg2p-program folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from [here](https://github.com/OpenG2P/openg2p-program.git) into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.
-- Availability of modules: g2p_programs.
-- Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from [here](https://github.com/OpenG2P/openg2p-registry.git) into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.
-- Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership.
-- Existence of openspp-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, clone the repository from [here](https://github.com/OpenSPP/openspp-registry.git) into odoo/custom, navigate to the openspp-registry folder, and switch to the specified branch.
-- Availability of modules: spp_audit_log, spp_audit_config, spp_audit_post, spp_programs, spp_service_points, spp_area.
-- Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from [here](https://github.com/OCA/web.git) into odoo/custom, navigate to the web, and switch to the specified branch.
-- Availability of modules: web, web_domain_field.
-- Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from [here](https://github.com/OCA/queue.git) into odoo/custom, navigate to the queue, and switch to the specified branch.
-- Availability of modules: queue_job.
-
-## Installation
+## If the Audit module is not installed
 
 - Log into OpenSPP with administrative rights.
 - Access the “Apps” menu from the dashboard to manage OpenSPP modules.
 - Choose “Update Apps List” to refresh the module list.
 - Search and initiate installation of the following modules, this process will also install all of their associated modules:
+
   - SPP Audit Config
   - SPP Audit Log
   - SPP Audit Post
+
+  ![](custom_audit/0.png)
 
 ## Utilising the Audit Log Module
 
@@ -63,15 +39,60 @@ This guide provides a structured approach for implementing and customising the a
 
 ## Customise Audit Log Module
 
-- To introduce new fields or functions in a new module, develop a Python file extending the model “spp.audit.rule” for the Audit Rules while “spp.audit.log” for the Audit Logs and integrate this file into `models/__init__.py`.
-- Upgrade the module incorporating the new Python file.
-- To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.
+In a hypothetical scenario, customizing the audit module to include the active field of a rule serves as a practical example.
 
-## Additional References
+A working sample module for the described scenario can be accessed at the provided [link](https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_audit_log_custom).
 
-- Below are some Odoo references that may help in adding the field both in models and in UI. For further guidance on model creation, inheritance, and UI integration, the following Odoo documentation may be useful:
-  - [Views](https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html)
-  - [Chapter 4: Models And Basic Fields](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html)
-  - [Chapter 7: Basic Views](https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/07_basicviews.html#chapter-7-basic-views)
-  - [Chapter 13: Inheritance](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
-  - [Chapter 14: Interact With Other Modules](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html)
+The key steps in module development are as follows:
+
+1. To customize audit module, a new module can be developed.
+
+2. To initiate the development of a custom module for audit module customization, begin by creating a manifest file. This file should include fields like name, category, and version. Additionally, it's crucial to define the dependencies of the new module as outlined below.
+
+```python
+"depends": [
+    "spp_audit_log",
+],
+```
+
+3. To add the new field in the new module, develop a Python file named `spp_audit_rule.py` that extends `spp.audit.rule` and incorporate this file into `models/init.py`. The definition of the population fields should be implemented as demonstrated below.
+
+```python
+from odoo import api, fields, models
+
+class CustomAuditRule(models.Model):
+   _inherit = "spp.audit.rule"
+
+   active = fields.Boolean(default=True)
+```
+
+The code mentioned above will introduce a new field to the spp_audit_rule table for storing the activeness of a rule. To understand further, refer to the following documentation [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html), [Link 2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html), [Link 3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
+
+4. To integrate new fields into the UI, the following steps should be followed. Create a new file called `views/spp_audit_rule_views.xml` in the module. Add the below code to the manifest file.
+
+```python
+"data": [
+    "views/spp_audit_rule_views.xml",
+],
+```
+
+5. The following code can be added to the spp_audit_rule_views.xml file to show the active in the UI.
+
+```xml
+ <record id="view_custom_audit_log_form" model="ir.ui.view">
+   <field name="name">view_custom_audit_log_form</field>
+   <field name="model">spp.audit.rule</field>
+   <field name="inherit_id" ref="spp_audit_log.spp_audit_rule_form" />
+   <field name="arch" type="xml">
+     <xpath expr="//field[@name='name']" position="before">
+       <field name="active" />
+     </xpath>
+   </field>
+ </record>
+```
+
+6. Install the module to include the new changes.
+
+The following screenshot shows the added field population in the newly developed module.
+
+![](custom_audit/4.png)

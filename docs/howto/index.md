@@ -12,6 +12,7 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 
 - {doc}`developer_guides/module`
 - {doc}`developer_guides/custom_areas`
+- {doc}`developer_guides/custom_audit`
 - {doc}`developer_guides/custom_cr`
 - {doc}`developer_guides/custom_entitlement`
 - {doc}`developer_guides/custom_registry`
@@ -39,6 +40,7 @@ developer_guides/development_setup
 
 developer_guides/module
 developer_guides/custom_areas
+developer_guides/custom_audit
 developer_guides/custom_cr
 developer_guides/custom_entitlement
 developer_guides/custom_registry
@@ -53,7 +55,6 @@ developer_guides/troubleshooting
 
 #developer_guides/custom_program
 #developer_guides/custom_cycle
-#developer_guides/custom_audit
 #developer_guides/computed_fields
 #developer_guides/implmenting_pmt
 
