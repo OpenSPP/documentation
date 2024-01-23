@@ -17,12 +17,12 @@
 <meta content="website" property="og:type"/>
 <meta content="https://docs.openspp.org/howto/developer_guides/custom_audit.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="This guide provides a structured approach for implementing and customising the audit log in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, ..." property="og:description"/>
+<meta content="The following article guides the reader in understanding how the existing audit module can be customized by providing a sample scenario and a working example. Prerequisites: Knowledge of Python, Od..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="This guide provides a structured approach for implementing and customising the audit log in OpenSPP through the development of a custom module. Prerequisites: Knowledge in Python, Odoo, OOP, HTML, ..." name="description"/>
+<meta content="The following article guides the reader in understanding how the existing audit module can be customized by providing a sample scenario and a working example. Prerequisites: Knowledge of Python, Od..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Customize Audit Logs — OpenSPP Documentation v1.1</title>
+<title>Customize Audit Logs – How To — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -55,6 +55,8 @@
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
+<link href="custom_cr.html" rel="next" title="Customize Change Request"/>
+<link href="custom_areas.html" rel="prev" title="Customize Areas"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -99,7 +101,7 @@
 </input></div>
 </form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item active">
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children">
 <a class="reference internal" href="../../getting_started/">
    Getting Started
@@ -204,16 +206,16 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children">
+<li class="toctree-l1 current active has-children">
 <a class="reference internal" href="../">
    How To
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
 <label for="toctree-checkbox-3">
 <i class="fas fa-chevron-down">
 </i>
 </label>
-<ul>
+<ul class="current">
 <li class="toctree-l2">
 <a class="reference internal" href="../developer_mode.html">
      Developer mode (debug mode)
@@ -232,6 +234,11 @@
 <li class="toctree-l2">
 <a class="reference internal" href="custom_areas.html">
      Customize Areas
+    </a>
+</li>
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
+     Customize Audit Logs
     </a>
 </li>
 <li class="toctree-l2">
@@ -560,7 +567,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Customize Audit Logs</span>
+<span>Customize Audit Logs – How To</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -646,18 +653,8 @@
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
-   Odoo Setup from Docker using doodba
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-source">
-   Odoo Setup from source
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#installation">
-   Installation
+<a class="reference internal nav-link" href="#if-the-audit-module-is-not-installed">
+   If the Audit module is not installed
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
@@ -668,11 +665,6 @@
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#customise-audit-log-module">
    Customise Audit Log Module
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#additional-references">
-   Additional References
   </a>
 </li>
 </ul>
@@ -698,18 +690,8 @@
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-docker-using-doodba">
-   Odoo Setup from Docker using doodba
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-source">
-   Odoo Setup from source
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#installation">
-   Installation
+<a class="reference internal nav-link" href="#if-the-audit-module-is-not-installed">
+   If the Audit module is not installed
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
@@ -722,11 +704,6 @@
    Customise Audit Log Module
   </a>
 </li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#additional-references">
-   Additional References
-  </a>
-</li>
 </ul>
 </nav>
 </div>
@@ -736,57 +713,27 @@
 <div>
 <div class="section" id="customize-audit-logs">
 <h1>Customize Audit Logs<a class="headerlink" href="#customize-audit-logs" title="Permalink to this headline">#</a></h1>
-<p>This guide provides a structured approach for implementing and customising the audit log in OpenSPP through the development of a custom module.</p>
+<p>The following article guides the reader in understanding how the existing audit module can be customized by providing a sample scenario and a working example.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Knowledge in Python, Odoo, OOP, HTML, XML, Xpaths.</p></li>
-<li><p>A functional OpenSPP installation.</p></li>
-<li><p>Administrative access to the OpenSPP backend.</p></li>
+<li><p>Knowledge of Python, Odoo, XML, Xpaths.</p></li>
+<li><p>To set up OpenSPP for development, please refer to the <a class="reference external" href="https://docs.openspp.org/howto/developer_guides/development_setup.html">Developer Guide</a>.</p></li>
 </ul>
 </div>
-<div class="section" id="odoo-setup-from-docker-using-doodba">
-<h2>Odoo Setup from Docker using doodba<a class="headerlink" href="#odoo-setup-from-docker-using-doodba" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Existence of openg2p_program folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: g2p_programs.</p></li>
-<li><p>Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership.</p></li>
-<li><p>Existence of openspp_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: spp_audit_log, spp_audit_config, spp_audit_post, spp_programs, spp_service_points, spp_area.</p></li>
-<li><p>Existence of web folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: web, web_domain_field.</p></li>
-<li><p>Existence of queue folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.</p></li>
-<li><p>Availability of modules: queue_job.</p></li>
-</ul>
-</div>
-<div class="section" id="odoo-setup-from-source">
-<h2>Odoo Setup from source<a class="headerlink" href="#odoo-setup-from-source" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Existence of openg2p-program folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-program.git">here</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: g2p_programs.</p></li>
-<li><p>Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenG2P/openg2p-registry.git">here</a> into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership.</p></li>
-<li><p>Existence of openspp-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OpenSPP/openspp-registry.git">here</a> into odoo/custom, navigate to the openspp-registry folder, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: spp_audit_log, spp_audit_config, spp_audit_post, spp_programs, spp_service_points, spp_area.</p></li>
-<li><p>Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/web.git">here</a> into odoo/custom, navigate to the web, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: web, web_domain_field.</p></li>
-<li><p>Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from <a class="reference external" href="https://github.com/OCA/queue.git">here</a> into odoo/custom, navigate to the queue, and switch to the specified branch.</p></li>
-<li><p>Availability of modules: queue_job.</p></li>
-</ul>
-</div>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
+<div class="section" id="if-the-audit-module-is-not-installed">
+<h2>If the Audit module is not installed<a class="headerlink" href="#if-the-audit-module-is-not-installed" title="Permalink to this headline">#</a></h2>
+<ul>
 <li><p>Log into OpenSPP with administrative rights.</p></li>
 <li><p>Access the “Apps” menu from the dashboard to manage OpenSPP modules.</p></li>
 <li><p>Choose “Update Apps List” to refresh the module list.</p></li>
 <li><p>Search and initiate installation of the following modules, this process will also install all of their associated modules:</p>
-<ul>
+<ul class="simple">
 <li><p>SPP Audit Config</p></li>
 <li><p>SPP Audit Log</p></li>
 <li><p>SPP Audit Post</p></li>
 </ul>
+<p><img alt="" src="../../_images/0.png"/></p>
 </li>
 </ul>
 </div>
@@ -811,25 +758,58 @@
 </div>
 <div class="section" id="customise-audit-log-module">
 <h2>Customise Audit Log Module<a class="headerlink" href="#customise-audit-log-module" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>To introduce new fields or functions in a new module, develop a Python file extending the model “spp.audit.rule” for the Audit Rules while “spp.audit.log” for the Audit Logs and integrate this file into <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>.</p></li>
-<li><p>Upgrade the module incorporating the new Python file.</p></li>
-<li><p>To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.</p></li>
-</ul>
+<p>In a hypothetical scenario, customizing the audit module to include the active field of a rule serves as a practical example.</p>
+<p>A working sample module for the described scenario can be accessed at the provided <a class="reference external" href="https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_audit_log_custom">link</a>.</p>
+<p>The key steps in module development are as follows:</p>
+<ol class="arabic simple">
+<li><p>To customize audit module, a new module can be developed.</p></li>
+<li><p>To initiate the development of a custom module for audit module customization, begin by creating a manifest file. This file should include fields like name, category, and version. Additionally, it's crucial to define the dependencies of the new module as outlined below.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">"depends"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">"spp_audit_log"</span><span class="p">,</span>
+<span class="p">],</span>
+</pre></div>
 </div>
-<div class="section" id="additional-references">
-<h2>Additional References<a class="headerlink" href="#additional-references" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Below are some Odoo references that may help in adding the field both in models and in UI. For further guidance on model creation, inheritance, and UI integration, the following Odoo documentation may be useful:</p>
-<ul>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html">Views</a></p></li>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">Chapter 4: Models And Basic Fields</a></p></li>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/07_basicviews.html#chapter-7-basic-views">Chapter 7: Basic Views</a></p></li>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">Chapter 13: Inheritance</a></p></li>
-<li><p><a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">Chapter 14: Interact With Other Modules</a></p></li>
-</ul>
-</li>
-</ul>
+<ol class="arabic simple" start="3">
+<li><p>To add the new field in the new module, develop a Python file named <code class="docutils literal notranslate"><span class="pre">spp_audit_rule.py</span></code> that extends <code class="docutils literal notranslate"><span class="pre">spp.audit.rule</span></code> and incorporate this file into <code class="docutils literal notranslate"><span class="pre">models/init.py</span></code>. The definition of the population fields should be implemented as demonstrated below.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">CustomAuditRule</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+   <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"spp.audit.rule"</span>
+
+   <span class="n">active</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The code mentioned above will introduce a new field to the spp_audit_rule table for storing the activeness of a rule. To understand further, refer to the following documentation <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">Link 1</a>, <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">Link 2</a>, <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">Link 3</a></p>
+<ol class="arabic simple" start="4">
+<li><p>To integrate new fields into the UI, the following steps should be followed. Create a new file called <code class="docutils literal notranslate"><span class="pre">views/spp_audit_rule_views.xml</span></code> in the module. Add the below code to the manifest file.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">"data"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">"views/spp_audit_rule_views.xml"</span><span class="p">,</span>
+<span class="p">],</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>The following code can be added to the <code class="docutils literal notranslate"><span class="pre">spp_audit_rule_views.xml</span></code> file to show the active in the UI.</p></li>
+</ol>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"view_custom_audit_log_form"</span><span class="w"> </span><span class="na">model=</span><span class="s">"ir.ui.view"</span><span class="nt">&gt;</span>
+<span class="w">   </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>view_custom_audit_log_form<span class="nt">&lt;/field&gt;</span>
+<span class="w">   </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"model"</span><span class="nt">&gt;</span>spp.audit.rule<span class="nt">&lt;/field&gt;</span>
+<span class="w">   </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"inherit_id"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"spp_audit_log.spp_audit_rule_form"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">   </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"arch"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xml"</span><span class="nt">&gt;</span>
+<span class="w">     </span><span class="nt">&lt;xpath</span><span class="w"> </span><span class="na">expr=</span><span class="s">"//field[@name='name']"</span><span class="w"> </span><span class="na">position=</span><span class="s">"before"</span><span class="nt">&gt;</span>
+<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"active"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">     </span><span class="nt">&lt;/xpath&gt;</span>
+<span class="w">   </span><span class="nt">&lt;/field&gt;</span>
+<span class="w"> </span><span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Install the module to include the new changes.</p></li>
+</ol>
+<p>The following screenshot shows the added field population in the newly developed module.</p>
+<p><img alt="" src="../../_images/4.png"/></p>
 </div>
 </div>
 </div>
@@ -837,6 +817,20 @@
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
+<a class="left-prev" href="custom_areas.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Customize Areas</p>
+</div>
+</a>
+<a class="right-next" href="custom_cr.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Customize Change Request</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
 </div>
 </footer>
 </div>
