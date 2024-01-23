@@ -22,20 +22,24 @@ The following article guides the reader in understanding how the existing audit 
 
 ## Utilising the Audit Log Module
 
-- Navigate to the “Rule” page inside the “Audit Log” menu.
-- Audit rules are already in place. They are created when installing or upgrading the module “SPP Audit Config”.
-- Select the Create button to add new rules.
-- To test the Audit Rule, go to Individual or Group Registry.
-- Create or Update Registry.
-- An audit log will show in the bottom part of the page indicating the fields that were changed and their corresponding old and new values.
-  ![](./custom_audit/1.png)
-- Audit logs can also be viewed by navigating to Audit Log then Log menu.
-- This page will show all of the audit logs from every model that is indicated in the audit rules.
-  <img src="./custom_audit/2.png" width="327" height="333">
-- Another way to see the audit logs is to enter a record and click Action then click the “View Logs”.
-  ![](./custom_audit/3.png)
-- It will redirect to the audit logs page that is automatically filtered to the record.
-- When you add an audit rule to a model, it effectively patches a specialized function into the model's key events - create, write, and unlink. This function operates as a gatekeeper, first verifying if an audit rule is set for the specific model, then determining which events to log and which fields to display in the audit log. This integration transforms the model into recording and showcasing relevant changes and activities for enhanced data management and integrity.
+1. Navigate to the “Rule” page inside the “Audit Log” main menu. You will see that the audit rules are already in place. They are created when installing or upgrading the module “SPP Audit Config”.
+
+2. Select the Create button to add new rules.
+
+3. To test the Audit Rule, go to Individual or Group Registry.
+
+4. Create or Update Registry.
+
+5. You will see that an audit log will show in the bottom part of the page indicating the fields that were changed and their corresponding old and new values.
+   ![](./custom_audit/1.png)
+
+6. Further, the audit logs can also be viewed by navigating to Audit Log then "Audit Log" main menu. This page will show all of the audit logs from every model that is indicated in the audit rules.
+   ![](custom_audit/2.png)
+
+7. Another way to see the audit logs is to select a record from Individual or Group Registry and click "Action" then click the “View Logs”.
+   ![](./custom_audit/3.png)
+
+Note that when you add an audit rule to a model, it effectively patches a specialized function into the model's key events - create, write, and unlink. This function operates as a gatekeeper, first verifying if an audit rule is set for the specific model, then determining which events to log and fields to display in the audit log.
 
 ## Customise Audit Log Module
 
