@@ -9,10 +9,13 @@ The following article guides the reader to understand how the REST API module wi
 
 ## If the REST API module is not installed
 
-- Log into OpenSPP with administrative rights.
-- Access the “Apps” menu from the dashboard to manage OpenSPP modules.
-- Choose “Update Apps List” to refresh the module list.
-- Search for “OpenSPP REST API: API Records” and initiate installation. This will also install the other modules required.
+1. Log into OpenSPP with administrative rights.
+
+2. Access the “Apps” menu from the dashboard to manage OpenSPP modules.
+
+3. Choose “Update Apps List” to refresh the module list.
+
+4. Search for “OpenSPP REST API: API Records” and initiate installation. This will also install the other modules required.
 
 ![](./rest_api/1.png)
 

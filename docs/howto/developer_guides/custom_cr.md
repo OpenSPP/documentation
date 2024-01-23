@@ -9,12 +9,15 @@ The following article guides the reader in understanding how the change request 
 
 ## If the Change Request module is not installed
 
-- Log into OpenSPP with administrative rights.
-- Access the “Apps” menu from the dashboard to manage OpenSPP modules.
-- Choose “Update Apps List” to refresh the module list.
-- Search for “OpenSPP Change Request” and initiate installation.
+1. Log into OpenSPP with administrative rights.
 
-  ![](custom_cr/change_request_module_in_apps.png)
+2. Access the “Apps” menu from the dashboard to manage OpenSPP modules.
+
+3. Choose “Update Apps List” to refresh the module list.
+
+4. Search for “OpenSPP Change Request” and initiate installation.
+
+![](custom_cr/change_request_module_in_apps.png)
 
 ## Utilizing the Area Module
 

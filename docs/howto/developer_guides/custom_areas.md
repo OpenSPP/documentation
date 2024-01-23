@@ -9,10 +9,13 @@ The following article guides the reader in understanding how the area module wil
 
 ## If the Area module is not installed
 
-- Log into OpenSPP with administrative rights.
-- Access the “Apps” menu from the dashboard to manage OpenSPP modules.
-- Choose “Update Apps List” to refresh the module list.
-- Search for “Area” and initiate installation. This will also install the other modules required.
+1. Log into OpenSPP with administrative rights.
+
+2. Access the “Apps” menu from the dashboard to manage OpenSPP modules.
+
+3. Choose “Update Apps List” to refresh the module list.
+
+4. Search for “Area” and initiate installation. This will also install the other modules required.
 
 ![](custom_areas/1.png)
 

@@ -9,32 +9,35 @@ The following article guides the reader in understanding how the existing audit 
 
 ## If the Audit module is not installed
 
-- Log into OpenSPP with administrative rights.
-- Access the “Apps” menu from the dashboard to manage OpenSPP modules.
-- Choose “Update Apps List” to refresh the module list.
-- Search and initiate installation of the following modules, this process will also install all of their associated modules:
+1. Log into OpenSPP with administrative rights.
 
-  - SPP Audit Config
-  - SPP Audit Log
-  - SPP Audit Post
+2. Access the “Apps” menu from the dashboard to manage OpenSPP modules.
 
-  ![](custom_audit/0.png)
+3. Choose “Update Apps List” to refresh the module list.
+
+4. Search and initiate installation of the following modules, this process will also install all of their associated modules:
+
+- SPP Audit Config
+- SPP Audit Log
+- SPP Audit Post
+
+![](custom_audit/0.png)
 
 ## Utilising the Audit Log Module
 
-1. Navigate to the “Rule” page inside the “Audit Log” main menu. You will see that the audit rules are already in place. They are created when installing or upgrading the module “SPP Audit Config”.
+1. Click on the “Audit Log” main menu to see the audit rules. You will see that the audit rules are already in place. They are created when installing the module “SPP Audit Config”.
 
-2. If you want to add a new rule, you can click the Create button to add new rules.
+2. If you want to add a new rule, you can click the "Create" button to add new rules.
 
-3. To test the Audit Rule, go to Individual or Group Registry.
+3. To test the audit rule, go to Individual or Group Registry.
 
 4. Create or Update a record from the Registry.
 
-5. You will see that an audit log will show in the bottom part of the page indicating the fields that were changed and their corresponding old and new values.
+5. You will see that an audit log will show in the bottom part of the page indicating the fields that were changed and their corresponding old and new values as shown below.
 
    ![](./custom_audit/1.png)
 
-6. Further, all audit logs can be viewed by accessing the Audit Log main menu, followed by the Audit -> Log menu item. This page displays audit logs from every model indicated in the audit rules.
+6. Further, all audit logs can be viewed by accessing the "Audit Log" main menu, followed by the Audit -> Log menu item. This page displays audit logs from every model indicated in the audit rules.
 
    ![](custom_audit/2.png)
 
