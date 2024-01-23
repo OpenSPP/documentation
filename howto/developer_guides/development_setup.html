@@ -755,11 +755,12 @@
 </div>
 <div class="section" id="setup">
 <h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
+<ol class="arabic simple">
 <li><p>Begin by cloning the OpenSPP Docker repository from <a class="reference external" href="https://github.com/OpenSPP/openspp-docker.git">here</a></p></li>
 <li><p>Switch to the openspp-docker directory.</p></li>
-<li><p>Execute the following commands:</p>
-<ul>
+<li><p>Execute the following commands:</p></li>
+</ol>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">invoke</span> <span class="pre">develop</span></code> - Sets up a VSCode development environment.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">invoke</span> <span class="pre">img-pull</span></code> - Retrieves Docker images as per .yaml file specifications.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">invoke</span> <span class="pre">img-build</span></code> - Constructs Docker images locally.</p></li>
@@ -768,20 +769,20 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">invoke</span> <span class="pre">resetdb</span></code> --demo - Creates a new database inclusive of demo data.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">invoke</span> <span class="pre">start</span></code> - Activates Odoo.</p></li>
 </ul>
-</li>
-<li><p>Combine these commands for a single execution if desired.</p>
-<ul>
+<ol class="arabic simple" start="4">
+<li><p>Combine these commands for a single execution if desired.</p></li>
+</ol>
+<ul class="simple">
 <li><p>e.g. <code class="docutils literal notranslate"><span class="pre">invoke</span> <span class="pre">develop</span> <span class="pre">img-pull</span> <span class="pre">img-build</span> <span class="pre">git-aggregate</span> <span class="pre">resetdb</span> <span class="pre">start</span></code></p></li>
 </ul>
-</li>
-<li><p>Browse the following in a preferred browser:</p>
-<ul>
+<ol class="arabic simple" start="5">
+<li><p>Browse the following in a preferred browser:</p></li>
+</ol>
+<ul class="simple">
 <li><p>Odoo: <a class="reference external" href="http://localhost:15069/">http://localhost:15069/</a></p></li>
 <li><p>Mailhog: <a class="reference external" href="http://localhost:15025/">http://localhost:15025/</a></p></li>
 <li><p>Wdb: <a class="reference external" href="http://localhost:15984/">http://localhost:15984/</a></p></li>
 <li><p>Pgweb: <a class="reference external" href="http://localhost:15081/">http://localhost:15081/</a></p></li>
-</ul>
-</li>
 </ul>
 <p>Refer to the <a class="reference external" href="http://Readme.md">Readme.md</a> in the repository for more detailed instructions on Docker Odoo and Invoke commands</p>
 </div>
@@ -798,12 +799,13 @@
 </div>
 <div class="section" id="id2">
 <h3>Setup<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
+<ol class="arabic simple">
 <li><p>Follow the official Odoo installation guide suitable for your Operating System.<a class="reference external" href="https://www.odoo.com/documentation/15.0/administration/install.html">Link</a></p></li>
 <li><p>Inside the Odoo folder, create a new directory named custom.</p></li>
 <li><p>Other Odoo repositories or Odoo modules should be added to the “custom” folder.</p></li>
-<li><p>Navigate to “custom” and git clone all of the following repositories and their corresponding branches:</p>
-<ul>
+<li><p>Navigate to “custom” and git clone all of the following repositories and their corresponding branches:</p></li>
+</ol>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">15.0</span> <span class="pre">https://github.com/OCA/connector.git</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">15.0</span> <span class="pre">https://github.com/OCA/dms.git</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">15.0-1.0-develop</span> <span class="pre">https://github.com/OpenG2P/openg2p-program.git</span></code></p></li>
@@ -817,14 +819,17 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">15.0</span> <span class="pre">https://github.com/OCA/social.git</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">15.0</span> <span class="pre">https://github.com/OCA/web.git</span></code></p></li>
 </ul>
-</li>
+<ol class="arabic simple" start="5">
 <li><p>`pip install the requirements in requirements.txt in each of the repositories if there is a requirements.txt.</p></li>
-<li><p>Open <code class="docutils literal notranslate"><span class="pre">odoo.conf</span></code> in a preferred IDE.</p></li>
-<li><p>Add in the <code class="docutils literal notranslate"><span class="pre">addons_path</span></code> the absolute path of the “custom” folder</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">odoo.conf</span></code> in a preferred IDE and add in the <code class="docutils literal notranslate"><span class="pre">addons_path</span></code> the absolute path of the “custom” folder</p></li>
+</ol>
+<ul class="simple">
 <li><p>e.g. <code class="docutils literal notranslate"><span class="pre">addons_path</span> <span class="pre">=</span> <span class="pre">/Users/username/odoo/addons,/Users/username/odoo/custom</span></code></p></li>
+</ul>
+<ol class="arabic simple" start="7">
 <li><p>Execute <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">odoo-bin</span> <span class="pre">-c</span> <span class="pre">odoo.conf</span></code> to run Odoo.</p></li>
 <li><p>Open <a class="reference external" href="http://localhost:8069/">http://localhost:8069/</a> in a browser to use OpenSPP.</p></li>
-</ul>
+</ol>
 <p>To learn more about Odoo command, visit <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/reference/cli.html">this documentation</a></p>
 </div>
 </div>

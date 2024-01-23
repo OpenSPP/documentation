@@ -9,10 +9,13 @@ The following article guides the reader in understanding how the service point m
 
 # If the Service Points module is not installed
 
-- Log into OpenSPP with administrative rights.
-- Access the “Apps” menu from the dashboard to manage OpenSPP modules.
-- Choose “Update Apps List” to refresh the module list.
-- Search for “OpenSPP Service Points” and initiate installation. This will also install the other modules required
+1. Log into OpenSPP with administrative rights.
+
+2. Access the “Apps” menu from the dashboard to manage OpenSPP modules.
+
+3. Choose “Update Apps List” to refresh the module list.
+
+4. Search for “OpenSPP Service Points” and initiate installation. This will also install the other modules required
 
 ![](custom_service_points/1.png)
 

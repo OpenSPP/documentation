@@ -9,10 +9,13 @@ The following article guides the reader in understanding how the registry module
 
 ## If the Registry module is not installed
 
-- Log into OpenSPP with administrative rights.
-- Access the “Apps” menu from the dashboard to manage OpenSPP modules.
-- Choose “Update Apps List” to refresh the module list.
-- Search for the following modules that are required to be installed such as G2P Registry: Groups, G2P Registry: Individual and G2P Registry: Membership.
+1. Log into OpenSPP with administrative rights.
+
+2. Access the “Apps” menu from the dashboard to manage OpenSPP modules.
+
+3. Choose “Update Apps List” to refresh the module list.
+
+4. Search for the following modules that are required to be installed such as G2P Registry: Groups, G2P Registry: Individual and G2P Registry: Membership.
 
 ![](custom_registry/1.png)
 

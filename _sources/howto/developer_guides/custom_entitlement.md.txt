@@ -9,10 +9,13 @@ The following article guides the reader in understanding how the entitlement can
 
 ## If the Programs module is not installed
 
-- Log into OpenSPP with administrative rights.
-- Access the “Apps” menu from the dashboard to manage OpenSPP modules.
-- Choose “Update Apps List” to refresh the module list.
-- Search for “Programs” and initiate installation. This will also install the other modules required.
+1. Log into OpenSPP with administrative rights.
+
+2. Access the “Apps” menu from the dashboard to manage OpenSPP modules.
+
+3. Choose “Update Apps List” to refresh the module list.
+
+4. Search for “Programs” and initiate installation. This will also install the other modules required.
 
 ![](custom_entitlement/1.png)
 

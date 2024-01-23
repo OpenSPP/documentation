@@ -748,17 +748,17 @@
 <p>This section focuses on utilizing OpenSPP as the source of truth for beneficiary information where OpenSPP acts as the server. Such integration allows OpenSPP to seamlessly interact with other critical systems by providing data, thereby enhancing data exchange and operational <a class="reference internal" href="../../glossary.html#term-Efficiency"><span class="xref std std-term">efficiency</span></a>. The following steps elaborate how the module can be configured.</p>
 <div class="section" id="deployment-and-installation">
 <h3>1.1 Deployment and Installation<a class="headerlink" href="#deployment-and-installation" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
+<ol class="arabic simple">
 <li><p>Deploy <a class="reference external" href="https://github.com/OpenSPP/openspp-api/tree/spp_dci_api_server">this branch</a> on a server</p></li>
 <li><p>Generate RSA Private and Public key.</p></li>
 <li><p>Save the RSA private key to spp_dci_api_server/tools/private_key.pem.</p></li>
 <li><p>Save the RSA public key to spp_dci_api_server/tools/public_key.pub</p></li>
 <li><p>Login to OpenSPP, Go to Apps, Search “OpenSPP API: DCI Server” and Install.</p></li>
-</ul>
+</ol>
 </div>
 <div class="section" id="how-to-use">
 <h3>1.2 How to use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
+<ol class="arabic simple">
 <li><p>Login to OpenSPP</p></li>
 <li><p>Navigate to Settings -&gt; DCI API Client Credentials</p></li>
 <li><p>Click Create button and fill-up the Client Name field then click Save.</p></li>
@@ -768,12 +768,12 @@
 <li><p>Upon closing the modal, “Show” button will not appear anymore and will not be able to reveal the Client ID and Client Secret.</p></li>
 <li><p>Client ID and Client Secret will be used to retrieve Access Token.</p></li>
 <li><p>Access Token will be used to authenticate in the search Registry API.</p></li>
-<li><p>To retrieve Access Token, Send a POST request to the url <domain>/oauth2/client/token with a body client_id, client_secret, and grant_type=’client_credentials’</domain></p></li>
+<li><p>To retrieve Access Token, Send a POST request to the url <code class="docutils literal notranslate"><span class="pre">&lt;domain&gt;/oauth2/client/token</span></code> with a body client_id, client_secret, and grant_type=’client_credentials’</p></li>
 <li><p>Copy the access_token in the response.</p></li>
-<li><p>To retrieve registry data, Send a POST request to the url <domain>/registry/sync/search.</domain></p></li>
+<li><p>To retrieve registry data, Send a POST request to the url <code class="docutils literal notranslate"><span class="pre">&lt;domain&gt;/registry/sync/search</span></code>.</p></li>
 <li><p>Header should have a key “Authorization” with a value “Bearer &lt;access_token&gt;”</p></li>
 <li><p>Refer the DCI API spec for the request and response structure</p></li>
-</ul>
+</ol>
 </div>
 </div>
 <div class="section" id="client-implementation">
@@ -781,7 +781,7 @@
 <p>This section focuses on utilizing another registry as the source for truth to get beneficiary information. The following steps elaborate how the module can be configured to fetch data where OpenSPP acts as the client.</p>
 <div class="section" id="id1">
 <h3>2.1 Deployment and Installation<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
+<ol class="arabic simple">
 <li><p>Deploy these two branches(<a class="reference external" href="https://github.com/OpenSPP/openspp-api/tree/spp_crvs_import">1</a>,<a class="reference external" href="https://github.com/OpenSPP/openspp-base/tree/spp_data_source">2</a>) on a server</p></li>
 <li><p>Get client_id and client_secret from CRVS(or from server).</p></li>
 <li><p>Login to OpenSPP</p></li>
@@ -790,22 +790,20 @@
 <li><p>Navigate to Settings -&gt; Data Source to view the created data source.</p></li>
 <li><p>Input the credentials in the client_id, client_secret, and grant_type field inside the Data Source record.</p></li>
 <li><p>The only supported grant_type for now is “client_credentials”.</p></li>
-<li><p>Be careful on updating the Data Source since it may affect the process of importing.</p></li>
-</ul>
+</ol>
 </div>
 <div class="section" id="id2">
 <h3>2.2 How to use<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
+<ol class="arabic simple">
 <li><p>Navigate to Programs -&gt; Import From Registry</p></li>
 <li><p>Create Search Criteria, Enter Search Criteria Name, Location, and Birthdate Range</p></li>
 <li><p>Click Fetch Button.</p></li>
 <li><p>Individual records will be imported from OpenCRVS Lab to OpenSPP.</p></li>
 <li><p>Fetch Button is now <a class="reference internal" href="../../glossary.html#term-Disabled"><span class="xref std std-term">disabled</span></a> but it can be enabled by clicking the “Enable Fetching”.</p></li>
 <li><p>Once an individual record is already fetched, They are now created and visible to the Registry page.</p></li>
-<li><p>Navigate to Registry -&gt; Individual to check the individuals.</p></li>
-<li><p>Navigate to Registry -&gt; Group to check the groups.</p></li>
+<li><p>Navigate to Registry -&gt; Individual to check the individuals and Navigate to Registry -&gt; Group to check the groups.</p></li>
 <li><p>Refer the DCI API spec for the request and response structure</p></li>
-</ul>
+</ol>
 <p><em>NOTE: This documentation/implementation should be considered as an alpha release of the implementation of the DCI Interface Standards v1.0.</em></p>
 </div>
 </div>
