@@ -76,7 +76,7 @@ The code mentioned above will introduce a new field to the spp_audit_rule table 
 ],
 ```
 
-5. The following code can be added to the spp_audit_rule_views.xml file to show the active in the UI.
+5. The following code can be added to the `spp_audit_rule_views.xml` file to show the active in the UI.
 
 ```xml
  <record id="view_custom_audit_log_form" model="ir.ui.view">
