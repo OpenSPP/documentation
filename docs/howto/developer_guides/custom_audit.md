@@ -66,7 +66,7 @@ class CustomAuditRule(models.Model):
    active = fields.Boolean(default=True)
 ```
 
-The code mentioned above will introduce a new field to the spp_audit_rule table for storing the activeness of a rule. To understand further, refer to the following documentation [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html), [Link 2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html), [Link 3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
+The code mentioned above will introduce a new field to the `spp_audit_rule` table for storing the activeness of a rule. To understand further, refer to the following documentation [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html), [Link 2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html), [Link 3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
 
 4. To integrate new fields into the UI, the following steps should be followed. Create a new file called `views/spp_audit_rule_views.xml` in the module. Add the below code to the manifest file.
 
