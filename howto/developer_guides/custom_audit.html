@@ -758,7 +758,7 @@
 </div>
 <div class="section" id="customise-audit-log-module">
 <h2>Customise Audit Log Module<a class="headerlink" href="#customise-audit-log-module" title="Permalink to this headline">#</a></h2>
-<p>In a hypothetical scenario, customizing the audit module to include the active field of a rule serves as a practical example.</p>
+<p>In this hypothetical scenario, we are customizing the audit module to include the active field of a rule serves as a practical example.</p>
 <p>A working sample module for the described scenario can be accessed at the provided <a class="reference external" href="https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_audit_log_custom">link</a>.</p>
 <p>The key steps in module development are as follows:</p>
 <ol class="arabic simple">
@@ -771,7 +771,7 @@
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>To add the new field in the new module, develop a Python file named <code class="docutils literal notranslate"><span class="pre">spp_audit_rule.py</span></code> that extends <code class="docutils literal notranslate"><span class="pre">spp.audit.rule</span></code> and incorporate this file into <code class="docutils literal notranslate"><span class="pre">models/init.py</span></code>. The definition of the population fields should be implemented as demonstrated below.</p></li>
+<li><p>To add the new field in the new module, develop a Python file named <code class="docutils literal notranslate"><span class="pre">spp_audit_rule.py</span></code> that extends <code class="docutils literal notranslate"><span class="pre">spp.audit.rule</span></code> and incorporate this file into <code class="docutils literal notranslate"><span class="pre">models/init.py</span></code>. The definition of the active field should be implemented as demonstrated below.</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
 
@@ -781,7 +781,7 @@
    <span class="n">active</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The code mentioned above will introduce a new field to the <code class="docutils literal notranslate"><span class="pre">spp_audit_rule</span></code> table for storing the activeness of a rule. To understand further, refer to the following documentation <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">Link 1</a>, <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">Link 2</a>, <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">Link 3</a></p>
+<p>The code mentioned above will introduce a new field to the <code class="docutils literal notranslate"><span class="pre">spp_audit_rule</span></code> table for storing the state of a rule. To understand further, refer to the following documentation <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html">Link 1</a>, <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html">Link 2</a>, <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html">Link 3</a></p>
 <ol class="arabic simple" start="4">
 <li><p>To integrate new fields into the UI, the following steps should be followed. Create a new file called <code class="docutils literal notranslate"><span class="pre">views/spp_audit_rule_views.xml</span></code> in the module. Add the below code to the manifest file.</p></li>
 </ol>
@@ -791,7 +791,7 @@
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>The following code can be added to the <code class="docutils literal notranslate"><span class="pre">spp_audit_rule_views.xml</span></code> file to show the active in the UI.</p></li>
+<li><p>The following code can be added to the <code class="docutils literal notranslate"><span class="pre">spp_audit_rule_views.xml</span></code> file to show the active checkbox in the UI.</p></li>
 </ol>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"view_custom_audit_log_form"</span><span class="w"> </span><span class="na">model=</span><span class="s">"ir.ui.view"</span><span class="nt">&gt;</span>
 <span class="w">   </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>view_custom_audit_log_form<span class="nt">&lt;/field&gt;</span>
