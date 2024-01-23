@@ -39,7 +39,7 @@ The following article guides the reader in understanding how the existing audit 
 
 ## Customise Audit Log Module
 
-In a hypothetical scenario, customizing the audit module to include the active field of a rule serves as a practical example.
+In this hypothetical scenario, we are customizing the audit module to include the active field of a rule serves as a practical example.
 
 A working sample module for the described scenario can be accessed at the provided [link](https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_audit_log_custom).
 
@@ -55,7 +55,7 @@ The key steps in module development are as follows:
 ],
 ```
 
-3. To add the new field in the new module, develop a Python file named `spp_audit_rule.py` that extends `spp.audit.rule` and incorporate this file into `models/init.py`. The definition of the population fields should be implemented as demonstrated below.
+3. To add the new field in the new module, develop a Python file named `spp_audit_rule.py` that extends `spp.audit.rule` and incorporate this file into `models/init.py`. The definition of the active field should be implemented as demonstrated below.
 
 ```python
 from odoo import api, fields, models
@@ -66,7 +66,7 @@ class CustomAuditRule(models.Model):
    active = fields.Boolean(default=True)
 ```
 
-The code mentioned above will introduce a new field to the `spp_audit_rule` table for storing the activeness of a rule. To understand further, refer to the following documentation [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html), [Link 2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html), [Link 3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
+The code mentioned above will introduce a new field to the `spp_audit_rule` table for storing the state of a rule. To understand further, refer to the following documentation [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html), [Link 2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html), [Link 3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
 
 4. To integrate new fields into the UI, the following steps should be followed. Create a new file called `views/spp_audit_rule_views.xml` in the module. Add the below code to the manifest file.
 
@@ -76,7 +76,7 @@ The code mentioned above will introduce a new field to the `spp_audit_rule` tabl
 ],
 ```
 
-5. The following code can be added to the `spp_audit_rule_views.xml` file to show the active in the UI.
+5. The following code can be added to the `spp_audit_rule_views.xml` file to show the active checkbox in the UI.
 
 ```xml
  <record id="view_custom_audit_log_form" model="ir.ui.view">
