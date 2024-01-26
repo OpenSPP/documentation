@@ -17,12 +17,12 @@
 <meta content="website" property="og:type"/>
 <meta content="https://docs.openspp.org/howto/developer_guides/computed_fields.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="Computed fields in Odoo are dynamic fields whose values are calculated in real-time, rather than being directly stored in the database. These fields are essential for scenarios where the field valu..." property="og:description"/>
+<meta content="Computed fields in Odoo are dynamic fields whose values are calculated in real time rather than being directly stored in the database. These fields are essential for scenarios where the field value..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="Computed fields in Odoo are dynamic fields whose values are calculated in real-time, rather than being directly stored in the database. These fields are essential for scenarios where the field valu..." name="description"/>
+<meta content="Computed fields in Odoo are dynamic fields whose values are calculated in real time rather than being directly stored in the database. These fields are essential for scenarios where the field value..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Computed Fields — OpenSPP Documentation v1.1</title>
+<title>Computed Fields – How To — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -55,6 +55,8 @@
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
+<link href="module.html" rel="next" title="Module Development"/>
+<link href="development_setup.html" rel="prev" title="Development Setup"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -99,7 +101,7 @@
 </input></div>
 </form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item active">
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children">
 <a class="reference internal" href="../../getting_started/">
    Getting Started
@@ -204,16 +206,16 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children">
+<li class="toctree-l1 current active has-children">
 <a class="reference internal" href="../">
    How To
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
 <label for="toctree-checkbox-3">
 <i class="fas fa-chevron-down">
 </i>
 </label>
-<ul>
+<ul class="current">
 <li class="toctree-l2">
 <a class="reference internal" href="../developer_mode.html">
      Developer mode (debug mode)
@@ -222,6 +224,11 @@
 <li class="toctree-l2">
 <a class="reference internal" href="development_setup.html">
      Development Setup
+    </a>
+</li>
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
+     Computed Fields
     </a>
 </li>
 <li class="toctree-l2">
@@ -565,7 +572,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Computed Fields</span>
+<span>Computed Fields – How To</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -656,8 +663,13 @@
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#sample-use-case">
-   Sample Use-case
+<a class="reference internal nav-link" href="#sample-use-case-1">
+   Sample Use-case 1
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sample-use-case-2">
+   Sample Use-case 2
   </a>
 </li>
 </ul>
@@ -688,8 +700,13 @@
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#sample-use-case">
-   Sample Use-case
+<a class="reference internal nav-link" href="#sample-use-case-1">
+   Sample Use-case 1
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sample-use-case-2">
+   Sample Use-case 2
   </a>
 </li>
 </ul>
@@ -701,62 +718,63 @@
 <div>
 <div class="section" id="computed-fields">
 <h1>Computed Fields<a class="headerlink" href="#computed-fields" title="Permalink to this headline">#</a></h1>
-<p>Computed fields in Odoo are dynamic fields whose values are calculated in real-time, rather than being directly stored in the database. These fields are essential for scenarios where the field value is a result of a computation involving other field values.</p>
+<p>Computed fields in Odoo are dynamic fields whose values are calculated in real time rather than being directly stored in the database. These fields are essential for scenarios where the field value results from a computation involving other field values.</p>
 <div class="section" id="creating-a-computed-field">
 <h2>Creating a Computed Field<a class="headerlink" href="#creating-a-computed-field" title="Permalink to this headline">#</a></h2>
-<p>To define a computed field, you'll need to establish your field and assign a computation method to its compute attribute. This method calculates the field's value for every record.</p>
+<p>To define a computed field, you must establish your field and assign a computation method to its compute attribute. This method calculates the field's value for every record.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SampleModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-<span class="n">_name</span> <span class="o">=</span> <span class="s2">"sample.model"</span>
+   <span class="n">_name</span> <span class="o">=</span> <span class="s2">"sample.model"</span>
 
-<span class="n">total</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_total"</span><span class="p">)</span>
-<span class="n">amount</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">()</span>
+   <span class="n">total</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_total"</span><span class="p">)</span>
+   <span class="n">amount</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">_compute_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-        <span class="n">record</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">record</span><span class="o">.</span><span class="n">amount</span>
+   <span class="k">def</span> <span class="nf">_compute_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+       <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+           <span class="n">record</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">record</span><span class="o">.</span><span class="n">amount</span>
 </pre></div>
 </div>
 <p>Key Points</p>
 <ul class="simple">
 <li><p>The computation method, conventionally named with a <code class="docutils literal notranslate"><span class="pre">_compute</span></code> prefix, is responsible for setting the field's value.</p></li>
-<li><p>Within this method, self represents a recordset and should be iterable.</p></li>
-<li><p>Computed fields are executed only when accessed and their values are not stored in the database by default.</p></li>
+<li><p>Within this method, the self represents a record set and should be iterable.</p></li>
+<li><p>Computed fields are executed only when accessed, and their values are not stored in the database by default.</p></li>
 </ul>
-<p>In this example, the value of the computed field is based on the value of the “amount” field but it will only execute if the “total” field is called. In this case, the value of the “total” field will not update even after changing the value of the “amount” field. To solve this problem, add dependencies to the method.</p>
+<p>In this example, the value of the computed field is based on the value of the <code class="docutils literal notranslate"><span class="pre">amount</span></code> field, but it will only execute if the <code class="docutils literal notranslate"><span class="pre">total</span></code> field is called. In this case, the value of the <code class="docutils literal notranslate"><span class="pre">total</span></code> field will not update even after changing the value of the <code class="docutils literal notranslate"><span class="pre">amount</span></code> field. To solve this problem, add dependencies to the method.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SampleModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-<span class="n">_name</span> <span class="o">=</span> <span class="s2">"sample.model"</span>
+   <span class="n">_name</span> <span class="o">=</span> <span class="s2">"sample.model"</span>
 
-<span class="n">total</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_total"</span><span class="p">)</span>
-<span class="n">amount</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">()</span>
+   <span class="n">total</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_total"</span><span class="p">)</span>
+   <span class="n">amount</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">()</span>
 
-<span class="nd">@api</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">"amount"</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">_compute_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-        <span class="n">record</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">record</span><span class="o">.</span><span class="n">amount</span>
+   <span class="nd">@api</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">"amount"</span><span class="p">)</span>
+   <span class="k">def</span> <span class="nf">_compute_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+       <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+           <span class="n">record</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">record</span><span class="o">.</span><span class="n">amount</span>
 </pre></div>
 </div>
-<p>In this example, the method have a decorator “api.depends” with an argument “amount” which corresponds to the “amount” field, it declares that this method depends on the value of the “amount” field and this method will execute if “amount” field’s value is change thus “total” field will be updated.</p>
+<p>The method has a decorator <code class="docutils literal notranslate"><span class="pre">api.depends</span></code> with an argument <code class="docutils literal notranslate"><span class="pre">amount</span></code>, which corresponds to the <code class="docutils literal notranslate"><span class="pre">amount</span></code> field; it declares that this method depends on the value of the <code class="docutils literal notranslate"><span class="pre">amount</span></code> field and this method will execute if <code class="docutils literal notranslate"><span class="pre">amount</span></code> field's value is change thus <code class="docutils literal notranslate"><span class="pre">total</span></code> field will be updated.</p>
 </div>
 <div class="section" id="create-a-stored-computed-field">
 <h2>Create a Stored Computed Field<a class="headerlink" href="#create-a-stored-computed-field" title="Permalink to this headline">#</a></h2>
-<p>While a regular computed field's value is calculated on-the-fly, a stored computed field allows its computed value to be stored in the database. To create a stored computed field, add the store=True parameter to your field declaration.</p>
+<p>While a regular computed field's value is calculated on the fly, a stored computed field allows its computed value to be stored in the database. Add the store=True parameter to your field declaration to create a stored computed field field.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SampleModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-<span class="n">_name</span> <span class="o">=</span> <span class="s2">"sample.model"</span>
+   <span class="n">_name</span> <span class="o">=</span> <span class="s2">"sample.model"</span>
 
-<span class="n">total</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_total"</span><span class="p">,</span> <span class="n">store</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">amount</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">()</span>
+   <span class="n">total</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_total"</span><span class="p">,</span> <span class="n">store</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+   <span class="n">amount</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Float</span><span class="p">()</span>
 
-<span class="nd">@api</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">"amount"</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">_compute_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-        <span class="n">record</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">record</span><span class="o">.</span><span class="n">amount</span>
+   <span class="nd">@api</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">"amount"</span><span class="p">)</span>
+   <span class="k">def</span> <span class="nf">_compute_total</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+       <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+           <span class="n">record</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">record</span><span class="o">.</span><span class="n">amount</span>
 </pre></div>
 </div>
-<p>This approach ensures that the value of total is persisted in the database, reducing computation needs for repeated access.</p>
+<p>This approach ensures that the value of the total is persisted in the database, reducing computation needs for repeated access.</p>
+<p>This overview covers the basics of computed fields in Odoo. For a more in-depth understanding, including advanced techniques and best practices, refer to the official Odoo <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/09_compute_onchange.html">documentation</a> on computed fields.</p>
 </div>
-<div class="section" id="sample-use-case">
-<h2>Sample Use-case<a class="headerlink" href="#sample-use-case" title="Permalink to this headline">#</a></h2>
-<p>In many form applications, the birthdate is collected rather than the age. To dynamically calculate the age, a field named 'birthdate' is paired with a computed field 'age'. The 'age' field is generated using the '_compute_age' function, which calculates the age based on the current date and the input birthdate. This field is automatically updated whenever the 'birthdate' field changes, owing to its dependency on the birthdate data.</p>
+<div class="section" id="sample-use-case-1">
+<h2>Sample Use-case 1<a class="headerlink" href="#sample-use-case-1" title="Permalink to this headline">#</a></h2>
+<p>In a real-life scenario, most form applications have a birth date field and no age field since the age of a person can be determined by using the birth date. To apply this scenario in Odoo, we need to use a computed field.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
 
 <span class="k">class</span> <span class="nc">ResPartner</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
@@ -770,10 +788,48 @@
        <span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
        <span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
            <span class="n">rec</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">rec</span><span class="o">.</span><span class="n">birthdate</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="p">((</span><span class="n">today</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">rec</span><span class="o">.</span><span class="n">birthdate</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">rec</span><span class="o">.</span><span class="n">birthdate</span><span class="o">.</span><span class="n">day</span><span class="p">))</span>
-
 </pre></div>
 </div>
-<p>This overview covers the basics of computed fields in Odoo. For a more in-depth understanding, including advanced techniques and best practices, refer to the official Odoo documentation on computed fields <a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/09_compute_onchange.html#">here</a></p>
+<p>In this example, a birthdate field and a computed age field that depends on the birthdate field using the function "_compute_age" are created, "age" is computed by getting and using the current date and the date in the birthdate field. "age" field will be automatically updated every time the birthdate field is updated since the compute method have a dependencies to the birthdate field.</p>
+</div>
+<div class="section" id="sample-use-case-2">
+<h2>Sample Use-case 2<a class="headerlink" href="#sample-use-case-2" title="Permalink to this headline">#</a></h2>
+<p>In a hypothetical scenario, If a group/family should know the number of individuals that are under five years old, we need to use a computed field.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">G2PGroup</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+   <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"res.partner"</span>
+
+   <span class="n">z_ind_grp_num_children_below_5</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span>
+       <span class="s2">"Number of children below 5 years old"</span><span class="p">,</span>
+       <span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_ind_ind_grp_num_children_below_5"</span><span class="p">,</span>
+       <span class="n">help</span><span class="o">=</span><span class="s2">"Number of children below 5 years old"</span><span class="p">,</span>
+       <span class="n">store</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+       <span class="n">allow_filter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+   <span class="p">)</span>
+
+   <span class="nd">@api</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">"group_membership_ids"</span><span class="p">,</span> <span class="s2">"group_membership_ids.birthdate"</span><span class="p">)</span>
+   <span class="k">def</span> <span class="nf">_compute_ind_ind_grp_num_children_below_5</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+       <span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+           <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+           <span class="k">for</span> <span class="n">membership</span> <span class="ow">in</span> <span class="n">rec</span><span class="o">.</span><span class="n">group_membership_ids</span><span class="p">:</span>
+               <span class="k">try</span><span class="p">:</span>
+                   <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">membership</span><span class="o">.</span><span class="n">individual</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+               <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                   <span class="n">age</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+               <span class="k">if</span> <span class="n">age</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+                   <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span>
+           <span class="n">rec</span><span class="o">.</span><span class="n">z_ind_grp_num_children_below_5</span> <span class="o">=</span> <span class="n">total</span>
+</pre></div>
+</div>
+<p>In this example, a computed field with a computed function that is based on the member's birth date is created. A parameter "store=True" is added in the computed field to save this field in the database and query the field in the model.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">"res.partner"</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">([</span><span class="s2">"z_ind_grp_num_children_below_5"</span><span class="p">,</span> <span class="s2">"="</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">query</span> <span class="n">will</span> <span class="n">only</span> <span class="n">retrieve</span> <span class="n">records</span> <span class="k">with</span> <span class="n">one</span> <span class="n">child</span> <span class="n">under</span> <span class="n">five</span> <span class="n">years</span> <span class="n">old</span><span class="o">.</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -781,6 +837,20 @@
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
+<a class="left-prev" href="development_setup.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Development Setup</p>
+</div>
+</a>
+<a class="right-next" href="module.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Module Development</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
 </div>
 </footer>
 </div>
