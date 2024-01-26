@@ -6,12 +6,12 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 
 - {doc}`developer_mode`
 - {doc}`developer_guides/development_setup`
-- {doc}`developer_guides/troubleshooting`
+- {doc}`developer_guides/module`
 - {doc}`developer_guides/computed_fields`
+- {doc}`developer_guides/troubleshooting`
 
 **Customization**
 
-- {doc}`developer_guides/module`
 - {doc}`developer_guides/custom_areas`
 - {doc}`developer_guides/custom_audit`
 - {doc}`developer_guides/custom_cr`
@@ -39,8 +39,10 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 developer_mode
 developer_guides/development_setup
 developer_guides/computed_fields
-
 developer_guides/module
+developer_guides/troubleshooting
+
+#Customization
 developer_guides/custom_areas
 developer_guides/custom_audit
 developer_guides/custom_cr
@@ -53,7 +55,6 @@ developer_guides/dci
 
 developer_guides/oidc
 
-developer_guides/troubleshooting
 
 #developer_guides/custom_program
 #developer_guides/custom_cycle
