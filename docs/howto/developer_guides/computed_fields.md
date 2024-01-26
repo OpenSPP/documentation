@@ -21,7 +21,7 @@ class SampleModel(models.Model):
 Key Points
 
 - The computation method, conventionally named with a `_compute` prefix, is responsible for setting the field's value.
-- Within this method, the self represents a record set and should be iterable.
+- Within this method, the `self` represents a record set and should be iterable.
 - Computed fields are executed only when accessed, and their values are not stored in the database by default.
 
 In this example, the value of the computed field is based on the value of the `amount` field, but it will only execute if the `total` field is called. In this case, the value of the `total` field will not update even after changing the value of the `amount` field. To solve this problem, add dependencies to the method.
@@ -43,7 +43,7 @@ The method has a decorator `api.depends` with an argument `amount`, which corres
 
 ## Create a Stored Computed Field
 
-While a regular computed field's value is calculated on the fly, a stored computed field allows its computed value to be stored in the database. Add the store=True parameter to your field declaration to create a stored computed field field.
+While a regular computed field's value is calculated on the fly, a stored computed field allows its computed value to be stored in the database. Add the `store=True` parameter to your field declaration to create a stored computed field field.
 
 ```python
 class SampleModel(models.Model):
@@ -82,11 +82,11 @@ class ResPartner(models.Model):
            rec.age = today.year - rec.birthdate.year - ((today.month, today.day) < (rec.birthdate.month, rec.birthdate.day))
 ```
 
-In this example, a birthdate field and a computed age field that depends on the birthdate field using the function "\_compute_age" are created, "age" is computed by getting and using the current date and the date in the birthdate field. "age" field will be automatically updated every time the birthdate field is updated since the compute method have a dependencies to the birthdate field.
+In this example, a birthdate field and a computed age field that depends on the `birthdate` field using the function `_compute_age` are created, `age` is computed by getting and using the current date and the date in the `birthdate` field. `age` field will be automatically updated every time the `birthdate` field is updated since the compute method have a dependencies to the `birthdate` field.
 
 ## Sample Use-case 2
 
-In a hypothetical scenario, If a group/family should know the number of individuals that are under five years old, we need to use a computed field.
+In a hypothetical scenario, If a group/family should know the number of individuals that are under five years old, we can to use a computed field.
 
 ```python
 from odoo import api, fields, models
@@ -112,13 +112,12 @@ class G2PGroup(models.Model):
                except Exception:
                    age = None
 
-
                if age and age < 5:
                    total += 1
            rec.z_ind_grp_num_children_below_5 = total
 ```
 
-In this example, a computed field with a computed function that is based on the member's birth date is created. A parameter "store=True" is added in the computed field to save this field in the database and query the field in the model.
+In this example, a computed field with a computed function that is based on the member's birth date is created. A parameter `store=True` is added in the computed field to save this field in the database where it can be queried in the model.
 
 ```python
 self.env["res.partner"].search(["z_ind_grp_num_children_below_5", "=", 1])
