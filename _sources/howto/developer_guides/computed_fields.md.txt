@@ -2,7 +2,7 @@
 
 Computed fields in Odoo are dynamic fields whose values are calculated in real time rather than being directly stored in the database. These fields are essential for scenarios where the field value results from a computation involving other field values.
 
-## Creating a Computed Field
+## 1. Creating a Computed Field
 
 To define a computed field, you must establish your field and assign a computation method to its compute attribute. This method calculates the field's value for every record.
 
@@ -41,7 +41,7 @@ class SampleModel(models.Model):
 
 The method has a decorator `api.depends` with an argument `amount`, which corresponds to the `amount` field; it declares that this method depends on the value of the `amount` field and this method will execute if `amount` field's value is change thus `total` field will be updated.
 
-## Create a Stored Computed Field
+## 2. Create a Stored Computed Field
 
 While a regular computed field's value is calculated on the fly, a stored computed field allows its computed value to be stored in the database. Add the `store=True` parameter to your field declaration to create a stored computed field field.
 
@@ -62,7 +62,7 @@ This approach ensures that the value of the total is persisted in the database, 
 
 This overview covers the basics of computed fields in Odoo. For a more in-depth understanding, including advanced techniques and best practices, refer to the official Odoo [documentation](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/09_compute_onchange.html) on computed fields.
 
-## Sample Use-case 1
+## 3. Sample Use-case 1
 
 In a real-life scenario, most form applications have a birth date field and no age field since the age of a person can be determined by using the birth date. To apply this scenario in Odoo, we need to use a computed field.
 
@@ -84,7 +84,7 @@ class ResPartner(models.Model):
 
 In this example, a birthdate field and a computed age field that depends on the `birthdate` field using the function `_compute_age` are created, `age` is computed by getting and using the current date and the date in the `birthdate` field. `age` field will be automatically updated every time the `birthdate` field is updated since the compute method have a dependencies to the `birthdate` field.
 
-## Sample Use-case 2
+## 4. Sample Use-case 2
 
 In a hypothetical scenario, If a group/family should know the number of individuals that are under five years old, we can to use a computed field.
 
@@ -121,6 +121,6 @@ In this example, a computed field with a computed function that is based on the 
 
 ```python
 self.env["res.partner"].search(["z_ind_grp_num_children_below_5", "=", 1])
+```
 
 The above query will only retrieve records with one child under five years old.
-```
