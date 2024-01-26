@@ -7,6 +7,7 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 - {doc}`developer_mode`
 - {doc}`developer_guides/development_setup`
 - {doc}`developer_guides/troubleshooting`
+- {doc}`developer_guides/computed_fields`
 
 **Customization**
 
@@ -37,6 +38,7 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 #Developer Guides
 developer_mode
 developer_guides/development_setup
+developer_guides/computed_fields
 
 developer_guides/module
 developer_guides/custom_areas
@@ -55,6 +57,5 @@ developer_guides/troubleshooting
 
 #developer_guides/custom_program
 #developer_guides/custom_cycle
-#developer_guides/computed_fields
 #developer_guides/implmenting_pmt
 ```

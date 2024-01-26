@@ -17,9 +17,9 @@ The following article guides the reader in understanding how the existing audit 
 
 4. Search and initiate installation of the following modules, this process will also install all of their associated modules:
 
-- SPP Audit Config
-- SPP Audit Log
-- SPP Audit Post
+   - SPP Audit Config
+   - SPP Audit Log
+   - SPP Audit Post
 
 ![](custom_audit/0.png)
 
