@@ -736,7 +736,7 @@
 <p>Key Points</p>
 <ul class="simple">
 <li><p>The computation method, conventionally named with a <code class="docutils literal notranslate"><span class="pre">_compute</span></code> prefix, is responsible for setting the field's value.</p></li>
-<li><p>Within this method, the self represents a record set and should be iterable.</p></li>
+<li><p>Within this method, the <code class="docutils literal notranslate"><span class="pre">self</span></code> represents a record set and should be iterable.</p></li>
 <li><p>Computed fields are executed only when accessed, and their values are not stored in the database by default.</p></li>
 </ul>
 <p>In this example, the value of the computed field is based on the value of the <code class="docutils literal notranslate"><span class="pre">amount</span></code> field, but it will only execute if the <code class="docutils literal notranslate"><span class="pre">total</span></code> field is called. In this case, the value of the <code class="docutils literal notranslate"><span class="pre">total</span></code> field will not update even after changing the value of the <code class="docutils literal notranslate"><span class="pre">amount</span></code> field. To solve this problem, add dependencies to the method.</p>
@@ -756,7 +756,7 @@
 </div>
 <div class="section" id="create-a-stored-computed-field">
 <h2>Create a Stored Computed Field<a class="headerlink" href="#create-a-stored-computed-field" title="Permalink to this headline">#</a></h2>
-<p>While a regular computed field's value is calculated on the fly, a stored computed field allows its computed value to be stored in the database. Add the store=True parameter to your field declaration to create a stored computed field field.</p>
+<p>While a regular computed field's value is calculated on the fly, a stored computed field allows its computed value to be stored in the database. Add the <code class="docutils literal notranslate"><span class="pre">store=True</span></code> parameter to your field declaration to create a stored computed field field.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SampleModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
    <span class="n">_name</span> <span class="o">=</span> <span class="s2">"sample.model"</span>
 
@@ -790,11 +790,11 @@
            <span class="n">rec</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">rec</span><span class="o">.</span><span class="n">birthdate</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="p">((</span><span class="n">today</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">rec</span><span class="o">.</span><span class="n">birthdate</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">rec</span><span class="o">.</span><span class="n">birthdate</span><span class="o">.</span><span class="n">day</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>In this example, a birthdate field and a computed age field that depends on the birthdate field using the function "_compute_age" are created, "age" is computed by getting and using the current date and the date in the birthdate field. "age" field will be automatically updated every time the birthdate field is updated since the compute method have a dependencies to the birthdate field.</p>
+<p>In this example, a birthdate field and a computed age field that depends on the <code class="docutils literal notranslate"><span class="pre">birthdate</span></code> field using the function <code class="docutils literal notranslate"><span class="pre">_compute_age</span></code> are created, <code class="docutils literal notranslate"><span class="pre">age</span></code> is computed by getting and using the current date and the date in the <code class="docutils literal notranslate"><span class="pre">birthdate</span></code> field. <code class="docutils literal notranslate"><span class="pre">age</span></code> field will be automatically updated every time the <code class="docutils literal notranslate"><span class="pre">birthdate</span></code> field is updated since the compute method have a dependencies to the <code class="docutils literal notranslate"><span class="pre">birthdate</span></code> field.</p>
 </div>
 <div class="section" id="sample-use-case-2">
 <h2>Sample Use-case 2<a class="headerlink" href="#sample-use-case-2" title="Permalink to this headline">#</a></h2>
-<p>In a hypothetical scenario, If a group/family should know the number of individuals that are under five years old, we need to use a computed field.</p>
+<p>In a hypothetical scenario, If a group/family should know the number of individuals that are under five years old, we can to use a computed field.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
 
 <span class="k">class</span> <span class="nc">G2PGroup</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
@@ -818,13 +818,12 @@
                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
                    <span class="n">age</span> <span class="o">=</span> <span class="kc">None</span>
 
-
                <span class="k">if</span> <span class="n">age</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
                    <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span>
            <span class="n">rec</span><span class="o">.</span><span class="n">z_ind_grp_num_children_below_5</span> <span class="o">=</span> <span class="n">total</span>
 </pre></div>
 </div>
-<p>In this example, a computed field with a computed function that is based on the member's birth date is created. A parameter "store=True" is added in the computed field to save this field in the database and query the field in the model.</p>
+<p>In this example, a computed field with a computed function that is based on the member's birth date is created. A parameter <code class="docutils literal notranslate"><span class="pre">store=True</span></code> is added in the computed field to save this field in the database where it can be queried in the model.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">"res.partner"</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">([</span><span class="s2">"z_ind_grp_num_children_below_5"</span><span class="p">,</span> <span class="s2">"="</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 
 <span class="n">The</span> <span class="n">above</span> <span class="n">query</span> <span class="n">will</span> <span class="n">only</span> <span class="n">retrieve</span> <span class="n">records</span> <span class="k">with</span> <span class="n">one</span> <span class="n">child</span> <span class="n">under</span> <span class="n">five</span> <span class="n">years</span> <span class="n">old</span><span class="o">.</span>
