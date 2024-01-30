@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Computed Fields" property="og:title"/>
+<meta content="Indicators" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/howto/developer_guides/computed_fields.html" property="og:url"/>
+<meta content="https://docs.openspp.org/howto/developer_guides/indicators.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="Computed fields in Odoo are dynamic fields whose values are calculated in real time rather than being directly stored in the database. These fields are essential for scenarios where the field value..." property="og:description"/>
+<meta content="The indicators in OpenSPP are built using computed fields. The computed fields in Odoo are dynamic fields whose values are calculated in real time rather than being directly stored in the database...." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="Computed fields in Odoo are dynamic fields whose values are calculated in real time rather than being directly stored in the database. These fields are essential for scenarios where the field value..." name="description"/>
+<meta content="The indicators in OpenSPP are built using computed fields. The computed fields in Odoo are dynamic fields whose values are calculated in real time rather than being directly stored in the database...." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Computed Fields – How To — OpenSPP Documentation v1.1</title>
+<title>Indicators – How To — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -50,7 +50,7 @@
 <script src="../../_static/patch_scrollToActive.js"></script>
 <script src="../../_static/search_shortcut.js"></script>
 <script src="../../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/howto/developer_guides/computed_fields.html" rel="canonical">
+<link href="https://docs.openspp.org/howto/developer_guides/indicators.html" rel="canonical">
 <link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.1" type="application/opensearchdescription+xml"/>
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
@@ -228,7 +228,7 @@
 </li>
 <li class="toctree-l2 current active">
 <a class="current reference internal" href="#">
-     Computed Fields
+     Indicators
     </a>
 </li>
 <li class="toctree-l2">
@@ -572,7 +572,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Computed Fields – How To</span>
+<span>Indicators – How To</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -595,7 +595,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/computed_fields.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/indicators.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -603,7 +603,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/developer_guides/computed_fields.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/developer_guides/indicators.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -620,7 +620,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/developer_guides/computed_fields.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/developer_guides/indicators.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -680,7 +680,7 @@
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Computed Fields</h1>
+<h1>Indicators</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
@@ -716,9 +716,9 @@
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="computed-fields">
-<h1>Computed Fields<a class="headerlink" href="#computed-fields" title="Permalink to this headline">#</a></h1>
-<p>Computed fields in Odoo are dynamic fields whose values are calculated in real time rather than being directly stored in the database. These fields are essential for scenarios where the field value results from a computation involving other field values.</p>
+<div class="section" id="indicators">
+<h1>Indicators<a class="headerlink" href="#indicators" title="Permalink to this headline">#</a></h1>
+<p>The indicators in OpenSPP are built using computed fields. The computed fields in Odoo are dynamic fields whose values are calculated in real time rather than being directly stored in the database. These fields are essential for scenarios where the field value results from a computation involving other field values.</p>
 <div class="section" id="creating-a-computed-field">
 <h2>1. Creating a Computed Field<a class="headerlink" href="#creating-a-computed-field" title="Permalink to this headline">#</a></h2>
 <p>To define a computed field, you must establish your field and assign a computation method to its compute attribute. This method calculates the field's value for every record.</p>
@@ -824,6 +824,7 @@
 </pre></div>
 </div>
 <p>In this example, a computed field with a computed function that is based on the member's birth date is created. A parameter <code class="docutils literal notranslate"><span class="pre">store=True</span></code> is added in the computed field to save this field in the database where it can be queried in the model.</p>
+<p>Further, using the <code class="docutils literal notranslate"><span class="pre">z_ind_grp</span></code> will allow you to add the indicator at the group level as shown in the above example.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">"res.partner"</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">([</span><span class="s2">"z_ind_grp_num_children_below_5"</span><span class="p">,</span> <span class="s2">"="</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
