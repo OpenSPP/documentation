@@ -1,6 +1,6 @@
-# Computed Fields
+# Indicators
 
-Computed fields in Odoo are dynamic fields whose values are calculated in real time rather than being directly stored in the database. These fields are essential for scenarios where the field value results from a computation involving other field values.
+The indicators in OpenSPP are built using computed fields. The computed fields in Odoo are dynamic fields whose values are calculated in real time rather than being directly stored in the database. These fields are essential for scenarios where the field value results from a computation involving other field values.
 
 ## 1. Creating a Computed Field
 
@@ -118,6 +118,8 @@ class G2PGroup(models.Model):
 ```
 
 In this example, a computed field with a computed function that is based on the member's birth date is created. A parameter `store=True` is added in the computed field to save this field in the database where it can be queried in the model.
+
+Further, using the `z_ind_grp` will allow you to add the indicator at the group level as shown in the above example.
 
 ```python
 self.env["res.partner"].search(["z_ind_grp_num_children_below_5", "=", 1])
