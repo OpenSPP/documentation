@@ -1,6 +1,6 @@
-# Beneficiary portal authentication using Keycloak
+# Beneficiary portal authentication
 
-In this article, the steps will be given on how to add a single sign-on to a beneficiary portal which improves user experience. This guide helps us to create a front-end application where a beneficiary registered to OpenSPP can log in using Keycloak.
+In this article, the steps will be given on how to add a single sign-on to a beneficiary portal which improves user experience. This guide helps us to create a front-end application where a beneficiary registered in OpenSPP and can log in using Keycloak.
 
 ## Prerequisites
 
