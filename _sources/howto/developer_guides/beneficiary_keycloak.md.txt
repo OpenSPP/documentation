@@ -20,6 +20,8 @@ Adapters are libraries that make it possible to use Keycloak in securing service
 
 ## Step-by-step
 
+A working sample application can be accessed at the provided [link](https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/integrations/kc-react-application).
+
 1. Create a new React application.
 
 ```bash
