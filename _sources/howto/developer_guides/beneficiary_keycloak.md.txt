@@ -22,30 +22,30 @@ Adapters are libraries that make it possible to use Keycloak in securing service
 
 1. Create a new React application.
 
-```shell
+```bash
 npx create-react-app kc-react-app
 cd kc-react-app
 ```
 
 2. Install the Keycloak adapter for React. Using npm as the package manager, we install the keycloak-js, the adapter for client-side applications.
 
-```shell
+```bash
 npm install keycloak-js
 ```
 
 3. Download client adapter settings from your Keycloak server. The JSON data contains the client settings we need to add to our application’s Keycloak configuration.
 
-3.1 Log in to your Keycloak server. Select the `realm` and click the `Client` in the side menu.
-![](beneficiary_keycloak/3.1.png)
-3.2 Click the `client` you are using with your front-end application. You will be redirected to the `client` page.
-3.3 Click the `Actions` button on the upper right. Click the `Download adapter config`. A dialog will appear with the adapter configuration settings. Click the `Download` button. A file is downloaded to your Downloads folder.
-![](beneficiary_keycloak/3.3.png)
-3.4 Copy the downloaded file to your `public` folder.
-![](beneficiary_keycloak/3.4.png)
+- Log in to your Keycloak server. Select the `realm` and click the `Client` in the side menu.
+  ![](beneficiary_keycloak/3.1.png)
+- Click the `client` you are using with your front-end application. You will be redirected to the `client` page.
+- Click the `Actions` button on the upper right. Click the `Download adapter config`. A dialog will appear with the adapter configuration settings. Click the `Download` button. A file is downloaded to your Downloads folder.
+  ![](beneficiary_keycloak/3.3.png)
+- Copy the downloaded file to your `public` folder.
+  ![](beneficiary_keycloak/3.4.png)
 
 4. Integrate Keycloak with the front-end application.
 
-4.1 Create a new file, `keycloak.js` in your `src` folder with the following code. Substitute the values from the downloaded configuration settings. The `url` is the value of the `auth-server-url` key. The `clientId` is the resource.
+- Create a new file, `keycloak.js` in your `src` folder with the following code. Substitute the values from the downloaded configuration settings. The `url` is the value of the `auth-server-url` key. The `clientId` is the resource.
 
 ```js
 import Keycloak from "keycloak-js";
@@ -60,7 +60,7 @@ const keycloak = new Keycloak({
 export default keycloak;
 ```
 
-4.2 Go to your `index.js` file and initialize Keycloak.
+- Go to your `index.js` file and initialize Keycloak.
 
 ```js
 import React from "react";
@@ -97,7 +97,7 @@ reportWebVitals();
 
 5. Update your components to use Keycloak.
 
-5.1 Update your `src/App.js` file and add the following code. If the user is successfully authenticated, a logout button is displayed otherwise the login button is visible. Clicking the login button redirects the user to the Keycloak login page.
+- Update your `src/App.js` file and add the following code. If the user is successfully authenticated, a logout button is displayed otherwise the login button is visible. Clicking the login button redirects the user to the Keycloak login page.
 
 ```js
 import "./App.css";
@@ -125,12 +125,12 @@ export default App;
 
 6. Run your application
 
-6.1 Run the following in your command line or terminal.
+- Run the following in your command line or terminal.
 
-```shell
+```bash
 npm start
 ```
 
-6.2 You will be redirected to the browser. Click the `login` button, and the Keycloak login page will appear.
+- You will be redirected to the browser. Click the `login` button, and the Keycloak login page will appear.
 
 ![](beneficiary_keycloak/6.2.png)

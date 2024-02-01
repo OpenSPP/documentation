@@ -747,30 +747,34 @@
 <ol class="arabic simple">
 <li><p>Create a new React application.</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>npx<span class="w"> </span>create-react-app<span class="w"> </span>kc-react-app
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npx<span class="w"> </span>create-react-app<span class="w"> </span>kc-react-app
 <span class="nb">cd</span><span class="w"> </span>kc-react-app
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Install the Keycloak adapter for React. Using npm as the package manager, we install the keycloak-js, the adapter for client-side applications.</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>npm<span class="w"> </span>install<span class="w"> </span>keycloak-js
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm<span class="w"> </span>install<span class="w"> </span>keycloak-js
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>Download client adapter settings from your Keycloak server. The JSON data contains the client settings we need to add to our application’s Keycloak configuration.</p></li>
 </ol>
-<p>3.1 Log in to your Keycloak server. Select the <code class="docutils literal notranslate"><span class="pre">realm</span></code> and click the <code class="docutils literal notranslate"><span class="pre">Client</span></code> in the side menu.
-<img alt="" src="../../_images/3.1.png"/>
-3.2 Click the <code class="docutils literal notranslate"><span class="pre">client</span></code> you are using with your front-end application. You will be redirected to the <code class="docutils literal notranslate"><span class="pre">client</span></code> page.
-3.3 Click the <code class="docutils literal notranslate"><span class="pre">Actions</span></code> button on the upper right. Click the <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">adapter</span> <span class="pre">config</span></code>. A dialog will appear with the adapter configuration settings. Click the <code class="docutils literal notranslate"><span class="pre">Download</span></code> button. A file is downloaded to your Downloads folder.
-<img alt="" src="../../_images/3.3.png"/>
-3.4 Copy the downloaded file to your <code class="docutils literal notranslate"><span class="pre">public</span></code> folder.
-<img alt="" src="../../_images/3.4.png"/></p>
+<ul class="simple">
+<li><p>Log in to your Keycloak server. Select the <code class="docutils literal notranslate"><span class="pre">realm</span></code> and click the <code class="docutils literal notranslate"><span class="pre">Client</span></code> in the side menu.
+<img alt="" src="../../_images/3.1.png"/></p></li>
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">client</span></code> you are using with your front-end application. You will be redirected to the <code class="docutils literal notranslate"><span class="pre">client</span></code> page.</p></li>
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">Actions</span></code> button on the upper right. Click the <code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">adapter</span> <span class="pre">config</span></code>. A dialog will appear with the adapter configuration settings. Click the <code class="docutils literal notranslate"><span class="pre">Download</span></code> button. A file is downloaded to your Downloads folder.
+<img alt="" src="../../_images/3.3.png"/></p></li>
+<li><p>Copy the downloaded file to your <code class="docutils literal notranslate"><span class="pre">public</span></code> folder.
+<img alt="" src="../../_images/3.4.png"/></p></li>
+</ul>
 <ol class="arabic simple" start="4">
 <li><p>Integrate Keycloak with the front-end application.</p></li>
 </ol>
-<p>4.1 Create a new file, <code class="docutils literal notranslate"><span class="pre">keycloak.js</span></code> in your <code class="docutils literal notranslate"><span class="pre">src</span></code> folder with the following code. Substitute the values from the downloaded configuration settings. The <code class="docutils literal notranslate"><span class="pre">url</span></code> is the value of the <code class="docutils literal notranslate"><span class="pre">auth-server-url</span></code> key. The <code class="docutils literal notranslate"><span class="pre">clientId</span></code> is the resource.</p>
+<ul class="simple">
+<li><p>Create a new file, <code class="docutils literal notranslate"><span class="pre">keycloak.js</span></code> in your <code class="docutils literal notranslate"><span class="pre">src</span></code> folder with the following code. Substitute the values from the downloaded configuration settings. The <code class="docutils literal notranslate"><span class="pre">url</span></code> is the value of the <code class="docutils literal notranslate"><span class="pre">auth-server-url</span></code> key. The <code class="docutils literal notranslate"><span class="pre">clientId</span></code> is the resource.</p></li>
+</ul>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">Keycloak</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"keycloak-js"</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">keycloak</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Keycloak</span><span class="p">({</span>
@@ -783,7 +787,9 @@
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">keycloak</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>4.2 Go to your <code class="docutils literal notranslate"><span class="pre">index.js</span></code> file and initialize Keycloak.</p>
+<ul class="simple">
+<li><p>Go to your <code class="docutils literal notranslate"><span class="pre">index.js</span></code> file and initialize Keycloak.</p></li>
+</ul>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react-dom/client"</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="s2">"./index.css"</span><span class="p">;</span>
@@ -819,7 +825,9 @@
 <ol class="arabic simple" start="5">
 <li><p>Update your components to use Keycloak.</p></li>
 </ol>
-<p>5.1 Update your <code class="docutils literal notranslate"><span class="pre">src/App.js</span></code> file and add the following code. If the user is successfully authenticated, a logout button is displayed otherwise the login button is visible. Clicking the login button redirects the user to the Keycloak login page.</p>
+<ul class="simple">
+<li><p>Update your <code class="docutils literal notranslate"><span class="pre">src/App.js</span></code> file and add the following code. If the user is successfully authenticated, a logout button is displayed otherwise the login button is visible. Clicking the login button redirects the user to the Keycloak login page.</p></li>
+</ul>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="s2">"./App.css"</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="nx">keycloak</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./keycloak"</span><span class="p">;</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -846,11 +854,15 @@
 <ol class="arabic simple" start="6">
 <li><p>Run your application</p></li>
 </ol>
-<p>6.1 Run the following in your command line or terminal.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>npm<span class="w"> </span>start
+<ul class="simple">
+<li><p>Run the following in your command line or terminal.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm<span class="w"> </span>start
 </pre></div>
 </div>
-<p>6.2 You will be redirected to the browser. Click the <code class="docutils literal notranslate"><span class="pre">login</span></code> button, and the Keycloak login page will appear.</p>
+<ul class="simple">
+<li><p>You will be redirected to the browser. Click the <code class="docutils literal notranslate"><span class="pre">login</span></code> button, and the Keycloak login page will appear.</p></li>
+</ul>
 <p><img alt="" src="../../_images/6.2.png"/></p>
 </div>
 </div>
