@@ -1,6 +1,6 @@
-# Beneficiary authentication using Keycloak
+# Beneficiary portal authentication using Keycloak
 
-In this article, the steps will be given to adding a single sign-on to a beneficiary portal which improves user experience. This guide helps us to create a front-end application where a beneficiary registered to OpenSPP can log in using Keycloak.
+In this article, the steps will be given on how to add a single sign-on to a beneficiary portal which improves user experience. This guide helps us to create a front-end application where a beneficiary registered to OpenSPP can log in using Keycloak.
 
 ## Prerequisites
 
@@ -12,11 +12,11 @@ In this article, the steps will be given to adding a single sign-on to a benefic
 
 ## Objective
 
-After completing this guide, users can create a front-end app using React and can log in to the front-end application using Keycloak.
+After completing this guide, developer can create a front-end app using React and can log in to the front-end application using Keycloak.
 
 ## Terminology
 
-Adapters are libraries that make it possible to use Keycloak in securing services and applications.
+`Adapters` are libraries that make it possible to use Keycloak in securing services and applications.
 
 ## Step-by-step
 
@@ -29,7 +29,7 @@ npx create-react-app kc-react-app
 cd kc-react-app
 ```
 
-2. Install the Keycloak adapter for React. Using npm as the package manager, we install the keycloak-js, the adapter for client-side applications.
+2. Install the Keycloak adapter for React. Using `npm` as the package manager, we install the `keycloak-js`, the adapter for client-side applications.
 
 ```bash
 npm install keycloak-js
