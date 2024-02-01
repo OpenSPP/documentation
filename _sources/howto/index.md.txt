@@ -27,6 +27,7 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 **Integration**
 
 - {doc}`developer_guides/oidc`
+- {doc}`developer_guides/beneficiary_keycloak`
 
 ```{toctree}
 :maxdepth: 2
@@ -54,6 +55,7 @@ developer_guides/rest_api
 developer_guides/dci
 
 developer_guides/oidc
+developer_guides/beneficiary_keycloak
 
 
 #developer_guides/custom_program
