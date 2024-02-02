@@ -17,10 +17,10 @@
 <meta content="website" property="og:type"/>
 <meta content="https://docs.openspp.org/howto/developer_guides/custom_registry_tab_fields.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="The following article guides the reader in understanding how the registry module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. In this arti..." property="og:description"/>
+<meta content="The following article guides the reader in understanding how the registry’s tabs and fields can be customized. In this article, we will look at how to add and remove the tabs and fields in the regi..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="The following article guides the reader in understanding how the registry module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. In this arti..." name="description"/>
+<meta content="The following article guides the reader in understanding how the registry’s tabs and fields can be customized. In this article, we will look at how to add and remove the tabs and fields in the regi..." name="description"/>
 <meta content="en_US" property="og:locale"/>
 <title>Customize Registry's Tabs/Fields – How To — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
@@ -718,18 +718,18 @@
 <div>
 <div class="section" id="customize-registry-s-tabs-fields">
 <h1>Customize Registry's Tabs/Fields<a class="headerlink" href="#customize-registry-s-tabs-fields" title="Permalink to this headline">#</a></h1>
-<p>The following article guides the reader in understanding how the registry module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. In this article, we will look at how to add and remove the tabs and fields in the registry module.</p>
+<p>The following article guides the reader in understanding how the registry’s tabs and fields can be customized. In this article, we will look at how to add and remove the tabs and fields in the registry module.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Knowledge of Python, Odoo, XML, Xpaths.</p></li>
 <li><p>To set up OpenSPP for development, please refer to the <a class="reference external" href="https://docs.openspp.org/howto/developer_guides/development_setup.html">Developer Guide</a></p></li>
-<li><p>Refer <a class="reference external" href="https://docs.openspp.org/howto/developer_guides/custom_registry.html">Customize Registry</a></p></li>
+<li><p>Refer <a class="reference external" href="https://docs.openspp.org/howto/developer_guides/custom_registry.html">Customize Registry</a> for basic customizations of Registry module</p></li>
 </ul>
 </div>
 <div class="section" id="adding-a-new-tab-and-a-field">
 <h2>Adding a new tab and a field<a class="headerlink" href="#adding-a-new-tab-and-a-field" title="Permalink to this headline">#</a></h2>
-<p>To add a new tab and a new field in Group or/and in Individual Page, use xpath and view inheritance. Check sample code below.</p>
+<p>To add a new tab and a new field in Group or/and in Individual Page, use xpath and view inheritance. Check the code samples below.</p>
 <ol class="arabic simple">
 <li><p>Example 1</p></li>
 </ol>
@@ -777,7 +777,7 @@
 </div>
 <div class="section" id="removing-an-existing-tab-and-a-field">
 <h2>Removing an existing tab and a field<a class="headerlink" href="#removing-an-existing-tab-and-a-field" title="Permalink to this headline">#</a></h2>
-<p>In removing an existing tab or existing field, use xpath with a position <code class="docutils literal notranslate"><span class="pre">attributes</span></code> and add <code class="docutils literal notranslate"><span class="pre">invisible</span></code> attribute to the tab or field you want to remove. Check below sample code</p>
+<p>In removing an existing tab or existing field, use xpath with a position <code class="docutils literal notranslate"><span class="pre">attributes</span></code> and add <code class="docutils literal notranslate"><span class="pre">invisible</span></code> attribute to the tab or field you want to remove. Check the code samples below.</p>
 <ol class="arabic simple">
 <li><p>Example 1</p></li>
 </ol>

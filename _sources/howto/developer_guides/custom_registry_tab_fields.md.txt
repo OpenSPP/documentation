@@ -1,16 +1,16 @@
 # Customize Registry's Tabs/Fields
 
-The following article guides the reader in understanding how the registry module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. In this article, we will look at how to add and remove the tabs and fields in the registry module.
+The following article guides the reader in understanding how the registry’s tabs and fields can be customized. In this article, we will look at how to add and remove the tabs and fields in the registry module.
 
 ## Prerequisites
 
 - Knowledge of Python, Odoo, XML, Xpaths.
 - To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
-- Refer [Customize Registry](https://docs.openspp.org/howto/developer_guides/custom_registry.html)
+- Refer [Customize Registry](https://docs.openspp.org/howto/developer_guides/custom_registry.html) for basic customizations of Registry module
 
 ## Adding a new tab and a field
 
-To add a new tab and a new field in Group or/and in Individual Page, use xpath and view inheritance. Check sample code below.
+To add a new tab and a new field in Group or/and in Individual Page, use xpath and view inheritance. Check the code samples below.
 
 1. Example 1
 
@@ -62,7 +62,7 @@ This code introduces a new tab called "Disability Information" to the Individual
 
 ## Removing an existing tab and a field
 
-In removing an existing tab or existing field, use xpath with a position `attributes` and add `invisible` attribute to the tab or field you want to remove. Check below sample code
+In removing an existing tab or existing field, use xpath with a position `attributes` and add `invisible` attribute to the tab or field you want to remove. Check the code samples below.
 
 1. Example 1
 
