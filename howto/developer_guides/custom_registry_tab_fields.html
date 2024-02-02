@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Customize REST API" property="og:title"/>
+<meta content="Customize Registry's Tabs/Fields" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/howto/developer_guides/rest_api.html" property="og:url"/>
+<meta content="https://docs.openspp.org/howto/developer_guides/custom_registry_tab_fields.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="The following article guides the reader to understand how the REST API module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. Prerequisites: ..." property="og:description"/>
+<meta content="The following article guides the reader in understanding how the registry module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. In this arti..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="The following article guides the reader to understand how the REST API module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. Prerequisites: ..." name="description"/>
+<meta content="The following article guides the reader in understanding how the registry module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. In this arti..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Customize REST API – How To — OpenSPP Documentation v1.1</title>
+<title>Customize Registry's Tabs/Fields – How To — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -50,13 +50,13 @@
 <script src="../../_static/patch_scrollToActive.js"></script>
 <script src="../../_static/search_shortcut.js"></script>
 <script src="../../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/howto/developer_guides/rest_api.html" rel="canonical">
+<link href="https://docs.openspp.org/howto/developer_guides/custom_registry_tab_fields.html" rel="canonical">
 <link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.1" type="application/opensearchdescription+xml"/>
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
-<link href="dci.html" rel="next" title="Implementation of DCI Specification"/>
-<link href="custom_service_points.html" rel="prev" title="Customize Service Points"/>
+<link href="custom_service_points.html" rel="next" title="Customize Service Points"/>
+<link href="custom_registry.html" rel="prev" title="Customize Registry"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -266,8 +266,8 @@
      Customize Registry
     </a>
 </li>
-<li class="toctree-l2">
-<a class="reference internal" href="custom_registry_tab_fields.html">
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
      Customize Registry's Tabs/Fields
     </a>
 </li>
@@ -276,8 +276,8 @@
      Customize Service Points
     </a>
 </li>
-<li class="toctree-l2 current active">
-<a class="current reference internal" href="#">
+<li class="toctree-l2">
+<a class="reference internal" href="rest_api.html">
      Customize REST API
     </a>
 </li>
@@ -582,7 +582,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Customize REST API – How To</span>
+<span>Customize Registry's Tabs/Fields – How To</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -605,7 +605,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/rest_api.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/custom_registry_tab_fields.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -613,7 +613,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/developer_guides/rest_api.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?howto/developer_guides/custom_registry_tab_fields.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -630,7 +630,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/developer_guides/rest_api.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/howto/developer_guides/custom_registry_tab_fields.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -668,13 +668,13 @@
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#if-the-rest-api-module-is-not-installed">
-   If the REST API module is not installed
+<a class="reference internal nav-link" href="#adding-a-new-tab-and-a-field">
+   Adding a new tab and a field
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#id1">
-   Customize REST API
+<a class="reference internal nav-link" href="#removing-an-existing-tab-and-a-field">
+   Removing an existing tab and a field
   </a>
 </li>
 </ul>
@@ -685,7 +685,7 @@
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Customize REST API</h1>
+<h1>Customize Registry's Tabs/Fields</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
@@ -700,13 +700,13 @@
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#if-the-rest-api-module-is-not-installed">
-   If the REST API module is not installed
+<a class="reference internal nav-link" href="#adding-a-new-tab-and-a-field">
+   Adding a new tab and a field
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#id1">
-   Customize REST API
+<a class="reference internal nav-link" href="#removing-an-existing-tab-and-a-field">
+   Removing an existing tab and a field
   </a>
 </li>
 </ul>
@@ -716,79 +716,114 @@
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="customize-rest-api">
-<h1>Customize REST API<a class="headerlink" href="#customize-rest-api" title="Permalink to this headline">#</a></h1>
-<p>The following article guides the reader to understand how the REST API module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example.</p>
+<div class="section" id="customize-registry-s-tabs-fields">
+<h1>Customize Registry's Tabs/Fields<a class="headerlink" href="#customize-registry-s-tabs-fields" title="Permalink to this headline">#</a></h1>
+<p>The following article guides the reader in understanding how the registry module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. In this article, we will look at how to add and remove the tabs and fields in the registry module.</p>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Knowledge of Python, Odoo, XML, Xpaths.</p></li>
 <li><p>To set up OpenSPP for development, please refer to the <a class="reference external" href="https://docs.openspp.org/howto/developer_guides/development_setup.html">Developer Guide</a></p></li>
+<li><p>Refer <a class="reference external" href="https://docs.openspp.org/howto/developer_guides/custom_registry.html">Customize Registry</a></p></li>
 </ul>
 </div>
-<div class="section" id="if-the-rest-api-module-is-not-installed">
-<h2>If the REST API module is not installed<a class="headerlink" href="#if-the-rest-api-module-is-not-installed" title="Permalink to this headline">#</a></h2>
+<div class="section" id="adding-a-new-tab-and-a-field">
+<h2>Adding a new tab and a field<a class="headerlink" href="#adding-a-new-tab-and-a-field" title="Permalink to this headline">#</a></h2>
+<p>To add a new tab and a new field in Group or/and in Individual Page, use xpath and view inheritance. Check sample code below.</p>
 <ol class="arabic simple">
-<li><p>Log into OpenSPP with administrative rights.</p></li>
-<li><p>Access the “Apps” menu from the dashboard to manage OpenSPP modules.</p></li>
-<li><p>Choose “Update Apps List” to refresh the module list.</p></li>
-<li><p>Search for “OpenSPP REST API: API Records” and initiate installation. This will also install the other modules required.</p></li>
+<li><p>Example 1</p></li>
 </ol>
-<p><img alt="" src="../../_images/15.png"/></p>
+<p>The file name is <code class="docutils literal notranslate"><span class="pre">group_views.xml</span></code>.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"view_custom_groups_form"</span><span class="w"> </span><span class="na">model=</span><span class="s">"ir.ui.view"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>view_custom_groups_form<span class="nt">&lt;/field&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"model"</span><span class="nt">&gt;</span>res.partner<span class="nt">&lt;/field&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"inherit_id"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"g2p_registry_group.view_groups_form"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"arch"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xml"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xpath</span><span class="w"> </span><span class="na">expr=</span><span class="s">"//page[@name='basic_info']"</span><span class="w"> </span><span class="na">position=</span><span class="s">"after"</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;page</span><span class="w"> </span><span class="na">string=</span><span class="s">"Disability information"</span><span class="w"> </span><span class="na">name=</span><span class="s">"disability_info"</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;group</span><span class="w"> </span><span class="na">col=</span><span class="s">"4"</span><span class="w"> </span><span class="na">colspan=</span><span class="s">"4"</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"grp_with_disability_individual"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/group&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/page&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xpath&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
 </div>
-<div class="section" id="id1">
-<h2>Customize REST API<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<p>In this hypothetical scenario, the REST API will be customized to add an GET endpoint to respond with Area data.</p>
-<p>A working sample module for the described scenario can be accessed at the provided <a class="reference external" href="https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_api_records_custom">link</a>.</p>
-<p>The key steps in module development are as follows:</p>
+<p>This code snippet adds a new tab titled "Disability Information" to the Group form in OpenSPP, featuring a field for disability-related data.</p>
+<ol class="arabic simple" start="2">
+<li><p>Example 2</p></li>
+</ol>
+<p>The file name is <code class="docutils literal notranslate"><span class="pre">individual_views.xml</span></code>.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"view_individuals_salary_detail"</span><span class="w"> </span><span class="na">model=</span><span class="s">"ir.ui.view"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>view_individuals_salary_detail<span class="nt">&lt;/field&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"model"</span><span class="nt">&gt;</span>res.partner<span class="nt">&lt;/field&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"inherit_id"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"g2p_registry_individual.view_individuals_form"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"arch"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xml"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!-- Adding a new tab and adding a new field in a tab --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xpath</span><span class="w"> </span><span class="na">expr=</span><span class="s">"//page[@name='basic_info']"</span><span class="w"> </span><span class="na">position=</span><span class="s">"after"</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;page</span><span class="w"> </span><span class="na">string=</span><span class="s">"Disability information"</span><span class="w"> </span><span class="na">name=</span><span class="s">"disability_info"</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;group</span><span class="w"> </span><span class="na">col=</span><span class="s">"4"</span><span class="w"> </span><span class="na">colspan=</span><span class="s">"4"</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"ind_disability_type"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"ind_special_notes"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/group&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/page&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xpath&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+<p>This code introduces a new tab called "Disability Information" to the Individual form in OpenSPP, containing fields for the type of disability and special notes.</p>
+</div>
+<div class="section" id="removing-an-existing-tab-and-a-field">
+<h2>Removing an existing tab and a field<a class="headerlink" href="#removing-an-existing-tab-and-a-field" title="Permalink to this headline">#</a></h2>
+<p>In removing an existing tab or existing field, use xpath with a position <code class="docutils literal notranslate"><span class="pre">attributes</span></code> and add <code class="docutils literal notranslate"><span class="pre">invisible</span></code> attribute to the tab or field you want to remove. Check below sample code</p>
 <ol class="arabic simple">
-<li><p>To customize REST API, a new module can be developed.</p></li>
-<li><p>To initiate the development of a custom module for REST API customization, begin by creating a manifest file. This file should include fields like name, category, and version. Additionally, it's crucial to define the dependencies of the new module as outlined below.</p></li>
+<li><p>Example 1</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="s2">"depends"</span><span class="p">:</span> <span class="p">[</span>
-       <span class="s2">"spp_api_records"</span><span class="p">,</span>
-   <span class="p">],</span>
+<p>The file name is <code class="docutils literal notranslate"><span class="pre">group_views.xml</span></code>.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"view_custom_groups_form"</span><span class="w"> </span><span class="na">model=</span><span class="s">"ir.ui.view"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>view_custom_groups_form<span class="nt">&lt;/field&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"model"</span><span class="nt">&gt;</span>res.partner<span class="nt">&lt;/field&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"inherit_id"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"g2p_registry_group.view_groups_form"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"arch"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xml"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!-- removing a tab --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xpath</span><span class="w"> </span><span class="na">expr=</span><span class="s">"//page[@name='other']"</span><span class="w"> </span><span class="na">position=</span><span class="s">"attributes"</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">"invisible"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/attribute&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xpath&gt;</span>
+
+<span class="w">        </span><span class="cm">&lt;!-- removing a field --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xpath</span><span class="w"> </span><span class="na">expr=</span><span class="s">"//field[@name='phone_number_ids']"</span><span class="w"> </span><span class="na">position=</span><span class="s">"attributes"</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">"invisible"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/attribute&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xpath&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="3">
-<li><p>To integrate new endpoint and the response data needed into the system, the following steps should be followed. Create a new file called <code class="docutils literal notranslate"><span class="pre">data/spp_api_path_data.xml</span></code> in the module and add the below code to the manifest file.</p></li>
+<p>This code hides an existing tab named <code class="docutils literal notranslate"><span class="pre">other</span></code> and a field <code class="docutils literal notranslate"><span class="pre">phone_number_ids</span></code> in the Group form, making them invisible in the user interface.</p>
+<ol class="arabic simple" start="2">
+<li><p>Example 2</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="s2">"data"</span><span class="p">:</span> <span class="p">[</span>
-       <span class="s2">"data/spp_api_path_data.xml"</span><span class="p">,</span>
-   <span class="p">],</span>
+<p>The file name is <code class="docutils literal notranslate"><span class="pre">individual_views.xml</span></code>.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"view_individuals_salary_detail"</span><span class="w"> </span><span class="na">model=</span><span class="s">"ir.ui.view"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>view_individuals_salary_detail<span class="nt">&lt;/field&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"model"</span><span class="nt">&gt;</span>res.partner<span class="nt">&lt;/field&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"inherit_id"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"g2p_registry_individual.view_individuals_form"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"arch"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xml"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="cm">&lt;!-- removing a tab --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xpath</span><span class="w"> </span><span class="na">expr=</span><span class="s">"//page[@name='other']"</span><span class="w"> </span><span class="na">position=</span><span class="s">"attributes"</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">"invisible"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/attribute&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xpath&gt;</span>
+
+<span class="w">        </span><span class="cm">&lt;!-- removing a field --&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xpath</span><span class="w"> </span><span class="na">expr=</span><span class="s">"//field[@name='birth_place']"</span><span class="w"> </span><span class="na">position=</span><span class="s">"attributes"</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">"invisible"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/attribute&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xpath&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
 </pre></div>
 </div>
-<p>The following code can be added to the <code class="docutils literal notranslate"><span class="pre">spp_api_path_data.xml</span></code> file to create a new endpoint.</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w">   </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"area_path"</span><span class="w"> </span><span class="na">model=</span><span class="s">"spp_api.path"</span><span class="nt">&gt;</span>
-<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>Area<span class="nt">&lt;/field&gt;</span>
-<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"model_id"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"spp_area.model_spp_area"</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"namespace_id"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"spp_api_records.spp_api_namespace"</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"description"</span><span class="nt">&gt;</span>GET<span class="w"> </span>Area<span class="nt">&lt;/field&gt;</span>
-<span class="w">       </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"method"</span><span class="nt">&gt;</span>get<span class="nt">&lt;/field&gt;</span>
-<span class="w">       </span><span class="nt">&lt;field</span>
-<span class="w">           </span><span class="na">name=</span><span class="s">"field_ids"</span>
-<span class="w">           </span><span class="na">eval=</span><span class="s">"[(</span>
-<span class="s">           6, 0, [</span>
-<span class="s">               ref('spp_area.field_spp_area__parent_id'),</span>
-<span class="s">               ref('spp_area.field_spp_area__name'),</span>
-<span class="s">               ref('spp_area.field_spp_area__draft_name'),</span>
-<span class="s">               ref('spp_area.field_spp_area__code'),</span>
-<span class="s">           ]</span>
-<span class="s">       )]"</span>
-<span class="w">       </span><span class="nt">/&gt;</span>
-<span class="w">   </span><span class="nt">&lt;/record&gt;</span>
-</pre></div>
-</div>
-<p>The above code will create a new record for the model <code class="docutils literal notranslate"><span class="pre">spp_api.path</span></code> with the information about the endpoint’s model, fields, and HTTP method.</p>
-<ol class="arabic simple" start="4">
-<li><p>Now install the new module.</p></li>
-</ol>
-<p>The following screenshot shows the response data after sending the request using Postman. The URL used here is <code class="docutils literal notranslate"><span class="pre">http://localhost:8069/api/spp_api/1/Area?request_id=12345</span></code> but it may differ based on your configuration in your local development environment.</p>
-<p>NOTE: <code class="docutils literal notranslate"><span class="pre">request_id</span></code> parameter is required and should be unique. Else the response will return an error.</p>
-<p>Successful Response</p>
-<p><img alt="" src="../../_images/25.png"/></p>
-<p>Error Response</p>
-<p><img alt="" src="../../_images/32.png"/></p>
+<p>This snippet is used to make an existing tab named <code class="docutils literal notranslate"><span class="pre">other</span></code> and a field <code class="docutils literal notranslate"><span class="pre">birth_place</span></code> invisible in the Individual form interface.</p>
 </div>
 </div>
 </div>
@@ -796,17 +831,17 @@
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
-<a class="left-prev" href="custom_service_points.html" id="prev-link" title="previous page">
+<a class="left-prev" href="custom_registry.html" id="prev-link" title="previous page">
 <i class="fas fa-angle-left"></i>
 <div class="prev-next-info">
 <p class="prev-next-subtitle">previous</p>
-<p class="prev-next-title">Customize Service Points</p>
+<p class="prev-next-title">Customize Registry</p>
 </div>
 </a>
-<a class="right-next" href="dci.html" id="next-link" title="next page">
+<a class="right-next" href="custom_service_points.html" id="next-link" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Implementation of DCI Specification</p>
+<p class="prev-next-title">Customize Service Points</p>
 </div>
 <i class="fas fa-angle-right"></i>
 </a>
