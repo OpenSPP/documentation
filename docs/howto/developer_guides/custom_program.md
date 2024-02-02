@@ -99,6 +99,6 @@ This guide provides a structured approach for implementing and customising the p
 - Below are some Odoo references that may help in adding the field both in models and in UI. For further guidance on model creation, inheritance, and UI integration, the following Odoo documentation may be useful:
   - [Views](https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html)
   - [Chapter 4: Models And Basic Fields](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html)
-  - [Chapter 7: Basic Views](https://www.odoo.com/documentation/17.0/developer/tutorials/getting_started/07_basicviews.html#chapter-7-basic-views)
+  - [Chapter 7: Basic Views](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/07_basicviews.html#chapter-7-basic-views)
   - [Chapter 13: Inheritance](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
   - [Chapter 14: Interact With Other Modules](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html)
