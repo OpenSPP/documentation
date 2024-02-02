@@ -1,6 +1,6 @@
 # Customize Registry's Tabs/Fields
 
-The following article guides the reader in understanding how the registry module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example.
+The following article guides the reader in understanding how the registry module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. In this article, we will look at how to add and remove the tabs and fields in the registry module.
 
 ## Prerequisites
 
@@ -8,13 +8,13 @@ The following article guides the reader in understanding how the registry module
 - To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
 - Refer [Customize Registry](https://docs.openspp.org/howto/developer_guides/custom_registry.html)
 
-In this article, we will look at how to add and remove the tabs and fields in the registry module.
-
 ## Adding a new tab and a field
 
 To add a new tab and a new field in Group or/and in Individual Page, use xpath and view inheritance. Check sample code below.
 
-1. Example 1 - `group_views.xml`
+1. Example 1
+
+The file name is `group_views.xml`.
 
 ```xml
 <record id="view_custom_groups_form" model="ir.ui.view">
@@ -35,7 +35,9 @@ To add a new tab and a new field in Group or/and in Individual Page, use xpath a
 
 This code snippet adds a new tab titled "Disability Information" to the Group form in OpenSPP, featuring a field for disability-related data.
 
-2. Example 2 - `individual_views.xml`
+2. Example 2
+
+The file name is `individual_views.xml`.
 
 ```xml
 <record id="view_individuals_salary_detail" model="ir.ui.view">
@@ -62,7 +64,9 @@ This code introduces a new tab called "Disability Information" to the Individual
 
 In removing an existing tab or existing field, use xpath with a position `attributes` and add `invisible` attribute to the tab or field you want to remove. Check below sample code
 
-1. Example 1 - `group_views.xml`
+1. Example 1
+
+The file name is `group_views.xml`.
 
 ```xml
 <record id="view_custom_groups_form" model="ir.ui.view">
@@ -85,7 +89,9 @@ In removing an existing tab or existing field, use xpath with a position `attrib
 
 This code hides an existing tab named `other` and a field `phone_number_ids` in the Group form, making them invisible in the user interface.
 
-2. Example 2 - `individual_views.xml`
+2. Example 2
+
+The file name is `individual_views.xml`.
 
 ```xml
 <record id="view_individuals_salary_detail" model="ir.ui.view">
