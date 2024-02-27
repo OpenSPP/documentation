@@ -38,11 +38,6 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 :maxdepth: 2
 :hidden: true
 
-#User Guides
-user_guides/export_registrant_data
-#user_guides/implementing_pmt
-
-
 #Developer Guides
 developer_mode
 developer_guides/development_setup
@@ -65,6 +60,9 @@ developer_guides/dci
 developer_guides/oidc
 developer_guides/beneficiary_keycloak
 
+#User Guides
+user_guides/export_registrant_data
+#user_guides/implementing_pmt
 
 #developer_guides/custom_program
 #developer_guides/custom_cycle
