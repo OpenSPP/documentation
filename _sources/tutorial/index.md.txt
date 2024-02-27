@@ -25,6 +25,7 @@ This Tutorials serve as a detailed manual for the utilization and navigation of 
 - [Registering Individuals and Groups](Registering_individuals_and_groups)
 - [Vouchers](vouchers)
 - [Hardware Integration](hardware_integration)
+- [Export Registrant Data](user_guides/export_registrant_data)
 
 <!-- - [User Management]
 - [Registrant Management]

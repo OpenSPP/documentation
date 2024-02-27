@@ -15,17 +15,6 @@ In order to be able to export registrant data using OpenSPP, ensure the followin
 
 Upon completing this guide, users will be able to successfully export data for individuals or groups from OpenSPP for multiple purposes, such as record keeping, importing to add new individuals or groups, or importing to update existing individuals or groups. Ensuring the data is in a usable format.
 
-## Terminology
-
-| Term                | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Export**          | The action of extracting data from the OpenSPP platform and saving it into a file.                                                                                                                                                                                                                                                                                                                                                                             |
-| **Fields**          | Specific pieces of data within a record. For example, a registrant record contains fields like name, address, and contact information.                                                                                                                                                                                                                                                                                                                         |
-| **Registrant Data** | The comprehensive set of personal and socio-economic information collected from individuals or households when they apply or register for social protection programs. This data typically includes, but is not limited to, identifiers (such as names and ID numbers), demographic information (age, gender, household composition), contact details, and socio-economic data (income levels, employment status, health status, and vulnerability indicators). |
-| **Group**           | Collections of individuals within OpenSPP, representing households or other groups of beneficiaries.                                                                                                                                                                                                                                                                                                                                                           |
-| **Individual**      | Person                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|                     |
-
 ## Step-by-step
 
 1. Log in to OpenSPP with an account that has admin rights. Learn how to set up roles and accounts here(yet to be published).
@@ -51,7 +40,7 @@ Upon completing this guide, users will be able to successfully export data for i
 
 - If your aim for the import is to update existing individuals or groups, select and click the checkbox **I want to update data (import-compatible export)**. This will disable all options in **Available fields** that cannot be used for updates and will automatically include an external Id column in the exported file. Otherwise, skip this step.
 - Select **XSLX** or **CSV** as export format.
-- In the **Available fields** section, choose the fields you want to export by clicking on the + icon. To remove selected fields, click the trash icon beside the field name under the **Fields** to export column.
+- In the **Available fields** section, choose the fields you want to export by clicking on the **+** icon. To remove selected fields, click the trash icon beside the field name under the **Fields to export** column.
 
 ![](export_registrant_data/4.png)
 
