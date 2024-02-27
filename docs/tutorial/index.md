@@ -63,5 +63,6 @@ programs_and_cycles
 proxy_means_test
 Registering_individuals_and_groups
 vouchers
+user_guides/export_registrant_data
 
 ```
