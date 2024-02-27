@@ -30,12 +30,18 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 - {doc}`developer_guides/oidc`
 - {doc}`developer_guides/beneficiary_keycloak`
 
+**User Guides**
+
+- {doc}`user_guides/export_registrant_data`
+
 ```{toctree}
 :maxdepth: 2
 :hidden: true
 
 #User Guides
+user_guides/export_registrant_data
 #user_guides/implementing_pmt
+
 
 #Developer Guides
 developer_mode
