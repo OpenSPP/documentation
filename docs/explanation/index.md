@@ -4,6 +4,7 @@ Distinct from tutorials or how-to guides, which are action-oriented, explanation
 
 - {doc}`digital_public_infrastructure`
 - {doc}`social_registry`
+- {doc}`farmer_registry`
 - {doc}`integrated_beneficiary_registry`
 - {doc}`social_protection_management_information_systems`
 - {doc}`user_mgt`
@@ -20,6 +21,7 @@ hidden: true
 
 digital_public_infrastructure
 social_registry
+farmer_registry
 integrated_beneficiary_registry
 social_protection_management_information_systems
 user_mgt
