@@ -1,4 +1,4 @@
-# Farmer registry
+# Farmer Registry
 
 ## What is a Farmer Registry?
 
