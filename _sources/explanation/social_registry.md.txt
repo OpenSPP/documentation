@@ -24,7 +24,7 @@ The specific functions of social registries differ among the countries using the
 
 3. **Information sharing.** A complete data overview is developed by bringing together citizen-provided data and integration with systems including National IDs, CRVS and disability registries.
 
-4. **Eligibility assessments.** Clear criteria, formats and indicators are applied to support transparent and standardized {term}`eligibility` assessments for social protection programs. Specific criteria can be used to identify and target vulnerable groups, such as pregnant women, children, or individuals with disabilities. Households can be ranked based on the assessment of their needs and conditions, commonly through the application of a poverty-scoring method such as {term}`proxy means test`.
+4. **Eligibility assessments.** Clear criteria, formats and indicators are applied to support transparent and standardized {term}`eligibility` assessments for social protection programs. Specific criteria can be used to identify and target vulnerable groups, such as pregnant women, children, or individuals with disabilities. Households can be ranked based on the assessment of their needs and conditions, commonly through the application of a poverty-scoring method such as {term}`proxy means testing`.
 
 5. **{term}`Decentralized` eligibility determination.** Lists of potentially eligible households or ranked lists of all households can be shared with individual program implementers or decentralized counterparts, and adapted to local contexts and needs.
 
@@ -34,7 +34,7 @@ The specific functions of social registries differ among the countries using the
 
 8. **Architectural components.** Comprise of data intake and exchange, data security and protection, management interfaces, interoperability, and necessary ICT infrastructure.
 
-Privacy and confidentiality are key principles of social registries as they hold large amounts of sensitive {term}`personal data`. The privacy and confidentiality of individuals' data must be protected in accordance with a country’s legal and ethical standards. Social registries must also provide accessible feedback mechanisms (usually via the corresponding social protection program), or through integration with {term}`grievance redress mechanisms (GRM)` so that registrants can appeal against eligibility decisions or report inaccuracies or errors.
+Privacy and confidentiality are key principles of social registries as they hold large amounts of sensitive {term}`personal data`. The privacy and confidentiality of individuals' data must be protected in accordance with a country’s legal and ethical standards. Social registries must also provide accessible feedback mechanisms (usually via the corresponding social protection program), or through integration with {term}`Grievance redress mechanism (GRM)` so that registrants can appeal against eligibility decisions or report inaccuracies or errors.
 
 ## Integration and interoperability of social registries
 
