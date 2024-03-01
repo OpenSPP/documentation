@@ -26,7 +26,7 @@ The specific functions of farmer registries differ among the countries using the
 
 4. **Reporting and analysis.** Farmer registries may have self-contained functions to generate reports and analyze registry data. Or they may be integrated with external data analysis tools and dashboards to inform policy decisions, program planning, and resource allocation.
 
-5. **Architectural components.** Comprise of data intake and exchange, {term}`data security and protection`, management interfaces, interoperability, and necessary ICT infrastructure.
+5. **Architectural components.** Comprise of data intake and exchange, data security and protection, management interfaces, interoperability, and necessary ICT infrastructure.
 
 Privacy and confidentiality are key principles of farmer registries as they hold large amounts of sensitive {term}`personal data`. The privacy and confidentiality of individuals' data must be protected in accordance with a country’s legal and ethical standards. Accessible feedback mechanisms must also be provided so registrants can report inaccuracies or errors in their information. Usually, these are provided via the corresponding agricultural or social protection program.
 
