@@ -1,4 +1,4 @@
-# How to integrate OpenSPP with eSignate
+# eSignate Integration
 
 ## Introduction
 
