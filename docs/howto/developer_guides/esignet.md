@@ -86,11 +86,11 @@ server-auth:
 - Assertion Type: JWT Bearer
 - Allowed: Checked
 - Login button label: Sign in with MOSIP
-- Authorization URL: https://esignet.collab.mosip.net/authorize
+- Authorization URL: `https://esignet.collab.mosip.net/authorize`
 - Scope: openid profile email
-- UserInfo URL: https://esignet.collab.mosip.net/v1/esignet/oidc/userinfo
-- Token UR: https://esignet.collab.mosip.net/v1/esignet/oauth/v2/token
-- JWKS URL: https://esignet.collab.mosip.net/v1/esignet/oauth/.well-known/jwks.json
+- UserInfo URL: `https://esignet.collab.mosip.net/v1/esignet/oidc/userinfo`
+- Token UR: `https://esignet.collab.mosip.net/v1/esignet/oauth/v2/token`
+- JWKS URL: `https://esignet.collab.mosip.net/v1/esignet/oauth/.well-known/jwks.json`
 - Extra Authorise Params:
 
 ```json
