@@ -27,6 +27,7 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 
 **Integration**
 
+- {doc}`developer_guides/esignet`
 - {doc}`developer_guides/oidc`
 - {doc}`developer_guides/beneficiary_keycloak`
 
@@ -57,6 +58,7 @@ developer_guides/custom_service_points
 developer_guides/rest_api
 developer_guides/dci
 
+developer_guides/esignet
 developer_guides/oidc
 developer_guides/beneficiary_keycloak
 
