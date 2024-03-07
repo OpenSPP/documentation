@@ -25,6 +25,7 @@ This Tutorials serve as a detailed manual for the utilization and navigation of 
 - [Registering Individuals and Groups](Registering_individuals_and_groups)
 - [Vouchers](vouchers)
 - [Hardware Integration](hardware_integration)
+- [Register new individual](user_guides/register_new_individual)
 - [Export Registrant Data](user_guides/export_registrant_data)
 
 <!-- - [User Management]
@@ -63,6 +64,7 @@ programs_and_cycles
 proxy_means_test
 Registering_individuals_and_groups
 vouchers
+user_guides/register_new_individual
 user_guides/export_registrant_data
 
 ```
