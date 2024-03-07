@@ -33,6 +33,7 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 
 **User Guides**
 
+- {doc}`user_guides/register_new_individual`
 - {doc}`user_guides/export_registrant_data`
 
 ```{toctree}
@@ -63,6 +64,7 @@ developer_guides/oidc
 developer_guides/beneficiary_keycloak
 
 #User Guides
+user_guides/register_new_individual
 user_guides/export_registrant_data
 #user_guides/implementing_pmt
 
