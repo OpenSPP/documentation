@@ -1,4 +1,4 @@
-# Registring individuals and groups
+# Key Terminalogy
 
 Registrants are at the heart of OpenSPP. They are the people or groups that are being registered to be
 included in {term}`social protection` programs.
