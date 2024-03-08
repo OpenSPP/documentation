@@ -10,6 +10,7 @@ Distinct from tutorials or how-to guides, which are action-oriented, explanation
 - {doc}`user_mgt`
 - {doc}`security_archi`
 - {doc}`data_collection_validation`
+- {doc}`Registering_individuals_and_groups`
 
 ```{toctree}
 ---
@@ -27,5 +28,5 @@ social_protection_management_information_systems
 user_mgt
 security_archi
 data_collection_validation
-
+Registering_individuals_and_groups
 ```
