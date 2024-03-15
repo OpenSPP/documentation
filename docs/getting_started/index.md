@@ -12,11 +12,11 @@ This overview of how OpenSPP’s documentation is organized will help you know w
 
 ## Technical information
 
-OpenSPP is built on top of Odoo 17.0, a popular open-source (ERP)[https://en.wikipedia.org/wiki/Enterprise_resource_planning]. It is designed to be easy to install and maintain, and can be run on any Linux distribution.
+OpenSPP is built on top of [Odoo 17.0](https://www.odoo.com/documentation/17.0/), a popular open-source [ERP](https://en.wikipedia.org/wiki/Enterprise_resource_planning). It is designed to be easy to install and maintain, and can be run on any Linux distribution.
 
-To learn more, visit the (Architecture)[https://docs.openspp.org/technical_reference/architecture.html] section.
+To learn more, visit the [Architecture](https://docs.openspp.org/technical_reference/architecture.html) section.
 
-To begin working with OpenSPP, refer to the (installation guide)[https://docs.openspp.org/getting_started/installation_guide.html].
+To begin working with OpenSPP, refer to the [installation guide](https://docs.openspp.org/getting_started/installation_guide.html).
 
 ```{toctree}
 ---
