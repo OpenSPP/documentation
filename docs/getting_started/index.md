@@ -1,16 +1,22 @@
 # Getting Started
 
-New to OpenSPP? Well, you came to the right place: read this material to quickly get up and running.
+## How the documentation is organized
 
-![OpenSPP overview](/_static/openspp_process.png)
+This overview of how OpenSPP’s documentation is organized will help you know where to look for certain things:
 
-`OpenSPP` is based on an open-source [ERP](https://en.wikipedia.org/wiki/Enterprise_resource_planning) called [Odoo 15.0](https://odoo.com/documentation/15.0/). It allows the project to take advantage of a vast ecosystem of existing integrations and modules.
+- [Tutorials](tutorial/index) are lessons that guide you through a topic and help you to achieve basic competence and familiarity with the platform. Tutorials will help you to make sense of the rest of the documentation. Start here if you are new to OpenSPP.
+- [Technical Reference](technical_reference/index) are technical descriptions of the software, and describe how OpenSPP works and how to use it. They are technical documents and assume that you have a basic understanding of key software concepts.
+- [How-to guides](howto/index) provide detailed instructions on how to use the specific features and modules of OpenSPP. They provide step by step guidance on how to perform a specific task or achieve a particular goal. They are more advanced than tutorials and assume some knowledge of how OpenSPP works.
+- [Explanations](explanation/index) help to clarify, deepen and broaden understanding of a subject. They help to explain the background and context of why certain things are done e.g. design decisions, historical reasons, technical constraints. Explanations help to give a bigger picture and join things together.
+- [Glossary](glossary) provides definitions and explanations of terms or specialized language used in social protection. Translations are provided in French, Spanish and Arabic.
 
-It is a [Digital Public Good (DPG)](https://digitalpublicgoods.net/) and is building on top of other DPGs such as [OpenG2P](https://openg2p.org/).
+## Technical information
 
-![OpenSPP components and licensing](/_static/openspp_components_with_licensing.png)
+OpenSPP is built on top of Odoo 17.0, a popular open-source (ERP)[https://en.wikipedia.org/wiki/Enterprise_resource_planning]. It is designed to be easy to install and maintain, and can be run on any Linux distribution.
 
-`OpenSPP` is currently in development, and everything is evolving rapidly thanks to the input provided by our users. If you have any questions or needs, please do not hesitate to contact the team through Github issues or the [OpenSPP website](https://openspp.org/).
+To learn more, visit the (Architecture)[https://docs.openspp.org/technical_reference/architecture.html] section.
+
+To begin working with OpenSPP, refer to the (installation guide)[https://docs.openspp.org/getting_started/installation_guide.html].
 
 ```{toctree}
 ---
