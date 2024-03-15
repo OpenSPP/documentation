@@ -69,5 +69,3 @@ contributing/index
 
 glossary
 ```
-
-{ref}`genindex`
