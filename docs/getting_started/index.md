@@ -4,11 +4,11 @@
 
 This overview of how OpenSPP’s documentation is organized will help you know where to look for certain things:
 
-- [Tutorials](tutorial/index) are lessons that guide you through a topic and help you to achieve basic competence and familiarity with the platform. Tutorials will help you to make sense of the rest of the documentation. Start here if you are new to OpenSPP.
-- [Technical Reference](technical_reference/index) are technical descriptions of the software, and describe how OpenSPP works and how to use it. They are technical documents and assume that you have a basic understanding of key software concepts.
-- [How-to guides](howto/index) provide detailed instructions on how to use the specific features and modules of OpenSPP. They provide step by step guidance on how to perform a specific task or achieve a particular goal. They are more advanced than tutorials and assume some knowledge of how OpenSPP works.
-- [Explanations](explanation/index) help to clarify, deepen and broaden understanding of a subject. They help to explain the background and context of why certain things are done e.g. design decisions, historical reasons, technical constraints. Explanations help to give a bigger picture and join things together.
-- [Glossary](glossary) provides definitions and explanations of terms or specialized language used in social protection. Translations are provided in French, Spanish and Arabic.
+- [Tutorials](https://docs.openspp.org/tutorial/) are lessons that guide you through a topic and help you to achieve basic competence and familiarity with the platform. Tutorials will help you to make sense of the rest of the documentation. Start here if you are new to OpenSPP.
+- [Technical Reference](https://docs.openspp.org/technical_reference/) are technical descriptions of the software, and describe how OpenSPP works and how to use it. They are technical documents and assume that you have a basic understanding of key software concepts.
+- [How-to guides](https://docs.openspp.org/howto/) provide detailed instructions on how to use the specific features and modules of OpenSPP. They provide step by step guidance on how to perform a specific task or achieve a particular goal. They are more advanced than tutorials and assume some knowledge of how OpenSPP works.
+- [Explanations](https://docs.openspp.org/explanation/) help to clarify, deepen and broaden understanding of a subject. They help to explain the background and context of why certain things are done e.g. design decisions, historical reasons, technical constraints. Explanations help to give a bigger picture and join things together.
+- [Glossary](https://docs.openspp.org/glossary.html) provides definitions and explanations of terms or specialized language used in social protection. Translations are provided in French, Spanish and Arabic.
 
 ## Technical information
 
