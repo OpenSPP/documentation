@@ -9,19 +9,31 @@ myst:
 
 (index-label)=
 
-# OpenSPP - Social Protection Platform
+# Welcome to OpenSPP!
 
-OpenSPP is an open-source, modular and highly interoperable platform for social protection offering a comprehensive management information system and registries which can be easily adapted to a country’s needs, goals and existing systems.
+OpenSPP was created to support the improvement and growth of effective social protection and humanitarian programs using open-source technologies. Our goal is to make it easier and more cost effective for governments and humanitarian agencies to digitalize their social protection systems.
 
-## How the documentation is organized
+OpenSPP is an open-source, modular and highly interoperable platform. The platform offers four main products: SP-MIS - a comprehensive management information system - plus a Social Registry, a Farmer Registry and a Disability Registry.
 
-A high-level overview of how OpenSPP’s documentation is organized will help you know where to look for certain things:
+OpenSPP is a Digital Public Good. It is built on more than 60 open-source modules, and leverages and contributes to other open-source projects including OpenG2P, MOSIP, OpenCRVS, Odoo, Payment Hub EE, ID PASS, CommCare, Metabase and OpenFn
 
-- [Tutorials](tutorial/index) are lessons that guide you through a topic and help you to achieve basic competence and familiarity with the platform. Tutorials will help you to make sense of the rest of the documentation. Start here if you are new to OpenSPP.
-- [Technical Reference](technical_reference/index) are technical descriptions of the software, and describe how OpenSPP works and how to use it. They are technical documents and assume that you have a basic understanding of key software concepts.
-- [How-to guides](howto/index) provide detailed instructions on how to use the specific features and modules of OpenSPP. They provide step by step guidance on how to perform a specific task or achieve a particular goal. They are more advanced than tutorials and assume some knowledge of how OpenSPP works.
-- [Explanations](explanation/index) help to clarify, deepen and broaden understanding of a subject. They help to explain the background and context of why certain things are done e.g. design decisions, historical reasons, technical constraints. Explanations help to give a bigger picture and join things together.
-- [Glossary](glossary) provides definitions and explanations of terms or specialized language used in social protection. Translations are provided in French, Spanish and Arabic.
+## SP-MIS
+
+OpenSPP’s social protection management information system offers customizable building blocks for effective program implementation. Its modular design allows users to select only the components they need without an overhaul of existing systems.
+
+![](images/openspp_bb.png)
+
+## Social Registry
+
+The Social Registry is a repository for the storage and management of data for planning and administering social protection. It supports intake, dynamic registration and needs assessment, and the efficient and secure sharing of data from the social registry with various social protection programs and services.
+
+## Farmer Registry
+
+The Farmer Registry stores and manages farm holding and farm owner data, supporting coordination between the social and agricultural sectors. It supports mass registrations and regular updates, and integrates data from Geographic Information Systems, national ID and CRVS.
+
+## Disability Registry
+
+The Disability Registry is an organized database for systematically recording and managing information about individuals with disabilities within a specific population or geographic area. It contains important information to facilitate services and assistance for people with disabilities, including access to social protection programs. **OpenSPP is set to release its open-source Disability Registry in the second quarter of 2024**.
 
 ## Guiding principles
 
@@ -33,13 +45,9 @@ Our guiding principles are informed by the Digital Public Goods Standard and the
 - **Interoperability**: The platform is designed to support system interoperability - critical for the creation of cohesive and efficient digital ecosystems.
 - **Inclusivity**: Our products can be customized to suit linguistic and cultural requirements, accessibility, digital literacy, and deployment in remote and less-developed contexts.
 
-## Technical information
+To begin using the platform, head to the [Getting Started](https://docs.openspp.org/getting_started/) section for an overview of how OpenSPP’s documentation is organized, and how to locate relevant information.
 
-`OpenSPP` is built on top of (Odoo 15.0)[https://odoo.com/documentation/15.0/], a popular open-source [ERP](https://en.wikipedia.org/wiki/Enterprise_resource_planning). It is designed to be easy to install and maintain, and can be run on any Linux distribution.
-
-The OpenSPP platform is evolving rapidly. If you have any questions or needs, please do not hesitate to contact us through Github issues or our [Website](https://openspp.org/).
-
-To learn more, take a look at the [Architecture](technical_reference/architecture) page.
+OpenSPP is currently in development, and everything is evolving rapidly thanks to the input provided by our users. If you have any questions or needs, please do not hesitate to contact the team through Github issues or the OpenSPP [website](https://openspp.org/).
 
 ```{toctree}
 :maxdepth: 3
