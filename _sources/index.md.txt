@@ -35,7 +35,7 @@ Our guiding principles are informed by the Digital Public Goods Standard and the
 
 ## Technical information
 
-`OpenSPP` is built on top of [Odoo 15.0](https://odoo.com/documentation/15.0/), a popular open-source [ERP](https://en.wikipedia.org/wiki/Enterprise_resource_planning). It is designed to be easy to install and maintain, and can be run on any Linux distribution.
+`OpenSPP` is built on top of (Odoo 15.0)[https://odoo.com/documentation/15.0/], a popular open-source [ERP](https://en.wikipedia.org/wiki/Enterprise_resource_planning). It is designed to be easy to install and maintain, and can be run on any Linux distribution.
 
 The OpenSPP platform is evolving rapidly. If you have any questions or needs, please do not hesitate to contact us through Github issues or our [Website](https://openspp.org/).
 
