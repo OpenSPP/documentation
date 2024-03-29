@@ -6,7 +6,7 @@ This guide details the process of administering role-based access in OpenSPP.
 
 ## Prerequisites
 
-To grant access, you need a user account with the System Admin role given by the OpenSPP team.
+To grant access, you need a user account with the **System Admin** role given by the OpenSPP team.
 
 ## Objective
 
@@ -46,6 +46,8 @@ After completing this task, the assigned user account will be able to login and 
 4. To restore a temporarily deleted user account to OpenSPP, additional steps need to be performed to navigate to the user since the user account will no longer be displayed among the active users. Click on the four-square icon in the top-left corner then click on **Settings**. Click **Users & Companies** and select **Users**. Click on **Filters**, then select **Inactive Users**. Click on the name of the user account you wish to unarchive. Click on the **Action** button, and then click **Unarchive**.
 
 ![](administrating_role_based_access/5.png)
+
+### Editing user Information
 
 1. Click on the four-square icon in the top-left corner, then click on **Settings**, navigate to **Users & Companies**, and select **Users**. Click on the name of the user you wish to edit. Click on **Edit** to modify the name and/or email address fields, then click **Save**.
 
