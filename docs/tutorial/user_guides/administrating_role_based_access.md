@@ -6,7 +6,7 @@ This tutorial explains how to configure role-based access in OpenSPP so that use
 
 ## Prerequisites
 
-To grant access, you need a user account with the **System Admin** role given by the OpenSPP team.
+To grant access, you need a user account with the System Admin role given by the OpenSPP team.
 
 ## Objective
 
