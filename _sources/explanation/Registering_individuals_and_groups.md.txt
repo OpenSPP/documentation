@@ -15,8 +15,7 @@ information, ID document numbers, pictures, bank account numbers, phone numbers 
 
 Consider only collecting the data you really need when conducting a project.
 
-See:
-[Principles for Digital Development - Address Privacy & Security](https://digitalprinciples.org/principle/address-privacy-security/).
+<!--  See: [Principles for Digital Development - Address Privacy & Security](https://digitalprinciples.org/principle/address-privacy-security/). -->
 
 ::::
 
