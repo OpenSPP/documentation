@@ -63,13 +63,9 @@ After completing this task, the assigned user account will be able to login and 
 
 3. After configuring the validity dates, click **Save**.
 
-![](administrating_role_based_access/7.png)
-
-4. The user account setup is complete. Test the login with the email address and password you've set up for this user account.
-
 ![](administrating_role_based_access/8.png)
 
-5. The user account setup is complete. Test the login with the email address and password you've set up for this user account.
+4. The user account setup is complete. Test the login with the email address and password you've set up for this user account.
 
 ![](administrating_role_based_access/9.png)
 
@@ -85,7 +81,7 @@ After completing this task, the assigned user account will be able to login and 
 
 ### Configuring groups
 
-1. Click on the four-square icon in the top-left corner, then click on **Settings**, and click **Roles** under **Users & Companies**.
+1. Click on the four-square icon in the top-left corner, then click on **Settings**, and click **Group** under **Users & Companies**.
 
 ![](administrating_role_based_access/12.png)
 
