@@ -14,8 +14,6 @@ $ invoke develop img-pull img-build git-aggregate resetdb start
 
 Then open `http://localhost:17069/` in your browser.
 
-For more details, see [OpenSPP Docker](https://github.com/OpenSPP/openspp-docker) Readme file.
-
 ## Installing for production
 
 ### Using OpenSPP Cloud (Coming soon)
