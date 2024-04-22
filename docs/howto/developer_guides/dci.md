@@ -1,6 +1,6 @@
 # Implementation of DCI Specification
 
-In the rapidly evolving landscape of digital public infrastructure (DPI), the principle of interoperability stands as an important for building efficient, inclusive, and sustainable systems in a country. This article delves into how OpenSPP implemented APIs outlined in the [DCI Interface Standards v1.0](https://spdci.github.io/standards/release/html/registry_core_api_v1.0.0.html) under Registry to enable interoperability with other systems such as CRVS.
+In the rapidly evolving landscape of digital public infrastructure (DPI), the principle of interoperability stands as an important for building efficient, inclusive, and sustainable systems in a country. This article delves into how OpenSPP implemented APIs outlined in the [DCI Interface Standards v1.0](https://standards.spdci.org/standards/standards-for-interoperability-interfaces/structure-and-versioning-of-the-standards) under Registry to enable interoperability with other systems such as CRVS.
 
 The implementation can be categorized into two sections where OpenSPP operates as the client and OpenSPP operates as the server. Note that currently OpenSPP has only completed the sync implementation.
 
