@@ -56,7 +56,6 @@ For more information about OpenSPP’s Social Registry contact us through our [w
 ## References
 
 - [Barca V and Hebbar M (2020) On-Demand and Up-to-Date? Dynamic Inclusion and Data Updating for Social Assistance. GIZ](https://socialprotection.org/sites/default/files/publications_files/GIZ_DataUpdatingForSocialAssistance_3.pdf)
-- [Chirchir R and Barca V (2020). Building an integrated and digital social protection information system. GIZ](https://socialprotection.org/sites/default/files/publications_files/GIZ_DFID_IIMS%20in%20social%20protection_long_02-2020.pdf)
 - [Chirchir R and Farooq S (2016) Single Registries and Social Registries: clarifying the terminological confusion. Development Pathways](https://www.developmentpathways.co.uk/wp-content/uploads/2016/11/Single-and-Social-Registries-1.pdf)
 - [Digital Convergence Initiative (2023) Social protection management information system interacting with social registry. Social Protection Interoperability Series: Interoperability in Action #6.](https://spdci.org/resources/interoperability-in-action-6-social-registry-workshop-recording/)
 - [Leite, P, Karippacheril, T and Lindert, K (2017). Social Registries for social assistance and Beyond: A Guidance Note & Assessment Tool. World Bank](https://www.researchgate.net/publication/340858942_Social_Registries_for_Social_Assistance_and_Beyond_A_Guidance_Note_and_Assessment_Tool)
