@@ -22,7 +22,7 @@ The import process consists of logging in to OpenSPP with an admin user account,
 
 ### Login with proper user access rights
 
-To prevent data mishandling and improve data security, the permission to import and export data into OpenSPP is exclusive to user accounts with **System admin** role. Learn more about setting up and configuring admin role user accounts here: Tutorial: [Administrating role-based access](https://docs.openspp.org/tutorial/user_guides/administrating_role_based_access.html). To verify that your user account has the right permissions, navigate to the four-square icon on the top-left corner and click **Settings** from the list, click **Users & Companies** from the header; then click **Users**. This should display all user accounts in OpenSPP.
+To prevent data mishandling and improve data security, the permission to import and export data into OpenSPP is exclusive to user accounts with **System admin** role. Learn more about setting up and configuring admin role user accounts here [Administrating role-based access](https://docs.openspp.org/tutorial/user_guides/administrating_role_based_access.html). To verify that your user account has the right permissions, navigate to the four-square icon on the top-left corner and click **Settings** from the list, click **Users & Companies** from the header; then click **Users**. This should display all user accounts in OpenSPP.
 
 ![](import_registrant_data/1.png)
 
