@@ -1,4 +1,4 @@
-# Import registrant data in CSV/Excel format
+# Import registrant data
 
 ## Introduction
 
