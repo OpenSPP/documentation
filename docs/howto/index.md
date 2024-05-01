@@ -36,6 +36,7 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 - {doc}`user_guides/register_new_individual`
 - {doc}`user_guides/export_registrant_data`
 - {doc}`user_guides/administrating_role_based_access`
+- {doc}`user_guides/import_registrant_data`
 
 ```{toctree}
 :maxdepth: 2
@@ -68,6 +69,7 @@ developer_guides/beneficiary_keycloak
 user_guides/register_new_individual
 user_guides/export_registrant_data
 user_guides/administrating_role_based_access
+user_guides/import_registrant_data
 #user_guides/implementing_pmt
 
 #developer_guides/custom_program
