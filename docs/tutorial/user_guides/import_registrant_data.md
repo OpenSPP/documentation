@@ -92,7 +92,7 @@ To resolve this type of error, only type in values that are defined in OpenSPP, 
 
 ### To import, select a field
 
-If OpenSPP could not recognize your header, it will display To import, select a field beside the unrecognized header, similar to the screenshot below.
+If OpenSPP could not recognize your header, it will display **To import, select a field** beside the unrecognized header, similar to the screenshot below.
 
 ![](import_registrant_data/12.png)
 
