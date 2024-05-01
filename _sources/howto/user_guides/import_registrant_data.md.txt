@@ -24,7 +24,7 @@ In order to perform an import, the correct headers need to be used. The easiest 
 
 1. To export an individual or group, follow the steps in [Export Registrant Data](https://docs.openspp.org/howto/user_guides/export_registrant_data.html).
 
-2. Once you have successfully downloaded the exported file, it will have a format similar to the below screenshot. Which headers are included will depend on the fields selected in the export; this example displays one individual data exported. Keep only the headers in row 1, and delete all other rows.
+2. Once you have successfully downloaded the exported file, it will have a format similar to the below screenshot. Which headers are included will depend on the fields selected in the export; this example displays one individual data exported. Keep only the headers in row **1**, and delete all other rows.
 
 ![](import_registrant_data/1.png)
 
@@ -67,7 +67,7 @@ To update existing records, select the desired existing records from OpenSPP and
 
 1. To export an individual or group, follow the steps in [Export Registrant Data](https://docs.openspp.org/howto/user_guides/export_registrant_data.html).
 
-2. Once you have successfully downloaded the exported file, open it and keep the id column in place; this serves as the identifier of the record when imported back to OpenSPP.
+2. Once you have successfully downloaded the exported file, open it and keep the **id** column in place; this serves as the identifier of the record when imported back to OpenSPP.
 
 ![](import_registrant_data/6.png)
 
@@ -114,7 +114,7 @@ To resolve this type of error, only type in values that are defined in OpenSPP, 
 
 ### To import, select a field
 
-If OpenSPP could not recognize your header, it will display To import, select a field beside the unrecognized header, similar to the screenshot below.
+If OpenSPP could not recognize your header, it will display **To import, select a field** beside the unrecognized header, similar to the screenshot below.
 
 ![](import_registrant_data/13.png)
 
