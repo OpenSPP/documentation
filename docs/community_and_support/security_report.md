@@ -74,3 +74,9 @@ policy, please submit a report through one of our Official Channels before going
 
 > Note that the Safe Harbor applies only to legal claims under the control of the organization participating
 > in this policy, and that the policy does not bind independent third parties.
+
+## Acknowledgements
+
+We are dedicated to ensuring the security of OpenSPP and greatly appreciate the contributions of our community in this ongoing effort. A special thanks to the individuals below who have supported us.
+
+- [Aviv Keller](https://www.linkedin.com/in/redyetidev)
