@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="Integrated Beneficiary Registry" property="og:title"/>
+<meta content="How Data Should Be Organized in the OpenSPP Registry" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/explanation/integrated_beneficiary_registry.html" property="og:url"/>
+<meta content="https://docs.openspp.org/explanation/registry_key_concepts.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="In the realm of social protection, an Integrated beneficiary registry(IBR) plays a pivotal role. It acts as a comprehensive information warehouse, consolidating data about beneficiaries from multip..." property="og:description"/>
+<meta content="Importance of Minimizing Data in the Registry for OpenSPP: In OpenSPP, maintaining a minimalistic approach to the data stored in the registry is crucial while managing additional information on a p..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="In the realm of social protection, an Integrated beneficiary registry(IBR) plays a pivotal role. It acts as a comprehensive information warehouse, consolidating data about beneficiaries from multip..." name="description"/>
+<meta content="Importance of Minimizing Data in the Registry for OpenSPP: In OpenSPP, maintaining a minimalistic approach to the data stored in the registry is crucial while managing additional information on a p..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Integrated Beneficiary Registry – Explanation — OpenSPP Documentation v1.1</title>
+<title>How Data Should Be Organized in the OpenSPP Registry – Explanation — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -50,13 +50,13 @@
 <script src="../_static/patch_scrollToActive.js"></script>
 <script src="../_static/search_shortcut.js"></script>
 <script src="../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/explanation/integrated_beneficiary_registry.html" rel="canonical">
+<link href="https://docs.openspp.org/explanation/registry_key_concepts.html" rel="canonical">
 <link href="../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.1" type="application/opensearchdescription+xml"/>
 <link href="../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../genindex.html" rel="index" title="Index"/>
 <link href="../search.html" rel="search" title="Search"/>
-<link href="social_protection_management_information_systems.html" rel="next" title="Social Protection Management Information Systems"/>
-<link href="farmer_registry.html" rel="prev" title="Farmer Registry"/>
+<link href="../community_and_support/index.html" rel="next" title="Community and Support"/>
+<link href="Registering_individuals_and_groups.html" rel="prev" title="Key Terminology"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -475,8 +475,8 @@
      Farmer Registry
     </a>
 </li>
-<li class="toctree-l2 current active">
-<a class="current reference internal" href="#">
+<li class="toctree-l2">
+<a class="reference internal" href="integrated_beneficiary_registry.html">
      Integrated Beneficiary Registry
     </a>
 </li>
@@ -505,8 +505,8 @@
      Key Terminology
     </a>
 </li>
-<li class="toctree-l2">
-<a class="reference internal" href="registry_key_concepts.html">
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
      How Data Should Be Organized in the OpenSPP Registry
     </a>
 </li>
@@ -642,7 +642,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>Integrated Beneficiary Registry – Explanation</span>
+<span>How Data Should Be Organized in the OpenSPP Registry – Explanation</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -665,7 +665,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fexplanation/integrated_beneficiary_registry.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fexplanation/registry_key_concepts.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -673,7 +673,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?explanation/integrated_beneficiary_registry.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?explanation/registry_key_concepts.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -690,7 +690,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/explanation/integrated_beneficiary_registry.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/explanation/registry_key_concepts.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -723,50 +723,91 @@
 <nav aria-label="Page" id="bd-toc-nav">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#the-role-of-an-integrated-beneficiary-registry">
-   The Role of an Integrated beneficiary Registry
+<a class="reference internal nav-link" href="#importance-of-minimizing-data-in-the-registry-for-openspp">
+   Importance of Minimizing Data in the Registry for OpenSPP
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#key-components-of-an-integrated-beneficiary-registry">
-   Key Components of an Integrated Beneficiary Registry
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#advantages-of-an-integrated-beneficiary-registry">
-   Advantages of an Integrated Beneficiary Registry
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#challenges-and-considerations">
-   Challenges and Considerations
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#relation-to-the-social-registry">
-   Relation to the social registry
+<a class="reference internal nav-link" href="#deciding-where-to-store-data-in-openspp">
+   Deciding Where to Store Data in OpenSPP
   </a>
 <ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#key-differences-and-interactions">
-     Key Differences and Interactions
+<a class="reference internal nav-link" href="#steps-to-decide-data-storage">
+     Steps to Decide Data Storage
     </a>
 </li>
 <li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#complementary-functions-in-social-protection">
-     Complementary Functions in Social Protection
+<a class="reference internal nav-link" href="#practical-tips">
+     Practical Tips
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-scenario">
+     Example Scenario
     </a>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#conclusion">
-   Conclusion
+<a class="reference internal nav-link" href="#key-concepts-for-organizing-data-in-the-openspp-registry">
+   Key concepts for organizing data in the OpenSPP registry
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#references">
-   References
+<a class="reference internal nav-link" href="#registrant">
+   Registrant
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#definition">
+     Definition
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#individuals">
+       Individuals
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#groups">
+       Groups
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#group-membership">
+   Group Membership
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#key-elements">
+     Key Elements
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-structure">
+     Example Structure
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#rules-and-validation">
+     Rules and Validation
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#event-data">
+   Event Data
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#change-requests">
+   Change Requests
   </a>
 </li>
 </ul>
@@ -777,7 +818,7 @@
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>Integrated Beneficiary Registry</h1>
+<h1>How Data Should Be Organized in the OpenSPP Registry</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
@@ -787,50 +828,91 @@
 <nav aria-label="Page">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#the-role-of-an-integrated-beneficiary-registry">
-   The Role of an Integrated beneficiary Registry
+<a class="reference internal nav-link" href="#importance-of-minimizing-data-in-the-registry-for-openspp">
+   Importance of Minimizing Data in the Registry for OpenSPP
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#key-components-of-an-integrated-beneficiary-registry">
-   Key Components of an Integrated Beneficiary Registry
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#advantages-of-an-integrated-beneficiary-registry">
-   Advantages of an Integrated Beneficiary Registry
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#challenges-and-considerations">
-   Challenges and Considerations
-  </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#relation-to-the-social-registry">
-   Relation to the social registry
+<a class="reference internal nav-link" href="#deciding-where-to-store-data-in-openspp">
+   Deciding Where to Store Data in OpenSPP
   </a>
 <ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#key-differences-and-interactions">
-     Key Differences and Interactions
+<a class="reference internal nav-link" href="#steps-to-decide-data-storage">
+     Steps to Decide Data Storage
     </a>
 </li>
 <li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#complementary-functions-in-social-protection">
-     Complementary Functions in Social Protection
+<a class="reference internal nav-link" href="#practical-tips">
+     Practical Tips
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-scenario">
+     Example Scenario
     </a>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#conclusion">
-   Conclusion
+<a class="reference internal nav-link" href="#key-concepts-for-organizing-data-in-the-openspp-registry">
+   Key concepts for organizing data in the OpenSPP registry
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#references">
-   References
+<a class="reference internal nav-link" href="#registrant">
+   Registrant
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#definition">
+     Definition
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#individuals">
+       Individuals
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#groups">
+       Groups
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#group-membership">
+   Group Membership
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#key-elements">
+     Key Elements
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-structure">
+     Example Structure
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#rules-and-validation">
+     Rules and Validation
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#event-data">
+   Event Data
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#change-requests">
+   Change Requests
   </a>
 </li>
 </ul>
@@ -840,67 +922,236 @@
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="integrated-beneficiary-registry">
-<h1>Integrated Beneficiary Registry<a class="headerlink" href="#integrated-beneficiary-registry" title="Permalink to this headline">#</a></h1>
-<p>In the realm of <a class="reference internal" href="../glossary.html#term-Social-protection"><span class="xref std std-term">social protection</span></a>, an <a class="reference internal" href="../glossary.html#term-Integrated-beneficiary-registry"><span class="xref std std-term">Integrated beneficiary registry</span></a> (IBR) plays a pivotal role. It acts as a comprehensive <a class="reference internal" href="../glossary.html#term-Information"><span class="xref std std-term">information</span></a> warehouse, consolidating data about <a class="reference internal" href="../glossary.html#term-Beneficiaries"><span class="xref std std-term">beneficiaries</span></a> from multiple programs across various stages of life. This integration not only streamlines processes but also enhances the <a class="reference internal" href="../glossary.html#term-Effectiveness"><span class="xref std std-term">effectiveness</span></a> and <a class="reference internal" href="../glossary.html#term-Efficiency"><span class="xref std std-term">efficiency</span></a> of social protection systems.</p>
-<div class="section" id="the-role-of-an-integrated-beneficiary-registry">
-<h2>The Role of an Integrated beneficiary Registry<a class="headerlink" href="#the-role-of-an-integrated-beneficiary-registry" title="Permalink to this headline">#</a></h2>
+<div class="section" id="how-data-should-be-organized-in-the-openspp-registry">
+<h1>How Data Should Be Organized in the OpenSPP Registry<a class="headerlink" href="#how-data-should-be-organized-in-the-openspp-registry" title="Permalink to this headline">#</a></h1>
+<div class="section" id="importance-of-minimizing-data-in-the-registry-for-openspp">
+<h2>Importance of Minimizing Data in the Registry for OpenSPP<a class="headerlink" href="#importance-of-minimizing-data-in-the-registry-for-openspp" title="Permalink to this headline">#</a></h2>
+<p>In OpenSPP, maintaining a minimalistic approach to the data stored in the registry is crucial while managing additional information on a per-program basis. This practice offers several key advantages, making the system more efficient, secure, and adaptable.</p>
+<p>Firstly, enhancing privacy and security is a primary benefit. By limiting the amount of data stored in the central registry, the risk of exposure in case of a data breach is significantly reduced. This practice also helps comply with data protection regulations by minimizing the amount of personal data held centrally.</p>
+<p>Secondly, a lean registry simplifies data management and ensures accuracy. With fewer data points to maintain, the administrative burden is reduced, making it easier to keep essential information current and accurate. This leads to more reliable data and less effort required for data management.</p>
+<p>From a performance standpoint, smaller datasets improve system efficiency. This results in faster query responses and better scalability, allowing the system to handle growth without performance issues. A minimal registry ensures that OpenSPP can expand smoothly and maintain high performance.</p>
+<p>Flexibility is another significant benefit of this approach. Storing data on a per-program basis allows for customization according to specific needs. Programs can manage and update their data independently, leading to more responsive and adaptable operations that cater to diverse requirements.</p>
+<p>Maintaining data consistency and integration is also easier with a minimal registry. This approach prevents redundancy and ensures consistency across various programs. It also facilitates smoother integration with external systems by keeping the central registry focused on essential linking data, making interoperability more straightforward.</p>
+<p>Resource optimization is achieved by reducing data storage requirements. This leads to cost savings and better resource allocation, enhancing overall system efficiency. A streamlined registry means fewer resources are needed for storage and maintenance, allowing those resources to be allocated more effectively elsewhere.</p>
+<p>Balancing core registry data with program-specific data ensures that essential information remains up-to-date and universally accessible, while program-specific details are managed separately for greater precision. This balance supports both the overarching needs of OpenSPP and the specific needs of individual programs.</p>
+<p>Finally, separating static data from dynamic data allows for accurate representation and easy updates. Static data, such as names and birthdates, are stored in the core registry, while dynamic data, like income changes or program participation, are managed as <span class="xref std std-term">event data</span>. This separation keeps the core registry uncluttered and efficient, facilitating better management and updates.</p>
+<p>By adopting these practices, OpenSPP ensures secure, efficient, and scalable data management, effectively supporting diverse program needs while maintaining a robust core infrastructure.</p>
+</div>
+<div class="section" id="deciding-where-to-store-data-in-openspp">
+<h2>Deciding Where to Store Data in OpenSPP<a class="headerlink" href="#deciding-where-to-store-data-in-openspp" title="Permalink to this headline">#</a></h2>
+<p>To effectively decide where different types of data should be stored in OpenSPP, it is essential to categorize the data into one of the following five categories: static core registry, dynamic core registry, static program, dynamic program, or not needed to be stored. This decision process ensures optimal data management, security, and efficiency. Here's a guide to help make these decisions:</p>
 <ol class="arabic simple">
-<li><p><strong>Coordination and Analytics</strong>: An IBR primarily functions as a back-office tool for social planning and finance agencies. It coordinates across different social protection pillars, monitoring who <a class="reference internal" href="../glossary.html#term-Benefits"><span class="xref std std-term">benefits</span></a> from which programs. This function is crucial for comprehensive analytics, budgeting, and planning, including understanding the actual coverage of social programs.</p></li>
-<li><p><strong>Program Administration</strong>: For program administrators, an IBR, especially if maintained in real-time, is invaluable. It provides insights into other benefits and <a class="reference internal" href="../glossary.html#term-Services"><span class="xref std std-term">services</span></a> their client populations are receiving, aiding in <a class="reference internal" href="../glossary.html#term-Intermediation"><span class="xref std std-term">intermediation</span></a> and referral processes.</p></li>
-<li><p><strong>Citizen Engagement</strong>: From the perspective of beneficiaries, a real-time updated IBR allows them to check their benefit status and service referrals, fostering transparency and trust in social protection systems.</p></li>
+<li><p><strong>Static Core Registry</strong></p>
+<ul class="simple">
+<li><p><strong>Characteristics:</strong> Information that is unlikely to change over time or that does not change often and is universally relevant across all programs.</p></li>
+<li><p><strong>Examples:</strong> Names, birthdates, national identification numbers, contact details, marital status, address.</p></li>
+<li><p><strong>Guidelines:</strong></p>
+<ul>
+<li><p>Does the data remain constant throughout an individual's lifetime?</p></li>
+<li><p>Is the data required by all programs for identification or basic profiling?</p></li>
+<li><p>Is the data critical for decision-making or program operation?</p></li>
+<li><p>Does storing this data comply with data minimization principles?</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Dynamic Core Registry</strong></p>
+<ul class="simple">
+<li><p><strong>Characteristics:</strong> Information that changes periodically and is relevant across multiple programs.</p></li>
+<li><p><strong>Examples:</strong> Household income level, poverty score.</p></li>
+<li><p><strong>Guidelines:</strong></p>
+<ul>
+<li><p>Does the data change but is still needed universally by all programs?</p></li>
+<li><p>Is it important to keep this data updated centrally for all programs to access?</p></li>
+<li><p>Is the data critical for decision-making or program operation?</p></li>
+<li><p>Does storing this data comply with data minimization principles?</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Static Program</strong></p>
+<ul class="simple">
+<li><p><strong>Characteristics:</strong> Information that is specific to a particular program and does not change frequently.</p></li>
+<li><p><strong>Examples:</strong> Enrollment date in a specific program, initial eligibility criteria.</p></li>
+<li><p><strong>Guidelines:</strong></p>
+<ul>
+<li><p>Is the data relevant only to a specific program?</p></li>
+<li><p>Is it unlikely to change once recorded?</p></li>
+<li><p>Is the data critical for decision-making or program operation?</p></li>
+<li><p>Does storing this data comply with data minimization principles?</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Dynamic Program</strong></p>
+<ul class="simple">
+<li><p><strong>Characteristics:</strong> Information that is specific to a particular program and changes over time.</p></li>
+<li><p><strong>Examples:</strong> Program participation status, progress updates.</p></li>
+<li><p><strong>Guidelines:</strong></p>
+<ul>
+<li><p>Is the data relevant only to a specific program and likely to change over time?</p></li>
+<li><p>Does the program need to track updates or changes in this data?</p></li>
+<li><p>Is the data critical for decision-making or program operation?</p></li>
+<li><p>Does storing this data comply with data minimization principles?</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Not Needed to be Stored</strong></p>
+<ul class="simple">
+<li><p><strong>Characteristics:</strong> Information that is either unnecessary to store or can be derived from other data.</p></li>
+<li><p><strong>Examples:</strong> Temporary notes, redundant data, derived metrics.</p></li>
+<li><p><strong>Guidelines:</strong></p>
+<ul>
+<li><p>Is the data critical for decision-making or program operation?</p></li>
+<li><p>Can the data be derived from other stored information?</p></li>
+<li><p>Does storing this data comply with data minimization principles?</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<div class="section" id="steps-to-decide-data-storage">
+<h3>Steps to Decide Data Storage<a class="headerlink" href="#steps-to-decide-data-storage" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Identify the Data Type:</strong> Determine if the data is static or dynamic, and whether it applies universally or to a specific program.</p></li>
+<li><p><strong>Assess the Necessity:</strong> Evaluate if storing the data is essential for operations, decision-making, or compliance with regulations.</p></li>
+<li><p><strong>Determine Accessibility Needs:</strong> Consider who needs access to the data and how often it will be accessed or updated.</p></li>
+<li><p><strong>Evaluate Cost, Security Risk, and Value:</strong> Assess the cost of storing the data, the security risk it poses, and the value it adds.</p>
+<ul class="simple">
+<li><p><strong>Cost:</strong> Consider data collection costs, maintenance efforts, and potential impacts on system performance.</p></li>
+<li><p><strong>Security Risk:</strong> Evaluate the potential risks associated with storing the data, such as data breaches or unauthorized access.</p></li>
+<li><p><strong>Value:</strong> Determine the importance and utility of the data for program operations and decision-making.</p></li>
+</ul>
+</li>
+<li><p><strong>Apply the Guidelines:</strong> Use the characteristics and guidelines provided above to categorize the data into one of the five categories.</p></li>
+<li><p><strong>Review and Confirm:</strong> Regularly review the categorization to ensure it remains appropriate as programs and data usage evolve.</p></li>
 </ol>
 </div>
-<div class="section" id="key-components-of-an-integrated-beneficiary-registry">
-<h2>Key Components of an Integrated Beneficiary Registry<a class="headerlink" href="#key-components-of-an-integrated-beneficiary-registry" title="Permalink to this headline">#</a></h2>
+<div class="section" id="practical-tips">
+<h3>Practical Tips<a class="headerlink" href="#practical-tips" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><strong>Demographic Information</strong>: Includes ID, age, sex, <a class="reference internal" href="../glossary.html#term-Family"><span class="xref std std-term">family</span></a> members, etc.</p></li>
-<li><p><strong>Contact Information</strong>: Address, phone number, and email (if available).</p></li>
-<li><p><strong><a class="reference internal" href="../glossary.html#term-Household"><span class="xref std std-term">household</span></a> Composition</strong>: Details about the beneficiary's household, including relationship with the beneficiary and educational status of household members.</p></li>
-<li><p><strong>Program Enrollment</strong>: Information on programs in which beneficiaries are or were enrolled.</p></li>
-<li><p><strong>Benefit History</strong>: Details of assistance received, payment history, and duration of participation.</p></li>
-<li><p><strong>Socioeconomic Data</strong>: Such as poverty scores.</p></li>
+<li><p><strong>Collaborate with Stakeholders:</strong> Involve program managers and data analysts in the decision-making process to ensure all perspectives are considered.</p></li>
+<li><p><strong>Document Decisions:</strong> Keep a record of why each data type was categorized a certain way to maintain clarity and consistency over time.</p></li>
+<li><p><strong>Stay Updated with Regulations:</strong> Ensure compliance with data protection regulations by regularly reviewing and updating data storage practices.</p></li>
 </ul>
 </div>
-<div class="section" id="advantages-of-an-integrated-beneficiary-registry">
-<h2>Advantages of an Integrated Beneficiary Registry<a class="headerlink" href="#advantages-of-an-integrated-beneficiary-registry" title="Permalink to this headline">#</a></h2>
+<div class="section" id="example-scenario">
+<h3>Example Scenario<a class="headerlink" href="#example-scenario" title="Permalink to this headline">#</a></h3>
+<p><strong>Data Type:</strong> Household income level</p>
 <ul class="simple">
-<li><p><strong>Enhanced Monitoring and Evaluation</strong>: Provides a platform for near real-time verification and validation.</p></li>
-<li><p><strong>Improved Resource Allocation</strong>: Aids in data-driven policy design and efficient resource allocation.</p></li>
-<li><p><strong>Increased Operational Efficiency</strong>: Facilitates integrated operations like payments and <a class="reference internal" href="../glossary.html#term-Grievance"><span class="xref std std-term">grievance</span></a> handling, thereby enhancing program delivery.</p></li>
+<li><p><strong>Static Core Registry:</strong> No, because it changes over time.</p></li>
+<li><p><strong>Dynamic Core Registry:</strong> Yes, because it changes periodically but is needed by multiple programs for eligibility and benefit calculations.</p></li>
+<li><p><strong>Static Program:</strong> No, because income can fluctuate.</p></li>
+<li><p><strong>Dynamic Program:</strong> Potentially, but given its relevance across multiple programs, it fits better in the dynamic core registry.</p></li>
+<li><p><strong>Not Needed to Store It:</strong> No, it is essential data for program eligibility and benefit calculation.</p></li>
 </ul>
+<p><strong>Decision:</strong> Store household income level in the dynamic core registry, considering its periodic changes and its relevance across multiple programs.</p>
 </div>
-<div class="section" id="challenges-and-considerations">
-<h2>Challenges and Considerations<a class="headerlink" href="#challenges-and-considerations" title="Permalink to this headline">#</a></h2>
-<p>Implementing an IBR comes with its own set of challenges, including <a class="reference internal" href="../glossary.html#term-Data-privacy"><span class="xref std std-term">data privacy</span></a> concerns, the need for real-time data updating, and ensuring interoperability with other social protection systems. It requires robust system architecture and careful consideration of data security standards.</p>
 </div>
-<div class="section" id="relation-to-the-social-registry">
-<h2>Relation to the social registry<a class="headerlink" href="#relation-to-the-social-registry" title="Permalink to this headline">#</a></h2>
-<p>A <a class="reference internal" href="../glossary.html#term-Social-registry"><span class="xref std std-term">social registry</span></a> is a comprehensive informational tool that collects, stores, and manages data about potential beneficiaries for social programs. Unlike the Integrated Beneficiary Registry, which focuses on individuals currently receiving benefits, a Social Registry encompasses a broader population, including those who are potentially eligible for various social programs.</p>
-<div class="section" id="key-differences-and-interactions">
-<h3>Key Differences and Interactions<a class="headerlink" href="#key-differences-and-interactions" title="Permalink to this headline">#</a></h3>
+<div class="section" id="key-concepts-for-organizing-data-in-the-openspp-registry">
+<h2>Key concepts for organizing data in the OpenSPP registry<a class="headerlink" href="#key-concepts-for-organizing-data-in-the-openspp-registry" title="Permalink to this headline">#</a></h2>
+<p>OpenSPP's registry is structured around four main components:</p>
+<ul class="simple">
+<li><p><strong>Registrant</strong></p></li>
+<li><p><strong>Group Membership</strong></p></li>
+<li><p><strong>Event Data</strong></p></li>
+<li><p><strong>Change Requests</strong></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">core</span> <span class="pre">registry</span></code> should maintain minimal information about the registrants to adhere to data minimization principles. This approach ensures the system remains manageable and maintainable over time.</p>
+</div>
+<div class="section" id="registrant">
+<h2>Registrant<a class="headerlink" href="#registrant" title="Permalink to this headline">#</a></h2>
+<div class="section" id="definition">
+<h3>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">#</a></h3>
+<p>Registrants are individuals, families, households, farms, etc., who have provided their information during the intake and registration phase of the delivery chain. Registrants can provide their information either on their initiative (on demand; see applicants) or at the initiative of a public agency or program (e.g., en masse registration/census sweeps). In the latter case, they are not termed applicants because they did not technically “apply” for benefits and services.</p>
+<p>In OpenSPP, there are two primary categories of registrants:</p>
+<ul class="simple">
+<li><p><strong>Individuals</strong></p></li>
+<li><p><strong>Groups</strong></p></li>
+</ul>
+<p>Both categories use the same model: <code class="docutils literal notranslate"><span class="pre">res.partner</span></code>. This model leverages the extensive module ecosystem available in Odoo. Registrants have a field named <code class="docutils literal notranslate"><span class="pre">is_registrant</span></code> to filter them in the registry. To differentiate between Individuals and Groups, the field <code class="docutils literal notranslate"><span class="pre">is_group</span></code> is used.</p>
+<p>OpenSPP supports flexible use cases:</p>
+<ul class="simple">
+<li><p>Use only individuals.</p></li>
+<li><p>Use only groups.</p></li>
+<li><p>Use both individuals and groups, linked through the <code class="docutils literal notranslate"><span class="pre">g2p.group.membership</span></code> model, which connects individuals to their respective groups.</p></li>
+</ul>
+<div class="section" id="individuals">
+<h4>Individuals<a class="headerlink" href="#individuals" title="Permalink to this headline">#</a></h4>
+<p>Individuals represent a single person, which can be a real person or a dummy person. They are the smallest unit of registrant in the OpenSPP registry.</p>
+</div>
+<div class="section" id="groups">
+<h4>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">#</a></h4>
+<p>Groups represent a collection of individuals that share something in common, such as a family, household, farm, community, village, school, company, cooperative, or any other type of group.</p>
+<p>Groups can optionally be nested within other groups, such as a household being part of a cooperative. For this functionality, the <code class="docutils literal notranslate"><span class="pre">spp_registry_group_hierarchy</span></code> module is required.</p>
+</div>
+</div>
+</div>
+<div class="section" id="group-membership">
+<h2>Group Membership<a class="headerlink" href="#group-membership" title="Permalink to this headline">#</a></h2>
+<p>Group Membership in OpenSPP is a crucial feature that connects individuals to various groups, allowing for an organized and structured representation of relationships within the registry. This component ensures that data about how individuals are associated with larger entities like families, households, or organizations is clear and easily manageable.</p>
+<div class="section" id="key-elements">
+<h3>Key Elements<a class="headerlink" href="#key-elements" title="Permalink to this headline">#</a></h3>
+<p>Group Membership revolves around a few key elements:</p>
 <ol class="arabic simple">
-<li><p><strong>Scope of Data</strong>: While an IBR focuses on current beneficiaries, a Social Registry includes a wider demographic, capturing information on all individuals who have been assessed for potential <a class="reference internal" href="../glossary.html#term-Eligibility"><span class="xref std std-term">eligibility</span></a>.</p></li>
-<li><p><strong>Purpose and Use</strong>: The Social Registry serves as a gateway for enrollment into different social programs. It is used for <a class="reference internal" href="../glossary.html#term-Targeting"><span class="xref std std-term">targeting</span></a> and identifying eligible beneficiaries, whereas the IBR tracks and manages those who are already enrolled.</p></li>
-<li><p><strong>Data Flow and Integration</strong>: Information from the Social Registry often feeds into the IBR when individuals become program beneficiaries. This flow underscores the interconnectivity between these two systems, ensuring a seamless transition from potential to actual beneficiary status.</p></li>
-<li><p><strong>Policy and Planning Insights</strong>: While both registries offer valuable insights for policy-making and program planning, the Social Registry provides a broader perspective on the potential needs and eligibility profiles across a population, complementing the actual beneficiary data from the IBR.</p></li>
+<li><p><strong>Membership Type</strong>: This defines the role or type of membership an individual has within a group. For example, in a family group, one member might be designated as the head of the household. Some roles can be unique, meaning only one person can hold that role within a group.</p></li>
+<li><p><strong>Start Date</strong>: This indicates when the membership began, providing a timeline of the individual's association with the group.</p></li>
+<li><p><strong>End Date</strong>: If applicable, this marks when the membership ended, helping track changes over time.</p></li>
+<li><p><strong>Status</strong>: The status of a membership is automatically</p></li>
 </ol>
+<p>determined based on the end date. It can be either "active" if the membership is ongoing or "inactive" if it has ended.</p>
 </div>
-<div class="section" id="complementary-functions-in-social-protection">
-<h3>Complementary Functions in Social Protection<a class="headerlink" href="#complementary-functions-in-social-protection" title="Permalink to this headline">#</a></h3>
-<p>Together, these registries form a comprehensive information system for social protection. The Social Registry identifies and assesses potential beneficiaries, while the IBR manages and monitors those who receive benefits. This complementary relationship enhances the overall effectiveness and efficiency of social protection programs, ensuring that resources are appropriately allocated and that eligible individuals receive the support they need.</p>
+<div class="section" id="example-structure">
+<h3>Example Structure<a class="headerlink" href="#example-structure" title="Permalink to this headline">#</a></h3>
+<p>To illustrate, consider a scenario where several farms are part of larger farmer groups. Each farm includes multiple individuals working on them, and these farms can also be associated with different farmer groups. This structure allows for a clear and organized way to manage and visualize the relationships between individuals and their respective groups.</p>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>graph TD
+    A(Farmer Group 1) --- B(Farm A)
+    A --- C(Farm B)
+    D(Farmer Group 2) --- C
+    D --- E(Farm C)
+    B ---|head| F(Individual 1):::head
+    B --- G(Individual 2)
+    C ---|head| H(Individual 3):::head
+    C --- I(Individual 4)
+    E ---|head| J(Individual 5):::head
+    E --- K(Individual 6)
+    E --- L(Individual 7)
+    C --- L(Individual 7)
+
+    classDef farmerGroup fill:#FFD700,stroke:#333,stroke-width:4px;
+    classDef farm fill:#7CFC00,stroke:#333,stroke-width:2px;
+    classDef individual fill:#00BFFF,stroke:#333,stroke-width:1px;
+    classDef head stroke-width:2px,stroke-dasharray: 5,5;
+
+    class A,D farmerGroup;
+    class B,C,E farm;
+    class F,G,H,I,J,K,L individual;
+    linkStyle 4 stroke-dasharray: 5,5;
+    linkStyle 6 stroke-dasharray: 5,5;
+    linkStyle 8 stroke-dasharray: 5,5;
+</pre></div>
 </div>
 </div>
-<div class="section" id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
-<p>The Integrated Beneficiary Registry is a cornerstone in modern social protection <a class="reference internal" href="../glossary.html#term-Information-systems"><span class="xref std std-term">information systems</span></a>. By providing a unified view of beneficiary information, it not only enhances the effectiveness of social protection programs but also contributes to better policy-making and improved service delivery. As social protection systems evolve, the role of an IBR will become increasingly critical in ensuring equitable and efficient distribution of social benefits.</p>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<div class="section" id="rules-and-validation">
+<h3>Rules and Validation<a class="headerlink" href="#rules-and-validation" title="Permalink to this headline">#</a></h3>
+<p>Certain rules ensure the integrity and consistency of the data:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://spdci.org/resources/interoperability-in-action-7-integrated-beneficiary-registry-english-recording/">SPDCI - Social Protection Information System Interacting with Integrated
-Beneficiary Registry</a></p></li>
+<li><p><strong>Unique Roles</strong>: Some roles within a group must be unique. For instance, a group can have only one head of household.</p></li>
+<li><p><strong>End Date</strong>: The end date of a membership cannot be earlier than the start date, ensuring logical consistency.</p></li>
+<li><p><strong>Duplication</strong>: An individual cannot be added to the same group more than once, preventing data redundancy.</p></li>
 </ul>
+<p>By understanding and utilizing the Group Membership feature, users can effectively manage complex relationships within the OpenSPP registry, ensuring that the data remains organized, accurate, and easy to navigate.</p>
+</div>
+</div>
+<div class="section" id="event-data">
+<h2>Event Data<a class="headerlink" href="#event-data" title="Permalink to this headline">#</a></h2>
+<p>Records of significant occurrences related to registrants, such as registration events, updates, or any other tracked activities.</p>
+</div>
+<div class="section" id="change-requests">
+<h2>Change Requests<a class="headerlink" href="#change-requests" title="Permalink to this headline">#</a></h2>
+<p>Requests for modifications to registrant data, including the workflow for approval and implementation of these changes.</p>
+<p>By integrating the decision-making process for data storage and organizing the core components efficiently, OpenSPP ensures a robust, scalable, and secure system for managing social protection programs. This approach not only supports diverse program needs but also maintains a streamlined and efficient core infrastructure.</p>
 </div>
 </div>
 </div>
@@ -908,17 +1159,17 @@ Beneficiary Registry</a></p></li>
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
-<a class="left-prev" href="farmer_registry.html" id="prev-link" title="previous page">
+<a class="left-prev" href="Registering_individuals_and_groups.html" id="prev-link" title="previous page">
 <i class="fas fa-angle-left"></i>
 <div class="prev-next-info">
 <p class="prev-next-subtitle">previous</p>
-<p class="prev-next-title">Farmer Registry</p>
+<p class="prev-next-title">Key Terminology</p>
 </div>
 </a>
-<a class="right-next" href="social_protection_management_information_systems.html" id="next-link" title="next page">
+<a class="right-next" href="../community_and_support/index.html" id="next-link" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Social Protection Management Information Systems</p>
+<p class="prev-next-title">Community and Support</p>
 </div>
 <i class="fas fa-angle-right"></i>
 </a>
