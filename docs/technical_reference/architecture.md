@@ -250,10 +250,3 @@ to the thousands of applications available in the [Odoo App Store](https://apps.
 ### Example components for a large project
 
 ![](images/openspp_architecture_large_project.png)
-
-### Hosting
-
-![OpenSPP Hosting](images/openspp_hosting.png)
-
-> Principles are inspired by
-> [MOSIP's principles](https://docs.mosip.io/1.1.5/architecture/architecture-principles)
