@@ -27,32 +27,44 @@ By adopting these practices, OpenSPP ensures secure, efficient, and scalable dat
 To effectively decide where different types of data should be stored in OpenSPP, it is essential to categorize the data into one of the following five categories: static core registry, dynamic core registry, static program, dynamic program, or not needed to be stored. This decision process ensures optimal data management, security, and efficiency. Here's a guide to help make these decisions:
 
 1. **Static Core Registry**
+
    - **Characteristics:** Information that is unlikely to change over time or that does not change often and is universally relevant across all programs.
    - **Examples:** Names, birthdates, national identification numbers, contact details, marital status, address.
    - **Guidelines:**
      - Does the data remain constant throughout an individual's lifetime?
      - Is the data required by all programs for identification or basic profiling?
+     - Is the data critical for decision-making or program operation?
+     - Does storing this data comply with data minimization principles?
 
 2. **Dynamic Core Registry**
+
    - **Characteristics:** Information that changes periodically and is relevant across multiple programs.
    - **Examples:** Household income level, poverty score.
    - **Guidelines:**
      - Does the data change but is still needed universally by all programs?
      - Is it important to keep this data updated centrally for all programs to access?
+     - Is the data critical for decision-making or program operation?
+     - Does storing this data comply with data minimization principles?
 
 3. **Static Program**
+
    - **Characteristics:** Information that is specific to a particular program and does not change frequently.
    - **Examples:** Enrollment date in a specific program, initial eligibility criteria.
    - **Guidelines:**
      - Is the data relevant only to a specific program?
      - Is it unlikely to change once recorded?
+     - Is the data critical for decision-making or program operation?
+     - Does storing this data comply with data minimization principles?
 
 4. **Dynamic Program**
+
    - **Characteristics:** Information that is specific to a particular program and changes over time.
    - **Examples:** Program participation status, progress updates.
    - **Guidelines:**
      - Is the data relevant only to a specific program and likely to change over time?
      - Does the program need to track updates or changes in this data?
+     - Is the data critical for decision-making or program operation?
+     - Does storing this data comply with data minimization principles?
 
 5. **Not Needed to be Stored**
    - **Characteristics:** Information that is either unnecessary to store or can be derived from other data.
@@ -148,7 +160,7 @@ Group Membership revolves around a few key elements:
 
 4. **Status**: The status of a membership is automatically
 
- determined based on the end date. It can be either "active" if the membership is ongoing or "inactive" if it has ended.
+determined based on the end date. It can be either "active" if the membership is ongoing or "inactive" if it has ended.
 
 ### Example Structure
 
