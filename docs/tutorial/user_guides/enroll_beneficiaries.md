@@ -1,4 +1,4 @@
-# Register new individual
+# Enroll beneficiaries
 
 ## Introduction
 
