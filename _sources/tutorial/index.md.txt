@@ -25,9 +25,10 @@ This Tutorials serve as a detailed manual for the utilization and navigation of 
 - [Vouchers](vouchers)
 - [Hardware Integration](hardware_integration)
 - [Register new individual](user_guides/register_new_individual)
+- [Enroll beneficiaries](user_guides/enroll_beneficiaries)
+- [Import registrant data](user_guides/import_registrant_data)
 - [Export Registrant Data](user_guides/export_registrant_data)
 - [Administrating role-based access](user_guides/administrating_role_based_access)
-- [Import registrant data](user_guides/import_registrant_data)
 
 <!-- - [User Management]
 - [Registrant Management]
@@ -65,8 +66,10 @@ programs_and_cycles
 proxy_means_test
 vouchers
 user_guides/register_new_individual
+user_guides/enroll_beneficiaries
+user_guides/import_registrant_data
 user_guides/export_registrant_data
 user_guides/administrating_role_based_access
-user_guides/import_registrant_data
+
 
 ```
