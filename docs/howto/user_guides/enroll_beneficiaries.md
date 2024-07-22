@@ -24,7 +24,7 @@ Depending on the choices made in the program setup, there are two different ways
 
 ### Import and enrollment as part of program setup
 
-If the checkbox Yes is selected in the final step of the program setup, the beneficiaries will already have been imported and enrolled as part of the program configuration, meaning that no additional step needs to be taken and it is possible to proceed to create a cycle. Learn more about how to create a cycle in the documentation Create a program cycle & prepare entitlements.
+If the checkbox **Yes** is selected in the final step of the program setup, the beneficiaries will already have been imported and enrolled as part of the program configuration, meaning that no additional step needs to be taken and it is possible to proceed to create a cycle. Learn more about how to create a cycle in the documentation Create a program cycle & prepare entitlements.
 
 To verify that the beneficiaries have been enrolled, you can follow the steps below:
 
