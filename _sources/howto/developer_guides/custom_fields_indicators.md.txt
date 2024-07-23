@@ -64,25 +64,25 @@ To add a custom field to a group, follow these steps:
 
 ```python
 class G2PGroup(models.Model):
-       _inherit = "res.partner"
+    _inherit = "res.partner"
 
-       z_ind_grp_num_children = fields.Integer(
-           "Number of Children",
-           compute="_compute_ind_grp_num_children",
-           help="Number of children in the group",
-           store=True,
-           allow_filter=True,
-       )
+    z_ind_grp_num_children = fields.Integer(
+        "Number of Children",
+        compute="_compute_ind_grp_num_children",
+        help="Number of children in the group",
+        store=True,
+        allow_filter=True,
+    )
 ```
 
 2. Implement the compute method:
 
 ```python
-   def _compute_ind_grp_num_children(self):
-       now = datetime.datetime.now()
-       children = now - relativedelta(years=CHILDREN_AGE_LIMIT)
-       domain = [("birthdate", ">=", children)]
-       self.compute_count_and_set_indicator("z_ind_grp_num_children", None, domain)
+def _compute_ind_grp_num_children(self):
+    now = datetime.datetime.now()
+    children = now - relativedelta(years=CHILDREN_AGE_LIMIT)
+    domain = [("birthdate", ">=", children)]
+    self.compute_count_and_set_indicator("z_ind_grp_num_children", None, domain)
 ```
 
 **compute_count_and_set_indicator** is a helper function in the OpenSPP API that simplifies computing indicators. You provide the field name, any specific relationship kinds, and the domain criteria to filter the relevant records.
@@ -94,27 +94,27 @@ To compute an indicator without using compute_count_and_set_indicator, directly 
 1. Define the field:
 
 ```python
-   class G2PGroup(models.Model):
-       _inherit = "res.partner"
+class G2PGroup(models.Model):
+    _inherit = "res.partner"
 
-       z_ind_grp_is_single_head_hh = fields.Boolean(
-           "Is Single-Headed Household",
-           compute="_compute_ind_grp_is_single_head_hh",
-           help="Indicates if the household is single-headed",
-           store=True,
-           allow_filter=True,
-       )
+    z_ind_grp_is_single_head_hh = fields.Boolean(
+        "Is Single-Headed Household",
+        compute="_compute_ind_grp_is_single_head_hh",
+        help="Indicates if the household is single-headed",
+        store=True,
+        allow_filter=True,
+    )
 ```
 
 2. Implement the compute method:
 
 ```python
-   def _compute_ind_grp_is_single_head_hh(self):
-       for record in self:
-           adult_count = record.group_membership_ids.filtered(
-               lambda member: member.individual.birthdate <= (datetime.datetime.now() - relativedelta(years=18))
-           ).mapped('individual')
-           record.z_ind_grp_is_single_head_hh = len(adult_count) == 1
+def _compute_ind_grp_is_single_head_hh(self):
+    for record in self:
+        adult_count = record.group_membership_ids.filtered(
+            lambda member: member.individual.birthdate <= (datetime.datetime.now() - relativedelta(years=18))
+        ).mapped('individual')
+        record.z_ind_grp_is_single_head_hh = len(adult_count) == 1
 ```
 
 Do not use **@api.depends** when you want to compute indicators based on individual information, it will be very inefficient. we have another mechanism to recompute when needed.
@@ -126,9 +126,9 @@ Do not use **@api.depends** when you want to compute indicators based on individ
 To add a custom field to an individual it is only necessary to define the field:
 
 ```python
-   class G2PIndividual(models.Model):
-       _inherit = "res.partner"
-       z_cst_indv_disability_level = fields.Integer("Disability Level")
+class G2PIndividual(models.Model):
+    _inherit = "res.partner"
+    z_cst_indv_disability_level = fields.Integer("Disability Level")
 ```
 
 ### Integrating custom fields into the UI

@@ -1010,25 +1010,25 @@
 <li><p>Define the field:</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">G2PGroup</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-       <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"res.partner"</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"res.partner"</span>
 
-       <span class="n">z_ind_grp_num_children</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span>
-           <span class="s2">"Number of Children"</span><span class="p">,</span>
-           <span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_ind_grp_num_children"</span><span class="p">,</span>
-           <span class="n">help</span><span class="o">=</span><span class="s2">"Number of children in the group"</span><span class="p">,</span>
-           <span class="n">store</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-           <span class="n">allow_filter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-       <span class="p">)</span>
+    <span class="n">z_ind_grp_num_children</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span>
+        <span class="s2">"Number of Children"</span><span class="p">,</span>
+        <span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_ind_grp_num_children"</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"Number of children in the group"</span><span class="p">,</span>
+        <span class="n">store</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">allow_filter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Implement the compute method:</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="k">def</span> <span class="nf">_compute_ind_grp_num_children</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-       <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-       <span class="n">children</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="n">CHILDREN_AGE_LIMIT</span><span class="p">)</span>
-       <span class="n">domain</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"birthdate"</span><span class="p">,</span> <span class="s2">"&gt;="</span><span class="p">,</span> <span class="n">children</span><span class="p">)]</span>
-       <span class="bp">self</span><span class="o">.</span><span class="n">compute_count_and_set_indicator</span><span class="p">(</span><span class="s2">"z_ind_grp_num_children"</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">domain</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_compute_ind_grp_num_children</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="n">children</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="n">CHILDREN_AGE_LIMIT</span><span class="p">)</span>
+    <span class="n">domain</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"birthdate"</span><span class="p">,</span> <span class="s2">"&gt;="</span><span class="p">,</span> <span class="n">children</span><span class="p">)]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">compute_count_and_set_indicator</span><span class="p">(</span><span class="s2">"z_ind_grp_num_children"</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">domain</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>compute_count_and_set_indicator</strong> is a helper function in the OpenSPP API that simplifies computing indicators. You provide the field name, any specific relationship kinds, and the domain criteria to filter the relevant records.</p>
@@ -1039,27 +1039,27 @@
 <ol class="arabic simple">
 <li><p>Define the field:</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="k">class</span> <span class="nc">G2PGroup</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-       <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"res.partner"</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">G2PGroup</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"res.partner"</span>
 
-       <span class="n">z_ind_grp_is_single_head_hh</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span>
-           <span class="s2">"Is Single-Headed Household"</span><span class="p">,</span>
-           <span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_ind_grp_is_single_head_hh"</span><span class="p">,</span>
-           <span class="n">help</span><span class="o">=</span><span class="s2">"Indicates if the household is single-headed"</span><span class="p">,</span>
-           <span class="n">store</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-           <span class="n">allow_filter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-       <span class="p">)</span>
+    <span class="n">z_ind_grp_is_single_head_hh</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span>
+        <span class="s2">"Is Single-Headed Household"</span><span class="p">,</span>
+        <span class="n">compute</span><span class="o">=</span><span class="s2">"_compute_ind_grp_is_single_head_hh"</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"Indicates if the household is single-headed"</span><span class="p">,</span>
+        <span class="n">store</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">allow_filter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Implement the compute method:</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="k">def</span> <span class="nf">_compute_ind_grp_is_single_head_hh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-       <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-           <span class="n">adult_count</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">group_membership_ids</span><span class="o">.</span><span class="n">filtered</span><span class="p">(</span>
-               <span class="k">lambda</span> <span class="n">member</span><span class="p">:</span> <span class="n">member</span><span class="o">.</span><span class="n">individual</span><span class="o">.</span><span class="n">birthdate</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="mi">18</span><span class="p">))</span>
-           <span class="p">)</span><span class="o">.</span><span class="n">mapped</span><span class="p">(</span><span class="s1">'individual'</span><span class="p">)</span>
-           <span class="n">record</span><span class="o">.</span><span class="n">z_ind_grp_is_single_head_hh</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">adult_count</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_compute_ind_grp_is_single_head_hh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+        <span class="n">adult_count</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">group_membership_ids</span><span class="o">.</span><span class="n">filtered</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">member</span><span class="p">:</span> <span class="n">member</span><span class="o">.</span><span class="n">individual</span><span class="o">.</span><span class="n">birthdate</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="mi">18</span><span class="p">))</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">mapped</span><span class="p">(</span><span class="s1">'individual'</span><span class="p">)</span>
+        <span class="n">record</span><span class="o">.</span><span class="n">z_ind_grp_is_single_head_hh</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">adult_count</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <p>Do not use <strong>@api.depends</strong> when you want to compute indicators based on individual information, it will be very inefficient. we have another mechanism to recompute when needed.</p>
@@ -1070,9 +1070,9 @@
 <div class="section" id="example-adding-a-custom-field-for-disability-level">
 <h4>Example: Adding a custom field for disability level<a class="headerlink" href="#example-adding-a-custom-field-for-disability-level" title="Permalink to this headline">#</a></h4>
 <p>To add a custom field to an individual it is only necessary to define the field:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="k">class</span> <span class="nc">G2PIndividual</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-       <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"res.partner"</span>
-       <span class="n">z_cst_indv_disability_level</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="s2">"Disability Level"</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">G2PIndividual</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"res.partner"</span>
+    <span class="n">z_cst_indv_disability_level</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="s2">"Disability Level"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
