@@ -18,6 +18,7 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 - {doc}`developer_guides/custom_entitlement`
 - {doc}`developer_guides/custom_registry`
 - {doc}`developer_guides/custom_registry_tab_fields`
+- {doc}`developer_guides/custom_fields_indicators`
 - {doc}`developer_guides/custom_service_points`
 - {doc}`developer_guides/rest_api`
 
@@ -58,6 +59,7 @@ developer_guides/custom_cr
 developer_guides/custom_entitlement
 developer_guides/custom_registry
 developer_guides/custom_registry_tab_fields
+developer_guides/custom_fields_indicators.md
 developer_guides/custom_service_points
 
 developer_guides/rest_api
