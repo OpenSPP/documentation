@@ -286,7 +286,7 @@ class ComputeIndicatorFieldsTest(TransactionCase):
         )
         cls.registrant_2 = cls.env["res.partner"].create
 
-(
+        (
             {
                 "name": "Angus Kleitos",
                 "is_group": False,
