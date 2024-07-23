@@ -14,10 +14,6 @@ In this article, the steps will be given on how to add a single sign-on to a ben
 
 After completing this guide, developer can create a front-end app using React and can log in to the front-end application using Keycloak.
 
-## Terminology
-
-`Adapters` are libraries that make it possible to use Keycloak in securing services and applications.
-
 ## Step-by-step
 
 A working sample application can be accessed at the provided [link](https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/integrations/kc-react-application).
