@@ -1,4 +1,4 @@
-# OpenSPP Registrant Import Module
+# OpenSPP Registrant Import
 
 ```{warning}
 

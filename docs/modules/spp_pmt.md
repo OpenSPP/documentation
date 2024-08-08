@@ -1,4 +1,4 @@
-# OpenSPP Proxy Means Testing (spp_pmt) Module
+# OpenSPP Proxy Means Testing
 
 ```{warning}
 

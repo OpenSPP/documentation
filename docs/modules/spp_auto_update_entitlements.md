@@ -1,4 +1,4 @@
-# OpenSPP Auto-Update Entitlements Module
+# OpenSPP Auto-Update Entitlements
 
 ```{warning}
 

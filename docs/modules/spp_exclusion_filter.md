@@ -1,4 +1,4 @@
-# OpenSPP Exclusion Filter Module
+# OpenSPP Exclusion Filter
 
 ```{warning}
 

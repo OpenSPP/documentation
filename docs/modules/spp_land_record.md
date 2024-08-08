@@ -1,4 +1,4 @@
-# OpenSPP: Land Record 
+# OpenSPP Land Record 
 
 ```{warning}
 

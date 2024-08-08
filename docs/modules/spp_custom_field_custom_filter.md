@@ -1,4 +1,4 @@
-# SPP Custom Field - Custom Filter Integration
+# OpenSPP Custom Field Custom Filter
 
 ```{warning}
 

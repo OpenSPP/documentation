@@ -1,4 +1,4 @@
-# OpenSPP Programs (Service Points Integration) Module
+# OpenSPP Programs: Service Points Integration
 
 ```{warning}
 

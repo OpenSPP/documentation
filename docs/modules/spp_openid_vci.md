@@ -1,4 +1,4 @@
-# spp_openid_vci Module
+# OpenSPP OpenID VCI
 
 ```{warning}
 

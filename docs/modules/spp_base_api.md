@@ -1,4 +1,4 @@
-# spp_base_api Module
+# OpenSPP Base API
 
 ```{warning}
 

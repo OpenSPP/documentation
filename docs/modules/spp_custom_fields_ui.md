@@ -1,4 +1,4 @@
-# G2P Registry: Custom Fields UI Module
+# OpenSPP Custom Filter UI
 
 ```{warning}
 

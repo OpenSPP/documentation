@@ -1,4 +1,4 @@
-# OpenSPP Change Request Module
+# OpenSPP Change Request
 
 ```{warning}
 

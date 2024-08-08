@@ -1,4 +1,4 @@
-# OpenSPP Change Request Demo: Add Child/Member Module
+# OpenSPP Change Request Demo: Add Child/Member
 
 ```{warning}
 

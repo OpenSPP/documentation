@@ -1,4 +1,4 @@
-# OpenSPP Programs Module
+# OpenSPP Programs
 
 ```{warning}
 

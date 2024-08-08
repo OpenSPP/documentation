@@ -1,4 +1,4 @@
-# G2P Registry: Individual Module 
+# G2P Registry Individual
 
 ```{warning}
 

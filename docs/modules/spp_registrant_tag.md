@@ -1,4 +1,4 @@
-# OpenSPP Registrant Tags Module
+# OpenSPP Registrant Tags
 
 ```{warning}
 

@@ -1,4 +1,4 @@
-# spp_event_data Module
+# OpenSPP Event Data
 
 ```{warning}
 

@@ -1,4 +1,4 @@
-# OpenSPP Base Settings Module
+# OpenSPP Base Settings
 
 ```{warning}
 

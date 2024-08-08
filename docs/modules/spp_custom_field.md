@@ -1,4 +1,4 @@
-# OpenSPP Custom Field Module
+# OpenSPP Custom Field
 
 ```{warning}
 

@@ -1,4 +1,4 @@
-# G2P Registry: Membership Module
+# G2P Registry Membership
 
 ```{warning}
 

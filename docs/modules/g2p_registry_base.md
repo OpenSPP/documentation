@@ -1,4 +1,4 @@
-# G2P Registry Base Module
+# G2P Registry Base
 
 ```{warning}
 

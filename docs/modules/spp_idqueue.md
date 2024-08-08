@@ -1,4 +1,4 @@
-# OpenSPP ID Queue Module
+# OpenSPP ID Queue
 
 ```{warning}
 

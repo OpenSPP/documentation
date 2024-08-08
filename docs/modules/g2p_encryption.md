@@ -1,4 +1,4 @@
-# G2P Encryption Module
+# G2P Encryption
 
 ```{warning}
 

@@ -1,4 +1,4 @@
-# SPP Audit Log Module
+# OpenSPP Audit Log
 
 This module provides audit logging functionality for OpenSPP, enabling the tracking of changes made to specific data within the system. It helps maintain data integrity, accountability, and provides a historical record of modifications.
 

@@ -1,4 +1,4 @@
-# spp_farmer_registry_dashboard Module 
+# OpenSPP Farmer Registry Dashboard
 
 ```{warning}
 

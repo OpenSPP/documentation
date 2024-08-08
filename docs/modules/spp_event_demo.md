@@ -1,4 +1,4 @@
-# spp_event_demo Module
+# OpenSPP Event Demo
 
 ```{warning}
 

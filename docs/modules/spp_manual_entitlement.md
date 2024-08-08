@@ -1,4 +1,4 @@
-# OpenSPP Manual Entitlement Module
+# OpenSPP Manual Entitlement
 
 ```{warning}
 

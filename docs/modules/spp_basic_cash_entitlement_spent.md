@@ -1,4 +1,4 @@
-# SPP Program Entitlement Basic Cash Spent 
+# OpenSPP Program Entitlement Basic Cash Spent 
 
 ```{warning}
 

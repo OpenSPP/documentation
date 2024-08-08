@@ -1,4 +1,4 @@
-# OpenSPP Program Entitlement (Cash) Module
+# OpenSPP Cash Entitlement
 
 ```{warning}
 

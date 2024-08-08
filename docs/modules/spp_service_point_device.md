@@ -1,4 +1,4 @@
-# OpenSPP Service Point Device Module
+# OpenSPP Service Point Device
 
 ```{warning}
 

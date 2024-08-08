@@ -1,4 +1,4 @@
-# g2p_openid_vci Module
+# G2P OpenID VCI
 
 ```{warning}
 

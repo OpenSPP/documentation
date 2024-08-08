@@ -1,4 +1,4 @@
-# OpenSPP Tag Based Eligibility Manager Module
+# OpenSPP Tag Based Eligibility Manager
 
 ```{warning}
 

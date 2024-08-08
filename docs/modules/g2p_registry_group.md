@@ -1,4 +1,4 @@
-# G2P Registry: Groups Module
+# G2P Registry Groups
 
 ```{warning}
 

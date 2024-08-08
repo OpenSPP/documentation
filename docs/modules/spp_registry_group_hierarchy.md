@@ -1,4 +1,4 @@
-# SPP Registry Group Hierarchy Module
+# OpenSPP Registry Group Hierarchy
 
 ```{warning}
 

@@ -1,4 +1,4 @@
-# OpenSPP Program ID Module
+# OpenSPP Program ID
 
 ```{warning}
 

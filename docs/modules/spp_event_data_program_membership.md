@@ -1,4 +1,4 @@
-# spp_event_data_program_membership Module
+# OpenSPP Event Data Program Membership
 
 ```{warning}
 

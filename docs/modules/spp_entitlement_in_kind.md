@@ -1,4 +1,4 @@
-# OpenSPP In-Kind Entitlement Module
+# OpenSPP In-Kind Entitlement
 
 ```{warning}
 

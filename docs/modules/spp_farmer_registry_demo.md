@@ -1,4 +1,4 @@
-# spp_farmer_registry_demo Module
+# OpenSPP Farmer Registry Demo
 
 ```{warning}
 

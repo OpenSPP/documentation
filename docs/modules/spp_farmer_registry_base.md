@@ -1,4 +1,4 @@
-# spp_farmer_registry_base Module
+# OpenSPP Farmer Registry Base
 
 ```{warning}
 

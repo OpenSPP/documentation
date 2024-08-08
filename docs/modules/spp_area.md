@@ -1,4 +1,4 @@
-# OpenSPP Area Module
+# OpenSPP Area
 
 ```{warning}
 

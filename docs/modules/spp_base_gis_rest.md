@@ -1,4 +1,4 @@
-# OpenSPP Base GIS: REST Module
+# OpenSPP Base GIS REST
 
 ```{warning}
 

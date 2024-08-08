@@ -1,4 +1,4 @@
-# SPP Custom Filter UI Module
+# OpenSPP Custom Filter UI 
 
 ```{warning}
 

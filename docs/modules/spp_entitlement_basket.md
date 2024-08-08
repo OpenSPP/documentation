@@ -1,4 +1,4 @@
-# OpenSPP Entitlement Basket Module
+# OpenSPP Entitlement Basket
 
 ```{warning}
 

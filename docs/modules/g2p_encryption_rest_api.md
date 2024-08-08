@@ -1,4 +1,4 @@
-# G2P Encryption: Rest API Module
+# G2P Encryption REST API
 
 ```{warning}
 

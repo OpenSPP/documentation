@@ -1,4 +1,4 @@
-# spp_openid_vci_group Module 
+# OpenSPP OpenID VCI Group
 
 ```{warning}
 

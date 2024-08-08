@@ -1,4 +1,4 @@
-# OpenSPP POS Module
+# OpenSPP POS
 
 ```{warning}
 

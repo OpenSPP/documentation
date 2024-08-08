@@ -1,4 +1,4 @@
-# OpenSPP API: Oauth Module
+# OpenSPP API: Oauth
 
 ```{warning}
 

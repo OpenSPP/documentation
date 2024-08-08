@@ -1,4 +1,4 @@
-# OpenSPP Registry - Scan ID Document Module
+# OpenSPP Registry: Scan ID Document
 
 ```{warning}
 

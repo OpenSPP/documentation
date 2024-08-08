@@ -1,4 +1,4 @@
-# OpenSPP Area GIS Module
+# OpenSPP Area GIS
 
 ```{warning}
 

@@ -1,4 +1,4 @@
-# SPP Custom Filter Module
+# OpenSPP Custom Filter
 
 ```{warning}
 

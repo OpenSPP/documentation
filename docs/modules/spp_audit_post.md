@@ -1,4 +1,4 @@
-# G2P Registry: Audit Post Module
+# OpenSPP Audit Post
 
 ```{warning}
 

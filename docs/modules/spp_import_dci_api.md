@@ -1,4 +1,4 @@
-# OpenSPP Import: DCI API Module
+# OpenSPP Import: DCI API
 
 ```{warning}
 

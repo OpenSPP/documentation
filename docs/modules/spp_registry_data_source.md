@@ -1,4 +1,4 @@
-# SPP Data Source Module
+# OpenSPP Data Source
 
 ```{warning}
 

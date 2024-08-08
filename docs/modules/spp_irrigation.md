@@ -1,4 +1,4 @@
-# OpenSPP Irrigation Module
+# OpenSPP Irrigation
 
 ```{warning}
 

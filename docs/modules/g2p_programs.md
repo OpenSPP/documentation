@@ -1,4 +1,4 @@
-# G2P Programs Module
+# G2P Programs
 
 ```{warning}
 

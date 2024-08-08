@@ -1,4 +1,4 @@
-# OpenSPP Entitlement Transactions Module
+# OpenSPP Entitlement Transactions
 
 ```{warning}
 

@@ -1,4 +1,4 @@
-# OpenSPP Custom Field: Recompute Daily
+# OpenSPP Custom Field Recompute Daily
 
 ```{warning}
 

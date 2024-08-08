@@ -1,4 +1,4 @@
-# OpenSPP Service Points Module
+# OpenSPP Service Points
 
 ```{warning}
 

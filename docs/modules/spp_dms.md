@@ -1,4 +1,4 @@
-# SPP Document Management System (spp_dms)
+# OpenSPP Document Management System
 
 ```{warning}
 

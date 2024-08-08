@@ -1,15 +1,13 @@
-# OpenSPP API: DCI Server Module
+# OpenSPP DCI API Server
 
 ```{warning}
 
 This is a work-in-progress document.
 ```
 
-TODO: Review, DCI is for Digital Convergence Initiative, not Digital Client Interface.
-
 ## Overview
 
-The [spp_dci_api_server](spp_dci_api_server) module provides a RESTful API that adheres to the DCI (Digital Client Interface) specification within the OpenSPP platform. This API enables authorized external systems to securely interact with OpenSPP's registry data, particularly focusing on individual registrant information.
+The [spp_dci_api_server](spp_dci_api_server) module provides a RESTful API that adheres to the DCI (Digital Convergence Initiative) specification within the OpenSPP platform. This API enables authorized external systems to securely interact with OpenSPP's registry data, particularly focusing on individual registrant information.
 
 ## Purpose
 

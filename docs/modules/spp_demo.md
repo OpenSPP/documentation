@@ -1,4 +1,4 @@
-# spp_demo Module
+# OpenSPP Demo
 
 ```{warning}
 

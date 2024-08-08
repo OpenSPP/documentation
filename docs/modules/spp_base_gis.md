@@ -1,4 +1,4 @@
-# OpenSPP Base GIS Module
+# OpenSPP Base GIS
 
 ```{warning}
 
