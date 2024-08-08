@@ -1,4 +1,9 @@
-# spp_base_api Module
+# OpenSPP Base API
+
+```{warning}
+
+This is a work-in-progress document.
+```
 
 ## Overview
 

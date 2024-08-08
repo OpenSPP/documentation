@@ -1,4 +1,9 @@
-# spp_event_data_program_membership Module
+# OpenSPP Event Data Program Membership
+
+```{warning}
+
+This is a work-in-progress document.
+```
 
 This module enhances the functionality of OpenSPP by integrating the **Event Data** module ([spp_event_data](spp_event_data)) with the **G2P Programs** module ([g2p_programs](spp_event_data](g2p_programs](spp_event_data)) with the **G2P Programs** module ([g2p_programs)). It allows users to record and track program membership-related events within the OpenSPP system.
 

@@ -1,4 +1,9 @@
-# G2P Encryption Module
+# G2P Encryption
+
+```{warning}
+
+This is a work-in-progress document.
+```
 
 ## Overview
 

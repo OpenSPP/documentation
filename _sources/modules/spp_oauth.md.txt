@@ -1,4 +1,9 @@
-# OpenSPP API: Oauth Module
+# OpenSPP API: Oauth
+
+```{warning}
+
+This is a work-in-progress document.
+```
 
 ## Overview
 

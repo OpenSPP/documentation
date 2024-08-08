@@ -1,4 +1,9 @@
-# OpenSPP Base GIS Module
+# OpenSPP Base GIS
+
+```{warning}
+
+This is a work-in-progress document.
+```
 
 ## Overview
 

@@ -1,4 +1,9 @@
-# SPP Document Management System (spp_dms)
+# OpenSPP Document Management System
+
+```{warning}
+
+This is a work-in-progress document.
+```
 
 ## Overview
 
