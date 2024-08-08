@@ -58,6 +58,7 @@ tutorial/index
 howto/index
 technical_reference/index
 explanation/index
+modules/index
 community_and_support/index
 contributing/index
 ```
