@@ -14,7 +14,7 @@ The **G2P Registry: Custom Fields UI** module aims to:
 
 1. **[g2p_registry_base](g2p_registry_base)**: This module depends on the **G2P Registry: Base** module, which provides the fundamental structure for storing and managing registrant data. The custom fields created through this UI module are directly integrated as extensions to the registrant profiles managed by the base module.
 
-2. **Base (base)**:  Leverages the Odoo [Base](https://www.odoo.com/documentation/17.0/developer/reference/backend/base.html) module for core functionalities like user interface elements, data models, and access control. 
+2. **Base (base)**:  Leverages the Odoo Base module for core functionalities like user interface elements, data models, and access control. 
 
 ## Additional Functionality
 
