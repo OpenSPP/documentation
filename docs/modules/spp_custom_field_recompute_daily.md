@@ -12,11 +12,11 @@ The primary goal of this module is to:
 
 ### Functionality and Integration
 
-#### Integration with [queue_job](queue_job)(https://apps.odoo.com/apps/modules/17.0/queue_job/)
+#### Integration with `queue_job`
 
 This module leverages the `queue_job` module to handle the asynchronous recomputation of fields. When a field marked for "Daily Recompute" needs updating, the module creates a background job using `queue_job`. This approach prevents the recomputation process from impacting the system's responsiveness, especially when dealing with large datasets.
 
-#### Integration with [base_setup](base_setup)(https://www.odoo.com/documentation/17.0/applications/general/general_settings.html)
+#### Integration with `base_setup`
 
 The module integrates with `base_setup` to provide configuration options for daily recomputation. Administrators can set the "Maximum Daily Recompute Records Count" through the "Settings" menu. This parameter limits the number of records processed synchronously during each recomputation cycle, preventing potential performance issues.
 

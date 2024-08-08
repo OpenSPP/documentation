@@ -1,8 +1,8 @@
-# G2P Registry: Custom Fields UI Module 
+# G2P Registry: Custom Fields UI Module
 
 This document outlines the functionality of the **G2P Registry: Custom Fields UI** module within the OpenSPP ecosystem. This module, depending on the **[g2p_registry_base](g2p_registry_base)** module, provides a user-friendly interface for defining and managing custom fields for registrants. These custom fields allow implementers to tailor the registry to their specific program needs by capturing additional data beyond the core fields provided by the base module.
 
-### Purpose
+## Purpose
 
 The **G2P Registry: Custom Fields UI** module aims to:
 
@@ -10,13 +10,13 @@ The **G2P Registry: Custom Fields UI** module aims to:
 * Provide a centralized location within the Odoo backend to manage these fields.
 * Offer flexibility in defining field types, validation rules, and display options.
 
-### Module Dependencies and Integration
+## Module Dependencies and Integration
 
-1. **[g2p_registry_base](g2p_registry_base)**: This module depends on the **[g2p_registry_base](g2p_registry_base](g2p_registry_base](g2p_registry_base)**: This module depends on the **[g2p_registry_base)** module, which provides the fundamental structure for storing and managing registrant data. The custom fields created through this UI module are directly integrated as extensions to the registrant profiles managed by the base module.
+1. **[g2p_registry_base](g2p_registry_base)**: This module depends on the **G2P Registry: Base** module, which provides the fundamental structure for storing and managing registrant data. The custom fields created through this UI module are directly integrated as extensions to the registrant profiles managed by the base module.
 
-2. **[base](base)**:  Leverages the Odoo [Base](base](Base](base)**:  Leverages the Odoo [Base)(https://www.odoo.com/documentation/17.0/developer/reference/backend/base.html) module for core functionalities like user interface elements, data models, and access control. 
+2. **Base (base)**:  Leverages the Odoo [Base](https://www.odoo.com/documentation/17.0/developer/reference/backend/base.html) module for core functionalities like user interface elements, data models, and access control. 
 
-### Additional Functionality
+## Additional Functionality
 
 The key features provided by the **G2P Registry: Custom Fields UI** module include:
 
@@ -27,6 +27,6 @@ The key features provided by the **G2P Registry: Custom Fields UI** module inclu
 * **Integration with Group Membership Kinds:** For calculated fields, provides the option to associate the calculation with specific group membership types defined within the system.
 * **Presence Indicator:** For calculated fields, includes the ability to configure a boolean "presence" indicator, simplifying the tracking of specific criteria related to group memberships.
 
-### Conclusion
+## Conclusion
 
 The **G2P Registry: Custom Fields UI** module empowers users to adapt the OpenSPP registry to their unique requirements without the need for extensive technical customization. Its intuitive interface and tight integration with the **[g2p_registry_base](g2p_registry_base)** module simplify the management of custom data, enhancing the flexibility and utility of the OpenSPP platform for diverse social protection programs. 

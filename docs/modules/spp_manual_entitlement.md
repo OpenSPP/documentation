@@ -14,13 +14,13 @@ The **OpenSPP Manual Entitlement** module aims to:
 
 ### Dependencies and Integration
 
-1. **Queue Job** ([queue_job](queue_job)(https://github.com/odoo/odoo/tree/17.0/addons/queue_job)): Utilizes the Queue Job module for asynchronous processing of entitlement creation, preventing performance issues when handling large numbers of beneficiaries.
+1. **Queue Job** ([queue_job](queue_job)): Utilizes the Queue Job module for asynchronous processing of entitlement creation, preventing performance issues when handling large numbers of beneficiaries.
 
-2. **G2P Registry: Base** ([g2p_registry_base](g2p_registry_base)(https://github.com/OpenSPP/openspp-modules/tree/16.0/g2p_registry_base)):  Depends on the G2P Registry: Base module to access and manage registrant data, ensuring that entitlements are linked to the correct beneficiary profiles.
+2. **G2P Registry: Base** ([g2p_registry_base](g2p_registry_base)):  Depends on the G2P Registry: Base module to access and manage registrant data, ensuring that entitlements are linked to the correct beneficiary profiles.
 
-3. **OpenSPP Registrant Import** ([spp_registrant_import](spp_registrant_import)(https://github.com/OpenSPP/openspp-modules/tree/16.0/spp_registrant_import)): Integrates with the OpenSPP Registrant Import module to potentially streamline the process of importing beneficiary lists for manual entitlement creation. 
+3. **OpenSPP Registrant Import** ([spp_registrant_import](spp_registrant_import)): Integrates with the OpenSPP Registrant Import module to potentially streamline the process of importing beneficiary lists for manual entitlement creation. 
 
-4. **G2P Programs** ([g2p_programs](g2p_programs)(https://github.com/OpenSPP/openspp-modules/tree/16.0/g2p_programs)):  Extends the G2P Programs module by adding functionality to create manual entitlements within the existing program and cycle structures.
+4. **G2P Programs** ([g2p_programs](g2p_programs)):  Extends the G2P Programs module by adding functionality to create manual entitlements within the existing program and cycle structures.
 
 ### Additional Functionality
 

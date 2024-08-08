@@ -26,12 +26,12 @@ The **OpenSPP ID Queue** module is designed to:
 
 ## Additional Functionality
 
-* **ID Request Queue (spp.print.queue.id)**:
+* **ID Request Queue (`spp.print.queue.id`)**:
     * Introduces a dedicated model to manage individual ID card requests, storing request details, associated registrant, selected template, request status, and approval information.
     * Provides functions to move requests through the workflow: approve, generate, print, distribute, and cancel.
     * Implements a messaging system to record actions taken on requests, enhancing auditability.
 
-* **ID Print Batch (spp.print.queue.batch)**:
+* **ID Print Batch (`spp.print.queue.batch`)**:
     * Enables the grouping of approved ID requests into batches for streamlined printing.
     * Offers functionalities to approve, generate, print, and mark batches as distributed.
     * Includes a status tracking system for batches, mirroring the individual request statuses.
@@ -40,7 +40,7 @@ The **OpenSPP ID Queue** module is designed to:
     * Allows administrators to configure the system to automatically approve ID requests upon creation, potentially bypassing the manual approval step for specific workflows.
 
 * **Registrant Integration**:
-    * Extends the **Registrant (res.partner)** model to include a link to all associated ID card requests, providing a centralized view of a registrant's ID card history. 
+    * Extends the **Registrant (`res.partner`)** model to include a link to all associated ID card requests, providing a centralized view of a registrant's ID card history. 
 
 ## Conclusion
 
