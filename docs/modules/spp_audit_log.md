@@ -1,42 +1,45 @@
-# G2P Registry: Membership Module
+# SPP Audit Log Module
 
-This document outlines the **G2P Registry: Membership** module within the OpenSPP platform. This module focuses on managing memberships between individual registrants and registered groups.
+This module provides audit logging functionality for OpenSPP, enabling the tracking of changes made to specific data within the system. It helps maintain data integrity, accountability, and provides a historical record of modifications.
 
-### Purpose
+## Purpose
 
-The module's primary goal is to define and track the relationship between individuals and groups within the OpenSPP system. It allows for nuanced categorization of memberships and provides tools to monitor changes in group composition over time.
+The **SPP Audit Log** module is designed to:
 
-### Module Integration and Dependencies
+* **Record Data Changes:** Automatically log changes made to specified fields within selected models.
+* **Track User Actions:**  Identify the user responsible for each data modification.
+* **Provide an Audit Trail:**  Maintain a chronological log of changes, including old and new values, for review and analysis.
 
-* **[g2p_registry_individual](g2p_registry_individual)**:  This module utilizes the individual registrant model for linking memberships. It also extends the individual's form view to display group affiliations and provides direct access to manage these memberships. 
-* **[g2p_registry_group](g2p_registry_group)**: The membership module seamlessly integrates with the group registrant model.  It extends the group form view with a dedicated "Members" tab to manage individuals associated with the group. This tab facilitates a comprehensive overview of membership roles and durations.
-* **Contacts (res.partner)**: This module leverages the standard Odoo Contacts module to streamline navigation and access to detailed information for both individual and group registrants linked to a membership. 
-* **Queue Job (queue_job)**: The module utilizes the Queue Job module to enhance performance. It delegates the computation of group indicators to background jobs, ensuring that long-running calculations do not disrupt user experience.
+## Module Dependencies and Integration
 
-### Additional Functionality
+1. **Base (base)**:  The module relies on Odoo's core features for models, views, security groups, and user management.
 
-1. **Group Membership Model (g2p.group.membership)**:
-    * This core model stores all membership data. 
-    * **Key fields include**:
-        * **Group:** (Required, Many-to-one) Defines the specific group the individual is a member of.
-        * **Individual:** (Required, Many-to-one) Identifies the individual member.
-        * **Kind:** (Many-to-many) Categorizes the nature of the membership (e.g., "Head of Household," "Dependent").
-        * **Start Date:** (Datetime) Records the membership's commencement date.
-        * **End Date:** (Datetime, Optional)  Marks the membership's termination date.
+2. **Mail (mail):** Leverages the messaging functionality for potential future enhancements related to audit log notifications. 
 
-2. **Membership Kinds (g2p.group.membership.kind)**:
-    * Defines and manages various roles or types of memberships.
-    * Allows administrators to enforce uniqueness within a group for specific kinds (e.g., only one "Head of Household" per group).
+3. **G2P Registry: Membership ([g2p_registry_membership](g2p_registry_membership)):** This dependency appears to be related to a specific use case and might not be a core dependency for the audit log functionality.  It could indicate that the audit log is being used to track changes within the group membership model.
 
-3. **Data Validation**:
-    * Prevents redundant memberships (same individual in the same group).
-    * Enforces chronological consistency, ensuring the end date is not before the start date.
-    * Restricts the creation of multiple memberships with the same unique "kind" within a group.
+## Additional Functionality
 
-4. **User Interface Enhancements**:
-    * Adds user-friendly buttons on individual and group forms for direct access and management of associated memberships.
-    * Provides a dedicated tree view to list and filter group memberships, enhancing data accessibility and management.
+The module introduces the following key elements:
 
-### Conclusion
+* **Audit Rule Model ([spp.audit.rule](spp.audit.rule)):**
+    * Allows administrators to define rules specifying which models and fields should have their changes logged.
+    * Provides options to log the creation, update, or deletion of records.
+    * Includes a feature to automatically add a "View Logs" button to the related model's form view for easy access to audit logs. 
 
-The **G2P Registry: Membership** module is essential for managing and tracking individuals within groups, crucial for social protection programs and farmer registries. It delivers a flexible, robust system to define, categorize, and track memberships, ensuring data integrity. This, in turn, facilitates comprehensive analysis of group composition and dynamics within the OpenSPP ecosystem. 
+* **Audit Log Model ([spp.audit.log](spp.audit.log)):**
+    * Stores the audit log entries, capturing details like timestamp, user, model, record ID, type of operation (create/write/unlink), and the changes made (old and new values).
+    * Provides a computed field to display the changed data in a user-friendly HTML format within the audit log form view. 
+
+* **Audit Decorator:** 
+    * Utilizes a decorator function to automatically intercept and log changes made to models and fields defined by the audit rules. This simplifies the implementation and ensures that auditing is applied consistently. 
+
+* **Security Groups:**
+    * Introduces a new security group, "Manager," to manage access to audit log rules and logs, restricting sensitive information from unauthorized users.
+
+* **User Interface:**
+    * Adds menu items for managing audit rules and viewing audit logs, providing centralized access points within the OpenSPP interface. 
+
+## Conclusion
+
+The **SPP Audit Log** module enhances the accountability and transparency of the OpenSPP platform. By meticulously tracking data changes and user actions, it provides administrators with a valuable tool for auditing, troubleshooting, and maintaining data integrity. The module's flexible rule system and tight integration with core Odoo features make it adaptable to a variety of data tracking requirements within the OpenSPP ecosystem. 

@@ -1,5 +1,10 @@
 # SPP Custom Field - Custom Filter Integration
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ## Overview
 
 The **SPP Custom Field - Custom Filter Integration** module bridges the functionality of the [G2P Registry: Custom Fields UI](G2P Registry: Custom Fields UI) module and the [SPP Custom Filter](SPP Custom Filter) module. It allows administrators to decide whether a custom field, created through the [G2P Registry: Custom Fields UI](G2P Registry: Custom Fields UI](G2P Registry: Custom Fields UI](G2P Registry: Custom Fields UI) module and the [SPP Custom Filter](SPP Custom Filter) module. It allows administrators to decide whether a custom field, created through the [G2P Registry: Custom Fields UI) module, should be available for filtering within the system. This integration provides a comprehensive approach to managing both the definition and usability of custom fields within the OpenSPP platform.

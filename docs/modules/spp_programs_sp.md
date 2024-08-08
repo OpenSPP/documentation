@@ -1,5 +1,10 @@
 # OpenSPP Programs (Service Points Integration) Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document outlines the **OpenSPP Programs (Service Points Integration)** module, which extends the OpenSPP platform to integrate the management of service points within social protection programs. This module enables programs to link entitlements and beneficiaries with designated service points, streamlining the delivery of benefits and improving program efficiency. 
 
 ## Purpose

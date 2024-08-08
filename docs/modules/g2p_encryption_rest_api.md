@@ -1,5 +1,10 @@
 # G2P Encryption: Rest API Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document provides an overview of the `g2p_encryption_rest_api` module within the OpenSPP ecosystem.
 
 ### Overview

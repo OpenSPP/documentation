@@ -1,5 +1,10 @@
 # OpenSPP Area GIS Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 The **OpenSPP Area GIS** module extends the functionality of the [OpenSPP Area](link-to-area-module-documentation) module by integrating Geographical Information System (GIS) capabilities. This module allows users to visualize and interact with geographical areas on a map, providing a spatial dimension to area management within OpenSPP.
 
 ### Purpose

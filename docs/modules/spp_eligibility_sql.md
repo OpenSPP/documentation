@@ -1,5 +1,10 @@
 # OpenSPP SQL Query Eligibility Manager 
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document describes the **OpenSPP SQL Query Eligibility Manager** module. This module enhances the **[g2p_programs](g2p_programs)** module by introducing a flexible way to define program eligibility criteria using SQL queries. 
 
 ### Purpose

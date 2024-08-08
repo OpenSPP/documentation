@@ -1,5 +1,10 @@
 # OpenSPP API 
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ## Overview
 
 The [spp_api](spp_api) module provides a comprehensive framework for building and managing a RESTful API for the OpenSPP platform. It builds upon the foundation laid by the [spp_base_api](spp_base_api) module, adding crucial components for API definition, documentation, and security. 

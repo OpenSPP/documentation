@@ -1,5 +1,10 @@
 # g2p_openid_vci Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ## Overview
 
 The `g2p_openid_vci` module extends OpenSPP's capabilities to manage and issue Verifiable Credentials (VCs) based on OpenID Connect for Verifiable Presentations (OpenID4VP) and Decentralized Identifiers (DIDs). This module enables the system to act as an issuer of VCs, empowering individuals with digital credentials that represent claims about their identity or attributes.

@@ -1,5 +1,10 @@
 # OpenSPP Base GIS: Demo Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This module serves as a demonstration of the GIS capabilities provided by the [OpenSPP Base GIS](OpenSPP Base GIS)(./openspp-base-gis) module. It extends the functionality of the base module by adding practical examples and use cases. 
 
 ### Purpose

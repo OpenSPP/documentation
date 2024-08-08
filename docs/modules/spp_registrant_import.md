@@ -1,5 +1,10 @@
 # OpenSPP Registrant Import Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document describes the **OpenSPP Registrant Import** module, which enhances the import functionality within the OpenSPP system, specifically focusing on streamlining the process of importing registrant data. It builds upon the existing import capabilities and introduces features to improve data mapping and ID management.
 
 ### Purpose

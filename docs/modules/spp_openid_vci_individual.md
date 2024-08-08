@@ -1,5 +1,10 @@
 # spp_openid_vci_individual Module 
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This module extends the OpenSPP platform's Verifiable Credentials (VC) capabilities to specifically handle VC issuance for **individual registrants**. It seamlessly integrates the OpenID Connect for Verifiable Presentations (OpenID4VP) and Decentralized Identifiers (DIDs) framework with individual registrant data managed within the OpenSPP system.
 
 ### Purpose

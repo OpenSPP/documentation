@@ -1,5 +1,10 @@
 # OpenSPP Irrigation Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ## Overview
 
 The OpenSPP Irrigation module enhances the OpenSPP platform by providing tools for managing and visualizing irrigation infrastructure. It builds upon the GIS capabilities provided by the [OpenSPP Base GIS Module](OpenSPP Base GIS Module)(./spp_base_gis.md) to represent irrigation assets spatially. 

@@ -1,5 +1,10 @@
 # OpenSPP Tag Based Eligibility Manager Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document outlines the functionality of the **OpenSPP Tag Based Eligibility Manager** module within the OpenSPP ecosystem. This module extends the eligibility management capabilities of OpenSPP, providing a flexible and efficient way to define eligibility criteria based on registrant tags and geographical areas.
 
 ### Purpose

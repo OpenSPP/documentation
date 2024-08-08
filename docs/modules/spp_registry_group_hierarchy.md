@@ -1,5 +1,10 @@
 # SPP Registry Group Hierarchy Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This module builds upon the existing OpenSPP group and membership management functionalities to introduce a hierarchical structure for groups. It allows groups to be nested within other groups, creating a parent-child relationship between them.  This hierarchy is beneficial for representing complex organizational structures within social protection programs or farmer registries. 
 
 ### Purpose

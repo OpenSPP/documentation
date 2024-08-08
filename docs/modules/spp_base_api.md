@@ -1,5 +1,10 @@
 # spp_base_api Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ## Overview
 
 The [spp_base_api](spp_base_api) module provides foundational API functions and methods for interacting with the OpenSPP system. It acts as a bridge between the core OpenSPP functionalities and external systems, enabling data exchange via APIs or XML-RPC. This module does not introduce any user-facing features but serves as a building block for other modules that require API access to OpenSPP data.

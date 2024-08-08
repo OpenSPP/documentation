@@ -1,5 +1,10 @@
 # OpenSPP API: DCI Server Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 TODO: Review, DCI is for Digital Convergence Initiative, not Digital Client Interface.
 
 ## Overview

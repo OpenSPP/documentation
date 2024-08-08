@@ -1,5 +1,10 @@
 # OpenSPP Encryption Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 The [spp_encryption](spp_encryption) module extends the encryption capabilities of OpenSPP by adding support for the [JWCrypto](https://jwcrypto.readthedocs.io/en/latest/) library. This module builds upon the foundation provided by the [[g2p_encryption](JWCrypto](https://jwcrypto.readthedocs.io/en/latest/) library. This module builds upon the foundation provided by the [`[g2p_encryption) Encryption Module](spp_encryption]` module extends the encryption capabilities of OpenSPP by adding support for the [JWCrypto](https://jwcrypto.readthedocs.io/en/latest/) library. This module builds upon the foundation provided by the [[g2p_encryption](JWCrypto](https://jwcrypto.readthedocs.io/en/latest/) library. This module builds upon the foundation provided by the [`[g2p_encryption) Encryption Module)(#g2p-encryption-module) and offers a concrete implementation of an encryption provider utilizing JWCrypto's functionalities.
 
 ### Purpose and Functionality

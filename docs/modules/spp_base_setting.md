@@ -1,5 +1,10 @@
 # OpenSPP Base Settings Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document outlines the functionality and purpose of the **OpenSPP Base Settings** module within the OpenSPP ecosystem. This module builds upon the foundational [g2p_registry_base](g2p_registry_base) module to provide essential configuration options for OpenSPP deployments.
 
 ### Purpose

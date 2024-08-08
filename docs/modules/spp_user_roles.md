@@ -1,5 +1,10 @@
 # OpenSPP User Roles
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ## Overview
 
 The [spp_user_roles](spp_user_roles) module enhances the user role management capabilities of OpenSPP, providing a more granular and context-aware approach to user permissions. It builds upon the base user role system in Odoo and introduces the concept of "local" roles, allowing administrators to assign permissions based on specific geographical areas.

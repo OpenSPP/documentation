@@ -1,5 +1,10 @@
 # OpenSPP ID Queue Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document outlines the **OpenSPP ID Queue** module within the OpenSPP ecosystem.  This module adds functionality for managing requests for printed identification cards for registrants. It integrates with other OpenSPP modules to provide a seamless workflow from ID request to printing and distribution.
 
 ## Purpose

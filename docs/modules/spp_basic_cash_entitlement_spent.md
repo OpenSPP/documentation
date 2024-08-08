@@ -1,5 +1,10 @@
 # SPP Program Entitlement Basic Cash Spent 
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document details the **SPP Program Entitlement Basic Cash Spent** module within the OpenSPP platform. This module extends the functionality of the [g2p_programs](g2p_programs) module to specifically handle the tracking of cash spent for basic cash entitlement programs.
 
 ### Purpose

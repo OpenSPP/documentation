@@ -1,5 +1,10 @@
 # G2P Registry Base Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document outlines the functionality of the **G2P Registry: Base** module within the OpenSPP ecosystem. This module is the foundational layer upon which other OpenSPP registry modules are built.  It provides core features for managing registrant data, relationships, and identification, leaving specialized functionalities to dependent modules.
 
 ### Purpose

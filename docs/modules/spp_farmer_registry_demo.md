@@ -1,5 +1,10 @@
 # spp_farmer_registry_demo Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ## Overview
 
 The [spp_farmer_registry_demo](spp_farmer_registry_demo) module is a demonstration module for OpenSPP that provides pre-populated data for the farmer registry. It builds upon the [spp_farmer_registry_base](spp_farmer_registry_base) module and its dependencies to showcase the functionalities of the farmer registry with realistic sample data.

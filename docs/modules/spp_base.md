@@ -1,5 +1,10 @@
 # OpenSPP Base Module 
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document outlines the functionality of the **OpenSPP Base** module, the core module for the OpenSPP system. It builds upon existing G2P Registry modules, providing essential customizations and configurations for OpenSPP's specialized functionalities.
 
 ### Purpose

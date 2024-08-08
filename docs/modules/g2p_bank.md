@@ -1,4 +1,9 @@
-# G2P Bank: Bank Details Module
+# G2P Bank Module
+
+```{warning}
+
+This is a work-in-progress document.
+```
 
 This document outlines the functionality of the **G2P Bank** module within the OpenSPP framework. This module extends the functionality of individual and group registries to manage their bank details.
 

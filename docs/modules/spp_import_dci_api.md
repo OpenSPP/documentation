@@ -1,5 +1,10 @@
 # OpenSPP Import: DCI API Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ## Overview
 
 The `[spp_import_dci_api](spp_import_dci_api)` module is an OpenSPP extension that enables the integration of external registries, particularly those adhering to the DCI (Digital Civil Identity) standard, into the OpenSPP ecosystem. 

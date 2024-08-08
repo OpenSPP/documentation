@@ -1,5 +1,10 @@
 # OpenSPP Service Points Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document outlines the **OpenSPP Service Points** module, which adds functionality to manage service points and their agents within the OpenSPP ecosystem. It enables the registration and tracking of service points, their associated areas, offered services, and their connection to company entities and their respective contacts.
 
 ### Purpose

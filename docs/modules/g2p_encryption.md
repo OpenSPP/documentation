@@ -1,5 +1,10 @@
 # G2P Encryption Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ## Overview
 
 The [g2p_encryption](g2p_encryption) module provides a base framework for managing encryption providers within OpenSPP. It defines a generic interface for different encryption methods and allows for their seamless integration into various OpenSPP components.

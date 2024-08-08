@@ -1,5 +1,10 @@
 # OpenSPP Manual Entitlement Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document describes the **OpenSPP Manual Entitlement** module, which extends the OpenSPP system to allow for manual entitlement creation within social protection programs. 
 
 ### Purpose

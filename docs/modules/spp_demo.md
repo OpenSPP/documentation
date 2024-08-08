@@ -1,5 +1,10 @@
 # spp_demo Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 The `spp_demo` module serves as a demonstration and testing ground for the OpenSPP system, showcasing its capabilities with pre-populated data. It builds upon core OpenSPP modules to create a realistic simulation of social protection programs and registries in action.
 
 ### Purpose

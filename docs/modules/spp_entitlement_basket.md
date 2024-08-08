@@ -1,5 +1,10 @@
 # OpenSPP Entitlement Basket Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document outlines the functionality of the **OpenSPP Entitlement Basket** module. This module extends OpenSPP's program management by introducing the concept of predefined "baskets" of goods and services that beneficiaries are entitled to receive.
 
 ### Purpose

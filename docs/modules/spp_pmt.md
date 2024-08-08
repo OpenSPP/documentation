@@ -1,5 +1,10 @@
 # OpenSPP Proxy Means Testing (spp_pmt) Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document describes the **OpenSPP Proxy Means Testing (spp_pmt)** module, which extends the OpenSPP framework to incorporate Proxy Means Testing (PMT) functionalities. This module allows program implementers to calculate a PMT score for groups of registrants based on specific criteria, aiding in the identification and prioritization of beneficiaries for social protection programs. 
 
 ## Purpose

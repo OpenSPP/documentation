@@ -1,5 +1,10 @@
 # OpenSPP: Land Record 
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ## Overview
 
 The **OpenSPP: Land Record** module extends OpenSPP's capabilities to manage and visualize land records. Building upon the [G2P Registry: Base](G2P Registry: Base) and [OpenSPP Base GIS](G2P Registry: Base](OpenSPP Base GIS](G2P Registry: Base) and [OpenSPP Base GIS) modules, it provides a framework for recording land parcels, ownership details, lease agreements, and visualizing these records geospatially. 

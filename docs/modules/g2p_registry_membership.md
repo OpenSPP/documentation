@@ -1,5 +1,10 @@
 # G2P Registry: Membership Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document outlines the functionality of the **G2P Registry: Membership** module within the OpenSPP ecosystem. This module focuses on managing relationships between individual registrants and groups, adding an essential layer of organization and data management to the platform.
 
 ### Purpose

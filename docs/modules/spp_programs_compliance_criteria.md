@@ -1,5 +1,10 @@
 # OpenSPP Programs: Compliance Criteria
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document describes the **OpenSPP Programs: Compliance Criteria** module, an extension to the OpenSPP framework. This module adds functionality to manage compliance criteria within social protection programs. 
 
 ### Purpose

@@ -1,5 +1,10 @@
 # SPP Custom Filter Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ## Overview
 
 The SPP Custom Filter module enhances the default Odoo filtering functionality by allowing administrators to control which fields are displayed in the filter dropdown menus. This is particularly useful for complex models with a large number of fields, where displaying all fields in the filter dropdown can be overwhelming and impact usability. 

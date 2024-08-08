@@ -1,5 +1,10 @@
 # OpenSPP Base GIS Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ## Overview
 
 The OpenSPP Base GIS module enhances the functionality of OpenSPP by adding Geographical Information System (GIS) capabilities. It provides the foundation for visualizing and interacting with geospatial data within the OpenSPP platform. This module depends on the following Odoo modules:

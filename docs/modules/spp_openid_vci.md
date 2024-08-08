@@ -1,5 +1,10 @@
 # spp_openid_vci Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ## Overview
 
 The `[spp_openid_vci](spp_openid_vci)` module enhances the functionality of the OpenSPP platform by enabling the issuance of Verifiable Credentials (VCs) to registrants. These VCs, based on OpenID Connect for Verifiable Presentations (OpenID4VP) and Decentralized Identifiers (DIDs), provide a secure and verifiable way to represent claims about a registrant's identity or attributes. 

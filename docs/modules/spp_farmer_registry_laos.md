@@ -1,5 +1,10 @@
 # spp_farmer_registry_laos Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ## Overview
 
 The `spp_farmer_registry_laos` module is a specialized extension of the OpenSPP platform designed to cater to the unique requirements of managing farmer registries in Laos. It builds upon the foundation laid by other OpenSPP modules to provide country-specific functionalities and data structures. 

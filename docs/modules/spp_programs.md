@@ -1,5 +1,10 @@
 # OpenSPP Programs Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document outlines the functionality of the **OpenSPP Programs** module.  This module extends the **OpenG2P: Programs** functionality, introducing in-kind entitlement management alongside existing cash-based features.
 
 ### Purpose

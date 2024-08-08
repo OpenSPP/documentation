@@ -1,5 +1,10 @@
 # OpenSPP Base GIS: REST Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This module extends the [spp_base_gis](spp_base_gis) by providing RESTful API endpoints for accessing and querying geospatial data. It depends on the following modules:
 
 - **[spp_base_gis](spp_base_gis):**  Provides the core GIS functionalities and data models.

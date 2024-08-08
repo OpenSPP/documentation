@@ -1,5 +1,10 @@
 # OpenSPP API: Oauth Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ## Overview
 
 The [spp_oauth](spp_oauth) module provides authentication functionality for the OpenSPP API. It allows external applications and services to securely access and interact with OpenSPP data and functionalities using industry-standard OAuth 2.0 protocols.

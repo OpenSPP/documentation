@@ -1,5 +1,10 @@
 # OpenSPP Auto-Update Entitlements Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document describes the **OpenSPP Auto-Update Entitlements** module within the OpenSPP platform. This module enhances the management of entitlement lifecycles by automatically updating entitlement states when program cycles end. This automation streamlines benefit administration and provides a more accurate view of benefit utilization.
 
 ## Purpose

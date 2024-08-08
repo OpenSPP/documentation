@@ -1,5 +1,10 @@
 # OpenSPP In-Kind Entitlement Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document outlines the **OpenSPP In-Kind Entitlement ([spp_entitlement_in_kind](spp_entitlement_in_kind))** module, which extends the OpenSPP platform to manage the distribution of in-kind entitlements within social protection programs. 
 
 ### Purpose

@@ -1,5 +1,10 @@
 # OpenSPP Entitlement Transactions Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document details the **OpenSPP Entitlement Transactions** module within the OpenSPP platform. This module is responsible for recording and managing transactions related to entitlement redemptions, providing a transparent and auditable history of benefit disbursement. It caters to both cash and in-kind entitlements, offering dedicated models and views for each type. 
 
 ## Purpose

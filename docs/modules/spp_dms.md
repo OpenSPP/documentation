@@ -1,5 +1,10 @@
 # SPP Document Management System (spp_dms)
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ## Overview
 
 The [spp_dms](spp_dms) module provides a robust system for organizing and managing files within OpenSPP. This module is essential for maintaining a structured and easily accessible repository of documents related to social protection programs. 

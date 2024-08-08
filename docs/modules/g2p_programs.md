@@ -1,5 +1,10 @@
 # G2P Programs Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document details the **G2P Programs** module within the OpenSPP platform. This module is responsible for defining and managing the core aspects of social protection programs, including eligibility criteria, program cycles, entitlement management, and payment processing.
 
 ### Purpose

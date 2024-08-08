@@ -1,5 +1,10 @@
 # OpenSPP Area Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This document describes the **OpenSPP Area** module, which extends the OpenSPP framework by providing features to manage and organize geographical areas within the system.  It integrates with the core registry modules to allow associating registrants and other data with specific locations. 
 
 ## Purpose

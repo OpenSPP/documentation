@@ -1,5 +1,10 @@
 # spp_event_demo Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This module, **[spp_event_demo](spp_event_demo)**, provides demonstration data and functionalities for the **[spp_event_data](spp_event_demo](spp_event_data](spp_event_demo)**, provides demonstration data and functionalities for the **[spp_event_data)** module within the OpenSPP ecosystem. It showcases how to extend and utilize the event tracking capabilities of OpenSPP for specific use cases. 
 
 ## Relationship to spp_event_data

@@ -1,5 +1,10 @@
 # spp_openid_vci_group Module 
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ### Overview
 
 The `spp_openid_vci_group` module extends the functionality of the [spp_openid_vci](spp_openid_vci) module to enable the issuance of Verifiable Credentials (VCs) specifically for groups of registrants, building upon the group management capabilities provided by the [g2p_registry_group](g2p_registry_group) module to enable the issuance of Verifiable Credentials (VCs) specifically for groups of registrants, building upon the group management capabilities provided by the [g2p_registry_group](g2p_registry_group) module. This module leverages the existing VC issuance framework to provide a streamlined process for issuing VCs that represent a group's identity and attributes.

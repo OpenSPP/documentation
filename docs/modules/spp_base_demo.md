@@ -1,5 +1,10 @@
 # spp_base_demo Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 This module provides demonstration data for the OpenSPP system. It populates the database with sample records for various entities, allowing users to explore the system's functionalities with pre-populated data.
 
 ### Purpose

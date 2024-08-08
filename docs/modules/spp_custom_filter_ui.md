@@ -1,5 +1,10 @@
 # SPP Custom Filter UI Module
 
+```{warning}
+
+This is a work-in-progress document.
+```
+
 ### Overview
 
 The **SPP Custom Filter UI** module customizes the user interface (UI) for filtering in specific OpenSPP modules, enhancing usability and simplifying data management. It builds upon the [spp_custom_filter](spp_custom_filter) module, which provides the underlying functionality for controlling which fields are displayed in filter dropdown menus. 
