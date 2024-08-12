@@ -13,7 +13,7 @@ The module's primary goal is to provide a comprehensive overview of changes not 
 
 ### Module Integration and Dependencies
 
-* **[g2p_registry_audit_log](g2p_registry_audit_log)**: This module directly depends on the audit log module. It leverages the existing audit log framework to capture and display change information. 
+* **[spp_audit_log](spp_audit_log)**: This module directly depends on the audit log module. It leverages the existing audit log framework to capture and display change information. 
 * **Mail (mail)**: The module utilizes the standard Odoo Mail module to post audit log messages as messages on parent records. This integration ensures that relevant stakeholders are notified about changes impacting related data.
 
 ### Additional Functionality
