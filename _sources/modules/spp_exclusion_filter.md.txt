@@ -31,11 +31,6 @@ The **OpenSPP Exclusion Filter** module aims to:
 
 ### Additional Functionality
 
-* **Exclusion Filter Model (Potentially)**:  While not explicitly defined in the provided code, the module likely introduces a model to manage exclusion filters. This model might include attributes such as:
-    * **Name**:  A descriptive name for the filter.
-    * **Description**: Details about the filter's purpose and criteria.
-    * **Exclusion Criteria**:  Specific rules or conditions used to identify ineligible registrants (e.g., age range, income level, geographical location). 
-
 * **Program Wizard Integration**:
     * Adds a dedicated step to the program creation wizard, allowing program managers to select and configure exclusion filters. 
     * Provides a user-friendly interface for defining exclusion criteria and previewing the potential impact on the target population.
