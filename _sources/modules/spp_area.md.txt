@@ -40,6 +40,7 @@ The **OpenSPP Area** module is designed to:
     * Provides tools for importing area data in bulk from Excel files, streamlining the process of populating the area hierarchy.
     * Implements validation rules during the import process to ensure data integrity, such as checking for required fields, data types, and hierarchical consistency.
     * Utilizes the Queue Job module to perform data validation and import operations in the background, preventing performance issues and providing a smoother user experience.
+    * Ability to localize the name of the imported area.
 
 
 ## Conclusion
