@@ -27,9 +27,9 @@ This module serves as a bridge between OpenSPP and external systems seeking to a
 
 The [spp_dci_api_server](spp_dci_api_server) module exposes specific API endpoints for handling DCI-related requests:
 
-1. **Authentication Endpoint (`/oauth2/token`)**:  This endpoint, inherited from the [spp_oauth](spp_oauth) module, handles the OAuth 2.0 authentication flow. External systems must authenticate using their client credentials to obtain an access token, which is required for accessing protected API endpoints.
+1. **Authentication Endpoint (`/oauth2/client/token`)**:  This endpoint, handles the OAuth 2.0 authentication flow. External systems must authenticate using their client credentials to obtain an access token, which is required for accessing protected API endpoints.
 
-2. **DCI Sync Search Endpoint (`/api/v1/dci/sync-search`)**: This endpoint receives search requests from external systems. These requests, formatted according to the DCI specification, include criteria for filtering individual registrants within OpenSPP.  The module processes these requests, retrieves matching registrant data, and returns the results in a standardized DCI response format.
+2. **DCI Sync Search Endpoint (`/api/v1/registry/sync/search`)**: This endpoint receives search requests from external systems. These requests, formatted according to the DCI specification, include criteria for filtering individual registrants within OpenSPP.  The module processes these requests, retrieves matching registrant data, and returns the results in a standardized DCI response format.
 
     - **Integration with [g2p_registry_individual](g2p_registry_individual):** The module utilizes the `get_dci_individual_registry_data` method from the [g2p_registry_individual](g2p_registry_individual](g2p_registry_individual](g2p_registry_individual):** The module utilizes the `get_dci_individual_registry_data` method from the `[g2p_registry_individual)` module to retrieve and structure individual registry data according to the DCI format.
     - **Data Mapping:**  The module maps DCI attribute names to corresponding fields in the OpenSPP database schema, ensuring accurate data retrieval and formatting.
