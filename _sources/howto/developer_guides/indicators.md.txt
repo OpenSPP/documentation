@@ -60,7 +60,7 @@ class SampleModel(models.Model):
 
 This approach ensures that the value of the total is persisted in the database, reducing computation needs for repeated access.
 
-This overview covers the basics of computed fields in Odoo. For a more in-depth understanding, including advanced techniques and best practices, refer to the official Odoo [documentation](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/09_compute_onchange.html) on computed fields.
+This overview covers the basics of computed fields in Odoo. For a more in-depth understanding, including advanced techniques and best practices, refer to the official Odoo [documentation](https://www.odoo.com/documentation/17.0/developer/tutorials/server_framework_101/08_compute_onchange.html) on computed fields.
 
 ## 3. Sample Use-case 1
 

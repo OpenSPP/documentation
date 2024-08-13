@@ -51,7 +51,7 @@ class SPPArea(models.Model):
 
 ```
 
-The code mentioned above will introduce a new field to the spp_area table for storing the province name of an area. To understand further, refer to the following documentation [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/04_basicmodel.html), [Link 2](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/14_other_module.html), [Link 3](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/13_inheritance.html)
+The code mentioned above will introduce a new field to the spp_area table for storing the province name of an area. To understand further, refer to the following documentation [Link 1](https://www.odoo.com/documentation/17.0/developer/tutorials/server_framework_101/03_basicmodel.html), [Link 2](https://www.odoo.com/documentation/17.0/developer/tutorials/server_framework_101/13_other_module.html), [Link 3](https://www.odoo.com/documentation/17.0/developer/tutorials/server_framework_101/12_inheritance.html)
 
 4. To integrate new fields into the UI, the following steps should be followed.
 
@@ -80,7 +80,7 @@ The code mentioned above will introduce a new field to the spp_area table for st
      </record>
      ```
 
-   Further references [Link 1](https://www.odoo.com/documentation/15.0/developer/tutorials/getting_started/07_basicviews.html), [Link 2](https://www.odoo.com/documentation/15.0/developer/reference/backend/views.html)
+   Further references [Link 1](https://www.odoo.com/documentation/17.0/developer/tutorials/server_framework_101/06_basicviews.html), [Link 2](https://www.odoo.com/documentation/17.0/developer/reference/user_interface/view_records.html)
 
 5. Install the module to include the new changes, then apply these updates through the backend App by selecting 'Update' in the Area module.
 
