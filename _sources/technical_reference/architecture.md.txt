@@ -241,7 +241,7 @@ data and just return the eligibility result to OpenSPP.
 
 Furthermore, as OpenSPP is based on the ERP Odoo and use the standard models provided by Odoo, you have access
 to the thousands of applications available in the [Odoo App Store](https://apps.odoo.com/apps) or build your
-[own](https://www.odoo.com/documentation/15.0/developer.html).
+[own](https://www.odoo.com/documentation/17.0/developer.html).
 
 ### Example components for a mid-size project
 

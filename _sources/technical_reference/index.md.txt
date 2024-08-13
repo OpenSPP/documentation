@@ -10,7 +10,6 @@ The Technical Reference is a detailed document outlining the system's architectu
 **Security and Compliance**
 
 - {doc}`security`
-- {doc}`audit_logs`
 
 **Code and Release Management**
 
@@ -53,7 +52,7 @@ extensibility
 # Security and Compliance
 security
 oidc
-audit_logs
+#audit_logs
 
 # Code and Release Management
 code

@@ -384,11 +384,6 @@
     </a>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../technical_reference/audit_logs.html">
-     Audit Logs
-    </a>
-</li>
-<li class="toctree-l2">
 <a class="reference internal" href="../technical_reference/code.html">
      Code &amp; Repository Management
     </a>
@@ -1238,7 +1233,7 @@ It is recommended to fetch the data for all the records in one query and then se
 <div class="section" id="through-the-code">
 <h3>Through the code<a class="headerlink" href="#through-the-code" title="Permalink to this headline">#</a></h3>
 <p>Create a model that inherits from <code class="docutils literal notranslate"><span class="pre">res.partner</span></code>. In this example, we will count the number of children in a group.</p>
-<p>To learn more about search domain, see the Odoo documentation on <a class="reference external" href="https://www.odoo.com/documentation/15.0/developer/reference/backend/orm.html#search-domains">search domains</a>.
+<p>To learn more about search domain, see the Odoo documentation on <a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/reference/backend/orm.html#search-domains">search domains</a>.
 Search domain are like a simplified SQL query. They're used to filter the data that is used to compute the indicator.</p>
 <p>To simplify the count of members in a group, we created a helper method <code class="docutils literal notranslate"><span class="pre">compute_count_and_set_indicator</span></code> that takes the name of the indicator field, the domain to filter the members of the group, and the domain to filter the members of the group that are used to compute the indicator.</p>
 <dl class="py method">
