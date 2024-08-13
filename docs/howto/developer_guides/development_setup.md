@@ -34,10 +34,10 @@ This technique utilizes Docker, simplifying the installation of Odoo and its dep
 
 5. Browse the following in a preferred browser:
 
-- Odoo: http://localhost:15069/
-- Mailhog: http://localhost:15025/
-- Wdb: http://localhost:15984/
-- Pgweb: http://localhost:15081/
+- Odoo: http://localhost:17069/
+- Mailhog: http://localhost:17025/
+- Wdb: http://localhost:17984/
+- Pgweb: http://localhost:17081/
 
 Refer to the Readme.md in the repository for more detailed instructions on Docker Odoo and Invoke commands
 
