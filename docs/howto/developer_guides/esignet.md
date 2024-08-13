@@ -31,9 +31,9 @@ openg2p-auth:
     depth: $DEPTH_DEFAULT
   remotes:
     openg2p: https://github.com/OpenG2P/openg2p-auth.git
-  target: openg2p 15.0-develop
+  target: openg2p 17.0-develop
   merges:
-    - openg2p 15.0-develop
+    - openg2p 17.0-develop
 ```
 
 4. Make the following changes in the server-auth section of the `repos.yaml` file to support the eSignet module.
@@ -44,7 +44,7 @@ server-auth:
     depth: $DEPTH_DEFAULT
   remotes:
     openg2p: https://github.com/OpenG2P/server-auth.git
-  target: openg2p 15.0
+  target: openg2p 17.0
   merges:
     - openg2p
 ```
