@@ -52,7 +52,7 @@ This method is the traditional way of installing Odoo, involving manual installa
 
 ### Setup
 
-1. Follow the official Odoo installation guide suitable for your Operating System.[Link](https://www.odoo.com/documentation/15.0/administration/install.html)
+1. Follow the official Odoo installation guide suitable for your Operating System.[Link](https://www.odoo.com/documentation/17.0/administration/on_premise.html)
 
 2. Inside the Odoo folder, create a new directory named custom.
 
@@ -60,18 +60,16 @@ This method is the traditional way of installing Odoo, involving manual installa
 
 4. Navigate to “custom” and git clone all of the following repositories and their corresponding branches:
 
-- `git clone –branch 15.0 https://github.com/OCA/connector.git`
-- `git clone –branch 15.0 https://github.com/OCA/dms.git`
-- `git clone –branch 15.0-1.0-develop https://github.com/OpenG2P/openg2p-program.git`
-- `git clone –branch 15.0-1.0-develop https://github.com/OpenG2P/openg2p-registry.git`
-- `git clone –branch 15.1.1-mono-repo https://github.com/OpenSPP/openspp-registry.git`
-- `git clone –branch 15.0 https://github.com/OCA/queue.git`
-- `git clone –branch 15.0 https://github.com/OCA/rest-framework.git`
-- `git clone –branch 15.0 https://github.com/OCA/server-auth.git`
-- `git clone –branch 15.0 https://github.com/OCA/server-backend.git`
-- `git clone –branch 15.0 https://github.com/Smile-SA/odoo_addons.git`
-- `git clone –branch 15.0 https://github.com/OCA/social.git`
-- `git clone –branch 15.0 https://github.com/OCA/web.git`
+- `git clone –branch 17.0 https://github.com/OCA/connector.git`
+- `git clone –branch 17.0 https://github.com/OCA/dms.git`
+- `git clone –branch 17.0 https://github.com/OpenSPP/openspp-modules`
+- `git clone –branch 17.0 https://github.com/OCA/queue.git`
+- `git clone –branch 17.0 https://github.com/OCA/rest-framework.git`
+- `git clone –branch 17.0 https://github.com/OCA/server-auth.git`
+- `git clone –branch 17.0 https://github.com/OCA/server-backend.git`
+- `git clone –branch 17.0 https://github.com/Smile-SA/odoo_addons.git`
+- `git clone –branch 17.0 https://github.com/OCA/social.git`
+- `git clone –branch 17.0 https://github.com/OCA/web.git`
 
 5. `pip install the requirements in requirements.txt in each of the repositories if there is a requirements.txt.
 
@@ -83,4 +81,4 @@ This method is the traditional way of installing Odoo, involving manual installa
 
 8. Open http://localhost:8069/ in a browser to use OpenSPP.
 
-To learn more about Odoo command, visit [this documentation](https://www.odoo.com/documentation/15.0/developer/reference/cli.html)
+To learn more about Odoo command, visit [this documentation](https://www.odoo.com/documentation/17.0/developer/reference/cli.html)
