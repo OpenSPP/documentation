@@ -13,7 +13,7 @@ Indicators are fields added to the group or individual table. In Odoo those are 
 The indicator fields are stored as fields in the database, but they're not editable. They're computed based on the data in the registry.
 
 ```{note}
-Indicators computation, if not properly written can use a lot of resources. 
+Indicators computation, if not properly written can use a lot of resources.
 While Odoo developers often write a for loop in the compute method to fetch some data, this is not a good practice.
 It is recommended to fetch the data for all the records in one query and then set the value to each record.
 
@@ -37,7 +37,7 @@ TODO
 
 Create a model that inherits from `res.partner`. In this example, we will count the number of children in a group.
 
-To learn more about search domain, see the Odoo documentation on [search domains](https://www.odoo.com/documentation/15.0/developer/reference/backend/orm.html#search-domains).
+To learn more about search domain, see the Odoo documentation on [search domains](https://www.odoo.com/documentation/17.0/developer/reference/backend/orm.html#search-domains).
 Search domain are like a simplified SQL query. They're used to filter the data that is used to compute the indicator.
 
 To simplify the count of members in a group, we created a helper method `compute_count_and_set_indicator` that takes the name of the indicator field, the domain to filter the members of the group, and the domain to filter the members of the group that are used to compute the indicator.
@@ -46,7 +46,6 @@ To simplify the count of members in a group, we created a helper method `compute
 .. automethod:: odoo.addons.g2p_registry_membership.models.group.G2PMembershipGroup.compute_count_and_set_indicator
     :noindex:
 ```
-
 
 ```python
 import datetime
