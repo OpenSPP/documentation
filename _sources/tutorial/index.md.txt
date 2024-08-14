@@ -11,7 +11,6 @@ myst:
 
 This Tutorials serve as a detailed manual for the utilization and navigation of OpenSPP. It is designed to offer clear, step-by-step instructions and essential tips for users of varying expertise levels. The guide aims to facilitate a thorough understanding and proficient use of the OpenSPP's features.
 
-- [Access Management](access_management)
 - [Audit Log](audit_log)
 - [Change Requests](change_requests)
 - [Consent Management](consent_management)
@@ -20,7 +19,6 @@ This Tutorials serve as a detailed manual for the utilization and navigation of 
 - [Grievance Redressal Management](grievance_redressal_management)
 - [Indicators](indicators)
 - [Social protection programs and cycles](programs_and_cycles)
-- [Proxy Means Test](proxy_means_test)
 - [Programs and Cycles](programs_and_cycles)
 - [Vouchers](vouchers)
 - [Hardware Integration](hardware_integration)
@@ -51,7 +49,7 @@ This Tutorials serve as a detailed manual for the utilization and navigation of 
 :maxdepth: 2
 :hidden: true
 
-access_management
+
 audit_log
 change_requests
 consent_management
@@ -63,7 +61,6 @@ grievance_redressal_management
 indicators
 hardware_integration
 programs_and_cycles
-proxy_means_test
 vouchers
 user_guides/register_new_individual
 user_guides/enroll_beneficiaries
