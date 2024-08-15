@@ -24,7 +24,6 @@
 | [OpenSPP Proxy Means Testing](spp_pmt) | Calculates a Proxy Means Testing (PMT) score for groups of registrants to aid in beneficiary identification and prioritization for social protection programs. |
 | [OpenSPP Import Match](spp_import_match) | Enhances data imports in OpenSPP by enabling the matching of imported records with existing data to prevent duplicates and ensure data integrity. |
 | [OpenSPP Base GIS](spp_base_gis) | Provides Geographical Information System (GIS) capabilities to OpenSPP, enabling visualization and interaction with geospatial data on maps, integrating with modules like Registries and Targeting & Eligibility for enhanced program management. |
-| [spp_farmer_registry_laos](spp_farmer_registry_laos) | OpenSPP Farmer Registry for Laos |
 | [OpenSPP Base GIS Demo](spp_base_gis_demo) | Demonstrates the GIS capabilities of the OpenSPP Base GIS module by providing practical examples and use cases with GIS views, data layers, and raster layers. |
 | [OpenSPP OpenID VCI](spp_openid_vci) | Enables the issuance and management of Verifiable Credentials (VCs) within the OpenSPP platform, leveraging OpenID Connect for Verifiable Presentations (OpenID4VP) to provide secure and verifiable digital credentials for registrants. |
 | [OpenSPP Event Data](spp_event_data) | Records and tracks events related to individual and group registrants, providing a chronological history of changes and actions within the OpenSPP system. |
