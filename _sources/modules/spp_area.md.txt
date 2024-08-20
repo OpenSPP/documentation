@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document describes the **OpenSPP Area** module, which extends the OpenSPP framework by providing features to manage and organize geographical areas within the system.  It integrates with the core registry modules to allow associating registrants and other data with specific locations. 
@@ -41,7 +41,6 @@ The **OpenSPP Area** module is designed to:
     * Implements validation rules during the import process to ensure data integrity, such as checking for required fields, data types, and hierarchical consistency.
     * Utilizes the Queue Job module to perform data validation and import operations in the background, preventing performance issues and providing a smoother user experience.
     * Ability to localize the name of the imported area.
-
 
 ## Conclusion
 

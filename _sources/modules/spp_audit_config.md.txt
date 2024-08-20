@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document outlines the **OpenSPP Audit Config** module within the OpenSPP platform. This module is responsible for configuring and managing audit rules used to track and log changes made to critical data within the system.

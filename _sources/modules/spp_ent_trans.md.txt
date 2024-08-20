@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document details the **OpenSPP Entitlement Transactions** module within the OpenSPP platform. This module is responsible for recording and managing transactions related to entitlement redemptions, providing a transparent and auditable history of benefit disbursement. It caters to both cash and in-kind entitlements, offering dedicated models and views for each type. 
@@ -24,12 +24,12 @@ The **OpenSPP Entitlement Transactions** module primarily focuses on:
 
 2. **[g2p_registry_base](g2p_registry_base)**:
     * Utilizes the base registry module indirectly through the [OpenSPP Programs](OpenSPP Programs)(#openspp-programs-module-documentation) module.
+
     * Links transactions to the relevant registrant profiles, providing context and enabling analysis of benefit distribution at the beneficiary level.
 
 3. **[g2p_programs](g2p_programs)**:
     * Integrates with program data to associate transactions with specific programs and cycles. 
     * Allows for program-level analysis of transaction trends, service point utilization, and overall program performance.
-
 
 ## Additional Functionality
 

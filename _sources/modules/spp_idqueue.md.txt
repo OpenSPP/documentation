@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document outlines the **OpenSPP ID Queue** module within the OpenSPP ecosystem.  This module adds functionality for managing requests for printed identification cards for registrants. It integrates with other OpenSPP modules to provide a seamless workflow from ID request to printing and distribution.
@@ -27,7 +27,6 @@ The **OpenSPP ID Queue** module is designed to:
 4. **[spp_area](spp_area)** (OpenSPP Area):  Integrates with the **OpenSPP Area** module to associate ID card requests with specific geographical areas, enabling location-based reporting and distribution management.
 
 5. **[g2p_registry_group](g2p_registry_group)** (G2P Registry: Group): Incorporates functionality from the **G2P Registry: Group** module to support ID card requests and batch printing for groups of registrants.
-
 
 ## Additional Functionality
 

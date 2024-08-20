@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document outlines the functionality of the **[spp_event_data](spp_event_data)** module within the OpenSPP ecosystem. This module is designed to record and track specific events related to registrants, building upon the functionalities offered by the base registry modules.

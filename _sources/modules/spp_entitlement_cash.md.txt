@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document outlines the functionality of the **OpenSPP Program Entitlement (Cash)** module. This module extends the **G2P Programs** module, providing specialized features for managing cash-based entitlements within social protection programs.

@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document outlines the functionality of the **OpenSPP Exclusion Filter** module.  This module enhances the program creation process within OpenSPP by introducing exclusion filters during the program wizard. 

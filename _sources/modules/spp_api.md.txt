@@ -1,8 +1,8 @@
-# OpenSPP API 
+# OpenSPP API
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 ## Overview

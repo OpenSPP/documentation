@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document outlines the functionality of the **OpenSPP Programs** module.  This module extends the **OpenG2P: Programs** functionality, introducing in-kind entitlement management alongside existing cash-based features.

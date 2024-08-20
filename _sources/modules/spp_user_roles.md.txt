@@ -2,12 +2,12 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 ## Overview
 
-The [spp_user_roles](spp_user_roles) module enhances the user role management capabilities of OpenSPP, providing a more granular and context-aware approach to user permissions. It builds upon the base user role system in Odoo and introduces the concept of "local" roles, allowing administrators to assign permissions based on specific geographical areas.
+The [spp_user_roles](spp_user_roles.md) module enhances the user role management capabilities of OpenSPP, providing a more granular and context-aware approach to user permissions. It builds upon the base user role system in Odoo and introduces the concept of "local" roles, allowing administrators to assign permissions based on specific geographical areas.
 
 ## Purpose
 
@@ -19,19 +19,19 @@ This module aims to:
 
 ## Dependencies and Integration
 
-1. **G2P Registry: Base ([g2p_registry_base](g2p_registry_base)):**  This module indirectly depends on the `res.partner` model from the G2P Registry: Base module, as it modifies the access rules for registrant data based on a user's assigned areas.
+1. **G2P Registry: Base ([g2p_registry_base](g2p_registry_base.md)):**  This module indirectly depends on the `res.partner` model from the G2P Registry: Base module, as it modifies the access rules for registrant data based on a user's assigned areas.
 
-2. **G2P Registry: Group ([g2p_registry_group](g2p_registry_group)):**  Similar to the Base module, it impacts access to group registrant data based on area assignments.
+2. **G2P Registry: Group ([g2p_registry_group](g2p_registry_group.md)):**  Similar to the Base module, it impacts access to group registrant data based on area assignments.
 
-3. **G2P Programs ([g2p_programs](g2p_programs)):**  The module's area-based access control can be applied to program-related data, ensuring that users with local roles only see and manage programs operating within their designated areas.
+3. **G2P Programs ([g2p_programs](g2p_programs.md)):**  The module's area-based access control can be applied to program-related data, ensuring that users with local roles only see and manage programs operating within their designated areas.
 
-4. **OpenSPP Area ([spp_area](spp_area)):**  The module heavily relies on the area hierarchy defined in the [spp_area](spp_area](spp_area](spp_area)):**  The module heavily relies on the area hierarchy defined in the `[spp_area) module. Local roles are directly associated with specific areas, and user access is restricted accordingly.
+4. **OpenSPP Area ([spp_area](spp_area.md)):**  The module heavily relies on the area hierarchy defined in the [spp_area](spp_area.md) module. Local roles are directly associated with specific areas, and user access is restricted accordingly.
 
-5. **OpenSPP ID Queue ([spp_idqueue](spp_idqueue)):**  Integrates with the ID Queue module to control access to ID card requests and batches based on area assignments, ensuring that users only manage requests originating from their designated locations.
+5. **OpenSPP ID Queue ([spp_idqueue](spp_idqueue.md)):**  Integrates with the ID Queue module to control access to ID card requests and batches based on area assignments, ensuring that users only manage requests originating from their designated locations.
 
 6. **Base User Role (base_user_role):**  Extends the base Odoo module for user role management, inheriting its core functionalities and adding the area-based restrictions.
 
-7. **OpenSPP API ([spp_api](spp_api)):**  The module's access control mechanism is integrated with the OpenSPP API, ensuring that API requests from users with local roles are filtered to return only data within their authorized areas.
+7. **OpenSPP API ([spp_api](spp_api.md)):**  The module's access control mechanism is integrated with the OpenSPP API, ensuring that API requests from users with local roles are filtered to return only data within their authorized areas.
 
 ## Additional Functionality
 

@@ -17,10 +17,10 @@
 <meta content="website" property="og:type"/>
 <meta content="https://docs.openspp.org/modules/spp_import_dci_api.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="Overview: The[spp_import_dci_api](spp_import_dci_api) module is an OpenSPP extension that enables the integration of external registries, particularly those adhering to the DCI (Digital Civil Ident..." property="og:description"/>
+<meta content="Overview: The spp_import_dci_api module is an OpenSPP extension that enables the integration of external registries, particularly those adhering to the DCI (Digital Convergence Initiative) standard..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="Overview: The[spp_import_dci_api](spp_import_dci_api) module is an OpenSPP extension that enables the integration of external registries, particularly those adhering to the DCI (Digital Civil Ident..." name="description"/>
+<meta content="Overview: The spp_import_dci_api module is an OpenSPP extension that enables the integration of external registries, particularly those adhering to the DCI (Digital Convergence Initiative) standard..." name="description"/>
 <meta content="en_US" property="og:locale"/>
 <title>OpenSPP Import: DCI API — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
@@ -921,15 +921,15 @@
 <h1>OpenSPP Import: DCI API<a class="headerlink" href="#openspp-import-dci-api" title="Permalink to this headline">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is a work-in-progress document.</p>
+<p><strong>Work in Progress</strong>: This document is actively being developed and updated. Content may be incomplete or subject to change.</p>
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">[spp_import_dci_api](spp_import_dci_api)</span></code> module is an OpenSPP extension that enables the integration of external registries, particularly those adhering to the DCI (Digital Civil Identity) standard, into the OpenSPP ecosystem.</p>
+<p>The <a class="reference internal" href="#"><span class="doc std std-doc">spp_import_dci_api</span></a> module is an OpenSPP extension that enables the integration of external registries, particularly those adhering to the <a class="reference external" href="https://spdci.org/">DCI (Digital Convergence Initiative)</a> standard, into the OpenSPP ecosystem.</p>
 </div>
 <div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
-<p>This module streamlines the process of importing and synchronizing registrant data from DCI-compliant registries into the OpenSPP registry. This facilitates efficient data sharing and interoperability between different systems.</p>
+<p>This module streamlines the process of importing and synchronizing registrant data from DCI-compliant registries into the OpenSPP registry. This facilitates efficient data sharing and interoperability between different systems. For more information, visit <a class="reference external" href="https://spdci.org/">Digital Convergence Initiative</a>.</p>
 </div>
 <div class="section" id="key-features">
 <h2>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">#</a></h2>
@@ -959,22 +959,22 @@
 <div class="section" id="g2p-programs-g2p-programs">
 <h3>1. G2P Programs (<a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">g2p_programs</span></a>)<a class="headerlink" href="#g2p-programs-g2p-programs" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><strong>Integration:</strong> Utilizes program definitions and eligibility criteria from <code class="docutils literal notranslate"><span class="pre">[g2p_programs](g2p_programs)</span></code> to potentially assign imported registrants to relevant programs based on their DCI attributes.</p></li>
+<li><p><strong>Integration:</strong> Utilizes program definitions and eligibility criteria from <a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">g2p_programs</span></a> to potentially assign imported registrants to relevant programs based on their DCI attributes.</p></li>
 </ul>
 </div>
 <div class="section" id="spp-programs-spp-programs">
 <h3>2. SPP Programs (<a class="reference internal" href="spp_programs.html"><span class="doc std std-doc">spp_programs</span></a>)<a class="headerlink" href="#spp-programs-spp-programs" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><strong>Integration:</strong> Similar to <code class="docutils literal notranslate"><span class="pre">[g2p_programs](g2p_programs)</span></code>, this module might utilize in-kind entitlement logic from <code class="docutils literal notranslate"><span class="pre">[spp_programs](spp_programs)</span></code> if the imported DCI data includes information relevant to in-kind benefits.</p></li>
+<li><p><strong>Integration:</strong> Similar to <a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">g2p_programs</span></a>, this module might utilize in-kind entitlement logic from <a class="reference internal" href="spp_programs.html"><span class="doc std std-doc">spp_programs</span></a> if the imported DCI data includes information relevant to in-kind benefits.</p></li>
 </ul>
 </div>
 <div class="section" id="g2p-registry-base-g2p-registry-base">
 <h3>3. G2P Registry: Base (<a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">g2p_registry_base</span></a>)<a class="headerlink" href="#g2p-registry-base-g2p-registry-base" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><strong>Integration:</strong>  Relies heavily on <code class="docutils literal notranslate"><span class="pre">[g2p_registry_base](g2p_registry_base)</span></code> for core registry functionality:</p>
+<li><p><strong>Integration:</strong>  Relies heavily on <a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">g2p_registry_base</span></a> for core registry functionality:</p>
 <ul>
-<li><p><strong>Registrant Creation:</strong> Creates new registrant records using the base model provided by <code class="docutils literal notranslate"><span class="pre">[g2p_registry_base](g2p_registry_base)</span></code>.</p></li>
-<li><p><strong>ID Management:</strong> Leverages <code class="docutils literal notranslate"><span class="pre">g2p.reg.id</span></code> from <code class="docutils literal notranslate"><span class="pre">[g2p_registry_base](g2p_registry_base)</span></code> to store and manage DCI-provided identifiers.</p></li>
+<li><p><strong>Registrant Creation:</strong> Creates new registrant records using the base model provided by <a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">g2p_registry_base</span></a>.</p></li>
+<li><p><strong>ID Management:</strong> Leverages <code class="docutils literal notranslate"><span class="pre">g2p.reg.id</span></code> from <a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">g2p_registry_base</span></a> to store and manage DCI-provided identifiers.</p></li>
 <li><p><strong>Relationships:</strong>  Potentially utilizes the <code class="docutils literal notranslate"><span class="pre">g2p.reg.rel</span></code> model to establish relationships between imported registrants based on DCI data.</p></li>
 </ul>
 </li>
@@ -983,7 +983,7 @@
 <div class="section" id="spp-registry-data-source-spp-registry-data-source">
 <h3>4. SPP Registry Data Source (<a class="reference internal" href="spp_registry_data_source.html"><span class="doc std std-doc">spp_registry_data_source</span></a>)<a class="headerlink" href="#spp-registry-data-source-spp-registry-data-source" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><strong>Integration:</strong> Depends on <code class="docutils literal notranslate"><span class="pre">[spp_registry_data_source](spp_registry_data_source)</span></code> for:</p>
+<li><p><strong>Integration:</strong> Depends on <a class="reference internal" href="spp_registry_data_source.html"><span class="doc std std-doc">spp_registry_data_source</span></a> for:</p>
 <ul>
 <li><p><strong>Data Source Configuration:</strong> Retrieves connection details and API specifications of the external DCI registry from data source configurations defined in this module.</p></li>
 </ul>
@@ -993,7 +993,7 @@
 <div class="section" id="g2p-registry-individual-g2p-registry-individual">
 <h3>5. G2P Registry: Individual (<a class="reference internal" href="g2p_registry_individual.html"><span class="doc std std-doc">g2p_registry_individual</span></a>)<a class="headerlink" href="#g2p-registry-individual-g2p-registry-individual" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><strong>Integration:</strong>  Extends the individual registrant model (<code class="docutils literal notranslate"><span class="pre">res.partner</span></code>) from <code class="docutils literal notranslate"><span class="pre">[g2p_registry_individual](g2p_registry_individual)</span></code>:</p>
+<li><p><strong>Integration:</strong>  Extends the individual registrant model (<code class="docutils literal notranslate"><span class="pre">res.partner</span></code>) from <a class="reference internal" href="g2p_registry_individual.html"><span class="doc std std-doc">g2p_registry_individual</span></a>:</p>
 <ul>
 <li><p><strong>Data Population:</strong> Populates individual-specific fields within the OpenSPP registry using mapped DCI data (e.g., name, birthdate, gender).</p></li>
 </ul>
@@ -1030,7 +1030,7 @@
 </div>
 <div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">[spp_import_dci_api](spp_import_dci_api)</span></code> module enhances the OpenSPP platform by enabling seamless data exchange with external DCI-compliant registries, including specialized integration with CRVS systems.  This promotes interoperability, streamlines data management, and expands the potential reach of OpenSPP implementations.</p>
+<p>The <a class="reference internal" href="#"><span class="doc std std-doc">spp_import_dci_api</span></a> module enhances the OpenSPP platform by enabling seamless data exchange with external DCI-compliant registries, including specialized integration with CRVS systems. This promotes interoperability, streamlines data management, and expands the potential reach of OpenSPP implementations. For more information, visit <a class="reference external" href="https://spdci.org/">Digital Convergence Initiative</a>.</p>
 </div>
 </div>
 </div>

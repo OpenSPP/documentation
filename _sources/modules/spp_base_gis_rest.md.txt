@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This module extends the [spp_base_gis](spp_base_gis) by providing RESTful API endpoints for accessing and querying geospatial data. It depends on the following modules:

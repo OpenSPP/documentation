@@ -803,7 +803,7 @@
 <h1>OpenSPP User Roles<a class="headerlink" href="#openspp-user-roles" title="Permalink to this headline">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is a work-in-progress document.</p>
+<p><strong>Work in Progress</strong>: This document is actively being developed and updated. Content may be incomplete or subject to change.</p>
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
@@ -824,7 +824,7 @@
 <li><p><strong>G2P Registry: Base (<a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">g2p_registry_base</span></a>):</strong>  This module indirectly depends on the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model from the G2P Registry: Base module, as it modifies the access rules for registrant data based on a user's assigned areas.</p></li>
 <li><p><strong>G2P Registry: Group (<a class="reference internal" href="g2p_registry_group.html"><span class="doc std std-doc">g2p_registry_group</span></a>):</strong>  Similar to the Base module, it impacts access to group registrant data based on area assignments.</p></li>
 <li><p><strong>G2P Programs (<a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">g2p_programs</span></a>):</strong>  The module's area-based access control can be applied to program-related data, ensuring that users with local roles only see and manage programs operating within their designated areas.</p></li>
-<li><p><strong>OpenSPP Area (<a class="reference internal" href="spp_area.html"><span class="doc std std-doc">spp_area</span></a>):</strong>  The module heavily relies on the area hierarchy defined in the [spp_area](spp_area](spp_area](spp_area)):**  The module heavily relies on the area hierarchy defined in the `[spp_area) module. Local roles are directly associated with specific areas, and user access is restricted accordingly.</p></li>
+<li><p><strong>OpenSPP Area (<a class="reference internal" href="spp_area.html"><span class="doc std std-doc">spp_area</span></a>):</strong>  The module heavily relies on the area hierarchy defined in the <a class="reference internal" href="spp_area.html"><span class="doc std std-doc">spp_area</span></a> module. Local roles are directly associated with specific areas, and user access is restricted accordingly.</p></li>
 <li><p><strong>OpenSPP ID Queue (<a class="reference internal" href="spp_idqueue.html"><span class="doc std std-doc">spp_idqueue</span></a>):</strong>  Integrates with the ID Queue module to control access to ID card requests and batches based on area assignments, ensuring that users only manage requests originating from their designated locations.</p></li>
 <li><p><strong>Base User Role (base_user_role):</strong>  Extends the base Odoo module for user role management, inheriting its core functionalities and adding the area-based restrictions.</p></li>
 <li><p><strong>OpenSPP API (<a class="reference internal" href="spp_api.html"><span class="doc std std-doc">spp_api</span></a>):</strong>  The module's access control mechanism is integrated with the OpenSPP API, ensuring that API requests from users with local roles are filtered to return only data within their authorized areas.</p></li>

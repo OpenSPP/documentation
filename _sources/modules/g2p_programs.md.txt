@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document details the **G2P Programs** module within the OpenSPP platform. This module is responsible for defining and managing the core aspects of social protection programs, including eligibility criteria, program cycles, entitlement management, and payment processing.
@@ -55,7 +55,6 @@ The **G2P Programs** module provides a comprehensive framework for:
 9. **Event SMS (event_sms)**:
     * Enables SMS notifications for program-related events, including enrollment confirmations, eligibility updates, payment notifications, and reminders. 
     * Leverages the module's SMS gateway integration for efficient and timely communication with beneficiaries. 
-
 
 ### Additional Functionality
 

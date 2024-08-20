@@ -17,10 +17,10 @@
 <meta content="website" property="og:type"/>
 <meta content="https://docs.openspp.org/modules/spp_encryption.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="The spp_encryption module extends the encryption capabilities of OpenSPP by adding support for the JWCrypto library. This module builds upon the foundation provided by the[g2p_encryption](JWCrypto ..." property="og:description"/>
+<meta content="The spp_encryption module extends the encryption capabilities of OpenSPP by adding support for the JWCrypto library. This module builds upon the foundation provided by the g2p_encryption and offers..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="The spp_encryption module extends the encryption capabilities of OpenSPP by adding support for the JWCrypto library. This module builds upon the foundation provided by the[g2p_encryption](JWCrypto ..." name="description"/>
+<meta content="The spp_encryption module extends the encryption capabilities of OpenSPP by adding support for the JWCrypto library. This module builds upon the foundation provided by the g2p_encryption and offers..." name="description"/>
 <meta content="en_US" property="og:locale"/>
 <title>OpenSPP Encryption Module — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
@@ -742,11 +742,7 @@
 </li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#benefits-of-using-spp-encryption">
-   Benefits of using
-   <span class="xref myst">
-    spp_encryption
-   </span>
-   :
+   Benefits of using spp_encryption:
   </a>
 </li>
 </ul>
@@ -783,11 +779,7 @@
 </li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#benefits-of-using-spp-encryption">
-   Benefits of using
-   <span class="xref myst">
-    spp_encryption
-   </span>
-   :
+   Benefits of using spp_encryption:
   </a>
 </li>
 </ul>
@@ -801,9 +793,9 @@
 <h1>OpenSPP Encryption Module<a class="headerlink" href="#openspp-encryption-module" title="Permalink to this headline">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is a work-in-progress document.</p>
+<p><strong>Work in Progress</strong>: This document is actively being developed and updated. Content may be incomplete or subject to change.</p>
 </div>
-<p>The <a class="reference internal" href="#"><span class="doc std std-doc">spp_encryption</span></a> module extends the encryption capabilities of OpenSPP by adding support for the <a class="reference external" href="https://jwcrypto.readthedocs.io/en/latest/">JWCrypto</a> library. This module builds upon the foundation provided by the <a class="reference external" href="https://jwcrypto.readthedocs.io/en/latest/">[g2p_encryption](JWCrypto</a> library. This module builds upon the foundation provided by the [<code class="docutils literal notranslate"><span class="pre">[g2p_encryption)</span> <span class="pre">Encryption</span> <span class="pre">Module](spp_encryption]</span></code> module extends the encryption capabilities of OpenSPP by adding support for the <a class="reference external" href="https://jwcrypto.readthedocs.io/en/latest/">JWCrypto</a> library. This module builds upon the foundation provided by the <a class="reference external" href="https://jwcrypto.readthedocs.io/en/latest/">[g2p_encryption](JWCrypto</a> library. This module builds upon the foundation provided by the [`[g2p_encryption) Encryption Module)(#g2p-encryption-module) and offers a concrete implementation of an encryption provider utilizing JWCrypto's functionalities.</p>
+<p>The <a class="reference internal" href="#"><span class="doc std std-doc">spp_encryption</span></a> module extends the encryption capabilities of OpenSPP by adding support for the <a class="reference external" href="https://jwcrypto.readthedocs.io/en/latest/">JWCrypto</a> library. This module builds upon the foundation provided by the <span class="xref myst">g2p_encryption</span> and offers a concrete implementation of an encryption provider utilizing JWCrypto's functionalities.</p>
 <div class="section" id="purpose-and-functionality">
 <h2>Purpose and Functionality<a class="headerlink" href="#purpose-and-functionality" title="Permalink to this headline">#</a></h2>
 <p>The primary purpose of this module is to enable secure encryption, decryption, signing, and verification of data within the OpenSPP ecosystem using JWCrypto. It provides the following functionalities:</p>
@@ -816,7 +808,7 @@
 </div>
 <div class="section" id="integration-and-usage">
 <h2>Integration and Usage<a class="headerlink" href="#integration-and-usage" title="Permalink to this headline">#</a></h2>
-<p>The <a class="reference internal" href="#"><span class="doc std std-doc">spp_encryption</span></a> module extends the <code class="docutils literal notranslate"><span class="pre">g2p.encryption.provider</span></code> model introduced by the [g2p_encryption](spp_encryption](g2p_encryption](spp_encryption) module extends the <code class="docutils literal notranslate"><span class="pre">g2p.encryption.provider</span></code> model introduced by the <code class="docutils literal notranslate"><span class="pre">[g2p_encryption)</span></code> Encryption Module. It adds a new encryption provider type, "JWCrypto," which users can select and configure through the Odoo interface.</p>
+<p>The <a class="reference internal" href="#"><span class="doc std std-doc">spp_encryption</span></a> module extends the <code class="docutils literal notranslate"><span class="pre">g2p.encryption.provider</span></code> model introduced by the <span class="xref myst">g2p_encryption</span>. It adds a new encryption provider type, "JWCrypto," which users can select and configure through the Odoo interface.</p>
 <p>Here's how this module integrates with other OpenSPP components:</p>
 <ol class="arabic simple">
 <li><p><strong>Dependency:</strong> Modules requiring advanced encryption features, such as those dealing with sensitive beneficiary data or financial transactions, would declare a dependency on the <a class="reference internal" href="#"><span class="doc std std-doc">spp_encryption</span></a> module.</p></li>
@@ -835,7 +827,7 @@
 </ol>
 </div>
 <div class="section" id="benefits-of-using-spp-encryption">
-<h2>Benefits of using <a class="reference internal" href="#"><span class="doc std std-doc">spp_encryption</span></a>:<a class="headerlink" href="#benefits-of-using-spp-encryption" title="Permalink to this headline">#</a></h2>
+<h2>Benefits of using spp_encryption:<a class="headerlink" href="#benefits-of-using-spp-encryption" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><strong>Enhanced Security:</strong> Leverages JWCrypto's robust cryptographic algorithms to provide strong encryption and data protection.</p></li>
 <li><p><strong>Standardized Implementation:</strong> Adheres to established standards like JWE and JWT, ensuring interoperability and security best practices.</p></li>

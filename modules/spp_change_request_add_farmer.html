@@ -817,11 +817,11 @@
 <h1>OpenSPP Change Request: Add Farmer<a class="headerlink" href="#openspp-change-request-add-farmer" title="Permalink to this headline">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This is a work-in-progress document.</p>
+<p><strong>Work in Progress</strong>: This document is actively being developed and updated. Content may be incomplete or subject to change.</p>
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
-<p>The <a class="reference internal" href="#"><span class="doc std std-doc">spp_change_request_add_farmer</span></a> module extends the OpenSPP Change Request system to specifically handle requests for adding new farmers to existing groups within the registry. It leverages the framework provided by the [spp_change_request](spp_change_request_add_farmer](spp_change_request](spp_change_request_add_farmer) module extends the OpenSPP Change Request system to specifically handle requests for adding new farmers to existing groups within the registry. It leverages the framework provided by the <code class="docutils literal notranslate"><span class="pre">[spp_change_request)</span></code> module and integrates with other registry modules to streamline the process of adding farmers while maintaining data integrity and consistency.</p>
+<p>The <a class="reference internal" href="#"><span class="doc std std-doc">spp_change_request_add_farmer</span></a> module extends the OpenSPP Change Request system to specifically handle requests for adding new farmers to existing groups within the registry. It leverages the framework provided by the <a class="reference internal" href="spp_change_request.html"><span class="doc std std-doc">spp_change_request</span></a> module and integrates with other registry modules to streamline the process of adding farmers while maintaining data integrity and consistency.</p>
 </div>
 <div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
@@ -838,7 +838,7 @@
 <h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">#</a></h3>
 <p>The module relies heavily on the following modules:</p>
 <ul class="simple">
-<li><p><strong><a class="reference internal" href="spp_change_request.html"><span class="doc std std-doc">spp_change_request</span></a></strong>: Inherits the core change request functionality, including the request workflow, validation processes, approval mechanisms, and integration with the Document Management System ([spp_dms](spp_change_request](spp_dms](spp_change_request)**: Inherits the core change request functionality, including the request workflow, validation processes, approval mechanisms, and integration with the Document Management System (<code class="docutils literal notranslate"><span class="pre">[spp_dms)</span></code>).</p></li>
+<li><p><strong><a class="reference internal" href="spp_change_request.html"><span class="doc std std-doc">spp_change_request</span></a></strong>: Inherits the core change request functionality, including the request workflow, validation processes, approval mechanisms, and integration with the Document Management System (<a class="reference internal" href="spp_dms.html"><span class="doc std std-doc">spp_dms</span></a>).</p></li>
 <li><p><strong><a class="reference internal" href="spp_farmer_registry_base.html"><span class="doc std std-doc">spp_farmer_registry_base</span></a></strong>: Leverages the farmer-specific data models and attributes to capture and store information about the new farmer.</p></li>
 <li><p><strong><a class="reference internal" href="g2p_registry_membership.html"><span class="doc std std-doc">g2p_registry_membership</span></a></strong>: Integrates with the membership management system to create the appropriate group membership record for the new farmer upon change request approval.</p></li>
 <li><p><strong><span class="xref myst">phone_validation</span></strong>: Utilizes the phone validation module to ensure phone number entries for the new farmer adhere to correct formatting.</p></li>

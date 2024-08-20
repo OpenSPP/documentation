@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document details the **OpenSPP API Records** module within the OpenSPP platform. This module is responsible for defining and exposing API endpoints that provide access to records and data related to OpenSPP's core functionalities, including service points, programs, entitlements, and registries.

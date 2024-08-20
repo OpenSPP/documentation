@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document describes the **OpenSPP Custom Field** module, which extends the functionality of OpenSPP by adding customizable fields to registrant profiles. This module is specifically designed to work with the **[g2p_registry_base](g2p_registry_base)** module and leverages its features for managing registrant data.

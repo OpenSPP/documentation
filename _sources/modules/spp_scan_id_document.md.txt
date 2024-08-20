@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document outlines the functionality of the **OpenSPP Registry - Scan ID Document** module. This module enhances the registrant registration process by enabling users to scan physical ID documents directly into a registrant's profile. 

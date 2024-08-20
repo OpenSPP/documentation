@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document outlines the functionality of the **G2P Registry: Custom Fields UI** module within the OpenSPP ecosystem. This module, depending on the **[g2p_registry_base](g2p_registry_base)** module, provides a user-friendly interface for defining and managing custom fields for registrants. These custom fields allow implementers to tailor the registry to their specific program needs by capturing additional data beyond the core fields provided by the base module.

@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This module serves as a demonstration of the GIS capabilities provided by the [OpenSPP Base GIS](OpenSPP Base GIS)(./openspp-base-gis) module. It extends the functionality of the base module by adding practical examples and use cases. 
