@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document outlines the functionality of the **OpenSPP Base** module, the core module for the OpenSPP system. It builds upon existing G2P Registry modules, providing essential customizations and configurations for OpenSPP's specialized functionalities.
@@ -30,7 +30,6 @@ The **OpenSPP Base** module depends on several other modules, integrating their 
 - [g2p_registry_group](g2p_registry_group): Integrates with this module to manage groups of registrants, extending the concept of registrants beyond individuals.
 - [utm](utm): Leverages this module for tracking and managing UTM (Urchin Tracking Module) parameters, commonly used in digital marketing campaigns.
 - [g2p_registry_individual](g2p_registry_individual): Integrates with this module to manage individual registrant data, including specific attributes and validations.
-
 
 ### Additional Functionality
 

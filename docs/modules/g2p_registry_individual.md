@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document outlines the functionality of the **G2P Registry: Individual** module within the OpenSPP ecosystem. Building upon the foundation provided by the **[G2P Registry: Base](g2p_registry_base)** module, this module focuses specifically on managing **individual registrant** data.

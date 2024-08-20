@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This module enhances the functionality of OpenSPP by integrating the **Event Data** module ([spp_event_data](spp_event_data)) with the **G2P Programs** module ([g2p_programs](spp_event_data](g2p_programs](spp_event_data)) with the **G2P Programs** module ([g2p_programs)). It allows users to record and track program membership-related events within the OpenSPP system.
@@ -41,7 +41,6 @@ The **spp_event_data_program_membership** module serves to:
 2. **Tracking Eligibility Changes:**  A beneficiary's eligibility status changes due to a change in their circumstances. A program officer can record this event, selecting "Eligibility Change" as the event type and associating it with the beneficiary's program membership.  
 
 3. **Viewing Event History:**  Program staff can access a beneficiary's program membership record and view a chronological list of all events, providing a clear audit trail of their participation in the program.
-
 
 ### Conclusion
 

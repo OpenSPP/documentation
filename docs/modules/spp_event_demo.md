@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This module, **[spp_event_demo](spp_event_demo)**, provides demonstration data and functionalities for the **[spp_event_data](spp_event_demo](spp_event_data](spp_event_demo)**, provides demonstration data and functionalities for the **[spp_event_data)** module within the OpenSPP ecosystem. It showcases how to extend and utilize the event tracking capabilities of OpenSPP for specific use cases. 

@@ -1,5 +1,10 @@
 # OpenSPP Modules Index
 
+```{warning}
+
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
+```
+
 ## SPP Modules
 
 | Module | Summary |
@@ -74,7 +79,6 @@
 | [OpenSPP Tag Based Eligibility Manager](spp_eligibility_tags) | Define eligibility criteria for programs based on registrant tags and geographical areas, automating beneficiary identification and improving targeting accuracy. |
 | [OpenSPP Entitlement Transactions](spp_ent_trans) | This module records and manages transactions related to entitlement redemptions, providing a transparent history for both cash and in-kind benefits. |
 | [OpenSPP Cash Entitlement](spp_entitlement_cash) | Manage cash-based entitlements for beneficiaries within social protection programs, including defining calculation rules, automating disbursement, and tracking payments. |
-
 
 ## G2P Modules
 

@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document provides an overview of the `g2p_encryption_rest_api` module within the OpenSPP ecosystem.

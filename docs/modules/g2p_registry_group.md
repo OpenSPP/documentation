@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document describes the **G2P Registry: Groups** module within the OpenSPP framework. This module builds upon the **G2P Registry: Base** module to provide specific functionality for managing groups of registrants.

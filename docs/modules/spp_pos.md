@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document details the **OpenSPP POS ([spp_pos](spp_pos))** module within the OpenSPP ecosystem. This module extends the functionality of the Odoo Point of Sale (POS) system to integrate with OpenSPP's core modules, enabling the redemption of entitlements and management of beneficiary transactions at designated points of sale.

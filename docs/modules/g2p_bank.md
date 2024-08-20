@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document outlines the functionality of the **G2P Bank** module within the OpenSPP framework. This module extends the functionality of individual and group registries to manage their bank details.

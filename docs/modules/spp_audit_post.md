@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document outlines the **G2P Registry: Audit Post** module within the OpenSPP platform. This module extends the functionality of the audit log by enabling the posting of audit log messages to related parent records.

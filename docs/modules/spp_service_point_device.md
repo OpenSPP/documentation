@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document outlines the **OpenSPP Service Point Device** module, which extends the functionality of the **[spp_service_points](spp_service_points)** module to manage terminal devices associated with each service point. It allows for the registration and tracking of devices used at service points, including their model, Android version, and active status.

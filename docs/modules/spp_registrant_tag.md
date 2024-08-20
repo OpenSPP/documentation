@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document outlines the functionality of the **OpenSPP Registrant Tags** module within the OpenSPP ecosystem. This module extends the tagging capabilities of the [g2p_registry_base](g2p_registry_base) module, enabling more organized and efficient management of registrant data.

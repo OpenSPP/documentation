@@ -2,12 +2,12 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 ## Overview
 
-The [spp_change_request_add_farmer](spp_change_request_add_farmer) module extends the OpenSPP Change Request system to specifically handle requests for adding new farmers to existing groups within the registry. It leverages the framework provided by the [spp_change_request](spp_change_request_add_farmer](spp_change_request](spp_change_request_add_farmer) module extends the OpenSPP Change Request system to specifically handle requests for adding new farmers to existing groups within the registry. It leverages the framework provided by the `[spp_change_request)` module and integrates with other registry modules to streamline the process of adding farmers while maintaining data integrity and consistency.
+The [spp_change_request_add_farmer](spp_change_request_add_farmer) module extends the OpenSPP Change Request system to specifically handle requests for adding new farmers to existing groups within the registry. It leverages the framework provided by the [spp_change_request](spp_change_request) module and integrates with other registry modules to streamline the process of adding farmers while maintaining data integrity and consistency.
 
 ## Purpose
 
@@ -22,7 +22,7 @@ The [spp_change_request_add_farmer](spp_change_request_add_farmer) module extend
 
 The module relies heavily on the following modules:
 
-* **[spp_change_request](spp_change_request)**: Inherits the core change request functionality, including the request workflow, validation processes, approval mechanisms, and integration with the Document Management System ([spp_dms](spp_change_request](spp_dms](spp_change_request)**: Inherits the core change request functionality, including the request workflow, validation processes, approval mechanisms, and integration with the Document Management System (`[spp_dms)`).
+* **[spp_change_request](spp_change_request)**: Inherits the core change request functionality, including the request workflow, validation processes, approval mechanisms, and integration with the Document Management System ([spp_dms](spp_dms)).
 * **[spp_farmer_registry_base](spp_farmer_registry_base)**: Leverages the farmer-specific data models and attributes to capture and store information about the new farmer.
 * **[g2p_registry_membership](g2p_registry_membership)**: Integrates with the membership management system to create the appropriate group membership record for the new farmer upon change request approval. 
 * **[phone_validation](phone_validation)**: Utilizes the phone validation module to ensure phone number entries for the new farmer adhere to correct formatting.
@@ -41,4 +41,4 @@ The module relies heavily on the following modules:
 
 ## Conclusion
 
-The [spp_change_request_add_farmer](spp_change_request_add_farmer) module provides a robust and specialized workflow for adding new farmers to existing groups within the OpenSPP registry. By seamlessly integrating with core change management and registry modules, it ensures data accuracy, consistency, and a streamlined user experience for managing farmer additions. 
+The [spp_change_request_add_farmer](spp_change_request_add_farmer) module provides a robust and specialized workflow for adding new farmers to existing groups within the OpenSPP registry. By seamlessly integrating with core change management and registry modules, it ensures data accuracy, consistency, and a streamlined user experience for managing farmer additions.

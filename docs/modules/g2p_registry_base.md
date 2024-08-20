@@ -2,7 +2,7 @@
 
 ```{warning}
 
-This is a work-in-progress document.
+**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
 This document outlines the functionality of the **G2P Registry: Base** module within the OpenSPP ecosystem. This module is the foundational layer upon which other OpenSPP registry modules are built.  It provides core features for managing registrant data, relationships, and identification, leaving specialized functionalities to dependent modules.
@@ -28,7 +28,6 @@ The **G2P Registry: Base** module aims to:
 2. **Web (web)**:  The **G2P Registry: Base** module uses the Web module to provide a user-friendly interface for managing registry data within the Odoo backend. 
 
 3. **Portal (portal)**: The Portal module is utilized for potential future features, enabling secure access to registry data for external stakeholders (e.g., registrants themselves) through a dedicated online portal. 
-
 
 ### Additional Functionality
 
