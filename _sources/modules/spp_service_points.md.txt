@@ -7,7 +7,7 @@
 
 This document outlines the **OpenSPP Service Points** module, which adds functionality to manage service points and their agents within the OpenSPP ecosystem. It enables the registration and tracking of service points, their associated areas, offered services, and their connection to company entities and their respective contacts.
 
-### Purpose
+## Purpose
 
 The **OpenSPP Service Points** module is designed to:
 
@@ -17,7 +17,7 @@ The **OpenSPP Service Points** module is designed to:
 * **Connect with Company Entities**: Establish a relationship between service points and formal company entities within the system.
 * **Manage User Accounts for Contacts**: Facilitate the creation and management of user accounts for individuals associated with the company linked to a service point.
 
-### Dependencies and Integration
+## Dependencies and Integration
 
 1. **G2P Registry: Base ([g2p_registry_base](g2p_registry_base))**: Leverages the core registrant management features provided by the **G2P Registry: Base** module.  This includes the use of the `res.partner` model to represent both companies and individuals associated with service points.
 
@@ -27,7 +27,7 @@ The **OpenSPP Service Points** module is designed to:
 
 4. **Auth Signup (auth_signup)**: Integrates with the **Auth Signup** module to streamline the creation of user accounts for contacts associated with companies linked to service points.
 
-### Additional Functionality
+## Additional Functionality
 
 * **Service Point Management (spp.service.point)**: 
     * Introduces a dedicated model (`spp.service.point`) for storing and managing service point data.
@@ -41,6 +41,6 @@ The **OpenSPP Service Points** module is designed to:
     * Offers a streamlined process to automatically create user accounts for contacts associated with the company linked to a service point.
     * Assigns appropriate security groups to newly created users to manage access permissions.
 
-### Conclusion
+## Conclusion
 
 The **OpenSPP Service Points** module streamlines the management of service points and their agents within the OpenSPP system. It provides a structured approach to track service point details, connect them to geographical locations and company entities, and manage user accounts for individuals involved in service delivery. This contributes to a more organized and efficient operation of social protection programs and farmer registries. 

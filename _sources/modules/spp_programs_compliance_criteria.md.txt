@@ -7,11 +7,11 @@
 
 This document describes the **OpenSPP Programs: Compliance Criteria** module, an extension to the OpenSPP framework. This module adds functionality to manage compliance criteria within social protection programs. 
 
-### Purpose
+## Purpose
 
 The **OpenSPP Programs: Compliance Criteria** module allows program administrators to define and enforce additional eligibility requirements beyond the initial criteria defined in the [g2p_programs](g2p_programs) module. This ensures that beneficiaries continuously meet specific conditions throughout their program participation. 
 
-### Module Dependencies and Integration
+## Module Dependencies and Integration
 
 1. [g2p_registry_base](g2p_registry_base): Leverages basic registrant information and relationships defined in the base registry module.
 
@@ -27,7 +27,7 @@ The **OpenSPP Programs: Compliance Criteria** module allows program administrato
 
 6. [spp_eligibility_tags](spp_eligibility_tags): Utilizes tag-based eligibility rules as potential compliance criteria, adding another layer of flexibility.
 
-### Additional Functionality
+## Additional Functionality
 
 * **Compliance Managers (spp.compliance.manager)**: A new model that links to specific eligibility managers (SQL-based, Tag-based, etc.) and defines them as compliance criteria for a program. 
 * **Program Compliance Configuration (g2p.program)**: Extends the program model to include a list of compliance managers, defining the specific criteria that beneficiaries must meet.
@@ -37,6 +37,6 @@ The **OpenSPP Programs: Compliance Criteria** module allows program administrato
     * **On Entitlement Creation**:  Verifies compliance before an entitlement is generated for a beneficiary.
 * **Beneficiary State Management**:  Transitions beneficiaries between 'enrolled' and 'paused' states within a program cycle based on their compliance status.
 
-### Conclusion
+## Conclusion
 
 The **OpenSPP Programs: Compliance Criteria** module adds a crucial layer of control and flexibility to program management within OpenSPP. By allowing administrators to define and enforce ongoing compliance criteria, it ensures program integrity, targets benefits more effectively, and strengthens accountability within social protection programs. 

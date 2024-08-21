@@ -7,11 +7,11 @@
 
 This document outlines the functionality of the **OpenSPP Program Entitlement (Cash)** module. This module extends the **G2P Programs** module, providing specialized features for managing cash-based entitlements within social protection programs.
 
-### Purpose
+## Purpose
 
 The **OpenSPP Program Entitlement (Cash)** module enables the definition, calculation, and management of cash entitlements for beneficiaries enrolled in social protection programs. It streamlines the process of determining eligibility, calculating entitlement amounts based on predefined rules, and facilitating the disbursement of funds.
 
-### Module Dependencies and Integration
+## Module Dependencies and Integration
 
 1. **G2P Registry: Base ([g2p_registry_base](g2p_registry_base)(LINK_TO_G2P_REGISTRY_BASE))**: This module utilizes the base registry to access and manage beneficiary data, ensuring that entitlements are linked to the correct individuals or households.
 
@@ -24,7 +24,7 @@ The **OpenSPP Program Entitlement (Cash)** module enables the definition, calcul
     * Generating payment batches for disbursement.
     * Updating beneficiary records with entitlement and payment information.
 
-### Additional Functionality
+## Additional Functionality
 
 * **Cash Entitlement Manager Model (`g2p.program.entitlement.manager.cash`)**:
     * Extends the generic entitlement manager model (`g2p.program.entitlement.manager`) to provide cash-specific configurations and functionalities.
@@ -55,6 +55,6 @@ The **OpenSPP Program Entitlement (Cash)** module enables the definition, calcul
         * Cash pickup points
     * Tracks payment status and provides reconciliation tools to manage disbursements effectively. 
 
-### Conclusion
+## Conclusion
 
 The **OpenSPP Program Entitlement (Cash)** module provides a specialized toolkit for managing cash-based social assistance within a broader social protection program. Its integration with other OpenSPP modules and its flexible rule-based system make it a valuable asset for organizations seeking to deliver cash transfers efficiently and transparently. 

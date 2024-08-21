@@ -7,7 +7,7 @@
 
 This document describes the **OpenSPP Program ID** module, an extension to the OpenSPP platform. This module enhances the existing **OpenG2P: Programs** functionality by adding unique, system-generated IDs to each program for improved tracking and reference.
 
-### Purpose
+## Purpose
 
 The **OpenSPP Program ID** module aims to:
 
@@ -15,7 +15,7 @@ The **OpenSPP Program ID** module aims to:
 * **Enhance Data Management**:  Improve the organization and management of program data by introducing a standardized identification system.
 * **Facilitate Integration**: Enable seamless integration with other systems or modules by providing a consistent program identifier.
 
-### Module Dependencies and Integration
+## Module Dependencies and Integration
 
 1. **[spp_programs](spp_programs)**: 
     * Leverages the core program management features provided by the OpenSPP Programs module.
@@ -25,7 +25,7 @@ The **OpenSPP Program ID** module aims to:
     * Builds upon the program structure and functionality provided by the G2P Programs module.
     * Integrates with program views to display the generated program ID.
 
-### Additional Functionality
+## Additional Functionality
 
 * **Program ID Generation**: 
     * Automatically generates a unique program ID using a defined sequence (`program.id.sequence`) upon program creation.
@@ -41,6 +41,6 @@ The **OpenSPP Program ID** module aims to:
         * **List View**: Displays the `program_id` alongside other program details in the program list view. 
         * **Form View**: Shows the `program_id` prominently within the program form view.
 
-### Conclusion
+## Conclusion
 
 The **OpenSPP Program ID** module enhances the OpenSPP platform by providing a simple yet powerful mechanism for uniquely identifying programs. This enhancement contributes to better data management, easier referencing, and smoother integration with other systems, ultimately improving the efficiency and usability of the OpenSPP platform. 

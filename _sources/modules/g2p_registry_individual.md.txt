@@ -7,7 +7,7 @@
 
 This document outlines the functionality of the **G2P Registry: Individual** module within the OpenSPP ecosystem. Building upon the foundation provided by the **[G2P Registry: Base](g2p_registry_base)** module, this module focuses specifically on managing **individual registrant** data.
 
-### Purpose
+## Purpose
 
 The **G2P Registry: Individual** module aims to:
 
@@ -15,7 +15,7 @@ The **G2P Registry: Individual** module aims to:
 * Provide a dedicated interface for managing and viewing individual registrant profiles. 
 * Enhance data integrity through validation rules and constraints related to individual attributes.
 
-### Module Dependencies and Integration
+## Module Dependencies and Integration
 
 1. **[G2P Registry: Base](g2p_registry_base)**:  This module inherits from the core functionalities provided by the base module, including:
     * **Registrant Management**: Leverages the base registrant model, inheriting features for managing registration dates, disabling/enabling registrants, tags, IDs, phone numbers, and relationships.
@@ -27,7 +27,7 @@ The **G2P Registry: Individual** module aims to:
     * **Age**: Calculates and displays the registrant's age based on their birthdate.
     * **Gender**:  Provides a field for recording gender information.
 
-### Additional Functionality
+## Additional Functionality
 
 The module introduces:
 
@@ -36,6 +36,6 @@ The module introduces:
 * **Age Calculation and Validation**:  Calculates the age of the individual based on their birthdate and includes validation to ensure the entered age is a valid number.
 * **Birthdate Validation**:  Restricts the selection of future dates for the birthdate field. 
 
-### Conclusion
+## Conclusion
 
 The **G2P Registry: Individual** module enhances the OpenSPP platform by providing a dedicated and feature-rich system for managing individual registrant data. By extending the base registry functionality and integrating seamlessly with Odoo's Contacts module, it ensures comprehensive and efficient handling of individual profiles within social protection programs and farmer registries. 

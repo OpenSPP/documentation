@@ -7,16 +7,16 @@
 
 This document outlines the **G2P Registry: Audit Post** module within the OpenSPP platform. This module extends the functionality of the audit log by enabling the posting of audit log messages to related parent records.
 
-### Purpose
+## Purpose
 
 The module's primary goal is to provide a comprehensive overview of changes not just within a single record, but also across related records in a parent-child relationship. By posting audit log information to parent records, it offers a centralized view of how modifications cascade through interconnected data.
 
-### Module Integration and Dependencies
+## Module Integration and Dependencies
 
 * **[spp_audit_log](spp_audit_log)**: This module directly depends on the audit log module. It leverages the existing audit log framework to capture and display change information. 
 * **Mail (mail)**: The module utilizes the standard Odoo Mail module to post audit log messages as messages on parent records. This integration ensures that relevant stakeholders are notified about changes impacting related data.
 
-### Additional Functionality
+## Additional Functionality
 
 1. **Parent-Child Rule Association**:
     * Allows users to define parent-child relationships between audit rules. 
@@ -36,6 +36,6 @@ The module's primary goal is to provide a comprehensive overview of changes not 
     * When a change is audited and a parent rule is defined, the module automatically generates a message on the parent record's message thread.
     * The message includes detailed information about the change, including the model, field, old value, and new value, presented in a user-friendly HTML format.
 
-### Conclusion
+## Conclusion
 
 The **G2P Registry: Audit Post** module enhances data transparency and traceability within OpenSPP by extending audit logging to encompass related records. This functionality provides valuable insights into how modifications propagate through the system, facilitating better data management and analysis. This is particularly beneficial in complex data structures where understanding the impact of changes across related records is crucial. 

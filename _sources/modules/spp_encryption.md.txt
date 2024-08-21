@@ -7,7 +7,7 @@
 
 The [spp_encryption](spp_encryption) module extends the encryption capabilities of OpenSPP by adding support for the [JWCrypto](https://jwcrypto.readthedocs.io/en/latest/) library. This module builds upon the foundation provided by the [g2p_encryption](g2p-encryption) and offers a concrete implementation of an encryption provider utilizing JWCrypto's functionalities.
 
-### Purpose and Functionality
+## Purpose and Functionality
 
 The primary purpose of this module is to enable secure encryption, decryption, signing, and verification of data within the OpenSPP ecosystem using JWCrypto. It provides the following functionalities:
 
@@ -16,7 +16,7 @@ The primary purpose of this module is to enable secure encryption, decryption, s
 - **JWT Signing and Verification:** Utilizes JWCrypto's JWT (JSON Web Token) capabilities to sign and verify data, ensuring data integrity and authenticity.
 - **Key Management:** Provides functionalities to generate, store, and manage JWCrypto keys within the OpenSPP database.
 
-### Integration and Usage
+## Integration and Usage
 
 The [spp_encryption](spp_encryption) module extends the `g2p.encryption.provider` model introduced by the [g2p_encryption](g2p-encryption). It adds a new encryption provider type, "JWCrypto," which users can select and configure through the Odoo interface. 
 
@@ -26,7 +26,7 @@ Here's how this module integrates with other OpenSPP components:
 2. **Configuration:** Administrators would configure a new encryption provider of type "JWCrypto" within the OpenSPP settings, providing the necessary JWCrypto key information.
 3. **Utilization:** Modules requiring encryption can then utilize the configured JWCrypto provider through the standard encryption methods provided by the `g2p.encryption.provider` model.
 
-### Example Usage Scenario
+## Example Usage Scenario
 
 Let's consider a module responsible for handling beneficiary payment data. This module needs to encrypt sensitive financial information before storing or transmitting it. 
 
@@ -35,7 +35,7 @@ Let's consider a module responsible for handling beneficiary payment data. This 
 3. Using the provider's `encrypt_data_jwcrypto` method, the module can securely encrypt the payment data.
 4. Upon retrieval, the module would use the corresponding `decrypt_data_jwcrypto` method to decrypt the data.
 
-### Benefits of using spp_encryption:
+## Benefits of using spp_encryption:
 
 - **Enhanced Security:** Leverages JWCrypto's robust cryptographic algorithms to provide strong encryption and data protection.
 - **Standardized Implementation:** Adheres to established standards like JWE and JWT, ensuring interoperability and security best practices.

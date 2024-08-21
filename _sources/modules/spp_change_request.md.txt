@@ -40,20 +40,20 @@ The [spp_change_request](spp_change_request) module leverages and extends the fu
 
 ## Additional Functionality
 
-### Change Request Management
+## Change Request Management
 
 * **Change Request Model (`spp.change.request`)**: A central model for tracking all change requests, storing details like request type, status, applicant, assigned personnel, approval history, and related documents. 
 * **Configurable Workflow**: Supports customizable multi-stage approval processes, allowing administrators to define the required steps and user roles involved in validating change requests.
 * **Status Tracking**: Monitors the progress of change requests through various states (Draft, Pending Validation, Validated, Applied, Rejected, Cancelled), providing real-time visibility into the process. 
 * **Audit Trail**:  Maintains a comprehensive history of all actions related to a change request, including submission, validation, approvals, rejections, and application, ensuring accountability and transparency.
 
-### Integration with Registrant Data
+## Integration with Registrant Data
 
 * **Dynamic Form Generation**:  The module allows for defining different change request types, each associated with a specific form that captures the necessary data for that type of modification.
 * **Data Validation**: Implements validation rules to ensure the data entered in change request forms meet specific criteria, such as data type, format, or range, before submission for approval. 
 * **Automatic Data Update**:  Upon approval and application of a change request, the module automatically updates the corresponding registrant data in the relevant G2P Registry module, ensuring data consistency.
 
-### User Interface and Experience
+## User Interface and Experience
 
 * **Dedicated Change Request Menu**:  Provides a centralized location within the OpenSPP interface for accessing and managing change requests.
 * **User-Friendly Forms**:  Offers intuitive and easy-to-use forms for submitting different types of change requests, guiding users through the required information.

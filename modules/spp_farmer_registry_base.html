@@ -744,33 +744,31 @@
 <a class="reference internal nav-link" href="#functionality-and-integration-details">
    Functionality and Integration Details
   </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
+</li>
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#farmer-information">
-     Farmer Information
-    </a>
+   Farmer Information
+  </a>
 </li>
-<li class="toc-h3 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#farm-management">
-     Farm Management
-    </a>
+   Farm Management
+  </a>
 </li>
-<li class="toc-h3 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#agricultural-activities">
-     Agricultural Activities
-    </a>
+   Agricultural Activities
+  </a>
 </li>
-<li class="toc-h3 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#farm-assets-and-inputs">
-     Farm Assets and Inputs
-    </a>
+   Farm Assets and Inputs
+  </a>
 </li>
-<li class="toc-h3 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#gis-integration">
-     GIS Integration
-    </a>
-</li>
-</ul>
+   GIS Integration
+  </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#additional-features">
@@ -818,33 +816,31 @@
 <a class="reference internal nav-link" href="#functionality-and-integration-details">
    Functionality and Integration Details
   </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
+</li>
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#farmer-information">
-     Farmer Information
-    </a>
+   Farmer Information
+  </a>
 </li>
-<li class="toc-h3 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#farm-management">
-     Farm Management
-    </a>
+   Farm Management
+  </a>
 </li>
-<li class="toc-h3 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#agricultural-activities">
-     Agricultural Activities
-    </a>
+   Agricultural Activities
+  </a>
 </li>
-<li class="toc-h3 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#farm-assets-and-inputs">
-     Farm Assets and Inputs
-    </a>
+   Farm Assets and Inputs
+  </a>
 </li>
-<li class="toc-h3 nav-item toc-entry">
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#gis-integration">
-     GIS Integration
-    </a>
-</li>
-</ul>
+   GIS Integration
+  </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#additional-features">
@@ -895,8 +891,9 @@
 </div>
 <div class="section" id="functionality-and-integration-details">
 <h2>Functionality and Integration Details<a class="headerlink" href="#functionality-and-integration-details" title="Permalink to this headline">#</a></h2>
+</div>
 <div class="section" id="farmer-information">
-<h3>Farmer Information<a class="headerlink" href="#farmer-information" title="Permalink to this headline">#</a></h3>
+<h2>Farmer Information<a class="headerlink" href="#farmer-information" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Extends the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model (from <a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">g2p_registry_base</span></a>) to include farmer-specific details like years of experience, formal agricultural training, household size, etc.</p></li>
 <li><p>Introduces a temporary model <code class="docutils literal notranslate"><span class="pre">spp.farmer</span></code> to store farmer-specific information that can be later transferred to the main <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model, ensuring data consistency.</p></li>
@@ -904,7 +901,7 @@
 </ul>
 </div>
 <div class="section" id="farm-management">
-<h3>Farm Management<a class="headerlink" href="#farm-management" title="Permalink to this headline">#</a></h3>
+<h2>Farm Management<a class="headerlink" href="#farm-management" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Introduces the <code class="docutils literal notranslate"><span class="pre">Farm</span></code> model (inheriting from <code class="docutils literal notranslate"><span class="pre">res.partner</span></code>) to represent individual farms.</p></li>
 <li><p>Links farms to land records using the <code class="docutils literal notranslate"><span class="pre">spp.land.record</span></code> model, enabling the tracking of land parcels associated with each farm.</p></li>
@@ -912,7 +909,7 @@
 </ul>
 </div>
 <div class="section" id="agricultural-activities">
-<h3>Agricultural Activities<a class="headerlink" href="#agricultural-activities" title="Permalink to this headline">#</a></h3>
+<h2>Agricultural Activities<a class="headerlink" href="#agricultural-activities" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Introduces the <code class="docutils literal notranslate"><span class="pre">spp.farm.activity</span></code> model to record information about agricultural activities undertaken on each farm.</p></li>
 <li><p>Captures data on crop cultivation, livestock rearing, and aquaculture practices.</p></li>
@@ -920,20 +917,19 @@
 </ul>
 </div>
 <div class="section" id="farm-assets-and-inputs">
-<h3>Farm Assets and Inputs<a class="headerlink" href="#farm-assets-and-inputs" title="Permalink to this headline">#</a></h3>
+<h2>Farm Assets and Inputs<a class="headerlink" href="#farm-assets-and-inputs" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Introduces models for managing farm assets (<code class="docutils literal notranslate"><span class="pre">spp.farm.asset</span></code>) and inputs like fertilizers (<code class="docutils literal notranslate"><span class="pre">spp.fertilizer</span></code>), chemicals (<code class="docutils literal notranslate"><span class="pre">spp.farm.chemical</span></code>), and feed items (<code class="docutils literal notranslate"><span class="pre">spp.feed.items</span></code>).</p></li>
 <li><p>Allows associating these assets and inputs with specific farms and, optionally, to specific land parcels within a farm.</p></li>
 </ul>
 </div>
 <div class="section" id="gis-integration">
-<h3>GIS Integration<a class="headerlink" href="#gis-integration" title="Permalink to this headline">#</a></h3>
+<h2>GIS Integration<a class="headerlink" href="#gis-integration" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Leverages the <a class="reference internal" href="spp_base_gis.html"><span class="doc std std-doc">spp_base_gis</span></a> module to enable visualization of farm locations and land boundaries on a map.</p></li>
 <li><p>Provides a dedicated GIS view for <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> to display farms and their associated land parcels.</p></li>
 <li><p>Utilizes GeoJSON representations of land records from <a class="reference internal" href="spp_land_record.html"><span class="doc std std-doc">spp_land_record</span></a> to display farm boundaries as data layers on the map.</p></li>
 </ul>
-</div>
 </div>
 <div class="section" id="additional-features">
 <h2>Additional Features<a class="headerlink" href="#additional-features" title="Permalink to this headline">#</a></h2>

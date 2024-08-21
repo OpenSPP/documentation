@@ -7,7 +7,7 @@
 
 This module extends the functionality of the [g2p_programs](g2p_programs) module to enable automatic enrollment of registrants into social protection programs based on predefined criteria. This feature simplifies program management by automating the enrollment process for eligible individuals.
 
-### Purpose
+## Purpose
 
 The main purpose of the `g2p_program_autoenrol` module is to streamline and automate the process of enrolling beneficiaries into social protection programs. It achieves this by providing the following capabilities:
 
@@ -16,7 +16,7 @@ The main purpose of the `g2p_program_autoenrol` module is to streamline and auto
 - **Program-Specific Enrollment:** Auto-enrollment can be enabled or disabled on a per-program basis, providing flexibility in managing different types of programs.
 - **Optional Removal of Ineligible Registrants:**  Administrators have the option to automatically remove registrants from a program's membership list if they do not meet the defined eligibility criteria. This ensures that only eligible individuals are considered beneficiaries.
 
-### Functionality
+## Functionality
 
 The module introduces the following key features:
 
@@ -33,11 +33,11 @@ The module introduces the following key features:
 - **Impact on Program Statistics:**
     - The module ensures that program statistics, such as the count of eligible and total beneficiaries, are updated dynamically to reflect the results of the automatic enrollment process.
 
-### Integration
+## Integration
 
 The [g2p_program_autoenrol](g2p_program_autoenrol) module works seamlessly with the [g2p_programs](g2p_programs) module. It leverages the existing program and registrant data structures and extends their functionality. 
 
-### Benefits
+## Benefits
 
 - **Reduced Administrative Burden:** Automating the enrollment process significantly reduces the manual effort required by program administrators.
 - **Improved Accuracy:** By automating enrollment based on pre-defined criteria, the module minimizes the risk of human error and ensures consistent application of eligibility rules.

@@ -7,11 +7,11 @@
 
 This document provides an overview of the `g2p_encryption_rest_api` module within the OpenSPP ecosystem.
 
-### Overview
+## Overview
 
 The `g2p_encryption_rest_api` module extends the functionality provided by the [g2p_encryption](./g2p_encryption.md) module by exposing its encryption and security functionalities through a RESTful API. This allows external systems and applications to securely interact with OpenSPP's encryption mechanisms.
 
-### Purpose
+## Purpose
 
 The primary purpose of this module is to facilitate secure data exchange and integration with external systems that require access to OpenSPP's encryption capabilities. This could include:
 
@@ -19,7 +19,7 @@ The primary purpose of this module is to facilitate secure data exchange and int
 - **Third-party Systems:** Enabling integration with other government or partner systems that require secure communication channels.
 - **Data Analytics:** Providing a secure way to extract encrypted data for analysis and reporting purposes.
 
-### Functionality
+## Functionality
 
 The module exposes a set of REST endpoints under the `/api/v1/security/` path. These endpoints allow authorized clients to:
 
@@ -29,15 +29,15 @@ The module exposes a set of REST endpoints under the `/api/v1/security/` path. T
 - **Verify JWT Tokens:** Verify the authenticity and integrity of JWTs received from external systems.
 - **Retrieve JWKS:** Access OpenSPP's JSON Web Key Set (JWKS) for verifying JWT signatures.
 
-### Integration
+## Integration
 
 The `g2p_encryption_rest_api` module seamlessly integrates with the [g2p_encryption](./g2p_encryption.md) module, leveraging its existing encryption provider framework and configurations. It utilizes Odoo's `base_rest` module to expose the REST API endpoints.
 
-### Dependencies
+## Dependencies
 
 - [g2p_encryption](./g2p_encryption.md): Provides the core encryption functionalities and provider management.
 - `base_rest`: Offers the framework for building RESTful APIs within Odoo.
 
-### Security
+## Security
 
 The module inherits the security mechanisms provided by Odoo's `base_rest` module, including user authentication and authorization. Access to the API endpoints can be restricted based on user roles and permissions. Additionally, the module utilizes the encryption providers configured in the [g2p_encryption](./g2p_encryption.md) module to ensure secure data transmission.

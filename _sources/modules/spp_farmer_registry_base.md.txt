@@ -28,30 +28,30 @@ This module aims to:
 
 ## Functionality and Integration Details
 
-### Farmer Information
+## Farmer Information
 
 * Extends the `res.partner` model (from [g2p_registry_base](g2p_registry_base)) to include farmer-specific details like years of experience, formal agricultural training, household size, etc.
 * Introduces a temporary model `spp.farmer` to store farmer-specific information that can be later transferred to the main `res.partner` model, ensuring data consistency.
 * Integrates with [g2p_registry_individual](g2p_registry_individual) to leverage existing features for managing individual registrant profiles.
 
-### Farm Management
+## Farm Management
 
 * Introduces the `Farm` model (inheriting from `res.partner`) to represent individual farms.
 * Links farms to land records using the `spp.land.record` model, enabling the tracking of land parcels associated with each farm.
 * Allows recording details about farm types, sizes, legal status, and other relevant information.
 
-### Agricultural Activities
+## Agricultural Activities
 
 * Introduces the `spp.farm.activity` model to record information about agricultural activities undertaken on each farm.
 * Captures data on crop cultivation, livestock rearing, and aquaculture practices.
 * Links activities to specific land parcels using the `spp.land.record` model, providing a granular view of land use within a farm.
 
-### Farm Assets and Inputs
+## Farm Assets and Inputs
 
 * Introduces models for managing farm assets (`spp.farm.asset`) and inputs like fertilizers (`spp.fertilizer`), chemicals (`spp.farm.chemical`), and feed items (`spp.feed.items`).
 * Allows associating these assets and inputs with specific farms and, optionally, to specific land parcels within a farm.
 
-### GIS Integration
+## GIS Integration
 
 * Leverages the [spp_base_gis](spp_base_gis) module to enable visualization of farm locations and land boundaries on a map.
 * Provides a dedicated GIS view for `res.partner` to display farms and their associated land parcels.

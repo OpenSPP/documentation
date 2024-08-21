@@ -7,7 +7,7 @@
 
 This document outlines the functionality of the **G2P Registry: Membership** module within the OpenSPP ecosystem. This module focuses on managing relationships between individual registrants and groups, adding an essential layer of organization and data management to the platform.
 
-### Purpose
+## Purpose
 
 The **G2P Registry: Membership** module aims to:
 
@@ -15,7 +15,7 @@ The **G2P Registry: Membership** module aims to:
 * **Track Group Members:** Enable the system to associate individual registrants with specific groups.
 * **Manage Membership Timeframes:**  Record start and end dates for each membership, allowing for accurate historical tracking of group composition over time.
 
-### Module Dependencies and Integration
+## Module Dependencies and Integration
 
 1. **G2P Registry: Individual ([g2p_registry_individual](g2p_registry_individual))**: This module relies on the individual registrant data managed by the **G2P Registry: Individual** module.  It directly links individuals to groups, leveraging the individual profiles created and managed within that module.
 
@@ -23,7 +23,7 @@ The **G2P Registry: Membership** module aims to:
 
 3. **Contacts (res.partner)**: Leverages the Odoo Contacts module to access and display information about individuals and groups within the membership management interface.
 
-### Additional Functionality
+## Additional Functionality
 
 The module introduces the following key elements:
 
@@ -44,6 +44,6 @@ The module introduces the following key elements:
     * Adds dedicated tabs or sections within both the Individual and Group forms to display and manage memberships. 
     * Provides views (tree, form) to manage group memberships directly.
 
-### Conclusion
+## Conclusion
 
 The **G2P Registry: Membership** module is crucial for representing and managing the complex relationships between individuals and groups within OpenSPP. It integrates seamlessly with other core registry modules, providing a comprehensive system for tracking group composition, roles within groups, and membership history.  This functionality is essential for social protection programs and farmer registries that rely on accurate and up-to-date information about individuals' group affiliations. 

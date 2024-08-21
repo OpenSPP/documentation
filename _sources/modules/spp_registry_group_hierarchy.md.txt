@@ -7,7 +7,7 @@
 
 This module builds upon the existing OpenSPP group and membership management functionalities to introduce a hierarchical structure for groups. It allows groups to be nested within other groups, creating a parent-child relationship between them.  This hierarchy is beneficial for representing complex organizational structures within social protection programs or farmer registries. 
 
-### Purpose
+## Purpose
 
 The **SPP Registry Group Hierarchy** module aims to:
 
@@ -15,7 +15,7 @@ The **SPP Registry Group Hierarchy** module aims to:
 * **Flexible Membership**:  Allow both individuals and groups to be members of a group, providing flexibility in representing different organizational models.
 * **Enhanced Data Management**: Improve the organization and management of groups by providing a visual representation of the group hierarchy. 
 
-### Dependencies and Integration
+## Dependencies and Integration
 
 1. **G2P Registry: Base ([g2p_registry_base](g2p_registry_base))**: Inherits core registry functionalities for managing registrant information, IDs, and relationships. 
 
@@ -25,7 +25,7 @@ The **SPP Registry Group Hierarchy** module aims to:
 
 4. **G2P Registry: Membership ([g2p_registry_membership](g2p_registry_membership))**:  Extends the membership functionality to allow groups to be members of other groups, establishing the parent-child relationship.
 
-### Additional Functionality 
+## Additional Functionality 
 
 * **Flexible Group Membership (`g2p.group.kind`)**:
     * Introduces a new field (`allow_all_member_type`) in the `g2p.group.kind` model.
@@ -45,6 +45,6 @@ The **SPP Registry Group Hierarchy** module aims to:
     * Extends the group form view to visually represent the group hierarchy, allowing users to easily navigate between parent and child groups.
     * Provides clear indicators of a group's parent and child groups.
 
-### Conclusion
+## Conclusion
 
 The **SPP Registry Group Hierarchy** module adds significant value to OpenSPP by introducing the concept of nested groups. This allows for a more accurate and organized representation of complex structures commonly found in social protection programs and farmer cooperatives.  The module integrates seamlessly with existing OpenSPP components, providing a user-friendly experience for managing multi-level group structures. 

@@ -7,7 +7,7 @@
 
 This document outlines the functionality of the **OpenSPP Entitlement Basket** module. This module extends OpenSPP's program management by introducing the concept of predefined "baskets" of goods and services that beneficiaries are entitled to receive.
 
-### Purpose
+## Purpose
 
 The **OpenSPP Entitlement Basket** module aims to:
 
@@ -15,7 +15,7 @@ The **OpenSPP Entitlement Basket** module aims to:
 * **Simplify In-Kind Entitlement Management:** Streamline the assignment of multiple products to beneficiaries using a single basket.
 * **Integrate with Program Cycles and Inventory:** Seamlessly connect entitlement baskets to program cycles and leverage existing inventory management features.
 
-### Module Dependencies and Integration
+## Module Dependencies and Integration
 
 1. **[g2p_registry_base](g2p_registry_base)**: Uses the base registry for core beneficiary information and links basket entitlements to beneficiary profiles.
 
@@ -29,7 +29,7 @@ The **OpenSPP Entitlement Basket** module aims to:
 
 6. **[stock](stock)**:  Integrates with the stock module to manage inventory levels of basket products, generate procurement requests, and track stock movements upon entitlement approval. 
 
-### Additional Functionality
+## Additional Functionality
 
 * **Entitlement Basket Model (spp.entitlement.basket):** Introduces a new model to define entitlement baskets, capturing:
     * **Products:** A list of products included in the basket.
@@ -48,6 +48,6 @@ The **OpenSPP Entitlement Basket** module aims to:
 
 * **Beneficiary Entitlement View:** Extends the beneficiary profile to display a history of received entitlement baskets and the individual product entitlements within each basket.
 
-### Conclusion
+## Conclusion
 
 The **OpenSPP Entitlement Basket** module simplifies the management and distribution of complex in-kind entitlements. By bundling products into predefined baskets, it streamlines program configuration, improves efficiency, and enhances transparency for both program administrators and beneficiaries. The integration with existing OpenSPP modules ensures a cohesive and robust system for managing diverse social protection programs. 

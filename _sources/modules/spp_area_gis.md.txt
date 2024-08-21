@@ -7,7 +7,7 @@
 
 The **OpenSPP Area GIS** module extends the functionality of the [OpenSPP Area](link-to-area-module-documentation) module by integrating Geographical Information System (GIS) capabilities. This module allows users to visualize and interact with geographical areas on a map, providing a spatial dimension to area management within OpenSPP.
 
-### Purpose
+## Purpose
 
 The main purpose of the **OpenSPP Area GIS** module is to:
 
@@ -16,12 +16,12 @@ The main purpose of the **OpenSPP Area GIS** module is to:
 * **Define Area Polygons:** Allow for the creation and editing of polygon geometries that accurately represent the boundaries of areas. 
 * **Integrate with OpenSPP Base GIS:** Leverage the functionality provided by the [OpenSPP Base GIS](spp_base_gis) module to display areas as data layers on maps, enabling users to overlay them with other relevant data.
 
-### Dependencies and Integration
+## Dependencies and Integration
 
 * **OpenSPP Area ([spp_area](spp_area)):** This module directly depends on the OpenSPP Area module, inheriting its core functionality for managing area hierarchies and information.
 * **OpenSPP Base GIS ([spp_base_gis](spp_base_gis)):** The module integrates with the OpenSPP Base GIS module to utilize its GIS capabilities, such as map views, raster layers, and data layer management.
 
-### Functionality and Features
+## Functionality and Features
 
 * **Area Coordinates (spp.area):**
     * Adds two fields to the `spp.area` model:
@@ -38,19 +38,19 @@ The main purpose of the **OpenSPP Area GIS** module is to:
     * Enables users to overlay area data layers with other relevant data layers, such as beneficiary locations, program intervention zones, or environmental data.
     * Facilitates spatial analysis by allowing users to visualize and analyze the relationships between areas and other geospatial data.
 
-### Benefits
+## Benefits
 
 * **Improved Visualization:** Provides a clear and intuitive way to visualize area hierarchies and boundaries on a map, enhancing understanding of geographical coverage.
 * **Enhanced Targeting and Analysis:** Enables location-based targeting by visualizing the spatial distribution of areas in relation to beneficiary locations or other relevant factors.
 * **Improved Data Management:** Allows for more precise and efficient management of area data by integrating geographical coordinates and polygons.
 * **Enhanced Monitoring and Evaluation:** Facilitates spatial analysis for monitoring and evaluation purposes, allowing users to assess program coverage, identify gaps and overlaps, and track progress over time.
 
-### Example Use Cases
+## Example Use Cases
 
 * **Visualizing Administrative Boundaries:**  Displaying a hierarchy of administrative areas, such as provinces, districts, and villages, on a map to understand their geographical distribution.
 * **Targeting Interventions:**  Overlapping area boundaries with beneficiary locations to identify areas with high concentrations of target populations for program interventions.
 * **Monitoring Program Coverage:** Visualizing the spatial extent of program implementation areas in relation to target areas to assess coverage and identify gaps.
 
-### Conclusion
+## Conclusion
 
 The OpenSPP Area GIS module empowers OpenSPP with valuable GIS capabilities for managing and visualizing geographical areas. This integration of spatial data enhances the platform's ability to support effective and efficient program planning, implementation, monitoring, and evaluation for social protection programs and farmer registries.
