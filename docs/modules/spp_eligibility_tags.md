@@ -7,7 +7,7 @@
 
 This document outlines the functionality of the **OpenSPP Tag Based Eligibility Manager** module within the OpenSPP ecosystem. This module extends the eligibility management capabilities of OpenSPP, providing a flexible and efficient way to define eligibility criteria based on registrant tags and geographical areas.
 
-### Purpose
+## Purpose
 
 The **OpenSPP Tag Based Eligibility Manager** module allows program administrators to:
 
@@ -15,7 +15,7 @@ The **OpenSPP Tag Based Eligibility Manager** module allows program administrato
 * **Incorporate geographical targeting:**  Administrators can further refine eligibility criteria by specifying geographical areas. This enables programs to target beneficiaries residing within specific districts or regions, enhancing the precision of program targeting and resource allocation. 
 * **Simplify and automate eligibility verification:** By defining eligibility rules based on tags and areas, the module automates the process of identifying eligible beneficiaries. This reduces manual effort, minimizes errors, and ensures consistent application of eligibility criteria.
 
-### Module Dependencies and Integration
+## Module Dependencies and Integration
 
 1. **G2P Registry: Base ([g2p_registry_base](g2p_registry_base)(./g2p_registry_base.md))**:
     * Utilizes the tagging functionality of the base registry module to define eligibility rules based on registrant tags.
@@ -29,7 +29,7 @@ The **OpenSPP Tag Based Eligibility Manager** module allows program administrato
     * Leverages the functionality of the OpenSPP Programs module, particularly its handling of program memberships and beneficiary enrollment.
     * Ensures compatibility with both cash and in-kind entitlement programs, allowing for tag-based eligibility determination across different program types. 
 
-### Additional Functionality
+## Additional Functionality
 
 * **Tag Based Eligibility Manager Model (g2p.program_membership.manager.tags):** 
     * This model extends the base **Eligibility Manager** model within G2P Programs, introducing fields for selecting tags and areas to define eligibility criteria. 
@@ -47,6 +47,6 @@ The **OpenSPP Tag Based Eligibility Manager** module allows program administrato
     * By leveraging tags and areas, programs can target specific segments of the population more effectively, ensuring that benefits reach the intended recipients.
     * This targeted approach enhances program impact and optimizes resource allocation by focusing on beneficiaries who are most likely to benefit from the program's interventions. 
 
-### Conclusion
+## Conclusion
 
 The **OpenSPP Tag Based Eligibility Manager** module empowers program implementers to define sophisticated eligibility criteria using a flexible and efficient tag-based approach. By seamlessly integrating with existing OpenSPP modules and automating key processes, it simplifies program administration, enhances targeting accuracy, and contributes to the overall effectiveness of social protection and agricultural support programs. 

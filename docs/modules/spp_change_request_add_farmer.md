@@ -18,7 +18,7 @@ The [spp_change_request_add_farmer](spp_change_request_add_farmer) module extend
 
 ## Module Integration
 
-### Dependencies
+## Dependencies
 
 The module relies heavily on the following modules:
 
@@ -30,7 +30,7 @@ The module relies heavily on the following modules:
 * **[g2p_registry_individual](g2p_registry_individual)**: Leverages individual registrant management features, inheriting from the individual registrant model.
 * **[spp_service_points](spp_service_points)**:  Integrates with service points, allowing change requests to be initiated and managed through designated service points. 
 
-### Additional Functionality
+## Additional Functionality
 
 * **Custom Change Request Model**:  Introduces the `spp.change.request.add.farmer` model, inheriting from the base `spp.change.request` model and adding fields specific to adding farmers, such as farmer-specific details and group membership information.
 * **Tailored Forms**: Provides specialized views for creating, displaying, and validating `Add Farmer` change requests, including a dedicated form (`view_change_request_add_farmer_form`) with relevant fields and a validation-focused form (`view_change_request_add_farmer_validation_form`).

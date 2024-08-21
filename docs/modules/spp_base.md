@@ -7,7 +7,7 @@
 
 This document outlines the functionality of the **OpenSPP Base** module, the core module for the OpenSPP system. It builds upon existing G2P Registry modules, providing essential customizations and configurations for OpenSPP's specialized functionalities.
 
-### Purpose
+## Purpose
 
 The **OpenSPP Base** module serves as the foundation for other OpenSPP modules, offering:
 
@@ -15,7 +15,7 @@ The **OpenSPP Base** module serves as the foundation for other OpenSPP modules, 
 - **UI modifications**: Customizes the user interface (UI) to align with OpenSPP's look and feel, enhancing user experience. 
 - **Extension points**:  Acts as a base for other modules to inherit and extend functionalities specific to OpenSPP requirements.
 
-### Module Dependencies and Integration
+## Module Dependencies and Integration
 
 The **OpenSPP Base** module depends on several other modules, integrating their features and extending them for OpenSPP:
 
@@ -31,7 +31,7 @@ The **OpenSPP Base** module depends on several other modules, integrating their 
 - [utm](utm): Leverages this module for tracking and managing UTM (Urchin Tracking Module) parameters, commonly used in digital marketing campaigns.
 - [g2p_registry_individual](g2p_registry_individual): Integrates with this module to manage individual registrant data, including specific attributes and validations.
 
-### Additional Functionality
+## Additional Functionality
 
 The **OpenSPP Base** module introduces the following key functionalities:
 
@@ -40,6 +40,6 @@ The **OpenSPP Base** module introduces the following key functionalities:
 - **Menu Icon Customization**:  Replaces the default icon for the "Registry" menu item with a custom OpenSPP icon, enhancing visual branding. 
 - **Menu Item Hiding**:  Hides specific menu items related to "Link Tracker" and "Discuss" to streamline the OpenSPP user interface and focus on relevant functionalities. 
 
-### Conclusion
+## Conclusion
 
 The **OpenSPP Base** module acts as the backbone of the OpenSPP system, integrating and extending the functionalities of its dependencies to create a cohesive and tailored platform. Its role in providing central configurations, UI modifications, and extension points makes it essential for the proper functioning and customization of OpenSPP's specialized features. 

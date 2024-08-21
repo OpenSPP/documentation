@@ -7,7 +7,7 @@
 
 This document describes the **OpenSPP Manual Entitlement** module, which extends the OpenSPP system to allow for manual entitlement creation within social protection programs. 
 
-### Purpose
+## Purpose
 
 The **OpenSPP Manual Entitlement** module aims to:
 
@@ -17,7 +17,7 @@ The **OpenSPP Manual Entitlement** module aims to:
 
 * **Enhance Flexibility in Entitlement Management:**  Offer a more flexible approach to entitlement management, accommodating situations where automated rules might not cover all beneficiary scenarios. 
 
-### Dependencies and Integration
+## Dependencies and Integration
 
 1. **Queue Job** ([queue_job](queue_job)): Utilizes the Queue Job module for asynchronous processing of entitlement creation, preventing performance issues when handling large numbers of beneficiaries.
 
@@ -27,7 +27,7 @@ The **OpenSPP Manual Entitlement** module aims to:
 
 4. **G2P Programs** ([g2p_programs](g2p_programs)):  Extends the G2P Programs module by adding functionality to create manual entitlements within the existing program and cycle structures.
 
-### Additional Functionality
+## Additional Functionality
 
 * **Manual Entitlement Wizard:** 
     * Introduces a wizard that guides users through the manual entitlement creation process.
@@ -43,6 +43,6 @@ The **OpenSPP Manual Entitlement** module aims to:
     * Modifies the program cycle view to include a button to trigger the manual entitlement wizard.
     * Provides a visual cue within the cycle view to indicate if manual entitlement is enabled for the program. 
 
-### Conclusion
+## Conclusion
 
 The **OpenSPP Manual Entitlement** module enhances the flexibility of OpenSPP's entitlement management system. By enabling manual entitlement creation, it empowers program administrators to handle situations where automated rules might not be sufficient, ensuring that all eligible beneficiaries receive their entitled benefits.  This module contributes to a more inclusive and adaptable social protection program implementation. 

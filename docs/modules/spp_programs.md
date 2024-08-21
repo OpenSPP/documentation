@@ -7,7 +7,7 @@
 
 This document outlines the functionality of the **OpenSPP Programs** module.  This module extends the **OpenG2P: Programs** functionality, introducing in-kind entitlement management alongside existing cash-based features.
 
-### Purpose
+## Purpose
 
 The **OpenSPP Programs** module aims to:
 
@@ -15,7 +15,7 @@ The **OpenSPP Programs** module aims to:
 * **Integrate with Inventory**: Link in-kind entitlements to the Odoo Inventory module, enabling stock management, procurement, and tracking of distributed items.
 * **Enhance Existing Program Features**: Extend OpenG2P's program management with capabilities tailored for in-kind distributions.
 
-### Module Dependencies and Integration
+## Module Dependencies and Integration
 
 1. **[g2p_registry_base](g2p_registry_base)** : Leverages the base registry for core registrant information and extends it by adding in-kind entitlement tracking to registrant profiles.
 
@@ -31,7 +31,7 @@ The **OpenSPP Programs** module aims to:
     * Links in-kind entitlements to the stock module, enabling the generation of stock movements upon entitlement approval.
     * Allows for the tracking of inventory levels, procurement needs, and the flow of goods from warehouses to beneficiaries.
 
-### Additional Functionality
+## Additional Functionality
 
 * **In-Kind Entitlement Model (g2p.entitlement.inkind)**: Introduces a new model specifically for managing in-kind entitlements, capturing data such as:
     * **Product**: The specific good or service being distributed.
@@ -59,6 +59,6 @@ The **OpenSPP Programs** module aims to:
         * Inventory levels and procurement needs.
         * Service point activity and redemption rates.
 
-### Conclusion
+## Conclusion
 
 The **OpenSPP Programs** module significantly expands the OpenG2P platform's capabilities by incorporating in-kind entitlement management.  This integration with inventory management and the enhancements to existing program features make OpenSPP a comprehensive solution for managing a wider range of social protection and agricultural support programs. 

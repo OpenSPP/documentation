@@ -7,7 +7,7 @@
 
 This document details the **G2P Programs** module within the OpenSPP platform. This module is responsible for defining and managing the core aspects of social protection programs, including eligibility criteria, program cycles, entitlement management, and payment processing.
 
-### Purpose
+## Purpose
 
 The **G2P Programs** module provides a comprehensive framework for:
 
@@ -18,7 +18,7 @@ The **G2P Programs** module provides a comprehensive framework for:
 * **Facilitating Payments**:  Streamlines the disbursement of benefits to beneficiaries, either through cash transfers or other delivery mechanisms. 
 * **Monitoring and Reporting**:  Offers tools for tracking program progress, beneficiary participation, and financial transactions, facilitating program evaluation and accountability.
 
-### Module Dependencies and Integration
+## Module Dependencies and Integration
 
 1. **G2P Registry: Base ([g2p_registry_base](g2p_registry_base))**:
     * Leverages the base registry module for core registrant management functionalities.
@@ -56,7 +56,7 @@ The **G2P Programs** module provides a comprehensive framework for:
     * Enables SMS notifications for program-related events, including enrollment confirmations, eligibility updates, payment notifications, and reminders. 
     * Leverages the module's SMS gateway integration for efficient and timely communication with beneficiaries. 
 
-### Additional Functionality
+## Additional Functionality
 
 * **Program Model (g2p.program)**:
     * Defines the structure and attributes of social protection programs, including name, description, target type (individual or group), delivery mechanisms, and associated managers.
@@ -91,6 +91,6 @@ The **G2P Programs** module provides a comprehensive framework for:
     * The module's flexible architecture allows administrators to define program-specific workflows, tailoring the sequence and execution of tasks like eligibility verification, entitlement generation, and payment processing.
     * Supports various program models and operational requirements.
 
-### Conclusion
+## Conclusion
 
 The **G2P Programs** module is the cornerstone of the OpenSPP platform, providing the essential tools for managing every stage of a social protection program's lifecycle. Its comprehensive functionality, integration with other core modules, and customizable workflows make it a powerful and adaptable solution for delivering social protection benefits effectively and efficiently. 

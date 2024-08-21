@@ -7,13 +7,13 @@
 
 The `spp_demo` module serves as a demonstration and testing ground for the OpenSPP system, showcasing its capabilities with pre-populated data. It builds upon core OpenSPP modules to create a realistic simulation of social protection programs and registries in action.
 
-### Purpose
+## Purpose
 
 * **Illustrate OpenSPP Functionality:** The module provides tangible examples of how various OpenSPP components work together, demonstrating data flow and interactions between modules.
 * **Facilitate User Exploration:**  Pre-populated data allows users to explore the system's interface, features, and data structures without manually creating extensive test data. 
 * **Accelerate Training:**  The demo module serves as a valuable tool for training users on OpenSPP, providing a controlled environment to practice workflows and tasks. 
 
-### Dependencies and Integration
+## Dependencies and Integration
 
 The `spp_demo` module relies heavily on the following OpenSPP modules:
 
@@ -29,7 +29,7 @@ The `spp_demo` module relies heavily on the following OpenSPP modules:
 * [spp_base_demo](spp_base_demo): This module provides basic demonstration data for the OpenSPP system, including users, gender options and products.
 * [g2p_programs](g2p_programs) (G2P Programs):  Utilizes this module extensively to define and demonstrate social protection programs, eligibility criteria, program cycles, and potentially beneficiary enrollment and entitlement processes. 
 
-### Additional Functionality 
+## Additional Functionality 
 
 * **Data Generation Utilities:**  The module includes Python scripts and functions within the `models/` directory to generate a variety of sample data, such as:
     * **Randomized Registrant Data:**  Creates individual and group registrants with realistic names, demographics, contact information, and relationships, often leveraging external libraries like `faker` for randomized data generation.
@@ -40,6 +40,6 @@ The `spp_demo` module relies heavily on the following OpenSPP modules:
     * **Data Generation Actions:**  Adds buttons or menu items within relevant sections of the interface to trigger data generation scripts. This provides an easy way for users to populate the demo environment with sample data. 
     * **Custom Views:** May include custom views or modifications to existing views to highlight specific aspects of the demo data or showcase particular functionalities.  
 
-### Conclusion
+## Conclusion
 
 The `spp_demo` module is an essential component of the OpenSPP ecosystem for demonstration, testing, and training purposes. It provides a rich and interactive environment for users to explore the system's capabilities and understand how different modules work together to manage social protection programs and registries. 

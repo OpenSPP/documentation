@@ -7,7 +7,7 @@
 
 This module extends the functionality of the [g2p_encryption](g2p_encryption) module by providing integration with a Keymanager service for encryption and signing operations. This allows OpenSPP to leverage external key management systems for enhanced security and compliance.
 
-### Purpose
+## Purpose
 
 The primary purpose of this module is to:
 
@@ -15,7 +15,7 @@ The primary purpose of this module is to:
 * **Provide a configurable interface:** System administrators can configure various parameters of the Keymanager integration, such as API endpoints, authentication credentials, and application-specific identifiers.
 * **Seamlessly integrate with the existing encryption framework:**  The module extends the existing encryption provider mechanism in OpenSPP, allowing for easy switching between different encryption providers, including the Keymanager-based provider.
 
-### Functionality
+## Functionality
 
 The [g2p_encryption_keymanager](g2p_encryption_keymanager) module provides the following features:
 
@@ -24,7 +24,7 @@ The [g2p_encryption_keymanager](g2p_encryption_keymanager) module provides the f
 * **Keymanager Authentication and Authorization:**  The module implements secure communication with the Keymanager service using OAuth 2.0 client credentials grant type for authentication and authorization.
 * **Configuration Options for Keymanager Integration:** The module provides a user-friendly interface within the OpenSPP settings to configure various aspects of the Keymanager integration, including API endpoints, authentication credentials, and application-specific identifiers for encryption and signing.
 
-### Integration with Other Modules
+## Integration with Other Modules
 
 This module directly interacts with the [g2p_encryption](g2p_encryption) module:
 
@@ -32,7 +32,7 @@ This module directly interacts with the [g2p_encryption](g2p_encryption) module:
 * It provides a new "Keymanager" option for the encryption provider type.
 * It overrides the default encryption and signing methods to utilize the Keymanager API when selected.
 
-### Benefits of Using Keymanager Integration
+## Benefits of Using Keymanager Integration
 
 * **Enhanced Security:** Key management is handled by a dedicated service, potentially with stronger security measures than what might be feasible within the OpenSPP application itself.
 * **Centralized Key Management:**  Provides a central location for managing encryption keys across different parts of the OpenSPP system or even across multiple applications.

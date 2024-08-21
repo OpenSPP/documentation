@@ -7,7 +7,7 @@
 
 This document outlines the functionality of the **OpenSPP Exclusion Filter** module.  This module enhances the program creation process within OpenSPP by introducing exclusion filters during the program wizard. 
 
-### Purpose
+## Purpose
 
 The **OpenSPP Exclusion Filter** module aims to:
 
@@ -15,7 +15,7 @@ The **OpenSPP Exclusion Filter** module aims to:
 * **Improve Efficiency**:  Reduce manual effort required to identify and exclude ineligible registrants from new programs.
 * **Enhance Program Accuracy**:  Minimize the risk of including ineligible beneficiaries by applying pre-defined exclusion criteria. 
 
-### Module Dependencies and Integration
+## Module Dependencies and Integration
 
 1. **[spp_programs](spp_programs)**: 
     * Integrates with the OpenSPP program creation wizard, adding a dedicated step for configuring exclusion filters.
@@ -29,7 +29,7 @@ The **OpenSPP Exclusion Filter** module aims to:
     * Extends the functionality of OpenG2P's program creation process.
     * Ensures compatibility with existing program management features and workflows.
 
-### Additional Functionality
+## Additional Functionality
 
 * **Program Wizard Integration**:
     * Adds a dedicated step to the program creation wizard, allowing program managers to select and configure exclusion filters. 
@@ -43,6 +43,6 @@ The **OpenSPP Exclusion Filter** module aims to:
     * Upon program creation, the module automatically applies the selected exclusion filters to the registry.
     * Flags registrants who meet the exclusion criteria, preventing them from being considered for enrollment in the program.
 
-### Conclusion
+## Conclusion
 
 The **OpenSPP Exclusion Filter** module streamlines program targeting by introducing a structured approach to excluding ineligible registrants during program creation. Its integration with the OpenSPP program wizard, reliance on registry data, and potential integration with eligibility managers enhance the efficiency and accuracy of program implementation. 

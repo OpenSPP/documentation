@@ -7,7 +7,7 @@
 
 This module enhances the functionality of OpenSPP by integrating the **Event Data** module ([spp_event_data](spp_event_data)) with the **G2P Programs** module ([g2p_programs](spp_event_data](g2p_programs](spp_event_data)) with the **G2P Programs** module ([g2p_programs)). It allows users to record and track program membership-related events within the OpenSPP system.
 
-### Purpose
+## Purpose
 
 The **spp_event_data_program_membership** module serves to:
 
@@ -15,12 +15,12 @@ The **spp_event_data_program_membership** module serves to:
 * **Link Events to Program Memberships:** Associate these events with the corresponding program membership records in the [g2p_programs](g2p_programs) module.
 * **Provide an Event History:** Offer a comprehensive history of events associated with each program membership, facilitating tracking and auditing.
 
-### Module Integration
+## Module Integration
 
 1. **[spp_event_data](spp_event_data):** This module leverages the event data framework provided by the [spp_event_data](spp_event_data](spp_event_data](spp_event_data):** This module leverages the event data framework provided by the [spp_event_data) module to record and manage event information.
 2. **[g2p_programs](g2p_programs):**  It integrates directly with the [g2p_programs](g2p_programs](g2p_programs](g2p_programs):**  It integrates directly with the [g2p_programs) module, linking event data to the relevant program membership records (`g2p.program_membership` model). 
 
-### Additional Functionality
+## Additional Functionality
 
 * **Program Membership Field in Event Data:**
     * Adds a `program_membership_id` field to the `spp.event.data` model, allowing users to directly associate an event with a specific program membership.
@@ -34,7 +34,7 @@ The **spp_event_data_program_membership** module serves to:
     * Modifies the registrant form view (`view_groups_event_data_form_custom`) to display event data in read-only mode.
     * Prevents accidental modification of event data from the registrant's profile. 
 
-### Usage Example
+## Usage Example
 
 1. **Recording an Enrollment Event:** A program officer enrolls a beneficiary into a social assistance program. Using this module, they can create a new event of type "Enrollment," link it to the beneficiary's newly created program membership record, and record relevant details, such as the enrollment date. 
 
@@ -42,6 +42,6 @@ The **spp_event_data_program_membership** module serves to:
 
 3. **Viewing Event History:**  Program staff can access a beneficiary's program membership record and view a chronological list of all events, providing a clear audit trail of their participation in the program.
 
-### Conclusion
+## Conclusion
 
 The **spp_event_data_program_membership** module enhances the tracking and management of program membership events within OpenSPP.  By integrating event data with program memberships, it improves data integrity, transparency, and the overall efficiency of program administration. 

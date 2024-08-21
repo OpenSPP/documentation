@@ -7,7 +7,7 @@
 
 This document outlines the functionality of the **G2P Registry: Base** module within the OpenSPP ecosystem. This module is the foundational layer upon which other OpenSPP registry modules are built.  It provides core features for managing registrant data, relationships, and identification, leaving specialized functionalities to dependent modules.
 
-### Purpose
+## Purpose
 
 The **G2P Registry: Base** module aims to:
 
@@ -15,7 +15,7 @@ The **G2P Registry: Base** module aims to:
 * Provide essential fields and functionalities common to various registry types.
 * Enable flexible extension and customization through dependent modules.
 
-### Module Dependencies and Integration
+## Module Dependencies and Integration
 
 1. **Contacts (res.partner)**:  This module extends the Odoo Contacts functionality by adding fields specific to registrants, including:
     * **Registration Date**: Records the date a registrant was added to the system.
@@ -29,7 +29,7 @@ The **G2P Registry: Base** module aims to:
 
 3. **Portal (portal)**: The Portal module is utilized for potential future features, enabling secure access to registry data for external stakeholders (e.g., registrants themselves) through a dedicated online portal. 
 
-### Additional Functionality
+## Additional Functionality
 
 Beyond extending the Contacts module, the **G2P Registry: Base** module introduces:
 
@@ -39,6 +39,6 @@ Beyond extending the Contacts module, the **G2P Registry: Base** module introduc
 * **Tags ([g2p.registrant.tags](g2p.registrant.tags))**: Provides a flexible tagging system to categorize and filter registrants based on specific criteria.
 * **Districts ([g2p.district](g2p.district))**: Adds the capability to define and manage geographical districts, allowing for location-based organization of registrants. 
 
-### Conclusion
+## Conclusion
 
 The **G2P Registry: Base** module lays the groundwork for building robust and adaptable registries within OpenSPP. By focusing on core registry features and integrating seamlessly with essential Odoo modules, it provides a solid foundation for specialized registry applications. 

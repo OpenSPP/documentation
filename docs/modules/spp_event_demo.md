@@ -11,7 +11,7 @@ This module, **[spp_event_demo](spp_event_demo)**, provides demonstration data a
 
 This module directly depends on and builds upon the functionalities of the **[spp_event_data](spp_event_data)** module. While **[spp_event_data](spp_event_data)** provides the core structure for recording and managing events related to registrants, **[spp_event_demo](spp_event_data](spp_event_demo](spp_event_data)** module. While **[spp_event_data](spp_event_data)** provides the core structure for recording and managing events related to registrants, **[spp_event_demo)** demonstrates practical applications of this system through concrete examples.
 
-### Additional Functionality and Demonstrations
+## Additional Functionality and Demonstrations
 
 1. **Predefined Event Types**:
     * Introduces several predefined event types, including:
@@ -32,10 +32,10 @@ This module directly depends on and builds upon the functionalities of the **[sp
 4. **Integration with Registrant Profiles**:
     * Extends the registrant profiles to display active events of each type, providing a quick overview of the latest events associated with a particular registrant.
 
-### Example Scenario
+## Example Scenario
 
 This module demonstrates how a program might use the **[spp_event_data](spp_event_data)** module.  For example, a user could record a series of house visits with a beneficiary.  Each house visit would be linked to the beneficiary's profile and the program could then query for all beneficiaries who have had at least one house visit, or all beneficiaries who have not had a house visit in the last 6 months. 
 
-### Conclusion
+## Conclusion
 
 The **[spp_event_demo](spp_event_demo)** module serves as a practical guide and starting point for implementing custom event tracking within OpenSPP.  By providing concrete examples and pre-built components, it empowers users to leverage the full potential of the **[spp_event_data](spp_event_demo](spp_event_data](spp_event_demo)** module serves as a practical guide and starting point for implementing custom event tracking within OpenSPP.  By providing concrete examples and pre-built components, it empowers users to leverage the full potential of the **[spp_event_data)** module and tailor it to their specific program needs. 
