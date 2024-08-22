@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="OpenSPP ID Queue" property="og:title"/>
+<meta content="spp_idpass Module" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/modules/spp_idqueue.html" property="og:url"/>
+<meta content="https://docs.openspp.org/modules/spp_idpass.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="This document outlines the OpenSPP ID Queue module within the OpenSPP ecosystem. This module adds functionality for managing requests for printed identification cards for registrants. It integrates..." property="og:description"/>
+<meta content="Overview: The spp_idpass module extends the functionality of the OpenSPP system by providing a seamless way to generate and manage digital ID cards for registrants. It integrates with the existing ..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="This document outlines the OpenSPP ID Queue module within the OpenSPP ecosystem. This module adds functionality for managing requests for printed identification cards for registrants. It integrates..." name="description"/>
+<meta content="Overview: The spp_idpass module extends the functionality of the OpenSPP system by providing a seamless way to generate and manage digital ID cards for registrants. It integrates with the existing ..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>OpenSPP ID Queue — OpenSPP Documentation v1.1</title>
+<title>spp_idpass Module — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -50,7 +50,7 @@
 <script src="../_static/patch_scrollToActive.js"></script>
 <script src="../_static/search_shortcut.js"></script>
 <script src="../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/modules/spp_idqueue.html" rel="canonical">
+<link href="https://docs.openspp.org/modules/spp_idpass.html" rel="canonical">
 <link href="../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.1" type="application/opensearchdescription+xml"/>
 <link href="../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../genindex.html" rel="index" title="Index"/>
@@ -645,7 +645,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>OpenSPP ID Queue</span>
+<span>spp_idpass Module</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -668,7 +668,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fmodules/spp_idqueue.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fmodules/spp_idpass.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -676,7 +676,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?modules/spp_idqueue.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?modules/spp_idpass.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -693,7 +693,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/modules/spp_idqueue.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/modules/spp_idpass.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -726,23 +726,33 @@
 <nav aria-label="Page" id="bd-toc-nav">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#purpose">
-   Purpose
+<a class="reference internal nav-link" href="#overview">
+   Overview
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#dependencies-and-integration">
-   Dependencies and Integration
+<a class="reference internal nav-link" href="#key-features">
+   Key Features
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#additional-functionality">
-   Additional Functionality
+<a class="reference internal nav-link" href="#integration-with-other-modules">
+   Integration with Other Modules
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#conclusion">
-   Conclusion
+<a class="reference internal nav-link" href="#functionality-and-workflow">
+   Functionality and Workflow
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#benefits">
+   Benefits
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#note">
+   Note:
   </a>
 </li>
 </ul>
@@ -753,7 +763,7 @@
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>OpenSPP ID Queue</h1>
+<h1>spp_idpass Module</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
@@ -763,23 +773,33 @@
 <nav aria-label="Page">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#purpose">
-   Purpose
+<a class="reference internal nav-link" href="#overview">
+   Overview
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#dependencies-and-integration">
-   Dependencies and Integration
+<a class="reference internal nav-link" href="#key-features">
+   Key Features
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#additional-functionality">
-   Additional Functionality
+<a class="reference internal nav-link" href="#integration-with-other-modules">
+   Integration with Other Modules
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#conclusion">
-   Conclusion
+<a class="reference internal nav-link" href="#functionality-and-workflow">
+   Functionality and Workflow
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#benefits">
+   Benefits
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#note">
+   Note:
   </a>
 </li>
 </ul>
@@ -789,65 +809,53 @@
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="openspp-id-queue">
-<h1>OpenSPP ID Queue<a class="headerlink" href="#openspp-id-queue" title="Permalink to this headline">#</a></h1>
+<div class="section" id="spp-idpass-module">
+<h1>spp_idpass Module<a class="headerlink" href="#spp-idpass-module" title="Permalink to this headline">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>Work in Progress</strong>: This document is actively being developed and updated. Content may be incomplete or subject to change.</p>
 </div>
-<p>This document outlines the <strong>OpenSPP ID Queue</strong> module within the OpenSPP ecosystem.  This module adds functionality for managing requests for printed identification cards for registrants. It integrates with other OpenSPP modules to provide a seamless workflow from ID request to printing and distribution.</p>
-<div class="section" id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
-<p>The <strong>OpenSPP ID Queue</strong> module is designed to:</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<p>The <a class="reference internal" href="#"><span class="doc std std-doc">spp_idpass</span></a> module extends the functionality of the OpenSPP system by providing a seamless way to generate and manage digital ID cards for registrants. It integrates with the existing registry system and leverages external ID Pass API services to produce printable ID cards.</p>
+</div>
+<div class="section" id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><strong>Streamline ID Card Requests</strong>:  Provide a structured process for users to request printed ID cards for registrants, including the ability to select specific ID card templates.</p></li>
-<li><p><strong>Implement Approval Workflows</strong>:  Incorporate optional approval steps for ID card requests, ensuring that requests are reviewed and authorized before generation.</p></li>
-<li><p><strong>Facilitate Batch Printing</strong>:  Group ID card requests into batches for efficient printing and distribution, especially for large-scale programs.</p></li>
-<li><p><strong>Track ID Card Status</strong>:  Monitor the progress of ID card requests through various stages (new, approved, generating, printed, distributed), providing transparency and accountability.</p></li>
+<li><p><strong>ID Card Generation:</strong> Generates digital ID cards for individual registrants or groups using an external ID Pass API.</p></li>
+<li><p><strong>ID Card Storage:</strong> Stores generated ID cards as PDF attachments on the registrant's profile within the system.</p></li>
+<li><p><strong>ID Pass API Integration:</strong> Configurable settings for connecting with external ID Pass API services, including authentication and data transmission.</p></li>
+<li><p><strong>ID Card Design Customization:</strong>  Allows for setting a file name prefix for generated ID cards and managing the expiry duration for issued IDs.</p></li>
 </ul>
 </div>
-<div class="section" id="dependencies-and-integration">
-<h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
+<div class="section" id="integration-with-other-modules">
+<h2>Integration with Other Modules<a class="headerlink" href="#integration-with-other-modules" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><strong><a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">g2p_registry_base</span></a>:</strong> The module relies on the base registry module for accessing and managing registrant information.</p></li>
+<li><p><strong><a class="reference internal" href="g2p_registry_membership.html"><span class="doc std std-doc">g2p_registry_membership</span></a>:</strong>  Utilizes the membership module to handle ID card generation for groups, ensuring the correct identification of the group head.</p></li>
+</ul>
+</div>
+<div class="section" id="functionality-and-workflow">
+<h2>Functionality and Workflow<a class="headerlink" href="#functionality-and-workflow" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
-<li><p><strong><a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">g2p_registry_base</span></a></strong> (G2P Registry: Base):  The ID Queue module relies on the <strong>Registrant (res.partner)</strong> model from the <strong>G2P Registry: Base</strong> module to identify and link ID card requests to specific registrants.</p></li>
-<li><p><strong><a class="reference internal" href="spp_idpass.html"><span class="doc std std-doc">spp_idpass</span></a></strong> (OpenSPP ID PASS):  It integrates tightly with the <strong>OpenSPP ID PASS</strong> module, utilizing the predefined ID card templates and the ID generation mechanism.</p></li>
-<li><p><strong><span class="xref myst">queue_job</span></strong> (Queue Job):  Leverages the <strong>Queue Job</strong> module for background processing of ID card generation, particularly when handling large batches, to avoid impacting system performance.</p></li>
-<li><p><strong><a class="reference internal" href="spp_area.html"><span class="doc std std-doc">spp_area</span></a></strong> (OpenSPP Area):  Integrates with the <strong>OpenSPP Area</strong> module to associate ID card requests with specific geographical areas, enabling location-based reporting and distribution management.</p></li>
-<li><p><strong><a class="reference internal" href="g2p_registry_group.html"><span class="doc std std-doc">g2p_registry_group</span></a></strong> (G2P Registry: Group): Incorporates functionality from the <strong>G2P Registry: Group</strong> module to support ID card requests and batch printing for groups of registrants.</p></li>
+<li><p><strong>Configuration:</strong> System administrators configure the connection to the ID Pass API by providing the necessary URLs, credentials, and other settings.</p></li>
+<li><p><strong>ID Card Issuance:</strong> Authorized users can initiate the ID card generation process for a registrant directly from the registrant's profile.</p></li>
+<li><p><strong>Data Transmission:</strong> The module securely transmits the required registrant data to the ID Pass API for card generation.</p></li>
+<li><p><strong>ID Card Retrieval:</strong> Upon successful generation, the module retrieves the ID card in PDF format from the API.</p></li>
+<li><p><strong>ID Card Storage:</strong>  The generated ID card is automatically attached to the corresponding registrant's profile and can be downloaded or printed as needed.</p></li>
 </ol>
 </div>
-<div class="section" id="additional-functionality">
-<h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
+<div class="section" id="benefits">
+<h2>Benefits<a class="headerlink" href="#benefits" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><strong>ID Request Queue (<code class="docutils literal notranslate"><span class="pre">spp.print.queue.id</span></code>)</strong>:</p>
-<ul>
-<li><p>Introduces a dedicated model to manage individual ID card requests, storing request details, associated registrant, selected template, request status, and approval information.</p></li>
-<li><p>Provides functions to move requests through the workflow: approve, generate, print, distribute, and cancel.</p></li>
-<li><p>Implements a messaging system to record actions taken on requests, enhancing auditability.</p></li>
-</ul>
-</li>
-<li><p><strong>ID Print Batch (<code class="docutils literal notranslate"><span class="pre">spp.print.queue.batch</span></code>)</strong>:</p>
-<ul>
-<li><p>Enables the grouping of approved ID requests into batches for streamlined printing.</p></li>
-<li><p>Offers functionalities to approve, generate, print, and mark batches as distributed.</p></li>
-<li><p>Includes a status tracking system for batches, mirroring the individual request statuses.</p></li>
-</ul>
-</li>
-<li><p><strong>Auto-Approve Configuration</strong>:</p>
-<ul>
-<li><p>Allows administrators to configure the system to automatically approve ID requests upon creation, potentially bypassing the manual approval step for specific workflows.</p></li>
-</ul>
-</li>
-<li><p><strong>Registrant Integration</strong>:</p>
-<ul>
-<li><p>Extends the <strong>Registrant (<code class="docutils literal notranslate"><span class="pre">res.partner</span></code>)</strong> model to include a link to all associated ID card requests, providing a centralized view of a registrant's ID card history.</p></li>
-</ul>
-</li>
+<li><p><strong>Improved Identification:</strong>  Provides a standardized and verifiable identification method for program beneficiaries.</p></li>
+<li><p><strong>Enhanced Program Efficiency:</strong> Streamlines the identification process, reducing administrative burden and potential errors.</p></li>
+<li><p><strong>Increased Transparency and Accountability:</strong> Creates a digital record of issued ID cards, improving program monitoring and evaluation.</p></li>
 </ul>
 </div>
-<div class="section" id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
-<p>The <strong>OpenSPP ID Queue</strong> module enhances OpenSPP's ID card management capabilities by providing a structured and efficient system for handling ID card requests, approvals, batch printing, and distribution tracking.  Its integration with other core OpenSPP modules ensures a cohesive and streamlined experience for managing registrant identification within social protection programs and farmer registries.</p>
+<div class="section" id="note">
+<h2>Note:<a class="headerlink" href="#note" title="Permalink to this headline">#</a></h2>
+<p>This module requires an active subscription and integration with a compatible ID Pass API service.</p>
 </div>
 </div>
 </div>

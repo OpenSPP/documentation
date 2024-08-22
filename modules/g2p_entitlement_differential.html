@@ -13,16 +13,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-<meta content="OpenSPP ID Queue" property="og:title"/>
+<meta content="OpenG2P Entitlement: Differential Module" property="og:title"/>
 <meta content="website" property="og:type"/>
-<meta content="https://docs.openspp.org/modules/spp_idqueue.html" property="og:url"/>
+<meta content="https://docs.openspp.org/modules/g2p_entitlement_differential.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="This document outlines the OpenSPP ID Queue module within the OpenSPP ecosystem. This module adds functionality for managing requests for printed identification cards for registrants. It integrates..." property="og:description"/>
+<meta content="Overview: The g2p_entitlement_differential module extends the functionality of the spp_entitlement_cash module to provide more flexibility and control over calculating cash entitlements in social p..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="This document outlines the OpenSPP ID Queue module within the OpenSPP ecosystem. This module adds functionality for managing requests for printed identification cards for registrants. It integrates..." name="description"/>
+<meta content="Overview: The g2p_entitlement_differential module extends the functionality of the spp_entitlement_cash module to provide more flexibility and control over calculating cash entitlements in social p..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>OpenSPP ID Queue — OpenSPP Documentation v1.1</title>
+<title>OpenG2P Entitlement: Differential Module — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -50,7 +50,7 @@
 <script src="../_static/patch_scrollToActive.js"></script>
 <script src="../_static/search_shortcut.js"></script>
 <script src="../_static/design-tabs.js"></script>
-<link href="https://docs.openspp.org/modules/spp_idqueue.html" rel="canonical">
+<link href="https://docs.openspp.org/modules/g2p_entitlement_differential.html" rel="canonical">
 <link href="../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.1" type="application/opensearchdescription+xml"/>
 <link href="../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../genindex.html" rel="index" title="Index"/>
@@ -645,7 +645,7 @@
 </label>
 </div>
 <div class="header-article__label">
-<span>OpenSPP ID Queue</span>
+<span>OpenG2P Entitlement: Differential Module</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -668,7 +668,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fmodules/spp_idqueue.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fmodules/g2p_entitlement_differential.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
 <span class="headerbtn__icon-container">
 <i class="fas fa-lightbulb"></i>
 </span>
@@ -676,7 +676,7 @@
 </a>
 </li>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?modules/spp_idqueue.md#making-contributions-on-github" title="Edit this page">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?modules/g2p_entitlement_differential.md#making-contributions-on-github" title="Edit this page">
 <span class="headerbtn__icon-container">
 <i class="fas fa-pencil-alt"></i>
 </span>
@@ -693,7 +693,7 @@
 <div class="menu-dropdown__content">
 <ul>
 <li>
-<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/modules/spp_idqueue.md.txt" title="Download source file">
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../_sources/modules/g2p_entitlement_differential.md.txt" title="Download source file">
 <span class="headerbtn__icon-container">
 <i class="fas fa-file"></i>
 </span>
@@ -726,18 +726,28 @@
 <nav aria-label="Page" id="bd-toc-nav">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#purpose">
-   Purpose
+<a class="reference internal nav-link" href="#overview">
+   Overview
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#dependencies-and-integration">
-   Dependencies and Integration
+<a class="reference internal nav-link" href="#features">
+   Features
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#additional-functionality">
-   Additional Functionality
+<a class="reference internal nav-link" href="#integration-with-other-modules">
+   Integration with Other Modules
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#key-functionality">
+   Key Functionality
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#benefits">
+   Benefits
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
@@ -753,7 +763,7 @@
 <div class="col pl-md-3 pl-lg-5 content-container">
 <!-- Table of contents that is only displayed when printing the page -->
 <div class="onlyprint" id="jb-print-docs-body">
-<h1>OpenSPP ID Queue</h1>
+<h1>OpenG2P Entitlement: Differential Module</h1>
 <!-- Table of contents -->
 <div id="print-main-content">
 <div id="jb-print-toc">
@@ -763,18 +773,28 @@
 <nav aria-label="Page">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#purpose">
-   Purpose
+<a class="reference internal nav-link" href="#overview">
+   Overview
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#dependencies-and-integration">
-   Dependencies and Integration
+<a class="reference internal nav-link" href="#features">
+   Features
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#additional-functionality">
-   Additional Functionality
+<a class="reference internal nav-link" href="#integration-with-other-modules">
+   Integration with Other Modules
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#key-functionality">
+   Key Functionality
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#benefits">
+   Benefits
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
@@ -789,65 +809,60 @@
 </div>
 <main id="main-content" role="main">
 <div>
-<div class="section" id="openspp-id-queue">
-<h1>OpenSPP ID Queue<a class="headerlink" href="#openspp-id-queue" title="Permalink to this headline">#</a></h1>
+<div class="section" id="openg2p-entitlement-differential-module">
+<h1>OpenG2P Entitlement: Differential Module<a class="headerlink" href="#openg2p-entitlement-differential-module" title="Permalink to this headline">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>Work in Progress</strong>: This document is actively being developed and updated. Content may be incomplete or subject to change.</p>
 </div>
-<p>This document outlines the <strong>OpenSPP ID Queue</strong> module within the OpenSPP ecosystem.  This module adds functionality for managing requests for printed identification cards for registrants. It integrates with other OpenSPP modules to provide a seamless workflow from ID request to printing and distribution.</p>
-<div class="section" id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
-<p>The <strong>OpenSPP ID Queue</strong> module is designed to:</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<p>The <a class="reference internal" href="#"><span class="doc std std-doc">g2p_entitlement_differential</span></a> module extends the functionality of the <a class="reference internal" href="spp_entitlement_cash.html"><span class="doc std std-doc">spp_entitlement_cash</span></a> module to provide more flexibility and control over calculating cash entitlements in social protection programs. This module introduces features that allow program implementers to adjust entitlement amounts based on factors like inflation and define more complex entitlement rules.</p>
+</div>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><strong>Streamline ID Card Requests</strong>:  Provide a structured process for users to request printed ID cards for registrants, including the ability to select specific ID card templates.</p></li>
-<li><p><strong>Implement Approval Workflows</strong>:  Incorporate optional approval steps for ID card requests, ensuring that requests are reviewed and authorized before generation.</p></li>
-<li><p><strong>Facilitate Batch Printing</strong>:  Group ID card requests into batches for efficient printing and distribution, especially for large-scale programs.</p></li>
-<li><p><strong>Track ID Card Status</strong>:  Monitor the progress of ID card requests through various stages (new, approved, generating, printed, distributed), providing transparency and accountability.</p></li>
+<li><p><strong>Inflation Adjustment:</strong> Enables automatic adjustment of entitlement amounts based on a defined inflation rate. This ensures that the real value of benefits is maintained over time.</p></li>
+<li><p><strong>Flexible Entitlement Rules:</strong> Allows for more complex entitlement calculation logic by providing greater control over beneficiary selection and amount determination.</p></li>
+<li><p><strong>Enhanced User Interface:</strong> Provides an improved user interface for managing entitlement rules, including a more intuitive way to define and organize entitlement items.</p></li>
 </ul>
 </div>
-<div class="section" id="dependencies-and-integration">
-<h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
-<ol class="arabic simple">
-<li><p><strong><a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">g2p_registry_base</span></a></strong> (G2P Registry: Base):  The ID Queue module relies on the <strong>Registrant (res.partner)</strong> model from the <strong>G2P Registry: Base</strong> module to identify and link ID card requests to specific registrants.</p></li>
-<li><p><strong><a class="reference internal" href="spp_idpass.html"><span class="doc std std-doc">spp_idpass</span></a></strong> (OpenSPP ID PASS):  It integrates tightly with the <strong>OpenSPP ID PASS</strong> module, utilizing the predefined ID card templates and the ID generation mechanism.</p></li>
-<li><p><strong><span class="xref myst">queue_job</span></strong> (Queue Job):  Leverages the <strong>Queue Job</strong> module for background processing of ID card generation, particularly when handling large batches, to avoid impacting system performance.</p></li>
-<li><p><strong><a class="reference internal" href="spp_area.html"><span class="doc std std-doc">spp_area</span></a></strong> (OpenSPP Area):  Integrates with the <strong>OpenSPP Area</strong> module to associate ID card requests with specific geographical areas, enabling location-based reporting and distribution management.</p></li>
-<li><p><strong><a class="reference internal" href="g2p_registry_group.html"><span class="doc std std-doc">g2p_registry_group</span></a></strong> (G2P Registry: Group): Incorporates functionality from the <strong>G2P Registry: Group</strong> module to support ID card requests and batch printing for groups of registrants.</p></li>
-</ol>
+<div class="section" id="integration-with-other-modules">
+<h2>Integration with Other Modules<a class="headerlink" href="#integration-with-other-modules" title="Permalink to this headline">#</a></h2>
+<p>This module directly depends on the <a class="reference internal" href="spp_entitlement_cash.html"><span class="doc std std-doc">spp_entitlement_cash</span></a> module and inherits its core functionalities. It extends the existing features by providing additional fields and methods for differential entitlement calculation.</p>
 </div>
-<div class="section" id="additional-functionality">
-<h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
+<div class="section" id="key-functionality">
+<h2>Key Functionality<a class="headerlink" href="#key-functionality" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><strong>ID Request Queue (<code class="docutils literal notranslate"><span class="pre">spp.print.queue.id</span></code>)</strong>:</p>
+<li><p><strong>Inflation Adjustment:</strong></p>
 <ul>
-<li><p>Introduces a dedicated model to manage individual ID card requests, storing request details, associated registrant, selected template, request status, and approval information.</p></li>
-<li><p>Provides functions to move requests through the workflow: approve, generate, print, distribute, and cancel.</p></li>
-<li><p>Implements a messaging system to record actions taken on requests, enhancing auditability.</p></li>
+<li><p>Adds an "Enable Inflation" checkbox and an "Inflation Rate" field to the entitlement manager form.</p></li>
+<li><p>When enabled, the module automatically multiplies the initial entitlement amount by the defined inflation rate during the entitlement preparation process.</p></li>
 </ul>
 </li>
-<li><p><strong>ID Print Batch (<code class="docutils literal notranslate"><span class="pre">spp.print.queue.batch</span></code>)</strong>:</p>
+<li><p><strong>Flexible Entitlement Rules:</strong></p>
 <ul>
-<li><p>Enables the grouping of approved ID requests into batches for streamlined printing.</p></li>
-<li><p>Offers functionalities to approve, generate, print, and mark batches as distributed.</p></li>
-<li><p>Includes a status tracking system for batches, mirroring the individual request statuses.</p></li>
+<li><p>Modifies the beneficiary selection process to allow for more complex conditions using the <code class="docutils literal notranslate"><span class="pre">_get_all_beneficiaries</span></code> method. This allows program implementers to define rules based on various beneficiary attributes.</p></li>
 </ul>
 </li>
-<li><p><strong>Auto-Approve Configuration</strong>:</p>
+<li><p><strong>Enhanced User Interface:</strong></p>
 <ul>
-<li><p>Allows administrators to configure the system to automatically approve ID requests upon creation, potentially bypassing the manual approval step for specific workflows.</p></li>
+<li><p>Replaces the "Sequence" field with a "Name" field in the entitlement item tree and form views. This provides a clearer way to identify and manage individual entitlement items.</p></li>
 </ul>
 </li>
-<li><p><strong>Registrant Integration</strong>:</p>
-<ul>
-<li><p>Extends the <strong>Registrant (<code class="docutils literal notranslate"><span class="pre">res.partner</span></code>)</strong> model to include a link to all associated ID card requests, providing a centralized view of a registrant's ID card history.</p></li>
 </ul>
-</li>
+</div>
+<div class="section" id="benefits">
+<h2>Benefits<a class="headerlink" href="#benefits" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><strong>Improved Accuracy:</strong> Enables more accurate calculation of entitlement amounts by considering factors like inflation.</p></li>
+<li><p><strong>Increased Flexibility:</strong> Allows program implementers to design and implement more responsive and adaptable social protection programs.</p></li>
+<li><p><strong>Enhanced Transparency:</strong> Provides a clear and auditable trail of the entitlement calculation process, promoting accountability and trust.</p></li>
 </ul>
 </div>
 <div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
-<p>The <strong>OpenSPP ID Queue</strong> module enhances OpenSPP's ID card management capabilities by providing a structured and efficient system for handling ID card requests, approvals, batch printing, and distribution tracking.  Its integration with other core OpenSPP modules ensures a cohesive and streamlined experience for managing registrant identification within social protection programs and farmer registries.</p>
+<p>The <a class="reference internal" href="#"><span class="doc std std-doc">g2p_entitlement_differential</span></a> module is a valuable addition to the OpenSPP suite for organizations looking to implement dynamic and equitable social protection programs. Its ability to handle complex entitlement scenarios and adjust to changing economic conditions makes it an essential tool for ensuring effective and impactful social assistance.</p>
 </div>
 </div>
 </div>
