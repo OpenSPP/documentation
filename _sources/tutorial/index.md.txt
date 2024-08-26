@@ -27,6 +27,7 @@ This Tutorials serve as a detailed manual for the utilization and navigation of 
 - [Import registrant data](user_guides/import_registrant_data)
 - [Export Registrant Data](user_guides/export_registrant_data)
 - [Administrating role-based access](user_guides/administrating_role_based_access)
+- [Setting up service points](user_guides/setting_up_service_points)
 
 <!-- - [User Management]
 - [Registrant Management]
@@ -67,6 +68,7 @@ user_guides/enroll_beneficiaries
 user_guides/import_registrant_data
 user_guides/export_registrant_data
 user_guides/administrating_role_based_access
+user_guides/setting_up_service_points
 
 
 ```

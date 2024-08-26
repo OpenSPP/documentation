@@ -16,7 +16,7 @@ This tutorial instructs users on how to enroll beneficiaries into a program in O
 
 Efficient enrollment is important for the success of social protection programs in OpenSPP. Depending on the target type, the enrollment is done for groups or individuals. Both enrollments can be done either as part of the program setup or after configuring the program. The process of creating a social protection program is described in the documentation Create a social protection program.
 
-## Beneficiary Import and Enrollment
+### Beneficiary Import and Enrollment
 
 Upon finalizing the creation of the program, the process progresses through two sequential stages, regardless of whether the program supports individual or group beneficiaries:
 
@@ -25,7 +25,7 @@ Upon finalizing the creation of the program, the process progresses through two 
 
 Depending on the choices made in the program setup, there are two different ways to perform these steps, both of them are described below.
 
-## Import and enrollment as part of program setup
+### Import and enrollment as part of program setup
 
 If the option **Yes** has been selected at the final step of the program setup, the import and enrollment will be carried out as part of the program creation.
 
@@ -41,7 +41,7 @@ Click the **Beneficiaries** icon to view the imported and enrolled beneficiaries
 
 This confirms that the beneficiaries are imported and enrolled.
 
-## Import and enrolment after program creation
+### Import and enrolment after program creation
 
 If the option **No** has been selected as the final step of the program setup, this needs to be done as a separate action prior to proceeding.
 

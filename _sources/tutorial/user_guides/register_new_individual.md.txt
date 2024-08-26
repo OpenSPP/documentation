@@ -25,7 +25,7 @@ When registering a new individual, the following steps need to be taken:
 
 - **Adding the individual to a group**: if the individual should be added to a group, this is done as the final step.
 
-## Registering new individuals
+### Registering new individuals
 
 Click on the four-square icon in the top-left corner. Select **Registry** then click **Individuals**.
 
@@ -43,7 +43,7 @@ The record of the new individual is now displayed in the **Individuals** list in
 
 ![](register_new_individual/4.png)
 
-## Creating new group
+### Creating new group
 
 Navigate to **Registry** then click **Groups**. Click on **Create**.
 
@@ -61,7 +61,7 @@ The record of the new group is now displayed in the **Groups** list in the **Reg
 
 ![](register_new_individual/8.png)
 
-## Adding new individual to group
+### Adding new individual to group
 
 Click a group you wish an individual to be added into. Click **Add a line** and select an individual. You can repeat this action to add more individuals.
 

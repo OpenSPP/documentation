@@ -214,6 +214,11 @@
      Administrating role-based access
     </a>
 </li>
+<li class="toctree-l2">
+<a class="reference internal" href="setting_up_service_points.html">
+     Setting up service points
+    </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 has-children">
@@ -344,6 +349,11 @@
 <li class="toctree-l2">
 <a class="reference internal" href="../../howto/user_guides/administrating_role_based_access.html">
      Administrating role-based access
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/user_guides/setting_up_service_points.html">
+     Setting up service points
     </a>
 </li>
 </ul>
@@ -746,21 +756,23 @@
 <a class="reference internal nav-link" href="#process">
    Process
   </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
 <a class="reference internal nav-link" href="#beneficiary-import-and-enrollment">
-   Beneficiary Import and Enrollment
-  </a>
+     Beneficiary Import and Enrollment
+    </a>
 </li>
-<li class="toc-h2 nav-item toc-entry">
+<li class="toc-h3 nav-item toc-entry">
 <a class="reference internal nav-link" href="#import-and-enrollment-as-part-of-program-setup">
-   Import and enrollment as part of program setup
-  </a>
+     Import and enrollment as part of program setup
+    </a>
 </li>
-<li class="toc-h2 nav-item toc-entry">
+<li class="toc-h3 nav-item toc-entry">
 <a class="reference internal nav-link" href="#import-and-enrolment-after-program-creation">
-   Import and enrolment after program creation
-  </a>
+     Import and enrolment after program creation
+    </a>
+</li>
+</ul>
 </li>
 </ul>
 </nav>
@@ -798,21 +810,23 @@
 <a class="reference internal nav-link" href="#process">
    Process
   </a>
-</li>
-<li class="toc-h2 nav-item toc-entry">
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
 <a class="reference internal nav-link" href="#beneficiary-import-and-enrollment">
-   Beneficiary Import and Enrollment
-  </a>
+     Beneficiary Import and Enrollment
+    </a>
 </li>
-<li class="toc-h2 nav-item toc-entry">
+<li class="toc-h3 nav-item toc-entry">
 <a class="reference internal nav-link" href="#import-and-enrollment-as-part-of-program-setup">
-   Import and enrollment as part of program setup
-  </a>
+     Import and enrollment as part of program setup
+    </a>
 </li>
-<li class="toc-h2 nav-item toc-entry">
+<li class="toc-h3 nav-item toc-entry">
 <a class="reference internal nav-link" href="#import-and-enrolment-after-program-creation">
-   Import and enrolment after program creation
-  </a>
+     Import and enrolment after program creation
+    </a>
+</li>
+</ul>
 </li>
 </ul>
 </nav>
@@ -838,9 +852,8 @@
 <div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
 <p>Efficient enrollment is important for the success of social protection programs in OpenSPP. Depending on the target type, the enrollment is done for groups or individuals. Both enrollments can be done either as part of the program setup or after configuring the program. The process of creating a social protection program is described in the documentation Create a social protection program.</p>
-</div>
 <div class="section" id="beneficiary-import-and-enrollment">
-<h2>Beneficiary Import and Enrollment<a class="headerlink" href="#beneficiary-import-and-enrollment" title="Permalink to this headline">#</a></h2>
+<h3>Beneficiary Import and Enrollment<a class="headerlink" href="#beneficiary-import-and-enrollment" title="Permalink to this headline">#</a></h3>
 <p>Upon finalizing the creation of the program, the process progresses through two sequential stages, regardless of whether the program supports individual or group beneficiaries:</p>
 <ul class="simple">
 <li><p>Import beneficiaries. This step involves the integration of beneficiaries who are eligible to receive support from a social protection program. Which beneficiaries to import into the program are defined by the filter in the eligibility criteria.</p></li>
@@ -849,7 +862,7 @@
 <p>Depending on the choices made in the program setup, there are two different ways to perform these steps, both of them are described below.</p>
 </div>
 <div class="section" id="import-and-enrollment-as-part-of-program-setup">
-<h2>Import and enrollment as part of program setup<a class="headerlink" href="#import-and-enrollment-as-part-of-program-setup" title="Permalink to this headline">#</a></h2>
+<h3>Import and enrollment as part of program setup<a class="headerlink" href="#import-and-enrollment-as-part-of-program-setup" title="Permalink to this headline">#</a></h3>
 <p>If the option <strong>Yes</strong> has been selected at the final step of the program setup, the import and enrollment will be carried out as part of the program creation.</p>
 <p><img alt="" src="../../_images/120.png"/></p>
 <p>Once completed, the number of beneficiaries imported and enrolled is displayed on the toolbar.</p>
@@ -859,7 +872,7 @@
 <p>This confirms that the beneficiaries are imported and enrolled.</p>
 </div>
 <div class="section" id="import-and-enrolment-after-program-creation">
-<h2>Import and enrolment after program creation<a class="headerlink" href="#import-and-enrolment-after-program-creation" title="Permalink to this headline">#</a></h2>
+<h3>Import and enrolment after program creation<a class="headerlink" href="#import-and-enrolment-after-program-creation" title="Permalink to this headline">#</a></h3>
 <p>If the option <strong>No</strong> has been selected as the final step of the program setup, this needs to be done as a separate action prior to proceeding.</p>
 <p>This action consists of two steps, first the import of beneficiaries into the program, and then the enrollment of the previously imported beneficiaries into the program.</p>
 <p>Take note that, given the significant number of beneficiaries for importation, it's important to make sure that the import process has been completed before initiating any enrollments to avoid complications.</p>
@@ -874,6 +887,7 @@
 <p><img alt="" src="../../_images/74.png"/></p>
 <p>Click the <strong>Beneficiaries</strong> icon to view the imported and enrolled beneficiaries in the table view.</p>
 <p><img alt="" src="../../_images/84.png"/></p>
+</div>
 </div>
 </div>
 </div>
