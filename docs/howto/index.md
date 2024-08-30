@@ -6,6 +6,7 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 
 - {doc}`developer_mode`
 - {doc}`developer_guides/development_setup`
+- {doc}`developer_guides/setting_up_using_pypi`
 - {doc}`developer_guides/module`
 - {doc}`developer_guides/indicators`
 - {doc}`developer_guides/troubleshooting`
@@ -48,7 +49,8 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 
 #Developer Guides
 developer_mode
-developer_guides/development_setup
+developer_guides/setting_up_using_pypi
+developer_guides/troubleshooting
 developer_guides/indicators
 developer_guides/module
 developer_guides/troubleshooting
