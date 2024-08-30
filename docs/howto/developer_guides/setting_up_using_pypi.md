@@ -1,4 +1,4 @@
-# Setting up OpenSPP using Python package manager
+# Setting Up Using Python Package Manager
 
 ## Introduction
 
