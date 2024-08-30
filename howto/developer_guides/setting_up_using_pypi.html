@@ -922,7 +922,7 @@ sudo<span class="w"> </span>servicectl<span class="w"> </span>restart<span class
 </pre></div>
 </div>
 <ol class="arabic simple" start="6">
-<li><p>If you don’t have [Pyenv] (<a class="reference external" href="https://github.com/pyenv/pyenv">https://github.com/pyenv/pyenv</a>) installed, please install it using the official documentation. Be sure to also install the <a class="reference external" href="https://github.com/pyenv/pyenv/wiki#suggested-build-environment">Python build dependencies</a>.</p></li>
+<li><p>If you don’t have <a class="reference external" href="https://github.com/pyenv/pyenv">Pyenv</a> installed, please install it using the official documentation. Be sure to also install the <a class="reference external" href="https://github.com/pyenv/pyenv/wiki#suggested-build-environment">Python build dependencies</a>.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>libssl-dev<span class="w"> </span>zlib1g-dev<span class="w"> </span>libbz2-dev<span class="w"> </span><span class="se">\</span>
 libreadline-dev<span class="w"> </span>libsqlite3-dev<span class="w"> </span>curl<span class="w"> </span>git<span class="w"> </span>libncursesw5-dev<span class="w"> </span>xz-utils<span class="w"> </span>tk-dev<span class="w"> </span><span class="se">\</span>
@@ -936,7 +936,7 @@ curl<span class="w"> </span>https://pyenv.run<span class="w"> </span><span class
 </pre></div>
 </div>
 <ol class="arabic simple" start="7">
-<li><p>If you don’t have the Pyenv plugin [pyenv-virtualenv] (<a class="reference external" href="https://github.com/pyenv/pyenv-virtualenv">https://github.com/pyenv/pyenv-virtualenv</a>) installed, please install it using the official documentation.</p></li>
+<li><p>If you don’t have the Pyenv plugin <a class="reference external" href="https://github.com/pyenv/pyenv-virtualenv">pyenv-virtualenv</a> installed, please install it using the official documentation.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/pyenv/pyenv-virtualenv.git<span class="w"> </span><span class="k">$(</span>pyenv<span class="w"> </span>root<span class="k">)</span>/plugins/pyenv-virtualenv
 </pre></div>
@@ -1011,7 +1011,7 @@ sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> <
 </pre></div>
 </div>
 <ol class="arabic simple" start="17">
-<li><p>OpenSPP requires that asynchronous queues are used, and the queue configuration needs to be provided through Odoo’s configuration file. You can read more about the [configuration] (<a class="reference external" href="https://github.com/OCA/queue/tree/17.0/queue_job#configuration">https://github.com/OCA/queue/tree/17.0/queue_job#configuration</a>). Create a file “$HOME/odoo.cfg” using your preferred text editor and add the following to allow OpenSPP to remain responsive while the asynchronous tasks are running:</p></li>
+<li><p>OpenSPP requires that asynchronous queues are used, and the queue configuration needs to be provided through Odoo’s configuration file. You can read more about the <a class="reference external" href="https://github.com/OCA/queue/tree/17.0/queue_job#configuration">configuration</a>. Create a file “$HOME/odoo.cfg” using your preferred text editor and add the following to allow OpenSPP to remain responsive while the asynchronous tasks are running:</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>queue_job<span class="o">]</span>
 <span class="nv">channels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>root:4
@@ -1029,12 +1029,12 @@ sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> <
 </div>
 <ol class="arabic simple" start="19">
 <li><p>Login to Odoo as user admin, with password admin</p></li>
-<li><p>Go to Settings then activate the developer mode.</p></li>
-<li><p>Open the "Apps" menu then click "Update Apps List". Click the "Update" button in the "Module Update" popup window.</p></li>
-<li><p>Remove the default filter “Apps”.
+<li><p>Go to <strong>Settings</strong> then activate the developer mode.</p></li>
+<li><p>Open the <strong>"Apps"</strong> menu then click <strong>"Update Apps List"</strong>. Click the "Update" button in the <strong>"Module Update"</strong> popup window.</p></li>
+<li><p>Remove the default filter <strong>“Apps”</strong>.
 <img alt="" src="../../_images/17.png"/></p></li>
 <li><p>Search spp_base (For SP-MIS) or spp_farmer_registry_demo (For Farmer Registry).</p></li>
-<li><p>Click the "Activate" button to install the modules.</p></li>
+<li><p>Click the <strong>"Activate"</strong> button to install the modules.</p></li>
 </ol>
 </div>
 </div>

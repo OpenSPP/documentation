@@ -112,7 +112,7 @@ sudo servicectl restart nginx
 sudo servicectl status nginx
 ```
 
-6. If you don’t have [Pyenv] (https://github.com/pyenv/pyenv) installed, please install it using the official documentation. Be sure to also install the [Python build dependencies](https://github.com/pyenv/pyenv/wiki#suggested-build-environment).
+6. If you don’t have [Pyenv](https://github.com/pyenv/pyenv) installed, please install it using the official documentation. Be sure to also install the [Python build dependencies](https://github.com/pyenv/pyenv/wiki#suggested-build-environment).
 
 ```bash
 sudo apt install build-essential libssl-dev zlib1g-dev libbz2-dev \
@@ -126,7 +126,7 @@ echo 'eval "$(pyenv init -)"' >> $HOME/.bashrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> $HOME/.profile
 ```
 
-7. If you don’t have the Pyenv plugin [pyenv-virtualenv] (https://github.com/pyenv/pyenv-virtualenv) installed, please install it using the official documentation.
+7. If you don’t have the Pyenv plugin [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) installed, please install it using the official documentation.
 
 ```bash
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
@@ -202,7 +202,7 @@ sudo -u postgres psql -d odoo -c "CREATE EXTENSION postgis_topology;"
 sudo systemctl restart postgresql
 ```
 
-17. OpenSPP requires that asynchronous queues are used, and the queue configuration needs to be provided through Odoo’s configuration file. You can read more about the [configuration] (https://github.com/OCA/queue/tree/17.0/queue_job#configuration). Create a file “$HOME/odoo.cfg” using your preferred text editor and add the following to allow OpenSPP to remain responsive while the asynchronous tasks are running:
+17. OpenSPP requires that asynchronous queues are used, and the queue configuration needs to be provided through Odoo’s configuration file. You can read more about the [configuration](https://github.com/OCA/queue/tree/17.0/queue_job#configuration). Create a file “$HOME/odoo.cfg” using your preferred text editor and add the following to allow OpenSPP to remain responsive while the asynchronous tasks are running:
 
 ```bash
 [queue_job]
@@ -223,13 +223,13 @@ python odoo/odoo-bin -d odoo -r odoo -w YOUR_PASSWORD --db_host=127.0.0.1 -p 170
 
 19. Login to Odoo as user admin, with password admin
 
-20. Go to Settings then activate the developer mode.
+20. Go to **Settings** then activate the developer mode.
 
-21. Open the "Apps" menu then click "Update Apps List". Click the "Update" button in the "Module Update" popup window.
+21. Open the **"Apps"** menu then click **"Update Apps List"**. Click the "Update" button in the **"Module Update"** popup window.
 
-22. Remove the default filter “Apps”.
+22. Remove the default filter **“Apps”**.
     ![](setting_up_using_pypi/1.png)
 
 23. Search spp_base (For SP-MIS) or spp_farmer_registry_demo (For Farmer Registry).
 
-24. Click the "Activate" button to install the modules.
+24. Click the **"Activate"** button to install the modules.
