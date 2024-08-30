@@ -37,7 +37,7 @@ touch /etc/nginx/sites-available/openspp.conf
 ln -s /etc/nginx/sites-available/openspp.conf /etc/nginx/sites-enabled/openspp.conf
 ```
 
-3. Open your preferred text editor, and put the following content in /etc/nginx/sites-available/openspp.conf
+3. Open your preferred text editor, and put the following content in **_/etc/nginx/sites-available/openspp.conf_**
 
 ```bash
 proxy_http_version 1.1;
@@ -99,14 +99,14 @@ keepalive_timeout 300;
 }
 ```
 
-4. Test your nginx configuration using “nginx -t”, and if all looks good, restart nginx:
+4. Test your nginx configuration using **“nginx -t”**, and if all looks good, restart nginx:
 
 ```bash
 sudo nginx -t
 sudo servicectl restart nginx
 ```
 
-5. You should also validate that nginx is operational through the “status” command
+5. You should also validate that nginx is operational through the **“status”** command
 
 ```bash
 sudo servicectl status nginx
@@ -138,7 +138,7 @@ git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/py
 exec "$SHELL"
 ```
 
-9. For Odoo, install the Linux packages “libldap2-dev”, “libsasl2-dev”, “libpq-dev”, and “ libcairo2-dev”. On Ubuntu, do.
+9. For Odoo, install the Linux packages **“libldap2-dev”**, **“libsasl2-dev”**, **“libpq-dev”**, and **“libcairo2-dev”**. On Ubuntu, do.
 
 ```bash
 sudo apt install libldap2-dev libsasl2-dev libpq-dev libcairo2-dev
@@ -202,7 +202,7 @@ sudo -u postgres psql -d odoo -c "CREATE EXTENSION postgis_topology;"
 sudo systemctl restart postgresql
 ```
 
-17. OpenSPP requires that asynchronous queues are used, and the queue configuration needs to be provided through Odoo’s configuration file. You can read more about the [configuration](https://github.com/OCA/queue/tree/17.0/queue_job#configuration). Create a file “$HOME/odoo.cfg” using your preferred text editor and add the following to allow OpenSPP to remain responsive while the asynchronous tasks are running:
+17. OpenSPP requires that asynchronous queues are used, and the queue configuration needs to be provided through Odoo’s configuration file. You can read more about the [configuration](https://github.com/OCA/queue/tree/17.0/queue_job#configuration). Create a file **“$HOME/odoo.cfg”** using your preferred text editor and add the following to allow OpenSPP to remain responsive while the asynchronous tasks are running:
 
 ```bash
 [queue_job]
@@ -215,7 +215,7 @@ channels = root:4
 python odoo/odoo-bin -d odoo -r odoo -w YOUR_PASSWORD --db_host=127.0.0.1 -p 17069 --workers=4 --gevent-port=8072 --proxy-mode --config=$HOME/odoo.cfg -i base,queue_job
 ```
 
-Note: for subsequent starts of Odoo, remove the “-i base,queue_job” parameter and use:
+Note: for subsequent starts of Odoo, remove the **“-i base,queue_job”** parameter and use:
 
 ```bash
 python odoo/odoo-bin -d odoo -r odoo -w YOUR_PASSWORD --db_host=127.0.0.1 -p 17069 --workers=4 --gevent-port=8072 --proxy-mode --config=$HOME/odoo.cfg
