@@ -847,7 +847,7 @@ ln<span class="w"> </span>-s<span class="w"> </span>/etc/nginx/sites-available/o
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Open your preferred text editor, and put the following content in /etc/nginx/sites-available/openspp.conf</p></li>
+<li><p>Open your preferred text editor, and put the following content in <strong><em>/etc/nginx/sites-available/openspp.conf</em></strong></p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>proxy_http_version<span class="w"> </span><span class="m">1</span>.1<span class="p">;</span>
 proxy_set_header<span class="w"> </span>Host<span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
@@ -909,14 +909,14 @@ keepalive_timeout<span class="w"> </span><span class="m">300</span><span class="
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Test your nginx configuration using “nginx -t”, and if all looks good, restart nginx:</p></li>
+<li><p>Test your nginx configuration using <strong>“nginx -t”</strong>, and if all looks good, restart nginx:</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nginx<span class="w"> </span>-t
 sudo<span class="w"> </span>servicectl<span class="w"> </span>restart<span class="w"> </span>nginx
 </pre></div>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>You should also validate that nginx is operational through the “status” command</p></li>
+<li><p>You should also validate that nginx is operational through the <strong>“status”</strong> command</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>servicectl<span class="w"> </span>status<span class="w"> </span>nginx
 </pre></div>
@@ -948,7 +948,7 @@ curl<span class="w"> </span>https://pyenv.run<span class="w"> </span><span class
 </pre></div>
 </div>
 <ol class="arabic simple" start="9">
-<li><p>For Odoo, install the Linux packages “libldap2-dev”, “libsasl2-dev”, “libpq-dev”, and “ libcairo2-dev”. On Ubuntu, do.</p></li>
+<li><p>For Odoo, install the Linux packages <strong>“libldap2-dev”</strong>, <strong>“libsasl2-dev”</strong>, <strong>“libpq-dev”</strong>, and <strong>“libcairo2-dev”</strong>. On Ubuntu, do.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libldap2-dev<span class="w"> </span>libsasl2-dev<span class="w"> </span>libpq-dev<span class="w"> </span>libcairo2-dev
 </pre></div>
@@ -1011,7 +1011,7 @@ sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> <
 </pre></div>
 </div>
 <ol class="arabic simple" start="17">
-<li><p>OpenSPP requires that asynchronous queues are used, and the queue configuration needs to be provided through Odoo’s configuration file. You can read more about the <a class="reference external" href="https://github.com/OCA/queue/tree/17.0/queue_job#configuration">configuration</a>. Create a file “$HOME/odoo.cfg” using your preferred text editor and add the following to allow OpenSPP to remain responsive while the asynchronous tasks are running:</p></li>
+<li><p>OpenSPP requires that asynchronous queues are used, and the queue configuration needs to be provided through Odoo’s configuration file. You can read more about the <a class="reference external" href="https://github.com/OCA/queue/tree/17.0/queue_job#configuration">configuration</a>. Create a file <strong>“$HOME/odoo.cfg”</strong> using your preferred text editor and add the following to allow OpenSPP to remain responsive while the asynchronous tasks are running:</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>queue_job<span class="o">]</span>
 <span class="nv">channels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>root:4
@@ -1023,7 +1023,7 @@ sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> <
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>odoo/odoo-bin<span class="w"> </span>-d<span class="w"> </span>odoo<span class="w"> </span>-r<span class="w"> </span>odoo<span class="w"> </span>-w<span class="w"> </span>YOUR_PASSWORD<span class="w"> </span>--db_host<span class="o">=</span><span class="m">127</span>.0.0.1<span class="w"> </span>-p<span class="w"> </span><span class="m">17069</span><span class="w"> </span>--workers<span class="o">=</span><span class="m">4</span><span class="w"> </span>--gevent-port<span class="o">=</span><span class="m">8072</span><span class="w"> </span>--proxy-mode<span class="w"> </span>--config<span class="o">=</span><span class="nv">$HOME</span>/odoo.cfg<span class="w"> </span>-i<span class="w"> </span>base,queue_job
 </pre></div>
 </div>
-<p>Note: for subsequent starts of Odoo, remove the “-i base,queue_job” parameter and use:</p>
+<p>Note: for subsequent starts of Odoo, remove the <strong>“-i base,queue_job”</strong> parameter and use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>odoo/odoo-bin<span class="w"> </span>-d<span class="w"> </span>odoo<span class="w"> </span>-r<span class="w"> </span>odoo<span class="w"> </span>-w<span class="w"> </span>YOUR_PASSWORD<span class="w"> </span>--db_host<span class="o">=</span><span class="m">127</span>.0.0.1<span class="w"> </span>-p<span class="w"> </span><span class="m">17069</span><span class="w"> </span>--workers<span class="o">=</span><span class="m">4</span><span class="w"> </span>--gevent-port<span class="o">=</span><span class="m">8072</span><span class="w"> </span>--proxy-mode<span class="w"> </span>--config<span class="o">=</span><span class="nv">$HOME</span>/odoo.cfg
 </pre></div>
 </div>
