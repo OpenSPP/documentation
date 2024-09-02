@@ -17,10 +17,10 @@
 <meta content="website" property="og:type"/>
 <meta content="https://docs.openspp.org/howto/developer_guides/development_setup.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="Setting up a local OpenSPP environment can be accomplished through two distinct methodologies. 1. Docker Odoo Setup Using Doodba: This technique utilizes Docker, simplifying the installation of Odo..." property="og:description"/>
+<meta content="Setting up a local OpenSPP environment can be accomplished through two distinct methodologies. 1. OpenSPP Docker Setup Using Doodba: This technique utilizes Docker, simplifying the installation of ..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="Setting up a local OpenSPP environment can be accomplished through two distinct methodologies. 1. Docker Odoo Setup Using Doodba: This technique utilizes Docker, simplifying the installation of Odo..." name="description"/>
+<meta content="Setting up a local OpenSPP environment can be accomplished through two distinct methodologies. 1. OpenSPP Docker Setup Using Doodba: This technique utilizes Docker, simplifying the installation of ..." name="description"/>
 <meta content="en_US" property="og:locale"/>
 <title>Development Setup — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
@@ -741,8 +741,8 @@
 <nav aria-label="Page" id="bd-toc-nav">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#docker-odoo-setup-using-doodba">
-   1. Docker Odoo Setup Using Doodba
+<a class="reference internal nav-link" href="#openspp-docker-setup-using-doodba">
+   1. OpenSPP Docker Setup Using Doodba
   </a>
 <ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry">
@@ -758,21 +758,9 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-source">
-   2. Odoo Setup from source
+<a class="reference internal nav-link" href="#openspp-setup-from-pipy">
+   2. OpenSPP Setup from PiPy
   </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#id1">
-     Prerequisites
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#id2">
-     Setup
-    </a>
-</li>
-</ul>
 </li>
 </ul>
 </nav>
@@ -792,8 +780,8 @@
 <nav aria-label="Page">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#docker-odoo-setup-using-doodba">
-   1. Docker Odoo Setup Using Doodba
+<a class="reference internal nav-link" href="#openspp-docker-setup-using-doodba">
+   1. OpenSPP Docker Setup Using Doodba
   </a>
 <ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry">
@@ -809,21 +797,9 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#odoo-setup-from-source">
-   2. Odoo Setup from source
+<a class="reference internal nav-link" href="#openspp-setup-from-pipy">
+   2. OpenSPP Setup from PiPy
   </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#id1">
-     Prerequisites
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#id2">
-     Setup
-    </a>
-</li>
-</ul>
 </li>
 </ul>
 </nav>
@@ -835,8 +811,8 @@
 <div class="section" id="development-setup">
 <h1>Development Setup<a class="headerlink" href="#development-setup" title="Permalink to this headline">#</a></h1>
 <p>Setting up a local OpenSPP environment can be accomplished through two distinct methodologies.</p>
-<div class="section" id="docker-odoo-setup-using-doodba">
-<h2>1. Docker Odoo Setup Using Doodba<a class="headerlink" href="#docker-odoo-setup-using-doodba" title="Permalink to this headline">#</a></h2>
+<div class="section" id="openspp-docker-setup-using-doodba">
+<h2>1. OpenSPP Docker Setup Using Doodba<a class="headerlink" href="#openspp-docker-setup-using-doodba" title="Permalink to this headline">#</a></h2>
 <p>This technique utilizes Docker, simplifying the installation of Odoo and its dependencies, with the added benefits offered by Doodba.</p>
 <div class="section" id="prerequisites">
 <h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h3>
@@ -880,45 +856,9 @@
 <p>Refer to the Readme in the repository for more detailed instructions on Docker Odoo and Invoke commands.</p>
 </div>
 </div>
-<div class="section" id="odoo-setup-from-source">
-<h2>2. Odoo Setup from source<a class="headerlink" href="#odoo-setup-from-source" title="Permalink to this headline">#</a></h2>
-<p>This method is the traditional way of installing Odoo, involving manual installation and configuration.</p>
-<div class="section" id="id1">
-<h3>Prerequisites<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Knowledge of your current Operating System</p></li>
-<li><p>Terminal access</p></li>
-</ul>
-</div>
-<div class="section" id="id2">
-<h3>Setup<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<ol class="arabic simple">
-<li><p>Follow the official Odoo installation guide suitable for your Operating System. <a class="reference external" href="https://www.odoo.com/documentation/17.0/administration/on_premise/source.html">Link</a></p></li>
-<li><p>Inside the Odoo folder, create a new directory named custom.</p></li>
-<li><p>Other Odoo repositories or Odoo modules should be added to the “custom” folder.</p></li>
-<li><p>Navigate to “custom” and git clone all of the following repositories and their corresponding branches:</p></li>
-</ol>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">17.0</span> <span class="pre">https://github.com/OCA/connector.git</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">17.0</span> <span class="pre">https://github.com/OpenSPP/openspp-modules</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">17.0</span> <span class="pre">https://github.com/OCA/queue.git</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">17.0</span> <span class="pre">https://github.com/OCA/rest-framework.git</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">17.0</span> <span class="pre">https://github.com/OCA/server-auth.git</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">17.0</span> <span class="pre">https://github.com/OCA/server-backend.git</span></code></p></li>
-</ul>
-<ol class="arabic simple" start="5">
-<li><p>`pip install the requirements in requirements.txt in each of the repositories if there is a requirements.txt.</p></li>
-<li><p>Open <code class="docutils literal notranslate"><span class="pre">odoo.conf</span></code> in a preferred IDE and add in the <code class="docutils literal notranslate"><span class="pre">addons_path</span></code> the absolute path of the “custom” folder</p></li>
-</ol>
-<ul class="simple">
-<li><p>e.g. <code class="docutils literal notranslate"><span class="pre">addons_path</span> <span class="pre">=</span> <span class="pre">/Users/username/odoo/addons,/Users/username/odoo/custom</span></code></p></li>
-</ul>
-<ol class="arabic simple" start="7">
-<li><p>Execute <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">odoo-bin</span> <span class="pre">-c</span> <span class="pre">odoo.conf</span></code> to run Odoo.</p></li>
-<li><p>Open <a class="reference external" href="http://localhost:8069/">http://localhost:8069/</a> in a browser to use OpenSPP.</p></li>
-</ol>
-<p>To learn more about Odoo command, visit <a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/reference/cli.html">this documentation</a></p>
-</div>
+<div class="section" id="openspp-setup-from-pipy">
+<h2>2. OpenSPP Setup from PiPy<a class="headerlink" href="#openspp-setup-from-pipy" title="Permalink to this headline">#</a></h2>
+<p>Refer the <a class="reference external" href="https://docs.openspp.org/howto/developer_guides/setting_up_using_pypi.html">link</a>.</p>
 </div>
 </div>
 </div>

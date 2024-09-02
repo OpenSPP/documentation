@@ -2,7 +2,7 @@
 
 Setting up a local OpenSPP environment can be accomplished through two distinct methodologies.
 
-## 1. Docker Odoo Setup Using Doodba
+## 1. OpenSPP Docker Setup Using Doodba
 
 This technique utilizes Docker, simplifying the installation of Odoo and its dependencies, with the added benefits offered by Doodba.
 
@@ -41,40 +41,6 @@ This technique utilizes Docker, simplifying the installation of Odoo and its dep
 
 Refer to the Readme in the repository for more detailed instructions on Docker Odoo and Invoke commands.
 
-## 2. Odoo Setup from source
+## 2. OpenSPP Setup from PiPy
 
-This method is the traditional way of installing Odoo, involving manual installation and configuration.
-
-### Prerequisites
-
-- Knowledge of your current Operating System
-- Terminal access
-
-### Setup
-
-1. Follow the official Odoo installation guide suitable for your Operating System. [Link](https://www.odoo.com/documentation/17.0/administration/on_premise/source.html)
-
-2. Inside the Odoo folder, create a new directory named custom.
-
-3. Other Odoo repositories or Odoo modules should be added to the “custom” folder.
-
-4. Navigate to “custom” and git clone all of the following repositories and their corresponding branches:
-
-- `git clone –branch 17.0 https://github.com/OCA/connector.git`
-- `git clone –branch 17.0 https://github.com/OpenSPP/openspp-modules`
-- `git clone –branch 17.0 https://github.com/OCA/queue.git`
-- `git clone –branch 17.0 https://github.com/OCA/rest-framework.git`
-- `git clone –branch 17.0 https://github.com/OCA/server-auth.git`
-- `git clone –branch 17.0 https://github.com/OCA/server-backend.git`
-
-5. `pip install the requirements in requirements.txt in each of the repositories if there is a requirements.txt.
-
-6. Open `odoo.conf` in a preferred IDE and add in the `addons_path` the absolute path of the “custom” folder
-
-- e.g. `addons_path = /Users/username/odoo/addons,/Users/username/odoo/custom`
-
-7. Execute `python3 odoo-bin -c odoo.conf` to run Odoo.
-
-8. Open http://localhost:8069/ in a browser to use OpenSPP.
-
-To learn more about Odoo command, visit [this documentation](https://www.odoo.com/documentation/17.0/developer/reference/cli.html)
+Refer the [link](https://docs.openspp.org/howto/developer_guides/setting_up_using_pypi.html).
