@@ -17,10 +17,10 @@
 <meta content="website" property="og:type"/>
 <meta content="https://docs.openspp.org/howto/developer_guides/development_setup.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="Setting up a local Odoo environment can be accomplished through two distinct methodologies. 1. Docker Odoo Setup Using Doodba: This technique utilizes Docker, simplifying the installation of Odoo a..." property="og:description"/>
+<meta content="Setting up a local OpenSPP environment can be accomplished through two distinct methodologies. 1. Docker Odoo Setup Using Doodba: This technique utilizes Docker, simplifying the installation of Odo..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="Setting up a local Odoo environment can be accomplished through two distinct methodologies. 1. Docker Odoo Setup Using Doodba: This technique utilizes Docker, simplifying the installation of Odoo a..." name="description"/>
+<meta content="Setting up a local OpenSPP environment can be accomplished through two distinct methodologies. 1. Docker Odoo Setup Using Doodba: This technique utilizes Docker, simplifying the installation of Odo..." name="description"/>
 <meta content="en_US" property="og:locale"/>
 <title>Development Setup — OpenSPP Documentation v1.1</title>
 <!-- Loaded before other Sphinx assets -->
@@ -834,7 +834,7 @@
 <div>
 <div class="section" id="development-setup">
 <h1>Development Setup<a class="headerlink" href="#development-setup" title="Permalink to this headline">#</a></h1>
-<p>Setting up a local Odoo environment can be accomplished through two distinct methodologies.</p>
+<p>Setting up a local OpenSPP environment can be accomplished through two distinct methodologies.</p>
 <div class="section" id="docker-odoo-setup-using-doodba">
 <h2>1. Docker Odoo Setup Using Doodba<a class="headerlink" href="#docker-odoo-setup-using-doodba" title="Permalink to this headline">#</a></h2>
 <p>This technique utilizes Docker, simplifying the installation of Odoo and its dependencies, with the added benefits offered by Doodba.</p>
@@ -893,22 +893,18 @@
 <div class="section" id="id2">
 <h3>Setup<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
-<li><p>Follow the official Odoo installation guide suitable for your Operating System.<a class="reference external" href="https://www.odoo.com/documentation/17.0/administration/on_premise.html">Link</a></p></li>
+<li><p>Follow the official Odoo installation guide suitable for your Operating System. <a class="reference external" href="https://www.odoo.com/documentation/17.0/administration/on_premise/source.html">Link</a></p></li>
 <li><p>Inside the Odoo folder, create a new directory named custom.</p></li>
 <li><p>Other Odoo repositories or Odoo modules should be added to the “custom” folder.</p></li>
 <li><p>Navigate to “custom” and git clone all of the following repositories and their corresponding branches:</p></li>
 </ol>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">17.0</span> <span class="pre">https://github.com/OCA/connector.git</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">17.0</span> <span class="pre">https://github.com/OCA/dms.git</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">17.0</span> <span class="pre">https://github.com/OpenSPP/openspp-modules</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">17.0</span> <span class="pre">https://github.com/OCA/queue.git</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">17.0</span> <span class="pre">https://github.com/OCA/rest-framework.git</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">17.0</span> <span class="pre">https://github.com/OCA/server-auth.git</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">17.0</span> <span class="pre">https://github.com/OCA/server-backend.git</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">17.0</span> <span class="pre">https://github.com/Smile-SA/odoo_addons.git</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">17.0</span> <span class="pre">https://github.com/OCA/social.git</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">–branch</span> <span class="pre">17.0</span> <span class="pre">https://github.com/OCA/web.git</span></code></p></li>
 </ul>
 <ol class="arabic simple" start="5">
 <li><p>`pip install the requirements in requirements.txt in each of the repositories if there is a requirements.txt.</p></li>
