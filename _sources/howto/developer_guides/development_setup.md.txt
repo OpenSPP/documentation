@@ -39,7 +39,7 @@ This technique utilizes Docker, simplifying the installation of Odoo and its dep
 - Wdb: http://localhost:17984/
 - Pgweb: http://localhost:17081/
 
-Refer to the Readme.md in the repository for more detailed instructions on Docker Odoo and Invoke commands
+Refer to the Readme in the repository for more detailed instructions on Docker Odoo and Invoke commands.
 
 ## 2. Odoo Setup from source
 
