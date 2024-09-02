@@ -1,6 +1,6 @@
 # Development Setup
 
-Setting up a local Odoo environment can be accomplished through two distinct methodologies.
+Setting up a local OpenSPP environment can be accomplished through two distinct methodologies.
 
 ## 1. Docker Odoo Setup Using Doodba
 
@@ -52,7 +52,7 @@ This method is the traditional way of installing Odoo, involving manual installa
 
 ### Setup
 
-1. Follow the official Odoo installation guide suitable for your Operating System.[Link](https://www.odoo.com/documentation/17.0/administration/on_premise.html)
+1. Follow the official Odoo installation guide suitable for your Operating System. [Link](https://www.odoo.com/documentation/17.0/administration/on_premise/source.html)
 
 2. Inside the Odoo folder, create a new directory named custom.
 
@@ -61,15 +61,11 @@ This method is the traditional way of installing Odoo, involving manual installa
 4. Navigate to “custom” and git clone all of the following repositories and their corresponding branches:
 
 - `git clone –branch 17.0 https://github.com/OCA/connector.git`
-- `git clone –branch 17.0 https://github.com/OCA/dms.git`
 - `git clone –branch 17.0 https://github.com/OpenSPP/openspp-modules`
 - `git clone –branch 17.0 https://github.com/OCA/queue.git`
 - `git clone –branch 17.0 https://github.com/OCA/rest-framework.git`
 - `git clone –branch 17.0 https://github.com/OCA/server-auth.git`
 - `git clone –branch 17.0 https://github.com/OCA/server-backend.git`
-- `git clone –branch 17.0 https://github.com/Smile-SA/odoo_addons.git`
-- `git clone –branch 17.0 https://github.com/OCA/social.git`
-- `git clone –branch 17.0 https://github.com/OCA/web.git`
 
 5. `pip install the requirements in requirements.txt in each of the repositories if there is a requirements.txt.
 
