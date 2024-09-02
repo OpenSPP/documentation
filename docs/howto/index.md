@@ -49,6 +49,7 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 
 #Developer Guides
 developer_mode
+developer_guides/development_setup
 developer_guides/setting_up_using_pypi
 developer_guides/troubleshooting
 developer_guides/indicators
