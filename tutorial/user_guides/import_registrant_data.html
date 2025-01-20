@@ -224,6 +224,11 @@
      Setting up service points
     </a>
 </li>
+<li class="toctree-l2">
+<a class="reference internal" href="allocate_funds.html">
+     Allocate funds
+    </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 has-children">
@@ -935,16 +940,16 @@
 <div class="section" id="login-with-proper-user-access-rights">
 <h3>Login with proper user access rights<a class="headerlink" href="#login-with-proper-user-access-rights" title="Permalink to this headline">#</a></h3>
 <p>To prevent data mishandling and improve data security, the permission to import and export data into OpenSPP is exclusive to user accounts with <strong>System admin</strong> role. Learn more about setting up and configuring admin role user accounts here <a class="reference external" href="https://docs.openspp.org/tutorial/user_guides/administrating_role_based_access.html">Administrating role-based access</a>. To verify that your user account has the right permissions, navigate to the four-square icon on the top-left corner and click <strong>Settings</strong> from the list, click <strong>Users &amp; Companies</strong> from the header; then click <strong>Users</strong>. This should display all user accounts in OpenSPP.</p>
-<p><img alt="" src="../../_images/126.png"/></p>
+<p><img alt="" src="../../_images/127.png"/></p>
 <p>Click on the row of the user account and make sure that the <strong>System Admin</strong> role is set under the <strong>Roles</strong> tab.</p>
-<p><img alt="" src="../../_images/217.png"/></p>
+<p><img alt="" src="../../_images/218.png"/></p>
 <p>This indicates you have the correct access rights to perform <strong>import</strong> and <strong>export</strong>.</p>
 </div>
 <div class="section" id="export-records-to-obtain-necessary-headers">
 <h3>Export records to obtain necessary headers<a class="headerlink" href="#export-records-to-obtain-necessary-headers" title="Permalink to this headline">#</a></h3>
 <p>Exporting records is associated with import, as it guides you on which <strong>fields</strong> are available to use when you want to add or update information.</p>
 <p>If the import aims to add a new individual or group (as opposed to updating already existing data), you should export headers that are relevant to your import. You only need to export one record from groups or individuals to obtain the correct headers to use. See below for an example of a file with the relevant headers and a single record.</p>
-<p><img alt="" src="../../_images/315.png"/></p>
+<p><img alt="" src="../../_images/316.png"/></p>
 <p>If the import aims to update already existing individuals or groups, you need to obtain the reference ID for all the records that should be updated and export them. See below an example of a file with headers and multiple records which all include the column for ID.</p>
 <p><img alt="" src="../../_images/411.png"/></p>
 <p>To produce a file that includes the reference and all other fields mandatory for the update, tick the checkbox for <strong>I want to update data (import-compatible export)</strong> in the export dialogue box. Selecting this checkbox also removes fields that cannot be imported back to OpenSPP from <strong>Available fields</strong>. An example of such a field is <strong>Age</strong>, which is a calculated field based on the <strong>Date of Birth</strong> of the individual and therefore cannot be updated through import.</p>
@@ -982,7 +987,7 @@
 <div class="section" id="to-import-select-a-field">
 <h3>To import, select a field<a class="headerlink" href="#to-import-select-a-field" title="Permalink to this headline">#</a></h3>
 <p>If OpenSPP could not recognize your header, it will display <strong>To import, select a field</strong> beside the unrecognized header, similar to the screenshot below.</p>
-<p><img alt="" src="../../_images/127.png"/></p>
+<p><img alt="" src="../../_images/128.png"/></p>
 <p>To resolve this error, if you are familiar with what field you want to associate with your header, you can click To <strong>import, select a field</strong>, and then select from the list of fields you wish to associate your field values with, otherwise, you can remove the header from your excel file as the field you are trying to import is not available to be imported into OpenSPP.</p>
 </div>
 <div class="section" id="column-contains-incorrect-values">
