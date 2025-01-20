@@ -36,4 +36,4 @@ A pop-up message should appear, verifying that the funds have been posted.
 
 ![](allocate_funds/3.png)
 
-You may also modify the **Date Posted** field to post the funding on a later date. Click on **ate Posted** and select a future date. Skip clicking on the **Post** button, then click on **Save manually** button. The funds will be posted on the desired date inputted. Please note, clicking on the Post button automatically sets the **Date Posted** field to the current date.
+You may also modify the **Date Posted** field to post the funding on a later date. Click on **Date Posted** and select a future date. Skip clicking on the **Post** button, then click on **Save manually** button. The funds will be posted on the desired date inputted. Please note, clicking on the Post button automatically sets the **Date Posted** field to the current date.
