@@ -170,7 +170,7 @@ Each sheet must contain the following headers in the first row:
 
 To get the ISO codes of the language you wish to use in the workbook. Go to OpenSPP and login as Administrator, Click on **Settings** and click on **Manage Languages** from the Languages section.
 
-![](import areas_7.png)
+![](import_areas/7.png)
 
 You can find the ISO code under the **ISO code** column of the language you want to add in your workbook.
 
