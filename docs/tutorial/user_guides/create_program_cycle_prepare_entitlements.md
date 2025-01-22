@@ -84,7 +84,7 @@ A popup should appear. Make the necessary changes and then click **Save**.
 
 ![](create_program_cycle_prepare_entitlements/12.png)
 
-See Tutorial - Configure cash entitlements(To be added) to learn more on configuring cash entitlements.
+See Tutorial - [Configure cash entitlements](https://docs.openspp.org/tutorial/user_guides/configure_cash_entitlements.html) to learn more on configuring cash entitlements.
 
 Please note that changes you made into the following fields are only applied to newly prepared entitlements.
 
