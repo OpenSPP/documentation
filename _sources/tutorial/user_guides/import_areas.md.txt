@@ -1,8 +1,10 @@
-# Introduction
+# Import area
+
+## Introduction
 
 In this tutorial, you will learn how to prepare and import area data into OpenSPP using an Excel workbook.
 
-# Prerequisites
+## Prerequisites
 
 To be able to successfully import area data into OpenSPP, the following is required:
 
@@ -10,15 +12,15 @@ To be able to successfully import area data into OpenSPP, the following is requi
 - As OpenSPP supports multiple languages for an area name, language support for the languages you want to use must be configured.
 - A spreadsheet software that can export data as an Excel workbook.
 
-# Objective
+## Objective
 
 By the end of this tutorial, you should understand the purpose and process of preparing the data required to import area data into OpenSPP. You will learn how OpenSPP’s area structure can be used to represent the hierarchical relationship between the areas of your operations.
 
-# Process
+## Process
 
 To access the area import feature, you must log in to OpenSPP with a user account with the **System Admin** role since the functionality is not included for other roles. Learn how to set up roles and accounts in [Administrating role-based access](https://docs.openspp.org/tutorial/user_guides/administrating_role_based_access.html).
 
-## Understand the Data Structure
+### Understand the Data Structure
 
 The area data is structured hierarchically, with each sheet representing an **administrative level**:
 
@@ -27,13 +29,13 @@ The area data is structured hierarchically, with each sheet representing an **ad
 
 Each sheet must follow specific rules regarding column headers and data.
 
-## Create the Excel File/Workbook
+### Create the Excel File/Workbook
 
 1. Open Excel or any spreadsheet software.
 2. Create a new workbook.
 3. Rename each sheet to represent an administrative level, starting with the top-most level (e.g., "ADM0", "ADM1").
 
-## Add Column Headers
+### Add Column Headers
 
 Use the following column headers:
 
@@ -57,7 +59,7 @@ Use the following column headers:
 
 Repeat the same structure for additional levels, adjusting the column headers to match the level (e.g., `ADM2_PCODE` for Level 2).
 
-## Fill in the Data
+### Fill in the Data
 
 **Start with Level 0:**
 
@@ -82,18 +84,18 @@ Repeat the same structure for additional levels, adjusting the column headers to
 
 Repeat the process for additional levels.
 
-## Verify the Data
+### Verify the Data
 
 - **Unique Codes:** Ensure that all **ADMx_PCODE** values are unique.
 - **Language Headers:** Check that all language ISO codes in the headers match the active languages in OpenSPP.
 - **Hierarchy:** For levels \> 0, ensure that each row references a valid parent area in the **ADMx_PCODE** column.
 - Make sure there are no trailing spaces on the column headers.
 
-## Save the File
+### Save the File
 
 Save the workbook in .xlsx format. Then name the file descriptively, e.g., Area_Import.xlsx.
 
-## Import the File
+### Import the File
 
 Navigate to the **Areas Import** module in OpenSPP by clicking on **Area →Areas**
 
@@ -108,12 +110,12 @@ Click on **Upload your file.** Once uploaded, click on **import button to comple
 Once uploaded, click on the **import** button to complete.
 ![](import_areas/6.png)
 
-## Tips for Success
+### Tips for Success
 
 - **Batch Updates:** If importing large datasets, break them into smaller files for easier management.
 - **Error Handling:** If the system reports errors during validation, review the "Remarks/Errors" column in the raw data to fix issues.
 
-## Additional information
+### Additional information
 
 Each sheet must contain the following headers in the first row:
 
@@ -141,7 +143,7 @@ Each sheet must contain the following headers in the first row:
    - **Description:** Name of the parent administrative area in various languages.
    - **Required:** Yes for levels \> 0\.
 
-## Data Rules
+### Data Rules
 
 - **Languages:** All ISO codes in the headers must match active languages in the system. Inactive languages will cause the import to fail.
 - **Level 0 Areas:** Should not have parent codes or parent names.
@@ -149,7 +151,7 @@ Each sheet must contain the following headers in the first row:
 - **Area Codes:** Must be unique across all sheets.
 - **Square Kilometers (AREA_SQKM):** Should be a valid numerical value if provided.
 
-## Validation
+### Validation
 
 1. **Automatic Checks:**
    - The system validates for missing or invalid values.
@@ -158,13 +160,13 @@ Each sheet must contain the following headers in the first row:
    - Missing or non-numerical values in required columns.
    - Inconsistent hierarchy (e.g., missing parent codes for levels \> 0).
 
-## How data is processed
+### How data is processed
 
 - Sheets are processed sequentially by level.
 - Data is imported in batches for efficiency. Errors are logged for each batch.
 - After import, data can be validated and saved into the main area database.
 
-## ISO codes
+### ISO codes
 
 To get the ISO codes of the language you wish to use in the workbook. Go to OpenSPP and login as Administrator, Click on **Settings** and click on **Manage Languages** from the Languages section.
 
