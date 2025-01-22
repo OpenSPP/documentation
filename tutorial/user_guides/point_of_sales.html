@@ -1,0 +1,1132 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+<meta content="Point of Sales" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://docs.openspp.org/tutorial/user_guides/point_of_sales.html" property="og:url"/>
+<meta content="OpenSPP Documentation" property="og:site_name"/>
+<meta content="Introduction: In this Tutorial, you will learn about the POS feature; covering configuration, creating Point of sales and setting it by area. Prerequisites: To utilise this feature, you need the fo..." property="og:description"/>
+<meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
+<meta content="OpenSPP Documentation" property="og:image:alt"/>
+<meta content="Introduction: In this Tutorial, you will learn about the POS feature; covering configuration, creating Point of sales and setting it by area. Prerequisites: To utilise this feature, you need the fo..." name="description"/>
+<meta content="en_US" property="og:locale"/>
+<title>Point of Sales – Tutorial — OpenSPP Documentation v1.1</title>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/sphinxcontrib-httpexample.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/custom.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/print.css" media="print" rel="stylesheet" type="text/css"/>
+<link href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script src="../../_static/sphinxcontrib-httpexample.js"></script>
+<script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+<script src="../../_static/patch_scrollToActive.js"></script>
+<script src="../../_static/search_shortcut.js"></script>
+<script src="../../_static/design-tabs.js"></script>
+<link href="https://docs.openspp.org/tutorial/user_guides/point_of_sales.html" rel="canonical">
+<link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v1.1" type="application/opensearchdescription+xml"/>
+<link href="../../_static/icon_192.png" rel="shortcut icon"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="../../howto/index.html" rel="next" title="How To"/>
+<link href="import_areas.html" rel="prev" title="Import area"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+</link></link></link></link></link></link></head>
+<body data-offset="100" data-spy="scroll" data-target="#bd-toc-nav">
+<!-- Checkboxes to toggle the left sidebar -->
+<input aria-label="Toggle navigation sidebar" class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<label class="overlay overlay-navbar" for="__navigation">
+<div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input aria-label="Toggle in-page Table of Contents" class="sidebar-toggle" id="__page-toc" name="__page-toc" type="checkbox"/>
+<label class="overlay overlay-pagetoc" for="__page-toc">
+<div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+<div class="container-fluid" id="banner"></div>
+<div class="container-xl">
+<div class="row">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+<div class="bd-sidebar__content">
+<div class="bd-sidebar__top"><div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../">
+<h1 class="site-logo" id="site-title">OpenSPP Documentation v1.1</h1>
+</a>
+</div><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<div class="input-group">
+<label class="sr-only" for="q">Search string
+    </label>
+<i aria-hidden="true" class="fa fa-search fa-lg search-icon"></i>
+<input aria-labelledby="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search" spellcheck="false" type="search" value="">
+<div class="input-group-append">
+<span class="input-group-text" id="shortcut">
+<kbd id="search-shortcut">⌘</kbd> <kbd>K</kbd>
+</span>
+</div>
+</input></div>
+</form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../getting_started/">
+   Getting Started
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../getting_started/installation_guide.html">
+     Installation Guide
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../getting_started/poc_and_pilot.html">
+     From Proof of Concept to Pilot
+    </a>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l1 current active has-children">
+<a class="reference internal" href="../">
+   Tutorial
+  </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l2">
+<a class="reference internal" href="../audit_log.html">
+     Audit log
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../change_requests.html">
+     Change Requests
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../consent_management.html">
+     Consent management
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../custom_fields.html">
+     Custom fields
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../dashboards_and_reports.html">
+     Dashboards and reports
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../event_data.html">
+     Event data
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../geotargeting.html">
+     Geotargeting
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../grievance_redressal_management.html">
+     Grievance Redressal Management
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../indicators.html">
+     Indicators
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../hardware_integration.html">
+     Hardware integration
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../programs_and_cycles.html">
+     Programs and cycles
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../vouchers.html">
+     Vouchers
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="register_new_individual.html">
+     Register new individual
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="enroll_beneficiaries.html">
+     Enroll beneficiaries
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="import_registrant_data.html">
+     Import registrant data
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="export_registrant_data.html">
+     Export Registrant Data
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="administrating_role_based_access.html">
+     Administrating role-based access
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="setting_up_service_points.html">
+     Setting up service points
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="allocate_funds.html">
+     Allocate funds
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="create_social_protection_program.html">
+     Create a social protection program
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="create_program_cycle_prepare_entitlements.html">
+     Create a program cycle &amp; prepare entitlements
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="configure_cash_entitlements.html">
+     Configure cash entitlements
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="import_areas.html">
+     Import area
+    </a>
+</li>
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
+     Point of Sales
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../howto/">
+   How To
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_mode.html">
+     Developer mode (debug mode)
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/development_setup.html">
+     Development Setup
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/setting_up_using_pypi.html">
+     Setting Up Using Python Package Manager
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/troubleshooting.html">
+     Troubleshooting
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/indicators.html">
+     Indicators
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/module.html">
+     Module Development
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/troubleshooting.html">
+     Troubleshooting
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/custom_areas.html">
+     Customize Areas
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/custom_audit.html">
+     Customize Audit Logs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/custom_cr.html">
+     Customize Change Request
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/custom_entitlement.html">
+     Customize Entitlement
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/custom_registry.html">
+     Customize Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/custom_registry_tab_fields.html">
+     Customize Registry's Tabs/Fields
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/custom_fields_indicators.html">
+     Adding New Fields and Indicators
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/custom_service_points.html">
+     Customize Service Points
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/rest_api.html">
+     Customize REST API
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/dci.html">
+     Implementation of DCI Specification
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/esignet.html">
+     eSignate Integration
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/oidc.html">
+     Configuring Keycloak for OAuth
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/developer_guides/beneficiary_keycloak.html">
+     Beneficiary portal authentication
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/user_guides/setting_up_farmer_registry.html">
+     Setting up Farmer Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/user_guides/register_new_individual.html">
+     Register new individual
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/user_guides/enroll_beneficiaries.html">
+     Enroll beneficiaries
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/user_guides/import_registrant_data.html">
+     Import registrant data
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/user_guides/export_registrant_data.html">
+     Export Registrant Data
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/user_guides/administrating_role_based_access.html">
+     Administrating role-based access
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../howto/user_guides/setting_up_service_points.html">
+     Setting up service points
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../technical_reference/">
+   Technical Reference
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/architecture.html">
+     Architecture
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/extensibility.html">
+     Customisable, Configurable, and Extensible
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/security.html">
+     Security Implementations &amp; Practices
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/code.html">
+     Code &amp; Repository Management
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/release_management.html">
+     Release Management
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/monitoring.html">
+     Monitoring
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/programs/dashboards.html">
+     Dashboards
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/integrations.html">
+     Integrations
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/external_api.html">
+     External API
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/backup.html">
+     Backup and Recovery
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/performance_optimization.html">
+     Performance Optimization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/programs/concepts.html">
+     Manager Overview
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/programs/program_manager.html">
+     Program Manager
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/programs/cycle_manager.html">
+     Cycle Manager
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/programs/eligibility_manager.html">
+     Eligibility Manager
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/programs/entitlement_manager.html">
+     Entitlement Manager
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/programs/deduplication_manager.html">
+     Deduplication Manager
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../technical_reference/programs/notification_manager.html">
+     Notification Manager
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../explanation/">
+   Explanation
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+<label for="toctree-checkbox-5">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../explanation/digital_public_infrastructure.html">
+     Digital Public Infrastructure
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../explanation/social_registry.html">
+     Social Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../explanation/farmer_registry.html">
+     Farmer Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../explanation/integrated_beneficiary_registry.html">
+     Integrated Beneficiary Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../explanation/social_protection_management_information_systems.html">
+     Social Protection Management Information Systems
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../explanation/user_mgt.html">
+     User Management
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../explanation/security_archi.html">
+     Security Architecture
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../explanation/data_collection_validation.html">
+     Data Collection and Validation
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../explanation/Registering_individuals_and_groups.html">
+     Key Terminology
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../explanation/registry_key_concepts.html">
+     Organizing Data in the Registry
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="../../modules/">
+   OpenSPP Modules Index
+  </a>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../community_and_support/">
+   Community and Support
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+<label for="toctree-checkbox-6">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/how_to_contribute_to_the_project.html">
+     Contributing
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/i18n_l10n.html">
+     Internationalization and Localization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/security_report.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/l3_support.html">
+     Support Model
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/license.html">
+     Licensing
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../contributing/">
+   Contributing to documentation
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+<label for="toctree-checkbox-7">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../contributing/setup-build.html">
+     Building and checking the quality of documentation
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../contributing/authors.html">
+     Authors guide
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../contributing/myst-reference.html">
+     MyST reference
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../contributing/sphinx-extensions.html">
+     Sphinx extensions
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../contributing/admins.html">
+     Administrators Guide
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+<span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1">
+<a class="reference internal" href="../../glossary.html">
+   OpenSPP Glossary
+  </a>
+</li>
+</ul>
+</div>
+</nav></div>
+<div class="bd-sidebar__bottom">
+<!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+<p class="openspporglink">
+<a href="https://openspp.org">
+<img alt="openspp.org" src="/_static/openspp_logo.png"/> openspp.org</a>
+</p>
+</div>
+</div>
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+<div class="header-article row sticky-top noprint">
+<div class="col py-1 d-flex header-article-main">
+<div class="header-article__left">
+<label class="headerbtn" data-placement="right" data-toggle="tooltip" for="__navigation" title="Toggle navigation">
+<span class="headerbtn__icon-container">
+<i class="fas fa-bars"></i>
+</span>
+</label>
+</div>
+<div class="header-article__label">
+<span>Point of Sales – Tutorial</span>
+</div>
+<div class="header-article__right">
+<button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="headerbtn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+<button aria-label="Source repositories" class="headerbtn menu-dropdown__trigger">
+<i class="fab fa-github"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation" title="Source repository">
+<span class="headerbtn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Ftutorial/user_guides/point_of_sales.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<span class="headerbtn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?tutorial/user_guides/point_of_sales.md#making-contributions-on-github" title="Edit this page">
+<span class="headerbtn__icon-container">
+<i class="fas fa-pencil-alt"></i>
+</span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+<button aria-label="Download this page" class="headerbtn menu-dropdown__trigger">
+<i class="fas fa-download"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/tutorial/user_guides/point_of_sales.md.txt" title="Download source file">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+</li>
+<li>
+<button class="headerbtn" data-placement="left" data-toggle="tooltip" onclick="printPdf(this)" title="Print to PDF">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
+</div>
+</div>
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#objective">
+   Objective
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#process">
+   Process
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#verify-pos-module">
+     Verify POS module
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#configure-pos-settings">
+     Configure POS Settings
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#create-point-of-sales">
+       Create Point of sales
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#select-payment-methods">
+       Select Payment methods
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#group-point-of-sales-by-area">
+       Group Point of sales by area
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#starting-point-of-sale-in-web-view-starting-point-of-sale-in-web-view">
+     Starting Point of sale in Web view {#starting-point-of-sale-in-web-view}
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#starting-point-of-sale-in-mobile-view-starting-point-of-sale-in-mobile-view">
+     Starting Point of sale in Mobile view {#starting-point-of-sale-in-mobile-view}
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#refunds">
+     Refunds
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="article row">
+<div class="col pl-md-3 pl-lg-5 content-container">
+<!-- Table of contents that is only displayed when printing the page -->
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>Point of Sales</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#objective">
+   Objective
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#process">
+   Process
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#verify-pos-module">
+     Verify POS module
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#configure-pos-settings">
+     Configure POS Settings
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#create-point-of-sales">
+       Create Point of sales
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#select-payment-methods">
+       Select Payment methods
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#group-point-of-sales-by-area">
+       Group Point of sales by area
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#starting-point-of-sale-in-web-view-starting-point-of-sale-in-web-view">
+     Starting Point of sale in Web view {#starting-point-of-sale-in-web-view}
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#starting-point-of-sale-in-mobile-view-starting-point-of-sale-in-mobile-view">
+     Starting Point of sale in Mobile view {#starting-point-of-sale-in-mobile-view}
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#refunds">
+     Refunds
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<main id="main-content" role="main">
+<div>
+<div class="section" id="point-of-sales">
+<h1>Point of Sales<a class="headerlink" href="#point-of-sales" title="Permalink to this headline">#</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>In this Tutorial, you will learn about the POS feature; covering configuration, creating Point of sales and setting it by area.</p>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<p>To utilise this feature, you need the following:</p>
+<ul class="simple">
+<li><p>Make sure that both modules <strong>OpenSPP POS: ID Redemption</strong> and <strong>OpenSPP POS</strong> are installed and activated.</p></li>
+<li><p>Have existing individual records in your registry, either by creating records manually or importing records into OpenSPP.</p></li>
+<li><p>Have an access role either as <strong>Operations Admin</strong> or <strong>POS operator</strong> to perform tasks in the POS Application.</p></li>
+<li><p>Have an access role as an <strong>Operations Admin</strong> or <strong>Administrator</strong> to perform tasks in OpenSPP. Learn more about this in the guide<a class="reference external" href="https://docs.openspp.org/tutorial/user_guides/administrating_role_based_access.html">Administrating role-based access</a></p></li>
+<li><p>Have an existing cycle with beneficiaries and entitlements generated on a program. Learn more about this in the guide. <a class="reference external" href="https://docs.openspp.org/tutorial/user_guides/create_social_protection_program.html">Create a social protection program</a></p></li>
+</ul>
+</div>
+<div class="section" id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
+<p>By the end of this Tutorial, you will be able to configure Point of sales, manage, classify by area, and generate transactions within the POS feature.</p>
+</div>
+<div class="section" id="process">
+<h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
+<div class="section" id="verify-pos-module">
+<h3>Verify POS module<a class="headerlink" href="#verify-pos-module" title="Permalink to this headline">#</a></h3>
+<p>To be able to create Point of sales, you have to make sure that the necessary modules are installed and activated on your OpenSPP instance, this can be verified by logging in to your OpenSPP instance as Administrator, go to <strong>Apps</strong>, search for <strong>OpenSPP POS</strong> and <strong>OpenSPP POS: ID Redemption</strong> respectively and if not already done, activate them by clicking <strong>Activate</strong> button.</p>
+<p><img alt="" src="../../_images/139.png"/></p>
+<p>After successfully activating, it should display <strong>Learn more</strong> as the remaining button.</p>
+</div>
+<div class="section" id="configure-pos-settings">
+<h3>Configure POS Settings<a class="headerlink" href="#configure-pos-settings" title="Permalink to this headline">#</a></h3>
+<p>Navigate to the menu screen. On the sidebar menu, click <strong>Point of Sale</strong> to open the POS dashboard.</p>
+<p><img alt="" src="../../_images/225.png"/></p>
+<p>Click on <strong>Configuration</strong> and select <strong>Payment methods</strong> to see the payment methods available. By default, the options <strong>Cash</strong>, <strong>Bank</strong> and <strong>Customer Account</strong> are available.</p>
+<p><img alt="" src="../../_images/321.png"/></p>
+<div class="section" id="create-point-of-sales">
+<h4>Create Point of sales<a class="headerlink" href="#create-point-of-sales" title="Permalink to this headline">#</a></h4>
+<p>To create a Point of sale, click on <strong>Point of Sales</strong> from the sidebar, click <strong>Configuration</strong> and select <strong>Point of Sales,</strong> then click on <strong>New</strong>.</p>
+<p><img alt="" src="../../_images/416.png"/></p>
+<p>Assign a name to the Point of Sale you want to create. It is also possible to assign the shop to a specific area by selecting the desired area from the dropdown. Click on <strong>Save</strong> button to keep the changes.</p>
+<p><img alt="" src="../../_images/512.png"/></p>
+</div>
+<div class="section" id="select-payment-methods">
+<h4>Select Payment methods<a class="headerlink" href="#select-payment-methods" title="Permalink to this headline">#</a></h4>
+<p>To select a payment method for your Point of sale, click on <strong>Point of Sales</strong> from the sidebar, navigate to <strong>Configuration</strong> and click on <strong>Settings.</strong> From the <strong>Point of Sale</strong> dropdown, click and select the Point of sale you want to manage.</p>
+<p><img alt="" src="../../_images/612.png"/></p>
+<p>Once you have selected a Point of sale, click on the dropdown from <strong>Payment methods</strong> and select the desired payment methods for this Point of sale. Click the <strong>Save</strong> button to keep the changes.</p>
+<p>Please Note: For <strong>Cash</strong> payment method a unique payment method needs to be created for each Point of sale. In order to create a new <strong>Cash</strong> Payment method, navigate to <strong>Point of Sale</strong>, click on <strong>Configuration</strong> and select <strong>Payment methods</strong>, then click <strong>New</strong>.</p>
+<p><img alt="" src="../../_images/710.png"/></p>
+<p>Define the name of the Payment method and click on the Journal Input field.</p>
+<p><img alt="" src="../../_images/810.png"/></p>
+<p>Click on <strong>Search More</strong> from the dropdown.</p>
+<p><img alt="" src="../../_images/98.png"/></p>
+<p>Click on <strong>New</strong> button.</p>
+<p><img alt="" src="../../_images/107.png"/></p>
+<p>Define the <strong>Journal name</strong>, then select <strong>Cash</strong> under <strong>Type</strong> dropdown. To complete the journal creation, click <strong>Save &amp; Close.</strong></p>
+<p><img alt="" src="../../_images/1113.png"/></p>
+<p>You may now select the new Cash payment method for a Point of sale. Navigate to <strong>Configuration</strong> and click on <strong>Settings</strong>. Select a <strong>Point of sale</strong>. Then under payment methods dropdown, select your new Cash payment method and click <strong>Save</strong>.</p>
+<p><img alt="" src="../../_images/1211.png"/></p>
+</div>
+<div class="section" id="group-point-of-sales-by-area">
+<h4>Group Point of sales by area<a class="headerlink" href="#group-point-of-sales-by-area" title="Permalink to this headline">#</a></h4>
+<p>In order to group Point of sales by area, make sure you have areas already existing in your OpenSPP instance. Learn more about importing areas in the guide <span class="xref myst">Tutorial: Import area</span>. From the sidebar, navigate to <strong>Point of Sale</strong>, select <strong>Configuration</strong> and click <strong>Point of Sales</strong>. Select the Point of sale you wish to manage and assign by clicking an area from the dropdown <strong>Area</strong>.</p>
+<p><img alt="" src="../../_images/1310.png"/></p>
+<p>Navigate to <strong>Point of Sale</strong> and select <strong>Dashboard</strong>. The Point of sales will now be grouped by Area.</p>
+<p><img alt="" src="../../_images/146.png"/></p>
+<p>Point of sales that do not belong to any area will display as minimized. Click the <strong>&lt;&gt;</strong> arrows from the dashboard to expand the view. Click on <strong>Gear</strong> icon to Collapse view.</p>
+<p><img alt="" src="../../_images/154.png"/></p>
+</div>
+</div>
+<div class="section" id="starting-point-of-sale-in-web-view-starting-point-of-sale-in-web-view">
+<h3>Starting Point of sale in Web view {#starting-point-of-sale-in-web-view}<a class="headerlink" href="#starting-point-of-sale-in-web-view-starting-point-of-sale-in-web-view" title="Permalink to this headline">#</a></h3>
+<p>The POS application is viewable in either web view or mobile view, this section will be covering the web view, for mobile view, proceed here: <span class="xref myst">Starting Point of sale in Mobile view</span>.</p>
+<p>The POS application can be operated by either an <strong>Administrator</strong> or a <strong>POS Operator</strong> role.</p>
+<p>To start the Point of sale, click on <strong>Point of Sale</strong> in the sidebar. You should be redirected to the <strong>Dashboard</strong>, where you can select the Point of sale you wish to start.</p>
+<p><img alt="" src="../../_images/164.png"/></p>
+<p>Click on <strong>New Session</strong> to be redirected to the POS Application, then click on <strong>Beneficiary</strong> to display the list of Beneficiaries.</p>
+<p><img alt="" src="../../_images/173.png"/></p>
+<p>Click on the Beneficiary you wish to transact with.</p>
+<p><img alt="" src="../../_images/183.png"/></p>
+<p>Once selected, the beneficiary's name will be displayed in the POS application.</p>
+<p><img alt="" src="../../_images/192.png"/></p>
+<p>Click on the <strong>Entitlement</strong> button to display all the entitlements available for this Beneficiary.</p>
+<p><img alt="" src="../../_images/201.png"/></p>
+<p>Select the entitlement you wish to disburse by clicking on it. Then click <strong>Close</strong> button.</p>
+<p><img alt="" src="../../_images/2110.png"/></p>
+<p>Click on <strong>Payment</strong> button to proceed.</p>
+<p><img alt="" src="../../_images/226.png"/></p>
+<p>Click on <strong>Validate</strong> button to complete.</p>
+<p><img alt="" src="../../_images/232.png"/></p>
+<p>The transaction is now complete. If you wish to start a new transaction, click on <strong>New Order</strong>.</p>
+<p><img alt="" src="../../_images/242.png"/></p>
+</div>
+<div class="section" id="starting-point-of-sale-in-mobile-view-starting-point-of-sale-in-mobile-view">
+<h3>Starting Point of sale in Mobile view {#starting-point-of-sale-in-mobile-view}<a class="headerlink" href="#starting-point-of-sale-in-mobile-view-starting-point-of-sale-in-mobile-view" title="Permalink to this headline">#</a></h3>
+<p>The POS application is viewable in either web view or mobile view. This section will cover the Mobile view, for Web view, proceed here: <span class="xref myst">Starting Point of sale in Web view</span>.</p>
+<p>Click on the upper left box icon to bring up the menu, then click <strong>Point of Sale.</strong></p>
+<p><img alt="" src="../../_images/252.png"/></p>
+<p>You will be taken to the <strong>Dashboard</strong>. Select a Point of sale you wish to start by swiping horizontally and click on <strong>New Session.</strong></p>
+<p><img alt="" src="../../_images/261.png"/></p>
+<p>Click on <strong>Review</strong></p>
+<p><img alt="" src="../../_images/272.png"/></p>
+<p>Then click on <strong>Beneficiary</strong> to display a list of beneficiaries.</p>
+<p><img alt="" src="../../_images/282.png"/></p>
+<p>Click on the relevant beneficiary in the displayed list.</p>
+<p><img alt="" src="../../_images/292.png"/></p>
+<p>Once selected, the beneficiary's name is displayed in the POS application.</p>
+<p><img alt="" src="../../_images/301.png"/></p>
+<p>Click on <strong>More</strong> and then <strong>Entitlement</strong> to display available entitlements for this beneficiary.</p>
+<p><img alt="" src="../../_images/3110.png"/></p>
+<p>Click on the entitlement you wish to disburse and click the <strong>Close</strong> button.</p>
+<p><img alt="" src="../../_images/322.png"/></p>
+<p>Optionally, you may add a note by clicking on <strong>More</strong> followed by <strong>Beneficiary note</strong>. Fill in the note and click on <strong>Add</strong> button. This note will be displayed on the receipt.</p>
+<p><img alt="" src="../../_images/331.png"/></p>
+<p>Click on the <strong>Payment</strong> button to proceed.</p>
+<p><img alt="" src="../../_images/341.png"/></p>
+<p>Click on the <strong>Validate</strong> button to complete.</p>
+<p><img alt="" src="../../_images/351.png"/></p>
+<p>The order or transaction is now complete. Click on <strong>New Order</strong> to start a new transaction.</p>
+<p><img alt="" src="../../_images/361.png"/></p>
+</div>
+<div class="section" id="refunds">
+<h3>Refunds<a class="headerlink" href="#refunds" title="Permalink to this headline">#</a></h3>
+<p>When necessary, it is possible to do refunds for cash entitlements. To start a refund, click on a Point of sale and select a beneficiary. Click on <strong>Refund</strong>.</p>
+<p><img alt="" src="../../_images/371.png"/></p>
+<p>The orders/transactions associated with the beneficiary will be displayed. Click on any transaction to view the details on the right side.</p>
+<p><img alt="" src="../../_images/381.png"/></p>
+<p>Click on an item. You may only refund items that are disbursed, indicated by the negative (-) sign beside its amount.</p>
+<p><img alt="" src="../../_images/391.png"/></p>
+<p>Note that If an item has been already refunded, it will display <strong>Refunded</strong> and you will be unable to click it anymore.</p>
+<p><img alt="" src="../../_images/40.png"/></p>
+<p>Upon clicking the item, click <strong>1</strong> from the number pad key and then click on the <strong>Refund</strong> button.</p>
+<p><img alt="" src="../../_images/417.png"/></p>
+<p>The item to be refunded will be displayed on the menu. Click on <strong>Payment.</strong></p>
+<p><img alt="" src="../../_images/421.png"/></p>
+<p>Select a payment method and click <strong>Validate.</strong> This completes the refund process.</p>
+<p><img alt="" src="../../_images/431.png"/></p>
+<p>To verify that the item was successfully refunded you can click on the burger menu on the top right corner of the screen.</p>
+<p><img alt="" src="../../_images/441.png"/></p>
+<p>Click on <strong>Orders</strong>. You will be redirected to the screen below. Click on <strong>All active orders</strong> and select <strong>Paid</strong></p>
+<p><img alt="" src="../../_images/451.png"/></p>
+<p>Click on the Transaction that involves the Refund and notice that the amount is now a positive value indicating that the cash entitlement has been successful.</p>
+<p><img alt="" src="../../_images/461.png"/></p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer-article noprint">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="import_areas.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Import area</p>
+</div>
+</a>
+<a class="right-next" href="../../howto/index.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">How To</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+</div>
+<div class="footer-content row">
+<footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      © Copyright OpenSPP.<br/>
+<div class="extra_footer">
+<p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+</div>
+</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            if ($.trim($(".sticky-top .bd-toc").html()) === "") {
+                $(".sticky-top .bd-toc").css("visibility", "hidden");
+            }
+        });
+    </script>
+</body>
+</html>
