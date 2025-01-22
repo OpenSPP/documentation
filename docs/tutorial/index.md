@@ -29,6 +29,9 @@ This Tutorials serve as a detailed manual for the utilization and navigation of 
 - [Administrating role-based access](user_guides/administrating_role_based_access)
 - [Setting up service points](user_guides/setting_up_service_points)
 - [Allocate funds](user_guides/allocate_funds)
+- [Create a social protection program](user_guides/create_social_protection_program)
+- [Create a program cycle & prepare entitlements](user_guides/create_program_cycle_prepare_entitlements)
+- [Configure cash entitlements](user_guides/configure_cash_entitlements)
 
 <!-- - [User Management]
 - [Registrant Management]
@@ -71,6 +74,9 @@ user_guides/export_registrant_data
 user_guides/administrating_role_based_access
 user_guides/setting_up_service_points
 user_guides/allocate_funds
+user_guides/create_social_protection_program
+user_guides/create_program_cycle_prepare_entitlements
+user_guides/configure_cash_entitlements
 
 
 ```
