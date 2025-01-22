@@ -47,6 +47,7 @@ Click on **Add a line** to add an amount for your entitlement. Define the amount
 ![](configure_cash_entitlements/5.png)
 
 **Maximum number:** this input field defines the maximum count for the multiplier. If, for example “Number of adults = 5” and “Maximum number= 3”, the **Amount** will be multiplied by 3 instead of 5.
+
 In order to not have any limitations this field should be set to zero(0).
 
 #### Edit after program creation
