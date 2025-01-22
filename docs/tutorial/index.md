@@ -33,6 +33,7 @@ This Tutorials serve as a detailed manual for the utilization and navigation of 
 - [Create a program cycle & prepare entitlements](user_guides/create_program_cycle_prepare_entitlements)
 - [Configure cash entitlements](user_guides/configure_cash_entitlements)
 - [Import area](user_guides/import_areas)
+- [Point of Sales](user_guides/point_of_sales)
 
 <!-- - [User Management]
 - [Registrant Management]
@@ -79,6 +80,7 @@ user_guides/create_social_protection_program
 user_guides/create_program_cycle_prepare_entitlements
 user_guides/configure_cash_entitlements
 user_guides/import_areas
+user_guides/point_of_sales
 
 
 ```
