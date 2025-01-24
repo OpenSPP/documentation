@@ -254,6 +254,11 @@
      Point of Sales
     </a>
 </li>
+<li class="toctree-l2">
+<a class="reference internal" href="configure_ID_generate_qr.html">
+     Configure ID and generate QR code
+    </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 has-children">
@@ -965,20 +970,20 @@
 <div class="section" id="login-with-proper-user-access-rights">
 <h3>Login with proper user access rights<a class="headerlink" href="#login-with-proper-user-access-rights" title="Permalink to this headline">#</a></h3>
 <p>To prevent data mishandling and improve data security, the permission to import and export data into OpenSPP is exclusive to user accounts with <strong>System admin</strong> role. Learn more about setting up and configuring admin role user accounts here <a class="reference external" href="https://docs.openspp.org/tutorial/user_guides/administrating_role_based_access.html">Administrating role-based access</a>. To verify that your user account has the right permissions, navigate to the four-square icon on the top-left corner and click <strong>Settings</strong> from the list, click <strong>Users &amp; Companies</strong> from the header; then click <strong>Users</strong>. This should display all user accounts in OpenSPP.</p>
-<p><img alt="" src="../../_images/137.png"/></p>
+<p><img alt="" src="../../_images/139.png"/></p>
 <p>Click on the row of the user account and make sure that the <strong>System Admin</strong> role is set under the <strong>Roles</strong> tab.</p>
-<p><img alt="" src="../../_images/224.png"/></p>
+<p><img alt="" src="../../_images/225.png"/></p>
 <p>This indicates you have the correct access rights to perform <strong>import</strong> and <strong>export</strong>.</p>
 </div>
 <div class="section" id="export-records-to-obtain-necessary-headers">
 <h3>Export records to obtain necessary headers<a class="headerlink" href="#export-records-to-obtain-necessary-headers" title="Permalink to this headline">#</a></h3>
 <p>Exporting records is associated with import, as it guides you on which <strong>fields</strong> are available to use when you want to add or update information.</p>
 <p>If the import aims to add a new individual or group (as opposed to updating already existing data), you should export headers that are relevant to your import. You only need to export one record from groups or individuals to obtain the correct headers to use. See below for an example of a file with the relevant headers and a single record.</p>
-<p><img alt="" src="../../_images/320.png"/></p>
+<p><img alt="" src="../../_images/321.png"/></p>
 <p>If the import aims to update already existing individuals or groups, you need to obtain the reference ID for all the records that should be updated and export them. See below an example of a file with headers and multiple records which all include the column for ID.</p>
-<p><img alt="" src="../../_images/415.png"/></p>
+<p><img alt="" src="../../_images/416.png"/></p>
 <p>To produce a file that includes the reference and all other fields mandatory for the update, tick the checkbox for <strong>I want to update data (import-compatible export)</strong> in the export dialogue box. Selecting this checkbox also removes fields that cannot be imported back to OpenSPP from <strong>Available fields</strong>. An example of such a field is <strong>Age</strong>, which is a calculated field based on the <strong>Date of Birth</strong> of the individual and therefore cannot be updated through import.</p>
-<p><img alt="" src="../../_images/511.png"/></p>
+<p><img alt="" src="../../_images/512.png"/></p>
 <p>These unique identifiers are associated with each of the records. When you import the Excel file back into OpenSPP after you have updated your desired fields, make sure the values for the fields you updated only affect the ones you intend to import.</p>
 <p>Learn more about export registrant data in Tutorial: <a class="reference external" href="https://docs.openspp.org/tutorial/user_guides/export_registrant_data.html">Export Registrant Data</a></p>
 </div>
@@ -986,17 +991,17 @@
 <h3>Preparing file for import<a class="headerlink" href="#preparing-file-for-import" title="Permalink to this headline">#</a></h3>
 <p>To add new individuals or groups, prepare the Excel file for import by converting cells to text for all fields that consist of numbers; for instance, <strong>phone, date of birth, and registration date</strong>. This is to avoid data errors when inputting number values into these fields. For example the <strong>phone field</strong>, where mobile numbers may start with the + symbol or with leading zeroes can cause a mobile number to be formatted unexpectedly. It is therefore important to format cells to text before adding number values. Also note that when saving the file, only CSV and XLSX formatted files are allowed for import.</p>
 <p>To update existing individuals or groups, open the exported Excel file and modify the cells you wish to update. Note that you should only format specific cells to text if your values break upon input. As in the image below, inputting a phone number with a leading + symbol is automatically formatted. In this case, you should format the specific cell to <strong>Text</strong> to resolve the issue.</p>
-<p><img alt="" src="../../_images/611.png"/></p>
+<p><img alt="" src="../../_images/612.png"/></p>
 </div>
 <div class="section" id="perform-import">
 <h3>Perform import<a class="headerlink" href="#perform-import" title="Permalink to this headline">#</a></h3>
 <p>After the file is verified and ready, the import can be performed using an admin account. Navigate to the <strong>Registry</strong>, and depending on what type of data you are going to import, either click <strong>Individuals</strong> for individual records or <strong>Groups</strong> for group records. Click on the <strong>Favorites</strong> icon, then choose <strong>Import records</strong> from the dropdown menu. You will be redirected to the upload page. Click on the <strong>Load File</strong> button, and choose the file that you prepared. After uploading your file, you will be redirected to the page below.</p>
-<p><img alt="" src="../../_images/79.png"/></p>
+<p><img alt="" src="../../_images/710.png"/></p>
 <p>Click <strong>Test</strong>; this will validate the data in the import document. If the message <strong>Everything seems valid is displayed</strong>, it is possible to proceed with the import.</p>
-<p><img alt="" src="../../_images/89.png"/></p>
+<p><img alt="" src="../../_images/810.png"/></p>
 <p>If there are any issues with the file, a message will instead be displayed giving directions on how to solve the issue. You may refer to the <strong>Error handling</strong> section of this document to learn more about common errors.</p>
 <p>When the file is considered valid, it is possible to click the <strong>Import</strong> button. This will redirect to the main table page, and you will receive a notification informing that the records have been successfully imported.</p>
-<p><img alt="" src="../../_images/97.png"/></p>
+<p><img alt="" src="../../_images/98.png"/></p>
 </div>
 <div class="section" id="error-handling">
 <h3>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">#</a></h3>
@@ -1005,9 +1010,9 @@
 <div class="section" id="no-matching-records-found">
 <h3>No matching records found<a class="headerlink" href="#no-matching-records-found" title="Permalink to this headline">#</a></h3>
 <p>Some fields require values that are predefined in OpenSPP, such as the <strong>category_id</strong> field. Setting a value in this column that does not match the values found in OpenSPP will return an error message. This error will be similar to the screenshot provided below.</p>
-<p><img alt="" src="../../_images/106.png"/></p>
+<p><img alt="" src="../../_images/107.png"/></p>
 <p>To resolve this type of error, only type in values that are defined in OpenSPP, in this case for <strong>category_id</strong>, you can navigate to <strong>Registry</strong>, then click <strong>Configuration</strong>, and after that, select Registrant <strong>Tags</strong>. You should see the list of the defined Tags. Only use these values from the list for <strong>category_id</strong>.</p>
-<p><img alt="" src="../../_images/1112.png"/></p>
+<p><img alt="" src="../../_images/1113.png"/></p>
 </div>
 <div class="section" id="to-import-select-a-field">
 <h3>To import, select a field<a class="headerlink" href="#to-import-select-a-field" title="Permalink to this headline">#</a></h3>
@@ -1018,7 +1023,7 @@
 <div class="section" id="column-contains-incorrect-values">
 <h3>Column contains incorrect values<a class="headerlink" href="#column-contains-incorrect-values" title="Permalink to this headline">#</a></h3>
 <p>Another error is the date format, if the imported format for fields related to date is incorrect, OpenSPP will display an error message. This error will be similar to the screenshot provided below.</p>
-<p><img alt="" src="../../_images/138.png"/></p>
+<p><img alt="" src="../../_images/1310.png"/></p>
 <p>To resolve this error, fix the date format from your Excel file to this format <strong>YYYY-MM-DD</strong>, save the file, then import to test again.</p>
 </div>
 <div class="section" id="you-are-not-allowed-to-access-import-matching">
