@@ -34,6 +34,7 @@ This Tutorials serve as a detailed manual for the utilization and navigation of 
 - [Configure cash entitlements](user_guides/configure_cash_entitlements)
 - [Import area](user_guides/import_areas)
 - [Point of Sales](user_guides/point_of_sales)
+- [Configure ID and generate QR code](user_guides/configure_ID_generate_qr)
 
 <!-- - [User Management]
 - [Registrant Management]
@@ -81,6 +82,7 @@ user_guides/create_program_cycle_prepare_entitlements
 user_guides/configure_cash_entitlements
 user_guides/import_areas
 user_guides/point_of_sales
+user_guides/configure_ID_generate_qr
 
 
 ```
