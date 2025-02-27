@@ -12,6 +12,7 @@ Distinct from tutorials or how-to guides, which are action-oriented, explanation
 - {doc}`data_collection_validation`
 - {doc}`Registering_individuals_and_groups`
 - {doc}`registry_key_concepts`
+- {doc}`data_protection`
 
 ```{toctree}
 ---
@@ -31,4 +32,5 @@ security_archi
 data_collection_validation
 Registering_individuals_and_groups
 registry_key_concepts
+data_protection
 ```
