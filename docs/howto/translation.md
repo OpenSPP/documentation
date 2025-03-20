@@ -4,6 +4,7 @@
 OpenSPP uses the GNU gettext system for internationalization and localization, leveraging PO (Portable Object) and POT (Portable Object Template) files. This guide explains the workflow for managing translations, adding new languages, updating existing translations, and maintaining high-quality localized content.
 
 For additional reference, see:
+- [Odoo 17 Translation Guide](https://www.odoo.com/documentation/17.0/developer/howtos/translations.html)
 - [Odoo 16 Translation Guide](https://www.odoo.com/documentation/16.0/developer/howtos/translations.html)
 - [polib Python Library](https://pypi.org/project/polib/)
 
