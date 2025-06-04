@@ -35,5 +35,6 @@ setup-build
 authors
 myst-reference
 sphinx-extensions
+redirects
 admins
 ```

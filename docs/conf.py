@@ -164,10 +164,22 @@ extensions = [
     "sphinx.ext.graphviz",
     "sphinx_tabs.tabs",
     "notfound.extension",
+    "sphinx_reredirects",
 ]
 
 sphinx_tabs_disable_tab_closing = True
 sphinx_tabs_disable_css_loading = True
+
+# -- sphinx-reredirects configuration ----------------------------------
+# Redirect configuration for moved or renamed pages
+# Format: "old-path": "new-path.html"
+# Paths are relative to the documentation root
+redirects = {
+    # Example redirects (uncomment and modify as needed):
+    # "old-page": "new-page.html",
+    # "old-folder/page": "new-folder/page.html",
+    # "deprecated/api": "reference/api.html",
+}
 
 # If true, the Docutils Smart Quotes transform, originally based on SmartyPants
 # (limited to English) and currently applying to many languages, will be used
