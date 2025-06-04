@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # Performance Optimization
 
 In large-scale deployment of OpenSPP, performance optimization is pivotal. This article delves into several key areas that architects & developers should focus on to enhance the performance of their deployment of OpenSPP. These areas include various strategies to ensure smoother operations.

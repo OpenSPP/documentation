@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # Developer Guide
 
 This section provides technical information and instructions for developers who need to customize, extend, integrate with, or contribute to OpenSPP.

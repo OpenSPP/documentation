@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # Module Development
 
 Module development is a crucial aspect of extending the functionality of OpenSPP. When developing a module for OpenSPP, it's important to adhere to certain principles and guidelines to ensure compatibility and performance.

@@ -364,6 +364,14 @@ myst_enable_extensions = [
     "html_image",  # For inline images. See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 ]
 
+# MyST html_meta configuration - disabled due to incorrect behavior
+# myst_html_meta = {
+#     "review-status": "review-status",
+#     "review-date": "review-date", 
+#     "reviewer": "reviewer",
+#     "migration-notes": "migration-notes"
+# }
+
 myst_substitutions = {
     "postman_basic_auth": "![](../_static/img/postman_basic_auth.png)",
     "postman_headers": "![](../_static/img/postman_headers.png)",

@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # Managing Documentation Redirects
 
 This guide explains how to handle redirects when refactoring or moving documentation pages in the OpenSPP documentation.

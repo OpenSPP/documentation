@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # Customize Program
 
 This guide provides a structured approach for implementing and customising the program in OpenSPP through the development of a custom module.

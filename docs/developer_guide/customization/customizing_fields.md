@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # Adding New Fields and Indicators
 
 Custom fields allow the system to capture additional information that may be crucial for various social protection programs. Indicator fields are predefined fields within the system used to capture specific, standard metrics or key performance indicators (KPIs) that are essential for monitoring and evaluating the performance of social protection programs. Customizing groups and individuals with new fields and indicators enhances the system's ability to manage and analyze registrant data effectively.

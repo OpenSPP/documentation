@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # Backup and Recovery
 
 Backup and Recovery encompasses strategies and techniques designed to protect and restore data, applications, and infrastructure in the event of data loss, {term}`corruption`, or disasters in OpenSPP deployments. This process is essential for maintaining data integrity, ensuring availability, and facilitating business continuity. As data is critical for business operations, the loss of data can disrupt business activities, incur financial penalties, harm reputation, and even lead to legal consequences. An effective Backup and Recovery strategy mitigates these risks by ensuring that data is not permanently lost and can be recovered quickly to minimize downtime.

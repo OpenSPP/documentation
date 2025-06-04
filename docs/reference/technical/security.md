@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # Security Implementations & Practices
 
 This page delves into the implementation and practices of OpenSPP, highlighting its adherence to the principles of zero-trust architecture, user {term}`authentication`, input/output validation, session management, cryptographic management, file management, and robust logging.

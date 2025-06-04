@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # From Proof of Concept to Pilot
 
 Implementing OpenSPP progresses through four key phases: Proof of Concept, Pilot, Scale-up, and Operational Support. This guide focuses on the first two phases, providing insights into the PoC and Pilot stages. The PoC, typically lasting 4-8 weeks, demonstrates OpenSPP's core capabilities and adaptability to specific needs. The Pilot, spanning 3-6 months, involves a small-scale but real-world implementation to test feasibility, effectiveness, and scalability. This document provides a comprehensive overview of both phases, including their purposes, key components, and success criteria.

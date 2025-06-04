@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # Implementation of DCI Specification
 
 In the rapidly evolving landscape of digital public infrastructure (DPI), the principle of interoperability stands as an important for building efficient, inclusive, and sustainable systems in a country. This article delves into how OpenSPP implemented APIs outlined in the [DCI Interface Standards v1.0](https://standards.spdci.org/standards/standards-for-interoperability-interfaces/structure-and-versioning-of-the-standards) under Registry to enable interoperability with other systems such as CRVS.

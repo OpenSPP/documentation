@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # Customize Service Points
 
 The following article guides the reader in understanding how the service point module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example.

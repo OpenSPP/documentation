@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # Beneficiary portal authentication
 
 In this article, the steps will be given on how to add a single sign-on to a beneficiary portal which improves user experience. This guide helps us to create a front-end application where a beneficiary registered in OpenSPP and can log in using Keycloak.

@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # PMT via the UI
 
 This guide elucidates the steps required to implement Proxy Means Testing (PMT) within the OpenSPP system, leveraging Odoo's user interface customization features. By following through, one will learn how to add custom fields to models and modify views to accommodate the newly introduced data fields to implement PMT.

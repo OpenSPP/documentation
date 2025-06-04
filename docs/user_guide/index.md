@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # User Guide
 
 This section provides practical, task-oriented instructions for using OpenSPP's features in day-to-day operations. These guides are designed for administrators and end-users who need to accomplish specific tasks within the platform.

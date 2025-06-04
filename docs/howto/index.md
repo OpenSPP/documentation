@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # How To
 
 Here you’ll find articles on “How do I….?” types of questions. It addresses the task of traversing through a practical problem area, from one aspect to another.

@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # Key Terminology
 
 Registrants are at the heart of OpenSPP. They are the people or groups that are being registered to be

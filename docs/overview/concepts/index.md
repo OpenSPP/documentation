@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # Concepts
 
 Distinct from tutorials or how-to guides, which are action-oriented, explanations delve into theoretical knowledge. This type of documentation does not focus on the minute details like reference materials but instead takes a higher-level perspective.

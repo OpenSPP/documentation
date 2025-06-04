@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # Data Collection and Validation
 
 OpenSPP, with its comprehensive approach to data management, emphasizes the importance of data collection and rigorous validation procedures. This article delves into how OpenSPP approaches these critical aspects, ensuring data integrity and usefulness.

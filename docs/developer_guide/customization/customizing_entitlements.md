@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # Customize Entitlement
 
 The following article guides the reader in understanding how the entitlement can be customized by providing a sample scenario and a working example.

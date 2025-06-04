@@ -1,3 +1,10 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
 # PMT using Module Development
 
 This tutorial guides you through installing and implementing the Proxy Means Testing (PMT) module in OpenSPP with the help of custom module development. By following these steps, you will be able to extend the functionality of the OpenSPP with PMT features.
