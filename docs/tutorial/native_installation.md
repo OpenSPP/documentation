@@ -89,7 +89,10 @@ cd ../..
 
 ### 1. Create a System User (optional but recommended)
 ```bash
+# Create a system user with home directory at /opt/openspp
 sudo useradd -m -d /opt/openspp -U -r -s /bin/bash openspp
+# This command will automatically create the /opt/openspp directory.
+# You will later place the Odoo source and OpenSPP modules inside this directory.
 sudo su - openspp
 ```
 
