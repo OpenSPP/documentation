@@ -68,7 +68,7 @@ pip install --upgrade pip wheel setuptools
 
 ### 3. Clone the OpenSPP Source Code
 ```bash 
-git clone https://github.com/OpenSPP/openspp.git
+git clone https://www.github.com/odoo/odoo --depth 1 --branch 16.0 openspp
 cd openspp
 git clone https://github.com/OpenSPP/openspp-modules.git addons
 ```
