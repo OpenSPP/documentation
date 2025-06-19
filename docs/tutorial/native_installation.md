@@ -39,6 +39,10 @@ sudo apt install -y git python3-pip python3-dev python3-venv python3-wheel \
     build-essential wget nodejs npm libfreetype6-dev libjpeg-dev \
     zlib1g-dev libopenjp2-7-dev liblcms2-dev
 ```
+### Optional (for GIS-related modules)
+```bash
+sudo apt install postgis
+```
 ### For CentOS/RHEL:
 ```bash
 sudo yum update -y
