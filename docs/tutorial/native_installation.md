@@ -72,7 +72,19 @@ git clone https://www.github.com/odoo/odoo --depth 1 --branch 16.0 openspp
 cd openspp
 git clone https://github.com/OpenSPP/openspp-modules.git addons
 ```
+### Optional but Recommended 
+Install External Module Dependencies
+OpenSPP depends on several Odoo community modules. To ensure full functionality, clone them into an `extra-addons` directory:
+```bash
+mkdir extra-addons
+cd extra-addons
 
+# Example dependencies (update based on OpenSPP needs)
+git clone https://github.com/OCA/server-tools.git
+git clone https://github.com/OCA/web.git
+
+cd ..
+```
 ### 4. Install Python Dependencies
 ```bash
 pip install -r requirements.txt
