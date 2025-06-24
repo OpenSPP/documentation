@@ -1,11 +1,11 @@
 ---
-review-status: approved
+review-status: reviewed
 review-date: 2025-06-24
 reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Digital Public Infrastructure
+# Digital Public Infrastructures
 
 ## Introduction to DPI
 
