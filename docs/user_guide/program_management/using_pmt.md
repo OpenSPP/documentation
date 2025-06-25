@@ -22,7 +22,7 @@ Overall, the specific criteria used to calculate the PMT may vary depending on t
 
 ## How to configure a proxy mean test
 
-### Exemple
+### Example
 
 Here's a simple example of a PMT formula using the following indicators: household size, education level, and assets:
 

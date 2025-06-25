@@ -34,7 +34,6 @@ Guides for creating and managing social protection programs:
 - {doc}`program_management/using_geotargeting`
 - {doc}`program_management/using_indicators`
 - {doc}`program_management/using_vouchers`
-- {doc}`program_management/export_beneficiaries`
 
 ## Administration
 

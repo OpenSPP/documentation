@@ -1,13 +1,9 @@
 ---
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
+review-status: reviewed
+review-date: 2025-06-17
+reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
-
-
-
-### Content from docs/tutorial/user_guides/configure_cash_entitlements.md
 
 # Configure cash entitlements
 
