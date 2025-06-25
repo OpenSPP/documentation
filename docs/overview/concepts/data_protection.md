@@ -1,7 +1,7 @@
 ---
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
+review-status: reviewed
+review-date: 2025-06-24
+reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
@@ -48,7 +48,7 @@ The list above is a starting point but by no means exhaustive. Every government/
 
 While individuals have the right to request the deletion of their personal data, certain situations require data to be retained for legal, public interest, or security reasons. These exceptions ensure that critical government functions, research, and legal obligations are not disrupted.
 
-- Governments and organizations are required to retain certain types of data for compliance with legal obligations. This applies to government databases and social registries, which store identity records and beneficiary information. Additionally, auditing and fraud prevention measures often necessitate the preservation of data for verification and accountability purposes..
+- Governments and organizations are required to retain certain types of data for compliance with legal obligations. This applies to government databases and social registries, which store identity records and beneficiary information. Additionally, auditing and fraud prevention measures often necessitate the preservation of data for verification and accountability purposes.
 
 - Data retention is also allowed when necessary for public interest and research. This includes cases where information is needed for health and safety, such as tracking epidemics or maintaining medical records. Scientific, historical, or statistical research also relies on long-term data collection to generate valuable insights that benefit society.
 

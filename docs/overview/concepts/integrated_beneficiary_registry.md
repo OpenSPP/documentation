@@ -1,7 +1,7 @@
 ---
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
+review-status: Reviewed
+review-date: 2025-06-23
+reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
@@ -21,7 +21,7 @@ In the realm of {term}`social protection`, an {term}`Integrated beneficiary regi
 
 - **Demographic Information**: Includes ID, age, sex, {term}`family` members, etc.
 - **Contact Information**: Address, phone number, and email (if available).
-- **{term}`household` Composition**: Details about the beneficiary's household, including relationship with the beneficiary and educational status of household members.
+- **{term}`Household` Composition**: Details about the beneficiary's household, including relationship with the beneficiary and educational status of household members.
 - **Program Enrollment**: Information on programs in which beneficiaries are or were enrolled.
 - **Benefit History**: Details of assistance received, payment history, and duration of participation.
 - **Socioeconomic Data**: Such as poverty scores.

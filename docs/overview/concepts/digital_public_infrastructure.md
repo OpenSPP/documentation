@@ -5,7 +5,7 @@ reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Digital Public Infrastructures
+# Digital Public Infrastructure
 
 ## Introduction to DPI
 

@@ -20,7 +20,6 @@ Distinct from tutorials or how-to guides, which are action-oriented, explanation
 - {doc}`registry_key_concepts`
 - {doc}`data_protection`
 - {doc}`extensibility`
-- {doc}`openg2p`
 
 ```{toctree}
 ---
@@ -40,5 +39,4 @@ registrant_concepts
 registry_key_concepts
 data_protection
 extensibility
-openg2p
 ```
