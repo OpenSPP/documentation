@@ -27,9 +27,9 @@ After completing this tutorial, you will gain an understanding of how to manage 
 
 All user-related tasks, such as creating new users, modifying existing users, configuring their information, passwords, and user roles, are performed on the **User** page.
 
-The **Users** page is accessed by clicking on the four-square icon in the top-left corner and select **Settings**.
+The **Users** page is accessed by clicking on the menu icon in the top-left corner and select **Settings**.
 
-![](administrating_role_based_access/1.png)
+![](administrating_role_based_access/access_rights_menu_icon.png)
 
 Click on **Users & Companies** and you will see the **Users, Companies**, and **Roles** options.
 
@@ -37,11 +37,11 @@ Click on **Users & Companies** and you will see the **Users, Companies**, and **
 
 ### Creating user account
 
-User roles can only be assigned to existing user accounts. To create user accounts, click on the four-square icon in the top-left corner, then choose **Settings**. Click on **Users & Companies** and select **Users**. Click on the **Create** button, fill in the user's name and email address, and then click **Save**. The password will need to be added or changed as described in the **Change User Password** section below.
+User roles can only be assigned to existing user accounts. To create user accounts, click on the menu icon in the top-left corner, then choose **Settings**. Click on **Users & Companies** and select **Users**. Click on the **Create** button, fill in the user's name and email address, and then click **Save**. The password will need to be added or changed as described in the **Change User Password** section below.
 
 ### Change user password
 
-Click on the four-square icon in the top-left corner, then select **Settings**. Click **Users & Companies** then click **Users** from the dropdown list. Click on the user account that should be modified, and then click on the **Action** button.
+Click on the menu icon in the top-left corner, then select **Settings**. Click **Users & Companies** then click **Users** from the dropdown list. Click on the user account that should be modified, and then click on the **Action** button.
 
 ![](administrating_role_based_access/3.png)
 
@@ -53,7 +53,7 @@ Click on **Change Password** in the action list, enter the new password in the *
 
 To maintain proper security, it is important to ensure that users who should no longer have access to the system are taken out of active use.
 
-All such actions are taken from the **Users** section. Click on the four-square icon in the top-left corner, then select **Settings**, click **Users & Companies**, and then click **Users**. Click on the name of the user you wish to manage, then click the **Action** button, where you will find the different options listed below.
+All such actions are taken from the **Users** section. Click on the menu icon in the top-left corner, then select **Settings**, click **Users & Companies**, and then click **Users**. Click on the name of the user you wish to manage, then click the **Action** button, where you will find the different options listed below.
 
 ### Delete
 
@@ -77,11 +77,11 @@ Navigate back to the **Users** page. Clear the **Inactive Users** filter by clic
 
 ### Editing user Information
 
-The editable user information is **Name** and **Email Address**. Click on the four-square icon in the top-left corner, then click on **Settings**, navigate to **Users & Companies** and select **Users**.
+The editable user information is **Name** and **Email Address**. Click on the menu icon in the top-left corner, then click on **Settings**, navigate to **Users & Companies** and select **Users**.
 
-Click on the name of the user you wish to edit. Click on **Edit** to modify the name and email address fields. Click on **Save** to proceed with the changes.
+Click on the name of the user you wish to edit. Click on the field to modify the name or email address fields. Click on **Save** icon to proceed with the changes.
 
-![](administrating_role_based_access/7.png)
+![](administrating_role_based_access/access_rights_save_user_edit.png)
 
 ### Assigning roles to a user
 
