@@ -1,7 +1,7 @@
 ---
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
+review-status: reviewed
+review-date: 2025-07-03
+reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
@@ -37,23 +37,23 @@ Click on **Users & Companies** and you will see the **Users, Companies**, and **
 
 ### Creating user account
 
-User roles can only be assigned to existing user accounts. To create user accounts, click on the menu icon in the top-left corner, then choose **Settings**. Click on **Users & Companies** and select **Users**. Click on the **Create** button, fill in the user's name and email address, and then click **Save**. The password will need to be added or changed as described in the **Change User Password** section below.
+User roles can only be assigned to existing user accounts. To create user accounts, click on the menu icon in the top-left corner, then choose **Settings**. Click on **Users & Companies** and select **Users**. Click on the **New** button, fill in the user's name and email address, and then click **Save**. The password will need to be added or changed as described in the **Change User Password** section below.
 
 ### Change user password
 
-Click on the menu icon in the top-left corner, then select **Settings**. Click **Users & Companies** then click **Users** from the dropdown list. Click on the user account that should be modified, and then click on the **Action** button.
+Click on the menu icon in the top-left corner, then select **Settings**. Click **Users & Companies** then click **Users** from the dropdown list. Click on the user account that should be modified, and then click on the **Gear** button.
 
-![](administrating_role_based_access/3.png)
+![](administrating_role_based_access/access_rights_change_password.png)
 
-Click on **Change Password** in the action list, enter the new password in the **New Password** field, and then click the **Change Password** button. The password is now successfully updated.
+Click on **Change Password** in the dropdown list, enter the new password in the **New Password** field, and then click the **Change Password** button. The password is now successfully updated.
 
-![](administrating_role_based_access/4.png)
+![](administrating_role_based_access/access_rights_change_password_modal.png)
 
 ### Enabling and disabling user account
 
 To maintain proper security, it is important to ensure that users who should no longer have access to the system are taken out of active use.
 
-All such actions are taken from the **Users** section. Click on the menu icon in the top-left corner, then select **Settings**, click **Users & Companies**, and then click **Users**. Click on the name of the user you wish to manage, then click the **Action** button, where you will find the different options listed below.
+All such actions are taken from the **Users** section. Click on the menu icon in the top-left corner, then select **Settings**, click **Users & Companies**, and then click **Users**. Click on the name of the user you wish to manage, then click the **Gear** button, where you will find the different options listed below.
 
 ### Delete
 
@@ -65,13 +65,13 @@ To temporarily delete the user account from OpenSPP, click on **Archive** in the
 
 ### Unarchive
 
-To restore a temporarily deleted user account to OpenSPP, it is performed in a similar way as the archive. Since the user account will no longer be displayed among the active users, additional steps need to be performed to navigate to the user.
+To restore a temporarily archived user account to OpenSPP, it is performed in a similar way as the archive. Since the user account will no longer be displayed among the active users, additional steps need to be performed to navigate to the user.
 
-Navigate to the **Users** page, click on **Filters**, then click **Inactive Users**. This displays all user accounts that have been temporarily deleted or archived. Click on the name of the user account you wish to unarchive. Click on the **Action** button, and then click **Unarchive**.
+Navigate to the **Users** page, click on the down arrow from the searchbar, then click **Filters**, then click **Inactive Users**. This displays all user accounts that have been temporarily deleted or archived. Click on the name of the user account you wish to unarchive. Click on the **Gear** button, and then click **Unarchive**.
 
-![](administrating_role_based_access/5.png)
+![](administrating_role_based_access/access_rights_searchbar_filter.png)
 
-Navigate back to the **Users** page. Clear the **Inactive Users** filter by clicking the **x** icon. The unarchived user account should now be visible along with all users accounts.
+Navigate back to the **Users** page. Clear the **Inactive Users** filter by clicking the **x** icon. The unarchived user account should now be visible along with all active users accounts.
 
 ![](administrating_role_based_access/6.png)
 
@@ -87,37 +87,37 @@ Click on the name of the user you wish to edit. Click on the field to modify the
 
 Assigning a role to a user account enables them to perform a specific set of actions in OpenSPP. For instance, only a **System admin** role has the permission to import and export data in and out of OpenSPP. Therefore, it is important to assign specific roles, particularly to the user account’s purpose. This also prevents unauthorized access to sensitive data, which may be easily mishandled.
 
-Click on the four-square icon in the top-left corner then choose on **Settings**. Click **Users & Companies** and select **Users**.
+Click on the menu icon in the top-left corner then choose on **Settings**. Click **Users & Companies** and select **Users**.
 
-![](administrating_role_based_access/8.png)
+![](administrating_role_based_access/access_rights_users_tab.png)
 
 Click on the name of the user account you wish to assign roles to. In the **Roles** tab click **Add a line**. Use the dropdown menu to select the appropriate role for the user. Depending on the role selected, the behavior of the **Center area** tab will vary. Roles can be either **Global** or **Local**. A **Global** role grants access to all geographical areas, while a **Local** role allows the option to restrict which geographical areas the user can access. If the assigned role is **Local** the column **Center Area** will be enabled, allowing the selection of one center area. If left blank, the role will act as **Global**. It is possible to assign multiple roles to a user.
 
-![](administrating_role_based_access/9.png)
+![](administrating_role_based_access/access_rights_roles_dropdown.png)
 
 Configure the **From** and **To** columns. **From** defines when this user can start having the selected access role, while **To** defines when it will expire. To remove the role from the user, simply click on the trash icon. Click on the **Save** button once done.
 
-![](administrating_role_based_access/10.png)
+![](administrating_role_based_access/access_rights_from_to.png)
 
 ### Configuring roles
 
-Roles are typically pre-configured and available for selection; however, you can also create and configure them yourself. To create a new role click on the four-square icon in the top-left corner, click on **Settings** then select **Roles** under **Users & Companies**. A list of roles is displayed on the **Roles** page.
+Roles are typically pre-configured and available for selection; however, you can also create and configure them yourself. To create a new role click on the menu icon in the top-left corner, click on **Settings** then select **Roles** under **Users & Companies**. A list of roles is displayed on the **Roles** page.
 
-![](administrating_role_based_access/11.png)
+![](administrating_role_based_access/access_rights_roles.png)
 
-Click **Create**, set a name for the role, and select a **Role Type**. **Roles Types** can be either **Global** or **Local**. A **Global** role grants access to all geographical areas, while a **Local** role allows the option to restrict which geographical areas the user can access.
+Click **New**, set a name for the role, and select a **Role Type**. **Roles Types** can be either **Global** or **Local**. A **Global** role grants access to all geographical areas, while a **Local** role allows the option to restrict which geographical areas the user can access.
 
-![](administrating_role_based_access/12.png)
+![](administrating_role_based_access/access_rights_create_role.png)
 
 Under the **Groups** tab, click **Add a line** and tick the checkbox beside the group(s) you wish to add for this role. Click **Select** to save the selection.
 
 Navigate back to the **Roles** page by clicking **Roles** under **Users & Companies**. The new role is displayed in the list.
 
-![](administrating_role_based_access/13.png)
+![](administrating_role_based_access/access_rights_created_role.png)
 
 It is also possible to view all user accounts associated with a role. In the **Roles** page, click a role from the list and click on the **Users** tab.
 
-![](administrating_role_based_access/14.png)
+![](administrating_role_based_access/access_rights_roles_list.png)
 
 You can assign users to the selected role by clicking **Add a line** and selecting the user you wish to associate the role with. Click on the trash icon to unlink the user account from the role.
 
@@ -125,9 +125,11 @@ You can assign users to the selected role by clicking **Add a line** and selecti
 
 The list of access rights for a group is typically pre-configured; however, you may also modify the list of access rights associated with a group. To access the **Groups** page, the **Developer mode** must first be activated. This is done by navigating to **Settings**, scrolling down to the last part of the page, and clicking **Activate the developer mode**. You will then be automatically redirected back to the **Registry** page.
 
-![](administrating_role_based_access/15.png)
+![](administrating_role_based_access/access_rights_activate_developer_mode.png)
 
+```{note}
 Activating the {ref}`developer-mode` enables users to select **User Types**.
+```
 
 ![](administrating_role_based_access/16.png)
 
@@ -135,9 +137,9 @@ The **Portal** and **Public** options don't allow you to choose access rights. M
 
 Go back to **Settings**. Click on **Users & Companies** where the option **Groups** should now be displayed.
 
-![](administrating_role_based_access/17.png)
+![](administrating_role_based_access/access_rights_groups_tab.png)
 
-Click **Groups** to be redirected to the group's page. You may create new groups by clicking the **New** button, or you can manage existing groups by clicking the checkbox beside each group and then clicking the **Action** button, or you can modify groups by clicking on a group’s name.
+Click **Groups** to be redirected to the group's page. You may create new groups by clicking the **New** button, or you can manage existing groups by clicking the checkbox beside each group and then clicking the **Actions** button, or you can modify groups by clicking on a group’s name.
 
 Click a group from the list to manage its permissions.
 
@@ -148,16 +150,16 @@ The first level of rights is under **Access Rights** tab. The _Access Rights_ co
 - _Create_: The user can create values for that object.
 - _Delete_: The user can delete the values of that object.
 
-![](administrating_role_based_access/18.png)
+![](administrating_role_based_access/access_rights_access_rights_tab.png)
 
 The Access Rights menu alone doesn't display details of the rules and inheritances of a group. This is where the Groups menu comes into play. Under **Users** tab, you will be able to add or remove users that belong to this group.
 The current users directly associated with this group are listed under **Users** . 
 
-![](administrating_role_based_access/access_rights_users.png)
+![](administrating_role_based_access/access_rights_users_column.png)
 
 You can automatically associate users to app groups through **Inherited** tab. In the example below, users who have access to the group _Local Registrar_ also have access to the group names listed below.
 
-![](administrating_role_based_access/access_rights_inherited.png)
+![](administrating_role_based_access/access_rights_inherited_column.png)
 
 ```{note}
 Remember to always test the settings being changed in order to ensure that they are being applied to the needed and right users.
@@ -165,17 +167,17 @@ Remember to always test the settings being changed in order to ensure that they 
 
 The **Menus**  tab is where you define which menus (models) the user can have access to.
 
-![](administrating_role_based_access/access_rights_menus.png)
+![](administrating_role_based_access/access_rights_menu_column.png)
 
 You can form _Record Rules_ as a second layer of editing and visibility rules. They overwrite, or refine, the _Access Rights_.
 The user writes a record rule using a _Domain_. Domains are conditions used to filter or searching data. Therefore, a domain expression is a list of conditions. For each rule, choose among the following options: _Read_, _Write_, _Create_ and _Delete_ values.
 
-![](administrating_role_based_access/access_rights_record_rules.png)
+![](administrating_role_based_access/access_rights_record_rules_column.png)
 
 ```{note}
 Making changes in access rights can have a big impact on the database. For this reason, we recommend you to contact your OpenSPP Business Analyst or our Support Team, unless you have knowledge about Domains in OpenSPP.
 ```
 
-Deactivate developer mode by clicking on the four-square icon and then click on **Settings**, scrolling down to the last part of the page, and clicking **Deactivate the developer mode**.
+Deactivate developer mode by clicking on the menu icon and then click on **Settings**, scrolling down to the last part of the page, and clicking **Deactivate the developer mode**.
 
-![](administrating_role_based_access/19.png)
+![](administrating_role_based_access/access_rights_deactivate_developer.png)
