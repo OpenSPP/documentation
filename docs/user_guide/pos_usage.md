@@ -31,29 +31,29 @@ By the end of this Tutorial, you will be able to configure Point of sales, manag
 
 To be able to create Point of sales, you have to make sure that the necessary modules are installed and activated on your OpenSPP instance, this can be verified by logging in to your OpenSPP instance as Administrator, go to **Apps**, search for **OpenSPP POS** and **OpenSPP POS: ID Redemption** respectively and if not already done, activate them by clicking **Activate** button.
 
-![](point_of_sales/1.png)
+![](point_of_sales/POS_module.png)
 
-After successfully activating, it should display **Learn more** as the remaining button.
+Upon successful activation, the button label should change to **Learn more**.
 
 ### Configure POS Settings
 
 Navigate to the menu screen. On the sidebar menu, click **Point of Sale** to open the POS dashboard.
 
-![](point_of_sales/2.png)
+![](point_of_sales/point_of_sales_table.png)
 
 Click on **Configuration** and select **Payment methods** to see the payment methods available. By default, the options **Cash**, **Bank** and **Customer Account** are available.
 
-![](point_of_sales/3.png)
+![](point_of_sales/point_of_sales_payment_methods.png)
 
 #### Create Point of sales
 
 To create a Point of sale, click on **Point of Sales** from the sidebar, click **Configuration** and select **Point of Sales,** then click on **New**.
 
-![](point_of_sales/4.png)
+![](point_of_sales/point_of_sales_create_pos.png)
 
 Assign a name to the Point of Sale you want to create. It is also possible to assign the shop to a specific area by selecting the desired area from the dropdown. Click on **Save** button to keep the changes.
 
-![](point_of_sales/5.png)
+![](point_of_sales/point_of_sales_save.png)
 
 #### Select Payment methods
 
