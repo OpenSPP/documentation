@@ -91,8 +91,9 @@ OpenSPP displays different types of error messages on the import page when encou
 Some fields require values that are predefined in OpenSPP, such as the **category\_id** field. Setting a value in this column that does not match the values found in OpenSPP will return an error message. This error will be similar to the screenshot provided below.  
 ![](import_registrant_data/import_users_errors_found.png)
 
-To resolve this type of error, only type in values that are defined in OpenSPP, in this case for **category\_id**, you can navigate to **Registry,** then click  **Configuration,** and after that, select **Registrant Tags**. You should see the list of the defined **Tags**. Only use these values from the list for **category\_id**.  
-![](import_registrant_data.image11)
+To resolve this type of error, only type in values that are defined in OpenSPP, in this case for **category\_id**, you can navigate to **Registry,** then click  **Configuration,** and after that, select **Registrant Tags**. You should see the list of the defined **Tags**. You may use any of the listed values for **category\_id**, or alternatively, add a new registrant tag.
+
+![](import_registrant_data/import_users_regsitrant_tags.png)
 
 ### To import, select a field
 
