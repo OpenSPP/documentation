@@ -14,6 +14,7 @@ This section contains guides for managing registrant data and registry operation
 :caption: Contents
 
 register_individual
+export_data
 import_data
 setting_up_farmer_registry
 identity_management
