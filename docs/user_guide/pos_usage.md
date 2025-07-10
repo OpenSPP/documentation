@@ -59,47 +59,47 @@ Assign a name to the Point of Sale you want to create. It is also possible to as
 
 To select a payment method for your Point of sale, click on **Point of Sales** from the sidebar, navigate to **Configuration** and click on **Settings.** From the **Point of Sale** dropdown, click and select the Point of sale you want to manage.
 
-![](point_of_sales/6.png)
+![](point_of_sales/point_of_sales_select_pos.png)
 
 Once you have selected a Point of sale, click on the dropdown from **Payment methods** and select the desired payment methods for this Point of sale. Click the **Save** button to keep the changes.
 
 Please Note: For **Cash** payment method a unique payment method needs to be created for each Point of sale. In order to create a new **Cash** Payment method, navigate to **Point of Sale**, click on **Configuration** and select **Payment methods**, then click **New**.
 
-![](point_of_sales/7.png)
+![](point_of_sales/point_of_sales_new_payment_method.png)
 
 Define the name of the Payment method and click on the Journal Input field.
 
-![](point_of_sales/8.png)
+![](point_of_sales/point_of_sales_define_payment_method.png)
 
 Click on **Search More** from the dropdown.
 
-![](point_of_sales/9.png)
+![](point_of_sales/point_of_sales_search_more.png)
 
 Click on **New** button.
 
-![](point_of_sales/10.png)
+![](point_of_sales/point_of_sales_new_journal.png)
 
 Define the **Journal name**, then select **Cash** under **Type** dropdown. To complete the journal creation, click **Save & Close.**
 
-![](point_of_sales/11.png)
+![](point_of_sales/point_of_sales_save_journal.png)
 
 You may now select the new Cash payment method for a Point of sale. Navigate to **Configuration** and click on **Settings**. Select a **Point of sale**. Then under payment methods dropdown, select your new Cash payment method and click **Save**.
 
-![](point_of_sales/12.png)
+![](point_of_sales/point_of_sales_new_cash_payment_method.png)
 
 #### Group Point of sales by area
 
 In order to group Point of sales by area, make sure you have areas already existing in your OpenSPP instance. Learn more about importing areas in the guide [Import area](https://docs.openspp.org/tutorial/user_guides/import_areas.html). From the sidebar, navigate to **Point of Sale**, select **Configuration** and click **Point of Sales**. Select the Point of sale you wish to manage and assign by clicking an area from the dropdown **Area**.
 
-![](point_of_sales/13.png)
+![](point_of_sales/point_of_sales_select_area.png)
 
 Navigate to **Point of Sale** and select **Dashboard**. The Point of sales will now be grouped by Area.
 
-![](point_of_sales/14.png)
+![](point_of_sales/point_of_sales_grouped_by_area.png)
 
 Point of sales that do not belong to any area will display as minimized. Click the **<>** arrows from the dashboard to expand the view. Click on **Gear** icon to Collapse view.
 
-![](point_of_sales/15.png)
+![](point_of_sales/point_of_sales_view_options.png)
 
 ### Starting Point of sale in Web view
 
