@@ -14,7 +14,8 @@ This section provides practical, task-oriented instructions for using OpenSPP's 
 Guides for managing registrant data and registry operations:
 
 - {doc}`registry_management/register_individual`
-- {doc}`registry_management/import_export_data`
+- {doc}`registry_management/import_data`
+- {doc}`registry_management/export_data`
 - {doc}`registry_management/setting_up_farmer_registry`
 - {doc}`registry_management/identity_management`
 - {doc}`registry_management/using_change_requests`
@@ -29,8 +30,6 @@ Guides for creating and managing social protection programs:
 - {doc}`program_management/create_cycle`
 - {doc}`program_management/configure_entitlements`
 - {doc}`program_management/allocate_funds`
-- {doc}`program_management/implementing_pmt`
-- {doc}`program_management/using_pmt`
 - {doc}`program_management/using_geotargeting`
 - {doc}`program_management/using_indicators`
 - {doc}`program_management/using_vouchers`
