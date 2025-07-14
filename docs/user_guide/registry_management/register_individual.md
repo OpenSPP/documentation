@@ -24,56 +24,48 @@ By the end of this tutorial, you should be able to register new individuals on t
 
 ## Process
 
-When registering a new individual, the following steps need to be taken:
-
-- **Registering the new individual**: in this step, all personal information about the individual will be added to the system.
-
-- **Creating a new group**: if the individual should be added to a group, this needs to be created if it does not already exist.
-
-- **Adding the individual to a group**: if the individual should be added to a group, this is done as the final step.
-
 ### Registering new individuals
 
-Click on the four-square icon in the top-left corner. Select **Registry** then click **Individuals**.
+Click on the menu icon in the top-left corner. Select **Registry** then click **Individuals**.
 
-![](register_new_individual/1.png)
+![](register_new_individual/register_new_individual_menu_icon.png)
 
-Click on **Create** to be directed to the registration interface for new applicants
+Click on **New** to be directed to the registration interface for new applicants
 
-![](register_new_individual/2.png)
+![](register_new_individual/register_new_individual_new_button.png)
 
-Enter the necessary values for the individual as required by your programme. After verifying the entered information, click **Save** to complete the registration process. Once complete, the personal information page of the individual record will look like this:
+Enter the necessary values for the individual as required by your programme. After verifying the entered information, click the **Save** icon to complete the registration process.
 
-![](register_new_individual/3.png)
+![](register_new_individual/register_new_individual_save_individual.png)
 
 The record of the new individual is now displayed in the **Individuals** list in the **Registry** page.
 
-![](register_new_individual/4.png)
+![](register_new_individual/register_new_individual_new_individual_list.png)
 
 ### Creating new group
 
-Navigate to **Registry** then click **Groups**. Click on **Create**.
+Navigate to **Registry** then click **Groups**. Click on **New**.
 
-![](register_new_individual/5.png)
+![](register_new_individual/Register_new_individual_new_button_group.png)
 
 You will be directed to the registration interface for new **Groups**.
 
-![](register_new_individual/6.png)
+![](register_new_individual/Register_new_individual_new_group_page.png)
 
-After ensuring all the information is correctly entered, click **Save** to complete the registration process. Once complete, the personal information page of the **Groups** record will look like this:
+After ensuring all the information is correctly entered, click the **Save** icon to complete the registration process.
 
-![](register_new_individual/7.png)
+![](register_new_individual/Register_new_individual_save_group.png)
 
 The record of the new group is now displayed in the **Groups** list in the **Registry** page.
 
-![](register_new_individual/8.png)
+![](register_new_individual/Register_new_individual_new_group_list.png)
 
 ### Adding new individual to group
 
-Click a group you wish an individual to be added into. Click **Add a line** and select an individual. You can repeat this action to add more individuals.
+Select the group to which you want to add an individual. Click **Add a line** under **Members** tab, then choose the individual from the list. Repeat this step to add additional individuals as needed.
 
-![](register_new_individual/9.png)
+![](register_new_individual/Register_new_individual_add_individual_to_group.png)
 
-Click **Save**. The newly added individual(s) is displayed.
+Click the **Save** icon to complete the changes. The newly added individual(s) is displayed.
 
-![](register_new_individual/10.png)
+![](register_new_individual/Register_new_individual_added_individuals_to_group.png)
