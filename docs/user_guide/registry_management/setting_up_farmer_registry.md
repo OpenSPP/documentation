@@ -1,6 +1,6 @@
 ---
 review-status: reviewed
-review-date: 2025-06-17
+review-date: 2025-07-16
 reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
@@ -46,7 +46,7 @@ By the end of this guide, you will be able to set up the farmer registry.
 
 2. Click the **New** button and set the Key field to **spp_base_gis.map_tiler_api_key** and enter the actual API Key for MapTiler in the **value** field.
 
-![](setting_up_farmer_registry/6.png)
+![](setting_up_farmer_registry/setup_farmer_registry_maptiler_key.png)
 
 3. Click the **Save** icon.
 
