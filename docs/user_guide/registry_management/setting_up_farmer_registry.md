@@ -9,7 +9,7 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 ## Introduction
 
-This guide will help you install the Farmer Registry module in OpenSPP and configure it to generate sample farmer data. This module enhances OpenSPP by providing functionalities related to farmer registration and management.
+This guide provides step-by-step instructions for installing the Farmer Registry module in OpenSPP and configuring it to generate sample farmer data. The module extends OpenSPP with features for farmer registration and management.
 
 ## Prerequisites
 
@@ -22,11 +22,11 @@ Before you begin, ensure you have the following:
 
 By the end of this guide, you will be able to set up the farmer registry.
 
-## Step-by-step
+## Process
 
 ### Installing the Farmer Registry
 
-1. Log in to OpenSPP, click on the menu icon, and then click Apps.
+Log in to OpenSPP, click on the menu icon, and then click Apps.
 
 ![](setting_up_farmer_registry/setup_farmer_registry_apps_icon.png)
 
@@ -34,7 +34,7 @@ By the end of this guide, you will be able to set up the farmer registry.
 
 ![](setting_up_farmer_registry/2.1.png)
 
-3. Note that after installation, the button Activate will disappear.
+3. Note that after installation, the button **Activate** will disappear.
 
 ![](setting_up_farmer_registry/2.2.png)
 

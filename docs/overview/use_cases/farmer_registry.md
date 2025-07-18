@@ -100,7 +100,7 @@ OpenSPP's modular architecture provides a strong foundation for building a Farme
         
     *   Configuring Areas
         
-    *   Importing Initial Data: {doc}`/user_guide/registry_management/import_export_data`
+    *   Importing Initial Data: {doc}`../../user_guide/registry_management/export_data` and {doc}`../../user_guide/registry_management/import_data`.
         
 
 ### 5. Common Tasks & User Guides (Links)

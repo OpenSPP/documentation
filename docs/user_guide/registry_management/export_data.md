@@ -9,13 +9,13 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 ## Introduction
 
-In this tutorial, you will learn how to export registrant data from OpenSPP. 
+This guide offers a comprehensive, step-by-step overview of the process for exporting registrant data from OpenSPP. It details the procedures, configurable options, and considerations available to system administrators.
 
 ## Prerequisites
 
 To be able to export registrant data from OpenSPP, the following is required: 
 
-- Ensure you have a user account with admin access to the OpenSPP platform. Learn more in this tutorial:[Tutorial: Administrating role-based access.docx](https://docs.google.com/document/d/1hdqj9wkgiC1XiGunpkkeIELXFyIQTu3L/edit#heading=h.gjdgxs)  
+- Ensure you have a user account with admin access to the OpenSPP platform. Learn more in this guide: {doc}`../administration/user_access`.
 - Prepare registrant data in CSV or Excel format.  
 - Determine the list of fields relevant to the data you wish to export.
 

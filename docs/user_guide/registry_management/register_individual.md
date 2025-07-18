@@ -9,7 +9,7 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 ## Introduction
 
-To integrate new individual information into the system and store it in the registry. A registrant becomes a beneficiary only after enrollment in a social protection program. The registration process is a critical component in the efficient administration of social protection, utilizing the recorded information to identify individuals, evaluate their needs, confirm their eligibility for social protection programs and other social services, and accurately determine benefit amounts. Initiatives for mass registration may occur at the start of a new program or during the creation of a new registry. Furthermore, new applicants can be added to existing programs or registries continuously.
+This guide provides a comprehensive, step-by-step overview for authorized users on the process of registering new entities within the OpenSPP platform. It details the procedures for manually creating individual and group records, as well as the method for associating existing individuals as members of a group.
 
 ## Prerequisites
 

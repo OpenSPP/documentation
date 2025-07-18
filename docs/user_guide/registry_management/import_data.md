@@ -9,7 +9,7 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 ## Introduction
 
-In this tutorial, you will learn the process of importing registrant data in CSV or Excel format using the OpenSPP platform. The tutorial covers the import of new data, as well as the update of existing data.
+This guide provides a comprehensive overview of the procedures for importing registrant data into the OpenSPP platform using CSV or Excel files. It details the steps required to add new records and update existing data, ensuring accurate and efficient registry management.
 
 ## Prerequisites
 
