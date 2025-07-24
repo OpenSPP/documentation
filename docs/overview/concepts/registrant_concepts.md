@@ -1,7 +1,7 @@
 ---
 review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
+review-date: 2025-06-24
+reviewer: Mark penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
@@ -51,6 +51,7 @@ For example, groups could represent:
 - A {term}`household`
 - A {term}`family`
 - A school
+- A farm association
 - ...
 
 Groups do not need to contain individuals registrants. They can just contain their number of members.
@@ -126,7 +127,7 @@ This data can be a lot of things:
 - House visit
 - Raw import data
 - Information coming from another system through synchronization
-- Data that loose relevance over time
+- Data that lose relevance over time
 
 The data stored in `Event Data` can be used in OpenSPP as a normal field by using computed fields.
 
@@ -187,7 +188,7 @@ These are the step to follow:
 
 5. Click on Export, your Excel (XLSX) or CSV export will be downloaded.
 
-To learn more about export capabilities, read the Odoo documentation.
+To learn more about export capabilities, read the [Odoo documentation](https://docs.advanceinsight.dev/applications/essentials/export_import_data.html).
 
 ## API
 

@@ -1,7 +1,7 @@
 ---
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
+review-status: reviewed
+review-date: 2025-06-17
+reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
@@ -9,25 +9,25 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 ## Introduction
 
-In this Tutorial you will learn how to configure the ID of a registrant and how to print its QR code.
+This guide offers a comprehensive, step-by-step overview for Operations Admins and Administrators on the process of configuring identification **ID** credentials and generating corresponding QR codes within OpenSPP. It details the procedures for creating and managing ID types, assigning unique IDs to individuals or groups, and generating printable documents embedded with scannable QR codes.
 
 ## Prerequisites
 
 To configure ID and generate QR code, you need to:
 
 - Have existing individual records in your registry, either by creating records manually or importing records into OpenSPP.
-- Have an access role as an **Operations Admin** or **Administrator**. Learn more about this in the guide [Administrating role-based access](https://docs.openspp.org/tutorial/user_guides/administrating_role_based_access.html)
+- Have an access role as an **Operations Admin** or **Administrator**. Learn more in this guide: {doc}`../administration/user_access`.
 - Make sure that the module **OpenSPP POS: ID Redemption** is installed and activated.
 
 ## Objective
 
-By the end of this tutorial you will be able to configure ID types, manage IDs of Individuals and Groups, generate QR code of the IDs and be able to print it.
+By the end of this tutorial, you will understand how to configure ID types, assign and manage IDs for individuals and groups, generate QR codes for these IDs, and print the corresponding identification documents.
 
 ## Process
 
 ### Configure ID type
 
-To be able to create IDs, you must first configure the ID types. Login to OpenSPP as administrator, click on the square tile icon beside **Registry**, then click on **Registry** from the menu.
+To be able to create IDs, you must first configure the ID types. Login to OpenSPP as administrator, click on the menu icon beside **Registry**, then click on **Registry** from the menu.
 
 ![](configure_ID_generate_qr/1.png)
 

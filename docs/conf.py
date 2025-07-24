@@ -163,6 +163,7 @@ extensions = [
     "sphinx.ext.autosummary",
     "sphinx.ext.graphviz",
     "sphinx_tabs.tabs",
+    'sphinxcontrib.mermaid',
     "notfound.extension",
 ]
 

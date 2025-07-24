@@ -1,7 +1,7 @@
 ---
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
+review-status: reviewed
+review-date: 2025-06-16
+reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
@@ -10,15 +10,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 
 ---
-
-## Merged Content
-
-
-
-### Content from docs/tutorial/user_guides/create_social_protection_program.md
-
-# Create a social protection program
-
 ## Introduction
 
 In this tutorial, you will learn the process of creating a social protection program using the OpenSPP platform to meet the specific needs and objectives of the program.

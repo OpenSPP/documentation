@@ -1,7 +1,7 @@
 ---
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
+review-status: Reviewed
+review-date: 2025-06-23
+reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
@@ -17,7 +17,7 @@ SP-MIS are comprehensive platforms, playing a central role in the administration
 
 2. **Program Administration**: Facilitating the operational aspects of social protection programs, including planning, budgeting, fund disbursement, and compliance monitoring.
 
-3. **{term}`data integration` and Analysis**: Integrating data from multiple sources, including Social Registries and other government databases, to provide a holistic view of beneficiaries and program impact. Advanced data analytics enable informed decision-making and policy development.
+3. **{term}`Data integration` and Analysis**: Integrating data from multiple sources, including Social Registries and other government databases, to provide a holistic view of beneficiaries and program impact. Advanced data analytics enable informed decision-making and policy development.
 
 4. **Payment and Financial Management**: Managing financial transactions, including benefit disbursement to beneficiaries, through secure and transparent channels. This often involves integration with banking systems or digital payment platforms.
 
