@@ -1,6 +1,6 @@
 ---
 review-status: reviewed
-review-date: 2025-06-16
+review-date: 2025-07-29
 reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
@@ -12,7 +12,7 @@ migration-notes: "Added during 2025 documentation reorganization"
 ---
 ## Introduction
 
-In this tutorial, you will learn the process of creating a social protection program using the OpenSPP platform to meet the specific needs and objectives of the program.
+This tutorial offers a comprehensive, step-by-step guide for establishing a social protection program using the OpenSPP platform. It is designed to assist users in configuring programs according to specific objectives and operational requirements.
 
 ## Prerequisites
 
@@ -20,14 +20,16 @@ To create a social protection program using OpenSPP, you need to:
 
 - Have a clear understanding of the goals and objectives of your social protection program.
 - Prepare the details of your program in advance. This includes deciding on the program name, the target beneficiary types, and the specific benefits that will be offered.
-- Have an access role as a system administrator or global program manager to perform tasks in this tutorial. Learn more about this in the documentation [Administrating role-based access](https://docs.openspp.org/tutorial/user_guides/administrating_role_based_access.html)
-- Have existing groups or individuals in your registry either through manual creation or through import. Learn more about this in the documentation [Import registrant data](https://docs.openspp.org/tutorial/user_guides/import_registrant_data.html)
+- Have an access role as a system administrator or global program manager to perform tasks in this tutorial. Learn more about this in the documentation {doc}`../administration/user_access`.
+- Have existing groups or individuals in your registry either through manual creation or through import. Learn more about this in the documentation {doc}`../registry_management/import_data`.
 
 ## Objective
 
 By the end of this tutorial, you will have successfully set up and created social protection programs within the OpenSPP platform.
 
 ## Process
+
+To create a program, begin by configuring the eligibility criteria to filter registrants who will be enrolled. Next, set up the Cycle Manager to define the duration and assign the user responsible for managing the program cycles. Proceed to configure the Entitlement Manager to specify the types of entitlements managed by the program. Finally, import registrants who meet the eligibility criteria based on your selected configuration.
 
 ### Creating a social protection program
 
@@ -81,7 +83,7 @@ The **Entitlement Manager** defines what should be distributed to the beneficiar
 
 ### Import Registrants
 
-The **Import Registrants** feature allows you to import registrant records into the new program as part of the program creation and is triggered by selecting **Yes** in the final step. If the option **No** is selected, this import needs to be done afterwards. Learn more about this in the documentation [Enroll beneficiaries](https://docs.openspp.org/tutorial/user_guides/enroll_beneficiaries.html).
+The **Import Registrants** feature allows you to import registrant records into the new program as part of the program creation and is triggered by selecting **Yes** in the final step. If the option **No** is selected, this import needs to be done afterwards. Learn more about this in the documentation {doc}`enroll_beneficiaries`.
 
 After choosing whether to import the registrants as part of the program creation or not, click **Create**.
 

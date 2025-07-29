@@ -24,6 +24,8 @@ By the end of this tutorial, you should be able to register new individuals on t
 
 ## Process
 
+To create an individual in OpenSPP, enter the required details in the designated input fields. After registering individuals, you can create groups and assign individuals as members to these groups.
+
 ### Registering new individuals
 
 Click on the menu icon in the top-left corner. Select **Registry** then click **Individuals**.
