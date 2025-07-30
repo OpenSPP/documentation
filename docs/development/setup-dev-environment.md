@@ -5,7 +5,7 @@ This guide explains how to use an automated Bash script to set up a complete Ope
 
 ---
 
-## í³¦ What This Script Does
+## ï¿½ï¿½ï¿½ What This Script Does
 
 The script automates:
 
@@ -38,7 +38,7 @@ Before running the setup script, ensure you have:
 
 ---
 
-## íº€ Quick Start
+## ï¿½ï¿½ï¿½ Quick Start
 
 ### Linux/macOS
 
@@ -62,29 +62,12 @@ Before running the setup script, ensure you have:
 
 ### Windows Setup
 
-#### Option 1: Using WSL2 (Recommended)
+#### Using WSL2 (Recommended)
 
 1. Install WSL2 with Ubuntu:
 
    ```powershell
    wsl --install -d Ubuntu-22.04
-   ```
-
-2. Open Ubuntu terminal and follow the Linux instructions above.
-
-#### Option 2: Using PowerShell Script
-
-1. Download the PowerShell setup script:
-
-   ```powershell
-   Invoke-WebRequest -Uri "https://raw.githubusercontent.com/OpenSPP/openspp-modules/main/scripts/setup-dev-env.ps1" -OutFile "setup-dev-env.ps1"
-   ```
-
-2. Run as Administrator:
-
-   ```powershell
-   Set-ExecutionPolicy Bypass -Scope Process -Force
-   .\setup-dev-env.ps1
    ```
 
 ---
@@ -96,7 +79,6 @@ The setup script supports the following options:
 - `--branch BRANCH`: Specify the OpenSPP branch to checkout (default: main)
 - `--python VERSION`: Specify Python version to use (default: 3.10)
 - `--odoo-version VERSION`: Specify Odoo version to clone (default: 15.0)
-- `--dry-run`: Run the script without making any changes (simulation mode)
 - `--help`: Display help message
 
 Examples:
@@ -299,7 +281,6 @@ git push origin feature/your-feature
 createdb -O $USER openspp_dev
 pg_dump openspp_dev > backup.sql
 psql openspp_dev < backup.sql
-dropdb openspp_test_old
 ```
 
 ---
