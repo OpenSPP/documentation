@@ -56,11 +56,11 @@ Click **Create** to proceed. Clicking Create will generate a draft file for your
 
  ![](using_change_request/change_request_create_button.png)
 
-### **Updating Applicant Information**
+### Updating Applicant Information
 
 From the Change request page, select a **Change request** file currently in Draft state.
 
-![][image5]
+![](using_change_request/change_request_list_of_requests.png)
 
 Click **Next**, then fill in the necessary fields.
 
@@ -79,7 +79,7 @@ Navigate to the **Attachments** tab:
 
 Click **Request Validation** to submit for approval.
 
-## **Validation Workflow**
+## Validation Workflow
 
 ### Review request by Local Validator Role
 
