@@ -1,0 +1,24 @@
+---
+review-status: needs-review
+review-date: 2025-06-04
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
+***************************************
+Cycle Manager
+***************************************
+
+.. currentmodule:: odoo.addons.g2p_programs.models.managers.cycle_manager
+
+:mod:`odoo.addons.g2p_programs.models.managers.cycle_manager` provides the class  :class:`BaseCycleManager` define the interface
+for this manager. :class:`DefaultCycleManager` is the default implementation of this class that should be used
+in most of the cases.
+
+
+.. autoclass:: BaseCycleManager
+    :members:
+
+.. autoclass:: DefaultCycleManager
+    :members:
+    :undoc-members:

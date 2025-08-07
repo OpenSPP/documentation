@@ -53,14 +53,12 @@ OpenSPP is currently in development, and everything is evolving rapidly thanks t
 :maxdepth: 3
 :hidden: true
 
+overview/index
 getting_started/index
-tutorial/index
-howto/index
-technical_reference/index
-explanation/index
-modules/index
-community_and_support/index
-contributing/index
+user_guide/index
+developer_guide/index
+reference/index
+community/index
 ```
 
 ```{toctree}
@@ -68,5 +66,5 @@ contributing/index
 :maxdepth: 1
 :hidden: true
 
-glossary
+reference/glossary
 ```
