@@ -107,11 +107,11 @@ OpenSPP's modular architecture provides a strong foundation for building a Farme
 
 *   **Registry Management:**
     
-    *   Registering Farmers/Groups: {doc}`/user_guide/registry_management/register_individual`
+    *   Registering Farmers/Groups: {doc}`../../user_guide/registry_management/register_individual`
         
     *   Managing Group Memberships
         
-    *   Importing/Exporting Data: {doc}`/user_guide/registry_management/import_export_data`
+    *   Importing/Exporting Data: {doc}`../../user_guide/registry_management/export_data` and {doc}`../../user_guide/registry_management/import_data`.
         
 *   **Land & GIS:**
     

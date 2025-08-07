@@ -5,7 +5,7 @@ reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Create a program cycle & prepare entitlements
+# Create cycles & prepare entitlements within a program
 
 ## Introduction
 
@@ -15,9 +15,9 @@ In this tutorial, you will learn the process of configuring, creating, and appro
 
 To create a cycle and prepare entitlements in OpenSPP, you need to:
 
-- Ensure your program is set and ready. Learn more about this in the documentation [Create a social protection program](https://docs.openspp.org/tutorial/user_guides/create_social_protection_program.html).
-- Enroll beneficiaries in the program. Learn more about this in the documentation [Enroll beneficiaries](https://docs.openspp.org/tutorial/user_guides/enroll_beneficiaries.html).
-- Allocate funds to the program. Learn more about this in the documentation [Allocate funds](https://docs.openspp.org/tutorial/user_guides/allocate_funds.html).
+- Ensure your program is set and ready. Learn more about this in the documentation {doc}`create_program`.
+- Enroll beneficiaries in the program. Learn more about this in the documentation {doc}`enrol_beneficiaries`.
+- Allocate funds to the program. Learn more about this in the documentation {doc}`allocate_funds`.
 
 ## Objective
 
@@ -25,15 +25,13 @@ By the end of this tutorial, you will have gained a deeper understanding of conf
 
 ## Process
 
-To begin configuring cycles and preparing entitlements in OpenSPP, first log into your OpenSPP account, then go to Programs.
+To begin configuring cycles and preparing entitlements in OpenSPP, Login into your OpenSPP account, then select an existing program.
 
-![](create_program_cycle_prepare_entitlements/1.png)
-
-If any modifications are required to either the cycle or entitlement configuration of the program, these should be done prior to approving a cycle. This is because once a cycle is approved, configuration changes you applied to the program will not take effect unto the cycles that you already approved. However, if you are already satisfied with the current program configurations, you may proceed to [Creating Cycle](#creating-cycle).
+Please note that any configuration changes made to your program will not impact cycles that have already been approved. Such changes will only apply to cycles created after the modifications. However, if you are already satisfied with the current program configurations, you may proceed to [Creating Cycle](#creating-cycle).
 
 ### Editing program configuration
 
-Configuring a cycle is done as a part of creating a program, as described in the documentation Configure the Cycle Manager; however, it is possible to modify an existing program’s cycle configuration.
+Cycle configuration is initially performed during program creation, as detailed in the Configure the Cycle Manager section of {doc}`create_program`. However, you may also update the cycle configuration for an existing program as needed.
 
 Click on a program and navigate to the **Configuration** tab.
 

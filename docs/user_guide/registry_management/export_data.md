@@ -25,7 +25,7 @@ By the end of this tutorial, you should understand the purpose and process of ex
 
 ## Process
 
-To access the export feature, you must log in to OpenSPP with a System Admin role account since the functionality is not included for other roles. Learn how to set up roles and accounts in here Administrating role-based access
+Select existing individual records to export and define export parameters, save as either **CSV** or **XLSX**.
 
 ### Specify export parameters
 

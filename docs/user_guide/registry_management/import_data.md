@@ -15,7 +15,7 @@ This guide provides a comprehensive overview of the procedures for importing reg
 
 To import registrant data into the OpenSPP, you need to:
 
-- Ensure you have a user account with admin access to the OpenSPP platform. Learn more in this tutorial:[Tutorial: Administrating role-based access.docx](https://docs.google.com/document/d/1hdqj9wkgiC1XiGunpkkeIELXFyIQTu3L/edit#heading=h.gjdgxs)  
+- Ensure you have a user account with admin access to the OpenSPP platform. Learn more in this guide: {doc}`../administration/user_access`.
 - Prepare registrant data in CSV or Excel format.  
 - Have access to spreadsheet software capable of editing and saving CSV or Excel files, such as Microsoft Excel.
 
@@ -29,7 +29,7 @@ The import process consists of logging in to OpenSPP with an admin user account,
 
 ## Login with proper user access rights
 
-To prevent data mishandling and improve data security, the permission to import and export data into OpenSPP is exclusive to user accounts with **System admin** role. Learn more about setting up and configuring admin role user accounts here: [Tutorial: Administrating role-based access.docx](https://docs.google.com/document/d/1hdqj9wkgiC1XiGunpkkeIELXFyIQTu3L/edit#heading=h.gjdgxs). To verify that your user account has the right permissions, navigate to the four-square icon on the top-left corner and click **Settings** from the list, click **Users & Companies** from the header; then click **Users**. This should display all user accounts in OpenSPP.
+To prevent data mishandling and improve data security, the permission to import and export data into OpenSPP is exclusive to user accounts with **System admin** role. Learn more about setting up and configuring admin role user accounts here: {doc}`../administration/user_access`.. To verify that your user account has the right permissions, navigate to the four-square icon on the top-left corner and click **Settings** from the list, click **Users & Companies** from the header; then click **Users**. This should display all user accounts in OpenSPP.
 
 ![](import_registrant_data/import_users_menu.png)
 
@@ -57,7 +57,7 @@ To produce a file that includes the reference and all other fields mandatory for
 
 These unique identifiers are associated with each of the records. When you import the Excel file back into OpenSPP after you have updated your desired fields, make sure the values for the fields you updated only affect the ones you intend.
 
-Learn more about export registrant data in [Tutorial: Export Registrant Data](https://docs.google.com/document/d/1zOLmAXZvHxJWvxz2JmzZL0buNz6wksIh/edit#heading=h.gjdgxs)
+Learn more about exporting registrant data in this guide: {doc}`export_data`.
 
 ## Preparing file for import
 
@@ -86,7 +86,7 @@ When the file is considered valid, it is possible to click the **Import** button
 
 OpenSPP displays different types of error messages on the import page when encountering an error after clicking the **Test** button. This ensures no invalid value or file would compromise data in OpenSPP. Therefore, it is important to always **Test** the file first before importing. Here are common errors encountered during import.
 
-### No matching records found
+### Error: "No matching records found"
 
 Some fields require values that are predefined in OpenSPP, such as the **category\_id** field. Setting a value in this column that does not match the values found in OpenSPP will return an error message. This error will be similar to the screenshot provided below.  
 ![](import_registrant_data/import_users_errors_found.png)
@@ -95,23 +95,23 @@ To resolve this type of error, only type in values that are defined in OpenSPP, 
 
 ![](import_registrant_data/import_users_regsitrant_tags.png)
 
-### To import, select a field
+### Error: "To import, select a field"
 
 If OpenSPP could not recognize your header, it will display **To import, select a field** beside the unrecognized header, similar to the screenshot below.  
 ![](import_registrant_data/import_users_select_a_field.png)
 
 To resolve this error,  if you are familiar with what field you want to associate with your header, you can click **To import, select a field,** and then select from the list of fields you wish to associate your field values with, otherwise, you can remove the header from your excel file as the field you are trying to import is not available to be imported into OpenSPP.
 
-### Column contains incorrect values
+### Error: "Column contains incorrect values"
 
 Another error is the date format, if the imported format for fields related to date is incorrect, OpenSPP will display an error message. This error will be similar to the screenshot provided below.  
 ![](import_registrant_data/import_users_date_error.png)
 
 To resolve this error, fix the date format from your Excel file to this format **YYYY-MM-DD**, save the file, then import to test again.
 
-### You are not allowed to access ‘Import Matching’
+### Error: "You are not allowed to access ‘Import Matching’"
 
 An issue was encountered when attempting to import using an account with the wrong access rights permissions. This error will be similar to the screenshot provided below.  
 ![](import_registrant_data/import_users_access_error_import.png)
 
-To resolve this error, assign an admin role into the user account that will perform the import or export process. Learn more about administering permissions here: [Tutorial: Administrating role-based access.docx](https://docs.google.com/document/d/1hdqj9wkgiC1XiGunpkkeIELXF
+To resolve this error, assign an admin role into the user account that will perform the import or export process. Learn more about administering permissions here: {doc}`../administration/user_access`.

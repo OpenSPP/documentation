@@ -14,7 +14,7 @@ This section contains guides for creating and managing social protection program
 :caption: Contents
 
 create_program
-enroll_beneficiaries
+enrol_beneficiaries
 create_cycle
 configure_entitlements
 allocate_funds
