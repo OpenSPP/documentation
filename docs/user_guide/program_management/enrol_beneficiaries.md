@@ -76,7 +76,7 @@ In the case of more than 1000 beneficiaries, a yellow notification will display 
 
 ![](enrol_beneficiaries/4.png)
 
-To manually enroll registrants into a program, first confirm that the import process has been completed. This can be verified by observing the green notification popup for fewer than 1000 beneficiaries, or, for more than 1000 beneficiaries, by refreshing the page until the yellow notification popup is no longer displayed. Once confirmation is received, proceed and click **Enrol Eligible Registrants**.
+To manually enrol registrants into a program, first confirm that the import process has been completed. This can be verified by observing the green notification popup for fewer than 1000 beneficiaries, or, for more than 1000 beneficiaries, by refreshing the page until the yellow notification popup is no longer displayed. Once confirmation is received, proceed and click **Enrol Eligible Registrants**.
 
 ![](enrol_beneficiaries/enrol_beneficiaries_enrol_beneficiaries_button.png)
 
