@@ -1,7 +1,7 @@
 ---
 review-status: reviewed
 review-date: 2025-07-08
-reviewer: mark penalosa
+reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
@@ -11,7 +11,7 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 This guide explains how to update registrant information in OpenSPP using the Change Request module. The process follows a defined workflow, requiring users with specific roles to initiate and validate requests. Permission-based access and thorough documentation help ensure data accuracy and reliable operations.
 
-## Prerequisite
+## Prerequisites
 
 Before submitting or approving change requests, ensure the following:
 - Have existing individual records in your registry, either by creating records manually {doc}`register_individual` or importing records into OpenSPP {doc}`import_data`.
@@ -36,7 +36,7 @@ After completing this tutorial, you will be able to:
 - Navigate role-specific approval workflows.
 - Attach supporting documentation and track updates efficiently.
 
-# Process
+## Process
 
 To update a registry record, a change request is initiated by a System Administrator or Registrar. The request is drafted, applicant information is updated for validation, and supporting documents are attached to have a reference for the updating of information. Once submitted, the request undergoes validation by a Local Validator. If approved, it proceeds to an HQ Validator for final review. Upon HQ validation, the change request is applied to the applicant’s record and can be verified through the registry.
 
@@ -97,7 +97,7 @@ Click **Validate** to partially approve the change request. A success notificati
 
 ![](using_change_request/change_request_success_partial.png)
 
-Partially approved change requests are then reviewed by user with HQ validator roles.
+Partially approved change requests are then reviewed by users with HQ validator roles.
 
 ### Review request by HQ Validator Role
 
