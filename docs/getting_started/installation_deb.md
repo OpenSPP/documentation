@@ -110,12 +110,14 @@ The installation will:
 
 Create a PostgreSQL user for OpenSPP:
 
-```bash
 # Create the openspp PostgreSQL user
+```bash
 sudo -u postgres createuser -s openspp
-
-# Optional: If you want to use password authentication instead of peer authentication
-# sudo -u postgres psql -c "ALTER USER openspp WITH PASSWORD 'your_secure_password';"
+```
+### Optional 
+If you want to use password authentication instead of peer authentication
+```bash
+sudo -u postgres psql -c "ALTER USER openspp WITH PASSWORD 'your_secure_password';"
 ```
 
 ## Step 6: Configure OpenSPP
