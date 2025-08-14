@@ -208,14 +208,16 @@ db_password = your_postgresql_password
 
 ## Step 7: Start OpenSPP Service
 
+### Enable the service to start on boot
 ```bash
-# Enable the service to start on boot
 sudo systemctl enable openspp
-
-# Start the service
+```
+### Start the service
+```bash
 sudo systemctl start openspp
-
-# Check service status
+```
+### Check service status
+```bash
 sudo systemctl status openspp
 ```
 
