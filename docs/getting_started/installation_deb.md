@@ -14,6 +14,7 @@ This guide walks you through installing OpenSPP on Ubuntu 24.04 or Debian 12 (Bo
 Before installing OpenSPP, ensure you have:
 
 - Ubuntu 24.04 LTS (Noble Numbat) or Debian 12 (Bookworm)
+- 64-bit Intel or AMD CPU (amd64)
 - Minimum 4GB RAM (8GB recommended for production)
 - Minimum 10GB disk space
 - Root or sudo access
@@ -33,12 +34,12 @@ sudo apt-get upgrade -y
 
 OpenSPP requires PostgreSQL as its database backend.
 
-# Install PostgreSQL
+### Install PostgreSQL
 ```bash
 sudo apt-get install -y postgresql postgresql-client
 ```
 
-# Verify PostgreSQL is running
+### Verify PostgreSQL is running
 ```bash
 sudo systemctl status postgresql
 ```
