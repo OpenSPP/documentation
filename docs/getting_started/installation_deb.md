@@ -48,15 +48,17 @@ sudo systemctl status postgresql
 
 Add the OpenSPP APT repository to your system:
 
+### Add the OpenSPP public key
 ```bash
-# Add the OpenSPP public key
 wget -qO - https://builds.acn.fr/repository/apt-keys/openspp/public.key | sudo apt-key add -
-
-# Add the OpenSPP repository
+```
+### Add the OpenSPP repository
+```bash
 echo "deb https://builds.acn.fr/repository/apt-openspp-daily bookworm main" | \
   sudo tee /etc/apt/sources.list.d/openspp.list
-
-# Update package list
+```
+### Update package list
+```bash
 sudo apt-get update
 ```
 
