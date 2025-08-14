@@ -110,11 +110,11 @@ The installation will:
 
 Create a PostgreSQL user for OpenSPP:
 
-# Create the openspp PostgreSQL user
+### Create the openspp PostgreSQL user
 ```bash
 sudo -u postgres createuser -s openspp
 ```
-### Optional 
+### Set password (Optional)
 If you want to use password authentication instead of peer authentication
 ```bash
 sudo -u postgres psql -c "ALTER USER openspp WITH PASSWORD 'your_secure_password';"
@@ -128,15 +128,18 @@ The main configuration file is located at `/etc/openspp/odoo.conf`.
 
 1. **Set the admin password** (IMPORTANT for security):
 
+### Generate a strong password
 ```bash
-# Generate a strong password
 openssl rand -base64 32
+```
+Copy the generated password
 
-# Edit the configuration
+### Edit the configuration
+```bash
 sudo nano /etc/openspp/odoo.conf
 ```
 
-Find and update these lines:
+Find and update these lines (paste the generated password):
 ```ini
 ; Security
 admin_passwd = YOUR_STRONG_PASSWORD_HERE
