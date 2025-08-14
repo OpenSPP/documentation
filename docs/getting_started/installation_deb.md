@@ -29,6 +29,10 @@ First, ensure your system is up to date:
 sudo apt-get update
 sudo apt-get upgrade -y
 ```
+### Install wget, gnupg2, nano
+```bash
+sudo apt-get install -y wget gnupg2 nano
+```
 
 ## Step 2: Install PostgreSQL
 
