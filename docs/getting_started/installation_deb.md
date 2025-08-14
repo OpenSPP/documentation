@@ -33,11 +33,13 @@ sudo apt-get upgrade -y
 
 OpenSPP requires PostgreSQL as its database backend.
 
-```bash
 # Install PostgreSQL
+```bash
 sudo apt-get install -y postgresql postgresql-client
+```
 
 # Verify PostgreSQL is running
+```bash
 sudo systemctl status postgresql
 ```
 
