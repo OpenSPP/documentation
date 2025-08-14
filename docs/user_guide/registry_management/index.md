@@ -20,4 +20,5 @@ setting_up_farmer_registry
 identity_management
 using_change_requests
 using_event_data
+dms
 ```

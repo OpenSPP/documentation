@@ -20,6 +20,7 @@ Guides for managing registrant data and registry operations:
 - {doc}`registry_management/identity_management`
 - {doc}`registry_management/using_change_requests`
 - {doc}`registry_management/using_event_data`
+- {doc}`registry_management/dms`
 
 ## Program Management
 
