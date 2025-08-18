@@ -1,10 +1,9 @@
 ---
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
+review-status: reviewed
+review-date: 2025-08-18
+reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
-
 # Geotargeting
 
 ## Introduction
@@ -13,10 +12,21 @@ Use geotargeting to increase accuracy and {term}`effectiveness` in {term}`social
 
 OpenSPP's built-in geotargeting capabilities allow program administrators to locate potential beneficiaries based on location and streamline the enrollment process, ensuring eligible individuals get necessary benefits.
 
+## Prerequisite
+
+To create a an Area for Geotargeting in OpenSPP, you need to:
+- Have a System administrator or registrar role, Learn more in this guide: {doc}`../administration/user_access`. 
+- Have `OpenSPP area management` and `OpenSPP area management base` modules installed and activated. Please note that both these modules are auto-installed and activated when spp_base is already activated.
+
+## Objective
+
 This tutorial guides users through using geotargeting in OpenSPP for social protection program enrollment. It covers setting up data fields and parameters, running geotargeting analysis, and generating reports. By the end, users will understand how geotargeting can be configured, and how to apply OpenSPP's geotargeting features to achieve these goals.
 
-## Area
+## Process
+Define an area by assigning it a name and specifying its hierarchical level—either as a parent or a child. Once a parent area is created, you can add sub-areas within it, and continue nesting as needed. This flexible structure accommodates the unique area segmentation of each country.
 
+### Define Geographic tree
+#### Create Parent Area
 To make use of geotargeting in OpenSPP, you must first define a geographic area tree. Oftentimes, you will have different levels such as:
 
 - country
@@ -28,51 +38,34 @@ To make use of geotargeting in OpenSPP, you must first define a geographic area 
 
 OpenSPP allows you to define any number of levels and to define the hierarchy between them. For example, you can define a country, then define states within that country, and then define districts within each state. You can also define a hierarchy between districts and cities, or between cities and villages.
 
-### Installation
+Login as administrator or a user with permitted access rights and navigate to Area
+![](geotargeting/geotargeting_area_page.png)
 
-Make sure you have installed the `OpenSPP Area` App in your OpenSPP installation.
+In the Area page, click on New, 
+- Define the name of the Area
+- Leave parent field empty as this will be the parent area
+- Define an alternate name
+- Under `Kind` dropdown field, select `Admin area`
+- Define Area (sq/km)
 
-### Area type
+![](geotargeting/geotargeting_define_area.png)
+Click on the Save icon to complete the changes.
 
-You can define different area type, that can be useful later when defining a form, so you can enforce the user to select a specific area type.
+#### Create Sub Area
+To create a sub level of a parent area, Nnavigate to Area-->New.
+
+- Define the name of the Area
+- In the Parent dropdown field. select a Parent area.
+- Define an alternate name
+- Under `Kind` dropdown field, select `Admin area`
+- Define Area (sq/km)
+
+![](geotargeting/geotargeting_define_sub_area.png)
+Click on the Save icon to complete the changes.
 
 ### Import
 
-OpenSPP support the import of area from an excel file as defined by [The Humanitarian Data Exchange](https://data.humdata.org/). They offer data for most countries in the world. You can use their spreadsheet as a starting point to define your area tree.
-
-- Download the excel file from [The Humanitarian Data Exchange - Search](<https://data.humdata.org/dataset?ext_administrative_divisions=1&res_format=XLSX&q=&sort=if(gt(last_modified%2Creview_date)%2Clast_modified%2Creview_date)%20desc&ext_page_size=25>) and save it in your computer. For example, we will use the [Sudan - Subnational Administrative Boundaries xlsx file](geotargeting/sdn_adminboundaries_tabulardata.xlsx).
-- Open the **Area → Areas → Area Import** menu.
-- Click **Upload your file** and select the file you just downloaded.
-
-```{figure} geotargeting/area-upload-1.png
-:align: center
-:height: 300
-:alt: View of a user’s area import page
-```
-
-- Click **Import**. You will preview what will be imported.
-
-```{figure} geotargeting/area-upload-2.png
-:align: center
-:height: 300
-:alt: View of the data that will be imported
-```
-
-- Click **Save to Area**. That will save the data to the database.
-
-```{figure} geotargeting/area-upload-3.png
-:align: center
-:height: 300
-:alt: View of the import result
-```
-
-- Navigate back to the **Area → Areas** menu. You will see the area you just imported.
-
-```{figure} geotargeting/area-upload-4.png
-:align: center
-:height: 300
-:alt: View of the imported Areas
-```
+Import an area through an xlsx file. Learn more in this guide: {doc}`../administration/import_areas`
 
 ### Custom Area type
 
@@ -82,26 +75,12 @@ You can define your own during import, new area type are automatically created.
 
 To import an area and specify the area type, you need to add a column in the excel file with the name `admin1Kind` (`1` need to be replaced by the admin level) and the value of the area type you want to use.
 
-You can also define your own area type from the interface. To do so, you need to define the area type in the **Area → Areas → Area Kind** menu.
+You can also define your own area type from the interface. To do so, you need to define the area type in the Area-->Areas-->Area Type. Click on **New** then click on the Name input field to define. The Completed name will auto generate once it has been saved. 
 
-```{figure} geotargeting/area-kind-1.png
-:align: center
-:height: 300
-:alt: View of the list of area type
-```
+![](geotargeting/geotargeting_define_area_type.png)
 
-- Click on **Create** to create a new area type.
+You can select a parent area type if you want to define a hierarchy between area types and set a name.
 
-```{figure} geotargeting/area-kind-2.png
-:align: center
-:height: 300
-:alt: Add a new area type
-```
+Click Save to complete the changes.
 
-- You can select a parent area type if you want to define a hierarchy between area types and set a name.
 
-- Click Save.
-
-## Geotargeting in program management
-
-See [Programs and cycles](programs_and_cycles.md) for more information on how to create a program and a cycle and use geo-targeting.

@@ -89,7 +89,7 @@ Select the request and click **Assign to me**.
 
 ![](using_change_request/change_request_assign_to_local_validator.png)
 
-Review **Request details** and **Attachment** for uploaded files as reference for the change request.
+Review **Request details** and **Attachment** for uploaded files as reference for the change request. Alternatively, you can review uploaded files in DMS (Directory Management System) feature. Learn more in this guide: {doc}`dms`
 
 ![](using_change_request/change_request_review_change_information.png)
 
@@ -103,7 +103,7 @@ Partially approved change requests are then reviewed by users with HQ validator 
 
 Log in using a **HQ Validator** user account then go to **Change Request**.
 
-Select a change request, review **Request details** and **Attachment** for uploaded files as reference for the change request.
+Select a change request, review **Request details** and **Attachment** for uploaded files as reference for the change request. Alternatively, you can review uploaded files in DMS (Directory Management System) feature. Learn more in this guide: {doc}`dms`
 
 ![](using_change_request/change_request_review_change_information_as_hq.png)
 
