@@ -1,4 +1,11 @@
-# Developer Guide: Creating a Custom OpenSPP Change Request Type
+---
+review-status: needs-review
+review-date: 2025-08-12
+reviewer: migration-script
+migration-notes: "Added during 2025 documentation reorganization"
+---
+
+# Creating a Custom OpenSPP Change Request Type
 
 ## Introduction
 
