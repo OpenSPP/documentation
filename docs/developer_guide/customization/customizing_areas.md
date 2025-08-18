@@ -24,7 +24,7 @@ The following article guides the reader in understanding how the area module wor
 
 4. Search for "Area Management (Base)" or "spp_area_base" and initiate installation. This will also install the other modules required.
 
-![](custom_areas/1.png)
+![](custom_areas/apps.png)
 
 ## Understanding the Area Module Structure
 
@@ -219,7 +219,7 @@ Create `data/area_kind_data.xml` to add custom area types:
 
 The following screenshot shows the added population fields in the newly developed module.
 
-![](custom_areas/2.png)
+![](custom_areas/updates.png)
 
 ## Advanced Customization Examples
 
