@@ -22,7 +22,7 @@ The following article guides the reader in understanding how the area module wor
 
 3. Choose "Update Apps List" to refresh the module list.
 
-4. Search for "Area Management (Base)" and initiate installation. This will also install the other modules required.
+4. Search for "Area Management (Base)" or "spp_area_base" and initiate installation. This will also install the other modules required.
 
 ![](custom_areas/1.png)
 
@@ -193,8 +193,8 @@ Create `security/ir.model.access.csv` to ensure proper access rights:
 
 ```csv
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_spp_area_user,spp.area.user,model_spp_area,base.group_user,1,1,1,0
-access_spp_area_manager,spp.area.manager,model_spp_area,base.group_system,1,1,1,1
+access_spp_area_user,spp.area.user,spp_area_base.model_spp_area,base.group_user,1,1,1,0
+access_spp_area_manager,spp.area.manager,spp_area_base.model_spp_area,base.group_system,1,1,1,1
 ```
 
 ### 6. Add Custom Area Types (Optional)
@@ -206,7 +206,6 @@ Create `data/area_kind_data.xml` to add custom area types:
     <data noupdate="1">
         <record id="area_kind_population_zone" model="spp.area.kind">
             <field name="name">Population Zone</field>
-            <field name="description">Areas defined by population characteristics</field>
         </record>
     </data>
 </odoo>
