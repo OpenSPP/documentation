@@ -1,98 +1,239 @@
 ---
 review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
+review-date: 2025-08-17
+reviewer: gemini-code-assist
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Customize Entitlement
+# Customize Program Entitlements
 
-The following article guides the reader in understanding how the entitlement can be customized by providing a sample scenario and a working example.
+## Introduction
+
+In OpenSPP, program benefits are defined and calculated through a flexible system called **Entitlement Managers**. An Entitlement Manager is a self-contained component that defines the logic for how much a beneficiary is entitled to receive in a given program cycle. This allows for creating reusable and complex benefit calculation rules that can be easily attached to any program.
+
+This guide will walk you through creating a custom Entitlement Manager module from scratch. We will use the `spp_entitlement_cash` module as a practical reference to build a new manager that calculates cash-based entitlements with flexible rules.
+
+By the end of this guide, you will be able to:
+
+-   Understand the role and structure of an Entitlement Manager.
+-   Create a new model for your custom entitlement rules.
+-   Implement the core logic to calculate and create entitlements.
+-   Create a user interface for configuring your manager.
+-   Register your new manager so it can be used in any program.
+-   Extend the Program Creation Wizard to pre-configure your manager.
+-   Set up the necessary security access for your new model.
 
 ## Prerequisites
 
-- Knowledge of Python, Odoo, XML, Xpaths.
-- To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html).
+-   Solid understanding of Odoo 17 module development.
+-   Knowledge of Python, Odoo, XML, and XPaths.
+-   Familiarity with the OpenG2P and OpenSPP core modules, especially `g2p_programs`, `spp_programs`, and `g2p_registry_base`.
+-   To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
 
-## If the Programs module is not installed
+## Module Structure
 
-1. Log into OpenSPP with administrative rights.
+A typical Entitlement Manager module follows the standard Odoo module structure. Here's the complete structure of our reference module, `spp_entitlement_cash`:
 
-2. Access the “Apps” menu from the dashboard to manage OpenSPP modules.
-
-3. Choose “Update Apps List” to refresh the module list.
-
-4. Search for “Programs” and initiate installation. This will also install the other modules required.
-
-![](custom_entitlement/1.png)
-
-## Utilising the Entitlement
-
-For more detailed guidance on utilizing the Entitlement module in OpenSPP, please refer to the information available at the provided link which will be published soon.
-
-## Customize Entitlement
-
-The duration of the validity of the entitlement is not shown currently in OpenSPP. Let’s look at a step by step guide on how the duration can be shown within an entitlement.
-
-A working sample module for the described scenario can be accessed at the provided [link](https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_entitlement_custom).
-
-The key steps in module development are as follows:
-
-1. To customize entitlement, a new module can be developed.
-2. To initiate the development of a custom module for entitlement customization, begin by creating a manifest file. This file should include fields like name, category, and version. Additionally, it's crucial to define the dependencies of the new module as outlined below.
-
-```python
- "depends": [
-       "spp_programs",
-   ],
+```
+spp_entitlement_cash/
+├── __init__.py
+├── __manifest__.py
+├── models/
+│   ├── __init__.py
+│   └── entitlement_manager.py # The core manager logic & registration
+├── security/
+│   └── ir.model.access.csv
+├── views/
+│   └── entitlement_manager_view.xml # The manager's UI
+└── wizard/
+    ├── __init__.py
+    └── create_program_wizard.py # Extends the program creation wizard
 ```
 
-3. To add the new field in the new module, develop a Python file named `entitlement.py` that extends `g2p.entitlement` and incorporate this file into `models/init.py`. The definition of the fields should be implemented as demonstrated below.
+---
+
+## Step-by-Step Guide
+
+### Step 1: Create the Module Scaffold
+
+Start by creating a new directory for your module (e.g., `spp_custom_entitlement_manager`) and populate it with the basic Odoo module files and the directory structure shown above.
+
+### Step 2: Define the Manifest (`__manifest__.py`)
+
+The manifest file declares your module's metadata and dependencies. It's crucial to list all the modules your customization will interact with. Our cash entitlement manager depends on `g2p_programs` and `spp_programs` for the base manager framework.
 
 ```python
-from odoo import api, fields, models
-
-class G2PEntitlementCustom(models.Model):
-   _inherit = "g2p.entitlement"
-
-   day_duration = fields.Integer("Valid Duration (Days)", compute="_compute_day_duration")
-
-   @api.depends("valid_from", "valid_until")
-   def _compute_day_duration(self):
-       for rec in self:
-           valid_from = rec.valid_from or fields.Date.today()
-           delta = rec.valid_until - valid_from
-           rec.day_duration = delta.days
+# From: spp_entitlement_cash/__manifest__.py
+{
+    "name": "OpenSPP Cash Entitlement",
+    "summary": "Manage cash-based entitlements for beneficiaries within social protection programs, including defining calculation rules, automating disbursement, and tracking payments.",
+    "category": "OpenSPP",
+    "version": "17.0.1.3.0",
+    "sequence": 1,
+    "author": "OpenSPP.org",
+    "website": "https://github.com/OpenSPP/openspp-modules",
+    "license": "LGPL-3",
+    "development_status": "Production/Stable",
+    "maintainers": ["jeremi", "gonzalesedwin1123"],
+    "depends": [
+        "base",
+        "g2p_registry_base",
+        "g2p_programs",
+        "spp_programs",
+    ],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/entitlement_manager_view.xml",
+        "wizard/create_program_wizard.xml",
+    ],
+    "application": True,
+    "installable": True,
+    "auto_install": False,
+}
 ```
 
-The code mentioned above will introduce a new field to the `g2p_entitlement` table for storing the duration of an entitlement. To understand further, refer to the following documentation [Link 1](https://www.odoo.com/documentation/17.0/developer/tutorials/server_framework_101/03_basicmodel.html), [Link 2](https://www.odoo.com/documentation/17.0/developer/tutorials/server_framework_101/13_other_module.html), [Link 3](https://www.odoo.com/documentation/17.0/developer/tutorials/server_framework_101/12_inheritance.html)
+### Step 3: Create the Entitlement Manager Model
 
-Here the values of `valid_until`, `valid_from` fields are derived from the values of cycle’s start date and end date fields. The mentioned fields are from the table `g2p.cycle`.
+This is the core of your module. You will create a new model that holds the specific configuration for your entitlement rules and contains the logic to calculate and generate entitlements.
 
-4. To integrate new fields into the UI, the following steps should be followed. Create a new file called `views/entitlement_view.xml` in the module. Add the below code to the manifest file.
+1.  **Create the model file**: In your `models/` directory, create a Python file named `entitlement_manager.py`. Remember to import it in `models/__init__.py`.
 
-```python
-"data": [
-    "views/entitlement_view.xml",
-],
-```
+2.  **Define the model**:
+    -   The model name (`_name`) should be descriptive, like `g2p.program.entitlement.manager.cash`.
+    -   Inherit from `g2p.base.program.entitlement.manager`. This provides the essential framework for an entitlement manager.
+    -   Define fields to store the configuration. In this case, we have a one-to-many field to a separate model, `g2p.program.entitlement.manager.cash.item`, which holds the individual calculation rules.
 
-5. The following code can be added to the `entitlement_view.xml` file to show the duration in the UI.
+    ```python
+    # From: spp_entitlement_cash/models/entitlement_manager.py
+
+    class G2PCashEntitlementManager(models.Model):
+        _name = "g2p.program.entitlement.manager.cash"
+        _inherit = [
+            "g2p.base.program.entitlement.manager",
+            "g2p.manager.source.mixin",
+        ]
+        _description = "Cash Entitlement Manager"
+
+        entitlement_item_ids = fields.One2many(
+            "g2p.program.entitlement.manager.cash.item",
+            "entitlement_id",
+            "Entitlement Items",
+        )
+        max_amount = fields.Monetary(...)
+        # ... other fields
+
+        def prepare_entitlements(self, cycle, beneficiaries):
+            """Prepare Cash Entitlements."""
+            # ... (logic to iterate through items and beneficiaries) ...
+            for beneficiary_id in beneficiaries_with_entitlements_to_create:
+                # ... (calculate amount based on rules) ...
+                new_entitlements_to_create[beneficiary_id.id] = {
+                    "cycle_id": cycle.id,
+                    "partner_id": beneficiary_id.id,
+                    "initial_amount": amount,
+                    # ... other entitlement values
+                }
+            # ... (create g2p.entitlement records) ...
+    ```
+
+    The `prepare_entitlements` method is the most critical part. It is called by the system to generate the `g2p.entitlement` records for a given cycle and set of beneficiaries, based on the rules defined in the manager.
+
+### Step 4: Register the New Manager
+
+To make OpenSPP aware of your new manager, you must add it to the list of available entitlement managers.
+
+1.  **Extend the `g2p.program.entitlement.manager` model**: In the same file, `models/entitlement_manager.py`, inherit from `g2p.program.entitlement.manager`.
+
+2.  **Extend the selection method**: Override the `_selection_manager_ref_id` method to add your new manager's model name and a user-friendly label to the selection list.
+
+    ```python
+    # From: spp_entitlement_cash/models/entitlement_manager.py
+
+    class EntitlementManager(models.Model):
+        _inherit = "g2p.program.entitlement.manager"
+
+        @api.model
+        def _selection_manager_ref_id(self):
+            selection = super()._selection_manager_ref_id()
+            new_manager = ("g2p.program.entitlement.manager.cash", "Cash")
+            if new_manager not in selection:
+                selection.append(new_manager)
+            return selection
+    ```
+
+### Step 5: Create the User Interface
+
+Create a form view so that program administrators can configure the rules for your new manager.
 
 ```xml
- <record id="view_custom_entitlement_form" model="ir.ui.view">
-   <field name="name">view_custom_entitlement_form</field>
-   <field name="model">g2p.entitlement</field>
-   <field name="inherit_id" ref="g2p_programs.view_entitlement_form" />
-   <field name="priority">1000</field>
-   <field name="arch" type="xml">
-     <xpath expr="//field[@name='valid_until']" position="after">
-       <field name="day_duration" />
-     </xpath>
-   </field>
- </record>
+<!-- From: spp_entitlement_cash/views/entitlement_manager_view.xml -->
+<record id="view_entitlement_manager_cash_form" model="ir.ui.view">
+    <field name="name">view_entitlement_manager_cash_form</field>
+    <field name="model">g2p.program.entitlement.manager.cash</field>
+    <field name="arch" type="xml">
+        <form string="Cash Entitlement Manager">
+            <sheet>
+                <!-- ... (header and title) ... -->
+                <group>
+                    <field name="entitlement_item_ids" nolabel="1" colspan="4">
+                        <tree>
+                            <field name="amount" />
+                            <field name="multiplier_field" />
+                            <field name="max_multiplier" />
+                        </tree>
+                        <!-- ... (form view for items) ... -->
+                    </field>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
 ```
 
-6. Install the module to include the new changes. The following screenshot shows the added field duration in the newly developed module.
+### Step 6: Extend the Program Creation Wizard
 
-![](custom_entitlement/2.png)
+To improve user experience, add configuration fields directly to the "Create Program" wizard.
+
+1.  **Extend the wizard model**: In `wizard/create_program_wizard.py`, inherit from `g2p.program.create.wizard`, add an `entitlement_kind` selection for your new manager, and override `_get_entitlement_manager` to handle its creation.
+
+    ```python
+    # In: wizard/create_program_wizard.py
+    class G2PCreateNewProgramWiz(models.TransientModel):
+        _inherit = "g2p.program.create.wizard"
+
+        entitlement_kind = fields.Selection(selection_add=[("cash", "Cash")])
+        entitlement_cash_item_ids = fields.One2many(...)
+
+        def _get_entitlement_manager(self, program_id):
+            res = super()._get_entitlement_manager(program_id)
+            if self.entitlement_kind == "cash":
+                # Logic to create 'g2p.program.entitlement.manager.cash'
+                # and link it to the program via 'g2p.program.entitlement.manager'
+                # ...
+            return res
+    ```
+
+2.  **Extend the wizard view**: In `wizard/create_program_wizard.xml`, extend the form to show your new fields when the "Cash" entitlement kind is selected.
+
+### Step 7: Set Up Security
+
+Grant users access to your new models in `security/ir.model.access.csv`.
+
+```csv
+# From: spp_entitlement_cash/security/ir.model.access.csv
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+g2p_program_entitlement_manager_cash_admin,Program Entitlement Manager Cash Admin Access,spp_entitlement_cash.model_g2p_program_entitlement_manager_cash,g2p_registry_base.group_g2p_admin,1,1,1,1
+g2p_program_entitlement_manager_cash_program_manager,Program Entitlement Manager Cash Program Manager Access,spp_entitlement_cash.model_g2p_program_entitlement_manager_cash,g2p_programs.g2p_program_manager,1,1,1,0
+```
+
+### Step 8: Install and Use Your New Manager
+
+1.  Install your new module in Odoo.
+2.  Navigate to **Programs** and click **Create Program**.
+3.  In the wizard, under the **Entitlement** page, select your new **"Cash"** manager type from the **Manager** dropdown.
+4.  The fields for your manager will appear, allowing you to define entitlement rules directly in the wizard.
+5.  Click **Create**. A new program will be created, and an instance of your entitlement manager will be automatically created and configured.
+
+## Conclusion
+
+By following these steps, you have created a complete, reusable, and configurable Entitlement Manager. This powerful pattern allows you to encapsulate complex benefit calculation logic into a clean, maintainable module that seamlessly integrates with the OpenSPP framework. You can adapt this pattern to create managers for any kind of entitlement, whether it's cash, in-kind goods, or vouchers, with rules as simple or complex as your program requires.

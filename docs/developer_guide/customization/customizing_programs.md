@@ -28,7 +28,7 @@ By the end of this guide, you will be able to:
 - Solid understanding of Odoo 17 module development.
 - Knowledge of Python, Odoo, XML, Xpaths.
 - Familiarity with the OpenG2P and OpenSPP core modules, especially `g2p_programs`, `spp_programs`, and `g2p_registry_base`.
-- To set up OpenSPP for development, please refer to the Developer Guide.
+- To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
 
 ## Module Structure
 
@@ -39,12 +39,10 @@ spp_eligibility_tags/
 ├── manifest.py 
 ├── models/ 
 │   ├── init.py 
-│   ├── g2p_program.py
 │   └── eligibility_manager.py # The core manager logic & registration 
 ├── security/
 │   └── ir.model.access.csv 
 ├── views/
-|   ├── g2p_program_views.xml
 │   └── eligibility_manager_view.xml # The manager's UI
 └── wizard/
     ├── init.py
