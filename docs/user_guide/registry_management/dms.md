@@ -5,7 +5,7 @@ reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Directory Management System
+# Document Management System
 
 ## Introduction  
 In this tutorial, you will learn how to use the Document Management System feature in OpenSPP.
