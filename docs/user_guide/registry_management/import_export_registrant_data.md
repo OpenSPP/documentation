@@ -25,7 +25,7 @@ By the end of this tutorial, you will have a clear understanding of the purpose 
 
 ## Process
 
-Select existing individual records to export and define export parameters, save as either **CSV** or **XLSX**. Using export feature either for record keeping or for Importing registrant back into OpenSPP
+The process involves selecting existing individual or group records to export, defining export parameters, and saving the file as either **CSV** or **XLSX**. This exported file can be used for record-keeping or for importing registrant data back into OpenSPP.
 
 ## Perform export registrant
 
@@ -35,7 +35,7 @@ Specifying export parameters is done in the Registry section of OpenSPP, which y
 
 Depending on your needs, you can export data for **Groups** or **Individuals**. The export procedure is identical in both cases, but the exportable fields differ.
 
-Navigate to either **Groups** or **Individuals** and select which records to export by clicking the checkboxes beside each record. To select all displayed records, click the checkbox beside **Name**.If you want to export more records than are displayed on the page, select them by clicking **Select all**.
+Navigate to either **Groups** or **Individuals** and select which records to export by clicking the checkboxes beside each record. To select all displayed records, click the checkbox beside **Name**. If you want to export more records than are displayed on the page, select them by clicking **Select all**.
 
 ![](import_export_registrant_data/export_users_select_all.png)
 
@@ -55,7 +55,7 @@ Once you are satisfied with the selected fields in the right column, click the *
 
 ### Creating export templates
 
-Create a template for the set of fields that you have selected to make it use to perform the same export later. 
+Create a template for the set of fields that you have selected to make it easy to perform the same export later. 
 By clicking on the dropdown arrow, click on **New template**, set a name for your template, make sure you have already selected your desired fields for this template, and click the save icon.
 
 ![](import_export_registrant_data/export_users_export_template.png)
@@ -91,8 +91,9 @@ You can then proceed to **Preparing file for import**.
 
 ## Preparing file for import
 
-Prepare the Excel file for import by converting cells to text for all fields that consist of numbers; for instance, **phone**, **date of birth, and** **registration date**. This is to avoid data errors when inputting number values into these fields. For example the **phone field**, where mobile numbers may start with the **\+** symbol or with leading zeroes can cause a mobile number to be formatted unexpectedly. It is therefore important to format cells to text before adding number values. Also note that when saving the file, only CSV and XLSX formatted files are allowed for import.   
-- To update existing individuals or groups, open the exported Excel file and modify the cells you wish to update. Note that you should only format specific cells to text if your values break upon input. As in the image below, inputting a phone number with a leading \+ symbol is automatically formatted. In this case, you should format the specific cell to **Text** to resolve the issue. 
+To add new individuals or groups, prepare the Excel file for import by converting cells to text for all fields that consist of numbers; for instance, **phone**, **date of birth**, and **registration date**. This is to avoid data errors when inputting number values into these fields. For example the **phone field**, where mobile numbers may start with the **+** symbol or with leading zeroes can cause a mobile number to be formatted unexpectedly. It is therefore important to format cells to text before adding number values. Also note that when saving the file, only CSV and XLSX formatted files are allowed for import.
+
+To update existing individuals or groups, open the exported Excel file and modify the cells you wish to update. Note that you should only format specific cells to text if your values break upon input. As in the image below, inputting a phone number with a leading + symbol is automatically formatted. In this case, you should format the specific cell to **Text** to resolve the issue. 
 
 ![](import_export_registrant_data/import_users_sample_error.png)
 
@@ -112,7 +113,7 @@ Click **Test** to initiate validation of the data in the import document. If the
 
 If there are any issues with the file, a message will instead be displayed giving directions on how to solve the issue. You may refer to the **Error handling** section of this document to learn more about common errors. 
 
-When the file is considered valid, Click the **Import** button. This will redirect to the main table page, and you will receive a notification informing that the records have been successfully imported. 
+When the file is considered valid, click the **Import** button. This will redirect to the main table page, and you will receive a notification informing that the records have been successfully imported. 
 
 ![](import_export_registrant_data/import_export_successful_import.png)
 
@@ -125,7 +126,7 @@ OpenSPP displays different types of error messages on the import page when encou
 Some fields require values that are predefined in OpenSPP, such as the **category\_id** field. Setting a value in this column that does not match the values found in OpenSPP will return an error message. This error will be similar to the screenshot provided below.  
 ![](import_export_registrant_data/import_users_errors_found.png)
 
-To resolve this type of error, only type in values that are defined in OpenSPP, in this case for **category\_id**, you can navigate to **Registry,** then click  **Configuration,** and after that, select **Registrant Tags**. You should see the list of the defined **Tags**. You may use any of the listed values for **category\_id**, or alternatively, add a new registrant tag.
+To resolve this type of error, only type in values that are defined in OpenSPP, in this case for **category_id**, you can navigate to **Registry**, then click **Configuration**, and after that, select **Registrant Tags**. You should see the list of the defined **Tags**. You may use any of the listed values for **category_id**, or alternatively, add a new registrant tag.
 
 ![](import_export_registrant_data/import_users_regsitrant_tags.png)
 
@@ -134,7 +135,7 @@ To resolve this type of error, only type in values that are defined in OpenSPP, 
 If OpenSPP could not recognize your header, it will display **To import, select a field** beside the unrecognized header, similar to the screenshot below.  
 ![](import_export_registrant_data/import_users_select_a_field.png)
 
-To resolve this error,  if you are familiar with what field you want to associate with your header, you can click **To import, select a field,** and then select from the list of fields you wish to associate your field values with, otherwise, you can remove the header from your excel file as the field you are trying to import is not available to be imported into OpenSPP.
+To resolve this error, if you are familiar with what field you want to associate with your header, you can click **To import, select a field,** and then select from the list of fields you wish to associate your field values with, otherwise, you can remove the header from your Excel file as the field you are trying to import is not available to be imported into OpenSPP.
 
 ### Error: "Column contains incorrect values"
 
