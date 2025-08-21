@@ -25,7 +25,7 @@ Before submitting or approving change requests, ensure the following:
 
   2. Search OpenSPP Change Request and click install. Once installed, the page should refresh, then Activate button should disappear.
 
-    ![](using_change_request/chnage_request_install_module.png)
+    ![](using_change_request/change_request_install_module.png)
 
   3. This indicates that the module has been installed successfully.
 
