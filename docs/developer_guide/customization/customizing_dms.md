@@ -24,7 +24,7 @@ By the end of this guide, you will be able to:
 -   Basic understanding of Odoo 17 module development.
 -   Knowledge of XML for creating data files.
 -   Familiarity with the `spp_dms` core module.
--   To set up OpenSPP for development, please refer to the Developer Guide.
+-   To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
 
 ## Module Structure
 
