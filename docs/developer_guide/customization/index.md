@@ -25,5 +25,4 @@ customizing_indicators
 customizing_programs
 customizing_registry
 customizing_service_points
-implementing_pmt
 ```
