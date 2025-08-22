@@ -26,7 +26,7 @@ Configuring an outgoing email server allows OpenSPP to send emails using your or
 To configure an outgoing email server, you will need:
 - A user account with **System Admin** role.
 - The connection details for your SMTP email server:
-    - SMTP server address (e.g., `smtp.youremailserver.eml`)
+    - SMTP server address (e.g., `smtp.youremailserver.com`)
     - SMTP port (e.g., 587, 465, or 25)
     - Connection security type (None, SSL/TLS, or STARTTLS)
     - Username and password for the email account that will be used to send emails.
@@ -80,7 +80,7 @@ Now, fill in the form with the details from your email provider.
 - **Connection Encryption**: Select the appropriate security protocol. `TLS (STARTTLS)` is a common and secure choice.
 - **Username**: Enter the full email address of the account you are using to send mail.
 - **Password**: Enter the password for the email account. It is recommended to use an "App Password" if your provider supports it.
-- **SMTP Server**: Enter your server's address. For this guide, we'll use `smtp.youremailserver.eml`.
+- **SMTP Server**: Enter your server's address. For this guide, we'll use `smtp.youremailserver.com`.
 - **SMTP Port**: Enter the port number. `587` is common for STARTTLS.
 
 ![](email_gateway/A-step04-fill-in-server-details.jpg)
@@ -102,7 +102,7 @@ Your new email server is now configured and, if it has the lowest priority, will
 
 ## Incoming Email Server (IMAP/POP) Configuration
 
-Configuring an incoming email server allows OpenSPP to fetch emails from a dedicated mailbox and process them automatically. This is a powerful feature that can create or update records based on the content of the emails. For example, an email sent to `support@youremailserver.eml` could automatically create a new Grievance ticket.
+Configuring an incoming email server allows OpenSPP to fetch emails from a dedicated mailbox and process them automatically. This is a powerful feature that can create or update records based on the content of the emails. For example, an email sent to `support@youremailserver.com` could automatically create a new Grievance ticket.
 
 ### Prerequisites
 
@@ -110,7 +110,7 @@ To configure an incoming email server, you will need:
 - A user account with **System Admin** role.
 - The connection details for your IMAP or POP email server:
     - Server type (IMAP or POP)
-    - Server address (e.g., `imap.youremailserver.eml`)
+    - Server address (e.g., `imap.youremailserver.com`)
     - Server port (e.g., 993 for IMAP with SSL/TLS)
     - Whether SSL/TLS is required
     - Username and password for the dedicated email account.
@@ -152,7 +152,7 @@ Fill in the form with the details for the mailbox you want OpenSPP to monitor.
 
 - **Name**: A descriptive name, e.g., `Grievance Mailbox`.
 - **Server Type**: Choose `IMAP Server` or `POP Server`. IMAP is generally recommended.
-- **Server Name**: Enter your server's address, e.g., `imap.youremailserver.eml`.
+- **Server Name**: Enter your server's address, e.g., `imap.youremailserver.com`.
 - **Port**: Enter the correct port number (e.g., `993` for IMAP).
 - **SSL/TLS**: Check this box if your server uses SSL/TLS encryption.
 - **Username**: The full email address of the mailbox.
