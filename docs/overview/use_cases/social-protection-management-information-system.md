@@ -72,7 +72,7 @@ OpenSPP's modular architecture provides a strong foundation for building an SP-M
     * From the newly installed OpenSPP instance, Navigate to Apps and install **OpenSPP Registry: Base**
     * Creating a Program: `../../user_guide/program_management/create_program`
     * Enrolling Beneficiaries: `../../user_guide/program_management/enrol_beneficiaries`
-    * Importing Initial Data: `../../user_guide/registry_management/import_data`.
+    * Importing Initial Data: `../../user_guide/registry_management/import_export_registrant_data`.
 
 ### 5. Common Tasks & User Guides (Links)
 
