@@ -127,9 +127,6 @@ The process is similar to configuring an outgoing server, involving developer mo
 
 If you have not already, activate developer mode to access the technical settings.
 
-1.  Go to **Settings**.
-2.  Scroll to the bottom and click **Activate the developer mode**.
-
 #### Step 2: Navigate to Incoming Email Servers
 
 1.  Go back to the main **Settings** page.
