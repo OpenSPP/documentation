@@ -33,7 +33,6 @@ maxdepth: 2
 hidden: true
 ---
 
-installation_docker
 installation_deb
 poc_and_pilot
 ```
