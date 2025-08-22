@@ -5,7 +5,7 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Installing OpenSPP on Ubuntu/Debian
+# Installation Guide
 
 This guide walks you through installing OpenSPP on Ubuntu 24.04 or Debian 12 (Bookworm) using the official APT repository hosted on Nexus.
 
