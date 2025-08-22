@@ -51,6 +51,8 @@ Administrative tasks and system management:
 - {doc}`reporting_dashboards`
 - {doc}`grievance_management`
 - {doc}`indicator_fields`
+- {doc}`email_gateway`
+- {doc}`inventory_configuration`
 - {doc}`consent_management`
 
 ```{toctree}
