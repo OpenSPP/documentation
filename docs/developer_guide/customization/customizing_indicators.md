@@ -33,7 +33,10 @@ Examples:
 
 ## Creating Indicators in a Module
 
-In this scenario, we create a complete module that adds indicators to both Individual and Group registries. This follows the same pattern as custom fields but focuses on computed indicators.
+In this scenario, we create a module that adds indicators to both Individual and Group registries. This follows the same pattern as custom fields but focuses on computed indicators.
+
+> **Note:**  
+> If you use the `spp_custom_field` module, all fields defined on the model will be automatically exposed in the UI. You do **not** need to manually extend views.
 
 ### 1. Create Module Structure
 
@@ -46,16 +49,13 @@ spp_custom_indicators/
 ├── models/
 │   ├── __init__.py
 │   └── res_partner.py
-├── views/
-│   ├── individual_views.xml
-│   └── group_views.xml
 └── security/
     └── ir.model.access.csv
 ```
 
 ### 2. Define Module Manifest
 
-Create a manifest file that includes the proper dependencies and data files:
+Declare the dependency on `spp_custom_field` (and registry modules):
 
 ```python
 {
@@ -69,11 +69,10 @@ Create a manifest file that includes the proper dependencies and data files:
     "depends": [
         "g2p_registry_group",
         "g2p_registry_individual",
+        "spp_custom_field",  # Ensure this is included
     ],
     "data": [
-        "views/individual_views.xml",
-        "views/group_views.xml",
-        # "security/ir.model.access.csv",  # not needed if you do not add new models
+        # No need for view XML if using spp_custom_field
     ],
     "application": False,
     "installable": True,
@@ -149,72 +148,10 @@ class G2PRegistrant(models.Model):
             partner.z_ind_indv_age_years = max(age, 0)
 ```
 
-### 4. Create View Extensions
-
-Expose the indicators on both Individuals and Groups UI by extending the existing views.
-
-```xml
-<odoo>
-    <!-- Individual: show age indicator in form -->
-    <record id="view_individuals_form_custom_indicators" model="ir.ui.view">
-        <field name="name">view_individuals_form_custom_indicators</field>
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="g2p_registry_individual.view_individuals_form" />
-        <field name="arch" type="xml">
-            <xpath expr="//page[@name='basic_info']/group/group[1]" position="after">
-                <group colspan="2">
-                    <field name="z_ind_indv_age_years"/>
-                </group>
-            </xpath>
-        </field>
-    </record>
-
-    <!-- Individual: show age indicator in tree -->
-    <record id="view_individuals_list_tree_custom_indicators" model="ir.ui.view">
-        <field name="name">view_individuals_list_tree_custom_indicators</field>
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="g2p_registry_individual.view_individuals_list_tree" />
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='address']" position="after">
-                <field name="z_ind_indv_age_years" string="Age"/>
-            </xpath>
-        </field>
-    </record>
-
-    <!-- Group: show indicators in form -->
-    <record id="view_groups_form_custom_indicators" model="ir.ui.view">
-        <field name="name">view_groups_form_custom_indicators</field>
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="g2p_registry_group.view_groups_form" />
-        <field name="arch" type="xml">
-            <xpath expr="//page[@name='basic_info']/group/group[1]" position="after">
-                <group colspan="2">
-                    <field name="z_ind_grp_num_children"/>
-                    <field name="z_ind_grp_is_single_head_hh"/>
-                </group>
-            </xpath>
-        </field>
-    </record>
-
-    <!-- Group: show indicators in tree -->
-    <record id="view_groups_list_tree_custom_indicators" model="ir.ui.view">
-        <field name="name">view_groups_list_tree_custom_indicators</field>
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="g2p_registry_group.view_groups_list_tree" />
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='name']" position="after">
-                <field name="z_ind_grp_num_children" string="Children"/>
-                <field name="z_ind_grp_is_single_head_hh" string="Single Head"/>
-            </xpath>
-        </field>
-    </record>
-</odoo>
-```
-
-### 5. Install and Test
+### 4. Install and Test
 
 1. Install the module through the Apps menu.
-2. Open the Individual and Group registries and verify the new indicators display in both list and form views.
+2. Open the Individual and Group registries and verify the new indicators display in both list and form views (handled automatically by `spp_custom_field`).
 3. Create or update records and ensure the indicators compute correctly.
 4. Test filtering and searching by indicator values.
 
@@ -386,8 +323,6 @@ class TestGroupIndicators(TransactionCase):
             "The group should be a single-headed household"
         )
 ```
-
-
 
 ## Common Indicator Patterns
 
