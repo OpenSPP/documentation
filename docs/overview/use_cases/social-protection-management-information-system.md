@@ -1,10 +1,16 @@
 ---
 review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+review-date: 2025-08-22
+reviewer: Mark penalosa
+migration-notes: "Created by Penn"
 
+html_meta:
+    "title": "Social Protection Management Information System (SP-MIS) with OpenSPP"
+    "description": "Overview of Social Protection Management Information Systems (SP-MIS), key principles, and how OpenSPP enables effective implementation, with links to relevant documentation and features."
+    "property=og:description": "Overview of Social Protection Management Information Systems (SP-MIS), key principles, and how OpenSPP enables effective implementation, with links to relevant documentation and features."
+    "property=og:title": "Social Protection Management Information System (SP-MIS) with OpenSPP"
+    "keywords": "OpenSPP, SP-MIS, Social Protection, Management Information System, Beneficiary Registry, Program Management, Data Integration, Payment Gateway, Interoperability"
+---
 # Social Protection Management Information System (SP-MIS) with OpenSPP
 
 This page explains how OpenSPP helps you implement effective Social Protection Management Information Systems (SP-MIS), outlining key principles and guiding you to relevant features. It serves as an entry point for users interested specifically in this use case.
@@ -63,6 +69,7 @@ OpenSPP's modular architecture provides a strong foundation for building an SP-M
 
 * **Installation:** Start with the general OpenSPP installation guide: `/getting_started/index`.
 * **Initial Setup:**
+    * From the newly installed OpenSPP instance, Navigate to Apps and install **OpenSPP Registry: Base**
     * Creating a Program: `../../user_guide/program_management/create_program`
     * Enrolling Beneficiaries: `../../user_guide/program_management/enrol_beneficiaries`
     * Importing Initial Data: `../../user_guide/registry_management/import_data`.

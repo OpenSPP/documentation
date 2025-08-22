@@ -96,11 +96,11 @@ OpenSPP's modular architecture provides a strong foundation for building a Farme
     
 *   **Initial Setup:**
     
-    *   Setting up the Farmer Registry
+    *   From the newly installed OpenSPP instance, Navigate to Apps and install **OpenSPP Farmer Registry Base**
         
-    *   Configuring Areas
+    *   Configuring Areas {doc}`../../user_guide/admininstration/import_areas`.
         
-    *   Importing Initial Data: {doc}`../../user_guide/registry_management/export_data` and {doc}`../../user_guide/registry_management/import_data`.
+    *   Importing Initial Data: {doc}`../../user_guide/registry_management/import_export_data`.
         
 
 ### 5. Common Tasks & User Guides (Links)
