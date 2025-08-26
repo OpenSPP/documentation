@@ -1,24 +1,43 @@
-docutils<0.17,>=0.15  # sphinx-book-theme 0.2.0 has requirement docutils<0.17,>=0.15
-Sphinx<5,>=3  # sphinx-book-theme 0.3.3 has requirement sphinx<5,>=3
-graphviz
-jsx-lexer  # volto
-lesscpy
-linkify-it-py
-myst-parser
-pydata-sphinx-theme<=0.8.99  # Build fails in 0.9.0. See https://github.com/plone/documentation/issues/1297
-sphinx-autobuild
-sphinx-book-theme==0.3.3  # Temporary pin until we can sort out HTML refactoring.
-sphinx-copybutton
-sphinx-design  # Documentation only
-sphinx-notfound-page  # Documentation only
-sphinx-sitemap
-sphinx-togglebutton
-sphinxcontrib.httpdomain
-sphinxcontrib.httpexample
-sphinxext-opengraph
-sphinx-design
-sphinxcontrib-video
-sphinx-tabs==3.2.0
-sphinxcontrib-googleanalytics
-sphinx-reredirects
-sphinxcontrib-mermaid
+# ABOUTME: Core documentation requirements for OpenSPP documentation
+# ABOUTME: Based on Odoo 17 documentation approach - minimal and focused
+
+# Core Sphinx (compatible versions)
+docutils>=0.17.1,<0.18  # Avoid 0.17.0 due to pydata-sphinx-theme conflict
+sphinx==4.3.2
+sphinxcontrib-applehelp==1.0.4
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==2.0.1
+sphinxcontrib-serializinghtml==1.1.5
+sphinxcontrib-qthelp==1.0.3
+
+# Additional sphinx extensions we use
+myst-parser==0.18.1  # For Markdown support
+sphinx-autobuild==2021.3.14  # Live reload for development
+sphinx-book-theme==0.3.3
+sphinx-copybutton==0.5.1
+sphinx-design==0.3.0
+sphinx-notfound-page==0.8.3
+sphinx-sitemap==2.5.0
+sphinx-tabs==3.4.5  # Version compatible with docutils 0.17
+sphinx-togglebutton==0.3.2
+sphinxcontrib-googleanalytics==0.4
+sphinxcontrib-httpdomain==1.8.1
+sphinxcontrib-httpexample==1.1
+sphinxcontrib-mermaid==0.7.1  # Compatible with Sphinx 4.3.2
+sphinxcontrib-video==0.2.0
+sphinxext-opengraph==0.8.1
+
+# Pygments for syntax highlighting
+pygments>=2.12.0
+
+# For style compilation (from Odoo)
+libsass==0.20.1
+
+# Additional tools for OpenSPP docs
+graphviz==0.20.1
+jsx-lexer==2.0.0  # For Volto docs
+lesscpy==0.15.1
+linkify-it-py==2.0.0
+PyYAML==6.0
+beautifulsoup4==4.11.2  # For HTML processing
+livereload==2.6.3  # Required by sphinx-autobuild

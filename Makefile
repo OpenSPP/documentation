@@ -35,21 +35,20 @@ distclean:  ## Clean docs build directory and Python virtual environment
 
 bin/python:
 	python3 -m venv . || virtualenv --clear --python=python3 .
-	bin/pip install -r requirements_frozen.txt
+	bin/pip install --upgrade pip setuptools wheel
+	bin/pip install -r requirements.txt
+	@echo "Basic documentation dependencies installed."
+	@echo "To enable Odoo autodoc, run: bin/pip install -r requirements-dev.txt"
 
 docs/openg2p-program:
-	git submodule init; \
-	git submodule update; \
-	bin/pip install -r submodules/openg2p-program/requirements.txt;
-#	ln -s ../submodules/openg2p-program/docs ./docs/openg2p-program
+	git submodule init
+	git submodule update
 	@echo
 	@echo "Documentation of openg2p-program initialized."
 
 docs/openg2p-registry:
-	git submodule init; \
-	git submodule update; \
-	bin/pip install -r submodules/openg2p-registry/requirements.txt;
-#	ln -s ../submodules/openg2p-registry/docs ./docs/openg2p-program
+	git submodule init
+	git submodule update
 	@echo
 	@echo "Documentation of openg2p-registry initialized."
 

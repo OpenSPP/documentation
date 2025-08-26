@@ -29,7 +29,7 @@ _logger = logging.getLogger(__name__)
 #=== Odoo configuration ===#
 
 
-odoo_current_branch = '15.0'
+odoo_current_branch = '17.0'
 # `current_version` is the Odoo version linked to the current branch.
 # E.g., saas-15.4 -> 15.4; 12.0 -> 12; master -> master (*).
 odoo_current_version = odoo_current_branch.replace('saas-', '').replace('.0', '')
@@ -94,6 +94,9 @@ else:
     #             print(f"Found custom addon in {folder}.")
 
 
+    # First add Odoo's standard addons
+    odoo.addons.__path__.append(str(odoo_dir) + '/addons')
+    
     if "submodules" in str(odoo_dir):
         print("Found Odoo sources in submodules dev environment.")
         my_addons_dir = os.path.abspath(os.path.join(odoo_dir, '..'))
@@ -103,8 +106,6 @@ else:
                 sys.path.insert(0, str(folder))
                 odoo.addons.__path__.append(str(folder))
                 print(f"Found custom addon in {folder}.")
-
-    odoo.addons.__path__.append(str(odoo_dir) + '/addons')
     from odoo import release as odoo_release  # Don't collide with Sphinx's 'release' config option
     odoo_version = odoo_release.version.replace('~', '-') \
         if 'alpha' not in odoo_release.version else 'master'
@@ -421,7 +422,7 @@ myst_substitutions = {
 # the entire OpenSPP Documentation is built.
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3/", None),
-    "odoo": ("https://www.odoo.com/documentation/15.0/", None),
+    "odoo": ("https://www.odoo.com/documentation/17.0/", None),
 }
 
 
