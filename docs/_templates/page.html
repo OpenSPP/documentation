@@ -4,8 +4,13 @@
 <title>{{ title|striptags|e }}{%- for parent in parents %} – {{ parent.title }}{%- endfor %}{{ titlesuffix }}</title>
 {%- endblock %}
 
+{%- block scripts %}
+{{ super() }}
+{%- endblock %}
+
 
 {% block footer %}
+{{ super() }}
     <script type="text/javascript">
         $(document).ready(function() {
             // Hide empty sub menu.

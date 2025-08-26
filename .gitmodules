@@ -1,18 +1,44 @@
 [submodule "submodules/openg2p-registry"]
 	path = submodules/openg2p-registry
-	url = git@github.com:OpenG2P/openg2p-registry.git
-	branch = 15.0-1.0-develop
+	url = https://github.com/OpenSPP/openg2p-registry.git
+	branch = 17.0-develop-openspp
 [submodule "submodules/openg2p-program"]
 	path = submodules/openg2p-program
-	url = git@github.com:OpenG2P/openg2p-program.git
-	branch = 15.0-1.0-develop
+	url = https://github.com/OpenSPP/openg2p-program.git
+	branch = 17.0-develop-openspp
+[submodule "submodules/openg2p-auth"]
+	path = submodules/openg2p-auth
+	url = https://github.com/OpenSPP/openg2p-auth.git
+	branch = 17.0-develop-openspp
+[submodule "submodules/openg2p-rest-framework"]
+	path = submodules/openg2p-rest-framework
+	url = https://github.com/OpenSPP/openg2p-rest-framework.git
+	branch = 17.0-openspp
+[submodule "submodules/openspp-modules"]
+	path = submodules/openspp-modules
+	url = https://github.com/openspp/openspp-modules.git
+	branch = 17.0
+[submodule "submodules/mukit-modules"]
+	path = submodules/mukit-modules
+	url = https://github.com/OpenSPP/mukit-modules.git
+	branch = 17.0-openspp
+[submodule "submodules/server-tools"]
+	path = submodules/server-tools
+	url = https://github.com/OCA/server-tools.git
+	branch = 17.0
+	shallow = true
+[submodule "submodules/server-ux"]
+	path = submodules/server-ux
+	url = https://github.com/OCA/server-ux.git
+	branch = 17.0
+	shallow = true
 [submodule "submodules/odoo"]
 	path = submodules/odoo
-	url = git@github.com:odoo/odoo.git
-	branch = 15.0
+	url = https://github.com/odoo/odoo.git
+	branch = 17.0
 	shallow = true
 [submodule "submodules/queue"]
 	path = submodules/queue
-	url = git@github.com:OCA/queue
-	branch = 15.0
+	url = https://github.com/OCA/queue.git
+	branch = 17.0
 	shallow = true

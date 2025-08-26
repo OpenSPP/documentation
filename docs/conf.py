@@ -167,8 +167,29 @@ extensions = [
     "notfound.extension",
 ]
 
+# Must come after extensions are defined
+myst_fence_as_directive = ["mermaid"]
+
+# Additional MyST configuration for fence directives
+myst_dmath_double_inline = True
+myst_all_links_external = False
+
 sphinx_tabs_disable_tab_closing = True
 sphinx_tabs_disable_css_loading = True
+
+# -- Mermaid configuration ----------------------------------
+mermaid_version = "10.6.1"
+mermaid_init_js = """
+mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    themeVariables: {
+        primaryColor: '#0066cc',
+        primaryTextColor: '#000000',
+        primaryBorderColor: '#0066cc'
+    }
+});
+"""
 
 # -- sphinx-reredirects configuration ----------------------------------
 # Redirect configuration for moved or renamed pages

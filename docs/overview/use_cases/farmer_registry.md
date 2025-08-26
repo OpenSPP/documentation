@@ -143,7 +143,7 @@ OpenSPP's modular architecture provides a strong foundation for building a Farme
 
 A Farmer Registry built with OpenSPP typically interacts with various internal modules and external systems:
 
-```mermaid
+```{mermaid}
 
 graph LR
     subgraph ExternalSystems["External Systems"]

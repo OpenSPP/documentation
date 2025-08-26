@@ -94,7 +94,7 @@ OpenSPP's modular architecture provides a strong foundation for building an SP-M
 
 An SP-MIS built with OpenSPP typically interacts with various internal modules and external systems:
 
-```mermaid
+```{mermaid}
 graph LR
     %% External Systems (stacked vertically)
     subgraph ExternalSystems["External Systems"]
