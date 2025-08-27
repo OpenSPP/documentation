@@ -9,7 +9,7 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 This article guides you through understanding and customizing indicators in OpenSPP, using a practical scenario and a working example. Indicators are computed fields that provide dynamic, calculated values based on registrant data, essential for social protection programs to track demographic information, eligibility criteria, and program outcomes.
 
-### Field Naming Conventions
+**Field Naming Conventions**
 
 OpenSPP uses systematic field naming prefixes to categorize different types of indicators:
 
@@ -23,7 +23,7 @@ Examples:
 - `z_ind_indv_age_years`: Age in years for an individual
 - `z_ind_grp_is_single_head_hh`: Boolean indicating single-headed household
 
-### Indicator Types
+**Indicator Types**
 
 1. **Count Indicators**: Count records matching specific criteria
 2. **Boolean Indicators**: True/false flags based on conditions

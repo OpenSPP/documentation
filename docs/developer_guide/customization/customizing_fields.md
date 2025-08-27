@@ -9,12 +9,13 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 This article guides you through understanding how the registry modules work in OpenSPP and how to add custom fields to registrants. The `g2p_registry_group` and `g2p_registry_individual` modules surface registrants (groups and individuals) based on the `res.partner` model.
 
-### Core Models
+**Core Models**
+
 The registry separates groups and individuals while sharing the same underlying model:
 - `res.partner`: Base model used for both groups and individuals. Differentiated by `is_group`.
 - `g2p.group.membership` (referenced in OpenSPP): Connects individuals to their groups.
 
-### Key Features
+**Key Features**
 - A unified `res.partner` record represents either a group (`is_group = True`) or an individual (`is_group = False`).
 - Rich registry user interfaces provided by `g2p_registry_group` and `g2p_registry_individual`.
 - Existing views that you can extend to expose your custom fields:
@@ -175,131 +176,6 @@ access_custom_partner_note,custom.partner.note,base.model_res_partner,base.group
 2. Open the Individual and Group registries and verify the new field displays in both list and form views.
 3. Create or update records and ensure the new field can be edited and saved.
 
----
-
-## Advanced Example: Adding a One2many Field
-
-To relate multiple records to a registrant, add a One2many on `res.partner` and define its comodel. This requires access rights and UI updates.
-
-### Define the New Model and One2many
-
-Create `models/partner_note.py`:
-
-```python
-from odoo import fields, models
-
-class PartnerNote(models.Model):
-    _name = "spp.partner.note"
-    _description = "Partner Note"
-
-    partner_id = fields.Many2one(
-        "res.partner",
-        string="Registrant",
-        required=True,
-        ondelete="cascade",
-    )
-    name = fields.Char(required=True)
-    description = fields.Text()
-```
-
-Extend `res.partner` in `models/res_partner.py`:
-
-```python
-from odoo import fields, models
-
-class G2PRegistrant(models.Model):
-    _inherit = "res.partner"
-
-    reg_notes = fields.One2many(
-        "spp.partner.note",
-        "partner_id",
-        string="Notes",
-    )
-```
-
-Update `models/__init__.py`:
-
-```python
-from . import res_partner
-from . import partner_note
-```
-
-### Expose in the UI
-
-```xml
-<odoo>
-    <!-- Individual form: One2many -->
-    <record id="view_individuals_form_custom_reg_notes" model="ir.ui.view">
-        <field name="name">view_individuals_form_custom_reg_notes</field>
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="g2p_registry_individual.view_individuals_form" />
-        <field name="arch" type="xml">
-            <xpath expr="//page[@name='basic_info']" position="after">
-                <page string="Notes">
-                    <field name="reg_notes" context="{'default_partner_id': active_id}">
-                        <tree editable="bottom">
-                            <field name="name"/>
-                            <field name="description"/>
-                        </tree>
-                        <form string="Partner Note">
-                            <group>
-                                <field name="name"/>
-                                <field name="description"/>
-                            </group>
-                        </form>
-                    </field>
-                </page>
-            </xpath>
-        </field>
-    </record>
-
-    <!-- Group form: One2many -->
-    <record id="view_groups_form_custom_reg_notes" model="ir.ui.view">
-        <field name="name">view_groups_form_custom_reg_notes</field>
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="g2p_registry_group.view_groups_form" />
-        <field name="arch" type="xml">
-            <xpath expr="//page[@name='basic_info']" position="after">
-                <page string="Notes">
-                    <field name="reg_notes" context="{'default_partner_id': active_id}">
-                        <tree editable="bottom">
-                            <field name="name"/>
-                            <field name="description"/>
-                        </tree>
-                        <form string="Partner Note">
-                            <group>
-                                <field name="name"/>
-                                <field name="description"/>
-                            </group>
-                        </form>
-                    </field>
-                </page>
-            </xpath>
-        </field>
-    </record>
-</odoo>
-```
-
-### Manifest and Security
-
-Update the manifest to include security:
-
-```python
-"data": [
-    "views/individual_views.xml",
-    "views/group_views.xml",
-    "security/ir.model.access.csv",
-],
-```
-
-Create `security/ir.model.access.csv` with access for the G2P Admin group:
-
-```csv
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_spp_partner_note_admin,spp.partner.note.admin,model_spp_partner_note,g2p_registry_base.group_g2p_admin,1,1,1,1
-```
-
----
 
 ## Best Practices
 

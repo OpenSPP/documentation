@@ -9,14 +9,15 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 The following article guides the reader in understanding how the area module works in OpenSPP and how it can be customized by providing a sample scenario and a working example. The `spp_area_base` module provides the foundation for managing geographical areas in OpenSPP, which can be used in programs and other modules.
 
-### Core Models
+**Core Models**
+
 The `spp_area_base` module also provides the core area management functionality with the following components:
 
 - **`spp.area`**: The main area model that manages geographical areas with hierarchical relationships
 - **`spp.area.kind`**: Defines different types of areas (administrative regions, ecological zones, etc.)
 - **`spp.area.import`**: Handles bulk import of area data from external sources
 
-### Key Features
+**Key Features**
 - Hierarchical area structure with parent-child relationships
 - Area codes for unique identification
 - Area types for categorization
