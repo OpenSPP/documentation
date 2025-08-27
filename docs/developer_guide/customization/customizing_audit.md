@@ -9,13 +9,13 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 This article explains how the audit modules work in OpenSPP and how to customize them, using a practical example and a working sample module. The audit stack consists of `spp_audit_log` (core models and UI), `spp_audit_post` (optional chatter posting), and `spp_audit_config` (preconfigured rules).
 
-### Core Models
+**Core Models**
 The audit stack provides core logging and optional posting with the following key components:
 - `spp.audit.rule`: Configures what to log per model. Fields include `model_id`, `field_to_log_ids`, and toggles for `log_create`, `log_write`, `log_unlink`, plus `view_logs` to add a context action.
 - `spp.audit.log`: Stores individual change entries including `audit_rule_id`, `user_id`, `model_id`, `res_id`, `method`, and formatted `data_html`.
 - (From `spp_audit_post`) `spp.audit.rule` adds parent linking (`parent_id`, `child_ids`, `field_id`) and `spp.audit.log` adds `parent_model_id`, `parent_res_ids_str`, and `parent_data_html` for posting to parent records.
 
-### Key Features
+**Key Features**
 - Dynamic method decoration on target models (`create`, `write`, `_write`, `unlink`) when a rule is created or updated
 - Field-level selection via `field_to_log_ids` and automatic formatting for selections, relational fields, and datetime values
 - Optional action menu "View logs" bound to the target model when `view_logs` is enabled

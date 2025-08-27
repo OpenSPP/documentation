@@ -9,7 +9,7 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 This article explains how the service points module works in OpenSPP and how it can be customized, using a practical scenario and a working example. The `spp_service_points` module provides the foundation for managing service delivery locations in OpenSPP, which can be used in programs and other modules.
 
-### Core Models
+**Core Models**
 
 The `spp_service_points` module provides the core service point management functionality with the following components:
 
@@ -17,7 +17,7 @@ The `spp_service_points` module provides the core service point management funct
 - **`spp.service.type`**: Defines different types of services offered at service points.
 - **`res.partner`**: Extended to include service point relationships for individuals and companies.
 
-### Key Features
+**Key Features**
 
 - Service point management with geographical area linking.
 - Service type categorization and tagging.
@@ -28,7 +28,7 @@ The `spp_service_points` module provides the core service point management funct
 - Integration with area management system.
 
 
-### Integration with Other Modules
+**Integration with Other Modules**
 
 Service points can be integrated with other OpenSPP modules:
 

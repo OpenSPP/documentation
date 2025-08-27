@@ -9,13 +9,13 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 This article explains how to customize OpenSPP's registry system by introducing a new **top-level group** type. As a practical example, we’ll add a new top-level group type (such as "Village") that can contain regular groups (households), along with custom UI, data, and actions.
 
-### Core Models
+**Core Models**
 
 - **`res.partner`**: Main registry model for individuals and groups.
 - **`g2p.group.kind`**: Defines types of groups (e.g., Household, Village).
 - **`g2p.group.membership`**: Manages group membership relationships.
 
-### Key Features
+**Key Features**
 
 - Hierarchical group structure (e.g., Villages > Households > Individuals)
 - Custom group kinds and indicators
