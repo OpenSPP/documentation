@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Customize Change Request
 
-## Introduction
-
 The OpenSPP platform provides a flexible and extensible Change Request (CR) framework. This allows developers
 to create custom modules for specific data modification scenarios beyond the standard ones. This guide will
 walk you through the process of creating a new Change Request Type module, using the
@@ -26,7 +24,7 @@ By the end of this guide, you will be able to:
 
 - Solid understanding of Odoo 17 module development.
 - Knowledge of Python, Odoo, XML, Xpaths.
-- Familiarity with the OpenSPP core modules, especially `spp_change_request`.
+- Familiarity with the OpenSPP core modules, especially `OpenSPP Change Request` (`spp_change_request`).
 - To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
 
 ## Module Structure
@@ -372,10 +370,13 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_spp_change_request_add_children_user,spp.change.request.add.children.user,model_spp_change_request_add_children,base.group_user,1,1,1,1
 ```
 
-## Conclusion
+## Best Practices
 
-By following these steps and using spp_change_request_add_children_demo as a blueprint, you can effectively
-develop custom Change Request types tailored to any data management need within the OpenSPP ecosystem.
-Remember to always start with a clear definition of the data you need to collect and the system changes that
-need to occur upon approval. This structured approach ensures your module is robust, maintainable, and
-integrates seamlessly with the OpenSPP framework.
+For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
+
+## References
+
+For more information on extending Odoo models and views, refer to:
+- [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
+- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+- [Change Request Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_change_request)
