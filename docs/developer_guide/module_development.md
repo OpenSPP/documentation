@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Module Development
 
-## Introduction
-
 OpenSPP is built on the powerful and flexible Odoo framework. One of the core principles of Odoo is its modular architecture. Instead of modifying the core source code of the platform, customizations and new features are added through self-contained packages called **modules**.
 
 This guide will walk you through the fundamental process of creating a custom OpenSPP module. We will build a simple but practical module that adds a "National ID" field to the Individual record in the registry.
@@ -33,10 +31,42 @@ For developers new to Odoo, it might seem easier to directly edit the existing O
 
 In short, creating modules is the professional standard for Odoo and OpenSPP development that ensures your solution is robust and future-proof.
 
+This modular approach is the foundation for all advanced customizations. From here, you can explore:
+- Adding more complex field types (Selection, Many2one, etc.).
+- Creating entirely new models and menus.
+- Adding business logic with Python methods.
+- Building more advanced features documented in the {doc}`customization/index` guides.
+
+By mastering this pattern, you can tailor OpenSPP to meet any specific program requirement while ensuring your implementation remains clean, stable, and easy to maintain.
+
+## Best Practices in OpenSPP Development
+
+OpenSPP follows the coding standards of the Odoo Community Association (OCA), which are designed to ensure high-quality, maintainable, and consistent code. While the full guidelines are extensive, here are some of the most important best practices to follow:
+
+-   **Follow Python and Odoo Coding Standards:**
+    -   Adhere to **PEP8** guidelines for Python code.
+    -   Use tools like `black` for code formatting, `isort` for import sorting, and `flake8` for linting to maintain consistency.
+    -   Follow Odoo's import order: standard Python libraries, third-party libraries, then Odoo and OpenSPP modules.
+
+-   **Write Clean and Readable XML:**
+    -   Use a consistent naming convention for record IDs. For example: `view_model_name_form`, `action_model_name_window`.
+    -   Logically order fields in views to create an intuitive user experience.
+
+-   **Prioritize Security and Extensibility:**
+    -   Always define access rights in `security/ir.model.access.csv`. Never grant universal access (`group_id:id,"",...`) without a strong reason.
+    -   Avoid using raw SQL queries. Use the Odoo ORM to ensure security rules are respected.
+    -   Always use `_inherit` and `xpath` to extend existing functionality. Never modify core OpenSPP or Odoo files directly.
+
+-   **Adhere to Licensing Requirements:**
+    -   All custom modules for OpenSPP must be licensed under **LGPL-3**.
+    -   Ensure that any third-party Python libraries or other dependencies you add are compatible with the LGPL-3 license.
+
 ## Prerequisites
 
 - A working OpenSPP development environment. See the {doc}`setup` guide for instructions.
-- Basic knowledge of Python and XML.
+- Solid understanding of Odoo 17 module development.
+- Knowledge of Python, Odoo, XML, and XPaths.
+- To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
 
 ## Module Structure
 
@@ -212,14 +242,9 @@ Let's confirm that our new fields are visible.
     - Click on any existing individual or create a new one.
     - You should now see the **National ID** field right below the **Sex** (gender) field.
 
-## Conclusion
+## References
 
-Congratulations! You have successfully created and installed your first OpenSPP custom module. You have learned the fundamental, and most importantly, the *correct* way to extend OpenSPP.
-
-This modular approach is the foundation for all advanced customizations. From here, you can explore:
-- Adding more complex field types (Selection, Many2one, etc.).
-- Creating entirely new models and menus.
-- Adding business logic with Python methods.
-- Building more advanced features like the custom managers seen in other developer guides for {doc}`customizing_programs`, {doc}`customizing_entitlements`, {doc}`customizing_cycles` and others.
-
-By mastering this pattern, you can tailor OpenSPP to meet any specific program requirement while ensuring your implementation remains clean, stable, and easy to maintain.
+For more information on extending OpenSPP models and views, refer to:
+- [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
+- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+- [OpenSPP Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/)
