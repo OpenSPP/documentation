@@ -174,15 +174,6 @@ make html
 
 ### Content from docs/contributing/admins.md
 
----
-myst:
-  html_meta:
-    "description": "Administrators' guide to writing OpenSPP Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into OpenSPP Documentation."
-    "property=og:description": "Administrators' guide to writing OpenSPP Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into OpenSPP Documentation."
-    "property=og:title": "Administrators Guide"
-    "keywords": "OpenSPP, Documentation, automated deployments, hosting, automated testing, importing external packages"
----
-
 (administrators-guide-label)=
 
 # Administrators Guide
@@ -223,15 +214,6 @@ Commit and push your changes to a remote, and submit a pull request against [`op
 
 
 ### Content from docs/contributing/authors.md
-
----
-myst:
-  html_meta:
-    "description": "Authors' guide to writing OpenSPP Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
-    "property=og:description": "Authors' guide to writing OpenSPP Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
-    "property=og:title": "Authors Guide"
-    "keywords": "OpenSPP, Documentation, SEO, meta, Vale, spell, grammar, style, check, linkcheck, lexer"
----
 
 (authors-guide-label)=
 
@@ -497,15 +479,6 @@ The OpenSPP Documentation Team adopted additional guidelines.
 
 ### Content from docs/contributing/index.md
 
----
-myst:
-  html_meta:
-    "description": "Contributing to OpenSPP Documentation"
-    "property=og:description": "Contributing to OpenSPP Documentation"
-    "property=og:title": "Contributing to OpenSPP Documentation"
-    "keywords": "OpenSPP, OpenSPP Contributor Agreement, License, Code of Conduct"
----
-
 (contributing-index-label)=
 
 # Contributing to documentation
@@ -520,35 +493,9 @@ Contributions to the OpenSPP Documentation are welcome.
 
 We use GitHub Actions with every pull request to enforce OpenSPP Documentation quality.
 We recommend that you build the documentation locally to catch errors and warnings early on.
-See {doc}`setup-build` for instructions for how to set up and build the documentation and to run quality checks.
-
-
-```{toctree}
----
-caption: Contributing
-maxdepth: 2
-hidden: true
----
-
-setup-build
-authors
-myst-reference
-sphinx-extensions
-redirects
-admins
-```
 
 
 ### Content from docs/contributing/myst-reference.md
-
----
-myst:
-  html_meta:
-    "description": "MyST syntax reference with examples"
-    "property=og:description": "MyST syntax reference with examples"
-    "property=og:title": "MyST syntax reference with examples"
-    "keywords": "Documentation, OpenSPP, Sphinx, MyST, reStructuredText, Markdown, syntax, examples"
----
 
 (contributing-myst-reference)=
 
@@ -939,15 +886,6 @@ print(f"my {a}nd line")
 
 ### Content from docs/contributing/setup-build.md
 
----
-myst:
-  html_meta:
-    "description": "How to set up the OpenSPP Documentation locally"
-    "property=og:description": "How to set up the OpenSPP Documentation locally"
-    "property=og:title": "Building and Checking the Quality of Documentation"
-    "keywords": "setup, build, documentation, quality, development, Vale, spell, grammar, style, check, linkcheck"
----
-
 (setup-build-label)=
 
 # Building and checking the quality of documentation
@@ -1105,15 +1043,6 @@ make html_meta
 
 ### Content from docs/contributing/sphinx-extensions.md
 
----
-myst:
-  html_meta:
-    "description": "Sphinx extensions"
-    "property=og:description": "Sphinx extensions"
-    "property=og:title": "Sphinx extensions"
-    "keywords": "Documentation, OpenSPP, Sphinx, reStructuredText, extensions"
----
-
 (contributing-sphinx-extensions)=
 
 # Sphinx extensions
@@ -1137,4 +1066,4 @@ We use several Sphinx extensions to enhance the presentation of OpenSPP document
 
 ### Content from docs/howto/translation.md
 
-# Translation
+### Translation
