@@ -180,7 +180,7 @@ Create a new file called `views/area_views.xml` in the module and add it to the 
 
 ### Step 5: Add Security Access (Optional)
 
-Create `security/ir.model.access.csv` to ensure proper access rights specifically on new models:
+If you introduce new models, add access rights. For simple field additions, this is not required. Example:
 
 ```csv
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
@@ -244,9 +244,8 @@ On your `models/area.py` you can add computed fields, constrains, and validation
 
 ### Step 8: Install and Test
 
-1. Install the module through the Apps menu
-2. Update the Area module to apply changes
-3. Test the new fields in the area forms and lists
+1. Install or upgrade the module through the Apps menu.
+2. Test the new fields in the area forms and lists
 
 The following screenshot shows the added population fields in the newly developed module.
 
