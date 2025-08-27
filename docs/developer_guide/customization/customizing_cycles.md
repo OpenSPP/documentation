@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Customize Program Cycles
 
-## Introduction
-
 In OpenSPP, the creation and scheduling of program cycles are handled by a flexible system called **Cycle Managers**. A Cycle Manager is a self-contained component that defines the logic for how and when new cycles are created for a program. This allows for creating reusable and complex cycle generation rules that can be easily attached to any program.
 
 This guide will walk you through creating a custom Cycle Manager module from scratch. We will build a new manager based on the default one, but with a specific business rule: creating cycles with a fixed six-month duration, regardless of other settings.
@@ -27,7 +25,7 @@ By the end of this guide, you will be able to:
 
 -   Solid understanding of Odoo 17 module development.
 -   Knowledge of Python, Odoo, XML, and XPaths.
--   Familiarity with the OpenG2P and OpenSPP core modules, especially `g2p_programs` and `spp_programs`.
+-   Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` (`g2p_programs`) and `OpenSPP Programs` (`spp_programs`).
 -   To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
 
 ## Module Structure
@@ -259,14 +257,21 @@ g2p_cycle_manager_fixed_interval_admin,Cycle Manager Fixed Interval Admin Access
 g2p_cycle_manager_fixed_interval_program_manager,Cycle Manager Fixed Interval Program Manager Access,spp_cycle_manager_fixed_interval.model_g2p_cycle_manager_fixed_interval,g2p_programs.g2p_program_manager,1,1,1,0
 ```
 
-### Step 8: Install and Use Your New Manager
+### Step 8: Install and Test
 
-1.  Install your new module in Odoo.
+1.  Install or upgrade the module through the Apps menu.
 2.  Navigate to **Programs** and click **Create Program**.
 3.  In the wizard, on the **Cycle** page, select your new **"Fixed 6-Month Interval"** manager type.
 4.  Notice that the recurrence settings disappear.
 5.  Complete the wizard and click **Create**. A new program will be created, and an instance of your cycle manager will be automatically created and configured. When new cycles are created for this program, they will automatically have a six-month duration.
 
-## Conclusion
+## Best Practices
 
-By following these steps, you have created a complete, reusable, and configurable Cycle Manager. This powerful pattern allows you to encapsulate complex cycle generation logic into a clean, maintainable module that seamlessly integrates with the OpenSPP framework. You can adapt this pattern to create managers for any kind of cycle scheduling, from simple fixed intervals to complex, data-driven timelines.
+For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
+
+## References
+
+For more information on extending Odoo models and views, refer to:
+- [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
+- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+- [OpenSPP Programs Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_programs)

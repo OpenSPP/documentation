@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Customize Program Entitlements
 
-## Introduction
-
 In OpenSPP, program benefits are defined and calculated through a flexible system called **Entitlement Managers**. An Entitlement Manager is a self-contained component that defines the logic for how much a beneficiary is entitled to receive in a given program cycle. This allows for creating reusable and complex benefit calculation rules that can be easily attached to any program.
 
 This guide will walk you through creating a custom Entitlement Manager module from scratch. We will use the `spp_entitlement_cash` module as a practical reference to build a new manager that calculates cash-based entitlements with flexible rules.
@@ -27,7 +25,7 @@ By the end of this guide, you will be able to:
 
 -   Solid understanding of Odoo 17 module development.
 -   Knowledge of Python, Odoo, XML, and XPaths.
--   Familiarity with the OpenG2P and OpenSPP core modules, especially `g2p_programs`, `spp_programs`, and `g2p_registry_base`.
+-   Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` (`g2p_programs`), `OpenSPP Programs` (`spp_programs`), and `G2P Registry (Base)` (`g2p_registry_base`).
 -   To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
 
 ## Module Structure
@@ -226,14 +224,21 @@ g2p_program_entitlement_manager_cash_admin,Program Entitlement Manager Cash Admi
 g2p_program_entitlement_manager_cash_program_manager,Program Entitlement Manager Cash Program Manager Access,spp_entitlement_cash.model_g2p_program_entitlement_manager_cash,g2p_programs.g2p_program_manager,1,1,1,0
 ```
 
-### Step 8: Install and Use Your New Manager
+### Step 8: Install and Test
 
-1.  Install your new module in Odoo.
+1.  Install or upgrade the module through the Apps menu.
 2.  Navigate to **Programs** and click **Create Program**.
 3.  In the wizard, under the **Entitlement** page, select your new **"Cash"** manager type from the **Manager** dropdown.
 4.  The fields for your manager will appear, allowing you to define entitlement rules directly in the wizard.
 5.  Click **Create**. A new program will be created, and an instance of your entitlement manager will be automatically created and configured.
 
-## Conclusion
+## Best Practices
 
-By following these steps, you have created a complete, reusable, and configurable Entitlement Manager. This powerful pattern allows you to encapsulate complex benefit calculation logic into a clean, maintainable module that seamlessly integrates with the OpenSPP framework. You can adapt this pattern to create managers for any kind of entitlement, whether it's cash, in-kind goods, or vouchers, with rules as simple or complex as your program requires.
+For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
+
+## References
+
+For more information on extending Odoo models and views, refer to:
+- [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
+- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+- [OpenSPP Programs Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_programs)

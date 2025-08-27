@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Customize Document Management System
 
-## Introduction
-
 The OpenSPP Document Management System (DMS), provided by the `spp_dms` module, is a robust system for organizing and managing files. It allows for a structured repository of documents related to social protection programs, using a hierarchy of directories, files, and categories.
 
 **Document Categories** are a key feature of the DMS, allowing users to classify files for streamlined searching, filtering, and reporting. This guide will walk you through the simple process of extending the DMS by adding new, custom document categories. We will create a small module that adds a "Proof of School Enrollment" category, which can then be used to classify documents across the platform.
@@ -23,7 +21,7 @@ By the end of this guide, you will be able to:
 
 -   Basic understanding of Odoo 17 module development.
 -   Knowledge of XML for creating data files.
--   Familiarity with the `spp_dms` core module.
+-   Familiarity with the `OpenSPP Document Management System` (`spp_dms`) core module.
 -   To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
 
 ## Module Structure
@@ -98,11 +96,18 @@ The `noupdate="1"` attribute prevents the data from being overwritten if the mod
 
 ### Step 4: Install and Use Your New Categories
 
-1.  Start your Odoo server and update the apps list.
+1.  Install or upgrade the module through the Apps menu.
 2.  Install your new module (`spp_dms_school_documents`).
 3.  To verify that the new categories have been added, navigate to **DMS -> Configuration -> Categories**. You should see "Proof of School Enrollment" and "School Report Card" in the list.
 4.  Now, when you upload a new file anywhere in the DMS, these new categories will be available in the **Category** dropdown menu, allowing you to classify your documents appropriately.
 
-## Conclusion
+## Best Practices
 
-You have successfully created a simple module to customize the OpenSPP Document Management System. By adding new `spp.dms.category` records, you can easily tailor the DMS to fit the specific documentation needs of any social protection program. This data-driven approach is a core strength of the Odoo framework, allowing for powerful customizations with minimal code.
+For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
+
+## References
+
+For more information on extending Odoo models and views, refer to:
+- [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
+- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+- [OpenSPP DMS Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_dms)
