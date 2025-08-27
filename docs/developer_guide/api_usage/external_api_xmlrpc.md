@@ -258,7 +258,7 @@ client.execute("execute_kw", Arrays.asList(db, uid, password, "res.partner", "un
 ## 5. Security: Using API Keys
 
 - **API keys** are recommended over passwords for scripts and integrations.
-- Generate API keys in your OpenSPP user profile under **Account Security**.
+- Generate API keys in your OpenSPP user preference under **Account Security**.
 - Use the API key in place of your password in all XML-RPC calls.
 
 ## 6. Best Practices
