@@ -78,9 +78,9 @@ Create a manifest file that includes the proper dependencies and data files:
         "spp_area_base",
     ],
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.model.access.csv", # Optional (Add if you need to add new models)
         "views/area_views.xml",
-        "data/area_kind_data.xml",
+        "data/area_kind_data.xml", # Optional (Add if you need to add new area types)
     ],
     "application": False,
     "installable": True,
@@ -178,15 +178,18 @@ Create a new file called `views/area_views.xml` in the module and add it to the 
 </odoo>
 ```
 
-### Step 5: Add Security Access
+### Step 5: Add Security Access (Optional)
 
-Create `security/ir.model.access.csv` to ensure proper access rights:
+Create `security/ir.model.access.csv` to ensure proper access rights specifically on new models:
 
 ```csv
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_spp_area_user,spp.area.user,spp_area_base.model_spp_area,base.group_user,1,1,1,0
-access_spp_area_manager,spp.area.manager,spp_area_base.model_spp_area,base.group_system,1,1,1,1
+access_spp_your_custom_model_registrar,spp.your.custom.model.registrar,spp_area_custom.model_your_custom_model,g2p_registry_base.group_g2p_registrar,1,1,1,0
+access_spp_your_custom_model_admin,spp.your.custom.model.admin,spp_area_custom.model_your_custom_model,g2p_registry_base.group_g2p_admin,1,1,1,1
 ```
+
+- **`g2p_registry_base.group_g2p_registrar`** for Registrar Access
+- **`g2p_registry_base.group_g2p_admin`** for Admin Access.
 
 ### Step 6: Add Custom Area Types (Optional)
 
