@@ -257,7 +257,7 @@ g2p_cycle_manager_fixed_interval_admin,Cycle Manager Fixed Interval Admin Access
 g2p_cycle_manager_fixed_interval_program_manager,Cycle Manager Fixed Interval Program Manager Access,spp_cycle_manager_fixed_interval.model_g2p_cycle_manager_fixed_interval,g2p_programs.g2p_program_manager,1,1,1,0
 ```
 
-### Step 8: Install and Use Your New Manager
+### Step 8: Install and Test
 
 1.  Install or upgrade the module through the Apps menu.
 2.  Navigate to **Programs** and click **Create Program**.
