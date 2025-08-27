@@ -370,6 +370,12 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_spp_change_request_add_children_user,spp.change.request.add.children.user,model_spp_change_request_add_children,base.group_user,1,1,1,1
 ```
 
+### Step 7: Install and Test
+
+1. Install or upgrade the module through the Apps menu.
+2. Create a new change request.
+3. Check if the new change request type is in the selection field.
+
 ## Best Practices
 
 For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
