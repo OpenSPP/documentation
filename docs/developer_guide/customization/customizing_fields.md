@@ -10,6 +10,7 @@ migration-notes: "Added during 2025 documentation reorganization"
 This article guides you through understanding how the registry modules work in OpenSPP and how to add custom fields to registrants. The `g2p_registry_group` and `g2p_registry_individual` modules surface registrants (groups and individuals) based on the `res.partner` model.
 
 **Core Models**
+
 The registry separates groups and individuals while sharing the same underlying model:
 - `res.partner`: Base model used for both groups and individuals. Differentiated by `is_group`.
 - `g2p.group.membership` (referenced in OpenSPP): Connects individuals to their groups.
