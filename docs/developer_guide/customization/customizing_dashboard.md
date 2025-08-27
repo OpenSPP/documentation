@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Customize Dashboards
 
-## Introduction
-
 In OpenSPP, dashboards provide a powerful way to visualize key metrics and data at a glance. They are built using the Odoo OWL framework, allowing for dynamic, interactive, and real-time reporting. A custom dashboard is a self-contained module that fetches data from the server and presents it using various UI components like charts and summary cards.
 
 This guide will walk you through creating a custom dashboard module from scratch. We will develop the `spp_custom_dashboard` module to build a new dashboard that displays key statistics from the OpenSPP Farmer Registry.
@@ -26,7 +24,7 @@ By the end of this guide, you will be able to:
 
 -   Solid understanding of Odoo 17 module development.
 -   Knowledge of Python, XML, and JavaScript (specifically the OWL framework).
--   Familiarity with the OpenG2P and OpenSPP core modules, especially `spp_dashboard_base` and `spp_farmer_registry_base`.
+-   Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenSPP Dashboard (Base)` (`spp_dashboard_base`) and `OpenSPP Farmer Registry (Base)` (`spp_farmer_registry_base`).
 -   To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
 
 ## Module Structure
@@ -258,10 +256,17 @@ Finally, create a client action and a menu item to make your dashboard accessibl
 
 ### Step 7: Install and View Your Dashboard
 
-1.  Install your new module (`spp_custom_dashboard`) in Odoo.
+1.  Install or upgrade the module through the Apps menu.
 2.  Refresh your browser.
 3.  Navigate to the main menu, and you should see a new "Dashboard" menu item. Click it to view your custom dashboard.
 
-## Conclusion
+## Best Practices
 
-By following these steps, you have created a complete, custom dashboard module. This pattern allows you to build sophisticated and visually appealing reports that integrate seamlessly with the OpenSPP platform. You can extend this example by adding more complex data queries, different chart types, and interactive filters to create powerful data visualization tools for any OpenSPP module.
+For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
+
+## References
+
+For more information on extending Odoo models and views, refer to:
+- [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
+- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+- [OpenSPP Dashboard Base Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_dashboard_base)
