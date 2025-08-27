@@ -1,6 +1,6 @@
 ---
 review-status: needs-review
-review-date: 2025-08-21
+review-date: 2025-08-27
 reviewer: "Edwin Gonzales"
 migration-notes: "Added during 2025 documentation reorganization"
 ---
@@ -66,7 +66,6 @@ OpenSPP follows the coding standards of the Odoo Community Association (OCA), wh
 - A working OpenSPP development environment. See the {doc}`setup` guide for instructions.
 - Solid understanding of Odoo 17 module development.
 - Knowledge of Python, Odoo, XML, and XPaths.
-- To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
 
 ## Module Structure
 
