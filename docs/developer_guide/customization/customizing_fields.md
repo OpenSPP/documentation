@@ -5,33 +5,12 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Adding New Fields and Indicators
+# Customize Registry Fields
 
-The following article guides the reader in understanding how the registry modules work in OpenSPP and how to add a simple custom field to registrants by providing a sample scenario and a working-style example. In OpenSPP, registrants (both groups and individuals) are implemented on the `res.partner` model and surfaced through the `g2p_registry_group` and `g2p_registry_individual` modules.
-
-## Prerequisites
-
-- Knowledge of Python, Odoo, XML, Xpaths.
-- To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html).
-
-## If the Registry modules are not installed
-
-1. Log into OpenSPP with administrative rights.
-
-2. Access the "Apps" menu from the dashboard to manage OpenSPP modules.
-
-3. Choose "Update Apps List" to refresh the module list.
-
-4. Search and initiate installation of the following modules, this will also install the other required modules:
-
-   - G2P Registry: Group (`g2p_registry_group`)
-   - G2P Registry: Individual (`g2p_registry_individual`)
-
-## Understanding the Registry Structure
-
-The registry separates groups and individuals while sharing the same underlying model:
+This article guides you through understanding how the registry modules work in OpenSPP and how to add custom fields to registrants. The `g2p_registry_group` and `g2p_registry_individual` modules surface registrants (groups and individuals) based on the `res.partner` model.
 
 ### Core Models
+The registry separates groups and individuals while sharing the same underlying model:
 - `res.partner`: Base model used for both groups and individuals. Differentiated by `is_group`.
 - `g2p.group.membership` (referenced in OpenSPP): Connects individuals to their groups.
 
@@ -46,15 +25,15 @@ The registry separates groups and individuals while sharing the same underlying 
     - Tree: `g2p_registry_group.view_groups_list_tree`
     - Form: `g2p_registry_group.view_groups_form`
 
-## Customizing the Registry (Add one field on res.partner)
+## Prerequisites
 
-In this scenario, we add a single custom field to `res.partner` that can be shown on both the Individual and Group registry interfaces. This keeps the example simple and focused.
+- Knowledge of Python, Odoo, XML, Xpaths.
+- OpenSPP development environment ([Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)).
+- Registry modules (`g2p_registry_group`, `g2p_registry_individual`) installed.
 
-The key steps in module development are as follows:
+## Module Structure
 
-### 1. Create Module Structure
-
-Create a new module following the OpenSPP module structure:
+A typical customization module for registry fields follows the standard Odoo module structure. Here’s an example for `spp_custom_registry_field`:
 
 ```
 spp_custom_registry_field/
@@ -70,9 +49,15 @@ spp_custom_registry_field/
     └── ir.model.access.csv
 ```
 
-### 2. Define Module Manifest
+## Step-by-Step Guide
 
-Create a manifest file that includes the proper dependencies and data files:
+### Step 1: Create the Module Scaffold
+
+Create a new directory for your module (e.g., `spp_custom_registry_field`) and populate it with the files and structure above.
+
+### Step 2: Define Module Manifest
+
+Create a manifest file with dependencies and data files:
 
 ```python
 {
@@ -90,7 +75,7 @@ Create a manifest file that includes the proper dependencies and data files:
     "data": [
         "views/individual_views.xml",
         "views/group_views.xml",
-        # "security/ir.model.access.csv",  # not needed if you do not add new models
+        # "security/ir.model.access.csv",  # Only needed if you add new models
     ],
     "application": False,
     "installable": True,
@@ -98,9 +83,9 @@ Create a manifest file that includes the proper dependencies and data files:
 }
 ```
 
-### 3. Extend the res.partner Model
+### Step 3: Extend the res.partner Model
 
-Create `models/res_partner.py` to add your custom field and import it in `models/__init__.py`.
+Create `models/res_partner.py` to add your custom field and import it in `models/__init__.py`:
 
 ```python
 from odoo import fields, models
@@ -108,14 +93,14 @@ from odoo import fields, models
 class G2PRegistrant(models.Model):
     _inherit = "res.partner"
 
-    # A simple custom field shared by both individuals and groups
-    z_cst_reg_note = fields.Char(
+    # Custom field shared by both individuals and groups
+    reg_note = fields.Char(
         string="Registrant Note",
         help="Free-form note for this registrant",
     )
 ```
 
-### 4. Create View Extensions
+### Step 4: Create View Extensions
 
 Expose the field on both Individuals and Groups UI by extending the existing views.
 
@@ -129,7 +114,7 @@ Expose the field on both Individuals and Groups UI by extending the existing vie
         <field name="arch" type="xml">
             <xpath expr="//page[@name='basic_info']/group/group[1]" position="after">
                 <group colspan="2">
-                    <field name="z_cst_reg_note"/>
+                    <field name="reg_note"/>
                 </group>
             </xpath>
         </field>
@@ -142,7 +127,7 @@ Expose the field on both Individuals and Groups UI by extending the existing vie
         <field name="inherit_id" ref="g2p_registry_individual.view_individuals_list_tree" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='address']" position="after">
-                <field name="z_cst_reg_note" string="Note"/>
+                <field name="reg_note" string="Note"/>
             </xpath>
         </field>
     </record>
@@ -155,7 +140,7 @@ Expose the field on both Individuals and Groups UI by extending the existing vie
         <field name="arch" type="xml">
             <xpath expr="//page[@name='basic_info']/group/group[1]" position="after">
                 <group colspan="2">
-                    <field name="z_cst_reg_note"/>
+                    <field name="reg_note"/>
                 </group>
             </xpath>
         </field>
@@ -168,35 +153,35 @@ Expose the field on both Individuals and Groups UI by extending the existing vie
         <field name="inherit_id" ref="g2p_registry_group.view_groups_list_tree" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="after">
-                <field name="z_cst_reg_note" string="Note"/>
+                <field name="reg_note" string="Note"/>
             </xpath>
         </field>
     </record>
 </odoo>
 ```
 
-### 5. Add Security Access (Optional)
+### Step 5: Add Security Access (Optional)
 
-If you introduce new models, include access rights. For a simple field addition to `res.partner`, this is not required. A minimal example (optional):
+If you introduce new models, add access rights. For a simple field addition to `res.partner`, this is not required. Example:
 
 ```csv
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_custom_partner_note,custom.partner.note,base.model_res_partner,base.group_user,1,1,0,0
 ```
 
-### 6. Install and Test
+### Step 6: Install and Test
 
 1. Install the module through the Apps menu.
 2. Open the Individual and Group registries and verify the new field displays in both list and form views.
 3. Create or update records and ensure the new field can be edited and saved.
 
-## Advanced Customization Examples
+---
 
-## Adding a One2many Field (creates a new model)
+## Advanced Example: Adding a One2many Field
 
-To relate multiple records to a registrant, add a One2many on `res.partner` and define its comodel. Because this introduces a new model, include proper access rights and reference the G2P admin group from `g2p_registry_base`.
+To relate multiple records to a registrant, add a One2many on `res.partner` and define its comodel. This requires access rights and UI updates.
 
-### 7. Define the New Model and One2many
+### Define the New Model and One2many
 
 Create `models/partner_note.py`:
 
@@ -225,7 +210,7 @@ from odoo import fields, models
 class G2PRegistrant(models.Model):
     _inherit = "res.partner"
 
-    z_cst_reg_notes = fields.One2many(
+    reg_notes = fields.One2many(
         "spp.partner.note",
         "partner_id",
         string="Notes",
@@ -239,7 +224,7 @@ from . import res_partner
 from . import partner_note
 ```
 
-### 8. Expose in the UI
+### Expose in the UI
 
 ```xml
 <odoo>
@@ -251,7 +236,7 @@ from . import partner_note
         <field name="arch" type="xml">
             <xpath expr="//page[@name='basic_info']" position="after">
                 <page string="Notes">
-                    <field name="z_cst_reg_notes" context="{'default_partner_id': active_id}">
+                    <field name="reg_notes" context="{'default_partner_id': active_id}">
                         <tree editable="bottom">
                             <field name="name"/>
                             <field name="description"/>
@@ -276,7 +261,7 @@ from . import partner_note
         <field name="arch" type="xml">
             <xpath expr="//page[@name='basic_info']" position="after">
                 <page string="Notes">
-                    <field name="z_cst_reg_notes" context="{'default_partner_id': active_id}">
+                    <field name="reg_notes" context="{'default_partner_id': active_id}">
                         <tree editable="bottom">
                             <field name="name"/>
                             <field name="description"/>
@@ -295,7 +280,7 @@ from . import partner_note
 </odoo>
 ```
 
-### 9. Manifest and Security
+### Manifest and Security
 
 Update the manifest to include security:
 
@@ -307,20 +292,18 @@ Update the manifest to include security:
 ],
 ```
 
-Create `security/ir.model.access.csv` with access for the G2P Admin group (from `g2p_registry_base.g2p_security`, XML ID `g2p_registry_base.group_g2p_admin`):
+Create `security/ir.model.access.csv` with access for the G2P Admin group:
 
 ```csv
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_spp_partner_note_admin,spp.partner.note.admin,model_spp_partner_note,g2p_registry_base.group_g2p_admin,1,1,1,1
 ```
 
+---
+
 ## Best Practices
 
-1. **Follow OpenSPP Naming Conventions**: Use the `z_cst_` prefix for custom fields. Add `indv`/`grp` when a field is specific to one type.
-2. **Extend Existing Views**: Always inherit from existing views rather than creating new ones.
-3. **Be Selective**: Only surface fields that add value to users; place them logically in the form/tree.
-4. **Test Thoroughly**: Verify both Individual and Group flows where the field appears.
-5. **Document Changes**: Update your module README with usage instructions.
+For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
 
 ## References
 

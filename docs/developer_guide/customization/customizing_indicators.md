@@ -5,11 +5,9 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Creating Indicators in OpenSPP
+# Customize Indicators
 
-Indicators in OpenSPP are computed fields that provide dynamic, calculated values based on registrant data. They are essential for social protection programs to track demographic information, eligibility criteria, and program outcomes. This guide shows how to create indicators following OpenSPP conventions and patterns.
-
-## Understanding OpenSPP Indicators
+This article guides you through understanding and customizing indicators in OpenSPP, using a practical scenario and a working example. Indicators are computed fields that provide dynamic, calculated values based on registrant data, essential for social protection programs to track demographic information, eligibility criteria, and program outcomes.
 
 ### Field Naming Conventions
 
@@ -31,16 +29,15 @@ Examples:
 2. **Boolean Indicators**: True/false flags based on conditions
 3. **Computed Indicators**: Calculated values from other fields
 
-## Creating Indicators in a Module
+## Prerequisites
 
-In this scenario, we create a module that adds indicators to both Individual and Group registries. This follows the same pattern as custom fields but focuses on computed indicators.
+- Familiarity with Python, Odoo, and computed fields.
+- To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html).
+- OpenSPP modules "g2p_registry_group", "g2p_registry_individual", and "spp_custom_field" must be installed.
 
-> **Note:**  
-> If you use the `spp_custom_field` module, all fields defined on the model will be automatically exposed in the UI. You do **not** need to manually extend views.
+## Module Structure
 
-### 1. Create Module Structure
-
-Create a new module following the OpenSPP module structure:
+A typical custom indicators module follows the standard Odoo module structure. Here’s an example for `spp_custom_indicators`:
 
 ```
 spp_custom_indicators/
@@ -53,9 +50,15 @@ spp_custom_indicators/
     └── ir.model.access.csv
 ```
 
-### 2. Define Module Manifest
+## Step-by-Step Guide
 
-Declare the dependency on `spp_custom_field` (and registry modules):
+### Step 1: Create the Module Scaffold
+
+Create a new directory for your module (e.g., `spp_custom_indicators`) and populate it with the basic Odoo module files and structure shown above.
+
+### Step 2: Define Module Manifest
+
+Create a manifest file that includes the proper dependencies:
 
 ```python
 {
@@ -69,7 +72,7 @@ Declare the dependency on `spp_custom_field` (and registry modules):
     "depends": [
         "g2p_registry_group",
         "g2p_registry_individual",
-        "spp_custom_field",  # Ensure this is included
+        "spp_custom_field",
     ],
     "data": [
         # No need for view XML if using spp_custom_field
@@ -80,9 +83,9 @@ Declare the dependency on `spp_custom_field` (and registry modules):
 }
 ```
 
-### 3. Extend the res.partner Model
+### Step 3: Extend the res.partner Model
 
-Create `models/res_partner.py` to add your indicators and import it in `models/__init__.py`.
+Create `models/res_partner.py` to add your indicators and import it in `models/__init__.py`:
 
 ```python
 from odoo import fields, models
@@ -94,7 +97,7 @@ class G2PRegistrant(models.Model):
 
     # Count indicator example
     z_ind_grp_num_children = fields.Integer(
-        "Number of children",
+        string="Number of children",
         compute="_compute_ind_grp_num_children",
         help="Number of children in the group",
         store=True,
@@ -103,7 +106,7 @@ class G2PRegistrant(models.Model):
 
     # Boolean indicator example
     z_ind_grp_is_single_head_hh = fields.Boolean(
-        "Is single-headed household",
+        string="Is single-headed household",
         compute="_compute_ind_grp_is_single_head_hh",
         help="Single-headed HH - extracted from demographic data of HH adult members",
         store=True,
@@ -112,27 +115,23 @@ class G2PRegistrant(models.Model):
 
     # Individual indicator example
     z_ind_indv_age_years = fields.Integer(
-        "Age (years)",
+        string="Age (years)",
         compute="_compute_ind_indv_age_years",
         store=True,
         help="Computed age in years for individuals",
     )
 
     def _compute_ind_grp_num_children(self):
-        """
-        Compute the number of children in the group
-        """
+        """Compute the number of children in the group"""
         now = datetime.datetime.now()
-        children = now - relativedelta(years=18)  # Children under 18
+        children = now - relativedelta(years=18)
         domain = [("birthdate", ">=", children)]
         self.compute_count_and_set_indicator("z_ind_grp_num_children", None, domain)
 
     def _compute_ind_grp_is_single_head_hh(self):
-        """
-        Compute if this is a single-headed household
-        """
+        """Compute if this is a single-headed household"""
         now = datetime.datetime.now()
-        domain = [("birthdate", "<", now - relativedelta(years=18))]  # Adults only
+        domain = [("birthdate", "<", now - relativedelta(years=18))]
         self.compute_count_and_set_indicator("z_ind_grp_is_single_head_hh", None, domain, presence_only=True)
 
     def _compute_ind_indv_age_years(self):
@@ -148,43 +147,36 @@ class G2PRegistrant(models.Model):
             partner.z_ind_indv_age_years = max(age, 0)
 ```
 
-### 4. Install and Test
+### Step 4: Add Security Access (Optional)
 
-1. Install the module through the Apps menu.
-2. Open the Individual and Group registries and verify the new indicators display in both list and form views (handled automatically by `spp_custom_field`).
-3. Create or update records and ensure the indicators compute correctly.
-4. Test filtering and searching by indicator values.
+If you introduce new models, add access rights. For simple field additions, this is not required. Example:
 
-## Using OpenSPP's Helper Methods
+```csv
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_spp_custom_indicator_admin,spp.custom.indicator.admin,spp_custom_indicators.model_g2pregistrant,g2p_registry_base.group_g2p_admin,1,1,1,1
+```
 
-### compute_count_and_set_indicator
+### Step 5: Add More Indicators (Optional)
 
-OpenSPP provides a helper method that simplifies indicator computation:
+You can add more complex indicators, such as those based on gender, disability, or custom fields. Use the provided helper method for consistency and performance:
 
 ```python
 def compute_count_and_set_indicator(self, field_name, membership_kinds, domain, presence_only=False):
     """
     Helper method to compute and set indicator values
-    
-    Args:
-        field_name: The field name to set
-        membership_kinds: List of membership kinds to filter by (e.g., ["Head"])
-        domain: Domain to filter group members
-        presence_only: If True, sets 1/0 instead of count
     """
+    # ...implementation provided by OpenSPP base modules...
 ```
 
-### Examples Using the Helper Method
+#### Example: Elderly and Gender-Based Indicators
 
 ```python
 def _compute_ind_grp_num_elderly(self):
-    """Number of elderly in this household"""
     now = datetime.datetime.now()
     domain = [("birthdate", "<", now - relativedelta(years=65))]
     self.compute_count_and_set_indicator("z_ind_grp_num_elderly", None, domain)
 
 def _compute_ind_grp_num_adults_female_not_elderly(self):
-    """Number of adult females in this household"""
     now = datetime.datetime.now()
     domain = [
         ("birthdate", ">=", now - relativedelta(years=65)),
@@ -192,180 +184,52 @@ def _compute_ind_grp_num_adults_female_not_elderly(self):
         ("gender", "=", "Female"),
     ]
     self.compute_count_and_set_indicator("z_ind_grp_num_adults_female_not_elderly", None, domain)
-
-def _compute_ind_grp_is_elderly_head_hh(self):
-    """Is this an elderly-headed household"""
-    now = datetime.datetime.now()
-    domain = [("birthdate", "<", now - relativedelta(years=65))]
-    self.compute_count_and_set_indicator("z_ind_grp_is_elderly_head_hh", ["Head"], domain, presence_only=True)
 ```
 
-## Individual-Level Indicators
-
-For individual-level indicators, use different patterns:
-
-```python
-class G2PIndividual(models.Model):
-    _inherit = "res.partner"
-
-    z_ind_indv_age_years = fields.Integer(
-        "Age (years)",
-        compute="_compute_ind_indv_age_years",
-        store=True,
-        help="Computed age in years for individuals",
-    )
-
-    def _compute_ind_indv_age_years(self):
-        """Compute age in years for individuals"""
-        today = fields.Date.context_today(self)
-        for partner in self:
-            if partner.is_group or not partner.birthdate:
-                partner.z_ind_indv_age_years = 0
-                continue
-            age = today.year - partner.birthdate.year - (
-                (today.month, today.day) < (partner.birthdate.month, partner.birthdate.day)
-            )
-            partner.z_ind_indv_age_years = max(age, 0)
-```
-
-## Complex Indicator Examples
-
-### Counting Children by Birth Certificate Status
-
-```python
-def _compute_ind_grp_num_single_child_less_36m_with_birth_cert(self):
-    """Number of single children under 36 months with birth certificate"""
-    for rec in self:
-        rec.z_ind_grp_num_single_child_less_36m_with_birth_cert = rec._count_child_by_group(1)
-
-def _count_child_by_group(self, group):
-    """Helper method to count children by group type (single, twins, triplets)"""
-    self.ensure_one()
-    now = datetime.datetime.now()
-    children = now - relativedelta(years=18)
-
-    domain = [
-        ("birthdate", ">=", children),
-        ("z_cst_indv_has_birth_certificate", "=", True),
-    ]
-
-    children_birthdate = self.group_membership_ids.individual.filtered_domain(domain).mapped("birthdate")
-    
-    # Count children by birth date to identify twins/triplets
-    children_birthdate = sorted(children_birthdate)
-    children_birthdate = map(lambda x: x.strftime("%Y-%m-%d"), children_birthdate)
-    count_by_date = collections.Counter(children_birthdate)
-
-    count_by_type = {}
-    for _date, count in count_by_date.items():
-        count_by_type.setdefault(count, 0)
-        count_by_type[count] += 1
-    
-    if group == 3:
-        return sum(count_by_type.values()) - count_by_type.get(1, 0) - count_by_type.get(2, 0)
-    return count_by_type.get(group, 0)
-```
-
-### Disability Indicators
+#### Example: Disability Indicators
 
 ```python
 def _compute_ind_grp_num_disability(self):
-    """Number of members with disability"""
     domain = [("z_cst_indv_disability_level", ">", 0)]
     self.compute_count_and_set_indicator("z_ind_grp_num_disability", None, domain)
 
 def _compute_ind_grp_is_hh_with_disabled(self):
-    """Households with disabled members"""
     domain = [("z_cst_indv_disability_level", ">", 0)]
     self.compute_count_and_set_indicator("z_ind_grp_is_hh_with_disabled", None, domain, presence_only=True)
 ```
 
+### Step 6: Add Constraints, and Validations (Optional)
+
+You can add additional constraints for indicator logic:
+
+```python
+from odoo import api, ValidationError
+
+    @api.constrains("z_ind_grp_num_children")
+    def _check_num_children_positive(self):
+        for record in self:
+            if record.z_ind_grp_num_children is not None and record.z_ind_grp_num_children < 0:
+                raise ValidationError("Number of children cannot be negative.")
+```
+
+### Step 7: Install and Test
+
+1. Install or upgrade the module through the Apps menu.
+2. Open the Individual and Group registries and verify the new indicators display in form views (handled automatically by `spp_custom_field`).
+3. Create or update records and ensure the indicators compute correctly.
+4. Test filtering and searching by indicator values.
+
 ## Best Practices
 
-### 1. Field Configuration
+- Use `store=True` for indicators that need to be queried.
+- Use `allow_filter=True` for indicators that should be filterable in views.
+- Provide clear help text explaining the indicator's purpose.
 
-- Always use `store=True` for indicators that need to be queried
-- Use `allow_filter=True` for indicators that should be filterable in views
-- Provide clear help text explaining the indicator's purpose
-
-### 2. Performance Considerations
-
-- Use OpenSPP's `compute_count_and_set_indicator` helper when possible
-- Avoid heavy `@api.depends` chains for complex indicators
-- Consider batch recomputation strategies for high-volume indicators
-
-### 3. Naming and Documentation
-
-- Follow OpenSPP naming conventions consistently
-- Document complex compute methods with clear docstrings
-- Use meaningful field labels and help text
-
-### 4. Testing Indicators
-
-```python
-@tagged("post_install", "-at_install")
-class TestGroupIndicators(TransactionCase):
-    def test_01_num_children(self):
-        """Test children count indicator computation"""
-        self.group._compute_ind_grp_num_children()
-        self.assertEqual(
-            self.group.z_ind_grp_num_children,
-            1,  # Expected count based on test data
-            "The number of children should be 1"
-        )
-
-    def test_02_is_single_head_hh(self):
-        """Test single-headed household indicator"""
-        self.group._compute_ind_grp_is_single_head_hh()
-        self.assertEqual(
-            self.group.z_ind_grp_is_single_head_hh,
-            True,  # Expected result based on test data
-            "The group should be a single-headed household"
-        )
-```
-
-## Common Indicator Patterns
-
-### Age-Based Indicators
-
-```python
-# Constants for age limits
-CHILDREN_AGE_LIMIT = 18
-ELDERLY_AGE_LIMIT = 65
-
-def _compute_ind_grp_num_children(self):
-    now = datetime.datetime.now()
-    children = now - relativedelta(years=CHILDREN_AGE_LIMIT)
-    domain = [("birthdate", ">=", children)]
-    self.compute_count_and_set_indicator("z_ind_grp_num_children", None, domain)
-```
-
-### Gender-Based Indicators
-
-```python
-def _compute_ind_grp_num_adults_male_not_elderly(self):
-    now = datetime.datetime.now()
-    domain = [
-        ("birthdate", ">=", now - relativedelta(years=ELDERLY_AGE_LIMIT)),
-        ("birthdate", "<", now - relativedelta(years=CHILDREN_AGE_LIMIT)),
-        ("gender", "=", "Male"),
-    ]
-    self.compute_count_and_set_indicator("z_ind_grp_num_adults_male_not_elderly", None, domain)
-```
-
-### Custom Field-Based Indicators
-
-```python
-def _compute_ind_grp_num_receive_government_benefits(self):
-    domain = [("z_cst_indv_receive_government_benefits", "=", True)]
-    self.compute_count_and_set_indicator("z_ind_grp_num_receive_government_benefits", None, domain)
-```
+For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
 
 ## References
-
-For more information on computed fields and indicators in OpenSPP:
 
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
 - [OpenSPP Development Guidelines](https://docs.openspp.org/)
 - Registry modules: `g2p_registry_group`, `g2p_registry_individual`
-- Example implementations: `g2p_connect_demo` module
+- Example implementations: `g2p_connect_demo
