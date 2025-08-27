@@ -389,7 +389,3 @@ For more information on extending Odoo models and views, refer to:
 - [OpenSPP Development Guidelines](https://docs.openspp.org/)
 - [Change Request Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_change_request)
 - [OpenSPP Change Request Demo: Add Child/Member Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_change_request_add_children_demo)
-
-## Conclusion
-
-By following these steps, you have created a complete]
