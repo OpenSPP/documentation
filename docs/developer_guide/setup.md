@@ -1,15 +1,13 @@
 ---
 review-status: needs-review
-review-date: 2025-06-04
+review-date: 2025-08-28
 reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
 # Development Setup
 
-Setting up a local OpenSPP environment can be accomplished through two distinct methodologies.
-
-## 1. OpenSPP Docker Setup Using Doodba
+## OpenSPP Docker Setup Using Doodba
 
 This technique utilizes Docker, simplifying the installation of Odoo and its dependencies, with the added benefits offered by Doodba.
 
@@ -47,7 +45,3 @@ This technique utilizes Docker, simplifying the installation of Odoo and its dep
 - Pgweb: http://localhost:17081/
 
 Refer to the Readme in the repository for more detailed instructions on Docker Odoo and Invoke commands.
-
-## 2. OpenSPP Setup from PyPI
-
-For installing OpenSPP modules via PyPI, see the {doc}`../getting_started/installation_pypi` guide.
