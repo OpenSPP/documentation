@@ -12,7 +12,6 @@ Welcome to the API Usage section of the OpenSPP Developer Guide. This section is
 Here, you will find comprehensive documentation and practical examples for the following API types:
 
 - **DCI API**: Learn how to leverage the Digital Convergence Initiative (DCI) for robust data exchange and integration scenarios with other digital public infrastructure.
-- **REST API**: Discover how to interact with OpenSPP using standard RESTful endpoints for modern web and mobile applications.
 - **External API using JSON-RPC**: Explore the JSON-RPC interface for lightweight, remote procedure calls and automation.
 
 ```{toctree}
