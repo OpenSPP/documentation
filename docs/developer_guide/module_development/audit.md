@@ -27,7 +27,7 @@ The audit stack provides core logging and optional posting with the following ke
 
 - Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - Ensure the following modules are installed: **SPP Audit Config**, **SPP Audit Log**, **SPP Audit Post** (optional).
-- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <../setup>`.
 
 ## Module Structure
 
@@ -167,8 +167,9 @@ For parent/child rules (requires `spp_audit_post`), also pass `parent_rule_name`
 
 ## References
 
+For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
 - [OpenSPP Documentation](https://docs.openspp.org/)
-- Audit modules source:
+- Audit module sources:
   - [`spp_audit_log`](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_audit_log)
   - [`spp_audit_post`](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_audit_post)

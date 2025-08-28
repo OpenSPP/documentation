@@ -25,7 +25,7 @@ By the end of this guide, you will be able to:
 
 - Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` (`g2p_programs`) and `OpenSPP Programs` (`spp_programs`).
-- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <../setup>`.
 
 ## Module Structure
 
@@ -266,7 +266,7 @@ g2p_cycle_manager_fixed_interval_program_manager,Cycle Manager Fixed Interval Pr
 
 ## References
 
-For more information on extending Odoo models and views, refer to:
+For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
 - [OpenSPP Documentation](https://docs.openspp.org/)
 - [OpenSPP Programs Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_programs)

@@ -29,7 +29,7 @@ The `spp_area_base` module also provides the core area management functionality 
 
 - Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - OpenSPP Module "Area Management (Base)" or "spp_area_base" must be installed.
-- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <../setup>`.
 
 ## Module Structure
 A typical Area module follows the standard Odoo module structure. Here's the complete structure of the module we will build, `spp_custom_area`:
@@ -252,10 +252,9 @@ The following screenshot shows the added population fields in the newly develope
 
 ![](areas/updates.png)
 
-
 ## References
 
-For more information on extending Odoo models and views, refer to:
+For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
 - [OpenSPP Documentation](https://docs.openspp.org/)
 - [Area Management Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_area_base)

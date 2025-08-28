@@ -26,7 +26,7 @@ This article explains how to customize OpenSPP's registry system by introducing 
 
 - Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - Required modules: `g2p_registry_base`, `g2p_registry_group`, `g2p_registry_individual`, `g2p_registry_membership`, `spp_registry_group_hierarchy`.
-- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <../setup>`.
 
 ## Module Structure
 
@@ -419,6 +419,7 @@ Village A (Top Level Group)
 
 ## References
 
+For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
 - [OpenSPP Documentation](https://docs.openspp.org/)
 - Registry modules: `g2p_registry_group`, `g2p_registry_individual`, `g2p_registry_membership`

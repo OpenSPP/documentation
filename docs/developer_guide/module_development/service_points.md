@@ -41,7 +41,7 @@ Service points can be integrated with other OpenSPP modules:
 
 - Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - The "OpenSPP Service Points Management" (`spp_service_points`) module must be installed.
-- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <../setup>`.
 
 ## Module Structure
 
@@ -262,7 +262,7 @@ The following screenshot shows the newly added fields in the developed module:
 
 ## References
 
-For more information on extending Odoo models and views, refer to:
+For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
 - [OpenSPP Documentation](https://docs.openspp.org/)
 - [Service Points Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_service_points)

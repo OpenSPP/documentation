@@ -21,7 +21,7 @@ By the end of this guide, you will be able to:
 
 - Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - Familiarity with the `OpenSPP Document Management System` (`spp_dms`) core module.
-- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <../setup>`.
 
 ## Module Structure
 
@@ -102,7 +102,7 @@ The `noupdate="1"` attribute prevents the data from being overwritten if the mod
 
 ## References
 
-For more information on extending Odoo models and views, refer to:
+For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
 - [OpenSPP Documentation](https://docs.openspp.org/)
 - [OpenSPP DMS Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_dms)

@@ -33,7 +33,7 @@ Examples:
 
 - Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - OpenSPP modules "g2p_registry_group", "g2p_registry_individual", and "spp_custom_field" must be installed.
-- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <../setup>`.
 
 ## Module Structure
 
@@ -227,7 +227,6 @@ from odoo import api, ValidationError
 
 ## References
 
+For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
 - [OpenSPP Documentation](https://docs.openspp.org/)
-- Registry modules: `g2p_registry_group`, `g2p_registry_individual`
-- Example implementations: `g2p_connect_demo`
