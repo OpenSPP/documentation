@@ -55,16 +55,16 @@ For more information on developing OpenSPP modules, refer to:
 :hidden: true
 :caption: Contents
 
-customizing_areas
-customizing_audit
-customizing_change_requests
-customizing_cycles
-customizing_dashboard
-customizing_dms
-customizing_entitlements
-customizing_fields
-customizing_indicators
-customizing_programs
-customizing_registry
-customizing_service_points
+areas
+audit
+change_requests
+cycles
+dashboard
+dms
+entitlements
+fields
+indicators
+programs
+registry
+service_points
 ```
