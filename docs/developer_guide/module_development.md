@@ -35,13 +35,13 @@ This modular approach is the foundation for all advanced customizations. From he
 - Adding more complex field types (Selection, Many2one, etc.).
 - Creating entirely new models and menus.
 - Adding business logic with Python methods.
-- Building more advanced features documented in the {doc}`customization/index` guides.
+- Building more advanced features documented in the {doc}`Customization guides <customization/index>`.
 
 By mastering this pattern, you can tailor OpenSPP to meet any specific program requirement while ensuring your implementation remains clean, stable, and easy to maintain.
 
 ## Best Practices in OpenSPP Development
 
-OpenSPP follows the coding standards of the Odoo Community Association (OCA), which are designed to ensure high-quality, maintainable, and consistent code. While the full guidelines are extensive, here are some of the most important best practices to follow:
+OpenSPP follows the coding standards of the [Odoo Community Association (OCA)](https://github.com/OCA/maintainer-tools/blob/master/CONTRIBUTING.md), which are designed to ensure high-quality, maintainable, and consistent code. While the full guidelines are extensive, here are some of the most important best practices to follow:
 
 **Follow Python and Odoo Coding Standards:**
 -   Adhere to **PEP8** guidelines for Python code.
