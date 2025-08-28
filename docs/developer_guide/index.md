@@ -15,7 +15,6 @@ This section provides technical information and instructions for developers who 
 - {doc}`best_practices`
 - {doc}`troubleshooting`
 - {doc}`developer_mode`
-- {doc}`i18n_l10n`
 - {doc}`integrations/index`
 - {doc}`api_usage/index`
 
@@ -30,7 +29,6 @@ module_development/index
 best_practices
 troubleshooting
 developer_mode
-i18n_l10n
 integrations/index
 api_usage/index
 ```

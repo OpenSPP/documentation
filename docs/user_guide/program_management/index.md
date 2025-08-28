@@ -19,10 +19,5 @@ enrol_beneficiaries
 create_cycle
 configure_entitlements
 allocate_funds
-implementing_pmt
-using_pmt
 using_geotargeting
-using_indicators
-using_vouchers
-export_beneficiaries
 ```

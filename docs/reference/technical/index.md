@@ -8,10 +8,12 @@ migration-notes: "Added during 2025 documentation reorganization"
 # Technical Reference
 
 This section contains detailed technical specifications and references.
+ 
 
 ```{toctree}
 :maxdepth: 2
 :caption: Contents
+:hidden:
 
 security
 backup

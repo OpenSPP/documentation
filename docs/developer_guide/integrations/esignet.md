@@ -5,7 +5,7 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# eSignate Integration
+# eSignet Integration
 
 ## Introduction
 

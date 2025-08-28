@@ -9,12 +9,16 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 This section provides detailed reference material about OpenSPP components.
 
+- {doc}`modules/index`
+- {doc}`technical/index`
+- {doc}`glossary`
+
 ```{toctree}
 :maxdepth: 2
 :caption: Contents
+:hidden:
 
 modules/index
 technical/index
-api/index
 glossary
 ```
