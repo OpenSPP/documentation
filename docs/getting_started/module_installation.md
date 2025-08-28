@@ -113,7 +113,6 @@ The **OpenSPP Entitlement: Cash** (`spp_entitlement_cash`) module adds functiona
 
 3.  Click the **Activate** button.
 
-<!-- Screenshot placeholder: Apps list showing the spp_entitlement_cash module -->
 ![](module_installation/11-spp_ent_cash2.jpg)
 
 By following these steps, you can customize your OpenSPP instance with the specific modules required for your social protection program.
