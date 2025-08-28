@@ -5,7 +5,7 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Customize Dashboards
+# Dashboards
 
 In OpenSPP, dashboards provide a powerful way to visualize key metrics and data at a glance. They are built using the Odoo OWL framework, allowing for dynamic, interactive, and real-time reporting. A custom dashboard is a self-contained module that fetches data from the server and presents it using various UI components like charts and summary cards.
 
@@ -13,19 +13,19 @@ This guide will walk you through creating a custom dashboard module from scratch
 
 By the end of this guide, you will be able to:
 
--   Understand the structure of a dashboard module.
--   Create a server-side method to fetch and prepare data.
--   Implement a client-side OWL component for the dashboard.
--   Design the dashboard layout using XML templates.
--   Use pre-built components like charts and cards.
--   Register your dashboard to make it accessible from the Odoo menu.
+- Understand the structure of a dashboard module.
+- Create a server-side method to fetch and prepare data.
+- Implement a client-side OWL component for the dashboard.
+- Design the dashboard layout using XML templates.
+- Use pre-built components like charts and cards.
+- Register your dashboard to make it accessible from the Odoo menu.
 
 ## Prerequisites
 
--   Solid understanding of Odoo 17 module development.
--   Knowledge of Python, XML, and JavaScript (specifically the OWL framework).
--   Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenSPP Dashboard (Base)` (`spp_dashboard_base`) and `OpenSPP Farmer Registry (Base)` (`spp_farmer_registry_base`).
--   To set up OpenSPP for development, please refer to the {doc}`setup` guide.
+- Solid understanding of Odoo 17 module development.
+- Knowledge of Python, XML, and JavaScript (specifically the OWL framework).
+- Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenSPP Dashboard (Base)` (`spp_dashboard_base`) and `OpenSPP Farmer Registry (Base)` (`spp_farmer_registry_base`).
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 
 ## Module Structure
 
@@ -259,10 +259,6 @@ Finally, create a client action and a menu item to make your dashboard accessibl
 1.  Install or upgrade the module through the Apps menu.
 2.  Refresh your browser.
 3.  Navigate to the main menu, and you should see a new "Dashboard" menu item. Click it to view your custom dashboard.
-
-## Best Practices
-
-For more detailed guidelines, refer to the {doc}`best_practices` guide.
 
 ## References
 

@@ -5,7 +5,7 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Customize Document Management System
+# Document Management System
 
 The OpenSPP Document Management System (DMS), provided by the `spp_dms` module, is a robust system for organizing and managing files. It allows for a structured repository of documents related to social protection programs, using a hierarchy of directories, files, and categories.
 
@@ -13,16 +13,16 @@ The OpenSPP Document Management System (DMS), provided by the `spp_dms` module, 
 
 By the end of this guide, you will be able to:
 
--   Understand how to add new DMS categories.
--   Create a simple data module to extend DMS functionality.
--   Register the new categories so they are available system-wide.
+- Understand how to add new DMS categories.
+- Create a simple data module to extend DMS functionality.
+- Register the new categories so they are available system-wide.
 
 ## Prerequisites
 
--   Basic understanding of Odoo 17 module development.
--   Knowledge of XML for creating data files.
--   Familiarity with the `OpenSPP Document Management System` (`spp_dms`) core module.
--   To set up OpenSPP for development, please refer to the {doc}`setup` guide.
+- Basic understanding of Odoo 17 module development.
+- Knowledge of XML for creating data files.
+- Familiarity with the `OpenSPP Document Management System` (`spp_dms`) core module.
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 
 ## Module Structure
 
@@ -100,10 +100,6 @@ The `noupdate="1"` attribute prevents the data from being overwritten if the mod
 2.  Install your new module (`spp_dms_school_documents`).
 3.  To verify that the new categories have been added, navigate to **DMS -> Configuration -> Categories**. You should see "Proof of School Enrollment" and "School Report Card" in the list.
 4.  Now, when you upload a new file anywhere in the DMS, these new categories will be available in the **Category** dropdown menu, allowing you to classify your documents appropriately.
-
-## Best Practices
-
-For more detailed guidelines, refer to the {doc}`best_practices` guide.
 
 ## References
 

@@ -5,7 +5,7 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Customize Areas
+# Areas
 
 The following article guides the reader in understanding how the area module works in OpenSPP and how it can be customized by providing a sample scenario and a working example. The `spp_area_base` module provides the foundation for managing geographical areas in OpenSPP, which can be used in programs and other modules.
 
@@ -28,8 +28,8 @@ The `spp_area_base` module also provides the core area management functionality 
 ## Prerequisites
 
 - Knowledge of Python, Odoo, XML, Xpaths.
-- To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html).
 - OpenSPP Module "Area Management (Base)" or "spp_area_base" must be installed.
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 
 ## Module Structure
 A typical Area module follows the standard Odoo module structure. Here's the complete structure of the module we will build, `spp_custom_area`:
@@ -250,12 +250,8 @@ On your `models/area.py` you can add computed fields, constrains, and validation
 
 The following screenshot shows the added population fields in the newly developed module.
 
-![](custom_areas/updates.png)
+![](areas/updates.png)
 
-
-## Best Practices
-
-For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
 
 ## References
 

@@ -5,7 +5,7 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Customize Program Cycles
+# Program Cycles
 
 In OpenSPP, the creation and scheduling of program cycles are handled by a flexible system called **Cycle Managers**. A Cycle Manager is a self-contained component that defines the logic for how and when new cycles are created for a program. This allows for creating reusable and complex cycle generation rules that can be easily attached to any program.
 
@@ -13,20 +13,20 @@ This guide will walk you through creating a custom Cycle Manager module from scr
 
 By the end of this guide, you will be able to:
 
--   Understand the role and structure of a Cycle Manager.
--   Create a new model for your custom cycle generation rules.
--   Implement the core logic to override cycle date calculations.
--   Create a user interface for configuring your manager.
--   Register your new manager so it can be used in any program.
--   Extend the Program Creation Wizard to pre-configure your manager.
--   Set up the necessary security access for your new model.
+-  Understand the role and structure of a Cycle Manager.
+-  Create a new model for your custom cycle generation rules.
+-  Implement the core logic to override cycle date calculations.
+-  Create a user interface for configuring your manager.
+-  Register your new manager so it can be used in any program.
+-  Extend the Program Creation Wizard to pre-configure your manager.
+-  Set up the necessary security access for your new model.
 
 ## Prerequisites
 
--   Solid understanding of Odoo 17 module development.
--   Knowledge of Python, Odoo, XML, and XPaths.
--   Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` (`g2p_programs`) and `OpenSPP Programs` (`spp_programs`).
--   To set up OpenSPP for development, please refer to the {doc}`setup` guide.
+-  Solid understanding of Odoo 17 module development.
+-  Knowledge of Python, Odoo, XML, and XPaths.
+-  Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` (`g2p_programs`) and `OpenSPP Programs` (`spp_programs`).
+-  To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 
 ## Module Structure
 
@@ -264,10 +264,6 @@ g2p_cycle_manager_fixed_interval_program_manager,Cycle Manager Fixed Interval Pr
 3.  In the wizard, on the **Cycle** page, select your new **"Fixed 6-Month Interval"** manager type.
 4.  Notice that the recurrence settings disappear.
 5.  Complete the wizard and click **Create**. A new program will be created, and an instance of your cycle manager will be automatically created and configured. When new cycles are created for this program, they will automatically have a six-month duration.
-
-## Best Practices
-
-For more detailed guidelines, refer to the {doc}`best_practices` guide.
 
 ## References
 
