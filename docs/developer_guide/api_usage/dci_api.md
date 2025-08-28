@@ -145,6 +145,5 @@ To use the DCI API, you must first configure a client in OpenSPP.
 
 ## 5. References
 
-- DCI Interface Standards v1.0
-- OpenSPP Documentation
-- spp_dci_api_server Module Documentation
+- [DCI Interface Standards v1.0](https://standards.spdci.org/standards/standards-for-interoperability-interfaces/structure-and-versioning-of-the-standards)
+- [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
