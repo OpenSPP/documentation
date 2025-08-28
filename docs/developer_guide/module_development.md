@@ -64,8 +64,7 @@ OpenSPP follows the coding standards of the Odoo Community Association (OCA), wh
 ## Prerequisites
 
 - A working OpenSPP development environment. See the {doc}`setup` guide for instructions.
-- Solid understanding of Odoo 17 module development.
-- Knowledge of Python, Odoo, XML, and XPaths.
+- Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 
 ## Module Structure
 

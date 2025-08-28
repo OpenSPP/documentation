@@ -26,7 +26,7 @@ By the end of this guide, you will be able to:
 - Solid understanding of Odoo 17 module development.
 - Knowledge of Python, Odoo, XML, Xpaths.
 - Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` (`g2p_programs`), `OpenSPP Programs` (`spp_programs`), and `G2P Registry (Base)` (`g2p_registry_base`).
-- To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
+- To set up OpenSPP for development, please refer to the {doc}`setup` guide.
 
 ## Module Structure
 
@@ -253,7 +253,7 @@ g2p_program_membership_manager_tags_program_manager,Eligibility Manager Tag-base
 
 ## Best Practices
 
-For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
+For more detailed guidelines, refer to the {doc}`best_practices` guide.
 
 ## References
 

@@ -25,7 +25,7 @@ By the end of this guide, you will be able to:
 - Solid understanding of Odoo 17 module development.
 - Knowledge of Python, Odoo, XML, Xpaths.
 - Familiarity with the OpenSPP core modules, especially `OpenSPP Change Request` (`spp_change_request`).
-- To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
+- To set up OpenSPP for development, please refer to the {doc}`setup` guide.
 
 ## Module Structure
 
@@ -380,7 +380,7 @@ access_spp_change_request_add_children_user,spp.change.request.add.children.user
 
 - Always start with a clear definition of the data you need to collect and the system changes that need to occur upon approval.
 
-For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
+For more detailed guidelines, refer to the {doc}`best_practices` guide.
 
 ## References
 

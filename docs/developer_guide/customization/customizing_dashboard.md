@@ -25,7 +25,7 @@ By the end of this guide, you will be able to:
 -   Solid understanding of Odoo 17 module development.
 -   Knowledge of Python, XML, and JavaScript (specifically the OWL framework).
 -   Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenSPP Dashboard (Base)` (`spp_dashboard_base`) and `OpenSPP Farmer Registry (Base)` (`spp_farmer_registry_base`).
--   To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
+-   To set up OpenSPP for development, please refer to the {doc}`setup` guide.
 
 ## Module Structure
 
@@ -262,7 +262,7 @@ Finally, create a client action and a menu item to make your dashboard accessibl
 
 ## Best Practices
 
-For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
+For more detailed guidelines, refer to the {doc}`best_practices` guide.
 
 ## References
 
