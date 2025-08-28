@@ -1,56 +1,39 @@
 ---
 review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
+review-date: 2025-08-28
+reviewer: Edwin Gonzales
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
 # Best Practices
 
-- Data collection and validation
-- Security and privacy considerations
-- Platform feature usage
-- Common challenges and solutions
-- Use cases and examples
-- Scaling the platform
-- Deployment and hosting options
-- Customizing and developing new modules
-- Troubleshooting and debugging
-- Contributing to the project
+OpenSPP follows the coding standards of the [Odoo Community Association (OCA)](https://github.com/OCA/odoo-community.org/blob/master/website/Contribution/CONTRIBUTING.rst), which are designed to ensure high-quality, maintainable, and consistent code. While the full guidelines are extensive, here are some of the most important best practices to follow:
 
+**Enforce Coding Standards with Pre-Commit:**
+- OpenSPP uses `pre-commit` to automatically enforce **PEP8** and other coding standards. This is the recommended way to ensure your code is compliant before committing.
+- The configuration runs tools like `black` (formatting), `isort` (import sorting), and `flake8` (linting).
+- To set it up, run these commands once in your repository:
+  ```bash
+  pip install pre-commit
+  pre-commit install
+  ```
+- After setup, these checks will run automatically on every `git commit`. If an issue is found, the commit will be stopped, and some tools may automatically fix the files for you.
 
----
+**Embrace Test-Driven Development (TDD):**
+- All new features and bug fixes must follow a Test-Driven Development approach. Write tests that define and validate the functionality *before* writing the implementation.
+- Every module must include a comprehensive test suite to ensure its correctness and prevent future regressions.
+- Tests should be placed in a `tests/` subdirectory within your module and will be automatically discovered by Odoo's test runner.
+- This practice is critical for maintaining a high-quality, stable, and maintainable codebase.
 
-## Merged Content
+**Write Clean and Readable XML:**
+- Use a consistent naming convention for record IDs. For example: `view_model_name_form`, `action_model_name_window`.
+- Logically order fields in views to create an intuitive user experience.
 
+**Prioritize Security and Extensibility:**
+- Always define access rights in `security/ir.model.access.csv`. Never grant universal access (`group_id:id,"",...`) without a strong reason.
+- Avoid using raw SQL queries. Use the Odoo ORM to ensure security rules are respected.
+- Always use `_inherit` and `xpath` to extend existing functionality. Never modify core OpenSPP or Odoo files directly.
 
-
-### Content from docs/technical_reference/code.md
-
-# Code & Repository Management
-
-## Open Source and Collaborative Development
-
-The source code of OpenSPP is hosted publicly on GitHub. This facilitates collaborative development, where anyone can access the codebase, suggest modifications, and contribute improvements. By maintaining transparency in its operations and development processes, OpenSPP embodies the ethos of open-source.
-
-OpenSPP operates under a governance model to secure and manage community contributions. This model empowers contributors based on the value of their work, fostering a culture of respect, collaboration, and collective effort. Guided by defined rules and guidelines, this governance model ensures that the repository is managed and maintained effectively, creating an environment where all contributions are appreciated and rewarded.
-
-## Upholding Code Quality
-
-OpenSPP adheres to code quality and code coverage best practices to maintain its robust and reliable software architecture. Every code commit undergoes a rigorous scanning process via SonarQube, a powerful tool for continuously inspecting code quality. This process identifies and fixes bugs, code smells, and security vulnerabilities. Furthermore, the solution includes peer reviews, where fellow developers can review code changes to spot potential issues and discuss improvements, ensuring the overall quality and integrity of the code.
-
-## Code Repository Management
-
-The solution's code repository management features, offered through GitHub, enhance collaborative work and version control. OpenSPP offers metrics and analytics for tracking code repository activity and usage. These insightful data provide a comprehensive overview of the repository’s activity, including commits, contributors, and the frequency of updates. This level of transparency encourages active participation from the community and aids in ongoing project management.
-
-## Seamless Integration with Development Tools
-
-OpenSPP’s design recognizes the importance of collaborating with established development tools, ensuring the development process is as efficient and effective as possible. To manage the codebase and foster a collaborative environment, the platform integrates seamlessly with GitHub. Through GitHub, developers can perform version control, track changes, manage branches, and handle pull requests in a shared space that promotes collective efforts.
-
-For issue tracking and project management, OpenSPP employs Github itself. It allows developers to maintain a clear overview of project progress, prioritize tasks efficiently, and promptly resolve issues.
-
-## Flexible Configuration Management
-
-A solution's adaptability is crucial when managing different projects and environments. OpenSPP supports the management of multiple configuration profiles, enabling the storage and management of different settings and parameters for various projects and environments. This functionality allows developers to optimize the system's behavior according to the specific requirements of each project or environment.
-
-For instance, developers can set up configuration profiles tailored for development, testing, and production environments. Each profile can have distinct parameters such as database settings, API keys, or environment variables. Switching between these profiles ensures the system functions optimally in each scenario, and misconfigurations can be avoided when moving from one environment to another.
+**Adhere to Licensing Requirements:**
+- All custom modules for OpenSPP must be licensed under **LGPL-3**.
+- Ensure that any third-party Python libraries or other dependencies you add are compatible with the LGPL-3 license.

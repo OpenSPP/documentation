@@ -25,7 +25,7 @@ The audit stack provides core logging and optional posting with the following ke
 
 ## Prerequisites
 
-- Knowledge of Python, Odoo, XML, Xpaths.
+- Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - Ensure the following modules are installed: **SPP Audit Config**, **SPP Audit Log**, **SPP Audit Post** (optional).
 - To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 

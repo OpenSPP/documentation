@@ -5,7 +5,7 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Customize Indicators
+# Indicators
 
 This article guides you through understanding and customizing indicators in OpenSPP, using a practical scenario and a working example. Indicators are computed fields that provide dynamic, calculated values based on registrant data, essential for social protection programs to track demographic information, eligibility criteria, and program outcomes.
 
@@ -31,9 +31,9 @@ Examples:
 
 ## Prerequisites
 
-- Familiarity with Python, Odoo, and computed fields.
-- To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html).
+- Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - OpenSPP modules "g2p_registry_group", "g2p_registry_individual", and "spp_custom_field" must be installed.
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 
 ## Module Structure
 
@@ -225,11 +225,9 @@ from odoo import api, ValidationError
 - Use `allow_filter=True` for indicators that should be filterable in views.
 - Provide clear help text explaining the indicator's purpose.
 
-For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
-
 ## References
 
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
 - [OpenSPP Development Guidelines](https://docs.openspp.org/)
 - Registry modules: `g2p_registry_group`, `g2p_registry_individual`
-- Example implementations: `g2p_connect_demo
+- Example implementations: `g2p_connect_demo`

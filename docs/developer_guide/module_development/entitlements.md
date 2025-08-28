@@ -23,8 +23,7 @@ By the end of this guide, you will be able to:
 
 ## Prerequisites
 
-- Solid understanding of Odoo 17 module development.
-- Knowledge of Python, Odoo, XML, and XPaths.
+- Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` (`g2p_programs`), `OpenSPP Programs` (`spp_programs`), and `G2P Registry (Base)` (`g2p_registry_base`).
 - To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 

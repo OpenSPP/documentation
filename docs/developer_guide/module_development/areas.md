@@ -27,7 +27,7 @@ The `spp_area_base` module also provides the core area management functionality 
 
 ## Prerequisites
 
-- Knowledge of Python, Odoo, XML, Xpaths.
+- Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - OpenSPP Module "Area Management (Base)" or "spp_area_base" must be installed.
 - To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 

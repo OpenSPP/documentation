@@ -22,8 +22,7 @@ By the end of this guide, you will be able to:
 
 ## Prerequisites
 
-- Solid understanding of Odoo 17 module development.
-- Knowledge of Python, XML, and JavaScript (specifically the OWL framework).
+- Solid understanding of Odoo 17 module development, including Python, XML, XPath, and JavaScript (specifically the OWL framework).
 - Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenSPP Dashboard (Base)` (`spp_dashboard_base`) and `OpenSPP Farmer Registry (Base)` (`spp_farmer_registry_base`).
 - To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 

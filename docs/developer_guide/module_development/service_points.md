@@ -5,7 +5,7 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Customize Service Points
+# Service Points
 
 This article explains how the service points module works in OpenSPP and how it can be customized, using a practical scenario and a working example. The `spp_service_points` module provides the foundation for managing service delivery locations in OpenSPP, which can be used in programs and other modules.
 
@@ -39,9 +39,9 @@ Service points can be integrated with other OpenSPP modules:
 
 ## Prerequisites
 
-- Knowledge of Python, Odoo, XML, Xpaths.
-- To set up OpenSPP for development, see the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html).
+- Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - The "OpenSPP Service Points Management" (`spp_service_points`) module must be installed.
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 
 ## Module Structure
 
@@ -258,11 +258,7 @@ Create `data/service_type_data.xml` to add custom service types:
 
 The following screenshot shows the newly added fields in the developed module:
 
-![](custom_service_points/2.png)
-
-## Best Practices
-
-For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
+![](service_points/2.png)
 
 ## References
 

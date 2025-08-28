@@ -19,8 +19,7 @@ By the end of this guide, you will be able to:
 
 ## Prerequisites
 
-- Basic understanding of Odoo 17 module development.
-- Knowledge of XML for creating data files.
+- Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - Familiarity with the `OpenSPP Document Management System` (`spp_dms`) core module.
 - To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 
