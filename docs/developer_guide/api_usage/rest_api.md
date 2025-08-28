@@ -1,45 +1,24 @@
 ---
 review-status: needs-review
-review-date: 2025-06-04
+review-date: 2025-08-28
 reviewer: migration-script
-migration-notes: "Revised for clarity, includes namespace creation, and aligns with customization documentation"
+migration-notes: "Restructured to match customization documentation style and improve clarity"
 ---
 
-# Customizing the REST API
+# Customize the REST API
 
-This article guides you through understanding and customizing the REST API module in OpenSPP, using a practical example: adding a new GET endpoint to retrieve Area data.
+This article explains how to understand and customize the REST API module in OpenSPP, using a practical scenario: adding a new GET endpoint to retrieve Area data.
 
 ## Prerequisites
 
 - Familiarity with Python, Odoo, XML, and XPath.
 - OpenSPP development environment set up ([Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)).
+- The `spp_api` module must be installed.
+- For our example we are going to need the `spp_area_base` module to be installed as well.
 
-## Installing the REST API Module
+## Module Structure
 
-1. Log into OpenSPP with administrative rights.
-2. Go to the **Apps** menu.
-3. Click **Update Apps List** to refresh available modules.
-4. Search for **OpenSPP API** or `spp_api` and install it. This will also install required dependencies.
-
-![](./rest_api/install_spp_api.png)
-
-## Understanding the REST API Module Structure
-
-The `spp_api` module provides the foundation for exposing Odoo models and data via RESTful endpoints. Key components include:
-
-- **`spp_api.path`**: Defines API endpoints (paths), HTTP methods, and associated models.
-- **`spp_api.namespace`**: Groups endpoints under logical namespaces.
-- **`spp_api.field`**: Specifies which model fields are exposed via the API.
-
-## Customizing the REST API: Example Scenario
-
-Suppose you want to expose Area data through a new GET endpoint under a custom namespace. This example demonstrates how to create a custom module that adds both a namespace and an endpoint.
-
-A working sample module is available at: [GitHub Example](https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_api_area_custom).
-
-### 1. Create Module Structure
-
-Create a new module following the OpenSPP structure:
+A typical REST API customization module follows the standard Odoo structure. Here’s the structure for our example, `spp_api_area_custom`:
 
 ```
 spp_api_area_custom/
@@ -51,9 +30,17 @@ spp_api_area_custom/
 └── README.md
 ```
 
-### 2. Define Module Manifest
+## Step-by-Step Guide
 
-Create `__manifest__.py` with the correct dependency on `spp_api`:
+In this scenario, you will expose Area data through a new GET endpoint under a custom namespace.
+
+### Step 1: Create the Module Scaffold
+
+Create a new directory for your module (e.g., `spp_api_area_custom`) and populate it with the files and structure shown above.
+
+### Step 2: Define Module Manifest
+
+Create `__manifest__.py` with the correct dependencies and data files:
 
 ```python
 {
@@ -78,7 +65,7 @@ Create `__manifest__.py` with the correct dependency on `spp_api`:
 }
 ```
 
-### 3. Create a Custom API Namespace
+### Step 3: Create a Custom API Namespace
 
 Create `data/spp_api_namespace_data.xml` to define your namespace:
 
@@ -95,7 +82,7 @@ Create `data/spp_api_namespace_data.xml` to define your namespace:
 </odoo>
 ```
 
-### 4. Add the API Endpoint
+### Step 4: Add the API Endpoint
 
 Create `data/spp_api_path_data.xml` to define the new endpoint under your custom namespace:
 
@@ -119,15 +106,11 @@ Create `data/spp_api_path_data.xml` to define the new endpoint under your custom
 </odoo>
 ```
 
-**Notes:**
-- The `namespace_id` now references your custom namespace.
 - Add or remove fields as needed for your use case.
 
-### 5. Generate Public and Private Keys
+### Step 5: Generate Public and Private Keys
 
-To secure your API endpoints, generate a 4096-bit RSA key pair using OpenSSL. These keys can be used for authentication or encryption as required by your implementation.
-
-Open your terminal and run:
+To secure your API endpoints, generate a 4096-bit RSA key pair using OpenSSL:
 
 ```sh
 # Generate a 4096-bit private key
@@ -138,43 +121,30 @@ openssl rsa -pubout -in private_key.pem -out public_key.pub
 ```
 
 - Place `private_key.pem` and `public_key.pub` in `etc/secrets`.
-- chmod if needed.
-- **Never share your private key.** Only the public key should be distributed if required.
+- Set permissions as needed.
+- **Never share your private key.** Only distribute the public key if required.
 
----
-
-### 6. Install and Test
+### Step 6: Install and Test
 
 1. Install your new module via the Apps menu.
-![](./rest_api/install.png)
 2. **Get your Bearer Token:**
     - Go to **Settings** > **Users & Companies** > **Users**.
     - Open your user record.
-    - In the **Allowed APIs** section, click the **View Bearer Token** button to create a new token.
+    - In the **Allowed APIs** section, click **View Bearer Token** to create a new token.
     - Copy the generated token.
-    - In Postman (or your REST client), set the **Authorization** Header and paste your token (e.g., `Bearer <your_token>`).
-    ![](./rest_api/bearer_token.png)
-3. Use a REST client (e.g., Postman) to test the endpoint.  
+    - In Postman (or your REST client), set the **Authorization** header to `Bearer <your_token>`.
+3. Use a REST client to test the endpoint.  
    Example URL:  
    `http://localhost:8069/api/area_api/1/Area?request_id={{$randomUUID}}`
-4. The `request_id` parameter is required and must be unique for each request, you can use a random 36-character UUID.
+4. The `request_id` parameter is required and must be unique for each request (use a random 36-character UUID).
 
-#### Example: Successful Response
+**Example: Successful Response**
 
 ![](./rest_api/success_response.png)
 
-#### Example: Error Response
+**Example: Error Response**
 
 ![](./rest_api/error_response.png)
-
-## Best Practices
-
-1. **Use Proper Dependencies**: Always depend on `spp_api` for API customizations.
-2. **Create Namespaces**: Group related endpoints for clarity and maintainability.
-3. **Follow Naming Conventions**: Use clear, descriptive names for endpoints and fields.
-4. **Document Your Module**: Include a README with usage instructions.
-5. **Test Thoroughly**: Validate endpoints with various data and error scenarios.
-6. **Security**: Ensure only authorized users can access sensitive endpoints.
 
 ## References
 
