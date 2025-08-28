@@ -410,7 +410,3 @@ print("Created Membership ID:", membership_id)
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
 - [OpenSPP Developer Guide](https://docs.openspp.org/)
 - [JSON-RPC Specification](https://www.jsonrpc.org/specification)
-
----
-
-*For more advanced usage, including model introspection and dynamic model creation, see the OpenSPP and OpenG2P developer documentation.*
