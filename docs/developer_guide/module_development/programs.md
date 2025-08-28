@@ -5,7 +5,7 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Customize Programs
+# Programs
 
 In OpenSPP, program eligibility is managed through a powerful and extensible system called **Eligibility Managers**. An Eligibility Manager is a self-contained component that defines a specific set of rules to determine who is eligible for a program. This allows for creating reusable and complex eligibility logic that can be easily attached to any program.
 
@@ -23,10 +23,9 @@ By the end of this guide, you will be able to:
 
 ## Prerequisites
 
-- Solid understanding of Odoo 17 module development.
-- Knowledge of Python, Odoo, XML, Xpaths.
+- Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` (`g2p_programs`), `OpenSPP Programs` (`spp_programs`), and `G2P Registry (Base)` (`g2p_registry_base`).
-- To set up OpenSPP for development, please refer to the {doc}`setup` guide.
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 
 ## Module Structure
 
@@ -250,10 +249,6 @@ g2p_program_membership_manager_tags_program_manager,Eligibility Manager Tag-base
 4. The fields for your manager (e.g., Tags and Area) will appear. Configure them directly in the wizard.
 5. Click Create. A new program will be created, and an instance of your eligibility manager will be automatically created and configured with the values you provided.
 6. You can verify or update the configuration by navigating to the program's Configuration tab, finding your manager in the list, and opening its form.
-
-## Best Practices
-
-For more detailed guidelines, refer to the {doc}`best_practices` guide.
 
 ## References
 

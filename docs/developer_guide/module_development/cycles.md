@@ -13,20 +13,19 @@ This guide will walk you through creating a custom Cycle Manager module from scr
 
 By the end of this guide, you will be able to:
 
--  Understand the role and structure of a Cycle Manager.
--  Create a new model for your custom cycle generation rules.
--  Implement the core logic to override cycle date calculations.
--  Create a user interface for configuring your manager.
--  Register your new manager so it can be used in any program.
--  Extend the Program Creation Wizard to pre-configure your manager.
--  Set up the necessary security access for your new model.
+- Understand the role and structure of a Cycle Manager.
+- Create a new model for your custom cycle generation rules.
+- Implement the core logic to override cycle date calculations.
+- Create a user interface for configuring your manager.
+- Register your new manager so it can be used in any program.
+- Extend the Program Creation Wizard to pre-configure your manager.
+- Set up the necessary security access for your new model.
 
 ## Prerequisites
 
--  Solid understanding of Odoo 17 module development.
--  Knowledge of Python, Odoo, XML, and XPaths.
--  Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` (`g2p_programs`) and `OpenSPP Programs` (`spp_programs`).
--  To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
+- Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
+- Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` (`g2p_programs`) and `OpenSPP Programs` (`spp_programs`).
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 
 ## Module Structure
 

@@ -22,8 +22,7 @@ By the end of this guide, you will be able to:
 
 ## Prerequisites
 
-- Solid understanding of Odoo 17 module development.
-- Knowledge of Python, Odoo, XML, Xpaths.
+- Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - Familiarity with the OpenSPP core modules, especially `OpenSPP Change Request` (`spp_change_request`).
 - To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 

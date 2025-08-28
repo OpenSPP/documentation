@@ -28,9 +28,9 @@ The registry separates groups and individuals while sharing the same underlying 
 
 ## Prerequisites
 
-- Knowledge of Python, Odoo, XML, Xpaths.
-- OpenSPP development environment ([Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)).
+- Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - Registry modules (`g2p_registry_group`, `g2p_registry_individual`) installed.
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 
 ## Module Structure
 
@@ -175,11 +175,6 @@ access_custom_partner_note,custom.partner.note,base.model_res_partner,base.group
 1. Install the module through the Apps menu.
 2. Open the Individual and Group registries and verify the new field displays in both list and form views.
 3. Create or update records and ensure the new field can be edited and saved.
-
-
-## Best Practices
-
-For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
 
 ## References
 
