@@ -22,7 +22,7 @@ By the end of this guide, you will be able to:
 -   Basic understanding of Odoo 17 module development.
 -   Knowledge of XML for creating data files.
 -   Familiarity with the `OpenSPP Document Management System` (`spp_dms`) core module.
--   To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
+-   To set up OpenSPP for development, please refer to the {doc}`setup` guide.
 
 ## Module Structure
 
@@ -103,7 +103,7 @@ The `noupdate="1"` attribute prevents the data from being overwritten if the mod
 
 ## Best Practices
 
-For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
+For more detailed guidelines, refer to the {doc}`best_practices` guide.
 
 ## References
 
