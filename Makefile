@@ -3,7 +3,7 @@
 SHELL           = bash
 
 # Include module documentation targets
-include Makefile.modules
+# include Makefile.modules
 
 # You can set these variables from the command line.
 SPHINXOPTS      ?=
