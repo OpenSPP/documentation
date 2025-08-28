@@ -5,7 +5,7 @@ reviewer: technical-writer
 migration-notes: "Rewritten for JSON-RPC, Python only, with OpenG2P Registry context"
 ---
 
-# External API using JSON-RPC (Python)
+# External API using JSON-RPC
 
 This guide explains how to connect to and interact with OpenSPP Registry using the JSON-RPC API, with practical Python examples for adding individuals, groups, and memberships.
 

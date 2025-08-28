@@ -5,7 +5,7 @@ reviewer: migration-script
 migration-notes: "Restructured to match customization documentation style and improve clarity"
 ---
 
-# Customize the REST API
+# REST API
 
 This article explains how to understand and customize the REST API module in OpenSPP, using a practical scenario: adding a new GET endpoint to retrieve Area data.
 
