@@ -254,5 +254,5 @@ g2p_program_membership_manager_tags_program_manager,Eligibility Manager Tag-base
 
 For more information on extending Odoo models and views, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+- [OpenSPP Documentation](https://docs.openspp.org/)
 - [OpenSPP Programs Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_programs)

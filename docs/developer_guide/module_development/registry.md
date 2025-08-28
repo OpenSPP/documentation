@@ -420,7 +420,7 @@ Village A (Top Level Group)
 ## References
 
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+- [OpenSPP Documentation](https://docs.openspp.org/)
 - Registry modules: `g2p_registry_group`, `g2p_registry_individual`, `g2p_registry_membership`
 - Hierarchy module: `spp_registry_group_hierarchy`
 - Related guides: {doc}`Customizing Fields <fields>`, {doc}`Customizing Indicators <indicators>`

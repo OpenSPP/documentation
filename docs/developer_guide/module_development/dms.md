@@ -104,5 +104,5 @@ The `noupdate="1"` attribute prevents the data from being overwritten if the mod
 
 For more information on extending Odoo models and views, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+- [OpenSPP Documentation](https://docs.openspp.org/)
 - [OpenSPP DMS Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_dms)

@@ -383,6 +383,6 @@ access_spp_change_request_add_children_user,spp.change.request.add.children.user
 
 For more information on extending Odoo models and views, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+- [OpenSPP Documentation](https://docs.openspp.org/)
 - [Change Request Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_change_request)
 - [OpenSPP Change Request Demo: Add Child/Member Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_change_request_add_children_demo)

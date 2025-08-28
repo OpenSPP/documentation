@@ -228,6 +228,6 @@ from odoo import api, ValidationError
 ## References
 
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+- [OpenSPP Documentation](https://docs.openspp.org/)
 - Registry modules: `g2p_registry_group`, `g2p_registry_individual`
 - Example implementations: `g2p_connect_demo`

@@ -41,13 +41,13 @@ By mastering this pattern, you can tailor OpenSPP to meet any specific program r
 
 ## Best Practices in OpenSPP Development
 
-For more detailed guidelines, refer to the {doc}`Best Practices Guide <best_practices>`.
+For more detailed guidelines, refer to the {doc}`Best Practices Guide <../best_practices>`.
 
 ## References
 
 For more information on developing OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+- [OpenSPP Documentation](https://docs.openspp.org/)
 - [OpenSPP Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/)
 
 ```{toctree}

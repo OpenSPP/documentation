@@ -257,5 +257,5 @@ The following screenshot shows the added population fields in the newly develope
 
 For more information on extending Odoo models and views, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+- [OpenSPP Documentation](https://docs.openspp.org/)
 - [Area Management Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_area_base)
