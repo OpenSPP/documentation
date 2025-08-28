@@ -5,7 +5,7 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Customize Change Request
+# Change Request
 
 The OpenSPP platform provides a flexible and extensible Change Request (CR) framework. This allows developers
 to create custom modules for specific data modification scenarios beyond the standard ones. This guide will
@@ -25,7 +25,7 @@ By the end of this guide, you will be able to:
 - Solid understanding of Odoo 17 module development.
 - Knowledge of Python, Odoo, XML, Xpaths.
 - Familiarity with the OpenSPP core modules, especially `OpenSPP Change Request` (`spp_change_request`).
-- To set up OpenSPP for development, please refer to the {doc}`setup` guide.
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 
 ## Module Structure
 
@@ -379,8 +379,6 @@ access_spp_change_request_add_children_user,spp.change.request.add.children.user
 ## Best Practices
 
 - Always start with a clear definition of the data you need to collect and the system changes that need to occur upon approval.
-
-For more detailed guidelines, refer to the {doc}`best_practices` guide.
 
 ## References
 

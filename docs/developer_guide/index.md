@@ -1,6 +1,6 @@
 ---
 review-status: needs-review
-review-date: 2025-06-04
+review-date: 2025-08-28
 reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
@@ -15,12 +15,11 @@ This section provides technical information and instructions for developers who 
 
 setup
 architecture
-module_development
+module_development/index
 best_practices
 troubleshooting
 developer_mode
 i18n_l10n
-customization/index
 integrations/index
 api_usage/index
 ```

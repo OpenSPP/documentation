@@ -5,7 +5,7 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Customize Registry Fields
+# Registry Fields
 
 This article guides you through understanding how the registry modules work in OpenSPP and how to add custom fields to registrants. The `g2p_registry_group` and `g2p_registry_individual` modules surface registrants (groups and individuals) based on the `res.partner` model.
 

@@ -1,6 +1,6 @@
 ---
 review-status: needs-review
-review-date: 2025-08-27
+review-date: 2025-08-28
 reviewer: "Edwin Gonzales"
 migration-notes: "Added during 2025 documentation reorganization"
 ---
@@ -35,18 +35,29 @@ This modular approach is the foundation for all advanced customizations. From he
 - Adding more complex field types (Selection, Many2one, etc.).
 - Creating entirely new models and menus.
 - Adding business logic with Python methods.
-- Building more advanced features documented in the {doc}`Customization guides <customization/index>`.
+- Building more advanced features documented in the {doc}`Module Development Guides <module_development/index>`.
 
 By mastering this pattern, you can tailor OpenSPP to meet any specific program requirement while ensuring your implementation remains clean, stable, and easy to maintain.
 
 ## Best Practices in OpenSPP Development
 
-OpenSPP follows the coding standards of the [Odoo Community Association (OCA)](https://github.com/OCA/maintainer-tools/blob/master/CONTRIBUTING.md), which are designed to ensure high-quality, maintainable, and consistent code. While the full guidelines are extensive, here are some of the most important best practices to follow:
+OpenSPP follows the coding standards of the [Odoo Community Association (OCA)](https://github.com/OCA/odoo-community.org/blob/master/website/Contribution/CONTRIBUTING.rst), which are designed to ensure high-quality, maintainable, and consistent code. While the full guidelines are extensive, here are some of the most important best practices to follow:
 
-**Follow Python and Odoo Coding Standards:**
--   Adhere to **PEP8** guidelines for Python code.
--   Use tools like `black` for code formatting, `isort` for import sorting, and `flake8` for linting to maintain consistency.
--   Follow Odoo's import order: standard Python libraries, third-party libraries, then Odoo and OpenSPP modules.
+**Enforce Coding Standards with Pre-Commit:**
+-   OpenSPP uses `pre-commit` to automatically enforce **PEP8** and other coding standards. This is the recommended way to ensure your code is compliant before committing.
+-   The configuration runs tools like `black` (formatting), `isort` (import sorting), and `flake8` (linting).
+-   To set it up, run these commands once in your repository:
+    ```bash
+    pip install pre-commit
+    pre-commit install
+    ```
+-   After setup, these checks will run automatically on every `git commit`. If an issue is found, the commit will be stopped, and some tools may automatically fix the files for you.
+
+**Embrace Test-Driven Development (TDD):**
+-   All new features and bug fixes must follow a Test-Driven Development approach. Write tests that define and validate the functionality *before* writing the implementation.
+-   Every module must include a comprehensive test suite to ensure its correctness and prevent future regressions.
+-   Tests should be placed in a `tests/` subdirectory within your module and will be automatically discovered by Odoo's test runner.
+-   This practice is critical for maintaining a high-quality, stable, and maintainable codebase.
 
 **Write Clean and Readable XML:**
 -   Use a consistent naming convention for record IDs. For example: `view_model_name_form`, `action_model_name_window`.
@@ -63,7 +74,7 @@ OpenSPP follows the coding standards of the [Odoo Community Association (OCA)](h
 
 ## Prerequisites
 
-- A working OpenSPP development environment. See the {doc}`setup` guide for instructions.
+- A working OpenSPP development environment. See the {doc}`Development Setup Guide <setup>` for instructions.
 - Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 
 ## Module Structure

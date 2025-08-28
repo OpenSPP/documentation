@@ -5,7 +5,7 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Customize Audit Logs
+# Audit Logs
 
 This article explains how the audit modules work in OpenSPP and how to customize them, using a practical example and a working sample module. The audit stack consists of `spp_audit_log` (core models and UI), `spp_audit_post` (optional chatter posting), and `spp_audit_config` (preconfigured rules).
 
@@ -26,8 +26,8 @@ The audit stack provides core logging and optional posting with the following ke
 ## Prerequisites
 
 - Knowledge of Python, Odoo, XML, Xpaths.
-- To set up OpenSPP for development, see the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html).
 - Ensure the following modules are installed: **SPP Audit Config**, **SPP Audit Log**, **SPP Audit Post** (optional).
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 
 ## Module Structure
 
@@ -164,8 +164,6 @@ For parent/child rules (requires `spp_audit_post`), also pass `parent_rule_name`
 ## Best Practices
 
 - **Use Targeted Field Lists**: Keep `field_to_log_ids` focused on business-critical fields.
-
-For more detailed guidelines, refer to the [Best Practices](../best_practices.md) page.
 
 ## References
 

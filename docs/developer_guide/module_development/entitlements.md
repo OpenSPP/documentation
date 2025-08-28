@@ -5,7 +5,7 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Customize Program Entitlements
+# Program Entitlements
 
 In OpenSPP, program benefits are defined and calculated through a flexible system called **Entitlement Managers**. An Entitlement Manager is a self-contained component that defines the logic for how much a beneficiary is entitled to receive in a given program cycle. This allows for creating reusable and complex benefit calculation rules that can be easily attached to any program.
 
@@ -13,20 +13,20 @@ This guide will walk you through creating a custom Entitlement Manager module fr
 
 By the end of this guide, you will be able to:
 
--   Understand the role and structure of an Entitlement Manager.
--   Create a new model for your custom entitlement rules.
--   Implement the core logic to calculate and create entitlements.
--   Create a user interface for configuring your manager.
--   Register your new manager so it can be used in any program.
--   Extend the Program Creation Wizard to pre-configure your manager.
--   Set up the necessary security access for your new model.
+- Understand the role and structure of an Entitlement Manager.
+- Create a new model for your custom entitlement rules.
+- Implement the core logic to calculate and create entitlements.
+- Create a user interface for configuring your manager.
+- Register your new manager so it can be used in any program.
+- Extend the Program Creation Wizard to pre-configure your manager.
+- Set up the necessary security access for your new model.
 
 ## Prerequisites
 
--   Solid understanding of Odoo 17 module development.
--   Knowledge of Python, Odoo, XML, and XPaths.
--   Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` (`g2p_programs`), `OpenSPP Programs` (`spp_programs`), and `G2P Registry (Base)` (`g2p_registry_base`).
--   To set up OpenSPP for development, please refer to the {doc}`setup` guide.
+- Solid understanding of Odoo 17 module development.
+- Knowledge of Python, Odoo, XML, and XPaths.
+- Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` (`g2p_programs`), `OpenSPP Programs` (`spp_programs`), and `G2P Registry (Base)` (`g2p_registry_base`).
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
 
 ## Module Structure
 
@@ -231,10 +231,6 @@ g2p_program_entitlement_manager_cash_program_manager,Program Entitlement Manager
 3.  In the wizard, under the **Entitlement** page, select your new **"Cash"** manager type from the **Manager** dropdown.
 4.  The fields for your manager will appear, allowing you to define entitlement rules directly in the wizard.
 5.  Click **Create**. A new program will be created, and an instance of your entitlement manager will be automatically created and configured.
-
-## Best Practices
-
-For more detailed guidelines, refer to the {doc}`best_practices` guide.
 
 ## References
 
