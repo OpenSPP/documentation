@@ -18,8 +18,6 @@ Before you begin, ensure you have the following:
 - Your Odoo instance configured to recognize the `openspp-modules` directory as an addons path.
 - To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <../developer_guide/setup>`.
 
-For a detailed guide on setting up a development environment, please refer to the Developer Setup Guide.
-
 ## General Installation Process
 
 Installing an Odoo module, including those for OpenSPP, follows a standard procedure:
