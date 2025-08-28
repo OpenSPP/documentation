@@ -180,5 +180,5 @@ access_custom_partner_note,custom.partner.note,base.model_res_partner,base.group
 
 For more information on extending Odoo models and views, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+- [OpenSPP Documentation](https://docs.openspp.org/)
 - Registry modules referenced: `g2p_registry_group`, `g2p_registry_individual`

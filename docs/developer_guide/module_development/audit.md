@@ -168,7 +168,7 @@ For parent/child rules (requires `spp_audit_post`), also pass `parent_rule_name`
 ## References
 
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+- [OpenSPP Documentation](https://docs.openspp.org/)
 - Audit modules source:
   - [`spp_audit_log`](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_audit_log)
   - [`spp_audit_post`](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_audit_post)

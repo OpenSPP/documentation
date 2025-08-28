@@ -263,5 +263,5 @@ Finally, create a client action and a menu item to make your dashboard accessibl
 
 For more information on extending Odoo models and views, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+- [OpenSPP Documentation](https://docs.openspp.org/)
 - [OpenSPP Dashboard Base Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_dashboard_base)
