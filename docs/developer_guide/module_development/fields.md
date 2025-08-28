@@ -30,7 +30,7 @@ The registry separates groups and individuals while sharing the same underlying 
 
 - Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
 - Registry modules (`g2p_registry_group`, `g2p_registry_individual`) installed.
-- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <setup>`.
+- To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <../setup>`.
 
 ## Module Structure
 
@@ -178,7 +178,7 @@ access_custom_partner_note,custom.partner.note,base.model_res_partner,base.group
 
 ## References
 
-For more information on extending Odoo models and views, refer to:
+For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
 - [OpenSPP Documentation](https://docs.openspp.org/)
 - Registry modules referenced: `g2p_registry_group`, `g2p_registry_individual`
