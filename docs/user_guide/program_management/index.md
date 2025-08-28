@@ -12,6 +12,7 @@ This section contains guides for creating and managing social protection program
 ```{toctree}
 :maxdepth: 2
 :caption: Contents
+:hidden:
 
 create_program
 enrol_beneficiaries

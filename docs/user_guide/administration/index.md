@@ -12,6 +12,7 @@ This section contains administrative tasks and system management guides.
 ```{toctree}
 :maxdepth: 2
 :caption: Contents
+:hidden:
 
 user_access
 service_points
