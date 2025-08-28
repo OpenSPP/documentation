@@ -165,22 +165,14 @@ pip install -r requirements.txt
 make html
 ```
 
-
 ---
 
-## Merged Content
-
-
-
-### Content from docs/contributing/admins.md
-
-(administrators-guide-label)=
+<!-- Commented this section out, this whole commented section is all from the old documentation version. unless there are relevant information from this section, we'll comment this part for now (administrators-guide-label)=
 
 # Administrators Guide
 
 This guide is for administrators of OpenSPP Documentation.
 It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into OpenSPP Documentation.
-
 
 (administrators-import-docs-submodule-label)=
 
@@ -211,9 +203,6 @@ To make it easier for other contributors to work with your project, update the f
 -   Optionally set a branch to work on in `.gitmodules`.
 
 Commit and push your changes to a remote, and submit a pull request against [`openspp/documentation`](https://github.com/openspp/documentation/compare).
-
-
-### Content from docs/contributing/authors.md
 
 (authors-guide-label)=
 
@@ -476,28 +465,10 @@ The OpenSPP Documentation Team adopted additional guidelines.
 -   [Write the Docs - Documentation Guide](https://www.writethedocs.org/guide/)
 -   [A Guide to Em Dashes, En Dashes, and Hyphens](https://www.merriam-webster.com/words-at-play/em-dash-en-dash-how-to-use)
 
-
-### Content from docs/contributing/index.md
-
-(contributing-index-label)=
-
-# Contributing to documentation
-
-This document describes how to contribute to OpenSPP Documentation.
-
-Contributions to the OpenSPP Documentation are welcome.
-
-(contributing-quality-requirements-label)=
-
 ## Documentation quality requirements
 
 We use GitHub Actions with every pull request to enforce OpenSPP Documentation quality.
 We recommend that you build the documentation locally to catch errors and warnings early on.
-
-
-### Content from docs/contributing/myst-reference.md
-
-(contributing-myst-reference)=
 
 # MyST reference
 
@@ -884,8 +855,6 @@ print(f"my {a}nd line")
 ````
 
 
-### Content from docs/contributing/setup-build.md
-
 (setup-build-label)=
 
 # Building and checking the quality of documentation
@@ -1040,9 +1009,6 @@ See {ref}`authors-html-meta-data-label` for more info.
 make html_meta
 ```
 
-
-### Content from docs/contributing/sphinx-extensions.md
-
 (contributing-sphinx-extensions)=
 
 # Sphinx extensions
@@ -1061,9 +1027,4 @@ We use several Sphinx extensions to enhance the presentation of OpenSPP document
 -   [`sphinxcontrib.video`](https://pypi.org/project/sphinxcontrib-video/) allows you to embed local videos as defined by the HTML5 standard.
 -   [`sphinxext.opengraph`](https://pypi.org/project/sphinxext-opengraph/) generates [OpenGraph metadata](https://ogp.me/).
 -   [`sphinx.ext.viewcode`](https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html) generates pages of source code modules and links between the source and the description.
--   [`sphinx.ext.autosummary`](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html) generates function/method/attribute summary lists.
-
-
-### Content from docs/howto/translation.md
-
-### Translation
+-   [`sphinx.ext.autosummary`](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html) generates function/method/attribute summary lists. -->

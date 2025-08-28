@@ -9,8 +9,6 @@ myst:
 
 # Feature area: Registry & data management
 
-## What is registry & data management in OpenSPP?
-
 At its core, OpenSPP's registry securely organizes essential information about the people and groups (like households or farmer cooperatives) your programs serve. It's the system of record that helps you know who is who, understand their basic situation, and manage their information reliably over time. This involves collecting the right details, ensuring they are accurate, and keeping them safe.
 
 ## Why is good data management important for your programs?
@@ -44,4 +42,4 @@ OpenSPP provides the tools and structure needed for effective data management:
 * **For step-by-step instructions on registering users:** See {doc}`../../user_guide/registry_management/register_individual`.
 * **To learn how to import/export data:** See {doc}`../../user_guide/registry_management/import_export_registrant_data` 
 * **For technical details on registry modules:** See {doc}`/reference/modules/g2p_registry_base`, {doc}`/reference/modules/g2p_registry_individual`, {doc}`/reference/modules/g2p_registry_group`, {doc}`/reference/modules/g2p_registry_membership`.
-* **For developer guides on customization:** See {doc}`/developer_guide/customization/customizing_registry` and {doc}`/developer_guide/customization/customizing_fields`.
+* **For developer guides on customization:** See {doc}`/developer_guide/module_development/registry` and {doc}`/developer_guide/module_development/fields`.

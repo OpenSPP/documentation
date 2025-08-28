@@ -7,11 +7,12 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Integrations
 
-This section contains guides for integrating OpenSPP with external systems.
+This section contains guides for integrating OpenSPP across external systems.
 
 ```{toctree}
 :maxdepth: 2
 :caption: Contents
+:hidden:
 
 dci
 esignet

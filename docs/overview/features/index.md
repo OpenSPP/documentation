@@ -12,6 +12,7 @@ This section provides an overview of OpenSPP features organized by functional ar
 ```{toctree}
 :maxdepth: 2
 :caption: Contents
+:hidden:
 
 registry_data_management
 integrations_apis

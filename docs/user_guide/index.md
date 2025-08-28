@@ -31,8 +31,6 @@ Guides for creating and managing social protection programs:
 - {doc}`program_management/configure_entitlements`
 - {doc}`program_management/allocate_funds`
 - {doc}`program_management/using_geotargeting`
-- {doc}`program_management/using_indicators`
-- {doc}`program_management/using_vouchers`
 
 ## Administration
 
@@ -66,4 +64,7 @@ pos_usage
 reporting_dashboards
 grievance_management
 consent_management
+indicator_fields
+inventory_configuration
+email_gateway
 ```

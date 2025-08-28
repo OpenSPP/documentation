@@ -12,6 +12,7 @@ This section contains guides for managing registrant data and registry operation
 ```{toctree}
 :maxdepth: 2
 :caption: Contents
+:hidden:
 
 register_individual
 import_export_registrant_data
