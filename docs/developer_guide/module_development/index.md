@@ -66,5 +66,6 @@ fields
 indicators
 programs
 registry
+rest_api
 service_points
 ```
