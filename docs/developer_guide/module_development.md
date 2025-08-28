@@ -43,23 +43,23 @@ By mastering this pattern, you can tailor OpenSPP to meet any specific program r
 
 OpenSPP follows the coding standards of the Odoo Community Association (OCA), which are designed to ensure high-quality, maintainable, and consistent code. While the full guidelines are extensive, here are some of the most important best practices to follow:
 
--   **Follow Python and Odoo Coding Standards:**
-    -   Adhere to **PEP8** guidelines for Python code.
-    -   Use tools like `black` for code formatting, `isort` for import sorting, and `flake8` for linting to maintain consistency.
-    -   Follow Odoo's import order: standard Python libraries, third-party libraries, then Odoo and OpenSPP modules.
+**Follow Python and Odoo Coding Standards:**
+-   Adhere to **PEP8** guidelines for Python code.
+-   Use tools like `black` for code formatting, `isort` for import sorting, and `flake8` for linting to maintain consistency.
+-   Follow Odoo's import order: standard Python libraries, third-party libraries, then Odoo and OpenSPP modules.
 
--   **Write Clean and Readable XML:**
-    -   Use a consistent naming convention for record IDs. For example: `view_model_name_form`, `action_model_name_window`.
-    -   Logically order fields in views to create an intuitive user experience.
+**Write Clean and Readable XML:**
+-   Use a consistent naming convention for record IDs. For example: `view_model_name_form`, `action_model_name_window`.
+-   Logically order fields in views to create an intuitive user experience.
 
--   **Prioritize Security and Extensibility:**
-    -   Always define access rights in `security/ir.model.access.csv`. Never grant universal access (`group_id:id,"",...`) without a strong reason.
-    -   Avoid using raw SQL queries. Use the Odoo ORM to ensure security rules are respected.
-    -   Always use `_inherit` and `xpath` to extend existing functionality. Never modify core OpenSPP or Odoo files directly.
+**Prioritize Security and Extensibility:**
+-   Always define access rights in `security/ir.model.access.csv`. Never grant universal access (`group_id:id,"",...`) without a strong reason.
+-   Avoid using raw SQL queries. Use the Odoo ORM to ensure security rules are respected.
+-   Always use `_inherit` and `xpath` to extend existing functionality. Never modify core OpenSPP or Odoo files directly.
 
--   **Adhere to Licensing Requirements:**
-    -   All custom modules for OpenSPP must be licensed under **LGPL-3**.
-    -   Ensure that any third-party Python libraries or other dependencies you add are compatible with the LGPL-3 license.
+**Adhere to Licensing Requirements:**
+-   All custom modules for OpenSPP must be licensed under **LGPL-3**.
+-   Ensure that any third-party Python libraries or other dependencies you add are compatible with the LGPL-3 license.
 
 ## Prerequisites
 
