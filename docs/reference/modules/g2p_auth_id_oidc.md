@@ -1,55 +1,40 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+# G2P Auth Id Oidc
 
-# g2p_auth_id_oidc Module
+The `g2p_auth_id_oidc` module extends OpenSPP's OpenID Connect (OIDC) authentication capabilities to specifically manage and authenticate G2P registrant IDs. It bridges external identity provider verification with OpenSPP's registrant registry, ensuring that the identities of individuals and groups are securely linked and validated against official records.
 
-```{warning}
+## Purpose
 
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
+This module provides critical functionality for securely identifying and managing OpenSPP registrants through OIDC, offering several key capabilities:
 
-This module extends the OpenG2P Auth module to allow user authentication and registration using OIDC (OpenID Connect) while linking them to their existing G2P Registrant IDs. 
+*   **Secure Registrant Identity Verification**: Leverages OIDC to authenticate and verify the identity of individuals and groups against external identity providers. This ensures that the registrant's provided ID (e.g., National ID, Passport Number) is officially validated.
+*   **Automated Registrant ID Linking**: Automatically associates authenticated OIDC user IDs (claims) with existing `g2p.reg.id` records in OpenSPP. This streamlines the process of connecting external identities to internal registrant profiles.
+*   **Streamlined Registrant Profile Population**: Utilizes data received from the OIDC provider, such as names and phone numbers, to automatically populate or update individual and group registrant profiles. For example, a registrant's given name and family name from OIDC can directly populate their OpenSPP profile.
+*   **Authentication Status Tracking**: Records the authentication status and the last successful authentication timestamp directly on the `g2p.reg.id` record. This provides an audit trail and clear indication of a registrant's verified status.
+*   **Configurable ID Type Integration**: Allows administrators to specify which type of G2P Registrant ID (e.g., National ID, Voter ID) an OIDC provider is configured to authenticate. This ensures flexibility in integrating various national identity schemes.
 
-**Purpose:**
+## Dependencies and Integration
 
-The primary goal of this module is to streamline the user registration and login process by leveraging existing G2P Registrant IDs within the OpenG2P system. Instead of creating new user accounts from scratch, this module allows users to authenticate using their OIDC credentials and then links them to their pre-existing G2P registration data. 
+The `g2p_auth_id_oidc` module is a crucial extension that integrates deeply with OpenSPP's core authentication and registry components:
 
-**Key Features:**
+*   **[G2P Auth Oidc](g2p_auth_oidc)**: This module builds upon the foundational OIDC authentication provided by `g2p_auth_oidc`. It customizes the OIDC login flow to specifically search for and interact with G2P registrant IDs and profiles during the authentication process.
+*   **[G2P Registry Individual](g2p_registry_individual)** and **[G2P Registry Group](g2p_registry_group)**: It interacts directly with these modules to create or update individual and group registrant profiles based on data obtained during OIDC authentication. This ensures that validated external data seamlessly populates the relevant registrant fields.
+*   **Auth OAuth Provider (`auth.oauth.provider`)**: It extends the OIDC provider configuration by adding a specific field to link an external OIDC provider to a designated G2P Registrant ID Type. This enables the system to understand which type of OpenSPP ID the external provider is verifying.
+*   **G2P ID Type (`g2p.id.type`)** and **G2P Registrant ID (`g2p.reg.id`)**: This module directly works with these models. It maps OIDC claims to specific `g2p.reg.id` entries, updates their authentication status, and facilitates the re-authentication of these IDs.
 
-* **OIDC Integration for Authentication:**  Users can authenticate using their credentials from an OIDC provider.
-* **G2P Registrant ID Mapping:**  The module maps the authenticated OIDC user to their corresponding G2P Registrant ID stored in the [g2p_registry_base](g2p_registry_base) module.
-* **Automated Partner/User Creation:**  If a matching G2P Registrant ID is found, the module automatically creates a linked Partner and User in DCI, pulling relevant data from the registration record. 
-* **Customizable Data Mapping:**  Administrators can configure how data from the OIDC provider and the G2P registry is mapped to DCI Partner and User fields.
+## Additional Functionality
 
-**How it Works:**
+### Mapping OIDC Claims to Registrant IDs
 
-1. **OIDC Authentication:**  A user initiates the login process via an OIDC provider. 
-2. **G2P ID Lookup:**  The module extracts the user's ID from the OIDC response and attempts to find a matching G2P Registrant ID.
-3. **Account Creation/Linking:**
-    * **Match Found:**  If a match is found, the module retrieves the registration data and creates/updates the corresponding Partner and User records in DCI.
-    * **No Match:** The module can be configured to either deny access or initiate a more detailed registration process, potentially pulling additional data from the OIDC provider. 
-4. **User Login:**  Upon successful authentication and account linking, the user is logged into the OpenG2P system.
+This module allows administrators to configure how OIDC claims are mapped to OpenSPP registrant IDs. Upon successful authentication, the system can identify and link the OIDC `user_id` claim to a specific `g2p.reg.id` record. If the OIDC provider returns multiple `user_id` claims (e.g., `user_id123` for a specific ID type with ID `123`), the module can map these to corresponding `g2p.reg.id` entries, either updating existing ones or creating new ones if not found.
 
-**Dependencies:**
+### Automated Registrant Profile Population
 
-* **[g2p_registry_base](g2p_registry_base):** This module depends on the base registry module for accessing and retrieving G2P Registrant data.
+When a registrant successfully authenticates via OIDC, the module automatically populates or updates their OpenSPP profile. It processes OIDC claims such as the registrant's `name` (breaking it down into `given_name`, `family_name`, and `addl_name`) and `phone` to ensure the registrant's profile is accurate and complete. Additionally, it sets the `is_registrant` flag to true for individuals and `is_group` to false, confirming their status within the registry.
 
-**Benefits:**
+### Registrant ID Authentication Status Management
 
-* **Simplified User Experience:**  Easier registration and login process for beneficiaries already registered within the OpenG2P system.
-* **Improved Data Accuracy:**  Leveraging existing G2P Registrant data ensures consistency and reduces the risk of duplicate records.
-* **Enhanced Security:**  Integration with trusted OIDC providers enhances the security of the OpenG2P platform. 
+The module tracks the authentication status of each `g2p.reg.id` record. Upon successful OIDC authentication, the `authentication_status` field on the corresponding `g2p.reg.id` is updated to "Authenticated," and the `last_authentication_time` is recorded. This provides a clear, real-time indication of a registrant's verified identity. The system also supports initiating re-authentication for a specific registrant ID, guiding the user back to the appropriate OIDC provider.
 
-**Notes:**
+## Conclusion
 
-* The module relies on a consistent and accurate mapping between OIDC user identifiers and G2P Registrant IDs. 
-* Proper configuration of OIDC settings and data mapping is crucial for the module's functionality.
-
-**TODOs:**
-
-* The original module references an `auth_oidc` module that has been removed. A suitable replacement needs to be integrated into the codebase for the OIDC functionality. 
-* The code comments highlight areas that require further improvement, such as refining the data mapping logic and enhancing error handling. 
+The `g2p_auth_id_oidc` module is essential for securely integrating external identity verification with OpenSPP's registrant management, streamlining the process of authenticating and maintaining accurate profiles for individuals and groups in social protection programs.

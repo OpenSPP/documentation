@@ -1,57 +1,41 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
-
 # OpenSPP Event Data
 
-```{warning}
-
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
-
-This document outlines the functionality of the **[spp_event_data](spp_event_data)** module within the OpenSPP ecosystem. This module is designed to record and track specific events related to registrants, building upon the functionalities offered by the base registry modules.
+The OpenSPP Event Data module is a core component for maintaining a comprehensive and chronological history of all significant actions and changes related to individual and group registrants within the OpenSPP system. It serves as an auditable log, tracking when and how key registrant information evolves.
 
 ## Purpose
 
-The **[spp_event_data](spp_event_data)** module allows users to associate significant events with both individual and group registrants, enhancing the system's capacity to capture a chronological history of changes and actions. It aims to:
+The OpenSPP Event Data module provides essential capabilities for managing registrant data history:
 
-* Provide a structured way to log and store data about events impacting registrants.
-* Link these events to the specific data entries they affect, creating a clear audit trail.
-* Offer tools to view and navigate the event history of a registrant.
+*   **Centralized History**: Establishes a single, organized source for tracking all events associated with individual and group registrants. This ensures a complete timeline of their engagement with social protection programs.
+*   **Data Versioning**: Manages the active status of registrant-related records, ensuring that OpenSPP always refers to the most current version of specific data (e.g., an ID, a phone number, or an enrollment status) at any given time.
+*   **Auditability and Accountability**: Provides a clear, time-stamped record of changes, crucial for program transparency, compliance with regulations, and resolving data-related inquiries.
+*   **Contextual Detail**: Links each event directly to the specific data record that was created or modified, offering immediate access to the full context of the change. This allows users to quickly understand the "what" and "why" behind an event.
+*   **Operational Oversight**: Supports program managers and field agents in understanding the historical journey of each registrant, from initial registration to various program interventions or data updates, enabling informed decision-making.
 
-## Module Dependencies and Integration
+## Dependencies and Integration
 
-1. **[g2p_registry_base](g2p_registry_base)**: This module relies on the foundational structure and functionalities provided by the **[g2p_registry_base](g2p_registry_base](g2p_registry_base](g2p_registry_base)**: This module relies on the foundational structure and functionalities provided by the **[g2p_registry_base)** module, specifically leveraging:
-    * **Registrant Data**: Utilizes the core registrant information to associate events with the correct individuals or groups.
-2. **[g2p_registry_group](g2p_registry_group)**: Extends its functionality by allowing event data to be linked to group registrants.
-3. **Contacts (res.partner)**:  Integrates with the standard Odoo Contacts module, enabling the module to link event data to the respective contact records, enriching the overall profile of the registrant.
+The OpenSPP Event Data module integrates deeply with the core registry modules to track changes to registrant profiles:
+
+*   **[G2P Registry: Base](g2p_registry_base)**: This foundational module provides the `res.partner` model, which represents all registrants (individuals and groups). The Event Data module records events directly linked to these registrant records and other base components like identification documents, phone numbers, and relationships.
+*   **[G2P Registry: Individual](g2p_registry_individual)**: When data specific to individual registrants (e.g., birthdate changes, gender updates, or new personal identifiers) is created or modified, the Event Data module tracks these events, linking them to the individual's profile.
+*   **[G2P Registry: Group](g2p_registry_group)**: Similarly, for group registrants, the module logs events related to group types, membership changes, or other group-specific data, ensuring a complete history for collective entities.
+
+This module acts as a historical ledger, receiving event notifications from these registry modules to build a comprehensive timeline of registrant data evolution.
 
 ## Additional Functionality
 
-* **Event Data Model (spp.event.data)**:
-    * Introduces a new data model to store event-specific information.
-    * Includes fields to record:
-        * Event type (automatically derived from the related data model).
-        * Related document/record (using `Many2oneReference` for flexibility).
-        * Registrar (person who recorded the event).
-        * Collection date and optional expiry date.
-        * Status of the event (active/inactive).
-* **Automatic Event Type Calculation**:
-    * Dynamically determines and displays the event type based on the linked data model, providing a clear and user-friendly representation of the event.
-* **Event History on Registrant Forms**:
-    * Adds a dedicated tab on both individual and group registrant forms to display their associated event history.
-    * Enables users to directly access and review past events related to a specific registrant.
-* **Event Creation Wizard**:
-    * Provides a streamlined process for creating new event data entries through a dedicated wizard.
-    * Simplifies data entry and ensures consistency in event logging.
-* **Active Event Management**:
-    * Implements logic to manage the active status of events.
-    * Automatically ends the previous active event of the same type when a new one is created for the same registrant.
-    * Provides a clear view of the current status of events related to a specific data point.
+### Comprehensive Event Logging
+The module automatically records a wide array of events, capturing significant actions taken on a registrant's profile. For instance, when a new identification document is added, a phone number is updated, or a relationship is established, the system logs a corresponding event. Each event includes the date of collection, the registrar who made the change, and its current state (active or inactive).
+
+### Active Record Management
+A key feature is its ability to manage the "active" state of various registrant-related data. When a new record of a certain type (e.g., a new primary ID) is created for a registrant, the system automatically sets any previously active record of that same type to "inactive." This ensures that OpenSPP always refers to the most current and relevant data for a registrant without losing the historical context. For example, if a registrant receives a new National ID, the old ID record can be automatically marked as inactive while still being part of the historical record.
+
+### Direct Access to Event Details
+Users can directly view the specific data record associated with any recorded event. From an event log entry, a user can click to open the full details of the linked record, such as the specific ID card, phone number, or relationship record that the event pertains to. This provides immediate context and allows for thorough investigation of historical data.
+
+### Streamlined Event Creation
+The module provides a user-friendly wizard directly accessible from a registrant's profile to create new events. This streamlines the process of adding new data points or marking significant changes, ensuring that all actions are properly logged and associated with the correct registrant.
 
 ## Conclusion
 
-The **[spp_event_data](spp_event_data)** module enhances OpenSPP by introducing a robust system for tracking and managing significant events throughout the lifecycle of registrants. Its tight integration with core registry modules and the Contacts module ensures that event data is seamlessly incorporated into the platform, enriching data integrity and providing a comprehensive view of registrant history. 
+The OpenSPP Event Data module is indispensable for maintaining a transparent, auditable, and comprehensive historical record of all registrant-related data, ensuring data integrity and supporting robust program management within OpenSPP.

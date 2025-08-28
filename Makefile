@@ -2,6 +2,9 @@
 .DEFAULT_GOAL   = help
 SHELL           = bash
 
+# Include module documentation targets
+include Makefile.modules
+
 # You can set these variables from the command line.
 SPHINXOPTS      ?=
 PAPER           ?=

@@ -1,56 +1,44 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
-
 # G2P Registry Membership
 
-```{warning}
-
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
-
-This document outlines the functionality of the **G2P Registry: Membership** module within the OpenSPP ecosystem. This module focuses on managing relationships between individual registrants and groups, adding an essential layer of organization and data management to the platform.
+The G2P Registry Membership module defines and manages the relationships between individuals and groups within OpenSPP. It provides the framework for assigning individuals to various groups, specifying their roles, and tracking their membership over time, ensuring accurate and up-to-date group composition data.
 
 ## Purpose
 
-The **G2P Registry: Membership** module aims to:
+This module enables OpenSPP to effectively manage the dynamic structure of beneficiaries within social protection programs and farmer registries. It accomplishes this by:
 
-* **Define Relationships:** Introduce different types of relationships (or roles) that individuals can have within groups (e.g., Head of Household, Member, Dependent).
-* **Track Group Members:** Enable the system to associate individual registrants with specific groups.
-* **Manage Membership Timeframes:**  Record start and end dates for each membership, allowing for accurate historical tracking of group composition over time.
+*   **Defining Membership Roles**: Allows administrators to establish various roles (e.g., "Head of Household," "Family Member," "Cooperative Lead") that individuals can hold within a group. This provides clear categorization of responsibilities and relationships.
+*   **Assigning Individuals to Groups**: Facilitates the process of linking individual registrants to specific groups, such as households, community associations, or farmer cooperatives.
+*   **Tracking Membership Lifecycle**: Records the start and end dates of an individual's membership in a group, providing a historical record and enabling the system to determine active and inactive members.
+*   **Ensuring Data Integrity**: Enforces rules to prevent duplicate individual entries within a group and validates that unique roles (like "Head of Household") are assigned to only one individual per group.
+*   **Providing Group Composition Insights**: Automatically calculates and displays the total number of individuals associated with each group, offering a quick overview of group size.
 
-## Module Dependencies and Integration
+This module is crucial for programs that require a clear understanding of who belongs to which group, enabling targeted interventions and accurate reporting at both individual and group levels. For example, it helps identify all members of a household for benefit distribution or list all individuals associated with a specific farmer cooperative.
 
-1. **G2P Registry: Individual ([g2p_registry_individual](g2p_registry_individual))**: This module relies on the individual registrant data managed by the **G2P Registry: Individual** module.  It directly links individuals to groups, leveraging the individual profiles created and managed within that module.
+## Dependencies and Integration
 
-2. **G2P Registry: Group ([g2p_registry_group](g2p_registry_group))**: It integrates closely with the group management capabilities provided by the **G2P Registry: Group** module.  It uses the group definitions and data structures from this module to establish and track membership.
+The G2P Registry Membership module integrates closely with other core OpenSPP components to manage comprehensive registrant data:
 
-3. **Contacts (res.partner)**: Leverages the Odoo Contacts module to access and display information about individuals and groups within the membership management interface.
+*   **[G2P Registry Groups](g2p_registry_group)**: This module builds directly upon the G2P Registry Groups module, which defines groups as registrants. It allows for the assignment of individuals *to* these established groups.
+*   **[G2P Registry Individual](g2p_registry_individual)**: It relies on the G2P Registry Individual module, which manages individual registrant profiles. This module links these individual profiles as members *within* groups.
+*   **Contacts (res.partner)**: Both individuals and groups are represented as `res.partner` records (contacts) in OpenSPP. This module establishes the membership links between these contact records.
+*   **Queue Job (queue_job)**: This module utilizes the queue job system to efficiently recompute group-level indicators, such as the total number of members, in the background. This ensures that group statistics remain up-to-date without impacting user performance.
+
+This module is foundational, providing the essential structure for understanding how individuals are organized into social units. Other modules can leverage its data to filter beneficiaries by group, understand household composition, or report on group-level demographics.
 
 ## Additional Functionality
 
-The module introduces the following key elements:
+### Flexible Membership Kinds
+Users can define various types of membership roles, such as "Head of Household," "Spouse," "Child," or "Dependent." For specific roles, the system allows configuration to ensure that only one individual can hold that unique role within a given group (e.g., only one "Head of Household"). This flexibility supports diverse program requirements and social structures.
 
-* **Group Membership Model (g2p.group.membership):** 
-    * Stores data about individual memberships in groups, including the group, the individual member, the type of relationship, start date, and optional end date.
-    * Includes computed fields for status (active/inactive) and a flag to indicate if the membership has ended.
-    * Provides methods to directly open the linked individual or group forms for easy navigation and data viewing.
+### Membership Lifecycle and Status
+The module captures the start and, optionally, the end date of an individual's membership in a group. Based on these dates, the system automatically determines if a membership is currently "active" or "inactive." This provides a clear historical record of affiliations and ensures that only current members are considered for active program participation.
 
-* **Group Membership Kind Model (g2p.group.membership.kind):**
-    * Allows administrators to define and manage different types of relationships within groups (e.g., Head of Household, Member, Dependent).
-    * Includes an option to mark a kind as "unique," enforcing that only one member within a group can have this relationship type. 
+### Automated Group Composition and Validation
+The module automatically calculates and displays the "Number of individuals" within each group, providing an immediate overview of its size. It enforces crucial data integrity rules, preventing an individual from being listed as a member of the same group multiple times and validating that unique roles are respected across all group members.
 
-* **Data Validation and Constraints:**
-    * Implements validation rules to prevent duplicate memberships (the same individual cannot be added to the same group twice with the same relationship).
-    * Includes logic to ensure the end date of a membership cannot be earlier than the start date.
-
-* **User Interface Enhancements:**
-    * Adds dedicated tabs or sections within both the Individual and Group forms to display and manage memberships. 
-    * Provides views (tree, form) to manage group memberships directly.
+### Seamless Data Navigation
+From any group membership record, users can easily navigate to view the full profile of the individual member or the details of the associated group. This feature enhances usability by providing direct access to related information, streamlining data review and management workflows.
 
 ## Conclusion
 
-The **G2P Registry: Membership** module is crucial for representing and managing the complex relationships between individuals and groups within OpenSPP. It integrates seamlessly with other core registry modules, providing a comprehensive system for tracking group composition, roles within groups, and membership history.  This functionality is essential for social protection programs and farmer registries that rely on accurate and up-to-date information about individuals' group affiliations. 
+The G2P Registry Membership module is vital for accurately modeling the social structures of beneficiaries, enabling OpenSPP to manage individuals within their relevant group contexts for effective program delivery and comprehensive reporting.

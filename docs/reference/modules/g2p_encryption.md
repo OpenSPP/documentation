@@ -1,38 +1,43 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
-
 # G2P Encryption
 
-```{warning}
+The `g2p_encryption` module provides foundational capabilities for securing sensitive data within the OpenSPP platform. It establishes a robust framework for managing encryption providers, encrypting and decrypting information, and applying digital signatures to ensure data confidentiality, integrity, and authenticity.
 
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
+## Purpose
 
-## Overview
+This module is critical for protecting sensitive information across all OpenSPP operations. It accomplishes this by:
 
-The [g2p_encryption](g2p_encryption) module provides a base framework for managing encryption providers within OpenSPP. It defines a generic interface for different encryption methods and allows for their seamless integration into various OpenSPP components.
+*   **Securing Sensitive Data**: Encrypts confidential information, such as beneficiary personal details or financial records, both at rest and in transit. This ensures privacy and prevents unauthorized access to critical program data.
+*   **Ensuring Data Integrity and Authenticity**: Implements digital signatures to verify that data has not been tampered with and originates from a trusted source. This is vital for secure data exchange and auditing.
+*   **Managing Flexible Encryption Providers**: Allows for the configuration and management of various encryption methods and services. This provides flexibility to adapt to different security requirements and integrate with diverse cryptographic solutions.
+*   **Facilitating Secure Interoperability**: Supports secure communication and data exchange with external systems and other OpenSPP modules. It provides standardized methods for signing and verifying data, essential for integrated social protection programs.
+*   **Supporting Compliance**: Helps OpenSPP adhere to data protection regulations and privacy standards relevant to sensitive personal and financial data. This is crucial for maintaining trust and legal compliance in program delivery.
 
-## Features
+## Dependencies and Integration
 
-- **Encryption Provider Model:** The module introduces the `g2p.encryption.provider` model, which serves as a template for defining and configuring different types of encryption providers.
-- **Encryption Methods:** The model provides standardized methods like `encrypt_data`, `decrypt_data`, `jwt_sign`, `jwt_verify`, and `get_jwks` for interacting with encryption providers.
-- **Configuration:** The module allows administrators to configure and manage encryption providers through the Odoo interface.
-- **Extensibility:** The generic design enables developers to easily extend the module by implementing new encryption providers based on the provided interface.
+The `g2p_encryption` module serves as a foundational security layer within OpenSPP. It has no direct dependencies on other OpenSPP modules, making it a core utility that can be leveraged widely.
 
-## Role and Integration
+This module provides essential security services that other modules can integrate to protect their data. For instance, modules handling beneficiary registration, payment processing, or case management can utilize `g2p_encryption` to encrypt sensitive fields, secure communication payloads, and digitally sign important documents or transactions. Its capabilities are designed to be consumed by any module requiring robust data protection, such as [G2P Payments](g2p_payments_technical_name) for transaction security or [Beneficiary Registry](beneficiary_registry_technical_name) for personal data privacy.
 
-The [g2p_encryption](g2p_encryption) module is foundational for incorporating encryption functionality across other OpenSPP modules. Modules requiring encryption capabilities can depend on this module and utilize the available encryption providers. For instance, modules dealing with sensitive data like beneficiary information or financial transactions can leverage this module to ensure data security.
+## Additional Functionality
 
-## Additional Notes
+The `g2p_encryption` module offers several key functionalities to manage and apply cryptographic operations across OpenSPP.
 
-- The [g2p_encryption](g2p_encryption) module itself does not implement any specific encryption algorithm. It provides the framework for other modules to implement and utilize encryption methods.
-- The choice of encryption provider and configuration is left to the system administrators, allowing for flexibility and adaptation to specific security requirements.
-- Developers are encouraged to contribute to this module by adding support for new encryption algorithms and standards.
+### Managing Encryption Providers
 
-## Dependencies
+Users can define and configure various encryption service providers within the system. Each provider is given a unique name and can represent a distinct method or service for cryptographic operations. This allows OpenSPP to support different security requirements and integrate with diverse cryptographic tools as needed.
 
-The [g2p_encryption](g2p_encryption) module has no direct dependencies on other modules. It is designed as a standalone module that other modules requiring encryption functionality can depend on.
+### Secure Data Encryption and Decryption
+
+This module enables the encryption of sensitive data before it is stored or transmitted, and the corresponding decryption when the data needs to be accessed. This capability ensures the confidentiality of critical information, such as personal identifiers, financial amounts, or program-specific sensitive details, protecting them from unauthorized disclosure. The module provides a standardized interface for modules to encrypt and decrypt data without needing to manage the underlying cryptographic details.
+
+### Digital Signature and Verification with JWT
+
+The module supports the creation and verification of digital signatures using JSON Web Tokens (JWT). Users can sign any piece of data to generate a verifiable token, which guarantees the data's authenticity and integrity. This means that other systems or modules can verify the signature to confirm the data's origin and ensure it has not been altered since it was signed. This is particularly useful for securing transactions, audit logs, or sensitive communications.
+
+### Public Key Management (JWKS)
+
+The `g2p_encryption` module facilitates the retrieval of public keys in JWKS (JSON Web Key Set) format. This functionality is crucial for enabling external systems or other OpenSPP modules to securely verify digital signatures generated by the platform. By providing a standardized way to access public keys, it ensures that signature verification can be performed reliably and securely, supporting interoperability and trust.
+
+## Conclusion
+
+The `g2p_encryption` module is fundamental to maintaining the confidentiality, integrity, and authenticity of sensitive data across OpenSPP's social protection and farmer registry operations. It provides a robust and flexible framework for securing critical information, ensuring trust and compliance within the platform.

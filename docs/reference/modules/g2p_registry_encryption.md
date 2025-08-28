@@ -1,47 +1,53 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+# G2P Registry Encryption
 
-# G2P Registry: Encryption Module
+The G2P Registry Encryption module provides robust data protection for sensitive registrant information within OpenSPP. It secures personal data by encrypting specified fields in the registry, ensuring privacy and compliance with data protection standards.
 
-```{warning}
+## Purpose
 
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
+This module enhances the security and privacy of registrant data by implementing field-level encryption. It allows OpenSPP to handle sensitive information responsibly, safeguarding beneficiaries' personal details.
 
-## Overview
+Key capabilities include:
 
-The [g2p_registry_encryption](g2p_registry_encryption) module adds an encryption layer to the OpenSPP registry system. It allows sensitive registry data to be stored securely, enhancing the system's overall privacy and security. This module builds upon the functionality provided by the [g2p_encryption](g2p_encryption), [g2p_registry_base](g2p_registry_base) and [g2p_registry_individual](g2p_registry_individual) modules.
+*   **Secure Sensitive Data**: Encrypts critical personal information, such as names, addresses, and birth details, directly within the registrant's profile.
+*   **Configurable Encryption**: Enables administrators to define precisely which registry fields require encryption, offering flexibility to meet specific privacy policies.
+*   **Data Obfuscation**: Replaces encrypted data with a generic placeholder in the database, preventing unauthorized viewing of raw sensitive information.
+*   **Controlled Access**: Facilitates authorized decryption of sensitive data for legitimate operational needs, ensuring that data remains accessible only to approved personnel.
+*   **Compliance Support**: Helps OpenSPP deployments adhere to data protection regulations by providing a mechanism for securing personal identifying information (PII).
 
-## Features
+This module is essential for protecting the privacy of individuals served by social protection programs, reducing the risk of data breaches, and building trust in the OpenSPP platform.
 
-- **Selective Encryption:**  Encrypts specific fields of the `res.partner` model that contain sensitive registrant information like name, address, and birth place.
-- **Configurable Encryption Provider:**  Allows administrators to select and configure the desired encryption provider from the available options within OpenSPP.
-- **On-the-fly Encryption and Decryption:**  Transparently encrypts data upon saving a record and decrypts it when retrieved, ensuring a seamless user experience.
-- **Granular Control:**  Provides options to enable or disable encryption and decryption through system configuration settings.
+## Dependencies and Integration
 
-## Integration
+The `g2p_registry_encryption` module integrates deeply with core OpenSPP registry components and leverages a foundational encryption framework.
 
-- **[g2p_encryption](g2p_encryption):**  Utilizes the encryption providers and functionalities provided by this module to perform the actual encryption and decryption operations.
-- **[g2p_registry_base](g2p_registry_base) and [g2p_registry_individual](g2p_registry_individual):** Extends the existing registry data models and views to accommodate the encryption features.
+*   **[G2P Encryption](g2p_encryption)**: This module relies on the `g2p_encryption` module to provide the underlying encryption services. It utilizes the defined encryption providers to perform actual data encryption and decryption operations, abstracting the cryptographic complexities.
+*   **[G2P Registry Base](g2p_registry_base)**: As an extension of the base registry, this module integrates with the `res.partner` model, which is the foundation for all registrants. It adds fields to `res.partner` to store encrypted values and manage encryption status.
+*   **[G2P Registry Individual](g2p_registry_individual)**: Building upon the individual registry, this module specifically targets the individual-specific data fields introduced by `g2p_registry_individual` (e.g., family name, given name, birth place) for encryption, ensuring comprehensive protection of individual profiles.
 
-## Configuration
+## Additional Functionality
 
-The module can be configured through the OpenSPP settings interface:
+The `g2p_registry_encryption` module offers several key features to manage and secure registrant data effectively:
 
-1. **Encryption Provider:** Choose the preferred encryption provider from the list of configured providers.
-2. **Enable Encryption:** Toggle the "Encrypt Registry fields" option to enable encryption for the specified fields.
-3. **Enable Decryption (Caution):** This option allows decryption of registry fields. Use with caution, as enabling it might expose sensitive data. It is generally recommended to keep this disabled unless explicitly required.
+### Configurable Field Encryption
 
-## Security Considerations
+Administrators can specify which fields within the registrant's profile should be encrypted. This includes common fields like `name`, `family_name`, `given_name`, `addl_name`, `display_name`, `address`, and `birth_place`. This flexibility allows organizations to tailor data protection to their specific requirements and local regulations.
 
-While this module enhances data security, it is crucial to remember that the overall system's security relies on several factors:
+### Data Masking and Placeholder Values
 
-- **Encryption Key Management:**  Securely store and manage the encryption keys used by the chosen provider.
-- **Access Control:**  Implement strict access control measures to prevent unauthorized access to sensitive data and configuration settings.
-- **Regular Security Audits:**  Conduct periodic security audits and updates to mitigate potential vulnerabilities.
+When a field is encrypted, its original value is replaced in the database with a configurable placeholder, such as "encrypted." This ensures that even if the database is accessed directly without proper authorization, sensitive information remains masked and unreadable, enhancing data security.
 
-By carefully configuring and integrating this module into the OpenSPP ecosystem, implementers can significantly improve the protection of sensitive registry data. 
+### Secure Data Handling
+
+The module automatically encrypts specified data fields when new registrant records are created or existing ones are updated. It also manages the decryption process when authorized users access registrant information, ensuring that data is only exposed when explicitly permitted.
+
+### Encryption Provider Selection
+
+Through system configuration, users can select and manage the specific encryption provider used for registry data. This integration with the `g2p_encryption` module allows for the use of various robust encryption methods, enabling organizations to choose the most suitable security solution.
+
+### Controlled Decryption Access
+
+The system provides a mechanism to control whether sensitive registry data is decrypted for viewing. This can be configured at a system level, allowing organizations to implement strict policies on who can access unencrypted registrant details for operational purposes.
+
+## Conclusion
+
+The G2P Registry Encryption module is vital for OpenSPP, providing essential capabilities to encrypt and secure sensitive registrant data, thereby upholding privacy and facilitating compliance with data protection mandates.

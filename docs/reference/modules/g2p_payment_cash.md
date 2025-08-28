@@ -1,41 +1,36 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+# G2P Payment Cash
 
-# OpenG2P Program Payment: Cash
+The `g2p_payment_cash` module within OpenSPP enables the management and processing of cash-based payments for social protection programs. It provides a direct and auditable method for disbursing benefits where physical cash distribution is the primary mechanism, ensuring beneficiaries receive their support effectively.
 
-```{warning}
+## Purpose
 
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
+The **G2P Payment Cash** module provides a comprehensive framework for:
 
-This module extends the OpenG2P platform to handle cash disbursements for social protection programs. 
+*   **Facilitates Cash Disbursements**: Allows program managers to designate cash as the primary payment method for specific programs or cycles. This is crucial for reaching beneficiaries in areas with limited access to banking or digital payment infrastructure.
+*   **Streamlines Payment Preparation**: Prepares approved entitlements for cash disbursement, grouping them into manageable batches based on program cycles and defined criteria.
+*   **Manages Batch Tags**: Supports the assignment of "Batch Tags" to cash payment batches, enabling organized tracking and reporting of physical cash distributions. For example, batches could be tagged by distribution point (e.g., "District A - Payout Point 1") or specific distribution dates.
+*   **Direct Payment Reconciliation**: Automatically marks payments as 'paid' and 'reconciled' within the system once the cash disbursement is confirmed. This ensures accurate financial records and up-to-date beneficiary payment statuses.
+*   **Empowers Direct Action on Entitlements**: Provides a direct action button on approved entitlements, allowing for immediate preparation and marking of individual cash payments.
 
-## Overview
+## Dependencies and Integration
 
-The [g2p_payment_cash](g2p_payment_cash) module provides a streamlined approach to managing and recording cash payments for entitlements within the OpenG2P system. It integrates seamlessly with the core program management functionalities offered by the [g2p_programs](g2p_programs) module and builds upon the file-based payment management system provided by the [g2p_payment_files](g2p_payment_files) module. 
+*   **G2P Programs ([g2p_programs](g2p_programs))**: This module integrates directly with the G2P Programs module, extending its capabilities to include 'Cash Payment Manager' as an available payment method for programs. Program administrators select this manager to define how benefits are disbursed for a given program cycle.
+*   **G2P Payment Files ([g2p_payment_files](g2p_payment_files))**: The `g2p_payment_cash` module inherits core payment preparation and batching logic from `g2p_payment_files`. While it overrides the final "sending" mechanism for direct cash, it utilizes the same underlying framework for creating payment batches and managing entitlements, ensuring consistency in how payments are structured before disbursement.
 
-## Functionality
+## Additional Functionality
 
-This module introduces:
+### Cash Payment Manager Selection
+Program administrators can configure a social protection program to use "Cash Payment Manager" as its default method for benefit disbursement. This selection ensures that all payment processing for that program will follow cash-specific workflows, tailored for physical distribution.
 
-- **Cash Payment Manager:**  A specialized payment manager dedicated to handling cash disbursements. This manager allows users to prepare payment batches, but instead of generating payment files, it directly marks the payments as "reconciled" and "paid" within the system, simulating the act of distributing cash directly to beneficiaries.
+### Direct Entitlement Payment
+For individual approved entitlements, the module provides a "Prepare and Send Payment" action button. When selected, the system processes the entitlement for cash payment, immediately marking it as paid and reconciled. This feature is useful for managing ad-hoc or individual cash disbursements outside of larger batch processes.
 
-- **Simplified Payment Workflow:** Beneficiaries with approved entitlements can have their payments processed and recorded as "paid" directly within the system. This eliminates the need for generating intermediary payment files, simplifying the workflow for cash-based programs.
+### Batch Tagging for Cash Disbursements
+The module allows program managers to associate multiple "Batch Tags" with cash payment managers. These tags help categorize and track physical cash distribution events, such as linking payments to specific distribution points, dates, or field teams. This enhances operational oversight and reporting for cash-based programs.
 
-- **Integration with Entitlements:**  The module extends the functionality of the `g2p.entitlement` model.  A new button, "Record Cash Payment", appears on approved entitlements when the program is configured to use the Cash Payment Manager.  Clicking this button initiates the cash payment process.
+### Automated Payment Reconciliation
+Once cash payments are processed through this module, the system automatically updates the status of the individual payments and their associated batches to "reconciled" and "paid". This provides real-time visibility into the financial status of cash disbursements, confirming that the funds have been successfully transferred to beneficiaries.
 
-## Integration
+## Conclusion
 
-- **[g2p_programs](g2p_programs):** This module relies on the core program management features provided by [g2p_programs](g2p_programs) for managing beneficiaries, programs, and entitlements. 
-
-- **[g2p_payment_files](g2p_payment_files):**  While this module doesn't generate payment files, it inherits the base functionality and structure of the file-based payment manager from [g2p_payment_files](g2p_payment_files).
-
-## Benefits
-
-- **Streamlined Cash Disbursements:**  Simplifies the payment process for programs using cash disbursements.
-- **Enhanced Record Keeping:** Ensures accurate and transparent recording of cash payments within the system.
-- **Improved Efficiency:** Reduces manual processes and potential errors associated with cash handling. 
+The `g2p_payment_cash` module is essential for OpenSPP, enabling efficient and traceable management of direct cash benefit disbursements for social protection programs, particularly in contexts where physical cash distribution is the primary method.

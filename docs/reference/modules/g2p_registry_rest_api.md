@@ -1,51 +1,41 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+# G2P Registry Rest Api
 
-# G2P Registry: Rest API Module
+The 'G2P Registry Rest Api' module provides a robust set of RESTful API endpoints, enabling external systems and integrations to securely interact with the OpenSPP G2P Registry. It acts as the primary interface for creating, updating, and querying individual and group registrant data within the platform.
 
-```{warning}
+## Purpose
 
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
+This module serves as the crucial gateway for external applications to access and manage the core G2P Registry data. It accomplishes this by:
 
-## Overview
+*   **Enabling External System Integration**: Provides a standardized, programmatic interface for other applications to connect with OpenSPP's G2P Registry.
+*   **Managing Individual Registrant Data**: Facilitates the creation and update of individual profiles, including personal details, identification documents, and contact information.
+*   **Managing Group Registrant Data**: Supports the creation and update of group profiles, allowing for the registration of households or other collective entities.
+*   **Ensuring Data Integrity**: Implements essential validations to ensure that incoming data adheres to predefined standards, such as verifying ID types, group types, and gender against system configurations.
+*   **Securing API Access**: Enforces secure communication by requiring authentication for all API interactions, protecting sensitive registrant data.
 
-The [g2p_registry_rest_api](g2p_registry_rest_api) module extends the functionality of the OpenG2P platform by providing a RESTful API for interacting with the [g2p_registry_membership](g2p_registry_membership) module. This module allows external systems and applications to seamlessly access and manage data related to groups and individuals within the registry.
+## Dependencies and Integration
 
-## Features
+This module is foundational, extending OpenSPP's core API capabilities and relying on other modules for its data structures and processing logic:
 
-- **RESTful API Endpoints:** Exposes API endpoints for performing CRUD (Create, Read, Update, Delete) operations on group and individual records.
-- **Integration with FastAPI:** Leverages the FastAPI framework for building high-performance and scalable APIs.
-- **Security:** Implements role-based access control to restrict API access based on user permissions defined in the `g2p_security.xml` file.
-- **Customizable Endpoints:** Allows for the creation of custom API endpoints to cater to specific integration needs.
+*   **[G2P Registry Membership](g2p_registry_membership)**: This module processes and integrates data related to group memberships and individual roles within groups. The API leverages the data models and business logic defined in the Membership module when handling group-related operations.
+*   **FastAPI**: It extends the core FastAPI integration within OpenSPP, providing the framework for defining and exposing the RESTful endpoints. This dependency ensures a modern, high-performance API.
+*   **Extendable FastAPI**: Builds upon the `fastapi` module to offer a flexible and extensible structure for defining new API endpoints and customizing existing ones, allowing OpenSPP to grow with evolving program needs.
 
-## Dependencies
+## Additional Functionality
 
-This module directly depends on the following modules:
+The 'G2P Registry Rest Api' module offers the following key features for managing registrant data:
 
-- **[g2p_registry_membership](g2p_registry_membership):** Provides the core functionality for managing groups and individuals within the registry.
-- **fastapi:** A modern, fast (high-performance), web framework for building APIs with Python.
-- **extendable_fastapi:** Extends the FastAPI framework with additional features for DCI integration.
+### Comprehensive Registrant Data Management
+The module provides endpoints to create and update detailed profiles for both individual and group registrants. For individuals, this includes personal information like names (given, family, additional), birthdate, birthplace, email, address, and an optional profile image. For groups, it manages the group name, registration date, email, address, and specifies if it's a partial group.
 
-## Functionality
+### Robust Identification and Contact Information Processing
+It supports the processing of multiple identification documents (IDs) for each registrant, including the ID type, value, expiry date, status, and description. Similarly, it manages multiple phone numbers, identifying a primary contact number. The API validates that provided ID types exist within the system, preventing data entry errors.
 
-The module enhances the OpenG2P platform by:
+### Gender and Group Type Validation
+The API includes built-in validation for demographic data. When processing individual registrants, it ensures that the provided gender information aligns with predefined gender types in the system. For groups, it validates the specified group 'kind' (e.g., Household, Cooperative) against the system's configured group types, ensuring data consistency.
 
-- **Enabling external system integration:** Provides a standardized way for other systems, such as mobile applications or data analysis tools, to interact with the registry data.
-- **Automating data exchange:** Allows for automated data synchronization between the OpenG2P platform and other systems.
-- **Building custom applications:** Enables the development of custom applications that leverage the registry data through its API.
-
-## Security
-
-The [g2p_registry_rest_api](g2p_registry_rest_api) module enforces security through the following mechanisms:
-
-- **Role-based access control:** Defines specific roles (`Rest API POST` and `Rest API GET`) that grant access to different API endpoints and operations.
-- **DCI authentication:** Leverages DCI's built-in authentication system to authenticate API requests.
+### Secure API Authentication
+All interactions with the G2P Registry API endpoints require authentication. The module is configured to use Basic Authentication, ensuring that only authorized external systems or users with valid credentials can access and modify sensitive registrant data.
 
 ## Conclusion
 
-The [g2p_registry_rest_api](g2p_registry_rest_api) module plays a crucial role in enhancing the interoperability and extensibility of the OpenG2P platform. By providing a comprehensive RESTful API, it enables seamless data exchange and integration with external systems, empowering organizations to build more connected and efficient social protection programs. 
+The 'G2P Registry Rest Api' module is the essential interface that empowers external systems to securely and efficiently manage individual and group registrant data within the OpenSPP platform.

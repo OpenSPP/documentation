@@ -1,51 +1,42 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
-
 # OpenSPP Farmer Registry Dashboard
 
-```{warning}
-
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
-
-## Overview
-
-The `spp_farmer_registry_dashboard` module provides a suite of interactive dashboards and reports to visualize data from the OpenSPP Farmer Registry. It leverages the power of data visualization to offer insights into key metrics and trends related to registered farmers and their agricultural practices. 
+The OpenSPP Farmer Registry Dashboard module provides interactive dashboards and reports for visualizing data collected within the OpenSPP Farmer Registry. It transforms raw data into actionable insights, enabling users to monitor key metrics and identify trends related to registered farmers and their agricultural activities.
 
 ## Purpose
 
-This module aims to:
+This module aims to provide comprehensive data visualization and reporting capabilities for the farmer registry, enabling users to:
 
-* **Enhance Data Exploration**:  Provide users with intuitive dashboards to easily explore and analyze farmer registry data.
-* **Visualize Key Metrics**: Present aggregated statistics and trends in a visually appealing and understandable format.
-* **Support Decision-Making**:  Equip stakeholders with the insights needed to make informed decisions regarding agricultural programs and interventions. 
+*   **Visualize Key Metrics**: Monitor real-time statistics on farmer registration, demographics, farm characteristics, and agricultural practices through intuitive dashboards.
+*   **Identify Trends**: Analyze patterns in farmer data, such as crop production, livestock numbers, and input usage over specific periods or across different regions.
+*   **Support Decision-Making**: Provide data-driven insights for program planning, resource allocation, and policy formulation within social protection and agricultural initiatives.
+*   **Generate Customizable Reports**: Create detailed, exportable reports on various aspects of the farmer registry for stakeholders, donors, and internal review.
+*   **Enhance Program Monitoring**: Offer a centralized view of program performance indicators, helping to track progress and evaluate the impact of interventions.
 
-## Module Dependencies and Integration
+## Dependencies and Integration
 
-* **[spp_farmer_registry_base](spp_farmer_registry_base)** : The dashboard module heavily relies on the data models and functionalities provided by [spp_farmer_registry_base](spp_farmer_registry_base). It fetches data about farmers, farm groups, land records, agricultural activities, and other relevant information from this core module.
-* **[g2p_registry_membership](g2p_registry_membership)** : Utilizes this module to display data related to group memberships, such as the number of farmers belonging to different types of farmer groups. 
-* **[spp_farmer_registry_demo](spp_farmer_registry_demo)** :  While not a strict dependency, the dashboard module is particularly useful when used in conjunction with [spp_farmer_registry_demo](spp_farmer_registry_demo). The demo data provides a rich dataset for the dashboards to visualize, showcasing the module's capabilities.
-* **spreadsheet_dashboard**: Leverages the `spreadsheet_dashboard` module to create dynamic and interactive dashboards. This dependency provides the framework for embedding charts and graphs directly within the Odoo interface.
-* **[g2p_registry_base](g2p_registry_base)** :  Indirectly depends on this module through its reliance on [spp_farmer_registry_base](spp_farmer_registry_base).  The core registrant data structures and relationships defined in [g2p_registry_base](g2p_registry_base) are essential for the dashboard's functionality.
-* **[g2p_registry_group](g2p_registry_group)** :  Utilized indirectly to access and display information about different types of farmer groups, which are defined and managed by this module.
-* **[g2p_registry_individual](g2p_registry_individual)** : Also indirectly relied upon to access and visualize data related to individual farmers, such as their demographic information and registration details. 
+The `spp_farmer_registry_dashboard` module integrates closely with several core OpenSPP modules to gather and present comprehensive data:
+
+*   **[G2P Registry Base](g2p_registry_base)**, **[G2P Registry Individual](g2p_registry_individual)**, **[G2P Registry Group](g2p_registry_group)**, and **[G2P Registry Membership](g2p_registry_membership)**: These foundational modules provide the core data structures for individual registrants, groups, and their relationships. The dashboard module leverages this data to visualize farmer demographics, group affiliations, and other registrant-level information.
+*   **[OpenSPP Farmer Registry Base](spp_farmer_registry_base)**: This module is the primary source of farmer-specific data, including farm details, agricultural activities, and assets. The dashboard directly visualizes the rich dataset managed by this module.
+*   **[OpenSPP Farmer Registry Demo](spp_farmer_registry_demo)**: While a demo module, its presence as a dependency indicates the types of realistic sample data the dashboard is designed to process and display, showcasing its capabilities with pre-populated information.
+*   **Spreadsheet Dashboard**: This module provides the underlying framework for creating, configuring, and displaying the interactive dashboards. It offers the technical foundation for data aggregation, visualization components, and user interface elements that the farmer registry dashboards utilize.
 
 ## Additional Functionality
 
-The `spp_farmer_registry_dashboard` module introduces the following key features:
+The module delivers powerful tools for data analysis and reporting:
 
-* **Interactive Dashboards**: The module provides several pre-built dashboards, accessible through the Odoo menu:
-    * **Farmer Registry by Month**: Visualizes the number of farmers registered each month, allowing users to track registration trends over time.
-    * **Farmer Registry by Legal Status**: Displays the distribution of farmers based on the legal status of their farms (e.g., owned, leased, communal). 
-    * **Farmer with/without Training Statistics**: Presents a comparative view of farmers who have received formal agricultural training versus those who have not. 
-    * **Sustainable Land & Environmental Management Statistics**:  Visualizes data related to sustainable farming practices, providing insights into the adoption of environmentally friendly methods.
-* **Customizable Reports**: The module includes customizable report templates that can be generated in various formats (e.g., PDF, XLSX).  These reports offer more detailed breakdowns of farmer data and can be tailored to specific reporting requirements.
-* **Data Filtering and Aggregation**: The dashboards and reports offer filtering options, allowing users to focus on specific subsets of data. For instance, users can filter data by region, farm type, crop type, or other relevant criteria.
+### Interactive Dashboards
+
+Users can access dynamic, interactive dashboards that present a real-time overview of the farmer registry. These dashboards display key performance indicators (KPIs) and data visualizations, such as charts and graphs, for metrics like registered farmers over time, distribution by gender, average farm size, and common crop types. Users can typically filter and drill down into the data to explore specific regions (e.g., country > province > district), farmer groups, or time periods.
+
+### Customizable Reports
+
+Beyond interactive views, the module supports the generation of detailed, static reports based on the farmer registry data. Program managers can define specific parameters to create reports on various topics, such as a list of farmers engaged in specific agricultural activities, a summary of land parcel ownership, or an inventory of farm assets. These reports are essential for formal documentation, stakeholder communication, and in-depth analysis.
+
+### Data Visualization Tools
+
+Leveraging the integrated `spreadsheet_dashboard` capabilities, the module provides a user-friendly interface for configuring and displaying various data visualization elements. This allows program managers to effectively present complex data patterns and performance indicators, facilitating quick understanding and informed decision-making without requiring technical expertise in data analysis.
 
 ## Conclusion
 
-The `spp_farmer_registry_dashboard` module transforms raw data from the OpenSPP Farmer Registry into actionable insights. By providing intuitive dashboards and customizable reports, it empowers stakeholders to analyze trends, identify patterns, and make informed decisions to enhance the effectiveness of agricultural programs and interventions. 
+The OpenSPP Farmer Registry Dashboard module is a critical component for transforming raw farmer registry data into actionable insights, enabling effective program management and informed decision-making within social protection and agricultural initiatives.

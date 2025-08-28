@@ -1,47 +1,45 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+# G2P Encryption Keymanager
 
-# g2p_encryption_keymanager Module
-
-```{warning}
-
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
-
-This module extends the functionality of the [g2p_encryption](g2p_encryption) module by providing integration with a Keymanager service for encryption and signing operations. This allows OpenSPP to leverage external key management systems for enhanced security and compliance.
-
+The G2P Encryption Keymanager module integrates OpenSPP with an external Key Management System (KMS) to provide robust cryptographic services. It enables secure encryption, decryption, digital signing, and verification of sensitive program data, ensuring data confidentiality and integrity without OpenSPP directly managing cryptographic keys.
+ 
 ## Purpose
 
-The primary purpose of this module is to:
+This module establishes a secure bridge to external Key Management Systems, centralizing the management of cryptographic keys and operations. It significantly enhances OpenSPP's data security posture by:
 
-* **Delegate encryption and signing operations to an external Keymanager service:** This offloads the burden of key management from the OpenSPP application to a dedicated, potentially more secure, external service.
-* **Provide a configurable interface:** System administrators can configure various parameters of the Keymanager integration, such as API endpoints, authentication credentials, and application-specific identifiers.
-* **Seamlessly integrate with the existing encryption framework:**  The module extends the existing encryption provider mechanism in OpenSPP, allowing for easy switching between different encryption providers, including the Keymanager-based provider.
+*   **Centralized Key Management:** Connects OpenSPP to an external Key Management System (KMS) for secure, off-platform management of all cryptographic keys. This separation of concerns improves security by preventing direct key exposure within OpenSPP.
+*   **Data Encryption and Decryption:** Provides the capability to encrypt and decrypt sensitive data, such as beneficiary records or financial transactions, ensuring confidentiality both at rest and in transit.
+*   **Digital Signing and Verification:** Enables the creation and verification of digital signatures (specifically JSON Web Signatures - JWS) to confirm data authenticity and integrity, proving that data has not been tampered with.
+*   **Secure KMS Authentication:** Manages the secure authentication process with the external KMS, including access token acquisition and refresh, to maintain continuous, authorized access to cryptographic services.
+*   **Configurable Integration:** Offers flexible configuration options for connecting to various KMS solutions, allowing administrators to define API endpoints, authentication details, and application-specific parameters for different cryptographic operations.
 
-## Functionality
+This module is crucial for safeguarding sensitive information within OpenSPP, helping programs meet stringent data protection and privacy requirements.
 
-The [g2p_encryption_keymanager](g2p_encryption_keymanager) module provides the following features:
+## Dependencies and Integration
 
-* **Encryption and Decryption using Keymanager:**  The module allows OpenSPP to encrypt and decrypt data using encryption keys managed by the Keymanager service. 
-* **JWT Signing and Verification with Keymanager:**  The module enables OpenSPP to digitally sign and verify JSON Web Tokens (JWTs) using the Keymanager service, ensuring authenticity and integrity of sensitive data.
-* **Keymanager Authentication and Authorization:**  The module implements secure communication with the Keymanager service using OAuth 2.0 client credentials grant type for authentication and authorization.
-* **Configuration Options for Keymanager Integration:** The module provides a user-friendly interface within the OpenSPP settings to configure various aspects of the Keymanager integration, including API endpoints, authentication credentials, and application-specific identifiers for encryption and signing.
+The G2P Encryption Keymanager module extends the foundational [G2P Encryption](g2p_encryption) module. It specifically implements the "Keymanager" type of encryption provider within the `g2p.encryption.provider` model.
 
-## Integration with Other Modules
+This module relies on the [G2P Encryption](g2p_encryption) module to define the standard interfaces for cryptographic operations. By implementing these interfaces, the Keymanager module allows any other OpenSPP module that requires encryption or digital signing to leverage an external Key Management System seamlessly. Modules dealing with sensitive data can simply select "Keymanager" as their preferred encryption provider via the base `g2p_encryption` framework, inheriting its robust external key management capabilities.
 
-This module directly interacts with the [g2p_encryption](g2p_encryption) module:
+## Additional Functionality
 
-* It inherits and extends the `g2p.encryption.provider` model to include Keymanager-specific configuration fields and methods.
-* It provides a new "Keymanager" option for the encryption provider type.
-* It overrides the default encryption and signing methods to utilize the Keymanager API when selected.
+The G2P Encryption Keymanager module provides several key features to manage and utilize external cryptographic services effectively.
 
-## Benefits of Using Keymanager Integration
+### Data Encryption and Decryption Services
 
-* **Enhanced Security:** Key management is handled by a dedicated service, potentially with stronger security measures than what might be feasible within the OpenSPP application itself.
-* **Centralized Key Management:**  Provides a central location for managing encryption keys across different parts of the OpenSPP system or even across multiple applications.
-* **Compliance and Auditing:**  Using a dedicated Keymanager service can simplify compliance with data security regulations and facilitate auditing of cryptographic operations. 
-* **Scalability and Performance:**  Offloading cryptographic operations to a dedicated service can potentially improve the performance and scalability of the OpenSPP application.
+This module enables OpenSPP to encrypt and decrypt sensitive data by securely interfacing with the configured Key Management System. When data needs protection, it is sent to the KMS for encryption, and similarly, encrypted data can be sent back for decryption. This process uses application-specific identifiers, such as "REGISTRATION" or "ENCRYPT", allowing the KMS to apply distinct key policies based on the data's context.
+
+### Digital Signature and Verification
+
+The module supports generating and verifying JSON Web Signatures (JWS), crucial for ensuring the integrity and authenticity of data. Users can sign various data types, including structured JSON objects or plain text, with options to include the original payload or associated certificate details in the signature. This functionality is vital for confirming that sensitive documents or messages originate from a trusted source and have not been altered.
+
+### Secure Key Manager Authentication
+
+The module handles the complex process of authenticating with the external Key Management System. It uses configured client IDs, client secrets, and grant types to acquire and refresh access tokens automatically. This ensures that OpenSPP maintains a secure and authorized connection to the KMS for all cryptographic operations, preventing unauthorized access to key management functions.
+
+### Configurable External KMS Connection
+
+Administrators can configure all necessary details for connecting OpenSPP to an external Key Management System. This includes specifying the KMS API base URL, authentication URL, and setting timeouts for API calls. Furthermore, the module allows for defining specific application and reference IDs for both encryption and signing operations, providing granular control over how different OpenSPP processes interact with the KMS and its key policies.
+
+## Conclusion
+
+The G2P Encryption Keymanager module is essential for OpenSPP, providing robust, external key-managed cryptographic services to secure sensitive program data and ensure data integrity.

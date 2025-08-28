@@ -1,51 +1,42 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+# G2P Program Reimbursement
 
-# OpenG2P Programs: Reimbursement Module
+The G2P Program Reimbursement module extends OpenSPP's core G2P Programs functionality to manage programs specifically designed for reimbursing beneficiaries or service providers for eligible expenses. It streamlines the process of submitting, tracking, and processing reimbursement claims.
 
-```{warning}
+## Purpose
 
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
+This module provides a robust framework for managing programs where financial assistance is provided as a reimbursement for incurred costs, rather than a direct upfront payment. It enables OpenSPP users to:
 
-## Overview
+*   **Designate Reimbursement Programs:** Clearly define and configure specific social protection programs as reimbursement-based, setting them apart from standard benefit distribution programs.
+*   **Process Reimbursement Claims:** Facilitate the submission and creation of new entitlements that act as reimbursements for previously approved or original entitlements.
+*   **Track Original Entitlements:** Maintain a clear link between a reimbursement claim and its original qualifying entitlement, ensuring transparency and auditability.
+*   **Manage Service Provider Eligibility:** Adapt eligibility criteria to include service providers (e.g., healthcare facilities, educational institutions) as potential beneficiaries for services rendered.
+*   **Tailor Program Workflows:** Adjust program and cycle management views to reflect the unique requirements and data points relevant to reimbursement processes.
 
-The [g2p_program_reimbursement](g2p_program_reimbursement) module extends the OpenG2P platform to manage reimbursement programs. These programs differ from standard social assistance programs, focusing on reimbursing pre-approved service providers for delivering goods or services to beneficiaries. 
+## Dependencies and Integration
 
-This module builds upon the core functionality of the [g2p_programs](g2p_programs) and [g2p_program_assessment](g2p_program_assessment) modules.
+The G2P Program Reimbursement module seamlessly integrates with and extends core OpenSPP components:
 
-## Features
+*   **`g2p_programs`**: This is the foundational module for defining and managing all social protection programs, cycles, and entitlements. The G2P Program Reimbursement module builds directly upon `g2p_programs` by introducing the concept of reimbursement programs and modifying how entitlements and cycles are handled within that context. It extends models like `g2p.program`, `g2p.cycle`, and `g2p.entitlement` to support reimbursement-specific fields and logic.
+*   **`g2p_program_assessment`**: While not directly altering its functionality, this module ensures that any assessment capabilities provided by `g2p_program_assessment` are available for the original entitlements that may later become eligible for reimbursement. This ensures a consistent assessment framework across all entitlement types.
 
-* **Reimbursement Program Designation:** Designate specific programs as "reimbursement programs" within the system.
-* **Service Provider Management:** Manage service providers as participants in reimbursement programs. The module leverages the existing `res.partner` model, filtering and displaying partners designated as "Service Providers".
-* **Reimbursement Claim Submission:** Enables service providers to submit reimbursement claims for services rendered to beneficiaries. 
-* **Claim Validation and Approval:**  Provides a structured workflow to validate and approve submitted reimbursement claims.
-* **Integration with Entitlements:**  Seamlessly integrates with the entitlement system to generate and track reimbursements.
+## Additional Functionality
 
-## Key Concepts
+### Reimbursement Program Configuration
 
-* **Reimbursement Program:** A specialized type of program within OpenG2P that manages the reimbursement of pre-approved service providers.
-* **Service Provider:**  A business or individual registered in the system to provide goods or services to beneficiaries and eligible for reimbursement.
-* **Reimbursement Claim:** A formal request submitted by a service provider for reimbursement of rendered services.
-* **Original Entitlement:** In cases where a reimbursement is directly linked to a beneficiary's existing entitlement, this refers to the initial entitlement against which the service was provided.
+Administrators can easily designate any program as a "reimbursement program" through a simple setting. This flag automatically adjusts system behavior for that program, enabling specific reimbursement workflows. Furthermore, an administrator can link a reimbursement program to an *original* program, defining which program's entitlements are eligible for reimbursement under the new scheme.
 
-## Module Integration
+### Streamlined Reimbursement Claim Submission
 
-The [g2p_program_reimbursement](g2p_program_reimbursement) module seamlessly integrates with the following modules:
+The module provides a clear process for submitting reimbursement claims. Users can initiate a claim against an existing, valid original entitlement by providing details such as the partner (beneficiary or service provider), the original entitlement's unique code, the claimed amount, and any associated supporting documents. The system then automatically creates a new reimbursement entitlement, linking it to the original for complete traceability.
 
-* **[g2p_programs](g2p_programs):**  Inherits core program management features and extends them to accommodate reimbursement program specifics.
-* **[g2p_program_assessment](g2p_program_assessment):** Leverages assessment functionalities to potentially support the validation of reimbursement claims. 
+### Adapted Eligibility for Service Providers
 
-## Example Use Case
+Unlike standard G2P programs that focus on individual or household beneficiaries, reimbursement programs often involve payments to service providers. This module intelligently adapts the eligibility criteria for reimbursement programs to identify and manage these service providers, ensuring that the correct entities are targeted for payments. For example, a program reimbursing medical expenses would target healthcare providers as eligible entities.
 
-1. **Program Setup:** A government agency sets up a reimbursement program for agricultural inputs. They register fertilizer suppliers as service providers in the system.
-2. **Beneficiary Entitlement:** A farmer is assessed and granted an entitlement for a specific type and quantity of fertilizer.
-3. **Service Delivery & Claim:** The farmer redeems their entitlement from a registered fertilizer supplier. The supplier then submits a reimbursement claim through the system, referencing the farmer's original entitlement and providing necessary documentation.
-4. **Claim Review & Approval:** The claim undergoes review and approval by the program administrators. 
-5. **Reimbursement Processing:** Once approved, the system generates a reimbursement payment to the supplier.
+### Enhanced Entitlement Visibility and Tracking
 
-This module streamlines the management of reimbursement programs, improves transparency, and ensures efficient service delivery to beneficiaries. 
+Reimbursement entitlements are clearly marked within the system and display a direct link to the "Original Entitlement of this Reimbursement." This provides an immediate understanding of the claim's origin. The system also automatically suggests a "Recommended amount" for reimbursement, typically derived from the initial amount of the original entitlement, aiding in efficient claim processing.
+
+## Conclusion
+
+The G2P Program Reimbursement module is essential for OpenSPP implementations that require managing social protection programs involving the reimbursement of eligible expenses, providing a dedicated and integrated solution for these specialized workflows.

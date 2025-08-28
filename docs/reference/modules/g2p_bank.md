@@ -1,41 +1,37 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+# G2P Bank
 
-# G2P Bank Module
-
-```{warning}
-
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
-
-This document outlines the functionality of the **G2P Bank** module within the OpenSPP framework. This module extends the functionality of individual and group registries to manage their bank details.
+The **G2P Bank** module provides essential functionality for managing bank account details within the OpenSPP platform. It ensures that accurate and standardized financial information is captured and maintained for both individual and group registrants, facilitating secure and efficient payment disbursements.
 
 ## Purpose
 
-The **G2P Bank** module aims to:
+The **G2P Bank** module is designed to streamline the management of registrant bank account information, primarily focusing on International Bank Account Numbers (IBANs). It accomplishes the following key objectives:
 
-* Provide an interface for storing and managing bank account information for both individual and group registrants within the OpenSPP system.
-* Ensure data consistency and accuracy by calculating and displaying IBANs based on provided bank details.
-* Integrate seamlessly with existing individual and group registry views to provide a consolidated view of registrant information.
+*   **Standardizes Bank Account Data**: Ensures all bank account details, especially IBANs, adhere to international formats for consistency across the system.
+*   **Automates IBAN Handling**: Automatically generates or validates IBANs based on provided bank and account details, reducing manual entry errors.
+*   **Integrates with Registrant Profiles**: Directly links bank accounts to the respective individual or group registrant profiles, providing a comprehensive financial record.
+*   **Facilitates Secure Disbursements**: Provides reliable and validated banking information crucial for the accurate and timely transfer of funds in social protection programs.
+*   **Supports Payment Processing**: Offers the foundational data required by payment modules for successful financial transactions to beneficiaries.
 
-## Module Dependencies and Integration
+This module ensures that programs can confidently manage and use bank details for various financial operations, from cash transfers to direct deposits, minimizing processing delays and errors.
 
-1. **Contacts (res.partner)**: This module directly leverages the Odoo Contacts module and its inherent bank account management features (`res.partner.bank`). This ensures consistency and avoids data redundancy by utilizing the existing framework for storing bank information.
+## Dependencies and Integration
 
-2. **[g2p_registry_individual](g2p_registry_individual)**: This module integrates with the individual registry by extending the individual registrant view to include a dedicated page for managing bank details. This allows users to easily view and manage bank information associated with individual registrants.
+The **G2P Bank** module seamlessly integrates with core OpenSPP components and extends standard Odoo functionality:
 
-3. **[g2p_registry_group](g2p_registry_group)**:  Similar to its integration with the individual registry, this module extends the group registrant view to include a bank details management section. This facilitates the tracking of bank accounts associated with groups, such as cooperatives or farmer groups.
+*   **[Contacts](contacts)**: This module extends the standard Odoo `res.partner.bank` model, which is inherently linked to the `res.partner` model (managed by the `contacts` module). This allows bank accounts to be directly associated with any contact, including registrants.
+*   **[G2P Registry Individual](g2p_registry_individual)**: It enables the association of bank account details with individual registrants, ensuring that personal payment information is linked to their profile.
+*   **[G2P Registry Groups](g2p_registry_group)**: It allows for bank accounts to be assigned to group registrants (e.g., households, cooperatives), supporting payments made to collective entities.
+
+By leveraging these dependencies, the `g2p_bank` module ensures that bank account information is an integral part of both individual and group registrant records, providing a unified view of beneficiary data.
 
 ## Additional Functionality
 
-* **IBAN Calculation**: The module automatically calculates and displays the International Bank Account Number (IBAN) based on the entered bank account number and bank details. This feature leverages the `schwifty` Python library for accurate IBAN generation, ensuring data consistency and reducing manual errors. 
+The module focuses on robust and accurate management of bank account information:
 
-* **Integrated Bank Details Views**:  The module seamlessly integrates bank details management into both the individual and group registry views.  This provides a unified and centralized location for managing all aspects of a registrant's profile, including their bank information.
+*   **Bank Account Recording**: Users can record and manage multiple bank accounts for each individual or group registrant. This includes capturing the bank's country, BIC/SWIFT code, and the specific account number.
+*   **Automated IBAN Generation and Validation**: A core feature is the automatic computation and validation of the International Bank Account Number (IBAN). When the bank's country, BIC, and account number are provided, the system generates a compliant IBAN, or validates an existing one, ensuring adherence to international banking standards and significantly reducing potential payment errors.
+*   **Direct Linkage to Registrants**: Each bank account record is directly tied to a specific individual or group registrant. This clear association is vital for ensuring that payments are directed to the correct beneficiary and simplifies financial reconciliation.
 
 ## Conclusion
 
-The **G2P Registry: Bank Details** module enhances OpenSPP by providing a structured and efficient way to manage bank account information for both individual and group registrants.  Its tight integration with existing core modules ensures data consistency, simplifies data entry, and improves the overall user experience for managing registrant information within the platform. 
+The **G2P Bank** module is fundamental to OpenSPP's financial operations, providing a standardized and reliable system for managing bank account details essential for accurate and secure payment disbursements to beneficiaries.

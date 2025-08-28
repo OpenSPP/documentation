@@ -1,37 +1,44 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+# G2P Program Registrant Info Rest Api
 
-# G2P Program: Program Registrant Info REST API 
+The `g2p_program_registrant_info_rest_api` module provides a RESTful API for external systems to access and manage program-specific application information for registrants within OpenSPP. It extends existing program membership APIs to seamlessly integrate detailed application data.
 
-```{warning}
+## Purpose
 
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
+This module enables external systems to interact with the granular application details collected from registrants for various social protection programs. Its key capabilities include:
 
-This module extends the functionality of the [g2p_programs_rest_api](g2p_programs_rest_api) and [g2p_program_registrant_info](g2p_program_registrant_info) modules to expose program registrant information via a REST API. This allows external systems to interact with and manage program-specific data associated with registrants.
+*   **Expose Program Application Data:** Makes detailed, program-specific application information available through standard API endpoints for external consumption.
+*   **Integrate with Program Memberships:** Allows for the creation, update, and retrieval of program-specific application data directly when managing program memberships.
+*   **Support Dynamic Data Structures:** Accommodates flexible and dynamic application forms by supporting JSON data structures for program-specific details.
+*   **Facilitate External System Integration:** Enables seamless data exchange between OpenSPP and external applications, such as mobile enrollment apps or government portals.
+*   **Enhance Data Accessibility:** Provides structured access to crucial application data, supporting informed decision-making and efficient program management from external platforms.
 
-## Functionality:
+This module ensures that detailed application information, such as eligibility criteria responses or supporting document details, can be managed and retrieved alongside a registrant's program enrollment status. For example, an external system can submit a new program application, including all specific form fields, and enroll the registrant in one API call.
 
-- **Exposes Program Registrant Info:** Provides API endpoints to access and manipulate program-specific information of registrants within a program. This includes data such as enrollment status, benefit level, and other custom fields defined for the program.
+## Dependencies and Integration
 
-## Integration:
+This module acts as an extension layer, enhancing the capabilities of other core OpenSPP modules by exposing their data via a REST API.
 
-- **[g2p_programs_rest_api](g2p_programs_rest_api):** This module extends the existing API endpoints for managing program memberships. It adds fields to include program registrant information when retrieving or updating memberships.
-- **[g2p_program_registrant_info](g2p_program_registrant_info):** This module utilizes the data models defined in `g2p_program_registrant_info` to represent and handle program-specific information.
+*   **[G2P Programs REST API](g2p_programs_rest_api)**: This module extends the data models defined in `g2p_programs_rest_api`, specifically augmenting program membership operations. It allows program-specific registrant information to be included directly when creating, updating, or querying program memberships.
+*   **[G2P Program: Registrant Info](g2p_program_registrant_info)**: This module relies on `g2p_program_registrant_info` as its foundational data source. It provides the REST API layer for the program-specific application data models and logic defined within `g2p_program_registrant_info`.
 
-## Data Models:
+By integrating with these modules, `g2p_program_registrant_info_rest_api` serves as a critical bridge, allowing external systems to programmatically interact with the detailed application and enrollment processes within OpenSPP.
 
-- **ProgramRegistrantInfoOut:**  Represents the output format of program registrant information returned by the API. It includes fields like `state` and a dictionary or list of dictionaries for `program_registrant_info`. 
-- **ProgramMembershipIn/Out:** Extends the existing input and output models for program memberships defined in [g2p_programs_rest_api](g2p_programs_rest_api). The `ProgramMembershipIn` model adds an optional field `program_registrant_info` for receiving program-specific data. The `ProgramMembershipOut` model includes a list of `ProgramRegistrantInfoOut` objects under the field `program_registrant_info_ids`.
+## Additional Functionality
 
-## Benefits:
+The module provides robust functionality for managing program-specific registrant application data through its API.
 
-- **Seamless Integration:** Enables external applications to access and manage program-specific registrant data directly.
-- **Enhanced Data Management:** Facilitates efficient handling and updating of program-related information for individual registrants.
-- **Improved Interoperability:** Promotes interoperability between the OpenSPP system and other systems requiring access to program registrant details.
+### Enriching Program Membership APIs
 
-This module is essential for integrating OpenSPP with external systems that need to interact with program-specific information of registrants. It provides a structured and secure way to access and manage this data, further enhancing the efficiency and transparency of social protection programs. 
+This module extends the existing REST APIs for program memberships to include detailed program-specific application information. When creating or updating a program membership, external systems can directly provide the associated application details. Conversely, when retrieving program membership data, the API response will include the relevant program registrant information, such as application status and submitted form data. This ensures a comprehensive view of a registrant's program journey.
+
+### Accessing Program-Specific Application Data
+
+The module provides structured access to the program-specific application information collected for each registrant. This allows external systems to query and retrieve the full details of an application, including any custom fields or data points gathered during the enrollment process. This capability is vital for external dashboards, reporting tools, or other systems needing to analyze or display detailed application statuses and content.
+
+### Supporting Dynamic Application Forms
+
+OpenSPP programs often require varied data collection forms. This module supports dynamic data structures for program-specific application information, typically stored as JSON. This flexibility ensures that the API can accommodate diverse application requirements without needing code changes, allowing programs to collect and manage unique sets of data through a standardized interface.
+
+## Conclusion
+
+The `g2p_program_registrant_info_rest_api` module is essential for enabling external systems to seamlessly access and manage detailed, program-specific application information for registrants within OpenSPP. It enhances the platform's interoperability by exposing critical program enrollment data through a comprehensive and flexible REST API.

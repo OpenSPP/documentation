@@ -1,45 +1,48 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+# G2P Entitlement Voucher
 
-# OpenG2P Entitlement: Voucher Module
+The G2P Entitlement Voucher module extends OpenSPP's core G2P framework to enable the generation and management of secure, printable vouchers for social protection program entitlements. This module allows programs to deliver benefits through a voucher system, integrating seamlessly with existing entitlement and payment processes.
 
-```{warning}
+## Purpose
 
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
+This module streamlines the delivery of benefits through a robust voucher system by:
 
-## Overview
+*   **Automating Voucher Generation:** Automatically creates unique vouchers for approved program entitlements, reducing manual effort and potential errors.
+*   **Ensuring Secure Benefit Delivery:** Generates vouchers with integrated QR codes that can be encrypted, providing a secure and traceable method for beneficiaries to redeem benefits.
+*   **Enabling Flexible Voucher Design:** Allows administrators to configure custom voucher templates, ensuring they meet specific program branding and information requirements.
+*   **Streamlining Entitlement Workflows:** Integrates voucher generation directly into the entitlement approval process, ensuring a smooth and efficient workflow from eligibility to benefit delivery.
+*   **Providing Centralized Document Management:** Securely stores all generated voucher documents, making them easily accessible for printing, auditing, and record-keeping.
 
-The [g2p_entitlement_voucher](g2p_entitlement_voucher) module extends the OpenG2P Entitlement functionality by providing a mechanism to generate and manage vouchers associated with entitlements. This module is particularly useful for social protection programs that utilize vouchers as a means of delivering benefits to beneficiaries.
+## Dependencies and Integration
 
-## Features
+The G2P Entitlement Voucher module is built upon and extends several core OpenSPP components:
 
-* **Voucher Generation:** The module enables the generation of vouchers for approved entitlements. This process can be automated to trigger upon entitlement approval or manually initiated by authorized users.
-* **Voucher Configuration:** Program administrators can define voucher templates and configure various aspects of voucher generation, such as the file format, content, and storage location.
-* **Voucher Printing:** The module provides a convenient way to print generated vouchers directly from the entitlement record.
-* **Integration with Payment Files:**  Leverages the [g2p_payment_files](g2p_payment_files) module to facilitate voucher creation using predefined templates and configurations.
-* **Encryption Support:** Integrates with the [g2p_encryption](g2p_encryption) module to allow for the secure encryption of sensitive data within the vouchers.
+*   **[G2P Programs](g2p_programs):** This module integrates directly with the G2P Programs module by providing a specific "Voucher" entitlement manager. Program administrators can select this manager type to enable voucher-based benefit delivery for their social protection programs, extending the core entitlement process.
+*   **[G2P Payment Files](g2p_payment_files):** It leverages the advanced payment file configuration and generation capabilities of G2P Payment Files. This allows the module to define and render customizable voucher templates, including the embedding of QR codes, based on program-specific requirements.
+*   **[G2P Encryption](g2p_encryption):** To ensure data security, the module utilizes the G2P Encryption module to encrypt sensitive information embedded within the QR codes on the vouchers. This protects beneficiary data and enhances the overall security of the benefit delivery process.
 
-## Dependencies
+## Additional Functionality
 
-- **[g2p_encryption](g2p_encryption):**  This dependency is used for encrypting sensitive data included in the vouchers.
-- **[g2p_programs](g2p_programs):** This module provides the core functionality for managing social protection programs and entitlements, upon which this module builds.
-- **[g2p_payment_files](g2p_payment_files):**  This module provides the framework for defining and managing payment file configurations, which are utilized for voucher generation.
+### Voucher Management for Approved Entitlements
 
-## Workflow
+Once an entitlement is approved, program staff can easily manage its associated voucher.
+*   Users can generate a new voucher document for an approved entitlement that does not yet have one.
+*   For entitlements with an existing voucher, users can directly access and print the voucher document as needed.
+*   These actions are accessible through dedicated buttons on the entitlement record, simplifying the user experience.
 
-1. **Configuration:** Program administrators configure voucher generation settings within the [Entitlement Manager]([g2p_programs](g2p_programs)#entitlement-manager) associated with the program. This includes selecting a voucher file configuration, storage location for generated vouchers, and optional encryption settings.
+### Configurable Voucher Generation Settings
 
-2. **Entitlement Approval:** When an entitlement is approved, the system can automatically generate a voucher based on the predefined configurations.
-3. **Voucher Access:** Users can access and print the generated voucher directly from the entitlement record.
+Administrators have granular control over how vouchers are generated for each program.
+*   Programs can be configured to automatically generate vouchers as soon as entitlements are approved, streamlining the benefit delivery process.
+*   Administrators define the voucher's layout and content by linking a specific "Payment File Configuration" from the [G2P Payment Files](g2p_payment_files) module. This configuration determines the template, data fields, and QR code details.
+*   A "Document Storage Backend" is selected to specify where the generated voucher documents are securely stored, ensuring compliance and easy retrieval.
+*   An "Encryption Provider" from the [G2P Encryption](g2p_encryption) module can be chosen to encrypt sensitive data within the voucher's QR codes, enhancing data privacy and security.
 
-## Benefits
+### Efficient Batch Processing for Vouchers
 
-* **Streamlined Benefit Delivery:** Automating voucher generation reduces manual effort and ensures timely delivery of benefits to beneficiaries.
-* **Enhanced Security:** Integration with encryption capabilities protects sensitive data stored within the vouchers.
-* **Improved Accountability:**  The module maintains a record of generated vouchers, providing an audit trail for tracking and accountability purposes. 
-* **Flexibility and Customization:**  Administrators have the flexibility to tailor voucher generation and content according to program-specific requirements. 
+The module is designed to handle large volumes of entitlements efficiently.
+*   Voucher generation processes entitlements in optimized batches, preventing system slowdowns when dealing with many beneficiaries.
+*   For very large programs, voucher generation can be initiated as an asynchronous background job, allowing users to continue their work without interruption while the system processes the vouchers.
+
+## Conclusion
+
+The G2P Entitlement Voucher module significantly enhances OpenSPP's capacity for flexible benefit delivery by providing a secure, automated, and customizable system for generating and managing program vouchers. It ensures efficient and traceable distribution of benefits to beneficiaries within social protection programs.

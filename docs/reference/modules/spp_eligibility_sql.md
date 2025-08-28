@@ -1,57 +1,49 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+# OpenSPP Eligibility Sql
 
-# OpenSPP SQL Query Eligibility Manager 
-
-```{warning}
-
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
-
-This document describes the **OpenSPP SQL Query Eligibility Manager** module. This module enhances the **[g2p_programs](g2p_programs)** module by introducing a flexible way to define program eligibility criteria using SQL queries. 
+The OpenSPP Eligibility Sql module enables program administrators to define and manage complex program eligibility criteria using custom SQL queries. This provides a highly flexible and automated mechanism for identifying and enrolling beneficiaries within OpenSPP programs.
 
 ## Purpose
 
-The **OpenSPP SQL Query Eligibility Manager** module enables program administrators to:
+This module significantly enhances OpenSPP's ability to manage social protection programs by:
 
-* **Define Eligibility with SQL**:  Use SQL queries to express complex eligibility criteria based on data stored in the OpenSPP database. This provides greater flexibility than pre-defined eligibility rules.
-* **Validate SQL Queries**:  The module includes functionality to validate the syntax and structure of user-defined SQL queries, ensuring they are compatible with the database schema.
-* **Test Eligibility Criteria**: Administrators can test SQL queries against the registrant database to preview the number of beneficiaries who would be eligible based on the defined criteria.
-* **Automate Enrollment**:  The module can automatically enroll registrants who meet the criteria specified in the SQL query, streamlining the beneficiary enrollment process.
+*   **Customizing Eligibility Rules**: Allows administrators to define precise eligibility rules using SQL, accommodating unique and evolving program requirements without requiring code modifications.
+*   **Automating Beneficiary Identification**: Automatically identifies registrants who meet the defined SQL-based criteria, streamlining the process of populating program beneficiary lists.
+*   **Ensuring Data-Driven Enrollment**: Leverages the full power of the underlying database to evaluate eligibility against various data points, ensuring accurate and consistent enrollment.
+*   **Facilitating Dynamic Program Adaptation**: Provides the agility to modify eligibility conditions as program policies change, simply by updating the SQL query.
+*   **Integrating with Program Management**: Seamlessly integrates with program creation and cycle management, allowing for the direct application of SQL-based eligibility during program setup and ongoing operations.
 
-## Module Dependencies and Integration
+## Dependencies and Integration
 
-1. **[g2p_registry_base](g2p_registry_base)**:  This module relies on the base registry for access to registrant data, which is queried against the SQL-based eligibility criteria.
+The 'spp_eligibility_sql' module integrates with several core OpenSPP components to deliver its functionality:
 
-2. **[g2p_programs](g2p_programs)**: 
-    * Extends the core program management functionality by providing an additional eligibility manager type specifically for SQL-based eligibility.
-    * Integrates with program views to display the SQL query eligibility manager and its associated actions.
-
-3. **[spp_programs](spp_programs)**: Builds upon OpenSPP Programs features to allow SQL-based eligibility for both cash and in-kind programs. 
-
-4. **[queue_job](queue_job)**: Employs the queue job framework to handle the asynchronous execution of SQL queries and the enrollment of eligible registrants, particularly for large datasets.
+*   **[G2P Registry Base](g2p_registry_base)**: This module relies on the foundational registrant data managed by the G2P Registry Base. It queries the `res.partner` model to identify individuals or groups eligible for programs, accessing their demographic and registration details.
+*   **[G2P Programs](g2p_programs)**: The module extends the core program management capabilities of G2P Programs. It adds 'SQL-based Eligibility' as a selectable option within the eligibility manager, allowing programs to utilize custom SQL for beneficiary determination.
+*   **[OpenSPP Programs](spp_programs)**: Building upon G2P Programs, this module provides a dedicated function to create new OpenSPP programs directly with an associated SQL eligibility query, alongside other program parameters like entitlement types (e.g., cash or in-kind).
 
 ## Additional Functionality
 
-* **[g2p.program_membership.manager.sql](g2p.program_membership.manager.sql)**: A new eligibility manager model specifically designed to store and execute SQL queries for eligibility determination. 
+The 'spp_eligibility_sql' module offers several key features for defining and managing program eligibility:
 
-* **SQL Query Validation**:  The module validates SQL queries for:
-    * **Syntax Errors**: Checks for any syntax errors in the query.
-    * **Schema Compatibility**: Verifies that the query references existing tables and columns within the OpenSPP database schema.
-    * **Result Set**:  Ensures that the query returns a list of registrant IDs, which is required for determining eligibility. 
+### SQL Query Definition and Management
 
-* **Test Query Functionality**:  Administrators can execute the SQL query in a test environment to:
-    * **Preview Eligible Beneficiaries**:  See a count of how many registrants meet the defined criteria.
-    * **Identify Potential Issues**:  Detect any unexpected results or errors before applying the query to the actual program enrollment.
+Administrators can directly input custom SQL queries into the system to define eligibility criteria. The module tracks the status of these queries, marking them as 'Needs Re-checking' whenever modifications are made, ensuring that validation is always up-to-date. For security, the system prevents the execution of data manipulation language (DML) commands like `INSERT`, `UPDATE`, or `DELETE` within eligibility queries.
 
-* **Automated Enrollment**:  Once the SQL query is validated, the module can:
-    * **Fetch Eligible Registrants**: Retrieve a list of registrant IDs who match the criteria.
-    * **Create Program Memberships**: Automatically enroll eligible registrants in the associated program.
+### Query Validation and Testing
+
+A dedicated "Test Query" feature allows users to validate the syntax and expected output of their SQL queries. Upon validation, the system provides immediate feedback on the query's status (e.g., 'Valid', 'Invalid', 'Needs Re-checking') and any associated error messages. It also displays the number of registrants the query identifies, helping administrators confirm their eligibility logic before enrollment.
+
+```{note}
+For a query to be considered valid for eligibility, it must return the `id` field from the `res_partner` model, representing the unique identifier of each registrant.
+```
+
+### Automated Beneficiary Identification and Enrollment
+
+Once a SQL query is validated, the module can execute it to identify all eligible registrants. These identified registrants can then be automatically imported into the program as beneficiaries. The system efficiently handles large volumes of registrants, processing imports asynchronously to maintain system performance. This automation significantly reduces manual effort and potential errors in beneficiary selection.
+
+### Program Creation with SQL Eligibility
+
+The module allows for the direct creation of new programs with SQL-based eligibility. During program setup, administrators can specify the custom SQL query along with other program details like its name, target type (individual or group), and entitlement kind. This streamlines the setup of complex programs that require highly specific eligibility criteria from the outset.
 
 ## Conclusion
 
-The **OpenSPP SQL Query Eligibility Manager** module significantly enhances the flexibility and efficiency of managing program eligibility within OpenSPP. By leveraging the power of SQL queries, administrators can define complex eligibility rules and automate the beneficiary enrollment process, saving time and ensuring accuracy. 
+The OpenSPP Eligibility Sql module is a powerful tool that provides unparalleled flexibility for defining and automating beneficiary eligibility, making it an essential component for managing diverse social protection programs within OpenSPP.

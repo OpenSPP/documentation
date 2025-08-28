@@ -1,60 +1,46 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+# G2P Openid Vci
 
-# G2P OpenID VCI
-
-```{warning}
-
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
-
-## Overview
-
-The `g2p_openid_vci` module extends OpenSPP's capabilities to manage and issue Verifiable Credentials (VCs) based on OpenID Connect for Verifiable Presentations (OpenID4VP) and Decentralized Identifiers (DIDs). This module enables the system to act as an issuer of VCs, empowering individuals with digital credentials that represent claims about their identity or attributes.
+The `g2p_openid_vci` module enables OpenSPP to function as a secure and interoperable issuer of Verifiable Credentials (VCs) using OpenID Connect Verifiable Credentials Issuer (OpenID VCI) standards. It allows the platform to generate and manage digital proofs of identity, program participation, or beneficiary status, enhancing trust and streamlining interactions within social protection programs.
 
 ## Purpose
 
-- **Issue Verifiable Credentials:** Provide a mechanism to generate and issue VCs conforming to W3C standards like Verifiable Credentials Data Model and DID specification.
-- **Manage Issuers:**  Define and manage multiple VCI issuers with distinct configurations for supported credential types, formats, and security settings.
-- **Integration with OpenID Connect:** Leverage OpenID Connect flows for authorization and authentication, ensuring only authorized entities can request and receive VCs.
-- **Encryption and Signing:** Utilize the [g2p_encryption](g2p_encryption) module to digitally sign issued credentials, guaranteeing their authenticity and integrity.
+This module equips OpenSPP with the capability to issue digital credentials that are secure, verifiable, and interoperable. It accomplishes this by:
 
-## Role and Integration
+*   **Configuring OpenSPP as a Credential Issuer**: Establishes OpenSPP as a trusted entity capable of issuing digital credentials, defining its unique identifier and the types of credentials it can provide.
+*   **Defining Credential Types**: Allows administrators to specify the structure and content for various verifiable credentials, such as "Program Enrollment Credential" or "Beneficiary Status Credential."
+*   **Managing Authorization for Issuance**: Implements robust access controls, ensuring that only authorized applications and users can request and receive specific credentials.
+*   **Generating Signed Credentials**: Automates the process of creating cryptographically signed digital credentials based on existing registrant data, ensuring their authenticity and integrity.
+*   **Providing Standardized Metadata**: Publishes essential information about the issuer and its supported credentials, enabling external systems and digital wallets to easily discover and interact with OpenSPP as a credential provider.
 
-This module builds upon the foundation laid by [g2p_registry_base](g2p_registry_base) and [g2p_encryption](g2p_encryption) modules:
+This module's value lies in enabling secure, digital proof of claims, reducing the need for physical documents, and simplifying verification processes for beneficiaries and partner organizations. For example, a beneficiary could receive a digital "Food Aid Recipient" credential that can be instantly verified by a distribution agent.
 
-- **[g2p_registry_base](g2p_registry_base):** The module depends on registrant data managed by [g2p_registry_base](g2p_registry_base). It fetches information like name, address, and registered IDs from this module to populate VC claims.
-- **[g2p_encryption](g2p_encryption):**  The module integrates with [g2p_encryption](g2p_encryption) to securely sign issued VCs using configured encryption providers. This ensures the trustworthiness and tamper-proof nature of issued credentials.
+## Dependencies and Integration
 
-## Functionality
+The `g2p_openid_vci` module integrates closely with core OpenSPP components to perform its functions:
 
-1. **VCI Issuer Management:** 
-   - Define multiple VCI issuers, each representing a distinct entity capable of issuing VCs.
-   - Configure issuer details: 
-     - **Name and Type:** Descriptive name and the type of VCs issued (e.g., OpenG2PRegistryVerifiableCredential).
-     - **Scope and Format:** Define the intended purpose (scope) of issued VCs and the supported VC format (e.g., `ldp_vc`).
-     - **Unique Issuer ID (DID):**  Specify the DID representing the issuer.
-     - **Encryption Provider:** Select the encryption provider from [g2p_encryption](g2p_encryption) for signing credentials.
-   - **Authentication Settings:**  Configure OpenID Connect-based authentication:
-     - Specify allowed OpenID issuers, audience values, client IDs, and JSON Web Key Set (JWKS) endpoints for verifying authentication tokens.
-   - **Credential Format and Metadata:**  Define the structure and content of issued VCs using JSON and JQ (JSON Query) for dynamic data population.
+*   **[G2P Registry Base](g2p_registry_base)**: This module relies on the registrant data managed by the G2P Registry Base module. It retrieves crucial information about individuals and groups (e.g., names, IDs, addresses, program enrollments) to populate the content of verifiable credentials.
+*   **[G2P Encryption](g2p_encryption)**: The `g2p_openid_vci` module utilizes the G2P Encryption module for all cryptographic operations. This includes securely signing Verifiable Credentials to ensure their tamper-evidence and authenticity, as well as managing JSON Web Key Sets (JWKS) for secure token validation.
 
-2. **VC Issuance:**
-   - The module handles incoming credential requests conforming to the OpenID4VP specification.
-   - It validates requests against configured issuers, scopes, and authentication settings.
-   - Upon successful validation, it fetches relevant registrant data from [g2p_registry_base](g2p_registry_base), populates the VC claims, and digitally signs the credential using the selected encryption provider.
-   - Finally, it returns the issued VC in the requested format.
+This module acts as a foundational service, allowing other G2P modules to leverage its capabilities for issuing standardized digital proofs related to program enrollment, benefit distribution, and other social protection activities.
 
-## Example Usage
+## Additional Functionality
 
-1. **Configure a VCI Issuer:** An administrator defines a new issuer representing a government agency issuing proof of address VCs. They configure the issuer details, OpenID Connect authentication settings, and define the VC format using a JSON template.
-2. **Credential Request:** A relying party application (e.g., a bank) initiates a VC request, authenticating through an OpenID Connect provider approved by the issuer.
-3. **VC Issuance and Verification:** The `g2p_openid_vci` module validates the request, fetches the user's address information from [g2p_registry_base](g2p_registry_base), populates the VC, signs it, and sends it back to the relying party. The relying party can then verify the VC's signature and authenticity.
+### Issuer Management and Configuration
+
+Administrators can define and manage multiple OpenID VCI issuers within OpenSPP, each with specific settings. This includes assigning a unique issuer ID, specifying the supported credential formats (e.g., LDP-VC), and defining the scope of credentials each issuer can provide. This flexibility allows OpenSPP to serve various credentialing needs across different programs or regions.
+
+### Credential Definition and Issuance
+
+The module facilitates the definition of various verifiable credential types through configurable templates. When a credential request is received, the system dynamically retrieves relevant beneficiary or program data from the registry, formats it according to the defined template, and generates a cryptographically signed digital credential. This ensures that the issued credentials are both accurate and secure.
+
+### Secure Authorization and Access Control
+
+To maintain the security of credential issuance, the module implements robust authorization rules. Administrators can configure which external applications or "audiences" are permitted to request credentials from specific OpenSPP issuers, and define trusted external issuers for authenticating incoming requests. This prevents unauthorized access and ensures that only legitimate parties can obtain credentials.
+
+### Standardized Metadata and Discovery
+
+The `g2p_openid_vci` module automatically generates and exposes standardized metadata for each configured issuer. This metadata allows external systems, such as digital wallets or partner applications, to easily discover the types of credentials OpenSPP can issue and understand how to interact with the platform for credential requests. It also manages JSON-LD contexts to ensure semantic interoperability of the credentials.
 
 ## Conclusion
 
-The `g2p_openid_vci` module empowers OpenSPP to participate in a decentralized identity ecosystem. By issuing verifiable credentials, OpenSPP enhances trust and streamlines data sharing within its network and with external entities.
+The `g2p_openid_vci` module is crucial for OpenSPP, enabling it to securely issue verifiable digital credentials and fostering trust, efficiency, and interoperability across social protection programs.

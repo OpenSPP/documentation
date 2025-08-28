@@ -1,49 +1,43 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+# G2P Program Cycleless
 
-# OpenG2P Programs: Cycleless Module
+The 'G2P Program Cycleless' module extends OpenSPP's G2P Programs functionality to support social protection initiatives that operate without distinct, time-bound program cycles. It simplifies the management of ongoing programs by automating cycle-related processes, allowing for continuous benefit delivery and streamlined operations.
 
-```{warning}
+## Purpose
 
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
+This module enables OpenSPP to manage programs that deliver continuous support, eliminating the administrative overhead of managing explicit program cycles. It accomplishes this by:
 
-## Overview
+*   **Enabling Continuous Program Operation**: Allows programs to run indefinitely without requiring manual creation, activation, or closure of specific cycles. This is ideal for ongoing subsidy programs or long-term support initiatives.
+*   **Automating Cycle Management**: When a program is marked as cycleless, the system automatically maintains a single, always-active cycle in the background. Users no longer need to create or manage individual cycles, simplifying program administration.
+*   **Streamlining Entitlement Processing**: Entitlements are directly managed under the program's continuous active state. This removes the step of associating entitlements with specific cycles, making the process more direct and intuitive.
+*   **Direct Payment Execution**: Provides immediate access to payment preparation and sending functionalities directly from the program's dashboard. This accelerates the disbursement process for programs with continuous payment flows.
+*   **Supporting Diverse Program Models**: Facilitates the implementation of programs such as ongoing cash transfers, unconditional basic income schemes, or reimbursement programs, which do not naturally fit a cycle-based structure.
 
-The [g2p_program_cycleless](g2p_program_cycleless) module extends the functionality of the [g2p_programs](g2p_programs) module to support **cycleless** social protection programs. 
+## Dependencies and Integration
 
-Traditional social protection programs often operate in cycles, with distinct periods for enrollment, payment preparation, and disbursement. However, some programs, especially those focused on **continuous or on-demand support**, may benefit from a cycleless approach.
+This module primarily extends the core capabilities of the [G2P Programs](g2p_programs) module. It integrates by:
 
-This module allows program managers to designate a program as **cycleless**, eliminating the need to manage distinct program cycles. This simplifies program administration and provides greater flexibility in managing beneficiary entitlements and payments.
+*   **Extending G2P Programs**: It adds the `is_cycleless` flag to the `g2p.program` model, allowing administrators to designate a program as cycleless. This flag fundamentally alters how the program is managed within OpenSPP.
+*   **Modifying Program Management**: It enhances the `g2p.program.manager.default` model to automatically create and maintain a default active cycle when a program is marked as cycleless, ensuring continuous operation without user intervention.
+*   **Streamlining Entitlement Views**: It integrates with the `g2p.program.entitlement.manager.default` model to ensure that entitlement views are simplified and directly tied to the program's continuous state, rather than a specific cycle.
 
-## Key Features
+## Additional Functionality
 
-* **Cycleless Program Designation:**  The module adds a new field to the `g2p.program` model, allowing administrators to mark a program as cycleless.
-* **Simplified Interface:** For cycleless programs, the user interface is adapted to hide cycle-related elements, presenting a more streamlined experience.
-* **Automatic Cycle Management:** When a program is marked as cycleless, the module automatically manages a single, always-active cycle in the background. This simplifies program operations without sacrificing the underlying data structure.
-* **Unified Entitlement Management:**  Beneficiary entitlements are managed within the context of the always-active cycle, providing a unified view for administrators.
-* **Streamlined Payment Processing:** Payment preparation and disbursement processes are adapted for the cycleless model.
+### Continuous Program Management
 
-## Integration with Other Modules
+By marking a program with the 'Is Cycleless' option, administrators transform its operational model. The system automatically handles the underlying concept of a 'default active cycle', making it transparent to the user. This means that an active program is always ready for entitlement generation and payment processing, without the need for manual cycle setup or transitions.
 
-This module directly extends the [g2p_programs](g2p_programs) module. It leverages existing data structures and functionalities from this module, such as:
+### Simplified Entitlement Processing
 
-* **Program Model:** Utilizes the `g2p.program` model to manage program configurations and settings.
-* **Cycle Model:** Leverages the `g2p.cycle` model to represent the always-active cycle in the background. 
-* **Entitlement Management:** Integrates with the entitlement management functionalities provided by the [g2p_programs](g2p_programs) module.
+For cycleless programs, the system presents entitlements directly under the program, removing the need to navigate through specific program cycles. The "Entitlements" section on the program dashboard will display all current entitlements associated with the program's continuous operation. Furthermore, for programs specifically designated as 'Reimbursement Programs', the entitlement section will be intuitively labeled "Reimbursements" for clearer context.
 
-## Benefits of Using the Cycleless Module
+### Direct Payment Workflows
 
-* **Simplified Program Administration:** Reduced complexity for programs that do not require distinct operational cycles.
-* **Increased Flexibility:**  Enables more dynamic and responsive program delivery, particularly for on-demand or continuous support programs.
-* **Streamlined User Experience:**  Provides a more intuitive interface for managing cycleless programs. 
+This module introduces "Prepare Payments" and "Send Payments" buttons directly on the active cycleless program's dashboard. This allows program managers to initiate payment processes without first selecting a specific cycle. The system automatically applies these actions to the program's continuous active state, significantly speeding up the payment workflow for ongoing benefit distributions.
 
-## Use Cases
+### Flexible Program Models
 
-* **Emergency Cash Transfers:** Rapidly provide assistance to beneficiaries in response to unforeseen events without the need for pre-defined cycles.
-* **Conditional Cash Transfers with Rolling Enrollment:**  Allow beneficiaries to enroll and become eligible for benefits on an ongoing basis, rather than within fixed enrollment periods.
-* **Continuous Social Assistance:**  Support programs that provide ongoing assistance based on evolving needs and circumstances, such as disability benefits. 
+The module also enhances support for various program types. For example, if a program is designated as a reimbursement program, the user interface will automatically adjust to use terms like "Reimbursements" instead of "Entitlements," providing a more tailored and intuitive experience for specific program designs.
+
+## Conclusion
+
+The 'G2P Program Cycleless' module simplifies the administration of ongoing social protection programs in OpenSPP by enabling continuous operation and automating cycle management, thereby enhancing efficiency and program responsiveness.

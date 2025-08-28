@@ -1,48 +1,39 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
-
 # OpenSPP Registrant Import
 
-```{warning}
-
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
-
-This document describes the **OpenSPP Registrant Import** module, which enhances the import functionality within the OpenSPP system, specifically focusing on streamlining the process of importing registrant data. It builds upon the existing import capabilities and introduces features to improve data mapping and ID management.
+The OpenSPP Registrant Import module streamlines the process of bringing essential data into the OpenSPP platform. It enables users to efficiently import information for registrants (individuals and groups), geographical areas, and service points, simplifying data mapping and automating the generation of unique OpenSPP identifiers for these records.
 
 ## Purpose
 
-The **OpenSPP Registrant Import** module aims to:
+This module is designed to provide robust capabilities for bulk data entry, ensuring accuracy and efficiency when populating the OpenSPP system.
 
-* **Simplify Data Mapping**: Provide a more intuitive way to map imported data fields to corresponding fields in OpenSPP's registrant models. This reduces the complexity of data preparation and ensures accurate data import.
-* **Enhance ID Management**: Introduce a mechanism to generate and assign unique OpenSPP IDs (spp_id) to registrants during the import process. This ensures data integrity and facilitates efficient tracking and management of registrants within the system. 
+*   **Streamlined Data Onboarding**: Facilitates the efficient import of large datasets for registrants, geographical areas, and service points, significantly reducing manual data entry efforts.
+*   **Automated Unique ID Generation**: Automatically assigns unique OpenSPP identifiers (e.g., IND_XXXXXXXX, LOC_XXXXXXXX) to new records upon import, ensuring every entity has a distinct and consistent reference.
+*   **Simplified Data Mapping**: Provides intuitive tools for users to map columns from external data sources (like spreadsheets) to the corresponding fields within OpenSPP, accelerating the preparation of data for import.
+*   **Ensured Data Consistency**: Validates imported data against OpenSPP standards, particularly for unique identifiers and registrant naming conventions, maintaining data quality across the platform.
+*   **Foundational Data Population**: Serves as a critical tool for quickly populating the OpenSPP system with core data, essential for rapid deployment and scaling of social protection programs.
 
 ## Dependencies and Integration
 
-1. **OpenSPP Base** ([spp_base](spp_base)):  Inherits core functionalities from the **OpenSPP Base** module, including access to registrant models and configurations. 
+The OpenSPP Registrant Import module integrates with several core OpenSPP components to deliver its functionality, enhancing the system's ability to manage key entities.
 
-2. **OpenSPP Service Points** ([spp_service_points](spp_service_points)): Leverages the **OpenSPP Service Points** module to associate imported service point data with existing service points in the system using unique IDs. 
-
-3. **OpenSPP Area** ([spp_area](spp_area)): Integrates with the **OpenSPP Area** module to link imported registrant data to specific geographical areas based on unique IDs.
-
-4. **G2P Registry: Group** ([g2p_registry_group](g2p_registry_group)): Works in conjunction with the **G2P Registry: Group** module to facilitate the import of group registrant data and manage group IDs. 
-
-5. **G2P Registry: Individual** ([g2p_registry_individual](g2p_registry_individual)):  Integrates with the **G2P Registry: Individual** module to import individual registrant data and assign individual-specific IDs. 
+*   **[OpenSPP Registry Base](spp_registry_base)**: This module extends the core registrant model defined in `spp_registry_base`. It enables the bulk import of detailed individual and group registrant data, ensuring that new beneficiaries are seamlessly integrated into the central registry with unique identifiers.
+*   **[OpenSPP Base](spp_base)**: As a foundational module, `spp_base` provides system-wide configurations and the underlying framework for unique ID generation (`spp.unique.id`). The Registrant Import module leverages these `spp_base` capabilities to generate and validate unique identifiers for all imported entities.
+*   **[OpenSPP Area Base](spp_area_base)**: This module builds upon `spp_area_base` to facilitate the bulk import of geographical areas. It ensures that imported areas conform to the hierarchical structure and unique identification standards established by `spp_area_base`, allowing for accurate location-based data.
 
 ## Additional Functionality
 
-* **Unique ID Generation and Assignment**: 
-    * Automatically generates unique OpenSPP IDs (spp_id) for registrants during import if an ID is not provided in the import file.
-    * Adheres to a predefined format for spp_id based on the registrant type (individual, group, service point, area) ensuring consistency.
+### Bulk Data Import for Core Entities
+Users can efficiently import large volumes of data for key OpenSPP entities, including individual registrants, registrant groups, geographical areas (such as country, province, district, and village levels), and service points. The module provides a guided process to map external data fields to OpenSPP's internal structure, streamlining the population of the database for program rollouts.
 
-* **Improved Data Mapping**:
-    * Enhances the existing import mapping interface to allow users to directly map columns from their import file to the corresponding fields in OpenSPP's registrant models. 
-    * Provides visual cues and validation during the mapping process to minimize errors and ensure accurate data association.
+### Automated Unique OpenSPP ID Management
+Upon import, the module automatically assigns a unique OpenSPP ID to each new record. For example, individuals receive IDs like IND_XXXXXXXX, groups get GRP_XXXXXXXX, geographical areas are assigned LOC_XXXXXXXX, and service points receive SVP_XXXXXXXX. This system ensures that all core entities have a distinct, standardized identifier, which is crucial for data integrity and cross-referencing.
+
+### Standardized Registrant Naming
+The module automatically constructs a consistent full name for registrants based on provided `family_name`, `given_name`, and `addl_name` fields during the import process. This ensures that all registrant names are uniformly formatted within OpenSPP, regardless of variations in the source data. It also includes logic to correctly parse names back into their individual components if only a full name is provided.
+
+### Hierarchical Geographic Area Import
+This module supports the import of geographical areas while preserving their hierarchical relationships, such as a district belonging to a specific province, which in turn belongs to a country. This capability ensures that the imported area data accurately reflects real-world administrative structures, which is vital for targeted program delivery, reporting, and spatial analysis.
 
 ## Conclusion
 
-The **OpenSPP Registrant Import** module streamlines the process of importing registrant data into the OpenSPP system. By simplifying data mapping and automating unique ID generation and assignment, this module enhances data integrity, reduces manual effort, and improves the overall efficiency of data management within OpenSPP. 
+The OpenSPP Registrant Import module is essential for efficiently populating and maintaining the OpenSPP system with accurate, uniquely identified data for registrants, areas, and service points, forming the backbone for effective social protection program management.

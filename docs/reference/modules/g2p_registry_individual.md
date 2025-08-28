@@ -1,48 +1,44 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
-
 # G2P Registry Individual
 
-```{warning}
-
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
-
-This document outlines the functionality of the **G2P Registry: Individual** module within the OpenSPP ecosystem. Building upon the foundation provided by the **[G2P Registry: Base](g2p_registry_base)** module, this module focuses specifically on managing **individual registrant** data.
+The `g2p_registry_individual` module is a core component of OpenSPP, designed to manage detailed profiles for individual registrants. It extends the foundational registrant data established by `G2P Registry Base` with essential demographic and personal information, enabling comprehensive record-keeping for social protection programs.
 
 ## Purpose
 
-The **G2P Registry: Individual** module aims to:
+This module establishes and maintains accurate individual registrant profiles, which are critical for determining program eligibility and delivering benefits effectively. It provides the following key capabilities:
 
-* Extend the base registrant model to incorporate data fields specific to individuals.
-* Provide a dedicated interface for managing and viewing individual registrant profiles. 
-* Enhance data integrity through validation rules and constraints related to individual attributes.
+*   **Captures Core Demographics**: Records essential personal details such as date of birth, age, and gender for each individual registrant.
+*   **Manages Flexible Naming Conventions**: Supports the capture of family names, given names, and additional names, automatically compiling a standardized full name.
+*   **Calculates Age Automatically**: Determines and displays a registrant's current age based on their date of birth, simplifying age-based eligibility checks.
+*   **Defines Gender Classifications**: Allows for the customization and management of gender types, ensuring the system accommodates diverse classifications.
+*   **Ensures Data Accuracy**: Implements validations to prevent errors, such as entering future dates for birthdates, thereby maintaining data integrity.
 
-## Module Dependencies and Integration
+This module ensures that program administrators have a complete and reliable individual profile for every participant, streamlining the process of enrollment, assessment, and service delivery.
 
-1. **[G2P Registry: Base](g2p_registry_base)**:  This module inherits from the core functionalities provided by the base module, including:
-    * **Registrant Management**: Leverages the base registrant model, inheriting features for managing registration dates, disabling/enabling registrants, tags, IDs, phone numbers, and relationships.
-    * **Districts**:  Utilizes the district management features to associate individuals with specific geographical locations.
+## Dependencies and Integration
 
-2. **Contacts (res.partner)**:  Further extends the Odoo Contacts module by adding individual-specific fields to the registrant profile, including:
-    * **Family Name, Given Name, Additional Name**:  Allows for structured recording of individual names.
-    * **Birthdate**:  Stores the registrant's date of birth, with options to mark it as approximate. 
-    * **Age**: Calculates and displays the registrant's age based on their birthdate.
-    * **Gender**:  Provides a field for recording gender information.
+The `g2p_registry_individual` module seamlessly integrates with and extends several other OpenSPP and Odoo core modules to provide its functionality:
+
+*   **Base (base)**: As a fundamental Odoo module, `base` provides the core framework and essential functionalities upon which all other modules, including this one, are built.
+*   **Mail (mail)**: This module leverages `mail` for standard communication and notification features associated with registrant records, such as activity tracking and messaging.
+*   **Contacts (contacts)**: `g2p_registry_individual` significantly extends the `res.partner` model from the `contacts` module. This allows individual registrants to be managed as detailed contact records within the broader Odoo system, inheriting common contact management features.
+*   **G2P Registry Base (g2p_registry_base)**: This module builds directly upon the [G2P Registry Base](g2p_registry_base) module. It takes the foundational registrant structure and adds the specific fields and logic required for individual-level data, such as names, birthdates, and gender, enriching the core registrant profile.
 
 ## Additional Functionality
 
-The module introduces:
+The `g2p_registry_individual` module offers specific features to manage individual registrant data:
 
-* **Gender Types (gender.type)**:  A new model to define and manage various gender options. This list is dynamically used in the gender selection field for individuals, allowing for customization and inclusivity.
-* **Dynamic Name Concatenation**:  Automatically generates the full name of the individual in the 'name' field based on the entered family name, given name, and additional name, ensuring consistency in display. 
-* **Age Calculation and Validation**:  Calculates the age of the individual based on their birthdate and includes validation to ensure the entered age is a valid number.
-* **Birthdate Validation**:  Restricts the selection of future dates for the birthdate field. 
+### Individual Name Management
+
+Users can record a registrant's family name, given name, and any additional names. The system automatically combines these components to generate a standardized full name for the registrant, ensuring consistency across records. This structured approach supports diverse naming conventions while maintaining a unified identifier.
+
+### Demographic Profile and Age Calculation
+
+This module captures the registrant's exact Date of Birth and provides an option for an Approximate Birthdate if the exact date is unknown. The system automatically calculates and displays the registrant's current age based on their recorded birthdate, which is vital for age-sensitive program eligibility. It also includes the ability to record the birth place and validates that birthdates are not set in the future.
+
+### Customizable Gender Classification
+
+The module includes a `Gender Type` model, allowing administrators to define and manage a list of gender classifications. This ensures that the system can accurately reflect and categorize the gender of individuals according to specific program or country requirements. Each gender type is uniquely identified by a code and value, and duplicates are prevented.
 
 ## Conclusion
 
-The **G2P Registry: Individual** module enhances the OpenSPP platform by providing a dedicated and feature-rich system for managing individual registrant data. By extending the base registry functionality and integrating seamlessly with Odoo's Contacts module, it ensures comprehensive and efficient handling of individual profiles within social protection programs and farmer registries. 
+The `g2p_registry_individual` module is essential for OpenSPP, providing the robust framework needed to accurately capture, manage, and utilize detailed personal information for every individual participating in social protection programs.

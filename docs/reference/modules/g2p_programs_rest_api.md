@@ -1,42 +1,35 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+# G2P Programs Rest Api
 
-# G2P Programs REST API Module
+This module provides a RESTful API for managing program enrollments for individuals and groups within OpenSPP. It allows external systems to interact programmatically with the platform's social protection program data, facilitating seamless integration and automation.
 
-```{warning}
+## Purpose
 
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
+The `g2p_programs_rest_api` module empowers external systems to manage program participation data, extending OpenSPP's core program management capabilities through a standardized API.
 
-## Overview
+*   **Manage Registrant Program Enrollments:** Create, update, and retrieve program enrollment details for individual registrants, including their current state and historical participation.
+*   **Handle Group Program Memberships:** Associate entire groups with specific social protection programs and manage the enrollment details for individuals within those groups via the API.
+*   **Automate Program Assignment:** Enable automated assignment of beneficiaries to social protection programs from external systems or for efficient batch processing.
+*   **Integrate External Systems:** Facilitate seamless data exchange between OpenSPP and other applications, such as mobile enrollment tools or partner databases, for program-related information.
+*   **Streamline Data Updates:** Efficiently update program enrollment statuses, such as initial enrollment dates or exit dates, for beneficiaries across various programs through programmatic interfaces.
 
-The [`g2p_programs_rest_api`](g2p_programs_rest_api) module extends the functionality provided by the [`g2p_registry_rest_api`](g2p_registry_rest_api) and [`g2p_programs`](g2p_programs) modules to expose program-related data and operations through a REST API. 
+## Dependencies and Integration
 
-## Functionality
+This module builds upon existing OpenSPP functionalities to provide its API services, creating a comprehensive interface for program data.
 
-This module focuses on integrating program information with the registry data. It allows external systems to:
+*   **[G2P Registry: Rest API](g2p_registry_rest_api)**: This module forms the foundational API layer for managing individuals and groups in the OpenSPP registry. `g2p_programs_rest_api` extends its data models, allowing program enrollment information to be included when creating, updating, or querying registrant and group membership data through the API.
+*   **[G2P Programs](g2p_programs)**: This core module defines the social protection programs themselves, their cycles, and eligibility rules. `g2p_programs_rest_api` exposes the data structures related to program membership defined in `g2p_programs` via the API, enabling external systems to interact with these program-specific records.
 
-- **Manage program memberships:** Create, read, update, and delete program membership information for registrants.
-- **Retrieve program-specific registrant data:** Access registrant information enriched with their program memberships, including enrollment and exit dates. 
-- **Manage program memberships for groups:**  Handle program membership data within the context of groups registered in the system.
+## Additional Functionality
 
-## Data Models
+### Program Enrollment for Individuals
+Users can create and manage program enrollments for individual registrants directly through the API. This includes specifying the program name and the enrollment date. The API also allows for retrieving a registrant's full history of program participation, including the program ID, current state (e.g., active, exited), enrollment date, and any exit dates.
 
-This module introduces new data structures and extends existing ones from the [`g2p_registry_rest_api`](g2p_registry_rest_api) module:
+### Group-Based Program Membership Management
+The module extends the API for group memberships to include program enrollment details for the group's members. When managing a group's membership via the API, it is now possible to simultaneously assign or update program enrollments for the individuals within that group. This simplifies the process for programs that onboard beneficiaries in a group context.
 
-- **`RegistrantProgramMembershipIn`** and **`RegistrantProgramMembershipOut`**: Represent program membership information for individual registrants, including enrollment and exit dates.
-- **`RegistrantProgramMemberInfoIn`** and **`RegistrantProgramMemberInfoOut`**: Extend the `RegistrantInfoIn` and `RegistrantInfoOut` models from [`g2p_registry_rest_api`](g2p_registry_rest_api) to include program membership details.
-- **`GroupMembersInfoIn`**: Extends the `GroupMembersInfoIn` model from [`g2p_registry_rest_api`](g2p_registry_rest_api) to include program membership details for members of a group.
+### Standardized Data Exchange for Program Membership
+The module defines clear and consistent data structures for program membership information, both for incoming data (e.g., when enrolling a registrant) and outgoing data (e.g., when querying enrollment status). This standardization ensures reliable data exchange with external systems, facilitating easier integration and reducing potential data errors.
 
-## Integration
+## Conclusion
 
-The [`g2p_programs_rest_api`](g2p_programs_rest_api) module seamlessly integrates with:
-
-- **[`g2p_registry_rest_api`](g2p_registry_rest_api)**: It leverages the existing API infrastructure and data models for registrants and groups.
-- **[`g2p_programs`](g2p_programs)**: It interacts with this module to retrieve and manage program-related data within the DCI system. 
-
-This module enables efficient data exchange and synchronization between the OpenSPP system and external systems that require access to program and beneficiary information. 
+The `g2p_programs_rest_api` module is crucial for extending OpenSPP's program management capabilities, enabling external systems to programmatically manage and access social protection program enrollment data for individuals and groups.

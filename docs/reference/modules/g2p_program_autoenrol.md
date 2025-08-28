@@ -1,54 +1,36 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+# G2P Program Autoenrol
 
-# g2p_program_autoenrol Module
-
-```{warning}
-
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
-
-This module extends the functionality of the [g2p_programs](g2p_programs) module to enable automatic enrollment of registrants into social protection programs based on predefined criteria. This feature simplifies program management by automating the enrollment process for eligible individuals.
+The G2P Program Autoenrol module automates the enrollment of new registrants into eligible social protection programs, streamlining the process and reducing manual intervention.
 
 ## Purpose
 
-The main purpose of the `g2p_program_autoenrol` module is to streamline and automate the process of enrolling beneficiaries into social protection programs. It achieves this by providing the following capabilities:
+This module enhances program management by automatically evaluating and enrolling new registrants based on predefined criteria. It significantly reduces administrative overhead and ensures that eligible individuals are promptly included in relevant programs.
 
-- **Automatic Enrollment:** When a new registrant is created in the system, the module automatically checks for programs configured with auto-enrollment rules.
-- **Eligibility Criteria:** Program administrators can define specific eligibility criteria using Odoo's domain syntax. This allows them to target specific demographics or groups based on pre-defined attributes stored in registrant profiles.
-- **Program-Specific Enrollment:** Auto-enrollment can be enabled or disabled on a per-program basis, providing flexibility in managing different types of programs.
-- **Optional Removal of Ineligible Registrants:**  Administrators have the option to automatically remove registrants from a program's membership list if they do not meet the defined eligibility criteria. This ensures that only eligible individuals are considered beneficiaries.
+*   **Automate Registrant Enrollment**: Automatically evaluates newly created registrants against program eligibility criteria for immediate enrollment. This ensures timely inclusion of beneficiaries without manual data entry.
+*   **Define Dynamic Eligibility**: Allows program administrators to configure specific, data-driven rules (domains) for automatic enrollment. For example, a program might auto-enroll all new registrants from "Province A" aged "0-5 years".
+*   **Manage Conditional Memberships**: Provides an option to automatically remove registrants from a program if they were auto-enrolled but subsequently fail more rigorous, full eligibility checks. This maintains data accuracy and program integrity.
+*   **Maintain Real-time Program Counts**: Ensures that beneficiary counts for programs are updated immediately upon auto-enrollment or removal. This provides administrators with accurate, up-to-date program statistics.
 
-## Functionality
+## Dependencies and Integration
 
-The module introduces the following key features:
+This module extends the core functionality of program management within OpenSPP.
 
-- **New Fields in Program Configuration:**
-    - **Auto Enrol Partners:** A boolean field to enable or disable auto-enrollment for the specific program.
-    - **Filter for Partners:** A text field utilizing Odoo's domain syntax to define the criteria for automatic enrollment. This allows administrators to specify which registrants should be automatically enrolled based on their profile attributes.
-    - **Keep only Eligible Partners:**  A boolean field that, when checked, will automatically remove registrants from the program's membership if they do not meet the defined eligibility criteria.
+The `g2p_program_autoenrol` module primarily depends on the [G2P Programs](g2p_programs) module. It integrates by adding new auto-enrollment fields and logic directly to existing program definitions, allowing administrators to configure auto-enrollment settings for each social protection program. When new registrants are created in the system (managed by `res.partner`), this module automatically triggers an evaluation against active programs configured for auto-enrollment. If a registrant meets the specified criteria, a program membership is automatically created and processed, leveraging the membership management features of the G2P ecosystem.
 
-- **Automatic Enrollment upon Registrant Creation:**
-    - When a new registrant is created in the system, the module automatically checks for programs that have auto-enrollment enabled.
-    - If the registrant meets the defined criteria for a specific program, they are automatically enrolled.
-    - An automatic check for eligibility is performed, and if the  "Keep only Eligible Partners" option is activated, ineligible registrants are removed from the program membership.
+## Additional Functionality
 
-- **Impact on Program Statistics:**
-    - The module ensures that program statistics, such as the count of eligible and total beneficiaries, are updated dynamically to reflect the results of the automatic enrollment process.
+### Automated Registrant Enrollment
 
-## Integration
+This feature ensures that new registrants are automatically considered for active programs with auto-enrollment enabled. Upon a registrant's creation, the system evaluates their data against all relevant program criteria, enrolling them instantly if they qualify. This eliminates the need for manual review and enrollment for initial program entry.
 
-The [g2p_program_autoenrol](g2p_program_autoenrol) module works seamlessly with the [g2p_programs](g2p_programs) module. It leverages the existing program and registrant data structures and extends their functionality. 
+### Configurable Eligibility Domains
 
-## Benefits
+Program administrators can define specific, dynamic eligibility rules for auto-enrollment using a powerful domain builder. This allows for highly granular targeting, such as enrolling all new registrants who are "female, under 18, and reside in District X." These domains ensure that only genuinely eligible registrants are automatically enrolled, based on their profile data.
 
-- **Reduced Administrative Burden:** Automating the enrollment process significantly reduces the manual effort required by program administrators.
-- **Improved Accuracy:** By automating enrollment based on pre-defined criteria, the module minimizes the risk of human error and ensures consistent application of eligibility rules.
-- **Enhanced Targeting:** The ability to define specific eligibility criteria allows programs to effectively target the intended beneficiaries, maximizing impact and resource utilization.
-- **Increased Efficiency:**  Automatic enrollment accelerates the process of onboarding eligible individuals into social protection programs.
+### Conditional Membership Management
 
-By automating a crucial aspect of program management, the [g2p_program_autoenrol](g2p_program_autoenrol) module contributes to the overall efficiency and effectiveness of social protection initiatives. It empowers organizations to deliver timely and targeted support to those in need. 
+For programs requiring further validation beyond initial auto-enrollment criteria, this module offers a crucial safeguard. If a registrant is auto-enrolled but later fails a more comprehensive eligibility check during the enrollment process, the system can be configured to automatically remove that registrant's membership. This maintains the integrity of program beneficiary lists and prevents ineligible individuals from receiving benefits.
+
+## Conclusion
+
+The G2P Program Autoenrol module significantly streamlines beneficiary management by automating the initial enrollment of eligible registrants, ensuring efficiency and accuracy in social protection programs.

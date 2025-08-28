@@ -147,3 +147,10 @@ docs/build
 .idea
 docs_old
 .aider*
+
+# AI documentation generation
+docs/reference/modules/token_usage_stats.json
+docs/reference/modules/prompts/
+scripts/modules_analysis.json
+
+*_generated.md

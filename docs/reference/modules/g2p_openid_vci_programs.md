@@ -1,39 +1,38 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+# G2P Openid Vci Programs
 
-# g2p_openid_vci_programs Module 
+The `g2p_openid_vci_programs` module extends OpenSPP's Verifiable Credential issuance capabilities to specifically manage and issue digital credentials for beneficiaries of social protection programs. It enables OpenSPP to attest to an individual's enrollment and status within a specific program using secure, verifiable digital documents.
 
-```{warning}
+## Purpose
 
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
+This module enables OpenSPP to serve as a trusted issuer of Verifiable Credentials (VCs) that confirm an individual's beneficiary status within a social protection program. It significantly enhances the transparency and verifiability of program participation.
 
-## Overview
+*   **Issue Program-Specific Beneficiary Credentials:** OpenSPP can issue digital credentials proving an individual's enrollment and status in a particular social protection program. This provides beneficiaries with a portable and verifiable proof of their benefits.
+*   **Automate Beneficiary Data Retrieval:** The module automatically collects relevant beneficiary data, including personal details, registered IDs, and program membership status, to populate the Verifiable Credential. This streamlines the issuance process and reduces manual data entry.
+*   **Ensure Enrollment Verification:** It rigorously validates that an individual requesting a credential is an actively enrolled beneficiary in the specified program before issuing the VC. This prevents unauthorized credential issuance and maintains program integrity.
+*   **Enhance Trust and Security:** By leveraging Verifiable Credentials, the module provides a secure, tamper-evident way for beneficiaries to share their program status with third parties, such as financial institutions or service providers, without exposing sensitive underlying data.
+*   **Support Digital Identity for Social Protection:** It contributes to a robust digital identity framework for social protection, allowing for more efficient and auditable interactions between beneficiaries and various service providers.
 
-The `g2p_openid_vci_programs` module extends the OpenG2P platform's OpenID Connect Verifiable Credentials Issuer functionality to generate and issue verifiable credentials specifically designed for program beneficiaries. This module builds upon the core functionalities provided by the [g2p_openid_vci](g2p_openid_vci) and [g2p_programs](g2p_programs) modules.
+## Dependencies and Integration
 
-## Purpose and Functionality
+This module builds upon and extends the core functionalities of two other foundational OpenSPP modules:
 
-This module focuses on providing a streamlined way to issue verifiable credentials that attest to a beneficiary's enrollment and status within a specific social protection program.  This allows beneficiaries to possess digitally verifiable proof of their program participation, which can be beneficial for various purposes like accessing program benefits or proving eligibility.
+*   **[G2P OpenID VCI](g2p_openid_vci)**: This is the primary dependency. The `g2p_openid_vci_programs` module extends the generic Verifiable Credential Issuer model from `g2p_openid_vci` to introduce a specialized "Beneficiary" issuer type. This allows OpenSPP to create VCI issuers specifically for program beneficiaries.
+*   **[G2P Programs](g2p_programs)**: This module provides the essential data for social protection programs and their membership. `g2p_openid_vci_programs` integrates with `g2p_programs` to link VCI issuers directly to specific social protection programs and to retrieve critical beneficiary enrollment and membership status information required for credential issuance.
 
-Here's a breakdown of the key features:
+## Additional Functionality
 
-* **Program-Specific Verifiable Credentials:**  The module defines a new type of verifiable credential, "OpenG2PBeneficiaryVerifiableCredential", specifically structured to include relevant program-related information.
-* **Issuance based on Program Enrollment:** It leverages the existing program enrollment data from the [g2p_programs](g2p_programs) module. Only enrolled beneficiaries can receive these verifiable credentials.
-* **Integration with OpenID Connect Issuer:** This module seamlessly integrates with the OpenID Connect issuer framework established in the [g2p_openid_vci](g2p_openid_vci) module. This ensures that the issuance process adheres to OpenID Connect standards for security and interoperability.
-* **Data Rich Credentials:** The issued verifiable credentials can include comprehensive information about the beneficiary, their program membership details, and other relevant data, making them valuable for various verification purposes.
+### Program-Specific Beneficiary Issuer Configuration
+Administrators can configure new Verifiable Credential Issuers within OpenSPP that are specifically designated for program beneficiaries. Each "Beneficiary" issuer is directly linked to a particular social protection program, ensuring that credentials issued by it are relevant to that program. This allows for clear segregation and management of credential types based on the program they represent.
 
-## Integration and Dependencies
+### Automated Beneficiary Status Verification
+When a Verifiable Credential is requested, the module automatically verifies the individual's identity against their registered IDs and confirms their active enrollment status within the linked social protection program. If the individual's ID is not found or if they are not currently enrolled in the program, the system will prevent the issuance of the credential, ensuring data accuracy and program security.
 
-* **[g2p_openid_vci](g2p_openid_vci):** This module depends on the core OpenID Connect Verifiable Credentials Issuer functionality to manage the technical aspects of credential issuance and signing.
-* **[g2p_programs](g2p_programs):**  This module relies on the program enrollment data and beneficiary information managed by the [g2p_programs](g2p_programs) module.
+### Comprehensive Beneficiary Data Inclusion
+Upon successful verification, the module dynamically gathers all necessary beneficiary information to populate the Verifiable Credential. This includes personal details of the beneficiary, their specific membership status in the program, and general details about the social protection program itself, creating a rich and verifiable digital attestation of their status. The credential will include details such as the beneficiary's name, address, program ID, and enrollment dates.
 
-## Benefits
+### Standardized Credential Types
+The module automatically assigns a default credential type, `OpenG2PBeneficiaryVerifiableCredential`, for all beneficiary-related VCs. This standardization ensures consistency and interoperability, making it easier for external verifiers to recognize and process these credentials.
 
-* **Enhanced Trust and Transparency:**  Verifiable credentials provide a tamper-proof and verifiable way to prove program participation, fostering trust between beneficiaries and service providers.
-* **Improved Efficiency:** Digital credentials streamline verification processes, potentially reducing administrative burden and improving the efficiency of benefit delivery.
-* **Empowerment of Beneficiaries:**  Providing beneficiaries with verifiable credentials gives them control over their data and empowers them to prove their eligibility securely and conveniently. 
+## Conclusion
+
+The `g2p_openid_vci_programs` module is crucial for enabling OpenSPP to securely issue verifiable digital credentials that confirm an individual's status as a beneficiary of a social protection program, enhancing trust and streamlining interactions across the ecosystem.

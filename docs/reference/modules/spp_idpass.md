@@ -1,47 +1,47 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
+# OpenSPP Idpass
 
-# spp_idpass Module
+The OpenSPP Idpass module (technical name: spp_idpass) provides OpenSPP with the capability to securely generate and manage digital identification passes for program registrants, streamlining beneficiary verification and access to social protection services.
 
-```{warning}
+## Purpose
 
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
+The OpenSPP Idpass module enables efficient and reliable identification of beneficiaries and groups through several key capabilities:
 
-## Overview
+*   **Automated ID Generation**: It automatically generates printable ID passes for individuals and groups by leveraging existing registrant data within OpenSPP. This reduces manual effort and ensures consistent identification documents.
+*   **Configurable ID Templates**: Administrators can define and manage multiple ID pass templates, each with customizable expiry rules and specific configurations for integration with external ID generation services. This offers flexibility for different program requirements.
+*   **Secure External Integration**: The module integrates with external ID generation services through secure API calls, allowing OpenSPP to utilize specialized services for producing high-quality digital IDs. This ensures data security and leverages advanced features.
+*   **Centralized ID Management**: Once generated, the ID pass is stored as a digital file on the registrant's record, and their identification profile is updated. This provides a centralized and verifiable source of identification for beneficiaries.
+*   **Group ID Issuance**: It supports issuing ID passes for groups, automatically identifying the principal recipient or head of the group to ensure accurate representation on the ID document.
 
-The [spp_idpass](spp_idpass) module extends the functionality of the OpenSPP system by providing a seamless way to generate and manage digital ID cards for registrants. It integrates with the existing registry system and leverages external ID Pass API services to produce printable ID cards. 
+## Dependencies and Integration
 
-## Key Features
+The OpenSPP Idpass module seamlessly integrates with core OpenSPP components and other registry modules:
 
-* **ID Card Generation:** Generates digital ID cards for individual registrants or groups using an external ID Pass API.
-* **ID Card Storage:** Stores generated ID cards as PDF attachments on the registrant's profile within the system.
-* **ID Pass API Integration:** Configurable settings for connecting with external ID Pass API services, including authentication and data transmission.
-* **ID Card Design Customization:**  Allows for setting a file name prefix for generated ID cards and managing the expiry duration for issued IDs.
+*   It extends the `res.partner` model (from the `base` module and further enhanced by [G2P Registry Base](g2p_registry_base)) to store the generated ID pass file and its filename directly on the registrant's profile. This allows for quick access and management of the digital ID.
+*   The module relies heavily on the registrant data managed by [G2P Registry Base](g2p_registry_base), utilizing fields such as given names, family names, birth details, and gender to populate the ID pass. It also integrates with the `g2p.id.type` model to categorize the generated ID pass as a specific type of identification and with `g2p.reg.id` to record the issued ID number.
+*   When issuing ID passes for groups, OpenSPP Idpass leverages the definitions and relationships established within the [G2P Registry Membership](g2p_registry_membership) module to correctly identify the designated "Head" or "Principal Recipient" whose details will appear on the group's ID.
 
-## Integration with Other Modules
+## Additional Functionality
 
-* **[g2p_registry_base](g2p_registry_base):** The module relies on the base registry module for accessing and managing registrant information.
-* **[g2p_registry_membership](g2p_registry_membership):**  Utilizes the membership module to handle ID card generation for groups, ensuring the correct identification of the group head. 
+### ID Pass Template Configuration
 
-## Functionality and Workflow
+Users can define and manage various "ID Pass Templates" within the module, allowing for flexible ID generation. Each template specifies:
+*   An external API endpoint and authentication credentials (username, password) for secure communication with an ID generation service.
+*   An optional authentication token URL to generate temporary access tokens, enhancing security.
+*   The ID's expiry length (e.g., 1 year, 6 months, or 30 days) and a unique filename prefix for generated PDF documents.
+Templates can be activated or deactivated, providing administrators with control over which ID generation sources are currently in use.
 
-1. **Configuration:** System administrators configure the connection to the ID Pass API by providing the necessary URLs, credentials, and other settings.
-2. **ID Card Issuance:** Authorized users can initiate the ID card generation process for a registrant directly from the registrant's profile.
-3. **Data Transmission:** The module securely transmits the required registrant data to the ID Pass API for card generation.
-4. **ID Card Retrieval:** Upon successful generation, the module retrieves the ID card in PDF format from the API.
-5. **ID Card Storage:**  The generated ID card is automatically attached to the corresponding registrant's profile and can be downloaded or printed as needed.
+### Automated ID Issuance for Registrants
 
-## Benefits
+From a registrant's profile, users can initiate a dedicated "Issue ID Pass" wizard. The system automatically gathers relevant registrant data (such as names, birth information, gender, and profile picture) and securely transmits it to the configured external ID generation service. For groups, the module intelligently identifies the designated "Head" or "Principal Recipient" using data from the [G2P Registry Membership](g2p_registry_membership) module, ensuring their details are correctly used for the ID. Upon successful generation, the module stores the ID pass PDF directly on the registrant's record and updates their official `g2p.reg.id` with the new ID number.
 
-* **Improved Identification:**  Provides a standardized and verifiable identification method for program beneficiaries.
-* **Enhanced Program Efficiency:** Streamlines the identification process, reducing administrative burden and potential errors.
-* **Increased Transparency and Accountability:** Creates a digital record of issued ID cards, improving program monitoring and evaluation.
+### Protected Default ID Type
 
-## Note:
+The module introduces a default "ID Pass" type within the `g2p.id.type` framework. This specific ID type is protected from accidental deletion or modification by users, ensuring that the core functionality for ID Pass generation remains stable and available for all programs. This prevents critical system configurations from being inadvertently altered.
 
-This module requires an active subscription and integration with a compatible ID Pass API service.
+### Secure API Communication
+
+The OpenSPP Idpass module handles all secure communication with external ID generation APIs. It includes functionality to generate authentication tokens when required by the external service, using the provided credentials, and incorporates robust error handling to provide clear messages if the external service encounters issues. All API requests include timeouts to prevent system hangs, ensuring reliable operation.
+
+## Conclusion
+
+The OpenSPP Idpass module centralizes and automates the secure generation and management of digital identification passes, streamlining beneficiary identification and enhancing program delivery across social protection initiatives.
