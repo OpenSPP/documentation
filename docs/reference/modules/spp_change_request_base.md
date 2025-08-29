@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Change Request Base
 
 The `spp_change_request_base` module provides a robust framework for managing all modifications to registrant information within the OpenSPP platform. It establishes a structured, auditable process for submitting, reviewing, approving, and applying changes to vital data, ensuring accuracy and accountability.

@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Programs Rest Api
 
 This module provides a RESTful API for managing program enrollments for individuals and groups within OpenSPP. It allows external systems to interact programmatically with the platform's social protection program data, facilitating seamless integration and automation.

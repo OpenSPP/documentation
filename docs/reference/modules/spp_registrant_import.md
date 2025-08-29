@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Registrant Import
 
 The OpenSPP Registrant Import module streamlines the process of bringing essential data into the OpenSPP platform. It enables users to efficiently import information for registrants (individuals and groups), geographical areas, and service points, simplifying data mapping and automating the generation of unique OpenSPP identifiers for these records.

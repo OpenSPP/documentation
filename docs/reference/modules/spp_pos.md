@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Pos
 
 The OpenSPP Pos module extends the standard Odoo Point of Sale (POS) system to facilitate the secure and efficient redemption of social protection entitlements. It integrates directly with OpenSPP's entitlement management system, allowing beneficiaries to redeem their benefits at participating retail locations.

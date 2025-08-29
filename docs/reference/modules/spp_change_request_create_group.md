@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Change Request Create Group
 
 The `spp_change_request_create_group` module provides a specialized and structured workflow for formally adding new groups to the OpenSPP registry. It facilitates the creation of new organizational entities, such as farmer cooperatives or households, and optionally their primary members, through a controlled change request process.

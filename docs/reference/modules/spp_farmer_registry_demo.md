@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Farmer Registry Demo
 
 The OpenSPP Farmer Registry Demo module provides pre-populated, realistic sample data for the OpenSPP Farmer Registry. This module is essential for showcasing the full capabilities of the Farmer Registry and enabling users to explore its features with a rich, representative dataset without manual data entry.

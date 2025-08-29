@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Area Base
 
 The OpenSPP Area Base module (`spp_area_base`) establishes the foundational framework for managing all geographical areas within the OpenSPP platform. It enables users to define, organize, and maintain a hierarchical structure of administrative regions, ensuring that all social protection programs and farmer registry data can be accurately linked to specific locations for effective targeting, delivery, and analysis.

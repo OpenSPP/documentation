@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP QR Scanner
 
 The OpenSPP QR Scanner module provides a streamlined method for identifying individuals, verifying program eligibility, and recording actions in the field using QR code technology. It enhances operational efficiency and accuracy across various social protection program activities.

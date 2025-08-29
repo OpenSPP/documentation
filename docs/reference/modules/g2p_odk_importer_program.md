@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Odk Importer Program
 
 The `g2p_odk_importer_program` module extends the core ODK data import capabilities in OpenSPP, specifically enabling the direct integration of field-collected ODK data into social protection programs. It automates the process of linking imported beneficiary information to specific programs and capturing detailed application data.

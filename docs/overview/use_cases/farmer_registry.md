@@ -1,216 +1,70 @@
 ---
-html_meta:
-  "title": "Farmer Registry with OpenSPP"
-  "description": "Overview of Farmer Registries, key principles, and how OpenSPP helps implement them, guiding users to relevant documentation features."
-  "property=og:description": "Overview of Farmer Registries, key principles, and how OpenSPP helps implement them, guiding users to relevant documentation features."
-  "property=og:title": "Farmer Registry with OpenSPP"
-  "keywords": "OpenSPP, Farmer Registry, Agricultural Registry, Farm Management, Social Protection, GIS, Data Management, Interoperability"
+review-status: reviewed
+review-date: 2025-06-20
+reviewer: Mark Penalosa
+migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Farmer Registry with OpenSPP
+# Farmer Registry
 
-This page explains how OpenSPP helps you implement effective Farmer Registries, outlining key principles and guiding you to relevant features. It serves as an entry point for users interested specifically in this use case.
+## What is a Farmer Registry?
 
-## 1. Introduction: What is a Farmer Registry?
+A farmer registry is a system that contains information about farm holdings and farmholders. Its purpose is to provide a centralized and up-to-date source of data that can support planning and coordination of initiatives in the agricultural and social sectors focused on addressing rural poverty, food insecurity and climate change adaptation.
 
-*   **General Definition:** A {term}`farmer registry` is a system designed to collect, store, and manage information about {term}`farm holdings` (the land and associated assets) and {term}`farmholders` (the individuals or groups managing the farms).
-    
-*   **Purpose:** The primary goals of implementing a farmer registry include supporting better planning and coordination for agricultural and {term}`social protection` programs, helping to address rural poverty and food insecurity, and aiding climate change adaptation efforts. Globally, {term}`agricultural censuses` and registries are common tools for administration and policy-making.
-    
-*   **OpenSPP's Role:** OpenSPP offers a flexible, modular, {term}`open-source software` platform that enables governments and organizations to build and manage robust Farmer Registries. A key strength is its ability to integrate these registries with other critical systems, such as social protection programs ({term}`SP-MIS`) and land administration databases.
-    
-*   **Further Reading:** For a deeper dive into the concept, see {doc}`/overview/concepts/farmer_registry`.
-    
+The use of farmer registries and agricultural censuses is a common practice globally, and many countries have a long history of implementing systems of agricultural documentation for administrative and tax purposes. The development of comprehensive farmer registries based on systematic data collection and their integration and interoperability with social protection management information systems and other data sources is a more recent occurrence.
 
-### 2. Key Principles & Components of a Farmer Registry (General)
+Depending on the country’s context and requirements, a farmer registry may be used to collect data on all farmers or solely on smallholder and/or family farmers. Smallholder farmers typically engage in subsistence farming or small-scale commercial agriculture, relying on traditional or family-based methods and facing limited access to resources such as land, capital, and technology. However, the definition of a smallholder farmer varies between countries depending on what is considered to be ‘small’ in a particular context and what aspects are measured (e.g. land ownership, livestock, agricultural inputs). Farmer registries may also be extended to collect data on fisherfolk, foresters, workers in the extractive sector, landless farmers, or those working on communal lands.
 
-Implementing a successful Farmer Registry involves considering several key components and principles:
+Well-known examples of farmer registries being used in conjunction with social protection management information systems include Brazil’s Cadastro de Agricultura Familiar (CAF), which recently replaced DAP (Declaração de Aptidão ao Pronaf - Family Farming Register). Data from CAF is crossed with the Cadastro Único social registry and is used to plan, coordinate, implement and monitor programs providing rural credit, agricultural extension services and social assistance, including Brazil’s flagship social protection program Bolsa Familia.
 
-*   **Core Data:** Typical data collected includes:
-    
-    *   _{term}`Farm Holder` Information:_ Demographics (age, gender), {term}`household` composition, socio-economic indicators.
-        
-    *   _{term}`Farm Holding` Details:_ Geographic location (GPS coordinates, boundaries), land parcel details, total size, ownership or tenure status (owned, rented, communal).
-        
-    *   _{term}`Agricultural Activities`:_ Types of crops grown, livestock raised, aquaculture practices.
-        
-    *   _{term}`Assets & Inputs`:_ Ownership of machinery, access to irrigation, use of fertilizers/pesticides.
-        
-*   **Essential Functions:** Common operational functions involve:
-    
-    *   _{term}`Data Collection & Intake`:_ Methods can range from comprehensive {term}`census sweep` approaches to {term}`on-demand` registration at local offices or via mobile applications.
-        
-    *   _{term}`Data Validation` & {term}`Data Verification`:_ Ensuring data accuracy through cross-checking with official documents (ID cards, land titles), other administrative systems, or community validation processes.
-        
-    *   _{term}`Dynamic Updates`:_ Recognizing that farm situations change, registries should allow for periodic updates or continuous registration to maintain data relevance.
-        
-    *   _{term}`Reporting & Analytics`:_ The ability to generate reports and analyze registry data is crucial for policy design and program monitoring.
-        
-*   **Integration Potential:** The value of a Farmer Registry is significantly enhanced when linked with other systems:
-    
-    *   _{term}`Social Protection Systems (SP-MIS)`:_ Enables targeted support, coordination of agricultural and social benefits.
-        
-    *   _{term}`National ID` / {term}`CRVS` Systems:_ Facilitates farmer verification and helps prevent duplicate registrations ({term}`deduplication`).
-        
-    *   _{term}`Land Administration Systems`:_ Provides clarity on land tenure and rights.
-        
-    *   _{term}`GIS` & Remote Sensing Data:_ Allows for spatial analysis, crop monitoring, and verification of land use.
-        
-    *   _{term}`Climate & Weather Data`:_ Supports early warning systems and climate adaptation planning.
-        
-*   **Key Considerations:** Implementers face challenges such as:
-    
-    *   _{term}`Data Privacy` & Security:_ Protecting sensitive {term}`personal data` and farm data.
-        
-    *   _{term}`Inclusivity`:_ Ensuring smallholders, tenants, landless farmers, and women farmers are adequately represented.
-        
-    *   _{term}`Data Quality`:_ Maintaining accuracy and completeness over time.
-        
-    *   _{term}`Cost & Sustainability`:_ Managing the resources required for setup and maintenance.
-        
+Lebanon has recently launched a national Farmers Registry, which collects data on land parcel ownership and use, livelihood conditions, and comprehensive demographic and socio-economic data, including a module to classify households based on a multi-dimensional index for rural poverty. As Lebanon does not have a national social registry or broad social protection information system, the farmer registry plays a significant role in identifying vulnerable farming and fishing households, complementing the Government’s existing social assistance beneficiary registry, and ultimately enabling more people to access the National Poverty Targeting Program.
 
-### 3. Implementing a Farmer Registry with OpenSPP
+Karnataka State in India has developed a farmer registry named FRUITS (Farmer Registration and Unified Beneficiary Information System) that provides an inventory of smallholder farmers, land and benefits. The registry is integrated with Karnataka’s social protection information system Kutumba, national ID system Aadhaar, and Bhoomi, a digitalized land registration system focusing on land rights, tenancy and crops. This integration supports coordination across agricultural and social programs, and has even enabled the automatic granting of social protection benefits without the need to apply. For example, scholarships were automatically provided to all children from farming households studying in grades 8–10 (girls only) or above (both boys and girls).
 
-OpenSPP's modular architecture provides a strong foundation for building a Farmer Registry tailored to specific needs. Here’s how its features map to the general principles:
+## How does a Farmer Registry work?
 
-*   **Registry Core:** Modules like `g2p_registry_base`, `g2p_registry_individual`, `g2p_registry_group`, and `g2p_registry_membership` provide the tools to manage farmers (as individuals) and farmer groups/households/cooperatives (as groups), along with their relationships.
-    
-*   **Farmer Specifics:** The `spp_farmer_registry_base` module extends the core registry with data models specifically designed for farmer attributes, farm details, activities, assets, etc.
-    
-*   **Land Data:** The `spp_land_record` module allows detailed management of land parcels associated with farms, while `spp_area_gis` enables mapping and spatial analysis of these records.
-    
-*   **Customization:** `spp_custom_field` allows administrators to easily add country- or program-specific fields to capture unique data requirements without needing code changes.
-    
-*   **Data Collection:** OpenSPP supports various data intake methods, including bulk import from spreadsheets (`.xlsx`, `.csv`), manual entry, and potential integration with mobile data collection tools like CommCare.
-    
-*   **Interoperability:** The {term}`API` layer (`spp_api`, `spp_api_records`) enables secure data exchange with external systems (National ID, Land Admin, SP-MIS, etc.).
-    
-*   **Detailed Features:** Explore features relevant to Farmer Registries in {doc}`/overview/features/registry_data_management`.
-    
-*   **Relevant Modules:** Find detailed documentation for key modules in the {doc}`/reference/modules/index`.
-    
+The specific functions of farmer registries differ among the countries using them, depending on the agricultural context, existing management information systems, and other design considerations like responsiveness to shocks. Farmer registries typically have the following operational functions:
 
-### 4. Getting Started (Links)
+1. **Data collection.** Questionnaires are used to gather information on demographic and basic socio-economic data on farmers and their households, and data which is specific to agriculture such as land parcel ownership, rental and use; animal/livestock ownership; machinery ownership; access to irrigation; information on land degradation, crop condition monitoring and yield forecasting (e.g. via satellite imagery, where possible).
 
-*   **Installation:** Start with the general OpenSPP installation guide: {doc}`/getting_started/index`.
-    
-*   **Initial Setup:**
-    
-    *   From the newly installed OpenSPP instance, Navigate to Apps and install **OpenSPP Farmer Registry Base**
-        
-    *   Configuring Areas {doc}`../../user_guide/administration/import_areas`.
-        
-    *   Importing Initial Data: {doc}`../../user_guide/registry_management/import_export_data`.
-        
+2. **Data validation and verification.** Applicant data can be validated by checking official documents such as land titles or identification cards, cross-verification with records contained in other administrative systems, local community validation processes, or use of GPS and geospatial technologies to validate the geographic location of farms and land parcels.
 
-### 5. Common Tasks & User Guides (Links)
+3. **Ongoing registration and information updates.** When a new farmer registry is being set up, mass registration is usually undertaken using a census sweep approach which aims to reach every resident or entity within the designated survey area. However, farmer registries can also be designed to allow for continuous and on-demand registration through periodic active outreach and registration at local government offices. This ensures that registrants who may have been missed in the initial mass registration can be added and allows for data updates in recognition of the fluctuating nature of poverty, food insecurity and weather-related events.
 
-*   **Registry Management:**
-    
-    *   Registering Farmers/Groups: {doc}`../../user_guide/registry_management/register_individual`
-        
-    *   Managing Group Memberships
-        
-    *   Importing/Exporting Data: {doc}`../../user_guide/registry_management/export_data` and {doc}`../../user_guide/registry_management/import_data`.
-        
-*   **Land & GIS:**
-    
-    *   Managing Land Records: `[TODO: Link to How-to Guide for Managing Land Records - Needs Content?]`
-        
-    *   Using Map Features: `[TODO: Link to How-to Guide for Using Map Features - Needs Content?]`
-        
-*   **Administration:**
-    
-    *   Managing Custom Fields: `[TODO: Link to How-to Guide for Managing Custom Fields]`
-        
-    *   User Access Control: {doc}`/user_guide/administration/user_access`.
-        
+4. **Reporting and analysis.** Farmer registries may have self-contained functions to generate reports and analyze registry data. Or they may be integrated with external data analysis tools and dashboards to inform policy decisions, program planning, and resource allocation.
 
-### 6. Development & Customization (Links)
+5. **Architectural components.** Comprise of data intake and exchange, data security and protection, management interfaces, interoperability, and necessary ICT infrastructure.
 
-*   Customizing Registry Fields/Indicators: {doc}`/developer_guide/customization/customizing_fields`.
-    
-*   Integrating with GIS: `[TODO: Link to Developer Guide for GIS Integration]`
-    
-*   Module Development Overview: {doc}`/developer_guide/module_development`.
-    
-*   Relevant Modules: See {doc}`/reference/modules/index` (especially `spp_farmer_registry_base`, `spp_land_record`, `spp_area_gis`).
-    
-*   API Usage: {doc}`/developer_guide/api_usage/index`.
-    
+Privacy and confidentiality are key principles of farmer registries as they hold large amounts of sensitive {term}`personal data`. The privacy and confidentiality of individuals' data must be protected in accordance with a country’s legal and ethical standards. Accessible feedback mechanisms must also be provided so registrants can report inaccuracies or errors in their information. Usually, these are provided via the corresponding agricultural or social protection program.
 
-### 7. Diagram: OpenSPP Farmer Registry Ecosystem
+## Integration and interoperability of a Farmer Registry
 
-A Farmer Registry built with OpenSPP typically interacts with various internal modules and external systems:
+Farmer registries are essential tools for improving planning and coordination between agricultural and social sectors. Farmer registries can be designed to be interoperable and integrated with other data sources supporting the agricultural sectors, such as satellite-derived land surveillance data, geographic information systems, land records, data on soil conditions and crop yields, weather data, and social data sources such as beneficiary registries, social registries, disability registries, national identity and CRVS systems.
 
-```{mermaid}
+Together these data sources can support policy-design, planning and eligibility determination for programs and services, coordinate with climate change adaptation, and identify early warning triggers for environmental disasters or climate-related shocks and stresses which affect large numbers of people.
 
-graph LR
-    subgraph ExternalSystems["External Systems"]
-        direction LR
-        A[National ID / CRVS]
-        B[Land Admin System]
-        C[GIS Data / Satellite]
-        D[Climate Data]
-        E[Social Programs / SP-MIS]
-        F[Agricultural Services]
-    end
+## Farmer Registry in the OpenSPP platform
 
-    subgraph OpenSPPPlatform["OpenSPP Platform"]
-        direction TB
-        subgraph CoreRegistry["Core Registry"]
-            direction TB
-            G[Registrant Data\nFarmers, Groups] --> H(Membership Mgmt)
-        end
-        subgraph FarmerRegistryModules["Farmer Registry Modules"]
-             direction TB
-             I[Farmer Attributes] --> J(Farm Details)
-             J --> K(Land Records)
-             K --> L(Agri Activities)
-             L --> M(Assets/Inputs)
-        end
-        subgraph SupportingModules["Supporting Modules"]
-             direction TB
-             N[GIS Module] --> O(Custom Fields)
-             O --> P(User Mgmt / Audit)
-        end
-        Q(Data Collection Tools\n - Mobile App\n - Bulk Import\n - Manual Entry)
-        R(API Layer)
-        S(Reporting / Dashboards)
-    end
+The open-source Farmer Registry software developed by OpenSPP offers comprehensive identification and registration functions with the following key features:
 
-    Q --> G
-    G --> I
-    I --> N
-    N --> K 
+1. **Registration.** Our Farmer Registry supports initial en masse registration and surveys. Our data collection system leverages CommCare and can handle various data types, including geospatial information. It can be customized to suit linguistic or cultural requirements, improving the cultural appropriateness, accessibility, and quality of data collected.
 
-    A <--> R
-    B <--> R
-    C --> N
-    D --> R 
+2. **Data management and standardization.** The platform excels in managing and transforming varied information into standardized formats. This capability is crucial for seamless integration with management information systems (MIS) for various social programs, ensuring data consistency and reliability.
 
-    R <--> E
-    R <--> F
-    R --> S
+3. **Dynamic registration and updates.** Our Farmer Registry can support ongoing registration and updates through continuous on-demand registration or periodic reassessments.
 
-    style G fill:#f9f,stroke:#333,stroke-width:2px
-    style I fill:#ccf,stroke:#333,stroke-width:2px
-    style K fill:#cfc,stroke:#333,stroke-width:2px
-    style N fill:#fcf,stroke:#333,stroke-width:2px
-    style R fill:#ff9,stroke:#333,stroke-width:2px
-    style Q fill:#eee,stroke:#333,stroke-width:1px
-    style S fill:#eee,stroke:#333,stroke-width:1px
-    
-```
+4. **Interoperability with other data sources.** The OpenSPP platform is particularly strong in its interoperability capabilities. Our Farmer Registry can pull data from Geographic Information Systems, National Identity and CRVS systems, supporting efficient data management and verification.
 
-_Caption:_ Functional overview of OpenSPP Farmer Registry components and integrations.
+5. **Advanced GIS Capabilities with GeoJSON API and QGIS Integration.** Offering sophisticated mapping and spatial analysis tools, these features provide in-depth insights into land use, crop distribution, and more, facilitating detailed agricultural planning and decision-making.
 
-### 8. Further Reading & See Also
+6. **Privacy and security.** The OpenSPP team rigorously upholds data privacy and security standards. Our products are designed to ensure that personal or sensitive data and transactions are protected.
 
-*   Detailed Conceptual Explanation: {doc}`/overview/concepts/farmer_registry`.
-    
-*   Other Use Cases: {doc}`/overview/use_cases/index`.
-    
-*   Core Concepts Overview: {doc}`/overview/concepts/index`.
-    
-*   `[TODO: Add optional links to relevant external standards or resources, e.g.,
+For more information about OpenSPP’s Farmer Registry contact us through our [website](https://openspp.org/contact-us/).
+
+## References
+
+- [Barca V and Hebbar M (2023) Farmer registries and social protection information systems. FAO, GIZ](https://socialprotection.org/sites/default/files/publications_files/230222_giz_sosi_pub-05_v_10%5B34%5D.pdf)
+- [Digital Convergence Initiative (2023) Social protection management information system interacting with farmer registry. Social Protection Interoperability Series: Interoperability in Action #4](https://socialprotection.org/sites/default/files/multimedia_files/Interoperability-in-Action-Farmer-Workshop-27-April-Workshop-4.pdf).
+<!-- [FAO (2018) Farmers' Registry - A tool in support of small scale agriculture and rural poverty reduction - Webinar](https://socialprotection.org/sites/default/files/publications_files/Webinar%20Presentation%20-%20Farmers%27%20Registries.pdf) -->
+- [HLPE (2013) Investing in smallholder agriculture for food security. A report by the High Level Panel of Experts on Food Security and Nutrition of the Committee on World Food Security, Rome.](https://www.fao.org/3/i2953e/i2953e.pdf)
+- [Lorenzon F (2018) Farmers' Registry - A tool in support of small scale agriculture and rural poverty reduction. Blog written for socialprotection.org based on FAO webinar of the same title.](https://socialprotection.org/discover/blog/farmers-registry-tool-support-small-scale-agriculture-and-rural-poverty-reduction)

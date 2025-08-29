@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Land Record
 
 The OpenSPP Land Record module digitizes and manages land information, providing a centralized system for tracking land parcels, their associated farms, ownership details, and geospatial boundaries. This module is essential for programs requiring accurate land data to support farmer registries, agricultural initiatives, and land governance efforts.

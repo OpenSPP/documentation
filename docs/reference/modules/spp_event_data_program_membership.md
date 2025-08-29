@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Event Data Program Membership
 
 The 'spp_event_data_program_membership' module extends OpenSPP's event tracking capabilities by specifically linking events to individual or group program memberships. This module allows users to record and track crucial program membership-related events, such as enrollment, suspension, or exit, directly associating them with specific program participation records within OpenSPP.

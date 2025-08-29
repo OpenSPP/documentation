@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Program Autoenrol
 
 The G2P Program Autoenrol module automates the enrollment of new registrants into eligible social protection programs, streamlining the process and reducing manual intervention.

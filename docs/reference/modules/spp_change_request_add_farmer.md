@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Change Request Add Farmer
 
 The OpenSPP Change Request Add Farmer module (technical name: `spp_change_request_add_farmer`) provides a structured and validated workflow for incorporating new individual farmers into existing farmer groups within the OpenSPP registry. It ensures that all additions are properly documented, approved, and integrated into the system.

@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Program Registrant Info Rest Api
 
 The `g2p_program_registrant_info_rest_api` module provides a RESTful API for external systems to access and manage program-specific application information for registrants within OpenSPP. It extends existing program membership APIs to seamlessly integrate detailed application data.

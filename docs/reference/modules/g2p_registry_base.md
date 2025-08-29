@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Registry Base
 
 The `g2p_registry_base` module establishes the foundational framework for managing individuals and groups within OpenSPP. It provides the core data models and essential functionalities required for any social protection program or farmer registry to operate effectively.

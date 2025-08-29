@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Audit Config
 
 The OpenSPP Audit Config module empowers administrators to define and manage comprehensive audit rules. These rules dictate how and what data changes are tracked and logged across the OpenSPP platform, ensuring critical data remains secure, accurate, and fully auditable.

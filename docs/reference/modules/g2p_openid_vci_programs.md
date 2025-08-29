@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Openid Vci Programs
 
 The `g2p_openid_vci_programs` module extends OpenSPP's Verifiable Credential issuance capabilities to specifically manage and issue digital credentials for beneficiaries of social protection programs. It enables OpenSPP to attest to an individual's enrollment and status within a specific program using secure, verifiable digital documents.

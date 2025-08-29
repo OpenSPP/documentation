@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Idqueue
 
 The OpenSPP Idqueue module provides a comprehensive system for managing the entire lifecycle of ID card requests for registrants within social protection programs and farmer registries. It streamlines the process from initial request to final distribution, ensuring beneficiaries receive their identification efficiently and accountably.

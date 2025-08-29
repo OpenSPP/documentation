@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Registry Addl Info
 
 The **G2P Registry: Additional Info** module enhances OpenSPP's registrant profiles by providing a flexible mechanism to store extra, context-specific information for both individuals and groups. It allows programs to capture diverse data points that are not part of the standard registrant fields, ensuring comprehensive record-keeping for varied social protection initiatives.

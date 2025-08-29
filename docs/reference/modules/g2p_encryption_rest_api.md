@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Encryption Rest Api
 
 The `g2p_encryption_rest_api` module provides a secure REST API interface to OpenSPP's core encryption and cryptographic services. It allows external systems and applications to securely interact with and leverage OpenSPP's underlying encryption capabilities.

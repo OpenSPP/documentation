@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Program Reimbursement
 
 The G2P Program Reimbursement module extends OpenSPP's core G2P Programs functionality to manage programs specifically designed for reimbursing beneficiaries or service providers for eligible expenses. It streamlines the process of submitting, tracking, and processing reimbursement claims.

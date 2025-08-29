@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Starter
 
 The `spp_starter` module provides a guided, step-by-step setup wizard designed to configure a new OpenSPP instance. It simplifies the initial deployment process by helping users define their core program needs and automatically installing the necessary OpenSPP modules.

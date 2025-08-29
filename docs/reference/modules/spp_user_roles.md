@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP User Roles
 
 The OpenSPP User Roles module enhances how user access is managed within the OpenSPP platform. It introduces advanced capabilities for defining user permissions, with a strong emphasis on area-based access control. This module ensures that users can only interact with data relevant to their specific operational regions, improving data security and streamlining program management.

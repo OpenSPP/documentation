@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Portal Auth
 
 The `g2p_portal_auth` module in OpenSPP provides essential controls for managing which external authentication providers are available for different user portals. It allows administrators to precisely define which OpenID Connect (OIDC) services can be used by beneficiaries accessing the Self-Service Portal and by program staff or service providers using the Service Provider Portal.

@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Odk User Mapping
 
 The G2P Odk User Mapping module establishes a critical link between OpenSPP's internal partner records and the individuals collecting data through ODK Central. It enables the system to understand who is submitting ODK forms by mapping their ODK app user accounts to specific OpenSPP partners, such as field agents or enumerators.

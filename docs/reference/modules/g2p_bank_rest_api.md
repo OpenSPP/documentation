@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Bank Rest Api
 
 The `g2p_bank_rest_api` module extends OpenSPP's RESTful API capabilities, allowing external systems to seamlessly interact with and manage bank account details for individuals and groups registered within the platform. It provides the necessary endpoints for creating, updating, and retrieving registrant bank information programmatically.

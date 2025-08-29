@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Theme
 
 The `g2p_theme` module customizes the visual identity and user experience of the OpenSPP platform, particularly for user authentication and public-facing elements. It establishes a consistent brand presence and enhances security for specific user types within social protection programs.

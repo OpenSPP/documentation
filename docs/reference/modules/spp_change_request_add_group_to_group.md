@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Change Request Add Group To Group
 
 The 'spp_change_request_add_group_to_group' module provides a structured workflow for establishing hierarchical relationships between groups within the OpenSPP registry. It enables the formal process of adding existing groups as members to other existing parent groups, supporting complex organizational structures.

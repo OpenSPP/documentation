@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Program Registrant Info
 
 The G2P Program Registrant Info module provides a centralized system for managing a beneficiary's application or enrollment details for specific social protection programs. It tracks the lifecycle of each application, from initial submission through to completion or rejection, and flexibly stores all program-specific information.

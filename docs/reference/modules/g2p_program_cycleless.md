@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Program Cycleless
 
 The 'G2P Program Cycleless' module extends OpenSPP's G2P Programs functionality to support social protection initiatives that operate without distinct, time-bound program cycles. It simplifies the management of ongoing programs by automating cycle-related processes, allowing for continuous benefit delivery and streamlined operations.

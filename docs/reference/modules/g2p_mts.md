@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Mts
 
 The `g2p_mts` module integrates OpenSPP's G2P Registry with external Micro-Transfer Systems (MTS), enabling the secure and efficient transfer of registrant data for payment processing or other services. It acts as a bridge, allowing OpenSPP to share specific registrant information with external systems based on defined criteria.

@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Odk Importer
 
 The G2P Odk Importer module connects OpenSPP with ODK Central, enabling the seamless and automated transfer of data collected through ODK forms directly into OpenSPP's registrant registries. This module automates the crucial step of bringing field-collected data into the core social protection platform.

@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Notifications Rest Api
 
 The G2P Notifications Rest Api module provides a secure and standardized API for managing beneficiary notification preferences within OpenSPP. It extends existing registrant and group management APIs to allow external systems to set and retrieve how individuals and group members prefer to receive program communications.

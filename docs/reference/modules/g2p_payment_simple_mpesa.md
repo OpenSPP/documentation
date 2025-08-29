@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Payment Simple Mpesa
 
 The 'G2P Payment Simple Mpesa' module integrates OpenSPP with the Mpesa mobile money platform, enabling direct and efficient disbursement of social protection payments to beneficiaries. It acts as a dedicated payment manager, streamlining the process of sending funds for various G2P programs.

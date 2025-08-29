@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Hide Menus Base
 
 The OpenSPP Hide Menus Base module provides a robust mechanism for administrators to control the visibility of menu items within the OpenSPP platform. It enables precise customization of the user interface, ensuring that different user roles encounter a streamlined and relevant set of functionalities.

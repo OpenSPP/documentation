@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Auth Oidc
 
 The `g2p_auth_oidc` module extends OpenSPP's authentication capabilities to support OpenID Connect (OIDC), enabling secure and flexible user logins through external identity providers. This module integrates OpenSPP with various OIDC-compliant services, streamlining user management and enhancing security.

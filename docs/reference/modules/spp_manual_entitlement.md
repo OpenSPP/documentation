@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Manual Entitlement
 
 The OpenSPP Manual Entitlement module provides a direct mechanism for administrators to create entitlements for beneficiaries within specific program cycles. This is particularly useful for social protection programs that require flexibility to address unique eligibility criteria, exceptional circumstances, or situations not fully covered by automated entitlement rules.

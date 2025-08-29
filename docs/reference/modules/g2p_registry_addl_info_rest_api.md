@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Registry Addl Info Rest Api
 
 This module extends OpenSPP's REST API to include the flexible, program-specific additional information captured for individual registrants and group members. It enables external systems to seamlessly read, create, and update all relevant registrant data, including custom fields, through API calls.

@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Proxy Means Test
 
 The G2P Proxy Means Test module provides OpenSPP with a robust, configurable, and automated mechanism for objective eligibility assessment in social protection programs. It allows administrators to define and apply a quantifiable scoring system to evaluate program applicants based on their collected data.

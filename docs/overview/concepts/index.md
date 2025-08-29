@@ -17,10 +17,7 @@ hidden: true
 ---
 
 digital_public_infrastructure
-social_registry
-farmer_registry
 integrated_beneficiary_registry
-sp_mis
 user_management
 data_collection_validation
 registrant_concepts

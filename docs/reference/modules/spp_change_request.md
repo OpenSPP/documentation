@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Change Request
 
 The OpenSPP Change Request module streamlines the process of modifying registrant information within the OpenSPP system. It provides a structured and auditable framework for submitting, reviewing, approving, and applying modifications to sensitive data.

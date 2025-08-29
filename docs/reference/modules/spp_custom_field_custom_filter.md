@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Custom Field Custom Filter
 
 The OpenSPP Custom Field Custom Filter module integrates custom-defined data fields directly into the platform's powerful filtering system. This module empowers program administrators to make the unique data they collect fully actionable, enabling more precise data analysis and operational management.

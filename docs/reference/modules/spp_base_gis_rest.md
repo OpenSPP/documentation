@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Base Gis Rest
 
 The OpenSPP Base GIS REST module provides secure, programmatic access to OpenSPP's Geographical Information System (GIS) data through a set of RESTful API endpoints. It leverages industry-standard OAuth 2.0 for robust authentication, enabling external applications and services to integrate with and consume geospatial information from the OpenSPP platform.

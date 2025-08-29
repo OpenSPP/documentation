@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Custom Field
 
 The OpenSPP Custom Field module enhances the platform's flexibility by allowing administrators to define and add custom data fields directly to registrant profiles. This capability ensures that OpenSPP can capture highly specific information tailored to the unique needs of various social protection programs and farmer registries.

@@ -15,14 +15,15 @@ This guide explains how to connect to and interact with OpenSPP Registry using t
 - User credentials or API key with appropriate permissions.
 - Python 3.x and the `requests` library installed (`pip install requests`).
 
-## 1. Understanding JSON-RPC in OpenSPP
+## Process
+### Understanding JSON-RPC in OpenSPP
 
 OpenSPP exposes much of its data and functionality via JSON-RPC endpoints. You can use these endpoints to authenticate, read, create, update, and delete records from external applications.
 
 **Endpoint:**  
 - `/jsonrpc` — All JSON-RPC calls (authentication and model methods)
 
-## 1.1 JSON-RPC Payload Structure and Methods
+### JSON-RPC Payload Structure and Methods
 
 All interactions with the OpenSPP JSON-RPC API use a standard payload structure. Each request is a JSON object with the following keys:
 
@@ -59,11 +60,11 @@ payload = {
 
 ---
 
-## 1.2 Common Model Methods and Args
+### Common Model Methods and Args
 
 When using the `"object"` service with the `"execute_kw"` method, you can call various model methods. Here are the most common:
 
-### `create`
+**`create`**
 Creates a new record.
 
 **Args:**
@@ -79,7 +80,7 @@ Creates a new record.
 **Result:**
 Returns the ID of the newly created record.
 
-### `write`
+**`write`**
 Updates existing records.
 
 **Args:**
@@ -96,7 +97,7 @@ Updates existing records.
 **Result:**
 Returns a dictionary indicating the result of the update.
 
-### `unlink`
+**`unlink`**
 Deletes records.
 
 **Args:**
@@ -113,7 +114,7 @@ Deletes records.
 Returns a dictionary indicating the result of the deletion.
 
 
-### `search_read`
+**`search_read`**
 Searches for records and reads their fields.
 
 **Args:**
@@ -141,7 +142,7 @@ Returns a dictionary of the search results.
 
 ---
 
-## 2. Authentication
+### Authentication
 
 You must authenticate before accessing most data. Use your password or an API key (recommended).
 
@@ -170,9 +171,9 @@ if not uid:
 print("Authenticated UID:", uid)
 ```
 
-## 3. Working with Individuals
+### Working with Individuals
 
-### Gather the Fields
+**Gather The Fields**
 
 For this example we are going to use these fields:
 
@@ -184,7 +185,7 @@ For this example we are going to use these fields:
 - `is_registrant` (boolean, default=True)
 - `is_group` (boolean, default=False)
 
-### Example: Create an Individual
+**Example: Create an Individual**
 
 ```python
 # First, get a gender_id (e.g., for "Male")
@@ -254,9 +255,9 @@ updated = response["result"]
 print("Result:", updated)
 ```
 
-## 4. Working with Groups
+### Working with Groups
 
-### Required Fields
+**Gather The Fields**
 
 For this example we are going to use these fields:
 
@@ -266,7 +267,7 @@ For this example we are going to use these fields:
 - `is_group` (boolean, default=True)
 
 
-### Example: Create a Group
+**Example: Create a Group**
 
 ```python
 # Get a group kind (e.g., "Household")
@@ -333,9 +334,9 @@ updated = response["result"]
 print("Result:", updated)
 ```
 
-## 5. Working with Memberships
+### Working with Memberships
 
-### Required Fields
+**Gather The Fields**
 
 From your `g2p_registry_membership` module, the main model is likely `g2p_registry_membership.group_membership`. Required fields typically include:
 - `individuak` (many2one, required)
@@ -344,7 +345,7 @@ From your `g2p_registry_membership` module, the main model is likely `g2p_regist
 - `start_date` (date, required)
 - Any other required fields as defined in your model
 
-### Example: Add an Individual to a Group
+**Example: Add an Individual to a Group**
 
 ```python
 # Get a membership kind (e.g., "Head")
@@ -391,13 +392,13 @@ membership_id = response["result"]
 print("Created Membership ID:", membership_id)
 ```
 
-## 6. Security: Using API Keys
+### Security: Using API Keys
 
 - **API keys** are recommended over passwords for scripts and integrations.
 - Generate API keys in your OpenSPP user preferences under **Account Security**.
 - Use the API key in place of your password in all JSON-RPC calls.
 
-## 7. Best Practices
+## Best Practices
 
 1. **Use API Keys**: Safer than passwords; revoke if compromised.
 2. **Limit Permissions**: Create dedicated users for API access with only necessary rights.
@@ -408,5 +409,4 @@ print("Created Membership ID:", membership_id)
 ## References
 
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Developer Guide](https://docs.openspp.org/)
 - [JSON-RPC Specification](https://www.jsonrpc.org/specification)

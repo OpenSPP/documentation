@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Service Points
 
 The OpenSPP Service Points module streamlines the management of physical or virtual locations where social protection services are delivered. It links these service points to geographical areas, company entities, and user accounts, ensuring efficient and localized program implementation.

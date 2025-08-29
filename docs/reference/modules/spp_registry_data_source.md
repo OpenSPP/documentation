@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Registry Data Source
 
 The OpenSPP Registry Data Source module provides the essential framework for securely connecting OpenSPP to various external data systems. This module enables the platform to integrate vital information from sources such as national farmer registries, existing social protection program databases, or other external data providers, ensuring that OpenSPP can access and utilize external data for comprehensive program management.

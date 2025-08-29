@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Enumerator
 
 The G2P Enumerator module is a core component for capturing, managing, and linking essential field-collected data—such as geographical coordinates and enumerator details—directly to registrant records within OpenSPP. It ensures that crucial context from data collection activities is preserved and associated with individuals and groups.

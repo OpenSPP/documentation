@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Farmer Registry Dashboard
 
 The OpenSPP Farmer Registry Dashboard module provides interactive dashboards and reports for visualizing data collected within the OpenSPP Farmer Registry. It transforms raw data into actionable insights, enabling users to monitor key metrics and identify trends related to registered farmers and their agricultural activities.

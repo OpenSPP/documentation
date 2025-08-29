@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Program Approval
 
 The 'G2P Program Approval' module enhances OpenSPP's social protection programs by introducing a robust, multi-stage approval workflow for entitlements. It ensures that benefits are thoroughly reviewed and authorized before disbursement, adding a critical layer of oversight and accountability.

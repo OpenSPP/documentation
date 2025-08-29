@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Payment Interop Layer
 
 The G2P Payment Interop Layer module provides a crucial bridge between OpenSPP's social protection programs and external digital financial service providers (DFSPs) or payment gateways. It enables OpenSPP to securely and efficiently send payment instructions for beneficiary disbursements to these external systems, ensuring timely and accurate delivery of benefits.

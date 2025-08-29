@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Base Demo
 
 The OpenSPP Base Demo module populates the OpenSPP system with essential sample data, enabling users to immediately explore and understand the platform's core functionalities. It provides a pre-configured environment for training, demonstrations, and initial system familiarization without requiring manual data entry.

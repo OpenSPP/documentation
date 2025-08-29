@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Registry Documents
 
 The G2P Registry Documents module provides essential functionality for attaching, storing, and managing supporting documents directly within OpenSPP registrant profiles. It ensures that all necessary paperwork, identification, and evidence related to individuals and groups are centrally accessible and securely stored.

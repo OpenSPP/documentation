@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Openid Vci
 
 The `g2p_openid_vci` module enables OpenSPP to function as a secure and interoperable issuer of Verifiable Credentials (VCs) using OpenID Connect Verifiable Credentials Issuer (OpenID VCI) standards. It allows the platform to generate and manage digital proofs of identity, program participation, or beneficiary status, enhancing trust and streamlining interactions within social protection programs.

@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Registry Group
 
 The G2P Registry Group module provides the essential framework for organizing and managing various types of collective entities within the OpenSPP platform. It allows users to define, categorize, and track groups of registrants, such as farmer cooperatives, community associations, or beneficiary households, making it easier to manage programs targeting collective bodies.

@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Notifications Voucher
 
 The G2P Notifications Voucher module automates the process of informing beneficiaries when their social protection vouchers have been successfully generated. It ensures timely and relevant communication by integrating directly with the voucher creation workflow.

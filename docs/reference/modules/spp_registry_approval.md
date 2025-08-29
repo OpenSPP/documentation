@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Registry Approval
 
 The OpenSPP Registry Approval module establishes a crucial workflow for validating and managing the official status of individuals and groups within the OpenSPP registry. It ensures that all registrant data is formally reviewed and approved before being utilized in social protection programs or farmer registries.

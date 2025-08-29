@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Payment Files
 
 The `g2p_payment_files` module in OpenSPP enables the generation, customization, and secure management of payment-related documents. This includes creating printable vouchers, digital payment instructions, or data files for beneficiaries based on their entitlements.
