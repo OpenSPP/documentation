@@ -41,3 +41,14 @@ linkify-it-py==2.0.0
 PyYAML==6.0
 beautifulsoup4==4.11.2  # For HTML processing
 livereload==2.6.3  # Required by sphinx-autobuild
+
+psycopg2-binary==2.9.5  # Use binary version for easy installation
+werkzeug==2.2.2  # Required by Odoo
+passlib==1.7.4  # Required by Odoo
+decorator==5.1.1  # Required by Odoo
+PyPDF2==2.12.1  # Required by Odoo
+reportlab==3.6.12  # Required by Odoo for PDF generation
+polib==1.1.1  # Required by Odoo for translations
+psutil==5.9.4  # Required by Odoo for system monitoring
+pytz
+lxml==4.9.3
