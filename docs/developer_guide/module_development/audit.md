@@ -163,7 +163,7 @@ For parent/child rules (requires `spp_audit_post`), also pass `parent_rule_name`
 
 ## Best Practices
 
-- **Use Targeted Field Lists**: Keep `field_to_log_ids` focused on business-critical fields.
+**Use Targeted Field Lists**: Keep `field_to_log_ids` focused on business-critical fields.
 
 ## References
 

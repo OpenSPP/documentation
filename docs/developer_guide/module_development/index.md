@@ -35,7 +35,6 @@ This modular approach is the foundation for all advanced customizations. From he
 - Adding more complex field types (Selection, Many2one, etc.).
 - Creating entirely new models and menus.
 - Adding business logic with Python methods.
-- Building more advanced features documented in the {doc}`Module Development Guides <index>`.
 
 By mastering this pattern, you can tailor OpenSPP to meet any specific program requirement while ensuring your implementation remains clean, stable, and easy to maintain.
 

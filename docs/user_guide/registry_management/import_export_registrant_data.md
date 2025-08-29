@@ -27,7 +27,7 @@ By the end of this tutorial, you will have a clear understanding of the purpose 
 
 The process involves selecting existing individual or group records to export, defining export parameters, and saving the file as either **CSV** or **XLSX**. This exported file can be used for record-keeping or for importing registrant data back into OpenSPP.
 
-## Perform export registrant
+### Perform export registrant
 
 Specifying export parameters is done in the Registry section of OpenSPP, which you can access by clicking on the menu icon in the top-left corner and selecting **Registry**.
 
@@ -63,9 +63,9 @@ By clicking on the dropdown arrow, click on **New template**, set a name for you
 After saving, you can select your template by clicking on the dropdown arrow again and clicking the name of your template.
 The specific steps and interface may vary depending on the OpenSPP version. Always seek assistance from the support team if you need further guidance.
 
-## Perform Import
+### Perform Import
 
-### Import to update existing registrant data
+#### Import to update existing registrant data
 
 To update existing records or append new data within OpenSPP, select the checkbox labeled I want to update data (import-compatible export). Upon selection, the exported file will automatically include an Id column, which contains the external identifier for each registrant or data entry. This identifier is essential for accurately matching and updating existing records. Additionally, enabling this option will exclude certain fields from the Available fields list—specifically those that cannot be re-imported into OpenSPP. For instance, the Age field is omitted, as it is a derived value based on the Date of Birth and therefore not eligible for direct modification via import.
 
@@ -79,7 +79,7 @@ After exporting your file, you may proceed to edit the values as needed.
 
 You can then proceed to **Preparing file for import**.
 
-### Import to add new registrant data
+#### Import to add new registrant data
 
 If the export aims to add a new individual or group (as opposed to updating already existing data), you should export headers that are relevant to your import. See **Define export parameters** section of this document to learn more. You only need to export one record from groups or individuals to obtain the correct headers to use. See below for an example of a file with the relevant headers and a single record.  
 
@@ -89,7 +89,7 @@ Then once the headers are finalized, you can add data under the associated colum
 
 You can then proceed to **Preparing file for import**.
 
-## Preparing file for import
+### Preparing file for import
 
 To add new individuals or groups, prepare the Excel file for import by converting cells to text for all fields that consist of numbers; for instance, **phone**, **date of birth**, and **registration date**. This is to avoid data errors when inputting number values into these fields. For example the **phone field**, where mobile numbers may start with the **+** symbol or with leading zeroes can cause a mobile number to be formatted unexpectedly. It is therefore important to format cells to text before adding number values. Also note that when saving the file, only CSV and XLSX formatted files are allowed for import.
 
@@ -97,7 +97,7 @@ To update existing individuals or groups, open the exported Excel file and modif
 
 ![](import_export_registrant_data/import_users_sample_error.png)
 
-## Navigate to import page
+### Navigate to import page
 
 After the file is verified and ready, the import can be performed using an admin account. Navigate to the **Registry**, and depending on what type of data you are going to import, either click **Individuals** for individual records or **Groups** for group records. Click on the **Gear** icon, then choose **Import records** from the dropdown menu. 
 
@@ -117,11 +117,11 @@ When the file is considered valid, click the **Import** button. This will redire
 
 ![](import_export_registrant_data/import_export_successful_import.png)
 
-## Error Handling
+### Error Handling
 
 OpenSPP displays different types of error messages on the import page when encountering an error after clicking the **Test** button. This ensures no invalid value or file would compromise data in OpenSPP. Therefore, it is important to always **Test** the file first before importing. Here are common errors encountered during import.
 
-### Error: "No matching records found"
+#### Error: "No matching records found"
 
 Some fields require values that are predefined in OpenSPP, such as the **category\_id** field. Setting a value in this column that does not match the values found in OpenSPP will return an error message. This error will be similar to the screenshot provided below.  
 ![](import_export_registrant_data/import_users_errors_found.png)
@@ -130,21 +130,21 @@ To resolve this type of error, only type in values that are defined in OpenSPP, 
 
 ![](import_export_registrant_data/import_users_regsitrant_tags.png)
 
-### Error: "To import, select a field"
+#### Error: "To import, select a field"
 
 If OpenSPP could not recognize your header, it will display **To import, select a field** beside the unrecognized header, similar to the screenshot below.  
 ![](import_export_registrant_data/import_users_select_a_field.png)
 
 To resolve this error, if you are familiar with what field you want to associate with your header, you can click **To import, select a field,** and then select from the list of fields you wish to associate your field values with, otherwise, you can remove the header from your Excel file as the field you are trying to import is not available to be imported into OpenSPP.
 
-### Error: "Column contains incorrect values"
+#### Error: "Column contains incorrect values"
 
 Another error is the date format, if the imported format for fields related to date is incorrect, OpenSPP will display an error message. This error will be similar to the screenshot provided below.  
 ![](import_export_registrant_data/import_users_date_error.png)
 
 To resolve this error, fix the date format from your Excel file to this format **YYYY-MM-DD**, save the file, then import to test again.
 
-### Error: "You are not allowed to access ‘Import Matching’"
+#### Error: "You are not allowed to access ‘Import Matching’"
 
 An issue was encountered when attempting to import using an account with the wrong access rights permissions. This error will be similar to the screenshot provided below.  
 ![](import_export_registrant_data/import_users_access_error_import.png)

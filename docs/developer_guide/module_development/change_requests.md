@@ -377,7 +377,7 @@ access_spp_change_request_add_children_user,spp.change.request.add.children.user
 
 ## Best Practices
 
-- Always start with a clear definition of the data you need to collect and the system changes that need to occur upon approval.
+Always start with a clear definition of the data you need to collect and the system changes that need to occur upon approval.
 
 ## References
 

@@ -39,7 +39,7 @@ After completing this section, you will be able to configure OpenSPP to reliably
 
 The process involves activating developer mode, navigating to the outgoing email server settings, creating a new configuration, and testing it to ensure it works correctly.
 
-#### Step 1: Activate Developer Mode
+#### Activate Developer Mode
 
 To access the technical settings required for email configuration, you must first activate developer mode.
 
@@ -51,7 +51,7 @@ To access the technical settings required for email configuration, you must firs
 
 Once activated, a bug icon will appear in the top-right corner of the header, and new technical menus will become available.
 
-#### Step 2: Navigate to Outgoing Email Servers
+#### Navigate to Outgoing Email Servers
 
 With developer mode active, you can now access the menu for configuring outgoing email servers.
 
@@ -61,7 +61,7 @@ With developer mode active, you can now access the menu for configuring outgoing
 
 ![](email_gateway/A-step02-open-outgoing-email-servers.jpg)
 
-#### Step 3: Create a New Server Configuration
+#### Create a New Server Configuration
 
 On the **Outgoing Email Servers** page, you will see a list of any existing servers.
 
@@ -71,7 +71,7 @@ On the **Outgoing Email Servers** page, you will see a list of any existing serv
 
 This will open a new form where you can enter your SMTP server details.
 
-#### Step 4: Fill in Server Details
+#### Fill in Server Details
 
 Now, fill in the form with the details from your email provider.
 
@@ -85,7 +85,7 @@ Now, fill in the form with the details from your email provider.
 
 ![](email_gateway/A-step04-fill-in-server-details.jpg)
 
-#### Step 5: Test and Save the Configuration
+#### Test and Save the Configuration
 
 After filling in all the details, it's crucial to test the connection to ensure everything is correct.
 
@@ -123,11 +123,11 @@ After completing this section, you will be able to configure OpenSPP to fetch em
 
 The process is similar to configuring an outgoing server, involving developer mode and navigating to the technical settings.
 
-#### Step 1: Activate Developer Mode
+#### Activate Developer Mode
 
 If you have not already, activate developer mode to access the technical settings.
 
-#### Step 2: Navigate to Incoming Email Servers
+#### Navigate to Incoming Email Servers
 
 1.  Go back to the main **Settings** page.
 2.  Click on the **Technical** menu in the header.
@@ -135,7 +135,7 @@ If you have not already, activate developer mode to access the technical setting
 
 ![](email_gateway/B-step02-open-incoming-email-servers.jpg)
 
-#### Step 3: Create a New Server Configuration
+#### Create a New Server Configuration
 
 1.  On the **Incoming Email Servers** page, click the **New** button.
 
@@ -143,7 +143,7 @@ If you have not already, activate developer mode to access the technical setting
 
 This will open a form to enter your incoming server details.
 
-#### Step 4: Fill in Server Details
+#### Fill in Server Details
 
 Fill in the form with the details for the mailbox you want OpenSPP to monitor.
 
@@ -159,7 +159,7 @@ Fill in the form with the details for the mailbox you want OpenSPP to monitor.
 
 ![](email_gateway/B-step04-fill-in-server-details.jpg)
 
-#### Step 5: Test and Save
+#### Test and Save
 
 1.  Click the **Test & Confirm** button.
 2.  OpenSPP will attempt to connect to the mailbox. If successful, you will see a confirmation.
@@ -170,6 +170,3 @@ Fill in the form with the details for the mailbox you want OpenSPP to monitor.
 
 OpenSPP will now periodically check this mailbox for new emails and create records based on your configuration.
 
-## Conclusion
-
-You have successfully configured OpenSPP's email gateway for both outgoing and incoming mail. This is a critical step for any production deployment, ensuring that system emails are sent reliably and that you can automate workflows by processing incoming emails. You can now be confident that users will receive important notifications and your system's communication is secure, professional, and efficient.
