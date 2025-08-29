@@ -210,8 +210,13 @@ Create `data/area_kind_data.xml` to add custom area types:
 
 On your `models/area.py` you can add computed fields, constrains, and validations:
 
+First, add the necessary imports:
 ```python
-    # Add api on the import of odoo
+from odoo import api, fields, models
+from odoo.exceptions import ValidationError
+```
+
+```python
 
     area_population_density = fields.Float(
         string="Population Density",
@@ -242,6 +247,7 @@ On your `models/area.py` you can add computed fields, constrains, and validation
                 if record.area_population_year > current_year:
                     raise ValidationError("Population year cannot be in the future.")
 ```
+Then add the custom computed field to the `area_views.xml` file
 
 ### Step 8: Install and Test
 
