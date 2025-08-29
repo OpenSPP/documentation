@@ -68,7 +68,7 @@ To see the review status system in action:
 
 ### Test Pages
 
-- **Approved**: {doc}`../getting_started/installation_pypi`
+- **Approved**: {doc}`../getting_started/installation_deb`
 - **Reviewed**: {doc}`../community/code_of_conduct`  
 - **Needs Review**: {doc}`../overview/concepts/user_management`
 

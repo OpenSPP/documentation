@@ -12,7 +12,7 @@ In this tutorial, you will learn how to use the Document Management System featu
 
 ## Prerequisites  
 To utilize the DMS feature, you need to:  
-- Have existing individual records in your registry, either by creating records manually or importing records into OpenSPP. Learn more about this in the guide  {doc}`register_individual` or {doc}`import_data`
+- Have existing individual records in your registry, either by creating records manually or importing records into OpenSPP. Learn more about this in the guide  {doc}`register_individual` or {doc}`import_export_registrant_data`
 - By default, the system administrator has sufficient permission to access the DMS. Learn more about this in the guide {doc}`../administration/user_access`
 - Ensure that the DMS module `spp_dms` is properly installed and activated. Note that the Change_request (`spp_change_request`) module automatically installs and activates the DMS module.  
 - A change request must have an attached document.
@@ -49,18 +49,18 @@ To preview attached documents, navigate to `DMS → Files`. All attached documen
 > **Note:** The number shown next to each change request or directory represents the total number of documents attached to that specific request or directory.  
 ![](dms/dms_attachments_count.png)
 
-##### Preview document  
+#### Preview document  
 To preview a document, click on the eye button. A window should appear displaying a preview of the document.  
 ![](dms/dms_appear_as_pdf.png)
 
-##### Download document
+#### Download document
 To download a document from a directory, click on a directory and it should display all documents associated with the directory.  
 ![](dms/dms_download_attachment_from_files.png)
 
 Click on the document you wish to download and click on the download icon.  
 ![](dms/dms_download_button.png)
 
-##### Edit document attachment  
+#### Edit document attachment  
 It is also possible to edit a document attachment in a change request. Click on the directory or change request you wish to update.  
 ![](dms/dms_select_change_request.png)
 

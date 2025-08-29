@@ -7,9 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Creating a Program
 
-
-
----
 ## Introduction
 
 This tutorial offers a comprehensive, step-by-step guide for establishing a social protection program using the OpenSPP platform. It is designed to assist users in configuring programs according to specific objectives and operational requirements.
@@ -21,7 +18,7 @@ To create a social protection program using OpenSPP, you need to:
 - Have a clear understanding of the goals and objectives of your social protection program.
 - Prepare the details of your program in advance. This includes deciding on the program name, the target beneficiary types, and the specific benefits that will be offered.
 - Have an access role as a system administrator or global program manager to perform tasks in this tutorial. Learn more about this in the documentation {doc}`../administration/user_access`.
-- Have existing groups or individuals in your registry either through manual creation or through import. Learn more about this in the documentation {doc}`../registry_management/import_data`.
+- Have existing groups or individuals in your registry either through manual creation or through import. Learn more about this in the documentation {doc}`../registry_management/import_export_registrant_data`.
 
 ## Objective
 
@@ -83,7 +80,7 @@ The **Entitlement Manager** defines what should be distributed to the beneficiar
 
 ### Import Registrants
 
-The **Import Registrants** feature allows you to import registrant records into the new program as part of the program creation and is triggered by selecting **Yes** in the final step. If the option **No** is selected, this import needs to be done afterwards. Learn more about this in the documentation {doc}`enroll_beneficiaries`.
+The **Import Registrants** feature allows you to import registrant records into the new program as part of the program creation and is triggered by selecting **Yes** in the final step. If the option **No** is selected, this import needs to be done afterwards. Learn more about this in the documentation {doc}`enrol_beneficiaries`.
 
 After choosing whether to import the registrants as part of the program creation or not, click **Create**.
 

@@ -39,7 +39,6 @@ Administrative tasks and system management:
 - {doc}`administration/user_access`
 - {doc}`administration/service_points`
 - {doc}`administration/managing_custom_fields`
-- {doc}`administration/using_audit_logs`
 - {doc}`administration/import_areas`
 - {doc}`administration/hardware_integration`
 
