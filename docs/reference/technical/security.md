@@ -56,12 +56,6 @@ The solution is designed to handle varying data demands, including scenarios of 
 
 ---
 
-## Merged Content
-
-
-
-### Content from docs/explanation/security_archi.md
-
 # Security Architecture
 
 ![](images/security_architecture.jpg)

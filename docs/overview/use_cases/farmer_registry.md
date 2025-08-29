@@ -11,7 +11,7 @@ html_meta:
 
 This page explains how OpenSPP helps you implement effective Farmer Registries, outlining key principles and guiding you to relevant features. It serves as an entry point for users interested specifically in this use case.
 
-### 1. Introduction: What is a Farmer Registry?
+## 1. Introduction: What is a Farmer Registry?
 
 *   **General Definition:** A {term}`farmer registry` is a system designed to collect, store, and manage information about {term}`farm holdings` (the land and associated assets) and {term}`farmholders` (the individuals or groups managing the farms).
     

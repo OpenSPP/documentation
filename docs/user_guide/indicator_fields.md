@@ -31,7 +31,7 @@ After completing this tutorial, you will understand how to create, configure, an
 
 The process involves navigating to the Custom Fields menu, defining the properties of the new indicator, providing the calculation logic, and verifying its presence on the group records.
 
-### Step 1: Navigate to Custom Fields
+### Navigate to Custom Fields
 
 First, access the Custom Fields management interface.
 1.  Click on the menu icon in the top-left corner and select **Registry**.
@@ -40,7 +40,7 @@ First, access the Custom Fields management interface.
 
 ![](indicator_fields/step01_configuration_custom_fields.jpg)
 
-### Step 2: Create a New Field
+### Create a New Field
 
 On the **Custom Fields** page, you will see a list of existing custom fields.
 1.  Click the **New** button to start creating a new indicator field.
@@ -51,7 +51,7 @@ The **Custom Fields** form view will appear.
 
 ![](indicator_fields/step02a_custom_fields_form_view.jpg)
 
-### Step 3: Configure Basic Properties
+### Configure Basic Properties
 
 Now, define the basic characteristics of your new indicator field. For this example, we are counting male members in a group.
 
@@ -64,7 +64,7 @@ Now, define the basic characteristics of your new indicator field. For this exam
 
 ![](indicator_fields/step03_set_type_calculated.jpg)
 
-### Step 4: Configure Advanced Properties
+### Configure Advanced Properties
 
 Since this is a calculated field, you must provide the logic for its computation in the **Properties** tab.
 
@@ -86,7 +86,7 @@ self.compute_count_and_set_indicator('x_ind_grp_total_male', kinds, domain)
 
 ![](indicator_fields/step04_specify_compute_field_code.jpg)
 
-### Step 5: Save and Open a Group
+### Save and Open a Group
 
 Once all properties are configured, save the new field.
 
@@ -95,7 +95,7 @@ Once all properties are configured, save the new field.
 
 ![](indicator_fields/step05_open_group_list_view.jpg)
 
-### Step 6: Verify the Indicator Field
+### Verify the Indicator Field
 
 1. To verify, open any record in the **Groups** list view.
 
@@ -109,8 +109,4 @@ Once all properties are configured, save the new field.
 
 ![](indicator_fields/step06b_check_new_indicator_field.jpg)
 
-## Conclusion
 
-Congratulations! You have successfully created your first indicator field. This is just the beginning of what you can achieve with this powerful feature. By combining different data points from the registry, you can create a wide range of indicators to support your program's unique needs.
-
-These indicators can be used to automate eligibility checks, create dynamic reports, and gain deeper insights into your beneficiary population. Don't hesitate to experiment with different domains and computations to tailor OpenSPP to your specific operational requirements. For more complex scenarios, remember that developers can create even more sophisticated indicators through custom code.

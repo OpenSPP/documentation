@@ -56,7 +56,7 @@ Click **Create** to proceed. Clicking Create will generate a draft file for your
 
  ![](using_change_request/change_request_create_button.png)
 
-### Updating Applicant Information
+#### Updating Applicant Information
 
 From the Change request page, select a **Change request** file currently in Draft state.
 
@@ -79,9 +79,9 @@ Navigate to the **Attachments** tab:
 
 Click **Request Validation** to submit for approval.
 
-## Validation Workflow
+### Validation Workflow
 
-### Review request by Local Validator Role
+#### Review request by Local Validator Role
 
 Log in using a **Local Validator** user account then go to **Change Request**.
 
@@ -99,7 +99,7 @@ Click **Validate** to partially approve the change request. A success notificati
 
 Partially approved change requests are then reviewed by users with HQ validator roles.
 
-### Review request by HQ Validator Role
+#### Review request by HQ Validator Role
 
 Log in using a **HQ Validator** user account then go to **Change Request**.
 
@@ -116,7 +116,7 @@ Change requests approved by **HQ validator** users are applied directly to the a
 - Please note that change requests may be rejected by the **HQ validator** user even if they haven't been approved by a local validator user.  
 - Please note that change requests cannot be validated by the **HQ validator** user unless they have been pre-validated by a **local validator** user.
 
-##  **Reviewing Changes**
+###  Reviewing Changes
 
 Log back in as Administrator or Registrar and go to Registry→Individual.
 

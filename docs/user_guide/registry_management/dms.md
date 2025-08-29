@@ -29,7 +29,7 @@ To modify document types in DMS, navigate to `DMS → Configuration → Categori
 
 #### Create new document type  
 Click **New** to create a new document type. Enter the name of the ID type, then click **Save** to apply the changes.  
-![](dms/Dms_modify_document_type.png)S
+![](dms/Dms_modify_document_type.png)
 
 #### Edit document type  
 To edit a document type, click on the name of the document type to edit it directly. Then click **Save** to complete the changes.  

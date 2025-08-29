@@ -46,12 +46,17 @@ Administrative tasks and system management:
 ## Other Features
 
 - {doc}`pos_usage`
-- {doc}`reporting_dashboards`
 - {doc}`grievance_management`
-- {doc}`indicator_fields`
-- {doc}`email_gateway`
-- {doc}`inventory_configuration`
 - {doc}`consent_management`
+- {doc}`indicator_fields`
+- {doc}`inventory_configuration`
+- {doc}`email_gateway`
+
+
+
+
+
+
 
 ```{toctree}
 :maxdepth: 2
@@ -61,7 +66,6 @@ registry_management/index
 program_management/index
 administration/index
 pos_usage
-reporting_dashboards
 grievance_management
 consent_management
 indicator_fields

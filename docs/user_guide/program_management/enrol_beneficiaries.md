@@ -32,7 +32,7 @@ Upon finalizing the creation of the program, the process progresses through two 
 
 Depending on the choices made in the program setup, there are two different ways to perform these steps, both of them are described below.
 
-### Import and enrolment as part of program setup
+### Import and Enrolment as part of Program Setup
 
 If **Yes** is selected during the final step of program setup, both the beneficiary **import** and **enrolment** processes are automatically executed as part of program creation.
 
@@ -48,7 +48,7 @@ Click the **Beneficiaries** button to view the imported and enrolled beneficiari
 
 This confirms that the beneficiaries are imported and enrolled.
 
-### Import and enrolment after program creation
+### Import and Enrolment after Program Creation
 
 If the option **No** has been selected as the final step of the program setup, both Import and Enrol steps needs to be done as a separate action prior to proceeding.
 

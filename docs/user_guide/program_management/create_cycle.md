@@ -5,7 +5,7 @@ reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Create cycles & prepare entitlements within a program
+# Create Cycles & Prepare Entitlements
 
 ## Introduction
 
@@ -29,7 +29,7 @@ To begin configuring cycles and preparing entitlements in OpenSPP, Login into yo
 
 Please note that any configuration changes made to your program will not impact cycles that have already been approved. Such changes will only apply to cycles created after the modifications. However, if you are already satisfied with the current program configurations, you may proceed to [Creating Cycle](#creating-cycle).
 
-### Editing program configuration
+### Editing Program Configuration
 
 Cycle configuration is initially performed during program creation, as detailed in the Configure the Cycle Manager section of {doc}`create_program`. However, you may also update the cycle configuration for an existing program as needed.
 
@@ -37,7 +37,7 @@ Click on a program and navigate to the **Configuration** tab.
 
 ![](create_program_cycle_prepare_entitlements/2.png)
 
-### Eligibility managers
+### Eligibility Managers
 
 You can edit the eligibility manager by clicking on the green icon.
 
@@ -63,7 +63,7 @@ To apply the latest eligibility changes for the cycles under **Draft** state, cl
 
 The **Beneficiaries** count should be updated accordingly.
 
-### Cycle manager
+### Cycle Manager
 
 You can edit the cycle manager by clicking on the green icon.
 
@@ -79,7 +79,7 @@ Please note that changes you made on **Auto-Approve entitlements** and **Approve
 
 ![](create_program_cycle_prepare_entitlements/10.png)
 
-### Entitlement manager
+### Entitlement Manager
 
 You can edit the entitlement manager by clicking on the green icon.
 
@@ -111,7 +111,7 @@ Once a cycle is created, click on the green button beside it to open it. You may
 
 If there were beneficiaries added into the program after this cycle was created, you may click on **Copy Beneficiaries from Program** to sync beneficiaries into this cycle. The **Verify Eligibility** button is to check if beneficiaries enrolled would still qualify the criteria set for this cycle.
 
-### Preparing entitlements
+### Preparing Entitlements
 
 It is important to prepare entitlements for a cycle before a cycle is approved, as you will not be able to prepare entitlements anymore once the cycle has been approved.
 
@@ -139,7 +139,7 @@ Click further on an entitlement to show more details.
 
 ![](create_program_cycle_prepare_entitlements/21.png)
 
-### Approving a cycle
+### Approving a Cycle
 
 After entitlements are prepared, the next step is to approve the cycle. Please note that only the assigned user with correct access rights is able to approve cycles for the program. This is set during the creation of the program, however it can also be changed in the **Approver group** dropdown within the Cycle manager of the program configuration.
 
@@ -161,7 +161,7 @@ Please note that enabling Auto-approve entitlements in the program’s [Cycle ma
 
 If entitlements were not auto approved successfully. It could be that the [Allocate funds](https://docs.openspp.org/tutorial/user_guides/allocate_funds.html) for the program are insufficient or missing. See the documentation Allocate funds for more details.
 
-### Approving entitlements
+### Approving Entitlements
 
 After approving a cycle, the next step is to approve the entitlements. Please note that only the assigned user with correct access rights is able to approve entitlements for the cycle. This is set during the creation of the program, however it can also be changed in the **Entitlement Validation Group** dropdown within the [Entitlement manager](#entitlement-manager) of the program configuration.
 

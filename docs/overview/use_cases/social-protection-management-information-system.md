@@ -15,7 +15,7 @@ html_meta:
 
 This page explains how OpenSPP helps you implement effective Social Protection Management Information Systems (SP-MIS), outlining key principles and guiding you to relevant features. It serves as an entry point for users interested specifically in this use case.
 
-### 1. Introduction: What is a Social Protection Management Information System (SP-MIS)?
+## 1. Introduction: What is a Social Protection Management Information System (SP-MIS)?
 
 * **General Definition:** A Social Protection Management Information System (SP-MIS) is a digital platform designed to manage and automate the administrative processes of social protection programs. It serves as the operational backbone for implementing, monitoring, and evaluating social safety nets, social insurance, and other social assistance programs.
 
@@ -25,7 +25,7 @@ This page explains how OpenSPP helps you implement effective Social Protection M
 
 * **Further Reading:** For a deeper dive into the concept, see `/overview/concepts/sp_mis`.
 
-### 2. Key Principles & Components of an SP-MIS (General)
+## 2. Key Principles & Components of an SP-MIS (General)
 
 Implementing a successful SP-MIS involves considering several key components and principles:
 
@@ -53,7 +53,7 @@ Implementing a successful SP-MIS involves considering several key components and
     * **Data Quality:** Maintaining the accuracy and completeness of data over time.
     * **Cost & Sustainability:** Managing the resources required for system setup and maintenance.
 
-### 3. Implementing an SP-MIS with OpenSPP
+## 3. Implementing an SP-MIS with OpenSPP
 
 OpenSPP's modular architecture provides a strong foundation for building an SP-MIS tailored to specific needs. Here’s how its features map to the general principles:
 
@@ -65,7 +65,7 @@ OpenSPP's modular architecture provides a strong foundation for building an SP-M
 * **Detailed Features:** Explore features relevant to SP-MIS in `/overview/features/registry_data_management`.
 * **Relevant Modules:** Find detailed documentation for key modules in the `/reference/modules/index`.
 
-### 4. Getting Started (Links)
+## 4. Getting Started (Links)
 
 * **Installation:** Start with the general OpenSPP installation guide: `/getting_started/index`.
 * **Initial Setup:**
@@ -74,7 +74,7 @@ OpenSPP's modular architecture provides a strong foundation for building an SP-M
     * Enrolling Beneficiaries: `../../user_guide/program_management/enrol_beneficiaries`
     * Importing Initial Data: `../../user_guide/registry_management/import_export_registrant_data`.
 
-### 5. Common Tasks & User Guides (Links)
+## 5. Common Tasks & User Guides (Links)
 
 * **Program Management:**
     * Creating Cycles & Preparing Entitlements: `../../user_guide/program_management/create_cycle`
@@ -83,14 +83,14 @@ OpenSPP's modular architecture provides a strong foundation for building an SP-M
 * **Administration:**
     * Managing User Access: `/user_guide/administration/user_access`.
 
-### 6. Development & Customization (Links)
+## 6. Development & Customization (Links)
 
 * Customizing Programs: `../../developer_guide/customization/customizing_programs`
 * Customizing Entitlements: `../../developer_guide/customization/customizing_entitlements`
 * Module Development Overview: `/developer_guide/module_development`.
 * API Usage: `/developer_guide/api_usage/index`.
 
-### 7. Diagram: OpenSPP SP-MIS Ecosystem
+## 7. Diagram: OpenSPP SP-MIS Ecosystem
 
 An SP-MIS built with OpenSPP typically interacts with various internal modules and external systems:
 

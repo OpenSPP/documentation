@@ -31,7 +31,7 @@ By the end of this tutorial, you will have successfully set up and created socia
 
 To create a program, begin by configuring the eligibility criteria to filter registrants who will be enrolled. Next, set up the Cycle Manager to define the duration and assign the user responsible for managing the program cycles. Proceed to configure the Entitlement Manager to specify the types of entitlements managed by the program. Finally, import registrants who meet the eligibility criteria based on your selected configuration.
 
-### Creating a social protection program
+### Creating a Social Protection Program
 
 The creation process consists of logging in to OpenSPP with a user account that has the system admin or global program manager role. Also make sure to verify that the **Registry** contains existing groups or individuals. After verifying, navigate to the programs by clicking on the four-square icon in the top-left corner, click Programs, and then click on **Create Program**.
 
