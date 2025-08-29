@@ -103,7 +103,7 @@ Point of sales that do not belong to any area will display as minimized. Click t
 
 ### Starting Point of sale in Web view
 
-The POS application is viewable in either web view or mobile view, this section will be covering the web view, for mobile view, proceed here: [Starting Point of sale in Mobile view](#starting-point-of-sale-in-mobile-view).
+The POS application is viewable in either web view or mobile view, this section will be covering the web view, for mobile view, proceed to **Starting Point of sale in Mobile view** of this document.
 
 The POS application can be operated by either an **Administrator** or a **POS Operator** role.
 
@@ -145,7 +145,7 @@ The transaction is now complete. If you wish to start a new transaction, click o
 
 ### Starting Point of sale in Mobile view
 
-The POS application is viewable in either web view or mobile view. This section will cover the Mobile view, for Web view, proceed here: [Starting Point of sale in Web view](#starting-point-of-sale-in-web-view).
+The POS application is viewable in either web view or mobile view. This section will cover the Mobile view, for Web view, proceed to **Starting Point of sale in Web view** of this document
 
 Click on the upper left box icon to bring up the menu, then click **Point of Sale.**
 

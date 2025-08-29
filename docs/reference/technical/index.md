@@ -19,11 +19,4 @@ security
 backup
 performance
 monitoring
-audit_logs
-cycle_manager
-deduplication_manager
-eligibility_manager
-entitlement_manager
-notification_manager
-program_manager
 ```

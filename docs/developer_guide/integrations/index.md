@@ -7,7 +7,15 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Integrations
 
-This section contains guides for integrating OpenSPP across external systems.
+This section provides comprehensive guides for connecting OpenSPP with external systems, identity providers, and other digital public infrastructure components. These integrations are key to building a robust and interoperable social protection ecosystem.
+
+Here, you will find detailed instructions and best practices for:
+
+- **Digital Convergence Initiative (DCI)**: Learn how to implement the DCI specification to enable seamless data exchange between OpenSPP and other registries, such as a Civil Registration and Vital Statistics (CRVS) system.
+
+- **eSignet**: Discover how to integrate eSignet as an identity provider, allowing users to authenticate into OpenSPP using their MOSIP-based digital identity.
+
+- **OpenID Connect (OIDC)**: Follow our guide to configure Keycloak as an OIDC provider for OpenSPP, enabling single sign-on (SSO) for a secure and streamlined user authentication experience.
 
 ```{toctree}
 :maxdepth: 2
@@ -17,6 +25,4 @@ This section contains guides for integrating OpenSPP across external systems.
 dci
 esignet
 oidc
-keycloak_beneficiary_portal
-g2p-connect
 ```

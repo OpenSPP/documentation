@@ -126,7 +126,7 @@ Create `views/spp_audit_rule_views.xml` and add it to the manifest:
 
 If you introduce new models, add access rights. For simple field additions, this is not required. Example:
 
-```csv
+```
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_custom_spp_audit_rule,custom.spp.audit.rule,spp_audit_log.model_spp_audit_rule,base.group_system,1,1,1,0
 ```

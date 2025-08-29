@@ -165,7 +165,7 @@ Expose the field on both Individuals and Groups UI by extending the existing vie
 
 If you introduce new models, add access rights. For a simple field addition to `res.partner`, this is not required. Example:
 
-```csv
+```
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_custom_partner_note,custom.partner.note,base.model_res_partner,base.group_user,1,1,0,0
 ```
