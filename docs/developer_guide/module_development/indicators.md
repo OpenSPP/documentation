@@ -101,7 +101,6 @@ class G2PRegistrant(models.Model):
         compute="_compute_ind_grp_num_children",
         help="Number of children in the group",
         store=True,
-        allow_filter=True,
     )
 
     # Boolean indicator example
@@ -110,7 +109,6 @@ class G2PRegistrant(models.Model):
         compute="_compute_ind_grp_is_single_head_hh",
         help="Single-headed HH - extracted from demographic data of HH adult members",
         store=True,
-        allow_filter=True,
     )
 
     # Individual indicator example
@@ -222,7 +220,6 @@ from odoo import api, ValidationError
 ## Best Practices
 
 - Use `store=True` for indicators that need to be queried.
-- Use `allow_filter=True` for indicators that should be filterable in views.
 - Provide clear help text explaining the indicator's purpose.
 
 ## References
