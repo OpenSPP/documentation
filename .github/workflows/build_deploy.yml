@@ -3,7 +3,7 @@ name: Build and deploy OpenSPP documentation
 on:
   push:
     branches:
-      - "main"
+      - "**"
 
 jobs:
   build_deploy:
@@ -71,9 +71,11 @@ jobs:
       #     src: '_build/html/'
       #     dest: '${{secrets.DEPLOY_USER_DOCS}}@${{secrets.DEPLOY_SERVER_DOCS}}:${{secrets.DEPLOY_PATH_DOCS}}'
       - name: Commit documentation changes
+        if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build/html
       - name: Display status from deploy
+        if: github.ref == 'refs/heads/main'
         run: echo "${{ steps.deploy.outputs.status }}"
