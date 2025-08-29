@@ -13,7 +13,6 @@ This section contains information about the OpenSPP project, community interacti
 - {doc}`code_of_conduct`
 - {doc}`license`
 - {doc}`security_reporting`
-- {doc}`support`
 - {doc}`release_management`
 - {doc}`module_lifecycle_development_status`
 - {doc}`module_lifecycle_maintainer_role`
@@ -27,7 +26,6 @@ contributing
 code_of_conduct
 license
 security_reporting
-support
 release_management
 module_lifecycle_development_status
 module_lifecycle_maintainer_role
