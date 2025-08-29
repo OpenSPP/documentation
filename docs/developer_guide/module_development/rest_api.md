@@ -148,5 +148,6 @@ openssl rsa -pubout -in private_key.pem -out public_key.pub
 
 ## References
 
+For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
 

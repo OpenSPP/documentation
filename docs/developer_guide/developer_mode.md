@@ -35,8 +35,6 @@ Additional modes are available for developers: `?debug=assets` enables the [asse
 
 ## Locate the developer mode tools
 
----
-
 The user can access the developer mode tools by clicking on the _Open Developer Tools_ button or the bug icon located in the OpenSPP header, after activating developer mode.
 
 ![OpenSPP displays the console page and the debug icon.](developer_mode/3.png "Overview of a console page and the debug icon being shown in Odoo.")
