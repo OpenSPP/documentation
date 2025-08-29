@@ -5,7 +5,7 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Customize the Registry
+# Registry
 
 This article explains how to customize OpenSPP's registry system by introducing a new **top-level group** type. As a practical example, we’ll add a new top-level group type (such as "Village") that can contain regular groups (households), along with custom UI, data, and actions.
 
@@ -421,6 +421,4 @@ Village A (Top Level Group)
 
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
 - [OpenSPP Documentation](https://docs.openspp.org/)
-- Registry modules: `g2p_registry_group`, `g2p_registry_individual`, `g2p_registry_membership`
-- Hierarchy module: `spp_registry_group_hierarchy`
 - Related guides: {doc}`Customizing Fields <fields>`, {doc}`Customizing Indicators <indicators>`
