@@ -154,7 +154,7 @@ extensions = [
     "sphinx.ext.githubpages",
     "sphinx_copybutton",
     "sphinx_design",
-    "sphinx_sitemap",
+    # "sphinx_sitemap",
     "sphinxcontrib.httpdomain", 
     "sphinxcontrib.httpexample",
     'sphinxcontrib.googleanalytics',
@@ -324,6 +324,12 @@ smartquotes = False
 # The name of the Pygments (syntax highlighting) style to use.
 # pygments_style = "sphinx.pygments_styles.PyramidStyle"
 pygments_style = "sphinx"
+
+from pygments import token 
+from sphinx.highlighting import lexers
+from csvlexer.csv import CsvLexer
+
+lexers['csv'] = CsvLexer(startinline=True)
 
 # Options for the linkcheck builder
 # Ignore localhost
@@ -602,6 +608,6 @@ def update_html_files(app, exception):
                     with open(file_path, 'w', encoding='utf-8') as file:
                         file.write(str(soup))
 
-def setup(app):
-    app.connect('build-finished', modify_sitemap)
-    app.connect('build-finished', update_html_files)
+# def setup(app):
+    # app.connect('build-finished', modify_sitemap)
+    # app.connect('build-finished', update_html_files)
