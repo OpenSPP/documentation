@@ -160,7 +160,6 @@ Python 3.10 should be used to build the documentation. You can install it using 
 following the instructions on the [pyenv GitHub page](https://github.com/pyenv/pyenv).
 
 ```bash
-cd docs
 pip install -r requirements.txt
 make html
 ```
@@ -205,6 +204,7 @@ To make it easier for other contributors to work with your project, update the f
 Commit and push your changes to a remote, and submit a pull request against [`openspp/documentation`](https://github.com/openspp/documentation/compare).
 
 (authors-guide-label)=
+-->
 
 # Authors guide
 
@@ -221,9 +221,10 @@ Use `sphinx-autobuild` to view changes in the browser while you edit documentati
 make livehtml
 ```
 
-You can open a browser at http://127.0.0.1:8000/ to preview the documentation.
+You can open a browser at http://127.0.0.1:8050/ to preview the documentation.
 
 
+<!-- Commented this section out, this whole commented section is all from the old documentation version. unless there are relevant information 
 (authors-quality-checks-label)=
 
 ## Quality checks

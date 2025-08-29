@@ -54,12 +54,12 @@ In this example, we customize the audit rule to include an `active` flag, allowi
 
 A working sample module is available at [this link](https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_audit_log_custom).
 
-### Step 1: Create the Module Scaffold
+### Create the Module Scaffold
 
 Start by creating a new directory for your module (e.g., `spp_audit_log_custom`) and populate it
 with the basic Odoo module files (`__init__.py`, `__manifest__.py`) and the directory structure shown above.
 
-### Step 2: Define Module Manifest
+### Define Module Manifest
 
 Create a manifest file with the correct dependencies and data files:
 
@@ -87,7 +87,7 @@ Create a manifest file with the correct dependencies and data files:
 }
 ```
 
-### Step 3: Extend the Audit Rule Model
+### Extend the Audit Rule Model
 
 Create `models/spp_audit_rule.py` and update `models/__init__.py`:
 
@@ -103,7 +103,7 @@ class CustomAuditRule(models.Model):
     )
 ```
 
-### Step 4: Create View Extensions
+### Create View Extensions
 
 Create `views/spp_audit_rule_views.xml` and add it to the manifest:
 
@@ -122,7 +122,7 @@ Create `views/spp_audit_rule_views.xml` and add it to the manifest:
 </odoo>
 ```
 
-### Step 5: Add Security Access (Optional)
+### Add Security Access (Optional)
 
 If you introduce new models, add access rights. For simple field additions, this is not required. Example:
 
@@ -134,7 +134,7 @@ access_custom_spp_audit_rule,custom.spp.audit.rule,spp_audit_log.model_spp_audit
 - Group ID: **`g2p_registry_base.group_g2p_registrar`** for Registrar Access
 - Group ID: **`g2p_registry_base.group_g2p_admin`** for Admin Access.
 
-### Step 6: Add Preconfigured Rules (Optional)
+### Add Preconfigured Rules (Optional)
 
 Seed rules using `data/audit_rule_data.xml` and the `spp.audit.rule.create_rules` helper:
 
@@ -153,7 +153,7 @@ Seed rules using `data/audit_rule_data.xml` and the `spp.audit.rule.create_rules
 
 For parent/child rules (requires `spp_audit_post`), also pass `parent_rule_name` and `connecting_field_name`.
 
-### Step 7: Install and Test
+### Install and Test
 
 1. Install or upgrade the module through the Apps menu.
 2. Create or update records in the configured models (e.g., Individual or Group Registry).
@@ -169,7 +169,6 @@ For parent/child rules (requires `spp_audit_post`), also pass `parent_rule_name`
 
 For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Documentation](https://docs.openspp.org/)
 - Audit module sources:
   - [`spp_audit_log`](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_audit_log)
   - [`spp_audit_post`](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_audit_post)

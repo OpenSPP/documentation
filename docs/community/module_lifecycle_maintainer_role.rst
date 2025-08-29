@@ -1,17 +1,7 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
-
 *****************************************
 Module Lifecycle - Maintainer Role Policy
 *****************************************
 
-
-Introduction
-============
 A Maintainer is responsible to ensure the coordination of specific addon
 modules in order to ensure the quality and consistency of the
 contributions. For a particular repository, this could be one, a few, or

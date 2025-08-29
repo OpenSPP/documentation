@@ -57,12 +57,12 @@ A working sample module for the described scenario can be accessed at the provid
 
 The key steps in module development are as follows:
 
-### Step 1: Create the Module Scaffold
+### Create the Module Scaffold
 
 Start by creating a new directory for your module (e.g., `spp_custom_area`) and populate it
 with the basic Odoo module files (`__init__.py`, `__manifest__.py`) and the directory structure shown above.
 
-### Step 2: Define Module Manifest
+### Define Module Manifest
 
 Create a manifest file that includes the proper dependencies and data files:
 
@@ -89,7 +89,7 @@ Create a manifest file that includes the proper dependencies and data files:
 }
 ```
 
-### Step 3: Extend the Area Model
+### Extend the Area Model
 
 Create a Python file named `area.py` that extends the `spp.area` model and add it to `models/__init__.py`:
 
@@ -119,7 +119,7 @@ class SPPArea(models.Model):
     ], string="Population Source", default="census")
 ```
 
-### Step 4: Create View Extensions
+### Create View Extensions
 
 Create a new file called `views/area_views.xml` in the module and add it to the manifest file:
 
@@ -179,7 +179,7 @@ Create a new file called `views/area_views.xml` in the module and add it to the 
 </odoo>
 ```
 
-### Step 5: Add Security Access (Optional)
+### Add Security Access (Optional)
 
 If you introduce new models, add access rights. For simple field additions, this is not required. Example:
 
@@ -192,7 +192,7 @@ access_spp_your_custom_model_admin,spp.your.custom.model.admin,spp_area_custom.m
 - **`g2p_registry_base.group_g2p_registrar`** for Registrar Access
 - **`g2p_registry_base.group_g2p_admin`** for Admin Access.
 
-### Step 6: Add Custom Area Types (Optional)
+### Add Custom Area Types (Optional)
 
 Create `data/area_kind_data.xml` to add custom area types:
 
@@ -206,7 +206,7 @@ Create `data/area_kind_data.xml` to add custom area types:
 </odoo>
 ```
 
-### Step 7: Adding Computed Fields, Constrains, and Validations (Optional)
+### Adding Computed Fields, Constrains, and Validations (Optional)
 
 On your `models/area.py` you can add computed fields, constrains, and validations:
 
@@ -249,7 +249,7 @@ from odoo.exceptions import ValidationError
 ```
 Then add the custom computed field to the `area_views.xml` file
 
-### Step 8: Install and Test
+### Install and Test
 
 1. Install or upgrade the module through the Apps menu.
 2. Test the new fields in the area forms and lists
@@ -262,5 +262,4 @@ The following screenshot shows the added population fields in the newly develope
 
 For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Documentation](https://docs.openspp.org/)
 - [Area Management Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_area_base)

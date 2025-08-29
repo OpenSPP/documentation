@@ -50,11 +50,11 @@ spp_custom_dashboard/
 
 ## Step-by-Step Guide
 
-### Step 1: Create the Module Scaffold
+### Create the Module Scaffold
 
 Start by creating a new directory for your module (e.g., `spp_custom_dashboard`) and populate it with the basic Odoo module files and the directory structure shown above.
 
-### Step 2: Define the Manifest (`__manifest__.py`)
+### Define the Manifest (`__manifest__.py`)
 
 The manifest file declares your module's metadata and dependencies. It's crucial to list all the modules your customization will interact with. Our dashboard depends on `spp_dashboard_base` for the core dashboard components and `spp_farmer_registry_base` for the data.
 
@@ -85,7 +85,7 @@ The manifest file declares your module's metadata and dependencies. It's crucial
 }
 ```
 
-### Step 3: Prepare the Data on the Server (Python)
+### Prepare the Data on the Server (Python)
 
 The dashboard needs data to display. We'll create a method on an existing model to gather and format this data. For our example, we'll extend the `res.partner` model, which represents farms and farmers in the `spp_farmer_registry_base` module.
 
@@ -132,7 +132,7 @@ The dashboard needs data to display. We'll create a method on an existing model 
             }
     ```
 
-### Step 4: Create the Dashboard Component (JavaScript)
+### Create the Dashboard Component (JavaScript)
 
 The client-side component is responsible for calling the server to get the data and rendering the dashboard template.
 
@@ -173,7 +173,7 @@ The client-side component is responsible for calling the server to get the data 
     registry.category("actions").add("spp_custom_dashboard_tag", CustomDashboard);
     ```
 
-### Step 5: Design the Dashboard Layout (XML)
+### Design the Dashboard Layout (XML)
 
 The XML template defines the structure and appearance of your dashboard. It uses the data prepared by the JavaScript component.
 
@@ -225,7 +225,7 @@ The XML template defines the structure and appearance of your dashboard. It uses
     </templates>
     ```
 
-### Step 6: Register the Dashboard
+### Register the Dashboard
 
 Finally, create a client action and a menu item to make your dashboard accessible in the Odoo interface.
 
@@ -253,7 +253,7 @@ Finally, create a client action and a menu item to make your dashboard accessibl
     </odoo>
     ```
 
-### Step 7: Install and View Your Dashboard
+### Install and View Your Dashboard
 
 1.  Install or upgrade the module through the Apps menu.
 2.  Refresh your browser.
@@ -263,5 +263,4 @@ Finally, create a client action and a menu item to make your dashboard accessibl
 
 For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Documentation](https://docs.openspp.org/)
 - [OpenSPP Dashboard Base Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_dashboard_base)

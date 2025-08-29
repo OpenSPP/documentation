@@ -34,11 +34,11 @@ spp_api_area_custom/
 
 In this scenario, you will expose Area data through a new GET endpoint under a custom namespace.
 
-### Step 1: Create the Module Scaffold
+### Create the Module Scaffold
 
 Create a new directory for your module (e.g., `spp_api_area_custom`) and populate it with the files and structure shown above.
 
-### Step 2: Define Module Manifest
+### Define Module Manifest
 
 Create `__manifest__.py` with the correct dependencies and data files:
 
@@ -65,7 +65,7 @@ Create `__manifest__.py` with the correct dependencies and data files:
 }
 ```
 
-### Step 3: Create a Custom API Namespace
+### Create a Custom API Namespace
 
 Create `data/spp_api_namespace_data.xml` to define your namespace:
 
@@ -82,7 +82,7 @@ Create `data/spp_api_namespace_data.xml` to define your namespace:
 </odoo>
 ```
 
-### Step 4: Add the API Endpoint
+### Add the API Endpoint
 
 Create `data/spp_api_path_data.xml` to define the new endpoint under your custom namespace:
 
@@ -108,7 +108,7 @@ Create `data/spp_api_path_data.xml` to define the new endpoint under your custom
 
 - Add or remove fields as needed for your use case.
 
-### Step 5: Generate Public and Private Keys
+### Generate Public and Private Keys
 
 To secure your API endpoints, generate a 4096-bit RSA key pair using OpenSSL:
 
@@ -124,7 +124,7 @@ openssl rsa -pubout -in private_key.pem -out public_key.pub
 - Set permissions as needed.
 - **Never share your private key.** Only distribute the public key if required.
 
-### Step 6: Install and Test
+### Install and Test
 
 1. Install your new module via the Apps menu.
 2. **Get your Bearer Token:**
@@ -148,5 +148,6 @@ openssl rsa -pubout -in private_key.pem -out public_key.pub
 
 ## References
 
+For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Development Guidelines](https://docs.openspp.org/)
+

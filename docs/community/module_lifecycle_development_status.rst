@@ -1,16 +1,7 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
-
 *****************************************************
 Modules Maturity Levels and Development Status Policy
 *****************************************************
 
-Introduction
-============
 The requirements to merge code into OpenSPP projects depend on the module's
 maturity level.
 

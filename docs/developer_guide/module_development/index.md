@@ -18,7 +18,7 @@ By the end of this guide, you will understand:
 - How to modify user interface forms to display these new fields.
 - The complete process for installing and activating your custom module.
 
-### Why Create a Custom Module?
+## Why Create a Custom Module?
 
 For developers new to Odoo, it might seem easier to directly edit the existing OpenSPP files. However, this approach, often called forking, leads to significant long-term problems. The recommended approach is to encapsulate all your customizations within a custom module.
 
@@ -46,7 +46,6 @@ For more detailed guidelines, refer to the {doc}`Best Practices Guide <../best_p
 
 For more information on developing OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Documentation](https://docs.openspp.org/)
 - [OpenSPP Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/)
 
 ```{toctree}

@@ -39,11 +39,11 @@ spp_dms_school_documents/
 
 ## Step-by-Step Guide
 
-### Step 1: Create the Module Scaffold
+### Create the Module Scaffold
 
 Begin by creating a new directory for your module (e.g., `spp_dms_school_documents`) and add the basic Odoo module files: `__init__.py` and `__manifest__.py`. Then, create the `data` subdirectory.
 
-### Step 2: Define the Manifest (`__manifest__.py`)
+### Define the Manifest (`__manifest__.py`)
 
 The manifest file declares your module's metadata and its dependencies. Our module only needs to depend on `spp_dms` to get access to the `spp.dms.category` model.
 
@@ -68,7 +68,7 @@ The manifest file declares your module's metadata and its dependencies. Our modu
 }
 ```
 
-### Step 3: Create the Data File
+### Create the Data File
 
 This is where you define the new document categories. In the `data/` directory, create an XML file named `dms_category_data.xml`.
 
@@ -93,7 +93,7 @@ This file will contain one or more `<record>` tags that create new entries in th
 ```
 The `noupdate="1"` attribute prevents the data from being overwritten if the module is updated, which is standard practice for configuration data that users might modify.
 
-### Step 4: Install and Use Your New Categories
+### Install and Use Your New Categories
 
 1.  Install or upgrade the module through the Apps menu.
 2.  Install your new module (`spp_dms_school_documents`).
@@ -104,5 +104,4 @@ The `noupdate="1"` attribute prevents the data from being overwritten if the mod
 
 For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Documentation](https://docs.openspp.org/)
 - [OpenSPP DMS Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_dms)
