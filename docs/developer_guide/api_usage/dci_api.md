@@ -15,7 +15,9 @@ OpenSPP provides a RESTful API that adheres to the Digital Convergence Initiativ
 - Client credentials (Client ID and Client Secret) obtained from the OpenSPP instance.
 - Python 3.x and the `requests` library installed (`pip install requests`).
 
-## 1. Authentication: Obtaining an Access Token
+## Process
+
+### Authentication: Obtaining an Access Token
 
 The DCI API is secured using OAuth 2.0 with the Client Credentials grant type. Before making any data requests, your application must obtain a bearer token.
 
@@ -23,7 +25,7 @@ The DCI API is secured using OAuth 2.0 with the Client Credentials grant type. B
 - **Method**: `POST`
 - **Body**: `x-www-form-urlencoded` with `grant_type`, `client_id`, `client_secret`, `db_name`.
 
-### Example: Get Access Token
+**Example: Get Access Token**
 
 ```python
 import requests
@@ -50,7 +52,7 @@ access_token = token_data.get("access_token")
 print("Access Token obtained successfully.")
 ```
 
-## 2. Searching the Registry
+### Searching the Registry
 
 Once authenticated, you can use the access token to perform a synchronous search on the registry.
 
@@ -61,7 +63,7 @@ Once authenticated, you can use the access token to perform a synchronous search
     - `Content-Type`: `application/json`
 - **Body**: A JSON object conforming to the DCI `sync/search` request specification.
 
-### Example: Search for an Individual
+**Example: Search for an Individual**
 
 ```python
 search_url = f"{url}/registry/sync/search"
@@ -125,7 +127,7 @@ else:
 ```
 
 
-## 3. Setup and Configuration
+### Setup and Configuration
 
 To use the DCI API, you must first configure a client in OpenSPP.
 
@@ -135,7 +137,7 @@ To use the DCI API, you must first configure a client in OpenSPP.
 4.  **Reveal Credentials**: A **Show** button will appear. Click it to reveal the `Client ID` and `Client Secret`.
 5.  **Important**: Copy these credentials immediately. For security, the **Show** button will disappear after you close the dialog, and you will not be able to retrieve the secret again.
 
-## 4. Best Practices
+## Best Practices
 
 1.  **Secure Credential Storage**: Never hard-code your `Client ID` or `Client Secret` in your application. Use environment variables or a secure secret management system.
 2.  **Token Management**: Access tokens are short-lived. Your application should handle token expiration and automatically request a new one when needed.
@@ -143,7 +145,6 @@ To use the DCI API, you must first configure a client in OpenSPP.
 4.  **Secure Connections**: Always use HTTPS for all API traffic to protect data in transit.
 5.  **Logging**: Log request `transaction_id`s and correlation IDs to help with troubleshooting and auditing.
 
-## 5. References
+## References
 
 - [DCI Interface Standards v1.0](https://standards.spdci.org/standards/standards-for-interoperability-interfaces/structure-and-versioning-of-the-standards)
-- [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
