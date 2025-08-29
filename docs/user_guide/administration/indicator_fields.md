@@ -5,9 +5,7 @@ reviewer: "Edwin Gonzales"
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Indicator Fields Management
-
-## Introduction
+# Indicator Fields
 
 Indicator fields are a powerful feature in OpenSPP that allow for dynamic data calculation based on existing information in the registry. They can be used to create simplified data points, such as the number of children in a household or the count of members with a specific attribute. These indicators are crucial for program operations, particularly for defining eligibility criteria and targeting beneficiaries for social protection programs.
 
@@ -20,7 +18,7 @@ The Custom Fields UI is designed for creating straightforward, user-defined indi
 ## Prerequisites
 
 To create and manage indicator fields, you need:
-- A user account with **System Admin** role. For more details, see the {doc}`administration/user_access` guide.
+- A user account with **System Admin** role. For more details, see the {doc}`user_access` guide.
 - The **OpenSPP Custom Fields** (`spp_custom_field`) and **OpenSPP Custom Fields UI** (`spp_custom_fields_ui`) modules must be installed and activated in your OpenSPP instance.
 
 ## Objective

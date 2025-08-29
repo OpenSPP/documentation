@@ -38,8 +38,12 @@ Administrative tasks and system management:
 
 - {doc}`administration/user_access`
 - {doc}`administration/service_points`
-- {doc}`administration/managing_custom_fields`
+- {doc}`administration/custom_fields`
+- {doc}`administration/indicator_fields`
 - {doc}`administration/import_areas`
+- {doc}`administration/inventory_configuration`
+- {doc}`administration/email_gateway`
+- {doc}`administration/using_audit_logs`
 - {doc}`administration/hardware_integration`
 
 ## Other Features
@@ -47,9 +51,7 @@ Administrative tasks and system management:
 - {doc}`pos_usage`
 - {doc}`grievance_management`
 - {doc}`consent_management`
-- {doc}`indicator_fields`
-- {doc}`inventory_configuration`
-- {doc}`email_gateway`
+
 
 
 
@@ -67,7 +69,4 @@ administration/index
 pos_usage
 grievance_management
 consent_management
-indicator_fields
-inventory_configuration
-email_gateway
 ```
