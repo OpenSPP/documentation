@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Program Documents
 
 The G2P Program Documents module enhances OpenSPP's core document and program management capabilities by enabling the direct association of documents with specific program enrollments and individual benefit entitlements. This module ensures that all program-related documentation is systematically organized, easily accessible, and integrated directly into the lifecycle of social protection programs.

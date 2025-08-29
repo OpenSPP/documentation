@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Ethnic Group
 
 This module establishes and manages a standardized list of ethnic groups within the OpenSPP platform. It provides a foundational classification system for demographic data, enabling consistent identification and categorization of individuals and groups across various social protection programs.

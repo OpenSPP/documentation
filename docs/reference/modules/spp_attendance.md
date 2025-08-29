@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Attendance
 
 The OpenSPP Attendance module (spp_attendance) provides a comprehensive system for managing and tracking participant attendance across various social protection programs and farmer registries. It enables organizations to accurately record who attended specific events, when, where, and for what purpose, ensuring accountability and informing program delivery.

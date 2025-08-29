@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Social Registry Importer
 
 The `g2p_social_registry_importer` module enables OpenSPP to seamlessly integrate with external Social Registries, facilitating the direct import of beneficiary and household data. This module ensures that OpenSPP maintains an up-to-date and accurate registrant database for effective social protection program management.

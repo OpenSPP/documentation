@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Entitlement Voucher
 
 The G2P Entitlement Voucher module extends OpenSPP's core G2P framework to enable the generation and management of secure, printable vouchers for social protection program entitlements. This module allows programs to deliver benefits through a voucher system, integrating seamlessly with existing entitlement and payment processes.

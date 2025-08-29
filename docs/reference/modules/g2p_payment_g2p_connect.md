@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Payment G2P Connect
 
 This module integrates OpenSPP with external payment systems using the G2P Connect standard. It automates the secure transfer of payment instructions and status updates, streamlining digital benefit disbursements to beneficiaries.

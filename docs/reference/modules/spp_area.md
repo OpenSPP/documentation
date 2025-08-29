@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Area
 
 The OpenSPP Area module (`spp_area`) extends the foundational [OpenSPP Area Base](spp_area_base) module to provide robust features for linking individuals and groups to specific geographical administrative areas within the OpenSPP platform. This module is crucial for accurately locating beneficiaries and managing social protection programs and farmer registries based on their physical presence.

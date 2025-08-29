@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Registry Approval Individual
 
 The OpenSPP Registry Approval Individual module extends the core registry approval framework to specifically manage the validation and official approval of individual registrants. It provides the dedicated interface and processes for reviewing, verifying, and formally approving or rejecting individual profiles within the OpenSPP system.

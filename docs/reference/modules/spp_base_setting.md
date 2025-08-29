@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Base Setting
 
 The OpenSPP Base Setting module provides fundamental configurations and essential tools to customize the OpenSPP platform for specific country implementations. It manages core organizational structures like Country Offices and enables tailored user interface adaptations to meet local operational needs.

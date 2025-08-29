@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Change Request Create Farm
 
 The OpenSPP Change Request Create Farm module provides a specialized and structured workflow for registering new farm entities within the OpenSPP farmer registry. It facilitates the comprehensive capture of farm, farmer, land, and agricultural activity data through a formal change request process, ensuring data accuracy and system integrity.

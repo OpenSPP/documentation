@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Formio
 
 The `g2p_formio` module integrates dynamic form building capabilities into OpenSPP's G2P programs, enabling flexible data collection, customizable application processes, and enhanced self-service options for beneficiaries.

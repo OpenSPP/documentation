@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Audit Log
 
 The OpenSPP Audit Log module provides comprehensive tracking of all data changes and user actions across the OpenSPP platform. It ensures transparency and accountability by recording who did what, when, and what precisely changed within critical social protection programs and farmer registries.

@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Notifications Wiserv
 
 The G2P Notifications Wiserv module integrates OpenSPP with the Wiserv SMS gateway, enabling the system to send automated SMS notifications to beneficiaries and other stakeholders through this specific service provider. It extends the core notification framework to offer Wiserv as a reliable channel for delivering critical program communications.

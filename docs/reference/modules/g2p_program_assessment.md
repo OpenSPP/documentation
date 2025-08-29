@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Program Assessment
 
 The G2P Program Assessment module streamlines the process of evaluating and recording decisions about beneficiary participation in social protection programs. It enables program staff to document assessments, observations, and decisions directly within the OpenSPP platform, providing a clear audit trail and facilitating the management of entitlements.

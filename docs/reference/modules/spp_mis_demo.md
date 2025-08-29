@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Mis Demo
 
 The OpenSPP Mis Demo module provides a comprehensive set of demonstration data and functionalities for the OpenSPP system. It populates the platform with pre-configured, realistic data, allowing users to explore the system's capabilities in managing social protection programs and registries without manual data entry.

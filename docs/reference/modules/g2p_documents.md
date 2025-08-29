@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Documents
 
 The G2P Documents module provides a comprehensive and secure system for managing digital documents within OpenSPP, specifically tailored to the needs of social protection programs. It enables robust storage, organization, and retrieval of various file types, ensuring that program-critical information is always accessible and well-managed.

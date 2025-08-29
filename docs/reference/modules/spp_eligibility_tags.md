@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Eligibility Tags
 
 The OpenSPP Eligibility Tags module provides a robust mechanism for defining and managing program eligibility criteria based on registrant tags and geographical areas. It automates the identification of beneficiaries, significantly improving the accuracy and efficiency of program targeting.

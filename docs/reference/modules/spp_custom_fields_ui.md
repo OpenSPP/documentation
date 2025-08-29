@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Custom Fields Ui
 
 The OpenSPP Custom Fields UI module provides a user-friendly interface for program implementers to define and manage custom data fields for registrants within the OpenSPP platform. This allows for tailoring data collection to the unique requirements of various social protection programs and farmer registries.

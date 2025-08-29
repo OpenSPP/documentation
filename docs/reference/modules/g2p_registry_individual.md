@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Registry Individual
 
 The `g2p_registry_individual` module is a core component of OpenSPP, designed to manage detailed profiles for individual registrants. It extends the foundational registrant data established by `G2P Registry Base` with essential demographic and personal information, enabling comprehensive record-keeping for social protection programs.

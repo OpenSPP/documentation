@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Event Demo
 
 The OpenSPP Event Demo module provides practical examples and templates for tracking specific events within OpenSPP's social protection programs. It showcases how to leverage the core event management framework by offering predefined event types, data structures, and user interfaces, serving as a blueprint for custom event implementation.

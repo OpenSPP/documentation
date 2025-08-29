@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Data Export
 
 The `spp_data_export` module enhances OpenSPP's capability to extract large volumes of program data, ensuring reliable and complete exports to Excel for analysis and reporting. It specifically addresses limitations of standard data export tools, particularly concerning file size and row capacity.

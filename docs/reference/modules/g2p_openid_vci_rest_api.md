@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Openid Vci Rest Api
 
 The `g2p_openid_vci_rest_api` module extends OpenSPP's capabilities by providing a standardized RESTful API for Verifiable Credential Issuance (VCI). This module enables external systems, such as digital wallets or other applications, to securely request and receive Verifiable Credentials (VCs) from OpenSPP.

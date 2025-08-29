@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Mis Importer
 
 The G2P MIS Importer module facilitates the automated synchronization of beneficiary and group data from an external Management Information System (MIS) into OpenSPP. It ensures that OpenSPP's registrant records are consistently updated with the latest information from an authoritative external source, streamlining data management for social protection programs.

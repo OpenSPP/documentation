@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Oauth
 
 The `spp_oauth` module establishes the critical security framework for OpenSPP, providing robust OAuth 2.0 authentication to ensure secure and controlled access to the platform's API for all integrated systems and applications. It acts as the gatekeeper, verifying the identity of applications before they can interact with sensitive program data.

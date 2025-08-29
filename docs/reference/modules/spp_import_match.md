@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Import Match
 
 The OpenSPP Import Match module significantly enhances data import processes across OpenSPP by enabling intelligent matching of incoming records with existing data. This critical functionality prevents the creation of duplicate records and ensures the integrity and accuracy of the platform's core registries, such as beneficiary and farmer data.

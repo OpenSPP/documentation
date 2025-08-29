@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Change Request Change Info
 
 The OpenSPP Change Request Change Info module streamlines the process of updating and managing an individual registrant's personal and demographic information within the OpenSPP platform. It provides a structured and validated approach for making modifications to existing registrant profiles.

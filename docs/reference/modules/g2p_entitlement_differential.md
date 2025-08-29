@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Entitlement Differential
 
 The G2P Entitlement Differential module extends the core cash entitlement management features of OpenSPP. It introduces advanced capabilities for adjusting cash entitlement amounts, primarily by applying inflation rates, and provides enhanced control over beneficiary selection for entitlement calculations.

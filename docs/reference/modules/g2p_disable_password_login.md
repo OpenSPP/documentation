@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Disable Password Login
 
 The `G2P Disable Password Login` module significantly enhances OpenSPP's security and streamlines user authentication by removing the traditional password-based login option. It enforces the use of pre-configured external identity providers (IdPs) for all user access to the platform.

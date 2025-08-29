@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Encryption
 
 The `spp_encryption` module provides robust cryptographic services for OpenSPP, ensuring the security and integrity of sensitive program data. It implements advanced encryption, decryption, digital signing, and verification capabilities, which are critical for protecting confidential information across the platform.

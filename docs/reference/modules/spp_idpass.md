@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Idpass
 
 The OpenSPP Idpass module (technical name: spp_idpass) provides OpenSPP with the capability to securely generate and manage digital identification passes for program registrants, streamlining beneficiary verification and access to social protection services.

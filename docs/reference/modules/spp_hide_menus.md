@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Hide Menus
 
 The OpenSPP Hide Menus module streamlines the OpenSPP platform by automatically hiding standard Odoo menu items that are not typically essential for core social protection program management. This creates a focused user interface, ensuring users primarily interact with functionalities relevant to their specific roles and program objectives.

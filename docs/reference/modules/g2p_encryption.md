@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Encryption
 
 The `g2p_encryption` module provides foundational capabilities for securing sensitive data within the OpenSPP platform. It establishes a robust framework for managing encryption providers, encrypting and decrypting information, and applying digital signatures to ensure data confidentiality, integrity, and authenticity.

@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Custom Filter
 
 The OpenSPP Custom Filter module provides administrators with fine-grained control over which fields appear in Odoo's filtering interface. This enhancement streamlines data searches, reduces clutter, and significantly improves the overall user experience for OpenSPP users by ensuring only relevant fields are available for filtering.

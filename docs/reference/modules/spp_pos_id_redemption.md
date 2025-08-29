@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Pos Id Redemption
 
 The OpenSPP POS ID Redemption module enables the secure and efficient redemption of social protection benefits, specifically cash entitlements, at designated Point of Sale (POS) terminals. It integrates beneficiary identification with entitlement management to streamline the disbursement process.

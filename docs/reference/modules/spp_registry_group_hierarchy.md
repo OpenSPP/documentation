@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Registry Group Hierarchy
 
 This module extends OpenSPP's registry capabilities by introducing hierarchical relationships among groups. It enables the creation of nested group structures, allowing groups to contain both individual members and other sub-groups, which is crucial for managing complex social protection programs and farmer registries effectively.

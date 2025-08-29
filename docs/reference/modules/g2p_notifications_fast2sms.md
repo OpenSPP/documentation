@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Notifications Fast2Sms
 
 The G2P Notifications Fast2Sms module integrates OpenSPP programs with the Fast2SMS service, enabling the reliable and efficient delivery of SMS notifications to beneficiaries and other stakeholders. It extends the core notification framework to provide a dedicated gateway for sending text messages through a widely used third-party provider.

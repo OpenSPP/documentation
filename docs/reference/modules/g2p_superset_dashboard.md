@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Superset Dashboard
 
 The `g2p_superset_dashboard` module seamlessly integrates Apache Superset dashboards directly into the OpenSPP platform. This module allows program managers and analysts to visualize critical social protection program data and key performance indicators (KPIs) within the OpenSPP environment, enhancing data-driven decision-making.

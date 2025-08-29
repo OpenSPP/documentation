@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Custom Field Recompute Daily
 
 The 'OpenSPP Custom Field Recompute Daily' module automates the daily recalculation of specific computed fields within OpenSPP. This ensures that critical data, which depends on other system values, remains accurate and current without manual intervention, while also improving overall system performance by distributing computational load.

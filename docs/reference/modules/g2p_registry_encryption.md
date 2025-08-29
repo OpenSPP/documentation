@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Registry Encryption
 
 The G2P Registry Encryption module provides robust data protection for sensitive registrant information within OpenSPP. It secures personal data by encrypting specified fields in the registry, ensuring privacy and compliance with data protection standards.

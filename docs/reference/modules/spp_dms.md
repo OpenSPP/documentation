@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Dms
 
 The OpenSPP Dms module provides a robust, centralized system for managing and organizing documents within the OpenSPP platform. It enables users to efficiently store, retrieve, and categorize various files related to social protection programs, ensuring easy access and robust control over essential program documentation.

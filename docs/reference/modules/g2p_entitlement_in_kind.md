@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Entitlement In Kind
 
 The **G2P Entitlement In Kind** module extends OpenSPP's social protection platform to enable the efficient management and distribution of non-cash benefits. It provides the necessary interface and configurations for programs to deliver goods and services directly to beneficiaries, complementing traditional cash transfer programs.

@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Service Provider Beneficiary Management
 
 The `g2p_service_provider_beneficiary_management` module provides a specialized web interface within the OpenSPP Service Provider Portal, empowering service providers to effectively view and manage beneficiary information and their group affiliations. It streamlines the interaction with beneficiary data, crucial for efficient program delivery.

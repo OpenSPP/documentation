@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Event Data
 
 The OpenSPP Event Data module is a core component for maintaining a comprehensive and chronological history of all significant actions and changes related to individual and group registrants within the OpenSPP system. It serves as an auditable log, tracking when and how key registrant information evolves.

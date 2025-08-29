@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Auto Update Entitlements
 
 The OpenSPP Auto Update Entitlements module automatically reviews and updates the state of entitlements based on their redemption status at the end of each program cycle. This ensures that all benefits accurately reflect their final disposition, whether fully redeemed, partially redeemed, or unredeemed.

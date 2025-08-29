@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Farmer Registry Base
 
 The OpenSPP Farmer Registry Base module is the core component for managing comprehensive farmer registries within OpenSPP. It provides the essential framework for recording farmer profiles, detailing farm operations, linking farms to land records, and tracking agricultural activities.

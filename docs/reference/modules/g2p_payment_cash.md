@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Payment Cash
 
 The `g2p_payment_cash` module within OpenSPP enables the management and processing of cash-based payments for social protection programs. It provides a direct and auditable method for disbursing benefits where physical cash distribution is the primary mechanism, ensuring beneficiaries receive their support effectively.

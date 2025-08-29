@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Change Log
 
 The G2P Change Log module (g2p_change_log) transparently records all significant data modifications across OpenSPP's G2P modules. It provides an unalterable audit trail, detailing who made changes, what was changed, and when, ensuring accountability and data integrity for social protection programs.

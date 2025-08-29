@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Service Provider Portal Base
 
 The `g2p_service_provider_portal_base` module establishes the foundational web portal for G2P (Government-to-Person) service providers within OpenSPP. It provides the essential interface and core functionalities necessary for external partners to securely access and interact with the platform.

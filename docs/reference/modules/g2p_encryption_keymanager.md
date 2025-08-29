@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Encryption Keymanager
 
 The G2P Encryption Keymanager module integrates OpenSPP with an external Key Management System (KMS) to provide robust cryptographic services. It enables secure encryption, decryption, digital signing, and verification of sensitive program data, ensuring data confidentiality and integrity without OpenSPP directly managing cryptographic keys.

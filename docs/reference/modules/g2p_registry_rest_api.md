@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Registry Rest Api
 
 The 'G2P Registry Rest Api' module provides a robust set of RESTful API endpoints, enabling external systems and integrations to securely interact with the OpenSPP G2P Registry. It acts as the primary interface for creating, updating, and querying individual and group registrant data within the platform.

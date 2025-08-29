@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Notifications Base
 
 The G2P Notifications Base module provides the foundational capabilities for sending automated communications to beneficiaries and other stakeholders within OpenSPP programs. It establishes the framework for managing and delivering timely, event-driven notifications via various channels, primarily email and SMS.

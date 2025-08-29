@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # G2P Profile Image
 
 The G2P Profile Image module enables OpenSPP users to associate a single, distinct profile image with each registrant. This enhances visual identification and personalizes registrant profiles within the system.
