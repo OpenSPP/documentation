@@ -34,5 +34,6 @@ hidden: true
 ---
 
 installation_deb
+module_installation
 poc_and_pilot
 ```

@@ -5,7 +5,7 @@ reviewer: Edwin Gonzales
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# OpenSPP Module Installation
+# Module Installation
 
 OpenSPP is a modular platform built on top of Odoo. Its functionality is extended through a collection of modules, each providing specific features. This guide will walk you through the process of installing OpenSPP modules, covering two primary configurations: a general-purpose Social Protection Management Information System (SP-MIS) and a specialized Farmer Registry.
 
