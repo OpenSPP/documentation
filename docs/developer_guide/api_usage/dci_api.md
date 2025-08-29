@@ -103,7 +103,7 @@ search_payload = {
                             "expression1": {
                                 "attribute_name": "birthdate",
                                 "operator": "eq",
-                                "attribute_value": "06/15/2020"
+                                "attribute_value": "2020-11-02"
                             }
                         }
                     ]
