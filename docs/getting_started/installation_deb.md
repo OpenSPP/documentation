@@ -849,4 +849,4 @@ After installation, see:
 
 - {doc}`../user_guide/index` for using OpenSPP features
 - {doc}`../developer_guide/index` for customization and development
-- {doc}`poc_and_pilot` for setting up pilot programs
+- {doc}`../overview/poc_and_pilot` for setting up pilot programs

@@ -234,7 +234,7 @@ class SPPCreateNewProgramWiz(models.TransientModel):
 
 Grant users access to your new model in `security/ir.model.access.csv`. At a minimum, you need to provide access to the relevant user groups, such as program managers and administrators.
 
-```csv
+```
 # From: spp_eligibility_tags/security/ir.model.access.csv
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 g2p_program_membership_manager_tags_admin,Eligibility Manager Tag-based Admin Access,spp_eligibility_tags.model_g2p_program_membership_manager_tags,g2p_registry_base.group_g2p_admin,1,1,1,1

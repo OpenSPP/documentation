@@ -363,7 +363,7 @@ Use XML data files to configure aspects of your CR type.
 Grant users access to your new model in security/ir.model.access.csv. At a minimum, you need to provide access
 to the base user group.
 
-```csv
+```
 # From: spp_change_request_add_children_demo/security/ir.model.access.csv
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_spp_change_request_add_children_user,spp.change.request.add.children.user,model_spp_change_request_add_children,base.group_user,1,1,1,1

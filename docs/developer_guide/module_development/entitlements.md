@@ -216,7 +216,7 @@ To improve user experience, add configuration fields directly to the "Create Pro
 
 Grant users access to your new models in `security/ir.model.access.csv`.
 
-```csv
+```
 # From: spp_entitlement_cash/security/ir.model.access.csv
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 g2p_program_entitlement_manager_cash_admin,Program Entitlement Manager Cash Admin Access,spp_entitlement_cash.model_g2p_program_entitlement_manager_cash,g2p_registry_base.group_g2p_admin,1,1,1,1

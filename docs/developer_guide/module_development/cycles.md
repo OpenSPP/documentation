@@ -249,7 +249,7 @@ To improve user experience, add a selection to the "Create Program" wizard so us
 
 Grant users access to your new model in `security/ir.model.access.csv`.
 
-```csv
+```
 # From: spp_cycle_manager_fixed_interval/security/ir.model.access.csv
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 g2p_cycle_manager_fixed_interval_admin,Cycle Manager Fixed Interval Admin Access,spp_cycle_manager_fixed_interval.model_g2p_cycle_manager_fixed_interval,g2p_registry_base.group_g2p_admin,1,1,1,1

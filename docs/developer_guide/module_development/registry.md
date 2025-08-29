@@ -386,7 +386,7 @@ Update all field names to remove the prefix:
 
 Create `security/ir.model.access.csv`:
 
-```csv
+```
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_top_level_groups_admin,top.level.groups.admin,base.model_res_partner,g2p_registry_base.group_g2p_admin,1,1,1,1
 ```
