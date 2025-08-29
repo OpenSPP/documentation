@@ -72,7 +72,7 @@ headers = {
 }
 
 # Example search payload based on DCI specification
-# This searches for an individual with a specific phone number.
+# This searches for an individual with a specific birthdate.
 search_payload = {
     "header": {
         "message_id": "123456789020211216223812",
