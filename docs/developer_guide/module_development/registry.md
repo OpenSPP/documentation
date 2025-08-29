@@ -52,11 +52,11 @@ spp_top_level_groups/
 
 ## Step-by-Step Guide
 
-### Step 1: Create the Module Scaffold
+### Create the Module Scaffold
 
 Create a new directory for your module (e.g., `spp_top_level_groups`) and populate it with the files and folders shown above.
 
-### Step 2: Define Module Manifest
+### Define Module Manifest
 
 Create a manifest file with the necessary dependencies and data files:
 
@@ -90,7 +90,7 @@ Create a manifest file with the necessary dependencies and data files:
 }
 ```
 
-### Step 3: Add Custom Group Kind Data
+### Add Custom Group Kind Data
 
 Create `data/group_kind_data.xml` to define the new group kind:
 
@@ -106,7 +106,7 @@ Create `data/group_kind_data.xml` to define the new group kind:
 </odoo>
 ```
 
-### Step 4: Extend the Registry Model
+### Extend the Registry Model
 
 Create `models/res_partner.py` to add custom fields, indicators, and actions:
 
@@ -195,7 +195,7 @@ class G2PTopLevelGroup(models.Model):
         }
 ```
 
-### Step 5: Extend Group Kind Model
+### Extend Group Kind Model
 
 Create `models/group_kind.py` to add custom flags:
 
@@ -209,7 +209,7 @@ class SPPGroupKind(models.Model):
     can_contain_households = fields.Boolean("Can Contain Households", default=False, help="Indicates if this group kind can contain household groups")
 ```
 
-### Step 6: Create View Extensions
+### Create View Extensions
 
 #### Top Level Group Views (`views/top_level_group_views.xml`)
 
@@ -382,7 +382,7 @@ Update all field names to remove the prefix:
 </odoo>
 ```
 
-### Step 7: Add Security Access
+### Add Security Access
 
 Create `security/ir.model.access.csv`:
 
@@ -391,7 +391,7 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_top_level_groups_admin,top.level.groups.admin,base.model_res_partner,g2p_registry_base.group_g2p_admin,1,1,1,1
 ```
 
-### Step 8: Install and Test
+### Install and Test
 
 1. **Install the module** via the Apps menu.
 2. **Configure group kinds**: Registry > Configuration > Group Kinds. Ensure "Village" is present and allows group/individual members.
@@ -421,5 +421,4 @@ Village A (Top Level Group)
 
 For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Documentation](https://docs.openspp.org/)
 - Related guides: {doc}`Customizing Fields <fields>`, {doc}`Customizing Indicators <indicators>`

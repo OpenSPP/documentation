@@ -52,11 +52,11 @@ spp_custom_registry_field/
 
 ## Step-by-Step Guide
 
-### Step 1: Create the Module Scaffold
+### Create the Module Scaffold
 
 Create a new directory for your module (e.g., `spp_custom_registry_field`) and populate it with the files and structure above.
 
-### Step 2: Define Module Manifest
+### Define Module Manifest
 
 Create a manifest file with dependencies and data files:
 
@@ -84,7 +84,7 @@ Create a manifest file with dependencies and data files:
 }
 ```
 
-### Step 3: Extend the res.partner Model
+### Extend the res.partner Model
 
 Create `models/res_partner.py` to add your custom field and import it in `models/__init__.py`:
 
@@ -101,7 +101,7 @@ class G2PRegistrant(models.Model):
     )
 ```
 
-### Step 4: Create View Extensions
+### Create View Extensions
 
 Expose the field on both Individuals and Groups UI by extending the existing views.
 
@@ -161,7 +161,7 @@ Expose the field on both Individuals and Groups UI by extending the existing vie
 </odoo>
 ```
 
-### Step 5: Add Security Access (Optional)
+### Add Security Access (Optional)
 
 If you introduce new models, add access rights. For a simple field addition to `res.partner`, this is not required. Example:
 
@@ -170,7 +170,7 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_custom_partner_note,custom.partner.note,base.model_res_partner,base.group_user,1,1,0,0
 ```
 
-### Step 6: Install and Test
+### Install and Test
 
 1. Install the module through the Apps menu.
 2. Open the Individual and Group registries and verify the new field displays in both list and form views.
@@ -180,4 +180,3 @@ access_custom_partner_note,custom.partner.note,base.model_res_partner,base.group
 
 For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Documentation](https://docs.openspp.org/)

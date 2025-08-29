@@ -51,11 +51,11 @@ spp_cycle_manager_fixed_interval/
 
 ## Step-by-Step Guide
 
-### Step 1: Create the Module Scaffold
+### Create the Module Scaffold
 
 Start by creating a new directory for your module (e.g., `spp_cycle_manager_fixed_interval`) and populate it with the basic Odoo module files and the directory structure shown above.
 
-### Step 2: Define the Manifest (`__manifest__.py`)
+### Define the Manifest (`__manifest__.py`)
 
 The manifest file declares your module's metadata and dependencies. Our cycle manager depends on `g2p_programs` and `spp_programs` for the base manager framework.
 
@@ -84,7 +84,7 @@ The manifest file declares your module's metadata and dependencies. Our cycle ma
 }
 ```
 
-### Step 3: Create the Cycle Manager Model
+### Create the Cycle Manager Model
 
 This is the core of your module. You will create a new model that inherits from the default cycle manager and overrides its behavior.
 
@@ -110,7 +110,7 @@ This is the core of your module. You will create a new model that inherits from 
             return start_date + relativedelta(months=6, days=-1)
     ```
 
-### Step 4: Register the New Manager
+### Register the New Manager
 
 To make OpenSPP aware of your new manager, you must add it to the list of available cycle managers.
 
@@ -133,7 +133,7 @@ To make OpenSPP aware of your new manager, you must add it to the list of availa
             return selection
     ```
 
-### Step 5: Create the User Interface
+### Create the User Interface
 
 Create a form view for your manager. Since we are inheriting from the default manager, we can also inherit its view and modify it to hide the fields that are no longer relevant (like the recurrence rules).
 
@@ -159,7 +159,7 @@ Create a form view for your manager. Since we are inheriting from the default ma
 </record>
 ```
 
-### Step 6: Extend the Program Creation Wizard
+### Extend the Program Creation Wizard
 
 To improve user experience, add a selection to the "Create Program" wizard so users can choose your new manager from the start.
 
@@ -245,7 +245,7 @@ To improve user experience, add a selection to the "Create Program" wizard so us
     </record>
     ```
 
-### Step 7: Set Up Security
+### Set Up Security
 
 Grant users access to your new model in `security/ir.model.access.csv`.
 
@@ -256,7 +256,7 @@ g2p_cycle_manager_fixed_interval_admin,Cycle Manager Fixed Interval Admin Access
 g2p_cycle_manager_fixed_interval_program_manager,Cycle Manager Fixed Interval Program Manager Access,spp_cycle_manager_fixed_interval.model_g2p_cycle_manager_fixed_interval,g2p_programs.g2p_program_manager,1,1,1,0
 ```
 
-### Step 8: Install and Test
+### Install and Test
 
 1.  Install or upgrade the module through the Apps menu.
 2.  Navigate to **Programs** and click **Create Program**.
@@ -268,5 +268,4 @@ g2p_cycle_manager_fixed_interval_program_manager,Cycle Manager Fixed Interval Pr
 
 For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Documentation](https://docs.openspp.org/)
 - [OpenSPP Programs Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_programs)

@@ -64,11 +64,11 @@ spp_service_point_custom/
 
 In this scenario, we customize the service points module to include operating hours, capacity, and additional contact information. This helps beneficiaries know when and where they can redeem their entitlements.
 
-### Step 1: Create the Module Scaffold
+### Create the Module Scaffold
 
 Create a new directory for your module (e.g., `spp_service_point_custom`) and populate it with the basic Odoo module files and the directory structure shown above.
 
-### Step 2: Define Module Manifest
+### Define Module Manifest
 
 Create a manifest file that includes the proper dependencies and data files:
 
@@ -94,7 +94,7 @@ Create a manifest file that includes the proper dependencies and data files:
 }
 ```
 
-### Step 3: Extend the Service Point Model
+### Extend the Service Point Model
 
 Create a Python file named `service_point.py` that extends the `spp.service.point` model and add it to `models/__init__.py`:
 
@@ -180,7 +180,7 @@ class OpenSPPServicePoint(models.Model):
                 raise ValidationError("Daily capacity cannot be negative.")
 ```
 
-### Step 4: Create View Extensions
+### Create View Extensions
 
 Create a new file called `views/service_point_views.xml` in the module and add it to the manifest file:
 
@@ -225,7 +225,7 @@ Create a new file called `views/service_point_views.xml` in the module and add i
 </odoo>
 ```
 
-### Step 5: Add Custom Service Types
+### Add Custom Service Types
 
 Create `data/service_type_data.xml` to add custom service types:
 
@@ -251,7 +251,7 @@ Create `data/service_type_data.xml` to add custom service types:
 </odoo>
 ```
 
-### Step 6: Install and Test
+### Install and Test
 
 1. Install or upgrade the module through the Apps menu.
 2. Test the new fields in the service point forms and lists.
@@ -264,5 +264,4 @@ The following screenshot shows the newly added fields in the developed module:
 
 For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Documentation](https://docs.openspp.org/)
 - [Service Points Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_service_points)

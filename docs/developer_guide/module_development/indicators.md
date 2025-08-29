@@ -52,11 +52,11 @@ spp_custom_indicators/
 
 ## Step-by-Step Guide
 
-### Step 1: Create the Module Scaffold
+### Create the Module Scaffold
 
 Create a new directory for your module (e.g., `spp_custom_indicators`) and populate it with the basic Odoo module files and structure shown above.
 
-### Step 2: Define Module Manifest
+### Define Module Manifest
 
 Create a manifest file that includes the proper dependencies:
 
@@ -83,7 +83,7 @@ Create a manifest file that includes the proper dependencies:
 }
 ```
 
-### Step 3: Extend the res.partner Model
+### Extend the res.partner Model
 
 Create `models/res_partner.py` to add your indicators and import it in `models/__init__.py`:
 
@@ -145,7 +145,7 @@ class G2PRegistrant(models.Model):
             partner.z_ind_indv_age_years = max(age, 0)
 ```
 
-### Step 4: Add Security Access (Optional)
+### Add Security Access (Optional)
 
 If you introduce new models, add access rights. For simple field additions, this is not required. Example:
 
@@ -154,7 +154,7 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_spp_custom_indicator_admin,spp.custom.indicator.admin,spp_custom_indicators.model_g2pregistrant,g2p_registry_base.group_g2p_admin,1,1,1,1
 ```
 
-### Step 5: Add More Indicators (Optional)
+### Add More Indicators (Optional)
 
 You can add more complex indicators, such as those based on gender, disability, or custom fields. Use the provided helper method for consistency and performance:
 
@@ -196,7 +196,7 @@ def _compute_ind_grp_is_hh_with_disabled(self):
     self.compute_count_and_set_indicator("z_ind_grp_is_hh_with_disabled", None, domain, presence_only=True)
 ```
 
-### Step 6: Add Constraints, and Validations (Optional)
+### Add Constraints, and Validations (Optional)
 
 You can add additional constraints for indicator logic:
 
@@ -210,7 +210,7 @@ from odoo import api, ValidationError
                 raise ValidationError("Number of children cannot be negative.")
 ```
 
-### Step 7: Install and Test
+### Install and Test
 
 1. Install or upgrade the module through the Apps menu.
 2. Open the Individual and Group registries and verify the new indicators display in form views (handled automatically by `spp_custom_field`).
@@ -226,4 +226,3 @@ from odoo import api, ValidationError
 
 For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Documentation](https://docs.openspp.org/)

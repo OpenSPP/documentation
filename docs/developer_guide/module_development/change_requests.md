@@ -55,12 +55,12 @@ spp_change_request_add_children_demo/
 
 ## Step-by-Step Guide
 
-### Step 1: Create the Module Scaffold
+### Create the Module Scaffold
 
 Start by creating a new directory for your module (e.g., `spp_change_request_custom_type`) and populate it
 with the basic Odoo module files (`__init__.py`, `__manifest__.py`) and the directory structure shown above.
 
-### Step 2: Define the Manifest (`__manifest__.py`)
+### Define the Manifest (`__manifest__.py`)
 
 The manifest file declares your module's metadata and dependencies. It's crucial to list all the modules your
 CR type will interact with. For our "Add Child/Member" example, the dependencies are:
@@ -97,7 +97,7 @@ CR type will interact with. For our "Add Child/Member" example, the dependencies
 
 Your dependencies will vary based on the data you need to access and modify.
 
-### Step 3: Create the Change Request Models
+### Create the Change Request Models
 
 This is the heart of your module. You'll create a new model that holds the specific data for your change
 request type.
@@ -220,7 +220,7 @@ request type.
             return selection
     ```
 
-### Step 4: Create the User Interface (Views)
+### Create the User Interface (Views)
 
 Define the form view for your custom CR type.
 
@@ -310,7 +310,7 @@ Define the form view for your custom CR type.
         sequence="10"/>
     ```
 
-### Step 5: Define Data Files
+### Define Data Files
 
 Use XML data files to configure aspects of your CR type.
 
@@ -358,7 +358,7 @@ Use XML data files to configure aspects of your CR type.
   </odoo>
   ```
 
-### Step 6: Set Up Security
+### Set Up Security
 
 Grant users access to your new model in security/ir.model.access.csv. At a minimum, you need to provide access
 to the base user group.
@@ -369,7 +369,7 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_spp_change_request_add_children_user,spp.change.request.add.children.user,model_spp_change_request_add_children,base.group_user,1,1,1,1
 ```
 
-### Step 7: Install and Test
+### Install and Test
 
 1. Install or upgrade the module through the Apps menu.
 2. Create a new change request.
@@ -383,6 +383,5 @@ Always start with a clear definition of the data you need to collect and the sys
 
 For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Documentation](https://docs.openspp.org/)
 - [Change Request Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_change_request)
 - [OpenSPP Change Request Demo: Add Child/Member Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_change_request_add_children_demo)

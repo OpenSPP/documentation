@@ -51,11 +51,11 @@ spp_eligibility_tags/
 
 ## Step-by-Step Guide
 
-### Step 1: Create the Module Scaffold
+### Create the Module Scaffold
 
 Start by creating a new directory for your module (e.g., `spp_custom_eligibility_manager`) and populate it with the basic Odoo module files and the complete directory structure shown above.
 
-### Step 2: Define the Manifest (`__manifest__.py`)
+### Define the Manifest (`__manifest__.py`)
 
 The manifest file declares your module's metadata and dependencies. It's crucial to list all the modules your customization will interact with. Our manager will depend on `g2p_programs` and `spp_programs` for the base manager framework, and `g2p_registry_base` for using tags and areas.
 
@@ -88,7 +88,7 @@ The manifest file declares your module's metadata and dependencies. It's crucial
 
 Your dependencies will vary based on the models and features you need to extend.
 
-### Step 3: Create the Eligibility Manager Model
+### Create the Eligibility Manager Model
 
 This is the core of your module. You will create a new model that holds the specific configuration for your eligibility rule and contains the logic to identify eligible registrants.
 
@@ -131,7 +131,7 @@ class TagBasedEligibilityManager(models.Model):
 
 The `_prepare_eligible_domain` method is the most critical part. It constructs and returns an Odoo domain that will be used to search for all res.partner records that match the rule.
 
-### Step 4: Register the New Manager
+### Register the New Manager
 
 To make OpenSPP aware of your new manager, you must add it to the list of available eligibility managers.
 
@@ -155,7 +155,7 @@ class EligibilityManager(models.Model):
         return selection
 ```
 
-### Step 5: Create the User Interface
+### Create the User Interface
 
 Now, create a form view so that program administrators can configure the tags and area for each instance of your new manager.
 
@@ -181,7 +181,7 @@ Now, create a form view so that program administrators can configure the tags an
 
 This simple form will be displayed when a user configures the "Tag-based Eligibility" manager for a program.
 
-### Step 6: Extend the Program Creation Wizard
+### Extend the Program Creation Wizard
 
 To improve user experience, you can add configuration fields directly to the "Create Program" wizard. This allows users to set up the basic eligibility rules when they first create the program.
 
@@ -230,7 +230,7 @@ class SPPCreateNewProgramWiz(models.TransientModel):
 </record>
 ```
 
-### Step 7: Set Up Security
+### Set Up Security
 
 Grant users access to your new model in `security/ir.model.access.csv`. At a minimum, you need to provide access to the relevant user groups, such as program managers and administrators.
 
@@ -241,7 +241,7 @@ g2p_program_membership_manager_tags_admin,Eligibility Manager Tag-based Admin Ac
 g2p_program_membership_manager_tags_program_manager,Eligibility Manager Tag-based Program Manager Access,spp_eligibility_tags.model_g2p_program_membership_manager_tags,g2p_programs.g2p_program_manager,1,1,1,0
 ```
 
-### Step 8: Install and Use Your New Manager
+### Install and Use Your New Manager
 
 1. Install or upgrade the module through the Apps menu.
 2. Navigate to Programs and click ***Create Program***.
@@ -254,5 +254,4 @@ g2p_program_membership_manager_tags_program_manager,Eligibility Manager Tag-base
 
 For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Documentation](https://docs.openspp.org/)
 - [OpenSPP Programs Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_programs)

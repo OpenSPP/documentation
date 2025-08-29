@@ -51,11 +51,11 @@ spp_entitlement_cash/
 
 ## Step-by-Step Guide
 
-### Step 1: Create the Module Scaffold
+### Create the Module Scaffold
 
 Start by creating a new directory for your module (e.g., `spp_custom_entitlement_manager`) and populate it with the basic Odoo module files and the directory structure shown above.
 
-### Step 2: Define the Manifest (`__manifest__.py`)
+### Define the Manifest (`__manifest__.py`)
 
 The manifest file declares your module's metadata and dependencies. It's crucial to list all the modules your customization will interact with. Our cash entitlement manager depends on `g2p_programs` and `spp_programs` for the base manager framework.
 
@@ -89,7 +89,7 @@ The manifest file declares your module's metadata and dependencies. It's crucial
 }
 ```
 
-### Step 3: Create the Entitlement Manager Model
+### Create the Entitlement Manager Model
 
 This is the core of your module. You will create a new model that holds the specific configuration for your entitlement rules and contains the logic to calculate and generate entitlements.
 
@@ -135,7 +135,7 @@ This is the core of your module. You will create a new model that holds the spec
 
     The `prepare_entitlements` method is the most critical part. It is called by the system to generate the `g2p.entitlement` records for a given cycle and set of beneficiaries, based on the rules defined in the manager.
 
-### Step 4: Register the New Manager
+### Register the New Manager
 
 To make OpenSPP aware of your new manager, you must add it to the list of available entitlement managers.
 
@@ -158,7 +158,7 @@ To make OpenSPP aware of your new manager, you must add it to the list of availa
             return selection
     ```
 
-### Step 5: Create the User Interface
+### Create the User Interface
 
 Create a form view so that program administrators can configure the rules for your new manager.
 
@@ -187,7 +187,7 @@ Create a form view so that program administrators can configure the rules for yo
 </record>
 ```
 
-### Step 6: Extend the Program Creation Wizard
+### Extend the Program Creation Wizard
 
 To improve user experience, add configuration fields directly to the "Create Program" wizard.
 
@@ -212,7 +212,7 @@ To improve user experience, add configuration fields directly to the "Create Pro
 
 2.  **Extend the wizard view**: In `wizard/create_program_wizard.xml`, extend the form to show your new fields when the "Cash" entitlement kind is selected.
 
-### Step 7: Set Up Security
+### Set Up Security
 
 Grant users access to your new models in `security/ir.model.access.csv`.
 
@@ -223,7 +223,7 @@ g2p_program_entitlement_manager_cash_admin,Program Entitlement Manager Cash Admi
 g2p_program_entitlement_manager_cash_program_manager,Program Entitlement Manager Cash Program Manager Access,spp_entitlement_cash.model_g2p_program_entitlement_manager_cash,g2p_programs.g2p_program_manager,1,1,1,0
 ```
 
-### Step 8: Install and Test
+### Install and Test
 
 1.  Install or upgrade the module through the Apps menu.
 2.  Navigate to **Programs** and click **Create Program**.
@@ -235,5 +235,4 @@ g2p_program_entitlement_manager_cash_program_manager,Program Entitlement Manager
 
 For more information on extending OpenSPP modules, refer to:
 - [Odoo 17 Developer Documentation](https://www.odoo.com/documentation/17.0/developer/)
-- [OpenSPP Documentation](https://docs.openspp.org/)
 - [OpenSPP Programs Module Source](https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_programs)
