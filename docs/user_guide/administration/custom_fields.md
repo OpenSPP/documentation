@@ -79,14 +79,14 @@ For our example, we will leave these options unchecked.
 
 Once all properties are configured, save the new field.
 
-1.  Click the **Save** button. Odoo will create the new field in the database.
+1.  Click the **Save** button. OpenSPP will create the new field in the database.
 2.  Navigate to the **Registry** and click the **Individuals** menu.
 
 ![](custom_fields/step05_open_individual_list_view.jpg)
 
 ### Verify the Custom Field
 
-1. To verify that the field was created successfully, open any record in the **Individuals** list view.
+1. To verify that the field was created, open any record in the **Individuals** list view.
 
 ![](custom_fields/step06_select_individual.jpg)
 
