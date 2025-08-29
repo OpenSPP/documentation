@@ -16,7 +16,7 @@ This tutorial covers the step-by-step procedure on how to allocate funds for a p
 To allocate funds for a project, you need to:
 
 - Have a System administrator or the appropriate program user role that enables you to create programs and allocate funds. Learn more in this guide: {doc}`../administration/user_access`.
-- Have existing individual records in your registry, either by creating records manually or importing records into OpenSPP. Learn more in this guide: {doc}`../registry_management/import_data` or {doc}`../registry_management/register_individual`.
+- Have existing individual records in your registry, either by creating records manually or importing records into OpenSPP. Learn more in this guide: {doc}`../registry_management/import_export_registrant_data` or {doc}`../registry_management/register_individual`.
 - An existing Program where individuals are registered. Learn more in this guide: {doc}`create_program`.
 
 ## Objective

@@ -14,7 +14,7 @@ This guide explains how to update registrant information in OpenSPP using the Ch
 ## Prerequisites
 
 Before submitting or approving change requests, ensure the following:
-- Have existing individual records in your registry, either by creating records manually {doc}`register_individual` or importing records into OpenSPP {doc}`import_data`.
+- Have existing individual records in your registry, either by creating records manually {doc}`register_individual` or importing records into OpenSPP {doc}`import_export_registrant_data`.
 - Assign appropriate roles to Change Request validators. You can learn how to perform these tasks in the {doc}`../administration/user_access` document under the **Configuring Roles** section:
   - **Local Validator**: Add the group name under the Groups tab: `Change Request Module Access / Change Request Validator Local`.
   - **HQ Validator**: Add the group name under the Groups tab: `Change Request Module Access / Change Request Validator HQ`.

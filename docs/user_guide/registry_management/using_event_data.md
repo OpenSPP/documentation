@@ -35,7 +35,7 @@ The `spp_event_data_program_membership` module enhances OpenSPP by integrating t
 
 To utilize and manage Event Data, ensure the following prerequisites are met:
 
-- Individual or group records already exist in your registry. For more information, refer to {doc}`register_individual` or {doc}`import_data`.
+- Individual or group records already exist in your registry. For more information, refer to {doc}`register_individual` or {doc}`import_export_registrant_data`.
 - The `spp_event_data` module (OpenSPP Event Data) is installed and activated.
 - If specific event types are required (such as program membership events), ensure that any related modules (e.g., `spp_event_data_program_membership`) are also installed and activated.
 - To access demonstration features, the `spp_event_demo` module should be activated.

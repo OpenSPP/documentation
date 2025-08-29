@@ -27,7 +27,7 @@ By the end of this tutorial, you will have gained a deeper understanding of conf
 
 To begin configuring cycles and preparing entitlements in OpenSPP, Login into your OpenSPP account, then select an existing program.
 
-Please note that any configuration changes made to your program will not impact cycles that have already been approved. Such changes will only apply to cycles created after the modifications. However, if you are already satisfied with the current program configurations, you may proceed to [Creating Cycle](#creating-cycle).
+Please note that any configuration changes made to your program will not impact cycles that have already been approved. Such changes will only apply to cycles created after the modifications. However, if you are already satisfied with the current program configurations, you may proceed to **Creating Cycle** section of this document.
 
 ### Editing Program Configuration
 
@@ -155,7 +155,7 @@ Click on the **Approve** button to approve the cycle.
 
 ![](create_program_cycle_prepare_entitlements/24.png)
 
-Please note that enabling Auto-approve entitlements in the program’s [Cycle manager](#cycle-manager) configuration auto approves the entitlements upon approving the cycle. Therefore, you may skip Approving entitlements if this is enabled.
+Please note that enabling Auto-approve entitlements in the program’s **Cycle manager** configuration auto approves the entitlements upon approving the cycle. Therefore, you may skip Approving entitlements if this is enabled.
 
 ![](create_program_cycle_prepare_entitlements/25.png)
 
@@ -163,7 +163,7 @@ If entitlements were not auto approved successfully. It could be that the [Alloc
 
 ### Approving Entitlements
 
-After approving a cycle, the next step is to approve the entitlements. Please note that only the assigned user with correct access rights is able to approve entitlements for the cycle. This is set during the creation of the program, however it can also be changed in the **Entitlement Validation Group** dropdown within the [Entitlement manager](#entitlement-manager) of the program configuration.
+After approving a cycle, the next step is to approve the entitlements. Please note that only the assigned user with correct access rights is able to approve entitlements for the cycle. This is set during the creation of the program, however it can also be changed in the **Entitlement Validation Group** dropdown within the **Entitlement manager** of the program configuration.
 
 Login to OpenSPP with correct user role to approve the entitlements. After clicking on the program, select a cycle by clicking on the green button beside it and click on **Approve entitlement**. A yellow warning message appears if processes are still running. Make sure to click **Refresh** within the yellow warning message. Repeat every now and then until the yellow warning message disappears. It is important to let the warning message resolve before proceeding into the next step as it might otherwise cause data discrepancy.
 
