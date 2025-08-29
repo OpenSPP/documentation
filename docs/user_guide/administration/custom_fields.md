@@ -67,7 +67,7 @@ Now, define the basic characteristics of your new custom field. For this example
 Since this is a standard custom field, you do not need to provide computation logic. However, you can configure its behavior in the **Properties** tab.
 
 - **Required**: Check this box if you want to make this field mandatory for all records.
-- **Readonly**: Check this box to prevent users from editing the field's value through the user interface.
+- **Read-only**: Check this box to prevent users from editing the field's value through the user interface.
 - **Index**: Check this box to create a database index on this field. This can improve performance for filtering and searching on large datasets. This option should typically be managed by a developer or system administrator.
 - **Copied**: Determines if the value of this field is copied when a record is duplicated.
 
