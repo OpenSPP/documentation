@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Setting up service points
 
-## Introduction
-
 A service point is a virtual or physical location where individuals can receive or access their social protection services and benefits. Setting up service points is crucial for entitlement delivery to ensure that services and benefits are delivered to the recipients correctly. In this tutorial, you will learn how to set up service points.
 
 ## Prerequisites

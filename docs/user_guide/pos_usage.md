@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Point of Sales
 
-## Introduction
-
 In this Tutorial, you will learn about the POS feature; covering configuration, creating Point of sales and setting it by area.
 
 ## Prerequisites

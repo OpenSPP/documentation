@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Inventory Configuration
 
-## Introduction
-
 OpenSPP's In-Kind and Basket Entitlement modules leverage Odoo's powerful Inventory application to manage the distribution of goods and services to beneficiaries. To ensure these modules function correctly, specific features within the Inventory settings must be activated.
 
 This guide provides a step-by-step process for enabling two critical inventory features:

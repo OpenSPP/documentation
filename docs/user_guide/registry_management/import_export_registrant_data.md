@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Import and Export Registrant Data
 
-## Introduction
-
 This guide offers a comprehensive, step-by-step overview of the process for exporting registrant data from OpenSPP. It details the procedures, configurable options, and considerations available to system administrators, including how to use the export functionality to prepare files for re-import into OpenSPP.
 
 ## Prerequisites

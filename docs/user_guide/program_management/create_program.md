@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Creating a Program
 
-## Introduction
-
 This tutorial offers a comprehensive, step-by-step guide for establishing a social protection program using the OpenSPP platform. It is designed to assist users in configuring programs according to specific objectives and operational requirements.
 
 ## Prerequisites

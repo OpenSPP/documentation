@@ -6,8 +6,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 ---
 # Geotargeting
 
-## Introduction
-
 Use geotargeting to increase accuracy and {term}`effectiveness` in {term}`social protection` program enrollment. Geotargeting identifies potential {term}`beneficiaries`' locations, letting program administrators accurately target {term}`outreach` efforts, deliver {term}`benefits` to those in need, and reduce {term}`fraud` and leakage risks.
 
 OpenSPP's built-in geotargeting capabilities allow program administrators to locate potential beneficiaries based on location and streamline the enrollment process, ensuring eligible individuals get necessary benefits.

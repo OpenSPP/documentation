@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Configure ID and generate QR code
 
-## Introduction
-
 This guide offers a comprehensive, step-by-step overview for Operations Admins and Administrators on the process of configuring identification **ID** credentials and generating corresponding QR codes within OpenSPP. It details the procedures for creating and managing ID types, assigning unique IDs to individuals or groups, and generating printable documents embedded with scannable QR codes.
 
 ## Prerequisites

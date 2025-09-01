@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Consent management
 
-## Introduction
-
 Consent management is an essential component of {term}`social protection` programs that deal with {term}`personal data`. In order to protect the privacy of {term}`beneficiaries` and ensure that their personal information is being used and shared appropriately, it is important to obtain their consent for data processing and sharing.
 
 OpenSPP provides a built-in consent management system that enables program administrators to manage and track consent from beneficiaries. With OpenSPP's consent management, administrators can easily obtain, store, and manage consent from beneficiaries for data processing and sharing.

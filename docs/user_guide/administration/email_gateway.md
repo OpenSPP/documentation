@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Email Gateway Configuration
 
-## Introduction
-
 The Email Gateway in OpenSPP allows the platform to both send and receive emails, automating key communication and data entry tasks.
 - **Outgoing Emails (SMTP):** Used for sending system notifications, user invitations, password resets, and other communications from OpenSPP to users and beneficiaries.
 - **Incoming Emails (IMAP/POP):** Used to automatically create or update records in OpenSPP from a dedicated mailbox. For example, an email sent to a specific address could automatically generate a grievance ticket or a change request.

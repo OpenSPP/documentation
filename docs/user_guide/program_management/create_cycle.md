@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Create Cycles & Prepare Entitlements
 
-## Introduction
-
 In this tutorial, you will learn the process of configuring, creating, and approving cycles and preparing entitlements in OpenSPP.
 
 ## Prerequisites
