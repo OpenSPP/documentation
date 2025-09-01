@@ -121,7 +121,7 @@ OpenSPP displays different types of error messages on the import page when encou
 
 #### Error: "No matching records found"
 
-Some fields require values that are predefined in OpenSPP, such as the **category\_id** field. Setting a value in this column that does not match the values found in OpenSPP will return an error message. This error will be similar to the screenshot provided below.  
+Some fields require values that are predefined in OpenSPP, such as the **category_id** field. Setting a value in this column that does not match the values found in OpenSPP will return an error message. This error will be similar to the screenshot provided below.  
 ![](import_export_registrant_data/import_users_errors_found.png)
 
 To resolve this type of error, only type in values that are defined in OpenSPP, in this case for **category_id**, you can navigate to **Registry**, then click **Configuration**, and after that, select **Registrant Tags**. You should see the list of the defined **Tags**. You may use any of the listed values for **category_id**, or alternatively, add a new registrant tag.

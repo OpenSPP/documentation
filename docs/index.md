@@ -15,7 +15,7 @@ OpenSPP was created to support the improvement and growth of effective social pr
 
 OpenSPP is an open-source, modular and highly interoperable platform. The platform offers four main products: SP-MIS - a comprehensive management information system - plus a Social Registry, a Farmer Registry and a Disability Registry.
 
-OpenSPP is a Digital Public Good. It is built on more than 60 open-source modules, and leverages and contributes to other open-source projects including OpenG2P, MOSIP, OpenCRVS, Odoo, Payment Hub EE, ID PASS, CommCare, Metabase and OpenFn
+OpenSPP is a Digital Public Good. It is built on more than 60 open-source modules, and leverages and contributes to other open-source projects including OpenG2P, MOSIP, OpenCRVS, Odoo, Payment Hub EE, ID PASS, CommCare, Metabase and OpenFn.
 
 ## SP-MIS
 
@@ -30,10 +30,6 @@ The Social Registry is a repository for the storage and management of data for p
 ## Farmer Registry
 
 The Farmer Registry stores and manages farm holding and farm owner data, supporting coordination between the social and agricultural sectors. It supports mass registrations and regular updates, and integrates data from Geographic Information Systems, national ID and CRVS.
-
-## Disability Registry
-
-The Disability Registry is an organized database for systematically recording and managing information about individuals with disabilities within a specific population or geographic area. It contains important information to facilitate services and assistance for people with disabilities, including access to social protection programs. **OpenSPP is set to release its open-source Disability Registry in the second quarter of 2024**.
 
 ## Guiding principles
 
@@ -53,8 +49,8 @@ OpenSPP is currently in development, and everything is evolving rapidly thanks t
 :maxdepth: 3
 :hidden: true
 
-overview/index
 getting_started/index
+overview/index
 user_guide/index
 developer_guide/index
 reference/index

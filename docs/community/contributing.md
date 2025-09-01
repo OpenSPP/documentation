@@ -12,14 +12,14 @@ the community, and are grateful for the time and effort that people put into imp
 
 ## Code of Conduct
 
-We expect all contributors to the OpenSPP project to adhere to our [Code of Conduct](code_of_conduct.md).
+We expect all contributors to the OpenSPP project to adhere to our {doc}`code_of_conduct`.
 This document outlines the standards of behavior that we expect from all members of the community, and
 provides guidance on how to report any incidents of misconduct.
 
 ## Did you find a bug?
 
 - **Do not open up a GitHub issue if the bug is a security vulnerability in OpenSPP**, and instead follow the
-  [security disclosure policy](security_report).
+ {doc}`security_reporting`.
 
 - **Ensure the bug was not already reported** by searching on GitHub under
   [Issues](https://github.com/openspp/documentation/issues).

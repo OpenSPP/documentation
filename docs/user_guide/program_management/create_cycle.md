@@ -87,13 +87,13 @@ A popup should appear. Make the necessary changes and then click **Save**.
 
 ![](create_program_cycle_prepare_entitlements/12.png)
 
-See Tutorial - [Configure cash entitlements](https://docs.openspp.org/tutorial/user_guides/configure_cash_entitlements.html) to learn more on configuring cash entitlements.
+See Tutorial {doc}`configure_entitlements` to learn more on configuring cash entitlements.
 
 Please note that changes you made into the following fields are only applied to newly prepared entitlements.
 
 ### Creating Cycle
 
-A cycle can only be created under a program. If you do not have any existing programs yet, you may refer to this document [Create a social protection program](https://docs.openspp.org/tutorial/user_guides/create_social_protection_program.html).
+A cycle can only be created under a program. If you do not have any existing programs yet, you may refer to this document {doc}`create_program`.
 
 Select an existing program from the program table list. You will be directed to the screen below. Click **Create New Cycle** to generate a cycle for the program.
 
@@ -157,7 +157,7 @@ Please note that enabling Auto-approve entitlements in the program’s **Cycle m
 
 ![](create_program_cycle_prepare_entitlements/25.png)
 
-If entitlements were not auto approved successfully. It could be that the [Allocate funds](https://docs.openspp.org/tutorial/user_guides/allocate_funds.html) for the program are insufficient or missing. See the documentation Allocate funds for more details.
+If entitlements were not auto approved successfully. It could be that the funds for the program are insufficient or missing. See the documentation {doc}`allocate_funds` for more details.
 
 ### Approving Entitlements
 

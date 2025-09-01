@@ -16,8 +16,8 @@ To utilise this feature, you need the following:
 - Make sure that both modules **OpenSPP POS: ID Redemption** and **OpenSPP POS** are installed and activated.
 - Have existing individual records in your registry, either by creating records manually or importing records into OpenSPP.
 - Have an access role either as **Operations Admin** or **POS operator** to perform tasks in the POS Application.
-- Have an access role as an **Operations Admin** or **Administrator** to perform tasks in OpenSPP. Learn more about this in the guide [Administrating role-based access](https://docs.openspp.org/tutorial/user_guides/administrating_role_based_access.html)
-- Have an existing cycle with beneficiaries and entitlements generated on a program. Learn more about this in the guide. [Create a social protection program](https://docs.openspp.org/tutorial/user_guides/create_social_protection_program.html)
+- Have an access role as an **Operations Admin** or **Administrator** to perform tasks in OpenSPP. Learn more about this in the guide {doc}`administration/user_access`
+- Have an existing cycle with beneficiaries and entitlements generated on a program. Learn more about this in the guide {doc}`program_management/create_program`
 
 ## Objective
 
@@ -87,7 +87,7 @@ You may now select the new Cash payment method for a Point of sale. Navigate to 
 
 #### Group Point of sales by area
 
-In order to group Point of sales by area, make sure you have areas already existing in your OpenSPP instance. Learn more about importing areas in the guide [Import area](https://docs.openspp.org/tutorial/user_guides/import_areas.html). From the sidebar, navigate to **Point of Sale**, select **Configuration** and click **Point of Sales**. Select the Point of sale you wish to manage and assign by clicking an area from the dropdown **Area**.
+In order to group Point of sales by area, make sure you have areas already existing in your OpenSPP instance. Learn more about importing areas in the guide {doc}`administration/import_areas`. From the sidebar, navigate to **Point of Sale**, select **Configuration** and click **Point of Sales**. Select the Point of sale you wish to manage and assign by clicking an area from the dropdown **Area**.
 
 ![](point_of_sales/point_of_sales_select_area.png)
 

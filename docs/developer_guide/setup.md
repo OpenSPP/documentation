@@ -9,7 +9,7 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 ## OpenSPP Docker Setup Using Doodba
 
-This technique utilizes Docker, simplifying the installation of Odoo and its dependencies, with the added benefits offered by Doodba.
+Docker simplifies the installation of Odoo and its dependencies, with the added benefits offered by Doodba.
 
 ### Prerequisites
 

@@ -11,23 +11,15 @@ This tutorial describes the steps of configuring cash entitlements when selected
 
 ## Prerequisites
 
-- Have an access role as an **Operations Admin** or **Administrator**. Learn more about this in the guide [Administrating role-based access](https://docs.openspp.org/tutorial/user_guides/administrating_role_based_access.html#)
+- Have an access role as an **Operations Admin** or **Administrator**. Learn more about this in the guide {doc}`../administration/user_access`
 - Install and activate the module: **OpenSPP Cash Entitlement** on your OpenSPP instance as **Administrator**.
-- Create a Program or have an already existing program. Learn more about this in the guide [Create a social protection program](https://docs.openspp.org/tutorial/user_guides/create_social_protection_program.html)
+- Create a Program or have an already existing program. Learn more about this in the guide {doc}`create_program`.
 
 ## Objective
 
 After completing this guide, you will be able to learn how to configure cash entitlements and edit existing cash entitlement configuration.
 
 ## Process
-
-### Verify installed module
-
-To be able to configure cash entitlements, you have to make sure the necessary module is installed and activated on your OpenSPP instance, you can verify this by logging in to your OpenSPP instance as Administrator, go to **Apps** and search for **OpenSPP Cash Entitlement**.
-
-![](configure_cash_entitlements/1.png)
-
-After successfully activating, the **Activate** button should disappear and it should display **Learn more** as the remaining button.
 
 ### Configure the Entitlement Manager
 

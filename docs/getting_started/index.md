@@ -11,6 +11,9 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 This overview of how OpenSPP's documentation is organized will help you know where to look for certain things:
 
+
+- {doc}`installation_deb` offers a detailed, step-by-step guide for installing OpenSPP using Debian-based packages. It covers system requirements, installation procedures, initial configuration, and troubleshooting tips to ensure a smooth setup process.
+- {doc}`module_installation` offers a comprehensive, step-by-step guide for configuring OpenSPP after the initial installation. It explains how to install additional modules, customize features, and optimize your setup for specific needs.
 - {doc}`../overview/index` provides high-level information about OpenSPP's features, concepts, and use cases for decision makers and new users.
 - {doc}`../user_guide/index` provides practical, task-oriented instructions for using OpenSPP's features in day-to-day operations for administrators and end-users.
 - {doc}`../developer_guide/index` provides technical information and instructions for developers who need to customize, extend, integrate with, or contribute to OpenSPP.

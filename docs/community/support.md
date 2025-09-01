@@ -2,7 +2,7 @@
 review-status: needs-review
 review-date: 2025-06-04
 reviewer: migration-script
-migration-notes: "hidden for now. need to confirm if this is to be displayed"
+migration-notes: "hidden for now. for batch 2 documentation
 ---
 
 # Support Model
