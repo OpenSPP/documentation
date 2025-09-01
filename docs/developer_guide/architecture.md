@@ -79,7 +79,7 @@ modularity are:
 
 ## High-level Functional Reference Architecture
 
-![](images/highlevel_architecture.jpg)
+![](architecture/highlevel_architecture.jpg)
 
 The OpenSPP functional architecture diagram above presents an overview of the components and layers of a typical OpenSPP implementation.
 
@@ -126,7 +126,7 @@ Non-functional requirements are the characteristics of the OpenSPP platform that
 
 The on-premises deployment of OpenSPP encompasses a suite of interconnected components, each playing a vital role in delivering secure, robust, and highly efficient service. This document is intended to provide an high-level understanding of the OpenSPP on-premises deployment architecture and its key components.
 
-![](images/deployment_architecture_onprem.jpg)
+![](architecture/deployment_architecture_onprem.jpg)
 
 ### A. The components description
 
@@ -221,7 +221,7 @@ The selection among these options should align with the organization's/countries
 
 The single-node deployment refers to installing and configuring OpenSPP on a single VM, typically for testing or small-scale production purposes. This deployment type involves setting up all the required OpenSPP modules on a single physical or virtual machine, ensuring simplified management and a reduced resource footprint.
 
-![](images/deployment_architecture_on_prem_single_node.jpg)
+![](architecture/deployment_architecture_on_prem_single_node.jpg)
 
 The specifications required for a single-node deployment of OpenSPP largely depend on the intended use case of the system. The requirements may be relatively minimal for a testing or development setting, entailing a multi-core processor, adequate RAM, and sufficient storage capacity. However, for small-scale production environments, the requirements can escalate significantly, mandating top-tier multicore processors, substantial amounts of RAM, and high-performance, capacity-rich storage. The network interface should be correspondingly high-speed. These recommendations should be adapted based on the specific computational load and throughput anticipated for the system. For instance, systems expected to handle high traffic volumes will necessitate more robust hardware and expanded network capabilities to ensure seamless operation.
 
@@ -237,7 +237,7 @@ replace the default implementation with your own.
 For example, the eligibility calculation can be delegated to a third-party service that has access to other
 data and just return the eligibility result to OpenSPP.
 
-![](images/openspp_modular_architecture.png)
+![](architecture/openspp_modular_architecture.png)
 
 - [Eligibility Manager](programs/eligibility_manager.rst)
 - [Entitlement Manager](programs/entitlement_manager.rst)

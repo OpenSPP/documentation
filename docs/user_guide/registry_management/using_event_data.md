@@ -9,7 +9,7 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 In OpenSPP, Event Data provides a flexible mechanism to record and track specific, significant occurrences related to registrants over time. This functionality enhances the system's capacity to capture a chronological history of changes and actions without directly modifying the main registrant profile.
 
-### Overview of Event Data Functionality
+<!-- ## Overview of Event Data Functionality -->
 
 The `spp_event_data` module is designed to:
 - Provide a structured way to log and store data about events impacting registrants.
@@ -17,7 +17,7 @@ The `spp_event_data` module is designed to:
 - Offer tools to view and navigate the event history of a registrant.
 - Store multiple versions of the data, manage separate data lifecycles and sharing agreements, better manage the source of different data, and store data that should not be visible to all users or that loses relevance over time.
 
-### Integration with Program Membership Events
+<!-- ## Integration with Program Membership Events -->
 
 The `spp_event_data_program_membership` module enhances OpenSPP by integrating the Event Data module (`spp_event_data`) with the G2P Programs module (`g2p_programs`). This allows users to record and track program membership-related events, such as enrollment, suspension, exit, and changes in eligibility status, and link them to specific program membership records.
 

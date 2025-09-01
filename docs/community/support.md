@@ -2,7 +2,7 @@
 review-status: needs-review
 review-date: 2025-06-04
 reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
+migration-notes: "hidden for now. need to confirm if this is to be displayed"
 ---
 
 # Support Model

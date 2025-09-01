@@ -21,6 +21,5 @@ indicator_fields
 import_areas
 inventory_configuration
 email_gateway
-using_audit_logs
 hardware_integration
 ```

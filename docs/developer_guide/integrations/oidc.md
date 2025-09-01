@@ -50,7 +50,7 @@ it.
 
 **For example:**
 
-![](images/openspp_oidc_configuration.png)
+![](oidc/openspp_oidc_configuration.png)
 
 ### Customizing the login page (Optional)
 
