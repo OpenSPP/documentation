@@ -7,10 +7,10 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Overview
 
-Welcome to the OpenSPP overview section. This section provides high-level information about OpenSPP's features, concepts, and use cases for decision makers and new users.
+Welcome to the OpenSPP overview section. This section provides high-level information about OpenSPP's features, concepts, and product configurations for decision makers and new users.
 
 - {doc}`features/index`  
-- {doc}`use_cases/index`  
+- {doc}`products/index`  
 - {doc}`poc_and_pilot`
 - {doc}`concepts/index`
 <!-- - {doc}`case_studies/index` -->
@@ -22,7 +22,7 @@ Welcome to the OpenSPP overview section. This section provides high-level inform
 :hidden:
 
 features/index
-use_cases/index
+products/index
 poc_and_pilot
 concepts/index
 ```

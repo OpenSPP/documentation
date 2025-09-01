@@ -5,9 +5,9 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Use Cases
+# Products
 
-This section provides entry points for OpenSPP's main use cases.
+This section provides entry points for OpenSPP's main product configurations.
 
 ```{toctree}
 :maxdepth: 2
