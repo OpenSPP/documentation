@@ -31,16 +31,27 @@ For developers new to Odoo, it might seem easier to directly edit the existing O
 
 In short, creating modules is the professional standard for Odoo and OpenSPP development that ensures your solution is robust and future-proof.
 
-This modular approach is the foundation for all advanced customizations. From here, you can explore:
-- Adding more complex field types (Selection, Many2one, etc.).
-- Creating entirely new models and menus.
-- Adding business logic with Python methods.
-
-By mastering this pattern, you can tailor OpenSPP to meet any specific program requirement while ensuring your implementation remains clean, stable, and easy to maintain.
-
 ## Best Practices in OpenSPP Development
 
 For more detailed guidelines, refer to the {doc}`Best Practices Guide <../best_practices>`.
+
+## Module Customization Guides
+
+The following guides provide step-by-step instructions for common customization tasks in OpenSPP. Each guide focuses on a specific area of the platform, showing you how to extend its functionality by creating a custom module.
+
+- **{doc}`fields`**: Learn how to add new fields to existing models.
+- **{doc}`registry`**: Extend the core registry models for individuals and groups.
+- **{doc}`indicators`**: Create and manage custom indicators for eligibility checking, reporting, and analysis.
+- **{doc}`programs`**: Customize program definitions and behavior.
+- **{doc}`cycles`**: Modify program cycles and their states.
+- **{doc}`entitlements`**: Customize the logic for calculating and managing entitlements.
+- **{doc}`change_requests`**: Build new types of change requests to handle custom data modification workflows.
+- **{doc}`dms`**: Extend the Document Management System (DMS) with custom categories and logic.
+- **{doc}`rest_api`**: Create new REST API endpoints for integration with external systems.
+- **{doc}`areas`**: Customize geographical area data, such as adding population statistics.
+- **{doc}`service_points`**: Extend the functionality of service points.
+- **{doc}`audit`**: Configure and extend audit logging for tracking changes to critical data.
+- **{doc}`dashboard`**: Develop custom dashboards and reporting views.
 
 ## References
 
@@ -53,17 +64,17 @@ For more information on developing OpenSPP modules, refer to:
 :hidden: true
 :caption: Contents
 
-areas
-audit
-change_requests
-cycles
-dashboard
-dms
-entitlements
 fields
+registry
 indicators
 programs
-registry
+cycles
+entitlements
+change_requests
+dms
 rest_api
+areas
 service_points
+audit
+dashboard
 ```

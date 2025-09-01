@@ -1,6 +1,6 @@
 ---
 review-status: needs-review
-review-date: 2025-06-04
+review-date: 2025-09-01
 reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
@@ -164,56 +164,7 @@ pip install -r requirements.txt
 make html
 ```
 
----
-
-<!-- Commented this section out, this whole commented section is all from the old documentation version. unless there are relevant information from this section, we'll comment this part for now (administrators-guide-label)=
-
-# Administrators Guide
-
-This guide is for administrators of OpenSPP Documentation.
-It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into OpenSPP Documentation.
-
-(administrators-import-docs-submodule-label)=
-
-## Importing external docs with submodules
-
-To add an external package to OpenSPP Documentation, we use git submodules.
-Your package must be available under the OpenSPP GitHub organization.
-
-Inside the repository `openspp/documentation`, add a git submodule that points to your project.
-
-```shell
-git submodule add git@github.com:openspp/my_package.git submodules/my_package
-```
-
-Add a target `docs/my_package` in `Makefile`, then add `docs/my_package` to the `deps` target, following `openspp_registry` as a pattern.
-You might need to adjust the paths to your package's documentation after it is cloned.
-
-To complete setup, generate a symlink to your project's docs, and build the docs, use a single command.
-
-```shell
-make html
-```
-
-To make it easier for other contributors to work with your project, update the following files, using `openspp_registry` as a model.
- 
--   Add it to the documentation section {ref}`contributing-editing-external-package-documentation-label`.
--   Add the symlink `docs/my_package` to `.gitignore`.
--   Optionally set a branch to work on in `.gitmodules`.
-
-Commit and push your changes to a remote, and submit a pull request against [`openspp/documentation`](https://github.com/openspp/documentation/compare).
-
-(authors-guide-label)=
--->
-
-# Authors guide
-
-This guide is for authors of OpenSPP Documentation.
-It covers how to run a live preview of documentation while editing, build documentation, and perform quality checks.
-For general markup syntax, see {doc}`myst-reference`.
-
-
-## Synchronize the browser while editing
+### Synchronize the browser while editing
 
 Use `sphinx-autobuild` to view changes in the browser while you edit documentation.
 
@@ -222,32 +173,6 @@ make livehtml
 ```
 
 You can open a browser at http://127.0.0.1:8050/ to preview the documentation.
-
-
-<!-- Commented this section out, this whole commented section is all from the old documentation version. unless there are relevant information 
-(authors-quality-checks-label)=
-
-## Quality checks
-
-We strive for high quality documentation, setting the following minimum standards.
-
-
-(authors-markup-syntax-label)=
-
-### Markup syntax must be valid
-
-See both the specific markup syntax above and general markup in {doc}`myst-reference`.
-
-To validate markup, run the following command.
-
-```shell
-make html
-```
-
-Open `/_build/html/index.html` in a web browser.
-
-
-(authors-english-label)=
 
 ### American English spelling, grammar, and syntax, and style guide
 
@@ -271,9 +196,6 @@ Because it is difficult to automate good American English grammar and syntax, we
 We also understand that contributors might not be fluent in English.
 We encourage contributors to make a reasonable effort, and to request a review of their pull request from community members who are fluent in English to fix grammar and syntax.
 Please ask!
-
-
-(authors-linkcheck-label)=
 
 ### All links must be valid
 
@@ -319,9 +241,6 @@ And there is a doubly punishing place for those who disable `linkcheck` because 
 
 Please do not be "that person".
 ```
-
-
-(authors-syntax-highlighting-label)=
 
 ### Syntax highlighting
 
@@ -394,8 +313,6 @@ You can also use the [`pygmentize`](https://pygments.org/docs/cmdline/) binary.
 When using the online lexer, if any red-bordered rectangles appear, then the lexer for Pygments interprets your snippet as not valid.
 You can search the [Pygments issue tracker](https://github.com/pygments/pygments/search) for possible solutions, or submit a pull request to enhance the lexer.
 
-
-(authors-html-meta-data-label)=
 
 ### HTML and Open Graph metadata
 
@@ -512,8 +429,6 @@ Here is how to set up and build the documentation locally {doc}`/contributing/se
 
 Here is how to set up and build the documentation locally {doc}`/contributing/setup-build`.
 
-(myst-reference-link-heading-label)=
-
 #### Link to a heading
 
 ```md
@@ -523,8 +438,6 @@ Here is how to set up and build the documentation locally {doc}`/contributing/se
 
 Read the section {ref}`myst-reference-link-heading-label`.
 ```
-
-(myst-reference-hello-heading-label)=
 
 ##### Hello heading
 
@@ -562,8 +475,6 @@ However we can {ref}`enhance images with cards <enhance-images-label>` to add a 
 Use `image` for anything but diagrams.
 
 Use `figure` for diagrams.
-
-(static-assets-label)=
 
 #### Static assets
 
@@ -630,7 +541,7 @@ The following MyST example will display as shown below.
 ```
 ````
 
-```{image} /_static/standards.png
+```{image} ../_static/standards.png
 :alt: XKCD "Standards" comic strip
 ```
 
@@ -856,21 +767,15 @@ print(f"my {a}nd line")
 ````
 
 
-(setup-build-label)=
-
 # Building and checking the quality of documentation
 
 This document covers how to build the OpenSPP Documentation and check it for quality.
 
 
-(setup-build-installation-label)=
-
 ## Installation
 
 Installation of OpenSPP Documentation includes pre-requisites and the repository itself.
 
-
-(setup-build-installation-python-label)=
 
 ### Python
 
@@ -878,8 +783,6 @@ Python 3.8 or later is required.
 A more recent Python is preferred.
 Use your system's package manager or [pyenv](https://github.com/pyenv/pyenv) to install an appropriate version of Python.
 
-
-(setup-build-installation-vale-label)=
 
 ### Vale
 
@@ -906,8 +809,6 @@ This is an easy way to become a contributor to OpenSPP.
 ```
 
 
-(setup-build-installation-graphviz-label)=
-
 ### Graphviz
 
 Install [Graphviz](https://graphviz.org/download/) for graph visualization.
@@ -927,8 +828,6 @@ sudo apt-get install graphviz
 `````
 
 
-(setup-build-installation-clone-OpenSPP-documentation-label)=
-
 ### Clone `OpenSPP/documentation`
 
 Clone the OpenSPP Documentation repository, and change your working directory into the cloned project.
@@ -939,8 +838,6 @@ git clone https://github.com/OpenSPP/documentation.git
 cd documentation
 make html
 ```
-
-(setup-build-available-documentation-builds-label)=
 
 ## Available documentation builds
 
@@ -974,7 +871,7 @@ Open `/_build/html/index.html` in a web browser.
 make livehtml
 ```
 
-Open http://0.0.0.0:8000/ in a web browser.
+Open http://127.0.0.1:8050/ in a web browser.
 
 
 ### `linkcheck`
@@ -1010,8 +907,6 @@ See {ref}`authors-html-meta-data-label` for more info.
 make html_meta
 ```
 
-(contributing-sphinx-extensions)=
-
 # Sphinx extensions
 
 We use several Sphinx extensions to enhance the presentation of OpenSPP documentation.
@@ -1021,11 +916,8 @@ We use several Sphinx extensions to enhance the presentation of OpenSPP document
 -   [`sphinx.ext.todo`](https://www.sphinx-doc.org/en/master/usage/extensions/todo.html) adds support for todo items.
 -   [`sphinx_copybutton`](https://sphinx-copybutton.readthedocs.io/en/latest/index.html)  adds a little "copy" button to the right of code blocks.
 -   [`sphinx-design`](https://sphinx-design.readthedocs.io/en/latest/) adds grids, cards, icons, badges, buttons, tabs, and dropdowns.
--   [`sphinx_sitemap`](https://pypi.org/project/sphinx-sitemap/) generates multiversion and multilanguage [sitemaps.org](https://www.sitemaps.org/protocol.html) compliant sitemaps.
 -   [`sphinxcontrib.httpdomain`](https://sphinxcontrib-httpdomain.readthedocs.io/en/stable/) provides a Sphinx domain for describing HTTP APIs.
 -   [`sphinxcontrib.httpexample`](https://sphinxcontrib-httpexample.readthedocs.io/en/latest/) enhances `sphinxcontrib-httpdomain` by generating RESTful HTTP API call examples for different tools from a single HTTP request example.
     Supported tools include [curl](https://curl.se/), [wget](https://www.gnu.org/software/wget/), [httpie](https://httpie.io/), and [python-requests](https://requests.readthedocs.io/en/latest/).
--   [`sphinxcontrib.video`](https://pypi.org/project/sphinxcontrib-video/) allows you to embed local videos as defined by the HTML5 standard.
--   [`sphinxext.opengraph`](https://pypi.org/project/sphinxext-opengraph/) generates [OpenGraph metadata](https://ogp.me/).
 -   [`sphinx.ext.viewcode`](https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html) generates pages of source code modules and links between the source and the description.
 -   [`sphinx.ext.autosummary`](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html) generates function/method/attribute summary lists. -->
