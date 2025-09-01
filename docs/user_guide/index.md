@@ -43,7 +43,6 @@ Administrative tasks and system management:
 - {doc}`administration/import_areas`
 - {doc}`administration/inventory_configuration`
 - {doc}`administration/email_gateway`
-- {doc}`administration/using_audit_logs`
 - {doc}`administration/hardware_integration`
 
 ## Other Features
