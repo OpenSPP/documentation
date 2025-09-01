@@ -6,7 +6,7 @@ The requirements to merge code into OpenSPP projects depend on the module's
 maturity level.
 
 The OpenSPP uses the following maturity levels for the modules stored in the
-Github repository and published in PyPi platform:
+Github repository:
 
 -  **Alpha:** Unstable, for development or testing purpose
 
@@ -16,9 +16,6 @@ Github repository and published in PyPi platform:
 
 -  **Mature:** In Production level since more than one version and
    actively maintained.
-
-This is consistent with the terminology used on PyPi, and the allowed
-values are the same as the ones used by PyPi.
 
 A module maturity level is stored in the **development\_status** key of
 the standard manifest of the module (\_\_manifest\_\_.py).
@@ -38,9 +35,6 @@ A module’s development\_status can be different for different versions.
 A “mature” or “stable” module in a version can start as “stable” or
 “beta” in the next branch, as a step towards maturity.
 
-All modules, regardless of their development status, will be published
-on PyPi.
-
 Next we describe in detail what each 'development status' means, what
 can be expected by users, and what are the requirements for modules to
 be assigned each maturity level.
@@ -56,8 +50,8 @@ that are easier to review and make it easier to divide the work between
 several people.
 
 Each pull request is an iteration providing a correct set of features.
-The corresponding code should always pass TravisCI checks and should
-have at least one peer review.
+The corresponding code should always pass the CI checks on GitHub Actions and
+should have at least one peer review.
 
 Since these modules are a work in progress toward a “stable” module,
 they are not suitable for use in production. The design and
