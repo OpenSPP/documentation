@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Change Requests
 
-## Introduction
-
 This guide explains how to update registrant information in OpenSPP using the Change Request module. The process follows a defined workflow, requiring users with specific roles to initiate and validate requests. Permission-based access and thorough documentation help ensure data accuracy and reliable operations.
 
 ## Prerequisites

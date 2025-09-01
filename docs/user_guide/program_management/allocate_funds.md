@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Allocate funds
 
-## Introduction
-
 This tutorial covers the step-by-step procedure on how to allocate funds for a project.
 
 ## Prerequisites

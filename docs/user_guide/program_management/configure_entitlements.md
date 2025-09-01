@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Configure cash entitlements
 
-## Introduction
-
 This tutorial describes the steps of configuring cash entitlements when selected as Entitlement manager.
 
 ## Prerequisites

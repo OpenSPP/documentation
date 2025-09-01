@@ -18,4 +18,5 @@ This section provides entry points for OpenSPP's main use cases.
 farmer_registry
 social_registry
 sp_mis
+social-protection-management-information-system
 ```

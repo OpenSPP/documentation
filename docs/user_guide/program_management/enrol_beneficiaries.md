@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Enrol beneficiaries
 
-## Introduction
-
 In this tutorial, you will learn the process of enrolling beneficiaries in OpenSPP. Accurate beneficiary enrolment ensures that the right individuals or groups receive the intended benefits.
 
 ## Prerequisites

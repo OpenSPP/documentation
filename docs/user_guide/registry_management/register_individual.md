@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Register new individual
 
-## Introduction
-
 This guide provides a comprehensive, step-by-step overview for authorized users on the process of registering new entities within the OpenSPP platform. It details the procedures for manually creating individual and group records, as well as the method for associating existing individuals as members of a group.
 
 ## Prerequisites

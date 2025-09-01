@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Event Data
 
-## Introduction
-
 In OpenSPP, Event Data provides a flexible mechanism to record and track specific, significant occurrences related to registrants over time. This functionality enhances the system's capacity to capture a chronological history of changes and actions without directly modifying the main registrant profile.
 
 ### Overview of Event Data Functionality

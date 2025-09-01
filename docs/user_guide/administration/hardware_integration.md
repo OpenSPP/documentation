@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Hardware integration
 
-## Introduction
-
 Hardware integration is a key feature of OpenSPP, allowing for the integration of hardware devices to improve the {term}`efficiency` and {term}`effectiveness` of {term}`social protection` programs. Currently, OpenSPP supports two types of hardware integrations:
 
 **Document scanner through FTP**: This integration allows for the automated scanning and uploading of documents, such as {term}`beneficiary` {term}`identification` documents or proof of income, directly into the OpenSPP platform. This reduces the need for manual data entry and improves the accuracy and timeliness of data.

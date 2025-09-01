@@ -11,10 +11,9 @@ Welcome to the OpenSPP overview section. This section provides high-level inform
 
 - {doc}`features/index`  
 - {doc}`use_cases/index`  
-- {doc}`case_studies/index`
-- {doc}`concepts/index`
 - {doc}`poc_and_pilot`
-
+- {doc}`concepts/index`
+<!-- - {doc}`case_studies/index` -->
 
 
 ```{toctree}
@@ -24,7 +23,6 @@ Welcome to the OpenSPP overview section. This section provides high-level inform
 
 features/index
 use_cases/index
-case_studies/index
-concepts/index
 poc_and_pilot
+concepts/index
 ```

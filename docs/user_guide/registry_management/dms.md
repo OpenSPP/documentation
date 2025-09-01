@@ -6,8 +6,7 @@ migration-notes: "Added during 2025 documentation reorganization"
 ---
 
 # Document Management System
-
-## Introduction  
+ 
 In this tutorial, you will learn how to use the Document Management System feature in OpenSPP.
 
 ## Prerequisites  

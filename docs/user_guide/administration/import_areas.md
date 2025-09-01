@@ -7,8 +7,6 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Import area
 
-## Introduction
-
 In this tutorial, you will learn how to prepare and import area data into OpenSPP using an Excel workbook.
 
 ## Prerequisites
