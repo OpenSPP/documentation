@@ -325,11 +325,14 @@ smartquotes = False
 # pygments_style = "sphinx.pygments_styles.PyramidStyle"
 pygments_style = "sphinx"
 
-from pygments import token 
-from sphinx.highlighting import lexers
-from csvlexer.csv import CsvLexer
+# Only register CSV lexer on non-Windows platforms
+import platform
+if platform.system() != 'Windows':
+    from pygments import token 
+    from sphinx.highlighting import lexers
+    from csvlexer.csv import CsvLexer
 
-lexers['csv'] = CsvLexer(startinline=True)
+    lexers['csv'] = CsvLexer(startinline=True)
 
 # Options for the linkcheck builder
 # Ignore localhost
