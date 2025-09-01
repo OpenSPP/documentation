@@ -1,6 +1,6 @@
 ---
 review-status: reviewed
-review-date: 2025-07-03
+review-date: 2025-09-01
 reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
@@ -15,7 +15,7 @@ This user guide provides instructions on how to manage user access in OpenSPP, i
 
 ## Prerequisites
 
-To grant access, you need a user account with the **System Admin** role given by the OpenSPP team.
+To grant access to other users, you must have a user account with the **System Admin** role. This role is assigned to your account by default after completing the installation guide, or provided by the OpenSPP team for pilot or demo instances of OpenSPP, Only users with the **System Admin** role can manage user accounts, roles, and permissions within OpenSPP.
 
 ## Objective
 
@@ -24,6 +24,8 @@ After completing this tutorial, you will gain an understanding of how to manage 
 ## Process
 
 All user-related tasks, such as creating new users, modifying existing users, configuring their information, passwords, and user roles, are performed on the **User** page.
+
+By default, you will have a user with **System-Administator** access rights already configured if you have completed the installation guide, {doc}`../../getting_started/installation_deb`.
 
 The **Users** page is accessed by clicking on the menu icon in the top-left corner and select **Settings**.
 
@@ -83,7 +85,7 @@ Click on the name of the user you wish to edit. Click on the field to modify the
 
 ### Assigning roles to a user
 
-Assigning a role to a user account enables them to perform a specific set of actions in OpenSPP. For instance, only a **System admin** role has the permission to import and export data in and out of OpenSPP. Therefore, it is important to assign specific roles, particularly to the user account’s purpose. This also prevents unauthorized access to sensitive data, which may be easily mishandled.
+Assigning a role to a user account enables them to perform a specific set of actions in OpenSPP.
 
 Click on the menu icon in the top-left corner then choose on **Settings**. Click **Users & Companies** and select **Users**.
 
@@ -94,6 +96,8 @@ Click on the name of the user account you wish to assign roles to. In the **Role
 ![](administrating_role_based_access/access_rights_roles_dropdown.png)
 
 Configure the **From** and **To** columns. **From** defines when this user can start having the selected access role, while **To** defines when it will expire. To remove the role from the user, simply click on the trash icon. Click on the **Save** button once done.
+
+Note that you can also assign **System Admin** role to existing users to grant it with system admin access rights automatically.
 
 ![](administrating_role_based_access/access_rights_from_to.png)
 

@@ -13,7 +13,7 @@ This guide provides a comprehensive, step-by-step overview for authorized users 
 
 To register an individual for OpenSPP, you need to:
 
-- Ensure that you have the necessary user permission.
+- Ensure that you have the necessary user permission. Learn more in this document: {doc}`../administration/user_access`
 - Prepare the required data for the individual.
 
 ## Objective

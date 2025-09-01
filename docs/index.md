@@ -41,7 +41,7 @@ Our guiding principles are informed by the Digital Public Goods Standard and the
 - **Interoperability**: The platform is designed to support system interoperability - critical for the creation of cohesive and efficient digital ecosystems.
 - **Inclusivity**: Our products can be customized to suit linguistic and cultural requirements, accessibility, digital literacy, and deployment in remote and less-developed contexts.
 
-To begin using the platform, head to the [Getting Started](https://docs.openspp.org/getting_started/) section for an overview of how OpenSPP’s documentation is organized, and how to locate relevant information.
+To begin using the platform, head to the {doc}`getting_started/index` section for an overview of how OpenSPP’s documentation is organized, and how to locate relevant information.
 
 OpenSPP is currently in development, and everything is evolving rapidly thanks to the input provided by our users. If you have any questions or needs, please do not hesitate to contact the team through Github issues or the OpenSPP [website](https://openspp.org/).
 

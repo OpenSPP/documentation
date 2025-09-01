@@ -27,8 +27,6 @@ OpenSPP is built on top of [Odoo 17.0](https://www.odoo.com/documentation/17.0/)
 
 To learn more, visit the {doc}`../developer_guide/architecture` section.
 
-To begin working with OpenSPP, refer to the installation guides below.
-
 ```{toctree}
 ---
 caption: Getting Started
