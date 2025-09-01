@@ -156,11 +156,10 @@ steps below:
 It is recommended that you use a virtual environment to build the documentation. This will allow you to
 install the required dependencies without affecting your system.
 
-Python 3.10 should be used to build the documentation. You can install it using your package manager or by
+Python 3.11 should be used to build the documentation. You can install it using your package manager or by
 following the instructions on the [pyenv GitHub page](https://github.com/pyenv/pyenv).
 
 ```bash
-pip install -r requirements.txt
 make html
 ```
 
@@ -168,7 +167,7 @@ make html
 
 Use `sphinx-autobuild` to view changes in the browser while you edit documentation.
 
-```shell
+```bash
 make livehtml
 ```
 
@@ -920,4 +919,4 @@ We use several Sphinx extensions to enhance the presentation of OpenSPP document
 -   [`sphinxcontrib.httpexample`](https://sphinxcontrib-httpexample.readthedocs.io/en/latest/) enhances `sphinxcontrib-httpdomain` by generating RESTful HTTP API call examples for different tools from a single HTTP request example.
     Supported tools include [curl](https://curl.se/), [wget](https://www.gnu.org/software/wget/), [httpie](https://httpie.io/), and [python-requests](https://requests.readthedocs.io/en/latest/).
 -   [`sphinx.ext.viewcode`](https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html) generates pages of source code modules and links between the source and the description.
--   [`sphinx.ext.autosummary`](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html) generates function/method/attribute summary lists. -->
+-   [`sphinx.ext.autosummary`](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html) generates function/method/attribute summary lists.
