@@ -1,6 +1,6 @@
 ---
 review-status: reviewed
-review-date: 2025-07-16
+review-date: 2025-09-01
 reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
@@ -11,10 +11,11 @@ This guide provides step-by-step instructions for installing the Farmer Registry
 
 ## Prerequisites
 
-Before you begin, ensure you have the following:
+To be able to setup farmer registry into your OpenSPP, you need to: 
 
+- Ensure your user account has the **System Admin** role. Learn more in this guide: {doc}`../administration/user_access` documentation.
 - An API Key for MapTiler to enable GIS functionality. You can retrieve this by checking their documentation [here](https://docs.maptiler.com/cloud/api/).
-- Developer mode of OpenSPP should be enabled to set up the MapTiler key.
+- Developer mode of OpenSPP should be enabled to set up the MapTiler key. For details on configuring developer mode, refer to the {doc}`../../developer_guide/developer_mode`
 
 ## Objective
 

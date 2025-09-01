@@ -19,7 +19,7 @@ The `spp_event_data` module is designed to:
 
 <!-- ## Integration with Program Membership Events -->
 
-The `spp_event_data_program_membership` module enhances OpenSPP by integrating the Event Data module (`spp_event_data`) with the G2P Programs module (`g2p_programs`). This allows users to record and track program membership-related events, such as enrollment, suspension, exit, and changes in eligibility status, and link them to specific program membership records.
+<!-- The `spp_event_data_program_membership` module enhances OpenSPP by integrating the Event Data module (`spp_event_data`) with the G2P Programs module (`g2p_programs`). This allows users to record and track program membership-related events, such as enrollment, suspension, exit, and changes in eligibility status, and link them to specific program membership records. -->
 
 <!-- ### Key Features
 
@@ -34,9 +34,10 @@ The `spp_event_data_program_membership` module enhances OpenSPP by integrating t
 To utilize and manage Event Data, ensure the following prerequisites are met:
 
 - Individual or group records already exist in your registry. For more information, refer to {doc}`register_individual` or {doc}`import_export_registrant_data`.
-- The `spp_event_data` module (OpenSPP Event Data) is installed and activated.
-- If specific event types are required (such as program membership events), ensure that any related modules (e.g., `spp_event_data_program_membership`) are also installed and activated.
-- To access demonstration features, the `spp_event_demo` module should be activated.
+- The `spp_event_data` module (OpenSPP Event Data) is installed. 
+- If specific event types are required (such as program membership events), ensure that any related modules (e.g., `spp_event_data_program_membership`) are also installed.
+- To access demonstration features, the `spp_event_demo` module should be installed.
+> To learn on installing optional modules, refer to the **Installing Additional Modules** section in the document: {doc}`../../getting_started/module_installation`.
 - Appropriate user access roles are assigned to allow creation or viewing of event records. By default, the **System admin** user account has access to event data functionality.
 
 ## Objective

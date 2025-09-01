@@ -12,8 +12,8 @@ In this tutorial, you will learn how to use the Document Management System featu
 ## Prerequisites  
 To utilize the DMS feature, you need to:  
 - Have existing individual records in your registry, either by creating records manually or importing records into OpenSPP. Learn more about this in the guide  {doc}`register_individual` or {doc}`import_export_registrant_data`
-- By default, the system administrator has sufficient permission to access the DMS. Learn more about this in the guide {doc}`../administration/user_access`
-- Ensure that the DMS module `spp_dms` is properly installed and activated. Note that the Change_request (`spp_change_request`) module automatically installs and activates the DMS module.  
+- By default, A user account with **System Admin** has sufficient permission to access the DMS. Learn more in the guide {doc}`../administration/user_access`
+- Ensure that the DMS module `spp_dms` is properly installed and activated. Note that the Change_request (`spp_change_request`) module automatically installs the DMS module. To learn installing optional modules, refer to the **Installing Additional Modules** section in the document: {doc}`../../getting_started/module_installation`.
 - A change request must have an attached document.
 
 ## Objective  

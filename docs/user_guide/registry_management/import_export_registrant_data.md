@@ -1,6 +1,6 @@
 ---
 review-status: Reviewed
-review-date: 2025-07-07
+review-date: 2025-09-01
 reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
@@ -11,9 +11,9 @@ This guide offers a comprehensive, step-by-step overview of the process for expo
 
 ## Prerequisites
 
-To be able to import or export registrant data from OpenSPP, the following is required: 
+To be able to import or export registrant data from OpenSPP, you need to: 
 
-- Ensure you have a user account with admin access to the OpenSPP platform. Learn more in this guide: {doc}`../administration/user_access`.
+- Ensure your user account has the **System Admin** role. Learn more in this guide: {doc}`../administration/user_access` documentation.
 - Have access to spreadsheet software capable of editing and saving CSV or Excel files, such as Microsoft Excel or Google Sheets
 - Determine the list of fields relevant to the data you wish to export.
 

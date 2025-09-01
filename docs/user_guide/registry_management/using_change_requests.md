@@ -16,16 +16,8 @@ Before submitting or approving change requests, ensure the following:
 - Assign appropriate roles to Change Request validators. You can learn how to perform these tasks in the {doc}`../administration/user_access` document under the **Configuring Roles** section:
   - **Local Validator**: Add the group name under the Groups tab: `Change Request Module Access / Change Request Validator Local`.
   - **HQ Validator**: Add the group name under the Groups tab: `Change Request Module Access / Change Request Validator HQ`.
-- Install the Change Request Module.
-  1. Log in as Administrator. Then navigate to Apps.
+- Install the **Change Request Module**. Learn more in the **Installing Additional Modules** section of this guide: {doc}`../../getting_started/module_installation`.
 
-    ![](using_change_request/change_request_app_menu.png)
-
-  2. Search OpenSPP Change Request and click install. Once installed, the page should refresh, then Activate button should disappear.
-
-    ![](using_change_request/change_request_install_module.png)
-
-  3. This indicates that the module has been installed successfully.
 
 ## Objective
 

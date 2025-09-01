@@ -1,11 +1,11 @@
 ---
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
+review-status: reviewed
+review-date: 2025-09-01
+reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Register new individual
+# Register individual
 
 This guide provides a comprehensive, step-by-step overview for authorized users on the process of registering new entities within the OpenSPP platform. It details the procedures for manually creating individual and group records, as well as the method for associating existing individuals as members of a group.
 
@@ -13,7 +13,7 @@ This guide provides a comprehensive, step-by-step overview for authorized users 
 
 To register an individual for OpenSPP, you need to:
 
-- Ensure that you have the necessary user permission. Learn more in this document: {doc}`../administration/user_access`
+- Ensure you have the appropriate user permissions, such as **Global Registry**, **Local Registry**, or **System Admin** roles. Learn more in this guide: {doc}`../administration/user_access`
 - Prepare the required data for the individual.
 
 ## Objective
