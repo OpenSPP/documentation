@@ -1,6 +1,6 @@
 # End-to-End Program and Entitlement Management
 
-OpenSPP provides comprehensive lifecycle management for {term}`social protection` programs, from initial design and {term}`beneficiary` enrollment through {term}`benefit <benefits>` calculation and disbursement, supporting diverse program types including {term}`cash transfers`, in-kind distributions, and voucher-based assistance.
+OpenSPP provides comprehensive lifecycle management for {term}`social protection` programs, from initial design and {term}`beneficiary` enrollment through {term}`benefit <benefits>` calculation and disbursement, supporting diverse program types including [cash transfers](./payment_disbursement.md), [in-kind distributions](./in_kind_benefits.md), and voucher-based assistance.
 
 ## Managing Complexity at Scale
 
@@ -29,5 +29,4 @@ The program management functionality is delivered through specialized modules:
 * **[spp_entitlement_in_kind](/reference/modules/spp_entitlement_in_kind.md)**: In-kind benefit allocation with inventory tracking and distribution management
 * **[spp_entitlement_basket](/reference/modules/spp_entitlement_basket.md)**: Mixed basket entitlements combining multiple benefit types
 * **[g2p_entitlement_voucher](/reference/modules/g2p_entitlement_voucher.md)**: Voucher generation, distribution, and redemption tracking
-* **[g2p_program_cycleless](/reference/modules/g2p_program_cycleless.md)**: Support for continuous programs without defined cycles
 * **[spp_programs_compliance_criteria](/reference/modules/spp_programs_compliance_criteria.md)**: Compliance monitoring and enforcement for conditional programs

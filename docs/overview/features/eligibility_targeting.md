@@ -11,7 +11,7 @@ OpenSPP's configurable approach recognizes that different programs require diffe
 ## Targeting Methods
 
 * **Manual Selection and Approval**: Enable program staff to directly select beneficiaries with multi-level approval workflows for oversight and accountability
-* **Tag-Based Targeting**: Automatically enroll {term}`registrants <registrant>` marked with specific tags such as "vulnerable household," "displaced {term}`family`," or custom program-specific categories
+* **Tag-Based Targeting**: Automatically enroll {term}`registrants <registrant>` marked with specific tags such as "vulnerable household," "displaced family", or custom program-specific categories
 * **Geographic Targeting**: Define eligible areas at any administrative level from national to village, with support for complex boundary definitions
 * **Demographic and Categorical Filters**: Target based on age groups, gender, disability status, household composition, or any combination of demographic criteria
 * **SQL-Based Custom Rules**: Create sophisticated eligibility rules using SQL queries for maximum flexibility in defining complex targeting logic
