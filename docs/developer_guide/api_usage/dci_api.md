@@ -19,7 +19,7 @@ This API enables authorized external systems to securely search and synchronize 
 
 ## Process
 
-### Authentication: Obtaining an Access Token
+### Authentication: Obtaining an access token
 
 The DCI API is secured using OAuth 2.0 with the Client Credentials grant type.
 Before making any data requests, your application must obtain a bearer token.
@@ -28,7 +28,7 @@ Before making any data requests, your application must obtain a bearer token.
 - **Method**: `POST`
 - **Body**: `x-www-form-urlencoded` with `grant_type`, `client_id`, `client_secret`, `db_name`.
 
-**Example: Get Access Token**
+**Example: Get access token**
 
 ```python
 import requests
@@ -55,7 +55,7 @@ access_token = token_data.get("access_token")
 print("Access Token obtained successfully.")
 ```
 
-### Searching the Registry
+### Searching the registry
 
 Once authenticated, you can use the access token to perform a synchronous search on the registry.
 
@@ -66,7 +66,7 @@ Once authenticated, you can use the access token to perform a synchronous search
     - `Content-Type`: `application/json`
 - **Body**: A JSON object conforming to the DCI `sync/search` request specification.
 
-**Example: Search for an Individual**
+**Example: Search for an individual**
 
 ```python
 search_url = f"{url}/registry/sync/search"
@@ -130,7 +130,7 @@ else:
 ```
 
 
-### Setup and Configuration
+### Setup and configuration
 
 To use the DCI API, you must first configure a client in OpenSPP.
 
@@ -140,13 +140,13 @@ To use the DCI API, you must first configure a client in OpenSPP.
 4.  **Reveal Credentials**: A **Show** button will appear. Click it to reveal the `Client ID` and `Client Secret`.
 5.  **Important**: Copy these credentials immediately. For security, the **Show** button will disappear after you close the dialog, and you will not be able to retrieve the secret again.
 
-## Best Practices
+## Best practices
 
-1.  **Secure Credential Storage**: Never hard-code your `Client ID` or `Client Secret` in your application. Use environment variables or a secure secret management system.
-2.  **Token Management**: Access tokens are short-lived. Your application should handle token expiration and automatically request a new one when needed.
-3.  **Error Handling**: Implement robust error handling to manage different HTTP status codes and error responses from the API.
-4.  **Secure Connections**: Always use HTTPS for all API traffic to protect data in transit.
-5.  **Logging**: Log request `transaction_id`s and correlation IDs to help with troubleshooting and auditing.
+-  **Secure Credential Storage**: Never hard-code your `Client ID` or `Client Secret` in your application. Use environment variables or a secure secret management system.
+-  **Token Management**: Access tokens are short-lived. Your application should handle token expiration and automatically request a new one when needed.
+-  **Error Handling**: Implement robust error handling to manage different HTTP status codes and error responses from the API.
+-  **Secure Connections**: Always use HTTPS for all API traffic to protect data in transit.
+-  **Logging**: Log request `transaction_id`s and correlation IDs to help with troubleshooting and auditing.
 
 ## References
 

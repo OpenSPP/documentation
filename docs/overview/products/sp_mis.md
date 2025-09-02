@@ -7,8 +7,6 @@ myst:
 ---
 # Social Protection Management Information System
 
-## What is a Social Protection Management Information System?
-
 A **Social Protection Management Information System (SP-MIS)** is a comprehensive digital solution designed to manage and automate the core operational processes of social protection programs. While a {term}`social registry` focuses on identifying and assessing potential beneficiaries, an SP-MIS handles the entire lifecycle of program implementation, from enrolling beneficiaries to delivering payments and managing grievances.
 
 SP-MIS are critical for the effective and transparent administration of {term}`social protection` programs, such as {term}`cash transfers`, food assistance, and public works programs. They serve as the operational backbone, integrating data from various sources—like social registry and national ID systems—to ensure that {term}`benefits` are delivered to the right people, at the right time, and in the right amount.
@@ -34,8 +32,8 @@ An SP-MIS and a Social Registry are distinct but complementary systems. While a 
 
 The data flows from the Social Registry to the SP-MIS, which then handles the operational aspects of program delivery, such as calculating payments and tracking the beneficiary lifecycle. This linkage is crucial for achieving policy coherence and operational efficiency. For example, an SP-MIS can be integrated with:
 
-* A {doc}`Social Registry <social_registry>` to receive lists of potentially eligible household.
-* A {doc}`Farmer Registry <farmer_registry>` to identify vulnerable agricultural household for specific programs.
+* A **{doc}`Social Registry <social_registry>`** to receive lists of potentially eligible household.
+* A **{doc}`Farmer Registry <farmer_registry>`** to identify vulnerable agricultural household for specific programs.
 * **{term}`Civil registration`** and Vital Statistics (CRVS) systems to verify life events like births or deaths, which can affect eligibility.
 * **National ID systems** to validate identities.This integration eliminates data silos, reduces administrative duplication, and enables a more holistic and responsive approach to social protection.
 

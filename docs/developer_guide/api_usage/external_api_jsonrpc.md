@@ -24,7 +24,7 @@ OpenSPP exposes much of its data and functionality via JSON-RPC endpoints. You c
 **Endpoint:**  
 - `/jsonrpc` — All JSON-RPC calls (authentication and model methods)
 
-### JSON-RPC Payload Structure and Methods
+### JSON-RPC payload structure and methods
 
 All interactions with the OpenSPP JSON-RPC API use a standard payload structure. Each request is a JSON object with the following keys:
 
@@ -36,7 +36,7 @@ All interactions with the OpenSPP JSON-RPC API use a standard payload structure.
     - `args`: A list of arguments for the method.
 - `id`: A unique identifier for the request (integer or string).
 
-**Example Payload:**
+**Example payload:**
 ```python
 payload = {
     "jsonrpc": "2.0",
@@ -55,12 +55,12 @@ payload = {
 }
 ```
 
-**Common JSON-RPC Methods:**
+**Common JSON-RPC methods:**
 - `authenticate`: Used for logging in and obtaining a user ID.
 - `execute_kw`: Used for calling model methods (such as `create`, `write`, `unlink`, `search_read`).
 ---
 
-### Common Model Methods and Args
+### Common model methods and args
 
 When using the `"object"` service with the `"execute_kw"` method, you can call various model methods. Here are the most common:
 
@@ -128,7 +128,7 @@ Searches for records and reads their fields.
 ["res.partner", "search_read", [[["is_group", "=", False]]], {"fields": ["name", "reg_id"], "limit": 5}]
 ```
 
-**Domain Filters:**  
+**Domain filters:**  
 A domain is a list of conditions, each as a list: `[field, operator, value]`.  
 Example: `[["name", "=", "John Doe"]]`
 
@@ -139,6 +139,7 @@ Example: `[["name", "=", "John Doe"]]`
 
 **Result**
 Returns a dictionary of the search results.
+
 ---
 
 ### Authentication
@@ -170,9 +171,9 @@ if not uid:
 print("Authenticated UID:", uid)
 ```
 
-### Working with Individuals
+### Working with individuals
 
-**Gather The Fields**
+**Gather the fields**
 
 For this example we are going to use these fields:
 
@@ -184,7 +185,7 @@ For this example we are going to use these fields:
 - `is_registrant` (boolean, default=True)
 - `is_group` (boolean, default=False)
 
-**Example: Create an Individual**
+**Example: Create an individual**
 
 ```python
 # First, get a gender_id (e.g., for "Male")
@@ -254,9 +255,9 @@ updated = response["result"]
 print("Result:", updated)
 ```
 
-### Working with Groups
+### Working with groups
 
-**Gather The Fields**
+**Gather the fields**
 
 For this example we are going to use these fields:
 
@@ -266,7 +267,7 @@ For this example we are going to use these fields:
 - `is_group` (boolean, default=True)
 
 
-**Example: Create a Group**
+**Example: Create a group**
 
 ```python
 # Get a group kind (e.g., "Household")
@@ -333,9 +334,9 @@ updated = response["result"]
 print("Result:", updated)
 ```
 
-### Working with Memberships
+### Working with memberships
 
-**Gather The Fields**
+**Gather the fields**
 
 From your `g2p_registry_membership` module, the main model is likely `g2p_registry_membership.group_membership`. Required fields typically include:
 - `individuak` (many2one, required)
@@ -344,7 +345,7 @@ From your `g2p_registry_membership` module, the main model is likely `g2p_regist
 - `start_date` (date, required)
 - Any other required fields as defined in your model
 
-**Example: Add an Individual to a Group**
+**Example: Add an individual to a group**
 
 ```python
 # Get a membership kind (e.g., "Head")
@@ -391,19 +392,19 @@ membership_id = response["result"]
 print("Created Membership ID:", membership_id)
 ```
 
-### Security: Using API Keys
+### Security: Using API keys
 
 - **API keys** are recommended over passwords for scripts and integrations.
 - Generate API keys in your OpenSPP user preferences under **Account Security**.
 - Use the API key in place of your password in all JSON-RPC calls.
 
-## Best Practices
+## Best practices
 
-1. **Use API Keys**: Safer than passwords; revoke if compromised.
-2. **Limit Permissions**: Create dedicated users for API access with only necessary rights.
-3. **Validate Responses**: Always check for errors or unexpected results.
-4. **Secure Connections**: Use HTTPS for all API traffic.
-5. **Log and Monitor**: Track API usage for auditing and troubleshooting.
+- **Use API Keys**: Safer than passwords; revoke if compromised.
+- **Limit Permissions**: Create dedicated users for API access with only necessary rights.
+- **Validate Responses**: Always check for errors or unexpected results.
+- **Secure Connections**: Use HTTPS for all API traffic.
+- **Log and Monitor**: Track API usage for auditing and troubleshooting.
 
 ## References
 
