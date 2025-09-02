@@ -18,7 +18,7 @@ This module accomplishes the following key objectives, ensuring the integrity an
 
 ## Dependencies and Integration
 
-The `spp_oauth` module relies on the foundational [Base Module](base) for core system functionalities, including user management and system configuration. As a security module, `spp_oauth` is foundational for any OpenSPP module that exposes an API, providing the essential authentication and authorization layer. All other modules that require secure API access, whether for data retrieval or modification, leverage `spp_oauth` to ensure that only authenticated and authorized client applications can interact with their exposed endpoints.
+The `spp_oauth` module relies on the foundational Base module for core system functionalities, including user management and system configuration. As a security module, `spp_oauth` is foundational for any OpenSPP module that exposes an API, providing the essential authentication and authorization layer. All other modules that require secure API access, whether for data retrieval or modification, leverage `spp_oauth` to ensure that only authenticated and authorized client applications can interact with their exposed endpoints.
 
 ## Additional Functionality
 

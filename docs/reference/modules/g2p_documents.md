@@ -20,9 +20,9 @@ This module streamlines document management for G2P programs by offering a centr
 
 The G2P Documents module extends core OpenSPP functionalities by building upon existing storage infrastructure.
 
-It relies on the [Storage Backend S3](storage_backend_s3) module to manage connections and operations with Amazon S3, providing scalable and secure cloud storage for all uploaded files. This integration ensures that documents are stored off-platform, enhancing data resilience and performance.
+It relies on the Storage Backend S3 module to manage connections and operations with Amazon S3, providing scalable and secure cloud storage for all uploaded files. This integration ensures that documents are stored off-platform, enhancing data resilience and performance.
 
-Furthermore, this module heavily utilizes and extends the base [Storage File](storage_file) module, which handles the fundamental aspects of file storage and metadata management within OpenSPP. G2P Documents enriches `storage.file` records with additional capabilities like tagging and specialized filtering for G2P contexts.
+Furthermore, this module heavily utilizes and extends the base Storage File module, which handles the fundamental aspects of file storage and metadata management within OpenSPP. G2P Documents enriches `storage.file` records with additional capabilities like tagging and specialized filtering for G2P contexts.
 
 By integrating with these foundational modules, G2P Documents provides a specialized layer for managing program-specific documentation, offering enhanced features without reinventing core storage mechanisms.
 

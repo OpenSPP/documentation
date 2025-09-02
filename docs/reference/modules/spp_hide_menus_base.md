@@ -19,7 +19,7 @@ This module empowers administrators to tailor the OpenSPP user experience by man
 
 The `spp_hide_menus_base` module integrates directly with the core OpenSPP framework to manage interface elements.
 
-*   This module depends on the fundamental [Base](base) module, which provides the core Odoo framework. This includes essential components like `ir.ui.menu` (menu items) and `res.groups` (user groups), which `spp_hide_menus_base` directly manipulates to control visibility.
+*   This module depends on the fundamental Base module, which provides the core Odoo framework. This includes essential components like `ir.ui.menu` (menu items) and `res.groups` (user groups), which `spp_hide_menus_base` directly manipulates to control visibility.
 *   `spp_hide_menus_base` acts as a foundational tool for user interface customization. Other OpenSPP modules can leverage its capabilities to provide a cleaner, more focused experience for users engaged in specific program workflows, by allowing administrators to hide irrelevant options.
 
 ## Additional Functionality

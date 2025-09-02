@@ -27,7 +27,7 @@ The OpenSPP Mis Demo module integrates deeply with several foundational OpenSPP 
 *   **[G2P Programs](g2p_programs)**: This module is leveraged to create demonstration social protection programs, define their eligibility rules, and simulate program cycles and entitlements.
 *   **[OpenSPP Custom Field](spp_custom_field)** and **[OpenSPP Custom Field Recompute Daily](spp_custom_field_recompute_daily)**: It populates various custom fields and vulnerability indicators on registrant profiles, which can then be dynamically recomputed to reflect changing conditions.
 *   **[OpenSPP Area](spp_area)**: The module generates registrant data that can be linked to geographical areas, demonstrating how registrants are organized within a hierarchical administrative structure (e.g., country > province > district).
-*   **[Queue Job](queue_job)**: For large-scale data generation, this module uses background processing to ensure that the system remains responsive, preventing performance bottlenecks.
+*   **Queue Job**: For large-scale data generation, this module uses background processing to ensure that the system remains responsive, preventing performance bottlenecks.
 *   **Product** and **Stock**: It creates sample products and inventory items, which can represent in-kind benefits distributed through social protection programs.
 *   **[OpenSPP Custom Filter UI](spp_custom_filter_ui)**: This ensures that the user interface for filtering and searching through the generated demo data is intuitive and aligned with OpenSPP's customized views.
 

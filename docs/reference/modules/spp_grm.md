@@ -24,7 +24,7 @@ This module ensures that registrants have a clear avenue to voice concerns and r
 
 The spp_grm module integrates with core OpenSPP components to provide a comprehensive grievance management solution:
 
-*   **[Portal](portal)**: Enables registrants to submit new grievances and track the status of their existing tickets through a secure online portal.
+*   **Portal**: Enables registrants to submit new grievances and track the status of their existing tickets through a secure online portal.
 *   **Mail (mail)**: Leverages Odoo's mail system to automatically create grievance tickets from incoming emails and send automated notifications to registrants when a ticket's status changes.
 *   **[G2P Registry: Base](g2p_registry_base)**, **[G2P Registry: Individual](g2p_registry_individual)**, and **[G2P Registry: Group](g2p_registry_group)**: Links grievances directly to specific registrants, whether individuals or groups, ensuring all communication and history are tied to the correct profile. This provides a complete view of a registrant's interactions.
 *   **[OpenSPP Area](spp_area)**: While spp_grm does not directly manage geographical areas, it works with registrants who are associated with specific areas via the spp_area module. This allows for location-aware grievance management and reporting.

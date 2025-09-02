@@ -22,7 +22,7 @@ This module ensures that programs can confidently manage and use bank details fo
 
 The **G2P Bank** module seamlessly integrates with core OpenSPP components and extends standard Odoo functionality:
 
-*   **[Contacts](contacts)**: This module extends the standard Odoo `res.partner.bank` model, which is inherently linked to the `res.partner` model (managed by the `contacts` module). This allows bank accounts to be directly associated with any contact, including registrants.
+*   **Contacts**: This module extends the standard Odoo `res.partner.bank` model, which is inherently linked to the `res.partner` model (managed by the `contacts` module). This allows bank accounts to be directly associated with any contact, including registrants.
 *   **[G2P Registry Individual](g2p_registry_individual)**: It enables the association of bank account details with individual registrants, ensuring that personal payment information is linked to their profile.
 *   **[G2P Registry Groups](g2p_registry_group)**: It allows for bank accounts to be assigned to group registrants (e.g., households, cooperatives), supporting payments made to collective entities.
 

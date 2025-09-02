@@ -20,7 +20,7 @@ This module addresses the need for consistent and timely data accuracy for compu
 
 The `spp_custom_field_recompute_daily` module integrates seamlessly with core OpenSPP components to deliver its functionality.
 
-It relies on the [Base Setup](base_setup) module for foundational system configurations and parameters. Crucially, it leverages the [Queue Job](queue_job) module to process large recomputation tasks asynchronously, preventing system slowdowns and ensuring efficient resource utilization. This allows the system to remain responsive even when recomputing data for thousands of records.
+It relies on the Base Setup module for foundational system configurations and parameters. Crucially, it leverages the Queue Job module to process large recomputation tasks asynchronously, preventing system slowdowns and ensuring efficient resource utilization. This allows the system to remain responsive even when recomputing data for thousands of records.
 
 This module serves as a foundational data maintenance service for any other OpenSPP module that utilizes computed and stored fields requiring periodic updates. By ensuring the accuracy of these fields, it indirectly supports reliable reporting, analytics, and operational processes across the entire platform.
 

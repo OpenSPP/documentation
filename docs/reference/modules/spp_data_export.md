@@ -19,7 +19,7 @@ This module significantly improves how users extract data from OpenSPP, ensuring
 
 The `spp_data_export` module integrates seamlessly into the OpenSPP ecosystem by enhancing a core platform function.
 
-This module depends on the fundamental [Web](web) module. It specifically overrides and extends the default web-based data export functionality provided by OpenSPP, ensuring that all data exports initiated through the user interface benefit from its enhanced capabilities. By doing so, it acts as a foundational improvement for any user interaction that requires data extraction, ensuring a consistent and robust experience without requiring other modules to explicitly depend on it.
+This module depends on the fundamental Web module. It specifically overrides and extends the default web-based data export functionality provided by OpenSPP, ensuring that all data exports initiated through the user interface benefit from its enhanced capabilities. By doing so, it acts as a foundational improvement for any user interaction that requires data extraction, ensuring a consistent and robust experience without requiring other modules to explicitly depend on it.
 
 ## Additional Functionality
 

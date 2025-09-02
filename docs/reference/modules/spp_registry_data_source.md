@@ -18,7 +18,7 @@ This module establishes OpenSPP's capability to interact with external data sour
 
 ## Dependencies and Integration
 
-The `spp_registry_data_source` module relies on the core [Base](base) module for fundamental system functionalities. It serves as a foundational component for other OpenSPP modules that require external data, acting as the primary gateway for data integration.
+The `spp_registry_data_source` module relies on the core Base module for fundamental system functionalities. It serves as a foundational component for other OpenSPP modules that require external data, acting as the primary gateway for data integration.
 
 This module provides a standardized method for defining external data sources, which can then be leveraged by other modules, such as those responsible for beneficiary registration, eligibility verification, or program enrollment. For instance, a beneficiary registration module might use a configured data source to verify a national ID against an external registry.
 

@@ -20,11 +20,11 @@ This module streamlines data management by providing robust tools to identify an
 
 The OpenSPP Import Match module extends and integrates with several foundational OpenSPP components to deliver its capabilities.
 
-It builds upon the core data import functionality provided by [Base Import](base_import), adding intelligent matching logic to the standard import process. Where [Base Import](base_import) handles the raw upload and parsing of files, `spp_import_match` provides the critical layer for comparing and reconciling that data with your existing database.
+It builds upon the core data import functionality provided by Base Import, adding intelligent matching logic to the standard import process. Where Base Import handles the raw upload and parsing of files, `spp_import_match` provides the critical layer for comparing and reconciling that data with your existing database.
 
 This module is essential for the [OpenSPP Registry Base](spp_registry_base) module, which manages all individuals and groups. By integrating `spp_import_match`, the registry ensures that the "Streamlined Data Onboarding" and "Centralized Registrant Management" capabilities of the registry are always populated with high-quality, non-duplicated data.
 
-For large-scale data operations, `spp_import_match` leverages [Queue Job](queue_job) to process bulk imports asynchronously in the background. This ensures that the user interface remains responsive, allowing users to continue working while extensive matching and import tasks are completed without interruption.
+For large-scale data operations, `spp_import_match` leverages Queue Job to process bulk imports asynchronously in the background. This ensures that the user interface remains responsive, allowing users to continue working while extensive matching and import tasks are completed without interruption.
 
 ## Additional Functionality
 

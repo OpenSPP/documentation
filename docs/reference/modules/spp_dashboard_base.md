@@ -18,7 +18,7 @@ This module serves as the essential building block for OpenSPP's data visualizat
 
 ## Dependencies and Integration
 
-The OpenSPP Dashboard Base module relies on fundamental OpenSPP system functionalities to operate effectively. It primarily depends on the core [Base](base) module, which provides essential Odoo framework features such as user management, access rights, and basic system utilities.
+The OpenSPP Dashboard Base module relies on fundamental OpenSPP system functionalities to operate effectively. It primarily depends on the core Base module, which provides essential Odoo framework features such as user management, access rights, and basic system utilities.
 
 This module is foundational, serving as the common infrastructure upon which other specialized OpenSPP dashboard modules are built. It provides the necessary UI components and architectural patterns that allow other modules to integrate their specific data and present it within a consistent dashboard environment. Future modules needing to display visual summaries or key metrics will leverage the capabilities provided by `spp_dashboard_base` to ensure seamless integration and functionality.
 

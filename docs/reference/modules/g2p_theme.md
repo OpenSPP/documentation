@@ -20,7 +20,7 @@ This module provides a tailored and secure user interface experience for OpenSPP
 
 The `g2p_theme` module integrates closely with core OpenSPP functionalities to deliver its custom features. It builds upon existing frameworks to modify the user interface and authentication processes.
 
-This module depends on the foundational [Base](base) module for core system functionalities and the [Web](web) module for the underlying user interface framework. It extends the [Auth Signup](auth_signup) module to provide custom registration and login page templates, and leverages the [Website](website) module for rendering these public-facing pages. By integrating with these modules, `g2p_theme` ensures that its custom branding and security enhancements are seamlessly applied to the standard OpenSPP authentication and user interface.
+This module depends on the foundational Base module for core system functionalities and the Web module for the underlying user interface framework. It extends the Auth Signup module to provide custom registration and login page templates, and leverages the Website module for rendering these public-facing pages. By integrating with these modules, `g2p_theme` ensures that its custom branding and security enhancements are seamlessly applied to the standard OpenSPP authentication and user interface.
 
 ## Additional Functionality
 
