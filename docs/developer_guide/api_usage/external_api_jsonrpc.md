@@ -334,7 +334,7 @@ updated = response["result"]
 print("Result:", updated)
 ```
 
-### Working withmMemberships
+### Working with memberships
 
 **Gather the fields**
 
