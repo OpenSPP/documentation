@@ -7,69 +7,73 @@ migration-notes: "Added during 2025 documentation reorganization"
 
 # Uninstalling OpenSPP
 
-This guide provides detailed instructions for uninstalling OpenSPP from your system. It covers both complete removal, which includes deleting the application, configuration files, and database, as well as a partial uninstallation that keeps your data intact for future use.
+This guide provides instructions for uninstalling OpenSPP from a Debian or Ubuntu system. It covers two main scenarios:
+- **Complete Uninstallation**: Removes the application, configuration, data, and database.
+- **Partial Uninstallation**: Removes the application but keeps your data and configuration for future use.
+
+## Before You Begin: Back Up Your Data
+
+**Warning**: A complete uninstallation is irreversible and will permanently delete your data. Before proceeding, it is strongly recommended to create a full backup of your database and filestore.
+
+For detailed backup instructions, refer to the {doc}`database_management` guide.
 
 ## Complete Uninstallation
 
-To completely remove OpenSPP from your system:
+Follow these steps to completely remove OpenSPP and all its components from your system.
 
-### Step 1: Stop and Disable Services
+### Step 1: Stop and Disable the OpenSPP Service
 
+**Stop OpenSPP service**
 ```bash
-# Stop OpenSPP service
 sudo systemctl stop openspp
+```
 
-# Disable service from starting on boot
+**Disable service from starting on boot**
+```bash
 sudo systemctl disable openspp
-
-# Remove systemd service file
-sudo rm -f /etc/systemd/system/openspp.service
-sudo rm -f /lib/systemd/system/openspp.service
-
-# Reload systemd
-sudo systemctl daemon-reload
 ```
 
 ### Step 2: Remove OpenSPP Package
 
+**Remove OpenSPP package**
 ```bash
-# Remove OpenSPP package
 sudo apt-get remove --purge openspp-17-daily
+```
 
-# Remove configuration files
-sudo rm -rf /etc/openspp
-
-# Remove data directories
-sudo rm -rf /var/lib/openspp
-sudo rm -rf /var/log/openspp
-
-# Remove binary files
-sudo rm -f /usr/bin/openspp-server
-sudo rm -f /usr/bin/openspp-shell
+**Remove configuration files**
+```bash
+sudo rm -rf /etc/openspp && sudo rm -rf /var/lib/openspp && sudo rm -rf /var/log/openspp && sudo rm -f /usr/bin/openspp-server && sudo rm -f /usr/bin/openspp-shell
 ```
 
 ### Step 3: Remove PostgreSQL Database (Optional)
 
 **Warning**: This will permanently delete all OpenSPP data.
 
-```bash
-# Drop the OpenSPP database
-sudo -u postgres dropdb openspp_prod
 
-# Remove the OpenSPP PostgreSQL user
+**Drop the OpenSPP database**
+```bash
+sudo -u postgres dropdb openspp_prod
+```
+
+**Remove the OpenSPP PostgreSQL user**
+```bash
 sudo -u postgres dropuser openspp
 ```
 
 ### Step 4: Remove Repository Configuration
 
+**Remove APT repository configuration**
 ```bash
-# Remove APT repository configuration
 sudo rm -f /etc/apt/sources.list.d/openspp.list
+```
 
-# Remove GPG key (if added)
+**Remove GPG key (if added)**
+```bash
 sudo apt-key del "OpenSPP Repository"
+```
 
-# Update package list
+**Update package list**
+```bash
 sudo apt-get update
 ```
 
@@ -77,41 +81,35 @@ sudo apt-get update
 
 If you want to remove PostgreSQL as well:
 
+**Remove PostgreSQL**
 ```bash
-# Remove PostgreSQL
 sudo apt-get remove --purge postgresql postgresql-client postgresql-common
+```
 
-# Remove PostgreSQL data
-sudo rm -rf /var/lib/postgresql
-
-# Remove PostgreSQL configuration
-sudo rm -rf /etc/postgresql
+**Remove PostgreSQL data and configuration**
+```bash
+sudo rm -rf /var/lib/postgresql && sudo rm -rf /etc/postgresql
 ```
 
 ## Partial Uninstallation
 
 If you want to keep the database but remove the application:
 
+
+**Stop and disable OpenSPP service** 
 ```bash
-# Stop service
 sudo systemctl stop openspp
 sudo systemctl disable openspp
-
-# Remove package but keep configuration
-sudo apt-get remove openspp-17-daily
-
-# Keep database and filestore for potential reinstallation
-# /var/lib/openspp/ and PostgreSQL database remain intact
 ```
+
+**Remove package but keep configuration**
+```bash
+sudo apt-get remove openspp-17-daily
+```
+
+- Keep database and filestore for potential reinstallation 
+- var/lib/openspp/ and PostgreSQL database remain intact
 
 ## Reinstall After Uninstallation
 
-To reinstall OpenSPP after uninstallation:
-
-```bash
-# Follow the installation steps from the beginning
-# If you kept the database, you can reuse it by:
-# 1. Reinstall OpenSPP
-# 2. Update configuration to point to existing database
-# 3. Start service
-```
+To reinstall OpenSPP after uninstallation, follow the {doc}`../getting_started/installation_deb`.

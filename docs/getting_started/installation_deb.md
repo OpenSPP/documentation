@@ -303,5 +303,5 @@ Now that OpenSPP is installed, here are some recommended next steps:
 
 - **Learn to Use OpenSPP**: Start with the {doc}`../user_guide/index` to understand core features.
 - **Administer the System**: Refer to the {doc}`../user_guide/administration/index` for guides on security, maintenance, and troubleshooting.
-- **Customize and Develop**: Explore the {doc}`../developer_guide/index` to learn how to extend the platform.
+- **Customize and Develop**: Explore the {doc}`../developer_guide/index` to learn how to extend the platform. 
 - **Set Up a Pilot Program**: Follow the {doc}`../overview/poc_and_pilot` guide to launch a Proof of Concept (PoC).
