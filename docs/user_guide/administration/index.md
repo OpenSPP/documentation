@@ -38,4 +38,9 @@ import_areas
 inventory_configuration
 email_gateway
 hardware_integration
+database_management
+monitoring_maintenance
+security_tuning
+troubleshooting
+uninstalling
 ```
