@@ -29,6 +29,7 @@ Guides for creating and managing social protection programs:
 - {doc}`program_management/enrol_beneficiaries`
 - {doc}`program_management/create_cycle`
 - {doc}`program_management/configure_entitlements`
+- {doc}`program_management/configure_inkind_entitlements`
 - {doc}`program_management/allocate_funds`
 - {doc}`program_management/using_geotargeting`
 

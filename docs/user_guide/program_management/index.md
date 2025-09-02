@@ -30,6 +30,8 @@ create_program
 enrol_beneficiaries
 create_cycle
 configure_entitlements
+configure_inkind_entitlements
 allocate_funds
 using_geotargeting
+
 ```

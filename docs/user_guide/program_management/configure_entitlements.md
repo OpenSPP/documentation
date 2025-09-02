@@ -11,7 +11,7 @@ This tutorial describes the steps of configuring cash entitlements when selected
 
 ## Prerequisites
 
-- Have an access role as an **Operations Admin** or **Administrator**. Learn more about this in the guide {doc}`../administration/user_access`
+- Have an access role as an **System Admin**. Learn more about this in the guide {doc}`../administration/user_access`
 - Install and activate the module: **OpenSPP Cash Entitlement** on your OpenSPP instance as **Administrator**. Learn more on installing modules in the guide: {doc}`../../getting_started/module_installation`
 - Create a Program or have an already existing program. Learn more about this in the guide {doc}`create_program`.
 
