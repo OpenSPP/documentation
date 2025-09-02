@@ -3,19 +3,27 @@ review-status: needs-review
 review-date: 2025-06-04
 reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
+myst:
+  html_meta:
+    "title": "OpenSPP Product Configurations"
+    "description": "OpenSPP product configurations - SP-MIS, Social Registry, and Farmer Registry for social protection programs"
+    "keywords": "OpenSPP, SP-MIS, Social Registry, Farmer Registry, social protection"
 ---
 
 # Products
 
-This section provides a comprehensive overview of OpenSPP's core product configurations. It is designed to guide you through the setup and customization of the platform's key components, ensuring they are tailored to meet the specific needs of your social protection programs.
+OpenSPP offers three product configurations, each designed for specific social protection use cases. Choose the one that matches your program's needs.
 
-Within this section, you will find detailed information of the following products. 
+## Available configurations
 
-- {doc}`social_registry`: Manage a centralized database of individuals and households, which serves as the foundation for various social programs.
+### [SP-MIS](sp_mis.md)
+Social Protection Management Information System for running complete social programs. Manages the entire lifecycle from beneficiary enrollment through payment disbursement. Ideal for cash transfers, humanitarian aid, and social assistance programs.
 
-- {doc}`farmer_registry` Discover the tools and techniques for establishing a dedicated registry for farmers, enabling targeted agricultural interventions and support.
+### [Social Registry](social_registry.md)  
+Centralized database of individuals and households that serves multiple social programs. Provides a single source of truth across interventions, reducing duplication and improving coordination between programs.
 
-- {doc}`sp_mis` Manage the entire lifecycle of social protection programs, from beneficiary enrollment to payment disbursement.
+### [Farmer Registry](farmer_registry.md)
+Specialized registry for agricultural programs that bridges farming and social protection. Enables targeted agricultural interventions, input distribution, and climate-smart agriculture support for rural communities.
 
 
 ```{toctree}

@@ -3,11 +3,16 @@ review-status: needs-review
 review-date: 2025-06-04
 reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
+myst:
+  html_meta:
+    "title": "OpenSPP Features"
+    "description": "Comprehensive features of OpenSPP social protection platform including registry, program management, and payment systems"
+    "keywords": "OpenSPP, features, social protection, registry, eligibility, payments, GIS"
 ---
 
 # Features
 
-OpenSPP delivers comprehensive social protection capabilities through modular, interoperable components that adapt to diverse program requirements and implementation contexts. Each feature area integrates seamlessly with others, creating a unified platform for managing complex social protection interventions.
+OpenSPP's features work together to deliver end-to-end social protection programs. Each component can be configured independently while maintaining seamless integration with others.
 
 ## Data Foundation
 

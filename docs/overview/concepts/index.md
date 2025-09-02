@@ -3,29 +3,38 @@ review-status: reviewed
 review-date: 2025-09-01
 reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
+myst:
+  html_meta:
+    "title": "OpenSPP Core Concepts"
+    "description": "Core concepts and theoretical foundations of OpenSPP social protection platform"
+    "keywords": "OpenSPP, concepts, digital public infrastructure, data protection, registry"
 ---
 
 # Concepts
 
-This section is dedicated to exploring the core concepts and theoretical foundations of OpenSPP platform. Unlike reference materials that focus on specific functionalities, this documentation provides a higher-level understanding of the principles and philosophies guiding OpenSPP's design and implementation.
+These concepts explain the theoretical foundations and design principles behind OpenSPP. Understanding them helps you make better decisions about implementation and customization.
 
-- {doc}`data_collection_validation`: This document outlines OpenSPP's approach to data, emphasizing data minimization, user consent, and versatile input methods. It also covers the platform's validation processes, including input validation, data integrity checks, and a mix of automated and manual validation.
+## Architecture and design
 
-- {doc}`data_protection`: This document details the principles of data protection within the context of Digital Public Infrastructure. It covers key concepts like lawfulness, data minimization, and accountability, and provides measures for implementing strong data protection.
+- **[Digital public infrastructure](digital_public_infrastructure.md)** - Essential components of DPI and how OpenSPP aligns with DPI principles through modular, interoperable architecture
 
-- {doc}`digital_public_infrastructure`: This document introduces the concept of Digital Public Infrastructure (DPI) and its essential components. It explains the role of DPI in social protection and how OpenSPP aligns with DPI principles through its modular and interoperable architecture.
+- **[Integrated beneficiary registry](integrated_beneficiary_registry.md)** - Key components of an IBR, its advantages, and its relationship with social registries
 
-- {doc}`extensibility`: This document explains how OpenSPP's foundation on the Odoo framework makes it a highly customizable, configurable, and extensible platform. It covers concepts like modular architecture, inheritance, and the use of a large ecosystem of pre-built modules.
+- **[Extensibility](extensibility.md)** - How OpenSPP's Odoo foundation enables customization through modular architecture and inheritance
 
-- {doc}`integrated_beneficiary_registry`: This document defines the Integrated Beneficiary Registry (IBR) and explains its role in social protection. It details the key components of an IBR, its advantages, and its relationship with a social registry.
+## Data management
 
-- {doc}`registrant_concepts`: This document introduces the key terminology related to registrants in OpenSPP. It defines what a registrant is and explains the core concepts of individuals, groups, group memberships, and their relationships within the system.
+- **[Registry key concepts](registry_key_concepts.md)** - Best practices for organizing data with a minimalistic approach and the four main registry structure components
 
-- {doc}`registry_key_concepts`: This document outlines the best practices for organizing data within the OpenSPP registry, emphasizing a minimalistic approach. It provides guidance on where to store different types of data and introduces the four main components of the registry's structure.
+- **[Registrant concepts](registrant_concepts.md)** - Core terminology for individuals, groups, group memberships, and their relationships
 
-- {doc}`user_management`: This document describes the user management framework in OpenSPP, which is designed to safeguard user data and control access to system features. It covers the two main approaches to user management and outlines best practices for ensuring security and efficiency.
+- **[Data collection and validation](data_collection_validation.md)** - Data minimization, user consent, versatile input methods, and validation processes
 
-By delving into these concepts, you will gain a deeper appreciation for how OpenSPP works, enabling you to make more informed decisions when configuring and utilizing the platform for your specific needs.
+## Security and governance
+
+- **[Data protection](data_protection.md)** - Principles of lawfulness, data minimization, and accountability within DPI context
+
+- **[User management](user_management.md)** - Framework for controlling system access and safeguarding user data with two management approaches
 
 ```{toctree}
 ---
