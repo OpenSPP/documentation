@@ -14,7 +14,6 @@ To ensure these modules function correctly, specific features within the Invento
 This guide provides a step-by-step process for enabling two critical inventory features:
 - **Storage Locations:** Allows for the management of specific locations within a warehouse (e.g., shelves, bins), which is essential for detailed stock tracking.
 - **Units of Measure:** Enables the use of different units for buying, selling, and storing products (e.g., kilograms, boxes, individual units), which is crucial for accurate entitlement definition.
----
 
 ## Prerequisites
 
@@ -27,7 +26,6 @@ To configure the Inventory settings, you will need:
 ## Objective
 
 After completing this guide, you will have enabled the necessary Inventory configurations to support the {doc}`spp_entitlement_in_kind </reference/modules/spp_entitlement_in_kind>` and {doc}`spp_entitlement_basket </reference/modules/spp_entitlement_basket>` modules, ensuring proper management of products for distribution.
----
 
 ## Process
 
@@ -58,7 +56,6 @@ This feature allows you to manage a structured warehouse with specific locations
     The page will reload with the new setting enabled.
 
 ![Inventory Settings page showing the Save button at the top after enabling Storage Locations configuration](inventory_configuration/A-step03-save-configuration.jpg)
----
 
 ### Enabling Units of Measure
 
