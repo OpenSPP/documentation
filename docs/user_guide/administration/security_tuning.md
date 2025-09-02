@@ -13,13 +13,13 @@ This guide provides essential recommendations for securing your OpenSPP instance
 
 ### 1. Database Security Configuration
 
-After initial setup and database creation, it's strongly recommended to:
+After initial setup and database creation, it's strongly recommended to modify the configuration file:
 
 ```bash
 sudo nano /etc/openspp/odoo.conf
 ```
 
-Set list_db to False for production
+Set `list_db` to `False` for **Production** environments:
 ```ini
 list_db = False
 ```
@@ -43,22 +43,42 @@ sudo systemctl restart openspp
 
 ### 2. Firewall Configuration
 
+**Install ufw**
 ```bash
 sudo apt-get install -y ufw
+```
+
+**Allow SSH (adjust port if needed)**
+```bash
 sudo ufw allow 22/tcp
+```
+
+**Allow OpenSPP web interface**
+```bash
 sudo ufw allow 8069/tcp
+```
+
+**Allow OpenSPP longpolling (if using real-time features)**
+```bash
 sudo ufw allow 8072/tcp
+```
+
+**Enable firewall**
+```bash
 sudo ufw enable
 ```
 
 ### 3. SSL/TLS with Nginx (Recommended for Production)
+
+Run the following commands to install nginx, certbot and create a file in `/etc/nginx/sites-available/openspp`:
 
 ```bash
 sudo apt-get install -y nginx certbot python3-certbot-nginx
 sudo nano /etc/nginx/sites-available/openspp
 ```
 
-Add this configuration:
+Add this configuration changing **your-domain.com** to your domain:
+
 ```nginx
 server {
     listen 80;
@@ -108,14 +128,13 @@ server {
 }
 ```
 
-Enable the site and get SSL certificate:
+Enable the site and get SSL certificate (Change **your-domain.com** to your domain):
 ```bash
 sudo ln -s /etc/nginx/sites-available/openspp /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl reload nginx
 sudo certbot --nginx -d your-domain.com
 ```
-
 ### 4. Regular Backups
 
 Create a backup script:
@@ -123,6 +142,8 @@ Create a backup script:
 ```bash
 sudo nano /usr/local/bin/openspp-backup.sh
 ```
+
+Add the following content:
 
 ```bash
 #!/bin/bash
