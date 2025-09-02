@@ -60,7 +60,7 @@ The documentation is organized into several key sections following a modernized 
    - `overview/` - High-level information for decision makers and new users
      - `features/` - Feature overviews organized by functional area
      - `concepts/` - Conceptual explanations (moved from `explanation/`)
-     - `use_cases/` - Use-case specific entry points (social registry, farmer registry, SP-MIS)
+     - `products/` - Use-case specific entry points (social registry, farmer registry, SP-MIS)
      - `case_studies/` - Implementation examples
    - `getting_started/` - Installation guides and quickstart tutorials
    - `user_guide/` - Task-oriented guides for administrators and end-users
