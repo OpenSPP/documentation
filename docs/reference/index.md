@@ -11,7 +11,6 @@ This section provides detailed reference material about OpenSPP components.
 
 - {doc}`modules/index`
 - {doc}`technical/index`
-- {doc}`glossary`
 
 ```{toctree}
 :maxdepth: 2
@@ -20,5 +19,4 @@ This section provides detailed reference material about OpenSPP components.
 
 modules/index
 technical/index
-glossary
 ```

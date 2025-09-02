@@ -281,117 +281,16 @@ If no other lexer works well, then fall back to `text`.
 At least then the build will succeed without warnings, although syntax highlighting for such snippets will not appear.
 
 
-#### Validate the lexer
-
-Always build the page to validate syntax.
-The change should not be merged if there are any Sphinx warnings.
-The Sphinx console will display any warnings, such as the following.
-
-```console
-/OpenSPP/documentation/classic-ui/bodyclasses.md:10: WARNING: Could not lex literal_block as "python". Highlighting skipped.
-```
-
-The above warning indicates that the syntax is not valid.
-Common mistakes include:
-
-- Using `...` or `…` to indicate omitted code.
-  It is preferable to never use ellipses.
-  If you must do that, comment it out using the language's comment syntax.
-- Using comments in JSON.
-- A previous code block bleeds through to the next due to invalid MyST syntax.
-
-To validate code block syntax, run the following command.
-
-```shell
-make html
-```
-
-An [online demo of all lexers that Pygments supports](https://pygments.org/demo/) may be helpful to test out your code blocks and snippets for syntax highlighting.
-You can also use the [`pygmentize`](https://pygments.org/docs/cmdline/) binary.
-
-When using the online lexer, if any red-bordered rectangles appear, then the lexer for Pygments interprets your snippet as not valid.
-You can search the [Pygments issue tracker](https://github.com/pygments/pygments/search) for possible solutions, or submit a pull request to enhance the lexer.
-
-
-### HTML and Open Graph metadata
-
-All documents must have a `myst` topmatter key with an `html_meta` directive at the top of every page.
-When rendered to HTML, it inserts `<meta>` tags for improved search engine results and nicer social media posts.
-Authors should include at least `description`, `property=og:description`, `property=og:title`, and `keywords` meta tags.
-
-The following is an example of `html_meta`.
-Note that the content of the two tags `description` and `property=og:description` should be identical.
-
-```md
----
-myst:
-  html_meta:
-    "description": "Authors' guide to writing OpenSPP Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
-    "property=og:description": "Authors' guide to writing OpenSPP Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
-    "property=og:title": "Authors Guide"
-    "keywords": "OpenSPP, Documentation, SEO, meta, Vale, spell, grammar, style, check, linkcheck, lexer"
----
-```
-
-This renders in the HTML `<head>` section as follows.
-
-```html
-<meta content="Authors' guide to writing OpenSPP Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors." name="description" />
-<meta content="Authors' guide to writing OpenSPP Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors." property="og:description" />
-<meta content="Authors Guide" property="og:title" />
-<meta content="OpenSPP, Documentation, SEO, meta, Vale, spell, grammar, style, check, linkcheck, lexer" name="keywords" />
-```
-
-Additional Open Graph metadata is implemented through the Sphinx extension [`sphinxext-opengraph`](https://github.com/wpilibsuite/sphinxext-opengraph) and the [MyST `html_meta` directive](https://myst-parser.readthedocs.io/en/latest/configuration.html#setting-html-metadata), which resolves to the [Docutils `meta` directive](https://docutils.sourceforge.io/docs/ref/rst/directives.html#metadata).
-See the site-wide configuration in {file}`conf.py`.
-
-
-## OpenSPP documentation styleguide
-
-We follow [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/).
-
-Key concepts from that guide include the following.
-
--   Documentation should be informational, but friendly.
--   Address the reader by using "you" instead of "the user".
--   Headings should be Sentence cased, not Title Cased.
-
-The OpenSPP Documentation Team adopted additional guidelines.
-
--   Use one sentence per line.
-    Keep sentences short and understandable.
-    This will greatly improve the editing and maintenance of your documentation.
-
--   Do not follow PEP8 maximum line length standard.
-    Documentation is narrative text and images, not Python code.
-
--   Use dashes `-` in filenames and avoid underscores.
-
--   Images should be no wider than 740 pixels to fit within the documentation's main view port.
-    This avoids scaling and reducing legibility of images.
-    To make that work in Volto, set your browser width to 1180 pixels.
-    You will notice that the drag and trash icons for each block move inside the block from outside.
-
--   In user documentation, provide screenshots of each step where the interface changes.
-    It is painstaking, but worth the effort.
-    Provide sufficient detail of what each option is and does.
-
-
-## General documentation writing references
-
--   [Write the Docs - Documentation Guide](https://www.writethedocs.org/guide/)
--   [A Guide to Em Dashes, En Dashes, and Hyphens](https://www.merriam-webster.com/words-at-play/em-dash-en-dash-how-to-use)
-
 ## Documentation quality requirements
 
 We use GitHub Actions with every pull request to enforce OpenSPP Documentation quality.
 We recommend that you build the documentation locally to catch errors and warnings early on.
 
-# MyST reference
+### MyST reference
 
-This chapter provides information and examples for how to write proper MyST syntax—with references to Sphinx extensions for their specific directives—in OpenSPP Documentation.
+This section provides information and examples for how to write proper MyST syntax—with references to Sphinx extensions for their specific directives—in OpenSPP Documentation.
 
-## MyST, reStructuredText, and Markdown
+### MyST, reStructuredText, and Markdown
 
 We use [MyST, or Markedly Structured Text](https://myst-parser.readthedocs.io/en/latest/), a rich and extensible flavor of Markdown, for authoring training documentation.
 
@@ -402,7 +301,7 @@ MyST may be more familiar to reStructuredText authors.
 MyST allows the use of a fence and `{rst-eval}` to evaluate native reStructuredText.
 This may be useful when Markdown does not provide sufficient flexibility, such as for `figure`.
 
-## MyST syntax reference
+#### MyST syntax reference
 
 The following are frequently used snippets and examples.
 
@@ -414,7 +313,7 @@ Official MyST documentation
 - [MyST Syntax Reference](https://myst-parser.readthedocs.io/en/latest/syntax/reference.html)
 ```
 
-### Cross-references
+#### Cross-references
 
 ```{seealso}
 [The MyST Syntax Guide > Cross-references](https://myst-parser.readthedocs.io/en/latest/syntax/cross-referencing.html)
@@ -492,8 +391,6 @@ The main content area of a page in the documentation is 743 pixels wide.
 When taking screenshots or videos, resize your browser window, or try to limit the width of your media to 740 pixels.
 This will preserve legibility of images.
 
-(enhance-images-label)=
-
 #### Enhance images
 
 We use cards from the Sphinx extension [`sphinx-design`](https://sphinx-design.readthedocs.io/en/latest/cards.html) to enhance the display and functionality of images.
@@ -540,7 +437,7 @@ The following MyST example will display as shown below.
 ```
 ````
 
-```{image} ../_static/standards.png
+```{image} /_static/standards.png
 :alt: XKCD "Standards" comic strip
 ```
 
@@ -626,11 +523,6 @@ Example MyST syntax is shown below.
 
 Note that the path must be absolute to support both submodules and the main documentation.
 Don't use file-relative paths.
-The above MyST markup renders as shown below.
-
-```{video} /_static/user-manual/blocks/block-copy-cut.mp4
-    :width: 100%
-```
 
 ### Diagrams and graphs with Graphviz
 
@@ -764,147 +656,6 @@ print("my 1st line")
 print(f"my {a}nd line")
 ```
 ````
-
-
-# Building and checking the quality of documentation
-
-This document covers how to build the OpenSPP Documentation and check it for quality.
-
-
-## Installation
-
-Installation of OpenSPP Documentation includes pre-requisites and the repository itself.
-
-
-### Python
-
-Python 3.8 or later is required.
-A more recent Python is preferred.
-Use your system's package manager or [pyenv](https://github.com/pyenv/pyenv) to install an appropriate version of Python.
-
-
-### Vale
-
-Vale is a linter for narrative text.
-It checks spelling, English grammar, and style guides.
-OpenSPP documentation uses a custom spelling dictionary, with accepted and rejected spellings in `styles/Vocab/OpenSPP`.
-
-Use your operating system's package manager to [install Vale](https://vale.sh/docs/vale-cli/installation/).
-
-Vale also has [integrations](https://vale.sh/docs/integrations/guide/) with various IDEs.
-
--   [JetBrains](https://vale.sh/docs/integrations/jetbrains/)
--   [Vim](https://github.com/dense-analysis/ale)
--   [VS Code](https://github.com/errata-ai/vale-vscode)
-
-OpenSPP documentation uses a file located at the root of the repository, `.vale.ini`, to configure Vale.
-This file allows overriding rules or changing their severity.
-
-The OpenSPP Documentation Team selected the [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/) for its ease of use—especially for non-native English readers and writers—and attention to non-technical audiences. 
-
-```{note}
-More corrections to spellings and Vale's configuration are welcome by submitting a pull request.
-This is an easy way to become a contributor to OpenSPP.
-```
-
-
-### Graphviz
-
-Install [Graphviz](https://graphviz.org/download/) for graph visualization.
-
-`````{tab-set}
-````{tab-item} macOS
-```shell
-brew install graphviz
-```
-````
-
-````{tab-item} Ubuntu
-```shell
-sudo apt-get install graphviz
-```
-````
-`````
-
-
-### Clone `OpenSPP/documentation`
-
-Clone the OpenSPP Documentation repository, and change your working directory into the cloned project.
-Then with a single command using `Makefile`, create a Python virtual environment, install project dependencies, pull in Volto documentation as a git submodule, build the docs, and view the results in a web browser by opening `/_build/html/index.html`.
-
-```shell
-git clone https://github.com/OpenSPP/documentation.git
-cd documentation
-make html
-```
-
-## Available documentation builds
-
-All build and check documentation commands use the file `Makefile`.
-
-To see the most frequently used builds, use the following command.
-
-```shell
-make help
-```
-
-Else you can open `Makefile` to see other build formats, including PDF.
-
-
-### `html`
-
-`html` is the HTML version of the documentation.
-
-```shell
-make html
-```
-
-Open `/_build/html/index.html` in a web browser.
-
-
-### `livehtml`
-
-`livehtml` rebuilds Sphinx documentation on changes, with live-reload in the browser.
-
-```shell
-make livehtml
-```
-
-Open http://127.0.0.1:8050/ in a web browser.
-
-
-### `linkcheck`
-
-`linkcheck` checks all links.
-See {ref}`authors-linkcheck-label` for configuration.
-
-```shell
-make linkcheck
-```
-
-Open `/_build/linkcheck/output.txt` for a list of broken links.
-
-
-### `vale`
-
-`vale` checks for American English spelling, grammar, syntax, and the Microsoft Developer Style Guide.
-See {ref}`authors-english-label` for configuration.
-
-```shell
-make vale
-```
-
-See the output on the console for suggestions.
-
-
-### `html_meta`
-
-`html_meta` adds a meta data section to each chapter if missing.
-See {ref}`authors-html-meta-data-label` for more info.
-
-```shell
-make html_meta
-```
 
 # Sphinx extensions
 
