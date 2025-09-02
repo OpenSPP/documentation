@@ -1,25 +1,46 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code when working with the OpenSPP documentation repository.
 
 ## Overview
 
 This is the documentation repository for OpenSPP - an open-source social protection platform. The documentation is built using Sphinx with MyST parser for Markdown support.
 
+## Project Structure
+
+```
+docs/
+├── overview/           # High-level information for decision makers
+│   ├── features/      # Feature overviews by functional area
+│   ├── concepts/      # Conceptual explanations
+│   ├── products/      # Product configurations (SP-MIS, Social Registry, Farmer Registry)
+│   └── case_studies/  # Implementation examples
+├── getting_started/    # Installation and quickstart guides
+├── user_guide/        # Task-oriented guides for administrators
+│   ├── registry_management/
+│   ├── program_management/
+│   └── administration/
+├── developer_guide/   # Technical documentation
+│   ├── customization/
+│   ├── integrations/
+│   └── api_usage/
+├── reference/         # Detailed reference material
+│   ├── modules/       # OpenSPP module documentation
+│   └── technical/     # Technical specifications
+└── community/         # Contribution and support information
+```
+
 ## Build Commands
 
-### Setup Development Environment
+### Development Setup
 ```bash
 # Create Python virtual environment and install dependencies
 make deps
 
-# This will:
-# - Create a Python virtual environment
-# - Install requirements from requirements_frozen.txt
-# - Initialize git submodules (openg2p-program, openg2p-registry)
+# This installs requirements and initializes git submodules
 ```
 
-### Build Documentation
+### Building Documentation
 ```bash
 # Build HTML documentation
 make html
@@ -44,105 +65,74 @@ make linkcheck
 
 # Run all quality checks and build
 make all  # Runs: clean, vale, linkcheck, html
-```
 
-### Testing
-```bash
-# Run tests (cleans then runs linkcheck)
+# Run tests
 make test
 ```
 
-## Architecture
+## Documentation Standards
 
-The documentation is organized into several key sections following a modernized structure implemented in January 2025:
+When working with documentation:
 
-1. **docs/** - Main documentation source files (restructured)
-   - `overview/` - High-level information for decision makers and new users
-     - `features/` - Feature overviews organized by functional area
-     - `concepts/` - Conceptual explanations (moved from `explanation/`)
-     - `products/` - Use-case specific entry points (social registry, farmer registry, SP-MIS)
-     - `case_studies/` - Implementation examples
-   - `getting_started/` - Installation guides and quickstart tutorials
-   - `user_guide/` - Task-oriented guides for administrators and end-users
-     - `registry_management/` - Registry operations and data management
-     - `program_management/` - Program creation, cycles, and management
-     - `administration/` - System administration tasks
-   - `developer_guide/` - Technical information for developers
-     - `customization/` - Guides for customizing OpenSPP functionality
-     - `integrations/` - Integration guides for external systems
-     - `api_usage/` - API guides and references
-   - `reference/` - Detailed reference material
-     - `modules/` - Documentation for OpenSPP modules (moved from `docs/modules/`)
-     - `technical/` - Technical specifications and deep-dives
-     - `api/` - API references and specifications
-   - `community/` - Community interaction, contribution processes, and legal information
+1. **File Format**: All documentation uses MyST Markdown (.md files)
+2. **Metadata**: Every page MUST have MyST frontmatter with html_meta for SEO
+3. **Headings**: Use sentence case (e.g., "Getting started" not "Getting Started")
+4. **Links**: 
+   - Use `{doc}` for internal documentation links
+   - Link to module reference pages when mentioning modules
+   - Link to product pages when mentioning SP-MIS, Social Registry, or Farmer Registry
+   - Never put links or `:term:` in headings
+5. **Terminology**: Use `:term:` only on first occurrence of glossary terms
 
-2. **submodules/** - Git submodules containing related OpenG2P projects
-   - `odoo/` - Odoo framework (OpenSPP is built on Odoo)
-   - `openg2p-program/` - OpenG2P program management modules
-   - `openg2p-registry/` - OpenG2P registry modules
-   - `queue/` - Queue job management
-
-3. **Configuration**
-   - `conf.py` - Sphinx configuration with custom OpenSPP/Odoo integration
-   - `.vale.ini` - Vale linter configuration using Microsoft and alex style guides
-   - `requirements_frozen.txt` - Pinned Python dependencies
-
-4. **Migration Tools** (available for reference)
-   - `refactor_docs.py` - Automated documentation restructuring script
-   - `update_navigation.py` - Navigation menu management
-   - `update_links.py` - Cross-reference link updating
-
-## Key Development Notes
-
-- The documentation uses Sphinx 4.5.0 with MyST parser for Markdown support
-- Vale is configured for style checking with OpenSPP-specific vocabulary
-- The build system automatically handles Odoo module documentation integration
-- Live reload development server runs on port 8050
-- GitHub Actions handle automated builds and deployment on push to main branch
-- Redirects are managed using sphinx-reredirects extension (currently disabled due to version conflicts)
-
-## Module Documentation
-
-When documenting OpenSPP modules, follow the existing pattern in `docs/reference/modules/`. Each module should have its own Markdown file with standardized sections for overview, features, configuration, and usage.
-
-## Managing Redirects
-
-When moving or renaming documentation pages, add redirects in `docs/conf.py`:
-```python
-redirects = {
-    "old-path": "new-path.html",
-}
+Example frontmatter:
+```yaml
+---
+myst:
+  html_meta:
+    "title": "Page Title"
+    "description": "Brief description for SEO"
+    "keywords": "OpenSPP, relevant, keywords"
+---
 ```
-Note: The sphinx-reredirects extension is currently disabled due to version conflicts with Sphinx 4.5.0. The redirect mappings are prepared in conf.py but commented out until a compatible version is available.
 
-## Documentation Refactoring Lessons Learned
+## Common Tasks
 
-### Automated Migration Approach
+### Adding a New Documentation Page
+1. Create the .md file in the appropriate directory
+2. Add required MyST frontmatter with html_meta
+3. Add the page to the appropriate index.md toctree
+4. Use sentence case for all headings
+5. Run `make html` to verify it builds
 
-The 2025 documentation restructuring used Python scripts for automation:
-- **refactor_docs.py**: Main script for moving files and handling merges/splits
-- **update_navigation.py**: Updates toctree entries in index files
-- **update_links.py**: Updates internal cross-references
+### Updating Module Documentation
+- Module docs are in `docs/reference/modules/`
+- Each module has its own .md file named after the module
+- Include sections: Overview, Features, Configuration, Usage
 
-This approach proved essential for:
-- Consistency across 117+ file movements
-- Handling complex directory structures and image relocations
-- Maintaining content integrity during merges
+### Linking to Modules
+When mentioning a module like `spp_base`:
+```markdown
+The {doc}`spp_base </reference/modules/spp_base>` module provides...
+```
 
-### Critical Success Factors
+### Linking to Products
+When mentioning product configurations:
+```markdown
+The {doc}`SP-MIS <../overview/products/sp_mis>` configuration...
+```
 
-1. **Comprehensive Mapping**: Create detailed mapping of old → new structure before starting
-2. **Phased Execution**: Break migration into discrete phases (audit, move, navigate, validate)
-3. **Navigation Updates**: Moving files is only half the work - updating toctree entries requires systematic attention
-4. **Build Validation**: Test builds frequently to catch dependency issues early
-5. **Content Consolidation**: Migration reveals duplication opportunities (tutorial/howto sections)
+## Key Configuration Files
 
-### Technical Challenges
+- `conf.py` - Sphinx configuration
+- `.vale.ini` - Vale linter configuration
+- `requirements.txt` - Python dependencies
+- `.github/workflows/` - CI/CD pipelines
 
-- **Dependency Management**: PIL/Pillow library conflicts can break builds
-- **Extension Compatibility**: sphinx-reredirects requires newer Sphinx versions
-- **Cross-Reference Complexity**: Internal links need careful updating across all files
-- **Image Path Management**: Images need to move with their content while maintaining relative paths
+## Important Notes
 
-When performing future refactoring, use the existing scripts as templates and follow the phased approach documented in `review_work/doc_migration_guide.md`.
+- Documentation uses Sphinx 4.5.0 with MyST parser
+- Vale is configured with Microsoft and alex style guides
+- Live reload server runs on port 8050
+- GitHub Actions handle automated builds on push to main
+- The build warns about missing files but usually succeeds
+
