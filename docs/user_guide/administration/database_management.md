@@ -35,7 +35,7 @@ sudo -u openspp openspp-server \
     --stop-after-init
 sudo systemctl restart openspp
 ```
-This will drop the database `openspp_prod` then will create a new one with the same name. And will also trigger the restart of the service.
+This drops the openspp_prod database, creates a new one, initializes it, and starts the OpenSPP service.
 
 **Warning**: Resetting the database will permanently delete all data, including:
 - All registrant records
