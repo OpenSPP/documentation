@@ -36,7 +36,7 @@ sudo systemctl status postgresql
 
 ## Step 3: Configure OpenSPP Repository
 
-Add the OpenSPP APT repository to your system:
+Add the OpenSPP Public Key and APT repository to your system:
 
 ```bash
 wget -qO - https://builds.acn.fr/repository/apt-keys/openspp/public.key | sudo apt-key add -
@@ -57,6 +57,8 @@ sudo apt-get install -y openspp-17-daily
 ### Alternative: Manual Download
 
 If you prefer to download the package manually or the repository is not accessible:
+
+Create a temporary directory where you will then store and run the downloaded package:
 
 ```bash
 mkdir -p ~/openspp-install && cd ~/openspp-install
@@ -188,17 +190,18 @@ sudo systemctl enable openspp
 sudo systemctl start openspp
 ```
 ### Check service status
-Type `q`to exit this state
 ```bash
 sudo systemctl status openspp
 ```
+
+You should see output indicating the service is active and running.
+Type `q` to exit this state
+
 ### Restart the service
-Needed for config changes to be applied
+Required to apply any changes to the configuration:
 ```bash
 sudo systemctl restart openspp
 ```
-
-You should see output indicating the service is active and running.
 
 ## Step 8: Create Your First Database
 

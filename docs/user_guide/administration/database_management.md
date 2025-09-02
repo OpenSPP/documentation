@@ -16,6 +16,8 @@ If you need to reset your OpenSPP database (e.g., for testing or to start fresh)
 
 ### Option B: Via Command Line
 
+In your terminal, run the following commands:
+
 ```bash
 sudo systemctl stop openspp
 sudo -u postgres dropdb openspp_prod
@@ -27,7 +29,7 @@ sudo -u openspp openspp-server \
     --stop-after-init
 sudo systemctl restart openspp
 ```
-This will drop the database `openspp_prod` and re-create it.
+This drops the openspp_prod database, creates a new one, initializes it, and starts the OpenSPP service.
 
 **Warning**: Resetting the database will permanently delete all data, including:
 - All registrant records
@@ -39,7 +41,7 @@ This will drop the database `openspp_prod` and re-create it.
 
 ## Backup Before Reset
 
-Always create a backup before resetting:
+The following commands create a backup of both the database and the filestore:
 
 ```bash
 sudo mkdir -p /var/backups/openspp
