@@ -25,19 +25,20 @@ Follow these steps to completely remove OpenSPP and all its components from your
 
 **Stop and Disable (Remove) OpenSPP service**
 ```bash
-sudo systemctl stop openspp && sudo systemctl disable openspp
+sudo systemctl stop openspp
+sudo systemctl disable openspp
 ```
 
 ### Step 2: Remove OpenSPP Package
 
-**Remove OpenSPP package**
+**Remove OpenSPP package and configuration files**
 ```bash
 sudo apt-get remove --purge openspp-17-daily
-```
-
-**Remove configuration files**
-```bash
-sudo rm -rf /etc/openspp && sudo rm -rf /var/lib/openspp && sudo rm -rf /var/log/openspp && sudo rm -f /usr/bin/openspp-server && sudo rm -f /usr/bin/openspp-shell
+sudo rm -rf /etc/openspp
+sudo rm -rf /var/lib/openspp
+sudo rm -rf /var/log/openspp
+sudo rm -f /usr/bin/openspp-server
+sudo rm -f /usr/bin/openspp-shell
 ```
 
 ### Step 3: Remove PostgreSQL Database (Optional)
@@ -45,30 +46,18 @@ sudo rm -rf /etc/openspp && sudo rm -rf /var/lib/openspp && sudo rm -rf /var/log
 **Warning**: This will permanently delete all OpenSPP data.
 
 
-**Drop the OpenSPP database**
+**Drop the OpenSPP database and remove the user**
 ```bash
 sudo -u postgres dropdb name_of_your_db
-```
-
-**Remove the OpenSPP PostgreSQL user**
-```bash
 sudo -u postgres dropuser openspp
 ```
 
 ### Step 4: Remove Repository Configuration
 
-**Remove APT repository configuration**
+**Remove APT repository configuration and GPG Key**
 ```bash
 sudo rm -f /etc/apt/sources.list.d/openspp.list
-```
-
-**Remove GPG key (if added)**
-```bash
 sudo apt-key del "OpenSPP Repository"
-```
-
-**Update package list**
-```bash
 sudo apt-get update
 ```
 
@@ -76,14 +65,11 @@ sudo apt-get update
 
 If you want to remove PostgreSQL as well:
 
-**Remove PostgreSQL**
+**Remove PostgreSQL and its data and configuration**
 ```bash
 sudo apt-get remove --purge postgresql postgresql-client postgresql-common
-```
-
-**Remove PostgreSQL data and configuration**
-```bash
-sudo rm -rf /var/lib/postgresql && sudo rm -rf /etc/postgresql
+sudo rm -rf /var/lib/postgresql
+sudo rm -rf /etc/postgresql
 ```
 
 ## Partial Uninstallation
@@ -91,13 +77,10 @@ sudo rm -rf /var/lib/postgresql && sudo rm -rf /etc/postgresql
 If you want to keep the database but remove the application:
 
 
-**Stop and disable OpenSPP service** 
+**Stop, Disable(remove) service, and remove package** 
 ```bash
-sudo systemctl stop openspp && sudo systemctl disable openspp
-```
-
-**Remove package but keep configuration**
-```bash
+sudo systemctl stop openspp
+sudo systemctl disable openspp
 sudo apt-get remove openspp-17-daily
 ```
 
