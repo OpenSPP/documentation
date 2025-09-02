@@ -23,14 +23,9 @@ Follow these steps to completely remove OpenSPP and all its components from your
 
 ### Step 1: Stop and Disable the OpenSPP Service
 
-**Stop OpenSPP service**
+**Stop and Disable (Remove) OpenSPP service**
 ```bash
-sudo systemctl stop openspp
-```
-
-**Disable service from starting on boot**
-```bash
-sudo systemctl disable openspp
+sudo systemctl stop openspp && sudo systemctl disable openspp
 ```
 
 ### Step 2: Remove OpenSPP Package
@@ -52,7 +47,7 @@ sudo rm -rf /etc/openspp && sudo rm -rf /var/lib/openspp && sudo rm -rf /var/log
 
 **Drop the OpenSPP database**
 ```bash
-sudo -u postgres dropdb openspp_prod
+sudo -u postgres dropdb name_of_your_db
 ```
 
 **Remove the OpenSPP PostgreSQL user**
@@ -98,8 +93,7 @@ If you want to keep the database but remove the application:
 
 **Stop and disable OpenSPP service** 
 ```bash
-sudo systemctl stop openspp
-sudo systemctl disable openspp
+sudo systemctl stop openspp && sudo systemctl disable openspp
 ```
 
 **Remove package but keep configuration**
