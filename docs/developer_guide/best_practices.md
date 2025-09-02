@@ -19,12 +19,6 @@ OpenSPP follows the coding standards of the [Odoo Community Association (OCA)](h
   ```
 - After setup, these checks will run automatically on every `git commit`. If an issue is found, the commit will be stopped, and some tools may automatically fix the files for you.
 
-## Embrace Test-Driven Development (TDD)
-- All new features and bug fixes must follow a Test-Driven Development approach. Write tests that define and validate the functionality *before* writing the implementation.
-- Every module must include a comprehensive test suite to ensure its correctness and prevent future regressions.
-- Tests should be placed in a `tests/` subdirectory within your module and will be automatically discovered by Odoo's test runner.
-- This practice is critical for maintaining a high-quality, stable, and maintainable codebase.
-
 ## Write Clean and Readable XML
 - Use a consistent naming convention for record IDs. For example: `view_model_name_form`, `action_model_name_window`.
 - Logically order fields in views to create an intuitive user experience.
