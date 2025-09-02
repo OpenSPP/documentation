@@ -176,6 +176,13 @@ C
        | 🇪🇸 Registro civil
        | 🇸🇦 التسجيل المدني
 
+   Civil Registration and Vital Statistics
+       A comprehensive system that records the occurrence and characteristics of vital events such as births, deaths, marriages, divorces, and other civil status events throughout a population. CRVS systems provide essential demographic data and legal documentation for individuals, serving as the foundation for identity management, social protection programs, and population statistics.
+
+       | 🇫🇷 Enregistrement des faits d'état civil et statistiques de l'état civil
+       | 🇪🇸 Registro Civil y Estadísticas Vitales
+       | 🇸🇦 التسجيل المدني والإحصاءات الحيوية
+
    Community-based targeting
        Mechanism by which local communities are given discretion to determine which individuals, families, or :term:`household<household>` will be selected as :term:`beneficiaries<beneficiaries>` of a particular program—or to determine which would be registered into a :term:`social registry<social registry>` for further assessment of their needs and conditions and eventual consideration for potential :term:`eligibility<eligibility>` in social programs.
 
@@ -189,6 +196,13 @@ C
        | 🇫🇷 Réclamation
        | 🇪🇸 Reclamo
        | 🇸🇦 شكوى
+
+   Complaints
+       Multiple instances of :term:`grievance<grievance>` regarding issues with social protection programs, including service delivery problems, administrative errors, or system failures. Complaints handling is a critical component of :term:`grievance redress mechanism<grievance redress mechanism>` systems, allowing beneficiaries to report concerns and seek resolution for program-related issues.
+
+       | 🇫🇷 Réclamations
+       | 🇪🇸 Reclamos
+       | 🇸🇦 شكاوى
 
    Compliance and noncompliance (of conditionalities)
        Compliance refers to the carrying out of specific :term:`conditionalities<conditionalities>` or :term:`co-responsibilities<co-responsibilities>` required for participation in the program by :term:`beneficiaries<beneficiaries>`. Noncompliance refers to the failure to carry out said conditionalities.
@@ -430,6 +444,13 @@ E
        | 🇪🇸 Criterios de elegibilidad
        | 🇸🇦 معايير الأهلية
 
+   Eligibility determination
+       The systematic process of assessing whether individuals, families, or households meet the established :term:`eligibility criteria<eligibility criteria>` for specific social protection programs. This process involves evaluating applicant information against program requirements, conducting assessments, and making decisions about program participation and benefit levels.
+
+       | 🇫🇷 Détermination de l'éligibilité
+       | 🇪🇸 Determinación de elegibilidad
+       | 🇸🇦 تحديد الأهلية
+
    Employment incentives
        are strategies or measures designed to encourage individuals to seek, obtain, or retain employment. These incentives are often part of broader :term:`social protection<social protection>` policies and programs.
 
@@ -443,6 +464,13 @@ E
        | 🇫🇷 Décisions d'inscription
        | 🇪🇸 Decisiones de inscripción
        | 🇸🇦 قرارات التسجيل
+
+   Event data
+       Information that captures specific occurrences or changes in the status, circumstances, or characteristics of individuals or households over time. Event data includes life events such as births, deaths, marriages, employment changes, income variations, and program participation updates that are relevant for social protection systems and registry management.
+
+       | 🇫🇷 Données d'événements
+       | 🇪🇸 Datos de eventos
+       | 🇸🇦 بيانات الأحداث
 
 .. _F:
 
@@ -635,6 +663,13 @@ I
        | 🇫🇷 Technologie de l'information
        | 🇪🇸 Tecnología de la información
        | 🇸🇦 تكنولوجيا المعلومات
+
+   Interoperability
+       The ability of different :term:`information systems<information systems>`, databases, and applications to communicate, exchange data, and work together effectively across organizational boundaries. In social protection, interoperability enables seamless data sharing between programs, agencies, and systems to improve service delivery and reduce duplication of efforts.
+
+       | 🇫🇷 Interopérabilité
+       | 🇪🇸 Interoperabilidad
+       | 🇸🇦 قابلية التشغيل البيني
 
    Institutional care services
        A type of treatment provided to an individual in a formal residential environment by an institute, other :term:`family<family>`, or other organized form aiming at providing care :term:`services<services>` (social or health services).
@@ -856,11 +891,18 @@ P
        | 🇸🇦 تقديم الخدمات
 
    Proxy means testing
-       A tool used to assess a :term:`family<family>`’s socioeconomic status using a composite measure that calculates a weighted score based on observable :term:`household<household>` characteristics, such as demographic structures, education levels, location and quality of the household’s dwelling, and ownership of durable goods and other assets. These variables are all considered “proxies” for incomes or consumption, which may be more difficult to measure and observe in situations of high informality.
+       A tool used to assess a :term:`family<family>`'s socioeconomic status using a composite measure that calculates a weighted score based on observable :term:`household<household>` characteristics, such as demographic structures, education levels, location and quality of the household's dwelling, and ownership of durable goods and other assets. These variables are all considered "proxies" for incomes or consumption, which may be more difficult to measure and observe in situations of high informality.
 
        | 🇫🇷 Évaluation des ressources par approximation (Proxy Means Testing – PMT – en anglais)
        | 🇪🇸 Comprobación sustitutiva de los medios de vida (CSM)
        | 🇸🇦 اختبار الوكيل
+
+   Proxy means test
+       A specific application or implementation of :term:`proxy means testing<proxy means testing>` methodology to determine eligibility for social protection programs. The proxy means test uses statistical models and observable household characteristics to estimate welfare levels and make enrollment decisions for targeted programs.
+
+       | 🇫🇷 Test d'évaluation des ressources par approximation
+       | 🇪🇸 Prueba de comprobación sustitutiva de los medios de vida
+       | 🇸🇦 اختبار تقييم الوكيل
 
 .. _R:
 
