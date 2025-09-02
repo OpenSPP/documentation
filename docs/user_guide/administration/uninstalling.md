@@ -77,7 +77,7 @@ sudo rm -rf /etc/postgresql
 If you want to keep the database but remove the application:
 
 
-**Stop, Disable(remove) service, and remove package** 
+**Stop, Disable (Remove) service, and remove package** 
 ```bash
 sudo systemctl stop openspp
 sudo systemctl disable openspp
