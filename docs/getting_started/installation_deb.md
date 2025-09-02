@@ -23,29 +23,20 @@ Before installing OpenSPP, ensure you have:
 
 ## Step 1: Update System
 
-First, ensure your system is up to date:
+First, ensure your system is up to date and install `wget` and `gnupg2`:
 
 ```bash
 sudo apt-get update
 sudo apt-get upgrade -y
-```
-
-Install wget, gnupg2
-```bash
 sudo apt-get install -y wget gnupg2
 ```
 
 ## Step 2: Install PostgreSQL
 
-OpenSPP requires PostgreSQL as its database backend.
+OpenSPP requires PostgreSQL as its database backend. Install and verify by running the commands:
 
-### Install PostgreSQL
 ```bash
 sudo apt-get install -y postgresql postgresql-client
-```
-
-### Verify PostgreSQL is running
-```bash
 sudo systemctl status postgresql
 ```
 
@@ -53,17 +44,10 @@ sudo systemctl status postgresql
 
 Add the OpenSPP APT repository to your system:
 
-### Add the OpenSPP public key
 ```bash
 wget -qO - https://builds.acn.fr/repository/apt-keys/openspp/public.key | sudo apt-key add -
-```
-### Add the OpenSPP repository
-```bash
 echo "deb https://builds.acn.fr/repository/apt-openspp-daily bookworm main" | \
   sudo tee /etc/apt/sources.list.d/openspp.list
-```
-### Update package list
-```bash
 sudo apt-get update
 ```
 
@@ -80,19 +64,12 @@ sudo apt-get install -y openspp-17-daily
 
 If you prefer to download the package manually or the repository is not accessible:
 
-#### Create a temporary directory
 ```bash
 mkdir -p ~/openspp-install && cd ~/openspp-install
-```
-
-#### Download directly from Nexus repository
-```bash
 wget https://builds.acn.fr/repository/apt-openspp/pool/main/o/openspp/openspp_17.0.1+odoo17.0-1_amd64.deb
-```
-#### Install the package
-```bash
 sudo dpkg -i openspp_17.0.1+odoo17.0-1_amd64.deb
 ```
+
 #### Fix any dependency issues if they occur
 ```bash
 sudo apt-get install -f
@@ -254,14 +231,12 @@ You should see output indicating the service is active and running.
 
 ### Option B: Via Command Line
 
+Create the database, then restart the service:
 ```bash
-# Create a database
 sudo -u openspp openspp-server \
     --database=openspp_prod \
     --init=base \
     --stop-after-init
-
-# Restart the service
 sudo systemctl restart openspp
 ```
 
