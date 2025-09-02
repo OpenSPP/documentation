@@ -51,7 +51,7 @@ sudo systemctl reload openspp
 
 ## Update OpenSPP
 
-When a new version is available:
+When a new version is available, run the following commands to get the latest version of OpenSPP and upgrade it:
 
 ```bash
 sudo apt-get update
@@ -64,7 +64,7 @@ sudo systemctl start openspp
 
 ## Alternative: Manual Update
 
-If updating manually:
+If updating manually, run the following commands to get the latest debian package and upgrade OpenSPP:
 
 ```bash
 wget https://builds.acn.fr/repository/apt-openspp/pool/main/o/openspp/openspp_X.X.X_amd64.deb
@@ -73,3 +73,5 @@ sudo tar -czf /var/backups/openspp-backup-$(date +%Y%m%d).tar.gz /opt/openspp /e
 sudo dpkg -i openspp_X.X.X_amd64.deb
 sudo systemctl start openspp
 ```
+
+**Note**: Change the `X.X.X` to the correct version.
