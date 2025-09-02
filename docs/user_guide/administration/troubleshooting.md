@@ -63,14 +63,16 @@ If background jobs are not being processed:
 1. Check workers configuration:
    ```bash
    grep workers /etc/openspp/odoo.conf
-   # Should be > 0 (at least 2 for production)
    ```
+
+   Should be > 0 (at least 2 for production)
 
 2. Verify queue_job module is loaded:
    ```bash
    grep server_wide_modules /etc/openspp/odoo.conf
-   # Should include: base,web,queue_job
    ```
+
+   Should include: base,web,queue_job
 
 3. Check queue_job database settings:
    ```bash
