@@ -150,7 +150,7 @@ Individuals represent a single person, which can be a real person or a dummy per
 
 Groups represent a collection of individuals that share something in common, such as a family, household, farm, community, village, school, company, cooperative, or any other type of group.
 
-Groups can optionally be nested within other groups, such as a household being part of a cooperative. For this functionality, the `spp_registry_group_hierarchy` module is required.
+Groups can optionally be nested within other groups, such as a household being part of a cooperative. For this functionality, the {doc}`spp_registry_group_hierarchy </reference/modules/spp_registry_group_hierarchy>` module is required.
 
 ## Group Membership
 
@@ -166,9 +166,8 @@ Group Membership revolves around a few key elements:
 
 3. **End Date**: If applicable, this marks when the membership ended, helping track changes over time.
 
-4. **Status**: The status of a membership is automatically
-
-determined based on the end date. It can be either "active" if the membership is ongoing or "inactive" if it has ended.
+4. **Status**: The status of a membership is automatically determined based on the end date.
+It can be either "active" if the membership is ongoing or "inactive" if it has ended.
 
 ### Example Structure
 

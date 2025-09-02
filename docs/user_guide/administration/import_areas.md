@@ -1,5 +1,12 @@
+---
+myst:
+  html_meta:
+    "title": "Import areas"
+    "description": "Learn how to prepare and import hierarchical area data into OpenSPP using Excel workbooks with proper formatting and validation."
+    "keywords": "OpenSPP, import areas, administrative levels, Excel, area data, hierarchy"
+---
 
-# Import area
+# Import areas
 
 In this tutorial, you will learn how to prepare and import area data into OpenSPP using an Excel workbook.
 
@@ -68,7 +75,7 @@ Repeat the same structure for additional levels, adjusting the column headers to
 
 **Example (Level 0 Sheet):**
 
-![](import_areas/1.png)
+![Excel spreadsheet showing Level 0 area data with columns for ADM0_PCODE, ADM0_EN, and AREA_SQKM containing sample country data](import_areas/1.png)
 
 **Move to Level 1:**
 
@@ -79,7 +86,7 @@ Repeat the same structure for additional levels, adjusting the column headers to
 
 **Example (Level 1 Sheet):**
 
-![](import_areas/2.png)
+![Excel spreadsheet showing Level 1 area data with columns for ADM1_PCODE, ADM1_EN, ADM0_PCODE, ADM0_EN, and AREA_SQKM containing sample subdivision data](import_areas/2.png)
 
 Repeat the process for additional levels.
 
@@ -92,22 +99,27 @@ Repeat the process for additional levels.
 
 ### Save the File
 
-Save the workbook in .xlsx format. Then name the file descriptively, e.g., Area_Import.xlsx.
+Save the workbook in .xlsx format.
+Then name the file descriptively, e.g., Area_Import.xlsx.
 
 ### Import the File
 
 Navigate to the **Areas Import** module in OpenSPP by clicking on **Area →Areas**
 
-![](import_areas/3.png)
+![OpenSPP navigation menu showing the Area menu expanded with Areas option highlighted](import_areas/3.png)
 
-Click on **New**  
-![](import_areas/4.png)
+Click on **New**
 
-Click on **Upload your file.** Once uploaded, click on **import button to complete**  
-![](import_areas/5.png)
+![OpenSPP Areas page showing the New button in the top toolbar for creating a new area import](import_areas/4.png)
+
+Click on **Upload your file.**
+Once uploaded, click on **import button to complete**
+
+![Area import dialog showing file upload interface with drag-and-drop area and file selection button](import_areas/5.png)
 
 Once uploaded, click on the **import** button to complete.
-![](import_areas/6.png)
+
+![Area import dialog showing uploaded file ready for import with Import button highlighted](import_areas/6.png)
 
 ### Tips for Success
 
@@ -167,10 +179,11 @@ Each sheet must contain the following headers in the first row:
 
 ### ISO codes
 
-To get the ISO codes of the language you wish to use in the workbook. Go to OpenSPP and login as Administrator, Click on **Settings** and click on **Manage Languages** from the Languages section.
+To get the ISO codes of the language you wish to use in the workbook, go to OpenSPP and login as Administrator.
+Click on **Settings** and click on **Manage Languages** from the Languages section.
 
-![](import_areas/7.png)
+![OpenSPP Settings page showing the Languages section with Manage Languages option highlighted](import_areas/7.png)
 
 You can find the ISO code under the **ISO code** column of the language you want to add in your workbook.
 
-![](import_areas/8.png)
+![Language management interface showing a table of active languages with their names, ISO codes, and status](import_areas/8.png)

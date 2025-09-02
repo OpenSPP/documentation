@@ -1,11 +1,20 @@
 
+---
+myst:
+  html_meta:
+    "title": "Event Data"
+    "description": "Guide to using Event Data functionality in OpenSPP to record and track specific occurrences related to registrants over time."
+    "keywords": "OpenSPP, event data, registrant tracking, audit trail, data history, event management"
+---
+
 # Event Data
 
-In OpenSPP, Event Data provides a flexible mechanism to record and track specific, significant occurrences related to registrants over time. This functionality enhances the system's capacity to capture a chronological history of changes and actions without directly modifying the main registrant profile.
+In OpenSPP, Event Data provides a flexible mechanism to record and track specific, significant occurrences related to registrants over time.
+This functionality enhances the system's capacity to capture a chronological history of changes and actions without directly modifying the main registrant profile.
 
 <!-- ## Overview of Event Data Functionality -->
 
-The `spp_event_data` module is designed to:
+The {doc}`spp_event_data </reference/modules/spp_event_data>` module is designed to:
 - Provide a structured way to log and store data about events impacting registrants.
 - Link these events to the specific data entries they affect, creating a clear audit trail.
 - Offer tools to view and navigate the event history of a registrant.
@@ -13,7 +22,7 @@ The `spp_event_data` module is designed to:
 
 <!-- ## Integration with Program Membership Events -->
 
-<!-- The `spp_event_data_program_membership` module enhances OpenSPP by integrating the Event Data module (`spp_event_data`) with the G2P Programs module (`g2p_programs`). This allows users to record and track program membership-related events, such as enrollment, suspension, exit, and changes in eligibility status, and link them to specific program membership records. -->
+<!-- The {doc}`spp_event_data_program_membership </reference/modules/spp_event_data_program_membership>` module enhances OpenSPP by integrating the Event Data module ({doc}`spp_event_data </reference/modules/spp_event_data>`) with the G2P Programs module ({doc}`g2p_programs </reference/modules/g2p_programs>`). This allows users to record and track program membership-related events, such as enrollment, suspension, exit, and changes in eligibility status, and link them to specific program membership records. -->
 
 <!-- ### Key Features
 
@@ -27,12 +36,14 @@ The `spp_event_data` module is designed to:
 
 To utilize and manage Event Data, ensure the following prerequisites are met:
 
-- Individual or group records already exist in your registry. For more information, refer to {doc}`register_individual` or {doc}`import_export_registrant_data`.
-- The `spp_event_data` module (OpenSPP Event Data) is installed. 
-- If specific event types are required (such as program membership events), ensure that any related modules (e.g., `spp_event_data_program_membership`) are also installed.
-- To access demonstration features, the `spp_event_demo` module should be installed.
+- Individual or group records already exist in your registry.
+  For more information, refer to {doc}`register_individual` or {doc}`import_export_registrant_data`.
+- The {doc}`spp_event_data </reference/modules/spp_event_data>` module (OpenSPP Event Data) is installed. 
+- If specific event types are required (such as program membership events), ensure that any related modules (e.g., {doc}`spp_event_data_program_membership </reference/modules/spp_event_data_program_membership>`) are also installed.
+- To access demonstration features, the {doc}`spp_event_demo </reference/modules/spp_event_demo>` module should be installed.
 > To learn on installing optional modules, refer to the **Installing Additional Modules** section in the document: {doc}`../../getting_started/module_installation`.
-- Appropriate user access roles are assigned to allow creation or viewing of event records. By default, the **System admin** user account has access to event data functionality.
+- Appropriate user access roles are assigned to allow creation or viewing of event records.
+  By default, the **System admin** user account has access to event data functionality.
 
 ## Objective
 
@@ -44,10 +55,13 @@ By understanding Event Data, you will be able to:
 
 ## Process
 
-Event data functionality fulfills several important roles, including the systematic tracking of changes to a registrant’s information. A system administrator or authorized user may create an event data entry to record the registrant’s current details at a specific point in time. Subsequent data collection cycles can generate additional event data entries to document any updates or modifications. This approach enables comprehensive monitoring of changes over time and supports the use of event data as conditions or eligibility criteria for particular programs, when appropriately configured.
+Event data functionality fulfills several important roles, including the systematic tracking of changes to a registrant's information.
+A system administrator or authorized user may create an event data entry to record the registrant's current details at a specific point in time.
+Subsequent data collection cycles can generate additional event data entries to document any updates or modifications.
+This approach enables comprehensive monitoring of changes over time and supports the use of event data as conditions or eligibility criteria for particular programs, when appropriately configured.
 
 <!-- ### Demonstration and Examples
-The `spp_event_demo` module provides demonstration data and functionalities for the `spp_event_data` module. It showcases how to extend and utilize the event tracking capabilities of OpenSPP for specific use cases through:
+The {doc}`spp_event_demo </reference/modules/spp_event_demo>` module provides demonstration data and functionalities for the {doc}`spp_event_data </reference/modules/spp_event_data>` module. It showcases how to extend and utilize the event tracking capabilities of OpenSPP for specific use cases through:
 * **Predefined Event Types:** Including House Visit (`spp.event.house.visit`), Phone Survey (`spp.event.phone.survey`), and School Enrollment Record (`spp.event.schoolenrollment.record`).
 * **Data Models and Views:** Specific data models and user-friendly views for each event type.
 * **Event Creation Wizards:** Dedicated wizards for creating new events like "Create Event: House Visit," "Create Event: Phone Survey," and "Create Event: School Enrollment".
@@ -55,15 +69,21 @@ The `spp_event_demo` module provides demonstration data and functionalities for 
 
 ### Create Event Data
 
-To demonstrate the **event data** functionality, ensure that `spp_event_demo` is activated. To verify, navigate to **Apps** and search for `spp_event_demo`. If it is not yet enabled, click **Activate**. Once successfully activated, the **Activate** button will no longer be visible.
+To demonstrate the **event data** functionality, ensure that {doc}`spp_event_demo </reference/modules/spp_event_demo>` is activated.
+To verify, navigate to **Apps** and search for {doc}`spp_event_demo </reference/modules/spp_event_demo>`.
+If it is not yet enabled, click **Activate**.
+Once successfully activated, the **Activate** button will no longer be visible.
 
-![](using_event_data/using_event_data_verify_event_data_module.png)
+![Using event data verify event data module](using_event_data/using_event_data_verify_event_data_module.png)
 
 Navigate to the registry and select a record either from groups or individuals, then click on the **event data** button from the top menu bar.
 
-![](using_event_data/using_event_data_click_event_button.png)
+![Using event data click event button](using_event_data/using_event_data_click_event_button.png)
 
-A modal window will appear. In the **Event Type** field, select an event data template; **House Visit** is suggested for this demonstration. Set an **Expiry Date** to determine when the record will become inactive. Click **Next** to continue.
+A modal window will appear.
+In the **Event Type** field, select an event data template; **House Visit** is suggested for this demonstration.
+Set an **Expiry Date** to determine when the record will become inactive.
+Click **Next** to continue.
 
 > The field names displayed in the event data modal are customizable depending on your preference or configuration. 
 
@@ -73,23 +93,23 @@ Fill in the fields you wish to define, then click **Save** to create the event d
 
 From **Registry**, select a group or an individual and click on the event data tab.
 
-![](using_event_data/Using_event_data_event_data_tab.png)
+![Using event data event data tab](using_event_data/Using_event_data_event_data_tab.png)
 
 Click on the green button to view the registrant’s event data details.
 
-![](using_event_data/Using_event_data_view_data.png)
+![Using event data view data](using_event_data/Using_event_data_view_data.png)
 
 A modal should display the values of the fields for that event data.
 
-![](using_event_data/Using_event_data_event_data_values.png)
+![Using event data event data values](using_event_data/Using_event_data_event_data_values.png)
 
 From the **Event Data** tab, you can click on the record’s name to view the event data’s information.
 
-![](using_event_data/using_event_data_event_data_name.png)
+![Using event data event data name](using_event_data/using_event_data_event_data_name.png)
 
 The displayed fields are all **read-only** and cannot be modified. For the Related Data field, the number shown indicates how many event data entries of the same type currently exist in the registrant's records.
 
-![](using_event_data/using_event_data_click_event_data_name.png)
+![Using event data click event data name](using_event_data/using_event_data_click_event_data_name.png)
 
 ### Active/Inactive Event Data
 
@@ -99,4 +119,4 @@ When a new event data entry is saved, it is automatically marked as active. Any 
 
 Once an event data entry reaches its expiration date, it will automatically be set to inactive.
 
-![](using_event_data/using_event_data_automatically_inactive.png)
+![Using event data automatically inactive](using_event_data/using_event_data_automatically_inactive.png)

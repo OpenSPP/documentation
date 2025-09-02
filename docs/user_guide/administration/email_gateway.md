@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    "title": "Email Gateway Configuration"
+    "description": "Configure SMTP outgoing and IMAP/POP incoming email servers in OpenSPP for automated communication and data processing"
+    "keywords": "OpenSPP, email gateway, SMTP, IMAP, POP, email configuration, system administration"
+---
 
 # Email Gateway Configuration
 
@@ -38,7 +45,7 @@ To access the technical settings required for email configuration, you must firs
 2.  Scroll to the bottom of the **Settings** page.
 3.  Click **Activate the developer mode**.
 
-![](email_gateway/A-step01-activate-developer-mode.jpg)
+![Settings page showing the 'Activate the developer mode' button at the bottom of the page](email_gateway/A-step01-activate-developer-mode.jpg)
 
 Once activated, a bug icon will appear in the top-right corner of the header, and new technical menus will become available.
 
@@ -50,7 +57,7 @@ With developer mode active, you can now access the menu for configuring outgoing
 2.  Click on the **Technical** menu in the header.
 3.  Under the **Email** section, click on **Outgoing Email Servers**.
 
-![](email_gateway/A-step02-open-outgoing-email-servers.jpg)
+![Technical menu dropdown showing the Email section with 'Outgoing Email Servers' option highlighted](email_gateway/A-step02-open-outgoing-email-servers.jpg)
 
 #### Create a New Server Configuration
 
@@ -58,7 +65,7 @@ On the **Outgoing Email Servers** page, you will see a list of any existing serv
 
 1.  Click the **New** button to create a new configuration.
 
-![](email_gateway/A-step03-create-new-outgoing-email-server.jpg)
+![Outgoing Email Servers list page with the 'New' button highlighted to create a new server configuration](email_gateway/A-step03-create-new-outgoing-email-server.jpg)
 
 This will open a new form where you can enter your SMTP server details.
 
@@ -74,7 +81,7 @@ Now, fill in the form with the details from your email provider.
 - **SMTP Server**: Enter your server's address. For this guide, we'll use `smtp.youremailserver.com`.
 - **SMTP Port**: Enter the port number. `587` is common for STARTTLS.
 
-![](email_gateway/A-step04-fill-in-server-details.jpg)
+![SMTP server configuration form showing fields for Name, Priority, Connection Encryption, Username, Password, SMTP Server, and SMTP Port](email_gateway/A-step04-fill-in-server-details.jpg)
 
 #### Test and Save the Configuration
 
@@ -85,7 +92,7 @@ After filling in all the details, it's crucial to test the connection to ensure 
 3.  If you see an error, double-check your server details, username, and password.
 4.  Once the test is successful, click the **Save** button.
 
-![](email_gateway/A-step05-test-and-save-config.jpg)
+![Completed SMTP configuration form with 'Test Connection' and 'Save' buttons highlighted at the top](email_gateway/A-step05-test-and-save-config.jpg)
 
 Your new email server is now configured and, if it has the lowest priority, will be used by OpenSPP to send all outgoing emails.
 ---
@@ -123,13 +130,13 @@ If you have not already, activate developer mode to access the technical setting
 2.  Click on the **Technical** menu in the header.
 3.  Under the **Email** section, click on **Incoming Email Servers**.
 
-![](email_gateway/B-step02-open-incoming-email-servers.jpg)
+![Technical menu dropdown showing the Email section with 'Incoming Email Servers' option highlighted](email_gateway/B-step02-open-incoming-email-servers.jpg)
 
 #### Create a New Server Configuration
 
 1.  On the **Incoming Email Servers** page, click the **New** button.
 
-![](email_gateway/B-step03-create-new-incoming-email-server.jpg)
+![Incoming Email Servers list page with the 'New' button highlighted to create a new server configuration](email_gateway/B-step03-create-new-incoming-email-server.jpg)
 
 This will open a form to enter your incoming server details.
 
@@ -147,7 +154,7 @@ Fill in the form with the details for the mailbox you want OpenSPP to monitor.
 - **Action to Perform on Incoming Mails**: Select `Create a new Record`.
 - **Create a New Record**: This is a critical field. Select the type of record you want to create from incoming emails. For example, you could select `Grievance` if you have a grievance module installed. The available options depend on the modules installed in your system.
 
-![](email_gateway/B-step04-fill-in-server-details.jpg)
+![IMAP/POP server configuration form showing fields for Name, Server Type, Server Name, Port, SSL/TLS, Username, Password, and Action settings](email_gateway/B-step04-fill-in-server-details.jpg)
 
 #### Test and Save
 
@@ -156,7 +163,7 @@ Fill in the form with the details for the mailbox you want OpenSPP to monitor.
 3.  If there is an error, re-check all your server settings.
 4.  Once the test is successful, click **Save**.
 
-![](email_gateway/B-step05-test-and-save-config.jpg)
+![Completed incoming email server configuration form with 'Test & Confirm' and 'Save' buttons highlighted](email_gateway/B-step05-test-and-save-config.jpg)
 
 OpenSPP will now periodically check this mailbox for new emails and create records based on your configuration.
 

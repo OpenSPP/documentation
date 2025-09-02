@@ -1,4 +1,12 @@
 
+---
+myst:
+  html_meta:
+    "title": "OpenSPP Installation Guide for Ubuntu and Debian"
+    "description": "Complete guide for installing OpenSPP on Ubuntu 24.04 and Debian 12 using official APT repository with PostgreSQL configuration"
+    "keywords": "OpenSPP, installation, Ubuntu 24.04, Debian 12, PostgreSQL, APT repository, setup guide"
+---
+
 # Installation Guide
 
 This guide walks you through installing OpenSPP on Ubuntu 24.04 or Debian 12 (Bookworm) using the official APT repository hosted on Nexus.
@@ -251,7 +259,7 @@ Once the database is created:
 After logging in, you'll need to activate the OpenSPP modules:
 
 1. Navigate to **Apps** menu
-2. Search and install `spp_mis_demo` (OpenSPP Demo) or `spp_farmer_registry_demo` (OpenSPP Farmer Registry Demo)
+2. Search and install {doc}`spp_mis_demo </reference/modules/spp_mis_demo>` (OpenSPP Demo) or {doc}`spp_farmer_registry_demo </reference/modules/spp_farmer_registry_demo>` (OpenSPP Farmer Registry Demo)
 3. Restart OpenSPP after installing the demo modules:
    ```bash
    sudo systemctl restart openspp

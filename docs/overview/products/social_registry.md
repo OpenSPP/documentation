@@ -14,7 +14,7 @@ A social registry is a database or system that contains information on household
 
 Social registries generally support the initial identification and registration, and needs assessment phases of social protection implementation and delivery, as illustrated below.
 
-![](images/social_registry.jpg)
+![Diagram showing the social protection delivery chain with phases for identification and registration, needs assessment, enrollment and eligibility determination, provision of benefits and services, compliance and exit highlighting the role of social registry](images/social_registry.jpg)
 
 One of the first examples of a social registry was developed in the late 1990s for the Bolsa Familia social protection program in Brazil. The Cadastro Único collects and stores information about Brazil’s low-income and vulnerable populations. It is now used as a key tool by the Government, not only for identifying and selecting households for the Bolsa Familia, but also to identify and provide assistance to the most vulnerable Brazilians via 27 other social programs.
 
