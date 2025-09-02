@@ -80,20 +80,20 @@ sudo apt-get install -y openspp-17-daily
 
 If you prefer to download the package manually or the repository is not accessible:
 
-### Create a temporary directory
+#### Create a temporary directory
 ```bash
 mkdir -p ~/openspp-install && cd ~/openspp-install
 ```
 
-### Download directly from Nexus repository
+#### Download directly from Nexus repository
 ```bash
 wget https://builds.acn.fr/repository/apt-openspp/pool/main/o/openspp/openspp_17.0.1+odoo17.0-1_amd64.deb
 ```
-### Install the package
+#### Install the package
 ```bash
 sudo dpkg -i openspp_17.0.1+odoo17.0-1_amd64.deb
 ```
-### Fix any dependency issues if they occur
+#### Fix any dependency issues if they occur
 ```bash
 sudo apt-get install -f
 ```
