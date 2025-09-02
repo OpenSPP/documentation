@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    "title": "Configurable Eligibility and Targeting"
+    "description": "OpenSPP flexible rules engine for precise beneficiary identification and enrollment using multiple targeting methodologies"
+    "keywords": "OpenSPP, eligibility, targeting, beneficiary selection, proxy means test, social protection"
+---
+
 # Configurable Eligibility and Targeting
 
 OpenSPP's {term}`eligibility` and targeting system provides a powerful rules engine that enables programs to precisely identify and enroll their intended {term}`beneficiaries` through flexible criteria ranging from simple categorical filters to sophisticated poverty {term}`assessment of needs and conditions` algorithms.

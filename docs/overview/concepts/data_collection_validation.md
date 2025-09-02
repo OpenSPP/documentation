@@ -1,8 +1,9 @@
 ---
-review-status: Reviewed
-review-date: 2025-06-23
-reviewer: Mark Penalosa
-migration-notes: "Added during 2025 documentation reorganization"
+myst:
+  html_meta:
+    "title": "Data Collection and Validation Concepts"
+    "description": "OpenSPP data collection and validation principles including data minimization, user consent, and validation processes"
+    "keywords": "OpenSPP, data collection, data validation, data minimization, consent, social protection"
 ---
 
 # Data Collection and Validation

@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    "title": "Geospatial (GIS) and Land Management"
+    "description": "OpenSPP GIS capabilities for location-based targeting, spatial analysis, and land record management in social protection programs"
+    "keywords": "OpenSPP, GIS, geospatial, land management, geographic targeting, spatial analysis, social protection"
+---
+
 # Geospatial (GIS) and Land Management
 
 OpenSPP integrates Geographic Information System (GIS) capabilities to manage, visualize, and analyze location-based data, enabling precise geographic targeting for {term}`social protection` programs and comprehensive land record management for agricultural interventions.

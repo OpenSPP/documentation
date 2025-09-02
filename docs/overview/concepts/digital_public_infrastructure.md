@@ -1,8 +1,9 @@
 ---
-review-status: reviewed
-review-date: 2025-06-24
-reviewer: Mark Penalosa
-migration-notes: "Added during 2025 documentation reorganization"
+myst:
+  html_meta:
+    "title": "Digital Public Infrastructure Concepts"
+    "description": "Understanding DPI principles and how OpenSPP aligns with digital public infrastructure through modular architecture"
+    "keywords": "OpenSPP, digital public infrastructure, DPI, interoperability, modular architecture, social protection"
 ---
 
 # Digital Public Infrastructure

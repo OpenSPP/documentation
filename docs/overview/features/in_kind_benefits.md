@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    "title": "In-Kind Benefits and Inventory Management"
+    "description": "OpenSPP comprehensive in-kind benefits system with inventory tracking and distribution workflows for non-cash assistance"
+    "keywords": "OpenSPP, in-kind benefits, inventory management, non-cash assistance, distribution, social protection"
+---
+
 # In-Kind Benefits and Inventory Management
 
 OpenSPP's in-kind benefits system provides comprehensive management of non-cash assistance including food rations, agricultural inputs, medical supplies, and vouchers, with integrated inventory tracking and distribution workflows that ensure accurate allocation and accountability.

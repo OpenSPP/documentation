@@ -1,8 +1,4 @@
 ---
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
 myst:
   html_meta:
     "title": "OpenSPP Overview"
@@ -43,44 +39,44 @@ Agricultural-focused platform combining farm data, land management, and social p
 ::::
 :::::
 
-[Explore all products →](products/index.md)
+{doc}`Explore all products → <products/index>`
 
 ## Understand core capabilities
 
 OpenSPP delivers comprehensive social protection through modular features that work together seamlessly:
 
 **Data Foundation**
-- [Unified registry](features/unified_registry.md) for consolidated beneficiary data
-- [GIS and land management](features/gis_land_management.md) for location-based targeting
+- {doc}`Unified registry <features/unified_registry>` for consolidated beneficiary data
+- {doc}`GIS and land management <features/gis_land_management>` for location-based targeting
 
 **Program Delivery**  
-- [Program management](features/program_management.md) across the complete lifecycle
-- [Eligibility and targeting](features/eligibility_targeting.md) with flexible rules
-- [Payment and disbursement](features/payment_disbursement.md) through multiple channels
+- {doc}`Program management <features/program_management>` across the complete lifecycle
+- {doc}`Eligibility and targeting <features/eligibility_targeting>` with flexible rules
+- {doc}`Payment and disbursement <features/payment_disbursement>` through multiple channels
 
 **System Infrastructure**
-- [Data integration and APIs](features/data_integration_apis.md) for interoperability
-- [Change management](features/change_management.md) with audit trails
-- [Grievance redress](features/grievance_redress.md) for accountability
+- {doc}`Data integration and APIs <features/data_integration_apis>` for interoperability
+- {doc}`Change management <features/change_management>` with audit trails
+- {doc}`Grievance redress <features/grievance_redress>` for accountability
 
-[View all features →](features/index.md)
+{doc}`View all features → <features/index>`
 
 ## Learn fundamental concepts
 
 Understanding OpenSPP's design principles and theoretical foundations:
 
-- [Digital public infrastructure](concepts/digital_public_infrastructure.md) - How OpenSPP aligns with DPI principles
-- [Integrated beneficiary registry](concepts/integrated_beneficiary_registry.md) - Registry architecture and design  
-- [Data protection](concepts/data_protection.md) - Privacy and security framework
-- [Extensibility](concepts/extensibility.md) - Platform customization capabilities
+- {doc}`Digital public infrastructure <concepts/digital_public_infrastructure>` - How OpenSPP aligns with DPI principles
+- {doc}`Integrated beneficiary registry <concepts/integrated_beneficiary_registry>` - Registry architecture and design  
+- {doc}`Data protection <concepts/data_protection>` - Privacy and security framework
+- {doc}`Extensibility <concepts/extensibility>` - Platform customization capabilities
 
-[Explore all concepts →](concepts/index.md)
+{doc}`Explore all concepts → <concepts/index>`
 
 ## Plan your implementation
 
 Ready to explore OpenSPP for your organization? Our structured approach helps you validate fit and plan successful deployments:
 
-**[From proof of concept to pilot](poc_and_pilot.md)** - Comprehensive guide covering:
+**{doc}`From proof of concept to pilot <poc_and_pilot>`** - Comprehensive guide covering:
 - Proof of concept (4-8 weeks) for initial validation
 - Pilot implementation (3-6 months) for real-world testing  
 - Resource planning and success criteria

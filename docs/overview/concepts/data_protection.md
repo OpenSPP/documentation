@@ -1,8 +1,9 @@
 ---
-review-status: reviewed
-review-date: 2025-06-24
-reviewer: Mark Penalosa
-migration-notes: "Added during 2025 documentation reorganization"
+myst:
+  html_meta:
+    "title": "Data Protection Principles"
+    "description": "OpenSPP data protection concepts including lawfulness, data minimization, and accountability within digital infrastructure"
+    "keywords": "OpenSPP, data protection, privacy, security, GDPR, accountability, social protection"
 ---
 
 # Data Protection

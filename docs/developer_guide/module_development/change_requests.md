@@ -1,9 +1,3 @@
----
-review-status: needs-review
-review-date: 2025-08-12
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
 
 # Change Request
 
@@ -50,7 +44,6 @@ spp_change_request_add_children_demo/
     ├── change_request_add_children_views.xml
     └── menus.xml
 ```
-
 ---
 
 ## Step-by-Step Guide

@@ -1,8 +1,9 @@
 ---
-review-status: Reviewed
-review-date: 2025-06-24
-reviewer: Mark Penalosa
-migration-notes: "Added during 2025 documentation reorganization"
+myst:
+  html_meta:
+    "title": "OpenSPP Extensibility Concepts"
+    "description": "How OpenSPP enables customization through modular Odoo architecture and inheritance for social protection programs"
+    "keywords": "OpenSPP, extensibility, customization, Odoo, modular architecture, inheritance, social protection"
 ---
 
 # Customisable, Configurable, and Extensible

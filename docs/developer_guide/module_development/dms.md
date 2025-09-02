@@ -1,9 +1,3 @@
----
-review-status: needs-review
-review-date: 2025-08-22
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
 
 # Document Management System
 
@@ -34,7 +28,6 @@ spp_dms_school_documents/
 └── data/
     └── dms_category_data.xml
 ```
-
 ---
 
 ## Step-by-Step Guide

@@ -1,8 +1,9 @@
 ---
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
+myst:
+  html_meta:
+    "title": "OpenSPP Integration Architecture"
+    "description": "OpenSPP integration mindmap and architecture for connecting with external systems and digital infrastructure"
+    "keywords": "OpenSPP, integrations, architecture, APIs, interoperability, digital infrastructure"
 ---
 
 # Integrations

@@ -1,9 +1,3 @@
----
-review-status: reviewed
-review-date: 2025-06-17
-reviewer: Mark Penalosa
-migration-notes: "Added during 2025 documentation reorganization"
----
 
 # Configure cash entitlements
 

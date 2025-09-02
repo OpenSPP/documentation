@@ -1,9 +1,3 @@
----
-review-status: needs-review
-review-date: 2025-08-17
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
 
 # Dashboards
 
@@ -45,7 +39,6 @@ spp_custom_dashboard/
 └── views/
     └── dashboard_views.xml    # Client action and menu item
 ```
-
 ---
 
 ## Step-by-Step Guide

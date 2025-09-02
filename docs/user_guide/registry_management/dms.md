@@ -1,9 +1,3 @@
----
-review-status: reviewed
-review-date: 2025-08-14
-reviewer: Mark Penalosa
-migration-notes: "Added during 2025 documentation reorganization"
----
 
 # Document Management System
  

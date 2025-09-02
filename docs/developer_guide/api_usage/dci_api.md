@@ -1,9 +1,3 @@
----
-review-status: needs-review
-review-date: 2025-08-28
-reviewer: technical-writer
-migration-notes: "Added during 2025 documentation reorganization"
----
 
 # DCI API
 

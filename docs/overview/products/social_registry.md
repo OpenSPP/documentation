@@ -1,8 +1,9 @@
 ---
-review-status: reviewed
-review-date: 2025-06-20
-reviewer: Mark Penalosa
-migration-notes: "Added during 2025 documentation reorganization"
+myst:
+  html_meta:
+    "title": "Social Registry for Social Protection Programs"
+    "description": "OpenSPP Social Registry product configuration for centralized beneficiary identification, registration, and needs assessment"
+    "keywords": "OpenSPP, social registry, beneficiary identification, targeting, social protection, needs assessment"
 ---
 
 # Social Registry

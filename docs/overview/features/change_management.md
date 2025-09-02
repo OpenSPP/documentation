@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    "title": "Auditable Change Management"
+    "description": "OpenSPP change management feature with formal workflows and comprehensive audit trails for data integrity and accountability"
+    "keywords": "OpenSPP, change management, audit trails, data integrity, accountability, social protection"
+---
+
 # Auditable Change Management
 
 OpenSPP's change management system ensures data integrity, transparency, and accountability through formal change request workflows and comprehensive audit trails that track every modification to critical {term}`beneficiary` and program data.

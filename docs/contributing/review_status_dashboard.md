@@ -1,9 +1,3 @@
----
-review-status: approved
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Status dashboard for documentation review tracking"
----
 
 # Documentation Review Status Dashboard
 
@@ -122,7 +116,6 @@ The review status system includes:
 - `docs/_static/review_status_simple.js` - Status detection and display
 - `docs/_templates/layout.html` - Template modifications
 - `add_review_status.py` - Script to add frontmatter to all pages
-
 ---
 
 *Last updated: 2025-06-04*  

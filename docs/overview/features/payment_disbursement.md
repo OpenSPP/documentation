@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    "title": "Pluggable Payment and Disbursement"
+    "description": "OpenSPP flexible payment system with multi-channel benefit delivery through banks, mobile money, vouchers, and cash"
+    "keywords": "OpenSPP, payment disbursement, mobile money, banking integration, G2P Connect, financial inclusion, social protection"
+---
+
 # Pluggable Payment and Disbursement
 
 OpenSPP's payment and disbursement system provides a flexible, pluggable architecture for integrating with diverse financial service providers, enabling programs to deliver {term}`benefits` to {term}`beneficiaries` through multiple channels including banks, mobile money, vouchers, and direct cash distribution.

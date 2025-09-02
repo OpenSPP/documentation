@@ -1,8 +1,9 @@
 ---
-review-status: Reviewed
-review-date: 2025-06-23
-reviewer: Mark Penalosa
-migration-notes: "Added during 2025 documentation reorganization"
+myst:
+  html_meta:
+    "title": "Integrated Beneficiary Registry Concepts"
+    "description": "Understanding IBR components, advantages, and relationships with social registries in social protection systems"
+    "keywords": "OpenSPP, integrated beneficiary registry, IBR, social registry, beneficiary management, social protection"
 ---
 
 # Integrated Beneficiary Registry

@@ -1,9 +1,3 @@
----
-review-status: needs-review
-review-date: 2025-08-22
-reviewer: "Edwin Gonzales"
-migration-notes: "Added during 2025 documentation reorganization"
----
 
 # Email Gateway Configuration
 
@@ -12,7 +6,6 @@ The Email Gateway in OpenSPP allows the platform to both send and receive emails
 - **Incoming Emails (IMAP/POP):** Used to automatically create or update records in OpenSPP from a dedicated mailbox. For example, an email sent to a specific address could automatically generate a grievance ticket or a change request.
 
 This guide provides a step-by-step process for configuring both outgoing and incoming email servers in OpenSPP.
-
 ---
 
 ## Outgoing Email Server (SMTP) Configuration
@@ -95,7 +88,6 @@ After filling in all the details, it's crucial to test the connection to ensure 
 ![](email_gateway/A-step05-test-and-save-config.jpg)
 
 Your new email server is now configured and, if it has the lowest priority, will be used by OpenSPP to send all outgoing emails.
-
 ---
 
 ## Incoming Email Server (IMAP/POP) Configuration

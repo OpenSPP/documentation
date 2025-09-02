@@ -1,8 +1,9 @@
 ---
-review-status: Reviewed
-review-date: 2025-06-23
-reviewer: Mark Penalosa
-migration-notes: "Added during 2025 documentation reorganization"
+myst:
+  html_meta:
+    "title": "User Management Framework and Concepts"
+    "description": "OpenSPP user management framework for controlling system access and safeguarding user data with security approaches"
+    "keywords": "OpenSPP, user management, access control, security, user data protection, authentication, social protection"
 ---
 
 # User Management

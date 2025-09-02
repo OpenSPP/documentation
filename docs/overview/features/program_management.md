@@ -1,6 +1,14 @@
+---
+myst:
+  html_meta:
+    "title": "End-to-End Program and Entitlement Management"
+    "description": "OpenSPP comprehensive program management feature for lifecycle management from design to benefit delivery"
+    "keywords": "OpenSPP, program management, entitlement management, benefit calculation, social protection programs"
+---
+
 # End-to-End Program and Entitlement Management
 
-OpenSPP provides comprehensive lifecycle management for {term}`social protection` programs, from initial design and {term}`beneficiary` enrollment through {term}`benefit <benefits>` calculation and disbursement, supporting diverse program types including [cash transfers](./payment_disbursement.md), [in-kind distributions](./in_kind_benefits.md), and voucher-based assistance.
+OpenSPP provides comprehensive lifecycle management for {term}`social protection` programs, from initial design and {term}`beneficiary` enrollment through {term}`benefit <benefits>` calculation and disbursement, supporting diverse program types including {doc}`cash transfers <payment_disbursement>`, {doc}`in-kind distributions <in_kind_benefits>`, and voucher-based assistance.
 
 ## Managing Complexity at Scale
 

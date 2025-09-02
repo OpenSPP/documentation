@@ -1,9 +1,3 @@
----
-review-status: needs-review
-review-date: 2025-08-20
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
 
 # Program Cycles
 
@@ -46,7 +40,6 @@ spp_cycle_manager_fixed_interval/
     ├── __init__.py
     └── create_program_wizard.py # Extends the program creation wizard
 ```
-
 ---
 
 ## Step-by-Step Guide

@@ -1,8 +1,9 @@
 ---
-review-status: Reviewed
-review-date: 2025-06-23
-reviewer: Mark Penalosa
-migration-notes: "Added during 2025 documentation reorganization"
+myst:
+  html_meta:
+    "title": "Social Protection Management Information System (SP-MIS)"
+    "description": "OpenSPP SP-MIS product configuration for comprehensive social protection program management from enrollment to payment"
+    "keywords": "OpenSPP, SP-MIS, social protection, management information system, beneficiary management, payments"
 ---
 # Social Protection Management Information System
 
@@ -33,8 +34,8 @@ An SP-MIS and a Social Registry are distinct but complementary systems. While a 
 
 The data flows from the Social Registry to the SP-MIS, which then handles the operational aspects of program delivery, such as calculating payments and tracking the beneficiary lifecycle. This linkage is crucial for achieving policy coherence and operational efficiency. For example, an SP-MIS can be integrated with:
 
-* A [Social Registry](social_registry) to receive lists of potentially eligible household.
-* A [Farmer Registry](farmer_registry) to identify vulnerable agricultural household for specific programs.
+* A {doc}`Social Registry <social_registry>` to receive lists of potentially eligible household.
+* A {doc}`Farmer Registry <farmer_registry>` to identify vulnerable agricultural household for specific programs.
 * **{term}`Civil registration`** and Vital Statistics (CRVS) systems to verify life events like births or deaths, which can affect eligibility.
 * **National ID systems** to validate identities.This integration eliminates data silos, reduces administrative duplication, and enables a more holistic and responsive approach to social protection.
 

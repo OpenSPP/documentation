@@ -1,8 +1,9 @@
 ---
-review-status: Reviewed
-review-date: 2025-06-23
-reviewer: Mark Penalosa
-migration-notes: "Added during 2025 documentation reorganization"
+myst:
+  html_meta:
+    "title": "Registry Key Concepts and Best Practices"
+    "description": "OpenSPP registry structure best practices with minimalistic approach and four main components for data organization"
+    "keywords": "OpenSPP, registry concepts, data organization, minimalistic approach, registry structure, social protection"
 ---
 
 # Organizing Data in the Registry

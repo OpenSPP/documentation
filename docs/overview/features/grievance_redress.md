@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    "title": "Grievance Redress Mechanism (GRM)"
+    "description": "OpenSPP integrated grievance system for transparent beneficiary feedback, complaints handling, and issue resolution"
+    "keywords": "OpenSPP, grievance redress, complaints, feedback, accountability, transparency, social protection"
+---
+
 # Grievance Redress Mechanism (GRM)
 
 OpenSPP's integrated Grievance Redress Mechanism provides a transparent, accountable system for managing {term}`beneficiary` feedback, complaints, and {term}`appeals`, ensuring that program participants have a voice in service delivery and a pathway for issue resolution.

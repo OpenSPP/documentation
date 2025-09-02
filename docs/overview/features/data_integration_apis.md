@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    "title": "Data Integration and Interoperability (APIs)"
+    "description": "OpenSPP API framework and integration connectors for seamless data exchange with external systems and digital infrastructure"
+    "keywords": "OpenSPP, APIs, data integration, interoperability, digital infrastructure, data exchange, social protection"
+---
+
 # Data Integration and Interoperability (APIs)
 
 OpenSPP provides a comprehensive API framework and integration connectors that enable seamless data exchange with external systems, positioning the platform as an interoperable component within larger digital public infrastructure ecosystems.

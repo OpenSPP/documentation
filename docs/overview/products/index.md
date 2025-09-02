@@ -1,8 +1,4 @@
 ---
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
 myst:
   html_meta:
     "title": "OpenSPP Product Configurations"
@@ -16,14 +12,24 @@ OpenSPP offers three product configurations, each designed for specific social p
 
 ## Available configurations
 
-### [SP-MIS](sp_mis.md)
-Social Protection Management Information System for running complete social programs. Manages the entire lifecycle from beneficiary enrollment through payment disbursement. Ideal for cash transfers, humanitarian aid, and social assistance programs.
+### SP-MIS
 
-### [Social Registry](social_registry.md)  
-Centralized database of individuals and households that serves multiple social programs. Provides a single source of truth across interventions, reducing duplication and improving coordination between programs.
+{doc}`SP-MIS <sp_mis>`
+Social Protection Management Information System for running complete social programs.
+Manages the entire lifecycle from beneficiary enrollment through payment disbursement.
+Ideal for cash transfers, humanitarian aid, and social assistance programs.
 
-### [Farmer Registry](farmer_registry.md)
-Specialized registry for agricultural programs that bridges farming and social protection. Enables targeted agricultural interventions, input distribution, and climate-smart agriculture support for rural communities.
+### Social Registry  
+
+{doc}`Social Registry <social_registry>`
+Centralized database of individuals and households that serves multiple social programs.
+Provides a single source of truth across interventions, reducing duplication and improving coordination between programs.
+
+### Farmer Registry
+
+{doc}`Farmer Registry <farmer_registry>`
+Specialized registry for agricultural programs that bridges farming and social protection.
+Enables targeted agricultural interventions, input distribution, and climate-smart agriculture support for rural communities.
 
 
 ```{toctree}

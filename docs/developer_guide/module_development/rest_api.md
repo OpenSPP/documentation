@@ -1,9 +1,3 @@
----
-review-status: needs-review
-review-date: 2025-08-28
-reviewer: migration-script
-migration-notes: "Restructured to match customization documentation style and improve clarity"
----
 
 # REST API
 

@@ -1,9 +1,3 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "hidden for now. for batch 2 documentation
----
 
 # Support Model
 

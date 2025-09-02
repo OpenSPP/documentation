@@ -1,9 +1,3 @@
----
-review-status: Reviewed
-review-date: 2025-09-01
-reviewer: Mark Penalosa
-migration-notes: "Added during 2025 documentation reorganization"
----
 
 # Import and Export Registrant Data
 

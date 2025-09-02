@@ -1,9 +1,3 @@
----
-review-status: needs-review
-review-date: 2025-08-28
-reviewer: technical-writer
-migration-notes: "Rewritten for JSON-RPC, Python only, with OpenG2P Registry context"
----
 
 # External API using JSON-RPC
 
@@ -57,7 +51,6 @@ payload = {
 **Common JSON-RPC Methods:**
 - `authenticate`: Used for logging in and obtaining a user ID.
 - `execute_kw`: Used for calling model methods (such as `create`, `write`, `unlink`, `search_read`).
-
 ---
 
 ### Common Model Methods and Args
@@ -139,7 +132,6 @@ Example: `[["name", "=", "John Doe"]]`
 
 **Result**
 Returns a dictionary of the search results.
-
 ---
 
 ### Authentication

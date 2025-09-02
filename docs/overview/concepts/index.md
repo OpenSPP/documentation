@@ -1,8 +1,4 @@
 ---
-review-status: reviewed
-review-date: 2025-09-01
-reviewer: Mark Penalosa
-migration-notes: "Added during 2025 documentation reorganization"
 myst:
   html_meta:
     "title": "OpenSPP Core Concepts"
@@ -16,25 +12,49 @@ These concepts explain the theoretical foundations and design principles behind 
 
 ## Architecture and design
 
-- **[Digital public infrastructure](digital_public_infrastructure.md)** - Essential components of DPI and how OpenSPP aligns with DPI principles through modular, interoperable architecture
+**Digital public infrastructure**
 
-- **[Integrated beneficiary registry](integrated_beneficiary_registry.md)** - Key components of an IBR, its advantages, and its relationship with social registries
+{doc}`Digital public infrastructure <digital_public_infrastructure>`
+Essential components of DPI and how OpenSPP aligns with DPI principles through modular, interoperable architecture.
 
-- **[Extensibility](extensibility.md)** - How OpenSPP's Odoo foundation enables customization through modular architecture and inheritance
+**Integrated beneficiary registry**
+
+{doc}`Integrated beneficiary registry <integrated_beneficiary_registry>`
+Key components of an IBR, its advantages, and its relationship with social registries.
+
+**Extensibility**
+
+{doc}`Extensibility <extensibility>`
+How OpenSPP's Odoo foundation enables customization through modular architecture and inheritance.
 
 ## Data management
 
-- **[Registry key concepts](registry_key_concepts.md)** - Best practices for organizing data with a minimalistic approach and the four main registry structure components
+**Registry key concepts**
 
-- **[Registrant concepts](registrant_concepts.md)** - Core terminology for individuals, groups, group memberships, and their relationships
+{doc}`Registry key concepts <registry_key_concepts>`
+Best practices for organizing data with a minimalistic approach and the four main registry structure components.
 
-- **[Data collection and validation](data_collection_validation.md)** - Data minimization, user consent, versatile input methods, and validation processes
+**Registrant concepts**
+
+{doc}`Registrant concepts <registrant_concepts>`
+Core terminology for individuals, groups, group memberships, and their relationships.
+
+**Data collection and validation**
+
+{doc}`Data collection and validation <data_collection_validation>`
+Data minimization, user consent, versatile input methods, and validation processes.
 
 ## Security and governance
 
-- **[Data protection](data_protection.md)** - Principles of lawfulness, data minimization, and accountability within DPI context
+**Data protection**
 
-- **[User management](user_management.md)** - Framework for controlling system access and safeguarding user data with two management approaches
+{doc}`Data protection <data_protection>`
+Principles of lawfulness, data minimization, and accountability within DPI context.
+
+**User management**
+
+{doc}`User management <user_management>`
+Framework for controlling system access and safeguarding user data with two management approaches.
 
 ```{toctree}
 ---

@@ -1,9 +1,3 @@
----
-review-status: needs-review
-review-date: 2025-08-22
-reviewer: "Edwin Gonzales"
-migration-notes: "Added during 2025 documentation reorganization"
----
 
 # Inventory Configuration
 
@@ -12,7 +6,6 @@ OpenSPP's In-Kind and Basket Entitlement modules leverage Odoo's powerful Invent
 This guide provides a step-by-step process for enabling two critical inventory features:
 - **Storage Locations:** Allows for the management of specific locations within a warehouse (e.g., shelves, bins), which is essential for detailed stock tracking.
 - **Units of Measure:** Enables the use of different units for buying, selling, and storing products (e.g., kilograms, boxes, individual units), which is crucial for accurate entitlement definition.
-
 ---
 
 ## Prerequisites
@@ -24,7 +17,6 @@ To configure the Inventory settings, you will need:
 ## Objective
 
 After completing this guide, you will have enabled the necessary Inventory configurations to support the `spp_entitlement_in_kind` and `spp_entitlement_basket` modules, ensuring proper management of products for distribution.
-
 ---
 
 ## Process
@@ -55,7 +47,6 @@ This feature allows you to manage a structured warehouse with specific locations
 2.  Click **Save** to apply the changes. The page will reload with the new setting enabled.
 
 ![](inventory_configuration/A-step03-save-configuration.jpg)
-
 ---
 
 ### Enabling Units of Measure

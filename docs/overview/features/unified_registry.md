@@ -1,3 +1,11 @@
+---
+myst:
+  html_meta:
+    "title": "Unified and Hierarchical Beneficiary Registry"
+    "description": "OpenSPP unified registry feature providing single source of truth for beneficiary data with hierarchical group management"
+    "keywords": "OpenSPP, unified registry, beneficiary registry, hierarchical groups, data management, social protection"
+---
+
 # Unified and Hierarchical Beneficiary Registry
 
 OpenSPP's Unified and Hierarchical {term}`Beneficiary Registry` serves as the single source of truth for all program participants, managing both individual records and complex nested group structures within {term}`social protection` programs.

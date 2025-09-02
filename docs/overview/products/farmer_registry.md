@@ -1,8 +1,9 @@
 ---
-review-status: reviewed
-review-date: 2025-06-20
-reviewer: Mark Penalosa
-migration-notes: "Added during 2025 documentation reorganization"
+myst:
+  html_meta:
+    "title": "Farmer Registry for Agricultural Social Protection"
+    "description": "OpenSPP Farmer Registry product configuration bridging agriculture and social protection for rural communities"
+    "keywords": "OpenSPP, farmer registry, agricultural programs, rural communities, social protection, smallholder farmers"
 ---
 
 # Farmer Registry

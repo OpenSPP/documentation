@@ -1,8 +1,9 @@
 ---
-review-status: needs-review
-review-date: 2025-06-24
-reviewer: Mark penalosa
-migration-notes: "Added during 2025 documentation reorganization"
+myst:
+  html_meta:
+    "title": "Registrant Concepts and Terminology"
+    "description": "Core terminology for individuals, groups, group memberships, and their relationships in OpenSPP social protection systems"
+    "keywords": "OpenSPP, registrant concepts, individuals, groups, memberships, relationships, social protection"
 ---
 
 # Key Terminology

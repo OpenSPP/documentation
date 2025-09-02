@@ -1,9 +1,3 @@
----
-review-status: needs-review
-review-date: 2025-06-04
-reviewer: migration-script
-migration-notes: "Added during 2025 documentation reorganization"
----
 
 # Security Implementations & Practices
 
@@ -52,8 +46,6 @@ OpenSPP is built with a strong emphasis on data security and integrity. The solu
 Security for data-in-motion is achieved through support for Transport Layer Security (TLS) via encryption, authentication, and access control. The solution can also support advanced protective measures like intrusion detection systems (IDS) and network segmentation based on the specific deployment requirements of the country.
 
 The solution is designed to handle varying data demands, including scenarios of low latency-high volume and vice versa. This flexibility ensures optimal system performance regardless of the use case or business/implementation requirements, enabling OpenSPP to cater to various scenarios.
-
-
 ---
 
 # Security Architecture
