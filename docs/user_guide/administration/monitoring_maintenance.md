@@ -5,30 +5,41 @@ This section provides basic instructions for monitoring your OpenSPP system, vie
 
 ## View Logs
 
+### Real-time service logs
+
 ```bash
-# Real-time service logs
 sudo journalctl -u openspp -f
+```
 
-# Application logs
+### Application logs
+```bash
 sudo tail -f /var/log/openspp/openspp.log
+```
 
-# PostgreSQL logs
+### PostgreSQL logs
+```bash
 sudo tail -f /var/log/postgresql/postgresql-*.log
 ```
 
 ## Service Management
 
+### Restart service
 ```bash
-# Restart service
 sudo systemctl restart openspp
+```
 
-# Stop service
+### Stop service
+```bash
 sudo systemctl stop openspp
+```
 
-# Start service
+### Start service
+```bash
 sudo systemctl start openspp
+```
 
-# Reload configuration without restart
+### Reload configuration without restart
+```bash
 sudo systemctl reload openspp
 ```
 
@@ -37,25 +48,12 @@ sudo systemctl reload openspp
 When a new version is available:
 
 ```bash
-# Update package list
 sudo apt-get update
-
-# Check for OpenSPP updates
 apt list --upgradable | grep openspp
-
-# Stop service before upgrade
 sudo systemctl stop openspp
-
-# Backup current installation
 sudo tar -czf /var/backups/openspp-backup-$(date +%Y%m%d).tar.gz /opt/openspp /etc/openspp
-
-# Upgrade OpenSPP
 sudo apt-get upgrade openspp
-
-# Start service
 sudo systemctl start openspp
-
-# Update modules via web interface
 ```
 
 ## Alternative: Manual Update
@@ -63,18 +61,9 @@ sudo systemctl start openspp
 If updating manually:
 
 ```bash
-# Download new package from Nexus
 wget https://builds.acn.fr/repository/apt-openspp/pool/main/o/openspp/openspp_X.X.X_amd64.deb
-
-# Stop service
 sudo systemctl stop openspp
-
-# Backup current installation
 sudo tar -czf /var/backups/openspp-backup-$(date +%Y%m%d).tar.gz /opt/openspp /etc/openspp
-
-# Install new version
 sudo dpkg -i openspp_X.X.X_amd64.deb
-
-# Start service
 sudo systemctl start openspp
 ```
