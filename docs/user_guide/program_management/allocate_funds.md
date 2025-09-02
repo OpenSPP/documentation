@@ -13,19 +13,19 @@ This tutorial covers the step-by-step procedure on how to allocate funds for a p
 
 To allocate funds for a project, you need to:
 
-- Have a System administrator or the appropriate program user role that enables you to create programs and allocate funds. Learn more in this guide: {doc}`../administration/user_access`.
+- Have a **System Admin** or the appropriate program user role that enables you to create programs and allocate funds. Learn more in this guide: {doc}`../administration/user_access`.
 - Have existing individual records in your registry, either by creating records manually or importing records into OpenSPP. Learn more in this guide: {doc}`../registry_management/import_export_registrant_data` or {doc}`../registry_management/register_individual`.
-- An existing Program where individuals are registered. Learn more in this guide: {doc}`create_program`.
+- An existing Program. Learn more in this guide: {doc}`create_program`.
 
 ## Objective
 
-After completing this guide, the user will have learned how to allocate funds.
+After completing this guide, you will understand how to allocate funds to a program, including setting reference numbers, specifying amounts, and scheduling fund postings. You will be able to navigate the Program Funds page and ensure funds are allocated correctly for entitlements and program cycles.
 
 ## Process
 
 ### Allocate funds to selected program
 
-Entitlements require allocated funds in order to be successfully approved and it is therefore a prerequisite to configure the fund allocation for a selected program before generating cycles and entitlements.
+Cash entitlements require allocated funds in order to be successfully approved and it is therefore a prerequisite to configure the fund allocation for a selected program before approving entitlements.
 
 After clicking **Programs**, select **Accounting** from the toolbar, and select **Program Funds** from the drop-down list.
 

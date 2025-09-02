@@ -16,10 +16,11 @@ To create a cycle and prepare entitlements in OpenSPP, you need to:
 - Ensure your program is set and ready. Learn more about this in the documentation {doc}`create_program`.
 - Enroll beneficiaries in the program. Learn more about this in the documentation {doc}`enrol_beneficiaries`.
 - Allocate funds to the program. Learn more about this in the documentation {doc}`allocate_funds`.
+- Ensure your user account have the appropriate user permissions, such as **Global Program maanger**,  or **System Admin** roles. Learn more in this guide: {doc}`../administration/user_access`
 
 ## Objective
 
-By the end of this tutorial, you will have gained a deeper understanding of configuring cycles, either new or existing ones. You will also have gained familiarity with creating and handling entitlements as well as management of funds to allocate to existing programs. Ensuring correct setup upon cycle approval and entitlements is essential for a precise distribution of assistance.
+By the end of this tutorial, you will learn how to configure both new and existing cycles, manage entitlements, and allocate funds within OpenSPP. You will also learn the importance of proper setup for cycle approval and entitlement management to ensure accurate and effective distribution of assistance.
 
 ## Process
 
@@ -35,7 +36,7 @@ Click on a program and navigate to the **Configuration** tab.
 
 ![](create_program_cycle_prepare_entitlements/2.png)
 
-### Eligibility Managers
+#### Eligibility Managers
 
 You can edit the eligibility manager by clicking on the green icon.
 
@@ -47,7 +48,7 @@ On the popup that appears, click on the **Admin Area** dropdown field to select 
 
 The number indicated in **record(s)** represents the number of beneficiaries that qualify your criteria. After configuring, click on the **Save** button to apply changes.
 
-The changes made will only be applied to existing cycles that are in **Draft** and **To Approve** state, it will not be applied to cycles that fall under **Ended** or **Approved** state.
+>The changes made will only be applied to existing cycles that are in **Draft** and **To Approve** state, it will not be applied to cycles that fall under **Ended** or **Approved** state.
 
 ![](create_program_cycle_prepare_entitlements/5.png)
 
@@ -61,7 +62,7 @@ To apply the latest eligibility changes for the cycles under **Draft** state, cl
 
 The **Beneficiaries** count should be updated accordingly.
 
-### Cycle Manager
+#### Cycle Manager
 
 You can edit the cycle manager by clicking on the green icon.
 
@@ -77,7 +78,7 @@ Please note that changes you made on **Auto-Approve entitlements** and **Approve
 
 ![](create_program_cycle_prepare_entitlements/10.png)
 
-### Entitlement Manager
+#### Entitlement Manager
 
 You can edit the entitlement manager by clicking on the green icon.
 
@@ -99,7 +100,7 @@ Select an existing program from the program table list. You will be directed to 
 
 ![](create_program_cycle_prepare_entitlements/13.png)
 
-Please note that during the creation of the program, if **One-time Distribution** was enabled, a single cycle will be automatically generated upon creation of the program and this program will not have any **Create New Cycle** button, as this program is meant to run with one cycle only.
+>Please note that during the creation of the program, if **One-time Distribution** was enabled, a single cycle will be automatically generated upon creation of the program and this program will not have any **Create New Cycle** button, as this program is meant to run with one cycle only.
 
 ![](create_program_cycle_prepare_entitlements/14.png)
 
@@ -107,11 +108,11 @@ Once a cycle is created, click on the green button beside it to open it. You may
 
 ![](create_program_cycle_prepare_entitlements/15.png)
 
-If there were beneficiaries added into the program after this cycle was created, you may click on **Copy Beneficiaries from Program** to sync beneficiaries into this cycle. The **Verify Eligibility** button is to check if beneficiaries enrolled would still qualify the criteria set for this cycle.
+If there were additional beneficiaries added into the program after this cycle was created, you may click on **Copy Beneficiaries from Program** to sync beneficiaries into this cycle. The **Verify Eligibility** button is to check if beneficiaries enrolled would still qualify the criteria set for this cycle.
 
 ### Preparing Entitlements
 
-It is important to prepare entitlements for a cycle before a cycle is approved, as you will not be able to prepare entitlements anymore once the cycle has been approved.
+It is important to prepare entitlements for a cycle before a cycle is approved, as you will not be able to redo prepare entitlements anymore once the cycle has been approved.
 
 Select the program you wish to act upon and click the green icon beside the cycle you wish to generate entitlements for.
 
@@ -129,7 +130,7 @@ The number count on top of **Entitlements** indicates the amount of entitlements
 
 ![](create_program_cycle_prepare_entitlements/19.png)
 
-To verify the prepared entitlements, Click on **Entitlements** beside **Beneficiaries** to display a table of entitlements under **Draft** state.
+To verify the prepared entitlements, from the top section of the cycle page, click on **Entitlements** beside **Beneficiaries** to display a table of entitlements under **Draft** state.
 
 ![](create_program_cycle_prepare_entitlements/20.png)
 
@@ -145,7 +146,7 @@ Login to OpenSPP with a user role to approve the cycle. After clicking on the pr
 
 ![](create_program_cycle_prepare_entitlements/22.png)
 
-**Note:** If a yellow warning message displays, click on the refresh button within the yellow warning message until it resolves.
+>**Note:** If a yellow warning message displays, click on the refresh button within the yellow warning message until it resolves.
 
 ![](create_program_cycle_prepare_entitlements/23.png)
 
@@ -153,7 +154,7 @@ Click on the **Approve** button to approve the cycle.
 
 ![](create_program_cycle_prepare_entitlements/24.png)
 
-Please note that enabling Auto-approve entitlements in the program’s **Cycle manager** configuration auto approves the entitlements upon approving the cycle. Therefore, you may skip Approving entitlements if this is enabled.
+Please note that enabling Auto-approve entitlements in the program’s **Cycle manager** configuration auto approves the entitlements upon approving the cycle. Therefore, you may skip **Approving entitlements** section if this is enabled.
 
 ![](create_program_cycle_prepare_entitlements/25.png)
 
@@ -162,6 +163,8 @@ If entitlements were not auto approved successfully. It could be that the funds 
 ### Approving Entitlements
 
 After approving a cycle, the next step is to approve the entitlements. Please note that only the assigned user with correct access rights is able to approve entitlements for the cycle. This is set during the creation of the program, however it can also be changed in the **Entitlement Validation Group** dropdown within the **Entitlement manager** of the program configuration.
+
+![](create_program_cycle_prepare_entitlements/Entitlement_validation_group.png)
 
 Login to OpenSPP with correct user role to approve the entitlements. After clicking on the program, select a cycle by clicking on the green button beside it and click on **Approve entitlement**. A yellow warning message appears if processes are still running. Make sure to click **Refresh** within the yellow warning message. Repeat every now and then until the yellow warning message disappears. It is important to let the warning message resolve before proceeding into the next step as it might otherwise cause data discrepancy.
 
@@ -182,3 +185,13 @@ You could also approve them all manually at once by clicking the checkbox beside
 A popup should appear, click on **Approve** to complete the approval of entitlements.
 
 ![](create_program_cycle_prepare_entitlements/30.png)
+
+### Error Handling
+
+If an error appears upon approving cycles or entitlements, it could be that the user account you are logged into does not have enough permissions to execute the step.
+
+Steps to try:
+
+- Assign a **Global Program Cycle Approver** role into the user account. Learn more on assigning roles in the guide: {doc}`../administration/user_access`
+
+- Update the Cycle Manager and/or Entitlement manager approvers to Global Program Cycle Approver.

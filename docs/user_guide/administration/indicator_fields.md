@@ -19,7 +19,7 @@ The Custom Fields UI is designed for creating straightforward, user-defined indi
 
 To create and manage indicator fields, you need:
 - A user account with **System Admin** role. For more details, see the {doc}`user_access` guide.
-- The **OpenSPP Custom Fields** (`spp_custom_field`) and **OpenSPP Custom Fields UI** (`spp_custom_fields_ui`) modules must be installed and activated in your OpenSPP instance.
+- The **OpenSPP Custom Fields** (`spp_custom_field`) and **OpenSPP Custom Fields UI** (`spp_custom_fields_ui`) modules must be installed and activated in your OpenSPP instance. For more details, see the {doc}`../../getting_started/module_installation` guide.
 
 ## Objective
 

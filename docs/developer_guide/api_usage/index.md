@@ -11,8 +11,8 @@ Welcome to the API Usage section of the OpenSPP Developer Guide. This section is
 
 Here, you will find comprehensive documentation and practical examples for the following API types:
 
-- **DCI API**: Learn how to leverage the Digital Convergence Initiative (DCI) for robust data exchange and integration scenarios with other digital public infrastructure.
-- **External API using JSON-RPC**: Explore the JSON-RPC interface for lightweight, remote procedure calls and automation.
+- {doc}`dci_api` Learn how to leverage the Digital Convergence Initiative (DCI) for robust data exchange and integration scenarios with other digital public infrastructure.
+- {doc}`external_api_jsonrpc`: Explore the JSON-RPC interface for lightweight, remote procedure calls and automation.
 
 ```{toctree}
 :maxdepth: 2

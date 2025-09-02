@@ -13,10 +13,10 @@ In this Tutorial, you will learn about the POS feature; covering configuration, 
 
 To utilise this feature, you need the following:
 
-- Make sure that both modules **OpenSPP POS: ID Redemption** and **OpenSPP POS** are installed and activated.
+- Make sure that both modules **OpenSPP POS: ID Redemption** and **OpenSPP POS** are installed and activated. For details on installing additional modules, refer to the {doc}`../../getting_started/module_installation` documentation.
 - Have existing individual records in your registry, either by creating records manually or importing records into OpenSPP.
-- Have an access role either as **Operations Admin** or **POS operator** to perform tasks in the POS Application.
-- Have an access role as an **Operations Admin** or **Administrator** to perform tasks in OpenSPP. Learn more about this in the guide {doc}`administration/user_access`
+- Have an access role either as **System Admin** or **POS operator** to perform tasks in the POS Application.
+- Have an access role as  **System Admin** to perform tasks in OpenSPP. Learn more about assigning user role in the guide {doc}`administration/user_access`
 - Have an existing cycle with beneficiaries and entitlements generated on a program. Learn more about this in the guide {doc}`program_management/create_program`
 
 ## Objective

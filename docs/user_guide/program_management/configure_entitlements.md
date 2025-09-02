@@ -12,7 +12,7 @@ This tutorial describes the steps of configuring cash entitlements when selected
 ## Prerequisites
 
 - Have an access role as an **Operations Admin** or **Administrator**. Learn more about this in the guide {doc}`../administration/user_access`
-- Install and activate the module: **OpenSPP Cash Entitlement** on your OpenSPP instance as **Administrator**.
+- Install and activate the module: **OpenSPP Cash Entitlement** on your OpenSPP instance as **Administrator**. Learn more on installing modules in the guide: {doc}`../../getting_started/module_installation`
 - Create a Program or have an already existing program. Learn more about this in the guide {doc}`create_program`.
 
 ## Objective
@@ -31,7 +31,7 @@ When Creating a program, the tab **Configure the Entitlement manager** is availa
 
 ![](configure_cash_entitlements/2.png)
 
-Depending on installed modules there may be different options, or none, displayed. If there are options displayed, click on **Cash** as **Entitlement Manager**.
+Depending on installed modules there may be different options, click on **Cash** as **Entitlement Manager**. if **Cash** is not visible, it could be the module **OpenSPP Cash Entitlement** is not installed.
 
 ![](configure_cash_entitlements/3.png)
 
@@ -71,7 +71,7 @@ Click on the Entitlement item to display another modal pop-up. Edit amount by re
 
 **Multiplier:** this dropdown field defines how many times the **Amount per cycle** will be multiplied. For example, if the indicator is set to **Number of adults** it would multiply the **Amount per cycle** by the number of adults in this group. The total amount will be the registrant’s entitlement.
 
-**Maximum number:** this input field defines the maximum count for the multiplier. If, for example “Number of adults = 5” and “Maximum number= 3”, the **Amount** will be multiplied by 3 instead of 5.
+**Maximum number:** this input field sets an upper limit for the multiplier. For example, if “Number of adults = 5” and “Maximum number = 3”, the **Amount per cycle** will be multiplied by a maximum of 3, even if there are more adults. This ensures the entitlement does not exceed the specified cap.
 
 In order to not have any limitations this field should be set to zero(0).
 

@@ -22,7 +22,7 @@ Configuring an outgoing email server allows OpenSPP to send emails using your or
 ### Prerequisites
 
 To configure an outgoing email server, you will need:
-- A user account with **System Admin** role.
+- A user account with **System Admin** role. For details on user roles and access levels, refer to the {doc}`user_access` documentation.
 - The connection details for your SMTP email server:
     - SMTP server address (e.g., `smtp.youremailserver.com`)
     - SMTP port (e.g., 587, 465, or 25)
@@ -105,7 +105,7 @@ Configuring an incoming email server allows OpenSPP to fetch emails from a dedic
 ### Prerequisites
 
 To configure an incoming email server, you will need:
-- A user account with **System Admin** role.
+- A user account with **System Admin** role. For details on user roles and access levels, refer to the {doc}`user_access` documentation.
 - The connection details for your IMAP or POP email server:
     - Server type (IMAP or POP)
     - Server address (e.g., `imap.youremailserver.com`)

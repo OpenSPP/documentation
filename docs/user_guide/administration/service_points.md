@@ -13,8 +13,8 @@ A service point is a virtual or physical location where individuals can receive 
 
 To configure Service Points, you need to:
 
-- Have an access role as an **Operations Admin** or **Administrator**. Learn more in this guide: {doc}`user_access`.
-- Make sure that the module **OpenSPP Programs: Service Points Integration** and **OpenSPP Service Points Management** are installed.
+- Have an access role as an **System Admin**. Learn more in this guide: {doc}`user_access`.
+- Make sure that the module **OpenSPP Programs: Service Points Integration** and **OpenSPP Service Points Management** are installed. Learn more on installing additional modules in the {doc}`../../getting_started/module_installation`
 
 ## Objective
 

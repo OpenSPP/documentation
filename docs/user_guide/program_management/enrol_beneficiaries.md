@@ -1,7 +1,7 @@
 ---
 review-status: reviewed
-review-date: 2025-07-29
-reviewer: mark penalosa
+review-date: 2025-09-02
+reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
@@ -11,7 +11,10 @@ In this tutorial, you will learn the process of enrolling beneficiaries in OpenS
 
 ## Prerequisites
 
-To enrol beneficiaries in OpenSPP, you need an existing program. Learn more about how to configure a program in the documentation {doc}`create_program`.
+To enrol beneficiaries in OpenSPP, you need to:
+
+- Have an existing program. Learn more about how to configure a program in the documentation {doc}`create_program`.
+- Ensure your user account have the appropriate user permissions, such as **Global Program maanger** or **System Admin** roles. Learn more in this guide: {doc}`../administration/user_access`
 
 ## Objective
 
@@ -19,18 +22,18 @@ This tutorial instructs users on how to enrol beneficiaries into a program in Op
 
 ## Process
 
-Efficient enrolment is important for the success of social protection programs in OpenSPP. Depending on the target type, the enrolment is done for groups or individuals. Both enrolments can be done either as part of the program setup or after configuring the program. The process of creating a social protection program is described in the documentation Create a social protection program.
+Enrolment is done for groups or individuals. Both enrolments can be done either as part of the program setup or after configuring the program. 
 
 ### Beneficiary Import and Enrolment
 
-Upon finalizing the creation of the program, the process progresses through two sequential stages, regardless of whether the program supports individual or group beneficiaries:
+The process progresses through two sequential stages, regardless of whether the program supports individual or group beneficiaries:
 
 - Import beneficiaries. This step involves the integration of beneficiaries who are eligible to receive support from a social protection program. Which beneficiaries to import into the program are defined by the filter in the eligibility criteria.
 - Enrol beneficiaries. After the beneficiaries have been imported into the system, the next step is to enrol them in the program. Enrolment involves verifying the eligibility of each beneficiary based on the program's criteria, such as income level, age, or other factors. Once a beneficiary is enrolled in the program, they are entitled to receive the benefits or services provided by the program
 
 Depending on the choices made in the program setup, there are two different ways to perform these steps, both of them are described below.
 
-### Import and Enrolment as part of Program Setup
+### Import and Enrolment during Program Creation
 
 If **Yes** is selected during the final step of program setup, both the beneficiary **import** and **enrolment** processes are automatically executed as part of program creation.
 
@@ -46,13 +49,14 @@ Click the **Beneficiaries** button to view the imported and enrolled beneficiari
 
 This confirms that the beneficiaries are imported and enrolled.
 
-### Import and Enrolment after Program Creation
+### Import and Enrolment on already Existing Programs
 
 If the option **No** has been selected as the final step of the program setup, both Import and Enrol steps needs to be done as a separate action prior to proceeding.
 
 This action consists of two steps, first the import of registrants into the program, and then the enrolment of the previously imported registrants into the program.
 
-To import registrants into a program manually, Select the program you wish to import registrants into, then click on **Import new Eligible Registrants button**
+#### Import Registrants
+To import registrants into a program manually, Select an existing program you wish to import registrants into, then click on **Import New Eligible Registrants** button.
 
 ![](enrol_beneficiaries/enrol_beneficiaries_manual_import.png)
 
@@ -60,21 +64,23 @@ A success notification should prompt
 
 ![](enrol_beneficiaries/enrol_beneficiaries_import_notification.png)
 
-**Note:** The number displayed on the **Beneficiaries** button reflects the total count of beneficiaries who have been successfully enrolled in the program. This does not represent the number of registrants imported.
+>**Note:** The number displayed on the **Beneficiaries** button below reflects the total count of beneficiaries who have been successfully enrolled in the program. This does not represent the number of registrants imported.
 
 ![](enrol_beneficiaries/enrol_beneficiaries_count.png)
 
-Please note that when potentially large volume of beneficiaries are being imported, it is essential to ensure that the import process has fully completed prior to initiating enrolment. This precaution helps prevent any issues during the enrolment phase.
+When potentially large volume of beneficiaries are being imported, it is essential to ensure that the import process has fully completed prior to initiating enrolment. This precaution helps prevent any issues during the enrolment phase.
 
-In the case of less than 1000 beneficiaries, a green pop-up will appear on the right side of the screen, indicating that the import process is complete and beneficiaries have already imported. The time it takes to import the beneficiaries will depend on the number of beneficiaries eligible for the program, and it is vital to allow the import to complete before proceeding.
+In the case of small number of beneficiaries, a green pop-up will appear on the right side of the screen, indicating that the import process is complete and beneficiaries have already imported. The time it takes to import the beneficiaries will depend on the number of beneficiaries eligible for the program, and it is vital to allow the import to complete before proceeding.
 
 ![](enrol_beneficiaries/enrol_beneficiaries_success_import.png)
 
-In the case of more than 1000 beneficiaries, a yellow notification will display informing that the page needs to be refreshed to see the status of the import.
+In the case of greater number of beneficiaries, a yellow notification will display informing that the page needs to be refreshed to see the status of the import.
 
 ![](enrol_beneficiaries/4.png)
 
-To manually enrol registrants into a program, first confirm that the import process has been completed. This can be verified by observing the green notification popup for fewer than 1000 beneficiaries, or, for more than 1000 beneficiaries, by refreshing the page until the yellow notification popup is no longer displayed. Once confirmation is received, proceed and click **Enrol Eligible Registrants**.
+#### Enrol Registrants
+
+To manually enrol registrants into a program, first confirm that the import process has been completed. You may confirm this by clicking the **Beneficiaires** button, verify that registrants are listed and is under **Draft**, then go back to the program page to proceed and click **Enrol Eligible Registrants**.
 
 ![](enrol_beneficiaries/enrol_beneficiaries_enrol_beneficiaries_button.png)
 
@@ -86,6 +92,6 @@ The number of beneficiaries imported and enrolled is displayed on the **Benefici
 
 ![](enrol_beneficiaries/enrol_beneficiaries_count.png)
 
-You should also check the beneficiary page to verify that the beneficiaries are there. Click the **Beneficiaries** button to view the imported and enrolled beneficiaries in the table view.
+After completing the enrolment process, it is recommended to verify that all beneficiaries have been successfully enrolled by checking their status. To do this, click the **Beneficiaries** button to access the table view, where you can review the list of imported and enrolled beneficiaries. This allows you to confirm that the correct individuals or groups are registered and eligible for program benefits.
 
 ![](enrol_beneficiaries/enrol_beneficiaries_list.png)

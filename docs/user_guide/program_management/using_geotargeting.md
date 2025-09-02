@@ -1,6 +1,6 @@
 ---
 review-status: reviewed
-review-date: 2025-08-18
+review-date: 2025-09-02
 reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
@@ -12,18 +12,19 @@ OpenSPP's built-in geotargeting capabilities allow program administrators to loc
 
 ## Prerequisite
 
-To create a an Area for Geotargeting in OpenSPP, you need to:
-- Have a System administrator or registrar role, Learn more in this guide: {doc}`../administration/user_access`. 
-- Have `OpenSPP area management` and `OpenSPP area management base` modules installed and activated. Please note that both these modules are auto-installed and activated when spp_base is already activated.
+To create an Area for Geotargeting in OpenSPP, you need to:
+- Have a **System Admin** or **Registrar** role, Learn more in this guide: {doc}`../administration/user_access`. 
+- Have `OpenSPP area management` and `OpenSPP area management base` modules installed and activated. Please note that both these modules are auto-installed and activated when `spp_base` is already activated. Learn more on installing additional modules in the {doc}`../../getting_started/module_installation` document.
 
 ## Objective
 
-This tutorial guides users through using geotargeting in OpenSPP for social protection program enrollment. It covers setting up data fields and parameters, running geotargeting analysis, and generating reports. By the end, users will understand how geotargeting can be configured, and how to apply OpenSPP's geotargeting features to achieve these goals.
+Enable users to configure and apply geotargeting features in OpenSPP for social protection program enrollment. Users will learn to set up data fields and parameters, perform geotargeting analysis, and generate reports to support accurate beneficiary targeting and program effectiveness.
 
 ## Process
-Define an area by assigning it a name and specifying its hierarchical level—either as a parent or a child. Once a parent area is created, you can add sub-areas within it, and continue nesting as needed. This flexible structure accommodates the unique area segmentation of each country.
+Define an area by assigning it a name and specifying its hierarchical level—either as a parent-level or a sub-level. Once a parent area is created, you can add sub-areas within it, and continue nesting as needed. This flexible structure accommodates the unique area segmentation of each country.
 
 ### Define Geographic tree
+
 #### Create Parent Area
 To make use of geotargeting in OpenSPP, you must first define a geographic area tree. Oftentimes, you will have different levels such as:
 
@@ -79,6 +80,6 @@ You can also define your own area type from the interface. To do so, you need to
 
 You can select a parent area type if you want to define a hierarchy between area types and set a name.
 
-Click Save to complete the changes.
+Click **Save** to complete the changes.
 
 

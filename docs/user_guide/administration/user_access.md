@@ -5,13 +5,13 @@ reviewer: Mark Penalosa
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Administrating role-based access
+# User Access
 
-User Access Management is a key component of OpenSPP that enables program administrators to control and manage user access to the platform's features and data. With OpenSPP's role-based access control system, administrators can define different levels of access for individual users or groups, ensuring that only authorized users have access to specific data and features.
+User Access Management in OpenSPP lets administrators control who can access platform features and data. OpenSPP uses role-based access control, allowing assignment of specific permissions to users or groups. This ensures only authorized users can access sensitive data and perform necessary actions.
 
-There are different dimensions to access rights in OpenSPP, including access to specific app features and access to specific data or subsets of data (for example, data related to a specific location). By defining these access rights, administrators can make sure that users are able to perform their roles and responsibilities effectively while minimizing the risk of data breaches or unauthorized access.
+Access rights can be customized for both features and data subsets, such as limiting access by location. Proper configuration helps users work securely and efficiently, minimizing unauthorized access.
 
-This user guide provides instructions on how to manage user access in OpenSPP, including how to create and manage user accounts, assign roles and permissions, and customize user access rights. By the end of this guide, you should have a solid understanding of how to effectively manage user access in OpenSPP to make sure the security and integrity of your {term}`social protection` program data.
+This guide covers creating user accounts, assigning roles and permissions, and customizing access rights to maintain the security and integrity of your {term}`social protection` program data.
 
 ## Prerequisites
 
@@ -101,7 +101,7 @@ Note that you can also assign **System Admin** role to existing users to grant i
 
 ![](administrating_role_based_access/access_rights_from_to.png)
 
-### Configuring roles
+#### Configuring roles
 
 Roles are typically pre-configured and available for selection; however, you can also create and configure them yourself. To create a new role click on the menu icon in the top-left corner, click on **Settings** then select **Roles** under **Users & Companies**. A list of roles is displayed on the **Roles** page.
 
@@ -123,7 +123,7 @@ It is also possible to view all user accounts associated with a role. In the **R
 
 You can assign users to the selected role by clicking **Add a line** and selecting the user you wish to associate the role with. Click on the trash icon to unlink the user account from the role.
 
-### Configuring groups
+#### Configuring groups
 
 The list of access rights for a group is typically pre-configured; however, you may also modify the list of access rights associated with a group. To access the **Groups** page, the **Developer mode** must first be activated. This is done by navigating to **Settings**, scrolling down to the last part of the page, and clicking **Activate the developer mode**. You will then be automatically redirected back to the **Registry** page.
 

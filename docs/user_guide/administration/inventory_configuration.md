@@ -18,8 +18,8 @@ This guide provides a step-by-step process for enabling two critical inventory f
 ## Prerequisites
 
 To configure the Inventory settings, you will need:
-- A user account with **System Admin** or **Inventory Admin** role.
-- The **Inventory** (`stock`) module must be installed in your OpenSPP instance.
+- A user account with **System Admin** or **Inventory Admin** role. For details on user roles and access levels, refer to the {doc}`user_access` documentation.
+- The **Inventory** (`stock`) module must be installed in your OpenSPP instance. For details on installing additional modules, refer to the {doc}`../../getting_started/module_installation` documentation.
 
 ## Objective
 

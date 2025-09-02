@@ -11,9 +11,9 @@ In this tutorial, you will learn how to prepare and import area data into OpenSP
 
 ## Prerequisites
 
-To be able to successfully import area data into OpenSPP, the following is required:
+To be able to successfully import area data into OpenSPP, you need to:
 
-- Authorized administrative access to the OpenSPP platform.
+- Ensure you have the appropriate user permissions, such as **Global Registry** or **System Admin** roles. For details on user roles and access levels, refer to the {doc}`user_access` documentation.
 - As OpenSPP supports multiple languages for an area name, language support for the languages you want to use must be configured.
 - A spreadsheet software that can export data as an Excel workbook.
 
