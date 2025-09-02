@@ -304,3 +304,10 @@ After installation, see:
 - {doc}`../user_guide/index` for using OpenSPP features
 - {doc}`../developer_guide/index` for customization and development
 - {doc}`../overview/poc_and_pilot` for setting up pilot programs
+
+You can also check:
+- {doc}`../user_guide/administration/database_management`
+- {doc}`../user_guide/administration/monitoring_maintenance`
+- {doc}`../user_guide/administration/security_tuning`
+- {doc}`../user_guide/administration/troubleshooting`
+- {doc}`../user_guide/administration/uninstalling`
