@@ -5,7 +5,7 @@ reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
 ---
 
-# Security Recommendations and Performance Tuning
+# Security and Performance Tuning
 
 This guide provides essential recommendations for securing your OpenSPP instance and tuning its performance for production environments. It covers database security, firewall setup, SSL/TLS configuration with Nginx, and implementing regular backups. Additionally, it offers tips on performance tuning, including adjusting worker processes, memory limits, and PostgreSQL settings to handle high-load scenarios.
 
