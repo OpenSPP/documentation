@@ -154,3 +154,6 @@ docs/reference/modules/prompts/
 scripts/modules_analysis.json
 
 *_generated.md
+
+# Man pages
+share/man/
