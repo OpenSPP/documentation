@@ -1,9 +1,17 @@
+---
+myst:
+  html_meta:
+    "title": "eSignet Integration with OpenSPP"
+    "description": "Complete guide to integrate MOSIP eSignet as identity server for OpenSPP authentication with OAuth protocol and digital identity."
+    "keywords": "OpenSPP, eSignet, MOSIP, digital identity, OAuth, authentication, identity server, integration"
+---
 
 # eSignet Integration
 
 ## Introduction
 
-The integration of OpenSPP with eSignet aims to utilize [MOSIP eSignet](https://docs.mosip.io/1.2.0/integrations/e-signet) as the identity server for login into the OpenSPP platform. This provides a seamless user experience and enhances security by leveraging the OAuth protocol and allowing OpenSPP users to access the platform without the need for additional login credentials.
+The integration of OpenSPP with eSignet aims to utilize [MOSIP eSignet](https://docs.mosip.io/1.2.0/integrations/e-signet) as the identity server for login into the OpenSPP platform.
+This provides a seamless user experience and enhances security by leveraging the OAuth protocol and allowing OpenSPP users to access the platform without the need for additional login credentials.
 
 ## Prerequisites
 
@@ -22,7 +30,8 @@ Upon completing this guide, the developer can successfully integrate eSignet wit
 
 1. Set up your development environment as per the given guide [here](https://docs.openspp.org/howto/developer_guides/development_setup.html).
 
-2. Access the root folder of the OpenSPP project. Then, go to the `odoo/custom/src` directory.
+2. Access the root folder of the OpenSPP project.
+   Then, go to the `odoo/custom/src` directory.
 
 3. Modify the repos.yaml file in this directory and add the following configuration for the openg2p-auth to setup eSignet.
 
@@ -72,7 +81,7 @@ server-auth:
 
 10. Search for OIDC and install the **G2P Auth: OIDC - Reg ID** module. After the successful installation, it should appear below.
 
-![](esignet/1.png)
+![G2P Auth OIDC module installation success](esignet/1.png)
 
 11. Next, from the OpenSPP main menu, select **Settings**, then navigate to **Users & Companies**, and finally, choose **OAuth Providers** to proceed with the configuration.
 
@@ -107,8 +116,8 @@ server-auth:
 
 After successful configuration, it should look like as below.
 
-![](esignet/2.png)
+![eSignet OAuth provider configuration interface](esignet/2.png)
 
 13. Once configured successfully, the eSignet login should appear on the login screen as below.
 
-![](esignet/3.png)
+![OpenSPP login screen with eSignet option](esignet/3.png)

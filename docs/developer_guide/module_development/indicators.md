@@ -1,7 +1,15 @@
+---
+myst:
+  html_meta:
+    "title": "Indicators"
+    "description": "Guide to creating and managing custom indicators in OpenSPP for eligibility checking, reporting, and program analysis"
+    "keywords": "OpenSPP, indicators, custom indicators, eligibility, reporting, program analysis, module development"
+---
 
 # Indicators
 
-This article guides you through understanding and customizing indicators in OpenSPP, using a practical scenario and a working example. Indicators are computed fields that provide dynamic, calculated values based on registrant data, essential for social protection programs to track demographic information, eligibility criteria, and program outcomes.
+This article guides you through understanding and customizing indicators in OpenSPP, using a practical scenario and a working example.
+Indicators are computed fields that provide dynamic, calculated values based on registrant data, essential for social protection programs to track demographic information, eligibility criteria, and program outcomes.
 
 **Field Naming Conventions**
 
@@ -141,7 +149,9 @@ class G2PRegistrant(models.Model):
 
 ### Add Security Access (Optional)
 
-If you introduce new models, add access rights. For simple field additions, this is not required. Example:
+If you introduce new models, add access rights.
+For simple field additions, this is not required.
+Example:
 
 ```
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink

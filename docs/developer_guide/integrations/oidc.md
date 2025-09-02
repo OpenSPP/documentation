@@ -1,18 +1,21 @@
+---
+myst:
+  html_meta:
+    "title": "Configuring Keycloak for OAuth/OIDC"
+    "description": "Step-by-step guide to configure Keycloak as an OIDC authentication provider for OpenSPP with single sign-on capabilities."
+    "keywords": "OpenSPP, Keycloak, OAuth, OIDC, authentication, single sign-on, SSO, identity provider"
+---
 
 # Configuring Keycloak for OAuth
 
-We recommend using Keycloak as the {term}`authentication` provider for OpenSPP. This allows for a single sign-on
-experience for users and ensures that the authentication mechanism can evolve independently of the systems
-using it, thus ensuring that the authentication mechanism can be secured and act as a shield in front of the
-systems.
+We recommend using Keycloak as the :term:`authentication` provider for OpenSPP.
+This allows for a single sign-on experience for users and ensures that the authentication mechanism can evolve independently of the systems using it, thus ensuring that the authentication mechanism can be secured and act as a shield in front of the systems.
 
-Although other OIDC-compliant providers can be used, we have only tested Keycloak.
+Although other :term:`OIDC`-compliant providers can be used, we have only tested Keycloak.
 
 ## Configuration
 
-If you are using OpenSPP's [docker-compose setup](https://github.com/openspp/openspp-docker), you already have
-the `auth_oidc` from [OCA](https://github.com/OCA/server-auth) installed, otherwise you will need to install
-it.
+If you are using OpenSPP's [docker-compose setup](https://github.com/openspp/openspp-docker), you already have the `auth_oidc` from [OCA](https://github.com/OCA/server-auth) installed, otherwise you will need to install it.
 
 ### Configure Keycloak
 
@@ -44,12 +47,11 @@ it.
 
 **For example:**
 
-![](oidc/openspp_oidc_configuration.png)
+![OpenSPP OIDC configuration interface](oidc/openspp_oidc_configuration.png)
 
 ### Customizing the login page (Optional)
 
-To align with corporate branding, you can customize the login page by adding a custom logo and a custom
-background image.
+To align with corporate branding, you can customize the login page by adding a custom logo and a custom background image.
 
 - **Enable Developer Settings**: "Settings" > "Activate The Developer Mode"
 
@@ -59,12 +61,11 @@ background image.
 
 ### Existing users
 
-For users that already existed before the OIDC-integration was configured, there is a need for them to go
-through the reset password process. This is because the password is not stored in Odoo, but in Keycloak.
+For users that already existed before the :term:`OIDC`-integration was configured, there is a need for them to go through the reset password process.
+This is because the password is not stored in Odoo, but in Keycloak.
 Depending on the configuration, the user may have to perform 2FA setup.
 
 ### New users
 
-For new users, create their user account in OpenSPP/Odoo with the same email address used in `Keycloak` and
-they will be able to login. Note that in order to be able to get past the self-service user management page,
-permissions need to be set for the user.
+For new users, create their user account in OpenSPP/Odoo with the same email address used in `Keycloak` and they will be able to login.
+Note that in order to be able to get past the self-service user management page, permissions need to be set for the user.

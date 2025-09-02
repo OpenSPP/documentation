@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    "title": "Developer Guide"
+    "description": "Technical documentation and guides for developers working with OpenSPP - setup, architecture, module development, integrations, and API usage"
+    "keywords": "OpenSPP, developer guide, technical documentation, module development, API, integration, architecture"
+---
 
 # Developer Guide
 

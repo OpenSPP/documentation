@@ -1,9 +1,19 @@
+---
+myst:
+  html_meta:
+    "title": "Document Management System Extension"
+    "description": "Learn how to extend OpenSPP's Document Management System by adding custom document categories and classification features."
+    "keywords": "OpenSPP, DMS, document management, categories, file classification, module extension"
+---
 
 # Document Management System
 
-The OpenSPP Document Management System (DMS), provided by the `spp_dms` module, is a robust system for organizing and managing files. It allows for a structured repository of documents related to social protection programs, using a hierarchy of directories, files, and categories.
+The OpenSPP Document Management System (DMS), provided by the {doc}`spp_dms </reference/modules/spp_dms>` module, is a robust system for organizing and managing files.
+It allows for a structured repository of documents related to social protection programs, using a hierarchy of directories, files, and categories.
 
-**Document Categories** are a key feature of the DMS, allowing users to classify files for streamlined searching, filtering, and reporting. This guide will walk you through the simple process of extending the DMS by adding new, custom document categories. We will create a small module that adds a "Proof of School Enrollment" category, which can then be used to classify documents across the platform.
+**Document Categories** are a key feature of the DMS, allowing users to classify files for streamlined searching, filtering, and reporting.
+This guide will walk you through the simple process of extending the DMS by adding new, custom document categories.
+We will create a small module that adds a "Proof of School Enrollment" category, which can then be used to classify documents across the platform.
 
 By the end of this guide, you will be able to:
 
@@ -14,14 +24,15 @@ By the end of this guide, you will be able to:
 ## Prerequisites
 
 - Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
-- Familiarity with the `OpenSPP Document Management System` (`spp_dms`) core module.
+- Familiarity with the `OpenSPP Document Management System` ({doc}`spp_dms </reference/modules/spp_dms>`) core module.
 - To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <../setup>`.
 
 ## Module Structure
 
-A module for adding new DMS categories is very simple and typically only contains data files. Here's the complete structure of the module we will build, `spp_dms_school_documents`:
+A module for adding new DMS categories is very simple and typically only contains data files.
+Here's the complete structure of the module we will build, `spp_dms_school_documents`:
 
-```
+```text
 spp_dms_school_documents/
 ├── __init__.py
 ├── __manifest__.py
@@ -34,11 +45,13 @@ spp_dms_school_documents/
 
 ### Create the Module Scaffold
 
-Begin by creating a new directory for your module (e.g., `spp_dms_school_documents`) and add the basic Odoo module files: `__init__.py` and `__manifest__.py`. Then, create the `data` subdirectory.
+Begin by creating a new directory for your module (e.g., `spp_dms_school_documents`) and add the basic Odoo module files: `__init__.py` and `__manifest__.py`.
+Then, create the `data` subdirectory.
 
 ### Define the Manifest (`__manifest__.py`)
 
-The manifest file declares your module's metadata and its dependencies. Our module only needs to depend on `spp_dms` to get access to the `spp.dms.category` model.
+The manifest file declares your module's metadata and its dependencies.
+Our module only needs to depend on {doc}`spp_dms </reference/modules/spp_dms>` to get access to the `spp.dms.category` model.
 
 ```python
 # From: spp_dms_school_documents/__manifest__.py
@@ -63,9 +76,11 @@ The manifest file declares your module's metadata and its dependencies. Our modu
 
 ### Create the Data File
 
-This is where you define the new document categories. In the `data/` directory, create an XML file named `dms_category_data.xml`.
+This is where you define the new document categories.
+In the `data/` directory, create an XML file named `dms_category_data.xml`.
 
-This file will contain one or more `<record>` tags that create new entries in the `spp.dms.category` model. Each record needs a unique ID and the name of the new category.
+This file will contain one or more `<record>` tags that create new entries in the `spp.dms.category` model.
+Each record needs a unique ID and the name of the new category.
 
 ```xml
 <!-- From: spp_dms_school_documents/data/dms_category_data.xml -->

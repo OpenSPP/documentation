@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    "title": "REST API Module Customization"
+    "description": "Step-by-step guide to creating custom REST API endpoints in OpenSPP with authentication, namespaces, and data exposure."
+    "keywords": "OpenSPP, REST API, custom endpoints, API development, authentication, Bearer token, data exposure"
+---
 
 # REST API
 
@@ -7,14 +14,14 @@ This article explains how to understand and customize the REST API module in Ope
 
 - Familiarity with Python, Odoo, XML, and XPath.
 - OpenSPP development environment set up ([Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)).
-- The `spp_api` module must be installed.
-- For our example we are going to need the `spp_area_base` module to be installed as well.
+- The {doc}`spp_api </reference/modules/spp_api>` module must be installed.
+- For our example we are going to need the {doc}`spp_area_base </reference/modules/spp_area_base>` module to be installed as well.
 
 ## Module Structure
 
 A typical REST API customization module follows the standard Odoo structure. Here’s the structure for our example, `spp_api_area_custom`:
 
-```
+```text
 spp_api_area_custom/
 ├── __init__.py
 ├── __manifest__.py
@@ -106,7 +113,7 @@ Create `data/spp_api_path_data.xml` to define the new endpoint under your custom
 
 To secure your API endpoints, generate a 4096-bit RSA key pair using OpenSSL:
 
-```sh
+```shell
 # Generate a 4096-bit private key
 openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:4096
 
@@ -116,7 +123,8 @@ openssl rsa -pubout -in private_key.pem -out public_key.pub
 
 - Place `private_key.pem` and `public_key.pub` in `etc/secrets`.
 - Set permissions as needed.
-- **Never share your private key.** Only distribute the public key if required.
+- **Never share your private key.**
+  Only distribute the public key if required.
 
 ### Install and Test
 
@@ -127,18 +135,18 @@ openssl rsa -pubout -in private_key.pem -out public_key.pub
     - In the **Allowed APIs** section, click **View Bearer Token** to create a new token.
     - Copy the generated token.
     - In Postman (or your REST client), set the **Authorization** header to `Bearer <your_token>`.
-3. Use a REST client to test the endpoint.  
-   Example URL:  
+3. Use a REST client to test the endpoint.
+   Example URL:
    `http://localhost:8069/api/area_api/1/Area?request_id={{$randomUUID}}`
 4. The `request_id` parameter is required and must be unique for each request (use a random 36-character UUID).
 
 **Example: Successful Response**
 
-![](./rest_api/success_response.png)
+![Successful REST API response](./rest_api/success_response.png)
 
 **Example: Error Response**
 
-![](./rest_api/error_response.png)
+![Error REST API response](./rest_api/error_response.png)
 
 ## References
 

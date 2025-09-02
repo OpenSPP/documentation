@@ -1,7 +1,15 @@
+---
+myst:
+  html_meta:
+    "title": "Audit Logs Module Development"
+    "description": "Guide to customizing OpenSPP's audit logging system with custom rules, field tracking, and chatter integration for comprehensive change tracking."
+    "keywords": "OpenSPP, audit logs, change tracking, data monitoring, audit rules, logging system, compliance"
+---
 
 # Audit Logs
 
-This article explains how the audit modules work in OpenSPP and how to customize them, using a practical example and a working sample module. The audit stack consists of `spp_audit_log` (core models and UI), `spp_audit_post` (optional chatter posting), and `spp_audit_config` (preconfigured rules).
+This article explains how the audit modules work in OpenSPP and how to customize them, using a practical example and a working sample module.
+The audit stack consists of {doc}`spp_audit_log </reference/modules/spp_audit_log>` (core models and UI), {doc}`spp_audit_post </reference/modules/spp_audit_post>` (optional chatter posting), and {doc}`spp_audit_config </reference/modules/spp_audit_config>` (preconfigured rules).
 
 **Core Models**
 
@@ -27,7 +35,7 @@ The audit stack provides core logging and optional posting with the following ke
 
 A typical audit customization module follows the standard Odoo module structure. Here’s the structure for the example module, `spp_audit_log_custom`:
 
-```
+```text
 spp_audit_log_custom/
 ├── __init__.py
 ├── __manifest__.py
@@ -120,7 +128,7 @@ Create `views/spp_audit_rule_views.xml` and add it to the manifest:
 
 If you introduce new models, add access rights. For simple field additions, this is not required. Example:
 
-```
+```csv
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_custom_spp_audit_rule,custom.spp.audit.rule,spp_audit_log.model_spp_audit_rule,base.group_system,1,1,1,0
 ```

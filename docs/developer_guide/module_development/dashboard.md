@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    "title": "Dashboard Module Development"
+    "description": "Complete guide to creating custom dashboards in OpenSPP using OWL framework with charts, cards, and real-time data visualization."
+    "keywords": "OpenSPP, dashboard development, OWL framework, data visualization, charts, metrics, custom dashboard"
+---
 
 # Dashboards
 

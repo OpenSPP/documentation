@@ -1,10 +1,16 @@
+---
+myst:
+  html_meta:
+    "title": "Change Request Module Development"
+    "description": "Complete guide to creating custom Change Request modules in OpenSPP with validation workflows, UI creation, and data update logic."
+    "keywords": "OpenSPP, change request, module development, custom CR, validation workflow, Odoo development"
+---
 
 # Change Request
 
-The OpenSPP platform provides a flexible and extensible Change Request (CR) framework. This allows developers
-to create custom modules for specific data modification scenarios beyond the standard ones. This guide will
-walk you through the process of creating a new Change Request Type module, using the
-`spp_change_request_add_children_demo` module as a practical reference.
+The OpenSPP platform provides a flexible and extensible Change Request (CR) framework.
+This allows developers to create custom modules for specific data modification scenarios beyond the standard ones.
+This guide will walk you through the process of creating a new Change Request Type module, using the {doc}`spp_change_request_add_children_demo </reference/modules/spp_change_request_add_children_demo>` module as a practical reference.
 
 By the end of this guide, you will be able to:
 
@@ -17,15 +23,15 @@ By the end of this guide, you will be able to:
 ## Prerequisites
 
 - Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
-- Familiarity with the OpenSPP core modules, especially `OpenSPP Change Request` (`spp_change_request`).
+- Familiarity with the OpenSPP core modules, especially `OpenSPP Change Request` ({doc}`spp_change_request </reference/modules/spp_change_request>`).
 - To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <../setup>`.
 
 ## Module Structure
 
-A typical Change Request Type module follows the standard Odoo module structure. Here's the structure of our
-reference module, `spp_change_request_add_children_demo`:
+A typical Change Request Type module follows the standard Odoo module structure.
+Here's the structure of our reference module, {doc}`spp_change_request_add_children_demo </reference/modules/spp_change_request_add_children_demo>`:
 
-```
+```text
 spp_change_request_add_children_demo/
 ├── __init__.py
 ├── __manifest__.py
@@ -50,13 +56,13 @@ spp_change_request_add_children_demo/
 
 ### Create the Module Scaffold
 
-Start by creating a new directory for your module (e.g., `spp_change_request_custom_type`) and populate it
-with the basic Odoo module files (`__init__.py`, `__manifest__.py`) and the directory structure shown above.
+Start by creating a new directory for your module (e.g., `spp_change_request_custom_type`) and populate it with the basic Odoo module files (`__init__.py`, `__manifest__.py`) and the directory structure shown above.
 
 ### Define the Manifest (`__manifest__.py`)
 
-The manifest file declares your module's metadata and dependencies. It's crucial to list all the modules your
-CR type will interact with. For our "Add Child/Member" example, the dependencies are:
+The manifest file declares your module's metadata and dependencies.
+It's crucial to list all the modules your CR type will interact with.
+For our "Add Child/Member" example, the dependencies are:
 
 ```python
 # __manifest__.py
@@ -92,8 +98,8 @@ Your dependencies will vary based on the data you need to access and modify.
 
 ### Create the Change Request Models
 
-This is the heart of your module. You'll create a new model that holds the specific data for your change
-request type.
+This is the heart of your module.
+You'll create a new model that holds the specific data for your change request type.
 
 1.  **Create the model file**: In your `models/` directory, create a Python file (e.g.,
     `models/change_request_custom.py`).
@@ -138,8 +144,9 @@ request type.
         # ... other fields
     ```
 
-3.  **Implement `validate_data()`**: Override this method to add custom validation logic. This method is
-    called before the request is submitted for approval. Raise a `ValidationError` if the data is invalid.
+3.  **Implement `validate_data()`**: Override this method to add custom validation logic.
+    This method is called before the request is submitted for approval.
+    Raise a `ValidationError` if the data is invalid.
 
     ```python
     # From: spp_change_request_add_children_demo/models/change_request_add_children.py
@@ -157,8 +164,8 @@ request type.
         return
     ```
 
-4.  **Implement `update_live_data()`**: Override this method to define how the system's data should be
-    modified once the CR is approved and applied. This is where you create or update records.
+4.  **Implement `update_live_data()`**: Override this method to define how the system's data should be modified once the CR is approved and applied.
+    This is where you create or update records.
 
     ```python
     # From: spp_change_request_add_children_demo/models/change_request_add_children.py
@@ -186,9 +193,9 @@ request type.
         )
     ```
 
-5.  **Register the New Request Type**: You need to make the system aware of your new CR type. Inherit the base
-    `spp.change.request` model and extend the `_selection_request_type_ref_id` method. This adds your new type
-    to the dropdown list when creating a new CR.
+5.  **Register the New Request Type**: You need to make the system aware of your new CR type.
+    Inherit the base `spp.change.request` model and extend the `_selection_request_type_ref_id` method.
+    This adds your new type to the dropdown list when creating a new CR.
 
     ```python
     # From: spp_change_request_add_children_demo/models/change_request_add_children.py
@@ -220,9 +227,10 @@ Define the form view for your custom CR type.
 1.  **Create the view file**: In your `views/` directory, create an XML file (e.g.,
     `views/change_request_custom_views.xml`).
 
-2.  **Define the form view**: - The view record's `model` should be your new CR model
-    (`spp.change.request.add.children`). - Structure the form with a `header` for status and buttons, and a
-    `sheet` for the data fields. - Use Odoo's XML view syntax to lay out your fields.
+2.  **Define the form view**:
+    - The view record's `model` should be your new CR model (`spp.change.request.add.children`).
+    - Structure the form with a `header` for status and buttons, and a `sheet` for the data fields.
+    - Use Odoo's XML view syntax to lay out your fields.
 
     ```xml
     <!-- From: spp_change_request_add_children_demo/views/change_request_add_children_views.xml -->
@@ -353,10 +361,10 @@ Use XML data files to configure aspects of your CR type.
 
 ### Set Up Security
 
-Grant users access to your new model in security/ir.model.access.csv. At a minimum, you need to provide access
-to the base user group.
+Grant users access to your new model in security/ir.model.access.csv.
+At a minimum, you need to provide access to the base user group.
 
-```
+```csv
 # From: spp_change_request_add_children_demo/security/ir.model.access.csv
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_spp_change_request_add_children_user,spp.change.request.add.children.user,model_spp_change_request_add_children,base.group_user,1,1,1,1

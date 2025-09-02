@@ -1,11 +1,19 @@
+---
+myst:
+  html_meta:
+    "title": "Service Points Module Development"
+    "description": "Learn to customize OpenSPP's service points module with operating hours, capacity management, and service type configuration."
+    "keywords": "OpenSPP, service points, service delivery, operating hours, capacity management, service types, module customization"
+---
 
 # Service Points
 
-This article explains how the service points module works in OpenSPP and how it can be customized, using a practical scenario and a working example. The `spp_service_points` module provides the foundation for managing service delivery locations in OpenSPP, which can be used in programs and other modules.
+This article explains how the service points module works in OpenSPP and how it can be customized, using a practical scenario and a working example.
+The {doc}`spp_service_points </reference/modules/spp_service_points>` module provides the foundation for managing service delivery locations in OpenSPP, which can be used in programs and other modules.
 
 **Core Models**
 
-The `spp_service_points` module provides the core service point management functionality with the following components:
+The {doc}`spp_service_points </reference/modules/spp_service_points>` module provides the core service point management functionality with the following components:
 
 - **`spp.service.point`**: The main service point model that manages service delivery locations.
 - **`spp.service.type`**: Defines different types of services offered at service points.
@@ -34,14 +42,14 @@ Service points can be integrated with other OpenSPP modules:
 ## Prerequisites
 
 - Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
-- The "OpenSPP Service Points Management" (`spp_service_points`) module must be installed.
+- The "OpenSPP Service Points Management" ({doc}`spp_service_points </reference/modules/spp_service_points>`) module must be installed.
 - To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <../setup>`.
 
 ## Module Structure
 
 A typical custom service points module follows the standard Odoo module structure. Here’s the structure for the example module, `spp_service_point_custom`:
 
-```
+```text
 spp_service_point_custom/
 ├── __init__.py
 ├── __manifest__.py
@@ -56,7 +64,8 @@ spp_service_point_custom/
 
 ## Step-by-Step Guide
 
-In this scenario, we customize the service points module to include operating hours, capacity, and additional contact information. This helps beneficiaries know when and where they can redeem their entitlements.
+In this scenario, we customize the service points module to include operating hours, capacity, and additional contact information.
+This helps beneficiaries know when and where they can redeem their entitlements.
 
 ### Create the Module Scaffold
 
@@ -252,7 +261,7 @@ Create `data/service_type_data.xml` to add custom service types:
 
 The following screenshot shows the newly added fields in the developed module:
 
-![](service_points/2.png)
+![Service points module with custom operating hours and capacity fields](service_points/2.png)
 
 ## References
 

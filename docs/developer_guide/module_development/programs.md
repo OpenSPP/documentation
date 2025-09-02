@@ -1,9 +1,19 @@
+---
+myst:
+  html_meta:
+    "title": "Programs"
+    "description": "Learn how to customize program definitions, behavior, and functionality in OpenSPP through module development"
+    "keywords": "OpenSPP, programs, program customization, social protection programs, module development, program configuration"
+---
 
 # Programs
 
-In OpenSPP, program eligibility is managed through a powerful and extensible system called **Eligibility Managers**. An Eligibility Manager is a self-contained component that defines a specific set of rules to determine who is eligible for a program. This allows for creating reusable and complex eligibility logic that can be easily attached to any program.
+In OpenSPP, program eligibility is managed through a powerful and extensible system called **Eligibility Managers**.
+An Eligibility Manager is a self-contained component that defines a specific set of rules to determine who is eligible for a program.
+This allows for creating reusable and complex eligibility logic that can be easily attached to any program.
 
-This guide will walk you through creating a custom Eligibility Manager module from scratch. We will use the `spp_eligibility_tags` module as a practical reference to build a new manager that determines eligibility based on a combination of **registrant tags** and **geographical areas**.
+This guide will walk you through creating a custom Eligibility Manager module from scratch.
+We will use the {doc}`spp_eligibility_tags </reference/modules/spp_eligibility_tags>` module as a practical reference to build a new manager that determines eligibility based on a combination of **registrant tags** and **geographical areas**.
 
 By the end of this guide, you will be able to:
 
@@ -18,13 +28,15 @@ By the end of this guide, you will be able to:
 ## Prerequisites
 
 - Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
-- Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` (`g2p_programs`), `OpenSPP Programs` (`spp_programs`), and `G2P Registry (Base)` (`g2p_registry_base`).
+- Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` ({doc}`g2p_programs </reference/modules/g2p_programs>`), `OpenSPP Programs` ({doc}`spp_programs </reference/modules/spp_programs>`), and `G2P Registry (Base)` ({doc}`g2p_registry_base </reference/modules/g2p_registry_base>`).
 - To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <../setup>`.
 
 ## Module Structure
 
-A typical Eligibility Manager module follows the standard Odoo module structure. Here's the complete structure of our reference module, `spp_eligibility_tags`:
-```
+A typical Eligibility Manager module follows the standard Odoo module structure.
+Here's the complete structure of our reference module, {doc}`spp_eligibility_tags </reference/modules/spp_eligibility_tags>`:
+
+```text
 spp_eligibility_tags/ 
 ├── init.py 
 ├── manifest.py 
@@ -49,7 +61,9 @@ Start by creating a new directory for your module (e.g., `spp_custom_eligibility
 
 ### Define the Manifest (`__manifest__.py`)
 
-The manifest file declares your module's metadata and dependencies. It's crucial to list all the modules your customization will interact with. Our manager will depend on `g2p_programs` and `spp_programs` for the base manager framework, and `g2p_registry_base` for using tags and areas.
+The manifest file declares your module's metadata and dependencies.
+It's crucial to list all the modules your customization will interact with.
+Our manager will depend on {doc}`g2p_programs </reference/modules/g2p_programs>` and {doc}`spp_programs </reference/modules/spp_programs>` for the base manager framework, and {doc}`g2p_registry_base </reference/modules/g2p_registry_base>` for using tags and areas.
 
 ```python
 # __manifest__.py
@@ -82,7 +96,8 @@ Your dependencies will vary based on the models and features you need to extend.
 
 ### Create the Eligibility Manager Model
 
-This is the core of your module. You will create a new model that holds the specific configuration for your eligibility rule and contains the logic to identify eligible registrants.
+This is the core of your module.
+You will create a new model that holds the specific configuration for your eligibility rule and contains the logic to identify eligible registrants.
 
 1.  **Create the model file**: In your `models/` directory, create a Python file named
     `eligibility_manager.py`. Remember to import it in `models/__init__.py`.
@@ -121,7 +136,8 @@ class TagBasedEligibilityManager(models.Model):
         # ... (logic to search partners with the domain and create memberships) ...
 ```
 
-The `_prepare_eligible_domain` method is the most critical part. It constructs and returns an Odoo domain that will be used to search for all res.partner records that match the rule.
+The `_prepare_eligible_domain` method is the most critical part.
+It constructs and returns an Odoo domain that will be used to search for all res.partner records that match the rule.
 
 ### Register the New Manager
 
@@ -175,7 +191,8 @@ This simple form will be displayed when a user configures the "Tag-based Eligibi
 
 ### Extend the Program Creation Wizard
 
-To improve user experience, you can add configuration fields directly to the "Create Program" wizard. This allows users to set up the basic eligibility rules when they first create the program.
+To improve user experience, you can add configuration fields directly to the "Create Program" wizard.
+This allows users to set up the basic eligibility rules when they first create the program.
 
 1. **Extend the wizard model**: In your `wizard/` directory, create `create_program_wizard.py`.
    - Inherit from `g2p.program.create.wizard`.
@@ -224,9 +241,10 @@ class SPPCreateNewProgramWiz(models.TransientModel):
 
 ### Set Up Security
 
-Grant users access to your new model in `security/ir.model.access.csv`. At a minimum, you need to provide access to the relevant user groups, such as program managers and administrators.
+Grant users access to your new model in `security/ir.model.access.csv`.
+At a minimum, you need to provide access to the relevant user groups, such as program managers and administrators.
 
-```
+```csv
 # From: spp_eligibility_tags/security/ir.model.access.csv
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 g2p_program_membership_manager_tags_admin,Eligibility Manager Tag-based Admin Access,spp_eligibility_tags.model_g2p_program_membership_manager_tags,g2p_registry_base.group_g2p_admin,1,1,1,1
@@ -238,8 +256,10 @@ g2p_program_membership_manager_tags_program_manager,Eligibility Manager Tag-base
 1. Install or upgrade the module through the Apps menu.
 2. Navigate to Programs and click ***Create Program***.
 3. In the wizard, select your new ***"Tag-based Eligibility"*** manager type.
-4. The fields for your manager (e.g., Tags and Area) will appear. Configure them directly in the wizard.
-5. Click Create. A new program will be created, and an instance of your eligibility manager will be automatically created and configured with the values you provided.
+4. The fields for your manager (e.g., Tags and Area) will appear.
+   Configure them directly in the wizard.
+5. Click Create.
+   A new program will be created, and an instance of your eligibility manager will be automatically created and configured with the values you provided.
 6. You can verify or update the configuration by navigating to the program's Configuration tab, finding your manager in the list, and opening its form.
 
 ## References

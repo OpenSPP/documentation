@@ -1,9 +1,19 @@
+---
+myst:
+  html_meta:
+    "title": "Module development"
+    "description": "Comprehensive guide to developing custom OpenSPP modules including best practices, module structure, and step-by-step development tutorials"
+    "keywords": "OpenSPP, module development, Odoo modules, custom modules, development guide, modular architecture"
+---
 
-# Module Development
+# Module development
 
-OpenSPP is built on the powerful and flexible Odoo framework. One of the core principles of Odoo is its modular architecture. Instead of modifying the core source code of the platform, customizations and new features are added through self-contained packages called **modules**.
+OpenSPP is built on the powerful and flexible Odoo framework.
+One of the core principles of Odoo is its modular architecture.
+Instead of modifying the core source code of the platform, customizations and new features are added through self-contained packages called **modules**.
 
-This guide will walk you through the fundamental process of creating a custom OpenSPP module. We will build a simple but practical module that adds a "National ID" field to the Individual record in the registry.
+This guide will walk you through the fundamental process of creating a custom OpenSPP module.
+We will build a simple but practical module that adds a "National ID" field to the Individual record in the registry.
 
 By the end of this guide, you will understand:
 - Why creating a custom module is the best practice.
@@ -14,11 +24,14 @@ By the end of this guide, you will understand:
 
 ## Why Create a Custom Module?
 
-For developers new to Odoo, it might seem easier to directly edit the existing OpenSPP files. However, this approach, often called forking, leads to significant long-term problems. The recommended approach is to encapsulate all your customizations within a custom module.
+For developers new to Odoo, it might seem easier to directly edit the existing OpenSPP files.
+However, this approach, often called forking, leads to significant long-term problems.
+The recommended approach is to encapsulate all your customizations within a custom module.
 
 **Key Advantages of Using Modules:**
 
-- **Maintainability & Upgradability:** When a new version or security patch for OpenSPP is released, you can update the core platform code without losing your custom features. Your module remains separate and can be easily installed on the new version, often with minimal changes.
+- **Maintainability & Upgradability:** When a new version or security patch for OpenSPP is released, you can update the core platform code without losing your custom features.
+  Your module remains separate and can be easily installed on the new version, often with minimal changes.
 - **Cleanliness & Organization:** Your custom code is neatly organized in its own directory, making it easy to find, understand, and manage.
 - **Portability:** You can easily share your module with other projects or deploy it on different OpenSPP instances.
 - **Collaboration:** It allows multiple teams to work on different custom features without creating conflicts in the core codebase.
@@ -31,7 +44,8 @@ For more detailed guidelines, refer to the {doc}`Best Practices Guide <../best_p
 
 ## Module Customization Guides
 
-The following guides provide step-by-step instructions for common customization tasks in OpenSPP. Each guide focuses on a specific area of the platform, showing you how to extend its functionality by creating a custom module.
+The following guides provide step-by-step instructions for common customization tasks in OpenSPP.
+Each guide focuses on a specific area of the platform, showing you how to extend its functionality by creating a custom module.
 
 - **{doc}`fields`**: Learn how to add new fields to existing models.
 - **{doc}`registry`**: Extend the core registry models for individuals and groups.

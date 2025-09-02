@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    "title": "External API using JSON-RPC"
+    "description": "Complete guide to interacting with OpenSPP Registry via JSON-RPC API including authentication, CRUD operations, and Python examples."
+    "keywords": "OpenSPP, JSON-RPC, external API, registry API, CRUD operations, authentication, Python integration"
+---
 
 # External API using JSON-RPC
 

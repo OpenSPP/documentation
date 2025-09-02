@@ -1,11 +1,19 @@
+---
+myst:
+  html_meta:
+    "title": "Areas Module Development"
+    "description": "Comprehensive guide to customizing the OpenSPP areas module with population data, hierarchical relationships, and geographical management."
+    "keywords": "OpenSPP, areas module, geographical areas, population data, hierarchical structure, area management"
+---
 
 # Areas
 
-The following article guides the reader in understanding how the area module works in OpenSPP and how it can be customized by providing a sample scenario and a working example. The `spp_area_base` module provides the foundation for managing geographical areas in OpenSPP, which can be used in programs and other modules.
+The following article guides the reader in understanding how the area module works in OpenSPP and how it can be customized by providing a sample scenario and a working example.
+The {doc}`spp_area_base </reference/modules/spp_area_base>` module provides the foundation for managing geographical areas in OpenSPP, which can be used in programs and other modules.
 
 **Core Models**
 
-The `spp_area_base` module also provides the core area management functionality with the following components:
+The {doc}`spp_area_base </reference/modules/spp_area_base>` module also provides the core area management functionality with the following components:
 
 - **`spp.area`**: The main area model that manages geographical areas with hierarchical relationships
 - **`spp.area.kind`**: Defines different types of areas (administrative regions, ecological zones, etc.)
@@ -22,13 +30,14 @@ The `spp_area_base` module also provides the core area management functionality 
 ## Prerequisites
 
 - Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
-- OpenSPP Module "Area Management (Base)" or "spp_area_base" must be installed.
+- OpenSPP Module "Area Management (Base)" or {doc}`spp_area_base </reference/modules/spp_area_base>` must be installed.
 - To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <../setup>`.
 
 ## Module Structure
-A typical Area module follows the standard Odoo module structure. Here's the complete structure of the module we will build, `spp_custom_area`:
+A typical Area module follows the standard Odoo module structure.
+Here's the complete structure of the module we will build, `spp_custom_area`:
 
-```
+```text
 spp_custom_area/
 ├── __init__.py
 ├── __manifest__.py
@@ -45,7 +54,8 @@ spp_custom_area/
 
 ## Step-by-Step Guide
 
-In a hypothetical scenario, customizing the areas module to include population data serves as a practical example. This could involve recording the population of an area such as province or district, providing valuable insights for reporting and dashboard analysis.
+In a hypothetical scenario, customizing the areas module to include population data serves as a practical example.
+This could involve recording the population of an area such as province or district, providing valuable insights for reporting and dashboard analysis.
 
 A working sample module for the described scenario can be accessed at the provided [link](https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_custom_area).
 
@@ -177,7 +187,7 @@ Create a new file called `views/area_views.xml` in the module and add it to the 
 
 If you introduce new models, add access rights. For simple field additions, this is not required. Example:
 
-```
+```csv
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_spp_your_custom_model_registrar,spp.your.custom.model.registrar,spp_area_custom.model_your_custom_model,g2p_registry_base.group_g2p_registrar,1,1,1,0
 access_spp_your_custom_model_admin,spp.your.custom.model.admin,spp_area_custom.model_your_custom_model,g2p_registry_base.group_g2p_admin,1,1,1,1
@@ -250,7 +260,7 @@ Then add the custom computed field to the `area_views.xml` file
 
 The following screenshot shows the added population fields in the newly developed module.
 
-![](areas/updates.png)
+![Area module customization with population fields](areas/updates.png)
 
 ## References
 

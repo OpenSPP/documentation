@@ -1,13 +1,22 @@
+---
+myst:
+  html_meta:
+    "title": "Developer mode (debug mode)"
+    "description": "Guide to activating and using OpenSPP developer mode for accessing advanced development and debugging tools"
+    "keywords": "OpenSPP, developer mode, debug mode, development tools, debugging, advanced settings"
+---
 
 (developer-mode)=
 
 # Developer mode (debug mode)
 
-The developer mode (or debug mode) unlocks access to extra and advanced tools in OpenSPP. There are several ways to activate the developer mode: through the Settings or the URL.
+The developer mode (or debug mode) unlocks access to extra and advanced tools in OpenSPP.
+There are several ways to activate the developer mode: through the Settings or the URL.
 
 ## Activate through the settings
 
-To activate the debug mode, open the OpenSPP database settings, go to **Settings → General Settings → Developer Tools** and click **Activate the developer mode**. Make sure that you have installed at least one app to see the **Developer Tools** section in the **Settings** module.
+To activate the debug mode, open the OpenSPP database settings, go to **Settings → General Settings → Developer Tools** and click **Activate the developer mode**.
+Make sure that you have installed at least one app to see the **Developer Tools** section in the **Settings** module.
 
 ![Overview of the debug options under settings in Odoo.](developer_mode/1.png "Overview of the debug options under settings in Odoo.")
 
@@ -19,7 +28,9 @@ Once activated, the _Deactivate the developer mode_ option becomes available.
 
 ## Activate through the URL
 
-You can activate the debug mode by adding an extra query string to the database's URL. To activate, add `?debug=1` or `?debug=true` after `/web` in the URL. To deactivate, change the value to `?debug=0` instead.
+You can activate the debug mode by adding an extra query string to the database's URL.
+To activate, add `?debug=1` or `?debug=true` after `/web` in the URL.
+To deactivate, change the value to `?debug=0` instead.
 
 ![Overview of a URL with the debug mode command added.](developer_mode/2.png "Overview of a URL with the debug mode command added.")
 
@@ -33,7 +44,8 @@ The user can access the developer mode tools by clicking on the _Open Developer 
 
 ![OpenSPP displays the console page and the debug icon.](developer_mode/3.png "Overview of a console page and the debug icon being shown in Odoo.")
 
-This menu has extra tools that are useful to understand or edit technical data, such as the views or actions of a page. On a page that has filters, actions, and view options, the developer mode tools contain some useful menu items such as:
+This menu has extra tools that are useful to understand or edit technical data, such as the views or actions of a page.
+On a page that has filters, actions, and view options, the developer mode tools contain some useful menu items such as:
 
 - _Edit Action_
 - _Manage Filters_

@@ -43,28 +43,28 @@ OpenSPP serves diverse organizations implementing social protection and agricult
 :gutter: 2
 
 ::::{grid-item-card} 🚀 Get Started
-:link: getting_started/index.md
+:link: getting_started/index
 :link-type: doc
 
 New to OpenSPP? Start with our installation guide and quickstart tutorial.
 ::::
 
 ::::{grid-item-card} 📚 User Guide  
-:link: user_guide/index.md
+:link: user_guide/index
 :link-type: doc
 
 Learn how to use OpenSPP for registry and program management.
 ::::
 
 ::::{grid-item-card} 🔧 Developer Guide
-:link: developer_guide/index.md
+:link: developer_guide/index
 :link-type: doc
 
 Customize and extend OpenSPP with our technical documentation.
 ::::
 
 ::::{grid-item-card} 🏗️ Architecture
-:link: developer_guide/architecture.md
+:link: developer_guide/architecture
 :link-type: doc
 
 Understand OpenSPP's technical architecture and design principles.

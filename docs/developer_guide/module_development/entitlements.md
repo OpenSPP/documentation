@@ -1,9 +1,19 @@
+---
+myst:
+  html_meta:
+    "title": "Program entitlements"
+    "description": "Learn how to customize entitlement calculation logic and management in OpenSPP through custom module development"
+    "keywords": "OpenSPP, entitlements, program entitlements, entitlement calculation, benefit calculation, module development"
+---
 
-# Program Entitlements
+# Program entitlements
 
-In OpenSPP, program benefits are defined and calculated through a flexible system called **Entitlement Managers**. An Entitlement Manager is a self-contained component that defines the logic for how much a beneficiary is entitled to receive in a given program cycle. This allows for creating reusable and complex benefit calculation rules that can be easily attached to any program.
+In OpenSPP, program benefits are defined and calculated through a flexible system called **Entitlement Managers**.
+An Entitlement Manager is a self-contained component that defines the logic for how much a :term:`beneficiary` is entitled to receive in a given program cycle.
+This allows for creating reusable and complex benefit calculation rules that can be easily attached to any program.
 
-This guide will walk you through creating a custom Entitlement Manager module from scratch. We will use the `spp_entitlement_cash` module as a practical reference to build a new manager that calculates cash-based entitlements with flexible rules.
+This guide will walk you through creating a custom Entitlement Manager module from scratch.
+We will use the {doc}`spp_entitlement_cash </reference/modules/spp_entitlement_cash>` module as a practical reference to build a new manager that calculates cash-based entitlements with flexible rules.
 
 By the end of this guide, you will be able to:
 
@@ -18,14 +28,15 @@ By the end of this guide, you will be able to:
 ## Prerequisites
 
 - Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
-- Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` (`g2p_programs`), `OpenSPP Programs` (`spp_programs`), and `G2P Registry (Base)` (`g2p_registry_base`).
+- Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` ({doc}`g2p_programs </reference/modules/g2p_programs>`), `OpenSPP Programs` ({doc}`spp_programs </reference/modules/spp_programs>`), and `G2P Registry (Base)` ({doc}`g2p_registry_base </reference/modules/g2p_registry_base>`).
 - To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <../setup>`.
 
 ## Module Structure
 
-A typical Entitlement Manager module follows the standard Odoo module structure. Here's the complete structure of our reference module, `spp_entitlement_cash`:
+A typical Entitlement Manager module follows the standard Odoo module structure.
+Here's the complete structure of our reference module, {doc}`spp_entitlement_cash </reference/modules/spp_entitlement_cash>`:
 
-```
+```text
 spp_entitlement_cash/
 ├── __init__.py
 ├── __manifest__.py
@@ -50,7 +61,9 @@ Start by creating a new directory for your module (e.g., `spp_custom_entitlement
 
 ### Define the Manifest (`__manifest__.py`)
 
-The manifest file declares your module's metadata and dependencies. It's crucial to list all the modules your customization will interact with. Our cash entitlement manager depends on `g2p_programs` and `spp_programs` for the base manager framework.
+The manifest file declares your module's metadata and dependencies.
+It's crucial to list all the modules your customization will interact with.
+Our cash entitlement manager depends on {doc}`g2p_programs </reference/modules/g2p_programs>` and {doc}`spp_programs </reference/modules/spp_programs>` for the base manager framework.
 
 ```python
 # From: spp_entitlement_cash/__manifest__.py
@@ -84,7 +97,8 @@ The manifest file declares your module's metadata and dependencies. It's crucial
 
 ### Create the Entitlement Manager Model
 
-This is the core of your module. You will create a new model that holds the specific configuration for your entitlement rules and contains the logic to calculate and generate entitlements.
+This is the core of your module.
+You will create a new model that holds the specific configuration for your entitlement rules and contains the logic to calculate and generate entitlements.
 
 1.  **Create the model file**: In your `models/` directory, create a Python file named `entitlement_manager.py`. Remember to import it in `models/__init__.py`.
 
@@ -126,7 +140,8 @@ This is the core of your module. You will create a new model that holds the spec
             # ... (create g2p.entitlement records) ...
     ```
 
-    The `prepare_entitlements` method is the most critical part. It is called by the system to generate the `g2p.entitlement` records for a given cycle and set of beneficiaries, based on the rules defined in the manager.
+    The `prepare_entitlements` method is the most critical part.
+It is called by the system to generate the `g2p.entitlement` records for a given cycle and set of beneficiaries, based on the rules defined in the manager.
 
 ### Register the New Manager
 
@@ -209,7 +224,7 @@ To improve user experience, add configuration fields directly to the "Create Pro
 
 Grant users access to your new models in `security/ir.model.access.csv`.
 
-```
+```csv
 # From: spp_entitlement_cash/security/ir.model.access.csv
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 g2p_program_entitlement_manager_cash_admin,Program Entitlement Manager Cash Admin Access,spp_entitlement_cash.model_g2p_program_entitlement_manager_cash,g2p_registry_base.group_g2p_admin,1,1,1,1
@@ -222,7 +237,8 @@ g2p_program_entitlement_manager_cash_program_manager,Program Entitlement Manager
 2.  Navigate to **Programs** and click **Create Program**.
 3.  In the wizard, under the **Entitlement** page, select your new **"Cash"** manager type from the **Manager** dropdown.
 4.  The fields for your manager will appear, allowing you to define entitlement rules directly in the wizard.
-5.  Click **Create**. A new program will be created, and an instance of your entitlement manager will be automatically created and configured.
+5.  Click **Create**.
+    A new program will be created, and an instance of your entitlement manager will be automatically created and configured.
 
 ## References
 

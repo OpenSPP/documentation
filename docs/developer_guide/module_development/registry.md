@@ -1,7 +1,15 @@
+---
+myst:
+  html_meta:
+    "title": "Registry"
+    "description": "Learn how to customize OpenSPP registry system by adding new top-level group types and extending registry functionality"
+    "keywords": "OpenSPP, registry customization, group types, registry system, module development, registry extension"
+---
 
 # Registry
 
-This article explains how to customize OpenSPP's registry system by introducing a new **top-level group** type. As a practical example, we’ll add a new top-level group type (such as "Village") that can contain regular groups (households), along with custom UI, data, and actions.
+This article explains how to customize OpenSPP's registry system by introducing a new **top-level group** type.
+As a practical example, we'll add a new top-level group type (such as "Village") that can contain regular groups (households), along with custom UI, data, and actions.
 
 **Core Models**
 
@@ -24,7 +32,8 @@ This article explains how to customize OpenSPP's registry system by introducing 
 
 ## Module Structure
 
-A typical registry customization module follows the standard Odoo structure. Here’s the structure for our example module, `spp_top_level_groups`:
+A typical registry customization module follows the standard Odoo structure.
+Here's the structure for our example module, `spp_top_level_groups`:
 
 ```
 spp_top_level_groups/
@@ -388,9 +397,12 @@ access_top_level_groups_admin,top.level.groups.admin,base.model_res_partner,g2p_
 ### Install and Test
 
 1. **Install the module** via the Apps menu.
-2. **Configure group kinds**: Registry > Configuration > Group Kinds. Ensure "Village" is present and allows group/individual members.
-3. **Create villages**: Registry > Groups > Villages. Add households as members.
-4. **Test**: Use action buttons to view households and individuals. Check computed indicators.
+2. **Configure group kinds**: Registry > Configuration > Group Kinds.
+   Ensure "Village" is present and allows group/individual members.
+3. **Create villages**: Registry > Groups > Villages.
+   Add households as members.
+4. **Test**: Use action buttons to view households and individuals.
+   Check computed indicators.
 
 ### Example Use Case
 

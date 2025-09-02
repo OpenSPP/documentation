@@ -1,5 +1,12 @@
+---
+myst:
+  html_meta:
+    "title": "Development setup"
+    "description": "Complete guide to setting up OpenSPP development environment using Docker and Doodba with step-by-step instructions"
+    "keywords": "OpenSPP, development setup, Docker, Doodba, development environment, installation"
+---
 
-# Development Setup
+# Development setup
 
 ## OpenSPP Docker Setup Using Doodba
 
@@ -19,23 +26,26 @@ Docker simplifies the installation of Odoo and its dependencies, with the added 
 
 3. Execute the following commands:
 
-- `invoke develop` - Sets up a VSCode development environment.
-- `invoke img-pull` - Retrieves Docker images as per .yaml file specifications.
-- `invoke img-build` - Constructs Docker images locally.
-- `invoke img-build` --pull - Builds or pulls images from a remote repository as needed.
-- `invoke resetdb` - Generates a new, demo-data-free database.
-- `invoke resetdb` --demo - Creates a new database inclusive of demo data.
-- `invoke start` - Activates Odoo.
+```bash
+invoke develop        # Sets up a VSCode development environment
+invoke img-pull       # Retrieves Docker images as per .yaml file specifications
+invoke img-build      # Constructs Docker images locally
+invoke git-aggregate  # Pull the dependencies with git
+invoke resetdb        # Generates a new, demo-data-free database
+invoke start          # Activates Odoo
+```
 
-4. Combine these commands for a single execution if desired.
+4. Combine these commands for a single execution if desired:
 
-- e.g. `invoke develop img-pull img-build git-aggregate resetdb start`
+```bash
+invoke develop img-pull img-build git-aggregate resetdb start
+```
 
 5. Browse the following in a preferred browser:
 
-- Odoo: http://localhost:17069/
-- Mailhog: http://localhost:17025/
-- Wdb: http://localhost:17984/
-- Pgweb: http://localhost:17081/
+- Odoo: <http://localhost:17069/>
+- Mailhog: <http://localhost:17025/>
+- Wdb: <http://localhost:17984/>
+- Pgweb: <http://localhost:17081/>
 
 Refer to the Readme in the repository for more detailed instructions on Docker Odoo and Invoke commands.

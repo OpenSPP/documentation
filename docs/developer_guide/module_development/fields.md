@@ -1,7 +1,15 @@
+---
+myst:
+  html_meta:
+    "title": "Registry fields"
+    "description": "Learn how to add custom fields to OpenSPP registry models for individuals and groups with step-by-step module development guide"
+    "keywords": "OpenSPP, registry fields, custom fields, module development, res.partner, individual registry, group registry"
+---
 
-# Registry Fields
+# Registry fields
 
-This article guides you through understanding how the registry modules work in OpenSPP and how to add custom fields to registrants. The `g2p_registry_group` and `g2p_registry_individual` modules surface registrants (groups and individuals) based on the `res.partner` model.
+This article guides you through understanding how the registry modules work in OpenSPP and how to add custom fields to registrants.
+The `g2p_registry_group` and `g2p_registry_individual` modules surface registrants (groups and individuals) based on the `res.partner` model.
 
 **Core Models**
 
@@ -157,7 +165,9 @@ Expose the field on both Individuals and Groups UI by extending the existing vie
 
 ### Add Security Access (Optional)
 
-If you introduce new models, add access rights. For a simple field addition to `res.partner`, this is not required. Example:
+If you introduce new models, add access rights.
+For a simple field addition to `res.partner`, this is not required.
+Example:
 
 ```
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink

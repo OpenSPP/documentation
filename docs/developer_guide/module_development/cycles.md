@@ -1,9 +1,19 @@
+---
+myst:
+  html_meta:
+    "title": "Program cycles"
+    "description": "Learn how to modify OpenSPP program cycles, their states, and transitions through custom module development"
+    "keywords": "OpenSPP, program cycles, cycle management, program states, module development, cycle customization"
+---
 
-# Program Cycles
+# Program cycles
 
-In OpenSPP, the creation and scheduling of program cycles are handled by a flexible system called **Cycle Managers**. A Cycle Manager is a self-contained component that defines the logic for how and when new cycles are created for a program. This allows for creating reusable and complex cycle generation rules that can be easily attached to any program.
+In OpenSPP, the creation and scheduling of program cycles are handled by a flexible system called **Cycle Managers**.
+A Cycle Manager is a self-contained component that defines the logic for how and when new cycles are created for a program.
+This allows for creating reusable and complex cycle generation rules that can be easily attached to any program.
 
-This guide will walk you through creating a custom Cycle Manager module from scratch. We will build a new manager based on the default one, but with a specific business rule: creating cycles with a fixed six-month duration, regardless of other settings.
+This guide will walk you through creating a custom Cycle Manager module from scratch.
+We will build a new manager based on the default one, but with a specific business rule: creating cycles with a fixed six-month duration, regardless of other settings.
 
 By the end of this guide, you will be able to:
 
@@ -18,14 +28,15 @@ By the end of this guide, you will be able to:
 ## Prerequisites
 
 - Solid understanding of Odoo 17 module development, including Python, XML, and XPath.
-- Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` (`g2p_programs`) and `OpenSPP Programs` (`spp_programs`).
+- Familiarity with the OpenG2P and OpenSPP core modules, especially `OpenG2P Programs` ({doc}`g2p_programs </reference/modules/g2p_programs>`) and `OpenSPP Programs` ({doc}`spp_programs </reference/modules/spp_programs>`).
 - To set up OpenSPP for development, please refer to the {doc}`Development Setup Guide <../setup>`.
 
 ## Module Structure
 
-A typical Cycle Manager module follows the standard Odoo module structure. Here's the complete structure of the module we will build, `spp_cycle_manager_fixed_interval`:
+A typical Cycle Manager module follows the standard Odoo module structure.
+Here's the complete structure of the module we will build, `spp_cycle_manager_fixed_interval`:
 
-```
+```text
 spp_cycle_manager_fixed_interval/
 ├── __init__.py
 ├── __manifest__.py
@@ -50,7 +61,8 @@ Start by creating a new directory for your module (e.g., `spp_cycle_manager_fixe
 
 ### Define the Manifest (`__manifest__.py`)
 
-The manifest file declares your module's metadata and dependencies. Our cycle manager depends on `g2p_programs` and `spp_programs` for the base manager framework.
+The manifest file declares your module's metadata and dependencies.
+Our cycle manager depends on {doc}`g2p_programs </reference/modules/g2p_programs>` and {doc}`spp_programs </reference/modules/spp_programs>` for the base manager framework.
 
 ```python
 # From: spp_cycle_manager_fixed_interval/__manifest__.py
@@ -79,7 +91,8 @@ The manifest file declares your module's metadata and dependencies. Our cycle ma
 
 ### Create the Cycle Manager Model
 
-This is the core of your module. You will create a new model that inherits from the default cycle manager and overrides its behavior.
+This is the core of your module.
+You will create a new model that inherits from the default cycle manager and overrides its behavior.
 
 1.  **Create the model file**: In your `models/` directory, create a Python file named `cycle_manager.py`. Remember to import it in `models/__init__.py`.
 
@@ -128,7 +141,8 @@ To make OpenSPP aware of your new manager, you must add it to the list of availa
 
 ### Create the User Interface
 
-Create a form view for your manager. Since we are inheriting from the default manager, we can also inherit its view and modify it to hide the fields that are no longer relevant (like the recurrence rules).
+Create a form view for your manager.
+Since we are inheriting from the default manager, we can also inherit its view and modify it to hide the fields that are no longer relevant (like the recurrence rules).
 
 ```xml
 <!-- From: spp_cycle_manager_fixed_interval/views/cycle_manager_view.xml -->
@@ -242,7 +256,7 @@ To improve user experience, add a selection to the "Create Program" wizard so us
 
 Grant users access to your new model in `security/ir.model.access.csv`.
 
-```
+```csv
 # From: spp_cycle_manager_fixed_interval/security/ir.model.access.csv
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 g2p_cycle_manager_fixed_interval_admin,Cycle Manager Fixed Interval Admin Access,spp_cycle_manager_fixed_interval.model_g2p_cycle_manager_fixed_interval,g2p_registry_base.group_g2p_admin,1,1,1,1
@@ -255,7 +269,9 @@ g2p_cycle_manager_fixed_interval_program_manager,Cycle Manager Fixed Interval Pr
 2.  Navigate to **Programs** and click **Create Program**.
 3.  In the wizard, on the **Cycle** page, select your new **"Fixed 6-Month Interval"** manager type.
 4.  Notice that the recurrence settings disappear.
-5.  Complete the wizard and click **Create**. A new program will be created, and an instance of your cycle manager will be automatically created and configured. When new cycles are created for this program, they will automatically have a six-month duration.
+5.  Complete the wizard and click **Create**.
+    A new program will be created, and an instance of your cycle manager will be automatically created and configured.
+    When new cycles are created for this program, they will automatically have a six-month duration.
 
 ## References
 

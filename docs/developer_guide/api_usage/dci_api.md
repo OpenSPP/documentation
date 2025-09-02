@@ -1,11 +1,19 @@
+---
+myst:
+  html_meta:
+    "title": "DCI API Usage Guide"
+    "description": "Learn how to use OpenSPP's DCI-compliant RESTful API for secure registry data synchronization and search with OAuth 2.0 authentication."
+    "keywords": "OpenSPP, DCI API, REST API, OAuth 2.0, registry search, data synchronization, digital public infrastructure"
+---
 
 # DCI API
 
-OpenSPP provides a RESTful API that adheres to the Digital Convergence Initiative (DCI) specification. This API enables authorized external systems to securely search and synchronize with OpenSPP's registry data, promoting interoperability with other digital public infrastructure components like a Civil Registration and Vital Statistics (CRVS) system.
+OpenSPP provides a RESTful API that adheres to the Digital Convergence Initiative (DCI) specification.
+This API enables authorized external systems to securely search and synchronize with OpenSPP's registry data, promoting interoperability with other digital public infrastructure components like a Civil Registration and Vital Statistics (:term:`CRVS`) system.
 
 ## Prerequisites
 
-- OpenSPP server running with the `spp_dci_api_server` module installed.
+- OpenSPP server running with the {doc}`spp_dci_api_server </reference/modules/spp_dci_api_server>` module installed.
 - Client credentials (Client ID and Client Secret) obtained from the OpenSPP instance.
 - Python 3.x and the `requests` library installed (`pip install requests`).
 
@@ -13,7 +21,8 @@ OpenSPP provides a RESTful API that adheres to the Digital Convergence Initiativ
 
 ### Authentication: Obtaining an Access Token
 
-The DCI API is secured using OAuth 2.0 with the Client Credentials grant type. Before making any data requests, your application must obtain a bearer token.
+The DCI API is secured using OAuth 2.0 with the Client Credentials grant type.
+Before making any data requests, your application must obtain a bearer token.
 
 - **Endpoint**: `/oauth2/client/token`
 - **Method**: `POST`
