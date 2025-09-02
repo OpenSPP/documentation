@@ -74,4 +74,4 @@ sudo dpkg -i openspp_X.X.X_amd64.deb
 sudo systemctl start openspp
 ```
 
-**Note**: Change the `X.X.X` to the correct version.
+**Note**: Replace X.X.X with the target version number in the wget and dpkg commands.
