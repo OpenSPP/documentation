@@ -112,4 +112,4 @@ sudo apt-get remove openspp-17-daily
 
 ## Reinstall After Uninstallation
 
-To reinstall OpenSPP after uninstallation, follow the {doc}`../getting_started/installation_deb`.
+To reinstall OpenSPP after uninstallation, follow the {doc}`../../getting_started/installation_deb`.
