@@ -13,7 +13,7 @@ The Custom Fields UI is designed for creating straightforward, user-defined indi
 
 To create and manage indicator fields, you need:
 - A user account with **System Admin** role. For more details, see the {doc}`user_access` guide.
-- The **OpenSPP Custom Fields** (`spp_custom_field`) and **OpenSPP Custom Fields UI** (`spp_custom_fields_ui`) modules must be installed and activated in your OpenSPP instance. For more details, see the {doc}`../../getting_started/module_installation` guide.
+- The **OpenSPP Custom Fields** ({doc}`spp_custom_field </reference/modules/spp_custom_field>`) and **OpenSPP Custom Fields UI** ({doc}`spp_custom_fields_ui </reference/modules/spp_custom_fields_ui>`) modules must be installed and activated in your OpenSPP instance. For more details, see the {doc}`../../getting_started/module_installation` guide.
 
 ## Objective
 
@@ -30,18 +30,18 @@ First, access the Custom Fields management interface.
 2.  In **Registry** click the **Configuration** menu.
 3.  Click on the **Custom Fields** sub-menu.
 
-![](indicator_fields/step01_configuration_custom_fields.jpg)
+![Step01 configuration custom fields](indicator_fields/step01_configuration_custom_fields.jpg)
 
 ### Create a New Field
 
 On the **Custom Fields** page, you will see a list of existing custom fields.
 1.  Click the **New** button to start creating a new indicator field.
 
-![](indicator_fields/step02_click_new_custom_fields_list_view.jpg)
+![Step02 click new custom fields list view](indicator_fields/step02_click_new_custom_fields_list_view.jpg)
 
 The **Custom Fields** form view will appear.
 
-![](indicator_fields/step02a_custom_fields_form_view.jpg)
+![Step02a custom fields form view](indicator_fields/step02a_custom_fields_form_view.jpg)
 
 ### Configure Basic Properties
 
@@ -54,7 +54,7 @@ Now, define the basic characteristics of your new indicator field. For this exam
 - **Field Category**: Select `Calculated`. This designates the field as an indicator whose value is computed automatically.
 - **Field Help**: Specify a text that will appear in the **Field Description** section in the form.
 
-![](indicator_fields/step03_set_type_calculated.jpg)
+![Step03 set type calculated](indicator_fields/step03_set_type_calculated.jpg)
 
 ### Configure Advanced Properties
 
@@ -76,7 +76,7 @@ domain = [('gender.code', '=', 'Male')]
 self.compute_count_and_set_indicator('x_ind_grp_total_male', kinds, domain)
 ```
 
-![](indicator_fields/step04_specify_compute_field_code.jpg)
+![Step04 specify compute field code](indicator_fields/step04_specify_compute_field_code.jpg)
 
 ### Save and Open a Group
 
@@ -85,20 +85,20 @@ Once all properties are configured, save the new field.
 1.  Click the **Save** button. Odoo will create the new field in the database and apply the computation logic.
 2.  Navigate to the **Registry** and click the **Groups** menu.
 
-![](indicator_fields/step05_open_group_list_view.jpg)
+![Step05 open group list view](indicator_fields/step05_open_group_list_view.jpg)
 
 ### Verify the Indicator Field
 
 1. To verify, open any record in the **Groups** list view.
 
-![](indicator_fields/step06_select_a_group.jpg)
+![Step06 select a group](indicator_fields/step06_select_a_group.jpg)
 
 2. In the **Members** tab, check the **Sex** field and look for **Male** members.
 
-![](indicator_fields/step06a_check_members.jpg)
+![Step06a check members](indicator_fields/step06a_check_members.jpg)
 
 3. A new tab named **Indicators** will appear, displaying your new "Total Male Members" field with its calculated value.
 
-![](indicator_fields/step06b_check_new_indicator_field.jpg)
+![Step06b check new indicator field](indicator_fields/step06b_check_new_indicator_field.jpg)
 
 

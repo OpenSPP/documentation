@@ -39,7 +39,7 @@ Installing an Odoo module, including those for OpenSPP, follows a standard proce
     -   Search for the desired module by its technical name or title.
     -   Click the **Activate** button on the module's card to begin the installation.
 
-![](module_installation/01-apps-ui.jpg)
+![OpenSPP Apps menu interface](module_installation/01-apps-ui.jpg)
 
 ## Installation setups
 
@@ -65,15 +65,15 @@ The Social Protection Management Information System ({doc}`SP-MIS <../overview/p
 1.  Follow the General Installation Process to update your Apps list
 2.  In the Apps menu, search for {doc}`spp_base </reference/modules/spp_base>` or "OpenSPP Base"
 
-![](module_installation/02-spp_base01.jpg)
+![Searching for SPP Base module in Apps](module_installation/02-spp_base01.jpg)
 
 3.  Click the **Activate** button to install the module. This will also install all its dependencies, providing a complete SP-MIS foundation.
 
-![](module_installation/03-spp_base2.jpg)
+![SPP Base module installation screen](module_installation/03-spp_base2.jpg)
 
 Once installed, you will see the "Registry" application in your Odoo dashboard, which is the main entry point for the OpenSPP system.
 
-![](module_installation/04-spp_base3.jpg)
+![SPP Base module successfully installed](module_installation/04-spp_base3.jpg)
 
 ### 2. Social Registry installation (spp_registry_base)
 
@@ -113,11 +113,11 @@ The {doc}`Farmer Registry <../overview/products/farmer_registry>` configuration 
 1.  Follow the General Installation Process to update your Apps list
 2.  In the Apps menu, search for {doc}`spp_farmer_registry_base </reference/modules/spp_farmer_registry_base>` or "OpenSPP Farmer Registry Base"
 
-![](module_installation/05-spp_farmer1.jpg)
+![Searching for SPP Farmer Registry module](module_installation/05-spp_farmer1.jpg)
 
 3.  Click the **Activate** button to install the module and its dependencies.
 
-![](module_installation/06-spp_farmer2.jpg)
+![SPP Farmer Registry module installation complete](module_installation/06-spp_farmer2.jpg)
 
 ## Installing additional modules
 
@@ -151,13 +151,13 @@ Let's walk through installing the {doc}`Change Request </reference/modules/spp_c
 **Steps:**
 
 1.  Navigate to the **Apps** menu
-2.  Search for `spp_change_request` or "OpenSPP Change Request"
+2.  Search for {doc}`spp_change_request </reference/modules/spp_change_request>` or "OpenSPP Change Request"
 
-![](module_installation/08-spp_cr1.jpg)
+![Searching for SPP Change Request module](module_installation/08-spp_cr1.jpg)
 
 3.  Click the **Activate** button.
 
-![](module_installation/09-spp_cr2.jpg)
+![SPP Change Request module installed](module_installation/09-spp_cr2.jpg)
 
 ### Example: Installing cash entitlement module
 
@@ -166,13 +166,13 @@ The **OpenSPP Entitlement: Cash** ({doc}`spp_entitlement_cash </reference/module
 **Steps:**
 
 1.  Navigate to the **Apps** menu.
-2.  Search for `spp_entitlement_cash` or "OpenSPP Entitlement: Cash".
+2.  Search for {doc}`spp_entitlement_cash </reference/modules/spp_entitlement_cash>` or "OpenSPP Entitlement: Cash".
 
-![](module_installation/10-spp_ent_cash1.jpg)
+![Searching for SPP Entitlement Cash module](module_installation/10-spp_ent_cash1.jpg)
 
 3.  Click the **Activate** button.
 
-![](module_installation/11-spp_ent_cash2.jpg)
+![SPP Entitlement Cash module installation complete](module_installation/11-spp_ent_cash2.jpg)
 
 ## Module dependencies
 

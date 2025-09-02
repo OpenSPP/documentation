@@ -13,7 +13,7 @@ The Custom Fields UI is designed for creating straightforward, user-defined fiel
 
 To create and manage custom fields, you need:
 - A user account with the **System Admin** role. For more details, see the {doc}`user_access` guide.
-- The **OpenSPP Custom Fields** (`spp_custom_field`) and **OpenSPP Custom Fields UI** (`spp_custom_fields_ui`) modules must be installed and activated in your OpenSPP instance. For more details, see the {doc}`../../getting_started/module_installation` guide.
+- The **OpenSPP Custom Fields** ({doc}`spp_custom_field </reference/modules/spp_custom_field>`) and **OpenSPP Custom Fields UI** ({doc}`spp_custom_fields_ui </reference/modules/spp_custom_fields_ui>`) modules must be installed and activated in your OpenSPP instance. For more details, see the {doc}`../../getting_started/module_installation` guide.
 
 ## Objective
 
@@ -30,18 +30,18 @@ First, access the Custom Fields management interface.
 2.  In **Registry**, click the **Configuration** menu.
 3.  Click on the **Custom Fields** sub-menu.
 
-![](custom_fields/step01_configuration_custom_fields.jpg)
+![Step01 configuration custom fields](custom_fields/step01_configuration_custom_fields.jpg)
 
 ### Create a New Field
 
 On the **Custom Fields** page, you will see a list of existing custom fields.
 1.  Click the **New** button to start creating a new custom field.
 
-![](custom_fields/step02_click_new_custom_fields_list_view.jpg)
+![Step02 click new custom fields list view](custom_fields/step02_click_new_custom_fields_list_view.jpg)
 
 The **Custom Fields** form view will appear.
 
-![](custom_fields/step02a_custom_fields_form_view.jpg)
+![Step02a custom fields form view](custom_fields/step02a_custom_fields_form_view.jpg)
 
 ### Configure Basic Properties
 
@@ -54,7 +54,7 @@ Now, define the basic characteristics of your new custom field. For this example
 - **Field Category**: Select `Custom`. This designates the field as a standard data entry field.
 - **Field Help**: Specify a text that will appear as a tooltip or description for the field, for example, "Enter an alternative phone number for the individual."
 
-![](custom_fields/step03_set_type_custom.jpg)
+![Step03 set type custom](custom_fields/step03_set_type_custom.jpg)
 
 ### Configure Properties (Optional)
 
@@ -67,7 +67,7 @@ Since this is a standard custom field, you do not need to provide computation lo
 
 For our example, we will leave these options unchecked.
 
-![](custom_fields/step04_specify_advanced_props.jpg)
+![Step04 specify advanced props](custom_fields/step04_specify_advanced_props.jpg)
 
 ### Save and Open an Individual Record
 
@@ -76,16 +76,16 @@ Once all properties are configured, save the new field.
 1.  Click the **Save** button. OpenSPP will create the new field in the database.
 2.  Navigate to the **Registry** and click the **Individuals** menu.
 
-![](custom_fields/step05_open_individual_list_view.jpg)
+![Step05 open individual list view](custom_fields/step05_open_individual_list_view.jpg)
 
 ### Verify the Custom Field
 
 1. To verify that the field was created, open any record in the **Individuals** list view.
 
-![](custom_fields/step06_select_individual.jpg)
+![Step06 select individual](custom_fields/step06_select_individual.jpg)
 
 2. A new tab named **Additional Details** will appear on the form. Click on it.
 
 3. You should see your new "Secondary Phone Number" field, ready for data entry.
 
-![](custom_fields/step06a_check_additional_field_tab.jpg)
+![Step06a check additional field tab](custom_fields/step06a_check_additional_field_tab.jpg)

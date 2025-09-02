@@ -8,7 +8,7 @@ OpenSPP's built-in geotargeting capabilities allow program administrators to loc
 
 To create an Area for Geotargeting in OpenSPP, you need to:
 - Have a **System Admin** or **Registrar** role, Learn more in this guide: {doc}`../administration/user_access`. 
-- Have `OpenSPP area management` and `OpenSPP area management base` modules installed and activated. Please note that both these modules are auto-installed and activated when `spp_base` is already activated. Learn more on installing additional modules in the {doc}`../../getting_started/module_installation` document.
+- Have `OpenSPP area management` and `OpenSPP area management base` modules installed and activated. Please note that both these modules are auto-installed and activated when {doc}`spp_base </reference/modules/spp_base>` is already activated. Learn more on installing additional modules in the {doc}`../../getting_started/module_installation` document.
 
 ## Objective
 
@@ -32,7 +32,7 @@ To make use of geotargeting in OpenSPP, you must first define a geographic area 
 OpenSPP allows you to define any number of levels and to define the hierarchy between them. For example, you can define a country, then define states within that country, and then define districts within each state. You can also define a hierarchy between districts and cities, or between cities and villages.
 
 Login as administrator or a user with permitted access rights and navigate to Area
-![](geotargeting/geotargeting_area_page.png)
+![Geotargeting area page](geotargeting/geotargeting_area_page.png)
 
 In the Area page, click on New, 
 - Define the name of the Area
@@ -41,7 +41,7 @@ In the Area page, click on New,
 - Under `Kind` dropdown field, select `Admin area`
 - Define Area (sq/km)
 
-![](geotargeting/geotargeting_define_area.png)
+![Geotargeting define area](geotargeting/geotargeting_define_area.png)
 Click on the Save icon to complete the changes.
 
 #### Create Sub Area
@@ -53,7 +53,7 @@ To create a sub level of a parent area, Nnavigate to Area-->New.
 - Under `Kind` dropdown field, select `Admin area`
 - Define Area (sq/km)
 
-![](geotargeting/geotargeting_define_sub_area.png)
+![Geotargeting define sub area](geotargeting/geotargeting_define_sub_area.png)
 Click on the Save icon to complete the changes.
 
 ### Import
@@ -70,7 +70,7 @@ To import an area and specify the area type, you need to add a column in the exc
 
 You can also define your own area type from the interface. To do so, you need to define the area type in the Area-->Areas-->Area Type. Click on **New** then click on the Name input field to define. The Completed name will auto generate once it has been saved. 
 
-![](geotargeting/geotargeting_define_area_type.png)
+![Geotargeting define area type](geotargeting/geotargeting_define_area_type.png)
 
 You can select a parent area type if you want to define a hierarchy between area types and set a name.
 
