@@ -82,9 +82,9 @@ If you prefer to download the package manually or the repository is not accessib
 
 ### Create a temporary directory
 ```bash
-mkdir -p ~/openspp-install
-cd ~/openspp-install
+mkdir -p ~/openspp-install && cd ~/openspp-install
 ```
+
 ### Download directly from Nexus repository
 ```bash
 wget https://builds.acn.fr/repository/apt-openspp/pool/main/o/openspp/openspp_17.0.1+odoo17.0-1_amd64.deb
@@ -285,7 +285,7 @@ After logging in, you'll need to activate the OpenSPP modules:
    sudo systemctl restart openspp
    ```
 
-**Note**: The `queue_job` module is automatically loaded as a server-wide module but must be installed in the database AND the service restarted for OpenSPP async operations to function properly. In this case, the `queue_job` module are already installed.
+**Note**: The `queue_job` module, which is essential for asynchronous background tasks, is automatically installed as a dependency of the main OpenSPP modules. It is also pre-configured as a `server_wide_module`, ensuring that background workers can process jobs correctly after a service restart.
 
 
 ## Getting Help
@@ -297,17 +297,11 @@ After logging in, you'll need to activate the OpenSPP modules:
 - **APT Repository**: https://builds.acn.fr/repository/apt-openspp/
 
 
-## Next steps
+## Next Steps
 
-After installation, see:
+Now that OpenSPP is installed, here are some recommended next steps:
 
-- {doc}`../user_guide/index` for using OpenSPP features
-- {doc}`../developer_guide/index` for customization and development
-- {doc}`../overview/poc_and_pilot` for setting up pilot programs
-
-You can also check:
-- {doc}`../user_guide/administration/database_management`
-- {doc}`../user_guide/administration/monitoring_maintenance`
-- {doc}`../user_guide/administration/security_tuning`
-- {doc}`../user_guide/administration/troubleshooting`
-- {doc}`../user_guide/administration/uninstalling`
+- **Learn to Use OpenSPP**: Start with the {doc}`../user_guide/index` to understand core features.
+- **Administer the System**: Refer to the {doc}`../user_guide/administration/index` for guides on security, maintenance, and troubleshooting.
+- **Customize and Develop**: Explore the {doc}`../developer_guide/index` to learn how to extend the platform. 
+- **Set Up a Pilot Program**: Follow the {doc}`../overview/poc_and_pilot` guide to launch a Proof of Concept (PoC).
