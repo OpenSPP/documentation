@@ -26,11 +26,13 @@ Always keep the primary audience for the section you are writing for in mind:
     
 *   **Voice:** Use "you" to address the reader directly.
     
-*   **Headings:** Use Sentence case (e.g., "Configure cash entitlements," not "Configure Cash Entitlements").
+*   **Headings:** Use Sentence case (e.g., "Configure cash entitlements," not "Configure Cash Entitlements"). Never include links or `:term:` roles in headings - keep them plain text only.
     
 *   **Sentences:** Aim for one main idea per sentence. Keep sentences relatively short and easy to understand. Use one sentence per line in the source file for easier diffs and collaboration.
     
-*   **Terminology:** Use consistent terminology. Refer to the Glossary and use the `:term:` role for defined terms (e.g., `` :term:`Social Registry` ``).
+*   **Terminology:** Use consistent terminology. Refer to the Glossary and use the `:term:` role for defined terms only on their first occurrence in a document (e.g., `` :term:`beneficiary` ``). For product names (SP-MIS, Social Registry, Farmer Registry), link to their respective product pages using `{doc}` in the body text when first mentioned, not in headings.
+
+*   **Module References:** When mentioning OpenSPP modules by their technical name (e.g., `spp_base`, `spp_change_request`), link to their detail page in the reference section using `{doc}` (e.g., `` {doc}`spp_base </reference/modules/spp_base>` ``). This helps readers find detailed information about module functionality.
     
 
 ## 4\. Content Structure & Purpose

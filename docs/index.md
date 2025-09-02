@@ -145,7 +145,7 @@ OpenSPP is recognized as a [Digital Public Good](https://digitalpublicgoods.net/
 ::::{grid-item}
 **Get Help**
 - 📖 [Documentation](https:/docs.openspp.org/)
-- 💬 [GitHub Discussions](https://github.com/OpenSPP/OpenSPP/discussions)
+- 💬 [GitHub Discussions](https://github.com/orgs/OpenSPP/discussions)
 - 🐛 [Report Issues](https://github.com/OpenSPP/openspp-modules/issues)
 ::::
 

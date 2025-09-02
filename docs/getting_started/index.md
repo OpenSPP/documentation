@@ -3,29 +3,132 @@ review-status: needs-review
 review-date: 2025-06-04
 reviewer: migration-script
 migration-notes: "Added during 2025 documentation reorganization"
+myst:
+  html_meta:
+    "title": "Getting Started with OpenSPP"
+    "description": "Quick start guide for installing and configuring OpenSPP social protection platform"
+    "keywords": "OpenSPP, installation, setup, SP-MIS, Social Registry, Farmer Registry"
 ---
 
 # Getting Started
 
-## How the documentation is organized
+Welcome to OpenSPP! This guide will help you get your social protection platform up and running quickly.
 
-This overview of how OpenSPP's documentation is organized will help you know where to look for certain things:
+## Quick start path
 
+:::::{grid} 2
+:gutter: 3
 
-- {doc}`installation_deb` offers a detailed, step-by-step guide for installing OpenSPP using Debian-based packages. It covers system requirements, installation procedures, initial configuration, and troubleshooting tips to ensure a smooth setup process.
-- {doc}`module_installation` offers a comprehensive, step-by-step guide for configuring OpenSPP after the initial installation. It explains how to install additional modules, customize features, and optimize your setup for specific needs.
-- {doc}`../overview/index` provides high-level information about OpenSPP's features, concepts, and use cases for decision makers and new users.
-- {doc}`../user_guide/index` provides practical, task-oriented instructions for using OpenSPP's features in day-to-day operations for administrators and end-users.
-- {doc}`../developer_guide/index` provides technical information and instructions for developers who need to customize, extend, integrate with, or contribute to OpenSPP.
-- {doc}`../reference/index` provides detailed reference material about OpenSPP components, including module documentation and technical specifications.
-- {doc}`../community/index` contains information about the OpenSPP project, community interaction, contribution processes, and legal information.
-- {doc}`../reference/glossary` provides definitions and explanations of terms or specialized language used in social protection. Translations are provided in French, Spanish and Arabic.
+::::{grid-item-card} New Installation
+Start here if you're setting up OpenSPP for the first time:
 
-## Technical information
+1. **{doc}`Installation Guide <installation_deb>`**  
+   Install OpenSPP on Debian/Ubuntu (30 minutes)
 
-OpenSPP is built on top of [Odoo 17.0](https://www.odoo.com/documentation/17.0/), a popular open-source [ERP](https://en.wikipedia.org/wiki/Enterprise_resource_planning). It is designed to be easy to install and maintain, and can be run on any Linux distribution.
+2. **{doc}`Module Installation <module_installation>`**  
+   Choose {doc}`SP-MIS <../overview/products/sp_mis>`, {doc}`Social Registry <../overview/products/social_registry>`, or {doc}`Farmer Registry <../overview/products/farmer_registry>`
 
-To learn more, visit the {doc}`../developer_guide/architecture` section.
+3. **Initial Setup**  
+   Configure your first program and import data
+::::
+
+::::{grid-item-card} Learn the System
+Explore OpenSPP's capabilities:
+
+- **{doc}`Features <../overview/features/index>`** - Understand key features
+- **{doc}`Products <../overview/products/index>`** - Choose the right product configuration  
+- **{doc}`User Guide <../user_guide/index>`** - Learn day-to-day operations
+::::
+:::::
+
+## Choose your configuration
+
+OpenSPP offers three primary configurations based on your needs:
+
+```{list-table}
+:header-rows: 1
+:widths: 20 30 50
+
+* - Configuration
+  - Best For
+  - Key Features
+* - **{doc}`SP-MIS <../overview/products/sp_mis>`**
+  - Social protection programs, cash transfers, humanitarian aid
+  - • Registry management<br>• Program cycles<br>• Eligibility targeting<br>• Payment processing
+* - **{doc}`Social Registry <../overview/products/social_registry>`**
+  - Centralized beneficiary database, inter-program coordination
+  - • Unified beneficiary data<br>• Deduplication<br>• Data sharing across programs<br>• Needs assessment
+* - **{doc}`Farmer Registry <../overview/products/farmer_registry>`**
+  - Agricultural support, farmer subsidies, rural development
+  - • Farm mapping<br>• Crop tracking<br>• Input distribution<br>• Seasonal cycles
+```
+
+:::{important}
+These configurations are mutually exclusive - you must choose one during installation. They cannot be combined in a single database.
+:::
+
+## Installation steps
+
+### 1. System installation
+**Time required:** 30-45 minutes
+
+Install OpenSPP using our Debian packages:
+- {doc}`Installation Guide <installation_deb>` - Production deployment on Ubuntu/Debian
+
+### 2. Module configuration  
+**Time required:** 15-30 minutes
+
+After installation, configure your system:
+- {doc}`Module Installation <module_installation>` - Install base modules and extensions
+
+### 3. Initial setup
+**Time required:** 1-2 hours
+
+Get your system ready for use:
+- Create your first program - {doc}`Creating a Program <../user_guide/program_management/create_program>`
+- Import beneficiary data - {doc}`Registry Management <../user_guide/registry_management/index>`
+- Configure user access - {doc}`Administration <../user_guide/administration/index>`
+
+## Where to go next
+
+Based on your role:
+
+:::::{grid} 3
+:gutter: 3
+
+::::{grid-item-card} Program Managers & Administrators
+
+- **{doc}`User Guide <../user_guide/index>`**<br>
+  Day-to-day operations guide
+
+- **{doc}`Concepts <../overview/concepts/index>`**<br>
+  Understand core concepts
+::::
+
+::::{grid-item-card} Developers & System Integrators
+
+- **{doc}`Development Setup <../developer_guide/setup>`** <br>
+  Development environment setup
+- **{doc}`API Usage <../developer_guide/api_usage/index>`**<br>
+  API integration guide  
+- **{doc}`Customization <../developer_guide/module_development/index>`**<br>
+  Customization guides
+::::
+
+::::{grid-item-card} Decision Makers
+
+- **{doc}`Overview <../overview/index>`**<br>
+  Product overview and capabilities
+- **{doc}`Case Studies <../overview/case_studies/index>`** <br>
+  Implementation examples
+::::
+:::::
+
+## Need help?
+
+- **[GitHub Discussions](https://github.com/orgs/OpenSPP/discussions)** - Ask questions and get help from the community
+- **[Report Issues](https://github.com/OpenSPP/openspp-modules/issues)** - Report bugs or request features
+- **{doc}`OpenSPP Glossary <../reference/glossary>`** - Look up terms (available in multiple languages)
 
 ```{toctree}
 ---
