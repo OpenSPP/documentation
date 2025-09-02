@@ -204,7 +204,7 @@ You should see output indicating the service is active and running.
 Type `q` to exit this state
 
 ### Restart the service
-Needed for every changes in the configuration:
+Required to apply any changes to the configuration:
 ```bash
 sudo systemctl restart openspp
 ```
