@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Farmer Registry Default Ui
+# Farmer Registry Default UI
 
 The `spp_farmer_registry_default_ui` module provides the essential user interface (UI) for interacting with the OpenSPP Farmer Registry. It translates the underlying data structures and business logic of the farmer registry into intuitive screens and forms, enabling users to efficiently manage farmer, farm, and agricultural activity information.
 

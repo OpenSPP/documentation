@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Programs
+# Programs
 
 The OpenSPP Programs module enhances the core program management capabilities of OpenSPP, providing comprehensive tools to administer both cash and in-kind social protection benefits. It seamlessly integrates with inventory management, refines program cycle controls, and streamlines entitlement workflows for effective and accountable program delivery.
 

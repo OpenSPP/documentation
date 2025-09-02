@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Base
+# Base
 
 The OpenSPP Base module (`spp_base`) is the foundational component of the OpenSPP platform. It provides the essential configurations, core functionalities, and user interface customizations necessary for managing social protection programs and farmer registries. This module establishes the common building blocks upon which other OpenSPP modules operate, ensuring data consistency and a streamlined user experience across the system.
 

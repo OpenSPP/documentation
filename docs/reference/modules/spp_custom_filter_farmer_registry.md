@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Custom Filter Farmer Registry
+# Custom Filter Farmer Registry
 
 The OpenSPP Custom Filter Farmer Registry module enhances the user interface for the Farmer Registry, significantly improving the efficiency and usability of managing farmer data within social protection programs. It customizes filtering capabilities to provide quick and relevant access to registrant information.
 

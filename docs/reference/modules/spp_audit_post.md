@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Audit Post
+# G2P Registry: Audit Post
 
 The OpenSPP Audit Post module extends the core audit logging capabilities by enabling the automatic posting of audit log messages to related parent records. This provides a centralized and comprehensive view of changes across interconnected data within social protection programs and farmer registries.
 

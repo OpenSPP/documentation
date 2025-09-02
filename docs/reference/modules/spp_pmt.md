@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Pmt
+# Proxy Means Testing
 
 The OpenSPP Pmt module calculates a Proxy Means Testing (PMT) score for groups of registrants. This score helps in identifying and prioritizing beneficiaries for social protection programs, ensuring that assistance reaches those most in need based on objective criteria.
 

@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Registry Base
+# Registry: Base
 
 The OpenSPP Registry Base module provides the foundational framework for managing all individuals and groups within social protection programs and farmer registries. It centralizes beneficiary data management, building upon core G2P registry functionalities to offer a tailored OpenSPP experience.
 

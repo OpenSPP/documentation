@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# G2P Bank
+# G2P Registry: Bank Details
 
 The **G2P Bank** module provides essential functionality for managing bank account details within the OpenSPP platform. It ensures that accurate and standardized financial information is captured and maintained for both individual and group registrants, facilitating secure and efficient payment disbursements.
 

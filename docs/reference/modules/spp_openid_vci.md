@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Openid Vci
+# OpenID VCI
 
 The `spp_openid_vci` module empowers the OpenSPP platform to issue and manage Verifiable Credentials (VCs) for program registrants. It leverages OpenID Connect for Verifiable Presentations (OpenID4VP) to provide secure, tamper-proof digital proofs of identity and program eligibility.
 

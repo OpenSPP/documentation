@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Irrigation
+# Irrigation
 
 The OpenSPP Irrigation module provides comprehensive tools for managing and visualizing irrigation infrastructure within the OpenSPP platform. It enables organizations to efficiently track, plan, and analyze irrigation systems and their impact on supported communities and agricultural initiatives.
 

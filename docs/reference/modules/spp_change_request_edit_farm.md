@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Change Request Edit Farm
+# Change Request: Edit Farm
 
 The `spp_change_request_edit_farm` module provides a specialized workflow for managing and applying changes to existing farm records within the OpenSPP farmer registry. It ensures that updates to farm details, agricultural activities, and assets are systematically reviewed and approved before being applied to the live data.
 

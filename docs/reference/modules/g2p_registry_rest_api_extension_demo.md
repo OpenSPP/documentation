@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# G2P Registry Rest Api Extension Demo
+# G2P Registry: Rest API Extension Demo
 
 This module serves as a practical demonstration of how to extend the G2P Registry's REST API. It illustrates how to add custom fields to the data models used by the API, allowing external systems to retrieve or send additional, tailored information without modifying core OpenSPP modules.
 

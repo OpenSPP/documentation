@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Area GIS
+# Area GIS
 
 The OpenSPP Area GIS module integrates geographical information system (GIS) capabilities directly into OpenSPP's area management, enabling the visualization, analysis, and improved targeting and monitoring of social protection programs and farmer registries. It transforms static administrative areas into dynamic, location-aware entities within the platform.
 

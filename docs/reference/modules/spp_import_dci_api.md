@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Import Dci Api
+# Import: DCI API
 
 The `spp_import_dci_api` module integrates OpenSPP with external Digital Civil Identity (DCI) compliant registries, enabling the secure and automated import and synchronization of individual and family registrant data. This module ensures OpenSPP programs have access to current and validated information from authoritative sources.
 

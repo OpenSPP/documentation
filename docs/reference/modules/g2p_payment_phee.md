@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# G2P Payment Phee
+# OpenG2P Program Payment (Payment Hub EE)
 
 This module integrates OpenSPP with the Payment Hub EE (PHEE), an external payment processing system. It enables OpenSPP to efficiently manage and disburse payments for social protection programs by automating the creation, preparation, and secure transmission of payment instructions to the PHEE.
 

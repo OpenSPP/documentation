@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# G2P Registry Membership
+# G2P Registry: Membership
 
 The G2P Registry Membership module defines and manages the relationships between individuals and groups within OpenSPP. It provides the framework for assigning individuals to various groups, specifying their roles, and tracking their membership over time, ensuring accurate and up-to-date group composition data.
 

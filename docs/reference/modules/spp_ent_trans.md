@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Ent Trans
+# Entitlement Transactions
 
 The OpenSPP Ent Trans module records and manages all transactions related to entitlement redemptions. It provides a transparent and auditable history for both cash and in-kind benefits delivered to beneficiaries within social protection programs.
 

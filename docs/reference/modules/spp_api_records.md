@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Api Records
+# API Records
 
 The OpenSPP Api Records module provides a robust set of RESTful API endpoints, serving as the primary interface for external systems to access and manage OpenSPP's core operational data. It enables programmatic interaction with critical information such as service points, social protection programs, product definitions, and beneficiary entitlements.
 

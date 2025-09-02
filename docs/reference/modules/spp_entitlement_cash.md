@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Entitlement Cash
+# Cash Entitlement
 
 The OpenSPP Entitlement Cash module provides the essential framework for managing cash-based benefits within social protection programs. It enables administrators to define detailed calculation rules, automate the disbursement process, and meticulously track all financial payments to beneficiaries.
 

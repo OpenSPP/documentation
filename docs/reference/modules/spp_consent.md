@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Consent
+# Consent
 
 The OpenSPP Consent module provides a comprehensive system for managing and tracking explicit consent from individuals and groups within social protection programs and farmer registries. It ensures that all necessary permissions, such as for data collection, program participation, or data sharing, are properly recorded and monitored.
 

@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Basic Cash Entitlement Spent
+# Program Entitlement Basic Cash Spent
 
 The OpenSPP Basic Cash Entitlement Spent module provides essential functionality for tracking how beneficiaries utilize the cash allocated to them within social protection programs. It records expenditures, calculates remaining balances, and supports ongoing program monitoring.
 

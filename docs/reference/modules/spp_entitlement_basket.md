@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Entitlement Basket
+# Entitlement Basket
 
 The OpenSPP Entitlement Basket module empowers program administrators to define and manage structured baskets of goods and services that beneficiaries are entitled to receive. This simplifies the often complex process of distributing in-kind benefits within social protection programs, ensuring efficient and transparent delivery.
 

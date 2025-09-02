@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Program Id
+# Program ID
 
 The `spp_program_id` module is a core component of OpenSPP, designed to generate and manage unique identifiers for every social protection program. This module ensures that each program within the platform has a distinct, system-assigned ID, crucial for accurate identification, streamlined data management, and seamless integration.
 

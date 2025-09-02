@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Registrant Tag
+# Registrant Tags
 
 The `spp_registrant_tag` module provides enhanced tagging capabilities for registrants within OpenSPP, significantly improving the organization and management of registrant data for social protection programs.
 

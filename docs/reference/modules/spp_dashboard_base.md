@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Dashboard Base
+# Dashboard: Base
 
 The OpenSPP Dashboard Base module provides the foundational framework for creating and displaying comprehensive dashboards within the OpenSPP platform. It establishes the core structure and components necessary for visualizing key program metrics and operational data, enabling users to quickly grasp the status and performance of social protection programs.
 

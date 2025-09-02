@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Openid Vci Group
+# OpenID VCI Group
 
 The OpenSPP Openid Vci Group module extends OpenSPP's Verifiable Credential (VC) issuance capabilities to manage and represent groups of registrants. It enables the platform to issue secure, verifiable digital credentials not just for individuals, but for collective entities like households, farmer cooperatives, or community groups, integrating seamlessly with existing group management features.
 

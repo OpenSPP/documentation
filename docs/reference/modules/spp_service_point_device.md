@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Service Point Device
+# Service Point Device
 
 The OpenSPP Service Point Device module provides essential capabilities for managing the physical terminal devices used across various service points within the OpenSPP platform. It enables organizations to register, track, and maintain an inventory of operational hardware crucial for program delivery.
 

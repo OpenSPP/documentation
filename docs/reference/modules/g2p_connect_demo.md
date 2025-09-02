@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# Module: g2p_connect_demo
+# G2P Connect Demo
 
 ```{warning}
 

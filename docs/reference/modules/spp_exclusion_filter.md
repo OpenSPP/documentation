@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Exclusion Filter
+# Exclusion Filter
 
 The OpenSPP Exclusion Filter module streamlines the program creation process by enabling administrators to define and apply specific criteria to exclude ineligible registrants. This ensures that only qualified individuals are considered for enrollment in social protection programs, enhancing efficiency and program integrity.
 

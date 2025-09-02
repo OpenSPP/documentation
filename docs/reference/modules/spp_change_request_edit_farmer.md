@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Change Request Edit Farmer
+# Change Request: Edit Farmer
 
 The OpenSPP Change Request Edit Farmer module provides a structured workflow for submitting, reviewing, and applying updates to existing farmer records within the OpenSPP registry. It ensures that all modifications to critical farmer data follow a formal approval process.
 

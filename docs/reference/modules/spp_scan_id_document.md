@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Scan Id Document
+# Registry: Scan ID Document
 
 The OpenSPP Scan Id Document module integrates direct ID document scanning capabilities into the OpenSPP platform. It allows users to capture physical identification documents directly into a registrant's profile, enhancing data collection efficiency and accuracy within the OpenSPP Registry.
 

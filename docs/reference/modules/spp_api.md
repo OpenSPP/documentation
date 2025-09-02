@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP API
+# API
 
 The OpenSPP API module provides a robust framework for building and managing a RESTful API (Application Programming Interface) for the OpenSPP platform. It enables external systems and applications to securely interact with OpenSPP data and functionalities, facilitating seamless integration, data exchange, and automation.
 

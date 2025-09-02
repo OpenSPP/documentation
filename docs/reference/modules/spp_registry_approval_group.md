@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Registry Approval Group
+# Registry Approval: Group
 
 The OpenSPP Registry Approval Group module extends the core registry approval processes to include group entities, ensuring that collective bodies like farmer cooperatives or community associations undergo formal validation. It provides the necessary tools to manage the approval lifecycle for groups within the OpenSPP platform.
 

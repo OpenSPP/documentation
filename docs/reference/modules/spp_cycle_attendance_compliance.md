@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Cycle Attendance Compliance
+# Cycle: Attendance Compliance
 
 The OpenSPP Cycle Attendance Compliance module integrates attendance records as a key criterion for determining beneficiary eligibility and ongoing compliance within social protection programs. It allows program managers to define, track, and enforce attendance requirements for beneficiaries participating in program cycles, ensuring accountability and program integrity.
 

@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Manual Eligibility
+# Program: Manual Eligibility
 
 This module introduces the capability to define and manage social protection programs where beneficiary eligibility is determined manually, rather than solely through automated rules. It provides essential flexibility for programs requiring direct administrative oversight in beneficiary selection and enrollment.
 

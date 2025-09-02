@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Openid Vci Individual
+# OpenID VCI Individual
 
 The `spp_openid_vci_individual` module extends OpenSPP's Verifiable Credential (VC) issuance capabilities specifically to individual registrants. It enables the secure creation and management of digital proofs of identity and attributes for individuals, leveraging OpenID Connect for Verifiable Presentations (OpenID4VP) and Decentralized Identifiers (DIDs).
 

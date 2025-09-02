@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Eligibility Sql
+# SQL Query Eligibility Manager
 
 The OpenSPP Eligibility Sql module enables program administrators to define and manage complex program eligibility criteria using custom SQL queries. This provides a highly flexible and automated mechanism for identifying and enrolling beneficiaries within OpenSPP programs.
 

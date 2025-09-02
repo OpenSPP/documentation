@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Programs Compliance Criteria
+# Programs: Compliance Criteria
 
 The 'OpenSPP Programs Compliance Criteria' module enhances OpenSPP's social protection program management by enabling administrators to define, manage, and enforce additional eligibility and compliance requirements for beneficiaries beyond initial program enrollment criteria. This ensures ongoing adherence to program rules and accurate beneficiary targeting.
 

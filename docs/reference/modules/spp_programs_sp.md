@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# OpenSPP Programs Sp
+# Programs: Service Points Integration
 
 The **OpenSPP Programs Sp** module extends OpenSPP's core program management by integrating service points directly into the entitlement and beneficiary management processes. It enables the precise association of beneficiaries and their benefits with designated service delivery locations, enhancing program efficiency and ensuring targeted benefit distribution.
 

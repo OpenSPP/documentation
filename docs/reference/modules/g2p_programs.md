@@ -2,7 +2,7 @@
 orphan: true
 ---
 
-# G2P Programs
+# OpenG2P Programs
 
 The 'g2p_programs' module is the central operational hub within OpenSPP for defining, managing, and executing social protection programs and farmer registries. It provides a comprehensive framework to administer the full lifecycle of a program, from initial setup and beneficiary enrollment to benefit disbursement and financial reconciliation.
 
