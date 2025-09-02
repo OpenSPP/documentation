@@ -47,7 +47,7 @@ This drops the openspp_prod database, creates a new one, initializes it, and sta
 
 ## Backup Before Reset
 
-Create a directory and store the backup in it:
+The following commands create a backup of both the database and the filestore:
 
 ```bash
 sudo mkdir -p /var/backups/openspp
