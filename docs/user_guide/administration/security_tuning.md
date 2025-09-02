@@ -16,13 +16,16 @@ This guide provides essential recommendations for securing your OpenSPP instance
 After initial setup and database creation, it's strongly recommended to:
 
 ```bash
-# Edit the configuration
 sudo nano /etc/openspp/odoo.conf
+```
 
-# Set list_db to False for production
+Set list_db to False for production
+```ini
 list_db = False
+```
 
-# Restart the service
+Restart the service
+```bash
 sudo systemctl restart openspp
 ```
 
@@ -41,29 +44,17 @@ sudo systemctl restart openspp
 ### 2. Firewall Configuration
 
 ```bash
-# Install UFW firewall
 sudo apt-get install -y ufw
-
-# Allow SSH (adjust port if needed)
 sudo ufw allow 22/tcp
-
-# Allow OpenSPP web interface
 sudo ufw allow 8069/tcp
-
-# Allow OpenSPP longpolling (if using real-time features)
 sudo ufw allow 8072/tcp
-
-# Enable firewall
 sudo ufw enable
 ```
 
 ### 3. SSL/TLS with Nginx (Recommended for Production)
 
 ```bash
-# Install Nginx
 sudo apt-get install -y nginx certbot python3-certbot-nginx
-
-# Create Nginx configuration
 sudo nano /etc/nginx/sites-available/openspp
 ```
 
@@ -119,12 +110,9 @@ server {
 
 Enable the site and get SSL certificate:
 ```bash
-# Enable the site
 sudo ln -s /etc/nginx/sites-available/openspp /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl reload nginx
-
-# Get SSL certificate
 sudo certbot --nginx -d your-domain.com
 ```
 
@@ -160,8 +148,6 @@ echo "Backup completed: $DATE"
 Make it executable and schedule:
 ```bash
 sudo chmod +x /usr/local/bin/openspp-backup.sh
-
-# Add to crontab (daily at 2 AM)
 echo "0 2 * * * /usr/local/bin/openspp-backup.sh" | sudo crontab -
 ```
 
