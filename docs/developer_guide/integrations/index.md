@@ -8,8 +8,7 @@ myst:
 
 # Integrations
 
-This section provides comprehensive guides for connecting OpenSPP with external systems, identity providers, and other digital public infrastructure components.
-These integrations are key to building a robust and interoperable social protection ecosystem.
+This section provides guides for connecting OpenSPP with external systems, identity providers, and other digital public infrastructure components. These integrations are key to building a robust and interoperable social protection ecosystem.
 
 In addition to the ones listed below, we also have integration with OpenCRVS and OpenFN.
 

@@ -8,8 +8,6 @@ myst:
 
 # Social Registry
 
-## What is a Social Registry?
-
 A social registry is a database or system that contains information on households and individuals within a specific population. Its purpose is to provide a centralized and up-to-date source of data that can be used for {term}`targeting`, planning, and implementing {term}`social protection` programs. Social registries are designed to enhance fairness and equity in the targeting of social protection programs by introducing systematic and transparent approaches to identify those in need. Social registries are most often used in household-based poverty-targeted social protection programs.
 
 Social registries generally support the initial identification and registration, and needs assessment phases of social protection implementation and delivery, as illustrated below.

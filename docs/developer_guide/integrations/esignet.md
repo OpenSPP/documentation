@@ -8,10 +8,7 @@ myst:
 
 # eSignet Integration
 
-## Introduction
-
-The integration of OpenSPP with eSignet aims to utilize [MOSIP eSignet](https://docs.mosip.io/1.2.0/integrations/e-signet) as the identity server for login into the OpenSPP platform.
-This provides a seamless user experience and enhances security by leveraging the OAuth protocol and allowing OpenSPP users to access the platform without the need for additional login credentials.
+The integration of OpenSPP with eSignet utilizes [MOSIP eSignet](https://docs.mosip.io/1.2.0/integrations/e-signet) as the identity server for login into the OpenSPP platform. This provides a seamless user experience and enhances security by leveraging the OAuth protocol and allowing OpenSPP users to access the platform without the need for additional login credentials.
 
 ## Prerequisites
 
@@ -19,8 +16,8 @@ To be able to start the integration, ensure the following:
 
 - The key exchange is completed as per the requirements of MOSIP.
 - Access to the eSignet account (Client ID) and Authorization URL, UserInfo URL, Token URL, and JWKS URL is received from MOSIP.
-- Need to have administrative privileges within OpenSPP to install modules.
-- The developer mode is activated in OpenSPP.
+- Administrative privileges within OpenSPP to install modules.
+- Developer mode is activated in OpenSPP.
 
 ## Objective
 

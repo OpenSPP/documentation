@@ -8,13 +8,13 @@ myst:
 
 # Farmer Registry
 
-## What is a Farmer Registry?
-
 A farmer registry is a system that contains information about farm holdings and farmholders. Its purpose is to provide a centralized and up-to-date source of data that can support planning and coordination of initiatives in the agricultural and social sectors focused on addressing rural poverty, food insecurity and climate change adaptation.
 
 The use of farmer registries and agricultural censuses is a common practice globally, and many countries have a long history of implementing systems of agricultural documentation for administrative and tax purposes. The development of comprehensive farmer registries based on systematic data collection and their integration and interoperability with social protection management information systems and other data sources is a more recent occurrence.
 
 Depending on the country’s context and requirements, a farmer registry may be used to collect data on all farmers or solely on smallholder and/or family farmers. Smallholder farmers typically engage in subsistence farming or small-scale commercial agriculture, relying on traditional or family-based methods and facing limited access to resources such as land, capital, and technology. However, the definition of a smallholder farmer varies between countries depending on what is considered to be ‘small’ in a particular context and what aspects are measured (e.g. land ownership, livestock, agricultural inputs). Farmer registries may also be extended to collect data on fisherfolk, foresters, workers in the extractive sector, landless farmers, or those working on communal lands.
+
+## Examples of Farmer Registries
 
 Well-known examples of farmer registries being used in conjunction with social protection management information systems include Brazil’s Cadastro de Agricultura Familiar (CAF), which recently replaced DAP (Declaração de Aptidão ao Pronaf - Family Farming Register). Data from CAF is crossed with the Cadastro Único social registry and is used to plan, coordinate, implement and monitor programs providing rural credit, agricultural extension services and social assistance, including Brazil’s flagship social protection program Bolsa Familia.
 

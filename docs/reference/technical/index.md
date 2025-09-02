@@ -1,7 +1,7 @@
 
-# Technical Reference
+# Technical reference
 
-This section contains technical reference materials for developers and system administrators responsible for deploying, maintaining, and extending OpenSPP. The documents herein provide in-depth information on critical operational aspects, including security configurations, performance tuning, system monitoring, and data backup procedures.
+This section contains technical reference material for developers and system administrators responsible for deploying, maintaining, and extending OpenSPP. The documents in this section provide information on critical operational aspects, including security configurations, performance tuning, system monitoring, and data backup procedures.
 
 - {doc}`backup`: This document provides a technical overview of the backup and restoration procedures for an OpenSPP instance. 
 - {doc}`monitoring`: This document showcases the ways to monitor the health and performance of your OpenSPP deployment to ensure stability and identify potential issues.
