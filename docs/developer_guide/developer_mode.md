@@ -35,7 +35,7 @@ To deactivate, change the value to `?debug=0` instead.
 ![Overview of a URL with the debug mode command added.](developer_mode/2.png "Overview of a URL with the debug mode command added.")
 
 ```{tip}
-Additional modes are available for developers: `?debug=assets` enables the [assets mode](#frontendframeworkassets_debug_mode), and `?debug=tests` enables the [tests mode](#frontendframeworktests_debug_mode).
+Additional modes are available for developers: `?debug=assets` enables the assets mode, and `?debug=tests` enables the tests mode.
 ```
 
 ## Locate the developer mode tools

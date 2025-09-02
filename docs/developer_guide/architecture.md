@@ -8,7 +8,7 @@ myst:
 
 # Architecture
 
-### Ecosystem approach
+## Ecosystem approach
 
 The OpenSPP platform can work as a standalone system or as a part of a larger ecosystem.
 It needs to be interoperable with other government systems.
@@ -22,7 +22,7 @@ So, key parameters are:
 - All public/external facing interfaces of OpenSPP must be standards-based for interoperability whenever possible.
 - 3rd party components should be integrated via well-defined interfaces and be easily installable.
 
-### Configurability
+## Configurability
 
 OpenSPP should be flexible for countries/organizations to configure the base platform according to their specific requirements.
 Some of the examples of configurability are:
@@ -32,7 +32,7 @@ Some of the examples of configurability are:
 - Be able to define the criteria used to determine the beneficiaries.
 - Be able to define how entitlement is calculated
 
-### Extensibility
+## Extensibility
 
 OpenSPP should be flexible to extend functionality on top of the basic platform.
 Some of the examples of extensibility are:
@@ -41,7 +41,7 @@ Some of the examples of extensibility are:
 - Ability to use third party solutions such as [MOSIP](https://mosip.io/) to store part of the information of registrants
 - Ability to Integrate data from other systems
 
-### Modularity
+## Modularity
 
 All components of OpenSPP should be extensible and their features exposed via interfaces such that the implementation behind the interface can be changed without affecting other modules.
 Some examples of modularity are:
