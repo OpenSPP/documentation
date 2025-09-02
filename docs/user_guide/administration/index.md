@@ -25,6 +25,17 @@ This section provides guides for a variety of administrative tasks and system ma
 
 - {doc}`hardware_integration`: This document provides an overview of how to integrate hardware devices, such as document scanners, with OpenSPP.
 
+- {doc}`database_management`: This document explains how to manage your OpenSPP database, including how to reset the database, and how to back up your data before making major changes.
+
+- {doc}`monitoring_maintenance`: This document provides basic instructions for monitoring your OpenSPP system, viewing logs, managing services, and performing updates.
+
+- {doc}`security_tuning`: This guide provides essential recommendations for securing your OpenSPP instance and tuning its performance for production environments.
+
+- {doc}`troubleshooting`: This guide provides solutions to common problems encountered while running OpenSPP.
+
+- {doc}`uninstalling`: This guide provides detailed instructions for uninstalling OpenSPP from your system.
+
+
 ```{toctree}
 :maxdepth: 2
 :caption: Contents
