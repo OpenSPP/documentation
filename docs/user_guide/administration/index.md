@@ -20,4 +20,9 @@ managing_custom_fields
 using_audit_logs
 import_areas
 hardware_integration
+database_management
+monitoring_maintenance
+security_tuning
+troubleshooting
+uninstalling
 ```
