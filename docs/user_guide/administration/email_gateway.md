@@ -1,21 +1,21 @@
 ---
 myst:
   html_meta:
-    "title": "Email Gateway Configuration"
+    "title": "Email gateway configuration"
     "description": "Configure SMTP outgoing and IMAP/POP incoming email servers in OpenSPP for automated communication and data processing"
     "keywords": "OpenSPP, email gateway, SMTP, IMAP, POP, email configuration, system administration"
 ---
 
-# Email Gateway Configuration
+# Email gateway configuration
 
 The Email Gateway in OpenSPP allows the platform to both send and receive emails, automating key communication and data entry tasks.
-- **Outgoing Emails (SMTP):** Used for sending system notifications, user invitations, password resets, and other communications from OpenSPP to users and beneficiaries.
-- **Incoming Emails (IMAP/POP):** Used to automatically create or update records in OpenSPP from a dedicated mailbox. For example, an email sent to a specific address could automatically generate a grievance ticket or a change request.
+- **Outgoing emails (SMTP):** Used for sending system notifications, user invitations, password resets, and other communications from OpenSPP to users and beneficiaries.
+- **Incoming emails (IMAP/POP):** Used to automatically create or update records in OpenSPP from a dedicated mailbox. For example, an email sent to a specific address could automatically generate a grievance ticket or a change request.
 
 This guide provides a step-by-step process for configuring both outgoing and incoming email servers in OpenSPP.
 ---
 
-## Outgoing Email Server (SMTP) Configuration
+## Outgoing email server (SMTP) Configuration
 
 Configuring an outgoing email server allows OpenSPP to send emails using your organization's own email service. This ensures better deliverability, branding, and control over your email communications.
 
@@ -37,7 +37,7 @@ After completing this section, you will be able to configure OpenSPP to reliably
 
 The process involves activating developer mode, navigating to the outgoing email server settings, creating a new configuration, and testing it to ensure it works correctly.
 
-#### Activate Developer Mode
+#### Activate developer mode
 
 To access the technical settings required for email configuration, you must first activate developer mode.
 
@@ -49,7 +49,7 @@ To access the technical settings required for email configuration, you must firs
 
 Once activated, a bug icon will appear in the top-right corner of the header, and new technical menus will become available.
 
-#### Navigate to Outgoing Email Servers
+#### Navigate to outgoing email servers
 
 With developer mode active, you can now access the menu for configuring outgoing email servers.
 
@@ -59,7 +59,7 @@ With developer mode active, you can now access the menu for configuring outgoing
 
 ![Technical menu dropdown showing the Email section with 'Outgoing Email Servers' option highlighted](email_gateway/A-step02-open-outgoing-email-servers.jpg)
 
-#### Create a New Server Configuration
+#### Create a new server configuration
 
 On the **Outgoing Email Servers** page, you will see a list of any existing servers.
 
@@ -69,7 +69,7 @@ On the **Outgoing Email Servers** page, you will see a list of any existing serv
 
 This will open a new form where you can enter your SMTP server details.
 
-#### Fill in Server Details
+#### Fill in server details
 
 Now, fill in the form with the details from your email provider.
 
@@ -83,7 +83,7 @@ Now, fill in the form with the details from your email provider.
 
 ![SMTP server configuration form showing fields for Name, Priority, Connection Encryption, Username, Password, SMTP Server, and SMTP Port](email_gateway/A-step04-fill-in-server-details.jpg)
 
-#### Test and Save the Configuration
+#### Test and save the configuration
 
 After filling in all the details, it's crucial to test the connection to ensure everything is correct.
 
@@ -97,7 +97,7 @@ After filling in all the details, it's crucial to test the connection to ensure 
 Your new email server is now configured and, if it has the lowest priority, will be used by OpenSPP to send all outgoing emails.
 ---
 
-## Incoming Email Server (IMAP/POP) Configuration
+## Incoming email server (IMAP/POP) Configuration
 
 Configuring an incoming email server allows OpenSPP to fetch emails from a dedicated mailbox and process them automatically. This is a powerful feature that can create or update records based on the content of the emails. For example, an email sent to `support@youremailserver.com` could automatically create a new Grievance ticket.
 
@@ -120,11 +120,11 @@ After completing this section, you will be able to configure OpenSPP to fetch em
 
 The process is similar to configuring an outgoing server, involving developer mode and navigating to the technical settings.
 
-#### Activate Developer Mode
+#### Activate developer mode
 
 If you have not already, activate developer mode to access the technical settings.
 
-#### Navigate to Incoming Email Servers
+#### Navigate to incoming email servers
 
 1.  Go back to the main **Settings** page.
 2.  Click on the **Technical** menu in the header.
@@ -132,7 +132,7 @@ If you have not already, activate developer mode to access the technical setting
 
 ![Technical menu dropdown showing the Email section with 'Incoming Email Servers' option highlighted](email_gateway/B-step02-open-incoming-email-servers.jpg)
 
-#### Create a New Server Configuration
+#### Create a new server configuration
 
 1.  On the **Incoming Email Servers** page, click the **New** button.
 
@@ -140,7 +140,7 @@ If you have not already, activate developer mode to access the technical setting
 
 This will open a form to enter your incoming server details.
 
-#### Fill in Server Details
+#### Fill in server details
 
 Fill in the form with the details for the mailbox you want OpenSPP to monitor.
 
@@ -156,7 +156,7 @@ Fill in the form with the details for the mailbox you want OpenSPP to monitor.
 
 ![IMAP/POP server configuration form showing fields for Name, Server Type, Server Name, Port, SSL/TLS, Username, Password, and Action settings](email_gateway/B-step04-fill-in-server-details.jpg)
 
-#### Test and Save
+#### Test and save
 
 1.  Click the **Test & Confirm** button.
 2.  OpenSPP will attempt to connect to the mailbox. If successful, you will see a confirmation.

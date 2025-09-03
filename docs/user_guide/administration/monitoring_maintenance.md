@@ -1,9 +1,9 @@
 
-# Monitoring and Maintenance
+# Monitoring and maintenance
 
 This section provides basic instructions for monitoring your OpenSPP system, viewing logs, managing services, and performing updates. Regular monitoring and maintenance help keep your system running smoothly and securely.
 
-## View Logs
+## View logs
 
 ### Real-time service logs
 
@@ -21,7 +21,7 @@ sudo tail -f /var/log/openspp/openspp.log
 sudo tail -f /var/log/postgresql/postgresql-*.log
 ```
 
-## Service Management
+## Service management
 
 ### Restart service
 ```bash
@@ -56,7 +56,7 @@ sudo apt-get upgrade openspp
 sudo systemctl start openspp
 ```
 
-## Alternative: Manual Update
+## Alternative: manual update
 
 If updating manually, run the following commands to get the latest debian package and upgrade OpenSPP:
 

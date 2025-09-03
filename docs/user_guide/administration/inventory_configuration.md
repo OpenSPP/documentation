@@ -1,18 +1,18 @@
 ---
 myst:
   html_meta:
-    "title": "Inventory Configuration"
+    "title": "Inventory configuration"
     "description": "Configure OpenSPP inventory settings including storage locations and units of measure for in-kind and basket entitlement modules"
     "keywords": "OpenSPP, inventory, configuration, storage locations, units of measure, entitlements"
 ---
 
-# Inventory Configuration
+# Inventory configuration
 
 OpenSPP's In-Kind and Basket Entitlement modules leverage Odoo's powerful Inventory application to manage the distribution of goods and services to beneficiaries.
 To ensure these modules function correctly, specific features within the Inventory settings must be activated.
 
 This guide provides a step-by-step process for enabling two critical inventory features:
-- **Storage Locations:** Allows for the management of specific locations within a warehouse (e.g., shelves, bins), which is essential for detailed stock tracking.
+- **Storage locations:** Allows for the management of specific locations within a warehouse (e.g., shelves, bins), which is essential for detailed stock tracking.
 - **Units of Measure:** Enables the use of different units for buying, selling, and storing products (e.g., kilograms, boxes, individual units), which is crucial for accurate entitlement definition.
 
 ## Prerequisites
@@ -31,25 +31,25 @@ After completing this guide, you will have enabled the necessary Inventory confi
 
 The process involves navigating to the Inventory settings and activating two key options: Storage Locations and Units of Measure.
 
-### Enabling Storage Locations
+### Enabling storage locations
 
 This feature allows you to manage a structured warehouse with specific locations.
 
-#### Navigate to Inventory Settings
+#### Navigate to inventory settings
 
 1.  Click on the menu icon in the top-left corner and select **Inventory**.
 2.  In the **Inventory** dashboard, click on the **Configuration** menu and select **Settings**.
 
 ![OpenSPP interface showing the main menu with Inventory selected and Configuration submenu with Settings option highlighted](inventory_configuration/A-step01-navigate-to-inventory-settings.jpg)
 
-#### Activate Storage Locations
+#### Activate storage locations
 
 1.  On the **Settings** page, scroll down to the **Warehouse** section.
 2.  Check the box next to **Storage Locations**.
 
 ![Inventory Settings page displaying the Warehouse section with the Storage Locations checkbox available for activation](inventory_configuration/A-step02-activate-storage-locations.jpg)
 
-#### Save the Configuration
+#### Save the configuration
 
 1.  After checking the box, a **Save** button will appear at the top of the page.
 2.  Click **Save** to apply the changes.
@@ -61,7 +61,7 @@ This feature allows you to manage a structured warehouse with specific locations
 
 This feature is essential for defining product quantities in different units.
 
-#### Navigate to Inventory Settings
+#### Navigate to inventory settings
 
 If you are not already on the settings page:
 1.  Go to the **Inventory** application.
@@ -74,7 +74,7 @@ If you are not already on the settings page:
 
 ![Inventory Settings page showing the Products section with the Units of Measure checkbox ready for activation](inventory_configuration/B-step02-activate-unit-of-measure.jpg)
 
-#### Save the Configuration
+#### Save the configuration
 
 1.  Click the **Save** button at the top of the page to apply the changes.
 

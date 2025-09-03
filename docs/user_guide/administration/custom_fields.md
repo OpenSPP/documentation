@@ -1,5 +1,5 @@
 
-# Custom Fields
+# Custom fields
 
 Custom fields are a powerful feature in OpenSPP that allow administrators to add new data fields to registrant profiles without requiring developer intervention. They can be used to capture additional information that is specific to a program's needs, such as a secondary contact number, a disability status, or any other piece of data not included in the standard OpenSPP setup.
 
@@ -32,7 +32,7 @@ First, access the Custom Fields management interface.
 
 ![Step01 configuration custom fields](custom_fields/step01_configuration_custom_fields.jpg)
 
-### Create a New Field
+### Create a new field
 
 On the **Custom Fields** page, you will see a list of existing custom fields.
 1.  Click the **New** button to start creating a new custom field.
@@ -43,7 +43,7 @@ The **Custom Fields** form view will appear.
 
 ![Step02a custom fields form view](custom_fields/step02a_custom_fields_form_view.jpg)
 
-### Configure Basic Properties
+### Configure basic properties
 
 Now, define the basic characteristics of your new custom field. For this example, we are adding a secondary phone number field for individuals.
 
@@ -56,7 +56,7 @@ Now, define the basic characteristics of your new custom field. For this example
 
 ![Step03 set type custom](custom_fields/step03_set_type_custom.jpg)
 
-### Configure Properties (Optional)
+### Configure properties (Optional)
 
 Since this is a standard custom field, you do not need to provide computation logic. However, you can configure its behavior in the **Properties** tab.
 
@@ -69,7 +69,7 @@ For our example, we will leave these options unchecked.
 
 ![Step04 specify advanced props](custom_fields/step04_specify_advanced_props.jpg)
 
-### Save and Open an Individual Record
+### Save and open an individual record
 
 Once all properties are configured, save the new field.
 
@@ -78,7 +78,7 @@ Once all properties are configured, save the new field.
 
 ![Step05 open individual list view](custom_fields/step05_open_individual_list_view.jpg)
 
-### Verify the Custom Field
+### Verify the custom field
 
 1. To verify that the field was created, open any record in the **Individuals** list view.
 

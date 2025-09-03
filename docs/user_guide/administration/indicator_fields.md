@@ -1,5 +1,5 @@
 
-# Indicator Fields
+# Indicator fields
 
 Indicator fields are a powerful feature in OpenSPP that allow for dynamic data calculation based on existing information in the registry. They can be used to create simplified data points, such as the number of children in a household or the count of members with a specific attribute. These indicators are crucial for program operations, particularly for defining eligibility criteria and targeting beneficiaries for social protection programs.
 
@@ -23,16 +23,16 @@ After completing this tutorial, you will understand how to create, configure, an
 
 The process involves navigating to the Custom Fields menu, defining the properties of the new indicator, providing the calculation logic, and verifying its presence on the group records.
 
-### Navigate to Custom Fields
+### Navigate to custom fields
 
-First, access the Custom Fields management interface.
+First, access the custom fields management interface.
 1.  Click on the menu icon in the top-left corner and select **Registry**.
 2.  In **Registry** click the **Configuration** menu.
 3.  Click on the **Custom Fields** sub-menu.
 
 ![Step01 configuration custom fields](indicator_fields/step01_configuration_custom_fields.jpg)
 
-### Create a New Field
+### Create a new field
 
 On the **Custom Fields** page, you will see a list of existing custom fields.
 1.  Click the **New** button to start creating a new indicator field.
@@ -43,7 +43,7 @@ The **Custom Fields** form view will appear.
 
 ![Step02a custom fields form view](indicator_fields/step02a_custom_fields_form_view.jpg)
 
-### Configure Basic Properties
+### Configure basic properties
 
 Now, define the basic characteristics of your new indicator field. For this example, we are counting male members in a group.
 
@@ -56,7 +56,7 @@ Now, define the basic characteristics of your new indicator field. For this exam
 
 ![Step03 set type calculated](indicator_fields/step03_set_type_calculated.jpg)
 
-### Configure Advanced Properties
+### Configure advanced properties
 
 Since this is a calculated field, you must provide the logic for its computation in the **Properties** tab.
 
@@ -78,7 +78,7 @@ self.compute_count_and_set_indicator('x_ind_grp_total_male', kinds, domain)
 
 ![Step04 specify compute field code](indicator_fields/step04_specify_compute_field_code.jpg)
 
-### Save and Open a Group
+### Save and open a group
 
 Once all properties are configured, save the new field.
 
@@ -87,7 +87,7 @@ Once all properties are configured, save the new field.
 
 ![Step05 open group list view](indicator_fields/step05_open_group_list_view.jpg)
 
-### Verify the Indicator Field
+### Verify the indicator field
 
 1. To verify, open any record in the **Groups** list view.
 

@@ -3,7 +3,7 @@
 
 This guide provides solutions to common problems encountered while running OpenSPP. It covers issues such as the service failing to start, inability to access the web interface, database connection problems, and background jobs not running. It also includes a procedure for resetting the admin password if it's forgotten.
 
-## Service Won't Start
+## Service won't start
 
 Check logs for errors:
 ```bash
@@ -15,7 +15,7 @@ Common issues:
 - **Port already in use**: Another service using port 8069
 - **Permission denied**: Check file ownership in `/var/lib/openspp/`
 
-## Cannot Access Web Interface
+## Cannot access web interface
 
 1. Check if service is running:
    ```bash
@@ -33,7 +33,7 @@ Common issues:
    curl -I http://localhost:8069
    ```
 
-## Database Connection Issues
+## Database connection issues
 
 1. Verify PostgreSQL is running:
    ```bash
@@ -50,7 +50,7 @@ Common issues:
    sudo cat /etc/postgresql/16/main/pg_hba.conf | grep -E '^(local|host)'
    ```
 
-## Queue Jobs Not Running
+## Queue jobs not running
 
 If background jobs are not being processed:
 
@@ -82,7 +82,7 @@ If background jobs are not being processed:
    - Navigate to Settings > Technical > Queue Job > Jobs
    - Check for failed or pending jobs
 
-## Reset Admin Password
+## Reset admin password
 
 If you forget the admin password for the database:
 

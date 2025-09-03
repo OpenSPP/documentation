@@ -8,7 +8,7 @@ myst:
 
 # Development setup
 
-## OpenSPP Docker Setup Using Doodba
+## OpenSPP Docker setup using Doodba
 
 Docker simplifies the installation of Odoo and its dependencies, with the added benefits offered by Doodba.
 

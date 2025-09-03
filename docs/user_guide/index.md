@@ -1,9 +1,9 @@
 
-# User Guide
+# User guide
 
 This section provides practical, task-oriented instructions for using OpenSPP's features in day-to-day operations. These guides are designed for administrators and end-users who need to accomplish specific tasks within the platform.
 
-## Registry Management
+## Registry management
 
 Guides for managing registrant data and registry operations:
 
@@ -15,7 +15,7 @@ Guides for managing registrant data and registry operations:
 - {doc}`registry_management/using_event_data`
 - {doc}`registry_management/dms`
 
-## Program Management
+## Program management
 
 Guides for creating and managing social protection programs:
 
@@ -40,7 +40,7 @@ Administrative tasks and system management:
 - {doc}`administration/email_gateway`
 - {doc}`administration/hardware_integration`
 
-## Other Features
+## Other features
 
 - {doc}`pos_usage`
 - {doc}`grievance_management`

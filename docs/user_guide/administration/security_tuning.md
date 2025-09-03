@@ -1,11 +1,11 @@
 
-# Security and Performance Tuning
+# Security and performance tuning
 
 This guide provides essential recommendations for securing your OpenSPP instance and tuning its performance for production environments. It covers database security, firewall setup, SSL/TLS configuration with Nginx, and implementing regular backups. Additionally, it offers tips on performance tuning, including adjusting worker processes, memory limits, and PostgreSQL settings to handle high-load scenarios.
 
-## Security Recommendations
+## Security recommendations
 
-### 1. Database Security Configuration
+### 1. Database security configuration
 
 After initial setup and database creation, it's strongly recommended to modify the configuration file:
 
@@ -35,7 +35,7 @@ sudo systemctl restart openspp
 - Initial setup phase
 - When multiple databases need frequent management
 
-### 2. Firewall Configuration
+### 2. Firewall configuration
 
 **Install ufw**
 ```bash
@@ -129,7 +129,7 @@ sudo nginx -t
 sudo systemctl reload nginx
 sudo certbot --nginx -d your-domain.com
 ```
-### 4. Regular Backups
+### 4. Regular backups
 
 Create a backup script:
 
@@ -166,7 +166,7 @@ sudo chmod +x /usr/local/bin/openspp-backup.sh
 echo "0 2 * * * /usr/local/bin/openspp-backup.sh" | sudo crontab -
 ```
 
-## Performance Tuning
+## Performance tuning
 
 For production environments with high load:
 

@@ -29,12 +29,12 @@ For development setup instructions, see the {doc}`Development Setup Guide <../de
 Installing an Odoo module, including those for OpenSPP, follows a standard procedure:
 
 1.  **Place Modules in Addons Path**: Ensure the `openspp-modules` directory is included in your Odoo configuration's `addons_path`.
-2.  **Update Apps List**:
+2.  **Update apps list**:
     -   Log in to your Odoo instance with administrator privileges.
     -   Activate the developer mode.
     -   Navigate to the **Apps** menu.
     -   Click on **Update Apps List** and confirm the update.
-3.  **Install the Module**:
+3.  **Install the module**:
     -   In the **Apps** menu, clear the default "Apps" filter from the search bar.
     -   Search for the desired module by its technical name or title.
     -   Click the **Activate** button on the module's card to begin the installation.
@@ -53,14 +53,14 @@ The **SP-MIS** ({doc}`spp_base </reference/modules/spp_base>`), and **Farmer Reg
 
 The Social Protection Management Information System ({doc}`SP-MIS <../overview/products/sp_mis>`) configuration provides comprehensive functionality for managing social protection programs. This setup is ideal for organizations running cash transfers, social assistance programs, or humanitarian interventions.
 
-**What's Included:**
+**What's included:**
 - Registry management for individuals and groups
 - Program cycles and beneficiary enrollment
 - Eligibility determination and targeting
 - Entitlement calculation and management
 - Payment processing integration
 
-**Installation Steps:**
+**Installation steps:**
 
 1.  Follow the General Installation Process to update your Apps list
 2.  In the Apps menu, search for {doc}`spp_base </reference/modules/spp_base>` or "OpenSPP Base"
@@ -79,7 +79,7 @@ Once installed, you will see the "Registry" application in your Odoo dashboard, 
 
 The {doc}`Social Registry <../overview/products/social_registry>` configuration provides a centralized repository for beneficiary data that can be shared across multiple social protection programs. This setup is ideal for governments and organizations coordinating multiple interventions and requiring a single source of truth for beneficiary information.
 
-**What's Included:**
+**What's included:**
 - Unified beneficiary database across programs
 - Advanced deduplication and data quality management
 - Dynamic registration and needs assessment
@@ -88,7 +88,7 @@ The {doc}`Social Registry <../overview/products/social_registry>` configuration 
 - Socioeconomic data collection and analysis
 - Data privacy and access control mechanisms
 
-**Installation Steps:**
+**Installation steps:**
 
 1.  Follow the General Installation Process to update your Apps list
 2.  In the Apps menu, search for {doc}`spp_registry_base </reference/modules/spp_registry_base>` or "OpenSPP Social Registry"
@@ -100,7 +100,7 @@ Once installed, the Social Registry becomes the central hub for managing benefic
 
 The {doc}`Farmer Registry <../overview/products/farmer_registry>` configuration enables convergence between social protection and agricultural development programs. This setup is designed for organizations supporting smallholder farmers, managing agricultural subsidies, or implementing climate-smart agriculture initiatives.
 
-**What's Included:**
+**What's included:**
 - Farmer and farm household registration
 - Land parcel mapping with GIS integration
 - Crop and livestock tracking
@@ -108,9 +108,9 @@ The {doc}`Farmer Registry <../overview/products/farmer_registry>` configuration 
 - Seasonal cycle management
 - Integration with agricultural extension services
 
-**Installation Steps:**
+**Installation steps:**
 
-1.  Follow the General Installation Process to update your Apps list
+1.  Follow the general installation process to update your Apps list
 2.  In the Apps menu, search for {doc}`spp_farmer_registry_base </reference/modules/spp_farmer_registry_base>` or "OpenSPP Farmer Registry Base"
 
 ![Searching for SPP Farmer Registry module](module_installation/05-spp_farmer1.jpg)
@@ -129,14 +129,14 @@ Additional modules automatically detect and respect your base configuration (SP-
 
 ### Common extension modules
 
-**Data Management:**
-- **Change Request** ({doc}`spp_change_request </reference/modules/spp_change_request>`) - Workflow for reviewing and approving data modifications
-- **Data Import** ({doc}`spp_registrant_import </reference/modules/spp_registrant_import>`) - Bulk data import from Excel/CSV files
-- **Manual Eligibility** ({doc}`spp_manual_eligibility </reference/modules/spp_manual_eligibility>`) - Manual beneficiary selection
+**Data management:**
+- **Change request** ({doc}`spp_change_request </reference/modules/spp_change_request>`) - Workflow for reviewing and approving data modifications
+- **Data import** ({doc}`spp_registrant_import </reference/modules/spp_registrant_import>`) - Bulk data import from Excel/CSV files
+- **Manual eligibility** ({doc}`spp_manual_eligibility </reference/modules/spp_manual_eligibility>`) - Manual beneficiary selection
 
-**Program Features:**
-- **Cash Entitlements** ({doc}`spp_entitlement_cash </reference/modules/spp_entitlement_cash>`) - Cash transfer calculations and management
-- **In-Kind Distribution** ({doc}`spp_entitlement_in_kind </reference/modules/spp_entitlement_in_kind>`) - Non-cash benefit distribution
+**Program features:**
+- **Cash rntitlements** ({doc}`spp_entitlement_cash </reference/modules/spp_entitlement_cash>`) - Cash transfer calculations and management
+- **In-kind distribution** ({doc}`spp_entitlement_in_kind </reference/modules/spp_entitlement_in_kind>`) - Non-cash benefit distribution
 - **Eligibility SQL** ({doc}`spp_eligibility_sql </reference/modules/spp_eligibility_sql>`) - SQL-based targeting criteria
 
 **Integration & APIs:**
