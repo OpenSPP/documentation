@@ -6,7 +6,7 @@ myst:
     "keywords": "OpenSPP, data protection, privacy, security, GDPR, accountability, social protection"
 ---
 
-# Data Protection
+# Data protection
 
 ## Introduction
 
@@ -14,7 +14,7 @@ The protection of Personally Identifiable Information (PII) has become a fundame
 
 Data protection is not just a legal obligation. It is essential for maintaining privacy, security, and trust when Digital Public Infrastructure is implemented. Governments that fail to implement adequate safeguards risk exposing sensitive information, leading to financial losses, reputational damage, and legal consequences. Individuals, too, must be aware of how their data is used and have control over their personal information.
 
-## Key Principles of Data Protection
+## Key principles of data protection
 
 Effective data protection relies on several core principles, including:
 
@@ -26,7 +26,7 @@ Effective data protection relies on several core principles, including:
 6. **Confidentiality and integrity** - Data security must be prioritized through encryption, access controls, and cybersecurity best practices. Unauthorized access or breaches can have serious consequences.
 7. **Accountability and compliance** - Businesses and institutions must take responsibility for ensuring data protection. Regular audits, training, and clear policies help reinforce compliance.
 
-## Implementing Strong Data Protection Measures
+## Implementing strong data protection measures
 
 With the increasing importance of digital public infrastructure, Governments/organizations must take a proactive approach to protecting personal data. As an example, the General Data Protection Regulation (GDPR) establishes a framework that enforces strict standards for data collection, processing, and storage. Failure to comply with GDPR can lead to severe financial penalties, reputational damage, and loss of consumer trust. All stakeholders including governments, individuals all have a role in ensuring data is handled responsibly. By embedding security-by-design and privacy-by-design principles governments/organizations can minimize risks and uphold the rights of individuals.
 
@@ -45,7 +45,7 @@ Key measures include:
 
 The list above is a starting point but by no means exhaustive. Every government/organization has unique needs and risks, so these measures should be adapted and expanded based on context.
 
-## Exceptions to the Right to Erasure
+## Exceptions to the right to erasure
 
 While individuals have the right to request the deletion of their personal data, certain situations require data to be retained for legal, public interest, or security reasons. These exceptions ensure that critical government functions, research, and legal obligations are not disrupted.
 

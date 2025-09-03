@@ -17,14 +17,14 @@ By digitizing and streamlining administrative tasks, an SP-MIS enhances efficien
 
 An SP-MIS orchestrates the key business processes involved in running social protection programs. While the specific functionalities can vary based on a country's needs, a typical SP-MIS includes the following operational functions:
 
-1. **Program and Beneficiary Management:** Manages the detailed rules and parameters of specific social protection programs. It handles the entire {term}`beneficiary` lifecycle, including {term}`registration`, {term}`eligibility determination`, {term}`enrollment decisions`, updates to {term}`household` information, and program exit or graduation.  
-2. **Entitlement Calculation:** Automates the calculation of benefits amounts for each beneficiary household or individual based on the specific rules of a program (e.g., payment per child, amount based on disability status).  
-3. **Payment and Financial Management:** Generates payment lists and securely transmits them to {term}`payment service provider` (PSPs), such as banks or mobile money operators. It also supports the reconciliation of payment data to track successful and failed transactions.  
+1. **Program and beneficiary management:** Manages the detailed rules and parameters of specific social protection programs. It handles the entire {term}`beneficiary` lifecycle, including {term}`registration`, {term}`eligibility determination`, {term}`enrollment decisions`, updates to {term}`household` information, and program exit or graduation.  
+2. **Entitlement calculation:** Automates the calculation of benefits amounts for each beneficiary household or individual based on the specific rules of a program (e.g., payment per child, amount based on disability status).  
+3. **Payment and financial management:** Generates payment lists and securely transmits them to {term}`payment service provider` (PSPs), such as banks or mobile money operators. It also supports the reconciliation of payment data to track successful and failed transactions.  
 4. **{term}`Case management`:** Provides tools for caseworkers to manage interactions with beneficiaries, track their status, and handle specific needs or issues that arise during their participation in a program.  
 5. **{term}`Grievance redress mechanism (GRM)`:** Includes a system for logging, tracking, and resolving {term}`complaints` or {term}`appeals` from beneficiaries. This ensures accountability and allows program administrators to identify and address systemic issues.  
 6. **Monitoring and Evaluation (M\&E):** Features robust dashboards and reporting tools that provide real-time insights into program operations. This allows staff to monitor key performance indicators, track expenditures, and generate reports for stakeholders.
 
-## SP-MIS, Integration, and Interoperability
+## SP-MIS, integration and interoperability
 
 The true power of an SP-MIS is realized through its ability to integrate with other systems within a nation's digital public infrastructure. This {term}`interoperability` creates a cohesive social protection delivery chain.
 
@@ -41,14 +41,14 @@ The data flows from the Social Registry to the SP-MIS, which then handles the op
 
 OpenSPP is a powerful, {term}`open-source software` platform that functions as a core Social Protection Management Information System (SP-MIS). It is designed for flexibility and scalability, offering a comprehensive suite of tools to manage the end-to-end delivery of social protection programs.
 
-1. **Program Design and Configuration:** OpenSPP allows administrators to easily configure and manage multiple social protection programs, each with its own unique set of rules for eligibility, entitlements, and conditions.  
-2. **End-to-End Beneficiary Management:** The platform supports the entire beneficiary lifecycle, from enrollment decisions and registration to ongoing case management and eventual program exit.
-3. **Flexible Entitlement and Payment Processing:** It features a robust engine for calculating entitlements and generating payment cycles. OpenSPP can integrate with a wide range of payment service provider to ensure timely and accurate delivery of benefits.
-4. **Integrated Grievance Redress:** OpenSPP includes a built-in module for managing grievance, ensuring that beneficiary feedback is systematically recorded, addressed, and resolved.
-5. **Advanced Interoperability:** Built on an open architecture, OpenSPP is designed for seamless integration. It can connect with external systems like social registry, national IDs, and financial service providers using standardized APIs, supporting a fully interoperable social protection ecosystem.  
-6. **Security and Data Protection:** The OpenSPP team rigorously upholds {term}`data protection` and privacy standards. The platform is designed to ensure that sensitive beneficiary data and financial transactions are protected in line with global best practices.
+1. **Program design and configuration:** OpenSPP allows administrators to easily configure and manage multiple social protection programs, each with its own unique set of rules for eligibility, entitlements, and conditions.  
+2. **End-to-end beneficiary Mmnagement:** The platform supports the entire beneficiary lifecycle, from enrollment decisions and registration to ongoing case management and eventual program exit.
+3. **Flexible entitlement and payment processing:** It features a robust engine for calculating entitlements and generating payment cycles. OpenSPP can integrate with a wide range of payment service provider to ensure timely and accurate delivery of benefits.
+4. **Integrated grievance redress:** OpenSPP includes a built-in module for managing grievance, ensuring that beneficiary feedback is systematically recorded, addressed, and resolved.
+5. **Advanced interoperability:** Built on an open architecture, OpenSPP is designed for seamless integration. It can connect with external systems like social registry, national IDs, and financial service providers using standardized APIs, supporting a fully interoperable social protection ecosystem.  
+6. **Security and data protection:** The OpenSPP team rigorously upholds {term}`data protection` and privacy standards. The platform is designed to ensure that sensitive beneficiary data and financial transactions are protected in line with global best practices.
 
-## Alternative Names for SP-MIS
+## Alternative names for SP-MIS
 
 Social Protection Management Information Systems are known by various names around the world. Understanding these alternative names can be crucial for recognizing similar systems under different terminologies:
 

@@ -8,7 +8,7 @@ myst:
 
 # Overview
 
-OpenSPP is a modular platform for delivering social protection programs. This section explains what it does, how it works, and whether it fits your needs.
+OpenSPP is a modular platform for delivering social protection programs. This section explains what it does, how it works, and guides you forward in your understanding of OpenSPP.
 
 ## Choose your product configuration
 
@@ -45,16 +45,16 @@ Agricultural-focused platform combining farm data, land management, and social p
 
 OpenSPP delivers comprehensive social protection through modular features that work together seamlessly:
 
-**Data Foundation**
+**Data foundation**
 - {doc}`Unified registry <features/unified_registry>` for consolidated beneficiary data
 - {doc}`GIS and land management <features/gis_land_management>` for location-based targeting
 
-**Program Delivery**  
+**Program delivery**  
 - {doc}`Program management <features/program_management>` across the complete lifecycle
 - {doc}`Eligibility and targeting <features/eligibility_targeting>` with flexible rules
 - {doc}`Payment and disbursement <features/payment_disbursement>` through multiple channels
 
-**System Infrastructure**
+**System infrastructure**
 - {doc}`Data integration and APIs <features/data_integration_apis>` for interoperability
 - {doc}`Change management <features/change_management>` with audit trails
 - {doc}`Grievance redress <features/grievance_redress>` for accountability

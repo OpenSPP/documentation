@@ -10,66 +10,39 @@ myst:
 
 OpenSPP's features work together to deliver end-to-end social protection programs. Each component can be configured independently while maintaining seamless integration with others.
 
-## Data Foundation
+## Data foundation
 
-### Unified Registry
-
-{doc}`Unified Registry <unified_registry>`
-Central repository for all beneficiary data, supporting both individuals and hierarchical groups.
+**{doc}`Unified Registry <unified_registry>`**: Central repository for all beneficiary data, supporting both individuals and hierarchical groups.
 Eliminates data fragmentation by providing a single source of truth that multiple programs can share, reducing duplication and ensuring consistency across interventions.
 
-### Geospatial (GIS) and Land Management
-
-{doc}`Geospatial (GIS) and Land Management <gis_land_management>`
-Location-based intelligence for precise geographic targeting and land record management.
+**{doc}`Geospatial (GIS) and land management <gis_land_management>`**: Location-based intelligence for precise geographic targeting and land record management.
 Enables spatial analysis for disaster response, agricultural programs, and service delivery optimization through interactive mapping and area-based calculations.
 
-## Program Delivery
+## Program delivery
 
-### Program Management
-
-{doc}`Program Management <program_management>`
-Complete lifecycle management from program design through beneficiary graduation.
+**{doc}`Program management <program_management>`**: Complete lifecycle management from program design through beneficiary graduation.
 Supports diverse intervention types including emergency cash transfers, social pensions, conditional programs, and mixed benefit distributions with configurable cycles and workflows.
 
-### Eligibility & Targeting
-
-{doc}`Eligibility & Targeting <eligibility_targeting>`
-Flexible rules engine for identifying and enrolling beneficiaries using multiple methodologies.
+**{doc}`Eligibility & targeting <eligibility_targeting>`**: Flexible rules engine for identifying and enrolling beneficiaries using multiple methodologies.
 Combines manual selection, geographic targeting, demographic filters, proxy means testing, and custom SQL rules to ensure programs reach their intended populations.
 
-### Payment & Disbursement
-
-{doc}`Payment & Disbursement <payment_disbursement>`
-Pluggable architecture for multi-channel benefit delivery through banks, mobile money, vouchers, and cash.
+**{doc}`Payment & disbursement <payment_disbursement>`**: Pluggable architecture for multi-channel benefit delivery through banks, mobile money, vouchers, and cash.
 Integrates with existing financial infrastructure using standards like G2P Connect while maintaining fallback options for areas with limited services.
 
-### In-Kind Benefits
-
-{doc}`In-Kind Benefits <in_kind_benefits>`
-Comprehensive management of non-cash assistance including food rations, agricultural inputs, and medical supplies.
+**{doc}`In-kind benefits <in_kind_benefits>`**: Comprehensive management of non-cash assistance including food rations, agricultural inputs, and medical supplies.
 Features integrated inventory tracking, distribution planning, voucher systems, and vendor management for accountable in-kind delivery.
 
-## System Infrastructure
+## System infrastructure
 
-### Data Integration & APIs
-
-{doc}`Data Integration & APIs <data_integration_apis>`
-RESTful APIs and integration connectors for seamless data exchange with external systems.
+**{doc}`Data integration & APIs <data_integration_apis>`**: RESTful APIs and integration connectors for seamless data exchange with external systems.
 Enables interoperability with civil registries, national ID systems, mobile data collection tools, and other government databases through standardized interfaces.
 
-### Change Management
-
-{doc}`Change Management <change_management>`
-Formal workflows and audit trails for data modifications ensuring integrity and accountability.
+**{doc}`Change management <change_management>`**: Formal workflows and audit trails for data modifications ensuring integrity and accountability.
 Tracks every change with complete before/after snapshots, approval chains, and justification documentation for regulatory compliance and fraud prevention.
 
 ## Accountability
 
-### Grievance Redress Mechanism
-
-{doc}`Grievance Redress Mechanism <grievance_redress>`
-Multi-channel feedback system for managing beneficiary complaints and appeals transparently.
+**{doc}`Grievance redress mechanism <grievance_redress>`**: Multi-channel feedback system for managing beneficiary complaints and appeals transparently.
 Provides accessible pathways for issue resolution while generating insights for program improvement through pattern analysis of grievance data.
 
 ```{toctree}
@@ -77,13 +50,13 @@ Provides accessible pathways for issue resolution while generating insights for 
 :caption: Contents
 :hidden:
 
-Unified Registry <unified_registry>
-Program Management <program_management>
-Eligibility & Targeting <eligibility_targeting>
-Payment & Disbursement <payment_disbursement>
-In-Kind Benefits <in_kind_benefits>
-Data Integration & APIs <data_integration_apis>
-Change Management <change_management>
-GIS & Land Management <gis_land_management>
-Grievance Redress <grievance_redress>
+Unified registry <unified_registry>
+Program management <program_management>
+Eligibility & targeting <eligibility_targeting>
+Payment & disbursement <payment_disbursement>
+In-Kind benefits <in_kind_benefits>
+Data integration & APIs <data_integration_apis>
+Change management <change_management>
+GIS & land management <gis_land_management>
+Grievance redress <grievance_redress>
 ```
