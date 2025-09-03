@@ -6,7 +6,7 @@ myst:
     "keywords": "OpenSPP, registrant concepts, individuals, groups, memberships, relationships, social protection"
 ---
 
-# Key Terminology
+# Key terminology
 
 Registrants are at the heart of OpenSPP.
 They are the people or groups that are being registered to be included in {term}`social protection` programs.
@@ -16,7 +16,7 @@ A {term}`registrant` can be:
 - A `group`
 - An `individual`
 
-Depending on the project's requirements, a registrant can simply contain a `name` or full biographic information, ID document numbers, pictures, bank account numbers, phone numbers and more.
+Depending on the project's requirements, a registrant can simply contain a `name` or full biographic information, ID numbers, pictures, bank account numbers, phone numbers and more.
 
 ::::{important}
 
@@ -72,8 +72,8 @@ They can have specific roles in a group.
 
 By default, the following roles exist:
 
-- Head (There can be only one per group)
-- Principal recipient (There can be only one per group)
+- Head (only one per group)
+- Principal recipient (only one per group)
 - Alternative recipient
 
 An `admin` has the right to add other roles using the configuration menu.
@@ -109,7 +109,7 @@ Registrants can have one or more ID Documents.
 
 ![Screenshot of the registrant ID documents interface showing a list of identity documents with columns for document type, ID number, and validity status](images/registrants/registrant_ids.png)
 
-The system does not enforce uniqueness of Document ID by default.
+The system does not enforce uniqueness of ID Documents by default.
 If uniqueness is required, {term}`deduplication` should be performed.
 
 ID Document types can be configured by an administrator.
@@ -117,7 +117,7 @@ ID Document types can be configured by an administrator.
 ### Event Data
 
 Event data is a way to store information about a registrant that is not part of the registrant's profile.
-It allows to store information without the need to modify the registrant's profile, providing few {term}`benefits`:
+It allows to store information without the need to modify the registrant's profile, providing following {term}`benefits`:
 
 - Store multiple version of the data
 - Manage separate data lifecycle, sharing agreements, etc.
@@ -129,6 +129,6 @@ This data can be a lot of things:
 - House visit
 - Raw import data
 - Information coming from another system through synchronization
-- Data that lose relevance over time
+- Data that loses relevance over time
 
 The data stored in `Event Data` can be used in OpenSPP as a normal field by using computed fields.

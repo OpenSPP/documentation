@@ -6,28 +6,28 @@ myst:
     "keywords": "OpenSPP, APIs, data integration, interoperability, digital infrastructure, data exchange, social protection"
 ---
 
-# Data Integration and Interoperability (APIs)
+# Data integration and interoperability (APIs)
 
 OpenSPP provides a comprehensive API framework and integration connectors that enable seamless data exchange with external systems, positioning the platform as an interoperable component within larger digital public infrastructure ecosystems.
 
-## Breaking Down System Silos
+## Breaking down system silos
 
-Modern {term}`social protection` systems don't operate in isolation—they must connect with civil registries, national ID systems, banking infrastructure, mobile data collection tools, and other government databases. Without proper integration capabilities, programs resort to manual data transfers, duplicate data entry, and disconnected processes that create inefficiencies and increase error rates. OpenSPP's API-first architecture transforms these challenges into opportunities for automation and real-time data synchronization.
+Modern {term}`social protection` systems don't operate in isolation — they must connect with civil registries, national ID systems, banking infrastructure, mobile data collection tools, and other government databases. Without proper integration capabilities, programs resort to manual data transfers, duplicate data entry, and disconnected processes that create inefficiencies and increase error rates. OpenSPP's API-first architecture transforms these challenges into opportunities for automation and real-time data synchronization.
 
 The platform's commitment to interoperability through standardized APIs and data formats ensures that investments in social protection infrastructure contribute to broader digital transformation goals. By supporting emerging standards like DCI (Data Convergence Initiative) and providing RESTful APIs with modern authentication mechanisms, OpenSPP enables governments to build integrated social protection ecosystems where data flows seamlessly between systems. This interoperability reduces administrative burden, improves data quality through automated validation, and enables real-time coordination between different programs and services. For development partners and implementing organizations, the robust API framework means that OpenSPP can adapt to existing technology investments rather than requiring wholesale system replacements.
 
-## Integration Capabilities
+## Integration capabilities
 
-* **RESTful API Architecture**: Expose core functionality through well-documented REST APIs for {term}`registrant` management, program enrollment, and {term}`benefit <benefits>` processing
-* **OAuth 2.0 Security**: Implement secure API {term}`authentication` using industry-standard OAuth 2.0 protocols with fine-grained access control
-* **ODK Central Integration**: Import data directly from ODK Central mobile data collection platform for field-based {term}`registration` and surveys
-* **External MIS Connectors**: Synchronize data with other Management Information Systems through configurable import/export mappings
-* **DCI Compliance**: Support Data Convergence Initiative standards for cross-system data exchange and interoperability
-* **Bulk Data Operations**: Handle large-scale data imports and exports with validation, error handling, and transaction management
-* **Webhook Support**: Trigger external system notifications on key events like enrollment approval or payment completion
-* **API Rate Limiting and Monitoring**: Manage API usage with configurable rate limits and comprehensive monitoring for system health
+* **RESTful API architecture**: Expose core functionality through well-documented REST APIs for {term}`registrant` management, program enrollment, and {term}`benefit <benefits>` processing
+* **OAuth 2.0 security**: Implement secure API {term}`authentication` using industry-standard OAuth 2.0 protocols with fine-grained access control
+* **ODK central integration**: Import data directly from ODK central mobile data collection platform for field-based {term}`registration` and surveys
+* **External MIS connectors**: Synchronize data with other Management Information Systems through configurable import/export mappings
+* **DCI compliance**: Support Data Convergence Initiative standards for cross-system data exchange and interoperability
+* **Bulk data operations**: Handle large-scale data imports and exports with validation, error handling, and transaction management
+* **Webhook support**: Trigger external system notifications on key events like enrollment approval or payment completion
+* **API rate limiting and monitoring**: Manage API usage with configurable rate limits and comprehensive monitoring for system health
 
-## Technical Components
+## Technical components
 
 The API and integration capabilities are delivered through specialized modules:
 

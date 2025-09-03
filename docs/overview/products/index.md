@@ -12,22 +12,13 @@ OpenSPP offers three product configurations, each designed for specific social p
 
 ## Available configurations
 
-### SP-MIS
-
-{doc}`SP-MIS <sp_mis>`: 
-A Social Protection Management Information System for running complete social programs.
+**{doc}`SP-MIS <sp_mis>`**: A Social Protection Management Information System for running complete social programs.
 It can manage the entire lifecycle from beneficiary enrollment through payment disbursement and is ideal for cash transfers, humanitarian aid, and social assistance programs.
 
-### Social Registry  
-
-{doc}`Social Registry <social_registry>`: 
-A centralized database of individuals and households that serves multiple social programs.
+**{doc}`Social Registry <social_registry>`**: A centralized database of individuals and households that serves multiple social programs.
 It can provide a single source of truth across interventions, reducing duplication and improving coordination between programs.
 
-### Farmer Registry
-
-{doc}`Farmer Registry <farmer_registry>`: 
-A specialized registry for agricultural programs that bridges farming and social protection. It enables targeted agricultural interventions, input distribution, and climate-smart agriculture support for rural communities.
+**{doc}`Farmer Registry <farmer_registry>`**: A specialized registry for agricultural programs that bridges farming and social protection. It enables targeted agricultural interventions, input distribution, and climate-smart agriculture support for rural communities.
 
 
 ```{toctree}
@@ -36,7 +27,7 @@ A specialized registry for agricultural programs that bridges farming and social
 :hidden:
 
 
-farmer_registry
-social_registry
 sp_mis
+social_registry
+farmer_registry
 ```
