@@ -1,5 +1,5 @@
 
-# Program Management
+# Program management
 
 This section offers comprehensive guides to help you create, manage, and deliver social protection programs effectively. From initial setup and beneficiary enrollment to fund allocation and cycle management, these documents provide step-by-step instructions to ensure your programs are well-defined and efficiently executed.
 

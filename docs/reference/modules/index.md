@@ -1,12 +1,12 @@
 
-# OpenSPP Modules Index
+# OpenSPP modules index
 
 ```{warning}
 
 **Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
-## SPP Modules
+## SPP modules
 
 | Module | Summary |
 | ------ | ------- |
@@ -81,7 +81,7 @@
 | [OpenSPP: Starter](spp_starter) | A guided setup wizard configures new OpenSPP instances, defining core program requirements and automatically installing relevant OpenSPP modules. It specializes system deployment based on program type selection and performs initial data cleanup for a production-ready environment. |
 | [OpenSPP User Roles](spp_user_roles) | The OpenSPP User Roles module defines and manages distinct user roles, categorizing them as global or local, to implement area-based access control. It restricts user access to specific geographical areas by leveraging the spp_area module and automates underlying system permission assignments. |
 
-## G2P Modules
+## G2P modules
 
 | Module | Summary |
 | ------ | ------- |

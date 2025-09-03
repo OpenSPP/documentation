@@ -6,7 +6,7 @@ myst:
     "keywords": "OpenSPP, data import, data export, registrant data, CSV, XLSX, system administration"
 ---
 
-# Import and Export Registrant Data
+# Import and export registrant data
 
 This guide offers a comprehensive, step-by-step overview of the process for exporting registrant data from OpenSPP.
 It details the procedures, configurable options, and considerations available to system administrators, including how to use the export functionality to prepare files for re-import into OpenSPP.
@@ -45,7 +45,7 @@ If you want to export more records than are displayed on the page, select them b
 
 ![Export users select all](import_export_registrant_data/export_users_select_all.png)
 
-### Define Export parameters
+### Define export parameters
 
 After selecting the records, click the **Action** button and select the **Export** action from the list of actions.
 
@@ -77,7 +77,7 @@ After saving, you can select your template by clicking on the dropdown arrow aga
 The specific steps and interface may vary depending on the OpenSPP version.
 Always seek assistance from the support team if you need further guidance.
 
-### Perform Import
+### Perform import
 
 #### Import to update existing registrant data
 
@@ -135,7 +135,7 @@ When the file is considered valid, click the **Import** button. This will redire
 
 ![Import export successful import](import_export_registrant_data/import_export_successful_import.png)
 
-### Error Handling
+### Error handling
 
 OpenSPP displays different types of error messages on the import page when encountering an error after clicking the **Test** button. This ensures no invalid value or file would compromise data in OpenSPP. Therefore, it is important to always **Test** the file first before importing. Here are common errors encountered during import.
 

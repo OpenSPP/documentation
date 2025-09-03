@@ -6,9 +6,9 @@ myst:
     "keywords": "OpenSPP, user access, role-based access control, permissions, user management, roles, security"
 ---
 
-# User Access
+# User access
 
-User Access Management in OpenSPP lets administrators control who can access platform features and data.
+User access management in OpenSPP lets administrators control who can access platform features and data.
 OpenSPP uses role-based access control, allowing assignment of specific permissions to users or groups.
 This ensures only authorized users can access sensitive data and perform necessary actions.
 

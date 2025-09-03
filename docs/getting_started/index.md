@@ -6,7 +6,7 @@ myst:
     "keywords": "OpenSPP, installation, setup, SP-MIS, Social Registry, Farmer Registry"
 ---
 
-# Getting Started
+# Getting started
 
 Welcome to OpenSPP! This guide will help you get your social protection platform up and running quickly.
 
@@ -15,25 +15,25 @@ Welcome to OpenSPP! This guide will help you get your social protection platform
 :::::{grid} 2
 :gutter: 3
 
-::::{grid-item-card} New Installation
+::::{grid-item-card} New installation
 Start here if you're setting up OpenSPP for the first time:
 
-1. **{doc}`Installation Guide <installation_deb>`**  
+1. **{doc}`Installation guide <installation_deb>`**  
    Install OpenSPP on Debian/Ubuntu (30 minutes)
 
-2. **{doc}`Module Installation <module_installation>`**  
+2. **{doc}`Module installation <module_installation>`**  
    Choose {doc}`SP-MIS <../overview/products/sp_mis>`, {doc}`Social Registry <../overview/products/social_registry>`, or {doc}`Farmer Registry <../overview/products/farmer_registry>`
 
-3. **Initial Setup**  
+3. **Initial setup**  
    Configure your first program and import data
 ::::
 
-::::{grid-item-card} Learn the System
+::::{grid-item-card} Learn the system
 Explore OpenSPP's capabilities:
 
 - **{doc}`Features <../overview/features/index>`** - Understand key features
 - **{doc}`Products <../overview/products/index>`** - Choose the right product configuration  
-- **{doc}`User Guide <../user_guide/index>`** - Learn day-to-day operations
+- **{doc}`User guide <../user_guide/index>`** - Learn day-to-day operations
 ::::
 :::::
 

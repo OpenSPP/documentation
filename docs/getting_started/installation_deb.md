@@ -6,7 +6,7 @@ myst:
     "keywords": "OpenSPP, installation, Ubuntu 24.04, Debian 12, PostgreSQL, APT repository, setup guide"
 ---
 
-# Installation Guide
+# Installation guide
 
 This guide walks you through installing OpenSPP on Ubuntu 24.04 or Debian 12 (Bookworm) using the official APT repository hosted on Nexus.
 
@@ -22,7 +22,7 @@ Before installing OpenSPP, ensure you have:
 - Internet connection for downloading packages
 - Access to https://builds.acn.fr (OpenSPP APT repository)
 
-## Step 1: Update System
+## Step 1: Update system
 
 First, ensure your system is up to date and install `wget` and `gnupg2`:
 
@@ -41,7 +41,7 @@ sudo apt-get install -y postgresql postgresql-client
 sudo systemctl status postgresql
 ```
 
-## Step 3: Configure OpenSPP Repository
+## Step 3: Configure OpenSPP repository
 
 Add the OpenSPP Public Key and APT repository to your system:
 
@@ -61,7 +61,7 @@ Install OpenSPP directly from the repository:
 sudo apt-get install -y openspp-17-daily
 ```
 
-### Alternative: Manual Download
+### Alternative: Manual download
 
 If you prefer to download the package manually or the repository is not accessible:
 
@@ -102,7 +102,7 @@ sudo -u postgres psql -c "ALTER USER openspp WITH PASSWORD 'your_secure_password
 
 ## Step 6: Configure OpenSPP
 
-### Basic Configuration
+### Basic configuration
 
 The main configuration file is located at `/etc/openspp/odoo.conf`. 
 
@@ -125,7 +125,7 @@ Find and update these lines (paste the generated password):
 admin_passwd = YOUR_STRONG_PASSWORD_HERE
 ```
 
-2. **Database Management Settings**:
+2. **Database management settings**:
 
 ```ini
 ; Database Management
@@ -133,7 +133,7 @@ list_db = True          ; IMPORTANT: Set to True to enable database creation via
                         ; Set to False for production (more secure)
 ```
 
-3. **Queue Job Configuration** (REQUIRED for OpenSPP):
+3. **Queue job configuration** (REQUIRED for OpenSPP):
 
 OpenSPP uses the queue_job module for asynchronous operations. The package includes default configuration, but you may need to adjust it:
 
@@ -170,7 +170,7 @@ longpolling_port = 8072 ; For real-time features
 log_level = info        ; Options: debug, info, warning, error, critical
 ```
 
-### Database Configuration
+### Database configuration
 
 By default, the package is configured to use Unix socket authentication (peer). This means the `openspp` system user can connect to PostgreSQL without a password.
 
@@ -186,7 +186,7 @@ db_host = localhost
 db_password = your_postgresql_password
 ```
 
-## Step 7: Start OpenSPP Service
+## Step 7: Start OpenSPP service
 
 ### Enable the service to start on boot
 ```bash
@@ -210,9 +210,9 @@ Required to apply any changes to the configuration:
 sudo systemctl restart openspp
 ```
 
-## Step 8: Create Your First Database
+## Step 8: Create your first database
 
-### Option A: Via Web Interface (Recommended)
+### Option A: Via web interface (recommended)
 
 **Prerequisites**: Ensure `list_db = True` is set in `/etc/openspp/odoo.conf` (see Step 6).
 
@@ -233,7 +233,7 @@ sudo systemctl restart openspp
 
 3. Click "Create Database" and wait (this may take 2-3 minutes)
 
-### Option B: Via Command Line
+### Option B: Via command line
 
 Create the database, then restart the service:
 ```bash
@@ -253,7 +253,7 @@ Once the database is created:
    - **Email**: The email you provided during database creation
    - **Password**: The password you set for the admin user
 
-## Step 10: Install OpenSPP Modules
+## Step 10: Install OpenSPP modules
 
 After logging in, you'll need to activate the OpenSPP modules:
 
@@ -270,17 +270,17 @@ After logging in, you'll need to activate the OpenSPP modules:
 ## Getting Help
 
 - **Documentation**: https://docs.openspp.org
-- **Community Forum**: https://community.openspp.org
-- **Issue Tracker**: https://github.com/openspp/openspp-modules/issues
-- **Email Support**: support@openspp.org
-- **APT Repository**: https://builds.acn.fr/repository/apt-openspp/
+- **Community forum**: https://community.openspp.org
+- **Issue tracker**: https://github.com/openspp/openspp-modules/issues
+- **Email support**: support@openspp.org
+- **APT repository**: https://builds.acn.fr/repository/apt-openspp/
 
 
-## Next Steps
+## Next steps
 
 Now that OpenSPP is installed, here are some recommended next steps:
 
-- **Learn to Use OpenSPP**: Start with the {doc}`../user_guide/index` to understand core features.
-- **Administer the System**: Refer to the {doc}`../user_guide/administration/index` for guides on security, maintenance, and troubleshooting.
-- **Customize and Develop**: Explore the {doc}`../developer_guide/index` to learn how to extend the platform. 
-- **Set Up a Pilot Program**: Follow the {doc}`../overview/poc_and_pilot` guide to launch a Proof of Concept (PoC).
+- **Learn to use OpenSPP**: Start with the {doc}`../user_guide/index` to understand core features.
+- **Administer the system**: Refer to the {doc}`../user_guide/administration/index` for guides on security, maintenance, and troubleshooting.
+- **Customize and develop**: Explore the {doc}`../developer_guide/index` to learn how to extend the platform. 
+- **Set Up a pilot program**: Follow the {doc}`../overview/poc_and_pilot` guide to launch a Proof of Concept (PoC).

@@ -1,5 +1,5 @@
 
-# Registry Management
+# Registry management
 
 This section provides essential guides for managing the core of OpenSPP: the registry. From initial data entry to ongoing maintenance, these documents cover the key processes for ensuring your data is accurate, secure, and well-organized. Whether you are setting up a new registry or managing an existing one, these guides will provide the necessary steps to maintain a robust and reliable system.
 

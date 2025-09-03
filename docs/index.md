@@ -16,47 +16,47 @@ OpenSPP empowers governments and humanitarian organizations to deliver effective
 The platform's modular architecture offers three integrated products: **SP-MIS** for comprehensive program management, **Social Registry** for beneficiary data coordination, and **Farmer Registry** for agricultural-social protection convergence. Organizations can deploy specific modules that match their needs while maintaining interoperability with existing systems.
 
 
-## Key Features
+## Key features
 
-- **🎯 [Program Management](overview/features/program_management.md)** - Design and operate multiple social protection programs with configurable cycles and eligibility rules
-- **📊 [Unified Registry](overview/features/unified_registry.md)** - Maintain consolidated beneficiary data across programs with advanced deduplication
-- **🌾 [GIS & Land Management](overview/features/gis_land_management.md)** - Integrate agricultural data, land holdings, and geospatial analysis for farmer support programs
-- **💳 [Payment & Disbursement](overview/features/payment_disbursement.md)** - Connect with multiple payment providers and track benefit distribution
-- **🎯 [Eligibility & Targeting](overview/features/eligibility_targeting.md)** - Apply sophisticated criteria for beneficiary selection and prioritization
-- **📦 [In-Kind Benefits](overview/features/in_kind_benefits.md)** - Manage distribution of goods, vouchers, and non-cash assistance
-- **💬 [Grievance Redress](overview/features/grievance_redress.md)** - Handle complaints and feedback with configurable workflows
-- **🔌 [APIs & Integration](overview/features/data_integration_apis.md)** - RESTful APIs and data exchange protocols for system interoperability
+- **🎯 [Program management](overview/features/program_management.md)** - Design and operate multiple social protection programs with configurable cycles and eligibility rules
+- **📊 [Unified registry](overview/features/unified_registry.md)** - Maintain consolidated beneficiary data across programs with advanced deduplication
+- **🌾 [GIS & land management](overview/features/gis_land_management.md)** - Integrate agricultural data, land holdings, and geospatial analysis for farmer support programs
+- **💳 [Payment & disbursement](overview/features/payment_disbursement.md)** - Connect with multiple payment providers and track benefit distribution
+- **🎯 [Eligibility & targeting](overview/features/eligibility_targeting.md)** - Apply sophisticated criteria for beneficiary selection and prioritization
+- **📦 [In-kind benefits](overview/features/in_kind_benefits.md)** - Manage distribution of goods, vouchers, and non-cash assistance
+- **💬 [Grievance redress](overview/features/grievance_redress.md)** - Handle complaints and feedback with configurable workflows
+- **🔌 [Data integration & APIs](overview/features/data_integration_apis.md)** - RESTful APIs and data exchange protocols for system interoperability
 
-## Who Uses OpenSPP
+## Who uses OpenSPP
 
 OpenSPP serves diverse organizations implementing social protection and agricultural support programs:
 
-- **Government Ministries** - Social welfare, agriculture, and disaster management agencies
-- **Humanitarian Organizations** - UN agencies and NGOs delivering emergency assistance
-- **Agricultural Development Programs** - Supporting smallholder farmers with subsidies and climate adaptation
-- **Cash Transfer Programs** - Conditional and unconditional cash assistance initiatives
-- **Food Security Programs** - Coordinating nutrition support with agricultural production
+- **Government ministries** - Social welfare, agriculture, and disaster management agencies
+- **Humanitarian organizations** - UN agencies and NGOs delivering emergency assistance
+- **Agricultural development programs** - Supporting smallholder farmers with subsidies and climate adaptation
+- **Cash transfer programs** - Conditional and unconditional cash assistance initiatives
+- **Food security programs** - Coordinating nutrition support with agricultural production
 
-## Quick Start
+## Quick start
 
 :::::{grid} 2
 :gutter: 2
 
-::::{grid-item-card} 🚀 Get Started
+::::{grid-item-card} 🚀 Get started
 :link: getting_started/index
 :link-type: doc
 
 New to OpenSPP? Start with our installation guide and quickstart tutorial.
 ::::
 
-::::{grid-item-card} 📚 User Guide  
+::::{grid-item-card} 📚 User guide  
 :link: user_guide/index
 :link-type: doc
 
 Learn how to use OpenSPP for registry and program management.
 ::::
 
-::::{grid-item-card} 🔧 Developer Guide
+::::{grid-item-card} 🔧 Developer guide
 :link: developer_guide/index
 :link-type: doc
 
@@ -114,12 +114,12 @@ Our guiding principles are informed by the Digital Public Goods Standard and the
 - **Interoperability**: The platform is designed to support system interoperability - critical for the creation of cohesive and efficient digital ecosystems.
 - **Inclusivity**: Our products can be customized to suit linguistic and cultural requirements, accessibility, digital literacy, and deployment in remote and less-developed contexts.
 
-## Common Tasks
+## Common tasks
 
 - **[Install OpenSPP](getting_started/installation_deb.md)** - Set up your development or production environment
-- **[Create a Program](user_guide/program_management/create_program.md)** - Design and launch social protection programs  
-- **[Manage Registrants](user_guide/registry_management/index.md)** - Add and manage beneficiary data
-- **[Configure Integrations](developer_guide/integrations/index.md)** - Connect with external systems
+- **[Create a program](user_guide/program_management/create_program.md)** - Design and launch social protection programs  
+- **[Manage registrants](user_guide/registry_management/index.md)** - Add and manage beneficiary data
+- **[Configure integrations](developer_guide/integrations/index.md)** - Connect with external systems
 
 ## Digital Public Good & Open Source Foundation
 
