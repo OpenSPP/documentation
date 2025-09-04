@@ -1,0 +1,171 @@
+name: Cleanup old preview deployments
+
+on:
+  schedule:
+    # Run weekly on Sunday at 00:00 UTC
+    - cron: '0 0 * * 0'
+  workflow_dispatch:  # Allow manual trigger
+    inputs:
+      keep_days:
+        description: 'Keep previews newer than this many days'
+        required: false
+        default: '30'
+      keep_count:
+        description: 'Keep at least this many newest previews'
+        required: false
+        default: '10'
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'  # Only run from main branch
+    
+    permissions:
+      contents: write
+      pages: write
+      
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          
+      - name: Cleanup old preview deployments
+        run: |
+          set -e
+          
+          # Get parameters
+          KEEP_DAYS="${{ github.event.inputs.keep_days || '30' }}"
+          KEEP_COUNT="${{ github.event.inputs.keep_count || '10' }}"
+          
+          echo "Cleaning up preview deployments older than ${KEEP_DAYS} days"
+          echo "Keeping at least ${KEEP_COUNT} newest previews"
+          
+          # Check if previews directory exists
+          if [ ! -d "previews" ]; then
+            echo "No previews directory found, nothing to clean"
+            exit 0
+          fi
+          
+          cd previews
+          
+          # Get list of all preview directories with their modification times
+          # Create a list of directories with their timestamps
+          for dir in */; do
+            if [ -d "$dir" ]; then
+              # Get the last modified timestamp of the directory
+              timestamp=$(stat -c %Y "$dir" 2>/dev/null || stat -f %m "$dir" 2>/dev/null || echo 0)
+              echo "$timestamp $dir"
+            fi
+          done | sort -rn > /tmp/preview_list.txt
+          
+          # Count total previews
+          TOTAL_COUNT=$(wc -l < /tmp/preview_list.txt)
+          echo "Found ${TOTAL_COUNT} preview deployments"
+          
+          if [ "$TOTAL_COUNT" -le "$KEEP_COUNT" ]; then
+            echo "Total count ($TOTAL_COUNT) is less than or equal to keep count ($KEEP_COUNT)"
+            echo "No cleanup needed"
+            exit 0
+          fi
+          
+          # Calculate cutoff timestamp (days ago)
+          CUTOFF_TIMESTAMP=$(date -d "${KEEP_DAYS} days ago" +%s 2>/dev/null || \
+                            date -v-${KEEP_DAYS}d +%s 2>/dev/null || \
+                            echo 0)
+          
+          # Track what will be removed
+          REMOVED_COUNT=0
+          REMOVED_LIST=""
+          
+          # Process each preview
+          LINE_NUM=0
+          while IFS=' ' read -r timestamp dir; do
+            LINE_NUM=$((LINE_NUM + 1))
+            
+            # Skip if we need to keep minimum count
+            if [ "$LINE_NUM" -le "$KEEP_COUNT" ]; then
+              echo "Keeping $dir (within top $KEEP_COUNT)"
+              continue
+            fi
+            
+            # Skip if newer than cutoff date
+            if [ "$timestamp" -gt "$CUTOFF_TIMESTAMP" ]; then
+              echo "Keeping $dir (newer than $KEEP_DAYS days)"
+              continue
+            fi
+            
+            # Remove this preview
+            echo "Removing $dir (older than $KEEP_DAYS days)"
+            rm -rf "$dir"
+            REMOVED_COUNT=$((REMOVED_COUNT + 1))
+            REMOVED_LIST="${REMOVED_LIST}\n  - $dir"
+            
+          done < /tmp/preview_list.txt
+          
+          cd ..
+          
+          # Update version switcher to remove deleted previews
+          if [ "$REMOVED_COUNT" -gt 0 ] && [ -f "_static/switcher.json" ]; then
+            echo "Updating version switcher..."
+            # Create a backup
+            cp _static/switcher.json _static/switcher.json.bak
+            
+            # Use Python to safely update the JSON
+            python3 -c "
+import json
+import os
+import sys
+
+with open('_static/switcher.json', 'r') as f:
+    versions = json.load(f)
+
+# Get list of removed directories from environment
+removed_dirs = '''$REMOVED_LIST'''.strip().split('\\n')
+removed_dirs = [d.strip().replace('- ', '').replace('/', '') for d in removed_dirs if d.strip()]
+
+# Filter out removed versions
+original_count = len(versions)
+versions = [v for v in versions if not any(
+    d in v.get('url', '') for d in removed_dirs if d
+)]
+removed_from_json = original_count - len(versions)
+
+with open('_static/switcher.json', 'w') as f:
+    json.dump(versions, f, indent=2)
+
+print(f'Removed {removed_from_json} entries from version switcher')
+"
+          fi
+          
+          # Commit changes if any removals were made
+          if [ "$REMOVED_COUNT" -gt 0 ]; then
+            git config user.name 'github-actions[bot]'
+            git config user.email 'github-actions[bot]@users.noreply.github.com'
+            git add -A
+            git commit -m "cleanup: Remove $REMOVED_COUNT old preview deployment(s)
+            
+Removed the following preview deployments:${REMOVED_LIST}
+
+Cleanup policy:
+- Keep previews newer than ${KEEP_DAYS} days
+- Keep at least ${KEEP_COUNT} newest previews
+- Total previews before cleanup: ${TOTAL_COUNT}"
+            
+            git push
+            
+            echo "✅ Cleanup complete: Removed $REMOVED_COUNT old preview deployment(s)"
+          else
+            echo "✅ No preview deployments needed cleanup"
+          fi
+          
+      - name: Report cleanup summary
+        if: always()
+        run: |
+          echo "### Cleanup Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f "/tmp/preview_list.txt" ]; then
+            echo "- Total previews found: $(wc -l < /tmp/preview_list.txt)" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "- Keep policy: ${KEEP_DAYS:-30} days, minimum ${KEEP_COUNT:-10} previews" >> $GITHUB_STEP_SUMMARY
+          echo "- Cleanup completed successfully" >> $GITHUB_STEP_SUMMARY

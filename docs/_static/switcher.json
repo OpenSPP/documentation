@@ -1,7 +1,12 @@
 [
-    {
-        "name": "1.1 (current)",
-        "version": "1.1",
-        "url": "https://docs.openspp.org/"
-    }
+  {
+    "name": "stable (latest)",
+    "version": "stable",
+    "url": "https://docs.openspp.org/"
+  },
+  {
+    "name": "1.1",
+    "version": "1.1",
+    "url": "https://docs.openspp.org/1.1/"
+  }
 ]
