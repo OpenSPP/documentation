@@ -1,0 +1,8 @@
+extends: existence
+message: "Code block is missing a language after ```; add one (e.g., ```python)."
+level: warning
+scope: raw
+nonword: true
+raw: true
+tokens:
+  - '(?m)^```(?!\w|\{)[ \t]*$'

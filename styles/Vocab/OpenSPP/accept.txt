@@ -1,15 +1,420 @@
-APIs
-buildout
-configurability
-Customisable
-fraud
-Kanban
-Geotargeting
-geotargeting
-npm
-Sourcebook
-Subnational
-Odoo
+# OpenSPP Custom Vocabulary
+# This file contains technical terms and proper nouns that are valid
+# in the OpenSPP documentation context but may be flagged by Vale
+
+# ========================================
+# OpenSPP-specific terms
+# ========================================
 OpenSPP
+SPMIS
+SP-MIS
+spp_base
+spp_[a-z_]+  # Pattern for module names
+
+# ========================================
+# Technical terms and acronyms
+# ========================================
+API
+APIs
+REST
+RESTful
+JSON
+JSONRPC
+JSON-RPC
+XML
+CRUD
+SQL
+CSV
 URL
-xlsx
+URLs
+URI
+URIs
+HTTP
+HTTPS
+OAuth
+OAuth2
+JWT
+OIDC
+OpenID
+SSL
+TLS
+SSH
+CLI
+GUI
+UI
+UX
+DCI
+GIS
+GPS
+KML
+
+# ========================================
+# Software and tools
+# ========================================
+Odoo
+Keycloak
+eSignet
+Nginx
+PostgreSQL
+Redis
+Celery
+Docker
+Kubernetes
+kubectl
+Helm
+Grafana
+Zabbix
+Prometheus
+GitHub
+GitLab
+Bitbucket
+pytest
+unittest
+virtualenv
+pyenv
+npm
+yarn
+pnpm
+webpack
+Doodba
+Wayback
+
+# ========================================
+# Programming and development
+# ========================================
+backend
+frontend
+middleware
+microservice
+microservices
+namespace
+webhook
+webhooks
+endpoint
+endpoints
+API's
+OAuth2
+boolean
+nullable
+serializable
+deserialize
+validator
+validators
+args
+kwargs
+config
+configs
+param
+params
+env
+repo
+repos
+stdin
+stdout
+stderr
+chmod
+sudo
+wget
+curl
+localhost
+hostname
+refactor
+refactoring
+codebase
+codebases
+monorepo
+multirepo
+
+# ========================================
+# Database and data terms
+# ========================================
+PostgreSQL
+MySQL
+MariaDB
+MongoDB
+Redis
+NoSQL
+ORM
+CRUD
+upsert
+denormalize
+denormalization
+anonymization
+deduplication
+filestore
+datastore
+dataset
+datasets
+recordset
+recordsets
+
+# ========================================
+# Document and formatting
+# ========================================
+Markdown
+MyST
+reStructuredText
+RST
+YAML
+TOML
+INI
+frontmatter
+metadata
+lexer
+lexers
+stylesheet
+stylesheets
+Graphviz
+Pygments
+Sphinx
+MkDocs
+
+# ========================================
+# OpenSPP modules and features
+# ========================================
+spp_base
+spp_area
+spp_audit
+spp_change_request
+spp_consent
+spp_dms
+spp_eligibility
+spp_entitlement
+spp_event
+spp_exclusion
+spp_farmer_registry
+spp_grm
+spp_idpass
+spp_idqueue
+spp_import
+spp_manual
+spp_oauth
+spp_openid
+spp_pmt
+spp_pos
+spp_programs
+spp_qr_scanner
+spp_registry
+spp_service_points
+spp_starter
+spp_user_roles
+Dms
+inkind
+queue_job
+
+# ========================================
+# Geolocation and mapping
+# ========================================
+geospatial
+Geospatial
+geotargeting
+Geotargeting
+geocode
+geocoding
+geofence
+geofencing
+lat
+lng
+latitude
+longitude
+XPath
+KML
+GeoJSON
+shapefile
+shapefiles
+
+# ========================================
+# Authentication and security
+# ========================================
+auth
+Auth
+authn
+authz
+SSO
+2FA
+MFA
+client_id
+client_secret
+grant_type
+openid
+keycloak
+Keycloak
+eSignet
+SAML
+LDAP
+ActiveDirectory
+
+# ========================================
+# Operations and deployment
+# ========================================
+DevOps
+CI/CD
+failover
+rollback
+hotfix
+bugfix
+uninstallation
+Uninstallation
+reinstallation
+preconfigured
+Preconfigured
+lifecycle
+lifecycles
+cron
+cronjob
+systemd
+
+# ========================================
+# Social protection domain terms
+# ========================================
+beneficiary
+beneficiaries
+registrant
+registrants
+enrollment
+enrollments
+entitlement
+entitlements
+disbursement
+disbursements
+Cadastro
+Bolsa
+Familia
+grievance
+grievances
+targeting
+eligibility
+vulnerable
+vulnerability
+household
+households
+
+# ========================================
+# Acceptable Microsoft.Vocab terms
+# ========================================
+# These are flagged by Microsoft style but are
+# appropriate for technical documentation
+ensure
+ensures
+ensuring
+allows
+allow
+allowing
+sample
+samples
+accessible
+against
+actionable
+alert
+alerts
+above
+utilize
+utilizes
+utilizing
+enable
+enables
+enabling
+leverage
+leverages
+leveraging
+
+# ========================================
+# Other technical terms
+# ========================================
+configurability
+scalability
+extensibility
+interoperability
+customizable
+parameterized
+idempotent
+stateless
+stateful
+async
+synchronous
+asynchronous
+mutex
+semaphore
+payload
+payloads
+timestamp
+timestamps
+timezone
+timezones
+UTF-8
+UTF8
+ASCII
+Base64
+URL-encoded
+multipart
+multitenancy
+multitenant
+
+# ========================================
+# Units and measurements
+# ========================================
+KB
+MB
+GB
+TB
+ms
+milliseconds
+CPU
+RAM
+IOPS
+
+# ========================================
+# Version control
+# ========================================
+Git
+GitHub
+GitLab
+Bitbucket
+SVN
+Mercurial
+submodule
+submodule's
+submodules
+rebasing
+cherry-pick
+stash
+
+# ========================================
+# Common abbreviations
+# ========================================
+e.g.
+i.e.
+etc.
+vs.
+vs
+app
+apps
+admin
+admins
+dev
+devs
+ops
+config
+configs
+spec
+specs
+doc
+docs
+repo
+repos
+env
+envs
+var
+vars
+param
+params
+arg
+args
+lib
+libs
+pkg
+pkgs
+src
+dest
+tmp
+temp

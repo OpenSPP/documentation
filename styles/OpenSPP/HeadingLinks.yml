@@ -1,0 +1,8 @@
+extends: existence
+message: "Headings must not contain links or roles; move them to the body text."
+level: error
+scope: raw
+nonword: true
+raw: true
+tokens:
+  - '(?m)^#{1,6} .*(\[.*\]\(.*\)|:term:|\{doc\}`.*?`)'

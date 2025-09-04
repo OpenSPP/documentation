@@ -1,0 +1,8 @@
+extends: existence
+message: "Image has empty alt text. Add descriptive alt text for accessibility."
+level: error
+scope: raw
+nonword: true
+raw: true
+tokens:
+  - '!\\[\\s*\\]\\([^)]*\\)'

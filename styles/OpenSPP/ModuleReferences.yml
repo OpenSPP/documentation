@@ -1,0 +1,8 @@
+extends: substitution
+message: "Module '%s' should use {doc} link format"
+level: warning
+scope: raw
+nonword: true
+ignorecase: false
+swap:
+  '(^|[^\{])`?(spp_[a-z0-9_]+|g2p_[a-z0-9_]+)`?(?!\s*</reference/modules/)': '$1{doc}`$2 </reference/modules/$2>`'
