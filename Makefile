@@ -168,6 +168,21 @@ vale: deps  ## Run Vale style, grammar, and spell checks
 	@echo
 	@echo "Vale is finished; look for any errors in the above output."
 
+.PHONY: vale-json
+vale-json: deps  ## Run Vale and output results as JSON
+	vale sync
+	vale --output=JSON $(VALEFILES) > vale_errors.json
+	@echo
+	@echo "Vale JSON output saved to vale_errors.json"
+
+.PHONY: vale-json-no-modules
+vale-json-no-modules: deps  ## Run Vale excluding module docs and output as JSON
+	vale sync
+	$(eval VALEFILES_NO_MODULES := $(shell find -L $(DOCS_DIR) -type f -name "*.md" -not -path "$(DOCS_DIR)/reference/modules/*" -print))
+	vale --output=JSON $(VALEFILES_NO_MODULES) > vale_errors_filtered.json
+	@echo
+	@echo "Vale JSON output (excluding modules) saved to vale_errors_filtered.json"
+ 
 .PHONY: html_meta
 html_meta: deps  ## Add meta data headers to all Markdown pages
 	python ./docs/addMetaData.py
