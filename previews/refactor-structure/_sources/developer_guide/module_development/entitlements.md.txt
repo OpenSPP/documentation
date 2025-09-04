@@ -9,7 +9,7 @@ myst:
 # Program entitlements
 
 In OpenSPP, program benefits are defined and calculated through a flexible system called **Entitlement Managers**.
-An Entitlement Manager is a self-contained component that defines the logic for how much a :term:`beneficiary` is entitled to receive in a given program cycle.
+An Entitlement Manager is a self-contained component that defines the logic for how much a {term}`beneficiary` is entitled to receive in a given program cycle.
 This allows for creating reusable and complex benefit calculation rules that can be easily attached to any program.
 
 This guide will walk you through creating a custom Entitlement Manager module from scratch.

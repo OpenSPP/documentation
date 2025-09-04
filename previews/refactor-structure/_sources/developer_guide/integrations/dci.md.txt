@@ -9,15 +9,15 @@ myst:
 # Digital Convergence Initiative
 
 In the rapidly evolving landscape of digital public infrastructure (DPI), the principle of interoperability stands as an important foundation for building efficient, inclusive, and sustainable systems in a country.
-This article delves into how OpenSPP implemented APIs outlined in the [DCI Interface Standards v1.0](https://standards.spdci.org/standards/standards-for-interoperability-interfaces/structure-and-versioning-of-the-standards) under Registry to enable interoperability with other systems such as :term:`CRVS`.
+This article delves into how OpenSPP implemented APIs outlined in the [DCI Interface Standards v1.0](https://standards.spdci.org/standards/standards-for-interoperability-interfaces/structure-and-versioning-of-the-standards) under Registry to enable interoperability with other systems such as {term}`CRVS`.
 
 The implementation can be categorized into two sections where OpenSPP operates as the client and OpenSPP operates as the server.
 Note that currently OpenSPP has only completed the sync implementation.
 
 ## Server implementation
 
-This section focuses on utilizing OpenSPP as the source of truth for :term:`beneficiary` information where OpenSPP acts as the server.
-Such integration allows OpenSPP to seamlessly interact with other critical systems by providing data, thereby enhancing data exchange and operational :term:`efficiency`.
+This section focuses on utilizing OpenSPP as the source of truth for {term}`beneficiary` information where OpenSPP acts as the server.
+Such integration allows OpenSPP to seamlessly interact with other critical systems by providing data, thereby enhancing data exchange and operational {term}`efficiency`.
 The following steps elaborate how the module can be configured.
 
 ### Deployment and installation
@@ -64,7 +64,7 @@ The following steps elaborate how the module can be configured.
 
 This section focuses on utilizing another registry as the source for truth to get beneficiary information that can then be utilized in OpenSPP.
 
-This section focuses on utilizing another registry as the source for truth to get :term:`beneficiary` information.
+This section focuses on utilizing another registry as the source for truth to get {term}`beneficiary` information.
 The following steps elaborate how the module can be configured to fetch data where OpenSPP acts as the client.
 
 ### 2.1 Deployment and Installation
