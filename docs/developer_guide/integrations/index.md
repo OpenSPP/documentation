@@ -18,7 +18,7 @@ Here, you will find detailed instructions and best practices for:
 
 - {doc}`esignet`: Discover how to integrate eSignet as an identity provider, allowing users to authenticate into OpenSPP using their MOSIP-based digital identity.
 
-- {doc}`oidc`: Follow our guide to configure Keycloak as an :term:`OIDC` provider for OpenSPP, enabling single sign-on (SSO) for a secure and streamlined user authentication experience.
+- {doc}`oidc`: Follow our guide to configure Keycloak as an {term}`OIDC` provider for OpenSPP, enabling single sign-on (SSO) for a secure and streamlined user authentication experience.
 
 ```{toctree}
 :maxdepth: 2

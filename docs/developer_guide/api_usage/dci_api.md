@@ -9,7 +9,7 @@ myst:
 # DCI API
 
 OpenSPP provides a RESTful API that adheres to the Digital Convergence Initiative (DCI) specification.
-This API enables authorized external systems to securely search and synchronize with OpenSPP's registry data, promoting interoperability with other digital public infrastructure components like a Civil Registration and Vital Statistics (:term:`CRVS`) system.
+This API enables authorized external systems to securely search and synchronize with OpenSPP's registry data, promoting interoperability with other digital public infrastructure components like a Civil Registration and Vital Statistics ({term}`CRVS`) system.
 
 ## Prerequisites
 

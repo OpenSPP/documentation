@@ -1,10 +1,5 @@
 
-# OpenSPP modules index
-
-```{warning}
-
-**Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
-```
+# OpenSPP modules
 
 ## SPP modules
 

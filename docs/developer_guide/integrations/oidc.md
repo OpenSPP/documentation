@@ -61,7 +61,7 @@ To align with corporate branding, you can customize the login page by adding a c
 
 ### Existing users
 
-For users that already existed before the :term:`OIDC`-integration was configured, there is a need for them to go through the reset password process.
+For users that already existed before the {term}`OIDC`-integration was configured, there is a need for them to go through the reset password process.
 This is because the password is not stored in Odoo, but in Keycloak.
 Depending on the configuration, the user may have to perform 2FA setup.
 
