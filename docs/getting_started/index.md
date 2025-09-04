@@ -59,11 +59,7 @@ OpenSPP offers three primary configurations based on your needs:
   - • Farm mapping<br>• Crop tracking<br>• Input distribution<br>• Seasonal cycles
 ```
 
-:::{important}
-These configurations are mutually exclusive - you must choose one during installation. They cannot be combined in a single database.
-:::
-
-## Installation steps
+## Steps
 
 ### 1. System installation
 **Time required:** 30-45 minutes

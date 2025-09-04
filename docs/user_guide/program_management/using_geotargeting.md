@@ -14,6 +14,12 @@ To create an Area for Geotargeting in OpenSPP, you need to:
 
 Enable users to configure and apply geotargeting features in OpenSPP for social protection program enrollment. Users will learn to set up data fields and parameters, perform geotargeting analysis, and generate reports to support accurate beneficiary targeting and program effectiveness.
 
+## Advanced GIS capabilities
+
+In addition to the area-based geotargeting described in this guide, OpenSPP includes the {doc}`spp_base_gis </reference/modules/spp_base_gis>` module which provides advanced Geographical Information System (GIS) capabilities.
+This module enables visualization of data on interactive maps, spatial querying (such as finding beneficiaries within a certain radius), and management of various geospatial data types.
+Full documentation for using these advanced GIS features in program targeting will be available soon.
+
 ## Process
 Define an area by assigning it a name and specifying its hierarchical level—either as a parent-level or a sub-level. Once a parent area is created, you can add sub-areas within it, and continue nesting as needed. This flexible structure accommodates the unique area segmentation of each country.
 

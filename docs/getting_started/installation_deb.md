@@ -18,7 +18,7 @@ Before installing OpenSPP, ensure you have:
 - 64-bit Intel or AMD CPU (amd64)
 - Minimum 4GB RAM (8GB recommended for production)
 - Minimum 10GB disk space
-- Root or sudo access
+- Root access
 - Internet connection for downloading packages
 - Access to https://builds.acn.fr (OpenSPP APT repository)
 

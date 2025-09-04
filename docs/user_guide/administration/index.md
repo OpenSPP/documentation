@@ -35,17 +35,17 @@ This section provides guides for a variety of administrative tasks and system ma
 :caption: Contents
 :hidden:
 
-user_access
-custom_fields
-indicator_fields
-import_areas
-service_points
-inventory_configuration
-email_gateway
-database_management
-security_tuning
-monitoring_maintenance
-uninstalling
-hardware_integration
-troubleshooting
+User access <user_access>
+Custom fields <custom_fields>
+Indicator fields <indicator_fields>
+Import areas <import_areas>
+Service points <service_points>
+Inventory setup <inventory_configuration>
+Email gateway <email_gateway>
+Database management <database_management>
+Security & tuning <security_tuning>
+Monitoring <monitoring_maintenance>
+Uninstalling <uninstalling>
+Hardware setup <hardware_integration>
+Troubleshooting <troubleshooting>
 ```

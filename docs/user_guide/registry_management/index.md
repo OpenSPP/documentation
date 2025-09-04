@@ -22,11 +22,11 @@ This section provides essential guides for managing the core of OpenSPP: the reg
 :caption: Contents
 :hidden:
 
-register_individual
-import_export_registrant_data
-setting_up_farmer_registry
-identity_management
-using_change_requests
-using_event_data
-dms
+Register individuals <register_individual>
+Import/Export data <import_export_registrant_data>
+Farmer Registry setup <setting_up_farmer_registry>
+Identity management <identity_management>
+Change requests <using_change_requests>
+Event data <using_event_data>
+Document management <dms>
 ```

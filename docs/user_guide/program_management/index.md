@@ -20,12 +20,12 @@ This section offers comprehensive guides to help you create, manage, and deliver
 :caption: Contents
 :hidden:
 
-create_program
-enrol_beneficiaries
-create_cycle
-configure_entitlements
-configure_inkind_entitlements
-allocate_funds
-using_geotargeting
+Create programs <create_program>
+Enrol beneficiaries <enrol_beneficiaries>
+Create cycles <create_cycle>
+Cash entitlements <configure_entitlements>
+In-kind entitlements <configure_inkind_entitlements>
+Allocate funds <allocate_funds>
+Geotargeting <using_geotargeting>
 
 ```
