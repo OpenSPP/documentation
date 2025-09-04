@@ -11,6 +11,7 @@ import os
 import re
 import sys
 import logging
+import json
 
 from pathlib import Path
 _logger = logging.getLogger(__name__)
@@ -136,6 +137,17 @@ year = str(now.year)
 version = "1.1"
 # The full version, including alpha/beta/rc tags.
 release = "1.1"
+
+# -- Multi-version configuration ----------------------------------------------
+# Support environment-driven configuration for multi-version builds
+DOCS_VERSION = os.getenv("DOCS_VERSION", "stable")
+DOCS_BASEURL = os.getenv("DOCS_BASEURL", "https://docs.openspp.org/")
+IS_PREVIEW = os.getenv("IS_PREVIEW", "0") == "1"
+
+# Update version display based on environment
+if DOCS_VERSION != "stable":
+    version = DOCS_VERSION
+    release = DOCS_VERSION
 
 # -- General configuration ----------------------------------------------------
 
@@ -372,11 +384,15 @@ exclude_patterns = [
     "**/README.rst",
 ]
 
-html_js_files = ["patch_scrollToActive.js", "search_shortcut.js"]
+html_js_files = ["patch_scrollToActive.js", "search_shortcut.js", "version_switcher.js"]
 
-html_extra_path = [
-    "robots.txt",
-]
+# Only include robots.txt for stable builds
+if not IS_PREVIEW:
+    html_extra_path = [
+        "_static/robots.txt",
+    ]
+else:
+    html_extra_path = []
 
 html_static_path = [
     "_static",  # Last path wins. So this one will override the default theme's static files.
@@ -507,6 +523,21 @@ html_theme_options = {
     """,
 }
 
+# Version switcher configuration (for future theme versions)
+# Note: sphinx-book-theme 0.3.3 doesn't have built-in version switcher support
+# Using custom JavaScript implementation in version_switcher.js instead
+html_theme_options["switcher"] = {
+    "json_url": "https://docs.openspp.org/_static/switcher.json", 
+    "version_match": DOCS_VERSION,
+}
+
+# Add announcement banner for preview builds
+if IS_PREVIEW:
+    html_theme_options["announcement"] = f"""
+    <p><strong>⚠️ Preview Documentation</strong>: You are viewing a preview build from branch <code>{DOCS_VERSION}</code>. 
+    For the stable documentation, visit <a href="https://docs.openspp.org/">docs.openspp.org</a></p>
+    """
+
 googleanalytics_id = 'G-RS4T4ZPG52'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
@@ -517,7 +548,7 @@ html_title = "%(project)s v%(release)s" % {"project": project, "release": releas
 html_use_index = True
 
 # Used by sphinx_sitemap to generate a sitemap
-html_baseurl = "https://docs.openspp.org/"
+html_baseurl = DOCS_BASEURL
 sitemap_url_scheme = "{link}"
 
 # -- Options for HTML help output -------------------------------------------------
@@ -554,6 +585,7 @@ html_context = {
     "github_repo": "documentation",  # Repo name
     "github_version": "main",  # Version
     "conf_py_path": "/docs/",  # Path in the checkout to the docs root
+    "is_preview": IS_PREVIEW,  # Flag for preview builds to add noindex meta tag
 }
 
 # An extension that allows replacements for code blocks that
