@@ -20,9 +20,14 @@ Before submitting or approving change requests, ensure the following:
   You can learn how to perform these tasks in the {doc}`../administration/user_access` document under the **Configuring Roles** section:
   - **Local Validator**: Add the group name under the Groups tab: `Change Request Module Access / Change Request Validator Local`.
   - **HQ Validator**: Add the group name under the Groups tab: `Change Request Module Access / Change Request Validator HQ`.
-- Install the {doc}`spp_change_request </reference/modules/spp_change_request>` module (Change Request Module).
-  Learn more in the **Installing Additional Modules** section of this guide: {doc}`../../getting_started/module_installation`.
+- Install the following modules
+    - {doc}`spp_change_request </reference/modules/spp_change_request>`  **Change Request** 
+    - {doc}`spp_change_request_change_info </reference/modules/spp_change_request>` **Change Information Change Request**
 
+```{note}
+Learn more about **Installing Additional Modules** in the guide:  
+{doc}`Module installation <../../getting_started/module_installation>`
+```
 
 ## Objective
 

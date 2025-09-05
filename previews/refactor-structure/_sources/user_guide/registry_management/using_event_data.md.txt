@@ -81,6 +81,9 @@ Navigate to the registry and select a record either from groups or individuals, 
 
 A modal window will appear.
 In the **Event Type** field, select an event data template; **House Visit** is suggested for this demonstration.
+
+![event data dropdown field](using_event_data/using_event_data_dropdown_field.png)
+
 Set an **Expiry Date** to determine when the record will become inactive.
 Click **Next** to continue.
 
