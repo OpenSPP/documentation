@@ -1049,6 +1049,18 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#define-export-parameters">
      Define export parameters
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#available-fields">
+       Available Fields
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fields-to-export">
+       Fields to export
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creating-export-templates">
@@ -1069,6 +1081,18 @@ title="Print to PDF"
       <a class="reference internal nav-link" href="#import-to-add-new-registrant-data">
        Import to add new registrant data
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#for-individuals">
+         For Individuals
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#for-groups">
+         For Groups
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -1154,6 +1178,18 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#define-export-parameters">
      Define export parameters
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#available-fields">
+       Available Fields
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fields-to-export">
+       Fields to export
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creating-export-templates">
@@ -1174,6 +1210,18 @@ title="Print to PDF"
       <a class="reference internal nav-link" href="#import-to-add-new-registrant-data">
        Import to add new registrant data
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#for-individuals">
+         For Individuals
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#for-groups">
+         For Groups
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -1242,39 +1290,53 @@ Learn more in this guide: <a class="reference internal" href="../administration/
 </section>
 <section id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
-<p>By the end of this tutorial, you will have a clear understanding of the purpose and procedure for exporting registrant data from OpenSPP.
-You will be equipped to extract and save registrant information in a defined format, suitable for a range of applications including data analysis, archival, platform migration, or preparing files for re-import into OpenSPP using the import functionality.</p>
+<p>By the end of this tutorial, you'll have a solid grasp of how to export registrant data from OpenSPP, along with the steps for importing data—whether you're updating existing records or adding new registrants to OpenSPP.</p>
 </section>
 <section id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
-<p>The process involves selecting existing individual or group records to export, defining export parameters, and saving the file as either <strong>CSV</strong> or <strong>XLSX</strong>.
-This exported file can be used for record-keeping or for importing registrant data back into OpenSPP.</p>
+<p>The export process begins by selecting individual or group records for export, configuring the export parameters, and saving the output as either a CSV or XLSX file. This exported file can serve both as a reference for record-keeping and as a source for re-importing data to update existing registrants in OpenSPP.</p>
+<p>This guide also covers how to import new registrant data—either by using a pre-generated template from the export process or by manually constructing a compatible file from scratch.</p>
 <section id="perform-export-registrant">
 <h3>Perform export registrant<a class="headerlink" href="#perform-export-registrant" title="Permalink to this headline">#</a></h3>
-<p>Specifying export parameters is done in the Registry section of OpenSPP, which you can access by clicking on the menu icon in the top-left corner and selecting <strong>Registry</strong>.</p>
+<p>When exporting data from Openspp, you will need to define which fields you wish to extract from OpenSPP into the xslx or csv file. Specifying these export parameters is done in the Registry section of OpenSPP, which you can access by logging in as <strong>System Admin</strong> into OpenSPP then clicking on the menu icon in the top-left corner and selecting <strong>Registry</strong>.</p>
 <p><img alt="Export users menu icon" src="../../_images/export_users_menu_icon.png" /></p>
 <p>Depending on your needs, you can export data for <strong>Groups</strong> or <strong>Individuals</strong>.
 The export procedure is identical in both cases, but the exportable fields differ.</p>
 <p>Navigate to either <strong>Groups</strong> or <strong>Individuals</strong> and select which records to export by clicking the checkboxes beside each record.
-To select all displayed records, click the checkbox beside <strong>Name</strong>.
-If you want to export more records than are displayed on the page, select them by clicking <strong>Select all</strong>.</p>
-<p><img alt="Export users select all" src="../../_images/export_users_select_all.png" /></p>
+To select all displayed records from the current page, click the checkbox beside <strong>Name</strong>.</p>
+<p><img alt="Export all registrants from current page" src="../../_images/export_users_select_all_from_page.png" /></p>
+<p>If you want to export all records from all the pages, make sure to click the checkbox beside the <strong>Name</strong> then click on <strong>Select all</strong>.</p>
+<p><img alt="Export all registrants " src="../../_images/export_users_select_all_from_registry.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>OpenSPP will display record count as <strong>10,000+</strong> if it exceeds 10,000 records, you can click it to display the actual number.</p>
+<p><img alt="show actual record count" src="../../_images/export_users_display_actual_count.png" /></p>
+</div>
 </section>
 <section id="define-export-parameters">
 <h3>Define export parameters<a class="headerlink" href="#define-export-parameters" title="Permalink to this headline">#</a></h3>
-<p>After selecting the records, click the <strong>Action</strong> button and select the <strong>Export</strong> action from the list of actions.</p>
+<p>After selecting records, click the <strong>Action</strong> button then select <strong>Export</strong> from the list of actions.</p>
+<p><img alt="Export button" src="../../_images/export_users_export_button.png" /></p>
+<p>The <strong>Export data</strong> modal should display.</p>
 <p><img alt="Export users select header" src="../../_images/export_users_select_header.png" /></p>
 <p>Two formatting options are available when exporting data: <strong>CSV</strong> and <strong>XLSX</strong>.
 Which one to select depends on how you will use the exported file.</p>
-<p>The left column displays all data fields available for export, and the right column (<strong>Fields to export</strong>) shows the fields included in the file export.
-Some fields are pre-selected by default, such as <strong>Name</strong>, <strong>Address</strong>, <strong>Phone</strong>, etc.
-Examples of fields include date of birth, registration date, program types, or demographic information.</p>
-<p>Select the fields you would like to export by clicking the <strong>+</strong> icon.
+<p>In the <strong>Export data</strong> modal, The left column displays all data fields available for export, and the right column (<strong>Fields to export</strong>) shows the fields included in the file export.</p>
+<section id="available-fields">
+<h4>Available Fields<a class="headerlink" href="#available-fields" title="Permalink to this headline">#</a></h4>
+<p>You can click search and type the field you wish to add. for instance, try to search <strong>Given Name</strong>.
+Add the fields you would like to export by clicking the <strong>+</strong> icon.
 Fields indicated with an arrow <strong>&gt;</strong> also contain subfields to narrow down the data you want to export.
 Clicking the arrow will display the subfields available for selection.
-You can remove fields in the <strong>Fields to export</strong> column by clicking the trash icon.
 Depending on your requirements, you can add any fields available for export in the left column.</p>
+</section>
+<section id="fields-to-export">
+<h4>Fields to export<a class="headerlink" href="#fields-to-export" title="Permalink to this headline">#</a></h4>
+<p>Some fields are pre-selected by default as shown here,<strong>Name</strong>, <strong>Address</strong>, <strong>Phone</strong>,<strong>Date of Birth</strong>, <strong>Registrant tags</strong>, <strong>Registration Date</strong>.
+You may drag and drop these headers vertically to arrange them in the output exported file.
+You can remove fields in the <strong>Fields to export</strong> column by clicking the trash icon.</p>
 <p>Once you are satisfied with the selected fields in the right column, click the <strong>Export</strong> button at the bottom of the export window to start the export and download the file.</p>
+</section>
 </section>
 <section id="creating-export-templates">
 <h3>Creating export templates<a class="headerlink" href="#creating-export-templates" title="Permalink to this headline">#</a></h3>
@@ -1287,44 +1349,102 @@ Always seek assistance from the support team if you need further guidance.</p>
 </section>
 <section id="perform-import">
 <h3>Perform import<a class="headerlink" href="#perform-import" title="Permalink to this headline">#</a></h3>
+<p>You can either import to update existing registrant data or import to add a new one, both are explained below.</p>
 <section id="import-to-update-existing-registrant-data">
 <h4>Import to update existing registrant data<a class="headerlink" href="#import-to-update-existing-registrant-data" title="Permalink to this headline">#</a></h4>
 <p>To update existing records or append new data within OpenSPP, select the checkbox labeled I want to update data (import-compatible export).
-Upon selection, the exported file will automatically include an Id column, which contains the external identifier for each registrant or data entry.
+Upon selection, the exported file will automatically include an <strong>Id</strong> column, which contains the external identifier for each registrant or data entry.
 This identifier is essential for accurately matching and updating existing records.
 Additionally, enabling this option will exclude certain fields from the Available fields list—specifically those that cannot be re-imported into OpenSPP.
 For instance, the Age field is omitted, as it is a derived value based on the Date of Birth and therefore not eligible for direct modification via import.</p>
 <p><img alt="Import users import compatible export" src="../../_images/import_users_import_compatible_export.png" /></p>
-<p>See below an example of a file with headers and multiple records which all include the column for ID.</p>
+<p>See below an example of a file with headers including the column <strong>ID</strong>.</p>
 <p><img alt="Import users excel with data" src="../../_images/import_users_excel_with_data.png" /></p>
-<p>After exporting your file, you may proceed to edit the values as needed.</p>
-<p>You can then proceed to <strong>Preparing file for import</strong>.</p>
+<p>After exporting your file, you may proceed to edit the values as needed. Make sure not to modify the ID value.</p>
+<p>Once done updating data in the file, you can then proceed to <strong>Preparing file for import</strong> section of this document to import it back to OpenSPP.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For bulk updates, the import function offers a more efficient and scalable solution. However, when modifying just one or a few registrant records, it's more practical to update them directly through the UI as a System Admin.</p>
+</div>
 </section>
 <section id="import-to-add-new-registrant-data">
 <h4>Import to add new registrant data<a class="headerlink" href="#import-to-add-new-registrant-data" title="Permalink to this headline">#</a></h4>
-<p>If the export aims to add a new individual or group (as opposed to updating already existing data), you should export headers that are relevant to your import. See <strong>Define export parameters</strong> section of this document to learn more. You only need to export one record from groups or individuals to obtain the correct headers to use. See below for an example of a file with the relevant headers and a single record.</p>
-<p><img alt="Import users excel" src="../../_images/import_users_excel.png" /></p>
-<p>Then once the headers are finalized, you can add data under the associated column headers.</p>
-<p>You can then proceed to <strong>Preparing file for import</strong>.</p>
+<p>If you wish to add a new individual or group (as opposed to updating already existing data), you should prepare headers that are relevant to your import.</p>
+<section id="for-individuals">
+<h5>For Individuals<a class="headerlink" href="#for-individuals" title="Permalink to this headline">#</a></h5>
+<p>Make sure at least these headers are present in your file:</p>
+<ul class="simple">
+<li><p>Name</p></li>
+<li><p>Familiy Name</p></li>
+<li><p>Given Name</p></li>
+</ul>
+<p>Example:
+<img alt="import_users_new_individual" src="../../_images/import_users_new_individual.png" /></p>
+<p>Optionally, if you already have existing individuals in OpenSPP, you can export at least one individual and define the headers for export to use as a template.</p>
+<p>See <strong>Define export parameters</strong> section of this document to learn more.</p>
+</section>
+<section id="for-groups">
+<h5>For Groups<a class="headerlink" href="#for-groups" title="Permalink to this headline">#</a></h5>
+<p>Make sure that at least this header is present in your file:</p>
+<ul class="simple">
+<li><p>Name</p></li>
+</ul>
+<p>Example:
+<img alt="import_users_new_individual" src="../../_images/import_users_new_group.png" /></p>
+<p>you can add more columns that is needed for your usecase</p>
+<p>Optionally, if you already have existing Groups  in OpenSPP, you can export at least one Group and define the headers for export to use as a template.</p>
+<p>See <strong>Define export parameters</strong> section of this document to learn more.</p>
+<p>Once the headers are finalized, You can then proceed to <strong>Preparing file for import</strong> section of this document.</p>
+</section>
 </section>
 </section>
 <section id="preparing-file-for-import">
 <h3>Preparing file for import<a class="headerlink" href="#preparing-file-for-import" title="Permalink to this headline">#</a></h3>
-<p>To add new individuals or groups, prepare the Excel file for import by converting cells to text for all fields that consist of numbers; for instance, <strong>phone</strong>, <strong>date of birth</strong>, and <strong>registration date</strong>. This is to avoid data errors when inputting number values into these fields. For example the <strong>phone field</strong>, where mobile numbers may start with the <strong>+</strong> symbol or with leading zeroes can cause a mobile number to be formatted unexpectedly. It is therefore important to format cells to text before adding number values. Also note that when saving the file, only CSV and XLSX formatted files are allowed for import.</p>
-<p>To update existing individuals or groups, open the exported Excel file and modify the cells you wish to update. Note that you should only format specific cells to text if your values break upon input. As in the image below, inputting a phone number with a leading + symbol is automatically formatted. In this case, you should format the specific cell to <strong>Text</strong> to resolve the issue.</p>
+<p>Prepare the Excel file for import by filling or replacing values from the associated columns.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>OpenSPP supports dates formatted as YYYY-MM-DD (year-month-day).</p>
+</div>
+<p>Make sure to convert cells to <strong>text</strong> for all fields that consist of numbers; similar to <strong>phone</strong>, <strong>date of birth</strong>, and <strong>registration date</strong>. This is to avoid data errors when inputting number values into these fields. For example the <strong>phone field</strong>, where mobile numbers may start with the <strong>+</strong> symbol or with leading zeroes can cause a mobile number to be formatted unexpectedly. It is therefore important to format cells to text before adding number values.</p>
+<p>Inputting a phone number with a leading + symbol could sometimes be automatically formatted. In this case, you should format the specific cell to <strong>Text</strong> to resolve the issue.</p>
 <p><img alt="Import users sample error" src="../../_images/import_users_sample_error.png" /></p>
+<p>Once you've finished preparing the file, be sure to save it in either .CSV or .XLSX format—these are the only file types accepted for import into OpenSPP.</p>
 </section>
 <section id="navigate-to-import-page">
 <h3>Navigate to import page<a class="headerlink" href="#navigate-to-import-page" title="Permalink to this headline">#</a></h3>
-<p>After the file is verified and ready, the import can be performed using an admin account. Navigate to the <strong>Registry</strong>, and depending on what type of data you are going to import, either click <strong>Individuals</strong> for individual records or <strong>Groups</strong> for group records. Click on the <strong>Gear</strong> icon, then choose <strong>Import records</strong> from the dropdown menu.</p>
+<p>After the file is verified and ready, the import can be performed using a <strong>System admin</strong> account. Navigate to the <strong>Registry</strong>, and depending on what type of data you are going to import, either click <strong>Individuals</strong> for individual records or <strong>Groups</strong> for group records. Click on the <strong>Gear</strong> icon, then choose <strong>Import records</strong> from the dropdown menu.</p>
 <p><img alt="Import export gear icon" src="../../_images/import_export_gear_icon.png" /></p>
-<p>You will be redirected to the upload page. Click on the <strong>Upload File</strong> button, and choose the file that you prepared. After uploading your file, you will be redirected to the page below.</p>
+<p>You will be redirected to the upload page. Click on the <strong>Upload File</strong> button, and choose the file that you prepared.</p>
 <p><img alt="Import export upload file" src="../../_images/import_export_upload_file.png" /></p>
-<p>Click <strong>Test</strong> to initiate validation of the data in the import document. If the message <strong>Everything seems valid</strong> appears, you may continue with the import process.</p>
+<p>After uploading your file, you'll be redirected to the next page where you should click <strong>Test</strong> to begin validating the data in your import document.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It's crucial to run this test before clicking Import, as importing immediately will save all records until an error is encountered—potentially requiring you to delete partial entries and start over. The Test function does not save any data; it simply checks for issues in your file to ensure the import can be completed smoothly in a single pass.</p>
+</div>
+<p>After testing, when the message <strong>Everything seems valid</strong> appears, you may continue with the import process.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When importing large datasets—typically 2,000 records or more—OpenSPP processes the data in batches during the testing phase. After the initial batch completes, it's important to manually trigger the test again to ensure the remaining records are also validated. For instance, if you're importing 5,300 records, only the first 4,000 will be automatically tested in two batches of 2,000, leaving 1,300 untested until you initiate another round.</p>
+</div>
 <p><img alt="Import users test button" src="../../_images/import_users_test_button.png" /></p>
 <p>If there are any issues with the file, a message will instead be displayed giving directions on how to solve the issue. You may refer to the <strong>Error handling</strong> section of this document to learn more about common errors.</p>
-<p>When the file is considered valid, click the <strong>Import</strong> button. This will redirect to the main table page, and you will receive a notification informing that the records have been successfully imported.</p>
+<p>Once the file has been successfully tested and validated, be sure to set <strong>Start at line</strong> to <strong>1</strong>. This ensures that the import process begins at the very first registrant record in your file.</p>
+<p><img alt="Import users test button" src="../../_images/import_users_start_line.png" /></p>
+<p>click the <strong>Import</strong> button.  This will redirect to the main table page, and you will receive a notification informing that the records have been successfully imported.</p>
 <p><img alt="Import export successful import" src="../../_images/import_export_successful_import.png" /></p>
+<p>Test or Import time average for larger data sets:</p>
+<ul class="simple">
+<li><p>10,000: about 5-10 minutes</p></li>
+<li><p>100,000: about 10-20 minutes</p></li>
+<li><p>500,000: about 3-4 hours</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Closing the browser window will interrupt the import process, resulting in only partial data being uploaded.</p></li>
+<li><p>If the network connection is lost, the import will pause automatically and resume once connectivity is restored.</p></li>
+</ul>
+</div>
 </section>
 <section id="error-handling">
 <h3>Error handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">#</a></h3>
