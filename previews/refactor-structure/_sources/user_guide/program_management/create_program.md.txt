@@ -97,10 +97,8 @@ To set up the cycle, you need to define the following fields:
 The **Entitlement Manager** defines what should be distributed to the beneficiaries covered by the program. The **Entitlement Manager** supports multiple forms of entitlement, which are explained in separate documentation:
 
 - **Cash:** designated for cash disbursements. The system automatically generates cash benefits for individuals identified as qualified beneficiaries. Read more in the documentation {doc}`configure_entitlements`.
-- **In-kind:** designated for the distribution of goods, such as food and various materials.
-- **Basket Entitlements:** similar to in-kind entitlements, this is for the distribution of a set of products or materials. Unlike individual distributions, these are assembled into one basket rather than listed as separate items. Read more in the documentation Configure basket entitlements.
-
-### Import Registrants
+- **In-kind:** designated for the distribution of goods, such as food and various materials. Learn more in the guide: {doc}`configure_inkind_entitlements`.
+- **Basket Entitlements:** similar to in-kind entitlements, this is for the distribution of a set of products or materials. Unlike individual distributions, these are assembled into one basket rather than listed as separate items.
 
 ### Import Registrants
 
