@@ -1,4 +1,4 @@
----
+orphan: true
 myst:
   html_meta:
     "description": "Overview of how OpenSPP manages secure and flexible registry data for social protection programs, including individuals, groups, and data validation."

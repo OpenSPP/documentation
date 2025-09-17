@@ -134,9 +134,9 @@ year = str(now.year)
 # built documents.
 #
 # The short X.Y version.
-version = "1.1"
+version = "1.3"
 # The full version, including alpha/beta/rc tags.
-release = "1.1"
+release = "1.3"
 
 # -- Multi-version configuration ----------------------------------------------
 # Support environment-driven configuration for multi-version builds
@@ -390,9 +390,13 @@ html_js_files = ["patch_scrollToActive.js", "search_shortcut.js", "version_switc
 if not IS_PREVIEW:
     html_extra_path = [
         "_static/robots.txt",
+        "_static/_redirects",
     ]
 else:
-    html_extra_path = []
+    # Include redirects in previews too for validation
+    html_extra_path = [
+        "_static/_redirects",
+    ]
 
 html_static_path = [
     "_static",  # Last path wins. So this one will override the default theme's static files.

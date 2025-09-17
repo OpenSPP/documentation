@@ -1,3 +1,6 @@
+---
+orphan: true
+---
 
 # Documentation Review Status Dashboard
 
