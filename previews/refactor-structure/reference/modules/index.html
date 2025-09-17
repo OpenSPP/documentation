@@ -18,10 +18,10 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.openspp.org/reference/modules/index.html" />
 <meta property="og:site_name" content="OpenSPP Documentation" />
-<meta property="og:description" content="SPP modules:,, Module, Summary,,, OpenSPP API, Establishes a RESTful API framework for OpenSPP, allowing external systems to securely read, create, update, and delete platform data. Customizable AP..." />
+<meta property="og:description" content="SPP modules:,, Module, Summary,,, API, Establishes a RESTful API framework for OpenSPP, allowing external systems to securely read, create, update, and delete platform data. Customizable API endpoi..." />
 <meta property="og:image" content="https://docs.openspp.org/_static/openspp_logo.png" />
 <meta property="og:image:alt" content="OpenSPP Documentation" />
-<meta name="description" content="SPP modules:,, Module, Summary,,, OpenSPP API, Establishes a RESTful API framework for OpenSPP, allowing external systems to securely read, create, update, and delete platform data. Customizable AP..." />
+<meta name="description" content="SPP modules:,, Module, Summary,,, API, Establishes a RESTful API framework for OpenSPP, allowing external systems to securely read, create, update, and delete platform data. Customizable API endpoi..." />
 <meta property="og:locale" content="en_US" />
 
 <title>OpenSPP modules – Reference &#8212; OpenSPP Documentation vrefactor-structure</title>
@@ -82,7 +82,7 @@ mermaid.initialize({
     <link rel="shortcut icon" href="../../_static/icon_192.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Technical reference" href="../technical/index.html" />
+    <link rel="next" title="API" href="spp_api.html" />
     <link rel="prev" title="Reference" href="../index.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -724,17 +724,499 @@ document.addEventListener('DOMContentLoaded', function() {
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 current active">
+   <li class="toctree-l2 current active has-children">
     <a class="current reference internal" href="#">
      OpenSPP modules
     </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_api.html">
+       API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_api_records.html">
+       API Records
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_area.html">
+       Area Management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_area_base.html">
+       Area Management (Base)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_area_gis.html">
+       Area GIS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_attendance.html">
+       Attendance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_audit_config.html">
+       Audit Config
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_audit_log.html">
+       Audit Log
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_audit_post.html">
+       G2P Registry: Audit Post
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_auto_update_entitlements.html">
+       Auto-Update Entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_base.html">
+       Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_base_api.html">
+       Base API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_base_demo.html">
+       Base Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_base_gis.html">
+       Base GIS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_base_gis_demo.html">
+       Base GIS Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_base_gis_rest.html">
+       Base GIS REST
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_base_setting.html">
+       Base Settings
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_basic_cash_entitlement_spent.html">
+       Program Entitlement Basic Cash Spent
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request.html">
+       Change Request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_add_children_demo.html">
+       Change Request Demo: Add Child/Member
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_add_farmer.html">
+       Change Request: Add Farmer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_add_group_to_group.html">
+       Change Request: Add Group to a Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_base.html">
+       Change Request Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_change_info.html">
+       Change Information Change Request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_create_farm.html">
+       Change Request: Create Farm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_create_group.html">
+       Change Request: Create Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_edit_farm.html">
+       Change Request: Edit Farm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_edit_farmer.html">
+       Change Request: Edit Farmer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_consent.html">
+       Consent
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_custom_field.html">
+       Custom Fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_custom_field_custom_filter.html">
+       Custom Field Custom Filter Integration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_custom_field_recompute_daily.html">
+       Custom Field Recompute Daily
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_custom_fields_ui.html">
+       Custom Fields UI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_custom_filter.html">
+       Custom Filter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_custom_filter_farmer_registry.html">
+       Custom Filter Farmer Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_custom_filter_ui.html">
+       Custom Filter UI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_cycle_attendance_compliance.html">
+       Cycle: Attendance Compliance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_dashboard_base.html">
+       Dashboard: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_data_export.html">
+       Data Export
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_dci_api_server.html">
+       DCI API Server
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_demo.html">
+       OpenSPP Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_dms.html">
+       Document Management System
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_eligibility_sql.html">
+       SQL Query Eligibility Manager
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_eligibility_tags.html">
+       Tag Based Eligibility Manager
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_encryption.html">
+       Encryption Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_ent_trans.html">
+       Entitlement Transactions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_entitlement_basket.html">
+       Entitlement Basket
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_entitlement_cash.html">
+       Cash Entitlement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_entitlement_in_kind.html">
+       In-Kind Entitlement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_ethnic_group.html">
+       OpenSPP: Ethnic Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_event_data.html">
+       Event Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_event_data_program_membership.html">
+       Event Data Program Membership
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_event_demo.html">
+       Event Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_exclusion_filter.html">
+       Exclusion Filter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_farmer_registry_base.html">
+       Farmer Registry Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_farmer_registry_dashboard.html">
+       Farmer Registry Dashboard
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_farmer_registry_default_ui.html">
+       Farmer Registry Default UI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_farmer_registry_demo.html">
+       Farmer Registry Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_grm.html">
+       Grievance Redress Mechanism
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_hide_menus.html">
+       Hide Non-OpenSPP Menus
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_hide_menus_base.html">
+       Hide Non-OpenSPP Menus: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_idpass.html">
+       ID PASS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_idqueue.html">
+       ID Queue
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_import_dci_api.html">
+       Import: DCI API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_import_match.html">
+       Import Match
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_irrigation.html">
+       Irrigation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_land_record.html">
+       Land Record
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_manual_eligibility.html">
+       Program: Manual Eligibility
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_manual_entitlement.html">
+       Manual Entitlement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_mis_demo.html">
+       Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_oauth.html">
+       API: Oauth
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_openid_vci.html">
+       OpenID VCI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_openid_vci_group.html">
+       OpenID VCI Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_openid_vci_individual.html">
+       OpenID VCI Individual
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_pmt.html">
+       Proxy Means Testing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_pos.html">
+       POS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_pos_id_redemption.html">
+       POS: ID Redemption
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_program_id.html">
+       Program ID
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_programs.html">
+       Programs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_programs_compliance_criteria.html">
+       Programs: Compliance Criteria
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_programs_sp.html">
+       Programs: Service Points Integration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_qr_scanner.html">
+       QR Scanner
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_registrant_import.html">
+       Registrant Import
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_registrant_tag.html">
+       Registrant Tags
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_registry_approval.html">
+       Registry Approval: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_registry_approval_group.html">
+       Registry Approval: Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_registry_approval_individual.html">
+       Registry Approval: Individual
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_registry_base.html">
+       Registry: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_registry_data_source.html">
+       Data Source
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_registry_group_hierarchy.html">
+       Registry Group Hierarchy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_scan_id_document.html">
+       Registry: Scan ID Document
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_service_point_device.html">
+       Service Point Device
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_service_points.html">
+       Service Points Management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_starter.html">
+       OpenSPP: Starter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_user_roles.html">
+       User Roles
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../technical/index.html">
      Technical reference
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-    <label for="toctree-checkbox-15">
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -767,8 +1249,8 @@ document.addEventListener('DOMContentLoaded', function() {
   <a class="reference internal" href="../../community/index.html">
    Community
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1076,6 +1558,8 @@ title="Print to PDF"
 <h1>OpenSPP modules<a class="headerlink" href="#openspp-modules" title="Permalink to this headline">#</a></h1>
 <section id="spp-modules">
 <h2>SPP modules<a class="headerlink" href="#spp-modules" title="Permalink to this headline">#</a></h2>
+<div class="toctree-wrapper compound">
+</div>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Module</p></th>
@@ -1083,347 +1567,275 @@ title="Print to PDF"
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_api.html"><span class="doc std std-doc">OpenSPP API</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_api.html"><span class="doc std std-doc">API</span></a></p></td>
 <td><p>Establishes a RESTful API framework for OpenSPP, allowing external systems to securely read, create, update, and delete platform data. Customizable API endpoints, robust authentication, comprehensive logging, and flexible data field mapping enhance integration and auditing capabilities.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_api_records.html"><span class="doc std std-doc">OpenSPP API Records</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_api_records.html"><span class="doc std std-doc">API Records</span></a></p></td>
 <td><p>It exposes RESTful API endpoints, enabling external systems to programmatically access and manage OpenSPP's core operational data. These endpoints facilitate querying, creating, updating, and deleting records for entities like service points, social protection programs, product definitions, and beneficiary entitlements.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_area.html"><span class="doc std std-doc">OpenSPP Area Management</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_area.html"><span class="doc std std-doc">Area Management</span></a></p></td>
 <td><p>Establishes direct associations between OpenSPP registrants, beneficiary groups, and their corresponding geographical administrative areas. It validates registrant-area linkages against official area types, ensuring data integrity and enabling targeted program delivery and analysis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_area_base.html"><span class="doc std std-doc">OpenSPP Area Management (Base)</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_area_base.html"><span class="doc std std-doc">Area Management (Base)</span></a></p></td>
 <td><p>This module enables management of geographical areas, linking them to registrants for targeted interventions and analysis in social protection programs.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_area_gis.html"><span class="doc std std-doc">OpenSPP Area GIS</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_area_gis.html"><span class="doc std std-doc">Area GIS</span></a></p></td>
 <td><p>Integrates GIS capabilities into OpenSPP's Area management, enabling visualization on maps, associating coordinates, defining polygons, and facilitating spatial analysis for improved targeting and monitoring of social protection programs.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_attendance.html"><span class="doc std std-doc">OpenSPP Attendance</span></a></p></td>
-<td><p>No summary provided</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_attendance.html"><span class="doc std std-doc">Attendance</span></a></p></td>
+<td><p>This module accurately tracks participant attendance for social protection program activities, capturing essential details like date, time, location, and activity type. It integrates attendance records to inform conditional benefit eligibility and leverages spp_oauth to secure API endpoints for external data submission.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_audit_config.html"><span class="doc std std-doc">OpenSPP Audit Config</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_audit_config.html"><span class="doc std std-doc">Audit Config</span></a></p></td>
 <td><p>Administrators define and manage comprehensive audit rules within this module, specifying which data models, fields, and operations require tracking across the OpenSPP platform. The module ensures data integrity and accountability by logging user and timestamp details, and it enables cross-record auditing through parent-child relationships for consolidated change views.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="spp_audit_log.html"><span class="doc std std-doc">SPP Audit Log</span></a></p></td>
 <td><p>Comprehensively tracks all data modifications and user actions across the OpenSPP platform, recording old and new values for configured data. It enhances accountability and data integrity by maintaining an immutable history of changes, crucial for internal audits, compliance, and detecting unauthorized alterations.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_audit_post.html"><span class="doc std std-doc">G2P Registry: Audit Post</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_audit_post.html"><span class="doc std std-doc">Audit Post</span></a></p></td>
 <td><p>OpenSPP Audit Post extends core audit logging by automatically posting audit log messages to related parent records. It consolidates changes from child records onto the parent's communication timeline, leveraging the mail module for message posting.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_auto_update_entitlements.html"><span class="doc std std-doc">OpenSPP Auto-Update Entitlements</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_auto_update_entitlements.html"><span class="doc std std-doc">Auto-Update Entitlements</span></a></p></td>
 <td><p>Automatically reviews and updates the state of entitlements based on their redemption status at the end of each program cycle. It assigns precise states, including a new 'Partially Redeemed' status, to ensure accurate records for program closure, reporting, and auditing.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_base.html"><span class="doc std std-doc">OpenSPP Base</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_base.html"><span class="doc std std-doc">Base</span></a></p></td>
 <td><p>Establishes core system settings and generates unique identifiers for records, enhancing registrant profiles with attributes like tags, gender, and type. The module also integrates Top-up Cards for identification and provides fundamental user interface elements with initial security configurations for user roles.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_base_api.html"><span class="doc std std-doc">OpenSPP Base API</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_base_api.html"><span class="doc std std-doc">Base API</span></a></p></td>
 <td><p>Provides foundational API functions and methods for robust data exchange between OpenSPP and external systems or internal modules. It enables efficient record management, complex data retrieval, and external system integration primarily through APIs and XML-RPC protocols.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_base_demo.html"><span class="doc std std-doc">OpenSPP Base Demo</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_base_demo.html"><span class="doc std std-doc">Base Demo</span></a></p></td>
 <td><p>The OpenSPP Base Demo module populates the system with essential sample data, enabling immediate exploration and understanding of core functionalities. It includes diverse sample registrants, social protection programs, and products, providing foundational demo data while conforming to the g2p_registry_individual module's data models.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_base_gis.html"><span class="doc std std-doc">OpenSPP Base GIS</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_base_gis.html"><span class="doc std std-doc">Base GIS</span></a></p></td>
 <td><p>This module stores and organizes geospatial data, including points, lines, and polygons, for visualization on interactive maps. It enables spatial querying, custom map layer configuration, and integrates location awareness across OpenSPP modules for targeted program management.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_base_gis_demo.html"><span class="doc std std-doc">OpenSPP Base GIS Demo</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_base_gis_demo.html"><span class="doc std std-doc">Base GIS Demo</span></a></p></td>
 <td><p>Demonstrates the integration of Geographical Information System (GIS) capabilities within OpenSPP, illustrating how to extend data models with various geographical field types. It provides examples for defining custom geospatial data models and visualizing diverse geographical entities, including points, lines, and polygons, on interactive maps.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_base_gis_rest.html"><span class="doc std std-doc">OpenSPP Base GIS REST</span></a></p></td>
-<td><p>The module provides RESTful API endpoints for secure, programmatic access to OpenSPP's Geographical Information System data, leveraging OAuth 2. 0 and Basic authentication.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_base_gis_rest.html"><span class="doc std std-doc">Base GIS REST</span></a></p></td>
+<td><p>The module provides RESTful API endpoints for secure, programmatic access to OpenSPP's Geographical Information System data, leveraging OAuth 2.0 and Basic authentication.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_base_setting.html"><span class="doc std std-doc">OpenSPP Base Settings</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_base_setting.html"><span class="doc std std-doc">Base Settings</span></a></p></td>
 <td><p>OpenSPP Base Setting provides fundamental configurations for country implementations, establishing core organizational structures such as Country Offices. It also enables tailored user interface adaptations and streamlines user management by linking individuals to specific Country Offices for context-aware data access.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_basic_cash_entitlement_spent.html"><span class="doc std std-doc">OpenSPP Program Entitlement Basic Cash Spent</span></a></p></td>
-<td><p>Records beneficiary expenditures against allocated cash entitlements within social protection programs to monitor utilization. It automatically calculates remaining balances and extends the g2p.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_basic_cash_entitlement_spent.html"><span class="doc std std-doc">Program Entitlement Basic Cash Spent</span></a></p></td>
+<td><p>Records beneficiary expenditures against allocated cash entitlements within social protection programs to monitor utilization. It automatically calculates remaining balances and extends the g2p.entitlement model.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_change_request.html"><span class="doc std std-doc">OpenSPP Change Request</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_change_request.html"><span class="doc std std-doc">Change Request</span></a></p></td>
 <td><p>The OpenSPP Change Request module streamlines the modification of registrant information through a structured, auditable framework. Configurable multi-stage validation workflows ensure proper review and approval, while a comprehensive audit trail records all actions before systematically applying approved changes to registrant records.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_change_request_add_children_demo.html"><span class="doc std std-doc">OpenSPP Change Request Demo: Add Child/Member</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_change_request_add_children_demo.html"><span class="doc std std-doc">Change Request Demo: Add Child/Member</span></a></p></td>
 <td><p>The module formalizes the process of adding new individuals to existing groups within the OpenSPP registry via a dedicated Change Request framework. It integrates ID scanning for rapid data entry, automates new registrant profile creation and group membership updates, and stores supporting documents in the DMS.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_change_request_add_farmer.html"><span class="doc std std-doc">OpenSPP Change Request: Add Farmer</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_change_request_add_farmer.html"><span class="doc std std-doc">Change Request: Add Farmer</span></a></p></td>
 <td><p>Provides a specialized workflow for adding new farmers to existing groups in the registry.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_change_request_add_group_to_group.html"><span class="doc std std-doc">OpenSPP Change Request: Add Group to a Group</span></a></p></td>
-<td><p>Provides a specialized workflow for adding new farmers to existing groups in the registry.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_change_request_add_group_to_group.html"><span class="doc std std-doc">Change Request: Add Group to a Group</span></a></p></td>
+<td><p>Manages change requests to add individual farmers into an existing group, validating memberships and capturing supporting documents.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_change_request_base.html"><span class="doc std std-doc">OpenSPP Change Request Base</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_change_request_base.html"><span class="doc std std-doc">Change Request Base</span></a></p></td>
 <td><p>Streamlines the process of handling changes to registrant information within the OpenSPP system, providing a structured framework for submitting, reviewing, approving, and applying modifications.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="spp_change_request_change_info.html"><span class="doc std std-doc">Change Information Change Request</span></a></p></td>
-<td><p>No summary provided</p></td>
+<td><p>Manages a structured process for updating an individual registrant's core personal and identification details within the OpenSPP platform. It integrates ID scanning for automatic data population, enforces data integrity with validation rules, and securely stores supporting documents in dedicated DMS directories.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_change_request_create_farm.html"><span class="doc std std-doc">OpenSPP Change Request: Create Farm</span></a></p></td>
-<td><p>Provides a specialized workflow for adding new farm in the registry.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_change_request_create_farm.html"><span class="doc std std-doc">Change Request: Create Farm</span></a></p></td>
+<td><p>Facilitates change requests to register new farms, collecting farmer, land, and asset details for review and approval.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_change_request_create_group.html"><span class="doc std std-doc">OpenSPP Change Request: Create Group</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_change_request_create_group.html"><span class="doc std std-doc">Change Request: Create Group</span></a></p></td>
 <td><p>Provides a specialized workflow for adding new group in the registry.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_change_request_edit_farm.html"><span class="doc std std-doc">OpenSPP Change Request: Edit Farm</span></a></p></td>
-<td><p>Provides a specialized workflow for adding new farm in the registry.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_change_request_edit_farm.html"><span class="doc std std-doc">Change Request: Edit Farm</span></a></p></td>
+<td><p>Supports change requests that update existing farm groups, including land records, assets, and registrant information.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_change_request_edit_farmer.html"><span class="doc std std-doc">OpenSPP Change Request: Edit Farmer</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_change_request_edit_farmer.html"><span class="doc std std-doc">Change Request: Edit Farmer</span></a></p></td>
 <td><p>Provides a specialized workflow for updating existing Farmer in the registry.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_consent.html"><span class="doc std std-doc">OpenSPP Consent</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_consent.html"><span class="doc std std-doc">Consent</span></a></p></td>
 <td><p>This module establishes a comprehensive system for managing and tracking explicit consent from individuals and groups within social protection programs. It records specific consent agreements linked to registrants, tracks consent validity with expiry dates, and enables configuration of diverse consent types.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_custom_field.html"><span class="doc std std-doc">OpenSPP Custom Fields</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_custom_field.html"><span class="doc std std-doc">Custom Fields</span></a></p></td>
 <td><p>The module enables administrators to define and add custom data fields directly to registrant profiles, tailoring data collection for specific social protection programs. It supports field differentiation by registrant type, integrates new data points into records, and provides dedicated sections for read-only program indicators.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_custom_field_custom_filter.html"><span class="doc std std-doc">OpenSPP Custom Field Custom Filter Integration</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_custom_field_custom_filter.html"><span class="doc std std-doc">Custom Field Custom Filter Integration</span></a></p></td>
 <td><p>OpenSPP's filtering system gains custom-defined data field integration, allowing administrators to use program-specific criteria for record segmentation. This enables the construction of highly specific queries, enhancing data analysis and streamlining operational processes for targeted interventions.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_custom_field_recompute_daily.html"><span class="doc std std-doc">OpenSPP Custom Field Recompute Daily</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_custom_field_recompute_daily.html"><span class="doc std std-doc">Custom Field Recompute Daily</span></a></p></td>
 <td><p>The OpenSPP Custom Field Recompute Daily module automates the daily recalculation of designated computed fields, ensuring data accuracy and currency. It optimizes system performance by processing large datasets asynchronously in configurable batches, leveraging the Queue Job module.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_custom_fields_ui.html"><span class="doc std std-doc">OpenSPP Custom Fields UI</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_custom_fields_ui.html"><span class="doc std std-doc">Custom Fields UI</span></a></p></td>
 <td><p>The OpenSPP Custom Fields UI module provides a user interface for program implementers to define and manage custom data fields for registrants. It extends registrant profiles by associating custom data with individuals or groups, supporting program-specific indicators and calculated data points within the OpenSPP platform.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_custom_filter.html"><span class="doc std std-doc">OpenSPP Custom Filter</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_custom_filter.html"><span class="doc std std-doc">Custom Filter</span></a></p></td>
 <td><p>The module empowers administrators to precisely control which fields appear in Odoo's filtering interface. This capability streamlines data searches, reduces UI clutter, and enhances the user experience by ensuring only relevant fields are available for filtering.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_custom_filter_farmer_registry.html"><span class="doc std std-doc">OpenSPP Custom Filter Farmer Registry</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_custom_filter_farmer_registry.html"><span class="doc std std-doc">Custom Filter Farmer Registry</span></a></p></td>
 <td><p>Customizes the OpenSPP UI to enhance filtering for Farmer Registry, improving usability and efficiency in managing registrants within social protection programs.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_custom_filter_ui.html"><span class="doc std std-doc">OpenSPP Custom Filter UI</span></a></p></td>
-<td><p>The module customizes the OpenSPP user interface to enable advanced filtering of res. partner records.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_custom_filter_ui.html"><span class="doc std std-doc">Custom Filter UI</span></a></p></td>
+<td><p>Customizes the OpenSPP UI to enhance filtering for Res Partners, improving usability and efficiency in managing registrants within social protection programs.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_cycle_attendance_compliance.html"><span class="doc std std-doc">OpenSPP Cycle: Attendance Compliance</span></a></p></td>
-<td><p>No summary provided</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_cycle_attendance_compliance.html"><span class="doc std std-doc">Cycle: Attendance Compliance</span></a></p></td>
+<td><p>Program managers define and enforce attendance requirements as eligibility criteria for beneficiaries within social protection program cycles. The module integrates with external attendance systems to automatically fetch records, then evaluates beneficiaries against defined thresholds to ensure ongoing program eligibility.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_dashboard_base.html"><span class="doc std std-doc">OpenSPP Dashboard: Base</span></a></p></td>
-<td><p>No summary provided</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_dashboard_base.html"><span class="doc std std-doc">Dashboard: Base</span></a></p></td>
+<td><p>Establishes the foundational framework and consistent user interface components for analytical dashboards across the OpenSPP platform. It delivers core data visualization elements, including reusable metrics, charts, and data cards, enabling other modules to build specialized program-specific dashboards.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_data_export.html"><span class="doc std std-doc">OpenSPP Data Export</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_data_export.html"><span class="doc std std-doc">Data Export</span></a></p></td>
 <td><p>The spp_data_export module enhances OpenSPP's capability to extract large volumes of program data to Excel, overcoming standard export tool limitations regarding file size and row capacity. It proactively manages Excel's maximum row capacity and overrides default export functionality to ensure complete and reliable data for external analysis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_dci_api_server.html"><span class="doc std std-doc">OpenSPP DCI API Server</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_dci_api_server.html"><span class="doc std std-doc">DCI API Server</span></a></p></td>
 <td><p>Exposes OpenSPP's individual and household registry data via a DCI-compliant RESTful API. Secures data exchange through client credential management and token-based authentication for external systems.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_dms.html"><span class="doc std std-doc">OpenSPP Document Management System</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_dms.html"><span class="doc std std-doc">Document Management System</span></a></p></td>
 <td><p>The OpenSPP Dms module provides a centralized system for managing and organizing program-related documents within a structured directory tree. It facilitates efficient document retrieval through categorization and indexed storage, automatically capturing essential file metadata such as size, type, and data integrity checksums.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_eligibility_sql.html"><span class="doc std std-doc">OpenSPP SQL Query Eligibility Manager</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_eligibility_sql.html"><span class="doc std std-doc">SQL Query Eligibility Manager</span></a></p></td>
 <td><p>Define complex program eligibility criteria using SQL queries for flexible and automated beneficiary enrollment within OpenSPP.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_eligibility_tags.html"><span class="doc std std-doc">OpenSPP Tag Based Eligibility Manager</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_eligibility_tags.html"><span class="doc std std-doc">Tag Based Eligibility Manager</span></a></p></td>
 <td><p>OpenSPP Eligibility Tags defines and manages program eligibility criteria based on registrant tags and geographical areas. It automates beneficiary identification by dynamically combining selected tags and areas, extending G2P Programs with a specific eligibility calculation method.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_encryption.html"><span class="doc std std-doc">OpenSPP Encryption Module</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_encryption.html"><span class="doc std std-doc">Encryption Module</span></a></p></td>
 <td><p>Implements advanced cryptographic services for OpenSPP, enabling data encryption, decryption, digital signing, and signature verification for sensitive program information. It securely manages cryptographic keys in JWK format and distributes public keys via JWKS, facilitating secure inter-system verification and data integrity.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_ent_trans.html"><span class="doc std std-doc">OpenSPP Entitlement Transactions</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_ent_trans.html"><span class="doc std std-doc">Entitlement Transactions</span></a></p></td>
 <td><p>The OpenSPP Ent Trans module records and manages all entitlement redemption transactions, establishing a transparent and auditable history for cash and in-kind benefits delivered to beneficiaries. It captures detailed information for each redemption, linking transactions to specific entitlements, service points, and devices, and employs UUIDs to ensure data integrity.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_entitlement_basket.html"><span class="doc std std-doc">OpenSPP Entitlement Basket</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_entitlement_basket.html"><span class="doc std std-doc">Entitlement Basket</span></a></p></td>
 <td><p>The OpenSPP Entitlement Basket module enables program administrators to define and manage structured baskets of goods and services for beneficiary entitlements. It automates entitlement calculation, integrates with inventory management, and supports a controlled lifecycle with role-based validation for in-kind distributions.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_entitlement_cash.html"><span class="doc std std-doc">OpenSPP Cash Entitlement</span></a></p></td>
-<td><p>OpenSPP Entitlement Cash establishes a framework for managing cash-based benefits within social protection programs, allowing administrators to define detailed calculation rules and automate the disbursement process. It automatically computes entitlements, manages payment validation workflows, and facilitates secure fund disbursement, incorporating financial controls and maintaining comprehensive audit trails..</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_entitlement_cash.html"><span class="doc std std-doc">Cash Entitlement</span></a></p></td>
+<td><p>OpenSPP Entitlement Cash establishes a framework for managing cash-based benefits within social protection programs, allowing administrators to define detailed calculation rules and automate the disbursement process. It automatically computes entitlements, manages payment validation workflows, and facilitates secure fund disbursement, incorporating financial controls and maintaining comprehensive audit trails.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_entitlement_in_kind.html"><span class="doc std std-doc">OpenSPP In-Kind Entitlement</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_entitlement_in_kind.html"><span class="doc std std-doc">In-Kind Entitlement</span></a></p></td>
 <td><p>This module manages the distribution of non-cash benefits within social protection programs, defining in-kind entitlements and automating their generation for eligible beneficiaries. It integrates with inventory management to track stock and facilitates redemption of goods through designated service points, supporting structured distribution workflows.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="spp_ethnic_group.html"><span class="doc std std-doc">OpenSPP: Ethnic Group</span></a></p></td>
-<td><p>No summary provided</p></td>
+<td><p>Establishes a standardized framework for defining and managing ethnic group classifications within the OpenSPP platform. It enhances demographic data accuracy in registrant profiles, supporting targeted program design and detailed reporting by integrating with g2p_registry_base.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_event_data.html"><span class="doc std std-doc">OpenSPP Event Data</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_event_data.html"><span class="doc std std-doc">Event Data</span></a></p></td>
 <td><p>Records and tracks events related to individual and group registrants, providing a chronological history of changes and actions within the OpenSPP system.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_event_data_program_membership.html"><span class="doc std std-doc">OpenSPP Event Data Program Membership</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_event_data_program_membership.html"><span class="doc std std-doc">Event Data Program Membership</span></a></p></td>
 <td><p>This module allows users to record and track program membership-related events, such as enrollment, suspension, or exit, and link them to specific program membership records within OpenSPP.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_event_demo.html"><span class="doc std std-doc">OpenSPP Event Demo</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_event_demo.html"><span class="doc std std-doc">Event Demo</span></a></p></td>
 <td><p>OpenSPP Event Demo offers predefined event types, data models, and user interfaces for tracking specific social protection program interactions. It extends registrant profiles to display active event statuses and serves as a practical blueprint for custom event type implementation, leveraging the spp_event_data framework.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_exclusion_filter.html"><span class="doc std std-doc">OpenSPP Exclusion Filter</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_exclusion_filter.html"><span class="doc std std-doc">Exclusion Filter</span></a></p></td>
 <td><p>Administrators can define and apply specific exclusion criteria based on registrant attributes or existing program participation. The module automates eligibility checks during program creation, systematically filtering out ineligible individuals to refine the beneficiary pool.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_farmer_registry_base.html"><span class="doc std std-doc">OpenSPP Farmer Registry Base</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_farmer_registry_base.html"><span class="doc std std-doc">Farmer Registry Base</span></a></p></td>
 <td><p>Manages comprehensive farmer profiles, detailing farm operations, size, legal status, and specific agricultural practices. Furthermore, it links farmers and farms to land records with geographic data, tracks agricultural activities by season, and oversees farm assets and extension services.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_farmer_registry_dashboard.html"><span class="doc std std-doc">OpenSPP Farmer Registry Dashboard</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_farmer_registry_dashboard.html"><span class="doc std std-doc">Farmer Registry Dashboard</span></a></p></td>
 <td><p>Provides interactive dashboards and reports for visualizing data from the OpenSPP Farmer Registry, offering insights into key metrics and trends related to registered farmers.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_farmer_registry_default_ui.html"><span class="doc std std-doc">OpenSPP Farmer Registry Default UI</span></a></p></td>
-<td><p>Provides UI for Farmer Registry Base.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_farmer_registry_default_ui.html"><span class="doc std std-doc">Farmer Registry Default UI</span></a></p></td>
+<td><p>This module delivers the essential user interface components for managing OpenSPP farmer and farm registry data. It enables streamlined farmer registration, efficient farm management, and accessible entry of agricultural activity and asset information.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="spp_farmer_registry_demo.html"><span class="doc std std-doc">OpenSPP Farmer Registry Demo</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_farmer_registry_demo.html"><span class="doc std std-doc">Farmer Registry Demo</span></a></p></td>
 <td><p>Generates and populates the OpenSPP Farmer Registry with comprehensive, realistic sample data. It integrates with core registry models to provide diverse farmer profiles, farm details, and agricultural activities, facilitating system exploration, training, and testing.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="spp_grm.html"><span class="doc std std-doc">OpenSPP - Grievance Redress Mechanism</span></a></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_grm.html"><span class="doc std std-doc">- Grievance Redress Mechanism</span></a></p></td>
+<td><p>Provides a centralized Grievance Redress Mechanism for receiving, tracking, and resolving beneficiary complaints and feedback. It supports multi-channel submission, manages resolution workflows through customizable stages, and links grievances directly to individual or group registrants.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_hide_menus.html"><span class="doc std std-doc">Hide Non-OpenSPP Menus</span></a></p></td>
+<td><p>The module automatically hides non-core OpenSPP menus to streamline the user interface. It removes Calendar, Contacts, Accounting, Event, Stock, and UTM from the main navigation, focusing users on social protection program management.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_hide_menus_base.html"><span class="doc std std-doc">Hide Non-OpenSPP Menus: Base</span></a></p></td>
+<td><p>Administrators can manage the visibility of OpenSPP navigation menus, streamlining the user interface for specific user groups. The module modifies ir.ui.menu records to control menu visibility, providing a foundation for other modules to selectively hide non-essential navigation items.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_pos_id_redemption.html"><span class="doc std std-doc">POS: ID Redemption</span></a></p></td>
+<td><p>Enables secure redemption of social protection entitlements at Point of Sale terminals through beneficiary unique identification. The module integrates ID verification with entitlement management, automatically mapping cash entitlements to products and tracking voucher status in real-time.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_qr_scanner.html"><span class="doc std std-doc">QR Scanner</span></a></p></td>
+<td><p>The OpenSPP QR Scanner module identifies individuals and accesses information through scanning beneficiary-specific QR codes. This capability streamlines field operations by enabling rapid data retrieval and minimizing manual data entry errors for program delivery and monitoring.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_registry_approval.html"><span class="doc std std-doc">Registry Approval: Base</span></a></p></td>
+<td><p>This module implements a structured workflow for managing the lifecycle of OpenSPP registry entries, ensuring beneficiary data meets required standards through a formal approval process. It introduces distinct states for each entry and restricts approval actions to authorized personnel, preventing premature program enrollment.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_registry_approval_group.html"><span class="doc std std-doc">Registry Approval: Group</span></a></p></td>
+<td><p>Extending the OpenSPP registry's approval framework, this module enables formal validation and management of collective entity records. It integrates the existing workflow to ensure group data undergoes a structured review process, maintaining data integrity for program enrollment.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="spp_registry_approval_individual.html"><span class="doc std std-doc">Registry Approval: Individual</span></a></p></td>
+<td><p>Manages the validation and official status of individual registrants by extending the base registry approval process within social protection programs. It ensures individual beneficiary data undergoes a dedicated review workflow, applying core approval states to enhance data quality and enable precise program enrollment.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="spp_registry_base.html"><span class="doc std std-doc">Registry: Base</span></a></p></td>
+<td><p>The module establishes the OpenSPP-specific foundation for managing individual beneficiaries and various group types. It extends core G2P Registry functionalities by providing specialized import templates and tools for efficient registrant data population.</p></td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Grievance redress mechanism module for OpenSPP |
-</pre></div>
-</div>
-<p>| <a class="reference internal" href="spp_hide_menus.html"><span class="doc std std-doc">Hide Non-OpenSPP Menus</span></a> | No summary provided |
-| <a class="reference internal" href="spp_hide_menus_base.html"><span class="doc std std-doc">Hide Non-OpenSPP Menus: Base</span></a> | No summary provided |
-| <a class="reference internal" href="spp_idpass.html"><span class="doc std std-doc">ID PASS</span></a> | OpenSPP Idpass securely generates and manages digital identification passes for program registrants, streamlining beneficiary verification and access to social protection services. The module automates ID generation using existing registrant data, offers configurable templates with expiry rules, and integrates with external services via secure API calls. |
-| <a class="reference internal" href="spp_idqueue.html"><span class="doc std std-doc">OpenSPP ID Queue</span></a> | Manages the complete lifecycle of ID card requests for registrants, centralizing their creation, tracking, and final distribution. It streamlines approval workflows, automates ID card generation through integration with external services, and facilitates batch processing with comprehensive audit trails. |
-| <a class="reference internal" href="spp_import_dci_api.html"><span class="doc std std-doc">OpenSPP Import: DCI API</span></a> | Integrates OpenSPP with external Digital Civil Identity (DCI) compliant registries for automated import and synchronization of individual and family registrant data. It automatically creates or updates registrant profiles, manages hierarchical location data, and facilitates family group creation within OpenSPP. |
-| <a class="reference internal" href="spp_import_match.html"><span class="doc std std-doc">OpenSPP Import Match</span></a> | OpenSPP Import Match enhances data import processes by intelligently matching incoming records against existing data, preventing duplication and ensuring registry integrity. It provides configurable matching logic and supports seamless updates to existing records during bulk data onboarding. |
-| <a class="reference internal" href="spp_irrigation.html"><span class="doc std std-doc">OpenSPP Irrigation</span></a> | Manages detailed irrigation assets by type, capacity, and unique identifiers, leveraging integrated GIS capabilities to map and display infrastructure locations and boundaries. The module models water distribution networks by defining and linking irrigation sources to destinations, providing critical data for strategic planning of resource allocation and infrastructure projects. |
-| <a class="reference internal" href="spp_land_record.html"><span class="doc std std-doc">OpenSPP Land Record</span></a> | The OpenSPP Land Record module digitizes and centralizes land parcel information, linking it to associated farms, ownership details, and lease agreements. It captures and displays geographical boundaries and coordinates on interactive maps, supporting land use classification and program planning. |
-| <a class="reference internal" href="spp_manual_eligibility.html"><span class="doc std std-doc">SPP Program: Manual Eligibility</span></a> | No summary provided |
-| <a class="reference internal" href="spp_manual_entitlement.html"><span class="doc std std-doc">OpenSPP Manual Entitlement</span></a> | Administrators directly create entitlements for beneficiaries within specific program cycles, accommodating exceptional eligibility criteria not covered by automated rules. A step-by-step wizard guides entitlement creation, preventing duplicates for beneficiaries within a program cycle and supporting scalable asynchronous processing. |
-| <a class="reference internal" href="spp_mis_demo.html"><span class="doc std std-doc">OpenSPP Demo</span></a> | Provides demonstration data and functionalities for the OpenSPP system, showcasing its capabilities in managing social protection programs and registries with pre-populated data for exploration and testing. |
-| <a class="reference internal" href="spp_oauth.html"><span class="doc std std-doc">OpenSPP API: Oauth</span></a> | The module establishes an OAuth 2. 0 authentication framework, securing OpenSPP API communication for integrated systems and applications. |
-| <a class="reference internal" href="spp_openid_vci.html"><span class="doc std std-doc">OpenSPP OpenID VCI</span></a> | The module issues and manages Verifiable Credentials for OpenSPP program registrants, leveraging OpenID Connect for Verifiable Presentations. It generates QR codes for secure digital sharing, integrates registrant data into VCs, and ensures credential authenticity through digital signing and encryption. |
-| <a class="reference internal" href="spp_openid_vci_group.html"><span class="doc std std-doc">OpenSPP OpenID VCI Group</span></a> | Extends OpenSPP's Verifiable Credential issuance capabilities to manage and represent groups of registrants. Generates standardized VCs encapsulating group information from registry data, providing a verifiable digital identity for efficient verification and integration with group management. |
-| <a class="reference internal" href="spp_openid_vci_individual.html"><span class="doc std std-doc">OpenSPP OpenID VCI Individual</span></a> | The spp_openid_vci_individual module extends OpenSPP's Verifiable Credential issuance to individual registrants, enabling secure digital identity and attribute proofs using OpenID4VP and DIDs. It integrates VC issuance directly into individual profiles, supporting verifiable presentations and customizable issuer configurations for program-specific data. |
-| <a class="reference internal" href="spp_pmt.html"><span class="doc std std-doc">OpenSPP Proxy Means Testing</span></a> | This module calculates a Proxy Means Testing (PMT) score for registrant groups, objectively prioritizing beneficiaries for social protection programs. It enables defining custom field weights, implementing area-specific weighting, and automating score computation based on diverse indicators. |
-| <a class="reference internal" href="spp_pos.html"><span class="doc std std-doc">OpenSPP POS</span></a> | The OpenSPP Pos module extends the standard Odoo Point of Sale system to facilitate secure redemption of social protection entitlements for beneficiaries. It performs real-time validation of entitlement codes and designates specific products purchasable using these benefits. |
-| <a class="reference internal" href="spp_pos_id_redemption.html"><span class="doc std std-doc">OpenSPP POS: ID Redemption</span></a> | No summary provided |
-| <a class="reference internal" href="spp_program_id.html"><span class="doc std std-doc">OpenSPP Program ID</span></a> | Assigns and manages unique, immutable identifiers for every social protection program within the OpenSPP platform. This core component extends program records to ensure distinct identification, facilitating streamlined data management, enhanced reporting, and seamless system integration. |
-| <a class="reference internal" href="spp_programs.html"><span class="doc std std-doc">OpenSPP Programs</span></a> | Manage cash and in-kind entitlements, integrate with inventory, and enhance program management features for comprehensive social protection and agricultural support. |
-| <a class="reference internal" href="spp_programs_compliance_criteria.html"><span class="doc std std-doc">OpenSPP Programs: Compliance Criteria</span></a> | Administrators can define and manage dynamic compliance criteria for social protection program beneficiaries, extending initial enrollment requirements. The module automates beneficiary evaluation against these rules, flags non-compliant individuals, and enables configurable compliance filtering during program operations. |
-| <a class="reference internal" href="spp_programs_sp.html"><span class="doc std std-doc">OpenSPP Programs: Service Points Integration</span></a> | OpenSPP Programs Sp extends core program management by integrating service points directly into entitlement and beneficiary processes. It automatically links beneficiaries' assigned service points to their entitlements, supporting both cash and in-kind benefit distribution. |
-| <a class="reference internal" href="spp_qr_scanner.html"><span class="doc std std-doc">OpenSPP QR Scanner</span></a> | No summary provided |
-| <a class="reference internal" href="spp_registrant_import.html"><span class="doc std std-doc">OpenSPP Registrant Import</span></a> | Streamlines the import of registrant data into OpenSPP, simplifies data mapping, and automates unique ID generation. |
-| <a class="reference internal" href="spp_registrant_tag.html"><span class="doc std std-doc">OpenSPP Registrant Tags</span></a> | OpenSPP registrants gain enhanced tagging capabilities through this module, allowing granular categorization by specific attributes, program statuses, or needs. It extends the G2P Registry Base module, improving data findability and facilitating targeted interventions with flexible tag management. |
-| <a class="reference internal" href="spp_registry_approval.html"><span class="doc std std-doc">OpenSPP Registry Approval: Base</span></a> | No summary provided |
-| <a class="reference internal" href="spp_registry_approval_group.html"><span class="doc std std-doc">OpenSPP Registry Approval: Group</span></a> | No summary provided |
-| <a class="reference internal" href="spp_registry_approval_individual.html"><span class="doc std std-doc">OpenSPP Registry Approval: Individual</span></a> | No summary provided |
-| <a class="reference internal" href="spp_registry_base.html"><span class="doc std std-doc">OpenSPP Registry: Base</span></a> | No summary provided |
-| <a class="reference internal" href="spp_registry_data_source.html"><span class="doc std std-doc">OpenSPP Data Source</span></a> | Establishes a secure framework for OpenSPP to connect with external data systems like national registries and social protection databases. It facilitates structured data retrieval, defines field mapping, configures secure authentication methods, and manages specific API endpoints. |
-| <a class="reference internal" href="spp_registry_group_hierarchy.html"><span class="doc std std-doc">OpenSPP Registry Group Hierarchy</span></a> | The module introduces hierarchical relationships among OpenSPP registry groups, enabling the creation of nested structures where groups can contain both individuals and other sub-groups. It extends g2p. |
-| <a class="reference internal" href="spp_scan_id_document.html"><span class="doc std std-doc">OpenSPP Registry: Scan ID Document</span></a> | The module integrates direct ID document scanning into OpenSPP, enabling users to capture physical identification documents directly within registrant profiles. This functionality streamlines identity data collection by minimizing manual transcription errors and provides a verifiable digital record for compliance and auditing. |
-| <a class="reference internal" href="spp_service_point_device.html"><span class="doc std std-doc">OpenSPP Service Point Device</span></a> | Registers and tracks physical terminal devices, maintaining a comprehensive inventory of operational hardware within the OpenSPP platform. It captures device specifications, manages operational status, and associates each terminal with a specific service point, including designation of top-up locations. |
-| <a class="reference internal" href="spp_service_points.html"><span class="doc std std-doc">OpenSPP Service Points Management</span></a> | The OpenSPP Service Points module manages physical or virtual locations for social protection service delivery, establishing and categorizing operational service points. It links these points to hierarchical geographical areas, company entities, and user accounts, integrating with spp_area and g2p_registry_base for comprehensive organizational and location management. |
-| <a class="reference internal" href="spp_starter.html"><span class="doc std std-doc">OpenSPP: Starter</span></a> | A guided setup wizard configures new OpenSPP instances, defining core program requirements and automatically installing relevant OpenSPP modules. It specializes system deployment based on program type selection and performs initial data cleanup for a production-ready environment. |
-| <a class="reference internal" href="spp_user_roles.html"><span class="doc std std-doc">OpenSPP User Roles</span></a> | The OpenSPP User Roles module defines and manages distinct user roles, categorizing them as global or local, to implement area-based access control. It restricts user access to specific geographical areas by leveraging the spp_area module and automates underlying system permission assignments. |</p>
 </section>
 <section id="g2p-modules">
 <h2>G2P modules<a class="headerlink" href="#g2p-modules" title="Permalink to this headline">#</a></h2>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Module</p></th>
-<th class="head"><p>Summary</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_auth_id_oidc.html"><span class="doc std std-doc">G2P Auth: OIDC - Reg ID</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_bank.html"><span class="doc std std-doc">G2P Registry: Bank Details</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_bank_rest_api.html"><span class="doc std std-doc">G2P Registry: Bank Details Rest API</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_connect_demo.html"><span class="doc std std-doc">G2P Connect Demo</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_encryption.html"><span class="doc std std-doc">G2P Encryption: Base</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_encryption_keymanager.html"><span class="doc std std-doc">G2P Encryption: Keymanager</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_encryption_rest_api.html"><span class="doc std std-doc">G2P Encryption: Rest API</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_entitlement_differential.html"><span class="doc std std-doc">OpenG2P Entitlement: Differential</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_entitlement_in_kind.html"><span class="doc std std-doc">OpenG2P Entitlement: In-Kind</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_entitlement_voucher.html"><span class="doc std std-doc">OpenG2P Entitlement: Voucher</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_openid_vci.html"><span class="doc std std-doc">G2P OpenID VCI: Base</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_openid_vci_programs.html"><span class="doc std std-doc">G2P OpenID VCI: Program Beneficiaries</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_payment_cash.html"><span class="doc std std-doc">OpenG2P Program Payment: Cash</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_payment_files.html"><span class="doc std std-doc">OpenG2P Program Payments: In Files</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_payment_g2p_connect.html"><span class="doc std std-doc">OpenG2P Program Payment: G2P Connect Payment Manager</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_payment_interop_layer.html"><span class="doc std std-doc">OpenG2P Program Payment (Payment Interoperability Layer)</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_payment_phee.html"><span class="doc std std-doc">OpenG2P Program Payment (Payment Hub EE)</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_payment_simple_mpesa.html"><span class="doc std std-doc">OpenG2P Program Payment: Simple Mpesa Payment Manager</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_program_approval.html"><span class="doc std std-doc">OpenG2P Program: Approval</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_program_assessment.html"><span class="doc std std-doc">OpenG2P Program: Assessment</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_program_autoenrol.html"><span class="doc std std-doc">OpenG2P Programs: Autoenrol</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_program_cycleless.html"><span class="doc std std-doc">OpenG2P Programs: Cycleless</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_program_documents.html"><span class="doc std std-doc">OpenG2P Program: Documents</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_program_registrant_info.html"><span class="doc std std-doc">G2P Program: Registrant Info</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_program_registrant_info_rest_api.html"><span class="doc std std-doc">G2P Program : Program Registrant Info Rest API</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_program_reimbursement.html"><span class="doc std std-doc">OpenG2P Programs: Reimbursement</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">OpenG2P Programs</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_programs_rest_api.html"><span class="doc std std-doc">G2P Programs: REST API</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_proxy_means_test.html"><span class="doc std std-doc">G2P: Proxy Means Test</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_registry_addl_info.html"><span class="doc std std-doc">G2P Registry: Additional Info</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_registry_addl_info_rest_api.html"><span class="doc std std-doc">G2P Registry: Additional Info REST API</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">G2P Registry: Base</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_registry_encryption.html"><span class="doc std std-doc">G2P Registry: Encryption</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_registry_group.html"><span class="doc std std-doc">G2P Registry: Groups</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_registry_individual.html"><span class="doc std std-doc">G2P Registry: Individual</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_registry_membership.html"><span class="doc std std-doc">G2P Registry: Membership</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="g2p_registry_rest_api.html"><span class="doc std std-doc">G2P Registry: Rest API</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="g2p_registry_rest_api_extension_demo.html"><span class="doc std std-doc">G2P Registry: Rest API Extension Demo</span></a></p></td>
-<td><p>No summary provided</p></td>
-</tr>
-</tbody>
-</table>
+<p>OpenSPP builds upon the robust foundation of OpenG2P, leveraging its extensive suite of modules to enhance social protection program management. Below is a comprehensive list of G2P modules that are integral to OpenSPP's functionality:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="g2p_auth_id_oidc.html"><span class="doc std std-doc">Auth ID OIDC</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_auth_oidc.html"><span class="doc std std-doc">Auth OIDC</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_bank.html"><span class="doc std std-doc">Bank</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_bank_rest_api.html"><span class="doc std std-doc">Bank REST API</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_change_log.html"><span class="doc std std-doc">Change Log</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_connect_demo.html"><span class="doc std std-doc">Connect Demo</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_disable_password_login.html"><span class="doc std std-doc">Disable Password Login</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_documents.html"><span class="doc std std-doc">Documents</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_encryption.html"><span class="doc std std-doc">Encryption</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_encryption_keymanager.html"><span class="doc std std-doc">Encryption Keymanager</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_encryption_rest_api.html"><span class="doc std std-doc">Encryption REST API</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_entitlement_differential.html"><span class="doc std std-doc">Entitlement Differential</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_entitlement_in_kind.html"><span class="doc std std-doc">Entitlement In Kind</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_entitlement_voucher.html"><span class="doc std std-doc">Entitlement Voucher</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_enumerator.html"><span class="doc std std-doc">Enumerator</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_formio.html"><span class="doc std std-doc">Formio</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_mis_importer.html"><span class="doc std std-doc">MIS Importer</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_mts.html"><span class="doc std std-doc">MTS</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_notifications_base.html"><span class="doc std std-doc">Notifications Base</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_notifications_fast2sms.html"><span class="doc std std-doc">Notifications Fast2SMS</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_notifications_rest_api.html"><span class="doc std std-doc">Notifications REST API</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_notifications_voucher.html"><span class="doc std std-doc">Notifications Voucher</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_notifications_wiserv.html"><span class="doc std std-doc">Notifications WiSERV</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_odk_importer.html"><span class="doc std std-doc">ODK Importer</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_odk_importer_program.html"><span class="doc std std-doc">ODK Importer Program</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_odk_user_mapping.html"><span class="doc std std-doc">ODK User Mapping</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_openid_vci.html"><span class="doc std std-doc">OpenID VCI</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_openid_vci_programs.html"><span class="doc std std-doc">OpenID VCI Programs</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_openid_vci_rest_api.html"><span class="doc std std-doc">OpenID VCI REST API</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_payment_cash.html"><span class="doc std std-doc">Payment Cash</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_payment_files.html"><span class="doc std std-doc">Payment Files</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_payment_g2p_connect.html"><span class="doc std std-doc">Payment Connect</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_payment_interop_layer.html"><span class="doc std std-doc">Payment Interop Layer</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_payment_phee.html"><span class="doc std std-doc">Payment PHEE</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_payment_simple_mpesa.html"><span class="doc std std-doc">Payment Simple M-Pesa</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_portal_auth.html"><span class="doc std std-doc">Portal Auth</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_profile_image.html"><span class="doc std std-doc">Profile Image</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_program_approval.html"><span class="doc std std-doc">Program Approval</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_program_assessment.html"><span class="doc std std-doc">Program Assessment</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_program_autoenrol.html"><span class="doc std std-doc">Program Autoenrol</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_program_cycleless.html"><span class="doc std std-doc">Program Cycleless</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_program_documents.html"><span class="doc std std-doc">Program Documents</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_program_registrant_info.html"><span class="doc std std-doc">Program Registrant Info</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_program_registrant_info_rest_api.html"><span class="doc std std-doc">Program Registrant Info REST API</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_program_reimbursement.html"><span class="doc std std-doc">Program Reimbursement</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">Programs</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_programs_rest_api.html"><span class="doc std std-doc">Programs REST API</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_proxy_means_test.html"><span class="doc std std-doc">Proxy Means Test</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_registry_addl_info.html"><span class="doc std std-doc">Registry Additional Info</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_registry_addl_info_rest_api.html"><span class="doc std std-doc">Registry Additional Info REST API</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">Registry Base</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_registry_documents.html"><span class="doc std std-doc">Registry Documents</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_registry_encryption.html"><span class="doc std std-doc">Registry Encryption</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_registry_group.html"><span class="doc std std-doc">Registry Group</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_registry_individual.html"><span class="doc std std-doc">Registry Individual</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_registry_membership.html"><span class="doc std std-doc">Registry Membership</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_registry_rest_api.html"><span class="doc std std-doc">Registry REST API</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_registry_rest_api_extension_demo.html"><span class="doc std std-doc">Registry REST API Extension Demo</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_service_provider_beneficiary_management.html"><span class="doc std std-doc">Service Provider Beneficiary Management</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_service_provider_portal_base.html"><span class="doc std std-doc">Service Provider Portal Base</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_social_registry_importer.html"><span class="doc std std-doc">Social Registry Importer</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_superset_dashboard.html"><span class="doc std std-doc">Superset Dashboard</span></a></p></li>
+<li><p><a class="reference internal" href="g2p_theme.html"><span class="doc std std-doc">Theme</span></a></p></li>
+</ul>
 </section>
 </section>
 
@@ -1442,10 +1854,10 @@ title="Print to PDF"
             <p class="prev-next-title">Reference</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../technical/index.html" title="next page">
+    <a class='right-next' id="next-link" href="spp_api.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Technical reference</p>
+        <p class="prev-next-title">API</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

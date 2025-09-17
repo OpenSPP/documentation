@@ -1,4 +1,4 @@
----
+orphan: true
 myst:
   html_meta:
     "title": "OpenSPP Integration Architecture"
