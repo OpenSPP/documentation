@@ -71,12 +71,12 @@ sudo apt-get install -y nginx certbot python3-certbot-nginx
 sudo nano /etc/nginx/sites-available/openspp
 ```
 
-Add this configuration changing **your-domain.com** to your domain:
+Add this configuration changing **example.com** to your domain:
 
 ```nginx
 server {
     listen 80;
-    server_name your-domain.com;
+    server_name example.com;
 
     # Redirect HTTP to HTTPS
     return 301 https://$server_name$request_uri;
@@ -84,11 +84,11 @@ server {
 
 server {
     listen 443 ssl http2;
-    server_name your-domain.com;
+    server_name example.com;
 
     # SSL certificates (will be added by certbot)
-    # ssl_certificate /etc/letsencrypt/live/your-domain.com/fullchain.pem;
-    # ssl_certificate_key /etc/letsencrypt/live/your-domain.com/privkey.pem;
+    # ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
+    # ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
 
     # Proxy settings
     proxy_read_timeout 720s;
@@ -122,12 +122,12 @@ server {
 }
 ```
 
-Enable the site and get SSL certificate (Change **your-domain.com** to your domain):
+Enable the site and get SSL certificate (Change **example.com** to your domain):
 ```bash
 sudo ln -s /etc/nginx/sites-available/openspp /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl reload nginx
-sudo certbot --nginx -d your-domain.com
+sudo certbot --nginx -d example.com
 ```
 ### 4. Regular backups
 

@@ -270,10 +270,10 @@ After logging in, you'll need to activate the OpenSPP modules:
 ## Getting Help
 
 - **Documentation**: https://docs.openspp.org
-- **Community forum**: https://community.openspp.org
+- **Community forum**: coming soon
 - **Issue tracker**: https://github.com/openspp/openspp-modules/issues
 - **Email support**: support@openspp.org
-- **APT repository**: https://builds.acn.fr/repository/apt-openspp/
+- **APT repository**: https://builds.acn.fr/
 
 
 ## Next steps

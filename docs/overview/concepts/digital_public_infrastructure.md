@@ -102,7 +102,7 @@ OpenSPP is an open-source, scalable, and modular digital social protection infor
 
 OpenSPP offers diverse DPI building blocks like Social, Farmer, and Disability Registries, and Scheme Management, enabling comprehensive data management and service delivery.
 
-It integrates with Civil {term}`registration` and Vital Statistics (CRVS) systems for accurate {term}`beneficiary` data and national identity systems for secure verification and authentication. OpenSPP's link with digital payment systems facilitates efficient benefit disbursement, ensuring timely support and reduced operational complexities. The team's involvement in G2P-Connect and Social Protection Digital Convergence Initiatives ensures robust, secure, and user-centric integrations.
+It integrates with Civil Registration and Vital Statistics (CRVS) systems for accurate {term}`beneficiary` data and national identity systems for secure verification and authentication. OpenSPP's link with digital payment systems facilitates efficient benefit disbursement, ensuring timely support and reduced operational complexities. The team's involvement in G2P-Connect and Social Protection Digital Convergence Initiatives ensures robust, secure, and user-centric integrations.
 
 ## References and Resources
 

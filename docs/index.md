@@ -129,7 +129,7 @@ OpenSPP is recognized as a [Digital Public Good](https://digitalpublicgoods.net/
 - **[MOSIP](https://mosip.io/)** for digital ID integration  
 - **[OpenFn](https://www.openfn.org/)** for workflow automation and integration
 - **[DHIS2](https://dhis2.org/)** for health information management  
-- **[Payment Hub EE](https://mifos.org/payment-hub/)** for financial services integration
+- **[Payment Hub EE](https://mifos.org/)** for financial services integration
 - **[OpenG2P](https://openg2p.org/)** for government-to-person delivery systems
 - **[Odoo](https://www.odoo.com/)** as the enterprise platform foundation
 
@@ -144,7 +144,7 @@ OpenSPP is recognized as a [Digital Public Good](https://digitalpublicgoods.net/
 
 ::::{grid-item}
 **Get Help**
-- 📖 [Documentation](https:/docs.openspp.org/)
+- 📖 [Documentation](https://docs.openspp.org/)
 - 💬 [GitHub Discussions](https://github.com/orgs/OpenSPP/discussions)
 - 🐛 [Report Issues](https://github.com/OpenSPP/openspp-modules/issues)
 ::::
