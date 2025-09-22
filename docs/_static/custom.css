@@ -17,7 +17,7 @@ pre {
   box-shadow: none;
 }
 
-a,
+/* a,
 a:visited,
 main.bd-content #main-content a,
 main.bd-content #main-content a:visited {
@@ -28,7 +28,7 @@ a:hover,
 main.bd-content #main-content a:hover {
   color: #1a567e;
   text-decoration: none;
-}
+} */
 
 ul {
   list-style-type: square;
@@ -481,4 +481,28 @@ dl.py > dd, dl.js > dd, dl.o-definition-list > dd {
   font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
   font-weight: inherit;
   /* color: inherit; */
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: bold;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+body {
+    font-family: "Manrope", sans-serif;
+    color: #033A51;
+}
+
+a {
+    color: #3264C8;
+}
+
+.highlight,
+.highlight-text {
+    color: #3264C8;
+}
+
+p {
+    text-align: left;
 }
