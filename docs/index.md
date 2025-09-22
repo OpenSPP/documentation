@@ -18,14 +18,7 @@ The platform's modular architecture offers three integrated products: **SP-MIS**
 
 ## Key features
 
-- **🎯 [Program management](overview/features/program_management.md)** - Design and operate multiple social protection programs with configurable cycles and eligibility rules
-- **📊 [Unified registry](overview/features/unified_registry.md)** - Maintain consolidated beneficiary data across programs with advanced deduplication
-- **🌾 [GIS & land management](overview/features/gis_land_management.md)** - Integrate agricultural data, land holdings, and geospatial analysis for farmer support programs
-- **💳 [Payment & disbursement](overview/features/payment_disbursement.md)** - Connect with multiple payment providers and track benefit distribution
-- **🎯 [Eligibility & targeting](overview/features/eligibility_targeting.md)** - Apply sophisticated criteria for beneficiary selection and prioritization
-- **📦 [In-kind benefits](overview/features/in_kind_benefits.md)** - Manage distribution of goods, vouchers, and non-cash assistance
-- **💬 [Grievance redress](overview/features/grievance_redress.md)** - Handle complaints and feedback with configurable workflows
-- **🔌 [Data integration & APIs](overview/features/data_integration_apis.md)** - RESTful APIs and data exchange protocols for system interoperability
+![Key Features](images/key_feature.png)
 
 ## Who uses OpenSPP
 
@@ -42,32 +35,24 @@ OpenSPP serves diverse organizations implementing social protection and agricult
 :::::{grid} 2
 :gutter: 2
 
-::::{grid-item-card} 🚀 Get started
+::::{grid-item-card} ![alt text](images/getting_started.png)
 :link: getting_started/index
 :link-type: doc
-
-New to OpenSPP? Start with our installation guide and quickstart tutorial.
 ::::
 
-::::{grid-item-card} 📚 User guide  
+::::{grid-item-card} ![alt text](images/user_guide.png)
 :link: user_guide/index
 :link-type: doc
-
-Learn how to use OpenSPP for registry and program management.
 ::::
 
-::::{grid-item-card} 🔧 Developer guide
+::::{grid-item-card} ![alt text](images/developer_guide.png)
 :link: developer_guide/index
 :link-type: doc
-
-Customize and extend OpenSPP with our technical documentation.
 ::::
 
-::::{grid-item-card} 🏗️ Architecture
+::::{grid-item-card} ![alt text](images/architecture.png)
 :link: developer_guide/architecture
 :link-type: doc
-
-Understand OpenSPP's technical architecture and design principles.
 ::::
 :::::
 
@@ -144,22 +129,22 @@ OpenSPP is recognized as a [Digital Public Good](https://digitalpublicgoods.net/
 
 ::::{grid-item}
 **Get Help**
-- 📖 [Documentation](https:/docs.openspp.org/)
-- 💬 [GitHub Discussions](https://github.com/orgs/OpenSPP/discussions)
-- 🐛 [Report Issues](https://github.com/OpenSPP/openspp-modules/issues)
+- [Documentation](https:/docs.openspp.org/)
+- [GitHub Discussions](https://github.com/orgs/OpenSPP/discussions)
+- [Report Issues](https://github.com/OpenSPP/openspp-modules/issues)
 ::::
 
 ::::{grid-item}
 **Stay Connected**
-- 🌐 [OpenSPP Website](https://openspp.org/)
-- 📰 [Release Notes](https://github.com/OpenSPP/openspp-modules/releases)
-- 🤝 [Contributing Guide](community/contributing.md)
+- [OpenSPP Website](https://openspp.org/)
+- [Release Notes](https://github.com/OpenSPP/openspp-modules/releases)
+- [Contributing Guide](community/contributing.md)
 ::::
 
 ::::{grid-item}
 **Learn More**
-- 🔍 [API Reference](developer_guide/api_usage/index.md)
-- 📋 [Glossary](reference/glossary.md)
+- [API Reference](developer_guide/api_usage/index.md)
+- [Glossary](reference/glossary.md)
 ::::
 :::::
 

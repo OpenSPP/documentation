@@ -39,8 +39,6 @@ Agricultural-focused platform combining farm data, land management, and social p
 ::::
 :::::
 
-{doc}`Explore all products → <products/index>`
-
 ## Understand core capabilities
 
 OpenSPP delivers comprehensive social protection through modular features that work together seamlessly:
