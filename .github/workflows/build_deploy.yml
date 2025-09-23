@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - "**"
+    branches-ignore:
+      - cf-pages
 
 jobs:
   build_deploy:
@@ -32,7 +34,7 @@ jobs:
 
       # Set safe branch name for preview deployments
       - name: Set safe branch name
-        if: github.ref != 'refs/heads/main'
+        if: github.ref != 'refs/heads/stable'
         id: branch
         run: |
           # Sanitize branch name: only allow alphanumeric, dots, underscores, hyphens
@@ -41,46 +43,50 @@ jobs:
           echo "safe=${SAFE_NAME}" >> $GITHUB_OUTPUT
 
       # Build documentation with appropriate environment variables
-      - name: Prepare deploy (main/stable)
-        if: github.ref == 'refs/heads/main'
+      - name: Prepare deploy (stable)
+        if: github.ref == 'refs/heads/stable'
         run: |
           set -e  # Exit on error
           export DOCS_VERSION=stable
           export DOCS_BASEURL=https://docs.openspp.org/
           export IS_PREVIEW=0
+          export DOCS_GITHUB_VERSION=stable
           make deploy || { echo "Build failed"; exit 1; }
 
       - name: Prepare deploy (preview)
-        if: github.ref != 'refs/heads/main'
+        if: github.ref != 'refs/heads/stable'
         run: |
           set -e  # Exit on error
           export DOCS_VERSION=${{ steps.branch.outputs.safe }}
           export DOCS_BASEURL=https://docs.openspp.org/previews/${{ steps.branch.outputs.safe }}/
           export IS_PREVIEW=1
+          export DOCS_GITHUB_VERSION=${GITHUB_REF_NAME}
           make deploy || { echo "Build failed"; exit 1; }
 
       # Deploy stable documentation (main branch)
-      - name: Deploy stable documentation
-        if: github.ref == 'refs/heads/main'
+      - name: Deploy stable documentation (to cf-pages branch)
+        if: github.ref == 'refs/heads/stable'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build/html
+          publish_branch: cf-pages
           keep_files: true  # Don't delete preview versions
 
       # Deploy preview documentation (non-main branches)
-      - name: Deploy preview documentation
-        if: github.ref != 'refs/heads/main'
+      - name: Deploy preview documentation (to cf-pages branch)
+        if: github.ref != 'refs/heads/stable'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build/html
+          publish_branch: cf-pages
           destination_dir: previews/${{ steps.branch.outputs.safe }}
           keep_files: true  # Don't delete other versions
 
       - name: Display deployment status
         run: |
-          if [ "${{ github.ref }}" == "refs/heads/main" ]; then
+          if [ "${{ github.ref }}" == "refs/heads/stable" ]; then
             echo "✅ Deployed stable documentation to https://docs.openspp.org/"
           else
             BRANCH_SAFE=$(echo ${GITHUB_REF_NAME} | sed 's/\//-/g')

@@ -18,17 +18,17 @@ on:
 jobs:
   cleanup:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'  # Only run from main branch
+    if: github.ref == 'refs/heads/stable'  # Only run from stable branch
     
     permissions:
       contents: write
       pages: write
       
     steps:
-      - name: Checkout gh-pages branch
+      - name: Checkout cf-pages branch
         uses: actions/checkout@v3
         with:
-          ref: gh-pages
+          ref: cf-pages
           
       - name: Cleanup old preview deployments
         run: |

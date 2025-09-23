@@ -143,6 +143,8 @@ release = "1.3"
 DOCS_VERSION = os.getenv("DOCS_VERSION", "stable")
 DOCS_BASEURL = os.getenv("DOCS_BASEURL", "https://docs.openspp.org/")
 IS_PREVIEW = os.getenv("IS_PREVIEW", "0") == "1"
+# Prefer the exact Git ref for edit links on previews; fall back to DOCS_VERSION
+GITHUB_VERSION = os.getenv("DOCS_GITHUB_VERSION", ("stable" if not IS_PREVIEW else DOCS_VERSION))
 
 # Update version display based on environment
 if DOCS_VERSION != "stable":
@@ -587,7 +589,7 @@ html_context = {
     "display_github": True,
     "github_user": "openspp",  # Username
     "github_repo": "documentation",  # Repo name
-    "github_version": "main",  # Version
+    "github_version": GITHUB_VERSION,  # Branch or tag used for edit links
     "conf_py_path": "/docs/",  # Path in the checkout to the docs root
     "is_preview": IS_PREVIEW,  # Flag for preview builds to add noindex meta tag
 }
