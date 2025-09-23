@@ -198,6 +198,26 @@
 /technical_reference/programs/notification_manager.html /developer_guide/index.html 301!
 /technical_reference/programs/program_manager.html /developer_guide/index.html 301!
 /technical_reference/release_management.html /developer_guide/index.html 301!
+
+# --- Additional explicit redirects to cover crawled asset URLs ---
+# These were seen in Google’s index as Sphinx source/_downloads artifacts.
+# Map each to the corresponding live page to avoid 404s.
+/_sources/tutorial/vouchers.md.txt /reference/modules/g2p_entitlement_voucher.html 301!
+/_sources/explanation/social_protection_management_information_systems.md.txt /overview/products/sp_mis.html 301!
+/_sources/community_and_support/index.md.txt /community/index.html 301!
+/_sources/explanation/security_archi.md.txt /developer_guide/architecture.html 301!
+/_sources/tutorial/user_guides/allocate_funds.md.txt /user_guide/index.html 301!
+/_sources/getting_started/poc_and_pilot.md.txt /overview/poc_and_pilot.html 301!
+/_sources/howto/developer_guides/setting_up_using_pypi.md.txt /developer_guide/setup.html 301!
+/_sources/howto/developer_guides/custom_audit.md.txt /developer_guide/module_development/audit.html 301!
+/_sources/howto/developer_guides/custom_service_points.md.txt /developer_guide/module_development/service_points.html 301!
+/_sources/explanation/digital_public_infrastructure.md.txt /overview/concepts/digital_public_infrastructure.html 301!
+/_sources/howto/developer_guides/custom_cr.md.txt /developer_guide/module_development/change_requests.html 301!
+/_sources/contributing/index.md.txt /community/contributing.html 301!
+
+# Fallback: any past _downloads artifacts go to Reference landing
+/_downloads/98d0f5cbfb72994e5a577daa25194921/sdn_adminboundaries_tabulardata.xlsx /reference/index.html 301!
+/_downloads/* /reference/index.html 301!
 /technical_reference/security.html /developer_guide/index.html 301!
 /tutorial/access_management.html /user_guide/index.html 301!
 /tutorial/audit_log.html /user_guide/index.html 301!
