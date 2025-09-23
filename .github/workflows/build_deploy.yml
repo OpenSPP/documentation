@@ -2,8 +2,6 @@ name: Build and deploy OpenSPP documentation
 
 on:
   push:
-    branches:
-      - "**"
     branches-ignore:
       - cf-pages
 
