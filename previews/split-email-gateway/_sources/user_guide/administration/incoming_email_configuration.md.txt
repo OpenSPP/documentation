@@ -57,7 +57,7 @@ Fill in the form with the details for the mailbox you want OpenSPP to monitor.
 
 ![IMAP/POP server configuration form showing fields for Name, Server Type, Server Name, Port, SSL/TLS, Username, Password, and Action settings](incoming_email_configuration/B-step04-fill-in-server-details.jpg)
 
-##s# Test and save
+### Test and save
 
 1.  Click the **Test & Confirm** button.
 2.  OpenSPP will attempt to connect to the mailbox. If successful, you will see a confirmation.
