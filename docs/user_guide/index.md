@@ -37,7 +37,8 @@ Administrative tasks and system management:
 - {doc}`administration/indicator_fields`
 - {doc}`administration/import_areas`
 - {doc}`administration/inventory_configuration`
-- {doc}`administration/email_gateway`
+- {doc}`administration/outgoing_email_configuration`
+- {doc}`administration/incoming_email_configuration`
 - {doc}`administration/hardware_integration`
 
 ## Other features
