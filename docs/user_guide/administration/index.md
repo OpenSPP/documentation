@@ -17,7 +17,7 @@ This section provides guides for a variety of administrative tasks and system ma
 
 - {doc}`incoming_email_configuration`: A guide to setting up automatic email retrieval and processing from a designated incoming mailbox.
 
-- {doc}`outgoing_email_configuration`: A guide to configuring both outgoing email servers to enable automated communication and data entry.
+- {doc}`outgoing_email_configuration`: A guide to setting up outgoing email servers for automated messaging and data integration.
 
 - {doc}`database_management`: This document explains how to manage your OpenSPP database, including how to reset the database, and how to back up your data before making major changes.
 
