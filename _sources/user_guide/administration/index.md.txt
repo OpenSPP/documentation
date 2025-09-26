@@ -15,7 +15,9 @@ This section provides guides for a variety of administrative tasks and system ma
 
 - {doc}`inventory_configuration`: Learn how to configure the necessary inventory settings to support in-kind and basket entitlements.
 
-- {doc}`email_gateway`: A guide to configuring both outgoing and incoming email servers to enable automated communication and data entry.
+- {doc}`incoming_email_configuration`: A guide to setting up automatic email retrieval and processing from a designated incoming mailbox.
+
+- {doc}`outgoing_email_configuration`: A guide to setting up outgoing email servers for automated messaging and data integration.
 
 - {doc}`database_management`: This document explains how to manage your OpenSPP database, including how to reset the database, and how to back up your data before making major changes.
 
@@ -41,7 +43,8 @@ Indicator fields <indicator_fields>
 Import areas <import_areas>
 Service points <service_points>
 Inventory setup <inventory_configuration>
-Email gateway <email_gateway>
+Incoming email setup <incoming_email_configuration>
+Outgoing email setup <outgoing_email_configuration>
 Database management <database_management>
 Security & tuning <security_tuning>
 Monitoring <monitoring_maintenance>
