@@ -1,0 +1,660 @@
+:root {
+    /* Add Font Awesome 5 icon and color for todo */
+    --pst-icon-clipboard-list: "\f46d";
+    --pst-icon-admonition-todo: var(--pst-icon-clipboard-list);
+    --pst-color-admonition-todo: 161, 46, 233;
+    --target-color: rgba(50, 100, 200, 0.2);
+    --codeblock-color: rgba(50, 100, 200, 0.15);
+
+    /* OpenSPP Brand Colors */
+    --openspp-primary: #033a51;
+    --openspp-brand: #3264c8;
+}
+
+/* Import Manrope font */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+/* Global Typography */
+body {
+    font-family: "Manrope", sans-serif;
+    color: #033a51;
+    text-align: left;
+}
+
+::selection {
+    background-color: #3264c8;
+    color: #ffffff;
+}
+
+/* Headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Manrope", sans-serif;
+    color: #033a51;
+    font-weight: 700; /* Bold headers */
+}
+
+/* Paragraph alignment */
+p {
+    text-align: left;
+}
+
+.visuallyhidden {
+    display: none;
+}
+
+pre {
+    border-radius: 0;
+    background-color: white;
+    box-shadow: none;
+}
+
+a,
+a:visited,
+main.bd-content #main-content a,
+main.bd-content #main-content a:visited {
+    color: #3264c8; /* Brand color for links */
+}
+
+a:hover,
+main.bd-content #main-content a:hover {
+    color: #1a4a9c;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: square;
+    text-align: left;
+}
+
+ol {
+    text-align: left;
+}
+
+ul li > p {
+    margin-bottom: 0.3rem;
+    text-align: left;
+}
+
+ol li > p {
+    margin-bottom: 0.3rem;
+    text-align: left;
+}
+
+img {
+    margin: 1rem 0;
+    text-align: left;
+}
+
+figure img,
+img.figure,
+.figure img {
+    box-shadow: 0 6px 24px 0 rgba(153, 153, 153, 0.3);
+    text-align: left;
+}
+
+.sidebar img.logo {
+    box-shadow: none;
+    width: 200px;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+img.inline {
+    margin: 0;
+    height: 1em;
+    text-align: left;
+}
+
+span.linenos {
+    padding-right: 1em;
+    text-align: left;
+}
+
+dt:target,
+span.highlighted,
+ul.search li span.highlighted {
+    background-color: var(--target-color);
+    text-align: left;
+}
+
+mark,
+.bd-content mark {
+    background-color: var(--target-color);
+    color: #3264c8;
+    padding: 0 0.2em;
+}
+
+.bd-sidebar .nav ul {
+    padding: 0 0 0 1rem;
+    text-align: left;
+}
+
+.bd-sidebar .nav .toctree-checkbox ~ label i {
+    transform: rotate(90deg);
+    text-align: left;
+}
+
+.bd-sidebar .nav .toctree-checkbox:checked ~ label i {
+    transform: rotate(0deg);
+    text-align: left;
+}
+
+.toctree-wrapper .caption {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 3rem;
+    text-align: left;
+    color: #033a51;
+    font-family: "Manrope", sans-serif;
+}
+
+.toctree-wrapper ul {
+    list-style: none;
+    text-align: left;
+}
+
+section:not(#glossary) h1 ~ dl {
+    display: grid;
+    grid-template-columns: max-content auto;
+    text-align: left;
+}
+
+section:not(#glossary) h1 ~ dl dd {
+    margin-bottom: unset !important;
+    text-align: left;
+}
+
+div.section {
+    margin-bottom: 5rem;
+    text-align: left;
+}
+
+div.section div.section {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+div.section div.section div.section {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+/* admonitions */
+.admonition {
+    border-radius: 0;
+    border: none;
+    border-left: 0.2rem solid;
+    border-left-color: rgba(var(--pst-color-admonition-default), 1);
+    text-align: left;
+}
+
+.admonition .admonition-title {
+    margin-bottom: 1.5rem !important;
+    text-align: left;
+    font-family: "Manrope", sans-serif;
+    color: #033a51;
+    font-weight: 700;
+}
+
+/* admonition todo */
+.admonition.admonition-todo,
+div.admonition.admonition-todo {
+    border-color: rgba(var(--pst-color-admonition-todo), 1);
+    text-align: left;
+}
+
+.admonition.admonition-todo > .admonition-title,
+div.admonition.admonition-todo > .admonition-title {
+    background-color: rgba(var(--pst-color-admonition-todo), 0.1);
+    text-align: left;
+}
+
+.admonition.admonition-todo > .admonition-title::before,
+div.admonition.admonition-todo > .admonition-title::before {
+    color: rgba(var(--pst-color-admonition-todo), 1);
+    content: var(--pst-icon-admonition-todo);
+    text-align: left;
+}
+
+.admonition-github-only.admonition {
+    display: none;
+    text-align: left;
+}
+
+/* admonition margin */
+.admonition.margin ul,
+.admonition.margin ol {
+    padding-left: 1rem;
+    text-align: left;
+}
+
+.topic {
+    padding: 1.5em 1em 0.5em 1em;
+    text-align: left;
+}
+
+.topic-title {
+    font-weight: bold;
+    text-align: left;
+    font-family: "Manrope", sans-serif;
+    color: #033a51;
+}
+
+/* Bootstrap */
+.btn-primary {
+    color: #fff;
+    background-color: #3264c8; /* Brand color */
+    border-color: #3264c8;
+    text-align: left;
+}
+
+.btn-primary {
+    background-color: #1a4a9c; /* Darker brand color for hover state */
+    border-color: #3264c8;
+    text-align: left;
+}
+
+/* Search */
+
+/* Show search form. It is hidden by default. */
+#search-documentation,
+#search-documentation ~ form,
+#search-documentation ~ p {
+    display: block;
+}
+
+#search-form:focus-within #shortcut-page,
+.bd-search:focus-within #shortcut {
+    display: none;
+}
+
+#shortcut-page.input-group-text {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+input#q {
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-width: 2px;
+}
+
+ul.search {
+    margin-left: 0;
+}
+
+p.search-summary {
+    margin: 1em 0 2rem 0;
+}
+
+#search-results ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#search-results ul li,
+ul.search li {
+    margin-bottom: 2rem;
+    padding: 0;
+    background-image: none;
+    border-bottom: none;
+}
+
+#search-results ul li h3 {
+    margin: 0.4rem 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+#search-results ul li .breadcrumbs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#search-results ul li .breadcrumbs a {
+    font-weight: normal;
+}
+
+#search-results ul li .breadcrumbs .lastbreadcrumb {
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 12rem;
+    overflow: hidden;
+    /* "overflow"-Wert darf nicht "visible" sein */
+
+    text-overflow: ellipsis;
+}
+
+ul.search li p.context {
+    margin-left: 0;
+}
+
+/* Search form sidebar */
+
+.bd-search {
+    font-size: 0.8rem;
+}
+
+.bd-search:focus-within #search-input {
+    border-radius: 0.25rem;
+}
+
+#shortcut.input-group-text {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.bd-search input,
+.bd-search .input-group-text {
+    font-size: 0.8rem;
+    padding-left: 0.5em;
+}
+
+input#search-input {
+    padding-left: 2.1875rem;
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.search-icon {
+    position: absolute;
+    color: #a4a6a7;
+    left: 0.625rem;
+    z-index: 100;
+    align-self: center;
+}
+
+.input-group-text kbd {
+    padding: 0rem 0.4rem;
+    font-size: 135%;
+}
+
+.pathseparator {
+    padding: 0 0.7rem;
+}
+
+/* header-article */
+div.header-article__label {
+    display: flex;
+    align-items: center;
+    margin: 0 auto 0 1em;
+    font-size: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* submenu */
+.bd-toc {
+    box-shadow:
+        0 0.2rem 0.5rem rgba(0, 0, 0, 0.05),
+        0 0 0.0625rem rgba(0, 0, 0, 0.1);
+}
+
+/* extra sidebar */
+div.sidebar:not(.margin) {
+    width: 40%;
+    float: right;
+    clear: right;
+    margin: 0.3rem 0 0.3rem 0.5em;
+    padding: 2rem 0 1.5rem 1rem !important;
+    background-color: rgba(var(--pst-color-admonition-note), 0.1);
+    border: none;
+    border-left: 8px rgba(var(--pst-color-admonition-default), 1) solid;
+    border-radius: 0.2rem;
+    box-shadow:
+        0 0.2rem 0.5rem rgba(0, 0, 0, 0.05),
+        0 0 0.0625rem rgba(0, 0, 0, 0.1);
+}
+
+div.sidebar:not(.margin) .figure {
+    margin-top: 0;
+    padding-top: 0;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+div.sidebar:not(.margin) img.logo {
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+}
+
+div.sidebar:not(.margin) p {
+    margin-bottom: 0;
+}
+
+div.sidebar:not(.margin) p.sidebar-title {
+    display: none;
+}
+
+div.sidebar:not(.margin) div.topic {
+    padding: 0.5em 0;
+    background-color: transparent;
+    border: none;
+}
+
+div.sidebar:not(.margin) pre {
+    margin: 0.5em 0 1.5em 0;
+}
+
+div.sidebar:not(.margin) div[class*="highlight-"] {
+    margin-right: 0.5em;
+}
+
+div.sidebar:not(.margin) .admonition {
+    margin-right: 0.5em;
+    background-color: #ffffff;
+}
+
+@media (min-width: 768px) {
+    div.sidebar:not(.margin) {
+        width: 50%;
+        margin-left: 1.5em;
+        margin-right: -28%;
+    }
+}
+
+main.bd-content #main-content dl.simple dt {
+    margin-top: 0.8em;
+}
+
+main.bd-content #main-content dl.simple dt:nth-of-type(1) {
+    margin-top: 0;
+}
+
+main.bd-content #main-content dl.simple dd {
+    margin-top: 0.8em;
+}
+
+main.bd-content #main-content dl.simple dt + dd {
+    margin-top: 0;
+}
+
+.prev-next-bottom {
+    margin: 20px 0 30px 0;
+}
+
+.prev-next-bottom a.left-prev,
+.prev-next-bottom a.right-next {
+    padding: 5px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    max-width: 45%;
+    overflow-x: hidden;
+    color: rgba(0, 0, 0, 0.65);
+    border-radius: 10px;
+}
+
+/* Local navigation */
+li.nav-item.toc-entry {
+    line-height: 1.25em;
+    margin-bottom: 0.25em;
+}
+
+span.guilabel,
+span.menuselection {
+    border: none;
+    background: #e7f2fa;
+    border-radius: 4px;
+    padding: 4px 5px;
+    font-size: 90%;
+    font-weight: bold;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+/*
+ * extensions
+ */
+
+/* definitions */
+dl.py.function {
+    margin-bottom: 5rem;
+}
+
+/* Quick Start Banners */
+#quick-start > p {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 700px) {
+    #quick-start > p {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Resources & Community Section */
+#main-content .section .grid {
+    margin-top: 2rem;
+}
+
+#main-content .section .grid .grid-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#main-content .section .grid .grid-item ul li {
+    margin-bottom: 0.5rem;
+}
+
+#main-content .section .grid .grid-item ul li a {
+    color: #3264c8;
+    text-decoration: none;
+}
+
+#main-content .section .grid .grid-item ul li a:hover {
+    text-decoration: underline;
+}
+
+dl.py.function > dt {
+    background-color: var(--codeblock-color);
+    padding: 4px 5px;
+}
+
+dl.py.function > dt:target {
+    background-color: var(--target-color);
+}
+
+dl.field-list > dt {
+    padding-left: 0;
+}
+
+/* code blocks */
+div.viewcode-block:target {
+    padding: 10px 10px;
+    background-color: var(--codeblock-color);
+    border-top: 1px solid var(--codeblock-color);
+    border-bottom: 1px solid var(--codeblock-color);
+}
+
+/* Fix paragraphs in list items. */
+#main-content ol > li > p:nth-child(n + 2),
+#main-content ul > li > p:nth-child(n + 2) {
+    margin-top: 1em;
+}
+
+@media (min-width: 768px) {
+    div.navbar-brand-box {
+        padding-top: 0;
+    }
+}
+
+dl.py > dd,
+dl.js > dd,
+dl.o-definition-list > dd {
+    margin-top: -0.075rem;
+    margin-left: 0;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    border-left: 3px solid #f2f2f2;
+}
+
+.o_code,
+.sig [class^="sig-"] {
+    display: inline-block;
+    overflow-wrap: anywhere;
+    background: #f2f2f2;
+    font-size: 0.875rem;
+    font-family:
+        "Consolas", "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+        monospace;
+    font-weight: inherit;
+    /* color: inherit; */
+}
+
+/* Key features section */
+#key-features .sd-card {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#key-features .sd-card-body {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 0;
+}
+
+#key-features .sd-card-header {
+    padding: 0;
+    border-bottom: none;
+}
+
+#key-features .sd-card-header strong {
+    color: var(--openspp-brand);
+}
+
+#key-features .sd-card-body .sd-card-text {
+    font-size: 1rem;
+    color: var(--openspp-primary);
+}
+
+#key-features .sd-card a {
+    text-decoration: none;
+}
+
+#key-features .sd-card-img-top {
+    max-height: 50px;
+    width: 50px;
+    margin-bottom: 1rem;
+    margin-left: 0;
+}
+
+#key-features .sd-card-header .sd-card-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #033a51;
+}
+
+#site-navigation h1.site-logo {
+    text-align: left;
+}

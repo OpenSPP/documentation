@@ -1,0 +1,1726 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Social Protection Management Information System (SP-MIS)" name="title" />
+<meta content="OpenSPP SP-MIS product configuration for comprehensive social protection program management from enrollment to payment" name="description" />
+<meta content="OpenSPP, SP-MIS, social protection, management information system, beneficiary management, payments" name="keywords" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+    <meta property="og:title" content="Social Protection Management Information System" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.openspp.org/overview/products/sp_mis.html" />
+<meta property="og:site_name" content="OpenSPP Documentation" />
+<meta property="og:description" content="A Social Protection Management Information System (SP-MIS) is a comprehensive digital solution designed to manage and automate the core operational processes of social protection programs. While a ..." />
+<meta property="og:image" content="https://docs.openspp.org/_static/openspp_logo.png" />
+<meta property="og:image:alt" content="OpenSPP Documentation" />
+<meta property="og:locale" content="en_US" />
+
+<title>Social Protection Management Information System – Overview – Products &#8212; OpenSPP Documentation vfeature-390-formatting-changes</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-httpexample.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/sphinxcontrib-httpexample.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/patch_scrollToActive.js"></script>
+    <script src="../../_static/search_shortcut.js"></script>
+    <script src="../../_static/version_switcher.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>
+mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    themeVariables: {
+        primaryColor: '#0066cc',
+        primaryTextColor: '#000000',
+        primaryBorderColor: '#0066cc'
+    }
+});
+</script>
+    <link rel="canonical" href="https://docs.openspp.org/previews/feature-390-formatting-changes/overview/products/sp_mis.html" />
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within OpenSPP Documentation vfeature-390-formatting-changes"
+          href="../../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../../_static/icon_192.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Social Registry" href="social_registry.html" />
+    <link rel="prev" title="Products" href="index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<!-- Prevent search engines from indexing preview documentation -->
+<meta name="robots" content="noindex,nofollow,noarchive">
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../../_static/review_status.css" type="text/css" />
+<script src="../../_static/review_status_simple.js"></script>
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+
+<!-- Mermaid Support -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="100">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">
+    <p><strong>⚠️ Preview Documentation</strong>: You are viewing a preview build from branch <code>feature-390-formatting-changes</code>. 
+    For the stable documentation, visit <a href="https://docs.openspp.org/">docs.openspp.org</a></p>
+    </div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">OpenSPP Documentation vfeature-390-formatting-changes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <div class="input-group">
+    <label for="q" class="sr-only">Search string
+    </label>
+    <i class="fa fa-search fa-lg search-icon" aria-hidden="true"></i>
+    <input
+    type="search" name="q" id="search-input"
+    class="form-control"
+    placeholder="Search"
+    aria-labelledby="Search"
+    value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+    />
+    <div class="input-group-append">
+      <span class="input-group-text" id="shortcut">
+        <kbd id="search-shortcut">⌘</kbd>&nbsp;<kbd>K</kbd>
+      </span>
+    </div>
+  </div>
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../getting_started/index.html">
+   Getting started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../getting_started/installation_deb.html">
+     Installation guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../getting_started/module_installation.html">
+     Module installation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Overview
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="index.html">
+     Products
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Social Protection Management Information System
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="social_registry.html">
+       Social Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="farmer_registry.html">
+       Farmer Registry
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../features/index.html">
+     Features
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../features/unified_registry.html">
+       Unified registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../features/program_management.html">
+       Program management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../features/eligibility_targeting.html">
+       Eligibility &amp; targeting
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../features/payment_disbursement.html">
+       Payment &amp; disbursement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../features/in_kind_benefits.html">
+       In-Kind benefits
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../features/data_integration_apis.html">
+       Data integration &amp; APIs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../features/change_management.html">
+       Change management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../features/gis_land_management.html">
+       GIS &amp; land management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../features/grievance_redress.html">
+       Grievance redress
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../concepts/index.html">
+     Concepts
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../concepts/digital_public_infrastructure.html">
+       Digital Public Infrastructure
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../concepts/integrated_beneficiary_registry.html">
+       Integrated Beneficiary Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../concepts/user_management.html">
+       User management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../concepts/data_collection_validation.html">
+       Data collection and validation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../concepts/registrant_concepts.html">
+       Key terminology
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../concepts/registry_key_concepts.html">
+       Organizing data in the registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../concepts/data_protection.html">
+       Data protection
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../concepts/extensibility.html">
+       Customisable, configurable, and extensible
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../poc_and_pilot.html">
+     From proof of concept to pilot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../user_guide/index.html">
+   User guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../user_guide/registry_management/index.html">
+     Registry management
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/registry_management/register_individual.html">
+       Register individuals
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/registry_management/import_export_registrant_data.html">
+       Import/Export data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/registry_management/setting_up_farmer_registry.html">
+       Farmer Registry setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/registry_management/identity_management.html">
+       Identity management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/registry_management/using_change_requests.html">
+       Change requests
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/registry_management/using_event_data.html">
+       Event data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/registry_management/dms.html">
+       Document management
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../user_guide/program_management/index.html">
+     Program management
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/program_management/create_program.html">
+       Create programs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/program_management/enrol_beneficiaries.html">
+       Enrol beneficiaries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/program_management/create_cycle.html">
+       Create cycles
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/program_management/configure_entitlements.html">
+       Cash entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/program_management/configure_inkind_entitlements.html">
+       In-kind entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/program_management/allocate_funds.html">
+       Allocate funds
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/program_management/using_geotargeting.html">
+       Geotargeting
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../user_guide/administration/index.html">
+     Administration
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/user_access.html">
+       User access
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/custom_fields.html">
+       Custom fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/indicator_fields.html">
+       Indicator fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/import_areas.html">
+       Import areas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/service_points.html">
+       Service points
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/inventory_configuration.html">
+       Inventory setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/incoming_email_configuration.html">
+       Incoming email setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/outgoing_email_configuration.html">
+       Outgoing email setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/database_management.html">
+       Database management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/security_tuning.html">
+       Security &amp; tuning
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/monitoring_maintenance.html">
+       Monitoring
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/uninstalling.html">
+       Uninstalling
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/hardware_integration.html">
+       Hardware setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/troubleshooting.html">
+       Troubleshooting
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../user_guide/pos_usage.html">
+     Point of Sales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../user_guide/grievance_management.html">
+     Grievance Redressal Management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../user_guide/consent_management.html">
+     Consent management
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../developer_guide/index.html">
+   Developer guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/setup.html">
+     Development setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/architecture.html">
+     Architecture
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../developer_guide/module_development/index.html">
+     Module development
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/fields.html">
+       Registry fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/registry.html">
+       Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/indicators.html">
+       Indicators
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/programs.html">
+       Programs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/cycles.html">
+       Program cycles
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/entitlements.html">
+       Program entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/change_requests.html">
+       Change Request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/dms.html">
+       Document Management System
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/rest_api.html">
+       REST API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/areas.html">
+       Areas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/service_points.html">
+       Service Points
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/audit.html">
+       Audit Logs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/dashboard.html">
+       Dashboards
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/best_practices.html">
+     Best practices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/troubleshooting.html">
+     Troubleshooting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/developer_mode.html">
+     Developer mode (debug mode)
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../developer_guide/integrations/index.html">
+     Integrations
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/integrations/dci.html">
+       Digital Convergence Initiative
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/integrations/esignet.html">
+       eSignet Integration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/integrations/oidc.html">
+       Configuring Keycloak for OAuth
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../developer_guide/api_usage/index.html">
+     API Usage
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/api_usage/dci_api.html">
+       DCI API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/api_usage/external_api_jsonrpc.html">
+       External API using JSON-RPC
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/index.html">
+   Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/modules/index.html">
+     OpenSPP modules
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_api.html">
+       API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_api_records.html">
+       API Records
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_area.html">
+       Area Management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_area_base.html">
+       Area Management (Base)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_area_gis.html">
+       Area GIS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_attendance.html">
+       Attendance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_audit_config.html">
+       Audit Config
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_audit_log.html">
+       Audit Log
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_audit_post.html">
+       G2P Registry: Audit Post
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_auto_update_entitlements.html">
+       Auto-Update Entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base.html">
+       Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_api.html">
+       Base API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_demo.html">
+       Base Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_gis.html">
+       Base GIS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_gis_demo.html">
+       Base GIS Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_gis_rest.html">
+       Base GIS REST
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_setting.html">
+       Base Settings
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_basic_cash_entitlement_spent.html">
+       Program Entitlement Basic Cash Spent
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_branding_kit.html">
+       OpenSPP Branding Kit
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request.html">
+       Change Request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_add_children_demo.html">
+       Change Request Demo: Add Child/Member
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_add_farmer.html">
+       Change Request: Add Farmer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_add_group_to_group.html">
+       Change Request: Add Group to a Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_base.html">
+       Change Request Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_change_info.html">
+       Change Information Change Request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_create_farm.html">
+       Change Request: Create Farm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_create_group.html">
+       Change Request: Create Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_edit_farm.html">
+       Change Request: Edit Farm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_edit_farmer.html">
+       Change Request: Edit Farmer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_consent.html">
+       Consent
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_field.html">
+       Custom Fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_field_custom_filter.html">
+       Custom Field Custom Filter Integration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_field_recompute_daily.html">
+       Custom Field Recompute Daily
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_fields_ui.html">
+       Custom Fields UI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_filter.html">
+       Custom Filter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_filter_farmer_registry.html">
+       Custom Filter Farmer Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_filter_ui.html">
+       Custom Filter UI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_cycle_attendance_compliance.html">
+       Cycle: Attendance Compliance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_dashboard_base.html">
+       Dashboard: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_data_export.html">
+       Data Export
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_dci_api_server.html">
+       DCI API Server
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_demo.html">
+       OpenSPP Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_dms.html">
+       Document Management System
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_eligibility_sql.html">
+       SQL Query Eligibility Manager
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_eligibility_tags.html">
+       Tag Based Eligibility Manager
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_encryption.html">
+       Encryption Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_ent_trans.html">
+       Entitlement Transactions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_entitlement_basket.html">
+       Entitlement Basket
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_entitlement_cash.html">
+       Cash Entitlement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_entitlement_in_kind.html">
+       In-Kind Entitlement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_ethnic_group.html">
+       OpenSPP: Ethnic Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_event_data.html">
+       Event Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_event_data_program_membership.html">
+       Event Data Program Membership
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_event_demo.html">
+       Event Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_exclusion_filter.html">
+       Exclusion Filter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_farmer_registry_base.html">
+       Farmer Registry Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_farmer_registry_dashboard.html">
+       Farmer Registry Dashboard
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_farmer_registry_default_ui.html">
+       Farmer Registry Default UI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_farmer_registry_demo.html">
+       Farmer Registry Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_grm.html">
+       Grievance Redress Mechanism
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_hide_menus.html">
+       Hide Non-OpenSPP Menus
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_hide_menus_base.html">
+       Hide Non-OpenSPP Menus: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_idpass.html">
+       ID PASS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_idqueue.html">
+       ID Queue
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_import_dci_api.html">
+       Import: DCI API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_import_match.html">
+       Import Match
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_irrigation.html">
+       Irrigation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_land_record.html">
+       Land Record
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_manual_eligibility.html">
+       Program: Manual Eligibility
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_manual_entitlement.html">
+       Manual Entitlement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_mis_demo.html">
+       Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_oauth.html">
+       API: Oauth
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_openid_vci.html">
+       OpenID VCI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_openid_vci_group.html">
+       OpenID VCI Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_openid_vci_individual.html">
+       OpenID VCI Individual
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_pmt.html">
+       Proxy Means Testing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_pos.html">
+       POS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_pos_id_redemption.html">
+       POS: ID Redemption
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_program_id.html">
+       Program ID
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_programs.html">
+       Programs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_programs_compliance_criteria.html">
+       Programs: Compliance Criteria
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_programs_sp.html">
+       Programs: Service Points Integration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_qr_scanner.html">
+       QR Scanner
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registrant_import.html">
+       Registrant Import
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registrant_tag.html">
+       Registrant Tags
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_approval.html">
+       Registry Approval: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_approval_group.html">
+       Registry Approval: Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_approval_individual.html">
+       Registry Approval: Individual
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_base.html">
+       Registry: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_data_source.html">
+       Data Source
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_group_hierarchy.html">
+       Registry Group Hierarchy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_scan_id_document.html">
+       Registry: Scan ID Document
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_service_point_device.html">
+       Service Point Device
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_service_points.html">
+       Service Points Management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_starter.html">
+       OpenSPP: Starter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_user_roles.html">
+       User Roles
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/technical/index.html">
+     Technical reference
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/technical/security.html">
+       Security implementations &amp; practices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/technical/backup.html">
+       Backup and recovery
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/technical/performance.html">
+       Performance optimization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/technical/monitoring.html">
+       Monitoring
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../community/index.html">
+   Community
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/contributing.html">
+     Contributing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/license.html">
+     Licensing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/security_reporting.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/release_management.html">
+     Release Management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/glossary.html">
+   OpenSPP Glossary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            
+    <p class="openspporglink">
+        <a href="https://openspp.org">
+            <img src="/_static/openspp_logo.png" alt="openspp.org" /> openspp.org</a>
+    </p>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__label">
+        <span>Social Protection Management Information System – Overview</span>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/openspp/documentation"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Foverview/products/sp_mis.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://docs.openspp.org/contributing/?overview/products/sp_mis.md#making-contributions-on-github"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/overview/products/sp_mis.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-does-a-social-protection-management-information-system-work">
+   How does a Social Protection Management Information System work?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sp-mis-integration-and-interoperability">
+   SP-MIS, integration and interoperability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#openspp-as-a-social-protection-mis">
+   OpenSPP as a Social Protection MIS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternative-names-for-sp-mis">
+   Alternative names for SP-MIS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Social Protection Management Information System</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-does-a-social-protection-management-information-system-work">
+   How does a Social Protection Management Information System work?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sp-mis-integration-and-interoperability">
+   SP-MIS, integration and interoperability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#openspp-as-a-social-protection-mis">
+   OpenSPP as a Social Protection MIS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternative-names-for-sp-mis">
+   Alternative names for SP-MIS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="social-protection-management-information-system">
+<h1>Social Protection Management Information System<a class="headerlink" href="#social-protection-management-information-system" title="Permalink to this headline">#</a></h1>
+<p>A <strong>Social Protection Management Information System (SP-MIS)</strong> is a comprehensive digital solution designed to manage and automate the core operational processes of social protection programs. While a <a class="reference internal" href="../../reference/glossary.html#term-Social-registry"><span class="xref std std-term">social registry</span></a> focuses on identifying and assessing potential beneficiaries, an SP-MIS handles the entire lifecycle of program implementation, from enrolling beneficiaries to delivering payments and managing grievances.</p>
+<p>SP-MIS are critical for the effective and transparent administration of <a class="reference internal" href="../../reference/glossary.html#term-Social-protection"><span class="xref std std-term">social protection</span></a> programs, such as <a class="reference internal" href="../../reference/glossary.html#term-Cash-transfers"><span class="xref std std-term">cash transfers</span></a>, food assistance, and public works programs. They serve as the operational backbone, integrating data from various sources—like social registry and national ID systems—to ensure that <a class="reference internal" href="../../reference/glossary.html#term-Benefits"><span class="xref std std-term">benefits</span></a> are delivered to the right people, at the right time, and in the right amount.</p>
+<p>By digitizing and streamlining administrative tasks, an SP-MIS enhances efficiency, reduces the risk of <a class="reference internal" href="../../reference/glossary.html#term-Fraud"><span class="xref std std-term">fraud</span></a> and error, and provides policymakers with timely data for monitoring program performance and making informed decisions.</p>
+<section id="how-does-a-social-protection-management-information-system-work">
+<h2>How does a Social Protection Management Information System work?<a class="headerlink" href="#how-does-a-social-protection-management-information-system-work" title="Permalink to this headline">#</a></h2>
+<p>An SP-MIS orchestrates the key business processes involved in running social protection programs. While the specific functionalities can vary based on a country's needs, a typical SP-MIS includes the following operational functions:</p>
+<ol class="arabic simple">
+<li><p><strong>Program and beneficiary management:</strong> Manages the detailed rules and parameters of specific social protection programs. It handles the entire <a class="reference internal" href="../../reference/glossary.html#term-Beneficiary"><span class="xref std std-term">beneficiary</span></a> lifecycle, including <a class="reference internal" href="../../reference/glossary.html#term-Registration"><span class="xref std std-term">registration</span></a>, <a class="reference internal" href="../../reference/glossary.html#term-Eligibility-determination"><span class="xref std std-term">eligibility determination</span></a>, <a class="reference internal" href="../../reference/glossary.html#term-Enrollment-decisions"><span class="xref std std-term">enrollment decisions</span></a>, updates to <a class="reference internal" href="../../reference/glossary.html#term-Household"><span class="xref std std-term">household</span></a> information, and program exit or graduation.</p></li>
+<li><p><strong>Entitlement calculation:</strong> Automates the calculation of benefits amounts for each beneficiary household or individual based on the specific rules of a program (e.g., payment per child, amount based on disability status).</p></li>
+<li><p><strong>Payment and financial management:</strong> Generates payment lists and securely transmits them to <a class="reference internal" href="../../reference/glossary.html#term-Payment-service-provider"><span class="xref std std-term">payment service provider</span></a> (PSPs), such as banks or mobile money operators. It also supports the reconciliation of payment data to track successful and failed transactions.</p></li>
+<li><p><strong><a class="reference internal" href="../../reference/glossary.html#term-Case-management"><span class="xref std std-term">Case management</span></a>:</strong> Provides tools for caseworkers to manage interactions with beneficiaries, track their status, and handle specific needs or issues that arise during their participation in a program.</p></li>
+<li><p><strong><a class="reference internal" href="../../reference/glossary.html#term-Grievance-redress-mechanism-GRM"><span class="xref std std-term">Grievance redress mechanism (GRM)</span></a>:</strong> Includes a system for logging, tracking, and resolving <a class="reference internal" href="../../reference/glossary.html#term-Complaints"><span class="xref std std-term">complaints</span></a> or <a class="reference internal" href="../../reference/glossary.html#term-Appeals"><span class="xref std std-term">appeals</span></a> from beneficiaries. This ensures accountability and allows program administrators to identify and address systemic issues.</p></li>
+<li><p><strong>Monitoring and Evaluation (M&amp;E):</strong> Features robust dashboards and reporting tools that provide real-time insights into program operations. This allows staff to monitor key performance indicators, track expenditures, and generate reports for stakeholders.</p></li>
+</ol>
+</section>
+<section id="sp-mis-integration-and-interoperability">
+<h2>SP-MIS, integration and interoperability<a class="headerlink" href="#sp-mis-integration-and-interoperability" title="Permalink to this headline">#</a></h2>
+<p>The true power of an SP-MIS is realized through its ability to integrate with other systems within a nation's digital public infrastructure. This <a class="reference internal" href="../../reference/glossary.html#term-Interoperability"><span class="xref std std-term">interoperability</span></a> creates a cohesive social protection delivery chain.</p>
+<p>An SP-MIS and a Social Registry are distinct but complementary systems. While a <strong>Social Registry</strong> focuses on the initial <a class="reference internal" href="../../reference/glossary.html#term-Identification"><span class="xref std std-term">identification</span></a> and needs assessment of the population to determine <em>potential</em> beneficiaries, the <strong>SP-MIS</strong> manages the ongoing administration of <em>enrolled</em> beneficiaries within specific programs.</p>
+<p>The data flows from the Social Registry to the SP-MIS, which then handles the operational aspects of program delivery, such as calculating payments and tracking the beneficiary lifecycle. This linkage is crucial for achieving policy coherence and operational efficiency. For example, an SP-MIS can be integrated with:</p>
+<ul class="simple">
+<li><p>A <strong><a class="reference internal" href="social_registry.html"><span class="doc">Social Registry</span></a></strong> to receive lists of potentially eligible household.</p></li>
+<li><p>A <strong><a class="reference internal" href="farmer_registry.html"><span class="doc">Farmer Registry</span></a></strong> to identify vulnerable agricultural household for specific programs.</p></li>
+<li><p><strong><a class="reference internal" href="../../reference/glossary.html#term-Civil-registration"><span class="xref std std-term">Civil registration</span></a></strong> and Vital Statistics (CRVS) systems to verify life events like births or deaths, which can affect eligibility.</p></li>
+<li><p><strong>National ID systems</strong> to validate identities.This integration eliminates data silos, reduces administrative duplication, and enables a more holistic and responsive approach to social protection.</p></li>
+</ul>
+</section>
+<section id="openspp-as-a-social-protection-mis">
+<h2>OpenSPP as a Social Protection MIS<a class="headerlink" href="#openspp-as-a-social-protection-mis" title="Permalink to this headline">#</a></h2>
+<p>OpenSPP is a powerful, <a class="reference internal" href="../../reference/glossary.html#term-Open-source-software"><span class="xref std std-term">open-source software</span></a> platform that functions as a core Social Protection Management Information System (SP-MIS). It is designed for flexibility and scalability, offering a comprehensive suite of tools to manage the end-to-end delivery of social protection programs.</p>
+<ol class="arabic simple">
+<li><p><strong>Program design and configuration:</strong> OpenSPP allows administrators to easily configure and manage multiple social protection programs, each with its own unique set of rules for eligibility, entitlements, and conditions.</p></li>
+<li><p><strong>End-to-end beneficiary Mmnagement:</strong> The platform supports the entire beneficiary lifecycle, from enrollment decisions and registration to ongoing case management and eventual program exit.</p></li>
+<li><p><strong>Flexible entitlement and payment processing:</strong> It features a robust engine for calculating entitlements and generating payment cycles. OpenSPP can integrate with a wide range of payment service provider to ensure timely and accurate delivery of benefits.</p></li>
+<li><p><strong>Integrated grievance redress:</strong> OpenSPP includes a built-in module for managing grievance, ensuring that beneficiary feedback is systematically recorded, addressed, and resolved.</p></li>
+<li><p><strong>Advanced interoperability:</strong> Built on an open architecture, OpenSPP is designed for seamless integration. It can connect with external systems like social registry, national IDs, and financial service providers using standardized APIs, supporting a fully interoperable social protection ecosystem.</p></li>
+<li><p><strong>Security and data protection:</strong> The OpenSPP team rigorously upholds <a class="reference internal" href="../../reference/glossary.html#term-Data-protection"><span class="xref std std-term">data protection</span></a> and privacy standards. The platform is designed to ensure that sensitive beneficiary data and financial transactions are protected in line with global best practices.</p></li>
+</ol>
+</section>
+<section id="alternative-names-for-sp-mis">
+<h2>Alternative names for SP-MIS<a class="headerlink" href="#alternative-names-for-sp-mis" title="Permalink to this headline">#</a></h2>
+<p>Social Protection Management Information Systems are known by various names around the world. Understanding these alternative names can be crucial for recognizing similar systems under different terminologies:</p>
+<ul class="simple">
+<li><p><strong>Social Safety Net Systems (SSNS)</strong></p></li>
+<li><p><strong>Beneficiary Management Systems (BMS)</strong></p></li>
+<li><p><strong>Social assistance Information Systems (SAIS)</strong></p></li>
+<li><p><strong>Integrated Social services Systems (ISSS)</strong></p></li>
+<li><p><strong>Public Assistance Information Systems (PAIS)</strong></p></li>
+<li><p><strong>Welfare Information Systems (WIS)</strong></p></li>
+</ul>
+<p>For more information about OpenSPP’s Social Protection MIS, contact us through our <a class="reference external" href="https://openspp.org/contact-us/">website</a>.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.dfat.gov.au/sites/default/files/integrating-data-information-management-social-protection-full.pdf">Barca, V. (2017). <em>Integrating data and information management for social protection: social registries and integrated beneficiary registries</em>. Australian Department of Foreign Affairs and Trade.</a></p></li>
+<li><p><a class="reference external" href="https://spdci.org/resources/interoperability-in-action-6-social-registry-workshop-recording/">Digital Convergence Initiative (2023). <em>Social protection management information system interacting with social registry</em>. Social Protection Interoperability Series: Interoperability in Action #6.</a></p></li>
+<li><p><a class="reference external" href="https://www.cgdev.org/sites/default/files/digital-technology-social-assistance-transfers-covid-19-relief-lessons-selected-cases.pdf">Gelb, A., and Mukherjee, A. (2020). <em>Digital Technology in Social Assistance Transfers: A Toolkit for Action</em>. Center for Global Development.</a></p></li>
+<li><p><a class="reference external" href="https://openknowledge.worldbank.org/entities/publication/c44dc506-72dd-5428-a088-6fb7aea53095">Lindert, K., et al. (2020). <em>Sourcebook on the Foundations of Social Protection Delivery Systems</em>. World Bank.</a></p></li>
+</ul>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Products</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="social_registry.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Social Registry</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      &copy; Copyright OpenSPP.<br/>
+    <div class="extra_footer">
+      <p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+    
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            if ($.trim($(".sticky-top .bd-toc").html()) === "") {
+                $(".sticky-top .bd-toc").css("visibility", "hidden");
+            }
+        });
+    </script>
+
+
+  </body>
+</html>
