@@ -666,3 +666,20 @@ dl.o-definition-list > dd {
 #site-navigation h1.site-logo {
     text-align: left;
 }
+
+#resources-community p {
+    margin-bottom: 0;
+}
+
+#resources-community ul.simple {
+    list-style: none;
+    padding: 0;
+}
+
+#resources-community ul.simple li a.reference.external::after {
+    content: "🢅";
+    font-size: 0.75rem;
+    margin-left: 0.25rem;
+    vertical-align: super;
+    font-weight: bold;
+}
