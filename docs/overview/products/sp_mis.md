@@ -25,7 +25,7 @@ Read more about {doc}`Eligibility and targeting <../features/eligibility_targeti
 
 Read more about {doc}`End-to-end program and entitlement management <../features/program_management>`, {doc}`Pluggable payment and disbursement <../features/payment_disbursement>` and {doc}`In-kind benefits and inventory management (GRM) <../features/in_kind_benefits>`. 
 
-**Monitoring, reporting, and public accountability:** A modern SP-MIS must be transparent and accountable to build citizen trust. The system provides a suite of tools for oversight and accountability, with a secure audit log that tracks all data modifications and user actions. For high-level decision-making, the system provides customizable dashboards and data analysis tools that can provide meaningful, actionable insights . This capability is crucial for tracking program performance, demonstrating effectiveness to donors, and building public trust.
+**Monitoring, reporting, and public accountability:** A modern SP-MIS must be transparent and accountable to build citizen trust. The system provides a suite of tools for oversight and accountability, with a secure audit log that tracks all data modifications and user actions. For high-level decision-making, the system provides customizable dashboards and data analysis tools that can provide meaningful, actionable insights. This capability is crucial for tracking program performance, demonstrating effectiveness to donors, and building public trust.
 
 Read more about {doc}`Auditable change management <../features/change_management>` and {doc}`Grievance Redress Mechanism (GRM) <../features/grievance_redress>`. 
 
