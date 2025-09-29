@@ -24,7 +24,7 @@ The platform's modular architecture offers three integrated products: **SP-MIS**
 :::{grid-item-card}
 :img-top: images/01-Program-management.png
 
-**Program management**
+**{doc}`Program management <overview/features/program_management>`**
 ^^^
 Design and operate multiple social protection programs with configurable cycles and eligibility rules.
 :::
@@ -32,7 +32,7 @@ Design and operate multiple social protection programs with configurable cycles 
 :::{grid-item-card}
 :img-top: images/02-Unified-registry.png
 
-**Unified registry**
+**{doc}`Unified registry <overview/features/unified_registry>`**
 ^^^
 Maintain consolidated beneficiary data across programs with advanced deduplication.
 :::
@@ -40,7 +40,7 @@ Maintain consolidated beneficiary data across programs with advanced deduplicati
 :::{grid-item-card}
 :img-top: images/03-GIS-&-land-management.png
 
-**GIS & land management**
+**{doc}`GIS & land management <overview/features/gis_land_management>`**
 ^^^
 Integrate agricultural data, land holdings, and geospatial analysis for farmer support programs.
 :::
@@ -48,7 +48,7 @@ Integrate agricultural data, land holdings, and geospatial analysis for farmer s
 :::{grid-item-card}
 :img-top: images/04-Payment-&-disbursement.png
 
-**Payment & disbursement**
+**{doc}`Payment & disbursement <overview/features/payment_disbursement>`**
 ^^^
 Connect with multiple payment providers and track benefit distribution.
 :::
@@ -56,7 +56,7 @@ Connect with multiple payment providers and track benefit distribution.
 :::{grid-item-card}
 :img-top: images/05-Eligibility-&-targeting.png
 
-**Eligibility & targeting**
+**{doc}`Eligibility & targeting <overview/features/eligibility_targeting>`**
 ^^^
 Apply sophisticated criteria for beneficiary selection and prioritization.
 :::
@@ -64,7 +64,7 @@ Apply sophisticated criteria for beneficiary selection and prioritization.
 :::{grid-item-card}
 :img-top: images/06-In-kind-benefits.png
 
-**In-kind benefits**
+**{doc}`In-kind benefits <overview/features/in_kind_benefits>`**
 ^^^
 Manage distribution of goods, vouchers, and non-cash assistance.
 :::
@@ -72,7 +72,7 @@ Manage distribution of goods, vouchers, and non-cash assistance.
 :::{grid-item-card}
 :img-top: images/07-Grievance-redress.png
 
-**Grievance redress**
+**{doc}`Grievance redress <overview/features/grievance_redress>`**
 ^^^
 Handle complaints and feedback with configurable workflows.
 :::
@@ -80,7 +80,7 @@ Handle complaints and feedback with configurable workflows.
 :::{grid-item-card}
 :img-top: images/08-Data-integration-&-APIs.png
 
-**Data integration & APIs**
+**{doc}`Data integration & APIs <overview/features/data_integration_apis>`**
 ^^^
 RESTful APIs and data exchange protocols for system interoperability.
 :::
