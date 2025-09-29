@@ -611,45 +611,53 @@ dl.o-definition-list > dd {
     /* color: inherit; */
 }
 
-/* Key features section */
-#key-features .sd-card {
+/* Feature card grids */
+#key-features .sd-card,
+#quick-start .sd-card {
     border: none !important;
     box-shadow: none !important;
 }
 
-#key-features .sd-card-body {
+#key-features .sd-card-body,
+#quick-start .sd-card-body {
     display: flex;
     flex-direction: column;
     text-align: left;
     padding: 0;
 }
 
-#key-features .sd-card-header {
+#key-features .sd-card-header,
+#quick-start .sd-card-header {
     padding: 0;
     border-bottom: none;
 }
 
-#key-features .sd-card-header strong {
+#key-features .sd-card-header strong,
+#quick-start .sd-card-header strong {
     color: var(--openspp-brand);
 }
 
-#key-features .sd-card-body .sd-card-text {
+#key-features .sd-card-body .sd-card-text,
+#quick-start .sd-card-body .sd-card-text {
     font-size: 1rem;
     color: var(--openspp-primary);
 }
 
-#key-features .sd-card a {
+#key-features .sd-card a,
+#quick-start .sd-card a {
     text-decoration: none;
 }
 
-#key-features .sd-card-img-top {
+#key-features .sd-card-img-top,
+#quick-start .sd-card-img-top {
     max-height: 50px;
     width: 50px;
     margin-bottom: 1rem;
     margin-left: 0;
 }
 
-#key-features .sd-card-header .sd-card-text {
+#key-features .sd-card-header .sd-card-text,
+#quick-start .sd-card-header .sd-card-text {
     font-size: 1.2rem;
     font-weight: bold;
     color: #033a51;
