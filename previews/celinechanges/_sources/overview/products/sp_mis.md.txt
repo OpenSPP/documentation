@@ -7,7 +7,7 @@ myst:
 ---
 # Social Protection Management Information System
 
-A modern, integrated digital system is crucial for delivering social protection programs effectively. Historically, these programs have been supported by fragmented databases and manual processes, leading to inefficiencies and a limited ability to adapt to a country's evolving needs or sudden crises. An OpenSPP-based Social Protection Management Information System (SP-MIS) is a comprehensive platform that rather than a simple list of beneficiaries acts as a foundational digital public good. It is designed to manage the entire lifecycle of a social protection program and can support the delivery of both routine and emergency interventions, as both cash and in-kind. The system can also leverage documents and verifiable credentials to enhance security, reduce fraud, and empower beneficiaries by granting them control over their personal data.
+A modern, integrated digital system is crucial for delivering social protection programs effectively. Historically, these programs have been supported by fragmented databases and manual processes, leading to inefficiencies and a limited ability to adapt to a country's evolving needs or sudden crises. An OpenSPP-based Social Protection Management Information System (SP-MIS) is a comprehensive platform that, rather than a simple list of beneficiaries, acts as a foundational digital public good. It is designed to manage the entire lifecycle of a social protection program and can support the delivery of both routine and emergency interventions, as both cash and in-kind. The system can also leverage documents and verifiable credentials to enhance security, reduce fraud, and empower beneficiaries by granting them control over their personal data.
 
 ## How it works
 
@@ -25,7 +25,7 @@ Read more about {doc}`Eligibility and targeting <../features/eligibility_targeti
 
 Read more about {doc}`End-to-end program and entitlement management <../features/program_management>`, {doc}`Pluggable payment and disbursement <../features/payment_disbursement>` and {doc}`In-kind benefits and inventory management (GRM) <../features/in_kind_benefits>`. 
 
-**Monitoring, reporting, and public accountability:** A modern SP-MIS must be transparent and accountable to build citizen trust. The system provides a suite of tools for oversight and accountability, with a secure audit log that tracks all data modifications and user actions. For high-level decision-making, the system provides customizable dashboards and data analysis tools that can provide meaningful, actionable insights . This capability is crucial for tracking program performance, demonstrating effectiveness to donors, and building public trust.
+**Monitoring, reporting, and public accountability:** A modern SP-MIS must be transparent and accountable to build citizen trust. The system provides a suite of tools for oversight and accountability, with a secure audit log that tracks all data modifications and user actions. For high-level decision-making, the system provides customizable dashboards and data analysis tools that can provide meaningful, actionable insights. This capability is crucial for tracking program performance, demonstrating effectiveness to donors, and building public trust.
 
 Read more about {doc}`Auditable change management <../features/change_management>` and {doc}`Grievance Redress Mechanism (GRM) <../features/grievance_redress>`. 
 
