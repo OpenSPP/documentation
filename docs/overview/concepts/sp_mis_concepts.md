@@ -35,7 +35,7 @@ The data flows from the Social Registry to the SP-MIS, which then handles the op
 * A **{doc}`Social Registry <social_registry>`** to receive lists of potentially eligible household.
 * A **{doc}`Farmer Registry <farmer_registry>`** to identify vulnerable agricultural household for specific programs.
 * **{term}`Civil registration`** and Vital Statistics (CRVS) systems to verify life events like births or deaths, which can affect eligibility.
-* **National ID systems** to validate identities.This integration eliminates data silos, reduces administrative duplication, and enables a more holistic and responsive approach to social protection.
+* **National ID systems** to validate identities. This integration eliminates data silos, reduces administrative duplication, and enables a more holistic and responsive approach to social protection.
 
 ## OpenSPP as a Social Protection MIS
 
