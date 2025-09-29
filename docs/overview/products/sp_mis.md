@@ -39,7 +39,7 @@ Read more about {doc}`Geospatial (GIS) and land management <../features/gis_land
 
 ## OpenSPP modules included in the SP-MIS:
 
-The preconfigured SP-MIS product is intended to provide the basic use cases of a social registry. Note that in addition to the base product you will most likely want to add additional modules in order to match your specific needs.
+The preconfigured SP-MIS product is intended to provide the basic use cases of an SP-MIS. Note that in addition to the base product you will most likely want to add additional modules in order to match your specific needs.
 
 The following modules are included in the OpenSPP SP-MIS product:
 
