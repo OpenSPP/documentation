@@ -42,7 +42,7 @@ The data flows from the Social Registry to the SP-MIS, which then handles the op
 OpenSPP is a powerful, {term}`open-source software` platform that functions as a core Social Protection Management Information System (SP-MIS). It is designed for flexibility and scalability, offering a comprehensive suite of tools to manage the end-to-end delivery of social protection programs.
 
 1. **Program design and configuration:** OpenSPP allows administrators to easily configure and manage multiple social protection programs, each with its own unique set of rules for eligibility, entitlements, and conditions.  
-2. **End-to-end beneficiary Mmnagement:** The platform supports the entire beneficiary lifecycle, from enrollment decisions and registration to ongoing case management and eventual program exit.
+2. **End-to-end beneficiary management:** The platform supports the entire beneficiary lifecycle, from enrollment decisions and registration to ongoing case management and eventual program exit.
 3. **Flexible entitlement and payment processing:** It features a robust engine for calculating entitlements and generating payment cycles. OpenSPP can integrate with a wide range of payment service provider to ensure timely and accurate delivery of benefits.
 4. **Integrated grievance redress:** OpenSPP includes a built-in module for managing grievance, ensuring that beneficiary feedback is systematically recorded, addressed, and resolved.
 5. **Advanced interoperability:** Built on an open architecture, OpenSPP is designed for seamless integration. It can connect with external systems like social registry, national IDs, and financial service providers using standardized APIs, supporting a fully interoperable social protection ecosystem.  
