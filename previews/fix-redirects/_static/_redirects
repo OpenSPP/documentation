@@ -28,7 +28,7 @@
 /explanation/social_protection_management_information_systems.html /overview/products/sp_mis.html 301
 /explanation/social_registry.html /overview/products/social_registry.html 301
 /explanation/user_mgt.html /overview/concepts/user_management.html 301
-/getting_started/creating_a_program.html /program_management/create_program.html 301
+/getting_started/creating_a_program.html user_guide/program_management/create_program.html 301
 /getting_started/ /getting_started/index.html 301
 /getting_started/installation_guide.html /getting_started/installation_deb.html 301
 /getting_started/poc_and_pilot.html /overview/poc_and_pilot.html 301
@@ -178,7 +178,7 @@
 /technical_reference/apis.html /developer_guide/api_usage/index.html 301
 /technical_reference/architecture.html /developer_guide/architecture.html 301
 /technical_reference/audit_logs.html /developer_guide/module_development/audit.html 301
-/technical_reference/backup.html /reference/technical/backup.html
+/technical_reference/backup.html /reference/technical/backup.html 301
 /technical_reference/code.html /community/contributing.html 301
 /technical_reference/extensibility.html /overview/concepts/extensibility.html 301
 /technical_reference/external_api.html /developer_guide/api_usage/external_api_jsonrpc.html 301
@@ -225,7 +225,7 @@
 /tutorial/consent_management.html /user_guide/index.html 301
 /tutorial/custom_fields.html /user_guide/administration/custom_fields.html 301
 /tutorial/dashboards_and_reports.html /developer_guide/module_development/dashboard.html 301
-/tutorial/event_data.html /registry_management/using_event_data.html 301
+/tutorial/event_data.html user_guide/registry_management/using_event_data.html 301
 /tutorial/geotargeting.html /user_guide/program_management/using_geotargeting.html 301
 /tutorial/grievance_redressal_management.html /user_guide/grievance_management.html 301
 /tutorial/hardware_integration.html /user_guide/administration/hardware_integration.html 301
@@ -251,7 +251,7 @@
 /tutorial/vouchers.html /user_guide/program_management/configure_inkind_entitlements.html 301
 /_modules/odoo/addons/g2p_programs/models/managers/cycle_manager.html /developer_guide/module_development/cycles.html 301
 /_modules/odoo/addons/g2p_programs/models/managers/eligibility_manager.html /developer_guide/module_development/programs.html 301
-/_modules/odoo/addons/g2p_programs/models/managers/entitlement_manager.html /module_development/entitlements.html 301
+/_modules/odoo/addons/g2p_programs/models/managers/entitlement_manager.html /developer_guide/module_development/entitlements.html 301
 /_modules/odoo/addons/g2p_programs/models/managers/notification_manager.html /reference/modules/g2p_notifications_base.html 301
 /_modules/odoo/addons/g2p_programs/models/managers/program_manager.html /developer_guide/module_development/programs.html 301
 /_modules/odoo/addons/g2p_registry_membership/models/group.html /reference/modules/g2p_registry_group.html 301
