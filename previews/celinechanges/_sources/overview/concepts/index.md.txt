@@ -33,6 +33,14 @@ These concepts explain the theoretical foundations and design principles behind 
 
 **{doc}`User management <user_management>`**: Framework for controlling system access and safeguarding user data with two management approaches.
 
+## Social protection foundations
+
+**{doc}`Social Protection Management Information System <sp_mis_concepts>`**: Introduction to Social Protection Management Information Systems (SPMIS) and their role in the social protection ecosystem.
+
+**{doc}`Social Registry <social_registry_concepts>`**: Introduction to Social Registries and their role in the social protection ecosystem.
+
+**{doc}`Farmer Registry <farmer_registry_concepts>`**: Introduction to Farmer Registries and their role in the social protection ecosystem.
+
 ```{toctree}
 ---
 caption: Learn
@@ -48,4 +56,7 @@ registrant_concepts
 registry_key_concepts
 data_protection
 extensibility
+sp_mis_concepts
+social_registry_concepts
+farmer_registry_concepts
 ```
