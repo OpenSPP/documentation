@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    "title": "Social Registry 2 for Social Protection Programs"
+    "title": "Social Registry for Social Protection Programs"
     "description": "OpenSPP Social Registry product configuration for centralized beneficiary identification, registration, and needs assessment"
     "keywords": "OpenSPP, social registry, beneficiary identification, targeting, social protection, needs assessment"
 ---
