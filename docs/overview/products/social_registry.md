@@ -7,30 +7,43 @@ myst:
 ---
 
 # OpenSPP Social Registry
+*A flexible and secure platform to manage social program data*
 
-The OpenSPP-based Social Registry base module contains everything that is necessary to setup a foundational Social Registry. It provides all the needed building blocks but can also be expanded with additional modules to perfectly suit the specific needs.
+The **OpenSPP Social Registry** is a digital platform that helps governments and organizations manage information about individuals and households. It provides a single, reliable source of data to improve targeting, reduce duplication, and coordinate services.
 
-## What are the functionalities of OpenSPP Social Registry?
+## Key features
 
-**Registration and data collection:** Designing a registry that matches the specific use case is foundational to make sure that the Social Registry can fullfill its purpos. OpenSPP makes it easy to ensure that the relevant fields are present and easily accessible, either through the use of custom fields or by modifying the module to perfectly match your use case. OpenSPP Social Registry allows for ingesting data through either bulk import, registration through the UI or interoperability with other systems (see below).
+**Easy registration and data collection –** Prepare the registry with all the fields needed. Collect information through bulk upload, direct entry in the UI, or secure connections with existing systems.
 
-Read more about {doc}`Unified and hierarchical beneficiary registry <../features/unified_registry>` and {doc}`Key terminology <../concepts/registrant_concepts>`. 
+*Read more about {doc}`Unified and hierarchical beneficiary registry <../features/unified_registry>` and {doc}`Key terminology <../concepts/registrant_concepts>`.* 
 
-**Targeting and integrated service delivery:** The OpenSPP Social Registry can serve as a central data repository to support a wide array of programs. It provides a flexible approach to eligibility and targeting allowing a government to automatically identify citizens who meet either simple criteria, such as age or other single features, or more complex, intersecting criteria. This functionality ensures that the registry can prevent duplication and allow for a coordinated, integrated approach.
+**Targeting and integrated service delivery –** Flexible approach to eligibility and targeting - identify eligible beneficiaries based on simple criteria such as age or complex combinations of factors.
 
-Read more about {doc}`Eligibility and targeting <../features/eligibility_targeting>`. 
+*Read more about {doc}`Eligibility and targeting <../features/eligibility_targeting>`.* 
 
-**Monitoring, reporting, and public accountability:** OpenSPP Social Registry provides a suite of tools for oversight and public accountability. It tracks all data modifications and user actions, creating a secure and transparent record of every change. It also manages user access and permissions, ensuring data security and integrity. For high-level decision-making, the system provides data analysis tools and dashboards to inform policy and resource allocation.
+**Monitoring and accountability –** Track changes and manage user permissions to ensure data security and integrity. Access dashboards for decision-making, transparency and long term monitoring.
 
-Read more about {doc}`Auditable change management <../features/change_management>` and {doc}`Grievance Redress Mechanism (GRM) <../features/grievance_redress>`. 
+*Read more about {doc}`Auditable change management <../features/change_management>` and {doc}`Grievance Redress Mechanism (GRM) <../features/grievance_redress>`.* 
 
-**Interoperability with other systems:** The OpenSPP platform, including the OpenSPP Social Registry, uses a well-documented RESTful API that enables the registry to share and receive information securely with other national databases, such as those for National IDs, health, and civil registration. This allows the government to pull information directly, ensuring that the information is up-to-date.
+**Interoperability with other systems –** Connect seamlessly with other national databases (ID, health, civil registry) via secure APIs to make updates or to pull information directly, ensuring that the information is up-to-date.
 
-Read more about {doc}`Data integration and interoperability (APIs) <../features/data_integration_apis>`. 
+*Read more about {doc}`Data integration and interoperability (APIs) <../features/data_integration_apis>`.* 
+
+## Who is it for?
+
+**Government agencies** wanting to have a reliable up to date registry that can act as foundation for interventions
+
+**NGOs** delivering services at national or local level
+
+**Policy makers** needing reliable data for planning and resource allocation
+
+## Next Step
+
+The OpenSPP Social Registry is an open-source product, built and supported by the OpenSPP community. It can be downloaded from XX
 
 ## OpenSPP modules included in the OpenSPP Social Registry
 
-The preconfigured OpenSPP Social Registry product is intended to provide the basic use cases of a social registry. Note that in addition to the base product you will most likely want to add additional modules in order to match your specific needs.
+The preconfigured OpenSPP Social Registry product is intended to provide support for the fundamental use cases of a social registry.
 
 The following modules are included in the OpenSPP Social Registry product:
 
@@ -41,3 +54,7 @@ The following modules are included in the OpenSPP Social Registry product:
 - **{doc}`OpenSPP OpenID VCI Individual <../../reference/modules/spp_openid_vci_individual>`**: Enables the issuance of Verifiable Credentials (VCs) for individual registrants.
 - **{doc}`OpenSPP Custom Filter <../../reference/modules/spp_custom_filter>`**: Allows control over fields displayed in filter dropdowns.
 - **{doc}`OpenSPP User Roles <../../reference/modules/spp_user_roles>`**: Manages user access and permissions to the registry data, ensuring data security and integrity.
+
+## Expanding the Social Registry
+
+The OpenSPP-based Social Registry contains everything that is necessary to set up a foundational Social Registry. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more on XX

@@ -7,30 +7,47 @@ myst:
 ---
 
 # OpenSPP Farmer Registry
+*A digital platform to manage and strengthen farmer data systems*
 
-The OpenSPP based Farmer Registry base module is designed to include all the foundational parts of a modular and integrated digital farmer registry. It can act as a single, auditable source of truth for all agricultural data and shift agricultural support from an era of guesswork to a data-driven approach, fundamentally optimizing policy design and delivery.
+The **OpenSPP Farmer Registry** is a modular digital platform designed to be a single, reliable source of truth for agricultural data. It helps governments, organizations, and partners move from guesswork to data-driven decision-making, ensuring that farmers and rural communities receive the right support at the right time.
 
-## What are the functionalities of OpenSPP Farmer Registry?
+## Key features
 
-**Registration and data collection:** The registry module included in OpenSPP Farmer Registry is specifically designed with agricultural aspects in mind, besides basic demographics it also covers aspects such as crops grown, livestock owned, and farming techniques. It also includes geospatial data, such as land parcel ownership and the visual mapping of farm boundaries, which is a critical component for enabling geographically-based targeting. This comprehensive data collection ensures that the registry contains the necessary information to segment and categorize farmers based on a rich set of criteria.
+**Farmer and farm registration –** OpenSPP Farmer Registry is specifically designed with agricultural aspects in mind and contains all the common fields - farmers, crops, livestock, land parcels, and farming practices.
 
-Read more about {doc}`Unified and hierarchical beneficiary registry <../features/unified_registry>` and {doc}`Key terminology <../concepts/registrant_concepts>`. 
+*Read more about {doc}`Unified and hierarchical beneficiary registry <../features/unified_registry>` and {doc}`Key terminology <../concepts/registrant_concepts>`.*
 
-**Targeting and integrated service delivery:** The OpenSPP Farmer Registry provides the intelligence required for strategic and targeted planning and allows the design of interventions based on the agricultural specific information stored in the registry, regardless of if it is simpler criteria or advanced, combined criteria.
+**Targeting and integrated service delivery –** Use detailed agricultural and demographic information to design and deliver tailored interventions based on the agricultural information, regardless of if it is simpler criteria or advanced, combined criteria.
 
-Read more about {doc}`Eligibility and targeting <../features/eligibility_targeting>`. 
+*Read more about {doc}`Eligibility and targeting <../features/eligibility_targeting>`.* 
 
-**Geo-spatial analysis and shock response:** The integration of a Geographic Information System (GIS) elevates the OpenSPP Farmer Registy module to a powerful tool for policy and program management. This technology allows the combination of traditional criteria and geospatial information to correctly pinpoint both causes of identified trends and possible interventions.
+**Geo-spatial analysis and shock response –** The integration of a Geographic Information System (GIS) allows to combine geographic information with farm data to identify trends, manage risks, and support disaster or climate response.
 
-Read more about {doc}`Geospatial (GIS) and land management <../features/gis_land_management>`. 
+*Read more about {doc}`Geospatial (GIS) and land management <../features/gis_land_management>`.* 
 
-**Monitoring, reporting, and public accountability:** OpenSPP Farmer Registry provides a suite of tools for oversight and public accountability. It tracks all data modifications and user actions, creating a secure and transparent record of every change. It also manages user access and permissions, ensuring data security and integrity. For high-level decision-making, the system provides data analysis tools and dashboards to inform policy and resource allocation as well as conducting impact evaluations to quantify the program's effect. This capability is crucial for proving program effectiveness to donors, stakeholders, and citizens.
+**Monitoring and accountability –** Track changes and manage user permissions to ensure data security and integrity. Access dashboards for high-level decision-making, transparency and long term monitoring.
 
-Read more about {doc}`Auditable change management <../features/change_management>` and {doc}`Grievance Redress Mechanism (GRM) <../features/grievance_redress>`. 
+*Read more about {doc}`Auditable change management <../features/change_management>` and {doc}`Grievance Redress Mechanism (GRM) <../features/grievance_redress>`.*
+
+**Interoperability with other systems –** Connect seamlessly with other national databases (ID, health, civil registry) via secure APIs to make updates or to pull information directly, ensuring that the information is up-to-date.
+
+*Read more about {doc}`Data integration and interoperability (APIs) <../features/data_integration_apis>`.* 
+
+## Who is it for?
+
+**Governments** implementing national farmer registries
+
+**Agricultural ministries and agencies** designing support programs
+
+**NGOs** working on rural development and food security
+
+## Next Step
+
+The OpenSPP Farmer Registry is an open-source product, built and supported by the OpenSPP community. It can be downloaded from XX
 
 ## OpenSPP modules included in the OpenSPP Farmer Registry
 
-The preconfigured OpenSPP Farmer Registry product is intended to provide the basic use cases of a farmer registry. Note that in addition to the base product you will most likely want to add additional modules in order to match your specific needs.
+The preconfigured OpenSPP Farmer Registry product is intended to provide the basic use cases of a farmer registry.
 
 The following modules are included in the OpenSPP Farmer Registry product:
 
@@ -48,3 +65,7 @@ The following modules are included in the OpenSPP Farmer Registry product:
 - **{doc}`OpenSPP Irrigation <../../reference/modules/spp_irrigation>`**: Provides tools for managing and visualizing irrigation infrastructure within OpenSPP, enabling efficient tracking, planning, and analysis of irrigation systems and their impact.
 - **{doc}`OpenSPP Land Record <../../reference/modules/spp_land_record>`**: Enables the management and geospatial visualization of land records within OpenSPP.
 - **{doc}`OpenSPP Registry Group Hierarchy <../../reference/modules/spp_registry_group_hierarchy>`**: Introduces hierarchical relationships between groups.
+
+## Expanding the Farmer Registry
+
+The OpenSPP-based Farmer Registry contains everything that is necessary to set up a foundational Farmer Registry. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more on XX
