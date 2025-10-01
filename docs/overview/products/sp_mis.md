@@ -5,65 +5,70 @@ myst:
     "description": "OpenSPP SP-MIS product configuration for comprehensive social protection program management from enrollment to payment"
     "keywords": "OpenSPP, SP-MIS, social protection, management information system, beneficiary management, payments"
 ---
-# Social Protection Management Information System
+# OpenSPP SP-MIS (Social Protection Management Information System)
+*A digital system to manage the full lifecycle of social protection programs*
 
-A **Social Protection Management Information System (SP-MIS)** is a comprehensive digital solution designed to manage and automate the core operational processes of social protection programs. While a {term}`social registry` focuses on identifying and assessing potential beneficiaries, an SP-MIS handles the entire lifecycle of program implementation, from enrolling beneficiaries to delivering payments and managing grievances.
+The **OpenSPP Social Protection Management Information System (SP-MIS)** is a comprehensive platform designed to manage the entire lifecycle of a social protection program. It supports both routine and emergency interventions, whether cash or in-kind, and empowers citizens through secure, verifiable credentials.
 
-SP-MIS are critical for the effective and transparent administration of {term}`social protection` programs, such as {term}`cash transfers`, food assistance, and public works programs. They serve as the operational backbone, integrating data from various sources—like social registry and national ID systems—to ensure that {term}`benefits` are delivered to the right people, at the right time, and in the right amount.
+## Key features
 
-By digitizing and streamlining administrative tasks, an SP-MIS enhances efficiency, reduces the risk of {term}`fraud` and error, and provides policymakers with timely data for monitoring program performance and making informed decisions.
+**Easy registration and data collection –** Build and maintain a continuously updated database through imports, system integrations, or direct registration. Structured workflows support reliable updates, whether initiated by the citizens or registrars.
 
-## How does a Social Protection Management Information System work?
+*Read more about {doc}`Unified and hierarchical beneficiary registry <../features/unified_registry>` and {doc}`Key terminology <../concepts/registrant_concepts>`.* 
 
-An SP-MIS orchestrates the key business processes involved in running social protection programs. While the specific functionalities can vary based on a country's needs, a typical SP-MIS includes the following operational functions:
+**Verifiable Credentials –** Issue unique IDs and documents with QR codes through secure and streamlined processes to attest to program eligibility. 
 
-1. **Program and beneficiary management:** Manages the detailed rules and parameters of specific social protection programs. It handles the entire {term}`beneficiary` lifecycle, including {term}`registration`, {term}`eligibility determination`, {term}`enrollment decisions`, updates to {term}`household` information, and program exit or graduation.  
-2. **Entitlement calculation:** Automates the calculation of benefits amounts for each beneficiary household or individual based on the specific rules of a program (e.g., payment per child, amount based on disability status).  
-3. **Payment and financial management:** Generates payment lists and securely transmits them to {term}`payment service provider` (PSPs), such as banks or mobile money operators. It also supports the reconciliation of payment data to track successful and failed transactions.  
-4. **{term}`Case management`:** Provides tools for caseworkers to manage interactions with beneficiaries, track their status, and handle specific needs or issues that arise during their participation in a program.  
-5. **{term}`Grievance redress mechanism (GRM)`:** Includes a system for logging, tracking, and resolving {term}`complaints` or {term}`appeals` from beneficiaries. This ensures accountability and allows program administrators to identify and address systemic issues.  
-6. **Monitoring and Evaluation (M\&E):** Features robust dashboards and reporting tools that provide real-time insights into program operations. This allows staff to monitor key performance indicators, track expenditures, and generate reports for stakeholders.
+**Targeting and integrated service delivery –** With a flexible approach to eligibility and targeting, the OpenSPP SP-MIS can serve as a central data repository to support a wide array of programs.
 
-## SP-MIS, integration and interoperability
+*Read more about {doc}`Eligibility and targeting <../features/eligibility_targeting>`.*
 
-The true power of an SP-MIS is realized through its ability to integrate with other systems within a nation's digital public infrastructure. This {term}`interoperability` creates a cohesive social protection delivery chain.
+**Program and Distribution Management –** A core feature in OpenSPP SP-MIS is its ability to support the delivery of both cash and in-kind entitlements. Automate cash transfers via financial service providers, issue vouchers, or manage food and non-food item distribution, including stock and warehouse management.
 
-An SP-MIS and a Social Registry are distinct but complementary systems. While a **Social Registry** focuses on the initial {term}`identification` and needs assessment of the population to determine *potential* beneficiaries, the **SP-MIS** manages the ongoing administration of *enrolled* beneficiaries within specific programs.
+*Read more about {doc}`End-to-end program and entitlement management <../features/program_management>`, {doc}`Pluggable payment and disbursement <../features/payment_disbursement>` and {doc}`In-kind benefits and inventory management (GRM) <../features/in_kind_benefits>`.*
 
-The data flows from the Social Registry to the SP-MIS, which then handles the operational aspects of program delivery, such as calculating payments and tracking the beneficiary lifecycle. This linkage is crucial for achieving policy coherence and operational efficiency. For example, an SP-MIS can be integrated with:
+**Monitoring, reporting, and public accountability –** Maintain full audit trails, track all user actions, and provide dashboards and analytics for evidence-based decision-making. This capability is crucial for tracking program performance, demonstrating effectiveness to donors, and building public trust.
 
-* A **{doc}`Social Registry <social_registry>`** to receive lists of potentially eligible household.
-* A **{doc}`Farmer Registry <farmer_registry>`** to identify vulnerable agricultural household for specific programs.
-* **{term}`Civil registration`** and Vital Statistics (CRVS) systems to verify life events like births or deaths, which can affect eligibility.
-* **National ID systems** to validate identities.This integration eliminates data silos, reduces administrative duplication, and enables a more holistic and responsive approach to social protection.
+*Read more about {doc}`Auditable change management <../features/change_management>` and {doc}`Grievance Redress Mechanism (GRM) <../features/grievance_redress>`.*
 
-## OpenSPP as a Social Protection MIS
+**Interoperability with other systems –** Connect securely with other national databases (e.g., ID, health, civil registration) through RESTful APIs to pull information directly, ensuring that the information is up-to-date.
 
-OpenSPP is a powerful, {term}`open-source software` platform that functions as a core Social Protection Management Information System (SP-MIS). It is designed for flexibility and scalability, offering a comprehensive suite of tools to manage the end-to-end delivery of social protection programs.
+*Read more about {doc}`Data integration and interoperability (APIs) <../features/data_integration_apis>`.*
 
-1. **Program design and configuration:** OpenSPP allows administrators to easily configure and manage multiple social protection programs, each with its own unique set of rules for eligibility, entitlements, and conditions.  
-2. **End-to-end beneficiary Mmnagement:** The platform supports the entire beneficiary lifecycle, from enrollment decisions and registration to ongoing case management and eventual program exit.
-3. **Flexible entitlement and payment processing:** It features a robust engine for calculating entitlements and generating payment cycles. OpenSPP can integrate with a wide range of payment service provider to ensure timely and accurate delivery of benefits.
-4. **Integrated grievance redress:** OpenSPP includes a built-in module for managing grievance, ensuring that beneficiary feedback is systematically recorded, addressed, and resolved.
-5. **Advanced interoperability:** Built on an open architecture, OpenSPP is designed for seamless integration. It can connect with external systems like social registry, national IDs, and financial service providers using standardized APIs, supporting a fully interoperable social protection ecosystem.  
-6. **Security and data protection:** The OpenSPP team rigorously upholds {term}`data protection` and privacy standards. The platform is designed to ensure that sensitive beneficiary data and financial transactions are protected in line with global best practices.
+**Geo-spatial analysis and shock response –** Integrate GIS and external data (e.g., flood maps) with already known information to rapidly identify and assist affected households during crises without the need for time-consuming, emergency-specific registration and needs assessments.
 
-## Alternative names for SP-MIS
+*Read more about {doc}`Geospatial (GIS) and land management <../features/gis_land_management>`.*
 
-Social Protection Management Information Systems are known by various names around the world. Understanding these alternative names can be crucial for recognizing similar systems under different terminologies:
+## Who is it for?
 
-* **Social Safety Net Systems (SSNS)**
-* **Beneficiary Management Systems (BMS)**
-* **Social assistance Information Systems (SAIS)**
-* **Integrated Social services Systems (ISSS)**
-* **Public Assistance Information Systems (PAIS)**
-* **Welfare Information Systems (WIS)**
+**Governments** managing national or local social protection systems
 
-For more information about OpenSPP’s Social Protection MIS, contact us through our [website](https://openspp.org/contact-us/).
+**Social protection agencies** delivering cash or in-kind programs
 
-## References
+**NGOs and development partners** supporting vulnerable households
 
-* [Barca, V. (2017). *Integrating data and information management for social protection: social registries and integrated beneficiary registries*. Australian Department of Foreign Affairs and Trade.](https://www.dfat.gov.au/sites/default/files/integrating-data-information-management-social-protection-full.pdf)  
-* [Digital Convergence Initiative (2023). *Social protection management information system interacting with social registry*. Social Protection Interoperability Series: Interoperability in Action \#6.](https://spdci.org/resources/interoperability-in-action-6-social-registry-workshop-recording/)  
-* [Gelb, A., and Mukherjee, A. (2020). *Digital Technology in Social Assistance Transfers: A Toolkit for Action*. Center for Global Development.](https://www.cgdev.org/sites/default/files/digital-technology-social-assistance-transfers-covid-19-relief-lessons-selected-cases.pdf)  
-* [Lindert, K., et al. (2020). *Sourcebook on the Foundations of Social Protection Delivery Systems*. World Bank.](https://openknowledge.worldbank.org/entities/publication/c44dc506-72dd-5428-a088-6fb7aea53095)
+## Next Step
+
+The OpenSPP SP-MIS is an open-source product, built and supported by the OpenSPP community. It can be downloaded from XX
+
+## OpenSPP modules included in the OpenSPP SP-MIS:
+
+The preconfigured OpenSPP SP-MIS product is intended to provide the basic use cases of an SP-MIS.
+
+The following modules are included in the OpenSPP SP-MIS product:
+
+- **{doc}`OpenSPP Base <../../reference/modules/spp_base>`**: Provides the fundamental core structure for all registrant profiles.
+- **{doc}`OpenSPP Base Settings <../../reference/modules/spp_base_setting>`**: Provides essential settings and customizations.
+- **{doc}`OpenSPP Custom Fields <../../reference/modules/spp_custom_field>`**: Allows for tailoring data collection to specific local needs.
+- **{doc}`OpenSPP Area Management <../../reference/modules/spp_area>`**: Includes additional features for managing and organizing geographical areas within the system
+- **{doc}`OpenSPP OpenID VCI Individual <../../reference/modules/spp_openid_vci_individual>`**: Enables the issuance of Verifiable Credentials (VCs) for individual registrants.
+- **{doc}`OpenSPP Custom Filter <../../reference/modules/spp_custom_filter>`**: Allows control over fields displayed in filter dropdowns.
+- **{doc}`OpenSPP User Roles <../../reference/modules/spp_user_roles>`**: Manages user access and permissions to the registry data, ensuring data security and integrity.
+- **{doc}`OpenSPP Programs <../../reference/modules/spp_programs>`**: Manage cash and in-kind entitlements, integrate with inventory, and enhance program management features.
+- **{doc}`OpenSPP Program ID <../../reference/modules/spp_program_id>`**: Generates and manages unique IDs for social protection programs.
+- **{doc}`OpenSPP Cash Entitlement <../../reference/modules/spp_entitlement_cash>`**: Manage cash-based entitlements for beneficiaries within social protection programs, including defining calculation rules, automating disbursement, and tracking payments.
+- **{doc}`OpenSPP In-Kind Entitlement <../../reference/modules/spp_entitlement_in_kind>`**: Manages the distribution of in-kind entitlements within social protection programs, handling inventory, service points, and beneficiary redemption.
+- **{doc}`OpenSPP Entitlement Transactions <../../reference/modules/spp_ent_trans>`**: Records and manages transactions related to entitlement redemptions.
+
+## Expanding the SPMIS
+
+The OpenSPP-based SPMIS contains everything that is necessary to set up a foundational SPMIS. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more on XX
