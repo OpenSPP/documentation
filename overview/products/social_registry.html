@@ -17,16 +17,16 @@
         gtag('js', new Date());
         gtag('config', 'G-RS4T4ZPG52');
     </script>
-    <meta property="og:title" content="Social Registry" />
+    <meta property="og:title" content="OpenSPP Social Registry" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.openspp.org/overview/products/social_registry.html" />
 <meta property="og:site_name" content="OpenSPP Documentation" />
-<meta property="og:description" content="A social registry is a database or system that contains information on households and individuals within a specific population. Its purpose is to provide a centralized and up-to-date source of data..." />
+<meta property="og:description" content="A flexible and secure platform to manage social program data The OpenSPP Social Registry is a digital platform that helps governments and organizations manage information about individuals and hous..." />
 <meta property="og:image" content="https://docs.openspp.org/_static/openspp_logo.png" />
 <meta property="og:image:alt" content="OpenSPP Documentation" />
 <meta property="og:locale" content="en_US" />
 
-<title>Social Registry – Overview – Products &#8212; OpenSPP Documentation v1.3</title>
+<title>OpenSPP Social Registry – Overview – Products &#8212; OpenSPP Documentation v1.3</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -84,8 +84,8 @@ mermaid.initialize({
     <link rel="shortcut icon" href="../../_static/icon_192.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Farmer Registry" href="farmer_registry.html" />
-    <link rel="prev" title="Social Protection Management Information System" href="sp_mis.html" />
+    <link rel="next" title="OpenSPP Farmer Registry" href="farmer_registry.html" />
+    <link rel="prev" title="OpenSPP SP-MIS (Social Protection Management Information System)" href="sp_mis.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -219,17 +219,17 @@ document.addEventListener('DOMContentLoaded', function() {
     <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="sp_mis.html">
-       Social Protection Management Information System
+       OpenSPP SP-MIS (Social Protection Management Information System)
       </a>
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Social Registry
+       OpenSPP Social Registry
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="farmer_registry.html">
-       Farmer Registry
+       OpenSPP Farmer Registry
       </a>
      </li>
     </ul>
@@ -339,6 +339,21 @@ document.addEventListener('DOMContentLoaded', function() {
      <li class="toctree-l3">
       <a class="reference internal" href="../concepts/extensibility.html">
        Customisable, configurable, and extensible
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../concepts/sp_mis_concepts.html">
+       Social Protection Management Information System
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../concepts/social_registry_concepts.html">
+       Social Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../concepts/farmer_registry_concepts.html">
+       Farmer Registry
       </a>
      </li>
     </ul>
@@ -1366,7 +1381,7 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__label">
-        <span>Social Registry – Overview</span>
+        <span>OpenSPP Social Registry – Overview</span>
     </div>
     <div class="header-article__right">
 <button onclick="toggleFullScreen()"
@@ -1513,23 +1528,28 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operational-functionality-of-social-registries">
-   Operational Functionality of Social Registries
+  <a class="reference internal nav-link" href="#key-features">
+   Key features
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#integration-and-interoperability-of-social-registries">
-   Integration and interoperability of social registries
+  <a class="reference internal nav-link" href="#who-is-it-for">
+   Who is it for?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#social-registry-in-the-openspp-platform">
-   Social Registry in the OpenSPP platform
+  <a class="reference internal nav-link" href="#next-step">
+   Next Step
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
+  <a class="reference internal nav-link" href="#openspp-modules-included-in-the-openspp-social-registry">
+   OpenSPP modules included in the OpenSPP Social Registry
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expanding-the-social-registry">
+   Expanding the Social Registry
   </a>
  </li>
 </ul>
@@ -1541,7 +1561,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Social Registry</h1>
+                <h1>OpenSPP Social Registry</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -1552,23 +1572,28 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operational-functionality-of-social-registries">
-   Operational Functionality of Social Registries
+  <a class="reference internal nav-link" href="#key-features">
+   Key features
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#integration-and-interoperability-of-social-registries">
-   Integration and interoperability of social registries
+  <a class="reference internal nav-link" href="#who-is-it-for">
+   Who is it for?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#social-registry-in-the-openspp-platform">
-   Social Registry in the OpenSPP platform
+  <a class="reference internal nav-link" href="#next-step">
+   Next Step
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
+  <a class="reference internal nav-link" href="#openspp-modules-included-in-the-openspp-social-registry">
+   OpenSPP modules included in the OpenSPP Social Registry
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expanding-the-social-registry">
+   Expanding the Social Registry
   </a>
  </li>
 </ul>
@@ -1581,55 +1606,48 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="social-registry">
-<h1>Social Registry<a class="headerlink" href="#social-registry" title="Permalink to this headline">#</a></h1>
-<p>A social registry is a database or system that contains information on households and individuals within a specific population. Its purpose is to provide a centralized and up-to-date source of data that can be used for <a class="reference internal" href="../../reference/glossary.html#term-Targeting"><span class="xref std std-term">targeting</span></a>, planning, and implementing <a class="reference internal" href="../../reference/glossary.html#term-Social-protection"><span class="xref std std-term">social protection</span></a> programs. Social registries are designed to enhance fairness and equity in the targeting of social protection programs by introducing systematic and transparent approaches to identify those in need. Social registries are most often used in household-based poverty-targeted social protection programs.</p>
-<p>Social registries generally support the initial identification and registration, and needs assessment phases of social protection implementation and delivery, as illustrated below.</p>
-<p><img alt="Diagram showing the social protection delivery chain with phases for identification and registration, needs assessment, enrollment and eligibility determination, provision of benefits and services, compliance and exit highlighting the role of social registry" src="../../_images/social_registry.jpg" /></p>
-<p>One of the first examples of a social registry was developed in the late 1990s for the Bolsa Familia social protection program in Brazil. The Cadastro Único collects and stores information about Brazil’s low-income and vulnerable populations. It is now used as a key tool by the Government, not only for identifying and selecting households for the Bolsa Familia, but also to identify and provide assistance to the most vulnerable Brazilians via 27 other social programs.</p>
-<p>Social registries are now used in 50 countries across the world. Examples include Pakistan’s National Social Economic Registry (NSER), Indonesia’s Data Terpadu Kesejahteran Sosial (DTKS) and Colombia’s Sistema de Identificación de Potenciales Beneficiarios de Programas Sociales (Sisbén).</p>
-<p>While earlier designs of social registries were static or ‘fixed’ due to the data being collected at a particular period in time through mass registrations, social registries are now increasingly designed to be dynamic, recognising the fluctuating nature of poverty and vulnerability. Social registries which use a dynamic approach to registration through on-demand registration, periodic active outreach, registration at local government offices, integration with civil registries, national identification systems, and other registries can better adjust their social protection programs accordingly and meet the needs of vulnerable populations. Brazil’s Cadastro Único is considered an example of a dynamic registry, while Pakistan’s NSER is currently a static registry.</p>
-<section id="operational-functionality-of-social-registries">
-<h2>Operational Functionality of Social Registries<a class="headerlink" href="#operational-functionality-of-social-registries" title="Permalink to this headline">#</a></h2>
-<p>The specific functions of social registries differ among the countries using them, depending on the type of social protection programs they support, existing management information systems, and design considerations like responsiveness to shocks. Social registries typically have the following functions:</p>
-<ol class="arabic simple">
-<li><p><strong>Data collection.</strong> Standardized <a class="reference internal" href="../../reference/glossary.html#term-Registration"><span class="xref std std-term">registration</span></a> questionnaires are used to gather demographic, socio-economic, and household information for a given population. At this stage, individuals or households are referred to as registrants.</p></li>
-<li><p><strong>Data validation and verification.</strong> Applicant data is validated by checking official documents such as identification cards, cross-verification with records contained in other administrative systems, or through local community validation processes.</p></li>
-<li><p><strong>Information sharing.</strong> A complete data overview is developed by bringing together citizen-provided data and integration with systems including National IDs, CRVS and disability registries.</p></li>
-<li><p><strong>Eligibility assessments.</strong> Clear criteria, formats and indicators are applied to support transparent and standardized <a class="reference internal" href="../../reference/glossary.html#term-Eligibility"><span class="xref std std-term">eligibility</span></a> assessments for social protection programs. Specific criteria can be used to identify and target vulnerable groups, such as pregnant women, children, or individuals with disabilities. Households can be ranked based on the assessment of their needs and conditions, commonly through the application of a poverty-scoring method such as <a class="reference internal" href="../../reference/glossary.html#term-Proxy-means-testing"><span class="xref std std-term">proxy means testing</span></a>.</p></li>
-<li><p><strong><a class="reference internal" href="../../reference/glossary.html#term-decentralized"><span class="xref std std-term">Decentralized</span></a> eligibility determination.</strong> Lists of potentially eligible households or ranked lists of all households can be shared with individual program implementers or decentralized counterparts, and adapted to local contexts and needs.</p></li>
-<li><p><strong>Ongoing registration and information updates.</strong> Social registries are increasingly designed to be dynamic and allow for on-demand registrations and updates, periodic active outreach, registration at local government offices and integration with civil registries, national identification systems, and other registries.</p></li>
-<li><p><strong>Reporting and analysis.</strong> Social registries may have self-contained functions to generate reports and analyze registry data. Or they may be integrated with external data analysis tools and dashboards to inform policy decisions, program planning, and resource allocation.</p></li>
-<li><p><strong>Architectural components.</strong> Comprise of data intake and exchange, data security and protection, management interfaces, interoperability, and necessary ICT infrastructure.</p></li>
-</ol>
-<p>Privacy and confidentiality are key principles of social registries as they hold large amounts of sensitive <a class="reference internal" href="../../reference/glossary.html#term-Personal-data"><span class="xref std std-term">personal data</span></a>. The privacy and confidentiality of individuals' data must be protected in accordance with a country’s legal and ethical standards. Social registries must also provide accessible feedback mechanisms (usually via the corresponding social protection program), or through integration with <a class="reference internal" href="../../reference/glossary.html#term-Grievance-redress-mechanism-GRM"><span class="xref std std-term">Grievance redress mechanism (GRM)</span></a> so that registrants can appeal against eligibility decisions or report inaccuracies or errors.</p>
+  <section id="openspp-social-registry">
+<h1>OpenSPP Social Registry<a class="headerlink" href="#openspp-social-registry" title="Permalink to this headline">#</a></h1>
+<p><em>A flexible and secure platform to manage social program data</em></p>
+<p>The <strong>OpenSPP Social Registry</strong> is a digital platform that helps governments and organizations manage information about individuals and households. It provides a single, reliable source of data to improve targeting, reduce duplication, and coordinate services.</p>
+<section id="key-features">
+<h2>Key features<a class="headerlink" href="#key-features" title="Permalink to this headline">#</a></h2>
+<p><strong>Easy registration and data collection –</strong> Prepare the registry with all the fields needed. Collect information through bulk upload, direct entry in the UI, or secure connections with existing systems.</p>
+<p><em>Read more about <a class="reference internal" href="../features/unified_registry.html"><span class="doc">Unified and hierarchical beneficiary registry</span></a> and <a class="reference internal" href="../concepts/registrant_concepts.html"><span class="doc">Key terminology</span></a>.</em></p>
+<p><strong>Targeting and integrated service delivery –</strong> Flexible approach to eligibility and targeting - identify eligible beneficiaries based on simple criteria such as age or complex combinations of factors.</p>
+<p><em>Read more about <a class="reference internal" href="../features/eligibility_targeting.html"><span class="doc">Eligibility and targeting</span></a>.</em></p>
+<p><strong>Monitoring and accountability –</strong> Track changes and manage user permissions to ensure data security and integrity. Access dashboards for decision-making, transparency and long term monitoring.</p>
+<p><em>Read more about <a class="reference internal" href="../features/change_management.html"><span class="doc">Auditable change management</span></a> and <a class="reference internal" href="../features/grievance_redress.html"><span class="doc">Grievance Redress Mechanism (GRM)</span></a>.</em></p>
+<p><strong>Interoperability with other systems –</strong> Connect seamlessly with other national databases (ID, health, civil registry) via secure APIs to make updates or to pull information directly, ensuring that the information is up-to-date.</p>
+<p><em>Read more about <a class="reference internal" href="../features/data_integration_apis.html"><span class="doc">Data integration and interoperability (APIs)</span></a>.</em></p>
 </section>
-<section id="integration-and-interoperability-of-social-registries">
-<h2>Integration and interoperability of social registries<a class="headerlink" href="#integration-and-interoperability-of-social-registries" title="Permalink to this headline">#</a></h2>
-<p>Social registries can be used to identify beneficiaries for single or multiple social protection programs. They may also be designed to be interoperable and integrated with other critical systems as part of a broader <a class="reference internal" href="../../reference/glossary.html#term-Information-systems"><span class="xref std std-term">information systems</span></a>. Social registry data can be exchanged and coordinated with various government databases such as integrated beneficiary registries, farmer registries, disability registries, health records, education systems, and employment databases. This contributes to more precise targeting, reduces redundancy in data collection, and ensures a unified and efficient delivery of social protection and other public services. However, in certain situations, self-contained social registries may be preferred due to legal and ethical considerations where integration may raise concerns about <a class="reference internal" href="../../reference/glossary.html#term-Information-security"><span class="xref std std-term">information security</span></a> and <a class="reference internal" href="../../reference/glossary.html#term-Data-privacy"><span class="xref std std-term">data privacy</span></a>.</p>
+<section id="who-is-it-for">
+<h2>Who is it for?<a class="headerlink" href="#who-is-it-for" title="Permalink to this headline">#</a></h2>
+<p><strong>Government agencies</strong> wanting to have a reliable up to date registry that can act as foundation for interventions</p>
+<p><strong>NGOs</strong> delivering services at national or local level</p>
+<p><strong>Policy makers</strong> needing reliable data for planning and resource allocation</p>
 </section>
-<section id="social-registry-in-the-openspp-platform">
-<h2>Social Registry in the OpenSPP platform<a class="headerlink" href="#social-registry-in-the-openspp-platform" title="Permalink to this headline">#</a></h2>
-<p>The open-source Social Registry software developed by OpenSPP offers comprehensive identification, registration, and needs assessment functions with the following key features:</p>
-<ol class="arabic simple">
-<li><p><strong>Registration.</strong> Our Social Registry supports initial en masse registration and surveys. Our data collection system leverages CommCare and can handle a wide range of data types. It can be customized to suit linguistic or cultural requirements, improving the cultural appropriateness, accessibility, and quality of data collected.</p></li>
-<li><p><strong>Data management and standardization.</strong> It is equipped to manage diverse information efficiently, transforming it into standardized formats for integration into various social programs.</p></li>
-<li><p><strong>Dynamic registration and updates.</strong> Our Social Registry can support continuing data updates through continuous on-demand registration or periodic reassessments.</p></li>
-<li><p><strong>Interoperability with other data source.</strong> The OpenSPP platform is particularly strong in its interoperability capabilities. It supports the Digital Convergence Initiative’s CRVS API to <a class="reference external" href="https://www.youtube.com/watch?v=6X1dpWPILj0">interact with CRVS such as OpenCRVS</a> and with national Identity systems to pull data, providing a foundational layer for efficient data management and verification. The OpenSPP team is also active in building a new standard for interoperability between SP-MIS and Social Registry as part of another Digital Convergence Initiative technical working group.</p></li>
-<li><p><strong>Eligibility assessment.</strong> OpenSPP allows for registrant data to be analyzed based on information and indicators captured in the system, such as household size and composition. Poverty calculations can be applied household socioeconomic data, such as Proxy Means Tests. Indicators can be easily updated and income tests modified to ensure that they align with evolving socio-economic contexts and are relevant and accurate.</p></li>
-<li><p><strong>Privacy and security.</strong> The OpenSPP team rigorously upholds data privacy and security standards. Our products are designed to ensure that personal or sensitive data and transactions are protected.</p></li>
-</ol>
-<p>For more information about OpenSPP’s Social Registry contact us through our <a class="reference external" href="https://openspp.org/contact-us/">website</a>.</p>
+<section id="next-step">
+<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">#</a></h2>
+<p>The OpenSPP Social Registry is an open-source product, built and supported by the OpenSPP community. It can be downloaded from XX</p>
 </section>
-<section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<section id="openspp-modules-included-in-the-openspp-social-registry">
+<h2>OpenSPP modules included in the OpenSPP Social Registry<a class="headerlink" href="#openspp-modules-included-in-the-openspp-social-registry" title="Permalink to this headline">#</a></h2>
+<p>The preconfigured OpenSPP Social Registry product is intended to provide support for the fundamental use cases of a social registry.</p>
+<p>The following modules are included in the OpenSPP Social Registry product:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://socialprotection.org/sites/default/files/publications_files/GIZ_DataUpdatingForSocialAssistance_3.pdf">Barca V and Hebbar M (2020) On-Demand and Up-to-Date? Dynamic Inclusion and Data Updating for Social Assistance. GIZ</a></p></li>
-<li><p><a class="reference external" href="https://www.developmentpathways.co.uk/wp-content/uploads/2016/11/Single-and-Social-Registries-1.pdf">Chirchir R and Farooq S (2016) Single Registries and Social Registries: clarifying the terminological confusion. Development Pathways</a></p></li>
-<li><p><a class="reference external" href="https://spdci.org/wp-content/uploads/2023/07/Interoperability-in-Action-6-Social-Registry.pdf">Digital Convergence Initiative (2023) Social protection management information system interacting with social registry. Social Protection Interoperability Series: Interoperability in Action #6.</a></p></li>
-<li><p><a class="reference external" href="https://www.researchgate.net/publication/340858942_Social_Registries_for_Social_Assistance_and_Beyond_A_Guidance_Note_and_Assessment_Tool">Leite, P, Karippacheril, T and Lindert, K (2017). Social Registries for social assistance and Beyond: A Guidance Note &amp; Assessment Tool. World Bank</a></p></li>
-<li><p><a class="reference external" href="https://openknowledge.worldbank.org/entities/publication/c44dc506-72dd-5428-a088-6fb7aea53095">World Bank Group. (2020). &quot;The World Bank Sourcebook on the Foundations of Social Protection delivery systems.&quot;</a></p></li>
+<li><p><strong><a class="reference internal" href="../../reference/modules/spp_base.html"><span class="doc">OpenSPP Base</span></a></strong>: Provides the fundamental core structure for all registrant profiles.</p></li>
+<li><p><strong><a class="reference internal" href="../../reference/modules/spp_base_setting.html"><span class="doc">OpenSPP Base Settings</span></a></strong>: Provides essential settings and customizations.</p></li>
+<li><p><strong><a class="reference internal" href="../../reference/modules/spp_custom_field.html"><span class="doc">OpenSPP Custom Fields</span></a></strong>: Allows for tailoring data collection to specific local needs.</p></li>
+<li><p><strong><a class="reference internal" href="../../reference/modules/spp_area.html"><span class="doc">OpenSPP Area Management</span></a></strong>: Includes additional features for managing and organizing geographical areas within the system</p></li>
+<li><p><strong><a class="reference internal" href="../../reference/modules/spp_openid_vci_individual.html"><span class="doc">OpenSPP OpenID VCI Individual</span></a></strong>: Enables the issuance of Verifiable Credentials (VCs) for individual registrants.</p></li>
+<li><p><strong><a class="reference internal" href="../../reference/modules/spp_custom_filter.html"><span class="doc">OpenSPP Custom Filter</span></a></strong>: Allows control over fields displayed in filter dropdowns.</p></li>
+<li><p><strong><a class="reference internal" href="../../reference/modules/spp_user_roles.html"><span class="doc">OpenSPP User Roles</span></a></strong>: Manages user access and permissions to the registry data, ensuring data security and integrity.</p></li>
 </ul>
+</section>
+<section id="expanding-the-social-registry">
+<h2>Expanding the Social Registry<a class="headerlink" href="#expanding-the-social-registry" title="Permalink to this headline">#</a></h2>
+<p>The OpenSPP-based Social Registry contains everything that is necessary to set up a foundational Social Registry. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more on XX</p>
 </section>
 </section>
 
@@ -1645,13 +1663,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Social Protection Management Information System</p>
+            <p class="prev-next-title">OpenSPP SP-MIS (Social Protection Management Information System)</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="farmer_registry.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Farmer Registry</p>
+        <p class="prev-next-title">OpenSPP Farmer Registry</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
