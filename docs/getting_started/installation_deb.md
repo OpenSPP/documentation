@@ -6,9 +6,13 @@ myst:
     "keywords": "OpenSPP, installation, Ubuntu 24.04, Debian 12, PostgreSQL, APT repository, setup guide"
 ---
 
-# Installation guide
+# Installing OpenSPP
 
 This guide walks you through installing OpenSPP on Ubuntu 24.04 or Debian 12 (Bookworm) using the official APT repository hosted on Nexus.
+
+:::{tip}
+For development setup instructions, see the {doc}`Development Setup Guide <../developer_guide/setup>`.
+:::
 
 ## Prerequisites
 

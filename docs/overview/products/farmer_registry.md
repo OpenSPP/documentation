@@ -43,7 +43,7 @@ The **OpenSPP Farmer Registry** is a modular digital platform designed to be a s
 
 ## Next Step
 
-The OpenSPP Farmer Registry is an open-source product, built and supported by the OpenSPP community. It can be downloaded from XX
+The OpenSPP Farmer Registry is an open-source product, built and supported by the OpenSPP community. Read more about {doc}`installing OpenSPP Farmer Registry <../../getting_started/farmer_installation>`.
 
 ## OpenSPP modules included in the OpenSPP Farmer Registry
 
@@ -68,4 +68,4 @@ The following modules are included in the OpenSPP Farmer Registry product:
 
 ## Expanding the Farmer Registry
 
-The OpenSPP-based Farmer Registry contains everything that is necessary to set up a foundational Farmer Registry. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more on XX
+The OpenSPP-based Farmer Registry contains everything that is necessary to set up a foundational Farmer Registry. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more about {doc}`module installation <../../getting_started/module_installation>`.
