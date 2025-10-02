@@ -22,7 +22,7 @@ The OpenSPP Social Protection Management Information System ({doc}`OpenSPP SP-MI
 **Installation steps:**
 
 1.  Navigate to the **Apps** menu.
-2.  In the Apps menu, search for {doc}`spp_base_spmis </reference/modules/spp_base>` or "OpenSPP SPMIS Base"
+2.  In the Apps menu, search for {doc}`spp_base_spmis </reference/modules/spp_base_spmis>` or "OpenSPP SPMIS Base"
 
 ![Searching for SPP Base module in Apps](module_installation/02-spp_base01.jpg)
 
