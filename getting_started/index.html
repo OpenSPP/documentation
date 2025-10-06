@@ -21,7 +21,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.openspp.org/getting_started/index.html" />
 <meta property="og:site_name" content="OpenSPP Documentation" />
-<meta property="og:description" content="Welcome to OpenSPP! This guide will help you get your social protection platform up and running quickly. Quick start path: New installation Start here if you're setting up OpenSPP for the first tim..." />
+<meta property="og:description" content="Welcome to OpenSPP! This guide will help you get your social protection platform up and running quickly. Quick start path: Start here if you're setting up OpenSPP for the first time: I want to use ..." />
 <meta property="og:image" content="https://docs.openspp.org/_static/openspp_logo.png" />
 <meta property="og:image:alt" content="OpenSPP Documentation" />
 <meta property="og:locale" content="en_US" />
@@ -84,7 +84,7 @@ mermaid.initialize({
     <link rel="shortcut icon" href="../_static/icon_192.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Installation guide" href="installation_deb.html" />
+    <link rel="next" title="Installing OpenSPP" href="installation_deb.html" />
     <link rel="prev" title="Welcome to OpenSPP!" href="../index.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -187,13 +187,35 @@ document.addEventListener('DOMContentLoaded', function() {
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="installation_deb.html">
-     Installation guide
+     Installing OpenSPP
     </a>
    </li>
-   <li class="toctree-l2">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="module_installation.html">
      Module installation
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spmis_installation.html">
+       SP-MIS installation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="social_installation.html">
+       Social Registry installation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="farmer_installation.html">
+       Farmer Registry installation
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -201,8 +223,8 @@ document.addEventListener('DOMContentLoaded', function() {
   <a class="reference internal" href="../overview/index.html">
    Overview
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -211,15 +233,15 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="reference internal" href="../overview/products/index.html">
      Products
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
      <i class="fas fa-chevron-down">
      </i>
     </label>
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../overview/products/sp_mis.html">
-       OpenSPP SP-MIS (Social Protection Management Information System)
+       OpenSPP SP-MIS
       </a>
      </li>
      <li class="toctree-l3">
@@ -238,8 +260,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="reference internal" href="../overview/features/index.html">
      Features
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-    <label for="toctree-checkbox-4">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -295,8 +317,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="reference internal" href="../overview/concepts/index.html">
      Concepts
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-    <label for="toctree-checkbox-5">
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -369,8 +391,8 @@ document.addEventListener('DOMContentLoaded', function() {
   <a class="reference internal" href="../user_guide/index.html">
    User guide
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -379,8 +401,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="reference internal" href="../user_guide/registry_management/index.html">
      Registry management
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-    <label for="toctree-checkbox-7">
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -426,8 +448,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="reference internal" href="../user_guide/program_management/index.html">
      Program management
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-    <label for="toctree-checkbox-8">
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -473,8 +495,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="reference internal" href="../user_guide/administration/index.html">
      Administration
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-    <label for="toctree-checkbox-9">
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -572,8 +594,8 @@ document.addEventListener('DOMContentLoaded', function() {
   <a class="reference internal" href="../developer_guide/index.html">
    Developer guide
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -592,8 +614,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="reference internal" href="../developer_guide/module_development/index.html">
      Module development
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-    <label for="toctree-checkbox-11">
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -684,8 +706,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="reference internal" href="../developer_guide/integrations/index.html">
      Integrations
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-    <label for="toctree-checkbox-12">
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -711,8 +733,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="reference internal" href="../developer_guide/api_usage/index.html">
      API Usage
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-    <label for="toctree-checkbox-13">
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -735,8 +757,8 @@ document.addEventListener('DOMContentLoaded', function() {
   <a class="reference internal" href="../reference/index.html">
    Reference
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -745,8 +767,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="reference internal" href="../reference/modules/index.html">
      OpenSPP modules
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-    <label for="toctree-checkbox-15">
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1237,8 +1259,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="reference internal" href="../reference/technical/index.html">
      Technical reference
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-    <label for="toctree-checkbox-16">
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1271,8 +1293,8 @@ document.addEventListener('DOMContentLoaded', function() {
   <a class="reference internal" href="../community/index.html">
    Community
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1533,31 +1555,9 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#choose-your-configuration">
-   Choose your configuration
+  <a class="reference internal nav-link" href="#openspp-configurations">
+   OpenSPP configurations
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#steps">
-   Steps
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#system-installation">
-     1. System installation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#module-configuration">
-     2. Module configuration
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#initial-setup">
-     3. Initial setup
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#where-to-go-next">
@@ -1594,31 +1594,9 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#choose-your-configuration">
-   Choose your configuration
+  <a class="reference internal nav-link" href="#openspp-configurations">
+   OpenSPP configurations
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#steps">
-   Steps
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#system-installation">
-     1. System installation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#module-configuration">
-     2. Module configuration
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#initial-setup">
-     3. Initial setup
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#where-to-go-next">
@@ -1645,21 +1623,30 @@ title="Print to PDF"
 <p>Welcome to OpenSPP! This guide will help you get your social protection platform up and running quickly.</p>
 <section id="quick-start-path">
 <h2>Quick start path<a class="headerlink" href="#quick-start-path" title="Permalink to this headline">#</a></h2>
+<p>Start here if you're setting up OpenSPP for the first time:</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-New installation</div>
-<p class="sd-card-text">Start here if you're setting up OpenSPP for the first time:</p>
+I want to use the OpenSPP products</div>
 <ol class="arabic simple">
-<li><p class="sd-card-text"><strong><a class="reference internal" href="installation_deb.html"><span class="doc">Installation guide</span></a></strong><br />
-Install OpenSPP on Debian/Ubuntu (30 minutes)</p></li>
-<li><p class="sd-card-text"><strong><a class="reference internal" href="module_installation.html"><span class="doc">Module installation</span></a></strong><br />
-Choose <a class="reference internal" href="../overview/products/sp_mis.html"><span class="doc">SP-MIS</span></a>, <a class="reference internal" href="../overview/products/social_registry.html"><span class="doc">Social Registry</span></a>, or <a class="reference internal" href="../overview/products/farmer_registry.html"><span class="doc">Farmer Registry</span></a></p></li>
-<li><p class="sd-card-text"><strong>Initial setup</strong><br />
-Configure your first program and import data</p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="installation_deb.html"><span class="doc">Install OpenSPP on Debian/Ubuntu (30 minutes)</span></a></p></li>
+</ol>
+<br>
+<ol class="arabic simple" start="2">
+<li><p class="sd-card-text">Install <a class="reference internal" href="spmis_installation.html"><span class="doc">SP-MIS</span></a>, <a class="reference internal" href="social_installation.html"><span class="doc">Social Registry</span></a>, or <a class="reference internal" href="farmer_installation.html"><span class="doc">Farmer Registry</span></a> from the available modules.</p></li>
+</ol>
+<br>
+<ol class="arabic simple" start="3">
+<li><p class="sd-card-text">Get your system ready for use:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Create your first program - <a class="reference internal" href="../user_guide/program_management/create_program.html"><span class="doc">Creating a Program</span></a></p></li>
+<li><p class="sd-card-text">Import beneficiary data - <a class="reference internal" href="../user_guide/registry_management/index.html"><span class="doc">Registry Management</span></a></p></li>
+<li><p class="sd-card-text">Configure user access - <a class="reference internal" href="../user_guide/administration/index.html"><span class="doc">Administration</span></a></p></li>
+</ul>
+</li>
 </ol>
 </div>
 </div>
@@ -1668,21 +1655,32 @@ Configure your first program and import data</p></li>
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-Learn the system</div>
-<p class="sd-card-text">Explore OpenSPP's capabilities:</p>
+I want to select my modules freely</div>
+<ol class="arabic simple">
+<li><p class="sd-card-text"><a class="reference internal" href="installation_deb.html"><span class="doc">Install OpenSPP on Debian/Ubuntu (30 minutes)</span></a></p></li>
+</ol>
+<br>
+<ol class="arabic simple" start="2">
+<li><p class="sd-card-text">Choose modules to install. Read more about <a class="reference internal" href="module_installation.html"><span class="doc">module installation</span></a> and <a class="reference internal" href="../reference/modules/index.html"><span class="doc">available modules</span></a></p></li>
+</ol>
+<br>
+<ol class="arabic simple" start="3">
+<li><p class="sd-card-text">Get your system ready for use:</p>
 <ul class="simple">
-<li><p class="sd-card-text"><strong><a class="reference internal" href="../overview/features/index.html"><span class="doc">Features</span></a></strong> - Understand key features</p></li>
-<li><p class="sd-card-text"><strong><a class="reference internal" href="../overview/products/index.html"><span class="doc">Products</span></a></strong> - Choose the right product configuration</p></li>
-<li><p class="sd-card-text"><strong><a class="reference internal" href="../user_guide/index.html"><span class="doc">User guide</span></a></strong> - Learn day-to-day operations</p></li>
+<li><p class="sd-card-text">Create your first program - <a class="reference internal" href="../user_guide/program_management/create_program.html"><span class="doc">Creating a Program</span></a></p></li>
+<li><p class="sd-card-text">Import beneficiary data - <a class="reference internal" href="../user_guide/registry_management/index.html"><span class="doc">Registry Management</span></a></p></li>
+<li><p class="sd-card-text">Configure user access - <a class="reference internal" href="../user_guide/administration/index.html"><span class="doc">Administration</span></a></p></li>
 </ul>
+</li>
+</ol>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="choose-your-configuration">
-<h2>Choose your configuration<a class="headerlink" href="#choose-your-configuration" title="Permalink to this headline">#</a></h2>
+<section id="openspp-configurations">
+<h2>OpenSPP configurations<a class="headerlink" href="#openspp-configurations" title="Permalink to this headline">#</a></h2>
 <p>OpenSPP offers three primary configurations based on your needs:</p>
 <table class="colwidths-given table">
 <colgroup>
@@ -1711,35 +1709,6 @@ Learn the system</div>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="steps">
-<h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">#</a></h2>
-<section id="system-installation">
-<h3>1. System installation<a class="headerlink" href="#system-installation" title="Permalink to this headline">#</a></h3>
-<p><strong>Time required:</strong> 30-45 minutes</p>
-<p>Install OpenSPP using our Debian packages:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="installation_deb.html"><span class="doc">Installation Guide</span></a> - Production deployment on Ubuntu/Debian</p></li>
-</ul>
-</section>
-<section id="module-configuration">
-<h3>2. Module configuration<a class="headerlink" href="#module-configuration" title="Permalink to this headline">#</a></h3>
-<p><strong>Time required:</strong> 15-30 minutes</p>
-<p>After installation, configure your system:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="module_installation.html"><span class="doc">Module Installation</span></a> - Install base modules and extensions</p></li>
-</ul>
-</section>
-<section id="initial-setup">
-<h3>3. Initial setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline">#</a></h3>
-<p><strong>Time required:</strong> 1-2 hours</p>
-<p>Get your system ready for use:</p>
-<ul class="simple">
-<li><p>Create your first program - <a class="reference internal" href="../user_guide/program_management/create_program.html"><span class="doc">Creating a Program</span></a></p></li>
-<li><p>Import beneficiary data - <a class="reference internal" href="../user_guide/registry_management/index.html"><span class="doc">Registry Management</span></a></p></li>
-<li><p>Configure user access - <a class="reference internal" href="../user_guide/administration/index.html"><span class="doc">Administration</span></a></p></li>
-</ul>
-</section>
 </section>
 <section id="where-to-go-next">
 <h2>Where to go next<a class="headerlink" href="#where-to-go-next" title="Permalink to this headline">#</a></h2>
@@ -1799,6 +1768,7 @@ Implementation examples</p></li>
 <li><p><strong><a class="reference external" href="https://github.com/orgs/OpenSPP/discussions">GitHub Discussions</a></strong> - Ask questions and get help from the community</p></li>
 <li><p><strong><a class="reference external" href="https://github.com/OpenSPP/openspp-modules/issues">Report Issues</a></strong> - Report bugs or request features</p></li>
 <li><p><strong><a class="reference internal" href="../reference/glossary.html"><span class="doc">OpenSPP Glossary</span></a></strong> - Look up terms (available in multiple languages)</p></li>
+<li><p><strong><a class="reference external" href="https://discord.gg/bgrwxhEQty">OpenSPP Discord server</a></strong> - Join the OpenSPP Discord server and meet the rest of the community</p></li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>
@@ -1823,7 +1793,7 @@ Implementation examples</p></li>
     <a class='right-next' id="next-link" href="installation_deb.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Installation guide</p>
+        <p class="prev-next-title">Installing OpenSPP</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

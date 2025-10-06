@@ -39,7 +39,7 @@ The **OpenSPP Social Registry** is a digital platform that helps governments and
 
 ## Next Step
 
-The OpenSPP Social Registry is an open-source product, built and supported by the OpenSPP community. It can be downloaded from XX
+The OpenSPP Social Registry is an open-source product, built and supported by the OpenSPP community. Read more about {doc}`installing OpenSPP Social Registry <../../getting_started/social_installation>`.
 
 ## OpenSPP modules included in the OpenSPP Social Registry
 
@@ -57,4 +57,4 @@ The following modules are included in the OpenSPP Social Registry product:
 
 ## Expanding the Social Registry
 
-The OpenSPP-based Social Registry contains everything that is necessary to set up a foundational Social Registry. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more on XX
+The OpenSPP-based Social Registry contains everything that is necessary to set up a foundational Social Registry. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more about {doc}`module installation <../../getting_started/module_installation>`.

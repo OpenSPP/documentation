@@ -5,7 +5,7 @@ myst:
     "description": "OpenSPP SP-MIS product configuration for comprehensive social protection program management from enrollment to payment"
     "keywords": "OpenSPP, SP-MIS, social protection, management information system, beneficiary management, payments"
 ---
-# OpenSPP SP-MIS (Social Protection Management Information System)
+# OpenSPP SP-MIS
 *A digital system to manage the full lifecycle of social protection programs*
 
 The **OpenSPP Social Protection Management Information System (SP-MIS)** is a comprehensive platform designed to manage the entire lifecycle of a social protection program. It supports both routine and emergency interventions, whether cash or in-kind, and empowers citizens through secure, verifiable credentials.
@@ -48,7 +48,7 @@ The **OpenSPP Social Protection Management Information System (SP-MIS)** is a co
 
 ## Next Step
 
-The OpenSPP SP-MIS is an open-source product, built and supported by the OpenSPP community. It can be downloaded from XX
+The OpenSPP SP-MIS is an open-source product, built and supported by the OpenSPP community. Read more about {doc}`installing OpenSPP SP-MIS <../../getting_started/spmis_installation>`.
 
 ## OpenSPP modules included in the OpenSPP SP-MIS:
 
@@ -71,4 +71,4 @@ The following modules are included in the OpenSPP SP-MIS product:
 
 ## Expanding the SPMIS
 
-The OpenSPP-based SPMIS contains everything that is necessary to set up a foundational SPMIS. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more on XX
+The OpenSPP-based SPMIS contains everything that is necessary to set up a foundational SPMIS. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more about {doc}`module installation <../../getting_started/module_installation>`.

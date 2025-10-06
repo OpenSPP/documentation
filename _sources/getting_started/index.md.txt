@@ -11,33 +11,46 @@ myst:
 Welcome to OpenSPP! This guide will help you get your social protection platform up and running quickly.
 
 ## Quick start path
+Start here if you're setting up OpenSPP for the first time:
 
 :::::{grid} 2
 :gutter: 3
 
-::::{grid-item-card} New installation
-Start here if you're setting up OpenSPP for the first time:
+::::{grid-item-card} I want to use the OpenSPP products
 
-1. **{doc}`Installation guide <installation_deb>`**  
-   Install OpenSPP on Debian/Ubuntu (30 minutes)
+1. {doc}`Install OpenSPP on Debian/Ubuntu (30 minutes) <installation_deb>`
 
-2. **{doc}`Module installation <module_installation>`**  
-   Choose {doc}`SP-MIS <../overview/products/sp_mis>`, {doc}`Social Registry <../overview/products/social_registry>`, or {doc}`Farmer Registry <../overview/products/farmer_registry>`
+<br>
 
-3. **Initial setup**  
-   Configure your first program and import data
+2. Install {doc}`SP-MIS <spmis_installation>`, {doc}`Social Registry <social_installation>`, or {doc}`Farmer Registry <farmer_installation>` from the available modules.
+
+<br>
+
+3. Get your system ready for use:
+    - Create your first program - {doc}`Creating a Program <../user_guide/program_management/create_program>`
+    - Import beneficiary data - {doc}`Registry Management <../user_guide/registry_management/index>`
+    - Configure user access - {doc}`Administration <../user_guide/administration/index>` 
+   
 ::::
 
-::::{grid-item-card} Learn the system
-Explore OpenSPP's capabilities:
+::::{grid-item-card} I want to select my modules freely
 
-- **{doc}`Features <../overview/features/index>`** - Understand key features
-- **{doc}`Products <../overview/products/index>`** - Choose the right product configuration  
-- **{doc}`User guide <../user_guide/index>`** - Learn day-to-day operations
+1. {doc}`Install OpenSPP on Debian/Ubuntu (30 minutes) <installation_deb>`
+
+<br>
+
+2. Choose modules to install. Read more about {doc}`module installation <module_installation>` and {doc}`available modules <../reference/modules/index>`
+
+<br>
+
+3. Get your system ready for use:
+    - Create your first program - {doc}`Creating a Program <../user_guide/program_management/create_program>`
+    - Import beneficiary data - {doc}`Registry Management <../user_guide/registry_management/index>`
+    - Configure user access - {doc}`Administration <../user_guide/administration/index>`
 ::::
 :::::
 
-## Choose your configuration
+## OpenSPP configurations
 
 OpenSPP offers three primary configurations based on your needs:
 
@@ -58,28 +71,6 @@ OpenSPP offers three primary configurations based on your needs:
   - Agricultural support, farmer subsidies, rural development
   - • Farm mapping<br>• Crop tracking<br>• Input distribution<br>• Seasonal cycles
 ```
-
-## Steps
-
-### 1. System installation
-**Time required:** 30-45 minutes
-
-Install OpenSPP using our Debian packages:
-- {doc}`Installation Guide <installation_deb>` - Production deployment on Ubuntu/Debian
-
-### 2. Module configuration  
-**Time required:** 15-30 minutes
-
-After installation, configure your system:
-- {doc}`Module Installation <module_installation>` - Install base modules and extensions
-
-### 3. Initial setup
-**Time required:** 1-2 hours
-
-Get your system ready for use:
-- Create your first program - {doc}`Creating a Program <../user_guide/program_management/create_program>`
-- Import beneficiary data - {doc}`Registry Management <../user_guide/registry_management/index>`
-- Configure user access - {doc}`Administration <../user_guide/administration/index>`
 
 ## Where to go next
 
@@ -121,6 +112,7 @@ Based on your role:
 - **[GitHub Discussions](https://github.com/orgs/OpenSPP/discussions)** - Ask questions and get help from the community
 - **[Report Issues](https://github.com/OpenSPP/openspp-modules/issues)** - Report bugs or request features
 - **{doc}`OpenSPP Glossary <../reference/glossary>`** - Look up terms (available in multiple languages)
+- **[OpenSPP Discord server](https://discord.gg/bgrwxhEQty)** - Join the OpenSPP Discord server and meet the rest of the community
 
 ```{toctree}
 ---

@@ -10,124 +10,46 @@ myst:
 
 OpenSPP's modular architecture allows organizations to deploy only the features they need. Built on Odoo 17, the platform extends functionality through specialized modules that can be mixed and matched to create tailored social protection solutions. This guide covers installing OpenSPP modules for different use cases.
 
-## Prerequisites
+:::{important}
+Before installing OpenSPP modules, ensure you have an **Odoo 17 instance** running and accessible. If not, follow the {doc}`Installation guide <installation_deb>` in order to install it. 
+:::
 
-Before installing OpenSPP modules, ensure you have:
+## Installing OpenSPP base modules
 
-- **Odoo 17 instance** running and accessible
-- **OpenSPP modules** source code from the [OpenSPP repository](https://github.com/OpenSPP/openspp-modules/tree/17.0/)
-- **Addons path** configured to include the `openspp-modules` directory
-- **Administrator access** to your Odoo instance
-- **Developer mode** knowledge (required for module installation)
+OpenSPP comes with three configured base modules depending on your needs. The steps on how to install these can be found in {doc}`Installation of OpenSPP Social Registry <social_installation>`, {doc}`Installation of OpenSPP SP-MIS <spmis_installation>` and {doc}`Installation of OpenSPP Farmer Registry <farmer_installation>`.
 
-:::{tip}
-For development setup instructions, see the {doc}`Development Setup Guide <../developer_guide/setup>`.
+:::{important}
+The **SP-MIS** ({doc}`spp_base_spmis </reference/modules/spp_base_spmis>`), **Farmer Registry** ({doc}`spp_base_farmer_registry </reference/modules/spp_base_farmer_registry>`) and **Social Registry** ({doc}`spp_base_social_registry </reference/modules/spp_base_social_registry>`) modules are mutually exclusive. You can only have one of them installed in a single Odoo database. Attempting to install multiple base modules will result in an error.
+:::
+
+## Installing additional modules
+
+After setting up your base system you can extend the functionality with additional modules. OpenSPP offers 60+ specialized modules covering various aspects of social protection delivery.
+
+:::{note}
+Additional modules automatically detect and respect your base configuration (SP-MIS or Farmer Registry). Some modules are specific to one configuration, while others work with both.
 :::
 
 ## General installation process
 
 Installing an Odoo module, including those for OpenSPP, follows a standard procedure:
 
-1.  **Place Modules in Addons Path**: Ensure the `openspp-modules` directory is included in your Odoo configuration's `addons_path`.
-2.  **Update apps list**:
-    -   Log in to your Odoo instance with administrator privileges.
-    -   Activate the developer mode.
-    -   Navigate to the **Apps** menu.
-    -   Click on **Update Apps List** and confirm the update.
-3.  **Install the module**:
-    -   In the **Apps** menu, clear the default "Apps" filter from the search bar.
-    -   Search for the desired module by its technical name or title.
-    -   Click the **Activate** button on the module's card to begin the installation.
+1.  Navigate to the **Apps** menu.
+
+2.  Search for the desired module by its technical name or title. If the module does not show up, clear the default "Apps" filter from the search bar.
+
+3. Click the **Activate** button on the module's card to begin the installation.
 
 ![OpenSPP Apps menu interface](module_installation/01-apps-ui.jpg)
 
-## Installation setups
+4. Restart OpenSPP after installing the modules:
+   ```bash
+   sudo systemctl restart openspp
+   ```
 
-OpenSPP can be configured in different ways depending on your project's needs. Below are the installation guides for three primary setups.
+**Note**: The `queue_job` module, which is essential for asynchronous background tasks, is automatically installed as a dependency of the main OpenSPP modules. It is also pre-configured as a `server_wide_module`, ensuring that background workers can process jobs correctly after a service restart.
 
-:::{important}
-The **SP-MIS** ({doc}`spp_base </reference/modules/spp_base>`), and **Farmer Registry** ({doc}`spp_farmer_registry_base </reference/modules/spp_farmer_registry_base>`) modules are mutually exclusive. You can only have one of them installed in a single Odoo database. Attempting to install multiple base modules will result in an error.
-:::
-
-### 1. SP-MIS installation (spp_base)
-
-The Social Protection Management Information System ({doc}`SP-MIS <../overview/products/sp_mis>`) configuration provides comprehensive functionality for managing social protection programs. This setup is ideal for organizations running cash transfers, social assistance programs, or humanitarian interventions.
-
-**What's included:**
-- Registry management for individuals and groups
-- Program cycles and beneficiary enrollment
-- Eligibility determination and targeting
-- Entitlement calculation and management
-- Payment processing integration
-
-**Installation steps:**
-
-1.  Follow the General Installation Process to update your Apps list
-2.  In the Apps menu, search for {doc}`spp_base </reference/modules/spp_base>` or "OpenSPP Base"
-
-![Searching for SPP Base module in Apps](module_installation/02-spp_base01.jpg)
-
-3.  Click the **Activate** button to install the module. This will also install all its dependencies, providing a complete SP-MIS foundation.
-
-![SPP Base module installation screen](module_installation/03-spp_base2.jpg)
-
-Once installed, you will see the "Registry" application in your Odoo dashboard, which is the main entry point for the OpenSPP system.
-
-![SPP Base module successfully installed](module_installation/04-spp_base3.jpg)
-
-### 2. Social Registry installation (spp_registry_base)
-
-The {doc}`Social Registry <../overview/products/social_registry>` configuration provides a centralized repository for beneficiary data that can be shared across multiple social protection programs. This setup is ideal for governments and organizations coordinating multiple interventions and requiring a single source of truth for beneficiary information.
-
-**What's included:**
-- Unified beneficiary database across programs
-- Advanced deduplication and data quality management
-- Dynamic registration and needs assessment
-- Inter-program data sharing and coordination
-- Household composition and relationship tracking
-- Socioeconomic data collection and analysis
-- Data privacy and access control mechanisms
-
-**Installation steps:**
-
-1.  Follow the General Installation Process to update your Apps list
-2.  In the Apps menu, search for {doc}`spp_registry_base </reference/modules/spp_registry_base>` or "OpenSPP Social Registry"
-3.  Click the **Activate** button to install the module and its dependencies
-
-Once installed, the Social Registry becomes the central hub for managing beneficiary data that can be accessed by various social protection programs.
-
-### 3. Farmer Registry installation (spp_farmer_registry_base)
-
-The {doc}`Farmer Registry <../overview/products/farmer_registry>` configuration enables convergence between social protection and agricultural development programs. This setup is designed for organizations supporting smallholder farmers, managing agricultural subsidies, or implementing climate-smart agriculture initiatives.
-
-**What's included:**
-- Farmer and farm household registration
-- Land parcel mapping with GIS integration
-- Crop and livestock tracking
-- Agricultural input distribution management
-- Seasonal cycle management
-- Integration with agricultural extension services
-
-**Installation steps:**
-
-1.  Follow the general installation process to update your Apps list
-2.  In the Apps menu, search for {doc}`spp_farmer_registry_base </reference/modules/spp_farmer_registry_base>` or "OpenSPP Farmer Registry Base"
-
-![Searching for SPP Farmer Registry module](module_installation/05-spp_farmer1.jpg)
-
-3.  Click the **Activate** button to install the module and its dependencies.
-
-![SPP Farmer Registry module installation complete](module_installation/06-spp_farmer2.jpg)
-
-## Installing additional modules
-
-After setting up your base system (either SP-MIS or Farmer Registry), you can extend functionality with additional modules. OpenSPP offers 60+ specialized modules covering various aspects of social protection delivery.
-
-:::{note}
-Additional modules automatically detect and respect your base configuration (SP-MIS or Farmer Registry). Some modules are specific to one configuration, while others work with both.
-:::
-
-### Common extension modules
+## Common extension modules
 
 **Data management:**
 - **Change request** ({doc}`spp_change_request </reference/modules/spp_change_request>`) - Workflow for reviewing and approving data modifications
@@ -144,41 +66,11 @@ Additional modules automatically detect and respect your base configuration (SP-
 - **OpenID Connect** ({doc}`spp_oauth </reference/modules/spp_oauth>`) - Single sign-on and authentication
 - **DCI API Server** ({doc}`spp_dci_api_server </reference/modules/spp_dci_api_server>`) - Data Collection Interface API
 
-### Example: Installing change request module
-
-Let's walk through installing the {doc}`Change Request </reference/modules/spp_change_request>` module as an example:
-
-**Steps:**
-
-1.  Navigate to the **Apps** menu
-2.  Search for {doc}`spp_change_request </reference/modules/spp_change_request>` or "OpenSPP Change Request"
-
-![Searching for SPP Change Request module](module_installation/08-spp_cr1.jpg)
-
-3.  Click the **Activate** button.
-
-![SPP Change Request module installed](module_installation/09-spp_cr2.jpg)
-
-### Example: Installing cash entitlement module
-
-The **OpenSPP Entitlement: Cash** ({doc}`spp_entitlement_cash </reference/modules/spp_entitlement_cash>`) module adds functionality to manage cash-based entitlements for registrants.
-
-**Steps:**
-
-1.  Navigate to the **Apps** menu.
-2.  Search for {doc}`spp_entitlement_cash </reference/modules/spp_entitlement_cash>` or "OpenSPP Entitlement: Cash".
-
-![Searching for SPP Entitlement Cash module](module_installation/10-spp_ent_cash1.jpg)
-
-3.  Click the **Activate** button.
-
-![SPP Entitlement Cash module installation complete](module_installation/11-spp_ent_cash2.jpg)
-
 ## Module dependencies
 
 OpenSPP modules often have dependencies that are automatically installed. Understanding these relationships helps with troubleshooting:
 
-- **Core dependencies** are always installed (e.g., {doc}`spp_base </reference/modules/spp_base>` installs registry modules)
+- **Core dependencies** are always installed (e.g., {doc}`spp_base_spmis </reference/modules/spp_base_spmis>` installs registry modules)
 - **Optional dependencies** can be manually selected based on your needs
 - **Conflicting modules** will show warnings during installation attempts
 
@@ -214,3 +106,15 @@ After installing your modules:
 4. **Test workflows** - Verify the installed features work as expected
 
 For detailed configuration guides for specific modules, see the {doc}`../user_guide/index` and {doc}`../reference/modules/index`.
+
+```{toctree}
+---
+caption: Getting Started
+maxdepth: 2
+hidden: true
+---
+
+spmis_installation
+social_installation
+farmer_installation
+```
