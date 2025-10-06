@@ -8,7 +8,7 @@ myst:
 
 # Farmer Registry installation
 
-**OpenSPP Farmer Registry Base / spp_base_farmer_registry**
+**OpenSPP Farmer Registry Base / spp_base_farmer_registry (available from 17.0.1.4)**
 
 The {doc}`OpenSPP Farmer Registry <../overview/products/farmer_registry>` configuration enables convergence between social protection and agricultural development programs. This setup is designed for organizations supporting smallholder farmers, managing agricultural subsidies, or implementing climate-smart agriculture initiatives.
 
