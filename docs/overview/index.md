@@ -18,28 +18,26 @@ OpenSPP offers three specialized configurations designed for different social pr
 :gutter: 2
 
 ::::{grid-item-card} [SP-MIS](products/sp_mis.md)
-:link: products/sp_mis.md
+:link: products/sp_mis
 :link-type: doc
 
 Social Protection Management Information System for comprehensive program delivery including cash transfers, conditional assistance, and humanitarian interventions.
 ::::
 
 ::::{grid-item-card} [Social Registry](products/social_registry.md)  
-:link: products/social_registry.md
+:link: products/social_registry
 :link-type: doc
 
 Centralized beneficiary database that serves as a single source of truth across multiple programs, reducing duplication and enabling better coordination.
 ::::
 
 ::::{grid-item-card} [Farmer Registry](products/farmer_registry.md)
-:link: products/farmer_registry.md
+:link: products/farmer_registry
 :link-type: doc
 
 Agricultural-focused platform combining farm data, land management, and social protection for rural development and climate resilience programs.
 ::::
 :::::
-
-{doc}`Explore all products → <products/index>`
 
 ## Understand core capabilities
 
