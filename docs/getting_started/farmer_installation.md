@@ -25,11 +25,11 @@ The {doc}`OpenSPP Farmer Registry <../overview/products/farmer_registry>` config
 1.  Navigate to the **Apps** menu.
 2.  In the Apps menu, search for {doc}`spp_base_farmer_registry </reference/modules/spp_base_farmer_registry>` or "OpenSPP Farmer Registry Base"
 
-![Searching for SPP Farmer Registry module](module_installation/05-spp_farmer1.jpg)
+![Searching for SPP Farmer Registry module](module_installation/05-spp_Farmer1.jpg)
 
 3.  Click the **Activate** button to install the module and its dependencies.
 
-![SPP Farmer Registry module installation complete](module_installation/06-spp_farmer2.jpg)
+![SPP Farmer Registry module installation complete](module_installation/06-spp_Farmer2.jpg)
 
 4. Restart OpenSPP after installing the module:
    ```bash
