@@ -1,0 +1,1817 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Event Data" name="title" />
+<meta content="Guide to using Event Data functionality in OpenSPP to record and track specific occurrences related to registrants over time." name="description" />
+<meta content="OpenSPP, event data, registrant tracking, audit trail, data history, event management" name="keywords" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+    <meta property="og:title" content="Event Data" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.openspp.org/user_guide/registry_management/using_event_data.html" />
+<meta property="og:site_name" content="OpenSPP Documentation" />
+<meta property="og:description" content="In OpenSPP, Event Data provides a flexible mechanism to record and track specific, significant occurrences related to registrants over time. This functionality enhances the system's capacity to cap..." />
+<meta property="og:image" content="https://docs.openspp.org/_static/openspp_logo.png" />
+<meta property="og:image:alt" content="OpenSPP Documentation" />
+<meta property="og:locale" content="en_US" />
+
+<title>Event Data – User guide – Registry management &#8212; OpenSPP Documentation vupdate_farmer_docs</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-httpexample.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/sphinxcontrib-httpexample.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/patch_scrollToActive.js"></script>
+    <script src="../../_static/search_shortcut.js"></script>
+    <script src="../../_static/version_switcher.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>
+mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    themeVariables: {
+        primaryColor: '#0066cc',
+        primaryTextColor: '#000000',
+        primaryBorderColor: '#0066cc'
+    }
+});
+</script>
+    <link rel="canonical" href="https://docs.openspp.org/previews/update_farmer_docs/user_guide/registry_management/using_event_data.html" />
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within OpenSPP Documentation vupdate_farmer_docs"
+          href="../../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../../_static/icon_192.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Document Management System" href="dms.html" />
+    <link rel="prev" title="Change Requests" href="using_change_requests.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<!-- Prevent search engines from indexing preview documentation -->
+<meta name="robots" content="noindex,nofollow,noarchive">
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../../_static/review_status.css" type="text/css" />
+<script src="../../_static/review_status_simple.js"></script>
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+
+<!-- Mermaid Support -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="100">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">
+    <p><strong>⚠️ Preview Documentation</strong>: You are viewing a preview build from branch <code>update_farmer_docs</code>. 
+    For the stable documentation, visit <a href="https://docs.openspp.org/">docs.openspp.org</a></p>
+    </div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">OpenSPP Documentation vupdate_farmer_docs</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <div class="input-group">
+    <label for="q" class="sr-only">Search string
+    </label>
+    <i class="fa fa-search fa-lg search-icon" aria-hidden="true"></i>
+    <input
+    type="search" name="q" id="search-input"
+    class="form-control"
+    placeholder="Search"
+    aria-labelledby="Search"
+    value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+    />
+    <div class="input-group-append">
+      <span class="input-group-text" id="shortcut">
+        <kbd id="search-shortcut">⌘</kbd>&nbsp;<kbd>K</kbd>
+      </span>
+    </div>
+  </div>
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../getting_started/index.html">
+   Getting started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../getting_started/installation_deb.html">
+     Installing OpenSPP
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../getting_started/module_installation.html">
+     Module installation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../getting_started/spmis_installation.html">
+       SP-MIS installation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../getting_started/social_installation.html">
+       Social Registry installation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../getting_started/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../overview/index.html">
+   Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../overview/products/index.html">
+     Products
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/products/sp_mis.html">
+       OpenSPP SP-MIS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/products/social_registry.html">
+       OpenSPP Social Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/products/farmer_registry.html">
+       OpenSPP Farmer Registry
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../overview/features/index.html">
+     Features
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/unified_registry.html">
+       Unified registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/program_management.html">
+       Program management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/eligibility_targeting.html">
+       Eligibility &amp; targeting
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/payment_disbursement.html">
+       Payment &amp; disbursement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/in_kind_benefits.html">
+       In-Kind benefits
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/data_integration_apis.html">
+       Data integration &amp; APIs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/change_management.html">
+       Change management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/gis_land_management.html">
+       GIS &amp; land management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/grievance_redress.html">
+       Grievance redress
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../overview/concepts/index.html">
+     Concepts
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/digital_public_infrastructure.html">
+       Digital Public Infrastructure
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/integrated_beneficiary_registry.html">
+       Integrated Beneficiary Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/user_management.html">
+       User management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/data_collection_validation.html">
+       Data collection and validation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/registrant_concepts.html">
+       Key terminology
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/registry_key_concepts.html">
+       Organizing data in the registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/data_protection.html">
+       Data protection
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/extensibility.html">
+       Customisable, configurable, and extensible
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/sp_mis_concepts.html">
+       Social Protection Management Information System
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/social_registry_concepts.html">
+       Social Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/farmer_registry_concepts.html">
+       Farmer Registry
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../overview/poc_and_pilot.html">
+     From proof of concept to pilot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   User guide
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="index.html">
+     Registry management
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="register_individual.html">
+       Register individuals
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="import_export_registrant_data.html">
+       Import/Export data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="setting_up_farmer_registry.html">
+       Farmer Registry setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="identity_management.html">
+       Identity management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="using_change_requests.html">
+       Change requests
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Event data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="dms.html">
+       Document management
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../program_management/index.html">
+     Program management
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../program_management/create_program.html">
+       Create programs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../program_management/enrol_beneficiaries.html">
+       Enrol beneficiaries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../program_management/create_cycle.html">
+       Create cycles
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../program_management/configure_entitlements.html">
+       Cash entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../program_management/configure_inkind_entitlements.html">
+       In-kind entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../program_management/allocate_funds.html">
+       Allocate funds
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../program_management/using_geotargeting.html">
+       Geotargeting
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../administration/index.html">
+     Administration
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/user_access.html">
+       User access
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/custom_fields.html">
+       Custom fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/indicator_fields.html">
+       Indicator fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/import_areas.html">
+       Import areas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/service_points.html">
+       Service points
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/inventory_configuration.html">
+       Inventory setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/incoming_email_configuration.html">
+       Incoming email setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/outgoing_email_configuration.html">
+       Outgoing email setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/database_management.html">
+       Database management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/security_tuning.html">
+       Security &amp; tuning
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/monitoring_maintenance.html">
+       Monitoring
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/uninstalling.html">
+       Uninstalling
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/hardware_integration.html">
+       Hardware setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/troubleshooting.html">
+       Troubleshooting
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pos_usage.html">
+     Point of Sales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grievance_management.html">
+     Grievance Redressal Management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../consent_management.html">
+     Consent management
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../developer_guide/index.html">
+   Developer guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/setup.html">
+     Development setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/architecture.html">
+     Architecture
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../developer_guide/module_development/index.html">
+     Module development
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/fields.html">
+       Registry fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/registry.html">
+       Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/indicators.html">
+       Indicators
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/programs.html">
+       Programs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/cycles.html">
+       Program cycles
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/entitlements.html">
+       Program entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/change_requests.html">
+       Change Request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/dms.html">
+       Document Management System
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/rest_api.html">
+       REST API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/areas.html">
+       Areas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/service_points.html">
+       Service Points
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/audit.html">
+       Audit Logs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/dashboard.html">
+       Dashboards
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/best_practices.html">
+     Best practices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/troubleshooting.html">
+     Troubleshooting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/developer_mode.html">
+     Developer mode (debug mode)
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../developer_guide/integrations/index.html">
+     Integrations
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/integrations/dci.html">
+       Digital Convergence Initiative
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/integrations/esignet.html">
+       eSignet Integration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/integrations/oidc.html">
+       Configuring Keycloak for OAuth
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../developer_guide/api_usage/index.html">
+     API Usage
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/api_usage/dci_api.html">
+       DCI API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/api_usage/external_api_jsonrpc.html">
+       External API using JSON-RPC
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/index.html">
+   Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/modules/index.html">
+     OpenSPP modules
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_api.html">
+       API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_api_records.html">
+       API Records
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_area.html">
+       Area Management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_area_base.html">
+       Area Management (Base)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_area_gis.html">
+       Area GIS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_attendance.html">
+       Attendance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_audit_config.html">
+       Audit Config
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_audit_log.html">
+       Audit Log
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_audit_post.html">
+       G2P Registry: Audit Post
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_auto_update_entitlements.html">
+       Auto-Update Entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base.html">
+       Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_api.html">
+       Base API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_demo.html">
+       Base Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_gis.html">
+       Base GIS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_gis_demo.html">
+       Base GIS Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_gis_rest.html">
+       Base GIS REST
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_setting.html">
+       Base Settings
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_basic_cash_entitlement_spent.html">
+       Program Entitlement Basic Cash Spent
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_branding_kit.html">
+       OpenSPP Branding Kit
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request.html">
+       Change Request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_add_children_demo.html">
+       Change Request Demo: Add Child/Member
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_add_farmer.html">
+       Change Request: Add Farmer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_add_group_to_group.html">
+       Change Request: Add Group to a Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_base.html">
+       Change Request Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_change_info.html">
+       Change Information Change Request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_create_farm.html">
+       Change Request: Create Farm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_create_group.html">
+       Change Request: Create Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_edit_farm.html">
+       Change Request: Edit Farm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_edit_farmer.html">
+       Change Request: Edit Farmer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_consent.html">
+       Consent
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_field.html">
+       Custom Fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_field_custom_filter.html">
+       Custom Field Custom Filter Integration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_field_recompute_daily.html">
+       Custom Field Recompute Daily
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_fields_ui.html">
+       Custom Fields UI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_filter.html">
+       Custom Filter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_filter_farmer_registry.html">
+       Custom Filter Farmer Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_filter_ui.html">
+       Custom Filter UI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_cycle_attendance_compliance.html">
+       Cycle: Attendance Compliance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_dashboard_base.html">
+       Dashboard: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_data_export.html">
+       Data Export
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_dci_api_server.html">
+       DCI API Server
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_demo.html">
+       OpenSPP Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_dms.html">
+       Document Management System
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_eligibility_sql.html">
+       SQL Query Eligibility Manager
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_eligibility_tags.html">
+       Tag Based Eligibility Manager
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_encryption.html">
+       Encryption Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_ent_trans.html">
+       Entitlement Transactions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_entitlement_basket.html">
+       Entitlement Basket
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_entitlement_cash.html">
+       Cash Entitlement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_entitlement_in_kind.html">
+       In-Kind Entitlement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_ethnic_group.html">
+       OpenSPP: Ethnic Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_event_data.html">
+       Event Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_event_data_program_membership.html">
+       Event Data Program Membership
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_event_demo.html">
+       Event Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_exclusion_filter.html">
+       Exclusion Filter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_farmer_registry_base.html">
+       Farmer Registry Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_farmer_registry_dashboard.html">
+       Farmer Registry Dashboard
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_farmer_registry_default_ui.html">
+       Farmer Registry Default UI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_farmer_registry_demo.html">
+       Farmer Registry Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_grm.html">
+       Grievance Redress Mechanism
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_hide_menus.html">
+       Hide Non-OpenSPP Menus
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_hide_menus_base.html">
+       Hide Non-OpenSPP Menus: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_idpass.html">
+       ID PASS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_idqueue.html">
+       ID Queue
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_import_dci_api.html">
+       Import: DCI API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_import_match.html">
+       Import Match
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_irrigation.html">
+       Irrigation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_land_record.html">
+       Land Record
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_manual_eligibility.html">
+       Program: Manual Eligibility
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_manual_entitlement.html">
+       Manual Entitlement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_mis_demo.html">
+       Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_oauth.html">
+       API: Oauth
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_openid_vci.html">
+       OpenID VCI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_openid_vci_group.html">
+       OpenID VCI Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_openid_vci_individual.html">
+       OpenID VCI Individual
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_pmt.html">
+       Proxy Means Testing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_pos.html">
+       POS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_pos_id_redemption.html">
+       POS: ID Redemption
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_program_id.html">
+       Program ID
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_programs.html">
+       Programs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_programs_compliance_criteria.html">
+       Programs: Compliance Criteria
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_programs_sp.html">
+       Programs: Service Points Integration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_qr_scanner.html">
+       QR Scanner
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registrant_import.html">
+       Registrant Import
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registrant_tag.html">
+       Registrant Tags
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_approval.html">
+       Registry Approval: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_approval_group.html">
+       Registry Approval: Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_approval_individual.html">
+       Registry Approval: Individual
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_base.html">
+       Registry: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_data_source.html">
+       Data Source
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_group_hierarchy.html">
+       Registry Group Hierarchy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_scan_id_document.html">
+       Registry: Scan ID Document
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_service_point_device.html">
+       Service Point Device
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_service_points.html">
+       Service Points Management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_starter.html">
+       OpenSPP: Starter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_user_roles.html">
+       User Roles
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/technical/index.html">
+     Technical reference
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/technical/security.html">
+       Security implementations &amp; practices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/technical/backup.html">
+       Backup and recovery
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/technical/performance.html">
+       Performance optimization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/technical/monitoring.html">
+       Monitoring
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../community/index.html">
+   Community
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/contributing.html">
+     Contributing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/license.html">
+     Licensing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/security_reporting.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/release_management.html">
+     Release Management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/glossary.html">
+   OpenSPP Glossary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            
+    <p class="openspporglink">
+        <a href="https://openspp.org">
+            <img src="/_static/openspp_logo.png" alt="openspp.org" /> openspp.org</a>
+    </p>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__label">
+        <span>Event Data – User guide</span>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/openspp/documentation"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fuser_guide/registry_management/using_event_data.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://docs.openspp.org/contributing/?user_guide/registry_management/using_event_data.md#making-contributions-on-github"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/user_guide/registry_management/using_event_data.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objective">
+   Objective
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#process">
+   Process
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-event-data">
+     Create Event Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#view-event-data">
+     View Event Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#active-inactive-event-data">
+     Active/Inactive Event Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Event Data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objective">
+   Objective
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#process">
+   Process
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-event-data">
+     Create Event Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#view-event-data">
+     View Event Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#active-inactive-event-data">
+     Active/Inactive Event Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="event-data">
+<h1>Event Data<a class="headerlink" href="#event-data" title="Permalink to this headline">#</a></h1>
+<p>In OpenSPP, Event Data provides a flexible mechanism to record and track specific, significant occurrences related to registrants over time.
+This functionality enhances the system's capacity to capture a chronological history of changes and actions without directly modifying the main registrant profile.</p>
+<!-- ## Overview of Event Data Functionality -->
+<p>The <a class="reference internal" href="../../reference/modules/spp_event_data.html"><span class="doc">spp_event_data</span></a> module is designed to:</p>
+<ul class="simple">
+<li><p>Provide a structured way to log and store data about events impacting registrants.</p></li>
+<li><p>Link these events to the specific data entries they affect, creating a clear audit trail.</p></li>
+<li><p>Offer tools to view and navigate the event history of a registrant.</p></li>
+<li><p>Store multiple versions of the data, manage separate data lifecycles and sharing agreements, better manage the source of different data, and store data that should not be visible to all users or that loses relevance over time.</p></li>
+</ul>
+<!-- ## Integration with Program Membership Events -->
+<!-- The {doc}`spp_event_data_program_membership </reference/modules/spp_event_data_program_membership>` module enhances OpenSPP by integrating the Event Data module ({doc}`spp_event_data </reference/modules/spp_event_data>`) with the G2P Programs module ({doc}`g2p_programs </reference/modules/g2p_programs>`). This allows users to record and track program membership-related events, such as enrollment, suspension, exit, and changes in eligibility status, and link them to specific program membership records. -->
+<!-- ### Key Features
+
+1.  **Event Data Model (`spp.event.data`):** This new data model stores event-specific information. It includes fields to record event type, related document/record, registrar, collection date, optional expiry date, and event status (active/inactive).
+2.  **Automatic Event Type Calculation:** The event type is dynamically determined and displayed based on the linked data model, providing a clear and user-friendly representation of the event.
+3.  **Event History on Registrant Forms:** A dedicated tab is added to both individual and group registrant forms to display their associated event history, enabling users to directly access and review past events related to a specific registrant.
+4.  **Event Creation Wizard:** A streamlined process for creating new event data entries through a dedicated wizard, simplifying data entry and ensuring consistency in event logging.
+5.  **Active Event Management:** Logic is implemented to manage the active status of events. When a new active event of the same type is created for the same registrant, the previous one is automatically ended, providing a clear view of the current status. -->
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<p>To utilize and manage Event Data, ensure the following prerequisites are met:</p>
+<ul class="simple">
+<li><p>Individual or group records already exist in your registry.
+For more information, refer to <a class="reference internal" href="register_individual.html"><span class="doc">Register individual</span></a> or <a class="reference internal" href="import_export_registrant_data.html"><span class="doc">Import and export registrant data</span></a>.</p></li>
+<li><p>The <a class="reference internal" href="../../reference/modules/spp_event_data.html"><span class="doc">spp_event_data</span></a> module (OpenSPP Event Data) is installed.</p></li>
+<li><p>If specific event types are required (such as program membership events), ensure that any related modules (e.g., <a class="reference internal" href="../../reference/modules/spp_event_data_program_membership.html"><span class="doc">spp_event_data_program_membership</span></a>) are also installed.</p></li>
+<li><p>To access demonstration features, the <a class="reference internal" href="../../reference/modules/spp_event_demo.html"><span class="doc">spp_event_demo</span></a> module should be installed.</p></li>
+</ul>
+<blockquote>
+<div><p>To learn on installing optional modules, refer to the <strong>Installing Additional Modules</strong> section in the document: <a class="reference internal" href="../../getting_started/module_installation.html"><span class="doc">Module installation</span></a>.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Appropriate user access roles are assigned to allow creation or viewing of event records.
+By default, the <strong>System admin</strong> user account has access to event data functionality.</p></li>
+</ul>
+</section>
+<section id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
+<p>By understanding Event Data, you will be able to:</p>
+<ul class="simple">
+<li><p>Log and store structured data about events impacting registrants.</p></li>
+<li><p>Link these events to specific data entries, creating a clear audit trail.</p></li>
+<li><p>View and navigate the event history of a registrant from their profile.</p></li>
+<li><p>Manage different types of event data, allowing for flexible data collection and historical tracking.</p></li>
+</ul>
+</section>
+<section id="process">
+<h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
+<p>Event data functionality fulfills several important roles, including the systematic tracking of changes to a registrant's information.
+A system administrator or authorized user may create an event data entry to record the registrant's current details at a specific point in time.
+Subsequent data collection cycles can generate additional event data entries to document any updates or modifications.
+This approach enables comprehensive monitoring of changes over time and supports the use of event data as conditions or eligibility criteria for particular programs, when appropriately configured.</p>
+<!-- ### Demonstration and Examples
+The {doc}`spp_event_demo </reference/modules/spp_event_demo>` module provides demonstration data and functionalities for the {doc}`spp_event_data </reference/modules/spp_event_data>` module. It showcases how to extend and utilize the event tracking capabilities of OpenSPP for specific use cases through:
+* **Predefined Event Types:** Including House Visit (`spp.event.house.visit`), Phone Survey (`spp.event.phone.survey`), and School Enrollment Record (`spp.event.schoolenrollment.record`).
+* **Data Models and Views:** Specific data models and user-friendly views for each event type.
+* **Event Creation Wizards:** Dedicated wizards for creating new events like "Create Event: House Visit," "Create Event: Phone Survey," and "Create Event: School Enrollment".
+* **Integration with Registrant Profiles:** Displays active events on registrant profiles for a quick overview. -->
+<section id="create-event-data">
+<h3>Create Event Data<a class="headerlink" href="#create-event-data" title="Permalink to this headline">#</a></h3>
+<p>To demonstrate the <strong>event data</strong> functionality, ensure that <a class="reference internal" href="../../reference/modules/spp_event_demo.html"><span class="doc">spp_event_demo</span></a> is activated.
+To verify, navigate to <strong>Apps</strong> and search for <a class="reference internal" href="../../reference/modules/spp_event_demo.html"><span class="doc">spp_event_demo</span></a>.
+If it is not yet enabled, click <strong>Activate</strong>.
+Once successfully activated, the <strong>Activate</strong> button will no longer be visible.</p>
+<p><img alt="Using event data verify event data module" src="../../_images/using_event_data_verify_event_data_module.png" /></p>
+<p>Navigate to the registry and select a record either from groups or individuals, then click on the <strong>event data</strong> button from the top menu bar.</p>
+<p><img alt="Using event data click event button" src="../../_images/using_event_data_click_event_button.png" /></p>
+<p>A modal window will appear.
+In the <strong>Event Type</strong> field, select an event data template; <strong>House Visit</strong> is suggested for this demonstration.</p>
+<p><img alt="event data dropdown field" src="../../_images/using_event_data_dropdown_field.png" /></p>
+<p>Set an <strong>Expiry Date</strong> to determine when the record will become inactive.
+Click <strong>Next</strong> to continue.</p>
+<blockquote>
+<div><p>The field names displayed in the event data modal are customizable depending on your preference or configuration.</p>
+</div></blockquote>
+<p>Fill in the fields you wish to define, then click <strong>Save</strong> to create the event data entry.</p>
+</section>
+<section id="view-event-data">
+<h3>View Event Data<a class="headerlink" href="#view-event-data" title="Permalink to this headline">#</a></h3>
+<p>From <strong>Registry</strong>, select a group or an individual and click on the event data tab.</p>
+<p><img alt="Using event data event data tab" src="user_guide/registry_management/using_event_data/Using_event_data_event_data_tab.png" /></p>
+<p>Click on the green button to view the registrant’s event data details.</p>
+<p><img alt="Using event data view data" src="user_guide/registry_management/using_event_data/Using_event_data_view_data.png" /></p>
+<p>A modal should display the values of the fields for that event data.</p>
+<p><img alt="Using event data event data values" src="user_guide/registry_management/using_event_data/Using_event_data_event_data_values.png" /></p>
+<p>From the <strong>Event Data</strong> tab, you can click on the record’s name to view the event data’s information.</p>
+<p><img alt="Using event data event data name" src="../../_images/using_event_data_event_data_name.png" /></p>
+<p>The displayed fields are all <strong>read-only</strong> and cannot be modified. For the Related Data field, the number shown indicates how many event data entries of the same type currently exist in the registrant's records.</p>
+<p><img alt="Using event data click event data name" src="../../_images/using_event_data_click_event_data_name.png" /></p>
+</section>
+<section id="active-inactive-event-data">
+<h3>Active/Inactive Event Data<a class="headerlink" href="#active-inactive-event-data" title="Permalink to this headline">#</a></h3>
+<p>When a new event data entry is saved, it is automatically marked as active. Any existing entries with the same event type are automatically updated to <strong>inactive</strong>, ensuring only the latest entry remains active.</p>
+<blockquote>
+<div><p>Please note that only one event data entry of each type can be active at a time.</p>
+</div></blockquote>
+<p>Once an event data entry reaches its expiration date, it will automatically be set to inactive.</p>
+<p><img alt="Using event data automatically inactive" src="../../_images/using_event_data_automatically_inactive.png" /></p>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="using_change_requests.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Change Requests</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="dms.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Document Management System</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      &copy; Copyright OpenSPP.<br/>
+    <div class="extra_footer">
+      <p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+    
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            if ($.trim($(".sticky-top .bd-toc").html()) === "") {
+                $(".sticky-top .bd-toc").css("visibility", "hidden");
+            }
+        });
+    </script>
+
+
+  </body>
+</html>
