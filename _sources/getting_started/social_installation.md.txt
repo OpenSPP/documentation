@@ -25,7 +25,13 @@ The {doc}`OpenSPP Social Registry <../overview/products/social_registry>` config
 
 1.  Navigate to the **Apps** menu.
 2.  In the Apps menu, search for {doc}`spp_base_social_registry </reference/modules/spp_base_social_registry>` or "OpenSPP Social Registry Base"
+
+![Searching for SPP Base module in Apps](module_installation/12-social_inst_base01.jpg)
+
 3.  Click the **Activate** button to install the module and its dependencies
+
+![SPP Base module installation screen](module_installation/13-social_inst_base2.jpg)
+
 4. Restart OpenSPP after installing the module:
    ```bash
    sudo systemctl restart openspp
