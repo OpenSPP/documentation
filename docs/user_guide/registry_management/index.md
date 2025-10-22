@@ -11,8 +11,6 @@ This section provides essential guides for managing the core of OpenSPP: the reg
 
 - {doc}`register_individual`: Details the process of manually creating individual and group records and associating individuals as members of a group.
 
-- {doc}`setting_up_farmer_registry`: Instructions for installing and configuring the Farmer Registry module, including the generation of sample farmer data.
-
 - {doc}`using_change_requests`: Explains how to use the Change Request module to update registrant information, including the workflow for initiating, validating, and approving changes.
 
 - {doc}`using_event_data`: This guide explains how to use the Event Data feature to record and track significant occurrences related to registrants over time.
@@ -24,7 +22,6 @@ This section provides essential guides for managing the core of OpenSPP: the reg
 
 Register individuals <register_individual>
 Import/Export data <import_export_registrant_data>
-Farmer Registry setup <setting_up_farmer_registry>
 Identity management <identity_management>
 Change requests <using_change_requests>
 Event data <using_event_data>

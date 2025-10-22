@@ -15,6 +15,8 @@ This section provides guides for a variety of administrative tasks and system ma
 
 - {doc}`inventory_configuration`: Learn how to configure the necessary inventory settings to support in-kind and basket entitlements.
 
+- {doc}`farmer_geolocation`: Guide to enabling geolocation integration in the OpenSPP Farmer Registry to improve area-based operations.
+
 - {doc}`incoming_email_configuration`: A guide to setting up automatic email retrieval and processing from a designated incoming mailbox.
 
 - {doc}`outgoing_email_configuration`: A guide to setting up outgoing email servers for automated messaging and data integration.
@@ -41,6 +43,7 @@ User access <user_access>
 Custom fields <custom_fields>
 Indicator fields <indicator_fields>
 Import areas <import_areas>
+Integrate Geolocation <farmer_geolocation>
 Service points <service_points>
 Inventory setup <inventory_configuration>
 Incoming email setup <incoming_email_configuration>
