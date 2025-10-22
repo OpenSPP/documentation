@@ -5,7 +5,7 @@ This guide provides step-by-step instructions for integrating geolocation platfo
 ## Prerequisites
 To enable geolocation integration in OpenSPP, ensure the following:
 - Your user account has the System Admin role. Learn more in this guide: {doc}`user_access`
-- Your OpenSPP instance installed Farmer registry base module. Learn more in this gu
+- Your OpenSPP instance installed Farmer registry base module. Learn more in this guide. {doc}`../../getting_started/module_installation/farmer_installation`
 - You have an API Key for MapTiler to enable GIS functionality. You can retrieve this by checking their documentation [here](https://docs.maptiler.com/cloud/api/).
 - Developer mode in OpenSPP is enabled to allow configuration of the MapTiler key. For details, refer to the {doc}`../../developer_guide/developer_mode`
 
@@ -22,6 +22,10 @@ As a System Admin, log in to your OpenSPP Farmer Registry instance. Go to **Sett
 Click the **New** button. Set the Key field to **spp_base_gis.map_tiler_api_key** and enter your MapTiler API Key in the **value** field.
 
 ![Setup farmer registry maptiler key](farmer_geolocation/farmer_geolocation_maptiler_key.png)
+
+```{note}
+Keep your MapTiler API Key secure. Avoid sharing it publicly or storing it in version control systems.
+```
 
 Click the **Save** button to apply the configuration. Refresh your browser to see the changes.
 
