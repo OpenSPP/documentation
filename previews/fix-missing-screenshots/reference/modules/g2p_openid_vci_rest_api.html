@@ -1,0 +1,1759 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+    <meta property="og:title" content="G2P Openid Vci Rest Api" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.openspp.org/reference/modules/g2p_openid_vci_rest_api.html" />
+<meta property="og:site_name" content="OpenSPP Documentation" />
+<meta property="og:description" content="The g2p_openid_vci_rest_api module extends OpenSPP's capabilities by providing a standardized RESTful API for Verifiable Credential Issuance (VCI). This module enables external systems, such as dig..." />
+<meta property="og:image" content="https://docs.openspp.org/_static/openspp_logo.png" />
+<meta property="og:image:alt" content="OpenSPP Documentation" />
+<meta name="description" content="The g2p_openid_vci_rest_api module extends OpenSPP's capabilities by providing a standardized RESTful API for Verifiable Credential Issuance (VCI). This module enables external systems, such as dig..." />
+<meta property="og:locale" content="en_US" />
+
+<title>G2P Openid Vci Rest Api &#8212; OpenSPP Documentation vfix-missing-screenshots</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-httpexample.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/sphinxcontrib-httpexample.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/patch_scrollToActive.js"></script>
+    <script src="../../_static/search_shortcut.js"></script>
+    <script src="../../_static/version_switcher.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>
+mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    themeVariables: {
+        primaryColor: '#0066cc',
+        primaryTextColor: '#000000',
+        primaryBorderColor: '#0066cc'
+    }
+});
+</script>
+    <link rel="canonical" href="https://docs.openspp.org/previews/fix-missing-screenshots/reference/modules/g2p_openid_vci_rest_api.html" />
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within OpenSPP Documentation vfix-missing-screenshots"
+          href="../../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../../_static/icon_192.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<!-- Prevent search engines from indexing preview documentation -->
+<meta name="robots" content="noindex,nofollow,noarchive">
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../../_static/review_status.css" type="text/css" />
+<script src="../../_static/review_status_simple.js"></script>
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+
+<!-- Mermaid Support -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="100">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">
+    <p><strong>⚠️ Preview Documentation</strong>: You are viewing a preview build from branch <code>fix-missing-screenshots</code>. 
+    For the stable documentation, visit <a href="https://docs.openspp.org/">docs.openspp.org</a></p>
+    </div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">OpenSPP Documentation vfix-missing-screenshots</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <div class="input-group">
+    <label for="q" class="sr-only">Search string
+    </label>
+    <i class="fa fa-search fa-lg search-icon" aria-hidden="true"></i>
+    <input
+    type="search" name="q" id="search-input"
+    class="form-control"
+    placeholder="Search"
+    aria-labelledby="Search"
+    value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+    />
+    <div class="input-group-append">
+      <span class="input-group-text" id="shortcut">
+        <kbd id="search-shortcut">⌘</kbd>&nbsp;<kbd>K</kbd>
+      </span>
+    </div>
+  </div>
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../getting_started/index.html">
+   Getting started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../getting_started/installation_deb.html">
+     Installing OpenSPP
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../getting_started/module_installation.html">
+     Module installation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../getting_started/spmis_installation.html">
+       SP-MIS installation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../getting_started/social_installation.html">
+       Social Registry installation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../getting_started/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../overview/index.html">
+   Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../overview/products/index.html">
+     Products
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/products/sp_mis.html">
+       OpenSPP SP-MIS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/products/social_registry.html">
+       OpenSPP Social Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/products/farmer_registry.html">
+       OpenSPP Farmer Registry
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../overview/features/index.html">
+     Features
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/unified_registry.html">
+       Unified registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/program_management.html">
+       Program management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/eligibility_targeting.html">
+       Eligibility &amp; targeting
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/payment_disbursement.html">
+       Payment &amp; disbursement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/in_kind_benefits.html">
+       In-Kind benefits
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/data_integration_apis.html">
+       Data integration &amp; APIs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/change_management.html">
+       Change management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/gis_land_management.html">
+       GIS &amp; land management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/grievance_redress.html">
+       Grievance redress
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../overview/concepts/index.html">
+     Concepts
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/digital_public_infrastructure.html">
+       Digital Public Infrastructure
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/integrated_beneficiary_registry.html">
+       Integrated Beneficiary Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/user_management.html">
+       User management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/data_collection_validation.html">
+       Data collection and validation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/registrant_concepts.html">
+       Key terminology
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/registry_key_concepts.html">
+       Organizing data in the registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/data_protection.html">
+       Data protection
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/extensibility.html">
+       Customisable, configurable, and extensible
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/sp_mis_concepts.html">
+       Social Protection Management Information System
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/social_registry_concepts.html">
+       Social Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/farmer_registry_concepts.html">
+       Farmer Registry
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../overview/poc_and_pilot.html">
+     From proof of concept to pilot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../user_guide/index.html">
+   User guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../user_guide/registry_management/index.html">
+     Registry management
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/registry_management/register_individual.html">
+       Register individuals
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/registry_management/import_export_registrant_data.html">
+       Import/Export data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/registry_management/setting_up_farmer_registry.html">
+       Farmer Registry setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/registry_management/identity_management.html">
+       Identity management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/registry_management/using_change_requests.html">
+       Change requests
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/registry_management/using_event_data.html">
+       Event data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/registry_management/dms.html">
+       Document management
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../user_guide/program_management/index.html">
+     Program management
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/program_management/create_program.html">
+       Create programs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/program_management/enrol_beneficiaries.html">
+       Enrol beneficiaries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/program_management/create_cycle.html">
+       Create cycles
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/program_management/configure_entitlements.html">
+       Cash entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/program_management/configure_inkind_entitlements.html">
+       In-kind entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/program_management/allocate_funds.html">
+       Allocate funds
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/program_management/using_geotargeting.html">
+       Geotargeting
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../user_guide/administration/index.html">
+     Administration
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/user_access.html">
+       User access
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/custom_fields.html">
+       Custom fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/indicator_fields.html">
+       Indicator fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/import_areas.html">
+       Import areas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/service_points.html">
+       Service points
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/inventory_configuration.html">
+       Inventory setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/incoming_email_configuration.html">
+       Incoming email setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/outgoing_email_configuration.html">
+       Outgoing email setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/database_management.html">
+       Database management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/security_tuning.html">
+       Security &amp; tuning
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/monitoring_maintenance.html">
+       Monitoring
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/uninstalling.html">
+       Uninstalling
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/hardware_integration.html">
+       Hardware setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../user_guide/administration/troubleshooting.html">
+       Troubleshooting
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../user_guide/pos_usage.html">
+     Point of Sales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../user_guide/grievance_management.html">
+     Grievance Redressal Management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../user_guide/consent_management.html">
+     Consent management
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../developer_guide/index.html">
+   Developer guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/setup.html">
+     Development setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/architecture.html">
+     Architecture
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../developer_guide/module_development/index.html">
+     Module development
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/fields.html">
+       Registry fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/registry.html">
+       Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/indicators.html">
+       Indicators
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/programs.html">
+       Programs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/cycles.html">
+       Program cycles
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/entitlements.html">
+       Program entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/change_requests.html">
+       Change Request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/dms.html">
+       Document Management System
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/rest_api.html">
+       REST API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/areas.html">
+       Areas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/service_points.html">
+       Service Points
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/audit.html">
+       Audit Logs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/dashboard.html">
+       Dashboards
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/best_practices.html">
+     Best practices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/troubleshooting.html">
+     Troubleshooting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/developer_mode.html">
+     Developer mode (debug mode)
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../developer_guide/integrations/index.html">
+     Integrations
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/integrations/dci.html">
+       Digital Convergence Initiative
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/integrations/esignet.html">
+       eSignet Integration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/integrations/oidc.html">
+       Configuring Keycloak for OAuth
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../developer_guide/api_usage/index.html">
+     API Usage
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/api_usage/dci_api.html">
+       DCI API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/api_usage/external_api_jsonrpc.html">
+       External API using JSON-RPC
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../index.html">
+   Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="index.html">
+     OpenSPP modules
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_api.html">
+       API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_api_records.html">
+       API Records
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_area.html">
+       Area Management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_area_base.html">
+       Area Management (Base)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_area_gis.html">
+       Area GIS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_attendance.html">
+       Attendance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_audit_config.html">
+       Audit Config
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_audit_log.html">
+       Audit Log
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_audit_post.html">
+       G2P Registry: Audit Post
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_auto_update_entitlements.html">
+       Auto-Update Entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_base.html">
+       Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_base_api.html">
+       Base API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_base_demo.html">
+       Base Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_base_gis.html">
+       Base GIS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_base_gis_demo.html">
+       Base GIS Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_base_gis_rest.html">
+       Base GIS REST
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_base_setting.html">
+       Base Settings
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_basic_cash_entitlement_spent.html">
+       Program Entitlement Basic Cash Spent
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_branding_kit.html">
+       OpenSPP Branding Kit
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request.html">
+       Change Request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_add_children_demo.html">
+       Change Request Demo: Add Child/Member
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_add_farmer.html">
+       Change Request: Add Farmer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_add_group_to_group.html">
+       Change Request: Add Group to a Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_base.html">
+       Change Request Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_change_info.html">
+       Change Information Change Request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_create_farm.html">
+       Change Request: Create Farm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_create_group.html">
+       Change Request: Create Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_edit_farm.html">
+       Change Request: Edit Farm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_change_request_edit_farmer.html">
+       Change Request: Edit Farmer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_consent.html">
+       Consent
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_custom_field.html">
+       Custom Fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_custom_field_custom_filter.html">
+       Custom Field Custom Filter Integration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_custom_field_recompute_daily.html">
+       Custom Field Recompute Daily
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_custom_fields_ui.html">
+       Custom Fields UI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_custom_filter.html">
+       Custom Filter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_custom_filter_farmer_registry.html">
+       Custom Filter Farmer Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_custom_filter_ui.html">
+       Custom Filter UI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_cycle_attendance_compliance.html">
+       Cycle: Attendance Compliance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_dashboard_base.html">
+       Dashboard: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_data_export.html">
+       Data Export
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_dci_api_server.html">
+       DCI API Server
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_demo.html">
+       OpenSPP Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_dms.html">
+       Document Management System
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_eligibility_sql.html">
+       SQL Query Eligibility Manager
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_eligibility_tags.html">
+       Tag Based Eligibility Manager
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_encryption.html">
+       Encryption Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_ent_trans.html">
+       Entitlement Transactions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_entitlement_basket.html">
+       Entitlement Basket
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_entitlement_cash.html">
+       Cash Entitlement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_entitlement_in_kind.html">
+       In-Kind Entitlement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_ethnic_group.html">
+       OpenSPP: Ethnic Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_event_data.html">
+       Event Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_event_data_program_membership.html">
+       Event Data Program Membership
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_event_demo.html">
+       Event Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_exclusion_filter.html">
+       Exclusion Filter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_farmer_registry_base.html">
+       Farmer Registry Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_farmer_registry_dashboard.html">
+       Farmer Registry Dashboard
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_farmer_registry_default_ui.html">
+       Farmer Registry Default UI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_farmer_registry_demo.html">
+       Farmer Registry Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_grm.html">
+       Grievance Redress Mechanism
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_hide_menus.html">
+       Hide Non-OpenSPP Menus
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_hide_menus_base.html">
+       Hide Non-OpenSPP Menus: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_idpass.html">
+       ID PASS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_idqueue.html">
+       ID Queue
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_import_dci_api.html">
+       Import: DCI API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_import_match.html">
+       Import Match
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_irrigation.html">
+       Irrigation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_land_record.html">
+       Land Record
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_manual_eligibility.html">
+       Program: Manual Eligibility
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_manual_entitlement.html">
+       Manual Entitlement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_mis_demo.html">
+       Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_oauth.html">
+       API: Oauth
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_openid_vci.html">
+       OpenID VCI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_openid_vci_group.html">
+       OpenID VCI Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_openid_vci_individual.html">
+       OpenID VCI Individual
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_pmt.html">
+       Proxy Means Testing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_pos.html">
+       POS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_pos_id_redemption.html">
+       POS: ID Redemption
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_program_id.html">
+       Program ID
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_programs.html">
+       Programs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_programs_compliance_criteria.html">
+       Programs: Compliance Criteria
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_programs_sp.html">
+       Programs: Service Points Integration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_qr_scanner.html">
+       QR Scanner
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_registrant_import.html">
+       Registrant Import
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_registrant_tag.html">
+       Registrant Tags
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_registry_approval.html">
+       Registry Approval: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_registry_approval_group.html">
+       Registry Approval: Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_registry_approval_individual.html">
+       Registry Approval: Individual
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_registry_base.html">
+       Registry: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_registry_data_source.html">
+       Data Source
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_registry_group_hierarchy.html">
+       Registry Group Hierarchy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_scan_id_document.html">
+       Registry: Scan ID Document
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_service_point_device.html">
+       Service Point Device
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_service_points.html">
+       Service Points Management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_starter.html">
+       OpenSPP: Starter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="spp_user_roles.html">
+       User Roles
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../technical/index.html">
+     Technical reference
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../technical/security.html">
+       Security implementations &amp; practices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../technical/backup.html">
+       Backup and recovery
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../technical/performance.html">
+       Performance optimization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../technical/monitoring.html">
+       Monitoring
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../community/index.html">
+   Community
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/contributing.html">
+     Contributing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/license.html">
+     Licensing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/security_reporting.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/release_management.html">
+     Release Management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   OpenSPP Glossary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            
+    <p class="openspporglink">
+        <a href="https://openspp.org">
+            <img src="/_static/openspp_logo.png" alt="openspp.org" /> openspp.org</a>
+    </p>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__label">
+        <span>G2P Openid Vci Rest Api</span>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/openspp/documentation"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Freference/modules/g2p_openid_vci_rest_api.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://docs.openspp.org/contributing/?reference/modules/g2p_openid_vci_rest_api.md#making-contributions-on-github"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/reference/modules/g2p_openid_vci_rest_api.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#purpose">
+   Purpose
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dependencies-and-integration">
+   Dependencies and Integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-functionality">
+   Additional Functionality
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#standardized-api-endpoints-for-vci">
+     Standardized API Endpoints for VCI
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seamless-integration-with-openid4vp-flows">
+     Seamless Integration with OpenID4VP Flows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configurable-api-management">
+     Configurable API Management
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exposing-core-vci-capabilities">
+     Exposing Core VCI Capabilities
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>G2P Openid Vci Rest Api</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#purpose">
+   Purpose
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dependencies-and-integration">
+   Dependencies and Integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-functionality">
+   Additional Functionality
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#standardized-api-endpoints-for-vci">
+     Standardized API Endpoints for VCI
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seamless-integration-with-openid4vp-flows">
+     Seamless Integration with OpenID4VP Flows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configurable-api-management">
+     Configurable API Management
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exposing-core-vci-capabilities">
+     Exposing Core VCI Capabilities
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="g2p-openid-vci-rest-api">
+<h1>G2P Openid Vci Rest Api<a class="headerlink" href="#g2p-openid-vci-rest-api" title="Permalink to this headline">#</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">g2p_openid_vci_rest_api</span></code> module extends OpenSPP's capabilities by providing a standardized RESTful API for Verifiable Credential Issuance (VCI). This module enables external systems, such as digital wallets or other applications, to securely request and receive Verifiable Credentials (VCs) from OpenSPP.</p>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
+<p>This module establishes the necessary API layer for OpenSPP to act as a secure and interoperable issuer of digital credentials. It allows OpenSPP to participate in modern digital identity ecosystems by making its VCI capabilities externally accessible.</p>
+<ul class="simple">
+<li><p><strong>Exposes Standardized VCI Endpoints:</strong> Creates secure, industry-standard REST API endpoints that external applications can use to interact with OpenSPP's credential issuance services.</p></li>
+<li><p><strong>Enables Programmatic Credential Requests:</strong> Allows external systems, such as mobile wallets or other digital identity platforms, to programmatically initiate requests for Verifiable Credentials from OpenSPP.</p></li>
+<li><p><strong>Facilitates OpenID4VP Integration:</strong> Provides the API interface required to support OpenID Connect for Verifiable Presentations (OpenID4VP) flows, ensuring secure authorization and token exchange during credential issuance.</p></li>
+<li><p><strong>Dynamic API Management:</strong> Integrates with OpenSPP's API management framework, allowing administrators to activate and configure the VCI API endpoints directly within the OpenSPP system.</p></li>
+<li><p><strong>Extends OpenSPP's Reach:</strong> Transforms OpenSPP into an active participant in digital identity initiatives by making its rich data and credentialing logic available to external, decentralized identity applications.</p></li>
+</ul>
+</section>
+<section id="dependencies-and-integration">
+<h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
+<p>This module is a crucial integration layer, building upon and exposing the functionality of other core OpenSPP modules.</p>
+<p>It primarily depends on the <a class="reference internal" href="g2p_openid_vci.html"><span class="doc std std-doc">G2P OpenID VCI</span></a> module, which contains the core logic for managing issuers and generating Verifiable Credentials. The <code class="docutils literal notranslate"><span class="pre">g2p_openid_vci_rest_api</span></code> module serves as the public interface for these underlying VCI services.</p>
+<p>The module also integrates with <code class="docutils literal notranslate"><span class="pre">fastapi</span></code>, which provides the robust and performant web framework for building the REST API endpoints. Additionally, it leverages <code class="docutils literal notranslate"><span class="pre">extendable_fastapi</span></code> to allow for dynamic registration and management of these API endpoints within the OpenSPP administrative interface, ensuring flexibility and easy configuration.</p>
+</section>
+<section id="additional-functionality">
+<h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
+<section id="standardized-api-endpoints-for-vci">
+<h3>Standardized API Endpoints for VCI<a class="headerlink" href="#standardized-api-endpoints-for-vci" title="Permalink to this headline">#</a></h3>
+<p>This module establishes secure, standardized REST API endpoints that conform to industry best practices for Verifiable Credential Issuance. These endpoints enable external applications, such as mobile wallets or other digital identity systems, to programmatically interact with OpenSPP to request and receive digital credentials. This ensures interoperability and secure communication with a wide range of external services.</p>
+</section>
+<section id="seamless-integration-with-openid4vp-flows">
+<h3>Seamless Integration with OpenID4VP Flows<a class="headerlink" href="#seamless-integration-with-openid4vp-flows" title="Permalink to this headline">#</a></h3>
+<p>The module provides the necessary API interface to support OpenID Connect for Verifiable Presentations (OpenID4VP) flows. This is critical for modern digital identity ecosystems, ensuring that the credential issuance process adheres to widely accepted standards for authorization, token exchange, and secure delivery of credentials. It handles the API-level interactions required for these secure identity flows.</p>
+</section>
+<section id="configurable-api-management">
+<h3>Configurable API Management<a class="headerlink" href="#configurable-api-management" title="Permalink to this headline">#</a></h3>
+<p>Leveraging OpenSPP's <code class="docutils literal notranslate"><span class="pre">fastapi</span></code> integration, the module allows administrators to enable and manage the VCI API endpoints directly within the system. This provides the flexibility to activate the VCI service, define its public-facing behavior, and integrate it seamlessly into the broader OpenSPP ecosystem without requiring code changes. Administrators can specify the application type as &quot;VCI Endpoint&quot; to activate the necessary routers.</p>
+</section>
+<section id="exposing-core-vci-capabilities">
+<h3>Exposing Core VCI Capabilities<a class="headerlink" href="#exposing-core-vci-capabilities" title="Permalink to this headline">#</a></h3>
+<p>By providing a programmatic interface, this API module makes OpenSPP's robust issuer management, credential definition, and secure signing features accessible to external digital identity initiatives. It allows the rich functionality of the underlying <a class="reference internal" href="g2p_openid_vci.html"><span class="doc std std-doc">G2P OpenID VCI</span></a> module to be consumed by external applications, enabling OpenSPP to serve as a central component in a decentralized identity infrastructure.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">g2p_openid_vci_rest_api</span></code> module is essential for enabling OpenSPP to securely and programmatically issue Verifiable Credentials to external systems, significantly enhancing its role in modern digital identity ecosystems.</p>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      &copy; Copyright OpenSPP.<br/>
+    <div class="extra_footer">
+      <p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+    
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            if ($.trim($(".sticky-top .bd-toc").html()) === "") {
+                $(".sticky-top .bd-toc").css("visibility", "hidden");
+            }
+        });
+    </script>
+
+
+  </body>
+</html>
