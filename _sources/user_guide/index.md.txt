@@ -9,7 +9,6 @@ Guides for managing registrant data and registry operations:
 
 - {doc}`registry_management/register_individual`
 - {doc}`registry_management/import_export_registrant_data`
-- {doc}`registry_management/setting_up_farmer_registry`
 - {doc}`registry_management/identity_management`
 - {doc}`registry_management/using_change_requests`
 - {doc}`registry_management/using_event_data`
@@ -37,6 +36,7 @@ Administrative tasks and system management:
 - {doc}`administration/indicator_fields`
 - {doc}`administration/import_areas`
 - {doc}`administration/inventory_configuration`
+- {doc}`administration/farmer_geolocation`
 - {doc}`administration/incoming_email_configuration`
 - {doc}`administration/outgoing_email_configuration`
 - {doc}`administration/hardware_integration`
