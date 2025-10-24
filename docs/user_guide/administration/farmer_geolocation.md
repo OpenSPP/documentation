@@ -1,4 +1,4 @@
-# Integrate Geolocation
+# Integrate geolocation
 
 This guide provides step-by-step instructions for integrating geolocation platforms such as MapTiler with the OpenSPP Farmer Registry module to enhance area-based functionality.
 

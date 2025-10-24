@@ -43,7 +43,7 @@ User access <user_access>
 Custom fields <custom_fields>
 Indicator fields <indicator_fields>
 Import areas <import_areas>
-Integrate Geolocation <farmer_geolocation>
+Integrate geolocation <farmer_geolocation>
 Service points <service_points>
 Inventory setup <inventory_configuration>
 Incoming email setup <incoming_email_configuration>
