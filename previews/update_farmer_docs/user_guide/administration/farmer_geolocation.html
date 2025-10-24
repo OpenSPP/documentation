@@ -1572,6 +1572,28 @@ title="Print to PDF"
      Setting Up the API Key for MapTiler
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-geolocation-data">
+     Add Geolocation Data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#add-address-coordinates">
+       Add Address Coordinates
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#add-farm-land">
+       Add Farm Land
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remove-geolocation-data">
+     Remove Geolocation Data
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1613,6 +1635,28 @@ title="Print to PDF"
      Setting Up the API Key for MapTiler
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-geolocation-data">
+     Add Geolocation Data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#add-address-coordinates">
+       Add Address Coordinates
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#add-farm-land">
+       Add Farm Land
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remove-geolocation-data">
+     Remove Geolocation Data
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1632,15 +1676,15 @@ title="Print to PDF"
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>To enable geolocation integration in OpenSPP, ensure the following:</p>
 <ul class="simple">
-<li><p>Your user account has the System Admin role. Learn more in this guide: <a class="reference internal" href="user_access.html"><span class="doc">User access</span></a></p></li>
-<li><p>Your OpenSPP instance installed Farmer registry base module. Learn more in this guide. <span class="xref std std-doc">../../getting_started/module_installation/farmer_installation</span></p></li>
-<li><p>You have an API Key for MapTiler to enable GIS functionality. You can retrieve this by checking their documentation <a class="reference external" href="https://docs.maptiler.com/cloud/api/">here</a>.</p></li>
-<li><p>Developer mode in OpenSPP is enabled to allow configuration of the MapTiler key. For details, refer to the <a class="reference internal" href="../../developer_guide/developer_mode.html"><span class="doc">Developer mode (debug mode)</span></a></p></li>
+<li><p>Your user account has the System Admin role. Learn more in this guide: <a class="reference internal" href="user_access.html"><span class="doc">User access</span></a>.</p></li>
+<li><p>Your OpenSPP instance has the Farmer Registry base module installed. Learn more in this guide: <a class="reference internal" href="../../getting_started/farmer_installation.html"><span class="doc">Farmer Registry installation</span></a>.</p></li>
+<li><p>You have an API key for MapTiler to enable GIS functionality. You can retrieve this by checking their documentation <a class="reference external" href="https://docs.maptiler.com/cloud/api/">here</a>.</p></li>
+<li><p>Developer mode in OpenSPP is enabled to allow configuration of the MapTiler key. For details, refer to the <a class="reference internal" href="../../developer_guide/developer_mode.html"><span class="doc">Developer mode (debug mode)</span></a>.</p></li>
 </ul>
 </section>
 <section id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
-<p>By the end of this guide, you will be able to configure MapTiler integration to support area-based features in the Farmer Registry.</p>
+<p>By the end of this guide, you will have configured MapTiler integration to enable area-based features in the Farmer Registry and will learn how to add, edit, and remove farm geolocation data using the map tools.</p>
 </section>
 <section id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
@@ -1648,13 +1692,47 @@ title="Print to PDF"
 <h3>Setting Up the API Key for MapTiler<a class="headerlink" href="#setting-up-the-api-key-for-maptiler" title="Permalink to this headline">#</a></h3>
 <p>As a System Admin, log in to your OpenSPP Farmer Registry instance. Go to <strong>Settings</strong>, then select <strong>Technical</strong>, and click <strong>System Parameters</strong>.</p>
 <p><img alt="Settings menu with Technical and System Parameters options" src="../../_images/farmer_geolocation_system_parameters.png" /></p>
-<p>Click the <strong>New</strong> button. Set the Key field to <strong>spp_base_gis.map_tiler_api_key</strong> and enter your MapTiler API Key in the <strong>value</strong> field.</p>
+<p>Click the <strong>New</strong> button. Set the Key field to <strong>spp_base_gis.map_tiler_api_key</strong> and enter your MapTiler API key in the <strong>value</strong> field.</p>
 <p><img alt="Setup farmer registry maptiler key" src="../../_images/farmer_geolocation_maptiler_key.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Keep your MapTiler API Key secure. Avoid sharing it publicly or storing it in version control systems.</p>
+<p>Keep your API key secure. Avoid sharing it publicly or storing it in version control systems.</p>
 </div>
 <p>Click the <strong>Save</strong> button to apply the configuration. Refresh your browser to see the changes.</p>
+</section>
+<section id="add-geolocation-data">
+<h3>Add Geolocation Data<a class="headerlink" href="#add-geolocation-data" title="Permalink to this headline">#</a></h3>
+<p>After setting up the API key for the geolocation platform, navigate to the Registry and click an existing farm group, then open the <strong>Farm Details</strong> tab.</p>
+<p><img alt="Farm details tab" src="../../_images/farmer_geolocation_farm_details.png" /></p>
+<section id="add-address-coordinates">
+<h4>Add Address Coordinates<a class="headerlink" href="#add-address-coordinates" title="Permalink to this headline">#</a></h4>
+<p>Under the <strong>Farm Details</strong> tab, click <strong>Address Coordinates</strong>.</p>
+<p>Click the Marker tool once, then select a location on the map to add a pin for the farm.</p>
+<p><img alt="Marker button" src="../../_images/farmer_geolocation_marker_button.png" /></p>
+<p>You can also click the <strong>Find My Location</strong> button to center the map on your current location.</p>
+<p><img alt="Find my location button" src="../../_images/farmer_geolocation_find_my_location.png" /></p>
+</section>
+<section id="add-farm-land">
+<h4>Add Farm Land<a class="headerlink" href="#add-farm-land" title="Permalink to this headline">#</a></h4>
+<p>Under the <strong>Farm Details</strong> tab, click <strong>Farm Land</strong>.</p>
+<p>Click the polygon tool once, then click the map to add vertices until the area is outlined; double-click the final point to close the polygon.</p>
+<p><img alt="polygon tool" src="../../_images/farmer_geolocation_polygon_tool.png" /></p>
+<p>You can also click the <strong>Find My Location</strong> button to center the map on your current location.</p>
+<p><img alt="Find my location button" src="../../_images/farmer_geolocation_find_my_location.png" /></p>
+</section>
+</section>
+<section id="remove-geolocation-data">
+<h3>Remove Geolocation Data<a class="headerlink" href="#remove-geolocation-data" title="Permalink to this headline">#</a></h3>
+<p>To remove geolocation data, navigate to the <strong>Farm Details</strong> tab, then open the tab for either <strong>Address Coordinates</strong> or <strong>Farm Land</strong>.</p>
+<p>Click the trash icon to remove the geolocation data.</p>
+<p><img alt="Delete button" src="../../_images/farmer_geolocation_delete_button.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The trash icon appears only when there is existing map data.</p></li>
+<li><p>Deletion cannot be undone.</p></li>
+</ul>
+</div>
 </section>
 </section>
 </section>
