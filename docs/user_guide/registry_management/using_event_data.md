@@ -95,15 +95,15 @@ Fill in the fields you wish to define, then click **Save** to create the event d
 
 From **Registry**, select a group or an individual and click on the event data tab.
 
-![Using event data event data tab](using_event_data/Using_event_data_event_data_tab.png)
+![Using event data event data tab](using_event_data/using_event_data_event_data_tab.png)
 
 Click on the green button to view the registrant’s event data details.
 
-![Using event data view data](using_event_data/Using_event_data_view_data.png)
+![Using event data view data](using_event_data/using_event_data_view_data.png)
 
 A modal should display the values of the fields for that event data.
 
-![Using event data event data values](using_event_data/Using_event_data_event_data_values.png)
+![Using event data event data values](using_event_data/using_event_data_event_data_values.png)
 
 From the **Event Data** tab, you can click on the record’s name to view the event data’s information.
 
