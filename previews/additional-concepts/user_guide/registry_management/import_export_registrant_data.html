@@ -1,0 +1,2092 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="Import and Export Registrant Data" name="title" />
+<meta content="Comprehensive guide for importing and exporting registrant data in OpenSPP, including export parameters, templates, and error handling." name="description" />
+<meta content="OpenSPP, data import, data export, registrant data, CSV, XLSX, system administration" name="keywords" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+    <meta property="og:title" content="Import and export registrant data" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.openspp.org/user_guide/registry_management/import_export_registrant_data.html" />
+<meta property="og:site_name" content="OpenSPP Documentation" />
+<meta property="og:description" content="This guide offers a comprehensive, step-by-step overview of the process for exporting registrant data from OpenSPP. It details the procedures, configurable options, and considerations available to ..." />
+<meta property="og:image" content="https://docs.openspp.org/_static/openspp_logo.png" />
+<meta property="og:image:alt" content="OpenSPP Documentation" />
+<meta property="og:locale" content="en_US" />
+
+<title>Import and export registrant data – User guide – Registry management &#8212; OpenSPP Documentation vadditional-concepts</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-httpexample.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/sphinxcontrib-httpexample.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/patch_scrollToActive.js"></script>
+    <script src="../../_static/search_shortcut.js"></script>
+    <script src="../../_static/version_switcher.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>
+mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    themeVariables: {
+        primaryColor: '#0066cc',
+        primaryTextColor: '#000000',
+        primaryBorderColor: '#0066cc'
+    }
+});
+</script>
+    <link rel="canonical" href="https://docs.openspp.org/previews/additional-concepts/user_guide/registry_management/import_export_registrant_data.html" />
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within OpenSPP Documentation vadditional-concepts"
+          href="../../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../../_static/icon_192.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configure ID and generate QR code" href="identity_management.html" />
+    <link rel="prev" title="Register individual" href="register_individual.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<!-- Prevent search engines from indexing preview documentation -->
+<meta name="robots" content="noindex,nofollow,noarchive">
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../../_static/review_status.css" type="text/css" />
+<script src="../../_static/review_status_simple.js"></script>
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+
+<!-- Mermaid Support -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="100">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">
+    <p><strong>⚠️ Preview Documentation</strong>: You are viewing a preview build from branch <code>additional-concepts</code>. 
+    For the stable documentation, visit <a href="https://docs.openspp.org/">docs.openspp.org</a></p>
+    </div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">OpenSPP Documentation vadditional-concepts</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <div class="input-group">
+    <label for="q" class="sr-only">Search string
+    </label>
+    <i class="fa fa-search fa-lg search-icon" aria-hidden="true"></i>
+    <input
+    type="search" name="q" id="search-input"
+    class="form-control"
+    placeholder="Search"
+    aria-labelledby="Search"
+    value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+    />
+    <div class="input-group-append">
+      <span class="input-group-text" id="shortcut">
+        <kbd id="search-shortcut">⌘</kbd>&nbsp;<kbd>K</kbd>
+      </span>
+    </div>
+  </div>
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../getting_started/index.html">
+   Getting started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../getting_started/installation_deb.html">
+     Installing OpenSPP
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../getting_started/module_installation.html">
+     Module installation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../getting_started/spmis_installation.html">
+       SP-MIS installation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../getting_started/social_installation.html">
+       Social Registry installation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../getting_started/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../overview/index.html">
+   Overview
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../overview/products/index.html">
+     Products
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/products/sp_mis.html">
+       OpenSPP SP-MIS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/products/social_registry.html">
+       OpenSPP Social Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/products/farmer_registry.html">
+       OpenSPP Farmer Registry
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../overview/features/index.html">
+     Features
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/unified_registry.html">
+       Unified registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/program_management.html">
+       Program management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/eligibility_targeting.html">
+       Eligibility &amp; targeting
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/payment_disbursement.html">
+       Payment &amp; disbursement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/in_kind_benefits.html">
+       In-Kind benefits
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/data_integration_apis.html">
+       Data integration &amp; APIs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/change_management.html">
+       Change management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/gis_land_management.html">
+       GIS &amp; land management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/features/grievance_redress.html">
+       Grievance redress
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../overview/concepts/index.html">
+     Concepts
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/digital_public_infrastructure.html">
+       Digital Public Infrastructure
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/integrated_beneficiary_registry.html">
+       Integrated Beneficiary Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/user_management.html">
+       User management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/data_collection_validation.html">
+       Data collection and validation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/registrant_concepts.html">
+       Key terminology
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/registry_key_concepts.html">
+       Organizing data in the registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/data_protection.html">
+       Data protection
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/extensibility.html">
+       Customisable, configurable, and extensible
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/modularity.html">
+       Modularity
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/odoo_framework_value.html">
+       Odoo Framework Value
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/configuration_vs_customization.html">
+       Configuration vs Customization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/role_based_access_control.html">
+       Role-Based Access Control
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/sp_mis_concepts.html">
+       Social Protection Management Information System
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/social_registry_concepts.html">
+       Social Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../overview/concepts/farmer_registry_concepts.html">
+       Farmer Registry
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../overview/poc_and_pilot.html">
+     From proof of concept to pilot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   User guide
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="index.html">
+     Registry management
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="register_individual.html">
+       Register individuals
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Import/Export data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="identity_management.html">
+       Identity management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="using_change_requests.html">
+       Change requests
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="using_event_data.html">
+       Event data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="dms.html">
+       Document management
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../program_management/index.html">
+     Program management
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../program_management/create_program.html">
+       Create programs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../program_management/enrol_beneficiaries.html">
+       Enrol beneficiaries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../program_management/create_cycle.html">
+       Create cycles
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../program_management/configure_entitlements.html">
+       Cash entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../program_management/configure_inkind_entitlements.html">
+       In-kind entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../program_management/allocate_funds.html">
+       Allocate funds
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../program_management/using_geotargeting.html">
+       Geotargeting
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../administration/index.html">
+     Administration
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/user_access.html">
+       User access
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/custom_fields.html">
+       Custom fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/indicator_fields.html">
+       Indicator fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/import_areas.html">
+       Import areas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/farmer_geolocation.html">
+       Integrate geolocation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/service_points.html">
+       Service points
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/inventory_configuration.html">
+       Inventory setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/incoming_email_configuration.html">
+       Incoming email setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/outgoing_email_configuration.html">
+       Outgoing email setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/database_management.html">
+       Database management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/security_tuning.html">
+       Security &amp; tuning
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/monitoring_maintenance.html">
+       Monitoring
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/uninstalling.html">
+       Uninstalling
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/hardware_integration.html">
+       Hardware setup
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../administration/troubleshooting.html">
+       Troubleshooting
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pos_usage.html">
+     Point of Sales
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grievance_management.html">
+     Grievance Redressal Management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../consent_management.html">
+     Consent management
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../developer_guide/index.html">
+   Developer guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/setup.html">
+     Development setup
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/architecture.html">
+     Architecture
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../developer_guide/module_development/index.html">
+     Module development
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/fields.html">
+       Registry fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/registry.html">
+       Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/indicators.html">
+       Indicators
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/programs.html">
+       Programs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/cycles.html">
+       Program cycles
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/entitlements.html">
+       Program entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/change_requests.html">
+       Change Request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/dms.html">
+       Document Management System
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/rest_api.html">
+       REST API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/areas.html">
+       Areas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/service_points.html">
+       Service Points
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/audit.html">
+       Audit Logs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/module_development/dashboard.html">
+       Dashboards
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/best_practices.html">
+     Best practices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/troubleshooting.html">
+     Troubleshooting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../developer_guide/developer_mode.html">
+     Developer mode (debug mode)
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../developer_guide/integrations/index.html">
+     Integrations
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/integrations/dci.html">
+       Digital Convergence Initiative
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/integrations/esignet.html">
+       eSignet Integration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/integrations/oidc.html">
+       Configuring Keycloak for OAuth
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../developer_guide/api_usage/index.html">
+     API Usage
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/api_usage/dci_api.html">
+       DCI API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../developer_guide/api_usage/external_api_jsonrpc.html">
+       External API using JSON-RPC
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../reference/index.html">
+   Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/modules/index.html">
+     OpenSPP modules
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_api.html">
+       API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_api_records.html">
+       API Records
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_area.html">
+       Area Management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_area_base.html">
+       Area Management (Base)
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_area_gis.html">
+       Area GIS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_attendance.html">
+       Attendance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_audit_config.html">
+       Audit Config
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_audit_log.html">
+       Audit Log
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_audit_post.html">
+       G2P Registry: Audit Post
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_auto_update_entitlements.html">
+       Auto-Update Entitlements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base.html">
+       Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_api.html">
+       Base API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_demo.html">
+       Base Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_gis.html">
+       Base GIS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_gis_demo.html">
+       Base GIS Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_gis_rest.html">
+       Base GIS REST
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_base_setting.html">
+       Base Settings
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_basic_cash_entitlement_spent.html">
+       Program Entitlement Basic Cash Spent
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_branding_kit.html">
+       OpenSPP Branding Kit
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request.html">
+       Change Request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_add_children_demo.html">
+       Change Request Demo: Add Child/Member
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_add_farmer.html">
+       Change Request: Add Farmer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_add_group_to_group.html">
+       Change Request: Add Group to a Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_base.html">
+       Change Request Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_change_info.html">
+       Change Information Change Request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_create_farm.html">
+       Change Request: Create Farm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_create_group.html">
+       Change Request: Create Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_edit_farm.html">
+       Change Request: Edit Farm
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_change_request_edit_farmer.html">
+       Change Request: Edit Farmer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_consent.html">
+       Consent
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_field.html">
+       Custom Fields
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_field_custom_filter.html">
+       Custom Field Custom Filter Integration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_field_recompute_daily.html">
+       Custom Field Recompute Daily
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_fields_ui.html">
+       Custom Fields UI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_filter.html">
+       Custom Filter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_filter_farmer_registry.html">
+       Custom Filter Farmer Registry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_custom_filter_ui.html">
+       Custom Filter UI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_cycle_attendance_compliance.html">
+       Cycle: Attendance Compliance
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_dashboard_base.html">
+       Dashboard: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_data_export.html">
+       Data Export
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_dci_api_server.html">
+       DCI API Server
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_demo.html">
+       OpenSPP Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_dms.html">
+       Document Management System
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_eligibility_sql.html">
+       SQL Query Eligibility Manager
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_eligibility_tags.html">
+       Tag Based Eligibility Manager
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_encryption.html">
+       Encryption Module
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_ent_trans.html">
+       Entitlement Transactions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_entitlement_basket.html">
+       Entitlement Basket
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_entitlement_cash.html">
+       Cash Entitlement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_entitlement_in_kind.html">
+       In-Kind Entitlement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_ethnic_group.html">
+       OpenSPP: Ethnic Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_event_data.html">
+       Event Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_event_data_program_membership.html">
+       Event Data Program Membership
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_event_demo.html">
+       Event Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_exclusion_filter.html">
+       Exclusion Filter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_farmer_registry_base.html">
+       Farmer Registry Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_farmer_registry_dashboard.html">
+       Farmer Registry Dashboard
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_farmer_registry_default_ui.html">
+       Farmer Registry Default UI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_farmer_registry_demo.html">
+       Farmer Registry Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_grm.html">
+       Grievance Redress Mechanism
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_hide_menus.html">
+       Hide Non-OpenSPP Menus
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_hide_menus_base.html">
+       Hide Non-OpenSPP Menus: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_idpass.html">
+       ID PASS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_idqueue.html">
+       ID Queue
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_import_dci_api.html">
+       Import: DCI API
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_import_match.html">
+       Import Match
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_irrigation.html">
+       Irrigation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_land_record.html">
+       Land Record
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_manual_eligibility.html">
+       Program: Manual Eligibility
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_manual_entitlement.html">
+       Manual Entitlement
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_mis_demo.html">
+       Demo
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_oauth.html">
+       API: Oauth
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_openid_vci.html">
+       OpenID VCI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_openid_vci_group.html">
+       OpenID VCI Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_openid_vci_individual.html">
+       OpenID VCI Individual
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_pmt.html">
+       Proxy Means Testing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_pos.html">
+       POS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_pos_id_redemption.html">
+       POS: ID Redemption
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_program_id.html">
+       Program ID
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_programs.html">
+       Programs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_programs_compliance_criteria.html">
+       Programs: Compliance Criteria
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_programs_sp.html">
+       Programs: Service Points Integration
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_qr_scanner.html">
+       QR Scanner
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registrant_import.html">
+       Registrant Import
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registrant_tag.html">
+       Registrant Tags
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_approval.html">
+       Registry Approval: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_approval_group.html">
+       Registry Approval: Group
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_approval_individual.html">
+       Registry Approval: Individual
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_base.html">
+       Registry: Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_data_source.html">
+       Data Source
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_registry_group_hierarchy.html">
+       Registry Group Hierarchy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_scan_id_document.html">
+       Registry: Scan ID Document
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_service_point_device.html">
+       Service Point Device
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_service_points.html">
+       Service Points Management
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_starter.html">
+       OpenSPP: Starter
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/modules/spp_user_roles.html">
+       User Roles
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../reference/technical/index.html">
+     Technical reference
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/technical/security.html">
+       Security implementations &amp; practices
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/technical/backup.html">
+       Backup and recovery
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/technical/performance.html">
+       Performance optimization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../reference/technical/monitoring.html">
+       Monitoring
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../community/index.html">
+   Community
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/contributing.html">
+     Contributing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/license.html">
+     Licensing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/security_reporting.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/release_management.html">
+     Release Management
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../community/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/glossary.html">
+   OpenSPP Glossary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            
+    <p class="openspporglink">
+        <a href="https://openspp.org">
+            <img src="/_static/openspp_logo.png" alt="openspp.org" /> openspp.org</a>
+    </p>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__label">
+        <span>Import and export registrant data – User guide</span>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/openspp/documentation"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fuser_guide/registry_management/import_export_registrant_data.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://docs.openspp.org/contributing/?user_guide/registry_management/import_export_registrant_data.md#making-contributions-on-github"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/user_guide/registry_management/import_export_registrant_data.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objective">
+   Objective
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#process">
+   Process
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#perform-export-registrant">
+     Perform export registrant
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-export-parameters">
+     Define export parameters
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#available-fields">
+       Available Fields
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fields-to-export">
+       Fields to export
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-export-templates">
+     Creating export templates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#perform-import">
+     Perform import
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#import-to-update-existing-registrant-data">
+       Import to update existing registrant data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#import-to-add-new-registrant-data">
+       Import to add new registrant data
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#for-individuals">
+         For Individuals
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#for-groups">
+         For Groups
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preparing-file-for-import">
+     Preparing file for import
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#navigate-to-import-page">
+     Navigate to import page
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#error-handling">
+     Error handling
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#error-no-matching-records-found">
+       Error: "No matching records found"
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#error-to-import-select-a-field">
+       Error: "To import, select a field"
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#error-column-contains-incorrect-values">
+       Error: "Column contains incorrect values"
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#error-you-are-not-allowed-to-access-import-matching">
+       Error: "You are not allowed to access ‘Import Matching’"
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Import and export registrant data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objective">
+   Objective
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#process">
+   Process
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#perform-export-registrant">
+     Perform export registrant
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-export-parameters">
+     Define export parameters
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#available-fields">
+       Available Fields
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fields-to-export">
+       Fields to export
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-export-templates">
+     Creating export templates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#perform-import">
+     Perform import
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#import-to-update-existing-registrant-data">
+       Import to update existing registrant data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#import-to-add-new-registrant-data">
+       Import to add new registrant data
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#for-individuals">
+         For Individuals
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#for-groups">
+         For Groups
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preparing-file-for-import">
+     Preparing file for import
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#navigate-to-import-page">
+     Navigate to import page
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#error-handling">
+     Error handling
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#error-no-matching-records-found">
+       Error: "No matching records found"
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#error-to-import-select-a-field">
+       Error: "To import, select a field"
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#error-column-contains-incorrect-values">
+       Error: "Column contains incorrect values"
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#error-you-are-not-allowed-to-access-import-matching">
+       Error: "You are not allowed to access ‘Import Matching’"
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="import-and-export-registrant-data">
+<h1>Import and export registrant data<a class="headerlink" href="#import-and-export-registrant-data" title="Permalink to this headline">#</a></h1>
+<p>This guide offers a comprehensive, step-by-step overview of the process for exporting registrant data from OpenSPP.
+It details the procedures, configurable options, and considerations available to system administrators, including how to use the export functionality to prepare files for re-import into OpenSPP.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<p>To be able to import or export registrant data from OpenSPP, you need to:</p>
+<ul class="simple">
+<li><p>Ensure your user account has the <strong>System Admin</strong> role.
+Learn more in this guide: <a class="reference internal" href="../administration/user_access.html"><span class="doc">User access</span></a> documentation.</p></li>
+<li><p>Have access to spreadsheet software capable of editing and saving CSV or Excel files, such as Microsoft Excel or Google Sheets</p></li>
+<li><p>Determine the list of fields relevant to the data you wish to export.</p></li>
+</ul>
+</section>
+<section id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
+<p>By the end of this tutorial, you'll have a solid grasp of how to export registrant data from OpenSPP, along with the steps for importing data—whether you're updating existing records or adding new registrants to OpenSPP.</p>
+</section>
+<section id="process">
+<h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
+<p>The export process begins by selecting individual or group records for export, configuring the export parameters, and saving the output as either a CSV or XLSX file. This exported file can serve both as a reference for record-keeping and as a source for re-importing data to update existing registrants in OpenSPP.</p>
+<p>This guide also covers how to import new registrant data—either by using a pre-generated template from the export process or by manually constructing a compatible file from scratch.</p>
+<section id="perform-export-registrant">
+<h3>Perform export registrant<a class="headerlink" href="#perform-export-registrant" title="Permalink to this headline">#</a></h3>
+<p>When exporting data from Openspp, you will need to define which fields you wish to extract from OpenSPP into the xslx or csv file. Specifying these export parameters is done in the Registry section of OpenSPP, which you can access by logging in as <strong>System Admin</strong> into OpenSPP then clicking on the menu icon in the top-left corner and selecting <strong>Registry</strong>.</p>
+<p><img alt="Export users menu icon" src="../../_images/export_users_menu_icon.png" /></p>
+<p>Depending on your needs, you can export data for <strong>Groups</strong> or <strong>Individuals</strong>.
+The export procedure is identical in both cases, but the exportable fields differ.</p>
+<p>Navigate to either <strong>Groups</strong> or <strong>Individuals</strong> and select which records to export by clicking the checkboxes beside each record.
+To select all displayed records from the current page, click the checkbox beside <strong>Name</strong>.</p>
+<p><img alt="Export all registrants from current page" src="../../_images/export_users_select_all_from_page.png" /></p>
+<p>If you want to export all records from all the pages, make sure to click the checkbox beside the <strong>Name</strong> then click on <strong>Select all</strong>.</p>
+<p><img alt="Export all registrants " src="../../_images/export_users_select_all_from_registry.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>OpenSPP will display record count as <strong>10,000+</strong> if it exceeds 10,000 records, you can click it to display the actual number.</p>
+<p><img alt="show actual record count" src="../../_images/export_users_display_actual_count.png" /></p>
+</div>
+</section>
+<section id="define-export-parameters">
+<h3>Define export parameters<a class="headerlink" href="#define-export-parameters" title="Permalink to this headline">#</a></h3>
+<p>After selecting records, click the <strong>Action</strong> button then select <strong>Export</strong> from the list of actions.</p>
+<p><img alt="Export button" src="../../_images/export_users_export_button.png" /></p>
+<p>The <strong>Export data</strong> modal should display.</p>
+<p><img alt="Export users select header" src="../../_images/export_users_select_header.png" /></p>
+<p>Two formatting options are available when exporting data: <strong>CSV</strong> and <strong>XLSX</strong>.
+Which one to select depends on how you will use the exported file.</p>
+<p>In the <strong>Export data</strong> modal, The left column displays all data fields available for export, and the right column (<strong>Fields to export</strong>) shows the fields included in the file export.</p>
+<section id="available-fields">
+<h4>Available Fields<a class="headerlink" href="#available-fields" title="Permalink to this headline">#</a></h4>
+<p>You can click search and type the field you wish to add. for instance, try to search <strong>Given Name</strong>.
+Add the fields you would like to export by clicking the <strong>+</strong> icon.
+Fields indicated with an arrow <strong>&gt;</strong> also contain subfields to narrow down the data you want to export.
+Clicking the arrow will display the subfields available for selection.
+Depending on your requirements, you can add any fields available for export in the left column.</p>
+</section>
+<section id="fields-to-export">
+<h4>Fields to export<a class="headerlink" href="#fields-to-export" title="Permalink to this headline">#</a></h4>
+<p>Some fields are pre-selected by default as shown here,<strong>Name</strong>, <strong>Address</strong>, <strong>Phone</strong>,<strong>Date of Birth</strong>, <strong>Registrant tags</strong>, <strong>Registration Date</strong>.
+You may drag and drop these headers vertically to arrange them in the output exported file.
+You can remove fields in the <strong>Fields to export</strong> column by clicking the trash icon.</p>
+<p>Once you are satisfied with the selected fields in the right column, click the <strong>Export</strong> button at the bottom of the export window to start the export and download the file.</p>
+</section>
+</section>
+<section id="creating-export-templates">
+<h3>Creating export templates<a class="headerlink" href="#creating-export-templates" title="Permalink to this headline">#</a></h3>
+<p>Create a template for the set of fields that you have selected to make it easy to perform the same export later.
+By clicking on the dropdown arrow, click on <strong>New template</strong>, set a name for your template, make sure you have already selected your desired fields for this template, and click the save icon.</p>
+<p><img alt="Export users export template" src="../../_images/export_users_export_template.png" /></p>
+<p>After saving, you can select your template by clicking on the dropdown arrow again and clicking the name of your template.
+The specific steps and interface may vary depending on the OpenSPP version.
+Always seek assistance from the support team if you need further guidance.</p>
+</section>
+<section id="perform-import">
+<h3>Perform import<a class="headerlink" href="#perform-import" title="Permalink to this headline">#</a></h3>
+<p>You can either import to update existing registrant data or import to add a new one, both are explained below.</p>
+<section id="import-to-update-existing-registrant-data">
+<h4>Import to update existing registrant data<a class="headerlink" href="#import-to-update-existing-registrant-data" title="Permalink to this headline">#</a></h4>
+<p>To update existing records or append new data within OpenSPP, select the checkbox labeled I want to update data (import-compatible export).
+Upon selection, the exported file will automatically include an <strong>Id</strong> column, which contains the external identifier for each registrant or data entry.
+This identifier is essential for accurately matching and updating existing records.
+Additionally, enabling this option will exclude certain fields from the Available fields list—specifically those that cannot be re-imported into OpenSPP.
+For instance, the Age field is omitted, as it is a derived value based on the Date of Birth and therefore not eligible for direct modification via import.</p>
+<p><img alt="Import users import compatible export" src="../../_images/import_users_import_compatible_export.png" /></p>
+<p>See below an example of a file with headers including the column <strong>ID</strong>.</p>
+<p><img alt="Import users excel with data" src="../../_images/import_users_excel_with_data.png" /></p>
+<p>After exporting your file, you may proceed to edit the values as needed. Make sure not to modify the ID value.</p>
+<p>Once done updating data in the file, you can then proceed to <strong>Preparing file for import</strong> section of this document to import it back to OpenSPP.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For bulk updates, the import function offers a more efficient and scalable solution. However, when modifying just one or a few registrant records, it's more practical to update them directly through the UI as a System Admin.</p>
+</div>
+</section>
+<section id="import-to-add-new-registrant-data">
+<h4>Import to add new registrant data<a class="headerlink" href="#import-to-add-new-registrant-data" title="Permalink to this headline">#</a></h4>
+<p>If you wish to add a new individual or group (as opposed to updating already existing data), you should prepare headers that are relevant to your import.</p>
+<section id="for-individuals">
+<h5>For Individuals<a class="headerlink" href="#for-individuals" title="Permalink to this headline">#</a></h5>
+<p>Make sure at least these headers are present in your file:</p>
+<ul class="simple">
+<li><p>Name</p></li>
+<li><p>Familiy Name</p></li>
+<li><p>Given Name</p></li>
+</ul>
+<p>Example:
+<img alt="import_users_new_individual" src="../../_images/import_users_new_individual.png" /></p>
+<p>Optionally, if you already have existing individuals in OpenSPP, you can export at least one individual and define the headers for export to use as a template.</p>
+<p>See <strong>Define export parameters</strong> section of this document to learn more.</p>
+</section>
+<section id="for-groups">
+<h5>For Groups<a class="headerlink" href="#for-groups" title="Permalink to this headline">#</a></h5>
+<p>Make sure that at least this header is present in your file:</p>
+<ul class="simple">
+<li><p>Name</p></li>
+</ul>
+<p>Example:
+<img alt="import_users_new_individual" src="../../_images/import_users_new_group.png" /></p>
+<p>you can add more columns that is needed for your usecase</p>
+<p>Optionally, if you already have existing Groups  in OpenSPP, you can export at least one Group and define the headers for export to use as a template.</p>
+<p>See <strong>Define export parameters</strong> section of this document to learn more.</p>
+<p>Once the headers are finalized, You can then proceed to <strong>Preparing file for import</strong> section of this document.</p>
+</section>
+</section>
+</section>
+<section id="preparing-file-for-import">
+<h3>Preparing file for import<a class="headerlink" href="#preparing-file-for-import" title="Permalink to this headline">#</a></h3>
+<p>Prepare the Excel file for import by filling or replacing values from the associated columns.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>OpenSPP supports dates formatted as YYYY-MM-DD (year-month-day).</p>
+</div>
+<p>Make sure to convert cells to <strong>text</strong> for all fields that consist of numbers; similar to <strong>phone</strong>, <strong>date of birth</strong>, and <strong>registration date</strong>. This is to avoid data errors when inputting number values into these fields. For example the <strong>phone field</strong>, where mobile numbers may start with the <strong>+</strong> symbol or with leading zeroes can cause a mobile number to be formatted unexpectedly. It is therefore important to format cells to text before adding number values.</p>
+<p>Inputting a phone number with a leading + symbol could sometimes be automatically formatted. In this case, you should format the specific cell to <strong>Text</strong> to resolve the issue.</p>
+<p><img alt="Import users sample error" src="../../_images/import_users_sample_error.png" /></p>
+<p>Once you've finished preparing the file, be sure to save it in either .CSV or .XLSX format—these are the only file types accepted for import into OpenSPP.</p>
+</section>
+<section id="navigate-to-import-page">
+<h3>Navigate to import page<a class="headerlink" href="#navigate-to-import-page" title="Permalink to this headline">#</a></h3>
+<p>After the file is verified and ready, the import can be performed using a <strong>System admin</strong> account. Navigate to the <strong>Registry</strong>, and depending on what type of data you are going to import, either click <strong>Individuals</strong> for individual records or <strong>Groups</strong> for group records. Click on the <strong>Gear</strong> icon, then choose <strong>Import records</strong> from the dropdown menu.</p>
+<p><img alt="Import export gear icon" src="../../_images/import_export_gear_icon.png" /></p>
+<p>You will be redirected to the upload page. Click on the <strong>Upload File</strong> button, and choose the file that you prepared.</p>
+<p><img alt="Import export upload file" src="../../_images/import_export_upload_file.png" /></p>
+<p>After uploading your file, you'll be redirected to the next page where you should click <strong>Test</strong> to begin validating the data in your import document.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It's crucial to run this test before clicking Import, as importing immediately will save all records until an error is encountered—potentially requiring you to delete partial entries and start over. The Test function does not save any data; it simply checks for issues in your file to ensure the import can be completed smoothly in a single pass.</p>
+</div>
+<p>After testing, when the message <strong>Everything seems valid</strong> appears, you may continue with the import process.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When importing large datasets—typically 2,000 records or more—OpenSPP processes the data in batches during the testing phase. After the initial batch completes, it's important to manually trigger the test again to ensure the remaining records are also validated. For instance, if you're importing 5,300 records, only the first 4,000 will be automatically tested in two batches of 2,000, leaving 1,300 untested until you initiate another round.</p>
+</div>
+<p><img alt="Import users test button" src="../../_images/import_users_test_button.png" /></p>
+<p>If there are any issues with the file, a message will instead be displayed giving directions on how to solve the issue. You may refer to the <strong>Error handling</strong> section of this document to learn more about common errors.</p>
+<p>Once the file has been successfully tested and validated, be sure to set <strong>Start at line</strong> to <strong>1</strong>. This ensures that the import process begins at the very first registrant record in your file.</p>
+<p><img alt="Import users test button" src="../../_images/import_users_start_line.png" /></p>
+<p>click the <strong>Import</strong> button.  This will redirect to the main table page, and you will receive a notification informing that the records have been successfully imported.</p>
+<p><img alt="Import export successful import" src="../../_images/import_export_successful_import.png" /></p>
+<p>Test or Import time average for larger data sets:</p>
+<ul class="simple">
+<li><p>10,000: about 5-10 minutes</p></li>
+<li><p>100,000: about 10-20 minutes</p></li>
+<li><p>500,000: about 3-4 hours</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Closing the browser window will interrupt the import process, resulting in only partial data being uploaded.</p></li>
+<li><p>If the network connection is lost, the import will pause automatically and resume once connectivity is restored.</p></li>
+</ul>
+</div>
+</section>
+<section id="error-handling">
+<h3>Error handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">#</a></h3>
+<p>OpenSPP displays different types of error messages on the import page when encountering an error after clicking the <strong>Test</strong> button. This ensures no invalid value or file would compromise data in OpenSPP. Therefore, it is important to always <strong>Test</strong> the file first before importing. Here are common errors encountered during import.</p>
+<section id="error-no-matching-records-found">
+<h4>Error: &quot;No matching records found&quot;<a class="headerlink" href="#error-no-matching-records-found" title="Permalink to this headline">#</a></h4>
+<p>Some fields require values that are predefined in OpenSPP, such as the <strong>category_id</strong> field. Setting a value in this column that does not match the values found in OpenSPP will return an error message. This error will be similar to the screenshot provided below.<br />
+<img alt="Import users errors found" src="../../_images/import_users_errors_found.png" /></p>
+<p>To resolve this type of error, only type in values that are defined in OpenSPP, in this case for <strong>category_id</strong>, you can navigate to <strong>Registry</strong>, then click <strong>Configuration</strong>, and after that, select <strong>Registrant Tags</strong>. You should see the list of the defined <strong>Tags</strong>. You may use any of the listed values for <strong>category_id</strong>, or alternatively, add a new registrant tag.</p>
+<p><img alt="Import users regsitrant tags" src="../../_images/import_users_regsitrant_tags.png" /></p>
+</section>
+<section id="error-to-import-select-a-field">
+<h4>Error: &quot;To import, select a field&quot;<a class="headerlink" href="#error-to-import-select-a-field" title="Permalink to this headline">#</a></h4>
+<p>If OpenSPP could not recognize your header, it will display <strong>To import, select a field</strong> beside the unrecognized header, similar to the screenshot below.<br />
+<img alt="Import users select a field" src="../../_images/import_users_select_a_field.png" /></p>
+<p>To resolve this error, if you are familiar with what field you want to associate with your header, you can click <strong>To import, select a field,</strong> and then select from the list of fields you wish to associate your field values with, otherwise, you can remove the header from your Excel file as the field you are trying to import is not available to be imported into OpenSPP.</p>
+</section>
+<section id="error-column-contains-incorrect-values">
+<h4>Error: &quot;Column contains incorrect values&quot;<a class="headerlink" href="#error-column-contains-incorrect-values" title="Permalink to this headline">#</a></h4>
+<p>Another error is the date format, if the imported format for fields related to date is incorrect, OpenSPP will display an error message. This error will be similar to the screenshot provided below.<br />
+<img alt="Import users date error" src="../../_images/import_users_date_error.png" /></p>
+<p>To resolve this error, fix the date format from your Excel file to this format <strong>YYYY-MM-DD</strong>, save the file, then import to test again.</p>
+</section>
+<section id="error-you-are-not-allowed-to-access-import-matching">
+<h4>Error: &quot;You are not allowed to access ‘Import Matching’&quot;<a class="headerlink" href="#error-you-are-not-allowed-to-access-import-matching" title="Permalink to this headline">#</a></h4>
+<p>An issue was encountered when attempting to import using an account with the wrong access rights permissions. This error will be similar to the screenshot provided below.<br />
+<img alt="Import users access error import" src="../../_images/import_users_access_error_import.png" /></p>
+<p>To resolve this error, assign an admin role into the user account that will perform the import or export process. Learn more about administering permissions here: <a class="reference internal" href="../administration/user_access.html"><span class="doc">User access</span></a>.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="register_individual.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Register individual</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="identity_management.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Configure ID and generate QR code</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      &copy; Copyright OpenSPP.<br/>
+    <div class="extra_footer">
+      <p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+    
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            if ($.trim($(".sticky-top .bd-toc").html()) === "") {
+                $(".sticky-top .bd-toc").css("visibility", "hidden");
+            }
+        });
+    </script>
+
+
+  </body>
+</html>
