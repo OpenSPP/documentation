@@ -1,17 +1,88 @@
+---
+myst:
+  html_meta:
+    "description": "Audit logging in OpenSPP"
+    "property=og:title": "Audit Logs"
+    "keywords": "OpenSPP, audit, audit logs, compliance, Odoo 19"
+---
+
 # Audit Logs
 
-The ability to audit the actions performed by users is a key feature of OpenSPP. It allows to track the
-changes made to the system and to the data stored in the system. It is also part of the architecture
-priniciples of OpenSPP.
+OpenSPP includes an audit logging framework implemented by the `spp_audit` module. It records changes made to
+configured models and fields, including **old and new values**, to support accountability, compliance, and operational
+investigations.
 
-We recommend using the [Audit Trail by Smile](https://apps.odoo.com/apps/modules/15.0/smile_audit/) module.
+## What `spp_audit` logs
 
-## Installing
+Audit behavior is configured using **Audit Rules**:
 
-Smile Audit installed using the technical name `smile_audit`
+- **Standard actions (automatic):**
+  - create
+  - write
+  - unlink (delete)
+- **Optional actions (explicit logging):**
+  - activation / deactivation
+  - generic state changes (for example approve/reject)
+  - file access events (download / preview / export)
 
-## Configuration
+```{note}
+The optional actions are logged only when the application code explicitly calls the lifecycle logging helper (the rule
+flags are “allow lists” for those event types).
+```
 
-After installation, the administrator can configure the audit rules required by the specific OpenSPP
-implementation. Detailed configuration instructions are available in the
-[Smile Audit documentation](https://apps.odoo.com/apps/modules/15.0/smile_audit/).
+## Access and menus
+
+Audit configuration and logs are available to users with the **Audit Log: Manager** privilege (provided by `spp_audit`).
+
+Menus:
+
+- **Audit Log → Audit → Rule** (configure what is logged)
+- **Audit Log → Audit → Log** (view audit log entries)
+
+### Screenshot placeholders
+
+- `technical_reference/audit_logs/audit_menu.png`: Audit Log menu + submenus
+- `technical_reference/audit_logs/audit_rule_form.png`: Audit Rule form with action toggles and field selection
+- `technical_reference/audit_logs/audit_log_form.png`: Audit Log entry showing “Changes”
+
+## Configuring audit rules
+
+An audit rule defines:
+
+- **Model**: which Odoo model is audited (for example registry, programs, service points)
+- **Fields to log**: which fields are tracked (recommended: keep this minimal and meaningful)
+- **Which actions to log**: create/write/unlink and optional lifecycle/file events
+
+Some deployments also use rule hierarchy:
+
+- **Parent Rule** + **Connecting Field** let a rule link changes on a child model back to a parent record (for example a
+  program configuration component posting audit info on the program record).
+
+## Viewing and interpreting logs
+
+Each audit log entry captures:
+
+- timestamp
+- user
+- model + record identifier
+- method/action
+- a “Changes” table showing old vs new values for each changed field
+
+Open a log entry from **Audit Log → Audit → Log** to see the change details.
+
+```{note}
+Audit rendering respects field-level security when displaying the “Changes” table. If a field is restricted to a group,
+users without that group will not see that field’s values in the log display.
+```
+
+## Default rules (what you may see out of the box)
+
+The `spp_audit` module ships with a set of default rules to cover common OpenSPP flows (for example registry records,
+programs/cycles, and service points). Implementations should review these defaults and adjust them to local requirements.
+
+## Operational considerations
+
+- **Performance and storage:** auditing increases database write volume and storage usage. Log only the fields you need.
+- **Immutability:** audit logs are intended to be tamper-resistant. Deleting audit logs is blocked by default.
+- **Retention:** if your deployment requires retention limits, implement them as a deliberate policy (database retention,
+  archiving, or a dedicated retention mechanism), aligned with local regulations.

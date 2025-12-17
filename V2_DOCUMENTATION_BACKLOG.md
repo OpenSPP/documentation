@@ -52,7 +52,7 @@ This file tracks the work needed to update `documentation/` for **OpenSPP V2**.
 
 ### Legacy references that conflict with V2
 
-- [ ] Update `documentation/docs/technical_reference/audit_logs.md` (currently recommends Odoo 15 “Smile Audit”; V2 has `spp_audit` consolidation)
+- [x] Update `documentation/docs/technical_reference/audit_logs.md` (document `spp_audit` and remove Odoo 15 “Smile Audit” guidance)
 - [ ] Update `documentation/docs/technical_reference/external_api.rst` examples/claims to reflect Odoo 19, and position XML-RPC as “internal/advanced” vs the official API v2 (REST)
 
 ---
