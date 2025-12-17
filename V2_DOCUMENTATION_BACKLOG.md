@@ -47,7 +47,7 @@ This file tracks the work needed to update `documentation/` for **OpenSPP V2**.
 
 - [~] Fix `documentation/docs/technical_reference/index.md` toctree references (added missing stubs: `oidc`, `dci`, `module`; needs full content pass)
 - [ ] Ensure every published section index includes all intended pages (or explicitly removes them):
-  - [ ] `documentation/docs/tutorial/index.md` (currently duplicates “Programs and Cycles” and misses some pages like `access_management.md`)
+  - [~] `documentation/docs/tutorial/index.md` (deduplicated “Programs and Cycles”; still needs a full coverage pass, including `access_management.md`)
   - [ ] `documentation/docs/howto/index.md` (remove duplicate `developer_guides/troubleshooting`)
 
 ### Legacy references that conflict with V2
