@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Administrating role-based access
 
 ## Introduction

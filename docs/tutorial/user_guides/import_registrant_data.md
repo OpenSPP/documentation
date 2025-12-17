@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Import registrant data
 
 ## Introduction

@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # OpenSPP Vulnerability Disclosure Policy
 
 ## Introduction

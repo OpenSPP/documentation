@@ -5,6 +5,8 @@ myst:
     "property=og:description": "Sphinx extensions"
     "property=og:title": "Sphinx extensions"
     "keywords": "Documentation, OpenSPP, Sphinx, reStructuredText, extensions"
+openspp:
+  doc_status: unverified
 ---
 
 (contributing-sphinx-extensions)=

@@ -4,6 +4,8 @@ myst:
     "description": "API v2 client configuration and scope model"
     "property=og:title": "API v2 Clients and Scopes"
     "keywords": "OpenSPP, API v2, scopes, OAuth client, access control"
+openspp:
+  doc_status: unverified
 ---
 
 # Clients and scopes

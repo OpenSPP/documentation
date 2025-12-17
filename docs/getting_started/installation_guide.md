@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Installation Guide
 
 ## Installing using Docker (recommended)

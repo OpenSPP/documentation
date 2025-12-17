@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # How To
 
 Here you’ll find articles on “How do I….?” types of questions. It addresses the task of traversing through a practical problem area, from one aspect to another.
@@ -8,7 +13,7 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 - {doc}`developer_guides/development_setup`
 - {doc}`developer_guides/setting_up_using_pypi`
 - {doc}`developer_guides/module`
-- {doc}`developer_guides/indicators`
+- {doc}`developer_guides/cel`
 - {doc}`developer_guides/troubleshooting`
 
 **Customization**
@@ -19,7 +24,7 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 - {doc}`developer_guides/custom_entitlement`
 - {doc}`developer_guides/custom_registry`
 - {doc}`developer_guides/custom_registry_tab_fields`
-- {doc}`developer_guides/custom_fields_indicators`
+- {doc}`developer_guides/custom_fields`
 - {doc}`developer_guides/custom_service_points`
 - {doc}`developer_guides/rest_api`
 
@@ -47,23 +52,20 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 :maxdepth: 2
 :hidden: true
 
-#Developer Guides
 developer_mode
 developer_guides/development_setup
 developer_guides/setting_up_using_pypi
 developer_guides/troubleshooting
-developer_guides/indicators
+developer_guides/cel
 developer_guides/module
-developer_guides/troubleshooting
 
-#Customization
 developer_guides/custom_areas
 developer_guides/custom_audit
 developer_guides/custom_cr
 developer_guides/custom_entitlement
 developer_guides/custom_registry
 developer_guides/custom_registry_tab_fields
-developer_guides/custom_fields_indicators.md
+developer_guides/custom_fields
 developer_guides/custom_service_points
 
 developer_guides/rest_api
@@ -73,7 +75,6 @@ developer_guides/esignet
 developer_guides/oidc
 developer_guides/beneficiary_keycloak
 
-#User Guides
 user_guides/setting_up_farmer_registry
 user_guides/register_new_individual
 user_guides/enroll_beneficiaries
@@ -81,9 +82,4 @@ user_guides/import_registrant_data
 user_guides/export_registrant_data
 user_guides/administrating_role_based_access
 user_guides/setting_up_service_points
-#user_guides/implementing_pmt
-
-#developer_guides/custom_program
-#developer_guides/custom_cycle
-#developer_guides/implmenting_pmt
 ```

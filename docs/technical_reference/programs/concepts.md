@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Manager Overview
 
 ![OpenSPP Overview](images/openspp_overview.png)

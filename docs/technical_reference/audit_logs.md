@@ -4,6 +4,8 @@ myst:
     "description": "Audit logging in OpenSPP"
     "property=og:title": "Audit Logs"
     "keywords": "OpenSPP, audit, audit logs, compliance, Odoo 19"
+openspp:
+  doc_status: unverified
 ---
 
 # Audit Logs

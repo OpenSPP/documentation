@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Key Terminology
 
 Registrants are at the heart of OpenSPP. They are the people or groups that are being registered to be

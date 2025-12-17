@@ -3,6 +3,7 @@
 /include
 /lib
 /lib64
+/share
 
 # Generated files
 pyvenv.cfg

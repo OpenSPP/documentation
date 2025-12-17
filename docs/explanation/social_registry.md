@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Social Registry
 
 ## What is a Social Registry?

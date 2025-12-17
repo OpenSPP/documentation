@@ -4,6 +4,8 @@ myst:
     "description": "API v2 authentication (OAuth2 client credentials) and JWT details"
     "property=og:title": "API v2 Authentication"
     "keywords": "OpenSPP, API v2, OAuth2, JWT, client credentials"
+openspp:
+  doc_status: unverified
 ---
 
 # Authentication

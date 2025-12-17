@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Development Setup
 
 Setting up a local OpenSPP environment can be accomplished through two distinct methodologies.

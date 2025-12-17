@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Customize Program
 
 This guide provides a structured approach for implementing and customising the program in OpenSPP through the development of a custom module.

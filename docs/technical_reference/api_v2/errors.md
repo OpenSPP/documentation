@@ -4,6 +4,8 @@ myst:
     "description": "API v2 error model and common HTTP responses"
     "property=og:title": "API v2 Errors"
     "keywords": "OpenSPP, API v2, errors, OperationOutcome"
+openspp:
+  doc_status: unverified
 ---
 
 # Errors and responses

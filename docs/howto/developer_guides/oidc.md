@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Configuring Keycloak for OAuth
 
 We recommend using Keycloak as the {term}`authentication` provider for OpenSPP. This allows for a single sign-on

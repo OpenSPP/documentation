@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # User Management
 
 User management focuses on safeguarding user data and controls how users access and interact with modules implemented. This system administers user identities, authenticates them, and authorizes them for certain roles and privileges. Effective user management includes several layers, such as user {term}`authentication`, authorization, and auditing, each serving a unique purpose in maintaining integrity and security.

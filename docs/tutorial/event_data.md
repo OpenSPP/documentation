@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Event data
 
 Event data lets you record **time-based observations** about registrants (individuals or groups) without changing their core profile each time. Typical uses include surveys, field visits, assessments, and syncs from external data collection tools.
@@ -78,3 +83,5 @@ In deployments that include the event/CEL integration, you can create variables 
 - Maximum “assessment_score” seen in events this year
 
 This is configured in **Studio → Variables** by using an **Aggregate** variable targeting **Events**.
+
+For the CEL syntax and available helper functions (`event`, `has_event`, `events_count`, …), see {doc}`../technical_reference/cel/events`.

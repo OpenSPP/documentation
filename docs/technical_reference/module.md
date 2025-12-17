@@ -4,6 +4,8 @@ myst:
     "description": "How OpenSPP is structured as Odoo modules"
     "property=og:title": "Modules"
     "keywords": "OpenSPP, modules, Odoo addons, Odoo 19"
+openspp:
+  doc_status: unverified
 ---
 
 # Modules

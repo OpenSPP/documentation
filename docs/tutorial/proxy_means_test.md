@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Proxy Means Test (PMT)
 
 This tutorial explains how to configure a Proxy Means Test (PMT) using the **Scoring** framework (`spp_scoring`).
@@ -54,6 +59,10 @@ In the Scoring Model form, open the **Indicators** tab and add the indicators yo
 ```{note}
 For relational fields (for example Many2one), prefer mapping on a primitive attribute like `.code` or `.name`
 (for example `occupation_id.code`) rather than the record itself.
+```
+
+```{note}
+If you need an intermediate computation (for example “children under 5”), prefer defining it once as a **variable** in Studio and reusing it. See {doc}`variables_and_expressions`.
 ```
 
 ### Example indicator patterns (adapt to your deployment)

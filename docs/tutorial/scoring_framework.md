@@ -4,6 +4,8 @@ myst:
     "description": "Configure scoring models for targeting and assessments in OpenSPP"
     "property=og:title": "Scoring Framework"
     "keywords": "OpenSPP, scoring, targeting, assessment, PMT"
+openspp:
+  doc_status: unverified
 ---
 
 # Scoring framework
@@ -46,6 +48,10 @@ An **Indicator** reads one value from registrant data and turns it into an indic
   - **Value Mapping** (discrete values)
   - **Range Mapping** (numeric ranges)
   - **CEL Formula** (advanced)
+
+```{note}
+If you need an intermediate computation (for example “children under 5”), prefer defining it once as a **variable** in Studio and then reusing it across scoring and other features. See {doc}`variables_and_expressions`.
+```
 
 ### Threshold
 

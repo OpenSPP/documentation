@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Licensing
 
 OpenSPP is licensed as LGPL 3.0 and builds on top of other software with the following licensing:

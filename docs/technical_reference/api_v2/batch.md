@@ -4,6 +4,8 @@ myst:
     "description": "API v2 batch and transaction bundle processing"
     "property=og:title": "API v2 Batch"
     "keywords": "OpenSPP, API v2, batch, transaction, bundle"
+openspp:
+  doc_status: unverified
 ---
 
 # Batch and transactions

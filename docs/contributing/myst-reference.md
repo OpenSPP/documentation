@@ -5,6 +5,8 @@ myst:
     "property=og:description": "MyST syntax reference with examples"
     "property=og:title": "MyST syntax reference with examples"
     "keywords": "Documentation, OpenSPP, Sphinx, MyST, reStructuredText, Markdown, syntax, examples"
+openspp:
+  doc_status: unverified
 ---
 
 (contributing-myst-reference)=

@@ -4,6 +4,8 @@ myst:
     "description": "API v2 resources and endpoint summary"
     "property=og:title": "API v2 Resources"
     "keywords": "OpenSPP, API v2, Individual, Group, Program, ProgramMembership"
+openspp:
+  doc_status: unverified
 ---
 
 # Resources

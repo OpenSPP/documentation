@@ -4,6 +4,8 @@ myst:
     "description": "OAuth 2.0 and OpenID Connect related technical reference for OpenSPP"
     "property=og:title": "OAuth 2.0 / OIDC"
     "keywords": "OpenSPP, OAuth2, OIDC, JWT, Odoo 19"
+openspp:
+  doc_status: unverified
 ---
 
 # OAuth 2.0 / OIDC

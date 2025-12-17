@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge

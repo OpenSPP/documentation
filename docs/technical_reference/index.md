@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Technical Reference
 
 The Technical Reference is a detailed document outlining the system's architecture and technical specifications. It serves as a resource for architects and developers to understand the system's functionalities and operations.
@@ -10,6 +15,7 @@ The Technical Reference is a detailed document outlining the system's architectu
 **Security and Compliance**
 
 - {doc}`security`
+- {doc}`access_rights`
 - {doc}`audit_logs`
 
 **Code and Release Management**
@@ -33,6 +39,7 @@ The Technical Reference is a detailed document outlining the system's architectu
 
 - {doc}`backup`
 - {doc}`performance_optimization`
+ - {doc}`CEL <cel/index>`
 
 **Managers and Modules**
 
@@ -54,6 +61,7 @@ extensibility
 
 # Security and Compliance
 security
+access_rights
 oidc
 audit_logs
 
@@ -75,6 +83,7 @@ external_api
 # Other
 backup
 performance_optimization
+cel/index
 
 # Managers and Modules
 module

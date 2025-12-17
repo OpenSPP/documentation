@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Code & Repository Management
 
 ## Open Source and Collaborative Development

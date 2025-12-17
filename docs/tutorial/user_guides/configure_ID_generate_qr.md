@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Configure ID and generate QR code
 
 ## Introduction

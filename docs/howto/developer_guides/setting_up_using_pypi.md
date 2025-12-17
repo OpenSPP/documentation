@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Setting Up Using Python Package Manager
 
 ## Introduction

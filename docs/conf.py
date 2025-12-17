@@ -29,7 +29,7 @@ _logger = logging.getLogger(__name__)
 #=== Odoo configuration ===#
 
 
-odoo_current_branch = '15.0'
+odoo_current_branch = "19.0"
 # `current_version` is the Odoo version linked to the current branch.
 # E.g., saas-15.4 -> 15.4; 12.0 -> 12; master -> master (*).
 odoo_current_version = odoo_current_branch.replace('saas-', '').replace('.0', '')
@@ -80,40 +80,48 @@ else:
     odoo_source_read_replace_vals['ODOO_RELPATH'] = '/../' + str(odoo_sources_dirs[0])
     sys.path.insert(0, str(odoo_dir))
     print(f"Found Odoo sources in {odoo_dir}.")
-    import odoo.addons
+    try:
+        import odoo.addons
+    except Exception as exc:  # pragma: no cover - build-environment dependent
+        _logger.warning(
+            "Found Odoo sources, but failed to import Odoo. Autodoc directives depending on Odoo will be skipped.\n"
+            "Error: %(error)s",
+            {"error": exc},
+        )
+    else:
 
-    # # import my addons
-    # if "dockerdoo" in str(odoo_dir):
-    #     print("Found Odoo sources in dockerdoo dev environment.")
-    #     my_addons_dir = os.path.abspath(os.path.join(odoo_dir, '..', '..', 'custom'))
-    #     my_addons_dir = Path(my_addons_dir)
-    #     for folder in my_addons_dir.iterdir():
-    #         if folder.is_dir():
-    #             sys.path.insert(0, str(folder))
-    #             odoo.addons.__path__.append(str(folder))
-    #             print(f"Found custom addon in {folder}.")
+        # # import my addons
+        # if "dockerdoo" in str(odoo_dir):
+        #     print("Found Odoo sources in dockerdoo dev environment.")
+        #     my_addons_dir = os.path.abspath(os.path.join(odoo_dir, '..', '..', 'custom'))
+        #     my_addons_dir = Path(my_addons_dir)
+        #     for folder in my_addons_dir.iterdir():
+        #         if folder.is_dir():
+        #             sys.path.insert(0, str(folder))
+        #             odoo.addons.__path__.append(str(folder))
+        #             print(f"Found custom addon in {folder}.")
 
 
-    if "submodules" in str(odoo_dir):
-        print("Found Odoo sources in submodules dev environment.")
-        my_addons_dir = os.path.abspath(os.path.join(odoo_dir, '..'))
-        my_addons_dir = Path(my_addons_dir)
-        for folder in my_addons_dir.iterdir():
-            if folder.is_dir() and not folder.name == 'odoo':
-                sys.path.insert(0, str(folder))
-                odoo.addons.__path__.append(str(folder))
-                print(f"Found custom addon in {folder}.")
+        if "submodules" in str(odoo_dir):
+            print("Found Odoo sources in submodules dev environment.")
+            my_addons_dir = os.path.abspath(os.path.join(odoo_dir, ".."))
+            my_addons_dir = Path(my_addons_dir)
+            for folder in my_addons_dir.iterdir():
+                if folder.is_dir() and not folder.name == "odoo":
+                    sys.path.insert(0, str(folder))
+                    odoo.addons.__path__.append(str(folder))
+                    print(f"Found custom addon in {folder}.")
 
-    odoo.addons.__path__.append(str(odoo_dir) + '/addons')
-    from odoo import release as odoo_release  # Don't collide with Sphinx's 'release' config option
-    odoo_version = odoo_release.version.replace('~', '-') \
-        if 'alpha' not in odoo_release.version else 'master'
-    
-    _logger.info(
-        "Found Odoo sources in %(directory)s matching documentation version '%(version)s'.",
-        {'directory': odoo_dir, 'version': odoo_release},
-    )
-    odoo_dir_in_path = True
+        odoo.addons.__path__.append(str(odoo_dir) + "/addons")
+        from odoo import release as odoo_release  # Don't collide with Sphinx's 'release' config option
+
+        odoo_version = odoo_release.version.replace("~", "-") if "alpha" not in odoo_release.version else "master"
+
+        _logger.info(
+            "Found Odoo sources in %(directory)s matching documentation version '%(version)s'.",
+            {"directory": odoo_dir, "version": odoo_release},
+        )
+        odoo_dir_in_path = True
 
 #### End of Odoo
 
@@ -158,13 +166,25 @@ extensions = [
     "sphinxcontrib.httpexample",
     'sphinxcontrib.googleanalytics',
     "sphinxcontrib.video",
-    "sphinxext.opengraph",
     "sphinx.ext.viewcode",
     "sphinx.ext.autosummary",
     "sphinx.ext.graphviz",
     "sphinx_tabs.tabs",
     "notfound.extension",
 ]
+
+# Some optional extensions depend on Pillow. In environments where Pillow cannot
+# be imported (for example, Python versions without compatible wheels), build
+# the documentation without those extensions.
+_pillow_available = True
+try:
+    from PIL import Image  # noqa: F401
+except Exception as exc:  # pragma: no cover - build-environment dependent
+    _pillow_available = False
+    _logger.warning("Pillow is not available (%s). Disabling sphinxext.opengraph.", exc)
+
+if _pillow_available:
+    extensions.append("sphinxext.opengraph")
 
 sphinx_tabs_disable_tab_closing = True
 sphinx_tabs_disable_css_loading = True

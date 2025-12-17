@@ -4,6 +4,8 @@ myst:
     "description": "Configure SWDI-style assessments in OpenSPP using scoring models"
     "property=og:title": "Social Welfare Development Index (SWDI)"
     "keywords": "OpenSPP, SWDI, assessment, scoring"
+openspp:
+  doc_status: unverified
 ---
 
 # Social Welfare Development Index (SWDI)

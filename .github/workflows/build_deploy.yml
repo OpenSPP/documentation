@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - "main"
+  workflow_dispatch:  # Allow manual trigger
+
+# Temporarily disabled during v2 documentation refresh
+# Remove this condition when ready to enable automatic builds
+env:
+  SKIP_BUILD: true
 
 jobs:
   build_deploy:

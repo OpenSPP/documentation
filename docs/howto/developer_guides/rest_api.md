@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Extend API v2 (REST)
 
 This guide explains how to extend API v2 by exposing module-specific fields through the **API Extensions** mechanism in `spp_api_v2`.

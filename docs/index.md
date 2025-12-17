@@ -5,6 +5,8 @@ myst:
     "property=og:description": "This website is the HTML documentation of OpenSPP, an open source social protection platform."
     "property=og:title": "OpenSPP Documentation"
     "keywords": "OpenSPP, open source, Documentation"
+openspp:
+  doc_status: unverified
 ---
 
 (index-label)=

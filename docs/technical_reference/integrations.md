@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Integrations
 
 The following diagram depicts the integration mindmap of OpenSPP.

@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Managing social protection Programs
 
 `Programs` and `Cycles` are at the heart of OpenSPP.

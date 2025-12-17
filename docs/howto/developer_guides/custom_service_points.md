@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Customize Service Points
 
 The following article guides the reader in understanding how the service point module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example.

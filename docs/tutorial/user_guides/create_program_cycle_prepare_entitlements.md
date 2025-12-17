@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Create a program cycle & prepare entitlements
 
 ## Introduction

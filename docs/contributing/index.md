@@ -5,6 +5,8 @@ myst:
     "property=og:description": "Contributing to OpenSPP Documentation"
     "property=og:title": "Contributing to OpenSPP Documentation"
     "keywords": "OpenSPP, OpenSPP Contributor Agreement, License, Code of Conduct"
+openspp:
+  doc_status: unverified
 ---
 
 (contributing-index-label)=
@@ -22,7 +24,6 @@ Contributions to the OpenSPP Documentation are welcome.
 We use GitHub Actions with every pull request to enforce OpenSPP Documentation quality.
 We recommend that you build the documentation locally to catch errors and warnings early on.
 See {doc}`setup-build` for instructions for how to set up and build the documentation and to run quality checks.
-
 
 ```{toctree}
 ---

@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Customisable, Configurable, and Extensible
 
 OpenSPP is a highly adaptable digital social protection information system designed to improve the {term}`efficiency` and {term}`effectiveness` of social protection programs in low and middle-income countries. Thanks to its foundation on the widely used ERP platform, Odoo, OpenSPP offers unparalleled customizability, configurability, and extensibility. This page aims to give technical personnel a thorough understanding of these key features.

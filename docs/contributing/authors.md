@@ -5,6 +5,8 @@ myst:
     "property=og:description": "Authors' guide to writing OpenSPP Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
     "property=og:title": "Authors Guide"
     "keywords": "OpenSPP, Documentation, SEO, meta, Vale, spell, grammar, style, check, linkcheck, lexer"
+openspp:
+  doc_status: unverified
 ---
 
 (authors-guide-label)=

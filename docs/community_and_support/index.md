@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Community and Support
 
 This section encompasses essential information and guidelines pertinent to OpenSPP. These topics are presented to provide clarity and support to those engaged in the project, ensuring a structured and secure approach to participation and development.

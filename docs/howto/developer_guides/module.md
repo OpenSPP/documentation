@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Module Development
 
 Module development is a crucial aspect of extending the functionality of OpenSPP. When developing a module for OpenSPP, it's important to adhere to certain principles and guidelines to ensure compatibility and performance.

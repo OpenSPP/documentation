@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Data Collection and Validation
 
 OpenSPP, with its comprehensive approach to data management, emphasizes the importance of data collection and rigorous validation procedures. This article delves into how OpenSPP approaches these critical aspects, ensuring data integrity and usefulness.

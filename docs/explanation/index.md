@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Explanation
 
 Distinct from tutorials or how-to guides, which are action-oriented, explanations delve into theoretical knowledge. This type of documentation does not focus on the minute details like reference materials but instead takes a higher-level perspective.

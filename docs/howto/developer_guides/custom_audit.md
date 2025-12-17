@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Customize Audit Logs
 
 The following article guides the reader in understanding how the existing audit module can be customized by providing a sample scenario and a working example.

@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Customize Entitlement
 
 The following article guides the reader in understanding how the entitlement can be customized by providing a sample scenario and a working example.

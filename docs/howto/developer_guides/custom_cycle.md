@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Customize Cycle
 
 This guide provides a structured approach for implementing and customising the cycle in OpenSPP through the development of a custom module.

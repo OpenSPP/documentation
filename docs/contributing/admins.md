@@ -5,6 +5,8 @@ myst:
     "property=og:description": "Administrators' guide to writing OpenSPP Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into OpenSPP Documentation."
     "property=og:title": "Administrators Guide"
     "keywords": "OpenSPP, Documentation, automated deployments, hosting, automated testing, importing external packages"
+openspp:
+  doc_status: unverified
 ---
 
 (administrators-guide-label)=

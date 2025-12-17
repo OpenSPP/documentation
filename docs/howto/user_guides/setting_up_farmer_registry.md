@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Setting up Farmer Registry
 
 ## Introduction

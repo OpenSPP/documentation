@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Troubleshooting
 
 This guide offers insights and solutions for common errors encountered in Odoo application development. Understanding these errors and knowing how to address them efficiently is crucial for maintaining a smooth development process.

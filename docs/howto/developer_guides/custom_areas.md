@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Customize Areas
 
 The following article guides the reader in understanding how the area module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example. The area module is used to set up the administration areas in OpenSPP, which can be used in programs and other modules.

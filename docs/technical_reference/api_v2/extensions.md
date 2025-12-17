@@ -4,6 +4,8 @@ myst:
     "description": "API v2 extension fields and capability discovery"
     "property=og:title": "API v2 Extensions"
     "keywords": "OpenSPP, API v2, extensions, capability statement"
+openspp:
+  doc_status: unverified
 ---
 
 # Extensions

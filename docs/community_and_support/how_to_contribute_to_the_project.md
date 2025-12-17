@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Contributing
 
 Thank you for considering contributing to the OpenSPP project! We welcome and appreciate contributions from

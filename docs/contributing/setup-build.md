@@ -5,6 +5,8 @@ myst:
     "property=og:description": "How to set up the OpenSPP Documentation locally"
     "property=og:title": "Building and Checking the Quality of Documentation"
     "keywords": "setup, build, documentation, quality, development, Vale, spell, grammar, style, check, linkcheck"
+openspp:
+  doc_status: unverified
 ---
 
 (setup-build-label)=

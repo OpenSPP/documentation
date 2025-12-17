@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Programs and cycles
 
 # Introduction
@@ -17,6 +22,10 @@ The eligibility manager verifies if a {term}`beneficiary` is eligible for a give
 
 The eligibility manager allows to select one or multiple areas and different categorical or threshold based criteria based on the data stored in OpenSPP.
 
+In many deployments, eligibility and compliance criteria are configured as CEL expressions. See:
+
+- {doc}`programs/eligibility_and_compliance`
+
 ## Cycle manager
 
 The cycle manager defines how a cycle is managed. It can be used to define how a cycle is created, how {term}`beneficiaries` are selected, how payments are made, how payments are reconciled, etc.
@@ -28,6 +37,10 @@ The entitlement manager determines what a beneficiary is entitled to for a given
 ### Basic cash
 
 ### Cash
+
+Cash entitlements can use CEL formulas for dynamic amount calculation. See:
+
+- {doc}`programs/entitlement_amount_formulas`
 
 ### In kinds
 

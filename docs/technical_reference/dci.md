@@ -4,6 +4,8 @@ myst:
     "description": "Digital Convergence Initiative (DCI) integration in OpenSPP"
     "property=og:title": "DCI Integration"
     "keywords": "OpenSPP, DCI, interoperability, Odoo 19"
+openspp:
+  doc_status: unverified
 ---
 
 # DCI Integration

@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Integrated Beneficiary Registry
 
 In the realm of {term}`social protection`, an {term}`Integrated beneficiary registry` (IBR) plays a pivotal role. It acts as a comprehensive {term}`information` warehouse, consolidating data about {term}`beneficiaries` from multiple programs across various stages of life. This integration not only streamlines processes but also enhances the {term}`effectiveness` and {term}`efficiency` of social protection systems.

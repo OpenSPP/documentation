@@ -4,6 +4,8 @@ myst:
     "description": "How consent affects API v2 responses"
     "property=og:title": "API v2 Consent Model"
     "keywords": "OpenSPP, API v2, consent, privacy, data access"
+openspp:
+  doc_status: unverified
 ---
 
 # Consent model (response filtering)

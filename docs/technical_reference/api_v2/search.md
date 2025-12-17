@@ -4,6 +4,8 @@ myst:
     "description": "API v2 search: simple query parameters and advanced filters"
     "property=og:title": "API v2 Search"
     "keywords": "OpenSPP, API v2, search, filters, presets"
+openspp:
+  doc_status: unverified
 ---
 
 # Search and filters

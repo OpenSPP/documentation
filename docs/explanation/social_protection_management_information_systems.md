@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Social Protection Management Information Systems
 
 Social Protection Management information Systems (SP-MIS) are integrated digital platforms that facilitate the administration, coordination, and monitoring of social protection programs. They are designed to streamline the processes involved in delivering social protection services, from {term}`beneficiary` {term}`identification` to program evaluation, ensuring efficient and effective implementation of these programs.

@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Security Architecture
 
 ![](images/security_architecture.jpg)

@@ -40,7 +40,7 @@ This file tracks the work needed to update `documentation/` for **OpenSPP V2**.
   - [x] `documentation/docs/tutorial/event_data.md`
   - [ ] `documentation/docs/tutorial/vouchers.md` (Implementation section)
   - [x] `documentation/docs/tutorial/proxy_means_test.md` (rewritten using `spp_scoring`)
-  - [ ] `documentation/docs/tutorial/access_management.md` (“OpenSPP groups” TODO)
+  - [x] `documentation/docs/tutorial/access_management.md` (rewritten for role/privilege-based access)
   - [ ] `documentation/docs/community_and_support/i18n_l10n.md` (“General procedure” TODO + references “OpenSPP 6”)
 
 ### Navigation / toctree correctness
@@ -74,9 +74,9 @@ Sources:
 - `openspp-modules-v2/docs/architecture/decisions/ADR-004-access-rights-management.md`
 
 Deliverables:
-- [ ] Rewrite `documentation/docs/tutorial/access_management.md` (user/admin actions aligned to V2)
+- [x] Rewrite `documentation/docs/tutorial/access_management.md` (user/admin actions aligned to Odoo 19)
 - [ ] Rewrite `documentation/docs/howto/user_guides/administrating_role_based_access.md` (if kept as separate from tutorial)
-- [ ] Add `documentation/docs/technical_reference/access_rights.md` (concepts, roles, privileges, local roles/areas, troubleshooting)
+- [x] Add `documentation/docs/technical_reference/access_rights.md` (concepts, roles, privileges, local roles/areas, troubleshooting)
 - [ ] Sweep all prerequisites in tutorials/howtos for old role names and update them consistently
 
 ### API V2 (official API)
@@ -122,8 +122,16 @@ Deliverables:
 ### Event data / CEL / indicators
 
 - [x] Implement `documentation/docs/tutorial/event_data.md`
-- [x] Fix `documentation/docs/tutorial/indicators.md` (align to variables/expressions from `spp_cel_domain`)
-- [ ] Add `documentation/docs/technical_reference/cel.md` (or a small section under technical reference) if CEL is still a key extension mechanism
+- [x] Remove legacy `documentation/docs/tutorial/indicators.md` and replace with `documentation/docs/tutorial/variables_and_expressions.md`
+- [x] Add CEL technical reference section under `documentation/docs/technical_reference/cel/` and link it from Technical Reference
+- [x] Document Programs eligibility/compliance CEL: `documentation/docs/tutorial/programs/eligibility_and_compliance.md`
+- [x] Document entitlement amount formulas (runtime CEL): `documentation/docs/tutorial/programs/entitlement_amount_formulas.md`
+
+### Workflow rules (spp_workflow)
+
+- [ ] Document workflow concepts and where rules are used (triggers, states, conditions, assignments)
+- [ ] Document CEL usage in workflow rules (runtime context, available variables, examples)
+- [ ] Add screenshot placeholders for workflow builder screens (Studio/Workflow UI)
 
 ### Vocabulary / code URIs (interoperability)
 

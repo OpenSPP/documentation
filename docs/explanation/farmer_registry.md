@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Farmer Registry
 
 ## What is a Farmer Registry?

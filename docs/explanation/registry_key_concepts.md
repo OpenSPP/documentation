@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Organizing Data in the Registry
 
 ## Importance of Minimizing Data in the Registry for OpenSPP

@@ -4,6 +4,8 @@ myst:
     "description": "OpenSPP API v2 (REST) technical reference"
     "property=og:title": "OpenSPP API v2"
     "keywords": "OpenSPP, API v2, REST, OAuth2, JWT, Odoo 19"
+openspp:
+  doc_status: unverified
 ---
 
 # API v2 (REST)

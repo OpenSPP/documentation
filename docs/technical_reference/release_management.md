@@ -1,3 +1,8 @@
+---
+openspp:
+  doc_status: unverified
+---
+
 # Release Management
 
 ## Agile Release Planning and Scheduling
