@@ -26,4 +26,4 @@ JWT verification uses the shared secret configured via:
 
 OpenSPP also implements verifiable credential issuance flows based on OpenID specifications (OIDC4VCI / OIDC4VP).
 
-Documentation for this area will live under Technical Reference once the V2 VC implementation is finalized.
+Documentation for this area will live under Technical Reference once the VC implementation is finalized.

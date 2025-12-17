@@ -21,5 +21,5 @@ given country, program, or deployment.
 - Modules are installed via **Odoo Apps**.
 - Installed modules control which OpenSPP menus, models, and capabilities are available.
 
-This page will be expanded with V2-specific “what to install” guidance based on the implemented module architecture and
+This page will be expanded with “what to install” guidance based on the implemented module architecture and
 consolidation work.
