@@ -1,14 +1,14 @@
 ---
 myst:
   html_meta:
-    "description": "Digital Convergence Initiative (DCI) integration in OpenSPP V2"
+    "description": "Digital Convergence Initiative (DCI) integration in OpenSPP"
     "property=og:title": "DCI Integration"
     "keywords": "OpenSPP, DCI, interoperability, Odoo 19"
 ---
 
 # DCI Integration
 
-OpenSPP V2 includes a DCI (Digital Convergence Initiative) integration layer intended to support interoperability with
+OpenSPP includes a DCI (Digital Convergence Initiative) integration layer intended to support interoperability with
 social protection and registry ecosystems.
 
 ## What is implemented in code
@@ -28,4 +28,3 @@ The DCI surface area spans:
 
 As the V2 documentation is rewritten, this page will be expanded into a full technical reference based on the DCI ADRs
 and the current implementation.
-

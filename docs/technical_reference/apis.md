@@ -1,14 +1,14 @@
 ---
 myst:
   html_meta:
-    "description": "OpenSPP API V2 technical reference"
+    "description": "OpenSPP API v2 technical reference"
     "property=og:title": "OpenSPP API V2"
     "keywords": "OpenSPP, API, REST, OAuth2, Odoo 19"
 ---
 
 # API V2
 
-OpenSPP V2 exposes an **official REST API** implemented by the Odoo module `spp_api_v2`.
+OpenSPP exposes an **official REST API** implemented by the Odoo module `spp_api_v2`.
 
 The API is designed for interoperability and integrations:
 

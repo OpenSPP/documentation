@@ -12,7 +12,7 @@ This overview of how OpenSPP’s documentation is organized will help you know w
 
 ## Technical information
 
-OpenSPP V2 is built on top of [Odoo 19.0](https://www.odoo.com/documentation/19.0/), a popular open-source [ERP](https://en.wikipedia.org/wiki/Enterprise_resource_planning). It is designed to be easy to install and maintain, and can be run on any Linux distribution.
+OpenSPP is built on top of [Odoo 19.0](https://www.odoo.com/documentation/19.0/), a popular open-source [ERP](https://en.wikipedia.org/wiki/Enterprise_resource_planning). It is designed to be easy to install and maintain, and can be run on any Linux distribution.
 
 To learn more, visit the {doc}`Architecture <../technical_reference/architecture>` section.
 
