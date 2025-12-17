@@ -86,13 +86,16 @@ Sources:
 - `openspp-modules-v2/docs/architecture/decisions/ADR-010-api-v2-architecture.md`
 
 Deliverables:
-- [ ] Create `documentation/docs/technical_reference/api_v2/index.md` (entrypoint)
-- [ ] Create `documentation/docs/technical_reference/api_v2/authentication.md` (OAuth2 client credentials, scopes)
-- [ ] Create `documentation/docs/technical_reference/api_v2/resources.md` (Individual/Group/Programs/etc at a “docs” level)
-- [ ] Create `documentation/docs/technical_reference/api_v2/pagination_filtering.md`
-- [ ] Create `documentation/docs/technical_reference/api_v2/errors.md`
-- [ ] Create `documentation/docs/technical_reference/api_v2/capabilities.md` (capability statement / metadata endpoint)
-- [ ] Update `documentation/docs/howto/developer_guides/rest_api.md` to be API v2-oriented (client integration guide)
+- [x] Create `documentation/docs/technical_reference/api_v2/index.md` (entrypoint)
+- [x] Create `documentation/docs/technical_reference/api_v2/authentication.md` (OAuth2 client credentials, JWT)
+- [x] Create `documentation/docs/technical_reference/api_v2/clients_and_scopes.md` (client configuration and scopes)
+- [x] Create `documentation/docs/technical_reference/api_v2/resources.md` (resources + endpoint summary)
+- [x] Create `documentation/docs/technical_reference/api_v2/search.md` (simple + advanced search, filter discovery)
+- [x] Create `documentation/docs/technical_reference/api_v2/batch.md` (batch/transaction bundles)
+- [x] Create `documentation/docs/technical_reference/api_v2/extensions.md` (capability statement + `_extensions`)
+- [x] Create `documentation/docs/technical_reference/api_v2/errors.md` (error model and common responses)
+- [x] Create `documentation/docs/technical_reference/api_v2/consent_model.md` (consent-aware behavior)
+- [x] Update `documentation/docs/howto/developer_guides/rest_api.md` to be API v2-oriented (extensions guide)
 
 ### Change Requests V2
 

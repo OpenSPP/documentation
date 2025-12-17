@@ -1,13 +1,13 @@
-# Customize REST API
+# Extend API v2 (REST)
 
-The following article guides the reader to understand how the REST API module will work in OpenSPP and how it can be customized by providing a sample scenario and a working example.
+This guide explains how to extend API v2 by exposing module-specific fields through the **API Extensions** mechanism in `spp_api_v2`.
 
 ## Prerequisites
 
 - Knowledge of Python, Odoo, XML, Xpaths.
-- To set up OpenSPP for development, please refer to the [Developer Guide](https://docs.openspp.org/howto/developer_guides/development_setup.html)
+- To set up OpenSPP for development, see {doc}`development_setup`.
 
-## If the REST API module is not installed
+## Install API v2
 
 1. Log into OpenSPP with administrative rights.
 
@@ -15,70 +15,72 @@ The following article guides the reader to understand how the REST API module wi
 
 3. Choose “Update Apps List” to refresh the module list.
 
-4. Search for “OpenSPP REST API: API Records” and initiate installation. This will also install the other modules required.
+4. Search for “OpenSPP API V2” (`spp_api_v2`) and install it.
 
-![](./rest_api/1.png)
+Once installed:
 
-## Customize REST API
+- API base URL is `/api/v2/spp`
+- Capability statement is `/api/v2/spp/metadata`
+- OpenAPI schema is `/api/v2/spp/openapi.json`
 
-In this hypothetical scenario, the REST API will be customized to add an GET endpoint to respond with Area data.
+## Extend API v2 with an API Extension
 
-A working sample module for the described scenario can be accessed at the provided [link](https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_api_records_custom).
+API Extensions allow modules to expose extra fields on `Individual` and/or `Group` resources without changing the core schemas.
 
-The key steps in module development are as follows:
+At runtime, clients request extensions using the `_extensions` query parameter (for example `_extensions=farmer`).
 
-1. To customize REST API, a new module can be developed.
-2. To initiate the development of a custom module for REST API customization, begin by creating a manifest file. This file should include fields like name, category, and version. Additionally, it's crucial to define the dependencies of the new module as outlined below.
+### Step 1: Create (or reuse) fields
+
+Extensions expose existing Odoo fields. If your module needs new data, add fields to the underlying model (typically `res.partner` for registry data).
+
+For custom fields created by Studio, the field names typically start with `x_...`.
+
+### Step 2: Register the extension (XML data)
+
+In your custom module:
+
+- Add dependency on `spp_api_v2`
+- Create a `spp.api.extension` record referencing the fields you want to expose
+
+Example `__manifest__.py` dependency:
 
 ```python
-   "depends": [
-       "spp_api_records",
-   ],
+"depends": [
+    "spp_api_v2",
+],
 ```
 
-3. To integrate new endpoint and the response data needed into the system, the following steps should be followed. Create a new file called `data/spp_api_path_data.xml` in the module and add the below code to the manifest file.
-
-```python
-   "data": [
-       "data/spp_api_path_data.xml",
-   ],
-```
-
-The following code can be added to the `spp_api_path_data.xml` file to create a new endpoint.
+Example XML data to register an extension:
 
 ```xml
-   <record id="area_path" model="spp_api.path">
-       <field name="name">Area</field>
-       <field name="model_id" ref="spp_area.model_spp_area" />
-       <field name="namespace_id" ref="spp_api_records.spp_api_namespace" />
-       <field name="description">GET Area</field>
-       <field name="method">get</field>
-       <field
-           name="field_ids"
-           eval="[(
-           6, 0, [
-               ref('spp_area.field_spp_area__parent_id'),
-               ref('spp_area.field_spp_area__name'),
-               ref('spp_area.field_spp_area__draft_name'),
-               ref('spp_area.field_spp_area__code'),
-           ]
-       )]"
-       />
-   </record>
+<record id="api_extension_farmer" model="spp.api.extension">
+    <field name="name">Farmer</field>
+    <field name="url">urn:openspp:extension:farmer</field>
+    <field name="module_id" ref="base.module_your_module"/>
+    <field name="applies_to">individual</field>
+    <field name="field_ids" eval="[(6, 0, [
+        ref('your_module.field_res_partner__x_farm_size'),
+        ref('your_module.field_res_partner__x_primary_crop_id')
+    ])]"/>
+</record>
 ```
 
-The above code will create a new record for the model `spp_api.path` with the information about the endpoint’s model, fields, and HTTP method.
+### Step 3: Request the extension in API calls
 
-4. Now install the new module.
+Example:
 
-The following screenshot shows the response data after sending the request using Postman. The URL used here is `http://localhost:8069/api/spp_api/1/Area?request_id=12345` but it may differ based on your configuration in your local development environment.
+```bash
+curl "http://localhost:8069/api/v2/spp/Individual/<system>%7C<value>?_extensions=farmer" \
+  -H "Authorization: Bearer <access_token>"
+```
 
-NOTE: `request_id` parameter is required and should be unique. Else the response will return an error.
+The server includes an `extension` object in the response when data exists for the requested fields.
 
-Successful Response
+## Next steps
 
-![](./rest_api/2.png)
+- For the full API reference, see {doc}`API v2 <../../technical_reference/api_v2/index>`.
+- To manage extension registrations in the UI, use **Registry → Configuration → API V2 → API Extensions**.
 
-Error Response
+## About older REST API modules
 
-![](./rest_api/3.png)
+Older deployments may include REST API modules unrelated to API v2 (for example path-driven APIs which require `request_id` parameters). Those are not covered by this guide.
