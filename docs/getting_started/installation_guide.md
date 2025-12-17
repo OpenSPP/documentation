@@ -1,29 +1,47 @@
 # Installation Guide
 
-## Installing using Docker for development
+## Installing using Docker (recommended)
 
 ### Quick start
 
-You need to have Docker and docker-compose installed on your system. You also need to have Python installed
-and pip packages `invoke` and `pre-commit`.
+You need:
+
+- Docker
+- Docker Compose
+- Git
 
 ```bash
-$ git clone git@github.com:openspp/openspp-docker.git
-$ invoke develop img-pull img-build git-aggregate resetdb start
+git clone https://github.com/OpenSPP/openspp-modules-v2.git
+cd openspp-modules-v2
+git checkout 19.0
+
+# Start a local OpenSPP + PostgreSQL environment
+docker compose -f e2e/docker-compose.yml up -d --build
 ```
 
-Then open `http://localhost:17069/` in your browser.
+Then open `http://localhost:8069/` in your browser.
+
+Default credentials (from the provided compose file):
+
+- Database: `e2e_test`
+- Username: `admin`
+- Password: `admin`
+
+```{note}
+The compose file in `e2e/docker-compose.yml` is designed for a complete local environment and uses the Dockerfile in the
+repository to build an Odoo 19 image with OpenSPP modules.
+```
 
 ## Installing for production
 
-### Using OpenSPP Cloud (Coming soon)
+### Using Docker
 
-The easiest way to get a OpenSPP server is by using OpenSPP's Cloud.
+OpenSPP can be deployed as a Docker container connected to PostgreSQL (with persistent volumes for the Odoo data
+directory).
 
-OpenSPP Cloud provides fast OpenSPP servers with regular feature updates, automatic security patches, daily
-backups, uptime management, enterprise security, and guaranteed support on any issues.
+At minimum, the container entrypoint expects these environment variables:
 
-By choosing OpenSPP Cloud, you are also directly supporting future development on OpenSPP and helping make it
-better for everyone.
+- `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`
+- `ODOO_ADMIN_PASSWD`
 
-[Contact us](https://openspp.org/contact/) if you want to get early access.
+For deployments behind a reverse proxy, set `PROXY_MODE=True`.
