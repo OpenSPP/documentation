@@ -32,8 +32,8 @@ This file tracks the work needed to update `documentation/` for **OpenSPP V2**.
 - [x] Update `documentation/docs/getting_started/installation_guide.md` (Docker-based dev + production guidance; `openspp-docker` as recommended path)
 - [ ] Replace TODO/empty pages with real content or remove them from navigation:
   - [x] `documentation/docs/technical_reference/apis.md` (was empty; now documents API v2 at a high level)
-  - [ ] `documentation/docs/technical_reference/g2p-connect.md` (empty)
-  - [ ] `documentation/docs/technical_reference/openg2p.md` (empty)
+  - [x] `documentation/docs/technical_reference/g2p-connect.md` (removed)
+  - [x] `documentation/docs/technical_reference/openg2p.md` (removed)
   - [ ] `documentation/docs/tutorial/programs/export_beneficiaries.md` (empty)
   - [ ] `documentation/docs/getting_started/creating_a_program.md` (empty)
 - [ ] Remove TODO stubs that currently publish:
