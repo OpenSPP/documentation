@@ -29,7 +29,7 @@ This file tracks the work needed to update `documentation/` for **OpenSPP V2**.
 
 - [x] Update `documentation/docs/index.md` (remove stale “Q2 2024 Disability Registry” claim; align messaging)
 - [x] Update `documentation/docs/getting_started/index.md` (Odoo 19 baseline; remove/replace absolute `https://docs.openspp.org/...` internal links)
-- [x] Update `documentation/docs/getting_started/installation_guide.md` (Docker-based dev + production guidance for Odoo 19)
+- [x] Update `documentation/docs/getting_started/installation_guide.md` (Docker-based dev + production guidance; `openspp-docker` as recommended path)
 - [ ] Replace TODO/empty pages with real content or remove them from navigation:
   - [x] `documentation/docs/technical_reference/apis.md` (was empty; now documents API v2 at a high level)
   - [ ] `documentation/docs/technical_reference/g2p-connect.md` (empty)
