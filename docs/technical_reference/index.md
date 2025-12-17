@@ -24,6 +24,7 @@ The Technical Reference is a detailed document outlining the system's architectu
 **Integrations**
 
 - {doc}`integrations`
+- {doc}`apis`
 - {doc}`external_api`
 
 **Other**
@@ -64,6 +65,7 @@ programs/dashboards
 
 # Integrations
 integrations
+apis
 dci
 external_api
 
