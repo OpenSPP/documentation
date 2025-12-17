@@ -1,74 +1,56 @@
-# Indicators
+# Variables and expressions (replacing “indicators”)
 
-## Introduction
+OpenSPP previously relied on “indicator” computed fields for derived values such as:
 
-This section will discuss the importance of Indicators in OpenSPP. Indicators are a powerful tool that creates abstraction and simplifies {term}`targeting`, allowing for the calculation of the number of children under 18 years old, the number of elderly women, or whether a {term}`household` is headed by a single woman.
+- number of children in a household
+- whether a household is female-headed
+- whether a registrant meets a threshold
 
-The Indicators play a crucial role in determining the {term}`eligibility` of registrants for {term}`social protection` programs, as they're computed based on the {term}`information` available in the {term}`social registry`. By using Indicators, errors and inaccuracies can be avoided.
+In current deployments, these derived values are modeled as **variables** and **expressions** using the CEL-based engine (from the `spp_cel_domain` project) and configured through **Studio**.
 
-## Technical considerations
+## Where to configure
 
-Indicators are fields added to the group or individual table. In Odoo those are computed fields. To reduce the performance impact of those, those fields are recomputed. in an asynchronous job, only when the data they depend on changes. This means that the value of the field won't be available immediately after the data it depends on is changed. It will be available after the next time the job is run, usually within a second.
+- **Studio → Variables**: define reusable named variables (field-based, constants, aggregates, computed values, external data, scoring results, vocabulary concepts).
+- **Studio → Expressions**: define reusable business logic as CEL expressions (eligibility rules, scoring formulas, validations, etc.).
 
-The indicator fields are stored as fields in the database, but they're not editable. They're computed based on the data in the registry.
+## Create a variable (Studio)
 
-```{note}
-Indicators computation, if not properly written can use a lot of resources.
-While Odoo developers often write a for loop in the compute method to fetch some data, this is not a good practice.
-It is recommended to fetch the data for all the records in one query and then set the value to each record.
+Example goal: **count children under 5 in a household**.
 
-```
+1. Go to **Studio → Variables** and click **Create**.
+2. Set:
+   - **Applies To**: Group/Household
+   - **Source Type**: Aggregate
+   - **Aggregate Target**: Members
+   - **Aggregate Type**: Count
+   - **Filter** (CEL): `age_years(m.birthdate) < 5`
+3. Activate the variable.
 
-## Creating an indicator field
+Notes:
+- Inside member aggregates, use the `m.` prefix for member fields (for example `m.birthdate`).
+- Record fields are referenced using `r.` (for example `r.birthdate`) in general CEL expressions.
+- Variables are referenced by their **name/accessor as bare identifiers** (for example `child_under_5_count`) and expanded by the resolver.
 
-### Through the UI
+Screenshot placeholders:
+- `indicators/studio_variables_list.png`
+- `indicators/studio_variable_form_aggregate_members.png`
 
-Go to **Registry → Configuration → Custom Fields** and click **Create**.
+## Create an expression (Studio)
 
-```{figure} indicators/indicator-1.png
-:align: center
-:height: 300
-:alt: Indicator creation interface in OpenSPP
-```
+Example goal: **flag a household as priority** if it has at least one child under 5.
 
-TODO
+1. Go to **Studio → Expressions** and click **Create**.
+2. Choose:
+   - **Context**: Group/Household
+   - **Output Type**: Yes/No (Boolean)
+3. Enter a CEL expression:
+   - `child_under_5_count >= 1`
+4. Publish (or activate) the expression according to your governance settings.
 
-### Through the code
+Screenshot placeholders:
+- `indicators/studio_expressions_list.png`
+- `indicators/studio_expression_editor.png`
 
-Create a model that inherits from `res.partner`. In this example, we will count the number of children in a group.
+## Event-based indicators (advanced)
 
-To learn more about search domain, see the Odoo documentation on [search domains](https://www.odoo.com/documentation/17.0/developer/reference/backend/orm.html#search-domains).
-Search domain are like a simplified SQL query. They're used to filter the data that is used to compute the indicator.
-
-To simplify the count of members in a group, we created a helper method `compute_count_and_set_indicator` that takes the name of the indicator field, the domain to filter the members of the group, and the domain to filter the members of the group that are used to compute the indicator.
-
-```{eval-rst}
-.. automethod:: odoo.addons.g2p_registry_membership.models.group.G2PMembershipGroup.compute_count_and_set_indicator
-    :noindex:
-```
-
-```python
-import datetime
-from odoo import fields, models
-from dateutil.relativedelta import relativedelta
-
-CHILDREN_AGE_LIMIT = 18
-
-class G2PGroup(models.Model):
-    _inherit = "res.partner"
-
-    z_ind_grp_num_children = fields.Integer(
-        "Number of children",
-        compute="_compute_ind_grp_num_children",
-        help="Number of children",
-        store=True,
-        allow_filter=True,
-    )
-
-    def _compute_ind_grp_num_children(self):
-        now = datetime.datetime.now()
-        children = now - relativedelta(years=CHILDREN_AGE_LIMIT)
-        domain = [("birthdate", ">=", children)]
-        self.compute_count_and_set_indicator("z_ind_grp_num_children", None, domain)
-
-```
+If your deployment includes the event/CEL integration, Studio variables can aggregate over event data (for example count of “Household Visit” events in the last 90 days, or the max score recorded this year). This is configured as an **Aggregate** variable targeting **Events**.

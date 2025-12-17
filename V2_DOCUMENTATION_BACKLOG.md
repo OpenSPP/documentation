@@ -37,7 +37,7 @@ This file tracks the work needed to update `documentation/` for **OpenSPP V2**.
   - [ ] `documentation/docs/tutorial/programs/export_beneficiaries.md` (empty)
   - [ ] `documentation/docs/getting_started/creating_a_program.md` (empty)
 - [ ] Remove TODO stubs that currently publish:
-  - [ ] `documentation/docs/tutorial/event_data.md`
+  - [x] `documentation/docs/tutorial/event_data.md`
   - [ ] `documentation/docs/tutorial/vouchers.md` (Implementation section)
   - [x] `documentation/docs/tutorial/proxy_means_test.md` (rewritten using `spp_scoring`)
   - [ ] `documentation/docs/tutorial/access_management.md` (“OpenSPP groups” TODO)
@@ -121,8 +121,8 @@ Deliverables:
 
 ### Event data / CEL / indicators
 
-- [ ] Implement `documentation/docs/tutorial/event_data.md`
-- [ ] Fix `documentation/docs/tutorial/indicators.md` (remove `g2p_*` references; align with V2 modules)
+- [x] Implement `documentation/docs/tutorial/event_data.md`
+- [x] Fix `documentation/docs/tutorial/indicators.md` (align to variables/expressions from `spp_cel_domain`)
 - [ ] Add `documentation/docs/technical_reference/cel.md` (or a small section under technical reference) if CEL is still a key extension mechanism
 
 ### Vocabulary / code URIs (interoperability)
