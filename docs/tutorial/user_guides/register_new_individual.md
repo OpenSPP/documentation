@@ -32,46 +32,46 @@ When registering a new individual, the following steps need to be taken:
 
 ### Registering new individuals
 
-Click on the four-square icon in the top-left corner. Select **Registry** then click **Individuals**.
+Navigate to **Registry** > **Search** to open the Registry Search Portal. This privacy-first interface requires you to search before viewing registrants.
 
-![](register_new_individual/1.png)
+![](/_images/en-us/registry/register-individual/1.png)
 
-Click on **Create** to be directed to the registration interface for new applicants
+Click on **New Individual** to be directed to the registration interface for new applicants.
 
-![](register_new_individual/2.png)
+![](/_images/en-us/registry/register-individual/2.png)
 
-Enter the necessary values for the individual as required by your programme. After verifying the entered information, click **Save** to complete the registration process. Once complete, the personal information page of the individual record will look like this:
+Enter the necessary values for the individual as required by your programme (family name, given name, birthdate, etc.). After verifying the entered information, click **Save** to complete the registration process. Once complete, the personal information page of the individual record will look like this:
 
-![](register_new_individual/3.png)
+![](/_images/en-us/registry/register-individual/3.png)
 
-The record of the new individual is now displayed in the **Individuals** list in the **Registry** page.
+You can verify the individual was created by searching for them in the Registry Search Portal.
 
-![](register_new_individual/4.png)
+![](/_images/en-us/registry/register-individual/4.png)
 
 ### Creating new group
 
-Navigate to **Registry** then click **Groups**. Click on **Create**.
+From the Registry Search Portal, click on **New Group**.
 
-![](register_new_individual/5.png)
+![](/_images/en-us/registry/register-individual/5.png)
 
 You will be directed to the registration interface for new **Groups**.
 
-![](register_new_individual/6.png)
+![](/_images/en-us/registry/register-individual/6.png)
 
-After ensuring all the information is correctly entered, click **Save** to complete the registration process. Once complete, the personal information page of the **Groups** record will look like this:
+Enter the group name and any other required information. Click **Save** to complete the registration process. Once complete, the group record will look like this:
 
-![](register_new_individual/7.png)
+![](/_images/en-us/registry/register-individual/7.png)
 
-The record of the new group is now displayed in the **Groups** list in the **Registry** page.
+You can verify the group was created by searching for it in the Registry Search Portal (use the type filter to show only Groups).
 
-![](register_new_individual/8.png)
+![](/_images/en-us/registry/register-individual/8.png)
 
 ### Adding new individual to group
 
-Click a group you wish an individual to be added into. Click **Add a line** and select an individual. You can repeat this action to add more individuals.
+Search for and open the group you wish to add an individual to. Click **Add a line** in the group members section and select an individual. You can repeat this action to add more individuals.
 
-![](register_new_individual/9.png)
+![](/_images/en-us/registry/register-individual/9.png)
 
-Click **Save**. The newly added individual(s) is displayed.
+Click **Save**. The newly added individual(s) is displayed in the group.
 
-![](register_new_individual/10.png)
+![](/_images/en-us/registry/register-individual/10.png)
