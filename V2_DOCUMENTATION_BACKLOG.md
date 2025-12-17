@@ -27,11 +27,11 @@ This file tracks the work needed to update `documentation/` for **OpenSPP V2**.
 
 ### Accuracy + broken placeholders
 
-- [ ] Update `documentation/docs/index.md` (remove stale “Q2 2024 Disability Registry” claim; align V2 messaging)
-- [ ] Update `documentation/docs/getting_started/index.md` (Odoo 19 baseline; remove/replace absolute `https://docs.openspp.org/...` internal links)
-- [ ] Update `documentation/docs/getting_started/installation_guide.md` (Docker-based dev + production guidance for V2/Odoo 19)
+- [x] Update `documentation/docs/index.md` (remove stale “Q2 2024 Disability Registry” claim; align messaging)
+- [x] Update `documentation/docs/getting_started/index.md` (Odoo 19 baseline; remove/replace absolute `https://docs.openspp.org/...` internal links)
+- [x] Update `documentation/docs/getting_started/installation_guide.md` (Docker-based dev + production guidance for Odoo 19)
 - [ ] Replace TODO/empty pages with real content or remove them from navigation:
-  - [ ] `documentation/docs/technical_reference/apis.md` (empty)
+  - [x] `documentation/docs/technical_reference/apis.md` (was empty; now documents API v2 at a high level)
   - [ ] `documentation/docs/technical_reference/g2p-connect.md` (empty)
   - [ ] `documentation/docs/technical_reference/openg2p.md` (empty)
   - [ ] `documentation/docs/tutorial/programs/export_beneficiaries.md` (empty)
@@ -45,7 +45,7 @@ This file tracks the work needed to update `documentation/` for **OpenSPP V2**.
 
 ### Navigation / toctree correctness
 
-- [ ] Fix `documentation/docs/technical_reference/index.md` toctree references (currently includes missing pages like `oidc`, `dci`, `module`)
+- [~] Fix `documentation/docs/technical_reference/index.md` toctree references (added missing stubs: `oidc`, `dci`, `module`; needs full content pass)
 - [ ] Ensure every published section index includes all intended pages (or explicitly removes them):
   - [ ] `documentation/docs/tutorial/index.md` (currently duplicates “Programs and Cycles” and misses some pages like `access_management.md`)
   - [ ] `documentation/docs/howto/index.md` (remove duplicate `developer_guides/troubleshooting`)
@@ -204,4 +204,3 @@ Deliverables:
 - Architecture + consolidation: `openspp-modules-v2/docs/architecture/V2_ARCHITECTURE.md`, `openspp-modules-v2/docs/architecture/V2_MODULE_ARCHITECTURE.md`
 - ADRs: `openspp-modules-v2/docs/architecture/decisions/ADR-001*` through `ADR-018*`
 - Specs: `openspp-modules-v2/docs/specs/*` (API v2, access-rights, Studio, security)
-
