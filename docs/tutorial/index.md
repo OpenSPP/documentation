@@ -18,9 +18,12 @@ This Tutorials serve as a detailed manual for the utilization and navigation of 
 - [Geotargeting](geotargeting)
 - [Grievance Redressal Management](grievance_redressal_management)
 - [Indicators](indicators)
-- [Social protection programs and cycles](programs_and_cycles)
 - [Programs and Cycles](programs_and_cycles)
 - [Vouchers](vouchers)
+- [Scoring framework](scoring_framework)
+- [Proxy Means Test (PMT)](proxy_means_test)
+- [Vulnerability scoring](vulnerability_scoring)
+- [Social Welfare Development Index (SWDI)](social_welfare_development_index)
 - [Hardware Integration](hardware_integration)
 - [Register new individual](user_guides/register_new_individual)
 - [Enroll beneficiaries](user_guides/enroll_beneficiaries)
@@ -69,6 +72,10 @@ grievance_redressal_management
 indicators
 hardware_integration
 programs_and_cycles
+scoring_framework
+proxy_means_test
+vulnerability_scoring
+social_welfare_development_index
 vouchers
 user_guides/register_new_individual
 user_guides/enroll_beneficiaries

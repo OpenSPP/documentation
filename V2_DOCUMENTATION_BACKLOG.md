@@ -39,7 +39,7 @@ This file tracks the work needed to update `documentation/` for **OpenSPP V2**.
 - [ ] Remove TODO stubs that currently publish:
   - [ ] `documentation/docs/tutorial/event_data.md`
   - [ ] `documentation/docs/tutorial/vouchers.md` (Implementation section)
-  - [ ] `documentation/docs/tutorial/proxy_means_test.md` (Implementation section)
+  - [x] `documentation/docs/tutorial/proxy_means_test.md` (rewritten using `spp_scoring`)
   - [ ] `documentation/docs/tutorial/access_management.md` (“OpenSPP groups” TODO)
   - [ ] `documentation/docs/community_and_support/i18n_l10n.md` (“General procedure” TODO + references “OpenSPP 6”)
 
