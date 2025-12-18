@@ -29,32 +29,20 @@ clean:  ## Clean docs build directory
 	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/
 
 .PHONY: distclean
-distclean:  ## Clean docs build directory and Python virtual environment
+distclean:  ## Clean docs build directory, Python virtual environment, and fetched submodules
 	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/
-	rm -rf ./bin/ ./lib/ ./lib64 ./include ./pyvenv.cfg
+	rm -rf ./bin/ ./lib/ ./lib64 ./include ./pyvenv.cfg ./submodules/
 
 bin/python:
 	python3 -m venv . || virtualenv --clear --python=python3 .
 	bin/pip install -r requirements_frozen.txt
 
-docs/openg2p-program:
-	git submodule init; \
-	git submodule update; \
-	bin/pip install -r submodules/openg2p-program/requirements.txt;
-#	ln -s ../submodules/openg2p-program/docs ./docs/openg2p-program
-	@echo
-	@echo "Documentation of openg2p-program initialized."
-
-docs/openg2p-registry:
-	git submodule init; \
-	git submodule update; \
-	bin/pip install -r submodules/openg2p-registry/requirements.txt;
-#	ln -s ../submodules/openg2p-registry/docs ./docs/openg2p-program
-	@echo
-	@echo "Documentation of openg2p-registry initialized."
+.PHONY: fetch-odoo
+fetch-odoo:  ## Fetch Odoo sources for documentation build
+	./scripts/fetch_odoo.sh
 
 .PHONY: deps
-deps: bin/python docs/openg2p-registry docs/openg2p-program  ## Create Python virtual environment, install requirements, initialize or update the submodules, and finally create symlinks to the source files.
+deps: bin/python fetch-odoo  ## Create Python virtual environment, install requirements, and fetch Odoo sources
 
 
 .PHONY: html

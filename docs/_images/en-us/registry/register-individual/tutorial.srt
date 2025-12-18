@@ -1,0 +1,52 @@
+1
+00:00:00,000 --> 00:00:03,500
+OpenSPP Registry Tutorial - Learn how to register individuals, create groups, and manage beneficiaries
+
+2
+00:00:03,500 --> 00:00:10,269
+Navigate to Registry > Search to open the Registry Search Portal
+
+3
+00:00:10,269 --> 00:00:14,196
+Click "New Individual" to register a new person
+
+4
+00:00:14,196 --> 00:00:20,509
+Enter the individual details: family name, given name, and other required fields
+
+5
+00:00:20,509 --> 00:00:24,653
+Click Save to register the individual
+
+6
+00:00:24,653 --> 00:00:29,032
+Search for the newly created individual to verify registration
+
+7
+00:00:29,032 --> 00:00:35,464
+Click "New Group" to create a household or organization
+
+8
+00:00:35,464 --> 00:00:38,143
+Opening the group registration form...
+
+9
+00:00:38,143 --> 00:00:41,752
+Enter the group name and save
+
+10
+00:00:41,752 --> 00:00:46,132
+Search for the group to verify it was created
+
+11
+00:00:46,133 --> 00:00:51,711
+Open the group to add members
+
+12
+00:00:51,711 --> 00:00:56,535
+Click "Add a line" and search for the individual to add as a member
+
+13
+00:00:56,535 --> 00:01:01,500
+Save the group with the new member
+
