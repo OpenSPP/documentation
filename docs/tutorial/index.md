@@ -19,23 +19,20 @@ This Tutorials serve as a detailed manual for the utilization and navigation of 
 - [Dashboards and Reports](dashboards_and_reports)
 - [Geotargeting](geotargeting)
 - [Grievance Redressal Management](grievance_redressal_management)
-- [Variables and expressions (CEL)](variables_and_expressions)
-- [CEL quickstart](cel_quickstart)
-- [CEL cookbook](cel_cookbook)
-- [CEL troubleshooting](cel_troubleshooting)
+- [CEL Expressions](../config_guide/cel/index) (moved to Configuration Guide)
 - [Programs and Cycles](programs_and_cycles)
 - [Program eligibility and compliance rules (CEL)](programs/eligibility_and_compliance)
 - [Entitlement amount formulas (CEL)](programs/entitlement_amount_formulas)
 - [Vouchers](vouchers)
 - [Scoring framework](scoring_framework)
-- [Proxy Means Test (PMT)](proxy_means_test)
+- [Proxy Means Test (PMT)](../config_guide/scoring/pmt) (moved to Configuration Guide)
 - [Vulnerability scoring](vulnerability_scoring)
 - [Social Welfare Development Index (SWDI)](social_welfare_development_index)
 - [Hardware Integration](hardware_integration)
-- [Register new individual](user_guides/register_new_individual)
-- [Enroll beneficiaries](user_guides/enroll_beneficiaries)
-- [Import registrant data](user_guides/import_registrant_data)
-- [Export Registrant Data](user_guides/export_registrant_data)
+- [Register new individual](../user_guide/registry/register_individual) (moved to User Guide)
+- [Enroll beneficiaries](../user_guide/programs/enroll) (moved to User Guide)
+- [Import registrant data](../user_guide/registry/import) (moved to User Guide)
+- [Export Registrant Data](../user_guide/registry/export) (moved to User Guide)
 - [Access management](access_management)
 - [Setting up service points](user_guides/setting_up_service_points)
 - [Allocate funds](user_guides/allocate_funds)
@@ -67,33 +64,29 @@ This Tutorials serve as a detailed manual for the utilization and navigation of 
 :maxdepth: 2
 :hidden: true
 
-
 audit_log
 change_requests
 consent_management
 custom_fields
 dashboards_and_reports
-event_data
+../config_guide/event_data/index
 geotargeting
 grievance_redressal_management
 hardware_integration
-variables_and_expressions
-cel_quickstart
-cel_cookbook
-cel_troubleshooting
 programs_and_cycles
 programs/eligibility_and_compliance
 programs/entitlement_amount_formulas
 scoring_framework
-proxy_means_test
+../config_guide/scoring/pmt
 vulnerability_scoring
 social_welfare_development_index
 vouchers
 access_management
-user_guides/register_new_individual
-user_guides/enroll_beneficiaries
-user_guides/import_registrant_data
-user_guides/export_registrant_data
+../learn/concepts/programs
+../user_guide/registry/register_individual
+../user_guide/programs/enroll
+../user_guide/registry/import
+../user_guide/registry/export
 user_guides/administrating_role_based_access
 user_guides/setting_up_service_points
 user_guides/allocate_funds
@@ -103,6 +96,4 @@ user_guides/configure_cash_entitlements
 user_guides/import_areas
 user_guides/point_of_sales
 user_guides/configure_ID_generate_qr
-
-
 ```

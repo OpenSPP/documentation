@@ -24,6 +24,9 @@ _logger = logging.getLogger(__name__)
 # import sys
 # sys.path.insert(0, os.path.abspath("."))
 
+# Add local extensions directory for custom Pygments lexers
+sys.path.insert(0, os.path.abspath("_ext"))
+
 
 
 #=== Odoo configuration ===#
@@ -162,7 +165,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_design",
     "sphinx_sitemap",
-    "sphinxcontrib.httpdomain", 
+    "sphinxcontrib.httpdomain",
     "sphinxcontrib.httpexample",
     'sphinxcontrib.googleanalytics',
     "sphinxcontrib.video",
@@ -171,6 +174,8 @@ extensions = [
     "sphinx.ext.graphviz",
     "sphinx_tabs.tabs",
     "notfound.extension",
+    "sphinx_reredirects",  # URL redirects for documentation restructure
+    "cel_lexer",  # Custom CEL expression syntax highlighting
 ]
 
 # Some optional extensions depend on Pillow. In environments where Pillow cannot
@@ -319,6 +324,83 @@ copybutton_prompt_is_regexp = True
 
 notfound_urls_prefix = ""
 notfound_template = "404.html"
+
+
+# -- sphinx-reredirects configuration ----------------------------------
+# URL redirects for documentation restructure (Phase 1 setup, populated in Phase 3)
+# Format: "old/path.html": "new/path.html"
+# These redirects will be populated as content is migrated to the new structure.
+# See DOCUMENTATION_IMPLEMENTATION_PLAN.md for the full migration plan.
+
+redirects = {
+    # Phase 3: CEL Consolidation redirects (11 files → 6 files) - ACTIVE
+    "tutorial/cel_quickstart.html": "config_guide/cel/quick_start.html",
+    "tutorial/cel_cookbook.html": "config_guide/cel/cookbook.html",
+    "tutorial/cel_troubleshooting.html": "config_guide/cel/troubleshooting.html",
+    "tutorial/variables_and_expressions.html": "config_guide/cel/variables.html",
+    "technical_reference/cel/index.html": "config_guide/cel/index.html",
+    "technical_reference/cel/usage_by_feature.html": "config_guide/cel/variables.html",
+    "technical_reference/cel/profiles_and_symbols.html": "config_guide/cel/variables.html",
+    "technical_reference/cel/variables.html": "config_guide/cel/variables.html",
+    "technical_reference/cel/expressions.html": "config_guide/cel/syntax.html",
+    "technical_reference/cel/events.html": "config_guide/cel/variables.html",
+    "technical_reference/cel/widget_and_validation.html": "config_guide/cel/syntax.html",
+    "technical_reference/cel/caching_and_metric.html": "developer_guide/architecture/cel_internals.html",
+
+    # Phase 3: User Guide Deduplication redirects - ACTIVE
+    "tutorial/user_guides/register_new_individual.html": "user_guide/registry/register_individual.html",
+    "tutorial/user_guides/register_new_individual/index.html": "user_guide/registry/register_individual.html",
+    "howto/user_guides/register_new_individual.html": "user_guide/registry/register_individual.html",
+    "howto/user_guides/register_new_individual/index.html": "user_guide/registry/register_individual.html",
+    "tutorial/user_guides/enroll_beneficiaries.html": "user_guide/programs/enroll.html",
+    "tutorial/user_guides/enroll_beneficiaries/index.html": "user_guide/programs/enroll.html",
+    "howto/user_guides/enroll_beneficiaries.html": "user_guide/programs/enroll.html",
+    "howto/user_guides/enroll_beneficiaries/index.html": "user_guide/programs/enroll.html",
+    "tutorial/user_guides/import_registrant_data.html": "user_guide/registry/import.html",
+    "tutorial/user_guides/import_registrant_data/index.html": "user_guide/registry/import.html",
+    "howto/user_guides/import_registrant_data.html": "user_guide/registry/import.html",
+    "howto/user_guides/import_registrant_data/index.html": "user_guide/registry/import.html",
+    "tutorial/user_guides/export_registrant_data.html": "user_guide/registry/export.html",
+    "tutorial/user_guides/export_registrant_data/index.html": "user_guide/registry/export.html",
+    "howto/user_guides/export_registrant_data.html": "user_guide/registry/export.html",
+    "howto/user_guides/export_registrant_data/index.html": "user_guide/registry/export.html",
+
+    # Phase 3: Orphan Resolution redirects - ACTIVE
+    "tutorial/managing_social_protection_programs.html": "learn/concepts/programs.html",
+    "tutorial/managing_social_protection_programs/index.html": "learn/concepts/programs.html",
+    "howto/developer_guides/custom_cycle.html": "developer_guide/extending/cycle_manager.html",
+    "howto/developer_guides/custom_cycle/index.html": "developer_guide/extending/cycle_manager.html",
+    "howto/developer_guides/custom_program.html": "developer_guide/extending/custom_modules.html",
+    "howto/developer_guides/custom_program/index.html": "developer_guide/extending/custom_modules.html",
+    "howto/developer_guides/implmenting_pmt.html": "config_guide/scoring/pmt.html",
+    "howto/developer_guides/implmenting_pmt/index.html": "config_guide/scoring/pmt.html",
+    "howto/translation.html": "index.html",
+    "getting_started/creating_a_program.html": "get_started/first_program/index.html",
+    "tutorial/programs/export_beneficiaries.html": "user_guide/registry/export.html",
+
+    # Phase 3: Partial Content Migration redirects - ACTIVE
+    # API V2 Migration
+    "technical_reference/api_v2/index.html": "developer_guide/api_v2/index.html",
+    "technical_reference/api_v2/authentication.html": "developer_guide/api_v2/authentication.html",
+    "technical_reference/api_v2/clients_and_scopes.html": "developer_guide/api_v2/authentication.html",
+    "technical_reference/api_v2/resources.html": "developer_guide/api_v2/resources.html",
+    "technical_reference/api_v2/search.html": "developer_guide/api_v2/search.html",
+    "technical_reference/api_v2/batch.html": "developer_guide/api_v2/batch.html",
+    "technical_reference/api_v2/extensions.html": "developer_guide/api_v2/external_identifiers.html",
+    "technical_reference/api_v2/errors.html": "developer_guide/api_v2/errors.html",
+    "technical_reference/api_v2/consent_model.html": "developer_guide/api_v2/consent.html",
+    # Security Migration
+    "technical_reference/access_rights.html": "ops_guide/security/access_control.html",
+    "technical_reference/access_rights/index.html": "ops_guide/security/access_control.html",
+    # Scoring Migration
+    "tutorial/proxy_means_test.html": "config_guide/scoring/pmt.html",
+    "tutorial/proxy_means_test/index.html": "config_guide/scoring/pmt.html",
+    # Event Data Migration
+    "tutorial/event_data.html": "config_guide/event_data/index.html",
+    "tutorial/event_data/index.html": "config_guide/event_data/index.html",
+
+    # Add more redirects as content is migrated
+}
 
 
 # -- Options for HTML output -------------------------------------------------

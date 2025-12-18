@@ -15,7 +15,7 @@ The Technical Reference is a detailed document outlining the system's architectu
 **Security and Compliance**
 
 - {doc}`security`
-- {doc}`access_rights`
+- {doc}`Access Rights </ops_guide/security/access_control>` (moved to Operations Guide)
 - {doc}`audit_logs`
 
 **Code and Release Management**
@@ -32,14 +32,14 @@ The Technical Reference is a detailed document outlining the system's architectu
 
 - {doc}`integrations`
 - {doc}`apis`
-- {doc}`API v2 (REST) <api_v2/index>`
+- {doc}`API v2 (REST) </developer_guide/api_v2/index>` (moved to Developer Guide)
 - {doc}`external_api`
 
 **Other**
 
 - {doc}`backup`
 - {doc}`performance_optimization`
- - {doc}`CEL <cel/index>`
+- {doc}`CEL </config_guide/cel/index>` (moved to Configuration Guide)
 
 **Managers and Modules**
 
@@ -54,39 +54,69 @@ The Technical Reference is a detailed document outlining the system's architectu
 ```{toctree}
 :maxdepth: 3
 :hidden: true
+:caption: Configuration and Architecture
 
-# Configuration and Architecture
 architecture
 extensibility
+```
 
-# Security and Compliance
+```{toctree}
+:maxdepth: 3
+:hidden: true
+:caption: Security and Compliance
+
 security
-access_rights
+/ops_guide/security/access_control
 oidc
 audit_logs
+```
 
-# Code and Release Management
+```{toctree}
+:maxdepth: 3
+:hidden: true
+:caption: Code and Release Management
+
 code
 release_management
+```
 
-# Monitoring and Analytics
+```{toctree}
+:maxdepth: 3
+:hidden: true
+:caption: Monitoring and Analytics
+
 monitoring
 programs/dashboards
+```
 
-# Integrations
+```{toctree}
+:maxdepth: 3
+:hidden: true
+:caption: Integrations
+
 integrations
 apis
-api_v2/index
+/developer_guide/api_v2/index
 dci
 external_api
+```
 
-# Other
+```{toctree}
+:maxdepth: 3
+:hidden: true
+:caption: Other
+
 backup
 performance_optimization
-cel/index
+```
 
-# Managers and Modules
+```{toctree}
+:maxdepth: 3
+:hidden: true
+:caption: Managers and Modules
+
 module
+programs/index
 programs/concepts
 programs/program_manager
 programs/cycle_manager

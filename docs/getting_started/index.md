@@ -32,4 +32,5 @@ hidden: true
 
 installation_guide
 poc_and_pilot
+../get_started/first_program/index
 ```

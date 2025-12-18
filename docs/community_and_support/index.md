@@ -27,8 +27,5 @@ module_lifecycle_maintainer_role
 code_of_conduct
 security_report
 l3_support
-
-# License
 license
-
 ```
