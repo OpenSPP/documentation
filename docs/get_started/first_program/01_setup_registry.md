@@ -3,87 +3,110 @@ openspp:
   doc_status: draft
 ---
 
-# Step 1: Set Up a Basic Beneficiary Registry
+# Step 1: Access the Beneficiary Registry
 
-This tutorial is for **users** who are new to OpenSPP and want to learn how to set up their first beneficiary registry.
+This tutorial is for **users** who are new to OpenSPP and want to learn how to access the beneficiary registry.
 
 ## What You'll Do
 
-Set up a basic registry to store information about individuals and families. You'll configure the registry settings that will be used for your Cash Transfer for Vulnerable Families program.
+Learn how to navigate to the Registry module and understand the Registry Search Portal - the central interface for managing beneficiaries in OpenSPP.
 
 ## Before You Start
 
-- You need **Administrator** or **System Manager** access
+- You need access to OpenSPP with appropriate permissions
 - OpenSPP should be installed and running
-- Allow 5-10 minutes to complete this step
+- Allow 2-3 minutes to complete this step
 
 ## The Scenario
 
-You're setting up a **Cash Transfer for Vulnerable Families** program. This program will provide monthly cash assistance to low-income families with children under 5 years old. First, you need to set up a registry to store family and individual information.
+You're setting up a **Cash Transfer for Vulnerable Families** program. This program will provide monthly cash assistance to low-income families with children under 5 years old. First, you need to understand how to access and use the beneficiary registry.
 
 ## Steps
 
-### 1. Access OpenSPP
+### 1. Navigate to Registry
 
-Open your web browser and navigate to your OpenSPP installation. Log in with your administrator credentials.
+After logging in to OpenSPP, you'll see the sidebar menu on the left. Click **Registry** to access the beneficiary management portal.
 
-![Screenshot: OpenSPP login screen showing username and password fields](/_images/get_started/first_program/01_setup_registry/1.png)
+![Screenshot: Sidebar showing Registry option](/_images/en-us/get_started/first_program/01_setup_registry/1.png)
 
-### 2. Open the Registry Configuration
+### 2. Explore the Registry Search Portal
 
-Click the **four-square icon** in the top-left corner to open the main menu. Then click **Registry** to access the registry module.
+The Registry Search Portal is the main interface for managing beneficiaries. It provides a privacy-first approach where you search for records rather than browsing lists.
 
-![Screenshot: Main menu with four-square icon highlighted and Registry option visible](/_images/get_started/first_program/01_setup_registry/2.png)
+![Screenshot: Registry Search Portal overview](/_images/en-us/get_started/first_program/01_setup_registry/2.png)
 
-### 3. Verify Registry Settings
+Key elements of the interface:
 
-Navigate to **Configuration → Settings** in the Registry menu. This is where you configure how the registry behaves.
+| Element | Purpose |
+|---------|---------|
+| **Search Bar** | Find beneficiaries by name, ID, phone, or email |
+| **New Individual** button | Register a new person |
+| **New Group** button | Register a new household or family |
+| **Advanced** | Access advanced search filters |
+| **All Registrants** dropdown | Filter by registrant type |
+| **Recently Viewed** | Quick access to records you've viewed recently |
 
-![Screenshot: Registry menu expanded showing Configuration > Settings option](/_images/get_started/first_program/01_setup_registry/3.png)
+### 3. Register New Individuals
 
-### 4. Enable Required Features
+Click the **New Individual** button to register individual people (e.g., a single person applying for assistance).
 
-In the Registry Settings page, ensure the following features are enabled:
+![Screenshot: New Individual button highlighted](/_images/en-us/get_started/first_program/01_setup_registry/3.png)
 
-- **Groups/Households**: This allows you to register families as groups
-- **Individual Members**: This allows you to add family members to groups
-- **Privacy-First Search**: This protects beneficiary privacy by requiring search before viewing
+### 4. Register New Groups
 
-Check the boxes next to each feature if they're not already enabled.
+Click the **New Group** button to register households or families (e.g., a family unit applying together).
 
-![Screenshot: Registry Settings page showing checkboxes for Groups/Households, Individual Members, and Privacy-First Search](/_images/get_started/first_program/01_setup_registry/4.png)
+![Screenshot: New Group button highlighted](/_images/en-us/get_started/first_program/01_setup_registry/4.png)
 
-### 5. Save the Configuration
+### 5. Use the Search Function
 
-Scroll to the bottom of the page and click **Save** to apply your registry settings.
+The search bar allows you to find existing beneficiaries. Click on the search bar to begin typing.
 
-![Screenshot: Save button at the bottom of the Registry Settings page](/_images/get_started/first_program/01_setup_registry/5.png)
+![Screenshot: Search bar highlighted](/_images/en-us/get_started/first_program/01_setup_registry/5.png)
 
-### 6. Verify the Registry is Ready
+Enter at least 3 characters to search by:
+- Name
+- ID number
+- Phone number
+- Email address
 
-Click **Registry → Search** from the menu. You should see the Registry Search Portal, which is the privacy-first interface for accessing beneficiary records.
+### 6. View Search Results
 
-![Screenshot: Registry Search Portal with search bar and "New Individual" and "New Group" buttons](/_images/get_started/first_program/01_setup_registry/6.png)
+In this example, searching for "Garcia" returns matching beneficiaries. The results show the beneficiary name, type (Individual or Group), and when the record was last updated.
+
+![Screenshot: Search results showing "Garcia" with 1 result found](/_images/en-us/get_started/first_program/01_setup_registry/6.png)
+
+This privacy-first search approach ensures beneficiary data is protected - you must actively search for records rather than browsing through lists.
 
 ## What You Accomplished
 
-You've successfully configured your beneficiary registry with the following settings:
+You've learned how to:
 
-- **Groups/Households enabled**: You can now register families as groups
-- **Individual Members enabled**: You can add people to family groups
-- **Privacy-First Search enabled**: All searches are logged and beneficiary data is protected
+- Access the Registry module from the sidebar
+- Navigate to the Registry Search Portal
+- Understand the key interface elements for managing beneficiaries
+- Use the search function to find existing records
+
+## Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Groups** | Households or families registered as a unit |
+| **Individuals** | Single persons in the registry |
+| **Privacy-First Search** | Must search to find records; no open browsing |
+| **Recently Viewed** | Quick access to records you've accessed |
 
 ## Are You Stuck?
 
-**Can't find the Registry menu?**
-Make sure you're logged in with administrator privileges. Only users with the **System Manager** or **Administrator** role can access registry configuration.
+**Can't find Registry in the sidebar?**
+Make sure you're logged in with appropriate permissions. Ask your system administrator to grant you access to the Registry module.
 
-**The Settings option is grayed out?**
-You may not have the right permissions. Ask your system administrator to grant you access.
+**Search not returning results?**
+Enter at least 3 characters. The search matches against name, ID, phone, and email fields.
 
-**Don't see the Groups/Households option?**
-Your OpenSPP installation may not have the Groups module installed. Check with your system administrator about installing the required modules.
+**Don't see New Individual or New Group buttons?**
+You may not have permission to create new records. Contact your administrator to grant you the appropriate access rights.
 
 ## Next Step
 
-Now that your registry is set up, you're ready to add beneficiary data. Continue to [Step 2: Import Beneficiaries](02_import_beneficiaries.md).
+Now that you understand the registry interface, you're ready to add beneficiary data. Continue to [Step 2: Import Beneficiaries](02_import_beneficiaries.md).

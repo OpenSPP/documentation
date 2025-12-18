@@ -45,25 +45,25 @@ The flow is:
 
 First, you need to tell the program how much each eligible family should receive. Open your **Cash Transfer for Vulnerable Families** program.
 
-![Screenshot: Programs list with program highlighted](/_images/get_started/first_program/06_distribute_entitlements/1.png)
+![Screenshot: Programs list with program highlighted](/_images/en-us/get_started/first_program/06_distribute_entitlements/1.png)
 
 ### 2. Go to Entitlement Manager Tab
 
 Click the **Entitlement Manager** tab in the program form.
 
-![Screenshot: Program form with Entitlement Manager tab highlighted](/_images/get_started/first_program/06_distribute_entitlements/2.png)
+![Screenshot: Program form with Entitlement Manager tab highlighted](/_images/en-us/get_started/first_program/06_distribute_entitlements/2.png)
 
 ### 3. Select Cash Entitlement Type
 
 In the **Manager Type** field, select **Cash** from the dropdown. This indicates you're giving money, not in-kind goods.
 
-![Screenshot: Manager Type dropdown with "Cash" selected](/_images/get_started/first_program/06_distribute_entitlements/3.png)
+![Screenshot: Manager Type dropdown with "Cash" selected](/_images/en-us/get_started/first_program/06_distribute_entitlements/3.png)
 
 ### 4. Set the Amount Per Beneficiary
 
 In the **Amount Per Beneficiary** field, enter **3000**. This means each eligible family will receive 3,000 PHP.
 
-![Screenshot: Amount Per Beneficiary field showing "3000"](/_images/get_started/first_program/06_distribute_entitlements/4.png)
+![Screenshot: Amount Per Beneficiary field showing "3000"](/_images/en-us/get_started/first_program/06_distribute_entitlements/4.png)
 
 ### 5. Configure Transfer Settings
 
@@ -76,39 +76,39 @@ Below the amount, you'll see transfer configuration options:
 
 Keep these as default for now. Manual approval lets you review entitlements before they're finalized.
 
-![Screenshot: Transfer settings showing Cash type and auto-approve unchecked](/_images/get_started/first_program/06_distribute_entitlements/5.png)
+![Screenshot: Transfer settings showing Cash type and auto-approve unchecked](/_images/en-us/get_started/first_program/06_distribute_entitlements/5.png)
 
 ### 6. Save the Program
 
 Click **Save** to update the program with your entitlement configuration.
 
-![Screenshot: Save button highlighted](/_images/get_started/first_program/06_distribute_entitlements/6.png)
+![Screenshot: Save button highlighted](/_images/en-us/get_started/first_program/06_distribute_entitlements/6.png)
 
 Success message: "Program updated successfully."
 
-![Screenshot: Success notification](/_images/get_started/first_program/06_distribute_entitlements/7.png)
+![Screenshot: Success notification](/_images/en-us/get_started/first_program/06_distribute_entitlements/7.png)
 
 ### 7. Open the January 2025 Cycle
 
 Go to the **Cycles** tab and click on **January 2025** to open the cycle.
 
-![Screenshot: Cycles tab with January 2025 cycle highlighted](/_images/get_started/first_program/06_distribute_entitlements/8.png)
+![Screenshot: Cycles tab with January 2025 cycle highlighted](/_images/en-us/get_started/first_program/06_distribute_entitlements/8.png)
 
 ### 8. Generate Entitlements
 
 Now you're ready to create entitlement records. Click the **Prepare Entitlements** button.
 
-![Screenshot: Cycle form with "Prepare Entitlements" button highlighted](/_images/get_started/first_program/06_distribute_entitlements/9.png)
+![Screenshot: Cycle form with "Prepare Entitlements" button highlighted](/_images/en-us/get_started/first_program/06_distribute_entitlements/9.png)
 
 The system will generate one entitlement for each eligible beneficiary. You should see a message: "2 entitlements generated."
 
-![Screenshot: Success notification showing "2 entitlements generated"](/_images/get_started/first_program/06_distribute_entitlements/10.png)
+![Screenshot: Success notification showing "2 entitlements generated"](/_images/en-us/get_started/first_program/06_distribute_entitlements/10.png)
 
 ### 9. View Generated Entitlements
 
 Click the **Entitlements** tab in the cycle form to see the generated entitlements.
 
-![Screenshot: Cycle form with Entitlements tab highlighted](/_images/get_started/first_program/06_distribute_entitlements/11.png)
+![Screenshot: Cycle form with Entitlements tab highlighted](/_images/en-us/get_started/first_program/06_distribute_entitlements/11.png)
 
 You should see 2 entitlement records:
 
@@ -117,13 +117,13 @@ You should see 2 entitlement records:
 | Santos Family | 3,000 PHP | Draft |
 | Reyes Family | 3,000 PHP | Draft |
 
-![Screenshot: Entitlements tab showing two entitlements with Draft status](/_images/get_started/first_program/06_distribute_entitlements/12.png)
+![Screenshot: Entitlements tab showing two entitlements with Draft status](/_images/en-us/get_started/first_program/06_distribute_entitlements/12.png)
 
 ### 10. Review an Entitlement
 
 Click on **Santos Family** entitlement to review the details.
 
-![Screenshot: Santos Family entitlement in the list](/_images/get_started/first_program/06_distribute_entitlements/13.png)
+![Screenshot: Santos Family entitlement in the list](/_images/en-us/get_started/first_program/06_distribute_entitlements/13.png)
 
 The entitlement form shows:
 - **Partner**: Santos Family (the beneficiary)
@@ -132,17 +132,17 @@ The entitlement form shows:
 - **State**: Draft
 - **Disbursement Date**: (empty - will be set when distributed)
 
-![Screenshot: Entitlement form showing all details for Santos Family](/_images/get_started/first_program/06_distribute_entitlements/14.png)
+![Screenshot: Entitlement form showing all details for Santos Family](/_images/en-us/get_started/first_program/06_distribute_entitlements/14.png)
 
 ### 11. Approve Individual Entitlements
 
 To approve this entitlement, click the **Approve** button at the top of the form.
 
-![Screenshot: Entitlement form with "Approve" button highlighted](/_images/get_started/first_program/06_distribute_entitlements/15.png)
+![Screenshot: Entitlement form with "Approve" button highlighted](/_images/en-us/get_started/first_program/06_distribute_entitlements/15.png)
 
 The status changes from **Draft** to **Approved**.
 
-![Screenshot: Entitlement status badge showing "Approved"](/_images/get_started/first_program/06_distribute_entitlements/16.png)
+![Screenshot: Entitlement status badge showing "Approved"](/_images/en-us/get_started/first_program/06_distribute_entitlements/16.png)
 
 ### 12. Approve All Entitlements
 
@@ -150,17 +150,17 @@ Go back to the cycle's Entitlements tab. You can approve entitlements individual
 
 To approve all remaining entitlements, select them using the checkboxes, then click **Action → Approve Entitlements**.
 
-![Screenshot: Entitlements list with checkboxes selected and Action menu showing "Approve Entitlements"](/_images/get_started/first_program/06_distribute_entitlements/17.png)
+![Screenshot: Entitlements list with checkboxes selected and Action menu showing "Approve Entitlements"](/_images/en-us/get_started/first_program/06_distribute_entitlements/17.png)
 
 All entitlements are now **Approved**.
 
-![Screenshot: All entitlements showing Approved status](/_images/get_started/first_program/06_distribute_entitlements/18.png)
+![Screenshot: All entitlements showing Approved status](/_images/en-us/get_started/first_program/06_distribute_entitlements/18.png)
 
 ### 13. Validate Entitlements
 
 Before distribution, validate that the entitlements are ready. Click the **Validate Entitlements** button in the cycle.
 
-![Screenshot: Cycle form with "Validate Entitlements" button highlighted](/_images/get_started/first_program/06_distribute_entitlements/19.png)
+![Screenshot: Cycle form with "Validate Entitlements" button highlighted](/_images/en-us/get_started/first_program/06_distribute_entitlements/19.png)
 
 The system checks that:
 - All amounts are correct
@@ -169,7 +169,7 @@ The system checks that:
 
 You should see: "All entitlements validated successfully."
 
-![Screenshot: Success notification for validation](/_images/get_started/first_program/06_distribute_entitlements/20.png)
+![Screenshot: Success notification for validation](/_images/en-us/get_started/first_program/06_distribute_entitlements/20.png)
 
 ### 14. View Cycle Summary
 
@@ -180,7 +180,7 @@ Go back to the main cycle form to see the summary:
 - **Total Amount**: 6,000 PHP (2 families × 3,000 PHP)
 - **Status**: Ready for Distribution
 
-![Screenshot: Cycle summary showing totals and status](/_images/get_started/first_program/06_distribute_entitlements/21.png)
+![Screenshot: Cycle summary showing totals and status](/_images/en-us/get_started/first_program/06_distribute_entitlements/21.png)
 
 ### 15. Understanding Distribution
 
@@ -191,7 +191,7 @@ At this point, your entitlements are approved and ready for payment. The actual 
 
 The specific distribution method depends on your OpenSPP configuration and payment integrations. This is typically handled by your finance or disbursement team.
 
-![Screenshot: Distribution options or payment integration screen](/_images/get_started/first_program/06_distribute_entitlements/22.png)
+![Screenshot: Distribution options or payment integration screen](/_images/en-us/get_started/first_program/06_distribute_entitlements/22.png)
 
 ## What You Accomplished
 

@@ -1,0 +1,28 @@
+1
+00:00:00,000 --> 00:00:02,500
+Accessing the Registry
+
+2
+00:00:05,000 --> 00:00:07,000
+Click Registry in the sidebar to access beneficiary management
+
+3
+00:00:09,500 --> 00:00:11,500
+The Registry Search Portal - your beneficiary management hub
+
+4
+00:00:14,000 --> 00:00:15,500
+Click New Individual to register a person
+
+5
+00:00:18,000 --> 00:00:19,500
+Click New Group to register a household or family
+
+6
+00:00:22,000 --> 00:00:23,500
+Type a name to search for beneficiaries
+
+7
+00:00:23,500 --> 00:00:25,500
+Search results show matching beneficiaries
+
