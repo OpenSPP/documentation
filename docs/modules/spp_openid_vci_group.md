@@ -7,27 +7,27 @@
 
 ## Overview
 
-The `spp_openid_vci_group` module extends the functionality of the [spp_openid_vci](spp_openid_vci) module to enable the issuance of Verifiable Credentials (VCs) specifically for groups of registrants, building upon the group management capabilities provided by the [g2p_registry_group](g2p_registry_group) module to enable the issuance of Verifiable Credentials (VCs) specifically for groups of registrants, building upon the group management capabilities provided by the [g2p_registry_group](g2p_registry_group) module. This module leverages the existing VC issuance framework to provide a streamlined process for issuing VCs that represent a group's identity and attributes.
+The `spp_openid_vci_group` module extends the functionality of the [spp_openid_vci](spp_openid_vci) module to enable the issuance of Verifiable Credentials (VCs) specifically for groups of registrants, building upon the group management capabilities provided by the [spp_registry](spp_registry) module to enable the issuance of Verifiable Credentials (VCs) specifically for groups of registrants, building upon the group management capabilities provided by the [spp_registry](spp_registry) module. This module leverages the existing VC issuance framework to provide a streamlined process for issuing VCs that represent a group's identity and attributes.
 
 ## Purpose
 
 This module's primary purpose is to:
 
 - **Issue Group-Specific VCs:**  Generate and issue VCs that contain information relevant to a registered group, such as the group's name, type, members, or other relevant attributes.
-- **Integrate with Group Management:** Seamlessly integrate with the group management functionality provided by the [g2p_registry_group](g2p_registry_group) module, allowing users to issue VCs directly from a group's profile.
+- **Integrate with Group Management:** Seamlessly integrate with the group management functionality provided by the [spp_registry](spp_registry) module, allowing users to issue VCs directly from a group's profile.
 
 ## Role and Integration
 
 The `spp_openid_vci_group` module works in conjunction with the following modules:
 
 - **[spp_openid_vci](spp_openid_vci):** Inherits the core VC issuance logic, issuer management, and QR code generation functionality from this module, ensuring consistency in the issuance process for both individuals and groups. 
-- **[g2p_registry_group](g2p_registry_group):**  Fetches group-related data, such as group type and member information, to populate the claims within the VCs.  The module also integrates into the group profile view to provide a user-friendly way to issue VCs.
+- **[spp_registry](spp_registry):**  Fetches group-related data, such as group type and member information, to populate the claims within the VCs.  The module also integrates into the group profile view to provide a user-friendly way to issue VCs.
 
 ## Additional Functionality
 
 - **Group VCI Issuer Type:** Introduces a new "GroupRegistry" issuer type within the VCI issuer settings, allowing administrators to configure issuers specifically for generating group-related VCs.
 - **Group-Specific VC Issuance:** Modifies the VC issuance logic to accommodate group-related data, ensuring that the issued VCs contain information specific to the group, such as group name, type, and potentially a list of members.
-- **Group Profile Integration:**  Adds a button to the group profile view within the [g2p_registry_group](g2p_registry_group) module to initiate the VC issuance process directly from the group's record.
+- **Group Profile Integration:**  Adds a button to the group profile view within the [spp_registry](spp_registry) module to initiate the VC issuance process directly from the group's record.
 
 ## Example Usage Scenario
 

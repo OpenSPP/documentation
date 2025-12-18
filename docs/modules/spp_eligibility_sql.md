@@ -5,7 +5,7 @@
 **Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
-This document describes the **OpenSPP SQL Query Eligibility Manager** module. This module enhances the **[g2p_programs](g2p_programs)** module by introducing a flexible way to define program eligibility criteria using SQL queries. 
+This document describes the **OpenSPP SQL Query Eligibility Manager** module. This module enhances the **[spp_programs](spp_programs)** module by introducing a flexible way to define program eligibility criteria using SQL queries. 
 
 ## Purpose
 
@@ -18,9 +18,9 @@ The **OpenSPP SQL Query Eligibility Manager** module enables program administrat
 
 ## Module Dependencies and Integration
 
-1. **[g2p_registry_base](g2p_registry_base)**:  This module relies on the base registry for access to registrant data, which is queried against the SQL-based eligibility criteria.
+1. **[spp_registry](spp_registry)**:  This module relies on the base registry for access to registrant data, which is queried against the SQL-based eligibility criteria.
 
-2. **[g2p_programs](g2p_programs)**: 
+2. **[spp_programs](spp_programs)**: 
     * Extends the core program management functionality by providing an additional eligibility manager type specifically for SQL-based eligibility.
     * Integrates with program views to display the SQL query eligibility manager and its associated actions.
 
@@ -30,7 +30,7 @@ The **OpenSPP SQL Query Eligibility Manager** module enables program administrat
 
 ## Additional Functionality
 
-* **[g2p.program_membership.manager.sql](g2p.program_membership.manager.sql)**: A new eligibility manager model specifically designed to store and execute SQL queries for eligibility determination. 
+* **[spp.program_membership.manager.sql](spp.program_membership.manager.sql)**: A new eligibility manager model specifically designed to store and execute SQL queries for eligibility determination. 
 
 * **SQL Query Validation**:  The module validates SQL queries for:
     * **Syntax Errors**: Checks for any syntax errors in the query.

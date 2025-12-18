@@ -21,7 +21,7 @@ The **OpenSPP Auto-Update Entitlements** module primarily focuses on:
     * Heavily relies on this module to access transaction histories associated with entitlements.
     * Uses transaction data to determine the redemption status of entitlements and trigger appropriate state updates.
 
-2. **[g2p_programs](g2p_programs)**: 
+2. **[spp_programs](spp_programs)**: 
     * Integrates with the core program management module to access program cycle data. 
     * Leverages cycle end dates to initiate the automatic update process for entitlements associated with the ending cycle.
 

@@ -17,9 +17,9 @@ The **spp_pmt** module aims to:
 
 ## Dependencies and Integration
 
-1. **[g2p_registry_base](g2p_registry_base)** :  The **spp_pmt** module depends on the **G2P Registry: Base** module for access to core registrant data, including group memberships.  It utilizes this data to determine the individuals associated with each group and to retrieve their relevant attributes for the PMT calculation.
+1. **[spp_registry](spp_registry)** :  The **spp_pmt** module depends on the **OpenSPP Registry** module for access to core registrant data, including group memberships.  It utilizes this data to determine the individuals associated with each group and to retrieve their relevant attributes for the PMT calculation.
 
-2. **[g2p_registry_group](g2p_registry_group)** :  This module leverages the group representation and group kind functionality provided by the **G2P Registry: Group** module. It integrates with group forms to display the calculated PMT score.
+2. **[spp_registry](spp_registry)** :  This module leverages the group representation and group kind functionality provided by the **OpenSPP Registry** module. It integrates with group forms to display the calculated PMT score.
 
 3. **[spp_custom_fields_ui](spp_custom_fields_ui)** :  The **spp_pmt** module relies on the **OpenSPP: Custom Fields UI** module to enable the configuration of PMT-specific criteria.  This integration allows administrators to define which custom fields are relevant to the PMT calculation and assign weights to these fields based on their relative importance.
 
@@ -33,7 +33,7 @@ The **spp_pmt** module aims to:
     * **Area-Specific Weights**:  Factors in any geographical variations in the weights assigned to custom fields, using data from the **[spp_area](spp_area)** module. 
     * **Score Aggregation**:  Calculates a weighted average of the relevant criteria for each individual within a group, then aggregates these individual scores to determine the overall PMT score for the group.
 
-* **PMT Score Display**:  Extends the group view in the **[g2p_registry_group](g2p_registry_group)** module to display the calculated PMT score for each group. This allows users to quickly assess the relative need of different groups based on the defined PMT criteria.
+* **PMT Score Display**:  Extends the group view in the **[spp_registry](spp_registry)** module to display the calculated PMT score for each group. This allows users to quickly assess the relative need of different groups based on the defined PMT criteria.
 
 * **Customizable Criteria**:
     * Leverages the flexibility of the **[spp_custom_fields_ui](spp_custom_fields_ui)** module to enable administrators to define and configure the criteria used in the PMT calculation. 

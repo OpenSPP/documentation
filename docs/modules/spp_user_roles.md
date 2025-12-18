@@ -19,11 +19,11 @@ This module aims to:
 
 ## Dependencies and Integration
 
-1. **G2P Registry: Base ([g2p_registry_base](g2p_registry_base.md)):**  This module indirectly depends on the `res.partner` model from the G2P Registry: Base module, as it modifies the access rules for registrant data based on a user's assigned areas.
+1. **OpenSPP Registry ([spp_registry](spp_registry.md)):**  This module indirectly depends on the `res.partner` model from the OpenSPP Registry module, as it modifies the access rules for registrant data based on a user's assigned areas.
 
-2. **G2P Registry: Group ([g2p_registry_group](g2p_registry_group.md)):**  Similar to the Base module, it impacts access to group registrant data based on area assignments.
+2. **OpenSPP Registry ([spp_registry](spp_registry.md)):**  Similar to the Base module, it impacts access to group registrant data based on area assignments.
 
-3. **G2P Programs ([g2p_programs](g2p_programs.md)):**  The module's area-based access control can be applied to program-related data, ensuring that users with local roles only see and manage programs operating within their designated areas.
+3. **OpenSPP Programs ([spp_programs](spp_programs.md)):**  The module's area-based access control can be applied to program-related data, ensuring that users with local roles only see and manage programs operating within their designated areas.
 
 4. **OpenSPP Area ([spp_area](spp_area.md)):**  The module heavily relies on the area hierarchy defined in the [spp_area](spp_area.md) module. Local roles are directly associated with specific areas, and user access is restricted accordingly.
 

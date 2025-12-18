@@ -94,11 +94,11 @@ The layer simplifies data interaction through object-oriented constructs and off
 
 **Odoo Core Functions**
 
-Oddo is an existing, open-source ERP (Enterprise Resource Planning) system that is used as the foundational layer to build Open G2P and OpenSPP platforms.
+Odoo is an existing, open-source ERP (Enterprise Resource Planning) system that is used as the foundational layer to build the OpenSPP platform.
 
-**Open G2P Core Functions**
+**OpenSPP Core Functions**
 
-The Open G2P (Government-to-Person) Core Functions represent the central components of the OpenSPP system which are used to build OpenSPP functions.
+The OpenSPP Core Functions represent the central components of the OpenSPP system including registry management, program management, entitlements, and payments.
 
 **Functional Layer**
 

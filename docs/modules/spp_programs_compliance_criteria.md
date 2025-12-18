@@ -9,13 +9,13 @@ This document describes the **OpenSPP Programs: Compliance Criteria** module, an
 
 ## Purpose
 
-The **OpenSPP Programs: Compliance Criteria** module allows program administrators to define and enforce additional eligibility requirements beyond the initial criteria defined in the [g2p_programs](g2p_programs) module. This ensures that beneficiaries continuously meet specific conditions throughout their program participation. 
+The **OpenSPP Programs: Compliance Criteria** module allows program administrators to define and enforce additional eligibility requirements beyond the initial criteria defined in the [spp_programs](spp_programs) module. This ensures that beneficiaries continuously meet specific conditions throughout their program participation. 
 
 ## Module Dependencies and Integration
 
-1. [g2p_registry_base](g2p_registry_base): Leverages basic registrant information and relationships defined in the base registry module.
+1. [spp_registry](spp_registry): Leverages basic registrant information and relationships defined in the base registry module.
 
-2. [g2p_programs](g2p_programs): 
+2. [spp_programs](spp_programs): 
     * Extends the program management features by introducing compliance managers and actions related to compliance checks. 
     * Integrates with program cycles to apply compliance filtering during beneficiary enrollment and cycle management.
 
@@ -30,8 +30,8 @@ The **OpenSPP Programs: Compliance Criteria** module allows program administrato
 ## Additional Functionality
 
 * **Compliance Managers (spp.compliance.manager)**: A new model that links to specific eligibility managers (SQL-based, Tag-based, etc.) and defines them as compliance criteria for a program. 
-* **Program Compliance Configuration (g2p.program)**: Extends the program model to include a list of compliance managers, defining the specific criteria that beneficiaries must meet.
-* **Cycle-level Compliance Filtering (g2p.cycle)**: Adds actions to program cycles, allowing administrators to trigger compliance checks and filter beneficiaries accordingly. 
+* **Program Compliance Configuration (spp.program)**: Extends the program model to include a list of compliance managers, defining the specific criteria that beneficiaries must meet.
+* **Cycle-level Compliance Filtering (spp.cycle)**: Adds actions to program cycles, allowing administrators to trigger compliance checks and filter beneficiaries accordingly. 
 * **Automated Compliance Verification**: Provides configurable options to automate compliance checks:
     * **On Cycle Membership Creation**:  Automatically verifies compliance when a registrant is initially added to a program cycle.
     * **On Entitlement Creation**:  Verifies compliance before an entitlement is generated for a beneficiary.

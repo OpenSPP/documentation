@@ -35,7 +35,7 @@ This tutorial guides you through installing and implementing the Proxy Means Tes
 - It belongs to the "OpenSPP" category.
 - Current version is "15.0.0.0.0".
 - The module is still in "Beta" development status.
-- Dependencies include "base", "g2p_registry_base", and "g2p_registry_group".
+- Dependencies include "base", "spp_registry", and "spp_registry".
 
   2.3. `models/__init__.py`: This file signifies that the `models` directory is a Python package and imports `pmt.py`, where the PMT model is defined.
 

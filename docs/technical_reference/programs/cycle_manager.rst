@@ -2,9 +2,9 @@
 Cycle Manager
 ***************************************
 
-.. currentmodule:: odoo.addons.g2p_programs.models.managers.cycle_manager
+.. currentmodule:: odoo.addons.spp_programs.models.managers.cycle_manager
 
-:mod:`odoo.addons.g2p_programs.models.managers.cycle_manager` provides the class  :class:`BaseCycleManager` define the interface
+:mod:`odoo.addons.spp_programs.models.managers.cycle_manager` provides the class  :class:`BaseCycleManager` define the interface
 for this manager. :class:`DefaultCycleManager` is the default implementation of this class that should be used
 in most of the cases.
 

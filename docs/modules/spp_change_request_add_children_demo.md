@@ -25,11 +25,11 @@ The `spp_change_request_add_children_demo` module depends on the following modul
 
 1. **OpenSPP Change Request ([spp_change_request](spp_change_request))**: This module provides the foundational structure for managing change requests, including workflows, approvals, and data validation. The demo module leverages this existing framework to handle the addition of new members. 
 
-2. **G2P Registry Modules**:  The demo module integrates with various G2P Registry modules to access and update registrant information:
-    - **G2P Registry: Base ([g2p_registry_base](g2p_registry_base))**:  Inherits core registrant features and extends them for the specific requirements of the 'Add Children' request.
-    - **G2P Registry: Individual ([g2p_registry_individual](g2p_registry_individual))**:  Utilizes this module to create new individual registrant records for the children or members being added.
-    - **G2P Registry: Group ([g2p_registry_group](g2p_registry_group))**:  Accesses and updates group registrant information, specifically to add new members to the group.
-    - **G2P Registry: Membership ([g2p_registry_membership](g2p_registry_membership))**:  Creates new membership records to establish the relationship between the added individuals and the target group.
+2. **OpenSPP Registry Modules**:  The demo module integrates with various OpenSPP Registry modules to access and update registrant information:
+    - **OpenSPP Registry ([spp_registry](spp_registry))**:  Inherits core registrant features and extends them for the specific requirements of the 'Add Children' request.
+    - **OpenSPP Registry ([spp_registry](spp_registry))**:  Utilizes this module to create new individual registrant records for the children or members being added.
+    - **OpenSPP Registry ([spp_registry](spp_registry))**:  Accesses and updates group registrant information, specifically to add new members to the group.
+    - **OpenSPP Registry ([spp_registry](spp_registry))**:  Creates new membership records to establish the relationship between the added individuals and the target group.
 
 3. **[spp_service_points](spp_service_points)**: This module allows for associating change requests, including those for adding children, with specific service points from which they originate.
 

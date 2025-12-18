@@ -137,7 +137,7 @@ OpenSPP supports flexible use cases:
 
 - Use only individuals.
 - Use only groups.
-- Use both individuals and groups, linked through the `g2p.group.membership` model, which connects individuals to their respective groups.
+- Use both individuals and groups, linked through the `spp.group.membership` model, which connects individuals to their respective groups.
 
 #### Individuals
 
@@ -147,7 +147,7 @@ Individuals represent a single person, which can be a real person or a dummy per
 
 Groups represent a collection of individuals that share something in common, such as a family, household, farm, community, village, school, company, cooperative, or any other type of group.
 
-Groups can optionally be nested within other groups, such as a household being part of a cooperative. For this functionality, the `spp_registry_group_hierarchy` module is required.
+Groups can optionally be nested within other groups, such as a household being part of a cooperative. For this functionality, the `spp_registry_hierarchy` module is required.
 
 ## Group Membership
 

@@ -5,7 +5,7 @@
 **Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
-This document outlines the functionality and purpose of the **OpenSPP Base Settings** module within the OpenSPP ecosystem. This module builds upon the foundational [g2p_registry_base](g2p_registry_base) module to provide essential configuration options for OpenSPP deployments.
+This document outlines the functionality and purpose of the **OpenSPP Base Settings** module within the OpenSPP ecosystem. This module builds upon the foundational [spp_registry](spp_registry) module to provide essential configuration options for OpenSPP deployments.
 
 ## Purpose
 
@@ -16,7 +16,7 @@ The **OpenSPP Base Settings** module aims to:
 
 ## Module Dependencies and Integration
 
-1. [g2p_registry_base](g2p_registry_base): This module inherits the core registry functionalities provided by the **G2P Registry: Base** module, including managing registrants, relationships, and identification.
+1. [spp_registry](spp_registry): This module inherits the core registry functionalities provided by the **OpenSPP Registry** module, including managing registrants, relationships, and identification.
 
 2. **Base (base):** Leverages the core Odoo [Base](Base) module for data models, views, and basic functionalities.
 

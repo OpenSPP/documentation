@@ -25,7 +25,7 @@ The file name is `group_views.xml`.
 <record id="view_custom_groups_form" model="ir.ui.view">
     <field name="name">view_custom_groups_form</field>
     <field name="model">res.partner</field>
-    <field name="inherit_id" ref="g2p_registry_group.view_groups_form" />
+    <field name="inherit_id" ref="spp_registry.view_groups_form" />
     <field name="arch" type="xml">
         <xpath expr="//page[@name='basic_info']" position="after">
             <page string="Disability information" name="disability_info">
@@ -48,7 +48,7 @@ The file name is `individual_views.xml`.
 <record id="view_individuals_salary_detail" model="ir.ui.view">
     <field name="name">view_individuals_salary_detail</field>
     <field name="model">res.partner</field>
-    <field name="inherit_id" ref="g2p_registry_individual.view_individuals_form" />
+    <field name="inherit_id" ref="spp_registry.view_individuals_form" />
     <field name="arch" type="xml">
         <!-- Adding a new tab and adding a new field in a tab -->
         <xpath expr="//page[@name='basic_info']" position="after">
@@ -77,7 +77,7 @@ The file name is `group_views.xml`.
 <record id="view_custom_groups_form" model="ir.ui.view">
     <field name="name">view_custom_groups_form</field>
     <field name="model">res.partner</field>
-    <field name="inherit_id" ref="g2p_registry_group.view_groups_form" />
+    <field name="inherit_id" ref="spp_registry.view_groups_form" />
     <field name="arch" type="xml">
         <!-- removing a tab -->
         <xpath expr="//page[@name='other']" position="attributes">
@@ -102,7 +102,7 @@ The file name is `individual_views.xml`.
 <record id="view_individuals_salary_detail" model="ir.ui.view">
     <field name="name">view_individuals_salary_detail</field>
     <field name="model">res.partner</field>
-    <field name="inherit_id" ref="g2p_registry_individual.view_individuals_form" />
+    <field name="inherit_id" ref="spp_registry.view_individuals_form" />
     <field name="arch" type="xml">
         <!-- removing a tab -->
         <xpath expr="//page[@name='other']" position="attributes">

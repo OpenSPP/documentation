@@ -45,13 +45,13 @@ The key steps in module development are as follows:
    ],
 ```
 
-3. To add the new field in the new module, develop a Python file named `entitlement.py` that extends `g2p.entitlement` and incorporate this file into `models/init.py`. The definition of the fields should be implemented as demonstrated below.
+3. To add the new field in the new module, develop a Python file named `entitlement.py` that extends `spp.entitlement` and incorporate this file into `models/init.py`. The definition of the fields should be implemented as demonstrated below.
 
 ```python
 from odoo import api, fields, models
 
-class G2PEntitlementCustom(models.Model):
-   _inherit = "g2p.entitlement"
+class SppEntitlementCustom(models.Model):
+   _inherit = "spp.entitlement"
 
    day_duration = fields.Integer("Valid Duration (Days)", compute="_compute_day_duration")
 
@@ -63,9 +63,9 @@ class G2PEntitlementCustom(models.Model):
            rec.day_duration = delta.days
 ```
 
-The code mentioned above will introduce a new field to the `g2p_entitlement` table for storing the duration of an entitlement. To understand further, refer to the following documentation [Link 1](https://www.odoo.com/documentation/17.0/developer/tutorials/server_framework_101/03_basicmodel.html), [Link 2](https://www.odoo.com/documentation/17.0/developer/tutorials/server_framework_101/13_other_module.html), [Link 3](https://www.odoo.com/documentation/17.0/developer/tutorials/server_framework_101/12_inheritance.html)
+The code mentioned above will introduce a new field to the `spp_entitlement` table for storing the duration of an entitlement. To understand further, refer to the following documentation [Link 1](https://www.odoo.com/documentation/17.0/developer/tutorials/server_framework_101/03_basicmodel.html), [Link 2](https://www.odoo.com/documentation/17.0/developer/tutorials/server_framework_101/13_other_module.html), [Link 3](https://www.odoo.com/documentation/17.0/developer/tutorials/server_framework_101/12_inheritance.html)
 
-Here the values of `valid_until`, `valid_from` fields are derived from the values of cycle’s start date and end date fields. The mentioned fields are from the table `g2p.cycle`.
+Here the values of `valid_until`, `valid_from` fields are derived from the values of cycle’s start date and end date fields. The mentioned fields are from the table `spp.cycle`.
 
 4. To integrate new fields into the UI, the following steps should be followed. Create a new file called `views/entitlement_view.xml` in the module. Add the below code to the manifest file.
 
@@ -80,8 +80,8 @@ Here the values of `valid_until`, `valid_from` fields are derived from the value
 ```xml
  <record id="view_custom_entitlement_form" model="ir.ui.view">
    <field name="name">view_custom_entitlement_form</field>
-   <field name="model">g2p.entitlement</field>
-   <field name="inherit_id" ref="g2p_programs.view_entitlement_form" />
+   <field name="model">spp.entitlement</field>
+   <field name="inherit_id" ref="spp_programs.view_entitlement_form" />
    <field name="priority">1000</field>
    <field name="arch" type="xml">
      <xpath expr="//field[@name='valid_until']" position="after">

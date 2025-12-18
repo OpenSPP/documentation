@@ -17,9 +17,9 @@ The **OpenSPP Entitlement Basket** module aims to:
 
 ## Module Dependencies and Integration
 
-1. **[g2p_registry_base](g2p_registry_base)**: Uses the base registry for core beneficiary information and links basket entitlements to beneficiary profiles.
+1. **[spp_registry](spp_registry)**: Uses the base registry for core beneficiary information and links basket entitlements to beneficiary profiles.
 
-2. **[g2p_programs](g2p_programs)**:  Extends program management by introducing a new entitlement manager type for basket distribution.
+2. **[spp_programs](spp_programs)**:  Extends program management by introducing a new entitlement manager type for basket distribution.
 
 3. **[spp_programs](spp_programs)**: Leverages the in-kind entitlement model and inventory integration features. 
 
@@ -35,7 +35,7 @@ The **OpenSPP Entitlement Basket** module aims to:
     * **Products:** A list of products included in the basket.
     * **Quantity per Product:** The number of units of each product a beneficiary is entitled to.
 
-* **Basket Entitlement Manager (g2p.program.entitlement.manager.basket):**  
+* **Basket Entitlement Manager (spp.program.entitlement.manager.basket):**  
     * A new entitlement manager type specifically for managing basket distribution within a program.
     * Associates a program cycle with a predefined entitlement basket.
     * Allows configuration of optional multipliers based on beneficiary attributes (e.g., number of family members).

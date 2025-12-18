@@ -15,12 +15,12 @@ This guide provides a structured approach for implementing and customising the p
 
 ## Odoo Setup from Docker using doodba
 
-- Existence of openg2p_program folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- Availability of modules: g2p_programs.
-- Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership, g2p_bank.
+- Existence of openspp_programs folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
+- Availability of modules: spp_programs.
+- Existence of openspp_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
+- Availability of modules: spp_registry, spp_banking.
 - Existence of openspp_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- Availability of modules: spp_programs, spp_programs_sp, g2p_entitlement_cash, spp_entitlement_inkind, spp_eligibility_sql, spp_eligibility_tags.
+- Availability of modules: spp_programs, spp_programs_sp, spp_entitlement_cash, spp_entitlement_inkind, spp_eligibility_sql, spp_eligibility_tags.
 - Existence of queue folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
 - Availability of modules: queue_job
 - Existence of web folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
@@ -28,12 +28,14 @@ This guide provides a structured approach for implementing and customising the p
 
 ## Odoo Setup from source
 
-- Existence of openg2p-program folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from [here](https://github.com/OpenG2P/openg2p-program.git) into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.
-- Availability of modules: g2p_programs.
-- Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from [here](https://github.com/OpenG2P/openg2p-registry.git) into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.
-- Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership, g2p_bank.
+```{note}
+These instructions are outdated. For OpenSPP V2 on Odoo 19, please refer to the [Development Setup Guide](development_setup.md).
+```
+
+- Clone the openspp-modules repository from [GitHub](https://github.com/OpenSPP/openspp-modules).
+- Availability of modules: spp_programs, spp_registry, spp_banking.
 - Existence of openspp-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.1.1-mono-repo, and update the branch. If absent, clone the repository from [here](https://github.com/OpenSPP/openspp-registry.git) into odoo/custom, navigate to the openspp-registry folder, and switch to the specified branch.
-- Availability of modules: spp_programs, spp_programs_sp, g2p_entitlement_cash, spp_entitlement_inkind, spp_eligibility_sql, spp_eligibility_tags, spp_area, spp_service_point.
+- Availability of modules: spp_programs, spp_programs_sp, spp_entitlement_cash, spp_entitlement_inkind, spp_eligibility_sql, spp_eligibility_tags, spp_area, spp_service_point.
 - Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from [here](https://github.com/OCA/queue.git) into odoo/custom, navigate to the queue, and switch to the specified branch.
 - Availability of modules: queue_job.
 - Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from [here](https://github.com/OCA/web.git) into odoo/custom, navigate to the web, and switch to the specified branch.
@@ -86,15 +88,15 @@ This guide provides a structured approach for implementing and customising the p
 ## Customise Program
 
 - To introduce new fields or functions in a new module, develop a Python file extending the following models:
-  - “g2p.program” for Program.
-  - “g2p.program.create.wizard” for the creation of a Program.
-  - “g2p.program_membership.manager.default” for the default eligibility criteria.
-  - “g2p.program_membership.manager.tags” for the tag-based eligibility criteria.
-  - “g2p.program_membership.manager.sql” for the sql-base eligibility criteria.
-  - “g2p.cycle.manager.default” for the cycle manager.
-  - “g2p.program.entitlement.manager.default” for the default entitlement manager.
-  - “g2p.program.entitlement.manager.cash” for the cash entitlement manager.
-  - “g2p.program.entitlement.manager.inkind” for the in-kind entitlement manager.
+  - “spp.program” for Program.
+  - “spp.program.create.wizard” for the creation of a Program.
+  - “spp.program_membership.manager.default” for the default eligibility criteria.
+  - “spp.program_membership.manager.tags” for the tag-based eligibility criteria.
+  - “spp.program_membership.manager.sql” for the sql-base eligibility criteria.
+  - “spp.cycle.manager.default” for the cycle manager.
+  - “spp.program.entitlement.manager.default” for the default entitlement manager.
+  - “spp.program.entitlement.manager.cash” for the cash entitlement manager.
+  - “spp.program.entitlement.manager.inkind” for the in-kind entitlement manager.
 - Integrate this file into `models/__init__.py`.
 - Upgrade the module incorporating the new Python file.
 - To integrate new fields into the UI, developers should familiar themselves with the view, view inheritance, and the use of xpath in Odoo.

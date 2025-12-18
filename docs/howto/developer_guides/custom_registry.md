@@ -20,7 +20,7 @@ The following article guides the reader in understanding how the registry module
 
 3. Choose “Update Apps List” to refresh the module list.
 
-4. Search for the following modules that are required to be installed such as G2P Registry: Groups, G2P Registry: Individual and G2P Registry: Membership.
+4. Search for the following modules that are required to be installed such as OpenSPP Registrys, OpenSPP Registry and OpenSPP Registry.
 
 ![](custom_registry/1.png)
 
@@ -46,9 +46,9 @@ The key steps in module development are as follows:
 
 ```python
   "depends": [
-       "g2p_registry_group",
-       "g2p_registry_individual",
-       "g2p_registry_membership",
+       "spp_registry",
+       "spp_registry",
+       "spp_registry",
    ],
 ```
 
@@ -70,13 +70,13 @@ class OpenSPPIndividualCustom(models.Model):
 
 Note that when adding fields that are specific for individual It should have the prefix `ind_`
 
-4. To add the new column in the Members table in the groups, develop a Python file named `group_membership.py` that extends `g2p.group.membership` and incorporate this file into `models/__init__.py`. The definition of the salary and currency fields should be implemented as demonstrated below.
+4. To add the new column in the Members table in the groups, develop a Python file named `group_membership.py` that extends `spp.group.membership` and incorporate this file into `models/__init__.py`. The definition of the salary and currency fields should be implemented as demonstrated below.
 
 ```python
 from odoo import fields, models
 
 class OpenSPPMembershipCustom(models.Model):
-   _inherit = "g2p.group.membership"
+   _inherit = "spp.group.membership"
 
    currency_id = fields.Many2one(
        "res.currency",
@@ -135,7 +135,7 @@ To understand further, refer to the following documentation [Link 1](https://www
    <record id="view_individuals_salary_detail" model="ir.ui.view">
        <field name="name">view_individuals_salary_detail</field>
        <field name="model">res.partner</field>
-       <field name="inherit_id" ref="g2p_registry_individual.view_individuals_form" />
+       <field name="inherit_id" ref="spp_registry.view_individuals_form" />
        <field name="arch" type="xml">
            <xpath expr="//field[@name='email']" position="after">
                <field name="ind_currency_id" />
@@ -151,7 +151,7 @@ To understand further, refer to the following documentation [Link 1](https://www
    <record id="view_group_membership_salary_indicator" model="ir.ui.view">
        <field name="name">view_group_membership_salary_indicator</field>
        <field name="model">res.partner</field>
-       <field name="inherit_id" ref="g2p_registry_group.view_groups_form" />
+       <field name="inherit_id" ref="spp_registry.view_groups_form" />
        <field name="arch" type="xml">
            <xpath expr="//field[@name='group_membership_ids']/tree/field[@name='ended_date']" position="after">
                <field name="salary" />

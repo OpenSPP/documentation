@@ -5,7 +5,7 @@
 **Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
-This document outlines the **G2P Registry: Audit Post** module within the OpenSPP platform. This module extends the functionality of the audit log by enabling the posting of audit log messages to related parent records.
+This document outlines the **OpenSPP Registry: Audit Post** module within the OpenSPP platform. This module extends the functionality of the audit log by enabling the posting of audit log messages to related parent records.
 
 ## Purpose
 
@@ -38,4 +38,4 @@ The module's primary goal is to provide a comprehensive overview of changes not 
 
 ## Conclusion
 
-The **G2P Registry: Audit Post** module enhances data transparency and traceability within OpenSPP by extending audit logging to encompass related records. This functionality provides valuable insights into how modifications propagate through the system, facilitating better data management and analysis. This is particularly beneficial in complex data structures where understanding the impact of changes across related records is crucial. 
+The **OpenSPP Registry: Audit Post** module enhances data transparency and traceability within OpenSPP by extending audit logging to encompass related records. This functionality provides valuable insights into how modifications propagate through the system, facilitating better data management and analysis. This is particularly beneficial in complex data structures where understanding the impact of changes across related records is crucial. 

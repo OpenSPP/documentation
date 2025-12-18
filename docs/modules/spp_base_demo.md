@@ -17,8 +17,8 @@ The primary purpose of the **[spp_base_demo](spp_base_demo)** module is to:
 
 ## Module Dependencies and Integration
 
-* **[g2p_registry_base](g2p_registry_base)** (G2P Registry: Base):  Utilizes the base registry module to populate the system with sample registrant data, including individuals and potentially groups.
-* **[g2p_programs](g2p_programs)** (G2P Programs):  Leverages the programs module to create demo programs, define eligibility criteria, and potentially simulate program cycles and beneficiary enrollment.
+* **[spp_registry](spp_registry)** (OpenSPP Registry):  Utilizes the base registry module to populate the system with sample registrant data, including individuals and potentially groups.
+* **[spp_programs](spp_programs)** (OpenSPP Programs):  Leverages the programs module to create demo programs, define eligibility criteria, and potentially simulate program cycles and beneficiary enrollment.
 * **[product](product)** (Products): Utilizes the product module to create sample products, potentially representing goods or services distributed through social protection programs. 
 * **[stock](stock)** (Inventory):  May potentially integrate with the inventory module to manage and track the stock levels of goods related to program benefits.
 

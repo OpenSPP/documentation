@@ -15,10 +15,10 @@ This guide provides a structured approach for implementing and customising the c
 
 ## Odoo Setup from Docker using doodba
 
-- Existence of openg2p_program folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- Availability of modules: g2p_programs.
-- Existence of openg2p_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
-- vailability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership, g2p_bank.
+- Existence of openspp_programs folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
+- Availability of modules: spp_programs.
+- Existence of openspp_registry folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
+- Availability of modules: spp_registry, spp_banking.
 - Existence of queue folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
 - Availability of modules: queue_job
 - Existence of web folder in odoo/custom/src. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, notify OpenSPP docker admins to add the missing repo to repos.yaml and addons.yaml.
@@ -26,10 +26,12 @@ This guide provides a structured approach for implementing and customising the c
 
 ## Odoo Setup from source
 
-- Existence of openg2p-program folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from [here](https://github.com/OpenG2P/openg2p-program.git) into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.
-- Availability of modules: g2p_programs.
-- Existence of openg2p-registry folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0-1.0-develop, and update the branch. If absent, clone the repository from [here](https://github.com/OpenG2P/openg2p-registry.git) into odoo/custom, navigate to the openg2p-program folder, and switch to the specified branch.
-- Availability of modules: g2p_registry_base, g2p_registry_individual, g2p_registry_group, g2p_registry_membership, g2p_bank.
+```{note}
+These instructions are outdated. For OpenSPP V2 on Odoo 19, please refer to the [Development Setup Guide](development_setup.md).
+```
+
+- Clone the openspp-modules repository from [GitHub](https://github.com/OpenSPP/openspp-modules).
+- Availability of modules: spp_programs, spp_registry, spp_banking.
 - Existence of queue folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from [here](https://github.com/OCA/queue.git) into odoo/custom, navigate to the queue, and switch to the specified branch.
 - Availability of modules: queue_job.
 - Existence of web folder in odoo/custom. If present, navigate to this folder, switch to branch 15.0, and update the branch. If absent, clone the repository from [here](https://github.com/OCA/web.git) into odoo/custom, navigate to the web, and switch to the specified branch.
@@ -40,7 +42,7 @@ This guide provides a structured approach for implementing and customising the c
 - Log into OpenSPP with administrative rights.
 - Access the “Apps” menu from the dashboard to manage OpenSPP modules.
 - Choose “Update Apps List” to refresh the module list.
-- Search for “OpenG2P Programs” and initiate installation. This process will also install associated modules: G2P Registry: Groups, G2P Registry: Individual, G2P Registry: Base.
+- Search for “OpenOpenSPP Programs” and initiate installation. This process will also install associated modules: OpenSPP Registrys, OpenSPP Registry, OpenSPP Registry.
 
 ## Utilising the Cycle Module
 
@@ -63,7 +65,7 @@ This guide provides a structured approach for implementing and customising the c
 
 ## Customise Cycle
 
-- To introduce new fields or functions in a new module, develop a Python file extending the model “g2p.cycle” and integrate this file into `models/__init__.py`.
+- To introduce new fields or functions in a new module, develop a Python file extending the model “spp.cycle” and integrate this file into `models/__init__.py`.
 - Upgrade the module incorporating the new Python file.
 - To integrate new fields into the UI, developers should familiarise themselves with view, view inheritance and the use of xpath in Odoo.
 

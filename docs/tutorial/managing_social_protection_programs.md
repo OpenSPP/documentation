@@ -7,8 +7,6 @@ openspp:
 
 `Programs` and `Cycles` are at the heart of OpenSPP.
 
-![OpenSPP Overview](https://github.com/newlogic/newlogic-g2p/raw/main/newlogic_g2p_overview.png)
-
 ## Concepts
 
 ### Programs

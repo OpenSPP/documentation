@@ -33,15 +33,15 @@ The **OpenSPP API Records** module aims to:
     * Integrates with the **Product** module to provide API access to product information, particularly relevant for programs involving the distribution of in-kind benefits. 
     * API endpoints could enable retrieving product lists, details, stock levels, and other relevant data for managing in-kind entitlements. 
 
-5. **[g2p_programs](g2p_programs)**: 
-    * Leverages the **[g2p_programs](g2p_programs)** module to access and expose data related to program entitlements, payments, and beneficiary participation.
+5. **[spp_programs](spp_programs)**: 
+    * Leverages the **[spp_programs](spp_programs)** module to access and expose data related to program entitlements, payments, and beneficiary participation.
     * API endpoints might facilitate the retrieval of entitlement details, payment histories, program participation status, and other program-related records.
 
 6. **Contacts (contacts)**:
     * Utilizes the **Contacts** module to access and potentially expose data related to individuals and organizations involved in OpenSPP, such as program managers, service point operators, and potentially registrant contact information (with appropriate privacy considerations). 
 
-7. **[g2p_registry_base](g2p_registry_base)**: 
-    * Accesses data from the **[g2p_registry_base](g2p_registry_base)** module to potentially expose limited and anonymized registrant information through the API, strictly adhering to privacy and data protection regulations. 
+7. **[spp_registry](spp_registry)**: 
+    * Accesses data from the **[spp_registry](spp_registry)** module to potentially expose limited and anonymized registrant information through the API, strictly adhering to privacy and data protection regulations. 
     * API endpoints in this area would require robust authentication and authorization mechanisms to control access and prevent unauthorized data exposure.
 
 ## Additional Functionality

@@ -27,29 +27,29 @@ This module streamlines the process of importing and synchronizing registrant da
 
 ## Dependencies and Integration
 
-## 1. G2P Programs ([g2p_programs](g2p_programs.md))
+## 1. OpenSPP Programs ([spp_programs](spp_programs.md))
 
-* **Integration:** Utilizes program definitions and eligibility criteria from [g2p_programs](g2p_programs.md) to potentially assign imported registrants to relevant programs based on their DCI attributes. 
+* **Integration:** Utilizes program definitions and eligibility criteria from [spp_programs](spp_programs.md) to potentially assign imported registrants to relevant programs based on their DCI attributes. 
 
 ## 2. SPP Programs ([spp_programs](spp_programs.md))
 
-* **Integration:** Similar to [g2p_programs](g2p_programs.md), this module might utilize in-kind entitlement logic from [spp_programs](spp_programs.md) if the imported DCI data includes information relevant to in-kind benefits.
+* **Integration:** Similar to [spp_programs](spp_programs.md), this module might utilize in-kind entitlement logic from [spp_programs](spp_programs.md) if the imported DCI data includes information relevant to in-kind benefits.
 
-## 3. G2P Registry: Base ([g2p_registry_base](g2p_registry_base.md))
+## 3. OpenSPP Registry ([spp_registry](spp_registry.md))
 
-* **Integration:**  Relies heavily on [g2p_registry_base](g2p_registry_base.md) for core registry functionality:
-    *   **Registrant Creation:** Creates new registrant records using the base model provided by [g2p_registry_base](g2p_registry_base.md).
-    *   **ID Management:** Leverages `g2p.reg.id` from [g2p_registry_base](g2p_registry_base.md) to store and manage DCI-provided identifiers.
-    *   **Relationships:**  Potentially utilizes the `g2p.reg.rel` model to establish relationships between imported registrants based on DCI data. 
+* **Integration:**  Relies heavily on [spp_registry](spp_registry.md) for core registry functionality:
+    *   **Registrant Creation:** Creates new registrant records using the base model provided by [spp_registry](spp_registry.md).
+    *   **ID Management:** Leverages `spp.reg.id` from [spp_registry](spp_registry.md) to store and manage DCI-provided identifiers.
+    *   **Relationships:**  Potentially utilizes the `spp.reg.rel` model to establish relationships between imported registrants based on DCI data. 
 
 ## 4. SPP Registry Data Source ([spp_registry_data_source](spp_registry_data_source.md))
 
 * **Integration:** Depends on [spp_registry_data_source](spp_registry_data_source.md) for:
     * **Data Source Configuration:** Retrieves connection details and API specifications of the external DCI registry from data source configurations defined in this module. 
 
-## 5. G2P Registry: Individual ([g2p_registry_individual](g2p_registry_individual.md))
+## 5. OpenSPP Registry ([spp_registry](spp_registry.md))
 
-* **Integration:**  Extends the individual registrant model (`res.partner`) from [g2p_registry_individual](g2p_registry_individual.md):
+* **Integration:**  Extends the individual registrant model (`res.partner`) from [spp_registry](spp_registry.md):
     *   **Data Population:** Populates individual-specific fields within the OpenSPP registry using mapped DCI data (e.g., name, birthdate, gender). 
 
 ## Additional Functionality

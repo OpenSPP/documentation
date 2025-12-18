@@ -7,7 +7,7 @@
 
 ## Overview
 
-The **OpenSPP: Land Record** module extends OpenSPP's capabilities to manage and visualize land records. Building upon the [G2P Registry: Base](G2P Registry: Base) and [OpenSPP Base GIS](G2P Registry: Base](OpenSPP Base GIS](G2P Registry: Base) and [OpenSPP Base GIS) modules, it provides a framework for recording land parcels, ownership details, lease agreements, and visualizing these records geospatially. 
+The **OpenSPP: Land Record** module extends OpenSPP's capabilities to manage and visualize land records. Building upon the [OpenSPP Registry](OpenSPP Registry) and [OpenSPP Base GIS](OpenSPP Registry](OpenSPP Base GIS](OpenSPP Registry) and [OpenSPP Base GIS) modules, it provides a framework for recording land parcels, ownership details, lease agreements, and visualizing these records geospatially. 
 
 ## Purpose
 
@@ -28,10 +28,10 @@ This module is designed to:
     * **Parcel Details:** Records the parcel's name/ID, acreage, coordinates (point and polygon), and land use type.
     * **Ownership and Lease:**  Links to owner and lessee records (using `res.partner`), along with lease start and end dates. 
 
-2. **Integration with [G2P Registry Base](G2P Registry Base):**  
+2. **Integration with [OpenSPP Registry Base](OpenSPP Registry Base):**  
 
-    * Leverages the `res.partner` model from [G2P Registry Base](G2P Registry Base) to link land records with existing farms, owners, and lessees.
-    * Benefits from the robust identification, relationship management, and tagging features provided by [G2P Registry Base](G2P Registry Base). 
+    * Leverages the `res.partner` model from [OpenSPP Registry Base](OpenSPP Registry Base) to link land records with existing farms, owners, and lessees.
+    * Benefits from the robust identification, relationship management, and tagging features provided by [OpenSPP Registry Base](OpenSPP Registry Base). 
 
 3. **Geospatial Visualization:**
 

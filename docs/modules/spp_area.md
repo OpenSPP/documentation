@@ -17,11 +17,11 @@ The **OpenSPP Area** module is designed to:
 
 ## Dependencies and Integration
 
-1. **G2P Registry: Base ([g2p_registry_base](g2p_registry_base))**:  The Area module utilizes the **Districts (g2p.district)** feature from the **G2P Registry: Base** module as a foundation. It extends this concept to create a more comprehensive and flexible system for managing area data.
+1. **OpenSPP Registry ([spp_registry](spp_registry))**:  The Area module utilizes the **Districts (spp.area)** feature from the **OpenSPP Registry** module as a foundation. It extends this concept to create a more comprehensive and flexible system for managing area data.
 
-2. **G2P Registry: Individual ([g2p_registry_individual](g2p_registry_individual))**: Integrates with the Individual module by adding a dedicated "Area" field to the individual registrant form. This field allows users to assign a specific area to each individual, linking registrant data to geographical locations.
+2. **OpenSPP Registry ([spp_registry](spp_registry))**: Integrates with the Individual module by adding a dedicated "Area" field to the individual registrant form. This field allows users to assign a specific area to each individual, linking registrant data to geographical locations.
 
-3. **G2P Registry: Group ([g2p_registry_group](g2p_registry_group))**:  Similar to the Individual module integration, this module incorporates an "Area" field into the group registrant form, enabling the association of groups with specific areas.
+3. **OpenSPP Registry ([spp_registry](spp_registry))**:  Similar to the Individual module integration, this module incorporates an "Area" field into the group registrant form, enabling the association of groups with specific areas.
 
 4. **Queue Job ([queue_job](queue_job))**:  Leverages the **Queue Job** module for background processing of large data imports, improving performance and user experience. This is particularly beneficial when importing extensive area hierarchies from external sources. 
 

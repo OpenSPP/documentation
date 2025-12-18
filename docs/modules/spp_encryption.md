@@ -5,7 +5,7 @@
 **Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
-The [spp_encryption](spp_encryption) module extends the encryption capabilities of OpenSPP by adding support for the [JWCrypto](https://jwcrypto.readthedocs.io/en/latest/) library. This module builds upon the foundation provided by the [g2p_encryption](g2p-encryption) and offers a concrete implementation of an encryption provider utilizing JWCrypto's functionalities.
+The [spp_encryption](spp_encryption) module extends the encryption capabilities of OpenSPP by adding support for the [JWCrypto](https://jwcrypto.readthedocs.io/en/latest/) library. This module builds upon the foundation provided by the [spp_encryption](spp_encryption) and offers a concrete implementation of an encryption provider utilizing JWCrypto's functionalities.
 
 ## Purpose and Functionality
 
@@ -18,13 +18,13 @@ The primary purpose of this module is to enable secure encryption, decryption, s
 
 ## Integration and Usage
 
-The [spp_encryption](spp_encryption) module extends the `g2p.encryption.provider` model introduced by the [g2p_encryption](g2p-encryption). It adds a new encryption provider type, "JWCrypto," which users can select and configure through the Odoo interface. 
+The [spp_encryption](spp_encryption) module extends the `spp.encryption.provider` model introduced by the [spp_encryption](spp_encryption). It adds a new encryption provider type, "JWCrypto," which users can select and configure through the Odoo interface. 
 
 Here's how this module integrates with other OpenSPP components:
 
 1. **Dependency:** Modules requiring advanced encryption features, such as those dealing with sensitive beneficiary data or financial transactions, would declare a dependency on the [spp_encryption](spp_encryption) module.
 2. **Configuration:** Administrators would configure a new encryption provider of type "JWCrypto" within the OpenSPP settings, providing the necessary JWCrypto key information.
-3. **Utilization:** Modules requiring encryption can then utilize the configured JWCrypto provider through the standard encryption methods provided by the `g2p.encryption.provider` model.
+3. **Utilization:** Modules requiring encryption can then utilize the configured JWCrypto provider through the standard encryption methods provided by the `spp.encryption.provider` model.
 
 ## Example Usage Scenario
 

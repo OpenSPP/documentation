@@ -7,13 +7,13 @@
 
 ## Overview
 
-The OpenSPP Consent module enhances the functionality of the [g2p_registry_individual](g2p_registry_individual) and [g2p_registry_group](g2p_registry_group) modules by providing a framework for managing and tracking consents provided by registrants (both individuals and groups). This module is essential for ensuring compliance with data privacy regulations and maintaining ethical data management practices within social protection programs.
+The OpenSPP Consent module enhances the functionality of the [spp_registry](spp_registry) and [spp_registry](spp_registry) modules by providing a framework for managing and tracking consents provided by registrants (both individuals and groups). This module is essential for ensuring compliance with data privacy regulations and maintaining ethical data management practices within social protection programs.
 
 ## Features
 
 * **Consent Recording:** Allows authorized users to record consents obtained from registrants, specifying the type of consent, the signatory (for groups), and the expiry date.
 * **Consent Management:** Provides a centralized repository for storing and managing all recorded consents, making it easy to track consent status and expiry dates.
-* **Consent Integration:** Seamlessly integrates with the registrant profiles in the [g2p_registry_individual](g2p_registry_individual) and [g2p_registry_group](g2p_registry_group) modules, providing direct access to consent information from the registrant's record.
+* **Consent Integration:** Seamlessly integrates with the registrant profiles in the [spp_registry](spp_registry) and [spp_registry](spp_registry) modules, providing direct access to consent information from the registrant's record.
 * **Expired Consent Tracking:** Includes a dedicated view for monitoring expired consents, enabling proactive management of consent renewals and ensuring continued compliance.
 
 ## Functionality and Integration

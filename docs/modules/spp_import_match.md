@@ -19,7 +19,7 @@ The primary goals of the [spp_import_match](spp_import_match) module are:
 
 1. **[queue_job](queue_job):** This module leverages the [queue_job](queue_job](queue_job](queue_job):** This module leverages the [queue_job) module to handle asynchronous import processes. This enables the processing of large datasets in the background, preventing system slowdowns.
 
-2. **[g2p_registry_base](g2p_registry_base):**  The [spp_import_match](spp_import_match) module extends the functionality of the [g2p_registry_base](g2p_registry_base](g2p_registry_base](g2p_registry_base):**  The [spp_import_match](spp_import_match) module extends the functionality of the [g2p_registry_base) module. It specifically interacts with the models and functionalities related to managing registrant data and relationships.
+2. **[spp_registry](spp_registry):**  The [spp_import_match](spp_import_match) module extends the functionality of the [spp_registry](spp_registry](spp_registry](spp_registry):**  The [spp_import_match](spp_import_match) module extends the functionality of the [spp_registry) module. It specifically interacts with the models and functionalities related to managing registrant data and relationships.
 
 3. **[base_import](base_import):** The core import functionality is inherited and extended from Odoo's built-in [base_import](base_import) module. [spp_import_match](base_import](spp_import_match](base_import):** The core import functionality is inherited and extended from Odoo's built-in [base_import](base_import) module. [spp_import_match) enhances this with capabilities for record matching during the import process.
 

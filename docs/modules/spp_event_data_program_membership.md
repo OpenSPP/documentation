@@ -5,20 +5,20 @@
 **Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
-This module enhances the functionality of OpenSPP by integrating the **Event Data** module ([spp_event_data](spp_event_data)) with the **G2P Programs** module ([g2p_programs](spp_event_data](g2p_programs](spp_event_data)) with the **G2P Programs** module ([g2p_programs)). It allows users to record and track program membership-related events within the OpenSPP system.
+This module enhances the functionality of OpenSPP by integrating the **Event Data** module ([spp_event_data](spp_event_data)) with the **OpenSPP Programs** module ([spp_programs](spp_event_data](spp_programs](spp_event_data)) with the **OpenSPP Programs** module ([spp_programs)). It allows users to record and track program membership-related events within the OpenSPP system.
 
 ## Purpose
 
 The **spp_event_data_program_membership** module serves to:
 
 * **Record Program Membership Events:**  Log specific events related to program membership, such as enrollment, suspension, exit, and changes in eligibility status.
-* **Link Events to Program Memberships:** Associate these events with the corresponding program membership records in the [g2p_programs](g2p_programs) module.
+* **Link Events to Program Memberships:** Associate these events with the corresponding program membership records in the [spp_programs](spp_programs) module.
 * **Provide an Event History:** Offer a comprehensive history of events associated with each program membership, facilitating tracking and auditing.
 
 ## Module Integration
 
 1. **[spp_event_data](spp_event_data):** This module leverages the event data framework provided by the [spp_event_data](spp_event_data](spp_event_data](spp_event_data):** This module leverages the event data framework provided by the [spp_event_data) module to record and manage event information.
-2. **[g2p_programs](g2p_programs):**  It integrates directly with the [g2p_programs](g2p_programs](g2p_programs](g2p_programs):**  It integrates directly with the [g2p_programs) module, linking event data to the relevant program membership records (`g2p.program_membership` model). 
+2. **[spp_programs](spp_programs):**  It integrates directly with the [spp_programs](spp_programs](spp_programs](spp_programs):**  It integrates directly with the [spp_programs) module, linking event data to the relevant program membership records (`spp.program_membership` model). 
 
 ## Additional Functionality
 

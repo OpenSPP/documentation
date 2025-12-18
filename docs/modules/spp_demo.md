@@ -18,16 +18,16 @@ The `spp_demo` module serves as a demonstration and testing ground for the OpenS
 The `spp_demo` module relies heavily on the following OpenSPP modules:
 
 * [theme_openspp_muk](theme_openspp_muk)  Applies a specific visual theme to the OpenSPP user interface for demonstration purposes.
-* [g2p_registry_membership](g2p_registry_membership) (G2P Registry: Membership): Utilizes this module to establish and demonstrate relationships between individual and group registrants.
+* [spp_registry](spp_registry) (OpenSPP Registry): Utilizes this module to establish and demonstrate relationships between individual and group registrants.
 * [spp_custom_field](spp_custom_field) (OpenSPP Custom Field): Leverages this module to create and showcase custom fields added to registrant profiles, illustrating the flexibility of OpenSPP in capturing program-specific data.
 * [queue_job](queue_job) (Queue Job):  Employs the Queue Job module to handle background tasks, demonstrating asynchronous processing for operations like data generation and potentially eligibility checks.
-* [g2p_registry_individual](g2p_registry_individual) (G2P Registry: Individual):  Relies on this module to populate the system with sample individual registrant data.
+* [spp_registry](spp_registry) (OpenSPP Registry):  Relies on this module to populate the system with sample individual registrant data.
 * [spp_area](spp_area) (OpenSPP Area):  Integrates with this module to demonstrate the association of registrants and programs with geographical areas.
 * [spp_custom_field_recompute_daily](spp_custom_field_recompute_daily) (OpenSPP Custom Field: Recompute Daily):  May utilize this module to showcase the automatic daily recomputation of specific custom fields, highlighting OpenSPP's ability to maintain up-to-date data. 
-* [g2p_registry_base](g2p_registry_base) (G2P Registry: Base):  Builds upon the base registry module for core registrant management functionalities.
-* [g2p_registry_group](g2p_registry_group) (G2P Registry: Groups): Leverages this module to create and manage sample groups of registrants.
+* [spp_registry](spp_registry) (OpenSPP Registry):  Builds upon the base registry module for core registrant management functionalities.
+* [spp_registry](spp_registry) (OpenSPP Registrys): Leverages this module to create and manage sample groups of registrants.
 * [spp_base_demo](spp_base_demo): This module provides basic demonstration data for the OpenSPP system, including users, gender options and products.
-* [g2p_programs](g2p_programs) (G2P Programs):  Utilizes this module extensively to define and demonstrate social protection programs, eligibility criteria, program cycles, and potentially beneficiary enrollment and entitlement processes. 
+* [spp_programs](spp_programs) (OpenSPP Programs):  Utilizes this module extensively to define and demonstrate social protection programs, eligibility criteria, program cycles, and potentially beneficiary enrollment and entitlement processes. 
 
 ## Additional Functionality 
 

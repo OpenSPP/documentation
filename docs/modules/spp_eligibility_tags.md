@@ -17,11 +17,11 @@ The **OpenSPP Tag Based Eligibility Manager** module allows program administrato
 
 ## Module Dependencies and Integration
 
-1. **G2P Registry: Base ([g2p_registry_base](g2p_registry_base)(./g2p_registry_base.md))**:
+1. **OpenSPP Registry ([spp_registry](spp_registry)(./spp_registry.md))**:
     * Utilizes the tagging functionality of the base registry module to define eligibility rules based on registrant tags.
     * Leverages the geographical information associated with registrants, specifically their assigned areas, to apply area-based eligibility criteria.
 
-2. **G2P Programs ([g2p_programs](g2p_programs)(./g2p_programs.md))**:
+2. **OpenSPP Programs ([spp_programs](spp_programs)(./spp_programs.md))**:
     * Extends the core program management module by introducing a new type of eligibility manager, the **Tag Based Eligibility Manager**.
     * Integrates seamlessly with existing program workflows, allowing administrators to select and configure the **Tag Based Eligibility Manager** for specific programs.
 
@@ -31,8 +31,8 @@ The **OpenSPP Tag Based Eligibility Manager** module allows program administrato
 
 ## Additional Functionality
 
-* **Tag Based Eligibility Manager Model (g2p.program_membership.manager.tags):** 
-    * This model extends the base **Eligibility Manager** model within G2P Programs, introducing fields for selecting tags and areas to define eligibility criteria. 
+* **Tag Based Eligibility Manager Model (spp.program_membership.manager.tags):** 
+    * This model extends the base **Eligibility Manager** model within OpenSPP Programs, introducing fields for selecting tags and areas to define eligibility criteria. 
     * Provides a user-friendly interface for administrators to configure tag-based eligibility rules, with clear visualization of the selected criteria.
 
 * **Automated Eligibility Verification:**

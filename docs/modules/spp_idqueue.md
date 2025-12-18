@@ -18,7 +18,7 @@ The **OpenSPP ID Queue** module is designed to:
 
 ## Dependencies and Integration
 
-1. **[g2p_registry_base](g2p_registry_base)** (G2P Registry: Base):  The ID Queue module relies on the **Registrant (res.partner)** model from the **G2P Registry: Base** module to identify and link ID card requests to specific registrants. 
+1. **[spp_registry](spp_registry)** (OpenSPP Registry):  The ID Queue module relies on the **Registrant (res.partner)** model from the **OpenSPP Registry** module to identify and link ID card requests to specific registrants. 
 
 2. **[spp_idpass](spp_idpass)** (OpenSPP ID PASS):  It integrates tightly with the **OpenSPP ID PASS** module, utilizing the predefined ID card templates and the ID generation mechanism.
 
@@ -26,7 +26,7 @@ The **OpenSPP ID Queue** module is designed to:
 
 4. **[spp_area](spp_area)** (OpenSPP Area):  Integrates with the **OpenSPP Area** module to associate ID card requests with specific geographical areas, enabling location-based reporting and distribution management.
 
-5. **[g2p_registry_group](g2p_registry_group)** (G2P Registry: Group): Incorporates functionality from the **G2P Registry: Group** module to support ID card requests and batch printing for groups of registrants.
+5. **[spp_registry](spp_registry)** (OpenSPP Registry): Incorporates functionality from the **OpenSPP Registry** module to support ID card requests and batch printing for groups of registrants.
 
 ## Additional Functionality
 

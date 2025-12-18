@@ -19,20 +19,20 @@ Building upon its dependencies, this module focuses on enhancing program managem
 * **[OpenSPP Programs](spp_programs)**:  This module defines the core structure and management of social protection programs, including program cycles, eligibility criteria, and entitlement management. The [spp_programs_sp](spp_programs_sp) module extends this functionality to incorporate service point information into the entitlement generation and distribution process.
 * **[OpenSPP Program Entitlement (Cash)](spp_entitlement_cash)**: This module specializes in managing cash-based entitlements. The [spp_programs_sp](spp_programs_sp) module extends this to optionally link cash entitlements with service points, potentially for cash pickup or other service-related interactions. 
 * **[OpenSPP In-Kind Entitlement](spp_entitlement_in_kind)**: This module manages the distribution of in-kind benefits. The [spp_programs_sp](spp_programs_sp) module enhances this by associating in-kind entitlements with specific service points for beneficiary redemption.
-* **[G2P Programs](g2p_programs)**:  This module provides the foundational program management features upon which [OpenSPP Programs](OpenSPP Programs) builds. The [spp_programs_sp](spp_programs_sp) module inherits this foundation, extending it with service point integration. 
+* **[OpenSPP Programs](spp_programs)**:  This module provides the foundational program management features upon which [OpenSPP Programs](OpenSPP Programs) builds. The [spp_programs_sp](spp_programs_sp) module inherits this foundation, extending it with service point integration. 
 
 ## Key Features
 
 1. **Program Configuration:**
-    * Extends the `g2p.program` model from [G2P Programs](G2P Programs) to include a configuration option (`store_sp_in_entitlements`) that determines whether service points should be stored with entitlements.
+    * Extends the `spp.program` model from [OpenSPP Programs](OpenSPP Programs) to include a configuration option (`store_sp_in_entitlements`) that determines whether service points should be stored with entitlements.
     * This allows program administrators to enable or disable service point integration based on the specific needs of the program.
 
 2. **Entitlement Manager Enhancement:**
-    * Modifies the entitlement manager models (`g2p.program.entitlement.manager.default`, `g2p.program.entitlement.manager.cash`, `g2p.program.entitlement.manager.inkind`) to include service point information when generating entitlements.
+    * Modifies the entitlement manager models (`spp.program.entitlement.manager.default`, `spp.program.entitlement.manager.cash`, `spp.program.entitlement.manager.inkind`) to include service point information when generating entitlements.
     * If enabled in the program configuration, the entitlement manager will automatically associate the beneficiary's designated service points with their entitlement records. 
 
 3. **Entitlement Model Extension:**
-    * Extends the `g2p.entitlement` and `g2p.entitlement.inkind` models from [G2P Programs](G2P Programs) and [OpenSPP In-Kind Entitlement](OpenSPP In-Kind Entitlement) respectively, adding a field (`service_point_ids`) to store the service points linked to the entitlement. 
+    * Extends the `spp.entitlement` and `spp.entitlement.inkind` models from [OpenSPP Programs](OpenSPP Programs) and [OpenSPP In-Kind Entitlement](OpenSPP In-Kind Entitlement) respectively, adding a field (`service_point_ids`) to store the service points linked to the entitlement. 
 
 4. **User Interface Integration:**
     * Modifies the program configuration view to include the `store_sp_in_entitlements` option.

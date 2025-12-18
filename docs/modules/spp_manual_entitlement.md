@@ -21,11 +21,11 @@ The **OpenSPP Manual Entitlement** module aims to:
 
 1. **Queue Job** ([queue_job](queue_job)): Utilizes the Queue Job module for asynchronous processing of entitlement creation, preventing performance issues when handling large numbers of beneficiaries.
 
-2. **G2P Registry: Base** ([g2p_registry_base](g2p_registry_base)):  Depends on the G2P Registry: Base module to access and manage registrant data, ensuring that entitlements are linked to the correct beneficiary profiles.
+2. **OpenSPP Registry** ([spp_registry](spp_registry)):  Depends on the OpenSPP Registry module to access and manage registrant data, ensuring that entitlements are linked to the correct beneficiary profiles.
 
 3. **OpenSPP Registrant Import** ([spp_registrant_import](spp_registrant_import)): Integrates with the OpenSPP Registrant Import module to potentially streamline the process of importing beneficiary lists for manual entitlement creation. 
 
-4. **G2P Programs** ([g2p_programs](g2p_programs)):  Extends the G2P Programs module by adding functionality to create manual entitlements within the existing program and cycle structures.
+4. **OpenSPP Programs** ([spp_programs](spp_programs)):  Extends the OpenSPP Programs module by adding functionality to create manual entitlements within the existing program and cycle structures.
 
 ## Additional Functionality
 
@@ -36,7 +36,7 @@ The **OpenSPP Manual Entitlement** module aims to:
     * Includes a step to review and confirm entitlement details before creation.
 
 * **Manual Entitlement Manager:**
-    * Extends the `g2p.program.entitlement.manager.default` model to include a flag `is_manual_cash`.
+    * Extends the `spp.program.entitlement.manager.default` model to include a flag `is_manual_cash`.
     * Adds a method `manual_prepare_entitlements` to handle the creation of entitlements based on data provided through the wizard.
 
 * **Cycle View Extension:**

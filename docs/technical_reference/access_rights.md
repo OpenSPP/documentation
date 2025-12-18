@@ -79,7 +79,7 @@ Run the compliance checker from the OpenSPP modules repository root:
 
 ```bash
 # Check a single module
-python -m scripts.compliance.checker spp_registry_base
+python -m scripts.compliance.checker spp_registry
 
 # Check all modules that declare compliance.yaml
 python -m scripts.compliance.checker --all
@@ -90,7 +90,7 @@ python -m scripts.compliance.checker --all
 The test generator can create runtime tests from `security/compliance.yaml` to validate behavior in an Odoo test environment:
 
 ```bash
-python -m scripts.compliance.test_generator spp_registry_base
+python -m scripts.compliance.test_generator spp_registry
 ```
 
 ### Quick security audit script

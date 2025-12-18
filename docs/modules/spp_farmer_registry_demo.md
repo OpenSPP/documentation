@@ -15,17 +15,17 @@ This module aims to:
 
 * Populate the farmer registry with sample data, including farmers, groups, farm details, agricultural activities, and assets.
 * Provide a starting point for users to explore the farmer registry and its various features.
-* Demonstrate how different modules, such as [g2p_registry_membership](g2p_registry_membership), [queue_job](queue_job), and [spp_base_demo](spp_base_demo), integrate to create a comprehensive farmer registry system.
+* Demonstrate how different modules, such as [spp_registry](spp_registry), [queue_job](queue_job), and [spp_base_demo](spp_base_demo), integrate to create a comprehensive farmer registry system.
 
 ## Module Dependencies and Integration
 
 * **[spp_farmer_registry_base](spp_farmer_registry_base):** This module depends heavily on [spp_farmer_registry_base](spp_farmer_registry_base), inheriting its models and views to extend them with demo data generation capabilities.
-* **[g2p_registry_membership](g2p_registry_membership):** Leverages [g2p_registry_membership](g2p_registry_membership) for creating group memberships between individual farmers and farm groups.
+* **[spp_registry](spp_registry):** Leverages [spp_registry](spp_registry) for creating group memberships between individual farmers and farm groups.
 * **[queue_job](queue_job):** Uses [queue_job](queue_job) to handle the generation of large datasets in the background, improving performance and user experience.
-* **[g2p_registry_base](g2p_registry_base):** Depends on [g2p_registry_base](g2p_registry_base) for the basic registrant models and functionalities.
-* **[g2p_registry_group](g2p_registry_group):** Uses [g2p_registry_group](g2p_registry_group) for creating and managing farm groups as registrants.
+* **[spp_registry](spp_registry):** Depends on [spp_registry](spp_registry) for the basic registrant models and functionalities.
+* **[spp_registry](spp_registry):** Uses [spp_registry](spp_registry) for creating and managing farm groups as registrants.
 * **[spp_base_demo](spp_base_demo):** Inherits from [spp_base_demo](spp_base_demo) to include basic demo data, such as genders.
-* **[g2p_registry_individual](g2p_registry_individual):** Utilizes [g2p_registry_individual](g2p_registry_individual) for creating individual farmer registrants.
+* **[spp_registry](spp_registry):** Utilizes [spp_registry](spp_registry) for creating individual farmer registrants.
 
 ## Additional Functionality
 

@@ -1,12 +1,12 @@
 ***************************************
 Entitlement Manager
 ***************************************
-.. currentmodule:: odoo.addons.g2p_programs.models.managers.entitlement_manager
+.. currentmodule:: odoo.addons.spp_programs.models.managers.entitlement_manager
 
 The entitlement manager determines what a :term:`beneficiary<beneficiary>` is entitled to for a given cycle.
 
 
-:mod:`odoo.addons.g2p_programs.models.managers.entitlement_manager` provides the class  :class:`BaseEntitlementManager` define
+:mod:`odoo.addons.spp_programs.models.managers.entitlement_manager` provides the class  :class:`BaseEntitlementManager` define
 the interface for this manager. :class:`DefaultCashEntitlementManager` is the default implementation of this class
 for cash distribution.
 

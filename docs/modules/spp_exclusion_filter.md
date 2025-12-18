@@ -21,12 +21,12 @@ The **OpenSPP Exclusion Filter** module aims to:
     * Integrates with the OpenSPP program creation wizard, adding a dedicated step for configuring exclusion filters.
     * Leverages program data, such as target criteria and program objectives, to guide the selection of relevant exclusion filters. 
 
-2. **[g2p_registry_base](g2p_registry_base)**:
+2. **[spp_registry](spp_registry)**:
     * Utilizes registrant data, including demographics, tags, and relationships, to apply exclusion filters.
     * Accesses the registry to identify and flag registrants who meet the specified exclusion criteria. 
 
-3. **[g2p_programs](g2p_programs)**:
-    * Extends the functionality of OpenG2P's program creation process.
+3. **[spp_programs](spp_programs)**:
+    * Extends the functionality of OpenSPP's program creation process.
     * Ensures compatibility with existing program management features and workflows.
 
 ## Additional Functionality

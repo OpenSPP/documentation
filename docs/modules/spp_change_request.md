@@ -22,11 +22,11 @@ The module aims to:
 
 The [spp_change_request](spp_change_request) module leverages and extends the functionality of several other OpenSPP modules:
 
-1. **G2P Registry Modules**: It heavily relies on the G2P Registry modules for accessing and modifying registrant data:
-    * **G2P Registry: Base ([g2p_registry_base](g2p_registry_base))**:  Inherits core registrant management features, including the `res.partner` model used to represent registrants.
-    * **G2P Registry: Individual ([g2p_registry_individual](g2p_registry_individual))**:  Integrates with the individual registrant model to handle change requests related to individual data.
-    * **G2P Registry: Group ([g2p_registry_group](g2p_registry_group))**:  Extends group registrant functionality to manage changes related to group information.
-    * **G2P Registry: Membership ([g2p_registry_membership](g2p_registry_membership))**:  Allows for change requests involving membership details, such as adding or removing members from groups.
+1. **OpenSPP Registry Modules**: It heavily relies on the OpenSPP Registry modules for accessing and modifying registrant data:
+    * **OpenSPP Registry ([spp_registry](spp_registry))**:  Inherits core registrant management features, including the `res.partner` model used to represent registrants.
+    * **OpenSPP Registry ([spp_registry](spp_registry))**:  Integrates with the individual registrant model to handle change requests related to individual data.
+    * **OpenSPP Registry ([spp_registry](spp_registry))**:  Extends group registrant functionality to manage changes related to group information.
+    * **OpenSPP Registry ([spp_registry](spp_registry))**:  Allows for change requests involving membership details, such as adding or removing members from groups.
 
 2. **OpenSPP Service Points ([spp_service_points](spp_service_points))**: Integrates with the Service Points module to enable the submission of change requests through designated service points.
 
@@ -51,7 +51,7 @@ The [spp_change_request](spp_change_request) module leverages and extends the fu
 
 * **Dynamic Form Generation**:  The module allows for defining different change request types, each associated with a specific form that captures the necessary data for that type of modification.
 * **Data Validation**: Implements validation rules to ensure the data entered in change request forms meet specific criteria, such as data type, format, or range, before submission for approval. 
-* **Automatic Data Update**:  Upon approval and application of a change request, the module automatically updates the corresponding registrant data in the relevant G2P Registry module, ensuring data consistency.
+* **Automatic Data Update**:  Upon approval and application of a change request, the module automatically updates the corresponding registrant data in the relevant OpenSPP Registry module, ensuring data consistency.
 
 ## User Interface and Experience
 

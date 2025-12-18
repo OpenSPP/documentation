@@ -5,7 +5,7 @@
 **Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
-This document outlines the functionality of the **OpenSPP Programs** module.  This module extends the **OpenG2P: Programs** functionality, introducing in-kind entitlement management alongside existing cash-based features.
+This document outlines the functionality of the **OpenSPP Programs** module.  This module extends the **OpenSPP Programs** functionality, introducing in-kind entitlement management alongside existing cash-based features.
 
 ## Purpose
 
@@ -13,13 +13,13 @@ The **OpenSPP Programs** module aims to:
 
 * **Manage In-Kind Entitlements**:  Introduce the concept of in-kind entitlements alongside cash entitlements, allowing programs to distribute goods and services.
 * **Integrate with Inventory**: Link in-kind entitlements to the Odoo Inventory module, enabling stock management, procurement, and tracking of distributed items.
-* **Enhance Existing Program Features**: Extend OpenG2P's program management with capabilities tailored for in-kind distributions.
+* **Enhance Existing Program Features**: Extend OpenSPP's program management with capabilities tailored for in-kind distributions.
 
 ## Module Dependencies and Integration
 
-1. **[g2p_registry_base](g2p_registry_base)** : Leverages the base registry for core registrant information and extends it by adding in-kind entitlement tracking to registrant profiles.
+1. **[spp_registry](spp_registry)** : Leverages the base registry for core registrant information and extends it by adding in-kind entitlement tracking to registrant profiles.
 
-2. **[g2p_programs](g2p_programs)**: 
+2. **[spp_programs](spp_programs)**: 
     * Builds upon the core program management features, including program creation, cycle management, and eligibility determination.
     * Extends program views to incorporate in-kind entitlement data and actions.
 
@@ -33,7 +33,7 @@ The **OpenSPP Programs** module aims to:
 
 ## Additional Functionality
 
-* **In-Kind Entitlement Model (g2p.entitlement.inkind)**: Introduces a new model specifically for managing in-kind entitlements, capturing data such as:
+* **In-Kind Entitlement Model (spp.entitlement.inkind)**: Introduces a new model specifically for managing in-kind entitlements, capturing data such as:
     * **Product**: The specific good or service being distributed.
     * **Quantity**: The number of units entitled to the beneficiary.
     * **Unit Price**: The value of each unit for accounting and reporting.
@@ -61,4 +61,4 @@ The **OpenSPP Programs** module aims to:
 
 ## Conclusion
 
-The **OpenSPP Programs** module significantly expands the OpenG2P platform's capabilities by incorporating in-kind entitlement management.  This integration with inventory management and the enhancements to existing program features make OpenSPP a comprehensive solution for managing a wider range of social protection and agricultural support programs. 
+The **OpenSPP Programs** module significantly expands the OpenSPP platform's capabilities by incorporating in-kind entitlement management.  This integration with inventory management and the enhancements to existing program features make OpenSPP a comprehensive solution for managing a wider range of social protection and agricultural support programs. 

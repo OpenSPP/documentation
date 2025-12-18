@@ -43,7 +43,7 @@
 | [OpenSPP Manual Entitlement](spp_manual_entitlement) | Provides a mechanism for manually creating entitlements for beneficiaries within specific program cycles in OpenSPP, offering flexibility for programs with unique eligibility criteria or situations not covered by automated rules. |
 | [OpenSPP Entitlement Basket](spp_entitlement_basket) | This module allows you to define baskets of goods and services that beneficiaries are entitled to receive, simplifying in-kind entitlement management within social protection programs. |
 | [OpenSPP Demo](spp_demo) | Provides demonstration data and functionalities for the OpenSPP system, showcasing its capabilities in managing social protection programs and registries with pre-populated data for exploration and testing. |
-| [OpenSPP Registry Group Hierarchy](spp_registry_group_hierarchy) | Introduces hierarchical relationships between groups, allowing for nested group structures within social protection programs and farmer registries. |
+| [OpenSPP Registry Group Hierarchy](spp_registry_hierarchy) | Introduces hierarchical relationships between groups, allowing for nested group structures within social protection programs and farmer registries. |
 | [OpenSPP Event Demo](spp_event_demo) | Provides demonstration data and functionalities for the OpenSPP event tracking system, showcasing practical applications through predefined event types, data models, views, and wizards. |
 | [OpenSPP API](spp_api) | Provides a framework for building and managing a RESTful API for the OpenSPP platform, including API definition, documentation, security, and logging. |
 | [OpenSPP Farmer Registry Dashboard](spp_farmer_registry_dashboard) | Provides interactive dashboards and reports for visualizing data from the OpenSPP Farmer Registry, offering insights into key metrics and trends related to registered farmers. |
@@ -66,7 +66,7 @@
 | [OpenSPP Registry: Scan ID Document](spp_scan_id_document) | Enables the scanning of physical ID documents directly into a registrant's profile, streamlining data entry and improving accuracy in the OpenSPP Registry. |
 | [OpenSPP Program ID](spp_program_id) | Generates and manages unique IDs for social protection programs, enhancing identification and integration within the OpenSPP platform. |
 | [OpenSPP OpenID VCI Group](spp_openid_vci_group) | Enables the issuance of Verifiable Credentials (VCs) for groups of registrants, integrating with group management to represent group identity and attributes. |
-| [G2P Registry: Audit Post](spp_audit_post) | Enables posting of audit log messages to related parent records, providing a centralized view of changes across interconnected data in social protection programs. |
+| [OpenSPP Registry: Audit Post](spp_audit_post) | Enables posting of audit log messages to related parent records, providing a centralized view of changes across interconnected data in social protection programs. |
 | [OpenSPP Exclusion Filter](spp_exclusion_filter) | This module enhances the OpenSPP program creation process by enabling the configuration and application of exclusion filters, ensuring that only eligible registrants are considered for enrollment in new programs. |
 | [OpenSPP Farmer Registry Base](spp_farmer_registry_base) | Base module for managing farmer registries, linking farmers to farms, land, and agricultural activities. |
 | [OpenSPP Irrigation](spp_irrigation) | Provides tools for managing and visualizing irrigation infrastructure within OpenSPP, enabling efficient tracking, planning, and analysis of irrigation systems and their impact. |
@@ -80,45 +80,3 @@
 | [OpenSPP Entitlement Transactions](spp_ent_trans) | This module records and manages transactions related to entitlement redemptions, providing a transparent history for both cash and in-kind benefits. |
 | [OpenSPP Cash Entitlement](spp_entitlement_cash) | Manage cash-based entitlements for beneficiaries within social protection programs, including defining calculation rules, automating disbursement, and tracking payments. |
 
-## G2P Modules
-
-| Module | Summary |
-| ------ | ------- |
-| [OpenG2P Entitlement: In-Kind](g2p_entitlement_in_kind) | No summary provided |
-| [G2P Registry: Rest API](g2p_registry_rest_api) | No summary provided |
-| [OpenG2P Program: Documents](g2p_program_documents) | No summary provided |
-| [OpenG2P Programs: Reimbursement](g2p_program_reimbursement) | No summary provided |
-| [OpenG2P Entitlement: Differential](g2p_entitlement_differential) | No summary provided |
-| [G2P Registry: Additional Info](g2p_registry_addl_info) | No summary provided |
-| [G2P OpenID VCI: Base](g2p_openid_vci) | No summary provided |
-| [G2P Encryption: Rest API](g2p_encryption_rest_api) | No summary provided |
-| [G2P: Proxy Means Test](g2p_proxy_means_test) | No summary provided |
-| [OpenG2P Program Payment (Payment Hub EE)](g2p_payment_phee) | No summary provided |
-| [OpenG2P Programs](g2p_programs) | No summary provided |
-| [G2P Registry: Encryption](g2p_registry_encryption) | No summary provided |
-| [G2P Connect Demo](g2p_connect_demo) | No summary provided |
-| [G2P OpenID VCI: Program Beneficiaries](g2p_openid_vci_programs) | No summary provided |
-| [OpenG2P Programs: Cycleless](g2p_program_cycleless) | No summary provided |
-| [G2P Programs: REST API](g2p_programs_rest_api) | No summary provided |
-| [G2P Encryption: Base](g2p_encryption) | No summary provided |
-| [G2P Program : Program Registrant Info Rest API](g2p_program_registrant_info_rest_api) | No summary provided |
-| [G2P Auth: OIDC - Reg ID](g2p_auth_id_oidc) | No summary provided |
-| [OpenG2P Entitlement: Voucher](g2p_entitlement_voucher) | No summary provided |
-| [G2P Registry: Individual](g2p_registry_individual) | No summary provided |
-| [OpenG2P Program: Approval](g2p_program_approval) | No summary provided |
-| [G2P Registry: Membership](g2p_registry_membership) | No summary provided |
-| [OpenG2P Program Payment: Cash](g2p_payment_cash) | No summary provided |
-| [G2P Registry: Groups](g2p_registry_group) | No summary provided |
-| [G2P Registry: Rest API Extension Demo](g2p_registry_rest_api_extension_demo) | No summary provided |
-| [G2P Program: Registrant Info](g2p_program_registrant_info) | No summary provided |
-| [OpenG2P Program Payment (Payment Interoperability Layer)](g2p_payment_interop_layer) | No summary provided |
-| [OpenG2P Program: Assessment](g2p_program_assessment) | No summary provided |
-| [G2P Registry: Base](g2p_registry_base) | No summary provided |
-| [OpenG2P Program Payments: In Files](g2p_payment_files) | No summary provided |
-| [OpenG2P Program Payment: Simple Mpesa Payment Manager](g2p_payment_simple_mpesa) | No summary provided |
-| [OpenG2P Program Payment: G2P Connect Payment Manager](g2p_payment_g2p_connect) | No summary provided |
-| [OpenG2P Programs: Autoenrol](g2p_program_autoenrol) | No summary provided |
-| [G2P Registry: Additional Info REST API](g2p_registry_addl_info_rest_api) | No summary provided |
-| [G2P Registry: Bank Details](g2p_bank) | No summary provided |
-| [G2P Registry: Bank Details Rest API](g2p_bank_rest_api) | No summary provided |
-| [G2P Encryption: Keymanager](g2p_encryption_keymanager) | No summary provided |

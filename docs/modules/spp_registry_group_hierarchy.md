@@ -17,27 +17,27 @@ The **SPP Registry Group Hierarchy** module aims to:
 
 ## Dependencies and Integration
 
-1. **G2P Registry: Base ([g2p_registry_base](g2p_registry_base))**: Inherits core registry functionalities for managing registrant information, IDs, and relationships. 
+1. **OpenSPP Registry ([spp_registry](spp_registry))**: Inherits core registry functionalities for managing registrant information, IDs, and relationships. 
 
-2. **G2P Registry: Group ([g2p_registry_group](g2p_registry_group))**: Leverages the group model to represent both parent and child groups within the hierarchy. 
+2. **OpenSPP Registry ([spp_registry](spp_registry))**: Leverages the group model to represent both parent and child groups within the hierarchy. 
 
-3. **G2P Registry: Individual ([g2p_registry_individual](g2p_registry_individual))**: Uses the individual model to maintain individual memberships within groups, regardless of the group's position in the hierarchy. 
+3. **OpenSPP Registry ([spp_registry](spp_registry))**: Uses the individual model to maintain individual memberships within groups, regardless of the group's position in the hierarchy. 
 
-4. **G2P Registry: Membership ([g2p_registry_membership](g2p_registry_membership))**:  Extends the membership functionality to allow groups to be members of other groups, establishing the parent-child relationship.
+4. **OpenSPP Registry ([spp_registry](spp_registry))**:  Extends the membership functionality to allow groups to be members of other groups, establishing the parent-child relationship.
 
 ## Additional Functionality 
 
-* **Flexible Group Membership (`g2p.group.kind`)**:
-    * Introduces a new field (`allow_all_member_type`) in the `g2p.group.kind` model.
+* **Flexible Group Membership (`spp.group.role`)**:
+    * Introduces a new field (`allow_all_member_type`) in the `spp.group.role` model.
     * This field allows administrators to define whether a specific group type can have both individual and group members.
 
-* **Dynamic Individual Domain (`g2p.group.membership`)**:
-    * Modifies the individual selection field within the `g2p.group.membership` model to dynamically adjust its options based on the group's type.
+* **Dynamic Individual Domain (`spp.group.membership`)**:
+    * Modifies the individual selection field within the `spp.group.membership` model to dynamically adjust its options based on the group's type.
     * If a group type allows both individual and group members, the individual selection field will display all registrants (excluding the group itself to prevent circular relationships).
     * If a group type only allows individual members, the field will display only individuals.
 
-* **Unified Member View (`g2p.group.membership`)**:
-    * Introduces a modified form view for `g2p.group.membership`.
+* **Unified Member View (`spp.group.membership`)**:
+    * Introduces a modified form view for `spp.group.membership`.
     * This view provides a unified interface for managing both individual and group memberships within a parent group.
     * It dynamically displays relevant information based on whether the member is an individual or another group.
 

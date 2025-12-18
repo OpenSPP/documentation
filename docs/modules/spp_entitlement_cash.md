@@ -5,7 +5,7 @@
 **Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
-This document outlines the functionality of the **OpenSPP Program Entitlement (Cash)** module. This module extends the **G2P Programs** module, providing specialized features for managing cash-based entitlements within social protection programs.
+This document outlines the functionality of the **OpenSPP Program Entitlement (Cash)** module. This module extends the **OpenSPP Programs** module, providing specialized features for managing cash-based entitlements within social protection programs.
 
 ## Purpose
 
@@ -13,9 +13,9 @@ The **OpenSPP Program Entitlement (Cash)** module enables the definition, calcul
 
 ## Module Dependencies and Integration
 
-1. **G2P Registry: Base ([g2p_registry_base](g2p_registry_base)(LINK_TO_G2P_REGISTRY_BASE))**: This module utilizes the base registry to access and manage beneficiary data, ensuring that entitlements are linked to the correct individuals or households.
+1. **OpenSPP Registry ([spp_registry](spp_registry)(LINK_TO_G2P_REGISTRY_BASE))**: This module utilizes the base registry to access and manage beneficiary data, ensuring that entitlements are linked to the correct individuals or households.
 
-2. **G2P Programs ([g2p_programs](g2p_programs)(LINK_TO_G2P_PROGRAMS))**: This module builds upon the core program management features, including program creation, cycle management, and eligibility determination. The cash entitlement module extends this functionality by adding cash-specific entitlement management capabilities.
+2. **OpenSPP Programs ([spp_programs](spp_programs)(LINK_TO_G2P_PROGRAMS))**: This module builds upon the core program management features, including program creation, cycle management, and eligibility determination. The cash entitlement module extends this functionality by adding cash-specific entitlement management capabilities.
 
 3. **OpenSPP Programs ([spp_programs](spp_programs)(LINK_TO_SPP_PROGRAMS))**:  This module provides the framework for managing both cash and in-kind entitlements. The cash entitlement module specializes in handling the complexities of cash-based distributions, integrating seamlessly with the broader entitlement management system. 
 
@@ -26,14 +26,14 @@ The **OpenSPP Program Entitlement (Cash)** module enables the definition, calcul
 
 ## Additional Functionality
 
-* **Cash Entitlement Manager Model (`g2p.program.entitlement.manager.cash`)**:
-    * Extends the generic entitlement manager model (`g2p.program.entitlement.manager`) to provide cash-specific configurations and functionalities.
+* **Cash Entitlement Manager Model (`spp.program.entitlement.manager.cash`)**:
+    * Extends the generic entitlement manager model (`spp.program.entitlement.manager`) to provide cash-specific configurations and functionalities.
     * Allows program administrators to define flexible rules for calculating cash entitlement amounts, including:
         * **Fixed amounts**:  Distribute a predetermined sum to all eligible beneficiaries.
         * **Variable amounts**: Calculate entitlements dynamically based on beneficiary attributes (e.g., number of dependents, income level) using multipliers and conditions. 
         * **Maximum amounts**: Set upper limits on entitlement amounts to ensure equitable distribution of funds.
 
-* **Entitlement Item Model (`g2p.program.entitlement.manager.cash.item`)**:
+* **Entitlement Item Model (`spp.program.entitlement.manager.cash.item`)**:
     * Defines individual entitlement rules within a cash entitlement manager.
     * Allows for multiple calculation rules to be combined within a single entitlement manager, providing granular control over entitlement distribution.
 

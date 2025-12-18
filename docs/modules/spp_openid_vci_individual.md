@@ -21,7 +21,7 @@ The `spp_openid_vci_individual` module aims to:
    - **VC Generation and Signing:** Relies on the parent module's capabilities to generate, sign, and encode VCs based on defined templates and fetched registrant data.
    - **QR Code Generation:** Utilizes the same QR code generation mechanism to visually represent issued VCs for individuals.
 
-2. **[g2p_registry_individual](g2p_registry_individual)**: This module integrates with the individual registry to access and utilize individual-specific data, such as:
+2. **[spp_registry](spp_registry)**: This module integrates with the individual registry to access and utilize individual-specific data, such as:
    - **Individual Attributes:** Fetches data fields like full name, birthdate, gender, and other relevant attributes from the individual's registry profile to populate the claims within the VC.
    - **Issuance Interface:** Extends the individual registrant's profile view to include an "Issue Card" button, providing a direct and contextual point for VC issuance. 
 
@@ -30,14 +30,14 @@ The `spp_openid_vci_individual` module aims to:
 This module enhances the VC issuance process for individuals by:
 
 - **Contextual Issuance Button:** Introduces an "Issue Card" button directly within the individual registrant's profile view in the registry, making the issuance process more intuitive and user-friendly.
-- **Seamless Data Flow:** Automatically retrieves the necessary individual-specific attributes from the [g2p_registry_individual](g2p_registry_individual) module during VC generation, streamlining the issuance workflow.
+- **Seamless Data Flow:** Automatically retrieves the necessary individual-specific attributes from the [spp_registry](spp_registry) module during VC generation, streamlining the issuance workflow.
 
 ## Example Usage Scenario
 
 1. An administrator configures a VCI issuer within the [spp_openid_vci](spp_openid_vci) module, defining the format and data fields for a "Proof of Identity" VC intended for individual registrants. 
 2. A user navigates to an individual's profile within the OpenSPP registry.
 3. The user clicks the "Issue Card" button, which initiates the VC issuance process using the pre-configured "Proof of Identity" template.
-4. The module automatically fetches the individual's name, birthdate, and other relevant attributes from the [g2p_registry_individual](g2p_registry_individual) data.
+4. The module automatically fetches the individual's name, birthdate, and other relevant attributes from the [spp_registry](spp_registry) data.
 5.  A VC containing the individual's information is generated, signed, and encoded into a QR code, ready for display on a digital card or printed ID. 
 
 ## Conclusion

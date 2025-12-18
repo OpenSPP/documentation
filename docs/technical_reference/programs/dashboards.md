@@ -9,7 +9,7 @@ openspp:
 
 ![](images/programs_dashboard.png)
 
-Based on the foundation of Odoo and OpenG2P, OpenSPP facilitates rich data visualizations and dynamic reporting capabilities. This documentation delves into the system's approach towards data warehousing, reporting, and visualization.
+Based on the foundation of Odoo, OpenSPP facilitates rich data visualizations and dynamic reporting capabilities. This documentation delves into the system's approach towards data warehousing, reporting, and visualization.
 
 Firstly, OpenSPP's architecture is designed with a key emphasis on configurability. This approach is particularly evident in its support for data warehousing. OpenSPP can be easily connected to advanced reporting platforms such as Apache Superset or Tableau. These powerful data visualization tools offer comprehensive capabilities for interactive data exploration, from basic charting to complex data processing. By allowing seamless integrations with such platforms, OpenSPP ensures that its data warehousing aligns with the organization's business intelligence requirements.
 

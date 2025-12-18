@@ -21,7 +21,7 @@ The **SPP Audit Log** module is designed to:
 
 2. **Mail (mail):** Leverages the messaging functionality for potential future enhancements related to audit log notifications. 
 
-3. **G2P Registry: Membership ([g2p_registry_membership](g2p_registry_membership)):** This dependency appears to be related to a specific use case and might not be a core dependency for the audit log functionality.  It could indicate that the audit log is being used to track changes within the group membership model.
+3. **OpenSPP Registry ([spp_registry](spp_registry)):** This dependency appears to be related to a specific use case and might not be a core dependency for the audit log functionality.  It could indicate that the audit log is being used to track changes within the group membership model.
 
 ## Additional Functionality
 

@@ -18,8 +18,8 @@ The [spp_idpass](spp_idpass) module extends the functionality of the OpenSPP sys
 
 ## Integration with Other Modules
 
-* **[g2p_registry_base](g2p_registry_base):** The module relies on the base registry module for accessing and managing registrant information.
-* **[g2p_registry_membership](g2p_registry_membership):**  Utilizes the membership module to handle ID card generation for groups, ensuring the correct identification of the group head. 
+* **[spp_registry](spp_registry):** The module relies on the base registry module for accessing and managing registrant information.
+* **[spp_registry](spp_registry):**  Utilizes the membership module to handle ID card generation for groups, ensuring the correct identification of the group head. 
 
 ## Functionality and Workflow
 

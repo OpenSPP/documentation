@@ -27,7 +27,7 @@ The **OpenSPP Audit Config** module works in conjunction with other modules to p
 The **OpenSPP Audit Config** module's functionality is designed to be applied across various OpenSPP modules.  It can define audit rules for any module that requires change tracking, such as:
 
 * **[SPP Service Points](spp_service_points)**: Track changes to service point information, including location, contact details, and operational status.
-* **[G2P Registry: Membership](g2p_registry_membership)**: Monitor modifications to individual memberships within groups, ensuring accurate representation of group composition.
+* **[OpenSPP Registry](spp_registry)**: Monitor modifications to individual memberships within groups, ensuring accurate representation of group composition.
 * **[OpenSPP Programs](spp_programs)**: Log any updates to program configurations, eligibility criteria, or benefit distribution details.
 
 ## Additional Functionality
@@ -35,7 +35,7 @@ The **OpenSPP Audit Config** module's functionality is designed to be applied ac
 1. **Audit Rule Definition:** 
    *  Provides a user-friendly interface to define audit rules. 
    * **Key configuration options include:**
-      * **Model:** Specify the data model to be audited (e.g., `spp.service.point`, `g2p.group.membership`).
+      * **Model:** Specify the data model to be audited (e.g., `spp.service.point`, `spp.group.membership`).
       * **Fields:** Select the specific fields within the model that require logging (e.g., `name`, `status`, `start_date`).
       * **Actions:**  Choose which actions should trigger a log entry:
          * **Create:** Log the creation of new records.
