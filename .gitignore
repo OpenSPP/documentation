@@ -148,3 +148,10 @@ docs/build
 .idea
 docs_old
 .aider*
+
+# Video files (hosted separately)
+*.mp4
+*.webm
+*.mov
+*.avi
+*.mkv
