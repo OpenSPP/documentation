@@ -34,7 +34,8 @@ distclean:  ## Clean docs build directory, Python virtual environment, and fetch
 	rm -rf ./bin/ ./lib/ ./lib64 ./include ./pyvenv.cfg ./submodules/
 
 bin/python:
-	python3 -m venv . || virtualenv --clear --python=python3 .
+	python3 -m venv .
+	bin/pip install --upgrade pip setuptools wheel
 	bin/pip install -r requirements_frozen.txt
 
 .PHONY: fetch-odoo
