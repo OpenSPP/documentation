@@ -18,6 +18,7 @@ sphinxcontrib.httpexample
 sphinxext-opengraph
 sphinx-design
 sphinxcontrib-video
+sphinxcontrib-mermaid  # Mermaid diagrams (flowcharts, sequence, state)
 sphinx-tabs==3.2.0
 sphinxcontrib-googleanalytics
 sphinx-reredirects  # URL redirects for documentation restructure

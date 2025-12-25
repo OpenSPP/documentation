@@ -7,11 +7,11 @@ openspp:
 
 **For:** All audiences
 
-A cycle represents a time-bound distribution period within a program. If a program is the blueprint for "who gets what," a cycle is the actual execution of that blueprint during a specific timeframe.
+A cycle is a single distribution round within a program—typically a week, month, or quarter during which benefits are calculated and paid out. If a program defines "who gets what," a cycle is when beneficiaries actually receive their entitlements.
 
 ## What is a Cycle?
 
-Think of a cycle as a distribution round. For example:
+Think of a cycle as one payment period. For example:
 
 - A monthly cash transfer program runs 12 cycles per year (one per month)
 - A quarterly food distribution program runs 4 cycles per year (one per quarter)
@@ -29,12 +29,12 @@ Each cycle has:
 
 A program can have many cycles, but each cycle belongs to exactly one program.
 
-```
-Program: "Monthly Cash Transfer"
-├── Cycle 1: January 2025
-├── Cycle 2: February 2025
-├── Cycle 3: March 2025
-└── ...
+```{mermaid}
+graph TD
+    P[Program: Monthly Cash Transfer] --> C1[Cycle 1: January 2025]
+    P --> C2[Cycle 2: February 2025]
+    P --> C3[Cycle 3: March 2025]
+    P --> C4[...]
 ```
 
 The program defines the rules (eligibility criteria, entitlement formulas, payment methods), while each cycle applies those rules to a specific distribution period.
@@ -43,30 +43,24 @@ The program defines the rules (eligibility criteria, entitlement formulas, payme
 
 A cycle moves through several states from creation to completion:
 
-```
-┌─────────┐
-│  Draft  │ ← Create and configure the cycle
-└────┬────┘
-     │
-     ↓ Submit for approval
-┌──────────────┐
-│  To Approve  │ ← Awaiting review and approval
-└──────┬───────┘
-       │
-       ↓ Approve
-┌──────────┐
-│ Approved │ ← Ready for distribution
-└────┬─────┘
-     │
-     ↓ Mark as distributed
-┌─────────────┐
-│ Distributed │ ← Payments have been disbursed
-└──────┬──────┘
-       │
-       ↓ Mark as ended
-┌────────┐
-│ Ended  │ ← Cycle is complete
-└────────┘
+```{mermaid}
+stateDiagram-v2
+    [*] --> Draft: Create cycle
+    Draft --> ToApprove: Submit for approval
+    Draft --> Cancelled: Cancel
+    ToApprove --> Approved: Approve
+    ToApprove --> Cancelled: Cancel
+    Approved --> Distributed: Mark as distributed
+    Distributed --> Ended: Mark as ended
+    Ended --> [*]
+    Cancelled --> [*]
+
+    Draft: Draft
+    ToApprove: To Approve
+    Approved: Approved
+    Distributed: Distributed
+    Ended: Ended
+    Cancelled: Cancelled
 ```
 
 There's also a **Cancelled** state that can be reached from Draft or To Approve if the cycle needs to be stopped.
@@ -283,11 +277,12 @@ A program typically runs multiple cycles over its lifetime. Here's how they rela
 
 Most common pattern - cycles run one after another.
 
-```
-├── Cycle 1: Jan 2025 (ended)
-├── Cycle 2: Feb 2025 (ended)
-├── Cycle 3: Mar 2025 (distributed)
-└── Cycle 4: Apr 2025 (draft) ← Currently working on this
+```{mermaid}
+graph LR
+    C1[Cycle 1: Jan 2025<br/>ended] --> C2[Cycle 2: Feb 2025<br/>ended]
+    C2 --> C3[Cycle 3: Mar 2025<br/>distributed]
+    C3 --> C4[Cycle 4: Apr 2025<br/>draft]
+    style C4 fill:#fff3cd
 ```
 
 **Key points:**
@@ -299,16 +294,18 @@ Most common pattern - cycles run one after another.
 
 Some programs have cycles that overlap in preparation.
 
-```
-Cycle 1: Jan 2025
-├─ Preparation: Dec 2024
-├─ Distribution: Jan 2025
-└─ Completion: Feb 2025
-    │
-    └─ Cycle 2: Feb 2025
-       ├─ Preparation: Jan 2025 ← Overlaps with Cycle 1 distribution
-       ├─ Distribution: Feb 2025
-       └─ Completion: Mar 2025
+```{mermaid}
+gantt
+    title Overlapping Cycle Timeline
+    dateFormat YYYY-MM
+    section Cycle 1
+        Preparation    :c1prep, 2024-12, 1M
+        Distribution   :c1dist, 2025-01, 1M
+        Completion     :c1comp, 2025-02, 1M
+    section Cycle 2
+        Preparation    :c2prep, 2025-01, 1M
+        Distribution   :c2dist, 2025-02, 1M
+        Completion     :c2comp, 2025-03, 1M
 ```
 
 **Key points:**
@@ -320,10 +317,10 @@ Cycle 1: Jan 2025
 
 Different beneficiary groups may have separate concurrent cycles.
 
-```
-Program: "Regional Support"
-├── Cycle 1A: Region North (January)
-└── Cycle 1B: Region South (January) ← Same time period, different beneficiaries
+```{mermaid}
+graph TD
+    P[Program: Regional Support<br/>January 2025] --> C1A[Cycle 1A<br/>Region North]
+    P --> C1B[Cycle 1B<br/>Region South]
 ```
 
 **Key points:**
@@ -392,17 +389,16 @@ Program: "Regional Support"
 
 **Note:** You can only cancel Draft or To Approve cycles. Once approved and distributed, cycles cannot be cancelled.
 
-## What's Next?
+## Next Steps
 
-- **For configuration:** See the Configuration Guide for how to set up cycles
-- **For eligibility:** Learn about {doc}`eligibility` to control who qualifies
-- **For entitlements:** Understand {doc}`entitlements` to configure what beneficiaries receive
-- **For payments:** Explore {doc}`payments` to distribute benefits
+**Learn more about concepts:**
+- {doc}`programs` - The parent container for cycles
+- {doc}`eligibility` - Rules that determine who qualifies
+- {doc}`entitlements` - What beneficiaries receive
+- {doc}`payments` - How benefits are disbursed
 
----
+**For configuration:**
+- See the Configuration Guide for setting up cycles
 
-**Related concepts:**
-- [Programs](programs.md) - The parent container for cycles
-- Eligibility - Rules that determine who qualifies
-- Entitlements - What beneficiaries receive
-- Payments - How benefits are disbursed
+**For developers:**
+- See the Developer Guide for custom cycle managers

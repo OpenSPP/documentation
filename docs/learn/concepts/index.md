@@ -1,56 +1,6 @@
 # Key Concepts
 
-Understanding the core building blocks of OpenSPP.
-
-**For:** Anyone new to OpenSPP or social protection systems
-
-OpenSPP is built around several key concepts that work together to deliver social protection programs. Understanding these concepts will help you use the platform effectively.
-
-## Core Concepts
-
-The following concepts form the foundation of OpenSPP:
-
-| Concept | Description |
-|---------|-------------|
-| {doc}`registry` | The central database of individuals, households, and groups |
-| {doc}`programs` | Social protection programs that provide benefits to eligible beneficiaries |
-| {doc}`cycles` | Time-bound periods during which benefits are distributed |
-| {doc}`eligibility` | Rules and criteria that determine who qualifies for a program |
-| {doc}`entitlements` | The benefits or amounts that eligible beneficiaries receive |
-| {doc}`payments` | The actual disbursement of entitlements to beneficiaries |
-
-## How They Work Together
-
-```
-┌─────────────┐
-│  REGISTRY   │  ← Individuals & Groups are registered
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│  PROGRAMS   │  ← Programs define what benefits are offered
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│ ELIGIBILITY │  ← Eligibility rules determine who qualifies
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│   CYCLES    │  ← Cycles organize when benefits are distributed
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│ENTITLEMENTS │  ← Entitlements calculate what each person gets
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│  PAYMENTS   │  ← Payments disburse the actual benefits
-└─────────────┘
-```
+These pages explain the core concepts behind OpenSPP. Understanding these concepts will help you use and configure the platform effectively.
 
 ```{toctree}
 :maxdepth: 2
@@ -63,3 +13,27 @@ eligibility
 entitlements
 payments
 ```
+
+## Registry
+
+The {doc}`registry` is the central database storing information about people and groups. It's the foundation for all programs and services.
+
+## Programs
+
+{doc}`programs` define social protection interventions—who receives benefits, what they receive, and how benefits are delivered.
+
+## Cycles
+
+{doc}`cycles` are distribution rounds within programs. Each cycle represents a period when benefits are calculated and paid out.
+
+## Eligibility
+
+{doc}`eligibility` determines who qualifies for programs based on defined criteria like age, income, location, or household composition.
+
+## Entitlements
+
+{doc}`entitlements` specify what each beneficiary receives in a cycle—whether cash, vouchers, or physical goods.
+
+## Payments
+
+{doc}`payments` are the actual disbursements that deliver entitlements to beneficiaries through various channels.

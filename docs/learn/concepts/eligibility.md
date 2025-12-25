@@ -5,385 +5,374 @@ openspp:
 
 # Eligibility
 
-Eligibility is the process of determining who qualifies to receive benefits from a social protection program. It answers the fundamental question: "Who should we serve?"
+Eligibility determines who qualifies for a social protection program. It's the set of rules that filter the registry population down to those who should receive benefits.
 
 **For:** All audiences
 
 ## What is Eligibility?
 
-In social protection, eligibility defines the criteria that individuals, families, or groups must meet to qualify for program enrollment and benefits. These criteria ensure that programs reach their intended beneficiaries and allocate limited resources to those who need them most.
+Eligibility criteria define the conditions a registrant must meet to participate in a program. These criteria translate policy decisions into concrete rules that OpenSPP can evaluate automatically.
 
-For example, a cash transfer program for vulnerable families might require:
-- Household income below a certain threshold
-- Presence of children under a specific age
-- Residence in a particular geographic area
+**Examples of eligibility criteria:**
 
-Eligibility rules transform program policy into concrete, measurable conditions that the system can evaluate automatically.
+| Program Type | Eligibility Criteria |
+|-------------|---------------------|
+| Old age pension | Age 60 or older |
+| Child grant | Households with children under 5 |
+| Poverty assistance | PMT score below threshold |
+| Disability support | Certified disability status |
+| Geographic targeting | Residence in specific districts |
 
 ## Why Eligibility Matters
 
-Well-designed eligibility criteria are crucial for several reasons:
+Proper eligibility determination ensures:
 
-**Targeting Accuracy**: They help programs reach the intended population and minimize inclusion errors (enrolling those who don't qualify) and exclusion errors (missing those who do).
-
-**Transparency**: Clear criteria make programs fair and predictable. Beneficiaries understand why they qualify or don't qualify.
-
-**Efficiency**: Automated eligibility checking reduces manual review time and enables programs to scale.
-
-**Accountability**: Documented criteria provide an audit trail and help demonstrate program integrity.
+| Goal | How Eligibility Helps |
+|------|----------------------|
+| **Targeting accuracy** | Benefits reach intended populations |
+| **Fairness** | Consistent rules applied to all |
+| **Accountability** | Clear, auditable selection criteria |
+| **Efficiency** | Automated filtering reduces manual work |
+| **Budget control** | Predictable beneficiary counts |
 
 ## Types of Eligibility Criteria
 
-Social protection programs typically use one or more of these criteria types:
-
 ### Demographic Criteria
 
-These criteria are based on personal characteristics:
+Based on individual or household characteristics:
 
-- **Age**: Seniors over 60, children under 5, youth between 15-24
-- **Gender**: Programs specifically targeting women or girls
-- **Disability Status**: Support for persons with disabilities
-- **Family Composition**: Single parents, orphaned children, large families
-
-**Example**: "All individuals aged 60 years or older"
-
-### Geographic Criteria
-
-These criteria target specific locations:
-
-- **Administrative Boundaries**: Provinces, districts, municipalities
-- **Urban vs Rural**: Programs for rural smallholders or urban informal workers
-- **Special Zones**: Conflict-affected areas, disaster zones, high-poverty regions
-
-**Example**: "Households residing in the Northern Region"
+| Criterion | Example Rule |
+|-----------|-------------|
+| **Age** | `age >= 60` (elderly) or `age < 18` (children) |
+| **Gender** | `gender == 'female'` for maternal programs |
+| **Disability** | `has_disability == true` |
+| **Household size** | `household_size >= 4` (large families) |
+| **Dependency ratio** | `dependents / working_adults > 2` |
 
 ### Economic Criteria
 
-These criteria assess financial need:
+Based on income, assets, or poverty indicators:
 
-- **Income Level**: Below poverty line, earning less than minimum wage
-- **Asset Ownership**: Land size, livestock count, vehicle ownership
-- **Employment Status**: Unemployed, informal workers, seasonal laborers
-- **Vulnerability Scores**: Proxy means test (PMT), social welfare development index (SWDI)
+| Criterion | Example Rule |
+|-----------|-------------|
+| **Income** | `monthly_income < poverty_line` |
+| **PMT score** | `pmt_score < 25` (proxy means test) |
+| **Asset ownership** | `owns_land == false` |
+| **Employment** | `employment_status == 'unemployed'` |
 
-**Example**: "Households with monthly income below 10,000 PHP"
+### Geographic Criteria
+
+Based on location:
+
+| Criterion | Example Rule |
+|-----------|-------------|
+| **Administrative area** | `area_id in target_districts` |
+| **Rural/Urban** | `area_type == 'rural'` |
+| **Disaster zone** | `area_id in affected_areas` |
 
 ### Categorical Criteria
 
-These criteria are based on specific circumstances or affiliations:
+Based on specific conditions or status:
 
-- **Program Participation**: Already enrolled in another program, past beneficiaries
-- **Household Events**: Recent births, deaths, illness, job loss
-- **Registration Status**: Holders of specific IDs, registered with certain agencies
-- **Special Categories**: Veterans, refugees, migrant workers
+| Criterion | Example Rule |
+|-----------|-------------|
+| **Orphan status** | `is_orphan == true` |
+| **Refugee status** | `registration_type == 'refugee'` |
+| **School enrollment** | `enrolled_in_school == true` |
+| **Health condition** | `has_chronic_illness == true` |
 
-**Example**: "Families with at least one child born in the past 12 months"
+### Composite Criteria
 
-## Combined Criteria
+Combining multiple conditions:
 
-Most programs combine multiple criteria types using logical operators:
+```
+# Elderly women in rural areas
+age >= 60 AND gender == 'female' AND area_type == 'rural'
 
-- **AND Logic**: Must meet all conditions (more restrictive)
-  - Example: "Households in the Northern Region AND with income below 10,000 PHP"
+# Large poor households with children
+household_size >= 5 AND pmt_score < 20 AND has_children_under_5 == true
 
-- **OR Logic**: Must meet at least one condition (more inclusive)
-  - Example: "Individuals over 60 OR persons with disabilities"
-
-- **Complex Logic**: Nested conditions with multiple operators
-  - Example: "(Households with children under 5 AND income below 10,000) OR (Elderly households with income below 15,000)"
+# Working-age adults without employment
+age >= 18 AND age < 60 AND employment_status == 'unemployed'
+```
 
 ## Eligibility in OpenSPP
 
-OpenSPP implements eligibility through a flexible **Eligibility Manager** system that allows programs to define, test, and apply eligibility rules.
+### How It Works
 
-### The Eligibility Manager
+```{mermaid}
+graph TD
+    R[Registry Population] --> E[Eligibility Manager]
+    E --> |Apply criteria| F[Filter registrants]
+    F --> |Matching| Q[Qualified registrants]
+    F --> |Not matching| NQ[Not qualified]
+    Q --> P[Program enrollment]
 
-Each program has an **Eligibility Manager** that controls how eligibility is determined. The manager:
-
-1. **Defines the rules**: What conditions must registrants meet?
-2. **Evaluates registrants**: Which individuals or groups match the criteria?
-3. **Returns results**: A list of eligible registrants ready for enrollment
-4. **Supports testing**: Preview who qualifies before enrolling
-
-Think of the Eligibility Manager as the program's "admission criteria" - it's the gatekeeper that decides who gets in.
-
-### Different Eligibility Methods
-
-OpenSPP supports three main methods for defining eligibility, each suited to different use cases:
-
-#### 1. Tag-Based Eligibility
-
-**Best for**: Simple inclusion/exclusion using predefined categories
-
-**How it works**: Registrants are tagged with labels (e.g., "Elderly," "Disabled," "Urban Poor"). The eligibility manager selects everyone with specific tags.
-
-**Example**: "Enroll all registrants tagged as 'Vulnerable Household'"
-
-**Advantages**:
-- Very simple to set up
-- Fast to evaluate
-- Easy to understand
-
-**Limitations**:
-- Tags must be assigned beforehand
-- Cannot evaluate complex conditions
-- Limited flexibility
-
-#### 2. SQL-Based Eligibility
-
-**Best for**: Complex queries requiring direct database access
-
-**How it works**: Write SQL queries that select eligible registrants from the database.
-
-**Example**:
-```sql
-SELECT id FROM res_partner
-WHERE household_income < 10000
-AND id IN (SELECT parent_id FROM res_partner WHERE age < 5)
+    style R fill:#e3f2fd
+    style E fill:#fff3e0
+    style Q fill:#e8f5e9
+    style NQ fill:#ffebee
 ```
 
-**Advantages**:
-- Maximum flexibility
-- Can express any logic
-- Efficient for complex queries
+1. **Registry data** provides the population to evaluate
+2. **Eligibility Manager** applies configured criteria
+3. **Matching registrants** become eligible for enrollment
+4. **Non-matching registrants** are marked as not eligible
 
-**Limitations**:
-- Requires SQL knowledge
-- Less portable across deployments
-- Harder to test and maintain
+### Eligibility Manager
 
-#### 3. CEL Expression-Based Eligibility (Default)
+The Eligibility Manager is a configurable component that controls how eligibility is determined. OpenSPP supports multiple eligibility approaches:
 
-**Best for**: Most eligibility scenarios, especially when using Studio configuration
+| Manager Type | Description | Best For |
+|-------------|-------------|----------|
+| **Default (Domain-based)** | Uses Odoo domain filters | Simple criteria |
+| **CEL Expression** | Uses Common Expression Language | Complex rules |
+| **Area-based** | Targets specific administrative areas | Geographic targeting |
+| **Custom** | Developer-defined logic | Specialized requirements |
 
-**How it works**: Write expressions using the Common Expression Language (CEL) that evaluate to true/false for each registrant.
+### Domain-Based Eligibility
 
-**Example**: `household_income < 10000 && children_under_5 >= 1`
+The default eligibility manager uses Odoo domain syntax:
 
-**Advantages**:
-- Powerful yet accessible to implementers
-- Can reference Studio variables
-- Built-in validation and testing
-- Portable across deployments
+```python
+# Households in specific districts
+[('area_id', 'in', [district_1_id, district_2_id])]
 
-**Limitations**:
-- Requires learning CEL syntax
-- Very complex logic might need SQL instead
+# Individuals over 60
+[('birthdate', '<=', '1964-01-01')]
 
-Most programs use CEL-based eligibility because it balances power and accessibility.
+# Groups with more than 3 members
+[('z_ind_grp_num_individuals', '>=', 3)]
+```
 
-## How Eligibility Verification Works
+**Advantages:**
+- Simple to configure
+- No coding required
+- Fast evaluation
 
-### When Eligibility is Checked
+**Limitations:**
+- Cannot access related records easily
+- Limited to field comparisons
+- No complex calculations
 
-Eligibility verification typically happens at these key moments:
+### CEL-Based Eligibility
 
-**1. Program Enrollment**
+For complex criteria, OpenSPP supports CEL (Common Expression Language):
 
-When preparing a program cycle, the system evaluates all registrants against the eligibility criteria to determine who can be enrolled as beneficiaries.
-
-**2. Manual Verification**
-
-Administrators can manually trigger eligibility checks to preview who would qualify before creating a cycle.
-
-**3. Re-verification**
-
-Some programs periodically re-check eligibility to ensure beneficiaries still qualify. This might happen:
-- At the start of each new cycle
-- After a specific time period
-- When registrant data changes
-
-### The Evaluation Process
-
-Here's what happens when OpenSPP evaluates eligibility:
-
-1. **Load Criteria**: The system retrieves the eligibility rules from the program's Eligibility Manager
-
-2. **Identify Target Population**: Determine which registrants to evaluate (individuals vs groups/households, geographic scope, etc.)
-
-3. **Evaluate Each Registrant**: For each registrant, the system:
-   - Loads their current data
-   - Applies the eligibility expression or query
-   - Determines if they meet the criteria (true/false)
-
-4. **Return Eligible Set**: The system produces a list of eligible registrants
-
-5. **Create Preview or Enrollment**: Depending on the action, the system either shows a preview or proceeds with enrollment
-
-### Performance Considerations
-
-For programs with millions of registrants, eligibility evaluation must be efficient. OpenSPP optimizes this through:
-
-- **Database-level filtering**: Most criteria are converted to database queries that run directly on PostgreSQL
-- **Indexed fields**: Common criteria fields (age, location, income) are indexed for fast lookup
-- **Batch processing**: Large evaluations are processed in chunks
-- **Caching**: Results can be cached when registrant data hasn't changed
-
-## Common Eligibility Patterns
-
-Here are real-world examples of eligibility criteria:
-
-### Age-Based Programs
-
-**Child Grant**: Children under 18 years
 ```cel
-age_years(r.birthdate) < 18
+# Age-based eligibility
+age_years(me.birthdate) >= 60
+
+# Gender and age combined
+me.gender == 'female' and age_years(me.birthdate) >= 18
+
+# Household composition check
+members.exists(m, age_years(m.birthdate) < 5)
+
+# Using computed metrics
+metric('household.pmt_score') < 25
+
+# Complex household criteria
+members.filter(m, age_years(m.birthdate) < 18).size() >= 2
 ```
 
-**Old Age Pension**: Seniors 60 and above
-```cel
-age_years(r.birthdate) >= 60
-```
+**CEL Features:**
 
-**Youth Employment Program**: Ages 18-35
-```cel
-age_years(r.birthdate) >= 18 && age_years(r.birthdate) <= 35
-```
-
-### Household Composition Programs
-
-**Single Parent Support**: Households with one adult and children
-```cel
-adult_count == 1 && children_count > 0
-```
-
-**Large Family Assistance**: Families with 4+ children
-```cel
-children_count >= 4
-```
-
-**Families with Young Children**: At least one child under 5
-```cel
-children_under_5 >= 1
-```
-
-### Economic Vulnerability Programs
-
-**Below Poverty Line**: Income-based targeting
-```cel
-household_income < 10000
-```
-
-**Multidimensional Poverty**: Using a composite score
-```cel
-vulnerability_score >= 70
-```
-
-**Unemployed Heads of Household**
-```cel
-employment_status == "unemployed" && is_head_of_household
-```
+| Feature | Description | Example |
+|---------|-------------|---------|
+| **`me`** | Current registrant context | `me.gender == 'female'` |
+| **`members`** | Household members (for groups) | `members.size() >= 3` |
+| **`age_years()`** | Calculate age from date | `age_years(me.birthdate) >= 60` |
+| **`metric()`** | Access computed variables | `metric('pmt_score') < 25` |
+| **`exists()`** | Check if any member matches | `members.exists(m, m.has_disability)` |
+| **`filter()`** | Get members matching condition | `members.filter(m, m.age < 18)` |
 
 ### Geographic Targeting
 
-**Regional Program**: Specific administrative area
-```cel
-r.area_id.code in ["REGION_1", "REGION_2"]
+The area-based eligibility manager simplifies geographic targeting:
+
+| Configuration | Description |
+|--------------|-------------|
+| **Admin Areas** | Select target districts, villages, etc. |
+| **Area Types** | Target by area classification |
+| **Nested Areas** | Include child areas automatically |
+
+## Eligibility Workflow
+
+### At Program Level
+
+```{mermaid}
+stateDiagram-v2
+    [*] --> Import: Import eligible registrants
+    Import --> Draft: Create draft memberships
+    Draft --> Verify: Verify eligibility
+    Verify --> Enrolled: Passes criteria
+    Verify --> NotEligible: Fails criteria
+    Enrolled --> [*]
+    NotEligible --> Draft: Re-evaluate
 ```
 
-**Rural Farmers**: Agricultural areas only
-```cel
-r.area_id.area_type == "rural" && occupation == "farmer"
+1. **Import** - Find registrants matching criteria from registry
+2. **Draft** - Create draft program memberships
+3. **Verify** - Run eligibility check against current data
+4. **Enrolled/Not Eligible** - Update status based on result
+
+### At Cycle Level
+
+Each cycle can also verify eligibility:
+
+1. **Copy from program** - Bring enrolled members into cycle
+2. **Verify cycle eligibility** - Re-check against current data
+3. **Prepare entitlements** - Only for eligible cycle members
+
+This allows for:
+- Removing members who no longer qualify
+- Adding newly eligible members
+- Updating status based on changed circumstances
+
+## Multiple Eligibility Managers
+
+A program can have multiple eligibility managers that work together:
+
+```{mermaid}
+graph LR
+    R[Registrants] --> E1[Manager 1:<br/>Age filter]
+    E1 --> E2[Manager 2:<br/>Area filter]
+    E2 --> E3[Manager 3:<br/>PMT filter]
+    E3 --> Q[Qualified]
+
+    style E1 fill:#e3f2fd
+    style E2 fill:#fff3e0
+    style E3 fill:#f3e5f5
 ```
 
-**Urban Informal Sector**: City-based workers
-```cel
-r.area_id.area_type == "urban" && employment_type == "informal"
-```
+Managers are applied in sequence—a registrant must pass all managers to qualify.
 
-### Combined Criteria
+**Use cases for multiple managers:**
 
-**Comprehensive Vulnerability**: Multiple conditions
-```cel
-(household_income < 10000 && children_under_5 >= 1) ||
-(elderly_count >= 1 && household_income < 15000) ||
-(disabled_count >= 1)
-```
+| Scenario | Manager Setup |
+|----------|--------------|
+| **Layered targeting** | Area → PMT score → Household composition |
+| **Phased rollout** | Core criteria → Additional filters per phase |
+| **Complex programs** | Different criteria for different benefit components |
 
-## Eligibility vs Compliance
+## Eligibility Verification
 
-It's important to distinguish between two related concepts:
+### When to Verify
 
-**Eligibility**: Determines who qualifies to **enter** the program
-- Evaluated before enrollment
-- Answers: "Who should be enrolled?"
+| Timing | Purpose |
+|--------|---------|
+| **Initial enrollment** | Determine who qualifies |
+| **Each cycle** | Confirm continued eligibility |
+| **After data updates** | Reflect changed circumstances |
+| **On demand** | Manual re-verification |
 
-**Compliance**: Determines who remains **compliant** within the program
-- Evaluated during program cycles
-- Answers: "Who should continue receiving benefits?"
+### Verification Results
 
-Example: A program might require:
-- **Eligibility**: Household income below 10,000 PHP (to enroll)
-- **Compliance**: Attend monthly health check-ups (to remain in good standing)
-
-Both use similar technical mechanisms (CEL expressions, SQL queries) but serve different purposes in the program lifecycle.
-
-## Testing Eligibility Rules
-
-Before deploying eligibility criteria to a live program, it's critical to test them:
-
-### Preview Functionality
-
-OpenSPP provides preview tools that show:
-- How many registrants currently meet the criteria
-- A sample list of who would be selected
-- Which registrants are borderline cases
-
-### Test Cases
-
-Create test cases with known registrants:
-- **Should qualify**: Registrants that clearly meet criteria
-- **Should not qualify**: Registrants that clearly don't meet criteria
-- **Edge cases**: Registrants on the boundary (just above/below threshold)
-
-### Iterative Refinement
-
-Testing often reveals issues:
-- Criteria too strict (excludes intended beneficiaries)
-- Criteria too loose (includes unintended beneficiaries)
-- Data quality problems (missing or incorrect values)
-
-Refine your criteria based on test results before going live.
+| Result | Meaning | Next Steps |
+|--------|---------|------------|
+| **Passes** | Meets all criteria | Proceed with enrollment/benefits |
+| **Fails** | Doesn't meet criteria | Mark as not eligible |
+| **Pending** | Awaiting data | Request missing information |
 
 ## Best Practices
 
-### Keep Criteria Clear and Documented
+### Designing Eligibility Criteria
 
-Document the policy intent behind each criterion. Future administrators need to understand not just what the rule is, but why it exists.
+1. **Start simple** - Begin with core targeting criteria
+2. **Be specific** - Clear rules are easier to audit
+3. **Consider data availability** - Only use data you have
+4. **Plan for updates** - Circumstances change over time
+5. **Document rationale** - Record why criteria were chosen
 
-### Use Variables for Complex Calculations
+### Configuration Tips
 
-Rather than embedding complex logic directly in eligibility expressions, create reusable variables in Studio that can be tested independently.
+| Tip | Reason |
+|-----|--------|
+| **Test with sample data** | Verify criteria work as expected |
+| **Preview counts** | CEL manager shows matching count |
+| **Use progressive refinement** | Add criteria incrementally |
+| **Monitor exclusion rates** | High exclusion may indicate issues |
 
-### Plan for Data Quality
+### Common Pitfalls
 
-Eligibility is only as good as your data. Ensure that:
-- Required fields are collected during registration
-- Data is validated at entry
-- Regular data quality audits are conducted
+| Pitfall | Solution |
+|---------|----------|
+| **Missing data causes exclusion** | Handle null values explicitly |
+| **Overly complex criteria** | Simplify or split into multiple managers |
+| **Criteria not updated** | Schedule periodic reviews |
+| **No audit trail** | Log eligibility decisions |
 
-### Consider the Beneficiary Experience
+## Are You Stuck?
 
-Clear criteria help beneficiaries understand:
-- Why they were selected or not selected
-- What would make them eligible in the future
-- How to appeal incorrect determinations
+### Why are no registrants matching my criteria?
 
-### Balance Precision and Practicality
+**Check:**
+- Are the field names correct?
+- Does your data contain the expected values?
+- Are you targeting the right type (individual vs. group)?
+- Is the domain syntax valid?
 
-Highly complex criteria might be theoretically precise but difficult to implement, explain, or maintain. Sometimes simpler criteria with regular manual review work better than overly complex automated rules.
+**Debug steps:**
+1. Start with a minimal criterion
+2. Add conditions one at a time
+3. Use CEL preview to see match counts
+4. Check sample registrant data
 
-## Learn More
+### How do I target households with specific member characteristics?
 
-For hands-on guidance on configuring eligibility:
+Use CEL expressions with the `members` context:
 
-- **Configuration**: {doc}`/config_guide/eligibility/index` - Set up eligibility managers and rules
-- **CEL Expressions**: {doc}`/config_guide/cel/index` - Write and test eligibility expressions
-- **First Program Tutorial**: {doc}`/get_started/first_program/04_configure_eligibility` - Step-by-step eligibility setup
-- **Technical Reference**: {doc}`/technical_reference/programs/eligibility_manager` - Developer API documentation
+```cel
+# Households with children under 5
+members.exists(m, age_years(m.birthdate) < 5)
 
-## Summary
+# Households with 2+ elderly members
+members.filter(m, age_years(m.birthdate) >= 60).size() >= 2
 
-Eligibility is the foundation of targeted social protection programs. It translates program policy into concrete criteria that determine who qualifies for benefits. OpenSPP provides flexible tools - tag-based, SQL-based, and CEL expression-based methods - to implement eligibility rules that range from simple to highly complex.
+# Female-headed households
+members.exists(m, m.is_head == true and m.gender == 'female')
+```
 
-Well-designed eligibility criteria ensure programs reach their intended beneficiaries, operate efficiently, and maintain transparency and accountability. Testing and refining criteria before deployment, combined with good data quality, are essential for successful program implementation.
+### Can I combine multiple criteria with OR logic?
+
+Yes, with CEL:
+
+```cel
+# Elderly OR disabled
+age_years(me.birthdate) >= 60 or me.has_disability == true
+```
+
+With domain syntax, you need to use `|` operator:
+
+```python
+['|', ('age', '>=', 60), ('has_disability', '=', True)]
+```
+
+### How do I handle missing data?
+
+In CEL, use null checks:
+
+```cel
+# Only check PMT if it exists
+me.pmt_score == null or me.pmt_score < 25
+```
+
+In domain syntax:
+
+```python
+['|', ('pmt_score', '=', False), ('pmt_score', '<', 25)]
+```
+
+## Next Steps
+
+**Learn more about concepts:**
+- {doc}`programs` - How eligibility connects to programs
+- {doc}`cycles` - Cycle-level eligibility verification
+- {doc}`entitlements` - What happens after eligibility is confirmed
+
+**For configuration:**
+- See the Configuration Guide for setting up eligibility managers
+
+**For developers:**
+- See the Developer Guide for creating custom eligibility managers

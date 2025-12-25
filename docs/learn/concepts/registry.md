@@ -31,7 +31,7 @@ It's important to understand the difference:
 |----------|-------------------|
 | **Who might be eligible** for programs | **Who is enrolled** in a specific program |
 | **Broader population** (potential beneficiaries) | **Subset** of registry (actual beneficiaries) |
-| **Longer-term** data storage | **Time-bound** by program cycles |
+| **Longer-term** data storage | **Time-bound** by distribution cycles |
 | **Cross-program** information | **Program-specific** status |
 
 Being in the registry doesn't mean you're receiving benefits - it means your information is available for program staff to assess eligibility and enroll you when appropriate.
@@ -58,6 +58,60 @@ A **program-specific registry** serves a single program:
 - Examples: School feeding program registry, farmer support registry
 
 OpenSPP supports both approaches and can operate as either type.
+
+## OpenSPP Registry Products
+
+OpenSPP offers three pre-configured registry solutions for common use cases. All are built on the same core architecture, allowing data sharing when appropriate and a unified view across programs.
+
+### Social Registry
+
+A unified registry designed to serve multiple social protection programs such as cash transfers, food assistance, and housing subsidies.
+
+| Capability | Description |
+|------------|-------------|
+| **Population coverage** | Broad population that might be eligible for various programs |
+| **Key data collected** | Demographics, household composition, socio-economic status, vulnerability indicators |
+| **Poverty assessment** | Built-in support for Proxy Means Testing (PMT) and other scoring methods |
+| **Dynamic updates** | On-demand registration and periodic reassessment campaigns |
+| **Integration** | Interoperates with CRVS, national ID systems, and other registries via DCI standards |
+
+**Use cases:** National social registries (like Brazil's Cadastro Único), poverty databases, unified beneficiary registries.
+
+See {doc}`/explanation/social_registry` for detailed background on social registry concepts.
+
+### Farmer Registry
+
+A specialized registry for agricultural programs that extends the base registry with farm-specific data.
+
+| Capability | Description |
+|------------|-------------|
+| **Farm data** | Land parcels, ownership/tenure, crop types, livestock, irrigation, machinery |
+| **Geospatial integration** | GIS mapping of farm boundaries, land use visualization via GeoJSON API and QGIS |
+| **Agricultural activities** | Track cultivation, livestock rearing, aquaculture by land parcel |
+| **Shock responsiveness** | Support climate adaptation and early warning triggers for weather-related events |
+| **Cross-sector coordination** | Link farmer data with social protection programs for rural poverty targeting |
+
+**Use cases:** National farmer registries (like India's FRUITS, Lebanon's Farmer Registry), smallholder support programs, agricultural input subsidies.
+
+See {doc}`/explanation/farmer_registry` for detailed background on farmer registry concepts.
+
+### Disability Registry
+
+A registry designed for disability inclusion programs, with data structures aligned to international standards for functional assessment.
+
+| Capability | Description |
+|------------|-------------|
+| **Disability classification** | Impairment types, severity levels, causes, age of onset |
+| **Functional assessment** | Support for ICF-based functional scores (mobility, vision, hearing, cognition, etc.) |
+| **Support needs** | Human assistance requirements, assistive technology, housing adaptations, medical care |
+| **Certification tracking** | Medical assessment status, disability percentage, certification dates |
+| **Benefit calculation** | Pre-built logic for tiered grants based on severity (e.g., 40-59% partial, 60-79% moderate, 80%+ severe) |
+
+**Use cases:** National disability registries, disability grant programs, accessibility planning, assistive device distribution.
+
+OpenSPP can both:
+- **Expose disability data** via DCI-compliant API for other systems to query
+- **Query external disability registries** to check disability status for eligibility determination
 
 ## The Two Main Registrant Types
 
@@ -134,40 +188,37 @@ The choice depends on program requirements and privacy considerations.
 
 Here's how the registry data is structured:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                         REGISTRANTS                          │
-│  (Base information common to individuals and groups)         │
-│                                                              │
-│  • Name                                                      │
-│  • Registration date                                         │
-│  • Location/Administrative area                              │
-│  • Contact information                                       │
-│  • ID documents                                              │
-│  • Tags and categories                                       │
-│  • Status (active, inactive, archived)                       │
-└───────────────────┬─────────────────────────┬───────────────┘
-                    │                         │
-        ┌───────────▼─────────┐   ┌──────────▼──────────┐
-        │    INDIVIDUALS      │   │       GROUPS        │
-        │                     │   │                     │
-        │  • Birthdate        │   │  • Group type       │
-        │  • Gender           │   │  • Member count     │
-        │  • Marital status   │   │  • Household data   │
-        │  • Education        │   │                     │
-        │  • Disability       │   └──────────┬──────────┘
-        └──────────┬──────────┘              │
-                   │                         │
-                   └────────┬────────────────┘
-                            │
-                ┌───────────▼────────────┐
-                │  GROUP MEMBERSHIP      │
-                │                        │
-                │  • Individual          │
-                │  • Group               │
-                │  • Role (head, etc.)   │
-                │  • Start/end dates     │
-                └────────────────────────┘
+```{mermaid}
+erDiagram
+    REGISTRANT {
+        string name
+        date registration_date
+        string location
+        string contact_info
+        string status
+    }
+    INDIVIDUAL {
+        date birthdate
+        string gender
+        string marital_status
+        string education
+        string disability_status
+    }
+    GROUP {
+        string group_type
+        int member_count
+        string household_data
+    }
+    GROUP_MEMBERSHIP {
+        string role
+        date start_date
+        date end_date
+    }
+
+    REGISTRANT ||--o| INDIVIDUAL : "is a"
+    REGISTRANT ||--o| GROUP : "is a"
+    INDIVIDUAL ||--o{ GROUP_MEMBERSHIP : "belongs to"
+    GROUP ||--o{ GROUP_MEMBERSHIP : "has"
 ```
 
 ## Relationships in the Registry
@@ -365,7 +416,7 @@ Understanding what the registry does and doesn't do:
 | **Registry** | Store individual/household profile data | Foundation for everything |
 | **Event Data** | Record time-based observations (surveys, visits) | Supplements registry with temporal data |
 | **Programs** | Define benefits and eligibility rules | Use registry data to select beneficiaries |
-| **Cycles** | Time-bound benefit distribution periods | Operate on subsets of registry (enrolled beneficiaries) |
+| **Cycles** | Single distribution rounds (week, month, quarter) when payments go out | Operate on subsets of registry (enrolled beneficiaries) |
 | **Variables** | Computed values from registry data | Calculate from registry fields (e.g., household size) |
 | **Change Requests** | Workflow for updating registry data | Controlled way to modify registry |
 
@@ -489,8 +540,7 @@ It depends on your programs. For poverty-targeted programs, annual updates are c
 
 **Learn more about concepts:**
 - {doc}`programs` - How programs use registry data
-- {doc}`/config_guide/event_data/overview` - Supplementing registry with event data
-- {doc}`/config_guide/eligibility/index` - Using registry data in eligibility rules
+- {doc}`eligibility` - Using registry data in eligibility rules
 
 **Start using the registry:**
 - See the User Guide for step-by-step instructions on registering individuals, registering groups, and searching for registrants.

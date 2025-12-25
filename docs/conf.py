@@ -176,7 +176,30 @@ extensions = [
     "notfound.extension",
     "sphinx_reredirects",  # URL redirects for documentation restructure
     "cel_lexer",  # Custom CEL expression syntax highlighting
+    "sphinxcontrib.mermaid",  # Mermaid diagrams (flowcharts, sequence, state)
 ]
+
+# Mermaid configuration
+# For offline/air-gapped builds, set MERMAID_OFFLINE=svg and install mermaid-cli:
+#   npm install -g @mermaid-js/mermaid-cli
+# This will pre-render diagrams to SVG at build time (no JavaScript needed at runtime)
+_mermaid_offline = os.environ.get("MERMAID_OFFLINE", "") == "svg"
+mermaid_output_format = "svg" if _mermaid_offline else "raw"
+# Use puppeteer config for no-sandbox mode (required on Ubuntu 23.10+)
+mermaid_cmd = ["mmdc", "--puppeteerConfigFile", os.path.join(os.path.dirname(__file__), "_static/puppeteer-config.json")]
+mermaid_include_elk = False  # Disable ELK layout to reduce dependencies
+mermaid_init_js = "" if _mermaid_offline else "mermaid.initialize({startOnLoad:true});"
+
+# Monkeypatch sphinxcontrib.mermaid to skip JS loading in offline/SVG mode
+if _mermaid_offline:
+    import sphinxcontrib.mermaid
+    _original_install_js = sphinxcontrib.mermaid.install_js
+    def _patched_install_js(app, pagename, templatename, context, doctree):
+        # Skip JS installation entirely when rendering to SVG
+        if app.config.mermaid_output_format == "svg":
+            return
+        return _original_install_js(app, pagename, templatename, context, doctree)
+    sphinxcontrib.mermaid.install_js = _patched_install_js
 
 # Some optional extensions depend on Pillow. In environments where Pillow cannot
 # be imported (for example, Python versions without compatible wheels), build
