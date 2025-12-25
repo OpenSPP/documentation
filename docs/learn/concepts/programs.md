@@ -92,13 +92,17 @@ Each manager type has a default implementation that works for most cases. Admini
 Programs move through a simple lifecycle:
 
 ```{mermaid}
-stateDiagram-v2
-    direction LR
-    [*] --> Active: Create program
-    Active --> Active: Run cycles
-    Active --> Ended: End program
-    Ended --> Active: Reactivate
-    Ended --> [*]
+graph LR
+    Start(( )) --> Active
+    Active -->|Run cycles| Active
+    Active -->|End program| Ended
+    Ended -->|Reactivate| Active
+    Ended --> Stop(( ))
+
+    style Start fill:#000,stroke:#000
+    style Stop fill:#000,stroke:#000
+    style Active fill:#e8f5e9
+    style Ended fill:#ffebee
 ```
 
 | State | Description | What You Can Do |
@@ -120,19 +124,27 @@ A program membership links a registrant to a program. It tracks:
 ### Membership States
 
 ```{mermaid}
-stateDiagram-v2
-    direction LR
-    [*] --> Draft: Add to program
-    Draft --> Enrolled: Verify eligibility
-    Draft --> NotEligible: Fails criteria
-    Draft --> Duplicated: Duplicate found
-    Enrolled --> Paused: Pause benefits
-    Enrolled --> Exited: Exit program
-    Paused --> Enrolled: Resume
-    Paused --> Exited: Exit program
-    NotEligible --> Draft: Re-evaluate
-    Duplicated --> Draft: Resolve duplicate
-    Exited --> [*]
+graph LR
+    Start(( )) -->|Add to program| Draft
+    Draft -->|Verify eligibility| Enrolled
+    Draft -->|Fails criteria| NotEligible
+    Draft -->|Duplicate found| Duplicated
+    Enrolled -->|Pause benefits| Paused
+    Enrolled -->|Exit program| Exited
+    Paused -->|Resume| Enrolled
+    Paused -->|Exit program| Exited
+    NotEligible -->|Re-evaluate| Draft
+    Duplicated -->|Resolve duplicate| Draft
+    Exited --> Stop(( ))
+
+    style Start fill:#000,stroke:#000
+    style Stop fill:#000,stroke:#000
+    style Draft fill:#fff3e0
+    style Enrolled fill:#e8f5e9
+    style Paused fill:#e3f2fd
+    style Exited fill:#ffebee
+    style NotEligible fill:#ffebee
+    style Duplicated fill:#ffebee
 ```
 
 | State | Description | Next Steps |
