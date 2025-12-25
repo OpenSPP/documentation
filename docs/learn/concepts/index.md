@@ -13,6 +13,8 @@ eligibility
 compliance
 entitlements
 payments
+deduplication
+change-requests
 ```
 
 ## Registry
@@ -42,3 +44,11 @@ The {doc}`registry` is the central database storing information about people and
 ## Payments
 
 {doc}`payments` are the actual disbursements that deliver entitlements to beneficiaries through various channels.
+
+## Deduplication
+
+{doc}`deduplication` identifies and handles duplicate registrations to prevent fraud and ensure each beneficiary receives benefits only once.
+
+## Change Requests
+
+{doc}`change-requests` provide a controlled workflow for updating registry data with approval processes, audit trails, and supporting documentation.
