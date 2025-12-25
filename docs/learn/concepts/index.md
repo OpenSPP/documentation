@@ -10,6 +10,7 @@ registry
 programs
 cycles
 eligibility
+compliance
 entitlements
 payments
 ```
@@ -29,6 +30,10 @@ The {doc}`registry` is the central database storing information about people and
 ## Eligibility
 
 {doc}`eligibility` determines who qualifies for programs based on defined criteria like age, income, location, or household composition.
+
+## Compliance
+
+{doc}`compliance` tracks whether beneficiaries meet ongoing conditions like school attendance, health checkups, or training participation—essential for conditional cash transfer programs.
 
 ## Entitlements
 
