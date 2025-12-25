@@ -203,6 +203,7 @@ The area-based eligibility manager simplifies geographic targeting:
 
 ```{mermaid}
 stateDiagram-v2
+    direction LR
     [*] --> Import: Import eligible registrants
     Import --> Draft: Create draft memberships
     Draft --> Verify: Verify eligibility

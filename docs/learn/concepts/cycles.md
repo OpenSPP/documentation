@@ -45,6 +45,7 @@ A cycle moves through several states from creation to completion:
 
 ```{mermaid}
 stateDiagram-v2
+    direction LR
     [*] --> Draft: Create cycle
     Draft --> ToApprove: Submit for approval
     Draft --> Cancelled: Cancel

@@ -34,6 +34,7 @@ One entitlement can have multiple payment attempts (if initial attempts fail) or
 
 ```{mermaid}
 stateDiagram-v2
+    direction LR
     [*] --> Issued: Prepare payments
     Issued --> Sent: Send to FSP
     Sent --> Reconciled: Receive confirmation

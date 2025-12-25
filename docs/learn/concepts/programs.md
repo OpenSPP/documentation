@@ -93,6 +93,7 @@ Programs move through a simple lifecycle:
 
 ```{mermaid}
 stateDiagram-v2
+    direction LR
     [*] --> Active: Create program
     Active --> Active: Run cycles
     Active --> Ended: End program
@@ -120,6 +121,7 @@ A program membership links a registrant to a program. It tracks:
 
 ```{mermaid}
 stateDiagram-v2
+    direction LR
     [*] --> Draft: Add to program
     Draft --> Enrolled: Verify eligibility
     Draft --> NotEligible: Fails criteria

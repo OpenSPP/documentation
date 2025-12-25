@@ -86,6 +86,7 @@ Redeemable tokens for goods or services:
 
 ```{mermaid}
 stateDiagram-v2
+    direction LR
     [*] --> Draft: Prepare entitlements
     Draft --> PendingApproval: Submit for approval
     PendingApproval --> Approved: Approve
