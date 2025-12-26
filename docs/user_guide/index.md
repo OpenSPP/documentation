@@ -9,7 +9,6 @@ This guide is designed for program staff, operators, and government employees wh
 ## What You'll Find Here
 
 - **Registry** - Managing individuals, groups, and registrant data
-- **Programs** - Creating and managing social protection programs
 - **Entitlements** - Managing beneficiary entitlements
 - **Payments** - Payment distribution and service points
 - **Change Requests** - Submitting and processing change requests (V2 feature)
@@ -22,7 +21,6 @@ This guide is designed for program staff, operators, and government employees wh
 :hidden:
 
 registry/index
-programs/index
 entitlements/index
 payments/index
 change_requests/index

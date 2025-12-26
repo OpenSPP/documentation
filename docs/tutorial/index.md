@@ -30,7 +30,6 @@ This Tutorials serve as a detailed manual for the utilization and navigation of 
 - [Social Welfare Development Index (SWDI)](social_welfare_development_index)
 - [Hardware Integration](hardware_integration)
 - [Register new individual](../user_guide/registry/register_individual) (moved to User Guide)
-- [Enroll beneficiaries](../user_guide/programs/enroll) (moved to User Guide)
 - [Import registrant data](../user_guide/registry/import) (moved to User Guide)
 - [Export Registrant Data](../user_guide/registry/export) (moved to User Guide)
 - [Access management](access_management)
@@ -82,9 +81,7 @@ vulnerability_scoring
 social_welfare_development_index
 vouchers
 access_management
-../learn/concepts/programs
 ../user_guide/registry/register_individual
-../user_guide/programs/enroll
 ../user_guide/registry/import
 ../user_guide/registry/export
 user_guides/administrating_role_based_access

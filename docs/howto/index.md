@@ -42,7 +42,6 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 
 - {doc}`user_guides/setting_up_farmer_registry`
 - {doc}`../user_guide/registry/register_individual` (moved to User Guide)
-- {doc}`../user_guide/programs/enroll` (moved to User Guide)
 - {doc}`../user_guide/registry/import` (moved to User Guide)
 - {doc}`../user_guide/registry/export` (moved to User Guide)
 - {doc}`user_guides/administrating_role_based_access`
@@ -80,7 +79,6 @@ developer_guides/beneficiary_keycloak
 
 user_guides/setting_up_farmer_registry
 ../user_guide/registry/register_individual
-../user_guide/programs/enroll
 ../user_guide/registry/import
 ../user_guide/registry/export
 user_guides/administrating_role_based_access

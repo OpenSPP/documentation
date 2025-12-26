@@ -99,7 +99,6 @@ get_started/migrating_from_v1
 :caption: User Guide
 
 user_guide/registry/index
-user_guide/programs/index
 user_guide/entitlements/index
 user_guide/payments/index
 user_guide/change_requests/index
