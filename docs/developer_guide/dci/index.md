@@ -56,7 +56,7 @@ protocol
 
 **Use Case:** National MIS needs to query beneficiary data from OpenSPP Social Registry.
 
-```mermaid
+```{mermaid}
 graph LR
     A[External MIS] -->|DCI Search Request| B[OpenSPP DCI Server]
     B -->|Query Registry| C[res.partner]
@@ -70,7 +70,7 @@ See {doc}`server_role` for implementation details.
 
 **Use Case:** Import birth registrations from national CRVS to create new registrants.
 
-```mermaid
+```{mermaid}
 graph LR
     A[OpenSPP DCI Client] -->|DCI Search Request| B[National CRVS]
     B -->|Birth Records| A

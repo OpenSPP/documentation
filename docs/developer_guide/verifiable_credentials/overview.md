@@ -13,7 +13,7 @@ Verifiable Credentials (VCs) are a W3C standard for issuing digital credentials 
 
 ### The Three-Party Model
 
-```mermaid
+```{mermaid}
 graph LR
     A[Issuer<br/>OpenSPP Registry] -->|1. Issues VC| B[Holder<br/>Beneficiary Wallet]
     B -->|2. Presents VC| C[Verifier<br/>Service Provider]
@@ -197,7 +197,7 @@ See {doc}`w3c_vc` for detailed information about W3C VC support.
 
 ### Trust Model
 
-```mermaid
+```{mermaid}
 graph TD
     A[DID:web Issuer Identity] --> B[Public Key Resolution]
     B --> C[Signature Verification]

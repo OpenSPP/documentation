@@ -171,7 +171,7 @@ determined based on the end date. It can be either "active" if the membership is
 
 To illustrate, consider a scenario where several farms are part of larger farmer groups. Each farm includes multiple individuals working on them, and these farms can also be associated with different farmer groups. This structure allows for a clear and organized way to manage and visualize the relationships between individuals and their respective groups.
 
-```mermaid
+```{mermaid}
 graph TD
     A(Farmer Group 1) --- B(Farm A)
     A --- C(Farm B)

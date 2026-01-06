@@ -36,7 +36,7 @@ Traditional credential issuance requires custom protocols and tight integration.
 
 This is the most common flow in OpenSPP. The issuer generates a credential offer that the wallet can redeem without user interaction.
 
-```mermaid
+```{mermaid}
 sequenceDiagram
     participant R as Registry/OpenSPP
     participant B as Beneficiary
@@ -153,7 +153,7 @@ Response:
 
 For user-initiated credential requests (wallet pulls from issuer).
 
-```mermaid
+```{mermaid}
 sequenceDiagram
     participant W as Wallet
     participant R as Registry/OpenSPP

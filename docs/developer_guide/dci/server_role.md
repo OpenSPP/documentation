@@ -18,7 +18,7 @@ When acting as a DCI server, OpenSPP exposes its beneficiary registry to authori
 
 ## Architecture
 
-```mermaid
+```{mermaid}
 sequenceDiagram
     participant External as External System
     participant Auth as OAuth2 Endpoint

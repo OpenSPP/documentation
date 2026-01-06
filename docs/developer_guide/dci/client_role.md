@@ -18,7 +18,7 @@ When acting as a DCI client, OpenSPP queries external DCI-compliant systems to:
 
 ## Architecture
 
-```mermaid
+```{mermaid}
 sequenceDiagram
     participant OpenSPP as OpenSPP DCI Client
     participant External as External Registry

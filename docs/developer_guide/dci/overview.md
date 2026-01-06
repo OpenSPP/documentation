@@ -32,7 +32,7 @@ Without DCI, each integration requires custom API development. With DCI, OpenSPP
 
 ## DCI Architecture
 
-```mermaid
+```{mermaid}
 graph TB
     subgraph "OpenSPP as DCI Server"
         A[External System] -->|DCI Search Request| B[DCI Server Module]
@@ -90,7 +90,7 @@ DCI defines standard registry types:
 #### Interaction Patterns
 
 **Synchronous Search:**
-```mermaid
+```{mermaid}
 sequenceDiagram
     Client->>Server: POST /registry/sync/search
     Note over Server: Process immediately
@@ -98,7 +98,7 @@ sequenceDiagram
 ```
 
 **Asynchronous Search:**
-```mermaid
+```{mermaid}
 sequenceDiagram
     Client->>Server: POST /registry/search (with callback_uri)
     Server-->>Client: 202 Accepted
@@ -108,7 +108,7 @@ sequenceDiagram
 ```
 
 **Subscribe/Notify:**
-```mermaid
+```{mermaid}
 sequenceDiagram
     Subscriber->>Registry: POST /registry/subscribe
     Registry-->>Subscriber: 202 Accepted
