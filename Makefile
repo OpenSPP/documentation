@@ -172,9 +172,13 @@ deploy: clean html
 
 .PHONY: livehtml
 livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in the browser
-	cd "$(DOCS_DIR)" && ${SPHINXAUTOBUILD} \
+	cd "$(DOCS_DIR)" && SPHINX_DEV_BUILD=1 ${SPHINXAUTOBUILD} \
 		--ignore "*.swp" \
+		--ignore "*/.git/*" \
+		--ignore "**/.DS_Store" \
+		--re-ignore "_build/.*" \
 		--port 8050 \
+		-j auto \
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
 
 .PHONY: storybook

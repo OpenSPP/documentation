@@ -164,20 +164,26 @@ extensions = [
     "sphinx.ext.githubpages",
     "sphinx_copybutton",
     "sphinx_design",
-    "sphinx_sitemap",
     "sphinxcontrib.httpdomain",
     "sphinxcontrib.httpexample",
-    'sphinxcontrib.googleanalytics',
     "sphinxcontrib.video",
     "sphinx.ext.viewcode",
+    "sphinx.ext.extlinks",
     "sphinx.ext.autosummary",
     "sphinx.ext.graphviz",
     "sphinx_tabs.tabs",
-    "notfound.extension",
-    "sphinx_reredirects",  # URL redirects for documentation restructure
     "cel_lexer",  # Custom CEL expression syntax highlighting
     "sphinxcontrib.mermaid",  # Mermaid diagrams (flowcharts, sequence, state)
 ]
+
+# Extensions that slow down builds - only load for production
+if not os.environ.get("SPHINX_DEV_BUILD"):
+    extensions += [
+        "sphinx_sitemap",
+        "sphinxcontrib.googleanalytics",
+        "notfound.extension",
+        "sphinx_reredirects",  # URL redirects for documentation restructure
+    ]
 
 # Mermaid configuration
 # For offline/air-gapped builds, set MERMAID_OFFLINE=svg and install mermaid-cli:
@@ -185,6 +191,7 @@ extensions = [
 # This will pre-render diagrams to SVG at build time (no JavaScript needed at runtime)
 _mermaid_offline = os.environ.get("MERMAID_OFFLINE", "") == "svg"
 mermaid_output_format = "svg" if _mermaid_offline else "raw"
+mermaid_version = "11.4.0"  # Pin mermaid version for stability
 # Use puppeteer config for no-sandbox mode (required on Ubuntu 23.10+)
 mermaid_cmd = ["mmdc", "--puppeteerConfigFile", os.path.join(os.path.dirname(__file__), "_static/puppeteer-config.json")]
 mermaid_include_elk = False  # Disable ELK layout to reduce dependencies
@@ -201,6 +208,29 @@ if _mermaid_offline:
         return _original_install_js(app, pagename, templatename, context, doctree)
     sphinxcontrib.mermaid.install_js = _patched_install_js
 
+# -- External links configuration ----------------------------------
+# Shortcuts for linking to GitHub source files
+# Usage in MyST: {gh-spp}`spp_drims/models/donation.py`
+# Usage in RST: :gh-spp:`spp_drims/models/donation.py`
+
+extlinks = {
+    # OpenSPP modules v2 repository
+    'gh-spp': (
+        f'https://github.com/openspp/openspp-modules-v2/blob/{odoo_current_branch}/%s',
+        '%s',
+    ),
+    # DRIMS module shortcut
+    'gh-drims': (
+        f'https://github.com/openspp/openspp-modules-v2/blob/{odoo_current_branch}/spp_drims/%s',
+        'spp_drims/%s',
+    ),
+    # Odoo core (for reference)
+    'gh-odoo': (
+        f'https://github.com/odoo/odoo/blob/{odoo_current_branch}/%s',
+        'odoo/%s',
+    ),
+}
+
 # Some optional extensions depend on Pillow. In environments where Pillow cannot
 # be imported (for example, Python versions without compatible wheels), build
 # the documentation without those extensions.
@@ -211,7 +241,7 @@ except Exception as exc:  # pragma: no cover - build-environment dependent
     _pillow_available = False
     _logger.warning("Pillow is not available (%s). Disabling sphinxext.opengraph.", exc)
 
-if _pillow_available:
+if _pillow_available and not os.environ.get("SPHINX_DEV_BUILD"):
     extensions.append("sphinxext.opengraph")
 
 sphinx_tabs_disable_tab_closing = True
@@ -266,7 +296,13 @@ exclude_patterns = [
     "**/README.rst",
 ]
 
-html_js_files = ["patch_scrollToActive.js", "search_shortcut.js"]
+html_js_files = [
+    ("https://code.jquery.com/jquery-3.7.1.min.js", {"integrity": "sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=", "crossorigin": "anonymous"}),
+    ("https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js", {}),
+    "mermaid_init.js",
+    "patch_scrollToActive.js",
+    "search_shortcut.js",
+]
 
 html_extra_path = [
     "robots.txt",
@@ -530,6 +566,9 @@ def source_replace(app, docname, source):
 
 
 def modify_sitemap(app, exception):
+    # Skip during livehtml/dev builds for speed
+    if os.environ.get("SPHINX_DEV_BUILD"):
+        return
     if exception is None:  # Only run if the build was successful
         sitemap_path = os.path.join(app.outdir, 'sitemap.xml')
         if os.path.exists(sitemap_path):
@@ -546,6 +585,9 @@ def modify_sitemap(app, exception):
 
 
 def update_html_files(app, exception):
+    # Skip during livehtml/dev builds for speed
+    if os.environ.get("SPHINX_DEV_BUILD"):
+        return
     if exception is None:  # Only run if the build was successful
         for root, dirs, files in os.walk(app.outdir):
             for file in files:
