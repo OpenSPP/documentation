@@ -24,11 +24,11 @@ With DRIMS, you can:
 
 This guide covers the main tasks you'll do in DRIMS:
 
-- **{doc}donations** - How to receive and process incoming donations
-- **{doc}requests** - How to submit and approve requests for relief supplies
-- **{doc}dispatches** - How to prepare shipments and confirm deliveries
-- **{doc}returns** - How to handle items returned from the field
-- **{doc}dashboard** - How to monitor stock levels and alerts
+- **{doc}`donations`** - How to receive and process incoming donations
+- **{doc}`requests`** - How to submit and approve requests for relief supplies
+- **{doc}`dispatches`** - How to prepare shipments and confirm deliveries
+- **{doc}`returns`** - How to handle items returned from the field
+- **{doc}`dashboard`** - How to monitor stock levels and alerts
 
 ## Quick Start: Common Tasks
 

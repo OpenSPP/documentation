@@ -77,7 +77,6 @@ warehouses
 approval_chains
 alerts
 vocabularies
-user_roles
 ```
 
 ## Next Steps

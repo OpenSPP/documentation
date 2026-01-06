@@ -31,7 +31,7 @@ Before extending DRIMS, you should understand:
 - **OpenSPP architecture** - Read the [OpenSPP Developer Guide](../../index.md) first
 - **DRIMS concepts** - Understand donations, requests, dispatches from the user guide
 
-You'll also need a working development environment. See {doc}`/howto/developer_guides/development_setup` for setup instructions.
+You'll also need a working development environment. See {doc}`/developer_guide/setup/index` for setup instructions.
 
 ## Module Overview
 
@@ -79,7 +79,7 @@ DRIMS also **extends** these Odoo/OpenSPP models:
 | Model | Extensions |
 |-------|-----------|
 | `stock.warehouse` | DRIMS flag, tier classification, health indicators |
-| `stock.picking` | Transaction types, incident linking, proof of delivery |
+| `stock.picking` | Transaction types, incident linking, {term}`Proof of Delivery` |
 | `spp.hazard.incident` | DRIMS KPIs (stock value, beneficiaries served) |
 | `res.users` | Area/warehouse assignments for security |
 
@@ -225,7 +225,7 @@ extending
 
 ## See Also
 
-- [DRIMS User Guide](../../user_guide/drims/index.md) - How to use DRIMS
-- [DRIMS Implementer Guide](../../implementer_guide/drims/index.md) - How to configure DRIMS
-- [OpenSPP Developer Guide](../../index.md) - OpenSPP development principles
-- [spp_drims README](https://github.com/openspp/openspp-modules-v2/tree/main/spp_drims) - Module repository
+- {doc}`/user_guide/drims/index` - How to use DRIMS
+- {doc}`/config_guide/drims/index` - How to configure DRIMS
+- {doc}`/developer_guide/index` - OpenSPP development principles
+- {gh-drims}`README.md` - Module repository

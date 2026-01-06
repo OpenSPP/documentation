@@ -332,7 +332,6 @@ DRIMS tracks inventory per incident regardless of your choice. The difference is
 
 ## Next Steps
 
-- {doc}`/config_guide/drims/products` - Configure product catalog for relief items
-- {doc}`/config_guide/drims/incidents` - Create and manage disaster incidents
+- {doc}`/config_guide/drims/vocabularies` - Configure donor types and item conditions
+- {doc}`/config_guide/drims/alerts` - Set up stock monitoring and alerts
 - {doc}`/user_guide/drims/donations` - Receive donations into warehouses
-- {doc}`/explanation/drims/distribution_flow` - Understand the full distribution workflow

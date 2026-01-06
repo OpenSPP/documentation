@@ -15,10 +15,10 @@ When a disaster strikes, relief supplies flow in from multiple donors and must r
 
 - **Donation tracking** from pledge announcement through warehouse receipt
 - **Multi-tier request approval** for relief supplies from field locations
-- **Dispatch management** with waybill generation and proof of delivery
+- **Dispatch management** with {term}`Waybill` generation and {term}`Proof of Delivery`
 - **Real-time inventory visibility** across central, regional, and mobile warehouses
 - **Stock health monitoring** with automated alerts for low stock and expiring items
-- **OCHA cluster coordination** for multi-agency humanitarian response
+- **{term}`OCHA` {term}`Cluster` coordination** for multi-agency humanitarian response
 
 ## Core Workflows
 
@@ -35,22 +35,22 @@ All operations are linked to specific **disaster incidents** to maintain clear a
 
 ## OCHA Cluster Integration
 
-DRIMS implements the standard [OCHA/IASC humanitarian cluster system](https://www.humanitarianresponse.info/en/coordination/clusters) for coordinated disaster response:
+DRIMS implements the standard [OCHA/{term}`IASC` humanitarian cluster system](https://www.humanitarianresponse.info/en/coordination/clusters) for coordinated disaster response:
 
-| Cluster | Lead Agency | Example Supplies |
-|---------|-------------|------------------|
-| Food Security | WFP / FAO | Rice, fortified foods, agricultural inputs |
-| Health | WHO | Medical kits, vaccines, PPE |
-| WASH | UNICEF | Water purification tablets, jerry cans, hygiene kits |
-| Shelter | UNHCR / IFRC | Tents, tarpaulins, blankets, tools |
-| Nutrition | UNICEF | Therapeutic foods, supplements |
-| Protection | UNHCR | Safety supplies, dignity kits |
-| Education | UNICEF / Save the Children | School supplies, temporary classroom kits |
+| Cluster | Example Supplies |
+|---------|------------------|
+| Food Security | Rice, fortified foods, agricultural inputs |
+| Health | Medical kits, vaccines, PPE |
+| WASH | Water purification tablets, jerry cans, hygiene kits |
+| Shelter | Tents, tarpaulins, blankets, tools |
+| Nutrition | Therapeutic foods, supplements |
+| Protection | Safety supplies, dignity kits |
+| Education | School supplies, temporary classroom kits |
 
 Each request and deployed personnel can be tagged with a cluster, enabling:
 - Sector-specific reporting to cluster leads
 - Gap identification across humanitarian sectors
-- **4W Reports** (Who does What, Where, When) for coordination meetings
+- **{term}`4W Report`s** (Who does What, Where, When) for coordination meetings
 
 ## Key Capabilities
 
@@ -74,7 +74,7 @@ DRIMS supports multiple coordination modes for disaster response:
 
 | Mode | Description | Use Case |
 |------|-------------|----------|
-| Lead Agency | Single agency coordinates all partners | Government-led national response |
+| {term}`Lead Agency` | Single agency coordinates all partners | Government-led national response |
 | Cluster System | UN-led sector coordination | Large-scale humanitarian emergencies |
 | Consortium | NGO-led partner coordination | Multi-NGO regional response |
 | Bilateral | Direct agency-to-agency | Focused bilateral assistance |
@@ -84,32 +84,25 @@ DRIMS supports multiple coordination modes for disaster response:
 Track deployed disaster response staff by:
 - **Role** - Field Coordinator, Warehouse Manager, Logistics Officer
 - **Humanitarian cluster** assignment
-- **Organization** and organization role (lead, implementing, funding, technical)
+- **Organization** and organization role (lead, {term}`Implementing Partner`, {term}`Funding Partner`, {term}`Technical Partner`)
 - **Location** and incident assignment
 
 ## Quick Start Guides
 
-```{toctree}
-:maxdepth: 1
-
-../../tutorial/user_guides/drims/index
-../../howto/implementer_guides/drims/index
-../../howto/developer_guides/drims/index
-```
-
 **For government staff and field workers:**
-- {doc}`/tutorial/user_guides/drims/receiving_donations` - How to process incoming donations
-- {doc}`/tutorial/user_guides/drims/submitting_requests` - Submit relief supply requests
-- {doc}`/tutorial/user_guides/drims/dispatching_supplies` - Pick and dispatch supplies
+- {doc}`/user_guide/drims/donations` - How to process incoming donations
+- {doc}`/user_guide/drims/requests` - Submit relief supply requests
+- {doc}`/user_guide/drims/dispatches` - Pick and dispatch supplies
+- {doc}`/user_guide/drims/dashboard` - Monitor operations and alerts
 
 **For implementers configuring DRIMS:**
-- {doc}`/howto/implementer_guides/drims/warehouse_setup` - Configure warehouses and stock thresholds
-- {doc}`/howto/implementer_guides/drims/approval_workflows` - Set up multi-tier request approval
-- {doc}`/howto/implementer_guides/drims/alerts_configuration` - Configure low stock and expiry alerts
+- {doc}`/config_guide/drims/warehouses` - Configure warehouses and stock thresholds
+- {doc}`/config_guide/drims/approval_chains` - Set up multi-tier request approval
+- {doc}`/config_guide/drims/alerts` - Configure low stock and expiry alerts
 
 **For developers extending DRIMS:**
-- {doc}`/howto/developer_guides/drims/custom_workflows` - Extend donation and dispatch workflows
-- {doc}`/howto/developer_guides/drims/integration` - Integrate with external logistics systems
+- {doc}`/developer_guide/drims/architecture` - DRIMS data model and workflows
+- {doc}`/developer_guide/drims/extending` - Extend with custom functionality
 
 ## How It Works
 
@@ -160,15 +153,14 @@ DRIMS integrates with other OpenSPP modules:
 ## Next Steps
 
 **New to DRIMS?** Start with the user guides:
-- {doc}`/tutorial/user_guides/drims/quickstart` - 10-minute DRIMS overview
+- {doc}`/user_guide/drims/index` - DRIMS user guide overview
 
 **Setting up DRIMS for your organization?** See the implementer guides:
-- {doc}`/howto/implementer_guides/drims/installation` - Installation and initial configuration
-- {doc}`/howto/implementer_guides/drims/warehouse_setup` - Configure warehouses and locations
+- {doc}`/config_guide/drims/index` - Configuration overview
+- {doc}`/config_guide/drims/warehouses` - Configure warehouses and locations
 
 **Questions?**
-- {doc}`/reference/drims/faq` - Frequently asked questions
-- {doc}`/reference/drims/glossary` - DRIMS terminology and humanitarian terms
+- {doc}`/reference/glossary/humanitarian` - DRIMS terminology and humanitarian terms
 
 ## Learn More
 

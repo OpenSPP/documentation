@@ -13,7 +13,7 @@ DRIMS uses the `spp_approval` module to manage request approvals. Each request f
 
 **Approval States** (what we're configuring here):
 
-```mermaid
+```{mermaid}
 stateDiagram-v2
     [*] --> draft
     draft --> pending: Submit
@@ -145,7 +145,7 @@ Combined with Priority:
 Train approvers on emergency protocols:
 
 1. **Monitor the dashboard** - Life-threatening requests appear prominently
-2. **Immediate notification** - Set up email alerts for life-threatening requests (see {doc}`/config_guide/drims/notifications`)
+2. **Immediate notification** - Set up email alerts for life-threatening requests using Odoo Automated Actions
 3. **Fast-track approval** - Approve immediately, even if above normal threshold
 4. **Document justification** - Add notes in chatter explaining emergency approval
 
@@ -251,7 +251,7 @@ DRIMS doesn't support automatic approval based on thresholds. You can implement 
 
 **Want email notifications when requests need approval?**
 
-Set up email alerts in **Settings → Technical → Automation → Automated Actions**. Create an action on `spp.drims.request` that triggers when `approval_state` changes to `pending`, and send email to users with the Request Approver role. See {doc}`/config_guide/drims/notifications` for details.
+Set up email alerts in **Settings → Technical → Automation → Automated Actions**. Create an action on `spp.drims.request` that triggers when `approval_state` changes to `pending`, and send email to users with the Request Approver role.
 
 **Life-threatening requests aren't being prioritized?**
 
@@ -262,6 +262,6 @@ The life-threatening flag is a visual indicator, not an automatic escalation. Tr
 
 ## See Also
 
-- {doc}`/config_guide/drims/user_roles` - Setting up DRIMS roles and permissions
-- {doc}`/config_guide/drims/notifications` - Configuring email alerts for approvals
-- {doc}`/howto/drims/create_request` - User guide for creating requests
+- {doc}`/config_guide/drims/index` - DRIMS configuration overview
+- {doc}`/config_guide/drims/warehouses` - Warehouse configuration
+- {doc}`/user_guide/drims/requests` - User guide for creating requests

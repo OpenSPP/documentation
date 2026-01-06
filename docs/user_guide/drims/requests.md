@@ -44,7 +44,7 @@ In the **Destination Area** field, select where the supplies need to be delivere
 
 ![Screenshot: Destination Area dropdown](requests/4_destination_area.png)
 
-**What this means:** This is the specific geographic area (city, district, or zone) where beneficiaries will receive the supplies.
+**What this means:** This is the specific geographic area (city, district, or zone) where {term}`Beneficiary`(ies) will receive the supplies.
 
 ### 5. Set Priority Level
 
@@ -54,7 +54,7 @@ In the **Priority** field, choose the urgency level. See [Understanding Priority
 
 ### 6. Select Cluster (Optional)
 
-If your organization uses humanitarian clusters, select the relevant cluster (like Health, Shelter, Food Security).
+If your organization uses humanitarian {term}`Cluster`s, select the relevant cluster (like Health, Shelter, Food Security).
 
 ![Screenshot: Cluster dropdown](requests/6_cluster.png)
 
@@ -78,7 +78,7 @@ In the **Justification** field, explain why these supplies are needed. Be specif
 
 ### 9. Enter Affected Population
 
-In the **Affected Population** field, enter the number of people who will benefit from these supplies.
+In the **{term}`Affected Population`** field, enter the number of people who will benefit from these supplies.
 
 ![Screenshot: Affected Population field](requests/9_affected_population.png)
 
@@ -123,7 +123,7 @@ The request status will change to **Pending** and go to your supervisor or logis
 
 ## Understanding Priority Levels
 
-Choose the right priority level for your request:
+Choose the right {term}`Priority Level` for your request:
 
 | Priority | When to Use | Expected Response Time |
 |----------|-------------|------------------------|
@@ -142,7 +142,7 @@ Choose the right priority level for your request:
 
 ## Life-Threatening Requests
 
-The **Life-Threatening** flag is for genuine emergencies where delays could result in loss of life.
+The **{term}`Life-Threatening`** flag is for genuine emergencies where delays could result in loss of life.
 
 **When to use it:**
 - Medical emergencies requiring immediate supplies

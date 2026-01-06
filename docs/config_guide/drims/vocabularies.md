@@ -28,7 +28,7 @@ Vocabularies prevent data quality issues:
 - **Validation** - Invalid values are rejected automatically
 
 ```{note}
-DRIMS uses international standards where possible. For example, the humanitarian cluster codes come directly from UN OCHA guidelines.
+DRIMS uses international standards where possible. For example, the humanitarian {term}`Cluster` codes come directly from UN {term}`OCHA` guidelines.
 ```
 
 ## DRIMS Vocabularies
@@ -58,7 +58,7 @@ System vocabularies (marked with the system flag) include codes required by DRIM
 
 ## OCHA Humanitarian Clusters
 
-The **humanitarian cluster system** is a standardized UN framework for coordinating disaster response by sector. DRIMS implements the official OCHA/IASC cluster definitions.
+The **humanitarian {term}`Cluster` system** is a standardized UN framework for coordinating disaster response by sector. DRIMS implements the official {term}`OCHA`/{term}`IASC` definitions.
 
 ### Cluster Reference
 
@@ -92,7 +92,7 @@ Items: Water purification tablets (5000), Jerry cans (200)
 ```
 
 **In Personnel Records:**
-Assign deployed staff to clusters for coordination and 4W reporting ("Who does What, Where, When").
+Assign deployed staff to clusters for coordination and {term}`4W Report`ing ("Who does What, Where, When").
 
 **Example:**
 ```
@@ -164,7 +164,7 @@ Coordination modes define how multi-agency disaster response is organized:
 
 | Code | Mode | Description |
 |------|------|-------------|
-| `lead_agency` | Lead Agency | Single agency (usually government) coordinates all partners |
+| `lead_agency` | {term}`Lead Agency` | Single agency (usually government) coordinates all partners |
 | `cluster` | Cluster System | UN-led sector coordination with designated cluster leads |
 | `consortium` | Consortium | NGO-led coordination among partner organizations |
 | `bilateral` | Bilateral | Direct government-to-government or agency-to-agency |
@@ -179,7 +179,7 @@ Set the coordination mode on each **incident record** to indicate how the respon
 | Coordination Mode | Cluster System |
 
 This helps DRIMS:
-- Generate appropriate reports (e.g., 4W reports for cluster coordination)
+- Generate appropriate reports (e.g., {term}`4W Report`s for cluster coordination)
 - Route information to the right stakeholders
 - Track agency roles correctly
 
@@ -191,11 +191,11 @@ Partner agencies can be assigned roles in disaster response:
 
 | Code | Role | Description |
 |------|------|-------------|
-| `lead` | Lead Agency | Primary coordinating organization |
-| `co_lead` | Co-Lead | Shares coordination responsibility |
-| `implementing` | Implementing Partner | Delivers services on the ground |
-| `funding` | Funding Partner | Provides financial resources |
-| `technical` | Technical Partner | Provides expertise and guidance |
+| `lead` | {term}`Lead Agency` | Primary coordinating organization |
+| `co_lead` | {term}`Co-Lead` | Shares coordination responsibility |
+| `implementing` | {term}`Implementing Partner` | Delivers services on the ground |
+| `funding` | {term}`Funding Partner` | Provides financial resources |
+| `technical` | {term}`Technical Partner` | Provides expertise and guidance |
 
 ### Example
 
@@ -359,8 +359,8 @@ New vocabularies require Python code and module development. Contact your develo
 
 ## Related Documentation
 
-- {doc}`/config_guide/drims/incidents` - Configuring incident coordination
 - {doc}`/config_guide/drims/alerts` - Alert threshold configuration
+- {doc}`/config_guide/drims/warehouses` - Warehouse configuration
 - {doc}`/user_guide/drims/requests` - Creating relief requests
 - {doc}`/user_guide/drims/donations` - Recording donations
 

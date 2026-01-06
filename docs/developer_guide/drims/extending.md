@@ -7,14 +7,14 @@ openspp:
 
 This guide shows **developers** how to extend DRIMS with custom functionality using Odoo inheritance patterns.
 
-If you're looking to configure DRIMS without writing code (adding warehouses, setting alert thresholds, etc.), see {doc}`/user_guide/drims/configuration`.
+If you're looking to configure DRIMS without writing code (adding warehouses, setting alert thresholds, etc.), see {doc}`/config_guide/drims/index`.
 
 ## Before You Start
 
 **Prerequisites:**
 - Development environment set up (see OpenSPP development docs)
 - Familiarity with Odoo 19 model inheritance
-- Understanding of DRIMS data model ({doc}`/technical_reference/drims/data_model`)
+- Understanding of DRIMS data model ({doc}`architecture`)
 - Python 3.11+, git basics
 
 **What You'll Learn:**
@@ -701,8 +701,7 @@ coverage html  # Open htmlcov/index.html
 
 ## See Also
 
-- {doc}`/technical_reference/drims/data_model` - DRIMS data model reference
-- {doc}`/technical_reference/drims/api` - API integration patterns
-- {doc}`/developer_guide/testing` - Testing best practices
-- {doc}`/user_guide/drims/configuration` - Configuration without code
-- OpenSPP Development Principles (in `openspp-modules-v2/docs/principles/`)
+- {doc}`architecture` - DRIMS data model and architecture reference
+- {doc}`/developer_guide/api_v2/index` - API integration patterns
+- {doc}`/config_guide/drims/index` - Configuration without code
+- {gh-spp}`docs/principles/` - Module development guidelines

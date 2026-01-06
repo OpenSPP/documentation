@@ -9,7 +9,7 @@ This guide is for **warehouse staff** who pick, pack, and ship relief supplies t
 
 ## What You'll Do
 
-Process a dispatch from an approved request through packing, shipping, and proof of delivery confirmation.
+Process a dispatch from an approved request through packing, shipping, and {term}`Proof of Delivery` confirmation.
 
 ## Before You Start
 
@@ -42,7 +42,7 @@ Dispatches move through these states as you process them:
 | **Assigned** | Stock reserved, ready to pack | Pick and pack items, validate |
 | **Done** | Items packed and validated | Record departure when truck leaves |
 | **Departed** | Shipment left warehouse | Wait for delivery confirmation |
-| **Arrived** | Shipment reached destination | Complete proof of delivery |
+| **Arrived** | Shipment reached destination | Complete POD |
 | **POD Confirmed** | Delivery confirmed | (Finished) |
 
 ### 1. Review and Confirm the Dispatch
@@ -95,7 +95,7 @@ The dispatch moves to the **Departed** state.
 
 ## Printing the Waybill
 
-The waybill is the official shipping document that travels with the goods.
+The {term}`Waybill` is the official shipping document that travels with the goods.
 
 ### To Print the Waybill
 

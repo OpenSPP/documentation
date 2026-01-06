@@ -422,6 +422,6 @@ Don't disable lot tracking if you need it for traceability or donation tracking.
 - **Tune thresholds** - Adjust settings based on your team's response capacity
 - **Train staff** - Ensure warehouse managers know how to acknowledge and resolve alerts
 
-For details on warehouse management, see {doc}`../warehouses`.
+For details on warehouse management, see {doc}`warehouses`.
 
-For request processing workflows, see {doc}`../requests`.
+For request processing workflows, see {doc}`/user_guide/drims/requests`.
