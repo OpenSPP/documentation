@@ -81,6 +81,7 @@ OpenSPP is currently in active development. If you have questions or need suppor
 
 learn/concepts/index
 learn/whats_new_v2
+learn/products/drims
 ```
 
 ```{toctree}
@@ -103,6 +104,7 @@ user_guide/entitlements/index
 user_guide/payments/index
 user_guide/change_requests/index
 user_guide/grievances/index
+user_guide/drims/index
 user_guide/administration/index
 user_guide/dashboards/index
 ```
@@ -122,6 +124,7 @@ config_guide/variables/index
 config_guide/event_data/index
 config_guide/change_request_types/index
 config_guide/consent/index
+config_guide/drims/index
 ```
 
 ```{toctree}
@@ -136,6 +139,7 @@ developer_guide/api_v2/index
 developer_guide/dci/index
 developer_guide/verifiable_credentials/index
 developer_guide/integrations/index
+developer_guide/drims/index
 developer_guide/migration/index
 ```
 
@@ -159,6 +163,7 @@ ops_guide/monitoring/index
 reference/modules/index
 reference/vocabularies/index
 reference/api/index
+reference/glossary/humanitarian
 modules/index
 ```
 
