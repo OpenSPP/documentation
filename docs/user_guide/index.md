@@ -13,6 +13,7 @@ This guide is designed for program staff, operators, and government employees wh
 - **Payments** - Payment distribution and service points
 - **Change Requests** - Submitting and processing change requests (V2 feature)
 - **Grievances** - Grievance Redressal Management (GRM) - V2 enhanced
+- **DRIMS** - Disaster Response Inventory Management System
 - **Administration** - System administration for program managers
 - **Dashboards & Reports** - Analytics and reporting (V2 enhanced)
 
@@ -25,6 +26,7 @@ entitlements/index
 payments/index
 change_requests/index
 grievances/index
+drims/index
 administration/index
 dashboards/index
 ```

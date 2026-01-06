@@ -10,6 +10,7 @@ This section helps you understand the core concepts, architecture, and principle
 
 - **{doc}`concepts/index`** - Core concepts including Registry, Programs, Cycles, Eligibility, Entitlements, and Payments
 - **{doc}`whats_new_v2`** - Major changes and improvements in OpenSPP Version 2
+- **{doc}`products/drims`** - DRIMS: Disaster Response Inventory Management System
 
 ```{toctree}
 :maxdepth: 2
@@ -17,4 +18,5 @@ This section helps you understand the core concepts, architecture, and principle
 
 concepts/index
 whats_new_v2
+products/drims
 ```

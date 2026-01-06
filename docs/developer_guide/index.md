@@ -13,6 +13,7 @@ This guide is for developers who want to extend OpenSPP, integrate it with other
 - **DCI Integration** (NEW V2): Implementing Digital Convergence Initiative protocols
 - **Verifiable Credentials** (NEW V2): W3C Verifiable Credentials and OIDC4VCI support
 - **Other Integrations**: Connecting to OIDC/eSignet, Keycloak, and external APIs
+- **DRIMS**: Extending the Disaster Response Inventory Management System
 - **V1 to V2 Migration**: Essential guidance for upgrading from OpenSPP V1 to V2
 
 ```{toctree}
@@ -26,6 +27,7 @@ api_v2/index
 dci/index
 verifiable_credentials/index
 integrations/index
+drims/index
 migration/index
 ```
 
