@@ -189,7 +189,7 @@ Below are the recommended server specifications for each OpenSPP on-premises dep
 | ------------------------------------- | -------------------------------------- | ---------------------------------------------------------------------------------------- |
 | Firewall                              | Preferred Hardware Firewall or pfSense | CPU: 4 cores<br> RAM: 8 GB<br> Storage: 100 GB                                           |
 | Load Balancer for Application Servers | Nginx, HAProxy, Keepavalied            | CPU: 4 cores<br> RAM: 4 GB<br> Storage: 100 GB                                           |
-| Identity Server                       | Keyclock                               | CPU: 4 cores<br> RAM: 6 GB<br> Storage: 50 GB                                            |
+| Identity Server                       | Keycloak                               | CPU: 4 cores<br> RAM: 6 GB<br> Storage: 50 GB                                            |
 | API Manager                           | Apache APISIX                          | CPU: 4 cores<br> RAM: 8 GB<br> Storage: 100 GB                                           |
 | OpenSPP Application Servers           | -                                      | CPU: 16 cores<br> RAM: 32 GB<br> Storage: 100 GB                                         |
 | Connection Pooler for Database        | PgBouncer                              | CPU: 2 cores<br> RAM: 4 GB<br> Storage: 50 GB                                            |
