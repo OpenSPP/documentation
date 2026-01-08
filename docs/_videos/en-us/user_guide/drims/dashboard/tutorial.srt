@@ -1,0 +1,36 @@
+1
+00:00:00,000 --> 00:00:02,500
+Monitoring Operations with the DRIMS Dashboard
+
+2
+00:00:05,000 --> 00:00:07,500
+Click DRIMS in the sidebar, then select Dashboard
+
+3
+00:00:10,000 --> 00:00:12,500
+View incident cards showing KPIs for each disaster
+
+4
+00:00:15,000 --> 00:00:17,000
+Click Inventory, then Warehouses to check warehouse health
+
+5
+00:00:19,500 --> 00:00:22,000
+View warehouse health status indicators
+
+6
+00:00:24,500 --> 00:00:26,500
+Click Operations, then Alerts to see active alerts
+
+7
+00:00:29,000 --> 00:00:31,500
+Review alerts by priority and status
+
+8
+00:00:34,000 --> 00:00:36,000
+Click on an alert to see details
+
+9
+00:00:38,500 --> 00:00:41,500
+Use Acknowledge and Resolve buttons to manage alerts
+

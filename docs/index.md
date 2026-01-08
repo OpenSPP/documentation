@@ -80,7 +80,10 @@ OpenSPP is currently in active development. If you have questions or need suppor
 :caption: Learn
 
 learn/concepts/index
-learn/products/index
+learn/products/social_registry
+learn/products/sp_mis
+learn/products/farmer_registry
+learn/products/drims
 learn/whats_new_v2
 ```
 

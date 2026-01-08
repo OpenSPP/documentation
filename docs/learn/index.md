@@ -9,7 +9,7 @@ This section helps you understand the core concepts, architecture, and principle
 ## What's in this section
 
 - **{doc}`concepts/index`** - Core concepts including Registry, Programs, Cycles, Eligibility, Entitlements, and Payments
-- **{doc}`products/index`** - OpenSPP products: Social Registry, SP-MIS, Farmer Registry, and DRIMS
+- **Products** - {doc}`products/social_registry`, {doc}`products/sp_mis`, {doc}`products/farmer_registry`, {doc}`products/drims`
 - **{doc}`whats_new_v2`** - Major changes and improvements in OpenSPP Version 2
 
 ```{toctree}
@@ -17,6 +17,9 @@ This section helps you understand the core concepts, architecture, and principle
 :hidden:
 
 concepts/index
-products/index
+products/social_registry
+products/sp_mis
+products/farmer_registry
+products/drims
 whats_new_v2
 ```

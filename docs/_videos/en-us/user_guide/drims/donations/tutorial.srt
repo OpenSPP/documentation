@@ -1,0 +1,68 @@
+1
+00:00:00,000 --> 00:00:02,500
+Receiving Donations in DRIMS
+
+2
+00:00:05,000 --> 00:00:07,000
+Click DRIMS in the sidebar, then select Donations
+
+3
+00:00:07,000 --> 00:00:08,500
+View the list of all donations for your warehouses
+
+4
+00:00:11,000 --> 00:00:13,000
+Look for donations with Announced status and click to open
+
+5
+00:00:15,500 --> 00:00:17,000
+View donation details including incident, warehouse, donor, and status
+
+6
+00:00:17,000 --> 00:00:18,500
+Click Mark Received when physical goods arrive at your warehouse
+
+7
+00:00:21,000 --> 00:00:23,000
+Fill in the received date and actual quantities
+
+8
+00:00:23,000 --> 00:00:24,500
+Click Confirm to save the received status
+
+9
+00:00:24,500 --> 00:00:26,000
+The donation status changes to Received
+
+10
+00:00:28,500 --> 00:00:30,000
+Click Inspect to check the quality and condition of items
+
+11
+00:00:30,000 --> 00:00:32,000
+Check each item condition, quantity match, and quality
+
+12
+00:00:32,000 --> 00:00:33,500
+Click Complete Inspection when done checking all items
+
+13
+00:00:36,000 --> 00:00:37,500
+Click Stock to add inspected items to your warehouse inventory
+
+14
+00:00:37,500 --> 00:00:39,500
+Review the stock receipt showing items and quantities to add
+
+15
+00:00:39,500 --> 00:00:41,000
+Click Validate to confirm adding items to inventory
+
+16
+00:00:43,500 --> 00:00:45,500
+The donation is now Stocked and items are in your inventory
+
+17
+00:00:48,000 --> 00:00:51,000
+Navigate to Inventory > Stock to verify items were added
+
