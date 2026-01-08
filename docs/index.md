@@ -80,8 +80,8 @@ OpenSPP is currently in active development. If you have questions or need suppor
 :caption: Learn
 
 learn/concepts/index
+learn/products/index
 learn/whats_new_v2
-learn/products/drims
 ```
 
 ```{toctree}
