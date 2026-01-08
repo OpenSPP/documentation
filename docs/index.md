@@ -94,7 +94,6 @@ learn/whats_new_v2
 
 get_started/installation/index
 get_started/first_program/index
-get_started/migrating_from_v1
 ```
 
 ```{toctree}

@@ -10,7 +10,6 @@ Whether you're evaluating OpenSPP for your organization or ready to start implem
 
 - **Installation** - How to install OpenSPP using Docker
 - **Your First Program** - Step-by-step tutorial to create your first social protection program
-- **{doc}`migrating_from_v1`** - Guide for organizations upgrading from OpenSPP Version 1
 - **{doc}`poc_and_pilot`** - Planning your Proof of Concept and Pilot phases
 
 ## Quick Links
@@ -25,6 +24,5 @@ Whether you're evaluating OpenSPP for your organization or ready to start implem
 
 installation/index
 first_program/index
-migrating_from_v1
 poc_and_pilot
 ```
