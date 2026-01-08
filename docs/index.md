@@ -181,7 +181,6 @@ contributing/index
 :hidden:
 :caption: Legacy Documentation
 
-getting_started/index
 tutorial/index
 howto/index
 technical_reference/index
