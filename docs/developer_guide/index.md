@@ -1,3 +1,9 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
 # Developer Guide
 
 **For: Developers** (Python developers extending OpenSPP)

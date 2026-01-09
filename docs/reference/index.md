@@ -1,3 +1,9 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
 # Reference
 
 This section provides quick lookup resources for OpenSPP, including comprehensive module listings, standard vocabularies, API documentation, and terminology.

@@ -1,3 +1,9 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
 # Learn
 
 Understanding the concepts and foundations of OpenSPP.

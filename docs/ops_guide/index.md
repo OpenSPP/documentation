@@ -1,3 +1,9 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
 # Operations Guide
 
 **For:** System administrators (IT teams deploying and maintaining OpenSPP)

@@ -1,3 +1,9 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
 # Configuration Guide
 
 **For: Implementers** (M&E teams, technical staff comfortable with Kobo/CommCare level configuration)
