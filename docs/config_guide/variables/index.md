@@ -1,3 +1,9 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
 # Variables & Indicators
 
 **For: Implementers**

@@ -6,6 +6,7 @@ myst:
     "keywords": "OpenSPP, SWDI, assessment, scoring"
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 # Social Welfare Development Index (SWDI)

@@ -7,6 +7,7 @@ myst:
     "keywords": "setup, build, documentation, quality, development, Vale, spell, grammar, style, check, linkcheck"
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 (setup-build-label)=

@@ -1,6 +1,7 @@
 ---
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 # Digital Public Infrastructure

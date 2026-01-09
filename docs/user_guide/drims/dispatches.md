@@ -1,9 +1,17 @@
 ---
 openspp:
   doc_status: draft
+  products: [drims]
+  applies_to:
+    - drims
 ---
 
 # Process a Dispatch
+
+```{admonition} Applies to: DRIMS
+:class: tip
+This feature is available in OpenSPP deployments with the DRIMS module installed.
+```
 
 This guide is for **warehouse staff** who pick, pack, and ship relief supplies to distribution points.
 
@@ -29,7 +37,7 @@ You'll receive dispatches in the **Draft** state, ready to be processed.
 2. Select **Dispatches**
 3. Filter by **My Warehouse** to see only dispatches assigned to you
 
-![Screenshot placeholder: DRIMS menu with Dispatches option highlighted](dispatches/find_dispatches.png)
+![Screenshot: DRIMS menu with Dispatches option highlighted](/_images/en-us/drims/dispatches/find_dispatches.png)
 
 ## Processing the Dispatch
 
@@ -51,7 +59,7 @@ Open the dispatch and review the items requested.
 
 **Click Confirm** to move the dispatch to the next stage.
 
-![Screenshot placeholder: Dispatch form in Draft state with Confirm button](dispatches/confirm_dispatch.png)
+![Screenshot: Dispatch form in Draft state with Confirm button](/_images/en-us/drims/dispatches/confirm_dispatch.png)
 
 ### 2. Reserve Stock
 
@@ -59,7 +67,7 @@ After confirming, click **Check Availability** to reserve the items from your wa
 
 If items are available, the dispatch moves to the **Assigned** state.
 
-![Screenshot placeholder: Dispatch showing Check Availability button](dispatches/check_availability.png)
+![Screenshot: Dispatch showing Check Availability button](/_images/en-us/drims/dispatches/check_availability.png)
 
 ### 3. Pick and Pack Items
 
@@ -70,7 +78,7 @@ Now you're ready to physically pick the items:
 3. Check quantities match what's on the list
 4. Pack items securely for transport
 
-![Screenshot placeholder: Picking list with items and quantities](dispatches/picking_list.png)
+![Screenshot: Picking list with items and quantities](/_images/en-us/drims/dispatches/picking_list.png)
 
 ### 4. Validate the Dispatch
 
@@ -78,7 +86,7 @@ After packing, return to the dispatch and click **Validate**.
 
 This confirms you've physically picked the items and updates your inventory. The dispatch moves to the **Done** state.
 
-![Screenshot placeholder: Dispatch form with Validate button](dispatches/validate_dispatch.png)
+![Screenshot: Dispatch form with Validate button](/_images/en-us/drims/dispatches/validate_dispatch.png)
 
 ## Recording Departure
 
@@ -91,7 +99,7 @@ When the truck or vehicle leaves your warehouse with the shipment:
 
 The dispatch moves to the **Departed** state.
 
-![Screenshot placeholder: Record Departure dialog with date/time fields](dispatches/record_departure.png)
+![Screenshot: Record Departure dialog with date/time fields](/_images/en-us/drims/dispatches/record_departure.png)
 
 ## Printing the Waybill
 
@@ -110,7 +118,7 @@ The waybill includes:
 - Complete item list with quantities
 - Signature blocks for driver and receiver
 
-![Screenshot placeholder: Waybill print preview](dispatches/print_waybill.png)
+![Screenshot: Waybill print preview](/_images/en-us/drims/dispatches/print_waybill.png)
 
 ```{important}
 The driver must get the waybill signed by the person receiving the goods at the destination.
@@ -141,7 +149,7 @@ Usually field staff or the destination contact records this information, not war
 
 5. Click **Confirm POD** to complete the delivery
 
-![Screenshot placeholder: Proof of Delivery section with fields filled in](dispatches/proof_of_delivery.png)
+![Screenshot: Proof of Delivery section with fields filled in](/_images/en-us/drims/dispatches/proof_of_delivery.png)
 
 The dispatch moves to the **POD Confirmed** state and the request is marked as delivered.
 
@@ -191,3 +199,9 @@ This shouldn't happen, but if it does:
 **Need to cancel a dispatch?**
 
 If the dispatch is still in **Draft** or **Confirmed** state, you can click **Cancel**. If it's already **Assigned** or later, contact your DRIMS coordinator before canceling.
+
+## Next Steps
+
+- {doc}`returns` - Learn how to handle returned items
+- {doc}`manage_inventory` - Learn how to check stock levels
+- {doc}`dashboard` - Monitor alerts and KPIs

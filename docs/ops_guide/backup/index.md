@@ -1,3 +1,9 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
 # Backup & Recovery
 
 **For:** System administrators managing backups and disaster recovery

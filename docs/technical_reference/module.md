@@ -6,6 +6,7 @@ myst:
     "keywords": "OpenSPP, modules, Odoo addons, Odoo 19"
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 # Modules

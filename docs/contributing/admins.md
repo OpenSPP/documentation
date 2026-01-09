@@ -7,6 +7,7 @@ myst:
     "keywords": "OpenSPP, Documentation, automated deployments, hosting, automated testing, importing external packages"
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 (administrators-guide-label)=

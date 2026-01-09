@@ -1,9 +1,17 @@
 ---
 openspp:
   doc_status: draft
+  products: [drims]
+  applies_to:
+    - drims
 ---
 
 # Handle Returns
+
+```{admonition} Applies to: DRIMS
+:class: tip
+This feature is available in OpenSPP deployments with the DRIMS module installed.
+```
 
 ## What You'll Do
 
@@ -33,13 +41,13 @@ Items come back to the warehouse for different reasons. The reason determines wh
 
 Click **Warehouse** in the sidebar, then select **Returns**.
 
-![Screenshot: Returns menu](returns/01_menu.png)
+![Screenshot: Returns menu](/_images/en-us/drims/returns/01_menu.png)
 
 ### 2. Create New Return
 
 Click the **New** button in the top left.
 
-![Screenshot: New return button](returns/02_new.png)
+![Screenshot: New return button](/_images/en-us/drims/returns/02_new.png)
 
 ### 3. Fill in Return Details
 
@@ -53,7 +61,7 @@ Enter the following information:
 | **Return Reason** | Why items are being returned (see table above) |
 | **Return Date** | When items are expected back |
 
-![Screenshot: Return form header](returns/03_header.png)
+![Screenshot: Return form header](/_images/en-us/drims/returns/03_header.png)
 
 ### 4. Add Items Being Returned
 
@@ -64,13 +72,13 @@ For each item, enter:
 - **Quantity:** How many units are coming back
 - **Notes:** Any details about the item's condition
 
-![Screenshot: Adding return items](returns/04_items.png)
+![Screenshot: Adding return items](/_images/en-us/drims/returns/04_items.png)
 
 ### 5. Save the Return
 
 Click **Save** in the top left.
 
-![Screenshot: Save button](returns/05_save.png)
+![Screenshot: Save button](/_images/en-us/drims/returns/05_save.png)
 
 The return is now in **Draft** status. It won't affect inventory until you confirm it.
 
@@ -82,7 +90,7 @@ Returns go through several steps to ensure items are properly tracked and handle
 
 When you've verified the return details, click **Confirm**.
 
-![Screenshot: Confirm button](returns/06_confirm.png)
+![Screenshot: Confirm button](/_images/en-us/drims/returns/06_confirm.png)
 
 This authorizes the return and alerts warehouse staff to expect the items.
 
@@ -92,7 +100,7 @@ This authorizes the return and alerts warehouse staff to expect the items.
 
 When the physical items arrive at the warehouse, click **Receive**.
 
-![Screenshot: Receive button](returns/07_receive.png)
+![Screenshot: Receive button](/_images/en-us/drims/returns/07_receive.png)
 
 You may need to update quantities if the actual returned amount differs from what was expected.
 
@@ -102,13 +110,13 @@ You may need to update quantities if the actual returned amount differs from wha
 
 Warehouse staff checks each item's condition. Click **Inspect**.
 
-![Screenshot: Inspect button](returns/08_inspect.png)
+![Screenshot: Inspect button](/_images/en-us/drims/returns/08_inspect.png)
 
 For each line item, record:
 - **Condition:** Good, Damaged, Expired
 - **Inspection Notes:** Details about the item's state
 
-![Screenshot: Inspection details](returns/09_inspection.png)
+![Screenshot: Inspection details](/_images/en-us/drims/returns/09_inspection.png)
 
 **Status:** Received → **Inspected**
 
@@ -118,7 +126,7 @@ Based on the inspection, items are either returned to inventory or removed.
 
 #### For Good Items: Click **Restock**
 
-![Screenshot: Restock button](returns/10_restock.png)
+![Screenshot: Restock button](/_images/en-us/drims/returns/10_restock.png)
 
 This adds the items back to your warehouse inventory. They become available for future dispatches.
 
@@ -126,7 +134,7 @@ This adds the items back to your warehouse inventory. They become available for 
 
 #### For Damaged/Expired Items: Click **Dispose**
 
-![Screenshot: Dispose button](returns/11_dispose.png)
+![Screenshot: Dispose button](/_images/en-us/drims/returns/11_dispose.png)
 
 This removes the items from inventory and records them as disposed.
 
@@ -184,3 +192,9 @@ The return may have been partially processed. Check the **Inventory Moves** tab 
 **Need to cancel a return?**
 
 While the return is in **Draft** status, click **Cancel**. Once confirmed, contact your administrator to reverse the return.
+
+## Next Steps
+
+- {doc}`manage_inventory` - Learn how to check updated stock levels
+- {doc}`dashboard` - Monitor warehouse health and alerts
+- {doc}`donations` - Learn how to receive new donations

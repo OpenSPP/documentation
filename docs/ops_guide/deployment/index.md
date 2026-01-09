@@ -1,3 +1,9 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
 # Deployment
 
 **For:** System administrators deploying OpenSPP

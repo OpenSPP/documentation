@@ -1,3 +1,9 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
 # Extending OpenSPP
 
 **For: Developers**

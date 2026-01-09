@@ -1,34 +1,40 @@
+---
+openspp:
+  doc_status: draft
+  products: [payments]
+  applies_to:
+    - sp_mis
+---
+
 # Payments
 
-**For:** Users (program staff, operators)
+**Applies to:** SP-MIS
 
-The Payments system manages the distribution of benefits to beneficiaries through various channels including service points and point of sale systems. This section covers all aspects of payment processing and distribution.
+The Payments section covers distributing benefits to beneficiaries through service points and Point of Sale systems. This section guides you through viewing service points, understanding payment workflows, and processing disbursements.
 
-## Topics Covered
+## What You Will Learn
 
-- **Service Points** - Manage payment distribution locations
-- **Point of Sale** - Process payments at service points
-- **Fund Allocation** - Allocate funds to service points
-- **Payment Processing** - Execute payment batches
-- **Payment Reconciliation** - Reconcile payments with entitlements
-- **Payment Methods** - Configure payment channels (cash, mobile money, bank transfer)
-- **Payment Tracking** - Monitor payment status and history
+- **Service Points** - View and understand service point locations where payments are distributed
+- **Processing Disbursements** - Approve entitlements and process payments to beneficiaries
+- **Point of Sale** - Use the POS interface to disburse cash benefits at service points
 
-<!--
+## How Payments Work
+
+Payments in OpenSPP follow this workflow:
+
+1. **Entitlements are created** - When a program cycle runs, entitlements are generated for enrolled beneficiaries
+2. **Entitlements are approved** - Program managers review and approve entitlements for payment
+3. **Payments are disbursed** - Approved payments are distributed at service points using the Point of Sale system
+
 ```{toctree}
 :maxdepth: 2
 :hidden:
 
 service_points
-point_of_sale
-fund_allocation
-payment_processing
-payment_reconciliation
-payment_methods
-payment_tracking
+process_disbursements
 ```
--->
 
-```{note}
-Content coming soon. This section will provide comprehensive guidance on payment distribution and management.
-```
+## Related Guides
+
+- {doc}`/tutorial/user_guides/point_of_sales` - Complete guide to using the Point of Sale interface
+- {doc}`/user_guide/programs/index` - Managing social protection programs and cycles

@@ -1,3 +1,9 @@
+---
+openspp:
+  doc_status: draft
+  products: [programs]
+---
+
 # Entitlements
 
 **For:** Users (program staff, operators)

@@ -1,6 +1,7 @@
 ---
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 # How To
@@ -42,8 +43,8 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 
 - {doc}`user_guides/setting_up_farmer_registry`
 - {doc}`../user_guide/registry/register_individual` (moved to User Guide)
-- {doc}`../user_guide/registry/import` (moved to User Guide)
-- {doc}`../user_guide/registry/export` (moved to User Guide)
+- {doc}`../user_guide/registry/import_data` (moved to User Guide)
+- {doc}`../user_guide/registry/export_data` (moved to User Guide)
 - {doc}`user_guides/administrating_role_based_access`
 - {doc}`user_guides/setting_up_service_points`
 
@@ -79,8 +80,8 @@ developer_guides/beneficiary_keycloak
 
 user_guides/setting_up_farmer_registry
 ../user_guide/registry/register_individual
-../user_guide/registry/import
-../user_guide/registry/export
+../user_guide/registry/import_data
+../user_guide/registry/export_data
 user_guides/administrating_role_based_access
 user_guides/setting_up_service_points
 user_guides/implementing_pmt

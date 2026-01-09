@@ -1,36 +1,39 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
 # User Guide
 
-**For:** Users (program staff, operators, government employees)
+Welcome to the OpenSPP User Guide. This guide helps government employees and program staff perform daily operations in OpenSPP.
 
-Welcome to the OpenSPP User Guide. This section provides comprehensive guidance for day-to-day operations in OpenSPP, covering all aspects of managing social protection programs.
-
-This guide is designed for program staff, operators, and government employees who work with OpenSPP to administer social protection programs, manage beneficiary registries, process payments, and handle program operations.
+**Choose your deployment type** to see relevant documentation:
+- **Social Registry** - Registry and change request management
+- **SP-MIS** - Full social protection with programs and payments
+- **DRIMS** - Disaster response inventory management
 
 ## What You'll Find Here
 
+- **Getting Started** - Login, navigation, and basic concepts
 - **Registry** - Managing individuals, groups, and registrant data
-- **Entitlements** - Managing beneficiary entitlements
+- **Change Requests** - Submitting and processing data change requests
+- **Programs** - Program management, enrollment, and eligibility
 - **Payments** - Payment distribution and service points
-- **Change Requests** - Submitting and processing change requests (V2 feature)
-- **Grievances** - Grievance Redressal Management (GRM) - V2 enhanced
+- **Approvals** - Reviewing and approving requests and batches
 - **DRIMS** - Disaster Response Inventory Management System
-- **Administration** - System administration for program managers
-- **Dashboards & Reports** - Analytics and reporting (V2 enhanced)
+- **Reference** - Quick reference material and glossary
 
 ```{toctree}
 :maxdepth: 2
 :hidden:
 
+getting_started/index
 registry/index
-entitlements/index
-payments/index
 change_requests/index
-grievances/index
+programs/index
+payments/index
+approvals/index
 drims/index
-administration/index
-dashboards/index
-```
-
-```{note}
-Content coming soon. This guide is being actively developed to provide comprehensive coverage of all OpenSPP user operations.
+reference/index
 ```

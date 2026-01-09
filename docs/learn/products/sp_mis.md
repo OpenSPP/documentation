@@ -1,6 +1,7 @@
 ---
 openspp:
   doc_status: draft
+  products: [core]
 ---
 
 # SP-MIS - Social Protection Management Information System

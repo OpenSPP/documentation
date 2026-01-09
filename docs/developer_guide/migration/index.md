@@ -1,6 +1,7 @@
 ---
 openspp:
   doc_status: draft
+  products: [core]
 ---
 
 # V1 to V2 Migration Guide

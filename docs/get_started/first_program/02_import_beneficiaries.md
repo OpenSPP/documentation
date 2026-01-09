@@ -1,6 +1,7 @@
 ---
 openspp:
   doc_status: draft
+  products: [registry, programs]
 ---
 
 # Step 2: Import Sample Beneficiary Data
@@ -68,13 +69,13 @@ Save these files to your computer as `families.csv` and `individuals.csv`.
 
 Click **Registry → Search** from the main menu to open the Registry Search Portal.
 
-![Screenshot: Main menu with Registry > Search option highlighted](/_images/en-us/get_started/first_program/02_import_beneficiaries/1.png)
+![Screenshot: Main menu with Registry > Search option highlighted](/_images/en-us/get_started/first_program/02_import_beneficiaries/01-main-menu-with-registry-search-option-highlighted.png)
 
 ### 2. Access the Import Tool
 
 From the Registry Search Portal, click the **three-dot menu** in the top right, then select **Import Records**.
 
-![Screenshot: Registry Search Portal with three-dot menu expanded showing Import Records option](/_images/en-us/get_started/first_program/02_import_beneficiaries/2.png)
+![Screenshot: Registry Search Portal with three-dot menu expanded showing Import Records option](/_images/en-us/get_started/first_program/02_import_beneficiaries/02-registry-search-portal-with-three-dot-menu-showing.png)
 
 ### 3. Import Families First
 
@@ -82,7 +83,7 @@ In the Import dialog, select:
 - **Record Type**: Group
 - **Import File**: Click **Choose File** and select your `families.csv` file
 
-![Screenshot: Import dialog showing Record Type dropdown set to "Group" and Choose File button](/_images/en-us/get_started/first_program/02_import_beneficiaries/3.png)
+![Screenshot: Import dialog showing Record Type dropdown set to "Group" and Choose File button](/_images/en-us/get_started/first_program/02_import_beneficiaries/03-import-dialog-showing-record-type-dropdown-set-to.png)
 
 ### 4. Map the Family Fields
 
@@ -98,23 +99,23 @@ The system will show you a preview of your CSV data. Map the columns to OpenSPP 
 
 Click **Next** after mapping the fields.
 
-![Screenshot: Field mapping screen showing CSV columns on the left matched to OpenSPP fields on the right](/_images/en-us/get_started/first_program/02_import_beneficiaries/4.png)
+![Screenshot: Field mapping screen showing CSV columns on the left matched to OpenSPP fields on the right](/_images/en-us/get_started/first_program/02_import_beneficiaries/04-field-mapping-screen-showing-csv-columns-matched-t.png)
 
 ### 5. Validate and Import Families
 
 The system will validate your data. Review any warnings or errors. If everything looks correct, click **Import** to add the families to the registry.
 
-![Screenshot: Validation screen showing "5 records ready to import" with Import button](/_images/en-us/get_started/first_program/02_import_beneficiaries/5.png)
+![Screenshot: Validation screen showing "5 records ready to import" with Import button](/_images/en-us/get_started/first_program/02_import_beneficiaries/05-validation-screen-showing-5-records-ready-to-impor.png)
 
 You should see a success message: "5 groups imported successfully."
 
-![Screenshot: Success notification showing "5 groups imported successfully"](/_images/en-us/get_started/first_program/02_import_beneficiaries/6.png)
+![Screenshot: Success notification showing "5 groups imported successfully"](/_images/en-us/get_started/first_program/02_import_beneficiaries/06-success-notification-showing-5-groups-imported-suc.png)
 
 ### 6. Verify the Families Were Imported
 
 In the Registry Search Portal, search for "Garcia" to verify the families were imported. You should see the Garcia Family in the results.
 
-![Screenshot: Registry Search Portal with "Garcia" in search box and Garcia Family in results](/_images/en-us/get_started/first_program/02_import_beneficiaries/7.png)
+![Screenshot: Registry Search Portal with "Garcia" in search box and Garcia Family in results](/_images/en-us/get_started/first_program/02_import_beneficiaries/07-registry-search-portal-with-garcia-in-search-box-a.png)
 
 ### 7. Import Individuals
 
@@ -124,7 +125,7 @@ This time, select:
 - **Record Type**: Individual
 - **Import File**: Select your `individuals.csv` file
 
-![Screenshot: Import dialog showing Record Type set to "Individual" and individuals.csv selected](/_images/en-us/get_started/first_program/02_import_beneficiaries/8.png)
+![Screenshot: Import dialog showing Record Type set to "Individual" and individuals.csv selected](/_images/en-us/get_started/first_program/02_import_beneficiaries/08-import-dialog-showing-record-type-set-to-individua.png)
 
 ### 8. Map the Individual Fields
 
@@ -140,7 +141,7 @@ Map the CSV columns to OpenSPP fields:
 
 Click **Next** after mapping.
 
-![Screenshot: Field mapping screen for individuals showing all columns mapped](/_images/en-us/get_started/first_program/02_import_beneficiaries/9.png)
+![Screenshot: Field mapping screen for individuals showing all columns mapped](/_images/en-us/get_started/first_program/02_import_beneficiaries/09-field-mapping-screen-for-individuals-showing-all-c.png)
 
 ### 9. Link Individuals to Families
 
@@ -151,7 +152,7 @@ On the next screen, you'll need to specify how individuals should be linked to t
 
 This tells OpenSPP to add each individual to the group with a matching name.
 
-![Screenshot: Linking configuration showing "Match by Group Name" selected](/_images/en-us/get_started/first_program/02_import_beneficiaries/10.png)
+![Screenshot: Linking configuration showing "Match by Group Name" selected](/_images/en-us/get_started/first_program/02_import_beneficiaries/10-linking-configuration-showing-match-by-group-name.png)
 
 ### 10. Import the Individuals
 
@@ -159,17 +160,17 @@ Review the validation results. You should see "15 records ready to import, 15 wi
 
 Click **Import** to add the individuals and link them to their families.
 
-![Screenshot: Validation showing "15 records ready to import" with family linking information](/_images/en-us/get_started/first_program/02_import_beneficiaries/11.png)
+![Screenshot: Validation showing "15 records ready to import" with family linking information](/_images/en-us/get_started/first_program/02_import_beneficiaries/11-validation-showing-15-records-ready-to-import-with.png)
 
 You should see: "15 individuals imported successfully."
 
-![Screenshot: Success notification showing "15 individuals imported successfully"](/_images/en-us/get_started/first_program/02_import_beneficiaries/12.png)
+![Screenshot: Success notification showing "15 individuals imported successfully"](/_images/en-us/get_started/first_program/02_import_beneficiaries/12-success-notification-showing-15-individuals-import.png)
 
 ### 11. Verify the Complete Data
 
 Search for "Garcia Family" and open the record. You should see all four family members listed in the **Group Members** section.
 
-![Screenshot: Garcia Family record showing Juan, Maria, Sofia, and Miguel as members with their ages](/_images/en-us/get_started/first_program/02_import_beneficiaries/13.png)
+![Screenshot: Garcia Family record showing Juan, Maria, Sofia, and Miguel as members with their ages](/_images/en-us/get_started/first_program/02_import_beneficiaries/13-garcia-family-record-showing-juan-maria-sofia-and.png)
 
 ## What You Accomplished
 

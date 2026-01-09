@@ -6,6 +6,7 @@ myst:
     "keywords": "OpenSPP, audit, audit logs, compliance, Odoo 19"
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 # Audit Logs

@@ -482,3 +482,27 @@ dl.py > dd, dl.js > dd, dl.o-definition-list > dd {
   font-weight: inherit;
   /* color: inherit; */
 }
+/* Module filter on search page */
+#search-module-filter {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+}
+
+#search-module-filter-options {
+    gap: 1rem !important;
+}
+
+#search-module-filter-options .form-check-inline {
+    margin-right: 0;
+}
+
+/* Filtered navigation items */
+li.module-filtered {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+li.module-filtered > a {
+    text-decoration: line-through;
+    color: #6c757d;
+}

@@ -1,3 +1,9 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
 # API Reference
 
 This section provides comprehensive API documentation for OpenSPP, including REST APIs, GraphQL endpoints, and integration interfaces.

@@ -1,20 +1,33 @@
 ---
 openspp:
   doc_status: draft
+  products: [drims]
+  applies_to:
+    - drims
 ---
 
 # Understand the Dashboard
 
+```{admonition} Applies to: DRIMS
+:class: tip
+This feature is available in OpenSPP deployments with the DRIMS module installed.
+```
+
 This guide is for **DRIMS users** who need to monitor disaster response operations, track inventory, and respond to alerts.
 
-## What You'll Learn
+## What You'll Do
 
-The DRIMS dashboard shows you the current status of your disaster response at a glance:
+Learn how to read the DRIMS dashboard to understand the current status of your disaster response at a glance:
 
 - **Incident cards** - See donations, requests, stock, and distributions for each disaster
 - **Key Performance Indicators (KPIs)** - Track what's happening in real time
 - **Warehouse health** - Identify warehouses that need attention
 - **Alerts** - Get notified when action is needed (low stock, overdue requests, expiring items)
+
+## Before You Start
+
+- You need **DRIMS Viewer** or higher access to view the dashboard
+- You need **DRIMS Warehouse Staff** or **Manager** access to acknowledge and resolve alerts
 
 ## The Incident Dashboard
 
@@ -22,7 +35,7 @@ The DRIMS dashboard shows you the current status of your disaster response at a 
 
 The dashboard displays each active incident as a card. Cards are organized by status (Active, Pending, Closed) and show the most important information about each disaster response operation.
 
-![Screenshot: DRIMS Dashboard showing incident cards](dashboard/incident_dashboard.png)
+![Screenshot: DRIMS Dashboard showing incident cards](/_images/en-us/drims/dashboard/incident_dashboard.png)
 
 Each incident card displays:
 
@@ -35,7 +48,7 @@ Each incident card displays:
 
 Each incident card shows key performance indicators (KPIs) that help you understand the response status.
 
-![Screenshot: Single incident card with KPIs highlighted](dashboard/incident_card_detail.png)
+![Screenshot: Single incident card with KPIs highlighted](/_images/en-us/drims/dashboard/incident_card_detail.png)
 
 ### What the Numbers Mean
 
@@ -58,7 +71,7 @@ Each incident card shows key performance indicators (KPIs) that help you underst
 
 Each warehouse has a health status that tells you if it needs attention.
 
-![Screenshot: Warehouse list showing health indicators](dashboard/warehouse_health.png)
+![Screenshot: Warehouse list showing health indicators](/_images/en-us/drims/dashboard/warehouse_health.png)
 
 ### Health Status Colors
 
@@ -132,15 +145,15 @@ Acknowledge an alert when you've seen it and are taking action.
 
 1. Click **DRIMS** in the sidebar, then select **Operations → Alerts**
 
-   ![Screenshot: Navigate to alerts menu](dashboard/navigate_alerts.png)
+   ![Screenshot: Navigate to alerts menu](/_images/en-us/drims/dashboard/navigate_alerts.png)
 
 2. Click on the alert you want to acknowledge
 
-   ![Screenshot: Alerts list](dashboard/alerts_list.png)
+   ![Screenshot: Alerts list](/_images/en-us/drims/dashboard/alerts_list.png)
 
 3. Click the **Acknowledge** button at the top of the form
 
-   ![Screenshot: Acknowledge button](dashboard/acknowledge_button.png)
+   ![Screenshot: Acknowledge button](/_images/en-us/drims/dashboard/acknowledge_button.png)
 
 The alert badge changes to orange, showing others that someone is handling it.
 
@@ -159,7 +172,7 @@ Resolve an alert after you've fixed the underlying problem.
 
 3. Click the **Resolve** button at the top of the form
 
-   ![Screenshot: Resolve button](dashboard/resolve_button.png)
+   ![Screenshot: Resolve button](/_images/en-us/drims/dashboard/resolve_button.png)
 
 The alert is marked resolved and no longer appears in active counts.
 
@@ -205,3 +218,9 @@ Check the **Warehouse Health Indicators** (DRIMS → Inventory → Warehouses). 
 ### The alert says "SLA breach" but what does SLA mean?
 
 SLA stands for "Service Level Agreement" - it's the due date or deadline for a request. An SLA breach means the request wasn't delivered by its due date.
+
+## Next Steps
+
+- {doc}`donations` - Learn how to receive and process donations
+- {doc}`manage_inventory` - Learn how to view and manage stock levels
+- {doc}`requests` - Learn how to submit relief requests

@@ -1,3 +1,9 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
 # Key Concepts
 
 These pages explain the core concepts behind OpenSPP. Understanding these concepts will help you use and configure the platform effectively.

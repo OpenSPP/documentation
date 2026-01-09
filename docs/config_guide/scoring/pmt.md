@@ -1,6 +1,7 @@
 ---
 openspp:
   doc_status: draft
+  products: [core]
 ---
 
 # Proxy Means Test (PMT) Configuration

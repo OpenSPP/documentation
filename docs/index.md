@@ -7,6 +7,7 @@ myst:
     "keywords": "OpenSPP, open source, Documentation"
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 (index-label)=
@@ -93,7 +94,10 @@ learn/whats_new_v2
 :caption: Get Started
 
 get_started/installation/index
+get_started/explore/index
+get_started/first_household/index
 get_started/first_program/index
+get_started/poc_and_pilot
 ```
 
 ```{toctree}
@@ -101,14 +105,14 @@ get_started/first_program/index
 :hidden:
 :caption: User Guide
 
+user_guide/getting_started/index
 user_guide/registry/index
-user_guide/entitlements/index
-user_guide/payments/index
 user_guide/change_requests/index
-user_guide/grievances/index
+user_guide/programs/index
+user_guide/payments/index
+user_guide/approvals/index
 user_guide/drims/index
-user_guide/administration/index
-user_guide/dashboards/index
+user_guide/reference/index
 ```
 
 ```{toctree}
@@ -176,18 +180,6 @@ modules/index
 
 community_and_support/index
 contributing/index
-```
-
-```{toctree}
-:maxdepth: 1
-:hidden:
-:caption: Legacy Documentation
-
-tutorial/index
-howto/index
-technical_reference/index
-explanation/index
-best_practices/index
 ```
 
 ```{toctree}

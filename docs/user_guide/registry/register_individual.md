@@ -1,145 +1,170 @@
 ---
 openspp:
   doc_status: draft
+  products: [registry]
+  applies_to:
+    - social_registry
+    - sp_mis
 ---
 
-# Register Individuals and Groups
+# Register an Individual
 
-This guide is for **users** who need to add new registrants to OpenSPP.
+**Applies to:** Social Registry, SP-MIS
 
-## What You'll Learn
+## What You Will Do
 
-By the end of this guide, you will be able to:
-- Register new individuals in OpenSPP
-- Create new groups (households)
-- Add individuals to groups
+Add a new person to the registry with their basic information, identity documents, and contact details.
 
-## Prerequisites
+## Before You Start
 
-- Access to OpenSPP with **Registry Officer** or **Administrator** role
-- Information about the individual(s) to register
+- You need **Registry Officer** or **Administrator** access
+- Have the person's information ready (name, date of birth, ID documents)
 
-## Understanding Registration
+## Steps
 
-A **registrant** is any person or group recorded in OpenSPP. Registrants become **beneficiaries** only after enrollment in a program.
+### 1. Open the Registry
 
-Registration captures information used to:
-- Identify individuals and groups
-- Evaluate needs and eligibility
-- Determine benefit amounts
+Click **Registry** in the main menu to open the Registry Search Portal.
 
-## Register a New Individual
+![Registry menu in sidebar](/_images/en-us/registry/register-individual/01-registry-search-portal-showing-search-bar-and-new.png)
 
-### Step 1: Open the Registry
+### 2. Click New Individual
 
-Navigate to **Registry** > **Search** to open the Registry Search Portal.
+Click the **New Individual** button to open the registration form.
 
-![Registry Search Portal](/_images/en-us/registry/register-individual/1.png)
+![New Individual button](/_images/en-us/registry/register-individual/02-click-new-individual-button.png)
 
-### Step 2: Create New Individual
+### 3. Enter Basic Information
 
-Click **New Individual** to open the registration form.
+Fill in the **Profile** tab with the person's basic information.
 
-![New Individual button](/_images/en-us/registry/register-individual/2.png)
+![Profile tab with name fields](/_images/en-us/registry/register-individual/03-individual-registration-form-with-data-filled.png)
 
-### Step 3: Enter Information
+| Field | Required | What to Enter |
+|-------|----------|---------------|
+| **Family Name** | Yes | Last name or surname |
+| **Given Name** | Yes | First name |
+| **Middle Name** | No | Additional name(s) |
+| **Registration Date** | Auto | Date of registration (defaults to today) |
 
-Enter the required information:
+### 4. Add Demographics
 
-| Field | Description |
-|-------|-------------|
-| Family Name | Last/surname |
-| Given Name | First name |
-| Date of Birth | Birth date (YYYY-MM-DD format) |
-| Gender | Select from list |
-| Phone | Contact number |
-| Address | Physical address |
+In the **Demographics** section, enter additional information.
 
-Additional fields depend on your program's configuration.
+![Demographics section](/_images/en-us/registry/register-individual/04-search-results-showing-created-individual.png)
 
-![Individual form](/_images/en-us/registry/register-individual/3.png)
+| Field | Required | What to Enter |
+|-------|----------|---------------|
+| **Date of Birth** | No | Birth date (use calendar picker or type YYYY-MM-DD) |
+| **Gender** | No | Select from dropdown |
+| **Age** | Auto | Calculated from date of birth |
+| **Birth Place** | No | Place of birth |
+| **Approximate Birthdate** | No | Check if birth date is estimated |
+| **Civil Status** | No | Marital status (single, married, etc.) |
+| **Occupation** | No | Select from list |
+| **Income** | No | Monthly income amount |
 
-### Step 4: Save
+### 5. Add Contact Information
 
-After verifying the entered information, click **Save**.
+In the **Contact Information** section, enter address and phone details.
 
-### Step 5: Verify
+![Contact information section](/_images/en-us/registry/register-individual/05-new-group-button-highlighted.png)
 
-Search for the individual in the Registry Search Portal to confirm registration.
+| Field | Required | What to Enter |
+|-------|----------|---------------|
+| **Address** | No | Physical address |
+| **Email** | No | Email address |
 
-![Verify registration](/_images/en-us/registry/register-individual/4.png)
+#### Add Phone Numbers
 
-## Create a New Group
+To add a phone number:
 
-Groups represent households or other collections of individuals.
+1. In the **Phone Numbers** section, click **Add a line**
+2. Enter the phone number
+3. Select the country (optional)
 
-### Step 1: Open New Group Form
+![Phone number entry](/_images/en-us/registry/register-individual/06-group-registration-form.png)
 
-From the Registry Search Portal, click **New Group**.
+You can add multiple phone numbers.
 
-![New Group button](/_images/en-us/registry/register-individual/5.png)
+### 6. Add Tags (Optional)
 
-### Step 2: Enter Group Information
+In the **Tags** section, add labels to categorize this individual.
 
-![Group form](/_images/en-us/registry/register-individual/6.png)
+![Tags section](/_images/en-us/registry/register-individual/07-saved-group-form.png)
 
-Enter the required information:
+Click in the tags field and select from available tags, or type to search.
 
-| Field | Description |
-|-------|-------------|
-| Name | Group/household name |
-| Kind | Type of group (household, etc.) |
-| Address | Group address |
-| Phone | Contact number |
+### 7. Save the Record
 
-### Step 3: Save
+Click **Save** in the top left corner to create the individual record.
 
-Click **Save** to create the group.
+![Save button](/_images/en-us/registry/register-individual/08-group-search-results.png)
 
-![Saved group](/_images/en-us/registry/register-individual/7.png)
+### 8. Add Identity Documents (Optional)
 
-### Step 4: Verify
+After saving, you can add identity documents in the **Identity** tab.
 
-Search for the group using the type filter set to "Groups".
+1. Click the **Identity** tab
+2. In the **Identity Documents** section, click **Add a line**
+3. Select the ID type and enter the ID number
 
-![Verify group](/_images/en-us/registry/register-individual/8.png)
+![Identity tab with documents](/_images/en-us/registry/register-individual/09-adding-member-to-group.png)
 
-## Add Individual to Group
+| Field | Required | What to Enter |
+|-------|----------|---------------|
+| **ID Type** | Yes | Type of document (National ID, Passport, etc.) |
+| **ID Number** | Yes | The document number |
+| **Expiry Date** | No | When the document expires |
 
-### Step 1: Open the Group
+Click **Save** to save the identity document.
 
-Search for and open the group you want to add members to.
+### 9. Verify Registration
 
-### Step 2: Add Members
+Search for the individual in the Registry Search Portal to confirm they were registered.
 
-In the **Members** section, click **Add a line**.
+![Search results showing new individual](/_images/en-us/registry/register-individual/10-group-saved-with-member.png)
 
-Select individuals from the dropdown or click **Search More** to find specific individuals.
+## Form Tabs Overview
 
-![Add member](/_images/en-us/registry/register-individual/9.png)
+The individual form has four tabs:
 
-### Step 3: Save
-
-Click **Save** to update the group.
-
-![Group with members](/_images/en-us/registry/register-individual/10.png)
+| Tab | Contents |
+|-----|----------|
+| **Profile** | Name, demographics, contact info, tags |
+| **Identity** | ID documents, relationships to other registrants |
+| **Participation** | Group memberships, program enrollments |
+| **History** | Audit information, status changes |
 
 ## Are You Stuck?
 
-**Can't find the New Individual button?**
+**Cannot find the New Individual button?**
+
 - Verify you have Registry Officer or Administrator access
-- Check you're in the Registry Search Portal (Registry > Search)
+- Contact your administrator if you need access
 
-**Required field missing?**
-- Required fields depend on your program configuration
-- Contact your administrator if a field you need isn't available
+**Date picker not working?**
 
-**Can't add individual to group?**
-- The individual must be registered first
-- Search for the individual to verify they exist
+- Try typing the date as YYYY-MM-DD (for example, 1990-05-15)
+- Make sure the date is not in the future (for birth dates)
+
+**Cannot select a Gender or Civil Status option?**
+
+- These options come from configured vocabularies
+- Contact your administrator if options are missing
+
+**Required field error when saving?**
+
+- Family Name and Given Name are always required
+- Other required fields depend on your program's configuration
+- Look for fields marked with a red asterisk
+
+**Phone number not saving?**
+
+- Enter the phone number without country code prefix if selecting a country
+- Check the format matches what is expected in your country
 
 ## Next Steps
 
-- {doc}`import` - Import multiple registrants from CSV/Excel
-- {doc}`export` - Export registrant data
-- {doc}`/user_guide/programs/enroll` - Enroll registrants in programs
+- {doc}`register_group` - Create a group and add this individual as a member
+- {doc}`search_filter` - Learn how to search for registrants

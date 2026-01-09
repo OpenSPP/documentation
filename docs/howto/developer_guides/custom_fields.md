@@ -1,6 +1,7 @@
 ---
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 # Adding custom fields and using them in variables/expressions

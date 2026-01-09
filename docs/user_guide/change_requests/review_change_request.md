@@ -1,0 +1,241 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+  applies_to:
+    - social_registry
+    - sp_mis
+---
+
+# Review a Change Request
+
+**Applies to:** Social Registry, SP-MIS
+
+This guide is for **validators** (supervisors, program managers) who need to review and approve change requests submitted by staff.
+
+## What You Will Do
+
+Review change requests submitted by registry officers, verify the proposed changes against supporting documents, and approve, request changes, or decline them. Approved requests are then finalized and recorded to the registrant's profile.
+
+## Before You Start
+
+- You need **Change Request Validator** permissions
+- Understand your organization's approval policies
+- Know what documentation is required for different types of changes
+
+## Steps
+
+### 1. Open Pending Requests
+
+Click **Change Requests** in the main menu, then click **Pending Approval** in the sidebar.
+
+![Pending Approval menu](/_images/en-us/change-requests/review/01-pending-approval-menu-showing-requests-waiting-for.png)
+
+This shows all requests waiting for review.
+
+### 2. Open a Request to Review
+
+Click on a request in the list to open it.
+
+![Request list](/_images/en-us/change-requests/review/02-request-list-showing-pending-change-requests.png)
+
+The request form opens with all details.
+
+### 3. Review the Request Information
+
+Check the header information:
+
+| Field | What to Check |
+|-------|---------------|
+| **Request Type** | What kind of change is requested |
+| **Registrant** | Who will be affected by this change |
+| **Submitted By** | Who created the request |
+| **Submitted On** | When the request was submitted |
+
+![Request header](/_images/en-us/change-requests/review/03-request-header-showing-type-registrant-submitter-a.png)
+
+### 4. Review the Proposed Changes
+
+The **Details** tab shows a side-by-side comparison:
+
+- **Left panel (Current Data)** - The registrant's current information
+- **Right panel (Proposed Changes)** - What will change if approved
+
+![Side-by-side comparison](/_images/en-us/change-requests/review/04-side-by-side-comparison-of-current-data-and-propos.png)
+
+Review each proposed change carefully.
+
+### 5. Check Supporting Documents
+
+Click the **Documents** tab to view uploaded files.
+
+![Documents tab](/_images/en-us/change-requests/review/05-documents-tab-showing-uploaded-supporting-files.png)
+
+Click on a document to view it.
+
+Verify that:
+- Required documents are present
+- Documents match the requested changes
+- Documents appear authentic
+
+### 6. Review Notes
+
+Click the **Notes** tab to see:
+
+- **Description** - Why the change was requested
+- **Internal Notes** - Additional context from the submitter
+
+![Notes tab](/_images/en-us/change-requests/review/06-notes-tab-showing-description-and-internal-notes.png)
+
+### 7. Check Status History (Optional)
+
+Click the **Status History** tab to see:
+
+- Who created the request
+- Previous review actions (for resubmitted requests)
+- Timestamps for each status change
+
+![Status History tab](/_images/en-us/change-requests/review/07-status-history-tab-showing-creation-and-review-act.png)
+
+### 8. Make Your Decision
+
+You have three options:
+
+#### Option A: Approve
+
+If everything is correct and properly documented:
+
+1. Click **Approve** in the header
+
+   ![Approve button](/_images/en-us/change-requests/review/08-approve-button-location-in-request-header.png)
+
+2. Confirm by clicking **OK** in the dialog
+
+   ![Confirmation dialog](/_images/en-us/change-requests/review/09-approval-confirmation-dialog.png)
+
+The status changes to **Approved**.
+
+If auto-apply is enabled for this request type, the changes are recorded immediately and the status becomes **Completed**.
+
+If manual apply is required, click **Finalize & Record Changes** to complete the request.
+
+![Finalize button](/_images/en-us/change-requests/review/10-finalize-and-record-changes-button-for-manual-appl.png)
+
+#### Option B: Request Changes
+
+If the submitter needs to fix something:
+
+1. Click **Request Changes** in the header
+
+   ![Request Changes button](/_images/en-us/change-requests/review/11-request-changes-button-to-send-back-for-correction.png)
+
+2. In the dialog, explain what needs to be corrected
+
+   ![Request Changes dialog](/_images/en-us/change-requests/review/12-request-changes-dialog-with-explanation-field.png)
+
+3. Click **Confirm**
+
+The status changes to **Needs Changes**. The submitter will see your feedback and can edit and resubmit the request.
+
+#### Option C: Decline
+
+If the request should not be processed:
+
+1. Click **Reject** in the header
+
+   ![Reject button](/_images/en-us/change-requests/review/13-reject-button-to-decline-the-request.png)
+
+2. In the dialog, explain why the request was declined
+
+   ![Reject dialog](/_images/en-us/change-requests/review/14-reject-dialog-with-reason-field.png)
+
+3. Click **Confirm**
+
+The status changes to **Declined**. The changes are not applied.
+
+## Using the All Requests View
+
+To see all requests (not just pending):
+
+1. Click **All Requests** in the sidebar
+
+   ![All Requests menu](/_images/en-us/change-requests/review/15-all-requests-menu-in-sidebar.png)
+
+2. Use filters to narrow the list:
+
+   | Filter | Shows |
+   |--------|-------|
+   | **Draft** | Requests being created |
+   | **Under Review** | Waiting for approval |
+   | **Needs Changes** | Sent back for corrections |
+   | **Approved** | Approved, waiting to be finalized |
+   | **Completed** | Changes have been recorded |
+   | **Declined** | Rejected requests |
+
+   ![Filter options](/_images/en-us/change-requests/review/16-filter-options-for-request-status.png)
+
+3. Use **Group By** to organize by Type, Status, or Creator
+
+   ![Group By options](/_images/en-us/change-requests/review/17-group-by-options-for-organizing-requests.png)
+
+## Reviewing Multiple Requests
+
+For efficient batch processing:
+
+1. Use the kanban view (click the kanban icon)
+
+   ![Kanban view](/_images/en-us/change-requests/review/18-kanban-view-showing-requests-grouped-by-status.png)
+
+2. Requests are grouped by status
+3. Click a card to open the full request
+4. Use keyboard shortcuts for faster review:
+   - **A** - Approve
+   - **R** - Request Changes
+   - **D** - Decline
+
+## Verifying Applied Changes
+
+After approving and finalizing a request:
+
+1. Click **View Registrant** in the button box
+
+   ![View Registrant button](/_images/en-us/change-requests/review/19-view-registrant-button-to-verify-applied-changes.png)
+
+2. Verify the changes appear correctly in the registrant's profile
+
+3. The change request is linked in the registrant's audit trail
+
+## Are You Stuck?
+
+**Cannot see the Approve button?**
+You may not have Validator permissions. Contact your administrator.
+
+**Approve button is disabled?**
+- The request may not be in **Under Review** status
+- For multi-level approvals, an earlier approver may need to act first
+
+**Cannot see any pending requests?**
+- Check that you have the **Pending Approval** view selected
+- Make sure no filters are hiding requests
+- Click **Clear Filters** to reset the view
+
+**Request shows "Unable to Complete Request" error?**
+- The error message explains what went wrong
+- This could be a data conflict or validation issue
+- Contact your administrator if the error persists
+
+**Need to undo an approval?**
+Once changes are recorded to a registrant, they cannot be undone through the change request system. Create a new change request with the correct information instead.
+
+**Submitter keeps resubmitting incorrect request?**
+Use **Reject** instead of **Request Changes** if the request should not be processed at all. Include a clear explanation in the rejection reason.
+
+**Documents tab is empty but submitter says they uploaded files?**
+- Check if the submitter has permission to upload documents
+- The documents may be in a different format than expected
+- Ask the submitter to re-upload using the Document Upload wizard
+
+## Next Steps
+
+- {doc}`submit_change_request` - Learn how staff submit requests
+- {doc}`change_request_types` - See all available request types

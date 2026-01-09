@@ -6,6 +6,7 @@ myst:
     "keywords": "OpenSPP, API, REST, OAuth2, XML-RPC, Odoo 19"
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 # APIs

@@ -1,6 +1,7 @@
 ---
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 # Setting Up Using Python Package Manager

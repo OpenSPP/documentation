@@ -1,6 +1,7 @@
 ---
 openspp:
   doc_status: draft
+  products: [core]
 ---
 
 # PII Encryption

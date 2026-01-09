@@ -7,6 +7,7 @@ myst:
     "keywords": "OpenSPP, OpenSPP Contributor Agreement, License, Code of Conduct"
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 (contributing-index-label)=

@@ -7,6 +7,7 @@ myst:
     "keywords": "OpenSPP, install, overview"
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 # Tutorial
@@ -30,8 +31,8 @@ This Tutorials serve as a detailed manual for the utilization and navigation of 
 - [Social Welfare Development Index (SWDI)](social_welfare_development_index)
 - [Hardware Integration](hardware_integration)
 - [Register new individual](../user_guide/registry/register_individual) (moved to User Guide)
-- [Import registrant data](../user_guide/registry/import) (moved to User Guide)
-- [Export Registrant Data](../user_guide/registry/export) (moved to User Guide)
+- [Import registrant data](../user_guide/registry/import_data) (moved to User Guide)
+- [Export Registrant Data](../user_guide/registry/export_data) (moved to User Guide)
 - [Access management](access_management)
 - [Setting up service points](user_guides/setting_up_service_points)
 - [Allocate funds](user_guides/allocate_funds)
@@ -82,8 +83,8 @@ social_welfare_development_index
 vouchers
 access_management
 ../user_guide/registry/register_individual
-../user_guide/registry/import
-../user_guide/registry/export
+../user_guide/registry/import_data
+../user_guide/registry/export_data
 user_guides/administrating_role_based_access
 user_guides/setting_up_service_points
 user_guides/allocate_funds

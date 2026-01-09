@@ -6,6 +6,7 @@ myst:
     "keywords": "OpenSPP, OAuth2, OIDC, JWT, Odoo 19"
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 # OAuth 2.0 / OIDC

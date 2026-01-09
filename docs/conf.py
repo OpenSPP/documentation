@@ -7,10 +7,12 @@ import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
 
 from datetime import datetime
+import json
 import os
 import re
 import sys
 import logging
+import yaml
 
 from pathlib import Path
 _logger = logging.getLogger(__name__)
@@ -299,9 +301,11 @@ exclude_patterns = [
 html_js_files = [
     ("https://code.jquery.com/jquery-3.7.1.min.js", {"integrity": "sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=", "crossorigin": "anonymous"}),
     ("https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js", {}),
+    "search-utils.js",
     "mermaid_init.js",
     "patch_scrollToActive.js",
     "search_shortcut.js",
+    "module-filter.js",
 ]
 
 html_extra_path = [
@@ -415,14 +419,14 @@ redirects = {
     "tutorial/user_guides/enroll_beneficiaries/index.html": "user_guide/programs/enroll.html",
     "howto/user_guides/enroll_beneficiaries.html": "user_guide/programs/enroll.html",
     "howto/user_guides/enroll_beneficiaries/index.html": "user_guide/programs/enroll.html",
-    "tutorial/user_guides/import_registrant_data.html": "user_guide/registry/import.html",
-    "tutorial/user_guides/import_registrant_data/index.html": "user_guide/registry/import.html",
-    "howto/user_guides/import_registrant_data.html": "user_guide/registry/import.html",
-    "howto/user_guides/import_registrant_data/index.html": "user_guide/registry/import.html",
-    "tutorial/user_guides/export_registrant_data.html": "user_guide/registry/export.html",
-    "tutorial/user_guides/export_registrant_data/index.html": "user_guide/registry/export.html",
-    "howto/user_guides/export_registrant_data.html": "user_guide/registry/export.html",
-    "howto/user_guides/export_registrant_data/index.html": "user_guide/registry/export.html",
+    "tutorial/user_guides/import_registrant_data.html": "user_guide/registry/import_data.html",
+    "tutorial/user_guides/import_registrant_data/index.html": "user_guide/registry/import_data.html",
+    "howto/user_guides/import_registrant_data.html": "user_guide/registry/import_data.html",
+    "howto/user_guides/import_registrant_data/index.html": "user_guide/registry/import_data.html",
+    "tutorial/user_guides/export_registrant_data.html": "user_guide/registry/export_data.html",
+    "tutorial/user_guides/export_registrant_data/index.html": "user_guide/registry/export_data.html",
+    "howto/user_guides/export_registrant_data.html": "user_guide/registry/export_data.html",
+    "howto/user_guides/export_registrant_data/index.html": "user_guide/registry/export_data.html",
 
     # Phase 3: Orphan Resolution redirects - ACTIVE
     "tutorial/managing_social_protection_programs.html": "learn/concepts/programs.html",
@@ -435,7 +439,7 @@ redirects = {
     "howto/developer_guides/implmenting_pmt/index.html": "config_guide/scoring/pmt.html",
     "howto/translation.html": "index.html",
     "getting_started/creating_a_program.html": "get_started/first_program/index.html",
-    "tutorial/programs/export_beneficiaries.html": "user_guide/registry/export.html",
+    "tutorial/programs/export_beneficiaries.html": "user_guide/registry/export_data.html",
 
     # Phase 3: Partial Content Migration redirects - ACTIVE
     # API V2 Migration
@@ -616,6 +620,68 @@ def update_html_files(app, exception):
                     with open(file_path, 'w', encoding='utf-8') as file:
                         file.write(str(soup))
 
+def generate_product_metadata(app, env):
+    """Extract product metadata from frontmatter for filtering"""
+
+    product_metadata = {}
+    all_products = set()
+
+    for docname in env.found_docs:
+        try:
+            # Read frontmatter directly from source file
+            source_file = env.doc2path(docname)
+            products = ['core']  # Default
+
+            if os.path.exists(source_file):
+                with open(source_file, 'r', encoding='utf-8') as f:
+                    content = f.read()
+
+                # Extract YAML frontmatter
+                if content.startswith('---\n'):
+                    try:
+                        end_idx = content.find('\n---\n', 4)
+                        if end_idx > 0:
+                            frontmatter_text = content[4:end_idx]
+                            frontmatter = yaml.safe_load(frontmatter_text)
+
+                            if isinstance(frontmatter, dict) and 'openspp' in frontmatter:
+                                openspp_meta = frontmatter['openspp']
+                                if isinstance(openspp_meta, dict) and 'products' in openspp_meta:
+                                    products = openspp_meta['products']
+                    except Exception as yaml_error:
+                        _logger.debug(f"Error parsing YAML for {docname}: {yaml_error}")
+
+            product_metadata[docname] = {
+                'products': products,
+                'title': env.titles.get(docname, '').astext() if docname in env.titles else '',
+                'path': docname
+            }
+
+            all_products.update(products)
+        except Exception as e:
+            _logger.warning(f"Error processing metadata for {docname}: {e}")
+            continue
+
+    # Write metadata JSON to _static
+    output_data = {
+        'documents': product_metadata,
+        'all_products': sorted(list(all_products))
+    }
+
+    output_path = Path(app.outdir) / '_static' / 'product-metadata.json'
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(json.dumps(output_data, indent=2))
+
+    _logger.info(f"Generated product metadata for {len(product_metadata)} documents")
+
+
 def setup(app):
     app.connect('build-finished', modify_sitemap)
     app.connect('build-finished', update_html_files)
+    app.connect('env-updated', generate_product_metadata)
+
+    return {
+        'version': '0.1',
+        'parallel_read_safe': True,
+        'parallel_write_safe': True,
+    }

@@ -7,6 +7,7 @@ myst:
     "keywords": "Documentation, OpenSPP, Sphinx, MyST, reStructuredText, Markdown, syntax, examples"
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 (contributing-myst-reference)=

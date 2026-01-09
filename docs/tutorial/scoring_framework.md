@@ -6,6 +6,7 @@ myst:
     "keywords": "OpenSPP, scoring, targeting, assessment, PMT"
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 # Scoring framework

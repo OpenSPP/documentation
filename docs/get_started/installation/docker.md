@@ -1,6 +1,7 @@
 ---
 openspp:
   doc_status: draft
+  products: [registry, programs]
 ---
 
 # Docker Installation

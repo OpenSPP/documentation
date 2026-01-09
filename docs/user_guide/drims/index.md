@@ -1,6 +1,9 @@
 ---
 openspp:
   doc_status: draft
+  products: [drims]
+  applies_to:
+    - drims
 ---
 
 # DRIMS User Guide
@@ -24,11 +27,12 @@ With DRIMS, you can:
 
 This guide covers the main tasks you'll do in DRIMS:
 
+- **{doc}`dashboard`** - How to monitor stock levels and alerts
 - **{doc}`donations`** - How to receive and process incoming donations
+- **{doc}`manage_inventory`** - How to view and manage stock levels
 - **{doc}`requests`** - How to submit and approve requests for relief supplies
 - **{doc}`dispatches`** - How to prepare shipments and confirm deliveries
 - **{doc}`returns`** - How to handle items returned from the field
-- **{doc}`dashboard`** - How to monitor stock levels and alerts
 
 ## Quick Start: Common Tasks
 
@@ -36,8 +40,9 @@ Jump directly to these guides for step-by-step instructions:
 
 **If you work in a warehouse:**
 - {doc}`donations` - Record a donation that just arrived
+- {doc}`manage_inventory` - Check and manage stock levels
 - {doc}`dispatches` - Prepare items for shipment to a field location
-- Monitor stock levels with the {doc}`dashboard`
+- Monitor alerts with the {doc}`dashboard`
 
 **If you work in the field:**
 - {doc}`requests` - Submit a request for relief supplies
@@ -88,9 +93,10 @@ Choose a guide from the list below based on what you need to do:
 ```{toctree}
 :maxdepth: 1
 
+dashboard
 donations
+manage_inventory
 requests
 dispatches
 returns
-dashboard
 ```

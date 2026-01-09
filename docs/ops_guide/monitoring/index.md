@@ -1,3 +1,9 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
 # Monitoring & Alerts
 
 **For:** System administrators and DevOps teams

@@ -7,6 +7,7 @@ myst:
     "keywords": "Documentation, OpenSPP, Sphinx, reStructuredText, extensions"
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 (contributing-sphinx-extensions)=

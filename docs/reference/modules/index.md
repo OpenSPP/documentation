@@ -1,3 +1,9 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
 # Modules Index
 
 This page provides a comprehensive listing of all OpenSPP modules, organized by functional category. OpenSPP currently has approximately 82 modules that extend the platform's capabilities.

@@ -1,6 +1,7 @@
 ---
 openspp:
   doc_status: draft
+  products: [core]
 ---
 
 # API Changes
@@ -50,7 +51,7 @@ V2 changes API endpoints to match the new namespace:
 
 **V1 used database IDs (integers):**
 
-```json
+```http
 // V1 Request
 GET /api/v1/g2p/registry/registrant/42
 
@@ -64,7 +65,7 @@ GET /api/v1/g2p/registry/registrant/42
 
 **V2 uses external IDs (UUIDs):**
 
-```json
+```http
 // V2 Request
 GET /api/v2/spp/registry/registrant/a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d
 

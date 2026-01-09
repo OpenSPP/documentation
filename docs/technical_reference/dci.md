@@ -6,6 +6,7 @@ myst:
     "keywords": "OpenSPP, DCI, interoperability, Odoo 19"
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 # DCI Integration

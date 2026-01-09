@@ -1,6 +1,7 @@
 ---
 openspp:
   doc_status: unverified
+  products: [registry, programs]
 ---
 
 # From Proof of Concept to Pilot

@@ -7,6 +7,7 @@ myst:
     "keywords": "OpenSPP, Documentation, SEO, meta, Vale, spell, grammar, style, check, linkcheck, lexer"
 openspp:
   doc_status: unverified
+  products: [core]
 ---
 
 (authors-guide-label)=

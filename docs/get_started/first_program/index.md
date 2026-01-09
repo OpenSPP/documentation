@@ -1,3 +1,9 @@
+---
+openspp:
+  doc_status: draft
+  products: [registry, programs]
+---
+
 # Your First Program
 
 End-to-end tutorial for creating your first social protection program.
@@ -33,8 +39,9 @@ This tutorial covers the following steps:
 
 Before starting this tutorial:
 
-- OpenSPP should be installed and running (see [Installation](../installation/index.md))
-- You should have basic familiarity with [Key Concepts](../../learn/concepts/index.md)
+- OpenSPP should be installed and running (see {doc}`../installation/index`)
+- Sample data loaded for exploration (see {doc}`../explore/index`)
+- Basic familiarity with {doc}`/learn/concepts/index`
 - Access to OpenSPP with administrator privileges
 
 ## Get Started
