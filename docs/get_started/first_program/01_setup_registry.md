@@ -28,13 +28,13 @@ You're setting up a **Cash Transfer for Vulnerable Families** program. This prog
 
 After logging in to OpenSPP, you'll see the sidebar menu on the left. Click **Registry** to access the beneficiary management portal.
 
-![Screenshot: Sidebar showing Registry option](/_images/en-us/get_started/first_program/01_setup_registry/01-openspp-login-screen-with-username-and-password-fi.png)
+![Screenshot: Sidebar showing Registry option](/_images/en-us/get_started/first_program/01_setup_registry/01-sidebar-registry.png)
 
 ### 2. Explore the Registry Search Portal
 
 The Registry Search Portal is the main interface for managing beneficiaries. It provides a privacy-first approach where you search for records rather than browsing lists.
 
-![Screenshot: Registry Search Portal overview](/_images/en-us/get_started/first_program/01_setup_registry/02-main-menu-with-registry-option-highlighted.png)
+![Screenshot: Registry Search Portal overview](/_images/en-us/get_started/first_program/01_setup_registry/02-registry-search-portal.png)
 
 Key elements of the interface:
 
@@ -51,19 +51,19 @@ Key elements of the interface:
 
 Click the **New Individual** button to register individual people (e.g., a single person applying for assistance).
 
-![Screenshot: New Individual button highlighted](/_images/en-us/get_started/first_program/01_setup_registry/03-registry-configuration-settings-menu.png)
+![Screenshot: New Individual button highlighted](/_images/en-us/get_started/first_program/01_setup_registry/03-new-individual-button.png)
 
 ### 4. Register New Groups
 
 Click the **New Group** button to register households or families (e.g., a family unit applying together).
 
-![Screenshot: New Group button highlighted](/_images/en-us/get_started/first_program/01_setup_registry/04-registry-settings-with-groupshouseholds-individual.png)
+![Screenshot: New Group button highlighted](/_images/en-us/get_started/first_program/01_setup_registry/04-new-group-button.png)
 
 ### 5. Use the Search Function
 
 The search bar allows you to find existing beneficiaries. Click on the search bar to begin typing.
 
-![Screenshot: Search bar highlighted](/_images/en-us/get_started/first_program/01_setup_registry/05-save-button-at-the-bottom-of-registry-settings.png)
+![Screenshot: Search bar highlighted](/_images/en-us/get_started/first_program/01_setup_registry/05-search-input.png)
 
 Enter at least 3 characters to search by:
 - Name
@@ -75,7 +75,7 @@ Enter at least 3 characters to search by:
 
 In this example, searching for "Garcia" returns matching beneficiaries. The results show the beneficiary name, type (Individual or Group), and when the record was last updated.
 
-![Screenshot: Search results showing "Garcia" with 1 result found](/_images/en-us/get_started/first_program/01_setup_registry/06-registry-search-portal-with-search-bar-and-new-ind.png)
+![Screenshot: Search results showing "Garcia" with 1 result found](/_images/en-us/get_started/first_program/01_setup_registry/06-search-results.png)
 
 This privacy-first search approach ensures beneficiary data is protected - you must actively search for records rather than browsing through lists.
 

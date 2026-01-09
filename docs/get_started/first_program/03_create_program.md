@@ -33,13 +33,13 @@ You're creating a **Cash Transfer for Vulnerable Families** program with these g
 
 Click the **four-square icon** in the top-left corner to open the main menu. Then click **Programs**.
 
-![Screenshot: Main menu with four-square icon and Programs option highlighted](/_images/en-us/get_started/first_program/03_create_program/01-main-menu-with-programs-option-highlighted.png)
+![Screenshot: Main menu with four-square icon and Programs option highlighted](/_images/en-us/get_started/first_program/03_create_program/01-programs-list.png)
 
 ### 2. Create a New Program
 
 Click the **Create** button in the top-left corner of the Programs list.
 
-![Screenshot: Programs list view with Create button highlighted in top-left](/_images/en-us/get_started/first_program/03_create_program/02-programs-list-with-create-button-highlighted.png)
+![Screenshot: Programs list view with Create button highlighted in top-left](/_images/en-us/get_started/first_program/03_create_program/02-create-program-button.png)
 
 ### 3. Enter Basic Program Information
 
@@ -49,13 +49,13 @@ You'll see the program creation form. Fill in the following basic information:
 
 **Target Type**: Select **Group** from the dropdown. This means the program will evaluate families (groups) for eligibility, not individual people.
 
-![Screenshot: Program creation form showing Program Name field filled with "Cash Transfer for Vulnerable Families" and Target Type set to "Group"](/_images/en-us/get_started/first_program/03_create_program/03-program-form-with-name-and-target-type-filled.png)
+![Screenshot: Program creation form showing Program Name field filled with "Cash Transfer for Vulnerable Families" and Target Type set to "Group"](/_images/en-us/get_started/first_program/03_create_program/03-program-name.png)
 
 ### 4. Set the Currency
 
 Scroll down to the **Currency** field and select **PHP - Philippine Peso** from the dropdown.
 
-![Screenshot: Currency field showing PHP - Philippine Peso selected](/_images/en-us/get_started/first_program/03_create_program/04-currency-field-with-php-selected.png)
+![Screenshot: Currency field showing PHP - Philippine Peso selected](/_images/en-us/get_started/first_program/03_create_program/04-currency.png)
 
 ### 5. Review the Configuration Tabs
 
@@ -67,7 +67,7 @@ Notice there are several tabs at the top of the form:
 
 For now, we'll just create the basic program. You'll configure these in the next steps.
 
-![Screenshot: Program form showing the four tabs: Configuration, Eligibility, Cycle Manager, Entitlement Manager](/_images/en-us/get_started/first_program/03_create_program/05-form-showing-all-configuration-tabs.png)
+![Screenshot: Program form showing the four tabs: Configuration, Eligibility, Cycle Manager, Entitlement Manager](/_images/en-us/get_started/first_program/03_create_program/05-program-quick-options.png)
 
 ### 6. Leave Other Settings as Default
 
@@ -78,17 +78,17 @@ Keep the default settings for now:
 
 These can be configured later as you become more familiar with OpenSPP.
 
-![Screenshot: Lower portion of Configuration tab showing default settings](/_images/en-us/get_started/first_program/03_create_program/06-default-settings-section.png)
+![Screenshot: Lower portion of Configuration tab showing default settings](/_images/en-us/get_started/first_program/03_create_program/06-program-next-button.png)
 
 ### 7. Save the Program
 
 Click the **Save** button in the top-left corner to create your program.
 
-![Screenshot: Save button in top-left corner of program form](/_images/en-us/get_started/first_program/03_create_program/07-save-button-highlighted.png)
+![Screenshot: Save button in top-left corner of program form](/_images/en-us/get_started/first_program/03_create_program/07-program-step2-config.png)
 
 You should see a success notification: "Program created successfully."
 
-![Screenshot: Green success notification banner showing "Program created successfully"](/_images/en-us/get_started/first_program/03_create_program/08-success-notification.png)
+![Screenshot: Green success notification banner showing "Program created successfully"](/_images/en-us/get_started/first_program/03_create_program/08-program-create-button.png)
 
 ### 8. Verify the Program Was Created
 
@@ -97,13 +97,13 @@ After saving, you'll stay on the program page. Notice:
 - The status shows **Draft** (not active yet)
 - The record has an ID number
 
-![Screenshot: Program page showing "Cash Transfer for Vulnerable Families" at top with Draft status badge](/_images/en-us/get_started/first_program/03_create_program/09-saved-program-with-draft-status.png)
+![Screenshot: Program page showing "Cash Transfer for Vulnerable Families" at top with Draft status badge](/_images/en-us/get_started/first_program/03_create_program/09-program-saved.png)
 
 ### 9. Check the Programs List
 
 Click **Programs** in the breadcrumb navigation or return to the Programs menu. You should see your new program in the list.
 
-![Screenshot: Programs list showing "Cash Transfer for Vulnerable Families" as a new program with Draft status](/_images/en-us/get_started/first_program/03_create_program/10-programs-list-showing-new-program.png)
+![Screenshot: Programs list showing "Cash Transfer for Vulnerable Families" as a new program with Draft status](/_images/en-us/get_started/first_program/03_create_program/10-programs-list-result.png)
 
 ## What You Accomplished
 

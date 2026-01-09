@@ -4,206 +4,141 @@ openspp:
   products: [registry, programs]
 ---
 
-# Step 5: Run a Program Cycle
+# Step 5: Understanding program cycles
 
-This tutorial is for **users** who want to learn how to execute a program cycle and identify eligible beneficiaries.
+This tutorial is for **users** who want to learn how program cycles organize benefit distribution.
 
-## What You'll Do
+## What you'll learn
 
-Create and run your first program cycle. The cycle will:
-- Evaluate all families in your registry against the eligibility rules
-- Identify which families qualify for benefits
-- Prepare them for entitlement generation
+Understand what program cycles are and how they organize benefit distribution into time periods. You'll learn how to create cycles and view their basic information.
 
-## Before You Start
+## Before you start
 
-- You completed [Step 4: Configure Eligibility](04_configure_eligibility.md)
+- You completed [Step 4: Configure eligibility rules](04_configure_eligibility.md)
 - Your program has eligibility rules configured
-- You need **Program Manager** or **Administrator** access
+- You need **Program Manager** or **System Administrator** access
 - Allow 5-10 minutes to complete this step
 
-## The Scenario
+## The scenario
 
-A program cycle represents a period during which benefits are distributed. For your monthly Cash Transfer for Vulnerable Families program, each cycle is one month. In this step, you'll create and run your first cycle to identify which families are eligible.
+Your **Cash Transfer for Vulnerable Families** program needs to distribute benefits on a regular schedule. Cycles organize this into manageable periods (for example, monthly distributions).
 
-## Understanding Cycles
+## Understanding cycles
 
-Think of a cycle as one "round" of your program:
-1. **Create the cycle** - Define the time period
-2. **Run eligibility check** - Evaluate families against your rules
-3. **Review results** - See who qualified
-4. **Generate entitlements** - Create benefit records (next step)
+A **program cycle** represents one period during which benefits are distributed. Think of it as one "round" of your program.
+
+For example:
+- **January 2025 cycle**: Distribute benefits for January
+- **February 2025 cycle**: Distribute benefits for February
+
+Each cycle has:
+- **Start and end dates**: The period covered
+- **Status**: Draft → To Approve → Approved → Distributed → Ended
+- **Beneficiaries**: Families enrolled in this cycle
+- **Entitlements**: Benefits generated for each family
 
 ## Steps
 
-### 1. Open Your Program
+### 1. Open the Programs menu
 
-Go to **Programs** and click on **Cash Transfer for Vulnerable Families**.
+Click **Programs** in the sidebar to view all programs.
 
-![Screenshot: Programs list with "Cash Transfer for Vulnerable Families" highlighted](/_images/en-us/get_started/first_program/05_run_cycle/01-programs-list-with-cash-transfer-for-vulnerable-fa.png)
+![Programs list showing Cash Transfer Program](/_images/en-us/get_started/first_program/05_run_cycle/01-programs-list.png)
 
-### 2. Navigate to the Cycles Tab
+### 2. View your program
 
-Click the **Cycles** tab in the program form. This shows all cycles for this program.
+Click on **Cash Transfer Program** (or your program name) to open it. You'll see the program Overview tab with a **Recent Cycles** section.
 
-![Screenshot: Program form with Cycles tab highlighted, showing empty cycles list](/_images/en-us/get_started/first_program/05_run_cycle/02-program-form-with-cycles-tab-highlighted-showing-e.png)
+![Program overview showing Recent Cycles section](/_images/en-us/get_started/first_program/05_run_cycle/02-program-overview.png)
 
-### 3. Create a New Cycle
+### 3. Create a new cycle
 
-Click **Add a line** to create a new cycle.
+Click the **New Cycle** button at the top of the program form. This instantly creates a new cycle with:
+- Auto-generated name (for example, "Cycle 2")
+- Auto-calculated start and end dates
+- **Draft** status
 
-![Screenshot: Cycles tab with "Add a line" button highlighted](/_images/en-us/get_started/first_program/05_run_cycle/03-cycles-tab-with-add-a-line-button-highlighted.png)
+![New Cycle button at top of program form](/_images/en-us/get_started/first_program/05_run_cycle/03-new-cycle-button.png)
 
-### 4. Configure the Cycle
+The new cycle appears in the Recent Cycles list:
 
-A quick create dialog appears. Fill in the following information:
+![New cycle appears in Recent Cycles with Draft status](/_images/en-us/get_started/first_program/05_run_cycle/04-cycle-created.png)
 
-| Field | Value |
-|-------|-------|
-| Cycle Name | January 2025 |
-| Start Date | 2025-01-01 |
-| End Date | 2025-01-31 |
+### 4. Open the cycle details
 
-These dates define when this benefit period begins and ends.
+Click on the cycle name in the Recent Cycles list to open the cycle dialog. You'll see:
+- Program name
+- Cycle sequence number
+- Start and end dates
+- Financial summary (total amount, currency)
 
-![Screenshot: Quick create dialog with Cycle Name "January 2025", Start Date "2025-01-01", End Date "2025-01-31"](/_images/en-us/get_started/first_program/05_run_cycle/04-quick-create-dialog-with-cycle-name-january-2025-s.png)
+![Cycle dialog showing Overview tab with cycle details](/_images/en-us/get_started/first_program/05_run_cycle/05-cycle-dialog-overview.png)
 
-### 5. Save the Cycle
+### 5. View enrolled beneficiaries
 
-Click **Save & Close** in the dialog to create the cycle.
+Click the **Beneficiaries** tab to see which families are enrolled in this cycle. Each beneficiary shows:
+- Registrant name
+- Enrollment date
+- State (for example, Enrolled)
 
-![Screenshot: Quick create dialog with "Save & Close" button highlighted](/_images/en-us/get_started/first_program/05_run_cycle/05-quick-create-dialog-with-save-close-button-highlig.png)
+![Beneficiaries tab showing enrolled registrants](/_images/en-us/get_started/first_program/05_run_cycle/06-cycle-beneficiaries.png)
 
-The cycle now appears in the Cycles tab with status **Draft**.
+### 6. Understand cycle status progression
 
-![Screenshot: Cycles tab showing "January 2025" cycle with Draft status](/_images/en-us/get_started/first_program/05_run_cycle/06-cycles-tab-showing-january-2025-cycle-with-draft-s.png)
+Look at the status badges at the top of the cycle dialog. A cycle progresses through these statuses:
 
-### 6. Open the Cycle
+1. **Draft**: Cycle is being set up
+2. **To Approve**: Cycle is ready for approval
+3. **Approved**: Cycle is approved and entitlements can be generated
+4. **Distributed**: Benefits have been distributed
+5. **Ended**: Cycle is complete
 
-Click on **January 2025** in the cycles list to open the full cycle form.
+![Status badges showing Draft → To Approve → Approved → Distributed → Ended](/_images/en-us/get_started/first_program/05_run_cycle/07-cycle-status-badges.png)
 
-![Screenshot: January 2025 cycle in list, clickable](/_images/en-us/get_started/first_program/05_run_cycle/07-january-2025-cycle-in-list-clickable.png)
+### 7. See an approved cycle example
 
-### 7. Enroll Beneficiaries
+Here's what an approved cycle looks like (from demo data):
 
-Before running the eligibility check, you need to import families into the cycle. Click the **Enroll Beneficiaries** button.
+![Example of an approved cycle](/_images/en-us/get_started/first_program/05_run_cycle/08-cycle-approved.png)
 
-![Screenshot: Cycle form showing "Enroll Beneficiaries" button](/_images/en-us/get_started/first_program/05_run_cycle/08-cycle-form-showing-enroll-beneficiaries-button.png)
+## What you accomplished
 
-A dialog appears asking which registrants to import. Select **All Groups** to import all families from your registry.
+You now understand program cycles:
 
-![Screenshot: Enroll Beneficiaries dialog with "All Groups" radio button selected](/_images/en-us/get_started/first_program/05_run_cycle/09-enroll-beneficiaries-dialog-with-all-groups-radio.png)
+- **Cycles organize distribution** into time periods
+- **New Cycle button** creates cycles instantly with auto-generated names and dates
+- **Beneficiaries tab** shows which families are enrolled
+- **Status progression** tracks the cycle from Draft to Ended
 
-Click **Enroll** to import the families.
+## What's next
 
-![Screenshot: Enroll button in dialog](/_images/en-us/get_started/first_program/05_run_cycle/10-enroll-button-in-dialog-highlighted.png)
+Cycles and entitlements work together:
+- **Cycles** define when benefits are distributed
+- **Entitlements** define what benefits each family receives
 
-You should see a success message: "5 beneficiaries enrolled in cycle."
+In the next step, you'll learn how to configure benefit amounts and generate entitlements.
 
-![Screenshot: Success notification showing "5 beneficiaries enrolled in cycle"](/_images/en-us/get_started/first_program/05_run_cycle/11-success-notification-showing-5-beneficiaries-enrol.png)
+## Are you stuck?
 
-### 8. View Enrolled Beneficiaries
+**Can't find the New Cycle button?**
+Make sure you're viewing the program form (not the programs list). The New Cycle button is at the top of the program form, next to Import Eligible and Enroll Eligible buttons.
 
-Click the **Beneficiaries** tab to see all families enrolled in this cycle. You should see your 5 families:
-- Garcia Family
-- Santos Family
-- Cruz Family
-- Reyes Family
-- Ramos Family
+**New cycle has weird dates?**
+Cycles use auto-calculated dates based on your program schedule. You can edit the cycle dates later if needed by opening the cycle and clicking Edit.
 
-All should have status **Draft** (not evaluated yet).
+**Don't see any beneficiaries in the Beneficiaries tab?**
+This is normal for a new cycle. Beneficiaries are enrolled either:
+- Automatically when they meet eligibility criteria
+- Manually using the "Copy Beneficiaries" button
+- By importing from the registry
 
-![Screenshot: Beneficiaries tab showing 5 families listed with Draft status](/_images/en-us/get_started/first_program/05_run_cycle/12-beneficiaries-tab-showing-5-families-listed-with-d.png)
+**What's the difference between Draft and To Approve?**
+- **Draft**: Cycle is still being set up, beneficiaries may still be added
+- **To Approve**: Cycle is ready for review and approval by a supervisor
 
-### 9. Run Eligibility Check
+**Can I delete a cycle?**
+Yes, you can delete Draft cycles. Once a cycle is Approved or has entitlements generated, it cannot be deleted (to preserve financial records).
 
-Now you're ready to evaluate which families are eligible. Click the **Check Eligibility** button at the top of the cycle form.
+## Next step
 
-![Screenshot: Cycle form with "Check Eligibility" button highlighted](/_images/en-us/get_started/first_program/05_run_cycle/13-cycle-form-with-check-eligibility-button-highlight.png)
-
-The system will process each family against your eligibility rules. This may take a few moments.
-
-![Screenshot: Processing indicator or loading message](/_images/en-us/get_started/first_program/05_run_cycle/14-processing-indicator-or-loading-message.png)
-
-When complete, you'll see a message: "Eligibility check complete. 2 beneficiaries eligible, 3 ineligible."
-
-![Screenshot: Success notification showing eligibility check results](/_images/en-us/get_started/first_program/05_run_cycle/15-success-notification-showing-eligibility-check-res.png)
-
-### 10. Review Eligibility Results
-
-Go to the **Beneficiaries** tab again. Notice the status has changed for each family:
-
-**Eligible (2 families)**:
-- Santos Family ✓ (income: 8,000, has child born 2021)
-- Reyes Family ✓ (income: 6,000, has child born 2023)
-
-**Ineligible (3 families)**:
-- Garcia Family ✗ (income too high: 15,000)
-- Cruz Family ✗ (income too high: 12,000, no children under 5)
-- Ramos Family ✗ (income too high: 18,000, child too old)
-
-![Screenshot: Beneficiaries tab showing families with Eligible/Ineligible status](/_images/en-us/get_started/first_program/05_run_cycle/16-beneficiaries-tab-showing-families-with-eligiblein.png)
-
-### 11. View Eligibility Details
-
-Click on **Santos Family** to see why they qualified. You should see an eligibility summary showing:
-- ✓ Household Income (8,000) is less than 10,000
-- ✓ Has 1 child under 5
-
-![Screenshot: Santos Family record showing eligibility criteria met with checkmarks](/_images/en-us/get_started/first_program/05_run_cycle/17-santos-family-record-showing-eligibility-criteria.png)
-
-### 12. Approve the Cycle
-
-Now that eligibility is determined, you're ready to approve the cycle. Go back to the cycle form and click **Approve Cycle**.
-
-![Screenshot: Cycle form with "Approve Cycle" button highlighted](/_images/en-us/get_started/first_program/05_run_cycle/18-cycle-form-with-approve-cycle-button-highlighted.png)
-
-Confirm the approval when prompted.
-
-![Screenshot: Confirmation dialog asking "Are you sure you want to approve this cycle?"](/_images/en-us/get_started/first_program/05_run_cycle/19-confirmation-dialog-asking-are-you-sure-you-want-t.png)
-
-The cycle status changes from **Draft** to **Approved**.
-
-![Screenshot: Cycle status badge showing "Approved"](/_images/en-us/get_started/first_program/05_run_cycle/20-cycle-status-badge-showing-approved.png)
-
-## What You Accomplished
-
-You've successfully completed your first program cycle:
-
-- **Created a cycle** for January 2025
-- **Enrolled 5 families** from your registry
-- **Ran eligibility check** using your income and children rules
-- **Identified 2 eligible families** (Santos and Reyes)
-- **Approved the cycle** to move forward
-
-Your program now knows which families should receive benefits. The next step is to generate entitlements (the actual benefit amounts).
-
-## Are You Stuck?
-
-**Can't find the Cycles tab?**
-Make sure you're on the program form for "Cash Transfer for Vulnerable Families," not in the programs list view.
-
-**Enroll Beneficiaries button is grayed out?**
-The cycle may already be approved or completed. Only Draft cycles can enroll beneficiaries. If you need to change it, use the **Set to Draft** button first.
-
-**Check Eligibility button doesn't work?**
-Make sure you've enrolled beneficiaries first. You can't check eligibility on an empty cycle.
-
-**All families showing as Eligible or all as Ineligible?**
-Double-check your eligibility rules in the program's Eligibility tab. Make sure:
-- Both rules are configured correctly
-- Filter Mode is set to "All"
-- Field names match your registry data
-
-**Eligibility check takes a very long time?**
-For 5 families, it should be nearly instant. If it's slow, there may be a system issue. Check with your administrator or try refreshing the page.
-
-**Don't see eligibility details for a family?**
-Click on the family name in the Beneficiaries tab, then look for an "Eligibility" or "Evaluation" section in their record.
-
-**Want to re-run eligibility after changing rules?**
-You can! Go back to the program's Eligibility tab, modify the rules, save, then return to the cycle and click **Check Eligibility** again. The system will re-evaluate all families.
-
-## Next Step
-
-Now that you know which families are eligible, you're ready to generate entitlements (benefit amounts). Continue to [Step 6: Distribute Entitlements](06_distribute_entitlements.md).
+Continue to [Step 6: Configure and generate entitlements](06_distribute_entitlements.md).

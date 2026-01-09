@@ -35,19 +35,19 @@ Families must meet **both** conditions to be eligible.
 
 Go to **Programs** from the main menu and click on **Cash Transfer for Vulnerable Families** to open it.
 
-![Screenshot: Programs list with "Cash Transfer for Vulnerable Families" highlighted](/_images/en-us/get_started/first_program/04_configure_eligibility/01-programs-list-with-cash-transfer-for-vulnerable-fa.png)
+![Screenshot: Programs list with "Cash Transfer for Vulnerable Families" highlighted](/_images/en-us/get_started/first_program/04_configure_eligibility/01-programs-list.png)
 
 ### 2. Go to the Eligibility Tab
 
 Click the **Eligibility** tab at the top of the program form.
 
-![Screenshot: Program form with Eligibility tab highlighted](/_images/en-us/get_started/first_program/04_configure_eligibility/02-program-form-with-eligibility-tab-highlighted.png)
+![Screenshot: Program form with Eligibility tab highlighted](/_images/en-us/get_started/first_program/04_configure_eligibility/02-program-form.png)
 
 ### 3. Choose Default Eligibility Manager
 
 In the **Eligibility Manager** field, select **Default** from the dropdown. This is the standard way to set up eligibility rules.
 
-![Screenshot: Eligibility Manager dropdown with "Default" selected](/_images/en-us/get_started/first_program/04_configure_eligibility/03-eligibility-manager-dropdown-with-default-selected.png)
+![Screenshot: Eligibility Manager dropdown with "Default" selected](/_images/en-us/get_started/first_program/04_configure_eligibility/03-configuration.png)
 
 ### 4. Set Filter Mode to "All"
 
@@ -55,13 +55,13 @@ Below the Eligibility Manager field, you'll see **Filter Mode**. Select **All** 
 
 This means families must meet **all** the rules you create (income AND children). If you selected "Any," families would only need to meet one rule.
 
-![Screenshot: Filter Mode dropdown showing "All" selected](/_images/en-us/get_started/first_program/04_configure_eligibility/04-filter-mode-dropdown-showing-all-selected.png)
+![Screenshot: Filter Mode dropdown showing "All" selected](/_images/en-us/get_started/first_program/04_configure_eligibility/04-click-edit.png)
 
 ### 5. Add the First Rule (Income Test)
 
 Click **Add a line** in the eligibility rules section.
 
-![Screenshot: Eligibility rules section with "Add a line" button highlighted](/_images/en-us/get_started/first_program/04_configure_eligibility/05-add-a-line-button-in-eligibility-rules-section-hig.png)
+![Screenshot: Eligibility rules section with "Add a line" button highlighted](/_images/en-us/get_started/first_program/04_configure_eligibility/05-eligibility-manager.png)
 
 A new rule line appears. Configure it as follows:
 
@@ -73,13 +73,13 @@ A new rule line appears. Configure it as follows:
 
 This rule selects families with household income less than 10,000 PHP.
 
-![Screenshot: First rule showing "Household Income is less than 10000"](/_images/en-us/get_started/first_program/04_configure_eligibility/06-first-rule-showing-household-income-is-less-than-1.png)
+![Screenshot: First rule showing "Household Income is less than 10000"](/_images/en-us/get_started/first_program/04_configure_eligibility/06-more-config.png)
 
 ### 6. Add the Second Rule (Children Under 5)
 
 Click **Add a line** again to add a second rule.
 
-![Screenshot: Add a line button with first rule already visible above](/_images/en-us/get_started/first_program/04_configure_eligibility/07-add-a-line-button-with-first-rule-visible-above.png)
+![Screenshot: Add a line button with first rule already visible above](/_images/en-us/get_started/first_program/04_configure_eligibility/07-entitlement-manager.png)
 
 Configure the second rule:
 
@@ -91,7 +91,7 @@ Configure the second rule:
 
 This rule selects families with at least one child under 5 years old.
 
-![Screenshot: Second rule showing "Number of Children Under 5 is greater than or equal to 1"](/_images/en-us/get_started/first_program/04_configure_eligibility/08-second-rule-showing-number-of-children-under-5-1.png)
+![Screenshot: Second rule showing "Number of Children Under 5 is greater than or equal to 1"](/_images/en-us/get_started/first_program/04_configure_eligibility/08-cycle-manager.png)
 
 ### 7. Review Your Eligibility Rules
 
@@ -101,17 +101,17 @@ You should now see both rules:
 **Rule 2**: Number of Children Under 5 is greater than or equal to 1
 **Filter Mode**: All (must meet both rules)
 
-![Screenshot: Complete eligibility configuration showing both rules with "All" filter mode](/_images/en-us/get_started/first_program/04_configure_eligibility/09-complete-eligibility-configuration-showing-both-ru.png)
+![Screenshot: Complete eligibility configuration showing both rules with "All" filter mode](/_images/en-us/get_started/first_program/04_configure_eligibility/09-additional-settings.png)
 
 ### 8. Save the Program
 
 Click **Save** in the top-left corner to save your eligibility configuration.
 
-![Screenshot: Save button in top-left corner](/_images/en-us/get_started/first_program/04_configure_eligibility/10-save-button-in-top-left-corner-highlighted.png)
+![Screenshot: Save button in top-left corner](/_images/en-us/get_started/first_program/04_configure_eligibility/10-save-config.png)
 
 You should see a success notification: "Program updated successfully."
 
-![Screenshot: Success notification showing "Program updated successfully"](/_images/en-us/get_started/first_program/04_configure_eligibility/11-success-notification-showing-program-updated-succe.png)
+![Screenshot: Success notification showing "Program updated successfully"](/_images/en-us/get_started/first_program/04_configure_eligibility/11-overview.png)
 
 ### 9. Verify Eligibility is Configured
 
@@ -120,7 +120,7 @@ After saving, review the Eligibility tab to confirm your rules are saved correct
 - Filter Mode: All
 - Two rules configured
 
-![Screenshot: Saved eligibility configuration showing all settings](/_images/en-us/get_started/first_program/04_configure_eligibility/12-saved-eligibility-configuration-showing-all-settin.png)
+![Screenshot: Saved eligibility configuration showing all settings](/_images/en-us/get_started/first_program/04_configure_eligibility/12-programs-list-final.png)
 
 ## What You Accomplished
 
