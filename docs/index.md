@@ -20,7 +20,7 @@ OpenSPP is an open-source, modular and highly interoperable platform. The platfo
 
 OpenSPP is a Digital Public Good. It is built on more than 60 open-source modules, and leverages and contributes to other open-source projects including OpenG2P, MOSIP, OpenCRVS, Odoo, Payment Hub EE, ID PASS, CommCare, Metabase and OpenFn
 
-## Get Started
+## Get started
 
 New to OpenSPP? Start here:
 
@@ -28,7 +28,7 @@ New to OpenSPP? Start here:
 - **{doc}`get_started/index`** - Install and set up your first program
 - **{doc}`learn/whats_new_v2`** - What's new in OpenSPP V2
 
-## Documentation by Role
+## Documentation by role
 
 | I am a... | I need to... | Start here |
 |-----------|--------------|------------|
@@ -37,7 +37,7 @@ New to OpenSPP? Start here:
 | **Developer** | Extend OpenSPP, build integrations | {doc}`developer_guide/index` |
 | **Sys Admin** | Deploy, secure, maintain OpenSPP | {doc}`ops_guide/index` |
 
-## Platform Overview
+## Platform overview
 
 ### SP-MIS
 
@@ -57,7 +57,7 @@ The Farmer Registry stores and manages farm holding and farm owner data, support
 
 The Disability Registry is an organized database for systematically recording and managing information about individuals with disabilities within a specific population or geographic area. It contains important information to facilitate services and assistance for people with disabilities, including access to social protection programs.
 
-## Guiding Principles
+## Guiding principles
 
 Our guiding principles are informed by the Digital Public Goods Standard and the Principles for Digital Development.
 
@@ -67,7 +67,7 @@ Our guiding principles are informed by the Digital Public Goods Standard and the
 - **Interoperability**: The platform is designed to support system interoperability - critical for the creation of cohesive and efficient digital ecosystems.
 - **Inclusivity**: Our products can be customized to suit linguistic and cultural requirements, accessibility, digital literacy, and deployment in remote and less-developed contexts.
 
-## Get Help
+## Get help
 
 OpenSPP is currently in active development. If you have questions or need support:
 
