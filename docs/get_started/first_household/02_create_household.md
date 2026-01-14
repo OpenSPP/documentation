@@ -6,19 +6,19 @@ openspp:
 
 # Step 2: Create a Household
 
-This tutorial is for **users** who need to register a new household in OpenSPP.
+This tutorial is for **users** who want to register a new household in OpenSPP.
 
-## What You'll Do
+## What you'll do
 
-Create a new household (group) record in the registry, entering basic information about the family unit.
+Create a new household (group) record in the registry, entering basic information about the family.
 
-## Before You Start
+## Before you start
 
 - Complete [Step 1: Access the Registry](01_access_registry.md)
 - Have information about the household to register (name, address, contact details)
 - Allow 3-5 minutes to complete this step
 
-## The Scenario
+## The scenario
 
 The Garcia family has come to your office. You need to create a household record for them before adding individual family members.
 
@@ -28,9 +28,9 @@ The Garcia family has come to your office. You need to create a household record
 
 From the Registry Search Portal, click the **New Group** button.
 
-![Screenshot: Click New Group button](/_images/en-us/get_started/first_household/02_create_household/1.png)
+![Screenshot: Click New Group button](/_images/en-us/get_started/first_household/02_create_household/cle3_1.png)
 
-### 2. Enter Household Information
+### 2. Enter household information
 
 The group form opens. Enter the required information:
 
@@ -41,21 +41,21 @@ The group form opens. Enter the required information:
 | Address | 123 Main Street | Physical address |
 | Phone | +1-555-0123 | Contact number |
 
-![Screenshot: Group form with fields filled in](/_images/en-us/get_started/first_household/02_create_household/2.png)
+![Screenshot: Group form with fields filled in](/_images/en-us/get_started/first_household/02_create_household/cle3_2.png)
 
-### 3. Save the Household
+### 3. Save the household
 
 Click **Save** to create the household record.
 
-![Screenshot: Save button highlighted](/_images/en-us/get_started/first_household/02_create_household/3.png)
+![Screenshot: Save button highlighted](/_images/en-us/get_started/first_household/02_create_household/cle3_3.png)
 
-### 4. Verify Creation
+### 4. Verify creation
 
 After saving, you'll see the household record. Notice the household has no members yet - you'll add them in the next step.
 
-![Screenshot: Saved household record showing empty members section](/_images/en-us/get_started/first_household/02_create_household/4.png)
+![Screenshot: Saved household record showing empty members section](/_images/en-us/get_started/first_household/02_create_household/cle3_4.png)
 
-## What You Accomplished
+## What you accomplished
 
 You've learned how to:
 
@@ -63,7 +63,7 @@ You've learned how to:
 - Enter basic household information
 - Save and verify the household record
 
-## Key Concepts
+## Key concepts
 
 | Concept | Description |
 |---------|-------------|
@@ -71,7 +71,7 @@ You've learned how to:
 | **Kind** | The type of group (Household, Organization, etc.) |
 | **Members** | Individuals who belong to the group |
 
-## Are You Stuck?
+## Are you stuck?
 
 **Required field missing?**
 Required fields depend on your system configuration. Contact your administrator if a field you need isn't available.
@@ -83,5 +83,4 @@ Check that all required fields are filled in. Required fields typically have an 
 Your administrator may need to configure group types for your installation.
 
 ## Next Step
-
 Now that you've created the household, you're ready to add family members. Continue to [Step 3: Add Members](03_add_members.md).
