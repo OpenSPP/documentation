@@ -4,87 +4,82 @@ openspp:
   products: [registry, programs]
 ---
 
-# Step 3: Create Your First Social Protection Program
+# Step 3: Create your first social protection program
 
 This tutorial is for **users** who want to learn how to set up a social protection program in OpenSPP.
 
-## What You'll Do
+## What you'll do
 
-Create a "Cash Transfer for Vulnerable Families" program that will provide monthly cash assistance to eligible families. You'll configure the basic program settings including the program name, target beneficiaries, and currency.
+Create a "Cash transfer for vulnerable families" program that will provide monthly cash assistance to eligible families. You'll configure the basic program settings including the program name, target beneficiaries, and currency.
 
-## Before You Start
+## Before you start
 
-- You completed [Step 2: Import Beneficiaries](02_import_beneficiaries.md)
+- You completed [Step 2: Import beneficiaries](02_import_beneficiaries.md)
 - Your registry has family and individual data
 - You need **System Administrator** or **Program Manager** access
 - Allow 5-10 minutes to complete this step
 
-## The Scenario
+## The scenario
 
-You're creating a **Cash Transfer for Vulnerable Families** program with these goals:
+You're creating a **Cash transfer for vulnerable families** program with these goals:
 - **Target**: Low-income families with young children
 - **Benefit**: Monthly cash transfer
 - **Currency**: Philippine Peso (PHP)
 - **Distribution**: Monthly recurring payments
 
+Your program targets vulnerable families. To identify them, you'll use two criteria:
+1. **Income Test**: Family earns less than 10,000 PHP per month
+2. **Child Test**: Family has at least one child under 5 years old
+
 ## Steps
 
-### 1. Access the Programs Module
+### 1. Access the programs module
 
 Click the **four-square icon** in the top-left corner to open the main menu. Then click **Programs**.
 
 ![Screenshot: Main menu with four-square icon and Programs option highlighted](/_images/en-us/get_started/first_program/03_create_program/01-programs-list.png)
 
-### 2. Create a New Program
+### 2. Create a new program
 
 Click the **Create** button in the top-left corner of the Programs list.
 
 ![Screenshot: Programs list view with Create button highlighted in top-left](/_images/en-us/get_started/first_program/03_create_program/02-create-program-button.png)
 
-### 3. Enter Basic Program Information
+### 3. Enter basic program information
 
 You'll see the program creation form. Fill in the following basic information:
 
-**Program Name**: Cash Transfer for Vulnerable Families
+**Program Name**: Cash transfer for vulnerable families
 
 **Target Type**: Select **Group** from the dropdown. This means the program will evaluate families (groups) for eligibility, not individual people.
 
 ![Screenshot: Program creation form showing Program Name field filled with "Cash Transfer for Vulnerable Families" and Target Type set to "Group"](/_images/en-us/get_started/first_program/03_create_program/03-program-name.png)
 
-### 4. Set the Currency
+### 4. Set the currency
 
 Scroll down to the **Currency** field and select **PHP - Philippine Peso** from the dropdown.
 
 ![Screenshot: Currency field showing PHP - Philippine Peso selected](/_images/en-us/get_started/first_program/03_create_program/04-currency.png)
 
-### 5. Review the Configuration Tabs
+### 5. Configure the program
 
-Notice there are several tabs at the top of the form:
-- **Configuration**: Basic program settings (where you are now)
-- **Eligibility**: Where you'll set rules for who qualifies
-- **Cycle Manager**: Controls how often benefits are distributed
-- **Entitlement Manager**: Defines what benefits are given
+Click "Next: Configure Program" to proceed with the configurations. Notice that there are several tabs at the top of the form:
+- **Who Qualifies?** (where you are now): Define the criteria that determine who can participate in this program
+- **What Do They Receive?**: Configure what beneficiaries will receive from this program
+- **Distribution Schedule**: Set up how often benefits will be distributed
+- **Ongoing Compliance (Optional)**: Define criteria that beneficiaries must continue to meet to remain eligible. This setting is optional and can be left unselected if it should not be used.
 
-For now, we'll just create the basic program. You'll configure these in the next steps.
+![Screenshot: Program form showing the four tabs: Who Qualifies?, hat Do They Receive?, Distribution Schedule, Ongoing Compliance (Optional)](/_images/en-us/get_started/first_program/03_create_program/cle5_1.png)
 
-![Screenshot: Program form showing the four tabs: Configuration, Eligibility, Cycle Manager, Entitlement Manager](/_images/en-us/get_started/first_program/03_create_program/05-program-quick-options.png)
+### 6. Configure eligibility
 
-### 6. Leave Other Settings as Default
+Your program targets vulnerable families. To identify them, you'll use two criteria:
+- **Income Test**: Family earns less than 10,000 PHP per month
+- **Child Test**: Family has at least one child under 5 years old
 
-Keep the default settings for now:
-- **Auto-import Eligible Beneficiaries**: Unchecked (you'll manually control enrollment)
-- **Notification Settings**: Empty (no notifications yet)
-- **Journal**: Empty (accounting setup comes later)
+Click the **Create Program** button at the bottom to create your program.
 
-These can be configured later as you become more familiar with OpenSPP.
-
-![Screenshot: Lower portion of Configuration tab showing default settings](/_images/en-us/get_started/first_program/03_create_program/06-program-next-button.png)
-
-### 7. Save the Program
-
-Click the **Save** button in the top-left corner to create your program.
-
-![Screenshot: Save button in top-left corner of program form](/_images/en-us/get_started/first_program/03_create_program/07-program-step2-config.png)
+![Screenshot: Create program button at the bottom of of program form](/_images/en-us/get_started/first_program/03_create_program/cle5_2.png)
 
 You should see a success notification: "Program created successfully."
 
