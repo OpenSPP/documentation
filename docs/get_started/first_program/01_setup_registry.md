@@ -4,35 +4,35 @@ openspp:
   products: [registry, programs]
 ---
 
-# Step 1: Access the Beneficiary Registry
+# Step 1: Access the beneficiary registry
 
 This tutorial is for **users** who are new to OpenSPP and want to learn how to access the beneficiary registry.
 
-## What You'll Do
+## What you'll do
 
 Learn how to navigate to the Registry module and understand the Registry Search Portal - the central interface for managing beneficiaries in OpenSPP.
 
-## Before You Start
+## Before you start
 
 - You need access to OpenSPP with appropriate permissions
 - OpenSPP should be installed and running
 - Allow 2-3 minutes to complete this step
 
-## The Scenario
+## The scenario
 
 You're setting up a **Cash Transfer for Vulnerable Families** program. This program will provide monthly cash assistance to low-income families with children under 5 years old. First, you need to understand how to access and use the beneficiary registry.
 
 ## Steps
 
-### 1. Navigate to Registry
+### 1. Navigate to registry
 
 After logging in to OpenSPP, you'll see the sidebar menu on the left. Click **Registry** to access the beneficiary management portal.
 
 ![Screenshot: Sidebar showing Registry option](/_images/en-us/get_started/first_program/01_setup_registry/01-sidebar-registry.png)
 
-### 2. Explore the Registry Search Portal
+### 2. Explore the registry search portal
 
-The Registry Search Portal is the main interface for managing beneficiaries. It provides a privacy-first approach where you search for records rather than browsing lists.
+The registry search portal is the main interface for managing beneficiaries. It provides a privacy-first approach where you search for records rather than browsing lists.
 
 ![Screenshot: Registry Search Portal overview](/_images/en-us/get_started/first_program/01_setup_registry/02-registry-search-portal.png)
 
@@ -47,19 +47,19 @@ Key elements of the interface:
 | **All Registrants** dropdown | Filter by registrant type |
 | **Recently Viewed** | Quick access to records you've viewed recently |
 
-### 3. Register New Individuals
+### 3. Register new individuals
 
 Click the **New Individual** button to register individual people (e.g., a single person applying for assistance).
 
 ![Screenshot: New Individual button highlighted](/_images/en-us/get_started/first_program/01_setup_registry/03-new-individual-button.png)
 
-### 4. Register New Groups
+### 4. Register new groups
 
 Click the **New Group** button to register households or families (e.g., a family unit applying together).
 
 ![Screenshot: New Group button highlighted](/_images/en-us/get_started/first_program/01_setup_registry/04-new-group-button.png)
 
-### 5. Use the Search Function
+### 5. Use the search function
 
 The search bar allows you to find existing beneficiaries. Click on the search bar to begin typing.
 
@@ -71,7 +71,7 @@ Enter at least 3 characters to search by:
 - Phone number
 - Email address
 
-### 6. View Search Results
+### 6. View search results
 
 In this example, searching for "Garcia" returns matching beneficiaries. The results show the beneficiary name, type (Individual or Group), and when the record was last updated.
 
@@ -79,16 +79,16 @@ In this example, searching for "Garcia" returns matching beneficiaries. The resu
 
 This privacy-first search approach ensures beneficiary data is protected - you must actively search for records rather than browsing through lists.
 
-## What You Accomplished
+## What you accomplished
 
 You've learned how to:
 
 - Access the Registry module from the sidebar
-- Navigate to the Registry Search Portal
+- Navigate to the registry search portal
 - Understand the key interface elements for managing beneficiaries
 - Use the search function to find existing records
 
-## Key Concepts
+## Key concepts
 
 | Concept | Description |
 |---------|-------------|
@@ -97,7 +97,7 @@ You've learned how to:
 | **Privacy-First Search** | Must search to find records; no open browsing |
 | **Recently Viewed** | Quick access to records you've accessed |
 
-## Are You Stuck?
+## Are you stuck?
 
 **Can't find Registry in the sidebar?**
 Make sure you're logged in with appropriate permissions. Ask your system administrator to grant you access to the Registry module.

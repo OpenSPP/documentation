@@ -4,21 +4,21 @@ openspp:
   products: [registry, programs]
 ---
 
-# Step 3: Add Members
+# Step 3: Add members
 
 This tutorial is for **users** who need to add individual family members to a household.
 
-## What You'll Do
+## What you'll do
 
 Create individual records for family members and link them to the household you created in Step 2.
 
-## Before You Start
+## Before you start
 
 - Complete [Step 2: Create a Household](02_create_household.md)
 - Have information about each family member (names, dates of birth, etc.)
 - Allow 5-10 minutes to complete this step
 
-## The Scenario
+## The scenario
 
 You've created the Garcia Family household. Now you need to register the individual family members: Maria (head of household), Carlos (spouse), and Sofia (child).
 
@@ -28,9 +28,9 @@ You've created the Garcia Family household. Now you need to register the individ
 
 From the Registry Search Portal, click **New Individual** to create the first family member.
 
-![Screenshot: Click New Individual button](/_images/en-us/get_started/first_household/03_add_members/1.png)
+![Screenshot: Click New Individual button](/_images/en-us/get_started/first_household/03_add_members/cle4_1.png)
 
-### 2. Enter Individual Information
+### 2. Enter individual information
 
 Enter the information for Maria Garcia, the head of household:
 
@@ -42,13 +42,13 @@ Enter the information for Maria Garcia, the head of household:
 | Gender | Female |
 | Phone | +1-555-0123 |
 
-![Screenshot: Individual form filled in for Maria](/_images/en-us/get_started/first_household/03_add_members/2.png)
+![Screenshot: Individual form filled in for Maria](/_images/en-us/get_started/first_household/03_add_members/cle4_2.png)
 
 ### 3. Save the Individual
 
 Click **Save** to create Maria's record.
 
-![Screenshot: Saved individual record](/_images/en-us/get_started/first_household/03_add_members/3.png)
+![Screenshot: Saved individual record](/_images/en-us/get_started/first_household/03_add_members/cle4_3.png)
 
 ### 4. Create Additional Family Members
 
@@ -72,49 +72,43 @@ Repeat steps 1-3 to create records for:
 | Date of Birth | 2020-01-10 |
 | Gender | Female |
 
-### 5. Open the Household Record
+### 5. Open the household record
 
 Search for "Garcia Family" in the Registry Search Portal and open the household record.
 
-![Screenshot: Search for Garcia Family](/_images/en-us/get_started/first_household/03_add_members/4.png)
+![Screenshot: Search for Garcia Family](/_images/en-us/get_started/first_household/03_add_members/cle4_4.png)
 
-### 6. Add Members to the Household
+### 6. Add members to the household
 
 In the **Members** section, click **Add a line** to add family members.
 
-![Screenshot: Click Add a line in Members section](/_images/en-us/get_started/first_household/03_add_members/5.png)
+![Screenshot: Click Add a line in Members section](/_images/en-us/get_started/first_household/03_add_members/cle4_5.png)
 
-### 7. Select Family Members
+### 7. Select family members
 
 Select each individual from the dropdown. You can also click **Search More** to find specific individuals.
 
-![Screenshot: Select individual from dropdown](/_images/en-us/get_started/first_household/03_add_members/6.png)
+![Screenshot: Select individual from dropdown](/_images/en-us/get_started/first_household/03_add_members/cle4_6.png)
 
-### 8. Assign Roles
+### 8. Assign head of household
 
-For each member, select their role in the household:
+Assign Maria Garcia as head of household.
 
-| Member | Role |
-|--------|------|
-| Maria Garcia | Head |
-| Carlos Garcia | Spouse |
-| Sofia Garcia | Child |
+![Screenshot: Assign head of household](/_images/en-us/get_started/first_household/03_add_members/cle4_7.png)
 
-![Screenshot: Assign roles to members](/_images/en-us/get_started/first_household/03_add_members/7.png)
-
-### 9. Save the Household
+### 9. Save the household
 
 Click **Save** to update the household with its members.
 
-![Screenshot: Save button](/_images/en-us/get_started/first_household/03_add_members/8.png)
+![Screenshot: Save button](/_images/en-us/get_started/first_household/03_add_members/cle4_8.png)
 
-### 10. Verify the Completed Household
+### 10. Verify the completed household
 
 Review the household record. You should see all three family members listed with their roles.
 
-![Screenshot: Completed household with all members](/_images/en-us/get_started/first_household/03_add_members/9.png)
+![Screenshot: Completed household with all members](/_images/en-us/get_started/first_household/03_add_members/cle4_9.png)
 
-## What You Accomplished
+## What you accomplished
 
 You've learned how to:
 
@@ -123,7 +117,7 @@ You've learned how to:
 - Assign roles to household members
 - Verify the completed household
 
-## Key Concepts
+## Key concepts
 
 | Concept | Description |
 |---------|-------------|
@@ -131,7 +125,7 @@ You've learned how to:
 | **Member** | An individual linked to a group |
 | **Role** | The person's relationship to the household (Head, Spouse, Child, etc.) |
 
-## Are You Stuck?
+## Are you stuck?
 
 **Can't find the individual in the dropdown?**
 Make sure you've saved the individual record first. Search for them using the **Search More** option.
