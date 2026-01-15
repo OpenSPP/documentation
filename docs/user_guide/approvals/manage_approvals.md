@@ -85,8 +85,9 @@ The item status changes to **Approved**.
 
 ![Approved status shown](/_images/en-us/approvals/manage/08-approved-status-shown-after-approval.png)
 
-{note}
+```{note}
 For multi-tier approvals, clicking Approve moves the item to the next approval level. It only becomes fully approved after all levels have approved.
+```
 
 ## Reject an Item
 

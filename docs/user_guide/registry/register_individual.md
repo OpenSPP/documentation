@@ -51,7 +51,7 @@ Fill in the **Profile** tab with the person's basic information.
 
 In the **Demographics** section, enter additional information.
 
-![Demographics section](/_images/en-us/registry/register-individual/04-search-results-showing-created-individual.png)
+![Demographics section](/_images/en-us/registry/register-individual/04-demographics-section-with-date-of-birth-and-gender.png)
 
 | Field | Required | What to Enter |
 |-------|----------|---------------|
@@ -68,7 +68,7 @@ In the **Demographics** section, enter additional information.
 
 In the **Contact Information** section, enter address and phone details.
 
-![Contact information section](/_images/en-us/registry/register-individual/05-new-group-button-highlighted.png)
+![Contact information section](/_images/en-us/registry/register-individual/05-contact-information-section-with-address-and-email.png)
 
 | Field | Required | What to Enter |
 |-------|----------|---------------|
@@ -83,15 +83,13 @@ To add a phone number:
 2. Enter the phone number
 3. Select the country (optional)
 
-![Phone number entry](/_images/en-us/registry/register-individual/06-group-registration-form.png)
-
 You can add multiple phone numbers.
 
 ### 6. Add Tags (Optional)
 
 In the **Tags** section, add labels to categorize this individual.
 
-![Tags section](/_images/en-us/registry/register-individual/07-saved-group-form.png)
+![Tags section](/_images/en-us/registry/register-individual/07-tags-section-for-categorizing-the-individual.png)
 
 Click in the tags field and select from available tags, or type to search.
 
@@ -99,7 +97,7 @@ Click in the tags field and select from available tags, or type to search.
 
 Click **Save** in the top left corner to create the individual record.
 
-![Save button](/_images/en-us/registry/register-individual/08-group-search-results.png)
+![Save button](/_images/en-us/registry/register-individual/08-save-button-highlighted-in-top-left-corner.png)
 
 ### 8. Add Identity Documents (Optional)
 
@@ -109,7 +107,7 @@ After saving, you can add identity documents in the **Identity** tab.
 2. In the **Identity Documents** section, click **Add a line**
 3. Select the ID type and enter the ID number
 
-![Identity tab with documents](/_images/en-us/registry/register-individual/09-adding-member-to-group.png)
+![Identity tab with documents](/_images/en-us/registry/register-individual/09-identity-tab-with-documents-section.png)
 
 | Field | Required | What to Enter |
 |-------|----------|---------------|
@@ -123,7 +121,7 @@ Click **Save** to save the identity document.
 
 Search for the individual in the Registry Search Portal to confirm they were registered.
 
-![Search results showing new individual](/_images/en-us/registry/register-individual/10-group-saved-with-member.png)
+![Search results showing new individual](/_images/en-us/registry/register-individual/10-search-results-showing-created-individual.png)
 
 ## Form Tabs Overview
 

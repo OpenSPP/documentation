@@ -41,8 +41,9 @@ Areas are organized in a parent-child hierarchy, up to 10 levels deep. A typical
 | 4 | Municipality | Fourth subdivision |
 | 5 | Barangay/Village | Fifth subdivision |
 
-{note}
+```{note}
 Your OpenSPP system may use different names for each level depending on your country's administrative divisions.
+```
 
 ## Understanding Area Names
 

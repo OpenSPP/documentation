@@ -54,8 +54,9 @@ Prepare your data following these rules:
 | **IDs** | Text (not number) | 000123456 |
 | **Yes/No fields** | TRUE or FALSE | TRUE |
 
-{important}
+```{important}
 Format phone numbers and ID columns as **Text** in Excel. Otherwise, Excel may remove leading zeros (000123 becomes 123).
+```
 
 **In Excel:** Right-click column > Format Cells > Text
 
@@ -135,8 +136,9 @@ A notification confirms how many records were imported.
 
 ![Import success notification](/_images/en-us/registry/import-data/08-import-success-notification-with-record-count.png)
 
-{tip}
+```{tip}
 For large files (1,000+ records), check **Import in the background** to prevent browser timeouts.
+```
 
 ### Step 6: Verify
 
@@ -169,8 +171,9 @@ This includes the **ID** column, which is required for updates.
 3. **Keep the ID column unchanged**
 4. Save the file
 
-{warning}
+```{warning}
 Empty cells will overwrite existing values with blank. If you do not want to change a field, keep its original value.
+```
 
 ### Step 3: Import the Modified File
 

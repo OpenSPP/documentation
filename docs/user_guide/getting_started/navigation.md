@@ -22,8 +22,9 @@ Learn how to log in to OpenSPP, navigate the interface, and perform common actio
 
 Open your web browser and go to your organization's OpenSPP address. This is typically something like `https://openspp.yourorganization.gov`.
 
-{note}
+```{note}
 Your administrator will provide you with the exact web address to use.
+```
 
 ![OpenSPP login page](/_images/en-us/user_guide/getting_started/navigation/login-page.png)
 
@@ -34,8 +35,6 @@ Your administrator will provide you with the exact web address to use.
 2. Type your **password** in the Password field.
 
 3. Click the **Log in** button.
-
-![Entering login credentials](/_images/en-us/user_guide/getting_started/navigation/login-credentials.png)
 
 ### Step 3: First-Time Login
 
@@ -49,8 +48,13 @@ If this is your first time logging in, you may be asked to change your password:
 
 4. Click **Change Password**.
 
-{tip}
+```{tip}
 Choose a password that is easy for you to remember but hard for others to guess. Use a mix of letters, numbers, and symbols.
+```
+
+```{note}
+You can also change your password at any time by going to your **User Menu** (top right), selecting **My Preferences** and then opening the **Security** tab.
+```
 
 ## The Main Interface
 
@@ -82,8 +86,9 @@ Common sections include:
 | Payments | Payment processing and service points |
 | Settings | System configuration (if you have access) |
 
-{note}
+```{note}
 You may see different sections depending on your role and permissions.
+```
 
 ### The Main Menu (Sidebar)
 
@@ -207,8 +212,9 @@ After creating or editing a record, click the **Save** button to store your chan
 
 ![Save button location](/_images/en-us/user_guide/getting_started/navigation/save-button.png)
 
-{warning}
+```{warning}
 If you navigate away without saving, your changes will be lost.
+```
 
 ### Discarding Changes
 
@@ -222,8 +228,9 @@ If you made changes you do not want to keep:
 
 ### Deleting Records
 
-{warning}
+```{warning}
 Deleting records is permanent. Make sure you really want to remove the record before proceeding.
+```
 
 1. Open the record you want to delete.
 
@@ -235,8 +242,9 @@ Deleting records is permanent. Make sure you really want to remove the record be
 
 4. Confirm when prompted.
 
-{note}
+```{note}
 You may not be able to delete certain records if they are linked to other data in the system. If you see an error, contact your administrator.
+```
 
 ## Getting Help
 
@@ -258,8 +266,9 @@ If you need help with:
 | How to do a specific task | Your supervisor or training lead |
 | System errors | IT Support |
 
-{tip}
+```{tip}
 When reporting a problem, note down any error messages you see and what you were trying to do. This helps your support team resolve the issue faster.
+```
 
 ## Keyboard Shortcuts
 
