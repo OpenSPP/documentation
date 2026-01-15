@@ -40,8 +40,9 @@ Make sure you have:
 | Web browser | Chrome, Firefox, or Edge (latest version) |
 | Internet connection | Stable connection recommended |
 
-{important}
+```{important}
 If you do not have login credentials, contact your system administrator before continuing.
+```
 
 ## Quick Links
 

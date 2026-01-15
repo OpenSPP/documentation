@@ -125,8 +125,9 @@ One member should be designated as the household head:
 
 ![Designating household head](/_images/en-us/registry/register-group/11-designating-household-head-with-head-membership-ty.png)
 
-{note}
+```{note}
 Only one member can be the Head per group. If you try to set a second Head, you will see an error message.
+```
 
 ### 9. Verify the Group
 

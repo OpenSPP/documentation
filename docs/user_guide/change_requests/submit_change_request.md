@@ -66,8 +66,9 @@ Type part of their name or ID number to search.
 
 Select the correct registrant from the dropdown.
 
-{note}
+```{note}
 Some request types only work with individuals, others only with groups. The system filters the registrant list based on your selected request type.
+```
 
 ### 5. Click Create
 

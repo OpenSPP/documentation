@@ -95,8 +95,9 @@ Before entitlements can be approved, they must be set to pending validation.
 
 This changes all draft entitlements to "Pending Validation" status.
 
-{note}
+```{note}
 For cycles with many entitlements, this process runs in the background. You will see a message in the cycle's history when complete.
+```
 
 ### 4. Approve Entitlements
 
@@ -111,8 +112,9 @@ Once entitlements are pending validation, they can be approved.
 2. The system checks fund availability
 3. Approved entitlements are ready for disbursement
 
-{important}
+```{important}
 Approval requires sufficient program funds. If funds are insufficient, you will see an error message indicating the shortfall.
+```
 
 **To approve individual entitlements:**
 

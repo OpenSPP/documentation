@@ -207,8 +207,9 @@ If corrections are needed on a pending or rejected entitlement:
 
 4. Submit for approval again.
 
-{note}
+```{note}
 Approved entitlements cannot be reset to draft. Contact a Program Manager if an approved entitlement needs to be cancelled.
+```
 
 ## View Entitlement History
 
