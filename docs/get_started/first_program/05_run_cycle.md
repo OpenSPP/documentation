@@ -14,7 +14,7 @@ Understand what program cycles are and how they organize benefit distribution in
 
 ## Before you start
 
-- You completed [Step 4: Configure eligibility rules](04_configure_eligibility.md)
+- You completed [Step 4: Import and enroll beneficiaries](04_enroll_beneficiaries.md)
 - Your program has eligibility rules configured
 - You need **Program Manager** or **System Administrator** access
 - Allow 5-10 minutes to complete this step
@@ -43,13 +43,13 @@ Each cycle has:
 
 Click **Programs** in the sidebar to view all programs.
 
-![Programs list showing Cash Transfer Program](/_images/en-us/get_started/first_program/05_run_cycle/01-programs-list.png)
+![Programs list showing Cash Transfer Program](/_images/en-us/get_started/first_program/05_run_cycle/cle7_1.png)
 
 ### 2. View your program
 
-Click on **Cash Transfer Program** (or your program name) to open it. You'll see the program Overview tab with a **Recent Cycles** section.
+Click on **Cash transfer for vulnerable families** to open your previously created program. You'll see the program Overview tab with a **Recent Cycles** section.
 
-![Program overview showing Recent Cycles section](/_images/en-us/get_started/first_program/05_run_cycle/02-program-overview.png)
+![Program overview showing Recent Cycles section](/_images/en-us/get_started/first_program/05_run_cycle/cle7_2.png)
 
 ### 3. Create a new cycle
 
@@ -58,11 +58,11 @@ Click the **New Cycle** button at the top of the program form. This instantly cr
 - Auto-calculated start and end dates
 - **Draft** status
 
-![New Cycle button at top of program form](/_images/en-us/get_started/first_program/05_run_cycle/03-new-cycle-button.png)
+![New Cycle button at top of program form](/_images/en-us/get_started/first_program/05_run_cycle/cle7_4.png)
 
 The new cycle appears in the Recent Cycles list:
 
-![New cycle appears in Recent Cycles with Draft status](/_images/en-us/get_started/first_program/05_run_cycle/04-cycle-created.png)
+![New cycle appears in Recent Cycles with Draft status](/_images/en-us/get_started/first_program/05_run_cycle/cle7_3.png)
 
 ### 4. Open the cycle details
 
@@ -72,7 +72,7 @@ Click on the cycle name in the Recent Cycles list to open the cycle dialog. You'
 - Start and end dates
 - Financial summary (total amount, currency)
 
-![Cycle dialog showing Overview tab with cycle details](/_images/en-us/get_started/first_program/05_run_cycle/05-cycle-dialog-overview.png)
+![Cycle dialog showing Overview tab with cycle details](/_images/en-us/get_started/first_program/05_run_cycle/cle7_5.png)
 
 ### 5. View enrolled beneficiaries
 
@@ -81,7 +81,7 @@ Click the **Beneficiaries** tab to see which families are enrolled in this cycle
 - Enrollment date
 - State (for example, Enrolled)
 
-![Beneficiaries tab showing enrolled registrants](/_images/en-us/get_started/first_program/05_run_cycle/06-cycle-beneficiaries.png)
+![Beneficiaries tab showing enrolled registrants](/_images/en-us/get_started/first_program/05_run_cycle/cle7_6.png)
 
 ### 6. Understand cycle status progression
 
@@ -93,13 +93,13 @@ Look at the status badges at the top of the cycle dialog. A cycle progresses thr
 4. **Distributed**: Benefits have been distributed
 5. **Ended**: Cycle is complete
 
-![Status badges showing Draft → To Approve → Approved → Distributed → Ended](/_images/en-us/get_started/first_program/05_run_cycle/07-cycle-status-badges.png)
+![Status badges showing Draft → To Approve → Approved → Distributed → Ended](/_images/en-us/get_started/first_program/05_run_cycle/cle7_7.png)
 
 ### 7. See an approved cycle example
 
 Here's what an approved cycle looks like (from demo data):
 
-![Example of an approved cycle](/_images/en-us/get_started/first_program/05_run_cycle/08-cycle-approved.png)
+![Example of an approved cycle](/_images/en-us/get_started/first_program/05_run_cycle/cle7_8.png)
 
 ## What you accomplished
 

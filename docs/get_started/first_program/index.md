@@ -56,7 +56,7 @@ Click **Step 1** below to begin, or use the navigation to jump to any step.
 01_setup_registry
 02_import_beneficiaries
 03_create_program
-04_configure_eligibility
+04_enroll_beneficiaries
 05_run_cycle
 06_distribute_entitlements
 ```
