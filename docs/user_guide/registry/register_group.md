@@ -35,13 +35,13 @@ A **group** represents a collection of related individuals, typically a househol
 
 Click **Registry** in the main menu to open the Registry Search Portal.
 
-![Registry menu in sidebar](/_images/en-us/registry/register-group/01-registry-menu-in-sidebar-showing-registry-search-p.png)
+![Registry menu in sidebar](/_images/en-us/registry/register-group/01-registry-menu-in-sidebar-showing-registry-search.png)
 
 ### 2. Click New Group
 
 Click the **New Group** button to open the group registration form.
 
-![New Group button](/_images/en-us/registry/register-group/02-new-group-button-highlighted-in-registry-search-po.png)
+![New Group button](/_images/en-us/registry/register-group/02-new-group-button-highlighted-in-registry-search.png)
 
 ### 3. Enter Group Information
 
@@ -82,6 +82,10 @@ In the **Tags** section, add labels to categorize this group.
 
 ![Tags section](/_images/en-us/registry/register-group/06-tags-section-for-categorizing-the-group.png)
 
+```{note}
+If no tags appear in the dropdown, they may need to be configured by your administrator first. Contact your administrator to set up tags for your organization.
+```
+
 ### 6. Save the Group
 
 Click **Save** in the top left corner to create the group record.
@@ -97,7 +101,7 @@ After saving, add individuals as members of this group.
 
 ![Group Members section with Add a line](/_images/en-us/registry/register-group/08-group-members-section-with-add-a-line-button-in-pa.png)
 
-3. Select an individual from the dropdown, or click **Search More** to find them
+3. Select an individual from the **Member name** column dropdown.
 
 ![Select individual from dropdown](/_images/en-us/registry/register-group/09-individual-selection-dropdown-in-group-membership.png)
 
@@ -147,13 +151,16 @@ Each row shows:
 - Member name
 - Date of birth
 - Gender
-- Membership types (Head, Spouse, Child, etc.)
+- Membership type
 - Start and end dates
 - Status (active or inactive)
 
 ### From an Individual Record
 
 Open an individual and click the **Participation** tab to see which groups they belong to.
+
+![Individual participation tab showing groups](/_images/en-us/registry/register-group/14-individual-participation-tab-showing-groups.png)
+
 
 ## Ending a Membership
 
