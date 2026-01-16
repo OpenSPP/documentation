@@ -98,10 +98,10 @@ Once you select a section from the App Menu, the Main Menu on the left shows fea
 
 For example, in the Registry section you might see:
 
-- Individuals
-- Groups
-- Import
-- Reports
+- Search
+- Registry (CEL)
+- Browse All (Audit)
+- Configuration
 
 Click any item to open it in the main content area.
 
@@ -113,8 +113,9 @@ Click your name or profile icon in the top right corner to open the User Menu.
 
 | Option | What It Does |
 |--------|--------------|
-| My Profile | View and edit your account information |
-| Preferences | Change your display settings |
+| My Preferences | View and update your account information, change your password, and customize your OpenSPP view |
+| OpenSPP Documentation | Access the [OpenSPP documentation](https://docs.openspp.org/) |
+| OpenSPP Support | Visit the [OpenSPP official website](https://openspp.org/) for support |
 | Log out | Sign out of OpenSPP |
 
 ### Understanding Breadcrumbs
@@ -123,11 +124,12 @@ Breadcrumbs appear below the top menu bar. They show where you are in the system
 
 ![Breadcrumb navigation](/_images/en-us/user_guide/getting_started/navigation/breadcrumbs.png)
 
-For example: **Registry > Individuals > John Smith**
+For example: **.. / Food Assistance / Beneficiaries**
 
-- Click **Registry** to go back to the Registry home
-- Click **Individuals** to go back to the list of all individuals
-- **John Smith** is where you are now
+- Click **..** to go back to the first page
+- Click **Food Assistance** to go back to the program's page
+- Click **Beneficiaries** to go back to beneficiary list page
+- **Martinez, Miguel** is where you are now
 
 ## Finding Your Way Around
 
@@ -137,9 +139,9 @@ The search bar at the top lets you quickly find records.
 
 ![Using the search bar](/_images/en-us/user_guide/getting_started/navigation/search-bar.png)
 
-1. Click in the search bar (or press `/` on your keyboard).
+1. Click in the search bar.
 
-2. Type what you are looking for (a name, ID number, etc.).
+2. Type what you are looking for (a name, ID number, Phone or email).
 
 3. Press **Enter** or click the search icon.
 
@@ -149,36 +151,13 @@ When viewing a list of records, you can filter to find what you need.
 
 ![Filter options on a list](/_images/en-us/user_guide/getting_started/navigation/filters.png)
 
-1. Click the **Filters** dropdown above the list.
+1. Click the **Advanced** dropdown above the list.
 
-2. Select a filter option (for example, "Active" to show only active records).
+2. Select a filter option.
 
 3. The list updates to show only matching records.
 
-To remove a filter, click the **X** next to the filter tag.
-
-### List View vs. Form View
-
-OpenSPP has two main ways to view records:
-
-**List View** shows many records at once in a table format.
-
-![List view example](/_images/en-us/user_guide/getting_started/navigation/list-view.png)
-
-**Form View** shows one record with all its details.
-
-![Form view example](/_images/en-us/user_guide/getting_started/navigation/form-view.png)
-
-To switch between views:
-
-- From List View: Click on any record to open it in Form View
-- From Form View: Click the breadcrumb or use the back arrow to return to List View
-
-### Navigating Between Records
-
-When viewing a record in Form View, use the arrow buttons to move to the next or previous record without going back to the list.
-
-![Record navigation arrows](/_images/en-us/user_guide/getting_started/navigation/record-arrows.png)
+To remove filters, click the **X Clear Filters** button.
 
 ## Common Actions
 
@@ -198,10 +177,11 @@ When viewing a record in Form View, use the arrow buttons to move to the next or
 
 1. Find and open the record you want to change.
 
-2. Click the **Edit** button (or simply click on a field if the record is already in edit mode).
+2. Click on a field and edit directly. 
 
-   ![Edit button location](/_images/en-us/user_guide/getting_started/navigation/edit-button.png)
-
+```{note}
+Edit functionality may only be available for certain user roles. If you cannot edit a record, contact your administrator to check your permissions.
+```
 3. Make your changes.
 
 4. Click **Save** to keep your changes.
@@ -212,8 +192,8 @@ After creating or editing a record, click the **Save** button to store your chan
 
 ![Save button location](/_images/en-us/user_guide/getting_started/navigation/save-button.png)
 
-```{warning}
-If you navigate away without saving, your changes will be lost.
+```{note}
+If you navigate away without saving, your changes will automatically be saved.
 ```
 
 ### Discarding Changes
@@ -234,7 +214,7 @@ Deleting records is permanent. Make sure you really want to remove the record be
 
 1. Open the record you want to delete.
 
-2. Click the **Action** menu (three dots or "Action" button).
+2. Click the **Action** menu (Gear icon).
 
    ![Action menu location](/_images/en-us/user_guide/getting_started/navigation/action-menu.png)
 
@@ -269,17 +249,6 @@ If you need help with:
 ```{tip}
 When reporting a problem, note down any error messages you see and what you were trying to do. This helps your support team resolve the issue faster.
 ```
-
-## Keyboard Shortcuts
-
-OpenSPP supports keyboard shortcuts for faster navigation:
-
-| Shortcut | What It Does |
-|----------|--------------|
-| `/` | Focus on search bar |
-| `Ctrl + S` | Save current record |
-| `Escape` | Close current dialog or cancel |
-
 ## Are You Stuck?
 
 **Cannot find the menu you need?**
