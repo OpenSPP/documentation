@@ -16,7 +16,7 @@ Create a "Cash transfer for vulnerable families" program that will provide month
 
 - You completed [Step 2: Import beneficiaries](02_import_beneficiaries.md)
 - Your registry has family and individual data
-- You need **System Administrator** or **Program Manager** access
+- Sample data loaded for exploration (see {doc}`../explore/index`)
 - Allow 10-15 minutes to complete this step
 
 ## The scenario
@@ -33,19 +33,27 @@ Your program targets vulnerable families. To identify them, you'll use two crite
 
 ## Steps
 
-### 1. Access the programs module
+### 1. Sign in as a Program Manager
+
+In the installed sample data, use the following information:
+
+**User name:** demo_manager
+
+**Password:** demo
+
+### 2. Access the programs module
 
 Click the **four-square icon** in the top-left corner to open the main menu. Then click **Programs**.
 
 ![Screenshot: Main menu with four-square icon and Programs option highlighted](/_images/en-us/get_started/first_program/03_create_program/01-programs-list.png)
 
-### 2. Create a new program
+### 3. Create a new program
 
 Click the **Create** button in the top-left corner of the Programs list.
 
 ![Screenshot: Programs list view with Create button highlighted in top-left](/_images/en-us/get_started/first_program/03_create_program/02-create-program-button.png)
 
-### 3. Enter basic program information
+### 4. Enter basic program information
 
 You'll see the program creation form. Fill in the following basic information:
 
@@ -53,29 +61,26 @@ You'll see the program creation form. Fill in the following basic information:
 
 **Target Type**: Select **Group** from the dropdown. This means the program will evaluate families (groups) for eligibility, not individual people.
 
+**Benefit Type**: Make sure that **Cash** is selected.
+
 ![Screenshot: Program creation form showing Program Name field filled with "Cash Transfer for Vulnerable Families" and Target Type set to "Group"](/_images/en-us/get_started/first_program/03_create_program/cle5_3.png)
 
-### 4. Set the currency
+### 5. Set the currency
 
 Scroll down to the **Currency** field and select **PHP - Philippine Peso** from the dropdown.
 
-TODO: **NEW SCREENSHOT NEEDED**
+![Screenshot: Currency field showing PHP - Philippine Peso selected](/_images/en-us/get_started/first_program/03_create_program/cle5_7.png)
 
-![Screenshot: Currency field showing PHP - Philippine Peso selected](/_images/en-us/get_started/first_program/03_create_program/04-currency.png)
-
-### 5. Configure the program
+### 6. Configure the program
 
 Click "Next: Configure Program" to proceed with the configurations. Notice that there are several tabs at the top of the form:
 - **Who Qualifies?** (where you are now): Define the criteria that determine who can participate in this program
-- **What Do They Receive?**: Configure what beneficiaries will receive from this program
-- **Distribution Schedule**: Set up how often benefits will be distributed
-- **Ongoing Compliance (Optional)**: Define criteria that beneficiaries must continue to meet to remain eligible. This setting is optional and can be left unselected if it should not be used.
-
-TODO: **CREATE NEW SCREENSHOT**
+- **Entitlements**: Configure what beneficiaries will receive from this program
+- **Schedule**: Set up how often benefits will be distributed
 
 ![Screenshot: Program form showing the four tabs: Who Qualifies?, hat Do They Receive?, Distribution Schedule, Ongoing Compliance (Optional)](/_images/en-us/get_started/first_program/03_create_program/cle5_1.png)
 
-### 6. Configure eligibility
+### 7. Configure eligibility
 
 Your program targets vulnerable families. To identify them, you'll use two criteria:
 - **Income Test**: Family earns less than 10,000 PHP per month
@@ -87,38 +92,29 @@ TODO: **CREATE NEW SCREENSHOT**
 
 ![Screenshot: Create program button at the bottom of of program form](/_images/en-us/get_started/first_program/03_create_program/cle5_2.png)
 
-### 7. Configure amount to be distributed
+### 8. Configure amount to be distributed
 
-Click on tab **What Do They Receive?**
+Click on tab **Entitlements**
 
-Note that the option **Basic Cash** is selected. This option is used for distributions where a fixed amount should be distributed and no complex calculations are needed.
+You want to distribute the fixed amount **300 PHP** to each family that fulfills the eligibility.
 
-In the right section, under **BENEFIT AMOUNTS**, the field **Amount per Cycle** shows how much each beneficiary receives. Enter the value **$150.00**.
+Click **Add a line**.
 
-TODO: **NEW SCREENSHOT NEEDED WITH CORRECT CURRENCY AND AMOUNT**
+![Screenshot: Add a line button at the bottom of of program form](/_images/en-us/get_started/first_program/03_create_program/cle5_8.png)
 
-![Entitlement configuration dialog showing Amount per Cycle](/_images/en-us/get_started/first_program/03_create_program/cle5_4.png)
+In the popup window displayed, select **Fixed Amount** in the dropdown for **Amount Formula**. Enter **300** in the field **Base Amount**. Click **Save & Close**.
 
-You can also configure:
-- **Amount per Person (in group)** - Additional amount per family member
-- **Transfer fees** - Percentage or fixed fees
-- **Approval settings** - Validation groups
+![Screenshot: Pop up window to configure distributed amount](/_images/en-us/get_started/first_program/03_create_program/cle5_9.png)
 
-### 8. Configure distribution schedule
+### 9. Configure distribution schedule
 
-Click on tab **Distribution Schedule**.
+Click on tab **Schedule**.
 
 In this scenario we want the distribution to be performed once every month, therefore select the option **Monthly**.
 
 ![Entitlement configuration dialog showing Distribution Schedule](/_images/en-us/get_started/first_program/03_create_program/cle5_5.png)
 
-You can also configure:
-- **Cycle Duration** - How many days, weeks or months each cycle lasts
-- **Monthly Options** - Configure what day of the month the distribution should occur
-- **Distribution Type** - Select if the distribution should only occur once
-- **Cycle Approval** - Select the validation group for the cycle
-
-### 9. Complete creation of program
+### 10. Complete creation of program
 
 Click the **Create Program** button at the bottom to create your program.
 
@@ -128,20 +124,20 @@ After saving, you'll be taken to the program page. Notice:
 
 ![Screenshot: Program page showing "Cash Transfer for Vulnerable Families" at top](/_images/en-us/get_started/first_program/03_create_program/cle5_6.png)
 
-### 10. Verify the created program
+### 11. Verify the created program
 
 Click the tab **Configuration**. Notice:
 - The section **Who Qualifies** displays the eligibility criteria previously entered.
-- The section **What Do They Receive?** displays XXX.
+- The section **What Do They Receive?** displays Cash. To verify the amount, click the cogwheel on the line where it says **Cash**.
 - The section **Program Schedule** displays **Every 1 monthly**.
 - The section **Payment Method** displays XXX.
 
-TODO: **ADD INFO ABOVE AND SCREENSHOT**
+TODO: **ADD INFO ABOVE**
 
-![Screenshot: Program page showing "Cash Transfer for Vulnerable Families" and the tab "Configuration"](/_images/en-us/get_started/first_program/03_create_program/X.png)
+![Screenshot: Program page showing "Cash Transfer for Vulnerable Families" and the tab "Configuration"](/_images/en-us/get_started/first_program/03_create_program/cle5_10.png)
 
 
-### 11. Check the programs list
+### 12. Check the programs list
 
 Click **Programs** in the breadcrumb navigation or return to the Programs menu. You should see your new program in the list.
 

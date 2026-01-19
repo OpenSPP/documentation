@@ -101,6 +101,33 @@ Here's what an approved cycle looks like (from demo data):
 
 ![Example of an approved cycle](/_images/en-us/get_started/first_program/05_run_cycle/cle7_8.png)
 
+### 8. Approve the cycle
+
+1. In order to approve the cycle you must be logged in as a user with the correct permissions.
+   
+   Click the top right icon and select **Log out**. Log in again with the user from the sample data who is responsible for approving cycles. Use the following information:
+
+    **User name:** cycle_approver
+
+    **Password:** demo
+
+2. Click **Programs** and navigate to the previously created program **Cash transfer for vulnerable families**.
+
+   TODO: ADD SCREENSHOT !
+
+3. Click **Cycle 1** to enter the cycle.
+
+   TODO: ADD SCREENSHOT !
+   
+4. Click **Approve Cycle**.
+
+   TODO: ADD SCREENSHOT !
+   
+5. Click **Close**. Notice that the state of the cycle is now set to **Approved**
+
+   TODO: ADD SCREENSHOT !
+   
+
 ## What you accomplished
 
 You now understand program cycles:
