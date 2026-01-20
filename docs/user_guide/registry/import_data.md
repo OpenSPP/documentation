@@ -39,9 +39,10 @@ The best way to prepare your file is to export existing records first:
 1. Go to **Registry** > **Browse All (Audit)** > **All Individuals** (or **All Groups**)
 2. Select one record
 3. Use **Action** > **Export** to download a template
-4. Keep only the header row, delete the data rows
+4. Select the checkbox **I want to update data (import-compatible export)** to export only fields that OpenSPP recognizes for import
+4. On the downloaded xlsx file template, keep only the header row, delete the data rows
 
-![Export template](/_images/en-us/registry/import-data/01-export-template-from-browse-all-for-import-prepara.png)
+![Export template](/_images/en-us/registry/import-data/01-export-headers.png)
 
 ### Step 2: Format Your Data
 
@@ -68,6 +69,8 @@ For new individual records, these fields are required:
 |-------|-------------|
 | **family_name** | Last name / surname |
 | **given_name** | First name |
+| **name** | given name + family name |
+
 
 For new group records, this field is required:
 
@@ -92,17 +95,20 @@ Common optional fields you can include:
 ### Step 1: Navigate to Import
 
 1. Go to **Registry** > **Browse All (Audit)** > **All Individuals** (or **All Groups**)
-2. Click the **Favorites** icon (star) in the top right
+2. Click the **Gear** icon.
 3. Select **Import records**
 
-![Import menu location](/_images/en-us/registry/import-data/02-import-menu-location-showing-import-records-option.png)
+![Import menu location](/_images/en-us/registry/import-data/02-import-menu.png)
 
 ### Step 2: Upload Your File
 
-1. Click **Upload File** (or **Load File**)
+1. Click **Upload File**
 2. Select your prepared CSV or XLSX file
 
-![Upload file dialog](/_images/en-us/registry/import-data/03-upload-file-dialog-for-csv-or-xlsx.png)
+Sample document for reference:
+![sample file document](/_images/en-us/registry/import-data/03-sample-file-document.png)
+
+<!-- ![Upload file dialog](/_images/en-us/registry/import-data/03-upload-file-dialog-for-csv-or-xlsx.png) -->
 
 ### Step 3: Map Columns
 
@@ -121,8 +127,6 @@ Click **Test** to validate your file without importing.
 ![Test button](/_images/en-us/registry/import-data/05-test-button-for-validating-import-file.png)
 
 If successful, you will see: **"Everything seems valid"**
-
-![Validation success](/_images/en-us/registry/import-data/06-validation-success-showing-everything-seems-valid.png)
 
 If there are errors, see the [Error Handling](#error-handling) section below.
 
@@ -155,14 +159,16 @@ To update records that already exist in the system:
 
 ### Step 1: Export Records to Update
 
-1. Select the records you want to update
-2. Use **Action** > **Export**
+1. Select the records you want to update by clicking the checkbox beside the individual or group
+2. **Action** button should appear, use **Action** > **Export**
 3. Check **"I want to update data (import-compatible export)"**
 4. Click **Export**
 
-![Export for update option](/_images/en-us/registry/import-data/10-export-for-update-option-with-import-compatible-ex.png)
+![Export for update option](/_images/en-us/registry/import-data/10-export-for-update-option.png)
 
-This includes the **ID** column, which is required for updates.
+This includes the **ID** column, which is required for referencing the corresponding record.
+
+![Export for update option](/_images/en-us/registry/import-data/12-reference-id.png)
 
 ### Step 2: Modify the File
 
@@ -179,6 +185,46 @@ Empty cells will overwrite existing values with blank. If you do not want to cha
 
 Follow the same import steps as above. OpenSPP will match records by ID and update them.
 
+## Add Individuals to Existing Groups
+
+To add individuals to existing groups during import:
+
+### Step 1: Get the Group External ID
+
+1. Go to **Registry** > **Browse All (Audit)** > **All Groups**
+2. Select the group(s) you want to add individuals to
+3. Use **Action** > **Export**
+4. Check **"I want to update data (import-compatible export)"**
+5. Click **Export**
+6. Note the **External ID** value from the exported file for the group(s)
+
+![Group external ID](/_images/en-us/registry/import-data/14-group-external-id.png)
+
+### Step 2: Get the Membership Header
+
+1. Go to **Registry** > **Browse All (Audit)** > **All Individuals**
+2. Select at least one individual record
+3. Use **Action** > **Export**
+4. Check **"I want to update data (import-compatible export)"**
+5. In the export dialog, search for **membership to groups**
+6. Expand the section and add **Membership to Groups/Group/External ID** to the fields to export
+7. Click **Export**
+
+![Membership header selection](/_images/en-us/registry/import-data/15-membership-header.png)
+
+The exported file will contain the header **individual_membership_ids/group/id**. This is the column where you will assign the group's External ID.
+
+### Step 3: Prepare Your Import File
+
+1. Open the exported individual file in your spreadsheet software
+2. Add or modify the **individual_membership_ids/group/id** column
+3. Enter the External ID of the group(s) you want to assign individuals to
+4. Save the file
+
+### Step 4: Import the File
+
+Follow the same import steps as described in [Import New Records](#import-new-records). Once imported, the individuals will belong to the group(s) you specified.
+
 ## Error Handling
 
 ### "No matching records found"
@@ -188,16 +234,16 @@ Follow the same import steps as above. OpenSPP will match records by ID and upda
 ![No matching error](/_images/en-us/registry/import-data/11-no-matching-records-found-error.png)
 
 **Solution:**
-- Check valid values in the system
-- For tags: Go to **Registry** > **Configuration** > **Registrant Tags**
-- For gender: Go to **Configuration** > **Vocabularies**
-- Use exact values as shown in the system
+- Find valid values in the system
+- Go to **Settings** > **Vocabulary** > **Manage Vocabularies**
+- Search for the field (for example, gender), then click it and open the **Codes** tab to see valid values
+- Use the exact values as shown in the system
 
 ### "To import, select a field"
 
 **Cause:** OpenSPP does not recognize a column header.
 
-![Unrecognized column error](/_images/en-us/registry/import-data/12-unrecognized-column-error-requiring-field-selectio.png)
+![Unrecognized column error](/_images/en-us/registry/import-data/16-unrecognized-column.png)
 
 **Solution:**
 - Click the dropdown to manually map the field
@@ -207,17 +253,9 @@ Follow the same import steps as above. OpenSPP will match records by ID and upda
 
 **Cause:** Date format is incorrect.
 
-![Date format error](/_images/en-us/registry/import-data/13-date-format-error-showing-incorrect-values.png)
+![Date format error](/_images/en-us/registry/import-data/13-date-format-error.png)
 
 **Solution:** Change dates to YYYY-MM-DD format (for example, 2024-12-18)
-
-### "You are not allowed to access 'Import Matching'"
-
-**Cause:** Your account lacks Administrator permissions.
-
-![Access denied error](/_images/en-us/registry/import-data/14-access-denied-error-for-non-administrators.png)
-
-**Solution:** Contact your administrator to request import access.
 
 ## Best Practices
 
