@@ -28,7 +28,7 @@ The Registry Search Portal is the main way to find registrants.
 
 Click **Registry** in the main menu to open the Registry Search Portal.
 
-![Registry Search Portal](/_images/en-us/registry/search-filter/01-registry-search-portal-with-search-bar-and-type-fi.png)
+![Registry Search Portal](/_images/en-us/registry/search-filter/01-registry-search-portal-with-search-bar-and-type-filter.png)
 
 ### 2. Enter Search Terms
 
@@ -53,13 +53,6 @@ Results show matching registrants with key information:
 | **Name** | Individual or group name |
 | **Phone** | Contact phone number |
 | **Registration Date** | When they were registered |
-| **Tags** | Category labels |
-
-### 4. Open a Record
-
-Click on any row to open the full record.
-
-![Opening a record](/_images/en-us/registry/search-filter/04-clicking-a-record-to-open-it.png)
 
 ## Filtering by Type
 
@@ -70,10 +63,11 @@ To search only for individuals:
 1. Open the Registry Search Portal
 2. Select **Individuals** from the type filter (if available)
 3. Enter your search terms
+4. The results would only display individuals.
 
-![Filtering for individuals](/_images/en-us/registry/search-filter/05-type-filter-set-to-individuals-only.png)
+![Filtering for groups](/_images/en-us/registry/search-filter/04-type-filter-highlight-individuals.png)
 
-### Search Groups Only
+### 5. Search Groups Only
 
 To search only for groups:
 
@@ -81,7 +75,7 @@ To search only for groups:
 2. Select **Groups** from the type filter
 3. Enter your search terms
 
-![Filtering for groups](/_images/en-us/registry/search-filter/06-type-filter-set-to-groups-only.png)
+![Filtering for groups](/_images/en-us/registry/search-filter/05-type-filter-set-to-groups-only.png)
 
 ## Using Advanced Filters (Browse All)
 
@@ -91,7 +85,7 @@ For more advanced filtering, use the Browse All view (requires Auditor or Admini
 
 Go to **Registry** > **Browse All (Audit)** > **All Individuals** or **All Groups**.
 
-![Browse All menu](/_images/en-us/registry/search-filter/07-browse-all-audit-menu-for-advanced-filtering.png)
+
 
 ### 2. Use the Search Bar
 
@@ -100,13 +94,13 @@ The search bar supports searching by:
 - Phone
 - Email
 
-![Search bar in Browse All](/_images/en-us/registry/search-filter/08-search-bar-in-browse-all-view.png)
+![Search bar in Browse All](/_images/en-us/registry/search-filter/07-search-bar-in-browse-all-view.png)
 
 ### 3. Apply Filters
 
-Click the filter icon to access preset filters:
+Click the dropdown icon beside the searchbar to access preset filters:
 
-![Filter dropdown](/_images/en-us/registry/search-filter/09-filter-dropdown-with-preset-filters.png)
+![Filter dropdown](/_images/en-us/registry/search-filter/08-filter-dropdown-with-preset-filters.png)
 
 #### Available Filters for Individuals
 
@@ -127,11 +121,11 @@ Click the filter icon to access preset filters:
 | **Has Email** | Groups with an email address |
 | **Has Phone** | Groups with at least one phone number |
 
-### 4. Group Results
+### 9. Group Results
 
-Use **Group By** to organize results by category:
+Use **Group By** to organize results by category. Click the Group By button and select **Group Type**:
 
-![Group By options](/_images/en-us/registry/search-filter/10-group-by-options-for-organizing-results.png)
+![Group By options](/_images/en-us/registry/search-filter/09-group-by-group-type.png)
 
 | Group By Option | What It Does |
 |-----------------|--------------|
@@ -141,52 +135,49 @@ Use **Group By** to organize results by category:
 | **Registration Year** | Groups by year of registration |
 | **Group Type** | Groups by type (for group records) |
 
-### 5. Combine Multiple Filters
+### 10. Combine Multiple Filters
 
 Click multiple filters to combine them. For example:
 - **Female** + **Recently Registered** = Female individuals registered in the last 30 days
 
-![Combined filters](/_images/en-us/registry/search-filter/11-combined-filters-applied-showing-results.png)
+![Combined filters](/_images/en-us/registry/search-filter/10-combined-filters-applied-showing-results.png)
 
-### 6. Custom Filter Domains
+### 11. Custom Filter Domains
 
-For advanced users, click **Add Custom Filter** to create custom search criteria:
+For advanced users, click the dropdown beside the search, then click **Custom Filter** to create custom search criteria:
 
-1. Click the filter icon
-2. Click **Add Custom Filter**
+1. Click the dropdown beside the search
+2. Click **Custom Filter**
 3. Select a field, operator, and value
 4. Click **Apply**
 
-![Custom filter dialog](/_images/en-us/registry/search-filter/12-custom-filter-dialog-for-advanced-criteria.png)
+![Custom filter dialog](/_images/en-us/registry/search-filter/11-custom-filter-dialog-for-advanced-criteria.png)
 
 Example custom filters:
 
 | Field | Operator | Value | Result |
 |-------|----------|-------|--------|
-| Age | > | 18 | Adults only |
 | Registration Date | >= | 2024-01-01 | Registered this year |
 | Income | < | 5000 | Low income registrants |
 
-## Sorting Results
-
-### Sort by Column
+### 12. Sorting Results
 
 Click on any column header to sort by that column:
 
 - Click once for ascending order (A-Z, oldest first)
 - Click again for descending order (Z-A, newest first)
 
-![Sorting by column](/_images/en-us/registry/search-filter/13-sorting-by-column-header.png)
+![Sorting by column](/_images/en-us/registry/search-filter/12-sorting-by-column-header.png)
 
 ### Default Sort Order
 
 By default, results are sorted by ID in descending order (newest records first).
 
-## Viewing Record History
+### 13. Viewing Record History
 
 Each record shows when it was created and last modified in the **History** tab:
 
-![History tab](/_images/en-us/registry/search-filter/14-history-tab-showing-record-creation-and-modificati.png)
+![History tab](/_images/en-us/registry/search-filter/13-history-tab-showing-record-creation-and-modification.png)
 
 | Field | Description |
 |-------|-------------|
