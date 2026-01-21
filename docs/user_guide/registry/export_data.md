@@ -104,21 +104,20 @@ The file downloads to your computer.
 Export all the fields you need for your analysis:
 
 1. Select all relevant records
-2. Add all fields you want to analyze
+2. Add all fields you want to analyze (ex: Created on, Created by, etc..)
 3. Choose CSV (for data tools) or XLSX (for Excel)
 4. Click **Export**
-
-![Export for analysis](/_images/en-us/registry/export-data/07-export-for-analysis-with-all-relevant-fields.png)
 
 ### For Creating Import Templates
 
 Get a template with correct headers for importing new data:
 
 1. Select just **one record** (to get the headers)
-2. Add the fields you will need for import
-3. Export the file
-4. Open the file and delete the data row, keeping only the header row
-5. Fill in your new data
+2. Check **"I want to update data (import-compatible export)"**
+3. Add the fields you will need for import
+4. Export the file
+5. Open the exported file, delete the ID column, then delete all data rows, keeping only the header row.
+6. Fill in your new data
 
 ### For Updating Existing Records
 
@@ -127,8 +126,6 @@ When you need to update records and import them back:
 1. Select the records you want to update
 2. Check **"I want to update data (import-compatible export)"**
 3. Click **Export**
-
-![Export for update option](/_images/en-us/registry/export-data/08-export-for-update-option-including-id-column.png)
 
 This option:
 - Includes the **ID** column (required for updates)

@@ -162,3 +162,17 @@ docs_old
 # Setup scripts
 penn_setup-py311.sh
 setup-py311.sh
+
+# Utility scripts (local development tools)
+*.ps1
+*.sh
+!penn_setup-py311.sh
+!setup-py311.sh
+rename_images.py
+run_footer_removal.py
+copy_images.ps1
+fix_wsl_permissions.ps1
+paste_image_to_wsl.sh
+docs/_images/**/*.py
+docs/_images/**/*.sh
+tests/
