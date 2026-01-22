@@ -28,7 +28,7 @@ You're a registry officer who needs to register a new household in the system. T
 
 After logging in to OpenSPP, you'll see the sidebar menu on the left. Click **Registry** to access the beneficiary management portal.
 
-![Screenshot: Sidebar showing Registry option](/_images/en-us/get_started/first_household/01_access_registry/cle2_1.png)
+![Screenshot: Sidebar showing Registry option](/_images/en-us/get_started/first_household/01_access_registry/01-sidebar-registry.png)
 
 ### 2. Explore the Registry Search Portal
 
@@ -47,14 +47,26 @@ Key elements of the interface:
 | **All Registrants** dropdown | Filter by registrant type |
 | **Recently Viewed** | Quick access to records you've viewed recently |
 
-### 3. Understand Registrants vs Beneficiaries
+### 3. Use the search function
 
-In OpenSPP:
+The search bar allows you to find existing beneficiaries. Click on the search bar to begin typing.
 
-- A **registrant** is any person or group recorded in the registry
-- A **beneficiary** is a registrant who has been enrolled in a program
+![Screenshot: Search bar highlighted](/_images/en-us/get_started/first_program/01_setup_registry/05-search-input.png)
 
-You'll create registrants first. They become beneficiaries only after enrollment in a program.
+Enter at least 3 characters to search by:
+- Name
+- ID number
+- Phone number
+- Email address
+
+### 4. View search results
+
+In this example, searching for "Garcia" returns matching beneficiaries. The results show the beneficiary name, type (Individual or Group), and when the record was last updated.
+
+![Screenshot: Search results showing "Garcia" with 1 result found](/_images/en-us/get_started/first_program/01_setup_registry/06-search-results.png)
+
+This privacy-first search approach ensures beneficiary data is protected - you must actively search for records rather than browsing through lists.
+
 
 ## What you accomplished
 
@@ -63,6 +75,18 @@ You've learned how to:
 - Access the Registry module from the sidebar
 - Navigate to the Registry Search Portal
 - Understand the key interface elements
+- Use the search function to find existing records
+
+## Key concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Groups** | Households or families registered as a unit |
+| **Individuals** | Single persons in the registry |
+| **Privacy-First Search** | Must search to find records; no open browsing |
+| **Recently Viewed** | Quick access to records you've accessed |
+| **Registrant** | Any person or group recorded in the registry |
+| **Beneficiary** | A registrant who has been enrolled in a program |
 
 ## Are you stuck?
 
