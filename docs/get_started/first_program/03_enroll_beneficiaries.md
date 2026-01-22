@@ -4,7 +4,7 @@ openspp:
   products: [registry, programs]
 ---
 
-# Step 4: Import and enroll beneficiaries
+# Step 3: Import and enroll beneficiaries
 
 This tutorial is for **users** who want to import and enroll beneficiaries into an already created program.
 
@@ -14,8 +14,8 @@ You will import and enroll beneficiaries into your program that are eligible bas
 
 ## Before you start
 
-- You completed [Step 3: Create Program](03_create_program.md)
-- Your program "Cash Transfer for Vulnerable Families" exists
+- You completed [Step 2: Create Program](02_create_program.md)
+- Your program **Cash Transfer for Vulnerable Families** exists
 - You need **Program Manager** or **Administrator** access
 - Allow 5-10 minutes to complete this step
 
@@ -29,40 +29,40 @@ You have created the program and you now want to import and enroll all the benef
 
 Go to **Programs** from the main menu and click on **Cash transfer for vulnerable families** to open it.
 
-![Screenshot: Programs list with "Cash Transfer for Vulnerable Families" highlighted](/_images/en-us/get_started/first_program/04_enroll_beneficiaries/cle6_1.png)
+![Screenshot: Programs list with "Cash Transfer for Vulnerable Families" highlighted](/_images/en-us/get_started/first_program/03_enroll_beneficiaries/cle6_1.png)
 
-### Step 2: Import eligible registrants
+### 2: Import eligible registrants
 
 1. Click the **Import Eligible** button.
 
-   ![Import eligible button](/_images/en-us/get_started/first_program/04_enroll_beneficiaries/cle6_2.png)
+   ![Import eligible button](/_images/en-us/get_started/first_program/03_enroll_beneficiaries/cle6_2.png)
 
 2. Wait for the import to complete. A notification shows how many registrants were found.
 
-   ![Import notification](/_images/en-us/get_started/first_program/04_enroll_beneficiaries/cle6_3.png)
+   ![Import notification](/_images/en-us/get_started/first_program/03_enroll_beneficiaries/cle6_3.png)
 
 3. Click the button **Beneficiaries**.
 
-   ![Draft beneficiaries](/_images/en-us/get_started/first_program/04_enroll_beneficiaries/cle6_4.png)
+   ![Draft beneficiaries](/_images/en-us/get_started/first_program/03_enroll_beneficiaries/cle6_4.png)
    
    The imported registrants will display with **Draft** status.
 
-   ![Draft beneficiaries](/_images/en-us/get_started/first_program/04_enroll_beneficiaries/cle6_5.png)
+   ![Draft beneficiaries](/_images/en-us/get_started/first_program/03_enroll_beneficiaries/cle6_5.png)
       
 
-### Step 3: Enroll eligible registrants
+### 3: Enroll eligible registrants
 
 1. Return to the program overview and click the **Enroll Eligible** button. The system will then verify each registrant against the eligibility rules.
 
-   ![Enroll eligible button](/_images/en-us/get_started/first_program/04_enroll_beneficiaries/cle6_6.png)
+   ![Enroll eligible button](/_images/en-us/get_started/first_program/03_enroll_beneficiaries/cle6_6.png)
 
 2. A notification shows how many beneficiaries were enrolled and the number on the **Beneficiaries** button is updated.
 
-   ![Enrollment notification](/_images/en-us/get_started/first_program/04_enroll_beneficiaries/cle6_7.png)
+   ![Enrollment notification](/_images/en-us/get_started/first_program/03_enroll_beneficiaries/cle6_7.png)
 
-3. Successfully enrolled registrants now show **Enrolled** status.
+3. Click the button **Beneficiaries** again and note that successfully enrolled registrants now show **Enrolled** status.
 
-   ![Enrolled beneficiaries](/_images/en-us/get_started/first_program/04_enroll_beneficiaries/cle6_8.png)
+   ![Enrolled beneficiaries](/_images/en-us/get_started/first_program/03_enroll_beneficiaries/cle6_8.png)
 
 ## What you accomplished
 
@@ -91,4 +91,4 @@ You've successfully imported and enrolled eligible beneficiaries into the progra
 
 ## Next step
 
-Now that your eligibility rules are set, you're ready to run your first program cycle to identify eligible families. Continue to [Step 5: Run a Program Cycle](05_run_cycle.md).
+Now that your eligibility rules are set, you're ready to run your first program cycle to identify eligible families. Continue to [Step 4: Understanding Program Cycle](04_run_cycle.md).

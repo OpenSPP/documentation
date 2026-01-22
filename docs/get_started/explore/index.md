@@ -31,25 +31,29 @@ After loading the MIS demo data, you'll have:
 
 ## Load demo data
 
-### Step 1: Log in as administrator
+### 1: Log in as administrator
 
 Log in to OpenSPP using administrator credentials (default: admin/admin).
 
 ![Screenshot: Dashboard after login](/_images/en-us/get_started/explore/cle1_1.png)
 
-### Step 2: Open Settings
+### 2: Open Settings
 
 Click **Settings** in the left sidebar.
 
 ![Screenshot: Settings page](/_images/en-us/get_started/explore/cle1_2.png)
 
-### Step 3: Navigate to demo data
+*Note:* If your screen does not look like in the screenshot, it may be due to the **OpenSPP MIS Demo V2** module not being installed yet. Learn how to do this on {doc}`Module Installation <../installation/modules>`.
+
+### 3: Navigate to demo data
 
 In the Settings top menu, click **Demo Data** > **Load MIS Demo**.
 
 ![Screenshot: Settings with Demo Data menu](/_images/en-us/get_started/explore/cle1_3.png)
 
-### Step 4: Open the wizard
+*Note:* If this option is not available, it may be due to the **OpenSPP MIS Demo V2** module not being installed yet. Learn how to do this on {doc}`Module Installation <../installation/modules>`.
+
+### 4: Open the wizard
 
 The Load MIS Demo wizard opens in a dialog.
 
@@ -57,7 +61,7 @@ The Load MIS Demo wizard opens in a dialog.
 
 ### Step 5: Generate demo data
 
-Review the configuration options and click **Load Demo Data** to start.
+Click **Load Demo Data** to start.
 
 ![Screenshot: Generate MIS Demo Data wizard](/_images/en-us/get_started/explore/cle1_5.png)
 
@@ -91,11 +95,16 @@ The demo includes 8 complete registrant stories:
 
 | User            | Role             | Password |
 | --------------- | ---------------- | -------- |
-| demo_manager.   | Program Manager  | demo     |
-| demo_officer    | Registry Officer | demo     |
-| demo_supervisor | Supervisor       | demo     |
-| demo_viewer     | Viewer           | demo     |
-
+| sppadmin           | OpenSPP Admin      | demo     |
+| demo_manager       | Program Manager    | demo     |
+| demo_officer       | Registry Officer   | demo     |
+| demo_supervisor    | Supervisor         | demo     |
+| demo_viewer        | Viewer             | demo     |
+| global_registrar   | Global Registrar   | demo     |
+| local_registrar    | Local Registrar    | demo     |
+| cycle_approver     | Cycle Approver     | demo     |
+| cr_hq_validator    | HQ CR Validator    | demo     |
+| r_local_validator  | Local HQ Validator | demo     |
 
 ## Are you stuck?
 

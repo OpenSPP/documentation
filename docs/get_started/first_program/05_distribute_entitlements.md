@@ -4,7 +4,7 @@ openspp:
   products: [registry, programs]
 ---
 
-# Step 6: Configure and generate entitlements
+# Step 5: Configure and generate entitlements
 
 This tutorial is for **users** who want to learn how to configure benefit amounts and generate entitlements for distribution.
 
@@ -14,7 +14,7 @@ Understand how to configure entitlement amounts and generate benefit records. Yo
 
 ## Before you start
 
-- You completed [Step 5: Understanding program cycles](05_run_cycle.md)
+- You completed [Step 4: Understanding program cycles](04_run_cycle.md)
 - Your program has cycles with enrolled beneficiaries
 - You need **Program Manager** or **System Administrator** access
 - Allow 5-10 minutes to complete this step
@@ -39,25 +39,25 @@ The flow is:
 
 Navigate to Programs and open **Cash Transfer Program** (or your program name). Click the **Configuration** tab.
 
-![Program Configuration tab](/_images/en-us/get_started/first_program/06_distribute_entitlements/01-program-configuration.png)
+![Program Configuration tab](/_images/en-us/get_started/first_program/05_distribute_entitlements/01-program-configuration.png)
 
 ### 2. Find the "What Benefits?" section
 
 Scroll down to the **What Benefits?** section. This section shows your program's **Entitlement Type** - in this case, **Default**.
 
-![What Benefits section with Entitlement Type](/_images/en-us/get_started/first_program/06_distribute_entitlements/02-what-benefits-section.png)
+![What Benefits section with Entitlement Type](/_images/en-us/get_started/first_program/05_distribute_entitlements/02-what-benefits-section.png)
 
 ### 3. Open entitlement configuration
 
 Click the **gear icon** (⚙️) next to **Default** to configure the entitlement amounts.
 
-![Gear icon next to Default entitlement type](/_images/en-us/get_started/first_program/06_distribute_entitlements/03-entitlement-config-gear.png)
+![Gear icon next to Default entitlement type](/_images/en-us/get_started/first_program/05_distribute_entitlements/03-entitlement-config-gear.png)
 
 ### 4. Set the benefit amount
 
 A dialog opens showing **BENEFIT AMOUNTS**. The **Amount per Cycle** field shows how much each beneficiary receives. In the demo data, this is set to **$150.00**.
 
-![Entitlement configuration dialog showing Amount per Cycle](/_images/en-us/get_started/first_program/06_distribute_entitlements/04-entitlement-amount-dialog.png)
+![Entitlement configuration dialog showing Amount per Cycle](/_images/en-us/get_started/first_program/05_distribute_entitlements/04-entitlement-amount-dialog.png)
 
 You can also configure:
 - **Amount per Person (in group)** - Additional amount per family member
@@ -70,7 +70,7 @@ Click **Discard** to close the dialog (we're just viewing the configuration).
 
 Go back to the **Overview** tab and open an approved cycle from the Recent Cycles list. The cycle dialog shows a **Prepare Entitlements** button.
 
-![Cycle dialog with Prepare Entitlements button](/_images/en-us/get_started/first_program/06_distribute_entitlements/05-cycle-prepare-entitlements.png)
+![Cycle dialog with Prepare Entitlements button](/_images/en-us/get_started/first_program/05_distribute_entitlements/05-cycle-prepare-entitlements.png)
 
 Clicking this button generates one entitlement for each enrolled beneficiary, using the amount configured in the entitlement type.
 
@@ -83,7 +83,7 @@ Click the **Entitlements** tab to see the generated entitlements. Each row shows
 - **Valid From/Until** - Period dates
 - **Status** - Draft, Approved, etc.
 
-![Entitlements tab showing generated entitlements](/_images/en-us/get_started/first_program/06_distribute_entitlements/06-entitlements-tab.png)
+![Entitlements tab showing generated entitlements](/_images/en-us/get_started/first_program/05_distribute_entitlements/06-entitlements-tab.png)
 
 ### 7. Review individual entitlement
 
@@ -94,7 +94,7 @@ Click on an entitlement to open the form and review the details:
 - Valid period
 - Status
 
-![Individual entitlement form](/_images/en-us/get_started/first_program/06_distribute_entitlements/07-entitlement-form.png)
+![Individual entitlement form](/_images/en-us/get_started/first_program/05_distribute_entitlements/07-entitlement-form.png)
 
 From this form, you can approve the entitlement by clicking the **Approve** button (if you have approval permissions).
 
@@ -102,7 +102,7 @@ From this form, you can approve the entitlement by clicking the **Approve** butt
 
 After approval, entitlements show **Approved** status in the list. Approved entitlements are ready for the distribution/payment phase.
 
-![Entitlements list with approved status](/_images/en-us/get_started/first_program/06_distribute_entitlements/08-entitlements-approved.png)
+![Entitlements list with approved status](/_images/en-us/get_started/first_program/05_distribute_entitlements/08-entitlements-approved.png)
 
 ## What you accomplished
 

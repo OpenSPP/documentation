@@ -6,19 +6,19 @@ openspp:
 
 # Your first program
 
-End-to-end tutorial for creating your first social protection program.
+End-to-end tutorial for creating your first social protection program with sample data.
 
 **For:** New users, program managers, and administrators
 
-This hands-on tutorial walks you through creating a complete social protection program in OpenSPP, from setting up your registry to distributing entitlements to beneficiaries.
+This hands-on tutorial walks you through creating a complete social protection program in OpenSPP, from setting up your registry to distributing entitlements to beneficiaries. The tutorial uses sample data.
 
 ## What you'll learn
 
 By the end of this tutorial, you will have:
 
-- Set up a registry with beneficiary data
 - Created your first social protection program
 - Configured eligibility criteria
+- Imported and enrolled eligible beneficiaries
 - Run a program cycle
 - Generated and reviewed entitlements
 - Understood the complete program workflow
@@ -27,13 +27,12 @@ By the end of this tutorial, you will have:
 
 This tutorial covers the following steps:
 
-1. **Setup registry** - Create and configure your beneficiary registry
-2. **Import beneficiaries** - Add individuals and households to the registry
-3. **Create program** - Define a new social protection program
-4. **Configure eligibility** - Set up rules to determine who qualifies
-5. **Run a cycle** - Execute a program cycle to assess eligibility
-6. **Distribute entitlements** - Generate and review benefit entitlements
-7. **Next steps** - Where to go from here
+1. **Access programs** - Learn how to navigate to the Programs module
+2. **Create program** - Define a new social protection program
+3. **Import and enroll beneficiaries** - Learn how to add eligible beneficiaries to the program
+4. **Run a cycle** - Execute a program cycle
+5. **Distribute entitlements** - Generate and review benefit entitlements
+6. **Next steps** - Where to go from here
 
 ## Prerequisites
 
@@ -47,16 +46,15 @@ Before starting this tutorial:
 
 ## Get started
 
-Click **Step 1** below to begin, or use the navigation to jump to any step.
+Continue to [Step 1: Access the program section](01_access_program.md) to learn about how to navigate the programs.
 
 ```{toctree}
 :maxdepth: 1
 :hidden:
 
-01_setup_registry
-02_import_beneficiaries
-03_create_program
-04_enroll_beneficiaries
-05_run_cycle
-06_distribute_entitlements
+01_access_program
+02_create_program
+03_enroll_beneficiaries
+04_run_cycle
+05_distribute_entitlements
 ```

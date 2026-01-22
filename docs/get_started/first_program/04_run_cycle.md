@@ -4,7 +4,7 @@ openspp:
   products: [registry, programs]
 ---
 
-# Step 5: Understanding program cycles
+# Step 4: Understanding program cycles
 
 This tutorial is for **users** who want to learn how program cycles organize benefit distribution.
 
@@ -14,7 +14,7 @@ Understand what program cycles are and how they organize benefit distribution in
 
 ## Before you start
 
-- You completed [Step 4: Import and enroll beneficiaries](04_enroll_beneficiaries.md)
+- You completed [Step 3: Import and enroll beneficiaries](03_enroll_beneficiaries.md)
 - Your program has eligibility rules configured
 - You need **Program Manager** or **System Administrator** access
 - Allow 5-10 minutes to complete this step
@@ -43,26 +43,26 @@ Each cycle has:
 
 Click **Programs** in the sidebar to view all programs.
 
-![Programs list showing Cash Transfer Program](/_images/en-us/get_started/first_program/05_run_cycle/cle7_1.png)
+![Programs list showing Cash Transfer Program](/_images/en-us/get_started/first_program/04_run_cycle/cle7_1.png)
 
 ### 2. View your program
 
 Click on **Cash transfer for vulnerable families** to open your previously created program. You'll see the program Overview tab with a **Recent Cycles** section.
 
-![Program overview showing Recent Cycles section](/_images/en-us/get_started/first_program/05_run_cycle/cle7_2.png)
+![Program overview showing Recent Cycles section](/_images/en-us/get_started/first_program/04_run_cycle/cle7_2.png)
 
 ### 3. Create a new cycle
 
-Click the **New Cycle** button at the top of the program form. This instantly creates a new cycle with:
-- Auto-generated name (for example, "Cycle 2")
+Click the **New Cycle** button at the top of the program form.
+
+![New Cycle button at top of program form](/_images/en-us/get_started/first_program/04_run_cycle/cle7_4.png)
+
+This instantly creates a new cycle listed in the **Recent Cycles** list with:
+- Auto-generated name (for example, **Cycle 1**)
 - Auto-calculated start and end dates
 - **Draft** status
 
-![New Cycle button at top of program form](/_images/en-us/get_started/first_program/05_run_cycle/cle7_4.png)
-
-The new cycle appears in the Recent Cycles list:
-
-![New cycle appears in Recent Cycles with Draft status](/_images/en-us/get_started/first_program/05_run_cycle/cle7_3.png)
+![New cycle appears in Recent Cycles with Draft status](/_images/en-us/get_started/first_program/04_run_cycle/cle7_3.png)
 
 ### 4. Open the cycle details
 
@@ -72,7 +72,7 @@ Click on the cycle name in the Recent Cycles list to open the cycle dialog. You'
 - Start and end dates
 - Financial summary (total amount, currency)
 
-![Cycle dialog showing Overview tab with cycle details](/_images/en-us/get_started/first_program/05_run_cycle/cle7_5.png)
+![Cycle dialog showing Overview tab with cycle details](/_images/en-us/get_started/first_program/04_run_cycle/cle7_5.png)
 
 ### 5. View enrolled beneficiaries
 
@@ -81,9 +81,21 @@ Click the **Beneficiaries** tab to see which families are enrolled in this cycle
 - Enrollment date
 - State (for example, Enrolled)
 
-![Beneficiaries tab showing enrolled registrants](/_images/en-us/get_started/first_program/05_run_cycle/cle7_6.png)
+![Beneficiaries tab showing enrolled registrants](/_images/en-us/get_started/first_program/04_run_cycle/cle7_6.png)
 
-### 6. Understand cycle status progression
+### 6. Prepare entitlements
+
+Click the button **Prepare Entitlements**.
+
+![Cycle overview with "Prepare Entitlemnents" button"](/_images/en-us/get_started/first_program/04_run_cycle/cle7_9.png)
+
+### 7. Submit entitlements for approval
+
+Click the button **Submit for Approval**.
+
+![Cycle overview with "Submit for Approval" button"](/_images/en-us/get_started/first_program/04_run_cycle/cle7_10.png)
+
+### 8. Understand cycle status progression
 
 Look at the status badges at the top of the cycle dialog. A cycle progresses through these statuses:
 
@@ -93,40 +105,32 @@ Look at the status badges at the top of the cycle dialog. A cycle progresses thr
 4. **Distributed**: Benefits have been distributed
 5. **Ended**: Cycle is complete
 
-![Status badges showing Draft → To Approve → Approved → Distributed → Ended](/_images/en-us/get_started/first_program/05_run_cycle/cle7_7.png)
+![Status badges showing Draft → To Approve → Approved → Distributed → Ended](/_images/en-us/get_started/first_program/04_run_cycle/cle7_7.png)
 
-### 7. See an approved cycle example
+### 9. See an approved cycle example
 
 Here's what an approved cycle looks like (from demo data):
 
-![Example of an approved cycle](/_images/en-us/get_started/first_program/05_run_cycle/cle7_8.png)
+![Example of an approved cycle](/_images/en-us/get_started/first_program/04_run_cycle/cle7_8.png)
 
-### 8. Approve the cycle
+### 10. Approve the cycle
 
-1. In order to approve the cycle you must be logged in as a user with the correct permissions.
-   
-   Click the top right icon and select **Log out**. Log in again with the user from the sample data who is responsible for approving cycles. Use the following information:
+In order to approve the cycle you must be logged in as a user with the correct permissions.
 
-    **User name:** cycle_approver
-
-    **Password:** demo
+1. If already logged in, click the top right icon and select **Log out**. Log in to again using Cycle Approver credentials (default: cycle_approver/demo).
 
 2. Click **Programs** and navigate to the previously created program **Cash transfer for vulnerable families**.
 
-   TODO: ADD SCREENSHOT !
 
 3. Click **Cycle 1** to enter the cycle.
 
-   TODO: ADD SCREENSHOT !
+   ![Cycle overview with "Approve Cycle" button](/_images/en-us/get_started/first_program/04_run_cycle/cle7_11.png)
    
-4. Click **Approve Cycle**.
+4. Click **Approve Cycle**. Notice that the state of the cycle is now set to **Approved**
 
-   TODO: ADD SCREENSHOT !
-   
-5. Click **Close**. Notice that the state of the cycle is now set to **Approved**
-
-   TODO: ADD SCREENSHOT !
-   
+   ![Approved cycle](/_images/en-us/get_started/first_program/04_run_cycle/cle7_12.png)
+  
+5. Click **Close** to return to the program overview.
 
 ## What you accomplished
 
@@ -168,4 +172,4 @@ Yes, you can delete Draft cycles. Once a cycle is Approved or has entitlements g
 
 ## Next step
 
-Continue to [Step 6: Configure and generate entitlements](06_distribute_entitlements.md).
+Continue to [Step 5: Configure and generate entitlements](05_distribute_entitlements.md).

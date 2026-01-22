@@ -54,4 +54,5 @@ See {doc}`docker` for platform-specific installation commands.
 :hidden:
 
 docker
+modules
 ```
