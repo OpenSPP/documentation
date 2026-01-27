@@ -16,7 +16,7 @@ Learn how to navigate, understand, and manage program cycles in OpenSPP.
 
 ## Before You Start
 
-- You need **Program Officer**, **Program Manager**, or **Administrator** access
+- You need **Program Validator**, **Program Manager**, **Program Cycle Approver**, or **Administrator** roles assigned to your user account
 - The program must be in **Active** state
 - At least one beneficiary must be enrolled in the program
 
@@ -52,33 +52,21 @@ Cycles progress through these states:
 
 ## View Program Cycles
 
-### Step 1: Open the Program
-
 1. Click **Programs** > **Programs** in the main menu.
 
 2. Click on a program to open it.
 
-### Step 2: View Cycles
-
-There are two ways to view cycles:
-
-**Option A: From the Overview tab**
-
-The **Recent Cycles** section shows the most recent cycles.
+3. View cycles using either method:
+   - **From the Overview tab**: The **Recent Cycles** section shows the most recent cycles.
+   - **Using the smart button**: Click the **Cycles** smart button to see all cycles.
 
 ![Recent cycles in overview](/_images/en-us/programs/cycles/02-program-overview-tab-showing-recent-cycles-section.png)
 
-**Option B: Using the smart button**
-
-Click the **Cycles** smart button to see all cycles.
-
 ![Cycles smart button](/_images/en-us/programs/cycles/03-cycles-smart-button-highlighted-on-program-form.png)
 
-### Step 3: Open a Cycle
+4. Click on a cycle row to open the cycle form.
 
-Click on a cycle row to open the cycle form.
-
-![Cycle form](/_images/en-us/programs/cycles/04-cycle-form-with-overview-and-status-information.png)
+![Open Cycle](/_images/en-us/programs/cycles/04-open-cycle-form.png)
 
 ## Understand the Cycle Form
 
@@ -93,7 +81,7 @@ Click on a cycle row to open the cycle form.
 | **End Date** | When the cycle ends |
 | **Total Amount** | Sum of all entitlements in this cycle |
 
-![Cycle overview](/_images/en-us/programs/cycles/05-cycle-overview-showing-name-program-dates-and-tota.png)
+![Cycle overview](/_images/en-us/programs/cycles/05-cycle-overview.png)
 
 ### Smart Buttons
 
@@ -126,47 +114,45 @@ Shows all entitlements generated for this cycle:
 | **Valid Until** | End of validity period |
 | **State** | Draft, Pending Approval, Approved, etc. |
 
-![Cycle entitlements tab](/_images/en-us/programs/cycles/06-cycle-entitlements-tab-showing-generated-entitleme.png)
+![Cycle entitlements tab](/_images/en-us/programs/cycles/06-cycle-entitlements-tab.png)
 
 ## Create a New Cycle
 
-### Step 1: Open the Program
+1. Open the program where you want to create a cycle.
 
-Navigate to the program where you want to create a cycle.
-
-### Step 2: Click New Cycle
-
-Click the **New Cycle** button in the header.
+2. Click the **New Cycle** button in the header.
 
 ![New cycle button](/_images/en-us/programs/cycles/07-new-cycle-button-in-program-header.png)
 
-### Step 3: Confirm
-
-A notification confirms the new cycle was created.
+3. A notification confirms the new cycle was created.
 
 ![Cycle created notification](/_images/en-us/programs/cycles/08-notification-confirming-new-cycle-was-created.png)
 
-### Step 4: Open the Cycle
-
-Click the **Cycles** smart button and select the new cycle.
+4. Click the **Cycles** smart button and select the new cycle to open it.
 
 ## Cycle Workflow
 
-### Copy Beneficiaries
+Cycles follow this workflow: Draft → To Approve → Approved → Distributed → Ended
 
-When a cycle is first created, it has no beneficiaries. Copy them from the program:
+### Step 1: Copy Beneficiaries
+
+When a cycle is first created, it automatically copies all currently enrolled beneficiaries from the program. 
+
+**If new beneficiaries are enrolled after the cycle was created:**
 
 1. Open the cycle (must be in **Draft** state).
 
-2. Click **Copy Beneficiaries**.
+2. Click **Copy Beneficiaries** to add the newly enrolled beneficiaries to the cycle.
 
    ![Copy beneficiaries button](/_images/en-us/programs/cycles/09-copy-beneficiaries-button-on-cycle-form.png)
 
-3. Beneficiaries are copied from the program enrollment list.
+```{note}
+This function only adds newly enrolled beneficiaries. It does not remove beneficiaries who no longer meet eligibility criteria.
+```
 
-### Prepare Entitlements
+### Step 2: Prepare Entitlements
 
-After beneficiaries are copied, generate their entitlements:
+Generate entitlements for all beneficiaries in the cycle:
 
 1. Click **Prepare Entitlements**.
 
@@ -176,11 +162,11 @@ After beneficiaries are copied, generate their entitlements:
 
 3. View generated entitlements in the **Entitlements** tab.
 
-### Submit for Approval
+### Step 3: Submit for Approval
 
 When entitlements are ready:
 
-1. Review the **Total Amount** to verify it is correct.
+1. Review the **Total Amount** in the Overview tab to verify it is correct.
 
 2. Click **Submit for Approval**.
 
@@ -188,74 +174,64 @@ When entitlements are ready:
 
 3. The cycle state changes to **To Approve**.
 
-### Approve the Cycle
+### Step 4: Approve the Cycle
 
-A Program Validator or Manager must approve the cycle:
+A user with the **Program Cycle Approver** role (configured during program setup) must approve the cycle.
 
 1. Review the cycle and entitlements.
 
-2. Optionally click **Validate Entitlements** to approve individual entitlements.
+2. (Optional) Click **Validate Entitlements** to approve individual entitlements before approving the cycle. This requires the **Entitlement Approver** role.
 
 3. Click **Approve Cycle** to approve the entire cycle.
 
-   ![Approve cycle button](/_images/en-us/programs/cycles/12-approve-cycle-button-for-validators.png)
+   ![Approve cycle button](/_images/en-us/programs/cycles/12-approve-cycle-button.png)
 
-4. The cycle state changes to **Approved**.
+4. The cycle state changes to **Approved** and is ready for distribution.
 
 ### Reject a Cycle
 
-If there are problems with the cycle:
+If there are problems with the cycle during approval:
 
 1. Click **Reject**.
 
 2. Enter a reason for rejection.
 
-3. The cycle state changes to **Cancelled**.
+3. The cycle state changes to **Cancelled** and can be reset to Draft if needed.
 
-4. The submitter can reset to draft and make corrections.
-
-### Reset to Draft
-
-To make changes to a rejected or pending cycle:
-
-1. Click **Reset to Draft**.
-
-   ![Reset to draft button](/_images/en-us/programs/cycles/13-reset-to-draft-button-for-corrections.png)
-
-2. Make necessary corrections.
-
-3. Submit for approval again.
 
 ## Complete a Cycle
 
 After benefits are distributed:
 
-1. Click **Mark as Distributed** when payments are sent.
+1. Click **Mark as Distributed** when payments have been sent to beneficiaries. The cycle state changes to **Distributed**.
 
-2. Click **End Cycle** when the cycle is complete.
+2. Click **End Cycle** when all distribution activities are complete and the cycle should be closed.
 
-The cycle becomes read-only after ending.
+The cycle becomes read-only after ending and cannot be modified.
 
 ## Cancel a Cycle
 
-If a cycle should not proceed:
+If a cycle should not proceed (before it reaches **To Approve** state):
 
 1. Click **Cancel**.
 
-2. The cycle and all its entitlements are cancelled.
+2. The cycle and all its entitlements are cancelled. The cycle state changes to **Cancelled**.
 
-3. You can reset to draft if needed, or leave it cancelled.
+```{note}
+Use **Reject** if the cycle is already submitted for approval. Use **Cancel** if the cycle is still in Draft state.
+```
+
 
 ## Are You Stuck?
 
 **Cannot find the New Cycle button?**
-- Verify you have Program Officer or higher access
+- Verify you have Program Manager, Validator or admin role assigned to your user account.
 - Check that the program is in Active state
 - Ensure at least one beneficiary is enrolled
 
 **Copy Beneficiaries does nothing?**
-- The program may have no enrolled beneficiaries
-- Check the program's Beneficiaries tab
+- The program may have no newly enrolled beneficiaries since the cycle was created.
+- This function only adds newly enrolled beneficiaries to the cycle. It does not remove beneficiaries who no longer meet the program's eligibility criteria.
 
 **Prepare Entitlements fails?**
 - Verify the cycle has beneficiaries (run Copy Beneficiaries first)
@@ -263,9 +239,8 @@ If a cycle should not proceed:
 - Contact your Program Manager if the problem persists
 
 **Cannot approve the cycle?**
-- Only Program Validators and Managers can approve cycles
-- Entitlements may need to be validated first
-- Check if the **Validate Entitlements** button is visible
+- Verify you have the **Program Cycle Approver** role assigned to your account.
+- Confirm that a cycle approver role was selected during program configuration.
 
 **Cycle dates show a validation error?**
 - Start date cannot be in the past

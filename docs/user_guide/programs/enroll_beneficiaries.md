@@ -16,8 +16,7 @@ Learn how to add registrants to a program and verify their eligibility.
 
 ## Before You Start
 
-- You need **Program Officer**, **Program Manager**, or **Administrator** access
-- The program must be in **Active** state
+- You need **Program manager**, **Program validator**, or **Administrator** roles assigned to your user account.
 - Registrants must already exist in the Registry
 
 ## Understanding Enrollment
