@@ -93,8 +93,6 @@ A program can be in one of two states:
 
 3. The program list shows all programs you have access to.
 
-   ![Program list](/_images/en-us/programs/understanding/04-program-list-showing-all-accessible-programs.png)
-
 ### Program List Columns
 
 | Column | Description |
@@ -105,21 +103,11 @@ A program can be in one of two states:
 | **Cycles** | Number of cycles created |
 | **State** | Active or Ended |
 
-### Filtering Programs
-
-Use the search bar to find programs by name.
-
-Use filters to show:
-
-- **Active** - Only programs currently running
-- **Ended** - Only closed programs
-- **Archived** - Programs that have been archived
-
 ### Opening a Program
 
 Click on a program row to open the program form.
 
-![Program form](/_images/en-us/programs/understanding/05-program-form-with-overview-and-details.png)
+![Program form](/_images/en-us/programs/understanding/hover-program.png)
 
 ## Program Form Overview
 
@@ -139,7 +127,7 @@ Shows basic program information and recent cycles:
 
 The **Recent Cycles** section shows the most recent cycles with their status.
 
-![Program overview tab](/_images/en-us/programs/understanding/06-program-overview-tab-showing-basic-information-and.png)
+![Program overview tab](/_images/en-us/programs/understanding/06-program-overview-tab-showing-basic-information.png)
 
 ### Beneficiaries Tab
 
@@ -151,15 +139,19 @@ Lists all registrants associated with this program:
 | **Enrollment Date** | When they were enrolled |
 | **State** | Draft, Enrolled, Paused, Exited, Not Eligible, or Duplicated |
 
-![Beneficiaries tab](/_images/en-us/programs/understanding/07-program-beneficiaries-tab-listing-registered-benef.png)
+![Beneficiaries tab](/_images/en-us/programs/understanding/07-program-beneficiaries-tab.png)
 
 ### Configuration Tab
 
 Program Managers can view and edit program settings here. This tab is not visible to all users.
 
+![configuration tab](/_images/en-us/programs/understanding/configuration-tab.png)
+
 ### History Tab
 
 Shows audit information: who created and last modified the program.
+
+![history tab](/_images/en-us/programs/understanding/history-tab.png)
 
 ## Smart Buttons
 
@@ -171,7 +163,7 @@ At the top of the program form, smart buttons provide quick access to related in
 | **Cycles** | Opens the list of all cycles |
 | **Duplicates** | Opens the list of duplicate records (if any exist) |
 
-![Program smart buttons](/_images/en-us/programs/understanding/08-program-smart-buttons-for-beneficiaries-cycles-and.png)
+![Program smart buttons](/_images/en-us/programs/understanding/smart-buttons.png)
 
 ## Program Actions
 
@@ -186,7 +178,7 @@ The header bar shows actions you can perform (based on your role):
 | **Deduplicate** | Find and mark duplicate beneficiaries | Active programs |
 | **Notify** | Send notifications to beneficiaries | Active programs |
 
-![Program action buttons](/_images/en-us/programs/understanding/09-program-action-buttons-for-import-enroll-verify-an.png)
+![Program action buttons](/_images/en-us/programs/understanding/09-program-action-buttons.png)
 
 ## Are You Stuck?
 
