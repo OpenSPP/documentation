@@ -68,15 +68,6 @@ Program
 4. For each **cycle**, entitlements are generated for all beneficiaries
 5. Entitlements are approved and benefits are distributed
 
-## Program States
-
-A program can be in one of two states:
-
-| State | Meaning | What You Can Do |
-|-------|---------|-----------------|
-| **Active** | Program is operational | Import registrants, enroll beneficiaries, create cycles |
-| **Ended** | Program is closed | View only - no changes allowed |
-
 ![Program with Active status](/_images/en-us/programs/understanding/01-program-form-showing-active-status-badge.png)
 
 ## Navigate the Program Interface
