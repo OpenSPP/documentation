@@ -17,10 +17,12 @@ This guide describes the different types of change requests available in OpenSPP
 
 Request types define what changes you can make to registrant data. Your organization's administrator configures which types are available and what approval workflow each follows.
 
+The types and fields described in this guide match the standard OpenSPP change request types (from `spp_cr_types_base` and `spp_cr_types_advanced`). Your deployment may enable a subset of these or add custom types.
+
 Request types are divided into two categories:
 
-- **Basic Types** - Simple field updates (can be customized via Studio)
-- **Advanced Types** - Complex operations like adding members or merging records
+- **Basic Types** - Simple field updates. These use field mapping and can be customized via **Studio** (e.g., add or hide fields, change labels). Types: Edit Individual Information, Edit Group Information, Update ID Document.
+- **Advanced Types** - Complex operations that use custom logic (e.g., creating individuals, transferring memberships). These cannot be edited via Studio. Types: Add Group Member, Remove Group Member, Change Head of Household, Transfer Member, Exit Registrant, Create New Group, Split Household, Merge Registrants.
 
 ## Basic Request Types
 
@@ -105,10 +107,11 @@ These types update fields directly on the registrant record.
 
 | Field | Description |
 |-------|-------------|
+| Operation | Add New ID, Update Existing ID, or Remove ID |
 | ID Type | Type of identification (National ID, Passport, etc.) |
-| ID Number | The identification number |
-| Expiration Date | When the ID expires (if applicable) |
-| Action | Add, Update, or Remove |
+| ID Number/Value | The identification number |
+| Expiry Date | When the ID expires (if applicable) |
+| Description / Remarks | Optional notes |
 
 **Example Use Case:**
 > John received his new national ID card. The registry officer submits an "Update ID Document" request to add the ID number to his record.
@@ -171,7 +174,7 @@ These types involve more complex operations that create, modify, or link records
 | Field | Description |
 |-------|-------------|
 | Member to Remove | Select from current household members |
-| Reason | Why the member is being removed |
+| Reason for Removal | Why the member is being removed (e.g., Left Household, Deceased, Married Out, Migrated, Data Correction, Other) |
 | End Date | When the membership ended |
 
 **What Happens When Approved:**
@@ -201,8 +204,9 @@ These types involve more complex operations that create, modify, or link records
 
 | Field | Description |
 |-------|-------------|
-| New Head | Select from current household members |
-| Reason | Why the head is being changed |
+| New Head of Household | Select from current household members |
+| Previous Head's New Role | The role for the previous head after the change (e.g., Spouse, Other Adult) |
+| Reason | Why the head is being changed (e.g., Head Deceased, Head Moved Out) |
 
 **What Happens When Approved:**
 
@@ -262,9 +266,9 @@ These types involve more complex operations that create, modify, or link records
 
 | Field | Description |
 |-------|-------------|
-| Exit Reason | Why they are exiting (Death, Migration, Request, etc.) |
+| Exit Reason | Why they are exiting (e.g., Deceased, Emigrated, Duplicate Record, No Longer Eligible, Voluntary Exit, Fraudulent Registration, Other) |
 | Exit Date | When the exit takes effect |
-| Notes | Additional context |
+| Remarks | Additional context. Date of Death and Destination Country may be required depending on exit reason. |
 
 **What Happens When Approved:**
 
@@ -294,9 +298,10 @@ These types involve more complex operations that create, modify, or link records
 | Field | Description |
 |-------|-------------|
 | Group Name | Name for the new household |
-| Head of Household | Person to designate as head (optional) |
-| Address | Location of the household |
-| Phone | Contact phone number |
+| Group Type | Type of group (e.g., household), if configured |
+| Head of Household | Select an existing individual as head, or create a new head with name, date of birth, gender, and phone |
+| Address | Address Line 1, Address Line 2, City, State/Province, Postal Code |
+| Phone | Contact phone number (for head or group) |
 
 **What Happens When Approved:**
 
