@@ -17,7 +17,7 @@ Learn how to view, understand, and manage entitlements in OpenSPP.
 ## Before You Start
 
 - You need **Program Validator**, **Program Manager**, or **Administrator** access to approve entitlements
-- **Program Officer** access allows viewing but not approving
+- An **approval definition** must be configured in the entitlement manager for the program before entitlements can be approved
 
 ## What is an Entitlement?
 
@@ -42,13 +42,18 @@ Entitlements progress through these states:
 | State | Meaning | Who Can Change |
 |-------|---------|----------------|
 | **Draft** | Not yet submitted | Program Officer |
-| **Pending Approval** | Waiting for validation | Program Validator |
+| **Pending Approval** | Waiting for validation (cash entitlements) | Program Validator |
+| **Pending Validation** | Waiting for validation (in-kind entitlements) | Program Validator |
 | **Approved** | Ready for distribution | - |
 | **Transferred to FSP** | Sent to payment provider | - |
 | **Redeemed/Paid** | Beneficiary received benefit | - |
 | **Rejected** | Declined (with reason) | - |
 | **Cancelled** | Voided | Program Manager |
 | **Expired** | Validity period ended | Automatic |
+
+```{note}
+**State Display Names**: Cash entitlements show "Pending Approval" while in-kind entitlements show "Pending Validation" in the interface, though both represent the same workflow state.
+```
 
 ## View Entitlements
 
@@ -72,8 +77,6 @@ For in-kind entitlements:
 
 2. The entitlements list shows all in-kind entitlements.
 
-   ![In-kind list](/_images/en-us/programs/entitlements/03-in-kind-entitlements-list-view.png)
-
 ## Understand Entitlement Information
 
 ### Cash Entitlement Fields
@@ -89,9 +92,7 @@ For in-kind entitlements:
 | **Currency** | Payment currency |
 | **Valid From** | Start of validity |
 | **Valid Until** | End of validity |
-| **State** | Current status |
-
-![Cash entitlement form](/_images/en-us/programs/entitlements/04-cash-entitlement-form-with-amount-and-details.png)
+| **Status** | Current status |
 
 ### In-Kind Entitlement Fields
 
@@ -99,15 +100,16 @@ For in-kind entitlements:
 |-------|-------------|
 | **Code** | Unique reference number |
 | **Registrant** | Beneficiary name |
+| **Program** | Parent program |
+| **Cycle** | Distribution cycle |
 | **Product** | Item being distributed |
 | **Quantity** | Number of items |
 | **Unit of Measure** | Units (kg, pieces, etc.) |
-| **Service Point** | Distribution location |
 | **Valid From** | Start of validity |
 | **Valid Until** | End of validity |
-| **State** | Current status |
+| **Status** | Current status |
 
-![In-kind entitlement form](/_images/en-us/programs/entitlements/05-in-kind-entitlement-form-with-product-and-quantity.png)
+![In-kind entitlement form](/_images/en-us/programs/entitlements/03-in-kind-entitlement-form-with-product-and-quantity.png)
 
 ## Filter and Search Entitlements
 
@@ -123,7 +125,7 @@ From the entitlements list, use filters to find specific entitlements:
 | **Cancelled** | Voided entitlements |
 | **Expired** | Past validity date |
 
-![Entitlement filters](/_images/en-us/programs/entitlements/06-entitlement-filters-for-state-filtering.png)
+![Entitlement filters](/_images/en-us/programs/entitlements/04-entitlement-filters-for-state-filtering.png)
 
 ### Search by Beneficiary
 
@@ -147,7 +149,7 @@ To approve all entitlements in a cycle at once:
 
 2. Click **Validate Entitlements**.
 
-   ![Validate entitlements button](/_images/en-us/programs/entitlements/07-validate-entitlements-button-on-cycle-form.png)
+   ![Validate entitlements button](/_images/en-us/programs/entitlements/05-validate-entitlements-button-on-cycle-form.png)
 
 3. All pending entitlements in the cycle are approved.
 
@@ -161,7 +163,7 @@ To approve a single entitlement:
 
 2. Click **Approve Entitlement**.
 
-   ![Approve entitlement button](/_images/en-us/programs/entitlements/08-approve-entitlement-button-on-individual-entitleme.png)
+   ![Approve entitlement button](/_images/en-us/programs/entitlements/06-approve-entitlement-button-on-individual.png)
 
 3. The entitlement state changes to **Approved**.
 
@@ -169,13 +171,19 @@ To approve a single entitlement:
 
 To approve multiple entitlements at once:
 
-1. From the entitlements list, select the entitlements to approve (use checkboxes).
+1. Open the cycle and click the expand button to view entitlements.
+   
+   ![Expand cycle button](/_images/en-us/programs/entitlements/07-expand-cycle-button.png)
 
-2. Click **Action** > **Approve**.
+2. Click the **Entitlements** smart button from the cycle form page.
 
-   ![Batch approve](/_images/en-us/programs/entitlements/09-batch-approve-with-action-menu-and-selected-entitl.png)
+3. Select the entitlements to approve using the checkboxes. You can also click the checkbox header to select all entitlements at once.
 
-3. Confirm the approval.
+4. Click **Action** > **Approve**.
+
+   ![Batch approve](/_images/en-us/programs/entitlements/08-batch-approve.png)
+
+5. Confirm the approval.
 
 ## Reject Entitlements
 
@@ -185,19 +193,36 @@ If an entitlement should not be paid:
 
 2. Click **Reject**.
 
-3. Select a rejection reason:
+3. A rejection wizard opens. Enter a rejection reason in the text field.
 
-   | Reason | When to Use |
-   |--------|-------------|
-   | Beneficiary did not want it | Beneficiary declined |
-   | Account does not exist | Payment account is invalid |
-   | Other reason | Any other issue |
+4. The system records the reason and sets the entitlement state to **Rejected**.
 
-4. The entitlement state changes to **Rejected**.
+   ```{note}
+   **Rejection States**: The system uses three rejection states internally:
+   - **Rejected: Beneficiary didn't want the entitlement** - When beneficiary declined
+   - **Rejected: Beneficiary account does not exist** - When payment account is invalid
+   - **Rejected: Other reason** - For any other rejection reason
+   
+   The specific state is determined automatically based on the context, but you only need to enter a reason in the text field.
+   ```
+
+## Submit for Approval
+
+To submit draft entitlements for approval:
+
+1. Open the entitlement (must be in **Draft** state).
+
+2. Click **Submit for Approval**.
+
+3. The entitlement state changes to **Pending Approval** (cash) or **Pending Validation** (in-kind).
+
+```{note}
+**Automatic Submission**: When entitlements are generated by the entitlement manager, they may automatically be submitted for approval if the manager is configured to do so. You can also submit individual entitlements manually.
+```
 
 ## Reset to Draft
 
-If corrections are needed on a pending or rejected entitlement:
+If corrections are needed on a pending, rejected, or cancelled entitlement:
 
 1. Open the entitlement.
 
@@ -208,7 +233,7 @@ If corrections are needed on a pending or rejected entitlement:
 4. Submit for approval again.
 
 ```{note}
-Approved entitlements cannot be reset to draft. Contact a Program Manager if an approved entitlement needs to be cancelled.
+**Reset Limitations**: Only entitlements in **Pending Approval/Pending Validation**, **Rejected**, or **Cancelled** states can be reset to draft. Approved entitlements cannot be reset to draft. Contact a Program Manager if an approved entitlement needs to be cancelled.
 ```
 
 ## View Entitlement History
@@ -222,9 +247,13 @@ For each entitlement, you can track:
 
 This information is visible in the **Approval** tab (for cycles) or the form chatter.
 
-![Entitlement history](/_images/en-us/programs/entitlements/10-entitlement-history-in-chatter-or-approval-tab.png)
+![Entitlement history](/_images/en-us/programs/entitlements/09-entitlement-history-in-chatter-or-approval-tab.png)
 
 ## Check Payment Status
+
+```{note}
+**Configuration Required**: A payment manager must be configured for the program and a payment gateway must be configured in your OpenSPP instance before payment status information will be displayed. If these are not configured, the payment status section will be hidden and entitlements will not show Paid or Not Paid status.
+```
 
 After entitlements are approved:
 
@@ -235,14 +264,13 @@ After entitlements are approved:
 
 The payment date shows when the payment was completed.
 
-![Payment status](/_images/en-us/programs/entitlements/11-payment-status-on-approved-entitlement.png)
-
 ## Are You Stuck?
 
 **Cannot see the Approve button?**
 - Only Program Validators and Managers can approve entitlements
-- The entitlement must be in Pending Approval state
-- Contact your administrator if you need approval permissions
+- The entitlement must be in Pending Approval (cash) or Pending Validation (in-kind) state
+- An approval definition must be configured in the entitlement manager for the program
+- Contact your administrator if you need approval permissions or to configure the approval definition
 
 **Entitlement shows wrong amount?**
 - Amounts are calculated by the entitlement manager
@@ -265,7 +293,8 @@ The payment date shows when the payment was completed.
 
 **Batch approve fails for some entitlements?**
 - The error message shows which entitlements failed and why
-- Usually caused by entitlements not in Pending Approval state
+- Usually caused by entitlements not in Pending Approval/Pending Validation state
+- May also fail if insufficient funds are available (for cash entitlements) or if approval definition is not configured
 - Review and retry the individual entitlements
 
 ## Next Steps
