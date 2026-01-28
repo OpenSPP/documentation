@@ -154,7 +154,7 @@ In order to verify the configuration, click the cogwheel for the line you wish t
 
     ![Screenshot: Section "Who Qualifies"](/_images/en-us/get_started/first_program/02_create_program/cle5_17.png)
 
-    Note that it displays the previously entered eligibility criteria. TODO: **ADD new screenshot(s) below**
+    Note that it displays the previously entered eligibility criteria.
 
     ![Screenshot: Popup for "Who Qualifies"](/_images/en-us/get_started/first_program/02_create_program/cle5_18.png)
 
@@ -185,6 +185,35 @@ Click **Programs** in the breadcrumb navigation or return to the Programs menu. 
 
 ![Screenshot: Programs list showing "Cash Transfer for Vulnerable Families" as a new program with Active status](/_images/en-us/get_started/first_program/02_create_program/cle5_6.png)
 
+### 13. Allocate funds
+
+As part of configuring the program, the necessary funds should be allocated.
+
+1. Click **Payments** and select **Program Funds**.
+
+    ![Screenshot: Dropdown menu "Payments"](/_images/en-us/get_started/first_program/02_create_program/cle5_24.png)
+
+2. Click **New** to create a Program Fund entry.
+
+    ![Screenshot: Button "New"](/_images/en-us/get_started/first_program/02_create_program/cle5_25.png)
+
+3. Click the arrow for **Program** and select the program **Cash transfer for vulnerable families**.
+
+    ![Screenshot: Program selection](/_images/en-us/get_started/first_program/02_create_program/cle5_26.png)
+
+4. Enter the amount that should be allocated in the field **Amount**.
+
+    ![Screenshot: Fund allocation](/_images/en-us/get_started/first_program/02_create_program/cle5_27.png)
+
+5. Click button **Post** to allocate the funds.
+
+    ![Screenshot: "Post" button](/_images/en-us/get_started/first_program/02_create_program/cle5_28.png)
+
+    Note that the status is now updated to **Posted**.
+
+    ![Screenshot: Funds are allocated](/_images/en-us/get_started/first_program/02_create_program/cle5_29.png)    
+ 
+
 ## What you accomplished
 
 You've successfully created your first social protection program with:
@@ -208,6 +237,8 @@ Based on the sample data you imported:
 - **Ramos Family**: Not eligible (income 18,000 - too high ❌)
 
 **Expected eligible families**: Santos Family and Reyes Family (2 out of 5)
+
+You've successfully allocated funds for your program.
 
 ## Are you stuck?
 
