@@ -27,9 +27,13 @@ Change Requests provide:
 All change requests follow this workflow:
 
 ```
-Draft → Under Review → Approved → Completed
+Draft → Under Review → Approved → [Finalize] → Completed
                     ↘ Needs Changes → (edit) → Under Review
                     ↘ Declined
+```
+
+```{note}
+**Finalization Step**: After a change request is approved, it must be finalized using the "Finalize & Record Changes" action before the changes are actually applied to the registrant's record. This provides an additional safety check before making permanent changes.
 ```
 
 | Status | What It Means |
@@ -37,7 +41,7 @@ Draft → Under Review → Approved → Completed
 | **Draft** | Request is being created, not yet submitted |
 | **Under Review** | Waiting for a validator to review |
 | **Needs Changes** | Sent back to submitter for corrections |
-| **Approved** | Approved and ready to finalize |
+| **Approved** | Approved and ready to finalize (requires "Finalize & Record Changes" action) |
 | **Completed** | Changes have been recorded to the registrant |
 | **Declined** | Request was rejected |
 
