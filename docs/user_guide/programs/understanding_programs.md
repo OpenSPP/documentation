@@ -15,6 +15,7 @@ openspp:
 This guide explains the core concepts of OpenSPP programs. By the end, you will understand:
 
 - What a program is and what information it contains
+- How to create a new program using the wizard
 - How programs, cycles, and entitlements connect
 - The different states a program can be in
 - How to navigate the program interface
@@ -68,7 +69,7 @@ Program
 4. For each **cycle**, entitlements are generated for all beneficiaries
 5. Entitlements are approved and benefits are distributed
 
-![Program with Active status](/_images/en-us/programs/understanding/01-program-form-showing-active-status-badge.png)
+![Program with Active status](/_images/en-us/programs/understanding/01-program-form-active-status-badge.png)
 
 ## Navigate the Program Interface
 
@@ -76,11 +77,11 @@ Program
 
 1. Click **Programs** in the main menu.
 
-   ![Programs menu](/_images/en-us/programs/understanding/02-main-menu-with-programs-option-highlighted.png)
+   ![Programs menu](/_images/en-us/programs/understanding/02-main-menu-programs-option-highlighted.png)
 
 2. Click **Programs** in the submenu.
 
-   ![Programs submenu](/_images/en-us/programs/understanding/03-programs-submenu-showing-programs-link.png)
+   ![Programs submenu](/_images/en-us/programs/understanding/03-programs-submenu-programs-link.png)
 
 3. The program list shows all programs you have access to.
 
@@ -98,7 +99,189 @@ Program
 
 Click on a program row to open the program form.
 
-![Program form](/_images/en-us/programs/understanding/hover-program.png)
+![Program form](/_images/en-us/programs/understanding/18-program-list-hover-program.png)
+
+## Creating a New Program
+
+To create a new program, you'll use a step-by-step wizard that guides you through configuring all the necessary settings.
+
+### Accessing the Creation Wizard
+
+1. Navigate to the **Programs** list (see [Finding Programs](#finding-programs) above).
+2. Click the **Create** button in the top-left corner of the Programs list.
+3. The program creation wizard will open.
+
+![Programs list with Create button highlighted](/_images/en-us/programs/understanding/04-programs-list-create-button.png)
+
+```{note}
+**Permissions Required**: You must have **System Administrator** or **Program Manager** role to create programs. If you don't see the Create button or it's grayed out, contact your administrator.
+```
+
+### Step 1: Basic Program Information
+
+The first step collects essential details about your program:
+
+| Field | Description | Required |
+|-------|-------------|----------|
+| **Program Name** | A descriptive name for your program (e.g., "Cash Transfer for Vulnerable Families") | Yes |
+| **Target Type** | Choose who the program targets: | Yes |
+| | • **Group**: Evaluates entire families/households for eligibility | |
+| | • **Individual**: Evaluates individual people regardless of family | |
+| **Benefit Type** | Type of benefit to be distributed (typically **Cash** for monetary programs) | Yes |
+| **Currency** | The currency used for this program (e.g., USD, PHP, EUR) | Yes |
+
+**Example:**
+- **Program Name**: "Monthly Food Assistance Program"
+- **Target Type**: Group (households)
+- **Benefit Type**: Cash
+- **Currency**: USD
+
+![Program creation wizard - Step 1: Basic information form](/_images/en-us/programs/understanding/05-program-wizard-step1-basic-information.png)
+
+After filling in these fields, click **Next: Configure Program** to proceed.
+
+### Step 2: Configure Eligibility (Who Qualifies?)
+
+This step defines who is eligible to participate in your program. The wizard shows a tab labeled **Who Qualifies?**.
+
+![Program wizard showing configuration tabs including Who Qualifies?](/_images/en-us/programs/understanding/06-program-wizard-configuration-tabs.png)
+
+#### Eligibility Criteria Options
+
+You can configure eligibility in two ways:
+
+1. **Predefined Criteria** (Dropdown selection):
+   - Select from common eligibility rules like:
+     - "Households with Children Under 5"
+     - "Elderly Individuals (65+)"
+     - "Single Parent Households"
+     - And other predefined options
+
+   ![Eligibility criteria dropdown showing predefined options](/_images/en-us/programs/understanding/07-eligibility-criteria-dropdown.png)
+
+2. **Advanced Criteria** (Custom expressions):
+   - Click **Advanced** to reveal a text field
+   - Enter custom eligibility expressions using registry field names
+   - Example: `members.exists(m, m.income < 10000)` (Groups with at least one member that has income < 10000)
+
+   ![Advanced eligibility criteria field with custom expression](/_images/en-us/programs/understanding/08-eligibility-advanced-criteria.png)
+
+
+### Step 3: Configure Entitlements (What Do They Receive?)
+
+Click the **Entitlements** tab to define what beneficiaries will receive.
+
+#### Adding an Entitlement Line
+
+1. Click **Add a line** at the bottom of the entitlements section.
+
+   ![Entitlements tab with Add a line button](/_images/en-us/programs/understanding/09-entitlements-tab-add-line-button.png)
+
+2. A popup window appears with the following fields:
+
+| Field | Description | Options |
+|-------|-------------|---------|
+| **Amount Formula** | How the benefit amount is calculated | • **Fixed Amount**: Same amount for everyone<br>• **Formula-based**: Calculated using expressions |
+| **Base Amount** | The fixed amount (if using Fixed Amount) | Enter a number (e.g., 1200) |
+| **Currency** | Currency for this entitlement | Usually matches program currency |
+
+**Example:**
+- **Amount Formula**: Fixed Amount
+- **Base Amount**: 1200
+- **Currency**: USD
+
+![Entitlement configuration popup with amount formula and base amount](/_images/en-us/programs/understanding/10-entitlement-configuration-popup.png)
+
+Click **Save & Close** after configuring the entitlement.
+
+```{note}
+You can add multiple entitlement lines if your program provides different types of benefits or uses different formulas for different beneficiary groups.
+```
+
+#### Configuring Approval Workflow
+
+The approval workflow determines which user role can approve entitlements for this program. When you select an approver group, only users with that role will be able to approve entitlements.
+
+1. In the entitlements configuration, locate the **Approver Group** field.
+2. Select the user role that should have approval authority for entitlements in this program.
+
+![Select Cycle Approver role](/_images/en-us/programs/understanding/19-select-cycle-approver-role.png)
+
+```{important}
+**Role Restriction**: The role you select in the Approver Group field will be the **only** role that can approve entitlements for this program. Users with other roles will not see the approval option, even if they have program management permissions.
+```
+
+**Example:**
+- **Approver Group**: Program Cycle Approvers
+- Only users assigned the "Program Cycle Approvers" role can approve entitlements for this program.
+
+### Step 4: Configure Distribution Schedule
+
+Click the **Schedule** tab to set how often benefits are distributed.
+
+![Schedule tab showing recurrence and cycle approval options](/_images/en-us/programs/understanding/11-schedule-tab-distribution-settings.png)
+
+| Field | Description | Options |
+|-------|-------------|---------|
+| **Recurrence** | How often cycles are created | • **Daily**<br>• **Weekly**<br>• **Monthly**<br>• **Yearly** |
+| **Day of Month** | When monthly cycles start (if Monthly selected) | • Specific date (e.g., 3rd of each month)<br>• Day of week (e.g., first Monday) |
+| **Day of Week** | Which day(s) for weekly distribution (if Weekly selected) | Monday, Tuesday, Wednesday, etc. |
+| **One-time Distribution** | Check this if the program runs only once | Creates a single cycle with no recurrence |
+| **Cycle Approval** | Approval definition configured from the Approvals section. This is where you define which role approves cycles. Select an approval workflow or use auto-approve | • **Cycle Approval**: Requires approval before distribution (select an approval definition)|
+
+**Example:**
+- **Recurrence**: Monthly
+- **Day of Month**: 1st of each month
+- **Cycle Approval**: Cycle Approval (requires manual approval)
+- **Approver Group**: Program Cycle Approvers
+- Only users assigned the "Program Cycle Approvers" role can approve cycles for this program.
+
+```{important}
+**Role Restriction**: The role you select in the Approver Group field will be the **only** role that can approve cycles for this program. Users with other roles will not see the approval option, even if they have program management permissions.
+```
+
+#### One-Time Distribution
+
+When you enable the **One-time Distribution** slider, the program will automatically:
+
+1. **Generate a single cycle** - One cycle is created immediately when the program is created
+2. **Auto-import all enrolled beneficiaries** - All beneficiaries currently enrolled in the program are automatically added to this cycle
+3. **Use the schedule fields for timing** - The cycle's date and timing are based on the values you entered in the **Day of Month**, **Day of Week**, and other schedule fields
+
+```{important}
+**Important Limitations**: When One-time Distribution is enabled:
+- **No additional cycles** will be automatically generated after the initial cycle
+- The program will not create recurring cycles based on the recurrence settings
+- This is ideal for emergency relief programs, one-time grants, or special distribution events
+```
+
+**When to Use One-Time Distribution:**
+- Emergency relief payments
+- One-time grants or bonuses
+- Special event distributions
+- Programs that don't require recurring payments
+
+### Completing Program Creation
+
+1. Review all your settings in the wizard.
+2. Click **Create Program** at the bottom of the wizard.
+
+   ![Create Program button at bottom of wizard](/_images/en-us/programs/understanding/12-create-program-button.png)
+
+3. The program will be created and you'll be taken to the program form.
+4. The program status will show as **Active**.
+
+   ![Newly created program showing Active status](/_images/en-us/programs/understanding/13-newly-created-program-active-status.png)
+
+### What Happens After Creation?
+
+Once created, your program will:
+- Appear in the Programs list
+- Be ready to accept beneficiary enrollments
+- Have all the configuration settings you defined available in the **Configuration** tab
+- Allow you to create cycles according to your schedule settings
+
+You can edit any of these settings later by opening the program and going to the **Configuration** tab.
 
 ## Program Form Overview
 
@@ -118,7 +301,7 @@ Shows basic program information and recent cycles:
 
 The **Recent Cycles** section shows the most recent cycles with their status.
 
-![Program overview tab](/_images/en-us/programs/understanding/06-program-overview-tab-showing-basic-information.png)
+![Program overview tab](/_images/en-us/programs/understanding/14-program-overview-tab-basic-information.png)
 
 ### Beneficiaries Tab
 
@@ -130,19 +313,19 @@ Lists all registrants associated with this program:
 | **Enrollment Date** | When they were enrolled |
 | **State** | Draft, Enrolled, Paused, Exited, Not Eligible, or Duplicated |
 
-![Beneficiaries tab](/_images/en-us/programs/understanding/07-program-beneficiaries-tab.png)
+![Beneficiaries tab](/_images/en-us/programs/understanding/15-program-beneficiaries-tab.png)
 
 ### Configuration Tab
 
 Program Managers can view and edit program settings here. This tab is not visible to all users.
 
-![configuration tab](/_images/en-us/programs/understanding/configuration-tab.png)
+![configuration tab](/_images/en-us/programs/understanding/16-program-configuration-tab.png)
 
 ### History Tab
 
 Shows audit information: who created and last modified the program.
 
-![history tab](/_images/en-us/programs/understanding/history-tab.png)
+![history tab](/_images/en-us/programs/understanding/17-program-history-tab.png)
 
 ## Smart Buttons
 
@@ -154,7 +337,7 @@ At the top of the program form, smart buttons provide quick access to related in
 | **Cycles** | Opens the list of all cycles |
 | **Duplicates** | Opens the list of duplicate records (if any exist) |
 
-![Program smart buttons](/_images/en-us/programs/understanding/smart-buttons.png)
+![Program smart buttons](/_images/en-us/programs/understanding/20-program-smart-buttons.png)
 
 ## Program Actions
 
@@ -169,7 +352,7 @@ The header bar shows actions you can perform (based on your role):
 | **Deduplicate** | Find and mark duplicate beneficiaries | Active programs |
 | **Notify** | Send notifications to beneficiaries | Active programs |
 
-![Program action buttons](/_images/en-us/programs/understanding/09-program-action-buttons.png)
+![Program action buttons](/_images/en-us/programs/understanding/21-program-action-buttons.png)
 
 ## Are You Stuck?
 
