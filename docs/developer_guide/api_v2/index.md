@@ -24,6 +24,7 @@ The official OpenSPP REST API (V2) provides a modern, secure, and standards-comp
 | {doc}`search` | Advanced query and filtering |
 | {doc}`batch` | Processing multiple records efficiently |
 | {doc}`errors` | Error responses and status codes |
+| {doc}`studio_integration` | Studio custom fields and variables via API |
 
 ```{note}
 This completely replaces the legacy XML-RPC API. New integrations should use API V2.
@@ -41,4 +42,5 @@ resources
 search
 batch
 errors
+studio_integration
 ```
