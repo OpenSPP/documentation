@@ -619,9 +619,8 @@ Bundles can include different HTTP methods:
 **Supported methods:**
 - `POST` - Create
 - `PUT` - Update (full)
-- `PATCH` - Update (partial)
 - `GET` - Read
-- `DELETE` - Delete (if supported)
+- `DELETE` - Delete (soft delete)
 
 ## Error Handling
 
@@ -873,11 +872,11 @@ This shouldn't happen with transactions. If it does, report it as a bug. Transac
 
 **How do I update multiple resources atomically?**
 
-Use a transaction bundle with `PUT` or `PATCH` requests. Include `If-Match` headers with version IDs.
+Use a transaction bundle with `PUT` requests. Include `If-Match` headers with version IDs.
 
 **Can I mix creates and updates in one transaction?**
 
-Yes. Use `POST` for creates, `PUT`/`PATCH` for updates in the same transaction.
+Yes. Use `POST` for creates, `PUT` for updates in the same transaction.
 
 ## Next Steps
 

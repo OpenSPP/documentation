@@ -281,7 +281,7 @@ Your client has exceeded rate limits. Check headers:
 ```http
 X-RateLimit-Limit: 1000
 X-RateLimit-Remaining: 0
-X-RateLimit-Reset: 1638360000
+X-RateLimit-Reset: 60
 ```
 
 ## Next Steps

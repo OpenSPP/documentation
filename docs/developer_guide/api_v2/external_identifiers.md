@@ -340,29 +340,9 @@ print(f"Created individual: {individual['identifier'][0]['value']}")
 
 ## Updating Identifiers
 
-To add or update identifiers, use PATCH or PUT:
+To add or update identifiers, use PUT with the complete resource:
 
-### Adding a New Identifier (PATCH)
-
-```http
-PATCH /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789
-Authorization: Bearer YOUR_TOKEN
-Content-Type: application/json-patch+json
-If-Match: "3"
-
-[
-  {
-    "op": "add",
-    "path": "/identifier/-",
-    "value": {
-      "system": "urn:gov:ph:pagibig",
-      "value": "1234567890123"
-    }
-  }
-]
-```
-
-### Replacing All Identifiers (PUT)
+### Updating Identifiers (PUT)
 
 ```http
 PUT /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789

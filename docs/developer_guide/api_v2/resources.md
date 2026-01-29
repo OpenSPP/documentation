@@ -30,7 +30,7 @@ All resources follow consistent REST patterns:
 | Search           | GET         | `/{Resource}?parameter=value` | All                                  |
 | Create           | POST        | `/{Resource}`                 | Individual, Group, ProgramMembership |
 | Update (full)    | PUT         | `/{Resource}/{identifier}`    | Individual, Group                    |
-| Update (partial) | PATCH       | `/{Resource}/{identifier}`    | Group only                           |
+| Update member    | PATCH       | `/Group/{id}/member/{ind_id}` | Group members only                   |
 
 ## Individual Resource
 
@@ -721,7 +721,7 @@ Another client modified the resource. Fetch the latest version, merge your chang
 
 **What's the difference between PUT and PATCH?**
 
-PUT replaces the entire resource. PATCH applies partial updates using JSON Patch format.
+PUT replaces the entire resource. PATCH is only available for updating group member relationships at `/Group/{id}/member/{individual_id}`.
 
 ## Complete Example: Full Workflow
 

@@ -413,7 +413,7 @@ Rate limit exceeded:
 HTTP/1.1 429 Too Many Requests
 X-RateLimit-Limit: 1000
 X-RateLimit-Remaining: 0
-X-RateLimit-Reset: 1638360000
+X-RateLimit-Reset: 60
 Retry-After: 60
 
 {
@@ -442,7 +442,7 @@ Retry-After: 60
 |--------|-------------|
 | `X-RateLimit-Limit` | Requests allowed per period |
 | `X-RateLimit-Remaining` | Requests remaining |
-| `X-RateLimit-Reset` | Unix timestamp when limit resets |
+| `X-RateLimit-Reset` | Seconds until limit resets |
 | `Retry-After` | Seconds to wait before retry |
 
 **Solution:**

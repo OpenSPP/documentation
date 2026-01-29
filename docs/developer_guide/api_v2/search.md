@@ -86,18 +86,16 @@ results = search_by_identifier(
 ```http
 # Contains search (case-insensitive)
 GET /api/v2/spp/Individual?name=Santos
-
-# Exact match
-GET /api/v2/spp/Individual?name:exact=SANTOS, Maria Dela Cruz
 ```
+
+Name search uses case-insensitive substring matching.
 
 **Example: Python**
 
 ```python
-def search_by_name(name, exact=False, token, base_url):
+def search_by_name(name, token, base_url):
     """Search for individuals by name."""
-    param_key = "name:exact" if exact else "name"
-    params = {param_key: name}
+    params = {"name": name}
     headers = {"Authorization": f"Bearer {token}"}
 
     response = requests.get(
@@ -108,11 +106,8 @@ def search_by_name(name, exact=False, token, base_url):
     response.raise_for_status()
     return response.json()
 
-# Fuzzy search
+# Search by family name
 results = search_by_name("Santos", token=token, base_url=base_url)
-
-# Exact match
-results = search_by_name("SANTOS, Maria", exact=True, token=token, base_url=base_url)
 ```
 
 ### By Birth Date
@@ -264,18 +259,6 @@ results = search_recently_updated(7, token=token, base_url=base_url)
 
 ## Group Search Parameters
 
-### By Type
-
-```http
-GET /api/v2/spp/Group?type=household
-```
-
-**Group Types:**
-- `household`
-- `family`
-- `organization`
-- `other`
-
 ### By Member
 
 ```http
@@ -322,7 +305,7 @@ GET /api/v2/spp/Individual?name=Santos&_count=50&_offset=100
 
 | Parameter | Description | Default | Max |
 |-----------|-------------|---------|-----|
-| `_count` | Results per page | 50 | 100 |
+| `_count` | Results per page | 20 | 100 |
 | `_offset` | Skip N results | 0 | - |
 
 ### Following Links
@@ -336,19 +319,15 @@ Use the `link` array in the response:
   "link": [
     {
       "relation": "self",
-      "url": "/api/v2/spp/Individual?name=Santos&_count=50&_offset=0"
+      "url": "/api/v2/spp/Individual?name=Santos&_count=20&_offset=0"
     },
     {
       "relation": "next",
-      "url": "/api/v2/spp/Individual?name=Santos&_count=50&_offset=50"
+      "url": "/api/v2/spp/Individual?name=Santos&_count=20&_offset=20"
     },
     {
-      "relation": "prev",
-      "url": "/api/v2/spp/Individual?name=Santos&_count=50&_offset=0"
-    },
-    {
-      "relation": "last",
-      "url": "/api/v2/spp/Individual?name=Santos&_count=50&_offset=1500"
+      "relation": "previous",
+      "url": "/api/v2/spp/Individual?name=Santos&_count=20&_offset=0"
     }
   ]
 }
@@ -734,13 +713,12 @@ class OpenSPPSearch:
         self,
         identifier: Optional[str] = None,
         name: Optional[str] = None,
-        exact_name: bool = False,
         birth_date_from: Optional[str] = None,
         birth_date_to: Optional[str] = None,
         gender: Optional[str] = None,
         address: Optional[str] = None,
         updated_since: Optional[str] = None,
-        count: int = 50,
+        count: int = 20,
         offset: int = 0,
         sort: Optional[List[str]] = None,
         fields: Optional[List[str]] = None
@@ -750,14 +728,13 @@ class OpenSPPSearch:
 
         Args:
             identifier: System|value identifier
-            name: Name to search (contains)
-            exact_name: Use exact name match
+            name: Name to search (case-insensitive substring match)
             birth_date_from: Birth date >= (YYYY-MM-DD)
             birth_date_to: Birth date <= (YYYY-MM-DD)
             gender: Gender code (ISO 5218)
             address: Address search
             updated_since: Last updated >= (YYYY-MM-DD)
-            count: Results per page
+            count: Results per page (default 20, max 100)
             offset: Results to skip
             sort: Sort fields (prefix with - for descending)
             fields: Fields to return
@@ -770,8 +747,7 @@ class OpenSPPSearch:
         if identifier:
             params["identifier"] = identifier
         if name:
-            key = "name:exact" if exact_name else "name"
-            params[key] = name
+            params["name"] = name
         if birth_date_from:
             params.setdefault("birthdate", []).append(f"ge{birth_date_from}")
         if birth_date_to:
@@ -861,7 +837,7 @@ print(f"Retrieved {len(all_results)} total results")
 
 **Search returns too many results?**
 
-Add more criteria to narrow the search. Use date ranges, address filters, or exact name matching.
+Add more criteria to narrow the search. Use date ranges or address filters.
 
 **Getting empty results when you expect matches?**
 
