@@ -4,15 +4,15 @@ openspp:
   products: [core]
 ---
 
-# What's New in OpenSPP V2
+# What's new in OpenSPP v2
 
 **For:** All audiences
 
-OpenSPP V2 is a major platform evolution bringing modern architecture, enhanced security, and powerful new features for social protection programs.
+OpenSPP v2 is a major platform evolution bringing modern architecture, enhanced security, and powerful new features for social protection programs.
 
-## Executive Summary
+## Executive summary
 
-| Area | What's New |
+| Area | What's new |
 |------|------------|
 | **Foundation** | Odoo 19 with improved performance |
 | **Architecture** | Unified `spp.*` namespace, streamlined modules |
@@ -20,21 +20,21 @@ OpenSPP V2 is a major platform evolution bringing modern architecture, enhanced 
 | **Standards** | DCI integration, W3C Verifiable Credentials |
 | **Security** | Data classification, PII encryption, field-level access |
 | **Configuration** | OpenSPP Studio for no-code customization |
-| **Data Management** | Configuration-driven change requests, enhanced event tracking |
+| **Data management** | Configuration-driven change requests, enhanced event tracking |
 | **Grievances** | Built-in GRM module for complaints and appeals |
 
-## Platform Changes
+## Platform changes
 
-### Odoo 19 Upgrade
+### Odoo 19 upgrade
 
-OpenSPP V2 runs on Odoo 19:
+OpenSPP v2 runs on Odoo 19:
 
 - **Performance**: 2-3x faster database queries with PostgreSQL 17/18
 - **UI/UX**: Modern interface with improved mobile support
 - **Security**: Updated cryptography and security patches
 - **Requirements**: Python 3.11+, PostgreSQL 12+ (17/18 recommended)
 
-### New Namespace
+### New namespace
 
 All modules now use the unified `spp.*` namespace.
 
@@ -45,9 +45,9 @@ All modules now use the unified `spp.*` namespace.
 
 **Migration**: Automatic database scripts handle the rename. External integrations need to update model references from `g2p.*` to `spp.*`.
 
-## New Features
+## New features
 
-### API V2
+### API v2
 
 A complete API redesign using FastAPI and FHIR-inspired patterns:
 
@@ -57,7 +57,7 @@ A complete API redesign using FastAPI and FHIR-inspired patterns:
 - **OAuth 2.0**: JWT tokens with scoped access
 - **Performance**: <100ms for single reads, <500ms for 100-result searches
 
-### DCI Compliance
+### DCI compliance
 
 Native Digital Convergence Initiative (DCI) integration for government interoperability:
 
@@ -66,15 +66,15 @@ Native Digital Convergence Initiative (DCI) integration for government interoper
 - **IBR Client**: Check enrollment in other programs (prevent duplication)
 - **Federated Lookups**: Query other social registries
 
-### Verifiable Credentials
+### Verifiable credentials
 
 Issue cryptographically verifiable credentials for beneficiaries:
 
-| Credential Type | Purpose |
+| Credential type | Purpose |
 |-----------------|---------|
 | Entitlement | Prove benefit eligibility |
-| Program Membership | Prove enrollment |
-| Profile/Identity | Prove identity |
+| Program membership | Prove enrollment |
+| Profile/identity | Prove identity |
 
 Features selective disclosure (holder chooses what to reveal), offline verification, and efficient revocation checking.
 
@@ -82,14 +82,14 @@ Features selective disclosure (holder chooses what to reveal), offline verificat
 
 No-code configuration for implementers who work with tools like KoBoToolbox:
 
-- **Registry Field Builder**: Add custom fields without developers
-- **Event Type Designer**: Create event types, import from Kobo
-- **Change Request Builder**: Define modification workflows
-- **Eligibility Rule Builder**: Visual criteria, auto-generates CEL
+- **Registry field builder**: Add custom fields without developers
+- **Event type designer**: Create event types, import from Kobo
+- **Change request builder**: Define modification workflows
+- **Eligibility rule builder**: Visual criteria, auto-generates CEL
 
 See {doc}`/config_guide/studio/index` for details.
 
-### Change Request V2
+### Change request v2
 
 Replaces 10+ specialized modules with one configurable system:
 
@@ -109,9 +109,9 @@ Built-in module for complaints, appeals, and feedback:
 - Appeals process with independent review
 - Confidentiality handling for sensitive cases
 
-## Security Enhancements
+## Security enhancements
 
-### Data Classification & PII Encryption
+### Data classification & PII encryption
 
 Comprehensive data protection with four sensitivity levels:
 
@@ -127,7 +127,7 @@ Comprehensive data protection with four sensitivity levels:
 - Key management: Vault, AWS/GCP/Azure KMS, or config file
 - Transparent to users
 
-### Vocabulary System
+### Vocabulary system
 
 Replace hardcoded selection lists with international standards:
 
@@ -140,7 +140,7 @@ Replace hardcoded selection lists with international standards:
 
 Extensible via UI, multi-language, hierarchical. See {doc}`/config_guide/vocabulary/index`.
 
-## Breaking Changes
+## Breaking changes
 
 ### API
 
@@ -164,7 +164,7 @@ Extensible via UI, multi-language, hierarchical. See {doc}`/config_guide/vocabul
 - Python 3.11+ (was 3.10+)
 - PostgreSQL 12+ (17/18 recommended)
 
-## Migration Path
+## Migration path
 
 ### Existing V1 Deployments
 
@@ -189,7 +189,7 @@ Extensible via UI, multi-language, hierarchical. See {doc}`/config_guide/vocabul
 2. Train users on new features
 3. Deploy with rollback plan
 
-### New Deployments
+### New deployments
 
 1. Choose deployment profile (Agriculture, Social Protection, etc.)
 2. Install core modules (typically 10-15)
@@ -199,7 +199,7 @@ Extensible via UI, multi-language, hierarchical. See {doc}`/config_guide/vocabul
 
 See {doc}`/get_started/index` to begin.
 
-## Next Steps
+## Next steps
 
 - {doc}`/get_started/index` - Install and set up your first program
 - {doc}`/config_guide/index` - Configure OpenSPP for your needs

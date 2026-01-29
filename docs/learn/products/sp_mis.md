@@ -10,7 +10,7 @@ SP-MIS extends the Social Registry with full program management capabilities. It
 
 **Who is this for:** Social protection agencies managing benefit programs, program managers overseeing cash transfers, M&E teams tracking program performance.
 
-## What SP-MIS Does
+## What SP-MIS does
 
 Social protection programs need more than a registry—they need to manage eligibility, enrollment, payments, and outcomes. SP-MIS provides:
 
@@ -21,16 +21,16 @@ Social protection programs need more than a registry—they need to manage eligi
 - **Service point tracking** for distribution locations and in-kind transfers
 - **Monitoring dashboards** for program performance and coverage
 
-## Core Workflows
+## Core workflows
 
-| Workflow | Purpose | Key Users |
+| Workflow | Purpose | Key users |
 |----------|---------|-----------|
-| **Program Setup** | Define programs with eligibility criteria and benefit structures | Program Managers |
-| **Beneficiary Enrollment** | Enroll eligible registrants into programs | Enrollment Officers |
-| **Payment Cycles** | Create and execute recurring payment disbursements | Finance Officers |
+| **Program setup** | Define programs with eligibility criteria and benefit structures | Program Managers |
+| **Beneficiary enrollment** | Enroll eligible registrants into programs | Enrollment Officers |
+| **Payment cycles** | Create and execute recurring payment disbursements | Finance Officers |
 | **Monitoring** | Track coverage, payments, and program outcomes | M&E Teams |
 
-## Program Types
+## Program types
 
 SP-MIS supports various social protection program types:
 
@@ -38,20 +38,20 @@ SP-MIS supports various social protection program types:
 |------|-------------|---------|
 | **Unconditional Cash Transfer (UCT)** | Regular cash payments without conditions | Social pension, child grants |
 | **Conditional Cash Transfer (CCT)** | Payments linked to compliance (school attendance, health visits) | Education grants |
-| **Emergency Assistance** | Rapid response to shocks and crises | Disaster relief payments |
-| **Agricultural Support** | Targeted support for farming households | Input subsidies, crop insurance |
-| **In-Kind Transfers** | Non-cash benefits distributed at service points | Food baskets, school supplies |
+| **Emergency assistance** | Rapid response to shocks and crises | Disaster relief payments |
+| **Agricultural support** | Targeted support for farming households | Input subsidies, crop insurance |
+| **In-kind transfers** | Non-cash benefits distributed at service points | Food baskets, school supplies |
 
-## Key Capabilities
+## Key capabilities
 
-### Program Management
+### Program management
 
 - **Multiple programs** - Run several programs simultaneously with shared or separate beneficiary pools
 - **Program targeting** - Target individuals, households, or groups based on eligibility
 - **Benefit configuration** - Define payment amounts, frequency, and duration
 - **Program lifecycle** - Track enrollment, active, suspended, and graduated beneficiaries
 
-### Eligibility Engine
+### Eligibility engine
 
 SP-MIS uses CEL (Common Expression Language) for powerful, transparent eligibility rules:
 
@@ -67,24 +67,24 @@ group.dependency_ratio > 0.5 && group.vulnerability_score > 3
 ```
 
 - **No-code builder** - Logic Studio provides visual expression construction
-- **Logic Packs** - Reusable expression libraries for common eligibility patterns
+- **Logic packs** - Reusable expression libraries for common eligibility patterns
 - **Transparency** - Rules are visible and auditable, not hidden in code
 
-### Payment Processing
+### Payment processing
 
 - **Cycle management** - Create payment cycles with defined periods
 - **Entitlement calculation** - Automatically compute amounts based on rules
 - **Payment reconciliation** - Track successful, failed, and pending payments
 - **Multiple channels** - Support for bank transfers, mobile money, and manual distribution
 
-### Approval Workflows
+### Approval workflows
 
 - **Multi-level approval** - Configure approval chains by program and action type
 - **Role-based routing** - Automatic routing to appropriate approvers
 - **Audit trail** - Complete history of all approvals and rejections
 - **Delegation** - Temporary approval delegation during absences
 
-### Service Points
+### Service points
 
 For in-kind programs and decentralized distribution:
 
@@ -93,16 +93,16 @@ For in-kind programs and decentralized distribution:
 - **Attendance tracking** - Record beneficiary collection
 - **Stock integration** - Link with inventory for supply planning
 
-## How It Works
+## How it Wwrks
 
 ```{mermaid}
 graph LR
-    A[Create<br/>Program] --> B[Define<br/>Eligibility]
-    B --> C[Enroll<br/>Beneficiaries]
-    C --> D[Create<br/>Cycle]
-    D --> E[Calculate<br/>Entitlements]
-    E --> F[Disburse<br/>Payments]
-    F --> G[Monitor<br/>Outcomes]
+    A[Create<br/>Program] --> B[Define<br/>eligibility]
+    B --> C[Enroll<br/>beneficiaries]
+    C --> D[Create<br/>cycle]
+    D --> E[Calculate<br/>entitlements]
+    E --> F[Disburse<br/>payments]
+    F --> G[Monitor<br/>outcomes]
 ```
 
 1. **Create program** - Define program objectives, target population, and benefit structure
@@ -113,9 +113,9 @@ graph LR
 6. **Disburse payments** - Execute payments through configured channels
 7. **Monitor outcomes** - Track coverage, payment success rates, and program impact
 
-## Security & Access Control
+## Security and access control
 
-| Role | Access Level | Typical Users |
+| Role | Access level | Typical users |
 |------|--------------|---------------|
 | Program Viewer | Read-only access to program data | Auditors, observers |
 | Enrollment Officer | Enroll and manage beneficiaries | Field officers |
@@ -134,13 +134,13 @@ SP-MIS builds on Social Registry and adds program-specific modules:
 - **spp_service_points** - Distribution location management
 - **spp_entitlement** - Entitlement calculation and tracking
 
-## Demo Data
+## Demo data
 
 The `spp_mis_demo_v2` module provides sample data for evaluation:
 
 - **6 programs** with CEL eligibility expressions
 - **12 personas** (8 eligible scenarios + 4 ineligible edge cases)
-- **Logic Pack** with reusable expression variables
+- **Logic pack** with reusable expression variables
 - **11 change request types** with approval workflows
 
 Install with:
@@ -148,7 +148,7 @@ Install with:
 ODOO_INIT_MODULES=spp_mis_demo_v2 docker compose --profile ui up -d
 ```
 
-## Next Steps
+## Next steps
 
 **New to SP-MIS?**
 - {doc}`/get_started/installation/docker` - Install with demo data
@@ -161,13 +161,13 @@ ODOO_INIT_MODULES=spp_mis_demo_v2 docker compose --profile ui up -d
 - {doc}`/learn/concepts/programs` - Program concepts explained
 - {doc}`/learn/concepts/eligibility` - Eligibility and targeting
 
-## Learn More
+## Learn more
 
 - [World Bank SP Delivery Systems Sourcebook](https://openknowledge.worldbank.org/entities/publication/c44dc506-72dd-5428-a088-6fb7aea53095) - Comprehensive SP-MIS guidance
 - [Digital Convergence Initiative](https://spdci.org/) - SP-MIS interoperability standards
 - [socialprotection.org](https://socialprotection.org/) - Global social protection resources
 
-## Alternative Names
+## Alternative names
 
 SP-MIS systems are known by various names globally:
 

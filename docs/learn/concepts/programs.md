@@ -10,7 +10,7 @@ A program defines a social protection intervention—who receives benefits, what
 
 **For:** All audiences
 
-## What is a Program?
+## What is a program?
 
 A program represents a social protection initiative with defined:
 
@@ -22,7 +22,7 @@ A program represents a social protection initiative with defined:
 
 **Examples of programs:**
 
-| Program Type | Target | Benefit | Frequency |
+| Program type | Target | Benefit | Frequency |
 |-------------|--------|---------|-----------|
 | Unconditional cash transfer | Poor households | Fixed monthly payment | Monthly |
 | Child grant | Families with children under 5 | Per-child payment | Quarterly |
@@ -30,7 +30,7 @@ A program represents a social protection initiative with defined:
 | School feeding | Enrolled students | Daily meals | Daily during school |
 | Farmer input subsidy | Smallholder farmers | Seeds and fertilizer | Seasonal |
 
-## Program Structure
+## Program structure
 
 A program connects several components:
 
@@ -52,43 +52,43 @@ graph TD
 | Component | Purpose |
 |-----------|---------|
 | **Program** | Container defining rules and configuration |
-| **Program Memberships** | Links registrants to the program with enrollment status |
+| **Program memberships** | Links registrants to the program with enrollment status |
 | **Cycles** | Time-bound distribution periods (see {doc}`cycles`) |
 | **Entitlements** | Specific benefits calculated for each beneficiary per cycle |
 | **Payments** | Actual disbursements to beneficiaries |
 | **Managers** | Configurable components that control program behavior |
 
-## Program Configuration
+## Program configuration
 
-### Target Type
+### Target type
 
 Programs target either individuals or groups:
 
-| Target Type | Use When | Examples |
+| Target type | Use when | Examples |
 |-------------|----------|----------|
 | **Individual** | Benefits are person-specific | Pensions, scholarships, disability grants |
 | **Group** | Benefits are household-level | Family cash transfers, housing subsidies |
 
 The target type determines which registrants can be enrolled and how entitlements are calculated.
 
-### Program Managers
+### Program managers
 
 Managers are pluggable components that control how the program operates. Each manager type handles a specific aspect of program execution:
 
 | Manager | Purpose | When It Runs |
 |---------|---------|--------------|
-| **Eligibility Manager** | Determines who qualifies for the program | During enrollment and eligibility verification |
-| **Program Manager** | Controls enrollment workflow and cycle creation | When adding beneficiaries or creating cycles |
-| **Cycle Manager** | Manages cycle lifecycle and transitions | During cycle operations |
-| **Entitlement Manager** | Calculates what each beneficiary receives | When preparing entitlements for a cycle |
-| **Deduplication Manager** | Identifies duplicate registrations | Before enrollment or on-demand |
-| **Notification Manager** | Sends messages to beneficiaries | At key program events |
-| **Payment Manager** | Handles payment preparation and disbursement | When processing payments |
-| **Compliance Manager** | Enforces program conditions | During eligibility checks and cycle processing |
+| **Eligibility manager** | Determines who qualifies for the program | During enrollment and eligibility verification |
+| **Program manager** | Controls enrollment workflow and cycle creation | When adding beneficiaries or creating cycles |
+| **Cycle manager** | Manages cycle lifecycle and transitions | During cycle operations |
+| **Entitlement manager** | Calculates what each beneficiary receives | When preparing entitlements for a cycle |
+| **Deduplication manager** | Identifies duplicate registrations | Before enrollment or on-demand |
+| **Notification manager** | Sends messages to beneficiaries | At key program events |
+| **Payment manager** | Handles payment preparation and disbursement | When processing payments |
+| **Compliance manager** | Enforces program conditions | During eligibility checks and cycle processing |
 
 Each manager type has a default implementation that works for most cases. Administrators can configure manager settings or developers can create custom managers for specialized requirements.
 
-## Program Lifecycle
+## Program lifecycle
 
 Programs move through a simple lifecycle:
 
@@ -113,7 +113,7 @@ graph LR
 
 When a program is archived (deactivated), all draft, pending, and approved cycles are automatically cancelled.
 
-## Program Memberships
+## Program memberships
 
 A program membership links a registrant to a program. It tracks:
 
@@ -122,7 +122,7 @@ A program membership links a registrant to a program. It tracks:
 - **Exit date** - When they left the program (if applicable)
 - **Deduplication status** - Whether they've been checked for duplicates
 
-### Membership States
+### Membership states
 
 ```{mermaid}
 graph LR
@@ -157,9 +157,9 @@ graph LR
 | **Not Eligible** | Failed eligibility criteria | Re-evaluate if circumstances change |
 | **Duplicated** | Identified as a duplicate | Resolve and retry |
 
-## Key Program Operations
+## Key program operations
 
-### 1. Import Eligible Registrants
+### 1. Import eligible registrants
 
 Populate the program with registrants who potentially qualify.
 
@@ -173,7 +173,7 @@ Populate the program with registrants who potentially qualify.
 - Expanding program coverage
 - Refreshing the beneficiary pool
 
-### 2. Verify Eligibility
+### 2. Verify eligibility
 
 Check whether current members still qualify.
 
@@ -187,7 +187,7 @@ Check whether current members still qualify.
 - After major data updates
 - For programs with changing criteria
 
-### 3. Enroll Eligible Registrants
+### 3. Enroll eligible registrants
 
 Move verified registrants to enrolled status.
 
@@ -200,7 +200,7 @@ Move verified registrants to enrolled status.
 - After eligibility verification
 - When ready to start benefits
 
-### 4. Deduplicate Beneficiaries
+### 4. Deduplicate beneficiaries
 
 Identify and flag duplicate registrations.
 
@@ -214,7 +214,7 @@ Identify and flag duplicate registrations.
 - Periodically for ongoing programs
 - After data imports
 
-### 5. Create New Cycle
+### 5. Create new cycle
 
 Start a new distribution period.
 
@@ -231,7 +231,7 @@ Start a new distribution period.
 
 Entitlements represent what a beneficiary is entitled to receive in a specific cycle.
 
-### Entitlement Types
+### Entitlement types
 
 | Type | Description | Example |
 |------|-------------|---------|
@@ -239,7 +239,7 @@ Entitlements represent what a beneficiary is entitled to receive in a specific c
 | **In-Kind** | Physical goods | 10kg rice, cooking oil |
 | **Voucher** | Redeemable token | Food voucher worth $30 |
 
-### Entitlement States
+### Entitlement states
 
 | State | Description |
 |-------|-------------|
@@ -252,9 +252,9 @@ Entitlements represent what a beneficiary is entitled to receive in a specific c
 | **Cancelled** | Cancelled before payment |
 | **Expired** | Validity period passed |
 
-### Entitlement Calculation
+### Entitlement calculation
 
-The Entitlement Manager calculates entitlements using:
+The Entitlement manager calculates entitlements using:
 
 - **Fixed amounts** - Same amount for everyone
 - **Formula-based** - Calculated from beneficiary data (household size, number of children, etc.)
@@ -269,13 +269,13 @@ Per elderly member: +$5
 Household with 2 children under 5 and 1 elderly = $30 + $20 + $5 = $55
 ```
 
-## Program Types by Use Case
+## Program types by use case
 
 ### Unconditional Cash Transfer (UCT)
 
 Regular payments without conditions.
 
-| Aspect | Typical Configuration |
+| Aspect | Typical configuration |
 |--------|----------------------|
 | Target | Households below poverty line |
 | Eligibility | Income/asset-based (often PMT score) |
@@ -287,7 +287,7 @@ Regular payments without conditions.
 
 Payments contingent on meeting conditions.
 
-| Aspect | Typical Configuration |
+| Aspect | Typical configuration |
 |--------|----------------------|
 | Target | Households with children or pregnant women |
 | Eligibility | Income-based plus household composition |
@@ -299,7 +299,7 @@ Payments contingent on meeting conditions.
 
 One-time or short-term crisis assistance.
 
-| Aspect | Typical Configuration |
+| Aspect | Typical configuration |
 |--------|----------------------|
 | Target | Disaster-affected households |
 | Eligibility | Geographic targeting, vulnerability assessment |
@@ -311,7 +311,7 @@ One-time or short-term crisis assistance.
 
 Seasonal support for farmers.
 
-| Aspect | Typical Configuration |
+| Aspect | Typical configuration |
 |--------|----------------------|
 | Target | Smallholder farmers |
 | Eligibility | Land size, crop type, vulnerability |
@@ -319,7 +319,7 @@ Seasonal support for farmers.
 | Frequency | Seasonal (planting, harvest) |
 | Compliance | Land registration, crop reporting |
 
-## Data Model Overview
+## Data model overview
 
 ```{mermaid}
 erDiagram
@@ -359,7 +359,7 @@ erDiagram
     REGISTRANT ||--o{ ENTITLEMENT : "receives"
 ```
 
-## Are You Stuck?
+## Are you stuck?
 
 ### How do I add beneficiaries to a program?
 
@@ -404,7 +404,7 @@ When you end a program:
 2. **Manual exit** - Mark individual members as "Exited" with an exit date
 3. **Pause** - Temporarily suspend benefits without exiting
 
-## Next Steps
+## Next steps
 
 **Learn more about concepts:**
 - {doc}`cycles` - Distribution periods within programs

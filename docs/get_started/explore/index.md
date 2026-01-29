@@ -26,7 +26,7 @@ After loading the MIS demo data, you'll have:
 ## Before you start
 
 - OpenSPP should be installed and running (see {doc}`../installation/index`)
-- OpenSPP SPMIS Demo should be installed
+- OpenSPP SPMIS Demo should be installed (see {doc}`../installation/modules.md`)
 - You need administrator access to OpenSPP
 
 ## Load demo data
@@ -59,7 +59,7 @@ The Load MIS Demo wizard opens in a dialog.
 
 ![Screenshot: Wizard opening](/_images/en-us/get_started/explore/cle1_4.png)
 
-### Step 5: Generate demo data
+### 5: Generate demo data
 
 Click **Load Demo Data** to start.
 

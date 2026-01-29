@@ -4,7 +4,7 @@ openspp:
   products: [core]
 ---
 
-# Key Concepts
+# Key concepts
 
 These pages explain the core concepts behind OpenSPP. Understanding these concepts will help you use and configure the platform effectively.
 
@@ -55,6 +55,6 @@ The {doc}`registry` is the central database storing information about people and
 
 {doc}`deduplication` identifies and handles duplicate registrations to prevent fraud and ensure each beneficiary receives benefits only once.
 
-## Change Requests
+## Change requests
 
 {doc}`change-requests` provide a controlled workflow for updating registry data with approval processes, audit trails, and supporting documentation.

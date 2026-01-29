@@ -10,7 +10,7 @@ Payments are the final step in benefit delivery—converting approved entitlemen
 
 **For:** All audiences
 
-## What is a Payment?
+## What is a payment?
 
 A payment is a record of an actual or attempted disbursement:
 
@@ -18,11 +18,11 @@ A payment is a record of an actual or attempted disbursement:
 |-------|-------------|
 | **Entitlement** | The approved benefit being paid |
 | **Beneficiary** | Who receives the payment |
-| **Amount Issued** | The payment amount |
-| **Account Number** | Payment destination |
+| **Amount issued** | The payment amount |
+| **Account number** | Payment destination |
 | **Status** | Paid, failed, or pending |
 
-## Payments vs. Entitlements
+## Payments vs. entitlements
 
 | Concept | Purpose |
 |---------|---------|
@@ -31,7 +31,7 @@ A payment is a record of an actual or attempted disbursement:
 
 One entitlement can have multiple payment attempts (if initial attempts fail) or partial payments.
 
-## Payment Lifecycle
+## Payment lifecycle
 
 ```{mermaid}
 stateDiagram-v2
@@ -49,15 +49,15 @@ stateDiagram-v2
     Failed --> Issued: Retry
 ```
 
-### Payment States
+### Payment states
 
-| State | Description | Next Steps |
+| State | Description | Next steps |
 |-------|-------------|------------|
 | **Issued** | Payment created, ready to send | Send to payment provider |
 | **Sent** | Transmitted to financial service provider | Await confirmation |
 | **Reconciled** | Response received | Check status (paid/failed) |
 
-### Payment Status
+### Payment status
 
 After reconciliation, payments have a final status:
 
@@ -66,7 +66,7 @@ After reconciliation, payments have a final status:
 | **Paid** | Successfully delivered | Complete |
 | **Failed** | Could not be delivered | Investigate and retry |
 
-## Payment Batches
+## Payment batches
 
 Payments are organized into batches for efficient processing:
 
@@ -84,7 +84,7 @@ graph TD
     style FSP fill:#e8f5e9
 ```
 
-### Why Batches?
+### Why batches?
 
 | Benefit | Description |
 |---------|-------------|
@@ -93,15 +93,15 @@ graph TD
 | **Error isolation** | Problems in one batch don't affect others |
 | **Reporting** | Clear statistics per batch |
 
-### Batch Configuration
+### Batch configuration
 
 | Setting | Description |
 |---------|-------------|
-| **Max Batch Size** | Maximum payments per batch (default: 500) |
-| **Batch Tags** | Categories for organizing batches |
+| **Max batch size** | Maximum payments per batch (default: 500) |
+| **Batch tags** | Categories for organizing batches |
 | **Auto-create** | Automatically create batches from entitlements |
 
-### Batch Statistics
+### Batch statistics
 
 Each batch tracks:
 
@@ -115,17 +115,17 @@ Each batch tracks:
 | **Failed transactions** | Unsuccessful payments |
 | **Failed amount** | Value not delivered |
 
-## Payment Flow
+## Payment flow
 
-### 1. Prepare Payments
+### 1. Prepare payments
 
 Convert approved entitlements into payment records:
 
 ```{mermaid}
 graph LR
-    E[Approved<br/>Entitlements] --> P[Prepare<br/>Payments]
-    P --> R[Payment<br/>Records]
-    R --> B[Organize<br/>into Batches]
+    E[Approved<br/>Entitlements] --> P[Prepare<br/>payments]
+    P --> R[Payment<br/>records]
+    R --> B[Organize<br/>into batches]
 
     style E fill:#e3f2fd
     style R fill:#fff3e0
@@ -138,7 +138,7 @@ graph LR
 - Organizes into batches based on configuration
 - Sets initial amount from entitlement
 
-### 2. Send Payments
+### 2. Send payments
 
 Transmit batches to financial service providers:
 
@@ -148,7 +148,7 @@ Transmit batches to financial service providers:
 - State changes from "Issued" to "Sent"
 - External reference numbers are recorded
 
-### 3. Reconcile Payments
+### 3. Reconcile payments
 
 Receive and process payment confirmations:
 
@@ -159,18 +159,18 @@ Receive and process payment confirmations:
 - Entitlement status is updated
 - Statistics are calculated
 
-## Payment Manager
+## Payment manager
 
-The Payment Manager controls how payments are processed:
+The payment manager controls how payments are processed:
 
-| Manager Type | Description |
+| Manager type | Description |
 |-------------|-------------|
 | **Default** | File-based export for manual processing |
-| **Bank Integration** | Direct API to banking systems |
-| **Mobile Money** | Integration with mobile wallet providers |
+| **Bank integration** | Direct API to banking systems |
+| **Mobile money** | Integration with mobile wallet providers |
 | **Custom** | Developer-defined payment logic |
 
-### Manager Configuration
+### Manager configuration
 
 | Setting | Purpose |
 |---------|---------|
@@ -178,11 +178,11 @@ The Payment Manager controls how payments are processed:
 | **Batch tags** | Categorization rules |
 | **Validation rules** | Account validation before sending |
 
-## Payment Methods
+## Payment methods
 
 OpenSPP supports multiple payment channels:
 
-### Bank Transfer
+### Bank transfer
 
 | Aspect | Details |
 |--------|---------|
@@ -190,7 +190,7 @@ OpenSPP supports multiple payment channels:
 | **Processing** | Batch file or API |
 | **Confirmation** | Bank reconciliation file |
 
-### Mobile Money
+### Mobile money
 
 | Aspect | Details |
 |--------|---------|
@@ -198,7 +198,7 @@ OpenSPP supports multiple payment channels:
 | **Processing** | API integration |
 | **Confirmation** | Real-time or webhook |
 
-### Cash Pickup
+### Cash pickup
 
 | Aspect | Details |
 |--------|---------|
@@ -214,9 +214,9 @@ OpenSPP supports multiple payment channels:
 | **Processing** | Voucher printing/digital |
 | **Confirmation** | Merchant redemption |
 
-## Handling Payment Failures
+## Handling payment failures
 
-### Common Failure Reasons
+### Common failure reasons
 
 | Reason | Description | Resolution |
 |--------|-------------|------------|
@@ -226,23 +226,23 @@ OpenSPP supports multiple payment channels:
 | **Insufficient funds** | Program account underfunded | Add funds |
 | **Technical error** | System/network issue | Retry |
 
-### Recovery Process
+### Recovery process
 
 ```{mermaid}
 graph TD
     F[Failed Payment] --> I[Investigate]
-    I --> |Data issue| U[Update Data]
+    I --> |Data issue| U[Update data]
     I --> |Technical| R[Retry]
-    I --> |Permanent| C[Cancel & Create New]
+    I --> |Permanent| C[Cancel & create new]
     U --> R
-    R --> S[Send Again]
-    C --> N[New Entitlement]
+    R --> S[Send again]
+    C --> N[New entitlement]
 
     style F fill:#ffebee
     style S fill:#e8f5e9
 ```
 
-### Retry Workflow
+### Retry workflow
 
 1. **Identify failures** - Filter payments by failed status
 2. **Investigate cause** - Check error messages
@@ -250,9 +250,9 @@ graph TD
 4. **Reset state** - Move payment back to "Issued"
 5. **Retry** - Include in new batch
 
-## Payment Security
+## Payment security
 
-### Data Protection
+### Data protection
 
 | Measure | Purpose |
 |---------|---------|
@@ -260,7 +260,7 @@ graph TD
 | **Access control** | Limit who can process payments |
 | **Audit logging** | Track all payment actions |
 
-### Fraud Prevention
+### Fraud prevention
 
 | Control | Description |
 |---------|-------------|
@@ -271,7 +271,7 @@ graph TD
 
 ## Reporting
 
-### Payment Reports
+### Payment reports
 
 | Report | Contents |
 |--------|----------|
@@ -280,7 +280,7 @@ graph TD
 | **Failure analysis** | Breakdown of failures |
 | **Reconciliation** | Matching with FSP records |
 
-### Key Metrics
+### Key metrics
 
 | Metric | Description |
 |--------|-------------|
@@ -289,7 +289,7 @@ graph TD
 | **Failure rate by type** | Which errors are most common |
 | **Amount disbursed** | Total value delivered |
 
-## Best Practices
+## Best practices
 
 ### Preparation
 
@@ -318,7 +318,7 @@ graph TD
 | **Update beneficiary data** | Reduce future failures |
 | **Report discrepancies** | Catch fraud/errors |
 
-## Are You Stuck?
+## Are you stuck?
 
 ### Why are payments failing?
 
@@ -365,7 +365,7 @@ Payment features only appear for cash entitlement programs. Check:
 - Is the journal configured on the program?
 - Do you have payment manager permissions?
 
-## Next Steps
+## Next steps
 
 **Learn more about concepts:**
 - {doc}`entitlements` - What payments are based on

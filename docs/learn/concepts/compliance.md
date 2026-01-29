@@ -10,29 +10,29 @@ Compliance refers to the conditions that beneficiaries must meet to continue rec
 
 **For:** All audiences
 
-## What is Compliance?
+## What is compliance?
 
 Compliance conditions are requirements that beneficiaries must fulfill to maintain their eligibility or receive their full entitlement. These conditions typically aim to encourage behaviors that improve long-term outcomes.
 
 **Examples of compliance conditions:**
 
-| Condition Type | Example Requirements |
+| Condition type | Example requirements |
 |---------------|---------------------|
 | **Health** | Regular health checkups, vaccination schedules, prenatal visits |
 | **Education** | Minimum school attendance (e.g., 85%), enrollment verification |
 | **Training** | Attendance at family development sessions, skills training |
 | **Documentation** | Submitting required forms, updating registration data |
 
-## Compliance vs. Eligibility
+## Compliance vs. eligibility
 
-| Concept | When Checked | Purpose |
+| Concept | When checked | Purpose |
 |---------|-------------|---------|
 | **Eligibility** | At enrollment and periodically | Determines who qualifies for the program |
 | **Compliance** | Each cycle | Determines if enrolled beneficiaries receive benefits |
 
 Eligibility asks "Should this person be in the program?" while compliance asks "Has this beneficiary met the conditions to receive their payment this cycle?"
 
-## Why Compliance Matters
+## Why compliance matters
 
 Compliance mechanisms serve multiple purposes:
 
@@ -43,11 +43,11 @@ Compliance mechanisms serve multiple purposes:
 | **Program integrity** | Verify ongoing participation and engagement |
 | **Impact measurement** | Track whether beneficiaries are engaging with complementary services |
 
-## How Compliance Works in OpenSPP
+## How compliance works in OpenSPP
 
-### Compliance Manager
+### Compliance manager
 
-The Compliance Manager is a configurable component that checks whether beneficiaries meet program conditions:
+The Compliance manager is a configurable component that checks whether beneficiaries meet program conditions:
 
 ```{mermaid}
 graph LR
@@ -61,7 +61,7 @@ graph LR
     style S fill:#ffebee
 ```
 
-### When Compliance is Checked
+### When compliance is checked
 
 Compliance can be verified at different points:
 
@@ -71,7 +71,7 @@ Compliance can be verified at different points:
 | **When preparing entitlements** | Automated filtering = 2 | Non-compliant beneficiaries don't receive entitlements |
 | **Manual review** | Automated filtering = 0 | Staff manually review compliance status |
 
-### Compliance Workflow
+### Compliance workflow
 
 ```{mermaid}
 graph TD
@@ -98,40 +98,40 @@ graph TD
     style I fill:#fff3e0
 ```
 
-## Types of Compliance Conditions
+## Types of compliance conditions
 
-### Health Compliance
+### Health compliance
 
 Track health-related requirements:
 
-| Requirement | Typical Target | Verification Method |
+| Requirement | Typical target | Verification method |
 |-------------|---------------|---------------------|
 | Prenatal checkups | Pregnant women | Health facility records |
 | Growth monitoring | Children under 5 | Clinic visit records |
 | Vaccination | Children by age | Immunization registry |
 | Health education | All beneficiaries | Session attendance |
 
-### Education Compliance
+### Education compliance
 
 Track school-related requirements:
 
-| Requirement | Typical Target | Verification Method |
+| Requirement | Typical target | Verification method |
 |-------------|---------------|---------------------|
 | School enrollment | School-age children | Enrollment records |
 | Attendance rate | Enrolled students | School attendance records |
 | Grade progression | Students | Report cards |
 
-### Training/Session Compliance
+### Training/session compliance
 
 Track participation in program activities:
 
-| Requirement | Typical Target | Verification Method |
+| Requirement | Typical target | Verification method |
 |-------------|---------------|---------------------|
 | Family development sessions | Household representatives | Attendance sheets |
 | Skills training | Working-age adults | Training records |
 | Community meetings | All beneficiaries | Sign-in logs |
 
-### Attendance-Based Compliance
+### Attendance-based compliance
 
 OpenSPP supports detailed attendance tracking:
 
@@ -142,9 +142,9 @@ OpenSPP supports detailed attendance tracking:
 | **Group membership attendance** | Track attendance by household members |
 | **Cycle-level tracking** | Associate attendance with specific cycles |
 
-## Compliance Data
+## Compliance data
 
-### Compliance Records
+### Compliance records
 
 Each compliance record captures:
 
@@ -157,34 +157,34 @@ Each compliance record captures:
 | **Verification** | How compliance was verified |
 | **Notes** | Additional details or exceptions |
 
-### Compliance Periods
+### Compliance periods
 
 Programs define compliance periods that align with cycles:
 
-| Period Type | Duration | Example |
+| Period type | Duration | Example |
 |------------|----------|---------|
 | **Monthly** | One month | Monthly attendance threshold |
 | **Quarterly** | Three months | Quarterly health checkups |
 | **Semester** | Six months | School semester attendance |
 | **Annual** | One year | Annual re-certification |
 
-## Compliance Outcomes
+## Compliance outcomes
 
-### Full Compliance
+### Full compliance
 
 Beneficiary meets all conditions:
 - Receives full entitlement
 - Continues in program
 - No additional action needed
 
-### Partial Compliance
+### Partial compliance
 
 Beneficiary meets some conditions:
 - May receive reduced payment
 - Warning issued
 - Grace period may apply
 
-### Non-Compliance
+### Non-compliance
 
 Beneficiary fails to meet conditions:
 - Payment may be suspended
@@ -195,18 +195,16 @@ Beneficiary fails to meet conditions:
 
 Some beneficiaries may be exempt from certain conditions:
 
-| Exemption Type | Example |
+| Exemption type | Example |
 |---------------|---------|
 | **Age-based** | Elderly exempt from school attendance |
 | **Health-based** | Disabled exempt from physical activities |
 | **Geographic** | Remote areas with no health facility |
 | **Temporary** | Illness, natural disaster, etc. |
 
-## Common Compliance Programs
+## Common compliance programs
 
 ### Conditional Cash Transfer (CCT)
-
-Programs like Philippines' 4Ps:
 
 | Component | Conditions |
 |-----------|------------|
@@ -214,23 +212,23 @@ Programs like Philippines' 4Ps:
 | **Education grant** | 85% school attendance, enrollment |
 | **Rice subsidy** | Attendance at family development sessions |
 
-### School Feeding
+### School feeding
 
 | Component | Conditions |
 |-----------|------------|
 | **Daily meals** | School attendance on meal days |
 | **Take-home rations** | Monthly attendance threshold |
 
-### Skills Training Programs
+### Skills training programs
 
 | Component | Conditions |
 |-----------|------------|
 | **Training stipend** | Attendance at training sessions |
 | **Completion bonus** | Successful course completion |
 
-## Best Practices
+## Best practices
 
-### Condition Design
+### Condition design
 
 | Practice | Reason |
 |----------|--------|
@@ -257,7 +255,7 @@ Programs like Philippines' 4Ps:
 | **Appeals process** | Allow beneficiaries to contest decisions |
 | **Regular reminders** | Help beneficiaries stay compliant |
 
-## Are You Stuck?
+## Are you stuck?
 
 ### Why aren't beneficiaries being filtered by compliance?
 
@@ -307,7 +305,7 @@ Configure this in the entitlement manager's calculation rules.
 - Compliance trends over cycles
 - Individual compliance history
 
-## Next Steps
+## Next steps
 
 **Learn more about concepts:**
 - {doc}`eligibility` - Initial qualification for programs

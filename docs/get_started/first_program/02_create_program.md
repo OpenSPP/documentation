@@ -229,15 +229,6 @@ You've successfully configured eligibility criteria for your program:
 - **Children Rule**: Families with at least one child under 5 qualify
 - **Combined Logic**: Families must meet BOTH rules to be eligible
 
-Based on the sample data you imported:
-- **Garcia Family**: Not eligible (income 15,000 - too high ❌)
-- **Santos Family**: Eligible (income 8,000 ✓, has child born 2021 ✓)
-- **Cruz Family**: Not eligible (income 12,000 - too high ❌)
-- **Reyes Family**: Eligible (income 6,000 ✓, has child born 2023 ✓)
-- **Ramos Family**: Not eligible (income 18,000 - too high ❌)
-
-**Expected eligible families**: Santos Family and Reyes Family (2 out of 5)
-
 You've successfully allocated funds for your program.
 
 ## Are you stuck?

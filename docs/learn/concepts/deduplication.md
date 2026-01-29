@@ -10,7 +10,7 @@ Deduplication identifies and handles duplicate registrations to ensure program i
 
 **For:** All audiences
 
-## What is Deduplication?
+## What is deduplication?
 
 Deduplication is the process of finding and managing cases where the same person appears multiple times in a program—either directly or through multiple household memberships.
 
@@ -23,9 +23,9 @@ Deduplication is the process of finding and managing cases where the same person
 | **Budget leakage** | Resources go to duplicates instead of eligible people |
 | **Program integrity** | Undermines trust in the system |
 
-## Types of Duplicates
+## Types of duplicates
 
-### Individual in Multiple Groups
+### Individual in multiple groups
 
 The same person registered as a member of multiple households:
 
@@ -44,11 +44,11 @@ graph LR
 - Intentional fraud to receive double benefits
 - Data entry errors creating duplicate records
 
-### Duplicate ID Documents
+### Duplicate ID documents
 
 Different registrations sharing the same ID number:
 
-| Registration | Name | ID Number |
+| Registration | Name | ID number |
 |-------------|------|-----------|
 | Person A | John Smith | ID-12345 |
 | Person B | J. Smith | ID-12345 |
@@ -58,7 +58,7 @@ Different registrations sharing the same ID number:
 - Typos in ID entry
 - Intentional identity fraud
 
-### Duplicate Phone Numbers
+### Duplicate phone numbers
 
 Multiple registrants using the same phone number:
 
@@ -72,34 +72,34 @@ Multiple registrants using the same phone number:
 - Same person registered multiple times
 - Agent's phone used during registration
 
-## How Deduplication Works
+## How deduplication works
 
-### Deduplication Manager
+### Deduplication manager
 
-The Deduplication Manager is a configurable component that checks for duplicates:
+The Deduplication manager is a configurable component that checks for duplicates:
 
 ```{mermaid}
 graph LR
-    B[Program Beneficiaries] --> DM[Deduplication Manager]
+    B[Program beneficiaries] --> DM[Deduplication manager]
     DM --> |Check matching rules| C{Duplicates found?}
-    C --> |Yes| D[Record & Flag]
+    C --> |Yes| D[Record & flag]
     C --> |No| OK[Continue]
-    D --> R[Review & Resolve]
+    D --> R[Review & resolve]
 
     style DM fill:#fff3e0
     style D fill:#ffebee
     style OK fill:#e8f5e9
 ```
 
-### Manager Types
+### Manager types
 
-| Manager | What It Checks | Best For |
+| Manager | What it checks | Best For |
 |---------|---------------|----------|
 | **Default** | Same individual in multiple groups | Group-targeted programs |
-| **ID Document** | Matching ID numbers | Programs requiring ID verification |
-| **Phone Number** | Matching phone numbers | Programs using mobile payments |
+| **ID document** | Matching ID numbers | Programs requiring ID verification |
+| **Phone number** | Matching phone numbers | Programs using mobile payments |
 
-### Deduplication Workflow
+### Deduplication workflow
 
 ```{mermaid}
 graph TD
@@ -125,7 +125,7 @@ graph TD
     style H fill:#e8f5e9
 ```
 
-## Duplicate States
+## Duplicate states
 
 When duplicates are found, program memberships are updated:
 
@@ -134,7 +134,7 @@ When duplicates are found, program memberships are updated:
 | **Enrolled** | Verified beneficiary | Receives benefits |
 | **Duplicated** | Flagged as duplicate | Excluded from benefits until resolved |
 
-### Resolution Logic
+### Resolution logic
 
 When duplicates are detected:
 
@@ -142,9 +142,9 @@ When duplicates are detected:
 2. **If multiple enrolled** → Flag for manual review
 3. **If none enrolled** → Mark all as duplicated for review
 
-## Configuring Deduplication
+## Configuring deduplication
 
-### Program Setup
+### Program setup
 
 Add deduplication managers to your program:
 
@@ -154,11 +154,11 @@ Add deduplication managers to your program:
 | **Supported ID types** | For ID dedup: which document types to check |
 | **Run timing** | When to check (enrollment, cycle, on-demand) |
 
-### ID Document Deduplication
+### ID document deduplication
 
 Configure which ID types to compare:
 
-| ID Type | Check Enabled |
+| ID type | Check enabled |
 |---------|--------------|
 | National ID | Yes |
 | Passport | Yes |
@@ -167,16 +167,16 @@ Configure which ID types to compare:
 
 Only non-expired documents are checked.
 
-## When to Run Deduplication
+## When to run deduplication
 
-| Timing | Use Case |
+| Timing | Use case |
 |--------|----------|
 | **Before enrollment** | Catch duplicates early |
 | **After data import** | Check bulk-imported data |
 | **Periodically** | Ongoing monitoring |
 | **Before payment** | Final verification |
 
-## Duplicate Records
+## Duplicate records
 
 When duplicates are found, a record is created:
 
@@ -187,7 +187,7 @@ When duplicates are found, a record is created:
 | **State** | duplicate, resolved, not_duplicate |
 | **Manager** | Which deduplication manager found it |
 
-## Best Practices
+## Best practices
 
 ### Prevention
 
@@ -215,7 +215,7 @@ When duplicates are found, a record is created:
 | **Documentation** | Record decisions and reasons |
 | **Appeals process** | Allow legitimate cases to be restored |
 
-## Are You Stuck?
+## Are you stuck?
 
 ### Why are duplicates not being detected?
 
@@ -245,7 +245,7 @@ Cross-program deduplication requires checking the registry level, not program le
 
 Yes. Developers can create custom deduplication managers with specific matching logic. The default managers check exact matches; custom managers can implement fuzzy matching, phonetic matching, etc.
 
-## Next Steps
+## Next steps
 
 **Learn more about concepts:**
 - {doc}`programs` - Where deduplication managers are configured
