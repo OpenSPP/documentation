@@ -4,19 +4,19 @@ openspp:
   products: [core]
 ---
 
-# Change Requests
+# Change requests
 
 Change requests provide a controlled workflow for updating data in OpenSPP. Instead of direct edits, changes go through an approval process that ensures data quality, maintains audit trails, and enforces organizational controls.
 
 **For:** All audiences
 
-## What is a Change Request?
+## What is a change request?
 
 A change request is a formal request to modify data that requires review and approval before taking effect. It captures what change is requested, who requested it, supporting documents, and the approval decision.
 
 **Examples:**
 
-| Request Type | What Changes |
+| Request type | What changes |
 |-------------|--------------|
 | Update address | Registrant's location |
 | Correct name | Name spelling or legal name change |
@@ -25,7 +25,7 @@ A change request is a formal request to modify data that requires review and app
 | Remove household member | Person leaving a group |
 | Transfer household | Move member between households |
 
-## Why Use Change Requests?
+## Why use change requests?
 
 | Benefit | Description |
 |---------|-------------|
@@ -36,12 +36,12 @@ A change request is a formal request to modify data that requires review and app
 | **Documentation** | Supporting evidence attached |
 | **Workflow control** | Multi-level approvals when needed |
 
-## Change Request Lifecycle
+## Change request lifecycle
 
 ```{mermaid}
 graph LR
-    Draft -->|Submit| Pending[Under Review]
-    Pending -->|Request changes| Revision[Needs Changes]
+    Draft -->|Submit| Pending[Under review]
+    Pending -->|Request changes| Revision[Needs changes]
     Revision -->|Resubmit| Pending
     Pending -->|Approve| Approved
     Pending -->|Decline| Rejected
@@ -57,60 +57,60 @@ graph LR
 
 ### States
 
-| State | Description | Who Acts |
+| State | Description | Who acts |
 |-------|-------------|----------|
 | **Draft** | Being prepared | Requester |
-| **Under Review** | Submitted for approval | Reviewer/Approver |
-| **Needs Changes** | Sent back for revision | Requester |
+| **Under review** | Submitted for approval | Reviewer/Approver |
+| **Needs changes** | Sent back for revision | Requester |
 | **Approved** | Approved, ready to apply | System or Approver |
 | **Completed** | Changes applied | — |
 | **Declined** | Rejected | — |
 
-## Change Request Structure
+## Change request structure
 
-### Core Information
+### Core information
 
 | Field | Description |
 |-------|-------------|
 | **Reference** | Unique ID (auto-generated) |
-| **Request Type** | What kind of change |
+| **Request type** | What kind of change |
 | **Registrant** | Who the change affects |
 | **Applicant** | Who submitted (may differ from registrant) |
 | **Description** | Explanation of the change |
 
-### Detail Record
+### Detail record
 
 Each request type has specific fields:
 
-**Example: Address Update**
+**Example: Address update**
 
 | Field | Description |
 |-------|-------------|
-| New Street | Updated street address |
-| New City | Updated city |
-| New Area | Updated administrative area |
-| Reason for Move | Why the address changed |
+| New street | Updated street address |
+| New city | Updated city |
+| New area | Updated administrative area |
+| Reason for move | Why the address changed |
 
-**Example: Add Household Member**
+**Example: Add household member**
 
 | Field | Description |
 |-------|-------------|
-| New Member | Person being added |
+| New member | Person being added |
 | Relationship | Relationship to head |
 | Role | Role in household |
 
-### Supporting Documents
+### Supporting documents
 
 Attach evidence to support the request:
 
-| Document Type | Example |
+| Document type | Example |
 |--------------|---------|
 | ID document | Scanned national ID |
 | Proof of address | Utility bill |
 | Legal document | Marriage certificate |
 | Photo | Verification photo |
 
-## Request Types
+## Request types
 
 Request types define what changes are possible and how they're processed:
 
@@ -123,21 +123,21 @@ Request types define what changes are possible and how they're processed:
 | **Required documents** | What evidence is needed |
 | **Required fields** | Mandatory data before submission |
 
-### Common Request Types
+### Common request types
 
 | Type | Target | Changes |
 |------|--------|---------|
-| **Update Personal Info** | Individual | Name, birthdate, gender |
-| **Update Contact** | Both | Phone, email, address |
-| **Add ID Document** | Individual | New ID record |
-| **Add Member** | Group | New household member |
-| **Remove Member** | Group | Remove from household |
-| **Transfer Member** | Group | Move between households |
-| **Update Household** | Group | Household-level data |
+| **Update personal info** | Individual | Name, birthdate, gender |
+| **Update contact** | Both | Phone, email, address |
+| **Add ID document** | Individual | New ID record |
+| **Add member** | Group | New household member |
+| **Remove member** | Group | Remove from household |
+| **Transfer member** | Group | Move between households |
+| **Update household** | Group | Household-level data |
 
-## Approval Workflow
+## Approval workflow
 
-### Single-Level Approval
+### Single-level approval
 
 Simple requests reviewed by one approver:
 
@@ -151,7 +151,7 @@ graph LR
     style D fill:#ffebee
 ```
 
-### Multi-Level Approval
+### Multi-level approval
 
 Sensitive changes require multiple approvals:
 
@@ -165,23 +165,23 @@ graph LR
     style A fill:#e8f5e9
 ```
 
-### Revision Workflow
+### Revision workflow
 
 When changes are needed:
 
 ```{mermaid}
 graph LR
-    P[Under Review] --> |Request revision| R[Needs Changes]
+    P[Under Review] --> |Request revision| R[Needs changes]
     R --> |Update & resubmit| P
 
     style R fill:#fff3e0
 ```
 
-## Conflict Detection
+## Conflict detection
 
 Change requests can detect conflicts with other pending requests:
 
-| Conflict Type | Example |
+| Conflict type | Example |
 |--------------|---------|
 | **Same field** | Two requests updating the same address |
 | **Related data** | Adding member who's being transferred elsewhere |
@@ -191,7 +191,7 @@ Conflicts can be configured to:
 - **Block** - Prevent submission
 - **Warn** - Allow but notify reviewer
 
-## Sources of Change Requests
+## Sources of change requests
 
 | Source | Description |
 |--------|-------------|
@@ -200,9 +200,9 @@ Conflicts can be configured to:
 | **API** | External system submits |
 | **Bulk import** | Batch processing |
 
-## Applying Changes
+## Applying changes
 
-### Automatic Apply
+### Automatic apply
 
 For simple changes, apply immediately on approval:
 
@@ -211,7 +211,7 @@ For simple changes, apply immediately on approval:
 | **Auto-apply enabled** | Changes applied when approved |
 | **Auto-apply disabled** | Separate "Apply" step needed |
 
-### Preview Changes
+### Preview changes
 
 Before applying, preview what will change:
 
@@ -220,11 +220,11 @@ Before applying, preview what will change:
 | Address: 123 Main St | Address: 456 Oak Ave |
 | City: Springfield | City: Shelbyville |
 
-### Apply Strategies
+### Apply strategies
 
 Different request types use different apply logic:
 
-| Strategy | What It Does |
+| Strategy | What it does |
 |----------|--------------|
 | **Update fields** | Modify existing record |
 | **Create record** | Add new related record |
@@ -233,11 +233,11 @@ Different request types use different apply logic:
 | **Remove member** | End group membership |
 | **Transfer** | Move between groups |
 
-## Audit Trail
+## Audit trail
 
 All actions are recorded:
 
-| Event | What's Logged |
+| Event | What's logged |
 |-------|--------------|
 | Created | Who, when, initial data |
 | Submitted | Submission timestamp |
@@ -245,9 +245,9 @@ All actions are recorded:
 | Applied | Applied timestamp, by whom |
 | Revised | What was changed |
 
-## Best Practices
+## Best practices
 
-### For Requesters
+### For requesters
 
 | Practice | Reason |
 |----------|--------|
@@ -256,7 +256,7 @@ All actions are recorded:
 | **Clear description** | Reviewer understands context |
 | **Verify data** | Reduce revision cycles |
 
-### For Reviewers
+### For reviewers
 
 | Practice | Reason |
 |----------|--------|
@@ -265,7 +265,7 @@ All actions are recorded:
 | **Add notes** | Document decision rationale |
 | **Timely review** | Don't create backlogs |
 
-### For Administrators
+### For administrators
 
 | Practice | Reason |
 |----------|--------|
@@ -274,7 +274,7 @@ All actions are recorded:
 | **Required fields** | Ensure complete data |
 | **Train users** | Proper request submission |
 
-## Are You Stuck?
+## Are you stuck?
 
 ### Why can't I submit my change request?
 
@@ -303,7 +303,7 @@ If the request is still "Under Review", ask an administrator to reset it to Draf
 
 Some programs have expedited approval workflows. Contact your supervisor about priority processing. The audit trail will record any expedited approvals.
 
-## Next Steps
+## Next steps
 
 **Learn more about concepts:**
 - {doc}`registry` - Where change requests update data

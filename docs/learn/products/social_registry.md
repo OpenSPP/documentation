@@ -6,7 +6,7 @@ openspp:
 
 # Social Registry
 
-A Social Registry is a centralized database of households and individuals used for identifying, registering, and assessing vulnerable populations. OpenSPP's Social Registry provides the foundation for all social protection programs.
+A social registry is a centralized database of households and individuals used for identifying, registering, and assessing vulnerable populations. OpenSPP's Social Registry provides the foundation for all social protection programs.
 
 **Who is this for:** National governments building population registries, humanitarian organizations managing beneficiary databases, registration agencies needing interoperability with external systems.
 
@@ -21,60 +21,60 @@ When deploying social protection programs, you need to know who is eligible and 
 - **External integration** with CRVS, national ID, and other government systems
 - **Standards-aligned API** for secure data sharing with authorized systems
 
-## Core Workflows
+## Core workflows
 
 | Workflow | Purpose | Key Users |
 |----------|---------|-----------|
 | **Registration** | Collect demographic, socioeconomic, and household data | Registrars, Enumerators |
 | **Deduplication** | Identify and merge duplicate records | Data Managers |
-| **Eligibility Assessment** | Apply criteria to identify eligible populations | Program Managers |
-| **Data Maintenance** | Process updates, corrections, and appeals | Registrars, Validators |
+| **Eligibility assessment** | Apply criteria to identify eligible populations | Program Managers |
+| **Data maintenance** | Process updates, corrections, and appeals | Registrars, Validators |
 
-## Key Capabilities
+## Key capabilities
 
-### Registry Management
+### Registry management
 
 - **Individuals and groups** - Register both individuals and households/groups
 - **Flexible data model** - Custom fields for country-specific requirements
 - **Geographic hierarchy** - Organize by administrative areas (region, district, village)
 - **Document management** - Store and verify identity documents
 
-### Change Request System
+### Change request system
 
 OpenSPP includes 11 change request types for managing data throughout the beneficiary lifecycle:
 
-| Change Request | Purpose |
+| Change request | Purpose |
 |----------------|---------|
-| New Registration | Add new individuals or groups |
-| Add Member | Add members to existing groups |
-| Update Info | Modify demographic or contact data |
-| Update Live Status | Record births, deaths, migrations |
-| Split Group | Divide a household into separate units |
-| Merge Group | Combine multiple households |
-| Assign to Program | Request enrollment in a program |
+| New registration | Add new individuals or groups |
+| Add member | Add members to existing groups |
+| Update info | Modify demographic or contact data |
+| Update live status | Record births, deaths, migrations |
+| Split group | Divide a household into separate units |
+| Merge group | Combine multiple households |
+| Assign to program | Request enrollment in a program |
 
 All changes flow through configurable approval workflows.
 
-### API & Integration
+### API & integration
 
 - **DCI-compliant API** - Standards-aligned integration with Digital Convergence Initiative
 - **CRVS integration** - Connect to civil registration systems (OpenCRVS compatible)
 - **National ID lookup** - Verify identity against national ID databases
 - **Consent management** - Track and enforce data sharing consent
 
-### Search & Filtering
+### Search & filtering
 
 - **CEL expressions** - Build powerful filters using Common Expression Language
 - **Saved searches** - Store and reuse complex search criteria
 - **Bulk operations** - Apply actions to filtered result sets
 
-## How It Works
+## How it works
 
 ```{mermaid}
 graph LR
-    A[Data<br/>Collection] --> B[Validation &<br/>Deduplication]
-    B --> C[Eligibility<br/>Assessment]
-    C --> D[Enroll in<br/>Programs]
+    A[Data<br/>Collection] --> B[Validation &<br/>deduplication]
+    B --> C[Eligibility<br/>assessment]
+    C --> D[Enroll in<br/>programs]
     E[Change<br/>Requests] --> B
 ```
 
@@ -85,14 +85,14 @@ graph LR
 5. **Program enrollment** - Eligible registrants are enrolled in social protection programs
 6. **Ongoing updates** - Change requests maintain data accuracy over time
 
-## Security & Access Control
+## Security and access control
 
-| Role | Access Level | Typical Users |
+| Role | Access level | Typical users |
 |------|--------------|---------------|
-| Registry Viewer | Read-only access to registry data | Coordination staff, auditors |
+| Registry viewer | Read-only access to registry data | Coordination staff, auditors |
 | Registrar | Create and update registrations | Field officers, enumerators |
 | Validator | Approve registrations and changes | Supervisors, data managers |
-| Registry Manager | Full administration and configuration | System administrators |
+| Registry manager | Full administration and configuration | System administrators |
 
 ## Dependencies
 
@@ -106,7 +106,7 @@ Social Registry is the foundation module that other products build upon:
 - **spp_area** - Geographic hierarchy management
 - **spp_consent** - Data sharing consent tracking
 
-## Next Steps
+## Next steps
 
 **New to Social Registry?**
 - {doc}`/get_started/installation/docker` - Install OpenSPP with demo data
@@ -124,11 +124,11 @@ Social Registry is the foundation module that other products build upon:
 - [Digital Convergence Initiative](https://spdci.org/) - Interoperability standards for social protection
 - [GIZ Dynamic Inclusion](https://socialprotection.org/sites/default/files/publications_files/GIZ_DataUpdatingForSocialAssistance_3.pdf) - On-demand registration approaches
 
-## Global Examples
+## Global examples
 
 Social registries are used in over 50 countries:
 
-| Country | Registry | Notable Features |
+| Country | Registry | Notable features |
 |---------|----------|------------------|
 | Brazil | Cadastro Único | Dynamic registration, used by 27+ programs |
 | Pakistan | NSER | National scale, biometric integration |

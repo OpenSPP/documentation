@@ -10,13 +10,13 @@ Eligibility determines who qualifies for a social protection program. It's the s
 
 **For:** All audiences
 
-## What is Eligibility?
+## What is eligibility?
 
 Eligibility criteria define the conditions a registrant must meet to participate in a program. These criteria translate policy decisions into concrete rules that OpenSPP can evaluate automatically.
 
 **Examples of eligibility criteria:**
 
-| Program Type | Eligibility Criteria |
+| Program Type | Eligibility criteria |
 |-------------|---------------------|
 | Old age pension | Age 60 or older |
 | Child grant | Households with children under 5 |
@@ -24,11 +24,11 @@ Eligibility criteria define the conditions a registrant must meet to participate
 | Disability support | Certified disability status |
 | Geographic targeting | Residence in specific districts |
 
-## Why Eligibility Matters
+## Why eligibility matters
 
 Proper eligibility determination ensures:
 
-| Goal | How Eligibility Helps |
+| Goal | How eligibility helps |
 |------|----------------------|
 | **Targeting accuracy** | Benefits reach intended populations |
 | **Fairness** | Consistent rules applied to all |
@@ -36,13 +36,13 @@ Proper eligibility determination ensures:
 | **Efficiency** | Automated filtering reduces manual work |
 | **Budget control** | Predictable beneficiary counts |
 
-## Types of Eligibility Criteria
+## Types of eligibility criteria
 
-### Demographic Criteria
+### Demographic criteria
 
 Based on individual or household characteristics:
 
-| Criterion | Example Rule |
+| Criterion | Example rule |
 |-----------|-------------|
 | **Age** | `age >= 60` (elderly) or `age < 18` (children) |
 | **Gender** | `gender == 'female'` for maternal programs |
@@ -50,39 +50,39 @@ Based on individual or household characteristics:
 | **Household size** | `household_size >= 4` (large families) |
 | **Dependency ratio** | `dependents / working_adults > 2` |
 
-### Economic Criteria
+### Economic criteria
 
 Based on income, assets, or poverty indicators:
 
-| Criterion | Example Rule |
+| Criterion | Example rule |
 |-----------|-------------|
 | **Income** | `monthly_income < poverty_line` |
 | **PMT score** | `pmt_score < 25` (proxy means test) |
 | **Asset ownership** | `owns_land == false` |
 | **Employment** | `employment_status == 'unemployed'` |
 
-### Geographic Criteria
+### Geographic criteria
 
 Based on location:
 
-| Criterion | Example Rule |
+| Criterion | Example rule |
 |-----------|-------------|
 | **Administrative area** | `area_id in target_districts` |
 | **Rural/Urban** | `area_type == 'rural'` |
 | **Disaster zone** | `area_id in affected_areas` |
 
-### Categorical Criteria
+### Categorical criteria
 
 Based on specific conditions or status:
 
-| Criterion | Example Rule |
+| Criterion | Example rule |
 |-----------|-------------|
 | **Orphan status** | `is_orphan == true` |
 | **Refugee status** | `registration_type == 'refugee'` |
 | **School enrollment** | `enrolled_in_school == true` |
 | **Health condition** | `has_chronic_illness == true` |
 
-### Composite Criteria
+### Composite criteria
 
 Combining multiple conditions:
 
@@ -99,7 +99,7 @@ age >= 18 AND age < 60 AND employment_status == 'unemployed'
 
 ## Eligibility in OpenSPP
 
-### How It Works
+### How it works
 
 ```{mermaid}
 graph TD
@@ -120,18 +120,18 @@ graph TD
 3. **Matching registrants** become eligible for enrollment
 4. **Non-matching registrants** are marked as not eligible
 
-### Eligibility Manager
+### Eligibility manager
 
 The Eligibility Manager is a configurable component that controls how eligibility is determined. OpenSPP supports multiple eligibility approaches:
 
-| Manager Type | Description | Best For |
+| Manager type | Description | Best for |
 |-------------|-------------|----------|
 | **Default (Domain-based)** | Uses Odoo domain filters | Simple criteria |
 | **CEL Expression** | Uses Common Expression Language | Complex rules |
 | **Area-based** | Targets specific administrative areas | Geographic targeting |
 | **Custom** | Developer-defined logic | Specialized requirements |
 
-### Domain-Based Eligibility
+### Domain-based eligibility
 
 The default eligibility manager uses Odoo domain syntax:
 
@@ -156,7 +156,7 @@ The default eligibility manager uses Odoo domain syntax:
 - Limited to field comparisons
 - No complex calculations
 
-### CEL-Based Eligibility
+### CEL-based eligibility
 
 For complex criteria, OpenSPP supports CEL (Common Expression Language):
 
@@ -177,7 +177,7 @@ metric('household.pmt_score') < 25
 members.filter(m, age_years(m.birthdate) < 18).size() >= 2
 ```
 
-**CEL Features:**
+**CEL features:**
 
 | Feature | Description | Example |
 |---------|-------------|---------|
@@ -188,19 +188,19 @@ members.filter(m, age_years(m.birthdate) < 18).size() >= 2
 | **`exists()`** | Check if any member matches | `members.exists(m, m.has_disability)` |
 | **`filter()`** | Get members matching condition | `members.filter(m, m.age < 18)` |
 
-### Geographic Targeting
+### Geographic targeting
 
 The area-based eligibility manager simplifies geographic targeting:
 
 | Configuration | Description |
 |--------------|-------------|
-| **Admin Areas** | Select target districts, villages, etc. |
-| **Area Types** | Target by area classification |
-| **Nested Areas** | Include child areas automatically |
+| **Admin areas** | Select target districts, villages, etc. |
+| **Area types** | Target by area classification |
+| **Nested areas** | Include child areas automatically |
 
-## Eligibility Workflow
+## Eligibility workflow
 
-### At Program Level
+### At program level
 
 ```{mermaid}
 stateDiagram-v2
@@ -217,9 +217,9 @@ stateDiagram-v2
 1. **Import** - Find registrants matching criteria from registry
 2. **Draft** - Create draft program memberships
 3. **Verify** - Run eligibility check against current data
-4. **Enrolled/Not Eligible** - Update status based on result
+4. **Enrolled/Not eligible** - Update status based on result
 
-### At Cycle Level
+### At cycle level
 
 Each cycle can also verify eligibility:
 
@@ -232,7 +232,7 @@ This allows for:
 - Adding newly eligible members
 - Updating status based on changed circumstances
 
-## Multiple Eligibility Managers
+## Multiple eligibility managers
 
 A program can have multiple eligibility managers that work together:
 
@@ -252,15 +252,15 @@ Managers are applied in sequence—a registrant must pass all managers to qualif
 
 **Use cases for multiple managers:**
 
-| Scenario | Manager Setup |
+| Scenario | Manager setup |
 |----------|--------------|
 | **Layered targeting** | Area → PMT score → Household composition |
 | **Phased rollout** | Core criteria → Additional filters per phase |
 | **Complex programs** | Different criteria for different benefit components |
 
-## Eligibility Verification
+## Eligibility verification
 
-### When to Verify
+### When to verify
 
 | Timing | Purpose |
 |--------|---------|
@@ -269,7 +269,7 @@ Managers are applied in sequence—a registrant must pass all managers to qualif
 | **After data updates** | Reflect changed circumstances |
 | **On demand** | Manual re-verification |
 
-### Verification Results
+### Verification results
 
 | Result | Meaning | Next Steps |
 |--------|---------|------------|
@@ -277,9 +277,9 @@ Managers are applied in sequence—a registrant must pass all managers to qualif
 | **Fails** | Doesn't meet criteria | Mark as not eligible |
 | **Pending** | Awaiting data | Request missing information |
 
-## Best Practices
+## Best practices
 
-### Designing Eligibility Criteria
+### Designing eligibility criteria
 
 1. **Start simple** - Begin with core targeting criteria
 2. **Be specific** - Clear rules are easier to audit
@@ -287,7 +287,7 @@ Managers are applied in sequence—a registrant must pass all managers to qualif
 4. **Plan for updates** - Circumstances change over time
 5. **Document rationale** - Record why criteria were chosen
 
-### Configuration Tips
+### Configuration tips
 
 | Tip | Reason |
 |-----|--------|
@@ -296,7 +296,7 @@ Managers are applied in sequence—a registrant must pass all managers to qualif
 | **Use progressive refinement** | Add criteria incrementally |
 | **Monitor exclusion rates** | High exclusion may indicate issues |
 
-### Common Pitfalls
+### Common pitfalls
 
 | Pitfall | Solution |
 |---------|----------|
@@ -305,7 +305,7 @@ Managers are applied in sequence—a registrant must pass all managers to qualif
 | **Criteria not updated** | Schedule periodic reviews |
 | **No audit trail** | Log eligibility decisions |
 
-## Are You Stuck?
+## Are you stuck?
 
 ### Why are no registrants matching my criteria?
 
@@ -366,7 +366,7 @@ In domain syntax:
 ['|', ('pmt_score', '=', False), ('pmt_score', '<', 25)]
 ```
 
-## Next Steps
+## Next steps
 
 **Learn more about concepts:**
 - {doc}`programs` - How eligibility connects to programs

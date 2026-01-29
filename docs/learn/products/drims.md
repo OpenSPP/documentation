@@ -10,7 +10,7 @@ DRIMS is OpenSPP's disaster relief inventory management system. It manages the c
 
 **Who is this for:** Humanitarian organizations, government disaster response agencies, UN clusters, and implementing partners coordinating emergency relief operations.
 
-## What DRIMS Does
+## What DRIMS does
 
 When a disaster strikes, relief supplies flow in from multiple donors and must reach affected populations quickly. DRIMS provides:
 
@@ -21,11 +21,11 @@ When a disaster strikes, relief supplies flow in from multiple donors and must r
 - **Stock health monitoring** with automated alerts for low stock and expiring items
 - **{term}`OCHA` {term}`Cluster` coordination** for multi-agency humanitarian response
 
-## Core Workflows
+## Core workflows
 
 DRIMS manages four interconnected workflows:
 
-| Workflow | Purpose | Key Users |
+| Workflow | Purpose | Key users |
 |----------|---------|-----------|
 | **Donations** | Track pledged and received supplies from UN agencies, NGOs, governments, and private donors | Warehouse Staff |
 | **Requests** | Submit and approve relief supply requests from distribution points and field teams | Field Officers, Approvers |
@@ -34,13 +34,13 @@ DRIMS manages four interconnected workflows:
 
 All operations are linked to specific **disaster incidents** to maintain clear accountability and enable incident-specific reporting.
 
-## OCHA Cluster Integration
+## OCHA cluster integration
 
 DRIMS implements the standard [OCHA/{term}`IASC` humanitarian cluster system](https://www.humanitarianresponse.info/en/coordination/clusters) for coordinated disaster response:
 
-| Cluster | Example Supplies |
+| Cluster | Example supplies |
 |---------|------------------|
-| Food Security | Rice, fortified foods, agricultural inputs |
+| Food security | Rice, fortified foods, agricultural inputs |
 | Health | Medical kits, vaccines, PPE |
 | WASH | Water purification tablets, jerry cans, hygiene kits |
 | Shelter | Tents, tarpaulins, blankets, tools |
@@ -53,16 +53,16 @@ Each request and deployed personnel can be tagged with a cluster, enabling:
 - Gap identification across humanitarian sectors
 - **{term}`4W Report`s** (Who does What, Where, When) for coordination meetings
 
-## Key Capabilities
+## Key capabilities
 
-### Inventory Management
+### Inventory management
 
 - **Multi-warehouse support** - Central, regional, and mobile warehouses
 - **Lot tracking** - Batch numbers and expiry dates for perishables
 - **Stock health indicators** - Visual status (critical/warning/good) based on thresholds
 - **Real-time dashboard** - Stock levels, values, and distribution metrics
 
-### Alerts & Monitoring
+### Alerts and monitoring
 
 - **Low stock alerts** - Automatic detection when inventory falls below thresholds
 - **SLA monitoring** - Track request fulfillment against delivery deadlines
@@ -73,10 +73,10 @@ Each request and deployed personnel can be tagged with a cluster, enabling:
 
 DRIMS supports multiple coordination modes for disaster response:
 
-| Mode | Description | Use Case |
+| Mode | Description | Use case |
 |------|-------------|----------|
 | {term}`Lead Agency` | Single agency coordinates all partners | Government-led national response |
-| Cluster System | UN-led sector coordination | Large-scale humanitarian emergencies |
+| Cluster system | UN-led sector coordination | Large-scale humanitarian emergencies |
 | Consortium | NGO-led partner coordination | Multi-NGO regional response |
 | Bilateral | Direct agency-to-agency | Focused bilateral assistance |
 
@@ -105,7 +105,7 @@ Track deployed disaster response staff by:
 - {doc}`/developer_guide/drims/architecture` - DRIMS data model and workflows
 - {doc}`/developer_guide/drims/extending` - Extend with custom functionality
 
-## How It Works
+## How it works
 
 ```{mermaid}
 graph LR
@@ -128,11 +128,11 @@ graph LR
 6. **Proof of delivery** - Field confirmation of receipt
 7. **Returns processing** - Handle damaged, expired, or excess items
 
-## Security & Access Control
+## Security and access control
 
 DRIMS includes role-based access control:
 
-| Role | Access Level | Typical Users |
+| Role | Access level | Typical users |
 |------|--------------|---------------|
 | DRIMS Viewer | Read-only access to all data | Coordination staff, donors |
 | Field Officer | Create requests, confirm deliveries | Distribution point managers |
@@ -151,7 +151,7 @@ DRIMS integrates with other OpenSPP modules:
 - **spp_alerts** - Alert management and notifications
 - **spp_audit** - Complete audit trail of operations
 
-## Next Steps
+## Next steps
 
 **New to DRIMS?** Start with the user guides:
 - {doc}`/user_guide/drims/index` - DRIMS user guide overview
@@ -163,7 +163,7 @@ DRIMS integrates with other OpenSPP modules:
 **Questions?**
 - {doc}`/reference/glossary/humanitarian` - DRIMS terminology and humanitarian terms
 
-## Learn More
+## Learn more
 
 - [OCHA Cluster Coordination](https://www.humanitarianresponse.info/en/coordination/clusters) - UN cluster approach
 - [4W Reporting Guidelines](https://www.humanitarianresponse.info/en/applications/tools/category/4w-who-does-what-where-when) - Humanitarian reporting standards

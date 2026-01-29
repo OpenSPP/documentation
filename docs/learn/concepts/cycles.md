@@ -10,7 +10,7 @@ openspp:
 
 A cycle is a single distribution round within a program—typically a week, month, or quarter during which benefits are calculated and paid out. If a program defines "who gets what," a cycle is when beneficiaries actually receive their entitlements.
 
-## What is a Cycle?
+## What is a cycle?
 
 Think of a cycle as one payment period. For example:
 
@@ -26,7 +26,7 @@ Each cycle has:
 - **State** - Where the cycle is in its lifecycle
 - **Payment batches** - How payments are organized and disbursed
 
-## Relationship Between Programs and Cycles
+## Relationship between programs and cycles
 
 A program can have many cycles, but each cycle belongs to exactly one program.
 
@@ -40,7 +40,7 @@ graph TD
 
 The program defines the rules (eligibility criteria, entitlement formulas, payment methods), while each cycle applies those rules to a specific distribution period.
 
-## Cycle Lifecycle
+## Cycle lifecycle
 
 A cycle moves through several states from creation to completion:
 
@@ -67,20 +67,20 @@ stateDiagram-v2
 
 There's also a **Cancelled** state that can be reached from Draft or To Approve if the cycle needs to be stopped.
 
-### State Descriptions
+### State descriptions
 
-| State | Description | What You Can Do |
+| State | Description | What you can do |
 |-------|-------------|-----------------|
 | **Draft** | Initial state when creating a cycle | Add beneficiaries, prepare entitlements, edit configuration |
-| **To Approve** | Submitted for approval | Review entitlements, approve or reject the cycle |
+| **To approve** | Submitted for approval | Review entitlements, approve or reject the cycle |
 | **Approved** | Cycle is approved and ready | Prepare payments, begin distribution |
 | **Distributed** | Payments have been sent | Monitor payment status, mark as ended when complete |
 | **Ended** | Cycle is complete | View final reports, archive data |
 | **Cancelled** | Cycle was stopped | View records, no further actions |
 
-## Cycle Operations
+## Cycle operations
 
-### 1. Copy Beneficiaries from Program
+### 1. Copy beneficiaries from program
 
 When you start a new cycle, you typically want to include beneficiaries who are already enrolled in the program.
 
@@ -93,7 +93,7 @@ When you start a new cycle, you typically want to include beneficiaries who are 
 - Starting a new cycle for an ongoing program
 - Continuing from previous cycle enrollments
 
-### 2. Check Eligibility
+### 2. Check eligibility
 
 Before finalizing beneficiaries, you may want to verify they still meet eligibility criteria.
 
@@ -107,7 +107,7 @@ Before finalizing beneficiaries, you may want to verify they still meet eligibil
 - When eligibility criteria depend on frequently changing data (income, household size, etc.)
 - For programs with conditional eligibility
 
-### 3. Prepare Entitlements
+### 3. Prepare entitlements
 
 Once beneficiaries are confirmed, you calculate what each beneficiary should receive.
 
@@ -121,7 +121,7 @@ Once beneficiaries are confirmed, you calculate what each beneficiary should rec
 - Before submitting for approval
 - When you need to review what will be distributed
 
-### 4. Submit for Approval
+### 4. Submit for approval
 
 When the cycle is ready, submit it for review and approval.
 
@@ -134,7 +134,7 @@ When the cycle is ready, submit it for review and approval.
 - After beneficiaries are enrolled and entitlements are prepared
 - When you're confident the cycle is configured correctly
 
-### 5. Approve Cycle
+### 5. Approve cycle
 
 Authorized users review and approve the cycle.
 
@@ -148,7 +148,7 @@ Authorized users review and approve the cycle.
 - After reviewing beneficiaries and entitlements
 - When you're ready to proceed with distribution
 
-### 6. Prepare Payments
+### 6. Prepare payments
 
 Convert approved entitlements into payment instructions.
 
@@ -162,7 +162,7 @@ Convert approved entitlements into payment instructions.
 - Before sending payments
 - To review payment details before disbursement
 
-### 7. Send Payments
+### 7. Send payments
 
 Disburse payments to beneficiaries.
 
@@ -175,7 +175,7 @@ Disburse payments to beneficiaries.
 - After payments are prepared and reviewed
 - When you're ready to actually disburse funds
 
-### 8. Mark as Distributed
+### 8. Mark as distributed
 
 Indicate that the distribution is complete.
 
@@ -188,7 +188,7 @@ Indicate that the distribution is complete.
 - After payments have been successfully sent
 - Before final reconciliation
 
-### 9. Mark as Ended
+### 9. Mark as ended
 
 Close the cycle after all activities are complete.
 
@@ -201,9 +201,9 @@ Close the cycle after all activities are complete.
 - After all payments are reconciled
 - When no further actions are needed for this cycle
 
-## Common Cycle Patterns
+## Common cycle patterns
 
-### Monthly Cycles
+### Monthly cycles
 
 Programs that distribute benefits every month.
 
@@ -220,7 +220,7 @@ Programs that distribute benefits every month.
 - Days 16-20: Prepare and send payments
 - Days 21-30: Monitor payments, mark distributed and ended
 
-### Quarterly Cycles
+### Quarterly cycles
 
 Programs that distribute benefits four times per year.
 
@@ -237,7 +237,7 @@ Programs that distribute benefits four times per year.
 - Week 5-6: Prepare and send payments
 - Week 7-12: Monitor payments, mark distributed and ended
 
-### One-Time Cycles
+### One-time cycles
 
 Programs that run a single distribution.
 
@@ -254,7 +254,7 @@ Programs that run a single distribution.
 - Day 6-7: Prepare and send payments
 - Day 8+: Monitor and reconcile payments
 
-### Conditional Cycles
+### Conditional cycles
 
 Programs where cycles only run when conditions are met.
 
@@ -271,11 +271,11 @@ Programs where cycles only run when conditions are met.
 - Fast-track approval process
 - Quick payment distribution
 
-## Multiple Cycles in a Program
+## Multiple cycles in a program
 
 A program typically runs multiple cycles over its lifetime. Here's how they relate:
 
-### Sequential Cycles
+### Sequential cycles
 
 Most common pattern - cycles run one after another.
 
@@ -292,7 +292,7 @@ graph LR
 - Lessons learned from one cycle inform the next
 - Historical data builds up over time
 
-### Overlapping Cycles
+### Overlapping cycles
 
 Some programs have cycles that overlap in preparation.
 
@@ -315,7 +315,7 @@ gantt
 - Requires careful coordination
 - Reduces gaps between distributions
 
-### Parallel Cycles
+### Parallel cycles
 
 Different beneficiary groups may have separate concurrent cycles.
 
@@ -330,7 +330,7 @@ graph TD
 - May have different approval chains
 - Requires careful tracking
 
-## Are You Stuck?
+## Are you stuck?
 
 ### Why can't I edit my cycle?
 
@@ -391,7 +391,7 @@ graph TD
 
 **Note:** You can only cancel Draft or To Approve cycles. Once approved and distributed, cycles cannot be cancelled.
 
-## Next Steps
+## Next steps
 
 **Learn more about concepts:**
 - {doc}`programs` - The parent container for cycles

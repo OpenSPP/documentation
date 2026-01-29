@@ -10,7 +10,7 @@ An entitlement is a specific benefit that a beneficiary is entitled to receive i
 
 **For:** All audiences
 
-## What is an Entitlement?
+## What is an entitlement?
 
 An entitlement is a record that specifies:
 
@@ -28,7 +28,7 @@ An entitlement is a record that specifies:
 | School feeding | Daily meal voucher |
 | Agricultural support | Seeds (5kg) + fertilizer (25kg) |
 
-## Entitlements vs. Benefits
+## Entitlements vs. benefits
 
 | Concept | Meaning |
 |---------|---------|
@@ -37,16 +37,16 @@ An entitlement is a record that specifies:
 
 A benefit is the general definition; an entitlement is the concrete instance for a particular person and time period.
 
-## Entitlement Types
+## Entitlement types
 
-### Cash Entitlements
+### Cash entitlements
 
 Monetary payments to beneficiaries:
 
 | Field | Description |
 |-------|-------------|
-| **Initial Amount** | The calculated payment amount |
-| **Transfer Fee** | Any fees deducted (if applicable) |
+| **Initial amount** | The calculated payment amount |
+| **Transfer fee** | Any fees deducted (if applicable) |
 | **Currency** | Payment currency |
 | **Balance** | Remaining amount (for partial payments) |
 
@@ -56,7 +56,7 @@ Cash entitlements are processed through the payment system and can be delivered 
 - Cash pickup
 - Other payment channels
 
-### In-Kind Entitlements
+### In-kind entitlements
 
 Physical goods or commodities:
 
@@ -64,7 +64,7 @@ Physical goods or commodities:
 |-------|-------------|
 | **Product** | The item to be distributed |
 | **Quantity** | Amount of the product |
-| **Unit of Measure** | How quantity is measured (kg, pieces, etc.) |
+| **Unit of measure** | How quantity is measured (kg, pieces, etc.) |
 | **Warehouse** | Source location for inventory |
 
 In-kind entitlements integrate with inventory management for:
@@ -72,18 +72,18 @@ In-kind entitlements integrate with inventory management for:
 - Distribution planning
 - Delivery confirmation
 
-### Voucher Entitlements
+### Voucher entitlements
 
 Redeemable tokens for goods or services:
 
 | Field | Description |
 |-------|-------------|
-| **Voucher Code** | Unique redemption code |
+| **Voucher code** | Unique redemption code |
 | **Value** | Monetary or item value |
-| **Valid Until** | Expiration date |
-| **Redemption Points** | Where voucher can be used |
+| **Valid until** | Expiration date |
+| **Redemption points** | Where voucher can be used |
 
-## Entitlement Lifecycle
+## Entitlement lifecycle
 
 ```{mermaid}
 stateDiagram-v2
@@ -108,9 +108,9 @@ stateDiagram-v2
     Expired: Expired
 ```
 
-### Entitlement States
+### Entitlement states
 
-| State | Description | Next Steps |
+| State | Description | Next steps |
 |-------|-------------|------------|
 | **Draft** | Created but not submitted | Review, edit, submit for approval |
 | **Pending Approval** | Awaiting approval | Approve or reject |
@@ -121,28 +121,28 @@ stateDiagram-v2
 | **Cancelled** | Manually cancelled | No further action |
 | **Expired** | Validity period passed | May need new entitlement |
 
-### Rejection Reasons
+### Rejection reasons
 
-| Rejection Type | Description |
+| Rejection type | Description |
 |---------------|-------------|
 | **Beneficiary declined** | Recipient didn't want the entitlement |
 | **Account doesn't exist** | Payment account invalid |
 | **Other reason** | Other issues (documented in notes) |
 
-## How Entitlements Are Created
+## How entitlements are created
 
-### The Entitlement Manager
+### The entitlement manager
 
-The Entitlement Manager calculates what each beneficiary receives. OpenSPP supports multiple manager types:
+The entitlement manager calculates what each beneficiary receives. OpenSPP supports multiple manager types:
 
-| Manager Type | Description | Use Case |
+| Manager type | Description | Use Case |
 |-------------|-------------|----------|
 | **Cash** | Fixed or calculated monetary amounts | Cash transfer programs |
-| **In-Kind** | Physical goods from inventory | Food distribution |
+| **In-kind** | Physical goods from inventory | Food distribution |
 | **Default** | Simple fixed amounts | Basic programs |
 | **CEL-based** | Complex calculations using expressions | Variable benefits |
 
-### Entitlement Calculation Flow
+### Entitlement calculation flow
 
 ```{mermaid}
 graph TD
@@ -158,7 +158,7 @@ graph TD
     style EN fill:#e8f5e9
 ```
 
-### Entitlement Items
+### Entitlement items
 
 Entitlement managers can have multiple items with conditions:
 
@@ -175,7 +175,7 @@ Household: 2 children under 5, 1 elderly member
 = $55 total entitlement
 ```
 
-### CEL-Based Calculations
+### CEL-Based calculations
 
 For complex calculations, use CEL expressions:
 
@@ -193,9 +193,9 @@ me.has_disability ? 50.0 : 30.0
 base_amount + (children_under_5 * child_rate) + (is_femaleheaded ? fhh_bonus : 0)
 ```
 
-## Entitlement Approval
+## Entitlement approval
 
-### Why Approval Matters
+### Why approval matters
 
 Approval ensures:
 - Amounts are correctly calculated
@@ -203,7 +203,7 @@ Approval ensures:
 - Budget is available
 - Audit trail exists
 
-### Approval Workflow
+### Approval workflow
 
 ```{mermaid}
 graph LR
@@ -218,16 +218,16 @@ graph LR
     style RJ fill:#ffebee
 ```
 
-### Bulk Approval
+### Bulk approval
 
 For efficiency, entitlements can be approved in bulk:
 - By cycle (approve all in a cycle)
 - By selection (approve selected records)
 - Automatic (if configured, based on rules)
 
-## Entitlement Data
+## Entitlement data
 
-### Key Fields
+### Key fields
 
 | Field | Description |
 |-------|-------------|
@@ -236,27 +236,27 @@ For efficiency, entitlements can be approved in bulk:
 | **Partner** | The beneficiary (registrant) |
 | **Cycle** | The distribution cycle |
 | **Program** | The parent program |
-| **Initial Amount** | Calculated benefit amount |
-| **Valid From/Until** | Validity period |
+| **Initial amount** | Calculated benefit amount |
+| **Valid from/until** | Validity period |
 | **State** | Current lifecycle state |
 
-### Validity Period
+### Validity period
 
 Entitlements have a validity window:
 
 | Field | Purpose |
 |-------|---------|
-| **Valid From** | When entitlement becomes active |
-| **Valid Until** | When entitlement expires |
+| **Valid from** | When entitlement becomes active |
+| **Valid until** | When entitlement expires |
 
 Expired entitlements cannot be paid. The validity period allows for:
 - Delayed payment collection
 - Scheduled distributions
 - Grace periods
 
-## Working with Entitlements
+## Working with entitlements
 
-### Preparing Entitlements
+### Preparing entitlements
 
 From a cycle, click "Prepare Entitlements" to:
 
@@ -265,7 +265,7 @@ From a cycle, click "Prepare Entitlements" to:
 3. Create draft entitlement records
 4. Apply any conditions or formulas
 
-### Reviewing Entitlements
+### Reviewing entitlements
 
 Before approval, review:
 - Total amounts and counts
@@ -273,7 +273,7 @@ Before approval, review:
 - Any flagged issues
 - Budget availability
 
-### Modifying Entitlements
+### Modifying entitlements
 
 In draft state, you can:
 - Adjust amounts manually
@@ -285,9 +285,9 @@ After approval, modifications require:
 - Cancellation and recreation, or
 - Administrative override (if permitted)
 
-## Best Practices
+## Best practices
 
-### Calculation Design
+### Calculation design
 
 | Practice | Reason |
 |----------|--------|
@@ -296,7 +296,7 @@ After approval, modifications require:
 | **Test with sample data** | Verify calculations before bulk creation |
 | **Use standard rates** | Consistency across beneficiaries |
 
-### Approval Process
+### Approval process
 
 | Practice | Reason |
 |----------|--------|
@@ -305,7 +305,7 @@ After approval, modifications require:
 | **Document rejections** | Clear audit trail |
 | **Set appropriate validity** | Match distribution timeline |
 
-### Data Quality
+### Data quality
 
 | Practice | Reason |
 |----------|--------|
@@ -314,7 +314,7 @@ After approval, modifications require:
 | **Validate amounts** | Catch outliers and errors |
 | **Monitor rejection rates** | Identify systematic issues |
 
-## Are You Stuck?
+## Are you stuck?
 
 ### Why are entitlements $0 or missing?
 
@@ -366,7 +366,7 @@ If a beneficiary received partial payment:
 2. Additional payments can be made against the same entitlement
 3. Mark as fully paid when complete
 
-## Next Steps
+## Next steps
 
 **Learn more about concepts:**
 - {doc}`cycles` - Where entitlements are created

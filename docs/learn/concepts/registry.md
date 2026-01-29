@@ -10,7 +10,7 @@ The Registry is the central database that stores information about people and gr
 
 **For:** All audiences
 
-## What is a Registry?
+## What is a registry?
 
 A registry is a structured database of individuals, households, and other groups that may be eligible for social protection programs. Think of it as a comprehensive address book that contains not just names and contact information, but also demographic data, household composition, identification documents, and other information needed to determine program eligibility and deliver benefits.
 
@@ -24,11 +24,11 @@ In social protection systems, registries serve several purposes:
 | **Delivery** | Maintain payment details and contact information for benefit delivery |
 | **Coordination** | Share verified data across multiple programs and agencies |
 
-## Registry vs. Program Enrollment
+## Registry vs. program enrollment
 
 It's important to understand the difference:
 
-| Registry | Program Enrollment |
+| Registry | Program enrollment |
 |----------|-------------------|
 | **Who might be eligible** for programs | **Who is enrolled** in a specific program |
 | **Broader population** (potential beneficiaries) | **Subset** of registry (actual beneficiaries) |
@@ -37,9 +37,9 @@ It's important to understand the difference:
 
 Being in the registry doesn't mean you're receiving benefits - it means your information is available for program staff to assess eligibility and enroll you when appropriate.
 
-## Types of Registries
+## Types of registries
 
-### Social Registry
+### Social registry
 
 A **social registry** (sometimes called a unified registry) serves multiple social protection programs:
 
@@ -49,7 +49,7 @@ A **social registry** (sometimes called a unified registry) serves multiple soci
 - Enables coordination between different ministries and programs
 - Examples: National social registry, poverty database
 
-### Program-Specific Registry
+### Program-specific registry
 
 A **program-specific registry** serves a single program:
 
@@ -60,11 +60,11 @@ A **program-specific registry** serves a single program:
 
 OpenSPP supports both approaches and can operate as either type.
 
-## OpenSPP Registry Products
+## OpenSPP registry products
 
 OpenSPP offers three pre-configured registry solutions for common use cases. All are built on the same core architecture, allowing data sharing when appropriate and a unified view across programs.
 
-### Social Registry
+### Social registry
 
 A unified registry designed to serve multiple social protection programs such as cash transfers, food assistance, and housing subsidies.
 
@@ -80,7 +80,7 @@ A unified registry designed to serve multiple social protection programs such as
 
 See {doc}`/explanation/social_registry` for detailed background on social registry concepts.
 
-### Farmer Registry
+### Farmer registry
 
 A specialized registry for agricultural programs that extends the base registry with farm-specific data.
 
@@ -96,7 +96,7 @@ A specialized registry for agricultural programs that extends the base registry 
 
 See {doc}`/explanation/farmer_registry` for detailed background on farmer registry concepts.
 
-### Disability Registry
+### Disability registry
 
 A registry designed for disability inclusion programs, with data structures aligned to international standards for functional assessment.
 
@@ -114,7 +114,7 @@ OpenSPP can both:
 - **Expose disability data** via DCI-compliant API for other systems to query
 - **Query external disability registries** to check disability status for eligibility determination
 
-## The Two Main Registrant Types
+## The two main registrant types
 
 Every record in the registry is called a **registrant**. There are two types:
 
@@ -122,7 +122,7 @@ Every record in the registry is called a **registrant**. There are two types:
 
 An individual represents a single person with:
 
-**Basic Information:**
+**Basic information:**
 - Full name (given name, family name, other names)
 - Date of birth and age
 - Gender
@@ -133,7 +133,7 @@ An individual represents a single person with:
 - ID numbers
 - Photos and biometric data (if collected)
 
-**Contact Information:**
+**Contact information:**
 - Phone numbers (mobile, landline)
 - Email addresses
 - Physical addresses
@@ -156,22 +156,22 @@ Only collect the data you actually need for your programs. More data means more 
 
 ::::
 
-### Groups (Households)
+### Groups (often households)
 
 A group represents a collection of people - most commonly a **household** - with:
 
-**Group Information:**
+**Group information:**
 - Group name or identifier
 - Group type (household, family, cooperative, etc.)
 - Number of members (can be stored without listing individual members)
 - Registration date
 
-**Membership Details:**
+**Membership details:**
 - Individual members (if tracked)
 - Member roles (head, principal recipient, alternative recipient, etc.)
 - Household composition counts (adults, children, elderly)
 
-**Group-Level Data:**
+**Group-level data:**
 - Location and address (typically shared by all members)
 - Household assets
 - Income sources
@@ -185,7 +185,7 @@ Groups can exist in two forms:
 
 The choice depends on program requirements and privacy considerations.
 
-## Data Model Overview
+## Data model overview
 
 Here's how the registry data is structured:
 
@@ -222,17 +222,17 @@ erDiagram
     GROUP ||--o{ GROUP_MEMBERSHIP : "has"
 ```
 
-## Relationships in the Registry
+## Relationships in the registry
 
-### Group Membership
+### Group membership
 
 Individuals can belong to one or more groups with defined roles:
 
 | Role | Description | Constraint |
 |------|-------------|------------|
 | **Head** | Head of household or group leader | Only one per group |
-| **Principal Recipient** | Primary person who receives benefits | Only one per group |
-| **Alternative Recipient** | Backup recipient if principal unavailable | Can have multiple |
+| **Principal recipient** | Primary person who receives benefits | Only one per group |
+| **Alternative recipient** | Backup recipient if principal unavailable | Can have multiple |
 | **Member** | General member without special role | No limit |
 
 Additional roles can be configured by administrators based on program needs.
@@ -243,23 +243,23 @@ Additional roles can be configured by administrators based on program needs.
 - Membership can have start and end dates to track changes over time
 - Roles determine who can receive payments and make decisions for the group
 
-### Registrant Relations
+### Registrant relations
 
 Beyond group membership, you can define specific relationships between registrants:
 
-**Individual to Individual:**
+**Individual to individual:**
 - Parent/Child
 - Siblings
 - Spouse
 - Guardian/Ward
 - Caretaker
 
-**Group to Group:**
+**Group to group:**
 - Neighboring households
 - Extended family groups
 - Cooperative members
 
-**Individual to Group:**
+**Individual to group:**
 - Social worker assigned to household
 - Teacher assigned to student group
 - Community health worker coverage area
@@ -269,13 +269,13 @@ These relationships help with:
 - Targeting (e.g., "households with elderly members living alone")
 - Service coordination (e.g., "assign case worker to vulnerable families")
 
-## Key Registry Fields
+## Key registry fields
 
 While every deployment can customize fields, these are commonly used:
 
-### Individual Fields
+### Individual fields
 
-| Category | Common Fields |
+| Category | Common fields |
 |----------|---------------|
 | **Identity** | National ID, Voter ID, Birth Certificate, Passport, Social Security Number |
 | **Demographics** | Age, Gender, Marital Status, Education Level, Literacy |
@@ -284,9 +284,9 @@ While every deployment can customize fields, these are commonly used:
 | **Health** | Disability status, Chronic illness, Vaccination status, Health card number |
 | **Location** | Address, Village/Ward, GPS coordinates, Years at residence |
 
-### Group/Household Fields
+### Group / household fields
 
-| Category | Common Fields |
+| Category | Common fields |
 |----------|---------------|
 | **Composition** | Number of members, Adults, Children, Elderly, People with disabilities |
 | **Housing** | House ownership, Type of structure, Sanitation, Water source, Electricity |
@@ -294,13 +294,13 @@ While every deployment can customize fields, these are commonly used:
 | **Economic** | Total household income, Income sources, Employment count |
 | **Vulnerability** | Female-headed household, Child-headed household, Chronic illness in family |
 
-## How Registry Data is Used
+## How registry data is used
 
-### For Eligibility Determination
+### For eligibility determination
 
 Programs use registry data to determine who qualifies:
 
-**Example: Cash Transfer for Poor Households**
+**Example: Cash transfer for poor households**
 
 ```
 Registry data used:
@@ -315,11 +315,11 @@ Eligibility rule:
  lives in target districts"
 ```
 
-### For Benefit Calculation
+### For benefit calculation
 
 Registry data can determine how much beneficiaries receive:
 
-**Example: School Feeding Program**
+**Example: School feeding program**
 
 ```
 Registry data used:
@@ -330,7 +330,7 @@ Entitlement rule:
 "Amount = Number of enrolled children × Daily rate × School days"
 ```
 
-### For Targeting and Outreach
+### For targeting and outreach
 
 Programs can identify and reach specific populations:
 
@@ -338,7 +338,7 @@ Programs can identify and reach specific populations:
 - "List all farmers with less than 2 hectares in drought-affected areas"
 - "Identify elderly people living alone without family support"
 
-### For Deduplication
+### For deduplication
 
 Registry data helps ensure people aren't registered multiple times:
 
@@ -347,11 +347,11 @@ Registry data helps ensure people aren't registered multiple times:
 - Use biometric matching (fingerprints, facial recognition)
 - Verify household composition
 
-## Registry Data Quality
+## Registry data quality
 
 High-quality registry data is essential for effective programs:
 
-| Quality Aspect | What It Means |
+| Quality aspect | What it means |
 |----------------|---------------|
 | **Accuracy** | Data correctly represents reality |
 | **Completeness** | Required fields are filled in |
@@ -367,9 +367,9 @@ Common data quality issues:
 - Inconsistent spelling of names
 - Group membership not updated when people join or leave
 
-## Registry Operations
+## Registry operations
 
-### Data Collection
+### Data collection
 
 Registry data comes from various sources:
 
@@ -381,7 +381,7 @@ Registry data comes from various sources:
 | **Import from other systems** | Data files (CSV, Excel, API) | Integration with existing databases |
 | **Program intake** | Application forms | Program-specific registration |
 
-### Data Updates
+### Data updates
 
 Registry data needs to stay current:
 
@@ -391,7 +391,7 @@ Registry data needs to stay current:
 - **Economic changes** - New employment, change in income, asset acquisition
 - **Periodic re-verification** - Scheduled updates to confirm data accuracy
 
-### Data Security and Privacy
+### Data security and privacy
 
 Registry data is sensitive and must be protected:
 
@@ -408,31 +408,31 @@ Registry data is sensitive and must be protected:
 - Allow people to view and correct their data
 - Set data retention periods and delete old data
 
-## Registry vs. Other OpenSPP Features
+## Registry vs. other OpenSPP features
 
 Understanding what the registry does and doesn't do:
 
-| Feature | Purpose | Relationship to Registry |
+| Feature | Purpose | Relationship to registry |
 |---------|---------|-------------------------|
 | **Registry** | Store individual/household profile data | Foundation for everything |
-| **Event Data** | Record time-based observations (surveys, visits) | Supplements registry with temporal data |
+| **Event data** | Record time-based observations (surveys, visits) | Supplements registry with temporal data |
 | **Programs** | Define benefits and eligibility rules | Use registry data to select beneficiaries |
 | **Cycles** | Single distribution rounds (week, month, quarter) when payments go out | Operate on subsets of registry (enrolled beneficiaries) |
 | **Variables** | Computed values from registry data | Calculate from registry fields (e.g., household size) |
-| **Change Requests** | Workflow for updating registry data | Controlled way to modify registry |
+| **Change requests** | Workflow for updating registry data | Controlled way to modify registry |
 
 **When to use registry fields vs. event data:**
 
-| Use Registry Fields | Use Event Data |
+| Use registry fields | Use event data |
 |-------------------|----------------|
 | Stable personal information (name, birthdate) | Periodic assessments (income verification) |
 | Current status (marital status, address) | Historical records (past visits, surveys) |
 | Identification documents | External system data syncs |
 | One value per person/household | Multiple observations over time |
 
-## Working with the Registry
+## Working with the registry
 
-### As a User (Gov Employee)
+### As a user (for example government employee)
 
 You'll use the registry to:
 
@@ -442,9 +442,9 @@ You'll use the registry to:
 - Verify identity documents
 - Print registration cards
 
-See the User Guide for step-by-step instructions on registering individuals, registering groups, and searching registrants.
+See the **User Guide** for step-by-step instructions on registering individuals, registering groups, and searching registrants.
 
-### As an Implementer (M&E/Technical Staff)
+### As an implementer (Monitoring and evaluation / technical staff)
 
 You'll configure:
 
@@ -455,9 +455,9 @@ You'll configure:
 - Data validation rules
 - Import templates
 
-See the Configuration Guide for setting up custom fields, ID types, and group configuration.
+See the **Configuration guide** for setting up custom fields, ID types, and group configuration.
 
-### As a Developer
+### As a developer
 
 You'll extend the registry with:
 
@@ -467,7 +467,7 @@ You'll extend the registry with:
 - Custom deduplication logic
 - Specialized import/export formats
 
-See the Developer Guide for extending models, custom imports, and external registry integrations.
+See the **Developer guide** for extending models, custom imports, and external registry integrations.
 
 ### As a System Administrator
 
@@ -479,25 +479,25 @@ You'll manage:
 - Encryption and data protection
 - Audit logging and compliance
 
-See the Operations Guide for data encryption, access control, and backup/restore procedures.
+See the **Operations guide** for data encryption, access control, and backup/restore procedures.
 
-## Best Practices
+## Best practices
 
-### Data Collection
+### Data collection
 
 - **Minimize data collection** - Only collect what you'll actually use for programs
 - **Standardize early** - Define consistent field names and formats before collection starts
 - **Plan for updates** - Design processes to keep data current
 - **Train collectors** - Ensure field teams understand why data accuracy matters
 
-### Data Management
+### Data management
 
 - **Regular deduplication** - Check for duplicate registrations frequently
 - **Data quality monitoring** - Track completeness and accuracy metrics
 - **Scheduled updates** - Plan periodic re-verification campaigns
 - **Version control** - Track changes to registry data over time
 
-### Privacy and Security
+### Privacy and security
 
 - **Need-to-know access** - Limit data visibility based on roles
 - **Encrypt sensitive fields** - Protect ID numbers, bank accounts, biometrics
@@ -511,7 +511,7 @@ See the Operations Guide for data encryption, access control, and backup/restore
 - **Consent management** - Track which programs people have consented to share data with
 - **Change detection** - Sync only changed records to external systems
 
-## Are You Stuck?
+## Are you stuck?
 
 **Should I register individuals or households?**
 
@@ -537,7 +537,7 @@ OpenSPP supports CSV/Excel imports and API integration. See the User Guide for i
 
 It depends on your programs. For poverty-targeted programs, annual updates are common. For emergency response, real-time updates may be needed. Balance accuracy needs with data collection costs.
 
-## Next Steps
+## Next steps
 
 **Learn more about concepts:**
 - {doc}`programs` - How programs use registry data

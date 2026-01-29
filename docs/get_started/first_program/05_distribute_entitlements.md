@@ -16,12 +16,11 @@ Understand how to configure generate benefit records for distribution.
 
 - You completed [Step 4: Understanding program cycles](04_run_cycle.md)
 - Your program has cycles with enrolled beneficiaries
-- You need **Program Validator** access
-- Allow 5-10 minutes to complete this step
+- Allow 2-3 minutes to complete this step
 
 ## The scenario
 
-A program has been configured, beneficiaries are enrolled and a cycle has been created. All that is left is now to generate the entitlements.
+A program has been configured, funds are allocated, beneficiaries are enrolled and a cycle has been created. All that is left is now to generate the entitlements.
 
 
 ## Understanding entitlements
@@ -36,29 +35,15 @@ The flow is:
 
 ## Steps
 
-### 1. X
+### 1. Approve the entitlements
 
-Logged in as **Program Validator**, navigate to Programs and open the program **Cash transfer for vulnerable families**.
+1. Navigate to Programs and open the program **Cash transfer for vulnerable families**.
 
-![Program Configuration tab](/_images/en-us/get_started/first_program/05_distribute_entitlements/01-program-configuration.png)
+2. Click on the name of the cycle to enter it. Click on the tab **Entitlements** and note that they have the status **Pending Approval**
 
-### 2. X
+3. Click **Approve Entitlements**. Note that after approval, the only option is to end the cycle.
 
-Click on the name of the cycle to enter it. Click on the tab **Entitlements** and note that they have the status **Pending Approval**
-
-![Program Configuration tab](/_images/en-us/get_started/first_program/05_distribute_entitlements/01-program-configuration.png)
-
-### 3. X
-
-Click **Approve Entitlements**. A message is displayed informing that the entitlements have been approved.
-
-![Program Configuration tab](/_images/en-us/get_started/first_program/05_distribute_entitlements/01-program-configuration.png)
-
-### 4. X
-
-Click on the tab **Entitlements** and note that they have the status **Approved**
-
-![Program Configuration tab](/_images/en-us/get_started/first_program/05_distribute_entitlements/01-program-configuration.png)
+    ![Program Configuration tab](/_images/en-us/get_started/first_program/05_distribute_entitlements/cle10_1.png)
 
 ## What you accomplished
 
@@ -79,24 +64,6 @@ Entitlements and payments work together:
 The payment/distribution phase depends on your OpenSPP configuration and payment provider integrations. This is typically handled by your finance or disbursement team.
 
 ## Are you stuck?
-
-**Can't find the Configuration tab?**
-Make sure you're viewing the program form (not the programs list). Click on your program name to open it, then look for the Configuration tab at the top.
-
-**Don't see the "What Benefits?" section?**
-Scroll down in the Configuration tab. It may be below other configuration sections like "Who?" and "How?".
-
-**Prepare Entitlements button is grayed out?**
-Make sure:
-- The cycle status is **Approved**
-- You've configured the entitlement type (Amount per Cycle should not be $0)
-- There are enrolled beneficiaries in the cycle (check Beneficiaries tab)
-
-**No entitlements generated after clicking Prepare Entitlements?**
-Check the cycle's Beneficiaries tab. If no beneficiaries are enrolled, no entitlements will be created. You may need to enroll beneficiaries first using the **Copy Beneficiaries** button or by importing eligible registrants.
-
-**Wrong amount in generated entitlements?**
-Go back to Configuration tab → "What Benefits?" → gear icon and verify the **Amount per Cycle** field. If you change it, you may need to delete existing entitlements and regenerate them.
 
 **Can't approve entitlements?**
 You need approval permissions. Check with your system administrator if you have the **Entitlement Approver** or **Program Manager** role.

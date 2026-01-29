@@ -74,28 +74,27 @@ Click on the cycle name in the Recent Cycles list to open the cycle dialog. You'
 
 ![Cycle dialog showing Overview tab with cycle details](/_images/en-us/get_started/first_program/04_run_cycle/cle7_5.png)
 
-### 5. View enrolled beneficiaries
-
-Click the **Beneficiaries** tab to see which families are enrolled in this cycle. Each beneficiary shows:
-- Registrant name
-- Enrollment date
-- State (for example, Enrolled)
-
-![Beneficiaries tab showing enrolled registrants](/_images/en-us/get_started/first_program/04_run_cycle/cle7_6.png)
-
-### 6. Prepare entitlements
+### 5. Prepare entitlements
 
 Click the button **Prepare Entitlements**.
 
-![Cycle overview with "Prepare Entitlemnents" button"](/_images/en-us/get_started/first_program/04_run_cycle/cle7_9.png)
+![Cycle overview with "Prepare Entitlements" button"](/_images/en-us/get_started/first_program/04_run_cycle/cle7_9.png)
 
-### 7. Submit entitlements for approval
+Note that this adds the amount under **Financial Summary**.
+
+![Cycle overview with amount](/_images/en-us/get_started/first_program/04_run_cycle/cle7_13.png)
+
+### 6. Submit entitlements for approval
 
 Click the button **Submit for Approval**.
 
 ![Cycle overview with "Submit for Approval" button"](/_images/en-us/get_started/first_program/04_run_cycle/cle7_10.png)
 
-### 8. Understand cycle status progression
+Note that this will verify that the available funds are sufficient for the cycle.
+
+![Cycle overview with amount](/_images/en-us/get_started/first_program/04_run_cycle/cle7_14.png)
+
+### 7. Understand cycle status progression
 
 Look at the status badges at the top of the cycle dialog. A cycle progresses through these statuses:
 
@@ -107,30 +106,12 @@ Look at the status badges at the top of the cycle dialog. A cycle progresses thr
 
 ![Status badges showing Draft → To Approve → Approved → Distributed → Ended](/_images/en-us/get_started/first_program/04_run_cycle/cle7_7.png)
 
-### 9. See an approved cycle example
+### 8. Approve the cycle
 
-Here's what an approved cycle looks like (from demo data):
+Click **Approve Cycle**. Notice that the state of the cycle is now set to **Approved**
 
-![Example of an approved cycle](/_images/en-us/get_started/first_program/04_run_cycle/cle7_8.png)
-
-### 10. Approve the cycle
-
-In order to approve the cycle you must be logged in as a user with the correct permissions.
-
-1. If already logged in, click the top right icon and select **Log out**. Log in to again using Cycle Approver credentials (default: cycle_approver/demo).
-
-2. Click **Programs** and navigate to the previously created program **Cash transfer for vulnerable families**.
-
-
-3. Click **Cycle 1** to enter the cycle.
-
-   ![Cycle overview with "Approve Cycle" button](/_images/en-us/get_started/first_program/04_run_cycle/cle7_11.png)
-   
-4. Click **Approve Cycle**. Notice that the state of the cycle is now set to **Approved**
-
-   ![Approved cycle](/_images/en-us/get_started/first_program/04_run_cycle/cle7_12.png)
+![Approved cycle](/_images/en-us/get_started/first_program/04_run_cycle/cle7_12.png)
   
-5. Click **Close** to return to the program overview.
 
 ## What you accomplished
 

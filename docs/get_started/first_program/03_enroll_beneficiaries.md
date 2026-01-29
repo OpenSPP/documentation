@@ -68,6 +68,15 @@ Go to **Programs** from the main menu and click on **Cash transfer for vulnerabl
 
 You've successfully imported and enrolled eligible beneficiaries into the program.
 
+Based on the sample data you enrolled:
+- **Garcia Family**: Not eligible (income 15,000 - too high ❌)
+- **Santos Family**: Eligible (income 8,000 ✓, has child born 2021 ✓)
+- **Cruz Family**: Not eligible (income 12,000 - too high ❌)
+- **Reyes Family**: Eligible (income 6,000 ✓, has child born 2023 ✓)
+- **Ramos Family**: Not eligible (income 18,000 - too high ❌)
+
+**Expected eligible families**: Santos Family and Reyes Family (2 out of 5)
+
 ## Are you stuck?
 
 **Import Eligible button does nothing?**
