@@ -12,25 +12,25 @@ This guide is for **developers** working with OpenSPP API V2 resources.
 
 OpenSPP API V2 provides five core resources:
 
-| Resource | Description | Endpoint |
-|----------|-------------|----------|
-| Individual | Person in the registry | `/Individual` |
-| Group | Household or other group | `/Group` |
-| Program | Social protection program | `/Program` |
-| ProgramMembership | Enrollment in a program | `/ProgramMembership` |
-| Consent | Data sharing consent | `/Consent` |
+| Resource          | Description               | Endpoint             |
+| ----------------- | ------------------------- | -------------------- |
+| Individual        | Person in the registry    | `/Individual`        |
+| Group             | Household or other group  | `/Group`             |
+| Program           | Social protection program | `/Program`           |
+| ProgramMembership | Enrollment in a program   | `/ProgramMembership` |
+| Consent           | Data sharing consent      | `/Consent`           |
 
 ## Common Patterns
 
 All resources follow consistent REST patterns:
 
-| Operation | HTTP Method | Endpoint |
-|-----------|-------------|----------|
-| Read | GET | `/{Resource}/{identifier}` |
-| Search | GET | `/{Resource}?parameter=value` |
-| Create | POST | `/{Resource}` |
-| Update (full) | PUT | `/{Resource}/{identifier}` |
-| Update (partial) | PATCH | `/{Resource}/{identifier}` |
+| Operation        | HTTP Method | Endpoint                      | Supported Resources                  |
+| ---------------- | ----------- | ----------------------------- | ------------------------------------ |
+| Read             | GET         | `/{Resource}/{identifier}`    | All                                  |
+| Search           | GET         | `/{Resource}?parameter=value` | All                                  |
+| Create           | POST        | `/{Resource}`                 | Individual, Group, ProgramMembership |
+| Update (full)    | PUT         | `/{Resource}/{identifier}`    | Individual, Group                    |
+| Update (partial) | PATCH       | `/{Resource}/{identifier}`    | Group only                           |
 
 ## Individual Resource
 
@@ -137,21 +137,21 @@ Represents a person in the social protection registry.
 
 ### Field Reference
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `resourceType` | string | Yes | Always "Individual" |
-| `identifier` | array | Yes | External identifiers (at least one) |
-| `active` | boolean | No | Whether record is active (default: true) |
-| `name` | object | Yes | Human name |
-| `birthDate` | date | No | Birth date (YYYY-MM-DD) |
-| `birthDateEstimated` | boolean | No | Whether birth date is estimated |
-| `gender` | CodeableConcept | No | Gender (ISO 5218) |
-| `telecom` | array | No | Contact points (phone, email) |
-| `address` | array | No | Physical/postal addresses |
-| `photo` | string | No | Base64-encoded photo |
-| `groupMembership` | array | No | Group/household memberships |
-| `extension` | object | No | Module-specific fields |
-| `meta` | object | No | Resource metadata |
+| Field                | Type            | Required | Description                              |
+| -------------------- | --------------- | -------- | ---------------------------------------- |
+| `resourceType`       | string          | Yes      | Always "Individual"                      |
+| `identifier`         | array           | Yes      | External identifiers (at least one)      |
+| `active`             | boolean         | No       | Whether record is active (default: true) |
+| `name`               | object          | Yes      | Human name                               |
+| `birthDate`          | date            | No       | Birth date (YYYY-MM-DD)                  |
+| `birthDateEstimated` | boolean         | No       | Whether birth date is estimated          |
+| `gender`             | CodeableConcept | No       | Gender (ISO 5218)                        |
+| `telecom`            | array           | No       | Contact points (phone, email)            |
+| `address`            | array           | No       | Physical/postal addresses                |
+| `photo`              | string          | No       | Base64-encoded photo                     |
+| `groupMembership`    | array           | No       | Group/household memberships              |
+| `extension`          | object          | No       | Module-specific fields                   |
+| `meta`               | object          | No       | Resource metadata                        |
 
 ### Operations
 
@@ -164,10 +164,10 @@ Authorization: Bearer TOKEN
 
 **Query Parameters:**
 
-| Parameter | Description |
-|-----------|-------------|
-| `_elements` | Comma-separated fields to include: `identifier,name,birthDate` |
-| `_extensions` | Extensions to include: `farmer,disability` or `*` for all |
+| Parameter     | Description                                                    |
+| ------------- | -------------------------------------------------------------- |
+| `_elements`   | Comma-separated fields to include: `identifier,name,birthDate` |
+| `_extensions` | Extensions to include: `farmer,disability` or `*` for all      |
 
 **Example: Python**
 
@@ -347,13 +347,13 @@ Authorization: Bearer TOKEN
 
 **Search Parameters:**
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `identifier` | token | System\|value |
-| `type` | token | Group type: `household`, `family`, `organization` |
-| `name` | string | Group name (contains) |
-| `member` | reference | Has member: `Individual/{identifier}` |
-| `_lastUpdated` | date | Modified since: `ge2024-01-01` |
+| Parameter      | Type      | Description                                       |
+| -------------- | --------- | ------------------------------------------------- |
+| `identifier`   | token     | System\|value                                     |
+| `type`         | token     | Group type: `household`, `family`, `organization` |
+| `name`         | string    | Group name (contains)                             |
+| `member`       | reference | Has member: `Individual/{identifier}`             |
+| `_lastUpdated` | date      | Modified since: `ge2024-01-01`                    |
 
 **Example: Python**
 
@@ -511,13 +511,13 @@ Represents enrollment of a beneficiary in a program.
 
 ### Status Values
 
-| Status | Description |
-|--------|-------------|
-| `enrolled` | Enrolled but not yet active |
-| `active` | Actively receiving benefits |
-| `suspended` | Temporarily suspended |
+| Status      | Description                    |
+| ----------- | ------------------------------ |
+| `enrolled`  | Enrolled but not yet active    |
+| `active`    | Actively receiving benefits    |
+| `suspended` | Temporarily suspended          |
 | `graduated` | Successfully completed program |
-| `exited` | Left program (see exitReason) |
+| `exited`    | Left program (see exitReason)  |
 
 ### Operations
 
@@ -530,11 +530,11 @@ Authorization: Bearer TOKEN
 
 **Search Parameters:**
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
+| Parameter     | Type      | Description                   |
+| ------------- | --------- | ----------------------------- |
 | `beneficiary` | reference | Individual or Group reference |
-| `program` | reference | Program reference |
-| `status` | token | Enrollment status |
+| `program`     | reference | Program reference             |
+| `status`      | token     | Enrollment status             |
 
 **Example: Python**
 
@@ -663,11 +663,11 @@ All resources include metadata:
 }
 ```
 
-| Field | Description |
-|-------|-------------|
-| `versionId` | Version number for optimistic locking |
-| `lastUpdated` | Last modification timestamp (ISO 8601) |
-| `source` | System that created/modified the resource |
+| Field         | Description                               |
+| ------------- | ----------------------------------------- |
+| `versionId`   | Version number for optimistic locking     |
+| `lastUpdated` | Last modification timestamp (ISO 8601)    |
+| `source`      | System that created/modified the resource |
 
 ### Version Control
 

@@ -45,21 +45,17 @@ When you request a registrant's data:
 
 ## Consent Response Headers
 
-Every API response includes consent status headers:
+API responses include consent status headers:
 
 ```http
 X-Consent-Status: active
-X-Consent-Scope: individual:basic
-X-Consent-Expires: 2025-06-30
-X-Consent-Purpose: service_delivery
+X-Consent-Scope: individual
 ```
 
-| Header | Description |
-|--------|-------------|
-| `X-Consent-Status` | `active`, `no_consent`, `expired`, `scope_mismatch` |
-| `X-Consent-Scope` | Which consent scope applies |
-| `X-Consent-Expires` | When consent expires (ISO 8601 date) |
-| `X-Consent-Purpose` | Purpose for data access |
+| Header             | Description                                                        |
+| ------------------ | ------------------------------------------------------------------ |
+| `X-Consent-Status` | `active`, `no_consent`, `expired`, `legal_basis`, `scope_mismatch` |
+| `X-Consent-Scope`  | Resource type the consent applies to (e.g., `individual`, `group`) |
 
 ## Response Filtering
 
@@ -73,11 +69,11 @@ Authorization: Bearer TOKEN
 ```
 
 Response:
+
 ```http
 HTTP/1.1 200 OK
 X-Consent-Status: active
-X-Consent-Scope: individual:full
-X-Consent-Expires: 2025-06-30
+X-Consent-Scope: individual
 
 {
   "resourceType": "Individual",
@@ -97,8 +93,7 @@ When consent allows only basic information:
 ```http
 HTTP/1.1 200 OK
 X-Consent-Status: active
-X-Consent-Scope: individual:basic
-X-Consent-Expires: 2025-06-30
+X-Consent-Scope: individual
 
 {
   "resourceType": "Individual",
@@ -140,15 +135,13 @@ X-Consent-Status: no_consent
 ```http
 HTTP/1.1 200 OK
 X-Consent-Status: expired
-X-Consent-Expires: 2024-12-31
 
 {
   "resourceType": "Individual",
   "identifier": [...],
   "_consent": {
     "status": "expired",
-    "message": "Consent expired on 2024-12-31",
-    "expiredDate": "2024-12-31"
+    "message": "Consent has expired"
   }
 }
 ```
@@ -157,13 +150,13 @@ X-Consent-Expires: 2024-12-31
 
 Consent is granted at different levels:
 
-| Scope | Fields Included |
-|-------|----------------|
-| `individual:basic` | identifier, name, active |
-| `individual:demographic` | basic + birthDate, gender |
-| `individual:contact` | demographic + telecom, address |
-| `individual:full` | All fields |
-| `individual:custom` | Administrator-defined field list |
+| Scope                    | Fields Included                  |
+| ------------------------ | -------------------------------- |
+| `individual:basic`       | identifier, name, active         |
+| `individual:demographic` | basic + birthDate, gender        |
+| `individual:contact`     | demographic + telecom, address   |
+| `individual:full`        | All fields                       |
+| `individual:custom`      | Administrator-defined field list |
 
 ### Extension Fields
 
@@ -192,13 +185,13 @@ If consent doesn't include the `farmer` extension:
 
 Some API clients operate under **legal basis** that doesn't require individual consent:
 
-| Legal Basis | Example | Consent Required |
-|-------------|---------|------------------|
-| `consent` | Mobile app for beneficiaries | Yes |
-| `legal_obligation` | Tax authority audit | No |
-| `vital_interest` | Emergency health services | No |
-| `public_task` | Government statistical office | No |
-| `contract` | Payment processor | No |
+| Legal Basis        | Example                       | Consent Required |
+| ------------------ | ----------------------------- | ---------------- |
+| `consent`          | Mobile app for beneficiaries  | Yes              |
+| `legal_obligation` | Tax authority audit           | No               |
+| `vital_interest`   | Emergency health services     | No               |
+| `public_task`      | Government statistical office | No               |
+| `contract`         | Payment processor             | No               |
 
 API clients with legal basis bypass consent checks but still respect scope restrictions.
 
@@ -219,12 +212,10 @@ def check_consent_status(identifier, token, base_url):
 
     consent_status = response.headers.get("X-Consent-Status")
     consent_scope = response.headers.get("X-Consent-Scope")
-    consent_expires = response.headers.get("X-Consent-Expires")
 
     return {
         "status": consent_status,
         "scope": consent_scope,
-        "expires": consent_expires,
         "data": response.json()
     }
 
@@ -236,8 +227,7 @@ result = check_consent_status(
 )
 
 if result["status"] == "active":
-    print(f"Consent active until {result['expires']}")
-    print(f"Scope: {result['scope']}")
+    print(f"Consent active, scope: {result['scope']}")
     print(f"Data: {result['data']}")
 elif result["status"] == "no_consent":
     print("No consent on file. Request consent from registrant.")
@@ -251,115 +241,77 @@ else:
 async function checkConsentStatus(identifier, token, baseUrl) {
   const response = await fetch(`${baseUrl}/Individual/${identifier}`, {
     headers: {
-      'Authorization': `Bearer ${token}`
-    }
+      Authorization: `Bearer ${token}`,
+    },
   });
 
-  const consentStatus = response.headers.get('X-Consent-Status');
-  const consentScope = response.headers.get('X-Consent-Scope');
-  const consentExpires = response.headers.get('X-Consent-Expires');
+  const consentStatus = response.headers.get("X-Consent-Status");
+  const consentScope = response.headers.get("X-Consent-Scope");
 
   const data = await response.json();
 
   return {
     status: consentStatus,
     scope: consentScope,
-    expires: consentExpires,
-    data: data
+    data: data,
   };
 }
 
 // Usage
 const result = await checkConsentStatus(
-  'urn:gov:ph:psa:national-id|PH-123456789',
+  "urn:gov:ph:psa:national-id|PH-123456789",
   token,
-  'https://api.openspp.org/api/v2/spp'
+  "https://api.openspp.org/api/v2/spp",
 );
 
-if (result.status === 'active') {
-  console.log(`Consent active until ${result.expires}`);
-  console.log(`Scope: ${result.scope}`);
-} else if (result.status === 'no_consent') {
-  console.log('No consent on file');
+if (result.status === "active") {
+  console.log(`Consent active, scope: ${result.scope}`);
+} else if (result.status === "no_consent") {
+  console.log("No consent on file");
 }
 ```
 
-## Managing Consents via API
+## Consent API Endpoints
 
-### List Consents for a Registrant
+{note}
+Consent records are created and managed through the OpenSPP user interface, not via the API. The API provides read-only access to consent status and supports consent revocation.
 
-**Note:** Requires `consent:read` scope and appropriate permissions.
+### Available Operations
+
+| Operation       | Endpoint                            | Description                   |
+| --------------- | ----------------------------------- | ----------------------------- |
+| Get Status      | `GET /Consent/{id}`                 | Check consent status          |
+| Revoke          | `POST /Consent/{id}/$revoke`        | Revoke consent (GDPR Art 7.3) |
+| Revoke (DELETE) | `DELETE /Consent/{id}`              | Alternative revocation method |
+| Receipt         | `GET /Consent/{id}/$receipt`        | Generate ISO 29184 receipt    |
+| History         | `GET /Consent/{id}/$history`        | View consent version history  |
+| Access Summary  | `GET /Consent/{id}/$access-summary` | View data access logs         |
+
+### Get Consent Status
 
 ```http
-GET /api/v2/spp/Consent?registrant=Individual/urn:gov:ph:psa:national-id|PH-123456789
+GET /api/v2/spp/Consent/{consent-id}
 Authorization: Bearer TOKEN
 ```
 
 Response:
+
 ```json
 {
-  "resourceType": "Bundle",
-  "type": "searchset",
-  "total": 2,
-  "entry": [
+  "consent_id": "550e8400-e29b-41d4-a716-446655440000",
+  "status": "given",
+  "grantee": "Ministry of Agriculture",
+  "effective_date": "2024-01-15",
+  "expiry_date": "2025-06-30",
+  "scopes": [
     {
-      "resource": {
-        "resourceType": "Consent",
-        "status": "active",
-        "registrant": {
-          "reference": "Individual/urn:gov:ph:psa:national-id|PH-123456789"
-        },
-        "grantee": {
-          "reference": "Organization/ministry-of-agriculture",
-          "display": "Ministry of Agriculture"
-        },
-        "scope": [
-          {
-            "resourceType": "individual",
-            "fieldAccess": "full",
-            "includeExtensions": true,
-            "allowedExtensions": ["farmer"]
-          }
-        ],
-        "effectiveDate": "2024-01-15",
-        "expiryDate": "2025-06-30",
-        "purpose": "service_delivery"
-      }
-    }
-  ]
-}
-```
-
-### Create Consent
-
-**Note:** Requires `consent:create` scope. Usually performed by authorized personnel after obtaining consent from registrant.
-
-```http
-POST /api/v2/spp/Consent
-Authorization: Bearer TOKEN
-Content-Type: application/json
-
-{
-  "resourceType": "Consent",
-  "registrant": {
-    "reference": "Individual/urn:gov:ph:psa:national-id|PH-123456789"
-  },
-  "grantee": {
-    "reference": "Organization/ministry-of-agriculture"
-  },
-  "scope": [
-    {
-      "resourceType": "individual",
-      "fieldAccess": "basic",
-      "purpose": "eligibility_verification"
+      "resource_type": "individual",
+      "field_access": "full",
+      "purpose": "service_delivery",
+      "include_extensions": true
     }
   ],
-  "effectiveDate": "2024-11-28",
-  "expiryDate": "2025-11-27",
-  "collectionMethod": "electronic",
-  "evidence": {
-    "description": "Mobile app consent form signed via digital signature"
-  }
+  "legal_basis": null
 }
 ```
 
@@ -376,6 +328,7 @@ Content-Type: application/json
 ```
 
 Response:
+
 ```http
 HTTP/1.1 200 OK
 
@@ -393,44 +346,26 @@ HTTP/1.1 200 OK
 
 ## Consent Collection Methods
 
-When creating consent, specify how it was obtained:
+When consent is created through the OpenSPP UI, the collection method is recorded:
 
-| Method | Description |
-|--------|-------------|
-| `written` | Paper form with signature |
-| `verbal` | Verbal consent (witnessed) |
+| Method       | Description                       |
+| ------------ | --------------------------------- |
+| `written`    | Paper form with signature         |
+| `verbal`     | Verbal consent (witnessed)        |
 | `electronic` | Digital signature, checkbox, etc. |
-| `implied` | Implied by service request |
-
-```json
-{
-  "collectionMethod": "electronic",
-  "evidence": {
-    "description": "Mobile app consent screen",
-    "timestamp": "2024-11-28T10:15:00Z",
-    "ipAddress": "192.168.1.100",
-    "userAgent": "OpenSPP-Mobile/2.1.0 (Android 12)"
-  }
-}
-```
+| `implied`    | Implied by service request        |
 
 ## Purpose Limitation
 
-Consent is purpose-specific:
+Consent is purpose-specific. When created through the UI, administrators specify the purpose:
 
-| Purpose | Description |
-|---------|-------------|
-| `service_delivery` | Delivering program benefits |
+| Purpose                    | Description                  |
+| -------------------------- | ---------------------------- |
+| `service_delivery`         | Delivering program benefits  |
 | `eligibility_verification` | Checking program eligibility |
-| `analytics` | Anonymized statistics |
-| `research` | Academic research |
-| `audit` | Compliance audits |
-
-The API tracks and logs the stated purpose for each access:
-
-```http
-X-Consent-Purpose: eligibility_verification
-```
+| `analytics`                | Anonymized statistics        |
+| `research`                 | Academic research            |
+| `audit`                    | Compliance audits            |
 
 ## Handling Consent Errors
 
@@ -535,21 +470,16 @@ else:
 phone = individual["telecom"][0]["value"]  # May crash
 ```
 
-### 4. Respect Consent Expiration
+### 4. Handle Expired Consent
 
-Track consent expiration and prompt for renewal:
+Check the `X-Consent-Status` header for expiration:
 
 ```python
-consent_expires = response.headers.get("X-Consent-Expires")
+consent_status = response.headers.get("X-Consent-Status")
 
-if consent_expires:
-    from datetime import datetime, timedelta
-    expires_date = datetime.fromisoformat(consent_expires)
-    days_remaining = (expires_date - datetime.now()).days
-
-    if days_remaining < 30:
-        print(f"Warning: Consent expires in {days_remaining} days")
-        # Trigger renewal process
+if consent_status == "expired":
+    print("Warning: Consent has expired. Contact registrant for renewal.")
+    # Limited data will be returned
 ```
 
 ### 5. Document Your Purpose
@@ -569,13 +499,13 @@ logger.info(f"Accessing individual {identifier} for purpose: {PURPOSE}")
 
 ```python
 import requests
-from datetime import datetime, timedelta
 
 class ConsentAwareClient:
     """API client with consent awareness."""
 
     def __init__(self, client_id, client_secret, base_url):
         self.base_url = base_url
+        self.client_id = client_id
         self.token = None  # Implement token management
 
     def get_individual_with_consent(self, identifier):
@@ -587,62 +517,39 @@ class ConsentAwareClient:
         )
         response.raise_for_status()
 
-        # Check consent status
+        # Check consent status from headers
         consent_status = response.headers.get("X-Consent-Status")
-        consent_expires = response.headers.get("X-Consent-Expires")
+        consent_scope = response.headers.get("X-Consent-Scope")
 
         data = response.json()
 
         # Add consent metadata to response
         data["_consentInfo"] = {
             "status": consent_status,
-            "expires": consent_expires,
-            "scope": response.headers.get("X-Consent-Scope"),
-            "purpose": response.headers.get("X-Consent-Purpose")
+            "scope": consent_scope,
         }
 
         # Warn if consent issues
         if consent_status == "no_consent":
             data["_consentInfo"]["warning"] = "No consent on file. Limited data returned."
         elif consent_status == "expired":
-            data["_consentInfo"]["warning"] = f"Consent expired on {consent_expires}"
-        elif consent_status == "active" and consent_expires:
-            expires_date = datetime.fromisoformat(consent_expires)
-            days_remaining = (expires_date - datetime.now()).days
-            if days_remaining < 30:
-                data["_consentInfo"]["warning"] = f"Consent expires in {days_remaining} days"
+            data["_consentInfo"]["warning"] = "Consent has expired. Limited data returned."
 
         return data
 
-    def request_consent(self, registrant_identifier, scope, purpose, expires_days=365):
-        """Request consent creation (requires appropriate permissions)."""
+    def revoke_consent(self, consent_id, reason=None):
+        """Revoke a consent via API."""
         headers = {
             "Authorization": f"Bearer {self.token}",
             "Content-Type": "application/json"
         }
 
-        effective_date = datetime.now().date().isoformat()
-        expiry_date = (datetime.now() + timedelta(days=expires_days)).date().isoformat()
-
-        consent_data = {
-            "resourceType": "Consent",
-            "registrant": {
-                "reference": f"Individual/{registrant_identifier}"
-            },
-            "grantee": {
-                "reference": f"Organization/{self.client_id}"
-            },
-            "scope": [scope],
-            "effectiveDate": effective_date,
-            "expiryDate": expiry_date,
-            "purpose": purpose,
-            "collectionMethod": "electronic"
-        }
+        payload = {"reason": reason} if reason else {}
 
         response = requests.post(
-            f"{self.base_url}/Consent",
+            f"{self.base_url}/Consent/{consent_id}/$revoke",
             headers=headers,
-            json=consent_data
+            json=payload
         )
         response.raise_for_status()
         return response.json()
@@ -662,16 +569,14 @@ individual = client.get_individual_with_consent(
 if individual["_consentInfo"]["status"] == "active":
     print(f"Full data available: {individual['name']['text']}")
 elif individual["_consentInfo"]["status"] == "no_consent":
-    print(f"Limited data. Consider requesting consent.")
-    # Request consent if appropriate
-    # client.request_consent(...)
+    print("Limited data. Consent must be obtained through OpenSPP UI.")
 ```
 
 ## Are You Stuck?
 
 **Getting only identifiers in responses?**
 
-This indicates no consent. Check the `X-Consent-Status` header. If `no_consent`, the registrant needs to provide consent.
+This indicates no consent. Check the `X-Consent-Status` header. If `no_consent`, the registrant needs to provide consent through the OpenSPP user interface.
 
 **How do I know what fields are allowed?**
 
@@ -683,11 +588,11 @@ If your API client has `legal_basis: vital_interest`, consent checks are relaxed
 
 **Consent expired—what now?**
 
-The registrant must renew consent. Use the consent management endpoints to create a new consent record.
+The registrant must renew consent through the OpenSPP user interface. Contact your program administrator.
 
 **Can registrants revoke consent themselves?**
 
-Yes, through the beneficiary portal or mobile app. Your integration should handle `consent:revoked` events gracefully.
+Yes, through the beneficiary portal or mobile app. Your integration should handle revoked consent gracefully (you'll receive limited data).
 
 ## Next Steps
 
