@@ -31,16 +31,52 @@ Cached variable values are stored in `spp.data.value`.
 ### Model Structure
 
 ```python
-class SppDataValue(models.Model):
+class DataValue(models.Model):
     _name = 'spp.data.value'
 
-    variable_id = fields.Many2one('spp.cel.variable')
-    registrant_id = fields.Many2one('res.partner')
-    period_key = fields.Char()  # e.g., "2024-12", "2024-Q4"
-    value_float = fields.Float()
-    value_char = fields.Char()
-    value_bool = fields.Boolean()
-    expires_at = fields.Datetime()
+    # Variable reference
+    variable_name = fields.Char(required=True, index=True)
+    variable_id = fields.Many2one('spp.cel.variable', compute='_compute_variable_id')
+
+    # Subject reference (generic - supports any model)
+    subject_model = fields.Char(required=True, default='res.partner', index=True)
+    subject_id = fields.Integer(required=True, index=True)
+
+    # Time reference
+    period_key = fields.Char(index=True)  # e.g., "current", "2024-12", "2024-Q4"
+    as_of = fields.Datetime()  # Point-in-time for snapshots
+    recorded_at = fields.Datetime(required=True, default=fields.Datetime.now)
+    expires_at = fields.Datetime(index=True)  # TTL expiration
+
+    # Value storage (JSON for flexibility)
+    value_json = fields.Json()  # e.g., {"value": 42} or {"value": 45.2, "confidence": 0.95}
+    value_type = fields.Selection([
+        ('number', 'Number'),
+        ('string', 'Text'),
+        ('boolean', 'Yes/No'),
+        ('json', 'Complex JSON'),
+    ])
+
+    # Source tracking
+    source_type = fields.Selection([
+        ('computed', 'Computed'),
+        ('aggregate', 'Aggregate'),
+        ('external', 'External API'),
+        ('scoring', 'Scoring Model'),
+        ('push', 'API Push'),
+        ('snapshot', 'Manual Snapshot'),
+    ])
+    provider = fields.Char(index=True)  # e.g., 'edu_ministry'
+    params_hash = fields.Char()  # For distinguishing values with different parameters
+
+    # Quality metadata
+    coverage = fields.Float()  # Data completeness (0.0 to 1.0)
+    is_stale = fields.Boolean(compute='_compute_is_stale')
+    error_code = fields.Char()
+    error_message = fields.Text()
+
+    # Audit
+    company_id = fields.Many2one('res.company', required=True)
 ```
 
 ## Variable Caching
@@ -59,7 +95,7 @@ class SppDataValue(models.Model):
 | Field | Purpose |
 |-------|---------|
 | `cache_strategy` | Which caching approach |
-| `cache_ttl_seconds` | TTL expiration time |
+| `cache_ttl_seconds` | TTL expiration time (default: 86400) |
 | `invalidate_on_member_change` | Recompute when members change |
 | `invalidate_on_field_change` | Fields that trigger recompute |
 
@@ -71,7 +107,7 @@ When a variable uses persistent caching (`ttl` or `manual`), the variable resolv
 
 1. Expression references `children_under_5_count`
 2. Variable has `cache_strategy = 'ttl'`
-3. Resolver emits: `metric("children_under_5_count")`
+3. Resolver emits: `metric('children_under_5_count', me)`
 4. At compile time, CEL engine looks up cached value from `spp.data.value`
 
 ### Benefits
@@ -88,11 +124,13 @@ Some workflows precompute cached variables before applying rules.
 
 ```python
 # In cycle_manager_base.py
-def prepare_eligibility_check(self, beneficiaries):
-    # Precompute all cached variables for beneficiaries
-    self.env['spp.data.cache.manager'].precompute_variables(
-        variable_ids=self._get_eligibility_variables(),
-        registrant_ids=beneficiaries.ids
+def _precompute_cycle_cached_variables(self, cycle, beneficiaries):
+    """Precompute all cached variables before eligibility check."""
+    cache_mgr = self.env["spp.data.cache.manager"]
+    result = cache_mgr.precompute_cached_variables(
+        subject_ids=beneficiaries.mapped("partner_id.id"),
+        period_key="current",
+        program_id=cycle.program_id.id,
     )
 ```
 
@@ -103,6 +141,70 @@ def prepare_eligibility_check(self, beneficiaries):
 | Small batch (< 100) | On-demand is fine |
 | Medium batch (100-1000) | Consider precompute |
 | Large batch (> 1000) | Always precompute |
+
+## Cache Manager Methods
+
+The `spp.data.cache.manager` service provides cache lifecycle operations:
+
+### Precomputation
+
+```python
+cache_mgr = env["spp.data.cache.manager"]
+
+# Precompute a single variable
+result = cache_mgr.precompute_variable(
+    variable_name="complex_score",
+    subject_ids=[1, 2, 3, 4, 5],
+    period_key="2024-12",
+    program_id=program.id,  # Optional
+)
+
+# Precompute ALL cached variables
+result = cache_mgr.precompute_cached_variables(
+    subject_ids=[1, 2, 3, 4, 5],
+    period_key="current",
+    program_id=program.id,  # Optional
+    variable_names=["var1", "var2"],  # Optional filter
+)
+```
+
+### Refresh Operations
+
+```python
+# Refresh a specific variable for subjects
+values = cache_mgr.refresh_variable(
+    variable_name="pmt_score",
+    subject_ids=[1, 2, 3],
+    period_key="current",
+)
+
+# Refresh all cached variables for a single subject
+values = cache_mgr.refresh_variables_for_subject(
+    subject_id=123,
+    variable_names=["var1", "var2"],  # Optional, None = all
+    period_key="current",
+)
+
+# Refresh stale cache entries (for cron jobs)
+result = cache_mgr.refresh_stale_cached_variables(
+    max_age_hours=24,
+    batch_size=1000,
+)
+```
+
+### Cache Invalidation
+
+```python
+# Invalidate specific subjects
+count = cache_mgr.invalidate_variable(
+    variable_name="pmt_score",
+    subject_ids=[1, 2, 3],
+    period_key="current",  # Optional
+)
+
+# Invalidate ALL cache entries for a variable
+count = cache_mgr.invalidate_variable("household_size")
+```
 
 ## Period Granularity
 
@@ -142,15 +244,18 @@ Configure on the variable:
 ### Manual Refresh
 
 ```python
-# Refresh specific variable for registrants
-self.env['spp.data.cache.manager'].refresh_variable(
-    variable_id=variable.id,
-    registrant_ids=registrants.ids
+cache_mgr = env["spp.data.cache.manager"]
+
+# Refresh specific variable for subjects
+cache_mgr.refresh_variable(
+    variable_name="children_count",
+    subject_ids=registrants.ids,
 )
 
-# Refresh all cached variables for registrants
-self.env['spp.data.cache.manager'].refresh_all(
-    registrant_ids=registrants.ids
+# Refresh all cached variables for a subject
+cache_mgr.refresh_variables_for_subject(
+    subject_id=123,
+    variable_names=None,  # None = all cacheable variables
 )
 ```
 
@@ -160,6 +265,7 @@ self.env['spp.data.cache.manager'].refresh_all(
 |-----------|----------|
 | Variable model | `spp_cel_domain/models/cel_variable.py` |
 | Resolver (metric emission) | `spp_cel_domain/models/cel_variable_resolver.py` |
+| Value store | `spp_cel_domain/models/data_value.py` |
 | Cache manager | `spp_cel_domain/models/data_evaluator.py` |
 | Cycle precompute hook | `spp_programs/models/managers/cycle_manager_base.py` |
 
