@@ -11,7 +11,7 @@ Welcome to the OpenSPP User Guide. This guide helps government employees and pro
 **Choose your deployment type** to see relevant documentation:
 - **Social Registry** - Registry and change request management
 - **SP-MIS** - Full social protection with programs and payments
-- **DRIMS** - Disaster response inventory management
+- **DRIMS** - Disaster response inventory management *(hidden until ready)*
 
 ## What You'll Find Here
 
@@ -21,7 +21,6 @@ Welcome to the OpenSPP User Guide. This guide helps government employees and pro
 - **Programs** - Program management, enrollment, and eligibility
 - **Payments** - Payment distribution and service points
 - **Approvals** - Reviewing and approving requests and batches
-- **DRIMS** - Disaster Response Inventory Management System
 - **Reference** - Quick reference material and glossary
 
 ```{toctree}
@@ -34,6 +33,5 @@ change_requests/index
 programs/index
 payments/index
 approvals/index
-drims/index
 reference/index
 ```

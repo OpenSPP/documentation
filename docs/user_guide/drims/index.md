@@ -6,6 +6,8 @@ openspp:
     - drims
 ---
 
+:orphan:
+
 # DRIMS User Guide
 
 This guide is for **program staff, warehouse workers, and field officers** who use DRIMS to manage disaster relief supplies.

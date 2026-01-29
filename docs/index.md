@@ -111,7 +111,6 @@ user_guide/change_requests/index
 user_guide/programs/index
 user_guide/payments/index
 user_guide/approvals/index
-user_guide/drims/index
 user_guide/reference/index
 ```
 
