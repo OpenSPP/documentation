@@ -25,9 +25,9 @@ A typical program workflow follows these steps:
 5. **Generate entitlements** for enrolled beneficiaries
 6. **Approve and distribute** benefits
 
-## Key Concepts
+## Key concepts
 
-| Term | What It Means |
+| Term | What it means |
 |------|---------------|
 | **Program** | A social protection intervention (e.g., cash transfer, food assistance) |
 | **Cycle** | A time period during which benefits are calculated and distributed |
@@ -36,7 +36,7 @@ A typical program workflow follows these steps:
 | **Entitlement** | The specific benefit amount a beneficiary receives per cycle |
 | **Beneficiary** | A registrant who is enrolled and receiving benefits |
 
-## Before You Start
+## Before you start
 
 You need one of these access levels:
 
@@ -49,7 +49,7 @@ You need one of these access levels:
 
 If you cannot see the **Programs** menu, contact your administrator.
 
-## In This Section
+## In this section
 
 ```{toctree}
 :maxdepth: 1
@@ -60,7 +60,7 @@ enroll_beneficiaries
 manage_entitlements
 ```
 
-## Are You Stuck?
+## Are you stuck?
 
 **Cannot find the Programs menu?**
 You may not have the required access. Contact your administrator to request Program Viewer or Program Officer access.
@@ -71,7 +71,7 @@ Use the search bar or filters. You may only see programs assigned to your compan
 **Program shows as "Ended"?**
 Ended programs are read-only. Contact a Program Manager if the program needs to be reactivated.
 
-## Next Steps
+## Next steps
 
 - {doc}`understanding_programs` - Learn how programs, cycles, and entitlements work together
 - {doc}`enroll_beneficiaries` - Add registrants to a program

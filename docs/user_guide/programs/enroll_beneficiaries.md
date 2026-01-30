@@ -6,34 +6,34 @@ openspp:
     - sp_mis
 ---
 
-# Enroll Beneficiaries
+# Enroll beneficiaries
 
 **Applies to:** SP-MIS
 
-## What You Will Do
+## What you will do
 
 Learn how to add registrants to a program and verify their eligibility.
 
-## Before You Start
+## Before you start
 
 - You need **Program manager**, **Program validator**, or **Administrator** roles assigned to your user account.
 - Registrants must already exist in the Registry
 
-## Understanding Enrollment
+## Understanding enrollment
 
 Enrollment adds registrants to a program as beneficiaries. There are three ways to enroll:
 
-| Method | Best For | How It Works |
+| Method | Best for | How it works |
 |--------|----------|--------------|
 | **Import Eligible** | Large-scale enrollment | System finds all registrants matching eligibility rules |
 | **Enroll Eligible** | Verifying and activating | Moves imported registrants from Draft to Enrolled |
 | **Individual Enrollment** | Single registrants | Enroll one registrant from their profile |
 
 ```{note}
-**Large-Scale Operations**: When importing or enrolling 1,000 or more beneficiaries, the system processes these operations in the background to ensure performance. The program will be temporarily locked during processing, and you'll receive notifications when operations start and complete.
+**Large-scale operations**: When importing or enrolling 1,000 or more beneficiaries, the system processes these operations in the background to ensure performance. The program will be temporarily locked during processing, and you'll receive notifications when operations start and complete.
 ```
 
-## Enrollment States
+## Enrollment states
 
 Beneficiaries progress through these states:
 
@@ -46,17 +46,17 @@ Beneficiaries progress through these states:
 | **Not Eligible** | Does not meet eligibility criteria |
 | **Duplicated** | Flagged as a duplicate record |
 
-## Method 1: Import and Enroll Eligible Registrants
+## Method 1: Import and enroll eligible registrants
 
 This is the standard workflow for enrolling multiple registrants.
 
-### Step 1: Open the Program
+### Step 1: Open the program
 
 1. Click **Programs** > **Programs** in the main menu.
 
 2. Click on the program where you want to enroll beneficiaries.
 
-### Step 2: Import Eligible Registrants
+### Step 2: Import eligible registrants
 
 1. Click the **Import Eligible** button.
 
@@ -67,14 +67,14 @@ This is the standard workflow for enrolling multiple registrants.
    ![Import notification](/_images/en-us/programs/enroll/02-import-notification-showing-registrants-found.png)
 
    ```{note}
-   **Large-Scale Imports**: If importing 1,000 or more beneficiaries, the system processes the import in the background. You'll see a warning notification saying "Started importing X beneficiaries" instead of an immediate success message. The program will be locked during the import process, and you'll receive a notification when the import completes.
+   **Large-scale imports**: If importing 1,000 or more beneficiaries, the system processes the import in the background. You'll see a warning notification saying "Started importing X beneficiaries" instead of an immediate success message. The program will be locked during the import process, and you'll receive a notification when the import completes.
    ```
 
 3. The imported registrants appear in the **Beneficiaries** tab with **Draft** status.
 
    ![Draft beneficiaries](/_images/en-us/programs/enroll/03-beneficiaries-tab.png)
 
-### Step 3: Enroll Eligible Registrants
+### Step 3: Enroll eligible registrants
 
 1. Click the **Enroll Eligible** button.
 
@@ -90,14 +90,14 @@ This is the standard workflow for enrolling multiple registrants.
    ![Enrollment notification](/_images/en-us/programs/enroll/05-enrollment-notification.png)
 
    ```{important}
-   **Background Processing**: For large-scale enrollment (1,000+ beneficiaries), the program will be locked during processing. You'll see a lock indicator and the reason "Eligibility check of beneficiaries". Wait for the process to complete - you'll receive a notification when finished.
+   **Background processing**: For large-scale enrollment (1,000+ beneficiaries), the program will be locked during processing. You'll see a lock indicator and the reason "Eligibility check of beneficiaries". Wait for the process to complete - you'll receive a notification when finished.
    ```
 
 4. Successfully enrolled registrants now show **Enrolled** status.
 
    ![Enrolled beneficiaries](/_images/en-us/programs/enroll/06-beneficiaries-tab-showing-enrolled-status.png)
 
-### Step 4: Review Results
+### Step 4: Review results
 
 Check the **Beneficiaries** tab to see:
 
@@ -105,11 +105,11 @@ Check the **Beneficiaries** tab to see:
 - **Not Eligible** - Did not meet eligibility criteria
 - **Duplicated** - Flagged as potential duplicate
 
-## Method 2: Enroll Individual Registrant
+## Method 2: Enroll individual registrant
 
 Enroll a single registrant directly from their profile.
 
-### Step 1: Open the Registrant
+### Step 1: Open the registrant
 
 1. Go to **Registry** and find the registrant you want to enroll.
 
@@ -123,7 +123,7 @@ Enroll a single registrant directly from their profile.
 
 2. A wizard opens.
 
-### Step 3: Select the Program
+### Step 3: Select the program
 
 1. Select the program from the dropdown.
 
@@ -133,7 +133,7 @@ Enroll a single registrant directly from their profile.
 
 2. Click **Enroll**.
 
-### Step 4: Verify Enrollment
+### Step 4: Verify enrollment
 
 1. A notification confirms the enrollment.
 
@@ -141,7 +141,7 @@ Enroll a single registrant directly from their profile.
 
 2. The enrollment appears in the registrant's **Program Enrollments** section.
 
-## Verify Eligibility
+## Verify eligibility
 
 Re-check eligibility for beneficiaries who are currently **Enrolled** or **Not Eligible** (useful when registry data changes or eligibility rules are updated):
 
@@ -156,12 +156,12 @@ Re-check eligibility for beneficiaries who are currently **Enrolled** or **Not E
 4. Beneficiaries who no longer qualify are marked as **Not Eligible**. Beneficiaries who now qualify (previously marked as Not Eligible) are moved to **Enrolled** status.
 
    ```{note}
-   **Large-Scale Verification**: If verifying 1,000 or more beneficiaries, the process runs in the background. The program will be locked during verification, and you'll receive a notification when complete.
+   **Large-scale verification**: If verifying 1,000 or more beneficiaries, the process runs in the background. The program will be locked during verification, and you'll receive a notification when complete.
    ```
 
-## View Beneficiary Details
+## View beneficiary details
 
-### From the Program
+### From the program
 
 1. Open the program.
 
@@ -171,7 +171,7 @@ Re-check eligibility for beneficiaries who are currently **Enrolled** or **Not E
 
    ![Beneficiaries view](/_images/en-us/programs/enroll/11-beneficiaries-view-from-smart-button-or-tab.png)
 
-### Beneficiary Information
+### Beneficiary information
 
 | Field | Description |
 |-------|-------------|
@@ -183,9 +183,9 @@ Re-check eligibility for beneficiaries who are currently **Enrolled** or **Not E
 
    ![Beneficiaries view](/_images/en-us/programs/enroll/16-beneficiary-details.png)
 
-## Manage Beneficiary Status
+## Manage beneficiary status
 
-### Pause a Beneficiary
+### Pause a beneficiary
 
 Temporarily suspend a beneficiary without removing them:
 
@@ -197,7 +197,7 @@ Temporarily suspend a beneficiary without removing them:
 
 3. The status changes to **Paused**. They will not receive benefits until resumed.
 
-### Resume a Beneficiary
+### Resume a beneficiary
 
 Reactivate a paused beneficiary:
 
@@ -207,7 +207,7 @@ Reactivate a paused beneficiary:
 
 3. The status changes back to **Enrolled**.
 
-### Exit a Beneficiary
+### Exit a beneficiary
 
 Permanently remove a beneficiary from the program:
 
@@ -221,7 +221,7 @@ Permanently remove a beneficiary from the program:
 
 4. Exited beneficiaries cannot be resumed. To re-enroll, create a new enrollment.
 
-## Deduplicate Beneficiaries
+## Deduplicate beneficiaries
 
 Find and flag potential duplicate enrollments:
 
@@ -239,7 +239,7 @@ Find and flag potential duplicate enrollments:
 
    ![Duplicates button](/_images/en-us/programs/enroll/15-duplicates-smart-button-for-viewing-duplicate.png)
 
-## Are You Stuck?
+## Are you stuck?
 
 **Import Eligible button does nothing?**
 - The program may not have an eligibility manager configured
@@ -275,7 +275,7 @@ Find and flag potential duplicate enrollments:
 - Individual registrants can only enroll in individual-targeted programs
 - Group registrants can only enroll in group-targeted programs
 
-## Next Steps
+## Next steps
 
 - {doc}`program_cycles` - Create cycles to distribute benefits
 - {doc}`manage_entitlements` - View entitlements for enrolled beneficiaries

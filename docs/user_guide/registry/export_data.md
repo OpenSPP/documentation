@@ -7,20 +7,20 @@ openspp:
     - sp_mis
 ---
 
-# Export Registrant Data
+# Export registrant data
 
 **Applies to:** Social Registry, SP-MIS
 
-## What You Will Do
+## What you will do
 
 Export registrant data from OpenSPP to CSV or Excel files for analysis, backup, or preparing data updates.
 
-## Before You Start
+## Before you start
 
 - You need **Administrator** access (export requires admin permissions)
 - Know which fields you need to export
 
-## Understanding Export
+## Understanding export
 
 Export serves several purposes:
 
@@ -31,19 +31,19 @@ Export serves several purposes:
 | **Import templates** | Get correct headers for importing new data |
 | **Update preparation** | Get IDs needed to update existing records |
 
-## Export Data
+## Export data
 
-### Step 1: Navigate to Records
+### Step 1: Navigate to records
 
 Go to **Registry** > **Browse All (Audit)** > **All Individuals** or **All Groups**.
 
 ![Navigate to Browse All](/_images/en-us/registry/export-data/01-navigate-to-browse-all-for-export.png)
 
-### Step 2: Select Records to Export
+### Step 2: Select records to export
 
 Select the records you want to export:
 
-| Goal | How to Select |
+| Goal | How to select |
 |------|---------------|
 | Export specific records | Click the checkbox next to each record |
 | Export current page | Click the checkbox in the header row |
@@ -51,25 +51,25 @@ Select the records you want to export:
 
 ![Select records](/_images/en-us/registry/export-data/02-select-records-with-checkboxes-for-export.png)
 
-### Step 3: Open Export Dialog
+### Step 3: Open export dialog
 
 1. Click the **Action** button
 2. Select **Export**
 
 ![Action menu with Export option](/_images/en-us/registry/export-data/03-action-menu-with-export-option.png)
 
-### Step 4: Choose Export Format
+### Step 4: Choose export format
 
 Select your preferred format:
 
 ![Export format selection](/_images/en-us/registry/export-data/04-export-format-selection-csv-or-xlsx.png)
 
-| Format | Best For |
+| Format | Best for |
 |--------|----------|
 | **CSV** | Data analysis tools, programming, universal compatibility |
 | **XLSX** | Excel users, preserves formatting |
 
-### Step 5: Select Fields to Export
+### Step 5: Select fields to export
 
 The export dialog shows available fields and fields to export:
 
@@ -91,15 +91,17 @@ The export dialog shows available fields and fields to export:
 
 ### Step 6: Export
 
-Click **Export** to download the file.
+Once the format is set and the fields are selected, click **Export** to download the file.
 
 ![Export button](/_images/en-us/registry/export-data/06-export-button-to-download-file.png)
 
 The file downloads to your computer.
 
-## Export for Specific Purposes
+## Export for specific purposes
 
-### For Analysis or Reporting
+Depending on what you want to achieve with the export, there are different settings to take into consideration. The settings for the most common scenarios are described below.
+
+### For analysis or reporting
 
 Export all the fields you need for your analysis:
 
@@ -108,7 +110,7 @@ Export all the fields you need for your analysis:
 3. Choose CSV (for data tools) or XLSX (for Excel)
 4. Click **Export**
 
-### For Creating Import Templates
+### For creating import templates
 
 Get a template with correct headers for importing new data:
 
@@ -119,7 +121,7 @@ Get a template with correct headers for importing new data:
 5. Open the exported file, delete the ID column, then delete all data rows, keeping only the header row.
 6. Fill in your new data
 
-### For Updating Existing Records
+### For updating existing records
 
 When you need to update records and import them back:
 
@@ -138,11 +140,11 @@ After export:
 3. Keep the ID column unchanged
 4. Import the file back to update records
 
-## Create Export Templates
+## Export templates
 
-Save time by creating templates for exports you run frequently.
+Save time by creating templates for exports you run frequently. This saves you the work of selecting which exact fields to include and what format to select.
 
-### Create a New Template
+### Create a new template
 
 1. Configure your export (select all the fields you need)
 2. Click the dropdown arrow next to template selection
@@ -152,7 +154,7 @@ Save time by creating templates for exports you run frequently.
 
 ![Create export template](/_images/en-us/registry/export-data/09-create-export-template-for-frequent-exports.png)
 
-### Use an Existing Template
+### Use an existing template
 
 1. Open the Export dialog
 2. Click the template dropdown
@@ -161,9 +163,9 @@ Save time by creating templates for exports you run frequently.
 
 ![Select export template](/_images/en-us/registry/export-data/10-select-existing-export-template-from-dropdown.png)
 
-## Common Export Fields
+## Common export fields
 
-### Individual Fields
+### Individual fields
 
 | Field | Description |
 |-------|-------------|
@@ -178,7 +180,7 @@ Save time by creating templates for exports you run frequently.
 | **phone** | Primary phone number |
 | **registration_date** | Date of registration |
 
-### Group Fields
+### Group fields
 
 | Field | Description |
 |-------|-------------|
@@ -189,7 +191,7 @@ Save time by creating templates for exports you run frequently.
 | **phone** | Primary phone number |
 | **registration_date** | Date of registration |
 
-### Nested Fields
+### Nested fields
 
 Some fields have nested data. Click the arrow to expand:
 
@@ -197,7 +199,7 @@ Some fields have nested data. Click the arrow to expand:
 - **phone_number_ids** > Shows all phone numbers
 - **tags_ids** > Shows all tags
 
-## Are You Stuck?
+## Are you stuck?
 
 **Export option not visible?**
 
@@ -237,7 +239,7 @@ Some fields have nested data. Click the arrow to expand:
 - Make sure you clicked the save icon after naming the template
 - Refresh the page and check if the template appears
 
-## Next Steps
+## Next steps
 
 - {doc}`import_data` - Import data back into OpenSPP
 - {doc}`search_filter` - Filter records before exporting

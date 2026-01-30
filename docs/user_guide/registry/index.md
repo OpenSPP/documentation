@@ -19,7 +19,7 @@ The Registry is the foundation of OpenSPP. It stores information about individua
 
 A **registrant** is any person or group recorded in OpenSPP. Registrants become **beneficiaries** only after they are enrolled in a program.
 
-## What You Can Do
+## What you can do
 
 | Task | Description |
 |------|-------------|
@@ -29,18 +29,18 @@ A **registrant** is any person or group recorded in OpenSPP. Registrants become 
 | Import data | Bulk load registrants from CSV/Excel files |
 | Export data | Download registrant data for analysis or backup |
 
-## User Roles
+## User roles
 
 Your access to registry features depends on your role:
 
-| Role | What You Can Do |
+| Role | What you can Do |
 |------|-----------------|
 | **Viewer** | View registry records only |
 | **Officer** | View and edit records, create new registrants |
 | **Manager** | Full access including delete operations |
 | **Administrator** | Full access plus configuration settings |
 
-## Guides in This Section
+## Guides in this section
 
 ```{toctree}
 :maxdepth: 2
@@ -58,15 +58,15 @@ export_data
 - {doc}`register_individual` - Add a new individual to the registry
 - {doc}`register_group` - Create a household or group and add members
 
-### Data Management
+### Data management
 
 - {doc}`search_filter` - Find and filter registrants
 - {doc}`import_data` - Bulk import registrants from CSV/Excel
 - {doc}`export_data` - Export registrant data
 
-## Key Concepts
+## Key concepts
 
-### Individuals vs Groups
+### Individuals vs groups
 
 | Type | Description | Example |
 |------|-------------|---------|
@@ -75,7 +75,7 @@ export_data
 
 Groups contain individuals as **members**. One member is typically designated as the **head** of the household.
 
-### Registration vs Enrollment
+### Registration vs enrollment
 
 | Stage | Meaning |
 |-------|---------|
@@ -84,7 +84,7 @@ Groups contain individuals as **members**. One member is typically designated as
 
 You must register someone before you can enroll them in a program.
 
-## Next Steps
+## Next steps
 
 - {doc}`register_individual` - Start by registering your first individual
 - {doc}`register_group` - Then create a group and add members

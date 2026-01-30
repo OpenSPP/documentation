@@ -13,16 +13,16 @@ openspp:
 
 Change Requests allow staff to propose updates to registrant information through a structured approval workflow. Instead of editing records directly, staff submit change requests that go through review and approval before being applied.
 
-## Why Use Change Requests?
+## Why use change requests?
 
-Change Requests provide:
+Change requests provide:
 
 - **Audit trail** - Every change is tracked with who requested it and who approved it
 - **Data quality** - Supervisors can verify changes before they take effect
 - **Accountability** - Clear record of what was changed, when, and why
 - **Workflow control** - Different change types can require different approval levels
 
-## Request Status Flow
+## Request status flow
 
 All change requests follow this workflow:
 
@@ -36,7 +36,7 @@ Draft → Under Review → Approved → [Finalize] → Completed
 **Finalization Step**: After a change request is approved, it must be finalized using the "Finalize & Record Changes" action before the changes are actually applied to the registrant's record. This provides an additional safety check before making permanent changes.
 ```
 
-| Status | What It Means |
+| Status | What it means |
 |--------|---------------|
 | **Draft** | Request is being created, not yet submitted |
 | **Under Review** | Waiting for a validator to review |
@@ -45,15 +45,15 @@ Draft → Under Review → Approved → [Finalize] → Completed
 | **Completed** | Changes have been recorded to the registrant |
 | **Declined** | Request was rejected |
 
-## Who Can Do What?
+## Who can do what?
 
-| Role | Can Do |
+| Role | Can do |
 |------|--------|
 | **User** | Create and submit change requests |
 | **Validator** | Review, approve, or decline requests |
 | **Manager** | All of the above, plus configure request types |
 
-## Topics Covered
+## Topics covered
 
 ```{toctree}
 :maxdepth: 2

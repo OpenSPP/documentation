@@ -7,17 +7,17 @@ openspp:
     - sp_mis
 ---
 
-# Review a Change Request
+# Review a change request
 
 **Applies to:** Social Registry, SP-MIS
 
 This guide is for **validators** (local validators and HQ validators) who need to review and approve change requests submitted by staff.
 
-## What You Will Do
+## What you will do
 
 Review change requests submitted by registry officers, verify the proposed changes against supporting documents, and approve, request changes, or decline them. Approved requests are then finalized and recorded to the registrant's profile.
 
-## Before You Start
+## Before you start
 
 - You need validator permissions. Your organization may configure this as either:
   - **One global validator role** - A single person with both **Validator** and **Validator HQ** roles, OR
@@ -35,7 +35,7 @@ If you're unsure about your organization's approval requirements, check with you
 
 ## Steps
 
-### 1. Open Pending Requests
+### Step 1. Open pending requests
 
 Click **Change Requests** in the main menu, then click **Pending Approval** in the sidebar.
 
@@ -43,7 +43,7 @@ Click **Change Requests** in the main menu, then click **Pending Approval** in t
 
 This shows all requests waiting for review.
 
-### 2. Open a Request to Review
+### Step 2. Open a request to review
 
 Click on a request in the list to open it.
 
@@ -51,11 +51,11 @@ Click on a request in the list to open it.
 
 The request form opens with all details.
 
-### 3. Review the Request Information
+### Step 3. Review the request information
 
 Check the header information:
 
-| Field | What to Check |
+| Field | What to check |
 |-------|---------------|
 | **Request Type** | What kind of change is requested |
 | **Registrant** | Who will be affected by this change |
@@ -64,7 +64,7 @@ Check the header information:
 
 ![Request header](/_images/en-us/change-requests/review/03-request-header.png)
 
-### 4. Review the Proposed Changes
+### Step 4. Review the proposed changes
 
 The **Details** tab shows a side-by-side comparison:
 
@@ -75,7 +75,7 @@ The **Details** tab shows a side-by-side comparison:
 
 Review each proposed change carefully.
 
-### 5. Check Supporting Documents
+### Step 5. Check supporting documents
 
 Click the **Documents** tab to view uploaded files.
 
@@ -88,7 +88,7 @@ Verify that:
 - Documents match the requested changes.
 - Documents appear authentic.
 
-### 6. Review Notes
+### Step 6. Review notes
 
 Click the **Notes** tab to see:
 
@@ -97,7 +97,7 @@ Click the **Notes** tab to see:
 
 ![Notes tab](/_images/en-us/change-requests/review/06-notes-tab-showing-description-and-internal-notes.png)
 
-### 7. Check Status History (Optional)
+### Step 7. Check status history (optional)
 
 Click the **Status History** tab to see:
 
@@ -107,7 +107,7 @@ Click the **Status History** tab to see:
 
 ![Status History tab](/_images/en-us/change-requests/review/07-status-history-tab.png)
 
-### 8. Make Your Decision
+### Step 8. Make your decision
 
 You have three options:
 
@@ -133,7 +133,7 @@ If manual apply is required, click **Finalize & Record Changes** to complete the
 
 ![Finalize button](/_images/en-us/change-requests/review/10-finalize-and-record-changes-button.png)
 
-#### Option B: Request Changes
+#### Option B: Request changes
 
 If the submitter needs to fix something:
 
@@ -197,7 +197,7 @@ To see all requests (not just pending):
 
    ![Group By options](/_images/en-us/change-requests/review/17-group-by-options-for-organizing-requests.png)
 
-## Reviewing Multiple Requests
+## Reviewing multiple requests
 
 For efficient batch processing:
 
@@ -216,7 +216,7 @@ For efficient batch processing:
 **Keyboard Shortcuts**: These shortcuts work when you have a pending change request form open. They are not available in the kanban view itself - you need to open the request first.
 ```
 
-## Verifying Applied Changes
+## Verifying applied changes
 
 After approving and finalizing a request:
 
@@ -228,7 +228,7 @@ After approving and finalizing a request:
 
 3. The change request is linked in the registrant's audit trail.
 
-## Are You Stuck?
+## Are you stuck?
 
 **Cannot see the Approve button?**
 You may not have **Validator** or **Validator HQ** permissions. Contact your administrator.
