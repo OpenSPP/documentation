@@ -28,7 +28,7 @@ You've created the Garcia Family household. Now you need to register the individ
 
 From the Registry Search Portal, click **New Individual** to create the first family member.
 
-![Screenshot: Click New Individual button](/_images/en-us/get_started/first_household/03_add_members/cle4_1.png)
+![Screenshot: Click New Individual button](/_images/en-us/get_started/first_household/03_add_members/01-new-individual-button.png)
 
 ### 2. Enter individual information
 
@@ -42,13 +42,13 @@ Enter the information for Maria Garcia, the head of household:
 | Gender | Female |
 | Phone | +1-555-0123 |
 
-![Screenshot: Individual form filled in for Maria](/_images/en-us/get_started/first_household/03_add_members/cle4_2.png)
+![Screenshot: Individual form filled in for Maria](/_images/en-us/get_started/first_household/03_add_members/02-individual-form-maria-filled.png)
 
 ### 3. Save the Individual
 
 Click **Save** to create Maria's record.
 
-![Screenshot: Saved individual record](/_images/en-us/get_started/first_household/03_add_members/cle4_3.png)
+![Screenshot: Saved individual record](/_images/en-us/get_started/first_household/03_add_members/03-saved-individual-record.png)
 
 ### 4. Create Additional Family Members
 
@@ -76,37 +76,37 @@ Repeat steps 1-3 to create records for:
 
 Search for "Garcia Family" in the Registry Search Portal and open the household record.
 
-![Screenshot: Search for Garcia Family](/_images/en-us/get_started/first_household/03_add_members/cle4_4.png)
+![Screenshot: Search for Garcia Family](/_images/en-us/get_started/first_household/03_add_members/04-search-garcia-family.png)
 
 ### 6. Add members to the household
 
 In the **Members** section, click **Add a line** to add family members.
 
-![Screenshot: Click Add a line in Members section](/_images/en-us/get_started/first_household/03_add_members/cle4_5.png)
+![Screenshot: Click Add a line in Members section](/_images/en-us/get_started/first_household/03_add_members/05-add-line-members-section.png)
 
 ### 7. Select family members
 
 Select each individual from the dropdown. You can also click **Search More** to find specific individuals.
 
-![Screenshot: Select individual from dropdown](/_images/en-us/get_started/first_household/03_add_members/cle4_6.png)
+![Screenshot: Select individual from dropdown](/_images/en-us/get_started/first_household/03_add_members/06-select-individual-dropdown.png)
 
 ### 8. Assign head of household
 
 Assign Maria Garcia as head of household.
 
-![Screenshot: Assign head of household](/_images/en-us/get_started/first_household/03_add_members/cle4_7.png)
+![Screenshot: Assign head of household](/_images/en-us/get_started/first_household/03_add_members/07-assign-head-of-household.png)
 
 ### 9. Save the household
 
 Click **Save** to update the household with its members.
 
-![Screenshot: Save button](/_images/en-us/get_started/first_household/03_add_members/cle4_8.png)
+![Screenshot: Save button](/_images/en-us/get_started/first_household/03_add_members/08-save-household-button.png)
 
 ### 10. Verify the completed household
 
 Review the household record. You should see all three family members listed with their roles.
 
-![Screenshot: Completed household with all members](/_images/en-us/get_started/first_household/03_add_members/cle4_9.png)
+![Screenshot: Completed household with all members](/_images/en-us/get_started/first_household/03_add_members/09-completed-household-all-members.png)
 
 ## What you accomplished
 

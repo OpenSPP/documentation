@@ -14,13 +14,19 @@ Learn how to navigate to the Registry module and understand the Registry Search 
 
 ## Before you start
 
-- You need access to OpenSPP with Registry Officer or Administrator permissions
-- OpenSPP should be installed and running
+- You need access to OpenSPP with Registrar, Officer or admin role permissions assigned to your user (see {doc}`Explore OpenSPP <../explore/index>`)
+- OpenSPP should be installed and running (see {doc}`Installation <../installation/index>`)
+- OpenSPP SPMIS Demo should be installed (see {doc}`Install a module in Odoo <../installation/modules>`)
 - Allow 2-3 minutes to complete this step
+
+```{note}
+Installing the SPMIS Demo module automatically installs OpenSPP and its dependencies. If you install **SP-MIS Demo V2** from the Apps menu, you do not need to install OpenSPP separately.
+```
+
 
 ## The scenario
 
-You're a registry officer who needs to register a new household in the system. The Garcia family has arrived at your office to enroll in social protection programs. First, you need to access the registry to create their records.
+As a registry officer, the Garcia family has arrived at your office to enroll in social protection programs. You need to access the registry to confirm whether they already exist in the system before creating or updating their records.
 
 ## Steps
 
@@ -28,13 +34,13 @@ You're a registry officer who needs to register a new household in the system. T
 
 After logging in to OpenSPP, you'll see the sidebar menu on the left. Click **Registry** to access the beneficiary management portal.
 
-![Screenshot: Sidebar showing Registry option](/_images/en-us/get_started/first_household/01_access_registry/cle2_3.png)
+![Screenshot: Sidebar showing Registry option](/_images/en-us/get_started/first_household/01_access_registry/01-sidebar-showing-registry-option.png)
 
 ### 2. Explore the Registry Search Portal
 
 The Registry Search Portal is the main interface for managing registrants. It provides a privacy-first approach where you search for records rather than browsing lists.
 
-![Screenshot: Registry Search Portal overview](/_images/en-us/get_started/first_household/01_access_registry/cle2_2.png)
+![Screenshot: Registry Search Portal overview](/_images/en-us/get_started/first_household/01_access_registry/02-registry-search-portal-overview.png)
 
 Key elements of the interface:
 
@@ -51,7 +57,7 @@ Key elements of the interface:
 
 The search bar allows you to find existing beneficiaries. Click on the search bar to begin typing.
 
-![Screenshot: Search bar highlighted](/_images/en-us/get_started/first_household/01_access_registry/cle2_4.png)
+![Screenshot: Search bar highlighted](/_images/en-us/get_started/first_household/01_access_registry/03-search-bar-highlighted.png)
 
 Enter at least 3 characters to search by:
 - Name
@@ -63,7 +69,7 @@ Enter at least 3 characters to search by:
 
 In this example, searching for "Garcia" returns matching beneficiaries. The results show the beneficiary name, type (Individual or Group), and when the record was last updated.
 
-![Screenshot: Search results showing "Garcia" with 1 result found](/_images/en-us/get_started/first_household/01_access_registry/cle2_5.png)
+![Screenshot: Search results showing "Garcia" with 1 result found](/_images/en-us/get_started/first_household/01_access_registry/04-search-results-garcia.png)
 
 This privacy-first search approach ensures beneficiary data is protected - you must actively search for records rather than browsing through lists.
 

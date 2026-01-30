@@ -26,7 +26,7 @@ After loading the MIS demo data, you'll have:
 ## Before you start
 
 - OpenSPP should be installed and running (see {doc}`../installation/index`)
-- OpenSPP SPMIS Demo should be installed (see {doc}`../installation/modules.md`)
+- OpenSPP SPMIS Demo should be installed (see {doc}`../installation/modules`)
 - You need administrator access to OpenSPP
 
 ## Load demo data
@@ -93,18 +93,20 @@ The demo includes 8 complete registrant stories:
 
 ### Demo users
 
-| User            | Role             | Password |
-| --------------- | ---------------- | -------- |
-| sppadmin           | OpenSPP Admin      | demo     |
-| demo_manager       | Program Manager    | demo     |
-| demo_officer       | Registry Officer   | demo     |
-| demo_supervisor    | Supervisor         | demo     |
-| demo_viewer        | Viewer             | demo     |
-| global_registrar   | Global Registrar   | demo     |
-| local_registrar    | Local Registrar    | demo     |
-| cycle_approver     | Cycle Approver     | demo     |
-| cr_hq_validator    | HQ CR Validator    | demo     |
-| r_local_validator  | Local HQ Validator | demo     |
+| User                     | Role                    | Password |
+| ------------------------ | ----------------------- | -------- |
+| sppadmin                 | OpenSPP Admin           | demo     |
+| demo_manager             | Demo Manager             | demo     |
+| demo_officer             | Demo Officer             | demo     |
+| demo_supervisor          | Demo Supervisor          | demo     |
+| demo_viewer              | Demo Viewer              | demo     |
+| demo_global_registrar    | Demo Global Registrar   | demo     |
+| demo_local_registrar     | Demo Local Registrar    | demo     |
+| demo_cr_hq_validator     | Demo CR HQ Validator    | demo     |
+| demo_cr_local_validator | Demo CR Local Validator | demo     |
+| demo_program_manager     | Demo Program Manager    | demo     |
+| demo_program_validator   | Demo Program Validator  | demo     |
+| demo_cycle_approver      | Demo Cycle Approver     | demo     |
 
 ## Are you stuck?
 

@@ -26,6 +26,7 @@ The Configuration Guide is designed for implementers who need to customize OpenS
 - **Event Data** - Capturing external data from surveys and forms (V2 enhanced)
 - **Change Request Types** - Configuring change request workflows (NEW V2)
 - **Consent Configuration** - Managing data sharing consent (NEW V2)
+- **Role configuration** - Configuring users, roles, and role-based access (and optionally local/area-scoped roles)
 - **DRIMS** - Configuring Disaster Response Inventory Management
 
 ```{toctree}
@@ -42,6 +43,7 @@ variables/index
 event_data/index
 change_request_types/index
 consent/index
+role_configuration
 drims/index
 ```
 
