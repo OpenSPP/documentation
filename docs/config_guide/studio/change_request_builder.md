@@ -522,7 +522,7 @@ Not directly in Studio. All fields are either required or optional. For complex 
 
 ## Next Steps
 
-- **Define eligibility rules**: {doc}`eligibility_rule_builder`
+- **Define eligibility rules**: {doc}`/config_guide/cel/index`
 - **Create event types for surveys**: {doc}`event_type_designer`
 - **Add custom registry fields**: {doc}`registry_field_builder`
 - **Return to Studio overview**: {doc}`overview`

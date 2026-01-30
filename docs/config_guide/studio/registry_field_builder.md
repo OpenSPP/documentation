@@ -464,5 +464,5 @@ This requires developer help using database migration scripts.
 
 - **Create event types from surveys**: {doc}`event_type_designer`
 - **Build change request workflows**: {doc}`change_request_builder`
-- **Define eligibility rules**: {doc}`eligibility_rule_builder`
+- **Define eligibility rules**: {doc}`/config_guide/cel/index`
 - **Return to Studio overview**: {doc}`overview`

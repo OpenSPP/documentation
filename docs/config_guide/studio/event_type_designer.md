@@ -540,6 +540,6 @@ Depends on lifecycle settings:
 ## Next Steps
 
 - **Build approval workflows for updates**: {doc}`change_request_builder`
-- **Define eligibility rules using event data**: {doc}`eligibility_rule_builder`
+- **Define eligibility rules using event data**: {doc}`/config_guide/cel/index`
 - **Add custom registry fields**: {doc}`registry_field_builder`
 - **Return to Studio overview**: {doc}`overview`

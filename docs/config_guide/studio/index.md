@@ -17,7 +17,7 @@ Studio gives you the power to:
 - **Add custom fields** to registrant and group records without developer help
 - **Design event types** to collect field data from surveys and assessments
 - **Build change request workflows** for updating registry information with approval
-- **Create eligibility rules** visually without writing code expressions
+- **Define eligibility rules** using CEL expressions with visual assistance
 
 ## Who is Studio for?
 
@@ -38,7 +38,6 @@ overview
 registry_field_builder
 event_type_designer
 change_request_builder
-eligibility_rule_builder
 ```
 
 ## Getting Started
@@ -48,7 +47,7 @@ eligibility_rule_builder
    - Need to track program-specific data? → Registry Field Builder
    - Collecting survey data? → Event Type Designer
    - Need approval workflows for updates? → Change Request Builder
-   - Setting program eligibility criteria? → Eligibility Rule Builder
+   - Setting program eligibility criteria? → Use the Expression Editor under Rules menu
 
 ## Common Use Cases
 
@@ -57,7 +56,7 @@ eligibility_rule_builder
 | Track "Pantawid ID" for Philippines beneficiaries | Registry Field Builder |
 | Import vulnerability assessments from Kobo | Event Type Designer |
 | Create a phone number update request with approval | Change Request Builder |
-| Select households with children under 5 and low income | Eligibility Rule Builder |
+| Select households with children under 5 and low income | Expression Editor (Rules menu) |
 
 ## Are You Stuck?
 

@@ -36,9 +36,11 @@ Think of Studio like KoBoToolbox's form builder, but for configuring your entire
 
 1. Log in to OpenSPP
 2. Click **Studio** in the main menu
-3. You'll see the Studio Dashboard with five main sections
+3. You'll see the Studio Dashboard with quick access to Studio tools
 
-**Screenshot should show**: OpenSPP main menu with Studio option highlighted, then Studio Dashboard with the five main cards (Registry Fields, Event Types, Change Requests, Eligibility Rules, External Sources).
+![Studio highlighted in the apps menu](/_images/en-us/config_guide/studio/overview/01-apps-menu-studio-highlighted.png)
+
+![Studio Dashboard showing the main tool cards](/_images/en-us/config_guide/studio/overview/02-studio-dashboard.png)
 
 ## Studio Components
 
@@ -107,7 +109,7 @@ Think of Studio like KoBoToolbox's form builder, but for configuring your entire
 
 → See {doc}`change_request_builder` for detailed instructions.
 
-### 4. Eligibility Rule Builder
+### 4. Eligibility Rules (CEL Expressions)
 
 **Use when**: You need to define who qualifies for a program based on specific criteria.
 
@@ -117,21 +119,24 @@ Think of Studio like KoBoToolbox's form builder, but for configuring your entire
 - Families with vulnerability score above 70
 
 **What you can do**:
-- Build rules visually by combining conditions
-- Check registry fields, event data, group membership, and location
-- Test rules to see how many registrants match
-- Create rules without writing CEL expressions
+- Build eligibility rules using CEL (Common Expression Language) expressions
+- Use the Expression Editor under the **Rules** menu
+- Access variables for registry fields, event data, and computed values
+- Test expressions with test personas
+- Browse pre-built Logic Packs for common eligibility patterns
 
 **What requires a developer**:
-- Very complex logic with nested OR/AND groups
-- Custom functions not available in visual builder
-- Performance-optimized rules for millions of records
+- Very complex logic with nested conditions across multiple data sources
+- Custom CEL functions not in the standard library
+- Performance-optimized batch eligibility checks for millions of records
 
-→ See {doc}`eligibility_rule_builder` for detailed instructions.
+→ See {doc}`/config_guide/cel/index` for detailed instructions on building eligibility expressions.
 
-### 5. External Sources
+### 5. External Connections
 
 **Use when**: You want to connect OpenSPP to KoBoToolbox or ODK Central for data collection.
+
+Access external connections through the **Connections** menu in Studio.
 
 **What you can do**:
 - Connect to Kobo servers with API tokens
@@ -142,6 +147,8 @@ Think of Studio like KoBoToolbox's form builder, but for configuring your entire
 **Future capabilities** (Phase 2):
 - Automatic submission sync via webhooks
 - Real-time event creation from submissions
+
+→ See {doc}`event_type_designer` for instructions on importing Kobo/ODK forms.
 
 ## Configuration Lifecycle
 
@@ -174,11 +181,21 @@ Studio has three permission levels:
 
 | Role | Can Do |
 |------|--------|
-| **Studio Viewer** | View all configurations, but cannot create or edit |
-| **Studio Editor** | Create and edit draft configurations |
-| **Studio Manager** | Activate, deactivate, and delete configurations |
+| **Viewer** | View all configurations, but cannot create or edit |
+| **Editor** | Create and edit draft configurations |
+| **Manager** | Activate, deactivate, and delete configurations |
 
-**Screenshot should show**: Settings > Users & Companies > Groups, with Studio security groups highlighted.
+To assign Studio permissions to a user:
+1. Go to **Settings** > **Users & Companies** > **Users**
+2. Edit the user
+3. Under **Privileges**, enable **Studio**
+4. Choose the appropriate level: Viewer, Editor, or Manager
+
+```{note}
+Studio uses OpenSPP's privilege-based security system. Groups appear as "Studio / Viewer", "Studio / Editor", and "Studio / Manager" in the Groups list.
+```
+
+![User settings showing Studio privilege options](/_images/en-us/config_guide/studio/overview/08-user-studio-privileges.png)
 
 ## The 80/20 Rule
 
@@ -192,7 +209,7 @@ Studio is designed to handle 80% of common customization needs. Here's what's in
 | Create event types | ✓ Event Type Designer |
 | Import Kobo forms | ✓ Event Type Designer |
 | Simple change requests | ✓ Change Request Builder |
-| Visual eligibility rules | ✓ Eligibility Rule Builder |
+| CEL eligibility expressions | ✓ Expression Editor (Rules menu) |
 | Field validation | ✓ Configuration options |
 | Conditional visibility | ✓ Visibility settings |
 
@@ -222,25 +239,41 @@ What you can do:
 
 ## Studio Dashboard
 
-The Studio Dashboard is your starting point:
+The Studio Dashboard is your starting point for configuring OpenSPP without code.
 
-**Screenshot should show**: Complete Studio Dashboard view showing all five cards with statistics.
+![Studio Dashboard with main tool cards](/_images/en-us/config_guide/studio/overview/02-studio-dashboard.png)
 
 ### Dashboard Cards
 
-Each card shows:
-- Number of configurations (total and draft)
-- Quick actions to create new configurations
-- Link to manage existing configurations
+The dashboard provides quick access to the main Studio tools:
 
-### Recent Activity
+| Card | Description |
+|------|-------------|
+| **Expressions** | Build eligibility rules, benefit calculations, and compliance checks |
+| **Variables** | Define reusable variables for expressions (fields, computed values, aggregates) |
+| **Custom Fields** | Add custom fields to individual and group registries |
+| **Event Types** | Define data collection forms for surveys, assessments, and field visits |
+| **Change Requests** | Configure change request types for updating registrant information |
 
-The bottom section shows recent changes:
-- Who made changes
-- What was changed
-- When changes occurred
+Each card includes a brief description and a button to open that tool.
 
-This helps teams coordinate when multiple people use Studio.
+### Studio Menu
+
+Besides the dashboard, you can access Studio features through the main Studio menu:
+
+![Studio menu sections in the sidebar](/_images/en-us/config_guide/studio/overview/03-studio-sidebar-menu.png)
+
+- **Home** - Return to the dashboard
+- **Rules** - Work with expressions, variables, logic packs, and test personas
+- **Forms & Fields** - Manage custom fields, event types, and change request types
+- **Settings** - Advanced configuration options (Studio Manager only)
+- **History** - View audit logs of all Studio changes
+
+```{note}
+Additional menu items may appear depending on installed modules:
+- **Privacy** - Configure consent and data classification (requires `spp_studio_consent`)
+- **Connections** - Set up external data sources like Kobo/ODK (requires `spp_studio_dci`)
+```
 
 ## Best Practices
 
@@ -270,8 +303,8 @@ Use help text and descriptions:
 
 ### 4. Test Before Activating
 
-For eligibility rules:
-- Use the "Test Rule" button to see match counts
+For CEL expressions:
+- Use the test personas feature to validate your expressions
 - Verify expected registrants are included/excluded
 - Check with program staff that logic is correct
 
@@ -328,4 +361,4 @@ Now that you understand Studio's capabilities:
 1. **To add custom fields**: Continue to {doc}`registry_field_builder`
 2. **To create event types**: Continue to {doc}`event_type_designer`
 3. **To build change workflows**: Continue to {doc}`change_request_builder`
-4. **To define eligibility**: Continue to {doc}`eligibility_rule_builder`
+4. **To define eligibility rules**: Continue to {doc}`/config_guide/cel/index`
