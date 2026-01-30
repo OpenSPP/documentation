@@ -7,21 +7,21 @@ openspp:
     - sp_mis
 ---
 
-# Import Registrant Data
+# Import registrant data
 
 **Applies to:** Social Registry, SP-MIS
 
-## What You Will Do
+## What you will do
 
 Bulk import registrant data from CSV or Excel files to add new records or update existing ones.
 
-## Before You Start
+## Before you start
 
 - You need **Administrator** access (import requires admin permissions)
 - Data file in CSV or XLSX (Excel) format
 - Spreadsheet software (Excel, Google Sheets, or LibreOffice) to prepare the file
 
-## Understanding Import
+## Understanding import
 
 Import allows you to:
 
@@ -30,9 +30,9 @@ Import allows you to:
 | **Add new records** | Create multiple individuals or groups at once |
 | **Update existing records** | Modify data for registrants already in the system |
 
-## Prepare Your Import File
+## Prepare your import file
 
-### Step 1: Get a Template
+### Step 1. Get a template
 
 The best way to prepare your file is to export existing records first:
 
@@ -44,11 +44,11 @@ The best way to prepare your file is to export existing records first:
 
 ![Export template](/_images/en-us/registry/import-data/01-export-headers.png)
 
-### Step 2: Format Your Data
+### Step 2. Format your data
 
 Prepare your data following these rules:
 
-| Data Type | Format | Example |
+| Data type | Format | Example |
 |-----------|--------|---------|
 | **Dates** | YYYY-MM-DD | 1990-05-15 |
 | **Phone numbers** | Text (not number) | 09171234567 |
@@ -61,7 +61,7 @@ Format phone numbers and ID columns as **Text** in Excel. Otherwise, Excel may r
 
 **In Excel:** Right-click column > Format Cells > Text
 
-### Step 3: Required Fields
+### Step 3. Required fields
 
 For new individual records, these fields are required:
 
@@ -78,7 +78,7 @@ For new group records, this field is required:
 |-------|-------------|
 | **name** | Group name |
 
-### Step 4: Optional Fields
+### Step 4. Optional fields
 
 Common optional fields you can include:
 
@@ -90,9 +90,9 @@ Common optional fields you can include:
 | **phone** | Primary phone number |
 | **registration_date** | Registration date (defaults to today) |
 
-## Import New Records
+## Import new records
 
-### Step 1: Navigate to Import
+### Step 1: Navigate to import
 
 1. Go to **Registry** > **Browse All (Audit)** > **All Individuals** (or **All Groups**)
 2. Click the **Gear** icon.
@@ -100,7 +100,7 @@ Common optional fields you can include:
 
 ![Import menu location](/_images/en-us/registry/import-data/02-import-menu.png)
 
-### Step 2: Upload Your File
+### Step 2: Upload your file
 
 1. Click **Upload File**
 2. Select your prepared CSV or XLSX file
@@ -110,7 +110,7 @@ Sample document for reference:
 
 <!-- ![Upload file dialog](/_images/en-us/registry/import-data/03-upload-file-dialog-for-csv-or-xlsx.png) -->
 
-### Step 3: Map Columns
+### Step 3: Map columns
 
 OpenSPP automatically maps columns based on header names. Review the mapping:
 
@@ -120,7 +120,7 @@ OpenSPP automatically maps columns based on header names. Review the mapping:
 - Yellow warnings indicate columns that need manual mapping
 - Use the dropdown to manually map any unrecognized columns
 
-### Step 4: Test the Import
+### Step 4: Test the import
 
 Click **Test** to validate your file without importing.
 
@@ -153,11 +153,11 @@ Search for imported records to confirm they were created correctly:
 
 ![Verify imported records](/_images/en-us/registry/import-data/09-verify-imported-records-in-search-results.png)
 
-## Update Existing Records
+## Update existing records
 
 To update records that already exist in the system:
 
-### Step 1: Export Records to Update
+### Step 1: Export records to update
 
 1. Select the records you want to update by clicking the checkbox beside the individual or group
 2. **Action** button should appear, use **Action** > **Export**
@@ -170,7 +170,7 @@ This includes the **ID** column, which is required for referencing the correspon
 
 ![Export for update option](/_images/en-us/registry/import-data/12-reference-id.png)
 
-### Step 2: Modify the File
+### Step 2: Modify the file
 
 1. Open the exported file in your spreadsheet software
 2. Modify the values you want to change
@@ -181,15 +181,15 @@ This includes the **ID** column, which is required for referencing the correspon
 Empty cells will overwrite existing values with blank. If you do not want to change a field, keep its original value.
 ```
 
-### Step 3: Import the Modified File
+### Step 3: Import the modified file
 
 Follow the same import steps as above. OpenSPP will match records by ID and update them.
 
-## Add Individuals to Existing Groups
+## Add individuals to existing groups
 
 To add individuals to existing groups during import:
 
-### Step 1: Get the Group External ID
+### Step 1: Get the group external ID
 
 1. Go to **Registry** > **Browse All (Audit)** > **All Groups**
 2. Select the group(s) you want to add individuals to
@@ -200,7 +200,7 @@ To add individuals to existing groups during import:
 
 ![Group external ID](/_images/en-us/registry/import-data/14-group-external-id.png)
 
-### Step 2: Get the Membership Header
+### Step 2: Get the membership header
 
 1. Go to **Registry** > **Browse All (Audit)** > **All Individuals**
 2. Select at least one individual record
@@ -214,18 +214,18 @@ To add individuals to existing groups during import:
 
 The exported file will contain the header **individual_membership_ids/group/id**. This is the column where you will assign the group's External ID.
 
-### Step 3: Prepare Your Import File
+### Step 3: Prepare your import file
 
 1. Open the exported individual file in your spreadsheet software
 2. Add or modify the **individual_membership_ids/group/id** column
 3. Enter the External ID of the group(s) you want to assign individuals to
 4. Save the file
 
-### Step 4: Import the File
+### Step 4: Import the file
 
 Follow the same import steps as described in [Import New Records](#import-new-records). Once imported, the individuals will belong to the group(s) you specified.
 
-## Error Handling
+## Error handling
 
 ### "No matching records found"
 
@@ -257,18 +257,18 @@ Follow the same import steps as described in [Import New Records](#import-new-re
 
 **Solution:** Change dates to YYYY-MM-DD format (for example, 2024-12-18)
 
-## Best Practices
+## Best practices
 
 | Practice | Why |
 |----------|-----|
-| **Always Test first** | Catches errors before they affect data |
-| **Format numbers as Text** | Prevents Excel from removing leading zeros |
+| **Always test first** | Catches errors before they affect data |
+| **Format numbers as text** | Prevents Excel from removing leading zeros |
 | **Keep backups** | Export data before bulk updates |
 | **Use background import** | Prevents timeouts for large files |
 | **Verify after import** | Confirms data imported correctly |
 | **Import in batches** | For very large datasets, split into smaller files |
 
-## Are You Stuck?
+## Are you stuck?
 
 **Import menu not visible?**
 
@@ -301,7 +301,7 @@ Follow the same import steps as described in [Import New Records](#import-new-re
 - Use **Import in the background** option
 - Split large files into smaller batches (500-1000 records each)
 
-## Next Steps
+## Next steps
 
 - {doc}`export_data` - Learn how to export data
 - {doc}`search_filter` - Find imported records

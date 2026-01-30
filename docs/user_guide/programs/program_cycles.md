@@ -6,21 +6,21 @@ openspp:
     - sp_mis
 ---
 
-# Work with Program Cycles
+# Work with program cycles
 
 **Applies to:** SP-MIS
 
-## What You Will Do
+## What you will do
 
 Learn how to navigate, understand, and manage program cycles in OpenSPP.
 
-## Before You Start
+## Before you start
 
 - You need **Program Validator**, **Program Manager**, **Program Cycle Approver**, or **Administrator** roles assigned to your user account
 - The program must be in **Active** state
 - At least one beneficiary must be enrolled in the program
 
-## What is a Cycle?
+## What is a cycle?
 
 A **cycle** represents a distribution period within a program. For example:
 
@@ -35,11 +35,11 @@ Each cycle:
 - Generates entitlements for each beneficiary
 - Goes through an approval workflow before distribution
 
-## Cycle States
+## Cycle states
 
 Cycles progress through these states:
 
-| State | Meaning | What Happens Next |
+| State | Meaning | What happens next |
 |-------|---------|-------------------|
 | **Draft** | Cycle is being prepared | Copy beneficiaries, prepare entitlements |
 | **To Approve** | Waiting for approval | Validator reviews and approves or rejects |
@@ -50,7 +50,7 @@ Cycles progress through these states:
 
 ![Cycle states progression](/_images/en-us/programs/cycles/01-cycle-form-showing-state-progression-badge.png)
 
-## View Program Cycles
+## View program cycles
 
 1. Click **Programs** > **Programs** in the main menu.
 
@@ -68,9 +68,9 @@ Cycles progress through these states:
 
 ![Open Cycle](/_images/en-us/programs/cycles/04-open-cycle-form.png)
 
-## Understand the Cycle Form
+## Understand the cycle form
 
-### Overview Tab
+### Overview tab
 
 | Field | Description |
 |-------|-------------|
@@ -83,7 +83,7 @@ Cycles progress through these states:
 
 ![Cycle overview](/_images/en-us/programs/cycles/05-cycle-overview.png)
 
-### Smart Buttons
+### Smart buttons
 
 | Button | Shows |
 |--------|-------|
@@ -91,32 +91,7 @@ Cycles progress through these states:
 | **Entitlements** | Generated entitlements |
 | **Payments** | Payment batches (if configured) |
 
-### Beneficiaries Tab
-
-Shows all beneficiaries included in this cycle:
-
-| Column | Description |
-|--------|-------------|
-| **Registrant** | Beneficiary name |
-| **Enrollment Date** | When they were enrolled |
-| **State** | Enrolled, Paused, Exited, or Non-compliant |
-
-### Entitlements Tab
-
-Shows all entitlements generated for this cycle:
-
-| Column | Description |
-|--------|-------------|
-| **Code** | Unique entitlement reference |
-| **Registrant** | Beneficiary name |
-| **Initial Amount** | Benefit amount |
-| **Valid From** | Start of validity period |
-| **Valid Until** | End of validity period |
-| **State** | Draft, Pending Approval, Approved, etc. |
-
-![Cycle entitlements tab](/_images/en-us/programs/cycles/06-cycle-entitlements-tab.png)
-
-## Create a New Cycle
+## Create a new cycle
 
 1. Open the program where you want to create a cycle.
 
@@ -130,11 +105,11 @@ Shows all entitlements generated for this cycle:
 
 4. Click the **Cycles** smart button and select the new cycle to open it.
 
-## Cycle Workflow
+## Cycle workflow
 
 Cycles follow this workflow: Draft → To Approve → Approved → Distributed → Ended
 
-### Step 1: Copy Beneficiaries
+### Step 1: Copy beneficiaries
 
 When a cycle is first created, it automatically copies all currently enrolled beneficiaries from the program. 
 
@@ -150,7 +125,7 @@ When a cycle is first created, it automatically copies all currently enrolled be
 This function only adds newly enrolled beneficiaries. It does not remove beneficiaries who no longer meet eligibility criteria.
 ```
 
-### Step 2: Prepare Entitlements
+### Step 2: Prepare entitlements
 
 Generate entitlements for all beneficiaries in the cycle:
 
@@ -162,7 +137,7 @@ Generate entitlements for all beneficiaries in the cycle:
 
 3. View generated entitlements in the **Entitlements** tab.
 
-### Step 3: Submit for Approval
+### Step 3: Submit for approval
 
 When entitlements are ready:
 
@@ -174,7 +149,7 @@ When entitlements are ready:
 
 3. The cycle state changes to **To Approve**.
 
-### Step 4: Approve the Cycle
+### Step 4: Approve the cycle
 
 A user with the **Program Cycle Approver** role (configured during program setup) must approve the cycle.
 
@@ -188,7 +163,7 @@ A user with the **Program Cycle Approver** role (configured during program setup
 
 4. The cycle state changes to **Approved** and is ready for distribution.
 
-### Reject a Cycle
+### Reject a cycle
 
 If there are problems with the cycle during approval:
 
@@ -199,7 +174,7 @@ If there are problems with the cycle during approval:
 3. The cycle state changes to **Cancelled** and can be reset to Draft if needed.
 
 
-## Complete a Cycle
+## Complete a cycle
 
 After benefits are distributed:
 
@@ -209,7 +184,7 @@ After benefits are distributed:
 
 The cycle becomes read-only after ending and cannot be modified.
 
-## Cancel a Cycle
+## Cancel a cycle
 
 If a cycle should not proceed (before it reaches **To Approve** state):
 
@@ -222,7 +197,7 @@ Use **Reject** if the cycle is already submitted for approval. Use **Cancel** if
 ```
 
 
-## Are You Stuck?
+## Are you stuck?
 
 **Cannot find the New Cycle button?**
 - Verify you have Program Manager, Validator or admin role assigned to your user account.
@@ -246,7 +221,7 @@ Use **Reject** if the cycle is already submitted for approval. Use **Cancel** if
 - Start date cannot be in the past
 - End date must be after start date
 
-## Next Steps
+## Next steps
 
 - {doc}`manage_entitlements` - View and manage individual entitlements
 - {doc}`enroll_beneficiaries` - Add more beneficiaries to the program

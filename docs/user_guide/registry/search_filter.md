@@ -7,30 +7,30 @@ openspp:
     - sp_mis
 ---
 
-# Search and Filter Registrants
+# Search and filter registrants
 
 **Applies to:** Social Registry, SP-MIS
 
-## What You Will Do
+## What you will do
 
 Find specific individuals or groups in the registry using search and filter features.
 
-## Before You Start
+## Before you start
 
 - You need **Registry Viewer**, **Officer**, or **Administrator** access
 - Know what you are looking for (name, ID, phone number, etc.)
 
-## Using the Registry Search Portal
+## Using the registry search portal
 
-The Registry Search Portal is the main way to find registrants.
+The registry search portal is the main way to find registrants.
 
-### 1. Open the Registry
+### Step 1. Open the registry
 
 Click **Registry** in the main menu to open the Registry Search Portal.
 
 ![Registry Search Portal](/_images/en-us/registry/search-filter/01-registry-search-portal-with-search-bar-and-type-filter.png)
 
-### 2. Enter Search Terms
+### Step 2. Enter search terms
 
 Type in the search box to search by:
 
@@ -42,7 +42,7 @@ Type in the search box to search by:
 
 Press **Enter** or click **Search** to see results.
 
-### 3. View Results
+### Step 3. View results
 
 Results show matching registrants with key information:
 
@@ -54,9 +54,9 @@ Results show matching registrants with key information:
 | **Phone** | Contact phone number |
 | **Registration Date** | When they were registered |
 
-## Filtering by Type
+### Step 4. Filtering by type
 
-### Search Individuals Only
+#### Search individuals only
 
 To search only for individuals:
 
@@ -67,27 +67,25 @@ To search only for individuals:
 
 ![Filtering for groups](/_images/en-us/registry/search-filter/04-type-filter-highlight-individuals.png)
 
-### 5. Search Groups Only
+#### Search groups only
 
 To search only for groups:
 
-1. Open the Registry Search Portal
+1. Open the registry search portal
 2. Select **Groups** from the type filter
 3. Enter your search terms
 
 ![Filtering for groups](/_images/en-us/registry/search-filter/05-type-filter-set-to-groups-only.png)
 
-## Using Advanced Filters (Browse All)
+## Using advanced filters (browse all)
 
 For more advanced filtering, use the Browse All view (requires Auditor or Administrator access).
 
-### 1. Navigate to Browse All
+### Step 1. Navigate to browse all
 
 Go to **Registry** > **Browse All (Audit)** > **All Individuals** or **All Groups**.
 
-
-
-### 2. Use the Search Bar
+### Step 2. Use the search bar
 
 The search bar supports searching by:
 - Name
@@ -96,24 +94,24 @@ The search bar supports searching by:
 
 ![Search bar in Browse All](/_images/en-us/registry/search-filter/07-search-bar-in-browse-all-view.png)
 
-### 3. Apply Filters
+### Step 3. Apply filters
 
 Click the dropdown icon beside the searchbar to access preset filters:
 
 ![Filter dropdown](/_images/en-us/registry/search-filter/08-filter-dropdown-with-preset-filters.png)
 
-#### Available Filters for Individuals
+#### Available filters for individuals
 
-| Filter | What It Shows |
+| Filter | What it shows |
 |--------|---------------|
 | **Archived** | Records that have been archived |
 | **Disabled** | Records that have been disabled |
 | **Male** | Individuals with Male gender |
 | **Female** | Individuals with Female gender |
 
-#### Available Filters for Groups
+#### Available filters for groups
 
-| Filter | What It Shows |
+| Filter | What it shows |
 |--------|---------------|
 | **Archived** | Records that have been archived |
 | **Disabled** | Records that have been disabled |
@@ -121,13 +119,13 @@ Click the dropdown icon beside the searchbar to access preset filters:
 | **Has Email** | Groups with an email address |
 | **Has Phone** | Groups with at least one phone number |
 
-### 9. Group Results
+### Step 4. Group results
 
 Use **Group By** to organize results by category. Click the Group By button and select **Group Type**:
 
 ![Group By options](/_images/en-us/registry/search-filter/09-group-by-group-type.png)
 
-| Group By Option | What It Does |
+| Group By option | What it does |
 |-----------------|--------------|
 | **Gender** | Groups results by gender |
 | **Registration Date** | Groups by exact registration date |
@@ -135,14 +133,14 @@ Use **Group By** to organize results by category. Click the Group By button and 
 | **Registration Year** | Groups by year of registration |
 | **Group Type** | Groups by type (for group records) |
 
-### 10. Combine Multiple Filters
+### Step 5. Combine multiple filters
 
 Click multiple filters to combine them. For example:
 - **Female** + **Recently Registered** = Female individuals registered in the last 30 days
 
 ![Combined filters](/_images/en-us/registry/search-filter/10-combined-filters-applied-showing-results.png)
 
-### 11. Custom Filter Domains
+### Step 6. Custom filter domains
 
 For advanced users, click the dropdown beside the search, then click **Custom Filter** to create custom search criteria:
 
@@ -160,7 +158,7 @@ Example custom filters:
 | Registration Date | >= | 2024-01-01 | Registered this year |
 | Income | < | 5000 | Low income registrants |
 
-### 12. Sorting Results
+### Step 7. Sorting results
 
 Click on any column header to sort by that column:
 
@@ -169,11 +167,9 @@ Click on any column header to sort by that column:
 
 ![Sorting by column](/_images/en-us/registry/search-filter/12-sorting-by-column-header.png)
 
-### Default Sort Order
-
 By default, results are sorted by ID in descending order (newest records first).
 
-### 13. Viewing Record History
+### Step 8. Viewing record history
 
 Each record shows when it was created and last modified in the **History** tab:
 
@@ -186,7 +182,7 @@ Each record shows when it was created and last modified in the **History** tab:
 | **Last Updated on** | Date and time of last modification |
 | **Last Updated by** | User who last modified the record |
 
-## Are You Stuck?
+## Are you stuck?
 
 **Search returns no results?**
 
@@ -219,7 +215,7 @@ Each record shows when it was created and last modified in the **History** tab:
 - Date fields need values in YYYY-MM-DD format
 - Numeric fields need numeric values
 
-## Next Steps
+## Next steps
 
 - {doc}`export_data` - Export search results to CSV or Excel
 - {doc}`register_individual` - Register a new individual if not found

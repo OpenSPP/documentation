@@ -7,17 +7,17 @@ openspp:
     - sp_mis
 ---
 
-# Submit a Change Request
+# Submit a change request
 
 **Applies to:** Social Registry, SP-MIS
 
 This guide is for **users** (program staff, registry officers) who need to submit change requests to update registrant information.
 
-## What You Will Do
+## What you will do
 
 Create a change request to modify registrant information, such as updating personal details, adding household members, or correcting ID documents. Change requests go through an approval workflow before being applied to the registrant's record.
 
-## Before You Start
+## Before you start
 
 - You need **Change Request User** permissions
 - Know which registrant needs the update
@@ -25,42 +25,42 @@ Create a change request to modify registrant information, such as updating perso
 
 ## Steps
 
-### 1. Open Change Requests
+### Step 1. Open change requests
 
 Click **Change Requests** in the main menu.
 
 ![Change Requests menu](/_images/en-us/change-requests/submit/01-change-requests-menu-in-main-navigation.png)
 
-### 2. Start a New Request
+### Step 2. Start a new request
 
 Click **New Request** in the sidebar menu.
 
 ![New Request menu item](/_images/en-us/change-requests/submit/02-new-request-menu-item-in-change-requests-sidebar.png)
 
-This opens the Create Change Request wizard.
+This opens the create change request wizard.
 
-### 3. Select the Request Type
+### Step 3. Select the request type
 
 Choose the type of change you need from the available options. Common request types include:
 
-| Request Type | Use When |
+| Request type | Use when |
 |--------------|----------|
-| Edit Individual Information | Updating personal details (name, phone, address) |
-| Edit Group Information | Updating household details |
-| Add Group Member | Adding a new person to a household |
-| Remove Group Member | Removing someone from a household |
-| Update ID Document | Adding or correcting ID numbers |
-| Change Head of Household | Designating a new household head |
+| Edit individual information | Updating personal details (name, phone, address) |
+| Edit group information | Updating household details |
+| Add group member | Adding a new person to a household |
+| Remove group member | Removing someone from a household |
+| Update ID document | Adding or correcting ID numbers |
+| Change head of household | Designating a new household head |
 
 ```{note}
-**Available Request Types**: The system may have additional request types configured (such as Transfer Member, Exit Registrant, Create New Group, Split Household, Merge Registrants). See {doc}`change_request_types` for a complete reference of all available types.
+**Available request types**: The system may have additional request types configured (such as transfer member, exit registrant, create new group, split household, merge registrants). See {doc}`change_request_types` for a complete reference of all available types.
 ```
 
 ![Request type selection](/_images/en-us/change-requests/submit/03-request-type-selection.png)
 
 Click on the request type you need.
 
-### 4. Select the Registrant
+### Step 4. Select the registrant
 
 In the **Registrant** field, search for the person or household you are updating.
 
@@ -74,7 +74,7 @@ Select the correct registrant from the dropdown.
 Some request types only work with individuals, others only with groups. The system filters the registrant list based on your selected request type.
 ```
 
-### 5. Click Create
+### Step 5. Click create
 
 Click **Create** to create the change request.
 
@@ -86,13 +86,13 @@ The system creates the request and automatically opens the detail form for editi
 **Automatic Detail Form**: After clicking Create, the detail form opens automatically. If you navigate back to the main change request form, you can use the **Edit Details** smart button or the **Continue Editing** button in the Details tab to return to editing.
 ```
 
-### 6. Fill in the Change Details
+### Step 6. Fill in the change details
 
 The form shows fields specific to your request type. Fill in the information you want to change.
 
 **For Edit Individual Information:**
 
-| Field | What to Enter |
+| Field | What to enter |
 |-------|---------------|
 | Given Name | Person's first name |
 | Family Name | Person's surname |
@@ -106,7 +106,7 @@ The form shows fields specific to your request type. Fill in the information you
 
 **For Add Group Member:**
 
-| Field | What to Enter |
+| Field | What to enter |
 |-------|---------------|
 | Given Name | New member's first name |
 | Family Name | New member's surname |
@@ -116,7 +116,7 @@ The form shows fields specific to your request type. Fill in the information you
 
 ![Add Member form](/_images/en-us/change-requests/submit/07-add-group-member.png)
 
-### 7. Save the Details
+### Step 7. Save the details
 
 Click **Save** to save your changes to the detail form.
 
@@ -124,7 +124,7 @@ Click **Save** to save your changes to the detail form.
 
 The detail form remains open after saving. To submit the change request, navigate to the main change request form using the breadcrumb navigation or by opening the change request from the list.
 
-### 8. Upload Documents (If Required)
+### Step 8. Upload documents (if required)
 
 If your request type requires supporting documents:
 
@@ -142,7 +142,7 @@ If your request type requires supporting documents:
 
 4. Click **Upload**.
 
-### 9. Add Notes (Optional)
+### Step 9. Add notes (optional)
 
 Click the **Notes** tab to add:
 
@@ -151,7 +151,7 @@ Click the **Notes** tab to add:
 
 ![Notes tab](/_images/en-us/change-requests/submit/12-notes-tab-with-description.png)
 
-### 10. Review Your Changes
+### Step 10. Review your changes
 
 Before submitting, open the main change request form and review the **Details** tab to see a preview of the proposed changes.
 
@@ -160,12 +160,12 @@ The preview shows:
 - **Proposed Changes** - What will change if approved.
 
 ```{note}
-**Preview Availability**: The preview is only visible in the main change request form, not in the detail form. Make sure you've saved the detail form and navigated to the main change request form to see the preview.
+**Preview availability**: The preview is only visible in the main change request form, not in the detail form. Make sure you've saved the detail form and navigated to the main change request form to see the preview.
 ```
 
 ![Preview of changes](/_images/en-us/change-requests/submit/13-preview-of-changes.png)
 
-### 12. Submit for Approval
+### Step 11. Submit for approval
 
 When everything is correct, click **Submit for Approval**.
 
@@ -175,7 +175,7 @@ The status changes from **Draft** to **Under Review** (also referred to as "Pend
 
 ![Status changed to Under Review](/_images/en-us/change-requests/submit/15-status-changed-to-under-review-after-submission.png)
 
-## What Happens Next?
+## What happens next?
 
 After you submit:
 
@@ -188,10 +188,10 @@ After you submit:
 4. You can track the status in the **All Requests** view.
 
 ```{note}
-**Approval vs. Finalization**: When a validator approves your request, it moves to **Approved** status. However, the changes are not yet applied to the registrant's record. A separate "Finalize & Record Changes" action must be performed to actually record the changes. This provides an additional safety check before making permanent changes.
+**Approval vs. finalization**: When a validator approves your request, it moves to **Approved** status. However, the changes are not yet applied to the registrant's record. A separate "Finalize & Record Changes" action must be performed to actually record the changes. This provides an additional safety check before making permanent changes.
 ```
 
-## Are You Stuck?
+## Are you stuck?
 
 **Cannot find the Change Requests menu?**
 You may not have Change Request User permissions. Contact your administrator.
@@ -216,7 +216,7 @@ If a validator sends it back for changes (status: **Needs Changes**), you can ed
 **Need to cancel a draft request?**
 Open the request and use the **Action** menu to delete it (only possible while in Draft status).
 
-## Next Steps
+## Next steps
 
 - {doc}`review_change_request` - Learn how validators review requests
 - {doc}`change_request_types` - See all available request types

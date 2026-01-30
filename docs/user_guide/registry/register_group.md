@@ -7,21 +7,21 @@ openspp:
     - sp_mis
 ---
 
-# Register a Group
+# Register a group
 
 **Applies to:** Social Registry, SP-MIS
 
-## What You Will Do
+## What you will do
 
 Create a new group (such as a household) and add individual members to it.
 
-## Before You Start
+## Before you start
 
 - You need **Registry Officer** or **Administrator** access
 - Individuals should already be registered before adding them to a group
 - Have the group information ready (name, type, address)
 
-## Understanding Groups
+## Understanding groups
 
 A **group** represents a collection of related individuals, typically a household. Groups are important because:
 
@@ -31,42 +31,42 @@ A **group** represents a collection of related individuals, typically a househol
 
 ## Steps
 
-### 1. Open the Registry
+### Step 1. Open the registry
 
 Click **Registry** in the main menu to open the Registry Search Portal.
 
 ![Registry menu in sidebar](/_images/en-us/registry/register-group/01-registry-menu-in-sidebar-showing-registry-search.png)
 
-### 2. Click New Group
+### Steo 2. Click new group
 
 Click the **New Group** button to open the group registration form.
 
 ![New Group button](/_images/en-us/registry/register-group/02-new-group-button-highlighted-in-registry-search.png)
 
-### 3. Enter Group Information
+### Step 3. Enter group information
 
 Fill in the **Profile** tab with the group's basic information.
 
 ![Group profile tab](/_images/en-us/registry/register-group/03-group-profile-tab-showing-empty-registration-form.png)
 
-| Field | Required | What to Enter |
+| Field | Required | What to enter |
 |-------|----------|---------------|
 | **Group Name** | Yes | Name to identify this group (for example, "Santos Household") |
 | **Group Type** | No | Type of group (Household, Family, etc.) |
 | **Registration Date** | Auto | Date of registration (defaults to today) |
 
-### 4. Add Contact Information
+### Step 4. Add contact information
 
 In the **Contact Information** section, enter the group's address and contact details.
 
 ![Contact information section](/_images/en-us/registry/register-group/04-contact-information-section-with-address-and-email.png)
 
-| Field | Required | What to Enter |
+| Field | Required | What to enter |
 |-------|----------|---------------|
 | **Address** | No | Physical address of the group |
 | **Email** | No | Contact email address |
 
-#### Add Phone Numbers
+#### Add phone numbers
 
 To add a phone number for the group:
 
@@ -76,7 +76,7 @@ To add a phone number for the group:
 
 ![Phone number entry](/_images/en-us/registry/register-group/05-phone-number-entry-section-with-add-a-line-button.png)
 
-### 5. Add Tags (Optional)
+### Step 5. Add tags (optional)
 
 In the **Tags** section, add labels to categorize this group.
 
@@ -86,13 +86,13 @@ In the **Tags** section, add labels to categorize this group.
 If no tags appear in the dropdown, they may need to be configured by your administrator first. Contact your administrator to set up tags for your organization.
 ```
 
-### 6. Save the Group
+### Step 6. Save the group
 
 Click **Save** in the top left corner to create the group record.
 
 ![Save button](/_images/en-us/registry/register-group/07-save-button-highlighted-in-top-left-corner.png)
 
-### 7. Add Members to the Group
+### Step 7. Add members to the group
 
 After saving, add individuals as members of this group.
 
@@ -107,7 +107,7 @@ After saving, add individuals as members of this group.
 
 4. Fill in the membership details:
 
-| Field | Required | What to Enter |
+| Field | Required | What to enter |
 |-------|----------|---------------|
 | **Member Name** | Yes | Select the individual to add |
 | **Membership Types** | No | Role in the group (Head, Spouse, Child, etc.) |
@@ -119,7 +119,7 @@ After saving, add individuals as members of this group.
 5. Repeat to add more members
 6. Click **Save** to save all members
 
-### 8. Designate a Household Head
+### Step 8. Designate a household head
 
 One member should be designated as the household head:
 
@@ -133,15 +133,15 @@ One member should be designated as the household head:
 Only one member can be the Head per group. If you try to set a second Head, you will see an error message.
 ```
 
-### 9. Verify the Group
+### Step 9. Verify the group
 
 Search for the group in the Registry Search Portal to confirm it was created with all members.
 
 ![Search results showing new group](/_images/en-us/registry/register-group/12-search-results-showing-newly-created-group.png)
 
-## Viewing Group Membership
+## Viewing group membership
 
-### From the Group Record
+### From the group record
 
 Open the group and click the **Participation** tab to see all members.
 
@@ -155,14 +155,14 @@ Each row shows:
 - Start and end dates
 - Status (active or inactive)
 
-### From an Individual Record
+### From an individual record
 
 Open an individual and click the **Participation** tab to see which groups they belong to.
 
 ![Individual participation tab showing groups](/_images/en-us/registry/register-group/14-individual-participation-tab-showing-groups.png)
 
 
-## Ending a Membership
+## Ending a membership
 
 To remove someone from a group without deleting their individual record:
 
@@ -174,7 +174,7 @@ To remove someone from a group without deleting their individual record:
 
 The membership status will change to **Inactive**.
 
-## Are You Stuck?
+## Are you stuck?
 
 **Cannot find the New Group button?**
 
@@ -207,7 +207,7 @@ The membership status will change to **Inactive**.
 - Group types come from configured vocabularies
 - Contact your administrator to add more group types
 
-## Next Steps
+## Next steps
 
 - {doc}`search_filter` - Learn how to search for groups and individuals
 - {doc}`register_individual` - Register more individuals to add to groups

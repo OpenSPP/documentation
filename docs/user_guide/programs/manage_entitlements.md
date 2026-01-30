@@ -6,20 +6,20 @@ openspp:
     - sp_mis
 ---
 
-# Manage Entitlements
+# Manage entitlements
 
 **Applies to:** SP-MIS
 
-## What You Will Do
+## What you will do
 
 Learn how to view, understand, and manage entitlements in OpenSPP.
 
-## Before You Start
+## Before you start
 
 - You need **Program Validator**, **Program Manager**, or **Administrator** access to approve entitlements
 - An **approval definition** must be configured in the entitlement manager for the program before entitlements can be approved
 
-## What is an Entitlement?
+## What is an entitlement?
 
 An **entitlement** represents the benefit a beneficiary will receive for a specific cycle. Each entitlement includes:
 
@@ -35,11 +35,11 @@ There are two types of entitlements:
 | **Cash entitlement** | Monetary benefit with an amount and currency |
 | **In-kind entitlement** | Physical items with quantity and product details |
 
-## Entitlement States
+## Entitlement states
 
 Entitlements progress through these states:
 
-| State | Meaning | Who Can Change |
+| State | Meaning | Who can change |
 |-------|---------|----------------|
 | **Draft** | Not yet submitted | Program Officer |
 | **Pending Approval** | Waiting for validation (cash entitlements) | Program Validator |
@@ -52,18 +52,18 @@ Entitlements progress through these states:
 | **Expired** | Validity period ended | Automatic |
 
 ```{note}
-**State Display Names**: Cash entitlements show "Pending Approval" while in-kind entitlements show "Pending Validation" in the interface, though both represent the same workflow state.
+**State display names**: Cash entitlements show "Pending Approval" while in-kind entitlements show "Pending Validation" in the interface, though both represent the same workflow state.
 ```
 
-## View Entitlements
+## View entitlements
 
-### From a Cycle
+### From a cycle
 
 1. Open the program and click the **Cycles** smart button.
 
 2. Select a cycle.
 
-3. Click the **Entitlements** tab or the **Entitlements** smart button.
+3. Click the **Entitlements** smart button.
 
    ![Cycle entitlements](/_images/en-us/programs/entitlements/01-cycle-entitlements-view-showing-entitlements-tab.png)
 
@@ -77,9 +77,9 @@ For in-kind entitlements:
 
 2. The entitlements list shows all in-kind entitlements.
 
-## Understand Entitlement Information
+## Understand entitlement information
 
-### Cash Entitlement Fields
+### Cash entitlement fields
 
 | Field | Description |
 |-------|-------------|
@@ -94,7 +94,7 @@ For in-kind entitlements:
 | **Valid Until** | End of validity |
 | **Status** | Current status |
 
-### In-Kind Entitlement Fields
+### In-Kind entitlement fields
 
 | Field | Description |
 |-------|-------------|
@@ -111,9 +111,9 @@ For in-kind entitlements:
 
 ![In-kind entitlement form](/_images/en-us/programs/entitlements/03-in-kind-entitlement-form-with-product-and-quantity.png)
 
-## Filter and Search Entitlements
+## Filter and search entitlements
 
-### Use Filters
+### Use filters
 
 From the entitlements list, use filters to find specific entitlements:
 
@@ -127,11 +127,11 @@ From the entitlements list, use filters to find specific entitlements:
 
 ![Entitlement filters](/_images/en-us/programs/entitlements/04-entitlement-filters-for-state-filtering.png)
 
-### Search by Beneficiary
+### Search by beneficiary
 
 Type a beneficiary name or ID in the search bar to find their entitlements.
 
-### Group Results
+### Group results
 
 Group entitlements by:
 
@@ -139,9 +139,9 @@ Group entitlements by:
 - **Valid From** - Group by date
 - **Company** - For multi-company setups
 
-## Approve Entitlements
+## Approve entitlements
 
-### Approve from a Cycle
+### Approve from a cycle
 
 To approve all entitlements in a cycle at once:
 
@@ -155,7 +155,7 @@ To approve all entitlements in a cycle at once:
 
 4. Click **Approve Cycle** to complete the approval process.
 
-### Approve Individual Entitlements
+### Approve individual entitlements
 
 To approve a single entitlement:
 
@@ -167,7 +167,7 @@ To approve a single entitlement:
 
 3. The entitlement state changes to **Approved**.
 
-### Batch Approve
+### Batch approve
 
 To approve multiple entitlements at once:
 
@@ -185,7 +185,7 @@ To approve multiple entitlements at once:
 
 5. Confirm the approval.
 
-## Reject Entitlements
+## Reject entitlements
 
 If an entitlement should not be paid:
 
@@ -198,7 +198,7 @@ If an entitlement should not be paid:
 4. The system records the reason and sets the entitlement state to **Rejected**.
 
    ```{note}
-   **Rejection States**: The system uses three rejection states internally:
+   **Rejection states**: The system uses three rejection states internally:
    - **Rejected: Beneficiary didn't want the entitlement** - When beneficiary declined
    - **Rejected: Beneficiary account does not exist** - When payment account is invalid
    - **Rejected: Other reason** - For any other rejection reason
@@ -206,7 +206,7 @@ If an entitlement should not be paid:
    The specific state is determined automatically based on the context, but you only need to enter a reason in the text field.
    ```
 
-## Submit for Approval
+## Submit for approval
 
 To submit draft entitlements for approval:
 
@@ -217,10 +217,10 @@ To submit draft entitlements for approval:
 3. The entitlement state changes to **Pending Approval** (cash) or **Pending Validation** (in-kind).
 
 ```{note}
-**Automatic Submission**: When entitlements are generated by the entitlement manager, they may automatically be submitted for approval if the manager is configured to do so. You can also submit individual entitlements manually.
+**Automatic submission**: When entitlements are generated by the entitlement manager, they may automatically be submitted for approval if the manager is configured to do so. You can also submit individual entitlements manually.
 ```
 
-## Reset to Draft
+## Reset to draft
 
 If corrections are needed on a pending, rejected, or cancelled entitlement:
 
@@ -233,10 +233,10 @@ If corrections are needed on a pending, rejected, or cancelled entitlement:
 4. Submit for approval again.
 
 ```{note}
-**Reset Limitations**: Only entitlements in **Pending Approval/Pending Validation**, **Rejected**, or **Cancelled** states can be reset to draft. Approved entitlements cannot be reset to draft. Contact a Program Manager if an approved entitlement needs to be cancelled.
+**Reset limitations**: Only entitlements in **Pending Approval/Pending Validation**, **Rejected**, or **Cancelled** states can be reset to draft. Approved entitlements cannot be reset to draft. Contact a Program Manager if an approved entitlement needs to be cancelled.
 ```
 
-## View Entitlement History
+## View entitlement history
 
 For each entitlement, you can track:
 
@@ -249,10 +249,10 @@ This information is visible in the **Approval** tab (for cycles) or the form cha
 
 ![Entitlement history](/_images/en-us/programs/entitlements/09-entitlement-history-in-chatter-or-approval-tab.png)
 
-## Check Payment Status
+## Check payment status
 
 ```{note}
-**Configuration Required**: A payment manager must be configured for the program and a payment gateway must be configured in your OpenSPP instance before payment status information will be displayed. If these are not configured, the payment status section will be hidden and entitlements will not show Paid or Not Paid status.
+**Configuration required**: A payment manager must be configured for the program and a payment gateway must be configured in your OpenSPP instance before payment status information will be displayed. If these are not configured, the payment status section will be hidden and entitlements will not show Paid or Not Paid status.
 ```
 
 After entitlements are approved:
@@ -264,7 +264,7 @@ After entitlements are approved:
 
 The payment date shows when the payment was completed.
 
-## Are You Stuck?
+## Are you stuck?
 
 **Cannot see the Approve button?**
 - Only Program Validators and Managers can approve entitlements
@@ -297,7 +297,7 @@ The payment date shows when the payment was completed.
 - May also fail if insufficient funds are available (for cash entitlements) or if approval definition is not configured
 - Review and retry the individual entitlements
 
-## Next Steps
+## Next steps
 
 - {doc}`program_cycles` - Learn about cycle workflows
 - {doc}`enroll_beneficiaries` - Add more beneficiaries
