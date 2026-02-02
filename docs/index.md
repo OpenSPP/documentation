@@ -129,7 +129,6 @@ config_guide/variables/index
 config_guide/event_data/index
 config_guide/change_request_types/index
 config_guide/consent/index
-config_guide/drims/index
 ```
 
 ```{toctree}
@@ -144,8 +143,6 @@ developer_guide/api_v2/index
 developer_guide/dci/index
 developer_guide/verifiable_credentials/index
 developer_guide/integrations/index
-developer_guide/drims/index
-developer_guide/migration/index
 ```
 
 ```{toctree}

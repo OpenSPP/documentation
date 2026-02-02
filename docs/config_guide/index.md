@@ -27,7 +27,6 @@ The Configuration Guide is designed for implementers who need to customize OpenS
 - **Change Request Types** - Configuring change request workflows (NEW V2)
 - **Consent Configuration** - Managing data sharing consent (NEW V2)
 - **Role configuration** - Configuring users, roles, and role-based access (and optionally local/area-scoped roles)
-- **DRIMS** - Configuring Disaster Response Inventory Management
 
 ```{toctree}
 :maxdepth: 2
@@ -44,8 +43,9 @@ event_data/index
 change_request_types/index
 consent/index
 role_configuration
-drims/index
 ```
+
+<!-- Hidden until ready: drims/index -->
 
 ---
 
