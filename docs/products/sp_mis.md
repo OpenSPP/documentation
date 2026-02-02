@@ -48,8 +48,8 @@ The **OpenSPP Social Protection Management Information System (SP-MIS)** is a co
 
 ## Next Step
 
-The OpenSPP SP-MIS is an open-source product, built and supported by the OpenSPP community. Read more about {doc}`installing OpenSPP SP-MIS <../../getting_started/spmis_installation>`.
-
+The OpenSPP SP-MIS is an open-source product, built and supported by the OpenSPP community. Read more about {doc}`installing OpenSPP SP-MIS <../get_started/modules/spmis_installation>`.
+<!--
 ## OpenSPP modules included in the OpenSPP SP-MIS:
 
 The preconfigured OpenSPP SP-MIS product is intended to provide the basic use cases of an SP-MIS.
@@ -68,7 +68,7 @@ The following modules are included in the OpenSPP SP-MIS product:
 - **{doc}`OpenSPP Cash Entitlement <../../reference/modules/spp_entitlement_cash>`**: Manage cash-based entitlements for beneficiaries within social protection programs, including defining calculation rules, automating disbursement, and tracking payments.
 - **{doc}`OpenSPP In-Kind Entitlement <../../reference/modules/spp_entitlement_in_kind>`**: Manages the distribution of in-kind entitlements within social protection programs, handling inventory, service points, and beneficiary redemption.
 - **{doc}`OpenSPP Entitlement Transactions <../../reference/modules/spp_ent_trans>`**: Records and manages transactions related to entitlement redemptions.
-
+-->
 ## Expanding the SPMIS
 
-The OpenSPP-based SPMIS contains everything that is necessary to set up a foundational SPMIS. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more about {doc}`module installation <../../getting_started/module_installation>`.
+The OpenSPP-based SPMIS contains everything that is necessary to set up a foundational SPMIS. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more about {doc}`module installation <../get_started/modules/index>`.

@@ -39,8 +39,8 @@ The **OpenSPP Social Registry** is a digital platform that helps governments and
 
 ## Next Step
 
-The OpenSPP Social Registry is an open-source product, built and supported by the OpenSPP community. Read more about {doc}`installing OpenSPP Social Registry <../../getting_started/social_installation>`.
-
+The OpenSPP Social Registry is an open-source product, built and supported by the OpenSPP community. Read more about {doc}`installing OpenSPP Social Registry <../get_started/modules/social_installation>`.
+<!--
 ## OpenSPP modules included in the OpenSPP Social Registry
 
 The preconfigured OpenSPP Social Registry product is intended to provide support for the fundamental use cases of a social registry.
@@ -54,7 +54,8 @@ The following modules are included in the OpenSPP Social Registry product:
 - **{doc}`OpenSPP OpenID VCI Individual <../../reference/modules/spp_openid_vci_individual>`**: Enables the issuance of Verifiable Credentials (VCs) for individual registrants.
 - **{doc}`OpenSPP Custom Filter <../../reference/modules/spp_custom_filter>`**: Allows control over fields displayed in filter dropdowns.
 - **{doc}`OpenSPP User Roles <../../reference/modules/spp_user_roles>`**: Manages user access and permissions to the registry data, ensuring data security and integrity.
+-->
 
 ## Expanding the Social Registry
 
-The OpenSPP-based Social Registry contains everything that is necessary to set up a foundational Social Registry. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more about {doc}`module installation <../../getting_started/module_installation>`.
+The OpenSPP-based Social Registry contains everything that is necessary to set up a foundational Social Registry. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more about {doc}`module installation <../get_started/modules/index>`.

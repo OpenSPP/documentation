@@ -18,6 +18,7 @@ It can provide a single source of truth across interventions, reducing duplicati
 
 **{doc}`OpenSPP Farmer Registry <farmer_registry>`**: A specialized registry for agricultural programs that bridges farming and social protection. It enables targeted agricultural interventions, input distribution, and climate-smart agriculture support for rural communities.
 
+**{doc}`OpenSPP DRIMS <drims>`**: A Disaster Response Inventory Management System for coordinating emergency supply operations. It manages the lifecycle of relief items from donation pledges to warehouse storage and dispatch, enabling governments and humanitarian organizations to track inventory in real time and deliver supplies efficiently to affected populations.
 
 ```{toctree}
 :maxdepth: 2

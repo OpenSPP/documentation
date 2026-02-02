@@ -26,7 +26,7 @@ After loading the MIS demo data, you'll have:
 ## Before you start
 
 - OpenSPP should be installed and running (see {doc}`../installation/index`)
-- OpenSPP SPMIS Demo should be installed (see {doc}`../installation/modules`)
+- OpenSPP SPMIS Demo should be installed (see {doc}`../modules/index`)
 - You need administrator access to OpenSPP
 
 ## Load demo data
@@ -43,7 +43,7 @@ Click **Settings** in the left sidebar.
 
 ![Screenshot: Settings page](/_images/en-us/get_started/explore/cle1_2.png)
 
-*Note:* If your screen does not look like in the screenshot, it may be due to the **OpenSPP MIS Demo V2** module not being installed yet. Learn how to do this on {doc}`Module Installation <../installation/modules>`.
+*Note:* If your screen does not look like in the screenshot, it may be due to the **OpenSPP MIS Demo V2** module not being installed yet. Learn how to do this on {doc}`Module Installation <../modules/index>`.
 
 ### 3: Navigate to demo data
 
@@ -51,7 +51,7 @@ In the Settings top menu, click **Demo Data** > **Load MIS Demo**.
 
 ![Screenshot: Settings with Demo Data menu](/_images/en-us/get_started/explore/cle1_3.png)
 
-*Note:* If this option is not available, it may be due to the **OpenSPP MIS Demo V2** module not being installed yet. Learn how to do this on {doc}`Module Installation <../installation/modules>`.
+*Note:* If this option is not available, it may be due to the **OpenSPP MIS Demo V2** module not being installed yet. Learn how to do this on {doc}`Module Installation <../modules/index>`.
 
 ### 4: Open the wizard
 
