@@ -30,8 +30,8 @@ Event fields work like form questions:
 | **Integer** | Whole numbers | Counts, ages | Household size: `5` |
 | **Decimal** | Numbers with decimals | Money, measurements | Income: `4500.50` |
 | **Date** | Calendar date (YYYY-MM-DD) | Birthdates, verification dates | `2024-03-15` |
-| **DateTime** | Date + time | Timestamps | `2024-03-15 14:30:00` |
-| **Boolean** | True/False | Yes/No questions | Is employed: `true` |
+| **Date & Time** | Date + time | Timestamps | `2024-03-15 14:30:00` |
+| **Yes/No** | True/False | Yes/No questions | Is employed: `true` |
 | **Selection** | Pick one from list | Categories, statuses | Employment: "Employed" |
 | **Multi-Select** | Pick multiple from list | Multiple categories | Crops: ["Maize", "Beans"] |
 | **Link** | Reference to another record | Link to location, organization | Area: → res.partner |
@@ -40,7 +40,7 @@ Event fields work like form questions:
 
 ### Step 1: Open Event Type
 
-Go to **Studio → Event Types** and open your event type (must be in Draft state).
+Go to **Studio → Forms & Fields → Event Types** and open your event type (must be in Draft state).
 
 ### Step 2: Add Field
 
@@ -202,7 +202,7 @@ Show or hide fields based on other field values (like skip logic in surveys).
 
 | Label | Technical Name | Type | Required | Validation |
 |-------|---------------|------|----------|------------|
-| Has Disability | `has_disability` | Boolean | Yes | - |
+| Has Disability | `has_disability` | Yes/No | Yes | - |
 | Disability Type | `disability_type` | Multi-Select | Conditional | Visible if has_disability |
 | Severity Level | `severity_level` | Selection | Conditional | Low / Medium / High / Severe |
 | Support Needed | `support_needed` | Long Text | No | - |
@@ -223,10 +223,10 @@ Multiple
 | Label | Technical Name | Type | Required | Validation |
 |-------|---------------|------|----------|------------|
 | Farm Size (hectares) | `hectares` | Decimal | Yes | Range: 0.1 - 1000 |
-| Certified Farmer | `certified` | Boolean | Yes | - |
+| Certified Farmer | `certified` | Yes/No | Yes | - |
 | Crops Grown | `crops` | Multi-Select | Yes | Maize / Rice / Beans / Vegetables |
 | Livestock Count | `livestock_count` | Integer | No | Range: 0 - 10000 |
-| Pest Infestation | `pest_infestation` | Boolean | Yes | - |
+| Pest Infestation | `pest_infestation` | Yes/No | Yes | - |
 | Inspector Notes | `inspector_notes` | Long Text | No | - |
 
 ## Field Naming Best Practices
@@ -271,7 +271,7 @@ Multiple
 ```
 Field 1:
   Label: Has disability
-  Type: Boolean
+  Type: Yes/No
   Required: Yes
 
 Field 2:
@@ -343,17 +343,14 @@ To reorder:
 
 ## Field Defaults
 
-Some fields can have default values:
+Some fields support default values configured in the field settings:
 
 | Type | Default Options |
 |------|----------------|
 | **Date** | Today, Custom date |
-| **Boolean** | True, False |
+| **Yes/No** | True, False |
 | **Integer/Decimal** | Numeric value |
 | **Selection** | One of the options |
-
-**Set default in:**
-- Field configuration → Default Value
 
 ## Copying Fields from Templates
 

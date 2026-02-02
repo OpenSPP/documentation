@@ -122,7 +122,7 @@ and event('farm_visit').hectares <= 10
 Events move through states:
 
 ```
-Draft → Pending Approval → Active → Superseded/Expired
+Draft → Pending Approval → Active → Superseded/Expired/Cancelled/Inactive
 ```
 
 | State | Meaning | When Used |
@@ -132,6 +132,8 @@ Draft → Pending Approval → Active → Superseded/Expired
 | **Active** | Current official data | After approval or direct activation |
 | **Superseded** | Replaced by newer event | When new event activates (if "one active per registrant") |
 | **Expired** | Past validity period | Auto-expired by scheduled job |
+| **Cancelled** | Manually cancelled | User or system cancelled the event |
+| **Inactive** | Deactivated | Event deactivated but preserved for history |
 
 ### Configuration Options
 

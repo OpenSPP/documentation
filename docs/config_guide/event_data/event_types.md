@@ -23,41 +23,51 @@ Think of it like this:
 
 ## Creating an Event Type
 
-### Step 1: Navigate to Studio
+### Step 1: Navigate to Event Types
 
-Go to **Studio → Event Types** in the OpenSPP menu.
+Go to **Studio → Forms & Fields → Event Types**.
 
 ### Step 2: Create Event Type
 
-Click **Create** and configure:
+Click **New** and configure:
 
 | Field | Value | Notes |
 |-------|-------|-------|
-| **Name** | Household Income Survey | User-facing name |
-| **Code** | `household_income_survey` | Auto-generated from name, used in CEL expressions |
+| **Event Type Name** | Household Income Survey | User-facing name |
 | **Target Type** | Group/Household | Individual, Group, or Both |
 | **Description** | Quarterly income verification for cash transfer program | Helps users understand when to use this event type |
 
-### Step 3: Configure Lifecycle
+```{note}
+A **Code** (technical identifier used in CEL expressions) is auto-generated when you activate the event type. The code is based on the name, e.g., "Household Income Survey" becomes `household_income_survey`.
+```
+
+### Step 3: Configure Approval
 
 | Setting | Options | When to Use |
 |---------|---------|-------------|
-| **One Active Per Registrant** | Yes / No | **Yes**: Latest assessment replaces previous (e.g., disability status)<br>**No**: Keep all events (e.g., attendance records, field visits) |
 | **Requires Approval** | Yes / No | **Yes**: New events start in "Pending Approval" state<br>**No**: Events activate immediately |
-| **Auto Expiry** | None / Days / Months | Set expiry period (e.g., "Expire after 12 months" for annual assessments) |
+| **Approval Workflow** | Select workflow | Choose the approval workflow for events requiring approval |
+
+```{note}
+Additional lifecycle settings (**One Active Per Registrant**, **Auto Expire Days**) are configured on the activated event type record, not in the Studio form. These settings control how events behave at runtime.
+```
 
 **Example Configurations:**
 
-| Event Type | One Active | Requires Approval | Expiry |
-|------------|------------|-------------------|--------|
-| Income Assessment | Yes | Yes | 12 months |
-| Attendance | No | No | None |
-| Disability Status | Yes | Yes | 24 months |
-| Farm Visit | No | Yes | None |
+| Event Type | Requires Approval | Use Case |
+|------------|-------------------|----------|
+| Income Assessment | Yes | Needs review before eligibility changes |
+| Attendance | No | High volume, immediate activation |
+| Disability Status | Yes | Sensitive data requires verification |
+| Farm Visit | Yes | Inspector findings need approval |
 
 ### Step 4: Add Fields
 
 Click the **Fields** tab and add your data fields. See {doc}`field_definitions` for detailed field configuration.
+
+The form also includes:
+- **Field Groups** tab - Organize fields into logical sections
+- **Audit Trail** tab - View change history
 
 Quick field setup:
 
@@ -92,20 +102,28 @@ Click **Activate** to make the event type available for use.
 
 | Field | Description | Example |
 |-------|-------------|---------|
-| **Name** | Display name for users | "Household Survey" |
-| **Code** | Technical identifier for CEL | `household_survey` |
-| **Target Type** | Individual / Group / Both | Individual |
+| **Event Type Name** | Display name for users | "Household Survey" |
+| **Target Type** | Individual / Group/Household / Both | Individual |
 | **Description** | Help text for data collectors | "Monthly income verification" |
+
+After activation, the system generates a **Code** (technical identifier for CEL expressions) based on the name, e.g., `household_survey`.
 
 ### Lifecycle Configuration
 
+These settings are configured on the activated event type (not in Studio form):
+
 | Setting | Description | Impact |
 |---------|-------------|--------|
-| **One Active Per Registrant** | Only one active event allowed | New activation supersedes previous active event |
-| **Allow Multiple Active** | Multiple active events allowed | All events stay active until manually changed |
-| **Requires Approval** | Approval workflow enabled | New events start in "Pending Approval" |
-| **Auto Expiry** | Automatic expiration enabled | Scheduled job expires events after period |
-| **Expiry Period** | Days or months until expiry | 365 days, 12 months, etc. |
+| **Is One Active Per Registrant** | Only one active event allowed | New activation supersedes previous active event |
+| **Is Requires Approval** | Approval workflow enabled | New events start in "Pending Approval" |
+| **Auto Expire Days** | Days until auto-expiry (0 = never) | Scheduled job expires events after N days |
+
+In the Studio form, you configure:
+
+| Setting | Description | Impact |
+|---------|-------------|--------|
+| **Requires Approval** | Enable approval workflow | New events need approval before activation |
+| **Approval Workflow** | Select approval definition | Defines approvers and levels |
 
 ### Program Association
 
@@ -116,29 +134,20 @@ Click **Activate** to make the event type available for use.
 
 ## Using Event Type Templates
 
-OpenSPP V2 includes reusable field templates for common assessment types.
-
-### Applying a Template
-
-1. Create a new event type
-2. Click **Apply Template**
-3. Select template category:
-   - **Survey/Assessment** - Generic survey fields
-   - **Health Screening** - Health assessment fields
-   - **Economic Assessment** - Income, assets, employment
-   - **Demographic** - Household composition
-4. Choose template
-5. Review and customize fields
+OpenSPP V2 includes reusable field templates for common assessment types. Templates are managed in **Studio → Settings → Event Templates**.
 
 ### Available Templates
 
-| Template | Fields Included | Use Case |
-|----------|----------------|----------|
-| **Basic Income Assessment** | Monthly income, employment status, income source | Cash transfer programs |
-| **Household Composition** | Household size, children count, dependents | Family support programs |
-| **Disability Screening** | Disability type, severity, support needs | Disability programs |
-| **Farm Assessment** | Land size, crops, livestock, certification | Agricultural programs |
-| **Health Screening** | Health status, chronic conditions, vaccinations | Health programs |
+| Template | Category | Use Case |
+|----------|----------|----------|
+| **Income Assessment** | Economic | Cash transfer programs |
+| **Health Screening** | Health | Health programs |
+| **Field Visit** | Visit | Inspector assessments |
+| **Vulnerability Assessment** | Survey | Social protection targeting |
+
+### Applying a Template
+
+Templates can be applied when creating event types through the Event Type Builder wizard or by configuring field mappings manually.
 
 ## Event Type States
 
@@ -264,9 +273,9 @@ Before rolling out to data collectors:
 
 ## Are You Stuck?
 
-**Event type code changed after I saved it?**
+**Where is the Code field?**
 
-The code is auto-generated from the name on first save. It won't change after that. If you need a different code, create a new event type.
+The code is auto-generated when you activate the event type. You don't enter it manually - it's derived from the name (e.g., "Household Survey" → `household_survey`).
 
 **Can't activate - says "incomplete configuration"?**
 
@@ -281,11 +290,11 @@ Check:
 
 **How do I rename an event type?**
 
-You can change the **Name** but not the **Code**. The code is permanent once created (used in CEL expressions and integrations).
+You can change the **Event Type Name** but not the **Code**. The code is permanent once the event type is activated (used in CEL expressions and integrations).
 
-**Can I copy an event type?**
+**How do I configure "One Active Per Registrant" or "Auto Expire Days"?**
 
-Yes - open the event type and click **Duplicate**. This creates a new draft copy with all fields.
+These settings are on the activated event type record, not in the Studio form. After activation, an administrator can configure these settings on the `spp.event.type` record.
 
 **What happens to old events if I change field definitions?**
 
