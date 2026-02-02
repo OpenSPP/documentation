@@ -1,0 +1,904 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+    <meta property="og:title" content="}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.openspp.org/technical_reference/external_api.html" />
+<meta property="og:site_name" content="OpenSPP Documentation" />
+<meta property="og:description" content="--- myst: html_meta:,&quot;title&quot;: &quot;External API using JSON-RPC&quot; &quot;description&quot;: &quot;Complete guide to interacting with OpenSPP Registry via JSON-RPC API including authentication, CRUD operations, and Pytho..." />
+<meta property="og:image" content="https://docs.openspp.org/_static/openspp_logo.png" />
+<meta property="og:image:alt" content="OpenSPP Documentation" />
+<meta name="description" content="--- myst: html_meta:,&quot;title&quot;: &quot;External API using JSON-RPC&quot; &quot;description&quot;: &quot;Complete guide to interacting with OpenSPP Registry via JSON-RPC API including authentication, CRUD operations, and Pytho..." />
+<meta property="og:locale" content="en_US" />
+
+<title>} &#8212; OpenSPP Documentation v1.3</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-httpexample.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinxcontrib-httpexample.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/patch_scrollToActive.js"></script>
+    <script src="../_static/search_shortcut.js"></script>
+    <script src="../_static/version_switcher.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>
+mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    themeVariables: {
+        primaryColor: '#0066cc',
+        primaryTextColor: '#000000',
+        primaryBorderColor: '#0066cc'
+    }
+});
+</script>
+    <link rel="canonical" href="https://docs.openspp.org/technical_reference/external_api.html" />
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within OpenSPP Documentation v1.3"
+          href="../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../_static/icon_192.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../_static/review_status.css" type="text/css" />
+<script src="../_static/review_status_simple.js"></script>
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+
+<!-- Mermaid Support -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="100">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">OpenSPP Documentation v1.3</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <div class="input-group">
+    <label for="q" class="sr-only">Search string
+    </label>
+    <i class="fa fa-search fa-lg search-icon" aria-hidden="true"></i>
+    <input
+    type="search" name="q" id="search-input"
+    class="form-control"
+    placeholder="Search"
+    aria-labelledby="Search"
+    value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+    />
+    <div class="input-group-append">
+      <span class="input-group-text" id="shortcut">
+        <kbd id="search-shortcut">⌘</kbd>&nbsp;<kbd>K</kbd>
+      </span>
+    </div>
+  </div>
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../getting_started/index.html">
+   Getting started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../getting_started/installation_deb.html">
+     Installing OpenSPP
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../getting_started/module_installation.html">
+     Module installation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../getting_started/spmis_installation.html">
+       SP-MIS installation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../getting_started/social_installation.html">
+       Social Registry installation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../getting_started/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            
+    <p class="openspporglink">
+        <a href="https://openspp.org">
+            <img src="/_static/openspp_logo.png" alt="openspp.org" /> openspp.org</a>
+    </p>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__label">
+        <span>}</span>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/openspp/documentation"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Ftechnical_reference/external_api.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://docs.openspp.org/contributing/?technical_reference/external_api.rst#making-contributions-on-github"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/technical_reference/external_api.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>}</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>---
+myst:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>html_meta:</dt><dd><p>&quot;title&quot;: &quot;External API using JSON-RPC&quot;
+&quot;description&quot;: &quot;Complete guide to interacting with OpenSPP Registry via JSON-RPC API including authentication, CRUD operations, and Python examples.&quot;
+&quot;keywords&quot;: &quot;OpenSPP, JSON-RPC, external API, registry API, CRUD operations, authentication, Python integration&quot;</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>---</p>
+<p># External API using JSON-RPC</p>
+<p>This guide explains how to connect to and interact with OpenSPP Registry using the JSON-RPC API, with practical Python examples for adding individuals, groups, and memberships.</p>
+<p>## Prerequisites</p>
+<ul class="simple">
+<li><p>OpenSPP server running and accessible.</p></li>
+<li><p>User credentials or API key with appropriate permissions.</p></li>
+<li><p>Python 3.x and the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library installed (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">requests</span></code>).</p></li>
+</ul>
+<p>## Process
+### Understanding JSON-RPC in OpenSPP</p>
+<p>OpenSPP exposes much of its data and functionality via JSON-RPC endpoints. You can use these endpoints to authenticate, read, create, update, and delete records from external applications.</p>
+<p><strong>Endpoint:</strong>
+- <code class="docutils literal notranslate"><span class="pre">/jsonrpc</span></code> — All JSON-RPC calls (authentication and model methods)</p>
+<p>### JSON-RPC payload structure and methods</p>
+<p>All interactions with the OpenSPP JSON-RPC API use a standard payload structure. Each request is a JSON object with the following keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">jsonrpc</span></code>: The JSON-RPC protocol version (always <code class="docutils literal notranslate"><span class="pre">&quot;2.0&quot;</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">method</span></code>: The JSON-RPC method (always <code class="docutils literal notranslate"><span class="pre">&quot;call&quot;</span></code> for OpenSPP).</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">params</span></code>: The parameters for the call, including:</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">service</span></code>: The Odoo service to use (<code class="docutils literal notranslate"><span class="pre">&quot;common&quot;</span></code> for authentication, <code class="docutils literal notranslate"><span class="pre">&quot;object&quot;</span></code> for model methods).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">method</span></code>: The method to call on the service (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;authenticate&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;execute_kw&quot;</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: A list of arguments for the method.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: A unique identifier for the request (integer or string).</p></li>
+</ul>
+<p><strong>Example payload:</strong>
+<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>python
+payload = {</p>
+<blockquote>
+<div><p>&quot;jsonrpc&quot;: &quot;2.0&quot;,
+&quot;method&quot;: &quot;call&quot;,
+&quot;params&quot;: {</p>
+<blockquote>
+<div><p>&quot;service&quot;: &quot;object&quot;,
+&quot;method&quot;: &quot;execute_kw&quot;,
+&quot;args&quot;: [</p>
+<blockquote>
+<div><p>db, uid, password,
+&quot;res.partner&quot;, &quot;search_read&quot;,
+[[[&quot;is_group&quot;, &quot;=&quot;, False]]],  # Domain filter
+{&quot;fields&quot;: [&quot;name&quot;, &quot;reg_id&quot;], &quot;limit&quot;: 5}  # Options</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+&quot;id&quot;: 10,</p>
+</div></blockquote>
+<section id="id5">
+<h1>}<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h1>
+<p><strong>Common JSON-RPC methods:</strong>
+- <code class="docutils literal notranslate"><span class="pre">authenticate</span></code>: Used for logging in and obtaining a user ID.
+- <code class="docutils literal notranslate"><span class="pre">execute_kw</span></code>: Used for calling model methods (such as <code class="docutils literal notranslate"><span class="pre">create</span></code>, <code class="docutils literal notranslate"><span class="pre">write</span></code>, <code class="docutils literal notranslate"><span class="pre">unlink</span></code>, <code class="docutils literal notranslate"><span class="pre">search_read</span></code>).
+---</p>
+<p>### Common model methods and args</p>
+<p>When using the <code class="docutils literal notranslate"><span class="pre">&quot;object&quot;</span></code> service with the <code class="docutils literal notranslate"><span class="pre">&quot;execute_kw&quot;</span></code> method, you can call various model methods. Here are the most common:</p>
+<p><strong>`create`</strong>
+Creates a new record.</p>
+<p><strong>Args:</strong>
+1. Model name (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;res.partner&quot;</span></code>)
+2. Method name (<code class="docutils literal notranslate"><span class="pre">&quot;create&quot;</span></code>)
+3. List of dictionaries with field values</p>
+<p><strong>Example:</strong>
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">[&quot;res.partner&quot;,</span> <span class="pre">&quot;create&quot;,</span> <span class="pre">[{&quot;name&quot;:</span> <span class="pre">&quot;Jane</span> <span class="pre">Doe&quot;,</span> <span class="pre">&quot;reg_id&quot;:</span> <span class="pre">&quot;IND654321&quot;}]]</span>
+<span class="pre">`</span></code></p>
+<p><strong>Result:</strong>
+Returns the ID of the newly created record.</p>
+<p><strong>`write`</strong>
+Updates existing records.</p>
+<p><strong>Args:</strong>
+1. Model name
+2. Method name (<code class="docutils literal notranslate"><span class="pre">&quot;write&quot;</span></code>)
+3. List of record IDs to update
+4. Dictionary of fields to update</p>
+<p><strong>Example:</strong>
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">[&quot;res.partner&quot;,</span> <span class="pre">&quot;write&quot;,</span> <span class="pre">[[individual_id],</span> <span class="pre">{&quot;birthdate&quot;:</span> <span class="pre">&quot;1991-02-02&quot;}]]</span>
+<span class="pre">`</span></code></p>
+<p><strong>Result:</strong>
+Returns a dictionary indicating the result of the update.</p>
+<p><strong>`unlink`</strong>
+Deletes records.</p>
+<p><strong>Args:</strong>
+1. Model name
+2. Method name (<code class="docutils literal notranslate"><span class="pre">&quot;unlink&quot;</span></code>)
+3. List of record IDs to delete</p>
+<p><strong>Example:</strong>
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">[&quot;res.partner&quot;,</span> <span class="pre">&quot;unlink&quot;,</span> <span class="pre">[individual_id]]</span>
+<span class="pre">`</span></code></p>
+<p><strong>Result:</strong>
+Returns a dictionary indicating the result of the deletion.</p>
+<p><strong>`search_read`</strong>
+Searches for records and reads their fields.</p>
+<p><strong>Args:</strong>
+1. Model name
+2. Method name (<code class="docutils literal notranslate"><span class="pre">&quot;search_read&quot;</span></code>)
+3. Domain filter (list of conditions)
+4. Options dictionary (fields, limit, offset, etc.)</p>
+<p><strong>Example:</strong>
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">[&quot;res.partner&quot;,</span> <span class="pre">&quot;search_read&quot;,</span> <span class="pre">[[[&quot;is_group&quot;,</span> <span class="pre">&quot;=&quot;,</span> <span class="pre">False]]],</span> <span class="pre">{&quot;fields&quot;:</span> <span class="pre">[&quot;name&quot;,</span> <span class="pre">&quot;reg_id&quot;],</span> <span class="pre">&quot;limit&quot;:</span> <span class="pre">5}]</span>
+<span class="pre">`</span></code></p>
+<p><strong>Domain filters:</strong>
+A domain is a list of conditions, each as a list: <code class="docutils literal notranslate"><span class="pre">[field,</span> <span class="pre">operator,</span> <span class="pre">value]</span></code>.
+Example: <code class="docutils literal notranslate"><span class="pre">[[&quot;name&quot;,</span> <span class="pre">&quot;=&quot;,</span> <span class="pre">&quot;John</span> <span class="pre">Doe&quot;]]</span></code></p>
+<p><strong>Options:</strong>
+- <code class="docutils literal notranslate"><span class="pre">fields</span></code>: List of fields to return.
+- <code class="docutils literal notranslate"><span class="pre">limit</span></code>: Maximum number of records.
+- <code class="docutils literal notranslate"><span class="pre">offset</span></code>: Skip the first N records.</p>
+<p><strong>Result</strong>
+Returns a dictionary of the search results.</p>
+<p>---</p>
+<p>### Authentication</p>
+<p>You must authenticate before accessing most data. Use your password or an API key (recommended).</p>
+<p><a href="#id6"><span class="problematic" id="id7">``</span></a><a href="#id8"><span class="problematic" id="id9">`</span></a>python
+import requests</p>
+<p>url = &quot;<a class="reference external" href="http://localhost:8069/jsonrpc">http://localhost:8069/jsonrpc</a>&quot;
+db = &quot;my_database&quot;
+username = &quot;admin&quot;
+password = &quot;your_password_or_api_key&quot;</p>
+<dl>
+<dt>payload = {</dt><dd><p>&quot;jsonrpc&quot;: &quot;2.0&quot;,
+&quot;method&quot;: &quot;call&quot;,
+&quot;params&quot;: {</p>
+<blockquote>
+<div><p>&quot;service&quot;: &quot;common&quot;,
+&quot;method&quot;: &quot;authenticate&quot;,
+&quot;args&quot;: [db, username, password, {}]</p>
+</div></blockquote>
+<p>},
+&quot;id&quot;: 1,</p>
+</dd>
+</dl>
+<p>}
+response = requests.post(url, json=payload).json()
+uid = response.get(&quot;result&quot;)
+if not uid:</p>
+<blockquote>
+<div><p>raise Exception(&quot;Authentication failed&quot;)</p>
+</div></blockquote>
+<p>print(&quot;Authenticated UID:&quot;, uid)
+<a href="#id10"><span class="problematic" id="id11">``</span></a><a href="#id12"><span class="problematic" id="id13">`</span></a></p>
+<p>### Working with individuals</p>
+<p><strong>Gather the fields</strong></p>
+<p>For this example we are going to use these fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (string, required)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">given_name</span></code> (string, required)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">family_name</span></code> (string, required)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gender</span></code> (many2one, required)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">birthdate</span></code> (date, required)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_registrant</span></code> (boolean, default=True)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_group</span></code> (boolean, default=False)</p></li>
+</ul>
+<p><strong>Example: Create an individual</strong></p>
+<p><a href="#id14"><span class="problematic" id="id15">``</span></a><a href="#id16"><span class="problematic" id="id17">`</span></a>python
+# First, get a gender_id (e.g., for &quot;Male&quot;)
+payload = {</p>
+<blockquote>
+<div><p>&quot;jsonrpc&quot;: &quot;2.0&quot;,
+&quot;method&quot;: &quot;call&quot;,
+&quot;params&quot;: {</p>
+<blockquote>
+<div><p>&quot;service&quot;: &quot;object&quot;,
+&quot;method&quot;: &quot;execute_kw&quot;,
+&quot;args&quot;: [</p>
+<blockquote>
+<div><p>db, uid, password,
+&quot;gender.type&quot;, &quot;search_read&quot;,
+[[[&quot;code&quot;, &quot;=&quot;, &quot;Male&quot;]]],
+{&quot;fields&quot;: [&quot;id&quot;], &quot;limit&quot;: 1}</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+&quot;id&quot;: 2,</p>
+</div></blockquote>
+<p>}
+response = requests.post(url, json=payload).json()
+gender_id = response[&quot;result&quot;][0][&quot;id&quot;]</p>
+<p># Now, create the individual
+payload = {</p>
+<blockquote>
+<div><p>&quot;jsonrpc&quot;: &quot;2.0&quot;,
+&quot;method&quot;: &quot;call&quot;,
+&quot;params&quot;: {</p>
+<blockquote>
+<div><p>&quot;service&quot;: &quot;object&quot;,
+&quot;method&quot;: &quot;execute_kw&quot;,
+&quot;args&quot;: [</p>
+<blockquote>
+<div><p>db, uid, password,
+&quot;res.partner&quot;, &quot;create&quot;,
+[{</p>
+<blockquote>
+<div><p>&quot;name&quot;: &quot;John Doe&quot;,
+&quot;given_name&quot;: &quot;John&quot;,
+&quot;family_name&quot;: &quot;Doe&quot;,
+&quot;gender&quot;: gender_id,
+&quot;birthdate&quot;: &quot;1990-01-01&quot;,
+&quot;is_registrant&quot;: True,
+&quot;is_group&quot;: False,</p>
+</div></blockquote>
+<p>}]</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+&quot;id&quot;: 3,</p>
+</div></blockquote>
+<p>}
+response = requests.post(url, json=payload).json()
+individual_id = response[&quot;result&quot;]
+print(&quot;Created Individual ID:&quot;, individual_id)</p>
+<p># Update the individual's birthdate
+payload = {</p>
+<blockquote>
+<div><p>&quot;jsonrpc&quot;: &quot;2.0&quot;,
+&quot;method&quot;: &quot;call&quot;,
+&quot;params&quot;: {</p>
+<blockquote>
+<div><p>&quot;service&quot;: &quot;object&quot;,
+&quot;method&quot;: &quot;execute_kw&quot;,
+&quot;args&quot;: [</p>
+<blockquote>
+<div><p>db, uid, password,
+&quot;res.partner&quot;, &quot;write&quot;,
+[[individual_id],  # List of IDs to update
+{&quot;birthdate&quot;: &quot;1991-02-02&quot;}]  # Fields to update</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+&quot;id&quot;: 8,</p>
+</div></blockquote>
+<p>}
+response = requests.post(url, json=payload).json()
+updated = response[&quot;result&quot;]
+print(&quot;Result:&quot;, updated)
+<a href="#id18"><span class="problematic" id="id19">``</span></a><a href="#id20"><span class="problematic" id="id21">`</span></a></p>
+<p>### Working with groups</p>
+<p><strong>Gather the fields</strong></p>
+<p>For this example we are going to use these fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> (string, required)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kind</span></code> (many2one, required)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_registrant</span></code> (boolean, default=True)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_group</span></code> (boolean, default=True)</p></li>
+</ul>
+<p><strong>Example: Create a group</strong></p>
+<p><a href="#id22"><span class="problematic" id="id23">``</span></a><a href="#id24"><span class="problematic" id="id25">`</span></a>python
+# Get a group kind (e.g., &quot;Household&quot;)
+payload = {</p>
+<blockquote>
+<div><p>&quot;jsonrpc&quot;: &quot;2.0&quot;,
+&quot;method&quot;: &quot;call&quot;,
+&quot;params&quot;: {</p>
+<blockquote>
+<div><p>&quot;service&quot;: &quot;object&quot;,
+&quot;method&quot;: &quot;execute_kw&quot;,
+&quot;args&quot;: [</p>
+<blockquote>
+<div><p>db, uid, password,
+&quot;g2p.group.kind&quot;, &quot;search_read&quot;,
+[[[&quot;name&quot;, &quot;=&quot;, &quot;Household&quot;]]],
+{&quot;fields&quot;: [&quot;id&quot;], &quot;limit&quot;: 1}</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+&quot;id&quot;: 4,</p>
+</div></blockquote>
+<p>}
+response = requests.post(url, json=payload).json()
+kind_id = response[&quot;result&quot;][0][&quot;id&quot;]</p>
+<p># Create the group
+payload = {</p>
+<blockquote>
+<div><p>&quot;jsonrpc&quot;: &quot;2.0&quot;,
+&quot;method&quot;: &quot;call&quot;,
+&quot;params&quot;: {</p>
+<blockquote>
+<div><p>&quot;service&quot;: &quot;object&quot;,
+&quot;method&quot;: &quot;execute_kw&quot;,
+&quot;args&quot;: [</p>
+<blockquote>
+<div><p>db, uid, password,
+&quot;res.partner&quot;, &quot;create&quot;,
+[{</p>
+<blockquote>
+<div><p>&quot;name&quot;: &quot;Doe Family&quot;,
+&quot;kind&quot;: kind_id
+&quot;is_registrant&quot;: True,
+&quot;is_group&quot;: True,</p>
+</div></blockquote>
+<p>}]</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+&quot;id&quot;: 5,</p>
+</div></blockquote>
+<p>}
+response = requests.post(url, json=payload).json()
+group_id = response[&quot;result&quot;]
+print(&quot;Created Group ID:&quot;, group_id)</p>
+<p># Update the group's name
+payload = {</p>
+<blockquote>
+<div><p>&quot;jsonrpc&quot;: &quot;2.0&quot;,
+&quot;method&quot;: &quot;call&quot;,
+&quot;params&quot;: {</p>
+<blockquote>
+<div><p>&quot;service&quot;: &quot;object&quot;,
+&quot;method&quot;: &quot;execute_kw&quot;,
+&quot;args&quot;: [</p>
+<blockquote>
+<div><p>db, uid, password,
+&quot;res.partner&quot;, &quot;write&quot;,
+[[group_id],  # List of IDs to update
+{&quot;name&quot;: &quot;Doe Family Updated&quot;}]  # Fields to update</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+&quot;id&quot;: 10,</p>
+</div></blockquote>
+<p>}
+response = requests.post(url, json=payload).json()
+updated = response[&quot;result&quot;]
+print(&quot;Result:&quot;, updated)
+<a href="#id26"><span class="problematic" id="id27">``</span></a><a href="#id28"><span class="problematic" id="id29">`</span></a></p>
+<p>### Working with memberships</p>
+<p><strong>Gather the fields</strong></p>
+<p>From your <code class="docutils literal notranslate"><span class="pre">g2p_registry_membership</span></code> module, the main model is likely <code class="docutils literal notranslate"><span class="pre">g2p_registry_membership.group_membership</span></code>. Required fields typically include:
+- <code class="docutils literal notranslate"><span class="pre">individuak</span></code> (many2one, required)
+- <code class="docutils literal notranslate"><span class="pre">group</span></code> (many2one, required)
+- <code class="docutils literal notranslate"><span class="pre">kind</span></code> (many2many, required; e.g., &quot;Head&quot;, &quot;Member&quot;)
+- <code class="docutils literal notranslate"><span class="pre">start_date</span></code> (date, required)
+- Any other required fields as defined in your model</p>
+<p><strong>Example: Add an individual to a group</strong></p>
+<p><a href="#id30"><span class="problematic" id="id31">``</span></a><a href="#id32"><span class="problematic" id="id33">`</span></a>python
+# Get a membership kind (e.g., &quot;Head&quot;)
+payload = {</p>
+<blockquote>
+<div><p>&quot;jsonrpc&quot;: &quot;2.0&quot;,
+&quot;method&quot;: &quot;call&quot;,
+&quot;params&quot;: {</p>
+<blockquote>
+<div><p>&quot;service&quot;: &quot;object&quot;,
+&quot;method&quot;: &quot;execute_kw&quot;,
+&quot;args&quot;: [</p>
+<blockquote>
+<div><p>db, uid, password,
+&quot;g2p.group.membership.kind&quot;, &quot;search_read&quot;,
+[[[&quot;name&quot;, &quot;=&quot;, &quot;Head&quot;]]],
+{&quot;fields&quot;: [&quot;id&quot;], &quot;limit&quot;: 1}</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+&quot;id&quot;: 6,</p>
+</div></blockquote>
+<p>}
+response = requests.post(url, json=payload).json()
+kind_id = response[&quot;result&quot;][0][&quot;id&quot;]</p>
+<p># Create the membership
+payload = {</p>
+<blockquote>
+<div><p>&quot;jsonrpc&quot;: &quot;2.0&quot;,
+&quot;method&quot;: &quot;call&quot;,
+&quot;params&quot;: {</p>
+<blockquote>
+<div><p>&quot;service&quot;: &quot;object&quot;,
+&quot;method&quot;: &quot;execute_kw&quot;,
+&quot;args&quot;: [</p>
+<blockquote>
+<div><p>db, uid, password,
+&quot;g2p.group.membership&quot;, &quot;create&quot;,
+[{</p>
+<blockquote>
+<div><p>&quot;individual&quot;: individual_id,
+&quot;group&quot;: group_id,
+&quot;kind&quot;: [[4, kind_id]],
+&quot;start_date&quot;: &quot;2025-01-01&quot;</p>
+</div></blockquote>
+<p>}]</p>
+</div></blockquote>
+<p>]</p>
+</div></blockquote>
+<p>},
+&quot;id&quot;: 7,</p>
+</div></blockquote>
+<p>}
+response = requests.post(url, json=payload).json()
+membership_id = response[&quot;result&quot;]
+print(&quot;Created Membership ID:&quot;, membership_id)
+<a href="#id34"><span class="problematic" id="id35">``</span></a><a href="#id36"><span class="problematic" id="id37">`</span></a></p>
+<p>### Security: Using API keys</p>
+<ul class="simple">
+<li><p><strong>API keys</strong> are recommended over passwords for scripts and integrations.</p></li>
+<li><p>Generate API keys in your OpenSPP user preferences under <strong>Account Security</strong>.</p></li>
+<li><p>Use the API key in place of your password in all JSON-RPC calls.</p></li>
+</ul>
+<p>## Best practices</p>
+<ul class="simple">
+<li><p><strong>Use API Keys</strong>: Safer than passwords; revoke if compromised.</p></li>
+<li><p><strong>Limit Permissions</strong>: Create dedicated users for API access with only necessary rights.</p></li>
+<li><p><strong>Validate Responses</strong>: Always check for errors or unexpected results.</p></li>
+<li><p><strong>Secure Connections</strong>: Use HTTPS for all API traffic.</p></li>
+<li><p><strong>Log and Monitor</strong>: Track API usage for auditing and troubleshooting.</p></li>
+</ul>
+<p>## References</p>
+<ul class="simple">
+<li><p>[Odoo 17 Developer Documentation](<a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/">https://www.odoo.com/documentation/17.0/developer/</a>)</p></li>
+<li><p>[JSON-RPC Specification](<a class="reference external" href="https://www.jsonrpc.org/specification">https://www.jsonrpc.org/specification</a>)</p></li>
+</ul>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      &copy; Copyright OpenSPP.<br/>
+    <div class="extra_footer">
+      <p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+    
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            if ($.trim($(".sticky-top .bd-toc").html()) === "") {
+                $(".sticky-top .bd-toc").css("visibility", "hidden");
+            }
+        });
+    </script>
+
+
+  </body>
+</html>

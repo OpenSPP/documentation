@@ -1,0 +1,752 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta content="REST API Module Customization" name="title" />
+<meta content="Step-by-step guide to creating custom REST API endpoints in OpenSPP with authentication, namespaces, and data exposure." name="description" />
+<meta content="OpenSPP, REST API, custom endpoints, API development, authentication, Bearer token, data exposure" name="keywords" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+    <meta property="og:title" content="REST API" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.openspp.org/howto/developer_guides/rest_api.html" />
+<meta property="og:site_name" content="OpenSPP Documentation" />
+<meta property="og:description" content="This article explains how to understand and customize the REST API module in OpenSPP, using a practical scenario: adding a new GET endpoint to retrieve Area data. Prerequisites: Familiarity with Py..." />
+<meta property="og:image" content="https://docs.openspp.org/_static/openspp_logo.png" />
+<meta property="og:image:alt" content="OpenSPP Documentation" />
+<meta property="og:locale" content="en_US" />
+
+<title>REST API &#8212; OpenSPP Documentation v1.3</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-httpexample.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/sphinxcontrib-httpexample.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/patch_scrollToActive.js"></script>
+    <script src="../../_static/search_shortcut.js"></script>
+    <script src="../../_static/version_switcher.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>
+mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    themeVariables: {
+        primaryColor: '#0066cc',
+        primaryTextColor: '#000000',
+        primaryBorderColor: '#0066cc'
+    }
+});
+</script>
+    <link rel="canonical" href="https://docs.openspp.org/howto/developer_guides/rest_api.html" />
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within OpenSPP Documentation v1.3"
+          href="../../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../../_static/icon_192.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../../_static/review_status.css" type="text/css" />
+<script src="../../_static/review_status_simple.js"></script>
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+
+<!-- Mermaid Support -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="100">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">OpenSPP Documentation v1.3</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <div class="input-group">
+    <label for="q" class="sr-only">Search string
+    </label>
+    <i class="fa fa-search fa-lg search-icon" aria-hidden="true"></i>
+    <input
+    type="search" name="q" id="search-input"
+    class="form-control"
+    placeholder="Search"
+    aria-labelledby="Search"
+    value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+    />
+    <div class="input-group-append">
+      <span class="input-group-text" id="shortcut">
+        <kbd id="search-shortcut">⌘</kbd>&nbsp;<kbd>K</kbd>
+      </span>
+    </div>
+  </div>
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../getting_started/index.html">
+   Getting started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../getting_started/installation_deb.html">
+     Installing OpenSPP
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../getting_started/module_installation.html">
+     Module installation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../getting_started/spmis_installation.html">
+       SP-MIS installation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../getting_started/social_installation.html">
+       Social Registry installation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../getting_started/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            
+    <p class="openspporglink">
+        <a href="https://openspp.org">
+            <img src="/_static/openspp_logo.png" alt="openspp.org" /> openspp.org</a>
+    </p>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__label">
+        <span>REST API</span>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/openspp/documentation"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fhowto/developer_guides/rest_api.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://docs.openspp.org/contributing/?howto/developer_guides/rest_api.md#making-contributions-on-github"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/howto/developer_guides/rest_api.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-structure">
+   Module Structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-by-step-guide">
+   Step-by-Step Guide
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-the-module-scaffold">
+     Create the Module Scaffold
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-module-manifest">
+     Define Module Manifest
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-custom-api-namespace">
+     Create a Custom API Namespace
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-the-api-endpoint">
+     Add the API Endpoint
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-public-and-private-keys">
+     Generate Public and Private Keys
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-and-test">
+     Install and Test
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>REST API</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-structure">
+   Module Structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-by-step-guide">
+   Step-by-Step Guide
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-the-module-scaffold">
+     Create the Module Scaffold
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-module-manifest">
+     Define Module Manifest
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-custom-api-namespace">
+     Create a Custom API Namespace
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-the-api-endpoint">
+     Add the API Endpoint
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-public-and-private-keys">
+     Generate Public and Private Keys
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-and-test">
+     Install and Test
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="rest-api">
+<h1>REST API<a class="headerlink" href="#rest-api" title="Permalink to this headline">#</a></h1>
+<p>This article explains how to understand and customize the REST API module in OpenSPP, using a practical scenario: adding a new GET endpoint to retrieve Area data.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Familiarity with Python, Odoo, XML, and XPath.</p></li>
+<li><p>OpenSPP development environment set up (<a class="reference external" href="https://docs.openspp.org/howto/developer_guides/development_setup.html">Developer Guide</a>).</p></li>
+<li><p>The <span class="xref std std-doc">spp_api</span> module must be installed.</p></li>
+<li><p>For our example we are going to need the <span class="xref std std-doc">spp_area_base</span> module to be installed as well.</p></li>
+</ul>
+</section>
+<section id="module-structure">
+<h2>Module Structure<a class="headerlink" href="#module-structure" title="Permalink to this headline">#</a></h2>
+<p>A typical REST API customization module follows the standard Odoo structure. Here’s the structure for our example, <code class="docutils literal notranslate"><span class="pre">spp_api_area_custom</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>spp_api_area_custom/
+├── __init__.py
+├── __manifest__.py
+├── data/
+│   ├── spp_api_namespace_data.xml
+│   └── spp_api_path_data.xml
+└── README.md
+</pre></div>
+</div>
+</section>
+<section id="step-by-step-guide">
+<h2>Step-by-Step Guide<a class="headerlink" href="#step-by-step-guide" title="Permalink to this headline">#</a></h2>
+<p>In this scenario, you will expose Area data through a new GET endpoint under a custom namespace.</p>
+<section id="create-the-module-scaffold">
+<h3>Create the Module Scaffold<a class="headerlink" href="#create-the-module-scaffold" title="Permalink to this headline">#</a></h3>
+<p>Create a new directory for your module (e.g., <code class="docutils literal notranslate"><span class="pre">spp_api_area_custom</span></code>) and populate it with the files and structure shown above.</p>
+</section>
+<section id="define-module-manifest">
+<h3>Define Module Manifest<a class="headerlink" href="#define-module-manifest" title="Permalink to this headline">#</a></h3>
+<p>Create <code class="docutils literal notranslate"><span class="pre">__manifest__.py</span></code> with the correct dependencies and data files:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenSPP REST API Area Customization&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;summary&quot;</span><span class="p">:</span> <span class="s2">&quot;Adds custom Area endpoint to OpenSPP REST API&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenSPP&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;17.0.1.0.0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Your Organization&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;website&quot;</span><span class="p">:</span> <span class="s2">&quot;https://your-website.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;license&quot;</span><span class="p">:</span> <span class="s2">&quot;LGPL-3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;depends&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;spp_api&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;spp_area_base&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;data/spp_api_namespace_data.xml&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;data/spp_api_path_data.xml&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;application&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;installable&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;auto_install&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="create-a-custom-api-namespace">
+<h3>Create a Custom API Namespace<a class="headerlink" href="#create-a-custom-api-namespace" title="Permalink to this headline">#</a></h3>
+<p>Create <code class="docutils literal notranslate"><span class="pre">data/spp_api_namespace_data.xml</span></code> to define your namespace:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odoo&gt;</span>
+<span class="w">    </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;api_namespace_area&quot;</span><span class="w"> </span><span class="na">model=</span><span class="s">&quot;spp_api.namespace&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>area_api<span class="nt">&lt;/field&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;version_name&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/field&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Namespace<span class="w"> </span>for<span class="w"> </span>Area-related<span class="w"> </span>API<span class="w"> </span>endpoints<span class="nt">&lt;/field&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;log_request&quot;</span><span class="nt">&gt;</span>debug<span class="nt">&lt;/field&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;log_response&quot;</span><span class="nt">&gt;</span>debug<span class="nt">&lt;/field&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;user_ids&quot;</span><span class="w"> </span><span class="na">eval=</span><span class="s">&quot;[(4, ref(&#39;base.user_admin&#39;))]&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/record&gt;</span>
+<span class="nt">&lt;/odoo&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="add-the-api-endpoint">
+<h3>Add the API Endpoint<a class="headerlink" href="#add-the-api-endpoint" title="Permalink to this headline">#</a></h3>
+<p>Create <code class="docutils literal notranslate"><span class="pre">data/spp_api_path_data.xml</span></code> to define the new endpoint under your custom namespace:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odoo&gt;</span>
+<span class="w">    </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;api_path_area_get&quot;</span><span class="w"> </span><span class="na">model=</span><span class="s">&quot;spp_api.path&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Area<span class="nt">&lt;/field&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;model_id&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;spp_area_base.model_spp_area&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;namespace_id&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;api_namespace_area&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>GET<span class="w"> </span>Area<span class="nt">&lt;/field&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;method&quot;</span><span class="nt">&gt;</span>get<span class="nt">&lt;/field&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;field_ids&quot;</span><span class="w"> </span><span class="na">eval=</span><span class="s">&quot;[(</span>
+<span class="s">            6, 0, [</span>
+<span class="s">                ref(&#39;spp_area_base.field_spp_area__parent_id&#39;),</span>
+<span class="s">                ref(&#39;spp_area_base.field_spp_area__name&#39;),</span>
+<span class="s">                ref(&#39;spp_area_base.field_spp_area__draft_name&#39;),</span>
+<span class="s">                ref(&#39;spp_area_base.field_spp_area__code&#39;),</span>
+<span class="s">            ]</span>
+<span class="s">        )]&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/record&gt;</span>
+<span class="nt">&lt;/odoo&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Add or remove fields as needed for your use case.</p></li>
+</ul>
+</section>
+<section id="generate-public-and-private-keys">
+<h3>Generate Public and Private Keys<a class="headerlink" href="#generate-public-and-private-keys" title="Permalink to this headline">#</a></h3>
+<p>To secure your API endpoints, generate a 4096-bit RSA key pair using OpenSSL:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate a 4096-bit private key</span>
+openssl<span class="w"> </span>genpkey<span class="w"> </span>-algorithm<span class="w"> </span>RSA<span class="w"> </span>-out<span class="w"> </span>private_key.pem<span class="w"> </span>-pkeyopt<span class="w"> </span>rsa_keygen_bits:4096
+
+<span class="c1"># Extract the public key</span>
+openssl<span class="w"> </span>rsa<span class="w"> </span>-pubout<span class="w"> </span>-in<span class="w"> </span>private_key.pem<span class="w"> </span>-out<span class="w"> </span>public_key.pub
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Place <code class="docutils literal notranslate"><span class="pre">private_key.pem</span></code> and <code class="docutils literal notranslate"><span class="pre">public_key.pub</span></code> in <code class="docutils literal notranslate"><span class="pre">etc/secrets</span></code>.</p></li>
+<li><p>Set permissions as needed.</p></li>
+<li><p><strong>Never share your private key.</strong>
+Only distribute the public key if required.</p></li>
+</ul>
+</section>
+<section id="install-and-test">
+<h3>Install and Test<a class="headerlink" href="#install-and-test" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>Install your new module via the Apps menu.</p></li>
+<li><p><strong>Get your Bearer Token:</strong></p>
+<ul class="simple">
+<li><p>Go to <strong>Settings</strong> &gt; <strong>Users &amp; Companies</strong> &gt; <strong>Users</strong>.</p></li>
+<li><p>Open your user record.</p></li>
+<li><p>In the <strong>Allowed APIs</strong> section, click <strong>View Bearer Token</strong> to create a new token.</p></li>
+<li><p>Copy the generated token.</p></li>
+<li><p>In Postman (or your REST client), set the <strong>Authorization</strong> header to <code class="docutils literal notranslate"><span class="pre">Bearer</span> <span class="pre">&lt;your_token&gt;</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Use a REST client to test the endpoint.
+Example URL:
+<code class="docutils literal notranslate"><span class="pre">http://localhost:8069/api/area_api/1/Area?request_id={{$randomUUID}}</span></code></p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">request_id</span></code> parameter is required and must be unique for each request (use a random 36-character UUID).</p></li>
+</ol>
+<p><strong>Example: Successful Response</strong></p>
+<p><img alt="Successful REST API response" src="../../_images/success_response.png" /></p>
+<p><strong>Example: Error Response</strong></p>
+<p><img alt="Error REST API response" src="../../_images/error_response.png" /></p>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<p>For more information on extending OpenSPP modules, refer to:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/">Odoo 17 Developer Documentation</a></p></li>
+</ul>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      &copy; Copyright OpenSPP.<br/>
+    <div class="extra_footer">
+      <p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+    
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            if ($.trim($(".sticky-top .bd-toc").html()) === "") {
+                $(".sticky-top .bd-toc").css("visibility", "hidden");
+            }
+        });
+    </script>
+
+
+  </body>
+</html>
