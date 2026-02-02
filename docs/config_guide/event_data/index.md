@@ -12,7 +12,6 @@ This guide is for **implementers** configuring event data to capture time-based 
 
 - **Overview** - Event data concepts and use cases
 - **Event Types** - Create and configure event type schemas
-- **ODK/Kobo** - Connect mobile data collection tools
 - **Field Definitions** - Define custom fields with validation
 
 ```{toctree}
@@ -21,7 +20,6 @@ This guide is for **implementers** configuring event data to capture time-based 
 
 overview
 event_types
-odk_kobo
 field_definitions
 ```
 
@@ -29,5 +27,4 @@ field_definitions
 
 - {doc}`overview` - Understand event data concepts
 - {doc}`event_types` - Create event type schemas
-- {doc}`odk_kobo` - Connect mobile data collection tools
 - {doc}`field_definitions` - Define custom fields with validation
