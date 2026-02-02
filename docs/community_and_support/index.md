@@ -4,7 +4,7 @@ openspp:
   products: [core]
 ---
 
-# Community and Support
+# Community and support
 
 This section encompasses essential information and guidelines pertinent to OpenSPP. These topics are presented to provide clarity and support to those engaged in the project, ensuring a structured and secure approach to participation and development.
 
@@ -14,7 +14,6 @@ This section encompasses essential information and guidelines pertinent to OpenS
 - {doc}`module_lifecycle_maintainer_role`
 - {doc}`code_of_conduct`
 - {doc}`security_report`
-- {doc}`l3_support`
 - {doc}`license`
 
 ```{toctree}
@@ -27,6 +26,5 @@ module_lifecycle_development_status
 module_lifecycle_maintainer_role
 code_of_conduct
 security_report
-l3_support
 license
 ```

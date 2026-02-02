@@ -24,6 +24,7 @@ modules/index
 vocabularies/index
 api/index
 glossary/humanitarian
+../glossary
 ```
 
 **Note:** Content coming soon. This section is being developed as part of the V2 documentation restructure.
