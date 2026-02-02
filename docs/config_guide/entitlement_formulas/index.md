@@ -6,11 +6,9 @@ openspp:
 
 # Entitlement Formulas
 
-**For: Implementers**
+This guide is for **implementers** configuring entitlement formulas to calculate benefit amounts for qualified registrants.
 
-Entitlement formulas calculate the amount or type of benefits each qualified registrant receives. Configure cash calculations, in-kind benefit baskets, and use the formula library for common patterns.
-
-## Topics Covered
+## What You'll Find Here
 
 - **Cash Calculations** - Formulas for calculating monetary benefits
 - **In-Kind Baskets** - Configuring non-cash benefit packages
@@ -20,6 +18,7 @@ Entitlement formulas calculate the amount or type of benefits each qualified reg
 
 <!--
 ```{toctree}
+:hidden:
 :maxdepth: 1
 
 cash_calculations
@@ -30,6 +29,6 @@ conditional_logic
 ```
 -->
 
----
+## Quick Links
 
 *Content coming soon. This section is part of the OpenSPP V2 documentation restructure.*

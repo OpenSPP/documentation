@@ -8,16 +8,30 @@ openspp:
 
 This guide is for **implementers** configuring DRIMS for disaster response operations. You should be comfortable with logic builders like Kobo or CommCare, but you don't need Python skills.
 
-## What You Can Configure (No Code Required)
+## What You'll Find Here
 
-DRIMS is designed for configuration through the OpenSPP interface. You can set up:
+- **Warehouses** - Enable warehouses for DRIMS, set tiers, assign to areas
+- **Approval Chains** - Configure multi-tier approval workflows
+- **Alerts** - Customize low stock, SLA, and expiry warning thresholds
+- **Vocabularies** - Define donor types, priorities, transport modes
 
-- **Warehouses** - Enable warehouses for DRIMS, set tiers (Central/Regional/Mobile), assign to geographic areas
-- **Approval Chains** - Configure multi-tier approval workflows for relief requests
-- **Alert Thresholds** - Customize low stock, SLA, and expiry warning triggers
-- **Vocabularies** - Define donor types, priorities, transport modes, item conditions
-- **User Roles** - Assign permissions and geographic/warehouse scopes to staff
-- **Personnel Directory** - Track deployed staff by role, organization, and location
+```{toctree}
+:hidden:
+:maxdepth: 1
+
+warehouses
+approval_chains
+alerts
+vocabularies
+```
+
+## Quick Links
+
+- {doc}`warehouses` - Set up warehouse tiers and geographic assignments
+- {doc}`approval_chains` - Configure request approval workflows
+- {doc}`alerts` - Set alert thresholds for monitoring
+
+---
 
 ## Mental Model
 
@@ -68,17 +82,6 @@ Alerts (automated monitoring)
 | **Vocabularies** | Donor types, priorities, transport modes, item conditions | Studio → Vocabularies |
 | **User Roles** | Assign security groups, geographic areas, warehouses | Settings → Users & Companies → Users |
 | **Personnel** | Track deployed staff, roles, locations | DRIMS → Coordination → Personnel |
-
-## Configuration Guides
-
-```{toctree}
-:maxdepth: 1
-
-warehouses
-approval_chains
-alerts
-vocabularies
-```
 
 ## Next Steps
 

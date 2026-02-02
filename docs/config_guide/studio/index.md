@@ -6,32 +6,17 @@ openspp:
 
 # OpenSPP Studio
 
-**For: Implementers**
+This guide is for **implementers** who want to customize OpenSPP through a visual, no-code interface. If you can build a KoBoToolbox form, you can configure OpenSPP Studio.
 
-OpenSPP Studio is a no-code configuration tool that allows implementers to customize OpenSPP through a visual interface. If you can build a KoBoToolbox form, you can configure OpenSPP Studio.
+## What You'll Find Here
 
-## What is Studio?
-
-Studio gives you the power to:
-
-- **Add custom fields** to registrant and group records without developer help
-- **Design event types** to collect field data from surveys and assessments
-- **Build change request workflows** for updating registry information with approval
-- **Define eligibility rules** using CEL expressions with visual assistance
-
-## Who is Studio for?
-
-This guide is for **implementers** - program staff and M&E teams who configure systems like KoBoToolbox, ODK Collect, or CommCare. You should be comfortable with:
-
-- Building forms and defining fields
-- Understanding data concepts (field types, validation, conditions)
-- Working with spreadsheets and data
-
-You do NOT need to know Python, SQL, or Odoo development.
-
-## Quick Links
+- **Overview** - Studio interface and capabilities
+- **Registry Field Builder** - Add custom fields to registrant records
+- **Event Type Designer** - Design event types for surveys and assessments
+- **Change Request Builder** - Build change workflows with approval
 
 ```{toctree}
+:hidden:
 :maxdepth: 1
 
 overview
@@ -39,6 +24,13 @@ registry_field_builder
 event_type_designer
 change_request_builder
 ```
+
+## Quick Links
+
+- {doc}`overview` - Understand Studio's interface and capabilities
+- {doc}`registry_field_builder` - Track program-specific data on registrants
+- {doc}`event_type_designer` - Collect survey data from field assessments
+- {doc}`change_request_builder` - Create approval workflows for updates
 
 ## Getting Started
 

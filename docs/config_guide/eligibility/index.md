@@ -6,11 +6,9 @@ openspp:
 
 # Eligibility Rules
 
-**For: Implementers**
+This guide is for **implementers** configuring eligibility rules to determine which registrants qualify for programs and benefits.
 
-Eligibility rules determine which registrants qualify for programs and benefits. OpenSPP supports multiple eligibility manager types including the default manager, SQL-based rules, and tag-based rules.
-
-## Topics Covered
+## What You'll Find Here
 
 - **Default Manager** - Standard eligibility configuration using CEL expressions
 - **SQL-Based Rules** - Complex eligibility logic using database queries
@@ -20,6 +18,7 @@ Eligibility rules determine which registrants qualify for programs and benefits.
 
 <!--
 ```{toctree}
+:hidden:
 :maxdepth: 1
 
 default_manager
@@ -30,6 +29,6 @@ performance
 ```
 -->
 
----
+## Quick Links
 
 *Content coming soon. This section is part of the OpenSPP V2 documentation restructure.*

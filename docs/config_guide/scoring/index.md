@@ -6,15 +6,18 @@ openspp:
 
 # Scoring & Assessment
 
-**For: Implementers**
+This guide is for **implementers** configuring scoring frameworks to assess and rank beneficiaries for program targeting. No code required.
 
-Configure scoring frameworks to assess and rank beneficiaries for program targeting. OpenSPP V2 provides flexible scoring tools that let you implement Proxy Means Test (PMT), vulnerability assessments, Social Welfare Development Index (SWDI), and custom methodologies—all through configuration, no code required.
+## What You'll Find Here
 
-## What You'll Learn
-
-This section covers how to set up and manage scoring systems in OpenSPP:
+- **Overview** - Scoring concepts and fundamentals
+- **PMT** - Proxy Means Test configuration for poverty targeting
+- **Vulnerability** - Crisis response scoring for emergencies
+- **SWDI** - Social Welfare Development Index for multi-dimensional assessment
+- **Custom** - Build your own scoring models
 
 ```{toctree}
+:hidden:
 :maxdepth: 1
 
 overview
@@ -24,17 +27,12 @@ swdi
 custom
 ```
 
-## Quick Start
+## Quick Links
 
-**New to scoring?** Start with {doc}`overview` to understand how scoring works in OpenSPP.
-
-**Setting up poverty targeting?** Jump to {doc}`pmt` for Proxy Means Test configuration.
-
-**Need vulnerability assessment?** See {doc}`vulnerability` for crisis response scoring.
-
-**Implementing SWDI?** Follow {doc}`swdi` for multi-dimensional welfare assessment.
-
-**Creating custom formulas?** Check {doc}`custom` for building your own scoring models.
+- {doc}`overview` - New to scoring? Start here
+- {doc}`pmt` - Setting up poverty targeting
+- {doc}`vulnerability` - Crisis response scoring
+- {doc}`custom` - Creating custom formulas
 
 ## What is Scoring?
 
