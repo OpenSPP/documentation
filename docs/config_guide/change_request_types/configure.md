@@ -44,23 +44,38 @@ Change requests in OpenSPP V2 follow a configuration-driven architecture with th
 
 ### Step 1: Create the Request Type
 
-Navigate to **Studio → Change Requests → Request Types** and click **New**.
+Navigate to **Change Requests → Configuration → Change Request Types** and click **New**.
+
+**Header:**
+
+Enter the type name in the header field (placeholder shows "Type Name").
+
+**BASIC INFO section:**
 
 | Field | Value | Notes |
 |-------|-------|-------|
-| Name | Edit Individual Information | Display name for users |
 | Code | `edit_individual` | Unique identifier (lowercase, underscores only) |
-| Description | Update personal details for an individual | Helps users understand when to use this type |
-| Target Type | Individual | Individual, Group, or Both |
-| Requires Applicant | No | If yes, forces separate "submitted by" field |
-| Active | Yes | Uncheck to hide from users temporarily |
+| Sequence | 10 | Lower numbers appear first in menus |
+| Icon | `fa-edit` | Font Awesome icon class |
+| Color | (select) | Color picker for visual identification |
+
+**TARGET section:**
+
+| Field | Value | Notes |
+|-------|-------|-------|
+| Target Type | Individual | Individual, Group/Household, or Both |
+| Is Requires Applicant? | No | If yes, forces separate "submitted by" field |
+
+**Description** (at bottom of form): Enter a description to help users understand when to use this type.
 
 ### Step 2: Link to Detail Model
 
+Navigate to the **Detail Model** tab.
+
 | Field | Value | Notes |
 |-------|-------|-------|
-| Detail Model | `spp.cr.detail.edit_individual` | Technical model name (pre-created) |
-| Detail Form View | (leave blank) | Auto-selects default view |
+| Detail Model? | `spp.cr.detail.edit_individual` | Technical model name (pre-created, required) |
+| Detail Form View? | (leave blank) | Auto-selects default view |
 
 ```{note}
 For basic configurations, use existing detail models:
@@ -72,11 +87,16 @@ For basic configurations, use existing detail models:
 
 ### Step 3: Configure Approval Workflow
 
+Navigate to the **Approval** tab.
+
 | Field | Value | Notes |
 |-------|-------|-------|
 | Approval Workflow | Select from dropdown | Choose existing approval definition |
-| Auto Approve from Event | No | If yes, requests from event data are auto-approved |
-| Auto Apply on Approve | Yes | If yes, changes apply immediately when approved |
+| Auto Approve From Event | No | If yes, requests from event data are auto-approved |
+
+```{note}
+The **Auto Apply On Approve** field is located in the **Apply Configuration** tab (see Step 4).
+```
 
 **Creating Approval Workflows:**
 
@@ -94,16 +114,18 @@ Example: Two-level approval for sensitive changes
 
 ### Step 4: Configure Apply Strategy
 
+Navigate to the **Apply Configuration** tab.
+
 **For Simple Field Mapping:**
 
 | Field | Value | Notes |
 |-------|-------|-------|
 | Apply Strategy | Field Mapping | Copies fields from detail to registrant |
-| Apply Mappings | (see below) | Define which fields to copy |
+| Auto Apply On Approve | Yes | If yes, changes apply immediately when approved |
 
-**Apply Mapping Example:**
+**Field Mappings:**
 
-Navigate to the **Apply Mappings** tab and add:
+In the **Field Mappings** section below, add your mappings:
 
 | Source Field | Target Field | Transform |
 |--------------|--------------|-----------|
@@ -124,23 +146,18 @@ Navigate to the **Apply Mappings** tab and add:
 
 ### Step 5: Configure Document Requirements
 
+Navigate to the **Documents** tab.
+
 | Field | Value | Notes |
 |-------|-------|-------|
-| Required Documents | (select document types) | Use Ctrl/Cmd+Click for multiple |
-| Document Validation | No Validation | None / Warning / Required |
+| Document Validation Mode | No Validation | No Validation / Warning if Missing / Block if Missing |
+| Available Documents? | (select document types) | Document types that can be attached |
+| Required Documents? | (select document types) | Use Ctrl/Cmd+Click for multiple |
 
 **Document Validation Modes:**
-- **None** - Documents are optional
-- **Warning** - Shows warning if missing, but allows submission
-- **Required** - Blocks submission until all required documents are uploaded
-
-### Step 6: Configure Display
-
-| Field | Value | Notes |
-|-------|-------|-------|
-| Sequence | 10 | Lower numbers appear first in menus |
-| Icon | `fa-user-edit` | Font Awesome icon class |
-| Color | 3 | Integer 0-11 for color coding |
+- **No Validation** - Documents are optional
+- **Warning if Missing** - Shows warning if missing, but allows submission
+- **Block if Missing** - Blocks submission until all required documents are uploaded
 
 ## Advanced: Creating Custom Detail Models
 
@@ -428,9 +445,9 @@ Configure record rules to restrict which requests users can see:
 **Problem:** Users don't see the new request type in the dropdown.
 
 **Checks:**
-- Is **Active** checked on the request type?
+- Has the request type been activated? (Click **Activate** button to change from Draft status)
 - Does the user have the **Change Request Officer** group?
-- Is **Target Type** compatible with the selected registrant (Individual vs Group)?
+- Is **Target Type** compatible with the selected registrant (Individual vs Group/Household)?
 - Is there a domain filter on the request type field?
 
 ### Apply Fails After Approval
@@ -438,7 +455,7 @@ Configure record rules to restrict which requests users can see:
 **Problem:** Request is approved but changes don't apply to the registrant.
 
 **Checks:**
-- Is **Auto Apply on Approve** enabled?
+- Is **Auto Apply On Approve** enabled in the Apply Configuration tab?
 - Are the field mappings correct? Check source/target field names.
 - Check Odoo logs for errors: `/var/log/odoo/odoo.log`
 - Do the fields exist on the target model (`res.partner`)?
