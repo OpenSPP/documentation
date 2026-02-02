@@ -26,33 +26,33 @@ Vocabularies are standardized lists of codes used throughout OpenSPP for consist
 Think of vocabularies in three layers:
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│  1. VOCABULARY                                           │
-│     Name: "Gender"                                       │
-│     Namespace: urn:iso:std:iso:5218                      │
-│     (The container)                                      │
-└─────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────┐
+│  1. VOCABULARY                                        │
+│     Name: "Gender"                                    │
+│     Namespace: urn:iso:std:iso:5218                   │
+│     (The container)                                   │
+└───────────────────────────────────────────────────────┘
                          │
                          │ contains
                          ▼
-┌─────────────────────────────────────────────────────────┐
-│  2. CODES                                                │
-│     • Code: "1"  Display: "Male"                        │
-│     • Code: "2"  Display: "Female"                      │
-│     • Code: "0"  Display: "Not Known"                   │
-│     • Code: "9"  Display: "Not Applicable"              │
-│     (The individual values)                              │
-└─────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────┐
+│  2. CODES                                             │
+│     • Code: "1"  Display: "Male"                      │
+│     • Code: "2"  Display: "Female"                    │
+│     • Code: "0"  Display: "Not Known"                 │
+│     • Code: "9"  Display: "Not Applicable"            │
+│     (The individual values)                           │
+└───────────────────────────────────────────────────────┘
                          │
                          │ filtered by
                          ▼
-┌─────────────────────────────────────────────────────────┐
-│  3. DEPLOYMENT PROFILE                                   │
-│     Active codes for "Philippines 4Ps":                 │
-│     • Male                                               │
-│     • Female                                             │
-│     (What users see in this deployment)                 │
-└─────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────┐
+│  3. DEPLOYMENT PROFILE                                │
+│     Active codes for "Philippines 4Ps":               │
+│     • Male                                            │
+│     • Female                                          │
+│     (What users see in this deployment)               │
+└───────────────────────────────────────────────────────┘
 ```
 
 **Key insight:** One vocabulary can be used differently in each country/program by selecting which codes are active.
@@ -90,7 +90,7 @@ OpenSPP uses globally recognized standards where available:
 
 | Old Approach | New Approach |
 |--------------|--------------|
-| 1. Request developer to modify code | 1. Go to **Studio → Vocabularies** |
+| 1. Request developer to modify code | 1. Go to **Settings → Vocabularies** |
 | 2. Wait for module update | 2. Add new code |
 | 3. Deploy to production | 3. Done - immediately available |
 | 4. Risk breaking existing data | 4. No deployment needed |

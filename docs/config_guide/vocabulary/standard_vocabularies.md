@@ -10,7 +10,7 @@ This guide is for **implementers** who need to understand which standard vocabul
 
 ## Overview
 
-OpenSPP V2 includes 13 standard vocabularies based on international standards. These are **system vocabularies** (read-only) that ensure data consistency and interoperability.
+OpenSPP V2 includes standard vocabularies based on international standards. These are **system vocabularies** (read-only) that ensure data consistency and interoperability.
 
 **Why standards?** Using internationally recognized vocabularies means:
 - Your data can be shared with other systems (WHO, ILO, government agencies)
@@ -74,23 +74,23 @@ Based on UN Population Census Principles.
 **Reference:** [UN Census Recommendations](https://unstats.un.org/unsd/demographic/sources/census/)
 **Use in:** Individual demographics, eligibility criteria (widows programs, etc.)
 
-### ID Document Types
+### ID Types
 
 Standard identification document classifications.
 
 | Code | Display | URI |
 |------|---------|-----|
-| national_id | National ID Card | `urn:openspp:vocab:id-document#national_id` |
-| passport | Passport | `urn:openspp:vocab:id-document#passport` |
-| birth_cert | Birth Certificate | `urn:openspp:vocab:id-document#birth_cert` |
-| drivers_license | Driver's License | `urn:openspp:vocab:id-document#drivers_license` |
-| voter_id | Voter Registration Card | `urn:openspp:vocab:id-document#voter_id` |
-| tax_id | Tax Identification Number | `urn:openspp:vocab:id-document#tax_id` |
-| social_security | Social Security Card | `urn:openspp:vocab:id-document#social_security` |
-| refugee_id | Refugee ID | `urn:openspp:vocab:id-document#refugee_id` |
-| other | Other Document | `urn:openspp:vocab:id-document#other` |
+| national_id | National ID Card | `urn:openspp:vocab:id-type#national_id` |
+| passport | Passport | `urn:openspp:vocab:id-type#passport` |
+| birth_cert | Birth Certificate | `urn:openspp:vocab:id-type#birth_cert` |
+| drivers_license | Driver's License | `urn:openspp:vocab:id-type#drivers_license` |
+| voter_id | Voter Registration Card | `urn:openspp:vocab:id-type#voter_id` |
+| tax_id | Tax Identification Number | `urn:openspp:vocab:id-type#tax_id` |
+| social_security | Social Security Card | `urn:openspp:vocab:id-type#social_security` |
+| refugee_id | Refugee ID | `urn:openspp:vocab:id-type#refugee_id` |
+| other | Other Document | `urn:openspp:vocab:id-type#other` |
 
-**Namespace:** `urn:openspp:vocab:id-document`
+**Namespace:** `urn:openspp:vocab:id-type`
 **Reference:** OpenSPP-specific
 **Use in:** ID document tracking, identity verification, deduplication
 
@@ -156,64 +156,43 @@ ISO standard currency codes.
 
 ## Disability & Health
 
-### WHO ICF: Body Functions (b codes)
+### Washington Group: Disability Domain
 
-WHO International Classification of Functioning - Body Functions component.
-
-**Sample codes (hierarchical):**
-
-| Code | Display | Parent | URI |
-|------|---------|--------|-----|
-| b2 | Sensory functions and pain | - | `urn:who:icf:b#b2` |
-| b210 | Seeing functions | b2 | `urn:who:icf:b#b210` |
-| b230 | Hearing functions | b2 | `urn:who:icf:b#b230` |
-| b280 | Sensation of pain | b2 | `urn:who:icf:b#b280` |
-| b7 | Neuromusculoskeletal functions | - | `urn:who:icf:b#b7` |
-| b710 | Mobility of joint functions | b7 | `urn:who:icf:b#b710` |
-| b730 | Muscle power functions | b7 | `urn:who:icf:b#b730` |
-
-**Namespace:** `urn:who:icf:b`
-**Reference:** [WHO ICF Browser](https://icd.who.int/dev11/l-icf/en)
-**Use in:** Disability classification, functional assessment, targeting
-**Total codes:** 400+ hierarchical codes
-**Note:** Hierarchical - users can select at any level of detail
-
-### WHO ICF: Activities & Participation (d codes)
-
-WHO ICF - Activities and Participation component.
-
-**Sample codes:**
-
-| Code | Display | Parent | URI |
-|------|---------|--------|-----|
-| d4 | Mobility | - | `urn:who:icf:d#d4` |
-| d450 | Walking | d4 | `urn:who:icf:d#d450` |
-| d5 | Self-care | - | `urn:who:icf:d#d5` |
-| d540 | Dressing | d5 | `urn:who:icf:d#d540` |
-| d6 | Domestic life | - | `urn:who:icf:d#d6` |
-| d640 | Doing housework | d6 | `urn:who:icf:d#d640` |
-
-**Namespace:** `urn:who:icf:d`
-**Reference:** [WHO ICF](https://www.who.int/standards/classifications/icf)
-**Use in:** Activity limitations, participation restrictions, needs assessment
-
-### WHO ICD-11: Health Conditions
-
-WHO International Classification of Diseases, 11th Revision.
-
-**Sample codes:**
+Washington Group Short Set disability functional domains.
 
 | Code | Display | URI |
 |------|---------|-----|
-| 9B71.0 | Type 1 diabetes mellitus | `urn:who:icd-11#9B71.0` |
-| BA00 | Essential hypertension | `urn:who:icd-11#BA00` |
-| 6A70 | HIV disease | `urn:who:icd-11#6A70` |
-| 8B20 | Tuberculosis | `urn:who:icd-11#8B20` |
+| seeing | Seeing | `urn:wg:disability:domain#seeing` |
+| hearing | Hearing | `urn:wg:disability:domain#hearing` |
+| walking | Walking | `urn:wg:disability:domain#walking` |
+| remembering | Remembering | `urn:wg:disability:domain#remembering` |
+| selfcare | Self-care | `urn:wg:disability:domain#selfcare` |
+| communicating | Communicating | `urn:wg:disability:domain#communicating` |
 
-**Namespace:** `urn:who:icd-11`
-**Reference:** [ICD-11 Browser](https://icd.who.int/browse11)
-**Use in:** Health condition tracking, medical eligibility criteria
-**Total codes:** 17,000+ diagnostic codes
+**Namespace:** `urn:wg:disability:domain`
+**Reference:** [Washington Group](https://www.washingtongroup-disability.com/)
+**Use in:** Disability screening, functional assessment
+
+### Washington Group: Disability Severity
+
+Severity levels for Washington Group assessments.
+
+| Code | Display | URI |
+|------|---------|-----|
+| no_difficulty | No difficulty | `urn:wg:disability:severity#no_difficulty` |
+| some_difficulty | Some difficulty | `urn:wg:disability:severity#some_difficulty` |
+| a_lot_of_difficulty | A lot of difficulty | `urn:wg:disability:severity#a_lot_of_difficulty` |
+| cannot_do_at_all | Cannot do at all | `urn:wg:disability:severity#cannot_do_at_all` |
+
+**Namespace:** `urn:wg:disability:severity`
+**Use in:** Disability severity assessment, targeting criteria
+
+### Disability Status
+
+General disability status classification.
+
+**Namespace:** `urn:openspp:vocab:disability-status`
+**Use in:** Quick disability identification
 
 ## Labor & Education
 
@@ -339,7 +318,7 @@ API V2 uses vocabulary URIs for interoperability:
 
 ### Viewing Vocabulary Details
 
-**Navigation:** Studio → Vocabularies
+**Navigation:** Settings → Vocabularies → Manage Vocabularies
 
 Each vocabulary shows:
 
@@ -356,7 +335,7 @@ Each vocabulary shows:
 
 ### Checking Which Codes Are Active
 
-**Navigation:** Settings → Social Protection → Vocabulary Management
+**Navigation:** Settings → Vocabularies → Vocabulary Selections
 
 Shows which codes from each vocabulary are active in your deployment profile.
 

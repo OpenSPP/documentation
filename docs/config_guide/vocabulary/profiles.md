@@ -98,17 +98,17 @@ DEPLOYMENT PROFILE                    (Your configuration package)
 
 ### Step 1: Navigate to Profile Settings
 
-Go to **Settings → Social Protection → Vocabulary Management**
+Go to **Settings → Vocabularies → Deployment Profiles**
 
 You'll see:
 ```
-┌──────────────────────────────────────────────┐
-│ 🌍 Deployment Profile                        │
-│                                               │
-│ Active Profile: [Philippines 4Ps ▼]         │
-│                                               │
-│ [Configure Profiles...]  [Preview Changes]   │
-└──────────────────────────────────────────────┘
+┌────────────────────────────────────────────────┐
+│ Deployment Profile                             │
+│                                                │
+│ Active Profile: [Philippines 4Ps ▼]            │
+│                                                │
+│ [Configure Profiles...]  [Preview Changes]     │
+└────────────────────────────────────────────────┘
 ```
 
 ### Step 2: Create or Select Profile
@@ -286,7 +286,7 @@ Gender: Other ⓘ
 
 ### Profile Health Dashboard
 
-**Navigation:** Settings → Vocabulary Management → Dashboard
+**Navigation:** Settings → Vocabularies → Deployment Profiles
 
 Shows:
 

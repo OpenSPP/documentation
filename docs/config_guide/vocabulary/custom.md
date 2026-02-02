@@ -98,7 +98,7 @@ Do you need codes for...
 
 ### Step 1: Navigate to Vocabularies
 
-Go to **Studio → Vocabularies → Create**
+Go to **Settings → Vocabularies → Manage Vocabularies → Create**
 
 ### Step 2: Define Vocabulary Metadata
 
@@ -217,7 +217,7 @@ Local extensions map local terminology to international standards for interopera
 
 ### Step 3: Configure Profile to Use Local Codes
 
-**Navigation:** Settings → Vocabulary Management → Profile
+**Navigation:** Settings → Vocabularies → Vocabulary Selections
 
 | Field | Value |
 |-------|-------|
@@ -329,7 +329,7 @@ Map codes between different vocabularies.
 
 ### Step 1: Create Mapping
 
-**Navigation:** Studio → Vocabularies → Mappings → Create
+**Navigation:** Settings → Vocabularies → Code Mappings → Create
 
 | Field | Value |
 |-------|-------|
@@ -350,7 +350,7 @@ urn:myorg:disability#deaf,urn:who:icf:b#b230,narrower,Hearing functions
 urn:myorg:disability#mobility,urn:who:icf:b#b7,wider,Neuromusculoskeletal
 ```
 
-**Import:** Studio → Vocabularies → Mappings → Import CSV
+**Import:** Settings → Vocabularies → Code Mappings → Import
 
 ### Step 3: Use in Data Migration
 
@@ -416,7 +416,7 @@ Version: 2024
 
 **Use case:** Share with another deployment or backup
 
-**Navigation:** Studio → Vocabularies → [Your Vocabulary] → Export
+**Navigation:** Settings → Vocabularies → Manage Vocabularies → [Your Vocabulary] → Export
 
 **Formats:**
 - **XML** - For loading in another OpenSPP instance
@@ -441,7 +441,7 @@ Version: 2024
 
 **Use case:** Load vocabulary from another deployment
 
-**Navigation:** Studio → Vocabularies → Import
+**Navigation:** Settings → Vocabularies → Manage Vocabularies → Import
 
 **Steps:**
 1. Select file (XML/CSV/JSON)
