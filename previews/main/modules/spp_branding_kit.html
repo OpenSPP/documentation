@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+    <meta property="og:title" content="OpenSPP Branding Kit" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.openspp.org/modules/spp_branding_kit.html" />
+<meta property="og:site_name" content="OpenSPP Documentation" />
+<meta property="og:description" content="The OpenSPP Branding Kit module enables administrators to fully customize the visual identity of their OpenSPP instance and manage its telemetry settings. This module ensures that the platform cons..." />
+<meta property="og:image" content="https://docs.openspp.org/_static/openspp_logo.png" />
+<meta property="og:image:alt" content="OpenSPP Documentation" />
+<meta name="description" content="The OpenSPP Branding Kit module enables administrators to fully customize the visual identity of their OpenSPP instance and manage its telemetry settings. This module ensures that the platform cons..." />
+<meta property="og:locale" content="en_US" />
+
+<title>OpenSPP Branding Kit &#8212; OpenSPP Documentation vmain</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-httpexample.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/sphinxcontrib-httpexample.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/patch_scrollToActive.js"></script>
+    <script src="../_static/search_shortcut.js"></script>
+    <script src="../_static/version_switcher.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>
+mermaid.initialize({
+    startOnLoad: true,
+    theme: 'default',
+    themeVariables: {
+        primaryColor: '#0066cc',
+        primaryTextColor: '#000000',
+        primaryBorderColor: '#0066cc'
+    }
+});
+</script>
+    <link rel="canonical" href="https://docs.openspp.org/previews/main/modules/spp_branding_kit.html" />
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within OpenSPP Documentation vmain"
+          href="../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../_static/icon_192.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+<!-- Prevent search engines from indexing preview documentation -->
+<meta name="robots" content="noindex,nofollow,noarchive">
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../_static/review_status.css" type="text/css" />
+<script src="../_static/review_status_simple.js"></script>
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+
+<!-- Mermaid Support -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="100">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">
+    <p><strong>⚠️ Preview Documentation</strong>: You are viewing a preview build from branch <code>main</code>. 
+    For the stable documentation, visit <a href="https://docs.openspp.org/">docs.openspp.org</a></p>
+    </div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">OpenSPP Documentation vmain</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <div class="input-group">
+    <label for="q" class="sr-only">Search string
+    </label>
+    <i class="fa fa-search fa-lg search-icon" aria-hidden="true"></i>
+    <input
+    type="search" name="q" id="search-input"
+    class="form-control"
+    placeholder="Search"
+    aria-labelledby="Search"
+    value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+    />
+    <div class="input-group-append">
+      <span class="input-group-text" id="shortcut">
+        <kbd id="search-shortcut">⌘</kbd>&nbsp;<kbd>K</kbd>
+      </span>
+    </div>
+  </div>
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../getting_started/index.html">
+   Getting started
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../getting_started/installation_deb.html">
+     Installing OpenSPP
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../getting_started/module_installation.html">
+     Module installation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../getting_started/spmis_installation.html">
+       SP-MIS installation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../getting_started/social_installation.html">
+       Social Registry installation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../getting_started/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            
+    <p class="openspporglink">
+        <a href="https://openspp.org">
+            <img src="/_static/openspp_logo.png" alt="openspp.org" /> openspp.org</a>
+    </p>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__label">
+        <span>OpenSPP Branding Kit</span>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/openspp/documentation"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fmodules/spp_branding_kit.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://docs.openspp.org/contributing/?modules/spp_branding_kit.md#making-contributions-on-github"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/modules/spp_branding_kit.md.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#purpose">
+   Purpose
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dependencies-and-integration">
+   Dependencies and Integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-functionality">
+   Additional Functionality
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#customizing-system-information-and-visuals">
+     Customizing System Information and Visuals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#telemetry-and-data-privacy-control">
+     Telemetry and Data Privacy Control
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interface-optimization">
+     Interface Optimization
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>OpenSPP Branding Kit</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#purpose">
+   Purpose
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dependencies-and-integration">
+   Dependencies and Integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-functionality">
+   Additional Functionality
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#customizing-system-information-and-visuals">
+     Customizing System Information and Visuals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#telemetry-and-data-privacy-control">
+     Telemetry and Data Privacy Control
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interface-optimization">
+     Interface Optimization
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="openspp-branding-kit">
+<h1>OpenSPP Branding Kit<a class="headerlink" href="#openspp-branding-kit" title="Permalink to this headline">#</a></h1>
+<p>The OpenSPP Branding Kit module enables administrators to fully customize the visual identity of their OpenSPP instance and manage its telemetry settings. This module ensures that the platform consistently reflects an organization's brand and provides granular control over data sharing practices.</p>
+<section id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
+<p>The OpenSPP Branding Kit module accomplishes several key objectives to present a unified and controlled platform experience:</p>
+<ul class="simple">
+<li><p><strong>Customizes System Branding</strong>: It allows organizations to replace default branding elements across all interfaces with their own, ensuring a consistent and professional appearance for users. This includes custom system names, logos, and support information.</p></li>
+<li><p><strong>Manages Telemetry Data</strong>: The module provides explicit control over the collection and redirection of anonymous usage statistics, allowing organizations to comply with privacy policies or disable telemetry entirely. This supports data sovereignty requirements.</p></li>
+<li><p><strong>Removes Non-OpenSPP Elements</strong>: It removes or replaces references to other platforms and promotional content, presenting a clean, OpenSPP-centric user experience. This helps avoid confusion and maintains focus on the social protection program.</p></li>
+<li><p><strong>Standardizes System Messages</strong>: It customizes default system messages and email signatures to align with OpenSPP branding and communication standards. This reinforces the platform's identity in all user interactions.</p></li>
+<li><p><strong>Optimizes User Interface</strong>: The module streamlines the user interface for OpenSPP-specific workflows, enhancing usability and relevance for social protection program managers and field staff.</p></li>
+</ul>
+</section>
+<section id="dependencies-and-integration">
+<h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
+<p>The OpenSPP Branding Kit is a foundational module that integrates deeply with the OpenSPP core and other thematic modules to provide a consistent user experience.</p>
+<ul class="simple">
+<li><p>It depends on the <code class="docutils literal notranslate"><span class="pre">base</span></code>, <code class="docutils literal notranslate"><span class="pre">web</span></code>, and <code class="docutils literal notranslate"><span class="pre">base_setup</span></code> modules for core system functionality, web client operations, and basic configuration settings, respectively.</p></li>
+<li><p>Crucially, it relies on the :ref:<code class="docutils literal notranslate"><span class="pre">theme_openspp_muk</span></code> module to apply the visual styling and layout that defines the OpenSPP aesthetic. The Branding Kit then layers specific customizations on top of this theme.</p></li>
+<li><p>This module serves other OpenSPP modules by establishing a standardized visual and operational environment. By setting system-wide branding and telemetry rules, it ensures that all other modules operate within a consistent, OpenSPP-branded framework.</p></li>
+</ul>
+</section>
+<section id="additional-functionality">
+<h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
+<p>The module offers comprehensive features for brand management and operational control within the OpenSPP platform.</p>
+<section id="customizing-system-information-and-visuals">
+<h3>Customizing System Information and Visuals<a class="headerlink" href="#customizing-system-information-and-visuals" title="Permalink to this headline">#</a></h3>
+<p>Administrators can personalize various aspects of the OpenSPP interface to match their organization's identity. This includes setting a custom system name, defining specific documentation and support URLs, and controlling the visibility of &quot;Powered by OpenSPP&quot; branding. These changes are reflected across the entire platform, including the login page, system reports, and the backend user interface, ensuring a cohesive look and feel. The module also overrides default email signatures to incorporate OpenSPP branding automatically.</p>
+</section>
+<section id="telemetry-and-data-privacy-control">
+<h3>Telemetry and Data Privacy Control<a class="headerlink" href="#telemetry-and-data-privacy-control" title="Permalink to this headline">#</a></h3>
+<p>The Branding Kit provides essential tools for managing data privacy. Organizations can easily enable or disable the collection of anonymous usage statistics (telemetry) directly from the system settings. For active telemetry, administrators can configure a custom endpoint where this data is sent, allowing for compliance with specific data governance policies or redirection to internal analytics services. This feature empowers organizations to control their data footprint effectively.</p>
+</section>
+<section id="interface-optimization">
+<h3>Interface Optimization<a class="headerlink" href="#interface-optimization" title="Permalink to this headline">#</a></h3>
+<p>To provide a focused OpenSPP experience, this module removes or modifies elements that refer to other platforms or promote non-OpenSPP services. This includes removing external account URLs from user profiles and optimizing the interface to highlight OpenSPP-specific workflows. By streamlining the user experience and eliminating extraneous content, the module ensures that the platform remains dedicated to its primary mission of social protection program management.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<p>The OpenSPP Branding Kit is a pivotal module that empowers organizations to fully brand their OpenSPP instance and manage telemetry, delivering a professional, consistent, and privacy-compliant platform for social protection programs.</p>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      &copy; Copyright OpenSPP.<br/>
+    <div class="extra_footer">
+      <p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+    
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            if ($.trim($(".sticky-top .bd-toc").html()) === "") {
+                $(".sticky-top .bd-toc").css("visibility", "hidden");
+            }
+        });
+    </script>
+
+
+  </body>
+</html>
