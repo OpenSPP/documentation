@@ -4,24 +4,9 @@ openspp:
   products: [core]
 ---
 
-# Key concepts
+# Learn
 
 These pages explain the core concepts behind OpenSPP. Understanding these concepts will help you use and configure the platform effectively.
-
-```{toctree}
-:maxdepth: 2
-:hidden:
-
-registry
-programs
-cycles
-eligibility
-compliance
-entitlements
-payments
-deduplication
-change-requests
-```
 
 ## Registry
 
@@ -58,3 +43,18 @@ The {doc}`registry` is the central database storing information about people and
 ## Change requests
 
 {doc}`change-requests` provide a controlled workflow for updating registry data with approval processes, audit trails, and supporting documentation.
+
+```{toctree}
+:maxdepth: 2
+:hidden:
+
+registry
+programs
+cycles
+eligibility
+compliance
+entitlements
+payments
+deduplication
+change-requests
+```

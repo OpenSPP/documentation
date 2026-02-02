@@ -77,114 +77,16 @@ OpenSPP is currently in active development. If you have questions or need suppor
 
 ```{toctree}
 :maxdepth: 2
-:hidden:
-:caption: Learn
+:hidden: true
 
+products/index
 learn/concepts/index
-learn/products/social_registry
-learn/products/sp_mis
-learn/products/farmer_registry
-learn/products/drims
-learn/whats_new_v2
-```
-
-```{toctree}
-:maxdepth: 2
-:hidden:
-:caption: Get Started
-
-get_started/installation/index
-get_started/explore/index
-get_started/first_household/index
-get_started/first_program/index
-get_started/poc_and_pilot
-```
-
-```{toctree}
-:maxdepth: 2
-:hidden:
-:caption: User Guide
-
-user_guide/getting_started/index
-user_guide/registry/index
-user_guide/change_requests/index
-user_guide/programs/index
-user_guide/payments/index
-user_guide/approvals/index
-user_guide/reference/index
-```
-
-```{toctree}
-:maxdepth: 2
-:hidden:
-:caption: Configuration Guide
-
-config_guide/studio/index
-config_guide/cel/index
-config_guide/eligibility/index
-config_guide/entitlement_formulas/index
-config_guide/scoring/index
-config_guide/vocabulary/index
-config_guide/variables/index
-config_guide/event_data/index
-config_guide/change_request_types/index
-config_guide/consent/index
-config_guide/drims/index
-```
-
-```{toctree}
-:maxdepth: 2
-:hidden:
-:caption: Developer Guide
-
-developer_guide/setup/index
-developer_guide/architecture/index
-developer_guide/extending/index
-developer_guide/api_v2/index
-developer_guide/dci/index
-developer_guide/verifiable_credentials/index
-developer_guide/integrations/index
-developer_guide/drims/index
-developer_guide/migration/index
-```
-
-```{toctree}
-:maxdepth: 2
-:hidden:
-:caption: Operations Guide
-
-ops_guide/deployment/index
-ops_guide/security/index
-ops_guide/storage/index
-ops_guide/backup/index
-ops_guide/monitoring/index
-```
-
-```{toctree}
-:maxdepth: 2
-:hidden:
-:caption: Reference
-
-reference/modules/index
-reference/vocabularies/index
-reference/api/index
-reference/glossary/humanitarian
-modules/index
-```
-
-```{toctree}
-:maxdepth: 2
-:hidden:
-:caption: Community
-
+get_started/index
+user_guide/index
+config_guide/index
+developer_guide/index
+ops_guide/index
+reference/index
 community_and_support/index
-contributing/index
-```
 
-```{toctree}
-:maxdepth: 1
-:hidden:
-:caption: Appendices
-
-glossary
 ```
