@@ -10,12 +10,11 @@ openspp:
 
 **Applies to:** SP-MIS
 
-The Payments section covers distributing benefits to beneficiaries through service points and Point of Sale systems. This section guides you through viewing service points, understanding payment workflows, and processing disbursements.
+The Payments section covers distributing benefits to beneficiaries through service points and Point of Sale systems. This section guides you through viewing service points and understanding payment workflows.
 
 ## What You Will Learn
 
 - **Service Points** - View and understand service point locations where payments are distributed
-- **Processing Disbursements** - Approve entitlements and process payments to beneficiaries
 - **Point of Sale** - Use the POS interface to disburse cash benefits at service points
 
 ## How Payments Work
@@ -31,7 +30,6 @@ Payments in OpenSPP follow this workflow:
 :hidden:
 
 service_points
-process_disbursements
 ```
 
 ## Related Guides

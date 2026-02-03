@@ -41,7 +41,7 @@ Click **My Approvals**, then **Pending Approvals**.
 
 You will see a list of all items waiting for your approval.
 
-![Pending approvals list](/_images/en-us/approvals/manage/03-pending-approvals-list-showing-items-waiting-for-a.png)
+![Pending approvals list](/_images/en-us/approvals/manage/03-pending-approvals-list.png)
 
 ### Understanding the List
 
@@ -121,15 +121,15 @@ If an item needs changes before you can approve it, you can request revisions in
 
 ### 1. Click Request Revision
 
-From the original record, click **Request Revision**.
+From the original record, click **Request Changes**.
 
-![Request revision button](/_images/en-us/approvals/manage/11-request-revision-button-for-requesting-changes-bef.png)
+![Request Changes button](/_images/en-us/approvals/manage/11-request-changes.png)
 
 ### 2. Enter revision notes
 
 Describe what changes are needed.
 
-![Revision notes dialog](/_images/en-us/approvals/manage/12-revision-notes-dialog-describing-what-changes-are.png)
+![Revision notes dialog](/_images/en-us/approvals/manage/12-revision-notes-dialog.png)
 
 | Field | What to Enter |
 |-------|---------------|
@@ -147,7 +147,7 @@ The item status changes to **Revision Requested**. The submitter can make change
 
 Managers can see all reviews by going to **Approvals** > **My Approvals** > **All Reviews**.
 
-![All reviews menu option](/_images/en-us/approvals/manage/13-all-reviews-menu-option-for-managers-to-view-all-a.png)
+![All reviews menu option](/_images/en-us/approvals/manage/13-all-reviews.png)
 
 Use the filters to find specific approvals:
 
@@ -164,9 +164,9 @@ Use the filters to find specific approvals:
 
 ### From the original record
 
-Open any record that uses approvals. The approval history appears in the **Approval Reviews** section or the message log at the bottom.
+Open any record that uses approvals. The approval history appears in the **Approval History** section or the message log at the bottom.
 
-![Approval history on record](/_images/en-us/approvals/manage/15-approval-history-on-record-showing-past-reviews-an.png)
+![Approval history on record](/_images/en-us/approvals/manage/15-approval-history-on-record.png)
 
 ## Multi-Tier Approvals
 

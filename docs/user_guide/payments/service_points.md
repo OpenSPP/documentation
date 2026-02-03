@@ -42,9 +42,9 @@ Click **Service Point** in the main navigation menu.
 
 ### 2. View the Service Points List
 
-Click **Service Points** to see all available service points.
+Click **Service Points** in the main menu to open the list of all available service points.
 
-![Service Points list view](/_images/en-us/payments/service_points/02-service-points-list-view-showing-all-available-ser.png)
+![Service Points list view](/_images/en-us/payments/service_points/02-service-points-list.png)
 
 The list shows:
 
@@ -82,7 +82,7 @@ Use the search and filter options to find specific service points.
 
 Click on a service point name to open its details.
 
-![Service point form view](/_images/en-us/payments/service_points/04-service-point-form-view-showing-details-including.png)
+![Service point form view](/_images/en-us/payments/service_points/04-service-point-form-view.png)
 
 The form shows:
 
@@ -119,7 +119,7 @@ When a service point is disabled:
 - The reason for disabling is displayed
 - No new transactions can be processed there
 
-![Disabled service point showing status](/_images/en-us/payments/service_points/05-disabled-service-point-showing-status-ribbon-and-d.png)
+![Disabled service point showing status](/_images/en-us/payments/service_points/05-disabled-service-point.png)
 
 ### 6. View Area Details
 
@@ -128,7 +128,7 @@ To see more information about the area a service point serves:
 1. Open the service point form
 2. Click the **View Area Details** button in the button box
 
-![View Area Details button](/_images/en-us/payments/service_points/06-view-area-details-button-on-service-point-form.png)
+![View Area Details button](/_images/en-us/payments/service_points/06-view-area-details-button.png)
 
 This opens the area record showing:
 - Area name and code
@@ -155,5 +155,4 @@ A disabled service point cannot process payments. If you believe this is an erro
 
 ## Next Steps
 
-- {doc}`process_disbursements` - Learn how to process payment disbursements
 - {doc}`/tutorial/user_guides/point_of_sales` - Use Point of Sale to disburse payments

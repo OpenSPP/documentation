@@ -12,7 +12,7 @@ openspp:
 
 ## What you will do
 
-Allocate funds to a program so that entitlements can be approved and distributed. Program funds are posted to the program's disbursement journal and must be in place before cycles and entitlements can be fully approved.
+Allocate funds to a program so that entitlements can be approved and distributed. Program funds are posted to the program's disbursement journal and must be in place before entitlements can be fully approved.
 
 ## Before you start
 
