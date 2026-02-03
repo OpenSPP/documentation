@@ -6,17 +6,17 @@ openspp:
 
 # Event Type Designer
 
-This guide is for **implementers** creating event types to capture field data and survey responses. You should be familiar with KoBoToolbox or ODK, but you don't need programming knowledge.
+This guide is for **implementers** creating event types to capture field data and survey responses. You should be familiar with form design concepts, but you don't need programming knowledge.
 
 ## What is Event Type Designer?
 
-Event Type Designer lets you create new survey and assessment types for capturing time-based observations about registrants. Import field definitions directly from KoBoToolbox or ODK forms, or create event types from scratch.
+Event Type Designer lets you create custom data collection forms for recording time-based observations about registrants. Define fields, validation rules, and approval workflows without writing code.
 
-## When to Use Event Type Designer
+## When to use Event Type Designer
 
 Use this tool when you collect data that changes over time or comes from field visits:
 
-| Use Case | Example Event Type |
+| Use case | Example event type |
 |----------|-------------------|
 | Vulnerability assessments | "PMT Survey" with scoring fields |
 | Field visits | "Monthly Household Visit" tracking |
@@ -24,9 +24,9 @@ Use this tool when you collect data that changes over time or comes from field v
 | Program monitoring | "Compliance Check" for conditional programs |
 | Health assessments | "Nutrition Survey" for mother-child programs |
 
-## Mental Model: Events vs Registry Fields
+## Mental model: events vs registry fields
 
-| Registry Fields | Event Data |
+| Registry fields | Event data |
 |----------------|------------|
 | Permanent characteristics | Time-based observations |
 | Name, birthdate, gender | Survey responses, visit notes |
@@ -36,510 +36,286 @@ Use this tool when you collect data that changes over time or comes from field v
 
 **Rule of thumb**: If you need to track history ("What was the value in June?"), use an event type. If you just need the current value, use a registry field.
 
-## Before You Start
+## Before you start
 
 ### Prerequisites
 
 - **Studio Editor** or **Studio Manager** permissions
-- For Kobo/ODK import:
-  - Access to KoBoToolbox or ODK Central server
-  - API token or credentials
-  - Published form ready to import
+- Understanding of what data you need to collect
 
-### Planning Your Event Type
+### Planning your event type
 
 Decide:
 
 1. **Name**: Clear, descriptive name (e.g., "Vulnerability Assessment")
-2. **Category**: Survey, Field Visit, Data Sync, or Manual Entry
-3. **Target**: Individuals, Groups, or both
-4. **Data source**: Internal, Kobo, ODK, or API
-5. **Fields**: What data to collect
-6. **Lifecycle**: One active per registrant? Auto-expire? Requires approval?
+2. **Target**: Individuals, Groups, or both
+3. **Fields**: What data to collect and their types
+4. **Multiple events?**: Can a registrant have multiple events of this type?
+5. **Approval**: Do events need review before becoming active?
 
-## Creating an Event Type
+## Creating an event type
 
-### Step 1: Open Event Type Designer
+There are two ways to create an event type:
+- **Form view** (default): Full configuration on one page with tabs
+- **Wizard** (alternative): Guided 3-step process
+
+### Method 1: Using the form view (recommended)
+
+#### Step 1: Open Event Type Designer
 
 1. Click **Studio** in the main menu
-2. Click **Event Types**
-3. Click **+ New Event Type** button
+2. Click **Event Types** (under Forms & Fields)
+3. Click the **New** button
 
-**Screenshot should show**: Studio Dashboard with Event Types card highlighted, then Event Type Designer list view with "+ New Event Type" button.
+![Event Types list view](/_images/en-us/config_guide/studio/event_type_designer/02-event-types-list.png)
 
-### Step 2: Enter Basic Information
+#### Step 2: Enter basic information
 
-| Field | What to Enter | Example |
+![Event type form](/_images/en-us/config_guide/studio/event_type_designer/03-event-type-form-empty.png)
+
+| Field | What to enter | Example |
 |-------|---------------|---------|
 | **Event Type Name** | Descriptive name | "Vulnerability Assessment" |
-| **Code** | Auto-generated, used in reports | `vulnerability_assessment` |
-| **Category** | Choose one (see below) | Survey / Assessment |
-| **Applies to** | Individual, Group, or both | ☑ Individuals  ☑ Groups |
+| **Technical Name** | Auto-generated code (read-only) | `x_evt_vulnerability_assessment` |
+| **Target Type** | Who this event applies to | Individual, Group, or Both |
+| **Description** | Optional explanation | "Annual household vulnerability survey" |
 
-**Screenshot should show**: Step 1 of event type creation wizard with fields filled in.
+#### Step 3: Configure options
 
-#### Category Options
+| Field | What it does | Default |
+|-------|--------------|---------|
+| **Kobo Form ID** | Link to a KoBoToolbox form (optional) | Empty |
+| **Allow Multiple Events** | If checked, a registrant can have multiple events of this type | Checked |
+| **Requires Approval** | If checked, events need review before activation | Unchecked |
 
-| Category | Use When |
-|----------|----------|
-| **Survey / Assessment** | Collecting structured survey data |
-| **Field Visit** | Recording visit observations |
-| **Data Sync** | Importing from external system automatically |
-| **Manual Entry** | Staff enter data directly in OpenSPP |
+**Tip**: Uncheck "Allow Multiple Events" if only the latest assessment matters (e.g., vulnerability scores where only the most recent is relevant).
 
-Click **Next →** when ready.
+#### Step 4: Define fields
 
-### Step 3: Choose Data Source
+Click the **Fields** tab to add your data collection fields.
 
-You'll see four options:
+![Fields tab](/_images/en-us/config_guide/studio/event_type_designer/05-fields-tab-empty.png)
 
-**Screenshot should show**: Step 2 of wizard with four data source cards (Internal, KoBoToolbox, ODK Central, API).
+Click **Add a line** to create each field:
 
-| Source | Use When |
-|--------|----------|
-| **📱 Internal** | Data entered directly in OpenSPP |
-| **🌐 KoBoToolbox** | Import from Kobo forms |
-| **📋 ODK Central** | Import from ODK server |
-| **🔌 API** | Custom API integration (advanced) |
-
-Choose your data source and click **Next →**.
-
-### Step 3b: Connect to KoBoToolbox (if selected)
-
-If you chose KoBoToolbox as the source:
-
-#### Select or Add Connection
-
-**If you already have a Kobo connection**:
-- Select existing connection (e.g., "UNHCR Kobo Server")
-
-**If this is your first time**:
-- Select "+ Add new connection..."
-- See "Connecting to KoBoToolbox" section below
-
-**Screenshot should show**: Connection selection screen with saved connections listed and "+ Add new connection..." option.
-
-#### Select Form to Import
-
-1. The system fetches all published forms from your Kobo server
-2. Search or browse for your form
-3. Select the form
-
-**Screenshot should show**: Form selection screen showing list of Kobo forms with names and "Last submission" times.
-
-| Form | Last Submission |
-|------|----------------|
-| (•) Vulnerability Assessment v3.2 | 2 days ago |
-| ( ) Household Survey 2024 | 1 week ago |
-| ( ) Rapid Needs Assessment | 3 weeks ago |
-
-#### Configure Registrant Matching
-
-Tell OpenSPP how to match survey submissions to registrants:
-
-| Setting | What to Enter |
+| Setting | What to enter |
 |---------|---------------|
-| **Kobo field** | Which field contains the beneficiary ID | `beneficiary_id` |
-| **ID Type** | What kind of ID it is | National ID, Phone Number, etc. |
+| **Field Label** | What users see (e.g., "Monthly Income") |
+| **Field Type** | Type of data (see table below) |
+| **Required** | Check if field must be filled |
 
-**Screenshot should show**: Registrant matching configuration with dropdowns for Kobo field and ID type.
+##### Available field types
 
-**Example**:
-```
-Your Kobo form has a field called "beneficiary_id" where
-enumerators enter the person's National ID number.
+| Type | Use for | Example |
+|------|---------|---------|
+| **Short Text** | Names, codes, short answers | "Household ID" |
+| **Long Text** | Notes, descriptions, comments | "Visit observations" |
+| **Whole Number** | Counts, quantities | "Number of children" |
+| **Decimal Number** | Amounts, measurements | "Monthly income" |
+| **Date** | Calendar dates | "Assessment date" |
+| **Date & Time** | Timestamps | "Visit timestamp" |
+| **Yes/No** | True/false, checkboxes | "Household present?" |
+| **Single Choice** | Dropdown selection | "Housing type" |
+| **Multiple Choice** | Multi-select options | "Income sources" |
+| **Link to Record** | Reference another record | "Assigned case worker" |
 
-Kobo field: [beneficiary_id ▼]
-ID Type: [National ID ▼]
-```
+##### Configuring selection fields
 
-Click **Next →** when configured.
-
-### Step 4: Define Fields
-
-You'll see fields imported from your Kobo form (or an empty list for internal event types).
-
-**Screenshot should show**: Step 3 of wizard showing imported fields table with checkboxes in Import column.
-
-#### For Imported Fields (Kobo/ODK)
-
-The system automatically maps Kobo question types to OpenSPP field types:
-
-| Kobo Type | OpenSPP Type | Example |
-|-----------|--------------|---------|
-| text | Text | Short answer |
-| integer | Number (whole) | Count |
-| decimal | Number (decimal) | Amount |
-| date | Date | Date picker |
-| select_one | Selection | Dropdown |
-| select_multiple | Text (array) | Multiple choices |
-| geopoint | Text | GPS coordinates |
-
-Review the imported fields:
-
-| Column | What It Shows |
-|--------|---------------|
-| **Field Name** | Internal name from Kobo |
-| **Type** | OpenSPP field type |
-| **Required** | Whether field is mandatory |
-| **Import?** | Uncheck to skip fields you don't need |
-
-**Screenshot should show**: Fields table with several rows, some checked and some unchecked in Import column.
-
-**Tips**:
-- Uncheck fields you don't need (e.g., GPS coordinates, metadata)
-- Required status is inherited from Kobo form
-- You can edit field settings after import
-
-#### For Internal Event Types
-
-Click **+ Add Field** to create each field:
-
-| Setting | What to Enter |
-|---------|---------------|
-| **Field Name** | Internal name (lowercase, no spaces) |
-| **Label** | What users see |
-| **Type** | Field type (text, number, date, etc.) |
-| **Required** | Must be filled? |
-
-Click **Next →** when fields are defined.
-
-### Step 5: Configure Lifecycle Settings
-
-Control how events behave over time:
-
-**Screenshot should show**: Step 4 of wizard showing lifecycle options.
-
-#### Event Lifecycle Options
-
-| Option | Use When | Example |
-|--------|----------|---------|
-| **Only one active event per registrant** | Latest assessment supersedes previous ones | Vulnerability score (only most recent matters) |
-| **Auto-expire after X days** | Event data becomes stale | Monthly visit (expires after 45 days) |
-| **Require approval before activating** | Events need validation | Survey data needs QC review |
-
-#### Change Request Integration
-
-| Option | Use When |
-|--------|----------|
-| **Create change request when event data differs from registry** | Survey responses should update registry | Phone number in survey differs from registry → create CR |
-
-If enabled, configure:
-- Which CR type to create
-- Which fields to compare
-
-**Screenshot should show**: Change request integration checkbox checked with CR Type dropdown showing "Update Individual Info".
-
-#### Preview
-
-The wizard shows a summary of your settings:
+For **Single Choice** and **Multiple Choice** fields, enter options in the **Selection Options** column:
 
 ```
-Events of this type will:
-• Replace previous active event (one per registrant)
-• Be immediately active (no approval required)
-• Never expire automatically
+value1|Label 1
+value2|Label 2
+value3|Label 3
 ```
 
-Click **Save as Draft** to create the event type.
+Example for "Housing Type":
+```
+owned|Owned
+rented|Rented
+informal|Informal Settlement
+temporary|Temporary Shelter
+```
 
-## Connecting to KoBoToolbox
+##### Adding validation rules (optional)
 
-### Setting Up a Kobo Connection
+Click on a field row to open the field details form where you can configure:
 
-1. In KoBoToolbox, generate an API token:
-   - Log in to Kobo
-   - Click your profile → Account Settings
-   - Go to Security → API Token
-   - Copy the token
+| Validation type | Use for | Example |
+|-----------------|---------|---------|
+| **None** | No validation | Default |
+| **Value Range** | Min/max for numbers | Income between 0 and 1,000,000 |
+| **Pattern Match** | Regex for text | Phone number format |
 
-**Screenshot should show**: KoBoToolbox interface showing Account Settings > Security > API Token.
+##### Configuring conditional visibility (optional)
 
-2. In OpenSPP Studio:
-   - Studio → External Sources → + Connect KoBoToolbox
-   - Or during event type creation → + Add new connection
+Show or hide fields based on other field values:
 
-3. Fill in connection details:
+| Setting | What it does |
+|---------|--------------|
+| **Visibility** | Always Visible or Conditional |
+| **Show When Field** | Which field to check |
+| **Condition** | Is Set, Is Not Set, Equals, Does Not Equal |
+| **Value** | Value to compare (for Equals/Does Not Equal) |
 
-| Field | What to Enter | Example |
-|-------|---------------|---------|
-| **Connection Name** | Memorable name for this server | "UNHCR Kobo Server" |
-| **Server URL** | Kobo server address | `https://kf.kobotoolbox.org` |
-| **API Token** | Token from step 1 | `••••••••••••••••` |
+Example: Show "Disability Type" field only when "Has Disability" is Yes.
 
-**Screenshot should show**: Kobo connection form with fields filled in.
+#### Step 5: Organize with field groups (optional)
 
-4. Click **Test Connection**
-   - System verifies credentials
-   - Shows number of forms found
-   - ✓ "Connected successfully! Found 47 forms."
+Click the **Field Groups** tab to organize fields into tabs in the data entry form.
 
-5. Click **Save**
+1. Click **Add a line** to create a group
+2. Enter a group name (e.g., "Demographics", "Economic Status")
+3. In the Fields tab, assign fields to groups using the **Group** column
 
-**Security note**: API tokens are stored encrypted and only visible to Studio Managers.
+Fields without a group appear in a "General" tab.
 
-## Connecting to ODK Central
+#### Step 6: Save as draft
 
-Similar to Kobo, but using ODK credentials:
+Click **Save** to create the event type in Draft state.
 
-1. In ODK Central, create an App User:
-   - Open your project
-   - Go to App Users
-   - Create new app user
-   - Copy the credentials
+### Method 2: Using the wizard
 
-2. In OpenSPP:
-   - Studio → External Sources → + Connect ODK Central
+The wizard provides a guided 3-step process:
 
-3. Fill in connection details:
+1. **Basic Info**: Name, target type, description
+2. **Add Fields**: Define fields inline
+3. **Review**: Summary and final options
 
-| Field | What to Enter |
-|-------|---------------|
-| **Connection Name** | Memorable name |
-| **Server URL** | ODK Central URL |
-| **Email** | App user email |
-| **Password** | App user password |
-| **Project** | Select project from dropdown |
+To access the wizard, look for "use the wizard" in the empty state message or access it from the Action menu.
 
-## After Creating an Event Type
+## Event type lifecycle
 
-### Test Your Event Type
+Event types follow a three-state lifecycle:
 
-1. Go to **Registry → Individuals** (or Groups)
-2. Open a registrant record
-3. Go to **Events** tab
-4. Click **+ Add Event**
-5. Select your new event type
-6. Enter test data
-7. Save
+```
+Draft ──► Active ──► Inactive
+  ▲                     │
+  └─────────────────────┘
+      (can reactivate)
+```
 
-**Screenshot should show**: Individual registry form with Events tab open, showing "+ Add Event" button and event type selection.
+| State | Can edit fields? | Can edit settings? | Can be used? | Actions available |
+|-------|-----------------|-------------------|--------------|-------------------|
+| **Draft** | Yes | Yes | No | Activate |
+| **Active** | No (locked) | Limited | Yes | Deactivate, Enter Event |
+| **Inactive** | No (locked) | Limited | No | Reactivate, Set to Draft |
 
-### Activate the Event Type
+**Why these restrictions?** Once active, changing fields would break existing event records. To modify structure: deactivate, create a new version, and migrate data (requires developer assistance).
 
-Once tested:
+### Activating an event type
 
-1. Return to **Studio → Event Types**
-2. Find your event type
-3. Click to open it
-4. Click **Activate** (requires Studio Manager permission)
+1. Open the event type in Draft state
+2. Click **Activate** (requires Studio Manager permission)
+3. The event type becomes available for data entry
 
-**Screenshot should show**: Event type detail view with "Activate" button.
+![Activate button](/_images/en-us/config_guide/studio/event_type_designer/09-draft-state-activate-button.png)
 
-## Fetching Data from Kobo/ODK
+### Deactivating an event type
 
-### Manual Fetch (Phase 1)
+1. Open an Active event type
+2. Click **Deactivate**
+3. Existing events remain but no new events can be created
 
-For event types connected to Kobo/ODK:
+### Reactivating an event type
 
-1. Open the event type
-2. Click **Actions → Fetch Latest Submissions**
-3. System fetches new submissions since last sync
-4. Shows summary:
-   - "Fetched 45 submissions"
-   - "Created 42 events"
-   - "3 unmatched" (couldn't find registrant)
+1. Open an Inactive event type
+2. Click **Reactivate** to make it Active again
+3. Or click **Set to Draft** to allow editing (if no events exist)
 
-**Screenshot should show**: Fetch results dialog showing summary statistics.
+## Using event types
 
-### Unmatched Submissions
+### Entering event data
 
-If submissions can't be matched to registrants:
+Once an event type is active:
 
-1. Click **View Unmatched**
-2. Shows list of submissions with the ID that couldn't be matched
-3. Options:
-   - Register the person first, then retry
-   - Ignore if submission is invalid
-   - Contact field team if IDs are incorrect
+1. Go to **Registry** and open an individual or group record
+2. Look for the **Events** tab
+3. Click to add a new event
+4. Select the event type and fill in the fields
+5. Save
 
-### Automatic Sync (Phase 2 - Future)
+### Viewing events
 
-Future capabilities:
-- Webhook receiver for real-time push from Kobo/ODK
-- Scheduled automatic fetch (daily, hourly, etc.)
-- Automatic event creation on submission
+From a registrant record:
+- The **Events** tab shows all recorded events
+- Click an event to view details
 
-## Managing Event Types
+From the event type:
+- Click **View Events** to see all events of this type
+- Use filters to find specific records
 
-### View All Event Types
+## Kobo integration (optional)
 
-**Studio → Event Types** shows all event types:
+If you collect data using KoBoToolbox, you can link an event type to a Kobo form:
 
-**Screenshot should show**: Event Type list view with columns.
+1. Enter the **Kobo Form ID** in the event type configuration
+2. This is for reference only - manual data entry is still required
+
+```{note}
+Automatic synchronization with KoBoToolbox is not currently implemented. The Kobo Form ID field allows you to document which Kobo form corresponds to this event type.
+```
+
+## Managing event types
+
+### View all event types
+
+**Studio > Event Types** shows all event types:
 
 | Column | Shows |
 |--------|-------|
 | **Name** | Event type name |
-| **Category** | Survey, Visit, Sync, Manual |
-| **Source** | Internal, Kobo, ODK, API |
-| **Fields** | Number of fields |
-| **Status** | Draft or Active |
+| **Technical Name** | Internal code |
+| **Target Type** | Individual, Group, or Both |
+| **Fields** | Number of fields defined |
+| **State** | Draft, Active, or Inactive |
 
-### Edit an Event Type
+### Filtering event types
 
-**For Draft event types**:
-- Click the name
-- Make changes
-- Save
+Use the search and filter options:
+- **Filter by state**: Draft, Active, Inactive
+- **Filter by target**: Individual, Group, Both
+- **Search by name**: Find specific event types
 
-**For Active event types**:
-- Cannot edit structure (fields, source)
-- Can edit name, category, lifecycle settings
-- To change fields: Create new version, migrate data (requires developer)
+## Are you stuck?
 
-### Deactivate an Event Type
-
-**Warning**: Deactivating prevents new events of this type, but existing events remain.
-
-1. Open the event type
-2. Click **Deactivate**
-3. System shows impact: "Used by 1,247 event records"
-4. Confirm deactivation
-
-## Field Type Mapping Reference
-
-### From Kobo to OpenSPP
-
-| Kobo Type | OpenSPP Type | Storage | Notes |
-|-----------|--------------|---------|-------|
-| text | char | Text | Up to 256 characters |
-| integer | integer | Number | Whole numbers |
-| decimal | float | Number | Decimal numbers |
-| date | date | Date | Calendar picker |
-| datetime | datetime | DateTime | Date and time |
-| select_one | selection | Selection | Dropdown (imports choices) |
-| select_multiple | json | Text | Multiple selections stored as array |
-| geopoint | char | Text | Stored as "lat,lng" |
-| image | binary | Attachment | File attachment |
-| note | - | - | Skipped (display only in Kobo) |
-| calculate | - | - | Skipped (Kobo internal) |
-| begin_group | - | - | Skipped (structural) |
-
-### Supported Field Types for Internal Events
-
-| Type | Use For |
-|------|---------|
-| **Text** | Short answers, names, codes |
-| **Long Text** | Notes, descriptions |
-| **Number** | Counts, scores, amounts |
-| **Date** | Assessment dates, visit dates |
-| **Yes/No** | Checklists, true/false |
-| **Selection** | Dropdown choices |
-| **Multi-Select** | Multiple choice questions |
-
-## Common Patterns
-
-### Vulnerability Assessment from Kobo
-
-```
-Event Type: Vulnerability Assessment
-Category: Survey / Assessment
-Source: KoBoToolbox
-Form: "PMT Survey v2.1"
-Applies to: Groups (households)
-Lifecycle: One active per household
-Registrant Matching:
-  - Kobo field: household_id
-  - ID Type: National ID (head of household)
-Fields: (imported from Kobo)
-  - housing_material
-  - water_source
-  - toilet_type
-  - electricity_access
-  - vulnerability_score (calculated in Kobo)
-```
-
-### Monthly Household Visit
-
-```
-Event Type: Monthly Household Visit
-Category: Field Visit
-Source: Internal
-Applies to: Groups (households)
-Lifecycle:
-  - Multiple events allowed
-  - Auto-expire: No
-  - Require approval: No
-Fields:
-  - visit_date (Date, Required)
-  - household_present (Yes/No, Required)
-  - compliance_status (Selection: Compliant/Non-compliant/Pending)
-  - notes (Long Text)
-```
-
-### Health Check (from ODK)
-
-```
-Event Type: Child Health Check
-Category: Survey / Assessment
-Source: ODK Central
-Form: "Nutrition Survey 2024"
-Applies to: Individuals only
-Lifecycle:
-  - Multiple events allowed (track over time)
-  - No expiration
-Registrant Matching:
-  - ODK field: child_id
-  - ID Type: Health Card Number
-Change Request Integration:
-  - Enabled
-  - CR Type: Update Individual Info
-  - Compare fields: weight, height
-```
-
-## Are You Stuck?
-
-**Can't see my Kobo forms?**
-- Verify API token is correct
-- Check that forms are published in Kobo
-- Ensure you're connected to the right server (kf.kobotoolbox.org vs kobo.humanitarianresponse.info)
-- Click "Test Connection" to verify
-
-**Event type created but no events appear?**
-- For Kobo/ODK: Have you clicked "Fetch Latest Submissions"?
-- Check that submissions contain valid registrant IDs
-- View unmatched submissions to see which IDs failed
-
-**Fields imported incorrectly from Kobo?**
-- Some Kobo field types don't map perfectly (groups, calculate fields are skipped)
-- Edit field definitions after import if needed
-- For complex mappings, contact a developer
-
-**Getting "registrant not found" errors?**
-- Verify the ID type matches what's in your registry
-- Check that field team is entering correct ID format
-- Ensure registrants are enrolled before submitting surveys
-
-**Can't activate event type?**
+**Can't see the Activate button?**
 - You need Studio Manager permission
-- Make sure event type is fully configured (all required settings)
-- Check that event type name is unique
+- The event type must have at least one field defined
+- Check that you're viewing a Draft event type
+
+**Can't edit fields on an active event type?**
+- Active event types have locked field definitions
+- Deactivate first, then edit (note: this affects data entry)
+- Or create a new version of the event type
+
+**Selection options not saving correctly?**
+- Use the format: `value|Label` (one per line)
+- The value (before |) is stored; the label (after |) is displayed
+- Don't include spaces around the pipe character
+
+**Field not appearing in data entry form?**
+- Check that the field is not set to "Conditional" visibility
+- If conditional, verify the condition is being met
+- Ensure the event type is Active
 
 **Want to change fields after activation?**
-This is difficult because existing events use the old structure. Options:
-- Deactivate old type, create new type (existing data remains separate)
-- Contact developer for data migration
-
-**Event data not appearing in registry?**
-- Check the Events tab on registrant record
-- Verify event is Active (not Draft or Superseded)
-- Refresh the page
+This is difficult because existing events use the current structure. Options:
+- Create a new event type with the updated fields
+- Deactivate the old type (existing data remains)
+- Contact a developer for data migration
 
 **How do I export event data?**
-Event data export is not part of Studio. Contact administrator for reports or data exports.
+Event data export is not part of Studio. Contact your administrator for reports or data exports.
 
-**Can I use the same Kobo form for multiple event types?**
-Yes, but not recommended. Each event type should have its own Kobo form for clarity.
+**What if registrants have multiple events?**
+Depends on the "Allow Multiple Events" setting:
+- **Checked**: All events remain active and visible
+- **Unchecked**: Only the latest event is shown as current
 
-**What if registrants have multiple active events?**
-Depends on lifecycle settings:
-- "One active per registrant" → Latest supersedes previous
-- Multiple allowed → All events remain active and visible
+## Next steps
 
-## Next Steps
-
-- **Build approval workflows for updates**: {doc}`change_request_builder`
 - **Define eligibility rules using event data**: {doc}`/config_guide/cel/index`
 - **Add custom registry fields**: {doc}`registry_field_builder`
+- **Build approval workflows**: {doc}`change_request_builder`
 - **Return to Studio overview**: {doc}`overview`
