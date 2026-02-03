@@ -8,7 +8,7 @@ openspp:
 
 This guide is for **implementers** configuring custom fields for event types in OpenSPP Studio. You should be comfortable with form builders like KoboToolbox, but you don't need to write code.
 
-## Mental Model
+## Mental model
 
 Event fields work like form questions:
 
@@ -19,9 +19,9 @@ Event fields work like form questions:
 | **Validation** | Answer rules | "Must be between 0 and 100,000" |
 | **Visibility** | Skip logic | "Show if employment_status = Employed" |
 
-## Field Types
+## Field types
 
-### Available Field Types
+### Available field types
 
 | Type | Data Format | When to Use | Example |
 |------|-------------|-------------|---------|
@@ -36,17 +36,21 @@ Event fields work like form questions:
 | **Multi-Select** | Pick multiple from list | Multiple categories | Crops: ["Maize", "Beans"] |
 | **Link** | Reference to another record | Link to location, organization | Area: → res.partner |
 
-## Adding Fields to Event Type
+## Adding fields to event type
 
-### Step 1: Open Event Type
+### Step 1: Open event type
 
 Go to **Studio → Forms & Fields → Event Types** and open your event type (must be in Draft state).
 
-### Step 2: Add Field
+```{tip}
+For step-by-step screenshots of the Event Type Designer, see {doc}`/config_guide/studio/event_type_designer`.
+```
+
+### Step 2: Add field
 
 Click **Add Field** in the Fields tab.
 
-### Step 3: Configure Basic Properties
+### Step 3: Configure basic properties
 
 | Property | Description | Example |
 |----------|-------------|---------|
@@ -57,9 +61,9 @@ Click **Add Field** in the Fields tab.
 | **Help Text** | Guidance for data collectors | "Enter total monthly income from all sources" |
 | **Sequence** | Display order (10, 20, 30...) | 10 |
 
-### Step 4: Configure Type-Specific Settings
+### Step 4: Configure type-specific settings
 
-#### For Selection/Multi-Select Fields
+#### For selection/multi-select fields
 
 Add options (one per line):
 
@@ -76,24 +80,24 @@ Retired
 event('survey').employment_status == 'Employed'
 ```
 
-#### For Link Fields
+#### For link fields
 
 | Setting | Value |
 |---------|-------|
 | **Link To** | Model to link to (e.g., `res.partner`, `spp.area`) |
 | **Link Domain** | Filter expression (e.g., `[('is_location', '=', True)]`) |
 
-#### For Decimal/Integer Fields
+#### For decimal/integer fields
 
 Set validation ranges (see Validation section below).
 
-## Field Validation
+## Field validation
 
 Validation rules ensure data quality before events are saved.
 
-### Validation Types
+### Validation types
 
-#### Range Validation (Numbers and Dates)
+#### Range validation (numbers and dates)
 
 **For Integer/Decimal fields:**
 
@@ -112,7 +116,7 @@ Validation rules ensure data quality before events are saved.
 | **Minimum Value** | 2020-01-01 | No dates before 2020 |
 | **Maximum Value** | today | No future dates |
 
-#### Pattern Validation (Text)
+#### Pattern validation (text)
 
 **For Text fields:**
 
@@ -122,7 +126,7 @@ Validation rules ensure data quality before events are saved.
 | **Pattern** | `^[A-Z]{2}[0-9]{6}$` | Must match format (e.g., ID number) |
 | **Error Message** | "ID must be 2 letters + 6 digits" | Shown on validation failure |
 
-**Common Patterns:**
+**Common patterns:**
 
 | Pattern | Matches | Example |
 |---------|---------|---------|
@@ -131,17 +135,17 @@ Validation rules ensure data quality before events are saved.
 | `^[0-9]{3}-[0-9]{3}-[0-9]{4}$` | Phone format (XXX-XXX-XXXX) | 555-123-4567 |
 | `^[a-zA-Z\s]+$` | Letters and spaces only | John Doe |
 
-## Conditional Visibility
+## Conditional visibility
 
 Show or hide fields based on other field values (like skip logic in surveys).
 
-### Step 1: Enable Conditional Visibility
+### Step 1: Enable conditional visibility
 
 | Setting | Value |
 |---------|-------|
 | **Visibility** | Conditional |
 
-### Step 2: Configure Condition
+### Step 2: Configure condition
 
 | Setting | Value | Description |
 |---------|-------|-------------|
@@ -151,7 +155,7 @@ Show or hide fields based on other field values (like skip logic in surveys).
 
 ### Examples
 
-#### Example 1: Show Income Source if Employed
+#### Example 1: Show income source if employed
 
 **Field:** `income_source` (Text)
 
@@ -164,7 +168,7 @@ Show or hide fields based on other field values (like skip logic in surveys).
 
 **Result:** The "Income Source" field only appears if "Employment Status" = "Employed"
 
-#### Example 2: Show Disability Details if Has Disability
+#### Example 2: Show disability details if has disability
 
 **Field:** `disability_type` (Selection)
 
@@ -175,7 +179,7 @@ Show or hide fields based on other field values (like skip logic in surveys).
 | **Condition** | Equals |
 | **Value** | true |
 
-#### Example 3: Show Rejection Reason if Assessment Failed
+#### Example 3: Show rejection reason if assessment failed
 
 **Field:** `rejection_reason` (Long Text)
 
@@ -186,9 +190,9 @@ Show or hide fields based on other field values (like skip logic in surveys).
 | **Condition** | Equals |
 | **Value** | Failed |
 
-## Field Configuration Examples
+## Field configuration examples
 
-### Example 1: Income Assessment Fields
+### Example 1: Income assessment fields
 
 | Label | Technical Name | Type | Required | Validation |
 |-------|---------------|------|----------|------------|
@@ -198,7 +202,7 @@ Show or hide fields based on other field values (like skip logic in surveys).
 | Income Source | `income_source` | Text | No | Visible if employed |
 | Verification Date | `verification_date` | Date | Yes | Range: 2020-01-01 to today |
 
-### Example 2: Disability Assessment Fields
+### Example 2: Disability assessment fields
 
 | Label | Technical Name | Type | Required | Validation |
 |-------|---------------|------|----------|------------|
@@ -218,7 +222,7 @@ Psychosocial
 Multiple
 ```
 
-### Example 3: Farm Visit Fields
+### Example 3: Farm visit fields
 
 | Label | Technical Name | Type | Required | Validation |
 |-------|---------------|------|----------|------------|
@@ -229,9 +233,9 @@ Multiple
 | Pest Infestation | `pest_infestation` | Yes/No | Yes | - |
 | Inspector Notes | `inspector_notes` | Long Text | No | - |
 
-## Field Naming Best Practices
+## Field naming best practices
 
-### Technical Names
+### Technical names
 
 **Good:**
 - `monthly_income`
@@ -252,7 +256,7 @@ Multiple
 - No special characters
 - Keep it descriptive but concise
 
-### Labels (User-Facing)
+### Labels (user-facing)
 
 **Good:**
 - "Monthly Income (USD)"
@@ -264,9 +268,9 @@ Multiple
 - "monthly_income" (technical name, not friendly)
 - "Enter the total monthly income from all sources including employment, farming, and transfers" (too verbose - put this in help text)
 
-## Common Patterns
+## Common patterns
 
-### Pattern 1: Yes/No with Conditional Follow-Up
+### Pattern 1: Yes/no with conditional follow-up
 
 ```
 Field 1:
@@ -281,7 +285,7 @@ Field 2:
   Visibility: Conditional on has_disability = true
 ```
 
-### Pattern 2: Numeric Range with Validation
+### Pattern 2: Numeric range with validation
 
 ```
 Field:
@@ -292,7 +296,7 @@ Field:
   Error: "Household size must be between 1 and 50"
 ```
 
-### Pattern 3: Categorical with Other Option
+### Pattern 3: Categorical with other option
 
 ```
 Field 1:
@@ -308,7 +312,7 @@ Field 2:
   Visibility: Conditional on employment_status = 'Other'
 ```
 
-### Pattern 4: ID Number with Format Validation
+### Pattern 4: ID number with format validation
 
 ```
 Field:
@@ -320,7 +324,7 @@ Field:
   Error: "ID must be 2 uppercase letters followed by 6 digits"
 ```
 
-## Reordering Fields
+## Reordering fields
 
 Fields are displayed in **sequence order** (lowest to highest).
 
@@ -329,7 +333,7 @@ To reorder:
 2. Use increments of 10 (10, 20, 30...) to allow inserting fields later
 3. Save changes
 
-## Deleting Fields
+## Deleting fields
 
 **Before activation:**
 - You can delete any field
@@ -341,7 +345,7 @@ To reorder:
 **Workaround:**
 - Instead of deleting, mark field as **not required** and remove from entry forms
 
-## Field Defaults
+## Field defaults
 
 Some fields support default values configured in the field settings:
 
@@ -352,7 +356,7 @@ Some fields support default values configured in the field settings:
 | **Integer/Decimal** | Numeric value |
 | **Selection** | One of the options |
 
-## Copying Fields from Templates
+## Copying fields from templates
 
 Instead of creating fields manually, you can use templates:
 
@@ -363,7 +367,7 @@ Instead of creating fields manually, you can use templates:
 
 See {doc}`event_types` for available templates.
 
-## Testing Field Configuration
+## Testing field configuration
 
 Before deploying to production:
 
@@ -373,13 +377,13 @@ Before deploying to production:
 4. **Test in mobile app** if using ODK/Kobo integration
 5. **Test in CEL** - verify field data is accessible in expressions
 
-## Next Steps
+## Next steps
 
 1. {doc}`event_types` - Configure event type lifecycle and settings
 2. {doc}`odk_kobo` - Map fields to ODK/KoboToolbox forms
 3. {doc}`../cel/variables` - Reference event fields in eligibility rules
 
-## Are You Stuck?
+## Are you stuck?
 
 **Field not appearing in entry form?**
 

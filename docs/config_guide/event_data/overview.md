@@ -8,7 +8,7 @@ openspp:
 
 This guide is for **implementers** configuring event-based data collection in OpenSPP. You should be comfortable with logic builders like KoboToolbox or CommCare, but you don't need to write code.
 
-## Mental Model
+## Mental model
 
 Event data in OpenSPP has three key differences from profile fields:
 
@@ -22,7 +22,7 @@ Think of it like this:
 - **Profile fields** are like a person's ID card - one current state
 - **Event data** is like their medical records - dated observations over time
 
-## What is Event Data?
+## What is event data?
 
 Event data records **time-based observations** about registrants (individuals or groups) from external sources like:
 
@@ -39,7 +39,7 @@ Each event record contains:
 - **Metadata** - Collector name, source system, verification status
 - **Lifecycle State** - Draft, Active, Superseded, Expired
 
-## Why Use Event Data?
+## Why use event data?
 
 Use event data instead of profile fields when:
 
@@ -52,9 +52,9 @@ Use event data instead of profile fields when:
 | **Temporal eligibility** | Check "income in last 12 months" or "recent visit" |
 | **Data quality tracking** | Know who collected it, when, and verification status |
 
-## Common Use Cases
+## Common use cases
 
-### Use Case 1: Poverty Verification
+### Use case 1: Poverty verification
 
 **Goal:** Track household income assessments over time, use latest for eligibility.
 
@@ -69,7 +69,7 @@ Use event data instead of profile fields when:
 event('income_assessment').monthly_income < 5000
 ```
 
-### Use Case 2: School Attendance Tracking
+### Use case 2: School attendance tracking
 
 **Goal:** Count attendance days for school feeding program.
 
@@ -84,7 +84,7 @@ event('income_assessment').monthly_income < 5000
 events_count('attendance', period='2024', where='attended == true') >= 180
 ```
 
-### Use Case 3: Disability Assessment
+### Use case 3: Disability assessment
 
 **Goal:** Record disability status with periodic reassessment.
 
@@ -100,7 +100,7 @@ has_event('disability_assessment', within_days=730)
 and event('disability_assessment').is_disabled == true
 ```
 
-### Use Case 4: Farm Certification
+### Use case 4: Farm certification
 
 **Goal:** Track farm certification for agricultural support program.
 
@@ -117,7 +117,7 @@ and event('farm_visit').hectares >= 2
 and event('farm_visit').hectares <= 10
 ```
 
-## Event Lifecycle
+## Event lifecycle
 
 Events move through states:
 
@@ -135,7 +135,7 @@ Draft → Pending Approval → Active → Superseded/Expired/Cancelled/Inactive
 | **Cancelled** | Manually cancelled | User or system cancelled the event |
 | **Inactive** | Deactivated | Event deactivated but preserved for history |
 
-### Configuration Options
+### Configuration options
 
 | Setting | Effect |
 |---------|--------|
@@ -144,7 +144,7 @@ Draft → Pending Approval → Active → Superseded/Expired/Cancelled/Inactive
 | **Requires Approval** | New events start in "Pending Approval" |
 | **Expiry Period** | Auto-expire active events after N days/months |
 
-## When NOT to Use Event Data
+## When NOT to use event data
 
 Don't use event data when:
 
@@ -155,7 +155,7 @@ Don't use event data when:
 | Calculated/derived values | Variables or computed fields |
 | Real-time status flags | Profile fields with state machines |
 
-## Event Data vs. Other Features
+## Event data vs. other features
 
 | Feature | When to Use |
 |---------|-------------|
@@ -165,13 +165,13 @@ Don't use event data when:
 | **Change Requests** | Workflow for updating profile data |
 | **Program Membership** | Enrollment status and dates |
 
-## Next Steps
+## Next steps
 
 1. {doc}`event_types` - Create your first event type
 2. {doc}`field_definitions` - Define custom fields with validation
 3. {doc}`odk_kobo` - Connect ODK or KoboToolbox for mobile data collection
 
-## Are You Stuck?
+## Are you stuck?
 
 **Can't decide between profile field and event data?**
 

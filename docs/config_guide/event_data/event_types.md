@@ -8,7 +8,7 @@ openspp:
 
 This guide is for **implementers** creating event type schemas in OpenSPP Studio. You should understand your program's data collection needs but don't need programming knowledge.
 
-## Mental Model
+## Mental model
 
 Event types work in three layers:
 
@@ -21,13 +21,17 @@ Think of it like this:
 - **Event Type** = Published form available for use
 - **Event Data** = Completed forms
 
-## Creating an Event Type
+## Creating an event type
 
-### Step 1: Navigate to Event Types
+### Step 1: Navigate to event types
 
 Go to **Studio → Forms & Fields → Event Types**.
 
-### Step 2: Create Event Type
+```{tip}
+For step-by-step screenshots of this process, see {doc}`/config_guide/studio/event_type_designer`.
+```
+
+### Step 2: Create event type
 
 Click **New** and configure:
 
@@ -41,7 +45,7 @@ Click **New** and configure:
 A **Code** (technical identifier used in CEL expressions) is auto-generated when you activate the event type. The code is based on the name, e.g., "Household Income Survey" becomes `household_income_survey`.
 ```
 
-### Step 3: Configure Approval
+### Step 3: Configure approval
 
 | Setting | Options | When to Use |
 |---------|---------|-------------|
@@ -52,7 +56,7 @@ A **Code** (technical identifier used in CEL expressions) is auto-generated when
 Additional lifecycle settings (**One Active Per Registrant**, **Auto Expire Days**) are configured on the activated event type record, not in the Studio form. These settings control how events behave at runtime.
 ```
 
-**Example Configurations:**
+**Example configurations:**
 
 | Event Type | Requires Approval | Use Case |
 |------------|-------------------|----------|
@@ -61,7 +65,7 @@ Additional lifecycle settings (**One Active Per Registrant**, **Auto Expire Days
 | Disability Status | Yes | Sensitive data requires verification |
 | Farm Visit | Yes | Inspector findings need approval |
 
-### Step 4: Add Fields
+### Step 4: Add fields
 
 Click the **Fields** tab and add your data fields. See {doc}`field_definitions` for detailed field configuration.
 
@@ -78,7 +82,7 @@ Quick field setup:
 | Employment Status | Selection | Yes | Employed / Unemployed / Self-employed |
 | Income Source | Text | No | Farming |
 
-### Step 5: Configure Programs (Optional)
+### Step 5: Configure programs (optional)
 
 If this event type is specific to certain programs:
 
@@ -96,9 +100,9 @@ Click **Activate** to make the event type available for use.
 - CEL expressions can reference it by code
 - If using form builder, generates entry form view
 
-## Event Type Settings Reference
+## Event type settings reference
 
-### Basic Configuration
+### Basic configuration
 
 | Field | Description | Example |
 |-------|-------------|---------|
@@ -108,7 +112,7 @@ Click **Activate** to make the event type available for use.
 
 After activation, the system generates a **Code** (technical identifier for CEL expressions) based on the name, e.g., `household_survey`.
 
-### Lifecycle Configuration
+### Lifecycle configuration
 
 These settings are configured on the activated event type (not in Studio form):
 
@@ -125,18 +129,18 @@ In the Studio form, you configure:
 | **Requires Approval** | Enable approval workflow | New events need approval before activation |
 | **Approval Workflow** | Select approval definition | Defines approvers and levels |
 
-### Program Association
+### Program association
 
 | Setting | Description | Effect |
 |---------|-------------|--------|
 | **Programs** | Linked programs | If set, only these programs see this event type |
 | **Empty** | No program restriction | All programs can use this event type |
 
-## Using Event Type Templates
+## Using event type templates
 
 OpenSPP V2 includes reusable field templates for common assessment types. Templates are managed in **Studio → Settings → Event Templates**.
 
-### Available Templates
+### Available templates
 
 | Template | Category | Use Case |
 |----------|----------|----------|
@@ -145,11 +149,11 @@ OpenSPP V2 includes reusable field templates for common assessment types. Templa
 | **Field Visit** | Visit | Inspector assessments |
 | **Vulnerability Assessment** | Survey | Social protection targeting |
 
-### Applying a Template
+### Applying a template
 
 Templates can be applied when creating event types through the Event Type Builder wizard or by configuring field mappings manually.
 
-## Event Type States
+## Event type states
 
 After creation, event types have states:
 
@@ -161,9 +165,9 @@ After creation, event types have states:
 
 **Note:** You can't delete an active event type that has data records.
 
-## Common Patterns
+## Common patterns
 
-### Pattern 1: Periodic Assessment (One Active)
+### Pattern 1: Periodic assessment (one active)
 
 **Use for:** Income verification, disability status, farm certification
 
@@ -179,7 +183,7 @@ Configuration:
 - New approval supersedes old one
 - Auto-expires after 12 months (triggers reassessment)
 
-### Pattern 2: Repeated Events (Multiple Active)
+### Pattern 2: Repeated events (multiple active)
 
 **Use for:** Attendance, field visits, training sessions
 
@@ -195,7 +199,7 @@ Configuration:
 - Immediate activation
 - Manual lifecycle management
 
-### Pattern 3: Verified External Data (Approval Flow)
+### Pattern 3: Verified external data (approval flow)
 
 **Use for:** Partner system imports, high-stakes assessments
 
@@ -211,7 +215,7 @@ Configuration:
 - Reviewer can reject/approve
 - One verified record at a time
 
-## Integration with Data Collection
+## Integration with data collection
 
 ### ODK/KoboToolbox
 
@@ -222,7 +226,7 @@ If integrating with mobile data collection:
 3. Configure ODK/Kobo form with matching field names
 4. Set up integration in {doc}`odk_kobo`
 
-### Manual Entry
+### Manual entry
 
 For manual data entry:
 
@@ -232,7 +236,7 @@ For manual data entry:
    - Registrant record → **Event Data** button
    - Studio → Event Types → **Enter Event**
 
-### API Import
+### API import
 
 For programmatic import:
 
@@ -241,7 +245,7 @@ For programmatic import:
 3. Use API endpoint: `POST /api/v2/events/`
 4. Include event type code in payload
 
-## Editing Active Event Types
+## Editing active event types
 
 You can edit active event types with limitations:
 
@@ -255,7 +259,7 @@ You can edit active event types with limitations:
 
 **Best Practice:** Test event types in development before activating in production.
 
-## Testing Your Event Type
+## Testing your event type
 
 Before rolling out to data collectors:
 
@@ -265,13 +269,13 @@ Before rolling out to data collectors:
 4. **Verify lifecycle** - test superseding/expiry if configured
 5. **Check integrations** - test ODK/Kobo sync if applicable
 
-## Next Steps
+## Next steps
 
 1. {doc}`field_definitions` - Configure field validation and visibility
 2. {doc}`odk_kobo` - Connect to mobile data collection
 3. {doc}`../cel/variables` - Use event data in eligibility rules
 
-## Are You Stuck?
+## Are you stuck?
 
 **Where is the Code field?**
 

@@ -8,7 +8,7 @@ openspp:
 
 This guide is for **implementers** configuring event data to capture time-based observations from surveys, field visits, and assessments.
 
-## What You'll Find Here
+## What you'll find here
 
 - **Overview** - Event data concepts and use cases
 - **Event Types** - Create and configure event type schemas
@@ -23,7 +23,7 @@ event_types
 field_definitions
 ```
 
-## Quick Links
+## Quick links
 
 - {doc}`overview` - Understand event data concepts
 - {doc}`event_types` - Create event type schemas
