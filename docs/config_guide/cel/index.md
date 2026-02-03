@@ -4,7 +4,7 @@ openspp:
   products: [core]
 ---
 
-# CEL Expressions
+# CEL expressions
 
 This guide is for **implementers** configuring OpenSPP rules and formulas using CEL (Common Expression Language).
 
