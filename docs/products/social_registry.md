@@ -15,19 +15,19 @@ The **OpenSPP Social Registry** is a digital platform that helps governments and
 
 **Easy registration and data collection –** Prepare the registry with all the fields needed. Collect information through bulk upload, direct entry in the UI, or secure connections with existing systems.
 
-<!--*Read more about {doc}`Unified and hierarchical beneficiary registry <../features/unified_registry>` and {doc}`Key terminology <../concepts/registrant_concepts>`.* -->
+*Read more about {doc}`Unified and hierarchical beneficiary registry <features/unified_registry>`.*
 
 **Targeting and integrated service delivery –** Flexible approach to eligibility and targeting - identify eligible beneficiaries based on simple criteria such as age or complex combinations of factors.
 
-<!--*Read more about {doc}`Eligibility and targeting <../features/eligibility_targeting>`.* -->
+*Read more about {doc}`Eligibility and targeting <features/eligibility_targeting>`.*
 
 **Monitoring and accountability –** Track changes and manage user permissions to ensure data security and integrity. Access dashboards for decision-making, transparency and long term monitoring.
 
-<!--*Read more about {doc}`Auditable change management <../features/change_management>` and {doc}`Grievance Redress Mechanism (GRM) <../features/grievance_redress>`.* -->
+*Read more about {doc}`Auditable change management <features/change_management>` and {doc}`Grievance Redress Mechanism (GRM) <features/grievance_redress>`.*
 
 **Interoperability with other systems –** Connect seamlessly with other national databases (ID, health, civil registry) via secure APIs to make updates or to pull information directly, ensuring that the information is up-to-date.
 
-<!--*Read more about {doc}`Data integration and interoperability (APIs) <../features/data_integration_apis>`.* -->
+*Read more about {doc}`Data integration and interoperability (APIs) <features/data_integration_apis>`.*
 
 ## Who is it for?
 
