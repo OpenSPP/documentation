@@ -13,13 +13,13 @@ The **OpenSPP Program Entitlement (Cash)** module enables the definition, calcul
 
 ## Module Dependencies and Integration
 
-1. **OpenSPP Registry ([spp_registry](spp_registry)(LINK_TO_G2P_REGISTRY_BASE))**: This module utilizes the base registry to access and manage beneficiary data, ensuring that entitlements are linked to the correct individuals or households.
+1. **OpenSPP Registry (**spp_registry**(LINK_TO_G2P_REGISTRY_BASE))**: This module utilizes the base registry to access and manage beneficiary data, ensuring that entitlements are linked to the correct individuals or households.
 
 2. **OpenSPP Programs ([spp_programs](spp_programs)(LINK_TO_G2P_PROGRAMS))**: This module builds upon the core program management features, including program creation, cycle management, and eligibility determination. The cash entitlement module extends this functionality by adding cash-specific entitlement management capabilities.
 
 3. **OpenSPP Programs ([spp_programs](spp_programs)(LINK_TO_SPP_PROGRAMS))**:  This module provides the framework for managing both cash and in-kind entitlements. The cash entitlement module specializes in handling the complexities of cash-based distributions, integrating seamlessly with the broader entitlement management system. 
 
-4. **Queue Job ([queue_job](queue_job)(LINK_TO_QUEUE_JOB))**: To enhance performance and user experience, this module employs the queue job framework for asynchronous processing of computationally intensive tasks, such as:
+4. **Queue Job (**queue_job**(LINK_TO_QUEUE_JOB))**: To enhance performance and user experience, this module employs the queue job framework for asynchronous processing of computationally intensive tasks, such as:
     * Calculating entitlement amounts for large numbers of beneficiaries.
     * Generating payment batches for disbursement.
     * Updating beneficiary records with entitlement and payment information.

@@ -17,7 +17,7 @@ The **OpenSPP Tag Based Eligibility Manager** module allows program administrato
 
 ## Module Dependencies and Integration
 
-1. **OpenSPP Registry ([spp_registry](spp_registry)(./spp_registry.md))**:
+1. **OpenSPP Registry (**spp_registry**(./spp_registry.md))**:
     * Utilizes the tagging functionality of the base registry module to define eligibility rules based on registrant tags.
     * Leverages the geographical information associated with registrants, specifically their assigned areas, to apply area-based eligibility criteria.
 

@@ -5,15 +5,15 @@
 **Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
-This document describes the **OpenSPP Custom Field** module, which extends the functionality of OpenSPP by adding customizable fields to registrant profiles. This module is specifically designed to work with the **[spp_registry](spp_registry)** module and leverages its features for managing registrant data.
+This document describes the **OpenSPP Custom Field** module, which extends the functionality of OpenSPP by adding customizable fields to registrant profiles. This module is specifically designed to work with the ****spp_registry**** module and leverages its features for managing registrant data.
 
 ## Purpose
 
 The **OpenSPP Custom Field** module enables administrators to define and manage custom fields for capturing additional information about registrants. This allows for greater flexibility and adaptability in tailoring the registry system to specific program needs and data collection requirements.
 
-## Integration with [spp_registry](spp_registry)
+## Integration with **spp_registry**
 
-This module directly integrates with the **[spp_registry](spp_registry)** module by extending the functionality of the `res.partner` model, which is the core model for managing registrants within OpenSPP.  Instead of creating new models or data structures, it adds custom fields directly onto the registrant profile, ensuring data consistency and ease of management.
+This module directly integrates with the ****spp_registry**** module by extending the functionality of the `res.partner` model, which is the core model for managing registrants within OpenSPP.  Instead of creating new models or data structures, it adds custom fields directly onto the registrant profile, ensuring data consistency and ease of management.
 
 ## Key Functionality
 
@@ -25,10 +25,10 @@ This module directly integrates with the **[spp_registry](spp_registry)** module
 
 ## Benefits
 
-* **Enhanced Data Collection**:  Capture program-specific information beyond the standard fields provided by the **[spp_registry](spp_registry)** module.
+* **Enhanced Data Collection**:  Capture program-specific information beyond the standard fields provided by the ****spp_registry**** module.
 * **Improved Targeting and Analysis**: Utilize custom fields to segment registrants, analyze trends, and support data-driven decision-making.
 * **Flexibility and Adaptability**:  Easily modify and extend the registry system to accommodate evolving program needs and data collection requirements. 
 
 ## Conclusion
 
-The **OpenSPP Custom Field** module provides a powerful and flexible way to customize the OpenSPP registry system. By seamlessly integrating with the **[spp_registry](spp_registry)** module and leveraging Odoo's existing framework, it empowers administrators to tailor data collection and management processes to meet the specific requirements of their social protection programs. 
+The **OpenSPP Custom Field** module provides a powerful and flexible way to customize the OpenSPP registry system. By seamlessly integrating with the ****spp_registry**** module and leveraging Odoo's existing framework, it empowers administrators to tailor data collection and management processes to meet the specific requirements of their social protection programs. 

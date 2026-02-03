@@ -5,7 +5,7 @@
 **Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
-This document outlines the functionality of the **OpenSPP Registrant Tags** module within the OpenSPP ecosystem. This module extends the tagging capabilities of the [spp_registry](spp_registry) module, enabling more organized and efficient management of registrant data.
+This document outlines the functionality of the **OpenSPP Registrant Tags** module within the OpenSPP ecosystem. This module extends the tagging capabilities of the **spp_registry** module, enabling more organized and efficient management of registrant data.
 
 ## Purpose
 
@@ -17,7 +17,7 @@ The **OpenSPP Registrant Tags** module aims to:
 
 ## Module Dependencies and Integration
 
-1. **[spp_registry](spp_registry)**: This module builds upon the foundational registry functionalities provided by the **OpenSPP Registry** module. It leverages the existing tagging infrastructure within that module to ensure seamless integration.
+1. ****spp_registry****: This module builds upon the foundational registry functionalities provided by the **OpenSPP Registry** module. It leverages the existing tagging infrastructure within that module to ensure seamless integration.
 
 ## Functionality
 

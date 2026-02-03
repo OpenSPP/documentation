@@ -22,9 +22,9 @@ The **OpenSPP Registrant Import** module aims to:
 
 3. **OpenSPP Area** ([spp_area](spp_area)): Integrates with the **OpenSPP Area** module to link imported registrant data to specific geographical areas based on unique IDs.
 
-4. **OpenSPP Registry** ([spp_registry](spp_registry)): Works in conjunction with the **OpenSPP Registry** module to facilitate the import of group registrant data and manage group IDs. 
+4. **OpenSPP Registry** (**spp_registry**): Works in conjunction with the **OpenSPP Registry** module to facilitate the import of group registrant data and manage group IDs. 
 
-5. **OpenSPP Registry** ([spp_registry](spp_registry)):  Integrates with the **OpenSPP Registry** module to import individual registrant data and assign individual-specific IDs. 
+5. **OpenSPP Registry** (**spp_registry**):  Integrates with the **OpenSPP Registry** module to import individual registrant data and assign individual-specific IDs. 
 
 ## Additional Functionality
 

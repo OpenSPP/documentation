@@ -18,7 +18,7 @@ The **OpenSPP SQL Query Eligibility Manager** module enables program administrat
 
 ## Module Dependencies and Integration
 
-1. **[spp_registry](spp_registry)**:  This module relies on the base registry for access to registrant data, which is queried against the SQL-based eligibility criteria.
+1. ****spp_registry****:  This module relies on the base registry for access to registrant data, which is queried against the SQL-based eligibility criteria.
 
 2. **[spp_programs](spp_programs)**: 
     * Extends the core program management functionality by providing an additional eligibility manager type specifically for SQL-based eligibility.
@@ -26,7 +26,7 @@ The **OpenSPP SQL Query Eligibility Manager** module enables program administrat
 
 3. **[spp_programs](spp_programs)**: Builds upon OpenSPP Programs features to allow SQL-based eligibility for both cash and in-kind programs. 
 
-4. **[queue_job](queue_job)**: Employs the queue job framework to handle the asynchronous execution of SQL queries and the enrollment of eligible registrants, particularly for large datasets.
+4. ****queue_job****: Employs the queue job framework to handle the asynchronous execution of SQL queries and the enrollment of eligible registrants, particularly for large datasets.
 
 ## Additional Functionality
 

@@ -13,7 +13,7 @@ The **OpenSPP Programs: Compliance Criteria** module allows program administrato
 
 ## Module Dependencies and Integration
 
-1. [spp_registry](spp_registry): Leverages basic registrant information and relationships defined in the base registry module.
+1. **spp_registry**: Leverages basic registrant information and relationships defined in the base registry module.
 
 2. [spp_programs](spp_programs): 
     * Extends the program management features by introducing compliance managers and actions related to compliance checks. 

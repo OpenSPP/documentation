@@ -23,10 +23,10 @@ The module aims to:
 The [spp_change_request](spp_change_request) module leverages and extends the functionality of several other OpenSPP modules:
 
 1. **OpenSPP Registry Modules**: It heavily relies on the OpenSPP Registry modules for accessing and modifying registrant data:
-    * **OpenSPP Registry ([spp_registry](spp_registry))**:  Inherits core registrant management features, including the `res.partner` model used to represent registrants.
-    * **OpenSPP Registry ([spp_registry](spp_registry))**:  Integrates with the individual registrant model to handle change requests related to individual data.
-    * **OpenSPP Registry ([spp_registry](spp_registry))**:  Extends group registrant functionality to manage changes related to group information.
-    * **OpenSPP Registry ([spp_registry](spp_registry))**:  Allows for change requests involving membership details, such as adding or removing members from groups.
+    * **OpenSPP Registry (**spp_registry**)**:  Inherits core registrant management features, including the `res.partner` model used to represent registrants.
+    * **OpenSPP Registry (**spp_registry**)**:  Integrates with the individual registrant model to handle change requests related to individual data.
+    * **OpenSPP Registry (**spp_registry**)**:  Extends group registrant functionality to manage changes related to group information.
+    * **OpenSPP Registry (**spp_registry**)**:  Allows for change requests involving membership details, such as adding or removing members from groups.
 
 2. **OpenSPP Service Points ([spp_service_points](spp_service_points))**: Integrates with the Service Points module to enable the submission of change requests through designated service points.
 

@@ -19,9 +19,9 @@ The **OpenSPP Manual Entitlement** module aims to:
 
 ## Dependencies and Integration
 
-1. **Queue Job** ([queue_job](queue_job)): Utilizes the Queue Job module for asynchronous processing of entitlement creation, preventing performance issues when handling large numbers of beneficiaries.
+1. **Queue Job** (**queue_job**): Utilizes the Queue Job module for asynchronous processing of entitlement creation, preventing performance issues when handling large numbers of beneficiaries.
 
-2. **OpenSPP Registry** ([spp_registry](spp_registry)):  Depends on the OpenSPP Registry module to access and manage registrant data, ensuring that entitlements are linked to the correct beneficiary profiles.
+2. **OpenSPP Registry** (**spp_registry**):  Depends on the OpenSPP Registry module to access and manage registrant data, ensuring that entitlements are linked to the correct beneficiary profiles.
 
 3. **OpenSPP Registrant Import** ([spp_registrant_import](spp_registrant_import)): Integrates with the OpenSPP Registrant Import module to potentially streamline the process of importing beneficiary lists for manual entitlement creation. 
 

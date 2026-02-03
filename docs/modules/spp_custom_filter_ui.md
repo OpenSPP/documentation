@@ -23,7 +23,7 @@ The primary purpose of the **SPP Custom Filter UI** module is to:
 
 1. **[spp_custom_filter](spp_custom_filter)**: This module directly depends on the **SPP Custom Filter** module, inheriting its core functionality for managing the visibility of fields in filter dropdown menus. The **SPP Custom Filter UI** module leverages this capability to configure the UI for specific models.
 
-2. **[spp_registry](spp_registry)**:  This module utilizes functionalities from the **OpenSPP Registry** module, particularly those related to managing groups of registrants.  The UI customizations implemented by this module are relevant for filtering both individual and group registrants.
+2. ****spp_registry****:  This module utilizes functionalities from the **OpenSPP Registry** module, particularly those related to managing groups of registrants.  The UI customizations implemented by this module are relevant for filtering both individual and group registrants.
 
 3. **[spp_programs](spp_programs)**: The module interacts with the **OpenSPP Programs** module to ensure that the filtering UI aligns with program-specific data and workflows. This integration is crucial for users managing registrant data within the context of social protection programs.
 
@@ -33,7 +33,7 @@ The **SPP Custom Filter UI** module provides the following additional functional
 
 * **UI Configuration for Res Partner**:  The module specifically customizes the filter UI for the **Res Partner** model, which is central to OpenSPP's registrant management system.  It selectively enables the "Show on Custom Filter" option for relevant fields within this model, ensuring that only those fields appear in the filter dropdown menus. 
 
-* **Integration with OpenSPP Modules**:  The module's UI configurations are designed to seamlessly integrate with the [spp_registry](spp_registry) and [spp_programs](spp_registry](spp_programs](spp_registry) and [spp_programs) modules. This ensures that the filtering experience is consistent and user-friendly across different parts of the OpenSPP system.
+* **Integration with OpenSPP Modules**:  The module's UI configurations are designed to seamlessly integrate with the **spp_registry** and [spp_programs](spp_registry](spp_programs](spp_registry) and [spp_programs) modules. This ensures that the filtering experience is consistent and user-friendly across different parts of the OpenSPP system.
 
 ## Conclusion
 

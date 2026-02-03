@@ -174,7 +174,7 @@ entitlement = self.env['spp.entitlement'].create(vals)
 
 ### In Security Rules
 
-```csv
+```text
 # Before (V1) - ir.model.access.csv
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_g2p_program_user,access_g2p_program_user,model_g2p_program,group_g2p_user,1,0,0,0

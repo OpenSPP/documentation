@@ -19,9 +19,9 @@ This module aims to:
 
 ## Dependencies and Integration
 
-1. **OpenSPP Registry ([spp_registry](spp_registry.md)):**  This module indirectly depends on the `res.partner` model from the OpenSPP Registry module, as it modifies the access rules for registrant data based on a user's assigned areas.
+1. **OpenSPP Registry ([spp_registry](spp_registry)):**  This module indirectly depends on the `res.partner` model from the OpenSPP Registry module, as it modifies the access rules for registrant data based on a user's assigned areas.
 
-2. **OpenSPP Registry ([spp_registry](spp_registry.md)):**  Similar to the Base module, it impacts access to group registrant data based on area assignments.
+2. **OpenSPP Registry ([spp_registry](spp_registry)):**  Similar to the Base module, it impacts access to group registrant data based on area assignments.
 
 3. **OpenSPP Programs ([spp_programs](spp_programs.md)):**  The module's area-based access control can be applied to program-related data, ensuring that users with local roles only see and manage programs operating within their designated areas.
 

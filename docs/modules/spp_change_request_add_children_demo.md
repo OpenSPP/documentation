@@ -26,10 +26,10 @@ The `spp_change_request_add_children_demo` module depends on the following modul
 1. **OpenSPP Change Request ([spp_change_request](spp_change_request))**: This module provides the foundational structure for managing change requests, including workflows, approvals, and data validation. The demo module leverages this existing framework to handle the addition of new members. 
 
 2. **OpenSPP Registry Modules**:  The demo module integrates with various OpenSPP Registry modules to access and update registrant information:
-    - **OpenSPP Registry ([spp_registry](spp_registry))**:  Inherits core registrant features and extends them for the specific requirements of the 'Add Children' request.
-    - **OpenSPP Registry ([spp_registry](spp_registry))**:  Utilizes this module to create new individual registrant records for the children or members being added.
-    - **OpenSPP Registry ([spp_registry](spp_registry))**:  Accesses and updates group registrant information, specifically to add new members to the group.
-    - **OpenSPP Registry ([spp_registry](spp_registry))**:  Creates new membership records to establish the relationship between the added individuals and the target group.
+    - **OpenSPP Registry (**spp_registry**)**:  Inherits core registrant features and extends them for the specific requirements of the 'Add Children' request.
+    - **OpenSPP Registry (**spp_registry**)**:  Utilizes this module to create new individual registrant records for the children or members being added.
+    - **OpenSPP Registry (**spp_registry**)**:  Accesses and updates group registrant information, specifically to add new members to the group.
+    - **OpenSPP Registry (**spp_registry**)**:  Creates new membership records to establish the relationship between the added individuals and the target group.
 
 3. **[spp_service_points](spp_service_points)**: This module allows for associating change requests, including those for adding children, with specific service points from which they originate.
 

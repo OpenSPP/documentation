@@ -17,7 +17,7 @@ The **SPP Program Entitlement Basic Cash Spent** module provides a straightforwa
 
 ## Module Dependencies and Integration
 
-1. **OpenSPP Registry ([spp_registry](spp_registry))**: Inherits core registry functionality for managing beneficiary information.
+1. **OpenSPP Registry (**spp_registry**)**: Inherits core registry functionality for managing beneficiary information.
 2. **[spp_programs](spp_programs)**:
     * Extends the **Entitlement (spp.entitlement)** model to include cash spending tracking.
     * Leverages program and cycle structures for organizing and managing entitlements. 

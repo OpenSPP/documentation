@@ -1,4 +1,5 @@
 ---
+orphan: true
 openspp:
   doc_status: draft
   products: [drims]
@@ -6,7 +7,6 @@ openspp:
     - drims
 ---
 
-:orphan:
 
 # DRIMS User Guide
 

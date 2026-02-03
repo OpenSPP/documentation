@@ -15,17 +15,17 @@ This module aims to:
 
 * Populate the farmer registry with sample data, including farmers, groups, farm details, agricultural activities, and assets.
 * Provide a starting point for users to explore the farmer registry and its various features.
-* Demonstrate how different modules, such as [spp_registry](spp_registry), [queue_job](queue_job), and [spp_base_demo](spp_base_demo), integrate to create a comprehensive farmer registry system.
+* Demonstrate how different modules, such as **spp_registry**, **queue_job**, and [spp_base_demo](spp_base_demo), integrate to create a comprehensive farmer registry system.
 
 ## Module Dependencies and Integration
 
 * **[spp_farmer_registry_base](spp_farmer_registry_base):** This module depends heavily on [spp_farmer_registry_base](spp_farmer_registry_base), inheriting its models and views to extend them with demo data generation capabilities.
-* **[spp_registry](spp_registry):** Leverages [spp_registry](spp_registry) for creating group memberships between individual farmers and farm groups.
-* **[queue_job](queue_job):** Uses [queue_job](queue_job) to handle the generation of large datasets in the background, improving performance and user experience.
-* **[spp_registry](spp_registry):** Depends on [spp_registry](spp_registry) for the basic registrant models and functionalities.
-* **[spp_registry](spp_registry):** Uses [spp_registry](spp_registry) for creating and managing farm groups as registrants.
+* ****spp_registry**:** Leverages **spp_registry** for creating group memberships between individual farmers and farm groups.
+* ****queue_job**:** Uses **queue_job** to handle the generation of large datasets in the background, improving performance and user experience.
+* ****spp_registry**:** Depends on **spp_registry** for the basic registrant models and functionalities.
+* ****spp_registry**:** Uses **spp_registry** for creating and managing farm groups as registrants.
 * **[spp_base_demo](spp_base_demo):** Inherits from [spp_base_demo](spp_base_demo) to include basic demo data, such as genders.
-* **[spp_registry](spp_registry):** Utilizes [spp_registry](spp_registry) for creating individual farmer registrants.
+* ****spp_registry**:** Utilizes **spp_registry** for creating individual farmer registrants.
 
 ## Additional Functionality
 

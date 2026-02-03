@@ -19,7 +19,7 @@ The [spp_pos](spp_pos) module bridges the gap between beneficiary entitlements a
 
 ## Module Dependencies and Integration
 
-1. **OpenSPP Registry ([spp_registry](spp_registry))**:
+1. **OpenSPP Registry (**spp_registry**)**:
     * Relies on the base registry for accessing beneficiary data, such as unique identification details and active program participation. This information is essential for beneficiary authentication during POS transactions.
 
 2. **Point of Sale (point_of_sale)**:

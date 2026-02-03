@@ -17,13 +17,13 @@ The **SPP Registry Group Hierarchy** module aims to:
 
 ## Dependencies and Integration
 
-1. **OpenSPP Registry ([spp_registry](spp_registry))**: Inherits core registry functionalities for managing registrant information, IDs, and relationships. 
+1. **OpenSPP Registry (**spp_registry**)**: Inherits core registry functionalities for managing registrant information, IDs, and relationships. 
 
-2. **OpenSPP Registry ([spp_registry](spp_registry))**: Leverages the group model to represent both parent and child groups within the hierarchy. 
+2. **OpenSPP Registry (**spp_registry**)**: Leverages the group model to represent both parent and child groups within the hierarchy. 
 
-3. **OpenSPP Registry ([spp_registry](spp_registry))**: Uses the individual model to maintain individual memberships within groups, regardless of the group's position in the hierarchy. 
+3. **OpenSPP Registry (**spp_registry**)**: Uses the individual model to maintain individual memberships within groups, regardless of the group's position in the hierarchy. 
 
-4. **OpenSPP Registry ([spp_registry](spp_registry))**:  Extends the membership functionality to allow groups to be members of other groups, establishing the parent-child relationship.
+4. **OpenSPP Registry (**spp_registry**)**:  Extends the membership functionality to allow groups to be members of other groups, establishing the parent-child relationship.
 
 ## Additional Functionality 
 

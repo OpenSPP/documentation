@@ -17,8 +17,8 @@ The **OpenSPP Registry - Scan ID Document** module aims to:
 
 ## Module Dependencies and Integration
 
-1. **[spp_registry](spp_registry):** Utilizes the base registrant model to store and manage the scanned ID document data.
-2. **[spp_registry](spp_registry):** Integrates with the individual registrant form to provide a seamless document scanning experience. 
+1. ****spp_registry**:** Utilizes the base registrant model to store and manage the scanned ID document data.
+2. ****spp_registry**:** Integrates with the individual registrant form to provide a seamless document scanning experience. 
 
 ## Additional Functionality
 

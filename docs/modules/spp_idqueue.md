@@ -18,15 +18,15 @@ The **OpenSPP ID Queue** module is designed to:
 
 ## Dependencies and Integration
 
-1. **[spp_registry](spp_registry)** (OpenSPP Registry):  The ID Queue module relies on the **Registrant (res.partner)** model from the **OpenSPP Registry** module to identify and link ID card requests to specific registrants. 
+1. ****spp_registry**** (OpenSPP Registry):  The ID Queue module relies on the **Registrant (res.partner)** model from the **OpenSPP Registry** module to identify and link ID card requests to specific registrants. 
 
 2. **[spp_idpass](spp_idpass)** (OpenSPP ID PASS):  It integrates tightly with the **OpenSPP ID PASS** module, utilizing the predefined ID card templates and the ID generation mechanism.
 
-3. **[queue_job](queue_job)** (Queue Job):  Leverages the **Queue Job** module for background processing of ID card generation, particularly when handling large batches, to avoid impacting system performance.
+3. ****queue_job**** (Queue Job):  Leverages the **Queue Job** module for background processing of ID card generation, particularly when handling large batches, to avoid impacting system performance.
 
 4. **[spp_area](spp_area)** (OpenSPP Area):  Integrates with the **OpenSPP Area** module to associate ID card requests with specific geographical areas, enabling location-based reporting and distribution management.
 
-5. **[spp_registry](spp_registry)** (OpenSPP Registry): Incorporates functionality from the **OpenSPP Registry** module to support ID card requests and batch printing for groups of registrants.
+5. ****spp_registry**** (OpenSPP Registry): Incorporates functionality from the **OpenSPP Registry** module to support ID card requests and batch printing for groups of registrants.
 
 ## Additional Functionality
 

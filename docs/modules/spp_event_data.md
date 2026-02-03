@@ -17,9 +17,9 @@ The **[spp_event_data](spp_event_data)** module allows users to associate signif
 
 ## Module Dependencies and Integration
 
-1. **[spp_registry](spp_registry)**: This module relies on the foundational structure and functionalities provided by the **[spp_registry](spp_registry](spp_registry](spp_registry)**: This module relies on the foundational structure and functionalities provided by the **[spp_registry)** module, specifically leveraging:
+1. ****spp_registry****: This module relies on the foundational structure and functionalities provided by the **[spp_registry](spp_registry](spp_registry](spp_registry)**: This module relies on the foundational structure and functionalities provided by the **[spp_registry)** module, specifically leveraging:
     * **Registrant Data**: Utilizes the core registrant information to associate events with the correct individuals or groups.
-2. **[spp_registry](spp_registry)**: Extends its functionality by allowing event data to be linked to group registrants.
+2. ****spp_registry****: Extends its functionality by allowing event data to be linked to group registrants.
 3. **Contacts (res.partner)**:  Integrates with the standard Odoo Contacts module, enabling the module to link event data to the respective contact records, enriching the overall profile of the registrant.
 
 ## Additional Functionality

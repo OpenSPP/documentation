@@ -1,4 +1,5 @@
 ---
+orphan: true
 myst:
   html_meta:
     "description": "Contributing to OpenSPP Documentation"

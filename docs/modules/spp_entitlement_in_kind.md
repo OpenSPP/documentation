@@ -15,7 +15,7 @@ The [spp_entitlement_in_kind](spp_entitlement_in_kind) module enhances the exist
 
 This module builds upon the foundation established by its dependencies, focusing specifically on in-kind entitlement management:
 
-* **[spp_registry](spp_registry) (OpenSPP Registry)**: Utilizes the base registry to identify and manage beneficiary information.
+* ****spp_registry** (OpenSPP Registry)**: Utilizes the base registry to identify and manage beneficiary information.
 * **[spp_programs](spp_programs) (OpenSPP Programs)**:  Extends the core program management features, leveraging existing program structures, cycles, and eligibility determination processes.
 * **Product (product)**: Leverages the product module to define the goods or services offered as in-kind entitlements. 
 * **Stock (stock)**: Integrates with the stock module to manage inventory, track stock movements, and potentially trigger procurements based on approved entitlements. 

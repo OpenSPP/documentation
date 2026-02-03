@@ -343,7 +343,7 @@ Map codes between different vocabularies.
 For many mappings, use import:
 
 **CSV format:**
-```csv
+```text
 source_uri,target_uri,equivalence,comment
 urn:myorg:disability#blind,urn:who:icf:b#b210,narrower,Seeing functions
 urn:myorg:disability#deaf,urn:who:icf:b#b230,narrower,Hearing functions
@@ -451,7 +451,7 @@ Version: 2024
 5. Verify codes loaded
 
 **CSV Template:**
-```csv
+```text
 code,display,definition,sequence,parent_code
 bank_transfer,Bank Transfer,Direct transfer to bank account,10,
 mobile_money,Mobile Money,Transfer to mobile wallet,20,

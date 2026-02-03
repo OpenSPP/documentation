@@ -19,20 +19,20 @@ This module aims to:
 
 ## Module Dependencies and Integration
 
-1. [spp_registry](spp_registry): Used to manage memberships between individual registrants and groups.
+1. **spp_registry**: Used to manage memberships between individual registrants and groups.
 2. [spp_base_gis](spp_base_gis): Provides the foundation for visualizing and interacting with geospatial data.
 3. [spp_land_record](spp_land_record): Enables managing and visualizing land records, linking them to farms and registrants.
-4. [spp_registry](spp_registry): Provides the basic structure for managing registrant data, relationships, and identification.
-5. [spp_registry](spp_registry): Extends the base registry to handle groups of registrants, such as farmer cooperatives.
-6. [spp_registry](spp_registry): Extends the base registry with functionalities for managing individual registrant data.
+4. **spp_registry**: Provides the basic structure for managing registrant data, relationships, and identification.
+5. **spp_registry**: Extends the base registry to handle groups of registrants, such as farmer cooperatives.
+6. **spp_registry**: Extends the base registry with functionalities for managing individual registrant data.
 
 ## Functionality and Integration Details
 
 ## Farmer Information
 
-* Extends the `res.partner` model (from [spp_registry](spp_registry)) to include farmer-specific details like years of experience, formal agricultural training, household size, etc.
+* Extends the `res.partner` model (from **spp_registry**) to include farmer-specific details like years of experience, formal agricultural training, household size, etc.
 * Introduces a temporary model `spp.farmer` to store farmer-specific information that can be later transferred to the main `res.partner` model, ensuring data consistency.
-* Integrates with [spp_registry](spp_registry) to leverage existing features for managing individual registrant profiles.
+* Integrates with **spp_registry** to leverage existing features for managing individual registrant profiles.
 
 ## Farm Management
 

@@ -19,7 +19,7 @@ The **OpenSPP Service Points** module is designed to:
 
 ## Dependencies and Integration
 
-1. **OpenSPP Registry ([spp_registry](spp_registry))**: Leverages the core registrant management features provided by the **OpenSPP Registry** module.  This includes the use of the `res.partner` model to represent both companies and individuals associated with service points.
+1. **OpenSPP Registry (**spp_registry**)**: Leverages the core registrant management features provided by the **OpenSPP Registry** module.  This includes the use of the `res.partner` model to represent both companies and individuals associated with service points.
 
 2. **OpenSPP Area ([spp_area](spp_area))**: Integrates with the **OpenSPP Area** module to associate service points with specific geographic areas.  The `area_id` field on the `spp.service.point` model links a service point to an area defined in the **OpenSPP Area** module.
 

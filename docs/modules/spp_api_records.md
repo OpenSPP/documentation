@@ -40,8 +40,8 @@ The **OpenSPP API Records** module aims to:
 6. **Contacts (contacts)**:
     * Utilizes the **Contacts** module to access and potentially expose data related to individuals and organizations involved in OpenSPP, such as program managers, service point operators, and potentially registrant contact information (with appropriate privacy considerations). 
 
-7. **[spp_registry](spp_registry)**: 
-    * Accesses data from the **[spp_registry](spp_registry)** module to potentially expose limited and anonymized registrant information through the API, strictly adhering to privacy and data protection regulations. 
+7. ****spp_registry****: 
+    * Accesses data from the ****spp_registry**** module to potentially expose limited and anonymized registrant information through the API, strictly adhering to privacy and data protection regulations. 
     * API endpoints in this area would require robust authentication and authorization mechanisms to control access and prevent unauthorized data exposure.
 
 ## Additional Functionality

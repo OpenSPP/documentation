@@ -17,7 +17,7 @@ The **OpenSPP Programs** module aims to:
 
 ## Module Dependencies and Integration
 
-1. **[spp_registry](spp_registry)** : Leverages the base registry for core registrant information and extends it by adding in-kind entitlement tracking to registrant profiles.
+1. ****spp_registry**** : Leverages the base registry for core registrant information and extends it by adding in-kind entitlement tracking to registrant profiles.
 
 2. **[spp_programs](spp_programs)**: 
     * Builds upon the core program management features, including program creation, cycle management, and eligibility determination.

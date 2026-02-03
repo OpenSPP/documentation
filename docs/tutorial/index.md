@@ -1,4 +1,5 @@
 ---
+orphan: true
 myst:
   html_meta:
     "description": "OpenSPP Tutorial"

@@ -22,7 +22,7 @@ The **OpenSPP Entitlement Transactions** module primarily focuses on:
     * Relies heavily on this module to access entitlement information. 
     * Links each transaction to its corresponding entitlement record, enabling tracking of redeemed amounts against total entitlement value.
 
-2. **[spp_registry](spp_registry)**:
+2. ****spp_registry****:
     * Utilizes the base registry module indirectly through the [OpenSPP Programs](OpenSPP Programs)(#openspp-programs-module-documentation) module.
 
     * Links transactions to the relevant registrant profiles, providing context and enabling analysis of benefit distribution at the beneficiary level.

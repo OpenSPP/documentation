@@ -1,3 +1,4 @@
+.. _glossary-label:
 
 *****************************************
 OpenSPP Glossary

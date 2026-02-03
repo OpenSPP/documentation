@@ -21,7 +21,7 @@ The **OpenSPP Exclusion Filter** module aims to:
     * Integrates with the OpenSPP program creation wizard, adding a dedicated step for configuring exclusion filters.
     * Leverages program data, such as target criteria and program objectives, to guide the selection of relevant exclusion filters. 
 
-2. **[spp_registry](spp_registry)**:
+2. ****spp_registry****:
     * Utilizes registrant data, including demographics, tags, and relationships, to apply exclusion filters.
     * Accesses the registry to identify and flag registrants who meet the specified exclusion criteria. 
 

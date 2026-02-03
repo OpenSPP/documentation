@@ -17,9 +17,9 @@ The primary goals of the [spp_import_match](spp_import_match) module are:
 
 ## Dependencies and Integration
 
-1. **[queue_job](queue_job):** This module leverages the [queue_job](queue_job](queue_job](queue_job):** This module leverages the [queue_job) module to handle asynchronous import processes. This enables the processing of large datasets in the background, preventing system slowdowns.
+1. ****queue_job**:** This module leverages the [queue_job](queue_job](queue_job](queue_job):** This module leverages the [queue_job) module to handle asynchronous import processes. This enables the processing of large datasets in the background, preventing system slowdowns.
 
-2. **[spp_registry](spp_registry):**  The [spp_import_match](spp_import_match) module extends the functionality of the [spp_registry](spp_registry](spp_registry](spp_registry):**  The [spp_import_match](spp_import_match) module extends the functionality of the [spp_registry) module. It specifically interacts with the models and functionalities related to managing registrant data and relationships.
+2. ****spp_registry**:**  The [spp_import_match](spp_import_match) module extends the functionality of the [spp_registry](spp_registry](spp_registry](spp_registry):**  The [spp_import_match](spp_import_match) module extends the functionality of the [spp_registry) module. It specifically interacts with the models and functionalities related to managing registrant data and relationships.
 
 3. **[base_import](base_import):** The core import functionality is inherited and extended from Odoo's built-in [base_import](base_import) module. [spp_import_match](base_import](spp_import_match](base_import):** The core import functionality is inherited and extended from Odoo's built-in [base_import](base_import) module. [spp_import_match) enhances this with capabilities for record matching during the import process.
 
@@ -34,7 +34,7 @@ The primary goals of the [spp_import_match](spp_import_match) module are:
     * It allows for matching on both simple fields and sub-fields within relational fields, supporting complex data structures. 
     * The module validates the uniqueness of fields chosen for matching, preventing configuration errors.
 
-* **Integration with Data Import:** The module seamlessly integrates with the standard Odoo import process. During import, if matching rules are defined for the target model, the module attempts to find existing records that match the imported data.  This matching process is integrated into both standard imports and asynchronous imports handled by the [queue_job](queue_job) module.
+* **Integration with Data Import:** The module seamlessly integrates with the standard Odoo import process. During import, if matching rules are defined for the target model, the module attempts to find existing records that match the imported data.  This matching process is integrated into both standard imports and asynchronous imports handled by the **queue_job** module.
 
 * **Overwriting Existing Data:** The module provides an option to overwrite existing data with imported data when a match is found. This allows users to update existing records with new information from imports while still leveraging the matching capabilities to prevent duplicates.
 

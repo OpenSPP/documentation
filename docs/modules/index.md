@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # OpenSPP Modules Index
 
 ```{warning}

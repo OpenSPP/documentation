@@ -17,7 +17,7 @@ The **OpenSPP Entitlement Basket** module aims to:
 
 ## Module Dependencies and Integration
 
-1. **[spp_registry](spp_registry)**: Uses the base registry for core beneficiary information and links basket entitlements to beneficiary profiles.
+1. ****spp_registry****: Uses the base registry for core beneficiary information and links basket entitlements to beneficiary profiles.
 
 2. **[spp_programs](spp_programs)**:  Extends program management by introducing a new entitlement manager type for basket distribution.
 
