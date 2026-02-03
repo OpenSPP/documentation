@@ -41,15 +41,29 @@ Go to **Registry** > **Browse All (Audit)** > **All Individuals** or **All Group
 
 ### Step 2: Select records to export
 
-Select the records you want to export:
+Select the records you want to export using one of the options below.
 
-| Goal | How to select |
-|------|---------------|
-| Export specific records | Click the checkbox next to each record |
-| Export current page | Click the checkbox in the header row |
-| Export all records | Click the checkbox, then click **Select all** link |
+#### Export specific records
 
-![Select records](/_images/en-us/registry/export-data/02-select-records-with-checkboxes-for-export.png)
+Use the search box to find the record(s), then click the checkbox next to the registrant.
+
+![Export specific records](/_images/en-us/registry/export-data/02a-select-specific-records.png)
+
+#### Export current page
+
+Click the checkbox in the header row to select all records on the current page.
+
+![Export current page](/_images/en-us/registry/export-data/02b-select-records-with-checkboxes-for-export.png)
+
+#### Export all records
+
+Click the checkbox in the header row, then click the **Select all** link.
+
+![Export all records](/_images/en-us/registry/export-data/02c-select-all-records.png)
+
+```{tip}
+To see the total number of records, click **10000+** (or the displayed count) in the pagination bar at the top left of the page. This reveals the actual record count.
+```
 
 ### Step 3: Open export dialog
 
@@ -88,6 +102,44 @@ The export dialog shows available fields and fields to export:
 
 **To see nested fields:**
 - Click the arrow **>** next to a field to expand it
+
+#### Common export fields
+
+The following are among the most commonly exported fields. Use the export dialog to add or remove them from **Fields to export**.
+
+**Individual fields**
+
+| Field | Description |
+|-------|-------------|
+| **name** | Full name (auto-generated from family/given name) |
+| **family_name** | Last name / surname |
+| **given_name** | First name |
+| **addl_name** | Middle name |
+| **birthdate** | Date of birth |
+| **gender_id** | Gender |
+| **address** | Physical address |
+| **email** | Email address |
+| **phone** | Primary phone number |
+| **registration_date** | Date of registration |
+
+**Group fields**
+
+| Field | Description |
+|-------|-------------|
+| **name** | Group name |
+| **group_type_id** | Type of group (Household, etc.) |
+| **address** | Physical address |
+| **email** | Email address |
+| **phone** | Primary phone number |
+| **registration_date** | Date of registration |
+
+**Nested fields**
+
+Some fields have nested data. Click the arrow to expand:
+
+- **reg_ids** > Shows all ID documents
+- **phone_number_ids** > Shows all phone numbers
+- **tags_ids** > Shows all tags
 
 ### Step 6: Export
 
@@ -162,42 +214,6 @@ Save time by creating templates for exports you run frequently. This saves you t
 4. Fields are automatically selected
 
 ![Select export template](/_images/en-us/registry/export-data/10-select-existing-export-template-from-dropdown.png)
-
-## Common export fields
-
-### Individual fields
-
-| Field | Description |
-|-------|-------------|
-| **name** | Full name (auto-generated from family/given name) |
-| **family_name** | Last name / surname |
-| **given_name** | First name |
-| **addl_name** | Middle name |
-| **birthdate** | Date of birth |
-| **gender_id** | Gender |
-| **address** | Physical address |
-| **email** | Email address |
-| **phone** | Primary phone number |
-| **registration_date** | Date of registration |
-
-### Group fields
-
-| Field | Description |
-|-------|-------------|
-| **name** | Group name |
-| **group_type_id** | Type of group (Household, etc.) |
-| **address** | Physical address |
-| **email** | Email address |
-| **phone** | Primary phone number |
-| **registration_date** | Date of registration |
-
-### Nested fields
-
-Some fields have nested data. Click the arrow to expand:
-
-- **reg_ids** > Shows all ID documents
-- **phone_number_ids** > Shows all phone numbers
-- **tags_ids** > Shows all tags
 
 ## Are you stuck?
 

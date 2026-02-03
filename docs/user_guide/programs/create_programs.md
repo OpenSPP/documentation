@@ -6,7 +6,7 @@ openspp:
     - sp_mis
 ---
 
-# Understand programs
+# Create programs
 
 **Applies to:** SP-MIS
 

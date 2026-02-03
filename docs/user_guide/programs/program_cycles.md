@@ -151,7 +151,9 @@ When entitlements are ready:
 
 ### Step 4: Approve the cycle
 
-A user with the **Program Cycle Approver** role (configured during program setup) must approve the cycle.
+```{note}
+Only users who belong to the **group configured as Cycle Approver** in the program's cycle configuration can approve the cycle. This is set when the program is created or in the program's **Configuration** tab under the Schedule settings.
+```
 
 1. Review the cycle and entitlements.
 

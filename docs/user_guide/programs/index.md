@@ -54,9 +54,10 @@ If you cannot see the **Programs** menu, contact your administrator.
 ```{toctree}
 :maxdepth: 1
 
-understanding_programs
+create_programs
 program_cycles
 enroll_beneficiaries
+allocate_funds
 manage_entitlements
 ```
 
@@ -73,5 +74,6 @@ Ended programs are read-only. Contact a Program Manager if the program needs to 
 
 ## Next steps
 
-- {doc}`understanding_programs` - Learn how programs, cycles, and entitlements work together
+- {doc}`create_programs` - Create programs
 - {doc}`enroll_beneficiaries` - Add registrants to a program
+- {doc}`allocate_funds` - Allocate funds to programs

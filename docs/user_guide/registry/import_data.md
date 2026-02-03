@@ -17,7 +17,7 @@ Bulk import registrant data from CSV or Excel files to add new records or update
 
 ## Before you start
 
-- You need **Administrator** access (import requires admin permissions)
+- **Administrator** access (required for import and for **Browse All (Audit)**)
 - Data file in CSV or XLSX (Excel) format
 - Spreadsheet software (Excel, Google Sheets, or LibreOffice) to prepare the file
 
@@ -32,11 +32,13 @@ You can use import to:
 | **Add new records** | Create multiple individuals or groups at once |
 | **Update existing records** | Modify data for registrants already in the system |
 
-The recommended way to get the correct structure is to **export a template** from OpenSPP (see [Prepare your import file](#prepare-your-import-file)) and use that file’s headers and format as the basis for your import file. This ensures your columns align with OpenSPP’s fields and map correctly during import.
+The recommended way to get the correct structure is to **export a template** from OpenSPP (see [Step 1. Prepare your import file](#step-1-prepare-your-import-file)) and use that file’s headers and format as the basis for your import file. This ensures your columns align with OpenSPP’s fields and map correctly during import.
 
-## Prepare your import file
+## Import new records
 
-### Step 1. Get a template
+### Step 1. Prepare your import file
+
+#### Get a template
 
 The best way to prepare your file is to export existing records first:
 
@@ -48,7 +50,7 @@ The best way to prepare your file is to export existing records first:
 
 ![Export template](/_images/en-us/registry/import-data/01-export-headers.png)
 
-### Step 2. Format your data
+#### Format your data
 
 Prepare your data following these rules:
 
@@ -65,7 +67,7 @@ Format phone numbers and ID columns as **Text** in Excel. Otherwise, Excel may r
 
 **In Excel:** Right-click column > Format Cells > Text
 
-### Step 3. Required fields
+#### Required fields
 
 For new individual records, these fields are required:
 
@@ -82,7 +84,7 @@ For new group records, this field is required:
 |-------|-------------|
 | **name** | Group name |
 
-### Step 4. Optional fields
+#### Optional fields
 
 Common optional fields you can include:
 
@@ -94,9 +96,7 @@ Common optional fields you can include:
 | **phone** | Primary phone number |
 | **registration_date** | Registration date (defaults to today) |
 
-## Import new records
-
-### Step 1: Navigate to import
+### Step 2. Navigate to import
 
 1. Go to **Registry** > **Browse All (Audit)** > **All Individuals** (or **All Groups**)
 2. Click the **Gear** icon.
@@ -104,7 +104,7 @@ Common optional fields you can include:
 
 ![Import menu location](/_images/en-us/registry/import-data/02-import-menu.png)
 
-### Step 2: Upload your file
+### Step 3. Upload your file
 
 1. Click **Upload File**
 2. Select your prepared CSV or XLSX file
@@ -114,7 +114,7 @@ Sample document for reference:
 
 <!-- ![Upload file dialog](/_images/en-us/registry/import-data/03-upload-file-dialog-for-csv-or-xlsx.png) -->
 
-### Step 3: Map columns
+### Step 4. Map columns
 
 OpenSPP automatically maps columns based on header names. Review the mapping:
 
@@ -124,7 +124,7 @@ OpenSPP automatically maps columns based on header names. Review the mapping:
 - Yellow warnings indicate columns that need manual mapping
 - Use the dropdown to manually map any unrecognized columns
 
-### Step 4: Test the import
+### Step 5. Test the import
 
 Click **Test** to validate your file without importing.
 
@@ -134,7 +134,7 @@ If successful, you will see: **"Everything seems valid"**
 
 If there are errors, see the [Error Handling](#error-handling) section below.
 
-### Step 5: Import
+### Step 6. Import
 
 When validation passes, click **Import** to create the records.
 
@@ -148,7 +148,7 @@ A notification confirms how many records were imported.
 For large files (1,000+ records), check **Import in the background** to prevent browser timeouts.
 ```
 
-### Step 6: Verify
+### Step 7. Verify
 
 Search for imported records to confirm they were created correctly:
 
