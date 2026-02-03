@@ -41,21 +41,34 @@ Internationally standardized codes for representing biological sex.
 
 Household and family relationship classifications.
 
+**Individual-to-Individual Relationships:**
+
 | Code | Display | URI |
 |------|---------|-----|
 | head | Head of Household | `urn:openspp:vocab:relationship#head` |
 | spouse | Spouse/Partner | `urn:openspp:vocab:relationship#spouse` |
 | child | Child | `urn:openspp:vocab:relationship#child` |
-| parent | Parent | `urn:openspp:vocab:relationship#parent` |
-| sibling | Sibling | `urn:openspp:vocab:relationship#sibling` |
-| grandparent | Grandparent | `urn:openspp:vocab:relationship#grandparent` |
+| child_in_law | Son/Daughter-in-law | `urn:openspp:vocab:relationship#child_in_law` |
 | grandchild | Grandchild | `urn:openspp:vocab:relationship#grandchild` |
+| parent | Parent | `urn:openspp:vocab:relationship#parent` |
+| parent_in_law | Parent-in-law | `urn:openspp:vocab:relationship#parent_in_law` |
+| grandparent | Grandparent | `urn:openspp:vocab:relationship#grandparent` |
+| sibling | Sibling | `urn:openspp:vocab:relationship#sibling` |
 | other_relative | Other Relative | `urn:openspp:vocab:relationship#other_relative` |
 | non_relative | Non-Relative | `urn:openspp:vocab:relationship#non_relative` |
 
+**Group-to-Group Relationships:**
+
+| Code | Display | URI |
+|------|---------|-----|
+| parent_organization | Parent Organization | `urn:openspp:vocab:relationship#parent_organization` |
+| subsidiary | Subsidiary | `urn:openspp:vocab:relationship#subsidiary` |
+| partner_organization | Partner Organization | `urn:openspp:vocab:relationship#partner_organization` |
+| affiliated_with | Affiliated With | `urn:openspp:vocab:relationship#affiliated_with` |
+
 **Namespace:** `urn:openspp:vocab:relationship`
 **Reference:** OpenSPP-specific (no international standard)
-**Use in:** Household member relationships, beneficiary household composition
+**Use in:** Household member relationships, beneficiary household composition, organizational relationships
 
 ### Marital Status
 
@@ -63,12 +76,12 @@ Based on UN Population Census Principles.
 
 | Code | Display | URI |
 |------|---------|-----|
-| S | Single | `urn:un:unsd:pop-census:marital-status#S` |
+| S | Never Married | `urn:un:unsd:pop-census:marital-status#S` |
 | M | Married | `urn:un:unsd:pop-census:marital-status#M` |
 | W | Widowed | `urn:un:unsd:pop-census:marital-status#W` |
 | D | Divorced | `urn:un:unsd:pop-census:marital-status#D` |
 | L | Separated | `urn:un:unsd:pop-census:marital-status#L` |
-| C | Civil Union | `urn:un:unsd:pop-census:marital-status#C` |
+| C | Consensual Union | `urn:un:unsd:pop-census:marital-status#C` |
 
 **Namespace:** `urn:un:unsd:pop-census:marital-status`
 **Reference:** [UN Census Recommendations](https://unstats.un.org/unsd/demographic/sources/census/)
@@ -80,19 +93,18 @@ Standard identification document classifications.
 
 | Code | Display | URI |
 |------|---------|-----|
-| national_id | National ID Card | `urn:openspp:vocab:id-type#national_id` |
+| national_id | National ID | `urn:openspp:vocab:id-type#national_id` |
 | passport | Passport | `urn:openspp:vocab:id-type#passport` |
-| birth_cert | Birth Certificate | `urn:openspp:vocab:id-type#birth_cert` |
-| drivers_license | Driver's License | `urn:openspp:vocab:id-type#drivers_license` |
-| voter_id | Voter Registration Card | `urn:openspp:vocab:id-type#voter_id` |
-| tax_id | Tax Identification Number | `urn:openspp:vocab:id-type#tax_id` |
-| social_security | Social Security Card | `urn:openspp:vocab:id-type#social_security` |
-| refugee_id | Refugee ID | `urn:openspp:vocab:id-type#refugee_id` |
-| other | Other Document | `urn:openspp:vocab:id-type#other` |
+| tax_id | Tax ID | `urn:openspp:vocab:id-type#tax_id` |
+| birth_certificate | Birth Certificate | `urn:openspp:vocab:id-type#birth_certificate` |
 
 **Namespace:** `urn:openspp:vocab:id-type`
 **Reference:** OpenSPP-specific
 **Use in:** ID document tracking, identity verification, deduplication
+
+```{note}
+Deployments can extend this vocabulary with additional ID types (e.g., driver's license, voter ID, social security card) using custom vocabularies or local extensions. See {doc}`custom` for details.
+```
 
 ## Geographic Vocabularies
 
@@ -261,6 +273,21 @@ FAO Agricultural Thesaurus (subset for common crops).
 **Use in:** Farmer registries, agricultural programs, crop tracking
 **Total codes:** 1,000+ crop and livestock terms
 **Note:** Available only when `spp_registry_farmer` module is installed
+
+## Additional System Vocabularies
+
+OpenSPP includes additional system vocabularies for specialized use cases:
+
+| Vocabulary | Namespace | Domain | Description |
+|------------|-----------|--------|-------------|
+| Group Type | `urn:openspp:vocab:group-type` | Core | Types of groups (household, family) |
+| Group Membership Type | `urn:openspp:vocab:group-membership-type` | Core | Types of group memberships |
+| Housing Type (UN Rev.3) | `urn:un:unsd:pop-census:housing-type` | Core | UN standard housing classification (hierarchical) |
+| Economic Activity Status | `urn:ilo:icse-93` | Labor | ILO employment status codes |
+| Religion | `urn:un:unsd:pop-census:religion` | Core | UN census religious affiliation framework |
+| Ethnocultural Status | `urn:openspp:vocab:ethnocultural` | Core | Ethnicity and cultural identity |
+
+These vocabularies are available in the system and can be browsed via **Settings → Vocabularies → Manage Vocabularies**.
 
 ## Using Standard Vocabularies
 

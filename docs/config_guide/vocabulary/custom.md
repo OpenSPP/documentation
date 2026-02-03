@@ -22,7 +22,7 @@ Do you need codes for...
 
   Gender, Country, Language, Currency,
   Disability, Occupation, Education?
-    ├─ YES → Use standard vocabulary (see standard_vocabularies.md)
+    ├─ YES → Use standard vocabulary (see Standard Vocabularies doc)
     └─ NO ↓
 
   Is there an international standard for your domain?

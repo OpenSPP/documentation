@@ -13,17 +13,22 @@ Complete reference for all standard vocabularies in OpenSPP V2.
 | Vocabulary | Namespace | Codes | Hierarchical | Domain |
 |------------|-----------|-------|--------------|--------|
 | [Gender (ISO 5218)](#iso-5218-gender) | `urn:iso:std:iso:5218` | 4 | No | Core |
-| [Relationship Types](#relationship-types) | `urn:openspp:vocab:relationship` | 9 | No | Core |
+| [Relationship Types](#relationship-types) | `urn:openspp:vocab:relationship` | 15 | No | Core |
 | [Marital Status](#marital-status) | `urn:un:unsd:pop-census:marital-status` | 6 | No | Core |
-| [ID Document Types](#id-document-types) | `urn:openspp:vocab:id-document` | 9 | No | Core |
+| [ID Types](#id-types) | `urn:openspp:vocab:id-type` | 4 | No | Core |
+| Group Type | `urn:openspp:vocab:group-type` | 2 | No | Core |
+| Housing Type (UN Rev.3) | `urn:un:unsd:pop-census:housing-type` | 12 | Yes | Core |
 | [Countries (ISO 3166)](#iso-3166-countries) | `urn:iso:std:iso:3166-1` | 249 | No | Geographic |
 | [Languages (ISO 639)](#iso-639-languages) | `urn:iso:std:iso:639` | 180+ | No | Geographic |
 | [Currencies (ISO 4217)](#iso-4217-currencies) | `urn:iso:std:iso:4217` | 170+ | No | Geographic |
 | [WHO ICF Body Functions](#who-icf-body-functions) | `urn:who:icf:b` | 400+ | Yes | Disability |
-| [WHO ICF Activities](#who-icf-activities) | `urn:who:icf:d` | 300+ | Yes | Disability |
+| [WHO ICF Activities](who-icf-activities) | `urn:who:icf:d` | 300+ | Yes | Disability |
 | [WHO ICD-11 Health](#who-icd-11-health-conditions) | `urn:who:icd-11` | 17,000+ | Yes | Health |
 | [ILO ISCO-08 Occupations](#ilo-isco-08-occupations) | `urn:ilo:isco-08` | 400+ | Yes | Labor |
+| Economic Activity Status | `urn:ilo:icse-93` | 6 | No | Labor |
 | [UNESCO ISCED Education](#unesco-isced-2011-education) | `urn:unesco:isced:2011` | 9 | Yes | Education |
+| Religion | `urn:un:unsd:pop-census:religion` | 10+ | No | Core |
+| Ethnocultural Status | `urn:openspp:vocab:ethnocultural` | varies | No | Core |
 | [FAO AGROVOC Crops](#fao-agrovoc-crops) | `urn:fao:agrovoc` | 1,000+ | Yes | Agriculture |
 
 ## Core Vocabularies
@@ -72,25 +77,37 @@ Household and family relationship classifications.
 **System:** Yes
 **Hierarchical:** No
 
-**Codes:**
+**Individual-to-Individual Relationships:**
 
 | Code | URI | Display | Definition |
 |------|-----|---------|------------|
 | head | `urn:openspp:vocab:relationship#head` | Head of Household | Primary household decision-maker |
 | spouse | `urn:openspp:vocab:relationship#spouse` | Spouse/Partner | Married or domestic partner |
-| child | `urn:openspp:vocab:relationship#child` | Child | Son or daughter (biological/adopted) |
-| parent | `urn:openspp:vocab:relationship#parent` | Parent | Father or mother |
-| sibling | `urn:openspp:vocab:relationship#sibling` | Sibling | Brother or sister |
-| grandparent | `urn:openspp:vocab:relationship#grandparent` | Grandparent | Grandparent |
+| child | `urn:openspp:vocab:relationship#child` | Child | Son or daughter (biological/adopted/step) |
+| child_in_law | `urn:openspp:vocab:relationship#child_in_law` | Son/Daughter-in-law | Child's spouse |
 | grandchild | `urn:openspp:vocab:relationship#grandchild` | Grandchild | Grandchild |
+| parent | `urn:openspp:vocab:relationship#parent` | Parent | Father or mother |
+| parent_in_law | `urn:openspp:vocab:relationship#parent_in_law` | Parent-in-law | Spouse's parent |
+| grandparent | `urn:openspp:vocab:relationship#grandparent` | Grandparent | Grandparent |
+| sibling | `urn:openspp:vocab:relationship#sibling` | Sibling | Brother or sister |
 | other_relative | `urn:openspp:vocab:relationship#other_relative` | Other Relative | Related but not in above categories |
 | non_relative | `urn:openspp:vocab:relationship#non_relative` | Non-Relative | Unrelated household member |
+
+**Group-to-Group Relationships:**
+
+| Code | URI | Display | Definition |
+|------|-----|---------|------------|
+| parent_organization | `urn:openspp:vocab:relationship#parent_organization` | Parent Organization | Parent organization in hierarchy |
+| subsidiary | `urn:openspp:vocab:relationship#subsidiary` | Subsidiary | Child organization |
+| partner_organization | `urn:openspp:vocab:relationship#partner_organization` | Partner Organization | Partner organization |
+| affiliated_with | `urn:openspp:vocab:relationship#affiliated_with` | Affiliated With | Affiliated organization |
 
 **Use cases:**
 - Household member relationships
 - Household composition analysis
 - Dependency ratio calculations
 - Head of household identification
+- Organizational hierarchies
 
 **CEL expressions:**
 ```cel
@@ -116,12 +133,12 @@ UN Population Census standard marital status codes.
 
 | Code | URI | Display | Definition |
 |------|-----|---------|------------|
-| S | `urn:un:unsd:pop-census:marital-status#S` | Single | Never married |
+| S | `urn:un:unsd:pop-census:marital-status#S` | Never Married | Persons who have never entered into a marriage |
 | M | `urn:un:unsd:pop-census:marital-status#M` | Married | Currently married |
 | W | `urn:un:unsd:pop-census:marital-status#W` | Widowed | Spouse deceased, not remarried |
 | D | `urn:un:unsd:pop-census:marital-status#D` | Divorced | Legally divorced |
 | L | `urn:un:unsd:pop-census:marital-status#L` | Separated | Married but living apart |
-| C | `urn:un:unsd:pop-census:marital-status#C` | Civil Union | Registered partnership |
+| C | `urn:un:unsd:pop-census:marital-status#C` | Consensual Union | Living together as partners (cohabiting) |
 
 **Use cases:**
 - Demographic data
@@ -140,11 +157,11 @@ me.marital_status.code in ["M", "C"]
 
 ---
 
-### ID Document Types
+### ID Types
 
 Standard identification document classifications.
 
-**Namespace:** `urn:openspp:vocab:id-document`
+**Namespace:** `urn:openspp:vocab:id-type`
 **Reference:** OpenSPP-specific
 **System:** Yes
 **Hierarchical:** No
@@ -153,15 +170,14 @@ Standard identification document classifications.
 
 | Code | URI | Display |
 |------|-----|---------|
-| national_id | `urn:openspp:vocab:id-document#national_id` | National ID Card |
-| passport | `urn:openspp:vocab:id-document#passport` | Passport |
-| birth_cert | `urn:openspp:vocab:id-document#birth_cert` | Birth Certificate |
-| drivers_license | `urn:openspp:vocab:id-document#drivers_license` | Driver's License |
-| voter_id | `urn:openspp:vocab:id-document#voter_id` | Voter Registration Card |
-| tax_id | `urn:openspp:vocab:id-document#tax_id` | Tax Identification Number |
-| social_security | `urn:openspp:vocab:id-document#social_security` | Social Security Card |
-| refugee_id | `urn:openspp:vocab:id-document#refugee_id` | Refugee ID |
-| other | `urn:openspp:vocab:id-document#other` | Other Document |
+| national_id | `urn:openspp:vocab:id-type#national_id` | National ID |
+| passport | `urn:openspp:vocab:id-type#passport` | Passport |
+| tax_id | `urn:openspp:vocab:id-type#tax_id` | Tax ID |
+| birth_certificate | `urn:openspp:vocab:id-type#birth_certificate` | Birth Certificate |
+
+```{note}
+Deployments can extend this vocabulary with additional ID types (e.g., driver's license, voter ID, social security) using custom vocabularies or local extensions.
+```
 
 **Use cases:**
 - Identity verification
@@ -323,6 +339,7 @@ in_group(me.disability_primary, "seeing_functions")
 
 ---
 
+(who-icf-activities)=
 ### WHO ICF: Activities & Participation
 
 WHO ICF - Activities and Participation component.

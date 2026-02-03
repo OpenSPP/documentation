@@ -298,7 +298,7 @@ User can select:
 ```
 1. INSTALLATION
    ↓
-   13 standard vocabularies loaded automatically
+   Standard vocabularies loaded automatically
 
 2. CONFIGURATION
    ↓

@@ -29,9 +29,9 @@ Vocabulary profiles let you select which codes from a vocabulary appear in your 
 ┌────────────────────────────────────────────────┐
 │ "Philippines 4Ps" Profile                      │
 │ Active gender codes:                           │
-│ ├─ 1: Male         ✓                          │
-│ └─ 2: Female       ✓                          │
-│                                                 │
+│ ├─ 1: Male       [x]                           │
+│ └─ 2: Female     [x]                           │
+│                                                │
 │ Result: Users only see Male/Female dropdown    │
 └────────────────────────────────────────────────┘
 ```
@@ -239,10 +239,10 @@ Kenya CT-OVC Active Codes:
 | API Vocabulary Validation | Strict |
 
 **Result:**
-```json
+```text
 POST /api/v2/individuals
 {
-  "gender": "urn:iso:std:iso:5218#9"  // Not Applicable - not in profile
+  "gender": "urn:iso:std:iso:5218#9"   ← Not Applicable - not in profile
 }
 
 → 400 Bad Request
