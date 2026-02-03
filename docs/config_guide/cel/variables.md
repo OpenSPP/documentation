@@ -60,7 +60,7 @@ Calculated from a CEL expression.
 | Field | Value |
 |-------|-------|
 | Source Type | Computed |
-| CEL Expression | `age_years(me.birthdate)` |
+| CEL Expression | `age_years(r.birthdate)` |
 
 ### Aggregate
 

@@ -19,12 +19,12 @@ Which symbols are available depends on the screen and profile. Use the editor's 
 ### Boolean logic
 
 ```cel
-me.is_registrant == true and me.active == true
+r.is_registrant == true and r.active == true
 ```
 
 Equivalent with operators:
 ```cel
-me.is_registrant && me.active
+r.is_registrant && r.active
 ```
 
 ### Handle missing values
@@ -32,25 +32,25 @@ me.is_registrant && me.active
 Always check existence before accessing optional fields:
 
 ```cel
-has(me.birthdate) and age_years(me.birthdate) >= 18
+has(r.birthdate) and age_years(r.birthdate) >= 18
 ```
 
 ### Ternary (if/else)
 
 ```cel
-me.is_group ? 1 : 0
+r.is_group ? 1 : 0
 ```
 
 More complex:
 ```cel
-me.income < 5000 ? "low" : (me.income < 15000 ? "medium" : "high")
+r.income < 5000 ? "low" : (r.income < 15000 ? "medium" : "high")
 ```
 
 ### String comparisons
 
 ```cel
-me.status == "active"
-me.region != "excluded_region"
+r.status == "active"
+r.region != "excluded_region"
 ```
 
 ## Household composition
@@ -231,7 +231,7 @@ children_under_5_count >= 1 and household_income < poverty_line
 
 In target region:
 ```cel
-me.area_id.name == "Region IV-A"
+r.area_id.name == "Region IV-A"
 ```
 
 ### Multi-criteria
@@ -287,13 +287,13 @@ members.count(m, true) <= 3 ? 500 : (members.count(m, true) <= 5 ? 750 : 1000)
 ### Simple indicator
 
 ```cel
-me.has_disability ? 10 : 0
+r.has_disability ? 10 : 0
 ```
 
 ### Age-based score
 
 ```cel
-age_years(me.birthdate) >= 65 ? 5 : 0
+age_years(r.birthdate) >= 65 ? 5 : 0
 ```
 
 ### Household composition score
@@ -313,26 +313,26 @@ min(vulnerability_score / 10, 10)
 ### Required field
 
 ```cel
-has(me.birthdate)
+has(r.birthdate)
 ```
 
 ### Age validation
 
 ```cel
-has(me.birthdate) and age_years(me.birthdate) >= 0 and age_years(me.birthdate) <= 120
+has(r.birthdate) and age_years(r.birthdate) >= 0 and age_years(r.birthdate) <= 120
 ```
 
 ### Format check
 
 ```cel
-me.phone.startsWith("+63")
+startswith(r.phone, "+63")
 ```
 
 ### Cross-field validation
 
 Head of household must be adult:
 ```cel
-not head(me) or age_years(me.birthdate) >= 18
+not head(r) or age_years(r.birthdate) >= 18
 ```
 
 ## Workflow routing

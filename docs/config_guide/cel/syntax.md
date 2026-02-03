@@ -4,7 +4,7 @@ openspp:
   products: [core]
 ---
 
-# CEL Syntax Reference
+# CEL syntax reference
 
 This guide is for **implementers** who need detailed syntax documentation.
 
@@ -12,13 +12,12 @@ This guide is for **implementers** who need detailed syntax documentation.
 
 Expressions in OpenSPP are categorized by type:
 
-| Type | Output | Use Case |
+| Type | Output | Use case |
 |------|--------|----------|
-| Eligibility | Boolean | Program qualification rules |
-| Compliance | Boolean | Ongoing requirement checks |
-| Benefit | Number | Entitlement amount formulas |
+| Filter | Boolean | Select records (eligibility, search, compliance) |
+| Formula | Number | Calculate amounts (entitlements, benefits) |
 | Scoring | Number | Scoring indicator formulas |
-| Validation | Boolean | Data validation rules |
+| Data Validation | Boolean | Data validation rules |
 | Other | Any | Library/utility expressions |
 
 ## Basic syntax
@@ -38,12 +37,12 @@ Expressions in OpenSPP are categorized by type:
 
 | Operator | Example | Description |
 |----------|---------|-------------|
-| `==` | `me.status == "active"` | Equal |
-| `!=` | `me.status != "cancelled"` | Not equal |
-| `<` | `me.age < 18` | Less than |
-| `<=` | `me.age <= 65` | Less than or equal |
-| `>` | `me.income > 10000` | Greater than |
-| `>=` | `me.income >= 5000` | Greater than or equal |
+| `==` | `r.status == "active"` | Equal |
+| `!=` | `r.status != "cancelled"` | Not equal |
+| `<` | `r.age < 18` | Less than |
+| `<=` | `r.age <= 65` | Less than or equal |
+| `>` | `r.income > 10000` | Greater than |
+| `>=` | `r.income >= 5000` | Greater than or equal |
 
 #### Logical
 
@@ -63,7 +62,7 @@ Expressions in OpenSPP are categorized by type:
 | `/` | `a / b` | Division |
 | `%` | `a % b` | Modulo |
 
-### Ternary (Conditional)
+### Ternary (conditional)
 
 ```cel
 condition ? value_if_true : value_if_false
@@ -71,15 +70,15 @@ condition ? value_if_true : value_if_false
 
 Example:
 ```cel
-me.is_group ? 1 : 0
+r.is_group ? 1 : 0
 ```
 
-### Safe Field Access
+### Safe field access
 
 Use `has()` to check if a field exists before accessing:
 
 ```cel
-has(me.birthdate) and age_years(me.birthdate) >= 18
+has(r.birthdate) and age_years(r.birthdate) >= 18
 ```
 
 ## Built-in functions
@@ -88,26 +87,35 @@ has(me.birthdate) and age_years(me.birthdate) >= 18
 
 | Function | Example | Description |
 |----------|---------|-------------|
-| `age_years(date)` | `age_years(me.birthdate)` | Years since date |
-| `age_months(date)` | `age_months(me.birthdate)` | Months since date |
-| `age_days(date)` | `age_days(me.registration_date)` | Days since date |
+| `age_years(date)` | `age_years(r.birthdate)` | Years since date |
+| `days_ago(n)` | `days_ago(30)` | Date n days ago |
+| `months_ago(n)` | `months_ago(6)` | Date n months ago |
+| `years_ago(n)` | `years_ago(1)` | Date n years ago |
+| `today()` | `today()` | Current date |
+| `now()` | `now()` | Current datetime |
 
 ### Math functions
 
 | Function | Example | Description |
 |----------|---------|-------------|
-| `min(a, b)` | `min(me.score, 100)` | Minimum value |
-| `max(a, b)` | `max(me.score, 0)` | Maximum value |
-| `abs(n)` | `abs(me.balance)` | Absolute value |
+| `min(a, b)` | `min(r.score, 100)` | Minimum value |
+| `max(a, b)` | `max(r.score, 0)` | Maximum value |
+| `abs(n)` | `abs(r.balance)` | Absolute value |
 
 ### String functions
 
 | Function | Example | Description |
 |----------|---------|-------------|
-| `startsWith(s, prefix)` | `me.id.startsWith("PH-")` | Check prefix |
-| `endsWith(s, suffix)` | `me.id.endsWith("-2024")` | Check suffix |
-| `contains(s, sub)` | `me.name.contains("Jr")` | Check substring |
-| `size(s)` | `size(me.name)` | String length |
+| `startswith(field, prefix)` | `startswith(r.id, "PH-")` | Check prefix |
+| `contains(field, text)` | `contains(r.name, "Jr")` | Check substring |
+| `matches(field, pattern)` | `matches(r.id, "^PH-[0-9]+$")` | Regex match |
+| `size(s)` | `size(r.name)` | String/collection length |
+
+### Utility functions
+
+| Function | Example | Description |
+|----------|---------|-------------|
+| `between(value, min, max)` | `between(r.age, 18, 65)` | Check if value is in range |
 
 ### Collection functions
 
@@ -115,17 +123,18 @@ Used with relations like `members`, `enrollments`, `entitlements`:
 
 | Function | Example | Description |
 |----------|---------|-------------|
-| `exists(predicate)` | `members.exists(age_years(m.birthdate) < 5)` | Any match |
-| `all(predicate)` | `members.all(m.active == true)` | All match |
-| `count(predicate)` | `members.count(age_years(m.birthdate) < 18)` | Count matches |
+| `exists(var, predicate)` | `members.exists(m, age_years(m.birthdate) < 5)` | Any match |
+| `all(var, predicate)` | `members.all(m, m.active == true)` | All match |
+| `count(var, predicate)` | `members.count(m, age_years(m.birthdate) < 18)` | Count matches |
 | `sum(expr, predicate)` | `members.sum(m.income, true)` | Sum values |
-| `filter(predicate)` | `enrollments.filter(e.state == "enrolled")` | Filter list |
+| `filter(var, predicate)` | `enrollments.filter(e, e.state == "enrolled")` | Filter list |
+| `head(var)` | `members.exists(m, head(m))` | Check if member is head of household |
 
 ### Existence check
 
 | Function | Example | Description |
 |----------|---------|-------------|
-| `has(field)` | `has(me.birthdate)` | Field exists and not null |
+| `has(field)` | `has(r.birthdate)` | Field exists and not null |
 
 ## Collection predicates
 
@@ -164,18 +173,21 @@ Profiles define what data is available in a given context:
 | `entitlements` | `spp.entitlement` | - |
 | `grm_tickets` | `spp.grm.ticket` | - |
 
-### Root record symbols
+### Root record symbol
 
-Most profiles provide access to the current record:
+All profiles provide access to the current record via the `r` symbol:
 
-| Symbol | Usage |
-|--------|-------|
-| `me` | Preferred in newer screens |
-| `r` | Used in older examples |
+| Symbol | Description |
+|--------|-------------|
+| `r` | Current record (registrant, ticket, entitlement, etc.) |
 
 Example:
 ```cel
-me.is_registrant == true and me.active == true
+r.is_registrant == true and r.active == true
+```
+
+```{note}
+The symbol `r` represents the current record in all contexts. Inside aggregate functions (like counting members), use `m` to reference each member.
 ```
 
 ## CEL editor widget
@@ -184,24 +196,29 @@ The Studio CEL editor provides:
 
 ### Autocomplete
 
-- Type `me.` to see available fields
-- Type a function name to see signature
+- Type `r.` to see available fields on the current record
+- Type a function name to see its signature
+- Press **Ctrl+Space** to trigger suggestions
 
-### Symbol Browser
+See {doc}`quick_start` for a screenshot of the autocomplete feature.
 
-Click the symbol icon to browse:
+### Symbol browser
+
+Click the **Symbols** button to browse:
 - Available profiles
 - Symbols and fields
 - Variables
 - Functions
 
+See {doc}`quick_start` for a screenshot of the symbol browser.
+
 ### Validation
 
 Real-time validation shows:
-- Syntax errors
+- Syntax errors (red underlines)
 - Unknown symbols
 - Type mismatches
-- Matching record count (for compile-to-domain)
+- Matching record count (for compile-to-domain expressions)
 
 ### Validation API
 

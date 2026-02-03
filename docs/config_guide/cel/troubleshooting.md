@@ -31,7 +31,7 @@ This almost always means:
    - Verify you're in the expected profile (individual vs group)
 
 2. **Use autocomplete**
-   - Type `me.` and see available fields
+   - Type `r.` and see available fields
    - Field names may differ from UI labels
 
 3. **Check related records**
@@ -42,8 +42,8 @@ This almost always means:
 
 | You Wrote | Problem | Fix |
 |-----------|---------|-----|
-| `birthdate` | Missing context | `me.birthdate` |
-| `me.gender` | Field might be `gender_id.name` | Check autocomplete |
+| `birthdate` | Missing context | `r.birthdate` |
+| `r.gender` | Field might be `gender_id.name` | Check autocomplete |
 | `members.age` | Age is computed | `age_years(m.birthdate)` |
 | `income` | Field might be custom | Check actual field name |
 
@@ -95,7 +95,7 @@ Not: `x_cel_var_children_u5` ✗
 | `enrolled` | Unquoted string | `"enrolled"` |
 | `True` / `FALSE` | Wrong case | `true` / `false` |
 | `AND` / `OR` | Wrong case | `and` / `or` |
-| `me.status = "active"` | Single equals | `me.status == "active"` |
+| `r.status = "active"` | Single equals | `r.status == "active"` |
 
 ### String quoting
 
@@ -103,10 +103,10 @@ Strings must be quoted:
 
 ```cel
 # Wrong
-me.status == active
+r.status == active
 
 # Right
-me.status == "active"
+r.status == "active"
 ```
 
 ### Boolean values
@@ -115,10 +115,10 @@ Booleans are lowercase:
 
 ```cel
 # Wrong
-me.is_group == True
+r.is_group == True
 
 # Right
-me.is_group == true
+r.is_group == true
 ```
 
 ### Operator case
@@ -175,9 +175,9 @@ The expression is syntactically correct but finds no matches.
    # Start with just
    true
    # Then add one condition at a time
-   me.active == true
+   r.active == true
    # Then more
-   me.active == true and has(me.birthdate)
+   r.active == true and has(r.birthdate)
    ```
 
 2. **Check matching count**
