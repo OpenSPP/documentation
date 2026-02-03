@@ -8,7 +8,7 @@ openspp:
 
 This guide is for **implementers** who want to customize OpenSPP through a visual, no-code interface. If you can build a KoBoToolbox form, you can configure OpenSPP Studio.
 
-## What You'll Find Here
+## What you'll find here
 
 - **Overview** - Studio interface and capabilities
 - **Registry Field Builder** - Add custom fields to registrant records
@@ -25,14 +25,14 @@ event_type_designer
 change_request_builder
 ```
 
-## Quick Links
+## Quick links
 
 - {doc}`overview` - Understand Studio's interface and capabilities
 - {doc}`registry_field_builder` - Track program-specific data on registrants
 - {doc}`event_type_designer` - Collect survey data from field assessments
 - {doc}`change_request_builder` - Create approval workflows for updates
 
-## Getting Started
+## Getting started
 
 1. **Read the overview** to understand Studio's interface and capabilities
 2. **Choose your task**:
@@ -41,16 +41,16 @@ change_request_builder
    - Need approval workflows for updates? → Change Request Builder
    - Setting program eligibility criteria? → Use the Expression Editor under Rules menu
 
-## Common Use Cases
+## Common use cases
 
 | I want to... | Use this tool |
 |--------------|---------------|
 | Track "Pantawid ID" for Philippines beneficiaries | Registry Field Builder |
-| Import vulnerability assessments from Kobo | Event Type Designer |
+| Create a vulnerability assessment form | Event Type Designer |
 | Create a phone number update request with approval | Change Request Builder |
 | Select households with children under 5 and low income | Expression Editor (Rules menu) |
 
-## Are You Stuck?
+## Are you stuck?
 
 **Can't find the Studio menu?**
 You need Studio Editor or Studio Manager permissions. Contact your system administrator.
