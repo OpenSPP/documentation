@@ -637,10 +637,6 @@ li.module-filtered > a {
 }
 
 /* Key features section */
-#key-features .sd-card {
-    border: none !important;
-    box-shadow: none !important;
-}
 
 #key-features .sd-card-body {
     display: flex;
@@ -667,11 +663,33 @@ li.module-filtered > a {
     text-decoration: none;
 }
 
-#key-features .sd-card-img-top {
-    max-height: 50px;
-    width: 50px;
-    margin-bottom: 1rem;
-    margin-left: 0;
+/* Limit Key feature card image size on homepage + align right */
+.sd-card .sd-card-img-top,
+.sd-card img[src*="images/0"] {
+  max-height: 80px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-left: 10px;
+  margin-right: auto;
+}
+
+/* Override theme’s !important for Key feature cards only */
+.sd-card.sd-sphinx-override.sd-w-100.sd-shadow-sm.docutils {
+  box-shadow: none !important;
+}
+
+.sd-card,
+.sd-card .sd-card-img-top,
+.sd-card .sd-card-body {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+
+.sd-card.sd-sphinx-override.sd-w-100.sd-shadow-sm.docutils * {
+  border: none !important;
+  box-shadow: none !important;
 }
 
 #key-features .sd-card-header .sd-card-text {
