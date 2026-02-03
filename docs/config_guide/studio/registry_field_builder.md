@@ -8,11 +8,11 @@ openspp:
 
 This guide is for **implementers** adding custom fields to the registry. You should be comfortable with form builders like KoBoToolbox, but you don't need programming knowledge.
 
-## What are Custom Fields?
+## What are custom fields?
 
 The Custom Fields tool (also known as Registry Field Builder) lets you add custom fields to Individual and Group registries without developer help. Place fields in pre-defined sections of the registry forms.
 
-## When to Use Registry Field Builder
+## When to use Registry Field Builder
 
 Use this tool when you need to track information that isn't in the standard OpenSPP registry:
 
@@ -24,7 +24,7 @@ Use this tool when you need to track information that isn't in the standard Open
 | Custom contact info | "WhatsApp Number" text field |
 | Housing conditions | "Housing Material" selection |
 
-## Mental Model
+## Mental model
 
 Think of the registry as a form with pre-defined tabs and sections. Individual and Group registries have separate placement zones:
 
@@ -46,7 +46,7 @@ Think of the registry as a form with pre-defined tabs and sections. Individual a
 
 You can add fields to any section that matches your target registry type.
 
-## Before You Start
+## Before you start
 
 ### Prerequisites
 
@@ -54,7 +54,7 @@ You can add fields to any section that matches your target registry type.
 - Understanding of what data you need to collect
 - Clear field names and labels planned
 
-### Planning Your Field
+### Planning your field
 
 Before creating a field, decide:
 
@@ -65,11 +65,11 @@ Before creating a field, decide:
 5. **Options**: Required? Searchable?
 6. **Help text**: Tooltip to help users understand the field
 
-## Creating a Custom Field
+## Creating a custom field
 
 Custom fields are created directly in an inline editing list. You can configure all field properties in a single row.
 
-### Step 1: Open Custom Fields
+### Step 1: Open custom fields
 
 1. Click **Studio** in the main menu
 2. Click **Custom Fields** card on the dashboard
@@ -77,7 +77,7 @@ Custom fields are created directly in an inline editing list. You can configure 
 
 ![Custom Fields list in Studio](/_images/en-us/config_guide/studio/registry_field_builder/01-custom-fields-list.png)
 
-### Step 2: Enter Field Details
+### Step 2: Enter field details
 
 When you click **New**, a new row appears for inline editing. Fill in the field details:
 
@@ -92,20 +92,20 @@ When you click **New**, a new row appears for inline editing. Fill in the field 
 
 ![Entering field details in inline editor](/_images/en-us/config_guide/studio/registry_field_builder/02-wizard-step1-basic.png)
 
-#### Target Registry Options
+#### Target registry options
 
 | Option | Use When |
 |--------|----------|
 | **Individual** | Field applies to people (e.g., "Disability Type") |
 | **Group** | Field applies to households/groups (e.g., "Housing Material") |
 
-### Step 3: Select Field Type
+### Step 3: Select field type
 
 Click on the **Field Type** column to see available options:
 
 ![Field type dropdown showing available options](/_images/en-us/config_guide/studio/registry_field_builder/03-wizard-step2-config.png)
 
-#### Field Type Options
+#### Field type options
 
 | Type | Use For | Example |
 |------|---------|---------|
@@ -120,13 +120,13 @@ Click on the **Field Type** column to see available options:
 | **Multi-Select** | Choose multiple options | "Languages Spoken" |
 | **Link** | Link to another record | "Link to Area", "Link to Language" |
 
-### Step 4: Select Placement Zone
+### Step 4: Select placement zone
 
 Click on the **Placement Zone** column and search for the appropriate zone:
 
 ![Selecting placement zone](/_images/en-us/config_guide/studio/registry_field_builder/04-wizard-selection-options.png)
 
-#### Placement Zones
+#### Placement zones
 
 Select where the field appears in the registry form:
 
@@ -151,7 +151,7 @@ Select where the field appears in the registry form:
 | **Group - Relationships** | Member connections |
 | **Group - Participation** | Program enrollments |
 
-### Step 5: Save the Field
+### Step 5: Save the field
 
 Click **Save** or press Enter to save the field. The field is created in **Draft** status.
 
@@ -161,7 +161,7 @@ Click **Save** or press Enter to save the field. The field is created in **Draft
 Fields are created as **Draft** by default. Draft fields can be edited freely but are not visible in registry forms until activated.
 ```
 
-#### Optional Columns
+#### Optional columns
 
 The list view has additional optional columns you can enable:
 
@@ -171,7 +171,7 @@ The list view has additional optional columns you can enable:
 | **Searchable** | Check if field should appear in search filters |
 | **Selection Options** | For Selection/Multi-Select types only |
 
-#### Selection Options (for Selection/Multi-Select)
+#### Selection options (for Selection/Multi-Select)
 
 For Selection or Multi-Select fields, you'll need to open the field details (double-click the row) to enter the choices:
 
@@ -184,7 +184,7 @@ cognitive|Cognitive Disability
 
 **Format:** `value|Label` (one per line). If you omit the value, the label is used as both.
 
-#### Link Options (for Link type)
+#### Link options (for Link type)
 
 If you chose Link, open the field details to configure:
 
@@ -193,7 +193,7 @@ If you chose Link, open the field details to configure:
 | **Link to** | Select the model to link to (e.g., Area, Language) |
 | **Filter** | Optional domain to filter records (e.g., `[('active', '=', True)]`) |
 
-#### Visibility Conditions (Advanced)
+#### Visibility conditions (advanced)
 
 For conditional visibility, open the field details and configure:
 
@@ -213,7 +213,7 @@ For conditional visibility, open the field details and configure:
 
 **Example:** Only show "Disability Type" when "Has Disability" field is set.
 
-### Step 6: Activate the Field
+### Step 6: Activate the field
 
 Draft fields must be activated before they appear in registry forms.
 
@@ -234,9 +234,9 @@ Draft fields must be activated before they appear in registry forms.
 Activating makes the field live for all users. The field will appear in registry forms immediately after activation.
 ```
 
-## After Creating a Field
+## After creating a field
 
-### Verify Your Field
+### Verify your field
 
 After activating a field:
 
@@ -247,9 +247,9 @@ After activating a field:
 
 ![Registry search portal](/_images/en-us/config_guide/studio/registry_field_builder/06-field-in-registry.png)
 
-## Managing Existing Fields
+## Managing existing fields
 
-### View All Custom Fields
+### View all custom fields
 
 **Studio → Custom Fields** shows all fields you've created:
 
@@ -265,7 +265,7 @@ After activating a field:
 
 ![Custom Fields list with active field](/_images/en-us/config_guide/studio/registry_field_builder/08-custom-fields-list.png)
 
-### Edit a Field
+### Edit a field
 
 **For Draft fields** (editable inline):
 1. Click on the field row to select it
@@ -278,7 +278,7 @@ After activating a field:
   1. Deactivate → Edit → Reactivate (may cause data issues)
   2. Create new field → Migrate data → Delete old field (requires developer)
 
-### Deactivate a Field
+### Deactivate a field
 
 ```{warning}
 Deactivating hides the field from forms, but existing data is preserved in the database.
@@ -295,7 +295,7 @@ Deactivating hides the field from forms, but existing data is preserved in the d
 
 ![Field deactivated](/_images/en-us/config_guide/studio/registry_field_builder/09-deactivate-warning.png)
 
-### Delete a Field
+### Delete a field
 
 You can only delete **inactive** fields:
 
@@ -306,9 +306,9 @@ You can only delete **inactive** fields:
 
 **Warning**: This removes the field configuration. Data may still exist in the database but won't be accessible through the UI.
 
-## Field Type Reference
+## Field type reference
 
-### Text Field
+### Text field
 
 **Use for**: Short single-line text (up to 256 characters)
 
@@ -321,7 +321,7 @@ You can only delete **inactive** fields:
 - Can be marked as required
 - Can be made searchable
 
-### Long Text Field
+### Long text field
 
 **Use for**: Multi-line text notes
 
@@ -332,7 +332,7 @@ You can only delete **inactive** fields:
 
 **Displays as**: Multi-line text area
 
-### Number Fields
+### Number fields
 
 **Whole Number (integer)**:
 - Examples: "Number of Dependents", "Age in Years"
@@ -346,7 +346,7 @@ You can only delete **inactive** fields:
 - Can mark as required
 - Can make searchable
 
-### Date Field
+### Date field
 
 **Use for**: Calendar dates
 
@@ -357,7 +357,7 @@ You can only delete **inactive** fields:
 
 **Shows**: Calendar picker in UI
 
-### Date & Time Field
+### Date & time field
 
 **Use for**: Date with time component
 
@@ -368,7 +368,7 @@ You can only delete **inactive** fields:
 
 **Shows**: Calendar picker with time selector
 
-### Yes/No Field
+### Yes/No field
 
 **Use for**: True/false, checkbox data
 
@@ -379,7 +379,7 @@ You can only delete **inactive** fields:
 
 **Displays as**: Checkbox
 
-### Selection Field
+### Selection field
 
 **Use for**: Choose one option from a list
 
@@ -395,7 +395,7 @@ You can only delete **inactive** fields:
 - Order matters (shows in defined order)
 - Can add/remove choices before activating
 
-### Multi-Select Field
+### Multi-select field
 
 **Use for**: Choose multiple options from a list
 
@@ -408,7 +408,7 @@ You can only delete **inactive** fields:
 
 **Configuration**: Same as Selection field - define options using `value|Label` format.
 
-### Link Field (Advanced)
+### Link field (advanced)
 
 **Use for**: Linking to other records
 
@@ -419,9 +419,9 @@ You can only delete **inactive** fields:
 
 **Note**: This is advanced and may require developer help for complex relationships.
 
-## Common Patterns
+## Common patterns
 
-### Country-Specific ID
+### Country-specific ID
 
 ```
 Label: Pantawid ID Number
@@ -432,7 +432,7 @@ Required: No (only for Philippines beneficiaries)
 Searchable: Yes
 ```
 
-### Disability Tracking
+### Disability tracking
 
 ```
 Field 1:
@@ -452,7 +452,7 @@ Field 2:
   Required: No
 ```
 
-### Housing Conditions
+### Housing conditions
 
 ```
 Label: Housing Material
@@ -468,7 +468,7 @@ Location: Profile > Contact
 Required: No
 ```
 
-### Vulnerability Score
+### Vulnerability score
 
 ```
 Label: Vulnerability Score
@@ -479,7 +479,7 @@ Required: No
 Help Text: Score from 0-100 based on PMT assessment
 ```
 
-## Are You Stuck?
+## Are you stuck?
 
 **Field doesn't appear in the registry form?**
 - Make sure the field is **Active**, not Draft
@@ -524,7 +524,7 @@ Yes, select multiple fields in the list view and use the **Activate** action fro
 - **Immediate activation** (default): Field is created and usable right away
 - **Create as Draft**: Field is created but not visible in registry forms until you manually activate it - useful if you want to review settings first
 
-## Next Steps
+## Next steps
 
 - **Create event types from surveys**: {doc}`event_type_designer`
 - **Build change request workflows**: {doc}`change_request_builder`
