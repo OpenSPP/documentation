@@ -23,12 +23,16 @@ Bulk import registrant data from CSV or Excel files to add new records or update
 
 ## Understanding import
 
-Import allows you to:
+Import in OpenSPP works by uploading a file (CSV or Excel) whose **structure matches the data model used by OpenSPP**. Column names in your file must correspond to the field names in the implementation so that each column maps to the correct field when records are created or updated. If the structure or field names do not match, data may be ignored, misapplied, or the import may fail.
+
+You can use import to:
 
 | Purpose | Description |
 |---------|-------------|
 | **Add new records** | Create multiple individuals or groups at once |
 | **Update existing records** | Modify data for registrants already in the system |
+
+The recommended way to get the correct structure is to **export a template** from OpenSPP (see [Prepare your import file](#prepare-your-import-file)) and use that file’s headers and format as the basis for your import file. This ensures your columns align with OpenSPP’s fields and map correctly during import.
 
 ## Prepare your import file
 

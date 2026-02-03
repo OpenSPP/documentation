@@ -37,7 +37,7 @@ Click **Registry** in the main menu to open the Registry Search Portal.
 
 ![Registry menu in sidebar](/_images/en-us/registry/register-group/01-registry-menu-in-sidebar-showing-registry-search.png)
 
-### Steo 2. Click new group
+### Step 2. Click new group
 
 Click the **New Group** button to open the group registration form.
 
@@ -101,7 +101,7 @@ After saving, add individuals as members of this group.
 
 ![Group Members section with Add a line](/_images/en-us/registry/register-group/08-group-members-section-with-add-a-line-button-in-pa.png)
 
-3. Select an individual from the **Member name** column dropdown.
+3. Select an individual from the **Member Name** column dropdown.
 
 ![Select individual from dropdown](/_images/en-us/registry/register-group/09-individual-selection-dropdown-in-group-membership.png)
 
