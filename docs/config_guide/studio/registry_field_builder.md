@@ -4,13 +4,13 @@ openspp:
   products: [core]
 ---
 
-# Registry Field Builder
+# Custom Fields (Registry Field Builder)
 
 This guide is for **implementers** adding custom fields to the registry. You should be comfortable with form builders like KoBoToolbox, but you don't need programming knowledge.
 
-## What is Registry Field Builder?
+## What are Custom Fields?
 
-Registry Field Builder lets you add custom fields to Individual and Group registries without developer help. Place fields in pre-defined sections of the registry forms.
+The Custom Fields tool (also known as Registry Field Builder) lets you add custom fields to Individual and Group registries without developer help. Place fields in pre-defined sections of the registry forms.
 
 ## When to Use Registry Field Builder
 
@@ -26,16 +26,25 @@ Use this tool when you need to track information that isn't in the standard Open
 
 ## Mental Model
 
-Think of the registry as a form with pre-defined tabs and sections:
+Think of the registry as a form with pre-defined tabs and sections. Individual and Group registries have separate placement zones:
+
+**Individual Registry:**
 
 | Tab | Sections | What Goes Here |
 |-----|----------|----------------|
 | **Profile** | Demographics, Contact, Financial | Personal info, age, gender, phone, income |
 | **Identity** | IDs, Relationships | National ID, program IDs, family connections |
-| **Participation** | Programs, Events | Program enrollments, survey data |
-| **Custom** | Additional Details | Your custom fields (default location) |
+| **Participation** | (single zone) | Program enrollments, survey data |
 
-You can add fields to any section. Most custom fields go in "Additional Details" unless they clearly fit elsewhere.
+**Group Registry:**
+
+| Tab | Sections | What Goes Here |
+|-----|----------|----------------|
+| **Profile** | Contact, Financial | Group address, phone, bank details |
+| **Identity** | IDs, Relationships | Group IDs, member connections |
+| **Participation** | (single zone) | Program enrollments, events |
+
+You can add fields to any section that matches your target registry type.
 
 ## Before You Start
 
@@ -51,51 +60,52 @@ Before creating a field, decide:
 
 1. **Label**: What users will see (e.g., "Disability Type")
 2. **Field type**: Text, number, date, dropdown, etc.
-3. **Location**: Which tab and section
-4. **Validation**: Required? Read-only? Searchable?
-5. **Help text**: Tooltip to help users understand the field
+3. **Target registry**: Individual or Group
+4. **Placement zone**: Which tab and section
+5. **Options**: Required? Searchable?
+6. **Help text**: Tooltip to help users understand the field
 
 ## Creating a Custom Field
 
-### Step 1: Open Field Builder
+Custom fields are created directly in an inline editing list. You can configure all field properties in a single row.
+
+### Step 1: Open Custom Fields
 
 1. Click **Studio** in the main menu
-2. Click **Registry Fields**
-3. Click **+ New Field** button
+2. Click **Custom Fields** card on the dashboard
+3. Click **New** to create a new field
 
-**Screenshot should show**: Studio menu item in main menu, then Studio Dashboard with Registry Fields card highlighted, then Registry Field Builder list view with "+ New Field" button.
+![Custom Fields list in Studio](/_images/en-us/config_guide/studio/registry_field_builder/01-custom-fields-list.png)
 
-### Step 2: Choose Registry Type
+### Step 2: Enter Field Details
 
-Select where this field will appear:
+When you click **New**, a new row appears for inline editing. Fill in the field details:
+
+| Column | What to Enter | Example |
+|--------|---------------|---------|
+| **Label** | What users see | "Disability Type" |
+| **Target Registry** | Individual or Group | Individual |
+| **Field Type** | Type of data to collect | Selection |
+| **Placement Zone** | Where field appears | Individual - Demographics |
+| **Required** | Must users fill this? | ☐ (unchecked) |
+| **Searchable** | Include in search filters? | ☐ (unchecked) |
+
+![Entering field details in inline editor](/_images/en-us/config_guide/studio/registry_field_builder/02-wizard-step1-basic.png)
+
+#### Target Registry Options
 
 | Option | Use When |
 |--------|----------|
 | **Individual** | Field applies to people (e.g., "Disability Type") |
 | **Group** | Field applies to households/groups (e.g., "Housing Material") |
 
-**Screenshot should show**: Registry type selection screen with Individual and Group radio buttons.
+### Step 3: Select Field Type
 
-### Step 3: Enter Basic Information
+Click on the **Field Type** column to see available options:
 
-| Field | What to Enter | Example |
-|-------|---------------|---------|
-| **Label** | What users see | "Disability Type" |
-| **Technical Name** | Auto-generated from label | `x_cst_disability_type` |
-| **Help Text** | Optional tooltip for users | "Select the primary type of disability, if any" |
+![Field type dropdown showing available options](/_images/en-us/config_guide/studio/registry_field_builder/03-wizard-step2-config.png)
 
-**Tips**:
-- Use clear, descriptive labels
-- Help text explains when/how to fill the field
-- Technical name is automatic - you don't need to change it
-
-**Screenshot should show**: Step 1 of field creation wizard with Label, Technical Name (grayed out), and Help Text fields filled in with the example above.
-
-Click **Next →** when ready.
-
-### Step 4: Choose Field Type
-
-Select the type of data this field will hold:
+#### Field Type Options
 
 | Type | Use For | Example |
 |------|---------|---------|
@@ -104,135 +114,163 @@ Select the type of data this field will hold:
 | **Number (whole)** | Counting numbers | "Number of Dependents" |
 | **Number (decimal)** | Amounts with decimals | "Vulnerability Score" |
 | **Date** | Calendar dates | "Last Assessment Date" |
+| **Date & Time** | Date with time | "Appointment DateTime" |
 | **Yes/No** | Checkbox for true/false | "Has Disability" |
-| **Selection** | Dropdown with choices | "Disability Type", "Housing Material" |
+| **Selection** | Single choice from list | "Disability Type", "Housing Material" |
 | **Multi-Select** | Choose multiple options | "Languages Spoken" |
-| **Link** | Link to another record (advanced) | "Link to Area", "Link to Language" |
+| **Link** | Link to another record | "Link to Area", "Link to Language" |
 
-**Screenshot should show**: Step 2 of wizard with the nine field type cards displayed as shown in the spec (icons and descriptions).
+### Step 4: Select Placement Zone
 
-#### If You Choose "Selection" or "Multi-Select"
+Click on the **Placement Zone** column and search for the appropriate zone:
 
-You'll see an additional screen to define choices:
+![Selecting placement zone](/_images/en-us/config_guide/studio/registry_field_builder/04-wizard-selection-options.png)
 
-| Column | What to Enter |
-|--------|---------------|
-| **Value** | What's stored in database | `physical`, `visual`, `hearing` |
-| **Label** | What users see | "Physical Disability", "Visual Impairment" |
+#### Placement Zones
 
-**Example for Disability Type**:
+Select where the field appears in the registry form:
 
-| Value | Label |
-|-------|-------|
-| `physical` | Physical Disability |
-| `visual` | Visual Impairment |
-| `hearing` | Hearing Impairment |
-| `cognitive` | Cognitive Disability |
+**Individual Registry Zones:**
 
-**Screenshot should show**: Selection options configuration screen with the disability type example filled in, showing the table with Value/Label columns and [↑][↓][×] buttons for each row.
+| Zone | Description |
+|------|-------------|
+| **Individual - Demographics** | Birthdate, gender, personal info |
+| **Individual - Contact** | Address, phone, email |
+| **Individual - Financial** | Bank accounts, income details |
+| **Individual - IDs** | National ID, program IDs |
+| **Individual - Relationships** | Family connections |
+| **Individual - Participation** | Program enrollments, events |
 
-**Tips**:
-- Use simple, lowercase values without spaces
-- Use clear, user-friendly labels
-- Order choices logically (most common first, or alphabetically)
-- Use [↑][↓] buttons to reorder choices
+**Group Registry Zones:**
 
-Click **Next →** when field type is configured.
+| Zone | Description |
+|------|-------------|
+| **Group - Contact** | Group address, phone |
+| **Group - Financial** | Group bank details |
+| **Group - IDs** | Group IDs |
+| **Group - Relationships** | Member connections |
+| **Group - Participation** | Program enrollments |
 
-### Step 5: Configure Placement and Options
+### Step 5: Save the Field
 
-#### Placement
+Click **Save** or press Enter to save the field. The field is created in **Draft** status.
 
-Choose where the field appears:
+![Field saved in Draft status](/_images/en-us/config_guide/studio/registry_field_builder/05-wizard-step3-review.png)
 
-| Setting | Options |
-|---------|---------|
-| **Tab** | Profile, Identity, Participation, or Custom |
-| **Section** | Depends on tab selected |
-| **After** | Which existing field to appear after (or "At the end") |
+```{note}
+Fields are created as **Draft** by default. Draft fields can be edited freely but are not visible in registry forms until activated.
+```
 
-**Common placements**:
+#### Optional Columns
 
-| Field Type | Suggested Tab | Suggested Section |
-|------------|---------------|-------------------|
-| ID numbers | Identity | IDs |
-| Contact info | Profile | Contact |
-| Demographics | Profile | Demographics |
-| Income/financial | Profile | Financial |
-| Custom/unique data | Custom | Additional Details |
+The list view has additional optional columns you can enable:
 
-**Screenshot should show**: Step 3 of wizard showing Tab dropdown (Profile selected), Section dropdown (Demographics selected), and After dropdown (Gender selected).
-
-#### Options
-
-| Option | When to Use |
+| Column | When to Use |
 |--------|-------------|
-| **Required** | Users must fill this field before saving |
-| **Read-only** | Users can see but cannot edit (for calculated fields) |
-| **Searchable** | Can filter registry by this field |
+| **Required** | Check if users must fill this field before saving |
+| **Searchable** | Check if field should appear in search filters |
+| **Selection Options** | For Selection/Multi-Select types only |
 
-**Screenshot should show**: Options checkboxes with "Required" checked, others unchecked.
+#### Selection Options (for Selection/Multi-Select)
 
-#### Visibility
+For Selection or Multi-Select fields, you'll need to open the field details (double-click the row) to enter the choices:
 
-Control when the field shows:
+```
+physical|Physical Disability
+visual|Visual Impairment
+hearing|Hearing Impairment
+cognitive|Cognitive Disability
+```
+
+**Format:** `value|Label` (one per line). If you omit the value, the label is used as both.
+
+#### Link Options (for Link type)
+
+If you chose Link, open the field details to configure:
+
+| Setting | What to Enter |
+|---------|---------------|
+| **Link to** | Select the model to link to (e.g., Area, Language) |
+| **Filter** | Optional domain to filter records (e.g., `[('active', '=', True)]`) |
+
+#### Visibility Conditions (Advanced)
+
+For conditional visibility, open the field details and configure:
 
 | Setting | Use When |
 |---------|----------|
-| **Always visible** | Field always appears |
-| **Only when...** | Show field conditionally based on another field |
+| **Always Visible** | Field always appears |
+| **Show Conditionally** | Show based on another field's value |
 
-**Example**: Only show "Disability Type" when "Has Disability" is checked.
+**Condition operators:**
 
-**Screenshot should show**: Visibility section with "Only when another field has a specific value" selected, showing dropdowns for "Has Disability" [is checked].
+| Operator | Meaning |
+|----------|---------|
+| **Is Set** | Show when the controlling field has any value |
+| **Is Not Set** | Show when the controlling field is empty |
+| **Equals** | Show when the controlling field equals a specific value |
+| **Does Not Equal** | Show when the controlling field doesn't equal a value |
 
-Click **Save as Draft** to create the field.
+**Example:** Only show "Disability Type" when "Has Disability" field is set.
+
+### Step 6: Activate the Field
+
+Draft fields must be activated before they appear in registry forms.
+
+**To activate from the list view:**
+1. Click the **Activate** button next to the Draft field
+
+**To activate from the field details:**
+1. Double-click the field row to open details
+2. Click **Activate** in the header
+
+![Field with Activate button](/_images/en-us/config_guide/studio/registry_field_builder/07-field-activate.png)
+
+- Activating a field makes it visible to all users immediately
+- Once activated, the field cannot be edited directly (must deactivate first)
+- Activation requires **Studio Manager** permission
+
+```{warning}
+Activating makes the field live for all users. The field will appear in registry forms immediately after activation.
+```
 
 ## After Creating a Field
 
-### Review Your Field
+### Verify Your Field
+
+After activating a field:
 
 1. Go to **Registry → Individuals** (or Groups)
 2. Open any record or create a new one
-3. Find your custom field in the tab/section you specified
-4. Test entering data
+3. Find your custom field in the placement zone you selected
+4. Test entering and saving data
 
-**Screenshot should show**: Individual registry form with custom "Disability Type" field visible in the Demographics section.
-
-### Activate the Field
-
-Once you've tested:
-
-1. Return to **Studio → Registry Fields**
-2. Find your field in the list
-3. Click to open it
-4. Click **Activate** (requires Studio Manager permission)
-
-**Screenshot should show**: Field detail view with "Activate" button highlighted.
-
-**Warning**: Activating makes the field live for all users. Make sure you've tested thoroughly.
+![Registry search portal](/_images/en-us/config_guide/studio/registry_field_builder/06-field-in-registry.png)
 
 ## Managing Existing Fields
 
 ### View All Custom Fields
 
-**Studio → Registry Fields** shows all fields you've created:
+**Studio → Custom Fields** shows all fields you've created:
 
 | Column | Shows |
 |--------|-------|
-| **Field Name** | Label of the field |
-| **Type** | Field type (Text, Selection, etc.) |
-| **Location** | Tab and section |
-| **Status** | Draft or Active |
+| **Label** | Display name of the field |
+| **Target Registry** | Individual or Group |
+| **Field Type** | Text, Selection, Date, etc. |
+| **Placement Zone** | Where field appears in registry |
+| **Required** | Whether field is mandatory |
+| **Searchable** | Whether field appears in search filters |
+| **Status** | Draft, Active, or Inactive |
 
-**Screenshot should show**: Registry Field list view with several custom fields listed, showing columns as described.
+![Custom Fields list with active field](/_images/en-us/config_guide/studio/registry_field_builder/08-custom-fields-list.png)
 
 ### Edit a Field
 
-**For Draft fields**:
-1. Click the field name
-2. Make your changes
-3. Click **Save**
+**For Draft fields** (editable inline):
+1. Click on the field row to select it
+2. Edit values directly in the columns
+3. Click **Save** or press Enter
 
 **For Active fields**:
 - You cannot edit active fields directly
@@ -242,14 +280,20 @@ Once you've tested:
 
 ### Deactivate a Field
 
-**Warning**: Deactivating removes the field from forms, but existing data is preserved.
+```{warning}
+Deactivating hides the field from forms, but existing data is preserved in the database.
+```
 
-1. Open the field
-2. Click **Deactivate**
-3. System shows impact warning: "This field is used by 1,247 records"
+**From the list view:**
+1. Click **Deactivate** button next to the Active field
+
+**From the field details:**
+1. Double-click the field to open details
+2. Click **Deactivate** in the header
+3. If data exists, system shows impact warning: "This field contains data in X records"
 4. Confirm deactivation
 
-**Screenshot should show**: Deactivation confirmation dialog with warning message.
+![Field deactivated](/_images/en-us/config_guide/studio/registry_field_builder/09-deactivate-warning.png)
 
 ### Delete a Field
 
@@ -276,7 +320,6 @@ You can only delete **inactive** fields:
 **Options**:
 - Can be marked as required
 - Can be made searchable
-- Supports basic text validation
 
 ### Long Text Field
 
@@ -291,17 +334,17 @@ You can only delete **inactive** fields:
 
 ### Number Fields
 
-**Integer (whole numbers)**:
+**Whole Number (integer)**:
 - Examples: "Number of Dependents", "Age in Years"
 - No decimal places
 
-**Float (decimal numbers)**:
+**Decimal Number (float)**:
 - Examples: "Vulnerability Score", "Monthly Income"
 - Allows decimals
 
 **Options**:
-- Can set minimum/maximum values
 - Can mark as required
+- Can make searchable
 
 ### Date Field
 
@@ -314,7 +357,16 @@ You can only delete **inactive** fields:
 
 **Shows**: Calendar picker in UI
 
-**Screenshot should show**: Date field with calendar picker open.
+### Date & Time Field
+
+**Use for**: Date with time component
+
+**Examples**:
+- "Appointment DateTime"
+- "Interview Scheduled"
+- "Last Login"
+
+**Shows**: Calendar picker with time selector
 
 ### Yes/No Field
 
@@ -352,9 +404,9 @@ You can only delete **inactive** fields:
 - "Disabilities" (Multiple types)
 - "Income Sources" (Employment, Farming, Remittances, Pension)
 
-**Displays as**: Tag selector
+**Displays as**: Tag selector (multiple tags can be selected)
 
-**Screenshot should show**: Multi-select field showing tags for selected items.
+**Configuration**: Same as Selection field - define options using `value|Label` format.
 
 ### Link Field (Advanced)
 
@@ -374,6 +426,7 @@ You can only delete **inactive** fields:
 ```
 Label: Pantawid ID Number
 Type: Text
+Target: Individual
 Location: Identity > IDs
 Required: No (only for Philippines beneficiaries)
 Searchable: Yes
@@ -385,15 +438,17 @@ Searchable: Yes
 Field 1:
   Label: Has Disability
   Type: Yes/No
+  Target: Individual
   Location: Profile > Demographics
   Required: No
 
 Field 2:
   Label: Disability Type
-  Type: Selection
+  Type: Dropdown
+  Target: Individual
   Options: Physical, Visual, Hearing, Cognitive, Other
   Location: Profile > Demographics
-  Visible: Only when "Has Disability" is checked
+  Visibility: Show when "Has Disability" Is Set
   Required: No
 ```
 
@@ -402,13 +457,14 @@ Field 2:
 ```
 Label: Housing Material
 Type: Selection
+Target: Group
 Options:
   - concrete: Concrete/Brick
   - wood: Wood
   - bamboo: Bamboo/Nipa
   - mixed: Mixed Materials
   - other: Other
-Location: Custom > Additional Details
+Location: Profile > Contact
 Required: No
 ```
 
@@ -417,7 +473,8 @@ Required: No
 ```
 Label: Vulnerability Score
 Type: Number (decimal)
-Location: Custom > Additional Details
+Target: Individual
+Location: Profile > Financial
 Required: No
 Help Text: Score from 0-100 based on PMT assessment
 ```
@@ -430,11 +487,11 @@ Help Text: Score from 0-100 based on PMT assessment
 - Check that you're viewing the correct registry (Individual vs Group)
 
 **Can't change the technical name?**
-Technical names are auto-generated and cannot be edited. They must be unique and follow Odoo field naming rules (`x_cst_` prefix).
+Technical names are auto-generated from the label and cannot be edited. They use the `x_` prefix (e.g., "Disability Type" becomes `x_disability_type`). If a name already exists, a number is appended (e.g., `x_disability_type_1`).
 
 **Field appears in wrong location?**
 - Edit the field (if still Draft)
-- Change the Tab, Section, or After settings
+- Change the Placement Zone
 - Save and check again
 
 **Getting "field already exists" error?**
@@ -453,12 +510,19 @@ This requires developer help. Calculated fields need Python code.
 Studio supports basic conditional visibility. For program-specific fields, contact a developer.
 
 **Field shows but can't enter data?**
-- Check if field is marked as Read-only
 - Check user permissions for the registry
 - Verify field isn't hidden by conditional visibility
+- If the field was set as read-only (via advanced settings), it cannot be edited
 
 **How do I migrate data from one field to another?**
 This requires developer help using database migration scripts.
+
+**Can I activate multiple draft fields at once?**
+Yes, select multiple fields in the list view and use the **Activate** action from the Actions menu.
+
+**What's the difference between creating as draft vs immediate activation?**
+- **Immediate activation** (default): Field is created and usable right away
+- **Create as Draft**: Field is created but not visible in registry forms until you manually activate it - useful if you want to review settings first
 
 ## Next Steps
 
