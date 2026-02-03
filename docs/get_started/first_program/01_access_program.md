@@ -14,14 +14,14 @@ Learn how to navigate to the Programs module and understand the Program overview
 
 ## Before you start
 
-- You need access to OpenSPP with appropriate permissions
+- You need one of these roles assigned to your user: Program Manager, Program Validator, Program Viewer, or Administrator
 - OpenSPP should be installed and running
 - Sample data loaded for exploration (see {doc}`../explore/index`)
 - Allow 2-3 minutes to complete this step
 
 ## The scenario
 
-You're setting up a **Cash Transfer for Vulnerable Families** program. First, you need to understand how to access and use the program section.
+Your goal is to set up the **Cash Transfer for Vulnerable Families** program so eligible families can receive support. Before you can create or manage the program, you need to learn how to access the Programs section in OpenSPP.
 
 ## Steps
 

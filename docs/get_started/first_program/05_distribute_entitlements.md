@@ -4,17 +4,18 @@ openspp:
   products: [registry, programs]
 ---
 
-# Step 5: Generate entitlements
+# Step 5: Distribute entitlements
 
 This tutorial is for **users** who want to learn how to generate entitlements for distribution.
 
 ## What you'll learn
 
-Understand how to configure generate benefit records for distribution.
+Understand how to configure entitlement records for distribution.
 
 ## Before you start
 
 - You completed [Step 4: Understanding program cycles](04_run_cycle.md)
+- 
 - Your program has cycles with enrolled beneficiaries
 - Allow 2-3 minutes to complete this step
 

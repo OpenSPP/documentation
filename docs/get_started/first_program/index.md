@@ -20,7 +20,7 @@ By the end of this tutorial, you will have:
 - Configured eligibility criteria
 - Imported and enrolled eligible beneficiaries
 - Run a program cycle
-- Generated and reviewed entitlements
+- Reviewed and distributed entitlements
 - Understood the complete program workflow
 
 ## Tutorial steps
@@ -31,7 +31,7 @@ This tutorial covers the following steps:
 2. **Create program** - Define a new social protection program
 3. **Import and enroll beneficiaries** - Learn how to add eligible beneficiaries to the program
 4. **Run a cycle** - Execute a program cycle
-5. **Distribute entitlements** - Generate and review benefit entitlements
+5. **Distribute entitlements** - Review and distribute benefit entitlements
 6. **Next steps** - Where to go from here
 
 ## Prerequisites
@@ -39,7 +39,7 @@ This tutorial covers the following steps:
 Before starting this tutorial:
 
 - OpenSPP should be installed and running (see {doc}`../installation/index`)
-- OpenSPP SPMIS should be installed
+- OpenSPP SP-MIS Demo V2 `spp_mis_demo_v2` should be installed (see {doc}`Install a module in Odoo <../installation/modules>`)
 - Sample data loaded for exploration (see {doc}`../explore/index`)
 - Basic familiarity with {doc}`/learn/concepts/index`
 - Access to OpenSPP with administrator privileges

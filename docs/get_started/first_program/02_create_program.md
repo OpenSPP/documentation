@@ -112,6 +112,10 @@ You want to distribute the fixed amount **1200 PHP** to each family that fulfill
 
     ![Screenshot: Add a line button at the bottom of of program form](/_images/en-us/get_started/first_program/02_create_program/cle5_8.png)
 
+```{note}
+**Approval workflow:** The role selected here is the one that will be able to approve your entitlements. Only users with that role see the Approve entitlement button; for others it is hidden.
+```
+
 3. In the popup window displayed, select **Fixed Amount** in the dropdown for **Amount Formula**. Enter **1200** in the field **Base Amount**.
 
     ![Screenshot: Pop up window to configure distributed amount](/_images/en-us/get_started/first_program/02_create_program/cle5_9.png)
@@ -119,6 +123,7 @@ You want to distribute the fixed amount **1200 PHP** to each family that fulfill
 4. Click **Save & Close**.
 
     ![Screenshot: Program popup with amount to be distributed](/_images/en-us/get_started/first_program/02_create_program/cle5_16.png)
+
 
 ### 9. Configure distribution schedule
 
@@ -128,11 +133,15 @@ In this scenario we want the distribution to be performed once every month, ther
 
 ![Entitlement configuration dialog showing Distribution Schedule](/_images/en-us/get_started/first_program/02_create_program/cle5_5.png)
 
+```{note}
+**Cycle Approval:** The role selected in the Cycle Approval dropdown is the one who can approve the program cycle. Only users with that role see the Approve button; for others it is hidden.
+```
+
 ### 10. Complete creation of program
 
 Click the **Create Program** button at the bottom to create your program.
 
-After saving, you'll be taken to the program page. Notice:
+After saving, you'll be redirected to the program page. Notice:
 - The program name appears at the top
 - The status shows **Active**
 
