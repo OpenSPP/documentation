@@ -103,23 +103,21 @@ Fill in the basic information:
 
 | Field | Value |
 |-------|-------|
-| **Name** | Children Under 5 Count |
+| **Variable Name** | Children Under 5 Count |
 | **CEL Accessor** | `children_under_5_count` |
-| **Applies To** | Group/Household |
-| **Value Type** | Number |
 
 ![Variable form - basic info](/_images/en-us/config_guide/cel/quick_start/03-variable-form-basic.png)
 
 ### Step 4: Configure the source
 
-Select **Aggregate** as the Source Type, then configure:
+Select **Member Aggregate** as the Source Type, then configure:
 
 | Field | Value |
 |-------|-------|
-| **Source Type** | Aggregate |
-| **Aggregate Target** | Members |
+| **Source Type** | Member Aggregate |
+| **Aggregate Target** | Household Members |
 | **Aggregate Type** | Count |
-| **Aggregate Filter** | `age_years(m.birthdate) < 5` |
+| **Filter (optional)** | `age_years(m.birthdate) < 5` |
 
 ![Variable form - aggregate configuration](/_images/en-us/config_guide/cel/quick_start/04-variable-aggregate-config.png)
 
@@ -162,9 +160,9 @@ Fill in the basic information:
 | Field | Value |
 |-------|-------|
 | **Name** | Priority Household |
-| **Expression Type** | Filter |
-| **Context Type** | Group/Household |
-| **Output Type** | Boolean |
+| **Type** | Filter |
+| **Context** | Group/Household |
+| **Output Type** | Yes/No (Boolean) |
 
 ![Expression form - basic info](/_images/en-us/config_guide/cel/quick_start/06-expression-form-basic.png)
 
@@ -186,17 +184,22 @@ The editor provides:
 ### Step 5: Test your expression (recommended)
 
 1. Click the **Tests** tab
-2. Click **Add a line** to add a test case
+2. Click **Add a test case** to add a test case
 3. Select a test household from the registry
 4. Set the expected result (True or False)
-5. Click **Run Tests** to verify
+5. Click **Run All Tests** to verify
 
 ![Expression test tab](/_images/en-us/config_guide/cel/quick_start/08-expression-tests.png)
 
-### Step 6: Save and activate
+### Step 6: Save and publish
 
 1. Click **Save** to create the expression in Draft state
-2. Click **Activate** to make it available for use
+2. Click **Submit for Approval** to request publication
+3. Once approved, the expression will be **Published** and available for use
+
+```{note}
+Expressions follow a workflow: Draft → Pending Approval → Published → Archived. Only users with approval permissions can publish expressions.
+```
 
 ## How to know what data is available
 
@@ -213,7 +216,7 @@ Type in the editor and press **Ctrl+Space** to see suggestions:
 
 ### Symbol browser
 
-Click the **symbol browser icon** (sidebar button) to browse:
+Click the **Symbols** button above the CEL editor to browse:
 - Available symbols and their fields
 - Active variables you can use
 - Built-in functions with descriptions
@@ -244,8 +247,8 @@ The editor shows real-time validation:
 - Try accessing via the Studio Dashboard cards instead
 
 **Variable not appearing in autocomplete?**
-- Make sure the variable is **Active**, not Draft
-- Check that **Applies To** matches your context (Individual vs Group)
+- Make sure the variable is **Active** (variables use Draft → Active workflow)
+- Check that the variable's context matches your expression context (Individual vs Group)
 - Verify you're using the **CEL Accessor** name, not the display name
 
 **Expression validates but matches 0 records?**
@@ -258,8 +261,9 @@ The editor shows real-time validation:
 - Check that referenced variables are Active
 - Verify the context matches (individual vs group profiles have different symbols)
 
-**Can't activate a variable or expression?**
-- You need **Studio Manager** permission to activate
+**Can't activate a variable or publish an expression?**
+- Variables: You need **Studio Manager** permission to activate
+- Expressions: You need approval permissions to publish (expressions go through an approval workflow)
 - Check that all required fields are filled
 - For aggregates, verify the filter expression is valid
 
