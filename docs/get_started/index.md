@@ -22,11 +22,11 @@ Whether you're evaluating OpenSPP for your organization or ready to start implem
 
 ## Quick links
 
-- New to social protection systems? Start with {doc}`../learn/index`
-- Ready to install? See {doc}`installation/index`
-- Want to explore with sample data? See {doc}`explore/index`
-- Just need the registry? Try {doc}`first_household/index`
-- Ready to run programs? Try {doc}`first_program/index`
+- New to social protection systems? Start with **{doc}`../learn/index`**
+- Ready to install? See **{doc}`installation/index`**
+- Want to explore with sample data? See **{doc}`explore/index`**
+- Just need the registry? Try **{doc}`first_household/index`**
+- Ready to run programs? Try **{doc}`first_program/index`**
 
 ```{toctree}
 :maxdepth: 2

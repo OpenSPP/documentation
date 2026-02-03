@@ -8,13 +8,15 @@ openspp:
 
 This section encompasses essential information and guidelines pertinent to OpenSPP. These topics are presented to provide clarity and support to those engaged in the project, ensuring a structured and secure approach to participation and development.
 
-- {doc}`how_to_contribute_to_the_project`
-- {doc}`i18n_l10n`
-- {doc}`module_lifecycle_development_status`
-- {doc}`module_lifecycle_maintainer_role`
-- {doc}`code_of_conduct`
-- {doc}`security_report`
-- {doc}`license`
+## What you'll find here
+
+- **{doc}`how_to_contribute_to_the_project`**
+- **{doc}`i18n_l10n`**
+- **{doc}`module_lifecycle_development_status`**
+- **{doc}`module_lifecycle_maintainer_role`**
+- **{doc}`code_of_conduct`**
+- **{doc}`security_report`**
+- **{doc}`license`**
 
 ```{toctree}
 :maxdepth: 2
