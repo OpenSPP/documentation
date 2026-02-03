@@ -489,7 +489,6 @@ html_use_opensearch = "https://docs.openspp.org"
 
 html_sidebars = {
     "**": [
-        "sidebar-logo.html",
         "search-field.html",
         "sbt-sidebar-nav.html",
     ]
