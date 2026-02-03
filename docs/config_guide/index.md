@@ -25,7 +25,7 @@ The Configuration Guide is designed for implementers who need to customize OpenS
 - **[Event data](event_data/index.md)** - Capturing external data from surveys and forms (V2 enhanced)
 - **[Change request types](change_request_types/index.md)** - Configuring change request workflows (NEW V2)
 - **[Consent configuration](consent/index.md)** - Managing data sharing consent (NEW V2)
-- **[Role configuration](role_configuration.md)** - Configuring users, roles, and role-based access (and optionally local/area-scoped roles)
+- **[Role configuration](role_configuration/index.md)** - Configuring users, roles, and role-based access (global and local roles)
 
 ```{toctree}
 :maxdepth: 2
@@ -40,7 +40,7 @@ variables/index
 event_data/index
 change_request_types/index
 consent/index
-role_configuration
+role_configuration/index
 ```
 
 <!-- Hidden until ready: drims/index -->

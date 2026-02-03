@@ -22,7 +22,7 @@ If your deployment includes the Roles feature, OpenSPP shows a banner on the use
 
 ## Common admin workflows
 
-For a fully illustrated walkthrough (including screenshots), see {doc}`user_guides/administrating_role_based_access`. For implementer-focused role configuration, see {doc}`/config_guide/role_configuration`.
+For a fully illustrated walkthrough (including screenshots), see {doc}`user_guides/administrating_role_based_access`. For implementer-focused role configuration, see {doc}`/config_guide/role_configuration/index`.
 
 ### Create a user
 
@@ -40,7 +40,7 @@ Screenshot needed: User creation form (Odoo 19 + OpenSPP).
 3. Add one or more role lines:
    - **Role**: the access role to grant
    - **From / To** (optional): time-bound access
-   - **Enabled**: turn the role on/off
+   - **Enabled**: computed status based on date range
 
 ```{note}
 Screenshot needed: Roles tab on the user form showing one enabled role line.
