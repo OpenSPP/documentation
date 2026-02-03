@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP Studio - Events
+# Studio - Events
 
 
 ## Overview

@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP CR Types - Base
+# CR Types - Base
 
 
 ## Overview

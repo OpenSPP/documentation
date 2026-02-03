@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP API V2 - Service Points
+# API V2 - Service Points
 
 
 ## Overview

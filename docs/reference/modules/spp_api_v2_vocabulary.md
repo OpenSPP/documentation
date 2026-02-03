@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP API V2 - Vocabulary
+# API V2 - Vocabulary
 
 
 ## Overview

@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP Starter: Social Registry
+# Starter: Social Registry
 
 
 ## Overview

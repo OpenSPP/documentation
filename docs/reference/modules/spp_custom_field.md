@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP Custom Fields
+# Custom Fields
 
 
 ## Overview

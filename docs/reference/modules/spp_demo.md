@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP Demo
+# Demo
 
 
 ## Overview

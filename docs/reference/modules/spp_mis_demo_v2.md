@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP MIS Demo V2
+# MIS Demo V2
 
 
 ## Overview

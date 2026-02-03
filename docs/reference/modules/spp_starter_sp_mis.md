@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP Starter: SP-MIS
+# Starter: SP-MIS
 
 
 ## Overview

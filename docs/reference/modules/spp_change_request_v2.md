@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP Change Request V2
+# Change Request V2
 
 
 ## Overview

@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP Base Settings
+# Base Settings
 
 
 ## Overview

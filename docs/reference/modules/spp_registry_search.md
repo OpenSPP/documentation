@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP Registry Search Portal
+# Registry Search Portal
 
 
 ## Overview
