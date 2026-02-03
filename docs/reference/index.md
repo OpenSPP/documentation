@@ -12,7 +12,6 @@ This section provides quick lookup resources for OpenSPP, including comprehensiv
 
 - **[Modules index](modules/index.md)**: All OpenSPP modules organized by category (~82 modules)
 - **[Vocabularies](vocabularies/index.md)**: Standard code lists and terminologies (NEW V2) - ISO codes, ILO, WHO, UNESCO standards
-- **[API reference](api/index.md)**: Auto-generated API documentation (OpenAPI/Swagger)
 - **Glossary**: Common terms and definitions
   - **{doc}`vocabularies`** - Multi-lingual terminology used within OpenSPP and social protection
   - **{doc}`glossary/humanitarian`** - Humanitarian logistics terminology for DRIMS
@@ -23,7 +22,6 @@ This section provides quick lookup resources for OpenSPP, including comprehensiv
 
 modules/index
 vocabularies/index
-api/index
 glossary/humanitarian
 ../glossary
 ```

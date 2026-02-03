@@ -413,4 +413,3 @@ class TestAPIMigration(TransactionCase):
 
 - {doc}`namespace_changes` - Module and model renames
 - {doc}`model_renames` - Model reference changes
-- [OpenSPP API v2 Reference](../../reference/api/index.md)
