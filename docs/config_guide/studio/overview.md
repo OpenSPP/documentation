@@ -12,7 +12,7 @@ This guide is for **implementers** configuring OpenSPP Studio. You should be fam
 
 OpenSPP Studio is a no-code configuration interface that lets you customize OpenSPP without developer involvement. It handles 80% of common customization needs through visual tools.
 
-### Mental Model
+### Mental model
 
 Think of Studio like KoBoToolbox's form builder, but for configuring your entire registry system:
 
@@ -70,19 +70,20 @@ Think of Studio like KoBoToolbox's form builder, but for configuring your entire
 **Use when**: You collect time-based observations or survey data about registrants.
 
 **Examples**:
-- Import vulnerability assessment from KoBoToolbox
-- Create monthly follow-up visit form
-- Design household verification survey
+- Create a vulnerability assessment form
+- Design monthly follow-up visit form
+- Build household verification survey
 
 **What you can do**:
 - Create event types with custom fields
-- Import field definitions from Kobo/ODK forms
-- Connect to external data collection servers
-- Configure event lifecycle (expiration, approval, replacement)
+- Define field types (text, number, date, selection, etc.)
+- Configure conditional field visibility
+- Set up approval workflows for event data
+- Organize fields into groups/tabs
 
 **What requires a developer**:
-- Complex data transformations during import
-- Custom integrations beyond Kobo/ODK
+- Integration with external data collection tools (Kobo, ODK)
+- Complex data transformations
 - Performance optimization for large datasets
 
 → See {doc}`event_type_designer` for detailed instructions.
@@ -93,14 +94,14 @@ Think of Studio like KoBoToolbox's form builder, but for configuring your entire
 
 **Examples**:
 - Phone number update with supervisor approval
-- Address change request with documentation
+- Address change request with review
 - ID document update workflow
 
 **What you can do**:
-- Create simple change request types
-- Define what information to collect
-- Map fields to registry for automatic updates
-- Configure approval requirements
+- Create change request types for field updates
+- Select which existing registry fields can be updated
+- Configure approval groups
+- Enable auto-apply when approved
 
 **What requires a developer**:
 - Complex change requests (add member, split household, merge records)
@@ -132,23 +133,17 @@ Think of Studio like KoBoToolbox's form builder, but for configuring your entire
 
 → See {doc}`/config_guide/cel/index` for detailed instructions on building eligibility expressions.
 
-### 5. External Connections
+### 5. External connections (planned)
 
-**Use when**: You want to connect OpenSPP to KoBoToolbox or ODK Central for data collection.
+```{note}
+External connections for KoBoToolbox and ODK Central integration are planned for a future release. Currently, event types can store a Kobo Form ID reference for documentation purposes, but automatic data synchronization is not yet available.
+```
 
-Access external connections through the **Connections** menu in Studio.
-
-**What you can do**:
+**Planned capabilities**:
 - Connect to Kobo servers with API tokens
 - Connect to ODK Central servers
-- Browse and import form definitions
-- Manually fetch submissions (Phase 1)
-
-**Future capabilities** (Phase 2):
-- Automatic submission sync via webhooks
-- Real-time event creation from submissions
-
-→ See {doc}`event_type_designer` for instructions on importing Kobo/ODK forms.
+- Import form definitions as event types
+- Automatic submission sync
 
 ## Configuration Lifecycle
 
@@ -160,7 +155,7 @@ Draft → Active → Inactive
      (can reactivate)
 ```
 
-### States Explained
+### States explained
 
 | State | Meaning | Who Can Edit |
 |-------|---------|--------------|
@@ -168,7 +163,7 @@ Draft → Active → Inactive
 | **Active** | Configuration is live and in use | Studio Manager only |
 | **Inactive** | Configuration was active but is now disabled | Studio Manager only |
 
-### Important Rules
+### Important rules
 
 - You can freely edit **Draft** configurations
 - You cannot delete **Active** configurations (deactivate first)
@@ -201,26 +196,25 @@ Studio uses OpenSPP's privilege-based security system. Groups appear as "Studio 
 
 Studio is designed to handle 80% of common customization needs. Here's what's included and what requires developer help:
 
-### What Studio Handles (80%)
+### What Studio handles (80%)
 
-| Task | Studio Tool |
+| Task | Studio tool |
 |------|-------------|
 | Add fields to registries | ✓ Registry Field Builder |
 | Create event types | ✓ Event Type Designer |
-| Import Kobo forms | ✓ Event Type Designer |
 | Simple change requests | ✓ Change Request Builder |
 | CEL eligibility expressions | ✓ Expression Editor (Rules menu) |
 | Field validation | ✓ Configuration options |
 | Conditional visibility | ✓ Visibility settings |
 
-### What Requires Developers (20%)
+### What requires developers (20%)
 
-| Task | Why Developer Needed |
+| Task | Why developer needed |
 |------|---------------------|
 | New registry tabs/pages | View architecture changes |
 | Complex change requests (add member, split household) | Multi-record operations |
 | Custom computed fields | Python code required |
-| New integrations | API development needed |
+| Kobo/ODK integrations | API development needed |
 | Custom reports | Report builder not in scope |
 | Performance-critical batch operations | Queue job configuration |
 
@@ -243,7 +237,7 @@ The Studio Dashboard is your starting point for configuring OpenSPP without code
 
 ![Studio Dashboard with main tool cards](/_images/en-us/config_guide/studio/overview/02-studio-dashboard.png)
 
-### Dashboard Cards
+### Dashboard cards
 
 The dashboard provides quick access to the main Studio tools:
 
@@ -257,7 +251,7 @@ The dashboard provides quick access to the main Studio tools:
 
 Each card includes a brief description and a button to open that tool.
 
-### Studio Menu
+### Studio menu
 
 Besides the dashboard, you can access Studio features through the main Studio menu:
 
@@ -275,16 +269,16 @@ Additional menu items may appear depending on installed modules:
 - **Connections** - Set up external data sources like Kobo/ODK (requires `spp_studio_dci`)
 ```
 
-## Best Practices
+## Best practices
 
-### 1. Start with Draft
+### 1. Start with draft
 
 Always create configurations as **Draft** first:
 - Test thoroughly before activating
 - Have colleagues review configurations
 - Check that field names and labels are clear
 
-### 2. Use Clear Names
+### 2. Use clear names
 
 Choose descriptive names that other staff will understand:
 
@@ -294,39 +288,39 @@ Choose descriptive names that other staff will understand:
 | "Survey" | "Monthly Household Visit" |
 | "Update" | "Phone Number Change Request" |
 
-### 3. Document Your Intent
+### 3. Document your intent
 
 Use help text and descriptions:
 - Explain what fields are for
 - Note where data comes from
 - Describe when to use change request types
 
-### 4. Test Before Activating
+### 4. Test before activating
 
 For CEL expressions:
 - Use the test personas feature to validate your expressions
 - Verify expected registrants are included/excluded
 - Check with program staff that logic is correct
 
-### 5. Coordinate with Team
+### 5. Coordinate with team
 
 Before activating configurations that affect others:
 - Notify relevant staff
 - Explain what will change
 - Provide training if needed
 
-## Studio vs Developer Work
+## Studio vs developer work
 
 Understanding when to use Studio vs when to request developer help:
 
-### Use Studio When
+### Use Studio when
 
 - Adding standard field types to registries
 - Creating new survey/event types
 - Building simple update workflows
 - Defining eligibility based on existing data
 
-### Request Developer Help When
+### Request developer help when
 
 - Needing calculations or formulas in fields
 - Creating complex multi-step workflows
@@ -334,7 +328,7 @@ Understanding when to use Studio vs when to request developer help:
 - Optimizing performance for large-scale operations
 - Adding new core functionality
 
-## Are You Stuck?
+## Are you stuck?
 
 **Can't see certain options in Studio?**
 Check your permissions. You may need Studio Manager access for activation/deactivation.
@@ -354,7 +348,7 @@ You cannot edit active configurations directly. Options:
 **Getting "field already exists" error?**
 Field names must be unique. Choose a different name or check if the field was created previously.
 
-## Next Steps
+## Next steps
 
 Now that you understand Studio's capabilities:
 
