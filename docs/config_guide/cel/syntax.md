@@ -8,7 +8,7 @@ openspp:
 
 This guide is for **implementers** who need detailed syntax documentation.
 
-## Expression Types
+## Expression types
 
 Expressions in OpenSPP are categorized by type:
 
@@ -21,7 +21,7 @@ Expressions in OpenSPP are categorized by type:
 | Validation | Boolean | Data validation rules |
 | Other | Any | Library/utility expressions |
 
-## Basic Syntax
+## Basic syntax
 
 ### Literals
 
@@ -82,9 +82,9 @@ Use `has()` to check if a field exists before accessing:
 has(me.birthdate) and age_years(me.birthdate) >= 18
 ```
 
-## Built-in Functions
+## Built-in functions
 
-### Date/Time Functions
+### Date/time functions
 
 | Function | Example | Description |
 |----------|---------|-------------|
@@ -92,7 +92,7 @@ has(me.birthdate) and age_years(me.birthdate) >= 18
 | `age_months(date)` | `age_months(me.birthdate)` | Months since date |
 | `age_days(date)` | `age_days(me.registration_date)` | Days since date |
 
-### Math Functions
+### Math functions
 
 | Function | Example | Description |
 |----------|---------|-------------|
@@ -100,7 +100,7 @@ has(me.birthdate) and age_years(me.birthdate) >= 18
 | `max(a, b)` | `max(me.score, 0)` | Maximum value |
 | `abs(n)` | `abs(me.balance)` | Absolute value |
 
-### String Functions
+### String functions
 
 | Function | Example | Description |
 |----------|---------|-------------|
@@ -109,7 +109,7 @@ has(me.birthdate) and age_years(me.birthdate) >= 18
 | `contains(s, sub)` | `me.name.contains("Jr")` | Check substring |
 | `size(s)` | `size(me.name)` | String length |
 
-### Collection Functions
+### Collection functions
 
 Used with relations like `members`, `enrollments`, `entitlements`:
 
@@ -121,13 +121,13 @@ Used with relations like `members`, `enrollments`, `entitlements`:
 | `sum(expr, predicate)` | `members.sum(m.income, true)` | Sum values |
 | `filter(predicate)` | `enrollments.filter(e.state == "enrolled")` | Filter list |
 
-### Existence Check
+### Existence check
 
 | Function | Example | Description |
 |----------|---------|-------------|
 | `has(field)` | `has(me.birthdate)` | Field exists and not null |
 
-## Collection Predicates
+## Collection predicates
 
 When using collection functions, predicates reference items with a loop variable:
 
@@ -145,16 +145,16 @@ Newer syntax may omit the explicit loop variable:
 Both forms are supported.
 ```
 
-## Profiles and Symbols
+## Profiles and symbols
 
-### What Are Profiles?
+### What are profiles?
 
 Profiles define what data is available in a given context:
 - The root model ("current record")
 - Related collections
 - Available functions
 
-### Default Profiles
+### Default profiles
 
 | Profile | Root Model | Available Relations |
 |---------|-----------|---------------------|
@@ -164,7 +164,7 @@ Profiles define what data is available in a given context:
 | `entitlements` | `spp.entitlement` | - |
 | `grm_tickets` | `spp.grm.ticket` | - |
 
-### Root Record Symbols
+### Root record symbols
 
 Most profiles provide access to the current record:
 
@@ -178,7 +178,7 @@ Example:
 me.is_registrant == true and me.active == true
 ```
 
-## CEL Editor Widget
+## CEL editor widget
 
 The Studio CEL editor provides:
 
@@ -213,16 +213,16 @@ For developers, the widget calls these endpoints:
 | `POST /spp_cel/symbols/<profile>` | Get symbols for profile |
 | `POST /spp_cel/validate` | Validate expression |
 
-## CEL Execution Modes
+## CEL execution modes
 
-### Compile-to-Domain
+### Compile-to-domain
 
 Used for record selection (eligibility, search):
 - Supports profile symbols and relations
 - Compiles to Odoo domain (SQL-optimized)
 - Shows matching count in editor
 
-### Runtime Evaluation
+### Runtime evaluation
 
 Used for value computation (amounts, routing):
 - Works with provided context dictionary
@@ -237,7 +237,7 @@ Used for value computation (amounts, routing):
 | Arithmetic | ✓ | ✓ |
 | Context variables | ✓ | ✓ |
 
-## Are You Stuck?
+## Are you stuck?
 
 **"Unknown symbol" error?**
 - Check the profile matches your context (individual vs group)

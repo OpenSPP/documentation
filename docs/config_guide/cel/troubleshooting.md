@@ -8,7 +8,7 @@ openspp:
 
 This guide is for **implementers** debugging CEL expressions that aren't working as expected.
 
-## Quick Diagnosis
+## Quick diagnosis
 
 | Symptom | Likely Cause | Jump To |
 |---------|--------------|---------|
@@ -38,7 +38,7 @@ This almost always means:
    - For group context: `members.` prefix
    - For enrollments: `enrollments.` prefix
 
-### Common Mistakes
+### Common mistakes
 
 | You Wrote | Problem | Fix |
 |-----------|---------|-----|
@@ -47,7 +47,7 @@ This almost always means:
 | `members.age` | Age is computed | `age_years(m.birthdate)` |
 | `income` | Field might be custom | Check actual field name |
 
-### If Field Doesn't Exist
+### If field doesn't exist
 
 If you need a field that isn't available:
 1. Add it as a custom field in Registry configuration
@@ -88,7 +88,7 @@ Not: `x_cel_var_children_u5` ✗
 
 ## 3. Syntax Errors
 
-### Common Mistakes
+### Common mistakes
 
 | Mistake | Problem | Fix |
 |---------|---------|-----|
@@ -97,7 +97,7 @@ Not: `x_cel_var_children_u5` ✗
 | `AND` / `OR` | Wrong case | `and` / `or` |
 | `me.status = "active"` | Single equals | `me.status == "active"` |
 
-### String Quoting
+### String quoting
 
 Strings must be quoted:
 
@@ -109,7 +109,7 @@ me.status == active
 me.status == "active"
 ```
 
-### Boolean Values
+### Boolean values
 
 Booleans are lowercase:
 
@@ -121,7 +121,7 @@ me.is_group == True
 me.is_group == true
 ```
 
-### Operator Case
+### Operator case
 
 Operators are lowercase:
 
@@ -133,7 +133,7 @@ a AND b OR c
 a and b or c
 ```
 
-### Parentheses for Precedence
+### Parentheses for precedence
 
 When mixing `and`/`or`, use parentheses:
 
@@ -146,7 +146,7 @@ a and b or c
 a and (b or c)
 ```
 
-## 4. Validates but Matches 0 Records
+## 4. Validates but matches 0 records
 
 The expression is syntactically correct but finds no matches.
 
@@ -168,7 +168,7 @@ The expression is syntactically correct but finds no matches.
    - Are there matching events for test registrants?
    - Are events in the expected state?
 
-### Debugging Steps
+### Debugging steps
 
 1. **Simplify the expression**
    ```cel
@@ -189,7 +189,7 @@ The expression is syntactically correct but finds no matches.
    - Build expression to match just that record
    - Expand from there
 
-## 5. Performance Issues
+## 5. Performance issues
 
 ### Symptoms
 
@@ -197,7 +197,7 @@ The expression is syntactically correct but finds no matches.
 - Eligibility check times out
 - "Python fallback" warnings
 
-### Causes and Solutions
+### Causes and solutions
 
 | Cause | Solution |
 |-------|----------|
@@ -206,7 +206,7 @@ The expression is syntactically correct but finds no matches.
 | Many nested conditions | Break into variables |
 | Uncached expensive variables | Enable caching |
 
-### Use Cached Variables
+### Use cached variables
 
 For expensive computations:
 
@@ -215,7 +215,7 @@ For expensive computations:
 3. Set **Cache Strategy** to TTL or Manual
 4. Configure invalidation triggers
 
-### Simplify Event Queries
+### Simplify event queries
 
 Instead of complex `where` predicates:
 
@@ -234,9 +234,9 @@ For batch eligibility checks:
 - Run precompute before eligibility assessment
 - Contact administrator for setup
 
-## Debugging Tools
+## Debugging tools
 
-### Symbol Browser
+### Symbol browser
 
 1. Open the CEL editor
 2. Click the symbol browser icon
@@ -246,14 +246,14 @@ For batch eligibility checks:
    - Variables
    - Functions
 
-### Validation Preview
+### Validation preview
 
 The editor shows:
 - Syntax errors with line/column
 - Unknown symbol warnings
 - Matching record count
 
-### Test Cases
+### Test cases
 
 For expressions in Studio:
 
@@ -261,7 +261,7 @@ For expressions in Studio:
 2. Add test cases with expected results
 3. Run tests to verify behavior
 
-## Getting More Help
+## Getting more help
 
 If you're still stuck:
 
@@ -277,7 +277,7 @@ If you're still stuck:
    - They can check server logs
    - They can verify module configuration
 
-## Related Documentation
+## Related documentation
 
 - {doc}`quick_start` - Basic concepts
 - {doc}`syntax` - Complete syntax reference

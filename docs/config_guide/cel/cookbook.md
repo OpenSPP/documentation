@@ -14,9 +14,9 @@ Copy, paste, and adapt these patterns for your use case.
 Which symbols are available depends on the screen and profile. Use the editor's symbol browser to confirm what exists in your context.
 ```
 
-## Basic Patterns
+## Basic patterns
 
-### Boolean Logic
+### Boolean logic
 
 ```cel
 me.is_registrant == true and me.active == true
@@ -27,7 +27,7 @@ Equivalent with operators:
 me.is_registrant && me.active
 ```
 
-### Handle Missing Values
+### Handle missing values
 
 Always check existence before accessing optional fields:
 
@@ -35,7 +35,7 @@ Always check existence before accessing optional fields:
 has(me.birthdate) and age_years(me.birthdate) >= 18
 ```
 
-### Ternary (If/Else)
+### Ternary (if/else)
 
 ```cel
 me.is_group ? 1 : 0
@@ -46,16 +46,16 @@ More complex:
 me.income < 5000 ? "low" : (me.income < 15000 ? "medium" : "high")
 ```
 
-### String Comparisons
+### String comparisons
 
 ```cel
 me.status == "active"
 me.region != "excluded_region"
 ```
 
-## Household Composition
+## Household composition
 
-### Any Child Under 5
+### Any child under 5
 
 ```cel
 members.exists(m, age_years(m.birthdate) < 5)
@@ -66,20 +66,20 @@ Or newer syntax:
 members.exists(age_years(m.birthdate) < 5)
 ```
 
-### Count Children Under 18
+### Count children under 18
 
 ```cel
 members.count(m, age_years(m.birthdate) < 18)
 ```
 
-### Count Children in Age Range
+### Count children in age range
 
 Children aged 6-12:
 ```cel
 members.count(m, age_years(m.birthdate) >= 6 and age_years(m.birthdate) <= 12)
 ```
 
-### Female Head of Household
+### Female head of household
 
 ```cel
 members.exists(m, head(m) and m.gender == "female")
@@ -89,26 +89,26 @@ members.exists(m, head(m) and m.gender == "female")
 The exact gender field/value depends on your data model. Use autocomplete to find the right field (e.g., `gender`, `gender_id.name`, `gender_id.code`).
 ```
 
-### Elderly Member Present
+### Elderly member present
 
 Person over 65:
 ```cel
 members.exists(m, age_years(m.birthdate) >= 65)
 ```
 
-### Disabled Member Present
+### Disabled member present
 
 ```cel
 members.exists(m, m.has_disability == true)
 ```
 
-### Household Size
+### Household size
 
 ```cel
 members.count(m, true) >= 3
 ```
 
-### Sum Member Income
+### Sum member income
 
 ```cel
 members.sum(m.income, true)
@@ -119,27 +119,27 @@ With threshold:
 members.sum(m.income, true) < 10000
 ```
 
-## Program Enrollments
+## Program enrollments
 
-### Any Active Enrollment
+### Any active enrollment
 
 ```cel
 enrollments.exists(e, e.state == "enrolled")
 ```
 
-### Enrolled in Specific Program
+### Enrolled in specific program
 
 ```cel
 enrollments.exists(e, e.state == "enrolled" and e.program_id.name == "4Ps")
 ```
 
-### Not Currently Enrolled
+### Not currently enrolled
 
 ```cel
 not enrollments.exists(e, e.state == "enrolled")
 ```
 
-### Count Active Enrollments
+### Count active enrollments
 
 ```cel
 enrollments.count(e, e.state == "enrolled")
@@ -147,68 +147,68 @@ enrollments.count(e, e.state == "enrolled")
 
 ## Entitlements
 
-### Has Approved Entitlement
+### Has approved entitlement
 
 ```cel
 entitlements.exists(ent, ent.state == "approved")
 ```
 
-### Total Entitlement Amount
+### Total entitlement amount
 
 ```cel
 entitlements.sum(ent.amount, ent.state == "approved")
 ```
 
-### Entitlements This Year
+### Entitlements this year
 
 ```cel
 entitlements.exists(ent, ent.state == "approved" and ent.date_approved >= "2024-01-01")
 ```
 
-## Event Data
+## Event data
 
 Requires event/CEL integration modules.
 
-### Has Recent Visit
+### Has recent visit
 
 Visit in last 90 days:
 ```cel
 has_event("visit", within_days=90)
 ```
 
-### Count Visits This Year
+### Count visits this year
 
 ```cel
 events_count("visit", period=this_year())
 ```
 
-### Total Payments Received
+### Total payments received
 
 ```cel
 events_sum("payment", "amount", period=this_year())
 ```
 
-### Latest Survey Income
+### Latest survey income
 
 ```cel
 event("survey", "income", select="latest", within_months=12, default=0)
 ```
 
-### Income Below Threshold
+### Income below threshold
 
 ```cel
 event("survey", "income", select="latest", within_months=12, default=0) < 500
 ```
 
-### Completed Health Check
+### Completed health check
 
 ```cel
 has_event("health_check", within_months=6)
 ```
 
-## Eligibility Rules
+## Eligibility rules
 
-### Income-Based
+### Income-based
 
 Household income under threshold:
 ```cel
@@ -220,21 +220,21 @@ Or with literal:
 household_income < 10000
 ```
 
-### Demographic Targeting
+### Demographic targeting
 
 Children under 5 in low-income household:
 ```cel
 children_under_5_count >= 1 and household_income < poverty_line
 ```
 
-### Geographic Targeting
+### Geographic targeting
 
 In target region:
 ```cel
 me.area_id.name == "Region IV-A"
 ```
 
-### Multi-Criteria
+### Multi-criteria
 
 ```cel
 household_income < poverty_line
@@ -242,122 +242,122 @@ and children_under_5_count >= 1
 and not enrollments.exists(e, e.state == "enrolled" and e.program_id.name == "Other Program")
 ```
 
-### Vulnerability Score
+### Vulnerability score
 
 ```cel
 vulnerability_score >= 50
 ```
 
-## Entitlement Amount Formulas
+## Entitlement amount formulas
 
 These are evaluated at runtime with a small context (typically `me` and `base_amount`).
 
-### Fixed Amount
+### Fixed amount
 
 ```cel
 500
 ```
 
-### Scaled by Base
+### Scaled by base
 
 ```cel
 base_amount * 1.1
 ```
 
-### Per Child Bonus
+### Per child bonus
 
 ```cel
 base_amount + (children_under_5_count * 200)
 ```
 
-### Capped Amount
+### Capped amount
 
 ```cel
 min(base_amount + (children_count * 100), 2000)
 ```
 
-### Tiered by Household Size
+### Tiered by household size
 
 ```cel
 members.count(m, true) <= 3 ? 500 : (members.count(m, true) <= 5 ? 750 : 1000)
 ```
 
-## Scoring Formulas
+## Scoring formulas
 
-### Simple Indicator
+### Simple indicator
 
 ```cel
 me.has_disability ? 10 : 0
 ```
 
-### Age-Based Score
+### Age-based score
 
 ```cel
 age_years(me.birthdate) >= 65 ? 5 : 0
 ```
 
-### Household Composition Score
+### Household composition score
 
 ```cel
 children_under_5_count * 3 + elderly_count * 2
 ```
 
-### Normalized Score
+### Normalized score
 
 ```cel
 min(vulnerability_score / 10, 10)
 ```
 
-## Validation Rules
+## Validation rules
 
-### Required Field
+### Required field
 
 ```cel
 has(me.birthdate)
 ```
 
-### Age Validation
+### Age validation
 
 ```cel
 has(me.birthdate) and age_years(me.birthdate) >= 0 and age_years(me.birthdate) <= 120
 ```
 
-### Format Check
+### Format check
 
 ```cel
 me.phone.startsWith("+63")
 ```
 
-### Cross-Field Validation
+### Cross-field validation
 
 Head of household must be adult:
 ```cel
 not head(me) or age_years(me.birthdate) >= 18
 ```
 
-## Workflow Routing
+## Workflow routing
 
 These are runtime evaluated with ticket/case context.
 
-### Priority Based on Age
+### Priority based on age
 
 ```cel
 r.registrant_id.age >= 65 ? "priority" : "standard"
 ```
 
-### Escalate High Value
+### Escalate high value
 
 ```cel
 r.amount > 10000 ? "manager_review" : "standard"
 ```
 
-### Route by Region
+### Route by region
 
 ```cel
 r.area_id.name == "NCR" ? "ncr_team" : "regional_team"
 ```
 
-## Tips for Adapting Patterns
+## Tips for adapting patterns
 
 1. **Check field names**: Use autocomplete to find exact field paths
 2. **Verify context**: Individual vs group expressions need different symbols
@@ -365,6 +365,6 @@ r.area_id.name == "NCR" ? "ncr_team" : "regional_team"
 4. **Use variables**: Extract repeated logic into variables
 5. **Add tests**: Create test cases in Studio before publishing
 
-## Are You Stuck?
+## Are you stuck?
 
 See {doc}`troubleshooting` for common issues and debugging tips.

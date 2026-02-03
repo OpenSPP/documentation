@@ -10,7 +10,7 @@ This guide is for **implementers** configuring CEL variables in OpenSPP.
 
 Variables (`spp.cel.variable`) define named data points that can be reused across expressions and features. Define them once, use them everywhere.
 
-## Why Use Variables?
+## Why use variables?
 
 | Benefit | Example |
 |---------|---------|
@@ -19,7 +19,7 @@ Variables (`spp.cel.variable`) define named data points that can be reused acros
 | **Readability** | `poverty_line` is clearer than `10000` |
 | **Performance** | Cached variables compute once |
 
-## Variable Anatomy
+## Variable anatomy
 
 Every variable has:
 
@@ -30,9 +30,9 @@ Every variable has:
 | **Applies To** | Context (individual, group, both) | Group/Household |
 | **Source Type** | Where value comes from | Aggregate |
 
-## Source Types
+## Source types
 
-### Model Field
+### Model field
 
 Maps directly to a model field.
 
@@ -41,7 +41,7 @@ Maps directly to a model field.
 | Source Type | Model Field |
 | Field | `birthdate` |
 
-### Constant/Parameter
+### Constant/parameter
 
 Fixed value, optionally program-overridable.
 
@@ -78,23 +78,23 @@ Generates expressions like:
 members.count(m, age_years(m.birthdate) < 5)
 ```
 
-### External Source
+### External source
 
 Value from external data provider.
 
-### Scoring Result
+### Scoring result
 
 Value from a scoring run (typically cached).
 
-### Vocabulary Concept
+### Vocabulary concept
 
 Derived from vocabulary system.
 
-## Aggregate Variables
+## Aggregate variables
 
 Aggregates are the most powerful variable type. They compute values across collections.
 
-### Aggregate Targets
+### Aggregate targets
 
 | Target | Collection | Loop Variable |
 |--------|------------|---------------|
@@ -103,7 +103,7 @@ Aggregates are the most powerful variable type. They compute values across colle
 | Entitlements | Entitlement records | `ent` |
 | Events | Event data records | `evt` |
 
-### Aggregate Types
+### Aggregate types
 
 | Type | Result | Example |
 |------|--------|---------|
@@ -136,11 +136,11 @@ members.sum(m.income, true)
 enrollments.exists(e, e.state == "enrolled")
 ```
 
-## Event Variables
+## Event variables
 
 When the event/CEL integration is installed, you can aggregate over events.
 
-### Event Functions
+### Event functions
 
 | Function | Purpose | Example |
 |----------|---------|---------|
@@ -149,7 +149,7 @@ When the event/CEL integration is installed, you can aggregate over events.
 | `events_sum(type, field)` | Sum field values | `events_sum("payment", "amount")` |
 | `event(type, field)` | Get single value | `event("survey", "income", select="latest")` |
 
-### Event Function Parameters
+### Event function parameters
 
 | Parameter | Purpose | Example |
 |-----------|---------|---------|
@@ -160,25 +160,25 @@ When the event/CEL integration is installed, you can aggregate over events.
 | `default` | Fallback value | `default=0` |
 | `states` | Filter by state | `states=["approved"]` |
 
-### Finding Event Type Codes
+### Finding event type codes
 
 1. Go to **Studio → Event Types**
 2. Click on your event type
 3. Click **View Event Type**
 4. Note the **Code** field (usually `x_evt_<slug>`)
 
-### Finding Field Names
+### Finding field names
 
 For Studio-created event types:
 1. Open the event type in Studio
 2. Note the **Technical Name** of each field
 3. Use that name in `event()` calls
 
-## Variable Caching
+## Variable caching
 
 For performance, variables can cache computed values.
 
-### Cache Strategies
+### Cache strategies
 
 | Strategy | Behavior | Use Case |
 |----------|----------|----------|
@@ -187,7 +187,7 @@ For performance, variables can cache computed values.
 | TTL | Persist with expiration | Expensive computations |
 | Manual | Persist until refreshed | External/stable data |
 
-### Cache Configuration
+### Cache configuration
 
 | Field | Purpose |
 |-------|---------|
@@ -195,14 +195,14 @@ For performance, variables can cache computed values.
 | Invalidate on Member Change | Recompute when members change |
 | Invalidate on Field Change | Fields that trigger recompute |
 
-### The Unified Value Store
+### The unified value store
 
 Cached values are stored in `spp.data.value`:
 - Fast SQL lookups during eligibility
 - Batch precomputation support
 - Period-based historical values
 
-## Period Granularity
+## Period granularity
 
 Variables can store historical values by period:
 
@@ -215,7 +215,7 @@ Variables can store historical values by period:
 | Yearly | `YYYY` | `2024` |
 | Snapshot | Point-in-time | At enrollment |
 
-## How Features Use CEL
+## How features use CEL
 
 Different features use CEL in different ways:
 
@@ -228,7 +228,7 @@ Different features use CEL in different ways:
 | GRM routing | Runtime evaluation | `ticket`, `r` |
 | Approval conditions | Runtime evaluation | Target record |
 
-## Creating a Variable: Step by Step
+## Creating a variable: step by step
 
 ### 1. Navigate
 
@@ -267,7 +267,7 @@ Choose source type and configure:
 1. Click **Save**
 2. Click **Activate**
 
-## Are You Stuck?
+## Are you stuck?
 
 **Variable not showing in autocomplete?**
 - Verify it's **Active**

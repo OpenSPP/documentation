@@ -10,7 +10,7 @@ This guide is for **implementers** who want to start writing CEL expressions in 
 
 You should be comfortable with "logic builders" (like CommCare or Kobo configuration) but you don't need Python experience.
 
-## What You'll Learn
+## What you'll learn
 
 By the end of this guide, you will:
 - Understand the three core concepts (symbols, variables, expressions)
@@ -24,7 +24,7 @@ By the end of this guide, you will:
 - The CEL modules installed (standard in OpenSPP V2)
 - Allow 15 minutes
 
-## The Three Core Concepts
+## The three core concepts
 
 ### 1. Symbols
 
@@ -61,7 +61,7 @@ Expressions are reusable rules that combine variables and symbols:
 children_under_5_count >= 1 and household_income < poverty_line
 ```
 
-## Example A: Create a Variable
+## Example A: Create a variable
 
 **Goal**: Create a variable that counts children under 5 in a household.
 
@@ -89,7 +89,7 @@ children_under_5_count >= 1 and household_income < poverty_line
 
 Now you can use `children_under_5_count` in any expression that applies to groups/households.
 
-## Example B: Create an Expression
+## Example B: Create an expression
 
 **Goal**: Create an expression that flags "priority households" (those with children under 5).
 
@@ -128,7 +128,7 @@ children_under_5_count >= 1
 1. Click **Save**
 2. Click **Activate** (or follow your deployment's publish workflow)
 
-## How to Know What Data Is Available
+## How to know what data is available
 
 The CEL editor provides tools to discover available data:
 
@@ -151,7 +151,7 @@ The editor shows errors inline:
 - Syntax errors explained
 - Type mismatches flagged
 
-## Common Mistakes
+## Common mistakes
 
 | Mistake | Problem | Fix |
 |---------|---------|-----|
@@ -160,7 +160,7 @@ The editor shows errors inline:
 | `AND` | Wrong case | `and` |
 | `birthdate` | Missing context | `me.birthdate` or `m.birthdate` |
 
-## Next Steps
+## Next steps
 
 - **Common patterns**: {doc}`cookbook`
 - **Full syntax reference**: {doc}`syntax`

@@ -8,7 +8,7 @@ openspp:
 
 This guide is for **implementers** configuring OpenSPP rules and formulas using CEL (Common Expression Language).
 
-## What You'll Find Here
+## What you'll find here
 
 - **Quick Start** - Get started with CEL expressions
 - **Syntax** - Operators, functions, and language reference
@@ -27,7 +27,7 @@ cookbook
 troubleshooting
 ```
 
-## Quick Links
+## Quick links
 
 - {doc}`quick_start` - New to CEL? Start here
 - {doc}`cookbook` - Copy-paste expression patterns
