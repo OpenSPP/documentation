@@ -10,42 +10,40 @@ This guide is for **implementers** creating change request types with approval w
 
 ## What is Change Request Builder?
 
-Change Request Builder lets you create new types of registry modification requests with approval workflows. Define what information to collect, how it maps to registry fields, and who needs to approve changes.
+Change Request Builder lets you create new types of registry modification requests with approval workflows. Define which existing registry fields can be updated and who needs to approve the changes.
 
-## When to Use Change Request Builder
+## When to use Change Request Builder
 
 Use this tool when you need a formal process to update registry information:
 
-| Use Case | Example Change Request Type |
+| Use case | Example change request type |
 |----------|----------------------------|
 | Contact updates | "Update Phone Number" with supervisor approval |
-| Address changes | "Update Address" requiring documentation |
+| Address changes | "Update Address" requiring review |
 | ID corrections | "Update ID Document" with verification |
 | Data corrections | "Fix Registration Error" with review workflow |
 
-## Mental Model: Change Requests
+## Mental model: change requests
 
 Think of change requests as "update forms with approval":
 
-| Without Change Requests | With Change Requests |
+| Without change requests | With change requests |
 |------------------------|---------------------|
 | Edit registry directly | Submit request → Approve → Apply |
 | Changes immediate | Changes reviewed first |
 | No audit trail | Full history of who requested what |
-| No documentation | Attach supporting documents |
 | Anyone can edit | Controlled permissions |
 
 **When to use**:
-- Updates need approval
-- Changes need documentation
-- You want audit history
-- Multiple people might conflict
+- Updates need approval before taking effect
+- You want audit history of all changes
+- Multiple people might request changes to the same registrant
 
 **When NOT to use**:
-- Direct edits are fine
+- Direct edits are acceptable
 - Complex multi-record operations (add member, split household) - use built-in types
 
-## Before You Start
+## Before you start
 
 ### Prerequisites
 
@@ -53,476 +51,282 @@ Think of change requests as "update forms with approval":
 - Understanding of:
   - What registry fields can be updated
   - Who should approve changes
-  - What documentation is needed
 
-### What Studio Can Create
+### What Studio can create
 
-Studio handles simple field update requests (80% of needs):
+Studio handles simple field update requests (most common needs):
 
-| ✓ Studio Can Create | ✗ Requires Built-in Types |
+| ✓ Studio can create | ✗ Requires built-in types |
 |---------------------|---------------------------|
 | Update phone number | Add group member |
 | Update address | Remove group member |
-| Update ID documents | Change head of household |
+| Update ID information | Change head of household |
 | Correct field values | Split household |
 | Update contact info | Merge registrants |
 |  | Exit registrant |
 
 **Why the limitation?** Built-in types handle complex multi-record operations that require custom code.
 
-### Planning Your Change Request Type
+### Planning your change request type
 
 Decide:
 
 1. **Name**: Clear purpose (e.g., "Update Phone Number")
 2. **Applies to**: Individuals, Groups, or both
-3. **Fields to collect**: What information does requester provide?
-4. **Registry mapping**: Which fields get updated when approved?
-5. **Approval workflow**: Simple (one step) or two-level?
-6. **Requirements**: Supporting documents? Conflict checks?
+3. **Fields to update**: Which existing registry fields can be changed
+4. **Approval**: Does it need approval before changes are applied?
 
-## Creating a Change Request Type
+## Creating a change request type
 
 ### Step 1: Open Change Request Builder
 
 1. Click **Studio** in the main menu
-2. Click **Change Requests**
-3. Click **+ New CR Type** button
 
-**Screenshot should show**: Studio Dashboard with Change Requests card highlighted, then Change Request Builder list view showing both custom CR types and built-in types (Add Member, Remove Member, etc.).
+![Studio Dashboard](/_images/en-us/config_guide/studio/change_request_builder/01-studio-dashboard.png)
 
-### Step 2: Enter Basic Information
+2. Click **Change Requests** (under Forms & Fields)
+3. Click the **New** button
 
-| Field | What to Enter | Example |
+![Change Request Types list view](/_images/en-us/config_guide/studio/change_request_builder/02-cr-types-list.png)
+
+### Step 2: Enter basic information
+
+![CR type form empty](/_images/en-us/config_guide/studio/change_request_builder/03-cr-type-form-empty.png)
+
+| Field | What to enter | Example |
 |-------|---------------|---------|
-| **Name** | Clear, action-oriented name | "Update Phone Number" |
-| **Icon** | Visual identifier | 📱 (phone icon) |
-| **Color** | UI color | Blue |
-| **Applies to** | Individual, Group, or both | (•) Individuals only |
-| **Description** | Shown to users submitting | "Use this form to request a phone number update for a registered beneficiary. Requires supervisor approval." |
+| **CR Type Name** | Descriptive name | "Update Phone Number" |
+| **Technical Name** | Auto-generated code (read-only after save) | `x_cr_update_phone_number` |
+| **Target Registry** | Who this applies to | Individual, Group/Household, or Both |
+| **Description** | Optional explanation | "Request to update phone number for a registered beneficiary" |
 
-**Screenshot should show**: Step 1 of CR type creation wizard with fields filled in as shown in example.
+### Step 3: Configure approval settings
 
-**Tips**:
-- Name should be verb-based: "Update X", "Change Y"
-- Description helps users understand when to use this CR type
-- Icon and color help distinguish CR types visually
+| Field | What it does | Default |
+|-------|--------------|---------|
+| **Requires Approval** | If checked, requests need review before changes apply | Checked |
+| **Who can approve** | Select user group authorized to approve | (select a group) |
+| **Auto-apply when approved** | If checked, changes apply immediately after approval | Checked |
 
-Click **Next →** when ready.
+**Tip**: If approval is not required, changes can be applied immediately when the request is submitted.
 
-### Step 3: Define Fields to Collect
+![CR type form filled](/_images/en-us/config_guide/studio/change_request_builder/04-cr-type-form-filled.png)
 
-Configure what information the requester provides:
+### Step 4: Define field mappings
 
-**Screenshot should show**: Step 2 of wizard showing fields table with columns: Field Label, Type, Maps to Registry, Required.
+Click the **Field Mappings** tab to specify which registry fields can be updated.
 
-#### Adding Fields
+![Field Mappings tab empty](/_images/en-us/config_guide/studio/change_request_builder/05-field-mappings-tab-empty.png)
 
-Click **+ Add Field** for each piece of information needed.
+Click **Add a line** to add each field:
 
-**Example: Phone Number Update**
+![Add field mapping](/_images/en-us/config_guide/studio/change_request_builder/06-add-field-mapping.png)
 
-| Field Label | Type | Maps to Registry | Required |
-|-------------|------|------------------|----------|
-| New Phone Number | Phone | → phone | Yes |
-| Reason for Change | Selection | (don't apply) | Yes |
-| Supporting Doc | File | (attachment) | No |
+| Setting | What to enter |
+|---------|---------------|
+| **Field** | Select from existing res.partner fields |
+| **Label** | Display name in the request form |
+| **Required** | Check if field must be filled |
+| **Read-only** | Check if field is shown but cannot be edited |
 
-**Screenshot should show**: Fields table filled in with the phone number update example.
+#### How field mapping works
 
-#### Field Configuration
+When you select a field, it automatically maps to that registry field:
 
-For each field, configure:
+| Field selected | Result when approved |
+|----------------|---------------------|
+| `phone` | Updates registrant's phone field |
+| `street` | Updates registrant's street address |
+| `email` | Updates registrant's email field |
+| Custom fields (`x_*`) | Updates the custom field on registrant |
 
-| Setting | Options |
-|---------|---------|
-| **Field Label** | What users see |
-| **Type** | Phone, Text, Selection, File, Date, Number, Yes/No |
-| **Maps to Registry** | Which registry field to update (or "don't apply") |
-| **Required** | Must be filled? |
+All fields map directly to their corresponding registry field. When a change request is approved, the values are copied to the registrant record.
 
-#### Mapping to Registry
+#### Example field mapping
 
-The "Maps to Registry" setting determines what happens when CR is approved:
+For an "Update Phone Number" change request:
 
-| Mapping | Result When Approved |
-|---------|---------------------|
-| **→ phone** | Updates registrant's phone field |
-| **→ address** | Updates registrant's address field |
-| **(don't apply)** | Stored for documentation only |
-| **(attachment)** | Attached to CR, not applied to registry |
+| Field | Label | Required | Read-only |
+|-------|-------|----------|-----------|
+| `phone` | New Phone Number | Yes | No |
 
-**Common mappings**:
+![Field mapping filled](/_images/en-us/config_guide/studio/change_request_builder/07-field-mapping-filled.png)
 
-| CR Field | Maps To |
-|----------|---------|
-| New Phone Number | → phone |
-| New Address | → address |
-| New Email | → email |
-| New ID Number | → x_cst_national_id (custom field) |
-| Reason for Change | (don't apply) - documentation only |
-| Supporting Document | (attachment) |
+#### Field mapping options (advanced)
 
-#### Selection Field Options
+Click on a field row to open detailed configuration:
 
-If you add a Selection field (like "Reason for Change"), define the options:
+| Option | Use for |
+|--------|---------|
+| **Help Text** | Additional guidance for users filling the form |
+| **Validation Type** | None, Regular Expression, or Domain |
+| **Validation Rule** | Regex pattern or domain expression (if validation enabled) |
 
-**Screenshot should show**: Selection options configuration for "Reason for Change".
+### Step 5: Save as draft
 
-| Value | Label |
-|-------|-------|
-| `lost_phone` | Lost Phone |
-| `new_phone` | Got New Phone |
-| `typo` | Correction of Typo |
+Click **Save** to create the change request type in Draft state.
 
-Click **Next →** when fields are defined.
+![Draft state with Activate button](/_images/en-us/config_guide/studio/change_request_builder/09-draft-state-activate-button.png)
 
-### Step 4: Configure Approval Settings
+## Change request type lifecycle
 
-**Screenshot should show**: Step 3 of wizard showing approval workflow options.
-
-#### Approval Workflow
-
-Choose workflow type:
-
-| Workflow | Steps | Use When |
-|----------|-------|----------|
-| **Simple** | Submit → Approve → Apply | Standard approval by supervisor |
-| **Two-Level** | Submit → Review → Approve → Apply | Complex changes need multiple reviewers |
-| **Custom** | Use existing approval definition | Reuse workflow from other system |
-
-**Most common**: Simple approval
-
-#### Auto-Apply Options
-
-| Option | When to Use |
-|--------|-------------|
-| **Auto-apply when approved** | Changes apply immediately after approval (recommended) |
-| Manual apply | Someone must manually apply after approval (rarely needed) |
-
-#### Documentation Requirements
-
-| Option | When to Use |
-|--------|-------------|
-| **Require supporting document before submission** | Always need proof (ID changes, address changes) |
-| Optional documentation | Documents are nice to have but not required |
-
-#### Conflict Detection
-
-| Option | When to Use |
-|--------|-------------|
-| **Check for conflicting pending requests** | Prevent multiple simultaneous changes to same field |
-| No conflict check | Multiple requests are fine |
-
-**Screenshot should show**: Options checkboxes with "Auto-apply when approved" and "Require supporting document" checked.
-
-#### Form Preview
-
-The wizard shows a preview of what users will see:
+Change request types follow a three-state lifecycle:
 
 ```
-┌─ Request Info ──────────────────────────────┐
-│ Registrant: [Select beneficiary...]        │
-└─────────────────────────────────────────────┘
-┌─ New Information ───────────────────────────┐
-│ New Phone Number: [______________] *        │
-│ Reason: [Select...▼] *                      │
-│ Supporting Doc: [Upload...]                 │
-└─────────────────────────────────────────────┘
+Draft ──► Active ──► Inactive
+  ▲                     │
+  └─────────────────────┘
+      (can reactivate)
 ```
 
-**Screenshot should show**: Form preview panel showing the rendered form.
+| State | Can edit fields? | Can edit settings? | Can be used? | Actions available |
+|-------|-----------------|-------------------|--------------|-------------------|
+| **Draft** | Yes | Yes | No | Activate |
+| **Active** | Yes (add/modify) | No | Yes | Deactivate, View Requests |
+| **Inactive** | No | No | No | Reactivate |
 
-Click **Save as Draft** to create the change request type.
+**Note**: Unlike Event Types, active Change Request Types allow you to add or modify field mappings. Core settings (name, target, approval) remain locked while active.
 
-## After Creating a Change Request Type
+### Activating a change request type
 
-### Test Your CR Type
+1. Open the change request type in Draft state
+2. Click **Activate** (requires Studio Manager permission)
+3. The type becomes available for submitting requests
 
-1. Go to **Registry → Individuals** (or Groups)
-2. Open a registrant record
-3. Click **Change Requests** tab
-4. Click **+ New Request**
-5. Select your new CR type
-6. Fill in test data
-7. Submit the request
+### Deactivating a change request type
 
-**Screenshot should show**: Individual registry form with Change Requests tab open, showing "+ New Request" button and CR type selection.
-
-8. Switch to **GRM → Change Requests**
-9. Find your test request
-10. Approve it
-11. Verify the registry field was updated
-
-**Screenshot should show**: Change Request list view showing the test request with "Pending Approval" status, then detail view with "Approve" button.
-
-### Activate the CR Type
-
-Once tested:
-
-1. Return to **Studio → Change Requests**
-2. Find your CR type
-3. Click to open it
-4. Click **Activate** (requires Studio Manager permission)
-
-## Built-in Change Request Types
-
-Studio shows built-in CR types that cannot be modified:
-
-**Screenshot should show**: Built-in CR types section in CR Builder list view.
-
-| Built-in Type | Purpose | Why Not in Studio |
-|---------------|---------|-------------------|
-| **Add Member** | Add person to group | Creates new membership record |
-| **Remove Member** | Remove person from group | Modifies membership records |
-| **Change Head of Household** | Update group head | Changes membership roles |
-| **Split Household** | Divide group into two | Multi-record operation |
-| **Merge Registrants** | Combine duplicate records | Complex data reconciliation |
-| **Exit Registrant** | Mark person as exited | State change + archival |
-
-**Use built-in types** for these operations - don't try to recreate them in Studio.
-
-## Managing Change Request Types
-
-### View All CR Types
-
-**Studio → Change Requests** shows:
-- Your custom CR types (editable)
-- Built-in CR types (read-only)
-
-**Screenshot should show**: CR type list view with both custom and built-in sections.
-
-### Edit a CR Type
-
-**For Draft CR types**:
-- Click the name
-- Make changes
-- Save
-
-**For Active CR types**:
-- Cannot edit field mappings
-- Can edit name, description, approval settings
-- To change fields: Deactivate → Edit → Reactivate (be careful!)
-
-### Deactivate a CR Type
-
-**Warning**: Deactivating prevents new requests of this type. Existing requests continue to process.
-
-1. Open the CR type
+1. Open an Active change request type
 2. Click **Deactivate**
-3. System shows impact: "Used by 15 pending requests"
-4. Confirm deactivation
+3. Existing requests continue to process, but no new requests can be created
 
-## Field Mapping Strategies
+## Using change request types
 
-### Direct Field Mapping
+### Submitting a change request
 
-Simple one-to-one updates:
+Once a change request type is active:
 
-```
-CR Field: New Phone Number
-Maps to: phone
-When approved: registrant.phone = new_phone_number
-```
+1. Go to **Registry** and open an individual or group record
+2. Look for the **Change Requests** tab
+3. Click to create a new request
+4. Select the change request type
+5. Fill in the new values
+6. Submit the request
 
-### Multiple Field Updates
+### Approving a change request
 
-One CR can update multiple fields:
+If approval is required:
 
-```
-CR Type: Update Contact Info
-Fields:
-  - New Phone → phone
-  - New Email → email
-  - New Address → address
-When approved: All three registry fields updated
-```
+1. Go to **GRM → Change Requests**
+2. Find the pending request
+3. Review the requested changes
+4. Click **Approve** or **Reject**
+5. If approved and auto-apply is enabled, changes are applied immediately
 
-### Documentation Fields
+### Viewing audit history
 
-Fields for context, not applied:
+From a change request type:
+- Click **View Requests** to see all requests of this type
+- The **Audit Trail** tab shows creation, activation, and modification history
 
-```
-CR Field: Reason for Change
-Maps to: (don't apply)
-Purpose: Stored in CR record for audit history
-```
+![Audit Trail tab](/_images/en-us/config_guide/studio/change_request_builder/08-audit-trail-tab.png)
 
-### Attachments
+## Managing change request types
 
-Supporting documents:
+### View all change request types
 
-```
-CR Field: ID Document Photo
-Maps to: (attachment)
-Purpose: Attached to CR, available for review
-```
+**Studio → Change Requests** shows all types:
 
-## Common Patterns
+| Column | Shows |
+|--------|-------|
+| **Name** | Change request type name |
+| **Technical Name** | Internal code |
+| **Target Type** | Individual, Group/Household, or Both |
+| **Fields** | Number of field mappings |
+| **State** | Draft, Active, or Inactive |
 
-### Phone Number Update
+![List view with data](/_images/en-us/config_guide/studio/change_request_builder/10-list-view-with-data.png)
+
+### Filtering change request types
+
+Use the search and filter options:
+- **Filter by state**: Draft, Active, Inactive
+- **Filter by target**: Individual, Group
+- **Search by name**: Find specific types
+
+## Common patterns
+
+### Phone number update
 
 ```
 Name: Update Phone Number
 Applies to: Individuals
-Icon: 📱  Color: Blue
+Requires Approval: Yes
 
-Fields:
-  - New Phone Number (Phone) → phone [Required]
-  - Reason (Selection) → (don't apply) [Required]
-    Options: Lost Phone, New Phone, Typo
-  - Supporting Document (File) → (attachment) [Optional]
-
-Approval: Simple
-Auto-apply: Yes
-Require document: No
+Field Mappings:
+  - phone → "New Phone Number" [Required]
 ```
 
-### Address Change
+### Address change
 
 ```
 Name: Update Address
 Applies to: Individuals and Groups
-Icon: 🏠  Color: Green
+Requires Approval: Yes
 
-Fields:
-  - New Street Address (Text) → address [Required]
-  - New Area (Link to Area) → area_id [Required]
-  - Reason (Selection) → (don't apply) [Required]
-    Options: Moved, Correction, Other
-  - Proof of Residence (File) → (attachment) [Required]
-
-Approval: Simple
-Auto-apply: Yes
-Require document: Yes (proof of residence)
+Field Mappings:
+  - street → "Street Address" [Required]
+  - city → "City" [Required]
+  - zip → "Postal Code" [Optional]
 ```
 
-### ID Document Update
+### Email update
 
 ```
-Name: Update ID Document
+Name: Update Email
 Applies to: Individuals
-Icon: 🆔  Color: Orange
+Requires Approval: Yes
 
-Fields:
-  - New ID Number (Text) → x_cst_national_id [Required]
-  - ID Type (Selection) → x_cst_id_type [Required]
-    Options: National ID, Passport, Driver License
-  - ID Expiry Date (Date) → x_cst_id_expiry [Optional]
-  - ID Document Photo (File) → (attachment) [Required]
-  - Reason (Selection) → (don't apply) [Required]
-    Options: New ID Issued, Correction, Lost/Replaced
-
-Approval: Two-Level (extra verification for ID changes)
-Auto-apply: Yes
-Require document: Yes
-Check conflicts: Yes
+Field Mappings:
+  - email → "New Email Address" [Required]
 ```
 
-### Household Data Correction
+## Are you stuck?
 
-```
-Name: Correct Household Info
-Applies to: Groups only
-Icon: 📝  Color: Purple
+**Can't see the Activate button?**
+- You need Studio Manager permission
+- The change request type must have at least one field mapping
+- Check that you're viewing a Draft type
 
-Fields:
-  - Field to Correct (Selection) → (don't apply) [Required]
-    Options: Size, Head of Household Name, Formation Date
-  - Correct Value (Text) → (varies) [Required]
-  - Evidence/Notes (Long Text) → (don't apply) [Required]
-  - Supporting Document (File) → (attachment) [Optional]
+**Can't edit settings on an active type?**
+- Active types have locked core settings (name, target, approval)
+- You can still add or modify field mappings
+- To change core settings: Deactivate first, then edit
 
-Approval: Simple
-Auto-apply: No (manual review of which field to update)
-Require document: No
-```
+**Field not appearing in the mapping dropdown?**
+- Only stored fields from res.partner appear in the list
+- System fields and computed fields are excluded
+- Custom fields (x_*) should appear if they're stored
 
-## Approval Workflow Details
-
-### Simple Approval
-
-```
-┌─────────┐    ┌──────────┐    ┌─────────┐
-│ Submit  │ →  │ Approve  │ →  │ Applied │
-└─────────┘    └──────────┘    └─────────┘
-
-Roles:
-- Submit: Field staff, data officers
-- Approve: Supervisors, managers
-```
-
-### Two-Level Approval
-
-```
-┌─────────┐    ┌────────┐    ┌──────────┐    ┌─────────┐
-│ Submit  │ →  │ Review │ →  │ Approve  │ →  │ Applied │
-└─────────┘    └────────┘    └──────────┘    └─────────┘
-
-Roles:
-- Submit: Field staff
-- Review: Data quality team
-- Approve: Senior management
-```
-
-### Auto-Apply vs Manual Apply
-
-| Setting | When Changes Apply | Use When |
-|---------|-------------------|----------|
-| **Auto-apply** | Immediately after final approval | Standard use (90% of cases) |
-| **Manual apply** | Someone clicks "Apply Changes" after approval | Need final manual verification |
-
-## Are You Stuck?
-
-**Can't map field to registry?**
-- Make sure the registry field exists (check Registry Field Builder or existing fields)
-- Custom fields need to be created first through Field Builder
-- Some built-in fields may not be editable (e.g., registration_date)
-
-**CR type created but can't submit requests?**
-- Is the CR type **Active**?
-- Do you have permission to submit change requests?
-- Does the registrant exist in the registry?
-
-**Approval not working?**
-- Check that approver has correct permissions
-- Verify approval workflow is configured
-- Look for error messages in the CR detail view
-
-**Fields not updating after approval?**
+**Changes not applying after approval?**
 - Check that "Auto-apply when approved" is enabled
-- Verify field mapping is correct
-- Check that mapped field is not read-only
+- Verify the field mapping is correct
+- Check that the mapped field is not read-only on the registrant
 
-**Want to update multiple registrants at once?**
-Studio CR types work one registrant at a time. For bulk updates, contact a developer.
+**Want to add documentation-only fields?**
+This is not currently supported. All mapped fields will update the registry when approved. For documentation needs, consider using the notes/description fields on the change request itself.
 
-**Can I create a CR for adding group members?**
-No, use the built-in "Add Member" CR type. Studio cannot create multi-record operations.
+**Can I create a change request for adding group members?**
+No, use the built-in "Add Member" change request type. Studio cannot create multi-record operations.
 
 **How do I track who approved what?**
-All approvals are logged in the change request audit trail. Go to change request detail → Activity log.
+All approvals are logged in the change request record. Go to the request detail view to see the approval history.
 
-**Can I customize the approval email notifications?**
-This requires system configuration outside of Studio. Contact your administrator.
+**What if the requester selects the wrong registrant?**
+If the request is still pending, the submitter or approver can cancel it and create a new one.
 
-**What if requester enters wrong registrant?**
-If the CR is still pending, the submitter or approver can cancel it and create a new one.
+## Next steps
 
-**Can I have different approvers for different areas/programs?**
-Yes, but this requires approval workflow configuration outside of Studio. The basic Studio CR uses standard approval rules.
-
-**Supporting documents not showing?**
-- Check that file was uploaded successfully
-- Verify attachments are enabled in your OpenSPP instance
-- Large files may need admin to increase upload limits
-
-**Can I make fields conditionally required?**
-Not directly in Studio. All fields are either required or optional. For complex conditional logic, contact a developer.
-
-## Next Steps
-
-- **Define eligibility rules**: {doc}`/config_guide/cel/index`
 - **Create event types for surveys**: {doc}`event_type_designer`
 - **Add custom registry fields**: {doc}`registry_field_builder`
+- **Define eligibility rules**: {doc}`/config_guide/cel/index`
 - **Return to Studio overview**: {doc}`overview`
