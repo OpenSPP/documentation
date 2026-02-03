@@ -4,24 +4,24 @@ openspp:
   products: [core]
 ---
 
-# Consent Management Overview
+# Consent management overview
 
 This guide is for **implementers** configuring consent management in OpenSPP. You should understand your program's data protection requirements but don't need programming knowledge.
 
-## Mental Model
+## Mental model
 
 Consent in OpenSPP has three layers:
 
-| Layer | What It Does | Example |
+| Layer | What it does | Example |
 |-------|--------------|---------|
 | **Privacy Notice** | Explains what data is collected and why | "Program Enrollment Notice" |
 | **Consent Record** | Tracks individual's permission | "Maria Santos gave consent on 2024-03-15" |
-| **Consent Scope** | Controls API access to data | "Partner X can access basic fields only" |
+| **Consent Summary** | Cached consent for API filtering | Aggregated purposes and recipients |
 
 Think of it like this:
-- **Privacy Notice** = The form explaining data use
-- **Consent Record** = The signed agreement
-- **Consent Scope** = The access permissions that result
+- **Privacy Notice** = The form explaining data use (defines maximum scope)
+- **Consent Record** = The signed agreement (must be within notice scope)
+- **Consent Summary** = Cached JSON on registrant for fast API filtering
 
 ## Why Consent Management?
 
@@ -79,9 +79,21 @@ Privacy notices explain to beneficiaries:
 
 Notices are versioned - when you update a notice, existing consents reference the version they agreed to.
 
-### Consent Purposes
+### Consent purposes
 
-Purposes define why data is processed. OpenSPP includes pre-configured purposes:
+Purposes define why data is processed. OpenSPP includes pre-configured purposes aligned with W3C Data Privacy Vocabulary (DPV):
+
+**Top-level DPV purposes:**
+
+| Purpose | Description |
+|---------|-------------|
+| **Service Provision** | Processing for providing a service |
+| **Identity Verification** | Verifying identity |
+| **Research and Development** | Research and development |
+| **Legal Compliance** | Compliance with legal obligations |
+| **Record Management** | Managing records |
+
+**Social protection-specific purposes:**
 
 | Purpose | Description |
 |---------|-------------|
@@ -91,7 +103,9 @@ Purposes define why data is processed. OpenSPP includes pre-configured purposes:
 | **Benefit Delivery** | Delivering cash/in-kind benefits |
 | **Grievance Handling** | Managing complaints |
 | **Case Management** | Referrals and case tracking |
-| **Research and Evaluation** | Program impact studies |
+| **Monitoring & Evaluation** | Program monitoring and evaluation |
+| **Deduplication** | Detecting duplicate registrations |
+| **Inter-Agency Data Sharing** | Sharing data between agencies |
 
 ## Navigation
 
@@ -103,7 +117,12 @@ Consent configuration is in **Registry → Configuration → Consent Management*
 | **Configuration → Privacy Notices** | Create and manage notice templates |
 | **Configuration → Purposes (DPV)** | Configure processing purposes |
 | **Configuration → Personal Data Categories** | Define personal data types |
+| **Configuration → Processing Operations** | Define allowed processing operations |
 | **Configuration → Organization Types** | Configure recipient categories |
+
+```{note}
+The Configuration submenu is only visible to administrators (spp_security.group_spp_admin).
+```
 
 Additionally, **Registry → Configuration → Expired Consents** provides a view of consents needing renewal.
 
@@ -148,11 +167,35 @@ OpenSPP's consent module follows:
 | **W3C DPV** | Data Privacy Vocabulary for purposes, processing |
 | **GDPR** | Legal basis, withdrawal, data subject rights |
 
-## Next Steps
+## Key design patterns
+
+### Notice as boundary
+
+Privacy notices define the **maximum scope** of what can be consented to. When creating a consent record:
+
+- Selected purposes must be within the notice's purpose list
+- Selected data categories must be within the notice's data categories
+- Selected organization types must be within the notice's allowed types
+
+This ensures beneficiaries cannot consent to terms not described in the notice they were shown (informed consent compliance).
+
+### Immutability after consent given
+
+Once a consent status changes to "Given", the following fields become **immutable**:
+
+- Parties (signatory, controller, recipients)
+- Processing terms (purposes, data categories, legal basis)
+- Privacy notice reference
+- Validity period
+- Collection method
+
+To correct errors in a given consent, you must **invalidate** it and create a new consent record. This preserves the audit trail.
+
+## Next steps
 
 1. {doc}`privacy_notices` - Create your first privacy notice
 2. {doc}`recording_consent` - Record consent for registrants
-3. {doc}`api_scopes` - Configure API access control
+3. {doc}`api_consent_filtering` - Understand API consent filtering
 
 ## Are You Stuck?
 

@@ -4,23 +4,23 @@ openspp:
   products: [core]
 ---
 
-# Recording Consent
+# Recording consent
 
 This guide is for **implementers** and **users** recording consent from beneficiaries. You'll learn how to create consent records and manage consent status.
 
-## Navigate to Consent Records
+## Navigate to consent records
 
 Go to **Registry → Configuration → Consent Management → Consent Records**.
 
-## Recording Individual Consent
+## Recording individual consent
 
-### Step 1: Create New Consent Record
+### Step 1: Create new consent record
 
 Click **New** to create a consent record.
 
-### Step 2: Configure Basic Information
+### Step 2: Configure basic information
 
-**BASIC INFO section:**
+**Data Subject section:**
 
 | Field | Value | Notes |
 |-------|-------|-------|
@@ -30,7 +30,9 @@ Click **New** to create a consent record.
 | Status | Given | Current consent status |
 | Legal Basis | Consent | Why processing is allowed |
 
-### Step 3: Configure Dates
+### Step 3: Configure dates
+
+In the **Consent Details** tab → **Validity** section:
 
 | Field | Value | Notes |
 |-------|-------|-------|
@@ -41,9 +43,9 @@ Click **New** to create a consent record.
 Consent must have an expiry date. Choose a reasonable period based on your program (typically 1-2 years). You can renew consent before it expires.
 ```
 
-### Step 4: Record Collection Details
+### Step 4: Record collection details
 
-**COLLECTION section:**
+In the **Consent Details** tab → **Collection** section:
 
 | Field | Value | Notes |
 |-------|-------|-------|
@@ -70,18 +72,18 @@ Consent must have an expiry date. Choose a reasonable period based on your progr
 | **Power of Attorney** | Legal representative signed |
 | **Authorized Representative** | Other authorized person |
 
-### Step 5: Configure Purposes
+### Step 5: Configure purposes
 
-In the **Purposes** tab, select what the beneficiary consented to:
+In the **Processing** tab → **Purposes** section, select what the beneficiary consented to:
 
 - Beneficiary Registration
 - Eligibility Assessment
 - Program Enrollment
 - Benefit Delivery
 
-### Step 6: Configure Data Recipients
+### Step 6: Configure data recipients
 
-**RECIPIENTS section:**
+On the main form → **Data Recipients** section:
 
 | Field | Value |
 |-------|-------|
@@ -93,20 +95,24 @@ Select the exact partners who can receive data.
 **If Organization Categories:**
 Select types of organizations (e.g., "All UN Agencies", "Government Health Departments").
 
-### Step 7: Attach Evidence
+### Step 7: Attach evidence
 
-**EVIDENCE section:**
+In the **Consent Details** tab → **Evidence** section:
 
 | Field | Value |
 |-------|-------|
 | Evidence Document | Upload signed form |
 | Delegation Evidence | Upload authorization (if applicable) |
 
-### Step 8: Save
+### Step 8: Save and give consent
 
-Click **Save** to create the consent record.
+Click **Save** to create the consent record. Then click **Record Consent Given** to change status from "Requested" to "Given".
 
-## Consent Status Options
+```{important}
+Once status is "Given", consent terms become **immutable**. The parties, purposes, recipients, dates, and collection method cannot be changed. To correct errors, invalidate the consent and create a new one.
+```
+
+## Consent status options
 
 | Status | Meaning | When to Use |
 |--------|---------|-------------|
@@ -118,15 +124,15 @@ Click **Save** to create the consent record.
 | **Expired** | Past expiry date | Auto-set when date passes |
 | **Invalidated** | Voided | Consent invalid due to error/breach |
 
-## Recording Consent in Bulk
+## Recording consent in bulk
 
 For mass registration, use the **Bulk Consent Recording Wizard**.
 
-### Step 1: Open Bulk Wizard
+### Step 1: Open bulk wizard
 
 From the Consent Records list, click **Action → Bulk Record Consent**.
 
-### Step 2: Configure Common Settings
+### Step 2: Configure common settings
 
 | Field | Value |
 |-------|-------|
@@ -137,7 +143,7 @@ From the Consent Records list, click **Action → Bulk Record Consent**.
 | Expiry Date | 1 year from today |
 | Purposes | Select applicable purposes |
 
-### Step 3: Select Beneficiaries
+### Step 3: Select beneficiaries
 
 Choose beneficiaries from the list or filter by:
 - Program membership
@@ -148,19 +154,19 @@ Choose beneficiaries from the list or filter by:
 
 Click **Record Consent** to create records for all selected beneficiaries.
 
-## Withdrawing Consent
+## Withdrawing consent
 
 When a beneficiary wants to withdraw consent:
 
-### Step 1: Find the Consent Record
+### Step 1: Find the consent record
 
 Search for the beneficiary's consent record.
 
-### Step 2: Update Status
+### Step 2: Click withdraw button
 
-Change **Status** to "Withdrawn".
+Click the **Withdraw Consent** button in the header (only visible when status is "Given" or "Renewed").
 
-### Step 3: Record Withdrawal Details
+### Step 3: Record withdrawal details
 
 | Field | Value |
 |-------|-------|
@@ -176,33 +182,35 @@ Change **Status** to "Withdrawn".
 - Paper Form
 - Verbal Request
 
-### Step 4: Stop Data Processing
+### Step 4: System actions
 
-After withdrawal, data processing must stop. The system will:
-- Block API access for this beneficiary
-- Flag records as consent withdrawn
-- Log the withdrawal in consent history
+After withdrawal, the system automatically:
+- Updates `consent_summary` cache
+- Blocks API access for this beneficiary
+- Logs the withdrawal in consent history with timestamp and user
 
-## Renewing Consent
+## Renewing consent
 
 Before consent expires:
 
-### Step 1: Find Expiring Consents
+### Step 1: Find expiring consents
 
 Go to **Registry → Configuration → Expired Consents** to see consents expiring soon.
 
-### Step 2: Contact Beneficiaries
+### Step 2: Contact beneficiaries
 
 Reach out to collect renewed consent.
 
-### Step 3: Update Record
+### Step 3: Click renew button
 
-Change **Status** to "Renewed" and update:
-- New Expiry Date
-- Collection Method
-- Evidence (if new form signed)
+Open the consent record and click **Renew Consent** button. The system will:
+- Change status to "Renewed"
+- Record the renewal in history
+- Update consent summary cache
 
-## Consent for Children
+You can optionally update the expiry date when renewing.
+
+## Consent for children
 
 For beneficiaries under 16:
 
@@ -211,19 +219,25 @@ For beneficiaries under 16:
 3. Set Delegation Type to "Parent/Caretaker" or "Legal Guardian"
 4. Attach evidence of guardianship if required
 
-## Viewing Consent History
+## Viewing consent history
 
 Each consent record tracks version history:
 
 1. Open a consent record
-2. Click the **History** smart button
-3. View all status changes with timestamps
+2. Click the **History** smart button (shows count of history entries)
+3. View all status changes with timestamps, users, and reasons
 
-## Are You Stuck?
+The history includes:
+- Status changes (requested → given → withdrawn, etc.)
+- Who made each change
+- When changes occurred
+- IP address and channel (for electronic consent)
+
+## Are you stuck?
 
 **Can I change a consent record after saving?**
 
-Yes, but changes are tracked in history. For significant changes, consider creating a new consent record.
+You can only modify consent terms while status is "Requested". Once status changes to "Given", consent terms are **locked** to preserve the legal agreement. To correct errors, invalidate the consent and create a new one.
 
 **What happens when consent expires?**
 

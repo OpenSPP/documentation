@@ -4,16 +4,16 @@ openspp:
   products: [core]
 ---
 
-# Consent Configuration
+# Consent configuration
 
 This guide is for **implementers** configuring data sharing permissions and consent management for regulatory compliance.
 
-## What You'll Find Here
+## What you'll find here
 
-- **Overview** - Consent concepts, legal basis, and status lifecycle
-- **Privacy Notices** - Create notice templates explaining data use
-- **Recording Consent** - Record individual or bulk consent from beneficiaries
-- **API Scopes** - Configure field-level API access for partners
+- **{doc}`overview`** - Consent concepts, legal basis, and status lifecycle
+- **{doc}`privacy_notices`** - Create notice templates explaining data use
+- **{doc}`recording_consent`** - Record individual or bulk consent from beneficiaries
+- **{doc}`api_consent_filtering`** - How consent controls API data access
 
 ```{toctree}
 :hidden:
@@ -22,12 +22,15 @@ This guide is for **implementers** configuring data sharing permissions and cons
 overview
 privacy_notices
 recording_consent
-api_scopes
+api_consent_filtering
 ```
 
-## Quick Links
+## Quick start
 
-- {doc}`overview` - Understand consent concepts and lifecycle
-- {doc}`privacy_notices` - Create privacy notice templates
-- {doc}`recording_consent` - Record consent from beneficiaries
-- {doc}`api_scopes` - Configure API access for partners
+To configure consent management:
+
+1. Navigate to **Registry → Configuration → Consent Management**
+2. Create a **Privacy Notice** under Configuration → Privacy Notices
+3. Configure **Purposes** and **Personal Data Categories** (pre-loaded with DPV defaults)
+4. Record consent from beneficiaries using the wizard or bulk import
+5. Consent summary is automatically cached on registrants for API filtering
