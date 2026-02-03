@@ -138,7 +138,7 @@ enrollments.exists(e, e.state == "enrolled")
 
 ## Event variables
 
-When the event/CEL integration is installed, you can aggregate over events.
+When the event/CEL integration module (`spp_cel_event`) is installed, you can aggregate over events and use event functions in expressions.
 
 ### Event functions
 
@@ -147,6 +147,9 @@ When the event/CEL integration is installed, you can aggregate over events.
 | `has_event(type)` | Check existence | `has_event("visit", within_days=90)` |
 | `events_count(type)` | Count events | `events_count("visit", within_days=90)` |
 | `events_sum(type, field)` | Sum field values | `events_sum("payment", "amount")` |
+| `events_avg(type, field)` | Average field values | `events_avg("survey", "score")` |
+| `events_min(type, field)` | Minimum field value | `events_min("payment", "amount")` |
+| `events_max(type, field)` | Maximum field value | `events_max("payment", "amount")` |
 | `event(type, field)` | Get single value | `event("survey", "income", select="latest")` |
 
 ### Event function parameters
@@ -224,7 +227,7 @@ Different features use CEL in different ways:
 | Registry search (CEL) | Compile-to-domain | `registry_*` |
 | Program eligibility | Compile-to-domain | `registry_*` |
 | Scoring indicators | Compile-to-domain | Registry or scoring |
-| Entitlement amounts | Runtime evaluation | `me`, `base_amount` |
+| Entitlement amounts | Runtime evaluation | `r`, `base_amount` |
 | GRM routing | Runtime evaluation | `ticket`, `r` |
 | Approval conditions | Runtime evaluation | Target record |
 
@@ -232,9 +235,9 @@ Different features use CEL in different ways:
 
 ### 1. Navigate
 
-Go to **Studio → Variables** and click **Create**.
+Go to **Studio → Variables** and click **New**.
 
-### 2. Basic Info
+### 2. Basic info
 
 | Field | Action |
 |-------|--------|
@@ -242,7 +245,7 @@ Go to **Studio → Variables** and click **Create**.
 | CEL Accessor | Enter identifier (lowercase, underscores) |
 | Applies To | Select context |
 
-### 3. Source Configuration
+### 3. Source configuration
 
 Choose source type and configure:
 
@@ -254,7 +257,7 @@ Choose source type and configure:
 | Aggregate Type | Select operation |
 | Filter | Enter predicate |
 
-### 4. Caching (Optional)
+### 4. Caching (optional)
 
 | Field | Action |
 |-------|--------|
@@ -264,8 +267,12 @@ Choose source type and configure:
 
 ### 5. Activate
 
-1. Click **Save**
-2. Click **Activate**
+1. Click **Save** to create the variable in Draft state
+2. Click **Activate** to make it available for use
+
+```{note}
+Variables have three states: **Draft** (being edited), **Active** (available for use), and **Inactive** (disabled but preserved). You can deactivate an active variable or reactivate an inactive one.
+```
 
 ## Are you stuck?
 
