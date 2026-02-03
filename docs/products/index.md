@@ -30,5 +30,6 @@ sp_mis
 social_registry
 farmer_registry
 drims
+features/index
 whats_new_v2
 ```
