@@ -176,3 +176,5 @@ paste_image_to_wsl.sh
 docs/_images/**/*.py
 docs/_images/**/*.sh
 tests/
+
+.cursor/
