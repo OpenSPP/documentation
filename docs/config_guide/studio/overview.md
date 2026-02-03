@@ -145,7 +145,7 @@ External connections for KoBoToolbox and ODK Central integration are planned for
 - Import form definitions as event types
 - Automatic submission sync
 
-## Configuration Lifecycle
+## Configuration lifecycle
 
 All Studio configurations follow the same lifecycle:
 
@@ -192,7 +192,7 @@ Studio uses OpenSPP's privilege-based security system. Groups appear as "Studio 
 
 ![User settings showing Studio privilege options](/_images/en-us/config_guide/studio/overview/08-user-studio-privileges.png)
 
-## The 80/20 Rule
+## The 80/20 rule
 
 Studio is designed to handle 80% of common customization needs. Here's what's included and what requires developer help:
 
@@ -231,7 +231,7 @@ What you can do:
 • Contact your IT administrator for custom requirements
 ```
 
-## Studio Dashboard
+## Studio dashboard
 
 The Studio Dashboard is your starting point for configuring OpenSPP without code.
 
