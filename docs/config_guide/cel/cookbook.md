@@ -4,7 +4,7 @@ openspp:
   products: [core]
 ---
 
-# CEL Cookbook
+# CEL cookbook
 
 This guide is for **implementers** who need ready-to-use CEL patterns.
 
@@ -188,6 +188,18 @@ events_count("visit", period=this_year())
 events_sum("payment", "amount", period=this_year())
 ```
 
+### Average survey score
+
+```cel
+events_avg("survey", "score", within_months=12)
+```
+
+### Highest payment amount
+
+```cel
+events_max("payment", "amount", period=this_year())
+```
+
 ### Latest survey income
 
 ```cel
@@ -220,6 +232,11 @@ Or with literal:
 household_income < 10000
 ```
 
+Income within a range:
+```cel
+between(household_income, 5000, 15000)
+```
+
 ### Demographic targeting
 
 Children under 5 in low-income household:
@@ -250,7 +267,7 @@ vulnerability_score >= 50
 
 ## Entitlement amount formulas
 
-These are evaluated at runtime with a small context (typically `me` and `base_amount`).
+These are evaluated at runtime with a small context (typically `r` and `base_amount`).
 
 ### Fixed amount
 
@@ -322,10 +339,21 @@ has(r.birthdate)
 has(r.birthdate) and age_years(r.birthdate) >= 0 and age_years(r.birthdate) <= 120
 ```
 
+Using `between()` for range check:
+```cel
+has(r.birthdate) and between(age_years(r.birthdate), 0, 120)
+```
+
 ### Format check
 
+Phone number prefix:
 ```cel
 startswith(r.phone, "+63")
+```
+
+ID format with regex:
+```cel
+matches(r.national_id, "^[A-Z]{2}-[0-9]{8}$")
 ```
 
 ### Cross-field validation
