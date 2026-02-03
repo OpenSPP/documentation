@@ -14,29 +14,29 @@ The **OpenSPP Social Protection Management Information System (SP-MIS)** is a co
 
 **Easy registration and data collection –** Build and maintain a continuously updated database through imports, system integrations, or direct registration. Structured workflows support reliable updates, whether initiated by the citizens or registrars.
 
-<!--*Read more about {doc}`Unified and hierarchical beneficiary registry <../features/unified_registry>` and {doc}`Key terminology <../concepts/registrant_concepts>`.* -->
+*Read more about {doc}`Unified and hierarchical beneficiary registry <features/unified_registry>`.*
 
 **Verifiable Credentials –** Issue unique IDs and documents with QR codes through secure and streamlined processes to attest to program eligibility. 
 
 **Targeting and integrated service delivery –** With a flexible approach to eligibility and targeting, the OpenSPP SP-MIS can serve as a central data repository to support a wide array of programs.
 
-<!--*Read more about {doc}`Eligibility and targeting <../features/eligibility_targeting>`.*-->
+*Read more about {doc}`Eligibility and targeting <features/eligibility_targeting>`.*
 
 **Program and Distribution Management –** A core feature in OpenSPP SP-MIS is its ability to support the delivery of both cash and in-kind entitlements. Automate cash transfers via financial service providers, issue vouchers, or manage food and non-food item distribution, including stock and warehouse management.
 
-<!--*Read more about {doc}`End-to-end program and entitlement management <../features/program_management>`, {doc}`Pluggable payment and disbursement <../features/payment_disbursement>` and {doc}`In-kind benefits and inventory management (GRM) <../features/in_kind_benefits>`.*-->
+*Read more about {doc}`End-to-end program and entitlement management <features/program_management>`, {doc}`Pluggable payment and disbursement <features/payment_disbursement>` and {doc}`In-kind benefits and inventory management (GRM) <features/in_kind_benefits>`.*
 
 **Monitoring, reporting, and public accountability –** Maintain full audit trails, track all user actions, and provide dashboards and analytics for evidence-based decision-making. This capability is crucial for tracking program performance, demonstrating effectiveness to donors, and building public trust.
 
-<!--*Read more about {doc}`Auditable change management <../features/change_management>` and {doc}`Grievance Redress Mechanism (GRM) <../features/grievance_redress>`.*-->
+*Read more about {doc}`Auditable change management <features/change_management>` and {doc}`Grievance Redress Mechanism (GRM) <features/grievance_redress>`.*
 
 **Interoperability with other systems –** Connect securely with other national databases (e.g., ID, health, civil registration) through RESTful APIs to pull information directly, ensuring that the information is up-to-date.
 
-<!--*Read more about {doc}`Data integration and interoperability (APIs) <../features/data_integration_apis>`.*-->
+*Read more about {doc}`Data integration and interoperability (APIs) <features/data_integration_apis>`.*
 
 **Geo-spatial analysis and shock response –** Integrate GIS and external data (e.g., flood maps) with already known information to rapidly identify and assist affected households during crises without the need for time-consuming, emergency-specific registration and needs assessments.
 
-<!--*Read more about {doc}`Geospatial (GIS) and land management <../features/gis_land_management>`.*-->
+*Read more about {doc}`Geospatial (GIS) and land management <features/gis_land_management>`.*
 
 ## Who is it for?
 
