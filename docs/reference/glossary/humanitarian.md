@@ -54,8 +54,8 @@ POD
 Proof of Delivery
     Documentation confirming that goods were successfully delivered to the intended recipient. Includes recipient name, title, contact, signature or photo, date/time, and delivery notes about condition or discrepancies.
 
-Beneficiary
-    An individual or household receiving humanitarian assistance during a disaster response. DRIMS tracks beneficiary counts to measure reach and impact.
+DRIMS Beneficiary
+    An individual or household receiving humanitarian assistance during a disaster response. DRIMS tracks beneficiary counts to measure reach and impact. See also the general {term}`Beneficiary` term in the main glossary.
 
 Affected Population
     The total number of people directly or indirectly impacted by a disaster event within a specific geographic area. Used to justify request quantities and measure coverage.

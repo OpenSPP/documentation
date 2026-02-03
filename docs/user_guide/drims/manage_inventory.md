@@ -36,13 +36,15 @@ Learn how to view and manage relief supply inventory across your warehouses:
 
 Click **DRIMS** in the sidebar, then select **Inventory** and **Stock**.
 
-![Screenshot: Navigate to inventory](/_images/en-us/drims/manage_inventory/navigate_inventory.png)
+<!-- TODO: Add screenshot: Navigate to inventory -->
+<!-- ![Screenshot: Navigate to inventory](/_images/en-us/drims/manage_inventory/navigate_inventory.png) -->
 
 ### 2. Understand the Stock List
 
 The stock list shows all items currently in your warehouses:
 
-![Screenshot: Stock list overview](/_images/en-us/drims/manage_inventory/stock_list.png)
+<!-- TODO: Add screenshot: Stock list overview -->
+<!-- ![Screenshot: Stock list overview](/_images/en-us/drims/manage_inventory/stock_list.png) -->
 
 | Column | What It Shows |
 |--------|---------------|
@@ -57,7 +59,8 @@ The stock list shows all items currently in your warehouses:
 
 To see stock for a specific warehouse, click the **Filters** button and select your warehouse.
 
-![Screenshot: Filter by warehouse](/_images/en-us/drims/manage_inventory/filter_warehouse.png)
+<!-- TODO: Add screenshot: Filter by warehouse -->
+<!-- ![Screenshot: Filter by warehouse](/_images/en-us/drims/manage_inventory/filter_warehouse.png) -->
 
 ### 4. Search for Specific Products
 
@@ -67,7 +70,8 @@ Use the search bar to find specific items. You can search by:
 - Product code (e.g., "NFI-001")
 - Category (e.g., "Medical Supplies")
 
-![Screenshot: Search for products](/_images/en-us/drims/manage_inventory/search_products.png)
+<!-- TODO: Add screenshot: Search for products -->
+<!-- ![Screenshot: Search for products](/_images/en-us/drims/manage_inventory/search_products.png) -->
 
 ## Understanding Stock Status
 
@@ -100,13 +104,15 @@ For items with shelf life tracking (like medical supplies, food items), you can 
 
 Click **DRIMS** in the sidebar, then select **Inventory** and **Lots/Serial Numbers**.
 
-![Screenshot: Navigate to lots](/_images/en-us/drims/manage_inventory/navigate_lots.png)
+<!-- TODO: Add screenshot: Navigate to lots -->
+<!-- ![Screenshot: Navigate to lots](/_images/en-us/drims/manage_inventory/navigate_lots.png) -->
 
 ### 2. View Expiry Information
 
 The lot list shows tracking details for each batch of items:
 
-![Screenshot: Lot list with expiry dates](/_images/en-us/drims/manage_inventory/lot_list.png)
+<!-- TODO: Add screenshot: Lot list with expiry dates -->
+<!-- ![Screenshot: Lot list with expiry dates](/_images/en-us/drims/manage_inventory/lot_list.png) -->
 
 | Column | What It Shows |
 |--------|---------------|
@@ -124,7 +130,8 @@ To find items expiring soon:
 2. Select **Expiring in 30 days** or set a custom date range
 3. Review the list and plan dispatches
 
-![Screenshot: Filter expiring items](/_images/en-us/drims/manage_inventory/filter_expiring.png)
+<!-- TODO: Add screenshot: Filter expiring items -->
+<!-- ![Screenshot: Filter expiring items](/_images/en-us/drims/manage_inventory/filter_expiring.png) -->
 
 ```{warning}
 Items with red expiry warnings should not be dispatched. Mark them for disposal through the appropriate inventory adjustment process.
@@ -138,13 +145,15 @@ Track how stock has moved in and out of your warehouses.
 
 Click **DRIMS** in the sidebar, then select **Inventory** and **Stock Moves**.
 
-![Screenshot: Navigate to stock moves](/_images/en-us/drims/manage_inventory/navigate_moves.png)
+<!-- TODO: Add screenshot: Navigate to stock moves -->
+<!-- ![Screenshot: Navigate to stock moves](/_images/en-us/drims/manage_inventory/navigate_moves.png) -->
 
 ### 2. Understand Movement Types
 
 The stock moves list shows all inventory transactions:
 
-![Screenshot: Stock moves list](/_images/en-us/drims/manage_inventory/moves_list.png)
+<!-- TODO: Add screenshot: Stock moves list -->
+<!-- ![Screenshot: Stock moves list](/_images/en-us/drims/manage_inventory/moves_list.png) -->
 
 | Move Type | Direction | What Triggered It |
 |-----------|-----------|-------------------|
@@ -164,13 +173,15 @@ Filter by:
 - **Product** - See all movements for a specific item
 - **Warehouse** - See movements for your warehouse only
 
-![Screenshot: Filter stock moves](/_images/en-us/drims/manage_inventory/filter_moves.png)
+<!-- TODO: Add screenshot: Filter stock moves -->
+<!-- ![Screenshot: Filter stock moves](/_images/en-us/drims/manage_inventory/filter_moves.png) -->
 
 ### 4. View Movement Details
 
 Click on any movement to see full details:
 
-![Screenshot: Movement details](/_images/en-us/drims/manage_inventory/move_details.png)
+<!-- TODO: Add screenshot: Movement details -->
+<!-- ![Screenshot: Movement details](/_images/en-us/drims/manage_inventory/move_details.png) -->
 
 | Field | What It Shows |
 |-------|---------------|
@@ -193,7 +204,8 @@ View inventory allocated to a specific disaster incident.
 3. Click on the incident card
 4. Select the **Stock** tab
 
-![Screenshot: Incident stock tab](/_images/en-us/drims/manage_inventory/incident_stock.png)
+<!-- TODO: Add screenshot: Incident stock tab -->
+<!-- ![Screenshot: Incident stock tab](/_images/en-us/drims/manage_inventory/incident_stock.png) -->
 
 ### 2. Review Incident Inventory
 
@@ -218,7 +230,8 @@ Stock adjustments require **Warehouse Officer** or **Manager** permissions. All 
 2. Select **Inventory** and **Adjustments**
 3. Click **New**
 
-![Screenshot: New adjustment](/_images/en-us/drims/manage_inventory/new_adjustment.png)
+<!-- TODO: Add screenshot: New adjustment -->
+<!-- ![Screenshot: New adjustment](/_images/en-us/drims/manage_inventory/new_adjustment.png) -->
 
 ### 2. Fill in Adjustment Details
 
@@ -239,13 +252,15 @@ For each item to adjust:
 | **Theoretical Quantity** | What the system shows |
 | **Counted Quantity** | What you physically counted |
 
-![Screenshot: Adjustment lines](/_images/en-us/drims/manage_inventory/adjustment_lines.png)
+<!-- TODO: Add screenshot: Adjustment lines -->
+<!-- ![Screenshot: Adjustment lines](/_images/en-us/drims/manage_inventory/adjustment_lines.png) -->
 
 ### 4. Validate the Adjustment
 
 Click **Validate** to apply the adjustment. The system will automatically calculate the difference and update stock levels.
 
-![Screenshot: Validate adjustment](/_images/en-us/drims/manage_inventory/validate_adjustment.png)
+<!-- TODO: Add screenshot: Validate adjustment -->
+<!-- ![Screenshot: Validate adjustment](/_images/en-us/drims/manage_inventory/validate_adjustment.png) -->
 
 ## Are You Stuck?
 

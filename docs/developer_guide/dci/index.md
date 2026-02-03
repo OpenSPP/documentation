@@ -141,6 +141,5 @@ Before implementing DCI integration:
 
 ## See Also
 
-- {doc}`/developer_guide/fastapi/index` - FastAPI integration in OpenSPP
-- {doc}`/developer_guide/oauth/index` - OAuth2 authentication
-- {doc}`/developer_guide/queue_job/index` - Background job processing
+- {doc}`/developer_guide/api_v2/index` - OpenSPP API V2 documentation
+- {doc}`/developer_guide/api_v2/authentication` - API authentication

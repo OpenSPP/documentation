@@ -20,7 +20,7 @@ Complete reference for all standard vocabularies in OpenSPP V2.
 | [Languages (ISO 639)](#iso-639-languages) | `urn:iso:std:iso:639` | 180+ | No | Geographic |
 | [Currencies (ISO 4217)](#iso-4217-currencies) | `urn:iso:std:iso:4217` | 170+ | No | Geographic |
 | [WHO ICF Body Functions](#who-icf-body-functions) | `urn:who:icf:b` | 400+ | Yes | Disability |
-| [WHO ICF Activities](#who-icf-activities) | `urn:who:icf:d` | 300+ | Yes | Disability |
+| [WHO ICF Activities](#who-icf-activities--participation) | `urn:who:icf:d` | 300+ | Yes | Disability |
 | [WHO ICD-11 Health](#who-icd-11-health-conditions) | `urn:who:icd-11` | 17,000+ | Yes | Health |
 | [ILO ISCO-08 Occupations](#ilo-isco-08-occupations) | `urn:ilo:isco-08` | 400+ | Yes | Labor |
 | [UNESCO ISCED Education](#unesco-isced-2011-education) | `urn:unesco:isced:2011` | 9 | Yes | Education |

@@ -31,8 +31,8 @@ OpenSPP's GIS integration transforms location from static data points into actio
 
 The GIS and land management functionality is delivered through specialized modules:
 
-* **[spp_gis](/reference/modules/spp_gis.md)**: Core GIS framework and mapping infrastructure
-* **[spp_area](/reference/modules/spp_area.md)**: Administrative area definition and management
-* **[spp_land_record](/reference/modules/spp_land_record.md)**: Land parcel registration and ownership tracking
-* **[spp_irrigation](/reference/modules/spp_irrigation.md)**: Irrigation infrastructure mapping and management
-* **[spp_base_farmer_registry](/reference/modules/spp_base_farmer_registry.md)**: Integration of spatial data with farmer registries
+* **{doc}`spp_gis </reference/modules/spp_gis>`**: Core GIS framework and mapping infrastructure
+* **{doc}`spp_area </reference/modules/spp_area>`**: Administrative area definition and management
+* **spp_land_record**: Land parcel registration and ownership tracking
+* **spp_irrigation**: Irrigation infrastructure mapping and management
+* **spp_base_farmer_registry**: Integration of spatial data with farmer registries

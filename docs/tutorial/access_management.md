@@ -84,7 +84,7 @@ For long-term maintainability, prefer implementing new privileges/groups/roles i
 
 ## For implementers and developers
 
-See {doc}`../technical_reference/access_rights` for:
+See {doc}`/technical_reference/security` for:
 
 - the OpenSPP access rights architecture (roles, privileges, groups)
 - record rule patterns and anti-patterns

@@ -12,7 +12,7 @@ This guide is for **developers** who need detailed specifications of the DCI pro
 
 Every DCI message uses a three-part envelope:
 
-```json
+```text
 {
   "signature": "Signature: namespace=\"dci\", ...",
   "header": {...},
@@ -486,7 +486,7 @@ Response (200 OK):
 
 ### Group/Household Schema
 
-```json
+```text
 {
   "@context": "https://schema.spdci.org/core/v1",
   "@type": "Group",

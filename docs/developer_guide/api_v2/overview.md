@@ -98,7 +98,7 @@ OpenSPP API V2 adopts these patterns from FHIR without full compliance:
 
 Discover what the API supports:
 
-```http
+```text
 GET /api/v2/spp/metadata
 ```
 
@@ -108,7 +108,7 @@ Returns available resources, operations, search parameters, and installed extens
 
 Create multiple related resources atomically:
 
-```http
+```text
 POST /api/v2/spp/$batch
 ```
 
@@ -252,7 +252,7 @@ Major version changes indicate breaking changes. Minor updates are backward-comp
 
 Response headers indicate the exact API version:
 
-```http
+```text
 X-API-Version: 2.0.0
 ```
 
@@ -266,7 +266,7 @@ Check that your access token hasn't expired (tokens last 1 hour). Request a new 
 
 Your API client may not have the required scopes, or the registrant hasn't consented to data sharing. Check consent status in response headers:
 
-```http
+```text
 X-Consent-Status: no_consent
 ```
 
@@ -278,7 +278,7 @@ The API may be filtering fields due to consent restrictions. Use the `X-Consent-
 
 Your client has exceeded rate limits. Check headers:
 
-```http
+```text
 X-RateLimit-Limit: 1000
 X-RateLimit-Remaining: 0
 X-RateLimit-Reset: 60

@@ -531,7 +531,6 @@ cr.action_submit()  # Submit for approval
 
 ## See Also
 
-- [Approval Workflows](../approval_workflows/) - Configure approval definitions
-- [Event Data](../event_data/) - Integrate change requests with event data collection
-- [API V2](../../developer_guide/api_v2/) - Create change requests via REST API
-- [Studio](../studio/) - Use Configurator V2 to create custom models
+- {doc}`/config_guide/event_data/index` - Integrate change requests with event data collection
+- {doc}`/developer_guide/api_v2/index` - Create change requests via REST API
+- {doc}`/config_guide/studio/index` - Use Configurator V2 to create custom models

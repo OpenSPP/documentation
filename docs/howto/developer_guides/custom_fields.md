@@ -66,7 +66,7 @@ Once the variable exists, you can reuse it in:
 - scoring formulas (including CEL Formula indicators)
 - validations and workflow rules (runtime evaluation screens, where applicable)
 
-See {doc}`../../tutorial/variables_and_expressions` and {doc}`../../technical_reference/cel/index`.
+See {doc}`/config_guide/variables/index` and {doc}`/config_guide/cel/index`.
 
 ```{note}
 For complex derived values (counts, sums, “children under 5”, event-based queries), prefer Studio aggregate variables and event aggregation variables instead of implementing custom computed fields.

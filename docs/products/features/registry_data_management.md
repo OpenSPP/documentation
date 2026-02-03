@@ -1,3 +1,4 @@
+---
 orphan: true
 myst:
   html_meta:
@@ -38,8 +39,7 @@ OpenSPP provides the tools and structure needed for effective data management:
 
 ## Learn more
 
-* **To understand key concepts:** See {doc}`../concepts/registry_key_concepts` and {doc}`../concepts/data_protection`.
-* **For step-by-step instructions on registering users:** See {doc}`../../user_guide/registry_management/register_individual`.
-* **To learn how to import/export data:** See {doc}`../../user_guide/registry_management/import_export_registrant_data` 
-* **For technical details on registry modules:** See {doc}`/reference/modules/g2p_registry_base`, {doc}`/reference/modules/g2p_registry_individual`, {doc}`/reference/modules/g2p_registry_group`, {doc}`/reference/modules/g2p_registry_membership`.
-* **For developer guides on customization:** See {doc}`/developer_guide/module_development/registry` and {doc}`/developer_guide/module_development/fields`.
+* **To understand key concepts:** See {doc}`/explanation/registry_key_concepts`.
+* **For step-by-step instructions on registering users:** See {doc}`/user_guide/registry/register_individual`.
+* **To learn how to import/export data:** See {doc}`/user_guide/registry/import_data` and {doc}`/user_guide/registry/export_data`.
+* **For technical details on registry modules:** See {doc}`/reference/modules/spp_registry`.

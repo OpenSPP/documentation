@@ -18,7 +18,7 @@ The **OpenSPP Base Settings** module aims to:
 
 1. **spp_registry**: This module inherits the core registry functionalities provided by the **OpenSPP Registry** module, including managing registrants, relationships, and identification.
 
-2. **Base (base):** Leverages the core Odoo [Base](Base) module for data models, views, and basic functionalities.
+2. **Base (base):** Leverages the core Odoo `base` module for data models, views, and basic functionalities.
 
 ## Additional Functionality
 

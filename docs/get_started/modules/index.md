@@ -19,7 +19,7 @@ Before installing OpenSPP modules, ensure you have an **Odoo 19 instance** runni
 OpenSPP comes with three configured base modules depending on your needs. The steps on how to install these can be found in {doc}`Installation of OpenSPP Social Registry <social_installation>`, {doc}`Installation of OpenSPP SP-MIS <spmis_installation>` and {doc}`Installation of OpenSPP Farmer Registry <farmer_installation>`.
 
 :::{important}
-The **SP-MIS** ({doc}`spp_base_spmis </reference/modules/spp_base_spmis>`), **Farmer Registry** ({doc}`spp_base_farmer_registry </reference/modules/spp_base_farmer_registry>`) and **Social Registry** ({doc}`spp_base_social_registry </reference/modules/spp_base_social_registry>`) modules are mutually exclusive. You can only have one of them installed in a single Odoo database. Attempting to install multiple base modules will result in an error.
+The **SP-MIS** ({doc}`spp_starter_sp_mis </reference/modules/spp_starter_sp_mis>`) and **Social Registry** ({doc}`spp_starter_social_registry </reference/modules/spp_starter_social_registry>`) starter modules are mutually exclusive. You can only have one of them installed in a single Odoo database. Attempting to install multiple starter modules will result in an error.
 :::
 
 ## Installing additional modules
@@ -70,7 +70,7 @@ Installing an Odoo module, including those for OpenSPP, follows a standard proce
 
 OpenSPP modules often have dependencies that are automatically installed. Understanding these relationships helps with troubleshooting:
 
-- **Core dependencies** are always installed (e.g., {doc}`spp_base_spmis </reference/modules/spp_base_spmis>` installs registry modules)
+- **Core dependencies** are always installed (e.g., {doc}`spp_starter_sp_mis </reference/modules/spp_starter_sp_mis>` installs registry modules)
 - **Optional dependencies** can be manually selected based on your needs
 - **Conflicting modules** will show warnings during installation attempts
 
@@ -105,7 +105,7 @@ After installing your modules:
 3. **Import initial data** - Use data import modules or APIs to populate your system
 4. **Test workflows** - Verify the installed features work as expected
 
-For detailed configuration guides for specific modules, see the {doc}`../user_guide/index` and {doc}`../reference/modules/index`.
+For detailed configuration guides for specific modules, see the {doc}`/user_guide/index` and {doc}`/reference/modules/index`.
 
 ```{toctree}
 ---

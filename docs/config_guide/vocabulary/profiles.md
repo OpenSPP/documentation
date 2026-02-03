@@ -238,14 +238,19 @@ Kenya CT-OVC Active Codes:
 |-------|-------|
 | API Vocabulary Validation | Strict |
 
-**Result:**
-```json
+**Request:**
+```
 POST /api/v2/individuals
 {
-  "gender": "urn:iso:std:iso:5218#9"  // Not Applicable - not in profile
+  "gender": "urn:iso:std:iso:5218#9"
 }
+```
 
-→ 400 Bad Request
+Note: "Not Applicable" (code #9) is not in the profile.
+
+**Response:** 400 Bad Request
+
+```json
 {
   "error": "Code not in active deployment profile",
   "code": "urn:iso:std:iso:5218#9",

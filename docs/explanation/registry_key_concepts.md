@@ -24,7 +24,7 @@ Resource optimization is achieved by reducing data storage requirements. This le
 
 Balancing core registry data with program-specific data ensures that essential information remains up-to-date and universally accessible, while program-specific details are managed separately for greater precision. This balance supports both the overarching needs of OpenSPP and the specific needs of individual programs.
 
-Finally, separating static data from dynamic data allows for accurate representation and easy updates. Static data, such as names and birthdates, are stored in the core registry, while dynamic data, like income changes or program participation, are managed as {term}`event data`. This separation keeps the core registry uncluttered and efficient, facilitating better management and updates.
+Finally, separating static data from dynamic data allows for accurate representation and easy updates. Static data, such as names and birthdates, are stored in the core registry, while dynamic data, like income changes or program participation, are managed as **event data**. This separation keeps the core registry uncluttered and efficient, facilitating better management and updates.
 
 By adopting these practices, OpenSPP ensures secure, efficient, and scalable data management, effectively supporting diverse program needs while maintaining a robust core infrastructure.
 

@@ -30,19 +30,19 @@ Create and submit a request for relief supplies to be delivered to a disaster-af
 
 Click **DRIMS** in the sidebar, then select **Requests**.
 
-![Screenshot: DRIMS menu with Requests highlighted](/_images/en-us/drims/requests/1_open_requests.png)
+![Screenshot: DRIMS menu with Requests highlighted](/_images/en-us/user_guide/drims/requests/1.png)
 
 ### 2. Create New Request
 
 Click the **New** button in the top left.
 
-![Screenshot: Requests list with New button highlighted](/_images/en-us/drims/requests/2_click_new.png)
+![Screenshot: Requests list with New button highlighted](/_images/en-us/user_guide/drims/requests/2.png)
 
 ### 3. Select the Incident
 
 In the **Incident** field, click the dropdown and choose the disaster incident you're responding to.
 
-![Screenshot: Incident dropdown open](/_images/en-us/drims/requests/3_select_incident.png)
+![Screenshot: Incident dropdown open](/_images/en-us/user_guide/drims/requests/3.png)
 
 **What this means:** Every request must be linked to a disaster incident (like "Flood 2025" or "Earthquake North Region"). This helps track what supplies are for which emergency.
 
@@ -50,7 +50,7 @@ In the **Incident** field, click the dropdown and choose the disaster incident y
 
 In the **Destination Area** field, select where the supplies need to be delivered.
 
-![Screenshot: Destination Area dropdown](/_images/en-us/drims/requests/4_destination_area.png)
+![Screenshot: Destination Area dropdown](/_images/en-us/user_guide/drims/requests/4.png)
 
 **What this means:** This is the specific geographic area (city, district, or zone) where {term}`Beneficiary`(ies) will receive the supplies.
 
@@ -58,13 +58,13 @@ In the **Destination Area** field, select where the supplies need to be delivere
 
 In the **Priority** field, choose the urgency level. See [Understanding Priority Levels](#understanding-priority-levels) below for guidance.
 
-![Screenshot: Priority dropdown](/_images/en-us/drims/requests/5_priority.png)
+![Screenshot: Priority dropdown](/_images/en-us/user_guide/drims/requests/5.png)
 
 ### 6. Select Cluster (Optional)
 
 If your organization uses humanitarian {term}`Cluster`s, select the relevant cluster (like Health, Shelter, Food Security).
 
-![Screenshot: Cluster dropdown](/_images/en-us/drims/requests/6_cluster.png)
+![Screenshot: Cluster dropdown](/_images/en-us/user_guide/drims/requests/6.png)
 
 **What this means:** Clusters are coordination groups for different types of relief. This is optional but helps coordinate with other organizations.
 
@@ -72,7 +72,7 @@ If your organization uses humanitarian {term}`Cluster`s, select the relevant clu
 
 Click the **Date Needed** calendar and select when supplies must arrive.
 
-![Screenshot: Date picker open](/_images/en-us/drims/requests/7_date_needed.png)
+![Screenshot: Date picker open](/_images/en-us/user_guide/drims/requests/7.png)
 
 **Important:** Be realistic. The date you choose affects how your request is prioritized.
 
@@ -80,7 +80,7 @@ Click the **Date Needed** calendar and select when supplies must arrive.
 
 In the **Justification** field, explain why these supplies are needed. Be specific about the situation.
 
-![Screenshot: Justification text field filled](/_images/en-us/drims/requests/8_justification.png)
+![Screenshot: Justification text field filled](/_images/en-us/user_guide/drims/requests/8.png)
 
 **Example:** "Flash flooding has displaced 500 families. Temporary shelters need clean water and hygiene supplies. No clean water source available in evacuation center."
 
@@ -88,20 +88,20 @@ In the **Justification** field, explain why these supplies are needed. Be specif
 
 In the **{term}`Affected Population`** field, enter the number of people who will benefit from these supplies.
 
-![Screenshot: Affected Population field](/_images/en-us/drims/requests/9_affected_population.png)
+![Screenshot: Affected Population field](/_images/en-us/user_guide/drims/requests/9.png)
 
 ### 10. Add Requested Items
 
 In the **Requested Items** section, click **Add a line**.
 
-![Screenshot: Add a line button in items section](/_images/en-us/drims/requests/10_add_items.png)
+![Screenshot: Add a line button in items section](/_images/en-us/user_guide/drims/requests/10.png)
 
 For each item:
 - **Product:** Select the item from the dropdown (like "Water Purification Tablets" or "Emergency Blankets")
 - **Quantity:** Enter how many units you need
 - **UoM:** Confirm the unit of measure (boxes, pieces, liters, etc.)
 
-![Screenshot: Item line with product, quantity, and UoM filled](/_images/en-us/drims/requests/11_item_details.png)
+![Screenshot: Item line with product, quantity, and UoM filled](/_images/en-us/user_guide/drims/requests/11.png)
 
 Repeat this step for each type of supply needed.
 
@@ -109,7 +109,7 @@ Repeat this step for each type of supply needed.
 
 If this request involves a life-threatening situation, check the **Life-Threatening** box. See [Life-Threatening Requests](#life-threatening-requests) below.
 
-![Screenshot: Life-Threatening checkbox](/_images/en-us/drims/requests/12_life_threatening.png)
+![Screenshot: Life-Threatening checkbox](/_images/en-us/user_guide/drims/requests/12.png)
 
 **Important:** Only use this for genuine emergencies. It bypasses normal approval workflows.
 
@@ -117,17 +117,17 @@ If this request involves a life-threatening situation, check the **Life-Threaten
 
 Click **Save** to save your request as a draft. You can come back and edit it later.
 
-![Screenshot: Save button](/_images/en-us/drims/requests/13_save_draft.png)
+![Screenshot: Save button](/_images/en-us/user_guide/drims/requests/11.png)
 
 ### 13. Submit for Approval
 
 When your request is ready, click **Submit** to send it for approval.
 
-![Screenshot: Submit button](/_images/en-us/drims/requests/14_submit.png)
+![Screenshot: Submit button](/_images/en-us/user_guide/drims/requests/11.png)
 
 The request status will change to **Pending** and go to your supervisor or logistics coordinator for review.
 
-![Screenshot: Status changed to Pending](/_images/en-us/drims/requests/15_pending_status.png)
+![Screenshot: Status changed to Pending](/_images/en-us/user_guide/drims/requests/12.png)
 
 ## Understanding Priority Levels
 

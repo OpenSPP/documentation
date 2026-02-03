@@ -31,8 +31,8 @@ The platform's commitment to interoperability through standardized APIs and data
 
 The API and integration capabilities are delivered through specialized modules:
 
-* **[spp_api_v2](/reference/modules/spp_api_v2.md)**: Core API framework with endpoint management
-* **[spp_registry_rest_api](/reference/modules/spp_registry_rest_api.md)**: REST API for registry operations
-* **[spp_oauth](/reference/modules/spp_oauth.md)**: OAuth 2.0 authentication implementation
-* **[spp_registry_data_source](/reference/modules/spp_registry_data_source.md)**: External data source integration framework
-* **[spp_dci_server](/reference/modules/spp_dci_server.md)**: DCI-compliant API server implementation
+* **{doc}`spp_api_v2 </reference/modules/spp_api_v2>`**: Core API framework with endpoint management
+* **spp_registry_rest_api**: REST API for registry operations
+* **spp_oauth**: OAuth 2.0 authentication implementation
+* **spp_registry_data_source**: External data source integration framework
+* **{doc}`spp_dci_server </reference/modules/spp_dci_server>`**: DCI-compliant API server implementation

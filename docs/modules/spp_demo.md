@@ -17,7 +17,7 @@ The `spp_demo` module serves as a demonstration and testing ground for the OpenS
 
 The `spp_demo` module relies heavily on the following OpenSPP modules:
 
-* [theme_openspp_muk](theme_openspp_muk)  Applies a specific visual theme to the OpenSPP user interface for demonstration purposes.
+* `theme_openspp_muk` - Applies a specific visual theme to the OpenSPP user interface for demonstration purposes.
 * **spp_registry** (OpenSPP Registry): Utilizes this module to establish and demonstrate relationships between individual and group registrants.
 * [spp_custom_field](spp_custom_field) (OpenSPP Custom Field): Leverages this module to create and showcase custom fields added to registrant profiles, illustrating the flexibility of OpenSPP in capturing program-specific data.
 * **queue_job** (Queue Job):  Employs the Queue Job module to handle background tasks, demonstrating asynchronous processing for operations like data generation and potentially eligibility checks.

@@ -39,7 +39,7 @@ Studio fields are exposed through two API extensions, organized by target regist
 
 When requesting Individual or Group resources, include these extensions via the `_extensions` parameter:
 
-```http
+```text
 GET /api/v2/spp/Individual/{identifier}?_extensions=studio-individual
 ```
 
@@ -77,7 +77,7 @@ env["spp.studio.field"]._register_existing_fields()
 
 Retrieve metadata about all active Studio custom fields.
 
-```http
+```text
 GET /api/v2/spp/Studio/fields
 Authorization: Bearer {token}
 ```
@@ -136,7 +136,7 @@ Authorization: Bearer {token}
 
 Retrieve JSON Schema validation rules for a specific field.
 
-```http
+```text
 GET /api/v2/spp/Studio/fields/{technical_name}/schema
 Authorization: Bearer {token}
 ```
@@ -172,7 +172,7 @@ Authorization: Bearer {token}
 
 Retrieve metadata about available CEL variables.
 
-```http
+```text
 GET /api/v2/spp/Studio/variables
 Authorization: Bearer {token}
 ```
@@ -214,7 +214,7 @@ Authorization: Bearer {token}
 
 Retrieve cached variable values for a specific Individual or Group.
 
-```http
+```text
 GET /api/v2/spp/Studio/variables/{resource_type}/{identifier}
 Authorization: Bearer {token}
 ```
@@ -235,7 +235,7 @@ Authorization: Bearer {token}
 
 **Example:**
 
-```http
+```text
 GET /api/v2/spp/Studio/variables/Individual/urn:gov:ph:psa:national-id|PH-123456789?variables=household_income,children_count&period_key=current
 ```
 
@@ -313,7 +313,7 @@ x_primary_crop_id = Many2one("spp.vocabulary.code")
 
 When creating or updating records via API, include extension data in the `extension` object:
 
-```json
+```text
 {
   "resourceType": "Individual",
   "identifier": [...],

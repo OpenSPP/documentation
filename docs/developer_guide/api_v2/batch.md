@@ -39,7 +39,7 @@ Transaction bundles process operations atomically. If any operation fails, all c
 
 ### Basic Structure
 
-```http
+```text
 POST /api/v2/spp/$batch
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -70,7 +70,7 @@ Content-Type: application/json
 
 Create an individual, add them to a household, and enroll in a program:
 
-```http
+```text
 POST /api/v2/spp/$batch
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -201,7 +201,7 @@ Content-Type: application/json
 
 Use `fullUrl` with `urn:uuid:*` to create temporary IDs for cross-references:
 
-```json
+```text
 {
   "fullUrl": "urn:uuid:temp-individual",
   "resource": {

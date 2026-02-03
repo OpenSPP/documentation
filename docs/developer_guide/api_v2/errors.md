@@ -69,7 +69,7 @@ All errors return an `OperationOutcome` resource:
 
 Invalid request syntax or structure:
 
-```json
+```text
 HTTP/1.1 400 Bad Request
 
 {
@@ -107,7 +107,7 @@ except json.JSONDecodeError as e:
 
 Missing or invalid access token:
 
-```json
+```text
 HTTP/1.1 401 Unauthorized
 
 {
@@ -153,7 +153,7 @@ def api_request_with_token_refresh(url, token_manager):
 
 Insufficient permissions or consent:
 
-```json
+```text
 HTTP/1.1 403 Forbidden
 
 {
@@ -207,7 +207,7 @@ def handle_forbidden_error(response):
 
 Resource doesn't exist:
 
-```json
+```text
 HTTP/1.1 404 Not Found
 
 {
@@ -258,7 +258,7 @@ def get_individual_safe(identifier, token, base_url):
 
 Version conflict during update:
 
-```json
+```text
 HTTP/1.1 409 Conflict
 
 {
@@ -328,7 +328,7 @@ def update_with_conflict_resolution(identifier, updates, token, base_url, max_re
 
 Validation error:
 
-```json
+```text
 HTTP/1.1 422 Unprocessable Entity
 
 {
@@ -409,7 +409,7 @@ except requests.HTTPError as e:
 
 Rate limit exceeded:
 
-```json
+```text
 HTTP/1.1 429 Too Many Requests
 X-RateLimit-Limit: 1000
 X-RateLimit-Remaining: 0
@@ -470,7 +470,7 @@ def api_request_with_rate_limit_handling(url, headers, max_retries=3):
 
 Server-side error:
 
-```json
+```text
 HTTP/1.1 500 Internal Server Error
 
 {

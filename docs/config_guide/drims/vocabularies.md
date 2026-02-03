@@ -103,7 +103,8 @@ Cluster: Health
 Incident: 2025 Southwest Monsoon Floods
 ```
 
-![Cluster selection on request form](vocabularies/cluster_selection.png)
+<!-- TODO: Add screenshot: Cluster selection on request form -->
+<!-- ![Cluster selection on request form](vocabularies/cluster_selection.png) -->
 
 ```{note}
 The cluster codes follow UN OCHA standards and should not be modified. If your country uses different sector names, create custom translations in **Settings → Translations** rather than changing the codes.
@@ -127,7 +128,8 @@ Priority affects:
 - **Alert generation** - Overdue critical requests trigger automatic alerts
 - **Approval routing** - Critical requests may bypass certain approval steps
 
-![Priority field on request](vocabularies/priority_field.png)
+<!-- TODO: Add screenshot: Priority field on request -->
+<!-- ![Priority field on request](vocabularies/priority_field.png) -->
 
 ```{tip}
 You can add custom priority levels (e.g., `routine` for regular stock replenishment) by adding vocabulary codes. See "Adding Custom Vocabulary Codes" below.
@@ -153,7 +155,8 @@ Condition is recorded:
 - **On distribution** - When dispatching to beneficiaries
 - **On return** - When items come back from field
 
-![Item condition selection during inspection](vocabularies/condition_inspection.png)
+<!-- TODO: Add screenshot: Item condition selection during inspection -->
+<!-- ![Item condition selection during inspection](vocabularies/condition_inspection.png) -->
 
 ```{warning}
 Items marked `damaged` or `expired` should not be distributed. DRIMS can generate alerts when such items remain in inventory beyond a threshold period.
@@ -184,7 +187,8 @@ This helps DRIMS:
 - Route information to the right stakeholders
 - Track agency roles correctly
 
-![Coordination mode on incident](vocabularies/coordination_mode.png)
+<!-- TODO: Add screenshot: Coordination mode on incident -->
+<!-- ![Coordination mode on incident](vocabularies/coordination_mode.png) -->
 
 ## Organization Roles
 
@@ -215,13 +219,15 @@ You can extend vocabularies with country-specific or program-specific codes with
 
 Go to **DRIMS → Configuration → Vocabularies**.
 
-![Vocabularies menu](vocabularies/menu_vocabularies.png)
+<!-- TODO: Add screenshot: Vocabularies menu -->
+<!-- ![Vocabularies menu](vocabularies/menu_vocabularies.png) -->
 
 ### Step 2: Select the Vocabulary
 
 Click on the vocabulary you want to extend (e.g., "Priority Levels").
 
-![Select vocabulary](vocabularies/select_vocabulary.png)
+<!-- TODO: Add screenshot: Select vocabulary -->
+<!-- ![Select vocabulary](vocabularies/select_vocabulary.png) -->
 
 ### Step 3: Add a New Code
 
@@ -234,7 +240,8 @@ Click **Add a line** in the Codes section.
 | **URI** | (auto-generated) | Leave blank - system generates |
 | **Deprecated** | Unchecked | Check to hide from dropdowns |
 
-![Add vocabulary code](vocabularies/add_code.png)
+<!-- TODO: Add screenshot: Add vocabulary code -->
+<!-- ![Add vocabulary code](vocabularies/add_code.png) -->
 
 ### Step 4: Save
 
@@ -244,7 +251,8 @@ Click **Save** to activate the new code.
 
 Open a request form and check that the new priority level appears in the dropdown.
 
-![New code in dropdown](vocabularies/verify_code.png)
+<!-- TODO: Add screenshot: New code in dropdown -->
+<!-- ![New code in dropdown](vocabularies/verify_code.png) -->
 
 ```{important}
 **Code naming rules:**
@@ -321,7 +329,8 @@ To see all vocabularies and their codes:
 2. Use the search and filters to find specific vocabularies
 3. Click any vocabulary to view and edit its codes
 
-![Vocabulary list](vocabularies/vocabulary_list.png)
+<!-- TODO: Add screenshot: Vocabulary list -->
+<!-- ![Vocabulary list](vocabularies/vocabulary_list.png) -->
 
 ## Are You Stuck?
 

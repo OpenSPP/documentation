@@ -35,7 +35,7 @@ Learn how to read the DRIMS dashboard to understand the current status of your d
 
 The dashboard displays each active incident as a card. Cards are organized by status (Active, Pending, Closed) and show the most important information about each disaster response operation.
 
-![Screenshot: DRIMS Dashboard showing incident cards](/_images/en-us/drims/dashboard/incident_dashboard.png)
+![Screenshot: DRIMS Dashboard showing incident cards](/_images/en-us/user_guide/drims/dashboard/1.png)
 
 Each incident card displays:
 
@@ -48,7 +48,7 @@ Each incident card displays:
 
 Each incident card shows key performance indicators (KPIs) that help you understand the response status.
 
-![Screenshot: Single incident card with KPIs highlighted](/_images/en-us/drims/dashboard/incident_card_detail.png)
+![Screenshot: Single incident card with KPIs highlighted](/_images/en-us/user_guide/drims/dashboard/2.png)
 
 ### What the Numbers Mean
 
@@ -71,7 +71,7 @@ Each incident card shows key performance indicators (KPIs) that help you underst
 
 Each warehouse has a health status that tells you if it needs attention.
 
-![Screenshot: Warehouse list showing health indicators](/_images/en-us/drims/dashboard/warehouse_health.png)
+![Screenshot: Warehouse list showing health indicators](/_images/en-us/user_guide/drims/dashboard/3.png)
 
 ### Health Status Colors
 
@@ -145,15 +145,15 @@ Acknowledge an alert when you've seen it and are taking action.
 
 1. Click **DRIMS** in the sidebar, then select **Operations → Alerts**
 
-   ![Screenshot: Navigate to alerts menu](/_images/en-us/drims/dashboard/navigate_alerts.png)
+   ![Screenshot: Navigate to alerts menu](/_images/en-us/user_guide/drims/dashboard/4.png)
 
 2. Click on the alert you want to acknowledge
 
-   ![Screenshot: Alerts list](/_images/en-us/drims/dashboard/alerts_list.png)
+   ![Screenshot: Alerts list](/_images/en-us/user_guide/drims/dashboard/5.png)
 
 3. Click the **Acknowledge** button at the top of the form
 
-   ![Screenshot: Acknowledge button](/_images/en-us/drims/dashboard/acknowledge_button.png)
+   ![Screenshot: Acknowledge button](/_images/en-us/user_guide/drims/dashboard/6.png)
 
 The alert badge changes to orange, showing others that someone is handling it.
 
@@ -172,7 +172,7 @@ Resolve an alert after you've fixed the underlying problem.
 
 3. Click the **Resolve** button at the top of the form
 
-   ![Screenshot: Resolve button](/_images/en-us/drims/dashboard/resolve_button.png)
+   ![Screenshot: Resolve button](/_images/en-us/user_guide/drims/dashboard/7.png)
 
 The alert is marked resolved and no longer appears in active counts.
 

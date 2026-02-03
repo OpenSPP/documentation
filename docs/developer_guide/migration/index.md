@@ -246,4 +246,4 @@ If you encounter issues:
 ## See Also
 
 - [Odoo 19 Migration Guide](https://www.odoo.com/documentation/19.0/developer/howtos/upgrade.html)
-- [OpenSPP Module Development Guide](../development_setup.md)
+- [OpenSPP Module Development Guide](/howto/developer_guides/development_setup.md)

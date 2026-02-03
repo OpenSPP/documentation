@@ -42,7 +42,7 @@ make html
 
 To make it easier for other contributors to work with your project, update the following files, using `openspp_registry` as a model.
  
--   Add it to the documentation section {ref}`contributing-editing-external-package-documentation-label`.
+-   Add it to the documentation index or relevant section.
 -   Add the symlink `docs/my_package` to `.gitignore`.
 -   Optionally set a branch to work on in `.gitmodules`.
 

@@ -37,7 +37,8 @@ You'll receive dispatches in the **Draft** state, ready to be processed.
 2. Select **Dispatches**
 3. Filter by **My Warehouse** to see only dispatches assigned to you
 
-![Screenshot: DRIMS menu with Dispatches option highlighted](/_images/en-us/drims/dispatches/find_dispatches.png)
+<!-- TODO: Add screenshot: DRIMS menu with Dispatches option highlighted -->
+<!-- ![Screenshot: DRIMS menu with Dispatches option highlighted](/_images/en-us/drims/dispatches/find_dispatches.png) -->
 
 ## Processing the Dispatch
 
@@ -59,7 +60,8 @@ Open the dispatch and review the items requested.
 
 **Click Confirm** to move the dispatch to the next stage.
 
-![Screenshot: Dispatch form in Draft state with Confirm button](/_images/en-us/drims/dispatches/confirm_dispatch.png)
+<!-- TODO: Add screenshot: Dispatch form in Draft state with Confirm button -->
+<!-- ![Screenshot: Dispatch form in Draft state with Confirm button](/_images/en-us/drims/dispatches/confirm_dispatch.png) -->
 
 ### 2. Reserve Stock
 
@@ -67,7 +69,8 @@ After confirming, click **Check Availability** to reserve the items from your wa
 
 If items are available, the dispatch moves to the **Assigned** state.
 
-![Screenshot: Dispatch showing Check Availability button](/_images/en-us/drims/dispatches/check_availability.png)
+<!-- TODO: Add screenshot: Dispatch showing Check Availability button -->
+<!-- ![Screenshot: Dispatch showing Check Availability button](/_images/en-us/drims/dispatches/check_availability.png) -->
 
 ### 3. Pick and Pack Items
 
@@ -78,7 +81,8 @@ Now you're ready to physically pick the items:
 3. Check quantities match what's on the list
 4. Pack items securely for transport
 
-![Screenshot: Picking list with items and quantities](/_images/en-us/drims/dispatches/picking_list.png)
+<!-- TODO: Add screenshot: Picking list with items and quantities -->
+<!-- ![Screenshot: Picking list with items and quantities](/_images/en-us/drims/dispatches/picking_list.png) -->
 
 ### 4. Validate the Dispatch
 
@@ -86,7 +90,8 @@ After packing, return to the dispatch and click **Validate**.
 
 This confirms you've physically picked the items and updates your inventory. The dispatch moves to the **Done** state.
 
-![Screenshot: Dispatch form with Validate button](/_images/en-us/drims/dispatches/validate_dispatch.png)
+<!-- TODO: Add screenshot: Dispatch form with Validate button -->
+<!-- ![Screenshot: Dispatch form with Validate button](/_images/en-us/drims/dispatches/validate_dispatch.png) -->
 
 ## Recording Departure
 
@@ -99,7 +104,8 @@ When the truck or vehicle leaves your warehouse with the shipment:
 
 The dispatch moves to the **Departed** state.
 
-![Screenshot: Record Departure dialog with date/time fields](/_images/en-us/drims/dispatches/record_departure.png)
+<!-- TODO: Add screenshot: Record Departure dialog with date/time fields -->
+<!-- ![Screenshot: Record Departure dialog with date/time fields](/_images/en-us/drims/dispatches/record_departure.png) -->
 
 ## Printing the Waybill
 
@@ -118,7 +124,8 @@ The waybill includes:
 - Complete item list with quantities
 - Signature blocks for driver and receiver
 
-![Screenshot: Waybill print preview](/_images/en-us/drims/dispatches/print_waybill.png)
+<!-- TODO: Add screenshot: Waybill print preview -->
+<!-- ![Screenshot: Waybill print preview](/_images/en-us/drims/dispatches/print_waybill.png) -->
 
 ```{important}
 The driver must get the waybill signed by the person receiving the goods at the destination.
@@ -149,7 +156,8 @@ Usually field staff or the destination contact records this information, not war
 
 5. Click **Confirm POD** to complete the delivery
 
-![Screenshot: Proof of Delivery section with fields filled in](/_images/en-us/drims/dispatches/proof_of_delivery.png)
+<!-- TODO: Add screenshot: Proof of Delivery section with fields filled in -->
+<!-- ![Screenshot: Proof of Delivery section with fields filled in](/_images/en-us/drims/dispatches/proof_of_delivery.png) -->
 
 The dispatch moves to the **POD Confirmed** state and the request is marked as delivered.
 

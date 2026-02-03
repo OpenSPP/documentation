@@ -13,6 +13,8 @@ import re
 import sys
 import logging
 import yaml
+import shutil
+import shlex
 
 from pathlib import Path
 _logger = logging.getLogger(__name__)
@@ -29,10 +31,40 @@ _logger = logging.getLogger(__name__)
 # Add local extensions directory for custom Pygments lexers
 sys.path.insert(0, os.path.abspath("_ext"))
 
+try:
+    from sphinx.highlighting import lexers
+    from pygments.lexers import JavascriptLexer, JavaLexer
+except Exception:  # pragma: no cover - optional in minimal builds
+    lexers = None
+else:
+    lexers["javascript"] = JavascriptLexer()
+    lexers["java"] = JavaLexer()
+
 
 
 #=== Odoo configuration ===#
 
+# Mock incompatible optional dependencies for autodoc BEFORE importing Odoo.
+# werkzeug 2.3+ removed NumberConverter which Odoo's ir_http.py requires.
+# This must be done before any Odoo imports to prevent import errors.
+autodoc_mock_imports = []
+try:
+    from werkzeug.routing import NumberConverter  # noqa: F401
+except (ImportError, AttributeError):
+    # Patch werkzeug.routing to add the missing NumberConverter class
+    import werkzeug.routing
+    class NumberConverter(werkzeug.routing.BaseConverter):
+        """Compatibility shim for werkzeug < 2.3"""
+        regex = r'\d+'
+        num_convert = int
+        def __init__(self, map, fixed_digits=0, min=None, max=None, signed=False):
+            super().__init__(map)
+            self.fixed_digits = fixed_digits
+            self.min = min
+            self.max = max
+            self.signed = signed
+    werkzeug.routing.NumberConverter = NumberConverter
+    _logger.info("Patched werkzeug.routing.NumberConverter for Odoo compatibility")
 
 odoo_current_branch = "19.0"
 # `current_version` is the Odoo version linked to the current branch.
@@ -130,6 +162,9 @@ else:
 
 #### End of Odoo
 
+# Note: werkzeug compatibility patching is done earlier in the file,
+# before Odoo imports, to ensure NumberConverter is available.
+
 
 # -- Project information -----------------------------------------------------
 
@@ -187,6 +222,27 @@ if not os.environ.get("SPHINX_DEV_BUILD"):
         "sphinx_reredirects",  # URL redirects for documentation restructure
     ]
 
+# Avoid graphviz warnings when dot is unavailable.
+if "sphinx.ext.graphviz" in extensions and shutil.which("dot") is None:
+    extensions.remove("sphinx.ext.graphviz")
+
+# Mark httpexample as parallel-safe when missing metadata.
+try:
+    import sphinxcontrib.httpexample as _httpexample
+except Exception:  # pragma: no cover - optional extension
+    _httpexample = None
+else:
+    _httpexample_setup = getattr(_httpexample, "setup", None)
+    if _httpexample_setup:
+        def _patched_httpexample_setup(app):
+            result = _httpexample_setup(app)
+            if isinstance(result, dict):
+                result.setdefault("parallel_read_safe", True)
+                result.setdefault("parallel_write_safe", True)
+                return result
+            return {"parallel_read_safe": True, "parallel_write_safe": True}
+        _httpexample.setup = _patched_httpexample_setup
+
 # Mermaid configuration
 # For offline/air-gapped builds, set MERMAID_OFFLINE=svg and install mermaid-cli:
 #   npm install -g @mermaid-js/mermaid-cli
@@ -195,7 +251,13 @@ _mermaid_offline = os.environ.get("MERMAID_OFFLINE", "") == "svg"
 mermaid_output_format = "svg" if _mermaid_offline else "raw"
 mermaid_version = "11.4.0"  # Pin mermaid version for stability
 # Use puppeteer config for no-sandbox mode (required on Ubuntu 23.10+)
-mermaid_cmd = ["mmdc", "--puppeteerConfigFile", os.path.join(os.path.dirname(__file__), "_static/puppeteer-config.json")]
+mermaid_cmd = shlex.join(
+    [
+        "mmdc",
+        "--puppeteerConfigFile",
+        os.path.join(os.path.dirname(__file__), "_static/puppeteer-config.json"),
+    ]
+)
 mermaid_include_elk = False  # Disable ELK layout to reduce dependencies
 mermaid_init_js = "" if _mermaid_offline else "mermaid.initialize({startOnLoad:true});"
 

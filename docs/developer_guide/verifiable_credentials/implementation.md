@@ -11,7 +11,7 @@ This guide is for **developers** implementing verifiable credentials functionali
 ## Prerequisites
 
 Before implementing VCs, ensure you understand:
-- {doc}`/developer_guide/setup/development_environment` - Development setup
+- {doc}`/howto/developer_guides/development_setup` - Development setup
 - {doc}`/developer_guide/extending/custom_modules` - Creating Odoo modules
 - {doc}`overview` - VC concepts and architecture
 - {doc}`w3c_vc` - W3C VC data model
@@ -708,7 +708,7 @@ def issue_credential(self, credential_type_id, holder_did=None):
 ## Next Steps
 
 - **Wallet Integration**: Integrate with mobile wallet apps
-- **Verification**: Implement verifier endpoints ({doc}`/developer_guide/integrations/vc_verification`)
+- **Verification**: Implement verifier endpoints
 - **Revocation**: Set up automated revocation workflows
 - **Monitoring**: Add logging and metrics for credential issuance
 
@@ -718,4 +718,3 @@ def issue_credential(self, credential_type_id, holder_did=None):
 - {doc}`w3c_vc` - W3C VC Data Model
 - {doc}`oidc4vci` - OpenID4VCI Protocol
 - {doc}`/developer_guide/extending/custom_modules` - Creating Custom Modules
-- {doc}`/developer_guide/architecture/security` - Security Best Practices

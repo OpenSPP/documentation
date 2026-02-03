@@ -52,13 +52,15 @@ Before a warehouse can be used for disaster response operations, it must be enab
 
 1. Navigate to **DRIMS → Inventory → Warehouses**
 
-   ![Screenshot placeholder: DRIMS inventory menu](warehouses/nav_warehouses.png)
+   <!-- TODO: Add screenshot: DRIMS inventory menu -->
+   <!-- ![Screenshot placeholder: DRIMS inventory menu](warehouses/nav_warehouses.png) -->
 
 2. Select an existing warehouse or create a new one using the **New** button
 
 3. In the warehouse form, check the **DRIMS Warehouse** checkbox
 
-   ![Screenshot placeholder: DRIMS warehouse checkbox](warehouses/enable_drims.png)
+   <!-- TODO: Add screenshot: DRIMS warehouse checkbox -->
+   <!-- ![Screenshot placeholder: DRIMS warehouse checkbox](warehouses/enable_drims.png) -->
 
 4. Configure the DRIMS-specific fields (see next section)
 
@@ -75,7 +77,8 @@ Once a warehouse is DRIMS-enabled, configure these fields:
 | **Area** | Dropdown | Recommended | Geographic location from the area hierarchy |
 | **Linked Incidents** | Multi-select | Optional | Specific disasters this warehouse serves |
 
-![Screenshot placeholder: DRIMS warehouse configuration form](warehouses/config_form.png)
+<!-- TODO: Add screenshot: DRIMS warehouse configuration form -->
+<!-- ![Screenshot placeholder: DRIMS warehouse configuration form](warehouses/config_form.png) -->
 
 ### Field Details
 
@@ -124,7 +127,8 @@ You can associate warehouses with specific disaster incidents in two ways:
 4. Select warehouses from the list
 5. Save the incident
 
-![Screenshot placeholder: Incident warehouses tab](warehouses/incident_link.png)
+<!-- TODO: Add screenshot: Incident warehouses tab -->
+<!-- ![Screenshot placeholder: Incident warehouses tab](warehouses/incident_link.png) -->
 
 **When to link warehouses to incidents:**
 

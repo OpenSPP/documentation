@@ -28,7 +28,7 @@ The **OpenSPP Base** module depends on several other modules, integrating their 
 - [spp_area](spp_area): Utilizes this module to manage geographical areas and link them to registrants and other relevant data.
 - **spp_registry**: Inherits core registry functionalities from this module, including registrant management, IDs, relationships, and districts. 
 - **spp_registry**: Integrates with this module to manage groups of registrants, extending the concept of registrants beyond individuals.
-- [utm](utm): Leverages this module for tracking and managing UTM (Urchin Tracking Module) parameters, commonly used in digital marketing campaigns.
+- `utm`: Leverages this module for tracking and managing UTM (Urchin Tracking Module) parameters, commonly used in digital marketing campaigns.
 - **spp_registry**: Integrates with this module to manage individual registrant data, including specific attributes and validations.
 
 ## Additional Functionality

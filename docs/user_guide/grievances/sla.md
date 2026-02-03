@@ -54,7 +54,8 @@ The system uses color codes to show SLA status:
 | 🟡 Amber | At Risk | Deadline approaching, needs attention | 10-25% of SLA remaining |
 | 🔴 Red | Breached | Past deadline, urgent action needed | Overdue |
 
-![Screenshot should show: Ticket list view with tickets showing different SLA color indicators - green, amber, and red badges next to ticket numbers](sla/1_sla_indicators.png)
+<!-- TODO: Add screenshot: Ticket list view with tickets showing different SLA color indicators - green, amber, and red badges next to ticket numbers -->
+<!-- ![Screenshot should show: Ticket list view with tickets showing different SLA color indicators - green, amber, and red badges next to ticket numbers](sla/1_sla_indicators.png) -->
 
 ## Monitoring Your SLAs
 
@@ -64,7 +65,8 @@ Click **GRM** → **My Dashboard**
 
 The dashboard shows tickets organized by SLA status with visual indicators.
 
-![Screenshot should show: GRM Dashboard with tickets in columns, color-coded by SLA status, with counters showing number of tickets in each status](sla/2_sla_dashboard.png)
+<!-- TODO: Add screenshot: GRM Dashboard with tickets in columns, color-coded by SLA status, with counters showing number of tickets in each status -->
+<!-- ![Screenshot should show: GRM Dashboard with tickets in columns, color-coded by SLA status, with counters showing number of tickets in each status](sla/2_sla_dashboard.png) -->
 
 ### 2. Check SLA Deadline
 
@@ -79,7 +81,8 @@ Open any ticket to see SLA details:
 
 The deadline is shown in the top banner of the ticket form.
 
-![Screenshot should show: Ticket form with SLA information prominently displayed in top banner - deadline date, status badge, and countdown timer](sla/3_ticket_sla_details.png)
+<!-- TODO: Add screenshot: Ticket form with SLA information prominently displayed in top banner - deadline date, status badge, and countdown timer -->
+<!-- ![Screenshot should show: Ticket form with SLA information prominently displayed in top banner - deadline date, status badge, and countdown timer](sla/3_ticket_sla_details.png) -->
 
 ### 3. Filter Tickets by SLA Status
 
@@ -93,7 +96,8 @@ To focus on urgent tickets:
    - **Stage**: In Review (tickets requiring action)
 4. Click **Apply Filter**
 
-![Screenshot should show: Ticket list with left sidebar filters panel visible, SLA Status filter expanded showing options like "At Risk" and "Breached" selected](sla/4_filter_by_sla.png)
+<!-- TODO: Add screenshot: Ticket list with left sidebar filters panel visible, SLA Status filter expanded showing options like "At Risk" and "Breached" selected -->
+<!-- ![Screenshot should show: Ticket list with left sidebar filters panel visible, SLA Status filter expanded showing options like "At Risk" and "Breached" selected](sla/4_filter_by_sla.png) -->
 
 ### 4. Sort by Deadline
 
@@ -103,7 +107,8 @@ To work on most urgent tickets first:
 2. Tickets sort from earliest to latest deadline
 3. Red (breached) tickets appear at the top
 
-![Screenshot should show: Ticket list with SLA Deadline column header highlighted, and tickets sorted with overdue ones at top showing red indicators](sla/5_sort_by_deadline.png)
+<!-- TODO: Add screenshot: Ticket list with SLA Deadline column header highlighted, and tickets sorted with overdue ones at top showing red indicators -->
+<!-- ![Screenshot should show: Ticket list with SLA Deadline column header highlighted, and tickets sorted with overdue ones at top showing red indicators](sla/5_sort_by_deadline.png) -->
 
 ## Taking Action on At-Risk Tickets
 
@@ -118,7 +123,8 @@ To work on most urgent tickets first:
 
 **Time management tip:** Block out time each morning for breached tickets before starting other work.
 
-![Screenshot should show: Daily work planning view with tickets organized by priority - Breached section at top, At Risk middle, On Track bottom](sla/6_prioritize_workload.png)
+<!-- TODO: Add screenshot: Daily work planning view with tickets organized by priority - Breached section at top, At Risk middle, On Track bottom -->
+<!-- ![Screenshot should show: Daily work planning view with tickets organized by priority - Breached section at top, At Risk middle, On Track bottom](sla/6_prioritize_workload.png) -->
 
 ### 6. Fast-Track Investigation
 
@@ -135,7 +141,8 @@ For at-risk tickets, streamline your investigation:
 - Focus on key facts only
 - Skip lengthy explanations until ticket is resolved
 
-![Screenshot should show: Ticket in investigation view with timer visible showing time remaining, and streamlined investigation checklist visible in notes](sla/7_fast_track_investigation.png)
+<!-- TODO: Add screenshot: Ticket in investigation view with timer visible showing time remaining, and streamlined investigation checklist visible in notes -->
+<!-- ![Screenshot should show: Ticket in investigation view with timer visible showing time remaining, and streamlined investigation checklist visible in notes](sla/7_fast_track_investigation.png) -->
 
 ### 7. Request Deadline Extension (If Needed)
 
@@ -157,7 +164,8 @@ Your supervisor receives the request and can approve or deny.
 Extension requests should be exceptional. Overuse of extensions may indicate workload issues or training needs.
 ```
 
-![Screenshot should show: Request Extension dialog with reason dropdown, justification text field, and new deadline picker](sla/8_request_extension.png)
+<!-- TODO: Add screenshot: Request Extension dialog with reason dropdown, justification text field, and new deadline picker -->
+<!-- ![Screenshot should show: Request Extension dialog with reason dropdown, justification text field, and new deadline picker](sla/8_request_extension.png) -->
 
 ## Escalation Procedures
 
@@ -190,7 +198,8 @@ To escalate within GRM:
 
 Ticket moves to "Escalated" stage. Supervisor receives urgent notification.
 
-![Screenshot should show: Escalate dialog with escalation target selection, reason field with sample text explaining the escalation need, and urgency indicator](sla/9_escalate_ticket.png)
+<!-- TODO: Add screenshot: Escalate dialog with escalation target selection, reason field with sample text explaining the escalation need, and urgency indicator -->
+<!-- ![Screenshot should show: Escalate dialog with escalation target selection, reason field with sample text explaining the escalation need, and urgency indicator](sla/9_escalate_ticket.png) -->
 
 ### 10. Escalate to Specialized Team
 
@@ -210,7 +219,8 @@ To route to specialist team:
 3. Add note in Chatter explaining why you're routing it
 4. Click **Save**
 
-![Screenshot should show: Ticket form with Team dropdown open showing specialized teams, and Chatter note being added to explain routing decision](sla/10_route_to_specialist.png)
+<!-- TODO: Add screenshot: Ticket form with Team dropdown open showing specialized teams, and Chatter note being added to explain routing decision -->
+<!-- ![Screenshot should show: Ticket form with Team dropdown open showing specialized teams, and Chatter note being added to explain routing decision](sla/10_route_to_specialist.png) -->
 
 ## Automatic Escalations
 
@@ -231,7 +241,8 @@ When auto-escalation happens:
 - SLA deadline may be extended per policy
 - Escalation is logged in ticket chatter
 
-![Screenshot should show: Ticket with auto-escalation indicator, Chatter log showing "System automatically escalated this ticket" message with rule name and reason](sla/11_auto_escalation.png)
+<!-- TODO: Add screenshot: Ticket with auto-escalation indicator, Chatter log showing "System automatically escalated this ticket" message with rule name and reason -->
+<!-- ![Screenshot should show: Ticket with auto-escalation indicator, Chatter log showing "System automatically escalated this ticket" message with rule name and reason](sla/11_auto_escalation.png) -->
 
 ### 12. Responding to Auto-Escalated Tickets
 
@@ -245,7 +256,8 @@ If you receive an auto-escalated ticket:
    - Investigate urgently
 4. Respond within your supervisor SLA (usually 24 hours)
 
-![Screenshot should show: Escalated ticket view with escalation banner at top highlighting urgency, and action buttons for supervisors prominent](sla/12_respond_to_escalation.png)
+<!-- TODO: Add screenshot: Escalated ticket view with escalation banner at top highlighting urgency, and action buttons for supervisors prominent -->
+<!-- ![Screenshot should show: Escalated ticket view with escalation banner at top highlighting urgency, and action buttons for supervisors prominent](sla/12_respond_to_escalation.png) -->
 
 ## Supervisor SLA Monitoring
 
@@ -263,7 +275,8 @@ Monitor team-wide SLA performance:
 | **At Risk Tickets** | Count of tickets approaching deadline | Monitor daily |
 | **Tickets per Officer** | Workload distribution | Balanced across team |
 
-![Screenshot should show: Supervisor dashboard with SLA performance gauge showing percentage, bar chart of resolution times by category, and list of breached tickets](sla/13_supervisor_dashboard.png)
+<!-- TODO: Add screenshot: Supervisor dashboard with SLA performance gauge showing percentage, bar chart of resolution times by category, and list of breached tickets -->
+<!-- ![Screenshot should show: Supervisor dashboard with SLA performance gauge showing percentage, bar chart of resolution times by category, and list of breached tickets](sla/13_supervisor_dashboard.png) -->
 
 ### 14. Identify Performance Issues
 
@@ -276,7 +289,8 @@ Monitor team-wide SLA performance:
 | **Repeat extensions** | Same officer requests many extensions | Training or workload review |
 | **Low compliance rate** | Team SLA compliance below 85% | Process review, resources check |
 
-![Screenshot should show: Performance analysis view highlighting officer with high at-risk ticket count and category with low resolution rate](sla/14_performance_issues.png)
+<!-- TODO: Add screenshot: Performance analysis view highlighting officer with high at-risk ticket count and category with low resolution rate -->
+<!-- ![Screenshot should show: Performance analysis view highlighting officer with high at-risk ticket count and category with low resolution rate](sla/14_performance_issues.png) -->
 
 ### 15. Reassign to Balance Workload
 
@@ -291,7 +305,8 @@ To address overload:
 
 Officers receive notifications of new assignments.
 
-![Screenshot should show: Team dashboard with ticket selection active, Action menu open showing Reassign option, and officer workload bar chart visible](sla/15_reassign_workload.png)
+<!-- TODO: Add screenshot: Team dashboard with ticket selection active, Action menu open showing Reassign option, and officer workload bar chart visible -->
+<!-- ![Screenshot should show: Team dashboard with ticket selection active, Action menu open showing Reassign option, and officer workload bar chart visible](sla/15_reassign_workload.png) -->
 
 ### 16. Approve Extension Requests
 
@@ -308,7 +323,8 @@ When an officer requests deadline extension:
    - **Approve with Changes** - Set different deadline
    - **Deny** - Explain what officer should do instead
 
-![Screenshot should show: Extension request approval screen with request details, justification visible, and Approve/Deny buttons with comments field](sla/16_approve_extension.png)
+<!-- TODO: Add screenshot: Extension request approval screen with request details, justification visible, and Approve/Deny buttons with comments field -->
+<!-- ![Screenshot should show: Extension request approval screen with request details, justification visible, and Approve/Deny buttons with comments field](sla/16_approve_extension.png) -->
 
 ## SLA Reporting
 
@@ -330,7 +346,8 @@ Report shows:
 - Top reasons for breaches
 - Officer-level performance
 
-![Screenshot should show: SLA Performance Report with line graph showing compliance rate over time, and data table breaking down performance by category and officer](sla/17_sla_reports.png)
+<!-- TODO: Add screenshot: SLA Performance Report with line graph showing compliance rate over time, and data table breaking down performance by category and officer -->
+<!-- ![Screenshot should show: SLA Performance Report with line graph showing compliance rate over time, and data table breaking down performance by category and officer](sla/17_sla_reports.png) -->
 
 ### 18. Export SLA Data
 
@@ -344,7 +361,8 @@ To export for analysis:
 3. Select fields to include (SLA Deadline, Days Open, Resolution Time, etc.)
 4. Click **Export**
 
-![Screenshot should show: Export dialog with format options and field selection checkboxes, emphasizing SLA-related fields](sla/18_export_data.png)
+<!-- TODO: Add screenshot: Export dialog with format options and field selection checkboxes, emphasizing SLA-related fields -->
+<!-- ![Screenshot should show: Export dialog with format options and field selection checkboxes, emphasizing SLA-related fields](sla/18_export_data.png) -->
 
 ## Best Practices
 

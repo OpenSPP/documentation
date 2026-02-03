@@ -5,7 +5,7 @@
 **Work in Progress**: This document is actively being developed and updated. Content may be incomplete or subject to change.
 ```
 
-The [spp_encryption](spp_encryption) module extends the encryption capabilities of OpenSPP by adding support for the [JWCrypto](https://jwcrypto.readthedocs.io/en/latest/) library. This module builds upon the foundation provided by the [spp_encryption](spp_encryption) and offers a concrete implementation of an encryption provider utilizing JWCrypto's functionalities.
+The `spp_encryption` module extends the encryption capabilities of OpenSPP by adding support for the [JWCrypto](https://jwcrypto.readthedocs.io/en/latest/) library. This module builds upon the foundation provided by the `spp_encryption` and offers a concrete implementation of an encryption provider utilizing JWCrypto's functionalities.
 
 ## Purpose and Functionality
 
@@ -18,11 +18,11 @@ The primary purpose of this module is to enable secure encryption, decryption, s
 
 ## Integration and Usage
 
-The [spp_encryption](spp_encryption) module extends the `spp.encryption.provider` model introduced by the [spp_encryption](spp_encryption). It adds a new encryption provider type, "JWCrypto," which users can select and configure through the Odoo interface. 
+The `spp_encryption` module extends the `spp.encryption.provider` model introduced by the `spp_encryption`. It adds a new encryption provider type, "JWCrypto," which users can select and configure through the Odoo interface. 
 
 Here's how this module integrates with other OpenSPP components:
 
-1. **Dependency:** Modules requiring advanced encryption features, such as those dealing with sensitive beneficiary data or financial transactions, would declare a dependency on the [spp_encryption](spp_encryption) module.
+1. **Dependency:** Modules requiring advanced encryption features, such as those dealing with sensitive beneficiary data or financial transactions, would declare a dependency on the `spp_encryption` module.
 2. **Configuration:** Administrators would configure a new encryption provider of type "JWCrypto" within the OpenSPP settings, providing the necessary JWCrypto key information.
 3. **Utilization:** Modules requiring encryption can then utilize the configured JWCrypto provider through the standard encryption methods provided by the `spp.encryption.provider` model.
 
@@ -30,7 +30,7 @@ Here's how this module integrates with other OpenSPP components:
 
 Let's consider a module responsible for handling beneficiary payment data. This module needs to encrypt sensitive financial information before storing or transmitting it. 
 
-1. The module would depend on [spp_encryption](spp_encryption).
+1. The module would depend on `spp_encryption`.
 2. It would utilize the configured "JWCrypto" encryption provider.
 3. Using the provider's `encrypt_data_jwcrypto` method, the module can securely encrypt the payment data.
 4. Upon retrieval, the module would use the corresponding `decrypt_data_jwcrypto` method to decrypt the data.
@@ -42,4 +42,4 @@ Let's consider a module responsible for handling beneficiary payment data. This 
 - **Simplified Key Management:** Provides functionalities for generating and managing JWCrypto keys within the OpenSPP interface.
 - **Extensibility:** Can be further extended to support additional JWCrypto features or customized encryption workflows.
 
-By offering a dedicated JWCrypto-based encryption provider, the [spp_encryption](spp_encryption) module strengthens OpenSPP's security framework and provides developers with a reliable toolset for protecting sensitive data within their modules. 
+By offering a dedicated JWCrypto-based encryption provider, the `spp_encryption` module strengthens OpenSPP's security framework and provides developers with a reliable toolset for protecting sensitive data within their modules. 

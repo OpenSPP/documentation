@@ -140,7 +140,7 @@ Some identifiers expire or change validity:
 
 Use the pipe (`|`) separator in the URL:
 
-```http
+```text
 GET /api/v2/spp/Individual/{system}|{value}
 ```
 
@@ -223,7 +223,7 @@ const individual = await getIndividualByIdentifier(
 
 Use the `identifier` search parameter with the same `system|value` format:
 
-```http
+```text
 GET /api/v2/spp/Individual?identifier=urn:gov:ph:psa:national-id|PH-123456789
 ```
 
@@ -261,7 +261,7 @@ if results["total"] > 0:
 
 Search across all identifier systems:
 
-```http
+```text
 GET /api/v2/spp/Individual?identifier=PH-123456789
 ```
 
@@ -271,7 +271,7 @@ GET /api/v2/spp/Individual?identifier=PH-123456789
 
 When creating a resource, provide at least one identifier:
 
-```http
+```text
 POST /api/v2/spp/Individual
 Authorization: Bearer YOUR_TOKEN
 Content-Type: application/json
@@ -344,7 +344,7 @@ To add or update identifiers, use PUT with the complete resource:
 
 ### Updating Identifiers (PUT)
 
-```http
+```text
 PUT /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789
 Authorization: Bearer YOUR_TOKEN
 Content-Type: application/json
@@ -432,7 +432,7 @@ The API validates identifiers on create/update:
 
 Creating a resource with an existing identifier fails:
 
-```json
+```text
 HTTP/1.1 422 Unprocessable Entity
 
 {

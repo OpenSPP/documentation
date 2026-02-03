@@ -31,8 +31,8 @@ OpenSPP's integrated approach transforms these complex logistics into manageable
 
 The in-kind benefits functionality is implemented through specialized modules:
 
-* **[spp_entitlement_basket](/reference/modules/spp_entitlement_basket.md)**: Mixed basket entitlements combining multiple benefit types including in-kind goods
-* **[spp_pos](/reference/modules/spp_pos.md)**: Point of Sale system for voucher redemption at retail locations
-* **[spp_pos_id_redemption](/reference/modules/spp_pos_id_redemption.md)**: ID-based redemption system for in-kind benefit collection
-* **[spp_service_points](/reference/modules/spp_service_points.md)**: Distribution center management and coordination
-* **[spp_dms](/reference/modules/spp_dms.md)**: Document management for procurement records, quality certificates, and distribution documentation
+* **spp_entitlement_basket**: Mixed basket entitlements combining multiple benefit types including in-kind goods
+* **spp_pos**: Point of Sale system for voucher redemption at retail locations
+* **spp_pos_id_redemption**: ID-based redemption system for in-kind benefit collection
+* **{doc}`spp_service_points </reference/modules/spp_service_points>`**: Distribution center management and coordination
+* **{doc}`spp_dms </reference/modules/spp_dms>`**: Document management for procurement records, quality certificates, and distribution documentation

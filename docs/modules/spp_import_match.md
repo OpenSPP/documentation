@@ -21,7 +21,7 @@ The primary goals of the [spp_import_match](spp_import_match) module are:
 
 2. ****spp_registry**:**  The [spp_import_match](spp_import_match) module extends the functionality of the [spp_registry](spp_registry](spp_registry](spp_registry):**  The [spp_import_match](spp_import_match) module extends the functionality of the [spp_registry) module. It specifically interacts with the models and functionalities related to managing registrant data and relationships.
 
-3. **[base_import](base_import):** The core import functionality is inherited and extended from Odoo's built-in [base_import](base_import) module. [spp_import_match](base_import](spp_import_match](base_import):** The core import functionality is inherited and extended from Odoo's built-in [base_import](base_import) module. [spp_import_match) enhances this with capabilities for record matching during the import process.
+3. **`base_import`:** The core import functionality is inherited and extended from Odoo's built-in `base_import` module. [spp_import_match](base_import](spp_import_match](base_import):** The core import functionality is inherited and extended from Odoo's built-in `base_import` module. [spp_import_match) enhances this with capabilities for record matching during the import process.
 
 ## Functionality and Integration
 

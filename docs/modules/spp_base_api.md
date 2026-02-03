@@ -27,7 +27,7 @@ The [spp_base_api](spp_base_api) module introduces several key functions and met
 
 ## Integration with other modules
 
-The [spp_base_api](spp_base_api) module is designed to be a dependency for other modules that need API access. For instance, a hypothetical module [spp_external_integration](spp_external_integration) could depend on [spp_base_api](spp_base_api) module is designed to be a dependency for other modules that need API access. For instance, a hypothetical module `spp_external_integration` could depend on `spp_base_api` and utilize its functions to:
+The [spp_base_api](spp_base_api) module is designed to be a dependency for other modules that need API access. For instance, a hypothetical module `spp_external_integration` could depend on `spp_base_api` and utilize its functions to:
 
 1. Fetch data from OpenSPP through defined API endpoints.
 2. Create or update records in OpenSPP based on data received from external systems.
