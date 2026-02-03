@@ -31,5 +31,5 @@ OpenSPP's pluggable architecture recognizes that payment ecosystems vary dramati
 
 The payment system is implemented through specialized payment connectors:
 
-* **[spp_pos](/reference/modules/spp_pos.md)**: Point of Sale system for voucher redemption
-* **[spp_pos_id_redemption](/reference/modules/spp_pos_id_redemption.md)**: ID-based redemption at service points
+* **spp_pos**: Point of Sale system for voucher redemption
+* **spp_pos_id_redemption**: ID-based redemption at service points

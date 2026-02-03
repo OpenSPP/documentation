@@ -63,7 +63,8 @@ Global defaults apply to all incidents unless overridden. These control when ale
 2. Scroll to **DRIMS** section
 3. Configure default thresholds
 
-![Screenshot: DRIMS settings section](screenshots/drims_settings_defaults.png)
+<!-- <!-- TODO: Add screenshot: DRIMS settings section -->
+<!-- ![Screenshot: DRIMS settings section](screenshots/drims_settings_defaults.png) --> -->
 
 ### Global Threshold Configuration
 
@@ -97,7 +98,8 @@ Use incident-level overrides when:
 3. Enable **Override Global Thresholds**
 4. Set custom values
 
-![Screenshot: Incident alert configuration tab](screenshots/incident_alert_overrides.png)
+<!-- <!-- TODO: Add screenshot: Incident alert configuration tab -->
+<!-- ![Screenshot: Incident alert configuration tab](screenshots/incident_alert_overrides.png) --> -->
 
 | Field | Description | Example Use Case |
 |-------|-------------|------------------|
@@ -195,7 +197,8 @@ Items with lot expiration dates within the warning period (default: 30 days).
 3. Lots must have **Expiration Date** set
 4. Stock must be in a **DRIMS warehouse**
 
-![Screenshot: Product expiry configuration](screenshots/product_expiry_config.png)
+<!-- <!-- TODO: Add screenshot: Product expiry configuration -->
+<!-- ![Screenshot: Product expiry configuration](screenshots/product_expiry_config.png) --> -->
 
 **Example Scenario:**
 
@@ -280,7 +283,8 @@ Warehouses automatically calculate health status based on active alerts:
 | **Warning** | 1-2 active alerts OR capacity <30% | Orange |
 | **Good** | No active alerts, adequate stock | Green |
 
-![Screenshot: Warehouse health dashboard](screenshots/warehouse_health_status.png)
+<!-- <!-- TODO: Add screenshot: Warehouse health dashboard -->
+<!-- ![Screenshot: Warehouse health dashboard](screenshots/warehouse_health_status.png) --> -->
 
 ### Alert Dashboard
 
@@ -293,7 +297,8 @@ Filter by:
 - **Warehouse**
 - **Incident**
 
-![Screenshot: Alert dashboard with filters](screenshots/alert_dashboard.png)
+<!-- <!-- TODO: Add screenshot: Alert dashboard with filters -->
+<!-- ![Screenshot: Alert dashboard with filters](screenshots/alert_dashboard.png) --> -->
 
 ## Responding to Alerts
 
@@ -307,7 +312,8 @@ When you start investigating an alert:
 
 This removes the alert from "urgent" views but keeps it tracked.
 
-![Screenshot: Acknowledge alert button](screenshots/alert_acknowledge.png)
+<!-- <!-- TODO: Add screenshot: Acknowledge alert button -->
+<!-- ![Screenshot: Acknowledge alert button](screenshots/alert_acknowledge.png) --> -->
 
 ### Resolving Alerts
 
@@ -320,7 +326,8 @@ When the underlying issue is fixed:
 
 Resolved alerts are archived but remain in reporting for analysis.
 
-![Screenshot: Resolve alert button](screenshots/alert_resolve.png)
+<!-- <!-- TODO: Add screenshot: Resolve alert button -->
+<!-- ![Screenshot: Resolve alert button](screenshots/alert_resolve.png) --> -->
 
 ### Alert Activity Feed
 
@@ -373,7 +380,8 @@ You cannot manually change priority. To get different priority:
 3. **Resolve stale alerts** - Clean up alerts for issues that were fixed but not marked resolved
 4. **Filter dashboards** - Use priority filters to focus on Critical and High alerts only
 
-![Screenshot: Alert filters set to Critical and High](screenshots/alert_priority_filter.png)
+<!-- <!-- TODO: Add screenshot: Alert filters set to Critical and High -->
+<!-- ![Screenshot: Alert filters set to Critical and High](screenshots/alert_priority_filter.png) --> -->
 
 ### Alert Created But Condition Resolved
 

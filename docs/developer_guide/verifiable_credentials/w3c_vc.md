@@ -476,7 +476,7 @@ class TestCredentialIssuance(TransactionCase):
 **Getting "Invalid context" errors?**
 
 Ensure your `@context` includes the W3C credentials context:
-```json
+```text
 {
   "@context": ["https://www.w3.org/ns/credentials/v2"],
   ...
@@ -484,7 +484,7 @@ Ensure your `@context` includes the W3C credentials context:
 ```
 
 For custom claims, add your own context:
-```json
+```text
 {
   "@context": [
     "https://www.w3.org/ns/credentials/v2",

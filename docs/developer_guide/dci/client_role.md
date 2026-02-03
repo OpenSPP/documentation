@@ -50,7 +50,7 @@ sequenceDiagram
 
 ### Key Components
 
-```python
+```text
 spp_dci_client/
 ├── models/
 │   ├── dci_data_source.py        # External registry connection config

@@ -1,3 +1,4 @@
+---
 orphan: true
 myst:
   html_meta:
@@ -10,7 +11,7 @@ myst:
 
 The following diagram depicts the integration mindmap of OpenSPP.
 
-![OpenSPP integration mindmap diagram showing connections to various external systems including payment platforms, identity systems, management information systems, and government platforms](images/integrations_mindmap.jpg)
+<!-- ![OpenSPP integration mindmap diagram showing connections to various external systems including payment platforms, identity systems, management information systems, and government platforms](images/integrations_mindmap.jpg) -->
 
 OpenSPP, as a digital public good, is designed with interoperability in mind.
 It recognizes the interconnected landscape of digital solutions and strives to ensure smooth, seamless interaction with many other systems as shown above.
@@ -47,4 +48,4 @@ However, to further streamline this process, OpenSPP plans to deploy an API Mana
 OpenSPP supports sandboxing for API testing, ensuring APIs perform optimally in real-world scenarios.
 Invitation-only access is provided to our demo instance, allowing prospective integrations to be thoroughly tested and tweaked in a controlled environment before they are deployed in production.
 
-[More information](../reference/technical/external_api.md)
+See also: {doc}`/technical_reference/external_api`

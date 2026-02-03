@@ -51,7 +51,7 @@ sequenceDiagram
 
 ### Key Components
 
-```python
+```text
 spp_dci_server/
 ├── routers/
 │   ├── auth.py           # OAuth2 token endpoint

@@ -10,7 +10,7 @@ myst:
 
 **OpenSPP Social Registry Base / spp_base_social_registry (available from 17.0.1.4)**
 
-The {doc}`OpenSPP Social Registry <../overview/products/social_registry>` configuration provides a centralized repository for beneficiary data that can be shared across multiple social protection programs. This setup is ideal for governments and organizations coordinating multiple interventions and requiring a single source of truth for beneficiary information.
+The {doc}`OpenSPP Social Registry </products/social_registry>` configuration provides a centralized repository for beneficiary data that can be shared across multiple social protection programs. This setup is ideal for governments and organizations coordinating multiple interventions and requiring a single source of truth for beneficiary information.
 
 **What's included:**
 - Unified beneficiary database across programs
@@ -24,7 +24,7 @@ The {doc}`OpenSPP Social Registry <../overview/products/social_registry>` config
 **Installation steps:**
 
 1.  Navigate to the **Apps** menu.
-2.  In the Apps menu, search for {doc}`spp_base_social_registry </reference/modules/spp_base_social_registry>` or "OpenSPP Social Registry Base"
+2.  In the Apps menu, search for {doc}`spp_starter_social_registry </reference/modules/spp_starter_social_registry>` or "OpenSPP Social Registry Starter"
 
 ![Searching for SPP Base module in Apps](/_images/en-us/get_started/modules/12-social_inst_base01.jpg)
 

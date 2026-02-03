@@ -38,13 +38,15 @@ This guide focuses on **staff-assisted submission** (call centre, field, walk-in
 
 Click **GRM** in the sidebar, then select **Tickets**.
 
-![Screenshot should show: OpenSPP sidebar with GRM menu highlighted, and Tickets submenu visible](submit/1_open_grm_menu.png)
+<!-- TODO: Add screenshot: OpenSPP sidebar with GRM menu highlighted, and Tickets submenu visible -->
+<!-- ![Screenshot should show: OpenSPP sidebar with GRM menu highlighted, and Tickets submenu visible](submit/1_open_grm_menu.png) -->
 
 ### 2. Create New Ticket
 
 Click the **New** button in the top left corner.
 
-![Screenshot should show: GRM Tickets list view with New button highlighted in top toolbar](submit/2_click_new_button.png)
+<!-- TODO: Add screenshot: GRM Tickets list view with New button highlighted in top toolbar -->
+<!-- ![Screenshot should show: GRM Tickets list view with New button highlighted in top toolbar](submit/2_click_new_button.png) -->
 
 ### 3. Identify the Complainant
 
@@ -70,7 +72,8 @@ If the person is not in the system, leave this blank and fill in:
 - **Contact Phone**
 - **Contact Email** (optional)
 
-![Screenshot should show: Ticket form with Complainant Type dropdown expanded, and Beneficiary lookup field visible below it](submit/3_complainant_details.png)
+<!-- TODO: Add screenshot: Ticket form with Complainant Type dropdown expanded, and Beneficiary lookup field visible below it -->
+<!-- ![Screenshot should show: Ticket form with Complainant Type dropdown expanded, and Beneficiary lookup field visible below it](submit/3_complainant_details.png) -->
 
 ### 4. Record Intake Details
 
@@ -82,7 +85,8 @@ Fill in how the complaint was received:
 | **Intake Date** | When you received the complaint (auto-filled with today's date) |
 | **Subject** | Brief summary (e.g., "Missing payment for March 2025") |
 
-![Screenshot should show: Ticket form with Channel dropdown, Intake Date field, and Subject field highlighted](submit/4_intake_details.png)
+<!-- TODO: Add screenshot: Ticket form with Channel dropdown, Intake Date field, and Subject field highlighted -->
+<!-- ![Screenshot should show: Ticket form with Channel dropdown, Intake Date field, and Subject field highlighted](submit/4_intake_details.png) -->
 
 ### 5. Classify the Complaint
 
@@ -114,7 +118,8 @@ Choose the appropriate category and severity:
 **Sensitive Cases**: If the complaint involves Gender-Based Violence (GBV), child abuse, or serious corruption, mark **Sensitivity** as "Highly Sensitive". These automatically route to specialized teams and have restricted access.
 ```
 
-![Screenshot should show: Ticket form with Category dropdown expanded showing options like Payments, Eligibility, etc., and Severity field visible](submit/5_classify_complaint.png)
+<!-- TODO: Add screenshot: Ticket form with Category dropdown expanded showing options like Payments, Eligibility, etc., and Severity field visible -->
+<!-- ![Screenshot should show: Ticket form with Category dropdown expanded showing options like Payments, Eligibility, etc., and Severity field visible](submit/5_classify_complaint.png) -->
 
 ### 6. Describe the Complaint
 
@@ -132,7 +137,8 @@ In the **Description** tab, record what the complainant told you:
 
 In the **Desired Resolution** field, write what the complainant is asking for (e.g., "Receive missing payment", "Review eligibility decision", "Apology from staff").
 
-![Screenshot should show: Ticket form with Description tab active, showing rich text editor with sample complaint text, and Desired Resolution field below](submit/6_describe_complaint.png)
+<!-- TODO: Add screenshot: Ticket form with Description tab active, showing rich text editor with sample complaint text, and Desired Resolution field below -->
+<!-- ![Screenshot should show: Ticket form with Description tab active, showing rich text editor with sample complaint text, and Desired Resolution field below](submit/6_describe_complaint.png) -->
 
 ### 7. Link to Related Records (Optional)
 
@@ -147,7 +153,8 @@ If the complaint relates to specific records in the system, link them:
 
 To link a record, click the field and search for the relevant item.
 
-![Screenshot should show: Ticket form with Related Records section showing Program, Payment, Household, and Case lookup fields](submit/7_link_related_records.png)
+<!-- TODO: Add screenshot: Ticket form with Related Records section showing Program, Payment, Household, and Case lookup fields -->
+<!-- ![Screenshot should show: Ticket form with Related Records section showing Program, Payment, Household, and Case lookup fields](submit/7_link_related_records.png) -->
 
 ### 8. Attach Supporting Documents (Optional)
 
@@ -159,7 +166,8 @@ If the complainant provided evidence (photos, documents, forms), attach them:
 
 **Accepted file types**: PDF, images (JPG, PNG), Word documents, Excel files
 
-![Screenshot should show: Attachments dialog open with Upload button and list of uploaded files visible](submit/8_attach_documents.png)
+<!-- TODO: Add screenshot: Attachments dialog open with Upload button and list of uploaded files visible -->
+<!-- ![Screenshot should show: Attachments dialog open with Upload button and list of uploaded files visible](submit/8_attach_documents.png) -->
 
 ### 9. Save the Ticket
 
@@ -171,7 +179,7 @@ The system will automatically:
 - Route the ticket to the appropriate team and officer
 - Send an acknowledgment notification to the complainant (if contact info provided)
 
-![Screenshot should show: Saved ticket with ticket number visible at top, and status showing "Registered" with auto-assigned team visible](submit/9_save_ticket.png)
+<!-- ![Screenshot should show: Saved ticket with ticket number visible at top, and status showing "Registered" with auto-assigned team visible](submit/9_save_ticket.png) -->
 
 ### 10. Provide the Ticket Number
 
@@ -183,7 +191,7 @@ You can:
 - Send via SMS (if configured)
 - Email it (if email provided)
 
-![Screenshot should show: Ticket form with ticket number prominently displayed, and a "Send Acknowledgment" button visible in the toolbar](submit/10_provide_ticket_number.png)
+<!-- ![Screenshot should show: Ticket form with ticket number prominently displayed, and a "Send Acknowledgment" button visible in the toolbar](submit/10_provide_ticket_number.png) -->
 
 ## After Submission
 

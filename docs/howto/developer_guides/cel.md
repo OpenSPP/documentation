@@ -16,8 +16,8 @@ If you are coming from older “indicator-as-computed-field” patterns, treat v
 - Use **expressions** (`spp.cel.expression`) to define reusable logic/rules that can be referenced from multiple configuration screens.
 - Use **custom Odoo code** when you must change the data model, add complex UI, or implement a new compute path that cannot be expressed as CEL.
 
-For the admin workflow (Studio screens), see {doc}`../../tutorial/variables_and_expressions`.
-For the technical reference (profiles, symbols, caching, events), see {doc}`../../technical_reference/cel/index`.
+For the admin workflow (Variables configuration), see {doc}`/config_guide/variables/index`.
+For the technical reference (profiles, symbols, caching, events), see {doc}`/config_guide/cel/index`.
 
 ## 1) Extending profiles and symbols (compile-to-domain)
 

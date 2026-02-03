@@ -55,7 +55,7 @@ graph TB
 
 Every DCI message has three parts:
 
-```json
+```text
 {
   "signature": "Signature: namespace=\"dci\", kidId=\"...\", ...",
   "header": {
@@ -257,7 +257,7 @@ DCI uses JSON-LD schemas for data exchange:
 
 ### Person Schema
 
-```json
+```text
 {
   "@context": "https://schema.spdci.org/core/v1",
   "@type": "Person",
@@ -281,7 +281,7 @@ DCI uses JSON-LD schemas for data exchange:
 
 ### Group/Household Schema
 
-```json
+```text
 {
   "@context": "https://schema.spdci.org/core/v1",
   "@type": "Group",

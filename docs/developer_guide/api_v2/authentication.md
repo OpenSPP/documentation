@@ -38,7 +38,7 @@ Contact your OpenSPP administrator to register your application.
 
 ### Request
 
-```http
+```text
 POST /api/v2/spp/oauth/token
 Content-Type: application/json
 
@@ -143,7 +143,7 @@ console.log('Token:', token);
 
 Include the token in the `Authorization` header of all API requests:
 
-```http
+```text
 GET /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789
 Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...
 ```
@@ -325,7 +325,7 @@ The token response includes granted scopes:
 
 If you attempt an operation without the required scope:
 
-```http
+```text
 HTTP/1.1 403 Forbidden
 Content-Type: application/json
 

@@ -29,7 +29,8 @@ If your deployment includes the Roles feature, OpenSPP shows a banner on the use
 1. Go to **Settings → Users & Companies → Users** and click **Create**.
 2. Fill in name and email/login, then **Save**.
 
-![User creation form](/_images/en-us/config-guide/role-configuration/01-user-creation-form.png)
+<!-- TODO: Add screenshot: User creation form -->
+<!-- ![User creation form](/_images/en-us/config-guide/role-configuration/01-user-creation-form.png) -->
 
 ### Assign roles (recommended)
 
@@ -40,7 +41,8 @@ If your deployment includes the Roles feature, OpenSPP shows a banner on the use
    - **From / To** (optional): time-bound access
    - **Enabled**: turn the role on/off
 
-![Roles tab on the user form with one enabled role line](/_images/en-us/config-guide/role-configuration/02-roles-tab-with-role-line.png)
+<!-- TODO: Add screenshot: Roles tab on the user form with one enabled role line -->
+<!-- ![Roles tab on the user form with one enabled role line](/_images/en-us/config-guide/role-configuration/02-roles-tab-with-role-line.png) -->
 
 ### Restrict access to an area (local roles)
 
@@ -50,7 +52,8 @@ If the Areas module is installed, roles can be assigned as **local** and scoped 
 - OpenSPP computes the user's "Center Areas" based on local role assignments.
 - Record rules in domain modules can use the user's center areas to restrict which records are visible.
 
-![Role line with a selected Center Area and the computed Center Areas field on the user](/_images/en-us/config-guide/role-configuration/03-local-role-center-area.png)
+<!-- TODO: Add screenshot: Role line with a selected Center Area and the computed Center Areas field on the user -->
+<!-- ![Role line with a selected Center Area and the computed Center Areas field on the user](/_images/en-us/config-guide/role-configuration/03-local-role-center-area.png) -->
 
 ### Remove or suspend access
 
@@ -72,7 +75,8 @@ You can create new roles that combine multiple groups:
 2. Create a role and add the implied groups it should grant.
 3. Assign the role to users on the user form.
 
-![Settings → Users & Companies → Roles for custom role configuration](/_images/en-us/config-guide/role-configuration/04-custom-roles-settings.png)
+<!-- TODO: Add screenshot: Settings → Users & Companies → Roles for custom role configuration -->
+<!-- ![Settings → Users & Companies → Roles for custom role configuration](/_images/en-us/config-guide/role-configuration/04-custom-roles-settings.png) -->
 
 ```{note}
 For long-term maintainability, prefer implementing new privileges/groups/roles in an OpenSPP module (XML/CSV) rather than changing core security definitions from the UI.

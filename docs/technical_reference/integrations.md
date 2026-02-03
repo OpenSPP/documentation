@@ -28,4 +28,4 @@ With respect to API versioning management, OpenSPP currently manages this aspect
 
 OpenSPP supports sandboxing for API testing, ensuring APIs perform optimally in real-world scenarios. Invitation-only access is provided to demo.openspp.org, allowing prospective integrations to be thoroughly tested and tweaked in a controlled environment before they are deployed in production.
 
-[More Infomation](/technical_reference/external_api.html)
+See also: {doc}`/technical_reference/external_api`

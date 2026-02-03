@@ -79,7 +79,7 @@ Screenshot placeholders:
 
 ## Related reading
 
-- CEL basics: {doc}`../cel_quickstart`
-- CEL patterns: {doc}`../cel_cookbook`
-- Technical reference (modes): {doc}`../../technical_reference/cel/usage_by_feature`
+- CEL basics: {doc}`/config_guide/cel/quick_start`
+- CEL patterns: {doc}`/config_guide/cel/cookbook`
+- Technical reference: {doc}`/config_guide/cel/index`
 

@@ -8,7 +8,7 @@ openspp:
 
 # Introduction
 
-OpenSPP centers around {term}`social protection` {term}`Program` and {term}`Cycle` Management, using the World Bank Sourcebook Model, a widely accepted framework for designing and implementing programs.
+OpenSPP centers around {term}`social protection` **Program** and **Cycle** Management, using the World Bank Sourcebook Model, a widely accepted framework for designing and implementing programs.
 
 OpenSPP enables program administrators to define {term}`eligibility criteria`, configure payment schemes, manage {term}`grievance` redress mechanisms, track inventory and distribution of goods, and generate reports and dashboards for monitoring and evaluation
 purposes.

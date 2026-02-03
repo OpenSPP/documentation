@@ -28,7 +28,7 @@ This guide provides a structured approach for implementing and customising the c
 ## Odoo Setup from source
 
 ```{note}
-These instructions are outdated. For OpenSPP V2 on Odoo 19, please refer to the [Development Setup Guide](development_setup.md).
+These instructions are outdated. For OpenSPP V2 on Odoo 19, please refer to the [Development Setup Guide](/howto/developer_guides/development_setup.md).
 ```
 
 - Clone the openspp-modules repository from [GitHub](https://github.com/OpenSPP/openspp-modules).

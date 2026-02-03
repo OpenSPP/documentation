@@ -157,7 +157,7 @@ Represents a person in the social protection registry.
 
 #### Read Individual
 
-```http
+```text
 GET /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789
 Authorization: Bearer TOKEN
 ```
@@ -192,7 +192,7 @@ individual = get_individual(
 
 #### Create Individual
 
-```http
+```text
 POST /api/v2/spp/Individual
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -224,7 +224,7 @@ Content-Type: application/json
 
 **Response:**
 
-```http
+```text
 HTTP/1.1 201 Created
 Location: /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-987654321
 ```
@@ -249,7 +249,7 @@ def create_individual(data, token, base_url):
 
 #### Update Individual
 
-```http
+```text
 PUT /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -340,7 +340,7 @@ Represents a household or other group of individuals.
 
 #### Search Groups
 
-```http
+```text
 GET /api/v2/spp/Group?type=household&name=Santos
 Authorization: Bearer TOKEN
 ```
@@ -379,7 +379,7 @@ results = search_groups(
 
 #### Create Group
 
-```http
+```text
 POST /api/v2/spp/Group
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -455,7 +455,7 @@ Represents a social protection program.
 
 #### List Programs
 
-```http
+```text
 GET /api/v2/spp/Program?status=active
 Authorization: Bearer TOKEN
 ```
@@ -523,7 +523,7 @@ Represents enrollment of a beneficiary in a program.
 
 #### Search Enrollments
 
-```http
+```text
 GET /api/v2/spp/ProgramMembership?beneficiary=Individual/urn:gov:ph:psa:national-id|PH-123456789&status=active
 Authorization: Bearer TOKEN
 ```
@@ -565,7 +565,7 @@ for entry in memberships["entry"]:
 
 #### Enroll Beneficiary
 
-```http
+```text
 POST /api/v2/spp/ProgramMembership
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -587,7 +587,7 @@ Content-Type: application/json
 
 Modules can add custom fields via extensions. Request extensions using the `_extensions` parameter:
 
-```http
+```text
 GET /api/v2/spp/Individual/...?_extensions=farmer,disability
 ```
 
@@ -595,7 +595,7 @@ GET /api/v2/spp/Individual/...?_extensions=farmer,disability
 
 Check the capability statement for available extensions:
 
-```http
+```text
 GET /api/v2/spp/metadata
 ```
 
@@ -673,7 +673,7 @@ All resources include metadata:
 
 Use the `versionId` for optimistic locking:
 
-```http
+```text
 PUT /api/v2/spp/Individual/...
 If-Match: "3"
 ```

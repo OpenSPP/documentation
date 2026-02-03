@@ -10,7 +10,7 @@ myst:
 
 **OpenSPP SPMIS Base / spp_base_spmis (available from 17.0.1.4)**
 
-The OpenSPP Social Protection Management Information System ({doc}`OpenSPP SP-MIS <../overview/products/sp_mis>`) configuration provides comprehensive functionality for managing social protection programs. This setup is ideal for organizations running cash transfers, social assistance programs, or humanitarian interventions.
+The OpenSPP Social Protection Management Information System ({doc}`OpenSPP SP-MIS </products/sp_mis>`) configuration provides comprehensive functionality for managing social protection programs. This setup is ideal for organizations running cash transfers, social assistance programs, or humanitarian interventions.
 
 **What's included:**
 - Registry management for individuals and groups
@@ -22,7 +22,7 @@ The OpenSPP Social Protection Management Information System ({doc}`OpenSPP SP-MI
 **Installation steps:**
 
 1.  Navigate to the **Apps** menu.
-2.  In the Apps menu, search for {doc}`spp_base_spmis </reference/modules/spp_base_spmis>` or "OpenSPP SPMIS Base"
+2.  In the Apps menu, search for {doc}`spp_starter_sp_mis </reference/modules/spp_starter_sp_mis>` or "OpenSPP SP-MIS Starter"
 
 ![Searching for SPP Base module in Apps](/_images/en-us/get_started/modules/02-spp_base01.jpg)
 

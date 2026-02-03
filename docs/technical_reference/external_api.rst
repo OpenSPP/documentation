@@ -244,7 +244,7 @@ Each call to ``execute_kw`` takes the following parameters:
 
 * the database to use, a string
 * the user id (retrieved through ``authenticate``), an integer
-* the user's :term:`api key`, a string
+* the user's **API key**, a string
 * the model name, a string
 * the method name, a string
 * an array/list of parameters passed by position

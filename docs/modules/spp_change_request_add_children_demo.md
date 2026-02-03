@@ -33,7 +33,7 @@ The `spp_change_request_add_children_demo` module depends on the following modul
 
 3. **[spp_service_points](spp_service_points)**: This module allows for associating change requests, including those for adding children, with specific service points from which they originate.
 
-4. **[phone_validation](phone_validation)**: Ensures that any phone numbers entered during the change request process adhere to valid formats.
+4. **`phone_validation`**: Ensures that any phone numbers entered during the change request process adhere to valid formats.
 
 ## Additional Functionality
 

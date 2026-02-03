@@ -51,7 +51,7 @@ npm install keycloak-js
 
 - Create a new file, `keycloak.js` in your `src` folder with the following code. Substitute the values from the downloaded configuration settings. The `url` is the value of the `auth-server-url` key. The `clientId` is the resource.
 
-```js
+```javascript
 import Keycloak from "keycloak-js";
 
 const keycloak = new Keycloak({
@@ -66,7 +66,7 @@ export default keycloak;
 
 - Go to your `index.js` file and initialize Keycloak.
 
-```js
+```javascript
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -103,7 +103,7 @@ reportWebVitals();
 
 - Update your `src/App.js` file and add the following code. If the user is successfully authenticated, a logout button is displayed otherwise the login button is visible. Clicking the login button redirects the user to the Keycloak login page.
 
-```js
+```javascript
 import "./App.css";
 import keycloak from "./keycloak";
 function App() {

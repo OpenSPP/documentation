@@ -19,8 +19,8 @@ The primary purpose of the **[spp_base_demo](spp_base_demo)** module is to:
 
 * ****spp_registry**** (OpenSPP Registry):  Utilizes the base registry module to populate the system with sample registrant data, including individuals and potentially groups.
 * **[spp_programs](spp_programs)** (OpenSPP Programs):  Leverages the programs module to create demo programs, define eligibility criteria, and potentially simulate program cycles and beneficiary enrollment.
-* **[product](product)** (Products): Utilizes the product module to create sample products, potentially representing goods or services distributed through social protection programs. 
-* **[stock](stock)** (Inventory):  May potentially integrate with the inventory module to manage and track the stock levels of goods related to program benefits.
+* **`product`** (Products): Utilizes the product module to create sample products, potentially representing goods or services distributed through social protection programs. 
+* **`stock`** (Inventory):  May potentially integrate with the inventory module to manage and track the stock levels of goods related to program benefits.
 
 ## Additional Functionality and Data Examples
 

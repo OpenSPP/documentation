@@ -31,5 +31,5 @@ OpenSPP's configurable approach recognizes that different programs require diffe
 
 The eligibility and targeting system is implemented through specialized modules:
 
-* **[spp_manual_eligibility](/reference/modules/spp_manual_eligibility.md)**: Manual beneficiary selection with approval workflows and audit trails
-* **[spp_area](/reference/modules/spp_area.md)**: Geographic area management for location-based targeting
+* **spp_manual_eligibility**: Manual beneficiary selection with approval workflows and audit trails
+* **{doc}`spp_area </reference/modules/spp_area>`**: Geographic area management for location-based targeting

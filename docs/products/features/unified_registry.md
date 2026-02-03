@@ -30,6 +30,6 @@ The hierarchical nature of the registry is particularly powerful for managing co
 
 The registry functionality is implemented through several specialized modules:
 
-* **[spp_registry](/reference/modules/spp_registry.md)**: Core registry framework providing the foundational data models and business logic
-* **[spp_registry_group_hierarchy](/reference/modules/spp_registry_group_hierarchy.md)**: Advanced hierarchical group structures allowing groups within groups
-* **[spp_banking](/reference/modules/spp_banking.md)**: Banking information management and validation for payment processing
+* **{doc}`spp_registry </reference/modules/spp_registry>`**: Core registry framework providing the foundational data models and business logic
+* **spp_registry_group_hierarchy**: Advanced hierarchical group structures allowing groups within groups
+* **{doc}`spp_banking </reference/modules/spp_banking>`**: Banking information management and validation for payment processing

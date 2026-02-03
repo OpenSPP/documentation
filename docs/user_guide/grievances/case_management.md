@@ -24,7 +24,8 @@ Review assigned tickets, investigate complaints, make decisions, and communicate
 
 Click **GRM** in the sidebar, then select **My Dashboard**.
 
-![Screenshot should show: Sidebar with GRM menu expanded, My Dashboard option highlighted](case_management/1_open_dashboard.png)
+<!-- TODO: Add screenshot: Sidebar with GRM menu expanded, My Dashboard option highlighted -->
+<!-- ![Screenshot should show: Sidebar with GRM menu expanded, My Dashboard option highlighted](case_management/1_open_dashboard.png) -->
 
 ### 2. Understand Your Workload
 
@@ -39,7 +40,8 @@ The dashboard shows:
 | **Escalated** | Flagged for supervisor attention |
 | **Ready to Close** | Decision made, ready for final closure |
 
-![Screenshot should show: GRM Dashboard with multiple columns showing tickets in different stages, with color-coded SLA indicators](case_management/2_dashboard_overview.png)
+<!-- TODO: Add screenshot: GRM Dashboard with multiple columns showing tickets in different stages, with color-coded SLA indicators -->
+<!-- ![Screenshot should show: GRM Dashboard with multiple columns showing tickets in different stages, with color-coded SLA indicators](case_management/2_dashboard_overview.png) -->
 
 ## Investigating a Ticket
 
@@ -53,7 +55,8 @@ The ticket form shows:
 - **Center**: Description and timeline
 - **Right panel**: Smart buttons for related records
 
-![Screenshot should show: Ticket form open with all sections labeled: ticket number at top, complainant info on left, description in center, smart buttons on right](case_management/3_open_ticket.png)
+<!-- TODO: Add screenshot: Ticket form open with all sections labeled: ticket number at top, complainant info on left, description in center, smart buttons on right -->
+<!-- ![Screenshot should show: Ticket form open with all sections labeled: ticket number at top, complainant info on left, description in center, smart buttons on right](case_management/3_open_ticket.png) -->
 
 ### 4. Review the Complaint
 
@@ -64,7 +67,8 @@ Read the complaint details carefully:
 3. **Attachments**: Any supporting documents
 4. **Related records**: Linked program enrollment, payments, etc.
 
-![Screenshot should show: Ticket form with Description tab active showing complaint text, and Chatter section below showing timeline entries](case_management/4_review_complaint.png)
+<!-- TODO: Add screenshot: Ticket form with Description tab active showing complaint text, and Chatter section below showing timeline entries -->
+<!-- ![Screenshot should show: Ticket form with Description tab active showing complaint text, and Chatter section below showing timeline entries](case_management/4_review_complaint.png) -->
 
 ### 5. Check Related Records
 
@@ -80,7 +84,8 @@ Use smart buttons to view related information:
 
 Click a smart button to open the related record in a new tab or popup.
 
-![Screenshot should show: Ticket form with smart buttons visible on right side (Beneficiary, Program, Payments, etc.) with number badges showing counts](case_management/5_smart_buttons.png)
+<!-- TODO: Add screenshot: Ticket form with smart buttons visible on right side (Beneficiary, Program, Payments, etc.) with number badges showing counts -->
+<!-- ![Screenshot should show: Ticket form with smart buttons visible on right side (Beneficiary, Program, Payments, etc.) with number badges showing counts](case_management/5_smart_buttons.png) -->
 
 ### 6. Verify the Facts
 
@@ -102,7 +107,8 @@ Click a smart button to open the related record in a new tab or popup.
 2. Review service standards and protocols
 3. Interview staff if needed (document in ticket notes)
 
-![Screenshot should show: Split view with ticket on left and related payment record open on right showing payment details and status](case_management/6_verify_facts.png)
+<!-- TODO: Add screenshot: Split view with ticket on left and related payment record open on right showing payment details and status -->
+<!-- ![Screenshot should show: Split view with ticket on left and related payment record open on right showing payment details and status](case_management/6_verify_facts.png) -->
 
 ### 7. Document Your Investigation
 
@@ -124,7 +130,8 @@ Add notes to the ticket as you investigate:
 **Confidentiality**: Never include sensitive personal information (health status, abuse details, specific GBV information) in chatter messages. Use coded language or mark notes as "Log note" (internal only).
 ```
 
-![Screenshot should show: Chatter section with "Log note" button highlighted, text entry box with sample investigation notes, and previous logged notes visible below](case_management/7_log_notes.png)
+<!-- TODO: Add screenshot: Chatter section with "Log note" button highlighted, text entry box with sample investigation notes, and previous logged notes visible below -->
+<!-- ![Screenshot should show: Chatter section with "Log note" button highlighted, text entry box with sample investigation notes, and previous logged notes visible below](case_management/7_log_notes.png) -->
 
 ## Requesting Additional Information
 
@@ -140,7 +147,8 @@ If you need more details from the complainant:
 
 The system sends an email or SMS to the complainant (if contact info was provided).
 
-![Screenshot should show: Ticket form with Stage dropdown showing "Pending Information" selected, and Chatter compose box showing email being composed to complainant](case_management/8_request_information.png)
+<!-- TODO: Add screenshot: Ticket form with Stage dropdown showing "Pending Information" selected, and Chatter compose box showing email being composed to complainant -->
+<!-- ![Screenshot should show: Ticket form with Stage dropdown showing "Pending Information" selected, and Chatter compose box showing email being composed to complainant](case_management/8_request_information.png) -->
 
 ### 9. Set a Follow-up Reminder
 
@@ -155,7 +163,8 @@ To remind yourself to check back:
 
 You'll receive a reminder notification when the due date arrives.
 
-![Screenshot should show: Schedule Activity dialog with activity type dropdown, due date picker, and summary field visible](case_management/9_schedule_activity.png)
+<!-- TODO: Add screenshot: Schedule Activity dialog with activity type dropdown, due date picker, and summary field visible -->
+<!-- ![Screenshot should show: Schedule Activity dialog with activity type dropdown, due date picker, and summary field visible](case_management/9_schedule_activity.png) -->
 
 ## Making a Decision
 
@@ -181,7 +190,8 @@ Once investigation is complete, record your decision:
    - What actions will be taken (if upheld)
    - Reference relevant policies or regulations
 
-![Screenshot should show: Ticket form with Resolution tab active, Decision dropdown expanded showing options, and Resolution Summary text editor below](case_management/10_record_decision.png)
+<!-- TODO: Add screenshot: Ticket form with Resolution tab active, Decision dropdown expanded showing options, and Resolution Summary text editor below -->
+<!-- ![Screenshot should show: Ticket form with Resolution tab active, Decision dropdown expanded showing options, and Resolution Summary text editor below](case_management/10_record_decision.png) -->
 
 ### 11. Record Actions Taken
 
@@ -206,7 +216,8 @@ If the decision requires action (payment re-issue, eligibility review, etc.):
 > - Expected completion: March 25, 2025
 > - Beneficiary will receive SMS notification when payment is sent
 
-![Screenshot should show: Resolution Summary field with formatted text example showing findings and actions clearly structured](case_management/11_resolution_example.png)
+<!-- TODO: Add screenshot: Resolution Summary field with formatted text example showing findings and actions clearly structured -->
+<!-- ![Screenshot should show: Resolution Summary field with formatted text example showing findings and actions clearly structured](case_management/11_resolution_example.png) -->
 
 ### 12. Notify the Complainant
 
@@ -222,7 +233,8 @@ The system sends the decision via email or SMS to the complainant's contact info
 If the complaint was anonymous or no contact info provided, you can't send notifications. Mark ticket as resolved anyway for record-keeping.
 ```
 
-![Screenshot should show: Email compose dialog with resolution notification template populated, showing decision and summary ready to send to complainant](case_management/12_send_notification.png)
+<!-- TODO: Add screenshot: Email compose dialog with resolution notification template populated, showing decision and summary ready to send to complainant -->
+<!-- ![Screenshot should show: Email compose dialog with resolution notification template populated, showing decision and summary ready to send to complainant](case_management/12_send_notification.png) -->
 
 ### 13. Close the Ticket
 
@@ -236,7 +248,8 @@ If approval is required (based on category or decision type):
 2. System routes to your supervisor
 3. Supervisor will approve or send back with comments
 
-![Screenshot should show: Ticket form with Stage field showing "Resolved" selected, and Submit for Approval button visible if approval workflow is enabled](case_management/13_close_ticket.png)
+<!-- TODO: Add screenshot: Ticket form with Stage field showing "Resolved" selected, and Submit for Approval button visible if approval workflow is enabled -->
+<!-- ![Screenshot should show: Ticket form with Stage field showing "Resolved" selected, and Submit for Approval button visible if approval workflow is enabled](case_management/13_close_ticket.png) -->
 
 ## Handling Special Situations
 
@@ -257,7 +270,8 @@ The ticket moves to "Escalated" stage and supervisor receives notification.
 - You need policy guidance
 - SLA deadline will be missed despite best efforts
 
-![Screenshot should show: Escalate dialog with "Escalate to" user selection field and Reason text area](case_management/14_escalate.png)
+<!-- TODO: Add screenshot: Escalate dialog with "Escalate to" user selection field and Reason text area -->
+<!-- ![Screenshot should show: Escalate dialog with "Escalate to" user selection field and Reason text area](case_management/14_escalate.png) -->
 
 ### Converting to Case Management
 
@@ -280,7 +294,8 @@ The system:
 Some ticket categories automatically trigger case creation (e.g., GBV, child abuse). Your system administrator configures these rules.
 ```
 
-![Screenshot should show: Convert to Case dialog with case type dropdown, intensity level selection, and case worker assignment field](case_management/15_convert_to_case.png)
+<!-- TODO: Add screenshot: Convert to Case dialog with case type dropdown, intensity level selection, and case worker assignment field -->
+<!-- ![Screenshot should show: Convert to Case dialog with case type dropdown, intensity level selection, and case worker assignment field](case_management/15_convert_to_case.png) -->
 
 ### Handling Appeals
 
@@ -297,7 +312,8 @@ To find appeals of your decisions:
 - Filter by **Ticket Type**: Appeal
 - Filter by **Related to**: your username
 
-![Screenshot should show: Tickets list filtered to show appeals, with "Ticket Type: Appeal" filter active and Related Ticket column showing linked original tickets](case_management/16_appeals.png)
+<!-- TODO: Add screenshot: Tickets list filtered to show appeals, with "Ticket Type: Appeal" filter active and Related Ticket column showing linked original tickets -->
+<!-- ![Screenshot should show: Tickets list filtered to show appeals, with "Ticket Type: Appeal" filter active and Related Ticket column showing linked original tickets](case_management/16_appeals.png) -->
 
 ### Reassigning Tickets
 
@@ -316,7 +332,8 @@ The other officer receives a notification.
 - Click **Action** → **Reassign**
 - Choose new officer
 
-![Screenshot should show: Ticket form with Assigned To field dropdown open showing list of team members, and bulk reassign action visible in list view](case_management/17_reassign.png)
+<!-- TODO: Add screenshot: Ticket form with Assigned To field dropdown open showing list of team members, and bulk reassign action visible in list view -->
+<!-- ![Screenshot should show: Ticket form with Assigned To field dropdown open showing list of team members, and bulk reassign action visible in list view](case_management/17_reassign.png) -->
 
 ## Supervisor Functions
 
@@ -331,7 +348,8 @@ The dashboard shows:
 - Overdue tickets (red)
 - Categories receiving most complaints
 
-![Screenshot should show: Team Dashboard with charts showing ticket volume by officer, SLA performance gauge, and list of overdue tickets](case_management/18_supervisor_dashboard.png)
+<!-- TODO: Add screenshot: Team Dashboard with charts showing ticket volume by officer, SLA performance gauge, and list of overdue tickets -->
+<!-- ![Screenshot should show: Team Dashboard with charts showing ticket volume by officer, SLA performance gauge, and list of overdue tickets](case_management/18_supervisor_dashboard.png) -->
 
 ### Approving Decisions
 
@@ -347,7 +365,8 @@ If officers need approval before closing tickets:
 
 Add your comments in Chatter before approving/rejecting.
 
-![Screenshot should show: Ticket in approval view with Approve and Reject buttons prominent, and Comments field for supervisor feedback](case_management/19_approve_decision.png)
+<!-- TODO: Add screenshot: Ticket in approval view with Approve and Reject buttons prominent, and Comments field for supervisor feedback -->
+<!-- ![Screenshot should show: Ticket in approval view with Approve and Reject buttons prominent, and Comments field for supervisor feedback](case_management/19_approve_decision.png) -->
 
 ### Managing Workload
 
@@ -359,7 +378,8 @@ To rebalance workload among officers:
 4. Click **Action** → **Reassign**
 5. Choose officer with lighter workload
 
-![Screenshot should show: Team Dashboard with tickets per officer bar chart visible, showing uneven distribution, and selection checkboxes active on ticket list](case_management/20_rebalance_workload.png)
+<!-- TODO: Add screenshot: Team Dashboard with tickets per officer bar chart visible, showing uneven distribution, and selection checkboxes active on ticket list -->
+<!-- ![Screenshot should show: Team Dashboard with tickets per officer bar chart visible, showing uneven distribution, and selection checkboxes active on ticket list](case_management/20_rebalance_workload.png) -->
 
 ## Are You Stuck?
 

@@ -139,7 +139,7 @@ If the submitter needs to fix something:
 
 1. Click **Request Changes** in the header
 
-   ![Request Changes button](/_images/en-us/change-requests/review/11-request-changes-button-to-send-back-for-correction.png)
+   ![Request Changes button](/_images/en-us/change-requests/review/1-request-changes-button-to-send-back-for-correction.png)
 
 2. In the dialog, explain what needs to be corrected
 

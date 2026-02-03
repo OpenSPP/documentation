@@ -27,12 +27,12 @@ The **SPP Audit Log** module is designed to:
 
 The module introduces the following key elements:
 
-* **Audit Rule Model ([spp.audit.rule](spp.audit.rule)):**
+* **Audit Rule Model (`spp.audit.rule`):**
     * Allows administrators to define rules specifying which models and fields should have their changes logged.
     * Provides options to log the creation, update, or deletion of records.
     * Includes a feature to automatically add a "View Logs" button to the related model's form view for easy access to audit logs. 
 
-* **Audit Log Model ([spp.audit.log](spp.audit.log)):**
+* **Audit Log Model (`spp.audit.log`):**
     * Stores the audit log entries, capturing details like timestamp, user, model, record ID, type of operation (create/write/unlink), and the changes made (old and new values).
     * Provides a computed field to display the changed data in a user-friendly HTML format within the audit log form view. 
 

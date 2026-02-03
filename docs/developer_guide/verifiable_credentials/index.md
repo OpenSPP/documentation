@@ -225,8 +225,7 @@ Follow the step-by-step guide in {doc}`implementation` under "Creating Custom Cr
 
 - {doc}`/developer_guide/api_v2/overview` - API v2 for programmatic access
 - {doc}`/developer_guide/extending/custom_modules` - Creating custom Odoo modules
-- {doc}`/developer_guide/architecture/security` - Security best practices
-- {doc}`/developer_guide/setup/development_environment` - Development setup
+- {doc}`/howto/developer_guides/development_setup` - Development setup
 
 ## External Resources
 
