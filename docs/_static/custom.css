@@ -510,7 +510,7 @@ li.module-filtered > a {
 /* Limit Key feature card image size on homepage + align right */
 .sd-card .sd-card-img-top,
 .sd-card img[src*="images/0"] {
-  max-height: 50px;
+  max-height: 80px;
   width: auto;
   object-fit: contain;
   display: block;
