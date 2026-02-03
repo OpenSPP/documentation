@@ -16,7 +16,7 @@ Learn how to navigate to the Registry module and understand the Registry Search 
 
 - You need access to OpenSPP with Registrar, Officer or admin role permissions assigned to your user (see {doc}`Explore OpenSPP <../explore/index>`)
 - OpenSPP should be installed and running (see {doc}`Installation <../installation/index>`)
-- OpenSPP SPMIS Demo should be installed (see {doc}`Install a module in Odoo <../installation/modules>`)
+- OpenSPP SPMIS Demo should be installed (see {doc}`Install a module in Odoo <../modules/index>`)
 - Allow 2-3 minutes to complete this step
 
 ```{note}

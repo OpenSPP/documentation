@@ -4,7 +4,7 @@ openspp:
   products: [core]
 ---
 
-# Get Started
+# Get started
 
 Your first steps with OpenSPP.
 
@@ -14,15 +14,15 @@ Whether you're evaluating OpenSPP for your organization or ready to start implem
 
 ## What's in this section
 
-- **Installation** - How to install OpenSPP using Docker
+- **Installation** - How to install OpenSPP and activate modules
 - **Explore OpenSPP** - Load sample data to explore features
-- **Your First Household** - Register your first household in the registry
-- **Your First Program** - Step-by-step tutorial to create your first social protection program
+- **Your first household** - Register your first household in the registry
+- **Your first program** - Step-by-step tutorial to create your first social protection program
 - **{doc}`poc_and_pilot`** - Planning your Proof of Concept and Pilot phases
 
-## Quick Links
+## Quick links
 
-- New to social protection systems? Start with {doc}`../learn/concepts/index`
+- New to social protection systems? Start with {doc}`../learn/index`
 - Ready to install? See {doc}`installation/index`
 - Want to explore with sample data? See {doc}`explore/index`
 - Just need the registry? Try {doc}`first_household/index`
@@ -33,6 +33,7 @@ Whether you're evaluating OpenSPP for your organization or ready to start implem
 :hidden:
 
 installation/index
+modules/index
 explore/index
 first_household/index
 first_program/index

@@ -4,7 +4,7 @@ openspp:
   products: [core]
 ---
 
-# User Guide
+# User guide
 
 Welcome to the OpenSPP User Guide. This guide helps government employees and program staff perform daily operations in OpenSPP.
 
@@ -13,11 +13,11 @@ Welcome to the OpenSPP User Guide. This guide helps government employees and pro
 - **SP-MIS** - Full social protection with programs and payments
 - **DRIMS** - Disaster response inventory management *(hidden until ready)*
 
-## What You'll Find Here
+## What you'll find here
 
-- **Getting Started** - Login, navigation, and basic concepts
+- **Getting started** - Login, navigation, and basic concepts
 - **Registry** - Managing individuals, groups, and registrant data
-- **Change Requests** - Submitting and processing data change requests
+- **Change requests** - Submitting and processing data change requests
 - **Programs** - Program management, enrollment, and eligibility
 - **Payments** - Payment distribution and service points
 - **Approvals** - Reviewing and approving requests and batches

@@ -8,7 +8,7 @@ openspp:
     - drims
 ---
 
-# Getting Started
+# Getting started
 
 **Applies to:** Social Registry, SP-MIS, DRIMS
 
@@ -16,9 +16,9 @@ openspp:
 
 This section is for **users** who are new to OpenSPP. Whether you manage beneficiary registrations, process payments, or oversee social protection programs, this guide will help you feel confident using the system.
 
-## What You Will Learn
+## What you will learn
 
-| Guide | What It Covers |
+| Guide | What it covers |
 |-------|----------------|
 | {doc}`navigation` | Logging in, finding menus, understanding the interface |
 
@@ -29,11 +29,11 @@ By the end of this section, you will be able to:
 - Find the features you need
 - Understand basic terms used throughout the system
 
-## Before You Start
+## Before you start
 
 Make sure you have:
 
-| Requirement | How to Get It |
+| Requirement | How to get it |
 |-------------|---------------|
 | Username | Provided by your administrator |
 | Password | Provided by your administrator |
@@ -44,13 +44,13 @@ Make sure you have:
 If you do not have login credentials, contact your system administrator before continuing.
 ```
 
-## Quick Links
+## Quick links
 
 - **First time logging in?** Start with {doc}`navigation`
 - **Need to register someone?** See {doc}`../registry/index` after completing this section
 - **Managing programs?** See {doc}`../programs/index` after completing this section
 
-## Are You Stuck?
+## Are you stuck?
 
 **Do not have login credentials?**
 Contact your system administrator. They will create an account for you and provide your username and temporary password.
@@ -61,7 +61,7 @@ Your access depends on your assigned role. Your administrator can explain what y
 **Is the page loading slowly?**
 Try refreshing your browser (press F5 or click the refresh button). If problems continue, contact your IT support team.
 
-## Next Steps
+## Next steps
 
 Start with {doc}`navigation` to learn how to log in and find your way around the system.
 

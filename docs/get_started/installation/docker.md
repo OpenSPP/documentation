@@ -4,7 +4,7 @@ openspp:
   products: [registry, programs]
 ---
 
-# Docker Installation
+# Docker installation
 
 This guide is for **sys admins** and **evaluators** setting up OpenSPP using Docker. You'll have a running instance in under 5 minutes.
 
@@ -34,7 +34,7 @@ sudo apt-get install git
 brew install git
 ```
 
-### Verify Installation
+### Verify installation
 
 ```shell
 docker --version          # Expected: 24.0+
@@ -42,7 +42,7 @@ docker compose version    # Expected: v2.20+
 git --version             # Expected: 2.30+
 ```
 
-## Quick Start
+## Quick start
 
 ```shell
 # Clone the repository
@@ -64,7 +64,7 @@ docker compose port odoo 8069
 
 **Default credentials:** `admin` / `admin`
 
-## What Just Happened?
+## What just happened?
 
 The Docker setup started two containers:
 
@@ -87,7 +87,7 @@ Set environment variables before starting:
 ODOO_INIT_MODULES=spp_mis_demo_v2 docker compose --profile ui up -d
 ```
 
-### Environment Variables
+### Environment variables
 
 | Variable | Default | Description |
 |----------|---------|-------------|
@@ -96,7 +96,7 @@ ODOO_INIT_MODULES=spp_mis_demo_v2 docker compose --profile ui up -d
 | `ODOO_UPDATE_MODULES` | (empty) | Modules to update on restart |
 | `ODOO_ADMIN_PASSWD` | `admin` | Master password for database management |
 
-### Available Demo Modules
+### Available demo modules
 
 | Module | Description |
 |--------|-------------|
@@ -104,7 +104,7 @@ ODOO_INIT_MODULES=spp_mis_demo_v2 docker compose --profile ui up -d
 | `spp_mis_demo_v2` | Sample registry with programs and beneficiaries |
 | `spp_drims_sl_demo` | DRIMS disaster response demo |
 
-## Common Operations
+## Common operations
 
 | Task | Command |
 |------|---------|
@@ -115,7 +115,7 @@ ODOO_INIT_MODULES=spp_mis_demo_v2 docker compose --profile ui up -d
 | Find port | `docker compose port odoo 8069` |
 | Shell into container | `docker compose exec odoo bash` |
 
-### Rebuilding After Updates
+### Rebuilding after updates
 
 ```shell
 # Pull latest code
@@ -125,7 +125,7 @@ git pull
 docker compose --profile ui up -d --build
 ```
 
-### Update Installed Modules
+### Update installed modules
 
 To update modules after code changes:
 
@@ -133,7 +133,7 @@ To update modules after code changes:
 ODOO_UPDATE_MODULES=spp_registry,spp_programs docker compose --profile ui up -d
 ```
 
-## Database Management
+## Database management
 
 ### Backup
 
@@ -159,7 +159,7 @@ gunzip -c backup_20250108.sql.gz | docker compose exec -T db psql -U odoo opensp
 docker compose --profile ui start odoo
 ```
 
-### Reset Database
+### Reset database
 
 To start fresh with a clean database:
 
@@ -171,7 +171,7 @@ docker compose down -v
 docker compose --profile ui up -d
 ```
 
-## Are You Stuck?
+## Are you stuck?
 
 **Container won't start**
 ```shell
@@ -218,14 +218,14 @@ ODOO_INIT_MODULES=spp_mis_demo_v2 docker compose --profile ui up -d
 docker system prune -a
 ```
 
-## Next Steps
+## Next steps
 
-- {doc}`modules.md` - Install modules
+- {doc}`../modules/index` - Install modules
 - {doc}`../first_program/index` - Create your first social protection program
 - {doc}`/user_guide/index` - Learn the OpenSPP interface
 - {doc}`/config_guide/index` - Configure eligibility rules and expressions
 
-## Production Considerations
+## Production considerations
 
 This Docker setup is designed for **evaluation and development**. For production deployments, consider:
 

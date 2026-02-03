@@ -4,11 +4,11 @@ openspp:
   products: [registry, programs]
 ---
 
-# Installation
+# Installing OpenSPP
 
 This guide is for **sys admins** and **evaluators** deploying OpenSPP.
 
-## Installation Methods
+## Installation methods
 
 | Method | Status | Best For |
 |--------|--------|----------|
@@ -20,9 +20,9 @@ This guide is for **sys admins** and **evaluators** deploying OpenSPP.
 **Recommended:** Start with Docker. It's the officially supported method and works on all platforms.
 ```
 
-## System Requirements
+## System requirements
 
-### Minimum (Evaluation)
+### Minimum (evaluation)
 
 | Component | Requirement |
 |-----------|-------------|
@@ -31,7 +31,7 @@ This guide is for **sys admins** and **evaluators** deploying OpenSPP.
 | Disk | 20 GB SSD |
 | OS | Ubuntu 20.04+, Debian 11+, macOS 12+, Windows with WSL2 |
 
-### Recommended (Production)
+### Recommended (production)
 
 | Component | Requirement |
 |-----------|-------------|
@@ -54,5 +54,4 @@ See {doc}`docker` for platform-specific installation commands.
 :hidden:
 
 docker
-modules
 ```
