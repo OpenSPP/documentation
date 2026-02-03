@@ -1,6 +1,33 @@
 {% extends "sphinx_book_theme/layout.html" %}
 {%- block extrahead %}
 {{ super() }}
+{%- if is_preview %}
+<!-- Prevent search engines from indexing preview documentation -->
+<meta name="robots" content="noindex,nofollow,noarchive">
+{%- endif %}
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="{{ pathto('_static/review_status.css', 1) }}" type="text/css" />
+<script src="{{ pathto('_static/review_status_simple.js', 1) }}"></script>
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/less@4.1.1" integrity="sha384-vJ1NXwwlC62VkTLRHyzdAfyL4rQ8Z478DeHgamh37YzGJh3T6j223FC2yMRVriLl" crossorigin="anonymous"></script>
+
+<!-- Mermaid Support -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js" integrity="sha384-+NGfjU8KzpDLXRHduEqW+ZiJr2rIg+cidUVk7B51R5xK7cHwMKQfrdFwGdrq1Bcz" crossorigin="anonymous"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+
 <!-- Matomo Tag Manager -->
 <!-- End Matomo Tag Manager -->
 {% endblock %}

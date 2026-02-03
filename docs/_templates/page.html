@@ -4,15 +4,23 @@
 <title>{{ title|striptags|e }}{%- for parent in parents %} – {{ parent.title }}{%- endfor %}{{ titlesuffix }}</title>
 {%- endblock %}
 
+{%- block scripts %}
+{{ super() }}
+{%- endblock %}
+
 
 {% block footer %}
+{{ super() }}
     <script type="text/javascript">
         $(document).ready(function() {
             // Hide empty sub menu.
-            if ($.trim($(".sticky-top .bd-toc").html()) === "") {
-                $(".sticky-top .bd-toc").css("visibility", "hidden");
-            }
-        });
+            var lists = $("div.toctree-wrapper ul");
+            $.each(lists, function(index, list) {
+                if($(list).find("li").length == 0) {
+                    $(list).prev().hide();
+                    $(list).hide();
+                }
+            });
+        })
     </script>
-
 {% endblock %}
