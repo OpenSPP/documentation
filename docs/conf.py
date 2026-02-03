@@ -465,8 +465,6 @@ redirects = {
     # Add more redirects as content is migrated
 }
 
-# -- Options for MYST output -------------------------------------------------
-myst_heading_anchors = 3
 
 # -- Options for HTML output -------------------------------------------------
 

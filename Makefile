@@ -35,8 +35,7 @@ distclean:  ## Clean docs build directory, Python virtual environment, and fetch
 
 bin/python:
 	python3 -m venv . || virtualenv --clear --python=python3 .
-	bin/pip install --upgrade pip
-	bin/pip install -r requirements_docs.txt
+	bin/pip install -r requirements_frozen.txt
 
 .PHONY: fetch-odoo
 fetch-odoo:  ## Fetch Odoo sources for documentation build
