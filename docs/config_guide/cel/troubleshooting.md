@@ -4,7 +4,7 @@ openspp:
   products: [core]
 ---
 
-# CEL Troubleshooting
+# CEL troubleshooting
 
 This guide is for **implementers** debugging CEL expressions that aren't working as expected.
 
@@ -18,7 +18,7 @@ This guide is for **implementers** debugging CEL expressions that aren't working
 | Validates but matches 0 | Wrong population or data | [Section 4](#4-validates-but-matches-0-records) |
 | Slow performance | Complex expression | [Section 5](#5-performance-issues) |
 
-## 1. "Unknown Symbol" or "Field Not Found"
+## 1. Unknown symbol or field not found
 
 This almost always means:
 - You're in a different **profile/context** than expected
@@ -54,7 +54,7 @@ If you need a field that isn't available:
 2. Create a variable that maps to it
 3. Contact your administrator
 
-## 2. "Unknown Variable"
+## 2. Unknown variable
 
 The variable exists but can't be resolved.
 
@@ -86,7 +86,7 @@ In expressions, use: `children_under_5_count` ✓
 Not: `Children Under 5 Count` ✗
 Not: `x_cel_var_children_u5` ✗
 
-## 3. Syntax Errors
+## 3. Syntax errors
 
 ### Common mistakes
 
@@ -239,7 +239,7 @@ For batch eligibility checks:
 ### Symbol browser
 
 1. Open the CEL editor
-2. Click the symbol browser icon
+2. Click the **Symbols** button
 3. Browse available:
    - Profiles
    - Symbols and fields
