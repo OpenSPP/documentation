@@ -128,6 +128,8 @@ Variables can track values over time:
 | **Yearly** | Value per year | Annual income |
 | **Snapshot** | Point-in-time freeze | Income at enrollment |
 
+![Period granularity configuration](/_images/en-us/config_guide/variables/11-period-granularity.png)
+
 **Snapshot Example:** Capture household income at the moment of program enrollment, even if it changes later.
 
 ## Categories
