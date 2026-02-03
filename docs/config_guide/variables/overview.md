@@ -113,6 +113,8 @@ Cache TTL: 3600 seconds (1 hour)
 
 The variable value is computed once and reused for 1 hour before refreshing.
 
+![Caching configuration with TTL settings](/_images/en-us/config_guide/variables/10-caching-configuration.png)
+
 ## Period Granularity
 
 Variables can track values over time:
@@ -216,12 +218,16 @@ Define a threshold that programs can override.
 
 ## Navigation
 
-Variables are configured in **Studio → Rules → Variables**.
+Variables are configured in **Studio → Variables**.
+
+![Studio dashboard with Variables card highlighted](/_images/en-us/config_guide/variables/01-studio-variables-card.png)
 
 | Menu | Purpose |
 |------|---------|
 | **All Variables** | View, create, and manage variables |
 | **Categories** | Create and organize variable categories |
+
+![Variables list view](/_images/en-us/config_guide/variables/02-variables-list.png)
 
 ## Are You Stuck?
 

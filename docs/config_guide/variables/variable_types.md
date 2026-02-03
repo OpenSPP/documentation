@@ -48,6 +48,8 @@ Reference an existing field on an Odoo model.
 | Source Field | `x_studio_monthly_income` |
 | Value Type | Money |
 
+![Model Field source type configuration](/_images/en-us/config_guide/variables/05-source-type-field.png)
+
 **CEL Usage:** `income > 5000`
 
 ### Field Status Indicator
@@ -87,6 +89,8 @@ Calculate values using CEL expressions.
 | CEL Expression | `age_years(birthdate)` |
 | Value Type | Number |
 | Unit | years |
+
+![Computed CEL source type configuration](/_images/en-us/config_guide/variables/08-source-type-computed.png)
 
 **CEL Usage:** `age >= 18 && age <= 65`
 
@@ -135,6 +139,8 @@ Compute values over household members, enrollments, entitlements, or events.
 | **Minimum** | Number | Smallest value |
 | **Maximum** | Number | Largest value |
 | **Exists** | Yes/No | True if any member matches |
+
+![Aggregate types dropdown](/_images/en-us/config_guide/variables/07-aggregate-types-dropdown.png)
 
 ### Aggregate Targets
 
@@ -268,6 +274,8 @@ Fixed values that can optionally be overridden per program.
 | Program Configurable | Yes |
 | Value Type | Money |
 | Unit | USD |
+
+![Constant source type configuration](/_images/en-us/config_guide/variables/09-source-type-constant.png)
 
 **CEL Usage:** `income < poverty_line`
 

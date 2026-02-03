@@ -10,9 +10,13 @@ This guide is for **implementers** creating and configuring variables in OpenSPP
 
 ## Navigate to Variables
 
-Go to **Studio → Rules → Variables → All Variables**.
+Go to **Studio → Variables → All Variables**.
+
+![Variables list view](/_images/en-us/config_guide/variables/02-variables-list.png)
 
 Click **New** to create a variable.
+
+![New variable form empty](/_images/en-us/config_guide/variables/03-variable-form-empty.png)
 
 ## Basic Configuration
 
@@ -118,6 +122,8 @@ Categories help organize variables in the picker.
 
 Click **Save**. The variable is created in Draft state.
 
+![Variable form with basic info](/_images/en-us/config_guide/variables/04-variable-basic-info.png)
+
 ## Advanced Configuration
 
 Click **Show Advanced Options** to reveal additional settings.
@@ -185,9 +191,11 @@ Ensure all required fields are set correctly.
 
 Click the **Activate** button or change **Status** to "Active".
 
+![Variable in draft state with Activate button](/_images/en-us/config_guide/variables/14-variable-draft-state.png)
+
 ### Step 3: Test in CEL Builder
 
-Go to **Studio → Rules → CEL Expression Builder** and verify the variable appears in autocomplete.
+Go to **Studio → Expressions** and verify the variable appears in autocomplete.
 
 ## Creating Aggregate Variables
 
@@ -205,6 +213,8 @@ Aggregates compute values over household members, enrollments, or events.
 | Aggregate Filter | `age_years(m.birthdate) < 5` |
 | Value Type | Number |
 | Applies To | Group/Household |
+
+![Aggregate variable configuration](/_images/en-us/config_guide/variables/06-source-type-aggregate.png)
 
 ### Example: Sum of Member Incomes
 
@@ -293,7 +303,9 @@ When **Program Configurable** is enabled, each program can set its own value for
 
 ### Creating a Category
 
-Go to **Studio → Rules → Variables → Categories** and click **New**.
+Go to **Studio → Variables → Categories** and click **New**.
+
+![Variable categories list](/_images/en-us/config_guide/variables/12-categories-list.png)
 
 | Field | Value |
 |-------|-------|
@@ -302,6 +314,8 @@ Go to **Studio → Rules → Variables → Categories** and click **New**.
 | Icon | fa-users |
 | Color | #3498db |
 | Sequence | 10 |
+
+![New category form](/_images/en-us/config_guide/variables/13-category-form.png)
 
 ### Assigning Variables to Categories
 

@@ -40,7 +40,7 @@ income < poverty_line && child_count >= 2
 
 ## Variable Autocomplete
 
-When using the CEL Expression Builder (**Studio → Rules → CEL Expression Builder**):
+When using the CEL Expression Builder (**Studio → Expressions**):
 
 1. Start typing a variable name
 2. Autocomplete shows matching variables
@@ -283,7 +283,7 @@ is_receiving_pension == false
 
 In the CEL Builder, you can test expressions with sample data:
 
-1. Go to **Studio → Rules → CEL Expression Builder**
+1. Go to **Studio → Expressions**
 2. Enter your expression
 3. Select a test registrant
 4. Click **Evaluate**
