@@ -489,6 +489,7 @@ html_sidebars = {
     "**": [
         "search-field.html",
         "sbt-sidebar-nav.html",
+        "openspp-link.html",
     ]
 }
 
@@ -500,14 +501,6 @@ html_theme_options = {
     "use_issues_button": True,
     "use_edit_page_button": True,
     "search_bar_text": "Search",
-    # Logo configuration for newer pydata-sphinx-theme
-    "logo": {
-        "text": f"{project} v{release}",
-        "image_light": "_static/openspp_logo.png",
-        "image_dark": "_static/openspp_logo.png",
-    },
-    # Sidebar footer with link to openspp.org
-    "primary_sidebar_end": ["sidebar-ethical-ads", "openspp-link"],
     "extra_footer": """<p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
     """,
 }
