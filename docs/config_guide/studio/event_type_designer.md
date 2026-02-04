@@ -67,11 +67,19 @@ There are two ways to create an event type:
 2. Click **Event Types** (under Forms & Fields)
 3. Click the **New** button
 
-![Event Types list view](/_images/en-us/config_guide/studio/event_type_designer/02-event-types-list.png)
+```{figure} ../../_images/en-us/config_guide/studio/event_type_designer/01-event-types-list.png
+:alt: Event Types list view with New button highlighted
+
+Click **New** to create a new event type.
+```
 
 #### Step 2: Enter basic information
 
-![Event type form](/_images/en-us/config_guide/studio/event_type_designer/03-event-type-form-empty.png)
+```{figure} ../../_images/en-us/config_guide/studio/event_type_designer/02-event-type-form-empty.png
+:alt: Empty event type form with basic information section highlighted
+
+The event type form with **Basic Information** and **Configuration** sections.
+```
 
 | Field | What to enter | Example |
 |-------|---------------|---------|
@@ -79,6 +87,12 @@ There are two ways to create an event type:
 | **Technical Name** | Auto-generated code (read-only) | `x_evt_vulnerability_assessment` |
 | **Target Type** | Who this event applies to | Individual, Group, or Both |
 | **Description** | Optional explanation | "Annual household vulnerability survey" |
+
+```{figure} ../../_images/en-us/config_guide/studio/event_type_designer/03-event-type-form-filled.png
+:alt: Event type form filled with name, description, and target type
+
+Enter the event type name, target type, and description.
+```
 
 #### Step 3: Configure options
 
@@ -94,7 +108,11 @@ There are two ways to create an event type:
 
 Click the **Fields** tab to add your data collection fields.
 
-![Fields tab](/_images/en-us/config_guide/studio/event_type_designer/05-fields-tab-empty.png)
+```{figure} ../../_images/en-us/config_guide/studio/event_type_designer/04-fields-tab-empty.png
+:alt: Empty Fields tab with Add a line link highlighted
+
+Click **Add a line** to start adding fields to your event type.
+```
 
 Click **Add a line** to create each field:
 
@@ -104,7 +122,19 @@ Click **Add a line** to create each field:
 | **Field Type** | Type of data (see table below) |
 | **Required** | Check if field must be filled |
 
+```{figure} ../../_images/en-us/config_guide/studio/event_type_designer/05-fields-tab-with-data.png
+:alt: Fields tab showing multiple fields added with labels and types
+
+Fields added to the event type with labels, types, and options configured.
+```
+
 ##### Available field types
+
+```{figure} ../../_images/en-us/config_guide/studio/event_type_designer/06-field-type-dropdown.png
+:alt: Field type dropdown showing available options
+
+Select the field type from the dropdown.
+```
 
 | Type | Use for | Example |
 |------|---------|---------|
@@ -164,15 +194,31 @@ Example: Show "Disability Type" field only when "Has Disability" is Yes.
 
 Click the **Field Groups** tab to organize fields into tabs in the data entry form.
 
+```{figure} ../../_images/en-us/config_guide/studio/event_type_designer/07-field-groups-tab-empty.png
+:alt: Empty Field Groups tab with Add a line link highlighted
+
+Click **Add a line** to create field groups for organizing fields into tabs.
+```
+
 1. Click **Add a line** to create a group
 2. Enter a group name (e.g., "Demographics", "Economic Status")
 3. In the Fields tab, assign fields to groups using the **Group** column
+
+```{figure} ../../_images/en-us/config_guide/studio/event_type_designer/08-field-groups-with-data.png
+:alt: Field Groups tab showing groups created
+
+Field groups organize fields into separate tabs in the data entry form.
+```
 
 Fields without a group appear in a "General" tab.
 
 #### Step 6: Save as draft
 
 Click **Save** to create the event type in Draft state.
+
+```{note}
+Event types are created in **Draft** status by default. Draft event types can be edited freely but are not available for data entry until activated.
+```
 
 ### Method 2: Using the wizard
 
@@ -209,7 +255,11 @@ Draft ──► Active ──► Inactive
 2. Click **Activate** (requires Studio Manager permission)
 3. The event type becomes available for data entry
 
-![Activate button](/_images/en-us/config_guide/studio/event_type_designer/09-draft-state-activate-button.png)
+```{figure} ../../_images/en-us/config_guide/studio/event_type_designer/09-draft-activate.png
+:alt: Draft event type with Activate button highlighted
+
+Click **Activate** to make the event type available for data entry.
+```
 
 ### Deactivating an event type
 
@@ -269,6 +319,12 @@ Automatic synchronization with KoBoToolbox is not currently implemented. The Kob
 | **Target Type** | Individual, Group, or Both |
 | **Fields** | Number of fields defined |
 | **State** | Draft, Active, or Inactive |
+
+```{figure} ../../_images/en-us/config_guide/studio/event_type_designer/10-event-types-list-active.png
+:alt: Event Types list showing active event type
+
+The event type now shows **Active** status in the Event Types list.
+```
 
 ### Filtering event types
 
