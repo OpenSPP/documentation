@@ -21,9 +21,6 @@ jobs:
           fetch-depth: 0  # Fetch all history for branch switching
           submodules: true
 
-      - name: Setup Graphviz
-        uses: ts-graphviz/setup-graphviz@v1
-
       - name: Set up Python 3.10
         uses: actions/setup-python@v4
         with:
@@ -32,7 +29,7 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libsasl2-dev libldap2-dev libssl-dev
+          sudo apt-get install -y graphviz libsasl2-dev libldap2-dev libssl-dev
 
       # ============================================
       # BUILD v1.3 (from stable branch)
@@ -151,17 +148,47 @@ jobs:
       # DEPLOY TO CF-PAGES
       # ============================================
       - name: Deploy to cf-pages branch
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _build/html
-          publish_branch: cf-pages
-          keep_files: true  # Preserve preview deployments
+        run: |
+          set -e
+
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Create a temporary directory for the deployment
+          DEPLOY_DIR=$(mktemp -d)
+          cp -r _build/html/* "$DEPLOY_DIR/"
+
+          # Fetch cf-pages branch
+          git fetch origin cf-pages:cf-pages || git checkout --orphan cf-pages
+          git checkout cf-pages
+
+          # Preserve preview deployments (keep_files equivalent)
+          if [ -d "previews" ]; then
+            cp -r previews "$DEPLOY_DIR/"
+          fi
+
+          # Clean current content except .git
+          find . -maxdepth 1 ! -name '.git' ! -name '.' -exec rm -rf {} +
+
+          # Copy new content
+          cp -r "$DEPLOY_DIR"/* .
+
+          # Add .nojekyll to prevent Jekyll processing
+          touch .nojekyll
+
+          # Commit and push
+          git add -A
+          git commit -m "Deploy multi-version documentation (v2.0 + v1.3)" || echo "No changes to commit"
+          git push origin cf-pages
+
+          # Clean up
+          rm -rf "$DEPLOY_DIR"
 
       - name: Display deployment status
         run: |
           echo "============================================"
-          echo "✅ Multi-version documentation deployed!"
+          echo "Multi-version documentation deployed!"
           echo "============================================"
           echo ""
           echo "URLs:"
