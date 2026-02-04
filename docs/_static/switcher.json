@@ -1,12 +1,12 @@
 [
   {
-    "name": "2.0 (latest)",
-    "version": "2.0",
+    "name": "stable (latest)",
+    "version": "stable",
     "url": "https://docs.openspp.org/"
   },
   {
     "name": "1.3",
     "version": "1.3",
-    "url": "https://docs.openspp.org/v1.3/"
+    "url": "https://docs.openspp.org/1.3/"
   }
 ]
