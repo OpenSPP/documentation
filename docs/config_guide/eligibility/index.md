@@ -42,9 +42,10 @@ To configure eligibility for a program:
 4. Write a CEL expression or select a template
 5. Review the match count and save
 
-```{image} /_images/en-us/config_guide/eligibility/01-eligibility-manager-overview.png
+```{figure} /_images/en-us/config_guide/eligibility/01-eligibility-manager-overview.png
 :alt: Eligibility Manager section in program configuration
-:class: img-fluid
+
+The **Eligibility Manager** section in the program's **Configuration** tab.
 ```
 
 ## What you'll find here
