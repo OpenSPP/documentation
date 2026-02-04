@@ -41,6 +41,15 @@ jobs:
         run: |
           pip install -q -r requirements_frozen.txt
 
+      - name: Prepare v1.3 build
+        run: |
+          # Temporarily disable csvlexer import (not in requirements_frozen.txt)
+          sed -i 's/from csvlexer.csv import CsvLexer/# from csvlexer.csv import CsvLexer  # disabled for CI/' docs/conf.py
+          sed -i "s/lexers\['csv'\] = CsvLexer/# lexers['csv'] = CsvLexer  # disabled for CI/" docs/conf.py
+
+          # Save version_switcher.js for later (before switching branches)
+          cp docs/_static/version_switcher.js /tmp/version_switcher.js
+
       - name: Build v1.3 documentation
         run: |
           set -e
@@ -108,11 +117,10 @@ jobs:
           # Copy to v1.3
           cp _build/html/_static/switcher.json _build/html/v1.3/_static/
 
-          # Copy version_switcher.js to both (if not already present)
-          if [ -f "docs/_static/version_switcher.js" ]; then
-            cp docs/_static/version_switcher.js _build/html/_static/
-            cp docs/_static/version_switcher.js _build/html/v1.3/_static/
-          fi
+          # Copy version_switcher.js from stable (saved earlier) to both builds
+          # This ensures we use the fixed version with proper regex
+          cp /tmp/version_switcher.js _build/html/_static/
+          cp /tmp/version_switcher.js _build/html/v1.3/_static/
 
           echo "✅ Version switcher configured"
 
