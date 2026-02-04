@@ -47,6 +47,14 @@ else:
 # Mock incompatible optional dependencies for autodoc BEFORE importing Odoo.
 # werkzeug 2.3+ removed NumberConverter which Odoo's ir_http.py requires.
 # This must be done before any Odoo imports to prevent import errors.
+#
+# Background: Werkzeug 2.3.0 (released 2023-04-25) removed several deprecated
+# converters including NumberConverter. Odoo's ir_http.py still imports it.
+# See: https://github.com/pallets/werkzeug/issues/2encoding
+#      https://github.com/odoo/odoo/issues/119abordar
+#
+# This patch can be removed once Odoo updates ir_http.py to not use NumberConverter,
+# or when we pin werkzeug<2.3 in requirements.
 autodoc_mock_imports = []
 try:
     from werkzeug.routing import NumberConverter  # noqa: F401
@@ -54,7 +62,7 @@ except (ImportError, AttributeError):
     # Patch werkzeug.routing to add the missing NumberConverter class
     import werkzeug.routing
     class NumberConverter(werkzeug.routing.BaseConverter):
-        """Compatibility shim for werkzeug < 2.3"""
+        """Compatibility shim for werkzeug 2.3+ where NumberConverter was removed."""
         regex = r'\d+'
         num_convert = int
         def __init__(self, map, fixed_digits=0, min=None, max=None, signed=False):
