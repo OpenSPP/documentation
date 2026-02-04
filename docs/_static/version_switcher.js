@@ -28,11 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Get current page path, removing any version prefix
                     let currentPath = window.location.pathname;
                     
-                    // Remove version prefixes: /previews/branch-name/ or /version/
+                    // Remove version prefixes: /previews/branch-name/ or /v1.3/ or /1.3/
                     // This regex matches /previews/anything/ at the start
                     currentPath = currentPath.replace(/^\/previews\/[^\/]+\//, '/');
-                    // This regex matches /version-number/ patterns at the start
-                    currentPath = currentPath.replace(/^\/[0-9.]+\//, '/');
+                    // This regex matches /v1.3/ or /1.3/ patterns at the start (with optional 'v' prefix)
+                    currentPath = currentPath.replace(/^\/v?[0-9.]+\//, '/');
                     // Remove leading slash since newUrl already has trailing slash
                     currentPath = currentPath.replace(/^\/+/, '');
                     
