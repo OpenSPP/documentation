@@ -57,9 +57,10 @@ In the eligibility manager form:
 2. Click to open the template list
 3. Select the appropriate template
 
-```{image} /_images/en-us/config_guide/eligibility/09-template-selection-dropdown.png
+```{figure} ../../_images/en-us/config_guide/eligibility/09-template-selection-dropdown.png
 :alt: Template selection dropdown showing available templates
-:class: img-fluid
+
+The **Examples** tab in the Advanced Builder showing available expression templates.
 ```
 
 ### Step 3: Review and customize
@@ -72,9 +73,10 @@ After selecting a template:
 4. Check the match count
 5. Save the configuration
 
-```{image} /_images/en-us/config_guide/eligibility/10-template-applied-with-expression.png
+```{figure} ../../_images/en-us/config_guide/eligibility/10-template-applied-with-expression.png
 :alt: Template applied showing expression and match count
-:class: img-fluid
+
+A template expression applied to the eligibility manager with validation and match count.
 ```
 
 ## Template lineage tracking
@@ -87,9 +89,10 @@ When you use a template, OpenSPP tracks:
 | **Modified** | Whether you've changed the expression |
 | **Locked** | Whether modifications are prevented |
 
-```{image} /_images/en-us/config_guide/eligibility/11-template-lineage-indicators.png
-:alt: Template lineage showing based on, modified, and locked status
-:class: img-fluid
+```{figure} ../../_images/en-us/config_guide/eligibility/11-template-lineage-indicators.png
+:alt: CEL Expression Examples list showing available templates with categories and expressions
+
+The **CEL Expression Examples** list where templates are managed. Each template has a category, name, expression, and target type.
 ```
 
 ### Modified indicator
