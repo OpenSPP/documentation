@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_registry_rest_api.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-registry-rest-api">
+  <div class="section" id="g2p-registry-rest-api">
 <h1>G2P Registry: Rest API<a class="headerlink" href="#g2p-registry-rest-api" title="Permalink to this headline">#</a></h1>
 <p>The 'G2P Registry Rest Api' module provides a robust set of RESTful API endpoints, enabling external systems and integrations to securely interact with the OpenSPP G2P Registry. It acts as the primary interface for creating, updating, and querying individual and group registrant data within the platform.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module serves as the crucial gateway for external applications to access and manage the core G2P Registry data. It accomplishes this by:</p>
 <ul class="simple">
@@ -1671,8 +1658,8 @@ title="Print to PDF"
 <li><p><strong>Ensuring Data Integrity</strong>: Implements essential validations to ensure that incoming data adheres to predefined standards, such as verifying ID types, group types, and gender against system configurations.</p></li>
 <li><p><strong>Securing API Access</strong>: Enforces secure communication by requiring authentication for all API interactions, protecting sensitive registrant data.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module is foundational, extending OpenSPP's core API capabilities and relying on other modules for its data structures and processing logic:</p>
 <ul class="simple">
@@ -1680,32 +1667,32 @@ title="Print to PDF"
 <li><p><strong>FastAPI</strong>: It extends the core FastAPI integration within OpenSPP, providing the framework for defining and exposing the RESTful endpoints. This dependency ensures a modern, high-performance API.</p></li>
 <li><p><strong>Extendable FastAPI</strong>: Builds upon the <code class="docutils literal notranslate"><span class="pre">fastapi</span></code> module to offer a flexible and extensible structure for defining new API endpoints and customizing existing ones, allowing OpenSPP to grow with evolving program needs.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The 'G2P Registry Rest Api' module offers the following key features for managing registrant data:</p>
-<section id="comprehensive-registrant-data-management">
+<div class="section" id="comprehensive-registrant-data-management">
 <h3>Comprehensive Registrant Data Management<a class="headerlink" href="#comprehensive-registrant-data-management" title="Permalink to this headline">#</a></h3>
 <p>The module provides endpoints to create and update detailed profiles for both individual and group registrants. For individuals, this includes personal information like names (given, family, additional), birthdate, birthplace, email, address, and an optional profile image. For groups, it manages the group name, registration date, email, address, and specifies if it's a partial group.</p>
-</section>
-<section id="robust-identification-and-contact-information-processing">
+</div>
+<div class="section" id="robust-identification-and-contact-information-processing">
 <h3>Robust Identification and Contact Information Processing<a class="headerlink" href="#robust-identification-and-contact-information-processing" title="Permalink to this headline">#</a></h3>
 <p>It supports the processing of multiple identification documents (IDs) for each registrant, including the ID type, value, expiry date, status, and description. Similarly, it manages multiple phone numbers, identifying a primary contact number. The API validates that provided ID types exist within the system, preventing data entry errors.</p>
-</section>
-<section id="gender-and-group-type-validation">
+</div>
+<div class="section" id="gender-and-group-type-validation">
 <h3>Gender and Group Type Validation<a class="headerlink" href="#gender-and-group-type-validation" title="Permalink to this headline">#</a></h3>
 <p>The API includes built-in validation for demographic data. When processing individual registrants, it ensures that the provided gender information aligns with predefined gender types in the system. For groups, it validates the specified group 'kind' (e.g., Household, Cooperative) against the system's configured group types, ensuring data consistency.</p>
-</section>
-<section id="secure-api-authentication">
+</div>
+<div class="section" id="secure-api-authentication">
 <h3>Secure API Authentication<a class="headerlink" href="#secure-api-authentication" title="Permalink to this headline">#</a></h3>
 <p>All interactions with the G2P Registry API endpoints require authentication. The module is configured to use Basic Authentication, ensuring that only authorized external systems or users with valid credentials can access and modify sensitive registrant data.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The 'G2P Registry Rest Api' module is the essential interface that empowers external systems to securely and efficiently manage individual and group registrant data within the OpenSPP platform.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

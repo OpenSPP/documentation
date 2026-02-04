@@ -1,0 +1,2583 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+<meta content="Vocabulary Profiles" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://docs.openspp.org/config_guide/vocabulary/profiles.html" property="og:url"/>
+<meta content="OpenSPP Documentation" property="og:site_name"/>
+<meta content="This guide is for implementers configuring which vocabulary codes are active in their OpenSPP deployment. What Are Vocabulary Profiles?: Vocabulary profiles let you select which codes from a vocabu..." property="og:description"/>
+<meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
+<meta content="OpenSPP Documentation" property="og:image:alt"/>
+<meta content="This guide is for implementers configuring which vocabulary codes are active in their OpenSPP deployment. What Are Vocabulary Profiles?: Vocabulary profiles let you select which codes from a vocabu..." name="description"/>
+<meta content="en_US" property="og:locale"/>
+<title>Vocabulary Profiles – Configuration guide – Vocabulary System — OpenSPP Documentation v2.0</title>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/sphinxcontrib-httpexample.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/custom.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/print.css" media="print" rel="stylesheet" type="text/css"/>
+<link href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script src="../../_static/sphinxcontrib-httpexample.js"></script>
+<script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+<script src="../../_static/search-utils.js"></script>
+<script src="../../_static/mermaid_init.js"></script>
+<script src="../../_static/patch_scrollToActive.js"></script>
+<script src="../../_static/search_shortcut.js"></script>
+<script src="../../_static/module-filter.js"></script>
+<script src="../../_static/design-tabs.js"></script>
+<link href="https://docs.openspp.org/config_guide/vocabulary/profiles.html" rel="canonical">
+<link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v2.0" type="application/opensearchdescription+xml"/>
+<link href="../../_static/icon_192.png" rel="shortcut icon"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="custom.html" rel="next" title="Custom Vocabularies"/>
+<link href="standard_vocabularies.html" rel="prev" title="Standard Vocabularies"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../../_static/review_status.css" type="text/css" />
+<script src="../../_static/review_status_simple.js"></script>
+-->
+<script crossorigin="anonymous" integrity="sha384-vJ1NXwwlC62VkTLRHyzdAfyL4rQ8Z478DeHgamh37YzGJh3T6j223FC2yMRVriLl" src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+<!-- Mermaid Support -->
+<script crossorigin="anonymous" integrity="sha384-+NGfjU8KzpDLXRHduEqW+ZiJr2rIg+cidUVk7B51R5xK7cHwMKQfrdFwGdrq1Bcz" src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+</link></link></link></link></link></link></head>
+<body data-offset="100" data-spy="scroll" data-target="#bd-toc-nav">
+<!-- Checkboxes to toggle the left sidebar -->
+<input aria-label="Toggle navigation sidebar" class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<label class="overlay overlay-navbar" for="__navigation">
+<div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input aria-label="Toggle in-page Table of Contents" class="sidebar-toggle" id="__page-toc" name="__page-toc" type="checkbox"/>
+<label class="overlay overlay-pagetoc" for="__page-toc">
+<div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+<div class="container-fluid" id="banner"></div>
+<div class="container-xl">
+<div class="row">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+<div class="bd-sidebar__content">
+<div class="bd-sidebar__top"><div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../">
+<h1 class="site-logo" id="site-title">OpenSPP Documentation v2.0</h1>
+</a>
+</div><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<div class="input-group">
+<label class="sr-only" for="q">Search string
+    </label>
+<i aria-hidden="true" class="fa fa-search fa-lg search-icon"></i>
+<input aria-labelledby="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search" spellcheck="false" type="search" value="">
+<div class="input-group-append">
+<span class="input-group-text" id="shortcut">
+<kbd id="search-shortcut">⌘</kbd> <kbd>K</kbd>
+</span>
+</div>
+</input></div>
+</form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../products/">
+   Products
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/sp_mis.html">
+     OpenSPP SP-MIS
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/social_registry.html">
+     OpenSPP Social Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/farmer_registry.html">
+     OpenSPP Farmer Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/drims.html">
+     OpenSPP DRIMS
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../products/features/">
+     Features
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/unified_registry.html">
+       Unified registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/gis_land_management.html">
+       GIS &amp; land management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/program_management.html">
+       Program management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/eligibility_targeting.html">
+       Eligibility &amp; targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/payment_disbursement.html">
+       Payment &amp; disbursement
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/in_kind_benefits.html">
+       In-Kind benefits
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/data_integration_apis.html">
+       Data integration &amp; APIs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/change_management.html">
+       Change management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/grievance_redress.html">
+       Grievance redress
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/whats_new_v2.html">
+     What's new in OpenSPP v2
+    </a>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../learn/">
+   Learn
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/registry.html">
+     Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/programs.html">
+     Programs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/cycles.html">
+     Cycles
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/eligibility.html">
+     Eligibility
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/compliance.html">
+     Compliance
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/entitlements.html">
+     Entitlements
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/payments.html">
+     Payments
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/deduplication.html">
+     Deduplication
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/change-requests.html">
+     Change requests
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../get_started/">
+   Get started
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/installation/">
+     Installing OpenSPP
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+<label for="toctree-checkbox-5">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/installation/docker.html">
+       Docker installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/modules/">
+     Module installation
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+<label for="toctree-checkbox-6">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/spmis_installation.html">
+       SP-MIS installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/social_installation.html">
+       Social Registry installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/explore/">
+     Explore OpenSPP
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_household/">
+     Your first household
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+<label for="toctree-checkbox-7">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/01_access_registry.html">
+       Step 1: Access the Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/02_create_household.html">
+       Step 2: Create a Household
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/03_add_members.html">
+       Step 3: Add members
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_program/">
+     Your first program
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+<label for="toctree-checkbox-8">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/01_access_program.html">
+       Step 1: Access the program section
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/02_create_program.html">
+       Step 2: Create your first social protection program
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/03_enroll_beneficiaries.html">
+       Step 3: Import and enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/04_run_cycle.html">
+       Step 4: Understanding program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/05_distribute_entitlements.html">
+       Step 5: Distribute entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/poc_and_pilot.html">
+     From Proof of Concept to Pilot
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../user_guide/">
+   User guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+<label for="toctree-checkbox-9">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/getting_started/">
+     Getting started
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+<label for="toctree-checkbox-10">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/navigation.html">
+       Navigating the OpenSPP interface
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/registry/">
+     Registry
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+<label for="toctree-checkbox-11">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_individual.html">
+       Register an individual
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_group.html">
+       Register a group
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/search_filter.html">
+       Search and filter registrants
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/import_data.html">
+       Import registrant data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/export_data.html">
+       Export registrant data
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/change_requests/">
+     Change Requests
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+<label for="toctree-checkbox-12">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/submit_change_request.html">
+       Submit a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/review_change_request.html">
+       Review a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/change_request_types.html">
+       Change request types
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/programs/">
+     Programs
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+<label for="toctree-checkbox-13">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/create_programs.html">
+       Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/program_cycles.html">
+       Work with program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/enroll_beneficiaries.html">
+       Enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/allocate_funds.html">
+       Allocate funds to programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/manage_entitlements.html">
+       Manage entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/payments/">
+     Payments
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+<label for="toctree-checkbox-14">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/payments/service_points.html">
+       View Service Points
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/approvals/">
+     Approvals
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+<label for="toctree-checkbox-15">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/approvals/manage_approvals.html">
+       Review and Approve Requests
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/reference/">
+     Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+<label for="toctree-checkbox-16">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/areas_geography.html">
+       Geographic Areas
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/vocabularies.html">
+       Vocabularies (Code Lists)
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children">
+<a class="reference internal" href="../">
+   Configuration guide
+  </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+<label for="toctree-checkbox-17">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../studio/">
+     OpenSPP Studio
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+<label for="toctree-checkbox-18">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/overview.html">
+       Studio Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/registry_field_builder.html">
+       Custom Fields (Registry Field Builder)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/event_type_designer.html">
+       Event Type Designer
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/change_request_builder.html">
+       Change Request Builder
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../cel/">
+     CEL expressions
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+<label for="toctree-checkbox-19">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/quick_start.html">
+       CEL quick start
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/syntax.html">
+       CEL syntax reference
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/variables.html">
+       Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/cookbook.html">
+       CEL cookbook
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/troubleshooting.html">
+       CEL troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../eligibility/">
+     Eligibility rules
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+<label for="toctree-checkbox-20">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/cel_expressions.html">
+       CEL expressions for eligibility
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/geographic_targeting.html">
+       Geographic targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/templates.html">
+       Expression templates
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/testing.html">
+       Testing eligibility rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/advanced.html">
+       Advanced eligibility configuration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../entitlement_formulas/">
+     Entitlement formulas
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+<label for="toctree-checkbox-21">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/cash_calculations.html">
+       Cash calculations
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/inkind_baskets.html">
+       In-kind and basket entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/formula_library.html">
+       Formula library
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/dynamic_entitlements.html">
+       Dynamic entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/conditional_logic.html">
+       Conditional logic
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children">
+<a class="reference internal" href="">
+     Vocabulary System
+    </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+<label for="toctree-checkbox-22">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l3">
+<a class="reference internal" href="overview.html">
+       Vocabulary Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="standard_vocabularies.html">
+       Standard Vocabularies
+      </a>
+</li>
+<li class="toctree-l3 current active">
+<a class="current reference internal" href="#">
+       Vocabulary Profiles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="custom.html">
+       Custom Vocabularies
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../variables/">
+     Variables &amp; Indicators
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+<label for="toctree-checkbox-23">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/overview.html">
+       Variables Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/creating_variables.html">
+       Creating Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/variable_types.html">
+       Variable Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/using_variables.html">
+       Using Variables in CEL
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../event_data/">
+     Event Data
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+<label for="toctree-checkbox-24">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/overview.html">
+       Event Data Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/event_types.html">
+       Configuring Event Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/field_definitions.html">
+       Defining Event Fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../change_request_types/">
+     Change request types
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+<label for="toctree-checkbox-25">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/overview.html">
+       Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/creating_types.html">
+       Creating change request types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/field_mappings.html">
+       Field mappings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/conflict_detection.html">
+       Conflict and duplicate detection
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/patterns.html">
+       Common configuration patterns
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/custom_detail_models.html">
+       Custom detail models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../consent/">
+     Consent configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+<label for="toctree-checkbox-26">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/overview.html">
+       Consent management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/privacy_notices.html">
+       Configuring privacy notices
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/recording_consent.html">
+       Recording consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/api_consent_filtering.html">
+       API consent filtering
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../role_configuration/">
+     Role configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+<label for="toctree-checkbox-27">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/overview.html">
+       Access control overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/assigning_roles.html">
+       Assigning roles to users
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/predefined_roles.html">
+       Predefined roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/creating_roles.html">
+       Creating custom roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../ops_guide/">
+   Operations guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+<label for="toctree-checkbox-28">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/deployment/">
+     Deployment
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+<label for="toctree-checkbox-29">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/deployment/production-hardening.html">
+       Production Hardening
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/security/">
+     Security
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+<label for="toctree-checkbox-30">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/access_control.html">
+       Access Control
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/data_classification.html">
+       Data Classification
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/pii_encryption.html">
+       PII Encryption
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/audit.html">
+       Audit Logging
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/scanning.html">
+       Security Scanning
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/storage/">
+     Storage
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/backup/">
+     Backup &amp; Recovery
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/monitoring/">
+     Monitoring &amp; Alerts
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../reference/">
+   Reference
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+<label for="toctree-checkbox-31">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../reference/modules/">
+     Modules Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+<label for="toctree-checkbox-32">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2.html">
+       API V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_cycles.html">
+       API V2 - Cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_data.html">
+       API V2 - Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_entitlements.html">
+       API V2 - Entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_products.html">
+       API V2 - Products
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_service_points.html">
+       API V2 - Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_vocabulary.html">
+       API V2 - Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_approval.html">
+       Approval Workflows
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_area.html">
+       Area Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_audit.html">
+       Audit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_banking.html">
+       Banking / Bank Details
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_common.html">
+       Base (Common)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_setting.html">
+       Base Settings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_branding_kit.html">
+       Branding Kit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_domain.html">
+       CEL Domain Query Builder
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_widget.html">
+       CEL Expression Widget
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_change_request_v2.html">
+       Change Request V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_claim_169.html">
+       QR Credentials (Claim 169)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_consent.html">
+       Consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_advanced.html">
+       CR Types - Advanced
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_base.html">
+       CR Types - Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_custom_field.html">
+       Custom Fields
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client.html">
+       DCI Client
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_crvs.html">
+       DCI Client - CRVS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_dr.html">
+       DCI Client - Disability Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_ibr.html">
+       DCI Client - IBR
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_server.html">
+       DCI Server
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_demo.html">
+       Demo
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dms.html">
+       Document Management System
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_event_data.html">
+       Event Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_gis.html">
+       GIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_gis_report.html">
+       GIS Reports
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_grm.html">
+       Grievance Redress Mechanism
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_hide_menus_base.html">
+       Hide Menus Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_mis_demo_v2.html">
+       MIS Demo V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_programs.html">
+       Programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry.html">
+       Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry_search.html">
+       Registry Search Portal
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_security.html">
+       Security
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_service_points.html">
+       Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_source_tracking.html">
+       Source Tracking
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_social_registry.html">
+       Starter: Social Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_sp_mis.html">
+       Starter: SP-MIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio.html">
+       Studio
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio_change_requests.html">
+       Studio - Change Requests
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio_events.html">
+       Studio - Events
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_user_roles.html">
+       User Roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_versioning.html">
+       Versioning
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_vocabulary.html">
+       Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/theme_openspp_muk.html">
+       Theme
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/vocabularies/">
+     Vocabulary Reference
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/glossary/humanitarian.html">
+     Humanitarian Terms Glossary
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../glossary.html">
+     OpenSPP Glossary
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../community_and_support/">
+   Community and support
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+<label for="toctree-checkbox-33">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/how_to_contribute_to_the_project.html">
+     Contributing
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/i18n_l10n.html">
+     Internationalization and Localization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/security_report.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/license.html">
+     Licensing
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+<div class="bd-sidebar__bottom">
+<!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+<p class="openspporglink">
+<a href="https://openspp.org">
+<img alt="openspp.org" src="/_static/openspp_logo.png"/> openspp.org</a>
+</p>
+</div>
+</div>
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+<div class="header-article row sticky-top noprint">
+<div class="col py-1 d-flex header-article-main">
+<div class="header-article__left">
+<label class="headerbtn" data-placement="right" data-toggle="tooltip" for="__navigation" title="Toggle navigation">
+<span class="headerbtn__icon-container">
+<i class="fas fa-bars"></i>
+</span>
+</label>
+</div>
+<div class="header-article__label">
+<span>Vocabulary Profiles – Configuration guide</span>
+</div>
+<div class="header-article__right">
+<button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="headerbtn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+<button aria-label="Source repositories" class="headerbtn menu-dropdown__trigger">
+<i class="fab fa-github"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation" title="Source repository">
+<span class="headerbtn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fconfig_guide/vocabulary/profiles.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<span class="headerbtn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?config_guide/vocabulary/profiles.md#making-contributions-on-github" title="Edit this page">
+<span class="headerbtn__icon-container">
+<i class="fas fa-pencil-alt"></i>
+</span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+<button aria-label="Download this page" class="headerbtn menu-dropdown__trigger">
+<i class="fas fa-download"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/config_guide/vocabulary/profiles.md.txt" title="Download source file">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+</li>
+<li>
+<button class="headerbtn" data-placement="left" data-toggle="tooltip" onclick="printPdf(this)" title="Print to PDF">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
+</div>
+</div>
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-are-vocabulary-profiles">
+   What Are Vocabulary Profiles?
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-gender-codes">
+     Example: Gender Codes
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#why-use-profiles">
+   Why Use Profiles?
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#cultural-context">
+     1. Cultural Context
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#simplified-user-interface">
+     2. Simplified User Interface
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#compliance-requirements">
+     3. Compliance Requirements
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#staged-rollout">
+     4. Staged Rollout
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#mental-model-profiles-vs-vocabularies">
+   Mental Model: Profiles vs. Vocabularies
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#configuring-profiles">
+   Configuring Profiles
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-1-navigate-to-profile-settings">
+     Step 1: Navigate to Profile Settings
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-2-create-or-select-profile">
+     Step 2: Create or Select Profile
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-3-configure-vocabulary-selections">
+     Step 3: Configure Vocabulary Selections
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-4-preview-impact">
+     Step 4: Preview Impact
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-5-activate-profile">
+     Step 5: Activate Profile
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#profile-inheritance">
+   Profile Inheritance
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-base-country-specific">
+     Example: Base + Country-Specific
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#configuring-inheritance">
+     Configuring Inheritance
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#advanced-configuration">
+   Advanced Configuration
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#ui-vs-api-behavior">
+     UI vs. API Behavior
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#enabling-api-strict-mode">
+     Enabling API Strict Mode
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#handling-orphaned-records">
+     Handling Orphaned Records
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#profile-health-dashboard">
+     Profile Health Dashboard
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#common-profile-patterns">
+   Common Profile Patterns
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-1-conservative-subset">
+     Pattern 1: Conservative Subset
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-2-regional-standard">
+     Pattern 2: Regional Standard
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-3-progressive-expansion">
+     Pattern 3: Progressive Expansion
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-4-multi-tenant">
+     Pattern 4: Multi-Tenant
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#testing-profile-changes">
+   Testing Profile Changes
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#preview-mode">
+     1. Preview Mode
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#run-impact-report">
+     2. Run Impact Report
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#test-in-sandbox">
+     3. Test in Sandbox
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#gradual-rollout">
+     4. Gradual Rollout
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#migration-checklist">
+   Migration Checklist
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#are-you-stuck">
+   Are You Stuck?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#next-steps">
+   Next Steps
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="article row">
+<div class="col pl-md-3 pl-lg-5 content-container">
+<!-- Table of contents that is only displayed when printing the page -->
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>Vocabulary Profiles</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-are-vocabulary-profiles">
+   What Are Vocabulary Profiles?
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-gender-codes">
+     Example: Gender Codes
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#why-use-profiles">
+   Why Use Profiles?
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#cultural-context">
+     1. Cultural Context
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#simplified-user-interface">
+     2. Simplified User Interface
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#compliance-requirements">
+     3. Compliance Requirements
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#staged-rollout">
+     4. Staged Rollout
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#mental-model-profiles-vs-vocabularies">
+   Mental Model: Profiles vs. Vocabularies
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#configuring-profiles">
+   Configuring Profiles
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-1-navigate-to-profile-settings">
+     Step 1: Navigate to Profile Settings
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-2-create-or-select-profile">
+     Step 2: Create or Select Profile
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-3-configure-vocabulary-selections">
+     Step 3: Configure Vocabulary Selections
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-4-preview-impact">
+     Step 4: Preview Impact
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-5-activate-profile">
+     Step 5: Activate Profile
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#profile-inheritance">
+   Profile Inheritance
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-base-country-specific">
+     Example: Base + Country-Specific
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#configuring-inheritance">
+     Configuring Inheritance
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#advanced-configuration">
+   Advanced Configuration
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#ui-vs-api-behavior">
+     UI vs. API Behavior
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#enabling-api-strict-mode">
+     Enabling API Strict Mode
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#handling-orphaned-records">
+     Handling Orphaned Records
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#profile-health-dashboard">
+     Profile Health Dashboard
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#common-profile-patterns">
+   Common Profile Patterns
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-1-conservative-subset">
+     Pattern 1: Conservative Subset
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-2-regional-standard">
+     Pattern 2: Regional Standard
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-3-progressive-expansion">
+     Pattern 3: Progressive Expansion
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-4-multi-tenant">
+     Pattern 4: Multi-Tenant
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#testing-profile-changes">
+   Testing Profile Changes
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#preview-mode">
+     1. Preview Mode
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#run-impact-report">
+     2. Run Impact Report
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#test-in-sandbox">
+     3. Test in Sandbox
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#gradual-rollout">
+     4. Gradual Rollout
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#migration-checklist">
+   Migration Checklist
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#are-you-stuck">
+   Are You Stuck?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#next-steps">
+   Next Steps
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<main id="main-content" role="main">
+<div>
+<div class="section" id="vocabulary-profiles">
+<h1>Vocabulary Profiles<a class="headerlink" href="#vocabulary-profiles" title="Permalink to this headline">#</a></h1>
+<p>This guide is for <strong>implementers</strong> configuring which vocabulary codes are active in their OpenSPP deployment.</p>
+<div class="section" id="what-are-vocabulary-profiles">
+<h2>What Are Vocabulary Profiles?<a class="headerlink" href="#what-are-vocabulary-profiles" title="Permalink to this headline">#</a></h2>
+<p>Vocabulary profiles let you select which codes from a vocabulary appear in your deployment's user interface.</p>
+<div class="section" id="example-gender-codes">
+<h3>Example: Gender Codes<a class="headerlink" href="#example-gender-codes" title="Permalink to this headline">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌────────────────────────────────────────────────┐
+│ ISO 5218 Gender Vocabulary (Full)              │
+│ ├─ 0: Not Known                                │
+│ ├─ 1: Male                                     │
+│ ├─ 2: Female                                   │
+│ ├─ 9: Not Applicable                           │
+│ └─ (+ extended codes: non-binary, other...)    │
+└────────────────────────────────────────────────┘
+              │
+              │ filtered by profile
+              ▼
+┌────────────────────────────────────────────────┐
+│ "Philippines 4Ps" Profile                      │
+│ Active gender codes:                           │
+│ ├─ 1: Male       [x]                           │
+│ └─ 2: Female     [x]                           │
+│                                                │
+│ Result: Users only see Male/Female dropdown    │
+└────────────────────────────────────────────────┘
+</pre></div>
+</div>
+<p><strong>Key insight:</strong> One vocabulary, multiple deployment configurations, no code changes.</p>
+</div>
+</div>
+<div class="section" id="why-use-profiles">
+<h2>Why Use Profiles?<a class="headerlink" href="#why-use-profiles" title="Permalink to this headline">#</a></h2>
+<div class="section" id="cultural-context">
+<h3>1. Cultural Context<a class="headerlink" href="#cultural-context" title="Permalink to this headline">#</a></h3>
+<p>Different countries/programs need different options:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Deployment</p></th>
+<th class="head"><p>Active Gender Codes</p></th>
+<th class="head"><p>Reason</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Country A</p></td>
+<td><p>Male, Female</p></td>
+<td><p>Cultural/legal context requires binary</p></td>
+</tr>
+<tr class="row-odd"><td><p>Country B</p></td>
+<td><p>Male, Female, Other</p></td>
+<td><p>More inclusive, but simplified</p></td>
+</tr>
+<tr class="row-even"><td><p>Country C</p></td>
+<td><p>Full ISO 5218 + extensions</p></td>
+<td><p>Progressive legal framework</p></td>
+</tr>
+</tbody>
+</table>
+<p>All use the <strong>same vocabulary</strong>, just different subsets.</p>
+</div>
+<div class="section" id="simplified-user-interface">
+<h3>2. Simplified User Interface<a class="headerlink" href="#simplified-user-interface" title="Permalink to this headline">#</a></h3>
+<p><strong>Without profiles:</strong> Users see all 50+ disability codes
+<strong>With profiles:</strong> Users see only the 5 codes relevant to your program</p>
+<p><strong>Result:</strong> Fewer errors, faster data entry, better data quality.</p>
+</div>
+<div class="section" id="compliance-requirements">
+<h3>3. Compliance Requirements<a class="headerlink" href="#compliance-requirements" title="Permalink to this headline">#</a></h3>
+<p><strong>Scenario:</strong> Your government requires specific demographic categories.</p>
+<p><strong>Solution:</strong> Configure profile to show only compliant codes while maintaining internal standard mappings.</p>
+</div>
+<div class="section" id="staged-rollout">
+<h3>4. Staged Rollout<a class="headerlink" href="#staged-rollout" title="Permalink to this headline">#</a></h3>
+<p><strong>Example:</strong> Start with basic codes, add more as users become comfortable</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Phase</p></th>
+<th class="head"><p>Active Codes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Phase 1 (Launch)</p></td>
+<td><p>Male, Female</p></td>
+</tr>
+<tr class="row-odd"><td><p>Phase 2 (3 months)</p></td>
+<td><p>+ Not Known</p></td>
+</tr>
+<tr class="row-even"><td><p>Phase 3 (6 months)</p></td>
+<td><p>+ Other, Prefer not to say</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mental-model-profiles-vs-vocabularies">
+<h2>Mental Model: Profiles vs. Vocabularies<a class="headerlink" href="#mental-model-profiles-vs-vocabularies" title="Permalink to this headline">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>DEPLOYMENT PROFILE                    (Your configuration package)
+├── Name: "Philippines 4Ps"
+├── Description: "4Ps Cash Transfer Program"
+└── Vocabulary Selections:
+    ├── Gender (ISO 5218)             (Which codes from this vocab)
+    │   └── Active: Male, Female
+    ├── Marital Status
+    │   └── Active: Single, Married, Widowed, Separated
+    ├── Relationship Types
+    │   └── Active: Head, Spouse, Child, Parent, Sibling
+    └── Disability (WHO ICF)
+        └── Active: Seeing, Hearing, Mobility, Cognitive
+</pre></div>
+</div>
+<p><strong>One deployment profile</strong> contains <strong>many vocabulary selections</strong> (one per vocabulary).</p>
+</div>
+<div class="section" id="configuring-profiles">
+<h2>Configuring Profiles<a class="headerlink" href="#configuring-profiles" title="Permalink to this headline">#</a></h2>
+<div class="section" id="step-1-navigate-to-profile-settings">
+<h3>Step 1: Navigate to Profile Settings<a class="headerlink" href="#step-1-navigate-to-profile-settings" title="Permalink to this headline">#</a></h3>
+<p>Go to <strong>Settings → Vocabularies → Deployment Profiles</strong></p>
+<p>You'll see:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌────────────────────────────────────────────────┐
+│ Deployment Profile                             │
+│                                                │
+│ Active Profile: [Philippines 4Ps ▼]            │
+│                                                │
+│ [Configure Profiles...]  [Preview Changes]     │
+└────────────────────────────────────────────────┘
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-2-create-or-select-profile">
+<h3>Step 2: Create or Select Profile<a class="headerlink" href="#step-2-create-or-select-profile" title="Permalink to this headline">#</a></h3>
+<p><strong>To create new profile:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>"Kenya CT-OVC"</p></td>
+</tr>
+<tr class="row-odd"><td><p>Description</p></td>
+<td><p>"Cash Transfer for Orphans and Vulnerable Children"</p></td>
+</tr>
+<tr class="row-even"><td><p>Parent Profile</p></td>
+<td><p>(optional) "Base Profile"</p></td>
+</tr>
+<tr class="row-odd"><td><p>Active</p></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>To modify existing:</strong></p>
+<p>Click <strong>Configure Profiles</strong> → Select profile from list → <strong>Edit</strong></p>
+</div>
+<div class="section" id="step-3-configure-vocabulary-selections">
+<h3>Step 3: Configure Vocabulary Selections<a class="headerlink" href="#step-3-configure-vocabulary-selections" title="Permalink to this headline">#</a></h3>
+<p>For each vocabulary, select active codes:</p>
+<p><strong>Example: Configuring Gender codes</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Vocabulary</p></td>
+<td><p>Gender (ISO 5218)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Active Codes</p></td>
+<td><p>☑ Male<br/>☑ Female<br/>☐ Not Known<br/>☐ Not Applicable</p></td>
+</tr>
+<tr class="row-even"><td><p>Inheritance</p></td>
+<td><p>From parent profile (if applicable)</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example: Configuring Relationship Types</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Vocabulary</p></td>
+<td><p>Relationship Type</p></td>
+</tr>
+<tr class="row-odd"><td><p>Active Codes</p></td>
+<td><p>☑ Head of Household<br/>☑ Spouse<br/>☑ Child<br/>☑ Parent<br/>☑ Sibling<br/>☐ Grandparent<br/>☐ Grandchild<br/>☐ Other Relative<br/>☐ Non-Relative</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="step-4-preview-impact">
+<h3>Step 4: Preview Impact<a class="headerlink" href="#step-4-preview-impact" title="Permalink to this headline">#</a></h3>
+<p>Before activating, click <strong>Preview Changes</strong> to see:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>📊 Impact Analysis
+
+✓ Gender: 2/4 codes active
+  • 45,231 records will continue to display correctly
+  • 0 orphaned records (using non-profile codes)
+
+⚠️ Relationship Type: 5/9 codes active
+  • 12 records use "Grandparent" (not in profile)
+  • These records remain valid but cannot be created new
+
+✓ No CEL expressions affected
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-5-activate-profile">
+<h3>Step 5: Activate Profile<a class="headerlink" href="#step-5-activate-profile" title="Permalink to this headline">#</a></h3>
+<p>Click <strong>Save &amp; Activate</strong></p>
+<p><strong>Result:</strong> Forms immediately show only selected codes. Existing data remains intact.</p>
+</div>
+</div>
+<div class="section" id="profile-inheritance">
+<h2>Profile Inheritance<a class="headerlink" href="#profile-inheritance" title="Permalink to this headline">#</a></h2>
+<p>Profiles can extend other profiles, reducing duplication.</p>
+<div class="section" id="example-base-country-specific">
+<h3>Example: Base + Country-Specific<a class="headerlink" href="#example-base-country-specific" title="Permalink to this headline">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Profile: "Base African Context"
+├── Gender: Male, Female
+├── Marital Status: Single, Married, Divorced, Widowed
+└── Relationship: Head, Spouse, Child, Parent, Sibling
+
+       │
+       │ extends (inherits all codes)
+       ▼
+
+Profile: "Kenya CT-OVC" (parent: Base)
+├── INHERITS: All codes from Base
+├── ADDS:
+│   └── Disability: Seeing, Hearing, Mobility, Cognitive
+└── EXCLUDES:
+    └── Marital Status: Divorced (remove from inherited)
+
+       ▼ Result
+
+Kenya CT-OVC Active Codes:
+├── Gender: Male, Female (inherited)
+├── Marital Status: Single, Married, Widowed (inherited - Divorced)
+├── Relationship: Head, Spouse, Child... (inherited)
+└── Disability: Seeing, Hearing... (added)
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuring-inheritance">
+<h3>Configuring Inheritance<a class="headerlink" href="#configuring-inheritance" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Parent Profile</p></td>
+<td><p>"Base African Context"</p></td>
+</tr>
+<tr class="row-odd"><td><p>Inherit Mode</p></td>
+<td><p>☑ Inherit all parent codes</p></td>
+</tr>
+<tr class="row-even"><td><p>Excluded Codes</p></td>
+<td><p>☑ Marital Status → Divorced</p></td>
+</tr>
+<tr class="row-odd"><td><p>Additional Codes</p></td>
+<td><p>☑ Disability: Seeing, Hearing, Mobility, Cognitive</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Benefits:</strong></p>
+<ul class="simple">
+<li><p>DRY principle (don't repeat yourself)</p></li>
+<li><p>Update parent → all children inherit changes</p></li>
+<li><p>Country-specific tweaks without full duplication</p></li>
+</ul>
+<p><strong>Warning:</strong> Keep inheritance shallow (1-2 levels). Deep chains are hard to debug.</p>
+</div>
+</div>
+<div class="section" id="advanced-configuration">
+<h2>Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Permalink to this headline">#</a></h2>
+<div class="section" id="ui-vs-api-behavior">
+<h3>UI vs. API Behavior<a class="headerlink" href="#ui-vs-api-behavior" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Context</p></th>
+<th class="head"><p>Behavior</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>UI Dropdowns</strong></p></td>
+<td><p>Show only active profile codes</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Existing Records</strong></p></td>
+<td><p>Display all codes (including non-profile)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>API Accepts</strong></p></td>
+<td><p>Any valid code by default</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>API Strict Mode</strong></p></td>
+<td><p>Only profile codes (if enabled)</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why?</strong> Data integrity + interoperability. External systems may send valid codes not in your profile.</p>
+</div>
+<div class="section" id="enabling-api-strict-mode">
+<h3>Enabling API Strict Mode<a class="headerlink" href="#enabling-api-strict-mode" title="Permalink to this headline">#</a></h3>
+<p><strong>When to use:</strong> You want to reject API requests with codes outside your profile.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>API Vocabulary Validation</p></td>
+<td><p>Strict</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Result:</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>POST /api/v2/individuals
+{
+  "gender": "urn:iso:std:iso:5218#9"   ← Not Applicable - not in profile
+}
+
+→ 400 Bad Request
+{
+  "error": "Code not in active deployment profile",
+  "code": "urn:iso:std:iso:5218#9",
+  "allowed_codes": [
+    "urn:iso:std:iso:5218#1",
+    "urn:iso:std:iso:5218#2"
+  ]
+}
+</pre></div>
+</div>
+<p><strong>Default mode (Permissive):</strong> Same request would succeed (for interoperability).</p>
+</div>
+<div class="section" id="handling-orphaned-records">
+<h3>Handling Orphaned Records<a class="headerlink" href="#handling-orphaned-records" title="Permalink to this headline">#</a></h3>
+<p><strong>Scenario:</strong> You change profile, some records use codes no longer active.</p>
+<p><strong>Example:</strong></p>
+<ol class="arabic simple">
+<li><p>Old profile included "Other" gender</p></li>
+<li><p>50 records marked as "Other"</p></li>
+<li><p>New profile removes "Other"</p></li>
+</ol>
+<p><strong>Result:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Gender: Other ⓘ
+        ↑
+        Tooltip: "This value is not in your active profile but
+                  remains valid for existing records."
+</pre></div>
+</div>
+<p><strong>Options:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Action</p></th>
+<th class="head"><p>How To</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Keep as-is</p></td>
+<td><p>No action needed - displays with info icon</p></td>
+</tr>
+<tr class="row-odd"><td><p>Map to active code</p></td>
+<td><p>Tools → Vocabulary Mapping → Map "Other" → "Not Known"</p></td>
+</tr>
+<tr class="row-even"><td><p>Reactivate code</p></td>
+<td><p>Edit profile → Add "Other" back to active codes</p></td>
+</tr>
+<tr class="row-odd"><td><p>View affected records</p></td>
+<td><p>Dashboard shows count → [View Records] button</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="profile-health-dashboard">
+<h3>Profile Health Dashboard<a class="headerlink" href="#profile-health-dashboard" title="Permalink to this headline">#</a></h3>
+<p><strong>Navigation:</strong> Settings → Vocabularies → Deployment Profiles</p>
+<p>Shows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>📊 Profile: Philippines 4Ps (Active)
+
+Gender (2/4 codes active)              ✓ In use: 45,231 records
+├─ Male                                ✓ 23,145 records
+├─ Female                              ✓ 22,086 records
+└─ Other                               ⓘ 0 records (inactive)
+
+Relationship (5/9 codes active)        ⚠️ Has orphaned codes
+├─ Head                                ✓ 12,543 records
+├─ Spouse                              ✓ 8,234 records
+├─ Child                               ✓ 15,678 records
+├─ Parent                              ✓ 3,456 records
+├─ Sibling                             ✓ 2,345 records
+└─ Grandparent                         ⚠️ 12 records (not in profile)
+
+⚠️ Orphaned Codes Summary:
+• Grandparent: 12 records
+  [Map These Records...] [View Records] [Reactivate Code]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="common-profile-patterns">
+<h2>Common Profile Patterns<a class="headerlink" href="#common-profile-patterns" title="Permalink to this headline">#</a></h2>
+<div class="section" id="pattern-1-conservative-subset">
+<h3>Pattern 1: Conservative Subset<a class="headerlink" href="#pattern-1-conservative-subset" title="Permalink to this headline">#</a></h3>
+<p><strong>Use case:</strong> Simplified options for easier data entry</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Vocabulary</p></th>
+<th class="head"><p>Full Set</p></th>
+<th class="head"><p>Your Profile</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Gender</p></td>
+<td><p>8 codes</p></td>
+<td><p>Male, Female</p></td>
+</tr>
+<tr class="row-odd"><td><p>Marital Status</p></td>
+<td><p>6 codes</p></td>
+<td><p>Married, Single</p></td>
+</tr>
+<tr class="row-even"><td><p>Disability</p></td>
+<td><p>50+ codes</p></td>
+<td><p>Physical, Visual, Hearing, Mental</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Result:</strong> Clean, simple forms for field staff.</p>
+</div>
+<div class="section" id="pattern-2-regional-standard">
+<h3>Pattern 2: Regional Standard<a class="headerlink" href="#pattern-2-regional-standard" title="Permalink to this headline">#</a></h3>
+<p><strong>Use case:</strong> Government compliance</p>
+<p><strong>Example:</strong> ASEAN demographic standards</p>
+<ul class="simple">
+<li><p>Gender: ISO 5218 core (0, 1, 2, 9)</p></li>
+<li><p>Marital Status: UN census categories</p></li>
+<li><p>Education: UNESCO ISCED</p></li>
+</ul>
+<p><strong>Setup:</strong> Create "ASEAN Standard" profile → Activate compliant codes</p>
+</div>
+<div class="section" id="pattern-3-progressive-expansion">
+<h3>Pattern 3: Progressive Expansion<a class="headerlink" href="#pattern-3-progressive-expansion" title="Permalink to this headline">#</a></h3>
+<p><strong>Use case:</strong> Add codes as program matures</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Timeline</p></th>
+<th class="head"><p>Gender Codes</p></th>
+<th class="head"><p>Reason</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Month 1-3</p></td>
+<td><p>Male, Female</p></td>
+<td><p>Initial rollout, keep simple</p></td>
+</tr>
+<tr class="row-odd"><td><p>Month 4-6</p></td>
+<td><p>+ Not Known</p></td>
+<td><p>Users requested "unknown" option</p></td>
+</tr>
+<tr class="row-even"><td><p>Month 7+</p></td>
+<td><p>+ Other, Prefer not to say</p></td>
+<td><p>Legal requirement update</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Setup:</strong> Clone profile → Add codes → Test → Activate</p>
+</div>
+<div class="section" id="pattern-4-multi-tenant">
+<h3>Pattern 4: Multi-Tenant<a class="headerlink" href="#pattern-4-multi-tenant" title="Permalink to this headline">#</a></h3>
+<p><strong>Use case:</strong> Different organizations in same system</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Organization</p></th>
+<th class="head"><p>Profile</p></th>
+<th class="head"><p>Gender Codes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ministry of Health</p></td>
+<td><p>Health Profile</p></td>
+<td><p>Male, Female, Other</p></td>
+</tr>
+<tr class="row-odd"><td><p>Faith-based NGO</p></td>
+<td><p>NGO Profile</p></td>
+<td><p>Male, Female</p></td>
+</tr>
+<tr class="row-even"><td><p>Research Institute</p></td>
+<td><p>Research Profile</p></td>
+<td><p>Full ISO 5218 set</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Setup:</strong> Create profile per company → Set company_id field</p>
+</div>
+</div>
+<div class="section" id="testing-profile-changes">
+<h2>Testing Profile Changes<a class="headerlink" href="#testing-profile-changes" title="Permalink to this headline">#</a></h2>
+<p><strong>Before activating a new profile:</strong></p>
+<div class="section" id="preview-mode">
+<h3>1. Preview Mode<a class="headerlink" href="#preview-mode" title="Permalink to this headline">#</a></h3>
+<p>Enable preview without affecting production:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Profile Status</p></td>
+<td><p>Preview</p></td>
+</tr>
+<tr class="row-odd"><td><p>Preview Users</p></td>
+<td><p><a class="reference external" href="mailto:admin%40example.com">admin<span>@</span>example<span>.</span>com</a>, <a class="reference external" href="mailto:test%40example.com">test<span>@</span>example<span>.</span>com</a></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Result:</strong> Only specified users see new profile. Others see old one.</p>
+</div>
+<div class="section" id="run-impact-report">
+<h3>2. Run Impact Report<a class="headerlink" href="#run-impact-report" title="Permalink to this headline">#</a></h3>
+<p><strong>Navigation:</strong> Configure Profiles → [Your Profile] → Impact Analysis</p>
+<p>Shows:</p>
+<ul class="simple">
+<li><p>How many records use non-profile codes</p></li>
+<li><p>Which CEL expressions reference affected codes</p></li>
+<li><p>Forms that will change</p></li>
+</ul>
+</div>
+<div class="section" id="test-in-sandbox">
+<h3>3. Test in Sandbox<a class="headerlink" href="#test-in-sandbox" title="Permalink to this headline">#</a></h3>
+<p><strong>Best practice:</strong> Clone production database to test environment</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Steps</span>
+<span class="m">1</span>.<span class="w"> </span>Clone<span class="w"> </span>database<span class="w"> </span>to<span class="w"> </span><span class="nb">test</span><span class="w"> </span>environment
+<span class="m">2</span>.<span class="w"> </span>Activate<span class="w"> </span>new<span class="w"> </span>profile<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nb">test</span>
+<span class="m">3</span>.<span class="w"> </span>Test<span class="w"> </span>all<span class="w"> </span>forms<span class="w"> </span>and<span class="w"> </span>expressions
+<span class="m">4</span>.<span class="w"> </span>If<span class="w"> </span>OK<span class="w"> </span>→<span class="w"> </span>activate<span class="w"> </span><span class="k">in</span><span class="w"> </span>production
+</pre></div>
+</div>
+</div>
+<div class="section" id="gradual-rollout">
+<h3>4. Gradual Rollout<a class="headerlink" href="#gradual-rollout" title="Permalink to this headline">#</a></h3>
+<p><strong>Use field groups:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Profile</p></td>
+<td><p>Kenya CT-OVC v2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Active For Groups</p></td>
+<td><p>Pilot District Admins</p></td>
+</tr>
+<tr class="row-even"><td><p>Fallback Profile</p></td>
+<td><p>Kenya CT-OVC v1</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Result:</strong> Pilot users see v2, others see v1. Gradual migration.</p>
+</div>
+</div>
+<div class="section" id="migration-checklist">
+<h2>Migration Checklist<a class="headerlink" href="#migration-checklist" title="Permalink to this headline">#</a></h2>
+<p>Before changing active profile:</p>
+<ul class="simple">
+<li><p>[ ] Backup database</p></li>
+<li><p>[ ] Run impact analysis</p></li>
+<li><p>[ ] Identify orphaned codes (if any)</p></li>
+<li><p>[ ] Plan mapping for orphaned codes</p></li>
+<li><p>[ ] Review affected CEL expressions</p></li>
+<li><p>[ ] Test in sandbox environment</p></li>
+<li><p>[ ] Document changes for users</p></li>
+<li><p>[ ] Schedule change during low-usage period</p></li>
+<li><p>[ ] Prepare rollback plan</p></li>
+<li><p>[ ] Notify users of upcoming changes</p></li>
+</ul>
+</div>
+<div class="section" id="are-you-stuck">
+<h2>Are You Stuck?<a class="headerlink" href="#are-you-stuck" title="Permalink to this headline">#</a></h2>
+<p><strong>Profile changes not appearing in UI?</strong>
+Clear your browser cache and refresh. Profile changes are cached for performance.</p>
+<p><strong>Orphaned codes causing confusion?</strong>
+Use the mapping tool to bulk-update records: Tools → Vocabulary Mapping → Bulk Map.</p>
+<p><strong>Want to A/B test two profiles?</strong>
+Use Preview Mode with different user groups.</p>
+<p><strong>Inheritance not working as expected?</strong>
+Check parent profile is active. Inactive parents don't propagate changes.</p>
+<p><strong>Need to switch profiles frequently?</strong>
+Avoid this - it confuses users and creates data inconsistency. Profiles should be stable.</p>
+<p><strong>Can't see "Configure Profiles" button?</strong>
+You need Administrator role. Contact your system admin.</p>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>To...</p></th>
+<th class="head"><p>See...</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Add custom codes to a vocabulary</p></td>
+<td><p><a class="reference internal" href="custom.html"><span class="doc">Custom Vocabularies</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Use profile codes in CEL expressions</p></td>
+<td><p><a class="reference internal" href="../cel/"><span class="doc">CEL expressions</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Understand vocabulary architecture</p></td>
+<td><p><a class="reference internal" href="overview.html"><span class="doc">Vocabulary Overview</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Browse available vocabularies</p></td>
+<td><p><a class="reference internal" href="standard_vocabularies.html"><span class="doc">Standard Vocabularies</span></a></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils"/>
+<p><strong>Related:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="overview.html"><span class="doc">Vocabulary Overview</span></a> - Vocabulary system concepts</p></li>
+<li><p><a class="reference internal" href="standard_vocabularies.html"><span class="doc">Standard Vocabularies</span></a> - Built-in vocabularies</p></li>
+<li><p><a class="reference internal" href="custom.html"><span class="doc">Custom Vocabularies</span></a> - Create custom vocabularies</p></li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer-article noprint">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="standard_vocabularies.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Standard Vocabularies</p>
+</div>
+</a>
+<a class="right-next" href="custom.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Custom Vocabularies</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+</div>
+<div class="footer-content row">
+<footer class="col footer"><p>
+  
+    By The OpenSPP community<br>
+  
+      © Copyright OpenSPP.<br>
+<div class="extra_footer">
+<p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+</div>
+</br></br></p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            var lists = $("div.toctree-wrapper ul");
+            $.each(lists, function(index, list) {
+                if($(list).find("li").length == 0) {
+                    $(list).prev().hide();
+                    $(list).hide();
+                }
+            });
+        })
+    </script>
+<script src="/_static/version_switcher.js"></script></body>
+</html>

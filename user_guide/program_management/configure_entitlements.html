@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Configure cash entitlements" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Configure cash entitlements" name="title" />
 <meta content="Learn how to configure cash entitlements in OpenSPP programs, including setting up multipliers, amounts per cycle, and maximum limits." name="description" />
 <meta content="OpenSPP, cash entitlements, program configuration, entitlement manager, multiplier" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/program_management/configure_entitlements.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1680,28 +1667,28 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="configure-cash-entitlements">
+  <div class="section" id="configure-cash-entitlements">
 <h1>Configure cash entitlements<a class="headerlink" href="#configure-cash-entitlements" title="Permalink to this headline">#</a></h1>
 <p>This tutorial describes the steps of configuring cash entitlements when selected as Entitlement manager.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Have an access role as an <strong>System Admin</strong>. Learn more about this in the guide <a class="reference internal" href="../administration/user_access.html"><span class="doc">User access</span></a></p></li>
 <li><p>Install and activate the module: <strong>OpenSPP Cash Entitlement</strong> on your OpenSPP instance as <strong>System Admin</strong>. Learn more on installing modules in the guide: <a class="reference internal" href="../../getting_started/module_installation.html"><span class="doc">Module installation</span></a></p></li>
 <li><p>Create a Program or have an already existing program. Learn more about this in the guide <a class="reference internal" href="create_program.html"><span class="doc">Create program</span></a>.</p></li>
 </ul>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>After completing this guide, you will be able to learn how to configure cash entitlements and edit existing cash entitlement configuration.</p>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
-<section id="configure-the-entitlement-manager">
+<div class="section" id="configure-the-entitlement-manager">
 <h3>Configure the Entitlement Manager<a class="headerlink" href="#configure-the-entitlement-manager" title="Permalink to this headline">#</a></h3>
 <p>It is possible to configure cash entitlements either during creation of the program or after.
 Both options are explained below.</p>
-<section id="configure-cash-entitlements-during-program-creation">
+<div class="section" id="configure-cash-entitlements-during-program-creation">
 <h4>Configure cash entitlements during program creation<a class="headerlink" href="#configure-cash-entitlements-during-program-creation" title="Permalink to this headline">#</a></h4>
 <p>When Creating a program, the tab <strong>Configure the Entitlement manager</strong> is available from the pop-up modal. Click on it to start setting it up.</p>
 <p><img alt="Program creation modal showing the Configure the Entitlement manager tab highlighted" src="../../_images/212.png" /></p>
@@ -1713,27 +1700,27 @@ Both options are explained below.</p>
 <p><img alt="Multiplier dropdown menu showing options like Number of adults for calculating entitlement amounts" src="../../_images/52.png" /></p>
 <p><strong>Maximum number:</strong> this input field defines the maximum count for the multiplier. If, for example “Number of adults = 5” and “Maximum number= 3”, the <strong>Amount</strong> will be multiplied by 3 instead of 5.</p>
 <p>In order to not have any limitations this field should be set to zero(0).</p>
-</section>
-<section id="edit-after-program-creation">
+</div>
+<div class="section" id="edit-after-program-creation">
 <h4>Edit after program creation<a class="headerlink" href="#edit-after-program-creation" title="Permalink to this headline">#</a></h4>
 <p>Once a program is created, you are still able to configure its settings by selecting the program and clicking on the tab <strong>Configuration</strong>.</p>
 <p><img alt="Existing program Configuration tab showing program settings and entitlement manager section" src="../../_images/63.png" /></p>
 <p>Scroll down to the section <strong>Entitlement manager</strong>. Click on the green box to expand.</p>
 <p><img alt="Entitlement manager section expanded showing configured cash entitlement items with green expand button" src="../../_images/72.png" /></p>
-<section id="deleting-an-entitlement-item">
+<div class="section" id="deleting-an-entitlement-item">
 <h5>Deleting an Entitlement item<a class="headerlink" href="#deleting-an-entitlement-item" title="Permalink to this headline">#</a></h5>
 <p>Click on the trash icon on the far right corner.</p>
 <p><img alt="Cash entitlement item with trash delete icon highlighted in the far right corner" src="../../_images/82.png" /></p>
-</section>
-<section id="modifying-amount-per-cycle">
+</div>
+<div class="section" id="modifying-amount-per-cycle">
 <h5>Modifying amount per cycle<a class="headerlink" href="#modifying-amount-per-cycle" title="Permalink to this headline">#</a></h5>
 <p>Click on the Entitlement item to display another modal pop-up. Edit amount by replacing value under <strong>Amount per cycle</strong>.</p>
 <p><img alt="Edit entitlement modal popup showing Amount per cycle field and multiplier configuration options" src="../../_images/91.png" /></p>
 <p><strong>Multiplier:</strong> this dropdown field defines how many times the <strong>Amount per cycle</strong> will be multiplied. For example, if the indicator is set to <strong>Number of adults</strong> it would multiply the <strong>Amount per cycle</strong> by the number of adults in this group. The total amount will be the registrant’s entitlement.</p>
 <p><strong>Maximum number:</strong> this input field sets an upper limit for the multiplier. For example, if “Number of adults = 5” and “Maximum number = 3”, the <strong>Amount per cycle</strong> will be multiplied by a maximum of 3, even if there are more adults. This ensures the entitlement does not exceed the specified cap.</p>
 <p>In order to not have any limitations this field should be set to zero(0).</p>
-</section>
-<section id="adding-a-cash-entitlement">
+</div>
+<div class="section" id="adding-a-cash-entitlement">
 <h5>Adding a cash entitlement<a class="headerlink" href="#adding-a-cash-entitlement" title="Permalink to this headline">#</a></h5>
 <p>Click on <strong>Add</strong> a line and input the amount under <strong>Amount per cycle</strong>.</p>
 <p><img alt="Add new cash entitlement line interface with Amount per cycle input field highlighted" src="../../_images/101.png" /></p>
@@ -1742,11 +1729,11 @@ Both options are explained below.</p>
 <p>In order to not have any limitations this field should be set to zero(0).</p>
 <p>Click <strong>Save and Close</strong> to apply the changes.</p>
 <p>Please note that the amount of the entitlements will be final once entitlements have been prepared in a cycle.</p>
-</section>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
               </div>

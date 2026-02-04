@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Setting up service points" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Setting up service points" name="title" />
 <meta content="Learn how to create, configure, and manage service points in OpenSPP for effective entitlement delivery and benefit distribution" name="description" />
 <meta content="OpenSPP, service points, entitlement delivery, benefit distribution, administration" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/administration/service_points.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1652,29 +1639,29 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="setting-up-service-points">
+  <div class="section" id="setting-up-service-points">
 <h1>Setting up service points<a class="headerlink" href="#setting-up-service-points" title="Permalink to this headline">#</a></h1>
 <p>A service point is a virtual or physical location where individuals can receive or access their social protection services and benefits.
 Setting up service points is crucial for entitlement delivery to ensure that services and benefits are delivered to the recipients correctly.
 In this tutorial, you will learn how to set up service points.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>To configure Service Points, you need to:</p>
 <ul class="simple">
 <li><p>Have an access role as an <strong>System Admin</strong>. Learn more in this guide: <a class="reference internal" href="user_access.html"><span class="doc">User access</span></a>.</p></li>
 <li><p>Make sure that the modules <a class="reference internal" href="../../reference/modules/spp_programs_sp.html"><span class="doc">spp_programs_sp</span></a> (<strong>OpenSPP Programs: Service Points Integration</strong>) and <a class="reference internal" href="../../reference/modules/spp_service_points.html"><span class="doc">spp_service_points</span></a> (<strong>OpenSPP Service Points Management</strong>) are installed. Learn more on installing additional modules in the <a class="reference internal" href="../../getting_started/module_installation.html"><span class="doc">Module installation</span></a></p></li>
 </ul>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>After completing this tutorial, you will understand how to create, update, disable, enable, and export service points in OpenSPP.</p>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
 <p>Service points-related tasks such as creating, updating, listing, disabling, enabling, and exporting CSV are performed on the <strong>Service Point</strong> page.</p>
 <p>You can access the service point page by clicking on the menu icon on the left side of the header and clicking <strong>Service Point</strong> on the dashboard.</p>
 <p><img alt="Screenshot showing the OpenSPP dashboard with the left navigation menu expanded, highlighting the Service Point menu item" src="../../_images/13.png" /></p>
-<section id="filtering-service-points">
+<div class="section" id="filtering-service-points">
 <h3>Filtering service points<a class="headerlink" href="#filtering-service-points" title="Permalink to this headline">#</a></h3>
 <p>You can filter the list of service points by using the <strong>Search</strong> bar.
 Type the text you want to search for, for example, if you search for a service point with the agent name of John.
@@ -1694,16 +1681,16 @@ Click <strong>Area</strong>, the result list will be a group of service types by
 <p><img alt="Custom filter dialog showing the Active Contract is set filter option ready to be applied" src="../../_images/71.png" /></p>
 <p>The list of service points with <strong>Active Contract</strong> will be displayed.</p>
 <p><img alt="Service Points list filtered to show only service points that have an active contract" src="../../_images/81.png" /></p>
-</section>
-<section id="creating-service-point">
+</div>
+<div class="section" id="creating-service-point">
 <h3>Creating service point<a class="headerlink" href="#creating-service-point" title="Permalink to this headline">#</a></h3>
 <p>To create a service point, click the <strong>New</strong> button, you will be redirected to a form.</p>
 <p><img alt="Service Points page showing the New button highlighted to create a new service point" src="../../_images/9.png" /></p>
 <p>Fill in the <strong>Agent Name, Address, Phone Number</strong>, and other fields.
 Select the <strong>Area</strong> from the list, add <strong>Service Types</strong>, tick <strong>Active Contract</strong>, and hit the <strong>Save</strong> button.</p>
 <p><img alt="Service Point creation form with fields for Agent Name, Address, Phone Number, Area selection, Service Types, and Active Contract checkbox" src="../../_images/10.png" /></p>
-</section>
-<section id="updating-service-point">
+</div>
+<div class="section" id="updating-service-point">
 <h3>Updating service point<a class="headerlink" href="#updating-service-point" title="Permalink to this headline">#</a></h3>
 <p>Choose the service point you want to update from the list of service points.
 You will be redirected to the view page.
@@ -1712,8 +1699,8 @@ Update fields and click the <strong>Save</strong> button.</p>
 <p>You can disable a service point by clicking the <strong>Disable</strong> button.
 The beneficiaries won't be able to redeem their entitlements from this service point.</p>
 <p>To enable a disabled service point, click the service from the list, then click <strong>Enable</strong>.</p>
-</section>
-<section id="exporting-service-points">
+</div>
+<div class="section" id="exporting-service-points">
 <h3>Exporting service points<a class="headerlink" href="#exporting-service-points" title="Permalink to this headline">#</a></h3>
 <p>On the <strong>Service Point</strong> page, you can use the export feature to download service points.
 You can use filters to narrow down the fields you want your list to have.
@@ -1725,9 +1712,9 @@ The result CSV will contain a grouped by <strong>Area</strong> service points.</
 <p><img alt="Service Points page showing the gear menu dropdown with Export All option highlighted for CSV export" src="../../_images/16.png" /></p>
 <p>The specific steps and interface may vary depending on the OpenSPP version.
 Always seek assistance from the support team if you need further guidance.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

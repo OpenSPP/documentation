@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_encryption.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="encryption-module">
+  <div class="section" id="encryption-module">
 <h1>Encryption Module<a class="headerlink" href="#encryption-module" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_encryption</span></code> module provides robust cryptographic services for OpenSPP, ensuring the security and integrity of sensitive program data. It implements advanced encryption, decryption, digital signing, and verification capabilities, which are critical for protecting confidential information across the platform.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module accomplishes the secure handling of sensitive data through a set of core cryptographic capabilities:</p>
 <ul class="simple">
@@ -1674,36 +1661,36 @@ title="Print to PDF"
 <li><p><strong>Distributes Public Keys (JWKS)</strong>: Provides a secure mechanism for sharing public keys, enabling other systems or modules to verify digital signatures originating from OpenSPP.</p></li>
 </ul>
 <p>These capabilities are crucial for maintaining data privacy, preventing fraud, and ensuring the trustworthiness of operations within social protection programs.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_encryption</span></code> module extends the core <a class="reference internal" href="g2p_encryption.html"><span class="doc std std-doc">G2P Encryption</span></a> framework, which defines a standardized, generic interface for encryption providers within OpenSPP. While <a class="reference internal" href="g2p_encryption.html"><span class="doc std std-doc">G2P Encryption</span></a> establishes <em>what</em> cryptographic operations are needed, <code class="docutils literal notranslate"><span class="pre">spp_encryption</span></code> provides the concrete implementation of these services using the JWCrypto library.</p>
 <p>Other OpenSPP modules that require secure data handling, such as those managing beneficiary records, payment instructions, or sensitive program communications, interact with <code class="docutils literal notranslate"><span class="pre">spp_encryption</span></code> indirectly. They utilize the generic cryptographic methods exposed by the <a class="reference internal" href="g2p_encryption.html"><span class="doc std std-doc">G2P Encryption</span></a> interface, which <code class="docutils literal notranslate"><span class="pre">spp_encryption</span></code> then fulfills. This architecture ensures a consistent, secure, and extensible approach to data protection across the entire OpenSPP platform.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="secure-data-protection-encryption-and-decryption">
+<div class="section" id="secure-data-protection-encryption-and-decryption">
 <h3>Secure Data Protection (Encryption and Decryption)<a class="headerlink" href="#secure-data-protection-encryption-and-decryption" title="Permalink to this headline">#</a></h3>
 <p>This feature allows the system to encrypt sensitive data before it is stored or transmitted, safeguarding personal and confidential information. Only authorized system components with the correct cryptographic key can decrypt and access the original data. This protects critical program data, such as beneficiary identification, medical records, or confidential financial transactions.</p>
-</section>
-<section id="data-integrity-and-authenticity-digital-signing-and-verification">
+</div>
+<div class="section" id="data-integrity-and-authenticity-digital-signing-and-verification">
 <h3>Data Integrity and Authenticity (Digital Signing and Verification)<a class="headerlink" href="#data-integrity-and-authenticity-digital-signing-and-verification" title="Permalink to this headline">#</a></h3>
 <p>The module enables the creation of digital signatures for any piece of data, providing assurance of its origin and confirming that it has not been altered since it was signed. It also supports the verification of these signatures, which is vital for audit trails and ensuring the reliability of critical program communications, such as payment approvals or policy updates.</p>
-</section>
-<section id="cryptographic-key-management">
+</div>
+<div class="section" id="cryptographic-key-management">
 <h3>Cryptographic Key Management<a class="headerlink" href="#cryptographic-key-management" title="Permalink to this headline">#</a></h3>
 <p>The module facilitates the secure generation of robust cryptographic keys, primarily using the industry-standard RSA algorithm. These keys are securely stored in JWK (JSON Web Key) format, forming the backbone for all encryption, decryption, and signing operations. Effective key management is paramount for maintaining the overall security posture of the OpenSPP platform.</p>
-</section>
-<section id="public-key-sharing-jwks">
+</div>
+<div class="section" id="public-key-sharing-jwks">
 <h3>Public Key Sharing (JWKS)<a class="headerlink" href="#public-key-sharing-jwks" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">spp_encryption</span></code> supports the generation of JSON Web Key Sets (JWKS), which enable the secure and standardized distribution of public keys. External systems or other modules within OpenSPP can use these public keys to verify digital signatures created by the platform, fostering interoperability and trust in data exchange.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_encryption</span></code> module is fundamental to OpenSPP's security architecture, providing essential cryptographic services that protect sensitive data and ensure the integrity and authenticity of critical program operations.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

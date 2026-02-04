@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Areas Module Development" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Areas Module Development" name="title" />
 <meta content="Comprehensive guide to customizing the OpenSPP areas module with population data, hierarchical relationships, and geographical management." name="description" />
 <meta content="OpenSPP, areas module, geographical areas, population data, hierarchical structure, area management" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/module_development/areas.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1702,7 +1689,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="areas">
+  <div class="section" id="areas">
 <h1>Areas<a class="headerlink" href="#areas" title="Permalink to this headline">#</a></h1>
 <p>The following article guides the reader in understanding how the area module works in OpenSPP and how it can be customized by providing a sample scenario and a working example.
 The <a class="reference internal" href="../../reference/modules/spp_area_base.html"><span class="doc">spp_area_base</span></a> module provides the foundation for managing geographical areas in OpenSPP, which can be used in programs and other modules.</p>
@@ -1722,15 +1709,15 @@ The <a class="reference internal" href="../../reference/modules/spp_area_base.ht
 <li><p>Area level management (up to 10 levels)</p></li>
 <li><p>Bulk import capabilities with queue job processing</p></li>
 </ul>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Solid understanding of Odoo 17 module development, including Python, XML, and XPath.</p></li>
 <li><p>OpenSPP Module &quot;Area Management (Base)&quot; or <a class="reference internal" href="../../reference/modules/spp_area_base.html"><span class="doc">spp_area_base</span></a> must be installed.</p></li>
 <li><p>To set up OpenSPP for development, please refer to the <a class="reference internal" href="../setup.html"><span class="doc">Development Setup Guide</span></a>.</p></li>
 </ul>
-</section>
-<section id="module-structure">
+</div>
+<div class="section" id="module-structure">
 <h2>Module Structure<a class="headerlink" href="#module-structure" title="Permalink to this headline">#</a></h2>
 <p>A typical Area module follows the standard Odoo module structure.
 Here's the complete structure of the module we will build, <code class="docutils literal notranslate"><span class="pre">spp_custom_area</span></code>:</p>
@@ -1748,19 +1735,19 @@ Here's the complete structure of the module we will build, <code class="docutils
     └── area_kind_data.xml
 </pre></div>
 </div>
-</section>
-<section id="step-by-step-guide">
+</div>
+<div class="section" id="step-by-step-guide">
 <h2>Step-by-Step Guide<a class="headerlink" href="#step-by-step-guide" title="Permalink to this headline">#</a></h2>
 <p>In a hypothetical scenario, customizing the areas module to include population data serves as a practical example.
 This could involve recording the population of an area such as province or district, providing valuable insights for reporting and dashboard analysis.</p>
 <p>A working sample module for the described scenario can be accessed at the provided <a class="reference external" href="https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_custom_area">link</a>.</p>
 <p>The key steps in module development are as follows:</p>
-<section id="create-the-module-scaffold">
+<div class="section" id="create-the-module-scaffold">
 <h3>Create the Module Scaffold<a class="headerlink" href="#create-the-module-scaffold" title="Permalink to this headline">#</a></h3>
 <p>Start by creating a new directory for your module (e.g., <code class="docutils literal notranslate"><span class="pre">spp_custom_area</span></code>) and populate it
 with the basic Odoo module files (<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>, <code class="docutils literal notranslate"><span class="pre">__manifest__.py</span></code>) and the directory structure shown above.</p>
-</section>
-<section id="define-module-manifest">
+</div>
+<div class="section" id="define-module-manifest">
 <h3>Define Module Manifest<a class="headerlink" href="#define-module-manifest" title="Permalink to this headline">#</a></h3>
 <p>Create a manifest file that includes the proper dependencies and data files:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -1785,13 +1772,13 @@ with the basic Odoo module files (<code class="docutils literal notranslate"><sp
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="extend-the-area-model">
+</div>
+<div class="section" id="extend-the-area-model">
 <h3>Extend the Area Model<a class="headerlink" href="#extend-the-area-model" title="Permalink to this headline">#</a></h3>
 <p>Create a Python file named <code class="docutils literal notranslate"><span class="pre">area.py</span></code> that extends the <code class="docutils literal notranslate"><span class="pre">spp.area</span></code> model and add it to <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">odoo</span><span class="w"> </span><span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">SPPArea</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">SPPArea</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;spp.area&quot;</span>
 
     <span class="c1"># Population field following OpenSPP naming conventions</span>
@@ -1814,8 +1801,8 @@ with the basic Odoo module files (<code class="docutils literal notranslate"><sp
     <span class="p">],</span> <span class="n">string</span><span class="o">=</span><span class="s2">&quot;Population Source&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;census&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="create-view-extensions">
+</div>
+<div class="section" id="create-view-extensions">
 <h3>Create View Extensions<a class="headerlink" href="#create-view-extensions" title="Permalink to this headline">#</a></h3>
 <p>Create a new file called <code class="docutils literal notranslate"><span class="pre">views/area_views.xml</span></code> in the module and add it to the manifest file:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odoo&gt;</span>
@@ -1873,21 +1860,21 @@ with the basic Odoo module files (<code class="docutils literal notranslate"><sp
 <span class="nt">&lt;/odoo&gt;</span>
 </pre></div>
 </div>
-</section>
-<section id="add-security-access-optional">
+</div>
+<div class="section" id="add-security-access-optional">
 <h3>Add Security Access (Optional)<a class="headerlink" href="#add-security-access-optional" title="Permalink to this headline">#</a></h3>
 <p>If you introduce new models, add access rights. For simple field additions, this is not required. Example:</p>
-<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span><span class="o">id</span><span class="p">,</span><span class="m">name</span><span class="p">,</span><span class="k">model_id:id</span><span class="p">,</span><span class="no">group_id:id</span><span class="p">,</span><span class="s1">perm_read</span><span class="p">,perm_write,perm_create,perm_unlink</span>
-<span class="o">access_spp_your_custom_model_registrar</span><span class="p">,</span><span class="m">spp.your.custom.model.registrar</span><span class="p">,</span><span class="k">spp_area_custom.model_your_custom_model</span><span class="p">,</span><span class="no">g2p_registry_base.group_g2p_registrar</span><span class="p">,</span><span class="s1">1</span><span class="p">,1,1,0</span>
-<span class="o">access_spp_your_custom_model_admin</span><span class="p">,</span><span class="m">spp.your.custom.model.admin</span><span class="p">,</span><span class="k">spp_area_custom.model_your_custom_model</span><span class="p">,</span><span class="no">g2p_registry_base.group_g2p_admin</span><span class="p">,</span><span class="s1">1</span><span class="p">,1,1,1</span>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_spp_your_custom_model_registrar,spp.your.custom.model.registrar,spp_area_custom.model_your_custom_model,g2p_registry_base.group_g2p_registrar,1,1,1,0
+access_spp_your_custom_model_admin,spp.your.custom.model.admin,spp_area_custom.model_your_custom_model,g2p_registry_base.group_g2p_admin,1,1,1,1
 </pre></div>
 </div>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">g2p_registry_base.group_g2p_registrar</span></code></strong> for Registrar Access</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">g2p_registry_base.group_g2p_admin</span></code></strong> for Admin Access.</p></li>
 </ul>
-</section>
-<section id="add-custom-area-types-optional">
+</div>
+<div class="section" id="add-custom-area-types-optional">
 <h3>Add Custom Area Types (Optional)<a class="headerlink" href="#add-custom-area-types-optional" title="Permalink to this headline">#</a></h3>
 <p>Create <code class="docutils literal notranslate"><span class="pre">data/area_kind_data.xml</span></code> to add custom area types:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odoo&gt;</span>
@@ -1899,13 +1886,13 @@ with the basic Odoo module files (<code class="docutils literal notranslate"><sp
 <span class="nt">&lt;/odoo&gt;</span>
 </pre></div>
 </div>
-</section>
-<section id="adding-computed-fields-constrains-and-validations-optional">
+</div>
+<div class="section" id="adding-computed-fields-constrains-and-validations-optional">
 <h3>Adding Computed Fields, Constrains, and Validations (Optional)<a class="headerlink" href="#adding-computed-fields-constrains-and-validations-optional" title="Permalink to this headline">#</a></h3>
 <p>On your <code class="docutils literal notranslate"><span class="pre">models/area.py</span></code> you can add computed fields, constrains, and validations:</p>
 <p>First, add the necessary imports:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">odoo</span><span class="w"> </span><span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">odoo.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">ValidationError</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">odoo.exceptions</span> <span class="kn">import</span> <span class="n">ValidationError</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
@@ -1917,7 +1904,7 @@ with the basic Odoo module files (<code class="docutils literal notranslate"><sp
     <span class="p">)</span>
 
     <span class="nd">@api</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">&quot;area_population&quot;</span><span class="p">,</span> <span class="s2">&quot;area_sqkm&quot;</span><span class="p">)</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_population_density</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_compute_population_density</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">area_sqkm</span> <span class="ow">and</span> <span class="n">record</span><span class="o">.</span><span class="n">area_sqkm</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">record</span><span class="o">.</span><span class="n">area_population_density</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">area_population</span> <span class="o">/</span> <span class="n">record</span><span class="o">.</span><span class="n">area_sqkm</span>
@@ -1925,13 +1912,13 @@ with the basic Odoo module files (<code class="docutils literal notranslate"><sp
                 <span class="n">record</span><span class="o">.</span><span class="n">area_population_density</span> <span class="o">=</span> <span class="mf">0.0</span>
     
     <span class="nd">@api</span><span class="o">.</span><span class="n">constrains</span><span class="p">(</span><span class="s2">&quot;area_population&quot;</span><span class="p">)</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">_check_population_positive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_check_population_positive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">area_population</span> <span class="ow">and</span> <span class="n">record</span><span class="o">.</span><span class="n">area_population</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s2">&quot;Population cannot be negative.&quot;</span><span class="p">)</span>
 
     <span class="nd">@api</span><span class="o">.</span><span class="n">constrains</span><span class="p">(</span><span class="s2">&quot;area_population_year&quot;</span><span class="p">)</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">_check_population_year</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_check_population_year</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">current_year</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">year</span>
         <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">area_population_year</span><span class="p">:</span>
@@ -1940,8 +1927,8 @@ with the basic Odoo module files (<code class="docutils literal notranslate"><sp
 </pre></div>
 </div>
 <p>Then add the custom computed field to the <code class="docutils literal notranslate"><span class="pre">area_views.xml</span></code> file</p>
-</section>
-<section id="install-and-test">
+</div>
+<div class="section" id="install-and-test">
 <h3>Install and Test<a class="headerlink" href="#install-and-test" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install or upgrade the module through the Apps menu.</p></li>
@@ -1949,17 +1936,17 @@ with the basic Odoo module files (<code class="docutils literal notranslate"><sp
 </ol>
 <p>The following screenshot shows the added population fields in the newly developed module.</p>
 <p><img alt="Area module customization with population fields" src="../../_images/updates.png" /></p>
-</section>
-</section>
-<section id="references">
+</div>
+</div>
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <p>For more information on extending OpenSPP modules, refer to:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/">Odoo 17 Developer Documentation</a></p></li>
 <li><p><a class="reference external" href="https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_area_base">Area Management Module Source</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

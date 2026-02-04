@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_idqueue.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1670,10 +1657,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="id-queue">
+  <div class="section" id="id-queue">
 <h1>ID Queue<a class="headerlink" href="#id-queue" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Idqueue module provides a comprehensive system for managing the entire lifecycle of ID card requests for registrants within social protection programs and farmer registries. It streamlines the process from initial request to final distribution, ensuring beneficiaries receive their identification efficiently and accountably.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Idqueue module is designed to manage the end-to-end process of issuing identification cards, a critical component for beneficiaries to access program benefits. It accomplishes this by:</p>
 <ul class="simple">
@@ -1684,8 +1671,8 @@ title="Print to PDF"
 <li><p><strong>Ensuring Accountability:</strong> It maintains a clear audit trail for each ID card, recording every status change, who performed the action, and when.</p></li>
 </ul>
 <p>This module's value lies in its ability to transform a potentially complex and error-prone manual process into a structured, digital workflow. For instance, a program administrator can easily request an ID for a newly registered farmer, track its progress from approval to printing, and confirm its final distribution.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Idqueue module integrates seamlessly with several other OpenSPP modules and core Odoo functionalities to deliver its capabilities:</p>
 <ul class="simple">
@@ -1695,36 +1682,36 @@ title="Print to PDF"
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">spp_area</span></code></strong>: By integrating with <code class="docutils literal notranslate"><span class="pre">spp_area</span></code>, the module allows ID requests and their distribution to be associated with the registrant's geographical location. This enables location-based reporting and management of ID card issuance, such as tracking all IDs distributed within a specific province or district.</p></li>
 </ul>
 <p>This module also extends the core <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> (Registrant) model, adding a dedicated section to view all associated ID requests directly from a registrant's profile.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Idqueue module offers a robust set of features to manage ID card issuance effectively:</p>
-<section id="end-to-end-id-request-lifecycle-management">
+<div class="section" id="end-to-end-id-request-lifecycle-management">
 <h3>End-to-End ID Request Lifecycle Management<a class="headerlink" href="#end-to-end-id-request-lifecycle-management" title="Permalink to this headline">#</a></h3>
 <p>Users can initiate and track ID card requests for individual registrants through various stages. Each request progresses from 'New' to 'Approved', 'Generating', 'Generated', 'Printed', and finally 'Distributed', with the option to 'Cancel' a request at earlier stages. The system records the date and user responsible for each status change, providing a transparent history.</p>
-</section>
-<section id="efficient-batch-processing">
+</div>
+<div class="section" id="efficient-batch-processing">
 <h3>Efficient Batch Processing<a class="headerlink" href="#efficient-batch-processing" title="Permalink to this headline">#</a></h3>
 <p>For large-scale programs, the module significantly improves efficiency by allowing users to group multiple approved ID requests into printable batches. Program managers can then collectively approve, generate, print, and mark entire batches as distributed, rather than processing each ID individually. This is especially useful for managing ID card issuance for a large number of beneficiaries in a specific area.</p>
-</section>
-<section id="automated-id-card-generation-and-merging">
+</div>
+<div class="section" id="automated-id-card-generation-and-merging">
 <h3>Automated ID Card Generation and Merging<a class="headerlink" href="#automated-id-card-generation-and-merging" title="Permalink to this headline">#</a></h3>
 <p>The module automates the generation of ID card PDFs by integrating with the <code class="docutils literal notranslate"><span class="pre">spp_idpass</span></code> module, which handles the connection to external ID card printing services. For batches, it manages the merging of numerous individual ID PDFs into a single, comprehensive PDF document, optimized for bulk printing. This process is performed in the background using <code class="docutils literal notranslate"><span class="pre">queue_job</span></code> to ensure system performance.</p>
-</section>
-<section id="configurable-auto-approval-and-user-workflows">
+</div>
+<div class="section" id="configurable-auto-approval-and-user-workflows">
 <h3>Configurable Auto-Approval and User Workflows<a class="headerlink" href="#configurable-auto-approval-and-user-workflows" title="Permalink to this headline">#</a></h3>
 <p>System administrators can configure a setting to automatically approve new ID requests upon creation, reducing manual steps for certain program types. Additionally, the module supports multi-selection actions, allowing users to approve, generate, print, or distribute multiple individual requests or entire batches simultaneously. This streamlines workflows and enhances operational efficiency.</p>
-</section>
-<section id="comprehensive-audit-trail">
+</div>
+<div class="section" id="comprehensive-audit-trail">
 <h3>Comprehensive Audit Trail<a class="headerlink" href="#comprehensive-audit-trail" title="Permalink to this headline">#</a></h3>
 <p>Every action taken on an ID request or batch, including creation, approval, generation, printing, and distribution, is meticulously logged. The system records who performed the action and the exact date, providing a complete audit trail for accountability and program monitoring.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Idqueue module delivers a critical and robust solution for managing the issuance and lifecycle of identification cards, ensuring efficient and accountable delivery of IDs to beneficiaries within OpenSPP programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

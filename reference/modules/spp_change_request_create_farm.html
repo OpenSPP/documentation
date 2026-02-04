@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_change_request_create_farm.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="change-request-create-farm">
+  <div class="section" id="change-request-create-farm">
 <h1>Change Request: Create Farm<a class="headerlink" href="#change-request-create-farm" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Change Request Create Farm module provides a specialized and structured workflow for registering new farm entities within the OpenSPP farmer registry. It facilitates the comprehensive capture of farm, farmer, land, and agricultural activity data through a formal change request process, ensuring data accuracy and system integrity.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines the integration of new farm data into the OpenSPP platform, ensuring all necessary information is captured and validated through a controlled process. It empowers users to:</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Maintain Data Quality:</strong> Implement essential validations for farmer details, land information, and contact numbers, ensuring the accuracy and consistency of the registry.</p></li>
 <li><p><strong>Support Document Management:</strong> Facilitate the attachment and management of all supporting documents relevant to the new farm registration, such as ID copies or land titles.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_change_request_create_farm</span></code> module extends and integrates with several core OpenSPP modules to deliver its comprehensive functionality:</p>
 <ul class="simple">
@@ -1687,32 +1674,32 @@ title="Print to PDF"
 <li><p><a class="reference internal" href="spp_farmer_registry_base.html"><span class="doc std std-doc">OpenSPP Farmer Registry Base</span></a>: Provides the underlying models for managing agricultural activities (crops, livestock, aquaculture) and farm assets, which are then populated by this module.</p></li>
 <li><p><a class="reference internal" href="spp_land_record.html"><span class="doc std std-doc">OpenSPP Land Record</span></a>: Integrates land parcel details and geospatial information, linking specific land records to the newly created farm.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The module offers a robust set of features to support the creation of new farm records:</p>
-<section id="farm-and-farmer-profile-creation">
+<div class="section" id="farm-and-farmer-profile-creation">
 <h3>Farm and Farmer Profile Creation<a class="headerlink" href="#farm-and-farmer-profile-creation" title="Permalink to this headline">#</a></h3>
 <p>Users can define new farm entities by specifying a unique <strong>Group Name</strong> and assigning a <strong>Group Kind</strong>, typically &quot;Farm.&quot; Concurrently, comprehensive details about the primary farmer are captured, including their <strong>Family Name</strong>, <strong>Given Name</strong>, <strong>National ID Number</strong>, <strong>Mobile Telephone Number</strong>, <strong>Date of Birth</strong>, <strong>Sex</strong>, <strong>Highest Education Level</strong>, <strong>Marital Status</strong>, and <strong>Household Size</strong>. This ensures a complete profile for both the farm and its associated farmer.</p>
-</section>
-<section id="agricultural-activities-and-asset-inventory">
+</div>
+<div class="section" id="agricultural-activities-and-asset-inventory">
 <h3>Agricultural Activities and Asset Inventory<a class="headerlink" href="#agricultural-activities-and-asset-inventory" title="Permalink to this headline">#</a></h3>
 <p>The module allows for detailed recording of various agricultural practices. Users can specify <strong>Crop Agricultural Activities</strong>, <strong>Livestock Agricultural Activities</strong>, and <strong>Aquaculture Agricultural Activities</strong> associated with the farm. Additionally, it supports a comprehensive inventory of <strong>Farm Assets</strong> and <strong>Farm Machinery</strong>, providing a holistic view of the farm's operational capacity.</p>
-</section>
-<section id="land-record-and-legal-status-management">
+</div>
+<div class="section" id="land-record-and-legal-status-management">
 <h3>Land Record and Legal Status Management<a class="headerlink" href="#land-record-and-legal-status-management" title="Permalink to this headline">#</a></h3>
 <p>Essential land information can be entered directly, including the <strong>Parcel Name/ID</strong>, <strong>Acreage</strong>, and <strong>Geographical Coordinates</strong> (both point and polygon data). Users can also specify the <strong>Legal Status</strong> of the land, such as &quot;Owned by self,&quot; &quot;Leased from actual owner,&quot; or &quot;Owned by government,&quot; which is crucial for tenure security and program eligibility.</p>
-</section>
-<section id="data-validation-and-document-management">
+</div>
+<div class="section" id="data-validation-and-document-management">
 <h3>Data Validation and Document Management<a class="headerlink" href="#data-validation-and-document-management" title="Permalink to this headline">#</a></h3>
 <p>The module includes critical data validations to ensure accuracy. It enforces mandatory fields for the Group Name, Group Kind, and key farmer details. Date fields, such as the farmer's birthdate, are validated to prevent future dates, and mobile telephone numbers are checked for correct formatting based on country codes. Furthermore, integration with the Document Management System (DMS) allows users to attach and manage supporting documents like scanned ID documents and land deeds directly within the change request.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Change Request Create Farm module provides a structured and validated workflow for integrating new farm entities and their associated farmer, land, and activity data into the OpenSPP registry, serving as a critical component for effective social protection programs and farmer registries.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

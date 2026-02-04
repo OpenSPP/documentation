@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_scan_id_document.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="registry-scan-id-document">
+  <div class="section" id="registry-scan-id-document">
 <h1>Registry: Scan ID Document<a class="headerlink" href="#registry-scan-id-document" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Scan Id Document module integrates direct ID document scanning capabilities into the OpenSPP platform. It allows users to capture physical identification documents directly into a registrant's profile, enhancing data collection efficiency and accuracy within the OpenSPP Registry.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines the process of capturing and verifying registrant identity information. It accomplishes this by:</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Enhancing Data Integrity</strong>: By directly associating scanned documents with registrant records, the module strengthens the authenticity and reliability of identification data.</p></li>
 <li><p><strong>Supporting Compliance and Verification</strong>: Provides a verifiable digital record of the physical ID document, which is crucial for auditing, compliance, and identity verification processes in social protection programs.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The spp_scan_id_document module seamlessly integrates with the core OpenSPP Registry components to provide its functionality:</p>
 <ul class="simple">
@@ -1683,32 +1670,32 @@ title="Print to PDF"
 <li><p><strong>Base</strong>: As a standard Odoo module, <code class="docutils literal notranslate"><span class="pre">base</span></code> provides fundamental system functionalities that support the user interface and data management operations of the scanning feature.</p></li>
 </ul>
 <p>This module acts as an input enhancement, leveraging the existing data models for IDs and registrants provided by its dependencies, rather than creating new core data structures.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The spp_scan_id_document module introduces key features to simplify ID document management:</p>
-<section id="direct-in-system-scanning">
+<div class="section" id="direct-in-system-scanning">
 <h3>Direct In-System Scanning<a class="headerlink" href="#direct-in-system-scanning" title="Permalink to this headline">#</a></h3>
 <p>Users can initiate the scanning process directly from within a registrant's profile. This eliminates the need for separate scanning software, creating a unified workflow for capturing and attaching ID documents to records. The scanned image or extracted data is immediately available within OpenSPP.</p>
-</section>
-<section id="automated-attachment-to-registrant-profile">
+</div>
+<div class="section" id="automated-attachment-to-registrant-profile">
 <h3>Automated Attachment to Registrant Profile<a class="headerlink" href="#automated-attachment-to-registrant-profile" title="Permalink to this headline">#</a></h3>
 <p>Once an ID document is scanned, the module automatically attaches the digital image or extracted information to the corresponding registrant's profile. This ensures that all identification details are centrally stored and easily accessible, reducing the risk of lost or misplaced physical documents.</p>
-</section>
-<section id="streamlined-data-capture-and-validation">
+</div>
+<div class="section" id="streamlined-data-capture-and-validation">
 <h3>Streamlined Data Capture and Validation<a class="headerlink" href="#streamlined-data-capture-and-validation" title="Permalink to this headline">#</a></h3>
 <p>The module facilitates quicker data capture by providing a direct input method for ID details. While scanning, it can help pre-fill relevant fields (if OCR capabilities are integrated), and ensures that the captured information aligns with the registrant's record, enhancing the overall accuracy of the data.</p>
-</section>
-<section id="support-for-diverse-id-types">
+</div>
+<div class="section" id="support-for-diverse-id-types">
 <h3>Support for Diverse ID Types<a class="headerlink" href="#support-for-diverse-id-types" title="Permalink to this headline">#</a></h3>
 <p>Leveraging the capabilities of the G2P Registry Base module, this scanning functionality supports various forms of identification documents. Users can scan different types of IDs, such as national ID cards, passports, or driver's licenses, and associate them appropriately with the registrant's record.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Scan Id Document module is essential for modernizing and improving the efficiency of identity data capture within OpenSPP, ensuring accurate and accessible registrant information for social protection programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Unified and Hierarchical Beneficiary Registry" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Unified and Hierarchical Beneficiary Registry" name="title" />
 <meta content="OpenSPP unified registry feature providing single source of truth for beneficiary data with hierarchical group management" name="description" />
 <meta content="OpenSPP, unified registry, beneficiary registry, hierarchical groups, data management, social protection" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/overview/features/unified_registry.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1608,15 +1595,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="unified-and-hierarchical-beneficiary-registry">
+  <div class="section" id="unified-and-hierarchical-beneficiary-registry">
 <h1>Unified and hierarchical beneficiary registry<a class="headerlink" href="#unified-and-hierarchical-beneficiary-registry" title="Permalink to this headline">#</a></h1>
 <p>OpenSPP's Unified and Hierarchical <a class="reference internal" href="../../reference/glossary.html#term-Beneficiary-registry"><span class="xref std std-term">Beneficiary Registry</span></a> serves as the single source of truth for all program participants, managing both individual records and complex nested group structures within <a class="reference internal" href="../../reference/glossary.html#term-Social-protection"><span class="xref std std-term">social protection</span></a> programs.</p>
-<section id="the-data-fragmentation-challenge">
+<div class="section" id="the-data-fragmentation-challenge">
 <h2>The data fragmentation challenge<a class="headerlink" href="#the-data-fragmentation-challenge" title="Permalink to this headline">#</a></h2>
 <p>Social protection programs often struggle with data fragmentation, where beneficiary information is scattered across multiple systems, leading to duplication, inconsistencies, and inefficient service delivery. OpenSPP's unified registry solves this fundamental challenge by centralizing all registrant data into a single, authoritative database that can serve multiple programs simultaneously. This approach eliminates redundant data collection, reduces administrative overhead, and ensures that program managers work with accurate, up-to-date information.</p>
 <p>The hierarchical nature of the registry is particularly powerful for managing complex social structures. Many social protection interventions target <a class="reference internal" href="../../reference/glossary.html#term-Household"><span class="xref std std-term">households</span></a> or community groups rather than individuals. OpenSPP's registry can model these real-world relationships accurately, allowing programs to work with nested structures where groups can contain other groups, individuals can belong to multiple groups with different roles, and relationships between entities are explicitly defined and tracked. This flexibility enables the platform to adapt to diverse program requirements without forcing artificial constraints on how beneficiary data is organized.</p>
-</section>
-<section id="core-registry-capabilities">
+</div>
+<div class="section" id="core-registry-capabilities">
 <h2>Core registry capabilities<a class="headerlink" href="#core-registry-capabilities" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><strong>Comprehensive data capture</strong>: Records detailed demographic information, national IDs, contact details, and banking information for both individuals and groups</p></li>
@@ -1627,8 +1614,8 @@ title="Print to PDF"
 <li><p><strong>Banking and payment integration</strong>: Stores multiple bank accounts per registrant with validation and verification capabilities for seamless payment processing</p></li>
 <li><p><strong>Custom field extension</strong>: Allows programs to define additional data fields specific to their requirements without modifying core registry structure</p></li>
 </ul>
-</section>
-<section id="technical-architecture">
+</div>
+<div class="section" id="technical-architecture">
 <h2>Technical architecture<a class="headerlink" href="#technical-architecture" title="Permalink to this headline">#</a></h2>
 <p>The registry functionality is implemented through several specialized modules:</p>
 <ul class="simple">
@@ -1640,8 +1627,8 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="../../reference/modules/spp_registry_group_hierarchy.html"><span class="doc std std-doc">spp_registry_group_hierarchy</span></a></strong>: Advanced hierarchical group structures allowing groups within groups</p></li>
 <li><p><strong><a class="reference internal" href="../../reference/modules/g2p_bank.html"><span class="doc std std-doc">g2p_bank</span></a></strong>: Banking information management and validation for payment processing</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

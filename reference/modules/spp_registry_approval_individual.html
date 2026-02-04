@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_registry_approval_individual.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="registry-approval-individual">
+  <div class="section" id="registry-approval-individual">
 <h1>Registry Approval: Individual<a class="headerlink" href="#registry-approval-individual" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Registry Approval Individual module extends the core registry approval framework to specifically manage the validation and official approval of individual registrants. It provides the dedicated interface and processes for reviewing, verifying, and formally approving or rejecting individual profiles within the OpenSPP system.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module enables a structured and robust approval process for individual registrant data, ensuring that all personal information is thoroughly reviewed and meets program requirements before an individual becomes eligible for social protection programs or other services.</p>
 <ul class="simple">
@@ -1673,36 +1660,36 @@ title="Print to PDF"
 <li><p><strong>Streamlined Individual Onboarding</strong>: Enables efficient processing of individual applicants by providing clear actions for approval or rejection, reducing manual errors and accelerating the transition from application to program participation.</p></li>
 <li><p><strong>Accountability and Audit Trail</strong>: Records all approval and rejection decisions for individual registrants, creating an auditable history of changes and decisions made on each person's profile.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module is a direct extension of the <a class="reference internal" href="spp_registry_approval.html"><span class="doc std std-doc">OpenSPP Registry Approval</span></a> module, which provides the foundational framework for managing approval states across all registrant types. The <code class="docutils literal notranslate"><span class="pre">spp_registry_approval_individual</span></code> module specifically applies this general approval logic and associated user interface elements to individual registrant records.</p>
 <p>By providing officially approved individual records, this module serves as a critical upstream component for other program-specific modules. It ensures that only validated and eligible individuals are made available for enrollment in social protection programs, benefit distribution, or further processing across the OpenSPP platform.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="dedicated-individual-profile-review">
+<div class="section" id="dedicated-individual-profile-review">
 <h3>Dedicated Individual Profile Review<a class="headerlink" href="#dedicated-individual-profile-review" title="Permalink to this headline">#</a></h3>
 <p>Users can access and review individual registrant profiles with the added context of their approval status. This view consolidates all relevant personal data, allowing validators to make informed decisions regarding an individual's eligibility and data accuracy.</p>
-</section>
-<section id="application-of-approval-status-to-individuals">
+</div>
+<div class="section" id="application-of-approval-status-to-individuals">
 <h3>Application of Approval Status to Individuals<a class="headerlink" href="#application-of-approval-status-to-individuals" title="Permalink to this headline">#</a></h3>
 <p>The module allows authorized personnel to directly change the approval state of an individual registrant. This includes transitioning an individual from a 'Draft' state to 'Approved' once their data is verified and criteria are met, or marking them as 'Rejected' if they do not qualify or have invalid information.</p>
-</section>
-<section id="individual-data-validation-and-verification">
+</div>
+<div class="section" id="individual-data-validation-and-verification">
 <h3>Individual Data Validation and Verification<a class="headerlink" href="#individual-data-validation-and-verification" title="Permalink to this headline">#</a></h3>
 <p>While the core data is managed elsewhere, this module provides the crucial step where individual-specific details are confirmed. This includes cross-referencing identification documents, verifying family relationships, and ensuring geographical data (e.g., country &gt; province &gt; district) is accurate for each person.</p>
-</section>
-<section id="history-and-decision-tracking-for-individuals">
+</div>
+<div class="section" id="history-and-decision-tracking-for-individuals">
 <h3>History and Decision Tracking for Individuals<a class="headerlink" href="#history-and-decision-tracking-for-individuals" title="Permalink to this headline">#</a></h3>
 <p>Every change in an individual's approval status, along with who made the decision and when, is automatically logged. This creates a transparent audit trail for each registrant, crucial for accountability and future reference in program management or dispute resolution.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Registry Approval Individual module is essential for formally validating and managing the eligibility status of individual registrants, ensuring accurate and reliable data for social protection programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

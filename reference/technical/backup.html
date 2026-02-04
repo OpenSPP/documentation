@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/technical/backup.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1596,7 +1583,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="backup-and-recovery">
+  <div class="section" id="backup-and-recovery">
 <h1>Backup and recovery<a class="headerlink" href="#backup-and-recovery" title="Permalink to this headline">#</a></h1>
 <p>Backup and recovery encompasses strategies and techniques designed to protect and restore data, applications, and infrastructure in the event of data loss, <a class="reference internal" href="../glossary.html#term-Corruption"><span class="xref std std-term">corruption</span></a>, or disasters in OpenSPP deployments. This process is essential for maintaining data integrity, ensuring availability, and facilitating business continuity. As data is critical for business operations, the loss of data can disrupt business activities, incur financial penalties, harm reputation, and even lead to legal consequences. An effective Backup and Recovery strategy mitigates these risks by ensuring that data is not permanently lost and can be recovered quickly to minimize downtime.</p>
 <p>The key advantages are:</p>
@@ -1606,7 +1593,7 @@ title="Print to PDF"
 <li><p>Meets legal and regulatory <a class="reference internal" href="../glossary.html#term-Data-protection"><span class="xref std std-term">data protection</span></a> requirements.</p></li>
 <li><p>Reduces the risk associated with data breaches and cyber threats.</p></li>
 </ol>
-<section id="backup-and-recovery-layers">
+<div class="section" id="backup-and-recovery-layers">
 <h2>Backup and recovery layers<a class="headerlink" href="#backup-and-recovery-layers" title="Permalink to this headline">#</a></h2>
 <p>In the implementation of OpenSPP, the backup can be implemented at different layers:</p>
 <p><strong>Infrastructure layer:</strong> This layer focuses on the physical and virtual components of an IT environment, including servers, network equipment, and storage systems.</p>
@@ -1624,8 +1611,8 @@ title="Print to PDF"
 <li><p>Backup Techniques: Includes consistent backups, log backups, and hot/cold backups.</p></li>
 <li><p>Challenges: Ensuring data consistency and managing the recovery of large databases without impacting performance.</p></li>
 </ul>
-</section>
-<section id="backup-and-recovery-strategies">
+</div>
+<div class="section" id="backup-and-recovery-strategies">
 <h2>Backup and recovery strategies<a class="headerlink" href="#backup-and-recovery-strategies" title="Permalink to this headline">#</a></h2>
 <p>As a product, OpenSPP considers Backup and Recovery tools to be out of scope, but implementing a robust strategy is still possible and recommended as follows.</p>
 <ol class="arabic simple">
@@ -1661,8 +1648,8 @@ title="Print to PDF"
 </li>
 </ol>
 <p>While OpenSPP does not inherently provide Backup and Recovery functionalities, integrating a comprehensive and tailored Backup and Recovery strategy is crucial for safeguarding data. This approach ensures resilience in the face of data loss and supports the continuity of business operations.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

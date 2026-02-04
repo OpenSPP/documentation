@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_payment_phee.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1668,10 +1655,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="openg2p-program-payment-payment-hub-ee">
+  <div class="section" id="openg2p-program-payment-payment-hub-ee">
 <h1>OpenG2P Program Payment (Payment Hub EE)<a class="headerlink" href="#openg2p-program-payment-payment-hub-ee" title="Permalink to this headline">#</a></h1>
 <p>This module integrates OpenSPP with the Payment Hub EE (PHEE), an external payment processing system. It enables OpenSPP to efficiently manage and disburse payments for social protection programs by automating the creation, preparation, and secure transmission of payment instructions to the PHEE.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The G2P Payment Phee module streamlines the process of disbursing funds to beneficiaries for social protection programs. It ensures secure and scalable payment operations by:</p>
 <ul class="simple">
@@ -1681,8 +1668,8 @@ title="Print to PDF"
 <li><p><strong>Securing API Communication:</strong> Provides robust configuration options for API endpoints and authentication parameters to ensure secure and reliable data exchange with the external payment hub.</p></li>
 <li><p><strong>Generating Payment Files:</strong> Creates structured CSV files containing all necessary payment details for each batch, ready for transmission or manual review.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module extends core OpenSPP functionalities to facilitate external payment processing.</p>
 <ul class="simple">
@@ -1690,36 +1677,36 @@ title="Print to PDF"
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">g2p_registry_base</span></code></strong>: This module relies on <code class="docutils literal notranslate"><span class="pre">g2p_registry_base</span></code> for access to fundamental registrant data, including bank accounts, phone numbers, email addresses, and various identification types, which are crucial for correctly identifying payees.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">g2p_programs</span></code></strong>: The <code class="docutils literal notranslate"><span class="pre">g2p_payment_phee</span></code> module extends the payment management capabilities defined within <code class="docutils literal notranslate"><span class="pre">g2p_programs</span></code>. It adds &quot;Payment Hub EE&quot; as a specific payment manager option, allowing program administrators to select and configure PHEE for payment cycles. It leverages program cycles, approved entitlements, and existing payment records from <code class="docutils literal notranslate"><span class="pre">g2p_programs</span></code> to initiate and track disbursements.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The G2P Payment Phee module provides comprehensive features for managing the entire payment disbursement workflow with the Payment Hub EE.</p>
-<section id="payment-hub-ee-integration-setup">
+<div class="section" id="payment-hub-ee-integration-setup">
 <h3>Payment Hub EE Integration Setup<a class="headerlink" href="#payment-hub-ee-integration-setup" title="Permalink to this headline">#</a></h3>
 <p>Users configure the necessary endpoints and authentication details to establish secure communication with the Payment Hub EE. This includes setting the Authentication, Payment, Status, and Details Endpoint URLs, along with authentication parameters such as Tenant ID, Username, Password, Grant Type, and Authorization credentials. This setup ensures that OpenSPP can securely authenticate and interact with the external payment system.</p>
-</section>
-<section id="automated-payment-batch-management">
+</div>
+<div class="section" id="automated-payment-batch-management">
 <h3>Automated Payment Batch Management<a class="headerlink" href="#automated-payment-batch-management" title="Permalink to this headline">#</a></h3>
 <p>The module automates the process of organizing approved entitlements into payment batches. Users can enable an option to &quot;Automatically Create Batch&quot; and define a <code class="docutils literal notranslate"><span class="pre">Max</span> <span class="pre">Batch</span> <span class="pre">Size</span></code> (e.g., 500 payments per batch). During the payment preparation phase, the system generates individual <code class="docutils literal notranslate"><span class="pre">g2p.payment</span></code> records from approved entitlements and groups them into <code class="docutils literal notranslate"><span class="pre">g2p.payment.batch</span></code> records according to the specified size.</p>
-</section>
-<section id="flexible-payee-identification">
+</div>
+<div class="section" id="flexible-payee-identification">
 <h3>Flexible Payee Identification<a class="headerlink" href="#flexible-payee-identification" title="Permalink to this headline">#</a></h3>
 <p>OpenSPP allows for flexible configuration of how beneficiaries are identified for payments sent to the PHEE. Administrators can select a <code class="docutils literal notranslate"><span class="pre">Payee</span> <span class="pre">ID</span> <span class="pre">Field</span></code> from options like Bank Account Number, IBAN, Phone, Email, or Registrant ID. For Registrant ID, a specific <code class="docutils literal notranslate"><span class="pre">Payee</span> <span class="pre">DFSP</span> <span class="pre">ID</span> <span class="pre">Type</span></code> (e.g., National ID) can be chosen, ensuring the correct identifier is extracted from the beneficiary's profile.</p>
-</section>
-<section id="payment-transaction-parameters">
+</div>
+<div class="section" id="payment-transaction-parameters">
 <h3>Payment Transaction Parameters<a class="headerlink" href="#payment-transaction-parameters" title="Permalink to this headline">#</a></h3>
 <p>Users define various parameters that govern how payment transactions are structured and sent. This includes specifying the <code class="docutils literal notranslate"><span class="pre">Payment</span> <span class="pre">Mode</span></code> (e.g., 'IMMEDIATE'), the <code class="docutils literal notranslate"><span class="pre">Payer</span> <span class="pre">ID</span> <span class="pre">Type</span></code>, and the <code class="docutils literal notranslate"><span class="pre">Payer</span> <span class="pre">ID</span></code> that the Payment Hub EE will use to identify the sender. Additionally, <code class="docutils literal notranslate"><span class="pre">Batch</span> <span class="pre">Transaction</span> <span class="pre">Type</span> <span class="pre">Header</span></code> and <code class="docutils literal notranslate"><span class="pre">Batch</span> <span class="pre">Transaction</span> <span class="pre">Purpose</span> <span class="pre">Header</span></code> (e.g., &quot;G2P Payment&quot;) can be set, along with a <code class="docutils literal notranslate"><span class="pre">Filename</span> <span class="pre">Prefix</span></code> for generated CSV files and a <code class="docutils literal notranslate"><span class="pre">Batch</span> <span class="pre">Request</span> <span class="pre">Timeout</span></code> for API calls.</p>
-</section>
-<section id="payment-preparation-and-sending">
+</div>
+<div class="section" id="payment-preparation-and-sending">
 <h3>Payment Preparation and Sending<a class="headerlink" href="#payment-preparation-and-sending" title="Permalink to this headline">#</a></h3>
 <p>The module manages the lifecycle of payments, from preparation to transmission. The <code class="docutils literal notranslate"><span class="pre">prepare_payments</span></code> function creates payment records from approved entitlements and can optionally generate CSV files for each batch as attachments. The <code class="docutils literal notranslate"><span class="pre">send_payments</span></code> function then securely transmits these prepared payment batches to the configured Payment Hub EE API. This process updates the status of individual payments and batches, providing visibility into the disbursement process.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Payment Phee module is essential for OpenSPP, enabling secure and efficient bulk payment disbursements for social protection programs through seamless integration with the Payment Hub EE.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

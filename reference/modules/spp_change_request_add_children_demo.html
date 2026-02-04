@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_change_request_add_children_demo.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="change-request-demo-add-child-member">
+  <div class="section" id="change-request-demo-add-child-member">
 <h1>Change Request Demo: Add Child/Member<a class="headerlink" href="#change-request-demo-add-child-member" title="Permalink to this headline">#</a></h1>
 <p>This module provides a demonstration of how OpenSPP manages the process of adding new children or members to an existing group within the registry. It integrates a dedicated form, ID scanning capabilities, and automated data updates through the OpenSPP Change Request framework, ensuring a structured and auditable process.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The 'spp_change_request_add_children_demo' module streamlines the expansion of group registries by enabling the efficient and accurate addition of new members. It accomplishes this by:</p>
 <ul class="simple">
@@ -1674,8 +1661,8 @@ title="Print to PDF"
 <li><p><strong>Documenting Supporting Evidence</strong>: Manages the secure storage of all supporting documents, such as scanned IDs, within the system's Document Management System (DMS).</p></li>
 </ul>
 <p>This module empowers program staff to manage group composition changes effectively, reducing manual errors and maintaining high data integrity for social protection programs and farmer registries.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module seamlessly integrates with core OpenSPP components and extends the Change Request framework to handle specific group membership updates:</p>
 <ul class="simple">
@@ -1685,15 +1672,15 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="spp_service_points.html"><span class="doc std std-doc">OpenSPP Service Points</span></a></strong>: Allows the submission and processing of 'Add Child/Member' change requests through designated service points.</p></li>
 <li><p><strong><a class="reference internal" href="spp_idpass.html"><span class="doc std std-doc">spp_idpass</span></a></strong>: Integrates with this module to facilitate the capture and processing of identification document details, supporting efficient data entry through ID scanning.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The 'spp_change_request_add_children_demo' module introduces several key features to manage the addition of new group members:</p>
-<section id="dedicated-change-request-for-adding-members">
+<div class="section" id="dedicated-change-request-for-adding-members">
 <h3>Dedicated Change Request for Adding Members<a class="headerlink" href="#dedicated-change-request-for-adding-members" title="Permalink to this headline">#</a></h3>
 <p>Users can initiate a specific &quot;Add Child/Member&quot; change request, targeting an existing group registrant. This process guides users through a structured form to capture all necessary details for the new individual and their relationship to the group. The request then proceeds through the standard OpenSPP Change Request validation and approval workflow.</p>
-</section>
-<section id="efficient-data-capture-and-validation">
+</div>
+<div class="section" id="efficient-data-capture-and-validation">
 <h3>Efficient Data Capture and Validation<a class="headerlink" href="#efficient-data-capture-and-validation" title="Permalink to this headline">#</a></h3>
 <p>The module significantly improves data entry efficiency and accuracy:</p>
 <ul class="simple">
@@ -1701,25 +1688,25 @@ title="Print to PDF"
 <li><p><strong>Comprehensive Data Fields</strong>: The form includes fields for the new member's Full Name (automatically computed), Additional Name, Date of Birth, Gender, Phone Number, and UID Number.</p></li>
 <li><p><strong>Built-in Data Validation</strong>: The module enforces data quality with validations such as ensuring birthdates are not in the future, phone numbers adhere to correct formats, and UID numbers are 12 digits long. Required fields like Family Name, Given Name, Birthdate, Relationship to Applicant, and Gender are also validated before submission.</p></li>
 </ul>
-</section>
-<section id="flexible-group-membership-definition">
+</div>
+<div class="section" id="flexible-group-membership-definition">
 <h3>Flexible Group Membership Definition<a class="headerlink" href="#flexible-group-membership-definition" title="Permalink to this headline">#</a></h3>
 <p>When adding a new member, the module allows for precise definition of their role within the group:</p>
 <ul class="simple">
 <li><p><strong>Relationship to Applicant</strong>: Users can specify the new member's relationship to the applicant (e.g., &quot;Father&quot;, &quot;Mother&quot;, &quot;Grandfather&quot;), providing crucial context for family-based programs.</p></li>
 <li><p><strong>Group Membership Types</strong>: The module integrates with the system's defined group membership kinds, allowing users to categorize the new member's role (e.g., &quot;Dependent&quot;, &quot;Head of Household&quot;) within the group. Upon approval, the system automatically updates the target group's membership list with the new individual and their defined role.</p></li>
 </ul>
-</section>
-<section id="secure-document-management">
+</div>
+<div class="section" id="secure-document-management">
 <h3>Secure Document Management<a class="headerlink" href="#secure-document-management" title="Permalink to this headline">#</a></h3>
 <p>All supporting documents for the 'Add Child/Member' change request, including scanned ID documents, are automatically stored within a dedicated directory in OpenSPP's Document Management System (DMS). This ensures that all evidence is securely linked to the change request, facilitating auditing and future reference.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The 'OpenSPP Change Request Add Children Demo' module provides a robust and user-friendly mechanism for expanding group registries, ensuring data accuracy and a transparent, auditable process within the OpenSPP platform.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

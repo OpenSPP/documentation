@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_custom_fields_ui.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="custom-fields-ui">
+  <div class="section" id="custom-fields-ui">
 <h1>Custom Fields UI<a class="headerlink" href="#custom-fields-ui" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Custom Fields UI module provides a user-friendly interface for program implementers to define and manage custom data fields for registrants within the OpenSPP platform. This allows for tailoring data collection to the unique requirements of various social protection programs and farmer registries.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module empowers OpenSPP implementers to extend the platform's data capabilities without requiring technical development. Its primary purposes include:</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Program-Specific Indicators:</strong> Supports the definition of fields for tracking unique program indicators, such as specific beneficiary attributes or eligibility criteria.</p></li>
 <li><p><strong>Calculated Data Points:</strong> Offers the ability to create fields that automatically calculate values, like counts of specific membership types within a group.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_custom_fields_ui</span></code> module integrates with core OpenSPP components to extend their functionality:</p>
 <ul class="simple">
@@ -1682,32 +1669,32 @@ title="Print to PDF"
 <li><p><strong>G2P Registry Base (<code class="docutils literal notranslate"><span class="pre">g2p_registry_base</span></code>)</strong>: This module extends the core registrant model, <code class="docutils literal notranslate"><span class="pre">res.partner</span></code>, to manage foundational registrant data. <code class="docutils literal notranslate"><span class="pre">spp_custom_fields_ui</span></code> utilizes this base to add custom fields directly to these established individual and group registrant profiles.</p></li>
 <li><p><strong>G2P Registry Membership (<code class="docutils literal notranslate"><span class="pre">g2p_registry_membership</span></code>)</strong>: This module defines and manages different types of relationships or roles individuals can have within groups (e.g., Head of Household, Member). <code class="docutils literal notranslate"><span class="pre">spp_custom_fields_ui</span></code> leverages this by allowing custom fields to be specifically associated with or filtered by these membership kinds, enabling highly targeted data collection.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The module introduces several key features for defining and managing custom fields:</p>
-<section id="defining-custom-field-properties">
+<div class="section" id="defining-custom-field-properties">
 <h3>Defining Custom Field Properties<a class="headerlink" href="#defining-custom-field-properties" title="Permalink to this headline">#</a></h3>
 <p>Users can define the core characteristics of each custom field. This includes specifying a clear <strong>Field Draft Name</strong> for easy identification, and determining the <strong>Target Type</strong> to indicate if the field applies to &quot;Group&quot; or &quot;Individual&quot; registrants. The <strong>Field Category</strong> allows distinguishing between &quot;Custom&quot; fields for direct data entry and &quot;Calculated&quot; fields for automatically derived values.</p>
-</section>
-<section id="tailoring-by-membership-kind">
+</div>
+<div class="section" id="tailoring-by-membership-kind">
 <h3>Tailoring by Membership Kind<a class="headerlink" href="#tailoring-by-membership-kind" title="Permalink to this headline">#</a></h3>
 <p>A powerful feature allows custom fields to be linked to specific <strong>Kinds</strong> of group membership, as defined in the <a class="reference internal" href="g2p_registry_membership.html"><span class="doc std std-doc">G2P Registry Membership</span></a> module. For instance, a custom field might only appear or be relevant for registrants designated as a &quot;Head of Household,&quot; enabling highly contextual data collection within groups.</p>
-</section>
-<section id="presence-and-calculated-fields">
+</div>
+<div class="section" id="presence-and-calculated-fields">
 <h3>Presence and Calculated Fields<a class="headerlink" href="#presence-and-calculated-fields" title="Permalink to this headline">#</a></h3>
 <p>The module supports creating fields to track <strong>Presence</strong>, which defines a boolean (yes/no) custom field to indicate if a registrant meets a specific condition or possesses an attribute. For &quot;Calculated&quot; fields, the system can automatically generate a field to count occurrences based on specified membership kinds, providing aggregate data without manual calculation.</p>
-</section>
-<section id="automated-field-naming-and-type-assignment">
+</div>
+<div class="section" id="automated-field-naming-and-type-assignment">
 <h3>Automated Field Naming and Type Assignment<a class="headerlink" href="#automated-field-naming-and-type-assignment" title="Permalink to this headline">#</a></h3>
 <p>To ensure data consistency and simplify management, the module automatically generates the technical field name based on the defined properties like category, target type, and draft name. Additionally, for &quot;Presence&quot; fields, it automatically assigns a boolean data type, and for other &quot;Calculated&quot; fields, it defaults to an integer type to support counting.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Custom Fields UI module is essential for program implementers, providing the flexibility to extend and tailor OpenSPP's data collection capabilities to meet the specific and evolving needs of diverse social protection programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

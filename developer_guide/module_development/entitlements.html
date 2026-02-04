@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Program entitlements" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Program entitlements" name="title" />
 <meta content="Learn how to customize entitlement calculation logic and management in OpenSPP through custom module development" name="description" />
 <meta content="OpenSPP, entitlements, program entitlements, entitlement calculation, benefit calculation, module development" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/module_development/entitlements.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1714,7 +1701,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="program-entitlements">
+  <div class="section" id="program-entitlements">
 <h1>Program entitlements<a class="headerlink" href="#program-entitlements" title="Permalink to this headline">#</a></h1>
 <p>In OpenSPP, program benefits are defined and calculated through a flexible system called <strong>Entitlement Managers</strong>.
 An Entitlement Manager is a self-contained component that defines the logic for how much a <a class="reference internal" href="../../reference/glossary.html#term-Beneficiary"><span class="xref std std-term">beneficiary</span></a> is entitled to receive in a given program cycle.
@@ -1731,15 +1718,15 @@ We will use the <a class="reference internal" href="../../reference/modules/spp_
 <li><p>Extend the Program Creation Wizard to pre-configure your manager.</p></li>
 <li><p>Set up the necessary security access for your new model.</p></li>
 </ul>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Solid understanding of Odoo 17 module development, including Python, XML, and XPath.</p></li>
 <li><p>Familiarity with the OpenG2P and OpenSPP core modules, especially <code class="docutils literal notranslate"><span class="pre">OpenG2P</span> <span class="pre">Programs</span></code> (<a class="reference internal" href="../../reference/modules/g2p_programs.html"><span class="doc">g2p_programs</span></a>), <code class="docutils literal notranslate"><span class="pre">OpenSPP</span> <span class="pre">Programs</span></code> (<a class="reference internal" href="../../reference/modules/spp_programs.html"><span class="doc">spp_programs</span></a>), and <code class="docutils literal notranslate"><span class="pre">G2P</span> <span class="pre">Registry</span> <span class="pre">(Base)</span></code> (<a class="reference internal" href="../../reference/modules/g2p_registry_base.html"><span class="doc">g2p_registry_base</span></a>).</p></li>
 <li><p>To set up OpenSPP for development, please refer to the <a class="reference internal" href="../setup.html"><span class="doc">Development Setup Guide</span></a>.</p></li>
 </ul>
-</section>
-<section id="module-structure">
+</div>
+<div class="section" id="module-structure">
 <h2>Module Structure<a class="headerlink" href="#module-structure" title="Permalink to this headline">#</a></h2>
 <p>A typical Entitlement Manager module follows the standard Odoo module structure.
 Here's the complete structure of our reference module, <a class="reference internal" href="../../reference/modules/spp_entitlement_cash.html"><span class="doc">spp_entitlement_cash</span></a>:</p>
@@ -1758,15 +1745,15 @@ Here's the complete structure of our reference module, <a class="reference inter
     └── create_program_wizard.py # Extends the program creation wizard
 </pre></div>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="step-by-step-guide">
+<div class="section" id="step-by-step-guide">
 <h2>Step-by-Step Guide<a class="headerlink" href="#step-by-step-guide" title="Permalink to this headline">#</a></h2>
-<section id="create-the-module-scaffold">
+<div class="section" id="create-the-module-scaffold">
 <h3>Create the Module Scaffold<a class="headerlink" href="#create-the-module-scaffold" title="Permalink to this headline">#</a></h3>
 <p>Start by creating a new directory for your module (e.g., <code class="docutils literal notranslate"><span class="pre">spp_custom_entitlement_manager</span></code>) and populate it with the basic Odoo module files and the directory structure shown above.</p>
-</section>
-<section id="define-the-manifest-manifest-py">
+</div>
+<div class="section" id="define-the-manifest-manifest-py">
 <h3>Define the Manifest (<code class="docutils literal notranslate"><span class="pre">__manifest__.py</span></code>)<a class="headerlink" href="#define-the-manifest-manifest-py" title="Permalink to this headline">#</a></h3>
 <p>The manifest file declares your module's metadata and dependencies.
 It's crucial to list all the modules your customization will interact with.
@@ -1800,8 +1787,8 @@ Our cash entitlement manager depends on <a class="reference internal" href="../.
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="create-the-entitlement-manager-model">
+</div>
+<div class="section" id="create-the-entitlement-manager-model">
 <h3>Create the Entitlement Manager Model<a class="headerlink" href="#create-the-entitlement-manager-model" title="Permalink to this headline">#</a></h3>
 <p>This is the core of your module.
 You will create a new model that holds the specific configuration for your entitlement rules and contains the logic to calculate and generate entitlements.</p>
@@ -1815,7 +1802,7 @@ You will create a new model that holds the specific configuration for your entit
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># From: spp_entitlement_cash/models/entitlement_manager.py</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">G2PCashEntitlementManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">G2PCashEntitlementManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;g2p.program.entitlement.manager.cash&quot;</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s2">&quot;g2p.base.program.entitlement.manager&quot;</span><span class="p">,</span>
@@ -1831,7 +1818,7 @@ You will create a new model that holds the specific configuration for your entit
     <span class="n">max_amount</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Monetary</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
     <span class="c1"># ... other fields</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">prepare_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">prepare_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Prepare Cash Entitlements.&quot;&quot;&quot;</span>
         <span class="c1"># ... (logic to iterate through items and beneficiaries) ...</span>
         <span class="k">for</span> <span class="n">beneficiary_id</span> <span class="ow">in</span> <span class="n">beneficiaries_with_entitlements_to_create</span><span class="p">:</span>
@@ -1849,8 +1836,8 @@ You will create a new model that holds the specific configuration for your entit
 It is called by the system to generate the <code class="docutils literal notranslate"><span class="pre">g2p.entitlement</span></code> records for a given cycle and set of beneficiaries, based on the rules defined in the manager.</p>
 </li>
 </ol>
-</section>
-<section id="register-the-new-manager">
+</div>
+<div class="section" id="register-the-new-manager">
 <h3>Register the New Manager<a class="headerlink" href="#register-the-new-manager" title="Permalink to this headline">#</a></h3>
 <p>To make OpenSPP aware of your new manager, you must add it to the list of available entitlement managers.</p>
 <ol class="arabic">
@@ -1858,11 +1845,11 @@ It is called by the system to generate the <code class="docutils literal notrans
 <li><p><strong>Extend the selection method</strong>: Override the <code class="docutils literal notranslate"><span class="pre">_selection_manager_ref_id</span></code> method to add your new manager's model name and a user-friendly label to the selection list.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># From: spp_entitlement_cash/models/entitlement_manager.py</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">EntitlementManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">EntitlementManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;g2p.program.entitlement.manager&quot;</span>
 
     <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">_selection_manager_ref_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_selection_manager_ref_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">selection</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_selection_manager_ref_id</span><span class="p">()</span>
         <span class="n">new_manager</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;g2p.program.entitlement.manager.cash&quot;</span><span class="p">,</span> <span class="s2">&quot;Cash&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">new_manager</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">selection</span><span class="p">:</span>
@@ -1872,8 +1859,8 @@ It is called by the system to generate the <code class="docutils literal notrans
 </div>
 </li>
 </ol>
-</section>
-<section id="create-the-user-interface">
+</div>
+<div class="section" id="create-the-user-interface">
 <h3>Create the User Interface<a class="headerlink" href="#create-the-user-interface" title="Permalink to this headline">#</a></h3>
 <p>Create a form view so that program administrators can configure the rules for your new manager.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- From: spp_entitlement_cash/views/entitlement_manager_view.xml --&gt;</span>
@@ -1900,20 +1887,20 @@ It is called by the system to generate the <code class="docutils literal notrans
 <span class="nt">&lt;/record&gt;</span>
 </pre></div>
 </div>
-</section>
-<section id="extend-the-program-creation-wizard">
+</div>
+<div class="section" id="extend-the-program-creation-wizard">
 <h3>Extend the Program Creation Wizard<a class="headerlink" href="#extend-the-program-creation-wizard" title="Permalink to this headline">#</a></h3>
 <p>To improve user experience, add configuration fields directly to the &quot;Create Program&quot; wizard.</p>
 <ol class="arabic">
 <li><p><strong>Extend the wizard model</strong>: In <code class="docutils literal notranslate"><span class="pre">wizard/create_program_wizard.py</span></code>, inherit from <code class="docutils literal notranslate"><span class="pre">g2p.program.create.wizard</span></code>, add an <code class="docutils literal notranslate"><span class="pre">entitlement_kind</span></code> selection for your new manager, and override <code class="docutils literal notranslate"><span class="pre">_get_entitlement_manager</span></code> to handle its creation.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># In: wizard/create_program_wizard.py</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">G2PCreateNewProgramWiz</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">TransientModel</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">G2PCreateNewProgramWiz</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">TransientModel</span><span class="p">):</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;g2p.program.create.wizard&quot;</span>
 
     <span class="n">entitlement_kind</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Selection</span><span class="p">(</span><span class="n">selection_add</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;cash&quot;</span><span class="p">,</span> <span class="s2">&quot;Cash&quot;</span><span class="p">)])</span>
     <span class="n">entitlement_cash_item_ids</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">One2many</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_get_entitlement_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">program_id</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_get_entitlement_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">program_id</span><span class="p">):</span>
         <span class="n">res</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_get_entitlement_manager</span><span class="p">(</span><span class="n">program_id</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">entitlement_kind</span> <span class="o">==</span> <span class="s2">&quot;cash&quot;</span><span class="p">:</span>
             <span class="c1"># Logic to create &#39;g2p.program.entitlement.manager.cash&#39;</span>
@@ -1925,18 +1912,18 @@ It is called by the system to generate the <code class="docutils literal notrans
 </li>
 <li><p><strong>Extend the wizard view</strong>: In <code class="docutils literal notranslate"><span class="pre">wizard/create_program_wizard.xml</span></code>, extend the form to show your new fields when the &quot;Cash&quot; entitlement kind is selected.</p></li>
 </ol>
-</section>
-<section id="set-up-security">
+</div>
+<div class="section" id="set-up-security">
 <h3>Set Up Security<a class="headerlink" href="#set-up-security" title="Permalink to this headline">#</a></h3>
 <p>Grant users access to your new models in <code class="docutils literal notranslate"><span class="pre">security/ir.model.access.csv</span></code>.</p>
-<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span><span class="o"># From: spp_entitlement_cash/security/ir.model.access.csv</span>
-<span class="o">id</span><span class="p">,</span><span class="m">name</span><span class="p">,</span><span class="k">model_id:id</span><span class="p">,</span><span class="no">group_id:id</span><span class="p">,</span><span class="s1">perm_read</span><span class="p">,perm_write,perm_create,perm_unlink</span>
-<span class="o">g2p_program_entitlement_manager_cash_admin</span><span class="p">,</span><span class="m">Program Entitlement Manager Cash Admin Access</span><span class="p">,</span><span class="k">spp_entitlement_cash.model_g2p_program_entitlement_manager_cash</span><span class="p">,</span><span class="no">g2p_registry_base.group_g2p_admin</span><span class="p">,</span><span class="s1">1</span><span class="p">,1,1,1</span>
-<span class="o">g2p_program_entitlement_manager_cash_program_manager</span><span class="p">,</span><span class="m">Program Entitlement Manager Cash Program Manager Access</span><span class="p">,</span><span class="k">spp_entitlement_cash.model_g2p_program_entitlement_manager_cash</span><span class="p">,</span><span class="no">g2p_programs.g2p_program_manager</span><span class="p">,</span><span class="s1">1</span><span class="p">,1,1,0</span>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span># From: spp_entitlement_cash/security/ir.model.access.csv
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+g2p_program_entitlement_manager_cash_admin,Program Entitlement Manager Cash Admin Access,spp_entitlement_cash.model_g2p_program_entitlement_manager_cash,g2p_registry_base.group_g2p_admin,1,1,1,1
+g2p_program_entitlement_manager_cash_program_manager,Program Entitlement Manager Cash Program Manager Access,spp_entitlement_cash.model_g2p_program_entitlement_manager_cash,g2p_programs.g2p_program_manager,1,1,1,0
 </pre></div>
 </div>
-</section>
-<section id="install-and-test">
+</div>
+<div class="section" id="install-and-test">
 <h3>Install and Test<a class="headerlink" href="#install-and-test" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install or upgrade the module through the Apps menu.</p></li>
@@ -1946,17 +1933,17 @@ It is called by the system to generate the <code class="docutils literal notrans
 <li><p>Click <strong>Create</strong>.
 A new program will be created, and an instance of your entitlement manager will be automatically created and configured.</p></li>
 </ol>
-</section>
-</section>
-<section id="references">
+</div>
+</div>
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <p>For more information on extending OpenSPP modules, refer to:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/">Odoo 17 Developer Documentation</a></p></li>
 <li><p><a class="reference external" href="https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_programs">OpenSPP Programs Module Source</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

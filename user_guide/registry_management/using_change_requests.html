@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Change Requests" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Change Requests" name="title" />
 <meta content="Guide to updating registrant information in OpenSPP using the Change Request module with role-based approval workflows." name="description" />
 <meta content="OpenSPP, change requests, registrant updates, approval workflow, validation, data management" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/registry_management/using_change_requests.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1680,12 +1667,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="change-requests">
+  <div class="section" id="change-requests">
 <h1>Change Requests<a class="headerlink" href="#change-requests" title="Permalink to this headline">#</a></h1>
 <p>This guide explains how to update registrant information in OpenSPP using the Change Request module.
 The process follows a defined workflow, requiring users with specific roles to initiate and validate requests.
 Permission-based access and thorough documentation help ensure data accuracy and reliable operations.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>Before submitting or approving change requests, ensure the following:</p>
 <ul class="simple">
@@ -1709,8 +1696,8 @@ You can learn how to perform these tasks in the <a class="reference internal" hr
 <p>Learn more about <strong>Installing Additional Modules</strong> in the guide:<br />
 <a class="reference internal" href="../../getting_started/module_installation.html"><span class="doc">Module installation</span></a></p>
 </div>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>After completing this tutorial, you will be able to:</p>
 <ul class="simple">
@@ -1718,15 +1705,15 @@ You can learn how to perform these tasks in the <a class="reference internal" hr
 <li><p>Navigate role-specific approval workflows.</p></li>
 <li><p>Attach supporting documentation and track updates efficiently.</p></li>
 </ul>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
 <p>To update a registry record, a change request is initiated by a System Administrator or Registrar.
 The request is drafted, applicant information is updated for validation, and supporting documents are attached to have a reference for the updating of information.
 Once submitted, the request undergoes validation by a Local Validator.
 If approved, it proceeds to an HQ Validator for final review.
 Upon HQ validation, the change request is applied to the applicant's record and can be verified through the registry.</p>
-<section id="creating-a-change-request-draft">
+<div class="section" id="creating-a-change-request-draft">
 <h3>Creating a Change Request draft<a class="headerlink" href="#creating-a-change-request-draft" title="Permalink to this headline">#</a></h3>
 <p>Login as System Administrator or Registrar, then from the menu, click on <strong>Change Request</strong>.</p>
 <p><img alt="Change request change request page" src="../../_images/change_request_change_request_page.png" /></p>
@@ -1741,7 +1728,7 @@ Then fill in the request details:</p>
 <p>Click <strong>Create</strong> to proceed.
 Clicking Create will generate a draft file for your change request.</p>
 <p><img alt="Change request create button" src="../../_images/change_request_create_button.png" /></p>
-<section id="updating-applicant-information">
+<div class="section" id="updating-applicant-information">
 <h4>Updating Applicant Information<a class="headerlink" href="#updating-applicant-information" title="Permalink to this headline">#</a></h4>
 <p>From the Change request page, select a <strong>Change request</strong> file currently in Draft state.</p>
 <p><img alt="Change request list of requests" src="../../_images/change_request_list_of_requests.png" /></p>
@@ -1762,11 +1749,11 @@ Clicking Create will generate a draft file for your change request.</p>
 </ul>
 <p><img alt="Change request attachment tabs" src="../../_images/change_request_attachment_tabs.png" /></p>
 <p>Click <strong>Request Validation</strong> to submit for approval.</p>
-</section>
-</section>
-<section id="validation-workflow">
+</div>
+</div>
+<div class="section" id="validation-workflow">
 <h3>Validation Workflow<a class="headerlink" href="#validation-workflow" title="Permalink to this headline">#</a></h3>
-<section id="review-request-by-local-validator-role">
+<div class="section" id="review-request-by-local-validator-role">
 <h4>Review request by Local Validator Role<a class="headerlink" href="#review-request-by-local-validator-role" title="Permalink to this headline">#</a></h4>
 <p>Log in using a <strong>Local Validator</strong> user account then go to <strong>Change Request</strong>.</p>
 <p>Select the request and click <strong>Assign to me</strong>.</p>
@@ -1780,8 +1767,8 @@ A success notification will appear upon approval.
 Otherwise, click reject to negate and cancel change request.</p>
 <p><img alt="Change request success partial" src="../../_images/change_request_success_partial.png" /></p>
 <p>Partially approved change requests are then reviewed by users with HQ validator roles.</p>
-</section>
-<section id="review-request-by-hq-validator-role">
+</div>
+<div class="section" id="review-request-by-hq-validator-role">
 <h4>Review request by HQ Validator Role<a class="headerlink" href="#review-request-by-hq-validator-role" title="Permalink to this headline">#</a></h4>
 <p>Log in using a <strong>HQ Validator</strong> user account then go to <strong>Change Request</strong>.</p>
 <p>Select a change request, review <strong>Request details</strong> and <strong>Attachment</strong> for uploaded files as reference for the change request. Alternatively, you can review uploaded files in DMS (Directory Management System) feature. Learn more in this guide: <a class="reference internal" href="dms.html"><span class="doc">Document Management System</span></a></p>
@@ -1793,9 +1780,9 @@ Otherwise, click reject to negate and cancel change request.</p>
 <li><p>Please note that change requests may be rejected by the <strong>HQ validator</strong> user even if they haven't been approved by a local validator user.</p></li>
 <li><p>Please note that change requests cannot be validated by the <strong>HQ validator</strong> user unless they have been pre-validated by a <strong>local validator</strong> user.</p></li>
 </ul>
-</section>
-</section>
-<section id="reviewing-changes">
+</div>
+</div>
+<div class="section" id="reviewing-changes">
 <h3>Reviewing Changes<a class="headerlink" href="#reviewing-changes" title="Permalink to this headline">#</a></h3>
 <p>Log back in as Administrator or Registrar and go to Registry→Individual.</p>
 <p>Click <strong>search filter</strong> dropdown.</p>
@@ -1811,9 +1798,9 @@ Otherwise, click reject to negate and cancel change request.</p>
 <p><img alt="Change request last updated on" src="../../_images/change_request_last_updated_on.png" /></p>
 <p>Verify that registrant changes are reflected in their profile.</p>
 <p><img alt="Change request review updated information" src="../../_images/change_request_review_updated_information.png" /></p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

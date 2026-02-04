@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_audit_log.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="audit-log">
+  <div class="section" id="audit-log">
 <h1>Audit Log<a class="headerlink" href="#audit-log" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Audit Log module provides comprehensive tracking of all data changes and user actions across the OpenSPP platform. It ensures transparency and accountability by recording who did what, when, and what precisely changed within critical social protection programs and farmer registries.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Audit Log module accomplishes the following key objectives:</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Support Data Integrity:</strong> By maintaining an immutable history of changes, the module helps verify data accuracy and detect unauthorized alterations, safeguarding the reliability of OpenSPP data.</p></li>
 <li><p><strong>Facilitate Compliance:</strong> Assists programs in meeting regulatory and internal policy requirements for data change logging in sensitive social protection and farmer registry systems.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The Audit Log module integrates with and extends core OpenSPP functionalities:</p>
 <ul class="simple">
@@ -1683,32 +1670,32 @@ title="Print to PDF"
 <li><p><strong>G2P Registry Membership (<a class="reference internal" href="g2p_registry_membership.html"><span class="doc std std-doc">g2p_registry_membership</span></a>):</strong> This dependency, along with the extension of the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model (used for groups), demonstrates how the Audit Log module can monitor changes within complex data structures. For example, if a group's membership changes, the audit log can record the impact on computed fields like 'Group Member Names'.</p></li>
 </ul>
 <p>The Audit Log module serves as a foundational service, enabling any other OpenSPP module to configure its data models and fields for auditing. This provides a centralized and consistent mechanism for tracking changes across all critical data, such as beneficiary profiles, program enrollments, or geographic areas.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Audit Log module offers robust features to manage and review data changes:</p>
-<section id="configurable-audit-rules">
+<div class="section" id="configurable-audit-rules">
 <h3>Configurable Audit Rules<a class="headerlink" href="#configurable-audit-rules" title="Permalink to this headline">#</a></h3>
 <p>Users define precise rules to control what data is audited across the system. This includes selecting any OpenSPP data model (e.g., Beneficiary, Program, Location) and specifying whether to log record creation, updates, or deletions. Administrators can further refine rules by choosing to track changes to specific fields within a model, focusing only on the most critical data elements and avoiding unnecessary log entries. The system also prevents creating duplicate audit rules for the same data model.</p>
-</section>
-<section id="detailed-and-immutable-log-entries">
+</div>
+<div class="section" id="detailed-and-immutable-log-entries">
 <h3>Detailed and Immutable Log Entries<a class="headerlink" href="#detailed-and-immutable-log-entries" title="Permalink to this headline">#</a></h3>
 <p>Each log entry captures comprehensive details about the change. This includes the specific user who performed the action, the exact date and time, the record affected, and the type of operation (create, update, or delete). For updates, the log clearly displays both the old and new values of any changed fields in an easy-to-read HTML format. Crucially, audit logs are designed to be permanent and cannot be deleted by standard user actions, ensuring a tamper-proof historical record of all modifications.</p>
-</section>
-<section id="integrated-log-viewing">
+</div>
+<div class="section" id="integrated-log-viewing">
 <h3>Integrated Log Viewing<a class="headerlink" href="#integrated-log-viewing" title="Permalink to this headline">#</a></h3>
 <p>The module provides convenient access to audit information directly from the records being audited. A &quot;View logs&quot; action menu automatically appears on audited records, allowing users to quickly access their complete historical change log. This enables program managers or auditors to immediately review the full history of changes for a specific beneficiary, program, or any other audited data point.</p>
-</section>
-<section id="group-member-name-tracking-example">
+</div>
+<div class="section" id="group-member-name-tracking-example">
 <h3>Group Member Name Tracking Example<a class="headerlink" href="#group-member-name-tracking-example" title="Permalink to this headline">#</a></h3>
 <p>As an illustrative example of its integration capabilities, the module includes functionality to track computed fields, such as the 'Group Member Names' on the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model (often used for managing groups). If configured for auditing, any changes to the underlying group memberships that cause this computed field to update would be logged. This provides a comprehensive view of how group compositions evolve over time, directly within the audit trail.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Audit Log module is an indispensable tool for ensuring data integrity, transparency, and accountability across all social protection programs and farmer registries managed within the platform.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

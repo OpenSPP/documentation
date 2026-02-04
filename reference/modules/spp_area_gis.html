@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_area_gis.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1650,10 +1637,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="area-gis">
+  <div class="section" id="area-gis">
 <h1>Area GIS<a class="headerlink" href="#area-gis" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Area GIS module integrates geographical information system (GIS) capabilities directly into OpenSPP's area management, enabling the visualization, analysis, and improved targeting and monitoring of social protection programs and farmer registries. It transforms static administrative areas into dynamic, location-aware entities within the platform.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Area GIS module is designed to enhance area management with spatial intelligence, allowing users to:</p>
 <ul class="simple">
@@ -1664,8 +1651,8 @@ title="Print to PDF"
 <li><p><strong>Improve Program Targeting and Monitoring</strong>: Leverage geographical information to make more informed decisions about program reach, coverage, and impact.</p></li>
 </ul>
 <p>This module adds a crucial spatial dimension to OpenSPP, enabling a deeper understanding of where programs operate and where beneficiaries are located. For example, it allows users to see all villages (areas) within a specific district on a map, and then identify which of those villages are part of a particular program.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module extends and integrates with core OpenSPP components to provide its GIS capabilities:</p>
 <ul class="simple">
@@ -1673,27 +1660,27 @@ title="Print to PDF"
 <li><p><strong>OpenSPP Base GIS (<a class="reference internal" href="spp_base_gis.html"><span class="doc std std-doc">spp_base_gis</span></a>)</strong>: This module relies on the foundational <a class="reference internal" href="spp_base_gis.html"><span class="doc std std-doc">OpenSPP Base GIS</span></a> module to provide the underlying mapping infrastructure. <a class="reference internal" href="spp_base_gis.html"><span class="doc std std-doc">OpenSPP Base GIS</span></a> delivers the interactive map views, raster layers, and data layer configurations necessary for visualizing the geographic data managed by <code class="docutils literal notranslate"><span class="pre">spp_area_gis</span></code>.</p></li>
 </ul>
 <p>By building upon these modules, <code class="docutils literal notranslate"><span class="pre">spp_area_gis</span></code> ensures that all area-related data can be spatially represented and interacted with, making it a foundational component for location-based program management within OpenSPP.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Area GIS module introduces several key features for managing and utilizing geographic data for areas:</p>
-<section id="geographic-data-assignment-to-areas">
+<div class="section" id="geographic-data-assignment-to-areas">
 <h3>Geographic Data Assignment to Areas<a class="headerlink" href="#geographic-data-assignment-to-areas" title="Permalink to this headline">#</a></h3>
 <p>Users can directly assign precise geographic data to any area record within OpenSPP. This includes:</p>
 <ul class="simple">
 <li><p><strong>Point Coordinates</strong>: Associate a single latitude and longitude pair with an area, representing a specific point like a central village office or a program distribution point.</p></li>
 <li><p><strong>Polygonal Boundaries</strong>: Define and store the exact geographic outline (polygon) of an area. This is crucial for understanding the true extent of a region, such as a district or a project implementation zone, and for performing accurate boundary-based analysis.</p></li>
 </ul>
-</section>
-<section id="bulk-geographic-data-import">
+</div>
+<div class="section" id="bulk-geographic-data-import">
 <h3>Bulk Geographic Data Import<a class="headerlink" href="#bulk-geographic-data-import" title="Permalink to this headline">#</a></h3>
 <p>The module enhances the existing area import functionality to support the inclusion of geographic coordinates during bulk data uploads.</p>
 <ul class="simple">
 <li><p>When importing a large number of areas, users can include &quot;latitude&quot; and &quot;longitude&quot; columns in their import files.</p></li>
 <li><p>The system automatically processes these coordinates and associates them with the corresponding area records, streamlining the population of geographic data for extensive area hierarchies.</p></li>
 </ul>
-</section>
-<section id="geographic-data-validation">
+</div>
+<div class="section" id="geographic-data-validation">
 <h3>Geographic Data Validation<a class="headerlink" href="#geographic-data-validation" title="Permalink to this headline">#</a></h3>
 <p>To ensure the accuracy and integrity of geographic information, the module incorporates robust validation checks for imported coordinates.</p>
 <ul class="simple">
@@ -1704,13 +1691,13 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>Accurate geographic data is vital for effective spatial analysis. Always ensure your imported coordinates are correct to avoid errors in mapping and targeting.</p>
 </div>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Area GIS module is essential for adding spatial intelligence to OpenSPP's area management, significantly enhancing the platform's ability to visualize, target, monitor, and analyze social protection programs geographically.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_program_approval.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-program-approval">
+  <div class="section" id="g2p-program-approval">
 <h1>G2P Program Approval<a class="headerlink" href="#g2p-program-approval" title="Permalink to this headline">#</a></h1>
 <p>The 'G2P Program Approval' module enhances OpenSPP's social protection programs by introducing a robust, multi-stage approval workflow for entitlements. It ensures that benefits are thoroughly reviewed and authorized before disbursement, adding a critical layer of oversight and accountability.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module establishes a structured process for validating and approving entitlements, ensuring compliance and control over benefit allocation. It provides a comprehensive framework for:</p>
 <ul class="simple">
@@ -1672,36 +1659,36 @@ title="Print to PDF"
 <li><p><strong>Enforcing Business Rules and Compliance</strong>: It helps programs meet internal governance standards and external regulatory requirements by establishing formal checkpoints for entitlement validation.</p></li>
 </ul>
 <p>This module is crucial for programs requiring stringent financial controls and auditable approval trails, reducing errors and preventing unauthorized benefit disbursements.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The 'G2P Program Approval' module extends the core capabilities of the <a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">G2P Programs</span></a> module. It integrates directly with the entitlement management features provided by <code class="docutils literal notranslate"><span class="pre">g2p_programs</span></code>, adding an essential layer of approval logic to the existing process of generating and managing beneficiary entitlements.</p>
 <p>Specifically, it enhances the default entitlement manager to incorporate configurable approval steps. This integration means that any program configured within the <code class="docutils literal notranslate"><span class="pre">g2p_programs</span></code> module can leverage the advanced approval workflows defined in this module, ensuring a seamless and controlled entitlement lifecycle from generation to final approval.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="configurable-approval-workflows">
+<div class="section" id="configurable-approval-workflows">
 <h3>Configurable Approval Workflows<a class="headerlink" href="#configurable-approval-workflows" title="Permalink to this headline">#</a></h3>
 <p>Users can define custom, sequential approval stages for entitlements within each program. Each stage can be named (e.g., &quot;District Review&quot;, &quot;Regional Approval&quot;, &quot;Final Authorization&quot;) and assigned a unique sequence. This allows programs to implement flexible, multi-level review processes tailored to their specific operational structure and risk profile.</p>
-</section>
-<section id="role-based-approval-access">
+</div>
+<div class="section" id="role-based-approval-access">
 <h3>Role-Based Approval Access<a class="headerlink" href="#role-based-approval-access" title="Permalink to this headline">#</a></h3>
 <p>Each defined approval stage can be associated with a specific user group (e.g., &quot;District Managers Group&quot;, &quot;Finance Approvers&quot;). The system enforces that only users who are members of the designated group for the <em>current</em> approval stage can perform an approval action. This prevents unauthorized approvals and ensures that the correct personnel are involved at each step of the process.</p>
-</section>
-<section id="entitlement-status-tracking-and-transition">
+</div>
+<div class="section" id="entitlement-status-tracking-and-transition">
 <h3>Entitlement Status Tracking and Transition<a class="headerlink" href="#entitlement-status-tracking-and-transition" title="Permalink to this headline">#</a></h3>
 <p>Entitlements gain an <code class="docutils literal notranslate"><span class="pre">approval_state</span></code> field, which clearly indicates their current position within the defined workflow. When an authorized user approves an entitlement, the system automatically updates this <code class="docutils literal notranslate"><span class="pre">approval_state</span></code> and moves the entitlement to the next logical stage in the sequence. This ensures that the progress of each entitlement is transparent and efficiently managed, from initial <code class="docutils literal notranslate"><span class="pre">draft</span></code> or <code class="docutils literal notranslate"><span class="pre">pending_validation</span></code> states through to final approval.</p>
-</section>
-<section id="dynamic-approval-action-visibility">
+</div>
+<div class="section" id="dynamic-approval-action-visibility">
 <h3>Dynamic Approval Action Visibility<a class="headerlink" href="#dynamic-approval-action-visibility" title="Permalink to this headline">#</a></h3>
 <p>The user interface intelligently displays the &quot;Approve&quot; action button only to users who possess the necessary permissions for the entitlement's current approval stage. This simplifies the user experience by showing relevant actions and guides users to perform approvals only when they are authorized to do so, based on the configured workflow and their assigned roles.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The 'G2P Program Approval' module is essential for implementing robust, controlled, and auditable entitlement approval processes within OpenSPP's social protection and farmer registry programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

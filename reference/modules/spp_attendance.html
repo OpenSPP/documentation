@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_attendance.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="attendance">
+  <div class="section" id="attendance">
 <h1>Attendance<a class="headerlink" href="#attendance" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Attendance module (spp_attendance) provides a comprehensive system for managing and tracking participant attendance across various social protection programs and farmer registries. It enables organizations to accurately record who attended specific events, when, where, and for what purpose, ensuring accountability and informing program delivery.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines the process of tracking participant engagement and presence, critical for program effectiveness and compliance. It accomplishes the following key capabilities:</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Integrate with External Systems:</strong> Facilitates the secure import of participant data from external registries and allows external applications to submit or query attendance records via a robust API. This supports data synchronization across the OpenSPP ecosystem.</p></li>
 <li><p><strong>Monitor Participant Engagement:</strong> Provides tools to view an individual's attendance history and aggregated attendance data, offering valuable insights into participation patterns and program reach. This helps in assessing program impact and identifying areas for improvement.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The spp_attendance module integrates seamlessly with other core OpenSPP components and extends foundational Odoo functionalities:</p>
 <ul class="simple">
@@ -1683,44 +1670,44 @@ title="Print to PDF"
 <li><p><strong>Partner Management (res.partner):</strong> The module extends Odoo's core <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model to manage program participants (subscribers). Each attendance subscriber is linked to a <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> record, allowing <code class="docutils literal notranslate"><span class="pre">spp_attendance</span></code> to utilize existing contact information while adding specific details relevant to program participation, such as a unique person identifier and attendance history.</p></li>
 </ul>
 <p>This module serves as a foundational component for other program-specific modules that require accurate participant attendance records for their operations, such as benefit disbursement, case management, or training program management.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_attendance</span></code> module offers a range of features designed to provide flexible and robust attendance management:</p>
-<section id="participant-subscriber-management">
+<div class="section" id="participant-subscriber-management">
 <h3>Participant (Subscriber) Management<a class="headerlink" href="#participant-subscriber-management" title="Permalink to this headline">#</a></h3>
 <p>Users can create and manage detailed profiles for program participants, known as subscribers. Each subscriber is uniquely identified and linked to a core OpenSPP contact, ensuring consistency. The module automatically manages the underlying contact record when a subscriber is created or updated, including details like full name, additional names, gender, email, and phone numbers.</p>
-</section>
-<section id="flexible-attendance-recording">
+</div>
+<div class="section" id="flexible-attendance-recording">
 <h3>Flexible Attendance Recording<a class="headerlink" href="#flexible-attendance-recording" title="Permalink to this headline">#</a></h3>
 <p>The module enables recording of attendance events with specific details. For each record, users specify the attendance date, time, and category (either &quot;Present&quot; or &quot;Absent&quot;). Additional context can be added through a description and an external URL, useful for linking to external resources or evidence of attendance.</p>
 <ul class="simple">
 <li><p><strong>Configurable Uniqueness:</strong> System administrators can configure rules to prevent duplicate attendance entries for a single participant. This includes options to ensure uniqueness based on combinations of date, time, attendance type, and location, preventing data entry errors and ensuring data integrity.</p></li>
 <li><p><strong>Attendance History:</strong> Users can quickly retrieve a comprehensive attendance history for any participant, filtering by date ranges, attendance type, or location, providing a clear overview of their engagement.</p></li>
 </ul>
-</section>
-<section id="custom-attendance-types-and-locations">
+</div>
+<div class="section" id="custom-attendance-types-and-locations">
 <h3>Custom Attendance Types and Locations<a class="headerlink" href="#custom-attendance-types-and-locations" title="Permalink to this headline">#</a></h3>
 <p>To accommodate diverse program needs, the module allows for the definition of custom attendance types and locations.</p>
 <ul class="simple">
 <li><p><strong>Attendance Types:</strong> Organizations can define various types of attendance events (e.g., &quot;Training Session,&quot; &quot;Cash Distribution,&quot; &quot;Health Screening&quot;). Each type can have a name and description, allowing for clear classification of activities.</p></li>
 <li><p><strong>Attendance Locations:</strong> Users can establish a list of specific locations where attendance events occur (e.g., &quot;District Office A,&quot; &quot;Community Hall B&quot;). This helps in geographic tracking and reporting of program activities.</p></li>
 </ul>
-</section>
-<section id="external-system-integration">
+</div>
+<div class="section" id="external-system-integration">
 <h3>External System Integration<a class="headerlink" href="#external-system-integration" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_attendance</span></code> module supports integration with external systems for both data import and API-driven attendance management.</p>
 <ul class="simple">
 <li><p><strong>Secure API Access:</strong> Organizations can generate unique Client ID and Client Secret credentials for external applications. These credentials enable secure, authenticated access to the <code class="docutils literal notranslate"><span class="pre">spp_attendance</span></code> API, allowing external systems (e.g., mobile attendance capture apps) to submit new attendance records or query existing ones.</p></li>
 <li><p><strong>Registry Data Import:</strong> A dedicated wizard facilitates the import of participant data from external registries. This feature includes configurable mapping of fields (such as personal information, identifiers, and contact details) to ensure accurate and efficient synchronization of participant records into OpenSPP.</p></li>
 </ul>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Attendance module is essential for effectively managing and monitoring participant engagement within social protection programs, providing robust tools for recording, categorizing, and integrating attendance data across the OpenSPP platform.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

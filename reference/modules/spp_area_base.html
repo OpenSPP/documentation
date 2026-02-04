@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_area_base.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="area-management-base">
+  <div class="section" id="area-management-base">
 <h1>Area Management (Base)<a class="headerlink" href="#area-management-base" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Area Base module (<code class="docutils literal notranslate"><span class="pre">spp_area_base</span></code>) establishes the foundational framework for managing all geographical areas within the OpenSPP platform. It enables users to define, organize, and maintain a hierarchical structure of administrative regions, ensuring that all social protection programs and farmer registry data can be accurately linked to specific locations for effective targeting, delivery, and analysis.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module defines and manages the essential geographical data that underpins all OpenSPP operations. It provides the core capabilities to structure the physical world within the system, crucial for delivering targeted social protection.</p>
 <ul class="simple">
@@ -1673,41 +1660,41 @@ title="Print to PDF"
 <li><p><strong>Manages Comprehensive Area Data:</strong> Stores essential attributes for each area, including unique codes, official names (with multilingual support), alternative names, and geographical size.</p></li>
 <li><p><strong>Streamlines Large-Scale Data Entry:</strong> Offers powerful tools for importing extensive geographic datasets from external files, significantly reducing manual data entry for national or regional rollouts.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Area Base module is a fundamental component, integrating closely with core system functionalities and serving as a prerequisite for many other modules.</p>
 <p>This module relies on the <code class="docutils literal notranslate"><span class="pre">base</span></code> module for core OpenSPP functionalities and the <code class="docutils literal notranslate"><span class="pre">queue_job</span></code> module for efficient background processing. <code class="docutils literal notranslate"><span class="pre">queue_job</span></code> is critical for handling large-scale geographic data imports asynchronously, ensuring system responsiveness during extensive data operations.</p>
 <p>As a foundational module, <code class="docutils literal notranslate"><span class="pre">spp_area_base</span></code> provides the essential location data that other OpenSPP modules utilize. For instance, the registrant management module relies on this module to assign a physical address to each beneficiary, while program delivery modules use area data to define operational zones and target specific communities. This interconnectedness ensures a consistent and accurate geographic context across the entire OpenSPP platform.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="geographic-area-definition-and-management">
+<div class="section" id="geographic-area-definition-and-management">
 <h3>Geographic Area Definition and Management<a class="headerlink" href="#geographic-area-definition-and-management" title="Permalink to this headline">#</a></h3>
 <p>Users define and manage administrative areas in a clear, hierarchical structure, such as &quot;Country &gt; Province &gt; District &gt; Village.&quot; Each area is uniquely identified by a code and can have multiple names (including multilingual options), a parent area, and its size in square kilometers. The system ensures data integrity by validating parent-child relationships and preventing excessively deep hierarchies.</p>
-</section>
-<section id="area-type-categorization">
+</div>
+<div class="section" id="area-type-categorization">
 <h3>Area Type Categorization<a class="headerlink" href="#area-type-categorization" title="Permalink to this headline">#</a></h3>
 <p>The module allows for the categorization of areas by their &quot;kind&quot; or type, such as 'Administrative Area' or 'Program Zone'. These area types can also be organized hierarchically, providing a flexible way to classify and manage different sorts of geographic divisions within OpenSPP. This ensures consistent classification and clear understanding of each area's purpose.</p>
-</section>
-<section id="bulk-data-import-from-excel">
+</div>
+<div class="section" id="bulk-data-import-from-excel">
 <h3>Bulk Data Import from Excel<a class="headerlink" href="#bulk-data-import-from-excel" title="Permalink to this headline">#</a></h3>
 <p>For large-scale deployments, users can import entire geographic datasets using Excel files. The system processes these imports in the background, minimizing impact on system performance and automatically handling multilingual area names if provided in the file. This feature significantly accelerates the initial setup and updates of area data.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When importing data, ensure all required languages are active in the system. The import process validates language codes present in the Excel file against active languages in OpenSPP.</p>
 </div>
-</section>
-<section id="automated-data-validation-and-error-handling">
+</div>
+<div class="section" id="automated-data-validation-and-error-handling">
 <h3>Automated Data Validation and Error Handling<a class="headerlink" href="#automated-data-validation-and-error-handling" title="Permalink to this headline">#</a></h3>
 <p>During the import process, the module performs automated checks to ensure the quality and consistency of the geographic data. It verifies required fields, data types, and the logical consistency of parent-child relationships, flagging any errors for user review and correction. This robust validation process ensures that only accurate and complete data is integrated into the system.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Area Base module is critical for establishing and maintaining the precise geographic context essential for managing social protection programs and farmer registries within OpenSPP.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_entitlement_cash.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="cash-entitlement">
+  <div class="section" id="cash-entitlement">
 <h1>Cash Entitlement<a class="headerlink" href="#cash-entitlement" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Entitlement Cash module provides the essential framework for managing cash-based benefits within social protection programs. It enables administrators to define detailed calculation rules, automate the disbursement process, and meticulously track all financial payments to beneficiaries.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Entitlement Cash module streamlines the delivery of cash benefits, ensuring efficiency, transparency, and accountability in social protection programs. It accomplishes this by:</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Facilitating Secure Fund Disbursement</strong>: Integrates with financial systems to generate payment records and manage the transfer of funds, including accounting for any associated service fees.</p></li>
 <li><p><strong>Ensuring Financial Control</strong>: Incorporates checks for fund availability to prevent over-disbursement and maintains a clear audit trail of all cash transactions.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Entitlement Cash module integrates seamlessly with other core OpenSPP components and Odoo modules to provide its comprehensive functionality:</p>
 <ul class="simple">
@@ -1683,32 +1670,32 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="spp_programs.html"><span class="doc std std-doc">OpenSPP Programs</span></a></strong>: This module works in conjunction with <code class="docutils literal notranslate"><span class="pre">spp_programs</span></code> to offer a complete suite of entitlement management options. While <code class="docutils literal notranslate"><span class="pre">spp_programs</span></code> may introduce in-kind entitlements, <code class="docutils literal notranslate"><span class="pre">spp_entitlement_cash</span></code> provides the dedicated functionality for cash transfers, ensuring both types of benefits can be managed within the same platform.</p></li>
 <li><p><strong>Account (account)</strong>: Crucially, this module integrates with Odoo's standard accounting functionality. It generates <code class="docutils literal notranslate"><span class="pre">account.payment</span></code> records for approved entitlements, ensuring that all cash disbursements and service fees are properly recorded in the financial ledger.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Entitlement Cash module offers several key features to manage cash disbursements effectively:</p>
-<section id="dynamic-entitlement-rule-configuration">
+<div class="section" id="dynamic-entitlement-rule-configuration">
 <h3>Dynamic Entitlement Rule Configuration<a class="headerlink" href="#dynamic-entitlement-rule-configuration" title="Permalink to this headline">#</a></h3>
 <p>Users can define sophisticated rules for calculating cash entitlements. This includes specifying a base <strong>Amount per cycle</strong> and applying a <strong>Condition Domain</strong> (e.g., <code class="docutils literal notranslate"><span class="pre">[('is_woman_headed_household,</span> <span class="pre">'=',</span> <span class="pre">True)]</span></code>) to target specific beneficiary groups. Additionally, a <strong>Multiplier</strong> field can be selected from beneficiary data (e.g., number of children) to scale the entitlement, with an optional <strong>Maximum number</strong> to cap the multiplier. An overall <strong>Maximum Amount</strong> can also be set for any individual entitlement, overriding calculated sums if exceeded.</p>
-</section>
-<section id="automated-entitlement-processing">
+</div>
+<div class="section" id="automated-entitlement-processing">
 <h3>Automated Entitlement Processing<a class="headerlink" href="#automated-entitlement-processing" title="Permalink to this headline">#</a></h3>
 <p>Once rules are defined, the module automatically processes and generates individual cash entitlements for eligible beneficiaries within a program cycle. It evaluates each beneficiary against the specified conditions and multipliers to determine their initial entitlement amount. The system then creates draft entitlement records, ready for review and further action.</p>
-</section>
-<section id="workflow-for-validation-and-approval">
+</div>
+<div class="section" id="workflow-for-validation-and-approval">
 <h3>Workflow for Validation and Approval<a class="headerlink" href="#workflow-for-validation-and-approval" title="Permalink to this headline">#</a></h3>
 <p>The module provides a structured workflow for moving entitlements from a draft state through validation to final approval. Designated user groups, specified in the <strong>Entitlement Validation Group</strong>, can review pending entitlements. During approval, the system automatically checks the program's fund balance to ensure sufficient funds are available before generating the necessary financial transactions in the accounting module. This process includes the creation of separate payment entries for the main disbursement and any incurred service fees.</p>
-</section>
-<section id="entitlement-tracking-and-cancellation">
+</div>
+<div class="section" id="entitlement-tracking-and-cancellation">
 <h3>Entitlement Tracking and Cancellation<a class="headerlink" href="#entitlement-tracking-and-cancellation" title="Permalink to this headline">#</a></h3>
 <p>Administrators can monitor the status of all cash entitlements within a program cycle, viewing them as draft, pending validation, approved, or cancelled. The module also supports the cancellation of entitlements that are no longer valid or required, updating their status and ensuring an accurate record of all benefit allocations.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Entitlement Cash module is a vital component of OpenSPP, providing robust and flexible capabilities for the precise and auditable delivery of cash-based social protection benefits to beneficiaries.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

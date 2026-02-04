@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_eligibility_sql.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="sql-query-eligibility-manager">
+  <div class="section" id="sql-query-eligibility-manager">
 <h1>SQL Query Eligibility Manager<a class="headerlink" href="#sql-query-eligibility-manager" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Eligibility Sql module enables program administrators to define and manage complex program eligibility criteria using custom SQL queries. This provides a highly flexible and automated mechanism for identifying and enrolling beneficiaries within OpenSPP programs.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module significantly enhances OpenSPP's ability to manage social protection programs by:</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Facilitating Dynamic Program Adaptation</strong>: Provides the agility to modify eligibility conditions as program policies change, simply by updating the SQL query.</p></li>
 <li><p><strong>Integrating with Program Management</strong>: Seamlessly integrates with program creation and cycle management, allowing for the direct application of SQL-based eligibility during program setup and ongoing operations.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The 'spp_eligibility_sql' module integrates with several core OpenSPP components to deliver its functionality:</p>
 <ul class="simple">
@@ -1682,36 +1669,36 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">G2P Programs</span></a></strong>: The module extends the core program management capabilities of G2P Programs. It adds 'SQL-based Eligibility' as a selectable option within the eligibility manager, allowing programs to utilize custom SQL for beneficiary determination.</p></li>
 <li><p><strong><a class="reference internal" href="spp_programs.html"><span class="doc std std-doc">OpenSPP Programs</span></a></strong>: Building upon G2P Programs, this module provides a dedicated function to create new OpenSPP programs directly with an associated SQL eligibility query, alongside other program parameters like entitlement types (e.g., cash or in-kind).</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The 'spp_eligibility_sql' module offers several key features for defining and managing program eligibility:</p>
-<section id="sql-query-definition-and-management">
+<div class="section" id="sql-query-definition-and-management">
 <h3>SQL Query Definition and Management<a class="headerlink" href="#sql-query-definition-and-management" title="Permalink to this headline">#</a></h3>
 <p>Administrators can directly input custom SQL queries into the system to define eligibility criteria. The module tracks the status of these queries, marking them as 'Needs Re-checking' whenever modifications are made, ensuring that validation is always up-to-date. For security, the system prevents the execution of data manipulation language (DML) commands like <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>, <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>, or <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> within eligibility queries.</p>
-</section>
-<section id="query-validation-and-testing">
+</div>
+<div class="section" id="query-validation-and-testing">
 <h3>Query Validation and Testing<a class="headerlink" href="#query-validation-and-testing" title="Permalink to this headline">#</a></h3>
 <p>A dedicated &quot;Test Query&quot; feature allows users to validate the syntax and expected output of their SQL queries. Upon validation, the system provides immediate feedback on the query's status (e.g., 'Valid', 'Invalid', 'Needs Re-checking') and any associated error messages. It also displays the number of registrants the query identifies, helping administrators confirm their eligibility logic before enrollment.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For a query to be considered valid for eligibility, it must return the <code class="docutils literal notranslate"><span class="pre">id</span></code> field from the <code class="docutils literal notranslate"><span class="pre">res_partner</span></code> model, representing the unique identifier of each registrant.</p>
 </div>
-</section>
-<section id="automated-beneficiary-identification-and-enrollment">
+</div>
+<div class="section" id="automated-beneficiary-identification-and-enrollment">
 <h3>Automated Beneficiary Identification and Enrollment<a class="headerlink" href="#automated-beneficiary-identification-and-enrollment" title="Permalink to this headline">#</a></h3>
 <p>Once a SQL query is validated, the module can execute it to identify all eligible registrants. These identified registrants can then be automatically imported into the program as beneficiaries. The system efficiently handles large volumes of registrants, processing imports asynchronously to maintain system performance. This automation significantly reduces manual effort and potential errors in beneficiary selection.</p>
-</section>
-<section id="program-creation-with-sql-eligibility">
+</div>
+<div class="section" id="program-creation-with-sql-eligibility">
 <h3>Program Creation with SQL Eligibility<a class="headerlink" href="#program-creation-with-sql-eligibility" title="Permalink to this headline">#</a></h3>
 <p>The module allows for the direct creation of new programs with SQL-based eligibility. During program setup, administrators can specify the custom SQL query along with other program details like its name, target type (individual or group), and entitlement kind. This streamlines the setup of complex programs that require highly specific eligibility criteria from the outset.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Eligibility Sql module is a powerful tool that provides unparalleled flexibility for defining and automating beneficiary eligibility, making it an essential component for managing diverse social protection programs within OpenSPP.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

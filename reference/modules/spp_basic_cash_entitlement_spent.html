@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_basic_cash_entitlement_spent.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1650,10 +1637,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="program-entitlement-basic-cash-spent">
+  <div class="section" id="program-entitlement-basic-cash-spent">
 <h1>Program Entitlement Basic Cash Spent<a class="headerlink" href="#program-entitlement-basic-cash-spent" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Basic Cash Entitlement Spent module provides essential functionality for tracking how beneficiaries utilize the cash allocated to them within social protection programs. It records expenditures, calculates remaining balances, and supports ongoing program monitoring.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module is designed to bring greater transparency and accountability to cash transfer programs by meticulously tracking beneficiary spending. It empowers program managers with the tools to:</p>
 <ul class="simple">
@@ -1663,8 +1650,8 @@ title="Print to PDF"
 <li><p><strong>Ensure Financial Accountability</strong>: Verify that disbursed funds are being utilized as intended by beneficiaries.</p></li>
 <li><p><strong>Inform Program Adjustments</strong>: Offer insights into spending patterns that can help refine future program design and delivery.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_basic_cash_entitlement_spent</span></code> module integrates seamlessly with core OpenSPP components to extend their functionality for cash-based programs.</p>
 <ul class="simple">
@@ -1672,28 +1659,28 @@ title="Print to PDF"
 <li><p><strong>G2P Registry Base (g2p_registry_base)</strong>: This module relies on the foundational registrant data provided by <code class="docutils literal notranslate"><span class="pre">g2p_registry_base</span></code> to identify the beneficiaries to whom entitlements are allocated and tracked. It ensures that spending records are correctly linked to specific individuals or households.</p></li>
 <li><p><strong>G2P Programs (g2p_programs)</strong>: Crucially, this module extends the <code class="docutils literal notranslate"><span class="pre">g2p.entitlement</span></code> model defined within <code class="docutils literal notranslate"><span class="pre">g2p_programs</span></code>. It adds the specific fields and logic necessary to track cash spending against the entitlements established by the programs module.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>This module introduces key capabilities to manage the spending aspect of cash entitlements effectively.</p>
-<section id="tracking-entitlement-expenditure">
+<div class="section" id="tracking-entitlement-expenditure">
 <h3>Tracking Entitlement Expenditure<a class="headerlink" href="#tracking-entitlement-expenditure" title="Permalink to this headline">#</a></h3>
 <p>Users can record the precise amount of cash a beneficiary has spent from their allocated entitlement. This feature enables program administrators to maintain an accurate and up-to-date record of funds utilization, moving beyond just disbursement to actual expenditure tracking.</p>
-</section>
-<section id="automated-balance-calculation">
+</div>
+<div class="section" id="automated-balance-calculation">
 <h3>Automated Balance Calculation<a class="headerlink" href="#automated-balance-calculation" title="Permalink to this headline">#</a></h3>
 <p>The module automatically calculates the remaining balance for each entitlement. By subtracting the recorded <code class="docutils literal notranslate"><span class="pre">spent_amount</span></code> from the <code class="docutils literal notranslate"><span class="pre">initial_amount</span></code> of the entitlement, it provides an immediate and accurate view of available funds, essential for beneficiaries and program managers alike.</p>
-</section>
-<section id="enhanced-program-monitoring">
+</div>
+<div class="section" id="enhanced-program-monitoring">
 <h3>Enhanced Program Monitoring<a class="headerlink" href="#enhanced-program-monitoring" title="Permalink to this headline">#</a></h3>
 <p>By integrating spending data with entitlement information, the module significantly enhances program monitoring capabilities. Program managers gain insights into the rate at which beneficiaries are utilizing their cash benefits, helping to identify trends, potential issues, and areas for support. This data is vital for assessing program effectiveness and beneficiary needs.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Basic Cash Entitlement Spent module is vital for ensuring financial accountability and enabling effective, real-time monitoring of cash transfers within OpenSPP's social protection programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

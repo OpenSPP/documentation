@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_mis_importer.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1668,10 +1655,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-mis-importer">
+  <div class="section" id="g2p-mis-importer">
 <h1>G2P Mis Importer<a class="headerlink" href="#g2p-mis-importer" title="Permalink to this headline">#</a></h1>
 <p>The G2P MIS Importer module facilitates the automated synchronization of beneficiary and group data from an external Management Information System (MIS) into OpenSPP. It ensures that OpenSPP's registrant records are consistently updated with the latest information from an authoritative external source, streamlining data management for social protection programs.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The module is designed to bridge the gap between external data sources and OpenSPP's internal registry, accomplishing several key objectives:</p>
 <ul class="simple">
@@ -1680,8 +1667,8 @@ title="Print to PDF"
 <li><p><strong>Centralized Program Registrations</strong>: Integrates external program enrollment details directly into OpenSPP's program management framework, linking beneficiaries to specific programs defined within the platform.</p></li>
 <li><p><strong>Reduce Manual Effort</strong>: Eliminates the need for manual data entry or complex reconciliation processes, saving time and minimizing human error in managing large datasets of program participants.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module works in conjunction with other OpenSPP components to deliver its functionality:</p>
 <ul class="simple">
@@ -1689,35 +1676,35 @@ title="Print to PDF"
 <li><p><strong>Queue Job</strong>: The module leverages the Queue Job system to schedule and execute data import tasks asynchronously. This enables large data synchronizations to run efficiently in the background without impacting user performance or system responsiveness.</p></li>
 <li><p><strong>Core OpenSPP Registrant Models</strong>: The module directly populates and updates <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> records, which serve as the foundation for individual and group registrants within OpenSPP's G2P Registry. This ensures that all imported data contributes to a unified beneficiary database, accessible across the platform.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="external-system-configuration">
+<div class="section" id="external-system-configuration">
 <h3>External System Configuration<a class="headerlink" href="#external-system-configuration" title="Permalink to this headline">#</a></h3>
 <p>Users configure the connection details for the external MIS within OpenSPP. This setup involves specifying the API endpoints for data retrieval, secure login, and logout, along with authentication credentials such as database name, username, and password. This configuration is essential for establishing a secure and functional link to the external system.</p>
-</section>
-<section id="scheduled-data-synchronization">
+</div>
+<div class="section" id="scheduled-data-synchronization">
 <h3>Scheduled Data Synchronization<a class="headerlink" href="#scheduled-data-synchronization" title="Permalink to this headline">#</a></h3>
 <p>The module enables administrators to set up automated, recurring data imports from the external MIS. Users can define the synchronization frequency, for example, every 10 minutes, and the system then automatically pulls new or updated beneficiary and group records, ensuring OpenSPP always has the latest information.</p>
-</section>
-<section id="registrant-and-group-data-import">
+</div>
+<div class="section" id="registrant-and-group-data-import">
 <h3>Registrant and Group Data Import<a class="headerlink" href="#registrant-and-group-data-import" title="Permalink to this headline">#</a></h3>
 <p>It imports comprehensive data for both individual registrants and groups into OpenSPP. For individuals, this includes names, various identification documents, phone numbers, email addresses, physical addresses, bank account details, and demographic information such as gender and birthdate. For groups, it imports group-specific details, manages their membership information, and links individual members to their respective groups within OpenSPP.</p>
-</section>
-<section id="incremental-updates">
+</div>
+<div class="section" id="incremental-updates">
 <h3>Incremental Updates<a class="headerlink" href="#incremental-updates" title="Permalink to this headline">#</a></h3>
 <p>To optimize performance and resource usage, the module is designed to import only new records or update existing ones that have changed since the last synchronization. It tracks the last update timestamp from the external system, preventing unnecessary re-import of unchanged data and ensuring efficient data management.</p>
-</section>
-<section id="connection-testing">
+</div>
+<div class="section" id="connection-testing">
 <h3>Connection Testing<a class="headerlink" href="#connection-testing" title="Permalink to this headline">#</a></h3>
 <p>Before initiating full data synchronization, users can perform a connection test to the external MIS. This verifies that the configured API URLs and authentication credentials are correct and that OpenSPP can successfully communicate with the external system, providing immediate feedback on connectivity status.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P MIS Importer module is essential for seamlessly integrating external program and beneficiary data into OpenSPP, ensuring data consistency and automating the synchronization of critical information for social protection programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_pos.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1650,10 +1637,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="pos">
+  <div class="section" id="pos">
 <h1>POS<a class="headerlink" href="#pos" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Pos module extends the standard Odoo Point of Sale (POS) system to facilitate the secure and efficient redemption of social protection entitlements. It integrates directly with OpenSPP's entitlement management system, allowing beneficiaries to redeem their benefits at participating retail locations.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_pos</span></code> module provides a critical link between social protection programs and beneficiaries at the point of transaction. It enables the seamless and controlled distribution of benefits through retail channels.</p>
 <ul class="simple">
@@ -1663,8 +1650,8 @@ title="Print to PDF"
 <li><p><strong>Controlled Product Access</strong>: Designates specific products that can only be purchased using entitlements, ensuring that program funds are spent according to program rules. For example, a food assistance program can ensure funds are used only for approved food items.</p></li>
 <li><p><strong>Enhanced Beneficiary Service</strong>: Provides a quick and transparent mechanism for beneficiaries to access their benefits, improving their experience and trust in the program.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_pos</span></code> module integrates with key OpenSPP and Odoo modules to provide its functionality:</p>
 <ul class="simple">
@@ -1673,36 +1660,36 @@ title="Print to PDF"
 <li><p><strong>G2P Programs (<code class="docutils literal notranslate"><span class="pre">g2p_programs</span></code>)</strong>: This is a crucial dependency as <code class="docutils literal notranslate"><span class="pre">spp_pos</span></code> is designed to redeem <code class="docutils literal notranslate"><span class="pre">g2p.entitlement</span></code> records, which are generated and managed by the <code class="docutils literal notranslate"><span class="pre">g2p_programs</span></code> module. <code class="docutils literal notranslate"><span class="pre">spp_pos</span></code> provides the final step in the entitlement lifecycle by enabling their consumption.</p></li>
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_pos</span></code> module serves as the operational interface for the final delivery of benefits defined and managed by the <code class="docutils literal notranslate"><span class="pre">g2p_programs</span></code> module, ensuring that the entitlements created can be effectively utilized by beneficiaries.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_pos</span></code> module introduces several key features to manage entitlement redemptions:</p>
-<section id="entitlement-redemption-workflow">
+<div class="section" id="entitlement-redemption-workflow">
 <h3>Entitlement Redemption Workflow<a class="headerlink" href="#entitlement-redemption-workflow" title="Permalink to this headline">#</a></h3>
 <p>POS operators can initiate an entitlement redemption by scanning or manually entering an entitlement code (e.g., a QR code or alphanumeric string). The system then performs a real-time lookup against the <code class="docutils literal notranslate"><span class="pre">g2p.entitlement</span></code> records, verifying the entitlement's validity and available amount. If valid, the entitlement's value is applied to the POS transaction, and the entitlement status is updated accordingly. If the entitlement is invalid or does not exist, the POS operator receives an immediate notification.</p>
-</section>
-<section id="dedicated-entitlement-products-and-categories">
+</div>
+<div class="section" id="dedicated-entitlement-products-and-categories">
 <h3>Dedicated Entitlement Products and Categories<a class="headerlink" href="#dedicated-entitlement-products-and-categories" title="Permalink to this headline">#</a></h3>
 <p>To clearly distinguish entitlement-based transactions from regular sales, the module introduces a specific product template and a dedicated POS category. This allows for:</p>
 <ul class="simple">
 <li><p><strong>Clear Identification</strong>: A designated &quot;Entitlement Product&quot; simplifies the POS interface for operators when processing entitlement redemptions.</p></li>
 <li><p><strong>Organized Reporting</strong>: Separating entitlement-related items into their own category helps in financial tracking and reporting for social protection programs.</p></li>
 </ul>
-</section>
-<section id="product-locking-for-entitlement-use">
+</div>
+<div class="section" id="product-locking-for-entitlement-use">
 <h3>Product Locking for Entitlement Use<a class="headerlink" href="#product-locking-for-entitlement-use" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_pos</span></code> module adds an <code class="docutils literal notranslate"><span class="pre">is_locked</span></code> field to <code class="docutils literal notranslate"><span class="pre">product.template</span></code> records. This allows administrators to mark specific products as &quot;locked,&quot; meaning they can only be purchased using a valid entitlement and cannot be bought with standard payment methods like cash or card. This feature is vital for:</p>
 <ul class="simple">
 <li><p><strong>Program Compliance</strong>: Ensures that program funds are used exclusively for their intended purpose, such as specific food items or educational supplies.</p></li>
 <li><p><strong>Fraud Prevention</strong>: Prevents the misuse or unauthorized sale of subsidized goods, maintaining the integrity of the social protection program.</p></li>
 </ul>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Pos module is essential for the last-mile delivery of social protection benefits, providing a secure, efficient, and controlled mechanism for beneficiaries to redeem their entitlements at the point of sale.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_program_cycleless.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-program-cycleless">
+  <div class="section" id="g2p-program-cycleless">
 <h1>G2P Program Cycleless<a class="headerlink" href="#g2p-program-cycleless" title="Permalink to this headline">#</a></h1>
 <p>The 'G2P Program Cycleless' module extends OpenSPP's G2P Programs functionality to support social protection initiatives that operate without distinct, time-bound program cycles. It simplifies the management of ongoing programs by automating cycle-related processes, allowing for continuous benefit delivery and streamlined operations.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module enables OpenSPP to manage programs that deliver continuous support, eliminating the administrative overhead of managing explicit program cycles. It accomplishes this by:</p>
 <ul class="simple">
@@ -1671,8 +1658,8 @@ title="Print to PDF"
 <li><p><strong>Direct Payment Execution</strong>: Provides immediate access to payment preparation and sending functionalities directly from the program's dashboard. This accelerates the disbursement process for programs with continuous payment flows.</p></li>
 <li><p><strong>Supporting Diverse Program Models</strong>: Facilitates the implementation of programs such as ongoing cash transfers, unconditional basic income schemes, or reimbursement programs, which do not naturally fit a cycle-based structure.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module primarily extends the core capabilities of the <a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">G2P Programs</span></a> module. It integrates by:</p>
 <ul class="simple">
@@ -1680,31 +1667,31 @@ title="Print to PDF"
 <li><p><strong>Modifying Program Management</strong>: It enhances the <code class="docutils literal notranslate"><span class="pre">g2p.program.manager.default</span></code> model to automatically create and maintain a default active cycle when a program is marked as cycleless, ensuring continuous operation without user intervention.</p></li>
 <li><p><strong>Streamlining Entitlement Views</strong>: It integrates with the <code class="docutils literal notranslate"><span class="pre">g2p.program.entitlement.manager.default</span></code> model to ensure that entitlement views are simplified and directly tied to the program's continuous state, rather than a specific cycle.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="continuous-program-management">
+<div class="section" id="continuous-program-management">
 <h3>Continuous Program Management<a class="headerlink" href="#continuous-program-management" title="Permalink to this headline">#</a></h3>
 <p>By marking a program with the 'Is Cycleless' option, administrators transform its operational model. The system automatically handles the underlying concept of a 'default active cycle', making it transparent to the user. This means that an active program is always ready for entitlement generation and payment processing, without the need for manual cycle setup or transitions.</p>
-</section>
-<section id="simplified-entitlement-processing">
+</div>
+<div class="section" id="simplified-entitlement-processing">
 <h3>Simplified Entitlement Processing<a class="headerlink" href="#simplified-entitlement-processing" title="Permalink to this headline">#</a></h3>
 <p>For cycleless programs, the system presents entitlements directly under the program, removing the need to navigate through specific program cycles. The &quot;Entitlements&quot; section on the program dashboard will display all current entitlements associated with the program's continuous operation. Furthermore, for programs specifically designated as 'Reimbursement Programs', the entitlement section will be intuitively labeled &quot;Reimbursements&quot; for clearer context.</p>
-</section>
-<section id="direct-payment-workflows">
+</div>
+<div class="section" id="direct-payment-workflows">
 <h3>Direct Payment Workflows<a class="headerlink" href="#direct-payment-workflows" title="Permalink to this headline">#</a></h3>
 <p>This module introduces &quot;Prepare Payments&quot; and &quot;Send Payments&quot; buttons directly on the active cycleless program's dashboard. This allows program managers to initiate payment processes without first selecting a specific cycle. The system automatically applies these actions to the program's continuous active state, significantly speeding up the payment workflow for ongoing benefit distributions.</p>
-</section>
-<section id="flexible-program-models">
+</div>
+<div class="section" id="flexible-program-models">
 <h3>Flexible Program Models<a class="headerlink" href="#flexible-program-models" title="Permalink to this headline">#</a></h3>
 <p>The module also enhances support for various program types. For example, if a program is designated as a reimbursement program, the user interface will automatically adjust to use terms like &quot;Reimbursements&quot; instead of &quot;Entitlements,&quot; providing a more tailored and intuitive experience for specific program designs.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The 'G2P Program Cycleless' module simplifies the administration of ongoing social protection programs in OpenSPP by enabling continuous operation and automating cycle management, thereby enhancing efficiency and program responsiveness.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

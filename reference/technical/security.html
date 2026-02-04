@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/technical/security.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1620,7 +1607,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="security-implementations-practices">
+  <div class="section" id="security-implementations-practices">
 <h1>Security implementations &amp; practices<a class="headerlink" href="#security-implementations-practices" title="Permalink to this headline">#</a></h1>
 <p>This page delves into the implementation and practices of OpenSPP, highlighting its adherence to the principles of zero-trust architecture, user <a class="reference internal" href="../glossary.html#term-Authentication"><span class="xref std std-term">authentication</span></a>, input/output validation, session management, cryptographic management, file management, and robust logging.</p>
 <p>OpenSPP has been designed around the zero-trust architecture principle. This principle involves the fundamental premise of not automatically trusting anything inside or outside its perimeters. Instead, it verifies everything trying to connect to its systems before granting access. This approach fortifies OpenSPP's security framework, protecting it from both internal and external threats.</p>
@@ -1632,15 +1619,15 @@ title="Print to PDF"
 <p>As for file management, OpenSPP whitelists file formats and limits file sizes for uploaded documents, ensuring system efficiency and security. Additionally, OpenSPP is designed not to store confidential data while logging, safeguarding sensitive information from potential exposure.</p>
 <p>OpenSPP has a configurable logging mechanism covering all assets, with selectable log levels per configurations. This robust logging mechanism is integral to the platform's security strategy, offering valuable insights into system activities.</p>
 <p>OpenSPP is committed to maintaining its security posture by conducting regular vulnerability assessments and penetration testing (VAPT) of its applications, APIs, and infrastructure. Security assessments are carried out during the development stage and post-deployment, ensuring that the platform consistently adheres to the highest security standards.</p>
-<section id="privacy">
+<div class="section" id="privacy">
 <h2>Privacy<a class="headerlink" href="#privacy" title="Permalink to this headline">#</a></h2>
 <p>The following section elaborates on OpenSPP's consent management framework and its emphasis on <a class="reference internal" href="../glossary.html#term-Data-privacy"><span class="xref std std-term">data privacy</span></a> principles.</p>
 <p>A comprehensive consent management framework lies at the core of OpenSPP’s user-centric approach. This built-in mechanism ensures that user consent is sought, stored, and managed appropriately. By actively incorporating user consent into its operations, OpenSPP ensures that users retain control over their data, fostering trust and transparency.</p>
 <p>OpenSPP promotes the conduct of regular privacy risk assessments. These assessments identify potential privacy risks and provide insights into how to mitigate them. Regular assessments not only uphold the integrity of the system but also instill confidence among users regarding safeguarding their data.</p>
 <p>OpenSPP adheres to the principles of data minimization, where it is designed to collect only the minimum amount of data necessary to fulfill a given task. This principle is integral to OpenSPP's data handling policy and ensures that unnecessary or excessive data is not collected or retained. This strategy reduces the potential exposure of user data, thereby enhancing the privacy protection OpenSPP offers.</p>
 <p>Recognizing the importance of the right to be forgotten, OpenSPP has mechanisms to cater to requests for data deletion or anonymization. This feature empowers users to control their data post-submission and significantly reinforces user trust in the system.</p>
-</section>
-<section id="data">
+</div>
+<div class="section" id="data">
 <h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h2>
 <p>One of the core facets of OpenSPP's design is its robust approach toward data management and security. This section provides a detailed exploration of how OpenSPP handles various aspects of data, emphasizing its commitment to integrity, security, and efficiency.</p>
 <p>Data anonymization is a fundamental principle that OpenSPP aligns with, taking substantial measures to protect sensitive and identifiable data. The solution incorporates various principles such as minimizing identifiability, protecting sensitive data, ensuring data security, and implementing constant data monitoring. However, OpenSPP acknowledges that there's a need for more extensive implementation of data anonymization principles. Strategies, including data masking and randomization, are planned for future deployment, fortifying OpenSPP's commitment to preserving data privacy.</p>
@@ -1648,10 +1635,10 @@ title="Print to PDF"
 <p>OpenSPP is built with a strong emphasis on data security and integrity. The solution supports encryption for data both at rest and in motion, which prevents unauthorized access and ensures data confidentiality. Measures such as strong authentication, access control, data backup, and recovery plans, along with regular monitoring and auditing of data, are implemented to guarantee data integrity. OpenSPP plans to implement additional data integrity checks like checksums, hashes, and digital signatures, further enhancing the security framework.</p>
 <p>Security for data-in-motion is achieved through support for Transport Layer Security (TLS) via encryption, authentication, and access control. The solution can also support advanced protective measures like intrusion detection systems (IDS) and network segmentation based on the specific deployment requirements of the country.</p>
 <p>The solution is designed to handle varying data demands, including scenarios of low latency-high volume and vice versa. This flexibility ensures optimal system performance regardless of the use case or business/implementation requirements, enabling OpenSPP to cater to various scenarios.</p>
-</section>
-</section>
+</div>
+</div>
 <hr class="docutils" />
-<section id="security-architecture">
+<div class="section" id="security-architecture">
 <h1>Security architecture<a class="headerlink" href="#security-architecture" title="Permalink to this headline">#</a></h1>
 <p><img alt="" src="../../_images/security_architecture.jpg" /></p>
 <p>The OpenSPP platform can operate in a cloud environment as well as an on-prem environment while ensuring security and management across several key security domains, as listed below,</p>
@@ -1678,7 +1665,7 @@ title="Print to PDF"
 <li><p><strong>Red Teaming:</strong> This critical security practice involves challenging the platform’s defenses by simulating sophisticated cyber-attacks, ensuring vulnerabilities are identified and mitigated proactively.</p></li>
 </ol>
 <p>Each domain is interconnected and plays a crucial role in maintaining the integrity and resilience of the OpenSPP platform. At the foundational layer, these security domains are influenced by the specific country's context. The implementation of security measures varies, with some being fully realized and others partially, all driven by the unique requirements of each country.</p>
-</section>
+</div>
 
 
               </div>

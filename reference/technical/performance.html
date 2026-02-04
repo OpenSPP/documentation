@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/technical/performance.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1626,30 +1613,30 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="performance-optimization">
+  <div class="section" id="performance-optimization">
 <h1>Performance optimization<a class="headerlink" href="#performance-optimization" title="Permalink to this headline">#</a></h1>
 <p>In large-scale deployment of OpenSPP, performance optimization is pivotal. This article presents several key areas that architects &amp; developers should focus on to enhance the performance of their deployment of OpenSPP. These areas include various strategies to ensure smoother operations.</p>
-<section id="indexing">
+<div class="section" id="indexing">
 <h2>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">#</a></h2>
 <p>Indexing plays a crucial role in optimizing database queries. By creating indexes on columns frequently used in search queries, the database can retrieve data more efficiently. This is particularly vital in large-scale applications where databases can become vast and complex. Proper indexing reduces the data scanned during a query, leading to faster response times and reduced load on the database server.</p>
-</section>
-<section id="caching">
+</div>
+<div class="section" id="caching">
 <h2>Caching<a class="headerlink" href="#caching" title="Permalink to this headline">#</a></h2>
 <p>Caching is a technique used to store frequently accessed data in a separate database runs on memory. It significantly reduces the load on the database and improves the application's response time. There are various caching strategies, such as in-memory caching or distributed caching, which can be employed based on the application's needs and the nature of the data. Currently, we recommended to use Redis for large scale deployments.</p>
-</section>
-<section id="database-maintenance">
+</div>
+<div class="section" id="database-maintenance">
 <h2>Database maintenance<a class="headerlink" href="#database-maintenance" title="Permalink to this headline">#</a></h2>
 <p>Regular database maintenance is essential for ensuring optimal performance. This includes tasks such as updating statistics, rebuilding indexes, and cleaning up via vacuum in Postgres. These tasks help in keeping the database operations smooth and efficient, thereby enhancing the overall performance of the application.</p>
-</section>
-<section id="code-optimizations">
+</div>
+<div class="section" id="code-optimizations">
 <h2>Code optimizations<a class="headerlink" href="#code-optimizations" title="Permalink to this headline">#</a></h2>
 <p>Optimizing the codebase is another critical aspect of performance enhancement. This involves refactoring inefficient code, reducing complexities, and eliminating unnecessary computations. Developers should adopt best practices such as writing clean, concise code, using efficient algorithms and reducing unnecessary looping.</p>
-</section>
-<section id="conclusion">
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>In conclusion, performance optimization in deployments is multifaceted, encompassing various technical aspects such as indexing, caching, database maintenance, code optimizations, etc. By paying attention to these areas, architects and developers can significantly enhance the efficiency and responsiveness.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

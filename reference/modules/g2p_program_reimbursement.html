@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_program_reimbursement.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-program-reimbursement">
+  <div class="section" id="g2p-program-reimbursement">
 <h1>G2P Program Reimbursement<a class="headerlink" href="#g2p-program-reimbursement" title="Permalink to this headline">#</a></h1>
 <p>The G2P Program Reimbursement module extends OpenSPP's core G2P Programs functionality to manage programs specifically designed for reimbursing beneficiaries or service providers for eligible expenses. It streamlines the process of submitting, tracking, and processing reimbursement claims.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module provides a robust framework for managing programs where financial assistance is provided as a reimbursement for incurred costs, rather than a direct upfront payment. It enables OpenSPP users to:</p>
 <ul class="simple">
@@ -1671,39 +1658,39 @@ title="Print to PDF"
 <li><p><strong>Manage Service Provider Eligibility:</strong> Adapt eligibility criteria to include service providers (e.g., healthcare facilities, educational institutions) as potential beneficiaries for services rendered.</p></li>
 <li><p><strong>Tailor Program Workflows:</strong> Adjust program and cycle management views to reflect the unique requirements and data points relevant to reimbursement processes.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The G2P Program Reimbursement module seamlessly integrates with and extends core OpenSPP components:</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">g2p_programs</span></code></strong>: This is the foundational module for defining and managing all social protection programs, cycles, and entitlements. The G2P Program Reimbursement module builds directly upon <code class="docutils literal notranslate"><span class="pre">g2p_programs</span></code> by introducing the concept of reimbursement programs and modifying how entitlements and cycles are handled within that context. It extends models like <code class="docutils literal notranslate"><span class="pre">g2p.program</span></code>, <code class="docutils literal notranslate"><span class="pre">g2p.cycle</span></code>, and <code class="docutils literal notranslate"><span class="pre">g2p.entitlement</span></code> to support reimbursement-specific fields and logic.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">g2p_program_assessment</span></code></strong>: While not directly altering its functionality, this module ensures that any assessment capabilities provided by <code class="docutils literal notranslate"><span class="pre">g2p_program_assessment</span></code> are available for the original entitlements that may later become eligible for reimbursement. This ensures a consistent assessment framework across all entitlement types.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="reimbursement-program-configuration">
+<div class="section" id="reimbursement-program-configuration">
 <h3>Reimbursement Program Configuration<a class="headerlink" href="#reimbursement-program-configuration" title="Permalink to this headline">#</a></h3>
 <p>Administrators can easily designate any program as a &quot;reimbursement program&quot; through a simple setting. This flag automatically adjusts system behavior for that program, enabling specific reimbursement workflows. Furthermore, an administrator can link a reimbursement program to an <em>original</em> program, defining which program's entitlements are eligible for reimbursement under the new scheme.</p>
-</section>
-<section id="streamlined-reimbursement-claim-submission">
+</div>
+<div class="section" id="streamlined-reimbursement-claim-submission">
 <h3>Streamlined Reimbursement Claim Submission<a class="headerlink" href="#streamlined-reimbursement-claim-submission" title="Permalink to this headline">#</a></h3>
 <p>The module provides a clear process for submitting reimbursement claims. Users can initiate a claim against an existing, valid original entitlement by providing details such as the partner (beneficiary or service provider), the original entitlement's unique code, the claimed amount, and any associated supporting documents. The system then automatically creates a new reimbursement entitlement, linking it to the original for complete traceability.</p>
-</section>
-<section id="adapted-eligibility-for-service-providers">
+</div>
+<div class="section" id="adapted-eligibility-for-service-providers">
 <h3>Adapted Eligibility for Service Providers<a class="headerlink" href="#adapted-eligibility-for-service-providers" title="Permalink to this headline">#</a></h3>
 <p>Unlike standard G2P programs that focus on individual or household beneficiaries, reimbursement programs often involve payments to service providers. This module intelligently adapts the eligibility criteria for reimbursement programs to identify and manage these service providers, ensuring that the correct entities are targeted for payments. For example, a program reimbursing medical expenses would target healthcare providers as eligible entities.</p>
-</section>
-<section id="enhanced-entitlement-visibility-and-tracking">
+</div>
+<div class="section" id="enhanced-entitlement-visibility-and-tracking">
 <h3>Enhanced Entitlement Visibility and Tracking<a class="headerlink" href="#enhanced-entitlement-visibility-and-tracking" title="Permalink to this headline">#</a></h3>
 <p>Reimbursement entitlements are clearly marked within the system and display a direct link to the &quot;Original Entitlement of this Reimbursement.&quot; This provides an immediate understanding of the claim's origin. The system also automatically suggests a &quot;Recommended amount&quot; for reimbursement, typically derived from the initial amount of the original entitlement, aiding in efficient claim processing.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Program Reimbursement module is essential for OpenSPP implementations that require managing social protection programs involving the reimbursement of eligible expenses, providing a dedicated and integrated solution for these specialized workflows.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

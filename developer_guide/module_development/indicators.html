@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Indicators" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Indicators" name="title" />
 <meta content="Guide to creating and managing custom indicators in OpenSPP for eligibility checking, reporting, and program analysis" name="description" />
 <meta content="OpenSPP, indicators, custom indicators, eligibility, reporting, program analysis, module development" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/module_development/indicators.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1726,7 +1713,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="indicators">
+  <div class="section" id="indicators">
 <h1>Indicators<a class="headerlink" href="#indicators" title="Permalink to this headline">#</a></h1>
 <p>This article guides you through understanding and customizing indicators in OpenSPP, using a practical scenario and a working example.
 Indicators are computed fields that provide dynamic, calculated values based on registrant data, essential for social protection programs to track demographic information, eligibility criteria, and program outcomes.</p>
@@ -1750,15 +1737,15 @@ Indicators are computed fields that provide dynamic, calculated values based on 
 <li><p><strong>Boolean Indicators</strong>: True/false flags based on conditions</p></li>
 <li><p><strong>Computed Indicators</strong>: Calculated values from other fields</p></li>
 </ol>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Solid understanding of Odoo 17 module development, including Python, XML, and XPath.</p></li>
 <li><p>OpenSPP modules &quot;g2p_registry_group&quot;, &quot;g2p_registry_individual&quot;, and &quot;spp_custom_field&quot; must be installed.</p></li>
 <li><p>To set up OpenSPP for development, please refer to the <a class="reference internal" href="../setup.html"><span class="doc">Development Setup Guide</span></a>.</p></li>
 </ul>
-</section>
-<section id="module-structure">
+</div>
+<div class="section" id="module-structure">
 <h2>Module Structure<a class="headerlink" href="#module-structure" title="Permalink to this headline">#</a></h2>
 <p>A typical custom indicators module follows the standard Odoo module structure. Here’s an example for <code class="docutils literal notranslate"><span class="pre">spp_custom_indicators</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>spp_custom_indicators/
@@ -1771,14 +1758,14 @@ Indicators are computed fields that provide dynamic, calculated values based on 
     └── ir.model.access.csv
 </pre></div>
 </div>
-</section>
-<section id="step-by-step-guide">
+</div>
+<div class="section" id="step-by-step-guide">
 <h2>Step-by-Step Guide<a class="headerlink" href="#step-by-step-guide" title="Permalink to this headline">#</a></h2>
-<section id="create-the-module-scaffold">
+<div class="section" id="create-the-module-scaffold">
 <h3>Create the Module Scaffold<a class="headerlink" href="#create-the-module-scaffold" title="Permalink to this headline">#</a></h3>
 <p>Create a new directory for your module (e.g., <code class="docutils literal notranslate"><span class="pre">spp_custom_indicators</span></code>) and populate it with the basic Odoo module files and structure shown above.</p>
-</section>
-<section id="define-module-manifest">
+</div>
+<div class="section" id="define-module-manifest">
 <h3>Define Module Manifest<a class="headerlink" href="#define-module-manifest" title="Permalink to this headline">#</a></h3>
 <p>Create a manifest file that includes the proper dependencies:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -1803,15 +1790,15 @@ Indicators are computed fields that provide dynamic, calculated values based on 
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="extend-the-res-partner-model">
+</div>
+<div class="section" id="extend-the-res-partner-model">
 <h3>Extend the res.partner Model<a class="headerlink" href="#extend-the-res-partner-model" title="Permalink to this headline">#</a></h3>
 <p>Create <code class="docutils literal notranslate"><span class="pre">models/res_partner.py</span></code> to add your indicators and import it in <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">odoo</span><span class="w"> </span><span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dateutil.relativedelta</span><span class="w"> </span><span class="kn">import</span> <span class="n">relativedelta</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="kn">import</span> <span class="n">relativedelta</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">G2PRegistrant</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">G2PRegistrant</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;res.partner&quot;</span>
 
     <span class="c1"># Count indicator example</span>
@@ -1838,20 +1825,20 @@ Indicators are computed fields that provide dynamic, calculated values based on 
         <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Computed age in years for individuals&quot;</span><span class="p">,</span>
     <span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_ind_grp_num_children</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_compute_ind_grp_num_children</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the number of children in the group&quot;&quot;&quot;</span>
         <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
         <span class="n">children</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
         <span class="n">domain</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;birthdate&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;=&quot;</span><span class="p">,</span> <span class="n">children</span><span class="p">)]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">compute_count_and_set_indicator</span><span class="p">(</span><span class="s2">&quot;z_ind_grp_num_children&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">domain</span><span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_ind_grp_is_single_head_hh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_compute_ind_grp_is_single_head_hh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute if this is a single-headed household&quot;&quot;&quot;</span>
         <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
         <span class="n">domain</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;birthdate&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">,</span> <span class="n">now</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="mi">18</span><span class="p">))]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">compute_count_and_set_indicator</span><span class="p">(</span><span class="s2">&quot;z_ind_grp_is_single_head_hh&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">presence_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_ind_indv_age_years</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_compute_ind_indv_age_years</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute age in years for individuals&quot;&quot;&quot;</span>
         <span class="n">today</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Date</span><span class="o">.</span><span class="n">context_today</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">partner</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
@@ -1864,8 +1851,8 @@ Indicators are computed fields that provide dynamic, calculated values based on 
             <span class="n">partner</span><span class="o">.</span><span class="n">z_ind_indv_age_years</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="add-security-access-optional">
+</div>
+<div class="section" id="add-security-access-optional">
 <h3>Add Security Access (Optional)<a class="headerlink" href="#add-security-access-optional" title="Permalink to this headline">#</a></h3>
 <p>If you introduce new models, add access rights.
 For simple field additions, this is not required.
@@ -1874,25 +1861,25 @@ Example:</p>
 <span class="n">access_spp_custom_indicator_admin</span><span class="p">,</span><span class="n">spp</span><span class="o">.</span><span class="n">custom</span><span class="o">.</span><span class="n">indicator</span><span class="o">.</span><span class="n">admin</span><span class="p">,</span><span class="n">spp_custom_indicators</span><span class="o">.</span><span class="n">model_g2pregistrant</span><span class="p">,</span><span class="n">g2p_registry_base</span><span class="o">.</span><span class="n">group_g2p_admin</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
 </pre></div>
 </div>
-</section>
-<section id="add-more-indicators-optional">
+</div>
+<div class="section" id="add-more-indicators-optional">
 <h3>Add More Indicators (Optional)<a class="headerlink" href="#add-more-indicators-optional" title="Permalink to this headline">#</a></h3>
 <p>You can add more complex indicators, such as those based on gender, disability, or custom fields. Use the provided helper method for consistency and performance:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compute_count_and_set_indicator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">membership_kinds</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">presence_only</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_count_and_set_indicator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">membership_kinds</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">presence_only</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Helper method to compute and set indicator values</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># ...implementation provided by OpenSPP base modules...</span>
 </pre></div>
 </div>
-<section id="example-elderly-and-gender-based-indicators">
+<div class="section" id="example-elderly-and-gender-based-indicators">
 <h4>Example: Elderly and Gender-Based Indicators<a class="headerlink" href="#example-elderly-and-gender-based-indicators" title="Permalink to this headline">#</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_compute_ind_grp_num_elderly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_compute_ind_grp_num_elderly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
     <span class="n">domain</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;birthdate&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">,</span> <span class="n">now</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="mi">65</span><span class="p">))]</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">compute_count_and_set_indicator</span><span class="p">(</span><span class="s2">&quot;z_ind_grp_num_elderly&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">domain</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">_compute_ind_grp_num_adults_female_not_elderly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">_compute_ind_grp_num_adults_female_not_elderly</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
     <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span>
         <span class="p">(</span><span class="s2">&quot;birthdate&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;=&quot;</span><span class="p">,</span> <span class="n">now</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="mi">65</span><span class="p">)),</span>
@@ -1902,34 +1889,34 @@ Example:</p>
     <span class="bp">self</span><span class="o">.</span><span class="n">compute_count_and_set_indicator</span><span class="p">(</span><span class="s2">&quot;z_ind_grp_num_adults_female_not_elderly&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">domain</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="example-disability-indicators">
+</div>
+<div class="section" id="example-disability-indicators">
 <h4>Example: Disability Indicators<a class="headerlink" href="#example-disability-indicators" title="Permalink to this headline">#</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_compute_ind_grp_num_disability</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_compute_ind_grp_num_disability</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">domain</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;z_cst_indv_disability_level&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">compute_count_and_set_indicator</span><span class="p">(</span><span class="s2">&quot;z_ind_grp_num_disability&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">domain</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">_compute_ind_grp_is_hh_with_disabled</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">_compute_ind_grp_is_hh_with_disabled</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">domain</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;z_cst_indv_disability_level&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">compute_count_and_set_indicator</span><span class="p">(</span><span class="s2">&quot;z_ind_grp_is_hh_with_disabled&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">domain</span><span class="p">,</span> <span class="n">presence_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="add-constraints-and-validations-optional">
+</div>
+</div>
+<div class="section" id="add-constraints-and-validations-optional">
 <h3>Add Constraints, and Validations (Optional)<a class="headerlink" href="#add-constraints-and-validations-optional" title="Permalink to this headline">#</a></h3>
 <p>You can add additional constraints for indicator logic:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">odoo</span><span class="w"> </span><span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">ValidationError</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">ValidationError</span>
 
     <span class="nd">@api</span><span class="o">.</span><span class="n">constrains</span><span class="p">(</span><span class="s2">&quot;z_ind_grp_num_children&quot;</span><span class="p">)</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">_check_num_children_positive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_check_num_children_positive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">z_ind_grp_num_children</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">record</span><span class="o">.</span><span class="n">z_ind_grp_num_children</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s2">&quot;Number of children cannot be negative.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="install-and-test">
+</div>
+<div class="section" id="install-and-test">
 <h3>Install and Test<a class="headerlink" href="#install-and-test" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install or upgrade the module through the Apps menu.</p></li>
@@ -1937,23 +1924,23 @@ Example:</p>
 <li><p>Create or update records and ensure the indicators compute correctly.</p></li>
 <li><p>Test filtering and searching by indicator values.</p></li>
 </ol>
-</section>
-</section>
-<section id="best-practices">
+</div>
+</div>
+<div class="section" id="best-practices">
 <h2>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">store=True</span></code> for indicators that need to be queried.</p></li>
 <li><p>Provide clear help text explaining the indicator's purpose.</p></li>
 </ul>
-</section>
-<section id="references">
+</div>
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <p>For more information on extending OpenSPP modules, refer to:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/">Odoo 17 Developer Documentation</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

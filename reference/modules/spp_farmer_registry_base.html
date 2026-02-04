@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_farmer_registry_base.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1670,10 +1657,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="farmer-registry-base">
+  <div class="section" id="farmer-registry-base">
 <h1>Farmer Registry Base<a class="headerlink" href="#farmer-registry-base" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Farmer Registry Base module is the core component for managing comprehensive farmer registries within OpenSPP. It provides the essential framework for recording farmer profiles, detailing farm operations, linking farms to land records, and tracking agricultural activities.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module establishes the foundational system for organizing and maintaining detailed information about farmers and their agricultural endeavors. It enables users to:</p>
 <ul class="simple">
@@ -1683,8 +1670,8 @@ title="Print to PDF"
 <li><p><strong>Track Agricultural Activities and Seasons</strong>: Record and monitor diverse agricultural activities, such as crop cultivation or livestock rearing, and organize them within defined agricultural seasons.</p></li>
 <li><p><strong>Oversee Farm Assets and Extension Services</strong>: Document farm assets, machinery, and the provision of extension services like training and advisory support.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_farmer_registry_base</span></code> module integrates seamlessly with several other OpenSPP components and Odoo modules to deliver its comprehensive functionality:</p>
 <ul class="simple">
@@ -1697,35 +1684,35 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="spp_hide_menus.html"><span class="doc std std-doc">OpenSPP Hide Menus</span></a></strong>: Works in conjunction to ensure a streamlined user interface, focusing on farmer registry-specific functionalities by hiding less relevant Odoo menus.</p></li>
 <li><p><strong>Base Import (base_import)</strong>: Enhances the data import process, adding specific validations to ensure accurate and complete farmer and farm data during bulk uploads.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="farmer-profile-management">
+<div class="section" id="farmer-profile-management">
 <h3>Farmer Profile Management<a class="headerlink" href="#farmer-profile-management" title="Permalink to this headline">#</a></h3>
 <p>This module extends the core <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model to capture detailed information specific to farmers. Users can record a farmer's national identification number, years of agricultural experience, formal agricultural training, household size, and highest educational level. For group farms, the system automatically creates or updates the individual profile of the designated head farmer based on the farm's details.</p>
-</section>
-<section id="farm-registration-and-characteristics">
+</div>
+<div class="section" id="farm-registration-and-characteristics">
 <h3>Farm Registration and Characteristics<a class="headerlink" href="#farm-registration-and-characteristics" title="Permalink to this headline">#</a></h3>
 <p>Users can register various farm types, including crop, livestock, aquaculture, or mixed farms. The system allows for comprehensive detailing of farm size, categorizing acreage by total, under crops, under livestock, leased out, or idle. Additionally, it enables the recording of a farm's legal status, such as &quot;owned by self,&quot; &quot;leased,&quot; or &quot;owned by cooperative,&quot; providing essential context for land tenure and program eligibility.</p>
-</section>
-<section id="agricultural-activities-and-seasons">
+</div>
+<div class="section" id="agricultural-activities-and-seasons">
 <h3>Agricultural Activities and Seasons<a class="headerlink" href="#agricultural-activities-and-seasons" title="Permalink to this headline">#</a></h3>
 <p>The module provides tools to define and manage agricultural seasons with specific start and end dates. Within these seasons, users can record various agricultural activities, classifying them as crop cultivation, livestock rearing, or aquaculture. Activities are linked to specific species (e.g., maize, cattle, tilapia) and land parcels, ensuring a clear overview of what is being produced, where, and when. The system includes validation to prevent modifications in closed seasons and ensures only managers can activate or close seasons.</p>
-</section>
-<section id="farm-assets-machinery-and-extension-services">
+</div>
+<div class="section" id="farm-assets-machinery-and-extension-services">
 <h3>Farm Assets, Machinery, and Extension Services<a class="headerlink" href="#farm-assets-machinery-and-extension-services" title="Permalink to this headline">#</a></h3>
 <p>Users can track physical assets and machinery present on farms, specifying their type (e.g., tractor, irrigation pump) and working status. The module also facilitates the recording of extension services provided to farms, detailing the type of service (training, advisory), the provider, date, and topic covered. This helps monitor support provided to farmers and assess resource availability.</p>
-</section>
-<section id="geospatial-data-integration">
+</div>
+<div class="section" id="geospatial-data-integration">
 <h3>Geospatial Data Integration<a class="headerlink" href="#geospatial-data-integration" title="Permalink to this headline">#</a></h3>
 <p>Each farm can be assigned precise GPS coordinates, enabling its visualization on a map via integration with the <a class="reference internal" href="spp_base_gis.html"><span class="doc std std-doc">OpenSPP Base GIS</span></a> module. This allows for the generation of GeoJSON data, supporting spatial analysis and mapping of farm locations. Land records associated with farms also include fields for cultivated species and methods (e.g., irrigated, rainfed), enriching the geospatial context.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_farmer_registry_base</span></code> module is the essential foundation for managing all farmer and farm-related data within OpenSPP, providing comprehensive tools for registration, activity tracking, and geospatial integration to support effective social protection and agricultural programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

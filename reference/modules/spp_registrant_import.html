@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_registrant_import.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="registrant-import">
+  <div class="section" id="registrant-import">
 <h1>Registrant Import<a class="headerlink" href="#registrant-import" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Registrant Import module streamlines the process of bringing essential data into the OpenSPP platform. It enables users to efficiently import information for registrants (individuals and groups), geographical areas, and service points, simplifying data mapping and automating the generation of unique OpenSPP identifiers for these records.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module is designed to provide robust capabilities for bulk data entry, ensuring accuracy and efficiency when populating the OpenSPP system.</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Ensured Data Consistency</strong>: Validates imported data against OpenSPP standards, particularly for unique identifiers and registrant naming conventions, maintaining data quality across the platform.</p></li>
 <li><p><strong>Foundational Data Population</strong>: Serves as a critical tool for quickly populating the OpenSPP system with core data, essential for rapid deployment and scaling of social protection programs.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Registrant Import module integrates with several core OpenSPP components to deliver its functionality, enhancing the system's ability to manage key entities.</p>
 <ul class="simple">
@@ -1682,31 +1669,31 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="spp_base.html"><span class="doc std std-doc">OpenSPP Base</span></a></strong>: As a foundational module, <code class="docutils literal notranslate"><span class="pre">spp_base</span></code> provides system-wide configurations and the underlying framework for unique ID generation (<code class="docutils literal notranslate"><span class="pre">spp.unique.id</span></code>). The Registrant Import module leverages these <code class="docutils literal notranslate"><span class="pre">spp_base</span></code> capabilities to generate and validate unique identifiers for all imported entities.</p></li>
 <li><p><strong><a class="reference internal" href="spp_area_base.html"><span class="doc std std-doc">OpenSPP Area Base</span></a></strong>: This module builds upon <code class="docutils literal notranslate"><span class="pre">spp_area_base</span></code> to facilitate the bulk import of geographical areas. It ensures that imported areas conform to the hierarchical structure and unique identification standards established by <code class="docutils literal notranslate"><span class="pre">spp_area_base</span></code>, allowing for accurate location-based data.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="bulk-data-import-for-core-entities">
+<div class="section" id="bulk-data-import-for-core-entities">
 <h3>Bulk Data Import for Core Entities<a class="headerlink" href="#bulk-data-import-for-core-entities" title="Permalink to this headline">#</a></h3>
 <p>Users can efficiently import large volumes of data for key OpenSPP entities, including individual registrants, registrant groups, geographical areas (such as country, province, district, and village levels), and service points. The module provides a guided process to map external data fields to OpenSPP's internal structure, streamlining the population of the database for program rollouts.</p>
-</section>
-<section id="automated-unique-openspp-id-management">
+</div>
+<div class="section" id="automated-unique-openspp-id-management">
 <h3>Automated Unique OpenSPP ID Management<a class="headerlink" href="#automated-unique-openspp-id-management" title="Permalink to this headline">#</a></h3>
 <p>Upon import, the module automatically assigns a unique OpenSPP ID to each new record. For example, individuals receive IDs like IND_XXXXXXXX, groups get GRP_XXXXXXXX, geographical areas are assigned LOC_XXXXXXXX, and service points receive SVP_XXXXXXXX. This system ensures that all core entities have a distinct, standardized identifier, which is crucial for data integrity and cross-referencing.</p>
-</section>
-<section id="standardized-registrant-naming">
+</div>
+<div class="section" id="standardized-registrant-naming">
 <h3>Standardized Registrant Naming<a class="headerlink" href="#standardized-registrant-naming" title="Permalink to this headline">#</a></h3>
 <p>The module automatically constructs a consistent full name for registrants based on provided <code class="docutils literal notranslate"><span class="pre">family_name</span></code>, <code class="docutils literal notranslate"><span class="pre">given_name</span></code>, and <code class="docutils literal notranslate"><span class="pre">addl_name</span></code> fields during the import process. This ensures that all registrant names are uniformly formatted within OpenSPP, regardless of variations in the source data. It also includes logic to correctly parse names back into their individual components if only a full name is provided.</p>
-</section>
-<section id="hierarchical-geographic-area-import">
+</div>
+<div class="section" id="hierarchical-geographic-area-import">
 <h3>Hierarchical Geographic Area Import<a class="headerlink" href="#hierarchical-geographic-area-import" title="Permalink to this headline">#</a></h3>
 <p>This module supports the import of geographical areas while preserving their hierarchical relationships, such as a district belonging to a specific province, which in turn belongs to a country. This capability ensures that the imported area data accurately reflects real-world administrative structures, which is vital for targeted program delivery, reporting, and spatial analysis.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Registrant Import module is essential for efficiently populating and maintaining the OpenSPP system with accurate, uniquely identified data for registrants, areas, and service points, forming the backbone for effective social protection program management.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

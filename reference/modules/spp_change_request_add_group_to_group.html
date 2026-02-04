@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_change_request_add_group_to_group.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1616,10 +1603,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="change-request-add-group-to-a-group">
+  <div class="section" id="change-request-add-group-to-a-group">
 <h1>Change Request: Add Group to a Group<a class="headerlink" href="#change-request-add-group-to-a-group" title="Permalink to this headline">#</a></h1>
 <p>The 'spp_change_request_add_group_to_group' module provides a structured workflow for establishing hierarchical relationships between groups within the OpenSPP registry. It enables the formal process of adding existing groups as members to other existing parent groups, supporting complex organizational structures.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module accomplishes the following key objectives:</p>
 <ul class="simple">
@@ -1629,8 +1616,8 @@ title="Print to PDF"
 <li><p><strong>Ensure Data Integrity</strong>: Implements validation steps to prevent incorrect or duplicate group memberships, maintaining the accuracy and consistency of the group registry.</p></li>
 <li><p><strong>Support Evidence Collection</strong>: Allows for the attachment of supporting documents (e.g., meeting minutes, official requests) to each change request, providing a comprehensive audit trail.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module works in conjunction with several other OpenSPP components to deliver its functionality:</p>
 <ul class="simple">
@@ -1639,8 +1626,8 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="g2p_registry_membership.html"><span class="doc std std-doc">G2P Registry Membership</span></a></strong>: This module is critical as it handles the actual creation of membership records. Upon approval, <code class="docutils literal notranslate"><span class="pre">spp_change_request_add_group_to_group</span></code> utilizes <code class="docutils literal notranslate"><span class="pre">g2p_registry_membership</span></code> to formalize the link between a parent group and its new member group.</p></li>
 <li><p><strong><a class="reference internal" href="spp_registry_group_hierarchy.html"><span class="doc std std-doc">OpenSPP Registry Group Hierarchy</span></a></strong>: This module enables the very concept of groups being members of other groups. <code class="docutils literal notranslate"><span class="pre">spp_change_request_add_group_to_group</span></code> provides the specific change request mechanism to implement and manage these hierarchical relationships.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The module introduces specialized features to manage the addition of groups to groups efficiently:</p>
 <ul class="simple">
@@ -1651,12 +1638,12 @@ title="Print to PDF"
 <li><p><strong>Automated Membership Creation</strong>: Upon successful approval of the change request through the standard OpenSPP change request workflow, the system automatically creates the necessary group membership records. This action formally establishes the hierarchical link between the parent and member groups within the registry.</p></li>
 <li><p><strong>Direct Group Details Access</strong>: A convenient feature allows users to directly open a read-only form view of the selected parent group's details. This provides quick access to contextual information without leaving the change request form.</p></li>
 </ul>
-</section>
-<section id="conclusion">
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The 'spp_change_request_add_group_to_group' module is essential for managing complex group structures within OpenSPP, providing a formal and auditable process for building and maintaining hierarchical relationships between groups in social protection programs and farmer registries.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

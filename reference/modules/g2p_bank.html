@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_bank.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1614,10 +1601,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-registry-bank-details">
+  <div class="section" id="g2p-registry-bank-details">
 <h1>G2P Registry: Bank Details<a class="headerlink" href="#g2p-registry-bank-details" title="Permalink to this headline">#</a></h1>
 <p>The <strong>G2P Bank</strong> module provides essential functionality for managing bank account details within the OpenSPP platform. It ensures that accurate and standardized financial information is captured and maintained for both individual and group registrants, facilitating secure and efficient payment disbursements.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The <strong>G2P Bank</strong> module is designed to streamline the management of registrant bank account information, primarily focusing on International Bank Account Numbers (IBANs). It accomplishes the following key objectives:</p>
 <ul class="simple">
@@ -1628,8 +1615,8 @@ title="Print to PDF"
 <li><p><strong>Supports Payment Processing</strong>: Offers the foundational data required by payment modules for successful financial transactions to beneficiaries.</p></li>
 </ul>
 <p>This module ensures that programs can confidently manage and use bank details for various financial operations, from cash transfers to direct deposits, minimizing processing delays and errors.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <strong>G2P Bank</strong> module seamlessly integrates with core OpenSPP components and extends standard Odoo functionality:</p>
 <ul class="simple">
@@ -1638,8 +1625,8 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="g2p_registry_group.html"><span class="doc std std-doc">G2P Registry Groups</span></a></strong>: It allows for bank accounts to be assigned to group registrants (e.g., households, cooperatives), supporting payments made to collective entities.</p></li>
 </ul>
 <p>By leveraging these dependencies, the <code class="docutils literal notranslate"><span class="pre">g2p_bank</span></code> module ensures that bank account information is an integral part of both individual and group registrant records, providing a unified view of beneficiary data.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The module focuses on robust and accurate management of bank account information:</p>
 <ul class="simple">
@@ -1647,12 +1634,12 @@ title="Print to PDF"
 <li><p><strong>Automated IBAN Generation and Validation</strong>: A core feature is the automatic computation and validation of the International Bank Account Number (IBAN). When the bank's country, BIC, and account number are provided, the system generates a compliant IBAN, or validates an existing one, ensuring adherence to international banking standards and significantly reducing potential payment errors.</p></li>
 <li><p><strong>Direct Linkage to Registrants</strong>: Each bank account record is directly tied to a specific individual or group registrant. This clear association is vital for ensuring that payments are directed to the correct beneficiary and simplifies financial reconciliation.</p></li>
 </ul>
-</section>
-<section id="conclusion">
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <strong>G2P Bank</strong> module is fundamental to OpenSPP's financial operations, providing a standardized and reliable system for managing bank account details essential for accurate and secure payment disbursements to beneficiaries.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

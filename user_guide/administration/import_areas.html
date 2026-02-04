@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Import areas" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Import areas" name="title" />
 <meta content="Learn how to prepare and import hierarchical area data into OpenSPP using Excel workbooks with proper formatting and validation." name="description" />
 <meta content="OpenSPP, import areas, administrative levels, Excel, area data, hierarchy" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/administration/import_areas.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1806,10 +1793,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="import-areas">
+  <div class="section" id="import-areas">
 <h1>Import areas<a class="headerlink" href="#import-areas" title="Permalink to this headline">#</a></h1>
 <p>In this tutorial, you will learn how to prepare and import area data into OpenSPP using an Excel workbook.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>To be able to successfully import area data into OpenSPP, you need to:</p>
 <ul class="simple">
@@ -1817,15 +1804,15 @@ title="Print to PDF"
 <li><p>As OpenSPP supports multiple languages for an area name, language support for the languages you want to use must be configured.</p></li>
 <li><p>A spreadsheet software that can export data as an Excel workbook.</p></li>
 </ul>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>By the end of this tutorial, you should understand the purpose and process of preparing the data required to import area data into OpenSPP. You will learn how OpenSPP’s area structure can be used to represent the hierarchical relationship between the areas of your operations.</p>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
 <p>To access the area import feature, you must log in to OpenSPP with a user account with the <strong>System Admin</strong> role since the functionality is not included for other roles. Learn how to set up roles and accounts in <a class="reference internal" href="user_access.html"><span class="doc">User access</span></a></p>
-<section id="understand-the-data-structure">
+<div class="section" id="understand-the-data-structure">
 <h3>Understand the Data Structure<a class="headerlink" href="#understand-the-data-structure" title="Permalink to this headline">#</a></h3>
 <p>The area data is structured hierarchically, with each sheet representing an <strong>administrative level</strong>:</p>
 <ul class="simple">
@@ -1833,19 +1820,19 @@ title="Print to PDF"
 <li><p><strong>Level 1 and below:</strong> Subdivisions (e.g., Provinces, States).</p></li>
 </ul>
 <p>Each sheet must follow specific rules regarding column headers and data.</p>
-</section>
-<section id="create-the-excel-file-workbook">
+</div>
+<div class="section" id="create-the-excel-file-workbook">
 <h3>Create the Excel File/Workbook<a class="headerlink" href="#create-the-excel-file-workbook" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Open Excel or any spreadsheet software.</p></li>
 <li><p>Create a new workbook.</p></li>
 <li><p>Rename each sheet to represent an administrative level, starting with the top-most level (e.g., &quot;ADM0&quot;, &quot;ADM1&quot;).</p></li>
 </ol>
-</section>
-<section id="add-column-headers">
+</div>
+<div class="section" id="add-column-headers">
 <h3>Add Column Headers<a class="headerlink" href="#add-column-headers" title="Permalink to this headline">#</a></h3>
 <p>Use the following column headers:</p>
-<section id="level-0-sheet-top-level-areas-sheet-name-adm0">
+<div class="section" id="level-0-sheet-top-level-areas-sheet-name-adm0">
 <h4><strong>Level 0 Sheet (Top-Level Areas) – sheet name “ADM0”</strong><a class="headerlink" href="#level-0-sheet-top-level-areas-sheet-name-adm0" title="Permalink to this headline">#</a></h4>
 <table class="colwidths-auto table">
 <thead>
@@ -1869,8 +1856,8 @@ title="Print to PDF"
 </tr>
 </tbody>
 </table>
-</section>
-<section id="level-1-sheet-subdivisions-sheet-name-adm1">
+</div>
+<div class="section" id="level-1-sheet-subdivisions-sheet-name-adm1">
 <h4><strong>Level 1 Sheet (Subdivisions) – sheet name “ADM1”</strong><a class="headerlink" href="#level-1-sheet-subdivisions-sheet-name-adm1" title="Permalink to this headline">#</a></h4>
 <table class="colwidths-auto table">
 <thead>
@@ -1903,9 +1890,9 @@ title="Print to PDF"
 </tbody>
 </table>
 <p>Repeat the same structure for additional levels, adjusting the column headers to match the level (e.g., <code class="docutils literal notranslate"><span class="pre">ADM2_PCODE</span></code> for Level 2).</p>
-</section>
-</section>
-<section id="fill-in-the-data">
+</div>
+</div>
+<div class="section" id="fill-in-the-data">
 <h3>Fill in the Data<a class="headerlink" href="#fill-in-the-data" title="Permalink to this headline">#</a></h3>
 <p><strong>Start with Level 0:</strong></p>
 <ul class="simple">
@@ -1925,8 +1912,8 @@ title="Print to PDF"
 <p><strong>Example (Level 1 Sheet):</strong></p>
 <p><img alt="Excel spreadsheet showing Level 1 area data with columns for ADM1_PCODE, ADM1_EN, ADM0_PCODE, ADM0_EN, and AREA_SQKM containing sample subdivision data" src="../../_images/23.png" /></p>
 <p>Repeat the process for additional levels.</p>
-</section>
-<section id="verify-the-data">
+</div>
+<div class="section" id="verify-the-data">
 <h3>Verify the Data<a class="headerlink" href="#verify-the-data" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><strong>Unique Codes:</strong> Ensure that all <strong>ADMx_PCODE</strong> values are unique.</p></li>
@@ -1934,13 +1921,13 @@ title="Print to PDF"
 <li><p><strong>Hierarchy:</strong> For levels &gt; 0, ensure that each row references a valid parent area in the <strong>ADMx_PCODE</strong> column.</p></li>
 <li><p>Make sure there are no trailing spaces on the column headers.</p></li>
 </ul>
-</section>
-<section id="save-the-file">
+</div>
+<div class="section" id="save-the-file">
 <h3>Save the File<a class="headerlink" href="#save-the-file" title="Permalink to this headline">#</a></h3>
 <p>Save the workbook in .xlsx format.
 Then name the file descriptively, e.g., Area_Import.xlsx.</p>
-</section>
-<section id="import-the-file">
+</div>
+<div class="section" id="import-the-file">
 <h3>Import the File<a class="headerlink" href="#import-the-file" title="Permalink to this headline">#</a></h3>
 <p>Navigate to the <strong>Areas Import</strong> module in OpenSPP by clicking on <strong>Area →Areas</strong></p>
 <p><img alt="OpenSPP navigation menu showing the Area menu expanded with Areas option highlighted" src="../../_images/32.png" /></p>
@@ -1951,18 +1938,18 @@ Once uploaded, click on <strong>import button to complete</strong></p>
 <p><img alt="Area import dialog showing file upload interface with drag-and-drop area and file selection button" src="../../_images/5.png" /></p>
 <p>Once uploaded, click on the <strong>import</strong> button to complete.</p>
 <p><img alt="Area import dialog showing uploaded file ready for import with Import button highlighted" src="../../_images/6.png" /></p>
-</section>
-<section id="tips-for-success">
+</div>
+<div class="section" id="tips-for-success">
 <h3>Tips for Success<a class="headerlink" href="#tips-for-success" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><strong>Batch Updates:</strong> If importing large datasets, break them into smaller files for easier management.</p></li>
 <li><p><strong>Error Handling:</strong> If the system reports errors during validation, review the &quot;Remarks/Errors&quot; column in the raw data to fix issues.</p></li>
 </ul>
-</section>
-<section id="additional-information">
+</div>
+<div class="section" id="additional-information">
 <h3>Additional information<a class="headerlink" href="#additional-information" title="Permalink to this headline">#</a></h3>
 <p>Each sheet must contain the following headers in the first row:</p>
-<section id="general-columns">
+<div class="section" id="general-columns">
 <h4><strong>General Columns</strong><a class="headerlink" href="#general-columns" title="Permalink to this headline">#</a></h4>
 <ol class="arabic simple">
 <li><p><strong>ADM{level}_PCODE</strong></p>
@@ -1986,8 +1973,8 @@ Once uploaded, click on <strong>import button to complete</strong></p>
 </ul>
 </li>
 </ol>
-</section>
-<section id="parent-area-columns-for-levels-0">
+</div>
+<div class="section" id="parent-area-columns-for-levels-0">
 <h4><strong>Parent Area Columns (For levels &gt; 0)</strong><a class="headerlink" href="#parent-area-columns-for-levels-0" title="Permalink to this headline">#</a></h4>
 <ol class="arabic simple" start="4">
 <li><p><strong>ADM{parent_level}_PCODE</strong></p>
@@ -2004,9 +1991,9 @@ Once uploaded, click on <strong>import button to complete</strong></p>
 </ul>
 </li>
 </ol>
-</section>
-</section>
-<section id="data-rules">
+</div>
+</div>
+<div class="section" id="data-rules">
 <h3>Data Rules<a class="headerlink" href="#data-rules" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><strong>Languages:</strong> All ISO codes in the headers must match active languages in the system. Inactive languages will cause the import to fail.</p></li>
@@ -2015,8 +2002,8 @@ Once uploaded, click on <strong>import button to complete</strong></p>
 <li><p><strong>Area Codes:</strong> Must be unique across all sheets.</p></li>
 <li><p><strong>Square Kilometers (AREA_SQKM):</strong> Should be a valid numerical value if provided.</p></li>
 </ul>
-</section>
-<section id="validation">
+</div>
+<div class="section" id="validation">
 <h3>Validation<a class="headerlink" href="#validation" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p><strong>Automatic Checks:</strong></p>
@@ -2032,25 +2019,25 @@ Once uploaded, click on <strong>import button to complete</strong></p>
 </ul>
 </li>
 </ol>
-</section>
-<section id="how-data-is-processed">
+</div>
+<div class="section" id="how-data-is-processed">
 <h3>How data is processed<a class="headerlink" href="#how-data-is-processed" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Sheets are processed sequentially by level.</p></li>
 <li><p>Data is imported in batches for efficiency. Errors are logged for each batch.</p></li>
 <li><p>After import, data can be validated and saved into the main area database.</p></li>
 </ul>
-</section>
-<section id="iso-codes">
+</div>
+<div class="section" id="iso-codes">
 <h3>ISO codes<a class="headerlink" href="#iso-codes" title="Permalink to this headline">#</a></h3>
 <p>To get the ISO codes of the language you wish to use in the workbook, go to OpenSPP and login as Administrator.
 Click on <strong>Settings</strong> and click on <strong>Manage Languages</strong> from the Languages section.</p>
 <p><img alt="OpenSPP Settings page showing the Languages section with Manage Languages option highlighted" src="../../_images/7.png" /></p>
 <p>You can find the ISO code under the <strong>ISO code</strong> column of the language you want to add in your workbook.</p>
 <p><img alt="Language management interface showing a table of active languages with their names, ISO codes, and status" src="../../_images/8.png" /></p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

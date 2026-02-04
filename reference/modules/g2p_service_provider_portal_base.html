@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_service_provider_portal_base.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1648,10 +1635,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-service-provider-portal-base">
+  <div class="section" id="g2p-service-provider-portal-base">
 <h1>G2P Service Provider Portal Base<a class="headerlink" href="#g2p-service-provider-portal-base" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_service_provider_portal_base</span></code> module establishes the foundational web portal for G2P (Government-to-Person) service providers within OpenSPP. It provides the essential interface and core functionalities necessary for external partners to securely access and interact with the platform.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module creates a dedicated, secure online environment for organizations and individuals delivering social protection programs on behalf of the government. It streamlines the initial setup and ongoing interaction for service providers.</p>
 <ul class="simple">
@@ -1661,34 +1648,34 @@ title="Print to PDF"
 <li><p><strong>Foundation for G2P Services:</strong> Lays the groundwork for integrating specific G2P service delivery functionalities, acting as the base upon which other modules can build. This ensures a consistent user experience as the portal expands.</p></li>
 <li><p><strong>Consistent Branding and Navigation:</strong> Establishes the core visual identity and navigation structure for the service provider portal, promoting a unified and professional user experience. This makes the portal intuitive and easy to use.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_service_provider_portal_base</span></code> module is a foundational component that integrates with core OpenSPP functionalities to deliver its web portal capabilities.</p>
 <p>It relies on the <code class="docutils literal notranslate"><span class="pre">account</span></code> module to manage user authentication, roles, and access permissions for service provider staff. This ensures that only authorized individuals can log in and view relevant information. Additionally, it depends on the <code class="docutils literal notranslate"><span class="pre">website</span></code> module, which provides the underlying web framework, templating engine, and public-facing site infrastructure.</p>
 <p>This module serves as a critical base for other G2P-specific modules that extend the service provider portal's functionality. For instance, modules focused on beneficiary management, payment processing, or grievance handling would build upon this base to provide their interfaces within the secure portal environment.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The module delivers key features designed to provide a robust and user-friendly experience for service providers.</p>
-<section id="core-portal-pages-and-navigation">
+<div class="section" id="core-portal-pages-and-navigation">
 <h3>Core Portal Pages and Navigation<a class="headerlink" href="#core-portal-pages-and-navigation" title="Permalink to this headline">#</a></h3>
 <p>The module establishes essential web pages that inform and guide service providers. It includes standard sections like a Home page, an About Us page for organizational details, and a Contact Us page for support and inquiries. Furthermore, it defines the main navigation menu, allowing service provider staff to easily move between different sections and tools within the portal.</p>
-</section>
-<section id="secure-user-authentication-and-profile-management">
+</div>
+<div class="section" id="secure-user-authentication-and-profile-management">
 <h3>Secure User Authentication and Profile Management<a class="headerlink" href="#secure-user-authentication-and-profile-management" title="Permalink to this headline">#</a></h3>
 <p>A dedicated login page ensures that only authorized service provider personnel can access the portal's secure areas. Once logged in, users can access and update their personal profiles, including contact information and account settings. This capability supports data accuracy and allows service providers to maintain their own credentials.</p>
-</section>
-<section id="extensible-interface-for-g2p-services">
+</div>
+<div class="section" id="extensible-interface-for-g2p-services">
 <h3>Extensible Interface for G2P Services<a class="headerlink" href="#extensible-interface-for-g2p-services" title="Permalink to this headline">#</a></h3>
 <p>This module provides a flexible framework for future expansion, allowing other OpenSPP modules to seamlessly integrate additional G2P-specific functionalities. This ensures that as new services or program requirements emerge, they can be added to the service provider portal while maintaining a consistent user experience and visual design.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_service_provider_portal_base</span></code> module is the essential building block for OpenSPP's G2P Service Provider Portal, providing a secure, branded, and extensible web interface for external partners. It enables service providers to securely access core functionalities and sets the stage for future G2P program-specific extensions.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

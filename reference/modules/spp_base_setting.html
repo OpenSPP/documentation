@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_base_setting.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1640,10 +1627,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="base-settings">
+  <div class="section" id="base-settings">
 <h1>Base Settings<a class="headerlink" href="#base-settings" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Base Setting module provides fundamental configurations and essential tools to customize the OpenSPP platform for specific country implementations. It manages core organizational structures like Country Offices and enables tailored user interface adaptations to meet local operational needs.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module serves as a crucial administrative foundation for OpenSPP, accomplishing several key objectives:</p>
 <ul class="simple">
@@ -1653,34 +1640,34 @@ title="Print to PDF"
 <li><p><strong>Ensure Foundational System Readiness</strong>: By establishing these core administrative and user interface settings, the module provides the necessary backbone for other OpenSPP modules to function effectively in a localized context.</p></li>
 </ul>
 <p>The module's value lies in enabling OpenSPP to be highly adaptable to diverse country requirements. It provides a clear administrative hierarchy, such as &quot;National Office &gt; Regional Office &gt; District Office,&quot; which is essential for managing complex social protection programs. This adaptability ensures that OpenSPP implementations are efficient, user-friendly, and aligned with local administrative structures.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Base Setting module integrates seamlessly with core OpenSPP functionalities and standard Odoo features.</p>
 <p>It depends on the <code class="docutils literal notranslate"><span class="pre">base</span></code> module, which provides fundamental Odoo capabilities such as user management, company settings, and basic administrative tools. This ensures that OpenSPP Base Setting leverages existing Odoo infrastructure for robust system administration.</p>
 <p>Additionally, this module builds upon the <a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">G2P Registry Base</span></a> module. While G2P Registry Base establishes the foundation for managing registrant data and geographical structures like districts, <code class="docutils literal notranslate"><span class="pre">spp_base_setting</span></code> extends this by introducing the concept of Country Offices. These offices provide an overarching administrative framework that organizes and contextualizes how programs are delivered across different regions, often aligning with or utilizing the geographical definitions from G2P Registry Base.</p>
 <p>By establishing these core organizational and user interface settings, <code class="docutils literal notranslate"><span class="pre">spp_base_setting</span></code> acts as a foundational module, providing essential context for other OpenSPP modules to operate effectively within specific country implementations.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="country-office-administration">
+<div class="section" id="country-office-administration">
 <h3>Country Office Administration<a class="headerlink" href="#country-office-administration" title="Permalink to this headline">#</a></h3>
 <p>Users can define and manage the organizational structure for OpenSPP program delivery within a country. This includes establishing various administrative units, such as a National Office, Regional Offices, or District Offices. Each Country Office can represent a distinct operational area or administrative level, facilitating structured program management and reporting across diverse geographical zones.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>While Country Offices define administrative structures, they often align with or operate within the geographical districts managed by the <a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">G2P Registry Base</span></a> module. This ensures a consistent framework for both administrative oversight and beneficiary location data.</p>
 </div>
-</section>
-<section id="user-context-and-interface-customization">
+</div>
+<div class="section" id="user-context-and-interface-customization">
 <h3>User Context and Interface Customization<a class="headerlink" href="#user-context-and-interface-customization" title="Permalink to this headline">#</a></h3>
 <p>This module allows administrators to link OpenSPP users to specific Country Offices. This capability is crucial for defining the operational context for each user, potentially influencing data visibility, access permissions, and reporting scope. It also provides the foundation for adapting elements of the OpenSPP user interface to better suit local operational workflows and user preferences, ensuring a more intuitive and efficient experience for staff.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Base Setting module provides the essential administrative and user interface foundations, enabling OpenSPP to be effectively customized and deployed for social protection programs in diverse country contexts.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

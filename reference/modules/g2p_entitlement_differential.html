@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_entitlement_differential.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1648,10 +1635,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-entitlement-differential">
+  <div class="section" id="g2p-entitlement-differential">
 <h1>G2P Entitlement Differential<a class="headerlink" href="#g2p-entitlement-differential" title="Permalink to this headline">#</a></h1>
 <p>The G2P Entitlement Differential module extends the core cash entitlement management features of OpenSPP. It introduces advanced capabilities for adjusting cash entitlement amounts, primarily by applying inflation rates, and provides enhanced control over beneficiary selection for entitlement calculations.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module enhances the precision and responsiveness of cash-based social protection programs by allowing dynamic adjustments to entitlement values. It addresses the challenges of maintaining the real value of cash transfers and accurately targeting beneficiaries in evolving economic and social landscapes.</p>
 <ul class="simple">
@@ -1660,35 +1647,35 @@ title="Print to PDF"
 <li><p><strong>Maintain Program Equity</strong>: Ensure the fair and consistent distribution of benefits by accounting for economic fluctuations and allowing precise targeting of beneficiary groups.</p></li>
 <li><p><strong>Streamline Financial Planning</strong>: Provide tools for program administrators to manage and forecast entitlement costs more accurately, reflecting real-world economic changes.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module builds upon and integrates directly with the OpenSPP Cash Entitlement module, enhancing its core functionalities.</p>
 <ul class="simple">
 <li><p><strong>OpenSPP Cash Entitlement (<a class="reference internal" href="spp_entitlement_cash.html"><span class="doc std std-doc">spp_entitlement_cash</span></a>)</strong>: This module is a direct extension of the <code class="docutils literal notranslate"><span class="pre">spp_entitlement_cash</span></code> module. It inherits and overrides key entitlement calculation processes, such as <code class="docutils literal notranslate"><span class="pre">prepare_entitlements</span></code>, to introduce differential adjustments like inflation. It leverages the existing framework for defining entitlement rules and managing beneficiaries, adding a layer of dynamic modification.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The G2P Entitlement Differential module provides key features to ensure cash entitlements remain relevant and equitable.</p>
-<section id="inflation-adjustment-for-cash-entitlements">
+<div class="section" id="inflation-adjustment-for-cash-entitlements">
 <h3>Inflation Adjustment for Cash Entitlements<a class="headerlink" href="#inflation-adjustment-for-cash-entitlements" title="Permalink to this headline">#</a></h3>
 <p>Program administrators can enable and specify an inflation rate directly within the entitlement manager. When active, this feature automatically recalculates the <code class="docutils literal notranslate"><span class="pre">initial_amount</span></code> of generated cash entitlements by applying the defined inflation multiplier. This crucial capability helps maintain the real value of cash transfers, protecting beneficiaries from the erosion of purchasing power due to inflation.</p>
-</section>
-<section id="dynamic-beneficiary-filtering">
+</div>
+<div class="section" id="dynamic-beneficiary-filtering">
 <h3>Dynamic Beneficiary Filtering<a class="headerlink" href="#dynamic-beneficiary-filtering" title="Permalink to this headline">#</a></h3>
 <p>The module provides an enhanced mechanism for selecting beneficiaries during the entitlement calculation process. It allows for the application of additional, flexible conditions to filter beneficiaries from a broader pool. This capability supports highly targeted interventions, ensuring that specific groups of beneficiaries, based on updated criteria or dynamic conditions, receive the intended entitlements.</p>
-</section>
-<section id="entitlement-item-naming">
+</div>
+<div class="section" id="entitlement-item-naming">
 <h3>Entitlement Item Naming<a class="headerlink" href="#entitlement-item-naming" title="Permalink to this headline">#</a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">name</span></code> field is added to individual cash entitlement items. This allows for clearer identification and tracking of specific entitlement components or adjustments within the system. It helps administrators organize and understand the different elements that constitute a beneficiary's total entitlement.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Entitlement Differential module empowers OpenSPP programs to adapt to changing economic realities and refine beneficiary targeting, ensuring cash transfers remain impactful and equitable.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

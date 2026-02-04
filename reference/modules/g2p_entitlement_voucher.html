@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_entitlement_voucher.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1648,10 +1635,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-entitlement-voucher">
+  <div class="section" id="g2p-entitlement-voucher">
 <h1>G2P Entitlement Voucher<a class="headerlink" href="#g2p-entitlement-voucher" title="Permalink to this headline">#</a></h1>
 <p>The G2P Entitlement Voucher module extends OpenSPP's core G2P framework to enable the generation and management of secure, printable vouchers for social protection program entitlements. This module allows programs to deliver benefits through a voucher system, integrating seamlessly with existing entitlement and payment processes.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines the delivery of benefits through a robust voucher system by:</p>
 <ul class="simple">
@@ -1661,8 +1648,8 @@ title="Print to PDF"
 <li><p><strong>Streamlining Entitlement Workflows:</strong> Integrates voucher generation directly into the entitlement approval process, ensuring a smooth and efficient workflow from eligibility to benefit delivery.</p></li>
 <li><p><strong>Providing Centralized Document Management:</strong> Securely stores all generated voucher documents, making them easily accessible for printing, auditing, and record-keeping.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The G2P Entitlement Voucher module is built upon and extends several core OpenSPP components:</p>
 <ul class="simple">
@@ -1670,10 +1657,10 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="g2p_payment_files.html"><span class="doc std std-doc">G2P Payment Files</span></a>:</strong> It leverages the advanced payment file configuration and generation capabilities of G2P Payment Files. This allows the module to define and render customizable voucher templates, including the embedding of QR codes, based on program-specific requirements.</p></li>
 <li><p><strong><a class="reference internal" href="g2p_encryption.html"><span class="doc std std-doc">G2P Encryption</span></a>:</strong> To ensure data security, the module utilizes the G2P Encryption module to encrypt sensitive information embedded within the QR codes on the vouchers. This protects beneficiary data and enhances the overall security of the benefit delivery process.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="voucher-management-for-approved-entitlements">
+<div class="section" id="voucher-management-for-approved-entitlements">
 <h3>Voucher Management for Approved Entitlements<a class="headerlink" href="#voucher-management-for-approved-entitlements" title="Permalink to this headline">#</a></h3>
 <p>Once an entitlement is approved, program staff can easily manage its associated voucher.</p>
 <ul class="simple">
@@ -1681,8 +1668,8 @@ title="Print to PDF"
 <li><p>For entitlements with an existing voucher, users can directly access and print the voucher document as needed.</p></li>
 <li><p>These actions are accessible through dedicated buttons on the entitlement record, simplifying the user experience.</p></li>
 </ul>
-</section>
-<section id="configurable-voucher-generation-settings">
+</div>
+<div class="section" id="configurable-voucher-generation-settings">
 <h3>Configurable Voucher Generation Settings<a class="headerlink" href="#configurable-voucher-generation-settings" title="Permalink to this headline">#</a></h3>
 <p>Administrators have granular control over how vouchers are generated for each program.</p>
 <ul class="simple">
@@ -1691,21 +1678,21 @@ title="Print to PDF"
 <li><p>A &quot;Document Storage Backend&quot; is selected to specify where the generated voucher documents are securely stored, ensuring compliance and easy retrieval.</p></li>
 <li><p>An &quot;Encryption Provider&quot; from the <a class="reference internal" href="g2p_encryption.html"><span class="doc std std-doc">G2P Encryption</span></a> module can be chosen to encrypt sensitive data within the voucher's QR codes, enhancing data privacy and security.</p></li>
 </ul>
-</section>
-<section id="efficient-batch-processing-for-vouchers">
+</div>
+<div class="section" id="efficient-batch-processing-for-vouchers">
 <h3>Efficient Batch Processing for Vouchers<a class="headerlink" href="#efficient-batch-processing-for-vouchers" title="Permalink to this headline">#</a></h3>
 <p>The module is designed to handle large volumes of entitlements efficiently.</p>
 <ul class="simple">
 <li><p>Voucher generation processes entitlements in optimized batches, preventing system slowdowns when dealing with many beneficiaries.</p></li>
 <li><p>For very large programs, voucher generation can be initiated as an asynchronous background job, allowing users to continue their work without interruption while the system processes the vouchers.</p></li>
 </ul>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Entitlement Voucher module significantly enhances OpenSPP's capacity for flexible benefit delivery by providing a secure, automated, and customizable system for generating and managing program vouchers. It ensures efficient and traceable distribution of benefits to beneficiaries within social protection programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

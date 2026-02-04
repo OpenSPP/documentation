@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_base_gis_demo.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1650,10 +1637,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="base-gis-demo">
+  <div class="section" id="base-gis-demo">
 <h1>Base GIS Demo<a class="headerlink" href="#base-gis-demo" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Base GIS Demo module provides practical examples and use cases for integrating and leveraging the Geographical Information System (GIS) capabilities within the OpenSPP platform. It demonstrates how to add and visualize geospatial data using the foundational OpenSPP Base GIS module.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module showcases how OpenSPP programs can incorporate location-based data into their operations, enabling more informed decision-making and improved program management. It provides a blueprint for implementing GIS features, helping users understand their practical application.</p>
 <p>Key capabilities include:</p>
@@ -1664,8 +1651,8 @@ title="Print to PDF"
 <li><p><strong>Accelerating GIS Implementation:</strong> Serves as a practical guide for developers and implementers, illustrating the steps to integrate and utilize OpenSPP's GIS capabilities effectively for their specific program needs.</p></li>
 </ul>
 <p>The module's value lies in making OpenSPP's GIS features tangible, showing how to transform abstract location data into actionable insights for program planning, monitoring, and evaluation. For instance, it can demonstrate how to plot beneficiary homes (points), define service boundaries (polygons), or map distribution routes (lines).</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Base GIS Demo module relies on core OpenSPP functionalities to operate and extends the platform's geospatial capabilities.</p>
 <p>It primarily depends on:</p>
@@ -1674,28 +1661,28 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="spp_base_gis.html"><span class="doc std std-doc">OpenSPP Base GIS</span></a></strong>: This is the foundational GIS module that introduces all core geospatial data types and map visualization features. The <code class="docutils literal notranslate"><span class="pre">spp_base_gis_demo</span></code> module specifically <em>demonstrates</em> how to utilize the capabilities provided by <code class="docutils literal notranslate"><span class="pre">spp_base_gis</span></code>, acting as an implementation guide rather than adding new core GIS features itself.</p></li>
 </ul>
 <p>This module serves as a practical extension, showing how to apply the powerful GIS tools from <code class="docutils literal notranslate"><span class="pre">spp_base_gis</span></code> to real-world OpenSPP data. It helps other modules, like those managing registries or program targeting, understand how they can integrate and display their location-sensitive data.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_base_gis_demo</span></code> module focuses on providing clear, functional examples of how to work with geospatial data within OpenSPP.</p>
-<section id="extending-existing-openspp-models-with-location-data">
+<div class="section" id="extending-existing-openspp-models-with-location-data">
 <h3>Extending Existing OpenSPP Models with Location Data<a class="headerlink" href="#extending-existing-openspp-models-with-location-data" title="Permalink to this headline">#</a></h3>
 <p>This module demonstrates how to easily add geographical information to standard OpenSPP records. For example, it extends the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model, allowing users to associate specific location types with partners. This includes adding a <code class="docutils literal notranslate"><span class="pre">geo_point</span></code> for a partner's exact location, a <code class="docutils literal notranslate"><span class="pre">geo_line</span></code> to represent a route, or a <code class="docutils literal notranslate"><span class="pre">geo_polygon_field</span></code> to define a service area. Users can input and manage these geographical coordinates directly on partner records.</p>
-</section>
-<section id="demonstrating-custom-gis-data-models">
+</div>
+<div class="section" id="demonstrating-custom-gis-data-models">
 <h3>Demonstrating Custom GIS Data Models<a class="headerlink" href="#demonstrating-custom-gis-data-models" title="Permalink to this headline">#</a></h3>
 <p>The module includes an example of a dedicated GIS data model, <code class="docutils literal notranslate"><span class="pre">spp.base.gis.test.model</span></code>, which showcases how to create new OpenSPP models specifically for geospatial data. This model incorporates various geographic field types—points, lines, and polygons—allowing implementers to see how to structure and manage complex spatial datasets within OpenSPP. This is useful for applications requiring custom map layers or spatial analysis.</p>
-</section>
-<section id="visualizing-diverse-geospatial-data-types">
+</div>
+<div class="section" id="visualizing-diverse-geospatial-data-types">
 <h3>Visualizing Diverse Geospatial Data Types<a class="headerlink" href="#visualizing-diverse-geospatial-data-types" title="Permalink to this headline">#</a></h3>
 <p>Through its examples, the module illustrates how different geospatial data types are displayed and interacted with on OpenSPP's maps. It provides a visual guide for understanding how <code class="docutils literal notranslate"><span class="pre">geo_point</span></code> fields appear as markers, <code class="docutils literal notranslate"><span class="pre">geo_line</span></code> fields as paths, and <code class="docutils literal notranslate"><span class="pre">geo_polygon_field</span></code> fields as shaded areas. This helps users grasp the visual representation of their data and plan how to best present their location-based information.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Base GIS Demo module is a vital resource for understanding and practically applying the robust GIS capabilities available in OpenSPP. It serves as a hands-on guide for integrating and visualizing location-based data, enhancing the platform's ability to manage social protection programs with a strong spatial dimension.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_service_points.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="service-points-management">
+  <div class="section" id="service-points-management">
 <h1>Service Points Management<a class="headerlink" href="#service-points-management" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Service Points module streamlines the management of physical or virtual locations where social protection services are delivered. It links these service points to geographical areas, company entities, and user accounts, ensuring efficient and localized program implementation.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Service Points module facilitates the organized delivery of services by:</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Organizational Integration</strong>: Connects service points with the company entities or organizations responsible for their operation, clarifying administrative structures and accountability.</p></li>
 <li><p><strong>User Access Management</strong>: Assigns authorized users (agents) to specific service points, granting them the necessary access to manage and deliver services effectively.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Service Points module integrates seamlessly with other core OpenSPP components to provide comprehensive functionality:</p>
 <ul class="simple">
@@ -1683,36 +1670,36 @@ title="Print to PDF"
 <li><p><strong>OpenSPP Area</strong> (<code class="docutils literal notranslate"><span class="pre">spp_area</span></code>): This module is crucial for defining the geographical context of service points. It allows service points to be linked to the hierarchical administrative areas managed by the <a class="reference internal" href="spp_area.html"><span class="doc std std-doc">OpenSPP Area</span></a> module, facilitating location-based service planning and reporting.</p></li>
 </ul>
 <p>This module also extends the <code class="docutils literal notranslate"><span class="pre">res.users</span></code> model, allowing user accounts to be directly associated with one or more service points. This ensures that users, such as service agents, only access and manage data relevant to their assigned service delivery locations.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Service Points module provides robust features for managing service delivery operations:</p>
-<section id="service-point-definition-and-management">
+<div class="section" id="service-point-definition-and-management">
 <h3>Service Point Definition and Management<a class="headerlink" href="#service-point-definition-and-management" title="Permalink to this headline">#</a></h3>
 <p>Users can create and manage individual service points, defining key attributes such as the agent's name, physical address, and assigned geographical area. Each service point can be linked to a specific company entity responsible for its operations. This structured approach ensures clear accountability and an organized overview of all service delivery locations.</p>
-</section>
-<section id="service-type-classification">
+</div>
+<div class="section" id="service-type-classification">
 <h3>Service Type Classification<a class="headerlink" href="#service-type-classification" title="Permalink to this headline">#</a></h3>
 <p>The module allows for the creation and assignment of various service types (e.g., &quot;Cash Transfer Enrollment,&quot; &quot;Grievance Redress,&quot; &quot;Information Desk&quot;). Users can associate multiple service types with a single service point, clearly indicating the range of services available at each location and facilitating specialized service delivery.</p>
-</section>
-<section id="status-and-availability-control">
+</div>
+<div class="section" id="status-and-availability-control">
 <h3>Status and Availability Control<a class="headerlink" href="#status-and-availability-control" title="Permalink to this headline">#</a></h3>
 <p>Service points can be actively managed by enabling or disabling them as needed. This feature includes recording the date a service point was disabled and the reason, providing a clear audit trail and allowing for temporary or permanent suspension of services. This is critical for managing operational changes or temporary closures.</p>
-</section>
-<section id="user-and-registrant-association">
+</div>
+<div class="section" id="user-and-registrant-association">
 <h3>User and Registrant Association<a class="headerlink" href="#user-and-registrant-association" title="Permalink to this headline">#</a></h3>
 <p>Service points are directly linked to OpenSPP users (service agents) and registrant records. This allows the system to automatically assign individuals and companies to relevant service points, ensuring that beneficiaries are directed to appropriate locations and that agents only have access to data pertinent to their operational scope. The module also supports the creation of user accounts for contacts associated with a service point's company.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When creating users for a service point's company contacts, the system automatically assigns them to the &quot;Service Point Users&quot; group, ensuring appropriate access rights.</p>
 </div>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Service Points module is essential for organizing, managing, and delivering social protection services efficiently by linking service locations with geographical areas, organizations, and personnel.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

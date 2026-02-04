@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/administration/indicator_fields.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1670,7 +1657,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="indicator-fields">
+  <div class="section" id="indicator-fields">
 <h1>Indicator fields<a class="headerlink" href="#indicator-fields" title="Permalink to this headline">#</a></h1>
 <p>Indicator fields are a powerful feature in OpenSPP that allow for dynamic data calculation based on existing information in the registry. They can be used to create simplified data points, such as the number of children in a household or the count of members with a specific attribute. These indicators are crucial for program operations, particularly for defining eligibility criteria and targeting beneficiaries for social protection programs.</p>
 <p>This guide provides step-by-step instructions on how to create a simple indicator field using the <strong>Custom Fields UI</strong>. We will create an indicator that computes the total number of male individuals within a group.</p>
@@ -1678,22 +1665,22 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>The Custom Fields UI is designed for creating straightforward, user-defined indicators. Creating complex indicators with advanced logic should be done by a developer in a custom module. This process will be covered in a separate developer guide.</p>
 </div>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>To create and manage indicator fields, you need:</p>
 <ul class="simple">
 <li><p>A user account with <strong>System Admin</strong> role. For more details, see the <a class="reference internal" href="user_access.html"><span class="doc">User access</span></a> guide.</p></li>
 <li><p>The <strong>OpenSPP Custom Fields</strong> (<a class="reference internal" href="../../reference/modules/spp_custom_field.html"><span class="doc">spp_custom_field</span></a>) and <strong>OpenSPP Custom Fields UI</strong> (<a class="reference internal" href="../../reference/modules/spp_custom_fields_ui.html"><span class="doc">spp_custom_fields_ui</span></a>) modules must be installed and activated in your OpenSPP instance. For more details, see the <a class="reference internal" href="../../getting_started/module_installation.html"><span class="doc">Module installation</span></a> guide.</p></li>
 </ul>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>After completing this tutorial, you will understand how to create, configure, and verify a custom indicator field in OpenSPP.</p>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
 <p>The process involves navigating to the Custom Fields menu, defining the properties of the new indicator, providing the calculation logic, and verifying its presence on the group records.</p>
-<section id="navigate-to-custom-fields">
+<div class="section" id="navigate-to-custom-fields">
 <h3>Navigate to custom fields<a class="headerlink" href="#navigate-to-custom-fields" title="Permalink to this headline">#</a></h3>
 <p>First, access the custom fields management interface.</p>
 <ol class="arabic simple">
@@ -1702,8 +1689,8 @@ title="Print to PDF"
 <li><p>Click on the <strong>Custom Fields</strong> sub-menu.</p></li>
 </ol>
 <p><img alt="Step01 configuration custom fields" src="../../_images/step01_configuration_custom_fields1.jpg" /></p>
-</section>
-<section id="create-a-new-field">
+</div>
+<div class="section" id="create-a-new-field">
 <h3>Create a new field<a class="headerlink" href="#create-a-new-field" title="Permalink to this headline">#</a></h3>
 <p>On the <strong>Custom Fields</strong> page, you will see a list of existing custom fields.</p>
 <ol class="arabic simple">
@@ -1712,8 +1699,8 @@ title="Print to PDF"
 <p><img alt="Step02 click new custom fields list view" src="../../_images/step02_click_new_custom_fields_list_view1.jpg" /></p>
 <p>The <strong>Custom Fields</strong> form view will appear.</p>
 <p><img alt="Step02a custom fields form view" src="../../_images/step02a_custom_fields_form_view1.jpg" /></p>
-</section>
-<section id="configure-basic-properties">
+</div>
+<div class="section" id="configure-basic-properties">
 <h3>Configure basic properties<a class="headerlink" href="#configure-basic-properties" title="Permalink to this headline">#</a></h3>
 <p>Now, define the basic characteristics of your new indicator field. For this example, we are counting male members in a group.</p>
 <ul class="simple">
@@ -1725,8 +1712,8 @@ title="Print to PDF"
 <li><p><strong>Field Help</strong>: Specify a text that will appear in the <strong>Field Description</strong> section in the form.</p></li>
 </ul>
 <p><img alt="Step03 set type calculated" src="../../_images/step03_set_type_calculated.jpg" /></p>
-</section>
-<section id="configure-advanced-properties">
+</div>
+<div class="section" id="configure-advanced-properties">
 <h3>Configure advanced properties<a class="headerlink" href="#configure-advanced-properties" title="Permalink to this headline">#</a></h3>
 <p>Since this is a calculated field, you must provide the logic for its computation in the <strong>Properties</strong> tab.</p>
 <ol class="arabic simple">
@@ -1745,8 +1732,8 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p><img alt="Step04 specify compute field code" src="../../_images/step04_specify_compute_field_code.jpg" /></p>
-</section>
-<section id="save-and-open-a-group">
+</div>
+<div class="section" id="save-and-open-a-group">
 <h3>Save and open a group<a class="headerlink" href="#save-and-open-a-group" title="Permalink to this headline">#</a></h3>
 <p>Once all properties are configured, save the new field.</p>
 <ol class="arabic simple">
@@ -1754,8 +1741,8 @@ title="Print to PDF"
 <li><p>Navigate to the <strong>Registry</strong> and click the <strong>Groups</strong> menu.</p></li>
 </ol>
 <p><img alt="Step05 open group list view" src="../../_images/step05_open_group_list_view.jpg" /></p>
-</section>
-<section id="verify-the-indicator-field">
+</div>
+<div class="section" id="verify-the-indicator-field">
 <h3>Verify the indicator field<a class="headerlink" href="#verify-the-indicator-field" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>To verify, open any record in the <strong>Groups</strong> list view.</p></li>
@@ -1769,9 +1756,9 @@ title="Print to PDF"
 <li><p>A new tab named <strong>Indicators</strong> will appear, displaying your new &quot;Total Male Members&quot; field with its calculated value.</p></li>
 </ol>
 <p><img alt="Step06b check new indicator field" src="../../_images/step06b_check_new_indicator_field.jpg" /></p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

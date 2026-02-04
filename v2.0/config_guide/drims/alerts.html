@@ -1,0 +1,2551 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+<meta content="Configuring Alerts and Thresholds" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://docs.openspp.org/config_guide/drims/alerts.html" property="og:url"/>
+<meta content="OpenSPP Documentation" property="og:site_name"/>
+<meta content="This guide is for implementers configuring alert thresholds and monitoring in DRIMS. You should be comfortable with program configuration and monitoring setup, but you don't need to write Python or..." property="og:description"/>
+<meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
+<meta content="OpenSPP Documentation" property="og:image:alt"/>
+<meta content="This guide is for implementers configuring alert thresholds and monitoring in DRIMS. You should be comfortable with program configuration and monitoring setup, but you don't need to write Python or..." name="description"/>
+<meta content="en_US" property="og:locale"/>
+<title>Configuring Alerts and Thresholds — OpenSPP Documentation v2.0</title>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/sphinxcontrib-httpexample.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/custom.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/print.css" media="print" rel="stylesheet" type="text/css"/>
+<link href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script src="../../_static/sphinxcontrib-httpexample.js"></script>
+<script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+<script src="../../_static/search-utils.js"></script>
+<script src="../../_static/mermaid_init.js"></script>
+<script src="../../_static/patch_scrollToActive.js"></script>
+<script src="../../_static/search_shortcut.js"></script>
+<script src="../../_static/module-filter.js"></script>
+<script src="../../_static/design-tabs.js"></script>
+<link href="https://docs.openspp.org/config_guide/drims/alerts.html" rel="canonical">
+<link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v2.0" type="application/opensearchdescription+xml"/>
+<link href="../../_static/icon_192.png" rel="shortcut icon"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../../_static/review_status.css" type="text/css" />
+<script src="../../_static/review_status_simple.js"></script>
+-->
+<script crossorigin="anonymous" integrity="sha384-vJ1NXwwlC62VkTLRHyzdAfyL4rQ8Z478DeHgamh37YzGJh3T6j223FC2yMRVriLl" src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+<!-- Mermaid Support -->
+<script crossorigin="anonymous" integrity="sha384-+NGfjU8KzpDLXRHduEqW+ZiJr2rIg+cidUVk7B51R5xK7cHwMKQfrdFwGdrq1Bcz" src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+</link></link></link></link></link></link></head>
+<body data-offset="100" data-spy="scroll" data-target="#bd-toc-nav">
+<!-- Checkboxes to toggle the left sidebar -->
+<input aria-label="Toggle navigation sidebar" class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<label class="overlay overlay-navbar" for="__navigation">
+<div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input aria-label="Toggle in-page Table of Contents" class="sidebar-toggle" id="__page-toc" name="__page-toc" type="checkbox"/>
+<label class="overlay overlay-pagetoc" for="__page-toc">
+<div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+<div class="container-fluid" id="banner"></div>
+<div class="container-xl">
+<div class="row">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+<div class="bd-sidebar__content">
+<div class="bd-sidebar__top"><div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../">
+<h1 class="site-logo" id="site-title">OpenSPP Documentation v2.0</h1>
+</a>
+</div><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<div class="input-group">
+<label class="sr-only" for="q">Search string
+    </label>
+<i aria-hidden="true" class="fa fa-search fa-lg search-icon"></i>
+<input aria-labelledby="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search" spellcheck="false" type="search" value="">
+<div class="input-group-append">
+<span class="input-group-text" id="shortcut">
+<kbd id="search-shortcut">⌘</kbd> <kbd>K</kbd>
+</span>
+</div>
+</input></div>
+</form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../products/">
+   Products
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/sp_mis.html">
+     OpenSPP SP-MIS
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/social_registry.html">
+     OpenSPP Social Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/farmer_registry.html">
+     OpenSPP Farmer Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/drims.html">
+     OpenSPP DRIMS
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../products/features/">
+     Features
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/unified_registry.html">
+       Unified registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/gis_land_management.html">
+       GIS &amp; land management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/program_management.html">
+       Program management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/eligibility_targeting.html">
+       Eligibility &amp; targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/payment_disbursement.html">
+       Payment &amp; disbursement
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/in_kind_benefits.html">
+       In-Kind benefits
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/data_integration_apis.html">
+       Data integration &amp; APIs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/change_management.html">
+       Change management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/grievance_redress.html">
+       Grievance redress
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/whats_new_v2.html">
+     What's new in OpenSPP v2
+    </a>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../learn/">
+   Learn
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/registry.html">
+     Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/programs.html">
+     Programs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/cycles.html">
+     Cycles
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/eligibility.html">
+     Eligibility
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/compliance.html">
+     Compliance
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/entitlements.html">
+     Entitlements
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/payments.html">
+     Payments
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/deduplication.html">
+     Deduplication
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/change-requests.html">
+     Change requests
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../get_started/">
+   Get started
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/installation/">
+     Installing OpenSPP
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+<label for="toctree-checkbox-5">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/installation/docker.html">
+       Docker installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/modules/">
+     Module installation
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+<label for="toctree-checkbox-6">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/spmis_installation.html">
+       SP-MIS installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/social_installation.html">
+       Social Registry installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/explore/">
+     Explore OpenSPP
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_household/">
+     Your first household
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+<label for="toctree-checkbox-7">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/01_access_registry.html">
+       Step 1: Access the Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/02_create_household.html">
+       Step 2: Create a Household
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/03_add_members.html">
+       Step 3: Add members
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_program/">
+     Your first program
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+<label for="toctree-checkbox-8">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/01_access_program.html">
+       Step 1: Access the program section
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/02_create_program.html">
+       Step 2: Create your first social protection program
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/03_enroll_beneficiaries.html">
+       Step 3: Import and enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/04_run_cycle.html">
+       Step 4: Understanding program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/05_distribute_entitlements.html">
+       Step 5: Distribute entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/poc_and_pilot.html">
+     From Proof of Concept to Pilot
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../user_guide/">
+   User guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+<label for="toctree-checkbox-9">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/getting_started/">
+     Getting started
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+<label for="toctree-checkbox-10">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/navigation.html">
+       Navigating the OpenSPP interface
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/registry/">
+     Registry
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+<label for="toctree-checkbox-11">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_individual.html">
+       Register an individual
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_group.html">
+       Register a group
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/search_filter.html">
+       Search and filter registrants
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/import_data.html">
+       Import registrant data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/export_data.html">
+       Export registrant data
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/change_requests/">
+     Change Requests
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+<label for="toctree-checkbox-12">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/submit_change_request.html">
+       Submit a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/review_change_request.html">
+       Review a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/change_request_types.html">
+       Change request types
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/programs/">
+     Programs
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+<label for="toctree-checkbox-13">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/create_programs.html">
+       Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/program_cycles.html">
+       Work with program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/enroll_beneficiaries.html">
+       Enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/allocate_funds.html">
+       Allocate funds to programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/manage_entitlements.html">
+       Manage entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/payments/">
+     Payments
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+<label for="toctree-checkbox-14">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/payments/service_points.html">
+       View Service Points
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/approvals/">
+     Approvals
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+<label for="toctree-checkbox-15">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/approvals/manage_approvals.html">
+       Review and Approve Requests
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/reference/">
+     Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+<label for="toctree-checkbox-16">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/areas_geography.html">
+       Geographic Areas
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/vocabularies.html">
+       Vocabularies (Code Lists)
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../">
+   Configuration guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+<label for="toctree-checkbox-17">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../studio/">
+     OpenSPP Studio
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+<label for="toctree-checkbox-18">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/overview.html">
+       Studio Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/registry_field_builder.html">
+       Custom Fields (Registry Field Builder)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/event_type_designer.html">
+       Event Type Designer
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/change_request_builder.html">
+       Change Request Builder
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../cel/">
+     CEL expressions
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+<label for="toctree-checkbox-19">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/quick_start.html">
+       CEL quick start
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/syntax.html">
+       CEL syntax reference
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/variables.html">
+       Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/cookbook.html">
+       CEL cookbook
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/troubleshooting.html">
+       CEL troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../eligibility/">
+     Eligibility rules
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+<label for="toctree-checkbox-20">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/cel_expressions.html">
+       CEL expressions for eligibility
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/geographic_targeting.html">
+       Geographic targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/templates.html">
+       Expression templates
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/testing.html">
+       Testing eligibility rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/advanced.html">
+       Advanced eligibility configuration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../entitlement_formulas/">
+     Entitlement formulas
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+<label for="toctree-checkbox-21">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/cash_calculations.html">
+       Cash calculations
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/inkind_baskets.html">
+       In-kind and basket entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/formula_library.html">
+       Formula library
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/dynamic_entitlements.html">
+       Dynamic entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/conditional_logic.html">
+       Conditional logic
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../vocabulary/">
+     Vocabulary System
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+<label for="toctree-checkbox-22">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/overview.html">
+       Vocabulary Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/standard_vocabularies.html">
+       Standard Vocabularies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/profiles.html">
+       Vocabulary Profiles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/custom.html">
+       Custom Vocabularies
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../variables/">
+     Variables &amp; Indicators
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+<label for="toctree-checkbox-23">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/overview.html">
+       Variables Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/creating_variables.html">
+       Creating Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/variable_types.html">
+       Variable Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/using_variables.html">
+       Using Variables in CEL
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../event_data/">
+     Event Data
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+<label for="toctree-checkbox-24">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/overview.html">
+       Event Data Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/event_types.html">
+       Configuring Event Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/field_definitions.html">
+       Defining Event Fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../change_request_types/">
+     Change request types
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+<label for="toctree-checkbox-25">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/overview.html">
+       Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/creating_types.html">
+       Creating change request types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/field_mappings.html">
+       Field mappings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/conflict_detection.html">
+       Conflict and duplicate detection
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/patterns.html">
+       Common configuration patterns
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/custom_detail_models.html">
+       Custom detail models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../consent/">
+     Consent configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+<label for="toctree-checkbox-26">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/overview.html">
+       Consent management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/privacy_notices.html">
+       Configuring privacy notices
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/recording_consent.html">
+       Recording consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/api_consent_filtering.html">
+       API consent filtering
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../role_configuration/">
+     Role configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+<label for="toctree-checkbox-27">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/overview.html">
+       Access control overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/assigning_roles.html">
+       Assigning roles to users
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/predefined_roles.html">
+       Predefined roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/creating_roles.html">
+       Creating custom roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../ops_guide/">
+   Operations guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+<label for="toctree-checkbox-28">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/deployment/">
+     Deployment
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+<label for="toctree-checkbox-29">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/deployment/production-hardening.html">
+       Production Hardening
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/security/">
+     Security
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+<label for="toctree-checkbox-30">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/access_control.html">
+       Access Control
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/data_classification.html">
+       Data Classification
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/pii_encryption.html">
+       PII Encryption
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/audit.html">
+       Audit Logging
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/scanning.html">
+       Security Scanning
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/storage/">
+     Storage
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/backup/">
+     Backup &amp; Recovery
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/monitoring/">
+     Monitoring &amp; Alerts
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../reference/">
+   Reference
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+<label for="toctree-checkbox-31">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../reference/modules/">
+     Modules Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+<label for="toctree-checkbox-32">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2.html">
+       API V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_cycles.html">
+       API V2 - Cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_data.html">
+       API V2 - Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_entitlements.html">
+       API V2 - Entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_products.html">
+       API V2 - Products
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_service_points.html">
+       API V2 - Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_vocabulary.html">
+       API V2 - Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_approval.html">
+       Approval Workflows
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_area.html">
+       Area Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_audit.html">
+       Audit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_banking.html">
+       Banking / Bank Details
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_common.html">
+       Base (Common)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_setting.html">
+       Base Settings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_branding_kit.html">
+       Branding Kit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_domain.html">
+       CEL Domain Query Builder
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_widget.html">
+       CEL Expression Widget
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_change_request_v2.html">
+       Change Request V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_claim_169.html">
+       QR Credentials (Claim 169)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_consent.html">
+       Consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_advanced.html">
+       CR Types - Advanced
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_base.html">
+       CR Types - Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_custom_field.html">
+       Custom Fields
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client.html">
+       DCI Client
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_crvs.html">
+       DCI Client - CRVS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_dr.html">
+       DCI Client - Disability Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_ibr.html">
+       DCI Client - IBR
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_server.html">
+       DCI Server
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_demo.html">
+       Demo
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dms.html">
+       Document Management System
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_event_data.html">
+       Event Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_gis.html">
+       GIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_gis_report.html">
+       GIS Reports
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_grm.html">
+       Grievance Redress Mechanism
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_hide_menus_base.html">
+       Hide Menus Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_mis_demo_v2.html">
+       MIS Demo V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_programs.html">
+       Programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry.html">
+       Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry_search.html">
+       Registry Search Portal
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_security.html">
+       Security
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_service_points.html">
+       Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_source_tracking.html">
+       Source Tracking
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_social_registry.html">
+       Starter: Social Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_sp_mis.html">
+       Starter: SP-MIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio.html">
+       Studio
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio_change_requests.html">
+       Studio - Change Requests
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio_events.html">
+       Studio - Events
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_user_roles.html">
+       User Roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_versioning.html">
+       Versioning
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_vocabulary.html">
+       Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/theme_openspp_muk.html">
+       Theme
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/vocabularies/">
+     Vocabulary Reference
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/glossary/humanitarian.html">
+     Humanitarian Terms Glossary
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../glossary.html">
+     OpenSPP Glossary
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../community_and_support/">
+   Community and support
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+<label for="toctree-checkbox-33">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/how_to_contribute_to_the_project.html">
+     Contributing
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/i18n_l10n.html">
+     Internationalization and Localization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/security_report.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/license.html">
+     Licensing
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+<div class="bd-sidebar__bottom">
+<!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+<p class="openspporglink">
+<a href="https://openspp.org">
+<img alt="openspp.org" src="/_static/openspp_logo.png"/> openspp.org</a>
+</p>
+</div>
+</div>
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+<div class="header-article row sticky-top noprint">
+<div class="col py-1 d-flex header-article-main">
+<div class="header-article__left">
+<label class="headerbtn" data-placement="right" data-toggle="tooltip" for="__navigation" title="Toggle navigation">
+<span class="headerbtn__icon-container">
+<i class="fas fa-bars"></i>
+</span>
+</label>
+</div>
+<div class="header-article__label">
+<span>Configuring Alerts and Thresholds</span>
+</div>
+<div class="header-article__right">
+<button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="headerbtn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+<button aria-label="Source repositories" class="headerbtn menu-dropdown__trigger">
+<i class="fab fa-github"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation" title="Source repository">
+<span class="headerbtn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fconfig_guide/drims/alerts.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<span class="headerbtn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?config_guide/drims/alerts.md#making-contributions-on-github" title="Edit this page">
+<span class="headerbtn__icon-container">
+<i class="fas fa-pencil-alt"></i>
+</span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+<button aria-label="Download this page" class="headerbtn menu-dropdown__trigger">
+<i class="fas fa-download"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/config_guide/drims/alerts.md.txt" title="Download source file">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+</li>
+<li>
+<button class="headerbtn" data-placement="left" data-toggle="tooltip" onclick="printPdf(this)" title="Print to PDF">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
+</div>
+</div>
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-you-ll-learn">
+   What You'll Learn
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#mental-model">
+   Mental Model
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#alert-states">
+     Alert States
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#how-alerts-are-generated">
+   How Alerts Are Generated
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#setting-threshold-defaults">
+   Setting Threshold Defaults
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#accessing-global-settings">
+     Accessing Global Settings
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#global-threshold-configuration">
+     Global Threshold Configuration
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#incident-level-overrides">
+   Incident-Level Overrides
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#when-to-override">
+     When to Override
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#configuring-incident-overrides">
+     Configuring Incident Overrides
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#configuring-each-alert-type">
+   Configuring Each Alert Type
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#low-stock-alerts">
+     Low Stock Alerts
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sla-alerts">
+     SLA Alerts
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#expiry-alerts">
+     Expiry Alerts
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#common-patterns">
+   Common Patterns
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-1-emergency-response-high-urgency">
+     Pattern 1: Emergency Response (High Urgency)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-2-displacement-camp-long-term">
+     Pattern 2: Displacement Camp (Long-Term)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-3-perishable-goods-distribution">
+     Pattern 3: Perishable Goods Distribution
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-4-standard-response-balanced">
+     Pattern 4: Standard Response (Balanced)
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#monitoring-alert-health">
+   Monitoring Alert Health
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#warehouse-health-status">
+     Warehouse Health Status
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#alert-dashboard">
+     Alert Dashboard
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#responding-to-alerts">
+   Responding to Alerts
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#acknowledging-alerts">
+     Acknowledging Alerts
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#resolving-alerts">
+     Resolving Alerts
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#alert-activity-feed">
+     Alert Activity Feed
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#are-you-stuck">
+   Are You Stuck?
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#alerts-not-being-created">
+     Alerts Not Being Created
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#wrong-priority-assigned">
+     Wrong Priority Assigned
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#too-many-alerts">
+     Too Many Alerts
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#alert-created-but-condition-resolved">
+     Alert Created But Condition Resolved
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#can-t-find-alert-settings-on-incident">
+     Can't Find Alert Settings on Incident
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#expiry-alerts-for-non-perishable-items">
+     Expiry Alerts for Non-Perishable Items
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#next-steps">
+   Next Steps
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="article row">
+<div class="col pl-md-3 pl-lg-5 content-container">
+<!-- Table of contents that is only displayed when printing the page -->
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>Configuring Alerts and Thresholds</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-you-ll-learn">
+   What You'll Learn
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#mental-model">
+   Mental Model
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#alert-states">
+     Alert States
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#how-alerts-are-generated">
+   How Alerts Are Generated
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#setting-threshold-defaults">
+   Setting Threshold Defaults
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#accessing-global-settings">
+     Accessing Global Settings
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#global-threshold-configuration">
+     Global Threshold Configuration
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#incident-level-overrides">
+   Incident-Level Overrides
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#when-to-override">
+     When to Override
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#configuring-incident-overrides">
+     Configuring Incident Overrides
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#configuring-each-alert-type">
+   Configuring Each Alert Type
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#low-stock-alerts">
+     Low Stock Alerts
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sla-alerts">
+     SLA Alerts
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#expiry-alerts">
+     Expiry Alerts
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#common-patterns">
+   Common Patterns
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-1-emergency-response-high-urgency">
+     Pattern 1: Emergency Response (High Urgency)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-2-displacement-camp-long-term">
+     Pattern 2: Displacement Camp (Long-Term)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-3-perishable-goods-distribution">
+     Pattern 3: Perishable Goods Distribution
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-4-standard-response-balanced">
+     Pattern 4: Standard Response (Balanced)
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#monitoring-alert-health">
+   Monitoring Alert Health
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#warehouse-health-status">
+     Warehouse Health Status
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#alert-dashboard">
+     Alert Dashboard
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#responding-to-alerts">
+   Responding to Alerts
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#acknowledging-alerts">
+     Acknowledging Alerts
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#resolving-alerts">
+     Resolving Alerts
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#alert-activity-feed">
+     Alert Activity Feed
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#are-you-stuck">
+   Are You Stuck?
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#alerts-not-being-created">
+     Alerts Not Being Created
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#wrong-priority-assigned">
+     Wrong Priority Assigned
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#too-many-alerts">
+     Too Many Alerts
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#alert-created-but-condition-resolved">
+     Alert Created But Condition Resolved
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#can-t-find-alert-settings-on-incident">
+     Can't Find Alert Settings on Incident
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#expiry-alerts-for-non-perishable-items">
+     Expiry Alerts for Non-Perishable Items
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#next-steps">
+   Next Steps
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<main id="main-content" role="main">
+<div>
+<div class="section" id="configuring-alerts-and-thresholds">
+<h1>Configuring Alerts and Thresholds<a class="headerlink" href="#configuring-alerts-and-thresholds" title="Permalink to this headline">#</a></h1>
+<p>This guide is for <strong>implementers</strong> configuring alert thresholds and monitoring in DRIMS. You should be comfortable with program configuration and monitoring setup, but you don't need to write Python or understand database internals.</p>
+<div class="section" id="what-you-ll-learn">
+<h2>What You'll Learn<a class="headerlink" href="#what-you-ll-learn" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>How DRIMS detects and alerts on inventory issues</p></li>
+<li><p>How to set global threshold defaults</p></li>
+<li><p>How to override thresholds per incident</p></li>
+<li><p>How to configure different alert types</p></li>
+</ul>
+</div>
+<div class="section" id="mental-model">
+<h2>Mental Model<a class="headerlink" href="#mental-model" title="Permalink to this headline">#</a></h2>
+<p>DRIMS automatically monitors your disaster response operations and creates alerts when it detects problems. Think of alerts as an early warning system with four sensors:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Alert Type</p></th>
+<th class="head"><p>What It Detects</p></th>
+<th class="head"><p>Why It Matters</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Low Stock</strong></p></td>
+<td><p>Inventory below 50% of pending requests</p></td>
+<td><p>You may run out before fulfilling promises</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SLA Warning</strong></p></td>
+<td><p>Requests approaching due date (2 days)</p></td>
+<td><p>Time to expedite before breach</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>SLA Breach</strong></p></td>
+<td><p>Requests past due date, not delivered</p></td>
+<td><p>Commitments missed, requires escalation</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Expiry</strong></p></td>
+<td><p>Items approaching expiration (30 days)</p></td>
+<td><p>Risk of waste or unsafe distribution</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="alert-states">
+<h3>Alert States<a class="headerlink" href="#alert-states" title="Permalink to this headline">#</a></h3>
+<p>Alerts flow through three states:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Active → Acknowledged → Resolved
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Active</strong>: New alert requiring attention (appears in dashboards)</p></li>
+<li><p><strong>Acknowledged</strong>: Someone is handling it (removes from urgent list)</p></li>
+<li><p><strong>Resolved</strong>: Issue fixed, alert closed (archived for reporting)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="how-alerts-are-generated">
+<h2>How Alerts Are Generated<a class="headerlink" href="#how-alerts-are-generated" title="Permalink to this headline">#</a></h2>
+<p>DRIMS runs automated checks on a schedule. You don't need to configure these schedules—they run automatically:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Check</p></th>
+<th class="head"><p>Frequency</p></th>
+<th class="head"><p>What It Does</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Low Stock</p></td>
+<td><p>Every 4 hours</p></td>
+<td><p>Compares available inventory to pending request quantities</p></td>
+</tr>
+<tr class="row-odd"><td><p>SLA Compliance</p></td>
+<td><p>Every 2 hours</p></td>
+<td><p>Checks due dates for approved requests</p></td>
+</tr>
+<tr class="row-even"><td><p>Expiry Warning</p></td>
+<td><p>Daily</p></td>
+<td><p>Scans lot expiration dates in DRIMS warehouses</p></td>
+</tr>
+<tr class="row-odd"><td><p>KPI Refresh</p></td>
+<td><p>Every 15 minutes</p></td>
+<td><p>Updates dashboard metrics</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The expiry check requires the <strong>Product Expiry</strong> module (<code class="docutils literal notranslate"><span class="pre">product_expiry</span></code>) to be installed. If you don't track expiration dates, this check won't run.</p>
+</div>
+</div>
+<div class="section" id="setting-threshold-defaults">
+<h2>Setting Threshold Defaults<a class="headerlink" href="#setting-threshold-defaults" title="Permalink to this headline">#</a></h2>
+<p>Global defaults apply to all incidents unless overridden. These control when alerts are created.</p>
+<div class="section" id="accessing-global-settings">
+<h3>Accessing Global Settings<a class="headerlink" href="#accessing-global-settings" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>Go to <strong>Settings</strong> (top menu)</p></li>
+<li><p>Scroll to <strong>DRIMS</strong> section</p></li>
+<li><p>Configure default thresholds</p></li>
+</ol>
+<p><img alt="Screenshot: DRIMS settings section" src="config_guide/drims/screenshots/drims_settings_defaults.png"/></p>
+</div>
+<div class="section" id="global-threshold-configuration">
+<h3>Global Threshold Configuration<a class="headerlink" href="#global-threshold-configuration" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>Default Value</p></th>
+<th class="head"><p>What It Means</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Low Stock Threshold</p></td>
+<td><p>50%</p></td>
+<td><p>Alert when available stock is below 50% of pending request quantity</p></td>
+</tr>
+<tr class="row-odd"><td><p>SLA Warning Days</p></td>
+<td><p>2 days</p></td>
+<td><p>Alert when request due date is within 2 days</p></td>
+</tr>
+<tr class="row-even"><td><p>Expiry Warning Days</p></td>
+<td><p>30 days</p></td>
+<td><p>Alert when items expire within 30 days</p></td>
+</tr>
+<tr class="row-odd"><td><p>Expiry Critical Days</p></td>
+<td><p>7 days</p></td>
+<td><p>Escalate to critical priority when items expire within 7 days</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Changes to global defaults only affect NEW alerts. Existing alerts retain the thresholds they were created with.</p>
+</div>
+</div>
+</div>
+<div class="section" id="incident-level-overrides">
+<h2>Incident-Level Overrides<a class="headerlink" href="#incident-level-overrides" title="Permalink to this headline">#</a></h2>
+<p>Each hazard incident can override global thresholds. This lets you tune monitoring for different disaster types.</p>
+<div class="section" id="when-to-override">
+<h3>When to Override<a class="headerlink" href="#when-to-override" title="Permalink to this headline">#</a></h3>
+<p>Use incident-level overrides when:</p>
+<ul class="simple">
+<li><p><strong>High-urgency incidents</strong> (earthquakes, floods) need tighter SLA monitoring (1 day instead of 2)</p></li>
+<li><p><strong>Long-term responses</strong> (droughts, displacement) can tolerate longer expiry windows (60 days instead of 30)</p></li>
+<li><p><strong>Perishable goods incidents</strong> (food relief) need stricter expiry alerts (14 days instead of 7)</p></li>
+</ul>
+</div>
+<div class="section" id="configuring-incident-overrides">
+<h3>Configuring Incident Overrides<a class="headerlink" href="#configuring-incident-overrides" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>Open the <strong>Hazard Incident</strong> record</p></li>
+<li><p>Go to the <strong>Alert Configuration</strong> tab</p></li>
+<li><p>Enable <strong>Override Global Thresholds</strong></p></li>
+<li><p>Set custom values</p></li>
+</ol>
+<p><img alt="Screenshot: Incident alert configuration tab" src="config_guide/drims/screenshots/incident_alert_overrides.png"/></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example Use Case</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SLA Warning Days</p></td>
+<td><p>Days before due date to warn</p></td>
+<td><p>Emergency: 1 day; Standard: 3 days</p></td>
+</tr>
+<tr class="row-odd"><td><p>Expiry Warning Days</p></td>
+<td><p>Days before expiration to warn</p></td>
+<td><p>Perishables: 14 days; Durable goods: 60 days</p></td>
+</tr>
+<tr class="row-even"><td><p>Expiry Critical Days</p></td>
+<td><p>Days before expiration for critical alert</p></td>
+<td><p>Food: 3 days; Medical supplies: 7 days</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Low stock threshold (50%) cannot be overridden per incident. It's always calculated as 50% of the pending request quantity.</p>
+</div>
+</div>
+</div>
+<div class="section" id="configuring-each-alert-type">
+<h2>Configuring Each Alert Type<a class="headerlink" href="#configuring-each-alert-type" title="Permalink to this headline">#</a></h2>
+<div class="section" id="low-stock-alerts">
+<h3>Low Stock Alerts<a class="headerlink" href="#low-stock-alerts" title="Permalink to this headline">#</a></h3>
+<p><strong>Trigger Condition:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Available Quantity &lt; (Pending Request Quantity × 0.50)
+</pre></div>
+</div>
+<p><strong>Priority Assigned:</strong></p>
+<ul class="simple">
+<li><p><strong>High</strong>: Zero stock available</p></li>
+<li><p><strong>Medium</strong>: Some stock but below 50% threshold</p></li>
+</ul>
+<p><strong>Configuration:</strong></p>
+<p>Low stock alerts are automatically calculated. The threshold is always 50% of pending quantities. You cannot configure this threshold, but you can adjust it by:</p>
+<ol class="arabic simple">
+<li><p>Ensuring request quantities are accurate</p></li>
+<li><p>Marking unfillable requests as "Rejected" to remove them from calculations</p></li>
+<li><p>Dispatching partial shipments to reduce pending quantities</p></li>
+</ol>
+<p><strong>Example Scenario:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Product</p></th>
+<th class="head"><p>Pending Requests</p></th>
+<th class="head"><p>Available Stock</p></th>
+<th class="head"><p>Alert?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Rice 25kg</p></td>
+<td><p>1000 bags</p></td>
+<td><p>600 bags</p></td>
+<td><p>No (60% &gt; 50%)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tents</p></td>
+<td><p>200 units</p></td>
+<td><p>80 units</p></td>
+<td><p><strong>Yes</strong> (40% &lt; 50%) - Medium priority</p></td>
+</tr>
+<tr class="row-even"><td><p>Water bottles</p></td>
+<td><p>5000 units</p></td>
+<td><p>0 units</p></td>
+<td><p><strong>Yes</strong> (0%) - High priority</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sla-alerts">
+<h3>SLA Alerts<a class="headerlink" href="#sla-alerts" title="Permalink to this headline">#</a></h3>
+<p><strong>Two Alert Types:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>SLA Warning</strong> - Request due within warning period (default: 2 days)</p></li>
+<li><p><strong>SLA Breach</strong> - Request past due date and not delivered</p></li>
+</ol>
+<p><strong>Priority for Warnings:</strong></p>
+<ul class="simple">
+<li><p><strong>High</strong>: Due today or tomorrow</p></li>
+<li><p><strong>Medium</strong>: Due in 2 days</p></li>
+</ul>
+<p><strong>Priority for Breaches:</strong></p>
+<ul class="simple">
+<li><p><strong>Critical</strong>: More than 7 days overdue</p></li>
+<li><p><strong>High</strong>: 3-7 days overdue</p></li>
+<li><p><strong>Medium</strong>: 1-3 days overdue</p></li>
+</ul>
+<p><strong>Configuration:</strong></p>
+<p>Set warning threshold in <strong>Settings &gt; DRIMS &gt; SLA Warning Days</strong> or override per incident.</p>
+<p><strong>Example Timeline:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Request</span> <span class="n">due</span> <span class="n">date</span><span class="p">:</span> <span class="n">January</span> <span class="mi">15</span>
+
+<span class="n">January</span> <span class="mi">13</span> <span class="p">(</span><span class="mi">2</span> <span class="n">days</span> <span class="n">before</span><span class="p">):</span> <span class="n">SLA</span> <span class="ne">Warning</span> <span class="n">created</span> <span class="p">(</span><span class="n">Medium</span> <span class="n">priority</span><span class="p">)</span>
+<span class="n">January</span> <span class="mi">14</span> <span class="p">(</span><span class="mi">1</span> <span class="n">day</span> <span class="n">before</span><span class="p">):</span> <span class="n">Priority</span> <span class="n">escalates</span> <span class="n">to</span> <span class="n">High</span>
+<span class="n">January</span> <span class="mi">16</span> <span class="p">(</span><span class="mi">1</span> <span class="n">day</span> <span class="n">overdue</span><span class="p">):</span> <span class="n">SLA</span> <span class="n">Breach</span> <span class="n">created</span> <span class="p">(</span><span class="n">Medium</span> <span class="n">priority</span><span class="p">)</span>
+<span class="n">January</span> <span class="mi">19</span> <span class="p">(</span><span class="mi">4</span> <span class="n">days</span> <span class="n">overdue</span><span class="p">):</span> <span class="n">Priority</span> <span class="n">escalates</span> <span class="n">to</span> <span class="n">High</span>
+<span class="n">January</span> <span class="mi">23</span> <span class="p">(</span><span class="mi">8</span> <span class="n">days</span> <span class="n">overdue</span><span class="p">):</span> <span class="n">Priority</span> <span class="n">escalates</span> <span class="n">to</span> <span class="n">Critical</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="expiry-alerts">
+<h3>Expiry Alerts<a class="headerlink" href="#expiry-alerts" title="Permalink to this headline">#</a></h3>
+<p><strong>Trigger Condition:</strong></p>
+<p>Items with lot expiration dates within the warning period (default: 30 days).</p>
+<p><strong>Priority Assigned:</strong></p>
+<ul class="simple">
+<li><p><strong>Critical</strong>: Expires within 7 days</p></li>
+<li><p><strong>High</strong>: Expires within 14 days</p></li>
+<li><p><strong>Medium</strong>: Expires within 30 days</p></li>
+</ul>
+<p><strong>Configuration:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>Where to Configure</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Warning Days</p></td>
+<td><p>Settings &gt; DRIMS or Incident override</p></td>
+<td><p>30 days</p></td>
+</tr>
+<tr class="row-odd"><td><p>Critical Days</p></td>
+<td><p>Settings &gt; DRIMS or Incident override</p></td>
+<td><p>7 days</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Requirements:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Product Expiry module</strong> must be installed</p></li>
+<li><p>Products must have <strong>Track By Lots</strong> enabled</p></li>
+<li><p>Lots must have <strong>Expiration Date</strong> set</p></li>
+<li><p>Stock must be in a <strong>DRIMS warehouse</strong></p></li>
+</ol>
+<p><img alt="Screenshot: Product expiry configuration" src="config_guide/drims/screenshots/product_expiry_config.png"/></p>
+<p><strong>Example Scenario:</strong></p>
+<p>Today is January 1. You have these lots:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Product</p></th>
+<th class="head"><p>Lot</p></th>
+<th class="head"><p>Expiry Date</p></th>
+<th class="head"><p>Days Until</p></th>
+<th class="head"><p>Alert Priority</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Antibiotics</p></td>
+<td><p>LOT-001</p></td>
+<td><p>Jan 5</p></td>
+<td><p>4 days</p></td>
+<td><p><strong>Critical</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Rice</p></td>
+<td><p>LOT-002</p></td>
+<td><p>Jan 10</p></td>
+<td><p>9 days</p></td>
+<td><p><strong>High</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Blankets</p></td>
+<td><p>LOT-003</p></td>
+<td><p>Jan 25</p></td>
+<td><p>24 days</p></td>
+<td><p><strong>Medium</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Tents</p></td>
+<td><p>LOT-004</p></td>
+<td><p>Mar 1</p></td>
+<td><p>59 days</p></td>
+<td><p>No alert</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="common-patterns">
+<h2>Common Patterns<a class="headerlink" href="#common-patterns" title="Permalink to this headline">#</a></h2>
+<div class="section" id="pattern-1-emergency-response-high-urgency">
+<h3>Pattern 1: Emergency Response (High Urgency)<a class="headerlink" href="#pattern-1-emergency-response-high-urgency" title="Permalink to this headline">#</a></h3>
+<p><strong>Scenario:</strong> Earthquake relief requiring rapid deployment.</p>
+<p><strong>Configuration:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Rationale</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SLA Warning Days</p></td>
+<td><p>1 day</p></td>
+<td><p>Tight deadlines, need immediate action</p></td>
+</tr>
+<tr class="row-odd"><td><p>Expiry Warning Days</p></td>
+<td><p>14 days</p></td>
+<td><p>Focus on fresh food and medical supplies</p></td>
+</tr>
+<tr class="row-even"><td><p>Expiry Critical Days</p></td>
+<td><p>3 days</p></td>
+<td><p>Urgent redistribution or disposal</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Result:</strong> Very tight monitoring, many alerts, high responsiveness.</p>
+</div>
+<div class="section" id="pattern-2-displacement-camp-long-term">
+<h3>Pattern 2: Displacement Camp (Long-Term)<a class="headerlink" href="#pattern-2-displacement-camp-long-term" title="Permalink to this headline">#</a></h3>
+<p><strong>Scenario:</strong> Ongoing support for displaced population over 6+ months.</p>
+<p><strong>Configuration:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Rationale</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SLA Warning Days</p></td>
+<td><p>3 days</p></td>
+<td><p>More flexibility in delivery scheduling</p></td>
+</tr>
+<tr class="row-odd"><td><p>Expiry Warning Days</p></td>
+<td><p>60 days</p></td>
+<td><p>Durable goods, long shelf life</p></td>
+</tr>
+<tr class="row-even"><td><p>Expiry Critical Days</p></td>
+<td><p>14 days</p></td>
+<td><p>Still time to redistribute</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Result:</strong> Fewer alerts, focus on planning not emergency response.</p>
+</div>
+<div class="section" id="pattern-3-perishable-goods-distribution">
+<h3>Pattern 3: Perishable Goods Distribution<a class="headerlink" href="#pattern-3-perishable-goods-distribution" title="Permalink to this headline">#</a></h3>
+<p><strong>Scenario:</strong> Food relief program with short shelf-life items.</p>
+<p><strong>Configuration:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Rationale</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SLA Warning Days</p></td>
+<td><p>2 days</p></td>
+<td><p>Standard delivery timeline</p></td>
+</tr>
+<tr class="row-odd"><td><p>Expiry Warning Days</p></td>
+<td><p>21 days</p></td>
+<td><p>Start planning redistribution early</p></td>
+</tr>
+<tr class="row-even"><td><p>Expiry Critical Days</p></td>
+<td><p>7 days</p></td>
+<td><p>Week before expiry, urgent action needed</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Result:</strong> Heavy focus on expiry alerts, moderate SLA monitoring.</p>
+</div>
+<div class="section" id="pattern-4-standard-response-balanced">
+<h3>Pattern 4: Standard Response (Balanced)<a class="headerlink" href="#pattern-4-standard-response-balanced" title="Permalink to this headline">#</a></h3>
+<p><strong>Scenario:</strong> General disaster response with mixed urgency.</p>
+<p><strong>Configuration:</strong></p>
+<p>Use global defaults (no overrides):</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Setting</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SLA Warning Days</p></td>
+<td><p>2 days</p></td>
+</tr>
+<tr class="row-odd"><td><p>Expiry Warning Days</p></td>
+<td><p>30 days</p></td>
+</tr>
+<tr class="row-even"><td><p>Expiry Critical Days</p></td>
+<td><p>7 days</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Result:</strong> Balanced monitoring suitable for most incidents.</p>
+</div>
+</div>
+<div class="section" id="monitoring-alert-health">
+<h2>Monitoring Alert Health<a class="headerlink" href="#monitoring-alert-health" title="Permalink to this headline">#</a></h2>
+<div class="section" id="warehouse-health-status">
+<h3>Warehouse Health Status<a class="headerlink" href="#warehouse-health-status" title="Permalink to this headline">#</a></h3>
+<p>Warehouses automatically calculate health status based on active alerts:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Health Status</p></th>
+<th class="head"><p>Condition</p></th>
+<th class="head"><p>Dashboard Color</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Critical</strong></p></td>
+<td><p>3+ active alerts OR capacity &lt;10%</p></td>
+<td><p>Red</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Warning</strong></p></td>
+<td><p>1-2 active alerts OR capacity &lt;30%</p></td>
+<td><p>Orange</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Good</strong></p></td>
+<td><p>No active alerts, adequate stock</p></td>
+<td><p>Green</p></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Screenshot: Warehouse health dashboard" src="config_guide/drims/screenshots/warehouse_health_status.png"/></p>
+</div>
+<div class="section" id="alert-dashboard">
+<h3>Alert Dashboard<a class="headerlink" href="#alert-dashboard" title="Permalink to this headline">#</a></h3>
+<p>View all active alerts in <strong>DRIMS &gt; Operations &gt; Alerts</strong>.</p>
+<p>Filter by:</p>
+<ul class="simple">
+<li><p><strong>Priority</strong> (Critical, High, Medium, Low)</p></li>
+<li><p><strong>Type</strong> (Low Stock, SLA Breach, SLA Warning, Expiry)</p></li>
+<li><p><strong>State</strong> (Active, Acknowledged, Resolved)</p></li>
+<li><p><strong>Warehouse</strong></p></li>
+<li><p><strong>Incident</strong></p></li>
+</ul>
+<p><img alt="Screenshot: Alert dashboard with filters" src="config_guide/drims/screenshots/alert_dashboard.png"/></p>
+</div>
+</div>
+<div class="section" id="responding-to-alerts">
+<h2>Responding to Alerts<a class="headerlink" href="#responding-to-alerts" title="Permalink to this headline">#</a></h2>
+<div class="section" id="acknowledging-alerts">
+<h3>Acknowledging Alerts<a class="headerlink" href="#acknowledging-alerts" title="Permalink to this headline">#</a></h3>
+<p>When you start investigating an alert:</p>
+<ol class="arabic simple">
+<li><p>Open the alert record</p></li>
+<li><p>Click <strong>Acknowledge</strong></p></li>
+<li><p>Add notes about your action plan</p></li>
+</ol>
+<p>This removes the alert from "urgent" views but keeps it tracked.</p>
+<p><img alt="Screenshot: Acknowledge alert button" src="config_guide/drims/screenshots/alert_acknowledge.png"/></p>
+</div>
+<div class="section" id="resolving-alerts">
+<h3>Resolving Alerts<a class="headerlink" href="#resolving-alerts" title="Permalink to this headline">#</a></h3>
+<p>When the underlying issue is fixed:</p>
+<ol class="arabic simple">
+<li><p>Open the alert record</p></li>
+<li><p>Verify the issue is resolved (check stock levels, confirm delivery, etc.)</p></li>
+<li><p>Click <strong>Resolve</strong></p></li>
+<li><p>Add notes about the resolution</p></li>
+</ol>
+<p>Resolved alerts are archived but remain in reporting for analysis.</p>
+<p><img alt="Screenshot: Resolve alert button" src="config_guide/drims/screenshots/alert_resolve.png"/></p>
+</div>
+<div class="section" id="alert-activity-feed">
+<h3>Alert Activity Feed<a class="headerlink" href="#alert-activity-feed" title="Permalink to this headline">#</a></h3>
+<p>All DRIMS alerts are logged in <strong>DRIMS &gt; Activity Feed</strong>. Use this to:</p>
+<ul class="simple">
+<li><p>Track who acknowledged/resolved alerts</p></li>
+<li><p>Analyze response times</p></li>
+<li><p>Generate compliance reports</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="are-you-stuck">
+<h2>Are You Stuck?<a class="headerlink" href="#are-you-stuck" title="Permalink to this headline">#</a></h2>
+<div class="section" id="alerts-not-being-created">
+<h3>Alerts Not Being Created<a class="headerlink" href="#alerts-not-being-created" title="Permalink to this headline">#</a></h3>
+<p><strong>Problem:</strong> Expected an alert but none appeared.</p>
+<p><strong>Check:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Alert already exists</strong> - DRIMS won't create duplicates. Search for existing alert for same product/warehouse/incident.</p></li>
+<li><p><strong>Request state</strong> - Only "Approved" and "Pending" requests trigger low stock alerts. Check request is not in "Draft" or "Rejected" state.</p></li>
+<li><p><strong>Expiry module</strong> - For expiry alerts, verify <code class="docutils literal notranslate"><span class="pre">product_expiry</span></code> module is installed. Go to <strong>Apps</strong> and search for "Product Expiry".</p></li>
+<li><p><strong>Lot configuration</strong> - For expiry alerts, product must have "Tracking: By Unique Serial Number" or "By Lots" enabled.</p></li>
+<li><p><strong>Wait for cron</strong> - Manual changes won't trigger immediate alerts. Wait for next scheduled check or manually run the cron (Admin only).</p></li>
+</ol>
+</div>
+<div class="section" id="wrong-priority-assigned">
+<h3>Wrong Priority Assigned<a class="headerlink" href="#wrong-priority-assigned" title="Permalink to this headline">#</a></h3>
+<p><strong>Problem:</strong> Alert priority doesn't match expectations.</p>
+<p><strong>Explanation:</strong></p>
+<p>Priority is calculated automatically based on thresholds:</p>
+<ul class="simple">
+<li><p><strong>Low Stock</strong>: Zero stock = High, Some stock = Medium</p></li>
+<li><p><strong>SLA Breach</strong>: Days overdue determines priority</p></li>
+<li><p><strong>Expiry</strong>: Days until expiration determines priority</p></li>
+</ul>
+<p>You cannot manually change priority. To get different priority:</p>
+<ol class="arabic simple">
+<li><p>Adjust global thresholds in Settings</p></li>
+<li><p>Override thresholds on the incident</p></li>
+<li><p>Wait for next cron cycle to recreate alert with new priority</p></li>
+</ol>
+</div>
+<div class="section" id="too-many-alerts">
+<h3>Too Many Alerts<a class="headerlink" href="#too-many-alerts" title="Permalink to this headline">#</a></h3>
+<p><strong>Problem:</strong> Alert dashboard is overwhelming.</p>
+<p><strong>Solutions:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Tighten request management</strong> - Reject unfillable requests so they don't trigger low stock alerts</p></li>
+<li><p><strong>Adjust thresholds</strong> - Increase SLA warning days or expiry warning days for less urgent incidents</p></li>
+<li><p><strong>Resolve stale alerts</strong> - Clean up alerts for issues that were fixed but not marked resolved</p></li>
+<li><p><strong>Filter dashboards</strong> - Use priority filters to focus on Critical and High alerts only</p></li>
+</ol>
+<p><img alt="Screenshot: Alert filters set to Critical and High" src="config_guide/drims/screenshots/alert_priority_filter.png"/></p>
+</div>
+<div class="section" id="alert-created-but-condition-resolved">
+<h3>Alert Created But Condition Resolved<a class="headerlink" href="#alert-created-but-condition-resolved" title="Permalink to this headline">#</a></h3>
+<p><strong>Problem:</strong> Alert still shows as active even though stock was replenished or item delivered.</p>
+<p><strong>Explanation:</strong></p>
+<p>Alerts are <strong>not</strong> automatically resolved. The cron jobs only create new alerts, they don't close existing ones.</p>
+<p><strong>Solution:</strong></p>
+<p>Manually resolve the alert:</p>
+<ol class="arabic simple">
+<li><p>Go to <strong>DRIMS &gt; Operations &gt; Alerts</strong></p></li>
+<li><p>Find the alert</p></li>
+<li><p>Click <strong>Resolve</strong></p></li>
+<li><p>Add note: "Stock replenished" or "Request delivered"</p></li>
+</ol>
+</div>
+<div class="section" id="can-t-find-alert-settings-on-incident">
+<h3>Can't Find Alert Settings on Incident<a class="headerlink" href="#can-t-find-alert-settings-on-incident" title="Permalink to this headline">#</a></h3>
+<p><strong>Problem:</strong> No "Alert Configuration" tab on incident record.</p>
+<p><strong>Check:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>DRIMS module version</strong> - Alert overrides were added in DRIMS v2. Verify you're running latest version.</p></li>
+<li><p><strong>Form view</strong> - Make sure you're in "Edit" mode, not just viewing the record.</p></li>
+<li><p><strong>Permissions</strong> - You need "DRIMS Manager" or "Administrator" role to see configuration tabs.</p></li>
+</ol>
+</div>
+<div class="section" id="expiry-alerts-for-non-perishable-items">
+<h3>Expiry Alerts for Non-Perishable Items<a class="headerlink" href="#expiry-alerts-for-non-perishable-items" title="Permalink to this headline">#</a></h3>
+<p><strong>Problem:</strong> Getting expiry alerts for items that don't expire (tents, blankets).</p>
+<p><strong>Solutions:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Disable lot tracking</strong> - If product genuinely doesn't expire, remove "Track by Lots" from product configuration</p></li>
+<li><p><strong>Remove expiration dates</strong> - Edit lots and clear expiration date field</p></li>
+<li><p><strong>Increase warning threshold</strong> - Set expiry warning to very high value (e.g., 365 days) for durable goods</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don't disable lot tracking if you need it for traceability or donation tracking. Instead, just don't set expiration dates on those lots.</p>
+</div>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><strong>Monitor daily</strong> - Check alert dashboard each morning to catch issues early</p></li>
+<li><p><strong>Analyze patterns</strong> - Use Activity Feed to identify recurring problems</p></li>
+<li><p><strong>Tune thresholds</strong> - Adjust settings based on your team's response capacity</p></li>
+<li><p><strong>Train staff</strong> - Ensure warehouse managers know how to acknowledge and resolve alerts</p></li>
+</ul>
+<p>For details on warehouse management, see <a class="reference internal" href="warehouses.html"><span class="doc">Configuring Warehouses</span></a>.</p>
+<p>For request processing workflows, see <a class="reference internal" href="../../user_guide/drims/requests.html"><span class="doc">Submit a Relief Request</span></a>.</p>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer-article noprint">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</footer>
+</div>
+</div>
+<div class="footer-content row">
+<footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      © Copyright OpenSPP.<br/>
+<div class="extra_footer">
+<p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+</div>
+</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            var lists = $("div.toctree-wrapper ul");
+            $.each(lists, function(index, list) {
+                if($(list).find("li").length == 0) {
+                    $(list).prev().hide();
+                    $(list).hide();
+                }
+            });
+        })
+    </script>
+<script src="/_static/version_switcher.js"></script></body>
+</html>

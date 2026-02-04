@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_registry_group_hierarchy.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1650,10 +1637,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="registry-group-hierarchy">
+  <div class="section" id="registry-group-hierarchy">
 <h1>Registry Group Hierarchy<a class="headerlink" href="#registry-group-hierarchy" title="Permalink to this headline">#</a></h1>
 <p>This module extends OpenSPP's registry capabilities by introducing hierarchical relationships among groups. It enables the creation of nested group structures, allowing groups to contain both individual members and other sub-groups, which is crucial for managing complex social protection programs and farmer registries effectively.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_registry_group_hierarchy</span></code> module enhances the organization and management of registrants by:</p>
 <ul class="simple">
@@ -1662,8 +1649,8 @@ title="Print to PDF"
 <li><p><strong>Improving Data Organization:</strong> Organizes complex social structures or administrative units within the system, accurately reflecting real-world organizational arrangements and reporting lines.</p></li>
 <li><p><strong>Enhancing Program Management:</strong> Supports the management of programs that operate across multiple levels of aggregation, from individual beneficiaries up to large organizational structures.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_registry_group_hierarchy</span></code> module builds upon and extends several core OpenSPP registry modules to introduce its hierarchical capabilities:</p>
 <ul class="simple">
@@ -1671,28 +1658,28 @@ title="Print to PDF"
 <li><p>It integrates closely with <strong><a class="reference internal" href="g2p_registry_membership.html"><span class="doc std std-doc">G2P Registry Membership</span></a></strong> by enhancing the <code class="docutils literal notranslate"><span class="pre">g2p.group.membership</span></code> model. This allows membership records to correctly link to either individual registrants or other groups, dynamically managing how members are selected and displayed within the system.</p></li>
 <li><p>The module also relies on <strong><a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">G2P Registry Base</span></a></strong> and <strong><a class="reference internal" href="g2p_registry_individual.html"><span class="doc std std-doc">G2P Registry Individual</span></a></strong>, as these modules provide the fundamental registrant and individual data structures that form the lowest level of any hierarchy.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_registry_group_hierarchy</span></code> module introduces key features for managing complex, multi-level group structures:</p>
-<section id="group-kind-configuration-for-hierarchy">
+<div class="section" id="group-kind-configuration-for-hierarchy">
 <h3>Group Kind Configuration for Hierarchy<a class="headerlink" href="#group-kind-configuration-for-hierarchy" title="Permalink to this headline">#</a></h3>
 <p>Administrators can configure specific types of groups to allow for hierarchical membership. When defining a group kind (e.g., &quot;Regional Cooperative&quot;), an option is available to permit this kind of group to contain both individual members and other sub-groups (e.g., &quot;Local Farmer Groups&quot;). This setting provides granular control over the structure and composition of different group types within the system.</p>
-</section>
-<section id="dynamic-member-selection">
+</div>
+<div class="section" id="dynamic-member-selection">
 <h3>Dynamic Member Selection<a class="headerlink" href="#dynamic-member-selection" title="Permalink to this headline">#</a></h3>
 <p>When adding members to a group, the system intelligently adjusts the available options based on the parent group's configured &quot;kind.&quot; If the group's kind allows for mixed membership, users can select either individual registrants or other existing groups to be members. This streamlines the process of building complex hierarchies without requiring manual workarounds.</p>
-</section>
-<section id="seamless-navigation-to-group-members">
+</div>
+<div class="section" id="seamless-navigation-to-group-members">
 <h3>Seamless Navigation to Group Members<a class="headerlink" href="#seamless-navigation-to-group-members" title="Permalink to this headline">#</a></h3>
 <p>The module enhances the user experience by allowing direct navigation to the detailed view of a group member. If a member within a hierarchical group is itself another group, users can click to instantly access that sub-group's full profile and membership details, facilitating efficient management and oversight of nested structures.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Registry Group Hierarchy module is vital for managing intricate social protection programs and farmer registries, enabling the system to accurately model and manage nested organizational structures by allowing groups to contain both individuals and other groups as members.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

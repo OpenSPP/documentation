@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_registry_base.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-registry-base">
+  <div class="section" id="g2p-registry-base">
 <h1>G2P Registry: Base<a class="headerlink" href="#g2p-registry-base" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_registry_base</span></code> module establishes the foundational framework for managing individuals and groups within OpenSPP. It provides the core data models and essential functionalities required for any social protection program or farmer registry to operate effectively.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module forms the bedrock for all G2P operations, ensuring accurate, structured, and manageable information about beneficiaries and their connections. It accomplishes this by:</p>
 <ul class="simple">
@@ -1671,41 +1658,41 @@ title="Print to PDF"
 <li><p><strong>Geographic Area Classification:</strong> Organizes registrants within a hierarchical geographic structure, enabling granular reporting and targeted program delivery at levels such as country &gt; province &gt; district.</p></li>
 <li><p><strong>Robust Data Integrity:</strong> Implements strong validation rules for critical data points like phone numbers, identification values, and dates, thereby maintaining high data quality across the system.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_registry_base</span></code> module builds upon core OpenSPP functionalities and integrates seamlessly with other modules to provide a holistic registry solution. It extends the standard <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model, transforming it into a comprehensive registrant profile.</p>
 <p>This module primarily depends on the <code class="docutils literal notranslate"><span class="pre">contacts</span></code> module, which provides the underlying contact management framework that <code class="docutils literal notranslate"><span class="pre">g2p_registry_base</span></code> enhances for registrant-specific needs. It also utilizes the <code class="docutils literal notranslate"><span class="pre">portal</span></code> module to enable secure access for registrants to view their information and interact with the system.</p>
 <p>Serving as a foundational component, <code class="docutils literal notranslate"><span class="pre">g2p_registry_base</span></code> provides the essential data models and business logic for managing individuals and groups, their IDs, phone numbers, and relationships. This makes it a critical dependency for other G2P modules, such as <a class="reference internal" href="g2p_registry_individual.html"><span class="doc std std-doc">G2P Registry Individual</span></a> and <a class="reference internal" href="g2p_registry_group.html"><span class="doc std std-doc">G2P Registry Group</span></a>, which further specialize in managing specific types of registrants.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="registrant-lifecycle-and-demographic-management">
+<div class="section" id="registrant-lifecycle-and-demographic-management">
 <h3>Registrant Lifecycle and Demographic Management<a class="headerlink" href="#registrant-lifecycle-and-demographic-management" title="Permalink to this headline">#</a></h3>
 <p>The module enables comprehensive management of registrant profiles throughout their lifecycle. Users can disable or enable registrant records, along with recording a detailed reason and date for such changes, supporting various program statuses. It tracks essential information such as the registrant's registration date and includes key demographic fields like civil status, occupation, and income.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The system prevents negative income values, automatically flagging and correcting them to zero to maintain data consistency. Specific user roles, such as registrars, have restricted permissions for deleting records to ensure data integrity and prevent unauthorized data loss.</p>
 </div>
-</section>
-<section id="identity-and-contact-information">
+</div>
+<div class="section" id="identity-and-contact-information">
 <h3>Identity and Contact Information<a class="headerlink" href="#identity-and-contact-information" title="Permalink to this headline">#</a></h3>
 <p>This module provides robust tools for managing registrant identities and contact details. It supports the creation of various ID types, allowing administrators to define custom validation rules using regular expressions to ensure the format and validity of entered ID numbers. Each registrant can hold multiple IDs, but each ID type must be unique per registrant. Additionally, the module manages multiple phone numbers for each registrant, offering features for sanitizing numbers to a standard format (e.g., E.164) and applying custom regex validations. Phone numbers can also be individually disabled or enabled as needed.</p>
-</section>
-<section id="relationship-tracking">
+</div>
+<div class="section" id="relationship-tracking">
 <h3>Relationship Tracking<a class="headerlink" href="#relationship-tracking" title="Permalink to this headline">#</a></h3>
 <p>Users can define and manage diverse relationships between registrants, such as &quot;Parent of&quot; or &quot;Spouse,&quot; allowing for a comprehensive view of social structures. Each relationship type can have an inverse name (e.g., &quot;Child of&quot;) and be designated as bidirectional. Relationships can be established with specific start and end dates, facilitating the historical tracking and management of evolving connections. The system includes validations to prevent the creation of duplicate or overlapping active relationships between the same two registrants.</p>
-</section>
-<section id="geographic-and-categorization-features">
+</div>
+<div class="section" id="geographic-and-categorization-features">
 <h3>Geographic and Categorization Features<a class="headerlink" href="#geographic-and-categorization-features" title="Permalink to this headline">#</a></h3>
 <p>The module includes features for categorizing registrants by geographic districts, linking them to specific states or provinces within a country's administrative structure. This capability is crucial for enabling granular reporting, targeted program interventions, and localized service delivery. Furthermore, registrants can be assigned multiple custom tags, allowing for flexible categorization and filtering based on program-specific criteria, such as &quot;Vulnerable,&quot; &quot;Displaced,&quot; or &quot;Program X Beneficiary.&quot;</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_registry_base</span></code> module is the essential foundation of OpenSPP, providing the core capabilities for managing comprehensive registrant data, identities, relationships, and geographic classifications crucial for effective social protection programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

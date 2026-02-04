@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Dashboard Module Development" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Dashboard Module Development" name="title" />
 <meta content="Complete guide to creating custom dashboards in OpenSPP using OWL framework with charts, cards, and real-time data visualization." name="description" />
 <meta content="OpenSPP, dashboard development, OWL framework, data visualization, charts, metrics, custom dashboard" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/module_development/dashboard.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1704,7 +1691,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="dashboards">
+  <div class="section" id="dashboards">
 <h1>Dashboards<a class="headerlink" href="#dashboards" title="Permalink to this headline">#</a></h1>
 <p>In OpenSPP, dashboards provide a powerful way to visualize key metrics and data at a glance. They are built using the Odoo OWL framework, allowing for dynamic, interactive, and real-time reporting. A custom dashboard is a self-contained module that fetches data from the server and presents it using various UI components like charts and summary cards.</p>
 <p>This guide will walk you through creating a custom dashboard module from scratch. We will develop the <code class="docutils literal notranslate"><span class="pre">spp_custom_dashboard</span></code> module to build a new dashboard that displays key statistics from the OpenSPP Farmer Registry.</p>
@@ -1717,15 +1704,15 @@ title="Print to PDF"
 <li><p>Use pre-built components like charts and cards.</p></li>
 <li><p>Register your dashboard to make it accessible from the Odoo menu.</p></li>
 </ul>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Solid understanding of Odoo 17 module development, including Python, XML, XPath, and JavaScript (specifically the OWL framework).</p></li>
 <li><p>Familiarity with the OpenG2P and OpenSPP core modules, especially <code class="docutils literal notranslate"><span class="pre">OpenSPP</span> <span class="pre">Dashboard</span> <span class="pre">(Base)</span></code> (<code class="docutils literal notranslate"><span class="pre">spp_dashboard_base</span></code>) and <code class="docutils literal notranslate"><span class="pre">OpenSPP</span> <span class="pre">Farmer</span> <span class="pre">Registry</span> <span class="pre">(Base)</span></code> (<code class="docutils literal notranslate"><span class="pre">spp_farmer_registry_base</span></code>).</p></li>
 <li><p>To set up OpenSPP for development, please refer to the <a class="reference internal" href="../setup.html"><span class="doc">Development Setup Guide</span></a>.</p></li>
 </ul>
-</section>
-<section id="module-structure">
+</div>
+<div class="section" id="module-structure">
 <h2>Module Structure<a class="headerlink" href="#module-structure" title="Permalink to this headline">#</a></h2>
 <p>A typical dashboard module follows a standard Odoo module structure. Here's the complete structure of our example module, <code class="docutils literal notranslate"><span class="pre">spp_custom_dashboard</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>spp_custom_dashboard/
@@ -1743,15 +1730,15 @@ title="Print to PDF"
     └── dashboard_views.xml    # Client action and menu item
 </pre></div>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="step-by-step-guide">
+<div class="section" id="step-by-step-guide">
 <h2>Step-by-Step Guide<a class="headerlink" href="#step-by-step-guide" title="Permalink to this headline">#</a></h2>
-<section id="create-the-module-scaffold">
+<div class="section" id="create-the-module-scaffold">
 <h3>Create the Module Scaffold<a class="headerlink" href="#create-the-module-scaffold" title="Permalink to this headline">#</a></h3>
 <p>Start by creating a new directory for your module (e.g., <code class="docutils literal notranslate"><span class="pre">spp_custom_dashboard</span></code>) and populate it with the basic Odoo module files and the directory structure shown above.</p>
-</section>
-<section id="define-the-manifest-manifest-py">
+</div>
+<div class="section" id="define-the-manifest-manifest-py">
 <h3>Define the Manifest (<code class="docutils literal notranslate"><span class="pre">__manifest__.py</span></code>)<a class="headerlink" href="#define-the-manifest-manifest-py" title="Permalink to this headline">#</a></h3>
 <p>The manifest file declares your module's metadata and dependencies. It's crucial to list all the modules your customization will interact with. Our dashboard depends on <code class="docutils literal notranslate"><span class="pre">spp_dashboard_base</span></code> for the core dashboard components and <code class="docutils literal notranslate"><span class="pre">spp_farmer_registry_base</span></code> for the data.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># In: spp_custom_dashboard/__manifest__.py</span>
@@ -1780,8 +1767,8 @@ title="Print to PDF"
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="prepare-the-data-on-the-server-python">
+</div>
+<div class="section" id="prepare-the-data-on-the-server-python">
 <h3>Prepare the Data on the Server (Python)<a class="headerlink" href="#prepare-the-data-on-the-server-python" title="Permalink to this headline">#</a></h3>
 <p>The dashboard needs data to display. We'll create a method on an existing model to gather and format this data. For our example, we'll extend the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model, which represents farms and farmers in the <code class="docutils literal notranslate"><span class="pre">spp_farmer_registry_base</span></code> module.</p>
 <ol class="arabic">
@@ -1793,13 +1780,13 @@ title="Print to PDF"
 <li><p>This method will search for farms and farmers and aggregate the data into a dictionary.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># In: spp_custom_dashboard/models/res_partner.py</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">odoo</span><span class="w"> </span><span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">models</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">Partner</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">Partner</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;res.partner&quot;</span>
 
     <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">get_farmer_dashboard_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_farmer_dashboard_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Fetch and prepare data for the farmer registry dashboard.&quot;&quot;&quot;</span>
         <span class="n">farm_kind_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="s2">&quot;spp_farmer_registry_base.kind_farm&quot;</span><span class="p">)</span>
         <span class="n">farms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">search</span><span class="p">([(</span><span class="s2">&quot;kind&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">farm_kind_id</span><span class="o">.</span><span class="n">id</span><span class="p">)])</span>
@@ -1829,8 +1816,8 @@ title="Print to PDF"
 </div>
 </li>
 </ol>
-</section>
-<section id="create-the-dashboard-component-javascript">
+</div>
+<div class="section" id="create-the-dashboard-component-javascript">
 <h3>Create the Dashboard Component (JavaScript)<a class="headerlink" href="#create-the-dashboard-component-javascript" title="Permalink to this headline">#</a></h3>
 <p>The client-side component is responsible for calling the server to get the data and rendering the dashboard template.</p>
 <ol class="arabic">
@@ -1872,8 +1859,8 @@ title="Print to PDF"
 </div>
 </li>
 </ol>
-</section>
-<section id="design-the-dashboard-layout-xml">
+</div>
+<div class="section" id="design-the-dashboard-layout-xml">
 <h3>Design the Dashboard Layout (XML)<a class="headerlink" href="#design-the-dashboard-layout-xml" title="Permalink to this headline">#</a></h3>
 <p>The XML template defines the structure and appearance of your dashboard. It uses the data prepared by the JavaScript component.</p>
 <ol class="arabic">
@@ -1926,8 +1913,8 @@ title="Print to PDF"
 </div>
 </li>
 </ol>
-</section>
-<section id="register-the-dashboard">
+</div>
+<div class="section" id="register-the-dashboard">
 <h3>Register the Dashboard<a class="headerlink" href="#register-the-dashboard" title="Permalink to this headline">#</a></h3>
 <p>Finally, create a client action and a menu item to make your dashboard accessible in the Odoo interface.</p>
 <ol class="arabic">
@@ -1956,25 +1943,25 @@ title="Print to PDF"
 </div>
 </li>
 </ol>
-</section>
-<section id="install-and-view-your-dashboard">
+</div>
+<div class="section" id="install-and-view-your-dashboard">
 <h3>Install and View Your Dashboard<a class="headerlink" href="#install-and-view-your-dashboard" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install or upgrade the module through the Apps menu.</p></li>
 <li><p>Refresh your browser.</p></li>
 <li><p>Navigate to the main menu, and you should see a new &quot;Dashboard&quot; menu item. Click it to view your custom dashboard.</p></li>
 </ol>
-</section>
-</section>
-<section id="references">
+</div>
+</div>
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <p>For more information on extending OpenSPP modules, refer to:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/">Odoo 17 Developer Documentation</a></p></li>
 <li><p><a class="reference external" href="https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_dashboard_base">OpenSPP Dashboard Base Module Source</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

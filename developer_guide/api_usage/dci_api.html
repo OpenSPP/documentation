@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="DCI API Usage Guide" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="DCI API Usage Guide" name="title" />
 <meta content="Learn how to use OpenSPP's DCI-compliant RESTful API for secure registry data synchronization and search with OAuth 2.0 authentication." name="description" />
 <meta content="OpenSPP, DCI API, REST API, OAuth 2.0, registry search, data synchronization, digital public infrastructure" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/api_usage/dci_api.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1652,21 +1639,21 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="dci-api">
+  <div class="section" id="dci-api">
 <h1>DCI API<a class="headerlink" href="#dci-api" title="Permalink to this headline">#</a></h1>
 <p>OpenSPP provides a RESTful API that adheres to the Digital Convergence Initiative (DCI) specification.
 This API enables authorized external systems to securely search and synchronize with OpenSPP's registry data, promoting interoperability with other digital public infrastructure components like a Civil Registration and Vital Statistics (<span class="xref std std-term">CRVS</span>) system.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>OpenSPP server running with the <a class="reference internal" href="../../reference/modules/spp_dci_api_server.html"><span class="doc">spp_dci_api_server</span></a> module installed.</p></li>
 <li><p>Client credentials (Client ID and Client Secret) obtained from the OpenSPP instance.</p></li>
 <li><p>Python 3.x and the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library installed (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">requests</span></code>).</p></li>
 </ul>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
-<section id="authentication-obtaining-an-access-token">
+<div class="section" id="authentication-obtaining-an-access-token">
 <h3>Authentication: Obtaining an access token<a class="headerlink" href="#authentication-obtaining-an-access-token" title="Permalink to this headline">#</a></h3>
 <p>The DCI API is secured using OAuth 2.0 with the Client Credentials grant type.
 Before making any data requests, your application must obtain a bearer token.</p>
@@ -1676,7 +1663,7 @@ Before making any data requests, your application must obtain a bearer token.</p
 <li><p><strong>Body</strong>: <code class="docutils literal notranslate"><span class="pre">x-www-form-urlencoded</span></code> with <code class="docutils literal notranslate"><span class="pre">grant_type</span></code>, <code class="docutils literal notranslate"><span class="pre">client_id</span></code>, <code class="docutils literal notranslate"><span class="pre">client_secret</span></code>, <code class="docutils literal notranslate"><span class="pre">db_name</span></code>.</p></li>
 </ul>
 <p><strong>Example: Get access token</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8069&quot;</span>
 <span class="n">client_id</span> <span class="o">=</span> <span class="s2">&quot;YOUR_CLIENT_ID&quot;</span>
@@ -1700,8 +1687,8 @@ Before making any data requests, your application must obtain a bearer token.</p
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Access Token obtained successfully.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="searching-the-registry">
+</div>
+<div class="section" id="searching-the-registry">
 <h3>Searching the registry<a class="headerlink" href="#searching-the-registry" title="Permalink to this headline">#</a></h3>
 <p>Once authenticated, you can use the access token to perform a synchronous search on the registry.</p>
 <ul class="simple">
@@ -1776,8 +1763,8 @@ Before making any data requests, your application must obtain a bearer token.</p
     <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="setup-and-configuration">
+</div>
+<div class="section" id="setup-and-configuration">
 <h3>Setup and configuration<a class="headerlink" href="#setup-and-configuration" title="Permalink to this headline">#</a></h3>
 <p>To use the DCI API, you must first configure a client in OpenSPP.</p>
 <ol class="arabic simple">
@@ -1787,9 +1774,9 @@ Before making any data requests, your application must obtain a bearer token.</p
 <li><p><strong>Reveal Credentials</strong>: A <strong>Show</strong> button will appear. Click it to reveal the <code class="docutils literal notranslate"><span class="pre">Client</span> <span class="pre">ID</span></code> and <code class="docutils literal notranslate"><span class="pre">Client</span> <span class="pre">Secret</span></code>.</p></li>
 <li><p><strong>Important</strong>: Copy these credentials immediately. For security, the <strong>Show</strong> button will disappear after you close the dialog, and you will not be able to retrieve the secret again.</p></li>
 </ol>
-</section>
-</section>
-<section id="best-practices">
+</div>
+</div>
+<div class="section" id="best-practices">
 <h2>Best practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><strong>Secure Credential Storage</strong>: Never hard-code your <code class="docutils literal notranslate"><span class="pre">Client</span> <span class="pre">ID</span></code> or <code class="docutils literal notranslate"><span class="pre">Client</span> <span class="pre">Secret</span></code> in your application. Use environment variables or a secure secret management system.</p></li>
@@ -1798,14 +1785,14 @@ Before making any data requests, your application must obtain a bearer token.</p
 <li><p><strong>Secure Connections</strong>: Always use HTTPS for all API traffic to protect data in transit.</p></li>
 <li><p><strong>Logging</strong>: Log request <code class="docutils literal notranslate"><span class="pre">transaction_id</span></code>s and correlation IDs to help with troubleshooting and auditing.</p></li>
 </ul>
-</section>
-<section id="references">
+</div>
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://standards.spdci.org/standards/standards-for-interoperability-interfaces/structure-and-versioning-of-the-standards">DCI Interface Standards v1.0</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

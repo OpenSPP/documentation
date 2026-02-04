@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_hide_menus.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1650,10 +1637,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="hide-non-openspp-menus">
+  <div class="section" id="hide-non-openspp-menus">
 <h1>Hide Non-OpenSPP Menus<a class="headerlink" href="#hide-non-openspp-menus" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Hide Menus module streamlines the OpenSPP platform by automatically hiding standard Odoo menu items that are not typically essential for core social protection program management. This creates a focused user interface, ensuring users primarily interact with functionalities relevant to their specific roles and program objectives.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module is designed to declutter the OpenSPP interface by pre-configuring the visibility of common Odoo menus. It establishes a more focused and efficient working environment, particularly beneficial for OpenSPP users involved in field operations or specialized program tasks.</p>
 <ul class="simple">
@@ -1662,8 +1649,8 @@ title="Print to PDF"
 <li><p><strong>Improve System Adoption:</strong> A less cluttered interface is easier to learn and navigate, which helps increase user comfort and reduces the training overhead for new OpenSPP users.</p></li>
 <li><p><strong>Tailor for Specific Deployments:</strong> While <a class="reference internal" href="spp_hide_menus_base.html"><span class="doc std std-doc">OpenSPP Hide Menus Base</span></a> offers granular control, this module provides an immediate, default simplification, making OpenSPP more ready-to-use for typical social protection deployments.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_hide_menus</span></code> module leverages the foundational capabilities of the <a class="reference internal" href="spp_hide_menus_base.html"><span class="doc std std-doc">OpenSPP Hide Menus Base</span></a> module to manage menu visibility.</p>
 <ul class="simple">
@@ -1671,28 +1658,28 @@ title="Print to PDF"
 <li><p>This module interacts with standard Odoo modules such as Calendar, Contacts, Account, Event, Stock, and UTM. Its primary function is to hide the default menu items provided by these modules, thereby creating a more focused OpenSPP environment.</p></li>
 <li><p>By pre-hiding these menus, <code class="docutils literal notranslate"><span class="pre">spp_hide_menus</span></code> ensures that users primarily interact with modules central to social protection, like beneficiary management or program enrollment, immediately upon system deployment.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>This module's core functionality is to apply a predefined set of menu visibility rules to simplify the OpenSPP interface.</p>
-<section id="default-menu-simplification">
+<div class="section" id="default-menu-simplification">
 <h3>Default Menu Simplification<a class="headerlink" href="#default-menu-simplification" title="Permalink to this headline">#</a></h3>
 <p>Upon installation, this module automatically sets common Odoo menu items to be hidden from most OpenSPP users. This includes menus typically found in areas like general accounting, inventory management, and broad contact lists, which are often not directly relevant to the daily tasks of social protection program staff. This immediate simplification helps focus users on core program activities.</p>
-</section>
-<section id="enhanced-user-focus">
+</div>
+<div class="section" id="enhanced-user-focus">
 <h3>Enhanced User Focus<a class="headerlink" href="#enhanced-user-focus" title="Permalink to this headline">#</a></h3>
 <p>By default, the module configures the system so that users will primarily see menus related to OpenSPP's core functions. This ensures a streamlined experience, reducing the time users spend searching for specific features and minimizing cognitive load. For instance, a field agent will directly access beneficiary registration or case management without navigating through unrelated business modules.</p>
-</section>
-<section id="administrator-override">
+</div>
+<div class="section" id="administrator-override">
 <h3>Administrator Override<a class="headerlink" href="#administrator-override" title="Permalink to this headline">#</a></h3>
 <p>While this module provides a default simplified view, administrators retain full control. They can use the underlying <a class="reference internal" href="spp_hide_menus_base.html"><span class="doc std std-doc">OpenSPP Hide Menus Base</span></a> module to unhide any of these menus if a specific deployment requires access to, for example, the Calendar or Contacts module for certain user groups. This flexibility ensures the system can adapt to evolving program needs without losing the initial benefit of a focused interface.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_hide_menus</span></code> module delivers a focused and efficient OpenSPP user experience by strategically hiding non-essential standard Odoo menus, thus optimizing the platform for social protection program management.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

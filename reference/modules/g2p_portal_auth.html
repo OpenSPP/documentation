@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_portal_auth.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1648,10 +1635,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-portal-auth">
+  <div class="section" id="g2p-portal-auth">
 <h1>G2P Portal Auth<a class="headerlink" href="#g2p-portal-auth" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_portal_auth</span></code> module in OpenSPP provides essential controls for managing which external authentication providers are available for different user portals. It allows administrators to precisely define which OpenID Connect (OIDC) services can be used by beneficiaries accessing the Self-Service Portal and by program staff or service providers using the Service Provider Portal.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module ensures secure and differentiated access to OpenSPP's portals by enabling precise control over authentication sources. Its key capabilities include:</p>
 <ul class="simple">
@@ -1662,32 +1649,32 @@ title="Print to PDF"
 <li><p><strong>Flexible Integration</strong>: Adapts to various organizational security needs by allowing administrators to enable or disable OIDC providers for specific portals as required.</p></li>
 </ul>
 <p>This module is crucial for maintaining a secure and intuitive login environment, ensuring that different user groups access the system through appropriate and trusted channels.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_portal_auth</span></code> module builds upon the foundational <a class="reference internal" href="g2p_auth_oidc.html"><span class="doc std std-doc">G2P Auth OIDC</span></a> module, which handles the core OpenID Connect authentication processes. While <code class="docutils literal notranslate"><span class="pre">g2p_auth_oidc</span></code> manages the technical aspects of integrating with OIDC providers, <code class="docutils literal notranslate"><span class="pre">g2p_portal_auth</span></code> extends this by adding critical flags to the <code class="docutils literal notranslate"><span class="pre">auth.oauth.provider</span></code> model.</p>
 <p>These flags, <code class="docutils literal notranslate"><span class="pre">g2p_self_service_allowed</span></code> and <code class="docutils literal notranslate"><span class="pre">g2p_service_provider_allowed</span></code>, enable other portal-specific modules to query and display only the relevant OIDC login options. This ensures that the Self-Service Portal for beneficiaries and the Service Provider Portal for staff present a tailored and secure authentication experience.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="self-service-portal-authentication-control">
+<div class="section" id="self-service-portal-authentication-control">
 <h3>Self-Service Portal Authentication Control<a class="headerlink" href="#self-service-portal-authentication-control" title="Permalink to this headline">#</a></h3>
 <p>Administrators can explicitly enable or disable any configured OIDC provider for use with the Self-Service Portal. This allows programs to offer specific, trusted login options to beneficiaries, such as national ID systems or designated public services, ensuring controlled access to personal information and program benefits.</p>
-</section>
-<section id="service-provider-portal-authentication-control">
+</div>
+<div class="section" id="service-provider-portal-authentication-control">
 <h3>Service Provider Portal Authentication Control<a class="headerlink" href="#service-provider-portal-authentication-control" title="Permalink to this headline">#</a></h3>
 <p>Similarly, the module allows administrators to select which OIDC providers are available for program staff and external service providers. This ensures that internal users and partners log in through appropriate, often institution-specific, identity providers, maintaining the integrity and security of program operations.</p>
-</section>
-<section id="dynamic-portal-callback-management">
+</div>
+<div class="section" id="dynamic-portal-callback-management">
 <h3>Dynamic Portal Callback Management<a class="headerlink" href="#dynamic-portal-callback-management" title="Permalink to this headline">#</a></h3>
 <p>The module supports dynamic management of OIDC callback URLs, which are essential for directing users back to the correct portal after successful authentication. This flexibility ensures that OpenSPP can seamlessly integrate with various OIDC providers across different deployment environments for both the Self-Service and Service Provider portals.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_portal_auth</span></code> module is fundamental for securely managing and differentiating access to OpenSPP's Self-Service and Service Provider portals, ensuring that beneficiaries and program staff utilize appropriate and authorized external authentication channels.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

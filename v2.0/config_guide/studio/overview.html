@@ -1,0 +1,2426 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+<meta content="Studio Overview" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://docs.openspp.org/config_guide/studio/overview.html" property="og:url"/>
+<meta content="OpenSPP Documentation" property="og:site_name"/>
+<meta content="This guide is for implementers configuring OpenSPP Studio. You should be familiar with form builders like KoBoToolbox or ODK, but you don't need programming knowledge. What is OpenSPP Studio?: Open..." property="og:description"/>
+<meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
+<meta content="OpenSPP Documentation" property="og:image:alt"/>
+<meta content="This guide is for implementers configuring OpenSPP Studio. You should be familiar with form builders like KoBoToolbox or ODK, but you don't need programming knowledge. What is OpenSPP Studio?: Open..." name="description"/>
+<meta content="en_US" property="og:locale"/>
+<title>Studio Overview – Configuration guide – OpenSPP Studio — OpenSPP Documentation v2.0</title>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/sphinxcontrib-httpexample.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/custom.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/print.css" media="print" rel="stylesheet" type="text/css"/>
+<link href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script src="../../_static/sphinxcontrib-httpexample.js"></script>
+<script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+<script src="../../_static/search-utils.js"></script>
+<script src="../../_static/mermaid_init.js"></script>
+<script src="../../_static/patch_scrollToActive.js"></script>
+<script src="../../_static/search_shortcut.js"></script>
+<script src="../../_static/module-filter.js"></script>
+<script src="../../_static/design-tabs.js"></script>
+<link href="https://docs.openspp.org/config_guide/studio/overview.html" rel="canonical">
+<link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v2.0" type="application/opensearchdescription+xml"/>
+<link href="../../_static/icon_192.png" rel="shortcut icon"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="registry_field_builder.html" rel="next" title="Custom Fields (Registry Field Builder)"/>
+<link href="index.html" rel="prev" title="OpenSPP Studio"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../../_static/review_status.css" type="text/css" />
+<script src="../../_static/review_status_simple.js"></script>
+-->
+<script crossorigin="anonymous" integrity="sha384-vJ1NXwwlC62VkTLRHyzdAfyL4rQ8Z478DeHgamh37YzGJh3T6j223FC2yMRVriLl" src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+<!-- Mermaid Support -->
+<script crossorigin="anonymous" integrity="sha384-+NGfjU8KzpDLXRHduEqW+ZiJr2rIg+cidUVk7B51R5xK7cHwMKQfrdFwGdrq1Bcz" src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+</link></link></link></link></link></link></head>
+<body data-offset="100" data-spy="scroll" data-target="#bd-toc-nav">
+<!-- Checkboxes to toggle the left sidebar -->
+<input aria-label="Toggle navigation sidebar" class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<label class="overlay overlay-navbar" for="__navigation">
+<div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input aria-label="Toggle in-page Table of Contents" class="sidebar-toggle" id="__page-toc" name="__page-toc" type="checkbox"/>
+<label class="overlay overlay-pagetoc" for="__page-toc">
+<div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+<div class="container-fluid" id="banner"></div>
+<div class="container-xl">
+<div class="row">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+<div class="bd-sidebar__content">
+<div class="bd-sidebar__top"><div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../">
+<h1 class="site-logo" id="site-title">OpenSPP Documentation v2.0</h1>
+</a>
+</div><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<div class="input-group">
+<label class="sr-only" for="q">Search string
+    </label>
+<i aria-hidden="true" class="fa fa-search fa-lg search-icon"></i>
+<input aria-labelledby="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search" spellcheck="false" type="search" value="">
+<div class="input-group-append">
+<span class="input-group-text" id="shortcut">
+<kbd id="search-shortcut">⌘</kbd> <kbd>K</kbd>
+</span>
+</div>
+</input></div>
+</form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../products/">
+   Products
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/sp_mis.html">
+     OpenSPP SP-MIS
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/social_registry.html">
+     OpenSPP Social Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/farmer_registry.html">
+     OpenSPP Farmer Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/drims.html">
+     OpenSPP DRIMS
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../products/features/">
+     Features
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/unified_registry.html">
+       Unified registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/gis_land_management.html">
+       GIS &amp; land management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/program_management.html">
+       Program management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/eligibility_targeting.html">
+       Eligibility &amp; targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/payment_disbursement.html">
+       Payment &amp; disbursement
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/in_kind_benefits.html">
+       In-Kind benefits
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/data_integration_apis.html">
+       Data integration &amp; APIs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/change_management.html">
+       Change management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/grievance_redress.html">
+       Grievance redress
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/whats_new_v2.html">
+     What's new in OpenSPP v2
+    </a>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../learn/">
+   Learn
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/registry.html">
+     Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/programs.html">
+     Programs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/cycles.html">
+     Cycles
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/eligibility.html">
+     Eligibility
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/compliance.html">
+     Compliance
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/entitlements.html">
+     Entitlements
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/payments.html">
+     Payments
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/deduplication.html">
+     Deduplication
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/change-requests.html">
+     Change requests
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../get_started/">
+   Get started
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/installation/">
+     Installing OpenSPP
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+<label for="toctree-checkbox-5">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/installation/docker.html">
+       Docker installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/modules/">
+     Module installation
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+<label for="toctree-checkbox-6">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/spmis_installation.html">
+       SP-MIS installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/social_installation.html">
+       Social Registry installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/explore/">
+     Explore OpenSPP
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_household/">
+     Your first household
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+<label for="toctree-checkbox-7">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/01_access_registry.html">
+       Step 1: Access the Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/02_create_household.html">
+       Step 2: Create a Household
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/03_add_members.html">
+       Step 3: Add members
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_program/">
+     Your first program
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+<label for="toctree-checkbox-8">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/01_access_program.html">
+       Step 1: Access the program section
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/02_create_program.html">
+       Step 2: Create your first social protection program
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/03_enroll_beneficiaries.html">
+       Step 3: Import and enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/04_run_cycle.html">
+       Step 4: Understanding program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/05_distribute_entitlements.html">
+       Step 5: Distribute entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/poc_and_pilot.html">
+     From Proof of Concept to Pilot
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../user_guide/">
+   User guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+<label for="toctree-checkbox-9">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/getting_started/">
+     Getting started
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+<label for="toctree-checkbox-10">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/navigation.html">
+       Navigating the OpenSPP interface
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/registry/">
+     Registry
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+<label for="toctree-checkbox-11">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_individual.html">
+       Register an individual
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_group.html">
+       Register a group
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/search_filter.html">
+       Search and filter registrants
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/import_data.html">
+       Import registrant data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/export_data.html">
+       Export registrant data
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/change_requests/">
+     Change Requests
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+<label for="toctree-checkbox-12">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/submit_change_request.html">
+       Submit a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/review_change_request.html">
+       Review a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/change_request_types.html">
+       Change request types
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/programs/">
+     Programs
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+<label for="toctree-checkbox-13">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/create_programs.html">
+       Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/program_cycles.html">
+       Work with program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/enroll_beneficiaries.html">
+       Enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/allocate_funds.html">
+       Allocate funds to programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/manage_entitlements.html">
+       Manage entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/payments/">
+     Payments
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+<label for="toctree-checkbox-14">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/payments/service_points.html">
+       View Service Points
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/approvals/">
+     Approvals
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+<label for="toctree-checkbox-15">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/approvals/manage_approvals.html">
+       Review and Approve Requests
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/reference/">
+     Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+<label for="toctree-checkbox-16">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/areas_geography.html">
+       Geographic Areas
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/vocabularies.html">
+       Vocabularies (Code Lists)
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children">
+<a class="reference internal" href="../">
+   Configuration guide
+  </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+<label for="toctree-checkbox-17">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l2 current active has-children">
+<a class="reference internal" href="">
+     OpenSPP Studio
+    </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+<label for="toctree-checkbox-18">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l3 current active">
+<a class="current reference internal" href="#">
+       Studio Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="registry_field_builder.html">
+       Custom Fields (Registry Field Builder)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="event_type_designer.html">
+       Event Type Designer
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="change_request_builder.html">
+       Change Request Builder
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../cel/">
+     CEL expressions
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+<label for="toctree-checkbox-19">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/quick_start.html">
+       CEL quick start
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/syntax.html">
+       CEL syntax reference
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/variables.html">
+       Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/cookbook.html">
+       CEL cookbook
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/troubleshooting.html">
+       CEL troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../eligibility/">
+     Eligibility rules
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+<label for="toctree-checkbox-20">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/cel_expressions.html">
+       CEL expressions for eligibility
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/geographic_targeting.html">
+       Geographic targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/templates.html">
+       Expression templates
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/testing.html">
+       Testing eligibility rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/advanced.html">
+       Advanced eligibility configuration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../entitlement_formulas/">
+     Entitlement formulas
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+<label for="toctree-checkbox-21">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/cash_calculations.html">
+       Cash calculations
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/inkind_baskets.html">
+       In-kind and basket entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/formula_library.html">
+       Formula library
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/dynamic_entitlements.html">
+       Dynamic entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/conditional_logic.html">
+       Conditional logic
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../vocabulary/">
+     Vocabulary System
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+<label for="toctree-checkbox-22">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/overview.html">
+       Vocabulary Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/standard_vocabularies.html">
+       Standard Vocabularies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/profiles.html">
+       Vocabulary Profiles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/custom.html">
+       Custom Vocabularies
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../variables/">
+     Variables &amp; Indicators
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+<label for="toctree-checkbox-23">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/overview.html">
+       Variables Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/creating_variables.html">
+       Creating Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/variable_types.html">
+       Variable Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/using_variables.html">
+       Using Variables in CEL
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../event_data/">
+     Event Data
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+<label for="toctree-checkbox-24">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/overview.html">
+       Event Data Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/event_types.html">
+       Configuring Event Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/field_definitions.html">
+       Defining Event Fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../change_request_types/">
+     Change request types
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+<label for="toctree-checkbox-25">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/overview.html">
+       Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/creating_types.html">
+       Creating change request types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/field_mappings.html">
+       Field mappings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/conflict_detection.html">
+       Conflict and duplicate detection
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/patterns.html">
+       Common configuration patterns
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/custom_detail_models.html">
+       Custom detail models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../consent/">
+     Consent configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+<label for="toctree-checkbox-26">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/overview.html">
+       Consent management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/privacy_notices.html">
+       Configuring privacy notices
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/recording_consent.html">
+       Recording consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/api_consent_filtering.html">
+       API consent filtering
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../role_configuration/">
+     Role configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+<label for="toctree-checkbox-27">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/overview.html">
+       Access control overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/assigning_roles.html">
+       Assigning roles to users
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/predefined_roles.html">
+       Predefined roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/creating_roles.html">
+       Creating custom roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../ops_guide/">
+   Operations guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+<label for="toctree-checkbox-28">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/deployment/">
+     Deployment
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+<label for="toctree-checkbox-29">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/deployment/production-hardening.html">
+       Production Hardening
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/security/">
+     Security
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+<label for="toctree-checkbox-30">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/access_control.html">
+       Access Control
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/data_classification.html">
+       Data Classification
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/pii_encryption.html">
+       PII Encryption
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/audit.html">
+       Audit Logging
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/scanning.html">
+       Security Scanning
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/storage/">
+     Storage
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/backup/">
+     Backup &amp; Recovery
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/monitoring/">
+     Monitoring &amp; Alerts
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../reference/">
+   Reference
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+<label for="toctree-checkbox-31">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../reference/modules/">
+     Modules Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+<label for="toctree-checkbox-32">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2.html">
+       API V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_cycles.html">
+       API V2 - Cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_data.html">
+       API V2 - Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_entitlements.html">
+       API V2 - Entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_products.html">
+       API V2 - Products
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_service_points.html">
+       API V2 - Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_vocabulary.html">
+       API V2 - Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_approval.html">
+       Approval Workflows
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_area.html">
+       Area Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_audit.html">
+       Audit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_banking.html">
+       Banking / Bank Details
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_common.html">
+       Base (Common)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_setting.html">
+       Base Settings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_branding_kit.html">
+       Branding Kit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_domain.html">
+       CEL Domain Query Builder
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_widget.html">
+       CEL Expression Widget
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_change_request_v2.html">
+       Change Request V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_claim_169.html">
+       QR Credentials (Claim 169)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_consent.html">
+       Consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_advanced.html">
+       CR Types - Advanced
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_base.html">
+       CR Types - Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_custom_field.html">
+       Custom Fields
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client.html">
+       DCI Client
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_crvs.html">
+       DCI Client - CRVS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_dr.html">
+       DCI Client - Disability Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_ibr.html">
+       DCI Client - IBR
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_server.html">
+       DCI Server
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_demo.html">
+       Demo
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dms.html">
+       Document Management System
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_event_data.html">
+       Event Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_gis.html">
+       GIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_gis_report.html">
+       GIS Reports
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_grm.html">
+       Grievance Redress Mechanism
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_hide_menus_base.html">
+       Hide Menus Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_mis_demo_v2.html">
+       MIS Demo V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_programs.html">
+       Programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry.html">
+       Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry_search.html">
+       Registry Search Portal
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_security.html">
+       Security
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_service_points.html">
+       Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_source_tracking.html">
+       Source Tracking
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_social_registry.html">
+       Starter: Social Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_sp_mis.html">
+       Starter: SP-MIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio.html">
+       Studio
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio_change_requests.html">
+       Studio - Change Requests
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio_events.html">
+       Studio - Events
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_user_roles.html">
+       User Roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_versioning.html">
+       Versioning
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_vocabulary.html">
+       Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/theme_openspp_muk.html">
+       Theme
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/vocabularies/">
+     Vocabulary Reference
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/glossary/humanitarian.html">
+     Humanitarian Terms Glossary
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../glossary.html">
+     OpenSPP Glossary
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../community_and_support/">
+   Community and support
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+<label for="toctree-checkbox-33">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/how_to_contribute_to_the_project.html">
+     Contributing
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/i18n_l10n.html">
+     Internationalization and Localization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/security_report.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/license.html">
+     Licensing
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+<div class="bd-sidebar__bottom">
+<!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+<p class="openspporglink">
+<a href="https://openspp.org">
+<img alt="openspp.org" src="/_static/openspp_logo.png"/> openspp.org</a>
+</p>
+</div>
+</div>
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+<div class="header-article row sticky-top noprint">
+<div class="col py-1 d-flex header-article-main">
+<div class="header-article__left">
+<label class="headerbtn" data-placement="right" data-toggle="tooltip" for="__navigation" title="Toggle navigation">
+<span class="headerbtn__icon-container">
+<i class="fas fa-bars"></i>
+</span>
+</label>
+</div>
+<div class="header-article__label">
+<span>Studio Overview – Configuration guide</span>
+</div>
+<div class="header-article__right">
+<button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="headerbtn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+<button aria-label="Source repositories" class="headerbtn menu-dropdown__trigger">
+<i class="fab fa-github"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation" title="Source repository">
+<span class="headerbtn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fconfig_guide/studio/overview.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<span class="headerbtn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?config_guide/studio/overview.md#making-contributions-on-github" title="Edit this page">
+<span class="headerbtn__icon-container">
+<i class="fas fa-pencil-alt"></i>
+</span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+<button aria-label="Download this page" class="headerbtn menu-dropdown__trigger">
+<i class="fas fa-download"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/config_guide/studio/overview.md.txt" title="Download source file">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+</li>
+<li>
+<button class="headerbtn" data-placement="left" data-toggle="tooltip" onclick="printPdf(this)" title="Print to PDF">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
+</div>
+</div>
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-is-openspp-studio">
+   What is OpenSPP Studio?
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#mental-model">
+     Mental model
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#accessing-studio">
+   Accessing Studio
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
+     Prerequisites
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#opening-studio">
+     Opening Studio
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#studio-components">
+   Studio Components
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registry-field-builder">
+     1. Registry Field Builder
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#event-type-designer">
+     2. Event Type Designer
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#change-request-builder">
+     3. Change Request Builder
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#eligibility-rules-cel-expressions">
+     4. Eligibility Rules (CEL Expressions)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#external-connections-planned">
+     5. External connections (planned)
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#configuration-lifecycle">
+   Configuration lifecycle
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#states-explained">
+     States explained
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#important-rules">
+     Important rules
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#permissions">
+   Permissions
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#the-80-20-rule">
+   The 80/20 rule
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-studio-handles-80">
+     What Studio handles (80%)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-requires-developers-20">
+     What requires developers (20%)
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#studio-dashboard">
+   Studio dashboard
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#dashboard-cards">
+     Dashboard cards
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#studio-menu">
+     Studio menu
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#best-practices">
+   Best practices
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#start-with-draft">
+     1. Start with draft
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#use-clear-names">
+     2. Use clear names
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#document-your-intent">
+     3. Document your intent
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#test-before-activating">
+     4. Test before activating
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#coordinate-with-team">
+     5. Coordinate with team
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#studio-vs-developer-work">
+   Studio vs developer work
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#use-studio-when">
+     Use Studio when
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#request-developer-help-when">
+     Request developer help when
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#are-you-stuck">
+   Are you stuck?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#next-steps">
+   Next steps
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="article row">
+<div class="col pl-md-3 pl-lg-5 content-container">
+<!-- Table of contents that is only displayed when printing the page -->
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>Studio Overview</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-is-openspp-studio">
+   What is OpenSPP Studio?
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#mental-model">
+     Mental model
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#accessing-studio">
+   Accessing Studio
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
+     Prerequisites
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#opening-studio">
+     Opening Studio
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#studio-components">
+   Studio Components
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registry-field-builder">
+     1. Registry Field Builder
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#event-type-designer">
+     2. Event Type Designer
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#change-request-builder">
+     3. Change Request Builder
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#eligibility-rules-cel-expressions">
+     4. Eligibility Rules (CEL Expressions)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#external-connections-planned">
+     5. External connections (planned)
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#configuration-lifecycle">
+   Configuration lifecycle
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#states-explained">
+     States explained
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#important-rules">
+     Important rules
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#permissions">
+   Permissions
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#the-80-20-rule">
+   The 80/20 rule
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-studio-handles-80">
+     What Studio handles (80%)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-requires-developers-20">
+     What requires developers (20%)
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#studio-dashboard">
+   Studio dashboard
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#dashboard-cards">
+     Dashboard cards
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#studio-menu">
+     Studio menu
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#best-practices">
+   Best practices
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#start-with-draft">
+     1. Start with draft
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#use-clear-names">
+     2. Use clear names
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#document-your-intent">
+     3. Document your intent
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#test-before-activating">
+     4. Test before activating
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#coordinate-with-team">
+     5. Coordinate with team
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#studio-vs-developer-work">
+   Studio vs developer work
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#use-studio-when">
+     Use Studio when
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#request-developer-help-when">
+     Request developer help when
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#are-you-stuck">
+   Are you stuck?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#next-steps">
+   Next steps
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<main id="main-content" role="main">
+<div>
+<div class="section" id="studio-overview">
+<h1>Studio Overview<a class="headerlink" href="#studio-overview" title="Permalink to this headline">#</a></h1>
+<p>This guide is for <strong>implementers</strong> configuring OpenSPP Studio. You should be familiar with form builders like KoBoToolbox or ODK, but you don't need programming knowledge.</p>
+<div class="section" id="what-is-openspp-studio">
+<h2>What is OpenSPP Studio?<a class="headerlink" href="#what-is-openspp-studio" title="Permalink to this headline">#</a></h2>
+<p>OpenSPP Studio is a no-code configuration interface that lets you customize OpenSPP without developer involvement. It handles 80% of common customization needs through visual tools.</p>
+<div class="section" id="mental-model">
+<h3>Mental model<a class="headerlink" href="#mental-model" title="Permalink to this headline">#</a></h3>
+<p>Think of Studio like KoBoToolbox's form builder, but for configuring your entire registry system:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>In KoBoToolbox</p></th>
+<th class="head"><p>In OpenSPP Studio</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Build a form</p></td>
+<td><p>Design an event type</p></td>
+</tr>
+<tr class="row-odd"><td><p>Add questions</p></td>
+<td><p>Add registry fields</p></td>
+</tr>
+<tr class="row-even"><td><p>Set question types</p></td>
+<td><p>Choose field types</p></td>
+</tr>
+<tr class="row-odd"><td><p>Make fields required</p></td>
+<td><p>Configure validation</p></td>
+</tr>
+<tr class="row-even"><td><p>Deploy form</p></td>
+<td><p>Activate configuration</p></td>
+</tr>
+<tr class="row-odd"><td><p>View submissions</p></td>
+<td><p>View collected data</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="accessing-studio">
+<h2>Accessing Studio<a class="headerlink" href="#accessing-studio" title="Permalink to this headline">#</a></h2>
+<div class="section" id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>You need <strong>Studio Editor</strong> or <strong>Studio Manager</strong> permissions</p></li>
+<li><p>Access is controlled through user roles by your system administrator</p></li>
+</ul>
+</div>
+<div class="section" id="opening-studio">
+<h3>Opening Studio<a class="headerlink" href="#opening-studio" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>Log in to OpenSPP</p></li>
+<li><p>Click <strong>Studio</strong> in the main menu</p></li>
+<li><p>You'll see the Studio Dashboard with quick access to Studio tools</p></li>
+</ol>
+<div class="figure align-default" id="id1">
+<img alt="Studio highlighted in the apps menu" src="../../_images/01-apps-menu-studio-highlighted.png"/>
+<p class="caption"><span class="caption-text">Click <strong>Studio</strong> in the main menu to open it.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</div>
+<div class="figure align-default" id="id2">
+<img alt="Studio Dashboard showing the main tool cards" src="../../_images/02-studio-dashboard.png"/>
+<p class="caption"><span class="caption-text">The Studio Dashboard — your starting point for all Studio tools.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="studio-components">
+<h2>Studio Components<a class="headerlink" href="#studio-components" title="Permalink to this headline">#</a></h2>
+<div class="section" id="registry-field-builder">
+<h3>1. Registry Field Builder<a class="headerlink" href="#registry-field-builder" title="Permalink to this headline">#</a></h3>
+<p><strong>Use when</strong>: You need to track additional information about registrants or groups.</p>
+<p><strong>Examples</strong>:</p>
+<ul class="simple">
+<li><p>Add "Disability Type" field to Individual registry</p></li>
+<li><p>Add "Pantawid ID" for Philippines beneficiaries</p></li>
+<li><p>Track "Vulnerability Score" for targeting</p></li>
+</ul>
+<p><strong>What you can do</strong>:</p>
+<ul class="simple">
+<li><p>Add fields to existing registry tabs</p></li>
+<li><p>Choose field types (text, number, date, dropdown, etc.)</p></li>
+<li><p>Set field as required or optional</p></li>
+<li><p>Control where the field appears in the form</p></li>
+</ul>
+<p><strong>What requires a developer</strong>:</p>
+<ul class="simple">
+<li><p>Creating entirely new tabs or pages</p></li>
+<li><p>Complex calculated fields with business logic</p></li>
+</ul>
+<p>→ See <a class="reference internal" href="registry_field_builder.html"><span class="doc">Custom Fields (Registry Field Builder)</span></a> for detailed instructions.</p>
+</div>
+<div class="section" id="event-type-designer">
+<h3>2. Event Type Designer<a class="headerlink" href="#event-type-designer" title="Permalink to this headline">#</a></h3>
+<p><strong>Use when</strong>: You collect time-based observations or survey data about registrants.</p>
+<p><strong>Examples</strong>:</p>
+<ul class="simple">
+<li><p>Create a vulnerability assessment form</p></li>
+<li><p>Design monthly follow-up visit form</p></li>
+<li><p>Build household verification survey</p></li>
+</ul>
+<p><strong>What you can do</strong>:</p>
+<ul class="simple">
+<li><p>Create event types with custom fields</p></li>
+<li><p>Define field types (text, number, date, selection, etc.)</p></li>
+<li><p>Configure conditional field visibility</p></li>
+<li><p>Set up approval workflows for event data</p></li>
+<li><p>Organize fields into groups/tabs</p></li>
+</ul>
+<p><strong>What requires a developer</strong>:</p>
+<ul class="simple">
+<li><p>Integration with external data collection tools (Kobo, ODK)</p></li>
+<li><p>Complex data transformations</p></li>
+<li><p>Performance optimization for large datasets</p></li>
+</ul>
+<p>→ See <a class="reference internal" href="event_type_designer.html"><span class="doc">Event Type Designer</span></a> for detailed instructions.</p>
+</div>
+<div class="section" id="change-request-builder">
+<h3>3. Change Request Builder<a class="headerlink" href="#change-request-builder" title="Permalink to this headline">#</a></h3>
+<p><strong>Use when</strong>: You need a formal workflow to update registry information with approval.</p>
+<p><strong>Examples</strong>:</p>
+<ul class="simple">
+<li><p>Phone number update with supervisor approval</p></li>
+<li><p>Address change request with review</p></li>
+<li><p>ID document update workflow</p></li>
+</ul>
+<p><strong>What you can do</strong>:</p>
+<ul class="simple">
+<li><p>Create change request types for field updates</p></li>
+<li><p>Select which existing registry fields can be updated</p></li>
+<li><p>Configure approval groups</p></li>
+<li><p>Enable auto-apply when approved</p></li>
+</ul>
+<p><strong>What requires a developer</strong>:</p>
+<ul class="simple">
+<li><p>Complex change requests (add member, split household, merge records)</p></li>
+<li><p>Custom approval logic beyond standard workflows</p></li>
+<li><p>Multi-record operations</p></li>
+</ul>
+<p>→ See <a class="reference internal" href="change_request_builder.html"><span class="doc">Change Request Builder</span></a> for detailed instructions.</p>
+</div>
+<div class="section" id="eligibility-rules-cel-expressions">
+<h3>4. Eligibility Rules (CEL Expressions)<a class="headerlink" href="#eligibility-rules-cel-expressions" title="Permalink to this headline">#</a></h3>
+<p><strong>Use when</strong>: You need to define who qualifies for a program based on specific criteria.</p>
+<p><strong>Examples</strong>:</p>
+<ul class="simple">
+<li><p>Households with income below threshold and children under 5</p></li>
+<li><p>Elderly individuals over 65 living alone</p></li>
+<li><p>Families with vulnerability score above 70</p></li>
+</ul>
+<p><strong>What you can do</strong>:</p>
+<ul class="simple">
+<li><p>Build eligibility rules using CEL (Common Expression Language) expressions</p></li>
+<li><p>Use the Expression Editor under the <strong>Rules</strong> menu</p></li>
+<li><p>Access variables for registry fields, event data, and computed values</p></li>
+<li><p>Test expressions with test personas</p></li>
+<li><p>Browse pre-built Logic Packs for common eligibility patterns</p></li>
+</ul>
+<p><strong>What requires a developer</strong>:</p>
+<ul class="simple">
+<li><p>Very complex logic with nested conditions across multiple data sources</p></li>
+<li><p>Custom CEL functions not in the standard library</p></li>
+<li><p>Performance-optimized batch eligibility checks for millions of records</p></li>
+</ul>
+<p>→ See <a class="reference internal" href="../cel/"><span class="doc">CEL expressions</span></a> for detailed instructions on building eligibility expressions.</p>
+</div>
+<div class="section" id="external-connections-planned">
+<h3>5. External connections (planned)<a class="headerlink" href="#external-connections-planned" title="Permalink to this headline">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>External connections for KoBoToolbox and ODK Central integration are planned for a future release. Currently, event types can store a Kobo Form ID reference for documentation purposes, but automatic data synchronization is not yet available.</p>
+</div>
+<p><strong>Planned capabilities</strong>:</p>
+<ul class="simple">
+<li><p>Connect to Kobo servers with API tokens</p></li>
+<li><p>Connect to ODK Central servers</p></li>
+<li><p>Import form definitions as event types</p></li>
+<li><p>Automatic submission sync</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="configuration-lifecycle">
+<h2>Configuration lifecycle<a class="headerlink" href="#configuration-lifecycle" title="Permalink to this headline">#</a></h2>
+<p>All Studio configurations follow the same lifecycle:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Draft → Active → Inactive
+  ↑__________________|
+     (can reactivate)
+</pre></div>
+</div>
+<div class="section" id="states-explained">
+<h3>States explained<a class="headerlink" href="#states-explained" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>State</p></th>
+<th class="head"><p>Meaning</p></th>
+<th class="head"><p>Who Can Edit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Draft</strong></p></td>
+<td><p>Configuration is being prepared</p></td>
+<td><p>Studio Editor or Manager</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Active</strong></p></td>
+<td><p>Configuration is live and in use</p></td>
+<td><p>Studio Manager only</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Inactive</strong></p></td>
+<td><p>Configuration was active but is now disabled</p></td>
+<td><p>Studio Manager only</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="important-rules">
+<h3>Important rules<a class="headerlink" href="#important-rules" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>You can freely edit <strong>Draft</strong> configurations</p></li>
+<li><p>You cannot delete <strong>Active</strong> configurations (deactivate first)</p></li>
+<li><p>Deactivating shows impact warning (e.g., "This field is used by 1,247 records")</p></li>
+<li><p>All changes are logged with user and timestamp</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="permissions">
+<h2>Permissions<a class="headerlink" href="#permissions" title="Permalink to this headline">#</a></h2>
+<p>Studio has three permission levels:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Role</p></th>
+<th class="head"><p>Can Do</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Viewer</strong></p></td>
+<td><p>View all configurations, but cannot create or edit</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Editor</strong></p></td>
+<td><p>Create and edit draft configurations</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Manager</strong></p></td>
+<td><p>Activate, deactivate, and delete configurations</p></td>
+</tr>
+</tbody>
+</table>
+<p>To assign Studio permissions to a user:</p>
+<ol class="arabic simple">
+<li><p>Go to <strong>Settings</strong> &gt; <strong>Users &amp; Companies</strong> &gt; <strong>Users</strong></p></li>
+<li><p>Edit the user</p></li>
+<li><p>Under <strong>Privileges</strong>, enable <strong>Studio</strong></p></li>
+<li><p>Choose the appropriate level: Viewer, Editor, or Manager</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Studio uses OpenSPP's privilege-based security system. Groups appear as "Studio / Viewer", "Studio / Editor", and "Studio / Manager" in the Groups list.</p>
+</div>
+<div class="figure align-default" id="id3">
+<img alt="User settings showing Studio privilege options" src="../../_images/08-user-studio-privileges.png"/>
+<p class="caption"><span class="caption-text">Under <strong>Privileges</strong>, enable <strong>Studio</strong> and choose the permission level.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</div>
+</div>
+<div class="section" id="the-80-20-rule">
+<h2>The 80/20 rule<a class="headerlink" href="#the-80-20-rule" title="Permalink to this headline">#</a></h2>
+<p>Studio is designed to handle 80% of common customization needs. Here's what's included and what requires developer help:</p>
+<div class="section" id="what-studio-handles-80">
+<h3>What Studio handles (80%)<a class="headerlink" href="#what-studio-handles-80" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Task</p></th>
+<th class="head"><p>Studio tool</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Add fields to registries</p></td>
+<td><p>✓ Registry Field Builder</p></td>
+</tr>
+<tr class="row-odd"><td><p>Create event types</p></td>
+<td><p>✓ Event Type Designer</p></td>
+</tr>
+<tr class="row-even"><td><p>Simple change requests</p></td>
+<td><p>✓ Change Request Builder</p></td>
+</tr>
+<tr class="row-odd"><td><p>CEL eligibility expressions</p></td>
+<td><p>✓ Expression Editor (Rules menu)</p></td>
+</tr>
+<tr class="row-even"><td><p>Field validation</p></td>
+<td><p>✓ Configuration options</p></td>
+</tr>
+<tr class="row-odd"><td><p>Conditional visibility</p></td>
+<td><p>✓ Visibility settings</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="what-requires-developers-20">
+<h3>What requires developers (20%)<a class="headerlink" href="#what-requires-developers-20" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Task</p></th>
+<th class="head"><p>Why developer needed</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>New registry tabs/pages</p></td>
+<td><p>View architecture changes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Complex change requests (add member, split household)</p></td>
+<td><p>Multi-record operations</p></td>
+</tr>
+<tr class="row-even"><td><p>Custom computed fields</p></td>
+<td><p>Python code required</p></td>
+</tr>
+<tr class="row-odd"><td><p>Kobo/ODK integrations</p></td>
+<td><p>API development needed</p></td>
+</tr>
+<tr class="row-even"><td><p>Custom reports</p></td>
+<td><p>Report builder not in scope</p></td>
+</tr>
+<tr class="row-odd"><td><p>Performance-critical batch operations</p></td>
+<td><p>Queue job configuration</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>When you need developer help</strong>, Studio will show clear messages like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ℹ️ This feature requires developer assistance
+
+Creating a change request that adds new group members
+requires custom code. This cannot be done through Studio.
+
+What you can do:
+• Use the built-in "Add Member" CR type
+• Contact your IT administrator for custom requirements
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="studio-dashboard">
+<h2>Studio dashboard<a class="headerlink" href="#studio-dashboard" title="Permalink to this headline">#</a></h2>
+<p>The Studio Dashboard is your starting point for configuring OpenSPP without code.</p>
+<div class="section" id="dashboard-cards">
+<h3>Dashboard cards<a class="headerlink" href="#dashboard-cards" title="Permalink to this headline">#</a></h3>
+<p>The dashboard provides quick access to the main Studio tools:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Card</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Expressions</strong></p></td>
+<td><p>Build eligibility rules, benefit calculations, and compliance checks</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Variables</strong></p></td>
+<td><p>Define reusable variables for expressions (fields, computed values, aggregates)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Custom Fields</strong></p></td>
+<td><p>Add custom fields to individual and group registries</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Event Types</strong></p></td>
+<td><p>Define data collection forms for surveys, assessments, and field visits</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Change Requests</strong></p></td>
+<td><p>Configure change request types for updating registrant information</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each card includes a brief description and a button to open that tool.</p>
+</div>
+<div class="section" id="studio-menu">
+<h3>Studio menu<a class="headerlink" href="#studio-menu" title="Permalink to this headline">#</a></h3>
+<p>Besides the dashboard, you can access Studio features through the top menu bar:</p>
+<div class="figure align-default" id="id4">
+<img alt="Studio top menu bar highlighted" src="../../_images/03-studio-top-menu.png"/>
+<p class="caption"><span class="caption-text">Use the top menu bar to navigate between Studio sections.</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</div>
+<ul class="simple">
+<li><p><strong>Home</strong> - Return to the dashboard</p></li>
+<li><p><strong>Rules</strong> - Work with expressions, variables, logic packs, and test personas</p></li>
+<li><p><strong>Forms &amp; Fields</strong> - Manage custom fields, event types, and change request types</p></li>
+<li><p><strong>Settings</strong> - Advanced configuration options (Studio Manager only)</p></li>
+<li><p><strong>History</strong> - View audit logs of all Studio changes</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Additional menu items may appear depending on installed modules:</p>
+<ul class="simple">
+<li><p><strong>Privacy</strong> - Configure consent and data classification (requires <code class="docutils literal notranslate"><span class="pre">spp_studio_consent</span></code>)</p></li>
+<li><p><strong>Connections</strong> - Set up external data sources like Kobo/ODK (requires <code class="docutils literal notranslate"><span class="pre">spp_studio_dci</span></code>)</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="best-practices">
+<h2>Best practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">#</a></h2>
+<div class="section" id="start-with-draft">
+<h3>1. Start with draft<a class="headerlink" href="#start-with-draft" title="Permalink to this headline">#</a></h3>
+<p>Always create configurations as <strong>Draft</strong> first:</p>
+<ul class="simple">
+<li><p>Test thoroughly before activating</p></li>
+<li><p>Have colleagues review configurations</p></li>
+<li><p>Check that field names and labels are clear</p></li>
+</ul>
+</div>
+<div class="section" id="use-clear-names">
+<h3>2. Use clear names<a class="headerlink" href="#use-clear-names" title="Permalink to this headline">#</a></h3>
+<p>Choose descriptive names that other staff will understand:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Bad</p></th>
+<th class="head"><p>Good</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>"Field 1"</p></td>
+<td><p>"Pantawid ID Number"</p></td>
+</tr>
+<tr class="row-odd"><td><p>"Survey"</p></td>
+<td><p>"Monthly Household Visit"</p></td>
+</tr>
+<tr class="row-even"><td><p>"Update"</p></td>
+<td><p>"Phone Number Change Request"</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="document-your-intent">
+<h3>3. Document your intent<a class="headerlink" href="#document-your-intent" title="Permalink to this headline">#</a></h3>
+<p>Use help text and descriptions:</p>
+<ul class="simple">
+<li><p>Explain what fields are for</p></li>
+<li><p>Note where data comes from</p></li>
+<li><p>Describe when to use change request types</p></li>
+</ul>
+</div>
+<div class="section" id="test-before-activating">
+<h3>4. Test before activating<a class="headerlink" href="#test-before-activating" title="Permalink to this headline">#</a></h3>
+<p>For CEL expressions:</p>
+<ul class="simple">
+<li><p>Use the test personas feature to validate your expressions</p></li>
+<li><p>Verify expected registrants are included/excluded</p></li>
+<li><p>Check with program staff that logic is correct</p></li>
+</ul>
+</div>
+<div class="section" id="coordinate-with-team">
+<h3>5. Coordinate with team<a class="headerlink" href="#coordinate-with-team" title="Permalink to this headline">#</a></h3>
+<p>Before activating configurations that affect others:</p>
+<ul class="simple">
+<li><p>Notify relevant staff</p></li>
+<li><p>Explain what will change</p></li>
+<li><p>Provide training if needed</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="studio-vs-developer-work">
+<h2>Studio vs developer work<a class="headerlink" href="#studio-vs-developer-work" title="Permalink to this headline">#</a></h2>
+<p>Understanding when to use Studio vs when to request developer help:</p>
+<div class="section" id="use-studio-when">
+<h3>Use Studio when<a class="headerlink" href="#use-studio-when" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Adding standard field types to registries</p></li>
+<li><p>Creating new survey/event types</p></li>
+<li><p>Building simple update workflows</p></li>
+<li><p>Defining eligibility based on existing data</p></li>
+</ul>
+</div>
+<div class="section" id="request-developer-help-when">
+<h3>Request developer help when<a class="headerlink" href="#request-developer-help-when" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Needing calculations or formulas in fields</p></li>
+<li><p>Creating complex multi-step workflows</p></li>
+<li><p>Building custom integrations</p></li>
+<li><p>Optimizing performance for large-scale operations</p></li>
+<li><p>Adding new core functionality</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="are-you-stuck">
+<h2>Are you stuck?<a class="headerlink" href="#are-you-stuck" title="Permalink to this headline">#</a></h2>
+<p><strong>Can't see certain options in Studio?</strong>
+Check your permissions. You may need Studio Manager access for activation/deactivation.</p>
+<p><strong>Configuration doesn't appear after activating?</strong>
+Try refreshing your browser. Some changes require a page reload.</p>
+<p><strong>Want to undo an activation?</strong>
+Studio Managers can deactivate configurations. The system will warn you about impacts before deactivating.</p>
+<p><strong>Need to change an active configuration?</strong>
+You cannot edit active configurations directly. Options:</p>
+<ol class="arabic simple">
+<li><p>Deactivate, edit, reactivate (may cause data issues)</p></li>
+<li><p>Create a new version as draft, activate new one, deactivate old one</p></li>
+<li><p>Contact developer for structural changes</p></li>
+</ol>
+<p><strong>Getting "field already exists" error?</strong>
+Field names must be unique. Choose a different name or check if the field was created previously.</p>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+<p>Now that you understand Studio's capabilities:</p>
+<ol class="arabic simple">
+<li><p><strong>To add custom fields</strong>: Continue to <a class="reference internal" href="registry_field_builder.html"><span class="doc">Custom Fields (Registry Field Builder)</span></a></p></li>
+<li><p><strong>To create event types</strong>: Continue to <a class="reference internal" href="event_type_designer.html"><span class="doc">Event Type Designer</span></a></p></li>
+<li><p><strong>To build change workflows</strong>: Continue to <a class="reference internal" href="change_request_builder.html"><span class="doc">Change Request Builder</span></a></p></li>
+<li><p><strong>To define eligibility rules</strong>: Continue to <a class="reference internal" href="../cel/"><span class="doc">CEL expressions</span></a></p></li>
+</ol>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer-article noprint">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="index.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">OpenSPP Studio</p>
+</div>
+</a>
+<a class="right-next" href="registry_field_builder.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Custom Fields (Registry Field Builder)</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+</div>
+<div class="footer-content row">
+<footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      © Copyright OpenSPP.<br/>
+<div class="extra_footer">
+<p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+</div>
+</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            var lists = $("div.toctree-wrapper ul");
+            $.each(lists, function(index, list) {
+                if($(list).find("li").length == 0) {
+                    $(list).prev().hide();
+                    $(list).hide();
+                }
+            });
+        })
+    </script>
+<script src="/_static/version_switcher.js"></script></body>
+</html>

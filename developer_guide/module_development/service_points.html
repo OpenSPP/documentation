@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Service Points Module Development" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Service Points Module Development" name="title" />
 <meta content="Learn to customize OpenSPP's service points module with operating hours, capacity management, and service type configuration." name="description" />
 <meta content="OpenSPP, service points, service delivery, operating hours, capacity management, service types, module customization" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/module_development/service_points.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1682,7 +1669,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="service-points">
+  <div class="section" id="service-points">
 <h1>Service Points<a class="headerlink" href="#service-points" title="Permalink to this headline">#</a></h1>
 <p>This article explains how the service points module works in OpenSPP and how it can be customized, using a practical scenario and a working example.
 The <a class="reference internal" href="../../reference/modules/spp_service_points.html"><span class="doc">spp_service_points</span></a> module provides the foundation for managing service delivery locations in OpenSPP, which can be used in programs and other modules.</p>
@@ -1711,15 +1698,15 @@ The <a class="reference internal" href="../../reference/modules/spp_service_poin
 <li><p><strong>Entitlements</strong>: Use service points for entitlement redemption and distribution.</p></li>
 <li><p><strong>Beneficiary Management</strong>: Connect service points to beneficiary groups and individuals.</p></li>
 </ul>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Solid understanding of Odoo 17 module development, including Python, XML, and XPath.</p></li>
 <li><p>The &quot;OpenSPP Service Points Management&quot; (<a class="reference internal" href="../../reference/modules/spp_service_points.html"><span class="doc">spp_service_points</span></a>) module must be installed.</p></li>
 <li><p>To set up OpenSPP for development, please refer to the <a class="reference internal" href="../setup.html"><span class="doc">Development Setup Guide</span></a>.</p></li>
 </ul>
-</section>
-<section id="module-structure">
+</div>
+<div class="section" id="module-structure">
 <h2>Module Structure<a class="headerlink" href="#module-structure" title="Permalink to this headline">#</a></h2>
 <p>A typical custom service points module follows the standard Odoo module structure. Here’s the structure for the example module, <code class="docutils literal notranslate"><span class="pre">spp_service_point_custom</span></code>:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>spp_service_point_custom/
@@ -1734,16 +1721,16 @@ The <a class="reference internal" href="../../reference/modules/spp_service_poin
     └── service_type_data.xml
 </pre></div>
 </div>
-</section>
-<section id="step-by-step-guide">
+</div>
+<div class="section" id="step-by-step-guide">
 <h2>Step-by-Step Guide<a class="headerlink" href="#step-by-step-guide" title="Permalink to this headline">#</a></h2>
 <p>In this scenario, we customize the service points module to include operating hours, capacity, and additional contact information.
 This helps beneficiaries know when and where they can redeem their entitlements.</p>
-<section id="create-the-module-scaffold">
+<div class="section" id="create-the-module-scaffold">
 <h3>Create the Module Scaffold<a class="headerlink" href="#create-the-module-scaffold" title="Permalink to this headline">#</a></h3>
 <p>Create a new directory for your module (e.g., <code class="docutils literal notranslate"><span class="pre">spp_service_point_custom</span></code>) and populate it with the basic Odoo module files and the directory structure shown above.</p>
-</section>
-<section id="define-module-manifest">
+</div>
+<div class="section" id="define-module-manifest">
 <h3>Define Module Manifest<a class="headerlink" href="#define-module-manifest" title="Permalink to this headline">#</a></h3>
 <p>Create a manifest file that includes the proper dependencies and data files:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -1767,14 +1754,14 @@ This helps beneficiaries know when and where they can redeem their entitlements.
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="extend-the-service-point-model">
+</div>
+<div class="section" id="extend-the-service-point-model">
 <h3>Extend the Service Point Model<a class="headerlink" href="#extend-the-service-point-model" title="Permalink to this headline">#</a></h3>
 <p>Create a Python file named <code class="docutils literal notranslate"><span class="pre">service_point.py</span></code> that extends the <code class="docutils literal notranslate"><span class="pre">spp.service.point</span></code> model and add it to <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">odoo</span><span class="w"> </span><span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">api</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">odoo.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">ValidationError</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">api</span>
+<span class="kn">from</span> <span class="nn">odoo.exceptions</span> <span class="kn">import</span> <span class="n">ValidationError</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">OpenSPPServicePoint</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">OpenSPPServicePoint</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;spp.service.point&quot;</span>
 
     <span class="c1"># Operating hours fields</span>
@@ -1818,7 +1805,7 @@ This helps beneficiaries know when and where they can redeem their entitlements.
     <span class="p">)</span>
 
     <span class="nd">@api</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">&quot;weekday_start&quot;</span><span class="p">,</span> <span class="s2">&quot;weekday_end&quot;</span><span class="p">,</span> <span class="s2">&quot;weekend_start&quot;</span><span class="p">,</span> <span class="s2">&quot;weekend_end&quot;</span><span class="p">)</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_operating_hours_display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_compute_operating_hours_display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
             <span class="n">hours_display</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">weekday_start</span> <span class="ow">and</span> <span class="n">record</span><span class="o">.</span><span class="n">weekday_end</span><span class="p">:</span>
@@ -1832,28 +1819,28 @@ This helps beneficiaries know when and where they can redeem their entitlements.
             <span class="n">record</span><span class="o">.</span><span class="n">operating_hours_display</span> <span class="o">=</span> <span class="s2">&quot; | &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">hours_display</span><span class="p">)</span> <span class="k">if</span> <span class="n">hours_display</span> <span class="k">else</span> <span class="s2">&quot;Not specified&quot;</span>
 
     <span class="nd">@api</span><span class="o">.</span><span class="n">constrains</span><span class="p">(</span><span class="s2">&quot;weekday_start&quot;</span><span class="p">,</span> <span class="s2">&quot;weekday_end&quot;</span><span class="p">)</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">_check_weekday_hours</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_check_weekday_hours</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">weekday_start</span> <span class="ow">and</span> <span class="n">record</span><span class="o">.</span><span class="n">weekday_end</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">weekday_start</span> <span class="o">&gt;=</span> <span class="n">record</span><span class="o">.</span><span class="n">weekday_end</span><span class="p">:</span>
                     <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s2">&quot;Weekday start time must be before end time.&quot;</span><span class="p">)</span>
 
     <span class="nd">@api</span><span class="o">.</span><span class="n">constrains</span><span class="p">(</span><span class="s2">&quot;weekend_start&quot;</span><span class="p">,</span> <span class="s2">&quot;weekend_end&quot;</span><span class="p">)</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">_check_weekend_hours</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_check_weekend_hours</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">weekend_start</span> <span class="ow">and</span> <span class="n">record</span><span class="o">.</span><span class="n">weekend_end</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">weekend_start</span> <span class="o">&gt;=</span> <span class="n">record</span><span class="o">.</span><span class="n">weekend_end</span><span class="p">:</span>
                     <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s2">&quot;Weekend start time must be before end time.&quot;</span><span class="p">)</span>
 
     <span class="nd">@api</span><span class="o">.</span><span class="n">constrains</span><span class="p">(</span><span class="s2">&quot;capacity&quot;</span><span class="p">)</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">_check_capacity_positive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_check_capacity_positive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">capacity</span> <span class="ow">and</span> <span class="n">record</span><span class="o">.</span><span class="n">capacity</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s2">&quot;Daily capacity cannot be negative.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="create-view-extensions">
+</div>
+<div class="section" id="create-view-extensions">
 <h3>Create View Extensions<a class="headerlink" href="#create-view-extensions" title="Permalink to this headline">#</a></h3>
 <p>Create a new file called <code class="docutils literal notranslate"><span class="pre">views/service_point_views.xml</span></code> in the module and add it to the manifest file:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odoo&gt;</span>
@@ -1896,8 +1883,8 @@ This helps beneficiaries know when and where they can redeem their entitlements.
 <span class="nt">&lt;/odoo&gt;</span>
 </pre></div>
 </div>
-</section>
-<section id="add-custom-service-types">
+</div>
+<div class="section" id="add-custom-service-types">
 <h3>Add Custom Service Types<a class="headerlink" href="#add-custom-service-types" title="Permalink to this headline">#</a></h3>
 <p>Create <code class="docutils literal notranslate"><span class="pre">data/service_type_data.xml</span></code> to add custom service types:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odoo&gt;</span>
@@ -1921,8 +1908,8 @@ This helps beneficiaries know when and where they can redeem their entitlements.
 <span class="nt">&lt;/odoo&gt;</span>
 </pre></div>
 </div>
-</section>
-<section id="install-and-test">
+</div>
+<div class="section" id="install-and-test">
 <h3>Install and Test<a class="headerlink" href="#install-and-test" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install or upgrade the module through the Apps menu.</p></li>
@@ -1930,17 +1917,17 @@ This helps beneficiaries know when and where they can redeem their entitlements.
 </ol>
 <p>The following screenshot shows the newly added fields in the developed module:</p>
 <p><img alt="Service points module with custom operating hours and capacity fields" src="../../_images/22.png" /></p>
-</section>
-</section>
-<section id="references">
+</div>
+</div>
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <p>For more information on extending OpenSPP modules, refer to:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/">Odoo 17 Developer Documentation</a></p></li>
 <li><p><a class="reference external" href="https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_service_points">Service Points Module Source</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

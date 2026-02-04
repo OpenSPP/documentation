@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_base_api.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1650,10 +1637,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="base-api">
+  <div class="section" id="base-api">
 <h1>Base API<a class="headerlink" href="#base-api" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_base_api</span></code> module provides foundational API functions and methods for seamless interaction with the OpenSPP system. It enables robust data exchange with external systems and internal modules, primarily through APIs and XML-RPC, ensuring efficient and reliable data management.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module establishes core capabilities for programmatic data interaction within OpenSPP, serving as a critical layer for integration and automated processes. It accomplishes the following:</p>
 <ul class="simple">
@@ -1664,33 +1651,33 @@ title="Print to PDF"
 <li><p><strong>Foundational API Layer</strong>: Provides a stable and consistent set of API tools that other OpenSPP modules can leverage, reducing development effort and ensuring system-wide data integrity.</p></li>
 </ul>
 <p>This module is essential for any OpenSPP deployment that requires automated data imports, exports, or real-time synchronization with external partners or services, ensuring that data is always current and consistent.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_base_api</span></code> module is a foundational component within OpenSPP and does not have direct dependencies on other specific OpenSPP modules. Instead, it extends the core <code class="docutils literal notranslate"><span class="pre">base</span></code> model of the system, making its powerful API methods universally available to all other OpenSPP modules and any model defined within them.</p>
 <p>This module serves as a crucial integration point, providing a common set of tools for data manipulation. Any OpenSPP module requiring advanced search, creation, or update functionalities, especially when interacting with external systems via API or XML-RPC, will implicitly rely on the methods provided here. For instance, modules like <span class="xref myst">OpenSPP Beneficiaries</span> or <span class="xref myst">OpenSPP Programs</span> can utilize these base API methods to manage their specific data records.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_base_api</span></code> module offers several key features to manage OpenSPP data programmatically:</p>
-<section id="smart-record-creation-and-retrieval">
+<div class="section" id="smart-record-creation-and-retrieval">
 <h3>Smart Record Creation and Retrieval<a class="headerlink" href="#smart-record-creation-and-retrieval" title="Permalink to this headline">#</a></h3>
 <p>This feature allows users and integrated systems to efficiently manage records by either locating an existing one or creating a new one if it doesn't already exist. It prevents the creation of duplicate records during data imports or synchronization processes, ensuring data integrity. The system uses provided field values to search for a match before deciding whether to create a new entry.</p>
-</section>
-<section id="advanced-nested-data-retrieval">
+</div>
+<div class="section" id="advanced-nested-data-retrieval">
 <h3>Advanced Nested Data Retrieval<a class="headerlink" href="#advanced-nested-data-retrieval" title="Permalink to this headline">#</a></h3>
 <p>Users can retrieve data in a highly structured, nested format, simplifying the process of fetching complex related information. This is particularly useful when you need to query a record and simultaneously retrieve details from its related records, such as fetching a beneficiary's details along with their household members or their geographic location (e.g., district within a province). This capability reduces the number of API calls needed and simplifies data processing.</p>
-</section>
-<section id="synchronization-with-external-identifiers">
+</div>
+<div class="section" id="synchronization-with-external-identifiers">
 <h3>Synchronization with External Identifiers<a class="headerlink" href="#synchronization-with-external-identifiers" title="Permalink to this headline">#</a></h3>
 <p>This module provides robust support for managing records using external IDs, which is vital for integrating OpenSPP with other systems. It allows for the creation or updating of records based on an identifier provided by an external system, ensuring that records remain synchronized across different platforms. The module intelligently handles various field types, including many-to-one and many-to-many relationships, by converting external IDs to internal OpenSPP IDs where necessary.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_base_api</span></code> module is a core enabler for data interaction, providing essential API functions that underpin OpenSPP's ability to seamlessly manage and exchange information with internal components and external systems.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

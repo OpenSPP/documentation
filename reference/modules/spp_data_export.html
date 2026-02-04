@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_data_export.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="data-export">
+  <div class="section" id="data-export">
 <h1>Data Export<a class="headerlink" href="#data-export" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_data_export</span></code> module enhances OpenSPP's capability to extract large volumes of program data, ensuring reliable and complete exports to Excel for analysis and reporting. It specifically addresses limitations of standard data export tools, particularly concerning file size and row capacity.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module significantly improves how users extract data from OpenSPP, ensuring that even extensive datasets can be reliably exported for various needs.</p>
 <ul class="simple">
@@ -1672,37 +1659,37 @@ title="Print to PDF"
 <li><p><strong>Overrides Default Export Functionality</strong>: Replaces the standard, often more restrictive, data export mechanism within OpenSPP with a more robust and scalable solution. This ensures a consistent and enhanced export experience across the platform.</p></li>
 <li><p><strong>Supports External Analysis and Reporting</strong>: Provides a dependable method for extracting data into a widely used format, Excel, which is critical for external analysis, reporting, and integration with other business intelligence tools. This empowers data-driven decision-making for social protection programs.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_data_export</span></code> module integrates seamlessly into the OpenSPP ecosystem by enhancing a core platform function.</p>
 <p>This module depends on the fundamental Web module. It specifically overrides and extends the default web-based data export functionality provided by OpenSPP, ensuring that all data exports initiated through the user interface benefit from its enhanced capabilities. By doing so, it acts as a foundational improvement for any user interaction that requires data extraction, ensuring a consistent and robust experience without requiring other modules to explicitly depend on it.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_data_export</span></code> module provides several key features designed to make data extraction efficient and reliable.</p>
-<section id="robust-large-dataset-handling">
+<div class="section" id="robust-large-dataset-handling">
 <h3>Robust Large Dataset Handling<a class="headerlink" href="#robust-large-dataset-handling" title="Permalink to this headline">#</a></h3>
 <p>This module is specifically engineered to manage the export of very large volumes of data. Users can confidently initiate exports of extensive record sets, knowing that the system will process them efficiently and reliably, minimizing the risk of export failures due to data volume. This ensures comprehensive data extraction for detailed program analysis and evaluation.</p>
-</section>
-<section id="intelligent-excel-row-limit-management">
+</div>
+<div class="section" id="intelligent-excel-row-limit-management">
 <h3>Intelligent Excel Row Limit Management<a class="headerlink" href="#intelligent-excel-row-limit-management" title="Permalink to this headline">#</a></h3>
 <p>A critical feature is its ability to handle Excel's inherent row limitations. When an export request exceeds the 1,048,576 row maximum for a single Excel sheet, the module implements sophisticated error handling. It prevents the creation of partial or unusable files, instead providing clear feedback to the user about the limitation and ensuring data integrity.</p>
-</section>
-<section id="enhanced-error-feedback">
+</div>
+<div class="section" id="enhanced-error-feedback">
 <h3>Enhanced Error Feedback<a class="headerlink" href="#enhanced-error-feedback" title="Permalink to this headline">#</a></h3>
 <p>Should an export encounter an issue, particularly related to data volume or file size constraints, the module provides clear and actionable error messages. This allows users to understand the problem immediately and take appropriate steps, rather than being left with an incomplete or failed export without explanation.</p>
-</section>
-<section id="streamlined-user-export-experience">
+</div>
+<div class="section" id="streamlined-user-export-experience">
 <h3>Streamlined User Export Experience<a class="headerlink" href="#streamlined-user-export-experience" title="Permalink to this headline">#</a></h3>
 <p>By overriding the default export mechanism, this module ensures a more consistent and reliable export process across OpenSPP. Users benefit from a standardized and improved experience when extracting data, regardless of the specific module or dataset they are working with.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_data_export</span></code> module is essential for OpenSPP, providing robust and reliable data extraction capabilities that overcome common limitations, thereby empowering users with complete and accurate information for critical program management and analysis.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

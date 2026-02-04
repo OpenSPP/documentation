@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_audit_post.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-registry-audit-post">
+  <div class="section" id="g2p-registry-audit-post">
 <h1>G2P Registry: Audit Post<a class="headerlink" href="#g2p-registry-audit-post" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Audit Post module extends the core audit logging capabilities by enabling the automatic posting of audit log messages to related parent records. This provides a centralized and comprehensive view of changes across interconnected data within social protection programs and farmer registries.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The <strong>OpenSPP Audit Post</strong> module is designed to streamline the tracking of data changes across complex, hierarchical data structures by:</p>
 <ul class="simple">
@@ -1672,8 +1659,8 @@ title="Print to PDF"
 <li><p><strong>Improving Accountability and Transparency</strong>: Offer a clearer, more accessible audit trail for critical data, simplifying reviews and ensuring all relevant modifications are visible in one place.</p></li>
 <li><p><strong>Simplifying Data Oversight</strong>: Reduce the need to navigate through multiple linked records to understand the full history of an entity, making oversight more efficient for program managers and auditors.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module builds upon existing OpenSPP functionality and integrates with key platform components:</p>
 <ul class="simple">
@@ -1681,32 +1668,32 @@ title="Print to PDF"
 <li><p><strong>Mail (mail)</strong>: Leverages the communication and messaging features to post audit log entries as messages on the chatter of parent records, making them visible in the record's activity stream.</p></li>
 <li><p><strong>SPP Audit Log (spp_audit_log)</strong>: This module is a direct extension of the <a class="reference internal" href="spp_audit_log.html"><span class="doc std std-doc">OpenSPP Audit Log</span></a> module. It enhances the <code class="docutils literal notranslate"><span class="pre">spp.audit.log</span></code> and <code class="docutils literal notranslate"><span class="pre">spp.audit.rule</span></code> models to enable the identification of parent records and the automatic posting of generated audit messages to those parents.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The module introduces several key features to facilitate consolidated audit logging:</p>
-<section id="defining-parent-child-audit-relationships">
+<div class="section" id="defining-parent-child-audit-relationships">
 <h3>Defining Parent-Child Audit Relationships<a class="headerlink" href="#defining-parent-child-audit-relationships" title="Permalink to this headline">#</a></h3>
 <p>Administrators can configure audit rules to establish explicit parent-child relationships between different data models. This involves selecting a &quot;Parent Rule&quot; and specifying a &quot;Field that connects this model to the model of the parent rule&quot; within the <code class="docutils literal notranslate"><span class="pre">spp.audit.rule</span></code> configuration. For instance, you can define that a <code class="docutils literal notranslate"><span class="pre">Program</span> <span class="pre">Enrollment</span></code> record is a child of a <code class="docutils literal notranslate"><span class="pre">Beneficiary</span></code> record via a specific many-to-one field. This ensures that changes to child records are correctly linked back to their main parent.</p>
-</section>
-<section id="automatic-posting-to-parent-record-timelines">
+</div>
+<div class="section" id="automatic-posting-to-parent-record-timelines">
 <h3>Automatic Posting to Parent Record Timelines<a class="headerlink" href="#automatic-posting-to-parent-record-timelines" title="Permalink to this headline">#</a></h3>
 <p>When a change is detected and logged for a child record according to a defined audit rule, this module automatically posts a summary of that change to the communication timeline (chatter) of the identified parent record. This means that instead of having to look up the child record's audit log, the relevant audit information appears directly on the parent's activity feed, providing immediate context.</p>
-</section>
-<section id="consolidated-audit-view-on-parent-records">
+</div>
+<div class="section" id="consolidated-audit-view-on-parent-records">
 <h3>Consolidated Audit View on Parent Records<a class="headerlink" href="#consolidated-audit-view-on-parent-records" title="Permalink to this headline">#</a></h3>
 <p>The audit log messages posted to parent record timelines include a clear, HTML-formatted table summarizing the specific data changes. This table details the model, field, old value, and new value, making it easy to quickly understand what modifications were made on the related child record without needing to access the full audit log. This aggregated view streamlines the review process for managers.</p>
-</section>
-<section id="dynamic-parent-record-identification">
+</div>
+<div class="section" id="dynamic-parent-record-identification">
 <h3>Dynamic Parent Record Identification<a class="headerlink" href="#dynamic-parent-record-identification" title="Permalink to this headline">#</a></h3>
 <p>The module intelligently identifies the &quot;most parent&quot; record in a hierarchical structure. For example, if a <code class="docutils literal notranslate"><span class="pre">Program</span> <span class="pre">Enrollment</span></code> (child) is linked to a <code class="docutils literal notranslate"><span class="pre">Household</span> <span class="pre">Member</span></code> (intermediate parent), which is then linked to a <code class="docutils literal notranslate"><span class="pre">Household</span></code> (most parent), the audit log can be configured to post to the <code class="docutils literal notranslate"><span class="pre">Household</span></code> record, ensuring the highest-level entity receives the consolidated audit information.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Audit Post module significantly enhances the audit capabilities of OpenSPP by centralizing data change visibility, providing a comprehensive and easily accessible history for core program entities.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

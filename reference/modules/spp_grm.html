@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_grm.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1680,10 +1667,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="grievance-redress-mechanism">
+  <div class="section" id="grievance-redress-mechanism">
 <h1>Grievance Redress Mechanism<a class="headerlink" href="#grievance-redress-mechanism" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Grm module provides a robust Grievance Redress Mechanism (GRM) for managing and resolving complaints and feedback within social protection programs and farmer registries. It offers a structured way to receive, track, and address issues raised by registrants.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Grm module enables organizations to manage grievances effectively, fostering accountability and transparency. It ensures that feedback from beneficiaries and stakeholders is systematically captured and addressed.</p>
 <p>Key capabilities include:</p>
@@ -1695,8 +1682,8 @@ title="Print to PDF"
 <li><p><strong>Performance Monitoring</strong>: Allows for categorization, prioritization, and assignment of grievances, providing insights into common issues and team performance.</p></li>
 </ul>
 <p>This module ensures that registrants have a clear avenue to voice concerns and receive timely responses, improving program trust and effectiveness.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The spp_grm module integrates with core OpenSPP components to provide a comprehensive grievance management solution:</p>
 <ul class="simple">
@@ -1706,40 +1693,40 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="spp_area.html"><span class="doc std std-doc">OpenSPP Area</span></a></strong>: While spp_grm does not directly manage geographical areas, it works with registrants who are associated with specific areas via the spp_area module. This allows for location-aware grievance management and reporting.</p></li>
 <li><p><strong><a class="reference internal" href="spp_user_roles.html"><span class="doc std std-doc">OpenSPP User Roles</span></a></strong>: Integrates with user role management to assign grievances to appropriate staff based on their roles and potentially restrict access to tickets based on assigned areas, ensuring staff manage only relevant grievances.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The spp_grm module offers a range of features to streamline grievance management:</p>
-<section id="grievance-intake-and-creation">
+<div class="section" id="grievance-intake-and-creation">
 <h3>Grievance Intake and Creation<a class="headerlink" href="#grievance-intake-and-creation" title="Permalink to this headline">#</a></h3>
 <p>Users can create new grievance tickets manually within the system, or tickets can be automatically generated from incoming emails. Registrants can also submit grievances directly through the OpenSPP portal, which automatically creates a new ticket. Each ticket receives a unique identifier for easy tracking.</p>
-</section>
-<section id="structured-workflow-and-stages">
+</div>
+<div class="section" id="structured-workflow-and-stages">
 <h3>Structured Workflow and Stages<a class="headerlink" href="#structured-workflow-and-stages" title="Permalink to this headline">#</a></h3>
 <p>Grievances progress through customizable stages, such as 'New', 'In Progress', 'Resolved', and 'Closed'. Each stage can trigger automated email notifications to the registrant, keeping them informed of the ticket's progress. The system also supports a Kanban view for visual workflow management, allowing stages to be folded when empty.</p>
-</section>
-<section id="categorization-channels-and-prioritization">
+</div>
+<div class="section" id="categorization-channels-and-prioritization">
 <h3>Categorization, Channels, and Prioritization<a class="headerlink" href="#categorization-channels-and-prioritization" title="Permalink to this headline">#</a></h3>
 <p>Staff can categorize grievances (e.g., &quot;Payment Issue,&quot; &quot;Data Correction&quot;), assign a channel through which the grievance was received (e.g., &quot;Email,&quot; &quot;Phone Call,&quot; &quot;In-Person&quot;), and apply descriptive tags. Each grievance can also be assigned a priority level (Low, Medium, High, Very High) to help manage workload and ensure urgent issues are addressed promptly.</p>
-</section>
-<section id="registrant-centric-tracking">
+</div>
+<div class="section" id="registrant-centric-tracking">
 <h3>Registrant-Centric Tracking<a class="headerlink" href="#registrant-centric-tracking" title="Permalink to this headline">#</a></h3>
 <p>Every grievance ticket is linked directly to the relevant registrant (individual or group). This allows staff to view all past and active grievances associated with a specific registrant from their profile, providing a comprehensive history of interactions.</p>
-</section>
-<section id="communication-and-attachments">
+</div>
+<div class="section" id="communication-and-attachments">
 <h3>Communication and Attachments<a class="headerlink" href="#communication-and-attachments" title="Permalink to this headline">#</a></h3>
 <p>The module includes an integrated messaging thread for internal and external communication related to each grievance. Email replies are automatically added to the ticket's history. Users can also attach relevant documents and media to tickets, such as photos or supporting evidence.</p>
-</section>
-<section id="portal-access-for-registrants">
+</div>
+<div class="section" id="portal-access-for-registrants">
 <h3>Portal Access for Registrants<a class="headerlink" href="#portal-access-for-registrants" title="Permalink to this headline">#</a></h3>
 <p>Registrants who have submitted grievances can log into the OpenSPP portal to view the status, history, and details of their submitted tickets. This self-service capability reduces the burden on staff and increases transparency for beneficiaries.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Grm module is essential for establishing an accountable and responsive social protection program by providing a comprehensive system for managing and resolving grievances efficiently.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_change_request_edit_farmer.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1670,10 +1657,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="change-request-edit-farmer">
+  <div class="section" id="change-request-edit-farmer">
 <h1>Change Request: Edit Farmer<a class="headerlink" href="#change-request-edit-farmer" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Change Request Edit Farmer module provides a structured workflow for submitting, reviewing, and applying updates to existing farmer records within the OpenSPP registry. It ensures that all modifications to critical farmer data follow a formal approval process.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module formalizes the process of updating farmer information, ensuring data accuracy and maintaining a clear audit trail. It accomplishes this by:</p>
 <ul class="simple">
@@ -1683,8 +1670,8 @@ title="Print to PDF"
 <li><p><strong>Streamlining Approval Workflows</strong>: Integrates with the broader change request framework to route updates through defined validation sequences for authorization.</p></li>
 <li><p><strong>Providing an Audit Trail</strong>: Records every stage of the change request, offering full transparency on who requested, reviewed, and approved each modification.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_change_request_edit_farmer</span></code> module extends and integrates with several core OpenSPP modules to deliver its functionality:</p>
 <ul class="simple">
@@ -1696,15 +1683,15 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="spp_idpass.html"><span class="doc std std-doc">spp_idpass</span></a></strong>: Utilized for processing and capturing details from scanned identification documents, which often serve as evidence for farmer data updates.</p></li>
 <li><p><strong><a class="reference internal" href="spp_farmer_registry_base.html"><span class="doc std std-doc">OpenSPP Farmer Registry Base</span></a></strong>: Builds upon this module to access farmer-specific data fields and ensure consistency with the overall farmer registry structure.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_change_request_edit_farmer</span></code> module provides a comprehensive set of features for managing farmer data updates:</p>
-<section id="initiating-and-tracking-farmer-updates">
+<div class="section" id="initiating-and-tracking-farmer-updates">
 <h3>Initiating and Tracking Farmer Updates<a class="headerlink" href="#initiating-and-tracking-farmer-updates" title="Permalink to this headline">#</a></h3>
 <p>Users can initiate a change request to modify an existing farmer's profile. The module provides a dedicated form for selecting the target farmer and specifying the fields to be updated. Each request proceeds through a configurable workflow, ensuring proper review and approval before any changes are applied to the live farmer record.</p>
-</section>
-<section id="comprehensive-farmer-data-fields">
+</div>
+<div class="section" id="comprehensive-farmer-data-fields">
 <h3>Comprehensive Farmer Data Fields<a class="headerlink" href="#comprehensive-farmer-data-fields" title="Permalink to this headline">#</a></h3>
 <p>The module allows for updates to a wide range of farmer-specific information. Key fields include:</p>
 <ul class="simple">
@@ -1713,8 +1700,8 @@ title="Print to PDF"
 <li><p><strong>Contact Details</strong>: Adjustments to mobile telephone number and email address.</p></li>
 <li><p><strong>Household and Education</strong>: Updates to farmer household size, postal address, formal agricultural training status, and highest education level.</p></li>
 </ul>
-</section>
-<section id="data-validation-and-constraints">
+</div>
+<div class="section" id="data-validation-and-constraints">
 <h3>Data Validation and Constraints<a class="headerlink" href="#data-validation-and-constraints" title="Permalink to this headline">#</a></h3>
 <p>To maintain data quality, the module incorporates several validation rules:</p>
 <ul class="simple">
@@ -1722,25 +1709,25 @@ title="Print to PDF"
 <li><p><strong>Mobile Number Validation</strong>: Ensures that entered mobile telephone numbers adhere to correct country-specific formats, improving contactability.</p></li>
 <li><p><strong>Required Fields</strong>: Mandates the selection of a specific farmer for the change request to proceed, preventing ambiguous updates.</p></li>
 </ul>
-</section>
-<section id="document-management-system-integration">
+</div>
+<div class="section" id="document-management-system-integration">
 <h3>Document Management System Integration<a class="headerlink" href="#document-management-system-integration" title="Permalink to this headline">#</a></h3>
 <p>The module integrates with OpenSPP's Document Management System (DMS) to securely store supporting documents. Users can attach files and directories related to the change request, such as scanned ID cards, proof of address, or other relevant evidence. This ensures that all changes are backed by verifiable documentation.</p>
-</section>
-<section id="live-data-application">
+</div>
+<div class="section" id="live-data-application">
 <h3>Live Data Application<a class="headerlink" href="#live-data-application" title="Permalink to this headline">#</a></h3>
 <p>Upon final approval of a change request, the module automatically updates the corresponding live farmer record in the registry. This includes modifying demographic fields, updating phone numbers, and registering new or updated national ID numbers. The system also ensures that any name changes are reflected across the farmer's profile.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The module allows viewing the associated group details directly from the change request, providing context to the farmer's affiliations.</p>
 </div>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_change_request_edit_farmer</span></code> module is essential for maintaining accurate and up-to-date farmer information within OpenSPP. It provides a robust, auditable, and user-friendly system for managing changes to farmer records, crucial for the integrity of social protection programs and farmer registries.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

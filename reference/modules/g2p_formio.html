@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_formio.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-formio">
+  <div class="section" id="g2p-formio">
 <h1>G2P Formio<a class="headerlink" href="#g2p-formio" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_formio</span></code> module integrates dynamic form building capabilities into OpenSPP's G2P programs, enabling flexible data collection, customizable application processes, and enhanced self-service options for beneficiaries.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_formio</span></code> module provides a powerful framework for:</p>
 <ul class="simple">
@@ -1672,8 +1659,8 @@ title="Print to PDF"
 <li><p><strong>Streamlining Data Collection and Validation</strong>: Leverage Formio's robust features to collect structured data efficiently and apply necessary validations directly within program workflows, ensuring data quality.</p></li>
 </ul>
 <p>This module enhances the flexibility of OpenSPP programs by allowing administrators to quickly adapt data collection methods to evolving program requirements and improve the beneficiary application experience.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_formio</span></code> module extends core OpenSPP functionalities by integrating with key components:</p>
 <ul class="simple">
@@ -1682,31 +1669,31 @@ title="Print to PDF"
 <li><p><strong>Formio Storage Filestore</strong>: This module depends on <code class="docutils literal notranslate"><span class="pre">formio_storage_filestore</span></code> to manage the secure storage of form submission data. It ensures that all data collected through the dynamic forms is reliably saved and accessible within OpenSPP.</p></li>
 </ul>
 <p>This integration allows <code class="docutils literal notranslate"><span class="pre">g2p_formio</span></code> to serve as the primary mechanism for collecting beneficiary data through customizable forms within the context of defined G2P programs.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="program-specific-form-assignment">
+<div class="section" id="program-specific-form-assignment">
 <h3>Program-Specific Form Assignment<a class="headerlink" href="#program-specific-form-assignment" title="Permalink to this headline">#</a></h3>
 <p>Administrators can easily assign a unique application or registration form to each social protection program. Within the <a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">G2P Programs</span></a> module, a dedicated field allows users to select an existing Formio builder, which then serves as the official &quot;Program Form&quot; for that specific program. This ensures that each program collects precisely the data it requires, tailored to its unique eligibility and operational needs.</p>
-</section>
-<section id="self-service-portal-integration">
+</div>
+<div class="section" id="self-service-portal-integration">
 <h3>Self-Service Portal Integration<a class="headerlink" href="#self-service-portal-integration" title="Permalink to this headline">#</a></h3>
 <p>The assigned Program Forms are designed to be readily available for use in self-service portals. This capability empowers beneficiaries to complete applications, update information, or submit other required data independently through a user-friendly interface. This reduces the administrative burden on program staff and provides a more accessible and convenient experience for beneficiaries.</p>
-</section>
-<section id="multiple-form-submissions">
+</div>
+<div class="section" id="multiple-form-submissions">
 <h3>Multiple Form Submissions<a class="headerlink" href="#multiple-form-submissions" title="Permalink to this headline">#</a></h3>
 <p>For programs that require beneficiaries to submit forms more than once, the <code class="docutils literal notranslate"><span class="pre">g2p_formio</span></code> module provides a configurable option. Administrators can enable &quot;Multiple Form Submission&quot; for a program, allowing a beneficiary to submit the associated Program Form multiple times. This is particularly useful for scenarios like re-applications, periodic updates, or when a beneficiary needs to apply for different components within the same program.</p>
-</section>
-<section id="dynamic-form-validation">
+</div>
+<div class="section" id="dynamic-form-validation">
 <h3>Dynamic Form Validation<a class="headerlink" href="#dynamic-form-validation" title="Permalink to this headline">#</a></h3>
 <p>Leveraging the underlying Formio engine, all forms created and linked through this module support comprehensive validation rules. Administrators can configure field-level validations, ensuring data accuracy and completeness directly at the point of entry. This includes required fields, data type checks, and custom validation logic, streamlining the data quality process for program applications.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_formio</span></code> module is crucial for OpenSPP, providing the flexibility to create, manage, and integrate dynamic, program-specific forms, thereby streamlining data collection and enhancing beneficiary self-service capabilities.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

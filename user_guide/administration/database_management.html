@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/administration/database_management.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1620,13 +1607,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="database-management">
+  <div class="section" id="database-management">
 <h1>Database management<a class="headerlink" href="#database-management" title="Permalink to this headline">#</a></h1>
 <p>This section explains how to manage your OpenSPP database, including how to reset the database, and how to back up your data before making major changes. Proper database management helps ensure data integrity and system reliability.</p>
-<section id="reset-database">
+<div class="section" id="reset-database">
 <h2>Reset database<a class="headerlink" href="#reset-database" title="Permalink to this headline">#</a></h2>
 <p>If you need to reset your OpenSPP database (e.g., for testing or to start fresh):</p>
-<section id="option-a-via-web-interface-if-list-db-true">
+<div class="section" id="option-a-via-web-interface-if-list-db-true">
 <h3>Option A: Via web interface (if list_db = True)<a class="headerlink" href="#option-a-via-web-interface-if-list-db-true" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">http://your-server-ip:8069/web/database/manager</span></code></p></li>
@@ -1634,8 +1621,8 @@ title="Print to PDF"
 <li><p>Enter the Master Password then Click the &quot;Delete&quot;.</p></li>
 <li><p>Create a new database with the same name or different name</p></li>
 </ol>
-</section>
-<section id="option-b-via-command-line">
+</div>
+<div class="section" id="option-b-via-command-line">
 <h3>Option B: Via command line<a class="headerlink" href="#option-b-via-command-line" title="Permalink to this headline">#</a></h3>
 <p>In your terminal, run the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>openspp
@@ -1659,9 +1646,9 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class=
 <li><p>User accounts and settings</p></li>
 <li><p>Custom configurations</p></li>
 </ul>
-</section>
-</section>
-<section id="backup-before-reset">
+</div>
+</div>
+<div class="section" id="backup-before-reset">
 <h2>Backup before reset<a class="headerlink" href="#backup-before-reset" title="Permalink to this headline">#</a></h2>
 <p>The following commands create a backup of both the database and the filestore:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/backups/openspp
@@ -1669,8 +1656,8 @@ sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> <
 sudo<span class="w"> </span>tar<span class="w"> </span>-czf<span class="w"> </span>/var/backups/openspp/filestore_backup_<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d_%H%M%S<span class="k">)</span>.tar.gz<span class="w"> </span>/var/lib/openspp/filestore/openspp_prod
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

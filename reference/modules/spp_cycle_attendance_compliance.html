@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_cycle_attendance_compliance.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="cycle-attendance-compliance">
+  <div class="section" id="cycle-attendance-compliance">
 <h1>Cycle: Attendance Compliance<a class="headerlink" href="#cycle-attendance-compliance" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Cycle Attendance Compliance module integrates attendance records as a key criterion for determining beneficiary eligibility and ongoing compliance within social protection programs. It allows program managers to define, track, and enforce attendance requirements for beneficiaries participating in program cycles, ensuring accountability and program integrity.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module enhances OpenSPP's ability to manage beneficiary compliance by incorporating attendance data. It achieves this by:</p>
 <ul class="simple">
@@ -1674,8 +1661,8 @@ title="Print to PDF"
 <li><p><strong>Supporting Group and Individual Programs</strong>: Manages attendance compliance for both individual beneficiaries and for members within group-based programs.</p></li>
 </ul>
 <p>This module ensures that only beneficiaries who meet the required attendance levels remain active in a program, helping to optimize resource allocation and verify active participation. For example, a program might require beneficiaries to attend a minimum of 10 health awareness sessions over a cycle to receive their next payment.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Cycle Attendance Compliance module seamlessly integrates with core OpenSPP functionalities and extends existing modules:</p>
 <ul class="simple">
@@ -1683,14 +1670,14 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="spp_event_data.html"><span class="doc std std-doc">OpenSPP Event Data</span></a></strong>: It leverages the event data framework to store detailed attendance records. When attendance data is fetched from an external system, individual attendance events (like a specific date and time of attendance) are logged as <code class="docutils literal notranslate"><span class="pre">spp.event.attendance</span></code> records, which are then managed by the <code class="docutils literal notranslate"><span class="pre">spp_event_data</span></code> module.</p></li>
 <li><p><strong>G2P Cycle Management (g2p_cycle)</strong>: It extends the program cycle model, allowing program managers to enable attendance criteria and configure specific requirements (e.g., required attendance days, date ranges) directly on the cycle.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="external-attendance-system-configuration">
+<div class="section" id="external-attendance-system-configuration">
 <h3>External Attendance System Configuration<a class="headerlink" href="#external-attendance-system-configuration" title="Permalink to this headline">#</a></h3>
 <p>Program administrators can configure OpenSPP to connect with an external attendance tracking system. This involves setting up the external server URL, authentication endpoints, client credentials (ID and secret), and specific API endpoints for fetching attendance types, locations, and compliance data. A &quot;Test Connection&quot; feature allows administrators to verify the connection and automatically import attendance types and locations from the external system into OpenSPP's configuration. This ensures that attendance data is consistently categorized.</p>
-</section>
-<section id="program-cycle-attendance-criteria-definition">
+</div>
+<div class="section" id="program-cycle-attendance-criteria-definition">
 <h3>Program Cycle Attendance Criteria Definition<a class="headerlink" href="#program-cycle-attendance-criteria-definition" title="Permalink to this headline">#</a></h3>
 <p>Within each program cycle, administrators gain the ability to activate and define specific attendance compliance rules. They can:</p>
 <ul class="simple">
@@ -1699,25 +1686,25 @@ title="Print to PDF"
 <li><p>Define a <strong>date range (From Date, To Date)</strong> within which attendance will be considered.</p></li>
 <li><p>Optionally, select a specific <strong>Attendance Type</strong> (e.g., &quot;Training Session,&quot; &quot;Health Check-up&quot;) and <strong>Attendance Location</strong> (e.g., &quot;Community Center A,&quot; &quot;District Office&quot;) to filter records from the external system.</p></li>
 </ul>
-</section>
-<section id="automated-beneficiary-compliance-filtering">
+</div>
+<div class="section" id="automated-beneficiary-compliance-filtering">
 <h3>Automated Beneficiary Compliance Filtering<a class="headerlink" href="#automated-beneficiary-compliance-filtering" title="Permalink to this headline">#</a></h3>
 <p>When the &quot;Filter Beneficiaries by Compliance Criteria&quot; action is triggered on a program cycle, this module automatically fetches attendance data for all eligible registrants from the configured external system. It then compares each beneficiary's attendance count against the <code class="docutils literal notranslate"><span class="pre">required_number_of_attendance</span></code> set for the cycle.</p>
 <ul class="simple">
 <li><p><strong>Individual Programs</strong>: For programs targeting individuals, beneficiaries who meet the attendance threshold are marked as 'enrolled', while those who do not are set to 'non_compliant'. The exact <code class="docutils literal notranslate"><span class="pre">number_of_attendance</span></code> is recorded on their cycle membership.</p></li>
 <li><p><strong>Group Programs</strong>: For programs targeting groups, the module assesses attendance for each individual member within the group. A group's overall compliance might depend on a certain number or percentage of its members meeting the attendance criteria, and each member's attendance status (<code class="docutils literal notranslate"><span class="pre">included</span></code> or <code class="docutils literal notranslate"><span class="pre">not_included</span></code>) is tracked within the group's cycle membership.</p></li>
 </ul>
-</section>
-<section id="detailed-attendance-event-logging">
+</div>
+<div class="section" id="detailed-attendance-event-logging">
 <h3>Detailed Attendance Event Logging<a class="headerlink" href="#detailed-attendance-event-logging" title="Permalink to this headline">#</a></h3>
 <p>Upon fetching attendance data from the external system, the module not only updates compliance statuses but also creates detailed <code class="docutils literal notranslate"><span class="pre">spp.event.attendance</span></code> records within OpenSPP for each individual attendance event. These records capture the date, time, type, location, and source of attendance, providing a granular history for each beneficiary. This ensures that a complete, auditable trail of attendance is maintained directly within OpenSPP, accessible for review and reporting.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Cycle Attendance Compliance module provides essential capabilities for managing and enforcing attendance-based compliance criteria, thereby strengthening program integrity and ensuring that social protection benefits reach actively participating beneficiaries.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_notifications_rest_api.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1648,10 +1635,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-notifications-rest-api">
+  <div class="section" id="g2p-notifications-rest-api">
 <h1>G2P Notifications Rest Api<a class="headerlink" href="#g2p-notifications-rest-api" title="Permalink to this headline">#</a></h1>
 <p>The G2P Notifications Rest Api module provides a secure and standardized API for managing beneficiary notification preferences within OpenSPP. It extends existing registrant and group management APIs to allow external systems to set and retrieve how individuals and group members prefer to receive program communications.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module enables seamless integration for managing notification preferences, ensuring OpenSPP programs can respect beneficiary choices and communicate effectively. It accomplishes this by:</p>
 <ul class="simple">
@@ -1660,35 +1647,35 @@ title="Print to PDF"
 <li><p><strong>Supporting Beneficiary Opt-Outs</strong>: Provides the capability to explicitly record when a beneficiary or group member prefers not to receive any notifications, enhancing privacy and user control.</p></li>
 <li><p><strong>Enabling External Preference Management</strong>: Empowers program administrators or integrated systems to centrally manage and update notification settings for large groups of beneficiaries.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module acts as an API extension, building upon foundational modules to expose notification preference management:</p>
 <ul class="simple">
 <li><p><strong><a class="reference internal" href="g2p_registry_rest_api.html"><span class="doc std std-doc">G2P Registry: Rest API Module</span></a></strong>: This module is a direct dependency, providing the base RESTful API endpoints for managing registrants and group memberships. The <code class="docutils literal notranslate"><span class="pre">g2p_notifications_rest_api</span></code> module extends the data models exposed by <code class="docutils literal notranslate"><span class="pre">g2p_registry_rest_api</span></code>, adding the <code class="docutils literal notranslate"><span class="pre">notification_preference</span></code> field to existing API endpoints for individual registrants and group members.</p></li>
 <li><p><strong><a class="reference internal" href="g2p_notifications_base.html"><span class="doc std std-doc">G2P Notifications Base</span></a></strong>: This foundational module handles the core logic for sending notifications and respecting preferences. While <code class="docutils literal notranslate"><span class="pre">g2p_notifications_rest_api</span></code> does not send notifications itself, it provides the API layer for external systems to <em>set</em> the preferences that <code class="docutils literal notranslate"><span class="pre">g2p_notifications_base</span></code> then uses when determining how and if to send communications.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="managing-individual-beneficiary-notification-preferences">
+<div class="section" id="managing-individual-beneficiary-notification-preferences">
 <h3>Managing Individual Beneficiary Notification Preferences<a class="headerlink" href="#managing-individual-beneficiary-notification-preferences" title="Permalink to this headline">#</a></h3>
 <p>External systems can use the extended API to retrieve or update the notification preferences for individual beneficiaries. This allows for dynamic management of how a registrant wishes to receive communications, such as &quot;email,&quot; &quot;sms,&quot; &quot;both,&quot; or &quot;none,&quot; directly through API calls. For example, a mobile app could allow a beneficiary to change their preference from SMS to email.</p>
-</section>
-<section id="managing-group-member-notification-preferences">
+</div>
+<div class="section" id="managing-group-member-notification-preferences">
 <h3>Managing Group Member Notification Preferences<a class="headerlink" href="#managing-group-member-notification-preferences" title="Permalink to this headline">#</a></h3>
 <p>Similar to individual registrants, this module extends the API to manage notification preferences for members within a defined group. This ensures that group-level communications can also adhere to specific preferences set for each member, providing granular control over how information reaches all participants.</p>
-</section>
-<section id="supporting-opt-out-functionality">
+</div>
+<div class="section" id="supporting-opt-out-functionality">
 <h3>Supporting Opt-Out Functionality<a class="headerlink" href="#supporting-opt-out-functionality" title="Permalink to this headline">#</a></h3>
 <p>A key capability is the explicit support for a &quot;none&quot; preference. This allows beneficiaries, or systems on their behalf, to specify that no notifications should be sent to them. This is vital for respecting individual choices and complying with communication policies.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_notifications_rest_api</span></code> module is critical for enabling external systems to seamlessly manage and respect beneficiary notification preferences, enhancing communication transparency and control across OpenSPP programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

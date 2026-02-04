@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_custom_filter.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="custom-filter">
+  <div class="section" id="custom-filter">
 <h1>Custom Filter<a class="headerlink" href="#custom-filter" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Custom Filter module provides administrators with fine-grained control over which fields appear in Odoo's filtering interface. This enhancement streamlines data searches, reduces clutter, and significantly improves the overall user experience for OpenSPP users by ensuring only relevant fields are available for filtering.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module empowers OpenSPP administrators to tailor the user interface by managing field visibility within filter dropdowns. It addresses the common challenge of cluttered filter options, making data retrieval more efficient and intuitive.</p>
 <p>Key capabilities include:</p>
@@ -1675,40 +1662,40 @@ title="Print to PDF"
 <li><p><strong>Tailored System Usability:</strong> Allows for customization of the filtering experience to match specific program needs and user roles within different contexts, such as filtering beneficiaries by &quot;Program Status&quot; or &quot;Registration Date&quot;.</p></li>
 </ul>
 <p>The module's value lies in its ability to transform a potentially overwhelming filtering experience into a precise and efficient one. For instance, instead of seeing every technical field, a user might only see &quot;Country &gt; Province &gt; District&quot; for geographical filters, or &quot;Beneficiary Name&quot; and &quot;ID Number&quot; for participant searches. This focused approach saves time and reduces errors in data management.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Custom Filter module integrates directly with Odoo's core functionality to extend its filtering capabilities.</p>
 <ul class="simple">
 <li><p><strong>Base Module (<code class="docutils literal notranslate"><span class="pre">base</span></code>):</strong> This module depends on Odoo's foundational <code class="docutils literal notranslate"><span class="pre">base</span></code> module, as it directly modifies the behavior of Odoo's standard field management system. It extends the core definition of fields to include a new property.</p></li>
 </ul>
 <p>This module enhances how all other OpenSPP modules interact with Odoo's filtering mechanisms. By adding the <code class="docutils literal notranslate"><span class="pre">allow_filter</span></code> property to <code class="docutils literal notranslate"><span class="pre">ir.model.fields</span></code>, it provides a system-wide mechanism for controlling filter visibility. Other OpenSPP modules can define their fields with this property, ensuring consistency and controlled filtering across the entire platform.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Custom Filter module provides key features that enhance administrative control and user efficiency.</p>
-<section id="centralized-filter-visibility-management">
+<div class="section" id="centralized-filter-visibility-management">
 <h3>Centralized Filter Visibility Management<a class="headerlink" href="#centralized-filter-visibility-management" title="Permalink to this headline">#</a></h3>
 <p>Administrators can directly manage which fields are displayed in filter dropdowns across the entire OpenSPP platform. This control is exercised through the Odoo technical settings, allowing administrators to activate or deactivate the <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">on</span> <span class="pre">Custom</span> <span class="pre">Filter</span></code> option for any field. For example, an administrator can ensure that only &quot;Beneficiary Name,&quot; &quot;Program Status,&quot; and &quot;Enrollment Date&quot; appear as filter options for a beneficiary list, while hiding less relevant technical fields.</p>
-</section>
-<section id="streamlined-user-filtering-experience">
+</div>
+<div class="section" id="streamlined-user-filtering-experience">
 <h3>Streamlined User Filtering Experience<a class="headerlink" href="#streamlined-user-filtering-experience" title="Permalink to this headline">#</a></h3>
 <p>For end-users, this module translates directly into a cleaner and more intuitive filtering interface. Users will no longer encounter an overwhelming list of fields, many of which are irrelevant to their daily tasks. Instead, they will see a curated selection of pertinent fields, making it quicker and easier to locate specific data, such as finding all beneficiaries in a particular &quot;District&quot; or those with an &quot;Active&quot; program status.</p>
-</section>
-<section id="developer-friendly-field-definition">
+</div>
+<div class="section" id="developer-friendly-field-definition">
 <h3>Developer-Friendly Field Definition<a class="headerlink" href="#developer-friendly-field-definition" title="Permalink to this headline">#</a></h3>
 <p>Developers can proactively integrate filter visibility control when defining new fields or modifying existing ones within custom modules. By simply adding the <code class="docutils literal notranslate"><span class="pre">allow_filter=True</span></code> parameter to a field's definition, they can pre-configure whether that field should be available for custom filtering, ensuring design consistency from the outset.</p>
-</section>
-<section id="unrestricted-access-for-technical-users">
+</div>
+<div class="section" id="unrestricted-access-for-technical-users">
 <h3>Unrestricted Access for Technical Users<a class="headerlink" href="#unrestricted-access-for-technical-users" title="Permalink to this headline">#</a></h3>
 <p>The module ensures that technical users and system administrators retain full visibility and filtering capabilities for all fields, regardless of the <code class="docutils literal notranslate"><span class="pre">allow_filter</span></code> setting. This guarantees that advanced users can still perform comprehensive data exploration, debugging, and system maintenance without any limitations on field access or filtering options.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Custom Filter module is a critical enhancement that empowers administrators to create a more efficient, user-friendly, and precisely controlled data filtering experience across the entire OpenSPP platform.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

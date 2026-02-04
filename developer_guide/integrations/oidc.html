@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Configuring Keycloak for OAuth/OIDC" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Configuring Keycloak for OAuth/OIDC" name="title" />
 <meta content="Step-by-step guide to configure Keycloak as an OIDC authentication provider for OpenSPP with single sign-on capabilities." name="description" />
 <meta content="OpenSPP, Keycloak, OAuth, OIDC, authentication, single sign-on, SSO, identity provider" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/integrations/oidc.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1656,16 +1643,16 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="configuring-keycloak-for-oauth">
+  <div class="section" id="configuring-keycloak-for-oauth">
 <h1>Configuring Keycloak for OAuth<a class="headerlink" href="#configuring-keycloak-for-oauth" title="Permalink to this headline">#</a></h1>
 <p>We recommend using Keycloak as the <a class="reference internal" href="../../reference/glossary.html#term-Authentication"><span class="xref std std-term">authentication</span></a> provider for OpenSPP. This allows for a single sign-on
 experience for users and ensures that the authentication mechanism can evolve independently of the systems
 using it, thus ensuring that the authentication mechanism can be secured and act as a shield in front of the
 systems.</p>
-<section id="configuration">
+<div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">#</a></h2>
 <p>If you are using OpenSPP's <a class="reference external" href="https://github.com/openspp/openspp-docker">docker-compose setup</a>, you already have the <code class="docutils literal notranslate"><span class="pre">auth_oidc</span></code> from <a class="reference external" href="https://github.com/OCA/server-auth">OCA</a> installed, otherwise you will need to install it.</p>
-<section id="configure-keycloak">
+<div class="section" id="configure-keycloak">
 <h3>Configure Keycloak<a class="headerlink" href="#configure-keycloak" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Go to the admin console of your keycloak instance</p></li>
@@ -1676,8 +1663,8 @@ systems.</p>
 <li><p>Enable <code class="docutils literal notranslate"><span class="pre">Client</span> <span class="pre">authentication</span></code>.</p></li>
 <li><p>Go to the &quot;Credentials&quot; tab and copy the <code class="docutils literal notranslate"><span class="pre">Client</span> <span class="pre">secret</span></code> to be used later.</p></li>
 </ol>
-</section>
-<section id="configure-odoo">
+</div>
+<div class="section" id="configure-odoo">
 <h3>Configure Odoo<a class="headerlink" href="#configure-odoo" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install <code class="docutils literal notranslate"><span class="pre">Authentication</span> <span class="pre">OpenID</span> <span class="pre">Connect</span></code> from the Apps menu.</p></li>
@@ -1700,31 +1687,31 @@ your Keycloak realm</p></li>
 </ol>
 <p><strong>For example:</strong></p>
 <p><img alt="OpenSPP OIDC configuration interface" src="../../_images/openspp_oidc_configuration.png" /></p>
-</section>
-<section id="customizing-the-login-page-optional">
+</div>
+<div class="section" id="customizing-the-login-page-optional">
 <h3>Customizing the login page (Optional)<a class="headerlink" href="#customizing-the-login-page-optional" title="Permalink to this headline">#</a></h3>
 <p>To align with corporate branding, you can customize the login page by adding a custom logo and a custom background image.</p>
 <ul class="simple">
 <li><p><strong>Enable Developer Settings</strong>: &quot;Settings&quot; &gt; &quot;Activate The Developer Mode&quot;</p></li>
 <li><p><strong>Edit The Login Template</strong>: &quot;Settings&quot; &gt; &quot;Technical&quot; &gt; &quot;User Interface &gt; Views&quot; &gt; Search for &quot;Login&quot;</p></li>
 </ul>
-</section>
-</section>
-<section id="using">
+</div>
+</div>
+<div class="section" id="using">
 <h2>Using<a class="headerlink" href="#using" title="Permalink to this headline">#</a></h2>
-<section id="existing-users">
+<div class="section" id="existing-users">
 <h3>Existing users<a class="headerlink" href="#existing-users" title="Permalink to this headline">#</a></h3>
 <p>For users that already existed before the <span class="xref std std-term">OIDC</span>-integration was configured, there is a need for them to go through the reset password process.
 This is because the password is not stored in Odoo, but in Keycloak.
 Depending on the configuration, the user may have to perform 2FA setup.</p>
-</section>
-<section id="new-users">
+</div>
+<div class="section" id="new-users">
 <h3>New users<a class="headerlink" href="#new-users" title="Permalink to this headline">#</a></h3>
 <p>For new users, create their user account in OpenSPP/Odoo with the same email address used in <code class="docutils literal notranslate"><span class="pre">Keycloak</span></code> and they will be able to login.
 Note that in order to be able to get past the self-service user management page, permissions need to be set for the user.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

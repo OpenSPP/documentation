@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="OpenSPP Module Installation Guide" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="OpenSPP Module Installation Guide" name="title" />
 <meta content="Step-by-step guide for installing and configuring OpenSPP modules including SP-MIS, Social Registry, and Farmer Registry" name="description" />
 <meta content="OpenSPP, modules, installation, Odoo, SP-MIS, Social Registry, Farmer Registry" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../_static/search_shortcut.js"></script>
     <script src="../_static/version_switcher.js"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/getting_started/module_installation.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1648,30 +1635,30 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="module-installation">
+  <div class="section" id="module-installation">
 <h1>Module installation<a class="headerlink" href="#module-installation" title="Permalink to this headline">#</a></h1>
 <p>OpenSPP's modular architecture allows organizations to deploy only the features they need. Built on Odoo 17, the platform extends functionality through specialized modules that can be mixed and matched to create tailored social protection solutions. This guide covers installing OpenSPP modules for different use cases.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Before installing OpenSPP modules, ensure you have an <strong>Odoo 17 instance</strong> running and accessible. If not, follow the <a class="reference internal" href="installation_deb.html"><span class="doc">Installation guide</span></a> in order to install it.</p>
 </div>
-<section id="installing-openspp-base-modules">
+<div class="section" id="installing-openspp-base-modules">
 <h2>Installing OpenSPP base modules<a class="headerlink" href="#installing-openspp-base-modules" title="Permalink to this headline">#</a></h2>
 <p>OpenSPP comes with three configured base modules depending on your needs. The steps on how to install these can be found in <a class="reference internal" href="social_installation.html"><span class="doc">Installation of OpenSPP Social Registry</span></a>, <a class="reference internal" href="spmis_installation.html"><span class="doc">Installation of OpenSPP SP-MIS</span></a> and <a class="reference internal" href="farmer_installation.html"><span class="doc">Installation of OpenSPP Farmer Registry</span></a>.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>The <strong>SP-MIS</strong> (<span class="xref std std-doc">spp_base_spmis</span>), <strong>Farmer Registry</strong> (<span class="xref std std-doc">spp_base_farmer_registry</span>) and <strong>Social Registry</strong> (<span class="xref std std-doc">spp_base_social_registry</span>) modules are mutually exclusive. You can only have one of them installed in a single Odoo database. Attempting to install multiple base modules will result in an error.</p>
 </div>
-</section>
-<section id="installing-additional-modules">
+</div>
+<div class="section" id="installing-additional-modules">
 <h2>Installing additional modules<a class="headerlink" href="#installing-additional-modules" title="Permalink to this headline">#</a></h2>
 <p>After setting up your base system you can extend the functionality with additional modules. OpenSPP offers 60+ specialized modules covering various aspects of social protection delivery.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Additional modules automatically detect and respect your base configuration (SP-MIS or Farmer Registry). Some modules are specific to one configuration, while others work with both.</p>
 </div>
-</section>
-<section id="general-installation-process">
+</div>
+<div class="section" id="general-installation-process">
 <h2>General installation process<a class="headerlink" href="#general-installation-process" title="Permalink to this headline">#</a></h2>
 <p>Installing an Odoo module, including those for OpenSPP, follows a standard procedure:</p>
 <ol class="arabic simple">
@@ -1688,8 +1675,8 @@ title="Print to PDF"
 </li>
 </ol>
 <p><strong>Note</strong>: The <code class="docutils literal notranslate"><span class="pre">queue_job</span></code> module, which is essential for asynchronous background tasks, is automatically installed as a dependency of the main OpenSPP modules. It is also pre-configured as a <code class="docutils literal notranslate"><span class="pre">server_wide_module</span></code>, ensuring that background workers can process jobs correctly after a service restart.</p>
-</section>
-<section id="common-extension-modules">
+</div>
+<div class="section" id="common-extension-modules">
 <h2>Common extension modules<a class="headerlink" href="#common-extension-modules" title="Permalink to this headline">#</a></h2>
 <p><strong>Data management:</strong></p>
 <ul class="simple">
@@ -1709,8 +1696,8 @@ title="Print to PDF"
 <li><p><strong>OpenID Connect</strong> (<a class="reference internal" href="../reference/modules/spp_oauth.html"><span class="doc">spp_oauth</span></a>) - Single sign-on and authentication</p></li>
 <li><p><strong>DCI API Server</strong> (<a class="reference internal" href="../reference/modules/spp_dci_api_server.html"><span class="doc">spp_dci_api_server</span></a>) - Data Collection Interface API</p></li>
 </ul>
-</section>
-<section id="module-dependencies">
+</div>
+<div class="section" id="module-dependencies">
 <h2>Module dependencies<a class="headerlink" href="#module-dependencies" title="Permalink to this headline">#</a></h2>
 <p>OpenSPP modules often have dependencies that are automatically installed. Understanding these relationships helps with troubleshooting:</p>
 <ul class="simple">
@@ -1722,8 +1709,8 @@ title="Print to PDF"
 <p class="admonition-title">Tip</p>
 <p>Use the module's information page to view its dependencies before installation. This helps you understand what additional functionality will be added.</p>
 </div>
-</section>
-<section id="troubleshooting">
+</div>
+<div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">#</a></h2>
 <p><strong>Module not appearing in Apps list:</strong></p>
 <ul class="simple">
@@ -1744,8 +1731,8 @@ title="Print to PDF"
 <li><p>Restart Odoo service if menu items don't appear</p></li>
 <li><p>Check user access rights for new features</p></li>
 </ul>
-</section>
-<section id="next-steps">
+</div>
+<div class="section" id="next-steps">
 <h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
 <p>After installing your modules:</p>
 <ol class="arabic simple">
@@ -1757,8 +1744,8 @@ title="Print to PDF"
 <p>For detailed configuration guides for specific modules, see the <a class="reference internal" href="../user_guide/index.html"><span class="doc">User guide</span></a> and <a class="reference internal" href="../reference/modules/index.html"><span class="doc">OpenSPP modules</span></a>.</p>
 <div class="toctree-wrapper compound">
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

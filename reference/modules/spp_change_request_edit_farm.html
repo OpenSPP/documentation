@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_change_request_edit_farm.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1680,10 +1667,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="change-request-edit-farm">
+  <div class="section" id="change-request-edit-farm">
 <h1>Change Request: Edit Farm<a class="headerlink" href="#change-request-edit-farm" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_change_request_edit_farm</span></code> module provides a specialized workflow for managing and applying changes to existing farm records within the OpenSPP farmer registry. It ensures that updates to farm details, agricultural activities, and assets are systematically reviewed and approved before being applied to the live data.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines the process of updating comprehensive farm information, ensuring data accuracy and accountability. It accomplishes this by:</p>
 <ul class="simple">
@@ -1693,8 +1680,8 @@ title="Print to PDF"
 <li><p><strong>Updating Land Records</strong>: Facilitates changes to land parcel information, including names, acreage, and geographical coordinates.</p></li>
 <li><p><strong>Ensuring Data Integrity</strong>: Integrates with a change request approval workflow to validate and authorize all proposed modifications before they are applied.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_change_request_edit_farm</span></code> module integrates with several core OpenSPP modules to deliver its functionality:</p>
 <ul class="simple">
@@ -1706,40 +1693,40 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="spp_idpass.html"><span class="doc std std-doc">spp_idpass</span></a></strong>: This module can integrate to capture or verify ID document details relevant to the farm or the applicant making the change request.</p></li>
 <li><p><strong><a class="reference internal" href="spp_farmer_registry_base.html"><span class="doc std std-doc">OpenSPP Farmer Registry Base</span></a></strong>: Provides the fundamental data models for farms, agricultural activities, and assets that this module extends and updates.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_change_request_edit_farm</span></code> module offers several key features for managing farm data edits:</p>
-<section id="farm-details-and-identification">
+<div class="section" id="farm-details-and-identification">
 <h3>Farm Details and Identification<a class="headerlink" href="#farm-details-and-identification" title="Permalink to this headline">#</a></h3>
 <p>Users can modify essential information about a farm, including its official group name and the specific kind of group it represents (e.g., &quot;Farm&quot;). The module also supports capturing details from an ID document scanner, which can be used to verify the identity of the person submitting the change request.</p>
-</section>
-<section id="agricultural-activities-management">
+</div>
+<div class="section" id="agricultural-activities-management">
 <h3>Agricultural Activities Management<a class="headerlink" href="#agricultural-activities-management" title="Permalink to this headline">#</a></h3>
 <p>This module allows for comprehensive updates to the agricultural activities associated with a farm. Users can add, modify, or remove records for crop cultivation, livestock rearing, and aquaculture activities, ensuring an accurate representation of the farm's operations.</p>
-</section>
-<section id="farm-assets-and-machinery">
+</div>
+<div class="section" id="farm-assets-and-machinery">
 <h3>Farm Assets and Machinery<a class="headerlink" href="#farm-assets-and-machinery" title="Permalink to this headline">#</a></h3>
 <p>Users can maintain a detailed inventory of farm assets and machinery. This includes updating information about existing assets or adding new ones, providing a clear picture of the farm's resources.</p>
-</section>
-<section id="land-records-and-legal-status">
+</div>
+<div class="section" id="land-records-and-legal-status">
 <h3>Land Records and Legal Status<a class="headerlink" href="#land-records-and-legal-status" title="Permalink to this headline">#</a></h3>
 <p>The module facilitates updates to land parcel information, such as the parcel name, acreage, and geographical coordinates (both point and polygon data). It also allows for modification of the land's legal status, indicating whether it is owned, leased, or held under other arrangements.</p>
-</section>
-<section id="document-management-system-integration">
+</div>
+<div class="section" id="document-management-system-integration">
 <h3>Document Management System Integration<a class="headerlink" href="#document-management-system-integration" title="Permalink to this headline">#</a></h3>
 <p>All change requests for farm edits can be supported by attached documents. The module integrates with the OpenSPP Document Management System (DMS) to store relevant files and directories, providing crucial evidence and an audit trail for all modifications.</p>
-</section>
-<section id="change-request-validation-and-application">
+</div>
+<div class="section" id="change-request-validation-and-application">
 <h3>Change Request Validation and Application<a class="headerlink" href="#change-request-validation-and-application" title="Permalink to this headline">#</a></h3>
 <p>Before any changes are applied, the module enforces a validation process, requiring that a specific farm (registrant_id) is selected for editing. Upon approval, the module automatically updates the live farm record in the registry, ensuring that all related agricultural activities and assets are correctly linked to the modified farm.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_change_request_edit_farm</span></code> module is critical for maintaining accurate and up-to-date farm information within OpenSPP, providing a structured and auditable process for all farm-related data modifications.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

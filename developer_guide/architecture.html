@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="OpenSPP Architecture" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="OpenSPP Architecture" name="title" />
 <meta content="Comprehensive guide to OpenSPP platform architecture including ecosystem approach, modular design, functional and deployment reference architectures" name="description" />
 <meta content="OpenSPP, architecture, modular design, ecosystem, deployment, functional architecture, reference architecture" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../_static/search_shortcut.js"></script>
     <script src="../_static/version_switcher.js"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/architecture.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1692,9 +1679,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="architecture">
+  <div class="section" id="architecture">
 <h1>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">#</a></h1>
-<section id="ecosystem-approach">
+<div class="section" id="ecosystem-approach">
 <h2>Ecosystem approach<a class="headerlink" href="#ecosystem-approach" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP platform can work as a standalone system or as a part of a larger ecosystem.
 It needs to be interoperable with other government systems.</p>
@@ -1706,8 +1693,8 @@ Through a well-defined set of standard interfaces OpenSPP allows for integration
 <li><p>All public/external facing interfaces of OpenSPP must be standards-based for interoperability whenever possible.</p></li>
 <li><p>3rd party components should be integrated via well-defined interfaces and be easily installable.</p></li>
 </ul>
-</section>
-<section id="configurability">
+</div>
+<div class="section" id="configurability">
 <h2>Configurability<a class="headerlink" href="#configurability" title="Permalink to this headline">#</a></h2>
 <p>OpenSPP should be flexible for countries/organizations to configure the base platform according to their specific requirements.
 Some of the examples of configurability are:</p>
@@ -1717,8 +1704,8 @@ Some of the examples of configurability are:</p>
 <li><p>Be able to define the criteria used to determine the beneficiaries.</p></li>
 <li><p>Be able to define how entitlement is calculated</p></li>
 </ul>
-</section>
-<section id="extensibility">
+</div>
+<div class="section" id="extensibility">
 <h2>Extensibility<a class="headerlink" href="#extensibility" title="Permalink to this headline">#</a></h2>
 <p>OpenSPP should be flexible to extend functionality on top of the basic platform.
 Some of the examples of extensibility are:</p>
@@ -1727,8 +1714,8 @@ Some of the examples of extensibility are:</p>
 <li><p>Ability to use third party solutions such as <a class="reference external" href="https://mosip.io/">MOSIP</a> to store part of the information of registrants</p></li>
 <li><p>Ability to Integrate data from other systems</p></li>
 </ul>
-</section>
-<section id="modularity">
+</div>
+<div class="section" id="modularity">
 <h2>Modularity<a class="headerlink" href="#modularity" title="Permalink to this headline">#</a></h2>
 <p>All components of OpenSPP should be extensible and their features exposed via interfaces such that the implementation behind the interface can be changed without affecting other modules.
 Some examples of modularity are:</p>
@@ -1737,8 +1724,8 @@ Some examples of modularity are:</p>
 <li><p>Calculation of entitlement</p></li>
 <li><p><a class="reference internal" href="../reference/glossary.html#term-Deduplication"><span class="xref std std-term">deduplication</span></a> of beneficiaries</p></li>
 </ul>
-</section>
-<section id="high-level-functional-reference-architecture">
+</div>
+<div class="section" id="high-level-functional-reference-architecture">
 <h2>High-level functional reference architecture<a class="headerlink" href="#high-level-functional-reference-architecture" title="Permalink to this headline">#</a></h2>
 <p><img alt="High-level functional reference architecture diagram showing data layer, Odoo core, Open G2P core, functional layer, user engagement layer, stakeholders layer, and integration layer" src="../_images/highlevel_architecture.jpg" /></p>
 <p>The OpenSPP functional architecture diagram above presents an overview of the components and layers of a typical OpenSPP implementation.</p>
@@ -1773,13 +1760,13 @@ This layer allows the platform to exchange information and interoperate with oth
 <p>Non-functional requirements are the characteristics of the OpenSPP platform that are not directly related to its functionality but enable the platform to be reliable and robust.
 These include security, privacy, audibility, monitoring, performance, scalability, availability, and maintainability.
 Only a couple of non-functional requirements are shown in the diagram.</p>
-</section>
-<section id="high-level-deployment-reference-architecture">
+</div>
+<div class="section" id="high-level-deployment-reference-architecture">
 <h2>High-level deployment reference architecture<a class="headerlink" href="#high-level-deployment-reference-architecture" title="Permalink to this headline">#</a></h2>
 <p>The on-premises deployment of OpenSPP encompasses a suite of interconnected components, each playing a vital role in delivering secure, robust, and highly efficient service.
 This document is intended to provide an high-level understanding of the OpenSPP on-premises deployment architecture and its key components.</p>
 <p><img alt="On-premises deployment architecture diagram showing firewall, load balancer, identity server, API manager, application servers, database components, storage, and communication gateways" src="../_images/deployment_architecture_onprem.jpg" /></p>
-<section id="a-the-components-description">
+<div class="section" id="a-the-components-description">
 <h3>A. The components description<a class="headerlink" href="#a-the-components-description" title="Permalink to this headline">#</a></h3>
 <p><strong>Firewall</strong></p>
 <p>Serving as the entry point, the Firewall regulates the inbound and outbound network traffic based on predetermined security rules.
@@ -1828,8 +1815,8 @@ It promptly issues alerts for any detected anomalies or performance issues, ensu
 It is a critical tool for analyzing system behavior, aiding in diagnosing and troubleshooting issues.</p>
 <p>Understanding the OpenSPP on-premises deployment architecture and its components is essential for effective system management and maintenance.
 This architecture, focusing on performance, scalability, and fault tolerance, provides a comprehensive solution for the on-premises deployment of OpenSPP.</p>
-</section>
-<section id="b-the-specification-of-the-components">
+</div>
+<div class="section" id="b-the-specification-of-the-components">
 <h3>B. The specification of the components<a class="headerlink" href="#b-the-specification-of-the-components" title="Permalink to this headline">#</a></h3>
 <p>Below are the recommended server specifications for each OpenSPP on-premises deployment architecture component.
 Please note that these specifications might need adjustments based on the specific needs of the deployment of the country/organization, such as the number of users, the amount of data, and the desired performance.</p>
@@ -1900,8 +1887,8 @@ The platform needs to scale up or down depending on the specific use case and pe
 <li><p>The 'Hybrid' model is a blend of on-premises and cloud deployments, combining the scalability of cloud services with the increased control of on-premises systems.</p></li>
 </ul>
 <p>The selection among these options should align with the organization's/countries’s specific requirements, budget constraints, and overarching IT strategy.</p>
-</section>
-<section id="c-the-single-node-deployment">
+</div>
+<div class="section" id="c-the-single-node-deployment">
 <h3>C. The single-node deployment<a class="headerlink" href="#c-the-single-node-deployment" title="Permalink to this headline">#</a></h3>
 <p>The single-node deployment refers to installing and configuring OpenSPP on a single VM, typically for testing or small-scale production purposes.
 This deployment type involves setting up all the required OpenSPP modules on a single physical or virtual machine, ensuring simplified management and a reduced resource footprint.</p>
@@ -1913,9 +1900,9 @@ The network interface should be correspondingly high-speed.
 These recommendations should be adapted based on the specific computational load and throughput anticipated for the system.
 For instance, systems expected to handle high traffic volumes will necessitate more robust hardware and expanded network capabilities to ensure seamless operation.</p>
 <p>A thorough assessment of your system usage should be carried out to determine hardware specifications for deployment.</p>
-</section>
-</section>
-<section id="modular-architecture">
+</div>
+</div>
+<div class="section" id="modular-architecture">
 <h2>Modular architecture<a class="headerlink" href="#modular-architecture" title="Permalink to this headline">#</a></h2>
 <p>OpenSPP is designed to be used standalone with just the core functionalities or with other components.</p>
 <p>The previous diagram shows the core components of OpenSPP.
@@ -1931,8 +1918,8 @@ Those components provide APIs that allow you to replace the default implementati
 <li><p><strong>Cycle Manager</strong>: Controls program cycle states and transitions</p></li>
 </ul>
 <p>Furthermore, as OpenSPP is based on the ERP Odoo and use the standard models provided by Odoo, you have access to the thousands of applications available in the <a class="reference external" href="https://apps.odoo.com/apps">Odoo App Store</a> or build your <a class="reference external" href="https://www.odoo.com/documentation/17.0/developer.html">own</a>.</p>
-</section>
-<section id="principles">
+</div>
+<div class="section" id="principles">
 <h2>Principles<a class="headerlink" href="#principles" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>OpenSPP must follow <strong>platform based approach</strong> so that all common features can be configured or the functionality can be extended by other parties.</p></li>
@@ -1956,8 +1943,8 @@ Privacy of Identity Data is an absolute must in OpenSPP</p></li>
 <li><p>The key sub-systems of OpenSPP should be designed for <strong>extensibility</strong>.
 For example, if an external system has to be integrated for entitlement determination, it should be easy to do so.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

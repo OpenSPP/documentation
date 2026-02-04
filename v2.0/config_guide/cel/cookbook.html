@@ -1,0 +1,2604 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+<meta content="CEL cookbook" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://docs.openspp.org/config_guide/cel/cookbook.html" property="og:url"/>
+<meta content="OpenSPP Documentation" property="og:site_name"/>
+<meta content="This guide is for implementers who need ready-to-use CEL patterns. Copy, paste, and adapt these patterns for your use case. Basic patterns: Boolean logic: Equivalent with operators: Handle missing ..." property="og:description"/>
+<meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
+<meta content="OpenSPP Documentation" property="og:image:alt"/>
+<meta content="This guide is for implementers who need ready-to-use CEL patterns. Copy, paste, and adapt these patterns for your use case. Basic patterns: Boolean logic: Equivalent with operators: Handle missing ..." name="description"/>
+<meta content="en_US" property="og:locale"/>
+<title>CEL cookbook – Configuration guide – CEL expressions — OpenSPP Documentation v2.0</title>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/sphinxcontrib-httpexample.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/custom.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/print.css" media="print" rel="stylesheet" type="text/css"/>
+<link href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script src="../../_static/sphinxcontrib-httpexample.js"></script>
+<script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+<script src="../../_static/search-utils.js"></script>
+<script src="../../_static/mermaid_init.js"></script>
+<script src="../../_static/patch_scrollToActive.js"></script>
+<script src="../../_static/search_shortcut.js"></script>
+<script src="../../_static/module-filter.js"></script>
+<script src="../../_static/design-tabs.js"></script>
+<link href="https://docs.openspp.org/config_guide/cel/cookbook.html" rel="canonical">
+<link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v2.0" type="application/opensearchdescription+xml"/>
+<link href="../../_static/icon_192.png" rel="shortcut icon"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="troubleshooting.html" rel="next" title="CEL troubleshooting"/>
+<link href="variables.html" rel="prev" title="Variables"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../../_static/review_status.css" type="text/css" />
+<script src="../../_static/review_status_simple.js"></script>
+-->
+<script crossorigin="anonymous" integrity="sha384-vJ1NXwwlC62VkTLRHyzdAfyL4rQ8Z478DeHgamh37YzGJh3T6j223FC2yMRVriLl" src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+<!-- Mermaid Support -->
+<script crossorigin="anonymous" integrity="sha384-+NGfjU8KzpDLXRHduEqW+ZiJr2rIg+cidUVk7B51R5xK7cHwMKQfrdFwGdrq1Bcz" src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+</link></link></link></link></link></link></head>
+<body data-offset="100" data-spy="scroll" data-target="#bd-toc-nav">
+<!-- Checkboxes to toggle the left sidebar -->
+<input aria-label="Toggle navigation sidebar" class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<label class="overlay overlay-navbar" for="__navigation">
+<div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input aria-label="Toggle in-page Table of Contents" class="sidebar-toggle" id="__page-toc" name="__page-toc" type="checkbox"/>
+<label class="overlay overlay-pagetoc" for="__page-toc">
+<div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+<div class="container-fluid" id="banner"></div>
+<div class="container-xl">
+<div class="row">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+<div class="bd-sidebar__content">
+<div class="bd-sidebar__top"><div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../">
+<h1 class="site-logo" id="site-title">OpenSPP Documentation v2.0</h1>
+</a>
+</div><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<div class="input-group">
+<label class="sr-only" for="q">Search string
+    </label>
+<i aria-hidden="true" class="fa fa-search fa-lg search-icon"></i>
+<input aria-labelledby="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search" spellcheck="false" type="search" value="">
+<div class="input-group-append">
+<span class="input-group-text" id="shortcut">
+<kbd id="search-shortcut">⌘</kbd> <kbd>K</kbd>
+</span>
+</div>
+</input></div>
+</form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../products/">
+   Products
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/sp_mis.html">
+     OpenSPP SP-MIS
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/social_registry.html">
+     OpenSPP Social Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/farmer_registry.html">
+     OpenSPP Farmer Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/drims.html">
+     OpenSPP DRIMS
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../products/features/">
+     Features
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/unified_registry.html">
+       Unified registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/gis_land_management.html">
+       GIS &amp; land management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/program_management.html">
+       Program management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/eligibility_targeting.html">
+       Eligibility &amp; targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/payment_disbursement.html">
+       Payment &amp; disbursement
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/in_kind_benefits.html">
+       In-Kind benefits
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/data_integration_apis.html">
+       Data integration &amp; APIs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/change_management.html">
+       Change management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/grievance_redress.html">
+       Grievance redress
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/whats_new_v2.html">
+     What's new in OpenSPP v2
+    </a>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../learn/">
+   Learn
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/registry.html">
+     Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/programs.html">
+     Programs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/cycles.html">
+     Cycles
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/eligibility.html">
+     Eligibility
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/compliance.html">
+     Compliance
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/entitlements.html">
+     Entitlements
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/payments.html">
+     Payments
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/deduplication.html">
+     Deduplication
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/change-requests.html">
+     Change requests
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../get_started/">
+   Get started
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/installation/">
+     Installing OpenSPP
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+<label for="toctree-checkbox-5">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/installation/docker.html">
+       Docker installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/modules/">
+     Module installation
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+<label for="toctree-checkbox-6">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/spmis_installation.html">
+       SP-MIS installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/social_installation.html">
+       Social Registry installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/explore/">
+     Explore OpenSPP
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_household/">
+     Your first household
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+<label for="toctree-checkbox-7">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/01_access_registry.html">
+       Step 1: Access the Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/02_create_household.html">
+       Step 2: Create a Household
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/03_add_members.html">
+       Step 3: Add members
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_program/">
+     Your first program
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+<label for="toctree-checkbox-8">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/01_access_program.html">
+       Step 1: Access the program section
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/02_create_program.html">
+       Step 2: Create your first social protection program
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/03_enroll_beneficiaries.html">
+       Step 3: Import and enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/04_run_cycle.html">
+       Step 4: Understanding program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/05_distribute_entitlements.html">
+       Step 5: Distribute entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/poc_and_pilot.html">
+     From Proof of Concept to Pilot
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../user_guide/">
+   User guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+<label for="toctree-checkbox-9">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/getting_started/">
+     Getting started
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+<label for="toctree-checkbox-10">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/navigation.html">
+       Navigating the OpenSPP interface
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/registry/">
+     Registry
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+<label for="toctree-checkbox-11">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_individual.html">
+       Register an individual
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_group.html">
+       Register a group
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/search_filter.html">
+       Search and filter registrants
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/import_data.html">
+       Import registrant data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/export_data.html">
+       Export registrant data
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/change_requests/">
+     Change Requests
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+<label for="toctree-checkbox-12">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/submit_change_request.html">
+       Submit a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/review_change_request.html">
+       Review a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/change_request_types.html">
+       Change request types
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/programs/">
+     Programs
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+<label for="toctree-checkbox-13">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/create_programs.html">
+       Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/program_cycles.html">
+       Work with program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/enroll_beneficiaries.html">
+       Enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/allocate_funds.html">
+       Allocate funds to programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/manage_entitlements.html">
+       Manage entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/payments/">
+     Payments
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+<label for="toctree-checkbox-14">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/payments/service_points.html">
+       View Service Points
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/approvals/">
+     Approvals
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+<label for="toctree-checkbox-15">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/approvals/manage_approvals.html">
+       Review and Approve Requests
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/reference/">
+     Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+<label for="toctree-checkbox-16">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/areas_geography.html">
+       Geographic Areas
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/vocabularies.html">
+       Vocabularies (Code Lists)
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children">
+<a class="reference internal" href="../">
+   Configuration guide
+  </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+<label for="toctree-checkbox-17">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../studio/">
+     OpenSPP Studio
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+<label for="toctree-checkbox-18">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/overview.html">
+       Studio Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/registry_field_builder.html">
+       Custom Fields (Registry Field Builder)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/event_type_designer.html">
+       Event Type Designer
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/change_request_builder.html">
+       Change Request Builder
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children">
+<a class="reference internal" href="">
+     CEL expressions
+    </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+<label for="toctree-checkbox-19">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l3">
+<a class="reference internal" href="quick_start.html">
+       CEL quick start
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="syntax.html">
+       CEL syntax reference
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="variables.html">
+       Variables
+      </a>
+</li>
+<li class="toctree-l3 current active">
+<a class="current reference internal" href="#">
+       CEL cookbook
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="troubleshooting.html">
+       CEL troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../eligibility/">
+     Eligibility rules
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+<label for="toctree-checkbox-20">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/cel_expressions.html">
+       CEL expressions for eligibility
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/geographic_targeting.html">
+       Geographic targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/templates.html">
+       Expression templates
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/testing.html">
+       Testing eligibility rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/advanced.html">
+       Advanced eligibility configuration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../entitlement_formulas/">
+     Entitlement formulas
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+<label for="toctree-checkbox-21">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/cash_calculations.html">
+       Cash calculations
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/inkind_baskets.html">
+       In-kind and basket entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/formula_library.html">
+       Formula library
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/dynamic_entitlements.html">
+       Dynamic entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/conditional_logic.html">
+       Conditional logic
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../vocabulary/">
+     Vocabulary System
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+<label for="toctree-checkbox-22">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/overview.html">
+       Vocabulary Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/standard_vocabularies.html">
+       Standard Vocabularies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/profiles.html">
+       Vocabulary Profiles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/custom.html">
+       Custom Vocabularies
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../variables/">
+     Variables &amp; Indicators
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+<label for="toctree-checkbox-23">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/overview.html">
+       Variables Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/creating_variables.html">
+       Creating Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/variable_types.html">
+       Variable Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/using_variables.html">
+       Using Variables in CEL
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../event_data/">
+     Event Data
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+<label for="toctree-checkbox-24">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/overview.html">
+       Event Data Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/event_types.html">
+       Configuring Event Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/field_definitions.html">
+       Defining Event Fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../change_request_types/">
+     Change request types
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+<label for="toctree-checkbox-25">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/overview.html">
+       Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/creating_types.html">
+       Creating change request types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/field_mappings.html">
+       Field mappings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/conflict_detection.html">
+       Conflict and duplicate detection
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/patterns.html">
+       Common configuration patterns
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/custom_detail_models.html">
+       Custom detail models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../consent/">
+     Consent configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+<label for="toctree-checkbox-26">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/overview.html">
+       Consent management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/privacy_notices.html">
+       Configuring privacy notices
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/recording_consent.html">
+       Recording consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/api_consent_filtering.html">
+       API consent filtering
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../role_configuration/">
+     Role configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+<label for="toctree-checkbox-27">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/overview.html">
+       Access control overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/assigning_roles.html">
+       Assigning roles to users
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/predefined_roles.html">
+       Predefined roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/creating_roles.html">
+       Creating custom roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../ops_guide/">
+   Operations guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+<label for="toctree-checkbox-28">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/deployment/">
+     Deployment
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+<label for="toctree-checkbox-29">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/deployment/production-hardening.html">
+       Production Hardening
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/security/">
+     Security
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+<label for="toctree-checkbox-30">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/access_control.html">
+       Access Control
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/data_classification.html">
+       Data Classification
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/pii_encryption.html">
+       PII Encryption
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/audit.html">
+       Audit Logging
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/scanning.html">
+       Security Scanning
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/storage/">
+     Storage
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/backup/">
+     Backup &amp; Recovery
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/monitoring/">
+     Monitoring &amp; Alerts
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../reference/">
+   Reference
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+<label for="toctree-checkbox-31">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../reference/modules/">
+     Modules Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+<label for="toctree-checkbox-32">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2.html">
+       API V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_cycles.html">
+       API V2 - Cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_data.html">
+       API V2 - Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_entitlements.html">
+       API V2 - Entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_products.html">
+       API V2 - Products
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_service_points.html">
+       API V2 - Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_vocabulary.html">
+       API V2 - Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_approval.html">
+       Approval Workflows
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_area.html">
+       Area Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_audit.html">
+       Audit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_banking.html">
+       Banking / Bank Details
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_common.html">
+       Base (Common)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_setting.html">
+       Base Settings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_branding_kit.html">
+       Branding Kit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_domain.html">
+       CEL Domain Query Builder
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_widget.html">
+       CEL Expression Widget
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_change_request_v2.html">
+       Change Request V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_claim_169.html">
+       QR Credentials (Claim 169)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_consent.html">
+       Consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_advanced.html">
+       CR Types - Advanced
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_base.html">
+       CR Types - Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_custom_field.html">
+       Custom Fields
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client.html">
+       DCI Client
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_crvs.html">
+       DCI Client - CRVS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_dr.html">
+       DCI Client - Disability Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_ibr.html">
+       DCI Client - IBR
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_server.html">
+       DCI Server
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_demo.html">
+       Demo
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dms.html">
+       Document Management System
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_event_data.html">
+       Event Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_gis.html">
+       GIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_gis_report.html">
+       GIS Reports
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_grm.html">
+       Grievance Redress Mechanism
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_hide_menus_base.html">
+       Hide Menus Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_mis_demo_v2.html">
+       MIS Demo V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_programs.html">
+       Programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry.html">
+       Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry_search.html">
+       Registry Search Portal
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_security.html">
+       Security
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_service_points.html">
+       Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_source_tracking.html">
+       Source Tracking
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_social_registry.html">
+       Starter: Social Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_sp_mis.html">
+       Starter: SP-MIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio.html">
+       Studio
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio_change_requests.html">
+       Studio - Change Requests
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio_events.html">
+       Studio - Events
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_user_roles.html">
+       User Roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_versioning.html">
+       Versioning
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_vocabulary.html">
+       Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/theme_openspp_muk.html">
+       Theme
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/vocabularies/">
+     Vocabulary Reference
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/glossary/humanitarian.html">
+     Humanitarian Terms Glossary
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../glossary.html">
+     OpenSPP Glossary
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../community_and_support/">
+   Community and support
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+<label for="toctree-checkbox-33">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/how_to_contribute_to_the_project.html">
+     Contributing
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/i18n_l10n.html">
+     Internationalization and Localization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/security_report.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/license.html">
+     Licensing
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+<div class="bd-sidebar__bottom">
+<!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+<p class="openspporglink">
+<a href="https://openspp.org">
+<img alt="openspp.org" src="/_static/openspp_logo.png"/> openspp.org</a>
+</p>
+</div>
+</div>
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+<div class="header-article row sticky-top noprint">
+<div class="col py-1 d-flex header-article-main">
+<div class="header-article__left">
+<label class="headerbtn" data-placement="right" data-toggle="tooltip" for="__navigation" title="Toggle navigation">
+<span class="headerbtn__icon-container">
+<i class="fas fa-bars"></i>
+</span>
+</label>
+</div>
+<div class="header-article__label">
+<span>CEL cookbook – Configuration guide</span>
+</div>
+<div class="header-article__right">
+<button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="headerbtn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+<button aria-label="Source repositories" class="headerbtn menu-dropdown__trigger">
+<i class="fab fa-github"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation" title="Source repository">
+<span class="headerbtn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fconfig_guide/cel/cookbook.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<span class="headerbtn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?config_guide/cel/cookbook.md#making-contributions-on-github" title="Edit this page">
+<span class="headerbtn__icon-container">
+<i class="fas fa-pencil-alt"></i>
+</span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+<button aria-label="Download this page" class="headerbtn menu-dropdown__trigger">
+<i class="fas fa-download"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/config_guide/cel/cookbook.md.txt" title="Download source file">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+</li>
+<li>
+<button class="headerbtn" data-placement="left" data-toggle="tooltip" onclick="printPdf(this)" title="Print to PDF">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
+</div>
+</div>
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#basic-patterns">
+   Basic patterns
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#boolean-logic">
+     Boolean logic
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#handle-missing-values">
+     Handle missing values
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#ternary-if-else">
+     Ternary (if/else)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#string-comparisons">
+     String comparisons
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#household-composition">
+   Household composition
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#any-child-under-5">
+     Any child under 5
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#count-children-under-18">
+     Count children under 18
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#count-children-in-age-range">
+     Count children in age range
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#female-head-of-household">
+     Female head of household
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#elderly-member-present">
+     Elderly member present
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#disabled-member-present">
+     Disabled member present
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#household-size">
+     Household size
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sum-member-income">
+     Sum member income
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#program-enrollments">
+   Program enrollments
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#any-active-enrollment">
+     Any active enrollment
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#enrolled-in-specific-program">
+     Enrolled in specific program
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#not-currently-enrolled">
+     Not currently enrolled
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#count-active-enrollments">
+     Count active enrollments
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#entitlements">
+   Entitlements
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#has-approved-entitlement">
+     Has approved entitlement
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#total-entitlement-amount">
+     Total entitlement amount
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#entitlements-this-year">
+     Entitlements this year
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#event-data">
+   Event data
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#has-recent-visit">
+     Has recent visit
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#count-visits-this-year">
+     Count visits this year
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#total-payments-received">
+     Total payments received
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#average-survey-score">
+     Average survey score
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#highest-payment-amount">
+     Highest payment amount
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#latest-survey-income">
+     Latest survey income
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#income-below-threshold">
+     Income below threshold
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#completed-health-check">
+     Completed health check
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#eligibility-rules">
+   Eligibility rules
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#income-based">
+     Income-based
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#demographic-targeting">
+     Demographic targeting
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#geographic-targeting">
+     Geographic targeting
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#multi-criteria">
+     Multi-criteria
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#vulnerability-score">
+     Vulnerability score
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#entitlement-amount-formulas">
+   Entitlement amount formulas
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#fixed-amount">
+     Fixed amount
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#scaled-by-base">
+     Scaled by base
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#per-child-bonus">
+     Per child bonus
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#capped-amount">
+     Capped amount
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#tiered-by-household-size">
+     Tiered by household size
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#scoring-formulas">
+   Scoring formulas
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#simple-indicator">
+     Simple indicator
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#age-based-score">
+     Age-based score
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#household-composition-score">
+     Household composition score
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#normalized-score">
+     Normalized score
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#validation-rules">
+   Validation rules
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#required-field">
+     Required field
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#age-validation">
+     Age validation
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#format-check">
+     Format check
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#cross-field-validation">
+     Cross-field validation
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#workflow-routing">
+   Workflow routing
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#priority-based-on-age">
+     Priority based on age
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#escalate-high-value">
+     Escalate high value
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#route-by-region">
+     Route by region
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#tips-for-adapting-patterns">
+   Tips for adapting patterns
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#are-you-stuck">
+   Are you stuck?
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="article row">
+<div class="col pl-md-3 pl-lg-5 content-container">
+<!-- Table of contents that is only displayed when printing the page -->
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>CEL cookbook</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#basic-patterns">
+   Basic patterns
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#boolean-logic">
+     Boolean logic
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#handle-missing-values">
+     Handle missing values
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#ternary-if-else">
+     Ternary (if/else)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#string-comparisons">
+     String comparisons
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#household-composition">
+   Household composition
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#any-child-under-5">
+     Any child under 5
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#count-children-under-18">
+     Count children under 18
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#count-children-in-age-range">
+     Count children in age range
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#female-head-of-household">
+     Female head of household
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#elderly-member-present">
+     Elderly member present
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#disabled-member-present">
+     Disabled member present
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#household-size">
+     Household size
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sum-member-income">
+     Sum member income
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#program-enrollments">
+   Program enrollments
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#any-active-enrollment">
+     Any active enrollment
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#enrolled-in-specific-program">
+     Enrolled in specific program
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#not-currently-enrolled">
+     Not currently enrolled
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#count-active-enrollments">
+     Count active enrollments
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#entitlements">
+   Entitlements
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#has-approved-entitlement">
+     Has approved entitlement
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#total-entitlement-amount">
+     Total entitlement amount
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#entitlements-this-year">
+     Entitlements this year
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#event-data">
+   Event data
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#has-recent-visit">
+     Has recent visit
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#count-visits-this-year">
+     Count visits this year
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#total-payments-received">
+     Total payments received
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#average-survey-score">
+     Average survey score
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#highest-payment-amount">
+     Highest payment amount
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#latest-survey-income">
+     Latest survey income
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#income-below-threshold">
+     Income below threshold
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#completed-health-check">
+     Completed health check
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#eligibility-rules">
+   Eligibility rules
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#income-based">
+     Income-based
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#demographic-targeting">
+     Demographic targeting
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#geographic-targeting">
+     Geographic targeting
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#multi-criteria">
+     Multi-criteria
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#vulnerability-score">
+     Vulnerability score
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#entitlement-amount-formulas">
+   Entitlement amount formulas
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#fixed-amount">
+     Fixed amount
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#scaled-by-base">
+     Scaled by base
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#per-child-bonus">
+     Per child bonus
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#capped-amount">
+     Capped amount
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#tiered-by-household-size">
+     Tiered by household size
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#scoring-formulas">
+   Scoring formulas
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#simple-indicator">
+     Simple indicator
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#age-based-score">
+     Age-based score
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#household-composition-score">
+     Household composition score
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#normalized-score">
+     Normalized score
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#validation-rules">
+   Validation rules
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#required-field">
+     Required field
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#age-validation">
+     Age validation
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#format-check">
+     Format check
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#cross-field-validation">
+     Cross-field validation
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#workflow-routing">
+   Workflow routing
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#priority-based-on-age">
+     Priority based on age
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#escalate-high-value">
+     Escalate high value
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#route-by-region">
+     Route by region
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#tips-for-adapting-patterns">
+   Tips for adapting patterns
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#are-you-stuck">
+   Are you stuck?
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<main id="main-content" role="main">
+<div>
+<div class="section" id="cel-cookbook">
+<h1>CEL cookbook<a class="headerlink" href="#cel-cookbook" title="Permalink to this headline">#</a></h1>
+<p>This guide is for <strong>implementers</strong> who need ready-to-use CEL patterns.</p>
+<p>Copy, paste, and adapt these patterns for your use case.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Which symbols are available depends on the screen and profile. Use the editor's symbol browser to confirm what exists in your context.</p>
+</div>
+<div class="section" id="basic-patterns">
+<h2>Basic patterns<a class="headerlink" href="#basic-patterns" title="Permalink to this headline">#</a></h2>
+<div class="section" id="boolean-logic">
+<h3>Boolean logic<a class="headerlink" href="#boolean-logic" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">r</span><span class="p">.</span><span class="na">is_registrant</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nv">r</span><span class="p">.</span><span class="na">active</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">true</span>
+</pre></div>
+</div>
+<p>Equivalent with operators:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">r</span><span class="p">.</span><span class="na">is_registrant</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">r</span><span class="p">.</span><span class="na">active</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="handle-missing-values">
+<h3>Handle missing values<a class="headerlink" href="#handle-missing-values" title="Permalink to this headline">#</a></h3>
+<p>Always check existence before accessing optional fields:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nf">has</span><span class="p">(</span><span class="nv">r</span><span class="p">.</span><span class="na">birthdate</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nb">age_years</span><span class="p">(</span><span class="nv">r</span><span class="p">.</span><span class="na">birthdate</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ternary-if-else">
+<h3>Ternary (if/else)<a class="headerlink" href="#ternary-if-else" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">r</span><span class="p">.</span><span class="na">is_group</span><span class="w"> </span>?<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+</pre></div>
+</div>
+<p>More complex:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">r</span><span class="p">.</span><span class="na">income</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span>?<span class="w"> </span><span class="s2">"low"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="nv">r</span><span class="p">.</span><span class="na">income</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">15000</span><span class="w"> </span>?<span class="w"> </span><span class="s2">"medium"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"high"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="string-comparisons">
+<h3>String comparisons<a class="headerlink" href="#string-comparisons" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">r</span><span class="p">.</span><span class="na">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"active"</span>
+<span class="nv">r</span><span class="p">.</span><span class="na">region</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">"excluded_region"</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="household-composition">
+<h2>Household composition<a class="headerlink" href="#household-composition" title="Permalink to this headline">#</a></h2>
+<div class="section" id="any-child-under-5">
+<h3>Any child under 5<a class="headerlink" href="#any-child-under-5" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">members</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="nv">m</span><span class="p">,</span><span class="w"> </span><span class="nb">age_years</span><span class="p">(</span><span class="nv">m</span><span class="p">.</span><span class="na">birthdate</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Or newer syntax:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">members</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="nb">age_years</span><span class="p">(</span><span class="nv">m</span><span class="p">.</span><span class="na">birthdate</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="count-children-under-18">
+<h3>Count children under 18<a class="headerlink" href="#count-children-under-18" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">members</span><span class="p">.</span><span class="na">count</span><span class="p">(</span><span class="nv">m</span><span class="p">,</span><span class="w"> </span><span class="nb">age_years</span><span class="p">(</span><span class="nv">m</span><span class="p">.</span><span class="na">birthdate</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">18</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="count-children-in-age-range">
+<h3>Count children in age range<a class="headerlink" href="#count-children-in-age-range" title="Permalink to this headline">#</a></h3>
+<p>Children aged 6-12:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">members</span><span class="p">.</span><span class="na">count</span><span class="p">(</span><span class="nv">m</span><span class="p">,</span><span class="w"> </span><span class="nb">age_years</span><span class="p">(</span><span class="nv">m</span><span class="p">.</span><span class="na">birthdate</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nb">age_years</span><span class="p">(</span><span class="nv">m</span><span class="p">.</span><span class="na">birthdate</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="female-head-of-household">
+<h3>Female head of household<a class="headerlink" href="#female-head-of-household" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">members</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="nv">m</span><span class="p">,</span><span class="w"> </span><span class="nb">head</span><span class="p">(</span><span class="nv">m</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nv">m</span><span class="p">.</span><span class="na">gender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"female"</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The exact gender field/value depends on your data model. Use autocomplete to find the right field (e.g., <code class="docutils literal notranslate"><span class="pre">gender</span></code>, <code class="docutils literal notranslate"><span class="pre">gender_id.name</span></code>, <code class="docutils literal notranslate"><span class="pre">gender_id.code</span></code>).</p>
+</div>
+</div>
+<div class="section" id="elderly-member-present">
+<h3>Elderly member present<a class="headerlink" href="#elderly-member-present" title="Permalink to this headline">#</a></h3>
+<p>Person over 65:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">members</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="nv">m</span><span class="p">,</span><span class="w"> </span><span class="nb">age_years</span><span class="p">(</span><span class="nv">m</span><span class="p">.</span><span class="na">birthdate</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">65</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="disabled-member-present">
+<h3>Disabled member present<a class="headerlink" href="#disabled-member-present" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">members</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="nv">m</span><span class="p">,</span><span class="w"> </span><span class="nv">m</span><span class="p">.</span><span class="na">has_disability</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="household-size">
+<h3>Household size<a class="headerlink" href="#household-size" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">members</span><span class="p">.</span><span class="na">count</span><span class="p">(</span><span class="nv">m</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sum-member-income">
+<h3>Sum member income<a class="headerlink" href="#sum-member-income" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">members</span><span class="p">.</span><span class="na">sum</span><span class="p">(</span><span class="nv">m</span><span class="p">.</span><span class="na">income</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>With threshold:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">members</span><span class="p">.</span><span class="na">sum</span><span class="p">(</span><span class="nv">m</span><span class="p">.</span><span class="na">income</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="program-enrollments">
+<h2>Program enrollments<a class="headerlink" href="#program-enrollments" title="Permalink to this headline">#</a></h2>
+<div class="section" id="any-active-enrollment">
+<h3>Any active enrollment<a class="headerlink" href="#any-active-enrollment" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">enrollments</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="nv">e</span><span class="p">,</span><span class="w"> </span><span class="nv">e</span><span class="p">.</span><span class="na">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"enrolled"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="enrolled-in-specific-program">
+<h3>Enrolled in specific program<a class="headerlink" href="#enrolled-in-specific-program" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">enrollments</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="nv">e</span><span class="p">,</span><span class="w"> </span><span class="nv">e</span><span class="p">.</span><span class="na">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"enrolled"</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nv">e</span><span class="p">.</span><span class="na">program_id</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"4Ps"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="not-currently-enrolled">
+<h3>Not currently enrolled<a class="headerlink" href="#not-currently-enrolled" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="k">not</span><span class="w"> </span><span class="nv">enrollments</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="nv">e</span><span class="p">,</span><span class="w"> </span><span class="nv">e</span><span class="p">.</span><span class="na">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"enrolled"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="count-active-enrollments">
+<h3>Count active enrollments<a class="headerlink" href="#count-active-enrollments" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">enrollments</span><span class="p">.</span><span class="na">count</span><span class="p">(</span><span class="nv">e</span><span class="p">,</span><span class="w"> </span><span class="nv">e</span><span class="p">.</span><span class="na">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"enrolled"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="entitlements">
+<h2>Entitlements<a class="headerlink" href="#entitlements" title="Permalink to this headline">#</a></h2>
+<div class="section" id="has-approved-entitlement">
+<h3>Has approved entitlement<a class="headerlink" href="#has-approved-entitlement" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">entitlements</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="nv">ent</span><span class="p">,</span><span class="w"> </span><span class="nv">ent</span><span class="p">.</span><span class="na">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"approved"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="total-entitlement-amount">
+<h3>Total entitlement amount<a class="headerlink" href="#total-entitlement-amount" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">entitlements</span><span class="p">.</span><span class="na">sum</span><span class="p">(</span><span class="nv">ent</span><span class="p">.</span><span class="na">amount</span><span class="p">,</span><span class="w"> </span><span class="nv">ent</span><span class="p">.</span><span class="na">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"approved"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="entitlements-this-year">
+<h3>Entitlements this year<a class="headerlink" href="#entitlements-this-year" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">entitlements</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="nv">ent</span><span class="p">,</span><span class="w"> </span><span class="nv">ent</span><span class="p">.</span><span class="na">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"approved"</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nv">ent</span><span class="p">.</span><span class="na">date_approved</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="s2">"2024-01-01"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="event-data">
+<h2>Event data<a class="headerlink" href="#event-data" title="Permalink to this headline">#</a></h2>
+<p>Requires event/CEL integration modules.</p>
+<div class="section" id="has-recent-visit">
+<h3>Has recent visit<a class="headerlink" href="#has-recent-visit" title="Permalink to this headline">#</a></h3>
+<p>Visit in last 90 days:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nf">has_event</span><span class="p">(</span><span class="s2">"visit"</span><span class="p">,</span><span class="w"> </span><span class="nv">within_days</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="count-visits-this-year">
+<h3>Count visits this year<a class="headerlink" href="#count-visits-this-year" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nf">events_count</span><span class="p">(</span><span class="s2">"visit"</span><span class="p">,</span><span class="w"> </span><span class="nv">period</span><span class="o">=</span><span class="nf">this_year</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="total-payments-received">
+<h3>Total payments received<a class="headerlink" href="#total-payments-received" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nf">events_sum</span><span class="p">(</span><span class="s2">"payment"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">,</span><span class="w"> </span><span class="nv">period</span><span class="o">=</span><span class="nf">this_year</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="average-survey-score">
+<h3>Average survey score<a class="headerlink" href="#average-survey-score" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nf">events_avg</span><span class="p">(</span><span class="s2">"survey"</span><span class="p">,</span><span class="w"> </span><span class="s2">"score"</span><span class="p">,</span><span class="w"> </span><span class="nv">within_months</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="highest-payment-amount">
+<h3>Highest payment amount<a class="headerlink" href="#highest-payment-amount" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nf">events_max</span><span class="p">(</span><span class="s2">"payment"</span><span class="p">,</span><span class="w"> </span><span class="s2">"amount"</span><span class="p">,</span><span class="w"> </span><span class="nv">period</span><span class="o">=</span><span class="nf">this_year</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="latest-survey-income">
+<h3>Latest survey income<a class="headerlink" href="#latest-survey-income" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nf">event</span><span class="p">(</span><span class="s2">"survey"</span><span class="p">,</span><span class="w"> </span><span class="s2">"income"</span><span class="p">,</span><span class="w"> </span><span class="nv">select</span><span class="o">=</span><span class="s2">"latest"</span><span class="p">,</span><span class="w"> </span><span class="nv">within_months</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="nv">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="income-below-threshold">
+<h3>Income below threshold<a class="headerlink" href="#income-below-threshold" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nf">event</span><span class="p">(</span><span class="s2">"survey"</span><span class="p">,</span><span class="w"> </span><span class="s2">"income"</span><span class="p">,</span><span class="w"> </span><span class="nv">select</span><span class="o">=</span><span class="s2">"latest"</span><span class="p">,</span><span class="w"> </span><span class="nv">within_months</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="nv">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">500</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="completed-health-check">
+<h3>Completed health check<a class="headerlink" href="#completed-health-check" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nf">has_event</span><span class="p">(</span><span class="s2">"health_check"</span><span class="p">,</span><span class="w"> </span><span class="nv">within_months</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="eligibility-rules">
+<h2>Eligibility rules<a class="headerlink" href="#eligibility-rules" title="Permalink to this headline">#</a></h2>
+<div class="section" id="income-based">
+<h3>Income-based<a class="headerlink" href="#income-based" title="Permalink to this headline">#</a></h3>
+<p>Household income under threshold:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">household_income</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nv">poverty_line</span>
+</pre></div>
+</div>
+<p>Or with literal:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">household_income</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000</span>
+</pre></div>
+</div>
+<p>Income within a range:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nb">between</span><span class="p">(</span><span class="nv">household_income</span><span class="p">,</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w"> </span><span class="mi">15000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="demographic-targeting">
+<h3>Demographic targeting<a class="headerlink" href="#demographic-targeting" title="Permalink to this headline">#</a></h3>
+<p>Children under 5 in low-income household:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">children_under_5_count</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nv">household_income</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nv">poverty_line</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="geographic-targeting">
+<h3>Geographic targeting<a class="headerlink" href="#geographic-targeting" title="Permalink to this headline">#</a></h3>
+<p>In target region:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">r</span><span class="p">.</span><span class="na">area_id</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Region IV-A"</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="multi-criteria">
+<h3>Multi-criteria<a class="headerlink" href="#multi-criteria" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">household_income</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nv">poverty_line</span>
+<span class="k">and</span><span class="w"> </span><span class="nv">children_under_5_count</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span>
+<span class="k">and</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nv">enrollments</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="nv">e</span><span class="p">,</span><span class="w"> </span><span class="nv">e</span><span class="p">.</span><span class="na">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"enrolled"</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nv">e</span><span class="p">.</span><span class="na">program_id</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Other Program"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="vulnerability-score">
+<h3>Vulnerability score<a class="headerlink" href="#vulnerability-score" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">vulnerability_score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">50</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="entitlement-amount-formulas">
+<h2>Entitlement amount formulas<a class="headerlink" href="#entitlement-amount-formulas" title="Permalink to this headline">#</a></h2>
+<p>These are evaluated at runtime with a small context (typically <code class="docutils literal notranslate"><span class="pre">r</span></code> and <code class="docutils literal notranslate"><span class="pre">base_amount</span></code>).</p>
+<div class="section" id="fixed-amount">
+<h3>Fixed amount<a class="headerlink" href="#fixed-amount" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="mi">500</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="scaled-by-base">
+<h3>Scaled by base<a class="headerlink" href="#scaled-by-base" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">base_amount</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="per-child-bonus">
+<h3>Per child bonus<a class="headerlink" href="#per-child-bonus" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">base_amount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nv">children_under_5_count</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="capped-amount">
+<h3>Capped amount<a class="headerlink" href="#capped-amount" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nb">min</span><span class="p">(</span><span class="nv">base_amount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nv">children_count</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span><span class="w"> </span><span class="mi">2000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tiered-by-household-size">
+<h3>Tiered by household size<a class="headerlink" href="#tiered-by-household-size" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">members</span><span class="p">.</span><span class="na">count</span><span class="p">(</span><span class="nv">m</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span>?<span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="nv">members</span><span class="p">.</span><span class="na">count</span><span class="p">(</span><span class="nv">m</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span>?<span class="w"> </span><span class="mi">750</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="scoring-formulas">
+<h2>Scoring formulas<a class="headerlink" href="#scoring-formulas" title="Permalink to this headline">#</a></h2>
+<div class="section" id="simple-indicator">
+<h3>Simple indicator<a class="headerlink" href="#simple-indicator" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">r</span><span class="p">.</span><span class="na">has_disability</span><span class="w"> </span>?<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="age-based-score">
+<h3>Age-based score<a class="headerlink" href="#age-based-score" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nb">age_years</span><span class="p">(</span><span class="nv">r</span><span class="p">.</span><span class="na">birthdate</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">65</span><span class="w"> </span>?<span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="household-composition-score">
+<h3>Household composition score<a class="headerlink" href="#household-composition-score" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">children_under_5_count</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">elderly_count</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="normalized-score">
+<h3>Normalized score<a class="headerlink" href="#normalized-score" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nb">min</span><span class="p">(</span><span class="nv">vulnerability_score</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="validation-rules">
+<h2>Validation rules<a class="headerlink" href="#validation-rules" title="Permalink to this headline">#</a></h2>
+<div class="section" id="required-field">
+<h3>Required field<a class="headerlink" href="#required-field" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nf">has</span><span class="p">(</span><span class="nv">r</span><span class="p">.</span><span class="na">birthdate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="age-validation">
+<h3>Age validation<a class="headerlink" href="#age-validation" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nf">has</span><span class="p">(</span><span class="nv">r</span><span class="p">.</span><span class="na">birthdate</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nb">age_years</span><span class="p">(</span><span class="nv">r</span><span class="p">.</span><span class="na">birthdate</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nb">age_years</span><span class="p">(</span><span class="nv">r</span><span class="p">.</span><span class="na">birthdate</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">120</span>
+</pre></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">between()</span></code> for range check:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nf">has</span><span class="p">(</span><span class="nv">r</span><span class="p">.</span><span class="na">birthdate</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nb">between</span><span class="p">(</span><span class="nb">age_years</span><span class="p">(</span><span class="nv">r</span><span class="p">.</span><span class="na">birthdate</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">120</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="format-check">
+<h3>Format check<a class="headerlink" href="#format-check" title="Permalink to this headline">#</a></h3>
+<p>Phone number prefix:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nb">startswith</span><span class="p">(</span><span class="nv">r</span><span class="p">.</span><span class="na">phone</span><span class="p">,</span><span class="w"> </span><span class="s2">"+63"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>ID format with regex:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nb">matches</span><span class="p">(</span><span class="nv">r</span><span class="p">.</span><span class="na">national_id</span><span class="p">,</span><span class="w"> </span><span class="s2">"^[A-Z]{2}-[0-9]{8}$"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cross-field-validation">
+<h3>Cross-field validation<a class="headerlink" href="#cross-field-validation" title="Permalink to this headline">#</a></h3>
+<p>Head of household must be adult:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="k">not</span><span class="w"> </span><span class="nb">head</span><span class="p">(</span><span class="nv">r</span><span class="p">)</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nb">age_years</span><span class="p">(</span><span class="nv">r</span><span class="p">.</span><span class="na">birthdate</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="workflow-routing">
+<h2>Workflow routing<a class="headerlink" href="#workflow-routing" title="Permalink to this headline">#</a></h2>
+<p>These are runtime evaluated with ticket/case context.</p>
+<div class="section" id="priority-based-on-age">
+<h3>Priority based on age<a class="headerlink" href="#priority-based-on-age" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">r</span><span class="p">.</span><span class="na">registrant_id</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">65</span><span class="w"> </span>?<span class="w"> </span><span class="s2">"priority"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"standard"</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="escalate-high-value">
+<h3>Escalate high value<a class="headerlink" href="#escalate-high-value" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">r</span><span class="p">.</span><span class="na">amount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span>?<span class="w"> </span><span class="s2">"manager_review"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"standard"</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="route-by-region">
+<h3>Route by region<a class="headerlink" href="#route-by-region" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">r</span><span class="p">.</span><span class="na">area_id</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"NCR"</span><span class="w"> </span>?<span class="w"> </span><span class="s2">"ncr_team"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"regional_team"</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tips-for-adapting-patterns">
+<h2>Tips for adapting patterns<a class="headerlink" href="#tips-for-adapting-patterns" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Check field names</strong>: Use autocomplete to find exact field paths</p></li>
+<li><p><strong>Verify context</strong>: Individual vs group expressions need different symbols</p></li>
+<li><p><strong>Test incrementally</strong>: Start simple, add complexity</p></li>
+<li><p><strong>Use variables</strong>: Extract repeated logic into variables</p></li>
+<li><p><strong>Add tests</strong>: Create test cases in Studio before publishing</p></li>
+</ol>
+</div>
+<div class="section" id="are-you-stuck">
+<h2>Are you stuck?<a class="headerlink" href="#are-you-stuck" title="Permalink to this headline">#</a></h2>
+<p>See <a class="reference internal" href="troubleshooting.html"><span class="doc">CEL troubleshooting</span></a> for common issues and debugging tips.</p>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer-article noprint">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="variables.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Variables</p>
+</div>
+</a>
+<a class="right-next" href="troubleshooting.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">CEL troubleshooting</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+</div>
+<div class="footer-content row">
+<footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      © Copyright OpenSPP.<br/>
+<div class="extra_footer">
+<p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+</div>
+</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            var lists = $("div.toctree-wrapper ul");
+            $.each(lists, function(index, list) {
+                if($(list).find("li").length == 0) {
+                    $(list).prev().hide();
+                    $(list).hide();
+                }
+            });
+        })
+    </script>
+<script src="/_static/version_switcher.js"></script></body>
+</html>

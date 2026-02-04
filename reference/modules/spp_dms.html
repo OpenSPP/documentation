@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_dms.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="document-management-system">
+  <div class="section" id="document-management-system">
 <h1>Document Management System<a class="headerlink" href="#document-management-system" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Dms module provides a robust, centralized system for managing and organizing documents within the OpenSPP platform. It enables users to efficiently store, retrieve, and categorize various files related to social protection programs, ensuring easy access and robust control over essential program documentation.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module establishes a comprehensive document management system crucial for the effective operation of social protection programs. It addresses the critical need for structured information storage and accessibility.</p>
 <p>Key capabilities include:</p>
@@ -1675,8 +1662,8 @@ title="Print to PDF"
 <li><p><strong>Metadata Management</strong>: Automatically captures and displays essential file information like size, type, and data integrity checksums.</p></li>
 </ul>
 <p>This module ensures that all stakeholders, from program managers to field agents, can quickly locate and utilize necessary documents, streamlining operations, improving compliance, and fostering data-driven decision-making within social protection initiatives.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Dms module builds upon core OpenSPP functionalities and serves as a foundational component for other modules requiring document storage.</p>
 <ul class="simple">
@@ -1684,32 +1671,32 @@ title="Print to PDF"
 <li><p>It also relies on the <code class="docutils literal notranslate"><span class="pre">web</span></code> module to deliver a user-friendly interface for document and directory management directly within the OpenSPP application.</p></li>
 </ul>
 <p>As a foundational module, OpenSPP Dms integrates by offering document management capabilities that other OpenSPP modules can leverage. For instance, modules managing beneficiaries, programs, or case files can link directly to documents stored in Dms, allowing for a complete record of all related documentation without duplicating files across the system. This ensures a single source of truth for all program assets.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Dms module offers several key features to manage your documents effectively:</p>
-<section id="directory-management">
+<div class="section" id="directory-management">
 <h3>Directory Management<a class="headerlink" href="#directory-management" title="Permalink to this headline">#</a></h3>
 <p>Users can create and manage a hierarchical structure of directories to organize files logically. Each directory can contain subdirectories and files, allowing for granular organization. The system automatically generates a complete name for each directory, such as &quot;Country Programs / Health Initiative / Reports,&quot; making navigation intuitive. Users can also designate root directories, which serve as top-level organizational units. The system tracks the number of subdirectories and files within each directory, providing a quick overview of its contents and total size. When a directory contains files, it cannot be deleted, ensuring data integrity.</p>
-</section>
-<section id="file-management-and-previews">
+</div>
+<div class="section" id="file-management-and-previews">
 <h3>File Management and Previews<a class="headerlink" href="#file-management-and-previews" title="Permalink to this headline">#</a></h3>
 <p>The module supports uploading and managing various file types. For each uploaded file, the system automatically determines its type (mimetype) and extracts its file extension. It also calculates the file size and a unique checksum (SHA512), ensuring data integrity and allowing for verification. For image files, the system automatically generates thumbnails, providing a visual preview without needing to download the full file. Additionally, the module offers a general preview feature for binary files directly within the OpenSPP interface, enhancing accessibility and usability.</p>
-</section>
-<section id="document-categorization">
+</div>
+<div class="section" id="document-categorization">
 <h3>Document Categorization<a class="headerlink" href="#document-categorization" title="Permalink to this headline">#</a></h3>
 <p>Files can be assigned to predefined categories, enabling an additional layer of organization beyond the directory structure. This feature is particularly useful for grouping documents with similar characteristics or purposes, such as &quot;Beneficiary Forms,&quot; &quot;Program Policies,&quot; or &quot;Financial Reports.&quot; Categorization simplifies searching and filtering, allowing users to quickly find all documents belonging to a specific type, regardless of their directory location.</p>
-</section>
-<section id="search-and-retrieval">
+</div>
+<div class="section" id="search-and-retrieval">
 <h3>Search and Retrieval<a class="headerlink" href="#search-and-retrieval" title="Permalink to this headline">#</a></h3>
 <p>Leveraging its structured directory and categorization features, the OpenSPP Dms module provides powerful search and retrieval capabilities. Users can search for documents by name, category, or directory path. The hierarchical organization allows for browsing through directories, while categories offer a filter for specific document types. This ensures that documents, even within large repositories, are easily discoverable and accessible when needed.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Dms module is an essential component of the OpenSPP platform, providing the robust document management capabilities necessary for efficient program administration and comprehensive record-keeping in social protection initiatives.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

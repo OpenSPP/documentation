@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Audit Logs Module Development" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Audit Logs Module Development" name="title" />
 <meta content="Guide to customizing OpenSPP's audit logging system with custom rules, field tracking, and chatter integration for comprehensive change tracking." name="description" />
 <meta content="OpenSPP, audit logs, change tracking, data monitoring, audit rules, logging system, compliance" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/module_development/audit.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1702,7 +1689,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="audit-logs">
+  <div class="section" id="audit-logs">
 <h1>Audit Logs<a class="headerlink" href="#audit-logs" title="Permalink to this headline">#</a></h1>
 <p>This article explains how the audit modules work in OpenSPP and how to customize them, using a practical example and a working sample module.
 The audit stack consists of <a class="reference internal" href="../../reference/modules/spp_audit_log.html"><span class="doc">spp_audit_log</span></a> (core models and UI), <a class="reference internal" href="../../reference/modules/spp_audit_post.html"><span class="doc">spp_audit_post</span></a> (optional chatter posting), and <a class="reference internal" href="../../reference/modules/spp_audit_config.html"><span class="doc">spp_audit_config</span></a> (preconfigured rules).</p>
@@ -1721,15 +1708,15 @@ The audit stack consists of <a class="reference internal" href="../../reference/
 <li><p>Optional posting of audit messages to the target record or its parent model chatter (<code class="docutils literal notranslate"><span class="pre">spp_audit_post</span></code>)</p></li>
 <li><p>Preconfigured default rules installed via <code class="docutils literal notranslate"><span class="pre">spp_audit_config</span></code> (<code class="docutils literal notranslate"><span class="pre">data/audit_rule_data.xml</span></code>)</p></li>
 </ul>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Solid understanding of Odoo 17 module development, including Python, XML, and XPath.</p></li>
 <li><p>Ensure the following modules are installed: <strong>SPP Audit Config</strong>, <strong>SPP Audit Log</strong>, <strong>SPP Audit Post</strong> (optional).</p></li>
 <li><p>To set up OpenSPP for development, please refer to the <a class="reference internal" href="../setup.html"><span class="doc">Development Setup Guide</span></a>.</p></li>
 </ul>
-</section>
-<section id="module-structure">
+</div>
+<div class="section" id="module-structure">
 <h2>Module Structure<a class="headerlink" href="#module-structure" title="Permalink to this headline">#</a></h2>
 <p>A typical audit customization module follows the standard Odoo module structure. Here’s the structure for the example module, <code class="docutils literal notranslate"><span class="pre">spp_audit_log_custom</span></code>:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>spp_audit_log_custom/
@@ -1746,17 +1733,17 @@ The audit stack consists of <a class="reference internal" href="../../reference/
     └── audit_rule_data.xml
 </pre></div>
 </div>
-</section>
-<section id="step-by-step-guide">
+</div>
+<div class="section" id="step-by-step-guide">
 <h2>Step-by-Step Guide<a class="headerlink" href="#step-by-step-guide" title="Permalink to this headline">#</a></h2>
 <p>In this example, we customize the audit rule to include an <code class="docutils literal notranslate"><span class="pre">active</span></code> flag, allowing rules to be enabled or disabled without deletion.</p>
 <p>A working sample module is available at <a class="reference external" href="https://github.com/OpenSPP/documentation_code/tree/main/howto/developer_guides/customizations/spp_audit_log_custom">this link</a>.</p>
-<section id="create-the-module-scaffold">
+<div class="section" id="create-the-module-scaffold">
 <h3>Create the Module Scaffold<a class="headerlink" href="#create-the-module-scaffold" title="Permalink to this headline">#</a></h3>
 <p>Start by creating a new directory for your module (e.g., <code class="docutils literal notranslate"><span class="pre">spp_audit_log_custom</span></code>) and populate it
 with the basic Odoo module files (<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>, <code class="docutils literal notranslate"><span class="pre">__manifest__.py</span></code>) and the directory structure shown above.</p>
-</section>
-<section id="define-module-manifest">
+</div>
+<div class="section" id="define-module-manifest">
 <h3>Define Module Manifest<a class="headerlink" href="#define-module-manifest" title="Permalink to this headline">#</a></h3>
 <p>Create a manifest file with the correct dependencies and data files:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -1782,13 +1769,13 @@ with the basic Odoo module files (<code class="docutils literal notranslate"><sp
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="extend-the-audit-rule-model">
+</div>
+<div class="section" id="extend-the-audit-rule-model">
 <h3>Extend the Audit Rule Model<a class="headerlink" href="#extend-the-audit-rule-model" title="Permalink to this headline">#</a></h3>
 <p>Create <code class="docutils literal notranslate"><span class="pre">models/spp_audit_rule.py</span></code> and update <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">odoo</span><span class="w"> </span><span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">CustomAuditRule</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">CustomAuditRule</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;spp.audit.rule&quot;</span>
 
     <span class="n">active</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span>
@@ -1797,8 +1784,8 @@ with the basic Odoo module files (<code class="docutils literal notranslate"><sp
     <span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="create-view-extensions">
+</div>
+<div class="section" id="create-view-extensions">
 <h3>Create View Extensions<a class="headerlink" href="#create-view-extensions" title="Permalink to this headline">#</a></h3>
 <p>Create <code class="docutils literal notranslate"><span class="pre">views/spp_audit_rule_views.xml</span></code> and add it to the manifest:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odoo&gt;</span>
@@ -1815,20 +1802,20 @@ with the basic Odoo module files (<code class="docutils literal notranslate"><sp
 <span class="nt">&lt;/odoo&gt;</span>
 </pre></div>
 </div>
-</section>
-<section id="add-security-access-optional">
+</div>
+<div class="section" id="add-security-access-optional">
 <h3>Add Security Access (Optional)<a class="headerlink" href="#add-security-access-optional" title="Permalink to this headline">#</a></h3>
 <p>If you introduce new models, add access rights. For simple field additions, this is not required. Example:</p>
-<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span><span class="o">id</span><span class="p">,</span><span class="m">name</span><span class="p">,</span><span class="k">model_id:id</span><span class="p">,</span><span class="no">group_id:id</span><span class="p">,</span><span class="s1">perm_read</span><span class="p">,perm_write,perm_create,perm_unlink</span>
-<span class="o">access_custom_spp_audit_rule</span><span class="p">,</span><span class="m">custom.spp.audit.rule</span><span class="p">,</span><span class="k">spp_audit_log.model_spp_audit_rule</span><span class="p">,</span><span class="no">base.group_system</span><span class="p">,</span><span class="s1">1</span><span class="p">,1,1,0</span>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_custom_spp_audit_rule,custom.spp.audit.rule,spp_audit_log.model_spp_audit_rule,base.group_system,1,1,1,0
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Group ID: <strong><code class="docutils literal notranslate"><span class="pre">g2p_registry_base.group_g2p_registrar</span></code></strong> for Registrar Access</p></li>
 <li><p>Group ID: <strong><code class="docutils literal notranslate"><span class="pre">g2p_registry_base.group_g2p_admin</span></code></strong> for Admin Access.</p></li>
 </ul>
-</section>
-<section id="add-preconfigured-rules-optional">
+</div>
+<div class="section" id="add-preconfigured-rules-optional">
 <h3>Add Preconfigured Rules (Optional)<a class="headerlink" href="#add-preconfigured-rules-optional" title="Permalink to this headline">#</a></h3>
 <p>Seed rules using <code class="docutils literal notranslate"><span class="pre">data/audit_rule_data.xml</span></code> and the <code class="docutils literal notranslate"><span class="pre">spp.audit.rule.create_rules</span></code> helper:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odoo&gt;</span>
@@ -1844,8 +1831,8 @@ with the basic Odoo module files (<code class="docutils literal notranslate"><sp
 </pre></div>
 </div>
 <p>For parent/child rules (requires <code class="docutils literal notranslate"><span class="pre">spp_audit_post</span></code>), also pass <code class="docutils literal notranslate"><span class="pre">parent_rule_name</span></code> and <code class="docutils literal notranslate"><span class="pre">connecting_field_name</span></code>.</p>
-</section>
-<section id="install-and-test">
+</div>
+<div class="section" id="install-and-test">
 <h3>Install and Test<a class="headerlink" href="#install-and-test" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install or upgrade the module through the Apps menu.</p></li>
@@ -1853,13 +1840,13 @@ with the basic Odoo module files (<code class="docutils literal notranslate"><sp
 <li><p>Open <strong>Audit Log → Audit → Log</strong> to review entries.</p></li>
 <li><p>On a specific record, use <strong>Action → View logs</strong> (if enabled) to see related entries.</p></li>
 </ol>
-</section>
-</section>
-<section id="best-practices">
+</div>
+</div>
+<div class="section" id="best-practices">
 <h2>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">#</a></h2>
 <p><strong>Use Targeted Field Lists</strong>: Keep <code class="docutils literal notranslate"><span class="pre">field_to_log_ids</span></code> focused on business-critical fields.</p>
-</section>
-<section id="references">
+</div>
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <p>For more information on extending OpenSPP modules, refer to:</p>
 <ul class="simple">
@@ -1871,8 +1858,8 @@ with the basic Odoo module files (<code class="docutils literal notranslate"><sp
 </ul>
 </li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

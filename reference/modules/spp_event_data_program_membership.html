@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_event_data_program_membership.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1650,10 +1637,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="event-data-program-membership">
+  <div class="section" id="event-data-program-membership">
 <h1>Event Data Program Membership<a class="headerlink" href="#event-data-program-membership" title="Permalink to this headline">#</a></h1>
 <p>The 'spp_event_data_program_membership' module extends OpenSPP's event tracking capabilities by specifically linking events to individual or group program memberships. This module allows users to record and track crucial program membership-related events, such as enrollment, suspension, or exit, directly associating them with specific program participation records within OpenSPP.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module provides a critical layer of detail for tracking the lifecycle of program beneficiaries. It accomplishes this by:</p>
 <ul class="simple">
@@ -1663,8 +1650,8 @@ title="Print to PDF"
 <li><p><strong>Streamlining Data Entry</strong>: Simplifies the process of logging program-specific events by providing tools for contextual selection of program memberships.</p></li>
 <li><p><strong>Improving Data Accuracy</strong>: Minimizes errors by ensuring that events are correctly associated with the precise program membership record, rather than just a general registrant profile.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module seamlessly integrates with core OpenSPP components to provide its functionality:</p>
 <ul class="simple">
@@ -1672,27 +1659,27 @@ title="Print to PDF"
 <li><p><strong>OpenSPP Event Data (<a class="reference internal" href="spp_event_data.html"><span class="doc std std-doc">spp_event_data</span></a>)</strong>: This module builds directly upon the existing event data framework. It extends the <code class="docutils literal notranslate"><span class="pre">spp.event.data</span></code> model to include a direct link to program membership records, allowing for more granular event tracking specific to program participation.</p></li>
 <li><p><strong>G2P Programs (<a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">g2p_programs</span></a>)</strong>: Leverages the program and program membership definitions provided by the G2P Programs module. This module enables events to be directly linked to the <code class="docutils literal notranslate"><span class="pre">g2p.program_membership</span></code> records managed by G2P Programs.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="direct-event-to-membership-linking">
+<div class="section" id="direct-event-to-membership-linking">
 <h3>Direct Event-to-Membership Linking<a class="headerlink" href="#direct-event-to-membership-linking" title="Permalink to this headline">#</a></h3>
 <p>This module introduces the capability to directly associate events with specific program membership records. Users can log any relevant event, such as an enrollment confirmation, a temporary suspension, a change in eligibility, or a program exit, and link it precisely to an individual's or group's participation in a particular program. This ensures a granular and accurate historical record of a beneficiary's journey within each program they are part of.</p>
-</section>
-<section id="intelligent-program-membership-selection">
+</div>
+<div class="section" id="intelligent-program-membership-selection">
 <h3>Intelligent Program Membership Selection<a class="headerlink" href="#intelligent-program-membership-selection" title="Permalink to this headline">#</a></h3>
 <p>When creating an event for a specific registrant, the system intelligently streamlines the selection process. It automatically filters the list of available program memberships, displaying only those relevant to the selected registrant. This capability significantly reduces data entry errors and improves efficiency by guiding users to select the correct program membership.</p>
-</section>
-<section id="clearer-program-membership-identification">
+</div>
+<div class="section" id="clearer-program-membership-identification">
 <h3>Clearer Program Membership Identification<a class="headerlink" href="#clearer-program-membership-identification" title="Permalink to this headline">#</a></h3>
 <p>The module enhances the user experience by improving how program membership records are displayed throughout the system. Program memberships are presented with a more descriptive name, incorporating both the program's name and the registrant's name. This makes it significantly easier for users to quickly identify and select the correct program membership when reviewing records or linking new events.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The 'spp_event_data_program_membership' module is crucial for OpenSPP, providing precise event tracking capabilities that document the full lifecycle of beneficiary participation within specific social protection programs. It ensures a comprehensive, auditable, and easily accessible history of program membership events.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

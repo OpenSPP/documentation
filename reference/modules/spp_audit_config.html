@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_audit_config.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="audit-config">
+  <div class="section" id="audit-config">
 <h1>Audit Config<a class="headerlink" href="#audit-config" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Audit Config module empowers administrators to define and manage comprehensive audit rules. These rules dictate how and what data changes are tracked and logged across the OpenSPP platform, ensuring critical data remains secure, accurate, and fully auditable.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module provides the essential tools for establishing a robust data governance framework within OpenSPP. It specifically aims to:</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Support Accountability</strong>: Every logged change includes details about the user and timestamp, establishing clear accountability for all data modifications.</p></li>
 <li><p><strong>Enable Cross-Record Auditing</strong>: Establish parent-child audit relationships, allowing changes in related records to be posted to their respective parent records for a consolidated view.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Audit Config module is foundational, integrating closely with OpenSPP's core auditing capabilities and extending its reach across various domain-specific modules:</p>
 <ul class="simple">
@@ -1682,32 +1669,32 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="spp_audit_post.html"><span class="doc std std-doc">OpenSPP Audit Post</span></a></strong>: Audit Config facilitates the setup of parent-child audit relationships, a core feature provided by the Audit Post module. This allows changes in child records to be automatically recorded on associated parent records, providing a cascaded view of data modifications.</p></li>
 <li><p><strong><a class="reference internal" href="g2p_registry_membership.html"><span class="doc std std-doc">G2P Registry Membership</span></a></strong>, <strong><a class="reference internal" href="spp_programs.html"><span class="doc std std-doc">OpenSPP Programs</span></a></strong>, <strong><a class="reference internal" href="spp_service_points.html"><span class="doc std std-doc">OpenSPP Service Points</span></a></strong>: This module enables the auditing of data within these and other OpenSPP modules. For instance, administrators can define rules to track changes to program details, service point information, or membership records, ensuring oversight of key operational data.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Audit Config module offers several key features to provide flexible and powerful audit management:</p>
-<section id="granular-audit-rule-definition">
+<div class="section" id="granular-audit-rule-definition">
 <h3>Granular Audit Rule Definition<a class="headerlink" href="#granular-audit-rule-definition" title="Permalink to this headline">#</a></h3>
 <p>Administrators can create and manage detailed audit rules for any data model within OpenSPP. This includes selecting specific fields to monitor for changes, such as a registrant's name or a program's status. This level of control ensures that only relevant data changes are logged, avoiding unnecessary overhead.</p>
-</section>
-<section id="comprehensive-operation-tracking">
+</div>
+<div class="section" id="comprehensive-operation-tracking">
 <h3>Comprehensive Operation Tracking<a class="headerlink" href="#comprehensive-operation-tracking" title="Permalink to this headline">#</a></h3>
 <p>The module allows for precise control over which types of data operations trigger an audit log entry. Users can configure rules to log when a new record is created, when an existing record is updated, or when a record is deleted. This ensures a complete historical record of how data enters, changes, and leaves the system.</p>
-</section>
-<section id="parent-child-audit-linking">
+</div>
+<div class="section" id="parent-child-audit-linking">
 <h3>Parent-Child Audit Linking<a class="headerlink" href="#parent-child-audit-linking" title="Permalink to this headline">#</a></h3>
 <p>A critical feature is the ability to establish parent-child audit relationships between different data models. For example, a rule can be set so that any change to a household member record also posts an audit message to the associated household group record. This provides a unified audit trail across interconnected data, improving traceability and context.</p>
-</section>
-<section id="simplified-audit-log-access">
+</div>
+<div class="section" id="simplified-audit-log-access">
 <h3>Simplified Audit Log Access<a class="headerlink" href="#simplified-audit-log-access" title="Permalink to this headline">#</a></h3>
 <p>For enhanced user experience, the module can automatically add a &quot;View Logs&quot; button to the forms of audited records. This direct link allows users to quickly access and review the complete audit history for that specific record without navigating through separate audit log menus.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Audit Config module is central to maintaining data integrity and accountability, providing administrators with the essential tools to flexibly define and manage comprehensive audit rules across the entire OpenSPP platform.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

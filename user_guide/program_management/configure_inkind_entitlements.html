@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Configure in-kind entitlements" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Configure in-kind entitlements" name="title" />
 <meta content="Complete guide for setting up in-kind entitlements in OpenSPP, including product management and program configuration." name="description" />
 <meta content="OpenSPP, in-kind entitlements, products, inventory, program configuration" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/program_management/configure_inkind_entitlements.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1690,24 +1677,24 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="configure-in-kind-entitlements">
+  <div class="section" id="configure-in-kind-entitlements">
 <h1>Configure in-kind entitlements<a class="headerlink" href="#configure-in-kind-entitlements" title="Permalink to this headline">#</a></h1>
 <p>This guide includes steps for approving in-kind entitlements and preparing cycles with in-kind entitlements.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Ensure you have the appropriate user permissions, such as <strong>Global Registry</strong> or <strong>System Admin</strong> roles. For details on user roles and access levels, refer to the <a class="reference internal" href="../administration/user_access.html"><span class="doc">User access</span></a> documentation.</p></li>
 <li><p>Create a Program or have an already existing program. Learn more about this in the guide <a class="reference internal" href="create_program.html"><span class="doc">Create program</span></a>.</p></li>
 <li><p>Install the module: <strong>OpenSPP In-Kind Entitlement</strong> on your OpenSPP instance as <strong>System Admin</strong>. Learn more on installing modules in the guide: <a class="reference internal" href="../../getting_started/module_installation.html"><span class="doc">Module installation</span></a>.</p></li>
 </ul>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>This guide will enable you to effectively set up and manage in-kind entitlements in OpenSPP. By the end of this tutorial, you will be able to define the products for distribution, configure their quantities, and link them to your programs to ensure accurate and efficient benefit delivery.</p>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
-<section id="create-in-kind-entitlements">
+<div class="section" id="create-in-kind-entitlements">
 <h3>Create in-kind entitlements<a class="headerlink" href="#create-in-kind-entitlements" title="Permalink to this headline">#</a></h3>
 <p>Login as <strong>System Admin</strong>, and navigate to Inventory from the sidebar.
 If it is not visible, you must enable the checkbox <strong>Show Non-OpenSPP Menu</strong> from the <strong>Access Rights</strong> tab of this User.</p>
@@ -1718,8 +1705,8 @@ If it is not visible, you must enable the checkbox <strong>Show Non-OpenSPP Menu
 <p>Click on <strong>New</strong>, then Define the name of your product</p>
 <p><img alt="Product name" src="../../_images/product_name.png" /></p>
 <p>Click on <strong>Save</strong> to complete the changes.</p>
-</section>
-<section id="categorize-products">
+</div>
+<div class="section" id="categorize-products">
 <h3>Categorize Products<a class="headerlink" href="#categorize-products" title="Permalink to this headline">#</a></h3>
 <p>You can also further categorize these products using <strong>Product Categories</strong> Feature</p>
 <p><img alt="Product category" src="../../_images/product_category.png" /></p>
@@ -1731,12 +1718,12 @@ If it is not visible, you must enable the checkbox <strong>Show Non-OpenSPP Menu
 <p><img alt="Select product category" src="../../_images/select_product_category.png" /></p>
 <p>Click on <strong>save</strong> to complete the changes.</p>
 <p><img alt="Save product" src="../../_images/save_product.png" /></p>
-</section>
-<section id="in-kind-entitlements-in-a-program">
+</div>
+<div class="section" id="in-kind-entitlements-in-a-program">
 <h3>In-kind entitlements in a program<a class="headerlink" href="#in-kind-entitlements-in-a-program" title="Permalink to this headline">#</a></h3>
 <p>You can modify in-kind entitlements during program creation or on an existing one.
 Both methods are explained below.</p>
-<section id="selecting-in-kind-during-creation-of-a-program">
+<div class="section" id="selecting-in-kind-during-creation-of-a-program">
 <h4>Selecting in-kind during creation of a program<a class="headerlink" href="#selecting-in-kind-during-creation-of-a-program" title="Permalink to this headline">#</a></h4>
 <p>Define the in-kind entitlements during program creation under <strong>Configure the Entitlement Manager</strong></p>
 <p><img alt="During create program inkind" src="../../_images/during_create_program_inkind.png" /></p>
@@ -1750,13 +1737,13 @@ Maximum number sets the limit how much multiplier value can reach. change to zer
 </div></blockquote>
 <p>In the example below, if a group has 5 individuals, it would supposedly get 5 eggs , however with Maximum number defined as <code class="docutils literal notranslate"><span class="pre">2</span></code>, the group would only get <code class="docutils literal notranslate"><span class="pre">2</span></code> eggs.</p>
 <p><img alt="Example calculation inkind" src="../../_images/example_calculation_inkind.png" /></p>
-<section id="configure-entitlement-validator">
+<div class="section" id="configure-entitlement-validator">
 <h5>Configure Entitlement Validator<a class="headerlink" href="#configure-entitlement-validator" title="Permalink to this headline">#</a></h5>
 <p>Select which user role is able to approve these in-kind entitlements for this program, this needs to be defined if auto-approved entitlements is not enabled.</p>
 <p><img alt="Entitlement approver" src="../../_images/entitlement_approver.png" /></p>
 <p>then continue with program creation. Learn more in the guide <a class="reference internal" href="create_program.html"><span class="doc">Create program</span></a>.</p>
-</section>
-<section id="verify-entitlement-count">
+</div>
+<div class="section" id="verify-entitlement-count">
 <h5>Verify entitlement count<a class="headerlink" href="#verify-entitlement-count" title="Permalink to this headline">#</a></h5>
 <p>Go to your program and select the cycle you want to verify.</p>
 <p><img alt="Open cycle" src="../../_images/open_cycle.png" /></p>
@@ -1765,9 +1752,9 @@ Maximum number sets the limit how much multiplier value can reach. change to zer
 <p>Click on a group and verify the quantity of in-kind entitlements generated if it is correct.</p>
 <p>In this example, Group A consists of 3 individuals, but since the maximum is set to 2, only 2 eggs will be generated instead of 3.
 <img alt="Entitlement count" src="../../_images/entitlement_count.png" /></p>
-</section>
-</section>
-<section id="selecting-in-kind-on-existing-program">
+</div>
+</div>
+<div class="section" id="selecting-in-kind-on-existing-program">
 <h4>Selecting in-kind on existing program<a class="headerlink" href="#selecting-in-kind-on-existing-program" title="Permalink to this headline">#</a></h4>
 <p>You can modify the in-kind entitlements generated for an existing progam by navigating to program page and going to configuration tab.</p>
 <p><img alt="Configuration tab" src="../../_images/configuration_tab.png" /></p>
@@ -1776,10 +1763,10 @@ Maximum number sets the limit how much multiplier value can reach. change to zer
 <p>In the modal below, you can add, edit or remove products for this program, click <strong>Save</strong> to complete.
 Note that any changes in the in-kind entitlements would only take effect to those cycles that are still yet to prepare entitlements.</p>
 <p><img alt="Edit existing program inkind" src="../../_images/edit_existing_program_inkind.png" /></p>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_base_demo.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1650,10 +1637,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="base-demo">
+  <div class="section" id="base-demo">
 <h1>Base Demo<a class="headerlink" href="#base-demo" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Base Demo module populates the OpenSPP system with essential sample data, enabling users to immediately explore and understand the platform's core functionalities. It provides a pre-configured environment for training, demonstrations, and initial system familiarization without requiring manual data entry.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module significantly accelerates the onboarding process and user understanding by:</p>
 <ul class="simple">
@@ -1663,34 +1650,34 @@ title="Print to PDF"
 <li><p><strong>Enabling Feature Testing</strong>: Developers and administrators can use the pre-existing data to quickly test new configurations, module integrations, or custom developments without impacting live data. This creates a safe sandbox for experimentation.</p></li>
 <li><p><strong>Demonstrating Core Workflows</strong>: It allows for clear demonstrations of key OpenSPP workflows, such as registering an individual, assessing eligibility, or distributing benefits. This makes it easier to showcase the system's capabilities.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_base_demo</span></code> module primarily serves to populate data for other modules rather than introducing new features itself.</p>
 <p>It relies on the <strong><a class="reference internal" href="g2p_registry_individual.html"><span class="doc std std-doc">G2P Registry Individual</span></a></strong> module to define the structure for individual registrant data. The demo module then provides sample individual profiles, including names, birthdates, and genders, that conform to the data models established by the G2P Registry Individual module. This integration ensures that the demo data is relevant and functional within the core registry.</p>
 <p>Additionally, this module provides foundational demo data for other OpenSPP modules that manage programs, products, and user roles. By populating these core entities, it ensures that subsequent modules have a rich dataset to operate on during demonstrations and training.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>While the <code class="docutils literal notranslate"><span class="pre">spp_base_demo</span></code> module does not introduce new user interfaces or business logic, its &quot;functionality&quot; lies in the comprehensive set of demonstration data it provides, enabling users to experience OpenSPP's capabilities:</p>
-<section id="sample-registrant-profiles">
+<div class="section" id="sample-registrant-profiles">
 <h3>Sample Registrant Profiles<a class="headerlink" href="#sample-registrant-profiles" title="Permalink to this headline">#</a></h3>
 <p>The module populates the system with a diverse set of individual registrant records. These sample profiles include varied names, birthdates (some approximate), and gender types, demonstrating the flexible data capture capabilities of the <a class="reference internal" href="g2p_registry_individual.html"><span class="doc std std-doc">G2P Registry Individual</span></a> module. Users can explore how individual details are recorded and managed, including age calculation and birthdate validations.</p>
-</section>
-<section id="demonstration-program-and-product-data">
+</div>
+<div class="section" id="demonstration-program-and-product-data">
 <h3>Demonstration Program and Product Data<a class="headerlink" href="#demonstration-program-and-product-data" title="Permalink to this headline">#</a></h3>
 <p>It includes sample social protection programs and associated products. This allows users to see how different program types are configured and how specific benefits (products) are linked to them. Users can then practice enrolling the sample registrants into these programs and observe the impact on their profiles.</p>
-</section>
-<section id="geographic-and-user-data">
+</div>
+<div class="section" id="geographic-and-user-data">
 <h3>Geographic and User Data<a class="headerlink" href="#geographic-and-user-data" title="Permalink to this headline">#</a></h3>
 <p>The module sets up basic demonstration data for geographic hierarchies (e.g., country &gt; province &gt; district) and sample user accounts. This enables users to understand how geographic targeting works and how different user roles and permissions operate within the OpenSPP system. It also populates the system with defined gender types, which are then available for selection in individual profiles.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Base Demo module is crucial for accelerating user onboarding and system exploration by providing a complete, ready-to-use dataset, enabling immediate engagement with OpenSPP's core functionalities.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

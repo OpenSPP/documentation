@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_user_roles.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1616,10 +1603,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="user-roles">
+  <div class="section" id="user-roles">
 <h1>User Roles<a class="headerlink" href="#user-roles" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP User Roles module enhances how user access is managed within the OpenSPP platform. It introduces advanced capabilities for defining user permissions, with a strong emphasis on area-based access control. This module ensures that users can only interact with data relevant to their specific operational regions, improving data security and streamlining program management.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP User Roles module provides critical functionalities to manage who can access what information within the system:</p>
 <ul class="simple">
@@ -1629,14 +1616,14 @@ title="Print to PDF"
 <li><p><strong>Streamline User Permission Management</strong>: It automates the assignment of underlying system permissions based on defined roles, reducing administrative overhead and ensuring consistent application of access rules.</p></li>
 <li><p><strong>Support Granular Program Operations</strong>: This granular control enables different teams or users to effectively manage social protection programs or farmer registries within their designated operational zones.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP User Roles module integrates closely with several core OpenSPP components to deliver its enhanced access control features:</p>
 <p>This module extends the foundational role management provided by <code class="docutils literal notranslate"><span class="pre">base_user_role</span></code>, adding the crucial distinction between global and local roles. It heavily relies on the <a class="reference internal" href="spp_area.html"><span class="doc std std-doc">OpenSPP Area</span></a> module, which defines the hierarchical geographical structure within OpenSPP. By leveraging <code class="docutils literal notranslate"><span class="pre">spp_area</span></code>, this module enables the assignment of specific regions to user roles, allowing for fine-grained access control over location-based data.</p>
 <p>OpenSPP User Roles also integrates with data management modules like <a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">G2P Registry Base</span></a> and <a class="reference internal" href="g2p_registry_group.html"><span class="doc std std-doc">G2P Registry Groups</span></a>. It modifies how registrant data (individuals and groups) from these modules is presented to users, ensuring that only records associated with a user's assigned geographical areas are visible and manageable. This area-based filtering extends implicitly to other modules that handle area-bound or registrant data, such as <a class="reference internal" href="spp_idqueue.html"><span class="doc std std-doc">OpenSPP ID Queue</span></a>, ensuring a consistent application of access restrictions across the platform.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP User Roles module introduces several key features to manage user permissions effectively:</p>
 <ul class="simple">
@@ -1647,12 +1634,12 @@ For Local roles, administrators assign one or more &quot;Center Areas&quot; (e.g
 <li><p><strong>Automated Permission Synchronization</strong>
 The module automatically updates a user's underlying Odoo security groups based on their assigned roles and the permissions associated with those roles. This automates the process of managing user access, reducing manual overhead and ensuring consistent application of permissions across the system. It also protects essential system groups, preventing accidental removal of critical access for users.</p></li>
 </ul>
-</section>
-<section id="conclusion">
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP User Roles module is fundamental for secure and efficient program management, providing sophisticated control over user access based on roles and geographical areas within OpenSPP.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_change_log.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1648,10 +1635,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-change-log">
+  <div class="section" id="g2p-change-log">
 <h1>G2P Change Log<a class="headerlink" href="#g2p-change-log" title="Permalink to this headline">#</a></h1>
 <p>The G2P Change Log module (g2p_change_log) transparently records all significant data modifications across OpenSPP's G2P modules. It provides an unalterable audit trail, detailing who made changes, what was changed, and when, ensuring accountability and data integrity for social protection programs.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The G2P Change Log module is essential for maintaining a secure and transparent record of all critical data alterations within OpenSPP. It accomplishes the following:</p>
 <ul class="simple">
@@ -1662,33 +1649,33 @@ title="Print to PDF"
 <li><p><strong>Enhances Data Trust</strong>: Builds confidence in the accuracy and reliability of program data by documenting every modification.</p></li>
 </ul>
 <p>This module is vital for any social protection program, providing the necessary transparency and controls to verify program operations and protect beneficiary information. For example, it logs when a beneficiary's eligibility status changes or a payment amount is adjusted.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The G2P Change Log module operates as a foundational service, integrating deeply within the OpenSPP platform to monitor and record data changes across various modules.</p>
 <p>It primarily depends on the <code class="docutils literal notranslate"><span class="pre">base</span></code> module, which provides core system functionalities such as user management, fundamental data structures, and system-wide configurations. This dependency ensures that the change log can accurately identify the user performing an action and apply its tracking mechanisms across the entire system.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_change_log</span></code> module serves all other G2P modules, such as those managing beneficiary registries or payment disbursements. Any significant data modification made within modules like <span class="xref myst">Beneficiary Registry</span> or <span class="xref myst">Payment Management</span> is automatically captured and logged here, providing a centralized and consistent audit trail without requiring individual modules to implement their own logging.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="automated-change-tracking">
+<div class="section" id="automated-change-tracking">
 <h3>Automated Change Tracking<a class="headerlink" href="#automated-change-tracking" title="Permalink to this headline">#</a></h3>
 <p>The module automatically captures and logs significant changes to critical data points across OpenSPP's G2P modules. For each recorded change, it documents the user who performed the action, the exact time of the modification, the specific record affected, and both the old and new values of the changed field. This automated process ensures that a complete and accurate history is maintained without manual intervention.</p>
-</section>
-<section id="historical-record-access-and-reporting">
+</div>
+<div class="section" id="historical-record-access-and-reporting">
 <h3>Historical Record Access and Reporting<a class="headerlink" href="#historical-record-access-and-reporting" title="Permalink to this headline">#</a></h3>
 <p>Users with appropriate permissions can access the comprehensive change log to review historical data modifications. The system provides tools to filter and search log entries by date range, user, or specific data entities, allowing for targeted investigations into past changes. This functionality is crucial for understanding the evolution of data and identifying patterns of activity.</p>
-</section>
-<section id="data-integrity-and-compliance-support">
+</div>
+<div class="section" id="data-integrity-and-compliance-support">
 <h3>Data Integrity and Compliance Support<a class="headerlink" href="#data-integrity-and-compliance-support" title="Permalink to this headline">#</a></h3>
 <p>By maintaining an immutable record of all data alterations, the G2P Change Log module significantly enhances data integrity and helps programs meet regulatory compliance standards. It provides an unalterable audit trail that can be presented to auditors or used to demonstrate adherence to data governance policies. This ensures that all program actions are transparent and verifiable.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Change Log module is a critical component of OpenSPP, providing indispensable transparency and accountability by diligently recording all significant data modifications across social protection programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

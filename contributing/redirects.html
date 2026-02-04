@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../_static/search_shortcut.js"></script>
     <script src="../_static/version_switcher.js"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/contributing/redirects.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1668,14 +1655,14 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="managing-documentation-redirects">
+  <div class="section" id="managing-documentation-redirects">
 <h1>Managing Documentation Redirects<a class="headerlink" href="#managing-documentation-redirects" title="Permalink to this headline">#</a></h1>
 <p>This guide explains how to handle redirects when refactoring or moving documentation pages in the OpenSPP documentation.</p>
-<section id="configuration">
+<div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP documentation uses the <code class="docutils literal notranslate"><span class="pre">sphinx-reredirects</span></code> extension to handle redirects. The configuration is located in <code class="docutils literal notranslate"><span class="pre">docs/conf.py</span></code>.</p>
-</section>
-<section id="adding-redirects">
+</div>
+<div class="section" id="adding-redirects">
 <h2>Adding Redirects<a class="headerlink" href="#adding-redirects" title="Permalink to this headline">#</a></h2>
 <p>To add a redirect when moving or renaming a page:</p>
 <ol class="arabic simple">
@@ -1694,8 +1681,8 @@ title="Print to PDF"
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="important-notes">
+</div>
+<div class="section" id="important-notes">
 <h2>Important Notes<a class="headerlink" href="#important-notes" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Paths in the <code class="docutils literal notranslate"><span class="pre">redirects</span></code> dictionary are relative to the documentation root</p></li>
@@ -1704,8 +1691,8 @@ title="Print to PDF"
 <li><p>Redirects work for both files and directories</p></li>
 <li><p>You can redirect to external URLs as well</p></li>
 </ul>
-</section>
-<section id="testing-redirects">
+</div>
+<div class="section" id="testing-redirects">
 <h2>Testing Redirects<a class="headerlink" href="#testing-redirects" title="Permalink to this headline">#</a></h2>
 <p>After adding redirects:</p>
 <ol class="arabic">
@@ -1718,8 +1705,8 @@ make<span class="w"> </span>html
 <li><p>Navigate to the old URL in your browser</p></li>
 <li><p>Verify that you are automatically redirected to the new location</p></li>
 </ol>
-</section>
-<section id="best-practices">
+</div>
+<div class="section" id="best-practices">
 <h2>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p><strong>Always add redirects</strong> when moving or renaming documentation pages</p></li>
@@ -1728,26 +1715,26 @@ make<span class="w"> </span>html
 <li><p><strong>Update internal links</strong> to point directly to new locations</p></li>
 <li><p><strong>Test redirects</strong> after deployment to ensure they work correctly</p></li>
 </ol>
-</section>
-<section id="example-use-cases">
+</div>
+<div class="section" id="example-use-cases">
 <h2>Example Use Cases<a class="headerlink" href="#example-use-cases" title="Permalink to this headline">#</a></h2>
-<section id="renaming-a-page">
+<div class="section" id="renaming-a-page">
 <h3>Renaming a Page<a class="headerlink" href="#renaming-a-page" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">redirects</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;installation&quot;</span><span class="p">:</span> <span class="s2">&quot;getting_started/installation_guide.html&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="moving-to-a-different-section">
+</div>
+<div class="section" id="moving-to-a-different-section">
 <h3>Moving to a Different Section<a class="headerlink" href="#moving-to-a-different-section" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">redirects</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;tutorials/basic-setup&quot;</span><span class="p">:</span> <span class="s2">&quot;getting_started/installation_guide.html&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="consolidating-multiple-pages">
+</div>
+<div class="section" id="consolidating-multiple-pages">
 <h3>Consolidating Multiple Pages<a class="headerlink" href="#consolidating-multiple-pages" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">redirects</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;setup/requirements&quot;</span><span class="p">:</span> <span class="s2">&quot;getting_started/installation_guide.html&quot;</span><span class="p">,</span>
@@ -1756,9 +1743,9 @@ make<span class="w"> </span>html
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

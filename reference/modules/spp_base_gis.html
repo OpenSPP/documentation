@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_base_gis.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="base-gis">
+  <div class="section" id="base-gis">
 <h1>Base GIS<a class="headerlink" href="#base-gis" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_base_gis</span></code> module provides foundational Geographical Information System (GIS) capabilities to the OpenSPP platform. It enables the visualization, management, and interaction with geospatial data, which is essential for geographically-aware program management and decision-making.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module equips OpenSPP with robust geographical information capabilities, allowing programs to operate with a strong spatial context.</p>
 <ul class="simple">
@@ -1673,45 +1660,45 @@ title="Print to PDF"
 <li><p><strong>Customizes Map Views:</strong> It allows for the configuration of diverse background map layers (e.g., OpenStreetMap, satellite imagery) and the overlaying of custom program data layers. This ensures maps are tailored to specific program needs and provide relevant contextual information.</p></li>
 <li><p><strong>Integrates Location Awareness:</strong> By providing core GIS functionality, the module integrates with other OpenSPP modules like Registries and Targeting &amp; Eligibility, enabling location-aware data entry, reporting, and beneficiary selection. This makes program operations more efficient and effective on the ground.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_base_gis</span></code> module is a core component that integrates deeply with other parts of the OpenSPP system.</p>
 <p>It relies on the <code class="docutils literal notranslate"><span class="pre">base</span></code> module for fundamental framework services and extends core data models like <code class="docutils literal notranslate"><span class="pre">ir.ui.view</span></code> and <code class="docutils literal notranslate"><span class="pre">ir.model.fields</span></code> to incorporate GIS-specific attributes. The <code class="docutils literal notranslate"><span class="pre">web</span></code> module is essential for rendering the interactive map interface and controls within the OpenSPP web client. Additionally, it leverages the <code class="docutils literal notranslate"><span class="pre">contacts</span></code> module to link geographical information directly to individual or organizational contact records, enhancing data completeness.</p>
 <p>This module serves as a foundational layer, providing essential geospatial services across OpenSPP. It empowers modules such as <span class="xref myst">OpenSPP Registries</span> by allowing beneficiaries or households to be registered with precise geographical coordinates or associated with specific administrative areas. Similarly, <span class="xref myst">OpenSPP Targeting &amp; Eligibility</span> utilizes these GIS capabilities to define program eligibility based on location or to target interventions to specific geographic zones, ensuring programs reach their intended recipients.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_base_gis</span></code> module offers a range of features to manage and interact with geographical data within OpenSPP.</p>
-<section id="map-layer-management">
+<div class="section" id="map-layer-management">
 <h3>Map Layer Management<a class="headerlink" href="#map-layer-management" title="Permalink to this headline">#</a></h3>
 <p>Users can define and manage different types of map layers to provide comprehensive geographical context for program operations.</p>
 <ul class="simple">
 <li><p><strong>Background Raster Layers:</strong> Configure various base maps, including OpenStreetMap, satellite imagery, or custom Web Map Service (WMS) layers. Users can select default styles (e.g., &quot;streets,&quot; &quot;satellite&quot;), adjust layer opacity, and control their initial visibility to customize the map's appearance for different use cases.</p></li>
 <li><p><strong>Operational Data Layers:</strong> Overlay specific program data, such as individual beneficiary locations (points), service delivery routes (lines), or administrative zones (polygons). Each data layer can be assigned a unique color, opacity, and display priority, ensuring clear visualization of all relevant program information.</p></li>
 </ul>
-</section>
-<section id="geospatial-data-definition">
+</div>
+<div class="section" id="geospatial-data-definition">
 <h3>Geospatial Data Definition<a class="headerlink" href="#geospatial-data-definition" title="Permalink to this headline">#</a></h3>
 <p>The module extends OpenSPP's core data models to natively support geospatial data types, enabling precise location tracking.</p>
 <p>Users can define specific fields within any OpenSPP record to store geographical information directly. This includes specifying the exact type of geometry (point, line, or polygon) and the spatial reference system identifier (SRID) for accurate mapping. This ensures that geographical data is consistently and accurately captured and maintained for every relevant record.</p>
-</section>
-<section id="advanced-spatial-querying">
+</div>
+<div class="section" id="advanced-spatial-querying">
 <h3>Advanced Spatial Querying<a class="headerlink" href="#advanced-spatial-querying" title="Permalink to this headline">#</a></h3>
 <p>Users can perform powerful location-based queries to analyze and retrieve data based on complex spatial relationships.</p>
 <p>The system supports various spatial relations, such as finding records that intersect a specific area, are entirely contained within a polygon, or are within a defined distance from a given point. For instance, users can identify all households within 5 km of a health center or determine which beneficiaries reside within a specific district. This capability is crucial for targeted outreach, impact assessment, and logistical planning.</p>
-</section>
-<section id="customizable-map-views">
+</div>
+<div class="section" id="customizable-map-views">
 <h3>Customizable Map Views<a class="headerlink" href="#customizable-map-views" title="Permalink to this headline">#</a></h3>
 <p>OpenSPP allows administrators to configure default map settings for specific views within the system, enhancing user experience.</p>
 <p>This includes setting a default map center and initial zoom level for any GIS-enabled view, ensuring that users always see the most relevant geographic area upon opening a map. These customizable settings improve usability by providing a consistent and focused map experience tailored to specific program needs.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_base_gis</span></code> module provides essential geospatial capabilities, enabling OpenSPP to manage, visualize, and analyze location-based program data, thereby enhancing the effectiveness and reach of social protection initiatives.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_api_records.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1616,10 +1603,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="api-records">
+  <div class="section" id="api-records">
 <h1>API Records<a class="headerlink" href="#api-records" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Api Records module provides a robust set of RESTful API endpoints, serving as the primary interface for external systems to access and manage OpenSPP's core operational data. It enables programmatic interaction with critical information such as service points, social protection programs, product definitions, and beneficiary entitlements.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module is designed to empower external applications and integrated systems to interact seamlessly with the OpenSPP platform. It achieves this by:</p>
 <ul class="simple">
@@ -1629,8 +1616,8 @@ title="Print to PDF"
 <li><p><strong>Standardizing Data Access</strong>: Offers a consistent and documented API interface, simplifying development and reducing integration complexity for partners.</p></li>
 <li><p><strong>Enhancing Operational Efficiency</strong>: Streamlines data exchange, for example, by allowing mobile agents to retrieve beneficiary entitlements or service points to update product stock information.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_api_records</span></code> module builds upon the core API framework provided by <a class="reference internal" href="spp_api.html"><span class="doc std std-doc">OpenSPP API</span></a>, which defines the foundational structure for creating and securing API endpoints. Its primary function is to expose data managed by various other OpenSPP modules:</p>
 <ul class="simple">
@@ -1641,8 +1628,8 @@ title="Print to PDF"
 <li><p><strong>Foundational Data Modules (<a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">G2P Registry Base</span></a>, Contacts (contacts), <a class="reference internal" href="spp_area.html"><span class="doc std std-doc">OpenSPP Area</span></a>, <a class="reference internal" href="spp_programs_sp.html"><span class="doc std std-doc">OpenSPP Programs: Service Points Integration</span></a>)</strong>: It exposes underlying registry data, contact information, geographical area structures, and program-service point linkages, providing complete context for the exposed records.</p></li>
 </ul>
 <p>This module acts as a data gateway, centralizing access to diverse OpenSPP data sets through a single, consistent API.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_api_records</span></code> module enhances and exposes key data from various OpenSPP components, enabling comprehensive external system interaction.</p>
 <ul class="simple">
@@ -1651,12 +1638,12 @@ title="Print to PDF"
 <li><p><strong>Detailed Entitlement and Transaction Data</strong>: The API provides access to both cash and in-kind entitlement records, enriched with computed fields that clarify the beneficiary type (individual or group) and the entitlement's specific nature (cash or in-kind). It also exposes the <code class="docutils literal notranslate"><span class="pre">cycle_number</span></code> for entitlements, linking them directly to program cycles. This enables external systems to accurately track beneficiary benefits and their status.</p></li>
 <li><p><strong>Standardized Unit of Measure Data</strong>: The module exposes unit of measure (UoM) definitions, including their symbols. This ensures consistency when displaying product quantities and values in external applications, particularly for in-kind distributions.</p></li>
 </ul>
-</section>
-<section id="conclusion">
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Api Records module is essential for enabling OpenSPP's interoperability, providing external systems with a structured and secure way to access and manage the platform's core social protection and farmer registry data.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_service_point_device.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="service-point-device">
+  <div class="section" id="service-point-device">
 <h1>Service Point Device<a class="headerlink" href="#service-point-device" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Service Point Device module provides essential capabilities for managing the physical terminal devices used across various service points within the OpenSPP platform. It enables organizations to register, track, and maintain an inventory of operational hardware crucial for program delivery.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Service Point Device module is designed to streamline the management of terminal devices at service points by:</p>
 <ul class="simple">
@@ -1673,39 +1660,39 @@ title="Print to PDF"
 <li><p><strong>Designating Top-up Service Points</strong>: It extends the functionality of service points to identify specific locations where beneficiaries can load value onto their program cards, clarifying service delivery roles.</p></li>
 <li><p><strong>Associating Devices with Service Points</strong>: Each terminal device is directly linked to a specific service point, providing a clear organizational structure and enabling location-specific device management.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module seamlessly integrates with core OpenSPP components to extend their functionality:</p>
 <ul class="simple">
 <li><p><strong>Base (<code class="docutils literal notranslate"><span class="pre">base</span></code>)</strong>: This module relies on the foundational framework and core functionalities provided by the OpenSPP base module, establishing the fundamental building blocks for its operations.</p></li>
 <li><p><strong>OpenSPP Service Points (<a class="reference internal" href="spp_service_points.html"><span class="doc std std-doc">spp_service_points</span></a>)</strong>: The <code class="docutils literal notranslate"><span class="pre">spp_service_point_device</span></code> module significantly extends the capabilities of the <code class="docutils literal notranslate"><span class="pre">spp_service_points</span></code> module. It adds the ability to associate terminal devices directly with service points and introduces a flag to designate service points as &quot;Top-up Service Points.&quot; Furthermore, it provides an integrated view within each service point record to list all linked terminal devices.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="terminal-device-registration-and-details">
+<div class="section" id="terminal-device-registration-and-details">
 <h3>Terminal Device Registration and Details<a class="headerlink" href="#terminal-device-registration-and-details" title="Permalink to this headline">#</a></h3>
 <p>Users can register new terminal devices by providing essential information such as the device model, its Android operating system version, and a unique external identifier for tracking purposes. Each device must be assigned to an existing service point, establishing a clear link for operational oversight and ensuring devices are accounted for at their respective locations. Devices are automatically marked as active upon creation, indicating they are ready for immediate use.</p>
-</section>
-<section id="device-status-management">
+</div>
+<div class="section" id="device-status-management">
 <h3>Device Status Management<a class="headerlink" href="#device-status-management" title="Permalink to this headline">#</a></h3>
 <p>The module provides a straightforward mechanism to manage the operational status of any registered terminal device. Users can easily toggle a device's status between active and inactive. This feature is critical for managing the device lifecycle, allowing for the temporary deactivation of devices undergoing repair or the permanent deactivation of retired units, and their subsequent reactivation when they return to service.</p>
-</section>
-<section id="service-point-top-up-designation">
+</div>
+<div class="section" id="service-point-top-up-designation">
 <h3>Service Point Top-up Designation<a class="headerlink" href="#service-point-top-up-designation" title="Permalink to this headline">#</a></h3>
 <p>This module extends the OpenSPP Service Points functionality, enabling administrators to designate specific service points as &quot;Top-up Service Points.&quot; This flag clearly indicates to beneficiaries and program staff which locations are equipped to allow beneficiaries to add funds or value to their program cards, simplifying the process of accessing and utilizing benefits.</p>
-</section>
-<section id="integrated-device-overview">
+</div>
+<div class="section" id="integrated-device-overview">
 <h3>Integrated Device Overview<a class="headerlink" href="#integrated-device-overview" title="Permalink to this headline">#</a></h3>
 <p>For enhanced operational efficiency, the module provides an integrated view accessible directly from any service point record. This view displays a comprehensive list of all terminal devices associated with that particular service point. This centralized access allows users to quickly review and manage all hardware deployed at a given location, ensuring accountability and streamlined hardware management.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Service Point Device module is crucial for managing the physical infrastructure of social protection programs, ensuring the efficient deployment, tracking, and oversight of terminal devices at service points.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

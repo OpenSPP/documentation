@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_encryption.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-encryption">
+  <div class="section" id="g2p-encryption">
 <h1>G2P Encryption<a class="headerlink" href="#g2p-encryption" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_encryption</span></code> module provides foundational capabilities for securing sensitive data within the OpenSPP platform. It establishes a robust framework for managing encryption providers, encrypting and decrypting information, and applying digital signatures to ensure data confidentiality, integrity, and authenticity.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module is critical for protecting sensitive information across all OpenSPP operations. It accomplishes this by:</p>
 <ul class="simple">
@@ -1671,37 +1658,37 @@ title="Print to PDF"
 <li><p><strong>Facilitating Secure Interoperability</strong>: Supports secure communication and data exchange with external systems and other OpenSPP modules. It provides standardized methods for signing and verifying data, essential for integrated social protection programs.</p></li>
 <li><p><strong>Supporting Compliance</strong>: Helps OpenSPP adhere to data protection regulations and privacy standards relevant to sensitive personal and financial data. This is crucial for maintaining trust and legal compliance in program delivery.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_encryption</span></code> module serves as a foundational security layer within OpenSPP. It has no direct dependencies on other OpenSPP modules, making it a core utility that can be leveraged widely.</p>
 <p>This module provides essential security services that other modules can integrate to protect their data. For instance, modules handling beneficiary registration, payment processing, or case management can utilize <code class="docutils literal notranslate"><span class="pre">g2p_encryption</span></code> to encrypt sensitive fields, secure communication payloads, and digitally sign important documents or transactions. Its capabilities are designed to be consumed by any module requiring robust data protection, such as <span class="xref myst">G2P Payments</span> for transaction security or <span class="xref myst">Beneficiary Registry</span> for personal data privacy.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_encryption</span></code> module offers several key functionalities to manage and apply cryptographic operations across OpenSPP.</p>
-<section id="managing-encryption-providers">
+<div class="section" id="managing-encryption-providers">
 <h3>Managing Encryption Providers<a class="headerlink" href="#managing-encryption-providers" title="Permalink to this headline">#</a></h3>
 <p>Users can define and configure various encryption service providers within the system. Each provider is given a unique name and can represent a distinct method or service for cryptographic operations. This allows OpenSPP to support different security requirements and integrate with diverse cryptographic tools as needed.</p>
-</section>
-<section id="secure-data-encryption-and-decryption">
+</div>
+<div class="section" id="secure-data-encryption-and-decryption">
 <h3>Secure Data Encryption and Decryption<a class="headerlink" href="#secure-data-encryption-and-decryption" title="Permalink to this headline">#</a></h3>
 <p>This module enables the encryption of sensitive data before it is stored or transmitted, and the corresponding decryption when the data needs to be accessed. This capability ensures the confidentiality of critical information, such as personal identifiers, financial amounts, or program-specific sensitive details, protecting them from unauthorized disclosure. The module provides a standardized interface for modules to encrypt and decrypt data without needing to manage the underlying cryptographic details.</p>
-</section>
-<section id="digital-signature-and-verification-with-jwt">
+</div>
+<div class="section" id="digital-signature-and-verification-with-jwt">
 <h3>Digital Signature and Verification with JWT<a class="headerlink" href="#digital-signature-and-verification-with-jwt" title="Permalink to this headline">#</a></h3>
 <p>The module supports the creation and verification of digital signatures using JSON Web Tokens (JWT). Users can sign any piece of data to generate a verifiable token, which guarantees the data's authenticity and integrity. This means that other systems or modules can verify the signature to confirm the data's origin and ensure it has not been altered since it was signed. This is particularly useful for securing transactions, audit logs, or sensitive communications.</p>
-</section>
-<section id="public-key-management-jwks">
+</div>
+<div class="section" id="public-key-management-jwks">
 <h3>Public Key Management (JWKS)<a class="headerlink" href="#public-key-management-jwks" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_encryption</span></code> module facilitates the retrieval of public keys in JWKS (JSON Web Key Set) format. This functionality is crucial for enabling external systems or other OpenSPP modules to securely verify digital signatures generated by the platform. By providing a standardized way to access public keys, it ensures that signature verification can be performed reliably and securely, supporting interoperability and trust.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_encryption</span></code> module is fundamental to maintaining the confidentiality, integrity, and authenticity of sensitive data across OpenSPP's social protection and farmer registry operations. It provides a robust and flexible framework for securing critical information, ensuring trust and compliance within the platform.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

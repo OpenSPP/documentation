@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_registry_membership.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-registry-membership">
+  <div class="section" id="g2p-registry-membership">
 <h1>G2P Registry: Membership<a class="headerlink" href="#g2p-registry-membership" title="Permalink to this headline">#</a></h1>
 <p>The G2P Registry Membership module defines and manages the relationships between individuals and groups within OpenSPP. It provides the framework for assigning individuals to various groups, specifying their roles, and tracking their membership over time, ensuring accurate and up-to-date group composition data.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module enables OpenSPP to effectively manage the dynamic structure of beneficiaries within social protection programs and farmer registries. It accomplishes this by:</p>
 <ul class="simple">
@@ -1672,8 +1659,8 @@ title="Print to PDF"
 <li><p><strong>Providing Group Composition Insights</strong>: Automatically calculates and displays the total number of individuals associated with each group, offering a quick overview of group size.</p></li>
 </ul>
 <p>This module is crucial for programs that require a clear understanding of who belongs to which group, enabling targeted interventions and accurate reporting at both individual and group levels. For example, it helps identify all members of a household for benefit distribution or list all individuals associated with a specific farmer cooperative.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The G2P Registry Membership module integrates closely with other core OpenSPP components to manage comprehensive registrant data:</p>
 <ul class="simple">
@@ -1683,31 +1670,31 @@ title="Print to PDF"
 <li><p><strong>Queue Job (queue_job)</strong>: This module utilizes the queue job system to efficiently recompute group-level indicators, such as the total number of members, in the background. This ensures that group statistics remain up-to-date without impacting user performance.</p></li>
 </ul>
 <p>This module is foundational, providing the essential structure for understanding how individuals are organized into social units. Other modules can leverage its data to filter beneficiaries by group, understand household composition, or report on group-level demographics.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="flexible-membership-kinds">
+<div class="section" id="flexible-membership-kinds">
 <h3>Flexible Membership Kinds<a class="headerlink" href="#flexible-membership-kinds" title="Permalink to this headline">#</a></h3>
 <p>Users can define various types of membership roles, such as &quot;Head of Household,&quot; &quot;Spouse,&quot; &quot;Child,&quot; or &quot;Dependent.&quot; For specific roles, the system allows configuration to ensure that only one individual can hold that unique role within a given group (e.g., only one &quot;Head of Household&quot;). This flexibility supports diverse program requirements and social structures.</p>
-</section>
-<section id="membership-lifecycle-and-status">
+</div>
+<div class="section" id="membership-lifecycle-and-status">
 <h3>Membership Lifecycle and Status<a class="headerlink" href="#membership-lifecycle-and-status" title="Permalink to this headline">#</a></h3>
 <p>The module captures the start and, optionally, the end date of an individual's membership in a group. Based on these dates, the system automatically determines if a membership is currently &quot;active&quot; or &quot;inactive.&quot; This provides a clear historical record of affiliations and ensures that only current members are considered for active program participation.</p>
-</section>
-<section id="automated-group-composition-and-validation">
+</div>
+<div class="section" id="automated-group-composition-and-validation">
 <h3>Automated Group Composition and Validation<a class="headerlink" href="#automated-group-composition-and-validation" title="Permalink to this headline">#</a></h3>
 <p>The module automatically calculates and displays the &quot;Number of individuals&quot; within each group, providing an immediate overview of its size. It enforces crucial data integrity rules, preventing an individual from being listed as a member of the same group multiple times and validating that unique roles are respected across all group members.</p>
-</section>
-<section id="seamless-data-navigation">
+</div>
+<div class="section" id="seamless-data-navigation">
 <h3>Seamless Data Navigation<a class="headerlink" href="#seamless-data-navigation" title="Permalink to this headline">#</a></h3>
 <p>From any group membership record, users can easily navigate to view the full profile of the individual member or the details of the associated group. This feature enhances usability by providing direct access to related information, streamlining data review and management workflows.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Registry Membership module is vital for accurately modeling the social structures of beneficiaries, enabling OpenSPP to manage individuals within their relevant group contexts for effective program delivery and comprehensive reporting.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

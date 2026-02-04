@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Registry Key Concepts and Best Practices" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Registry Key Concepts and Best Practices" name="title" />
 <meta content="OpenSPP registry structure best practices with minimalistic approach and four main components for data organization" name="description" />
 <meta content="OpenSPP, registry concepts, data organization, minimalistic approach, registry structure, social protection" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/overview/concepts/registry_key_concepts.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1754,9 +1741,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="organizing-data-in-the-registry">
+  <div class="section" id="organizing-data-in-the-registry">
 <h1>Organizing data in the registry<a class="headerlink" href="#organizing-data-in-the-registry" title="Permalink to this headline">#</a></h1>
-<section id="importance-of-minimizing-data-in-the-registry-for-openspp">
+<div class="section" id="importance-of-minimizing-data-in-the-registry-for-openspp">
 <h2>Importance of minimizing data in the registry for OpenSPP<a class="headerlink" href="#importance-of-minimizing-data-in-the-registry-for-openspp" title="Permalink to this headline">#</a></h2>
 <p>When dealing with private data it is important to maintain a minimalistic approach. This practice offers several key advantages, making the system more efficient, secure, and adaptable.</p>
 <p>Firstly, it enhances privacy and security. By limiting the amount of data stored in the central registry, the risk of exposure in case of a data breach is significantly reduced. This practice also helps comply with data protection regulations by minimizing the amount of personal data held centrally.</p>
@@ -1767,8 +1754,8 @@ title="Print to PDF"
 <p>Balancing core registry data with program-specific data ensures that essential information remains up-to-date and universally accessible, while program-specific details are managed separately for greater precision. This balance supports both the overarching needs of OpenSPP and the specific needs of individual programs.</p>
 <p>Finally, separating static data from dynamic data allows for accurate representation and easy updates. Static data, such as names and birthdates, are stored in the core registry, while dynamic data, like income changes or program participation, are managed as <a class="reference internal" href="../../reference/glossary.html#term-Event-data"><span class="xref std std-term">event data</span></a>. This separation keeps the core registry uncluttered and efficient, facilitating better management and updates.</p>
 <p>By adopting these practices, OpenSPP ensures secure, efficient, and scalable data management, effectively supporting diverse program needs while maintaining a robust core infrastructure.</p>
-</section>
-<section id="deciding-where-to-store-data-in-openspp">
+</div>
+<div class="section" id="deciding-where-to-store-data-in-openspp">
 <h2>Deciding where to store data in OpenSPP<a class="headerlink" href="#deciding-where-to-store-data-in-openspp" title="Permalink to this headline">#</a></h2>
 <p>To determine where different types of data should be stored in OpenSPP, it is essential to categorize the data into one of the following five categories: static core registry, dynamic core registry, static program, dynamic program, or not needed to be stored. This decision process ensures optimal data management, security, and efficiency. Here's a guide to help make these decisions:</p>
 <ol class="arabic simple">
@@ -1842,7 +1829,7 @@ title="Print to PDF"
 </ul>
 </li>
 </ol>
-<section id="steps-to-decide-data-storage">
+<div class="section" id="steps-to-decide-data-storage">
 <h3>Steps to decide data storage<a class="headerlink" href="#steps-to-decide-data-storage" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p><strong>Identify the data type:</strong> Determine if the data is static or dynamic, and whether it applies universally or to a specific program.</p></li>
@@ -1858,16 +1845,16 @@ title="Print to PDF"
 <li><p><strong>Apply the guidelines:</strong> Use the characteristics and guidelines provided above to categorize the data into one of the five categories.</p></li>
 <li><p><strong>Review and confirm:</strong> Regularly review the categorization to ensure it remains appropriate as programs and data usage evolve.</p></li>
 </ol>
-</section>
-<section id="practical-tips">
+</div>
+<div class="section" id="practical-tips">
 <h3>Practical tips<a class="headerlink" href="#practical-tips" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><strong>Collaborate with stakeholders:</strong> Involve program managers and data analysts in the decision-making process to ensure all perspectives are considered.</p></li>
 <li><p><strong>Document decisions:</strong> Keep a record of why each data type was categorized a certain way to maintain clarity and consistency over time.</p></li>
 <li><p><strong>Stay updated with regulations:</strong> Ensure compliance with data protection regulations by regularly reviewing and updating data storage practices.</p></li>
 </ul>
-</section>
-<section id="example-scenario">
+</div>
+<div class="section" id="example-scenario">
 <h3>Example scenario<a class="headerlink" href="#example-scenario" title="Permalink to this headline">#</a></h3>
 <p><strong>Data type:</strong> Household income level</p>
 <ul class="simple">
@@ -1878,9 +1865,9 @@ title="Print to PDF"
 <li><p><strong>Not needed to store it:</strong> No, it is essential data for program eligibility and benefit calculation.</p></li>
 </ul>
 <p><strong>Decision:</strong> Store household income level in the dynamic core registry, considering its periodic changes and its relevance across multiple programs.</p>
-</section>
-</section>
-<section id="key-concepts-for-organizing-data-in-the-openspp-registry">
+</div>
+</div>
+<div class="section" id="key-concepts-for-organizing-data-in-the-openspp-registry">
 <h2>Key concepts for organizing data in the OpenSPP registry<a class="headerlink" href="#key-concepts-for-organizing-data-in-the-openspp-registry" title="Permalink to this headline">#</a></h2>
 <p>OpenSPP's registry is structured around four main components:</p>
 <ul class="simple">
@@ -1890,10 +1877,10 @@ title="Print to PDF"
 <li><p><strong>Change requests</strong></p></li>
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">core</span> <span class="pre">registry</span></code> should maintain minimal information about the registrants to adhere to data minimization principles. This approach ensures the system remains manageable and maintainable over time.</p>
-</section>
-<section id="registrant">
+</div>
+<div class="section" id="registrant">
 <h2>Registrant<a class="headerlink" href="#registrant" title="Permalink to this headline">#</a></h2>
-<section id="definition">
+<div class="section" id="definition">
 <h3>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">#</a></h3>
 <p>Registrants are individuals, families, households, farms, etc., who have provided their information during the intake and registration phase of the delivery chain. Registrants can provide their information either on their initiative (then referred to as applicants) or at the initiative of a public agency or program (e.g., en masse registration/census sweeps). In the latter case, they are not termed applicants because they did not technically “apply” for benefits and services.</p>
 <p>In OpenSPP, there are two primary categories of registrants:</p>
@@ -1908,21 +1895,21 @@ title="Print to PDF"
 <li><p>Use only groups.</p></li>
 <li><p>Use both individuals and groups, linked through the <code class="docutils literal notranslate"><span class="pre">g2p.group.membership</span></code> model, which connects individuals to their respective groups.</p></li>
 </ul>
-<section id="individuals">
+<div class="section" id="individuals">
 <h4>Individuals<a class="headerlink" href="#individuals" title="Permalink to this headline">#</a></h4>
 <p>Individuals represent a single person, which can be a real person or a dummy person. They are the smallest unit of registrant in the OpenSPP registry.</p>
-</section>
-<section id="groups">
+</div>
+<div class="section" id="groups">
 <h4>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">#</a></h4>
 <p>Groups represent a collection of individuals that share something in common, such as a family, household, farm, community, village, school, company, cooperative, or any other type of group.</p>
 <p>Groups can optionally be nested within other groups, such as a household being part of a cooperative. For this functionality, the <a class="reference internal" href="../../reference/modules/spp_registry_group_hierarchy.html"><span class="doc">spp_registry_group_hierarchy</span></a> module is required.</p>
-</section>
-</section>
-</section>
-<section id="group-membership">
+</div>
+</div>
+</div>
+<div class="section" id="group-membership">
 <h2>Group membership<a class="headerlink" href="#group-membership" title="Permalink to this headline">#</a></h2>
 <p>Group membership in OpenSPP is a crucial feature that connects individuals to various groups, allowing for an organized and structured representation of relationships within the registry. This component ensures that data about how individuals are associated with larger entities like families, households, or organizations is clear and easily manageable.</p>
-<section id="key-elements">
+<div class="section" id="key-elements">
 <h3>Key elements<a class="headerlink" href="#key-elements" title="Permalink to this headline">#</a></h3>
 <p>Group Membership revolves around a few key elements:</p>
 <ol class="arabic simple">
@@ -1932,12 +1919,12 @@ title="Print to PDF"
 <li><p><strong>Status</strong>: The status of a membership is automatically determined based on the end date.
 It can be either &quot;active&quot; if the membership is ongoing or &quot;inactive&quot; if it has ended.</p></li>
 </ol>
-</section>
-<section id="example-structure">
+</div>
+<div class="section" id="example-structure">
 <h3>Example structure<a class="headerlink" href="#example-structure" title="Permalink to this headline">#</a></h3>
 <p>To illustrate, consider a scenario where several farms are part of larger farmer groups. Each farm includes multiple individuals working on them, and these farms can also be associated with different farmer groups. This structure allows for a clear and organized way to manage and visualize the relationships between individuals and their respective groups.</p>
-<div class="mermaid">
-            graph TD
+<pre  class="mermaid">
+        graph TD
     A(Farmer Group 1) --- B(Farm A)
     A --- C(Farm B)
     D(Farmer Group 2) --- C
@@ -1962,8 +1949,8 @@ It can be either &quot;active&quot; if the membership is ongoing or &quot;inacti
     linkStyle 4 stroke-dasharray: 5,5;
     linkStyle 6 stroke-dasharray: 5,5;
     linkStyle 8 stroke-dasharray: 5,5;
-        </div></section>
-<section id="rules-and-validation">
+    </pre></div>
+<div class="section" id="rules-and-validation">
 <h3>Rules and validation<a class="headerlink" href="#rules-and-validation" title="Permalink to this headline">#</a></h3>
 <p>Certain rules ensure the integrity and consistency of the data:</p>
 <ul class="simple">
@@ -1972,18 +1959,18 @@ It can be either &quot;active&quot; if the membership is ongoing or &quot;inacti
 <li><p><strong>Duplication</strong>: An individual cannot be added to the same group more than once, preventing data redundancy.</p></li>
 </ul>
 <p>By understanding and utilizing the Group Membership feature, users can effectively manage complex relationships within the OpenSPP registry, ensuring that the data remains organized, accurate, and easy to navigate.</p>
-</section>
-</section>
-<section id="event-data">
+</div>
+</div>
+<div class="section" id="event-data">
 <h2>Event data<a class="headerlink" href="#event-data" title="Permalink to this headline">#</a></h2>
 <p>Records of significant occurrences related to registrants, such as registration events, updates, or any other tracked activities.</p>
-</section>
-<section id="change-requests">
+</div>
+<div class="section" id="change-requests">
 <h2>Change requests<a class="headerlink" href="#change-requests" title="Permalink to this headline">#</a></h2>
 <p>Requests for modifications to registrant data, including the workflow for approval and implementation of these changes.</p>
 <p>By integrating the decision-making process for data storage and organizing the core components efficiently, OpenSPP ensures a robust, scalable, and secure system for managing social protection programs. This approach not only supports diverse program needs but also maintains a streamlined and efficient core infrastructure.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

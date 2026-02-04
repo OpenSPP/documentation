@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/registry_management/dms.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1742,10 +1729,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="document-management-system">
+  <div class="section" id="document-management-system">
 <h1>Document Management System<a class="headerlink" href="#document-management-system" title="Permalink to this headline">#</a></h1>
 <p>In this tutorial, you will learn how to use the Document Management System feature in OpenSPP.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>To utilize the DMS feature, you need to:</p>
 <ul class="simple">
@@ -1754,29 +1741,29 @@ title="Print to PDF"
 <li><p>Ensure that the DMS module <a class="reference internal" href="../../reference/modules/spp_dms.html"><span class="doc">spp_dms</span></a> is properly installed and activated. Note that the Change_request (<a class="reference internal" href="../../reference/modules/spp_change_request.html"><span class="doc">spp_change_request</span></a>) module automatically installs the DMS module. To learn installing optional modules, refer to the <strong>Installing Additional Modules</strong> section in the document: <a class="reference internal" href="../../getting_started/module_installation.html"><span class="doc">Module installation</span></a>.</p></li>
 <li><p>A change request must have an attached document.</p></li>
 </ul>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>By the end of this tutorial, you will be able to access and review documents uploaded to OpenSPP, manage these documents effectively, and configure the document types allowed for upload.</p>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
 <p>Make sure you’re logged in as a system administrator or a user with the appropriate access rights. To customize the document types displayed, navigate to the DMS module and select <code class="docutils literal notranslate"><span class="pre">Configuration</span> <span class="pre">→</span> <span class="pre">Categories</span></code>. Once configured, you can browse the auto-generated directories created when a change request is drafted. These directories follow the format <code class="docutils literal notranslate"><span class="pre">CR-[year]-[sequence</span> <span class="pre">number]</span></code>, such as <code class="docutils literal notranslate"><span class="pre">CR-2025-000001</span></code>, and allow you to preview or download documents by directory. To view all uploaded documents across directories, go to <code class="docutils literal notranslate"><span class="pre">DMS</span> <span class="pre">→</span> <span class="pre">Files</span></code>. This alternative view organizes change requests by their creation date. For improved document management, you can create custom directories by selecting <code class="docutils literal notranslate"><span class="pre">Directories</span> <span class="pre">→</span> <span class="pre">New</span></code>. This lets you define folders where uploaded documents can be stored and organized.</p>
-<section id="configure-document-types">
+<div class="section" id="configure-document-types">
 <h3>Configure document types<a class="headerlink" href="#configure-document-types" title="Permalink to this headline">#</a></h3>
 <p>To modify document types in DMS, navigate to <code class="docutils literal notranslate"><span class="pre">DMS</span> <span class="pre">→</span> <span class="pre">Configuration</span> <span class="pre">→</span> <span class="pre">Categories</span></code>.<br />
 <img alt="Dms configure id types" src="../../_images/dms_configure_id_types.png" /></p>
-<section id="create-new-document-type">
+<div class="section" id="create-new-document-type">
 <h4>Create new document type<a class="headerlink" href="#create-new-document-type" title="Permalink to this headline">#</a></h4>
 <p>Click <strong>New</strong> to create a new document type. Enter the name of the ID type, then click <strong>Save</strong> to apply the changes.<br />
 <img alt="Dms modify document type" src="user_guide/registry_management/dms/Dms_modify_document_type.png" /></p>
-</section>
-<section id="edit-document-type">
+</div>
+<div class="section" id="edit-document-type">
 <h4>Edit document type<a class="headerlink" href="#edit-document-type" title="Permalink to this headline">#</a></h4>
 <p>To edit a document type, click on the name of the document type to edit it directly. Then click <strong>Save</strong> to complete the changes.<br />
 <img alt="Dms modify document type" src="../../_images/dms_modify_document_type.png" /></p>
-</section>
-<section id="delete-document-type">
+</div>
+<div class="section" id="delete-document-type">
 <h4>Delete document type<a class="headerlink" href="#delete-document-type" title="Permalink to this headline">#</a></h4>
 <p>To delete a document type, enable the checkbox beside the document types you wish to delete, then click on <strong>Actions → Delete</strong>.<br />
 <img alt="Dms delete document type" src="../../_images/dms_delete_document_type.png" /></p>
@@ -1784,9 +1771,9 @@ title="Print to PDF"
 <div><p><strong>Note:</strong> Attempting to delete a document type that is already being used by a change request will display an error message.<br />
 <img alt="Dms delete error" src="../../_images/dms_delete_error.png" /></p>
 </div></blockquote>
-</section>
-</section>
-<section id="preview-and-download-documents">
+</div>
+</div>
+<div class="section" id="preview-and-download-documents">
 <h3>Preview and download documents<a class="headerlink" href="#preview-and-download-documents" title="Permalink to this headline">#</a></h3>
 <p>To preview attached documents, navigate to <code class="docutils literal notranslate"><span class="pre">DMS</span> <span class="pre">→</span> <span class="pre">Files</span></code>. All attached documents from change requests should be listed on this page.<br />
 <img alt="Dms files page" src="../../_images/dms_files_page.png" /></p>
@@ -1794,30 +1781,30 @@ title="Print to PDF"
 <div><p><strong>Note:</strong> The number shown next to each change request or directory represents the total number of documents attached to that specific request or directory.<br />
 <img alt="Dms attachments count" src="../../_images/dms_attachments_count.png" /></p>
 </div></blockquote>
-<section id="preview-document">
+<div class="section" id="preview-document">
 <h4>Preview document<a class="headerlink" href="#preview-document" title="Permalink to this headline">#</a></h4>
 <p>To preview a document, click on the eye button. A window should appear displaying a preview of the document.<br />
 <img alt="Dms appear as pdf" src="../../_images/dms_appear_as_pdf.png" /></p>
-</section>
-<section id="download-document">
+</div>
+<div class="section" id="download-document">
 <h4>Download document<a class="headerlink" href="#download-document" title="Permalink to this headline">#</a></h4>
 <p>To download a document from a directory, click on a directory and it should display all documents associated with the directory.<br />
 <img alt="Dms download attachment from files" src="../../_images/dms_download_attachment_from_files.png" /></p>
 <p>Click on the document you wish to download and click on the download icon.<br />
 <img alt="Dms download button" src="../../_images/dms_download_button.png" /></p>
-</section>
-<section id="edit-document-attachment">
+</div>
+<div class="section" id="edit-document-attachment">
 <h4>Edit document attachment<a class="headerlink" href="#edit-document-attachment" title="Permalink to this headline">#</a></h4>
 <p>It is also possible to edit a document attachment in a change request. Click on the directory or change request you wish to update.<br />
 <img alt="Dms select change request" src="../../_images/dms_select_change_request.png" /></p>
 <p>Select a file from that change request that you wish to modify, then click on the pencil icon to re-upload another document.<br />
 <img alt="Dms edit document attachment" src="../../_images/dms_edit_document_attachment.png" /></p>
-</section>
-</section>
-<section id="navigating-directories">
+</div>
+</div>
+<div class="section" id="navigating-directories">
 <h3>Navigating Directories<a class="headerlink" href="#navigating-directories" title="Permalink to this headline">#</a></h3>
 <p>An alternative view is available with the <strong>Directories</strong> feature. This feature displays a list of directories along with their subdirectories.</p>
-<section id="create-directory">
+<div class="section" id="create-directory">
 <h4>Create Directory<a class="headerlink" href="#create-directory" title="Permalink to this headline">#</a></h4>
 <p>It is also possible to create your own directory and name it accordingly. This can help in organizing important documents. Navigate to <code class="docutils literal notranslate"><span class="pre">Directories</span> <span class="pre">→</span> <span class="pre">New</span></code>. Define the name of the directory and check the box <strong>Is Root Directory</strong>.<br />
 <img alt="Dms set root directory" src="../../_images/dms_set_root_directory.png" /></p>
@@ -1828,22 +1815,22 @@ title="Print to PDF"
 <blockquote>
 <div><p><strong>Note:</strong> It is important to create a subdirectory for each root directory, as file uploads will be done within their subdirectory.</p>
 </div></blockquote>
-</section>
-<section id="uploading-files-in-subdirectory">
+</div>
+<div class="section" id="uploading-files-in-subdirectory">
 <h4>Uploading files in subdirectory<a class="headerlink" href="#uploading-files-in-subdirectory" title="Permalink to this headline">#</a></h4>
 <p>To upload a file, navigate to <code class="docutils literal notranslate"><span class="pre">DMS</span> <span class="pre">→</span> <span class="pre">Directories</span></code>. Click on a parent directory, then click on its subdirectory.<br />
 <img alt="Dms sub directory upload" src="../../_images/dms_sub_directory_upload.png" /></p>
 <p>On the <strong>Files</strong> tab, click on <strong>Add a line</strong>, click on the input field to select the ID type, then click on <strong>Upload your file</strong> to select the document. Click on <strong>Save</strong> to complete the upload.<br />
 <img alt="Dms upload file modal" src="../../_images/dms_upload_file_modal.png" /></p>
-</section>
-<section id="view-all-documents-per-directory">
+</div>
+<div class="section" id="view-all-documents-per-directory">
 <h4>View all documents per directory<a class="headerlink" href="#view-all-documents-per-directory" title="Permalink to this headline">#</a></h4>
 <p>Navigate to <code class="docutils literal notranslate"><span class="pre">DMS</span> <span class="pre">→</span> <span class="pre">Directories</span></code> to view all directories, subdirectories, and attachment counts on one page. When in the Directories page, the number beside the change request or directory indicates the count of subdirectories it has.<br />
 <img alt="Dms attachments count" src="../../_images/dms_attachments_count.png" /></p>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_import_dci_api.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="import-dci-api">
+  <div class="section" id="import-dci-api">
 <h1>Import: DCI API<a class="headerlink" href="#import-dci-api" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_import_dci_api</span></code> module integrates OpenSPP with external Digital Civil Identity (DCI) compliant registries, enabling the secure and automated import and synchronization of individual and family registrant data. This module ensures OpenSPP programs have access to current and validated information from authoritative sources.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines the process of populating and updating OpenSPP's registrant database, providing a robust bridge to external civil registries. It accomplishes the following key objectives:</p>
 <ul class="simple">
@@ -1674,8 +1661,8 @@ title="Print to PDF"
 <li><p><strong>Facilitate Family Group Creation</strong>: Identifies family relationships (e.g., mother-child) from external data and automatically creates corresponding family groups within OpenSPP, improving household-level program targeting.</p></li>
 </ul>
 <p>This module is crucial for maintaining data accuracy and consistency, allowing social protection programs and farmer registries to operate with reliable and current beneficiary information.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_import_dci_api</span></code> module builds upon and integrates with several core OpenSPP modules to deliver its functionality:</p>
 <ul class="simple">
@@ -1684,32 +1671,32 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="g2p_registry_individual.html"><span class="doc std std-doc">G2P Registry: Individual</span></a></strong>: This module is extended to store the detailed demographic information of imported individuals, such as names, birthdates, and gender, enriching individual registrant profiles.</p></li>
 <li><p><strong><a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">G2P Programs</span></a></strong> and <strong><a class="reference internal" href="spp_programs.html"><span class="doc std std-doc">OpenSPP Programs</span></a></strong>: The imported and synchronized registrant data, including individuals and their associated family groups, directly informs program eligibility and entitlement management within these modules. Programs can then leverage this accurate data for beneficiary selection.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_import_dci_api</span></code> module provides a suite of features to manage the import process efficiently:</p>
-<section id="external-registry-connection-and-search-criteria">
+<div class="section" id="external-registry-connection-and-search-criteria">
 <h3>External Registry Connection and Search Criteria<a class="headerlink" href="#external-registry-connection-and-search-criteria" title="Permalink to this headline">#</a></h3>
 <p>Users define specific search criteria to fetch data from external DCI registries. This involves selecting a configured external data source and specifying filters such as birthdate ranges (e.g., &quot;beneficiaries born between 2020-01-01 and 2021-12-31&quot;) or specific geographical locations. The module then securely authenticates with the external registry and initiates data retrieval based on these criteria.</p>
-</section>
-<section id="automated-registrant-import-and-updates">
+</div>
+<div class="section" id="automated-registrant-import-and-updates">
 <h3>Automated Registrant Import and Updates<a class="headerlink" href="#automated-registrant-import-and-updates" title="Permalink to this headline">#</a></h3>
 <p>Upon successful data retrieval, the module automatically processes individual records. It checks if an individual already exists in OpenSPP using unique identifiers. If a record is new, it creates a complete registrant profile (<code class="docutils literal notranslate"><span class="pre">res.partner</span></code>), including their full name, family name, given name, middle name, gender, and birthdate. If an individual already exists, their profile is updated with the latest information from the DCI registry. The system tracks whether a record was newly created or updated.</p>
-</section>
-<section id="hierarchical-location-data-management">
+</div>
+<div class="section" id="hierarchical-location-data-management">
 <h3>Hierarchical Location Data Management<a class="headerlink" href="#hierarchical-location-data-management" title="Permalink to this headline">#</a></h3>
 <p>The module imports and structures geographical data from external registries, such as birthplaces. It maintains a hierarchical structure for locations (e.g., <code class="docutils literal notranslate"><span class="pre">spp.crvs.location.type</span></code> for 'Country', 'Province', 'District', and <code class="docutils literal notranslate"><span class="pre">spp.crvs.location</span></code> for specific instances like 'Philippines', 'Central Luzon', 'Pampanga'). This allows OpenSPP to accurately record and search for registrants based on their geographical attributes.</p>
-</section>
-<section id="family-group-creation-and-relationship-management">
+</div>
+<div class="section" id="family-group-creation-and-relationship-management">
 <h3>Family Group Creation and Relationship Management<a class="headerlink" href="#family-group-creation-and-relationship-management" title="Permalink to this headline">#</a></h3>
 <p>The module identifies relationships within the imported data, particularly mother-child links. If a mother and child are imported, it automatically creates or updates a family group (<code class="docutils literal notranslate"><span class="pre">res.partner</span></code> with <code class="docutils literal notranslate"><span class="pre">is_group=True</span></code>) and links both the mother and child to this group using <code class="docutils literal notranslate"><span class="pre">g2p.group.membership</span></code>. This feature also calculates and stores the number of children under 12 months within a family group, enabling programs to target specific household compositions.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_import_dci_api</span></code> module is a vital component of OpenSPP, enabling efficient, accurate, and automated integration with external civil registries to ensure that social protection programs and farmer registries operate with reliable and current beneficiary data.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

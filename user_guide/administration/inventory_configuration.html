@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Inventory configuration" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Inventory configuration" name="title" />
 <meta content="Configure OpenSPP inventory settings including storage locations and units of measure for in-kind and basket entitlement modules" name="description" />
 <meta content="OpenSPP, inventory, configuration, storage locations, units of measure, entitlements" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/administration/inventory_configuration.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1700,7 +1687,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="inventory-configuration">
+  <div class="section" id="inventory-configuration">
 <h1>Inventory configuration<a class="headerlink" href="#inventory-configuration" title="Permalink to this headline">#</a></h1>
 <p>OpenSPP's In-Kind and Basket Entitlement modules leverage Odoo's powerful Inventory application to manage the distribution of goods and services to beneficiaries.
 To ensure these modules function correctly, specific features within the Inventory settings must be activated.</p>
@@ -1709,7 +1696,7 @@ To ensure these modules function correctly, specific features within the Invento
 <li><p><strong>Storage locations:</strong> Allows for the management of specific locations within a warehouse (e.g., shelves, bins), which is essential for detailed stock tracking.</p></li>
 <li><p><strong>Units of Measure:</strong> Enables the use of different units for buying, selling, and storing products (e.g., kilograms, boxes, individual units), which is crucial for accurate entitlement definition.</p></li>
 </ul>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>To configure the Inventory settings, you will need:</p>
 <ul class="simple">
@@ -1718,34 +1705,34 @@ For details on user roles and access levels, refer to the <a class="reference in
 <li><p>The <strong>Inventory</strong> (<code class="docutils literal notranslate"><span class="pre">stock</span></code>) module must be installed in your OpenSPP instance.
 For details on installing additional modules, refer to the <a class="reference internal" href="../../getting_started/module_installation.html"><span class="doc">Module installation</span></a> documentation.</p></li>
 </ul>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>After completing this guide, you will have enabled the necessary Inventory configurations to support the <a class="reference internal" href="../../reference/modules/spp_entitlement_in_kind.html"><span class="doc">spp_entitlement_in_kind</span></a> and <a class="reference internal" href="../../reference/modules/spp_entitlement_basket.html"><span class="doc">spp_entitlement_basket</span></a> modules, ensuring proper management of products for distribution.</p>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
 <p>The process involves navigating to the Inventory settings and activating two key options: Storage Locations and Units of Measure.</p>
-<section id="enabling-storage-locations">
+<div class="section" id="enabling-storage-locations">
 <h3>Enabling storage locations<a class="headerlink" href="#enabling-storage-locations" title="Permalink to this headline">#</a></h3>
 <p>This feature allows you to manage a structured warehouse with specific locations.</p>
-<section id="navigate-to-inventory-settings">
+<div class="section" id="navigate-to-inventory-settings">
 <h4>Navigate to inventory settings<a class="headerlink" href="#navigate-to-inventory-settings" title="Permalink to this headline">#</a></h4>
 <ol class="arabic simple">
 <li><p>Click on the menu icon in the top-left corner and select <strong>Inventory</strong>.</p></li>
 <li><p>In the <strong>Inventory</strong> dashboard, click on the <strong>Configuration</strong> menu and select <strong>Settings</strong>.</p></li>
 </ol>
 <p><img alt="OpenSPP interface showing the main menu with Inventory selected and Configuration submenu with Settings option highlighted" src="../../_images/A-step01-navigate-to-inventory-settings.jpg" /></p>
-</section>
-<section id="activate-storage-locations">
+</div>
+<div class="section" id="activate-storage-locations">
 <h4>Activate storage locations<a class="headerlink" href="#activate-storage-locations" title="Permalink to this headline">#</a></h4>
 <ol class="arabic simple">
 <li><p>On the <strong>Settings</strong> page, scroll down to the <strong>Warehouse</strong> section.</p></li>
 <li><p>Check the box next to <strong>Storage Locations</strong>.</p></li>
 </ol>
 <p><img alt="Inventory Settings page displaying the Warehouse section with the Storage Locations checkbox available for activation" src="../../_images/A-step02-activate-storage-locations.jpg" /></p>
-</section>
-<section id="save-the-configuration">
+</div>
+<div class="section" id="save-the-configuration">
 <h4>Save the configuration<a class="headerlink" href="#save-the-configuration" title="Permalink to this headline">#</a></h4>
 <ol class="arabic simple">
 <li><p>After checking the box, a <strong>Save</strong> button will appear at the top of the page.</p></li>
@@ -1753,37 +1740,37 @@ For details on installing additional modules, refer to the <a class="reference i
 The page will reload with the new setting enabled.</p></li>
 </ol>
 <p><img alt="Inventory Settings page showing the Save button at the top after enabling Storage Locations configuration" src="../../_images/A-step03-save-configuration.jpg" /></p>
-</section>
-</section>
-<section id="enabling-units-of-measure">
+</div>
+</div>
+<div class="section" id="enabling-units-of-measure">
 <h3>Enabling Units of Measure<a class="headerlink" href="#enabling-units-of-measure" title="Permalink to this headline">#</a></h3>
 <p>This feature is essential for defining product quantities in different units.</p>
-<section id="id1">
+<div class="section" id="id1">
 <h4>Navigate to inventory settings<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
 <p>If you are not already on the settings page:</p>
 <ol class="arabic simple">
 <li><p>Go to the <strong>Inventory</strong> application.</p></li>
 <li><p>Click on <strong>Configuration</strong> &gt; <strong>Settings</strong>.</p></li>
 </ol>
-</section>
-<section id="activate-units-of-measure">
+</div>
+<div class="section" id="activate-units-of-measure">
 <h4>Activate Units of Measure<a class="headerlink" href="#activate-units-of-measure" title="Permalink to this headline">#</a></h4>
 <ol class="arabic simple">
 <li><p>On the <strong>Settings</strong> page, scroll down to the <strong>Products</strong> section.</p></li>
 <li><p>Check the box next to <strong>Units of Measure</strong>.</p></li>
 </ol>
 <p><img alt="Inventory Settings page showing the Products section with the Units of Measure checkbox ready for activation" src="../../_images/B-step02-activate-unit-of-measure.jpg" /></p>
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h4>Save the configuration<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <ol class="arabic simple">
 <li><p>Click the <strong>Save</strong> button at the top of the page to apply the changes.</p></li>
 </ol>
 <p><img alt="Inventory Settings page with the Save button highlighted at the top after enabling Units of Measure configuration" src="../../_images/B-step03-save-configuration.jpg" /></p>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
 
               </div>

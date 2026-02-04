@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Developer mode (debug mode)" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Developer mode (debug mode)" name="title" />
 <meta content="Guide to activating and using OpenSPP developer mode for accessing advanced development and debugging tools" name="description" />
 <meta content="OpenSPP, developer mode, debug mode, development tools, debugging, advanced settings" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../_static/search_shortcut.js"></script>
     <script src="../_static/version_switcher.js"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/developer_mode.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1608,10 +1595,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="developer-mode-debug-mode">
+  <div class="section" id="developer-mode-debug-mode">
 <span id="developer-mode"></span><h1>Developer mode (debug mode)<a class="headerlink" href="#developer-mode-debug-mode" title="Permalink to this headline">#</a></h1>
 <p>The developer mode (or debug mode) unlocks access to extra and advanced tools in OpenSPP. There are two ways to activate the developer mode; through the Settings or the URL.</p>
-<section id="activate-through-the-settings">
+<div class="section" id="activate-through-the-settings">
 <h2>Activate through the settings<a class="headerlink" href="#activate-through-the-settings" title="Permalink to this headline">#</a></h2>
 <p>Open the OpenSPP database settings, go to <strong>Settings → General Settings → Developer Tools</strong> and click <strong>Activate the developer mode</strong>. Make sure that you have installed at least one app to see the <strong>Developer Tools</strong> section in the <strong>Settings</strong> module.</p>
 <p><img alt="Overview of the debug options under settings in Odoo." src="../_images/1.png" /></p>
@@ -1620,8 +1607,8 @@ title="Print to PDF"
 <p><em>Activate the developer mode (with assets)</em> is used by developers; <em>Activate the developer mode (with tests assets)</em> is used by developers and testers.</p>
 </div>
 <p>Once activated, the <em>Deactivate the developer mode</em> option becomes available.</p>
-</section>
-<section id="activate-through-the-url">
+</div>
+<div class="section" id="activate-through-the-url">
 <h2>Activate through the URL<a class="headerlink" href="#activate-through-the-url" title="Permalink to this headline">#</a></h2>
 <p>You can activate the debug mode by adding an extra query string to the database's URL.
 To activate, add <code class="docutils literal notranslate"><span class="pre">?debug=1</span></code> or <code class="docutils literal notranslate"><span class="pre">?debug=true</span></code> after <code class="docutils literal notranslate"><span class="pre">/web</span></code> in the URL.
@@ -1631,8 +1618,8 @@ To deactivate, change the value to <code class="docutils literal notranslate"><s
 <p class="admonition-title">Tip</p>
 <p>Additional modes are available for developers: <code class="docutils literal notranslate"><span class="pre">?debug=assets</span></code> enables the assets mode, and <code class="docutils literal notranslate"><span class="pre">?debug=tests</span></code> enables the tests mode.</p>
 </div>
-</section>
-<section id="locate-the-developer-mode-tools">
+</div>
+<div class="section" id="locate-the-developer-mode-tools">
 <h2>Locate the developer mode tools<a class="headerlink" href="#locate-the-developer-mode-tools" title="Permalink to this headline">#</a></h2>
 <p>The user can access the developer mode tools by clicking on the <em>Open Developer Tools</em> button or the bug icon located in the OpenSPP header, after activating developer mode.</p>
 <p><img alt="OpenSPP displays the console page and the debug icon." src="../_images/3.png" /></p>
@@ -1648,8 +1635,8 @@ On a page that has filters, actions, and view options, the developer mode tools 
 <p class="admonition-title">Note</p>
 <p>This page is adapted from the Odoo documentation on <a class="reference external" href="https://www.odoo.com/documentation/17.0/applications/general/developer_mode.html#developer-mode" title="(in Odoo v17.0)"><span>Developer mode (debug mode)</span></a>.</p>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

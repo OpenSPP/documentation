@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_theme.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1638,10 +1625,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-theme">
+  <div class="section" id="g2p-theme">
 <h1>G2P Theme<a class="headerlink" href="#g2p-theme" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_theme</span></code> module customizes the visual identity and user experience of the OpenSPP platform, particularly for user authentication and public-facing elements. It establishes a consistent brand presence and enhances security for specific user types within social protection programs.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module provides a tailored and secure user interface experience for OpenSPP deployments. It ensures a professional and branded environment while implementing crucial access controls.</p>
 <ul class="simple">
@@ -1651,15 +1638,15 @@ title="Print to PDF"
 <li><p><strong>Streamlined Password Management:</strong> Provides a robust and user-friendly process for password resets, including clear validation to guide users effectively.</p></li>
 <li><p><strong>Consistent Platform Branding:</strong> Enables the configuration of a custom favicon, ensuring that the OpenSPP instance reflects the program's or organization's branding across all browser tabs.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_theme</span></code> module integrates closely with core OpenSPP functionalities to deliver its custom features. It builds upon existing frameworks to modify the user interface and authentication processes.</p>
 <p>This module depends on the foundational Base module for core system functionalities and the Web module for the underlying user interface framework. It extends the Auth Signup module to provide custom registration and login page templates, and leverages the Website module for rendering these public-facing pages. By integrating with these modules, <code class="docutils literal notranslate"><span class="pre">g2p_theme</span></code> ensures that its custom branding and security enhancements are seamlessly applied to the standard OpenSPP authentication and user interface.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="custom-user-interface-and-branding">
+<div class="section" id="custom-user-interface-and-branding">
 <h3>Custom User Interface and Branding<a class="headerlink" href="#custom-user-interface-and-branding" title="Permalink to this headline">#</a></h3>
 <p>This module transforms the default OpenSPP interface into a branded experience tailored for social protection programs.</p>
 <ul class="simple">
@@ -1667,21 +1654,21 @@ title="Print to PDF"
 <li><p><strong>System-Wide Favicon:</strong> Organizations can configure a custom favicon, which appears in browser tabs and bookmarks, to maintain a consistent brand presence across the entire OpenSPP application. This small detail reinforces the professional image of the platform.</p></li>
 <li><p><strong>Dynamic Window Titles:</strong> The module dynamically adjusts the browser window title, providing more informative context to users as they navigate different sections of the OpenSPP backend.</p></li>
 </ul>
-</section>
-<section id="enhanced-user-access-control">
+</div>
+<div class="section" id="enhanced-user-access-control">
 <h3>Enhanced User Access Control<a class="headerlink" href="#enhanced-user-access-control" title="Permalink to this headline">#</a></h3>
 <p>The module introduces specific security measures to manage user access, particularly for beneficiaries or program participants.</p>
 <ul class="simple">
 <li><p><strong>Registrant Login Restriction:</strong> A crucial security feature prevents users designated as &quot;registrants&quot; (e.g., beneficiaries or farmers) from logging directly into the administrative backend of OpenSPP. This ensures that registrants can only access the system through intended public or self-service portals, protecting sensitive program data.</p></li>
 <li><p><strong>Secure Password Reset Process:</strong> The module refines the password reset workflow, ensuring that users can only reset their password if their login or email address uniquely identifies a single user in the system. This validation prevents ambiguity and enhances the security of the password recovery process.</p></li>
 </ul>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_theme</span></code> module is essential for delivering a branded, secure, and user-friendly experience within OpenSPP, ensuring both visual consistency and robust access control for social protection programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

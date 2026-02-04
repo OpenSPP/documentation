@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/administration/security_tuning.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1640,12 +1627,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="security-and-performance-tuning">
+  <div class="section" id="security-and-performance-tuning">
 <h1>Security and performance tuning<a class="headerlink" href="#security-and-performance-tuning" title="Permalink to this headline">#</a></h1>
 <p>This guide provides essential recommendations for securing your OpenSPP instance and tuning its performance for production environments. It covers database security, firewall setup, SSL/TLS configuration with Nginx, and implementing regular backups. Additionally, it offers tips on performance tuning, including adjusting worker processes, memory limits, and PostgreSQL settings to handle high-load scenarios.</p>
-<section id="security-recommendations">
+<div class="section" id="security-recommendations">
 <h2>Security recommendations<a class="headerlink" href="#security-recommendations" title="Permalink to this headline">#</a></h2>
-<section id="database-security-configuration">
+<div class="section" id="database-security-configuration">
 <h3>1. Database security configuration<a class="headerlink" href="#database-security-configuration" title="Permalink to this headline">#</a></h3>
 <p>After initial setup and database creation, it's strongly recommended to modify the configuration file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/openspp/odoo.conf
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p>Initial setup phase</p></li>
 <li><p>When multiple databases need frequent management</p></li>
 </ul>
-</section>
-<section id="firewall-configuration">
+</div>
+<div class="section" id="firewall-configuration">
 <h3>2. Firewall configuration<a class="headerlink" href="#firewall-configuration" title="Permalink to this headline">#</a></h3>
 <p><strong>Install ufw</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>ufw
@@ -1696,8 +1683,8 @@ title="Print to PDF"
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span>
 </pre></div>
 </div>
-</section>
-<section id="ssl-tls-with-nginx-recommended-for-production">
+</div>
+<div class="section" id="ssl-tls-with-nginx-recommended-for-production">
 <h3>3. SSL/TLS with Nginx (Recommended for Production)<a class="headerlink" href="#ssl-tls-with-nginx-recommended-for-production" title="Permalink to this headline">#</a></h3>
 <p>Run the following commands to install nginx, certbot and create a file in <code class="docutils literal notranslate"><span class="pre">/etc/nginx/sites-available/openspp</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>nginx<span class="w"> </span>certbot<span class="w"> </span>python3-certbot-nginx
@@ -1760,8 +1747,8 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="
 sudo<span class="w"> </span>certbot<span class="w"> </span>--nginx<span class="w"> </span>-d<span class="w"> </span>example.com
 </pre></div>
 </div>
-</section>
-<section id="regular-backups">
+</div>
+<div class="section" id="regular-backups">
 <h3>4. Regular backups<a class="headerlink" href="#regular-backups" title="Permalink to this headline">#</a></h3>
 <p>Create a backup script:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nano<span class="w"> </span>/usr/local/bin/openspp-backup.sh
@@ -1793,9 +1780,9 @@ find<span class="w"> </span><span class="nv">$BACKUP_DIR</span><span class="w"> 
 <span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;0 2 * * * /usr/local/bin/openspp-backup.sh&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>crontab<span class="w"> </span>-
 </pre></div>
 </div>
-</section>
-</section>
-<section id="performance-tuning">
+</div>
+</div>
+<div class="section" id="performance-tuning">
 <h2>Performance tuning<a class="headerlink" href="#performance-tuning" title="Permalink to this headline">#</a></h2>
 <p>For production environments with high load:</p>
 <ol class="arabic">
@@ -1834,8 +1821,8 @@ find<span class="w"> </span><span class="nv">$BACKUP_DIR</span><span class="w"> 
 </div>
 </li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

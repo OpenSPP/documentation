@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_encryption_keymanager.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-encryption-keymanager">
+  <div class="section" id="g2p-encryption-keymanager">
 <h1>G2P Encryption Keymanager<a class="headerlink" href="#g2p-encryption-keymanager" title="Permalink to this headline">#</a></h1>
 <p>The G2P Encryption Keymanager module integrates OpenSPP with an external Key Management System (KMS) to provide robust cryptographic services. It enables secure encryption, decryption, digital signing, and verification of sensitive program data, ensuring data confidentiality and integrity without OpenSPP directly managing cryptographic keys.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module establishes a secure bridge to external Key Management Systems, centralizing the management of cryptographic keys and operations. It significantly enhances OpenSPP's data security posture by:</p>
 <ul class="simple">
@@ -1672,37 +1659,37 @@ title="Print to PDF"
 <li><p><strong>Configurable Integration:</strong> Offers flexible configuration options for connecting to various KMS solutions, allowing administrators to define API endpoints, authentication details, and application-specific parameters for different cryptographic operations.</p></li>
 </ul>
 <p>This module is crucial for safeguarding sensitive information within OpenSPP, helping programs meet stringent data protection and privacy requirements.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The G2P Encryption Keymanager module extends the foundational <a class="reference internal" href="g2p_encryption.html"><span class="doc std std-doc">G2P Encryption</span></a> module. It specifically implements the &quot;Keymanager&quot; type of encryption provider within the <code class="docutils literal notranslate"><span class="pre">g2p.encryption.provider</span></code> model.</p>
 <p>This module relies on the <a class="reference internal" href="g2p_encryption.html"><span class="doc std std-doc">G2P Encryption</span></a> module to define the standard interfaces for cryptographic operations. By implementing these interfaces, the Keymanager module allows any other OpenSPP module that requires encryption or digital signing to leverage an external Key Management System seamlessly. Modules dealing with sensitive data can simply select &quot;Keymanager&quot; as their preferred encryption provider via the base <code class="docutils literal notranslate"><span class="pre">g2p_encryption</span></code> framework, inheriting its robust external key management capabilities.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The G2P Encryption Keymanager module provides several key features to manage and utilize external cryptographic services effectively.</p>
-<section id="data-encryption-and-decryption-services">
+<div class="section" id="data-encryption-and-decryption-services">
 <h3>Data Encryption and Decryption Services<a class="headerlink" href="#data-encryption-and-decryption-services" title="Permalink to this headline">#</a></h3>
 <p>This module enables OpenSPP to encrypt and decrypt sensitive data by securely interfacing with the configured Key Management System. When data needs protection, it is sent to the KMS for encryption, and similarly, encrypted data can be sent back for decryption. This process uses application-specific identifiers, such as &quot;REGISTRATION&quot; or &quot;ENCRYPT&quot;, allowing the KMS to apply distinct key policies based on the data's context.</p>
-</section>
-<section id="digital-signature-and-verification">
+</div>
+<div class="section" id="digital-signature-and-verification">
 <h3>Digital Signature and Verification<a class="headerlink" href="#digital-signature-and-verification" title="Permalink to this headline">#</a></h3>
 <p>The module supports generating and verifying JSON Web Signatures (JWS), crucial for ensuring the integrity and authenticity of data. Users can sign various data types, including structured JSON objects or plain text, with options to include the original payload or associated certificate details in the signature. This functionality is vital for confirming that sensitive documents or messages originate from a trusted source and have not been altered.</p>
-</section>
-<section id="secure-key-manager-authentication">
+</div>
+<div class="section" id="secure-key-manager-authentication">
 <h3>Secure Key Manager Authentication<a class="headerlink" href="#secure-key-manager-authentication" title="Permalink to this headline">#</a></h3>
 <p>The module handles the complex process of authenticating with the external Key Management System. It uses configured client IDs, client secrets, and grant types to acquire and refresh access tokens automatically. This ensures that OpenSPP maintains a secure and authorized connection to the KMS for all cryptographic operations, preventing unauthorized access to key management functions.</p>
-</section>
-<section id="configurable-external-kms-connection">
+</div>
+<div class="section" id="configurable-external-kms-connection">
 <h3>Configurable External KMS Connection<a class="headerlink" href="#configurable-external-kms-connection" title="Permalink to this headline">#</a></h3>
 <p>Administrators can configure all necessary details for connecting OpenSPP to an external Key Management System. This includes specifying the KMS API base URL, authentication URL, and setting timeouts for API calls. Furthermore, the module allows for defining specific application and reference IDs for both encryption and signing operations, providing granular control over how different OpenSPP processes interact with the KMS and its key policies.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Encryption Keymanager module is essential for OpenSPP, providing robust, external key-managed cryptographic services to secure sensitive program data and ensure data integrity.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

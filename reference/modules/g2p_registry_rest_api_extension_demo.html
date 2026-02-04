@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_registry_rest_api_extension_demo.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1614,10 +1601,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-registry-rest-api-extension-demo">
+  <div class="section" id="g2p-registry-rest-api-extension-demo">
 <h1>G2P Registry: Rest API Extension Demo<a class="headerlink" href="#g2p-registry-rest-api-extension-demo" title="Permalink to this headline">#</a></h1>
 <p>This module serves as a practical demonstration of how to extend the G2P Registry's REST API. It illustrates how to add custom fields to the data models used by the API, allowing external systems to retrieve or send additional, tailored information without modifying core OpenSPP modules.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module showcases the flexibility of OpenSPP's G2P Registry REST API by demonstrating its extensibility. It provides a clear example for developers to understand how to customize API responses and requests without altering core modules.</p>
 <ul class="simple">
@@ -1626,13 +1613,13 @@ title="Print to PDF"
 <li><p><strong>Provides a Customization Blueprint:</strong> Serves as a practical guide and template for developers looking to add their own custom data fields or modify existing API data models.</p></li>
 <li><p><strong>Facilitates Granular Data Exchange:</strong> Enables more precise and comprehensive data exchange between OpenSPP and integrated external applications by allowing the inclusion of application-specific data points.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module is designed to work as an extension of the core <a class="reference internal" href="g2p_registry_rest_api.html"><span class="doc std std-doc">G2P Registry: Rest API Module</span></a>. It specifically depends on <code class="docutils literal notranslate"><span class="pre">g2p_registry_rest_api</span></code> to access and extend its defined data models.</p>
 <p>Instead of providing new standalone functionality, this module integrates by modifying the structure of data exchanged through the <code class="docutils literal notranslate"><span class="pre">g2p_registry_rest_api</span></code>. It demonstrates how to add new fields to the existing <code class="docutils literal notranslate"><span class="pre">GroupInfoOut</span></code> data model, which is used when external systems request group information from the G2P Registry. This approach allows for non-disruptive customization of API payloads.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>This module primarily focuses on demonstrating how to extend API data models, rather than introducing new standalone features.</p>
 <ul class="simple">
@@ -1643,12 +1630,12 @@ Specifically, the module extends the <code class="docutils literal notranslate">
 <li><p><strong>Blueprint for Custom API Payloads:</strong>
 Beyond the 'active' status, this module acts as a general blueprint. Developers can follow this pattern to add any number of custom fields, such as specific identifiers, statuses, or related data, to other API data models (e.g., individual profiles, program enrollments) exposed by the <a class="reference internal" href="g2p_registry_rest_api.html"><span class="doc std std-doc">G2P Registry: Rest API Module</span></a>. This ensures the API can be tailored to meet diverse integration requirements.</p></li>
 </ul>
-</section>
-<section id="conclusion">
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_registry_rest_api_extension_demo</span></code> module serves as an essential guide, demonstrating the powerful extensibility of OpenSPP's G2P Registry REST API for tailored data exchange and integration.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

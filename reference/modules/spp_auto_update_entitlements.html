@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_auto_update_entitlements.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="auto-update-entitlements">
+  <div class="section" id="auto-update-entitlements">
 <h1>Auto-Update Entitlements<a class="headerlink" href="#auto-update-entitlements" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Auto Update Entitlements module automatically reviews and updates the state of entitlements based on their redemption status at the end of each program cycle. This ensures that all benefits accurately reflect their final disposition, whether fully redeemed, partially redeemed, or unredeemed.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module provides critical automation to maintain accurate entitlement records, supporting efficient program management and financial accountability. It accomplishes the following:</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Enhances Reporting and Auditing</strong>: Provides up-to-date and accurate entitlement statuses, which are essential for generating reliable program reports, performing financial reconciliation, and supporting audits.</p></li>
 <li><p><strong>Introduces a &quot;Partially Redeemed&quot; State</strong>: Adds a specific status to clearly identify entitlements where only a portion of the benefit has been utilized.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Auto Update Entitlements module integrates seamlessly with core OpenSPP components to perform its functions:</p>
 <ul class="simple">
@@ -1682,32 +1669,32 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="spp_programs.html"><span class="doc std std-doc">OpenSPP Programs</span></a></strong>: Leveraging the extensions from OpenSPP Programs, this module ensures that its automated updates apply consistently to both cash and in-kind entitlements managed within the system.</p></li>
 <li><p><strong><a class="reference internal" href="spp_ent_trans.html"><span class="doc std std-doc">OpenSPP Entitlement Transactions</span></a></strong>: This module relies heavily on the detailed transaction records from OpenSPP Entitlement Transactions. It uses this data to calculate the redeemed amounts and determine the final balance of each entitlement, which dictates its updated state.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>This module introduces key automated processes and status definitions that streamline the management of social protection benefits:</p>
-<section id="automated-cycle-end-processing">
+<div class="section" id="automated-cycle-end-processing">
 <h3>Automated Cycle End Processing<a class="headerlink" href="#automated-cycle-end-processing" title="Permalink to this headline">#</a></h3>
 <p>When a program cycle reaches its designated end date, the system automatically triggers a comprehensive review of all entitlements linked to that cycle. Once all entitlements have been processed and their states updated, the module marks the entire program cycle as 'Ended', ensuring a clear and definitive close to the program period.</p>
-</section>
-<section id="dynamic-entitlement-status-assignment">
+</div>
+<div class="section" id="dynamic-entitlement-status-assignment">
 <h3>Dynamic Entitlement Status Assignment<a class="headerlink" href="#dynamic-entitlement-status-assignment" title="Permalink to this headline">#</a></h3>
 <p>The module dynamically updates the status of each entitlement by comparing its initial allocated amount against the total amount redeemed through recorded transactions. It calculates the remaining <code class="docutils literal notranslate"><span class="pre">entitlement_balance</span></code>, which is then used to determine the appropriate new state.</p>
-</section>
-<section id="new-partially-redeemed-state">
+</div>
+<div class="section" id="new-partially-redeemed-state">
 <h3>New &quot;Partially Redeemed&quot; State<a class="headerlink" href="#new-partially-redeemed-state" title="Permalink to this headline">#</a></h3>
 <p>A specific new state, &quot;Partially Redeemed/Paid to Beneficiary,&quot; is introduced to provide granular tracking of benefit utilization. This state is assigned when a beneficiary has redeemed a portion of their entitlement, but a remaining balance still exists.</p>
-</section>
-<section id="full-redemption-confirmation">
+</div>
+<div class="section" id="full-redemption-confirmation">
 <h3>Full Redemption Confirmation<a class="headerlink" href="#full-redemption-confirmation" title="Permalink to this headline">#</a></h3>
 <p>For entitlements where the entire allocated amount has been redeemed, meaning the <code class="docutils literal notranslate"><span class="pre">entitlement_balance</span></code> is zero, the module automatically updates their status to &quot;Redeemed/Paid to Beneficiary.&quot; This ensures that fully utilized benefits are clearly marked, providing an accurate overview of benefit disbursement.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Auto Update Entitlements module plays a crucial role in OpenSPP by automating the accurate reflection of entitlement redemption statuses at the close of program cycles, thereby ensuring data integrity and supporting robust program accountability.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

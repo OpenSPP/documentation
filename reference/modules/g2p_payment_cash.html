@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_payment_cash.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-payment-cash">
+  <div class="section" id="g2p-payment-cash">
 <h1>G2P Payment Cash<a class="headerlink" href="#g2p-payment-cash" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_payment_cash</span></code> module within OpenSPP enables the management and processing of cash-based payments for social protection programs. It provides a direct and auditable method for disbursing benefits where physical cash distribution is the primary mechanism, ensuring beneficiaries receive their support effectively.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The <strong>G2P Payment Cash</strong> module provides a comprehensive framework for:</p>
 <ul class="simple">
@@ -1671,38 +1658,38 @@ title="Print to PDF"
 <li><p><strong>Direct Payment Reconciliation</strong>: Automatically marks payments as 'paid' and 'reconciled' within the system once the cash disbursement is confirmed. This ensures accurate financial records and up-to-date beneficiary payment statuses.</p></li>
 <li><p><strong>Empowers Direct Action on Entitlements</strong>: Provides a direct action button on approved entitlements, allowing for immediate preparation and marking of individual cash payments.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><strong>G2P Programs (<a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">g2p_programs</span></a>)</strong>: This module integrates directly with the G2P Programs module, extending its capabilities to include 'Cash Payment Manager' as an available payment method for programs. Program administrators select this manager to define how benefits are disbursed for a given program cycle.</p></li>
 <li><p><strong>G2P Payment Files (<a class="reference internal" href="g2p_payment_files.html"><span class="doc std std-doc">g2p_payment_files</span></a>)</strong>: The <code class="docutils literal notranslate"><span class="pre">g2p_payment_cash</span></code> module inherits core payment preparation and batching logic from <code class="docutils literal notranslate"><span class="pre">g2p_payment_files</span></code>. While it overrides the final &quot;sending&quot; mechanism for direct cash, it utilizes the same underlying framework for creating payment batches and managing entitlements, ensuring consistency in how payments are structured before disbursement.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="cash-payment-manager-selection">
+<div class="section" id="cash-payment-manager-selection">
 <h3>Cash Payment Manager Selection<a class="headerlink" href="#cash-payment-manager-selection" title="Permalink to this headline">#</a></h3>
 <p>Program administrators can configure a social protection program to use &quot;Cash Payment Manager&quot; as its default method for benefit disbursement. This selection ensures that all payment processing for that program will follow cash-specific workflows, tailored for physical distribution.</p>
-</section>
-<section id="direct-entitlement-payment">
+</div>
+<div class="section" id="direct-entitlement-payment">
 <h3>Direct Entitlement Payment<a class="headerlink" href="#direct-entitlement-payment" title="Permalink to this headline">#</a></h3>
 <p>For individual approved entitlements, the module provides a &quot;Prepare and Send Payment&quot; action button. When selected, the system processes the entitlement for cash payment, immediately marking it as paid and reconciled. This feature is useful for managing ad-hoc or individual cash disbursements outside of larger batch processes.</p>
-</section>
-<section id="batch-tagging-for-cash-disbursements">
+</div>
+<div class="section" id="batch-tagging-for-cash-disbursements">
 <h3>Batch Tagging for Cash Disbursements<a class="headerlink" href="#batch-tagging-for-cash-disbursements" title="Permalink to this headline">#</a></h3>
 <p>The module allows program managers to associate multiple &quot;Batch Tags&quot; with cash payment managers. These tags help categorize and track physical cash distribution events, such as linking payments to specific distribution points, dates, or field teams. This enhances operational oversight and reporting for cash-based programs.</p>
-</section>
-<section id="automated-payment-reconciliation">
+</div>
+<div class="section" id="automated-payment-reconciliation">
 <h3>Automated Payment Reconciliation<a class="headerlink" href="#automated-payment-reconciliation" title="Permalink to this headline">#</a></h3>
 <p>Once cash payments are processed through this module, the system automatically updates the status of the individual payments and their associated batches to &quot;reconciled&quot; and &quot;paid&quot;. This provides real-time visibility into the financial status of cash disbursements, confirming that the funds have been successfully transferred to beneficiaries.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_payment_cash</span></code> module is essential for OpenSPP, enabling efficient and traceable management of direct cash benefit disbursements for social protection programs, particularly in contexts where physical cash distribution is the primary method.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

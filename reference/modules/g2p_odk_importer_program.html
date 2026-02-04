@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_odk_importer_program.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1638,10 +1625,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-odk-importer-program">
+  <div class="section" id="g2p-odk-importer-program">
 <h1>G2P Odk Importer Program<a class="headerlink" href="#g2p-odk-importer-program" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_odk_importer_program</span></code> module extends the core ODK data import capabilities in OpenSPP, specifically enabling the direct integration of field-collected ODK data into social protection programs. It automates the process of linking imported beneficiary information to specific programs and capturing detailed application data.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines the enrollment and data capture for social protection programs by directly connecting ODK form submissions with program management:</p>
 <ul class="simple">
@@ -1651,35 +1638,35 @@ title="Print to PDF"
 <li><p><strong>Enhances Data Consistency:</strong> By standardizing the import path from ODK forms directly into program structures, it reduces manual data entry errors and ensures consistency between field data and program records.</p></li>
 <li><p><strong>Accelerates Beneficiary Onboarding:</strong> This direct integration significantly speeds up the process of moving beneficiaries from initial data collection in the field to active enrollment in a social protection program.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_odk_importer_program</span></code> module builds upon and integrates with key OpenSPP components to deliver its functionality.</p>
 <p>It extends the <a class="reference internal" href="g2p_odk_importer.html"><span class="doc std std-doc">G2P Odk Importer</span></a> module, adding the crucial ability to link a specific ODK import configuration to a social protection program. This means that while the base module handles the general connection to ODK Central and data mapping, this module provides the program-specific context.</p>
 <p>The module works in conjunction with the <a class="reference internal" href="g2p_program_registrant_info.html"><span class="doc std std-doc">G2P Program: Registrant Info</span></a> module. It uses this module to store the detailed application data collected through ODK forms, ensuring that program-specific questions and responses are accurately recorded and associated with both the registrant and the program.</p>
 <p>Furthermore, it integrates with OpenSPP's core program management by creating <code class="docutils literal notranslate"><span class="pre">program_membership</span></code> records. This ensures that when a registrant's data is imported via ODK for a specific program, their enrollment process within that program is automatically initiated.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The module provides focused capabilities to bridge ODK data collection with program enrollment.</p>
-<section id="program-specific-odk-import-configuration">
+<div class="section" id="program-specific-odk-import-configuration">
 <h3>Program-Specific ODK Import Configuration<a class="headerlink" href="#program-specific-odk-import-configuration" title="Permalink to this headline">#</a></h3>
 <p>Users can define which specific social protection program an ODK import configuration is intended for. When setting up an ODK import, administrators can select an existing program from OpenSPP. This ensures that all data imported through that particular ODK form is automatically associated with the chosen program, streamlining the data flow for targeted initiatives.</p>
-</section>
-<section id="automated-program-membership-and-application-data-capture">
+</div>
+<div class="section" id="automated-program-membership-and-application-data-capture">
 <h3>Automated Program Membership and Application Data Capture<a class="headerlink" href="#automated-program-membership-and-application-data-capture" title="Permalink to this headline">#</a></h3>
 <p>When ODK data is imported using a program-linked configuration, the module automatically performs two key actions:</p>
 <ul class="simple">
 <li><p><strong>Creates Program Membership:</strong> It establishes a new program membership record for the imported registrant, linking them to the configured program with an initial 'draft' status. This prepares the registrant for further program-specific processing.</p></li>
 <li><p><strong>Records Program-Specific Application Details:</strong> Any program-specific application information captured by the ODK form is automatically stored within the <code class="docutils literal notranslate"><span class="pre">g2p.program.registrant_info</span></code> model. This allows for comprehensive tracking of application details directly tied to the program and the individual registrant.</p></li>
 </ul>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_odk_importer_program</span></code> module is essential for efficiently integrating field-collected ODK data directly into OpenSPP's social protection programs, automating enrollment and comprehensive application data capture.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

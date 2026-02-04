@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Configurable Eligibility and Targeting" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Configurable Eligibility and Targeting" name="title" />
 <meta content="OpenSPP flexible rules engine for precise beneficiary identification and enrollment using multiple targeting methodologies" name="description" />
 <meta content="OpenSPP, eligibility, targeting, beneficiary selection, proxy means test, social protection" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/overview/features/eligibility_targeting.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1608,15 +1595,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="configurable-eligibility-and-targeting">
+  <div class="section" id="configurable-eligibility-and-targeting">
 <h1>Configurable eligibility and targeting<a class="headerlink" href="#configurable-eligibility-and-targeting" title="Permalink to this headline">#</a></h1>
 <p>OpenSPP's <a class="reference internal" href="../../reference/glossary.html#term-Eligibility"><span class="xref std std-term">eligibility</span></a> and targeting system provides a powerful rules engine that enables programs to precisely identify and enroll their intended <a class="reference internal" href="../../reference/glossary.html#term-Beneficiaries"><span class="xref std std-term">beneficiaries</span></a> through flexible criteria ranging from simple categorical filters to sophisticated poverty <a class="reference internal" href="../../reference/glossary.html#term-Assessment-of-needs-and-conditions"><span class="xref std std-term">assessment of needs and conditions</span></a> algorithms.</p>
-<section id="the-targeting-challenge">
+<div class="section" id="the-targeting-challenge">
 <h2>The targeting challenge<a class="headerlink" href="#the-targeting-challenge" title="Permalink to this headline">#</a></h2>
 <p>Accurate beneficiary targeting forms the foundation of effective <a class="reference internal" href="../../reference/glossary.html#term-Social-protection"><span class="xref std std-term">social protection</span></a> delivery. Programs must balance multiple objectives: reaching the most vulnerable populations, ensuring fair and transparent selection processes, operating within budget constraints, and adapting to local contexts and needs. Poor targeting leads to inclusion errors where <a class="reference internal" href="../../reference/glossary.html#term-Benefits"><span class="xref std std-term">benefits</span></a> go to those who don't need them, or exclusion errors where eligible <a class="reference internal" href="../../reference/glossary.html#term-Household"><span class="xref std std-term">households</span></a> are left out. Both types of errors undermine program effectiveness and public trust.</p>
 <p>OpenSPP's configurable approach recognizes that different programs require different targeting methodologies. A disaster response program might need geographic targeting to quickly reach all households in affected areas. A poverty alleviation program might employ <a class="reference internal" href="../../reference/glossary.html#term-Proxy-means-test"><span class="xref std std-term">proxy means test</span></a> to identify the poorest households based on observable characteristics. A categorical program might target specific demographic groups like elderly persons or households with disabled members. The platform supports all these approaches and allows them to be combined, giving program designers the tools to implement evidence-based targeting strategies that align with program objectives and local implementation capacity. The system's transparency in how eligibility decisions are made also supports accountability and helps build trust with communities and beneficiaries.</p>
-</section>
-<section id="targeting-methods">
+</div>
+<div class="section" id="targeting-methods">
 <h2>Targeting methods<a class="headerlink" href="#targeting-methods" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><strong>Manual selection and approval</strong>: Enable program staff to directly select beneficiaries with multi-level approval workflows for oversight and accountability</p></li>
@@ -1628,8 +1615,8 @@ title="Print to PDF"
 <li><p><strong>Exclusion filters</strong>: Define criteria to explicitly exclude certain populations, such as government employees or high-income earners, from program enrollment</p></li>
 <li><p><strong>Dynamic re-assessment</strong>: Continuously evaluate eligibility as registrant data changes, with automatic enrollment and graduation based on updated criteria</p></li>
 </ul>
-</section>
-<section id="technical-implementation">
+</div>
+<div class="section" id="technical-implementation">
 <h2>Technical implementation<a class="headerlink" href="#technical-implementation" title="Permalink to this headline">#</a></h2>
 <p>The eligibility and targeting system is implemented through specialized modules:</p>
 <ul class="simple">
@@ -1642,8 +1629,8 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="../../reference/modules/spp_area.html"><span class="doc std std-doc">spp_area</span></a></strong>: Geographic area management for location-based targeting</p></li>
 <li><p><strong><a class="reference internal" href="../../reference/modules/spp_registrant_tag.html"><span class="doc std std-doc">spp_registrant_tag</span></a></strong>: Tag management system for categorizing and filtering registrants</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

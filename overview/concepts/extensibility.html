@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="OpenSPP Extensibility Concepts" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="OpenSPP Extensibility Concepts" name="title" />
 <meta content="How OpenSPP enables customization through modular Odoo architecture and inheritance for social protection programs" name="description" />
 <meta content="OpenSPP, extensibility, customization, Odoo, modular architecture, inheritance, social protection" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/overview/concepts/extensibility.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1696,59 +1683,59 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="customisable-configurable-and-extensible">
+  <div class="section" id="customisable-configurable-and-extensible">
 <h1>Customisable, configurable, and extensible<a class="headerlink" href="#customisable-configurable-and-extensible" title="Permalink to this headline">#</a></h1>
 <p>OpenSPP is a highly adaptable digital social protection information system designed to improve the <a class="reference internal" href="../../reference/glossary.html#term-Efficiency"><span class="xref std std-term">efficiency</span></a> and <a class="reference internal" href="../../reference/glossary.html#term-Effectiveness"><span class="xref std std-term">effectiveness</span></a> of social protection programs in low and middle-income countries. Thanks to its foundation on the widely used ERP platform, Odoo, OpenSPP offers unparalleled customizability, configurability, and extensibility. This page aims to give technical personnel a thorough understanding of these key features.</p>
-<section id="customisable">
+<div class="section" id="customisable">
 <h2>Customisable<a class="headerlink" href="#customisable" title="Permalink to this headline">#</a></h2>
 <p>OpenSPP's customizability is deeply rooted in its underlying Odoo framework, an open-source ERP platform known for its modular architecture and flexibility. This section will delve into the details of how Odoo empowers the customizability of OpenSPP.</p>
-<section id="modular-architecture">
+<div class="section" id="modular-architecture">
 <h3>Modular architecture<a class="headerlink" href="#modular-architecture" title="Permalink to this headline">#</a></h3>
 <p>Odoo's modular architecture enables developers to create, change, and extend functionalities by working with individual modules. Each module encapsulates specific features, making it easier to develop, support, and upgrade the system without disrupting its core functionality. In OpenSPP, this modular approach allows countries to implement custom solutions that address their unique social protection requirements.</p>
-</section>
-<section id="inheritance-and-overrides">
+</div>
+<div class="section" id="inheritance-and-overrides">
 <h3>Inheritance and overrides<a class="headerlink" href="#inheritance-and-overrides" title="Permalink to this headline">#</a></h3>
 <p>Odoo provides a powerful inheritance mechanism, which lets new modules extend, change, or override existing functionalities without altering the original code. This allows OpenSPP to be adapted to specific needs while preserving the ability to receive updates and enhancements in the future.</p>
 <p>For example, a developer can create a new module that inherits from an existing module, extending its features or modifying its behavior to meet custom requirements. This can include adding new fields to existing models, changing the way certain methods work, or altering the user interface.</p>
-</section>
-<section id="python-and-xml">
+</div>
+<div class="section" id="python-and-xml">
 <h3>Python and XML<a class="headerlink" href="#python-and-xml" title="Permalink to this headline">#</a></h3>
 <p>Odoo is built using Python, a popular programming language with extensive libraries and community support. The platform also relies on XML to define user interface components and initial data. Leveraging these widely used technologies, developers can create custom modules for OpenSPP and change the platform to meet specific needs.</p>
-</section>
-<section id="odoo-studio">
+</div>
+<div class="section" id="odoo-studio">
 <h3>Odoo Studio<a class="headerlink" href="#odoo-studio" title="Permalink to this headline">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is a paid feature offered by Odoo, not part of the OpenSPP project.</p>
 </div>
 <p>Odoo Studio is a user-friendly, visual tool for creating custom modules and changing existing ones. With its drag-and-drop interface, developers can create new applications, modify views, and design workflows without writing code. This lowers the barrier to entry for customizing OpenSPP, allowing even non-technical users to tailor the system to their needs.</p>
-</section>
-</section>
-<section id="configurable">
+</div>
+</div>
+<div class="section" id="configurable">
 <h2>Configurable<a class="headerlink" href="#configurable" title="Permalink to this headline">#</a></h2>
 <p>OpenSPP's configurability allows implementers to adapt the system's functionality to various scenarios without requiring more customization. The platform offers many options to manage product offerings, rules, and workflows to accommodate diverse use cases.</p>
-</section>
-<section id="extensible">
+</div>
+<div class="section" id="extensible">
 <h2>Extensible<a class="headerlink" href="#extensible" title="Permalink to this headline">#</a></h2>
 <p>OpenSPP's extensibility is in part a direct result of its foundation on the Odoo framework, which has been designed with extensibility and adaptability in mind. This section will explore the various aspects of Odoo that make OpenSPP a highly extensible solution.</p>
-<section id="large-ecosystem">
+<div class="section" id="large-ecosystem">
 <h3>Large ecosystem<a class="headerlink" href="#large-ecosystem" title="Permalink to this headline">#</a></h3>
 <p>Odoo boasts a vast ecosystem of pre-built modules and third-party applications developed by its extensive community. This wealth of resources enables OpenSPP users to access a wide range of functionalities and integrations, helping them address specific needs without starting from scratch. With over 15,000 modules available, the possibilities for extending OpenSPP are nearly endless.</p>
-</section>
-<section id="rest-api-and-web-services">
+</div>
+<div class="section" id="rest-api-and-web-services">
 <h3>REST API and web services<a class="headerlink" href="#rest-api-and-web-services" title="Permalink to this headline">#</a></h3>
 <p>OpenSPP provides powerful web services and REST APIs, allowing external applications and systems to interact with OpenSPP seamlessly. These APIs enable developers to retrieve, create, update, and delete data in OpenSPP, as well as call methods and execute workflows. By leveraging these web services, countries can integrate OpenSPP with other systems, such as payment gateways, reporting tools, or government databases.</p>
-</section>
-<section id="custom-add-ons-path">
+</div>
+<div class="section" id="custom-add-ons-path">
 <h3>Custom add-ons path<a class="headerlink" href="#custom-add-ons-path" title="Permalink to this headline">#</a></h3>
 <p>Odoo enables administrators to specify custom add-ons paths, allowing the installation of third-party modules and extensions without modifying the core platform. This feature ensures that any added extensions or modules can be maintained separately from the core system, preserving the integrity of OpenSPP while allowing for future updates and enhancements.</p>
-</section>
-</section>
-<section id="summary">
+</div>
+</div>
+<div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <p>In summary, OpenSPP's customizable, configurable, and extensible nature, made possible by its Odoo foundation, enables implementers to develop tailor-made solutions for their social protection programs. The platform's modular customizations, configurable settings, and extensibility ensure a robust and adaptable system that can evolve alongside the ever-changing needs of low and middle-income countries.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

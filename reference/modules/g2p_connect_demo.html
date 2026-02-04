@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_connect_demo.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1634,17 +1621,17 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-connect-demo">
+  <div class="section" id="g2p-connect-demo">
 <h1>G2P Connect Demo<a class="headerlink" href="#g2p-connect-demo" title="Permalink to this headline">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>Work in Progress</strong>: This document is actively being developed and updated. Content may be incomplete or subject to change.</p>
 </div>
-<section id="overview">
+<div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_connect_demo</span></code> module serves as a demonstration and testing ground for the OpenSPP system, particularly showcasing the capabilities of the G2P Connect system. This module is not intended for production use but rather for development, testing, and demonstration purposes.</p>
-</section>
-<section id="purpose">
+</div>
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The primary purpose of <code class="docutils literal notranslate"><span class="pre">g2p_connect_demo</span></code> is to:</p>
 <ul class="simple">
@@ -1652,8 +1639,8 @@ title="Print to PDF"
 <li><p><strong>Showcase System Functionality:</strong> Demonstrate the integration and interaction between different OpenSPP modules in a realistic scenario. This includes modules related to registry management (<a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">g2p_registry_base</span></a>), individual and group registration (<a class="reference internal" href="g2p_registry_individual.html"><span class="doc std std-doc">g2p_registry_individual</span></a>, <a class="reference internal" href="g2p_registry_group.html"><span class="doc std std-doc">g2p_registry_group</span></a>, <a class="reference internal" href="g2p_registry_membership.html"><span class="doc std std-doc">g2p_registry_membership</span></a>), programs (<a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">g2p_programs</span></a>), and custom fields (<a class="reference internal" href="spp_custom_field.html"><span class="doc std std-doc">spp_custom_field</span></a>).</p></li>
 <li><p><strong>Facilitate Testing and Development:</strong> Provide a controlled environment with pre-populated data to facilitate the testing and development of new features and modifications to the OpenSPP system.</p></li>
 </ul>
-</section>
-<section id="key-features">
+</div>
+<div class="section" id="key-features">
 <h2>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Generates a configurable number of groups and individuals with realistic demographic data.</p></li>
@@ -1661,8 +1648,8 @@ title="Print to PDF"
 <li><p>Populates custom fields with relevant data to illustrate the flexibility of the system.</p></li>
 <li><p>Includes functionalities to generate change requests, mimicking real-world scenarios like adding children to a household.</p></li>
 </ul>
-</section>
-<section id="integration-with-other-modules">
+</div>
+<div class="section" id="integration-with-other-modules">
 <h2>Integration with other modules<a class="headerlink" href="#integration-with-other-modules" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">g2p_connect_demo</span></code> builds upon the foundation laid by several other OpenSPP modules:</p>
 <ul class="simple">
@@ -1671,17 +1658,17 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">g2p_programs</span></a>:</strong> Integrates with program definitions to simulate the enrollment of generated individuals and groups into social protection programs.</p></li>
 <li><p><strong><a class="reference internal" href="spp_custom_field.html"><span class="doc std std-doc">spp_custom_field</span></a>:</strong> Utilizes the custom field framework to demonstrate how additional data points can be captured and managed within the registry.</p></li>
 </ul>
-</section>
-<section id="usage">
+</div>
+<div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_connect_demo</span></code> module is primarily intended for developers and implementers working with the OpenSPP system.</p>
 <p>By using the provided interface, users can generate a specified number of groups and individuals. The module takes care of creating realistic relationships, assigning custom field values, and populating other relevant data.</p>
-</section>
-<section id="disclaimer">
+</div>
+<div class="section" id="disclaimer">
 <h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Permalink to this headline">#</a></h2>
 <p>It is important to reiterate that this module is for <strong>demonstration and development purposes only</strong>. The generated data, while designed to appear realistic, should not be used in a production environment or for any real-world social protection programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

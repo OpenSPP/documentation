@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_change_request_create_group.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1670,10 +1657,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="change-request-create-group">
+  <div class="section" id="change-request-create-group">
 <h1>Change Request: Create Group<a class="headerlink" href="#change-request-create-group" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_change_request_create_group</span></code> module provides a specialized and structured workflow for formally adding new groups to the OpenSPP registry. It facilitates the creation of new organizational entities, such as farmer cooperatives or households, and optionally their primary members, through a controlled change request process.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines the expansion of the OpenSPP registry by enabling the systematic creation of new groups. It addresses the need for a formal process when registering new collective entities or households, ensuring data quality and auditability.</p>
 <ul class="simple">
@@ -1683,8 +1670,8 @@ title="Print to PDF"
 <li><p><strong>Comprehensive Data Capture</strong>: Collects essential group attributes, such as name and kind, and detailed information for associated individuals, including unique identification and contact numbers.</p></li>
 <li><p><strong>Supporting Document Management</strong>: Integrates with the Document Management System to attach and manage all necessary supporting evidence for the new group and its members.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_change_request_create_group</span></code> module extends and integrates with several core OpenSPP modules to deliver its functionality:</p>
 <ul class="simple">
@@ -1696,35 +1683,35 @@ title="Print to PDF"
 <li><p><strong>OpenSPP ID Pass (<code class="docutils literal notranslate"><span class="pre">spp_idpass</span></code>)</strong>: Supports the capture of ID document details, potentially through scanning, as part of the evidence required for group or individual registration.</p></li>
 <li><p><strong>OpenSPP Base (<code class="docutils literal notranslate"><span class="pre">spp_base</span></code>)</strong>: As a fundamental OpenSPP module, it provides core system configurations and extensions that this module leverages for consistent operation.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="new-group-details-definition">
+<div class="section" id="new-group-details-definition">
 <h3>New Group Details Definition<a class="headerlink" href="#new-group-details-definition" title="Permalink to this headline">#</a></h3>
 <p>Users can define a new group by providing its name and selecting an appropriate group kind, such as &quot;Farmer Cooperative&quot; or &quot;Household.&quot; The system ensures that both the group name and group kind are mandatory to maintain data integrity and proper classification.</p>
-</section>
-<section id="optional-primary-member-registration">
+</div>
+<div class="section" id="optional-primary-member-registration">
 <h3>Optional Primary Member Registration<a class="headerlink" href="#optional-primary-member-registration" title="Permalink to this headline">#</a></h3>
 <p>Alongside creating a new group, users have the option to register a primary individual member. This includes capturing comprehensive demographic details such as family name, given name, additional name, mobile number, sex, marital status, birthdate, birth place, and email. The system automatically computes the full name from the provided parts and validates the birthdate to ensure it is not set in the future.</p>
-</section>
-<section id="unique-identification-and-contact-validation">
+</div>
+<div class="section" id="unique-identification-and-contact-validation">
 <h3>Unique Identification and Contact Validation<a class="headerlink" href="#unique-identification-and-contact-validation" title="Permalink to this headline">#</a></h3>
 <p>For the optional primary member, a Unique Identification (UID) number can be recorded, with built-in validation ensuring it is exactly 12 digits long. Mobile telephone numbers are also validated against country-specific formats, enhancing data accuracy for communication and outreach.</p>
-</section>
-<section id="supporting-document-management">
+</div>
+<div class="section" id="supporting-document-management">
 <h3>Supporting Document Management<a class="headerlink" href="#supporting-document-management" title="Permalink to this headline">#</a></h3>
 <p>The module integrates seamlessly with the OpenSPP Document Management System (DMS). This allows users to attach supporting documents, such as scanned ID documents or official registration papers, directly to the group creation request, providing comprehensive evidence for the registration.</p>
-</section>
-<section id="automated-registry-update">
+</div>
+<div class="section" id="automated-registry-update">
 <h3>Automated Registry Update<a class="headerlink" href="#automated-registry-update" title="Permalink to this headline">#</a></h3>
 <p>Upon successful validation and approval through the change request workflow, the system automatically creates the new group and, if specified, the associated individual member and their membership link in the live registry. This ensures an efficient and error-free update of the core OpenSPP data.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_change_request_create_group</span></code> module is vital for systematically expanding the OpenSPP registry by enabling the formal creation of new groups and their initial members through a controlled and auditable change request process.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

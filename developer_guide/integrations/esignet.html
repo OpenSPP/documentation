@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="eSignet Integration with OpenSPP" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="eSignet Integration with OpenSPP" name="title" />
 <meta content="Complete guide to integrate MOSIP eSignet as identity server for OpenSPP authentication with OAuth protocol and digital identity." name="description" />
 <meta content="OpenSPP, eSignet, MOSIP, digital identity, OAuth, authentication, identity server, integration" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/integrations/esignet.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1608,10 +1595,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="esignet-integration">
+  <div class="section" id="esignet-integration">
 <h1>eSignet Integration<a class="headerlink" href="#esignet-integration" title="Permalink to this headline">#</a></h1>
 <p>The integration of OpenSPP with eSignet utilizes <a class="reference external" href="https://docs.mosip.io/1.2.0/integrations/e-signet">MOSIP eSignet</a> as the identity server for login into the OpenSPP platform. This provides a seamless user experience and enhances security by leveraging the OAuth protocol and allowing OpenSPP users to access the platform without the need for additional login credentials.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>To be able to start the integration, ensure the following:</p>
 <ul class="simple">
@@ -1620,12 +1607,12 @@ title="Print to PDF"
 <li><p>Administrative privileges within OpenSPP to install modules.</p></li>
 <li><p>Developer mode is activated in OpenSPP.</p></li>
 </ul>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>Upon completing this guide, the developer can successfully integrate eSignet with OpenSPP for login authentication.</p>
-</section>
-<section id="step-by-step">
+</div>
+<div class="section" id="step-by-step">
 <h2>Step-by-step<a class="headerlink" href="#step-by-step" title="Permalink to this headline">#</a></h2>
 <ol class="arabic simple">
 <li><p>Set up your development environment as per the given guide <a class="reference external" href="https://docs.openspp.org/howto/developer_guides/development_setup.html">here</a>.</p></li>
@@ -1715,8 +1702,8 @@ Then, go to the <code class="docutils literal notranslate"><span class="pre">odo
 <li><p>Once configured successfully, the eSignet login should appear on the login screen as below.</p></li>
 </ol>
 <p><img alt="OpenSPP login screen with eSignet option" src="../../_images/31.png" /></p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

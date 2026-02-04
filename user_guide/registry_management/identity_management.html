@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Configure ID and generate QR code" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Configure ID and generate QR code" name="title" />
 <meta content="Step-by-step guide for configuring identification credentials and generating QR codes in OpenSPP for Operations Admins and Administrators." name="description" />
 <meta content="OpenSPP, ID configuration, QR code generation, identity management, registrant IDs" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/registry_management/identity_management.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1710,11 +1697,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="configure-id-and-generate-qr-code">
+  <div class="section" id="configure-id-and-generate-qr-code">
 <h1>Configure ID and generate QR code<a class="headerlink" href="#configure-id-and-generate-qr-code" title="Permalink to this headline">#</a></h1>
 <p>This guide offers a comprehensive, step-by-step overview for Operations Admins and Administrators on the process of configuring identification <strong>ID</strong> credentials and generating corresponding QR codes within OpenSPP.
 It details the procedures for creating and managing ID types, assigning unique IDs to individuals or groups, and generating printable documents embedded with scannable QR codes.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>To configure ID and generate QR code, you need to:</p>
 <ul class="simple">
@@ -1723,17 +1710,17 @@ It details the procedures for creating and managing ID types, assigning unique I
 <li><p>Make sure that the <a class="reference internal" href="../../reference/modules/spp_pos.html"><span class="doc">spp_pos</span></a> module (OpenSPP POS: ID Redemption) is installed and activated.
 Learn more in the <strong>Installing Additional Modules</strong> section of this guide: <a class="reference internal" href="../../getting_started/module_installation.html"><span class="doc">Module installation</span></a>.</p></li>
 </ul>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>By the end of this tutorial, you will understand how to configure ID types, assign and manage IDs for individuals and groups, generate QR codes for these IDs, and print the corresponding identification documents.</p>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
 <p>Begin by configuring ID types to define all identification categories available for registrants.
 Next, assign the appropriate IDs and related information to individuals in the registry.
 Ensure that the <a class="reference internal" href="../../reference/modules/spp_pos.html"><span class="doc">spp_pos</span></a> module (OpenSPP POS: ID Redemption) is installed to enable printing of registrant IDs with their associated QR codes.</p>
-<section id="configure-id-type">
+<div class="section" id="configure-id-type">
 <h3>Configure ID type<a class="headerlink" href="#configure-id-type" title="Permalink to this headline">#</a></h3>
 <p>To be able to create IDs, you must first configure the ID types.
 Login to OpenSPP as administrator, click on the menu icon beside <strong>Registry</strong>, then click on <strong>Registry</strong> from the menu.</p>
@@ -1741,7 +1728,7 @@ Login to OpenSPP as administrator, click on the menu icon beside <strong>Registr
 <p>Click the button <strong>Configuration</strong> in the top menu bar and select <strong>ID Type</strong>.</p>
 <p><img alt="Registry Configuration menu with ID Type option" src="../../_images/217.png" /></p>
 <p>This will display the table view of all existing IDs where you can either View, Create, Edit or Delete IDs.</p>
-<section id="create-id-type">
+<div class="section" id="create-id-type">
 <h4>Create ID type<a class="headerlink" href="#create-id-type" title="Permalink to this headline">#</a></h4>
 <p>To create a new ID type, click on <strong>New</strong>.</p>
 <p><img alt="ID Type list view with New button" src="../../_images/315.png" /></p>
@@ -1750,22 +1737,22 @@ Login to OpenSPP as administrator, click on the menu icon beside <strong>Registr
 <strong>ID Type Validation</strong> - (Optional) Define a required prefix for the ID.
 For example, if inputting '022' , then all IDs must start with 022, otherwise an error message will appear.</p>
 <p><img alt="ID Type creation form with fields" src="../../_images/412.png" /></p>
-</section>
-<section id="edit-id-type">
+</div>
+<div class="section" id="edit-id-type">
 <h4>Edit ID type<a class="headerlink" href="#edit-id-type" title="Permalink to this headline">#</a></h4>
 <p>To Edit an existing ID Type, redirect back to ID type table view by clicking <strong>Configuration</strong> and selecting <strong>ID types</strong>.
 Click on the field you wish to modify and click <strong>Save</strong> to apply the changes.</p>
 <p><img alt="ID Type edit form with editable fields" src="../../_images/56.png" /></p>
-</section>
-<section id="delete-id-type">
+</div>
+<div class="section" id="delete-id-type">
 <h4>Delete ID type<a class="headerlink" href="#delete-id-type" title="Permalink to this headline">#</a></h4>
 <p>To delete an ID type, select the ID type by clicking the checkbox and click on the <strong>Actions</strong> button.
 Click on <strong>Delete</strong>.
 Note that an ID type can only be removed if it is not in use.</p>
 <p><img alt="ID Type deletion confirmation dialog" src="../../_images/66.png" /></p>
-</section>
-</section>
-<section id="manage-id-of-a-group-or-individual">
+</div>
+</div>
+<div class="section" id="manage-id-of-a-group-or-individual">
 <h3>Manage ID of a Group or Individual<a class="headerlink" href="#manage-id-of-a-group-or-individual" title="Permalink to this headline">#</a></h3>
 <p>Once the ID types are successfully configured you can add it to an Individual or Group by going to the <strong>Registry</strong>.
 Navigate to the desired Individual/Group and click on the <strong>ID</strong> tab.</p>
@@ -1775,7 +1762,7 @@ Navigate to the desired Individual/Group and click on the <strong>ID</strong> ta
 <strong>Expiry Date</strong> - Indicates when the ID will expire<br />
 <strong>Status</strong> - Indicates if the ID is valid or invalid<br />
 <strong>Description</strong> - Description of the ID.</p>
-<section id="add-id">
+<div class="section" id="add-id">
 <h4>Add ID<a class="headerlink" href="#add-id" title="Permalink to this headline">#</a></h4>
 <p>To add an ID, click on <strong>Add a line</strong> under the ID tab and select the type of ID you desire to add.</p>
 <p><img alt="Add ID line interface with ID type selection" src="../../_images/85.png" /></p>
@@ -1786,30 +1773,30 @@ You would need the following column headers for the ID data.</p>
 Make sure that the id type you will import is already defined in OpenSPP.</p>
 <p><strong>reg_ids/status</strong> - Valid or Invalid.</p>
 <p><strong>reg_ids/value</strong> - 11223412394, etc..</p>
-</section>
-<section id="edit-id">
+</div>
+<div class="section" id="edit-id">
 <h4>Edit ID<a class="headerlink" href="#edit-id" title="Permalink to this headline">#</a></h4>
 <p>To edit an ID, click on the field to edit it.
 Once done click the <strong>Save</strong> icon beside the Gear icon.
 You may also click on the <strong>Counterclockwise arrow</strong> icon to undo any changes.</p>
 <p><img alt="ID field editing interface with Save and Undo buttons" src="../../_images/94.png" /></p>
-</section>
-<section id="delete-id">
+</div>
+<div class="section" id="delete-id">
 <h4>Delete ID<a class="headerlink" href="#delete-id" title="Permalink to this headline">#</a></h4>
 <p>To delete an ID, click on the trashbin icon that corresponds to the ID you wish to delete.</p>
 <p><img alt="ID deletion trash bin icon" src="../../_images/103.png" /></p>
-</section>
-</section>
-<section id="generate-qr-code">
+</div>
+</div>
+<div class="section" id="generate-qr-code">
 <h3>Generate QR code<a class="headerlink" href="#generate-qr-code" title="Permalink to this headline">#</a></h3>
 <p>To generate QR code, make sure the <a class="reference internal" href="../../reference/modules/spp_pos.html"><span class="doc">spp_pos</span></a> module (OpenSPP POS: ID Redemption) is installed and activated on your OpenSPP instance.
 When installed, you should be able to see a <strong>green printer button</strong> beside the ID values from the ID tab of a Group or Individual.</p>
 <p><img alt="Green printer button for QR code generation" src="../../_images/114.png" /></p>
 <p>Once you click the green printer button, a download of a pdf will automatically start which contains the ID information and QR code.</p>
 <p><img alt="Sample PDF with ID information and QR code" src="../../_images/122.png" /></p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

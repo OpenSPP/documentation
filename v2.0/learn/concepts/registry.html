@@ -1,0 +1,2786 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+<meta content="Registry" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://docs.openspp.org/learn/concepts/registry.html" property="og:url"/>
+<meta content="OpenSPP Documentation" property="og:site_name"/>
+<meta content="The Registry is the central database that stores information about people and groups in OpenSPP. It's the foundation that all programs, eligibility rules, and benefits are built upon. For: All audi..." property="og:description"/>
+<meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
+<meta content="OpenSPP Documentation" property="og:image:alt"/>
+<meta content="The Registry is the central database that stores information about people and groups in OpenSPP. It's the foundation that all programs, eligibility rules, and benefits are built upon. For: All audi..." name="description"/>
+<meta content="en_US" property="og:locale"/>
+<title>Registry – Learn — OpenSPP Documentation v2.0</title>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/sphinxcontrib-httpexample.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/custom.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/print.css" media="print" rel="stylesheet" type="text/css"/>
+<link href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script src="../../_static/sphinxcontrib-httpexample.js"></script>
+<script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+<script src="../../_static/search-utils.js"></script>
+<script src="../../_static/mermaid_init.js"></script>
+<script src="../../_static/patch_scrollToActive.js"></script>
+<script src="../../_static/search_shortcut.js"></script>
+<script src="../../_static/module-filter.js"></script>
+<script src="../../_static/design-tabs.js"></script>
+<link href="https://docs.openspp.org/learn/concepts/registry.html" rel="canonical">
+<link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v2.0" type="application/opensearchdescription+xml"/>
+<link href="../../_static/icon_192.png" rel="shortcut icon"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="programs.html" rel="next" title="Programs"/>
+<link href="../index.html" rel="prev" title="Learn"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../../_static/review_status.css" type="text/css" />
+<script src="../../_static/review_status_simple.js"></script>
+-->
+<script crossorigin="anonymous" integrity="sha384-vJ1NXwwlC62VkTLRHyzdAfyL4rQ8Z478DeHgamh37YzGJh3T6j223FC2yMRVriLl" src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+<!-- Mermaid Support -->
+<script crossorigin="anonymous" integrity="sha384-+NGfjU8KzpDLXRHduEqW+ZiJr2rIg+cidUVk7B51R5xK7cHwMKQfrdFwGdrq1Bcz" src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+</link></link></link></link></link></link></head>
+<body data-offset="100" data-spy="scroll" data-target="#bd-toc-nav">
+<!-- Checkboxes to toggle the left sidebar -->
+<input aria-label="Toggle navigation sidebar" class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<label class="overlay overlay-navbar" for="__navigation">
+<div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input aria-label="Toggle in-page Table of Contents" class="sidebar-toggle" id="__page-toc" name="__page-toc" type="checkbox"/>
+<label class="overlay overlay-pagetoc" for="__page-toc">
+<div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+<div class="container-fluid" id="banner"></div>
+<div class="container-xl">
+<div class="row">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+<div class="bd-sidebar__content">
+<div class="bd-sidebar__top"><div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../">
+<h1 class="site-logo" id="site-title">OpenSPP Documentation v2.0</h1>
+</a>
+</div><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<div class="input-group">
+<label class="sr-only" for="q">Search string
+    </label>
+<i aria-hidden="true" class="fa fa-search fa-lg search-icon"></i>
+<input aria-labelledby="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search" spellcheck="false" type="search" value="">
+<div class="input-group-append">
+<span class="input-group-text" id="shortcut">
+<kbd id="search-shortcut">⌘</kbd> <kbd>K</kbd>
+</span>
+</div>
+</input></div>
+</form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../products/">
+   Products
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/sp_mis.html">
+     OpenSPP SP-MIS
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/social_registry.html">
+     OpenSPP Social Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/farmer_registry.html">
+     OpenSPP Farmer Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/drims.html">
+     OpenSPP DRIMS
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../products/features/">
+     Features
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/unified_registry.html">
+       Unified registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/gis_land_management.html">
+       GIS &amp; land management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/program_management.html">
+       Program management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/eligibility_targeting.html">
+       Eligibility &amp; targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/payment_disbursement.html">
+       Payment &amp; disbursement
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/in_kind_benefits.html">
+       In-Kind benefits
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/data_integration_apis.html">
+       Data integration &amp; APIs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/change_management.html">
+       Change management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/grievance_redress.html">
+       Grievance redress
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/whats_new_v2.html">
+     What's new in OpenSPP v2
+    </a>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l1 current active has-children">
+<a class="reference internal" href="../">
+   Learn
+  </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
+     Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="programs.html">
+     Programs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="cycles.html">
+     Cycles
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="eligibility.html">
+     Eligibility
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="compliance.html">
+     Compliance
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="entitlements.html">
+     Entitlements
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="payments.html">
+     Payments
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="deduplication.html">
+     Deduplication
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="change-requests.html">
+     Change requests
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../get_started/">
+   Get started
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/installation/">
+     Installing OpenSPP
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+<label for="toctree-checkbox-5">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/installation/docker.html">
+       Docker installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/modules/">
+     Module installation
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+<label for="toctree-checkbox-6">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/spmis_installation.html">
+       SP-MIS installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/social_installation.html">
+       Social Registry installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/explore/">
+     Explore OpenSPP
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_household/">
+     Your first household
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+<label for="toctree-checkbox-7">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/01_access_registry.html">
+       Step 1: Access the Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/02_create_household.html">
+       Step 2: Create a Household
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/03_add_members.html">
+       Step 3: Add members
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_program/">
+     Your first program
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+<label for="toctree-checkbox-8">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/01_access_program.html">
+       Step 1: Access the program section
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/02_create_program.html">
+       Step 2: Create your first social protection program
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/03_enroll_beneficiaries.html">
+       Step 3: Import and enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/04_run_cycle.html">
+       Step 4: Understanding program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/05_distribute_entitlements.html">
+       Step 5: Distribute entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/poc_and_pilot.html">
+     From Proof of Concept to Pilot
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../user_guide/">
+   User guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+<label for="toctree-checkbox-9">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/getting_started/">
+     Getting started
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+<label for="toctree-checkbox-10">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/navigation.html">
+       Navigating the OpenSPP interface
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/registry/">
+     Registry
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+<label for="toctree-checkbox-11">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_individual.html">
+       Register an individual
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_group.html">
+       Register a group
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/search_filter.html">
+       Search and filter registrants
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/import_data.html">
+       Import registrant data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/export_data.html">
+       Export registrant data
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/change_requests/">
+     Change Requests
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+<label for="toctree-checkbox-12">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/submit_change_request.html">
+       Submit a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/review_change_request.html">
+       Review a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/change_request_types.html">
+       Change request types
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/programs/">
+     Programs
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+<label for="toctree-checkbox-13">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/create_programs.html">
+       Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/program_cycles.html">
+       Work with program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/enroll_beneficiaries.html">
+       Enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/allocate_funds.html">
+       Allocate funds to programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/manage_entitlements.html">
+       Manage entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/payments/">
+     Payments
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+<label for="toctree-checkbox-14">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/payments/service_points.html">
+       View Service Points
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/approvals/">
+     Approvals
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+<label for="toctree-checkbox-15">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/approvals/manage_approvals.html">
+       Review and Approve Requests
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/reference/">
+     Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+<label for="toctree-checkbox-16">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/areas_geography.html">
+       Geographic Areas
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/vocabularies.html">
+       Vocabularies (Code Lists)
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../config_guide/">
+   Configuration guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+<label for="toctree-checkbox-17">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/studio/">
+     OpenSPP Studio
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+<label for="toctree-checkbox-18">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/overview.html">
+       Studio Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/registry_field_builder.html">
+       Custom Fields (Registry Field Builder)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/event_type_designer.html">
+       Event Type Designer
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/change_request_builder.html">
+       Change Request Builder
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/cel/">
+     CEL expressions
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+<label for="toctree-checkbox-19">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/quick_start.html">
+       CEL quick start
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/syntax.html">
+       CEL syntax reference
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/variables.html">
+       Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/cookbook.html">
+       CEL cookbook
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/troubleshooting.html">
+       CEL troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/eligibility/">
+     Eligibility rules
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+<label for="toctree-checkbox-20">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/cel_expressions.html">
+       CEL expressions for eligibility
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/geographic_targeting.html">
+       Geographic targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/templates.html">
+       Expression templates
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/testing.html">
+       Testing eligibility rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/advanced.html">
+       Advanced eligibility configuration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/">
+     Entitlement formulas
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+<label for="toctree-checkbox-21">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/cash_calculations.html">
+       Cash calculations
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/inkind_baskets.html">
+       In-kind and basket entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/formula_library.html">
+       Formula library
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/dynamic_entitlements.html">
+       Dynamic entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/conditional_logic.html">
+       Conditional logic
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/vocabulary/">
+     Vocabulary System
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+<label for="toctree-checkbox-22">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/overview.html">
+       Vocabulary Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/standard_vocabularies.html">
+       Standard Vocabularies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/profiles.html">
+       Vocabulary Profiles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/custom.html">
+       Custom Vocabularies
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/variables/">
+     Variables &amp; Indicators
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+<label for="toctree-checkbox-23">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/overview.html">
+       Variables Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/creating_variables.html">
+       Creating Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/variable_types.html">
+       Variable Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/using_variables.html">
+       Using Variables in CEL
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/event_data/">
+     Event Data
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+<label for="toctree-checkbox-24">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/overview.html">
+       Event Data Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/event_types.html">
+       Configuring Event Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/field_definitions.html">
+       Defining Event Fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/change_request_types/">
+     Change request types
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+<label for="toctree-checkbox-25">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/overview.html">
+       Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/creating_types.html">
+       Creating change request types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/field_mappings.html">
+       Field mappings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/conflict_detection.html">
+       Conflict and duplicate detection
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/patterns.html">
+       Common configuration patterns
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/custom_detail_models.html">
+       Custom detail models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/consent/">
+     Consent configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+<label for="toctree-checkbox-26">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/overview.html">
+       Consent management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/privacy_notices.html">
+       Configuring privacy notices
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/recording_consent.html">
+       Recording consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/api_consent_filtering.html">
+       API consent filtering
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/role_configuration/">
+     Role configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+<label for="toctree-checkbox-27">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/overview.html">
+       Access control overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/assigning_roles.html">
+       Assigning roles to users
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/predefined_roles.html">
+       Predefined roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/creating_roles.html">
+       Creating custom roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../ops_guide/">
+   Operations guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+<label for="toctree-checkbox-28">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/deployment/">
+     Deployment
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+<label for="toctree-checkbox-29">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/deployment/production-hardening.html">
+       Production Hardening
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/security/">
+     Security
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+<label for="toctree-checkbox-30">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/access_control.html">
+       Access Control
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/data_classification.html">
+       Data Classification
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/pii_encryption.html">
+       PII Encryption
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/audit.html">
+       Audit Logging
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/scanning.html">
+       Security Scanning
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/storage/">
+     Storage
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/backup/">
+     Backup &amp; Recovery
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/monitoring/">
+     Monitoring &amp; Alerts
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../reference/">
+   Reference
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+<label for="toctree-checkbox-31">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../reference/modules/">
+     Modules Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+<label for="toctree-checkbox-32">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2.html">
+       API V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_cycles.html">
+       API V2 - Cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_data.html">
+       API V2 - Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_entitlements.html">
+       API V2 - Entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_products.html">
+       API V2 - Products
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_service_points.html">
+       API V2 - Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_vocabulary.html">
+       API V2 - Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_approval.html">
+       Approval Workflows
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_area.html">
+       Area Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_audit.html">
+       Audit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_banking.html">
+       Banking / Bank Details
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_common.html">
+       Base (Common)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_setting.html">
+       Base Settings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_branding_kit.html">
+       Branding Kit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_domain.html">
+       CEL Domain Query Builder
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_widget.html">
+       CEL Expression Widget
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_change_request_v2.html">
+       Change Request V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_claim_169.html">
+       QR Credentials (Claim 169)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_consent.html">
+       Consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_advanced.html">
+       CR Types - Advanced
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_base.html">
+       CR Types - Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_custom_field.html">
+       Custom Fields
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client.html">
+       DCI Client
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_crvs.html">
+       DCI Client - CRVS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_dr.html">
+       DCI Client - Disability Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_ibr.html">
+       DCI Client - IBR
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_server.html">
+       DCI Server
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_demo.html">
+       Demo
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dms.html">
+       Document Management System
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_event_data.html">
+       Event Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_gis.html">
+       GIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_gis_report.html">
+       GIS Reports
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_grm.html">
+       Grievance Redress Mechanism
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_hide_menus_base.html">
+       Hide Menus Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_mis_demo_v2.html">
+       MIS Demo V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_programs.html">
+       Programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry.html">
+       Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry_search.html">
+       Registry Search Portal
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_security.html">
+       Security
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_service_points.html">
+       Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_source_tracking.html">
+       Source Tracking
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_social_registry.html">
+       Starter: Social Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_sp_mis.html">
+       Starter: SP-MIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio.html">
+       Studio
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio_change_requests.html">
+       Studio - Change Requests
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio_events.html">
+       Studio - Events
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_user_roles.html">
+       User Roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_versioning.html">
+       Versioning
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_vocabulary.html">
+       Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/theme_openspp_muk.html">
+       Theme
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/vocabularies/">
+     Vocabulary Reference
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/glossary/humanitarian.html">
+     Humanitarian Terms Glossary
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../glossary.html">
+     OpenSPP Glossary
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../community_and_support/">
+   Community and support
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+<label for="toctree-checkbox-33">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/how_to_contribute_to_the_project.html">
+     Contributing
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/i18n_l10n.html">
+     Internationalization and Localization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/security_report.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/license.html">
+     Licensing
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+<div class="bd-sidebar__bottom">
+<!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+<p class="openspporglink">
+<a href="https://openspp.org">
+<img alt="openspp.org" src="/_static/openspp_logo.png"/> openspp.org</a>
+</p>
+</div>
+</div>
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+<div class="header-article row sticky-top noprint">
+<div class="col py-1 d-flex header-article-main">
+<div class="header-article__left">
+<label class="headerbtn" data-placement="right" data-toggle="tooltip" for="__navigation" title="Toggle navigation">
+<span class="headerbtn__icon-container">
+<i class="fas fa-bars"></i>
+</span>
+</label>
+</div>
+<div class="header-article__label">
+<span>Registry – Learn</span>
+</div>
+<div class="header-article__right">
+<button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="headerbtn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+<button aria-label="Source repositories" class="headerbtn menu-dropdown__trigger">
+<i class="fab fa-github"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation" title="Source repository">
+<span class="headerbtn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Flearn/concepts/registry.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<span class="headerbtn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?learn/concepts/registry.md#making-contributions-on-github" title="Edit this page">
+<span class="headerbtn__icon-container">
+<i class="fas fa-pencil-alt"></i>
+</span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+<button aria-label="Download this page" class="headerbtn menu-dropdown__trigger">
+<i class="fas fa-download"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/learn/concepts/registry.md.txt" title="Download source file">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+</li>
+<li>
+<button class="headerbtn" data-placement="left" data-toggle="tooltip" onclick="printPdf(this)" title="Print to PDF">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
+</div>
+</div>
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-is-a-registry">
+   What is a registry?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registry-vs-program-enrollment">
+   Registry vs. program enrollment
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#types-of-registries">
+   Types of registries
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#social-registry">
+     Social registry
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#program-specific-registry">
+     Program-specific registry
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#openspp-registry-products">
+   OpenSPP registry products
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#id1">
+     Social registry
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#farmer-registry">
+     Farmer registry
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#disability-registry">
+     Disability registry
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#the-two-main-registrant-types">
+   The two main registrant types
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#individuals">
+     Individuals
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#groups-often-households">
+     Groups (often households)
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#data-model-overview">
+   Data model overview
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#relationships-in-the-registry">
+   Relationships in the registry
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#group-membership">
+     Group membership
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registrant-relations">
+     Registrant relations
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#key-registry-fields">
+   Key registry fields
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#individual-fields">
+     Individual fields
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#group-household-fields">
+     Group / household fields
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#how-registry-data-is-used">
+   How registry data is used
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#for-eligibility-determination">
+     For eligibility determination
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#for-benefit-calculation">
+     For benefit calculation
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#for-targeting-and-outreach">
+     For targeting and outreach
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#for-deduplication">
+     For deduplication
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registry-data-quality">
+   Registry data quality
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registry-operations">
+   Registry operations
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#data-collection">
+     Data collection
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#data-updates">
+     Data updates
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#data-security-and-privacy">
+     Data security and privacy
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registry-vs-other-openspp-features">
+   Registry vs. other OpenSPP features
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#working-with-the-registry">
+   Working with the registry
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#as-a-user-for-example-government-employee">
+     As a user (for example government employee)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#as-an-implementer-monitoring-and-evaluation-technical-staff">
+     As an implementer (Monitoring and evaluation / technical staff)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#as-a-developer">
+     As a developer
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#as-a-system-administrator">
+     As a System Administrator
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#best-practices">
+   Best practices
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#id2">
+     Data collection
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#data-management">
+     Data management
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#privacy-and-security">
+     Privacy and security
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#integration">
+     Integration
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#are-you-stuck">
+   Are you stuck?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#next-steps">
+   Next steps
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="article row">
+<div class="col pl-md-3 pl-lg-5 content-container">
+<!-- Table of contents that is only displayed when printing the page -->
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>Registry</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-is-a-registry">
+   What is a registry?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registry-vs-program-enrollment">
+   Registry vs. program enrollment
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#types-of-registries">
+   Types of registries
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#social-registry">
+     Social registry
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#program-specific-registry">
+     Program-specific registry
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#openspp-registry-products">
+   OpenSPP registry products
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#id1">
+     Social registry
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#farmer-registry">
+     Farmer registry
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#disability-registry">
+     Disability registry
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#the-two-main-registrant-types">
+   The two main registrant types
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#individuals">
+     Individuals
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#groups-often-households">
+     Groups (often households)
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#data-model-overview">
+   Data model overview
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#relationships-in-the-registry">
+   Relationships in the registry
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#group-membership">
+     Group membership
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registrant-relations">
+     Registrant relations
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#key-registry-fields">
+   Key registry fields
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#individual-fields">
+     Individual fields
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#group-household-fields">
+     Group / household fields
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#how-registry-data-is-used">
+   How registry data is used
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#for-eligibility-determination">
+     For eligibility determination
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#for-benefit-calculation">
+     For benefit calculation
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#for-targeting-and-outreach">
+     For targeting and outreach
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#for-deduplication">
+     For deduplication
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registry-data-quality">
+   Registry data quality
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registry-operations">
+   Registry operations
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#data-collection">
+     Data collection
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#data-updates">
+     Data updates
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#data-security-and-privacy">
+     Data security and privacy
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registry-vs-other-openspp-features">
+   Registry vs. other OpenSPP features
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#working-with-the-registry">
+   Working with the registry
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#as-a-user-for-example-government-employee">
+     As a user (for example government employee)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#as-an-implementer-monitoring-and-evaluation-technical-staff">
+     As an implementer (Monitoring and evaluation / technical staff)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#as-a-developer">
+     As a developer
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#as-a-system-administrator">
+     As a System Administrator
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#best-practices">
+   Best practices
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#id2">
+     Data collection
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#data-management">
+     Data management
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#privacy-and-security">
+     Privacy and security
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#integration">
+     Integration
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#are-you-stuck">
+   Are you stuck?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#next-steps">
+   Next steps
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<main id="main-content" role="main">
+<div>
+<div class="section" id="registry">
+<h1>Registry<a class="headerlink" href="#registry" title="Permalink to this headline">#</a></h1>
+<p>The Registry is the central database that stores information about people and groups in OpenSPP. It's the foundation that all programs, eligibility rules, and benefits are built upon.</p>
+<p><strong>For:</strong> All audiences</p>
+<div class="section" id="what-is-a-registry">
+<h2>What is a registry?<a class="headerlink" href="#what-is-a-registry" title="Permalink to this headline">#</a></h2>
+<p>A registry is a structured database of individuals, households, and other groups that may be eligible for social protection programs. Think of it as a comprehensive address book that contains not just names and contact information, but also demographic data, household composition, identification documents, and other information needed to determine program eligibility and deliver benefits.</p>
+<p>In social protection systems, registries serve several purposes:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Purpose</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Identification</strong></p></td>
+<td><p>Uniquely identify individuals and households across programs</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Assessment</strong></p></td>
+<td><p>Store demographic and socio-economic data used to assess needs</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Eligibility</strong></p></td>
+<td><p>Provide data for determining who qualifies for which programs</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Delivery</strong></p></td>
+<td><p>Maintain payment details and contact information for benefit delivery</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Coordination</strong></p></td>
+<td><p>Share verified data across multiple programs and agencies</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="registry-vs-program-enrollment">
+<h2>Registry vs. program enrollment<a class="headerlink" href="#registry-vs-program-enrollment" title="Permalink to this headline">#</a></h2>
+<p>It's important to understand the difference:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Registry</p></th>
+<th class="head"><p>Program enrollment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Who might be eligible</strong> for programs</p></td>
+<td><p><strong>Who is enrolled</strong> in a specific program</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Broader population</strong> (potential beneficiaries)</p></td>
+<td><p><strong>Subset</strong> of registry (actual beneficiaries)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Longer-term</strong> data storage</p></td>
+<td><p><strong>Time-bound</strong> by distribution cycles</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Cross-program</strong> information</p></td>
+<td><p><strong>Program-specific</strong> status</p></td>
+</tr>
+</tbody>
+</table>
+<p>Being in the registry doesn't mean you're receiving benefits - it means your information is available for program staff to assess eligibility and enroll you when appropriate.</p>
+</div>
+<div class="section" id="types-of-registries">
+<h2>Types of registries<a class="headerlink" href="#types-of-registries" title="Permalink to this headline">#</a></h2>
+<div class="section" id="social-registry">
+<h3>Social registry<a class="headerlink" href="#social-registry" title="Permalink to this headline">#</a></h3>
+<p>A <strong>social registry</strong> (sometimes called a unified registry) serves multiple social protection programs:</p>
+<ul class="simple">
+<li><p>Contains a broad population that might be eligible for various programs</p></li>
+<li><p>Data is collected once and shared across programs</p></li>
+<li><p>Reduces duplication of data collection efforts</p></li>
+<li><p>Enables coordination between different ministries and programs</p></li>
+<li><p>Examples: National social registry, poverty database</p></li>
+</ul>
+</div>
+<div class="section" id="program-specific-registry">
+<h3>Program-specific registry<a class="headerlink" href="#program-specific-registry" title="Permalink to this headline">#</a></h3>
+<p>A <strong>program-specific registry</strong> serves a single program:</p>
+<ul class="simple">
+<li><p>Contains only people relevant to that specific program</p></li>
+<li><p>May include specialized data fields unique to the program</p></li>
+<li><p>Often used when programs have very different target populations</p></li>
+<li><p>Examples: School feeding program registry, farmer support registry</p></li>
+</ul>
+<p>OpenSPP supports both approaches and can operate as either type.</p>
+</div>
+</div>
+<div class="section" id="openspp-registry-products">
+<h2>OpenSPP registry products<a class="headerlink" href="#openspp-registry-products" title="Permalink to this headline">#</a></h2>
+<p>OpenSPP offers three pre-configured registry solutions for common use cases. All are built on the same core architecture, allowing data sharing when appropriate and a unified view across programs.</p>
+<div class="section" id="id1">
+<h3>Social registry<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>A unified registry designed to serve multiple social protection programs such as cash transfers, food assistance, and housing subsidies.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Capability</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Population coverage</strong></p></td>
+<td><p>Broad population that might be eligible for various programs</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Key data collected</strong></p></td>
+<td><p>Demographics, household composition, socio-economic status, vulnerability indicators</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Poverty assessment</strong></p></td>
+<td><p>Built-in support for Proxy Means Testing (PMT) and other scoring methods</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Dynamic updates</strong></p></td>
+<td><p>On-demand registration and periodic reassessment campaigns</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Integration</strong></p></td>
+<td><p>Interoperates with CRVS, national ID systems, and other registries via DCI standards</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use cases:</strong> National social registries (like Brazil's Cadastro Único), poverty databases, unified beneficiary registries.</p>
+<p>See <a class="reference internal" href="../../explanation/social_registry.html"><span class="doc">Social Registry</span></a> for detailed background on social registry concepts.</p>
+</div>
+<div class="section" id="farmer-registry">
+<h3>Farmer registry<a class="headerlink" href="#farmer-registry" title="Permalink to this headline">#</a></h3>
+<p>A specialized registry for agricultural programs that extends the base registry with farm-specific data.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Capability</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Farm data</strong></p></td>
+<td><p>Land parcels, ownership/tenure, crop types, livestock, irrigation, machinery</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Geospatial integration</strong></p></td>
+<td><p>GIS mapping of farm boundaries, land use visualization via GeoJSON API and QGIS</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Agricultural activities</strong></p></td>
+<td><p>Track cultivation, livestock rearing, aquaculture by land parcel</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Shock responsiveness</strong></p></td>
+<td><p>Support climate adaptation and early warning triggers for weather-related events</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Cross-sector coordination</strong></p></td>
+<td><p>Link farmer data with social protection programs for rural poverty targeting</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use cases:</strong> National farmer registries (like India's FRUITS, Lebanon's Farmer Registry), smallholder support programs, agricultural input subsidies.</p>
+<p>See <a class="reference internal" href="../../explanation/farmer_registry.html"><span class="doc">Farmer Registry</span></a> for detailed background on farmer registry concepts.</p>
+</div>
+<div class="section" id="disability-registry">
+<h3>Disability registry<a class="headerlink" href="#disability-registry" title="Permalink to this headline">#</a></h3>
+<p>A registry designed for disability inclusion programs, with data structures aligned to international standards for functional assessment.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Capability</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Disability classification</strong></p></td>
+<td><p>Impairment types, severity levels, causes, age of onset</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Functional assessment</strong></p></td>
+<td><p>Support for ICF-based functional scores (mobility, vision, hearing, cognition, etc.)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Support needs</strong></p></td>
+<td><p>Human assistance requirements, assistive technology, housing adaptations, medical care</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Certification tracking</strong></p></td>
+<td><p>Medical assessment status, disability percentage, certification dates</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Benefit calculation</strong></p></td>
+<td><p>Pre-built logic for tiered grants based on severity (e.g., 40-59% partial, 60-79% moderate, 80%+ severe)</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use cases:</strong> National disability registries, disability grant programs, accessibility planning, assistive device distribution.</p>
+<p>OpenSPP can both:</p>
+<ul class="simple">
+<li><p><strong>Expose disability data</strong> via DCI-compliant API for other systems to query</p></li>
+<li><p><strong>Query external disability registries</strong> to check disability status for eligibility determination</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="the-two-main-registrant-types">
+<h2>The two main registrant types<a class="headerlink" href="#the-two-main-registrant-types" title="Permalink to this headline">#</a></h2>
+<p>Every record in the registry is called a <strong>registrant</strong>. There are two types:</p>
+<div class="section" id="individuals">
+<h3>Individuals<a class="headerlink" href="#individuals" title="Permalink to this headline">#</a></h3>
+<p>An individual represents a single person with:</p>
+<p><strong>Basic information:</strong></p>
+<ul class="simple">
+<li><p>Full name (given name, family name, other names)</p></li>
+<li><p>Date of birth and age</p></li>
+<li><p>Gender</p></li>
+<li><p>Place of birth</p></li>
+</ul>
+<p><strong>Identification:</strong></p>
+<ul class="simple">
+<li><p>ID document types (national ID, voter card, birth certificate, passport, etc.)</p></li>
+<li><p>ID numbers</p></li>
+<li><p>Photos and biometric data (if collected)</p></li>
+</ul>
+<p><strong>Contact information:</strong></p>
+<ul class="simple">
+<li><p>Phone numbers (mobile, landline)</p></li>
+<li><p>Email addresses</p></li>
+<li><p>Physical addresses</p></li>
+</ul>
+<p><strong>Demographics:</strong></p>
+<ul class="simple">
+<li><p>Marital status</p></li>
+<li><p>Education level</p></li>
+<li><p>Occupation</p></li>
+<li><p>Disability status</p></li>
+<li><p>Language preferences</p></li>
+</ul>
+<p><strong>Location:</strong></p>
+<ul class="simple">
+<li><p>Administrative area (province, district, village)</p></li>
+<li><p>Geographic coordinates (if collected)</p></li>
+<li><p>Address details</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Only collect the data you actually need for your programs. More data means more privacy risk and more maintenance burden.</p>
+</div>
+</div>
+<div class="section" id="groups-often-households">
+<h3>Groups (often households)<a class="headerlink" href="#groups-often-households" title="Permalink to this headline">#</a></h3>
+<p>A group represents a collection of people - most commonly a <strong>household</strong> - with:</p>
+<p><strong>Group information:</strong></p>
+<ul class="simple">
+<li><p>Group name or identifier</p></li>
+<li><p>Group type (household, family, cooperative, etc.)</p></li>
+<li><p>Number of members (can be stored without listing individual members)</p></li>
+<li><p>Registration date</p></li>
+</ul>
+<p><strong>Membership details:</strong></p>
+<ul class="simple">
+<li><p>Individual members (if tracked)</p></li>
+<li><p>Member roles (head, principal recipient, alternative recipient, etc.)</p></li>
+<li><p>Household composition counts (adults, children, elderly)</p></li>
+</ul>
+<p><strong>Group-level data:</strong></p>
+<ul class="simple">
+<li><p>Location and address (typically shared by all members)</p></li>
+<li><p>Household assets</p></li>
+<li><p>Income sources</p></li>
+<li><p>Living conditions</p></li>
+<li><p>Contact information</p></li>
+</ul>
+<p>Groups can exist in two forms:</p>
+<ol class="arabic simple">
+<li><p><strong>With individual members</strong> - Each household member is registered as an individual with a membership link</p></li>
+<li><p><strong>Without individual members</strong> - Only aggregate counts (e.g., "3 adults, 2 children") are stored</p></li>
+</ol>
+<p>The choice depends on program requirements and privacy considerations.</p>
+</div>
+</div>
+<div class="section" id="data-model-overview">
+<h2>Data model overview<a class="headerlink" href="#data-model-overview" title="Permalink to this headline">#</a></h2>
+<p>Here's how the registry data is structured:</p>
+<pre class="mermaid">
+        erDiagram
+    REGISTRANT {
+        string name
+        date registration_date
+        string location
+        string contact_info
+        string status
+    }
+    INDIVIDUAL {
+        date birthdate
+        string gender
+        string marital_status
+        string education
+        string disability_status
+    }
+    GROUP {
+        string group_type
+        int member_count
+        string household_data
+    }
+    GROUP_MEMBERSHIP {
+        string role
+        date start_date
+        date end_date
+    }
+
+    REGISTRANT ||--o| INDIVIDUAL : "is a"
+    REGISTRANT ||--o| GROUP : "is a"
+    INDIVIDUAL ||--o{ GROUP_MEMBERSHIP : "belongs to"
+    GROUP ||--o{ GROUP_MEMBERSHIP : "has"
+    </pre></div>
+<div class="section" id="relationships-in-the-registry">
+<h2>Relationships in the registry<a class="headerlink" href="#relationships-in-the-registry" title="Permalink to this headline">#</a></h2>
+<div class="section" id="group-membership">
+<h3>Group membership<a class="headerlink" href="#group-membership" title="Permalink to this headline">#</a></h3>
+<p>Individuals can belong to one or more groups with defined roles:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Role</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Constraint</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Head</strong></p></td>
+<td><p>Head of household or group leader</p></td>
+<td><p>Only one per group</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Principal recipient</strong></p></td>
+<td><p>Primary person who receives benefits</p></td>
+<td><p>Only one per group</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Alternative recipient</strong></p></td>
+<td><p>Backup recipient if principal unavailable</p></td>
+<td><p>Can have multiple</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Member</strong></p></td>
+<td><p>General member without special role</p></td>
+<td><p>No limit</p></td>
+</tr>
+</tbody>
+</table>
+<p>Additional roles can be configured by administrators based on program needs.</p>
+<p><strong>Key concepts:</strong></p>
+<ul class="simple">
+<li><p>An individual can be head of one household and a regular member of another group</p></li>
+<li><p>Membership can have start and end dates to track changes over time</p></li>
+<li><p>Roles determine who can receive payments and make decisions for the group</p></li>
+</ul>
+</div>
+<div class="section" id="registrant-relations">
+<h3>Registrant relations<a class="headerlink" href="#registrant-relations" title="Permalink to this headline">#</a></h3>
+<p>Beyond group membership, you can define specific relationships between registrants:</p>
+<p><strong>Individual to individual:</strong></p>
+<ul class="simple">
+<li><p>Parent/Child</p></li>
+<li><p>Siblings</p></li>
+<li><p>Spouse</p></li>
+<li><p>Guardian/Ward</p></li>
+<li><p>Caretaker</p></li>
+</ul>
+<p><strong>Group to group:</strong></p>
+<ul class="simple">
+<li><p>Neighboring households</p></li>
+<li><p>Extended family groups</p></li>
+<li><p>Cooperative members</p></li>
+</ul>
+<p><strong>Individual to group:</strong></p>
+<ul class="simple">
+<li><p>Social worker assigned to household</p></li>
+<li><p>Teacher assigned to student group</p></li>
+<li><p>Community health worker coverage area</p></li>
+</ul>
+<p>These relationships help with:</p>
+<ul class="simple">
+<li><p>Eligibility rules (e.g., "single parent households")</p></li>
+<li><p>Targeting (e.g., "households with elderly members living alone")</p></li>
+<li><p>Service coordination (e.g., "assign case worker to vulnerable families")</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="key-registry-fields">
+<h2>Key registry fields<a class="headerlink" href="#key-registry-fields" title="Permalink to this headline">#</a></h2>
+<p>While every deployment can customize fields, these are commonly used:</p>
+<div class="section" id="individual-fields">
+<h3>Individual fields<a class="headerlink" href="#individual-fields" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Category</p></th>
+<th class="head"><p>Common fields</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Identity</strong></p></td>
+<td><p>National ID, Voter ID, Birth Certificate, Passport, Social Security Number</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Demographics</strong></p></td>
+<td><p>Age, Gender, Marital Status, Education Level, Literacy</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Family</strong></p></td>
+<td><p>Relationship to household head, Number of children, Number of dependents</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Economic</strong></p></td>
+<td><p>Occupation, Employment status, Income level, Assets owned</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Health</strong></p></td>
+<td><p>Disability status, Chronic illness, Vaccination status, Health card number</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Location</strong></p></td>
+<td><p>Address, Village/Ward, GPS coordinates, Years at residence</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="group-household-fields">
+<h3>Group / household fields<a class="headerlink" href="#group-household-fields" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Category</p></th>
+<th class="head"><p>Common fields</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Composition</strong></p></td>
+<td><p>Number of members, Adults, Children, Elderly, People with disabilities</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Housing</strong></p></td>
+<td><p>House ownership, Type of structure, Sanitation, Water source, Electricity</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Assets</strong></p></td>
+<td><p>Land ownership, Livestock, Vehicles, Appliances</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Economic</strong></p></td>
+<td><p>Total household income, Income sources, Employment count</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Vulnerability</strong></p></td>
+<td><p>Female-headed household, Child-headed household, Chronic illness in family</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="how-registry-data-is-used">
+<h2>How registry data is used<a class="headerlink" href="#how-registry-data-is-used" title="Permalink to this headline">#</a></h2>
+<div class="section" id="for-eligibility-determination">
+<h3>For eligibility determination<a class="headerlink" href="#for-eligibility-determination" title="Permalink to this headline">#</a></h3>
+<p>Programs use registry data to determine who qualifies:</p>
+<p><strong>Example: Cash transfer for poor households</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Registry</span> <span class="n">data</span> <span class="n">used</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Household</span> <span class="n">monthly</span> <span class="n">income</span>
+<span class="o">-</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">children</span> <span class="n">under</span> <span class="mi">5</span>
+<span class="o">-</span> <span class="n">Area</span> <span class="n">of</span> <span class="n">residence</span>
+<span class="o">-</span> <span class="n">Housing</span> <span class="n">conditions</span>
+
+<span class="n">Eligibility</span> <span class="n">rule</span><span class="p">:</span>
+<span class="s2">"Household income below poverty line AND</span>
+ <span class="n">has</span> <span class="n">at</span> <span class="n">least</span> <span class="n">one</span> <span class="n">child</span> <span class="n">under</span> <span class="mi">5</span> <span class="n">AND</span>
+ <span class="n">lives</span> <span class="ow">in</span> <span class="n">target</span> <span class="n">districts</span><span class="s2">"</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="for-benefit-calculation">
+<h3>For benefit calculation<a class="headerlink" href="#for-benefit-calculation" title="Permalink to this headline">#</a></h3>
+<p>Registry data can determine how much beneficiaries receive:</p>
+<p><strong>Example: School feeding program</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Registry</span> <span class="n">data</span> <span class="n">used</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">school</span><span class="o">-</span><span class="n">age</span> <span class="n">children</span> <span class="p">(</span><span class="mi">6</span><span class="o">-</span><span class="mi">14</span> <span class="n">years</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">School</span> <span class="n">enrollment</span> <span class="n">status</span>
+
+<span class="n">Entitlement</span> <span class="n">rule</span><span class="p">:</span>
+<span class="s2">"Amount = Number of enrolled children × Daily rate × School days"</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="for-targeting-and-outreach">
+<h3>For targeting and outreach<a class="headerlink" href="#for-targeting-and-outreach" title="Permalink to this headline">#</a></h3>
+<p>Programs can identify and reach specific populations:</p>
+<ul class="simple">
+<li><p>"Find all households with pregnant women in District X"</p></li>
+<li><p>"List all farmers with less than 2 hectares in drought-affected areas"</p></li>
+<li><p>"Identify elderly people living alone without family support"</p></li>
+</ul>
+</div>
+<div class="section" id="for-deduplication">
+<h3>For deduplication<a class="headerlink" href="#for-deduplication" title="Permalink to this headline">#</a></h3>
+<p>Registry data helps ensure people aren't registered multiple times:</p>
+<ul class="simple">
+<li><p>Compare names and birthdates</p></li>
+<li><p>Check ID document numbers</p></li>
+<li><p>Use biometric matching (fingerprints, facial recognition)</p></li>
+<li><p>Verify household composition</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="registry-data-quality">
+<h2>Registry data quality<a class="headerlink" href="#registry-data-quality" title="Permalink to this headline">#</a></h2>
+<p>High-quality registry data is essential for effective programs:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Quality aspect</p></th>
+<th class="head"><p>What it means</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Accuracy</strong></p></td>
+<td><p>Data correctly represents reality</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Completeness</strong></p></td>
+<td><p>Required fields are filled in</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Consistency</strong></p></td>
+<td><p>Data doesn't contradict itself (e.g., birthdate vs. age)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Timeliness</strong></p></td>
+<td><p>Data is updated when changes occur</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Uniqueness</strong></p></td>
+<td><p>No duplicate registrations</p></td>
+</tr>
+</tbody>
+</table>
+<p>Common data quality issues:</p>
+<ul class="simple">
+<li><p>Missing birthdates or identification documents</p></li>
+<li><p>Outdated addresses after people move</p></li>
+<li><p>Duplicate registrations under different names</p></li>
+<li><p>Inconsistent spelling of names</p></li>
+<li><p>Group membership not updated when people join or leave</p></li>
+</ul>
+</div>
+<div class="section" id="registry-operations">
+<h2>Registry operations<a class="headerlink" href="#registry-operations" title="Permalink to this headline">#</a></h2>
+<div class="section" id="data-collection">
+<h3>Data collection<a class="headerlink" href="#data-collection" title="Permalink to this headline">#</a></h3>
+<p>Registry data comes from various sources:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>Method</p></th>
+<th class="head"><p>When Used</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Registration campaigns</strong></p></td>
+<td><p>Field teams visit communities</p></td>
+<td><p>Initial population registration</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>On-demand registration</strong></p></td>
+<td><p>People come to registration centers</p></td>
+<td><p>Ongoing enrollment</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Mobile data collection</strong></p></td>
+<td><p>Tablets/smartphones with forms</p></td>
+<td><p>Field assessments and updates</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Import from other systems</strong></p></td>
+<td><p>Data files (CSV, Excel, API)</p></td>
+<td><p>Integration with existing databases</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Program intake</strong></p></td>
+<td><p>Application forms</p></td>
+<td><p>Program-specific registration</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="data-updates">
+<h3>Data updates<a class="headerlink" href="#data-updates" title="Permalink to this headline">#</a></h3>
+<p>Registry data needs to stay current:</p>
+<ul class="simple">
+<li><p><strong>Profile updates</strong> - Name changes, new phone numbers, address changes</p></li>
+<li><p><strong>Life events</strong> - Births, deaths, marriages, migrations</p></li>
+<li><p><strong>Household changes</strong> - Members joining/leaving, change of household head</p></li>
+<li><p><strong>Economic changes</strong> - New employment, change in income, asset acquisition</p></li>
+<li><p><strong>Periodic re-verification</strong> - Scheduled updates to confirm data accuracy</p></li>
+</ul>
+</div>
+<div class="section" id="data-security-and-privacy">
+<h3>Data security and privacy<a class="headerlink" href="#data-security-and-privacy" title="Permalink to this headline">#</a></h3>
+<p>Registry data is sensitive and must be protected:</p>
+<p><strong>Security measures:</strong></p>
+<ul class="simple">
+<li><p>Access controls (who can view/edit which data)</p></li>
+<li><p>Encryption of sensitive fields (ID numbers, bank accounts)</p></li>
+<li><p>Audit logs (track who accessed or changed data)</p></li>
+<li><p>Data classification (mark sensitive vs. public data)</p></li>
+</ul>
+<p><strong>Privacy principles:</strong></p>
+<ul class="simple">
+<li><p>Collect only necessary data</p></li>
+<li><p>Obtain consent for data use</p></li>
+<li><p>Limit data sharing to authorized programs</p></li>
+<li><p>Allow people to view and correct their data</p></li>
+<li><p>Set data retention periods and delete old data</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="registry-vs-other-openspp-features">
+<h2>Registry vs. other OpenSPP features<a class="headerlink" href="#registry-vs-other-openspp-features" title="Permalink to this headline">#</a></h2>
+<p>Understanding what the registry does and doesn't do:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Relationship to registry</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Registry</strong></p></td>
+<td><p>Store individual/household profile data</p></td>
+<td><p>Foundation for everything</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Event data</strong></p></td>
+<td><p>Record time-based observations (surveys, visits)</p></td>
+<td><p>Supplements registry with temporal data</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Programs</strong></p></td>
+<td><p>Define benefits and eligibility rules</p></td>
+<td><p>Use registry data to select beneficiaries</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Cycles</strong></p></td>
+<td><p>Single distribution rounds (week, month, quarter) when payments go out</p></td>
+<td><p>Operate on subsets of registry (enrolled beneficiaries)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Variables</strong></p></td>
+<td><p>Computed values from registry data</p></td>
+<td><p>Calculate from registry fields (e.g., household size)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Change requests</strong></p></td>
+<td><p>Workflow for updating registry data</p></td>
+<td><p>Controlled way to modify registry</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>When to use registry fields vs. event data:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Use registry fields</p></th>
+<th class="head"><p>Use event data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stable personal information (name, birthdate)</p></td>
+<td><p>Periodic assessments (income verification)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Current status (marital status, address)</p></td>
+<td><p>Historical records (past visits, surveys)</p></td>
+</tr>
+<tr class="row-even"><td><p>Identification documents</p></td>
+<td><p>External system data syncs</p></td>
+</tr>
+<tr class="row-odd"><td><p>One value per person/household</p></td>
+<td><p>Multiple observations over time</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="working-with-the-registry">
+<h2>Working with the registry<a class="headerlink" href="#working-with-the-registry" title="Permalink to this headline">#</a></h2>
+<div class="section" id="as-a-user-for-example-government-employee">
+<h3>As a user (for example government employee)<a class="headerlink" href="#as-a-user-for-example-government-employee" title="Permalink to this headline">#</a></h3>
+<p>You'll use the registry to:</p>
+<ul class="simple">
+<li><p>Register new individuals and households</p></li>
+<li><p>Search for existing registrants</p></li>
+<li><p>View and update registrant information</p></li>
+<li><p>Verify identity documents</p></li>
+<li><p>Print registration cards</p></li>
+</ul>
+<p>See the <strong>User Guide</strong> for step-by-step instructions on registering individuals, registering groups, and searching registrants.</p>
+</div>
+<div class="section" id="as-an-implementer-monitoring-and-evaluation-technical-staff">
+<h3>As an implementer (Monitoring and evaluation / technical staff)<a class="headerlink" href="#as-an-implementer-monitoring-and-evaluation-technical-staff" title="Permalink to this headline">#</a></h3>
+<p>You'll configure:</p>
+<ul class="simple">
+<li><p>Custom fields for program-specific data</p></li>
+<li><p>ID document types accepted</p></li>
+<li><p>Group types and membership roles</p></li>
+<li><p>Relationship types</p></li>
+<li><p>Data validation rules</p></li>
+<li><p>Import templates</p></li>
+</ul>
+<p>See the <strong>Configuration guide</strong> for setting up custom fields, ID types, and group configuration.</p>
+</div>
+<div class="section" id="as-a-developer">
+<h3>As a developer<a class="headerlink" href="#as-a-developer" title="Permalink to this headline">#</a></h3>
+<p>You'll extend the registry with:</p>
+<ul class="simple">
+<li><p>Custom registrant subtypes</p></li>
+<li><p>Complex computed fields</p></li>
+<li><p>External system integrations</p></li>
+<li><p>Custom deduplication logic</p></li>
+<li><p>Specialized import/export formats</p></li>
+</ul>
+<p>See the <strong>Developer guide</strong> for extending models, custom imports, and external registry integrations.</p>
+</div>
+<div class="section" id="as-a-system-administrator">
+<h3>As a System Administrator<a class="headerlink" href="#as-a-system-administrator" title="Permalink to this headline">#</a></h3>
+<p>You'll manage:</p>
+<ul class="simple">
+<li><p>Database performance and indexes</p></li>
+<li><p>Data backup and recovery</p></li>
+<li><p>Access permissions and security</p></li>
+<li><p>Encryption and data protection</p></li>
+<li><p>Audit logging and compliance</p></li>
+</ul>
+<p>See the <strong>Operations guide</strong> for data encryption, access control, and backup/restore procedures.</p>
+</div>
+</div>
+<div class="section" id="best-practices">
+<h2>Best practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">#</a></h2>
+<div class="section" id="id2">
+<h3>Data collection<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><strong>Minimize data collection</strong> - Only collect what you'll actually use for programs</p></li>
+<li><p><strong>Standardize early</strong> - Define consistent field names and formats before collection starts</p></li>
+<li><p><strong>Plan for updates</strong> - Design processes to keep data current</p></li>
+<li><p><strong>Train collectors</strong> - Ensure field teams understand why data accuracy matters</p></li>
+</ul>
+</div>
+<div class="section" id="data-management">
+<h3>Data management<a class="headerlink" href="#data-management" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><strong>Regular deduplication</strong> - Check for duplicate registrations frequently</p></li>
+<li><p><strong>Data quality monitoring</strong> - Track completeness and accuracy metrics</p></li>
+<li><p><strong>Scheduled updates</strong> - Plan periodic re-verification campaigns</p></li>
+<li><p><strong>Version control</strong> - Track changes to registry data over time</p></li>
+</ul>
+</div>
+<div class="section" id="privacy-and-security">
+<h3>Privacy and security<a class="headerlink" href="#privacy-and-security" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><strong>Need-to-know access</strong> - Limit data visibility based on roles</p></li>
+<li><p><strong>Encrypt sensitive fields</strong> - Protect ID numbers, bank accounts, biometrics</p></li>
+<li><p><strong>Audit access</strong> - Log who views or changes data</p></li>
+<li><p><strong>Data agreements</strong> - Document how data can be shared between agencies</p></li>
+</ul>
+</div>
+<div class="section" id="integration">
+<h3>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><strong>Use external IDs</strong> - Assign unique IDs for linking to other systems</p></li>
+<li><p><strong>API-first integration</strong> - Prefer API connections over file exports</p></li>
+<li><p><strong>Consent management</strong> - Track which programs people have consented to share data with</p></li>
+<li><p><strong>Change detection</strong> - Sync only changed records to external systems</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="are-you-stuck">
+<h2>Are you stuck?<a class="headerlink" href="#are-you-stuck" title="Permalink to this headline">#</a></h2>
+<p><strong>Should I register individuals or households?</strong></p>
+<p>It depends on your programs. If benefits are household-level (e.g., cash transfers to families), register households. If benefits are individual-level (e.g., scholarships, pensions), register individuals. You can register both and link them via membership.</p>
+<p><strong>How do I handle people who belong to multiple households?</strong></p>
+<p>OpenSPP supports multiple group memberships. A person can be head of their immediate household and a member of their extended family group. Each membership can have different roles and dates.</p>
+<p><strong>What's the difference between a registrant and a beneficiary?</strong></p>
+<p>A <strong>registrant</strong> is anyone in the registry database - they might be eligible for programs. A <strong>beneficiary</strong> is someone enrolled in a specific program and receiving benefits. Registrants become beneficiaries through enrollment.</p>
+<p><strong>Can I add custom fields to the registry?</strong></p>
+<p>Yes. Use OpenSPP Studio to add custom fields without writing code. See the Configuration Guide for details.</p>
+<p><strong>How do I import existing data into the registry?</strong></p>
+<p>OpenSPP supports CSV/Excel imports and API integration. See the User Guide for import procedures.</p>
+<p><strong>How often should registry data be updated?</strong></p>
+<p>It depends on your programs. For poverty-targeted programs, annual updates are common. For emergency response, real-time updates may be needed. Balance accuracy needs with data collection costs.</p>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+<p><strong>Learn more about concepts:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="programs.html"><span class="doc">Programs</span></a> - How programs use registry data</p></li>
+<li><p><a class="reference internal" href="eligibility.html"><span class="doc">Eligibility</span></a> - Using registry data in eligibility rules</p></li>
+</ul>
+<p><strong>Start using the registry:</strong></p>
+<ul class="simple">
+<li><p>See the User Guide for step-by-step instructions on registering individuals, registering groups, and searching for registrants.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer-article noprint">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="../index.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Learn</p>
+</div>
+</a>
+<a class="right-next" href="programs.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Programs</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+</div>
+<div class="footer-content row">
+<footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      © Copyright OpenSPP.<br/>
+<div class="extra_footer">
+<p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+</div>
+</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            var lists = $("div.toctree-wrapper ul");
+            $.each(lists, function(index, list) {
+                if($(list).find("li").length == 0) {
+                    $(list).prev().hide();
+                    $(list).hide();
+                }
+            });
+        })
+    </script>
+<script src="/_static/version_switcher.js"></script></body>
+</html>

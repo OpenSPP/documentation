@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Social Protection Management Information System (SP-MIS)" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Social Protection Management Information System (SP-MIS)" name="title" />
 <meta content="OpenSPP SP-MIS product configuration for comprehensive social protection program management from enrollment to payment" name="description" />
 <meta content="OpenSPP, SP-MIS, social protection, management information system, beneficiary management, payments" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/overview/concepts/sp_mis_concepts.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1628,12 +1615,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="social-protection-management-information-system">
+  <div class="section" id="social-protection-management-information-system">
 <h1>Social Protection Management Information System<a class="headerlink" href="#social-protection-management-information-system" title="Permalink to this headline">#</a></h1>
 <p>A <strong>Social Protection Management Information System (SP-MIS)</strong> is a comprehensive digital solution designed to manage and automate the core operational processes of social protection programs. While a <a class="reference internal" href="../../reference/glossary.html#term-Social-registry"><span class="xref std std-term">social registry</span></a> focuses on identifying and assessing potential beneficiaries, an SP-MIS handles the entire lifecycle of program implementation, from enrolling beneficiaries to delivering payments and managing grievances.</p>
 <p>SP-MIS are critical for the effective and transparent administration of <a class="reference internal" href="../../reference/glossary.html#term-Social-protection"><span class="xref std std-term">social protection</span></a> programs, such as <a class="reference internal" href="../../reference/glossary.html#term-Cash-transfers"><span class="xref std std-term">cash transfers</span></a>, food assistance, and public works programs. They serve as the operational backbone, integrating data from various sources—like social registry and national ID systems—to ensure that <a class="reference internal" href="../../reference/glossary.html#term-Benefits"><span class="xref std std-term">benefits</span></a> are delivered to the right people, at the right time, and in the right amount.</p>
 <p>By digitizing and streamlining administrative tasks, an SP-MIS enhances efficiency, reduces the risk of <a class="reference internal" href="../../reference/glossary.html#term-Fraud"><span class="xref std std-term">fraud</span></a> and error, and provides policymakers with timely data for monitoring program performance and making informed decisions.</p>
-<section id="how-does-a-social-protection-management-information-system-work">
+<div class="section" id="how-does-a-social-protection-management-information-system-work">
 <h2>How does a Social Protection Management Information System work?<a class="headerlink" href="#how-does-a-social-protection-management-information-system-work" title="Permalink to this headline">#</a></h2>
 <p>An SP-MIS orchestrates the key business processes involved in running social protection programs. While the specific functionalities can vary based on a country's needs, a typical SP-MIS includes the following operational functions:</p>
 <ol class="arabic simple">
@@ -1644,8 +1631,8 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="../../reference/glossary.html#term-Grievance-redress-mechanism-GRM"><span class="xref std std-term">Grievance redress mechanism (GRM)</span></a>:</strong> Includes a system for logging, tracking, and resolving <a class="reference internal" href="../../reference/glossary.html#term-Complaints"><span class="xref std std-term">complaints</span></a> or <a class="reference internal" href="../../reference/glossary.html#term-Appeals"><span class="xref std std-term">appeals</span></a> from beneficiaries. This ensures accountability and allows program administrators to identify and address systemic issues.</p></li>
 <li><p><strong>Monitoring and Evaluation (M&amp;E):</strong> Features robust dashboards and reporting tools that provide real-time insights into program operations. This allows staff to monitor key performance indicators, track expenditures, and generate reports for stakeholders.</p></li>
 </ol>
-</section>
-<section id="sp-mis-integration-and-interoperability">
+</div>
+<div class="section" id="sp-mis-integration-and-interoperability">
 <h2>SP-MIS, integration and interoperability<a class="headerlink" href="#sp-mis-integration-and-interoperability" title="Permalink to this headline">#</a></h2>
 <p>The true power of an SP-MIS is realized through its ability to integrate with other systems within a nation's digital public infrastructure. This <a class="reference internal" href="../../reference/glossary.html#term-Interoperability"><span class="xref std std-term">interoperability</span></a> creates a cohesive social protection delivery chain.</p>
 <p>An SP-MIS and a Social Registry are distinct but complementary systems. While a <strong>Social Registry</strong> focuses on the initial <a class="reference internal" href="../../reference/glossary.html#term-Identification"><span class="xref std std-term">identification</span></a> and needs assessment of the population to determine <em>potential</em> beneficiaries, the <strong>SP-MIS</strong> manages the ongoing administration of <em>enrolled</em> beneficiaries within specific programs.</p>
@@ -1656,8 +1643,8 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="../../reference/glossary.html#term-Civil-registration"><span class="xref std std-term">Civil registration</span></a></strong> and Vital Statistics (CRVS) systems to verify life events like births or deaths, which can affect eligibility.</p></li>
 <li><p><strong>National ID systems</strong> to validate identities. This integration eliminates data silos, reduces administrative duplication, and enables a more holistic and responsive approach to social protection.</p></li>
 </ul>
-</section>
-<section id="openspp-as-a-social-protection-mis">
+</div>
+<div class="section" id="openspp-as-a-social-protection-mis">
 <h2>OpenSPP as a Social Protection MIS<a class="headerlink" href="#openspp-as-a-social-protection-mis" title="Permalink to this headline">#</a></h2>
 <p>OpenSPP is a powerful, <a class="reference internal" href="../../reference/glossary.html#term-Open-source-software"><span class="xref std std-term">open-source software</span></a> platform that functions as a core Social Protection Management Information System (SP-MIS). It is designed for flexibility and scalability, offering a comprehensive suite of tools to manage the end-to-end delivery of social protection programs.</p>
 <ol class="arabic simple">
@@ -1668,8 +1655,8 @@ title="Print to PDF"
 <li><p><strong>Advanced interoperability:</strong> Built on an open architecture, OpenSPP is designed for seamless integration. It can connect with external systems like social registry, national IDs, and financial service providers using standardized APIs, supporting a fully interoperable social protection ecosystem.</p></li>
 <li><p><strong>Security and data protection:</strong> The OpenSPP team rigorously upholds <a class="reference internal" href="../../reference/glossary.html#term-Data-protection"><span class="xref std std-term">data protection</span></a> and privacy standards. The platform is designed to ensure that sensitive beneficiary data and financial transactions are protected in line with global best practices.</p></li>
 </ol>
-</section>
-<section id="alternative-names-for-sp-mis">
+</div>
+<div class="section" id="alternative-names-for-sp-mis">
 <h2>Alternative names for SP-MIS<a class="headerlink" href="#alternative-names-for-sp-mis" title="Permalink to this headline">#</a></h2>
 <p>Social Protection Management Information Systems are known by various names around the world. Understanding these alternative names can be crucial for recognizing similar systems under different terminologies:</p>
 <ul class="simple">
@@ -1681,8 +1668,8 @@ title="Print to PDF"
 <li><p><strong>Welfare Information Systems (WIS)</strong></p></li>
 </ul>
 <p>For more information about OpenSPP’s Social Protection MIS, contact us through our <a class="reference external" href="https://openspp.org/contact-us/">website</a>.</p>
-</section>
-<section id="references">
+</div>
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.dfat.gov.au/sites/default/files/integrating-data-information-management-social-protection-full.pdf">Barca, V. (2017). <em>Integrating data and information management for social protection: social registries and integrated beneficiary registries</em>. Australian Department of Foreign Affairs and Trade.</a></p></li>
@@ -1690,8 +1677,8 @@ title="Print to PDF"
 <li><p><a class="reference external" href="https://www.cgdev.org/sites/default/files/digital-technology-social-assistance-transfers-covid-19-relief-lessons-selected-cases.pdf">Gelb, A., and Mukherjee, A. (2020). <em>Digital Technology in Social Assistance Transfers: A Toolkit for Action</em>. Center for Global Development.</a></p></li>
 <li><p><a class="reference external" href="https://openknowledge.worldbank.org/entities/publication/c44dc506-72dd-5428-a088-6fb7aea53095">Lindert, K., et al. (2020). <em>Sourcebook on the Foundations of Social Protection Delivery Systems</em>. World Bank.</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_programs_compliance_criteria.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1650,10 +1637,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="programs-compliance-criteria">
+  <div class="section" id="programs-compliance-criteria">
 <h1>Programs: Compliance Criteria<a class="headerlink" href="#programs-compliance-criteria" title="Permalink to this headline">#</a></h1>
 <p>The 'OpenSPP Programs Compliance Criteria' module enhances OpenSPP's social protection program management by enabling administrators to define, manage, and enforce additional eligibility and compliance requirements for beneficiaries beyond initial program enrollment criteria. This ensures ongoing adherence to program rules and accurate beneficiary targeting.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module significantly strengthens program integrity and beneficiary management by:</p>
 <ul class="simple">
@@ -1664,8 +1651,8 @@ title="Print to PDF"
 <li><p><strong>Configuring Filtering Mechanisms</strong>: Program managers can choose when compliance filtering is applied, such as upon membership creation or entitlement generation, offering operational flexibility.</p></li>
 </ul>
 <p>The module ensures programs maintain their intended focus and resource allocation by continuously verifying beneficiary eligibility and compliance throughout a program's lifecycle. For example, a program might require beneficiaries to attend school regularly or reside within a specific administrative area (e.g., country &gt; province &gt; district).</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The 'OpenSPP Programs Compliance Criteria' module integrates deeply with core OpenSPP components to extend program management capabilities:</p>
 <ul class="simple">
@@ -1674,10 +1661,10 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="spp_area.html"><span class="doc std std-doc">OpenSPP Area</span></a></strong>: Compliance criteria can incorporate geographical constraints, utilizing the hierarchical area data managed by this module to define rules based on a beneficiary's administrative location.</p></li>
 <li><p><strong><a class="reference internal" href="spp_programs.html"><span class="doc std std-doc">OpenSPP Programs</span></a></strong>: It builds upon the enhanced program features of OpenSPP Programs, providing additional layers of control and verification for both cash and in-kind entitlement programs.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="defining-program-specific-compliance-rules">
+<div class="section" id="defining-program-specific-compliance-rules">
 <h3>Defining Program-Specific Compliance Rules<a class="headerlink" href="#defining-program-specific-compliance-rules" title="Permalink to this headline">#</a></h3>
 <p>This module allows program administrators to establish detailed compliance criteria unique to each social protection program.</p>
 <ul class="simple">
@@ -1685,8 +1672,8 @@ title="Print to PDF"
 <li><p><strong>Geographical Scope</strong>: Compliance criteria can be tied to specific administrative areas, ensuring beneficiaries meet location-based requirements.</p></li>
 <li><p><strong>Integration with Program Creation</strong>: When creating a new program, administrators can immediately enable and configure initial compliance criteria through a dedicated wizard.</p></li>
 </ul>
-</section>
-<section id="automating-compliance-checks">
+</div>
+<div class="section" id="automating-compliance-checks">
 <h3>Automating Compliance Checks<a class="headerlink" href="#automating-compliance-checks" title="Permalink to this headline">#</a></h3>
 <p>The module provides tools to automatically evaluate beneficiary compliance within active program cycles.</p>
 <ul class="simple">
@@ -1694,21 +1681,21 @@ title="Print to PDF"
 <li><p><strong>Automated State Transition</strong>: Beneficiaries found not to meet the criteria are automatically marked with a 'Non-Compliant' status, streamlining the identification process.</p></li>
 <li><p><strong>Configurable Automation</strong>: System administrators can configure the system to automatically apply compliance filtering at specific events, such as when new cycle memberships are created or when entitlements are generated.</p></li>
 </ul>
-</section>
-<section id="monitoring-beneficiary-compliance-status">
+</div>
+<div class="section" id="monitoring-beneficiary-compliance-status">
 <h3>Monitoring Beneficiary Compliance Status<a class="headerlink" href="#monitoring-beneficiary-compliance-status" title="Permalink to this headline">#</a></h3>
 <p>The module provides clear visibility into the compliance status of all program beneficiaries.</p>
 <ul class="simple">
 <li><p><strong>New 'Non-Compliant' Status</strong>: A dedicated 'Non-Compliant' state is added to beneficiary cycle memberships, making it easy to identify beneficiaries requiring attention.</p></li>
 <li><p><strong>Comprehensive Enrollment Counts</strong>: Program cycles display the total number of enrollments, providing a complete overview of all beneficiaries, regardless of their compliance status. This allows for both filtered and unfiltered views of program participation.</p></li>
 </ul>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The 'OpenSPP Programs Compliance Criteria' module is essential for maintaining the integrity and effectiveness of social protection programs by providing robust tools for defining, automating, and monitoring beneficiary adherence to program rules. It ensures that OpenSPP programs consistently serve their intended populations through flexible and enforceable compliance management.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

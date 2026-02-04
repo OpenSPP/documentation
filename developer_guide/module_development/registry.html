@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Registry" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Registry" name="title" />
 <meta content="Learn how to customize OpenSPP registry system by adding new top-level group types and extending registry functionality" name="description" />
 <meta content="OpenSPP, registry customization, group types, registry system, module development, registry extension" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/module_development/registry.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1792,7 +1779,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="registry">
+  <div class="section" id="registry">
 <h1>Registry<a class="headerlink" href="#registry" title="Permalink to this headline">#</a></h1>
 <p>This article explains how to customize OpenSPP's registry system by introducing a new <strong>top-level group</strong> type.
 As a practical example, we'll add a new top-level group type (such as &quot;Village&quot;) that can contain regular groups (households), along with custom UI, data, and actions.</p>
@@ -1809,15 +1796,15 @@ As a practical example, we'll add a new top-level group type (such as &quot;Vill
 <li><p>Computed statistics for top-level groups</p></li>
 <li><p>Custom actions for navigation and reporting</p></li>
 </ul>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Solid understanding of Odoo 17 module development, including Python, XML, and XPath.</p></li>
 <li><p>Required modules: <code class="docutils literal notranslate"><span class="pre">g2p_registry_base</span></code>, <code class="docutils literal notranslate"><span class="pre">g2p_registry_group</span></code>, <code class="docutils literal notranslate"><span class="pre">g2p_registry_individual</span></code>, <code class="docutils literal notranslate"><span class="pre">g2p_registry_membership</span></code>, <code class="docutils literal notranslate"><span class="pre">spp_registry_group_hierarchy</span></code>.</p></li>
 <li><p>To set up OpenSPP for development, please refer to the <a class="reference internal" href="../setup.html"><span class="doc">Development Setup Guide</span></a>.</p></li>
 </ul>
-</section>
-<section id="module-structure">
+</div>
+<div class="section" id="module-structure">
 <h2>Module Structure<a class="headerlink" href="#module-structure" title="Permalink to this headline">#</a></h2>
 <p>A typical registry customization module follows the standard Odoo structure.
 Here's the structure for our example module, <code class="docutils literal notranslate"><span class="pre">spp_top_level_groups</span></code>:</p>
@@ -1838,14 +1825,14 @@ Here's the structure for our example module, <code class="docutils literal notra
     └── ir.model.access.csv
 </pre></div>
 </div>
-</section>
-<section id="step-by-step-guide">
+</div>
+<div class="section" id="step-by-step-guide">
 <h2>Step-by-Step Guide<a class="headerlink" href="#step-by-step-guide" title="Permalink to this headline">#</a></h2>
-<section id="create-the-module-scaffold">
+<div class="section" id="create-the-module-scaffold">
 <h3>Create the Module Scaffold<a class="headerlink" href="#create-the-module-scaffold" title="Permalink to this headline">#</a></h3>
 <p>Create a new directory for your module (e.g., <code class="docutils literal notranslate"><span class="pre">spp_top_level_groups</span></code>) and populate it with the files and folders shown above.</p>
-</section>
-<section id="define-module-manifest">
+</div>
+<div class="section" id="define-module-manifest">
 <h3>Define Module Manifest<a class="headerlink" href="#define-module-manifest" title="Permalink to this headline">#</a></h3>
 <p>Create a manifest file with the necessary dependencies and data files:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -1877,8 +1864,8 @@ Here's the structure for our example module, <code class="docutils literal notra
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="add-custom-group-kind-data">
+</div>
+<div class="section" id="add-custom-group-kind-data">
 <h3>Add Custom Group Kind Data<a class="headerlink" href="#add-custom-group-kind-data" title="Permalink to this headline">#</a></h3>
 <p>Create <code class="docutils literal notranslate"><span class="pre">data/group_kind_data.xml</span></code> to define the new group kind:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odoo&gt;</span>
@@ -1892,13 +1879,13 @@ Here's the structure for our example module, <code class="docutils literal notra
 <span class="nt">&lt;/odoo&gt;</span>
 </pre></div>
 </div>
-</section>
-<section id="extend-the-registry-model">
+</div>
+<div class="section" id="extend-the-registry-model">
 <h3>Extend the Registry Model<a class="headerlink" href="#extend-the-registry-model" title="Permalink to this headline">#</a></h3>
 <p>Create <code class="docutils literal notranslate"><span class="pre">models/res_partner.py</span></code> to add custom fields, indicators, and actions:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">odoo</span><span class="w"> </span><span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">api</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">api</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">G2PTopLevelGroup</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">G2PTopLevelGroup</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;res.partner&quot;</span>
 
     <span class="n">village_code</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="s2">&quot;Village Code&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Official village code or identifier&quot;</span><span class="p">)</span>
@@ -1917,7 +1904,7 @@ Here's the structure for our example module, <code class="docutils literal notra
         <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Average number of individuals per household&quot;</span>
     <span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_total_households</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_compute_total_households</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">rec</span><span class="o">.</span><span class="n">is_group</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">rec</span><span class="o">.</span><span class="n">kind</span> <span class="ow">or</span> <span class="n">rec</span><span class="o">.</span><span class="n">kind</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s1">&#39;Village&#39;</span><span class="p">:</span>
                 <span class="n">rec</span><span class="o">.</span><span class="n">total_households</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1927,7 +1914,7 @@ Here's the structure for our example module, <code class="docutils literal notra
             <span class="p">)</span>
             <span class="n">rec</span><span class="o">.</span><span class="n">total_households</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">household_groups</span><span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_total_individuals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_compute_total_individuals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">rec</span><span class="o">.</span><span class="n">is_group</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">rec</span><span class="o">.</span><span class="n">kind</span> <span class="ow">or</span> <span class="n">rec</span><span class="o">.</span><span class="n">kind</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s1">&#39;Village&#39;</span><span class="p">:</span>
                 <span class="n">rec</span><span class="o">.</span><span class="n">total_individuals</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1940,14 +1927,14 @@ Here's the structure for our example module, <code class="docutils literal notra
                 <span class="n">total</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">household</span><span class="o">.</span><span class="n">group_membership_ids</span><span class="o">.</span><span class="n">mapped</span><span class="p">(</span><span class="s1">&#39;individual&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filtered</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="ow">not</span> <span class="n">x</span><span class="o">.</span><span class="n">is_group</span><span class="p">))</span>
             <span class="n">rec</span><span class="o">.</span><span class="n">total_individuals</span> <span class="o">=</span> <span class="n">total</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_compute_avg_household_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_compute_avg_household_size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">rec</span><span class="o">.</span><span class="n">total_households</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">rec</span><span class="o">.</span><span class="n">avg_household_size</span> <span class="o">=</span> <span class="n">rec</span><span class="o">.</span><span class="n">total_individuals</span> <span class="o">/</span> <span class="n">rec</span><span class="o">.</span><span class="n">total_households</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">rec</span><span class="o">.</span><span class="n">avg_household_size</span> <span class="o">=</span> <span class="mf">0.0</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">action_view_households</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">action_view_households</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ensure_one</span><span class="p">()</span>
         <span class="n">household_groups</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">group_membership_ids</span><span class="o">.</span><span class="n">mapped</span><span class="p">(</span><span class="s1">&#39;individual&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filtered</span><span class="p">(</span>
             <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">is_group</span> <span class="ow">and</span> <span class="n">x</span><span class="o">.</span><span class="n">kind</span> <span class="ow">and</span> <span class="n">x</span><span class="o">.</span><span class="n">kind</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;Household&#39;</span>
@@ -1961,7 +1948,7 @@ Here's the structure for our example module, <code class="docutils literal notra
             <span class="s1">&#39;context&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;default_is_group&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;default_kind&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="s1">&#39;g2p_registry_group.group_kind_household&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">id</span><span class="p">},</span>
         <span class="p">}</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">action_view_individuals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">action_view_individuals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ensure_one</span><span class="p">()</span>
         <span class="n">all_individuals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">&#39;res.partner&#39;</span><span class="p">]</span>
         <span class="n">household_groups</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">group_membership_ids</span><span class="o">.</span><span class="n">mapped</span><span class="p">(</span><span class="s1">&#39;individual&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filtered</span><span class="p">(</span>
@@ -1980,23 +1967,23 @@ Here's the structure for our example module, <code class="docutils literal notra
         <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="extend-group-kind-model">
+</div>
+<div class="section" id="extend-group-kind-model">
 <h3>Extend Group Kind Model<a class="headerlink" href="#extend-group-kind-model" title="Permalink to this headline">#</a></h3>
 <p>Create <code class="docutils literal notranslate"><span class="pre">models/group_kind.py</span></code> to add custom flags:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">odoo</span><span class="w"> </span><span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">SPPGroupKind</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">SPPGroupKind</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;g2p.group.kind&quot;</span>
 
     <span class="n">is_top_level_group</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="s2">&quot;Is Top Level Group&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Indicates if this group kind represents a top-level group&quot;</span><span class="p">)</span>
     <span class="n">can_contain_households</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="s2">&quot;Can Contain Households&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Indicates if this group kind can contain household groups&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="create-view-extensions">
+</div>
+<div class="section" id="create-view-extensions">
 <h3>Create View Extensions<a class="headerlink" href="#create-view-extensions" title="Permalink to this headline">#</a></h3>
-<section id="top-level-group-views-views-top-level-group-views-xml">
+<div class="section" id="top-level-group-views-views-top-level-group-views-xml">
 <h4>Top Level Group Views (<code class="docutils literal notranslate"><span class="pre">views/top_level_group_views.xml</span></code>)<a class="headerlink" href="#top-level-group-views-views-top-level-group-views-xml" title="Permalink to this headline">#</a></h4>
 <p>Update all field names to remove the prefix:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odoo&gt;</span>
@@ -2124,8 +2111,8 @@ Here's the structure for our example module, <code class="docutils literal notra
 <span class="nt">&lt;/odoo&gt;</span>
 </pre></div>
 </div>
-</section>
-<section id="group-kind-views-views-group-kind-views-xml">
+</div>
+<div class="section" id="group-kind-views-views-group-kind-views-xml">
 <h4>Group Kind Views (<code class="docutils literal notranslate"><span class="pre">views/group_kind_views.xml</span></code>)<a class="headerlink" href="#group-kind-views-views-group-kind-views-xml" title="Permalink to this headline">#</a></h4>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odoo&gt;</span>
 <span class="w">    </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;view_group_kind_tree_top_level&quot;</span><span class="w"> </span><span class="na">model=</span><span class="s">&quot;ir.ui.view&quot;</span><span class="nt">&gt;</span>
@@ -2142,8 +2129,8 @@ Here's the structure for our example module, <code class="docutils literal notra
 <span class="nt">&lt;/odoo&gt;</span>
 </pre></div>
 </div>
-</section>
-<section id="group-views-views-group-views-xml">
+</div>
+<div class="section" id="group-views-views-group-views-xml">
 <h4>Group Views (<code class="docutils literal notranslate"><span class="pre">views/group_views.xml</span></code>)<a class="headerlink" href="#group-views-views-group-views-xml" title="Permalink to this headline">#</a></h4>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odoo&gt;</span>
 <span class="w">    </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;view_groups_form_village_info&quot;</span><span class="w"> </span><span class="na">model=</span><span class="s">&quot;ir.ui.view&quot;</span><span class="nt">&gt;</span>
@@ -2165,17 +2152,17 @@ Here's the structure for our example module, <code class="docutils literal notra
 <span class="nt">&lt;/odoo&gt;</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="add-security-access">
+</div>
+</div>
+<div class="section" id="add-security-access">
 <h3>Add Security Access<a class="headerlink" href="#add-security-access" title="Permalink to this headline">#</a></h3>
 <p>Create <code class="docutils literal notranslate"><span class="pre">security/ir.model.access.csv</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">model_id</span><span class="p">:</span><span class="nb">id</span><span class="p">,</span><span class="n">group_id</span><span class="p">:</span><span class="nb">id</span><span class="p">,</span><span class="n">perm_read</span><span class="p">,</span><span class="n">perm_write</span><span class="p">,</span><span class="n">perm_create</span><span class="p">,</span><span class="n">perm_unlink</span>
 <span class="n">access_top_level_groups_admin</span><span class="p">,</span><span class="n">top</span><span class="o">.</span><span class="n">level</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">admin</span><span class="p">,</span><span class="n">base</span><span class="o">.</span><span class="n">model_res_partner</span><span class="p">,</span><span class="n">g2p_registry_base</span><span class="o">.</span><span class="n">group_g2p_admin</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
 </pre></div>
 </div>
-</section>
-<section id="install-and-test">
+</div>
+<div class="section" id="install-and-test">
 <h3>Install and Test<a class="headerlink" href="#install-and-test" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p><strong>Install the module</strong> via the Apps menu.</p></li>
@@ -2186,8 +2173,8 @@ Add households as members.</p></li>
 <li><p><strong>Test</strong>: Use action buttons to view households and individuals.
 Check computed indicators.</p></li>
 </ol>
-</section>
-<section id="example-use-case">
+</div>
+<div class="section" id="example-use-case">
 <h3>Example Use Case<a class="headerlink" href="#example-use-case" title="Permalink to this headline">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Village A (Top Level Group)
 ├── Household 1 (Regular Group)
@@ -2198,9 +2185,9 @@ Check computed indicators.</p></li>
     └── Alice Smith (Individual)
 </pre></div>
 </div>
-</section>
-</section>
-<section id="best-practices">
+</div>
+</div>
+<div class="section" id="best-practices">
 <h2>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Use descriptive names for group kinds.</p></li>
@@ -2208,16 +2195,16 @@ Check computed indicators.</p></li>
 <li><p>Use domains and validation to enforce group relationships.</p></li>
 <li><p>Provide clear navigation and action buttons for users.</p></li>
 </ul>
-</section>
-<section id="references">
+</div>
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <p>For more information on extending OpenSPP modules, refer to:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/">Odoo 17 Developer Documentation</a></p></li>
 <li><p>Related guides: <a class="reference internal" href="fields.html"><span class="doc">Customizing Fields</span></a>, <a class="reference internal" href="indicators.html"><span class="doc">Customizing Indicators</span></a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_entitlement_basket.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="entitlement-basket">
+  <div class="section" id="entitlement-basket">
 <h1>Entitlement Basket<a class="headerlink" href="#entitlement-basket" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Entitlement Basket module empowers program administrators to define and manage structured baskets of goods and services that beneficiaries are entitled to receive. This simplifies the often complex process of distributing in-kind benefits within social protection programs, ensuring efficient and transparent delivery.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Entitlement Basket module provides a robust framework for managing non-cash benefits, specifically designed to streamline the distribution of tangible goods. It accomplishes this by enabling users to:</p>
 <ul class="simple">
@@ -1674,8 +1661,8 @@ title="Print to PDF"
 <li><p><strong>Enable Role-Based Validation</strong>: Assign specific user groups the responsibility for validating entitlements, enhancing accountability and program integrity.</p></li>
 </ul>
 <p>This module ensures that in-kind distributions, vital for many social protection initiatives, are managed with the same rigor and efficiency as cash transfers, improving program impact and reducing operational overhead.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Entitlement Basket module integrates seamlessly with several other OpenSPP and core Odoo modules to deliver its comprehensive functionality:</p>
 <ul class="simple">
@@ -1686,22 +1673,22 @@ title="Print to PDF"
 <li><p><strong>Product (product)</strong>: The module utilizes Odoo's core Product module to define and manage the individual items (e.g., rice, soap, seeds) that constitute an entitlement basket.</p></li>
 <li><p><strong>Stock (stock)</strong>: For programs managing physical goods, this module integrates with Odoo's Stock module to track inventory levels, manage warehouse assignments, and potentially trigger stock movements when entitlements are approved.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="defining-entitlement-baskets">
+<div class="section" id="defining-entitlement-baskets">
 <h3>Defining Entitlement Baskets<a class="headerlink" href="#defining-entitlement-baskets" title="Permalink to this headline">#</a></h3>
 <p>Users can create and configure specific entitlement baskets, detailing the exact products and their quantities. Each basket serves as a template for a set of in-kind benefits. For example, a &quot;Standard Food Basket&quot; might include 10kg of rice, 2kg of beans, and 1 liter of cooking oil. This standardization ensures consistency across beneficiaries and simplifies program design.</p>
-</section>
-<section id="dynamic-entitlement-calculation">
+</div>
+<div class="section" id="dynamic-entitlement-calculation">
 <h3>Dynamic Entitlement Calculation<a class="headerlink" href="#dynamic-entitlement-calculation" title="Permalink to this headline">#</a></h3>
 <p>The module supports dynamic calculation of entitlement quantities. Administrators can define a 'multiplier field' based on beneficiary attributes (e.g., number of household members, number of children) to automatically adjust the basket's quantity for each beneficiary. A 'maximum number' can also be set, with '0' indicating no upper limit, allowing for flexible scaling of benefits while preventing excessive distribution.</p>
-</section>
-<section id="inventory-and-distribution-management">
+</div>
+<div class="section" id="inventory-and-distribution-management">
 <h3>Inventory and Distribution Management<a class="headerlink" href="#inventory-and-distribution-management" title="Permalink to this headline">#</a></h3>
 <p>For programs that manage physical goods, the module offers robust inventory integration. Users can specify a 'Warehouse' for each entitlement basket manager. When entitlements are approved, the system can be configured to 'manage inventory', which links directly to the Stock module to track item allocation and ensure availability at designated distribution points.</p>
-</section>
-<section id="entitlement-lifecycle-management">
+</div>
+<div class="section" id="entitlement-lifecycle-management">
 <h3>Entitlement Lifecycle Management<a class="headerlink" href="#entitlement-lifecycle-management" title="Permalink to this headline">#</a></h3>
 <p>The module provides a comprehensive workflow for managing in-kind entitlements through various stages:</p>
 <ul class="simple">
@@ -1711,13 +1698,13 @@ title="Print to PDF"
 <li><p><strong>Cancellation</strong>: Cancel entitlements that are no longer valid or required, providing flexibility in program administration.</p></li>
 </ul>
 <p>This structured process ensures accountability and control over the distribution of in-kind benefits.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Entitlement Basket module is a critical component for OpenSPP, enabling the efficient and transparent management of in-kind benefits within social protection and farmer registry programs. It streamlines the definition, calculation, and distribution of goods and services, ultimately enhancing program delivery and impact.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

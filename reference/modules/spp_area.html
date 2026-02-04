@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_area.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1640,10 +1627,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="area-management">
+  <div class="section" id="area-management">
 <h1>Area Management<a class="headerlink" href="#area-management" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Area module (<code class="docutils literal notranslate"><span class="pre">spp_area</span></code>) extends the foundational <a class="reference internal" href="spp_area_base.html"><span class="doc std std-doc">OpenSPP Area Base</span></a> module to provide robust features for linking individuals and groups to specific geographical administrative areas within the OpenSPP platform. This module is crucial for accurately locating beneficiaries and managing social protection programs and farmer registries based on their physical presence.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module establishes the critical connection between registrants and their geographical locations, underpinning effective program delivery and data analysis.</p>
 <ul class="simple">
@@ -1653,29 +1640,29 @@ title="Print to PDF"
 <li><p><strong>Supports Geographical Analysis and Reporting:</strong> Enables robust analysis of program reach, beneficiary distribution, and regional needs by providing a consistent and accurate geographical context across the system.</p></li>
 <li><p><strong>Streamlines Area Assignment:</strong> Simplifies the process of assigning and managing geographical locations for all beneficiaries, supporting efficient data management in large-scale deployments.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Area module is a fundamental component, integrating closely with core registrant management functionalities and building upon the base geographical definitions.</p>
 <p>This module builds directly on the <a class="reference internal" href="spp_area_base.html"><span class="doc std std-doc">OpenSPP Area Base</span></a> module, utilizing its core definitions of hierarchical geographical areas (e.g., country, province, district). It extends this foundation by enabling the crucial linkage of registrants to these defined administrative areas.</p>
 <p>It integrates deeply with the <a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">G2P Registry Base</span></a> module, which manages core registrant data. By extending the underlying <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model, <code class="docutils literal notranslate"><span class="pre">spp_area</span></code> adds a dedicated field to associate each registrant with a specific administrative area. This functionality is then leveraged by the <a class="reference internal" href="g2p_registry_individual.html"><span class="doc std std-doc">G2P Registry Individual</span></a> and <a class="reference internal" href="g2p_registry_group.html"><span class="doc std std-doc">G2P Registry Groups</span></a> modules, ensuring that both individual beneficiaries and beneficiary groups can be accurately located within the system. Additionally, the module utilizes <code class="docutils literal notranslate"><span class="pre">queue_job</span></code> for efficient background processing, which is vital for handling large-scale operations like area data imports or updates without impacting system performance.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="registrant-area-assignment">
+<div class="section" id="registrant-area-assignment">
 <h3>Registrant Area Assignment<a class="headerlink" href="#registrant-area-assignment" title="Permalink to this headline">#</a></h3>
 <p>Users can assign a specific administrative area to each individual and group registrant directly from their profile. This capability ensures that all beneficiaries are precisely located within the system, which is essential for targeted program delivery and operational planning. The module validates that only official administrative area types, as defined in <a class="reference internal" href="spp_area_base.html"><span class="doc std std-doc">OpenSPP Area Base</span></a> (e.g., country, province, district, or village), can be selected for a registrant, maintaining data accuracy and consistency.</p>
-</section>
-<section id="integrated-area-management-tools">
+</div>
+<div class="section" id="integrated-area-management-tools">
 <h3>Integrated Area Management Tools<a class="headerlink" href="#integrated-area-management-tools" title="Permalink to this headline">#</a></h3>
 <p>Building on the base area definitions, this module provides extended views and tools for managing the geographical areas themselves. This includes enhanced capabilities for importing and updating area data, ensuring that the system's geographical structure remains current and robust for all social protection and farmer registry operations. These tools facilitate efficient maintenance of the area hierarchy and its attributes.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Area module provides the essential link between registrants and their geographical locations, enabling precise targeting, effective program delivery, and robust spatial analysis across the OpenSPP platform.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

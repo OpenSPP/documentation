@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_program_documents.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-program-documents">
+  <div class="section" id="g2p-program-documents">
 <h1>G2P Program Documents<a class="headerlink" href="#g2p-program-documents" title="Permalink to this headline">#</a></h1>
 <p>The G2P Program Documents module enhances OpenSPP's core document and program management capabilities by enabling the direct association of documents with specific program enrollments and individual benefit entitlements. This module ensures that all program-related documentation is systematically organized, easily accessible, and integrated directly into the lifecycle of social protection programs.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines document management for G2P programs, providing critical capabilities for compliance, auditability, and efficient program operations:</p>
 <ul class="simple">
@@ -1671,38 +1658,38 @@ title="Print to PDF"
 <li><p><strong>Configure Program-Specific Document Storage:</strong> Each G2P program can define its own preferred document storage backend, allowing for tailored storage solutions based on program requirements or regional data policies.</p></li>
 <li><p><strong>Enhance Auditability and Compliance:</strong> By linking documents directly to program memberships and entitlements, the module significantly improves the ability to audit program operations, verify beneficiary eligibility, and ensure compliance with regulatory requirements.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The G2P Program Documents module builds upon and integrates deeply with other foundational OpenSPP modules to deliver its functionality.</p>
 <p>It extends the capabilities of the <a class="reference internal" href="g2p_documents.html"><span class="doc std std-doc">G2P Documents</span></a> module, utilizing its underlying infrastructure for secure file storage and management. This module specifically enhances the <code class="docutils literal notranslate"><span class="pre">storage.file</span></code> and <code class="docutils literal notranslate"><span class="pre">storage.backend</span></code> models to introduce direct links to program memberships and entitlements, tailoring the general document storage for G2P program needs.</p>
 <p>Furthermore, this module is tightly integrated with the <a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">G2P Programs</span></a> module. It extends core program entities such as <code class="docutils literal notranslate"><span class="pre">g2p.program</span></code>, <code class="docutils literal notranslate"><span class="pre">g2p.program_membership</span></code>, and <code class="docutils literal notranslate"><span class="pre">g2p.entitlement</span></code> to incorporate document fields and management directly into the program lifecycle. This integration ensures that documentation is a seamless part of program definition, beneficiary enrollment, and benefit issuance processes.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The G2P Program Documents module offers several key features to enhance document management within social protection programs:</p>
-<section id="program-specific-document-storage-configuration">
+<div class="section" id="program-specific-document-storage-configuration">
 <h3>Program-Specific Document Storage Configuration<a class="headerlink" href="#program-specific-document-storage-configuration" title="Permalink to this headline">#</a></h3>
 <p>Each G2P program can be configured with its own dedicated document storage backend. This allows program administrators to select appropriate storage solutions (e.g., local server, cloud storage like S3) based on data residency requirements, security policies, or performance needs unique to that program. This flexibility ensures that document storage aligns with specific program operational contexts.</p>
-</section>
-<section id="linking-documents-to-program-membership">
+</div>
+<div class="section" id="linking-documents-to-program-membership">
 <h3>Linking Documents to Program Membership<a class="headerlink" href="#linking-documents-to-program-membership" title="Permalink to this headline">#</a></h3>
 <p>Users can upload and associate various types of documents, such as beneficiary application forms, identity documents, or household surveys, directly with a beneficiary's membership in a specific G2P program. This feature centralizes all documentation relevant to a beneficiary's enrollment and ongoing participation, making it easy to review their program-specific history and eligibility.</p>
-</section>
-<section id="linking-documents-to-entitlements">
+</div>
+<div class="section" id="linking-documents-to-entitlements">
 <h3>Linking Documents to Entitlements<a class="headerlink" href="#linking-documents-to-entitlements" title="Permalink to this headline">#</a></h3>
 <p>The module enables the attachment of documents directly to individual entitlements, which represent specific benefit disbursements or services provided. For instance, users can upload signed receipts, proof of delivery, or verification photos for each payment cycle. This granular linking provides a robust audit trail, critical for accountability and fraud prevention.</p>
-</section>
-<section id="automated-document-association">
+</div>
+<div class="section" id="automated-document-association">
 <h3>Automated Document Association<a class="headerlink" href="#automated-document-association" title="Permalink to this headline">#</a></h3>
 <p>To streamline workflows, the module can automatically link relevant documents to newly generated entitlements. When a beneficiary receives a new benefit, documents previously attached to their program membership, such as their national ID, can be automatically associated with the new entitlement. This reduces manual data entry and ensures that all necessary supporting documentation is consistently available for each benefit.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Program Documents module is essential for creating a robust, auditable, and efficient documentation system within OpenSPP, directly linking critical documents to program enrollments and individual benefit entitlements.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

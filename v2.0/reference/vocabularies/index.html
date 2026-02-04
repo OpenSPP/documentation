@@ -1,0 +1,2998 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+<meta content="Vocabulary Reference" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://docs.openspp.org/reference/vocabularies/index.html" property="og:url"/>
+<meta content="OpenSPP Documentation" property="og:site_name"/>
+<meta content="Complete reference for all standard vocabularies in OpenSPP V2. Quick Reference:,,,,, Vocabulary, Namespace, Codes, Hierarchical, Domain,,, Gender (ISO 5218), urn:iso:std:iso:5218, 4, No, Core,, Re..." property="og:description"/>
+<meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
+<meta content="OpenSPP Documentation" property="og:image:alt"/>
+<meta content="Complete reference for all standard vocabularies in OpenSPP V2. Quick Reference:,,,,, Vocabulary, Namespace, Codes, Hierarchical, Domain,,, Gender (ISO 5218), urn:iso:std:iso:5218, 4, No, Core,, Re..." name="description"/>
+<meta content="en_US" property="og:locale"/>
+<title>Vocabulary Reference – Reference — OpenSPP Documentation v2.0</title>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/sphinxcontrib-httpexample.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/custom.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/print.css" media="print" rel="stylesheet" type="text/css"/>
+<link href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script src="../../_static/sphinxcontrib-httpexample.js"></script>
+<script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+<script src="../../_static/search-utils.js"></script>
+<script src="../../_static/mermaid_init.js"></script>
+<script src="../../_static/patch_scrollToActive.js"></script>
+<script src="../../_static/search_shortcut.js"></script>
+<script src="../../_static/module-filter.js"></script>
+<script src="../../_static/design-tabs.js"></script>
+<link href="https://docs.openspp.org/reference/vocabularies/" rel="canonical">
+<link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v2.0" type="application/opensearchdescription+xml"/>
+<link href="../../_static/icon_192.png" rel="shortcut icon"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="../glossary/humanitarian.html" rel="next" title="Humanitarian Terms Glossary"/>
+<link href="../modules/theme_openspp_muk.html" rel="prev" title="Theme"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../../_static/review_status.css" type="text/css" />
+<script src="../../_static/review_status_simple.js"></script>
+-->
+<script crossorigin="anonymous" integrity="sha384-vJ1NXwwlC62VkTLRHyzdAfyL4rQ8Z478DeHgamh37YzGJh3T6j223FC2yMRVriLl" src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+<!-- Mermaid Support -->
+<script crossorigin="anonymous" integrity="sha384-+NGfjU8KzpDLXRHduEqW+ZiJr2rIg+cidUVk7B51R5xK7cHwMKQfrdFwGdrq1Bcz" src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+</link></link></link></link></link></link></head>
+<body data-offset="100" data-spy="scroll" data-target="#bd-toc-nav">
+<!-- Checkboxes to toggle the left sidebar -->
+<input aria-label="Toggle navigation sidebar" class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<label class="overlay overlay-navbar" for="__navigation">
+<div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input aria-label="Toggle in-page Table of Contents" class="sidebar-toggle" id="__page-toc" name="__page-toc" type="checkbox"/>
+<label class="overlay overlay-pagetoc" for="__page-toc">
+<div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+<div class="container-fluid" id="banner"></div>
+<div class="container-xl">
+<div class="row">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+<div class="bd-sidebar__content">
+<div class="bd-sidebar__top"><div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../">
+<h1 class="site-logo" id="site-title">OpenSPP Documentation v2.0</h1>
+</a>
+</div><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<div class="input-group">
+<label class="sr-only" for="q">Search string
+    </label>
+<i aria-hidden="true" class="fa fa-search fa-lg search-icon"></i>
+<input aria-labelledby="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search" spellcheck="false" type="search" value="">
+<div class="input-group-append">
+<span class="input-group-text" id="shortcut">
+<kbd id="search-shortcut">⌘</kbd> <kbd>K</kbd>
+</span>
+</div>
+</input></div>
+</form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../products/">
+   Products
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/sp_mis.html">
+     OpenSPP SP-MIS
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/social_registry.html">
+     OpenSPP Social Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/farmer_registry.html">
+     OpenSPP Farmer Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/drims.html">
+     OpenSPP DRIMS
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../products/features/">
+     Features
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/unified_registry.html">
+       Unified registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/gis_land_management.html">
+       GIS &amp; land management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/program_management.html">
+       Program management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/eligibility_targeting.html">
+       Eligibility &amp; targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/payment_disbursement.html">
+       Payment &amp; disbursement
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/in_kind_benefits.html">
+       In-Kind benefits
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/data_integration_apis.html">
+       Data integration &amp; APIs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/change_management.html">
+       Change management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/grievance_redress.html">
+       Grievance redress
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/whats_new_v2.html">
+     What's new in OpenSPP v2
+    </a>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../learn/">
+   Learn
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/registry.html">
+     Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/programs.html">
+     Programs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/cycles.html">
+     Cycles
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/eligibility.html">
+     Eligibility
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/compliance.html">
+     Compliance
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/entitlements.html">
+     Entitlements
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/payments.html">
+     Payments
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/deduplication.html">
+     Deduplication
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/change-requests.html">
+     Change requests
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../get_started/">
+   Get started
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/installation/">
+     Installing OpenSPP
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+<label for="toctree-checkbox-5">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/installation/docker.html">
+       Docker installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/modules/">
+     Module installation
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+<label for="toctree-checkbox-6">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/spmis_installation.html">
+       SP-MIS installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/social_installation.html">
+       Social Registry installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/explore/">
+     Explore OpenSPP
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_household/">
+     Your first household
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+<label for="toctree-checkbox-7">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/01_access_registry.html">
+       Step 1: Access the Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/02_create_household.html">
+       Step 2: Create a Household
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/03_add_members.html">
+       Step 3: Add members
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_program/">
+     Your first program
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+<label for="toctree-checkbox-8">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/01_access_program.html">
+       Step 1: Access the program section
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/02_create_program.html">
+       Step 2: Create your first social protection program
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/03_enroll_beneficiaries.html">
+       Step 3: Import and enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/04_run_cycle.html">
+       Step 4: Understanding program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/05_distribute_entitlements.html">
+       Step 5: Distribute entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/poc_and_pilot.html">
+     From Proof of Concept to Pilot
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../user_guide/">
+   User guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+<label for="toctree-checkbox-9">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/getting_started/">
+     Getting started
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+<label for="toctree-checkbox-10">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/navigation.html">
+       Navigating the OpenSPP interface
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/registry/">
+     Registry
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+<label for="toctree-checkbox-11">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_individual.html">
+       Register an individual
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_group.html">
+       Register a group
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/search_filter.html">
+       Search and filter registrants
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/import_data.html">
+       Import registrant data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/export_data.html">
+       Export registrant data
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/change_requests/">
+     Change Requests
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+<label for="toctree-checkbox-12">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/submit_change_request.html">
+       Submit a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/review_change_request.html">
+       Review a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/change_request_types.html">
+       Change request types
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/programs/">
+     Programs
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+<label for="toctree-checkbox-13">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/create_programs.html">
+       Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/program_cycles.html">
+       Work with program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/enroll_beneficiaries.html">
+       Enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/allocate_funds.html">
+       Allocate funds to programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/manage_entitlements.html">
+       Manage entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/payments/">
+     Payments
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+<label for="toctree-checkbox-14">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/payments/service_points.html">
+       View Service Points
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/approvals/">
+     Approvals
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+<label for="toctree-checkbox-15">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/approvals/manage_approvals.html">
+       Review and Approve Requests
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/reference/">
+     Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+<label for="toctree-checkbox-16">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/areas_geography.html">
+       Geographic Areas
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/vocabularies.html">
+       Vocabularies (Code Lists)
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../config_guide/">
+   Configuration guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+<label for="toctree-checkbox-17">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/studio/">
+     OpenSPP Studio
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+<label for="toctree-checkbox-18">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/overview.html">
+       Studio Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/registry_field_builder.html">
+       Custom Fields (Registry Field Builder)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/event_type_designer.html">
+       Event Type Designer
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/change_request_builder.html">
+       Change Request Builder
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/cel/">
+     CEL expressions
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+<label for="toctree-checkbox-19">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/quick_start.html">
+       CEL quick start
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/syntax.html">
+       CEL syntax reference
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/variables.html">
+       Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/cookbook.html">
+       CEL cookbook
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/troubleshooting.html">
+       CEL troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/eligibility/">
+     Eligibility rules
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+<label for="toctree-checkbox-20">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/cel_expressions.html">
+       CEL expressions for eligibility
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/geographic_targeting.html">
+       Geographic targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/templates.html">
+       Expression templates
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/testing.html">
+       Testing eligibility rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/advanced.html">
+       Advanced eligibility configuration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/">
+     Entitlement formulas
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+<label for="toctree-checkbox-21">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/cash_calculations.html">
+       Cash calculations
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/inkind_baskets.html">
+       In-kind and basket entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/formula_library.html">
+       Formula library
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/dynamic_entitlements.html">
+       Dynamic entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/conditional_logic.html">
+       Conditional logic
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/vocabulary/">
+     Vocabulary System
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+<label for="toctree-checkbox-22">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/overview.html">
+       Vocabulary Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/standard_vocabularies.html">
+       Standard Vocabularies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/profiles.html">
+       Vocabulary Profiles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/custom.html">
+       Custom Vocabularies
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/variables/">
+     Variables &amp; Indicators
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+<label for="toctree-checkbox-23">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/overview.html">
+       Variables Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/creating_variables.html">
+       Creating Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/variable_types.html">
+       Variable Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/using_variables.html">
+       Using Variables in CEL
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/event_data/">
+     Event Data
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+<label for="toctree-checkbox-24">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/overview.html">
+       Event Data Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/event_types.html">
+       Configuring Event Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/field_definitions.html">
+       Defining Event Fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/change_request_types/">
+     Change request types
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+<label for="toctree-checkbox-25">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/overview.html">
+       Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/creating_types.html">
+       Creating change request types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/field_mappings.html">
+       Field mappings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/conflict_detection.html">
+       Conflict and duplicate detection
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/patterns.html">
+       Common configuration patterns
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/custom_detail_models.html">
+       Custom detail models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/consent/">
+     Consent configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+<label for="toctree-checkbox-26">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/overview.html">
+       Consent management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/privacy_notices.html">
+       Configuring privacy notices
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/recording_consent.html">
+       Recording consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/api_consent_filtering.html">
+       API consent filtering
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/role_configuration/">
+     Role configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+<label for="toctree-checkbox-27">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/overview.html">
+       Access control overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/assigning_roles.html">
+       Assigning roles to users
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/predefined_roles.html">
+       Predefined roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/creating_roles.html">
+       Creating custom roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../ops_guide/">
+   Operations guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+<label for="toctree-checkbox-28">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/deployment/">
+     Deployment
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+<label for="toctree-checkbox-29">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/deployment/production-hardening.html">
+       Production Hardening
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/security/">
+     Security
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+<label for="toctree-checkbox-30">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/access_control.html">
+       Access Control
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/data_classification.html">
+       Data Classification
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/pii_encryption.html">
+       PII Encryption
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/audit.html">
+       Audit Logging
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/scanning.html">
+       Security Scanning
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/storage/">
+     Storage
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/backup/">
+     Backup &amp; Recovery
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/monitoring/">
+     Monitoring &amp; Alerts
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children">
+<a class="reference internal" href="../">
+   Reference
+  </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+<label for="toctree-checkbox-31">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../modules/">
+     Modules Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+<label for="toctree-checkbox-32">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_api_v2.html">
+       API V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_api_v2_cycles.html">
+       API V2 - Cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_api_v2_data.html">
+       API V2 - Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_api_v2_entitlements.html">
+       API V2 - Entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_api_v2_products.html">
+       API V2 - Products
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_api_v2_service_points.html">
+       API V2 - Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_api_v2_vocabulary.html">
+       API V2 - Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_approval.html">
+       Approval Workflows
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_area.html">
+       Area Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_audit.html">
+       Audit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_banking.html">
+       Banking / Bank Details
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_base_common.html">
+       Base (Common)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_base_setting.html">
+       Base Settings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_branding_kit.html">
+       Branding Kit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_cel_domain.html">
+       CEL Domain Query Builder
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_cel_widget.html">
+       CEL Expression Widget
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_change_request_v2.html">
+       Change Request V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_claim_169.html">
+       QR Credentials (Claim 169)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_consent.html">
+       Consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_cr_types_advanced.html">
+       CR Types - Advanced
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_cr_types_base.html">
+       CR Types - Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_custom_field.html">
+       Custom Fields
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_dci_client.html">
+       DCI Client
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_dci_client_crvs.html">
+       DCI Client - CRVS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_dci_client_dr.html">
+       DCI Client - Disability Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_dci_client_ibr.html">
+       DCI Client - IBR
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_dci_server.html">
+       DCI Server
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_demo.html">
+       Demo
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_dms.html">
+       Document Management System
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_event_data.html">
+       Event Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_gis.html">
+       GIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_gis_report.html">
+       GIS Reports
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_grm.html">
+       Grievance Redress Mechanism
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_hide_menus_base.html">
+       Hide Menus Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_mis_demo_v2.html">
+       MIS Demo V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_programs.html">
+       Programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_registry.html">
+       Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_registry_search.html">
+       Registry Search Portal
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_security.html">
+       Security
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_service_points.html">
+       Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_source_tracking.html">
+       Source Tracking
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_starter_social_registry.html">
+       Starter: Social Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_starter_sp_mis.html">
+       Starter: SP-MIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_studio.html">
+       Studio
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_studio_change_requests.html">
+       Studio - Change Requests
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_studio_events.html">
+       Studio - Events
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_user_roles.html">
+       User Roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_versioning.html">
+       Versioning
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/spp_vocabulary.html">
+       Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../modules/theme_openspp_muk.html">
+       Theme
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
+     Vocabulary Reference
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../glossary/humanitarian.html">
+     Humanitarian Terms Glossary
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../glossary.html">
+     OpenSPP Glossary
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../community_and_support/">
+   Community and support
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+<label for="toctree-checkbox-33">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/how_to_contribute_to_the_project.html">
+     Contributing
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/i18n_l10n.html">
+     Internationalization and Localization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/security_report.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/license.html">
+     Licensing
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+<div class="bd-sidebar__bottom">
+<!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+<p class="openspporglink">
+<a href="https://openspp.org">
+<img alt="openspp.org" src="/_static/openspp_logo.png"/> openspp.org</a>
+</p>
+</div>
+</div>
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+<div class="header-article row sticky-top noprint">
+<div class="col py-1 d-flex header-article-main">
+<div class="header-article__left">
+<label class="headerbtn" data-placement="right" data-toggle="tooltip" for="__navigation" title="Toggle navigation">
+<span class="headerbtn__icon-container">
+<i class="fas fa-bars"></i>
+</span>
+</label>
+</div>
+<div class="header-article__label">
+<span>Vocabulary Reference – Reference</span>
+</div>
+<div class="header-article__right">
+<button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="headerbtn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+<button aria-label="Source repositories" class="headerbtn menu-dropdown__trigger">
+<i class="fab fa-github"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation" title="Source repository">
+<span class="headerbtn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Freference/vocabularies/index.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<span class="headerbtn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?reference/vocabularies/index.md#making-contributions-on-github" title="Edit this page">
+<span class="headerbtn__icon-container">
+<i class="fas fa-pencil-alt"></i>
+</span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+<button aria-label="Download this page" class="headerbtn menu-dropdown__trigger">
+<i class="fas fa-download"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/reference/vocabularies/index.md.txt" title="Download source file">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+</li>
+<li>
+<button class="headerbtn" data-placement="left" data-toggle="tooltip" onclick="printPdf(this)" title="Print to PDF">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
+</div>
+</div>
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#quick-reference">
+   Quick Reference
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#core-vocabularies">
+   Core Vocabularies
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#iso-5218-gender">
+     ISO 5218: Gender
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#relationship-types">
+     Relationship Types
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#marital-status">
+     Marital Status
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#id-types">
+     ID Types
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#geographic-vocabularies">
+   Geographic Vocabularies
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#iso-3166-countries">
+     ISO 3166: Countries
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#iso-639-languages">
+     ISO 639: Languages
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#iso-4217-currencies">
+     ISO 4217: Currencies
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#disability-health">
+   Disability &amp; Health
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#who-icf-body-functions">
+     WHO ICF: Body Functions
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#who-icf-activities-participation">
+     WHO ICF: Activities &amp; Participation
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#who-icd-11-health-conditions">
+     WHO ICD-11: Health Conditions
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#labor-education">
+   Labor &amp; Education
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#ilo-isco-08-occupations">
+     ILO ISCO-08: Occupations
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#unesco-isced-2011-education">
+     UNESCO ISCED 2011: Education
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#agriculture-optional">
+   Agriculture (Optional)
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#fao-agrovoc-crops">
+     FAO AGROVOC: Crops
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#concept-groups">
+   Concept Groups
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#built-in-groups">
+     Built-in Groups
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#usage-in-cel">
+     Usage in CEL
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#api-usage">
+   API Usage
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#requesting-with-uris">
+     Requesting with URIs
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#response-format">
+     Response Format
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#filtering-by-code">
+     Filtering by Code
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#extending-vocabularies">
+   Extending Vocabularies
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#related-documentation">
+   Related Documentation
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="article row">
+<div class="col pl-md-3 pl-lg-5 content-container">
+<!-- Table of contents that is only displayed when printing the page -->
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>Vocabulary Reference</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#quick-reference">
+   Quick Reference
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#core-vocabularies">
+   Core Vocabularies
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#iso-5218-gender">
+     ISO 5218: Gender
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#relationship-types">
+     Relationship Types
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#marital-status">
+     Marital Status
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#id-types">
+     ID Types
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#geographic-vocabularies">
+   Geographic Vocabularies
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#iso-3166-countries">
+     ISO 3166: Countries
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#iso-639-languages">
+     ISO 639: Languages
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#iso-4217-currencies">
+     ISO 4217: Currencies
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#disability-health">
+   Disability &amp; Health
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#who-icf-body-functions">
+     WHO ICF: Body Functions
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#who-icf-activities-participation">
+     WHO ICF: Activities &amp; Participation
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#who-icd-11-health-conditions">
+     WHO ICD-11: Health Conditions
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#labor-education">
+   Labor &amp; Education
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#ilo-isco-08-occupations">
+     ILO ISCO-08: Occupations
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#unesco-isced-2011-education">
+     UNESCO ISCED 2011: Education
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#agriculture-optional">
+   Agriculture (Optional)
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#fao-agrovoc-crops">
+     FAO AGROVOC: Crops
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#concept-groups">
+   Concept Groups
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#built-in-groups">
+     Built-in Groups
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#usage-in-cel">
+     Usage in CEL
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#api-usage">
+   API Usage
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#requesting-with-uris">
+     Requesting with URIs
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#response-format">
+     Response Format
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#filtering-by-code">
+     Filtering by Code
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#extending-vocabularies">
+   Extending Vocabularies
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#related-documentation">
+   Related Documentation
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<main id="main-content" role="main">
+<div>
+<div class="section" id="vocabulary-reference">
+<h1>Vocabulary Reference<a class="headerlink" href="#vocabulary-reference" title="Permalink to this headline">#</a></h1>
+<p>Complete reference for all standard vocabularies in OpenSPP V2.</p>
+<div class="section" id="quick-reference">
+<h2>Quick Reference<a class="headerlink" href="#quick-reference" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Vocabulary</p></th>
+<th class="head"><p>Namespace</p></th>
+<th class="head"><p>Codes</p></th>
+<th class="head"><p>Hierarchical</p></th>
+<th class="head"><p>Domain</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#iso-5218-gender"><span class="std std-doc">Gender (ISO 5218)</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:5218</span></code></p></td>
+<td><p>4</p></td>
+<td><p>No</p></td>
+<td><p>Core</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#relationship-types"><span class="std std-doc">Relationship Types</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship</span></code></p></td>
+<td><p>15</p></td>
+<td><p>No</p></td>
+<td><p>Core</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#marital-status"><span class="std std-doc">Marital Status</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:un:unsd:pop-census:marital-status</span></code></p></td>
+<td><p>6</p></td>
+<td><p>No</p></td>
+<td><p>Core</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id-types"><span class="std std-doc">ID Types</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:id-type</span></code></p></td>
+<td><p>4</p></td>
+<td><p>No</p></td>
+<td><p>Core</p></td>
+</tr>
+<tr class="row-even"><td><p>Group Type</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:group-type</span></code></p></td>
+<td><p>2</p></td>
+<td><p>No</p></td>
+<td><p>Core</p></td>
+</tr>
+<tr class="row-odd"><td><p>Housing Type (UN Rev.3)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:un:unsd:pop-census:housing-type</span></code></p></td>
+<td><p>12</p></td>
+<td><p>Yes</p></td>
+<td><p>Core</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#iso-3166-countries"><span class="std std-doc">Countries (ISO 3166)</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:3166-1</span></code></p></td>
+<td><p>249</p></td>
+<td><p>No</p></td>
+<td><p>Geographic</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#iso-639-languages"><span class="std std-doc">Languages (ISO 639)</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:639</span></code></p></td>
+<td><p>180+</p></td>
+<td><p>No</p></td>
+<td><p>Geographic</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#iso-4217-currencies"><span class="std std-doc">Currencies (ISO 4217)</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:4217</span></code></p></td>
+<td><p>170+</p></td>
+<td><p>No</p></td>
+<td><p>Geographic</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#who-icf-body-functions"><span class="std std-doc">WHO ICF Body Functions</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:who:icf:b</span></code></p></td>
+<td><p>400+</p></td>
+<td><p>Yes</p></td>
+<td><p>Disability</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#who-icf-activities"><span class="std std-ref">WHO ICF Activities</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:who:icf:d</span></code></p></td>
+<td><p>300+</p></td>
+<td><p>Yes</p></td>
+<td><p>Disability</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#who-icd-11-health-conditions"><span class="std std-doc">WHO ICD-11 Health</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:who:icd-11</span></code></p></td>
+<td><p>17,000+</p></td>
+<td><p>Yes</p></td>
+<td><p>Health</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ilo-isco-08-occupations"><span class="std std-doc">ILO ISCO-08 Occupations</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:ilo:isco-08</span></code></p></td>
+<td><p>400+</p></td>
+<td><p>Yes</p></td>
+<td><p>Labor</p></td>
+</tr>
+<tr class="row-odd"><td><p>Economic Activity Status</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:ilo:icse-93</span></code></p></td>
+<td><p>6</p></td>
+<td><p>No</p></td>
+<td><p>Labor</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#unesco-isced-2011-education"><span class="std std-doc">UNESCO ISCED Education</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:unesco:isced:2011</span></code></p></td>
+<td><p>9</p></td>
+<td><p>Yes</p></td>
+<td><p>Education</p></td>
+</tr>
+<tr class="row-odd"><td><p>Religion</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:un:unsd:pop-census:religion</span></code></p></td>
+<td><p>10+</p></td>
+<td><p>No</p></td>
+<td><p>Core</p></td>
+</tr>
+<tr class="row-even"><td><p>Ethnocultural Status</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:ethnocultural</span></code></p></td>
+<td><p>varies</p></td>
+<td><p>No</p></td>
+<td><p>Core</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fao-agrovoc-crops"><span class="std std-doc">FAO AGROVOC Crops</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:fao:agrovoc</span></code></p></td>
+<td><p>1,000+</p></td>
+<td><p>Yes</p></td>
+<td><p>Agriculture</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="core-vocabularies">
+<h2>Core Vocabularies<a class="headerlink" href="#core-vocabularies" title="Permalink to this headline">#</a></h2>
+<div class="section" id="iso-5218-gender">
+<h3>ISO 5218: Gender<a class="headerlink" href="#iso-5218-gender" title="Permalink to this headline">#</a></h3>
+<p>Standardized codes for representing biological sex.</p>
+<p><strong>Namespace:</strong> <code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:5218</span></code>
+<strong>Reference:</strong> <a class="reference external" href="https://www.iso.org/standard/36266.html">ISO 5218:2004</a>
+<strong>System:</strong> Yes (read-only)
+<strong>Hierarchical:</strong> No</p>
+<p><strong>Codes:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>URI</p></th>
+<th class="head"><p>Display</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:5218#0</span></code></p></td>
+<td><p>Not Known</p></td>
+<td><p>Sex is not known</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:5218#1</span></code></p></td>
+<td><p>Male</p></td>
+<td><p>Male sex</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:5218#2</span></code></p></td>
+<td><p>Female</p></td>
+<td><p>Female sex</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:5218#9</span></code></p></td>
+<td><p>Not Applicable</p></td>
+<td><p>Not applicable or not stated</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use cases:</strong></p>
+<ul class="simple">
+<li><p>Individual registration</p></li>
+<li><p>Demographic data collection</p></li>
+<li><p>Beneficiary targeting (gender-specific programs)</p></li>
+<li><p>Eligibility criteria</p></li>
+</ul>
+<p><strong>CEL expressions:</strong></p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span>#<span class="w"> </span><span class="nv">Check</span><span class="w"> </span><span class="nv">if</span><span class="w"> </span><span class="nv">female</span>
+<span class="nf">in_group</span><span class="p">(</span><span class="nv">me</span><span class="p">.</span><span class="na">gender</span><span class="p">,</span><span class="w"> </span><span class="s2">"feminine_gender"</span><span class="p">)</span>
+
+#<span class="w"> </span><span class="nv">Explicit</span><span class="w"> </span><span class="nv">code</span><span class="w"> </span><span class="nv">check</span>
+<span class="nv">me</span><span class="p">.</span><span class="na">gender</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nf">code</span><span class="p">(</span><span class="s2">"urn:iso:std:iso:5218#2"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="relationship-types">
+<h3>Relationship Types<a class="headerlink" href="#relationship-types" title="Permalink to this headline">#</a></h3>
+<p>Household and family relationship classifications.</p>
+<p><strong>Namespace:</strong> <code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship</span></code>
+<strong>Reference:</strong> OpenSPP-specific (no international standard)
+<strong>System:</strong> Yes
+<strong>Hierarchical:</strong> No</p>
+<p><strong>Individual-to-Individual Relationships:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>URI</p></th>
+<th class="head"><p>Display</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>head</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship#head</span></code></p></td>
+<td><p>Head of Household</p></td>
+<td><p>Primary household decision-maker</p></td>
+</tr>
+<tr class="row-odd"><td><p>spouse</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship#spouse</span></code></p></td>
+<td><p>Spouse/Partner</p></td>
+<td><p>Married or domestic partner</p></td>
+</tr>
+<tr class="row-even"><td><p>child</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship#child</span></code></p></td>
+<td><p>Child</p></td>
+<td><p>Son or daughter (biological/adopted/step)</p></td>
+</tr>
+<tr class="row-odd"><td><p>child_in_law</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship#child_in_law</span></code></p></td>
+<td><p>Son/Daughter-in-law</p></td>
+<td><p>Child's spouse</p></td>
+</tr>
+<tr class="row-even"><td><p>grandchild</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship#grandchild</span></code></p></td>
+<td><p>Grandchild</p></td>
+<td><p>Grandchild</p></td>
+</tr>
+<tr class="row-odd"><td><p>parent</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship#parent</span></code></p></td>
+<td><p>Parent</p></td>
+<td><p>Father or mother</p></td>
+</tr>
+<tr class="row-even"><td><p>parent_in_law</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship#parent_in_law</span></code></p></td>
+<td><p>Parent-in-law</p></td>
+<td><p>Spouse's parent</p></td>
+</tr>
+<tr class="row-odd"><td><p>grandparent</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship#grandparent</span></code></p></td>
+<td><p>Grandparent</p></td>
+<td><p>Grandparent</p></td>
+</tr>
+<tr class="row-even"><td><p>sibling</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship#sibling</span></code></p></td>
+<td><p>Sibling</p></td>
+<td><p>Brother or sister</p></td>
+</tr>
+<tr class="row-odd"><td><p>other_relative</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship#other_relative</span></code></p></td>
+<td><p>Other Relative</p></td>
+<td><p>Related but not in above categories</p></td>
+</tr>
+<tr class="row-even"><td><p>non_relative</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship#non_relative</span></code></p></td>
+<td><p>Non-Relative</p></td>
+<td><p>Unrelated household member</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Group-to-Group Relationships:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>URI</p></th>
+<th class="head"><p>Display</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>parent_organization</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship#parent_organization</span></code></p></td>
+<td><p>Parent Organization</p></td>
+<td><p>Parent organization in hierarchy</p></td>
+</tr>
+<tr class="row-odd"><td><p>subsidiary</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship#subsidiary</span></code></p></td>
+<td><p>Subsidiary</p></td>
+<td><p>Child organization</p></td>
+</tr>
+<tr class="row-even"><td><p>partner_organization</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship#partner_organization</span></code></p></td>
+<td><p>Partner Organization</p></td>
+<td><p>Partner organization</p></td>
+</tr>
+<tr class="row-odd"><td><p>affiliated_with</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:relationship#affiliated_with</span></code></p></td>
+<td><p>Affiliated With</p></td>
+<td><p>Affiliated organization</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use cases:</strong></p>
+<ul class="simple">
+<li><p>Household member relationships</p></li>
+<li><p>Household composition analysis</p></li>
+<li><p>Dependency ratio calculations</p></li>
+<li><p>Head of household identification</p></li>
+<li><p>Organizational hierarchies</p></li>
+</ul>
+<p><strong>CEL expressions:</strong></p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span>#<span class="w"> </span><span class="nv">Check</span><span class="w"> </span><span class="nv">if</span><span class="w"> </span><span class="nv">head</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">household</span>
+<span class="nf">in_group</span><span class="p">(</span><span class="nv">m</span><span class="p">.</span><span class="na">relationship</span><span class="p">,</span><span class="w"> </span><span class="s2">"head_of_household"</span><span class="p">)</span>
+
+#<span class="w"> </span><span class="nv">Count</span><span class="w"> </span><span class="nv">children</span>
+<span class="nv">members</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="nv">m</span><span class="p">,</span><span class="w"> </span><span class="nv">m</span><span class="p">.</span><span class="na">relationship</span><span class="p">.</span><span class="na">code</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"child"</span><span class="p">).</span><span class="na">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="marital-status">
+<h3>Marital Status<a class="headerlink" href="#marital-status" title="Permalink to this headline">#</a></h3>
+<p>UN Population Census standard marital status codes.</p>
+<p><strong>Namespace:</strong> <code class="docutils literal notranslate"><span class="pre">urn:un:unsd:pop-census:marital-status</span></code>
+<strong>Reference:</strong> <a class="reference external" href="https://unstats.un.org/unsd/demographic/sources/census/">UN Census Recommendations</a>
+<strong>System:</strong> Yes
+<strong>Hierarchical:</strong> No</p>
+<p><strong>Codes:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>URI</p></th>
+<th class="head"><p>Display</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:un:unsd:pop-census:marital-status#S</span></code></p></td>
+<td><p>Never Married</p></td>
+<td><p>Persons who have never entered into a marriage</p></td>
+</tr>
+<tr class="row-odd"><td><p>M</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:un:unsd:pop-census:marital-status#M</span></code></p></td>
+<td><p>Married</p></td>
+<td><p>Currently married</p></td>
+</tr>
+<tr class="row-even"><td><p>W</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:un:unsd:pop-census:marital-status#W</span></code></p></td>
+<td><p>Widowed</p></td>
+<td><p>Spouse deceased, not remarried</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:un:unsd:pop-census:marital-status#D</span></code></p></td>
+<td><p>Divorced</p></td>
+<td><p>Legally divorced</p></td>
+</tr>
+<tr class="row-even"><td><p>L</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:un:unsd:pop-census:marital-status#L</span></code></p></td>
+<td><p>Separated</p></td>
+<td><p>Married but living apart</p></td>
+</tr>
+<tr class="row-odd"><td><p>C</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:un:unsd:pop-census:marital-status#C</span></code></p></td>
+<td><p>Consensual Union</p></td>
+<td><p>Living together as partners (cohabiting)</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use cases:</strong></p>
+<ul class="simple">
+<li><p>Demographic data</p></li>
+<li><p>Widows/widowers programs</p></li>
+<li><p>Family targeting criteria</p></li>
+<li><p>Household composition</p></li>
+</ul>
+<p><strong>CEL expressions:</strong></p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span>#<span class="w"> </span><span class="nv">Widowed</span><span class="w"> </span><span class="nv">individuals</span>
+<span class="nv">me</span><span class="p">.</span><span class="na">marital_status</span><span class="p">.</span><span class="na">code</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"W"</span>
+
+#<span class="w"> </span><span class="nv">Married</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nv">civil</span><span class="w"> </span><span class="nv">union</span>
+<span class="nv">me</span><span class="p">.</span><span class="na">marital_status</span><span class="p">.</span><span class="na">code</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">[</span><span class="s2">"M"</span><span class="p">,</span><span class="w"> </span><span class="s2">"C"</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="id-types">
+<h3>ID Types<a class="headerlink" href="#id-types" title="Permalink to this headline">#</a></h3>
+<p>Standard identification document classifications.</p>
+<p><strong>Namespace:</strong> <code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:id-type</span></code>
+<strong>Reference:</strong> OpenSPP-specific
+<strong>System:</strong> Yes
+<strong>Hierarchical:</strong> No</p>
+<p><strong>Codes:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>URI</p></th>
+<th class="head"><p>Display</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>national_id</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:id-type#national_id</span></code></p></td>
+<td><p>National ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>passport</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:id-type#passport</span></code></p></td>
+<td><p>Passport</p></td>
+</tr>
+<tr class="row-even"><td><p>tax_id</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:id-type#tax_id</span></code></p></td>
+<td><p>Tax ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>birth_certificate</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:id-type#birth_certificate</span></code></p></td>
+<td><p>Birth Certificate</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deployments can extend this vocabulary with additional ID types (e.g., driver's license, voter ID, social security) using custom vocabularies or local extensions.</p>
+</div>
+<p><strong>Use cases:</strong></p>
+<ul class="simple">
+<li><p>Identity verification</p></li>
+<li><p>Document tracking</p></li>
+<li><p>Deduplication</p></li>
+<li><p>KYC compliance</p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="geographic-vocabularies">
+<h2>Geographic Vocabularies<a class="headerlink" href="#geographic-vocabularies" title="Permalink to this headline">#</a></h2>
+<div class="section" id="iso-3166-countries">
+<h3>ISO 3166: Countries<a class="headerlink" href="#iso-3166-countries" title="Permalink to this headline">#</a></h3>
+<p>ISO standard country codes.</p>
+<p><strong>Namespace:</strong> <code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:3166-1</span></code>
+<strong>Reference:</strong> <a class="reference external" href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166-1</a>
+<strong>System:</strong> Yes
+<strong>Hierarchical:</strong> No
+<strong>Total Codes:</strong> 249</p>
+<p><strong>Sample Codes:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Alpha-2</p></th>
+<th class="head"><p>Alpha-3</p></th>
+<th class="head"><p>Numeric</p></th>
+<th class="head"><p>URI</p></th>
+<th class="head"><p>Country Name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PH</p></td>
+<td><p>PHL</p></td>
+<td><p>608</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:3166-1#PH</span></code></p></td>
+<td><p>Philippines</p></td>
+</tr>
+<tr class="row-odd"><td><p>KE</p></td>
+<td><p>KEN</p></td>
+<td><p>404</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:3166-1#KE</span></code></p></td>
+<td><p>Kenya</p></td>
+</tr>
+<tr class="row-even"><td><p>US</p></td>
+<td><p>USA</p></td>
+<td><p>840</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:3166-1#US</span></code></p></td>
+<td><p>United States</p></td>
+</tr>
+<tr class="row-odd"><td><p>GB</p></td>
+<td><p>GBR</p></td>
+<td><p>826</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:3166-1#GB</span></code></p></td>
+<td><p>United Kingdom</p></td>
+</tr>
+<tr class="row-even"><td><p>IN</p></td>
+<td><p>IND</p></td>
+<td><p>356</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:3166-1#IN</span></code></p></td>
+<td><p>India</p></td>
+</tr>
+<tr class="row-odd"><td><p>BR</p></td>
+<td><p>BRA</p></td>
+<td><p>076</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:3166-1#BR</span></code></p></td>
+<td><p>Brazil</p></td>
+</tr>
+<tr class="row-even"><td><p>ZA</p></td>
+<td><p>ZAF</p></td>
+<td><p>710</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:3166-1#ZA</span></code></p></td>
+<td><p>South Africa</p></td>
+</tr>
+<tr class="row-odd"><td><p>AU</p></td>
+<td><p>AUS</p></td>
+<td><p>036</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:3166-1#AU</span></code></p></td>
+<td><p>Australia</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use cases:</strong></p>
+<ul class="simple">
+<li><p>Address data</p></li>
+<li><p>Nationality tracking</p></li>
+<li><p>Country of origin</p></li>
+<li><p>Geographic reporting</p></li>
+</ul>
+</div>
+<hr class="docutils"/>
+<div class="section" id="iso-639-languages">
+<h3>ISO 639: Languages<a class="headerlink" href="#iso-639-languages" title="Permalink to this headline">#</a></h3>
+<p>ISO standard language codes.</p>
+<p><strong>Namespace:</strong> <code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:639</span></code>
+<strong>Reference:</strong> <a class="reference external" href="https://www.iso.org/iso-639-language-codes.html">ISO 639</a>
+<strong>System:</strong> Yes
+<strong>Hierarchical:</strong> No
+<strong>Total Codes:</strong> 180+</p>
+<p><strong>Sample Codes:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>URI</p></th>
+<th class="head"><p>Language</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>en</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:639#en</span></code></p></td>
+<td><p>English</p></td>
+</tr>
+<tr class="row-odd"><td><p>es</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:639#es</span></code></p></td>
+<td><p>Spanish</p></td>
+</tr>
+<tr class="row-even"><td><p>fr</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:639#fr</span></code></p></td>
+<td><p>French</p></td>
+</tr>
+<tr class="row-odd"><td><p>ar</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:639#ar</span></code></p></td>
+<td><p>Arabic</p></td>
+</tr>
+<tr class="row-even"><td><p>zh</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:639#zh</span></code></p></td>
+<td><p>Chinese</p></td>
+</tr>
+<tr class="row-odd"><td><p>hi</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:639#hi</span></code></p></td>
+<td><p>Hindi</p></td>
+</tr>
+<tr class="row-even"><td><p>pt</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:639#pt</span></code></p></td>
+<td><p>Portuguese</p></td>
+</tr>
+<tr class="row-odd"><td><p>ru</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:639#ru</span></code></p></td>
+<td><p>Russian</p></td>
+</tr>
+<tr class="row-even"><td><p>ja</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:639#ja</span></code></p></td>
+<td><p>Japanese</p></td>
+</tr>
+<tr class="row-odd"><td><p>tl</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:639#tl</span></code></p></td>
+<td><p>Tagalog</p></td>
+</tr>
+<tr class="row-even"><td><p>sw</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:639#sw</span></code></p></td>
+<td><p>Swahili</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use cases:</strong></p>
+<ul class="simple">
+<li><p>Preferred language</p></li>
+<li><p>Multilingual forms</p></li>
+<li><p>Translation requirements</p></li>
+<li><p>Communication preferences</p></li>
+</ul>
+</div>
+<hr class="docutils"/>
+<div class="section" id="iso-4217-currencies">
+<h3>ISO 4217: Currencies<a class="headerlink" href="#iso-4217-currencies" title="Permalink to this headline">#</a></h3>
+<p>ISO standard currency codes.</p>
+<p><strong>Namespace:</strong> <code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:4217</span></code>
+<strong>Reference:</strong> <a class="reference external" href="https://www.iso.org/iso-4217-currency-codes.html">ISO 4217</a>
+<strong>System:</strong> Yes
+<strong>Hierarchical:</strong> No
+<strong>Total Codes:</strong> 170+</p>
+<p><strong>Sample Codes:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>URI</p></th>
+<th class="head"><p>Currency</p></th>
+<th class="head"><p>Country/Region</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>USD</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:4217#USD</span></code></p></td>
+<td><p>US Dollar</p></td>
+<td><p>United States</p></td>
+</tr>
+<tr class="row-odd"><td><p>EUR</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:4217#EUR</span></code></p></td>
+<td><p>Euro</p></td>
+<td><p>European Union</p></td>
+</tr>
+<tr class="row-even"><td><p>PHP</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:4217#PHP</span></code></p></td>
+<td><p>Philippine Peso</p></td>
+<td><p>Philippines</p></td>
+</tr>
+<tr class="row-odd"><td><p>KES</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:4217#KES</span></code></p></td>
+<td><p>Kenyan Shilling</p></td>
+<td><p>Kenya</p></td>
+</tr>
+<tr class="row-even"><td><p>GBP</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:4217#GBP</span></code></p></td>
+<td><p>Pound Sterling</p></td>
+<td><p>United Kingdom</p></td>
+</tr>
+<tr class="row-odd"><td><p>INR</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:4217#INR</span></code></p></td>
+<td><p>Indian Rupee</p></td>
+<td><p>India</p></td>
+</tr>
+<tr class="row-even"><td><p>BRL</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:4217#BRL</span></code></p></td>
+<td><p>Brazilian Real</p></td>
+<td><p>Brazil</p></td>
+</tr>
+<tr class="row-odd"><td><p>ZAR</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:iso:std:iso:4217#ZAR</span></code></p></td>
+<td><p>South African Rand</p></td>
+<td><p>South Africa</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use cases:</strong></p>
+<ul class="simple">
+<li><p>Entitlement amounts</p></li>
+<li><p>Payment programs</p></li>
+<li><p>Financial tracking</p></li>
+<li><p>Multi-currency deployments</p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="disability-health">
+<h2>Disability &amp; Health<a class="headerlink" href="#disability-health" title="Permalink to this headline">#</a></h2>
+<div class="section" id="who-icf-body-functions">
+<h3>WHO ICF: Body Functions<a class="headerlink" href="#who-icf-body-functions" title="Permalink to this headline">#</a></h3>
+<p>WHO International Classification of Functioning - Body Functions.</p>
+<p><strong>Namespace:</strong> <code class="docutils literal notranslate"><span class="pre">urn:who:icf:b</span></code>
+<strong>Reference:</strong> <a class="reference external" href="https://icd.who.int/dev11/l-icf/en">WHO ICF Browser</a>
+<strong>System:</strong> Yes
+<strong>Hierarchical:</strong> Yes (4 levels)
+<strong>Total Codes:</strong> 400+</p>
+<p><strong>Sample Hierarchy:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>b1 - Mental functions
+├── b110 - Consciousness functions
+├── b114 - Orientation functions
+├── b117 - Intellectual functions
+└── b122 - Global psychosocial functions
+
+b2 - Sensory functions and pain
+├── b210 - Seeing functions
+│   ├── b2100 - Visual acuity
+│   ├── b2101 - Visual field
+│   └── b2102 - Quality of vision
+├── b230 - Hearing functions
+│   ├── b2300 - Sound detection
+│   └── b2301 - Sound discrimination
+└── b280 - Sensation of pain
+
+b7 - Neuromusculoskeletal and movement-related functions
+├── b710 - Mobility of joint functions
+├── b730 - Muscle power functions
+└── b740 - Muscle endurance functions
+</pre></div>
+</div>
+<p><strong>Use cases:</strong></p>
+<ul class="simple">
+<li><p>Disability classification</p></li>
+<li><p>Functional assessment</p></li>
+<li><p>Targeting persons with disabilities</p></li>
+<li><p>Service needs identification</p></li>
+</ul>
+<p><strong>CEL expressions:</strong></p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span>#<span class="w"> </span><span class="nv">Check</span><span class="w"> </span><span class="nv">for</span><span class="w"> </span><span class="nv">sensory</span><span class="w"> </span><span class="nv">disability</span>
+<span class="nv">me</span><span class="p">.</span><span class="na">disability_codes</span><span class="p">.</span><span class="na">exists</span><span class="p">(</span><span class="nv">d</span><span class="p">,</span><span class="w"> </span><span class="nv">d</span><span class="p">.</span><span class="na">code</span><span class="p">.</span><span class="na">startsWith</span><span class="p">(</span><span class="s2">"b2"</span><span class="p">))</span>
+
+#<span class="w"> </span><span class="nv">Specific</span><span class="w"> </span><span class="nv">function</span><span class="w"> </span><span class="nv">impairment</span>
+<span class="nf">in_group</span><span class="p">(</span><span class="nv">me</span><span class="p">.</span><span class="na">disability_primary</span><span class="p">,</span><span class="w"> </span><span class="s2">"seeing_functions"</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils"/>
+</div>
+<div class="section" id="who-icf-activities-participation">
+<span id="who-icf-activities"></span><h3>WHO ICF: Activities &amp; Participation<a class="headerlink" href="#who-icf-activities-participation" title="Permalink to this headline">#</a></h3>
+<p>WHO ICF - Activities and Participation component.</p>
+<p><strong>Namespace:</strong> <code class="docutils literal notranslate"><span class="pre">urn:who:icf:d</span></code>
+<strong>Reference:</strong> <a class="reference external" href="https://www.who.int/standards/classifications/icf">WHO ICF</a>
+<strong>System:</strong> Yes
+<strong>Hierarchical:</strong> Yes
+<strong>Total Codes:</strong> 300+</p>
+<p><strong>Sample Codes:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>d4 - Mobility
+├── d450 - Walking
+├── d455 - Moving around
+└── d465 - Moving around using equipment
+
+d5 - Self-care
+├── d510 - Washing oneself
+├── d520 - Caring for body parts
+├── d530 - Toileting
+├── d540 - Dressing
+└── d550 - Eating
+
+d6 - Domestic life
+├── d620 - Acquisition of goods and services
+├── d630 - Preparing meals
+└── d640 - Doing housework
+</pre></div>
+</div>
+<p><strong>Use cases:</strong></p>
+<ul class="simple">
+<li><p>Activity limitations assessment</p></li>
+<li><p>Participation restrictions</p></li>
+<li><p>Needs-based targeting</p></li>
+<li><p>Support service planning</p></li>
+</ul>
+</div>
+<hr class="docutils"/>
+<div class="section" id="who-icd-11-health-conditions">
+<h3>WHO ICD-11: Health Conditions<a class="headerlink" href="#who-icd-11-health-conditions" title="Permalink to this headline">#</a></h3>
+<p>WHO International Classification of Diseases, 11th Revision.</p>
+<p><strong>Namespace:</strong> <code class="docutils literal notranslate"><span class="pre">urn:who:icd-11</span></code>
+<strong>Reference:</strong> <a class="reference external" href="https://icd.who.int/browse11">ICD-11 Browser</a>
+<strong>System:</strong> Yes
+<strong>Hierarchical:</strong> Yes
+<strong>Total Codes:</strong> 17,000+</p>
+<p><strong>Sample Codes:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>URI</p></th>
+<th class="head"><p>Display</p></th>
+<th class="head"><p>Category</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>9B71.0</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:who:icd-11#9B71.0</span></code></p></td>
+<td><p>Type 1 diabetes mellitus</p></td>
+<td><p>Endocrine</p></td>
+</tr>
+<tr class="row-odd"><td><p>BA00</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:who:icd-11#BA00</span></code></p></td>
+<td><p>Essential hypertension</p></td>
+<td><p>Cardiovascular</p></td>
+</tr>
+<tr class="row-even"><td><p>6A70</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:who:icd-11#6A70</span></code></p></td>
+<td><p>HIV disease</p></td>
+<td><p>Infectious</p></td>
+</tr>
+<tr class="row-odd"><td><p>8B20</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:who:icd-11#8B20</span></code></p></td>
+<td><p>Tuberculosis</p></td>
+<td><p>Infectious</p></td>
+</tr>
+<tr class="row-even"><td><p>2A00</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:who:icd-11#2A00</span></code></p></td>
+<td><p>Malaria</p></td>
+<td><p>Infectious</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use cases:</strong></p>
+<ul class="simple">
+<li><p>Health condition tracking</p></li>
+<li><p>Medical eligibility criteria</p></li>
+<li><p>Disease surveillance</p></li>
+<li><p>Health program targeting</p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="labor-education">
+<h2>Labor &amp; Education<a class="headerlink" href="#labor-education" title="Permalink to this headline">#</a></h2>
+<div class="section" id="ilo-isco-08-occupations">
+<h3>ILO ISCO-08: Occupations<a class="headerlink" href="#ilo-isco-08-occupations" title="Permalink to this headline">#</a></h3>
+<p>International Labour Organization - International Standard Classification of Occupations.</p>
+<p><strong>Namespace:</strong> <code class="docutils literal notranslate"><span class="pre">urn:ilo:isco-08</span></code>
+<strong>Reference:</strong> <a class="reference external" href="https://www.ilo.org/public/english/bureau/stat/isco/">ILO ISCO-08</a>
+<strong>System:</strong> Yes
+<strong>Hierarchical:</strong> Yes (4 levels)
+<strong>Total Codes:</strong> 400+</p>
+<p><strong>Hierarchy Structure:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">-</span><span class="n">digit</span><span class="p">:</span> <span class="n">Major</span> <span class="n">group</span> <span class="p">(</span><span class="mi">10</span> <span class="n">groups</span><span class="p">)</span>
+<span class="mi">2</span><span class="o">-</span><span class="n">digit</span><span class="p">:</span> <span class="n">Sub</span><span class="o">-</span><span class="n">major</span> <span class="n">group</span> <span class="p">(</span><span class="o">~</span><span class="mi">40</span> <span class="n">groups</span><span class="p">)</span>
+<span class="mi">3</span><span class="o">-</span><span class="n">digit</span><span class="p">:</span> <span class="n">Minor</span> <span class="n">group</span> <span class="p">(</span><span class="o">~</span><span class="mi">130</span> <span class="n">groups</span><span class="p">)</span>
+<span class="mi">4</span><span class="o">-</span><span class="n">digit</span><span class="p">:</span> <span class="n">Unit</span> <span class="n">group</span> <span class="p">(</span><span class="o">~</span><span class="mi">400</span> <span class="n">groups</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Sample Codes:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Level</p></th>
+<th class="head"><p>URI</p></th>
+<th class="head"><p>Display</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Major</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:ilo:isco-08#1</span></code></p></td>
+<td><p>Managers</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>Sub-major</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:ilo:isco-08#11</span></code></p></td>
+<td><p>Chief executives, senior officials and legislators</p></td>
+</tr>
+<tr class="row-even"><td><p>111</p></td>
+<td><p>Minor</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:ilo:isco-08#111</span></code></p></td>
+<td><p>Legislators and senior officials</p></td>
+</tr>
+<tr class="row-odd"><td><p>1111</p></td>
+<td><p>Unit</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:ilo:isco-08#1111</span></code></p></td>
+<td><p>Legislators</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Major</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:ilo:isco-08#5</span></code></p></td>
+<td><p>Service and sales workers</p></td>
+</tr>
+<tr class="row-odd"><td><p>51</p></td>
+<td><p>Sub-major</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:ilo:isco-08#51</span></code></p></td>
+<td><p>Personal service workers</p></td>
+</tr>
+<tr class="row-even"><td><p>511</p></td>
+<td><p>Minor</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:ilo:isco-08#511</span></code></p></td>
+<td><p>Travel attendants, conductors and guides</p></td>
+</tr>
+<tr class="row-odd"><td><p>5111</p></td>
+<td><p>Unit</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:ilo:isco-08#5111</span></code></p></td>
+<td><p>Travel attendants and travel stewards</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use cases:</strong></p>
+<ul class="simple">
+<li><p>Employment tracking</p></li>
+<li><p>Labor market programs</p></li>
+<li><p>Skills assessment</p></li>
+<li><p>Occupational hazard identification</p></li>
+</ul>
+</div>
+<hr class="docutils"/>
+<div class="section" id="unesco-isced-2011-education">
+<h3>UNESCO ISCED 2011: Education<a class="headerlink" href="#unesco-isced-2011-education" title="Permalink to this headline">#</a></h3>
+<p>UNESCO International Standard Classification of Education.</p>
+<p><strong>Namespace:</strong> <code class="docutils literal notranslate"><span class="pre">urn:unesco:isced:2011</span></code>
+<strong>Reference:</strong> <a class="reference external" href="http://uis.unesco.org/en/topic/international-standard-classification-education-isced">UNESCO ISCED</a>
+<strong>System:</strong> Yes
+<strong>Hierarchical:</strong> Yes (levels with sub-categories)
+<strong>Total Codes:</strong> 9 main levels</p>
+<p><strong>Codes:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>URI</p></th>
+<th class="head"><p>Display</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:unesco:isced:2011#0</span></code></p></td>
+<td><p>Early childhood education</p></td>
+<td><p>Less than primary</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:unesco:isced:2011#1</span></code></p></td>
+<td><p>Primary education</p></td>
+<td><p>Basic literacy/numeracy</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:unesco:isced:2011#2</span></code></p></td>
+<td><p>Lower secondary</p></td>
+<td><p>Foundation for lifelong learning</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:unesco:isced:2011#3</span></code></p></td>
+<td><p>Upper secondary</p></td>
+<td><p>More specialized education</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:unesco:isced:2011#4</span></code></p></td>
+<td><p>Post-secondary non-tertiary</p></td>
+<td><p>Bridge to tertiary</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:unesco:isced:2011#5</span></code></p></td>
+<td><p>Short-cycle tertiary</p></td>
+<td><p>Practical/technical orientation</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:unesco:isced:2011#6</span></code></p></td>
+<td><p>Bachelor's or equivalent</p></td>
+<td><p>First tertiary degree</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:unesco:isced:2011#7</span></code></p></td>
+<td><p>Master's or equivalent</p></td>
+<td><p>Advanced specialization</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:unesco:isced:2011#8</span></code></p></td>
+<td><p>Doctoral or equivalent</p></td>
+<td><p>Research qualification</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use cases:</strong></p>
+<ul class="simple">
+<li><p>Education level tracking</p></li>
+<li><p>Scholarship programs</p></li>
+<li><p>Education targeting</p></li>
+<li><p>Skills assessment</p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="agriculture-optional">
+<h2>Agriculture (Optional)<a class="headerlink" href="#agriculture-optional" title="Permalink to this headline">#</a></h2>
+<div class="section" id="fao-agrovoc-crops">
+<h3>FAO AGROVOC: Crops<a class="headerlink" href="#fao-agrovoc-crops" title="Permalink to this headline">#</a></h3>
+<p>FAO Agricultural Thesaurus - crop and livestock terms.</p>
+<p><strong>Namespace:</strong> <code class="docutils literal notranslate"><span class="pre">urn:fao:agrovoc</span></code>
+<strong>Reference:</strong> <a class="reference external" href="https://agrovoc.fao.org/">FAO AGROVOC</a>
+<strong>System:</strong> Yes
+<strong>Hierarchical:</strong> Yes
+<strong>Total Codes:</strong> 1,000+
+<strong>Availability:</strong> Requires <code class="docutils literal notranslate"><span class="pre">spp_registry_farmer</span></code> module</p>
+<p><strong>Sample Codes:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>URI</p></th>
+<th class="head"><p>Display</p></th>
+<th class="head"><p>Category</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>c_6599</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:fao:agrovoc#c_6599</span></code></p></td>
+<td><p>Rice</p></td>
+<td><p>Cereal</p></td>
+</tr>
+<tr class="row-odd"><td><p>c_12332</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:fao:agrovoc#c_12332</span></code></p></td>
+<td><p>Maize (Corn)</p></td>
+<td><p>Cereal</p></td>
+</tr>
+<tr class="row-even"><td><p>c_8373</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:fao:agrovoc#c_8373</span></code></p></td>
+<td><p>Wheat</p></td>
+<td><p>Cereal</p></td>
+</tr>
+<tr class="row-odd"><td><p>c_4849</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:fao:agrovoc#c_4849</span></code></p></td>
+<td><p>Millet</p></td>
+<td><p>Cereal</p></td>
+</tr>
+<tr class="row-even"><td><p>c_10999</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:fao:agrovoc#c_10999</span></code></p></td>
+<td><p>Cassava</p></td>
+<td><p>Root/tuber</p></td>
+</tr>
+<tr class="row-odd"><td><p>c_6214</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:fao:agrovoc#c_6214</span></code></p></td>
+<td><p>Potato</p></td>
+<td><p>Root/tuber</p></td>
+</tr>
+<tr class="row-even"><td><p>c_1439</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:fao:agrovoc#c_1439</span></code></p></td>
+<td><p>Coffee</p></td>
+<td><p>Cash crop</p></td>
+</tr>
+<tr class="row-odd"><td><p>c_1872</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">urn:fao:agrovoc#c_1872</span></code></p></td>
+<td><p>Cotton</p></td>
+<td><p>Cash crop</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use cases:</strong></p>
+<ul class="simple">
+<li><p>Farmer registries</p></li>
+<li><p>Agricultural programs</p></li>
+<li><p>Crop tracking</p></li>
+<li><p>Food security monitoring</p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="concept-groups">
+<h2>Concept Groups<a class="headerlink" href="#concept-groups" title="Permalink to this headline">#</a></h2>
+<p>Semantic groupings for business logic abstraction.</p>
+<div class="section" id="built-in-groups">
+<h3>Built-in Groups<a class="headerlink" href="#built-in-groups" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Group Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Codes Included</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">feminine_gender</span></code></p></td>
+<td><p>Codes representing feminine gender</p></td>
+<td><p>ISO 5218: Female (2)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">masculine_gender</span></code></p></td>
+<td><p>Codes representing masculine gender</p></td>
+<td><p>ISO 5218: Male (1)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">head_of_household</span></code></p></td>
+<td><p>Head of household relationships</p></td>
+<td><p>Relationship: head</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pregnant_eligible</span></code></p></td>
+<td><p>Pregnancy statuses for maternal benefits</p></td>
+<td><p>(custom per deployment)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="usage-in-cel">
+<h3>Usage in CEL<a class="headerlink" href="#usage-in-cel" title="Permalink to this headline">#</a></h3>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span>#<span class="w"> </span><span class="nv">Check</span><span class="w"> </span><span class="nv">semantic</span><span class="w"> </span><span class="nv">group</span><span class="w"> </span><span class="nv">membership</span>
+<span class="nf">in_group</span><span class="p">(</span><span class="nv">me</span><span class="p">.</span><span class="na">gender</span><span class="p">,</span><span class="w"> </span><span class="s2">"feminine_gender"</span><span class="p">)</span>
+
+#<span class="w"> </span><span class="nv">Semantic</span><span class="w"> </span><span class="nv">helper</span><span class="w"> </span><span class="nv">functions</span>
+<span class="nf">is_female</span><span class="p">(</span><span class="nv">me</span><span class="p">.</span><span class="na">gender</span><span class="p">)</span>
+<span class="nf">is_male</span><span class="p">(</span><span class="nv">me</span><span class="p">.</span><span class="na">gender</span><span class="p">)</span>
+<span class="nf">is_head</span><span class="p">(</span><span class="nv">member</span><span class="p">.</span><span class="na">relationship</span><span class="p">)</span>
+<span class="nf">is_pregnant</span><span class="p">(</span><span class="nv">me</span><span class="p">.</span><span class="na">pregnancy_status</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="api-usage">
+<h2>API Usage<a class="headerlink" href="#api-usage" title="Permalink to this headline">#</a></h2>
+<div class="section" id="requesting-with-uris">
+<h3>Requesting with URIs<a class="headerlink" href="#requesting-with-uris" title="Permalink to this headline">#</a></h3>
+<p><strong>POST /api/v2/individuals:</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:iso:std:iso:5218#2"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"marital_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:un:unsd:pop-census:marital-status#M"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:iso:std:iso:3166-1#PH"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="response-format">
+<h3>Response Format<a class="headerlink" href="#response-format" title="Permalink to this headline">#</a></h3>
+<p><strong>GET /api/v2/individuals/{id}:</strong></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"gender"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:iso:std:iso:5218#2"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Female"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:iso:std:iso:5218"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"marital_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:un:unsd:pop-census:marital-status#M"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Married"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filtering-by-code">
+<h3>Filtering by Code<a class="headerlink" href="#filtering-by-code" title="Permalink to this headline">#</a></h3>
+<p><strong>GET /api/v2/individuals?gender=urn:iso:std:iso:5218#2</strong></p>
+<p>Returns all individuals with female gender code.</p>
+</div>
+</div>
+<hr class="docutils"/>
+<div class="section" id="extending-vocabularies">
+<h2>Extending Vocabularies<a class="headerlink" href="#extending-vocabularies" title="Permalink to this headline">#</a></h2>
+<p>For information on creating custom vocabularies or local extensions, see:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../config_guide/vocabulary/custom.html"><span class="doc">Custom Vocabularies</span></a> - Creating custom vocabularies</p></li>
+<li><p><a class="reference internal" href="../../config_guide/vocabulary/profiles.html"><span class="doc">Vocabulary Profiles</span></a> - Configuring deployment profiles</p></li>
+</ul>
+</div>
+<hr class="docutils"/>
+<div class="section" id="related-documentation">
+<h2>Related Documentation<a class="headerlink" href="#related-documentation" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../config_guide/vocabulary/"><span class="doc">Vocabulary System</span></a> - Vocabulary configuration guide</p></li>
+<li><p><a class="reference internal" href="../../config_guide/vocabulary/overview.html"><span class="doc">Vocabulary Overview</span></a> - Vocabulary system overview</p></li>
+<li><p><a class="reference internal" href="../../config_guide/vocabulary/standard_vocabularies.html"><span class="doc">Standard Vocabularies</span></a> - Standard vocabulary details</p></li>
+<li><p><a class="reference internal" href="../../config_guide/vocabulary/profiles.html"><span class="doc">Vocabulary Profiles</span></a> - Deployment profiles</p></li>
+<li><p><a class="reference internal" href="../../config_guide/vocabulary/custom.html"><span class="doc">Custom Vocabularies</span></a> - Custom vocabularies</p></li>
+<li><p><a class="reference internal" href="../../config_guide/cel/"><span class="doc">CEL expressions</span></a> - Using vocabularies in CEL expressions</p></li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer-article noprint">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="../modules/theme_openspp_muk.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Theme</p>
+</div>
+</a>
+<a class="right-next" href="../glossary/humanitarian.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Humanitarian Terms Glossary</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+</div>
+<div class="footer-content row">
+<footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      © Copyright OpenSPP.<br/>
+<div class="extra_footer">
+<p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+</div>
+</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            var lists = $("div.toctree-wrapper ul");
+            $.each(lists, function(index, list) {
+                if($(list).find("li").length == 0) {
+                    $(list).prev().hide();
+                    $(list).hide();
+                }
+            });
+        })
+    </script>
+<script src="/_static/version_switcher.js"></script></body>
+</html>

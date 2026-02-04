@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Programs" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Programs" name="title" />
 <meta content="Learn how to customize program definitions, behavior, and functionality in OpenSPP through module development" name="description" />
 <meta content="OpenSPP, programs, program customization, social protection programs, module development, program configuration" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/module_development/programs.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1714,7 +1701,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="programs">
+  <div class="section" id="programs">
 <h1>Programs<a class="headerlink" href="#programs" title="Permalink to this headline">#</a></h1>
 <p>In OpenSPP, program eligibility is managed through a powerful and extensible system called <strong>Eligibility Managers</strong>.
 An Eligibility Manager is a self-contained component that defines a specific set of rules to determine who is eligible for a program.
@@ -1731,15 +1718,15 @@ We will use the <a class="reference internal" href="../../reference/modules/spp_
 <li><p>Extend the Program Creation Wizard to pre-configure your manager.</p></li>
 <li><p>Set up the necessary security access for your new model.</p></li>
 </ul>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Solid understanding of Odoo 17 module development, including Python, XML, and XPath.</p></li>
 <li><p>Familiarity with the OpenG2P and OpenSPP core modules, especially <code class="docutils literal notranslate"><span class="pre">OpenG2P</span> <span class="pre">Programs</span></code> (<a class="reference internal" href="../../reference/modules/g2p_programs.html"><span class="doc">g2p_programs</span></a>), <code class="docutils literal notranslate"><span class="pre">OpenSPP</span> <span class="pre">Programs</span></code> (<a class="reference internal" href="../../reference/modules/spp_programs.html"><span class="doc">spp_programs</span></a>), and <code class="docutils literal notranslate"><span class="pre">G2P</span> <span class="pre">Registry</span> <span class="pre">(Base)</span></code> (<a class="reference internal" href="../../reference/modules/g2p_registry_base.html"><span class="doc">g2p_registry_base</span></a>).</p></li>
 <li><p>To set up OpenSPP for development, please refer to the <a class="reference internal" href="../setup.html"><span class="doc">Development Setup Guide</span></a>.</p></li>
 </ul>
-</section>
-<section id="module-structure">
+</div>
+<div class="section" id="module-structure">
 <h2>Module Structure<a class="headerlink" href="#module-structure" title="Permalink to this headline">#</a></h2>
 <p>A typical Eligibility Manager module follows the standard Odoo module structure.
 Here's the complete structure of our reference module, <a class="reference internal" href="../../reference/modules/spp_eligibility_tags.html"><span class="doc">spp_eligibility_tags</span></a>:</p>
@@ -1758,15 +1745,15 @@ Here's the complete structure of our reference module, <a class="reference inter
     └── create_program_wizard.py # Extends the program creation wizard
 </pre></div>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="step-by-step-guide">
+<div class="section" id="step-by-step-guide">
 <h2>Step-by-Step Guide<a class="headerlink" href="#step-by-step-guide" title="Permalink to this headline">#</a></h2>
-<section id="create-the-module-scaffold">
+<div class="section" id="create-the-module-scaffold">
 <h3>Create the Module Scaffold<a class="headerlink" href="#create-the-module-scaffold" title="Permalink to this headline">#</a></h3>
 <p>Start by creating a new directory for your module (e.g., <code class="docutils literal notranslate"><span class="pre">spp_custom_eligibility_manager</span></code>) and populate it with the basic Odoo module files and the complete directory structure shown above.</p>
-</section>
-<section id="define-the-manifest-manifest-py">
+</div>
+<div class="section" id="define-the-manifest-manifest-py">
 <h3>Define the Manifest (<code class="docutils literal notranslate"><span class="pre">__manifest__.py</span></code>)<a class="headerlink" href="#define-the-manifest-manifest-py" title="Permalink to this headline">#</a></h3>
 <p>The manifest file declares your module's metadata and dependencies.
 It's crucial to list all the modules your customization will interact with.
@@ -1798,8 +1785,8 @@ Our manager will depend on <a class="reference internal" href="../../reference/m
 </pre></div>
 </div>
 <p>Your dependencies will vary based on the models and features you need to extend.</p>
-</section>
-<section id="create-the-eligibility-manager-model">
+</div>
+<div class="section" id="create-the-eligibility-manager-model">
 <h3>Create the Eligibility Manager Model<a class="headerlink" href="#create-the-eligibility-manager-model" title="Permalink to this headline">#</a></h3>
 <p>This is the core of your module.
 You will create a new model that holds the specific configuration for your eligibility rule and contains the logic to identify eligible registrants.</p>
@@ -1816,9 +1803,9 @@ You will create a new model that holds the specific configuration for your eligi
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># From: spp_eligibility_tags/models/eligibility_manager.py</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">odoo</span><span class="w"> </span><span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">TagBasedEligibilityManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">TagBasedEligibilityManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;g2p.program_membership.manager.tags&quot;</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;g2p.program.membership.manager&quot;</span><span class="p">,</span> <span class="s2">&quot;g2p.manager.source.mixin&quot;</span><span class="p">]</span>
     <span class="n">_description</span> <span class="o">=</span> <span class="s2">&quot;Tag-based Eligibility&quot;</span>
@@ -1830,22 +1817,22 @@ You will create a new model that holds the specific configuration for your eligi
     <span class="p">)</span>
     <span class="c1"># ... other fields and methods</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_prepare_eligible_domain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">membership</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_prepare_eligible_domain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">membership</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Builds the Odoo domain to find eligible registrants.&quot;&quot;&quot;</span>
         <span class="n">domain</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">domain</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_initial_domain</span><span class="p">(</span><span class="n">membership</span><span class="o">=</span><span class="n">membership</span><span class="p">))</span>
         <span class="n">domain</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_beneficiaries_by_tags</span><span class="p">())</span>
         <span class="k">return</span> <span class="n">domain</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">import_eligible_registrants</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s2">&quot;draft&quot;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">import_eligible_registrants</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s2">&quot;draft&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Finds and enrolls beneficiaries based on the domain.&quot;&quot;&quot;</span>
         <span class="c1"># ... (logic to search partners with the domain and create memberships) ...</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">_prepare_eligible_domain</span></code> method is the most critical part.
 It constructs and returns an Odoo domain that will be used to search for all res.partner records that match the rule.</p>
-</section>
-<section id="register-the-new-manager">
+</div>
+<div class="section" id="register-the-new-manager">
 <h3>Register the New Manager<a class="headerlink" href="#register-the-new-manager" title="Permalink to this headline">#</a></h3>
 <p>To make OpenSPP aware of your new manager, you must add it to the list of available eligibility managers.</p>
 <ol class="arabic simple">
@@ -1854,11 +1841,11 @@ It constructs and returns an Odoo domain that will be used to search for all res
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># From: spp_eligibility_tags/models/eligibility_manager.py</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">EligibilityManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">EligibilityManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;g2p.eligibility.manager&quot;</span>
 
     <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">_selection_manager_ref_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_selection_manager_ref_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Register the new manager type.&quot;&quot;&quot;</span>
         <span class="n">selection</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_selection_manager_ref_id</span><span class="p">()</span>
         <span class="n">new_manager</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;g2p.program_membership.manager.tags&quot;</span><span class="p">,</span> <span class="s2">&quot;Tag-based Eligibility&quot;</span><span class="p">)</span>
@@ -1867,8 +1854,8 @@ It constructs and returns an Odoo domain that will be used to search for all res
         <span class="k">return</span> <span class="n">selection</span>
 </pre></div>
 </div>
-</section>
-<section id="create-the-user-interface">
+</div>
+<div class="section" id="create-the-user-interface">
 <h3>Create the User Interface<a class="headerlink" href="#create-the-user-interface" title="Permalink to this headline">#</a></h3>
 <p>Now, create a form view so that program administrators can configure the tags and area for each instance of your new manager.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- From: spp_eligibility_tags/views/eligibility_manager_view.xml --&gt;</span>
@@ -1891,8 +1878,8 @@ It constructs and returns an Odoo domain that will be used to search for all res
 </pre></div>
 </div>
 <p>This simple form will be displayed when a user configures the &quot;Tag-based Eligibility&quot; manager for a program.</p>
-</section>
-<section id="extend-the-program-creation-wizard">
+</div>
+<div class="section" id="extend-the-program-creation-wizard">
 <h3>Extend the Program Creation Wizard<a class="headerlink" href="#extend-the-program-creation-wizard" title="Permalink to this headline">#</a></h3>
 <p>To improve user experience, you can add configuration fields directly to the &quot;Create Program&quot; wizard.
 This allows users to set up the basic eligibility rules when they first create the program.</p>
@@ -1907,7 +1894,7 @@ This allows users to set up the basic eligibility rules when they first create t
 </li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># In: wizard/create_program_wizard.py</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">SPPCreateNewProgramWiz</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">TransientModel</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">SPPCreateNewProgramWiz</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">TransientModel</span><span class="p">):</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;g2p.program.create.wizard&quot;</span>
 
     <span class="n">eligibility_kind</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Selection</span><span class="p">(</span>
@@ -1916,7 +1903,7 @@ This allows users to set up the basic eligibility rules when they first create t
     <span class="n">tags_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s2">&quot;g2p.registrant.tags&quot;</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="s2">&quot;Tags&quot;</span><span class="p">)</span>
     <span class="n">area_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2one</span><span class="p">(</span><span class="s2">&quot;spp.area&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_get_eligibility_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">program_id</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_get_eligibility_manager</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">program_id</span><span class="p">):</span>
         <span class="n">res</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_get_eligibility_manager</span><span class="p">(</span><span class="n">program_id</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">eligibility_kind</span> <span class="o">==</span> <span class="s2">&quot;tags_eligibility&quot;</span><span class="p">:</span>
             <span class="c1"># Logic to create &#39;g2p.program_membership.manager.tags&#39;</span>
@@ -1944,19 +1931,19 @@ This allows users to set up the basic eligibility rules when they first create t
 <span class="nt">&lt;/record&gt;</span>
 </pre></div>
 </div>
-</section>
-<section id="set-up-security">
+</div>
+<div class="section" id="set-up-security">
 <h3>Set Up Security<a class="headerlink" href="#set-up-security" title="Permalink to this headline">#</a></h3>
 <p>Grant users access to your new model in <code class="docutils literal notranslate"><span class="pre">security/ir.model.access.csv</span></code>.
 At a minimum, you need to provide access to the relevant user groups, such as program managers and administrators.</p>
-<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span><span class="o"># From: spp_eligibility_tags/security/ir.model.access.csv</span>
-<span class="o">id</span><span class="p">,</span><span class="m">name</span><span class="p">,</span><span class="k">model_id:id</span><span class="p">,</span><span class="no">group_id:id</span><span class="p">,</span><span class="s1">perm_read</span><span class="p">,perm_write,perm_create,perm_unlink</span>
-<span class="o">g2p_program_membership_manager_tags_admin</span><span class="p">,</span><span class="m">Eligibility Manager Tag-based Admin Access</span><span class="p">,</span><span class="k">spp_eligibility_tags.model_g2p_program_membership_manager_tags</span><span class="p">,</span><span class="no">g2p_registry_base.group_g2p_admin</span><span class="p">,</span><span class="s1">1</span><span class="p">,1,1,1</span>
-<span class="o">g2p_program_membership_manager_tags_program_manager</span><span class="p">,</span><span class="m">Eligibility Manager Tag-based Program Manager Access</span><span class="p">,</span><span class="k">spp_eligibility_tags.model_g2p_program_membership_manager_tags</span><span class="p">,</span><span class="no">g2p_programs.g2p_program_manager</span><span class="p">,</span><span class="s1">1</span><span class="p">,1,1,0</span>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span># From: spp_eligibility_tags/security/ir.model.access.csv
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+g2p_program_membership_manager_tags_admin,Eligibility Manager Tag-based Admin Access,spp_eligibility_tags.model_g2p_program_membership_manager_tags,g2p_registry_base.group_g2p_admin,1,1,1,1
+g2p_program_membership_manager_tags_program_manager,Eligibility Manager Tag-based Program Manager Access,spp_eligibility_tags.model_g2p_program_membership_manager_tags,g2p_programs.g2p_program_manager,1,1,1,0
 </pre></div>
 </div>
-</section>
-<section id="install-and-use-your-new-manager">
+</div>
+<div class="section" id="install-and-use-your-new-manager">
 <h3>Install and Use Your New Manager<a class="headerlink" href="#install-and-use-your-new-manager" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install or upgrade the module through the Apps menu.</p></li>
@@ -1968,17 +1955,17 @@ Configure them directly in the wizard.</p></li>
 A new program will be created, and an instance of your eligibility manager will be automatically created and configured with the values you provided.</p></li>
 <li><p>You can verify or update the configuration by navigating to the program's Configuration tab, finding your manager in the list, and opening its form.</p></li>
 </ol>
-</section>
-</section>
-<section id="references">
+</div>
+</div>
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <p>For more information on extending OpenSPP modules, refer to:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/">Odoo 17 Developer Documentation</a></p></li>
 <li><p><a class="reference external" href="https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_programs">OpenSPP Programs Module Source</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

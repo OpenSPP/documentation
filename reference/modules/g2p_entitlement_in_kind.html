@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_entitlement_in_kind.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-entitlement-in-kind">
+  <div class="section" id="g2p-entitlement-in-kind">
 <h1>G2P Entitlement In Kind<a class="headerlink" href="#g2p-entitlement-in-kind" title="Permalink to this headline">#</a></h1>
 <p>The <strong>G2P Entitlement In Kind</strong> module extends OpenSPP's social protection platform to enable the efficient management and distribution of non-cash benefits. It provides the necessary interface and configurations for programs to deliver goods and services directly to beneficiaries, complementing traditional cash transfer programs.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module empowers program administrators to design and execute social protection programs that distribute physical goods or services instead of cash. It ensures that in-kind entitlements are seamlessly integrated into the overall program management framework.</p>
 <ul class="simple">
@@ -1671,8 +1658,8 @@ title="Print to PDF"
 <li><p><strong>Support Diverse Program Models:</strong> Allows for the implementation of comprehensive social protection initiatives that combine cash and in-kind support, tailored to specific community needs.</p></li>
 <li><p><strong>Ensure Accountability and Transparency:</strong> Tracks the lifecycle of each in-kind entitlement, from its creation to its redemption, supporting robust reporting and audit trails.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <strong>G2P Entitlement In Kind</strong> module builds upon core OpenSPP functionalities to deliver its features, primarily by leveraging and extending existing program and entitlement management capabilities.</p>
 <ul class="simple">
@@ -1685,32 +1672,32 @@ title="Print to PDF"
 <li><p><strong>Stock (stock)</strong>: Manages inventory, tracking the movement of goods from warehouses to service points for distribution.</p></li>
 <li><p><strong><a class="reference internal" href="spp_service_points.html"><span class="doc std std-doc">OpenSPP Service Points</span></a></strong>: Designates locations where beneficiaries can redeem their in-kind benefits.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The module provides key capabilities for configuring, managing, and tracking the distribution of in-kind benefits within OpenSPP programs.</p>
-<section id="in-kind-program-configuration">
+<div class="section" id="in-kind-program-configuration">
 <h3>In-Kind Program Configuration<a class="headerlink" href="#in-kind-program-configuration" title="Permalink to this headline">#</a></h3>
 <p>Administrators can define programs to issue in-kind entitlements by specifying the exact goods or services to be distributed. This includes linking to specific products from the system's product catalog, defining the quantity, and associating these entitlements with designated service points where beneficiaries can pick up their items. This allows for flexible program design, whether distributing food packages, seeds, or educational materials.</p>
-</section>
-<section id="beneficiary-entitlement-generation-and-tracking">
+</div>
+<div class="section" id="beneficiary-entitlement-generation-and-tracking">
 <h3>Beneficiary Entitlement Generation and Tracking<a class="headerlink" href="#beneficiary-entitlement-generation-and-tracking" title="Permalink to this headline">#</a></h3>
 <p>The module facilitates the automatic generation of in-kind entitlements for eligible beneficiaries based on program rules. It then tracks the status of each entitlement throughout its lifecycle, from approval to redemption. Users can monitor which beneficiaries have received their entitlements, which are pending, and which have been redeemed, providing a clear overview of program progress.</p>
-</section>
-<section id="inventory-and-logistics-integration">
+</div>
+<div class="section" id="inventory-and-logistics-integration">
 <h3>Inventory and Logistics Integration<a class="headerlink" href="#inventory-and-logistics-integration" title="Permalink to this headline">#</a></h3>
 <p>Seamlessly integrates with OpenSPP's inventory management system. When in-kind entitlements are approved, the module can automatically trigger stock movements within the inventory module, ensuring that the required goods are moved from warehouses to the designated service points. This helps manage stock levels, prevent shortages, and optimize the supply chain for in-kind distributions.</p>
-</section>
-<section id="reporting-and-audit-trails">
+</div>
+<div class="section" id="reporting-and-audit-trails">
 <h3>Reporting and Audit Trails<a class="headerlink" href="#reporting-and-audit-trails" title="Permalink to this headline">#</a></h3>
 <p>Provides robust reporting capabilities to monitor the distribution of in-kind benefits. Users can generate reports on entitlement status, distribution volumes, and redemption rates. This functionality supports auditing, helps assess program impact, and ensures transparency in the delivery of non-cash assistance.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <strong>G2P Entitlement In Kind</strong> module is essential for OpenSPP programs requiring the distribution of non-cash benefits, enabling comprehensive and efficient management of goods and services from program design to beneficiary redemption.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

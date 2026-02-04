@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="User Access Management" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="User Access Management" name="title" />
 <meta content="Learn how to manage user accounts, assign roles and permissions, and configure access rights in OpenSPP using role-based access control" name="description" />
 <meta content="OpenSPP, user access, role-based access control, permissions, user management, roles, security" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/administration/user_access.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1716,7 +1703,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="user-access">
+  <div class="section" id="user-access">
 <h1>User access<a class="headerlink" href="#user-access" title="Permalink to this headline">#</a></h1>
 <p>User access management in OpenSPP lets administrators control who can access platform features and data.
 OpenSPP uses role-based access control, allowing assignment of specific permissions to users or groups.
@@ -1724,17 +1711,17 @@ This ensures only authorized users can access sensitive data and perform necessa
 <p>Access rights can be customized for both features and data subsets, such as limiting access by location.
 Proper configuration helps users work securely and efficiently, minimizing unauthorized access.</p>
 <p>This guide covers creating user accounts, assigning roles and permissions, and customizing access rights to maintain the security and integrity of your <a class="reference internal" href="../../reference/glossary.html#term-Social-protection"><span class="xref std std-term">social protection</span></a> program data.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>To grant access to other users, you must have a user account with the <strong>System Admin</strong> role.
 This role is assigned to your account by default after completing the installation guide, or provided by the OpenSPP team for pilot or demo instances of OpenSPP.
 Only users with the <strong>System Admin</strong> role can manage user accounts, roles, and permissions within OpenSPP.</p>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>After completing this tutorial, you will gain an understanding of how to manage role-based access in OpenSPP and learn the necessary steps to assign, update, or revoke user permissions.</p>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
 <p>All user-related tasks, such as creating new users, modifying existing users, configuring their information, passwords, and user roles, are performed on the <strong>User</strong> page.</p>
 <p>By default, you will have a user with <strong>System-Administator</strong> access rights already configured if you have completed the installation guide, <a class="reference internal" href="../../getting_started/installation_deb.html"><span class="doc">Installing OpenSPP</span></a>.</p>
@@ -1742,15 +1729,15 @@ Only users with the <strong>System Admin</strong> role can manage user accounts,
 <p><img alt="Access rights menu icon" src="../../_images/access_rights_menu_icon.png" /></p>
 <p>Click on <strong>Users &amp; Companies</strong> and you will see the <strong>Users, Companies</strong>, and <strong>Roles</strong> options.</p>
 <p><img alt="Users &amp; Companies dropdown menu showing Users, Companies, and Roles options" src="../../_images/25.png" /></p>
-<section id="creating-user-account">
+<div class="section" id="creating-user-account">
 <h3>Creating user account<a class="headerlink" href="#creating-user-account" title="Permalink to this headline">#</a></h3>
 <p>User roles can only be assigned to existing user accounts.
 To create user accounts, click on the menu icon in the top-left corner, then choose <strong>Settings</strong>.
 Click on <strong>Users &amp; Companies</strong> and select <strong>Users</strong>.
 Click on the <strong>New</strong> button, fill in the user's name and email address, and then click <strong>Save</strong>.
 The password will need to be added or changed as described in the <strong>Change User Password</strong> section below.</p>
-</section>
-<section id="change-user-password">
+</div>
+<div class="section" id="change-user-password">
 <h3>Change user password<a class="headerlink" href="#change-user-password" title="Permalink to this headline">#</a></h3>
 <p>Click on the menu icon in the top-left corner, then select <strong>Settings</strong>.
 Click <strong>Users &amp; Companies</strong> then click <strong>Users</strong> from the dropdown list.
@@ -1759,29 +1746,29 @@ Click on the user account that should be modified, and then click on the <strong
 <p>Click on <strong>Change Password</strong> in the dropdown list, enter the new password in the <strong>New Password</strong> field, and then click the <strong>Change Password</strong> button.
 The password is now successfully updated.</p>
 <p><img alt="Access rights change password modal" src="../../_images/access_rights_change_password_modal.png" /></p>
-</section>
-<section id="enabling-and-disabling-user-account">
+</div>
+<div class="section" id="enabling-and-disabling-user-account">
 <h3>Enabling and disabling user account<a class="headerlink" href="#enabling-and-disabling-user-account" title="Permalink to this headline">#</a></h3>
 <p>To maintain proper security, it is important to ensure that users who should no longer have access to the system are taken out of active use.</p>
 <p>All such actions are taken from the <strong>Users</strong> section.
 Click on the menu icon in the top-left corner, then select <strong>Settings</strong>, click <strong>Users &amp; Companies</strong>, and then click <strong>Users</strong>.
 Click on the name of the user you wish to manage, then click the <strong>Gear</strong> button, where you will find the different options listed below.</p>
-</section>
-<section id="delete">
+</div>
+<div class="section" id="delete">
 <h3>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">#</a></h3>
 <p>To completely delete the user account from OpenSPP, click on <strong>Delete</strong> in the action list.
 A confirmation popup will appear.
 Click <strong>Ok</strong> to proceed.
 Note that this permanently deletes the user account and that this may also have an effect on traceability.</p>
-</section>
-<section id="archive">
+</div>
+<div class="section" id="archive">
 <h3>Archive<a class="headerlink" href="#archive" title="Permalink to this headline">#</a></h3>
 <p>To temporarily delete the user account from OpenSPP, click on <strong>Archive</strong> in the action list.
 A confirmation popup will appear.
 Click <strong>Ok</strong> to proceed.
 Note that this only removes the user's access to the system, but that the account still exists in the system.</p>
-</section>
-<section id="unarchive">
+</div>
+<div class="section" id="unarchive">
 <h3>Unarchive<a class="headerlink" href="#unarchive" title="Permalink to this headline">#</a></h3>
 <p>To restore a temporarily archived user account to OpenSPP, it is performed in a similar way as the archive.
 Since the user account will no longer be displayed among the active users, additional steps need to be performed to navigate to the user.</p>
@@ -1794,8 +1781,8 @@ Click on the <strong>Gear</strong> button, and then click <strong>Unarchive</str
 Clear the <strong>Inactive Users</strong> filter by clicking the <strong>x</strong> icon.
 The unarchived user account should now be visible along with all active users accounts.</p>
 <p><img alt="Users page showing active user accounts after clearing the Inactive Users filter" src="../../_images/62.png" /></p>
-</section>
-<section id="editing-user-information">
+</div>
+<div class="section" id="editing-user-information">
 <h3>Editing user Information<a class="headerlink" href="#editing-user-information" title="Permalink to this headline">#</a></h3>
 <p>The editable user information is <strong>Name</strong> and <strong>Email Address</strong>.
 Click on the menu icon in the top-left corner, then click on <strong>Settings</strong>, navigate to <strong>Users &amp; Companies</strong> and select <strong>Users</strong>.</p>
@@ -1803,8 +1790,8 @@ Click on the menu icon in the top-left corner, then click on <strong>Settings</s
 Click on the field to modify the name or email address fields.
 Click on <strong>Save</strong> icon to proceed with the changes.</p>
 <p><img alt="Access rights save user edit" src="../../_images/access_rights_save_user_edit.png" /></p>
-</section>
-<section id="assigning-roles-to-a-user">
+</div>
+<div class="section" id="assigning-roles-to-a-user">
 <h3>Assigning roles to a user<a class="headerlink" href="#assigning-roles-to-a-user" title="Permalink to this headline">#</a></h3>
 <p>Assigning a role to a user account enables them to perform a specific set of actions in OpenSPP.</p>
 <p>Click on the menu icon in the top-left corner then choose on <strong>Settings</strong>.
@@ -1826,7 +1813,7 @@ To remove the role from the user, simply click on the trash icon.
 Click on the <strong>Save</strong> button once done.</p>
 <p>Note that you can also assign <strong>System Admin</strong> role to existing users to grant it with system admin access rights automatically.</p>
 <p><img alt="Access rights from to" src="../../_images/access_rights_from_to.png" /></p>
-<section id="configuring-roles">
+<div class="section" id="configuring-roles">
 <h4>Configuring roles<a class="headerlink" href="#configuring-roles" title="Permalink to this headline">#</a></h4>
 <p>Roles are typically pre-configured and available for selection; however, you can also create and configure them yourself.
 To create a new role click on the menu icon in the top-left corner, click on <strong>Settings</strong> then select <strong>Roles</strong> under <strong>Users &amp; Companies</strong>.
@@ -1846,8 +1833,8 @@ In the <strong>Roles</strong> page, click a role from the list and click on the 
 <p><img alt="Access rights roles list" src="../../_images/access_rights_roles_list.png" /></p>
 <p>You can assign users to the selected role by clicking <strong>Add a line</strong> and selecting the user you wish to associate the role with.
 Click on the trash icon to unlink the user account from the role.</p>
-</section>
-<section id="configuring-groups">
+</div>
+<div class="section" id="configuring-groups">
 <h4>Configuring groups<a class="headerlink" href="#configuring-groups" title="Permalink to this headline">#</a></h4>
 <p>The list of access rights for a group is typically pre-configured; however, you may also modify the list of access rights associated with a group.
 To access the <strong>Groups</strong> page, the <strong>Developer mode</strong> must first be activated.
@@ -1905,10 +1892,10 @@ For this reason, we recommend you to contact your OpenSPP Business Analyst or ou
 </div>
 <p>Deactivate developer mode by clicking on the menu icon and then click on <strong>Settings</strong>, scrolling down to the last part of the page, and clicking <strong>Deactivate the developer mode</strong>.</p>
 <p><img alt="Access rights deactivate developer" src="../../_images/access_rights_deactivate_developer.png" /></p>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_odk_importer.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-odk-importer">
+  <div class="section" id="g2p-odk-importer">
 <h1>G2P Odk Importer<a class="headerlink" href="#g2p-odk-importer" title="Permalink to this headline">#</a></h1>
 <p>The G2P Odk Importer module connects OpenSPP with ODK Central, enabling the seamless and automated transfer of data collected through ODK forms directly into OpenSPP's registrant registries. This module automates the crucial step of bringing field-collected data into the core social protection platform.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines data collection and registration processes by facilitating the direct import of ODK form submissions into OpenSPP:</p>
 <ul class="simple">
@@ -1671,26 +1658,26 @@ title="Print to PDF"
 <li><p><strong>Integrates Media Attachments:</strong> It processes and stores media files (like photos or scanned documents) submitted via ODK forms, linking them directly to the corresponding registrant records.</p></li>
 <li><p><strong>Accelerates Program Outreach:</strong> By quickly transferring beneficiary data from the field to the system, it significantly speeds up registration and enrollment, enabling faster program delivery.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The G2P Odk Importer module operates as a crucial connector, integrating OpenSPP's registry with external data collection tools.</p>
 <p>It relies on the <code class="docutils literal notranslate"><span class="pre">queue_job</span></code> module to manage background processing, ensuring that large data imports from ODK do not impact system performance or responsiveness. This allows for efficient handling of extensive datasets without blocking user operations.</p>
 <p>The module stores any media files, such as photos or scanned IDs, collected through ODK forms by integrating with the <a class="reference internal" href="g2p_documents.html"><span class="doc std std-doc">G2P Documents</span></a> module. This ensures that all supporting documents are securely managed and linked to the relevant registrant records within OpenSPP.</p>
 <p>Critically, this module extends the <a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">G2P Registry Base</span></a> by creating and updating registrant records in OpenSPP. It populates essential registrant details, including personal information, phone numbers, identification documents, and group memberships or relationships, directly from the imported ODK data.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The G2P Odk Importer provides a robust set of features to manage the connection and data flow between ODK Central and OpenSPP:</p>
-<section id="odk-connection-configuration">
+<div class="section" id="odk-connection-configuration">
 <h3>ODK Connection Configuration<a class="headerlink" href="#odk-connection-configuration" title="Permalink to this headline">#</a></h3>
 <p>Users can define and manage multiple ODK Central configurations within OpenSPP. Each configuration specifies the ODK base URL, login credentials, project ID, and the specific ODK form ID from which data will be imported. A &quot;Test Connection&quot; feature allows administrators to verify connectivity and authentication with the ODK Central server before initiating any imports.</p>
-</section>
-<section id="flexible-data-mapping">
+</div>
+<div class="section" id="flexible-data-mapping">
 <h3>Flexible Data Mapping<a class="headerlink" href="#flexible-data-mapping" title="Permalink to this headline">#</a></h3>
 <p>A powerful JSON Formatter allows users to define how fields from an ODK form submission map to the corresponding fields in OpenSPP's registrant records. This uses <code class="docutils literal notranslate"><span class="pre">jq</span></code> expressions, providing a flexible way to transform, select, and combine data elements from the raw ODK JSON into the structure required by OpenSPP, ensuring data accuracy and consistency.</p>
-</section>
-<section id="automated-and-on-demand-data-import">
+</div>
+<div class="section" id="automated-and-on-demand-data-import">
 <h3>Automated and On-Demand Data Import<a class="headerlink" href="#automated-and-on-demand-data-import" title="Permalink to this headline">#</a></h3>
 <p>The module offers multiple ways to import data:</p>
 <ul class="simple">
@@ -1702,17 +1689,17 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>To enable the single record import feature, ensure the 'Enable ODK import by Instance ID' setting is active in the system's configuration.</p>
 </div>
-</section>
-<section id="comprehensive-data-handling">
+</div>
+<div class="section" id="comprehensive-data-handling">
 <h3>Comprehensive Data Handling<a class="headerlink" href="#comprehensive-data-handling" title="Permalink to this headline">#</a></h3>
 <p>Beyond basic registrant details, the importer handles complex data structures from ODK forms. It automatically creates or updates individual or group registrant records, populating associated data such as multiple phone numbers, various identification documents (e.g., national ID, birth certificate), and establishing relationships for group members. The module also processes media attachments, storing images as profile pictures or other files as supporting documents linked to the registrant.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Odk Importer is essential for bridging the gap between field-level data collection via ODK and OpenSPP's centralized social protection registries, ensuring timely, accurate, and automated data integration.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

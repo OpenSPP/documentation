@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/administration/monitoring_maintenance.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1694,58 +1681,58 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="monitoring-and-maintenance">
+  <div class="section" id="monitoring-and-maintenance">
 <h1>Monitoring and maintenance<a class="headerlink" href="#monitoring-and-maintenance" title="Permalink to this headline">#</a></h1>
 <p>This section provides basic instructions for monitoring your OpenSPP system, viewing logs, managing services, and performing updates. Regular monitoring and maintenance help keep your system running smoothly and securely.</p>
-<section id="view-logs">
+<div class="section" id="view-logs">
 <h2>View logs<a class="headerlink" href="#view-logs" title="Permalink to this headline">#</a></h2>
-<section id="real-time-service-logs">
+<div class="section" id="real-time-service-logs">
 <h3>Real-time service logs<a class="headerlink" href="#real-time-service-logs" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>openspp<span class="w"> </span>-f
 </pre></div>
 </div>
-</section>
-<section id="application-logs">
+</div>
+<div class="section" id="application-logs">
 <h3>Application logs<a class="headerlink" href="#application-logs" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/openspp/openspp.log
 </pre></div>
 </div>
-</section>
-<section id="postgresql-logs">
+</div>
+<div class="section" id="postgresql-logs">
 <h3>PostgreSQL logs<a class="headerlink" href="#postgresql-logs" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/postgresql/postgresql-*.log
 </pre></div>
 </div>
-</section>
-</section>
-<section id="service-management">
+</div>
+</div>
+<div class="section" id="service-management">
 <h2>Service management<a class="headerlink" href="#service-management" title="Permalink to this headline">#</a></h2>
-<section id="restart-service">
+<div class="section" id="restart-service">
 <h3>Restart service<a class="headerlink" href="#restart-service" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>openspp
 </pre></div>
 </div>
-</section>
-<section id="stop-service">
+</div>
+<div class="section" id="stop-service">
 <h3>Stop service<a class="headerlink" href="#stop-service" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>openspp
 </pre></div>
 </div>
-</section>
-<section id="start-service">
+</div>
+<div class="section" id="start-service">
 <h3>Start service<a class="headerlink" href="#start-service" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>openspp
 </pre></div>
 </div>
-</section>
-<section id="reload-configuration-without-restart">
+</div>
+<div class="section" id="reload-configuration-without-restart">
 <h3>Reload configuration without restart<a class="headerlink" href="#reload-configuration-without-restart" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>openspp
 </pre></div>
 </div>
-</section>
-</section>
-<section id="update-openspp">
+</div>
+</div>
+<div class="section" id="update-openspp">
 <h2>Update OpenSPP<a class="headerlink" href="#update-openspp" title="Permalink to this headline">#</a></h2>
 <p>When a new version is available, run the following commands to get the latest version of OpenSPP and upgrade it:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
@@ -1756,8 +1743,8 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade<span class="w
 sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>openspp
 </pre></div>
 </div>
-</section>
-<section id="alternative-manual-update">
+</div>
+<div class="section" id="alternative-manual-update">
 <h2>Alternative: manual update<a class="headerlink" href="#alternative-manual-update" title="Permalink to this headline">#</a></h2>
 <p>If updating manually, run the following commands to get the latest debian package and upgrade OpenSPP:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://builds.acn.fr/repository/apt-openspp/pool/main/o/openspp/openspp_X.X.X_amd64.deb
@@ -1768,8 +1755,8 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 </pre></div>
 </div>
 <p><strong>Note</strong>: Replace X.X.X with the target version number in the wget and dpkg commands.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

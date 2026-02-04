@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_notifications_base.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-notifications-base">
+  <div class="section" id="g2p-notifications-base">
 <h1>G2P Notifications Base<a class="headerlink" href="#g2p-notifications-base" title="Permalink to this headline">#</a></h1>
 <p>The G2P Notifications Base module provides the foundational capabilities for sending automated communications to beneficiaries and other stakeholders within OpenSPP programs. It establishes the framework for managing and delivering timely, event-driven notifications via various channels, primarily email and SMS.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module empowers OpenSPP to maintain transparent and efficient communication with beneficiaries by:</p>
 <ul class="simple">
@@ -1671,8 +1658,8 @@ title="Print to PDF"
 <li><p><strong>Respecting Beneficiary Preferences</strong>: Manages individual beneficiary preferences for how they wish to receive notifications, ensuring relevant and desired communication.</p></li>
 <li><p><strong>Tracking Notification Status</strong>: Records whether enrollment or payment notifications have been sent, preventing duplicate communications and aiding in audit trails.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module is a core extension for program operations, deeply integrating with other key OpenSPP modules:</p>
 <ul class="simple">
@@ -1680,14 +1667,14 @@ title="Print to PDF"
 <li><p><strong>Registrant Management</strong>: It leverages <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> (the base registrant model) to store and respect each beneficiary's preferred notification method (email, SMS, none, or both), and uses their contact information (email address, phone number) for delivery.</p></li>
 <li><p><strong>Payment Processing</strong>: Integrates with the payment management system to automatically trigger notifications when payments are successfully disbursed, informing beneficiaries of their received benefits.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="configurable-notification-managers">
+<div class="section" id="configurable-notification-managers">
 <h3>Configurable Notification Managers<a class="headerlink" href="#configurable-notification-managers" title="Permalink to this headline">#</a></h3>
 <p>Administrators can set up distinct notification managers for email and SMS. These managers act as central points for defining how and when specific types of notifications are sent. Each manager can be configured with its own set of templates and sending rules.</p>
-</section>
-<section id="event-driven-notifications">
+</div>
+<div class="section" id="event-driven-notifications">
 <h3>Event-Driven Notifications<a class="headerlink" href="#event-driven-notifications" title="Permalink to this headline">#</a></h3>
 <p>The system automatically triggers notifications based on significant program events, ensuring beneficiaries are always informed:</p>
 <ul class="simple">
@@ -1696,8 +1683,8 @@ title="Print to PDF"
 <li><p><strong>One-Time Passcode (OTP) Delivery</strong>: Facilitates secure access by sending OTPs for verification purposes.</p></li>
 <li><p><strong>Program Cycle Events</strong>: Provides the framework to notify beneficiaries when a program cycle starts or ends (though specific implementation for these events may be completed in subsequent updates or related modules).</p></li>
 </ul>
-</section>
-<section id="beneficiary-communication-preferences">
+</div>
+<div class="section" id="beneficiary-communication-preferences">
 <h3>Beneficiary Communication Preferences<a class="headerlink" href="#beneficiary-communication-preferences" title="Permalink to this headline">#</a></h3>
 <p>Each registrant can specify their preferred method for receiving communications:</p>
 <ul class="simple">
@@ -1707,17 +1694,17 @@ title="Print to PDF"
 <li><p><strong>Both</strong>: Receive notifications via both email and SMS, providing maximum reach.</p></li>
 </ul>
 <p>These preferences are respected by the system when sending out any automated communication.</p>
-</section>
-<section id="customizable-notification-templates">
+</div>
+<div class="section" id="customizable-notification-templates">
 <h3>Customizable Notification Templates<a class="headerlink" href="#customizable-notification-templates" title="Permalink to this headline">#</a></h3>
 <p>For each notification event (e.g., enrollment, payment, OTP), administrators can link specific email or SMS templates. This allows for highly flexible and localized messaging, ensuring that communications are clear, culturally appropriate, and contain all necessary information for the beneficiaries.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Notifications Base module is crucial for fostering transparency and efficient communication within OpenSPP, ensuring beneficiaries receive timely and relevant information about their social protection programs. It establishes the essential infrastructure for automated, event-driven messaging, enhancing program reach and beneficiary engagement.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

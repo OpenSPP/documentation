@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_manual_eligibility.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1650,10 +1637,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="program-manual-eligibility">
+  <div class="section" id="program-manual-eligibility">
 <h1>Program: Manual Eligibility<a class="headerlink" href="#program-manual-eligibility" title="Permalink to this headline">#</a></h1>
 <p>This module introduces the capability to define and manage social protection programs where beneficiary eligibility is determined manually, rather than solely through automated rules. It provides essential flexibility for programs requiring direct administrative oversight in beneficiary selection and enrollment.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The <strong>OpenSPP Manual Eligibility</strong> module provides a crucial mechanism for programs that require human judgment or specific administrative decisions for beneficiary inclusion. It accomplishes the following:</p>
 <ul class="simple">
@@ -1662,8 +1649,8 @@ title="Print to PDF"
 <li><p><strong>Enhances Program Adaptability:</strong> Facilitates the implementation of programs that need to quickly adapt to changing conditions or address specific, non-standard beneficiary criteria. It allows for a more responsive approach to program delivery.</p></li>
 <li><p><strong>Provides Clear Identification of Manual Programs:</strong> Flags programs, their associated cycles, and individual memberships as operating under manual eligibility. This ensures transparency and aids in effective program management, reporting, and auditing.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <strong>OpenSPP Manual Eligibility</strong> module integrates seamlessly with core OpenSPP components to extend program management capabilities:</p>
 <ul class="simple">
@@ -1671,28 +1658,28 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">G2P Programs</span></a></strong>: It extends the core program management features, allowing administrators to configure programs and their cycles to operate with manual eligibility. This integration directly influences how eligibility rules are applied, supplementing or overriding automated criteria.</p></li>
 <li><p><strong><a class="reference internal" href="spp_programs.html"><span class="doc std std-doc">OpenSPP Programs</span></a></strong>: Building upon OpenSPP's specific program extensions, this module ensures that both cash and in-kind entitlement programs can utilize manual eligibility determination. It allows for flexibility across various benefit types.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The module introduces key capabilities to manage manual eligibility effectively:</p>
-<section id="designating-programs-for-manual-eligibility">
+<div class="section" id="designating-programs-for-manual-eligibility">
 <h3>Designating Programs for Manual Eligibility<a class="headerlink" href="#designating-programs-for-manual-eligibility" title="Permalink to this headline">#</a></h3>
 <p>Users can explicitly mark a program as having manual eligibility during its configuration. This critical flag indicates that beneficiary enrollment for this program will primarily involve direct administrative approval, rather than relying solely on predefined automated criteria. This setting automatically cascades to all associated program cycles and memberships, ensuring consistent operational procedures across the program.</p>
-</section>
-<section id="manual-eligibility-for-program-cycles">
+</div>
+<div class="section" id="manual-eligibility-for-program-cycles">
 <h3>Manual Eligibility for Program Cycles<a class="headerlink" href="#manual-eligibility-for-program-cycles" title="Permalink to this headline">#</a></h3>
 <p>Individual program cycles inherit the manual eligibility status from their parent program. This feature provides granular control, allowing specific periods or iterations of a program to be managed with direct beneficiary selection, even if the overarching program might otherwise use automated rules. This flexibility is particularly useful for phased rollouts or targeted interventions within a longer program.</p>
-</section>
-<section id="tracking-manual-membership-status">
+</div>
+<div class="section" id="tracking-manual-membership-status">
 <h3>Tracking Manual Membership Status<a class="headerlink" href="#tracking-manual-membership-status" title="Permalink to this headline">#</a></h3>
 <p>The module provides clear indicators within individual program membership records to show if a beneficiary's inclusion was determined manually. This transparency helps program staff understand the specific pathway of a beneficiary's enrollment, which is crucial for accurate reporting, auditing processes, and ensuring accountability for manually approved beneficiaries.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Manual Eligibility module provides essential flexibility for social protection programs, enabling administrators to manage beneficiary selection directly for programs or cycles where automated eligibility rules are not applicable or require human oversight.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

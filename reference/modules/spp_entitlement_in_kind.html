@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_entitlement_in_kind.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1680,10 +1667,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="in-kind-entitlement">
+  <div class="section" id="in-kind-entitlement">
 <h1>In-Kind Entitlement<a class="headerlink" href="#in-kind-entitlement" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Entitlement In Kind module manages the end-to-end process of distributing non-cash benefits, such as food items, agricultural inputs, or school supplies, within social protection programs. It ensures that beneficiaries receive the correct goods or services, tracks inventory, and integrates with designated service points for redemption.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module enables organizations to effectively deliver physical aid and services as part of their social protection initiatives. It provides a robust framework for:</p>
 <ul class="simple">
@@ -1693,8 +1680,8 @@ title="Print to PDF"
 <li><p><strong>Facilitating Redemption at Service Points</strong>: Coordinates the distribution of goods through designated service points, ensuring beneficiaries can easily access their entitlements.</p></li>
 <li><p><strong>Managing Distribution Workflows</strong>: Supports a structured process from entitlement creation through validation, approval, and eventual cancellation, maintaining accountability at each stage.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Entitlement In Kind module builds upon and integrates with several core OpenSPP components to deliver its comprehensive functionality:</p>
 <ul class="simple">
@@ -1704,27 +1691,27 @@ title="Print to PDF"
 <li><p><strong>Stock (stock)</strong>: This module is critical for inventory management. The Entitlement In Kind module integrates with it to manage warehouse locations, track product availability, and generate necessary stock movements when entitlements are approved.</p></li>
 <li><p><strong><a class="reference internal" href="spp_service_points.html"><span class="doc std std-doc">OpenSPP Service Points</span></a></strong>: This module provides the infrastructure for managing physical locations where beneficiaries can redeem their in-kind entitlements. The Entitlement In Kind module links distributions to these service points for organized delivery.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Entitlement In Kind module offers several key features to streamline the management of physical aid distribution:</p>
-<section id="flexible-entitlement-item-definition">
+<div class="section" id="flexible-entitlement-item-definition">
 <h3>Flexible Entitlement Item Definition<a class="headerlink" href="#flexible-entitlement-item-definition" title="Permalink to this headline">#</a></h3>
 <p>Users can define the specific products or services that constitute an in-kind entitlement. This includes specifying the exact product, the default quantity, and the unit of measure. Programs can configure multiple items, allowing for diverse benefit packages.</p>
-</section>
-<section id="conditional-entitlement-allocation">
+</div>
+<div class="section" id="conditional-entitlement-allocation">
 <h3>Conditional Entitlement Allocation<a class="headerlink" href="#conditional-entitlement-allocation" title="Permalink to this headline">#</a></h3>
 <p>The module supports dynamic entitlement allocation based on beneficiary attributes. Users can define a &quot;Condition Domain&quot; using a simple expression (e.g., <code class="docutils literal notranslate"><span class="pre">[('is_pregnant',</span> <span class="pre">'=',</span> <span class="pre">True)]</span></code>) to ensure that only beneficiaries meeting specific criteria receive certain items. This enables highly targeted interventions.</p>
-</section>
-<section id="multiplier-based-quantity-adjustment">
+</div>
+<div class="section" id="multiplier-based-quantity-adjustment">
 <h3>Multiplier-Based Quantity Adjustment<a class="headerlink" href="#multiplier-based-quantity-adjustment" title="Permalink to this headline">#</a></h3>
 <p>Entitlement quantities can automatically adjust based on beneficiary data, such as household size or the number of dependents. A &quot;Multiplier&quot; field can be linked to a beneficiary's record (e.g., <code class="docutils literal notranslate"><span class="pre">number_of_children</span></code>), and a &quot;Maximum number&quot; can be set to cap the distributed quantity, preventing over-allocation.</p>
-</section>
-<section id="integrated-inventory-and-warehouse-management">
+</div>
+<div class="section" id="integrated-inventory-and-warehouse-management">
 <h3>Integrated Inventory and Warehouse Management<a class="headerlink" href="#integrated-inventory-and-warehouse-management" title="Permalink to this headline">#</a></h3>
 <p>For programs managing physical goods, the module allows users to enable inventory management. When activated, each entitlement is linked to a specific warehouse, and the system automatically initiates stock reservation and movement requests upon entitlement approval, ensuring goods are dispatched efficiently.</p>
-</section>
-<section id="robust-workflow-and-validation">
+</div>
+<div class="section" id="robust-workflow-and-validation">
 <h3>Robust Workflow and Validation<a class="headerlink" href="#robust-workflow-and-validation" title="Permalink to this headline">#</a></h3>
 <p>The module provides a clear workflow for entitlements, moving them through <code class="docutils literal notranslate"><span class="pre">Draft</span></code>, <code class="docutils literal notranslate"><span class="pre">Pending</span> <span class="pre">Validation</span></code>, and <code class="docutils literal notranslate"><span class="pre">Approved</span></code> states. It supports:</p>
 <ul class="simple">
@@ -1732,21 +1719,21 @@ title="Print to PDF"
 <li><p><strong>Asynchronous Processing</strong>: For large-scale programs, the system can process entitlement generation, validation, and approval asynchronously using job queues, ensuring performance and system stability without user interface delays.</p></li>
 <li><p><strong>Cancellation</strong>: Entitlements can be cancelled at various stages if program parameters change or errors are identified.</p></li>
 </ul>
-</section>
-<section id="entitlement-redemption-and-tracking">
+</div>
+<div class="section" id="entitlement-redemption-and-tracking">
 <h3>Entitlement Redemption and Tracking<a class="headerlink" href="#entitlement-redemption-and-tracking" title="Permalink to this headline">#</a></h3>
 <p>The system provides dedicated views to track all in-kind entitlements for a program cycle. This allows administrators to monitor distribution progress, view beneficiary details, and manage the redemption process efficiently at the designated service points.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>While the module primarily focuses on in-kind distributions, it works alongside cash entitlement features provided by the <code class="docutils literal notranslate"><span class="pre">spp_programs</span></code> module, offering a comprehensive benefit management solution.</p>
 </div>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Entitlement In Kind module is essential for managing the effective and accountable distribution of non-cash benefits, enabling social protection programs to deliver tangible support directly to beneficiaries.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

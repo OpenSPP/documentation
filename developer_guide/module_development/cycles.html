@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Program cycles" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Program cycles" name="title" />
 <meta content="Learn how to modify OpenSPP program cycles, their states, and transitions through custom module development" name="description" />
 <meta content="OpenSPP, program cycles, cycle management, program states, module development, cycle customization" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/module_development/cycles.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1714,7 +1701,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="program-cycles">
+  <div class="section" id="program-cycles">
 <h1>Program cycles<a class="headerlink" href="#program-cycles" title="Permalink to this headline">#</a></h1>
 <p>In OpenSPP, the creation and scheduling of program cycles are handled by a flexible system called <strong>Cycle Managers</strong>.
 A Cycle Manager is a self-contained component that defines the logic for how and when new cycles are created for a program.
@@ -1731,15 +1718,15 @@ We will build a new manager based on the default one, but with a specific busine
 <li><p>Extend the Program Creation Wizard to pre-configure your manager.</p></li>
 <li><p>Set up the necessary security access for your new model.</p></li>
 </ul>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Solid understanding of Odoo 17 module development, including Python, XML, and XPath.</p></li>
 <li><p>Familiarity with the OpenG2P and OpenSPP core modules, especially <code class="docutils literal notranslate"><span class="pre">OpenG2P</span> <span class="pre">Programs</span></code> (<a class="reference internal" href="../../reference/modules/g2p_programs.html"><span class="doc">g2p_programs</span></a>) and <code class="docutils literal notranslate"><span class="pre">OpenSPP</span> <span class="pre">Programs</span></code> (<a class="reference internal" href="../../reference/modules/spp_programs.html"><span class="doc">spp_programs</span></a>).</p></li>
 <li><p>To set up OpenSPP for development, please refer to the <a class="reference internal" href="../setup.html"><span class="doc">Development Setup Guide</span></a>.</p></li>
 </ul>
-</section>
-<section id="module-structure">
+</div>
+<div class="section" id="module-structure">
 <h2>Module Structure<a class="headerlink" href="#module-structure" title="Permalink to this headline">#</a></h2>
 <p>A typical Cycle Manager module follows the standard Odoo module structure.
 Here's the complete structure of the module we will build, <code class="docutils literal notranslate"><span class="pre">spp_cycle_manager_fixed_interval</span></code>:</p>
@@ -1758,15 +1745,15 @@ Here's the complete structure of the module we will build, <code class="docutils
     └── create_program_wizard.py # Extends the program creation wizard
 </pre></div>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="step-by-step-guide">
+<div class="section" id="step-by-step-guide">
 <h2>Step-by-Step Guide<a class="headerlink" href="#step-by-step-guide" title="Permalink to this headline">#</a></h2>
-<section id="create-the-module-scaffold">
+<div class="section" id="create-the-module-scaffold">
 <h3>Create the Module Scaffold<a class="headerlink" href="#create-the-module-scaffold" title="Permalink to this headline">#</a></h3>
 <p>Start by creating a new directory for your module (e.g., <code class="docutils literal notranslate"><span class="pre">spp_cycle_manager_fixed_interval</span></code>) and populate it with the basic Odoo module files and the directory structure shown above.</p>
-</section>
-<section id="define-the-manifest-manifest-py">
+</div>
+<div class="section" id="define-the-manifest-manifest-py">
 <h3>Define the Manifest (<code class="docutils literal notranslate"><span class="pre">__manifest__.py</span></code>)<a class="headerlink" href="#define-the-manifest-manifest-py" title="Permalink to this headline">#</a></h3>
 <p>The manifest file declares your module's metadata and dependencies.
 Our cycle manager depends on <a class="reference internal" href="../../reference/modules/g2p_programs.html"><span class="doc">g2p_programs</span></a> and <a class="reference internal" href="../../reference/modules/spp_programs.html"><span class="doc">spp_programs</span></a> for the base manager framework.</p>
@@ -1794,8 +1781,8 @@ Our cycle manager depends on <a class="reference internal" href="../../reference
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="create-the-cycle-manager-model">
+</div>
+<div class="section" id="create-the-cycle-manager-model">
 <h3>Create the Cycle Manager Model<a class="headerlink" href="#create-the-cycle-manager-model" title="Permalink to this headline">#</a></h3>
 <p>This is the core of your module.
 You will create a new model that inherits from the default cycle manager and overrides its behavior.</p>
@@ -1808,23 +1795,23 @@ You will create a new model that inherits from the default cycle manager and ove
 <li><p>Override the <code class="docutils literal notranslate"><span class="pre">_get_end_date</span></code> method. This is where we'll inject our custom logic to enforce a six-month duration.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># From: spp_cycle_manager_fixed_interval/models/cycle_manager.py</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">dateutil.relativedelta</span><span class="w"> </span><span class="kn">import</span> <span class="n">relativedelta</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">odoo</span><span class="w"> </span><span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="kn">import</span> <span class="n">relativedelta</span>
+<span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">models</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">FixedIntervalCycleManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">FixedIntervalCycleManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;g2p.cycle.manager.fixed.interval&quot;</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;g2p.cycle.manager.default&quot;</span>
     <span class="n">_description</span> <span class="o">=</span> <span class="s2">&quot;Fixed Interval Cycle Manager&quot;</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_get_end_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_date</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_get_end_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_date</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Override to set a fixed 6-month end date, ignoring cycle_duration.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">start_date</span> <span class="o">+</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">days</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
 </ol>
-</section>
-<section id="register-the-new-manager">
+</div>
+<div class="section" id="register-the-new-manager">
 <h3>Register the New Manager<a class="headerlink" href="#register-the-new-manager" title="Permalink to this headline">#</a></h3>
 <p>To make OpenSPP aware of your new manager, you must add it to the list of available cycle managers.</p>
 <ol class="arabic">
@@ -1832,11 +1819,11 @@ You will create a new model that inherits from the default cycle manager and ove
 <li><p><strong>Extend the selection method</strong>: Override the <code class="docutils literal notranslate"><span class="pre">_selection_manager_ref_id</span></code> method to add your new manager's model name and a user-friendly label to the selection list.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># From: spp_cycle_manager_fixed_interval/models/cycle_manager.py</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">CycleManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">CycleManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;g2p.cycle.manager&quot;</span>
 
     <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">_selection_manager_ref_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_selection_manager_ref_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">selection</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_selection_manager_ref_id</span><span class="p">()</span>
         <span class="n">new_manager</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;g2p.cycle.manager.fixed.interval&quot;</span><span class="p">,</span> <span class="s2">&quot;Fixed 6-Month Interval&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">new_manager</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">selection</span><span class="p">:</span>
@@ -1846,8 +1833,8 @@ You will create a new model that inherits from the default cycle manager and ove
 </div>
 </li>
 </ol>
-</section>
-<section id="create-the-user-interface">
+</div>
+<div class="section" id="create-the-user-interface">
 <h3>Create the User Interface<a class="headerlink" href="#create-the-user-interface" title="Permalink to this headline">#</a></h3>
 <p>Create a form view for your manager.
 Since we are inheriting from the default manager, we can also inherit its view and modify it to hide the fields that are no longer relevant (like the recurrence rules).</p>
@@ -1872,16 +1859,16 @@ Since we are inheriting from the default manager, we can also inherit its view a
 <span class="nt">&lt;/record&gt;</span>
 </pre></div>
 </div>
-</section>
-<section id="extend-the-program-creation-wizard">
+</div>
+<div class="section" id="extend-the-program-creation-wizard">
 <h3>Extend the Program Creation Wizard<a class="headerlink" href="#extend-the-program-creation-wizard" title="Permalink to this headline">#</a></h3>
 <p>To improve user experience, add a selection to the &quot;Create Program&quot; wizard so users can choose your new manager from the start.</p>
 <ol class="arabic">
 <li><p><strong>Extend the wizard model</strong>: In <code class="docutils literal notranslate"><span class="pre">wizard/create_program_wizard.py</span></code>, inherit from <code class="docutils literal notranslate"><span class="pre">g2p.program.create.wizard</span></code>, add a <code class="docutils literal notranslate"><span class="pre">cycle_manager_kind</span></code> selection, and override <code class="docutils literal notranslate"><span class="pre">create_program</span></code> to handle the creation of your custom manager.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># In: spp_cycle_manager_fixed_interval/wizard/create_program_wizard.py</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">odoo</span><span class="w"> </span><span class="kn">import</span> <span class="n">_</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">_</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">CustomCycleManagerWizard</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">TransientModel</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">CustomCycleManagerWizard</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">TransientModel</span><span class="p">):</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;g2p.program.create.wizard&quot;</span>
 
     <span class="n">cycle_manager_kind</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Selection</span><span class="p">(</span>
@@ -1890,7 +1877,7 @@ Since we are inheriting from the default manager, we can also inherit its view a
         <span class="n">default</span><span class="o">=</span><span class="s1">&#39;default&#39;</span>
     <span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">create_program</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">create_program</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cycle_manager_kind</span> <span class="o">!=</span> <span class="s1">&#39;fixed_interval&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">create_program</span><span class="p">()</span>
 
@@ -1958,18 +1945,18 @@ Since we are inheriting from the default manager, we can also inherit its view a
 </div>
 </li>
 </ol>
-</section>
-<section id="set-up-security">
+</div>
+<div class="section" id="set-up-security">
 <h3>Set Up Security<a class="headerlink" href="#set-up-security" title="Permalink to this headline">#</a></h3>
 <p>Grant users access to your new model in <code class="docutils literal notranslate"><span class="pre">security/ir.model.access.csv</span></code>.</p>
-<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span><span class="o"># From: spp_cycle_manager_fixed_interval/security/ir.model.access.csv</span>
-<span class="o">id</span><span class="p">,</span><span class="m">name</span><span class="p">,</span><span class="k">model_id:id</span><span class="p">,</span><span class="no">group_id:id</span><span class="p">,</span><span class="s1">perm_read</span><span class="p">,perm_write,perm_create,perm_unlink</span>
-<span class="o">g2p_cycle_manager_fixed_interval_admin</span><span class="p">,</span><span class="m">Cycle Manager Fixed Interval Admin Access</span><span class="p">,</span><span class="k">spp_cycle_manager_fixed_interval.model_g2p_cycle_manager_fixed_interval</span><span class="p">,</span><span class="no">g2p_registry_base.group_g2p_admin</span><span class="p">,</span><span class="s1">1</span><span class="p">,1,1,1</span>
-<span class="o">g2p_cycle_manager_fixed_interval_program_manager</span><span class="p">,</span><span class="m">Cycle Manager Fixed Interval Program Manager Access</span><span class="p">,</span><span class="k">spp_cycle_manager_fixed_interval.model_g2p_cycle_manager_fixed_interval</span><span class="p">,</span><span class="no">g2p_programs.g2p_program_manager</span><span class="p">,</span><span class="s1">1</span><span class="p">,1,1,0</span>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span># From: spp_cycle_manager_fixed_interval/security/ir.model.access.csv
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+g2p_cycle_manager_fixed_interval_admin,Cycle Manager Fixed Interval Admin Access,spp_cycle_manager_fixed_interval.model_g2p_cycle_manager_fixed_interval,g2p_registry_base.group_g2p_admin,1,1,1,1
+g2p_cycle_manager_fixed_interval_program_manager,Cycle Manager Fixed Interval Program Manager Access,spp_cycle_manager_fixed_interval.model_g2p_cycle_manager_fixed_interval,g2p_programs.g2p_program_manager,1,1,1,0
 </pre></div>
 </div>
-</section>
-<section id="install-and-test">
+</div>
+<div class="section" id="install-and-test">
 <h3>Install and Test<a class="headerlink" href="#install-and-test" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install or upgrade the module through the Apps menu.</p></li>
@@ -1980,17 +1967,17 @@ Since we are inheriting from the default manager, we can also inherit its view a
 A new program will be created, and an instance of your cycle manager will be automatically created and configured.
 When new cycles are created for this program, they will automatically have a six-month duration.</p></li>
 </ol>
-</section>
-</section>
-<section id="references">
+</div>
+</div>
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <p>For more information on extending OpenSPP modules, refer to:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/">Odoo 17 Developer Documentation</a></p></li>
 <li><p><a class="reference external" href="https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_programs">OpenSPP Programs Module Source</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

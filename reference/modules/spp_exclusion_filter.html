@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_exclusion_filter.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1650,10 +1637,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="exclusion-filter">
+  <div class="section" id="exclusion-filter">
 <h1>Exclusion Filter<a class="headerlink" href="#exclusion-filter" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Exclusion Filter module streamlines the program creation process by enabling administrators to define and apply specific criteria to exclude ineligible registrants. This ensures that only qualified individuals are considered for enrollment in social protection programs, enhancing efficiency and program integrity.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module provides a robust mechanism to manage and apply exclusion rules, ensuring that program benefits reach the intended beneficiaries. It accomplishes this by:</p>
 <ul class="simple">
@@ -1664,8 +1651,8 @@ title="Print to PDF"
 <li><p><strong>Supporting Fair Distribution</strong>: The module ensures that resources are allocated equitably by preventing individuals who do not meet specific requirements, or who are already receiving similar benefits, from being considered.</p></li>
 </ul>
 <p>For instance, an exclusion filter could prevent registrants already enrolled in a specific cash transfer program from being considered for a new, similar program, or exclude individuals above a certain income threshold.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Exclusion Filter module integrates seamlessly with core OpenSPP components, extending their functionality to incorporate advanced eligibility management.</p>
 <ul class="simple">
@@ -1675,28 +1662,28 @@ title="Print to PDF"
 <li><p><strong>OpenSPP Programs (<a class="reference internal" href="spp_programs.html"><span class="doc std std-doc">spp_programs</span></a>)</strong>: Extends the OpenSPP-specific program functionalities, ensuring that exclusion filters can be configured and utilized within the broader context of OpenSPP's social protection programs.</p></li>
 </ul>
 <p>This module primarily serves <code class="docutils literal notranslate"><span class="pre">g2p_programs</span></code> and <code class="docutils literal notranslate"><span class="pre">spp_programs</span></code> by providing an essential layer of control during the program creation and beneficiary selection phases.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The module introduces key features to define and apply exclusion criteria effectively within OpenSPP programs.</p>
-<section id="configuring-exclusion-rules">
+<div class="section" id="configuring-exclusion-rules">
 <h3>Configuring Exclusion Rules<a class="headerlink" href="#configuring-exclusion-rules" title="Permalink to this headline">#</a></h3>
 <p>Users gain access to an Eligibility Manager where they can define and manage various exclusion criteria. These rules specify the conditions under which a registrant should be deemed ineligible for a program. For example, a rule might exclude registrants who are already beneficiaries of &quot;Program X&quot; or those whose household income exceeds a defined threshold. Administrators can create new rules, modify existing ones, and activate or deactivate them as program requirements evolve.</p>
-</section>
-<section id="applying-filters-during-program-creation">
+</div>
+<div class="section" id="applying-filters-during-program-creation">
 <h3>Applying Filters During Program Creation<a class="headerlink" href="#applying-filters-during-program-creation" title="Permalink to this headline">#</a></h3>
 <p>During the program creation wizard, administrators can select and apply one or more pre-configured exclusion filters. This crucial step integrates the exclusion logic directly into the program setup process. Once selected, the module automatically processes the potential beneficiary pool against these filters, generating a refined list of truly eligible registrants. This ensures that the initial program enrollment considers only those who meet all inclusion criteria and none of the exclusion criteria.</p>
-</section>
-<section id="automated-registrant-screening">
+</div>
+<div class="section" id="automated-registrant-screening">
 <h3>Automated Registrant Screening<a class="headerlink" href="#automated-registrant-screening" title="Permalink to this headline">#</a></h3>
 <p>The module automates the process of screening registrants against the defined exclusion rules. When a filter is applied, the system identifies and flags any registrant who meets the exclusion conditions. This automated screening significantly reduces the administrative burden of manual eligibility checks, minimizes human error, and ensures consistent application of program rules across all registrants.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Exclusion Filter module is vital for maintaining the integrity and efficiency of social protection programs by enabling precise control over beneficiary eligibility and streamlining the program enrollment process.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

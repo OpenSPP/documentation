@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Best practices" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Best practices" name="title" />
 <meta content="OpenSPP development best practices following OCA standards including coding standards, security guidelines, and licensing requirements" name="description" />
 <meta content="OpenSPP, best practices, coding standards, OCA, security, pre-commit, development guidelines" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../_static/search_shortcut.js"></script>
     <script src="../_static/version_switcher.js"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/best_practices.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1618,11 +1605,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="best-practices">
+  <div class="section" id="best-practices">
 <h1>Best practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">#</a></h1>
 <p>OpenSPP follows the coding standards of the <a class="reference external" href="https://github.com/OCA/odoo-community.org/blob/master/website/Contribution/CONTRIBUTING.rst">Odoo Community Association (OCA)</a>, which are designed to ensure high-quality, maintainable, and consistent code.
 While the full guidelines are extensive, here are some of the most important best practices to follow:</p>
-<section id="enforce-coding-standards-with-pre-commit">
+<div class="section" id="enforce-coding-standards-with-pre-commit">
 <h2>Enforce Coding Standards with Pre-Commit<a class="headerlink" href="#enforce-coding-standards-with-pre-commit" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>OpenSPP uses <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> to automatically enforce <strong>PEP8</strong> and other coding standards. This is the recommended way to ensure your code is compliant before committing.</p></li>
@@ -1636,16 +1623,16 @@ pre-commit<span class="w"> </span>install
 <li><p>After setup, these checks will run automatically on every <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.
 If an issue is found, the commit will be stopped, and some tools may automatically fix the files for you.</p></li>
 </ul>
-</section>
-<section id="write-clean-and-readable-xml">
+</div>
+<div class="section" id="write-clean-and-readable-xml">
 <h2>Write Clean and Readable XML<a class="headerlink" href="#write-clean-and-readable-xml" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Use a consistent naming convention for record IDs.
 For example: <code class="docutils literal notranslate"><span class="pre">view_model_name_form</span></code>, <code class="docutils literal notranslate"><span class="pre">action_model_name_window</span></code>.</p></li>
 <li><p>Logically order fields in views to create an intuitive user experience.</p></li>
 </ul>
-</section>
-<section id="prioritize-security-and-extensibility">
+</div>
+<div class="section" id="prioritize-security-and-extensibility">
 <h2>Prioritize Security and Extensibility<a class="headerlink" href="#prioritize-security-and-extensibility" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Always define access rights in <code class="docutils literal notranslate"><span class="pre">security/ir.model.access.csv</span></code>.
@@ -1655,15 +1642,15 @@ Use the Odoo ORM to ensure security rules are respected.</p></li>
 <li><p>Always use <code class="docutils literal notranslate"><span class="pre">_inherit</span></code> and <code class="docutils literal notranslate"><span class="pre">xpath</span></code> to extend existing functionality.
 Never modify core OpenSPP or Odoo files directly.</p></li>
 </ul>
-</section>
-<section id="adhere-to-licensing-requirements">
+</div>
+<div class="section" id="adhere-to-licensing-requirements">
 <h2>Adhere to Licensing Requirements<a class="headerlink" href="#adhere-to-licensing-requirements" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>All custom modules for OpenSPP must be licensed under <strong>LGPL-3</strong>.</p></li>
 <li><p>Ensure that any third-party Python libraries or other dependencies you add are compatible with the LGPL-3 license.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

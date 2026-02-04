@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Registry fields" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Registry fields" name="title" />
 <meta content="Learn how to add custom fields to OpenSPP registry models for individuals and groups with step-by-step module development guide" name="description" />
 <meta content="OpenSPP, registry fields, custom fields, module development, res.partner, individual registry, group registry" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/module_development/fields.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1682,7 +1669,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="registry-fields">
+  <div class="section" id="registry-fields">
 <h1>Registry fields<a class="headerlink" href="#registry-fields" title="Permalink to this headline">#</a></h1>
 <p>This article guides you through understanding how the registry modules work in OpenSPP and how to add custom fields to registrants.
 The <code class="docutils literal notranslate"><span class="pre">g2p_registry_group</span></code> and <code class="docutils literal notranslate"><span class="pre">g2p_registry_individual</span></code> modules surface registrants (groups and individuals) based on the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model.</p>
@@ -1713,15 +1700,15 @@ The <code class="docutils literal notranslate"><span class="pre">g2p_registry_gr
 </ul>
 </li>
 </ul>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Solid understanding of Odoo 17 module development, including Python, XML, and XPath.</p></li>
 <li><p>Registry modules (<code class="docutils literal notranslate"><span class="pre">g2p_registry_group</span></code>, <code class="docutils literal notranslate"><span class="pre">g2p_registry_individual</span></code>) installed.</p></li>
 <li><p>To set up OpenSPP for development, please refer to the <a class="reference internal" href="../setup.html"><span class="doc">Development Setup Guide</span></a>.</p></li>
 </ul>
-</section>
-<section id="module-structure">
+</div>
+<div class="section" id="module-structure">
 <h2>Module Structure<a class="headerlink" href="#module-structure" title="Permalink to this headline">#</a></h2>
 <p>A typical customization module for registry fields follows the standard Odoo module structure. Here’s an example for <code class="docutils literal notranslate"><span class="pre">spp_custom_registry_field</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>spp_custom_registry_field/
@@ -1737,14 +1724,14 @@ The <code class="docutils literal notranslate"><span class="pre">g2p_registry_gr
     └── ir.model.access.csv
 </pre></div>
 </div>
-</section>
-<section id="step-by-step-guide">
+</div>
+<div class="section" id="step-by-step-guide">
 <h2>Step-by-Step Guide<a class="headerlink" href="#step-by-step-guide" title="Permalink to this headline">#</a></h2>
-<section id="create-the-module-scaffold">
+<div class="section" id="create-the-module-scaffold">
 <h3>Create the Module Scaffold<a class="headerlink" href="#create-the-module-scaffold" title="Permalink to this headline">#</a></h3>
 <p>Create a new directory for your module (e.g., <code class="docutils literal notranslate"><span class="pre">spp_custom_registry_field</span></code>) and populate it with the files and structure above.</p>
-</section>
-<section id="define-module-manifest">
+</div>
+<div class="section" id="define-module-manifest">
 <h3>Define Module Manifest<a class="headerlink" href="#define-module-manifest" title="Permalink to this headline">#</a></h3>
 <p>Create a manifest file with dependencies and data files:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -1770,13 +1757,13 @@ The <code class="docutils literal notranslate"><span class="pre">g2p_registry_gr
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="extend-the-res-partner-model">
+</div>
+<div class="section" id="extend-the-res-partner-model">
 <h3>Extend the res.partner Model<a class="headerlink" href="#extend-the-res-partner-model" title="Permalink to this headline">#</a></h3>
 <p>Create <code class="docutils literal notranslate"><span class="pre">models/res_partner.py</span></code> to add your custom field and import it in <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">odoo</span><span class="w"> </span><span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">G2PRegistrant</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">G2PRegistrant</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;res.partner&quot;</span>
 
     <span class="c1"># Custom field shared by both individuals and groups</span>
@@ -1786,8 +1773,8 @@ The <code class="docutils literal notranslate"><span class="pre">g2p_registry_gr
     <span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="create-view-extensions">
+</div>
+<div class="section" id="create-view-extensions">
 <h3>Create View Extensions<a class="headerlink" href="#create-view-extensions" title="Permalink to this headline">#</a></h3>
 <p>Expose the field on both Individuals and Groups UI by extending the existing views.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odoo&gt;</span>
@@ -1845,8 +1832,8 @@ The <code class="docutils literal notranslate"><span class="pre">g2p_registry_gr
 <span class="nt">&lt;/odoo&gt;</span>
 </pre></div>
 </div>
-</section>
-<section id="add-security-access-optional">
+</div>
+<div class="section" id="add-security-access-optional">
 <h3>Add Security Access (Optional)<a class="headerlink" href="#add-security-access-optional" title="Permalink to this headline">#</a></h3>
 <p>If you introduce new models, add access rights.
 For a simple field addition to <code class="docutils literal notranslate"><span class="pre">res.partner</span></code>, this is not required.
@@ -1855,24 +1842,24 @@ Example:</p>
 <span class="n">access_custom_partner_note</span><span class="p">,</span><span class="n">custom</span><span class="o">.</span><span class="n">partner</span><span class="o">.</span><span class="n">note</span><span class="p">,</span><span class="n">base</span><span class="o">.</span><span class="n">model_res_partner</span><span class="p">,</span><span class="n">base</span><span class="o">.</span><span class="n">group_user</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
 </pre></div>
 </div>
-</section>
-<section id="install-and-test">
+</div>
+<div class="section" id="install-and-test">
 <h3>Install and Test<a class="headerlink" href="#install-and-test" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install the module through the Apps menu.</p></li>
 <li><p>Open the Individual and Group registries and verify the new field displays in both list and form views.</p></li>
 <li><p>Create or update records and ensure the new field can be edited and saved.</p></li>
 </ol>
-</section>
-</section>
-<section id="references">
+</div>
+</div>
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <p>For more information on extending OpenSPP modules, refer to:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/">Odoo 17 Developer Documentation</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

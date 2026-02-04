@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Pluggable Payment and Disbursement" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Pluggable Payment and Disbursement" name="title" />
 <meta content="OpenSPP flexible payment system with multi-channel benefit delivery through banks, mobile money, vouchers, and cash" name="description" />
 <meta content="OpenSPP, payment disbursement, mobile money, banking integration, G2P Connect, financial inclusion, social protection" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/overview/features/payment_disbursement.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1608,15 +1595,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="pluggable-payment-and-disbursement">
+  <div class="section" id="pluggable-payment-and-disbursement">
 <h1>Pluggable payment and disbursement<a class="headerlink" href="#pluggable-payment-and-disbursement" title="Permalink to this headline">#</a></h1>
 <p>OpenSPP's payment and disbursement system provides a flexible, pluggable architecture for integrating with diverse financial service providers, enabling programs to deliver <a class="reference internal" href="../../reference/glossary.html#term-Benefits"><span class="xref std std-term">benefits</span></a> to <a class="reference internal" href="../../reference/glossary.html#term-Beneficiaries"><span class="xref std std-term">beneficiaries</span></a> through multiple channels including banks, mobile money, vouchers, and direct cash distribution.</p>
-<section id="moving-beyond-manual-payments">
+<div class="section" id="moving-beyond-manual-payments">
 <h2>Moving beyond manual payments<a class="headerlink" href="#moving-beyond-manual-payments" title="Permalink to this headline">#</a></h2>
 <p>The &quot;last mile&quot; of <a class="reference internal" href="../../reference/glossary.html#term-Social-protection"><span class="xref std std-term">social protection</span></a> delivery — getting benefits into the hands of beneficiaries — often presents the greatest operational challenges. Programs must navigate complex financial ecosystems with multiple payment service providers, varying levels of financial inclusion among target populations, and diverse regulatory requirements. A rigid, one-size-fits-all payment system cannot address these varied contexts effectively. Programs operating in urban areas might leverage digital payments through banks and mobile money operators, while those in remote rural areas might rely on cash distribution or voucher systems.</p>
 <p>OpenSPP's pluggable architecture recognizes that payment ecosystems vary dramatically across countries and even within regions of the same country. The platform doesn't force programs into predetermined payment channels but instead provides connectors to integrate with existing financial infrastructure. This approach allows programs to use the most appropriate payment methods for their context while maintaining standardized processes for payment preparation, reconciliation, and reporting. The system's support for emerging standards like G2P Connect ensures that programs can leverage modern digital payment infrastructure where available, while still maintaining fallback options for areas with limited financial services. This flexibility is essential for achieving universal coverage and ensuring that no beneficiary is excluded due to payment infrastructure limitations.</p>
-</section>
-<section id="payment-channels">
+</div>
+<div class="section" id="payment-channels">
 <h2>Payment channels<a class="headerlink" href="#payment-channels" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><strong>Multi-channel payment support</strong>: Process payments through banks, mobile money operators, payment aggregators, or direct cash distribution based on beneficiary preferences and local infrastructure</p></li>
@@ -1628,8 +1615,8 @@ title="Print to PDF"
 <li><p><strong>Multi-currency support</strong>: Handle programs operating in different currencies with appropriate conversion and accounting</p></li>
 <li><p><strong>Payment retry and exception handling</strong>: Automatically manage failed payments with configurable retry logic and manual intervention workflows</p></li>
 </ul>
-</section>
-<section id="payment-infrastructure">
+</div>
+<div class="section" id="payment-infrastructure">
 <h2>Payment infrastructure<a class="headerlink" href="#payment-infrastructure" title="Permalink to this headline">#</a></h2>
 <p>The payment system is implemented through specialized payment connectors:</p>
 <ul class="simple">
@@ -1643,8 +1630,8 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="../../reference/modules/spp_pos_id_redemption.html"><span class="doc std std-doc">spp_pos_id_redemption</span></a></strong>: ID-based redemption at service points</p></li>
 <li><p><strong><a class="reference internal" href="../../reference/modules/g2p_entitlement_voucher.html"><span class="doc std std-doc">g2p_entitlement_voucher</span></a></strong>: Voucher generation and management</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

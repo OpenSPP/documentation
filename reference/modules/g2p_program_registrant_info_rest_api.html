@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_program_registrant_info_rest_api.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1648,10 +1635,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-program-registrant-info-rest-api">
+  <div class="section" id="g2p-program-registrant-info-rest-api">
 <h1>G2P Program Registrant Info Rest Api<a class="headerlink" href="#g2p-program-registrant-info-rest-api" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_program_registrant_info_rest_api</span></code> module provides a RESTful API for external systems to access and manage program-specific application information for registrants within OpenSPP. It extends existing program membership APIs to seamlessly integrate detailed application data.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module enables external systems to interact with the granular application details collected from registrants for various social protection programs. Its key capabilities include:</p>
 <ul class="simple">
@@ -1662,8 +1649,8 @@ title="Print to PDF"
 <li><p><strong>Enhance Data Accessibility:</strong> Provides structured access to crucial application data, supporting informed decision-making and efficient program management from external platforms.</p></li>
 </ul>
 <p>This module ensures that detailed application information, such as eligibility criteria responses or supporting document details, can be managed and retrieved alongside a registrant's program enrollment status. For example, an external system can submit a new program application, including all specific form fields, and enroll the registrant in one API call.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module acts as an extension layer, enhancing the capabilities of other core OpenSPP modules by exposing their data via a REST API.</p>
 <ul class="simple">
@@ -1671,28 +1658,28 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="g2p_program_registrant_info.html"><span class="doc std std-doc">G2P Program: Registrant Info</span></a></strong>: This module relies on <code class="docutils literal notranslate"><span class="pre">g2p_program_registrant_info</span></code> as its foundational data source. It provides the REST API layer for the program-specific application data models and logic defined within <code class="docutils literal notranslate"><span class="pre">g2p_program_registrant_info</span></code>.</p></li>
 </ul>
 <p>By integrating with these modules, <code class="docutils literal notranslate"><span class="pre">g2p_program_registrant_info_rest_api</span></code> serves as a critical bridge, allowing external systems to programmatically interact with the detailed application and enrollment processes within OpenSPP.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The module provides robust functionality for managing program-specific registrant application data through its API.</p>
-<section id="enriching-program-membership-apis">
+<div class="section" id="enriching-program-membership-apis">
 <h3>Enriching Program Membership APIs<a class="headerlink" href="#enriching-program-membership-apis" title="Permalink to this headline">#</a></h3>
 <p>This module extends the existing REST APIs for program memberships to include detailed program-specific application information. When creating or updating a program membership, external systems can directly provide the associated application details. Conversely, when retrieving program membership data, the API response will include the relevant program registrant information, such as application status and submitted form data. This ensures a comprehensive view of a registrant's program journey.</p>
-</section>
-<section id="accessing-program-specific-application-data">
+</div>
+<div class="section" id="accessing-program-specific-application-data">
 <h3>Accessing Program-Specific Application Data<a class="headerlink" href="#accessing-program-specific-application-data" title="Permalink to this headline">#</a></h3>
 <p>The module provides structured access to the program-specific application information collected for each registrant. This allows external systems to query and retrieve the full details of an application, including any custom fields or data points gathered during the enrollment process. This capability is vital for external dashboards, reporting tools, or other systems needing to analyze or display detailed application statuses and content.</p>
-</section>
-<section id="supporting-dynamic-application-forms">
+</div>
+<div class="section" id="supporting-dynamic-application-forms">
 <h3>Supporting Dynamic Application Forms<a class="headerlink" href="#supporting-dynamic-application-forms" title="Permalink to this headline">#</a></h3>
 <p>OpenSPP programs often require varied data collection forms. This module supports dynamic data structures for program-specific application information, typically stored as JSON. This flexibility ensures that the API can accommodate diverse application requirements without needing code changes, allowing programs to collect and manage unique sets of data through a standardized interface.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_program_registrant_info_rest_api</span></code> module is essential for enabling external systems to seamlessly access and manage detailed, program-specific application information for registrants within OpenSPP. It enhances the platform's interoperability by exposing critical program enrollment data through a comprehensive and flexible REST API.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

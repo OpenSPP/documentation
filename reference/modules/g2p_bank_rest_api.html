@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_bank_rest_api.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1648,10 +1635,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-bank-rest-api">
+  <div class="section" id="g2p-bank-rest-api">
 <h1>G2P Bank Rest Api<a class="headerlink" href="#g2p-bank-rest-api" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_bank_rest_api</span></code> module extends OpenSPP's RESTful API capabilities, allowing external systems to seamlessly interact with and manage bank account details for individuals and groups registered within the platform. It provides the necessary endpoints for creating, updating, and retrieving registrant bank information programmatically.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module is essential for enabling automated financial processes and data exchange by exposing registrant bank details through a standardized API. It accomplishes the following:</p>
 <ul class="simple">
@@ -1661,8 +1648,8 @@ title="Print to PDF"
 <li><p><strong>Streamlines Registrant Onboarding</strong>: Integrates bank detail submission into the broader registrant enrollment process, allowing for comprehensive profile creation through a single API interaction.</p></li>
 <li><p><strong>Ensures Data Consistency</strong>: When bank details are submitted, the module automatically manages the creation or linking of bank records within OpenSPP, maintaining data integrity.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_bank_rest_api</span></code> module builds upon and integrates with core OpenSPP components to deliver its functionality:</p>
 <ul class="simple">
@@ -1670,27 +1657,27 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="g2p_bank.html"><span class="doc std std-doc">G2P Bank Module</span></a></strong>: It relies on the data models and business logic established by the <code class="docutils literal notranslate"><span class="pre">g2p_bank</span></code> module for managing bank details. When bank information is submitted via the API, <code class="docutils literal notranslate"><span class="pre">g2p_bank_rest_api</span></code> uses <code class="docutils literal notranslate"><span class="pre">g2p_bank</span></code>'s capabilities to correctly store and link these details to the respective individual or group.</p></li>
 </ul>
 <p>This module primarily serves external systems and integrations by providing a structured interface to interact with registrant bank data, which is foundational for any financially oriented social protection program.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="automated-bank-detail-processing-via-api">
+<div class="section" id="automated-bank-detail-processing-via-api">
 <h3>Automated Bank Detail Processing via API<a class="headerlink" href="#automated-bank-detail-processing-via-api" title="Permalink to this headline">#</a></h3>
 <p>This module allows external systems to submit bank account information (such as bank name and account number) as part of the data payload when creating or updating individual or group registrants. OpenSPP automatically processes this information, creating new bank records if a bank name is unrecognized and linking the account number to the specified registrant. This capability simplifies the comprehensive registration of beneficiaries, including their financial information, through a single API call.</p>
-</section>
-<section id="seamless-integration-with-registrant-data">
+</div>
+<div class="section" id="seamless-integration-with-registrant-data">
 <h3>Seamless Integration with Registrant Data<a class="headerlink" href="#seamless-integration-with-registrant-data" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_bank_rest_api</span></code> module ensures that bank details are treated as an integral part of an individual's or group's profile within the OpenSPP registry. When external systems query registrant data, the associated bank accounts can be included, providing a holistic view of the beneficiary. This unified approach prevents data silos and enhances the utility of the registrant information for various program functions.</p>
-</section>
-<section id="support-for-financial-transactions">
+</div>
+<div class="section" id="support-for-financial-transactions">
 <h3>Support for Financial Transactions<a class="headerlink" href="#support-for-financial-transactions" title="Permalink to this headline">#</a></h3>
 <p>By providing a robust API for managing bank details, this module lays the groundwork for critical financial operations. It enables the platform to store and retrieve the necessary bank account information for processing G2P payments, managing financial aid disbursements, or integrating with mobile money providers. This is crucial for programs requiring direct financial transfers to beneficiaries.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_bank_rest_api</span></code> module is critical for OpenSPP's interoperability, enabling external systems to manage and integrate bank account details for registrants efficiently. It underpins automated financial processes and enhances the platform's capacity to support G2P payment programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

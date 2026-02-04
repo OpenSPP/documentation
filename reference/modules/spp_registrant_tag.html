@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_registrant_tag.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="registrant-tags">
+  <div class="section" id="registrant-tags">
 <h1>Registrant Tags<a class="headerlink" href="#registrant-tags" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_registrant_tag</span></code> module provides enhanced tagging capabilities for registrants within OpenSPP, significantly improving the organization and management of registrant data for social protection programs.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module empowers program managers and administrators to effectively categorize and manage registrant populations. It accomplishes this by:</p>
 <ul class="simple">
@@ -1674,8 +1661,8 @@ title="Print to PDF"
 <li><p><strong>Supporting flexible data management</strong>: Adapt to evolving program requirements by creating new tags as needed without requiring system modifications.</p></li>
 </ul>
 <p>For example, tags can categorize registrants as &quot;Eligible for Cash Transfer,&quot; &quot;Vulnerable Household,&quot; &quot;Remote Area Resident,&quot; or &quot;Pending Verification.&quot;</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_registrant_tag</span></code> module builds upon core OpenSPP functionalities to deliver its enhanced capabilities:</p>
 <ul class="simple">
@@ -1683,32 +1670,32 @@ title="Print to PDF"
 <li><p><strong>G2P Registry Base</strong>: Crucially, <code class="docutils literal notranslate"><span class="pre">spp_registrant_tag</span></code> extends the <a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">G2P Registry Base</span></a> module. While <code class="docutils literal notranslate"><span class="pre">g2p_registry_base</span></code> provides the fundamental registrant data model and a basic tagging system, <code class="docutils literal notranslate"><span class="pre">spp_registrant_tag</span></code> enhances this foundation by offering more robust and flexible tag management features for program-specific categorization.</p></li>
 </ul>
 <p>This module provides a flexible categorization layer that other program-specific modules can leverage for filtering, targeting, and managing specific groups of registrants.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_registrant_tag</span></code> module introduces key features that enhance how registrants are categorized and managed:</p>
-<section id="customizable-tag-definitions">
+<div class="section" id="customizable-tag-definitions">
 <h3>Customizable Tag Definitions<a class="headerlink" href="#customizable-tag-definitions" title="Permalink to this headline">#</a></h3>
 <p>Users can define and manage an unlimited number of custom tags. These tags serve as descriptive labels, allowing for detailed categorization of registrants based on any criteria relevant to social protection programs, such as &quot;Female-Headed Household,&quot; &quot;Rural Farmer,&quot; or &quot;Attended Financial Literacy Training.&quot;</p>
-</section>
-<section id="flexible-registrant-tagging">
+</div>
+<div class="section" id="flexible-registrant-tagging">
 <h3>Flexible Registrant Tagging<a class="headerlink" href="#flexible-registrant-tagging" title="Permalink to this headline">#</a></h3>
 <p>The module supports applying one or multiple tags to individual registrants. This capability enables precise segmentation of the registrant population, making it easy to mark individuals for specific programs, statuses, or unique characteristics relevant to their social protection journey.</p>
-</section>
-<section id="advanced-filtering-and-reporting">
+</div>
+<div class="section" id="advanced-filtering-and-reporting">
 <h3>Advanced Filtering and Reporting<a class="headerlink" href="#advanced-filtering-and-reporting" title="Permalink to this headline">#</a></h3>
 <p>Assigned tags become powerful tools for searching, filtering, and generating reports on registrant data. Program managers can quickly identify specific groups, monitor program participation, and create targeted reports for informed decision-making. For instance, filter all &quot;Persons with Disabilities&quot; who are also &quot;Eligible for Health Services.&quot;</p>
-</section>
-<section id="dynamic-program-integration">
+</div>
+<div class="section" id="dynamic-program-integration">
 <h3>Dynamic Program Integration<a class="headerlink" href="#dynamic-program-integration" title="Permalink to this headline">#</a></h3>
 <p>Tags can be assigned or updated dynamically as registrants progress through various program stages or meet new criteria. This ensures that registrant data remains current and accurately reflects their status within different social protection interventions, supporting adaptive program management.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_registrant_tag</span></code> module is essential for organizing and managing registrant data efficiently within OpenSPP, enabling more targeted interventions and effective social protection program delivery.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

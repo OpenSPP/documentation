@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_payment_g2p_connect.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-payment-g2p-connect">
+  <div class="section" id="g2p-payment-g2p-connect">
 <h1>G2P Payment G2P Connect<a class="headerlink" href="#g2p-payment-g2p-connect" title="Permalink to this headline">#</a></h1>
 <p>This module integrates OpenSPP with external payment systems using the G2P Connect standard. It automates the secure transfer of payment instructions and status updates, streamlining digital benefit disbursements to beneficiaries.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The G2P Payment G2P Connect module provides a critical bridge for OpenSPP to interact with external digital payment providers, enabling efficient and reliable benefit delivery. It accomplishes the following:</p>
 <ul class="simple">
@@ -1671,8 +1658,8 @@ title="Print to PDF"
 <li><p><strong>Ensures Secure and Traceable Transactions:</strong> Formats payment data according to the G2P Connect standard, incorporating security elements like digital signatures. This ensures secure communication and provides a clear audit trail for each transaction, which is critical for accountability in social protection programs.</p></li>
 <li><p><strong>Provides Configurable Payment Endpoints:</strong> Allows administrators to define specific API endpoints for sending payments and retrieving status updates. This offers flexibility to integrate with various G2P Connect-compliant systems and adapt to different country or program requirements.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The G2P Payment G2P Connect module extends and integrates with several core OpenSPP modules to deliver its functionality:</p>
 <ul class="simple">
@@ -1681,32 +1668,32 @@ title="Print to PDF"
 <li><p><strong>G2P Programs (<code class="docutils literal notranslate"><span class="pre">g2p_programs</span></code>)</strong>: This module serves as a specific implementation of a payment manager within the G2P Programs framework. It extends program management capabilities by providing the mechanism to actually disburse payments defined within a program's cycles and entitlements.</p></li>
 <li><p><strong>G2P Payment Files (<code class="docutils literal notranslate"><span class="pre">g2p_payment_files</span></code>)</strong>: By inheriting from <code class="docutils literal notranslate"><span class="pre">g2p.program.payment.manager.file</span></code>, this module leverages the foundational structure for managing payment-related configurations and batch processing, although its primary role is direct API integration rather than file generation.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The G2P Payment G2P Connect module provides robust features for managing digital payment integrations:</p>
-<section id="configurable-payee-identification">
+<div class="section" id="configurable-payee-identification">
 <h3>Configurable Payee Identification<a class="headerlink" href="#configurable-payee-identification" title="Permalink to this headline">#</a></h3>
 <p>Users can select the primary identifier for beneficiaries, such as &quot;Bank Account Number,&quot; &quot;IBAN,&quot; &quot;Phone,&quot; &quot;Email,&quot; or a specific &quot;Registrant ID Type.&quot; This flexibility accommodates diverse financial inclusion landscapes and beneficiary preferences. The system automatically formats the selected identifier with appropriate prefixes (e.g., <code class="docutils literal notranslate"><span class="pre">phone:</span></code>) for consistent communication with the external payment system. When a registrant is part of a group, the module intelligently identifies the designated group head (e.g., Head of Household) to ensure payments are directed to the appropriate individual within the household or group.</p>
-</section>
-<section id="automated-payment-processing-and-status-monitoring">
+</div>
+<div class="section" id="automated-payment-processing-and-status-monitoring">
 <h3>Automated Payment Processing and Status Monitoring<a class="headerlink" href="#automated-payment-processing-and-status-monitoring" title="Permalink to this headline">#</a></h3>
 <p>The module can automatically group pending payments into batches and initiate their transfer to the configured Payment Endpoint URL. This streamlines the disbursement process, reducing manual intervention. Upon sending payments, an automated background task (cron job) is created to regularly query the Status Endpoint URL for updates on each payment's progress. Payment statuses (e.g., &quot;paid,&quot; &quot;failed&quot;) are automatically updated in OpenSPP, providing real-time reconciliation and reducing manual tracking efforts.</p>
-</section>
-<section id="secure-api-communication-and-error-handling">
+</div>
+<div class="section" id="secure-api-communication-and-error-handling">
 <h3>Secure API Communication and Error Handling<a class="headerlink" href="#secure-api-communication-and-error-handling" title="Permalink to this headline">#</a></h3>
 <p>Payments are sent via secure API calls to external G2P Connect-compliant systems, including necessary authentication and message formatting (e.g., digital signatures). The system monitors API responses and logs any communication errors or failures during the disbursement or status check processes. These errors are recorded and made visible to administrators for investigation and resolution. Administrators can define a &quot;Filter Batches to Send&quot; rule using OpenSPP's domain syntax to control which specific payment batches are eligible for automated sending, ensuring targeted disbursements.</p>
-</section>
-<section id="customizable-connection-settings">
+</div>
+<div class="section" id="customizable-connection-settings">
 <h3>Customizable Connection Settings<a class="headerlink" href="#customizable-connection-settings" title="Permalink to this headline">#</a></h3>
 <p>Administrators define the specific &quot;Payment Endpoint URL&quot; and &quot;Status Endpoint URL&quot; for integration with their chosen external payment provider. An &quot;API Timeout&quot; can be set to manage the duration the system waits for a response from the external payment system, preventing indefinite hangs and improving system responsiveness. A &quot;Locale&quot; setting ensures that payment communications are sent with the appropriate language and regional context, supporting multilingual operations.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Payment G2P Connect module is a critical component for enabling secure, automated, and traceable digital payment disbursements to beneficiaries through external G2P Connect-compliant payment systems within OpenSPP.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

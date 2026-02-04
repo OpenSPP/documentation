@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_change_request_base.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1670,10 +1657,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="change-request-base">
+  <div class="section" id="change-request-base">
 <h1>Change Request Base<a class="headerlink" href="#change-request-base" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_change_request_base</span></code> module provides a robust framework for managing all modifications to registrant information within the OpenSPP platform. It establishes a structured, auditable process for submitting, reviewing, approving, and applying changes to vital data, ensuring accuracy and accountability.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines the critical task of updating registrant information, which is fundamental to the effective operation of social protection programs. It ensures that all changes are handled systematically, maintaining data integrity and program reliability.</p>
 <ul class="simple">
@@ -1683,8 +1670,8 @@ title="Print to PDF"
 <li><p><strong>Integrates Document Management:</strong> Automatically links relevant supporting documents directly to each change request, centralizing all information needed for review and approval.</p></li>
 <li><p><strong>Facilitates User Assignment and Collaboration:</strong> Allows change requests to be assigned to specific users or teams, promoting efficient collaboration and clear ownership throughout the validation process.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_change_request_base</span></code> module integrates seamlessly with core OpenSPP functionalities and other key modules to deliver its capabilities.</p>
 <ul class="simple">
@@ -1692,36 +1679,36 @@ title="Print to PDF"
 <li><p><strong>Document Management System (<a class="reference internal" href="spp_dms.html"><span class="doc std std-doc">spp_dms</span></a>):</strong> This is a critical dependency. The module automatically creates a dedicated folder within the <a class="reference internal" href="spp_dms.html"><span class="doc std std-doc">spp_dms</span></a> for every new change request. This ensures all supporting documentation—like identification cards or proof of address—is securely stored and directly accessible from the change request itself.</p></li>
 </ul>
 <p>This module also serves as a foundational component for other OpenSPP modules that interact with registrant data. Any module needing to modify a registrant's <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> record will leverage <code class="docutils literal notranslate"><span class="pre">spp_change_request_base</span></code> to ensure these updates follow a controlled and auditable process. This includes modules for beneficiary enrollment, program eligibility, and case management, guaranteeing that all changes to a registrant's profile are managed through a standardized workflow.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_change_request_base</span></code> module offers several key features to manage the lifecycle of registrant data changes.</p>
-<section id="structured-change-request-lifecycle">
+<div class="section" id="structured-change-request-lifecycle">
 <h3>Structured Change Request Lifecycle<a class="headerlink" href="#structured-change-request-lifecycle" title="Permalink to this headline">#</a></h3>
 <p>The module defines a clear lifecycle for every change request, moving through distinct states: <strong>Draft</strong>, <strong>Pending Validation</strong>, <strong>Validated</strong>, <strong>Applied</strong>, <strong>Rejected</strong>, and <strong>Cancelled</strong>. Users can initiate a request in a <strong>Draft</strong> state, submit it for <strong>Pending Validation</strong>, and then validators can <strong>Validate</strong> or <strong>Reject</strong> it. Once fully <strong>Validated</strong>, the changes can be <strong>Applied</strong> to the registrant's record. Requests can also be <strong>Cancelled</strong> at various stages or <strong>Reset to Draft</strong> if further modifications are needed before validation. This structured flow ensures that changes are systematically reviewed and approved.</p>
-</section>
-<section id="dynamic-assignment-and-role-based-validation">
+</div>
+<div class="section" id="dynamic-assignment-and-role-based-validation">
 <h3>Dynamic Assignment and Role-Based Validation<a class="headerlink" href="#dynamic-assignment-and-role-based-validation" title="Permalink to this headline">#</a></h3>
 <p>Each change request is assigned to a specific user responsible for its processing. The module facilitates reassignment, allowing administrators or authorized users to transfer ownership of a request. Furthermore, the validation process is role-based: a change request can only be validated by users belonging to specific validation groups, ensuring that only qualified personnel approve changes at each stage. This includes checks to prevent deletion of requests unless they are in a <strong>Draft</strong> state and being deleted by their original creator.</p>
-</section>
-<section id="comprehensive-document-attachment">
+</div>
+<div class="section" id="comprehensive-document-attachment">
 <h3>Comprehensive Document Attachment<a class="headerlink" href="#comprehensive-document-attachment" title="Permalink to this headline">#</a></h3>
 <p>Every change request automatically generates a dedicated folder within OpenSPP's Document Management System (<a class="reference internal" href="spp_dms.html"><span class="doc std std-doc">spp_dms</span></a>). This allows users to attach all necessary supporting documents, such as copies of identification, marriage certificates, or proof of address, directly to the request. This centralized document storage ensures that all evidence for a change is readily available to validators and maintains a complete record for auditing purposes.</p>
-</section>
-<section id="customizable-validation-sequences">
+</div>
+<div class="section" id="customizable-validation-sequences">
 <h3>Customizable Validation Sequences<a class="headerlink" href="#customizable-validation-sequences" title="Permalink to this headline">#</a></h3>
 <p>The module supports the definition of customizable validation sequences for different types of change requests. This means that an &quot;Address Change&quot; might require a different set of approvals than a &quot;Family Member Addition.&quot; Each sequence consists of multiple validation stages, and each stage can be assigned to a specific user group (e.g., &quot;Data Entry Team,&quot; &quot;Regional Manager,&quot; &quot;Headquarters Approval&quot;). This flexibility allows programs to tailor validation workflows to their specific operational needs and compliance requirements.</p>
-</section>
-<section id="registrant-data-linkage-and-history">
+</div>
+<div class="section" id="registrant-data-linkage-and-history">
 <h3>Registrant Data Linkage and History<a class="headerlink" href="#registrant-data-linkage-and-history" title="Permalink to this headline">#</a></h3>
 <p>The module extends the core <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model, enabling a direct link between change requests and individual registrant records. This means that users can view a complete history of all change requests associated with a particular registrant, providing a transparent audit trail of every modification made to their profile. This linkage is crucial for understanding the evolution of a registrant's data over time and for ensuring the accuracy of information used in program delivery.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_change_request_base</span></code> module is a vital component of OpenSPP, centralizing and standardizing the process for updating critical registrant information. It provides a controlled, auditable, and flexible framework that ensures data integrity and operational efficiency across all social protection programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/administration/outgoing_email_configuration.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="outgoing-email-configuration">
+  <div class="section" id="outgoing-email-configuration">
 <h1>Outgoing email configuration<a class="headerlink" href="#outgoing-email-configuration" title="Permalink to this headline">#</a></h1>
 <p>Used for sending system notifications, user invitations, password resets, and other communications from OpenSPP to users and beneficiaries. Configuring an outgoing email server also allows OpenSPP to send emails using your organization's own email service. This ensures better deliverability, branding, and control over your email communications.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>To configure an outgoing email server, you will need:</p>
 <ul class="simple">
@@ -1677,15 +1664,15 @@ title="Print to PDF"
 </ul>
 </li>
 </ul>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>After completing this section, you will be able to configure OpenSPP to reliably send emails using your own custom SMTP server.</p>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
 <p>The process involves activating developer mode, navigating to the outgoing email server settings, creating a new configuration, and testing it to ensure it works correctly.</p>
-<section id="activate-developer-mode">
+<div class="section" id="activate-developer-mode">
 <h3>Activate developer mode<a class="headerlink" href="#activate-developer-mode" title="Permalink to this headline">#</a></h3>
 <p>To access the technical settings required for email configuration, you must first activate developer mode.</p>
 <ol class="arabic simple">
@@ -1695,8 +1682,8 @@ title="Print to PDF"
 </ol>
 <p><img alt="Settings page showing the 'Activate the developer mode' button at the bottom of the page" src="../../_images/A-step01-activate-developer-mode.jpg" /></p>
 <p>Once activated, a bug icon will appear in the top-right corner of the header, and new technical menus will become available.</p>
-</section>
-<section id="navigate-to-outgoing-email-servers">
+</div>
+<div class="section" id="navigate-to-outgoing-email-servers">
 <h3>Navigate to outgoing email servers<a class="headerlink" href="#navigate-to-outgoing-email-servers" title="Permalink to this headline">#</a></h3>
 <p>With developer mode active, you can now access the menu for configuring outgoing email servers.</p>
 <ol class="arabic simple">
@@ -1705,8 +1692,8 @@ title="Print to PDF"
 <li><p>Under the <strong>Email</strong> section, click on <strong>Outgoing Email Servers</strong>.</p></li>
 </ol>
 <p><img alt="Technical menu dropdown showing the Email section with 'Outgoing Email Servers' option highlighted" src="../../_images/A-step02-open-outgoing-email-servers.jpg" /></p>
-</section>
-<section id="create-a-new-server-configuration">
+</div>
+<div class="section" id="create-a-new-server-configuration">
 <h3>Create a new server configuration<a class="headerlink" href="#create-a-new-server-configuration" title="Permalink to this headline">#</a></h3>
 <p>On the <strong>Outgoing Email Servers</strong> page, you will see a list of any existing servers.</p>
 <ol class="arabic simple">
@@ -1714,8 +1701,8 @@ title="Print to PDF"
 </ol>
 <p><img alt="Outgoing Email Servers list page with the 'New' button highlighted to create a new server configuration" src="../../_images/A-step03-create-new-outgoing-email-server.jpg" /></p>
 <p>This will open a new form where you can enter your SMTP server details.</p>
-</section>
-<section id="fill-in-server-details">
+</div>
+<div class="section" id="fill-in-server-details">
 <h3>Fill in server details<a class="headerlink" href="#fill-in-server-details" title="Permalink to this headline">#</a></h3>
 <p>Now, fill in the form with the details from your email provider.</p>
 <ul class="simple">
@@ -1728,8 +1715,8 @@ title="Print to PDF"
 <li><p><strong>SMTP Port</strong>: Enter the port number. <code class="docutils literal notranslate"><span class="pre">587</span></code> is common for STARTTLS.</p></li>
 </ul>
 <p><img alt="SMTP server configuration form showing fields for Name, Priority, Connection Encryption, Username, Password, SMTP Server, and SMTP Port" src="../../_images/A-step04-fill-in-server-details.jpg" /></p>
-</section>
-<section id="test-and-save-the-configuration">
+</div>
+<div class="section" id="test-and-save-the-configuration">
 <h3>Test and save the configuration<a class="headerlink" href="#test-and-save-the-configuration" title="Permalink to this headline">#</a></h3>
 <p>After filling in all the details, it's crucial to test the connection to ensure everything is correct.</p>
 <ol class="arabic simple">
@@ -1738,9 +1725,9 @@ title="Print to PDF"
 <li><p>If you see an error, double-check your server details, username, and password.</p></li>
 <li><p>Once the test is successful, click the <strong>Save</strong> button.</p></li>
 </ol>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

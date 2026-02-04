@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_odk_user_mapping.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1648,10 +1635,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-odk-user-mapping">
+  <div class="section" id="g2p-odk-user-mapping">
 <h1>G2P Odk User Mapping<a class="headerlink" href="#g2p-odk-user-mapping" title="Permalink to this headline">#</a></h1>
 <p>The G2P Odk User Mapping module establishes a critical link between OpenSPP's internal partner records and the individuals collecting data through ODK Central. It enables the system to understand who is submitting ODK forms by mapping their ODK app user accounts to specific OpenSPP partners, such as field agents or enumerators.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines the management of field data collectors and enhances data traceability by directly associating ODK app users with OpenSPP partners:</p>
 <ul class="simple">
@@ -1661,34 +1648,34 @@ title="Print to PDF"
 <li><p><strong>Flexible ODK Configuration per Partner:</strong> Allows different OpenSPP partners to be associated with distinct ODK Central configurations, enabling decentralized or multi-project data collection efforts.</p></li>
 <li><p><strong>Streamlined Partner Management:</strong> Simplifies the process of managing field staff by centralizing their ODK user accounts and OpenSPP partner records, facilitating better oversight and operational efficiency.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The G2P Odk User Mapping module extends core OpenSPP functionalities and integrates closely with its data collection ecosystem.</p>
 <p>It depends on the <code class="docutils literal notranslate"><span class="pre">base</span></code> module for fundamental system operations and data models. The <code class="docutils literal notranslate"><span class="pre">account</span></code> module is also listed as a dependency, highlighting its reliance on the core <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model, which is often linked to accounting and contact management in OpenSPP.</p>
 <p>Critically, this module relies on <code class="docutils literal notranslate"><span class="pre">g2p_odk_importer</span></code> to provide the foundational ODK Central connection configurations. While <code class="docutils literal notranslate"><span class="pre">g2p_odk_importer</span></code> handles the import of form data, <code class="docutils literal notranslate"><span class="pre">g2p_odk_user_mapping</span></code> enhances it by enabling the identification and mapping of the specific ODK user who submitted the data. This module extends the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model by adding fields to store ODK-specific configurations and the linked ODK app user, making partners identifiable within the ODK data flow.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The module provides robust features for managing ODK app users and linking them to OpenSPP partners:</p>
-<section id="odk-app-user-management">
+<div class="section" id="odk-app-user-management">
 <h3>ODK App User Management<a class="headerlink" href="#odk-app-user-management" title="Permalink to this headline">#</a></h3>
 <p>OpenSPP automatically retrieves and stores a list of ODK app users from a configured ODK Central instance. Each ODK app user is identified by their display name and a unique ODK App User ID, providing a comprehensive roster of individuals authorized to collect data. This list is dynamically updated when ODK configurations are changed or refreshed for a partner.</p>
-</section>
-<section id="partner-specific-odk-configuration">
+</div>
+<div class="section" id="partner-specific-odk-configuration">
 <h3>Partner-Specific ODK Configuration<a class="headerlink" href="#partner-specific-odk-configuration" title="Permalink to this headline">#</a></h3>
 <p>Users can associate an OpenSPP partner (e.g., a field agent) with a specific ODK Central configuration. This allows for scenarios where different partners might operate under distinct ODK projects or even separate ODK Central instances, providing flexibility in program implementation. When an ODK configuration is linked to a partner, the system automatically fetches the relevant ODK app users for that configuration.</p>
-</section>
-<section id="linking-odk-app-users-to-partners">
+</div>
+<div class="section" id="linking-odk-app-users-to-partners">
 <h3>Linking ODK App Users to Partners<a class="headerlink" href="#linking-odk-app-users-to-partners" title="Permalink to this headline">#</a></h3>
 <p>Once ODK app users are retrieved, administrators can link a specific ODK App User to an OpenSPP partner record. This direct association ensures that any data submitted by that ODK App User can be attributed back to the corresponding OpenSPP partner, improving data governance and accountability. The link facilitates identifying who collected specific data points.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Odk User Mapping module is essential for bridging OpenSPP's partner management with ODK Central's data collection, ensuring that field data is properly attributed and managed within the social protection platform.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

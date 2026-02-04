@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_mis_demo.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1650,10 +1637,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="demo">
+  <div class="section" id="demo">
 <h1>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Mis Demo module provides a comprehensive set of demonstration data and functionalities for the OpenSPP system. It populates the platform with pre-configured, realistic data, allowing users to explore the system's capabilities in managing social protection programs and registries without manual data entry.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Mis Demo module accomplishes the following key objectives:</p>
 <ul class="simple">
@@ -1663,8 +1650,8 @@ title="Print to PDF"
 <li><p><strong>Supports Development and Testing:</strong> Developers and implementers gain a robust sandbox environment to test new features, validate configurations, and understand system behavior with a representative dataset.</p></li>
 </ul>
 <p>This module is crucial for anyone looking to understand, train on, or test the OpenSPP platform without the overhead of creating extensive datasets from scratch. It provides immediate value by offering a fully functional, data-rich environment for hands-on experience.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Mis Demo module integrates deeply with several foundational OpenSPP components to generate its rich dataset:</p>
 <ul class="simple">
@@ -1678,11 +1665,11 @@ title="Print to PDF"
 <li><p><strong>Product</strong> and <strong>Stock</strong>: It creates sample products and inventory items, which can represent in-kind benefits distributed through social protection programs.</p></li>
 <li><p><strong><a class="reference internal" href="spp_custom_filter_ui.html"><span class="doc std std-doc">OpenSPP Custom Filter UI</span></a></strong>: This ensures that the user interface for filtering and searching through the generated demo data is intuitive and aligned with OpenSPP's customized views.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Mis Demo module offers several key features for generating and managing demonstration data:</p>
-<section id="registrant-and-group-data-generation">
+<div class="section" id="registrant-and-group-data-generation">
 <h3>Registrant and Group Data Generation<a class="headerlink" href="#registrant-and-group-data-generation" title="Permalink to this headline">#</a></h3>
 <p>Users can generate a specified number of individual registrants and groups (households) with diverse characteristics. This includes:</p>
 <ul class="simple">
@@ -1690,8 +1677,8 @@ title="Print to PDF"
 <li><p><strong>Vulnerability Indicators:</strong> Populates custom fields for individuals and groups, such as disability levels, medical conditions, and indicators for pregnancy or lactation, showcasing OpenSPP's ability to capture nuanced data.</p></li>
 <li><p><strong>Household Structures:</strong> Establishes realistic group memberships, assigning individuals as heads of household or principal recipients within their respective groups.</p></li>
 </ul>
-</section>
-<section id="program-and-entitlement-simulation">
+</div>
+<div class="section" id="program-and-entitlement-simulation">
 <h3>Program and Entitlement Simulation<a class="headerlink" href="#program-and-entitlement-simulation" title="Permalink to this headline">#</a></h3>
 <p>The module allows for the generation of complete social protection programs, simulating their operational lifecycle:</p>
 <ul class="simple">
@@ -1699,21 +1686,21 @@ title="Print to PDF"
 <li><p><strong>Cycle Management:</strong> Simulates multiple program cycles, including the automatic setup of eligibility and entitlement managers.</p></li>
 <li><p><strong>Entitlement Processing:</strong> Prepares and, optionally, approves entitlements for beneficiaries within each cycle, demonstrating the flow from program definition to benefit disbursement. This includes creating program funds to cover the generated entitlements.</p></li>
 </ul>
-</section>
-<section id="derived-demographic-and-vulnerability-reporting">
+</div>
+<div class="section" id="derived-demographic-and-vulnerability-reporting">
 <h3>Derived Demographic and Vulnerability Reporting<a class="headerlink" href="#derived-demographic-and-vulnerability-reporting" title="Permalink to this headline">#</a></h3>
 <p>Beyond raw data, the module populates summary fields on group records (<code class="docutils literal notranslate"><span class="pre">res.partner</span></code>), demonstrating how OpenSPP can derive key demographic insights:</p>
 <ul class="simple">
 <li><p><strong>Household Composition:</strong> Automatically calculates and populates indicators such as the number of children, children in specific age ranges (e.g., 0-11, 12 and above), and the presence of single-headed or female-headed households.</p></li>
 <li><p><strong>Vulnerability Summaries:</strong> Provides summary indicators for households with elderly members, disabled members, chronically ill members, or pregnant/lactating women, based on the individual member data. These derived fields are crucial for targeted program design and reporting.</p></li>
 </ul>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Mis Demo module is an indispensable tool for understanding, training on, and testing the OpenSPP platform, providing a rich, pre-populated environment that mirrors real-world social protection program operations.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

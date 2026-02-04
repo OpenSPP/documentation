@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_openid_vci_rest_api.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-openid-vci-rest-api">
+  <div class="section" id="g2p-openid-vci-rest-api">
 <h1>G2P Openid Vci Rest Api<a class="headerlink" href="#g2p-openid-vci-rest-api" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_openid_vci_rest_api</span></code> module extends OpenSPP's capabilities by providing a standardized RESTful API for Verifiable Credential Issuance (VCI). This module enables external systems, such as digital wallets or other applications, to securely request and receive Verifiable Credentials (VCs) from OpenSPP.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module establishes the necessary API layer for OpenSPP to act as a secure and interoperable issuer of digital credentials. It allows OpenSPP to participate in modern digital identity ecosystems by making its VCI capabilities externally accessible.</p>
 <ul class="simple">
@@ -1671,37 +1658,37 @@ title="Print to PDF"
 <li><p><strong>Dynamic API Management:</strong> Integrates with OpenSPP's API management framework, allowing administrators to activate and configure the VCI API endpoints directly within the OpenSPP system.</p></li>
 <li><p><strong>Extends OpenSPP's Reach:</strong> Transforms OpenSPP into an active participant in digital identity initiatives by making its rich data and credentialing logic available to external, decentralized identity applications.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module is a crucial integration layer, building upon and exposing the functionality of other core OpenSPP modules.</p>
 <p>It primarily depends on the <a class="reference internal" href="g2p_openid_vci.html"><span class="doc std std-doc">G2P OpenID VCI</span></a> module, which contains the core logic for managing issuers and generating Verifiable Credentials. The <code class="docutils literal notranslate"><span class="pre">g2p_openid_vci_rest_api</span></code> module serves as the public interface for these underlying VCI services.</p>
 <p>The module also integrates with <code class="docutils literal notranslate"><span class="pre">fastapi</span></code>, which provides the robust and performant web framework for building the REST API endpoints. Additionally, it leverages <code class="docutils literal notranslate"><span class="pre">extendable_fastapi</span></code> to allow for dynamic registration and management of these API endpoints within the OpenSPP administrative interface, ensuring flexibility and easy configuration.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="standardized-api-endpoints-for-vci">
+<div class="section" id="standardized-api-endpoints-for-vci">
 <h3>Standardized API Endpoints for VCI<a class="headerlink" href="#standardized-api-endpoints-for-vci" title="Permalink to this headline">#</a></h3>
 <p>This module establishes secure, standardized REST API endpoints that conform to industry best practices for Verifiable Credential Issuance. These endpoints enable external applications, such as mobile wallets or other digital identity systems, to programmatically interact with OpenSPP to request and receive digital credentials. This ensures interoperability and secure communication with a wide range of external services.</p>
-</section>
-<section id="seamless-integration-with-openid4vp-flows">
+</div>
+<div class="section" id="seamless-integration-with-openid4vp-flows">
 <h3>Seamless Integration with OpenID4VP Flows<a class="headerlink" href="#seamless-integration-with-openid4vp-flows" title="Permalink to this headline">#</a></h3>
 <p>The module provides the necessary API interface to support OpenID Connect for Verifiable Presentations (OpenID4VP) flows. This is critical for modern digital identity ecosystems, ensuring that the credential issuance process adheres to widely accepted standards for authorization, token exchange, and secure delivery of credentials. It handles the API-level interactions required for these secure identity flows.</p>
-</section>
-<section id="configurable-api-management">
+</div>
+<div class="section" id="configurable-api-management">
 <h3>Configurable API Management<a class="headerlink" href="#configurable-api-management" title="Permalink to this headline">#</a></h3>
 <p>Leveraging OpenSPP's <code class="docutils literal notranslate"><span class="pre">fastapi</span></code> integration, the module allows administrators to enable and manage the VCI API endpoints directly within the system. This provides the flexibility to activate the VCI service, define its public-facing behavior, and integrate it seamlessly into the broader OpenSPP ecosystem without requiring code changes. Administrators can specify the application type as &quot;VCI Endpoint&quot; to activate the necessary routers.</p>
-</section>
-<section id="exposing-core-vci-capabilities">
+</div>
+<div class="section" id="exposing-core-vci-capabilities">
 <h3>Exposing Core VCI Capabilities<a class="headerlink" href="#exposing-core-vci-capabilities" title="Permalink to this headline">#</a></h3>
 <p>By providing a programmatic interface, this API module makes OpenSPP's robust issuer management, credential definition, and secure signing features accessible to external digital identity initiatives. It allows the rich functionality of the underlying <a class="reference internal" href="g2p_openid_vci.html"><span class="doc std std-doc">G2P OpenID VCI</span></a> module to be consumed by external applications, enabling OpenSPP to serve as a central component in a decentralized identity infrastructure.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_openid_vci_rest_api</span></code> module is essential for enabling OpenSPP to securely and programmatically issue Verifiable Credentials to external systems, significantly enhancing its role in modern digital identity ecosystems.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

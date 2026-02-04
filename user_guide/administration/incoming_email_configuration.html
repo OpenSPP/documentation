@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/administration/incoming_email_configuration.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="incoming-email-configuration">
+  <div class="section" id="incoming-email-configuration">
 <h1>Incoming email configuration<a class="headerlink" href="#incoming-email-configuration" title="Permalink to this headline">#</a></h1>
 <p>Configuring an incoming email server allows OpenSPP to fetch emails from a dedicated mailbox and process them automatically. This is a powerful feature that can create or update records based on the content of the emails. For example, an email sent to <code class="docutils literal notranslate"><span class="pre">support&#64;youremailserver.com</span></code> could automatically create a new Grievance ticket.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>To configure an incoming email server, you will need:</p>
 <ul class="simple">
@@ -1678,19 +1665,19 @@ title="Print to PDF"
 </ul>
 </li>
 </ul>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>After completing this section, you will be able to configure OpenSPP to fetch emails from a mailbox and create new records automatically.</p>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
 <p>The process is similar to configuring an outgoing server, involving developer mode and navigating to the technical settings.</p>
-<section id="activate-developer-mode">
+<div class="section" id="activate-developer-mode">
 <h3>Activate developer mode<a class="headerlink" href="#activate-developer-mode" title="Permalink to this headline">#</a></h3>
 <p>If you have not already, activate developer mode to access the technical settings.</p>
-</section>
-<section id="navigate-to-incoming-email-servers">
+</div>
+<div class="section" id="navigate-to-incoming-email-servers">
 <h3>Navigate to incoming email servers<a class="headerlink" href="#navigate-to-incoming-email-servers" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Go back to the main <strong>Settings</strong> page.</p></li>
@@ -1698,16 +1685,16 @@ title="Print to PDF"
 <li><p>Under the <strong>Email</strong> section, click on <strong>Incoming Email Servers</strong>.</p></li>
 </ol>
 <p><img alt="Technical menu dropdown showing the Email section with 'Incoming Email Servers' option highlighted" src="../../_images/B-step02-open-incoming-email-servers.jpg" /></p>
-</section>
-<section id="create-a-new-server-configuration">
+</div>
+<div class="section" id="create-a-new-server-configuration">
 <h3>Create a new server configuration<a class="headerlink" href="#create-a-new-server-configuration" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>On the <strong>Incoming Email Servers</strong> page, click the <strong>New</strong> button.</p></li>
 </ol>
 <p><img alt="Incoming Email Servers list page with the 'New' button highlighted to create a new server configuration" src="../../_images/B-step03-create-new-incoming-email-server.jpg" /></p>
 <p>This will open a form to enter your incoming server details.</p>
-</section>
-<section id="fill-in-server-details">
+</div>
+<div class="section" id="fill-in-server-details">
 <h3>Fill in server details<a class="headerlink" href="#fill-in-server-details" title="Permalink to this headline">#</a></h3>
 <p>Fill in the form with the details for the mailbox you want OpenSPP to monitor.</p>
 <ul class="simple">
@@ -1722,8 +1709,8 @@ title="Print to PDF"
 <li><p><strong>Create a New Record</strong>: This is a critical field. Select the type of record you want to create from incoming emails. For example, you could select <code class="docutils literal notranslate"><span class="pre">Grievance</span></code> if you have a grievance module installed. The available options depend on the modules installed in your system.</p></li>
 </ul>
 <p><img alt="IMAP/POP server configuration form showing fields for Name, Server Type, Server Name, Port, SSL/TLS, Username, Password, and Action settings" src="../../_images/B-step04-fill-in-server-details.jpg" /></p>
-</section>
-<section id="test-and-save">
+</div>
+<div class="section" id="test-and-save">
 <h3>Test and save<a class="headerlink" href="#test-and-save" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Click the <strong>Test &amp; Confirm</strong> button.</p></li>
@@ -1733,9 +1720,9 @@ title="Print to PDF"
 </ol>
 <p><img alt="Completed incoming email server configuration form with 'Test &amp; Confirm' and 'Save' buttons highlighted" src="../../_images/B-step05-test-and-save-config.jpg" /></p>
 <p>OpenSPP will now periodically check this mailbox for new emails and create records based on your configuration.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

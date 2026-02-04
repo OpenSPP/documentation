@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_service_provider_beneficiary_management.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-service-provider-beneficiary-management">
+  <div class="section" id="g2p-service-provider-beneficiary-management">
 <h1>G2P Service Provider Beneficiary Management<a class="headerlink" href="#g2p-service-provider-beneficiary-management" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_service_provider_beneficiary_management</span></code> module provides a specialized web interface within the OpenSPP Service Provider Portal, empowering service providers to effectively view and manage beneficiary information and their group affiliations. It streamlines the interaction with beneficiary data, crucial for efficient program delivery.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module enables G2P service providers to directly access and manage beneficiary data relevant to the social protection programs they administer. It offers a centralized and secure environment for interacting with beneficiary records.</p>
 <ul class="simple">
@@ -1671,38 +1658,38 @@ title="Print to PDF"
 <li><p><strong>Streamline Data Interaction:</strong> Simplifies the process of interacting with beneficiary data, reducing manual effort and improving data accuracy for service providers. This supports more efficient program administration.</p></li>
 <li><p><strong>Ensure Data Integrity:</strong> By providing a structured interface for data updates, the module helps maintain the integrity of beneficiary records within the OpenSPP system.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_service_provider_beneficiary_management</span></code> module builds upon existing OpenSPP components to deliver its specialized functionality.</p>
 <p>It relies on the foundational <code class="docutils literal notranslate"><span class="pre">g2p_service_provider_portal_base</span></code> module, which establishes the secure web portal framework where service providers log in and access program tools. This module extends that base, embedding beneficiary management features directly into the portal. Additionally, it integrates with <code class="docutils literal notranslate"><span class="pre">g2p_registry_membership</span></code> to leverage and display the intricate relationships between individual beneficiaries and their associated groups. The core <code class="docutils literal notranslate"><span class="pre">website</span></code> module provides the underlying web framework and assets necessary for the user interface.</p>
 <p>This module primarily serves as a user-facing layer, providing a dedicated interface for service providers to interact with beneficiary data that is fundamentally managed by other registry modules. It acts as the gateway for service providers to view, and potentially update, beneficiary and group membership information.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>This module introduces several key features designed to provide a comprehensive and user-friendly experience for service providers managing beneficiaries.</p>
-<section id="service-provider-beneficiary-dashboard">
+<div class="section" id="service-provider-beneficiary-dashboard">
 <h3>Service Provider Beneficiary Dashboard<a class="headerlink" href="#service-provider-beneficiary-dashboard" title="Permalink to this headline">#</a></h3>
 <p>The module provides a dedicated dashboard accessible to logged-in service providers. This dashboard offers a quick overview of the beneficiaries they manage, including summary statistics and direct links to individual or group management pages. It serves as a central hub for initiating beneficiary-related tasks.</p>
-</section>
-<section id="individual-beneficiary-profile-pages">
+</div>
+<div class="section" id="individual-beneficiary-profile-pages">
 <h3>Individual Beneficiary Profile Pages<a class="headerlink" href="#individual-beneficiary-profile-pages" title="Permalink to this headline">#</a></h3>
 <p>Service providers can navigate to specific pages for individual beneficiaries. These pages display detailed personal information, program enrollments, and status. Providers can review a beneficiary's history and current details, ensuring they have accurate information when delivering services or making decisions.</p>
-</section>
-<section id="beneficiary-group-management-interface">
+</div>
+<div class="section" id="beneficiary-group-management-interface">
 <h3>Beneficiary Group Management Interface<a class="headerlink" href="#beneficiary-group-management-interface" title="Permalink to this headline">#</a></h3>
 <p>A core feature is the ability to view and interact with beneficiary groups. Service providers can see which individuals belong to which groups (e.g., a household, a farmer cooperative). This interface allows for understanding group dynamics and relationships, which is essential for programs targeting collective units. For instance, a provider can see all members of a specific household and their roles (e.g., Head of Household, Dependent).</p>
-</section>
-<section id="action-feedback-and-user-guidance">
+</div>
+<div class="section" id="action-feedback-and-user-guidance">
 <h3>Action Feedback and User Guidance<a class="headerlink" href="#action-feedback-and-user-guidance" title="Permalink to this headline">#</a></h3>
 <p>The module includes success and error pages that provide clear feedback to service providers after they perform actions within the portal. This ensures a guided user experience, confirming successful operations or explaining any issues encountered during data interaction.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_service_provider_beneficiary_management</span></code> module is essential for enabling service providers to efficiently view and manage beneficiary information and group affiliations directly within the OpenSPP platform. It bridges the gap between core beneficiary data and the operational needs of program delivery.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

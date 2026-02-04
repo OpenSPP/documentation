@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_oauth.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="api-oauth">
+  <div class="section" id="api-oauth">
 <h1>API: Oauth<a class="headerlink" href="#api-oauth" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_oauth</span></code> module establishes the critical security framework for OpenSPP, providing robust OAuth 2.0 authentication to ensure secure and controlled access to the platform's API for all integrated systems and applications. It acts as the gatekeeper, verifying the identity of applications before they can interact with sensitive program data.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module accomplishes the following key objectives, ensuring the integrity and security of the OpenSPP platform:</p>
 <ul class="simple">
@@ -1673,35 +1660,35 @@ title="Print to PDF"
 <li><p><strong>Enables Controlled Access</strong>: Provides mechanisms to define and grant specific permissions (scopes) to client applications, ensuring they only access the data and functionalities they are authorized for.</p></li>
 <li><p><strong>Facilitates Secure Integrations</strong>: Simplifies and secures the process for external systems and third-party applications to integrate with OpenSPP, fostering a trustworthy ecosystem.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_oauth</span></code> module relies on the foundational Base module for core system functionalities, including user management and system configuration. As a security module, <code class="docutils literal notranslate"><span class="pre">spp_oauth</span></code> is foundational for any OpenSPP module that exposes an API, providing the essential authentication and authorization layer. All other modules that require secure API access, whether for data retrieval or modification, leverage <code class="docutils literal notranslate"><span class="pre">spp_oauth</span></code> to ensure that only authenticated and authorized client applications can interact with their exposed endpoints.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="secure-api-access-enforcement">
+<div class="section" id="secure-api-access-enforcement">
 <h3>Secure API Access Enforcement<a class="headerlink" href="#secure-api-access-enforcement" title="Permalink to this headline">#</a></h3>
 <p>This module ensures that only authorized applications can interact with OpenSPP's data and services. It acts as a critical gatekeeper, protecting sensitive information related to social protection programs and farmer registries from unauthorized exposure or manipulation. This enforcement is vital for maintaining data privacy and compliance.</p>
-</section>
-<section id="standardized-oauth-2-0-protocol">
+</div>
+<div class="section" id="standardized-oauth-2-0-protocol">
 <h3>Standardized OAuth 2.0 Protocol<a class="headerlink" href="#standardized-oauth-2-0-protocol" title="Permalink to this headline">#</a></h3>
 <p>By implementing the widely recognized OAuth 2.0 standard, the module provides a secure and interoperable method for client applications to obtain authorized access. This standardization simplifies the development of integrations for external developers and significantly enhances the overall security posture of the OpenSPP ecosystem. It supports various grant types to accommodate different application scenarios.</p>
-</section>
-<section id="client-application-registration-and-management">
+</div>
+<div class="section" id="client-application-registration-and-management">
 <h3>Client Application Registration and Management<a class="headerlink" href="#client-application-registration-and-management" title="Permalink to this headline">#</a></h3>
 <p>OpenSPP administrators can register and manage various client applications that need to access the API. This includes defining application details, redirect URIs, and assigning specific access permissions (scopes). This capability allows for granular control over which applications can access what data, ensuring a robust security model.</p>
-</section>
-<section id="token-based-authorization">
+</div>
+<div class="section" id="token-based-authorization">
 <h3>Token-Based Authorization<a class="headerlink" href="#token-based-authorization" title="Permalink to this headline">#</a></h3>
 <p>Once authorized, client applications receive time-limited access tokens, which they then use to make API requests. These tokens provide a secure, temporary credential that grants specific permissions. The module manages token issuance, validation, and expiration, further enhancing security by limiting the window of potential misuse and requiring periodic re-authentication.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_oauth</span></code> module is a critical component of OpenSPP, providing the essential OAuth 2.0 authentication framework that secures all API interactions, safeguards sensitive program data, and enables trusted integrations with external systems.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

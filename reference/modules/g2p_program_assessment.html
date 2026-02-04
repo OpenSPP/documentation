@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_program_assessment.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-program-assessment">
+  <div class="section" id="g2p-program-assessment">
 <h1>G2P Program Assessment<a class="headerlink" href="#g2p-program-assessment" title="Permalink to this headline">#</a></h1>
 <p>The G2P Program Assessment module streamlines the process of evaluating and recording decisions about beneficiary participation in social protection programs. It enables program staff to document assessments, observations, and decisions directly within the OpenSPP platform, providing a clear audit trail and facilitating the management of entitlements.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module provides essential capabilities for managing the decision-making process within G2P programs:</p>
 <ul class="simple">
@@ -1671,8 +1658,8 @@ title="Print to PDF"
 <li><p><strong>Manages Application Lifecycles</strong>: Allows assessments to influence the state of a beneficiary's program application, such as moving from 'in-progress' to 'active' or 'rejected'.</p></li>
 <li><p><strong>Maintains an Auditable Record</strong>: Creates a clear and immutable history of all assessment activities, including who made the decision and when, which is critical for accountability and program evaluation.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The G2P Program Assessment module integrates closely with core OpenSPP components to extend program management capabilities:</p>
 <ul class="simple">
@@ -1680,31 +1667,31 @@ title="Print to PDF"
 <li><p><strong>Mail (mail)</strong>: The module leverages OpenSPP's built-in mail and messaging system. Assessments are recorded as &quot;remarks&quot; or &quot;comments&quot; within this system, providing a robust, timestamped audit trail and enabling communication features around assessment activities.</p></li>
 </ul>
 <p>This module primarily enhances the functionality of G2P Programs by adding a layer for systematic decision-making and record-keeping, ensuring that all beneficiary-related actions are well-documented and transparent.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="recording-program-decisions-and-observations">
+<div class="section" id="recording-program-decisions-and-observations">
 <h3>Recording Program Decisions and Observations<a class="headerlink" href="#recording-program-decisions-and-observations" title="Permalink to this headline">#</a></h3>
 <p>Program staff can record detailed assessments and observations directly on a beneficiary's program membership or a specific entitlement record. This feature captures crucial information regarding eligibility, compliance, or any other program-specific evaluation. Each assessment includes the author, date, and comprehensive remarks, providing a complete historical context for all decisions.</p>
-</section>
-<section id="streamlined-entitlement-generation">
+</div>
+<div class="section" id="streamlined-entitlement-generation">
 <h3>Streamlined Entitlement Generation<a class="headerlink" href="#streamlined-entitlement-generation" title="Permalink to this headline">#</a></h3>
 <p>The module provides intuitive actions to facilitate the creation of new entitlements based on completed assessments. After program staff review and record necessary assessments, a dedicated &quot;Create Entitlement&quot; button becomes available on the program membership. This automates the process of generating new benefit entitlements for eligible beneficiaries, ensuring that only those with recent, positive assessments receive benefits.</p>
-</section>
-<section id="managing-beneficiary-application-status">
+</div>
+<div class="section" id="managing-beneficiary-application-status">
 <h3>Managing Beneficiary Application Status<a class="headerlink" href="#managing-beneficiary-application-status" title="Permalink to this headline">#</a></h3>
 <p>Assessments play a critical role in managing the lifecycle of a beneficiary's program application. The module supports actions such as &quot;Reject Application,&quot; which updates the beneficiary's program status (e.g., from 'active' or 'in-progress' to 'rejected') and can automatically cancel any associated draft entitlements. This ensures that application statuses accurately reflect the latest assessment outcomes.</p>
-</section>
-<section id="maintaining-historical-assessment-context">
+</div>
+<div class="section" id="maintaining-historical-assessment-context">
 <h3>Maintaining Historical Assessment Context<a class="headerlink" href="#maintaining-historical-assessment-context" title="Permalink to this headline">#</a></h3>
 <p>To provide continuity and comprehensive record-keeping, the module automatically associates relevant historical assessments with new entitlements. When a new entitlement is generated, the system identifies and links previous assessments that occurred between the creation of the prior entitlement and the current one. This ensures that all pertinent decision-making history is readily available for each benefit cycle.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Program Assessment module is vital for ensuring transparent, accountable, and efficient decision-making within social protection programs by providing a structured way to record, manage, and link beneficiary assessments to program activities and entitlements.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

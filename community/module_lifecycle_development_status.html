@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../_static/search_shortcut.js"></script>
     <script src="../_static/version_switcher.js"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/community/module_lifecycle_development_status.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1618,7 +1605,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="modules-maturity-levels-and-development-status-policy">
+  <div class="section" id="modules-maturity-levels-and-development-status-policy">
 <h1>Modules Maturity Levels and Development Status Policy<a class="headerlink" href="#modules-maturity-levels-and-development-status-policy" title="Permalink to this headline">#</a></h1>
 <p>The requirements to merge code into OpenSPP projects depend on the module's
 maturity level.</p>
@@ -1649,7 +1636,7 @@ A “mature” or “stable” module in a version can start as “stable” or
 can be expected by users, and what are the requirements for modules to
 be assigned each maturity level.</p>
 <p>When no development_status is set in the manifest, Beta is assumed.</p>
-<section id="alpha-and-beta-modules">
+<div class="section" id="alpha-and-beta-modules">
 <h2><strong>Alpha and Beta modules</strong><a class="headerlink" href="#alpha-and-beta-modules" title="Permalink to this headline">#</a></h2>
 <p>Alpha and Beta modules allow for the incubation of OpenSPP Stable modules.
 They enable the work to be split into several smaller pull requests,
@@ -1700,8 +1687,8 @@ with other installed modules, allowing people to try them</p></li>
 coordinate the work around them.</p></li>
 <li><p>Are recommended to have at least one peer review before merging PRs.</p></li>
 </ul>
-</section>
-<section id="stable-modules">
+</div>
+<div class="section" id="stable-modules">
 <h2><strong>Stable modules</strong><a class="headerlink" href="#stable-modules" title="Permalink to this headline">#</a></h2>
 <p>Stable modules are adequate for production use, and meet all the
 original OpenSPP quality requirements: green CI build passing all current
@@ -1720,8 +1707,8 @@ with other installed modules, allowing people to try them.</p></li>
 <li><p>One peer review at least before being merged.</p></li>
 <li><p>Must have code formatted</p></li>
 </ul>
-</section>
-<section id="mature-modules">
+</div>
+<div class="section" id="mature-modules">
 <h2><strong>Mature modules</strong><a class="headerlink" href="#mature-modules" title="Permalink to this headline">#</a></h2>
 <p>Mature modules not only meet the stable criteria, but are also known to
 be actively maintained. Usually these are modules in use in several
@@ -1751,8 +1738,8 @@ good justification is given, evaluated by the relevant PSC).</p>
 </div>
 </li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_superset_dashboard.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-superset-dashboard">
+  <div class="section" id="g2p-superset-dashboard">
 <h1>G2P Superset Dashboard<a class="headerlink" href="#g2p-superset-dashboard" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_superset_dashboard</span></code> module seamlessly integrates Apache Superset dashboards directly into the OpenSPP platform. This module allows program managers and analysts to visualize critical social protection program data and key performance indicators (KPIs) within the OpenSPP environment, enhancing data-driven decision-making.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module enables OpenSPP users to access and interact with powerful data visualizations without leaving the platform. It provides a structured way to bring external analytical insights into OpenSPP's operational workflow.</p>
 <ul class="simple">
@@ -1671,39 +1658,39 @@ title="Print to PDF"
 <li><p><strong>Dynamic Menu Generation:</strong> Automatically creates navigation menu items for accessible dashboards within OpenSPP, providing direct and easy access for users.</p></li>
 <li><p><strong>Enhanced Data Visualization:</strong> Leverages Superset's capabilities to offer powerful analytics and reporting, allowing users to monitor trends, track program progress, and identify areas for intervention across various geographical levels (e.g., country &gt; province &gt; district).</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_superset_dashboard</span></code> module relies on core OpenSPP functionalities to operate effectively and serves to enhance the platform's analytical capabilities.</p>
 <p>It depends on the <code class="docutils literal notranslate"><span class="pre">base</span></code> module, which provides fundamental OpenSPP functionalities such as user management (<code class="docutils literal notranslate"><span class="pre">res.users</span></code>), security, and core data models. This dependency is crucial for assigning specific &quot;Access Rights&quot; to users for each dashboard, ensuring that only authorized personnel can view them.</p>
 <p>The module also integrates with the <code class="docutils literal notranslate"><span class="pre">web</span></code> module, which underpins the OpenSPP web interface. This dependency is essential for displaying the configuration forms for dashboards and, more importantly, for embedding and rendering the Superset dashboards directly within the OpenSPP backend user interface.</p>
 <p>This module primarily serves other OpenSPP modules by providing a centralized and accessible visualization layer. It allows data generated or managed by various program-specific modules (e.g., beneficiary registration, payment distribution) to be presented through dynamic Superset dashboards, offering comprehensive insights without requiring users to navigate to external systems.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_superset_dashboard</span></code> module offers key features for configuring, managing, and accessing embedded analytical dashboards.</p>
-<section id="dashboard-configuration-and-linking">
+<div class="section" id="dashboard-configuration-and-linking">
 <h3>Dashboard Configuration and Linking<a class="headerlink" href="#dashboard-configuration-and-linking" title="Permalink to this headline">#</a></h3>
 <p>Administrators define new Superset dashboards by providing a unique <strong>Dashboard Name</strong> and its corresponding <strong>Dashboard URL</strong>. This allows the OpenSPP system to link to external Superset instances, making it simple to integrate existing or newly created analytical dashboards. Each configured dashboard acts as a gateway to specific data visualizations.</p>
-</section>
-<section id="user-specific-access-control">
+</div>
+<div class="section" id="user-specific-access-control">
 <h3>User-Specific Access Control<a class="headerlink" href="#user-specific-access-control" title="Permalink to this headline">#</a></h3>
 <p>The module provides robust access management through the <strong>Access Rights</strong> field. Administrators assign individual OpenSPP users to each dashboard, ensuring that only authorized personnel can view specific analytical content. This granular control helps maintain data security and relevance, as users only see dashboards pertinent to their roles and responsibilities.</p>
-</section>
-<section id="dynamic-menu-integration">
+</div>
+<div class="section" id="dynamic-menu-integration">
 <h3>Dynamic Menu Integration<a class="headerlink" href="#dynamic-menu-integration" title="Permalink to this headline">#</a></h3>
 <p>Upon creation or modification of a dashboard configuration, the module automatically updates the OpenSPP navigation menus. Authorized users will find direct links to their assigned dashboards under a dedicated section, streamlining access to critical insights. This dynamic menu generation ensures that the OpenSPP interface always reflects the latest dashboard availability.</p>
-</section>
-<section id="seamless-embedded-visualization">
+</div>
+<div class="section" id="seamless-embedded-visualization">
 <h3>Seamless Embedded Visualization<a class="headerlink" href="#seamless-embedded-visualization" title="Permalink to this headline">#</a></h3>
 <p>When a user selects an authorized dashboard from the OpenSPP menu, the corresponding Superset dashboard loads directly within the OpenSPP interface. This embedded display provides a seamless user experience, allowing for interactive exploration of data and reports without requiring users to switch applications or re-authenticate. Users can leverage Superset's full visualization capabilities within OpenSPP.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_superset_dashboard</span></code> module is vital for enhancing OpenSPP's analytical capabilities, integrating powerful data visualizations directly into the platform. It empowers users with dynamic, role-based access to critical program insights, fostering more informed decision-making.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

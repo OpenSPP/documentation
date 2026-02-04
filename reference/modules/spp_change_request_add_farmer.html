@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_change_request_add_farmer.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="change-request-add-farmer">
+  <div class="section" id="change-request-add-farmer">
 <h1>Change Request: Add Farmer<a class="headerlink" href="#change-request-add-farmer" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Change Request Add Farmer module (technical name: <code class="docutils literal notranslate"><span class="pre">spp_change_request_add_farmer</span></code>) provides a structured and validated workflow for incorporating new individual farmers into existing farmer groups within the OpenSPP registry. It ensures that all additions are properly documented, approved, and integrated into the system.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines the process of expanding farmer groups, offering a clear and accountable method for managing new memberships:</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Integrate with Membership Management:</strong> Automatically creates and updates group membership records upon approval, accurately reflecting the new farmer's role and start date within the target group.</p></li>
 <li><p><strong>Audit Trail and Accountability:</strong> Provides a clear, traceable workflow for every addition, enhancing transparency and accountability in managing farmer group compositions.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module integrates seamlessly with several core OpenSPP components to provide its functionality:</p>
 <ul class="simple">
@@ -1685,32 +1672,32 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="spp_idpass.html"><span class="doc std std-doc">OpenSPP ID Pass</span></a>:</strong> Integrates with <code class="docutils literal notranslate"><span class="pre">spp_idpass</span></code> to capture and manage ID document details, supporting identity verification for new farmer additions.</p></li>
 <li><p><strong>OpenSPP DMS (Document Management System):</strong> This module extends the DMS models to allow direct attachment of supporting files and directories to the 'Add Farmer' change request. This ensures all relevant documents, such as scanned ID cards or consent forms, are securely stored and linked to the specific request.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The module offers specialized features to manage the farmer addition process effectively:</p>
-<section id="request-initiation-and-group-selection">
+<div class="section" id="request-initiation-and-group-selection">
 <h3>Request Initiation and Group Selection<a class="headerlink" href="#request-initiation-and-group-selection" title="Permalink to this headline">#</a></h3>
 <p>Users initiate a change request specifically for adding farmers. They select the target <em>existing group</em> (e.g., &quot;Sunrise Coffee Cooperative&quot; or &quot;Local Women Farmers' Association&quot;) from the registry that the new farmers will join. This action links the entire request to the specific group needing new members.</p>
-</section>
-<section id="farmer-details-and-membership-assignment">
+</div>
+<div class="section" id="farmer-details-and-membership-assignment">
 <h3>Farmer Details and Membership Assignment<a class="headerlink" href="#farmer-details-and-membership-assignment" title="Permalink to this headline">#</a></h3>
 <p>Within the request, users add individual farmers by selecting them from the existing pool of registered individuals. For each farmer, users specify their intended role within the group (e.g., &quot;Member,&quot; &quot;Dependent,&quot; or &quot;Head of Household&quot;) and the effective start date of their membership. The system validates that only eligible individuals, who are not already part of another group, can be selected for membership, preventing duplicate entries.</p>
-</section>
-<section id="document-management-and-identity-verification">
+</div>
+<div class="section" id="document-management-and-identity-verification">
 <h3>Document Management and Identity Verification<a class="headerlink" href="#document-management-and-identity-verification" title="Permalink to this headline">#</a></h3>
 <p>The module supports attaching relevant supporting documents, such as scanned ID cards, proof of residency, or signed consent forms, directly to the change request using the integrated Document Management System (DMS). A dedicated field is available for capturing ID document details, which serves as a placeholder for future integration with ID scanning solutions to streamline identity verification processes.</p>
-</section>
-<section id="automated-membership-creation">
+</div>
+<div class="section" id="automated-membership-creation">
 <h3>Automated Membership Creation<a class="headerlink" href="#automated-membership-creation" title="Permalink to this headline">#</a></h3>
 <p>Upon successful approval of the 'Add Farmer' change request, the system automatically creates formal membership records within the <a class="reference internal" href="g2p_registry_membership.html"><span class="doc std std-doc">G2P Registry: Membership</span></a> module. This ensures that the new farmers are officially linked to their respective groups with their designated roles and start dates, updating the live registry data without requiring any manual intervention.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Change Request Add Farmer module is essential for systematically expanding farmer groups within OpenSPP, ensuring new members are added through a validated and fully documented process.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

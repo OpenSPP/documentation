@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_base.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="base">
+  <div class="section" id="base">
 <h1>Base<a class="headerlink" href="#base" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Base module (<code class="docutils literal notranslate"><span class="pre">spp_base</span></code>) is the foundational component of the OpenSPP platform. It provides the essential configurations, core functionalities, and user interface customizations necessary for managing social protection programs and farmer registries. This module establishes the common building blocks upon which other OpenSPP modules operate, ensuring data consistency and a streamlined user experience across the system.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Base module establishes the core framework and essential capabilities for the entire platform. It ensures a consistent and robust environment for managing program data.</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Core UI and Role Configuration</strong>: Provides fundamental user interface elements and initial security configurations, including global and local user roles. This ensures a consistent look and feel and lays the groundwork for robust access control.</p></li>
 <li><p><strong>Integration Enabler</strong>: Serves as a central integration point, allowing other OpenSPP modules to seamlessly interact with core registrant data and system settings.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Base module is deeply integrated into the OpenSPP ecosystem, extending core functionalities and serving as a prerequisite for many other modules.</p>
 <ul class="simple">
@@ -1684,32 +1671,32 @@ title="Print to PDF"
 <li><p>OpenSPP Base underpins UI customization and filtering through <a class="reference internal" href="spp_custom_field.html"><span class="doc std std-doc">OpenSPP Custom Field</span></a>, <a class="reference internal" href="spp_custom_fields_ui.html"><span class="doc std std-doc">OpenSPP Custom Fields UI</span></a>, <a class="reference internal" href="spp_hide_menus.html"><span class="doc std std-doc">OpenSPP Hide Menus</span></a>, and <a class="reference internal" href="spp_custom_filter_ui.html"><span class="doc std std-doc">OpenSPP Custom Filter UI</span></a>, establishing common interface elements and simplifying user workflows.</p></li>
 <li><p>It defines global and local roles, which are utilized by <a class="reference internal" href="spp_user_roles.html"><span class="doc std std-doc">OpenSPP User Roles</span></a> to manage permissions and access control for users based on their responsibilities and assigned areas.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Base module delivers several key features that enhance the core functionality and user experience of the OpenSPP platform.</p>
-<section id="unique-identifier-management">
+<div class="section" id="unique-identifier-management">
 <h3>Unique Identifier Management<a class="headerlink" href="#unique-identifier-management" title="Permalink to this headline">#</a></h3>
 <p>The module provides a robust system for generating unique identifiers for various records within OpenSPP. These identifiers are automatically assigned and validated, following specific patterns to ensure consistency and prevent errors. This capability is crucial for accurately tracking beneficiaries, programs, and other entities across different modules and activities.</p>
-</section>
-<section id="enhanced-registrant-profiles">
+</div>
+<div class="section" id="enhanced-registrant-profiles">
 <h3>Enhanced Registrant Profiles<a class="headerlink" href="#enhanced-registrant-profiles" title="Permalink to this headline">#</a></h3>
 <p>It extends the core registrant profile by adding critical fields for more comprehensive data capture. Users can assign multiple <code class="docutils literal notranslate"><span class="pre">Registrant</span> <span class="pre">Tags</span></code> for flexible categorization and reporting, and easily see the <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">Kind</span></code> of a registrant (e.g., individual, household). This module also integrates <code class="docutils literal notranslate"><span class="pre">Gender</span></code> information into individual and group membership records, allowing for more detailed demographic analysis of beneficiary populations.</p>
-</section>
-<section id="top-up-card-identification">
+</div>
+<div class="section" id="top-up-card-identification">
 <h3>Top-Up Card Identification<a class="headerlink" href="#top-up-card-identification" title="Permalink to this headline">#</a></h3>
 <p>OpenSPP Base manages the specific <code class="docutils literal notranslate"><span class="pre">Top-up</span> <span class="pre">Card</span></code> identification type, including its unique identifier (<code class="docutils literal notranslate"><span class="pre">Card</span> <span class="pre">UID</span></code>). The system ensures data accuracy by validating that all entered Top-up Card UIDs are exactly 10 characters long. This standardization is essential for reliable card issuance, tracking, and usage in program distributions.</p>
-</section>
-<section id="foundational-ui-and-role-configuration">
+</div>
+<div class="section" id="foundational-ui-and-role-configuration">
 <h3>Foundational UI and Role Configuration<a class="headerlink" href="#foundational-ui-and-role-configuration" title="Permalink to this headline">#</a></h3>
 <p>This module establishes the fundamental user interface components and initial security settings for the OpenSPP platform. It pre-defines <code class="docutils literal notranslate"><span class="pre">Global</span> <span class="pre">Roles</span></code> and <code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">Roles</span></code> to streamline user permission management and sets up the basic views for interacting with registrants and user accounts. This ensures a secure, consistent, and user-friendly operating environment from the outset.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Base module serves as the foundational layer of the OpenSPP platform, providing essential data structures, core functionalities, and UI configurations that enable robust social protection program management.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

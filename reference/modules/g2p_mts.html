@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_mts.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1638,10 +1625,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-mts">
+  <div class="section" id="g2p-mts">
 <h1>G2P Mts<a class="headerlink" href="#g2p-mts" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_mts</span></code> module integrates OpenSPP's G2P Registry with external Micro-Transfer Systems (MTS), enabling the secure and efficient transfer of registrant data for payment processing or other services. It acts as a bridge, allowing OpenSPP to share specific registrant information with external systems based on defined criteria.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_mts</span></code> module streamlines the process of extracting and securely transmitting registrant data from the OpenSPP G2P Registry to external Micro-Transfer Systems (MTS). It ensures that only relevant and authorized information is shared, facilitating various social protection operations like beneficiary authentication or payment disbursements.</p>
 <p>Key capabilities include:</p>
@@ -1653,8 +1640,8 @@ title="Print to PDF"
 <li><p><strong>Integration with MTS Connector</strong>: Extends the core MTS Connector functionality to specifically handle data sourced from the OpenSPP G2P Registry.</p></li>
 </ul>
 <p>This module is vital for ensuring that social protection programs can seamlessly interact with payment providers or other external systems, allowing for efficient beneficiary management and service delivery. For example, it can extract all registrants eligible for a specific benefit payment in a certain region and securely provide their details to a mobile money provider.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_mts</span></code> module builds upon and extends core OpenSPP functionalities to achieve its integration capabilities:</p>
 <ul class="simple">
@@ -1662,10 +1649,10 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">G2P Registry Base</span></a></strong>: The <code class="docutils literal notranslate"><span class="pre">g2p_mts</span></code> module directly interacts with the core registrant data managed by <code class="docutils literal notranslate"><span class="pre">G2P</span> <span class="pre">Registry</span> <span class="pre">Base</span></code>. It queries and extracts information from the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model (representing registrants) and their associated identification records (<code class="docutils literal notranslate"><span class="pre">g2p.reg.id</span></code>), ensuring that only authorized and filtered data is prepared for transfer.</p></li>
 </ul>
 <p>This module acts as a specialized data provider for the <code class="docutils literal notranslate"><span class="pre">MTS</span> <span class="pre">Connector</span></code>, enabling it to leverage the rich, structured data of the <code class="docutils literal notranslate"><span class="pre">G2P</span> <span class="pre">Registry</span> <span class="pre">Base</span></code> for various external system interactions.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="configuring-registry-data-for-mts">
+<div class="section" id="configuring-registry-data-for-mts">
 <h3>Configuring Registry Data for MTS<a class="headerlink" href="#configuring-registry-data-for-mts" title="Permalink to this headline">#</a></h3>
 <p>Users can define precisely which registrant data to send to an external MTS. This configuration occurs within the <code class="docutils literal notranslate"><span class="pre">MTS</span> <span class="pre">Connector</span></code> setup, where the <code class="docutils literal notranslate"><span class="pre">MTS</span> <span class="pre">Input</span> <span class="pre">Type</span></code> is set to 'OpenG2P Registry'.</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Selected Fields</strong>: Choose specific fields from the registrant's profile (e.g., <code class="docutils literal notranslate"><span class="pre">given_name</span></code>, <code class="docutils literal notranslate"><span class="pre">birthdate</span></code>, <code class="docutils literal notranslate"><span class="pre">phone</span></code>) that the MTS requires. This ensures data minimization and adherence to privacy principles by only sharing necessary information.</p></li>
 <li><p><strong>JSON Validation</strong>: The module validates that the entered filters and field lists are correctly formatted JSON, preventing configuration errors before data processing.</p></li>
 </ul>
-</section>
-<section id="automated-virtual-id-vid-management">
+</div>
+<div class="section" id="automated-virtual-id-vid-management">
 <h3>Automated Virtual ID (VID) Management<a class="headerlink" href="#automated-virtual-id-vid-management" title="Permalink to this headline">#</a></h3>
 <p>The module includes a critical feature for managing sensitive Virtual IDs, particularly in scenarios involving token-based authentication.</p>
 <ul class="simple">
@@ -1682,13 +1669,13 @@ title="Print to PDF"
 <li><p><strong>Configurable Deletion Scope</strong>: Administrators can define a search domain to specify which registrants are subject to this automated VID deletion, allowing for targeted application of the privacy measure.</p></li>
 <li><p><strong>ID Type Configuration</strong>: The system allows for defining which specific <code class="docutils literal notranslate"><span class="pre">g2p.id.type</span></code> records represent Virtual IDs and UIN tokens, ensuring the automated process correctly identifies and manages the relevant identifiers.</p></li>
 </ul>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_mts</span></code> module is a crucial component of OpenSPP, enabling secure and configurable data exchange between the G2P Registry and external Micro-Transfer Systems for streamlined program operations and beneficiary services. It ensures efficient, privacy-aware data sharing, supporting the dynamic needs of social protection programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_registry_base.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="registry-base">
+  <div class="section" id="registry-base">
 <h1>Registry: Base<a class="headerlink" href="#registry-base" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Registry Base module provides the foundational framework for managing all individuals and groups within social protection programs and farmer registries. It centralizes beneficiary data management, building upon core G2P registry functionalities to offer a tailored OpenSPP experience.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module establishes the core OpenSPP registry for managing all types of beneficiaries. It provides a unified system for tracking individuals and groups participating in various programs.</p>
 <ul class="simple">
@@ -1672,8 +1659,8 @@ title="Print to PDF"
 <li><p><strong>Unified Beneficiary View</strong>: Presents a consolidated view of all registrants, whether they are individuals (e.g., farmers, program participants) or groups (e.g., households, cooperatives), within the OpenSPP platform.</p></li>
 <li><p><strong>Foundational Registry Layer</strong>: Serves as the primary OpenSPP entry point for beneficiary data, integrating and extending the generic G2P registry components to meet OpenSPP's specific operational needs.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Registry Base module integrates extensively with other modules to provide its comprehensive functionality, serving as a core component for beneficiary management.</p>
 <ul class="simple">
@@ -1684,32 +1671,32 @@ title="Print to PDF"
 <li><p><strong>Base Import (base_import)</strong>: Essential for its data import capabilities, this module relies on <code class="docutils literal notranslate"><span class="pre">base_import</span></code> to provide the underlying tools for uploading data from external files.</p></li>
 <li><p><strong><a class="reference internal" href="spp_user_roles.html"><span class="doc std std-doc">OpenSPP User Roles</span></a></strong>: This module integrates with <code class="docutils literal notranslate"><span class="pre">spp_user_roles</span></code> to manage access control and permissions for viewing, editing, and importing registrant data, ensuring that users only interact with information relevant to their roles and assigned areas.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Registry Base module enhances the core registry with key features designed for practical program management.</p>
-<section id="comprehensive-registrant-data-management">
+<div class="section" id="comprehensive-registrant-data-management">
 <h3>Comprehensive Registrant Data Management<a class="headerlink" href="#comprehensive-registrant-data-management" title="Permalink to this headline">#</a></h3>
 <p>This module allows users to create, view, and modify detailed profiles for both individual and group registrants. It consolidates all relevant information, including personal details for individuals or structural information for groups, building on the capabilities of the G2P Registry modules. Users can efficiently access and update beneficiary records as needed.</p>
-</section>
-<section id="standardized-data-import-for-individuals-and-groups">
+</div>
+<div class="section" id="standardized-data-import-for-individuals-and-groups">
 <h3>Standardized Data Import for Individuals and Groups<a class="headerlink" href="#standardized-data-import-for-individuals-and-groups" title="Permalink to this headline">#</a></h3>
 <p>A crucial feature of this module is its ability to provide specific import templates for individuals and groups. Users can download pre-formatted Excel templates, populate them with beneficiary data, and then upload them directly into the system. This significantly streamlines the process of onboarding large volumes of new registrants or updating existing data, ensuring consistency and reducing manual data entry errors.</p>
-</section>
-<section id="unified-registry-interface">
+</div>
+<div class="section" id="unified-registry-interface">
 <h3>Unified Registry Interface<a class="headerlink" href="#unified-registry-interface" title="Permalink to this headline">#</a></h3>
 <p>The module presents a cohesive and user-friendly interface for navigating and interacting with the entire OpenSPP registry. Regardless of whether a beneficiary is an individual or part of a group, users can search, filter, and manage all registrant records from a centralized location. This simplifies data access and ensures operational efficiency for program staff.</p>
-</section>
-<section id="integrated-security-and-access-control">
+</div>
+<div class="section" id="integrated-security-and-access-control">
 <h3>Integrated Security and Access Control<a class="headerlink" href="#integrated-security-and-access-control" title="Permalink to this headline">#</a></h3>
 <p>Working in conjunction with the <a class="reference internal" href="spp_user_roles.html"><span class="doc std std-doc">OpenSPP User Roles</span></a> module, OpenSPP Registry Base enforces robust security. It ensures that user access to registrant data, including the ability to import or modify records, is strictly controlled based on their assigned roles and geographical permissions. This protects sensitive beneficiary information and maintains data integrity.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Registry Base module is indispensable for OpenSPP, providing the essential and centralized foundation for managing all beneficiary data, from individuals to complex group structures, with efficiency and robust data integrity.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

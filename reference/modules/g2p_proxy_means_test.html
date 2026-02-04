@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_proxy_means_test.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1668,10 +1655,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-proxy-means-test">
+  <div class="section" id="g2p-proxy-means-test">
 <h1>G2P Proxy Means Test<a class="headerlink" href="#g2p-proxy-means-test" title="Permalink to this headline">#</a></h1>
 <p>The G2P Proxy Means Test module provides OpenSPP with a robust, configurable, and automated mechanism for objective eligibility assessment in social protection programs. It allows administrators to define and apply a quantifiable scoring system to evaluate program applicants based on their collected data.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The G2P Proxy Means Test module automates the calculation of a quantifiable score for program applicants based on predefined criteria, streamlining eligibility assessment for social protection programs. This module allows program administrators to define custom formulas, assign weights to various data points, and automatically calculate a PMT score for each registrant. It ensures a consistent and objective method for determining who qualifies for program benefits, reducing manual review and potential biases.</p>
 <p>Key capabilities include:</p>
@@ -1682,8 +1669,8 @@ title="Print to PDF"
 <li><p><strong>Program-Specific Activation</strong>: Enable or disable the Proxy Means Test feature independently for each social protection program, offering flexibility in program design.</p></li>
 <li><p><strong>Tracking Latest Eligibility</strong>: Maintain an up-to-date record of a registrant's most recent PMT score, crucial for ongoing eligibility monitoring or multiple program cycles.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module seamlessly integrates with other core OpenSPP components to extend program management and registrant information capabilities.</p>
 <ul class="simple">
@@ -1691,35 +1678,35 @@ title="Print to PDF"
 <li><p><strong><span class="xref std std-ref">g2p_program_registrant_info</span></strong>: The module builds upon <code class="docutils literal notranslate"><span class="pre">g2p_program_registrant_info</span></code> by adding fields to store and compute the <code class="docutils literal notranslate"><span class="pre">pmt_score</span></code> and <code class="docutils literal notranslate"><span class="pre">latest_pmt_score</span></code> for each registrant's application record. It leverages the data collected through this module to perform the score calculations.</p></li>
 <li><p><strong>Data Integrity</strong>: The module ensures the integrity of PMT configurations by automatically adapting to changes in underlying data fields. If a field used in a PMT calculation is removed from the system, the corresponding PMT parameter is automatically de-linked or removed to prevent errors.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="configurable-pmt-parameters">
+<div class="section" id="configurable-pmt-parameters">
 <h3>Configurable PMT Parameters<a class="headerlink" href="#configurable-pmt-parameters" title="Permalink to this headline">#</a></h3>
 <p>Program managers define which numeric fields from a registrant's application (e.g., household income, number of dependents, housing type) contribute to the PMT score. Each selected field is assigned a weightage to reflect its importance, allowing tailored eligibility criteria for diverse programs. For example, a field like 'Monthly Income' could have a negative weightage, while 'Number of Dependents' could have a positive weightage, reflecting their impact on vulnerability.</p>
-</section>
-<section id="automated-pmt-score-calculation">
+</div>
+<div class="section" id="automated-pmt-score-calculation">
 <h3>Automated PMT Score Calculation<a class="headerlink" href="#automated-pmt-score-calculation" title="Permalink to this headline">#</a></h3>
 <p>Once configured, the module automatically computes a PMT score for every registrant's application. This score updates dynamically if any underlying registrant data or PMT parameters change, ensuring assessments are always current. This automation significantly reduces the administrative burden of eligibility determination.</p>
-</section>
-<section id="program-specific-pmt-activation">
+</div>
+<div class="section" id="program-specific-pmt-activation">
 <h3>Program-Specific PMT Activation<a class="headerlink" href="#program-specific-pmt-activation" title="Permalink to this headline">#</a></h3>
 <p>The PMT feature can be enabled or disabled independently for each social protection program. This flexibility allows administrators to apply PMT only where appropriate, supporting a range of program designs and eligibility models without imposing a single assessment method across all programs.</p>
-</section>
-<section id="tracking-latest-eligibility-scores">
+</div>
+<div class="section" id="tracking-latest-eligibility-scores">
 <h3>Tracking Latest Eligibility Scores<a class="headerlink" href="#tracking-latest-eligibility-scores" title="Permalink to this headline">#</a></h3>
 <p>For programs with ongoing eligibility reviews or multiple application periods, the system automatically tracks and displays the most recent PMT score for each registrant. This provides program staff with an up-to-date eligibility snapshot without manual recalculation, facilitating continuous monitoring and reassessment.</p>
-</section>
-<section id="ensuring-pmt-configuration-integrity">
+</div>
+<div class="section" id="ensuring-pmt-configuration-integrity">
 <h3>Ensuring PMT Configuration Integrity<a class="headerlink" href="#ensuring-pmt-configuration-integrity" title="Permalink to this headline">#</a></h3>
 <p>The module maintains the integrity of PMT configurations by automatically adapting to changes in underlying data fields. If a data field used in a PMT calculation is no longer available in the system, the corresponding PMT parameter is automatically de-linked or removed, preventing errors and ensuring data consistency.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Proxy Means Test module provides OpenSPP with a robust, configurable, and automated mechanism for objective eligibility assessment, enhancing fairness and efficiency in social protection program delivery.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

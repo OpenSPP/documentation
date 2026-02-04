@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="REST API Module Customization" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="REST API Module Customization" name="title" />
 <meta content="Step-by-step guide to creating custom REST API endpoints in OpenSPP with authentication, namespaces, and data exposure." name="description" />
 <meta content="OpenSPP, REST API, custom endpoints, API development, authentication, Bearer token, data exposure" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/module_development/rest_api.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1682,10 +1669,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="rest-api">
+  <div class="section" id="rest-api">
 <h1>REST API<a class="headerlink" href="#rest-api" title="Permalink to this headline">#</a></h1>
 <p>This article explains how to understand and customize the REST API module in OpenSPP, using a practical scenario: adding a new GET endpoint to retrieve Area data.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Familiarity with Python, Odoo, XML, and XPath.</p></li>
@@ -1693,8 +1680,8 @@ title="Print to PDF"
 <li><p>The <a class="reference internal" href="../../reference/modules/spp_api.html"><span class="doc">spp_api</span></a> module must be installed.</p></li>
 <li><p>For our example we are going to need the <a class="reference internal" href="../../reference/modules/spp_area_base.html"><span class="doc">spp_area_base</span></a> module to be installed as well.</p></li>
 </ul>
-</section>
-<section id="module-structure">
+</div>
+<div class="section" id="module-structure">
 <h2>Module Structure<a class="headerlink" href="#module-structure" title="Permalink to this headline">#</a></h2>
 <p>A typical REST API customization module follows the standard Odoo structure. Here’s the structure for our example, <code class="docutils literal notranslate"><span class="pre">spp_api_area_custom</span></code>:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>spp_api_area_custom/
@@ -1706,15 +1693,15 @@ title="Print to PDF"
 └── README.md
 </pre></div>
 </div>
-</section>
-<section id="step-by-step-guide">
+</div>
+<div class="section" id="step-by-step-guide">
 <h2>Step-by-Step Guide<a class="headerlink" href="#step-by-step-guide" title="Permalink to this headline">#</a></h2>
 <p>In this scenario, you will expose Area data through a new GET endpoint under a custom namespace.</p>
-<section id="create-the-module-scaffold">
+<div class="section" id="create-the-module-scaffold">
 <h3>Create the Module Scaffold<a class="headerlink" href="#create-the-module-scaffold" title="Permalink to this headline">#</a></h3>
 <p>Create a new directory for your module (e.g., <code class="docutils literal notranslate"><span class="pre">spp_api_area_custom</span></code>) and populate it with the files and structure shown above.</p>
-</section>
-<section id="define-module-manifest">
+</div>
+<div class="section" id="define-module-manifest">
 <h3>Define Module Manifest<a class="headerlink" href="#define-module-manifest" title="Permalink to this headline">#</a></h3>
 <p>Create <code class="docutils literal notranslate"><span class="pre">__manifest__.py</span></code> with the correct dependencies and data files:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -1739,8 +1726,8 @@ title="Print to PDF"
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="create-a-custom-api-namespace">
+</div>
+<div class="section" id="create-a-custom-api-namespace">
 <h3>Create a Custom API Namespace<a class="headerlink" href="#create-a-custom-api-namespace" title="Permalink to this headline">#</a></h3>
 <p>Create <code class="docutils literal notranslate"><span class="pre">data/spp_api_namespace_data.xml</span></code> to define your namespace:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odoo&gt;</span>
@@ -1755,8 +1742,8 @@ title="Print to PDF"
 <span class="nt">&lt;/odoo&gt;</span>
 </pre></div>
 </div>
-</section>
-<section id="add-the-api-endpoint">
+</div>
+<div class="section" id="add-the-api-endpoint">
 <h3>Add the API Endpoint<a class="headerlink" href="#add-the-api-endpoint" title="Permalink to this headline">#</a></h3>
 <p>Create <code class="docutils literal notranslate"><span class="pre">data/spp_api_path_data.xml</span></code> to define the new endpoint under your custom namespace:</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;odoo&gt;</span>
@@ -1781,8 +1768,8 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>Add or remove fields as needed for your use case.</p></li>
 </ul>
-</section>
-<section id="generate-public-and-private-keys">
+</div>
+<div class="section" id="generate-public-and-private-keys">
 <h3>Generate Public and Private Keys<a class="headerlink" href="#generate-public-and-private-keys" title="Permalink to this headline">#</a></h3>
 <p>To secure your API endpoints, generate a 4096-bit RSA key pair using OpenSSL:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate a 4096-bit private key</span>
@@ -1798,8 +1785,8 @@ openssl<span class="w"> </span>rsa<span class="w"> </span>-pubout<span class="w"
 <li><p><strong>Never share your private key.</strong>
 Only distribute the public key if required.</p></li>
 </ul>
-</section>
-<section id="install-and-test">
+</div>
+<div class="section" id="install-and-test">
 <h3>Install and Test<a class="headerlink" href="#install-and-test" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install your new module via the Apps menu.</p></li>
@@ -1821,16 +1808,16 @@ Example URL:
 <p><img alt="Successful REST API response" src="../../_images/success_response.png" /></p>
 <p><strong>Example: Error Response</strong></p>
 <p><img alt="Error REST API response" src="../../_images/error_response.png" /></p>
-</section>
-</section>
-<section id="references">
+</div>
+</div>
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <p>For more information on extending OpenSPP modules, refer to:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/">Odoo 17 Developer Documentation</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

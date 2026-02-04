@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Import and Export Registrant Data" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Import and Export Registrant Data" name="title" />
 <meta content="Comprehensive guide for importing and exporting registrant data in OpenSPP, including export parameters, templates, and error handling." name="description" />
 <meta content="OpenSPP, data import, data export, registrant data, CSV, XLSX, system administration" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/registry_management/import_export_registrant_data.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1798,11 +1785,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="import-and-export-registrant-data">
+  <div class="section" id="import-and-export-registrant-data">
 <h1>Import and export registrant data<a class="headerlink" href="#import-and-export-registrant-data" title="Permalink to this headline">#</a></h1>
 <p>This guide offers a comprehensive, step-by-step overview of the process for exporting registrant data from OpenSPP.
 It details the procedures, configurable options, and considerations available to system administrators, including how to use the export functionality to prepare files for re-import into OpenSPP.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>To be able to import or export registrant data from OpenSPP, you need to:</p>
 <ul class="simple">
@@ -1811,16 +1798,16 @@ Learn more in this guide: <a class="reference internal" href="../administration/
 <li><p>Have access to spreadsheet software capable of editing and saving CSV or Excel files, such as Microsoft Excel or Google Sheets</p></li>
 <li><p>Determine the list of fields relevant to the data you wish to export.</p></li>
 </ul>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>By the end of this tutorial, you'll have a solid grasp of how to export registrant data from OpenSPP, along with the steps for importing data—whether you're updating existing records or adding new registrants to OpenSPP.</p>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
 <p>The export process begins by selecting individual or group records for export, configuring the export parameters, and saving the output as either a CSV or XLSX file. This exported file can serve both as a reference for record-keeping and as a source for re-importing data to update existing registrants in OpenSPP.</p>
 <p>This guide also covers how to import new registrant data—either by using a pre-generated template from the export process or by manually constructing a compatible file from scratch.</p>
-<section id="perform-export-registrant">
+<div class="section" id="perform-export-registrant">
 <h3>Perform export registrant<a class="headerlink" href="#perform-export-registrant" title="Permalink to this headline">#</a></h3>
 <p>When exporting data from Openspp, you will need to define which fields you wish to extract from OpenSPP into the xslx or csv file. Specifying these export parameters is done in the Registry section of OpenSPP, which you can access by logging in as <strong>System Admin</strong> into OpenSPP then clicking on the menu icon in the top-left corner and selecting <strong>Registry</strong>.</p>
 <p><img alt="Export users menu icon" src="../../_images/export_users_menu_icon.png" /></p>
@@ -1836,8 +1823,8 @@ To select all displayed records from the current page, click the checkbox beside
 <p>OpenSPP will display record count as <strong>10,000+</strong> if it exceeds 10,000 records, you can click it to display the actual number.</p>
 <p><img alt="show actual record count" src="../../_images/export_users_display_actual_count.png" /></p>
 </div>
-</section>
-<section id="define-export-parameters">
+</div>
+<div class="section" id="define-export-parameters">
 <h3>Define export parameters<a class="headerlink" href="#define-export-parameters" title="Permalink to this headline">#</a></h3>
 <p>After selecting records, click the <strong>Action</strong> button then select <strong>Export</strong> from the list of actions.</p>
 <p><img alt="Export button" src="../../_images/export_users_export_button.png" /></p>
@@ -1846,23 +1833,23 @@ To select all displayed records from the current page, click the checkbox beside
 <p>Two formatting options are available when exporting data: <strong>CSV</strong> and <strong>XLSX</strong>.
 Which one to select depends on how you will use the exported file.</p>
 <p>In the <strong>Export data</strong> modal, The left column displays all data fields available for export, and the right column (<strong>Fields to export</strong>) shows the fields included in the file export.</p>
-<section id="available-fields">
+<div class="section" id="available-fields">
 <h4>Available Fields<a class="headerlink" href="#available-fields" title="Permalink to this headline">#</a></h4>
 <p>You can click search and type the field you wish to add. for instance, try to search <strong>Given Name</strong>.
 Add the fields you would like to export by clicking the <strong>+</strong> icon.
 Fields indicated with an arrow <strong>&gt;</strong> also contain subfields to narrow down the data you want to export.
 Clicking the arrow will display the subfields available for selection.
 Depending on your requirements, you can add any fields available for export in the left column.</p>
-</section>
-<section id="fields-to-export">
+</div>
+<div class="section" id="fields-to-export">
 <h4>Fields to export<a class="headerlink" href="#fields-to-export" title="Permalink to this headline">#</a></h4>
 <p>Some fields are pre-selected by default as shown here,<strong>Name</strong>, <strong>Address</strong>, <strong>Phone</strong>,<strong>Date of Birth</strong>, <strong>Registrant tags</strong>, <strong>Registration Date</strong>.
 You may drag and drop these headers vertically to arrange them in the output exported file.
 You can remove fields in the <strong>Fields to export</strong> column by clicking the trash icon.</p>
 <p>Once you are satisfied with the selected fields in the right column, click the <strong>Export</strong> button at the bottom of the export window to start the export and download the file.</p>
-</section>
-</section>
-<section id="creating-export-templates">
+</div>
+</div>
+<div class="section" id="creating-export-templates">
 <h3>Creating export templates<a class="headerlink" href="#creating-export-templates" title="Permalink to this headline">#</a></h3>
 <p>Create a template for the set of fields that you have selected to make it easy to perform the same export later.
 By clicking on the dropdown arrow, click on <strong>New template</strong>, set a name for your template, make sure you have already selected your desired fields for this template, and click the save icon.</p>
@@ -1870,11 +1857,11 @@ By clicking on the dropdown arrow, click on <strong>New template</strong>, set a
 <p>After saving, you can select your template by clicking on the dropdown arrow again and clicking the name of your template.
 The specific steps and interface may vary depending on the OpenSPP version.
 Always seek assistance from the support team if you need further guidance.</p>
-</section>
-<section id="perform-import">
+</div>
+<div class="section" id="perform-import">
 <h3>Perform import<a class="headerlink" href="#perform-import" title="Permalink to this headline">#</a></h3>
 <p>You can either import to update existing registrant data or import to add a new one, both are explained below.</p>
-<section id="import-to-update-existing-registrant-data">
+<div class="section" id="import-to-update-existing-registrant-data">
 <h4>Import to update existing registrant data<a class="headerlink" href="#import-to-update-existing-registrant-data" title="Permalink to this headline">#</a></h4>
 <p>To update existing records or append new data within OpenSPP, select the checkbox labeled I want to update data (import-compatible export).
 Upon selection, the exported file will automatically include an <strong>Id</strong> column, which contains the external identifier for each registrant or data entry.
@@ -1890,11 +1877,11 @@ For instance, the Age field is omitted, as it is a derived value based on the Da
 <p class="admonition-title">Note</p>
 <p>For bulk updates, the import function offers a more efficient and scalable solution. However, when modifying just one or a few registrant records, it's more practical to update them directly through the UI as a System Admin.</p>
 </div>
-</section>
-<section id="import-to-add-new-registrant-data">
+</div>
+<div class="section" id="import-to-add-new-registrant-data">
 <h4>Import to add new registrant data<a class="headerlink" href="#import-to-add-new-registrant-data" title="Permalink to this headline">#</a></h4>
 <p>If you wish to add a new individual or group (as opposed to updating already existing data), you should prepare headers that are relevant to your import.</p>
-<section id="for-individuals">
+<div class="section" id="for-individuals">
 <h5>For Individuals<a class="headerlink" href="#for-individuals" title="Permalink to this headline">#</a></h5>
 <p>Make sure at least these headers are present in your file:</p>
 <ul class="simple">
@@ -1906,8 +1893,8 @@ For instance, the Age field is omitted, as it is a derived value based on the Da
 <img alt="import_users_new_individual" src="../../_images/import_users_new_individual.png" /></p>
 <p>Optionally, if you already have existing individuals in OpenSPP, you can export at least one individual and define the headers for export to use as a template.</p>
 <p>See <strong>Define export parameters</strong> section of this document to learn more.</p>
-</section>
-<section id="for-groups">
+</div>
+<div class="section" id="for-groups">
 <h5>For Groups<a class="headerlink" href="#for-groups" title="Permalink to this headline">#</a></h5>
 <p>Make sure that at least this header is present in your file:</p>
 <ul class="simple">
@@ -1919,10 +1906,10 @@ For instance, the Age field is omitted, as it is a derived value based on the Da
 <p>Optionally, if you already have existing Groups  in OpenSPP, you can export at least one Group and define the headers for export to use as a template.</p>
 <p>See <strong>Define export parameters</strong> section of this document to learn more.</p>
 <p>Once the headers are finalized, You can then proceed to <strong>Preparing file for import</strong> section of this document.</p>
-</section>
-</section>
-</section>
-<section id="preparing-file-for-import">
+</div>
+</div>
+</div>
+<div class="section" id="preparing-file-for-import">
 <h3>Preparing file for import<a class="headerlink" href="#preparing-file-for-import" title="Permalink to this headline">#</a></h3>
 <p>Prepare the Excel file for import by filling or replacing values from the associated columns.</p>
 <div class="admonition note">
@@ -1933,8 +1920,8 @@ For instance, the Age field is omitted, as it is a derived value based on the Da
 <p>Inputting a phone number with a leading + symbol could sometimes be automatically formatted. In this case, you should format the specific cell to <strong>Text</strong> to resolve the issue.</p>
 <p><img alt="Import users sample error" src="../../_images/import_users_sample_error.png" /></p>
 <p>Once you've finished preparing the file, be sure to save it in either .CSV or .XLSX format—these are the only file types accepted for import into OpenSPP.</p>
-</section>
-<section id="navigate-to-import-page">
+</div>
+<div class="section" id="navigate-to-import-page">
 <h3>Navigate to import page<a class="headerlink" href="#navigate-to-import-page" title="Permalink to this headline">#</a></h3>
 <p>After the file is verified and ready, the import can be performed using a <strong>System admin</strong> account. Navigate to the <strong>Registry</strong>, and depending on what type of data you are going to import, either click <strong>Individuals</strong> for individual records or <strong>Groups</strong> for group records. Click on the <strong>Gear</strong> icon, then choose <strong>Import records</strong> from the dropdown menu.</p>
 <p><img alt="Import export gear icon" src="../../_images/import_export_gear_icon.png" /></p>
@@ -1969,38 +1956,38 @@ For instance, the Age field is omitted, as it is a derived value based on the Da
 <li><p>If the network connection is lost, the import will pause automatically and resume once connectivity is restored.</p></li>
 </ul>
 </div>
-</section>
-<section id="error-handling">
+</div>
+<div class="section" id="error-handling">
 <h3>Error handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">#</a></h3>
 <p>OpenSPP displays different types of error messages on the import page when encountering an error after clicking the <strong>Test</strong> button. This ensures no invalid value or file would compromise data in OpenSPP. Therefore, it is important to always <strong>Test</strong> the file first before importing. Here are common errors encountered during import.</p>
-<section id="error-no-matching-records-found">
+<div class="section" id="error-no-matching-records-found">
 <h4>Error: &quot;No matching records found&quot;<a class="headerlink" href="#error-no-matching-records-found" title="Permalink to this headline">#</a></h4>
 <p>Some fields require values that are predefined in OpenSPP, such as the <strong>category_id</strong> field. Setting a value in this column that does not match the values found in OpenSPP will return an error message. This error will be similar to the screenshot provided below.<br />
 <img alt="Import users errors found" src="../../_images/import_users_errors_found.png" /></p>
 <p>To resolve this type of error, only type in values that are defined in OpenSPP, in this case for <strong>category_id</strong>, you can navigate to <strong>Registry</strong>, then click <strong>Configuration</strong>, and after that, select <strong>Registrant Tags</strong>. You should see the list of the defined <strong>Tags</strong>. You may use any of the listed values for <strong>category_id</strong>, or alternatively, add a new registrant tag.</p>
 <p><img alt="Import users regsitrant tags" src="../../_images/import_users_regsitrant_tags.png" /></p>
-</section>
-<section id="error-to-import-select-a-field">
+</div>
+<div class="section" id="error-to-import-select-a-field">
 <h4>Error: &quot;To import, select a field&quot;<a class="headerlink" href="#error-to-import-select-a-field" title="Permalink to this headline">#</a></h4>
 <p>If OpenSPP could not recognize your header, it will display <strong>To import, select a field</strong> beside the unrecognized header, similar to the screenshot below.<br />
 <img alt="Import users select a field" src="../../_images/import_users_select_a_field.png" /></p>
 <p>To resolve this error, if you are familiar with what field you want to associate with your header, you can click <strong>To import, select a field,</strong> and then select from the list of fields you wish to associate your field values with, otherwise, you can remove the header from your Excel file as the field you are trying to import is not available to be imported into OpenSPP.</p>
-</section>
-<section id="error-column-contains-incorrect-values">
+</div>
+<div class="section" id="error-column-contains-incorrect-values">
 <h4>Error: &quot;Column contains incorrect values&quot;<a class="headerlink" href="#error-column-contains-incorrect-values" title="Permalink to this headline">#</a></h4>
 <p>Another error is the date format, if the imported format for fields related to date is incorrect, OpenSPP will display an error message. This error will be similar to the screenshot provided below.<br />
 <img alt="Import users date error" src="../../_images/import_users_date_error.png" /></p>
 <p>To resolve this error, fix the date format from your Excel file to this format <strong>YYYY-MM-DD</strong>, save the file, then import to test again.</p>
-</section>
-<section id="error-you-are-not-allowed-to-access-import-matching">
+</div>
+<div class="section" id="error-you-are-not-allowed-to-access-import-matching">
 <h4>Error: &quot;You are not allowed to access ‘Import Matching’&quot;<a class="headerlink" href="#error-you-are-not-allowed-to-access-import-matching" title="Permalink to this headline">#</a></h4>
 <p>An issue was encountered when attempting to import using an account with the wrong access rights permissions. This error will be similar to the screenshot provided below.<br />
 <img alt="Import users access error import" src="../../_images/import_users_access_error_import.png" /></p>
 <p>To resolve this error, assign an admin role into the user account that will perform the import or export process. Learn more about administering permissions here: <a class="reference internal" href="../administration/user_access.html"><span class="doc">User access</span></a>.</p>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
 
               </div>

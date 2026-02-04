@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_documents.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-documents">
+  <div class="section" id="g2p-documents">
 <h1>G2P Documents<a class="headerlink" href="#g2p-documents" title="Permalink to this headline">#</a></h1>
 <p>The G2P Documents module provides a comprehensive and secure system for managing digital documents within OpenSPP, specifically tailored to the needs of social protection programs. It enables robust storage, organization, and retrieval of various file types, ensuring that program-critical information is always accessible and well-managed.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines document management for G2P programs by offering a centralized and efficient solution:</p>
 <ul class="simple">
@@ -1671,39 +1658,39 @@ title="Print to PDF"
 <li><p><strong>Facilitates Efficient Document Retrieval:</strong> Staff can quickly locate specific files using powerful filtering capabilities based on document tags, streamlining operational workflows and audits.</p></li>
 <li><p><strong>Maintains Document Integrity and Accessibility:</strong> It ensures that all stored documents are properly indexed, easily retrievable, and available to authorized personnel, supporting transparent program operations.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The G2P Documents module extends core OpenSPP functionalities by building upon existing storage infrastructure.</p>
 <p>It relies on the Storage Backend S3 module to manage connections and operations with Amazon S3, providing scalable and secure cloud storage for all uploaded files. This integration ensures that documents are stored off-platform, enhancing data resilience and performance.</p>
 <p>Furthermore, this module heavily utilizes and extends the base Storage File module, which handles the fundamental aspects of file storage and metadata management within OpenSPP. G2P Documents enriches <code class="docutils literal notranslate"><span class="pre">storage.file</span></code> records with additional capabilities like tagging and specialized filtering for G2P contexts.</p>
 <p>By integrating with these foundational modules, G2P Documents provides a specialized layer for managing program-specific documentation, offering enhanced features without reinventing core storage mechanisms.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The G2P Documents module offers several key features to enhance document management for social protection programs:</p>
-<section id="centralized-document-storage-and-management">
+<div class="section" id="centralized-document-storage-and-management">
 <h3>Centralized Document Storage and Management<a class="headerlink" href="#centralized-document-storage-and-management" title="Permalink to this headline">#</a></h3>
 <p>Users can upload and store various types of documents, including images, PDFs, and other file formats, directly within the system. Each document is securely stored via the configured storage backend, with automatic detection of file types and extensions for better organization. This ensures a single, reliable repository for all program-related files.</p>
-</section>
-<section id="flexible-document-tagging">
+</div>
+<div class="section" id="flexible-document-tagging">
 <h3>Flexible Document Tagging<a class="headerlink" href="#flexible-document-tagging" title="Permalink to this headline">#</a></h3>
 <p>The module introduces a robust tagging system, allowing administrators to create and assign descriptive tags to documents. For example, documents can be tagged as &quot;Beneficiary ID,&quot; &quot;Application Form,&quot; or &quot;Proof of Residence.&quot; This capability simplifies document categorization and makes it easier to organize large volumes of files according to program needs.</p>
-</section>
-<section id="advanced-document-filtering-and-search">
+</div>
+<div class="section" id="advanced-document-filtering-and-search">
 <h3>Advanced Document Filtering and Search<a class="headerlink" href="#advanced-document-filtering-and-search" title="Permalink to this headline">#</a></h3>
 <p>Program staff can efficiently locate specific documents by applying filters based on one or multiple assigned tags. This powerful search functionality allows users to quickly retrieve all documents related to a specific category or event, significantly reducing the time spent on manual searches and improving operational efficiency.</p>
-</section>
-<section id="unified-document-view">
+</div>
+<div class="section" id="unified-document-view">
 <h3>Unified Document View<a class="headerlink" href="#unified-document-view" title="Permalink to this headline">#</a></h3>
 <p>A dedicated interface provides a consolidated view of all stored documents, including their names, file types, and associated tags. From this view, users can easily access document details, download files, and manage their tags, ensuring a streamlined and user-friendly experience for document oversight.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Documents module is a critical component of OpenSPP, providing a secure, organized, and scalable solution for managing all program-related documentation, essential for efficient and accountable social protection operations.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_notifications_wiserv.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-notifications-wiserv">
+  <div class="section" id="g2p-notifications-wiserv">
 <h1>G2P Notifications Wiserv<a class="headerlink" href="#g2p-notifications-wiserv" title="Permalink to this headline">#</a></h1>
 <p>The G2P Notifications Wiserv module integrates OpenSPP with the Wiserv SMS gateway, enabling the system to send automated SMS notifications to beneficiaries and other stakeholders through this specific service provider. It extends the core notification framework to offer Wiserv as a reliable channel for delivering critical program communications.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module provides OpenSPP with a dedicated mechanism for sending SMS notifications via the Wiserv platform, ensuring timely and effective communication with beneficiaries. It specifically accomplishes the following:</p>
 <ul class="simple">
@@ -1671,37 +1658,37 @@ title="Print to PDF"
 <li><p><strong>Ensures Reliable SMS Delivery</strong>: Handles the technical integration with the Wiserv API to transmit SMS messages, leveraging a specialized service for bulk messaging.</p></li>
 <li><p><strong>Logs Communication Outcomes</strong>: Records the responses from the Wiserv API, helping administrators monitor message delivery status and troubleshoot any transmission failures.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module is an essential extension of OpenSPP's communication capabilities, building upon the foundational notification framework.</p>
 <p>It primarily depends on the <code class="docutils literal notranslate"><span class="pre">g2p_notifications_base</span></code> module, which establishes the core logic for managing notification types, templates, and preferences. The <code class="docutils literal notranslate"><span class="pre">g2p_notifications_wiserv</span></code> module extends this base by adding Wiserv as a concrete SMS sending method. When a program or system event triggers an SMS notification, <code class="docutils literal notranslate"><span class="pre">g2p_notifications_base</span></code> can then utilize the Wiserv integration provided here to send the actual message.</p>
 <p>Additionally, this module leverages the <code class="docutils literal notranslate"><span class="pre">mail</span></code> module for its robust logging and activity tracking features. This allows OpenSPP to record details of SMS transmissions, including any errors or failures reported by the Wiserv API, directly within the system for audit and troubleshooting purposes. This integration ensures that notification attempts and outcomes are visible to program administrators.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="wiserv-sms-gateway-configuration">
+<div class="section" id="wiserv-sms-gateway-configuration">
 <h3>Wiserv SMS Gateway Configuration<a class="headerlink" href="#wiserv-sms-gateway-configuration" title="Permalink to this headline">#</a></h3>
 <p>Administrators can easily configure the Wiserv SMS service within OpenSPP. This involves entering the specific API URL, username, and password provided by Wiserv. Proper configuration is essential for the module to successfully connect and send messages through the Wiserv platform, ensuring secure and authorized communication.</p>
-</section>
-<section id="automated-sms-delivery">
+</div>
+<div class="section" id="automated-sms-delivery">
 <h3>Automated SMS Delivery<a class="headerlink" href="#automated-sms-delivery" title="Permalink to this headline">#</a></h3>
 <p>Once configured, the module enables OpenSPP to automatically send SMS notifications for various program events. These include informing beneficiaries about successful enrollment in a program, confirming payment disbursements, or providing critical security information like One-Time Passcodes. Messages are sent to the phone numbers registered for beneficiaries, respecting their communication preferences.</p>
-</section>
-<section id="error-handling-and-logging">
+</div>
+<div class="section" id="error-handling-and-logging">
 <h3>Error Handling and Logging<a class="headerlink" href="#error-handling-and-logging" title="Permalink to this headline">#</a></h3>
 <p>The module includes robust error handling to manage potential issues during SMS transmission. If the Wiserv API reports an error (e.g., invalid credentials, service unavailability), the system logs these failures. This provides administrators with crucial insights into why a message might not have been delivered, allowing for prompt investigation and resolution.</p>
-</section>
-<section id="beneficiary-communication-preferences">
+</div>
+<div class="section" id="beneficiary-communication-preferences">
 <h3>Beneficiary Communication Preferences<a class="headerlink" href="#beneficiary-communication-preferences" title="Permalink to this headline">#</a></h3>
 <p>This module works in conjunction with the base notification system to respect beneficiary communication preferences. SMS messages are only sent to beneficiaries who have opted to receive notifications via phone, ensuring that communications are relevant and desired.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Notifications Wiserv module is vital for OpenSPP, providing a dedicated and reliable channel for sending automated SMS communications to beneficiaries through the Wiserv service. It enhances program transparency and ensures that critical information reaches beneficiaries efficiently.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

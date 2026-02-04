@@ -1,0 +1,34 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
+# CEL expressions
+
+This guide is for **implementers** configuring OpenSPP rules and formulas using CEL (Common Expression Language).
+
+## What you'll find here
+
+- **Quick Start** - Get started with CEL expressions
+- **Syntax** - Operators, functions, and language reference
+- **Variables** - Using variables in expressions
+- **Cookbook** - Ready-to-use expression patterns
+- **Troubleshooting** - Common issues and solutions
+
+```{toctree}
+:hidden:
+:maxdepth: 1
+
+quick_start
+syntax
+variables
+cookbook
+troubleshooting
+```
+
+## Quick links
+
+- {doc}`quick_start` - New to CEL? Start here
+- {doc}`cookbook` - Copy-paste expression patterns
+- {doc}`troubleshooting` - Something not working?

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Document Management System Extension" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Document Management System Extension" name="title" />
 <meta content="Learn how to extend OpenSPP's Document Management System by adding custom document categories and classification features." name="description" />
 <meta content="OpenSPP, DMS, document management, categories, file classification, module extension" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/module_development/dms.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1674,7 +1661,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="document-management-system">
+  <div class="section" id="document-management-system">
 <h1>Document Management System<a class="headerlink" href="#document-management-system" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Document Management System (DMS), provided by the <a class="reference internal" href="../../reference/modules/spp_dms.html"><span class="doc">spp_dms</span></a> module, is a robust system for organizing and managing files.
 It allows for a structured repository of documents related to social protection programs, using a hierarchy of directories, files, and categories.</p>
@@ -1687,15 +1674,15 @@ We will create a small module that adds a &quot;Proof of School Enrollment&quot;
 <li><p>Create a simple data module to extend DMS functionality.</p></li>
 <li><p>Register the new categories so they are available system-wide.</p></li>
 </ul>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Solid understanding of Odoo 17 module development, including Python, XML, and XPath.</p></li>
 <li><p>Familiarity with the <code class="docutils literal notranslate"><span class="pre">OpenSPP</span> <span class="pre">Document</span> <span class="pre">Management</span> <span class="pre">System</span></code> (<a class="reference internal" href="../../reference/modules/spp_dms.html"><span class="doc">spp_dms</span></a>) core module.</p></li>
 <li><p>To set up OpenSPP for development, please refer to the <a class="reference internal" href="../setup.html"><span class="doc">Development Setup Guide</span></a>.</p></li>
 </ul>
-</section>
-<section id="module-structure">
+</div>
+<div class="section" id="module-structure">
 <h2>Module Structure<a class="headerlink" href="#module-structure" title="Permalink to this headline">#</a></h2>
 <p>A module for adding new DMS categories is very simple and typically only contains data files.
 Here's the complete structure of the module we will build, <code class="docutils literal notranslate"><span class="pre">spp_dms_school_documents</span></code>:</p>
@@ -1706,16 +1693,16 @@ Here's the complete structure of the module we will build, <code class="docutils
     └── dms_category_data.xml
 </pre></div>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="step-by-step-guide">
+<div class="section" id="step-by-step-guide">
 <h2>Step-by-Step Guide<a class="headerlink" href="#step-by-step-guide" title="Permalink to this headline">#</a></h2>
-<section id="create-the-module-scaffold">
+<div class="section" id="create-the-module-scaffold">
 <h3>Create the Module Scaffold<a class="headerlink" href="#create-the-module-scaffold" title="Permalink to this headline">#</a></h3>
 <p>Begin by creating a new directory for your module (e.g., <code class="docutils literal notranslate"><span class="pre">spp_dms_school_documents</span></code>) and add the basic Odoo module files: <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> and <code class="docutils literal notranslate"><span class="pre">__manifest__.py</span></code>.
 Then, create the <code class="docutils literal notranslate"><span class="pre">data</span></code> subdirectory.</p>
-</section>
-<section id="define-the-manifest-manifest-py">
+</div>
+<div class="section" id="define-the-manifest-manifest-py">
 <h3>Define the Manifest (<code class="docutils literal notranslate"><span class="pre">__manifest__.py</span></code>)<a class="headerlink" href="#define-the-manifest-manifest-py" title="Permalink to this headline">#</a></h3>
 <p>The manifest file declares your module's metadata and its dependencies.
 Our module only needs to depend on <a class="reference internal" href="../../reference/modules/spp_dms.html"><span class="doc">spp_dms</span></a> to get access to the <code class="docutils literal notranslate"><span class="pre">spp.dms.category</span></code> model.</p>
@@ -1739,8 +1726,8 @@ Our module only needs to depend on <a class="reference internal" href="../../ref
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="create-the-data-file">
+</div>
+<div class="section" id="create-the-data-file">
 <h3>Create the Data File<a class="headerlink" href="#create-the-data-file" title="Permalink to this headline">#</a></h3>
 <p>This is where you define the new document categories.
 In the <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory, create an XML file named <code class="docutils literal notranslate"><span class="pre">dms_category_data.xml</span></code>.</p>
@@ -1764,8 +1751,8 @@ Each record needs a unique ID and the name of the new category.</p>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">noupdate=&quot;1&quot;</span></code> attribute prevents the data from being overwritten if the module is updated, which is standard practice for configuration data that users might modify.</p>
-</section>
-<section id="install-and-use-your-new-categories">
+</div>
+<div class="section" id="install-and-use-your-new-categories">
 <h3>Install and Use Your New Categories<a class="headerlink" href="#install-and-use-your-new-categories" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install or upgrade the module through the Apps menu.</p></li>
@@ -1773,17 +1760,17 @@ Each record needs a unique ID and the name of the new category.</p>
 <li><p>To verify that the new categories have been added, navigate to <strong>DMS -&gt; Configuration -&gt; Categories</strong>. You should see &quot;Proof of School Enrollment&quot; and &quot;School Report Card&quot; in the list.</p></li>
 <li><p>Now, when you upload a new file anywhere in the DMS, these new categories will be available in the <strong>Category</strong> dropdown menu, allowing you to classify your documents appropriately.</p></li>
 </ol>
-</section>
-</section>
-<section id="references">
+</div>
+</div>
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <p>For more information on extending OpenSPP modules, refer to:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.odoo.com/documentation/17.0/developer/">Odoo 17 Developer Documentation</a></p></li>
 <li><p><a class="reference external" href="https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_dms">OpenSPP DMS Module Source</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

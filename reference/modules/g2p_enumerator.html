@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_enumerator.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1638,10 +1625,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-enumerator">
+  <div class="section" id="g2p-enumerator">
 <h1>G2P Enumerator<a class="headerlink" href="#g2p-enumerator" title="Permalink to this headline">#</a></h1>
 <p>The G2P Enumerator module is a core component for capturing, managing, and linking essential field-collected data—such as geographical coordinates and enumerator details—directly to registrant records within OpenSPP. It ensures that crucial context from data collection activities is preserved and associated with individuals and groups.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines the process of field data collection by:</p>
 <ul class="simple">
@@ -1651,8 +1638,8 @@ title="Print to PDF"
 <li><p><strong>Tracking Data Creator</strong>: Records the EID of the OpenSPP user who created a registrant record, providing an audit trail and accountability for data entry.</p></li>
 </ul>
 <p>This module is crucial for programs that rely on field visits for data collection, enabling accurate mapping, verification, and traceability of registrant information.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The G2P Enumerator module extends the core registrant functionality within OpenSPP by integrating with foundational modules:</p>
 <ul class="simple">
@@ -1660,14 +1647,14 @@ title="Print to PDF"
 <li><p><strong>Base (Odoo <code class="docutils literal notranslate"><span class="pre">base</span></code>)</strong>: It leverages the fundamental Odoo framework, particularly extending the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model, which serves as the underlying structure for all registrants (individuals and groups) in OpenSPP. This integration ensures that enumeration data is seamlessly incorporated into the existing registrant profiles.</p></li>
 </ul>
 <p>By integrating with these modules, G2P Enumerator ensures that field-collected data enriches the central registrant database, providing a comprehensive view of each individual and group.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="enumeration-event-management">
+<div class="section" id="enumeration-event-management">
 <h3>Enumeration Event Management<a class="headerlink" href="#enumeration-event-management" title="Permalink to this headline">#</a></h3>
 <p>Users can record and manage details about specific data collection events. Each event captures the date of collection, the identifying user ID of the enumerator, and the precise geographical coordinates (latitude, longitude, altitude, and accuracy) relevant to that enumeration activity. This provides a detailed log of field operations.</p>
-</section>
-<section id="registrant-data-enrichment">
+</div>
+<div class="section" id="registrant-data-enrichment">
 <h3>Registrant Data Enrichment<a class="headerlink" href="#registrant-data-enrichment" title="Permalink to this headline">#</a></h3>
 <p>The module significantly enhances registrant records (both individuals and groups) by embedding critical enumeration context:</p>
 <ul class="simple">
@@ -1675,13 +1662,13 @@ title="Print to PDF"
 <li><p><strong>Unique Registrant EIDs</strong>: Upon creation, every new registrant (individual or group) automatically receives a unique Enumerator ID (EID). This EID serves as a distinct identifier for the registrant, crucial for managing and referencing records collected during field operations.</p></li>
 <li><p><strong>Creator Traceability</strong>: The module tracks and records the EID of the OpenSPP user who initially created a registrant's record. This feature provides an important audit trail, enhancing data governance and accountability for data entry.</p></li>
 </ul>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Enumerator module is fundamental to OpenSPP, providing robust capabilities for capturing, linking, and tracking essential field-collected data, thereby enhancing the integrity and contextual richness of all registrant records.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

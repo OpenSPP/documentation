@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_registry_addl_info_rest_api.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1638,10 +1625,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-registry-addl-info-rest-api">
+  <div class="section" id="g2p-registry-addl-info-rest-api">
 <h1>G2P Registry Addl Info Rest Api<a class="headerlink" href="#g2p-registry-addl-info-rest-api" title="Permalink to this headline">#</a></h1>
 <p>This module extends OpenSPP's REST API to include the flexible, program-specific additional information captured for individual registrants and group members. It enables external systems to seamlessly read, create, and update all relevant registrant data, including custom fields, through API calls.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module ensures that all program-specific data for OpenSPP registrants is fully accessible and manageable via the platform's REST API. Its key capabilities include:</p>
 <ul class="simple">
@@ -1650,31 +1637,31 @@ title="Print to PDF"
 <li><p><strong>Facilitating Data Exchange:</strong> It supports robust data exchange by ensuring that all relevant registrant details, including core information and program-specific additions, can be retrieved and updated in a unified manner.</p></li>
 <li><p><strong>Supporting Diverse Program Needs:</strong> By exposing the customizable additional information field, the module allows programs to tailor data collection without requiring core system modifications, and then access that data externally. For example, an external system can update a beneficiary's specific &quot;enrollment status&quot; or &quot;disability type&quot; field.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module acts as a crucial bridge, integrating capabilities from two foundational OpenSPP modules to serve external systems.</p>
 <p>It depends on the <a class="reference internal" href="g2p_registry_rest_api.html"><span class="doc std std-doc">G2P Registry: Rest API Module</span></a>, which provides the core RESTful API framework for interacting with registrant and group data. This module extends the existing API endpoints from <code class="docutils literal notranslate"><span class="pre">g2p_registry_rest_api</span></code> to include the additional information.</p>
 <p>It also depends on the <a class="reference internal" href="g2p_registry_addl_info.html"><span class="doc std std-doc">G2P Registry: Additional Info Module</span></a>, which introduces the flexible <code class="docutils literal notranslate"><span class="pre">additional_g2p_info</span></code> field for individual registrants and group members within OpenSPP. This module specifically makes that flexible data field accessible via the API.</p>
 <p>By combining these, <code class="docutils literal notranslate"><span class="pre">g2p_registry_addl_info_rest_api</span></code> serves external systems by providing a complete data picture. It allows them to read and write all relevant registrant details, including custom program-specific data, thereby enhancing OpenSPP's interoperability.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The module's primary function is to extend OpenSPP's API capabilities to encompass the rich, program-specific data managed within the system.</p>
-<section id="api-access-to-program-specific-data">
+<div class="section" id="api-access-to-program-specific-data">
 <h3>API Access to Program-Specific Data<a class="headerlink" href="#api-access-to-program-specific-data" title="Permalink to this headline">#</a></h3>
 <p>This module enables external users and systems to read, create, and update the flexible <code class="docutils literal notranslate"><span class="pre">additional_g2p_info</span></code> field for both individual registrants and group members through the REST API. This field stores unstructured, program-specific data in JSON format, accommodating diverse data points such as a beneficiary's unique identifiers from other systems, specific health conditions, or detailed household assets. It ensures that any custom data configured and collected within OpenSPP via the <code class="docutils literal notranslate"><span class="pre">g2p_registry_addl_info</span></code> module is fully integrated into API-driven workflows.</p>
-</section>
-<section id="comprehensive-registrant-data-exchange">
+</div>
+<div class="section" id="comprehensive-registrant-data-exchange">
 <h3>Comprehensive Registrant Data Exchange<a class="headerlink" href="#comprehensive-registrant-data-exchange" title="Permalink to this headline">#</a></h3>
 <p>The module extends existing API endpoints for registrants and group members to seamlessly include the <code class="docutils literal notranslate"><span class="pre">additional_g2p_info</span></code> field in API requests and responses. This means external systems can retrieve or submit all registrant details—including core identifying information and any program-specific additions—in a single, unified API call. This capability simplifies data synchronization processes and ensures that external applications always have a complete and up-to-date view of beneficiary information, crucial for effective program management and reporting.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_registry_addl_info_rest_api</span></code> module ensures that all program-specific, flexible data for OpenSPP registrants and groups is fully accessible and manageable through the platform's REST API, facilitating comprehensive external system integration.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_openid_vci_programs.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-openid-vci-programs">
+  <div class="section" id="g2p-openid-vci-programs">
 <h1>G2P Openid Vci Programs<a class="headerlink" href="#g2p-openid-vci-programs" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_openid_vci_programs</span></code> module extends OpenSPP's Verifiable Credential issuance capabilities to specifically manage and issue digital credentials for beneficiaries of social protection programs. It enables OpenSPP to attest to an individual's enrollment and status within a specific program using secure, verifiable digital documents.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module enables OpenSPP to serve as a trusted issuer of Verifiable Credentials (VCs) that confirm an individual's beneficiary status within a social protection program. It significantly enhances the transparency and verifiability of program participation.</p>
 <ul class="simple">
@@ -1671,39 +1658,39 @@ title="Print to PDF"
 <li><p><strong>Enhance Trust and Security:</strong> By leveraging Verifiable Credentials, the module provides a secure, tamper-evident way for beneficiaries to share their program status with third parties, such as financial institutions or service providers, without exposing sensitive underlying data.</p></li>
 <li><p><strong>Support Digital Identity for Social Protection:</strong> It contributes to a robust digital identity framework for social protection, allowing for more efficient and auditable interactions between beneficiaries and various service providers.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module builds upon and extends the core functionalities of two other foundational OpenSPP modules:</p>
 <ul class="simple">
 <li><p><strong><a class="reference internal" href="g2p_openid_vci.html"><span class="doc std std-doc">G2P OpenID VCI</span></a></strong>: This is the primary dependency. The <code class="docutils literal notranslate"><span class="pre">g2p_openid_vci_programs</span></code> module extends the generic Verifiable Credential Issuer model from <code class="docutils literal notranslate"><span class="pre">g2p_openid_vci</span></code> to introduce a specialized &quot;Beneficiary&quot; issuer type. This allows OpenSPP to create VCI issuers specifically for program beneficiaries.</p></li>
 <li><p><strong><a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">G2P Programs</span></a></strong>: This module provides the essential data for social protection programs and their membership. <code class="docutils literal notranslate"><span class="pre">g2p_openid_vci_programs</span></code> integrates with <code class="docutils literal notranslate"><span class="pre">g2p_programs</span></code> to link VCI issuers directly to specific social protection programs and to retrieve critical beneficiary enrollment and membership status information required for credential issuance.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="program-specific-beneficiary-issuer-configuration">
+<div class="section" id="program-specific-beneficiary-issuer-configuration">
 <h3>Program-Specific Beneficiary Issuer Configuration<a class="headerlink" href="#program-specific-beneficiary-issuer-configuration" title="Permalink to this headline">#</a></h3>
 <p>Administrators can configure new Verifiable Credential Issuers within OpenSPP that are specifically designated for program beneficiaries. Each &quot;Beneficiary&quot; issuer is directly linked to a particular social protection program, ensuring that credentials issued by it are relevant to that program. This allows for clear segregation and management of credential types based on the program they represent.</p>
-</section>
-<section id="automated-beneficiary-status-verification">
+</div>
+<div class="section" id="automated-beneficiary-status-verification">
 <h3>Automated Beneficiary Status Verification<a class="headerlink" href="#automated-beneficiary-status-verification" title="Permalink to this headline">#</a></h3>
 <p>When a Verifiable Credential is requested, the module automatically verifies the individual's identity against their registered IDs and confirms their active enrollment status within the linked social protection program. If the individual's ID is not found or if they are not currently enrolled in the program, the system will prevent the issuance of the credential, ensuring data accuracy and program security.</p>
-</section>
-<section id="comprehensive-beneficiary-data-inclusion">
+</div>
+<div class="section" id="comprehensive-beneficiary-data-inclusion">
 <h3>Comprehensive Beneficiary Data Inclusion<a class="headerlink" href="#comprehensive-beneficiary-data-inclusion" title="Permalink to this headline">#</a></h3>
 <p>Upon successful verification, the module dynamically gathers all necessary beneficiary information to populate the Verifiable Credential. This includes personal details of the beneficiary, their specific membership status in the program, and general details about the social protection program itself, creating a rich and verifiable digital attestation of their status. The credential will include details such as the beneficiary's name, address, program ID, and enrollment dates.</p>
-</section>
-<section id="standardized-credential-types">
+</div>
+<div class="section" id="standardized-credential-types">
 <h3>Standardized Credential Types<a class="headerlink" href="#standardized-credential-types" title="Permalink to this headline">#</a></h3>
 <p>The module automatically assigns a default credential type, <code class="docutils literal notranslate"><span class="pre">OpenG2PBeneficiaryVerifiableCredential</span></code>, for all beneficiary-related VCs. This standardization ensures consistency and interoperability, making it easier for external verifiers to recognize and process these credentials.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_openid_vci_programs</span></code> module is crucial for enabling OpenSPP to securely issue verifiable digital credentials that confirm an individual's status as a beneficiary of a social protection program, enhancing trust and streamlining interactions across the ecosystem.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

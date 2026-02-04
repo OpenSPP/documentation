@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Auditable Change Management" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Auditable Change Management" name="title" />
 <meta content="OpenSPP change management feature with formal workflows and comprehensive audit trails for data integrity and accountability" name="description" />
 <meta content="OpenSPP, change management, audit trails, data integrity, accountability, social protection" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/overview/features/change_management.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1608,15 +1595,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="auditable-change-management">
+  <div class="section" id="auditable-change-management">
 <h1>Auditable change management<a class="headerlink" href="#auditable-change-management" title="Permalink to this headline">#</a></h1>
 <p>OpenSPP's change management system ensures data integrity, transparency, and accountability through formal change request workflows and comprehensive audit trails that track every modification to critical <a class="reference internal" href="../../reference/glossary.html#term-Beneficiary"><span class="xref std std-term">beneficiary</span></a> and program data.</p>
-<section id="balancing-stability-with-flexibility">
+<div class="section" id="balancing-stability-with-flexibility">
 <h2>Balancing stability with flexibility<a class="headerlink" href="#balancing-stability-with-flexibility" title="Permalink to this headline">#</a></h2>
 <p>In <a class="reference internal" href="../../reference/glossary.html#term-Social-protection"><span class="xref std std-term">social protection</span></a> programs, data accuracy directly impacts people's lifes — an incorrect household composition affects benefit calculations, a wrong address delays payments, and unauthorized changes can enable fraud. Yet data must also be dynamic, reflecting life events like births, deaths, address changes, and evolving household circumstances. Managing this tension between data stability and necessary updates requires robust change control mechanisms that prevent unauthorized modifications while enabling legitimate updates to flow through appropriate approval channels.</p>
 <p>The audit trail functionality goes beyond simple logging and records not just what changed, but who made the change, when it occurred, what the previous values were, and the business justification. This level of detail is essential for program accountability, enabling managers to investigate discrepancies, respond to <a class="reference internal" href="../../reference/glossary.html#term-Grievance"><span class="xref std std-term">grievances</span></a>, and demonstrate compliance with regulatory requirements. The change request workflow adds a preventive control layer, ensuring that sensitive data modifications undergo proper review before taking effect. Together, these features create a trustworthy data environment where stakeholders can have confidence in the integrity of beneficiary information and program decisions based on that data.</p>
-</section>
-<section id="control-mechanisms">
+</div>
+<div class="section" id="control-mechanisms">
 <h2>Control mechanisms<a class="headerlink" href="#control-mechanisms" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><strong>Formal change request workflow</strong>: Route data modification requests through configurable approval chains based on change type and impact level</p></li>
@@ -1628,8 +1615,8 @@ title="Print to PDF"
 <li><p><strong>Role-based change permissions</strong>: Control who can request, approve, and implement different types of data changes</p></li>
 <li><p><strong>Bulk change management</strong>: Handle mass updates with proper controls when program rules or policies change</p></li>
 </ul>
-</section>
-<section id="implementation-details">
+</div>
+<div class="section" id="implementation-details">
 <h2>Implementation details<a class="headerlink" href="#implementation-details" title="Permalink to this headline">#</a></h2>
 <p>The change management system is implemented through specialized modules:</p>
 <ul class="simple">
@@ -1642,8 +1629,8 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="../../reference/modules/spp_change_request_add_children_demo.html"><span class="doc std std-doc">spp_change_request_add_children_demo</span></a></strong>: Example implementation for household composition changes</p></li>
 <li><p><strong><a class="reference internal" href="../../reference/modules/spp_change_request_change_info.html"><span class="doc std std-doc">spp_change_request_change_info</span></a></strong>: Information change request handling</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

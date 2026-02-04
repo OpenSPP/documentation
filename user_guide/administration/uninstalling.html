@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/administration/uninstalling.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1670,30 +1657,30 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="uninstalling-openspp">
+  <div class="section" id="uninstalling-openspp">
 <h1>Uninstalling OpenSPP<a class="headerlink" href="#uninstalling-openspp" title="Permalink to this headline">#</a></h1>
 <p>This guide provides instructions for uninstalling OpenSPP from a Debian or Ubuntu system. It covers two main scenarios:</p>
 <ul class="simple">
 <li><p><strong>Complete uninstallation</strong>: Removes the application, configuration, data, and database.</p></li>
 <li><p><strong>Partial uninstallation</strong>: Removes the application but keeps your data and configuration for future use.</p></li>
 </ul>
-<section id="before-you-begin-back-up-your-data">
+<div class="section" id="before-you-begin-back-up-your-data">
 <h2>Before you begin: back up your data<a class="headerlink" href="#before-you-begin-back-up-your-data" title="Permalink to this headline">#</a></h2>
 <p><strong>Warning</strong>: A complete uninstallation is irreversible and will permanently delete your data. Before proceeding, it is strongly recommended to create a full backup of your database and filestore.</p>
 <p>For detailed backup instructions, refer to the <a class="reference internal" href="database_management.html"><span class="doc">Database management</span></a> guide.</p>
-</section>
-<section id="complete-uninstallation">
+</div>
+<div class="section" id="complete-uninstallation">
 <h2>Complete uninstallation<a class="headerlink" href="#complete-uninstallation" title="Permalink to this headline">#</a></h2>
 <p>Follow these steps to completely remove OpenSPP and all its components from your system.</p>
-<section id="step-1-stop-and-disable-the-openspp-service">
+<div class="section" id="step-1-stop-and-disable-the-openspp-service">
 <h3>Step 1: Stop and disable the OpenSPP service<a class="headerlink" href="#step-1-stop-and-disable-the-openspp-service" title="Permalink to this headline">#</a></h3>
 <p><strong>Stop and disable (remove) OpenSPP service</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>openspp
 sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>openspp
 </pre></div>
 </div>
-</section>
-<section id="step-2-remove-openspp-package">
+</div>
+<div class="section" id="step-2-remove-openspp-package">
 <h3>Step 2: Remove OpenSPP package<a class="headerlink" href="#step-2-remove-openspp-package" title="Permalink to this headline">#</a></h3>
 <p><strong>Remove OpenSPP package and configuration files</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>remove<span class="w"> </span>--purge<span class="w"> </span>openspp-17-daily
@@ -1704,8 +1691,8 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>
 sudo<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>/usr/bin/openspp-shell
 </pre></div>
 </div>
-</section>
-<section id="step-3-remove-postgresql-database-optional">
+</div>
+<div class="section" id="step-3-remove-postgresql-database-optional">
 <h3>Step 3: Remove PostgreSQL database (Optional)<a class="headerlink" href="#step-3-remove-postgresql-database-optional" title="Permalink to this headline">#</a></h3>
 <p><strong>Warning</strong>: This will permanently delete all OpenSPP data.</p>
 <p><strong>Drop the OpenSPP database and remove the user</strong></p>
@@ -1713,8 +1700,8 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>
 sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>dropuser<span class="w"> </span>openspp
 </pre></div>
 </div>
-</section>
-<section id="step-4-remove-repository-configuration">
+</div>
+<div class="section" id="step-4-remove-repository-configuration">
 <h3>Step 4: Remove repository configuration<a class="headerlink" href="#step-4-remove-repository-configuration" title="Permalink to this headline">#</a></h3>
 <p><strong>Remove APT repository configuration and GPG Key</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>/etc/apt/sources.list.d/openspp.list
@@ -1722,8 +1709,8 @@ sudo<span class="w"> </span>apt-key<span class="w"> </span>del<span class="w"> <
 sudo<span class="w"> </span>apt-get<span class="w"> </span>update
 </pre></div>
 </div>
-</section>
-<section id="step-5-clean-up-dependencies-optional">
+</div>
+<div class="section" id="step-5-clean-up-dependencies-optional">
 <h3>Step 5: Clean up dependencies (Optional)<a class="headerlink" href="#step-5-clean-up-dependencies-optional" title="Permalink to this headline">#</a></h3>
 <p>If you want to remove PostgreSQL as well:</p>
 <p><strong>Remove PostgreSQL and its data and configuration</strong></p>
@@ -1732,9 +1719,9 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/etc/postgresql
 </pre></div>
 </div>
-</section>
-</section>
-<section id="partial-uninstallation">
+</div>
+</div>
+<div class="section" id="partial-uninstallation">
 <h2>Partial uninstallation<a class="headerlink" href="#partial-uninstallation" title="Permalink to this headline">#</a></h2>
 <p>If you want to keep the database but remove the application:</p>
 <p><strong>Stop, disable (remove) service, and remove package</strong></p>
@@ -1747,12 +1734,12 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>remove<span class="w"
 <li><p>Keep database and filestore for potential reinstallation</p></li>
 <li><p>var/lib/openspp/ and PostgreSQL database remain intact</p></li>
 </ul>
-</section>
-<section id="reinstall-after-uninstallation">
+</div>
+<div class="section" id="reinstall-after-uninstallation">
 <h2>Reinstall after uninstallation<a class="headerlink" href="#reinstall-after-uninstallation" title="Permalink to this headline">#</a></h2>
 <p>To reinstall OpenSPP after uninstallation, follow the <a class="reference internal" href="../../getting_started/installation_deb.html"><span class="doc">Installing OpenSPP</span></a>.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

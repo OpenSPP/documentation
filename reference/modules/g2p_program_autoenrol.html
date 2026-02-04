@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_program_autoenrol.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1648,10 +1635,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-program-autoenrol">
+  <div class="section" id="g2p-program-autoenrol">
 <h1>G2P Program Autoenrol<a class="headerlink" href="#g2p-program-autoenrol" title="Permalink to this headline">#</a></h1>
 <p>The G2P Program Autoenrol module automates the enrollment of new registrants into eligible social protection programs, streamlining the process and reducing manual intervention.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module enhances program management by automatically evaluating and enrolling new registrants based on predefined criteria. It significantly reduces administrative overhead and ensures that eligible individuals are promptly included in relevant programs.</p>
 <ul class="simple">
@@ -1660,32 +1647,32 @@ title="Print to PDF"
 <li><p><strong>Manage Conditional Memberships</strong>: Provides an option to automatically remove registrants from a program if they were auto-enrolled but subsequently fail more rigorous, full eligibility checks. This maintains data accuracy and program integrity.</p></li>
 <li><p><strong>Maintain Real-time Program Counts</strong>: Ensures that beneficiary counts for programs are updated immediately upon auto-enrollment or removal. This provides administrators with accurate, up-to-date program statistics.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module extends the core functionality of program management within OpenSPP.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_program_autoenrol</span></code> module primarily depends on the <a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">G2P Programs</span></a> module. It integrates by adding new auto-enrollment fields and logic directly to existing program definitions, allowing administrators to configure auto-enrollment settings for each social protection program. When new registrants are created in the system (managed by <code class="docutils literal notranslate"><span class="pre">res.partner</span></code>), this module automatically triggers an evaluation against active programs configured for auto-enrollment. If a registrant meets the specified criteria, a program membership is automatically created and processed, leveraging the membership management features of the G2P ecosystem.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="automated-registrant-enrollment">
+<div class="section" id="automated-registrant-enrollment">
 <h3>Automated Registrant Enrollment<a class="headerlink" href="#automated-registrant-enrollment" title="Permalink to this headline">#</a></h3>
 <p>This feature ensures that new registrants are automatically considered for active programs with auto-enrollment enabled. Upon a registrant's creation, the system evaluates their data against all relevant program criteria, enrolling them instantly if they qualify. This eliminates the need for manual review and enrollment for initial program entry.</p>
-</section>
-<section id="configurable-eligibility-domains">
+</div>
+<div class="section" id="configurable-eligibility-domains">
 <h3>Configurable Eligibility Domains<a class="headerlink" href="#configurable-eligibility-domains" title="Permalink to this headline">#</a></h3>
 <p>Program administrators can define specific, dynamic eligibility rules for auto-enrollment using a powerful domain builder. This allows for highly granular targeting, such as enrolling all new registrants who are &quot;female, under 18, and reside in District X.&quot; These domains ensure that only genuinely eligible registrants are automatically enrolled, based on their profile data.</p>
-</section>
-<section id="conditional-membership-management">
+</div>
+<div class="section" id="conditional-membership-management">
 <h3>Conditional Membership Management<a class="headerlink" href="#conditional-membership-management" title="Permalink to this headline">#</a></h3>
 <p>For programs requiring further validation beyond initial auto-enrollment criteria, this module offers a crucial safeguard. If a registrant is auto-enrolled but later fails a more comprehensive eligibility check during the enrollment process, the system can be configured to automatically remove that registrant's membership. This maintains the integrity of program beneficiary lists and prevents ineligible individuals from receiving benefits.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Program Autoenrol module significantly streamlines beneficiary management by automating the initial enrollment of eligible registrants, ensuring efficiency and accuracy in social protection programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

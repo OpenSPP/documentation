@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_registry_documents.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-registry-documents">
+  <div class="section" id="g2p-registry-documents">
 <h1>G2P Registry Documents<a class="headerlink" href="#g2p-registry-documents" title="Permalink to this headline">#</a></h1>
 <p>The G2P Registry Documents module provides essential functionality for attaching, storing, and managing supporting documents directly within OpenSPP registrant profiles. It ensures that all necessary paperwork, identification, and evidence related to individuals and groups are centrally accessible and securely stored.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines the management of registrant documentation by offering a dedicated system to link files directly to profiles. It ensures that comprehensive and verifiable records are maintained for all participants in social protection programs and farmer registries.</p>
 <ul class="simple">
@@ -1671,38 +1658,38 @@ title="Print to PDF"
 <li><p><strong>Facilitate Compliance and Audits:</strong> By maintaining a clear link between registrants and their documents, the module supports program compliance, simplifies verification processes, and aids in external audits.</p></li>
 <li><p><strong>Support Diverse Document Types:</strong> The module handles a wide range of file formats, allowing for the comprehensive collection of textual, image, and other digital evidence.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The G2P Registry Documents module extends core OpenSPP capabilities by integrating closely with existing registry and document management components.</p>
 <p>It builds upon the robust file storage and management provided by the <code class="docutils literal notranslate"><span class="pre">[G2P</span> <span class="pre">Documents](g2p_documents)</span></code> module, ensuring that all uploaded files benefit from secure storage backends and metadata handling. This module extends <code class="docutils literal notranslate"><span class="pre">g2p_documents</span></code>'s capabilities by specifically linking files to registrant records.</p>
 <p>The module integrates with the foundational <code class="docutils literal notranslate"><span class="pre">[G2P</span> <span class="pre">Registry</span> <span class="pre">Base](g2p_registry_base)</span></code> module, which defines the core registrant model (<code class="docutils literal notranslate"><span class="pre">res.partner</span></code>). It adds the capability to attach documents directly to these base registrant records, supporting both <code class="docutils literal notranslate"><span class="pre">[G2P</span> <span class="pre">Registry</span> <span class="pre">Individual](g2p_registry_individual)</span></code> and <code class="docutils literal notranslate"><span class="pre">[G2P</span> <span class="pre">Registry</span> <span class="pre">Groups](g2p_registry_group)</span></code> profiles. This ensures a consistent approach to document management across all registrant types.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The G2P Registry Documents module offers key features to enhance document management for social protection programs:</p>
-<section id="direct-document-attachment-to-registrant-profiles">
+<div class="section" id="direct-document-attachment-to-registrant-profiles">
 <h3>Direct Document Attachment to Registrant Profiles<a class="headerlink" href="#direct-document-attachment-to-registrant-profiles" title="Permalink to this headline">#</a></h3>
 <p>Users can easily upload and link documents directly to an individual or group registrant's profile page. This allows for the immediate association of supporting evidence, such as proof of identity, household manifests, or application forms, with the relevant registrant. The system supports various file types, including images, PDFs, and other digital formats.</p>
-</section>
-<section id="consolidated-view-of-supporting-documents">
+</div>
+<div class="section" id="consolidated-view-of-supporting-documents">
 <h3>Consolidated View of Supporting Documents<a class="headerlink" href="#consolidated-view-of-supporting-documents" title="Permalink to this headline">#</a></h3>
 <p>Each registrant's profile includes a dedicated section displaying all attached supporting documents. This centralized view provides a comprehensive overview of all collected evidence, making it simple for program staff to review and verify information without navigating to separate systems. Documents are listed with their names and types for quick identification.</p>
-</section>
-<section id="document-preview-and-access">
+</div>
+<div class="section" id="document-preview-and-access">
 <h3>Document Preview and Access<a class="headerlink" href="#document-preview-and-access" title="Permalink to this headline">#</a></h3>
 <p>The module allows users to preview attached documents directly within the system interface, streamlining the review process. For documents stored externally (e.g., in cloud storage), it provides direct links for easy access and download. This functionality ensures that program staff can quickly inspect content without needing to download files locally.</p>
-</section>
-<section id="secure-and-scalable-document-handling">
+</div>
+<div class="section" id="secure-and-scalable-document-handling">
 <h3>Secure and Scalable Document Handling<a class="headerlink" href="#secure-and-scalable-document-handling" title="Permalink to this headline">#</a></h3>
 <p>Leveraging the underlying <code class="docutils literal notranslate"><span class="pre">G2P</span> <span class="pre">Documents</span></code> module, all files attached via this module are stored using configured secure storage backends, such as cloud-based solutions. This ensures that sensitive registrant data is protected, highly available, and scalable to accommodate the needs of large-scale social protection programs.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Registry Documents module is vital for maintaining complete, verifiable, and securely stored documentation for all registrants within OpenSPP, supporting efficient program administration and compliance.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

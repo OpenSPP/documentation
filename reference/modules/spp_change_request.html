@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_change_request.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="change-request">
+  <div class="section" id="change-request">
 <h1>Change Request<a class="headerlink" href="#change-request" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Change Request module streamlines the process of modifying registrant information within the OpenSPP system. It provides a structured and auditable framework for submitting, reviewing, approving, and applying modifications to sensitive data.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module enables efficient and secure management of changes to registrant data, ensuring data accuracy and accountability. It accomplishes this by:</p>
 <ul class="simple">
@@ -1674,8 +1661,8 @@ title="Print to PDF"
 <li><p><strong>Applying Approved Changes Systematically</strong>: Once validated and approved, the module facilitates the systematic application of changes to the main registrant records, minimizing manual data entry and errors.</p></li>
 </ul>
 <p>This module is crucial for maintaining the integrity of social protection program and farmer registry data, ensuring that all updates follow a defined process and are thoroughly documented.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Change Request module integrates seamlessly with several other OpenSPP modules to provide its comprehensive functionality:</p>
 <ul class="simple">
@@ -1688,15 +1675,15 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="spp_scan_id_document.html"><span class="doc std std-doc">OpenSPP Registry: Scan ID Document</span></a></strong>: Integrates scanning capabilities to automatically capture and populate registrant or applicant details from physical ID documents directly into the change request form.</p></li>
 <li><p><strong><a class="reference internal" href="spp_dms.html"><span class="doc std std-doc">OpenSPP Document Management System</span></a></strong>: Crucially, this module creates a dedicated DMS folder for each change request, ensuring all supporting documents, like scanned IDs or application forms, are securely stored and easily accessible.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The Change Request module provides a robust set of features to manage the entire lifecycle of data modifications:</p>
-<section id="initiating-and-submitting-requests">
+<div class="section" id="initiating-and-submitting-requests">
 <h3>Initiating and Submitting Requests<a class="headerlink" href="#initiating-and-submitting-requests" title="Permalink to this headline">#</a></h3>
 <p>Users can create new change requests and specify the type of modification needed. This involves identifying the primary registrant (individual or group) and, if different, the applicant submitting the request. The module dynamically adjusts visible and required fields based on the selected request type, ensuring only relevant information is collected. For efficiency, it supports scanning physical ID documents or QR codes to auto-populate applicant and registrant details, reducing manual data entry and improving accuracy.</p>
-</section>
-<section id="structured-validation-workflow">
+</div>
+<div class="section" id="structured-validation-workflow">
 <h3>Structured Validation Workflow<a class="headerlink" href="#structured-validation-workflow" title="Permalink to this headline">#</a></h3>
 <p>Each change request follows a defined lifecycle with distinct statuses: <code class="docutils literal notranslate"><span class="pre">Draft</span></code>, <code class="docutils literal notranslate"><span class="pre">Pending</span> <span class="pre">Validation</span></code>, <code class="docutils literal notranslate"><span class="pre">Validated</span></code>, <code class="docutils literal notranslate"><span class="pre">Applied</span></code>, <code class="docutils literal notranslate"><span class="pre">Rejected</span></code>, and <code class="docutils literal notranslate"><span class="pre">Cancelled</span></code>. Requests move through these stages based on user actions and configured validation sequences. The module assigns requests to specific users or validation groups, ensuring that only authorized personnel can perform review and approval steps. Users can submit requests for validation, approve them, reject them with remarks, or cancel them if no longer needed. A request can only be deleted by its original submitter if it is still in <code class="docutils literal notranslate"><span class="pre">Draft</span></code> status.</p>
 <p>The status transitions are designed for clarity:</p>
@@ -1713,21 +1700,21 @@ title="Print to PDF"
 &quot;rejected&quot; -&gt; &quot;cancelled&quot;;
 }</p>
 <p>This flow ensures that changes are systematically reviewed and either incorporated or formally declined.</p>
-</section>
-<section id="integrated-document-management">
+</div>
+<div class="section" id="integrated-document-management">
 <h3>Integrated Document Management<a class="headerlink" href="#integrated-document-management" title="Permalink to this headline">#</a></h3>
 <p>Every change request automatically generates a dedicated folder within the <a class="reference internal" href="spp_dms.html"><span class="doc std std-doc">OpenSPP Document Management System (DMS)</span></a>. This folder serves as a central repository for all supporting documents related to the request, such as scanned identification documents, consent forms, or other evidentiary materials. This integration ensures that all documentation is securely linked to the specific change request, providing a complete and auditable record.</p>
-</section>
-<section id="auditability-and-tracking">
+</div>
+<div class="section" id="auditability-and-tracking">
 <h3>Auditability and Tracking<a class="headerlink" href="#auditability-and-tracking" title="Permalink to this headline">#</a></h3>
 <p>The module meticulously tracks the history of each change request. It records who submitted, validated, applied, rejected, or cancelled a request, along with the corresponding dates and times. In cases of rejection, specific remarks are captured, providing context and transparency. This comprehensive audit trail is vital for compliance, dispute resolution, and overall system accountability. Users can also reassign requests to different users for processing, with safeguards to ensure proper authorization.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Change Request module is essential for maintaining accurate, auditable, and efficiently managed registrant data within OpenSPP, providing a critical framework for all data modification processes.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_registry_encryption.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1668,10 +1655,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-registry-encryption">
+  <div class="section" id="g2p-registry-encryption">
 <h1>G2P Registry Encryption<a class="headerlink" href="#g2p-registry-encryption" title="Permalink to this headline">#</a></h1>
 <p>The G2P Registry Encryption module provides robust data protection for sensitive registrant information within OpenSPP. It secures personal data by encrypting specified fields in the registry, ensuring privacy and compliance with data protection standards.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module enhances the security and privacy of registrant data by implementing field-level encryption. It allows OpenSPP to handle sensitive information responsibly, safeguarding beneficiaries' personal details.</p>
 <p>Key capabilities include:</p>
@@ -1683,8 +1670,8 @@ title="Print to PDF"
 <li><p><strong>Compliance Support</strong>: Helps OpenSPP deployments adhere to data protection regulations by providing a mechanism for securing personal identifying information (PII).</p></li>
 </ul>
 <p>This module is essential for protecting the privacy of individuals served by social protection programs, reducing the risk of data breaches, and building trust in the OpenSPP platform.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_registry_encryption</span></code> module integrates deeply with core OpenSPP registry components and leverages a foundational encryption framework.</p>
 <ul class="simple">
@@ -1692,36 +1679,36 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">G2P Registry Base</span></a></strong>: As an extension of the base registry, this module integrates with the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model, which is the foundation for all registrants. It adds fields to <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> to store encrypted values and manage encryption status.</p></li>
 <li><p><strong><a class="reference internal" href="g2p_registry_individual.html"><span class="doc std std-doc">G2P Registry Individual</span></a></strong>: Building upon the individual registry, this module specifically targets the individual-specific data fields introduced by <code class="docutils literal notranslate"><span class="pre">g2p_registry_individual</span></code> (e.g., family name, given name, birth place) for encryption, ensuring comprehensive protection of individual profiles.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_registry_encryption</span></code> module offers several key features to manage and secure registrant data effectively:</p>
-<section id="configurable-field-encryption">
+<div class="section" id="configurable-field-encryption">
 <h3>Configurable Field Encryption<a class="headerlink" href="#configurable-field-encryption" title="Permalink to this headline">#</a></h3>
 <p>Administrators can specify which fields within the registrant's profile should be encrypted. This includes common fields like <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">family_name</span></code>, <code class="docutils literal notranslate"><span class="pre">given_name</span></code>, <code class="docutils literal notranslate"><span class="pre">addl_name</span></code>, <code class="docutils literal notranslate"><span class="pre">display_name</span></code>, <code class="docutils literal notranslate"><span class="pre">address</span></code>, and <code class="docutils literal notranslate"><span class="pre">birth_place</span></code>. This flexibility allows organizations to tailor data protection to their specific requirements and local regulations.</p>
-</section>
-<section id="data-masking-and-placeholder-values">
+</div>
+<div class="section" id="data-masking-and-placeholder-values">
 <h3>Data Masking and Placeholder Values<a class="headerlink" href="#data-masking-and-placeholder-values" title="Permalink to this headline">#</a></h3>
 <p>When a field is encrypted, its original value is replaced in the database with a configurable placeholder, such as &quot;encrypted.&quot; This ensures that even if the database is accessed directly without proper authorization, sensitive information remains masked and unreadable, enhancing data security.</p>
-</section>
-<section id="secure-data-handling">
+</div>
+<div class="section" id="secure-data-handling">
 <h3>Secure Data Handling<a class="headerlink" href="#secure-data-handling" title="Permalink to this headline">#</a></h3>
 <p>The module automatically encrypts specified data fields when new registrant records are created or existing ones are updated. It also manages the decryption process when authorized users access registrant information, ensuring that data is only exposed when explicitly permitted.</p>
-</section>
-<section id="encryption-provider-selection">
+</div>
+<div class="section" id="encryption-provider-selection">
 <h3>Encryption Provider Selection<a class="headerlink" href="#encryption-provider-selection" title="Permalink to this headline">#</a></h3>
 <p>Through system configuration, users can select and manage the specific encryption provider used for registry data. This integration with the <code class="docutils literal notranslate"><span class="pre">g2p_encryption</span></code> module allows for the use of various robust encryption methods, enabling organizations to choose the most suitable security solution.</p>
-</section>
-<section id="controlled-decryption-access">
+</div>
+<div class="section" id="controlled-decryption-access">
 <h3>Controlled Decryption Access<a class="headerlink" href="#controlled-decryption-access" title="Permalink to this headline">#</a></h3>
 <p>The system provides a mechanism to control whether sensitive registry data is decrypted for viewing. This can be configured at a system level, allowing organizations to implement strict policies on who can access unencrypted registrant details for operational purposes.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Registry Encryption module is vital for OpenSPP, providing essential capabilities to encrypt and secure sensitive registrant data, thereby upholding privacy and facilitating compliance with data protection mandates.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

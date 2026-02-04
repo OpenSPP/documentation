@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_custom_filter_ui.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="custom-filter-ui">
+  <div class="section" id="custom-filter-ui">
 <h1>Custom Filter UI<a class="headerlink" href="#custom-filter-ui" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Custom Filter UI module customizes the OpenSPP user interface to significantly enhance filtering capabilities for registrant partners (<code class="docutils literal notranslate"><span class="pre">res.partner</span></code> records). This improves usability and efficiency for program managers and administrators in managing individuals and groups within social protection programs and farmer registries.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module directly addresses the need for efficient data retrieval within OpenSPP, providing program staff with powerful tools to locate and manage registrant information.</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Improves Operational Efficiency</strong>: Faster access to filtered data supports more agile decision-making and more effective management of social protection benefits and farmer registry information.</p></li>
 <li><p><strong>Customizes UI for Relevance</strong>: It leverages the underlying custom filter mechanism to ensure only the most useful fields are available for filtering, preventing UI clutter and focusing user attention.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_custom_filter_ui</span></code> module integrates seamlessly with core OpenSPP functionalities by building upon several foundational modules:</p>
 <ul class="simple">
@@ -1683,32 +1670,32 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">G2P Programs</span></a></strong>: This module manages the definition and administration of social protection programs. <code class="docutils literal notranslate"><span class="pre">spp_custom_filter_ui</span></code> enhances the ability to filter <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> records that are often beneficiaries or participants in these programs, improving the management of program-related data for registrants.</p></li>
 </ul>
 <p>This module primarily extends the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model, enriching it with the <code class="docutils literal notranslate"><span class="pre">custom.filter.mixin</span></code> to make a comprehensive set of registrant-related fields available for custom filtering throughout OpenSPP's user interface.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_custom_filter_ui</span></code> module significantly expands filtering options for <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> records, allowing users to refine searches based on various criteria.</p>
-<section id="core-registrant-and-contact-filters">
+<div class="section" id="core-registrant-and-contact-filters">
 <h3>Core Registrant and Contact Filters<a class="headerlink" href="#core-registrant-and-contact-filters" title="Permalink to this headline">#</a></h3>
 <p>Users can filter registrants using fundamental contact and status information. This includes filtering by <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">address</span></code>, <code class="docutils literal notranslate"><span class="pre">phone</span></code>, and <code class="docutils literal notranslate"><span class="pre">email</span></code> for direct contact information. Additionally, the <code class="docutils literal notranslate"><span class="pre">active</span></code> field allows users to quickly view only currently active registrants, streamlining lists and reports.</p>
-</section>
-<section id="demographic-and-personal-identifiers">
+</div>
+<div class="section" id="demographic-and-personal-identifiers">
 <h3>Demographic and Personal Identifiers<a class="headerlink" href="#demographic-and-personal-identifiers" title="Permalink to this headline">#</a></h3>
 <p>The module enables detailed searches based on personal attributes. Users can filter by <code class="docutils literal notranslate"><span class="pre">addl_name</span></code> (additional name), <code class="docutils literal notranslate"><span class="pre">family_name</span></code>, and <code class="docutils literal notranslate"><span class="pre">given_name</span></code> for precise identity searches. Filtering by <code class="docutils literal notranslate"><span class="pre">birth_place</span></code>, <code class="docutils literal notranslate"><span class="pre">birthdate</span></code>, and <code class="docutils literal notranslate"><span class="pre">birthdate_not_exact</span></code> helps in identifying individuals based on their birth information, which is crucial for age-based program eligibility.</p>
-</section>
-<section id="program-and-group-affiliation-filters">
+</div>
+<div class="section" id="program-and-group-affiliation-filters">
 <h3>Program and Group Affiliation Filters<a class="headerlink" href="#program-and-group-affiliation-filters" title="Permalink to this headline">#</a></h3>
 <p>Program managers can effectively segment registrants based on their roles and associations. Users can filter by <code class="docutils literal notranslate"><span class="pre">is_registrant</span></code> or <code class="docutils literal notranslate"><span class="pre">is_group</span></code> to distinguish between individual beneficiaries and group entities. The <code class="docutils literal notranslate"><span class="pre">kind</span></code> field allows filtering by the type of group (e.g., &quot;Farmer Group,&quot; &quot;Household&quot;), while <code class="docutils literal notranslate"><span class="pre">category_id</span></code> helps in classifying registrants further. Filters for <code class="docutils literal notranslate"><span class="pre">program_membership_ids</span></code>, <code class="docutils literal notranslate"><span class="pre">group_membership_ids</span></code>, and <code class="docutils literal notranslate"><span class="pre">individual_membership_ids</span></code> enable identification of registrants based on their participation in specific programs or their relationships within groups.</p>
-</section>
-<section id="administrative-and-audit-trail-filters">
+</div>
+<div class="section" id="administrative-and-audit-trail-filters">
 <h3>Administrative and Audit Trail Filters<a class="headerlink" href="#administrative-and-audit-trail-filters" title="Permalink to this headline">#</a></h3>
 <p>This module also provides filters for administrative and system-level data. Users can filter by <code class="docutils literal notranslate"><span class="pre">registration_date</span></code>, <code class="docutils literal notranslate"><span class="pre">create_date</span></code>, <code class="docutils literal notranslate"><span class="pre">create_uid</span></code>, <code class="docutils literal notranslate"><span class="pre">write_date</span></code>, and <code class="docutils literal notranslate"><span class="pre">write_uid</span></code> to track the lifecycle and modification history of registrant records. Filters for <code class="docutils literal notranslate"><span class="pre">disabled</span></code>, <code class="docutils literal notranslate"><span class="pre">disabled_by</span></code>, and <code class="docutils literal notranslate"><span class="pre">disabled_reason</span></code> allow for auditing and managing deactivated registrant accounts, ensuring accountability and data integrity.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Custom Filter UI module is essential for enhancing data accessibility and operational efficiency by providing comprehensive and intuitive filtering capabilities for registrant records within OpenSPP.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

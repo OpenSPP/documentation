@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_programs_sp.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="programs-service-points-integration">
+  <div class="section" id="programs-service-points-integration">
 <h1>Programs: Service Points Integration<a class="headerlink" href="#programs-service-points-integration" title="Permalink to this headline">#</a></h1>
 <p>The <strong>OpenSPP Programs Sp</strong> module extends OpenSPP's core program management by integrating service points directly into the entitlement and beneficiary management processes. It enables the precise association of beneficiaries and their benefits with designated service delivery locations, enhancing program efficiency and ensuring targeted benefit distribution.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The <strong>OpenSPP Programs Sp</strong> module provides critical capabilities for managing social protection programs by:</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Supporting Flexible Program Design</strong>: Programs can be configured to optionally mandate the inclusion of service points in entitlements, adapting to diverse operational models and requirements.</p></li>
 <li><p><strong>Integrating Across Entitlement Types</strong>: Service point integration is applied consistently across both cash and in-kind entitlement management, providing a unified approach to benefit distribution.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module acts as a crucial link, integrating service point data with program and entitlement management across several OpenSPP components:</p>
 <ul class="simple">
@@ -1683,32 +1670,32 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="spp_service_points.html"><span class="doc std std-doc">OpenSPP Service Points</span></a></strong>: It utilizes the <code class="docutils literal notranslate"><span class="pre">spp_service_points</span></code> module to access and link to defined service points, making them assignable to entitlements and visible from program contexts.</p></li>
 <li><p><strong><a class="reference internal" href="spp_entitlement_cash.html"><span class="doc std std-doc">OpenSPP Cash Entitlement</span></a></strong> and <strong><a class="reference internal" href="spp_entitlement_in_kind.html"><span class="doc std std-doc">OpenSPP In-Kind Entitlement</span></a></strong>: These modules define the specific structures for cash and in-kind benefits. OpenSPP Programs Sp ensures that service point information is correctly captured and stored within these respective entitlement records during their creation.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The module introduces key features that enhance the management and delivery of program benefits through integrated service points:</p>
-<section id="program-configuration-for-service-point-tracking">
+<div class="section" id="program-configuration-for-service-point-tracking">
 <h3>Program Configuration for Service Point Tracking<a class="headerlink" href="#program-configuration-for-service-point-tracking" title="Permalink to this headline">#</a></h3>
 <p>Program administrators can configure individual programs to mandate the tracking of service points for all generated entitlements. By enabling the &quot;Store Service Points to Entitlements&quot; option within a program's settings, the system ensures that every new entitlement created for that program will include beneficiary service point information. This enforces consistency and ensures all benefits are associated with a designated delivery location.</p>
-</section>
-<section id="assigning-service-points-to-entitlements">
+</div>
+<div class="section" id="assigning-service-points-to-entitlements">
 <h3>Assigning Service Points to Entitlements<a class="headerlink" href="#assigning-service-points-to-entitlements" title="Permalink to this headline">#</a></h3>
 <p>This module adds the capability to link service points directly to individual entitlements, both cash and in-kind. Each entitlement can be associated with one or more service points, allowing for flexibility in how beneficiaries receive their benefits. This provides clear visibility into the intended redemption or collection points for each benefit.</p>
-</section>
-<section id="automated-inclusion-in-entitlement-generation">
+</div>
+<div class="section" id="automated-inclusion-in-entitlement-generation">
 <h3>Automated Inclusion in Entitlement Generation<a class="headerlink" href="#automated-inclusion-in-entitlement-generation" title="Permalink to this headline">#</a></h3>
 <p>When entitlements are generated for beneficiaries, the system automatically retrieves and assigns the beneficiary's registered service points to the new entitlement, provided the program is configured to store this information. This automation applies to cash, in-kind, and default entitlement managers, significantly reducing manual data entry and ensuring accurate service point assignment during large-scale entitlement processing.</p>
-</section>
-<section id="service-point-insights">
+</div>
+<div class="section" id="service-point-insights">
 <h3>Service Point Insights<a class="headerlink" href="#service-point-insights" title="Permalink to this headline">#</a></h3>
 <p>Service points gain enhanced visibility into the programs and entitlements they are associated with. From a service point's record, users can easily view all linked entitlements and the programs those entitlements belong to. This feature provides a comprehensive overview of a service point's operational scope and impact within the OpenSPP ecosystem.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <strong>OpenSPP Programs Sp</strong> module is essential for precisely linking program benefits to their designated service delivery locations, thereby improving the efficiency, targeting, and accountability of social protection programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

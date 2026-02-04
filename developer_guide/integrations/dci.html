@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Digital Convergence Initiative Integration" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Digital Convergence Initiative Integration" name="title" />
 <meta content="Learn how to implement DCI Interface Standards v1.0 in OpenSPP for interoperability with CRVS and other digital public infrastructure." name="description" />
 <meta content="OpenSPP, DCI, Digital Convergence Initiative, interoperability, CRVS, API integration, data exchange" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/integrations/dci.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1646,18 +1633,18 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="digital-convergence-initiative">
+  <div class="section" id="digital-convergence-initiative">
 <h1>Digital Convergence Initiative<a class="headerlink" href="#digital-convergence-initiative" title="Permalink to this headline">#</a></h1>
 <p>In the rapidly evolving landscape of digital public infrastructure (DPI), the principle of interoperability stands as an important foundation for building efficient, inclusive, and sustainable systems in a country.
 This article delves into how OpenSPP implemented APIs outlined in the <a class="reference external" href="https://standards.spdci.org/standards/standards-for-interoperability-interfaces/structure-and-versioning-of-the-standards">DCI Interface Standards v1.0</a> under Registry to enable interoperability with other systems such as <span class="xref std std-term">CRVS</span>.</p>
 <p>The implementation can be categorized into two sections where OpenSPP operates as the client and OpenSPP operates as the server.
 Note that currently OpenSPP has only completed the sync implementation.</p>
-<section id="server-implementation">
+<div class="section" id="server-implementation">
 <h2>Server implementation<a class="headerlink" href="#server-implementation" title="Permalink to this headline">#</a></h2>
 <p>This section focuses on utilizing OpenSPP as the source of truth for <a class="reference internal" href="../../reference/glossary.html#term-Beneficiary"><span class="xref std std-term">beneficiary</span></a> information where OpenSPP acts as the server.
 Such integration allows OpenSPP to seamlessly interact with other critical systems by providing data, thereby enhancing data exchange and operational <a class="reference internal" href="../../reference/glossary.html#term-Efficiency"><span class="xref std std-term">efficiency</span></a>.
 The following steps elaborate how the module can be configured.</p>
-<section id="deployment-and-installation">
+<div class="section" id="deployment-and-installation">
 <h3>Deployment and installation<a class="headerlink" href="#deployment-and-installation" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Deploy <a class="reference external" href="https://github.com/OpenSPP/openspp-api/tree/spp_dci_api_server">this branch</a> on a server.</p></li>
@@ -1666,8 +1653,8 @@ The following steps elaborate how the module can be configured.</p>
 <li><p>Save the RSA public key to spp_dci_api_server/tools/public_key.pub</p></li>
 <li><p>Login to OpenSPP and go to Apps. Search for “OpenSPP API: DCI Server” and install.</p></li>
 </ol>
-</section>
-<section id="how-to-use">
+</div>
+<div class="section" id="how-to-use">
 <h3>How to use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Login to OpenSPP.</p></li>
@@ -1684,14 +1671,14 @@ The following steps elaborate how the module can be configured.</p>
 <li><p>Header should have a key “Authorization” with a value “Bearer &lt;access_token&gt;”</p></li>
 <li><p>Refer to the DCI API spec for the request and response structure.</p></li>
 </ol>
-</section>
-</section>
-<section id="client-implementation">
+</div>
+</div>
+<div class="section" id="client-implementation">
 <h2>Client implementation<a class="headerlink" href="#client-implementation" title="Permalink to this headline">#</a></h2>
 <p>This section focuses on utilizing another registry as the source for truth to get beneficiary information that can then be utilized in OpenSPP.</p>
 <p>This section focuses on utilizing another registry as the source for truth to get <a class="reference internal" href="../../reference/glossary.html#term-Beneficiary"><span class="xref std std-term">beneficiary</span></a> information.
 The following steps elaborate how the module can be configured to fetch data where OpenSPP acts as the client.</p>
-<section id="id1">
+<div class="section" id="id1">
 <h3>2.1 Deployment and Installation<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Deploy these two branches(<a class="reference external" href="https://github.com/OpenSPP/openspp-api/tree/spp_crvs_import">1</a>,<a class="reference external" href="https://github.com/OpenSPP/openspp-base/tree/spp_data_source">2</a>) on a server</p></li>
@@ -1703,8 +1690,8 @@ The following steps elaborate how the module can be configured to fetch data whe
 <li><p>Input the credentials in the client_id, client_secret, and grant_type field inside the Data Source record.</p></li>
 </ol>
 <p>NOTE: The only supported grant_type for now is “client_credentials”.</p>
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h3>How to use<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Navigate to Programs and select Import From Registry.</p></li>
@@ -1717,9 +1704,9 @@ The following steps elaborate how the module can be configured to fetch data whe
 <li><p>Refer the DCI API spec for the request and response structure.</p></li>
 </ol>
 <p><em>NOTE: This documentation/implementation should be considered as an alpha release of the implementation of the DCI Interface Standards v1.0.</em></p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

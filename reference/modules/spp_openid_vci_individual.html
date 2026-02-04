@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_openid_vci_individual.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1650,10 +1637,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="openid-vci-individual">
+  <div class="section" id="openid-vci-individual">
 <h1>OpenID VCI Individual<a class="headerlink" href="#openid-vci-individual" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_openid_vci_individual</span></code> module extends OpenSPP's Verifiable Credential (VC) issuance capabilities specifically to individual registrants. It enables the secure creation and management of digital proofs of identity and attributes for individuals, leveraging OpenID Connect for Verifiable Presentations (OpenID4VP) and Decentralized Identifiers (DIDs).</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module is designed to empower social protection programs with a robust system for verifiable individual identities. It accomplishes this by:</p>
 <ul class="simple">
@@ -1663,8 +1650,8 @@ title="Print to PDF"
 <li><p><strong>Supporting Verifiable Presentations:</strong> Prepares individual credentials for secure sharing through Verifiable Presentations, allowing individuals to selectively disclose only necessary information.</p></li>
 <li><p><strong>Tailoring Issuer Configurations:</strong> Allows for the customization and configuration of Verifiable Credential Issuers (VCIs) specifically optimized for individual registrant data and program requirements.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_openid_vci_individual</span></code> module acts as a crucial bridge, integrating core VCI functionality with detailed individual registrant data:</p>
 <ul class="simple">
@@ -1672,28 +1659,28 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="g2p_registry_individual.html"><span class="doc std std-doc">G2P Registry Individual</span></a></strong>: It relies on <code class="docutils literal notranslate"><span class="pre">g2p_registry_individual</span></code> to access and utilize the comprehensive data collected for each individual registrant. This ensures that issued VCs accurately reflect verified individual attributes such as names, birthdates, and gender.</p></li>
 </ul>
 <p>By combining these modules, <code class="docutils literal notranslate"><span class="pre">spp_openid_vci_individual</span></code> ensures that VCs issued for individuals are both securely managed and accurately populated with relevant personal data, fitting seamlessly into the overall OpenSPP ecosystem.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>This module introduces specific features to enhance the management and issuance of verifiable credentials for individuals:</p>
-<section id="individual-specific-verifiable-credential-issuance">
+<div class="section" id="individual-specific-verifiable-credential-issuance">
 <h3>Individual-Specific Verifiable Credential Issuance<a class="headerlink" href="#individual-specific-verifiable-credential-issuance" title="Permalink to this headline">#</a></h3>
 <p>Users can issue Verifiable Credentials directly from an individual registrant's profile. These VCs encapsulate verified individual data, such as their legal name, date of birth, and program enrollment status, ensuring that all claims are digitally signed and verifiable. This process provides a robust, tamper-evident digital proof of an individual's identity and attributes.</p>
-</section>
-<section id="integrated-qr-code-generation-for-individuals">
+</div>
+<div class="section" id="integrated-qr-code-generation-for-individuals">
 <h3>Integrated QR Code Generation for Individuals<a class="headerlink" href="#integrated-qr-code-generation-for-individuals" title="Permalink to this headline">#</a></h3>
 <p>The module automatically generates scannable QR codes for each Verifiable Credential issued to an individual. These QR codes allow for quick and easy verification of an individual's credentials using a mobile device, facilitating both digital and physical proofs of identity, such as on an ID card. This streamlines the process of verifying beneficiary status or identity in various program contexts.</p>
-</section>
-<section id="customizable-vci-issuer-configuration-for-individual-registries">
+</div>
+<div class="section" id="customizable-vci-issuer-configuration-for-individual-registries">
 <h3>Customizable VCI Issuer Configuration for Individual Registries<a class="headerlink" href="#customizable-vci-issuer-configuration-for-individual-registries" title="Permalink to this headline">#</a></h3>
 <p>Administrators can define and manage Verifiable Credential Issuers (VCIs) that are specifically tailored for individual registrants. This includes setting up default authentication endpoints and issuer details that align with OpenID Connect standards, ensuring secure and interoperable issuance and presentation of individual-centric credentials. This flexibility supports various program needs and compliance requirements.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_openid_vci_individual</span></code> module is essential for securely issuing and managing Verifiable Credentials for individual registrants within OpenSPP, enhancing trust, privacy, and efficiency in social protection programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

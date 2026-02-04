@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_api.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="api">
+  <div class="section" id="api">
 <h1>API<a class="headerlink" href="#api" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP API module provides a robust framework for building and managing a RESTful API (Application Programming Interface) for the OpenSPP platform. It enables external systems and applications to securely interact with OpenSPP data and functionalities, facilitating seamless integration, data exchange, and automation.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module serves as the central hub for OpenSPP's external communication, offering a structured way to expose and manage platform capabilities. It accomplishes the following key objectives:</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Comprehensive Logging and Auditing:</strong> Provides detailed logging of all API interactions, offering transparency, aiding in troubleshooting, and supporting compliance requirements.</p></li>
 <li><p><strong>Flexible Data Mapping:</strong> Enables the renaming and configuration of data fields exposed through the API, making integration simpler and more intuitive for external systems.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_api</span></code> module is foundational to OpenSPP's external connectivity, building upon other core modules to deliver its capabilities:</p>
 <ul class="simple">
@@ -1684,11 +1671,11 @@ title="Print to PDF"
 <li><p>It utilizes the <code class="docutils literal notranslate"><span class="pre">web</span></code> module for exposing API endpoints over the web, making them accessible to external applications.</p></li>
 </ul>
 <p>Together, these integrations allow <code class="docutils literal notranslate"><span class="pre">spp_api</span></code> to provide a secure, functional, and extensible API layer for the entire OpenSPP platform.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_api</span></code> module offers a range of features to configure and manage API interactions effectively.</p>
-<section id="api-namespace-and-endpoint-configuration">
+<div class="section" id="api-namespace-and-endpoint-configuration">
 <h3>API Namespace and Endpoint Configuration<a class="headerlink" href="#api-namespace-and-endpoint-configuration" title="Permalink to this headline">#</a></h3>
 <p>Users can define distinct API namespaces to group related endpoints, manage versions, and control access. Each namespace acts as a unique integration point, such as 'Beneficiary_Service_v1' or 'Financial_Aid_v2'. Within these namespaces, specific API paths (endpoints) are created for individual OpenSPP data models (e.g., &quot;Beneficiary&quot;, &quot;Program&quot;). For each path, users configure:</p>
 <ul class="simple">
@@ -1696,8 +1683,8 @@ title="Print to PDF"
 <li><p><strong>Data Filtering and Limits:</strong> For read operations, specify default filters (e.g., only active beneficiaries) and set limits on the number of records returned.</p></li>
 <li><p><strong>Custom Functions:</strong> Implement custom business logic as API endpoints, complete with defined input parameters.</p></li>
 </ul>
-</section>
-<section id="data-field-customization">
+</div>
+<div class="section" id="data-field-customization">
 <h3>Data Field Customization<a class="headerlink" href="#data-field-customization" title="Permalink to this headline">#</a></h3>
 <p>To simplify integration, the module allows granular control over how data fields appear in the API:</p>
 <ul class="simple">
@@ -1705,8 +1692,8 @@ title="Print to PDF"
 <li><p><strong>Required Fields and Default Values:</strong> For create and update operations, mark specific fields as mandatory or provide default values, ensuring data consistency.</p></li>
 <li><p><strong>Field Aliases:</strong> Rename internal OpenSPP field names to more intuitive, external-facing names within the API. For instance, an internal field like <code class="docutils literal notranslate"><span class="pre">b_dob</span></code> (beneficiary date of birth) can be aliased to <code class="docutils literal notranslate"><span class="pre">beneficiary_birthdate</span></code> for clarity in the API. These aliases can be global or specific to an API path.</p></li>
 </ul>
-</section>
-<section id="api-security-and-logging">
+</div>
+<div class="section" id="api-security-and-logging">
 <h3>API Security and Logging<a class="headerlink" href="#api-security-and-logging" title="Permalink to this headline">#</a></h3>
 <p>The module provides essential tools for securing and monitoring API usage:</p>
 <ul class="simple">
@@ -1714,21 +1701,21 @@ title="Print to PDF"
 <li><p><strong>Namespace-based Access Control:</strong> Assign specific API namespaces to individual OpenSPP users, granting them access only to the integrations they need.</p></li>
 <li><p><strong>Detailed API Logs:</strong> All API requests and responses are logged, including method, model, and the data exchanged. This provides a comprehensive audit trail, crucial for debugging, security monitoring, and compliance. Users can configure logging levels (disabled, short, full) for both requests and responses.</p></li>
 </ul>
-</section>
-<section id="advanced-api-operations">
+</div>
+<div class="section" id="advanced-api-operations">
 <h3>Advanced API Operations<a class="headerlink" href="#advanced-api-operations" title="Permalink to this headline">#</a></h3>
 <p>Beyond standard CRUD (Create, Read, Update, Delete) operations, the module supports custom API functions:</p>
 <ul class="simple">
 <li><p><strong>Custom Function Parameters:</strong> Define specific parameters (e.g., name, type, required status, default value) for custom API functions, allowing external systems to trigger complex business processes within OpenSPP.</p></li>
 <li><p><strong>Record-Specific Actions:</strong> Custom functions can be configured to apply either globally or on specific records, offering flexibility for targeted actions.</p></li>
 </ul>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_api</span></code> module is indispensable for extending OpenSPP's reach, enabling secure, flexible, and auditable integration with external systems to streamline social protection program management and data exchange.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

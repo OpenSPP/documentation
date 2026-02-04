@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_custom_field.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1650,10 +1637,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="custom-fields">
+  <div class="section" id="custom-fields">
 <h1>Custom Fields<a class="headerlink" href="#custom-fields" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Custom Field module enhances the platform's flexibility by allowing administrators to define and add custom data fields directly to registrant profiles. This capability ensures that OpenSPP can capture highly specific information tailored to the unique needs of various social protection programs and farmer registries.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Custom Field module enables programs to adapt the platform's data collection capabilities to their precise requirements. It accomplishes this by:</p>
 <ul class="simple">
@@ -1663,36 +1650,36 @@ title="Print to PDF"
 <li><p><strong>Managing Program Indicators</strong>: Provides dedicated sections for displaying read-only indicators, crucial for monitoring and evaluation.</p></li>
 <li><p><strong>Streamlining Profile Management</strong>: Automatically integrates these custom fields into registrant profiles, creating a comprehensive and program-specific data view.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_custom_field</span></code> module integrates seamlessly into the OpenSPP ecosystem, extending core functionalities to provide enhanced data management.</p>
 <ul class="simple">
 <li><p><strong>Base (<code class="docutils literal notranslate"><span class="pre">base</span></code>)</strong>: As a fundamental module, <code class="docutils literal notranslate"><span class="pre">spp_custom_field</span></code> relies on the core Odoo framework provided by the <code class="docutils literal notranslate"><span class="pre">base</span></code> module for its underlying data structures and user interface elements.</p></li>
 <li><p><strong>G2P Registry Base (<code class="docutils literal notranslate"><span class="pre">g2p_registry_base</span></code>)</strong>: This module is a direct extension of the <a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">G2P Registry Base</span></a> module. While <code class="docutils literal notranslate"><span class="pre">g2p_registry_base</span></code> establishes the foundational registrant profile, <code class="docutils literal notranslate"><span class="pre">spp_custom_field</span></code> dynamically adds customizable data fields to these profiles, making them more versatile for specific program needs. It leverages the <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> model, which is extended by <code class="docutils literal notranslate"><span class="pre">g2p_registry_base</span></code>, to embed new data points directly within the registrant's record.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_custom_field</span></code> module introduces powerful features for customizing registrant profiles:</p>
-<section id="configurable-registrant-profile-fields">
+<div class="section" id="configurable-registrant-profile-fields">
 <h3>Configurable Registrant Profile Fields<a class="headerlink" href="#configurable-registrant-profile-fields" title="Permalink to this headline">#</a></h3>
 <p>Users can define new data fields, such as text inputs, numerical values, dates, or checkboxes, which then appear on registrant profiles. These fields are intelligently categorized and displayed under a dedicated &quot;Additional Details&quot; tab. This allows programs to capture highly specific information, for instance, &quot;Household Water Source&quot; for social protection programs or &quot;Type of Agricultural Land&quot; for farmer registries. The module also supports creating fields that are specific to either individual registrants or group registrants, ensuring data relevance.</p>
-</section>
-<section id="dedicated-indicator-section">
+</div>
+<div class="section" id="dedicated-indicator-section">
 <h3>Dedicated Indicator Section<a class="headerlink" href="#dedicated-indicator-section" title="Permalink to this headline">#</a></h3>
 <p>The module creates a separate &quot;Indicators&quot; tab on registrant profiles. This section is designed to display read-only fields that typically represent program-specific metrics, calculated values, or monitoring data. For example, it could show &quot;Total Benefits Received&quot; or &quot;Number of Dependents Calculated.&quot; These fields are for viewing and analysis, providing a quick overview of key performance indicators without allowing direct user input.</p>
-</section>
-<section id="dynamic-profile-extension">
+</div>
+<div class="section" id="dynamic-profile-extension">
 <h3>Dynamic Profile Extension<a class="headerlink" href="#dynamic-profile-extension" title="Permalink to this headline">#</a></h3>
 <p>A key capability of this module is its ability to automatically integrate custom and indicator fields into the registrant's profile form. This dynamic integration eliminates the need for manual view modifications whenever new fields are added, significantly simplifying system configuration and maintenance. New fields are immediately accessible and properly categorized within the &quot;Additional Details&quot; or &quot;Indicators&quot; tabs, ensuring a consistent and user-friendly experience.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Custom Field module is essential for making OpenSPP a highly adaptable platform, enabling programs to tailor registrant data collection to their precise operational and reporting requirements.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

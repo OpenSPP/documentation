@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_irrigation.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="irrigation">
+  <div class="section" id="irrigation">
 <h1>Irrigation<a class="headerlink" href="#irrigation" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Irrigation module provides comprehensive tools for managing and visualizing irrigation infrastructure within the OpenSPP platform. It enables organizations to efficiently track, plan, and analyze irrigation systems and their impact on supported communities and agricultural initiatives.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module streamlines the management of irrigation assets, offering a centralized system for critical water resource infrastructure. It empowers users to gain a clear understanding of their irrigation networks and their operational status.</p>
 <ul class="simple">
@@ -1673,38 +1660,38 @@ title="Print to PDF"
 <li><p><strong>Support Strategic Planning</strong>: Provides essential data for informed decision-making regarding water resource allocation, infrastructure maintenance, and expansion projects.</p></li>
 <li><p><strong>Enhance Operational Efficiency</strong>: Facilitates better management of water distribution for agricultural programs and community development by offering a clear overview of the irrigation landscape.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Irrigation module builds upon core OpenSPP functionalities and integrates seamlessly with its geospatial capabilities.</p>
 <p>This module depends on the <code class="docutils literal notranslate"><span class="pre">base</span></code> module for foundational OpenSPP functionalities and system operations. Crucially, it relies on the <a class="reference internal" href="spp_base_gis.html"><span class="doc std std-doc">OpenSPP Base GIS</span></a> module to provide its mapping and visualization capabilities.</p>
 <p>By integrating with <a class="reference internal" href="spp_base_gis.html"><span class="doc std std-doc">OpenSPP Base GIS</span></a>, the Irrigation module extends the platform's ability to display and interact with geographical data. This allows users to view irrigation assets on interactive maps, perform spatial analysis, and link infrastructure to specific geographic areas, enhancing planning for farmer registries or social protection programs.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Irrigation module offers robust features for detailed management and visualization of irrigation assets.</p>
-<section id="irrigation-asset-identification">
+<div class="section" id="irrigation-asset-identification">
 <h3>Irrigation Asset Identification<a class="headerlink" href="#irrigation-asset-identification" title="Permalink to this headline">#</a></h3>
 <p>Users can create and manage individual irrigation assets, assigning a unique <strong>Irrigation Name/ID</strong> to each. This ensures that every component of the irrigation system, from a reservoir to a canal segment, can be distinctly identified and tracked.</p>
-</section>
-<section id="asset-categorization-and-capacity">
+</div>
+<div class="section" id="asset-categorization-and-capacity">
 <h3>Asset Categorization and Capacity<a class="headerlink" href="#asset-categorization-and-capacity" title="Permalink to this headline">#</a></h3>
 <p>The module allows for the categorization of irrigation assets, such as marking an asset as a 'Reservoir'. For these assets, users can record the <strong>Total Capacity</strong>, providing vital information for water storage assessment and resource management.</p>
-</section>
-<section id="geospatial-mapping-and-visualization">
+</div>
+<div class="section" id="geospatial-mapping-and-visualization">
 <h3>Geospatial Mapping and Visualization<a class="headerlink" href="#geospatial-mapping-and-visualization" title="Permalink to this headline">#</a></h3>
 <p>Leveraging the <a class="reference internal" href="spp_base_gis.html"><span class="doc std std-doc">OpenSPP Base GIS</span></a> module, users can precisely define the geographic location of each asset. This includes specifying exact <strong>Coordinates</strong> (GeoPointField) for point features and outlining the <strong>Geo Polygon</strong> (GeoPolygonField) for assets that cover an area, like a reservoir or a large field. These geospatial data points are displayed on interactive maps, offering a visual overview of the irrigation network.</p>
-</section>
-<section id="irrigation-network-definition">
+</div>
+<div class="section" id="irrigation-network-definition">
 <h3>Irrigation Network Definition<a class="headerlink" href="#irrigation-network-definition" title="Permalink to this headline">#</a></h3>
 <p>The module enables the mapping of water flow and distribution by defining relationships between assets. Users can link assets by specifying their <strong>Irrigation Sources</strong> and <strong>Irrigation Destinations</strong>. This creates a comprehensive network view, illustrating how water flows from one point to another within the entire irrigation system.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Irrigation module is essential for digitally managing, mapping, and analyzing critical irrigation infrastructure, significantly enhancing water resource management within social protection and agricultural programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_event_data.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="event-data">
+  <div class="section" id="event-data">
 <h1>Event Data<a class="headerlink" href="#event-data" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Event Data module is a core component for maintaining a comprehensive and chronological history of all significant actions and changes related to individual and group registrants within the OpenSPP system. It serves as an auditable log, tracking when and how key registrant information evolves.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Event Data module provides essential capabilities for managing registrant data history:</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Contextual Detail</strong>: Links each event directly to the specific data record that was created or modified, offering immediate access to the full context of the change. This allows users to quickly understand the &quot;what&quot; and &quot;why&quot; behind an event.</p></li>
 <li><p><strong>Operational Oversight</strong>: Supports program managers and field agents in understanding the historical journey of each registrant, from initial registration to various program interventions or data updates, enabling informed decision-making.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Event Data module integrates deeply with the core registry modules to track changes to registrant profiles:</p>
 <ul class="simple">
@@ -1683,31 +1670,31 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="g2p_registry_group.html"><span class="doc std std-doc">G2P Registry: Group</span></a></strong>: Similarly, for group registrants, the module logs events related to group types, membership changes, or other group-specific data, ensuring a complete history for collective entities.</p></li>
 </ul>
 <p>This module acts as a historical ledger, receiving event notifications from these registry modules to build a comprehensive timeline of registrant data evolution.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="comprehensive-event-logging">
+<div class="section" id="comprehensive-event-logging">
 <h3>Comprehensive Event Logging<a class="headerlink" href="#comprehensive-event-logging" title="Permalink to this headline">#</a></h3>
 <p>The module automatically records a wide array of events, capturing significant actions taken on a registrant's profile. For instance, when a new identification document is added, a phone number is updated, or a relationship is established, the system logs a corresponding event. Each event includes the date of collection, the registrar who made the change, and its current state (active or inactive).</p>
-</section>
-<section id="active-record-management">
+</div>
+<div class="section" id="active-record-management">
 <h3>Active Record Management<a class="headerlink" href="#active-record-management" title="Permalink to this headline">#</a></h3>
 <p>A key feature is its ability to manage the &quot;active&quot; state of various registrant-related data. When a new record of a certain type (e.g., a new primary ID) is created for a registrant, the system automatically sets any previously active record of that same type to &quot;inactive.&quot; This ensures that OpenSPP always refers to the most current and relevant data for a registrant without losing the historical context. For example, if a registrant receives a new National ID, the old ID record can be automatically marked as inactive while still being part of the historical record.</p>
-</section>
-<section id="direct-access-to-event-details">
+</div>
+<div class="section" id="direct-access-to-event-details">
 <h3>Direct Access to Event Details<a class="headerlink" href="#direct-access-to-event-details" title="Permalink to this headline">#</a></h3>
 <p>Users can directly view the specific data record associated with any recorded event. From an event log entry, a user can click to open the full details of the linked record, such as the specific ID card, phone number, or relationship record that the event pertains to. This provides immediate context and allows for thorough investigation of historical data.</p>
-</section>
-<section id="streamlined-event-creation">
+</div>
+<div class="section" id="streamlined-event-creation">
 <h3>Streamlined Event Creation<a class="headerlink" href="#streamlined-event-creation" title="Permalink to this headline">#</a></h3>
 <p>The module provides a user-friendly wizard directly accessible from a registrant's profile to create new events. This streamlines the process of adding new data points or marking significant changes, ensuring that all actions are properly logged and associated with the correct registrant.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Event Data module is indispensable for maintaining a transparent, auditable, and comprehensive historical record of all registrant-related data, ensuring data integrity and supporting robust program management within OpenSPP.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

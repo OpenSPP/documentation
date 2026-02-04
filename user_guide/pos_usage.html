@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Point of Sales (POS) system usage" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Point of Sales (POS) system usage" name="title" />
 <meta content="Learn how to configure and use the OpenSPP Point of Sales system for beneficiary transactions, including web and mobile interfaces, refunds, and area grouping." name="description" />
 <meta content="OpenSPP, Point of Sales, POS, beneficiary transactions, cash disbursement, refunds, mobile POS" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../_static/search_shortcut.js"></script>
     <script src="../_static/version_switcher.js"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/pos_usage.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1696,10 +1683,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="point-of-sales">
+  <div class="section" id="point-of-sales">
 <h1>Point of Sales<a class="headerlink" href="#point-of-sales" title="Permalink to this headline">#</a></h1>
 <p>In this tutorial, you will learn about the POS feature, covering configuration, creating point of sales, and setting it by area.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>To utilise this feature, you need the following:</p>
 <ul class="simple">
@@ -1712,21 +1699,21 @@ Learn more about assigning user role in the guide <a class="reference internal" 
 <li><p>Have an existing cycle with beneficiaries and entitlements generated on a program.
 Learn more about this in the guide <a class="reference internal" href="program_management/create_program.html"><span class="doc">Create program</span></a>.</p></li>
 </ul>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>By the end of this tutorial, you will be able to configure point of sales, manage, classify by area, and generate transactions within the POS feature.</p>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
-<section id="verify-pos-module">
+<div class="section" id="verify-pos-module">
 <h3>Verify POS module<a class="headerlink" href="#verify-pos-module" title="Permalink to this headline">#</a></h3>
 <p>To be able to create point of sales, you have to make sure that the necessary modules are installed and activated on your OpenSPP instance.
 This can be verified by logging in to your OpenSPP instance as Administrator, go to <strong>Apps</strong>, search for <strong>OpenSPP POS</strong> and <strong>OpenSPP POS: ID Redemption</strong> respectively and if not already done, activate them by clicking <strong>Activate</strong> button.</p>
 <p><img alt="OpenSPP POS module activation screen showing both POS modules with Activate buttons" src="../_images/POS_module.png" /></p>
 <p>Upon successful activation, the button label should change to <strong>Learn more</strong>.</p>
-</section>
-<section id="configure-pos-settings">
+</div>
+<div class="section" id="configure-pos-settings">
 <h3>Configure POS Settings<a class="headerlink" href="#configure-pos-settings" title="Permalink to this headline">#</a></h3>
 <p>Navigate to the menu screen.
 On the sidebar menu, click <strong>Point of Sale</strong> to open the POS dashboard.</p>
@@ -1734,7 +1721,7 @@ On the sidebar menu, click <strong>Point of Sale</strong> to open the POS dashbo
 <p>Click on <strong>Configuration</strong> and select <strong>Payment methods</strong> to see the payment methods available.
 By default, the options <strong>Cash</strong>, <strong>Bank</strong> and <strong>Customer Account</strong> are available.</p>
 <p><img alt="Payment methods configuration screen showing Cash, Bank, and Customer Account options" src="../_images/point_of_sales_payment_methods.png" /></p>
-<section id="create-point-of-sales">
+<div class="section" id="create-point-of-sales">
 <h4>Create point of sales<a class="headerlink" href="#create-point-of-sales" title="Permalink to this headline">#</a></h4>
 <p>To create a point of sale, click on <strong>Point of Sales</strong> from the sidebar, click <strong>Configuration</strong> and select <strong>Point of Sales</strong>, then click on <strong>New</strong>.</p>
 <p><img alt="Point of Sales configuration screen with New button highlighted" src="../_images/point_of_sales_create_pos.png" /></p>
@@ -1742,8 +1729,8 @@ By default, the options <strong>Cash</strong>, <strong>Bank</strong> and <strong
 It is also possible to assign the shop to a specific area by selecting the desired area from the dropdown.
 Click on <strong>Save</strong> button to keep the changes.</p>
 <p><img alt="Point of Sale creation form with name field and area dropdown selection" src="../_images/point_of_sales_save.png" /></p>
-</section>
-<section id="select-payment-methods">
+</div>
+<div class="section" id="select-payment-methods">
 <h4>Select payment methods<a class="headerlink" href="#select-payment-methods" title="Permalink to this headline">#</a></h4>
 <p>To select a payment method for your point of sale, click on <strong>Point of Sales</strong> from the sidebar, navigate to <strong>Configuration</strong> and click on <strong>Settings</strong>.
 From the <strong>Point of Sale</strong> dropdown, click and select the point of sale you want to manage.</p>
@@ -1767,8 +1754,8 @@ Navigate to <strong>Configuration</strong> and click on <strong>Settings</strong
 Select a <strong>Point of sale</strong>.
 Then under payment methods dropdown, select your new Cash payment method and click <strong>Save</strong>.</p>
 <p><img alt="POS settings screen showing new Cash payment method selected in dropdown" src="../_images/point_of_sales_new_cash_payment_method.png" /></p>
-</section>
-<section id="group-point-of-sales-by-area">
+</div>
+<div class="section" id="group-point-of-sales-by-area">
 <h4>Group point of sales by area<a class="headerlink" href="#group-point-of-sales-by-area" title="Permalink to this headline">#</a></h4>
 <p>In order to group point of sales by area, make sure you have areas already existing in your OpenSPP instance.
 Learn more about importing areas in the guide <a class="reference internal" href="administration/import_areas.html"><span class="doc">Import areas</span></a>.
@@ -1782,9 +1769,9 @@ The point of sales will now be grouped by area.</p>
 Click the <strong>&lt;&gt;</strong> arrows from the dashboard to expand the view.
 Click on <strong>Gear</strong> icon to collapse view.</p>
 <p><img alt="POS dashboard with expand/collapse arrows and gear icon for view options" src="../_images/point_of_sales_view_options.png" /></p>
-</section>
-</section>
-<section id="starting-point-of-sale-in-web-view">
+</div>
+</div>
+<div class="section" id="starting-point-of-sale-in-web-view">
 <h3>Starting point of sale in web view<a class="headerlink" href="#starting-point-of-sale-in-web-view" title="Permalink to this headline">#</a></h3>
 <p>The POS application is viewable in either web view or mobile view.
 This section will be covering the web view, for mobile view, proceed to <strong>Starting point of sale in mobile view</strong> of this document.</p>
@@ -1810,8 +1797,8 @@ Then click <strong>Close</strong> button.</p>
 <p>The transaction is now complete.
 If you wish to start a new transaction, click on <strong>New Order</strong>.</p>
 <p><img alt="POS completion screen showing transaction success with New Order button" src="../_images/241.png" /></p>
-</section>
-<section id="starting-point-of-sale-in-mobile-view">
+</div>
+<div class="section" id="starting-point-of-sale-in-mobile-view">
 <h3>Starting point of sale in mobile view<a class="headerlink" href="#starting-point-of-sale-in-mobile-view" title="Permalink to this headline">#</a></h3>
 <p>The POS application is viewable in either web view or mobile view.
 This section will cover the mobile view, for web view, proceed to <strong>Starting point of sale in web view</strong> of this document.</p>
@@ -1843,8 +1830,8 @@ This note will be displayed on the receipt.</p>
 <p>The order or transaction is now complete.
 Click on <strong>New Order</strong> to start a new transaction.</p>
 <p><img alt="Mobile POS completion screen showing successful transaction with New Order button" src="../_images/36.png" /></p>
-</section>
-<section id="refunds">
+</div>
+<div class="section" id="refunds">
 <h3>Refunds<a class="headerlink" href="#refunds" title="Permalink to this headline">#</a></h3>
 <p>When necessary, it is possible to do refunds for cash entitlements.
 To start a refund, click on a point of sale and select a beneficiary.
@@ -1874,9 +1861,9 @@ Click on <strong>All active orders</strong> and select <strong>Paid</strong>.</p
 <p><img alt="Mobile orders screen with filter options showing All active orders and Paid status" src="../_images/45.png" /></p>
 <p>Click on the transaction that involves the refund and notice that the amount is now a positive value indicating that the cash entitlement has been successfully refunded.</p>
 <p><img alt="Mobile transaction details showing completed refund with positive amount value" src="../_images/46.png" /></p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

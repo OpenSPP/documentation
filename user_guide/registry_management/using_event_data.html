@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Event Data" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Event Data" name="title" />
 <meta content="Guide to using Event Data functionality in OpenSPP to record and track specific occurrences related to registrants over time." name="description" />
 <meta content="OpenSPP, event data, registrant tracking, audit trail, data history, event management" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/registry_management/using_event_data.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1642,7 +1629,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="event-data">
+  <div class="section" id="event-data">
 <h1>Event Data<a class="headerlink" href="#event-data" title="Permalink to this headline">#</a></h1>
 <p>In OpenSPP, Event Data provides a flexible mechanism to record and track specific, significant occurrences related to registrants over time.
 This functionality enhances the system's capacity to capture a chronological history of changes and actions without directly modifying the main registrant profile.</p>
@@ -1663,7 +1650,7 @@ This functionality enhances the system's capacity to capture a chronological his
 3.  **Event History on Registrant Forms:** A dedicated tab is added to both individual and group registrant forms to display their associated event history, enabling users to directly access and review past events related to a specific registrant.
 4.  **Event Creation Wizard:** A streamlined process for creating new event data entries through a dedicated wizard, simplifying data entry and ensuring consistency in event logging.
 5.  **Active Event Management:** Logic is implemented to manage the active status of events. When a new active event of the same type is created for the same registrant, the previous one is automatically ended, providing a clear view of the current status. -->
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>To utilize and manage Event Data, ensure the following prerequisites are met:</p>
 <ul class="simple">
@@ -1680,8 +1667,8 @@ For more information, refer to <a class="reference internal" href="register_indi
 <li><p>Appropriate user access roles are assigned to allow creation or viewing of event records.
 By default, the <strong>System admin</strong> user account has access to event data functionality.</p></li>
 </ul>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>By understanding Event Data, you will be able to:</p>
 <ul class="simple">
@@ -1690,8 +1677,8 @@ By default, the <strong>System admin</strong> user account has access to event d
 <li><p>View and navigate the event history of a registrant from their profile.</p></li>
 <li><p>Manage different types of event data, allowing for flexible data collection and historical tracking.</p></li>
 </ul>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
 <p>Event data functionality fulfills several important roles, including the systematic tracking of changes to a registrant's information.
 A system administrator or authorized user may create an event data entry to record the registrant's current details at a specific point in time.
@@ -1703,7 +1690,7 @@ The {doc}`spp_event_demo </reference/modules/spp_event_demo>` module provides de
 * **Data Models and Views:** Specific data models and user-friendly views for each event type.
 * **Event Creation Wizards:** Dedicated wizards for creating new events like "Create Event: House Visit," "Create Event: Phone Survey," and "Create Event: School Enrollment".
 * **Integration with Registrant Profiles:** Displays active events on registrant profiles for a quick overview. -->
-<section id="create-event-data">
+<div class="section" id="create-event-data">
 <h3>Create Event Data<a class="headerlink" href="#create-event-data" title="Permalink to this headline">#</a></h3>
 <p>To demonstrate the <strong>event data</strong> functionality, ensure that <a class="reference internal" href="../../reference/modules/spp_event_demo.html"><span class="doc">spp_event_demo</span></a> is activated.
 To verify, navigate to <strong>Apps</strong> and search for <a class="reference internal" href="../../reference/modules/spp_event_demo.html"><span class="doc">spp_event_demo</span></a>.
@@ -1721,8 +1708,8 @@ Click <strong>Next</strong> to continue.</p>
 <div><p>The field names displayed in the event data modal are customizable depending on your preference or configuration.</p>
 </div></blockquote>
 <p>Fill in the fields you wish to define, then click <strong>Save</strong> to create the event data entry.</p>
-</section>
-<section id="view-event-data">
+</div>
+<div class="section" id="view-event-data">
 <h3>View Event Data<a class="headerlink" href="#view-event-data" title="Permalink to this headline">#</a></h3>
 <p>From <strong>Registry</strong>, select a group or an individual and click on the event data tab.</p>
 <p><img alt="Using event data event data tab" src="../../_images/using_event_data_event_data_tab.png" /></p>
@@ -1734,8 +1721,8 @@ Click <strong>Next</strong> to continue.</p>
 <p><img alt="Using event data event data name" src="../../_images/using_event_data_event_data_name.png" /></p>
 <p>The displayed fields are all <strong>read-only</strong> and cannot be modified. For the Related Data field, the number shown indicates how many event data entries of the same type currently exist in the registrant's records.</p>
 <p><img alt="Using event data click event data name" src="../../_images/using_event_data_click_event_data_name.png" /></p>
-</section>
-<section id="active-inactive-event-data">
+</div>
+<div class="section" id="active-inactive-event-data">
 <h3>Active/Inactive Event Data<a class="headerlink" href="#active-inactive-event-data" title="Permalink to this headline">#</a></h3>
 <p>When a new event data entry is saved, it is automatically marked as active. Any existing entries with the same event type are automatically updated to <strong>inactive</strong>, ensuring only the latest entry remains active.</p>
 <blockquote>
@@ -1743,9 +1730,9 @@ Click <strong>Next</strong> to continue.</p>
 </div></blockquote>
 <p>Once an event data entry reaches its expiration date, it will automatically be set to inactive.</p>
 <p><img alt="Using event data automatically inactive" src="../../_images/using_event_data_automatically_inactive.png" /></p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

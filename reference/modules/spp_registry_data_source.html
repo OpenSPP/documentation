@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_registry_data_source.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1670,10 +1657,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="data-source">
+  <div class="section" id="data-source">
 <h1>Data Source<a class="headerlink" href="#data-source" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Registry Data Source module provides the essential framework for securely connecting OpenSPP to various external data systems. This module enables the platform to integrate vital information from sources such as national farmer registries, existing social protection program databases, or other external data providers, ensuring that OpenSPP can access and utilize external data for comprehensive program management.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module establishes OpenSPP's capability to interact with external data sources, which is crucial for maintaining up-to-date and accurate beneficiary and program information. It empowers administrators to:</p>
 <ul class="simple">
@@ -1683,40 +1670,40 @@ title="Print to PDF"
 <li><p><strong>Configure Secure Authentication:</strong> Implement various authentication methods to secure connections to external systems, safeguarding sensitive data and ensuring authorized access.</p></li>
 <li><p><strong>Manage API Endpoints:</strong> Specify and manage different API endpoints or URL paths within a single data source, allowing for targeted data retrieval from specific parts of an external system.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_registry_data_source</span></code> module relies on the core Base module for fundamental system functionalities. It serves as a foundational component for other OpenSPP modules that require external data, acting as the primary gateway for data integration.</p>
 <p>This module provides a standardized method for defining external data sources, which can then be leveraged by other modules, such as those responsible for beneficiary registration, eligibility verification, or program enrollment. For instance, a beneficiary registration module might use a configured data source to verify a national ID against an external registry.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="data-source-management">
+<div class="section" id="data-source-management">
 <h3>Data Source Management<a class="headerlink" href="#data-source-management" title="Permalink to this headline">#</a></h3>
 <p>Users can define and manage individual external data sources within OpenSPP. Each data source requires a unique name and a target URL, which serves as the primary endpoint for communication. This ensures clear identification and organization of all integrated external systems.</p>
-</section>
-<section id="authentication-configuration">
+</div>
+<div class="section" id="authentication-configuration">
 <h3>Authentication Configuration<a class="headerlink" href="#authentication-configuration" title="Permalink to this headline">#</a></h3>
 <p>The module supports various authentication methods to secure connections with external systems. Administrators can choose from Basic Authentication, Bearer Token Authentication, or API Key-based authentication, ensuring that only authorized access is granted to sensitive external data. This flexibility accommodates different security protocols of external systems.</p>
-</section>
-<section id="url-path-definition">
+</div>
+<div class="section" id="url-path-definition">
 <h3>URL Path Definition<a class="headerlink" href="#url-path-definition" title="Permalink to this headline">#</a></h3>
 <p>For each defined data source, administrators can specify multiple named URL paths. These paths, when combined with the data source's base URL, form complete endpoints for accessing specific datasets or functionalities from the external system. This allows for granular control over which parts of an external API are accessed.</p>
-</section>
-<section id="data-field-mapping">
+</div>
+<div class="section" id="data-field-mapping">
 <h3>Data Field Mapping<a class="headerlink" href="#data-field-mapping" title="Permalink to this headline">#</a></h3>
 <p>This crucial feature allows users to define how fields from an external data source map to corresponding fields within OpenSPP. This ensures that retrieved data is correctly interpreted and stored according to OpenSPP's internal data models, streamlining the integration process and maintaining data integrity.</p>
-</section>
-<section id="parameter-management">
+</div>
+<div class="section" id="parameter-management">
 <h3>Parameter Management<a class="headerlink" href="#parameter-management" title="Permalink to this headline">#</a></h3>
 <p>Users can define specific parameters to be included in requests sent to external data sources. These parameters enable customization of queries, filtering of results, or providing necessary context for data retrieval, allowing for more precise and efficient data integration.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Registry Data Source module is critical for enabling robust data integration, allowing OpenSPP to connect with and leverage external information for comprehensive and efficient social protection program management.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

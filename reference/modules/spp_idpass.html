@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_idpass.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="id-pass">
+  <div class="section" id="id-pass">
 <h1>ID PASS<a class="headerlink" href="#id-pass" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Idpass module (technical name: spp_idpass) provides OpenSPP with the capability to securely generate and manage digital identification passes for program registrants, streamlining beneficiary verification and access to social protection services.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Idpass module enables efficient and reliable identification of beneficiaries and groups through several key capabilities:</p>
 <ul class="simple">
@@ -1673,8 +1660,8 @@ title="Print to PDF"
 <li><p><strong>Centralized ID Management</strong>: Once generated, the ID pass is stored as a digital file on the registrant's record, and their identification profile is updated. This provides a centralized and verifiable source of identification for beneficiaries.</p></li>
 <li><p><strong>Group ID Issuance</strong>: It supports issuing ID passes for groups, automatically identifying the principal recipient or head of the group to ensure accurate representation on the ID document.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Idpass module seamlessly integrates with core OpenSPP components and other registry modules:</p>
 <ul class="simple">
@@ -1682,10 +1669,10 @@ title="Print to PDF"
 <li><p>The module relies heavily on the registrant data managed by <a class="reference internal" href="g2p_registry_base.html"><span class="doc std std-doc">G2P Registry Base</span></a>, utilizing fields such as given names, family names, birth details, and gender to populate the ID pass. It also integrates with the <code class="docutils literal notranslate"><span class="pre">g2p.id.type</span></code> model to categorize the generated ID pass as a specific type of identification and with <code class="docutils literal notranslate"><span class="pre">g2p.reg.id</span></code> to record the issued ID number.</p></li>
 <li><p>When issuing ID passes for groups, OpenSPP Idpass leverages the definitions and relationships established within the <a class="reference internal" href="g2p_registry_membership.html"><span class="doc std std-doc">G2P Registry Membership</span></a> module to correctly identify the designated &quot;Head&quot; or &quot;Principal Recipient&quot; whose details will appear on the group's ID.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="id-pass-template-configuration">
+<div class="section" id="id-pass-template-configuration">
 <h3>ID Pass Template Configuration<a class="headerlink" href="#id-pass-template-configuration" title="Permalink to this headline">#</a></h3>
 <p>Users can define and manage various &quot;ID Pass Templates&quot; within the module, allowing for flexible ID generation. Each template specifies:</p>
 <ul class="simple">
@@ -1694,25 +1681,25 @@ title="Print to PDF"
 <li><p>The ID's expiry length (e.g., 1 year, 6 months, or 30 days) and a unique filename prefix for generated PDF documents.
 Templates can be activated or deactivated, providing administrators with control over which ID generation sources are currently in use.</p></li>
 </ul>
-</section>
-<section id="automated-id-issuance-for-registrants">
+</div>
+<div class="section" id="automated-id-issuance-for-registrants">
 <h3>Automated ID Issuance for Registrants<a class="headerlink" href="#automated-id-issuance-for-registrants" title="Permalink to this headline">#</a></h3>
 <p>From a registrant's profile, users can initiate a dedicated &quot;Issue ID Pass&quot; wizard. The system automatically gathers relevant registrant data (such as names, birth information, gender, and profile picture) and securely transmits it to the configured external ID generation service. For groups, the module intelligently identifies the designated &quot;Head&quot; or &quot;Principal Recipient&quot; using data from the <a class="reference internal" href="g2p_registry_membership.html"><span class="doc std std-doc">G2P Registry Membership</span></a> module, ensuring their details are correctly used for the ID. Upon successful generation, the module stores the ID pass PDF directly on the registrant's record and updates their official <code class="docutils literal notranslate"><span class="pre">g2p.reg.id</span></code> with the new ID number.</p>
-</section>
-<section id="protected-default-id-type">
+</div>
+<div class="section" id="protected-default-id-type">
 <h3>Protected Default ID Type<a class="headerlink" href="#protected-default-id-type" title="Permalink to this headline">#</a></h3>
 <p>The module introduces a default &quot;ID Pass&quot; type within the <code class="docutils literal notranslate"><span class="pre">g2p.id.type</span></code> framework. This specific ID type is protected from accidental deletion or modification by users, ensuring that the core functionality for ID Pass generation remains stable and available for all programs. This prevents critical system configurations from being inadvertently altered.</p>
-</section>
-<section id="secure-api-communication">
+</div>
+<div class="section" id="secure-api-communication">
 <h3>Secure API Communication<a class="headerlink" href="#secure-api-communication" title="Permalink to this headline">#</a></h3>
 <p>The OpenSPP Idpass module handles all secure communication with external ID generation APIs. It includes functionality to generate authentication tokens when required by the external service, using the provided credentials, and incorporates robust error handling to provide clear messages if the external service encounters issues. All API requests include timeouts to prevent system hangs, ensuring reliable operation.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Idpass module centralizes and automates the secure generation and management of digital identification passes, streamlining beneficiary identification and enhancing program delivery across social protection initiatives.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

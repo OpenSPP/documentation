@@ -1,0 +1,3537 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+<meta content="Creating Custom Scoring Formulas" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://docs.openspp.org/config_guide/scoring/custom.html" property="og:url"/>
+<meta content="OpenSPP Documentation" property="og:site_name"/>
+<meta content="This guide is for implementers building custom scoring models for program-specific needs. If PMT, vulnerability, or SWDI don't fit your requirements, you can create tailored scoring formulas using ..." property="og:description"/>
+<meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
+<meta content="OpenSPP Documentation" property="og:image:alt"/>
+<meta content="This guide is for implementers building custom scoring models for program-specific needs. If PMT, vulnerability, or SWDI don't fit your requirements, you can create tailored scoring formulas using ..." name="description"/>
+<meta content="en_US" property="og:locale"/>
+<title>Creating Custom Scoring Formulas — OpenSPP Documentation v2.0</title>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/sphinxcontrib-httpexample.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/custom.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/print.css" media="print" rel="stylesheet" type="text/css"/>
+<link href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script src="../../_static/sphinxcontrib-httpexample.js"></script>
+<script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+<script src="../../_static/search-utils.js"></script>
+<script src="../../_static/mermaid_init.js"></script>
+<script src="../../_static/patch_scrollToActive.js"></script>
+<script src="../../_static/search_shortcut.js"></script>
+<script src="../../_static/module-filter.js"></script>
+<script src="../../_static/design-tabs.js"></script>
+<link href="https://docs.openspp.org/config_guide/scoring/custom.html" rel="canonical">
+<link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v2.0" type="application/opensearchdescription+xml"/>
+<link href="../../_static/icon_192.png" rel="shortcut icon"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../../_static/review_status.css" type="text/css" />
+<script src="../../_static/review_status_simple.js"></script>
+-->
+<script crossorigin="anonymous" integrity="sha384-vJ1NXwwlC62VkTLRHyzdAfyL4rQ8Z478DeHgamh37YzGJh3T6j223FC2yMRVriLl" src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+<!-- Mermaid Support -->
+<script crossorigin="anonymous" integrity="sha384-+NGfjU8KzpDLXRHduEqW+ZiJr2rIg+cidUVk7B51R5xK7cHwMKQfrdFwGdrq1Bcz" src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+</link></link></link></link></link></link></head>
+<body data-offset="100" data-spy="scroll" data-target="#bd-toc-nav">
+<!-- Checkboxes to toggle the left sidebar -->
+<input aria-label="Toggle navigation sidebar" class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<label class="overlay overlay-navbar" for="__navigation">
+<div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input aria-label="Toggle in-page Table of Contents" class="sidebar-toggle" id="__page-toc" name="__page-toc" type="checkbox"/>
+<label class="overlay overlay-pagetoc" for="__page-toc">
+<div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+<div class="container-fluid" id="banner"></div>
+<div class="container-xl">
+<div class="row">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+<div class="bd-sidebar__content">
+<div class="bd-sidebar__top"><div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../">
+<h1 class="site-logo" id="site-title">OpenSPP Documentation v2.0</h1>
+</a>
+</div><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<div class="input-group">
+<label class="sr-only" for="q">Search string
+    </label>
+<i aria-hidden="true" class="fa fa-search fa-lg search-icon"></i>
+<input aria-labelledby="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search" spellcheck="false" type="search" value="">
+<div class="input-group-append">
+<span class="input-group-text" id="shortcut">
+<kbd id="search-shortcut">⌘</kbd> <kbd>K</kbd>
+</span>
+</div>
+</input></div>
+</form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../products/">
+   Products
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/sp_mis.html">
+     OpenSPP SP-MIS
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/social_registry.html">
+     OpenSPP Social Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/farmer_registry.html">
+     OpenSPP Farmer Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/drims.html">
+     OpenSPP DRIMS
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../products/features/">
+     Features
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/unified_registry.html">
+       Unified registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/gis_land_management.html">
+       GIS &amp; land management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/program_management.html">
+       Program management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/eligibility_targeting.html">
+       Eligibility &amp; targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/payment_disbursement.html">
+       Payment &amp; disbursement
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/in_kind_benefits.html">
+       In-Kind benefits
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/data_integration_apis.html">
+       Data integration &amp; APIs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/change_management.html">
+       Change management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/grievance_redress.html">
+       Grievance redress
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/whats_new_v2.html">
+     What's new in OpenSPP v2
+    </a>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../learn/">
+   Learn
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/registry.html">
+     Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/programs.html">
+     Programs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/cycles.html">
+     Cycles
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/eligibility.html">
+     Eligibility
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/compliance.html">
+     Compliance
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/entitlements.html">
+     Entitlements
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/payments.html">
+     Payments
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/deduplication.html">
+     Deduplication
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/change-requests.html">
+     Change requests
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../get_started/">
+   Get started
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/installation/">
+     Installing OpenSPP
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+<label for="toctree-checkbox-5">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/installation/docker.html">
+       Docker installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/modules/">
+     Module installation
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+<label for="toctree-checkbox-6">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/spmis_installation.html">
+       SP-MIS installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/social_installation.html">
+       Social Registry installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/explore/">
+     Explore OpenSPP
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_household/">
+     Your first household
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+<label for="toctree-checkbox-7">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/01_access_registry.html">
+       Step 1: Access the Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/02_create_household.html">
+       Step 2: Create a Household
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/03_add_members.html">
+       Step 3: Add members
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_program/">
+     Your first program
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+<label for="toctree-checkbox-8">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/01_access_program.html">
+       Step 1: Access the program section
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/02_create_program.html">
+       Step 2: Create your first social protection program
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/03_enroll_beneficiaries.html">
+       Step 3: Import and enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/04_run_cycle.html">
+       Step 4: Understanding program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/05_distribute_entitlements.html">
+       Step 5: Distribute entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/poc_and_pilot.html">
+     From Proof of Concept to Pilot
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../user_guide/">
+   User guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+<label for="toctree-checkbox-9">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/getting_started/">
+     Getting started
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+<label for="toctree-checkbox-10">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/navigation.html">
+       Navigating the OpenSPP interface
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/registry/">
+     Registry
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+<label for="toctree-checkbox-11">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_individual.html">
+       Register an individual
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_group.html">
+       Register a group
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/search_filter.html">
+       Search and filter registrants
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/import_data.html">
+       Import registrant data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/export_data.html">
+       Export registrant data
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/change_requests/">
+     Change Requests
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+<label for="toctree-checkbox-12">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/submit_change_request.html">
+       Submit a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/review_change_request.html">
+       Review a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/change_request_types.html">
+       Change request types
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/programs/">
+     Programs
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+<label for="toctree-checkbox-13">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/create_programs.html">
+       Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/program_cycles.html">
+       Work with program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/enroll_beneficiaries.html">
+       Enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/allocate_funds.html">
+       Allocate funds to programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/manage_entitlements.html">
+       Manage entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/payments/">
+     Payments
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+<label for="toctree-checkbox-14">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/payments/service_points.html">
+       View Service Points
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/approvals/">
+     Approvals
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+<label for="toctree-checkbox-15">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/approvals/manage_approvals.html">
+       Review and Approve Requests
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/reference/">
+     Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+<label for="toctree-checkbox-16">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/areas_geography.html">
+       Geographic Areas
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/vocabularies.html">
+       Vocabularies (Code Lists)
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../">
+   Configuration guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+<label for="toctree-checkbox-17">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../studio/">
+     OpenSPP Studio
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+<label for="toctree-checkbox-18">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/overview.html">
+       Studio Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/registry_field_builder.html">
+       Custom Fields (Registry Field Builder)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/event_type_designer.html">
+       Event Type Designer
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/change_request_builder.html">
+       Change Request Builder
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../cel/">
+     CEL expressions
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+<label for="toctree-checkbox-19">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/quick_start.html">
+       CEL quick start
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/syntax.html">
+       CEL syntax reference
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/variables.html">
+       Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/cookbook.html">
+       CEL cookbook
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/troubleshooting.html">
+       CEL troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../eligibility/">
+     Eligibility rules
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+<label for="toctree-checkbox-20">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/cel_expressions.html">
+       CEL expressions for eligibility
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/geographic_targeting.html">
+       Geographic targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/templates.html">
+       Expression templates
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/testing.html">
+       Testing eligibility rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/advanced.html">
+       Advanced eligibility configuration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../entitlement_formulas/">
+     Entitlement formulas
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+<label for="toctree-checkbox-21">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/cash_calculations.html">
+       Cash calculations
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/inkind_baskets.html">
+       In-kind and basket entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/formula_library.html">
+       Formula library
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/dynamic_entitlements.html">
+       Dynamic entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/conditional_logic.html">
+       Conditional logic
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../vocabulary/">
+     Vocabulary System
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+<label for="toctree-checkbox-22">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/overview.html">
+       Vocabulary Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/standard_vocabularies.html">
+       Standard Vocabularies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/profiles.html">
+       Vocabulary Profiles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/custom.html">
+       Custom Vocabularies
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../variables/">
+     Variables &amp; Indicators
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+<label for="toctree-checkbox-23">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/overview.html">
+       Variables Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/creating_variables.html">
+       Creating Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/variable_types.html">
+       Variable Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/using_variables.html">
+       Using Variables in CEL
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../event_data/">
+     Event Data
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+<label for="toctree-checkbox-24">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/overview.html">
+       Event Data Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/event_types.html">
+       Configuring Event Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/field_definitions.html">
+       Defining Event Fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../change_request_types/">
+     Change request types
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+<label for="toctree-checkbox-25">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/overview.html">
+       Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/creating_types.html">
+       Creating change request types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/field_mappings.html">
+       Field mappings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/conflict_detection.html">
+       Conflict and duplicate detection
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/patterns.html">
+       Common configuration patterns
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/custom_detail_models.html">
+       Custom detail models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../consent/">
+     Consent configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+<label for="toctree-checkbox-26">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/overview.html">
+       Consent management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/privacy_notices.html">
+       Configuring privacy notices
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/recording_consent.html">
+       Recording consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../consent/api_consent_filtering.html">
+       API consent filtering
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../role_configuration/">
+     Role configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+<label for="toctree-checkbox-27">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/overview.html">
+       Access control overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/assigning_roles.html">
+       Assigning roles to users
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/predefined_roles.html">
+       Predefined roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/creating_roles.html">
+       Creating custom roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../role_configuration/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../ops_guide/">
+   Operations guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+<label for="toctree-checkbox-28">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/deployment/">
+     Deployment
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+<label for="toctree-checkbox-29">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/deployment/production-hardening.html">
+       Production Hardening
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/security/">
+     Security
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+<label for="toctree-checkbox-30">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/access_control.html">
+       Access Control
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/data_classification.html">
+       Data Classification
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/pii_encryption.html">
+       PII Encryption
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/audit.html">
+       Audit Logging
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/scanning.html">
+       Security Scanning
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/storage/">
+     Storage
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/backup/">
+     Backup &amp; Recovery
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/monitoring/">
+     Monitoring &amp; Alerts
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../reference/">
+   Reference
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+<label for="toctree-checkbox-31">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../reference/modules/">
+     Modules Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+<label for="toctree-checkbox-32">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2.html">
+       API V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_cycles.html">
+       API V2 - Cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_data.html">
+       API V2 - Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_entitlements.html">
+       API V2 - Entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_products.html">
+       API V2 - Products
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_service_points.html">
+       API V2 - Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_vocabulary.html">
+       API V2 - Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_approval.html">
+       Approval Workflows
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_area.html">
+       Area Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_audit.html">
+       Audit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_banking.html">
+       Banking / Bank Details
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_common.html">
+       Base (Common)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_setting.html">
+       Base Settings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_branding_kit.html">
+       Branding Kit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_domain.html">
+       CEL Domain Query Builder
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_widget.html">
+       CEL Expression Widget
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_change_request_v2.html">
+       Change Request V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_claim_169.html">
+       QR Credentials (Claim 169)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_consent.html">
+       Consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_advanced.html">
+       CR Types - Advanced
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_base.html">
+       CR Types - Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_custom_field.html">
+       Custom Fields
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client.html">
+       DCI Client
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_crvs.html">
+       DCI Client - CRVS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_dr.html">
+       DCI Client - Disability Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_ibr.html">
+       DCI Client - IBR
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_server.html">
+       DCI Server
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_demo.html">
+       Demo
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dms.html">
+       Document Management System
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_event_data.html">
+       Event Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_gis.html">
+       GIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_gis_report.html">
+       GIS Reports
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_grm.html">
+       Grievance Redress Mechanism
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_hide_menus_base.html">
+       Hide Menus Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_mis_demo_v2.html">
+       MIS Demo V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_programs.html">
+       Programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry.html">
+       Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry_search.html">
+       Registry Search Portal
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_security.html">
+       Security
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_service_points.html">
+       Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_source_tracking.html">
+       Source Tracking
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_social_registry.html">
+       Starter: Social Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_sp_mis.html">
+       Starter: SP-MIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio.html">
+       Studio
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio_change_requests.html">
+       Studio - Change Requests
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio_events.html">
+       Studio - Events
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_user_roles.html">
+       User Roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_versioning.html">
+       Versioning
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_vocabulary.html">
+       Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/theme_openspp_muk.html">
+       Theme
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/vocabularies/">
+     Vocabulary Reference
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/glossary/humanitarian.html">
+     Humanitarian Terms Glossary
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../glossary.html">
+     OpenSPP Glossary
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../community_and_support/">
+   Community and support
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+<label for="toctree-checkbox-33">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/how_to_contribute_to_the_project.html">
+     Contributing
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/i18n_l10n.html">
+     Internationalization and Localization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/security_report.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/license.html">
+     Licensing
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+<div class="bd-sidebar__bottom">
+<!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+<p class="openspporglink">
+<a href="https://openspp.org">
+<img alt="openspp.org" src="/_static/openspp_logo.png"/> openspp.org</a>
+</p>
+</div>
+</div>
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+<div class="header-article row sticky-top noprint">
+<div class="col py-1 d-flex header-article-main">
+<div class="header-article__left">
+<label class="headerbtn" data-placement="right" data-toggle="tooltip" for="__navigation" title="Toggle navigation">
+<span class="headerbtn__icon-container">
+<i class="fas fa-bars"></i>
+</span>
+</label>
+</div>
+<div class="header-article__label">
+<span>Creating Custom Scoring Formulas</span>
+</div>
+<div class="header-article__right">
+<button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="headerbtn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+<button aria-label="Source repositories" class="headerbtn menu-dropdown__trigger">
+<i class="fab fa-github"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation" title="Source repository">
+<span class="headerbtn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fconfig_guide/scoring/custom.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<span class="headerbtn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?config_guide/scoring/custom.md#making-contributions-on-github" title="Edit this page">
+<span class="headerbtn__icon-container">
+<i class="fas fa-pencil-alt"></i>
+</span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+<button aria-label="Download this page" class="headerbtn menu-dropdown__trigger">
+<i class="fas fa-download"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/config_guide/scoring/custom.md.txt" title="Download source file">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+</li>
+<li>
+<button class="headerbtn" data-placement="left" data-toggle="tooltip" onclick="printPdf(this)" title="Print to PDF">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
+</div>
+</div>
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#when-to-create-custom-scores">
+   When to Create Custom Scores
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#custom-scoring-approaches">
+   Custom Scoring Approaches
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#approach-1-weighted-sum-with-custom-indicators">
+   Approach 1: Weighted Sum with Custom Indicators
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-youth-employment-readiness-score">
+     Example: Youth Employment Readiness Score
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-1-create-the-model">
+       Step 1: Create the Model
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-2-define-custom-indicators">
+       Step 2: Define Custom Indicators
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-3-set-thresholds">
+       Step 3: Set Thresholds
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-4-use-in-program-eligibility">
+       Step 4: Use in Program Eligibility
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#approach-2-cel-formula-scoring">
+   Approach 2: CEL Formula Scoring
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-farmer-productivity-score">
+     Example: Farmer Productivity Score
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-1-create-model-with-cel-formula">
+       Step 1: Create Model with CEL Formula
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-2-create-variables-for-formula-components">
+       Step 2: Create Variables for Formula Components
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-3-write-cel-formula">
+       Step 3: Write CEL Formula
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-4-define-thresholds">
+       Step 4: Define Thresholds
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#cel-formula-patterns">
+     CEL Formula Patterns
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#approach-3-lookup-table-scoring">
+   Approach 3: Lookup Table Scoring
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-disaster-risk-classification">
+     Example: Disaster Risk Classification
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-1-create-model">
+       Step 1: Create Model
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-2-create-combination-lookup">
+       Step 2: Create Combination Lookup
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#id1">
+       Step 3: Set Thresholds
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#approach-4-composite-scores">
+   Approach 4: Composite Scores
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-integrated-targeting-score">
+     Example: Integrated Targeting Score
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-1-ensure-base-models-exist">
+       Step 1: Ensure Base Models Exist
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-2-create-composite-model">
+       Step 2: Create Composite Model
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-3-create-variables-for-existing-scores">
+       Step 3: Create Variables for Existing Scores
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-4-write-composite-formula">
+       Step 4: Write Composite Formula
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-5-define-thresholds">
+       Step 5: Define Thresholds
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#approach-5-external-integration">
+   Approach 5: External Integration
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-ml-based-poverty-model">
+     Example: ML-Based Poverty Model
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-1-set-up-external-service">
+       Step 1: Set Up External Service
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-2-create-model-configuration">
+       Step 2: Create Model Configuration
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-3-configure-adapter">
+       Step 3: Configure Adapter
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-4-use-like-any-other-model">
+       Step 4: Use Like Any Other Model
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#advanced-patterns">
+   Advanced Patterns
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-1-time-decay-scoring">
+     Pattern 1: Time-Decay Scoring
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-2-threshold-based-bonus">
+     Pattern 2: Threshold-Based Bonus
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-3-categorical-multipliers">
+     Pattern 3: Categorical Multipliers
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-4-progressive-scoring">
+     Pattern 4: Progressive Scoring
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-5-multi-criteria-must-pass">
+     Pattern 5: Multi-Criteria Must-Pass
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#testing-custom-formulas">
+   Testing Custom Formulas
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#test-checklist">
+     Test Checklist
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#test-case-template">
+     Test Case Template
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#validation-rules">
+   Validation Rules
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#weight-validation">
+     Weight Validation
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#threshold-validation">
+     Threshold Validation
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#field-path-validation">
+     Field Path Validation
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#formula-validation">
+     Formula Validation
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#common-patterns-by-sector">
+   Common Patterns by Sector
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#education-programs">
+     Education Programs
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#health-programs">
+     Health Programs
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#livelihood-programs">
+     Livelihood Programs
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#social-services">
+     Social Services
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#are-you-stuck">
+   Are You Stuck?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#best-practices">
+   Best Practices
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#security-considerations">
+   Security Considerations
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#next-steps">
+   Next Steps
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="article row">
+<div class="col pl-md-3 pl-lg-5 content-container">
+<!-- Table of contents that is only displayed when printing the page -->
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>Creating Custom Scoring Formulas</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#when-to-create-custom-scores">
+   When to Create Custom Scores
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#custom-scoring-approaches">
+   Custom Scoring Approaches
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#approach-1-weighted-sum-with-custom-indicators">
+   Approach 1: Weighted Sum with Custom Indicators
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-youth-employment-readiness-score">
+     Example: Youth Employment Readiness Score
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-1-create-the-model">
+       Step 1: Create the Model
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-2-define-custom-indicators">
+       Step 2: Define Custom Indicators
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-3-set-thresholds">
+       Step 3: Set Thresholds
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-4-use-in-program-eligibility">
+       Step 4: Use in Program Eligibility
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#approach-2-cel-formula-scoring">
+   Approach 2: CEL Formula Scoring
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-farmer-productivity-score">
+     Example: Farmer Productivity Score
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-1-create-model-with-cel-formula">
+       Step 1: Create Model with CEL Formula
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-2-create-variables-for-formula-components">
+       Step 2: Create Variables for Formula Components
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-3-write-cel-formula">
+       Step 3: Write CEL Formula
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-4-define-thresholds">
+       Step 4: Define Thresholds
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#cel-formula-patterns">
+     CEL Formula Patterns
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#approach-3-lookup-table-scoring">
+   Approach 3: Lookup Table Scoring
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-disaster-risk-classification">
+     Example: Disaster Risk Classification
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-1-create-model">
+       Step 1: Create Model
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-2-create-combination-lookup">
+       Step 2: Create Combination Lookup
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#id1">
+       Step 3: Set Thresholds
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#approach-4-composite-scores">
+   Approach 4: Composite Scores
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-integrated-targeting-score">
+     Example: Integrated Targeting Score
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-1-ensure-base-models-exist">
+       Step 1: Ensure Base Models Exist
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-2-create-composite-model">
+       Step 2: Create Composite Model
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-3-create-variables-for-existing-scores">
+       Step 3: Create Variables for Existing Scores
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-4-write-composite-formula">
+       Step 4: Write Composite Formula
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-5-define-thresholds">
+       Step 5: Define Thresholds
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#approach-5-external-integration">
+   Approach 5: External Integration
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#example-ml-based-poverty-model">
+     Example: ML-Based Poverty Model
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-1-set-up-external-service">
+       Step 1: Set Up External Service
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-2-create-model-configuration">
+       Step 2: Create Model Configuration
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-3-configure-adapter">
+       Step 3: Configure Adapter
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-4-use-like-any-other-model">
+       Step 4: Use Like Any Other Model
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#advanced-patterns">
+   Advanced Patterns
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-1-time-decay-scoring">
+     Pattern 1: Time-Decay Scoring
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-2-threshold-based-bonus">
+     Pattern 2: Threshold-Based Bonus
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-3-categorical-multipliers">
+     Pattern 3: Categorical Multipliers
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-4-progressive-scoring">
+     Pattern 4: Progressive Scoring
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pattern-5-multi-criteria-must-pass">
+     Pattern 5: Multi-Criteria Must-Pass
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#testing-custom-formulas">
+   Testing Custom Formulas
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#test-checklist">
+     Test Checklist
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#test-case-template">
+     Test Case Template
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#validation-rules">
+   Validation Rules
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#weight-validation">
+     Weight Validation
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#threshold-validation">
+     Threshold Validation
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#field-path-validation">
+     Field Path Validation
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#formula-validation">
+     Formula Validation
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#common-patterns-by-sector">
+   Common Patterns by Sector
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#education-programs">
+     Education Programs
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#health-programs">
+     Health Programs
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#livelihood-programs">
+     Livelihood Programs
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#social-services">
+     Social Services
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#are-you-stuck">
+   Are You Stuck?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#best-practices">
+   Best Practices
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#security-considerations">
+   Security Considerations
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#next-steps">
+   Next Steps
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<main id="main-content" role="main">
+<div>
+<div class="section" id="creating-custom-scoring-formulas">
+<h1>Creating Custom Scoring Formulas<a class="headerlink" href="#creating-custom-scoring-formulas" title="Permalink to this headline">#</a></h1>
+<p>This guide is for <strong>implementers</strong> building custom scoring models for program-specific needs. If PMT, vulnerability, or SWDI don't fit your requirements, you can create tailored scoring formulas using OpenSPP's flexible scoring framework.</p>
+<div class="section" id="when-to-create-custom-scores">
+<h2>When to Create Custom Scores<a class="headerlink" href="#when-to-create-custom-scores" title="Permalink to this headline">#</a></h2>
+<p>Create custom scoring models when:</p>
+<ul class="simple">
+<li><p><strong>Program has unique targeting criteria</strong> (e.g., youth employment readiness, farmer productivity)</p></li>
+<li><p><strong>Need to combine multiple methodologies</strong> (e.g., 60% PMT + 40% vulnerability)</p></li>
+<li><p><strong>External requirements</strong> mandate specific calculation methods</p></li>
+<li><p><strong>Piloting new approaches</strong> before standardizing</p></li>
+<li><p><strong>Context-specific adaptations</strong> of standard methods</p></li>
+</ul>
+</div>
+<div class="section" id="custom-scoring-approaches">
+<h2>Custom Scoring Approaches<a class="headerlink" href="#custom-scoring-approaches" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Approach</p></th>
+<th class="head"><p>When to Use</p></th>
+<th class="head"><p>Complexity</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Weighted Sum with Custom Indicators</strong></p></td>
+<td><p>Program-specific criteria, simple formula</p></td>
+<td><p>Low</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>CEL Formula Scoring</strong></p></td>
+<td><p>Complex conditional logic, mathematical transformations</p></td>
+<td><p>Medium</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Lookup Tables</strong></p></td>
+<td><p>Direct mapping from characteristics to eligibility tiers</p></td>
+<td><p>Low</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Composite Scores</strong></p></td>
+<td><p>Combine multiple existing scores</p></td>
+<td><p>Medium</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>External Integration</strong></p></td>
+<td><p>Fetch scores from third-party systems or ML models</p></td>
+<td><p>High</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="approach-1-weighted-sum-with-custom-indicators">
+<h2>Approach 1: Weighted Sum with Custom Indicators<a class="headerlink" href="#approach-1-weighted-sum-with-custom-indicators" title="Permalink to this headline">#</a></h2>
+<p>Use OpenSPP's weighted sum method with indicators specific to your program.</p>
+<div class="section" id="example-youth-employment-readiness-score">
+<h3>Example: Youth Employment Readiness Score<a class="headerlink" href="#example-youth-employment-readiness-score" title="Permalink to this headline">#</a></h3>
+<p><strong>Goal:</strong> Score young people (18-24) for job training program eligibility.</p>
+<div class="section" id="step-1-create-the-model">
+<h4>Step 1: Create the Model<a class="headerlink" href="#step-1-create-the-model" title="Permalink to this headline">#</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Name</strong></p></td>
+<td><p>Youth Employment Readiness 2024</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Code</strong></p></td>
+<td><p>YER_2024</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Category</strong></p></td>
+<td><p>eligibility</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Calculation Method</strong></p></td>
+<td><p>weighted_sum</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Active</strong></p></td>
+<td><p>☑</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Description</strong></p></td>
+<td><p>Scores youth based on education, work experience, motivation</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="step-2-define-custom-indicators">
+<h4>Step 2: Define Custom Indicators<a class="headerlink" href="#step-2-define-custom-indicators" title="Permalink to this headline">#</a></h4>
+<p><strong>Education Level</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Code</p></td>
+<td><p>education_level</p></td>
+</tr>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>Highest Education Completed</p></td>
+</tr>
+<tr class="row-even"><td><p>Field Path</p></td>
+<td><p>individual.education_level</p></td>
+</tr>
+<tr class="row-odd"><td><p>Weight</p></td>
+<td><p>0.25</p></td>
+</tr>
+<tr class="row-even"><td><p>Calculation Type</p></td>
+<td><p>mapped</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sequence</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Value Mappings:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Input Value</p></th>
+<th class="head"><p>Output Score</p></th>
+<th class="head"><p>Reasoning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>tertiary</p></td>
+<td><p>100</p></td>
+<td><p>Ready for advanced roles</p></td>
+</tr>
+<tr class="row-odd"><td><p>vocational</p></td>
+<td><p>90</p></td>
+<td><p>Job-specific skills</p></td>
+</tr>
+<tr class="row-even"><td><p>secondary</p></td>
+<td><p>70</p></td>
+<td><p>Basic skills present</p></td>
+</tr>
+<tr class="row-odd"><td><p>primary</p></td>
+<td><p>40</p></td>
+<td><p>Needs basic training</p></td>
+</tr>
+<tr class="row-even"><td><p>none</p></td>
+<td><p>0</p></td>
+<td><p>Intensive support needed</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Previous Work Experience</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Code</p></td>
+<td><p>work_experience</p></td>
+</tr>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>Months of Work Experience</p></td>
+</tr>
+<tr class="row-even"><td><p>Field Path</p></td>
+<td><p>individual.work_experience_months</p></td>
+</tr>
+<tr class="row-odd"><td><p>Weight</p></td>
+<td><p>0.20</p></td>
+</tr>
+<tr class="row-even"><td><p>Calculation Type</p></td>
+<td><p>range</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sequence</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Value Mappings (Range):</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Output Score</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>24</p></td>
+<td><p>999</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>23</p></td>
+<td><p>75</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>11</p></td>
+<td><p>50</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>5</p></td>
+<td><p>25</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Digital Literacy</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Code</p></td>
+<td><p>digital_skills</p></td>
+</tr>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>Digital Literacy Assessment</p></td>
+</tr>
+<tr class="row-even"><td><p>Field Path</p></td>
+<td><p>individual.digital_literacy_score</p></td>
+</tr>
+<tr class="row-odd"><td><p>Weight</p></td>
+<td><p>0.20</p></td>
+</tr>
+<tr class="row-even"><td><p>Calculation Type</p></td>
+<td><p>range</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sequence</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Value Mappings (Range):</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Output Score</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>80</p></td>
+<td><p>100</p></td>
+<td><p>100</p></td>
+<td><p>Advanced (can use office software)</p></td>
+</tr>
+<tr class="row-odd"><td><p>60</p></td>
+<td><p>79</p></td>
+<td><p>75</p></td>
+<td><p>Intermediate (basic computer use)</p></td>
+</tr>
+<tr class="row-even"><td><p>40</p></td>
+<td><p>59</p></td>
+<td><p>50</p></td>
+<td><p>Basic (smartphone only)</p></td>
+</tr>
+<tr class="row-odd"><td><p>20</p></td>
+<td><p>39</p></td>
+<td><p>25</p></td>
+<td><p>Limited (minimal exposure)</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>19</p></td>
+<td><p>0</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Communication Skills</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Code</p></td>
+<td><p>communication</p></td>
+</tr>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>Communication Skills Rating</p></td>
+</tr>
+<tr class="row-even"><td><p>Field Path</p></td>
+<td><p>individual.communication_score</p></td>
+</tr>
+<tr class="row-odd"><td><p>Weight</p></td>
+<td><p>0.15</p></td>
+</tr>
+<tr class="row-even"><td><p>Calculation Type</p></td>
+<td><p>range</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sequence</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Value Mappings (Range):</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Output Score</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>10</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>70</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>40</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Motivation &amp; Interest</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Code</p></td>
+<td><p>motivation</p></td>
+</tr>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>Motivation Assessment</p></td>
+</tr>
+<tr class="row-even"><td><p>Field Path</p></td>
+<td><p>individual.motivation_score</p></td>
+</tr>
+<tr class="row-odd"><td><p>Weight</p></td>
+<td><p>0.10</p></td>
+</tr>
+<tr class="row-even"><td><p>Calculation Type</p></td>
+<td><p>range</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sequence</p></td>
+<td><p>5</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Value Mappings (Range):</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Output Score</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>10</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>70</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>40</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Barrier Factors (Inverse Scoring)</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Code</p></td>
+<td><p>barriers</p></td>
+</tr>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>Barriers to Employment Count</p></td>
+</tr>
+<tr class="row-even"><td><p>Field Path</p></td>
+<td><p>individual.employment_barriers_count</p></td>
+</tr>
+<tr class="row-odd"><td><p>Weight</p></td>
+<td><p>0.10</p></td>
+</tr>
+<tr class="row-even"><td><p>Calculation Type</p></td>
+<td><p>range</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sequence</p></td>
+<td><p>6</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Value Mappings (Range - Inverse):</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Output Score</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td><p>No barriers</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>70</p></td>
+<td><p>One barrier</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>40</p></td>
+<td><p>Two barriers</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>99</p></td>
+<td><p>0</p></td>
+<td><p>Multiple barriers</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Barriers include:</strong> Transport issues, childcare needs, health limitations, etc.</p>
+</div>
+<div class="section" id="step-3-set-thresholds">
+<h4>Step 3: Set Thresholds<a class="headerlink" href="#step-3-set-thresholds" title="Permalink to this headline">#</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Min Score</p></th>
+<th class="head"><p>Max Score</p></th>
+<th class="head"><p>Classification</p></th>
+<th class="head"><p>Priority</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>40</p></td>
+<td><p>LOW_READINESS</p></td>
+<td><p>3 (needs intensive prep)</p></td>
+</tr>
+<tr class="row-odd"><td><p>40.01</p></td>
+<td><p>65</p></td>
+<td><p>MODERATE_READINESS</p></td>
+<td><p>2 (needs basic training)</p></td>
+</tr>
+<tr class="row-even"><td><p>65.01</p></td>
+<td><p>100</p></td>
+<td><p>HIGH_READINESS</p></td>
+<td><p>1 (job-ready)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="step-4-use-in-program-eligibility">
+<h4>Step 4: Use in Program Eligibility<a class="headerlink" href="#step-4-use-in-program-eligibility" title="Permalink to this headline">#</a></h4>
+<p>In eligibility manager:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Scoring Model</p></td>
+<td><p>YER_2024</p></td>
+</tr>
+<tr class="row-odd"><td><p>Minimum Score</p></td>
+<td><p>40</p></td>
+</tr>
+</tbody>
+</table>
+<p>Youth with scores ≥ 40 are eligible. Those with LOW_READINESS are referred to foundational skills training first.</p>
+</div>
+</div>
+</div>
+<div class="section" id="approach-2-cel-formula-scoring">
+<h2>Approach 2: CEL Formula Scoring<a class="headerlink" href="#approach-2-cel-formula-scoring" title="Permalink to this headline">#</a></h2>
+<p>Use Common Expression Language (CEL) for complex calculations.</p>
+<div class="section" id="example-farmer-productivity-score">
+<h3>Example: Farmer Productivity Score<a class="headerlink" href="#example-farmer-productivity-score" title="Permalink to this headline">#</a></h3>
+<p><strong>Goal:</strong> Score farmer households for agricultural support based on land, practices, and constraints.</p>
+<div class="section" id="step-1-create-model-with-cel-formula">
+<h4>Step 1: Create Model with CEL Formula<a class="headerlink" href="#step-1-create-model-with-cel-formula" title="Permalink to this headline">#</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Name</strong></p></td>
+<td><p>Farmer Productivity Index 2024</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Code</strong></p></td>
+<td><p>FPI_2024</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Category</strong></p></td>
+<td><p>eligibility</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Calculation Method</strong></p></td>
+<td><p>cel_formula</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>CEL Expression</strong></p></td>
+<td><p>See below</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="step-2-create-variables-for-formula-components">
+<h4>Step 2: Create Variables for Formula Components<a class="headerlink" href="#step-2-create-variables-for-formula-components" title="Permalink to this headline">#</a></h4>
+<p>Go to <strong>Studio → Variables</strong> and create:</p>
+<p><strong>Land Size (hectares)</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Farm Land Size</p></td>
+</tr>
+<tr class="row-odd"><td><p>CEL Accessor</p></td>
+<td><p>farm_land_hectares</p></td>
+</tr>
+<tr class="row-even"><td><p>Field Path</p></td>
+<td><p>household.farm_land_hectares</p></td>
+</tr>
+<tr class="row-odd"><td><p>Applies To</p></td>
+<td><p>Group/Household</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Good Agricultural Practices Adoption</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>GAP Adoption Score</p></td>
+</tr>
+<tr class="row-odd"><td><p>CEL Accessor</p></td>
+<td><p>gap_score</p></td>
+</tr>
+<tr class="row-even"><td><p>Field Path</p></td>
+<td><p>household.gap_adoption_score</p></td>
+</tr>
+<tr class="row-odd"><td><p>Applies To</p></td>
+<td><p>Group/Household</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong> Score 0-10 based on practices like crop rotation, organic fertilizer, pest management.</p>
+<p><strong>Market Access</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Market Distance</p></td>
+</tr>
+<tr class="row-odd"><td><p>CEL Accessor</p></td>
+<td><p>market_distance_km</p></td>
+</tr>
+<tr class="row-even"><td><p>Field Path</p></td>
+<td><p>household.market_distance_km</p></td>
+</tr>
+<tr class="row-odd"><td><p>Applies To</p></td>
+<td><p>Group/Household</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Irrigation Access</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Has Irrigation</p></td>
+</tr>
+<tr class="row-odd"><td><p>CEL Accessor</p></td>
+<td><p>has_irrigation</p></td>
+</tr>
+<tr class="row-even"><td><p>Field Path</p></td>
+<td><p>household.has_irrigation</p></td>
+</tr>
+<tr class="row-odd"><td><p>Applies To</p></td>
+<td><p>Group/Household</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="step-3-write-cel-formula">
+<h4>Step 3: Write CEL Formula<a class="headerlink" href="#step-3-write-cel-formula" title="Permalink to this headline">#</a></h4>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="c1">// Base score from land size (0-30 points)</span>
+<span class="p">(</span><span class="nv">farm_land_hectares</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span>?<span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">:</span>
+<span class="w"> </span><span class="nv">farm_land_hectares</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span>?<span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">:</span>
+<span class="w"> </span><span class="nv">farm_land_hectares</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span>?<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">:</span>
+<span class="w"> </span><span class="nv">farm_land_hectares</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span>?<span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+
+<span class="c1">// Good agricultural practices (0-25 points)</span>
+<span class="p">(</span><span class="nv">gap_score</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2.5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+
+<span class="c1">// Market access (0-20 points, inverse distance)</span>
+<span class="p">(</span><span class="nv">market_distance_km</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span>?<span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">:</span>
+<span class="w"> </span><span class="nv">market_distance_km</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span>?<span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="p">:</span>
+<span class="w"> </span><span class="nv">market_distance_km</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span>?<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">:</span>
+<span class="w"> </span><span class="nv">market_distance_km</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span>?<span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+
+<span class="c1">// Irrigation (0-15 points)</span>
+<span class="p">(</span><span class="nv">has_irrigation</span><span class="w"> </span>?<span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+
+<span class="c1">// Household size adjustment (0-10 points, more workers = higher productivity potential)</span>
+<span class="p">(</span><span class="nv">household</span><span class="p">.</span><span class="na">member_count</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span>?<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">:</span>
+<span class="w"> </span><span class="nv">household</span><span class="p">.</span><span class="na">member_count</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span>?<span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">:</span>
+<span class="w"> </span><span class="nv">household</span><span class="p">.</span><span class="na">member_count</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span>?<span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Maximum possible score:</strong> 30 + 25 + 20 + 15 + 10 = <strong>100 points</strong></p>
+</div>
+<div class="section" id="step-4-define-thresholds">
+<h4>Step 4: Define Thresholds<a class="headerlink" href="#step-4-define-thresholds" title="Permalink to this headline">#</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Min Score</p></th>
+<th class="head"><p>Max Score</p></th>
+<th class="head"><p>Classification</p></th>
+<th class="head"><p>Support Package</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>30</p></td>
+<td><p>LOW_PRODUCTIVITY</p></td>
+<td><p>Seeds + training + tools</p></td>
+</tr>
+<tr class="row-odd"><td><p>30.01</p></td>
+<td><p>60</p></td>
+<td><p>MODERATE_PRODUCTIVITY</p></td>
+<td><p>Training + credit access</p></td>
+</tr>
+<tr class="row-even"><td><p>60.01</p></td>
+<td><p>100</p></td>
+<td><p>HIGH_PRODUCTIVITY</p></td>
+<td><p>Market linkage + bulk credit</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="cel-formula-patterns">
+<h3>CEL Formula Patterns<a class="headerlink" href="#cel-formula-patterns" title="Permalink to this headline">#</a></h3>
+<p><strong>Conditional Scoring:</strong></p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">condition</span><span class="w"> </span>?<span class="w"> </span><span class="nv">score_if_true</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nv">score_if_false</span>
+</pre></div>
+</div>
+<p><strong>Nested Conditions:</strong></p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">value</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span>?<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">:</span>
+<span class="nv">value</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span>?<span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">:</span>
+<span class="nv">value</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span>?<span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+</pre></div>
+</div>
+<p><strong>Combining Multiple Factors:</strong></p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">factor1_score</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nv">factor2_score</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nv">factor3_score</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Using Variables:</strong></p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">children_under_5</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">household_income</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span>?<span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+</pre></div>
+</div>
+<p><strong>Aggregations:</strong></p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">household</span><span class="p">.</span><span class="na">members</span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="nv">m</span><span class="p">,</span><span class="w"> </span><span class="nv">m</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">18</span><span class="p">).</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span>
+</pre></div>
+</div>
+<p><strong>Safe Division (avoid divide by zero):</strong></p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">working_adults</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span>?<span class="w"> </span><span class="p">(</span><span class="nv">dependents</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">working_adults</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="approach-3-lookup-table-scoring">
+<h2>Approach 3: Lookup Table Scoring<a class="headerlink" href="#approach-3-lookup-table-scoring" title="Permalink to this headline">#</a></h2>
+<p>Map household characteristics directly to predefined scores.</p>
+<div class="section" id="example-disaster-risk-classification">
+<h3>Example: Disaster Risk Classification<a class="headerlink" href="#example-disaster-risk-classification" title="Permalink to this headline">#</a></h3>
+<p><strong>Goal:</strong> Classify households into risk tiers for disaster preparedness programs.</p>
+<div class="section" id="step-1-create-model">
+<h4>Step 1: Create Model<a class="headerlink" href="#step-1-create-model" title="Permalink to this headline">#</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Name</strong></p></td>
+<td><p>Disaster Risk Tier Assignment</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Code</strong></p></td>
+<td><p>DISASTER_RISK_2024</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Category</strong></p></td>
+<td><p>triage</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Calculation Method</strong></p></td>
+<td><p>lookup_table</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="step-2-create-combination-lookup">
+<h4>Step 2: Create Combination Lookup<a class="headerlink" href="#step-2-create-combination-lookup" title="Permalink to this headline">#</a></h4>
+<p>Define a lookup indicator that considers multiple factors:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Code</p></td>
+<td><p>risk_tier</p></td>
+</tr>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>Risk Tier Assignment</p></td>
+</tr>
+<tr class="row-even"><td><p>Field Path</p></td>
+<td><p>household.disaster_risk_profile</p></td>
+</tr>
+<tr class="row-odd"><td><p>Weight</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>Calculation Type</p></td>
+<td><p>mapped</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Value Mappings:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Input Value</p></th>
+<th class="head"><p>Output Score</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>coastal_wood_elderly</p></td>
+<td><p>100</p></td>
+<td><p>High risk: coastal, wood house, elderly</p></td>
+</tr>
+<tr class="row-odd"><td><p>coastal_wood_family</p></td>
+<td><p>90</p></td>
+<td><p>High risk: coastal, wood house</p></td>
+</tr>
+<tr class="row-even"><td><p>coastal_concrete</p></td>
+<td><p>70</p></td>
+<td><p>Medium risk: coastal but strong house</p></td>
+</tr>
+<tr class="row-odd"><td><p>inland_wood_flood</p></td>
+<td><p>80</p></td>
+<td><p>Medium-high: inland but flood zone</p></td>
+</tr>
+<tr class="row-even"><td><p>inland_concrete</p></td>
+<td><p>30</p></td>
+<td><p>Low risk: inland, strong house</p></td>
+</tr>
+<tr class="row-odd"><td><p>highland_any</p></td>
+<td><p>10</p></td>
+<td><p>Very low risk: highland area</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> The <code class="docutils literal notranslate"><span class="pre">disaster_risk_profile</span></code> field should be calculated/assigned during registration based on location, housing type, and household composition.</p>
+</div>
+<div class="section" id="id1">
+<h4>Step 3: Set Thresholds<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Min Score</p></th>
+<th class="head"><p>Max Score</p></th>
+<th class="head"><p>Classification</p></th>
+<th class="head"><p>Response Priority</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>30</p></td>
+<td><p>TIER_3</p></td>
+<td><p>Monitoring only</p></td>
+</tr>
+<tr class="row-odd"><td><p>30.01</p></td>
+<td><p>70</p></td>
+<td><p>TIER_2</p></td>
+<td><p>Preparedness kit</p></td>
+</tr>
+<tr class="row-even"><td><p>70.01</p></td>
+<td><p>100</p></td>
+<td><p>TIER_1</p></td>
+<td><p>Priority evacuation plan</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="approach-4-composite-scores">
+<h2>Approach 4: Composite Scores<a class="headerlink" href="#approach-4-composite-scores" title="Permalink to this headline">#</a></h2>
+<p>Combine multiple existing scoring models.</p>
+<div class="section" id="example-integrated-targeting-score">
+<h3>Example: Integrated Targeting Score<a class="headerlink" href="#example-integrated-targeting-score" title="Permalink to this headline">#</a></h3>
+<p><strong>Goal:</strong> Combine poverty (PMT) and vulnerability for comprehensive targeting.</p>
+<div class="section" id="step-1-ensure-base-models-exist">
+<h4>Step 1: Ensure Base Models Exist<a class="headerlink" href="#step-1-ensure-base-models-exist" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>PMT_2024 (poverty scoring)</p></li>
+<li><p>VULN_2024 (vulnerability scoring)</p></li>
+</ul>
+</div>
+<div class="section" id="step-2-create-composite-model">
+<h4>Step 2: Create Composite Model<a class="headerlink" href="#step-2-create-composite-model" title="Permalink to this headline">#</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Name</strong></p></td>
+<td><p>Integrated Targeting Index 2024</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Code</strong></p></td>
+<td><p>ITI_2024</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Category</strong></p></td>
+<td><p>eligibility</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Calculation Method</strong></p></td>
+<td><p>cel_formula</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>CEL Expression</strong></p></td>
+<td><p>See below</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="step-3-create-variables-for-existing-scores">
+<h4>Step 3: Create Variables for Existing Scores<a class="headerlink" href="#step-3-create-variables-for-existing-scores" title="Permalink to this headline">#</a></h4>
+<p><strong>PMT Score Variable</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Latest PMT Score</p></td>
+</tr>
+<tr class="row-odd"><td><p>CEL Accessor</p></td>
+<td><p>pmt_score</p></td>
+</tr>
+<tr class="row-even"><td><p>Source Type</p></td>
+<td><p>Scoring Result</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scoring Model</p></td>
+<td><p>PMT_2024</p></td>
+</tr>
+<tr class="row-even"><td><p>Applies To</p></td>
+<td><p>Group/Household</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Vulnerability Score Variable</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Latest Vulnerability Score</p></td>
+</tr>
+<tr class="row-odd"><td><p>CEL Accessor</p></td>
+<td><p>vuln_score</p></td>
+</tr>
+<tr class="row-even"><td><p>Source Type</p></td>
+<td><p>Scoring Result</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scoring Model</p></td>
+<td><p>VULN_2024</p></td>
+</tr>
+<tr class="row-even"><td><p>Applies To</p></td>
+<td><p>Group/Household</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="step-4-write-composite-formula">
+<h4>Step 4: Write Composite Formula<a class="headerlink" href="#step-4-write-composite-formula" title="Permalink to this headline">#</a></h4>
+<p><strong>Option 1: Weighted Average</strong></p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">pmt_score</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.6</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nv">vuln_score</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Option 2: Maximum of Two</strong></p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">pmt_score</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nv">vuln_score</span><span class="w"> </span>?<span class="w"> </span><span class="nv">pmt_score</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nv">vuln_score</span>
+</pre></div>
+</div>
+<p><strong>Option 3: Conditional Combination</strong></p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="c1">// If extremely poor, use PMT score</span>
+<span class="c1">// If extremely vulnerable, use vulnerability score</span>
+<span class="c1">// Otherwise, use average</span>
+<span class="nv">pmt_score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">75</span><span class="w"> </span>?<span class="w"> </span><span class="nv">pmt_score</span><span class="w"> </span><span class="p">:</span>
+<span class="nv">vuln_score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">75</span><span class="w"> </span>?<span class="w"> </span><span class="nv">vuln_score</span><span class="w"> </span><span class="p">:</span>
+<span class="p">(</span><span class="nv">pmt_score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">vuln_score</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span>
+</pre></div>
+</div>
+<p><strong>Option 4: Multiplicative (Both Must Be High)</strong></p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="c1">// Scale so households must score high on BOTH dimensions</span>
+<span class="p">((</span><span class="nv">pmt_score</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="nv">vuln_score</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-5-define-thresholds">
+<h4>Step 5: Define Thresholds<a class="headerlink" href="#step-5-define-thresholds" title="Permalink to this headline">#</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Min Score</p></th>
+<th class="head"><p>Max Score</p></th>
+<th class="head"><p>Classification</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>40</p></td>
+<td><p>LOW_PRIORITY</p></td>
+<td><p>No assistance</p></td>
+</tr>
+<tr class="row-odd"><td><p>40.01</p></td>
+<td><p>60</p></td>
+<td><p>MEDIUM_PRIORITY</p></td>
+<td><p>Monitoring</p></td>
+</tr>
+<tr class="row-even"><td><p>60.01</p></td>
+<td><p>80</p></td>
+<td><p>HIGH_PRIORITY</p></td>
+<td><p>Standard package</p></td>
+</tr>
+<tr class="row-odd"><td><p>80.01</p></td>
+<td><p>100</p></td>
+<td><p>URGENT</p></td>
+<td><p>Priority enrollment</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="approach-5-external-integration">
+<h2>Approach 5: External Integration<a class="headerlink" href="#approach-5-external-integration" title="Permalink to this headline">#</a></h2>
+<p>Connect to external scoring services or machine learning models.</p>
+<div class="section" id="example-ml-based-poverty-model">
+<h3>Example: ML-Based Poverty Model<a class="headerlink" href="#example-ml-based-poverty-model" title="Permalink to this headline">#</a></h3>
+<p><strong>Goal:</strong> Use a machine learning model trained on consumption data to predict poverty.</p>
+<div class="section" id="step-1-set-up-external-service">
+<h4>Step 1: Set Up External Service<a class="headerlink" href="#step-1-set-up-external-service" title="Permalink to this headline">#</a></h4>
+<p>Your ML model is deployed as a REST API:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POST</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">ml</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">predict</span><span class="o">-</span><span class="n">poverty</span>
+<span class="n">Body</span><span class="p">:</span> <span class="p">{</span><span class="s2">"household_id"</span><span class="p">:</span> <span class="s2">"HH12345"</span><span class="p">,</span> <span class="s2">"features"</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}}</span>
+<span class="n">Response</span><span class="p">:</span> <span class="p">{</span><span class="s2">"poverty_score"</span><span class="p">:</span> <span class="mf">72.5</span><span class="p">,</span> <span class="s2">"confidence"</span><span class="p">:</span> <span class="mf">0.89</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-2-create-model-configuration">
+<h4>Step 2: Create Model Configuration<a class="headerlink" href="#step-2-create-model-configuration" title="Permalink to this headline">#</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Name</strong></p></td>
+<td><p>ML Poverty Prediction Model</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Code</strong></p></td>
+<td><p>ML_PMT_2024</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Category</strong></p></td>
+<td><p>poverty</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Calculation Method</strong></p></td>
+<td><p>external</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>External Endpoint</strong></p></td>
+<td><p><a class="reference external" href="https://ml.example.org/api/v1/predict-poverty">https://ml.example.org/api/v1/predict-poverty</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>External Adapter</strong></p></td>
+<td><p>(developer provides custom adapter code)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="step-3-configure-adapter">
+<h4>Step 3: Configure Adapter<a class="headerlink" href="#step-3-configure-adapter" title="Permalink to this headline">#</a></h4>
+<p><strong>Note:</strong> This requires developer support. The adapter code:</p>
+<ol class="arabic simple">
+<li><p>Collects household features from OpenSPP</p></li>
+<li><p>Formats API request</p></li>
+<li><p>Calls external service</p></li>
+<li><p>Parses response</p></li>
+<li><p>Returns score to OpenSPP</p></li>
+</ol>
+</div>
+<div class="section" id="step-4-use-like-any-other-model">
+<h4>Step 4: Use Like Any Other Model<a class="headerlink" href="#step-4-use-like-any-other-model" title="Permalink to this headline">#</a></h4>
+<p>Once configured, the external model works transparently:</p>
+<ul class="simple">
+<li><p>Calculate scores through UI or batch jobs</p></li>
+<li><p>Results stored in OpenSPP</p></li>
+<li><p>Use in eligibility criteria</p></li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul class="simple">
+<li><p>Leverage advanced ML models</p></li>
+<li><p>Model updates don't require OpenSPP changes</p></li>
+<li><p>Integration with existing government systems</p></li>
+</ul>
+<p><strong>Considerations:</strong></p>
+<ul class="simple">
+<li><p>Requires stable API connectivity</p></li>
+<li><p>Implement caching for performance</p></li>
+<li><p>Have fallback if external service is down</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="advanced-patterns">
+<h2>Advanced Patterns<a class="headerlink" href="#advanced-patterns" title="Permalink to this headline">#</a></h2>
+<div class="section" id="pattern-1-time-decay-scoring">
+<h3>Pattern 1: Time-Decay Scoring<a class="headerlink" href="#pattern-1-time-decay-scoring" title="Permalink to this headline">#</a></h3>
+<p><strong>Use case:</strong> Recent shocks matter more than old shocks.</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="c1">// Calculate weighted shock score with time decay</span>
+<span class="p">(</span><span class="nv">recent_shock_3mo</span><span class="w"> </span>?<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// Last 3 months: full weight</span>
+<span class="p">(</span><span class="nv">recent_shock_6mo</span><span class="w"> </span>?<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="o">+</span><span class="w">   </span><span class="c1">// 3-6 months: 70% weight</span>
+<span class="p">(</span><span class="nv">recent_shock_12mo</span><span class="w"> </span>?<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.4</span><span class="w">    </span><span class="c1">// 6-12 months: 40% weight</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pattern-2-threshold-based-bonus">
+<h3>Pattern 2: Threshold-Based Bonus<a class="headerlink" href="#pattern-2-threshold-based-bonus" title="Permalink to this headline">#</a></h3>
+<p><strong>Use case:</strong> Extra points if household meets multiple criteria.</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="c1">// Base score</span>
+<span class="nv">base_score</span><span class="w"> </span><span class="o">+</span>
+<span class="c1">// Bonus if BOTH conditions met</span>
+<span class="p">((</span><span class="nv">poverty_score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">75</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nv">vulnerability_score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">75</span><span class="p">)</span><span class="w"> </span>?<span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pattern-3-categorical-multipliers">
+<h3>Pattern 3: Categorical Multipliers<a class="headerlink" href="#pattern-3-categorical-multipliers" title="Permalink to this headline">#</a></h3>
+<p><strong>Use case:</strong> Score differently for different household types.</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="c1">// Adjust score based on household type</span>
+<span class="nv">household</span><span class="p">.</span><span class="na">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'female_headed'</span><span class="w"> </span>?<span class="w"> </span><span class="nv">base_score</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.2</span><span class="w"> </span><span class="p">:</span>
+<span class="nv">household</span><span class="p">.</span><span class="na">type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'disabled_member'</span><span class="w"> </span>?<span class="w"> </span><span class="nv">base_score</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.15</span><span class="w"> </span><span class="p">:</span>
+<span class="nv">base_score</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pattern-4-progressive-scoring">
+<h3>Pattern 4: Progressive Scoring<a class="headerlink" href="#pattern-4-progressive-scoring" title="Permalink to this headline">#</a></h3>
+<p><strong>Use case:</strong> Steeper penalties at extremes.</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="c1">// Non-linear scoring for overcrowding</span>
+<span class="nv">persons_per_room</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span>?<span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">:</span>
+<span class="nv">persons_per_room</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span>?<span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">:</span>
+<span class="nv">persons_per_room</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span>?<span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="p">:</span>
+<span class="nv">persons_per_room</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span>?<span class="w"> </span><span class="mi">50</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pattern-5-multi-criteria-must-pass">
+<h3>Pattern 5: Multi-Criteria Must-Pass<a class="headerlink" href="#pattern-5-multi-criteria-must-pass" title="Permalink to this headline">#</a></h3>
+<p><strong>Use case:</strong> Household must meet minimum thresholds on multiple dimensions.</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="c1">// All three conditions must be met (AND logic)</span>
+<span class="p">(</span><span class="nv">poverty_score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span>?<span class="w"> </span><span class="mi">33</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="p">(</span><span class="nv">vulnerability_score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span>?<span class="w"> </span><span class="mi">33</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="p">(</span><span class="nv">need_score</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span>?<span class="w"> </span><span class="mi">34</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="c1">// Result: 100 if all three pass, &lt; 100 otherwise</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="testing-custom-formulas">
+<h2>Testing Custom Formulas<a class="headerlink" href="#testing-custom-formulas" title="Permalink to this headline">#</a></h2>
+<div class="section" id="test-checklist">
+<h3>Test Checklist<a class="headerlink" href="#test-checklist" title="Permalink to this headline">#</a></h3>
+<p>Before activating your custom model:</p>
+<ol class="arabic simple">
+<li><p><strong>Edge Cases</strong></p>
+<ul class="simple">
+<li><p>[ ] Tested with all fields at minimum values</p></li>
+<li><p>[ ] Tested with all fields at maximum values</p></li>
+<li><p>[ ] Tested with missing optional fields</p></li>
+<li><p>[ ] Tested with unusual combinations</p></li>
+</ul>
+</li>
+<li><p><strong>Expected Outcomes</strong></p>
+<ul class="simple">
+<li><p>[ ] Poorest household scores high</p></li>
+<li><p>[ ] Wealthiest household scores low</p></li>
+<li><p>[ ] Middle-range households score in middle</p></li>
+<li><p>[ ] Classifications align with targeting goals</p></li>
+</ul>
+</li>
+<li><p><strong>Formula Validation</strong></p>
+<ul class="simple">
+<li><p>[ ] CEL expressions parse without errors</p></li>
+<li><p>[ ] All variables resolve correctly</p></li>
+<li><p>[ ] Weights sum as expected</p></li>
+<li><p>[ ] Score range matches thresholds (0-100 if thresholds use that scale)</p></li>
+</ul>
+</li>
+<li><p><strong>Performance</strong></p>
+<ul class="simple">
+<li><p>[ ] Single calculation completes in &lt; 2 seconds</p></li>
+<li><p>[ ] Batch scoring 1000 households completes in &lt; 5 minutes</p></li>
+<li><p>[ ] External APIs respond within timeout</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="test-case-template">
+<h3>Test Case Template<a class="headerlink" href="#test-case-template" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Test Name</p></th>
+<th class="head"><p>Input Values</p></th>
+<th class="head"><p>Expected Score</p></th>
+<th class="head"><p>Expected Classification</p></th>
+<th class="head"><p>Actual Score</p></th>
+<th class="head"><p>Pass/Fail</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Extreme case 1</p></td>
+<td><p>field1=X, field2=Y</p></td>
+<td><p>95</p></td>
+<td><p>HIGH</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Typical case</p></td>
+<td><p>field1=X, field2=Y</p></td>
+<td><p>60</p></td>
+<td><p>MODERATE</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Edge case</p></td>
+<td><p>field1=null</p></td>
+<td><p>0</p></td>
+<td><p>LOW</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="validation-rules">
+<h2>Validation Rules<a class="headerlink" href="#validation-rules" title="Permalink to this headline">#</a></h2>
+<p>Implement validation to prevent configuration errors:</p>
+<div class="section" id="weight-validation">
+<h3>Weight Validation<a class="headerlink" href="#weight-validation" title="Permalink to this headline">#</a></h3>
+<p>If using weighted sum:</p>
+<ul class="simple">
+<li><p>Total weight should equal 1.0 (or your chosen scale)</p></li>
+<li><p>No negative weights</p></li>
+<li><p>No single indicator weighted &gt; 0.5 (unless intentional)</p></li>
+</ul>
+</div>
+<div class="section" id="threshold-validation">
+<h3>Threshold Validation<a class="headerlink" href="#threshold-validation" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Thresholds should be contiguous (no gaps)</p></li>
+<li><p>Min scores should be &lt; max scores</p></li>
+<li><p>Thresholds should cover entire possible score range</p></li>
+</ul>
+</div>
+<div class="section" id="field-path-validation">
+<h3>Field Path Validation<a class="headerlink" href="#field-path-validation" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>All field paths must exist in the data model</p></li>
+<li><p>Field types must match calculation types (numeric for ranges, boolean for binary)</p></li>
+</ul>
+</div>
+<div class="section" id="formula-validation">
+<h3>Formula Validation<a class="headerlink" href="#formula-validation" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>CEL expressions must parse successfully</p></li>
+<li><p>All referenced variables must be defined</p></li>
+<li><p>No division by zero potential</p></li>
+<li><p>Output should be numeric</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="common-patterns-by-sector">
+<h2>Common Patterns by Sector<a class="headerlink" href="#common-patterns-by-sector" title="Permalink to this headline">#</a></h2>
+<div class="section" id="education-programs">
+<h3>Education Programs<a class="headerlink" href="#education-programs" title="Permalink to this headline">#</a></h3>
+<p><strong>Score based on:</strong></p>
+<ul class="simple">
+<li><p>School enrollment status</p></li>
+<li><p>Academic performance</p></li>
+<li><p>Attendance rate</p></li>
+<li><p>Household support for education</p></li>
+<li><p>Distance to school</p></li>
+</ul>
+</div>
+<div class="section" id="health-programs">
+<h3>Health Programs<a class="headerlink" href="#health-programs" title="Permalink to this headline">#</a></h3>
+<p><strong>Score based on:</strong></p>
+<ul class="simple">
+<li><p>Health insurance coverage</p></li>
+<li><p>Access to health facilities</p></li>
+<li><p>Vaccination status (children)</p></li>
+<li><p>Chronic illness in household</p></li>
+<li><p>Maternal health indicators</p></li>
+</ul>
+</div>
+<div class="section" id="livelihood-programs">
+<h3>Livelihood Programs<a class="headerlink" href="#livelihood-programs" title="Permalink to this headline">#</a></h3>
+<p><strong>Score based on:</strong></p>
+<ul class="simple">
+<li><p>Employment status</p></li>
+<li><p>Income stability</p></li>
+<li><p>Asset ownership</p></li>
+<li><p>Skills and training</p></li>
+<li><p>Market access</p></li>
+</ul>
+</div>
+<div class="section" id="social-services">
+<h3>Social Services<a class="headerlink" href="#social-services" title="Permalink to this headline">#</a></h3>
+<p><strong>Score based on:</strong></p>
+<ul class="simple">
+<li><p>Service utilization history</p></li>
+<li><p>Social support networks</p></li>
+<li><p>Case worker assessments</p></li>
+<li><p>Self-reported needs</p></li>
+<li><p>Previous program outcomes</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="are-you-stuck">
+<h2>Are You Stuck?<a class="headerlink" href="#are-you-stuck" title="Permalink to this headline">#</a></h2>
+<p><strong>CEL formula not evaluating?</strong>
+Test the formula in <strong>Studio → CEL Expression Tester</strong>. Check that all variables are defined and accessible.</p>
+<p><strong>Scores all coming out the same?</strong>
+Review your indicator weights and value mappings. Ensure there's variation in the data and scoring ranges.</p>
+<p><strong>Need to score based on data not in registry?</strong>
+Use Event Data to capture program-specific assessments, then reference those fields in scoring.</p>
+<p><strong>Formula too complex?</strong>
+Break it into sub-components. Create intermediate variables for complex calculations, then reference them in the main formula.</p>
+<p><strong>External integration not working?</strong>
+Check API connectivity, authentication, and timeout settings. Implement caching and fallback mechanisms.</p>
+<p><strong>How to handle missing data?</strong>
+Mark indicators as not required and set sensible defaults. Or use CEL to check for null and substitute values:</p>
+<div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">field</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span>?<span class="w"> </span><span class="nv">field</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nv">default_value</span>
+</pre></div>
+</div>
+<p><strong>Need different models for different regions?</strong>
+Create separate models (e.g., CUSTOM_URBAN_2024, CUSTOM_RURAL_2024) and use eligibility rules to apply the right model based on household location.</p>
+</div>
+<div class="section" id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Start simple:</strong> Begin with 5-8 indicators, add complexity as needed</p></li>
+<li><p><strong>Document rationale:</strong> Note why each indicator and weight was chosen</p></li>
+<li><p><strong>Test thoroughly:</strong> Use diverse test cases before going live</p></li>
+<li><p><strong>Version models:</strong> Track changes over time (MODEL_v1, MODEL_v2)</p></li>
+<li><p><strong>Monitor outcomes:</strong> After scoring, review classification distribution</p></li>
+<li><p><strong>Iterate:</strong> Adjust weights and thresholds based on field feedback</p></li>
+<li><p><strong>Combine approaches:</strong> Use multiple scoring models for different purposes</p></li>
+<li><p><strong>Keep formulas readable:</strong> Use meaningful variable names, add comments</p></li>
+<li><p><strong>Plan for updates:</strong> Design for easy adjustment as programs evolve</p></li>
+<li><p><strong>Validate with stakeholders:</strong> Ensure scoring logic aligns with program goals</p></li>
+</ol>
+</div>
+<div class="section" id="security-considerations">
+<h2>Security Considerations<a class="headerlink" href="#security-considerations" title="Permalink to this headline">#</a></h2>
+<p>Custom scoring may involve sensitive data:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Risk</p></th>
+<th class="head"><p>Mitigation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Formula exposure</strong></p></td>
+<td><p>Restrict who can view/edit scoring models</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Data leakage</strong></p></td>
+<td><p>Be careful with external API integrations</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Score manipulation</strong></p></td>
+<td><p>Audit score calculations, log changes</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Unfair scoring</strong></p></td>
+<td><p>Review for bias in indicators and weights</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+<p>Ready to implement?</p>
+<ol class="arabic simple">
+<li><p><strong>Define objectives</strong> - What are you trying to measure?</p></li>
+<li><p><strong>Identify indicators</strong> - What data points matter?</p></li>
+<li><p><strong>Choose approach</strong> - Weighted sum, CEL formula, or composite?</p></li>
+<li><p><strong>Configure model</strong> - Set up indicators, weights, thresholds</p></li>
+<li><p><strong>Test thoroughly</strong> - Use test cases to validate</p></li>
+<li><p><strong>Activate and monitor</strong> - Go live and track outcomes</p></li>
+</ol>
+<p><strong>Need inspiration?</strong></p>
+<ul class="simple">
+<li><p><strong><a class="reference internal" href="pmt.html"><span class="doc">Proxy Means Test (PMT) Configuration</span></a></strong> - Study PMT indicator selection</p></li>
+<li><p><strong><a class="reference internal" href="vulnerability.html"><span class="doc">Vulnerability Scoring Configuration</span></a></strong> - See vulnerability factor combinations</p></li>
+<li><p><strong><a class="reference internal" href="swdi.html"><span class="doc">Social Welfare Development Index (SWDI)</span></a></strong> - Learn multi-dimensional aggregation</p></li>
+</ul>
+<hr class="docutils"/>
+<p><strong>See also:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="overview.html"><span class="doc">Scoring Framework Overview</span></a> - Scoring fundamentals</p></li>
+<li><p><a class="reference internal" href="../variables/"><span class="doc">Variables &amp; Indicators</span></a> - Creating CEL variables for formulas</p></li>
+<li><p><a class="reference internal" href="../eligibility/"><span class="doc">Eligibility rules</span></a> - Using scores in program eligibility</p></li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer-article noprint">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</footer>
+</div>
+</div>
+<div class="footer-content row">
+<footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      © Copyright OpenSPP.<br/>
+<div class="extra_footer">
+<p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+</div>
+</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            var lists = $("div.toctree-wrapper ul");
+            $.each(lists, function(index, list) {
+                if($(list).find("li").length == 0) {
+                    $(list).prev().hide();
+                    $(list).hide();
+                }
+            });
+        })
+    </script>
+<script src="/_static/version_switcher.js"></script></body>
+</html>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Registrant Concepts and Terminology" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Registrant Concepts and Terminology" name="title" />
 <meta content="Core terminology for individuals, groups, group memberships, and their relationships in OpenSPP social protection systems" name="description" />
 <meta content="OpenSPP, registrant concepts, individuals, groups, memberships, relationships, social protection" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/overview/concepts/registrant_concepts.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1652,7 +1639,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="key-terminology">
+  <div class="section" id="key-terminology">
 <h1>Key terminology<a class="headerlink" href="#key-terminology" title="Permalink to this headline">#</a></h1>
 <p>Registrants are at the heart of OpenSPP.
 They are the people or groups that are being registered to be included in <a class="reference internal" href="../../reference/glossary.html#term-Social-protection"><span class="xref std std-term">social protection</span></a> programs.</p>
@@ -1667,16 +1654,16 @@ They are the people or groups that are being registered to be included in <a cla
 <p>Consider only collecting the data you really need when conducting a project.</p>
 <!--  See: [Principles for Digital Development - Address Privacy & Security](https://digitalprinciples.org/principle/address-privacy-security/). -->
 </div>
-<section id="concepts">
+<div class="section" id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">#</a></h2>
-<section id="individual">
+<div class="section" id="individual">
 <h3>Individual<a class="headerlink" href="#individual" title="Permalink to this headline">#</a></h3>
 <p>An <code class="docutils literal notranslate"><span class="pre">individual</span></code> is a registrant that represents a person.
 It will have all the fields of a <code class="docutils literal notranslate"><span class="pre">registrant</span></code> plus some additional ones.</p>
 <p><img alt="Screenshot of the individual registrant list page showing a table with columns for name, registration ID, gender, age, and address" src="../../_images/individual_list.png" /></p>
 <p><img alt="Screenshot of an individual registrant profile page displaying personal details form with fields for name, ID documents, contact information, and demographic data" src="../../_images/indivividual_ui.png" /></p>
-</section>
-<section id="group">
+</div>
+<div class="section" id="group">
 <h3>Group<a class="headerlink" href="#group" title="Permalink to this headline">#</a></h3>
 <p>A group is a <code class="docutils literal notranslate"><span class="pre">registrant</span></code> that represents a set of individuals.
 It will have all the fields of a <code class="docutils literal notranslate"><span class="pre">registrant</span></code> plus some additional ones.</p>
@@ -1698,8 +1685,8 @@ They can just contain their number of members.</p>
 <li><p>Children: 3</p></li>
 <li><p>Elderly: 2</p></li>
 </ul>
-</section>
-<section id="group-membership">
+</div>
+<div class="section" id="group-membership">
 <h3>Group membership<a class="headerlink" href="#group-membership" title="Permalink to this headline">#</a></h3>
 <p>Individuals can be part of one or more groups.
 They can have specific roles in a group.</p>
@@ -1713,8 +1700,8 @@ They can have specific roles in a group.</p>
 <p>An <code class="docutils literal notranslate"><span class="pre">admin</span></code> has the right to add other roles using the configuration menu.</p>
 <p><img alt="Screenshot of the group membership type configuration page showing form fields to define membership roles and their properties" src="../../_images/group_membership_type.png" /></p>
 <p>An individual can be the head of a group but have another or no role in another group.</p>
-</section>
-<section id="registrants-relations">
+</div>
+<div class="section" id="registrants-relations">
 <h3>Registrants relations<a class="headerlink" href="#registrants-relations" title="Permalink to this headline">#</a></h3>
 <p>When you need to store the relationship between registrants those relations can be useful.</p>
 <p><img alt="Screenshot of the registrant relations interface showing a list of relationships between registrants with columns for relation type, source, and target registrant" src="../../_images/registrant_relations.png" /></p>
@@ -1732,16 +1719,16 @@ They can have specific roles in a group.</p>
 <li><p>Caretaker (Individual - Group)</p></li>
 <li><p>Neighbour (Group - Group)</p></li>
 </ul>
-</section>
-<section id="id-documents">
+</div>
+<div class="section" id="id-documents">
 <h3>ID Documents<a class="headerlink" href="#id-documents" title="Permalink to this headline">#</a></h3>
 <p>Registrants can have one or more ID Documents.</p>
 <p><img alt="Screenshot of the registrant ID documents interface showing a list of identity documents with columns for document type, ID number, and validity status" src="../../_images/registrant_ids.png" /></p>
 <p>The system does not enforce uniqueness of ID Documents by default.
 If uniqueness is required, <a class="reference internal" href="../../reference/glossary.html#term-Deduplication"><span class="xref std std-term">deduplication</span></a> should be performed.</p>
 <p>ID Document types can be configured by an administrator.</p>
-</section>
-<section id="event-data">
+</div>
+<div class="section" id="event-data">
 <h3>Event Data<a class="headerlink" href="#event-data" title="Permalink to this headline">#</a></h3>
 <p>Event data is a way to store information about a registrant that is not part of the registrant's profile.
 It allows to store information without the need to modify the registrant's profile, providing following <a class="reference internal" href="../../reference/glossary.html#term-Benefits"><span class="xref std std-term">benefits</span></a>:</p>
@@ -1759,9 +1746,9 @@ It allows to store information without the need to modify the registrant's profi
 <li><p>Data that loses relevance over time</p></li>
 </ul>
 <p>The data stored in <code class="docutils literal notranslate"><span class="pre">Event</span> <span class="pre">Data</span></code> can be used in OpenSPP as a normal field by using computed fields.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

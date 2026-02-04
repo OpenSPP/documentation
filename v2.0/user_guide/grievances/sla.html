@@ -1,0 +1,2520 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+<meta content="SLA Tracking and Escalation" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://docs.openspp.org/user_guide/grievances/sla.html" property="og:url"/>
+<meta content="OpenSPP Documentation" property="og:site_name"/>
+<meta content="This guide is for users who need to monitor response times and escalate grievances that risk missing their deadlines. What You'll Do: Track Service Level Agreement (SLA) deadlines for grievance tic..." property="og:description"/>
+<meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
+<meta content="OpenSPP Documentation" property="og:image:alt"/>
+<meta content="This guide is for users who need to monitor response times and escalate grievances that risk missing their deadlines. What You'll Do: Track Service Level Agreement (SLA) deadlines for grievance tic..." name="description"/>
+<meta content="en_US" property="og:locale"/>
+<title>SLA Tracking and Escalation — OpenSPP Documentation v2.0</title>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/sphinxcontrib-httpexample.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/custom.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/print.css" media="print" rel="stylesheet" type="text/css"/>
+<link href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script src="../../_static/sphinxcontrib-httpexample.js"></script>
+<script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+<script src="../../_static/search-utils.js"></script>
+<script src="../../_static/mermaid_init.js"></script>
+<script src="../../_static/patch_scrollToActive.js"></script>
+<script src="../../_static/search_shortcut.js"></script>
+<script src="../../_static/module-filter.js"></script>
+<script src="../../_static/design-tabs.js"></script>
+<link href="https://docs.openspp.org/user_guide/grievances/sla.html" rel="canonical">
+<link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v2.0" type="application/opensearchdescription+xml"/>
+<link href="../../_static/icon_192.png" rel="shortcut icon"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../../_static/review_status.css" type="text/css" />
+<script src="../../_static/review_status_simple.js"></script>
+-->
+<script crossorigin="anonymous" integrity="sha384-vJ1NXwwlC62VkTLRHyzdAfyL4rQ8Z478DeHgamh37YzGJh3T6j223FC2yMRVriLl" src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+<!-- Mermaid Support -->
+<script crossorigin="anonymous" integrity="sha384-+NGfjU8KzpDLXRHduEqW+ZiJr2rIg+cidUVk7B51R5xK7cHwMKQfrdFwGdrq1Bcz" src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+</link></link></link></link></link></link></head>
+<body data-offset="100" data-spy="scroll" data-target="#bd-toc-nav">
+<!-- Checkboxes to toggle the left sidebar -->
+<input aria-label="Toggle navigation sidebar" class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<label class="overlay overlay-navbar" for="__navigation">
+<div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input aria-label="Toggle in-page Table of Contents" class="sidebar-toggle" id="__page-toc" name="__page-toc" type="checkbox"/>
+<label class="overlay overlay-pagetoc" for="__page-toc">
+<div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+<div class="container-fluid" id="banner"></div>
+<div class="container-xl">
+<div class="row">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+<div class="bd-sidebar__content">
+<div class="bd-sidebar__top"><div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../">
+<h1 class="site-logo" id="site-title">OpenSPP Documentation v2.0</h1>
+</a>
+</div><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<div class="input-group">
+<label class="sr-only" for="q">Search string
+    </label>
+<i aria-hidden="true" class="fa fa-search fa-lg search-icon"></i>
+<input aria-labelledby="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search" spellcheck="false" type="search" value="">
+<div class="input-group-append">
+<span class="input-group-text" id="shortcut">
+<kbd id="search-shortcut">⌘</kbd> <kbd>K</kbd>
+</span>
+</div>
+</input></div>
+</form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../products/">
+   Products
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/sp_mis.html">
+     OpenSPP SP-MIS
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/social_registry.html">
+     OpenSPP Social Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/farmer_registry.html">
+     OpenSPP Farmer Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/drims.html">
+     OpenSPP DRIMS
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../products/features/">
+     Features
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/unified_registry.html">
+       Unified registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/gis_land_management.html">
+       GIS &amp; land management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/program_management.html">
+       Program management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/eligibility_targeting.html">
+       Eligibility &amp; targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/payment_disbursement.html">
+       Payment &amp; disbursement
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/in_kind_benefits.html">
+       In-Kind benefits
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/data_integration_apis.html">
+       Data integration &amp; APIs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/change_management.html">
+       Change management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/grievance_redress.html">
+       Grievance redress
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/whats_new_v2.html">
+     What's new in OpenSPP v2
+    </a>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../learn/">
+   Learn
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/registry.html">
+     Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/programs.html">
+     Programs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/cycles.html">
+     Cycles
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/eligibility.html">
+     Eligibility
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/compliance.html">
+     Compliance
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/entitlements.html">
+     Entitlements
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/payments.html">
+     Payments
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/deduplication.html">
+     Deduplication
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/change-requests.html">
+     Change requests
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../get_started/">
+   Get started
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/installation/">
+     Installing OpenSPP
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+<label for="toctree-checkbox-5">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/installation/docker.html">
+       Docker installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/modules/">
+     Module installation
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+<label for="toctree-checkbox-6">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/spmis_installation.html">
+       SP-MIS installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/social_installation.html">
+       Social Registry installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/explore/">
+     Explore OpenSPP
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_household/">
+     Your first household
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+<label for="toctree-checkbox-7">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/01_access_registry.html">
+       Step 1: Access the Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/02_create_household.html">
+       Step 2: Create a Household
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/03_add_members.html">
+       Step 3: Add members
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_program/">
+     Your first program
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+<label for="toctree-checkbox-8">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/01_access_program.html">
+       Step 1: Access the program section
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/02_create_program.html">
+       Step 2: Create your first social protection program
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/03_enroll_beneficiaries.html">
+       Step 3: Import and enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/04_run_cycle.html">
+       Step 4: Understanding program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/05_distribute_entitlements.html">
+       Step 5: Distribute entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/poc_and_pilot.html">
+     From Proof of Concept to Pilot
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../">
+   User guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+<label for="toctree-checkbox-9">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../getting_started/">
+     Getting started
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+<label for="toctree-checkbox-10">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../getting_started/navigation.html">
+       Navigating the OpenSPP interface
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../registry/">
+     Registry
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+<label for="toctree-checkbox-11">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../registry/register_individual.html">
+       Register an individual
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../registry/register_group.html">
+       Register a group
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../registry/search_filter.html">
+       Search and filter registrants
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../registry/import_data.html">
+       Import registrant data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../registry/export_data.html">
+       Export registrant data
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../change_requests/">
+     Change Requests
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+<label for="toctree-checkbox-12">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_requests/submit_change_request.html">
+       Submit a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_requests/review_change_request.html">
+       Review a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_requests/change_request_types.html">
+       Change request types
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../programs/">
+     Programs
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+<label for="toctree-checkbox-13">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../programs/create_programs.html">
+       Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../programs/program_cycles.html">
+       Work with program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../programs/enroll_beneficiaries.html">
+       Enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../programs/allocate_funds.html">
+       Allocate funds to programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../programs/manage_entitlements.html">
+       Manage entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../payments/">
+     Payments
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+<label for="toctree-checkbox-14">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../payments/service_points.html">
+       View Service Points
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../approvals/">
+     Approvals
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+<label for="toctree-checkbox-15">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../approvals/manage_approvals.html">
+       Review and Approve Requests
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../reference/">
+     Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+<label for="toctree-checkbox-16">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../reference/areas_geography.html">
+       Geographic Areas
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../reference/vocabularies.html">
+       Vocabularies (Code Lists)
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../config_guide/">
+   Configuration guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+<label for="toctree-checkbox-17">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/studio/">
+     OpenSPP Studio
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+<label for="toctree-checkbox-18">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/overview.html">
+       Studio Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/registry_field_builder.html">
+       Custom Fields (Registry Field Builder)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/event_type_designer.html">
+       Event Type Designer
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/change_request_builder.html">
+       Change Request Builder
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/cel/">
+     CEL expressions
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+<label for="toctree-checkbox-19">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/quick_start.html">
+       CEL quick start
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/syntax.html">
+       CEL syntax reference
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/variables.html">
+       Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/cookbook.html">
+       CEL cookbook
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/troubleshooting.html">
+       CEL troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/eligibility/">
+     Eligibility rules
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+<label for="toctree-checkbox-20">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/cel_expressions.html">
+       CEL expressions for eligibility
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/geographic_targeting.html">
+       Geographic targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/templates.html">
+       Expression templates
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/testing.html">
+       Testing eligibility rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/advanced.html">
+       Advanced eligibility configuration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/">
+     Entitlement formulas
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+<label for="toctree-checkbox-21">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/cash_calculations.html">
+       Cash calculations
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/inkind_baskets.html">
+       In-kind and basket entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/formula_library.html">
+       Formula library
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/dynamic_entitlements.html">
+       Dynamic entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/conditional_logic.html">
+       Conditional logic
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/vocabulary/">
+     Vocabulary System
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+<label for="toctree-checkbox-22">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/overview.html">
+       Vocabulary Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/standard_vocabularies.html">
+       Standard Vocabularies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/profiles.html">
+       Vocabulary Profiles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/custom.html">
+       Custom Vocabularies
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/variables/">
+     Variables &amp; Indicators
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+<label for="toctree-checkbox-23">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/overview.html">
+       Variables Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/creating_variables.html">
+       Creating Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/variable_types.html">
+       Variable Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/using_variables.html">
+       Using Variables in CEL
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/event_data/">
+     Event Data
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+<label for="toctree-checkbox-24">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/overview.html">
+       Event Data Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/event_types.html">
+       Configuring Event Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/field_definitions.html">
+       Defining Event Fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/change_request_types/">
+     Change request types
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+<label for="toctree-checkbox-25">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/overview.html">
+       Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/creating_types.html">
+       Creating change request types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/field_mappings.html">
+       Field mappings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/conflict_detection.html">
+       Conflict and duplicate detection
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/patterns.html">
+       Common configuration patterns
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/custom_detail_models.html">
+       Custom detail models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/consent/">
+     Consent configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+<label for="toctree-checkbox-26">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/overview.html">
+       Consent management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/privacy_notices.html">
+       Configuring privacy notices
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/recording_consent.html">
+       Recording consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/api_consent_filtering.html">
+       API consent filtering
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/role_configuration/">
+     Role configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+<label for="toctree-checkbox-27">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/overview.html">
+       Access control overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/assigning_roles.html">
+       Assigning roles to users
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/predefined_roles.html">
+       Predefined roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/creating_roles.html">
+       Creating custom roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../ops_guide/">
+   Operations guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+<label for="toctree-checkbox-28">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/deployment/">
+     Deployment
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+<label for="toctree-checkbox-29">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/deployment/production-hardening.html">
+       Production Hardening
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/security/">
+     Security
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+<label for="toctree-checkbox-30">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/access_control.html">
+       Access Control
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/data_classification.html">
+       Data Classification
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/pii_encryption.html">
+       PII Encryption
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/audit.html">
+       Audit Logging
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/scanning.html">
+       Security Scanning
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/storage/">
+     Storage
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/backup/">
+     Backup &amp; Recovery
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/monitoring/">
+     Monitoring &amp; Alerts
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../reference/">
+   Reference
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+<label for="toctree-checkbox-31">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../reference/modules/">
+     Modules Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+<label for="toctree-checkbox-32">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2.html">
+       API V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_cycles.html">
+       API V2 - Cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_data.html">
+       API V2 - Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_entitlements.html">
+       API V2 - Entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_products.html">
+       API V2 - Products
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_service_points.html">
+       API V2 - Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_vocabulary.html">
+       API V2 - Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_approval.html">
+       Approval Workflows
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_area.html">
+       Area Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_audit.html">
+       Audit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_banking.html">
+       Banking / Bank Details
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_common.html">
+       Base (Common)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_setting.html">
+       Base Settings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_branding_kit.html">
+       Branding Kit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_domain.html">
+       CEL Domain Query Builder
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_widget.html">
+       CEL Expression Widget
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_change_request_v2.html">
+       Change Request V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_claim_169.html">
+       QR Credentials (Claim 169)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_consent.html">
+       Consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_advanced.html">
+       CR Types - Advanced
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_base.html">
+       CR Types - Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_custom_field.html">
+       Custom Fields
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client.html">
+       DCI Client
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_crvs.html">
+       DCI Client - CRVS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_dr.html">
+       DCI Client - Disability Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_ibr.html">
+       DCI Client - IBR
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_server.html">
+       DCI Server
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_demo.html">
+       Demo
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dms.html">
+       Document Management System
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_event_data.html">
+       Event Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_gis.html">
+       GIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_gis_report.html">
+       GIS Reports
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_grm.html">
+       Grievance Redress Mechanism
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_hide_menus_base.html">
+       Hide Menus Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_mis_demo_v2.html">
+       MIS Demo V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_programs.html">
+       Programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry.html">
+       Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry_search.html">
+       Registry Search Portal
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_security.html">
+       Security
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_service_points.html">
+       Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_source_tracking.html">
+       Source Tracking
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_social_registry.html">
+       Starter: Social Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_sp_mis.html">
+       Starter: SP-MIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio.html">
+       Studio
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio_change_requests.html">
+       Studio - Change Requests
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio_events.html">
+       Studio - Events
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_user_roles.html">
+       User Roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_versioning.html">
+       Versioning
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_vocabulary.html">
+       Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/theme_openspp_muk.html">
+       Theme
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/vocabularies/">
+     Vocabulary Reference
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/glossary/humanitarian.html">
+     Humanitarian Terms Glossary
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../glossary.html">
+     OpenSPP Glossary
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../community_and_support/">
+   Community and support
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+<label for="toctree-checkbox-33">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/how_to_contribute_to_the_project.html">
+     Contributing
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/i18n_l10n.html">
+     Internationalization and Localization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/security_report.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/license.html">
+     Licensing
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+<div class="bd-sidebar__bottom">
+<!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+<p class="openspporglink">
+<a href="https://openspp.org">
+<img alt="openspp.org" src="/_static/openspp_logo.png"/> openspp.org</a>
+</p>
+</div>
+</div>
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+<div class="header-article row sticky-top noprint">
+<div class="col py-1 d-flex header-article-main">
+<div class="header-article__left">
+<label class="headerbtn" data-placement="right" data-toggle="tooltip" for="__navigation" title="Toggle navigation">
+<span class="headerbtn__icon-container">
+<i class="fas fa-bars"></i>
+</span>
+</label>
+</div>
+<div class="header-article__label">
+<span>SLA Tracking and Escalation</span>
+</div>
+<div class="header-article__right">
+<button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="headerbtn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+<button aria-label="Source repositories" class="headerbtn menu-dropdown__trigger">
+<i class="fab fa-github"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation" title="Source repository">
+<span class="headerbtn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fuser_guide/grievances/sla.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<span class="headerbtn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?user_guide/grievances/sla.md#making-contributions-on-github" title="Edit this page">
+<span class="headerbtn__icon-container">
+<i class="fas fa-pencil-alt"></i>
+</span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+<button aria-label="Download this page" class="headerbtn menu-dropdown__trigger">
+<i class="fas fa-download"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/user_guide/grievances/sla.md.txt" title="Download source file">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+</li>
+<li>
+<button class="headerbtn" data-placement="left" data-toggle="tooltip" onclick="printPdf(this)" title="Print to PDF">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
+</div>
+</div>
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-you-ll-do">
+   What You'll Do
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#before-you-start">
+   Before You Start
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#understanding-slas">
+   Understanding SLAs
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-is-an-sla">
+     What is an SLA?
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sla-time-targets">
+     SLA Time Targets
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sla-status-indicators">
+     SLA Status Indicators
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#monitoring-your-slas">
+   Monitoring Your SLAs
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#view-your-sla-dashboard">
+     1. View Your SLA Dashboard
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#check-sla-deadline">
+     2. Check SLA Deadline
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#filter-tickets-by-sla-status">
+     3. Filter Tickets by SLA Status
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sort-by-deadline">
+     4. Sort by Deadline
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#taking-action-on-at-risk-tickets">
+   Taking Action on At-Risk Tickets
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prioritize-your-workload">
+     5. Prioritize Your Workload
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#fast-track-investigation">
+     6. Fast-Track Investigation
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#request-deadline-extension-if-needed">
+     7. Request Deadline Extension (If Needed)
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#escalation-procedures">
+   Escalation Procedures
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#when-to-escalate">
+     8. When to Escalate
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#escalate-to-supervisor">
+     9. Escalate to Supervisor
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#escalate-to-specialized-team">
+     10. Escalate to Specialized Team
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#automatic-escalations">
+   Automatic Escalations
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#understanding-auto-escalation-rules">
+     11. Understanding Auto-Escalation Rules
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#responding-to-auto-escalated-tickets">
+     12. Responding to Auto-Escalated Tickets
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#supervisor-sla-monitoring">
+   Supervisor SLA Monitoring
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#team-sla-dashboard-supervisors">
+     13. Team SLA Dashboard (Supervisors)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#identify-performance-issues">
+     14. Identify Performance Issues
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#reassign-to-balance-workload">
+     15. Reassign to Balance Workload
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#approve-extension-requests">
+     16. Approve Extension Requests
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sla-reporting">
+   SLA Reporting
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#generate-sla-reports">
+     17. Generate SLA Reports
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#export-sla-data">
+     18. Export SLA Data
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#best-practices">
+   Best Practices
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#daily-routine-for-officers">
+     Daily Routine for Officers
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#weekly-routine-for-supervisors">
+     Weekly Routine for Supervisors
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sla-improvement-tips">
+     SLA Improvement Tips
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#are-you-stuck">
+   Are You Stuck?
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="article row">
+<div class="col pl-md-3 pl-lg-5 content-container">
+<!-- Table of contents that is only displayed when printing the page -->
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>SLA Tracking and Escalation</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-you-ll-do">
+   What You'll Do
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#before-you-start">
+   Before You Start
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#understanding-slas">
+   Understanding SLAs
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-is-an-sla">
+     What is an SLA?
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sla-time-targets">
+     SLA Time Targets
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sla-status-indicators">
+     SLA Status Indicators
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#monitoring-your-slas">
+   Monitoring Your SLAs
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#view-your-sla-dashboard">
+     1. View Your SLA Dashboard
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#check-sla-deadline">
+     2. Check SLA Deadline
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#filter-tickets-by-sla-status">
+     3. Filter Tickets by SLA Status
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sort-by-deadline">
+     4. Sort by Deadline
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#taking-action-on-at-risk-tickets">
+   Taking Action on At-Risk Tickets
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prioritize-your-workload">
+     5. Prioritize Your Workload
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#fast-track-investigation">
+     6. Fast-Track Investigation
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#request-deadline-extension-if-needed">
+     7. Request Deadline Extension (If Needed)
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#escalation-procedures">
+   Escalation Procedures
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#when-to-escalate">
+     8. When to Escalate
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#escalate-to-supervisor">
+     9. Escalate to Supervisor
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#escalate-to-specialized-team">
+     10. Escalate to Specialized Team
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#automatic-escalations">
+   Automatic Escalations
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#understanding-auto-escalation-rules">
+     11. Understanding Auto-Escalation Rules
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#responding-to-auto-escalated-tickets">
+     12. Responding to Auto-Escalated Tickets
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#supervisor-sla-monitoring">
+   Supervisor SLA Monitoring
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#team-sla-dashboard-supervisors">
+     13. Team SLA Dashboard (Supervisors)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#identify-performance-issues">
+     14. Identify Performance Issues
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#reassign-to-balance-workload">
+     15. Reassign to Balance Workload
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#approve-extension-requests">
+     16. Approve Extension Requests
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sla-reporting">
+   SLA Reporting
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#generate-sla-reports">
+     17. Generate SLA Reports
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#export-sla-data">
+     18. Export SLA Data
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#best-practices">
+   Best Practices
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#daily-routine-for-officers">
+     Daily Routine for Officers
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#weekly-routine-for-supervisors">
+     Weekly Routine for Supervisors
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#sla-improvement-tips">
+     SLA Improvement Tips
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#are-you-stuck">
+   Are You Stuck?
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<main id="main-content" role="main">
+<div>
+<div class="section" id="sla-tracking-and-escalation">
+<h1>SLA Tracking and Escalation<a class="headerlink" href="#sla-tracking-and-escalation" title="Permalink to this headline">#</a></h1>
+<p>This guide is for <strong>users</strong> who need to monitor response times and escalate grievances that risk missing their deadlines.</p>
+<div class="section" id="what-you-ll-do">
+<h2>What You'll Do<a class="headerlink" href="#what-you-ll-do" title="Permalink to this headline">#</a></h2>
+<p>Track Service Level Agreement (SLA) deadlines for grievance tickets, identify at-risk tickets, and take action to ensure timely resolution.</p>
+</div>
+<div class="section" id="before-you-start">
+<h2>Before You Start<a class="headerlink" href="#before-you-start" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>You need <strong>GRM Officer</strong> or <strong>GRM Supervisor</strong> access</p></li>
+<li><p>Understand your organization's SLA policies for different complaint types</p></li>
+<li><p>Know your escalation procedures and who to contact</p></li>
+</ul>
+</div>
+<div class="section" id="understanding-slas">
+<h2>Understanding SLAs<a class="headerlink" href="#understanding-slas" title="Permalink to this headline">#</a></h2>
+<div class="section" id="what-is-an-sla">
+<h3>What is an SLA?<a class="headerlink" href="#what-is-an-sla" title="Permalink to this headline">#</a></h3>
+<p>A Service Level Agreement (SLA) is the <strong>maximum time</strong> allowed to resolve a ticket. It's calculated based on:</p>
+<ul class="simple">
+<li><p><strong>Severity</strong> of the complaint</p></li>
+<li><p><strong>Category</strong> of the complaint</p></li>
+<li><p><strong>Sensitivity</strong> level</p></li>
+<li><p>Business days vs calendar days (depending on configuration)</p></li>
+</ul>
+</div>
+<div class="section" id="sla-time-targets">
+<h3>SLA Time Targets<a class="headerlink" href="#sla-time-targets" title="Permalink to this headline">#</a></h3>
+<p>Typical SLA targets by severity:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Severity</p></th>
+<th class="head"><p>SLA Target</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Critical</strong></p></td>
+<td><p>24 hours</p></td>
+<td><p>GBV report, safety hazard, severe corruption</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>High</strong></p></td>
+<td><p>3 business days</p></td>
+<td><p>Payment failures affecting many people, urgent appeals</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Medium</strong></p></td>
+<td><p>7 business days</p></td>
+<td><p>Individual payment issues, eligibility appeals</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Low</strong></p></td>
+<td><p>14 business days</p></td>
+<td><p>Information requests, minor service quality issues</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Your organization may have different SLA targets. Check your GRM policies or ask your supervisor for specific targets.</p>
+</div>
+</div>
+<div class="section" id="sla-status-indicators">
+<h3>SLA Status Indicators<a class="headerlink" href="#sla-status-indicators" title="Permalink to this headline">#</a></h3>
+<p>The system uses color codes to show SLA status:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Color</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Meaning</p></th>
+<th class="head"><p>Time Remaining</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>🟢 Green</p></td>
+<td><p>On Track</p></td>
+<td><p>Resolution time is comfortable</p></td>
+<td><p>&gt; 25% of SLA remaining</p></td>
+</tr>
+<tr class="row-odd"><td><p>🟡 Amber</p></td>
+<td><p>At Risk</p></td>
+<td><p>Deadline approaching, needs attention</p></td>
+<td><p>10-25% of SLA remaining</p></td>
+</tr>
+<tr class="row-even"><td><p>🔴 Red</p></td>
+<td><p>Breached</p></td>
+<td><p>Past deadline, urgent action needed</p></td>
+<td><p>Overdue</p></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Screenshot should show: Ticket list view with tickets showing different SLA color indicators - green, amber, and red badges next to ticket numbers" src="user_guide/grievances/sla/1_sla_indicators.png"/></p>
+</div>
+</div>
+<div class="section" id="monitoring-your-slas">
+<h2>Monitoring Your SLAs<a class="headerlink" href="#monitoring-your-slas" title="Permalink to this headline">#</a></h2>
+<div class="section" id="view-your-sla-dashboard">
+<h3>1. View Your SLA Dashboard<a class="headerlink" href="#view-your-sla-dashboard" title="Permalink to this headline">#</a></h3>
+<p>Click <strong>GRM</strong> → <strong>My Dashboard</strong></p>
+<p>The dashboard shows tickets organized by SLA status with visual indicators.</p>
+<p><img alt="Screenshot should show: GRM Dashboard with tickets in columns, color-coded by SLA status, with counters showing number of tickets in each status" src="user_guide/grievances/sla/2_sla_dashboard.png"/></p>
+</div>
+<div class="section" id="check-sla-deadline">
+<h3>2. Check SLA Deadline<a class="headerlink" href="#check-sla-deadline" title="Permalink to this headline">#</a></h3>
+<p>Open any ticket to see SLA details:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>What It Shows</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>SLA Deadline</strong></p></td>
+<td><p>Target date and time for resolution</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SLA Status</strong></p></td>
+<td><p>On Track / At Risk / Breached</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Time Remaining</strong></p></td>
+<td><p>Days/hours left (e.g., "2 days 5 hours remaining")</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Days Open</strong></p></td>
+<td><p>How long ticket has been open</p></td>
+</tr>
+</tbody>
+</table>
+<p>The deadline is shown in the top banner of the ticket form.</p>
+<p><img alt="Screenshot should show: Ticket form with SLA information prominently displayed in top banner - deadline date, status badge, and countdown timer" src="user_guide/grievances/sla/3_ticket_sla_details.png"/></p>
+</div>
+<div class="section" id="filter-tickets-by-sla-status">
+<h3>3. Filter Tickets by SLA Status<a class="headerlink" href="#filter-tickets-by-sla-status" title="Permalink to this headline">#</a></h3>
+<p>To focus on urgent tickets:</p>
+<ol class="arabic simple">
+<li><p>Go to <strong>GRM</strong> → <strong>Tickets</strong></p></li>
+<li><p>Click <strong>Filters</strong> in the left sidebar</p></li>
+<li><p>Select filter options:</p>
+<ul class="simple">
+<li><p><strong>SLA Status</strong>: At Risk or Breached</p></li>
+<li><p><strong>Assigned To</strong>: Me</p></li>
+<li><p><strong>Stage</strong>: In Review (tickets requiring action)</p></li>
+</ul>
+</li>
+<li><p>Click <strong>Apply Filter</strong></p></li>
+</ol>
+<p><img alt='Screenshot should show: Ticket list with left sidebar filters panel visible, SLA Status filter expanded showing options like "At Risk" and "Breached" selected' src="user_guide/grievances/sla/4_filter_by_sla.png"/></p>
+</div>
+<div class="section" id="sort-by-deadline">
+<h3>4. Sort by Deadline<a class="headerlink" href="#sort-by-deadline" title="Permalink to this headline">#</a></h3>
+<p>To work on most urgent tickets first:</p>
+<ol class="arabic simple">
+<li><p>In the tickets list, click the <strong>SLA Deadline</strong> column header</p></li>
+<li><p>Tickets sort from earliest to latest deadline</p></li>
+<li><p>Red (breached) tickets appear at the top</p></li>
+</ol>
+<p><img alt="Screenshot should show: Ticket list with SLA Deadline column header highlighted, and tickets sorted with overdue ones at top showing red indicators" src="user_guide/grievances/sla/5_sort_by_deadline.png"/></p>
+</div>
+</div>
+<div class="section" id="taking-action-on-at-risk-tickets">
+<h2>Taking Action on At-Risk Tickets<a class="headerlink" href="#taking-action-on-at-risk-tickets" title="Permalink to this headline">#</a></h2>
+<div class="section" id="prioritize-your-workload">
+<h3>5. Prioritize Your Workload<a class="headerlink" href="#prioritize-your-workload" title="Permalink to this headline">#</a></h3>
+<p><strong>For Officers</strong>: Review your dashboard daily</p>
+<p><strong>Priority order:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Red (Breached)</strong> - Work on these immediately</p></li>
+<li><p><strong>Amber (At Risk)</strong> - Schedule time today or tomorrow</p></li>
+<li><p><strong>Green (On Track)</strong> - Normal workflow</p></li>
+</ol>
+<p><strong>Time management tip:</strong> Block out time each morning for breached tickets before starting other work.</p>
+<p><img alt="Screenshot should show: Daily work planning view with tickets organized by priority - Breached section at top, At Risk middle, On Track bottom" src="user_guide/grievances/sla/6_prioritize_workload.png"/></p>
+</div>
+<div class="section" id="fast-track-investigation">
+<h3>6. Fast-Track Investigation<a class="headerlink" href="#fast-track-investigation" title="Permalink to this headline">#</a></h3>
+<p>For at-risk tickets, streamline your investigation:</p>
+<p><strong>Quick checks:</strong></p>
+<ul class="simple">
+<li><p>Review description and category</p></li>
+<li><p>Check most relevant record (payment, enrollment, etc.)</p></li>
+<li><p>Contact complainant immediately if information is missing</p></li>
+<li><p>Make decision based on available evidence</p></li>
+</ul>
+<p><strong>Document efficiently:</strong></p>
+<ul class="simple">
+<li><p>Use bullet points in notes</p></li>
+<li><p>Focus on key facts only</p></li>
+<li><p>Skip lengthy explanations until ticket is resolved</p></li>
+</ul>
+<p><img alt="Screenshot should show: Ticket in investigation view with timer visible showing time remaining, and streamlined investigation checklist visible in notes" src="user_guide/grievances/sla/7_fast_track_investigation.png"/></p>
+</div>
+<div class="section" id="request-deadline-extension-if-needed">
+<h3>7. Request Deadline Extension (If Needed)<a class="headerlink" href="#request-deadline-extension-if-needed" title="Permalink to this headline">#</a></h3>
+<p>If you legitimately need more time:</p>
+<ol class="arabic simple">
+<li><p>Click <strong>Request Extension</strong> button</p></li>
+<li><p>Select reason:</p>
+<ul class="simple">
+<li><p>Waiting for information from complainant</p></li>
+<li><p>Requires coordination with external agency</p></li>
+<li><p>Complex investigation requiring more time</p></li>
+<li><p>Technical system issues preventing resolution</p></li>
+</ul>
+</li>
+<li><p>Justify the request (explain why you need more time)</p></li>
+<li><p>Propose new deadline</p></li>
+<li><p>Click <strong>Submit</strong></p></li>
+</ol>
+<p>Your supervisor receives the request and can approve or deny.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Extension requests should be exceptional. Overuse of extensions may indicate workload issues or training needs.</p>
+</div>
+<p><img alt="Screenshot should show: Request Extension dialog with reason dropdown, justification text field, and new deadline picker" src="user_guide/grievances/sla/8_request_extension.png"/></p>
+</div>
+</div>
+<div class="section" id="escalation-procedures">
+<h2>Escalation Procedures<a class="headerlink" href="#escalation-procedures" title="Permalink to this headline">#</a></h2>
+<div class="section" id="when-to-escalate">
+<h3>8. When to Escalate<a class="headerlink" href="#when-to-escalate" title="Permalink to this headline">#</a></h3>
+<p>Escalate a ticket when:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Situation</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Can't meet deadline</strong></p></td>
+<td><p>Need supervisor to prioritize or reassign</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Lack authority</strong></p></td>
+<td><p>Decision requires higher approval level</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Policy unclear</strong></p></td>
+<td><p>Need guidance on how to handle the case</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Complex investigation</strong></p></td>
+<td><p>Need specialist expertise or resources</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Complainant dispute</strong></p></td>
+<td><p>Conflict you can't resolve at your level</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Serious issues</strong></p></td>
+<td><p>Corruption, abuse, safety concerns</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="escalate-to-supervisor">
+<h3>9. Escalate to Supervisor<a class="headerlink" href="#escalate-to-supervisor" title="Permalink to this headline">#</a></h3>
+<p>To escalate within GRM:</p>
+<ol class="arabic simple">
+<li><p>Open the ticket</p></li>
+<li><p>Click <strong>Escalate</strong> button in toolbar</p></li>
+<li><p>Select <strong>Escalate to</strong>: Choose supervisor or specific person</p></li>
+<li><p>Provide clear reason:</p>
+<ul class="simple">
+<li><p>What you've done so far</p></li>
+<li><p>What's blocking you</p></li>
+<li><p>What you need from them</p></li>
+<li><p>Deadline context (e.g., "Due in 6 hours")</p></li>
+</ul>
+</li>
+<li><p>Click <strong>Escalate</strong></p></li>
+</ol>
+<p>Ticket moves to "Escalated" stage. Supervisor receives urgent notification.</p>
+<p><img alt="Screenshot should show: Escalate dialog with escalation target selection, reason field with sample text explaining the escalation need, and urgency indicator" src="user_guide/grievances/sla/9_escalate_ticket.png"/></p>
+</div>
+<div class="section" id="escalate-to-specialized-team">
+<h3>10. Escalate to Specialized Team<a class="headerlink" href="#escalate-to-specialized-team" title="Permalink to this headline">#</a></h3>
+<p>Some issues need specialist handling:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Team</p></th>
+<th class="head"><p>Handles</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Protection Team</strong></p></td>
+<td><p>GBV, child abuse, exploitation</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Finance Team</strong></p></td>
+<td><p>Payment system errors, bulk payment issues</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Eligibility Team</strong></p></td>
+<td><p>Complex targeting disputes, appeals</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>IT Support</strong></p></td>
+<td><p>Portal access, system errors</p></td>
+</tr>
+</tbody>
+</table>
+<p>To route to specialist team:</p>
+<ol class="arabic simple">
+<li><p>Open ticket</p></li>
+<li><p>Change <strong>Team</strong> field to specialist team</p></li>
+<li><p>Add note in Chatter explaining why you're routing it</p></li>
+<li><p>Click <strong>Save</strong></p></li>
+</ol>
+<p><img alt="Screenshot should show: Ticket form with Team dropdown open showing specialized teams, and Chatter note being added to explain routing decision" src="user_guide/grievances/sla/10_route_to_specialist.png"/></p>
+</div>
+</div>
+<div class="section" id="automatic-escalations">
+<h2>Automatic Escalations<a class="headerlink" href="#automatic-escalations" title="Permalink to this headline">#</a></h2>
+<div class="section" id="understanding-auto-escalation-rules">
+<h3>11. Understanding Auto-Escalation Rules<a class="headerlink" href="#understanding-auto-escalation-rules" title="Permalink to this headline">#</a></h3>
+<p>Your system may have automatic escalation rules configured:</p>
+<p><strong>Common auto-escalation triggers:</strong></p>
+<ul class="simple">
+<li><p>SLA breached by more than 24 hours</p></li>
+<li><p>Critical severity tickets not reviewed within 2 hours</p></li>
+<li><p>Highly sensitive tickets (GBV, child abuse) - immediate escalation</p></li>
+<li><p>Third complaint from same beneficiary within 6 months</p></li>
+<li><p>Staff misconduct complaints</p></li>
+</ul>
+<p>When auto-escalation happens:</p>
+<ul class="simple">
+<li><p>System changes ticket stage to "Escalated"</p></li>
+<li><p>Supervisor or designated person is automatically notified</p></li>
+<li><p>SLA deadline may be extended per policy</p></li>
+<li><p>Escalation is logged in ticket chatter</p></li>
+</ul>
+<p><img alt='Screenshot should show: Ticket with auto-escalation indicator, Chatter log showing "System automatically escalated this ticket" message with rule name and reason' src="user_guide/grievances/sla/11_auto_escalation.png"/></p>
+</div>
+<div class="section" id="responding-to-auto-escalated-tickets">
+<h3>12. Responding to Auto-Escalated Tickets<a class="headerlink" href="#responding-to-auto-escalated-tickets" title="Permalink to this headline">#</a></h3>
+<p>If you receive an auto-escalated ticket:</p>
+<ol class="arabic simple">
+<li><p>Check the escalation reason in Chatter</p></li>
+<li><p>Review what the original officer did (if applicable)</p></li>
+<li><p>Take immediate action:</p>
+<ul class="simple">
+<li><p>Make the decision if you have authority</p></li>
+<li><p>Re-assign to correct person/team</p></li>
+<li><p>Investigate urgently</p></li>
+</ul>
+</li>
+<li><p>Respond within your supervisor SLA (usually 24 hours)</p></li>
+</ol>
+<p><img alt="Screenshot should show: Escalated ticket view with escalation banner at top highlighting urgency, and action buttons for supervisors prominent" src="user_guide/grievances/sla/12_respond_to_escalation.png"/></p>
+</div>
+</div>
+<div class="section" id="supervisor-sla-monitoring">
+<h2>Supervisor SLA Monitoring<a class="headerlink" href="#supervisor-sla-monitoring" title="Permalink to this headline">#</a></h2>
+<div class="section" id="team-sla-dashboard-supervisors">
+<h3>13. Team SLA Dashboard (Supervisors)<a class="headerlink" href="#team-sla-dashboard-supervisors" title="Permalink to this headline">#</a></h3>
+<p><strong>For Supervisors</strong>: Click <strong>GRM</strong> → <strong>Team Dashboard</strong></p>
+<p>Monitor team-wide SLA performance:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Metric</p></th>
+<th class="head"><p>What It Shows</p></th>
+<th class="head"><p>Target</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>SLA Compliance Rate</strong></p></td>
+<td><p>% of tickets resolved within SLA</p></td>
+<td><p>&gt; 90%</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Average Resolution Time</strong></p></td>
+<td><p>Mean time to resolve tickets</p></td>
+<td><p>Varies by severity</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Breached Tickets</strong></p></td>
+<td><p>Count of overdue tickets</p></td>
+<td><p>Minimize</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>At Risk Tickets</strong></p></td>
+<td><p>Count of tickets approaching deadline</p></td>
+<td><p>Monitor daily</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Tickets per Officer</strong></p></td>
+<td><p>Workload distribution</p></td>
+<td><p>Balanced across team</p></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Screenshot should show: Supervisor dashboard with SLA performance gauge showing percentage, bar chart of resolution times by category, and list of breached tickets" src="user_guide/grievances/sla/13_supervisor_dashboard.png"/></p>
+</div>
+<div class="section" id="identify-performance-issues">
+<h3>14. Identify Performance Issues<a class="headerlink" href="#identify-performance-issues" title="Permalink to this headline">#</a></h3>
+<p><strong>Warning signs to watch for:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Issue</p></th>
+<th class="head"><p>Indicator</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Officer overloaded</strong></p></td>
+<td><p>One officer has many at-risk tickets</p></td>
+<td><p>Reassign some tickets</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Category bottleneck</strong></p></td>
+<td><p>One category has high breach rate</p></td>
+<td><p>Review if special skills needed</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Repeat extensions</strong></p></td>
+<td><p>Same officer requests many extensions</p></td>
+<td><p>Training or workload review</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Low compliance rate</strong></p></td>
+<td><p>Team SLA compliance below 85%</p></td>
+<td><p>Process review, resources check</p></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Screenshot should show: Performance analysis view highlighting officer with high at-risk ticket count and category with low resolution rate" src="user_guide/grievances/sla/14_performance_issues.png"/></p>
+</div>
+<div class="section" id="reassign-to-balance-workload">
+<h3>15. Reassign to Balance Workload<a class="headerlink" href="#reassign-to-balance-workload" title="Permalink to this headline">#</a></h3>
+<p>To address overload:</p>
+<ol class="arabic simple">
+<li><p>Go to <strong>Team Dashboard</strong></p></li>
+<li><p>Check <strong>Tickets per Officer</strong> chart</p></li>
+<li><p>Select tickets from overloaded officer (use checkboxes)</p></li>
+<li><p>Click <strong>Action</strong> → <strong>Reassign</strong></p></li>
+<li><p>Choose officer with lighter workload and appropriate skills</p></li>
+<li><p>Click <strong>Reassign</strong></p></li>
+</ol>
+<p>Officers receive notifications of new assignments.</p>
+<p><img alt="Screenshot should show: Team dashboard with ticket selection active, Action menu open showing Reassign option, and officer workload bar chart visible" src="user_guide/grievances/sla/15_reassign_workload.png"/></p>
+</div>
+<div class="section" id="approve-extension-requests">
+<h3>16. Approve Extension Requests<a class="headerlink" href="#approve-extension-requests" title="Permalink to this headline">#</a></h3>
+<p>When an officer requests deadline extension:</p>
+<ol class="arabic simple">
+<li><p>Go to <strong>GRM</strong> → <strong>Extension Requests</strong></p></li>
+<li><p>Click on request to review</p></li>
+<li><p>Check:</p>
+<ul class="simple">
+<li><p>Is reason valid?</p></li>
+<li><p>Have they made reasonable progress?</p></li>
+<li><p>Is new deadline realistic?</p></li>
+</ul>
+</li>
+<li><p>Options:</p>
+<ul class="simple">
+<li><p><strong>Approve</strong> - Extends deadline as requested</p></li>
+<li><p><strong>Approve with Changes</strong> - Set different deadline</p></li>
+<li><p><strong>Deny</strong> - Explain what officer should do instead</p></li>
+</ul>
+</li>
+</ol>
+<p><img alt="Screenshot should show: Extension request approval screen with request details, justification visible, and Approve/Deny buttons with comments field" src="user_guide/grievances/sla/16_approve_extension.png"/></p>
+</div>
+</div>
+<div class="section" id="sla-reporting">
+<h2>SLA Reporting<a class="headerlink" href="#sla-reporting" title="Permalink to this headline">#</a></h2>
+<div class="section" id="generate-sla-reports">
+<h3>17. Generate SLA Reports<a class="headerlink" href="#generate-sla-reports" title="Permalink to this headline">#</a></h3>
+<p>To track SLA performance over time:</p>
+<ol class="arabic simple">
+<li><p>Go to <strong>GRM</strong> → <strong>Reports</strong> → <strong>SLA Performance</strong></p></li>
+<li><p>Select time period (e.g., Last Month, Last Quarter)</p></li>
+<li><p>Optional filters:</p>
+<ul class="simple">
+<li><p>Team</p></li>
+<li><p>Category</p></li>
+<li><p>Severity</p></li>
+</ul>
+</li>
+<li><p>Click <strong>Generate Report</strong></p></li>
+</ol>
+<p>Report shows:</p>
+<ul class="simple">
+<li><p>Compliance rate trend</p></li>
+<li><p>Average resolution time by category</p></li>
+<li><p>Top reasons for breaches</p></li>
+<li><p>Officer-level performance</p></li>
+</ul>
+<p><img alt="Screenshot should show: SLA Performance Report with line graph showing compliance rate over time, and data table breaking down performance by category and officer" src="user_guide/grievances/sla/17_sla_reports.png"/></p>
+</div>
+<div class="section" id="export-sla-data">
+<h3>18. Export SLA Data<a class="headerlink" href="#export-sla-data" title="Permalink to this headline">#</a></h3>
+<p>To export for analysis:</p>
+<ol class="arabic simple">
+<li><p>In any ticket list or dashboard, click <strong>Export</strong> button</p></li>
+<li><p>Choose format:</p>
+<ul class="simple">
+<li><p><strong>Excel</strong> - For data analysis</p></li>
+<li><p><strong>CSV</strong> - For importing to other tools</p></li>
+<li><p><strong>PDF</strong> - For sharing/printing</p></li>
+</ul>
+</li>
+<li><p>Select fields to include (SLA Deadline, Days Open, Resolution Time, etc.)</p></li>
+<li><p>Click <strong>Export</strong></p></li>
+</ol>
+<p><img alt="Screenshot should show: Export dialog with format options and field selection checkboxes, emphasizing SLA-related fields" src="user_guide/grievances/sla/18_export_data.png"/></p>
+</div>
+</div>
+<div class="section" id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">#</a></h2>
+<div class="section" id="daily-routine-for-officers">
+<h3>Daily Routine for Officers<a class="headerlink" href="#daily-routine-for-officers" title="Permalink to this headline">#</a></h3>
+<p><strong>Morning (15 minutes):</strong></p>
+<ol class="arabic simple">
+<li><p>Check dashboard for breached tickets (red) - prioritize these</p></li>
+<li><p>Review at-risk tickets (amber) - plan to work on today</p></li>
+<li><p>Respond to any complainant messages from overnight</p></li>
+</ol>
+<p><strong>Throughout day:</strong></p>
+<ol class="arabic simple">
+<li><p>Work on oldest tickets first within each SLA status</p></li>
+<li><p>Log progress notes as you go (don't wait until end of day)</p></li>
+<li><p>Flag issues early - don't wait until deadline to escalate</p></li>
+</ol>
+<p><strong>Before leaving (10 minutes):</strong></p>
+<ol class="arabic simple">
+<li><p>Update ticket statuses</p></li>
+<li><p>Set follow-up activities for next day</p></li>
+<li><p>Check if any tickets moved from green to amber</p></li>
+</ol>
+</div>
+<div class="section" id="weekly-routine-for-supervisors">
+<h3>Weekly Routine for Supervisors<a class="headerlink" href="#weekly-routine-for-supervisors" title="Permalink to this headline">#</a></h3>
+<p><strong>Monday:</strong></p>
+<ul class="simple">
+<li><p>Review weekend accumulation (if any)</p></li>
+<li><p>Check team workload distribution</p></li>
+<li><p>Approve pending extension requests</p></li>
+</ul>
+<p><strong>Mid-week:</strong></p>
+<ul class="simple">
+<li><p>Review SLA compliance metrics</p></li>
+<li><p>Follow up on escalated tickets</p></li>
+<li><p>Coach officers struggling with deadlines</p></li>
+</ul>
+<p><strong>Friday:</strong></p>
+<ul class="simple">
+<li><p>Review week's performance</p></li>
+<li><p>Plan for next week's workload</p></li>
+<li><p>Address any recurring issues</p></li>
+</ul>
+</div>
+<div class="section" id="sla-improvement-tips">
+<h3>SLA Improvement Tips<a class="headerlink" href="#sla-improvement-tips" title="Permalink to this headline">#</a></h3>
+<p><strong>For Officers:</strong></p>
+<ul class="simple">
+<li><p><strong>Front-load the investigation</strong>: Gather all information early, don't procrastinate</p></li>
+<li><p><strong>Set internal mini-deadlines</strong>: Aim to finish 2 days before SLA deadline</p></li>
+<li><p><strong>Ask for help early</strong>: Don't wait until the last minute to escalate</p></li>
+<li><p><strong>Use templates</strong>: Speed up communication with standard messages</p></li>
+<li><p><strong>Batch similar tasks</strong>: Handle all payment issues together, all eligibility issues together</p></li>
+</ul>
+<p><strong>For Supervisors:</strong></p>
+<ul class="simple">
+<li><p><strong>Review SLA rules regularly</strong>: Are they realistic? Do they need adjustment?</p></li>
+<li><p><strong>Identify training needs</strong>: If same issue causes delays repeatedly, train team</p></li>
+<li><p><strong>Remove bottlenecks</strong>: If approvals slow things down, streamline approval process</p></li>
+<li><p><strong>Recognize good performance</strong>: Thank officers who consistently meet SLAs</p></li>
+<li><p><strong>Analyze breach patterns</strong>: Learn from misses to prevent future ones</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="are-you-stuck">
+<h2>Are You Stuck?<a class="headerlink" href="#are-you-stuck" title="Permalink to this headline">#</a></h2>
+<p><strong>SLA deadline seems wrong or unfair?</strong>
+SLA is calculated automatically based on category and severity. If it's consistently too short or too long for certain types, talk to your supervisor about adjusting the SLA rules. Individual tickets can be extended if there's good reason.</p>
+<p><strong>Can't meet SLA because waiting for external agency response?</strong>
+Document your attempts to contact them in Chatter (dates, methods, who you contacted). Request extension with this documentation. Consider escalating to supervisor who may have higher-level contacts.</p>
+<p><strong>SLA keeps getting extended and ticket is very old?</strong>
+This may indicate the case is too complex for GRM and should be converted to Case Management. Case Management is designed for long-term, ongoing issues. Discuss with your supervisor.</p>
+<p><strong>Officer's SLA performance is poor - what to do?</strong>
+Have a conversation to understand why:</p>
+<ul class="simple">
+<li><p>Too many tickets? → Reassign some</p></li>
+<li><p>Lack of skills? → Provide training</p></li>
+<li><p>Not prioritizing correctly? → Coach on time management</p></li>
+<li><p>System issues? → Escalate to IT
+Don't assume poor performance = bad worker. Often there's a fixable root cause.</p></li>
+</ul>
+<p><strong>System shows ticket as breached but you resolved it on time?</strong>
+Check if there's a time zone issue. Contact your system administrator. Also check if the system is counting business days vs calendar days correctly.</p>
+<p><strong>Complainant keeps adding new issues and deadline pressure builds?</strong>
+If they raise a different issue, create a new ticket. Keep the original ticket focused on the original complaint only. This keeps investigation clear and prevents scope creep.</p>
+<p><strong>Critical ticket assigned to someone on leave?</strong>
+Supervisors can see all tickets. If you're covering for someone, check their dashboard and reassign any critical/urgent tickets to available officers. Don't let tickets breach because someone is out.</p>
+<p><strong>Getting auto-escalation notifications for tickets that don't need escalation?</strong>
+The auto-escalation rules may need adjustment. Document which tickets are being incorrectly escalated and discuss with your supervisor or system administrator. Rules are configurable.</p>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer-article noprint">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+</footer>
+</div>
+</div>
+<div class="footer-content row">
+<footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      © Copyright OpenSPP.<br/>
+<div class="extra_footer">
+<p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+</div>
+</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            var lists = $("div.toctree-wrapper ul");
+            $.each(lists, function(index, list) {
+                if($(list).find("li").length == 0) {
+                    $(list).prev().hide();
+                    $(list).hide();
+                }
+            });
+        })
+    </script>
+<script src="/_static/version_switcher.js"></script></body>
+</html>

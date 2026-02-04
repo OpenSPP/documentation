@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_encryption_rest_api.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1670,10 +1657,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-encryption-rest-api">
+  <div class="section" id="g2p-encryption-rest-api">
 <h1>G2P Encryption Rest Api<a class="headerlink" href="#g2p-encryption-rest-api" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_encryption_rest_api</span></code> module provides a secure REST API interface to OpenSPP's core encryption and cryptographic services. It allows external systems and applications to securely interact with and leverage OpenSPP's underlying encryption capabilities.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module accomplishes the crucial task of exposing OpenSPP's cryptographic functionalities to the outside world in a secure and standardized manner.</p>
 <ul class="simple">
@@ -1683,37 +1670,37 @@ title="Print to PDF"
 <li><p><strong>Enables Interoperability</strong>: Ensures that OpenSPP can securely integrate with other platforms requiring cryptographic operations, for example, verifying identity tokens or securing data transfers.</p></li>
 <li><p><strong>Manages API Endpoint Security</strong>: Establishes a specific 'security' application endpoint within OpenSPP's API framework, ensuring that all encryption-related API calls are routed and managed securely.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_encryption_rest_api</span></code> module builds upon and extends other foundational OpenSPP components.</p>
 <p>This module directly depends on the <a class="reference internal" href="g2p_encryption.html"><span class="doc std std-doc">G2P Encryption</span></a> module, which provides the core framework for managing encryption providers and defining generic encryption methods. The <code class="docutils literal notranslate"><span class="pre">g2p_encryption_rest_api</span></code> module then makes these underlying cryptographic services, such as JWT signing/verification and JWKS retrieval, accessible via a robust REST API.</p>
 <p>It integrates with OpenSPP's <code class="docutils literal notranslate"><span class="pre">fastapi.endpoint</span></code> management system by adding a specific &quot;Security Endpoint&quot; application type. This ensures that the cryptographic API routes are properly registered, managed, and secured within the platform's overall API infrastructure, allowing for consistent control and discoverability of these vital services.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="dedicated-security-endpoint-management">
+<div class="section" id="dedicated-security-endpoint-management">
 <h3>Dedicated Security Endpoint Management<a class="headerlink" href="#dedicated-security-endpoint-management" title="Permalink to this headline">#</a></h3>
 <p>This module establishes a specific 'security' application type for API endpoints within OpenSPP's framework. This segregation ensures that all API calls related to encryption and cryptographic services are routed and managed through a dedicated, secure channel, maintaining strict control over access to sensitive operations.</p>
-</section>
-<section id="standard-well-known-endpoint-support">
+</div>
+<div class="section" id="standard-well-known-endpoint-support">
 <h3>Standard <code class="docutils literal notranslate"><span class="pre">/.well-known</span></code> Endpoint Support<a class="headerlink" href="#standard-well-known-endpoint-support" title="Permalink to this headline">#</a></h3>
 <p>The module implements support for the industry-standard <code class="docutils literal notranslate"><span class="pre">/.well-known</span></code> endpoint. This is critical for security and interoperability, as it allows external systems to automatically discover and retrieve public security configurations, such as JSON Web Key Sets (JWKS), which are essential for verifying digital signatures on tokens like JWTs issued by OpenSPP.</p>
-</section>
-<section id="external-access-to-cryptographic-operations">
+</div>
+<div class="section" id="external-access-to-cryptographic-operations">
 <h3>External Access to Cryptographic Operations<a class="headerlink" href="#external-access-to-cryptographic-operations" title="Permalink to this headline">#</a></h3>
 <p>By exposing the <code class="docutils literal notranslate"><span class="pre">g2p_encryption</span></code> module's capabilities via a REST API, this module enables authorized external applications to programmatically perform cryptographic operations. This includes capabilities like verifying JSON Web Tokens (JWTs) for authentication or retrieving public keys for secure communication, significantly enhancing OpenSPP's ability to integrate securely with external services.</p>
-</section>
-<section id="api-endpoint-synchronization">
+</div>
+<div class="section" id="api-endpoint-synchronization">
 <h3>API Endpoint Synchronization<a class="headerlink" href="#api-endpoint-synchronization" title="Permalink to this headline">#</a></h3>
 <p>The module provides functionality to synchronize the exposed API endpoints with OpenSPP's registry. This ensures that any changes or updates to the security API endpoints are consistently reflected across the system, maintaining the integrity and discoverability of the cryptographic services.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_encryption_rest_api</span></code> module is essential for securely exposing OpenSPP's core cryptographic capabilities to external systems, facilitating secure data exchange and robust integration.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

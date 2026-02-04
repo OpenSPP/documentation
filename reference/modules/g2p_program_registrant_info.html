@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_program_registrant_info.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-program-registrant-info">
+  <div class="section" id="g2p-program-registrant-info">
 <h1>G2P Program Registrant Info<a class="headerlink" href="#g2p-program-registrant-info" title="Permalink to this headline">#</a></h1>
 <p>The G2P Program Registrant Info module provides a centralized system for managing a beneficiary's application or enrollment details for specific social protection programs. It tracks the lifecycle of each application, from initial submission through to completion or rejection, and flexibly stores all program-specific information.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module establishes a dedicated record for each beneficiary's application to a program, enabling robust tracking and data management:</p>
 <ul class="simple">
@@ -1672,8 +1659,8 @@ title="Print to PDF"
 <li><p><strong>Integrates Program Lifecycle</strong>: It links the application record to the beneficiary's program membership and subsequent entitlements, ensuring a comprehensive view of their journey within the program.</p></li>
 </ul>
 <p>This module is crucial for maintaining accurate, up-to-date records of beneficiary participation and progress in various social protection initiatives.</p>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The 'G2P Program Registrant Info' module seamlessly integrates with several core OpenSPP modules to provide a holistic view of program participation:</p>
 <ul class="simple">
@@ -1682,31 +1669,31 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">G2P Programs</span></a></strong>: This module defines the <code class="docutils literal notranslate"><span class="pre">g2p.program</span></code> model, which is essential for identifying the specific program an application is for. It also manages <code class="docutils literal notranslate"><span class="pre">g2p.program_membership</span></code> and <code class="docutils literal notranslate"><span class="pre">g2p.entitlement</span></code> records, which are directly linked and updated by this module.</p></li>
 </ul>
 <p>This module is foundational for the program management lifecycle, serving modules like <code class="docutils literal notranslate"><span class="pre">g2p_programs</span></code> by providing the detailed application context for membership enrollment and entitlement processing. It enables the system to track an application's journey from submission to benefit delivery.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="application-lifecycle-management">
+<div class="section" id="application-lifecycle-management">
 <h3>Application Lifecycle Management<a class="headerlink" href="#application-lifecycle-management" title="Permalink to this headline">#</a></h3>
 <p>This module provides a clear, auditable path for each beneficiary's application to a program. Users can view and track the status of an application as it progresses through different stages. The system automatically updates the application status, for example, setting it to &quot;In Progress&quot; upon enrollment in a program or &quot;Completed&quot; once an entitlement is approved, ensuring real-time visibility into the application's journey.</p>
-</section>
-<section id="flexible-program-information-storage">
+</div>
+<div class="section" id="flexible-program-information-storage">
 <h3>Flexible Program Information Storage<a class="headerlink" href="#flexible-program-information-storage" title="Permalink to this headline">#</a></h3>
 <p>Each program often requires unique data points for its beneficiaries. This module addresses this by allowing programs to store highly specific, custom information directly within the application record using a flexible JSON format. This eliminates the need for complex database modifications and allows for rapid adaptation to new program data requirements.</p>
-</section>
-<section id="unique-application-identification">
+</div>
+<div class="section" id="unique-application-identification">
 <h3>Unique Application Identification<a class="headerlink" href="#unique-application-identification" title="Permalink to this headline">#</a></h3>
 <p>To simplify tracking and reporting, the module automatically generates a unique Application ID for every new program application. This ID combines date information with a random number, providing a distinct identifier for each application, which is invaluable for referencing and querying records across the system.</p>
-</section>
-<section id="integration-with-program-membership-and-entitlement">
+</div>
+<div class="section" id="integration-with-program-membership-and-entitlement">
 <h3>Integration with Program Membership and Entitlement<a class="headerlink" href="#integration-with-program-membership-and-entitlement" title="Permalink to this headline">#</a></h3>
 <p>The module tightly integrates with the program's membership and entitlement processes. It automatically links each application to the corresponding program membership record when a beneficiary is enrolled and to the entitlement record when benefits are prepared. This ensures a comprehensive and consistent view of a beneficiary's participation, from their initial application to the eventual delivery of benefits.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The 'G2P Program Registrant Info' module is central to OpenSPP's program management capabilities, providing a robust and flexible system for tracking beneficiary applications and their progress through social protection programs. It ensures data consistency and transparency throughout the entire program lifecycle.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

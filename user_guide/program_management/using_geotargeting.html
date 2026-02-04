@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/program_management/using_geotargeting.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1674,34 +1661,34 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="geotargeting">
+  <div class="section" id="geotargeting">
 <h1>Geotargeting<a class="headerlink" href="#geotargeting" title="Permalink to this headline">#</a></h1>
 <p>Use geotargeting to increase accuracy and <a class="reference internal" href="../../reference/glossary.html#term-Effectiveness"><span class="xref std std-term">effectiveness</span></a> in <a class="reference internal" href="../../reference/glossary.html#term-Social-protection"><span class="xref std std-term">social protection</span></a> program enrollment. Geotargeting identifies potential <a class="reference internal" href="../../reference/glossary.html#term-Beneficiaries"><span class="xref std std-term">beneficiaries</span></a>' locations, letting program administrators accurately target <a class="reference internal" href="../../reference/glossary.html#term-Outreach"><span class="xref std std-term">outreach</span></a> efforts, deliver <a class="reference internal" href="../../reference/glossary.html#term-Benefits"><span class="xref std std-term">benefits</span></a> to those in need, and reduce <a class="reference internal" href="../../reference/glossary.html#term-Fraud"><span class="xref std std-term">fraud</span></a> and leakage risks.</p>
 <p>OpenSPP's built-in geotargeting capabilities allow program administrators to locate potential beneficiaries based on location and streamline the enrollment process, ensuring eligible individuals get necessary benefits.</p>
-<section id="prerequisite">
+<div class="section" id="prerequisite">
 <h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this headline">#</a></h2>
 <p>To create an Area for Geotargeting in OpenSPP, you need to:</p>
 <ul class="simple">
 <li><p>Have a <strong>System Admin</strong> or <strong>Registrar</strong> role, Learn more in this guide: <a class="reference internal" href="../administration/user_access.html"><span class="doc">User access</span></a>.</p></li>
 <li><p>Have <code class="docutils literal notranslate"><span class="pre">OpenSPP</span> <span class="pre">area</span> <span class="pre">management</span></code> and <code class="docutils literal notranslate"><span class="pre">OpenSPP</span> <span class="pre">area</span> <span class="pre">management</span> <span class="pre">base</span></code> modules installed and activated. Please note that both these modules are auto-installed and activated when <a class="reference internal" href="../../reference/modules/spp_base.html"><span class="doc">spp_base</span></a> is already activated. Learn more on installing additional modules in the <a class="reference internal" href="../../getting_started/module_installation.html"><span class="doc">Module installation</span></a> document.</p></li>
 </ul>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>Enable users to configure and apply geotargeting features in OpenSPP for social protection program enrollment. Users will learn to set up data fields and parameters, perform geotargeting analysis, and generate reports to support accurate beneficiary targeting and program effectiveness.</p>
-</section>
-<section id="advanced-gis-capabilities">
+</div>
+<div class="section" id="advanced-gis-capabilities">
 <h2>Advanced GIS capabilities<a class="headerlink" href="#advanced-gis-capabilities" title="Permalink to this headline">#</a></h2>
 <p>In addition to the area-based geotargeting described in this guide, OpenSPP includes the <a class="reference internal" href="../../reference/modules/spp_base_gis.html"><span class="doc">spp_base_gis</span></a> module which provides advanced Geographical Information System (GIS) capabilities.
 This module enables visualization of data on interactive maps, spatial querying (such as finding beneficiaries within a certain radius), and management of various geospatial data types.
 Full documentation for using these advanced GIS features in program targeting will be available soon.</p>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
 <p>Define an area by assigning it a name and specifying its hierarchical level—either as a parent-level or a sub-level. Once a parent area is created, you can add sub-areas within it, and continue nesting as needed. This flexible structure accommodates the unique area segmentation of each country.</p>
-<section id="define-geographic-tree">
+<div class="section" id="define-geographic-tree">
 <h3>Define Geographic tree<a class="headerlink" href="#define-geographic-tree" title="Permalink to this headline">#</a></h3>
-<section id="create-parent-area">
+<div class="section" id="create-parent-area">
 <h4>Create Parent Area<a class="headerlink" href="#create-parent-area" title="Permalink to this headline">#</a></h4>
 <p>To make use of geotargeting in OpenSPP, you must first define a geographic area tree. Oftentimes, you will have different levels such as:</p>
 <ul class="simple">
@@ -1725,8 +1712,8 @@ Full documentation for using these advanced GIS features in program targeting wi
 </ul>
 <p><img alt="Geotargeting define area" src="../../_images/geotargeting_define_area.png" />
 Click on the Save icon to complete the changes.</p>
-</section>
-<section id="create-sub-area">
+</div>
+<div class="section" id="create-sub-area">
 <h4>Create Sub Area<a class="headerlink" href="#create-sub-area" title="Permalink to this headline">#</a></h4>
 <p>To create a sub level of a parent area, Nnavigate to Area--&gt;New.</p>
 <ul class="simple">
@@ -1738,13 +1725,13 @@ Click on the Save icon to complete the changes.</p>
 </ul>
 <p><img alt="Geotargeting define sub area" src="../../_images/geotargeting_define_sub_area.png" />
 Click on the Save icon to complete the changes.</p>
-</section>
-</section>
-<section id="import">
+</div>
+</div>
+<div class="section" id="import">
 <h3>Import<a class="headerlink" href="#import" title="Permalink to this headline">#</a></h3>
 <p>Import an area through an xlsx file. Learn more in this guide: <a class="reference internal" href="../administration/import_areas.html"><span class="doc">Import areas</span></a></p>
-</section>
-<section id="custom-area-type">
+</div>
+<div class="section" id="custom-area-type">
 <h3>Custom Area type<a class="headerlink" href="#custom-area-type" title="Permalink to this headline">#</a></h3>
 <p>By default area are imported as <code class="docutils literal notranslate"><span class="pre">Admin</span> <span class="pre">Area</span></code>. You can change the area type of an area by editing it and selecting the area type you want.</p>
 <p>You can define your own during import, new area type are automatically created.</p>
@@ -1753,9 +1740,9 @@ Click on the Save icon to complete the changes.</p>
 <p><img alt="Geotargeting define area type" src="../../_images/geotargeting_define_area_type.png" /></p>
 <p>You can select a parent area type if you want to define a hierarchy between area types and set a name.</p>
 <p>Click <strong>Save</strong> to complete the changes.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
               </div>

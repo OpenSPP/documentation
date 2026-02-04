@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_payment_files.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-payment-files">
+  <div class="section" id="g2p-payment-files">
 <h1>G2P Payment Files<a class="headerlink" href="#g2p-payment-files" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_payment_files</span></code> module in OpenSPP enables the generation, customization, and secure management of payment-related documents. This includes creating printable vouchers, digital payment instructions, or data files for beneficiaries based on their entitlements.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module provides essential capabilities for programs requiring physical or digital payment instruments:</p>
 <ul class="simple">
@@ -1671,8 +1658,8 @@ title="Print to PDF"
 <li><p><strong>Automated Document Storage</strong>: Integrates with OpenSPP's document management system to securely store all generated payment files, ensuring an auditable trail.</p></li>
 <li><p><strong>Flexible Output</strong>: Supports generating individual files for each payment or consolidated files for entire payment batches, adapting to diverse program requirements.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_payment_files</span></code> module integrates closely with other core OpenSPP components to deliver its functionality:</p>
 <ul class="simple">
@@ -1681,31 +1668,31 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="g2p_encryption.html"><span class="doc std std-doc">G2P Encryption</span></a></strong>: For enhanced security, <code class="docutils literal notranslate"><span class="pre">g2p_payment_files</span></code> utilizes <code class="docutils literal notranslate"><span class="pre">g2p_encryption</span></code> to sign JSON Web Tokens (JWTs) when they are embedded in QR codes, ensuring the integrity and authenticity of the data.</p></li>
 <li><p><strong>Mail</strong>: The module uses Odoo's mail rendering capabilities (specifically <code class="docutils literal notranslate"><span class="pre">mail.render.mixin</span></code>) to process QWeb templates, allowing dynamic content generation within payment files.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="customizable-payment-file-templates">
+<div class="section" id="customizable-payment-file-templates">
 <h3>Customizable Payment File Templates<a class="headerlink" href="#customizable-payment-file-templates" title="Permalink to this headline">#</a></h3>
 <p>Users can design various payment file templates, which serve as the blueprint for documents like payment vouchers or bulk data files. These templates support both PDF for printable documents and CSV for data export. Templates are dynamic, pulling specific data fields from payment, batch, and beneficiary records to ensure relevant and accurate information is displayed.</p>
-</section>
-<section id="integrated-qr-code-and-barcode-generation">
+</div>
+<div class="section" id="integrated-qr-code-and-barcode-generation">
 <h3>Integrated QR Code and Barcode Generation<a class="headerlink" href="#integrated-qr-code-and-barcode-generation" title="Permalink to this headline">#</a></h3>
 <p>The module offers robust functionality for embedding scannable codes into payment files. Users can configure multiple QR codes or Code 128 barcodes per file, defining their content type (plain string, JSON, or secure JSON Web Token). QR codes can be customized with parameters such as error correction level, box size, and border, ensuring they are readable and meet specific program requirements.</p>
-</section>
-<section id="flexible-file-generation-logic">
+</div>
+<div class="section" id="flexible-file-generation-logic">
 <h3>Flexible File Generation Logic<a class="headerlink" href="#flexible-file-generation-logic" title="Permalink to this headline">#</a></h3>
 <p>Programs have the flexibility to choose how payment files are generated. The module allows for configuration at the batch tag level to either generate a separate, unique file for each individual payment or a single, consolidated file for an entire payment batch. This ensures that the output format aligns with the program's disbursement and reconciliation processes.</p>
-</section>
-<section id="secure-data-embedding-with-encryption">
+</div>
+<div class="section" id="secure-data-embedding-with-encryption">
 <h3>Secure Data Embedding with Encryption<a class="headerlink" href="#secure-data-embedding-with-encryption" title="Permalink to this headline">#</a></h3>
 <p>When using JSON Web Tokens (JWTs) within QR codes, the module integrates with a designated encryption provider. This ensures that the data embedded in the QR code is cryptographically signed, providing a layer of security and allowing recipients or verifying parties to confirm the data's origin and integrity.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_payment_files</span></code> module is crucial for OpenSPP programs, enabling the flexible, secure, and auditable generation of payment-related documents. It streamlines the creation of physical or digital payment instruments, supporting efficient and transparent benefit disbursement.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

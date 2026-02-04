@@ -1,0 +1,2578 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+<meta content="Programs" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://docs.openspp.org/learn/concepts/programs.html" property="og:url"/>
+<meta content="OpenSPP Documentation" property="og:site_name"/>
+<meta content="A program defines a social protection intervention—who receives benefits, what they receive, and how benefits are delivered. Programs are the core organizing unit in OpenSPP, connecting registrants..." property="og:description"/>
+<meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
+<meta content="OpenSPP Documentation" property="og:image:alt"/>
+<meta content="A program defines a social protection intervention—who receives benefits, what they receive, and how benefits are delivered. Programs are the core organizing unit in OpenSPP, connecting registrants..." name="description"/>
+<meta content="en_US" property="og:locale"/>
+<title>Programs – Learn — OpenSPP Documentation v2.0</title>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/sphinxcontrib-httpexample.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/custom.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/print.css" media="print" rel="stylesheet" type="text/css"/>
+<link href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script src="../../_static/sphinxcontrib-httpexample.js"></script>
+<script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+<script src="../../_static/search-utils.js"></script>
+<script src="../../_static/mermaid_init.js"></script>
+<script src="../../_static/patch_scrollToActive.js"></script>
+<script src="../../_static/search_shortcut.js"></script>
+<script src="../../_static/module-filter.js"></script>
+<script src="../../_static/design-tabs.js"></script>
+<link href="https://docs.openspp.org/learn/concepts/programs.html" rel="canonical">
+<link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v2.0" type="application/opensearchdescription+xml"/>
+<link href="../../_static/icon_192.png" rel="shortcut icon"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="cycles.html" rel="next" title="Cycles"/>
+<link href="registry.html" rel="prev" title="Registry"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../../_static/review_status.css" type="text/css" />
+<script src="../../_static/review_status_simple.js"></script>
+-->
+<script crossorigin="anonymous" integrity="sha384-vJ1NXwwlC62VkTLRHyzdAfyL4rQ8Z478DeHgamh37YzGJh3T6j223FC2yMRVriLl" src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+<!-- Mermaid Support -->
+<script crossorigin="anonymous" integrity="sha384-+NGfjU8KzpDLXRHduEqW+ZiJr2rIg+cidUVk7B51R5xK7cHwMKQfrdFwGdrq1Bcz" src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+</link></link></link></link></link></link></head>
+<body data-offset="100" data-spy="scroll" data-target="#bd-toc-nav">
+<!-- Checkboxes to toggle the left sidebar -->
+<input aria-label="Toggle navigation sidebar" class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<label class="overlay overlay-navbar" for="__navigation">
+<div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input aria-label="Toggle in-page Table of Contents" class="sidebar-toggle" id="__page-toc" name="__page-toc" type="checkbox"/>
+<label class="overlay overlay-pagetoc" for="__page-toc">
+<div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+<div class="container-fluid" id="banner"></div>
+<div class="container-xl">
+<div class="row">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+<div class="bd-sidebar__content">
+<div class="bd-sidebar__top"><div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../">
+<h1 class="site-logo" id="site-title">OpenSPP Documentation v2.0</h1>
+</a>
+</div><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<div class="input-group">
+<label class="sr-only" for="q">Search string
+    </label>
+<i aria-hidden="true" class="fa fa-search fa-lg search-icon"></i>
+<input aria-labelledby="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search" spellcheck="false" type="search" value="">
+<div class="input-group-append">
+<span class="input-group-text" id="shortcut">
+<kbd id="search-shortcut">⌘</kbd> <kbd>K</kbd>
+</span>
+</div>
+</input></div>
+</form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../products/">
+   Products
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/sp_mis.html">
+     OpenSPP SP-MIS
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/social_registry.html">
+     OpenSPP Social Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/farmer_registry.html">
+     OpenSPP Farmer Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/drims.html">
+     OpenSPP DRIMS
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../products/features/">
+     Features
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/unified_registry.html">
+       Unified registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/gis_land_management.html">
+       GIS &amp; land management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/program_management.html">
+       Program management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/eligibility_targeting.html">
+       Eligibility &amp; targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/payment_disbursement.html">
+       Payment &amp; disbursement
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/in_kind_benefits.html">
+       In-Kind benefits
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/data_integration_apis.html">
+       Data integration &amp; APIs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/change_management.html">
+       Change management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/grievance_redress.html">
+       Grievance redress
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/whats_new_v2.html">
+     What's new in OpenSPP v2
+    </a>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l1 current active has-children">
+<a class="reference internal" href="../">
+   Learn
+  </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l2">
+<a class="reference internal" href="registry.html">
+     Registry
+    </a>
+</li>
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
+     Programs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="cycles.html">
+     Cycles
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="eligibility.html">
+     Eligibility
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="compliance.html">
+     Compliance
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="entitlements.html">
+     Entitlements
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="payments.html">
+     Payments
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="deduplication.html">
+     Deduplication
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="change-requests.html">
+     Change requests
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../get_started/">
+   Get started
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/installation/">
+     Installing OpenSPP
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+<label for="toctree-checkbox-5">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/installation/docker.html">
+       Docker installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/modules/">
+     Module installation
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+<label for="toctree-checkbox-6">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/spmis_installation.html">
+       SP-MIS installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/social_installation.html">
+       Social Registry installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/explore/">
+     Explore OpenSPP
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_household/">
+     Your first household
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+<label for="toctree-checkbox-7">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/01_access_registry.html">
+       Step 1: Access the Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/02_create_household.html">
+       Step 2: Create a Household
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_household/03_add_members.html">
+       Step 3: Add members
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/first_program/">
+     Your first program
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+<label for="toctree-checkbox-8">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/01_access_program.html">
+       Step 1: Access the program section
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/02_create_program.html">
+       Step 2: Create your first social protection program
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/03_enroll_beneficiaries.html">
+       Step 3: Import and enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/04_run_cycle.html">
+       Step 4: Understanding program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/first_program/05_distribute_entitlements.html">
+       Step 5: Distribute entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/poc_and_pilot.html">
+     From Proof of Concept to Pilot
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../user_guide/">
+   User guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+<label for="toctree-checkbox-9">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/getting_started/">
+     Getting started
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+<label for="toctree-checkbox-10">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/navigation.html">
+       Navigating the OpenSPP interface
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/registry/">
+     Registry
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+<label for="toctree-checkbox-11">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_individual.html">
+       Register an individual
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_group.html">
+       Register a group
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/search_filter.html">
+       Search and filter registrants
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/import_data.html">
+       Import registrant data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/export_data.html">
+       Export registrant data
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/change_requests/">
+     Change Requests
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+<label for="toctree-checkbox-12">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/submit_change_request.html">
+       Submit a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/review_change_request.html">
+       Review a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/change_request_types.html">
+       Change request types
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/programs/">
+     Programs
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+<label for="toctree-checkbox-13">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/create_programs.html">
+       Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/program_cycles.html">
+       Work with program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/enroll_beneficiaries.html">
+       Enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/allocate_funds.html">
+       Allocate funds to programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/manage_entitlements.html">
+       Manage entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/payments/">
+     Payments
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+<label for="toctree-checkbox-14">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/payments/service_points.html">
+       View Service Points
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/approvals/">
+     Approvals
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+<label for="toctree-checkbox-15">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/approvals/manage_approvals.html">
+       Review and Approve Requests
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/reference/">
+     Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+<label for="toctree-checkbox-16">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/areas_geography.html">
+       Geographic Areas
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/vocabularies.html">
+       Vocabularies (Code Lists)
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../config_guide/">
+   Configuration guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+<label for="toctree-checkbox-17">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/studio/">
+     OpenSPP Studio
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+<label for="toctree-checkbox-18">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/overview.html">
+       Studio Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/registry_field_builder.html">
+       Custom Fields (Registry Field Builder)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/event_type_designer.html">
+       Event Type Designer
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/change_request_builder.html">
+       Change Request Builder
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/cel/">
+     CEL expressions
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+<label for="toctree-checkbox-19">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/quick_start.html">
+       CEL quick start
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/syntax.html">
+       CEL syntax reference
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/variables.html">
+       Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/cookbook.html">
+       CEL cookbook
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/troubleshooting.html">
+       CEL troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/eligibility/">
+     Eligibility rules
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+<label for="toctree-checkbox-20">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/cel_expressions.html">
+       CEL expressions for eligibility
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/geographic_targeting.html">
+       Geographic targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/templates.html">
+       Expression templates
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/testing.html">
+       Testing eligibility rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/advanced.html">
+       Advanced eligibility configuration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/">
+     Entitlement formulas
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+<label for="toctree-checkbox-21">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/cash_calculations.html">
+       Cash calculations
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/inkind_baskets.html">
+       In-kind and basket entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/formula_library.html">
+       Formula library
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/dynamic_entitlements.html">
+       Dynamic entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/conditional_logic.html">
+       Conditional logic
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/vocabulary/">
+     Vocabulary System
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+<label for="toctree-checkbox-22">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/overview.html">
+       Vocabulary Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/standard_vocabularies.html">
+       Standard Vocabularies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/profiles.html">
+       Vocabulary Profiles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/custom.html">
+       Custom Vocabularies
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/variables/">
+     Variables &amp; Indicators
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+<label for="toctree-checkbox-23">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/overview.html">
+       Variables Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/creating_variables.html">
+       Creating Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/variable_types.html">
+       Variable Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/using_variables.html">
+       Using Variables in CEL
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/event_data/">
+     Event Data
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+<label for="toctree-checkbox-24">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/overview.html">
+       Event Data Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/event_types.html">
+       Configuring Event Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/field_definitions.html">
+       Defining Event Fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/change_request_types/">
+     Change request types
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+<label for="toctree-checkbox-25">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/overview.html">
+       Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/creating_types.html">
+       Creating change request types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/field_mappings.html">
+       Field mappings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/conflict_detection.html">
+       Conflict and duplicate detection
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/patterns.html">
+       Common configuration patterns
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/custom_detail_models.html">
+       Custom detail models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/consent/">
+     Consent configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+<label for="toctree-checkbox-26">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/overview.html">
+       Consent management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/privacy_notices.html">
+       Configuring privacy notices
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/recording_consent.html">
+       Recording consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/api_consent_filtering.html">
+       API consent filtering
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/role_configuration/">
+     Role configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+<label for="toctree-checkbox-27">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/overview.html">
+       Access control overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/assigning_roles.html">
+       Assigning roles to users
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/predefined_roles.html">
+       Predefined roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/creating_roles.html">
+       Creating custom roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../ops_guide/">
+   Operations guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+<label for="toctree-checkbox-28">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/deployment/">
+     Deployment
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+<label for="toctree-checkbox-29">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/deployment/production-hardening.html">
+       Production Hardening
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/security/">
+     Security
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+<label for="toctree-checkbox-30">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/access_control.html">
+       Access Control
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/data_classification.html">
+       Data Classification
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/pii_encryption.html">
+       PII Encryption
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/audit.html">
+       Audit Logging
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/scanning.html">
+       Security Scanning
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/storage/">
+     Storage
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/backup/">
+     Backup &amp; Recovery
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/monitoring/">
+     Monitoring &amp; Alerts
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../reference/">
+   Reference
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+<label for="toctree-checkbox-31">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../reference/modules/">
+     Modules Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+<label for="toctree-checkbox-32">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2.html">
+       API V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_cycles.html">
+       API V2 - Cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_data.html">
+       API V2 - Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_entitlements.html">
+       API V2 - Entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_products.html">
+       API V2 - Products
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_service_points.html">
+       API V2 - Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_vocabulary.html">
+       API V2 - Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_approval.html">
+       Approval Workflows
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_area.html">
+       Area Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_audit.html">
+       Audit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_banking.html">
+       Banking / Bank Details
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_common.html">
+       Base (Common)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_setting.html">
+       Base Settings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_branding_kit.html">
+       Branding Kit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_domain.html">
+       CEL Domain Query Builder
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_widget.html">
+       CEL Expression Widget
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_change_request_v2.html">
+       Change Request V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_claim_169.html">
+       QR Credentials (Claim 169)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_consent.html">
+       Consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_advanced.html">
+       CR Types - Advanced
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_base.html">
+       CR Types - Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_custom_field.html">
+       Custom Fields
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client.html">
+       DCI Client
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_crvs.html">
+       DCI Client - CRVS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_dr.html">
+       DCI Client - Disability Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_ibr.html">
+       DCI Client - IBR
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dci_server.html">
+       DCI Server
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_demo.html">
+       Demo
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dms.html">
+       Document Management System
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_event_data.html">
+       Event Data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_gis.html">
+       GIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_gis_report.html">
+       GIS Reports
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_grm.html">
+       Grievance Redress Mechanism
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_hide_menus_base.html">
+       Hide Menus Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_mis_demo_v2.html">
+       MIS Demo V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_programs.html">
+       Programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry.html">
+       Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry_search.html">
+       Registry Search Portal
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_security.html">
+       Security
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_service_points.html">
+       Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_source_tracking.html">
+       Source Tracking
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_social_registry.html">
+       Starter: Social Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_sp_mis.html">
+       Starter: SP-MIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio.html">
+       Studio
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio_change_requests.html">
+       Studio - Change Requests
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_studio_events.html">
+       Studio - Events
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_user_roles.html">
+       User Roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_versioning.html">
+       Versioning
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_vocabulary.html">
+       Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/theme_openspp_muk.html">
+       Theme
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/vocabularies/">
+     Vocabulary Reference
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/glossary/humanitarian.html">
+     Humanitarian Terms Glossary
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../glossary.html">
+     OpenSPP Glossary
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../community_and_support/">
+   Community and support
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+<label for="toctree-checkbox-33">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/how_to_contribute_to_the_project.html">
+     Contributing
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/i18n_l10n.html">
+     Internationalization and Localization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/security_report.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/license.html">
+     Licensing
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+<div class="bd-sidebar__bottom">
+<!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+<p class="openspporglink">
+<a href="https://openspp.org">
+<img alt="openspp.org" src="/_static/openspp_logo.png"/> openspp.org</a>
+</p>
+</div>
+</div>
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+<div class="header-article row sticky-top noprint">
+<div class="col py-1 d-flex header-article-main">
+<div class="header-article__left">
+<label class="headerbtn" data-placement="right" data-toggle="tooltip" for="__navigation" title="Toggle navigation">
+<span class="headerbtn__icon-container">
+<i class="fas fa-bars"></i>
+</span>
+</label>
+</div>
+<div class="header-article__label">
+<span>Programs – Learn</span>
+</div>
+<div class="header-article__right">
+<button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="headerbtn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+<button aria-label="Source repositories" class="headerbtn menu-dropdown__trigger">
+<i class="fab fa-github"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation" title="Source repository">
+<span class="headerbtn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Flearn/concepts/programs.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<span class="headerbtn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?learn/concepts/programs.md#making-contributions-on-github" title="Edit this page">
+<span class="headerbtn__icon-container">
+<i class="fas fa-pencil-alt"></i>
+</span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+<button aria-label="Download this page" class="headerbtn menu-dropdown__trigger">
+<i class="fas fa-download"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/learn/concepts/programs.md.txt" title="Download source file">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+</li>
+<li>
+<button class="headerbtn" data-placement="left" data-toggle="tooltip" onclick="printPdf(this)" title="Print to PDF">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
+</div>
+</div>
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-is-a-program">
+   What is a program?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#program-structure">
+   Program structure
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#program-configuration">
+   Program configuration
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#target-type">
+     Target type
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#program-managers">
+     Program managers
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#program-lifecycle">
+   Program lifecycle
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#program-memberships">
+   Program memberships
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#membership-states">
+     Membership states
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#key-program-operations">
+   Key program operations
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#import-eligible-registrants">
+     1. Import eligible registrants
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#verify-eligibility">
+     2. Verify eligibility
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#enroll-eligible-registrants">
+     3. Enroll eligible registrants
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#deduplicate-beneficiaries">
+     4. Deduplicate beneficiaries
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#create-new-cycle">
+     5. Create new cycle
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#entitlements">
+   Entitlements
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#entitlement-types">
+     Entitlement types
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#entitlement-states">
+     Entitlement states
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#entitlement-calculation">
+     Entitlement calculation
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#program-types-by-use-case">
+   Program types by use case
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#unconditional-cash-transfer-uct">
+     Unconditional Cash Transfer (UCT)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#conditional-cash-transfer-cct">
+     Conditional Cash Transfer (CCT)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#emergency-response">
+     Emergency Response
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#agricultural-support">
+     Agricultural Support
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#data-model-overview">
+   Data model overview
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#are-you-stuck">
+   Are you stuck?
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#how-do-i-add-beneficiaries-to-a-program">
+     How do I add beneficiaries to a program?
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#why-aren-t-my-beneficiaries-showing-as-enrolled">
+     Why aren't my beneficiaries showing as enrolled?
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#can-a-registrant-be-in-multiple-programs">
+     Can a registrant be in multiple programs?
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#how-do-i-change-what-beneficiaries-receive">
+     How do I change what beneficiaries receive?
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-happens-when-i-end-a-program">
+     What happens when I end a program?
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#how-do-i-handle-beneficiaries-who-no-longer-qualify">
+     How do I handle beneficiaries who no longer qualify?
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#next-steps">
+   Next steps
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="article row">
+<div class="col pl-md-3 pl-lg-5 content-container">
+<!-- Table of contents that is only displayed when printing the page -->
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>Programs</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-is-a-program">
+   What is a program?
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#program-structure">
+   Program structure
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#program-configuration">
+   Program configuration
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#target-type">
+     Target type
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#program-managers">
+     Program managers
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#program-lifecycle">
+   Program lifecycle
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#program-memberships">
+   Program memberships
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#membership-states">
+     Membership states
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#key-program-operations">
+   Key program operations
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#import-eligible-registrants">
+     1. Import eligible registrants
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#verify-eligibility">
+     2. Verify eligibility
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#enroll-eligible-registrants">
+     3. Enroll eligible registrants
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#deduplicate-beneficiaries">
+     4. Deduplicate beneficiaries
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#create-new-cycle">
+     5. Create new cycle
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#entitlements">
+   Entitlements
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#entitlement-types">
+     Entitlement types
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#entitlement-states">
+     Entitlement states
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#entitlement-calculation">
+     Entitlement calculation
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#program-types-by-use-case">
+   Program types by use case
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#unconditional-cash-transfer-uct">
+     Unconditional Cash Transfer (UCT)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#conditional-cash-transfer-cct">
+     Conditional Cash Transfer (CCT)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#emergency-response">
+     Emergency Response
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#agricultural-support">
+     Agricultural Support
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#data-model-overview">
+   Data model overview
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#are-you-stuck">
+   Are you stuck?
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#how-do-i-add-beneficiaries-to-a-program">
+     How do I add beneficiaries to a program?
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#why-aren-t-my-beneficiaries-showing-as-enrolled">
+     Why aren't my beneficiaries showing as enrolled?
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#can-a-registrant-be-in-multiple-programs">
+     Can a registrant be in multiple programs?
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#how-do-i-change-what-beneficiaries-receive">
+     How do I change what beneficiaries receive?
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-happens-when-i-end-a-program">
+     What happens when I end a program?
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#how-do-i-handle-beneficiaries-who-no-longer-qualify">
+     How do I handle beneficiaries who no longer qualify?
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#next-steps">
+   Next steps
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<main id="main-content" role="main">
+<div>
+<div class="section" id="programs">
+<h1>Programs<a class="headerlink" href="#programs" title="Permalink to this headline">#</a></h1>
+<p>A program defines a social protection intervention—who receives benefits, what they receive, and how benefits are delivered. Programs are the core organizing unit in OpenSPP, connecting registrants to entitlements through eligibility rules and distribution cycles.</p>
+<p><strong>For:</strong> All audiences</p>
+<div class="section" id="what-is-a-program">
+<h2>What is a program?<a class="headerlink" href="#what-is-a-program" title="Permalink to this headline">#</a></h2>
+<p>A program represents a social protection initiative with defined:</p>
+<ul class="simple">
+<li><p><strong>Target population</strong> - Individuals or groups (households) eligible for benefits</p></li>
+<li><p><strong>Eligibility criteria</strong> - Rules that determine who qualifies</p></li>
+<li><p><strong>Benefits</strong> - What beneficiaries receive (cash, vouchers, in-kind goods)</p></li>
+<li><p><strong>Distribution schedule</strong> - How often benefits are delivered (through cycles)</p></li>
+<li><p><strong>Delivery mechanism</strong> - How benefits reach beneficiaries (bank transfer, mobile money, etc.)</p></li>
+</ul>
+<p><strong>Examples of programs:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Program type</p></th>
+<th class="head"><p>Target</p></th>
+<th class="head"><p>Benefit</p></th>
+<th class="head"><p>Frequency</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Unconditional cash transfer</p></td>
+<td><p>Poor households</p></td>
+<td><p>Fixed monthly payment</p></td>
+<td><p>Monthly</p></td>
+</tr>
+<tr class="row-odd"><td><p>Child grant</p></td>
+<td><p>Families with children under 5</p></td>
+<td><p>Per-child payment</p></td>
+<td><p>Quarterly</p></td>
+</tr>
+<tr class="row-even"><td><p>Emergency food assistance</p></td>
+<td><p>Disaster-affected households</p></td>
+<td><p>Food vouchers</p></td>
+<td><p>One-time</p></td>
+</tr>
+<tr class="row-odd"><td><p>School feeding</p></td>
+<td><p>Enrolled students</p></td>
+<td><p>Daily meals</p></td>
+<td><p>Daily during school</p></td>
+</tr>
+<tr class="row-even"><td><p>Farmer input subsidy</p></td>
+<td><p>Smallholder farmers</p></td>
+<td><p>Seeds and fertilizer</p></td>
+<td><p>Seasonal</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="program-structure">
+<h2>Program structure<a class="headerlink" href="#program-structure" title="Permalink to this headline">#</a></h2>
+<p>A program connects several components:</p>
+<pre class="mermaid">
+        graph TD
+    P[Program] --&gt; M[Program Memberships&lt;br/&gt;Beneficiaries]
+    P --&gt; C[Cycles&lt;br/&gt;Distribution rounds]
+    P --&gt; MG[Managers&lt;br/&gt;Business logic]
+    C --&gt; E[Entitlements&lt;br/&gt;What each beneficiary receives]
+    E --&gt; PM[Payments&lt;br/&gt;Disbursements]
+
+    style P fill:#e1f5fe
+    style M fill:#fff3e0
+    style C fill:#f3e5f5
+    style E fill:#e8f5e9
+    style PM fill:#fce4ec
+    </pre><table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Program</strong></p></td>
+<td><p>Container defining rules and configuration</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Program memberships</strong></p></td>
+<td><p>Links registrants to the program with enrollment status</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Cycles</strong></p></td>
+<td><p>Time-bound distribution periods (see <a class="reference internal" href="cycles.html"><span class="doc">Cycles</span></a>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Entitlements</strong></p></td>
+<td><p>Specific benefits calculated for each beneficiary per cycle</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Payments</strong></p></td>
+<td><p>Actual disbursements to beneficiaries</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Managers</strong></p></td>
+<td><p>Configurable components that control program behavior</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="program-configuration">
+<h2>Program configuration<a class="headerlink" href="#program-configuration" title="Permalink to this headline">#</a></h2>
+<div class="section" id="target-type">
+<h3>Target type<a class="headerlink" href="#target-type" title="Permalink to this headline">#</a></h3>
+<p>Programs target either individuals or groups:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Target type</p></th>
+<th class="head"><p>Use when</p></th>
+<th class="head"><p>Examples</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Individual</strong></p></td>
+<td><p>Benefits are person-specific</p></td>
+<td><p>Pensions, scholarships, disability grants</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Group</strong></p></td>
+<td><p>Benefits are household-level</p></td>
+<td><p>Family cash transfers, housing subsidies</p></td>
+</tr>
+</tbody>
+</table>
+<p>The target type determines which registrants can be enrolled and how entitlements are calculated.</p>
+</div>
+<div class="section" id="program-managers">
+<h3>Program managers<a class="headerlink" href="#program-managers" title="Permalink to this headline">#</a></h3>
+<p>Managers are pluggable components that control how the program operates. Each manager type handles a specific aspect of program execution:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Manager</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>When It Runs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Eligibility manager</strong></p></td>
+<td><p>Determines who qualifies for the program</p></td>
+<td><p>During enrollment and eligibility verification</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Program manager</strong></p></td>
+<td><p>Controls enrollment workflow and cycle creation</p></td>
+<td><p>When adding beneficiaries or creating cycles</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Cycle manager</strong></p></td>
+<td><p>Manages cycle lifecycle and transitions</p></td>
+<td><p>During cycle operations</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Entitlement manager</strong></p></td>
+<td><p>Calculates what each beneficiary receives</p></td>
+<td><p>When preparing entitlements for a cycle</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Deduplication manager</strong></p></td>
+<td><p>Identifies duplicate registrations</p></td>
+<td><p>Before enrollment or on-demand</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Notification manager</strong></p></td>
+<td><p>Sends messages to beneficiaries</p></td>
+<td><p>At key program events</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Payment manager</strong></p></td>
+<td><p>Handles payment preparation and disbursement</p></td>
+<td><p>When processing payments</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Compliance manager</strong></p></td>
+<td><p>Enforces program conditions</p></td>
+<td><p>During eligibility checks and cycle processing</p></td>
+</tr>
+</tbody>
+</table>
+<p>Each manager type has a default implementation that works for most cases. Administrators can configure manager settings or developers can create custom managers for specialized requirements.</p>
+</div>
+</div>
+<div class="section" id="program-lifecycle">
+<h2>Program lifecycle<a class="headerlink" href="#program-lifecycle" title="Permalink to this headline">#</a></h2>
+<p>Programs move through a simple lifecycle:</p>
+<pre class="mermaid">
+        graph LR
+    Start(( )) --&gt; Active
+    Active --&gt;|Run cycles| Active
+    Active --&gt;|End program| Ended
+    Ended --&gt;|Reactivate| Active
+    Ended --&gt; Stop(( ))
+
+    style Start fill:#000,stroke:#000
+    style Stop fill:#000,stroke:#000
+    style Active fill:#e8f5e9
+    style Ended fill:#ffebee
+    </pre><table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>State</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>What You Can Do</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Active</strong></p></td>
+<td><p>Program is operational</p></td>
+<td><p>Enroll beneficiaries, create cycles, process payments</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Ended</strong></p></td>
+<td><p>Program has concluded</p></td>
+<td><p>View historical data, reactivate if needed</p></td>
+</tr>
+</tbody>
+</table>
+<p>When a program is archived (deactivated), all draft, pending, and approved cycles are automatically cancelled.</p>
+</div>
+<div class="section" id="program-memberships">
+<h2>Program memberships<a class="headerlink" href="#program-memberships" title="Permalink to this headline">#</a></h2>
+<p>A program membership links a registrant to a program. It tracks:</p>
+<ul class="simple">
+<li><p><strong>Enrollment status</strong> - Where the registrant is in the enrollment process</p></li>
+<li><p><strong>Enrollment date</strong> - When they were enrolled</p></li>
+<li><p><strong>Exit date</strong> - When they left the program (if applicable)</p></li>
+<li><p><strong>Deduplication status</strong> - Whether they've been checked for duplicates</p></li>
+</ul>
+<div class="section" id="membership-states">
+<h3>Membership states<a class="headerlink" href="#membership-states" title="Permalink to this headline">#</a></h3>
+<pre class="mermaid">
+        graph LR
+    Start(( )) --&gt;|Add to program| Draft
+    Draft --&gt;|Verify eligibility| Enrolled
+    Draft --&gt;|Fails criteria| NotEligible
+    Draft --&gt;|Duplicate found| Duplicated
+    Enrolled --&gt;|Pause benefits| Paused
+    Enrolled --&gt;|Exit program| Exited
+    Paused --&gt;|Resume| Enrolled
+    Paused --&gt;|Exit program| Exited
+    NotEligible --&gt;|Re-evaluate| Draft
+    Duplicated --&gt;|Resolve duplicate| Draft
+    Exited --&gt; Stop(( ))
+
+    style Start fill:#000,stroke:#000
+    style Stop fill:#000,stroke:#000
+    style Draft fill:#fff3e0
+    style Enrolled fill:#e8f5e9
+    style Paused fill:#e3f2fd
+    style Exited fill:#ffebee
+    style NotEligible fill:#ffebee
+    style Duplicated fill:#ffebee
+    </pre><table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>State</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Next Steps</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Draft</strong></p></td>
+<td><p>Added to program, not yet verified</p></td>
+<td><p>Run eligibility check</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Enrolled</strong></p></td>
+<td><p>Actively receiving benefits</p></td>
+<td><p>Include in cycles</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Paused</strong></p></td>
+<td><p>Temporarily suspended</p></td>
+<td><p>Resume when ready</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Exited</strong></p></td>
+<td><p>Left the program</p></td>
+<td><p>No further benefits</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Not Eligible</strong></p></td>
+<td><p>Failed eligibility criteria</p></td>
+<td><p>Re-evaluate if circumstances change</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Duplicated</strong></p></td>
+<td><p>Identified as a duplicate</p></td>
+<td><p>Resolve and retry</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="key-program-operations">
+<h2>Key program operations<a class="headerlink" href="#key-program-operations" title="Permalink to this headline">#</a></h2>
+<div class="section" id="import-eligible-registrants">
+<h3>1. Import eligible registrants<a class="headerlink" href="#import-eligible-registrants" title="Permalink to this headline">#</a></h3>
+<p>Populate the program with registrants who potentially qualify.</p>
+<p><strong>What it does:</strong></p>
+<ul class="simple">
+<li><p>Runs eligibility criteria against the registry</p></li>
+<li><p>Creates draft memberships for matching registrants</p></li>
+<li><p>Does not automatically enroll—allows review first</p></li>
+</ul>
+<p><strong>When to use:</strong></p>
+<ul class="simple">
+<li><p>Starting a new program</p></li>
+<li><p>Expanding program coverage</p></li>
+<li><p>Refreshing the beneficiary pool</p></li>
+</ul>
+</div>
+<div class="section" id="verify-eligibility">
+<h3>2. Verify eligibility<a class="headerlink" href="#verify-eligibility" title="Permalink to this headline">#</a></h3>
+<p>Check whether current members still qualify.</p>
+<p><strong>What it does:</strong></p>
+<ul class="simple">
+<li><p>Re-runs eligibility rules against current data</p></li>
+<li><p>Updates membership status (enrolled, not_eligible)</p></li>
+<li><p>Identifies people who no longer qualify</p></li>
+</ul>
+<p><strong>When to use:</strong></p>
+<ul class="simple">
+<li><p>Before each cycle</p></li>
+<li><p>After major data updates</p></li>
+<li><p>For programs with changing criteria</p></li>
+</ul>
+</div>
+<div class="section" id="enroll-eligible-registrants">
+<h3>3. Enroll eligible registrants<a class="headerlink" href="#enroll-eligible-registrants" title="Permalink to this headline">#</a></h3>
+<p>Move verified registrants to enrolled status.</p>
+<p><strong>What it does:</strong></p>
+<ul class="simple">
+<li><p>Changes draft members to enrolled status</p></li>
+<li><p>Records enrollment date</p></li>
+<li><p>Makes them eligible for cycle inclusion</p></li>
+</ul>
+<p><strong>When to use:</strong></p>
+<ul class="simple">
+<li><p>After eligibility verification</p></li>
+<li><p>When ready to start benefits</p></li>
+</ul>
+</div>
+<div class="section" id="deduplicate-beneficiaries">
+<h3>4. Deduplicate beneficiaries<a class="headerlink" href="#deduplicate-beneficiaries" title="Permalink to this headline">#</a></h3>
+<p>Identify and flag duplicate registrations.</p>
+<p><strong>What it does:</strong></p>
+<ul class="simple">
+<li><p>Compares beneficiaries using configured matching rules</p></li>
+<li><p>Flags potential duplicates for review</p></li>
+<li><p>Prevents double-dipping across programs</p></li>
+</ul>
+<p><strong>When to use:</strong></p>
+<ul class="simple">
+<li><p>Before enrollment finalization</p></li>
+<li><p>Periodically for ongoing programs</p></li>
+<li><p>After data imports</p></li>
+</ul>
+</div>
+<div class="section" id="create-new-cycle">
+<h3>5. Create new cycle<a class="headerlink" href="#create-new-cycle" title="Permalink to this headline">#</a></h3>
+<p>Start a new distribution period.</p>
+<p><strong>What it does:</strong></p>
+<ul class="simple">
+<li><p>Creates a new cycle for the program</p></li>
+<li><p>Optionally copies enrolled beneficiaries to the cycle</p></li>
+<li><p>Prepares for entitlement calculation</p></li>
+</ul>
+<p><strong>When to use:</strong></p>
+<ul class="simple">
+<li><p>At the start of each distribution period</p></li>
+<li><p>Monthly, quarterly, or as scheduled</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="entitlements">
+<h2>Entitlements<a class="headerlink" href="#entitlements" title="Permalink to this headline">#</a></h2>
+<p>Entitlements represent what a beneficiary is entitled to receive in a specific cycle.</p>
+<div class="section" id="entitlement-types">
+<h3>Entitlement types<a class="headerlink" href="#entitlement-types" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Cash</strong></p></td>
+<td><p>Monetary payment</p></td>
+<td><p>$50 monthly transfer</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>In-Kind</strong></p></td>
+<td><p>Physical goods</p></td>
+<td><p>10kg rice, cooking oil</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Voucher</strong></p></td>
+<td><p>Redeemable token</p></td>
+<td><p>Food voucher worth $30</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="entitlement-states">
+<h3>Entitlement states<a class="headerlink" href="#entitlement-states" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>State</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Draft</strong></p></td>
+<td><p>Created, not yet approved</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Pending Approval</strong></p></td>
+<td><p>Submitted for review</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Approved</strong></p></td>
+<td><p>Ready for payment</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Transferred to FSP</strong></p></td>
+<td><p>Sent to financial service provider</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Paid to Beneficiary</strong></p></td>
+<td><p>Successfully delivered</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Rejected</strong></p></td>
+<td><p>Declined (various reasons)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Cancelled</strong></p></td>
+<td><p>Cancelled before payment</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Expired</strong></p></td>
+<td><p>Validity period passed</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="entitlement-calculation">
+<h3>Entitlement calculation<a class="headerlink" href="#entitlement-calculation" title="Permalink to this headline">#</a></h3>
+<p>The Entitlement manager calculates entitlements using:</p>
+<ul class="simple">
+<li><p><strong>Fixed amounts</strong> - Same amount for everyone</p></li>
+<li><p><strong>Formula-based</strong> - Calculated from beneficiary data (household size, number of children, etc.)</p></li>
+<li><p><strong>CEL expressions</strong> - Complex rules using Common Expression Language</p></li>
+</ul>
+<p><strong>Example formula:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Base amount: $30
+Per child under 5: +$10
+Per elderly member: +$5
+
+Household with 2 children under 5 and 1 elderly = $30 + $20 + $5 = $55
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="program-types-by-use-case">
+<h2>Program types by use case<a class="headerlink" href="#program-types-by-use-case" title="Permalink to this headline">#</a></h2>
+<div class="section" id="unconditional-cash-transfer-uct">
+<h3>Unconditional Cash Transfer (UCT)<a class="headerlink" href="#unconditional-cash-transfer-uct" title="Permalink to this headline">#</a></h3>
+<p>Regular payments without conditions.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Typical configuration</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Target</p></td>
+<td><p>Households below poverty line</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eligibility</p></td>
+<td><p>Income/asset-based (often PMT score)</p></td>
+</tr>
+<tr class="row-even"><td><p>Entitlement</p></td>
+<td><p>Fixed amount per household or scaled by size</p></td>
+</tr>
+<tr class="row-odd"><td><p>Frequency</p></td>
+<td><p>Monthly or quarterly</p></td>
+</tr>
+<tr class="row-even"><td><p>Compliance</p></td>
+<td><p>None required</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="conditional-cash-transfer-cct">
+<h3>Conditional Cash Transfer (CCT)<a class="headerlink" href="#conditional-cash-transfer-cct" title="Permalink to this headline">#</a></h3>
+<p>Payments contingent on meeting conditions.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Typical configuration</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Target</p></td>
+<td><p>Households with children or pregnant women</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eligibility</p></td>
+<td><p>Income-based plus household composition</p></td>
+</tr>
+<tr class="row-even"><td><p>Entitlement</p></td>
+<td><p>Base amount plus per-child supplements</p></td>
+</tr>
+<tr class="row-odd"><td><p>Frequency</p></td>
+<td><p>Monthly or bi-monthly</p></td>
+</tr>
+<tr class="row-even"><td><p>Compliance</p></td>
+<td><p>School attendance, health checkups</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="emergency-response">
+<h3>Emergency Response<a class="headerlink" href="#emergency-response" title="Permalink to this headline">#</a></h3>
+<p>One-time or short-term crisis assistance.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Typical configuration</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Target</p></td>
+<td><p>Disaster-affected households</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eligibility</p></td>
+<td><p>Geographic targeting, vulnerability assessment</p></td>
+</tr>
+<tr class="row-even"><td><p>Entitlement</p></td>
+<td><p>One-time payment or in-kind package</p></td>
+</tr>
+<tr class="row-odd"><td><p>Frequency</p></td>
+<td><p>One-time or limited cycles</p></td>
+</tr>
+<tr class="row-even"><td><p>Compliance</p></td>
+<td><p>None (emergency context)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="agricultural-support">
+<h3>Agricultural Support<a class="headerlink" href="#agricultural-support" title="Permalink to this headline">#</a></h3>
+<p>Seasonal support for farmers.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Typical configuration</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Target</p></td>
+<td><p>Smallholder farmers</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eligibility</p></td>
+<td><p>Land size, crop type, vulnerability</p></td>
+</tr>
+<tr class="row-even"><td><p>Entitlement</p></td>
+<td><p>Input vouchers, cash for inputs</p></td>
+</tr>
+<tr class="row-odd"><td><p>Frequency</p></td>
+<td><p>Seasonal (planting, harvest)</p></td>
+</tr>
+<tr class="row-even"><td><p>Compliance</p></td>
+<td><p>Land registration, crop reporting</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="data-model-overview">
+<h2>Data model overview<a class="headerlink" href="#data-model-overview" title="Permalink to this headline">#</a></h2>
+<pre class="mermaid">
+        erDiagram
+    PROGRAM {
+        string name
+        string target_type
+        string state
+        date date_ended
+    }
+    PROGRAM_MEMBERSHIP {
+        string state
+        date enrollment_date
+        date exit_date
+    }
+    CYCLE {
+        string name
+        string state
+        date start_date
+        date end_date
+    }
+    ENTITLEMENT {
+        string code
+        decimal initial_amount
+        string state
+        date valid_from
+        date valid_until
+    }
+    REGISTRANT {
+        string name
+        boolean is_group
+    }
+
+    PROGRAM ||--o{ PROGRAM_MEMBERSHIP : "has"
+    PROGRAM ||--o{ CYCLE : "has"
+    REGISTRANT ||--o{ PROGRAM_MEMBERSHIP : "enrolled in"
+    CYCLE ||--o{ ENTITLEMENT : "contains"
+    REGISTRANT ||--o{ ENTITLEMENT : "receives"
+    </pre></div>
+<div class="section" id="are-you-stuck">
+<h2>Are you stuck?<a class="headerlink" href="#are-you-stuck" title="Permalink to this headline">#</a></h2>
+<div class="section" id="how-do-i-add-beneficiaries-to-a-program">
+<h3>How do I add beneficiaries to a program?<a class="headerlink" href="#how-do-i-add-beneficiaries-to-a-program" title="Permalink to this headline">#</a></h3>
+<p><strong>Options:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Import eligible registrants</strong> - Use the "Import Eligible Registrants" button to find matching registrants from the registry</p></li>
+<li><p><strong>Manual enrollment</strong> - Add individual registrants through the beneficiaries list</p></li>
+<li><p><strong>Bulk import</strong> - Upload a CSV/Excel file with registrant IDs</p></li>
+</ol>
+</div>
+<div class="section" id="why-aren-t-my-beneficiaries-showing-as-enrolled">
+<h3>Why aren't my beneficiaries showing as enrolled?<a class="headerlink" href="#why-aren-t-my-beneficiaries-showing-as-enrolled" title="Permalink to this headline">#</a></h3>
+<p><strong>Check:</strong></p>
+<ul class="simple">
+<li><p>Are they in "Draft" state? Run eligibility verification to enroll them</p></li>
+<li><p>Did they fail eligibility? Check the "Not Eligible" filter</p></li>
+<li><p>Were duplicates found? Check the "Duplicated" filter</p></li>
+</ul>
+</div>
+<div class="section" id="can-a-registrant-be-in-multiple-programs">
+<h3>Can a registrant be in multiple programs?<a class="headerlink" href="#can-a-registrant-be-in-multiple-programs" title="Permalink to this headline">#</a></h3>
+<p>Yes. A registrant can be enrolled in multiple programs simultaneously. Each program has its own membership record. Use deduplication to identify overlaps if needed.</p>
+</div>
+<div class="section" id="how-do-i-change-what-beneficiaries-receive">
+<h3>How do I change what beneficiaries receive?<a class="headerlink" href="#how-do-i-change-what-beneficiaries-receive" title="Permalink to this headline">#</a></h3>
+<p>Entitlement amounts are controlled by the Entitlement Manager:</p>
+<ol class="arabic simple">
+<li><p>Go to program configuration</p></li>
+<li><p>Find the Entitlement Manager section</p></li>
+<li><p>Adjust the calculation rules (fixed amount, formula, or CEL expression)</p></li>
+</ol>
+<p>Changes apply to future cycles—existing entitlements are not automatically recalculated.</p>
+</div>
+<div class="section" id="what-happens-when-i-end-a-program">
+<h3>What happens when I end a program?<a class="headerlink" href="#what-happens-when-i-end-a-program" title="Permalink to this headline">#</a></h3>
+<p>When you end a program:</p>
+<ul class="simple">
+<li><p>State changes to "Ended"</p></li>
+<li><p>No new cycles can be created</p></li>
+<li><p>Existing cycles continue to their conclusion</p></li>
+<li><p>Historical data is preserved</p></li>
+<li><p>You can reactivate if needed</p></li>
+</ul>
+</div>
+<div class="section" id="how-do-i-handle-beneficiaries-who-no-longer-qualify">
+<h3>How do I handle beneficiaries who no longer qualify?<a class="headerlink" href="#how-do-i-handle-beneficiaries-who-no-longer-qualify" title="Permalink to this headline">#</a></h3>
+<p><strong>Options:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Re-verify eligibility</strong> - Run eligibility check; non-qualifying members move to "Not Eligible"</p></li>
+<li><p><strong>Manual exit</strong> - Mark individual members as "Exited" with an exit date</p></li>
+<li><p><strong>Pause</strong> - Temporarily suspend benefits without exiting</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+<p><strong>Learn more about concepts:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="cycles.html"><span class="doc">Cycles</span></a> - Distribution periods within programs</p></li>
+<li><p><a class="reference internal" href="registry.html"><span class="doc">Registry</span></a> - Source of beneficiary data</p></li>
+</ul>
+<p><strong>For configuration:</strong></p>
+<ul class="simple">
+<li><p>See the Configuration Guide for setting up eligibility rules, entitlement formulas, and managers</p></li>
+</ul>
+<p><strong>For developers:</strong></p>
+<ul class="simple">
+<li><p>See the Developer Guide for creating custom managers and extending program functionality</p></li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer-article noprint">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="registry.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Registry</p>
+</div>
+</a>
+<a class="right-next" href="cycles.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Cycles</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+</div>
+<div class="footer-content row">
+<footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      © Copyright OpenSPP.<br/>
+<div class="extra_footer">
+<p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+</div>
+</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            var lists = $("div.toctree-wrapper ul");
+            $.each(lists, function(index, list) {
+                if($(list).find("li").length == 0) {
+                    $(list).prev().hide();
+                    $(list).hide();
+                }
+            });
+        })
+    </script>
+<script src="/_static/version_switcher.js"></script></body>
+</html>

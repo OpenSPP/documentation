@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_event_demo.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1650,10 +1637,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="event-demo">
+  <div class="section" id="event-demo">
 <h1>Event Demo<a class="headerlink" href="#event-demo" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Event Demo module provides practical examples and templates for tracking specific events within OpenSPP's social protection programs. It showcases how to leverage the core event management framework by offering predefined event types, data structures, and user interfaces, serving as a blueprint for custom event implementation.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module demonstrates and facilitates the use of OpenSPP's event tracking system by providing concrete, ready-to-use examples. It aims to:</p>
 <ul class="simple">
@@ -1663,8 +1650,8 @@ title="Print to PDF"
 <li><p><strong>Extend Registrant Profiles</strong>: Adds capabilities to registrant profiles (res.partner) to quickly access and view the active status of specific event types relevant to an individual.</p></li>
 <li><p><strong>Accelerate Customization</strong>: Serves as a practical guide for organizations to design and implement their own unique event types tailored to specific program needs.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Event Demo module is built upon foundational OpenSPP components, extending their capabilities to offer concrete event tracking examples.</p>
 <ul class="simple">
@@ -1672,11 +1659,11 @@ title="Print to PDF"
 <li><p><strong><a class="reference internal" href="spp_event_data.html"><span class="doc std std-doc">OpenSPP Event Data</span></a></strong>: The <code class="docutils literal notranslate"><span class="pre">spp_event_demo</span></code> module is a direct extension of the <code class="docutils literal notranslate"><span class="pre">spp_event_data</span></code> framework. It defines the specific event types (like house visits or phone surveys) that the <code class="docutils literal notranslate"><span class="pre">spp_event_data</span></code> module then manages and links to registrants. This integration provides the underlying structure for recording and associating event details with individuals.</p></li>
 </ul>
 <p>This module primarily serves as a template for other OpenSPP modules or custom implementations that need to define and integrate their own specific event types. By observing its structure, developers and implementers can understand how to create new event models and integrate them into the broader OpenSPP event tracking system.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Event Demo module introduces several key features to demonstrate practical event management.</p>
-<section id="comprehensive-event-record-types">
+<div class="section" id="comprehensive-event-record-types">
 <h3>Comprehensive Event Record Types<a class="headerlink" href="#comprehensive-event-record-types" title="Permalink to this headline">#</a></h3>
 <p>The module defines specific event types with detailed data capture capabilities:</p>
 <ul class="simple">
@@ -1684,28 +1671,28 @@ title="Print to PDF"
 <li><p><strong>Phone Survey Records</strong>: This feature enables the systematic recording of phone survey outcomes. Users can capture a concise summary of the call and a more detailed description of the conversation or findings, facilitating remote data collection and interaction tracking.</p></li>
 <li><p><strong>School Enrolment Records</strong>: Organizations can track educational participation by recording details of school enrolment. This includes the name of the school, the specific enrolment type, and the date of enrolment, providing insights into a registrant's educational status.</p></li>
 </ul>
-</section>
-<section id="streamlined-event-creation-wizards">
+</div>
+<div class="section" id="streamlined-event-creation-wizards">
 <h3>Streamlined Event Creation Wizards<a class="headerlink" href="#streamlined-event-creation-wizards" title="Permalink to this headline">#</a></h3>
 <p>To simplify data entry and ensure consistency, the module includes dedicated wizards for creating new event records:</p>
 <ul class="simple">
 <li><p><strong>Guided Creation</strong>: Wizards for House Visits, Phone Surveys, and School Enrolment records guide users through the necessary steps to create a new event. This ensures all required information is captured accurately and efficiently.</p></li>
 <li><p><strong>User-Friendly Interface</strong>: These wizards streamline the process, making it easier for program staff to log new events without extensive training.</p></li>
 </ul>
-</section>
-<section id="registrant-event-overview">
+</div>
+<div class="section" id="registrant-event-overview">
 <h3>Registrant Event Overview<a class="headerlink" href="#registrant-event-overview" title="Permalink to this headline">#</a></h3>
 <p>The module enhances the registrant's profile (res.partner) to provide a quick overview of associated events:</p>
 <ul class="simple">
 <li><p><strong>Active Event Links</strong>: Registrant profiles display direct links to the <em>active</em> House Visit, Phone Survey, and School Enrolment records. This allows users to immediately see the latest and most relevant event data pertaining to an individual, improving data accessibility and program monitoring.</p></li>
 </ul>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Event Demo module is a crucial component for understanding and extending OpenSPP's event tracking capabilities. It provides practical, ready-to-use examples of event types and their management, serving as a vital guide for organizations to implement and customize their social protection program's event logging requirements effectively.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

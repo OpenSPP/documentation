@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Change Request Module Development" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Change Request Module Development" name="title" />
 <meta content="Complete guide to creating custom Change Request modules in OpenSPP with validation workflows, UI creation, and data update logic." name="description" />
 <meta content="OpenSPP, change request, module development, custom CR, validation workflow, Odoo development" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/developer_guide/module_development/change_requests.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1714,7 +1701,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="change-request">
+  <div class="section" id="change-request">
 <h1>Change Request<a class="headerlink" href="#change-request" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP platform provides a flexible and extensible Change Request (CR) framework.
 This allows developers to create custom modules for specific data modification scenarios beyond the standard ones.
@@ -1727,15 +1714,15 @@ This guide will walk you through the process of creating a new Change Request Ty
 <li><p>Create the necessary user interface (views and menus).</p></li>
 <li><p>Configure validation workflows and security.</p></li>
 </ul>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Solid understanding of Odoo 17 module development, including Python, XML, and XPath.</p></li>
 <li><p>Familiarity with the OpenSPP core modules, especially <code class="docutils literal notranslate"><span class="pre">OpenSPP</span> <span class="pre">Change</span> <span class="pre">Request</span></code> (<a class="reference internal" href="../../reference/modules/spp_change_request.html"><span class="doc">spp_change_request</span></a>).</p></li>
 <li><p>To set up OpenSPP for development, please refer to the <a class="reference internal" href="../setup.html"><span class="doc">Development Setup Guide</span></a>.</p></li>
 </ul>
-</section>
-<section id="module-structure">
+</div>
+<div class="section" id="module-structure">
 <h2>Module Structure<a class="headerlink" href="#module-structure" title="Permalink to this headline">#</a></h2>
 <p>A typical Change Request Type module follows the standard Odoo module structure.
 Here's the structure of our reference module, <a class="reference internal" href="../../reference/modules/spp_change_request_add_children_demo.html"><span class="doc">spp_change_request_add_children_demo</span></a>:</p>
@@ -1758,15 +1745,15 @@ Here's the structure of our reference module, <a class="reference internal" href
     └── menus.xml
 </pre></div>
 </div>
-</section>
+</div>
 <hr class="docutils" />
-<section id="step-by-step-guide">
+<div class="section" id="step-by-step-guide">
 <h2>Step-by-Step Guide<a class="headerlink" href="#step-by-step-guide" title="Permalink to this headline">#</a></h2>
-<section id="create-the-module-scaffold">
+<div class="section" id="create-the-module-scaffold">
 <h3>Create the Module Scaffold<a class="headerlink" href="#create-the-module-scaffold" title="Permalink to this headline">#</a></h3>
 <p>Start by creating a new directory for your module (e.g., <code class="docutils literal notranslate"><span class="pre">spp_change_request_custom_type</span></code>) and populate it with the basic Odoo module files (<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>, <code class="docutils literal notranslate"><span class="pre">__manifest__.py</span></code>) and the directory structure shown above.</p>
-</section>
-<section id="define-the-manifest-manifest-py">
+</div>
+<div class="section" id="define-the-manifest-manifest-py">
 <h3>Define the Manifest (<code class="docutils literal notranslate"><span class="pre">__manifest__.py</span></code>)<a class="headerlink" href="#define-the-manifest-manifest-py" title="Permalink to this headline">#</a></h3>
 <p>The manifest file declares your module's metadata and dependencies.
 It's crucial to list all the modules your CR type will interact with.
@@ -1801,8 +1788,8 @@ For our &quot;Add Child/Member&quot; example, the dependencies are:</p>
 </pre></div>
 </div>
 <p>Your dependencies will vary based on the data you need to access and modify.</p>
-</section>
-<section id="create-the-change-request-models">
+</div>
+<div class="section" id="create-the-change-request-models">
 <h3>Create the Change Request Models<a class="headerlink" href="#create-the-change-request-models" title="Permalink to this headline">#</a></h3>
 <p>This is the heart of your module.
 You'll create a new model that holds the specific data for your change request type.</p>
@@ -1818,9 +1805,9 @@ mixins provide the core logic for state management, validation, and applying cha
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># From: spp_change_request_add_children_demo/models/change_request_add_children.py</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">odoo</span><span class="w"> </span><span class="kn">import</span> <span class="n">_</span><span class="p">,</span> <span class="n">api</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span> <span class="kn">from</span><span class="w"> </span><span class="nn">odoo.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">ValidationError</span>
+<span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">_</span><span class="p">,</span> <span class="n">api</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span> <span class="kn">from</span> <span class="nn">odoo.exceptions</span> <span class="kn">import</span> <span class="n">ValidationError</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">ChangeRequestAddChildren</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">ChangeRequestAddChildren</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;spp.change.request.add.children&quot;</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s2">&quot;spp.change.request.source.mixin&quot;</span><span class="p">,</span>
@@ -1854,7 +1841,7 @@ This method is called before the request is submitted for approval.
 Raise a <code class="docutils literal notranslate"><span class="pre">ValidationError</span></code> if the data is invalid.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># From: spp_change_request_add_children_demo/models/change_request_add_children.py</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">validate_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">validate_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">validate_data</span><span class="p">()</span> <span class="c1"># Checks for required documents</span>
     <span class="n">error_message</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">family_name</span><span class="p">:</span>
@@ -1872,7 +1859,7 @@ Raise a <code class="docutils literal notranslate"><span class="pre">ValidationE
 This is where you create or update records.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># From: spp_change_request_add_children_demo/models/change_request_add_children.py</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">update_live_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">update_live_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">ensure_one</span><span class="p">()</span>
     <span class="c1"># Create a new individual (res.partner)</span>
     <span class="n">individual_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;res.partner&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
@@ -1901,7 +1888,7 @@ Inherit the base <code class="docutils literal notranslate"><span class="pre">sp
 This adds your new type to the dropdown list when creating a new CR.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># From: spp_change_request_add_children_demo/models/change_request_add_children.py</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">ChangeRequestTypeCustomAddChildren</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">ChangeRequestTypeCustomAddChildren</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">&quot;spp.change.request&quot;</span>
 
     <span class="c1"># If the CR type applies only to a specific registrant type (e.g., Group),</span>
@@ -1913,7 +1900,7 @@ This adds your new type to the dropdown list when creating a new CR.</p>
     <span class="p">)</span>
 
     <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">_selection_request_type_ref_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_selection_request_type_ref_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">selection</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_selection_request_type_ref_id</span><span class="p">()</span>
         <span class="n">new_request_type</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;spp.change.request.add.children&quot;</span><span class="p">,</span> <span class="s2">&quot;Add Child/Member&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">new_request_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">selection</span><span class="p">:</span>
@@ -1923,8 +1910,8 @@ This adds your new type to the dropdown list when creating a new CR.</p>
 </div>
 </li>
 </ol>
-</section>
-<section id="create-the-user-interface-views">
+</div>
+<div class="section" id="create-the-user-interface-views">
 <h3>Create the User Interface (Views)<a class="headerlink" href="#create-the-user-interface-views" title="Permalink to this headline">#</a></h3>
 <p>Define the form view for your custom CR type.</p>
 <ol class="arabic">
@@ -2015,8 +2002,8 @@ This adds your new type to the dropdown list when creating a new CR.</p>
 </div>
 </li>
 </ol>
-</section>
-<section id="define-data-files">
+</div>
+<div class="section" id="define-data-files">
 <h3>Define Data Files<a class="headerlink" href="#define-data-files" title="Permalink to this headline">#</a></h3>
 <p>Use XML data files to configure aspects of your CR type.</p>
 <ul>
@@ -2063,31 +2050,31 @@ for your CR.</p>
 </div>
 </li>
 </ul>
-</section>
-<section id="set-up-security">
+</div>
+<div class="section" id="set-up-security">
 <h3>Set Up Security<a class="headerlink" href="#set-up-security" title="Permalink to this headline">#</a></h3>
 <p>Grant users access to your new model in security/ir.model.access.csv.
 At a minimum, you need to provide access to the base user group.</p>
-<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span><span class="o"># From: spp_change_request_add_children_demo/security/ir.model.access.csv</span>
-<span class="o">id</span><span class="p">,</span><span class="m">name</span><span class="p">,</span><span class="k">model_id:id</span><span class="p">,</span><span class="no">group_id:id</span><span class="p">,</span><span class="s1">perm_read</span><span class="p">,perm_write,perm_create,perm_unlink</span>
-<span class="o">access_spp_change_request_add_children_user</span><span class="p">,</span><span class="m">spp.change.request.add.children.user</span><span class="p">,</span><span class="k">model_spp_change_request_add_children</span><span class="p">,</span><span class="no">base.group_user</span><span class="p">,</span><span class="s1">1</span><span class="p">,1,1,1</span>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span># From: spp_change_request_add_children_demo/security/ir.model.access.csv
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_spp_change_request_add_children_user,spp.change.request.add.children.user,model_spp_change_request_add_children,base.group_user,1,1,1,1
 </pre></div>
 </div>
-</section>
-<section id="install-and-test">
+</div>
+<div class="section" id="install-and-test">
 <h3>Install and Test<a class="headerlink" href="#install-and-test" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install or upgrade the module through the Apps menu.</p></li>
 <li><p>Create a new change request.</p></li>
 <li><p>Check if the new change request type is in the selection field.</p></li>
 </ol>
-</section>
-</section>
-<section id="best-practices">
+</div>
+</div>
+<div class="section" id="best-practices">
 <h2>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">#</a></h2>
 <p>Always start with a clear definition of the data you need to collect and the system changes that need to occur upon approval.</p>
-</section>
-<section id="references">
+</div>
+<div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <p>For more information on extending OpenSPP modules, refer to:</p>
 <ul class="simple">
@@ -2095,8 +2082,8 @@ At a minimum, you need to provide access to the base user group.</p>
 <li><p><a class="reference external" href="https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_change_request">Change Request Module Source</a></p></li>
 <li><p><a class="reference external" href="https://github.com/OpenSPP/openspp-modules/tree/17.0/spp_change_request_add_children_demo">OpenSPP Change Request Demo: Add Child/Member Module Source</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_notifications_fast2sms.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1658,10 +1645,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-notifications-fast2sms">
+  <div class="section" id="g2p-notifications-fast2sms">
 <h1>G2P Notifications Fast2Sms<a class="headerlink" href="#g2p-notifications-fast2sms" title="Permalink to this headline">#</a></h1>
 <p>The G2P Notifications Fast2Sms module integrates OpenSPP programs with the Fast2SMS service, enabling the reliable and efficient delivery of SMS notifications to beneficiaries and other stakeholders. It extends the core notification framework to provide a dedicated gateway for sending text messages through a widely used third-party provider.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module empowers OpenSPP programs to leverage the Fast2SMS platform for their communication needs by:</p>
 <ul class="simple">
@@ -1671,39 +1658,39 @@ title="Print to PDF"
 <li><p><strong>Securing API Access</strong>: Manages the necessary authentication credentials (access tokens) required to securely connect and interact with the Fast2SMS API. This ensures only authorized communications are sent.</p></li>
 <li><p><strong>Extending Base Notification Capabilities</strong>: Provides a concrete and ready-to-use SMS implementation that plugs directly into the OpenSPP's foundational notification system.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module is a specialized extension that builds upon OpenSPP's core communication infrastructure.</p>
 <ul class="simple">
 <li><p><strong><a class="reference internal" href="g2p_notifications_base.html"><span class="doc std std-doc">G2P Notifications Base</span></a></strong>: This module serves as a concrete implementation for SMS delivery within the foundational <code class="docutils literal notranslate"><span class="pre">G2P</span> <span class="pre">Notifications</span> <span class="pre">Base</span></code> module. It registers itself as a specific SMS notification manager option, allowing program administrators to select Fast2SMS as their preferred SMS gateway for all program-related text communications.</p></li>
 <li><p><strong>G2P Program Management</strong>: By providing an active SMS channel, it enhances <code class="docutils literal notranslate"><span class="pre">G2P</span> <span class="pre">Programs</span></code> by ensuring that event-driven notifications, such as enrollment confirmations or payment disbursements, can be reliably sent to beneficiaries' mobile phones.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="fast2sms-service-configuration">
+<div class="section" id="fast2sms-service-configuration">
 <h3>Fast2SMS Service Configuration<a class="headerlink" href="#fast2sms-service-configuration" title="Permalink to this headline">#</a></h3>
 <p>Administrators can easily configure the specific parameters for connecting to the Fast2SMS service. This includes defining the <code class="docutils literal notranslate"><span class="pre">Send</span> <span class="pre">API</span> <span class="pre">Endpoint</span></code>, which dictates the exact URL OpenSPP uses to send messages. This ensures flexibility in connecting to different Fast2SMS service regions or configurations.</p>
-</section>
-<section id="sms-language-and-route-customization">
+</div>
+<div class="section" id="sms-language-and-route-customization">
 <h3>SMS Language and Route Customization<a class="headerlink" href="#sms-language-and-route-customization" title="Permalink to this headline">#</a></h3>
 <p>The module allows for detailed control over how messages are sent through Fast2SMS. Program managers can specify the <code class="docutils literal notranslate"><span class="pre">SMS</span> <span class="pre">Language</span></code> (e.g., &quot;english&quot;, &quot;hindi&quot;) for messages and select the appropriate <code class="docutils literal notranslate"><span class="pre">SMS</span> <span class="pre">Route</span></code> (e.g., &quot;q&quot; for quick transactional messages, &quot;t&quot; for promotional). This enables targeted and context-appropriate message delivery.</p>
-</section>
-<section id="secure-access-token-management">
+</div>
+<div class="section" id="secure-access-token-management">
 <h3>Secure Access Token Management<a class="headerlink" href="#secure-access-token-management" title="Permalink to this headline">#</a></h3>
 <p>To ensure secure communication with Fast2SMS, the module provides a dedicated field for storing the <code class="docutils literal notranslate"><span class="pre">Access</span> <span class="pre">Token</span></code>. This token is essential for authenticating OpenSPP's requests to the Fast2SMS API, safeguarding against unauthorized message sending and maintaining the integrity of program communications.</p>
-</section>
-<section id="seamless-sms-dispatch">
+</div>
+<div class="section" id="seamless-sms-dispatch">
 <h3>Seamless SMS Dispatch<a class="headerlink" href="#seamless-sms-dispatch" title="Permalink to this headline">#</a></h3>
 <p>Once configured, the module transparently handles the technical process of sending SMS messages. It integrates with the <code class="docutils literal notranslate"><span class="pre">g2p_notifications_base</span></code> to take message content and beneficiary phone numbers, then formats and dispatches them through the Fast2SMS API, ensuring beneficiaries receive timely information.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The G2P Notifications Fast2Sms module provides OpenSPP programs with a configurable and secure gateway to send essential SMS notifications via the Fast2SMS service, significantly enhancing direct and reliable beneficiary communication.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

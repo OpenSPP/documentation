@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<meta content="Enrol beneficiaries" name="title" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta content="Enrol beneficiaries" name="title" />
 <meta content="Learn how to enrol beneficiaries in OpenSPP programs, including both automatic and manual enrollment processes for individuals and groups." name="description" />
 <meta content="OpenSPP, enroll beneficiaries, import registrants, program enrollment, beneficiary management" name="keywords" />
 
@@ -65,18 +64,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/user_guide/program_management/enrol_beneficiaries.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1666,27 +1653,27 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="enrol-beneficiaries">
+  <div class="section" id="enrol-beneficiaries">
 <h1>Enrol beneficiaries<a class="headerlink" href="#enrol-beneficiaries" title="Permalink to this headline">#</a></h1>
 <p>In this tutorial, you will learn the process of enrolling beneficiaries in OpenSPP.
 Accurate beneficiary enrolment ensures that the right individuals or groups receive the intended benefits.</p>
-<section id="prerequisites">
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>To enrol beneficiaries in OpenSPP, you need to:</p>
 <ul class="simple">
 <li><p>Have an existing program. Learn more about how to configure a program in the documentation <a class="reference internal" href="create_program.html"><span class="doc">Create program</span></a>.</p></li>
 <li><p>Ensure your user account have the appropriate user permissions, such as <strong>Global Program manager</strong> or <strong>System Admin</strong> roles. Learn more in this guide: <a class="reference internal" href="../administration/user_access.html"><span class="doc">User access</span></a></p></li>
 </ul>
-</section>
-<section id="objective">
+</div>
+<div class="section" id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>This tutorial instructs users on how to enrol beneficiaries into a program in OpenSPP. By following these procedures, users will be able to import and enrol both individual and group beneficiaries, ensuring they are registered for the necessary support and benefits. Upon completion, users will have successfully added eligible beneficiaries to their respective social protection programs.</p>
-</section>
-<section id="process">
+</div>
+<div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">#</a></h2>
 <p>Enrolment is done for groups or individuals.
 Both enrolments can be done either as part of the program setup or after configuring the program.</p>
-<section id="beneficiary-import-and-enrolment">
+<div class="section" id="beneficiary-import-and-enrolment">
 <h3>Beneficiary Import and Enrolment<a class="headerlink" href="#beneficiary-import-and-enrolment" title="Permalink to this headline">#</a></h3>
 <p>The process progresses through two sequential stages, regardless of whether the program supports individual or group beneficiaries:</p>
 <ul class="simple">
@@ -1697,8 +1684,8 @@ Enrolment involves verifying the eligibility of each beneficiary based on the pr
 Once a beneficiary is enrolled in the program, they are entitled to receive the benefits or services provided by the program</p></li>
 </ul>
 <p>Depending on the choices made in the program setup, there are two different ways to perform these steps, both of them are described below.</p>
-</section>
-<section id="import-and-enrolment-during-program-creation">
+</div>
+<div class="section" id="import-and-enrolment-during-program-creation">
 <h3>Import and Enrolment during Program Creation<a class="headerlink" href="#import-and-enrolment-during-program-creation" title="Permalink to this headline">#</a></h3>
 <p>If <strong>Yes</strong> is selected during the final step of program setup, both the beneficiary <strong>import</strong> and <strong>enrolment</strong> processes are automatically executed as part of program creation.</p>
 <p><img alt="Enrol beneficiaries auto enrol" src="../../_images/enrol_beneficiaries_auto_enrol.png" /></p>
@@ -1707,12 +1694,12 @@ Once a beneficiary is enrolled in the program, they are entitled to receive the 
 <p>Click the <strong>Beneficiaries</strong> button to view the imported and enrolled beneficiaries in the table view.</p>
 <p><img alt="Beneficiaries table view showing imported and enrolled beneficiaries with their status and program details" src="../../_images/216.png" /></p>
 <p>This confirms that the beneficiaries are imported and enrolled.</p>
-</section>
-<section id="import-and-enrolment-on-already-existing-programs">
+</div>
+<div class="section" id="import-and-enrolment-on-already-existing-programs">
 <h3>Import and Enrolment on already Existing Programs<a class="headerlink" href="#import-and-enrolment-on-already-existing-programs" title="Permalink to this headline">#</a></h3>
 <p>If the option <strong>No</strong> has been selected as the final step of the program setup, both Import and Enrol steps needs to be done as a separate action prior to proceeding.</p>
 <p>This action consists of two steps, first the import of registrants into the program, and then the enrolment of the previously imported registrants into the program.</p>
-<section id="import-registrants">
+<div class="section" id="import-registrants">
 <h4>Import Registrants<a class="headerlink" href="#import-registrants" title="Permalink to this headline">#</a></h4>
 <p>To import registrants into a program manually, Select an existing program you wish to import registrants into, then click on <strong>Import New Eligible Registrants</strong> button.</p>
 <p><img alt="Enrol beneficiaries manual import" src="../../_images/enrol_beneficiaries_manual_import.png" /></p>
@@ -1729,8 +1716,8 @@ The time it takes to import the beneficiaries will depend on the number of benef
 <p><img alt="Enrol beneficiaries success import" src="../../_images/enrol_beneficiaries_success_import.png" /></p>
 <p>In the case of greater number of beneficiaries, a yellow notification will display informing that the page needs to be refreshed to see the status of the import.</p>
 <p><img alt="Yellow notification message indicating that page refresh is needed to see the import status for large beneficiary volumes" src="../../_images/410.png" /></p>
-</section>
-<section id="enrol-registrants">
+</div>
+<div class="section" id="enrol-registrants">
 <h4>Enrol Registrants<a class="headerlink" href="#enrol-registrants" title="Permalink to this headline">#</a></h4>
 <p>To manually enrol registrants into a program, first confirm that the import process has been completed.
 You may confirm this by clicking the <strong>Beneficiaries</strong> button, verify that registrants are listed and is under <strong>Draft</strong>, then go back to the program page to proceed and click <strong>Enrol Eligible Registrants</strong>.</p>
@@ -1745,10 +1732,10 @@ If the warning message disappears or a success notification is displayed, this c
 To do this, click the <strong>Beneficiaries</strong> button to access the table view, where you can review the list of imported and enrolled beneficiaries.
 This allows you to confirm that the correct individuals or groups are registered and eligible for program benefits.</p>
 <p><img alt="Enrol beneficiaries list" src="../../_images/enrol_beneficiaries_list.png" /></p>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
 
               </div>

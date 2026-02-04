@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_auth_id_oidc.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1648,10 +1635,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-auth-oidc-reg-id">
+  <div class="section" id="g2p-auth-oidc-reg-id">
 <h1>G2P Auth: OIDC - Reg ID<a class="headerlink" href="#g2p-auth-oidc-reg-id" title="Permalink to this headline">#</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_auth_id_oidc</span></code> module extends OpenSPP's OpenID Connect (OIDC) authentication capabilities to specifically manage and authenticate G2P registrant IDs. It bridges external identity provider verification with OpenSPP's registrant registry, ensuring that the identities of individuals and groups are securely linked and validated against official records.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module provides critical functionality for securely identifying and managing OpenSPP registrants through OIDC, offering several key capabilities:</p>
 <ul class="simple">
@@ -1661,8 +1648,8 @@ title="Print to PDF"
 <li><p><strong>Authentication Status Tracking</strong>: Records the authentication status and the last successful authentication timestamp directly on the <code class="docutils literal notranslate"><span class="pre">g2p.reg.id</span></code> record. This provides an audit trail and clear indication of a registrant's verified status.</p></li>
 <li><p><strong>Configurable ID Type Integration</strong>: Allows administrators to specify which type of G2P Registrant ID (e.g., National ID, Voter ID) an OIDC provider is configured to authenticate. This ensures flexibility in integrating various national identity schemes.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_auth_id_oidc</span></code> module is a crucial extension that integrates deeply with OpenSPP's core authentication and registry components:</p>
 <ul class="simple">
@@ -1671,27 +1658,27 @@ title="Print to PDF"
 <li><p><strong>Auth OAuth Provider (<code class="docutils literal notranslate"><span class="pre">auth.oauth.provider</span></code>)</strong>: It extends the OIDC provider configuration by adding a specific field to link an external OIDC provider to a designated G2P Registrant ID Type. This enables the system to understand which type of OpenSPP ID the external provider is verifying.</p></li>
 <li><p><strong>G2P ID Type (<code class="docutils literal notranslate"><span class="pre">g2p.id.type</span></code>)</strong> and <strong>G2P Registrant ID (<code class="docutils literal notranslate"><span class="pre">g2p.reg.id</span></code>)</strong>: This module directly works with these models. It maps OIDC claims to specific <code class="docutils literal notranslate"><span class="pre">g2p.reg.id</span></code> entries, updates their authentication status, and facilitates the re-authentication of these IDs.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="mapping-oidc-claims-to-registrant-ids">
+<div class="section" id="mapping-oidc-claims-to-registrant-ids">
 <h3>Mapping OIDC Claims to Registrant IDs<a class="headerlink" href="#mapping-oidc-claims-to-registrant-ids" title="Permalink to this headline">#</a></h3>
 <p>This module allows administrators to configure how OIDC claims are mapped to OpenSPP registrant IDs. Upon successful authentication, the system can identify and link the OIDC <code class="docutils literal notranslate"><span class="pre">user_id</span></code> claim to a specific <code class="docutils literal notranslate"><span class="pre">g2p.reg.id</span></code> record. If the OIDC provider returns multiple <code class="docutils literal notranslate"><span class="pre">user_id</span></code> claims (e.g., <code class="docutils literal notranslate"><span class="pre">user_id123</span></code> for a specific ID type with ID <code class="docutils literal notranslate"><span class="pre">123</span></code>), the module can map these to corresponding <code class="docutils literal notranslate"><span class="pre">g2p.reg.id</span></code> entries, either updating existing ones or creating new ones if not found.</p>
-</section>
-<section id="automated-registrant-profile-population">
+</div>
+<div class="section" id="automated-registrant-profile-population">
 <h3>Automated Registrant Profile Population<a class="headerlink" href="#automated-registrant-profile-population" title="Permalink to this headline">#</a></h3>
 <p>When a registrant successfully authenticates via OIDC, the module automatically populates or updates their OpenSPP profile. It processes OIDC claims such as the registrant's <code class="docutils literal notranslate"><span class="pre">name</span></code> (breaking it down into <code class="docutils literal notranslate"><span class="pre">given_name</span></code>, <code class="docutils literal notranslate"><span class="pre">family_name</span></code>, and <code class="docutils literal notranslate"><span class="pre">addl_name</span></code>) and <code class="docutils literal notranslate"><span class="pre">phone</span></code> to ensure the registrant's profile is accurate and complete. Additionally, it sets the <code class="docutils literal notranslate"><span class="pre">is_registrant</span></code> flag to true for individuals and <code class="docutils literal notranslate"><span class="pre">is_group</span></code> to false, confirming their status within the registry.</p>
-</section>
-<section id="registrant-id-authentication-status-management">
+</div>
+<div class="section" id="registrant-id-authentication-status-management">
 <h3>Registrant ID Authentication Status Management<a class="headerlink" href="#registrant-id-authentication-status-management" title="Permalink to this headline">#</a></h3>
 <p>The module tracks the authentication status of each <code class="docutils literal notranslate"><span class="pre">g2p.reg.id</span></code> record. Upon successful OIDC authentication, the <code class="docutils literal notranslate"><span class="pre">authentication_status</span></code> field on the corresponding <code class="docutils literal notranslate"><span class="pre">g2p.reg.id</span></code> is updated to &quot;Authenticated,&quot; and the <code class="docutils literal notranslate"><span class="pre">last_authentication_time</span></code> is recorded. This provides a clear, real-time indication of a registrant's verified identity. The system also supports initiating re-authentication for a specific registrant ID, guiding the user back to the appropriate OIDC provider.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_auth_id_oidc</span></code> module is essential for securely integrating external identity verification with OpenSPP's registrant management, streamlining the process of authenticating and maintaining accurate profiles for individuals and groups in social protection programs.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/g2p_programs_rest_api.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1648,10 +1635,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="g2p-programs-rest-api">
+  <div class="section" id="g2p-programs-rest-api">
 <h1>G2P Programs Rest Api<a class="headerlink" href="#g2p-programs-rest-api" title="Permalink to this headline">#</a></h1>
 <p>This module provides a RESTful API for managing program enrollments for individuals and groups within OpenSPP. It allows external systems to interact programmatically with the platform's social protection program data, facilitating seamless integration and automation.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_programs_rest_api</span></code> module empowers external systems to manage program participation data, extending OpenSPP's core program management capabilities through a standardized API.</p>
 <ul class="simple">
@@ -1661,35 +1648,35 @@ title="Print to PDF"
 <li><p><strong>Integrate External Systems:</strong> Facilitate seamless data exchange between OpenSPP and other applications, such as mobile enrollment tools or partner databases, for program-related information.</p></li>
 <li><p><strong>Streamline Data Updates:</strong> Efficiently update program enrollment statuses, such as initial enrollment dates or exit dates, for beneficiaries across various programs through programmatic interfaces.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>This module builds upon existing OpenSPP functionalities to provide its API services, creating a comprehensive interface for program data.</p>
 <ul class="simple">
 <li><p><strong><a class="reference internal" href="g2p_registry_rest_api.html"><span class="doc std std-doc">G2P Registry: Rest API</span></a></strong>: This module forms the foundational API layer for managing individuals and groups in the OpenSPP registry. <code class="docutils literal notranslate"><span class="pre">g2p_programs_rest_api</span></code> extends its data models, allowing program enrollment information to be included when creating, updating, or querying registrant and group membership data through the API.</p></li>
 <li><p><strong><a class="reference internal" href="g2p_programs.html"><span class="doc std std-doc">G2P Programs</span></a></strong>: This core module defines the social protection programs themselves, their cycles, and eligibility rules. <code class="docutils literal notranslate"><span class="pre">g2p_programs_rest_api</span></code> exposes the data structures related to program membership defined in <code class="docutils literal notranslate"><span class="pre">g2p_programs</span></code> via the API, enabling external systems to interact with these program-specific records.</p></li>
 </ul>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="program-enrollment-for-individuals">
+<div class="section" id="program-enrollment-for-individuals">
 <h3>Program Enrollment for Individuals<a class="headerlink" href="#program-enrollment-for-individuals" title="Permalink to this headline">#</a></h3>
 <p>Users can create and manage program enrollments for individual registrants directly through the API. This includes specifying the program name and the enrollment date. The API also allows for retrieving a registrant's full history of program participation, including the program ID, current state (e.g., active, exited), enrollment date, and any exit dates.</p>
-</section>
-<section id="group-based-program-membership-management">
+</div>
+<div class="section" id="group-based-program-membership-management">
 <h3>Group-Based Program Membership Management<a class="headerlink" href="#group-based-program-membership-management" title="Permalink to this headline">#</a></h3>
 <p>The module extends the API for group memberships to include program enrollment details for the group's members. When managing a group's membership via the API, it is now possible to simultaneously assign or update program enrollments for the individuals within that group. This simplifies the process for programs that onboard beneficiaries in a group context.</p>
-</section>
-<section id="standardized-data-exchange-for-program-membership">
+</div>
+<div class="section" id="standardized-data-exchange-for-program-membership">
 <h3>Standardized Data Exchange for Program Membership<a class="headerlink" href="#standardized-data-exchange-for-program-membership" title="Permalink to this headline">#</a></h3>
 <p>The module defines clear and consistent data structures for program membership information, both for incoming data (e.g., when enrolling a registrant) and outgoing data (e.g., when querying enrollment status). This standardization ensures reliable data exchange with external systems, facilitating easier integration and reducing potential data errors.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">g2p_programs_rest_api</span></code> module is crucial for extending OpenSPP's program management capabilities, enabling external systems to programmatically manage and access social protection program enrollment data for individuals and groups.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>

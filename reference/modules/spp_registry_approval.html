@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
     <script>
@@ -63,18 +62,6 @@
     <script src="../../_static/search_shortcut.js"></script>
     <script src="../../_static/version_switcher.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script src="https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js"></script>
-    <script>
-mermaid.initialize({
-    startOnLoad: true,
-    theme: 'default',
-    themeVariables: {
-        primaryColor: '#0066cc',
-        primaryTextColor: '#000000',
-        primaryBorderColor: '#0066cc'
-    }
-});
-</script>
     <link rel="canonical" href="https://docs.openspp.org/reference/modules/spp_registry_approval.html" />
     <link rel="search" type="application/opensearchdescription+xml"
           title="Search within OpenSPP Documentation v1.3"
@@ -1660,10 +1647,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="registry-approval-base">
+  <div class="section" id="registry-approval-base">
 <h1>Registry Approval: Base<a class="headerlink" href="#registry-approval-base" title="Permalink to this headline">#</a></h1>
 <p>The OpenSPP Registry Approval module establishes a crucial workflow for validating and managing the official status of individuals and groups within the OpenSPP registry. It ensures that all registrant data is formally reviewed and approved before being utilized in social protection programs or farmer registries.</p>
-<section id="purpose">
+<div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">#</a></h2>
 <p>This module provides a structured approval process for registrant data, ensuring its accuracy, compliance, and readiness for program participation. It acts as a gatekeeper, maintaining the integrity of the OpenSPP registry.</p>
 <ul class="simple">
@@ -1673,36 +1660,36 @@ title="Print to PDF"
 <li><p><strong>Role-Based Decision Making</strong>: Empowers authorized personnel, such as program managers or data validators, to make final decisions on the validity and eligibility of registrant entries.</p></li>
 <li><p><strong>Streamlined Program Enrollment</strong>: Ensures that only approved and verified individuals or groups are eligible for enrollment in social protection programs, preventing errors and ensuring proper resource allocation.</p></li>
 </ul>
-</section>
-<section id="dependencies-and-integration">
+</div>
+<div class="section" id="dependencies-and-integration">
 <h2>Dependencies and Integration<a class="headerlink" href="#dependencies-and-integration" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Registry Approval module extends the core registrant data model provided by the <a class="reference internal" href="spp_registry_base.html"><span class="doc std std-doc">OpenSPP Registry Base</span></a> module. It integrates directly by adding the essential approval <code class="docutils literal notranslate"><span class="pre">state</span></code> field to all registrant records.</p>
 <p>This module serves as a foundational component for other program-specific modules that rely on validated beneficiary data. By providing clear approval statuses, it ensures that only officially approved individuals and groups are considered for benefits, program enrollment, or further processing across the OpenSPP platform.</p>
-</section>
-<section id="additional-functionality">
+</div>
+<div class="section" id="additional-functionality">
 <h2>Additional Functionality<a class="headerlink" href="#additional-functionality" title="Permalink to this headline">#</a></h2>
-<section id="registrant-status-management">
+<div class="section" id="registrant-status-management">
 <h3>Registrant Status Management<a class="headerlink" href="#registrant-status-management" title="Permalink to this headline">#</a></h3>
 <p>The module introduces a 'State' field for every registrant, allowing users to track their progress through the approval workflow. New registrants typically begin in a 'Draft' state, awaiting review. This status provides immediate insight into whether a registrant is pending, active, or disallowed.</p>
-</section>
-<section id="approval-and-rejection-actions">
+</div>
+<div class="section" id="approval-and-rejection-actions">
 <h3>Approval and Rejection Actions<a class="headerlink" href="#approval-and-rejection-actions" title="Permalink to this headline">#</a></h3>
 <p>Authorized users can change a registrant's state based on review outcomes. The 'Approve' action transitions a registrant from 'Draft' to 'Approved', signaling that their data is verified and they are eligible for program inclusion. Conversely, the 'Reject' action marks a registrant as 'Rejected', indicating that they do not meet the criteria or their data is invalid.</p>
-</section>
-<section id="reset-to-draft-for-re-evaluation">
+</div>
+<div class="section" id="reset-to-draft-for-re-evaluation">
 <h3>Reset to Draft for Re-evaluation<a class="headerlink" href="#reset-to-draft-for-re-evaluation" title="Permalink to this headline">#</a></h3>
 <p>In cases where an 'Approved' or 'Rejected' registrant requires further edits or a new review cycle, authorized users can utilize the 'Reset to Draft' action. This reverts the registrant to the initial 'Draft' state, allowing for necessary modifications and a subsequent re-submission for approval.</p>
-</section>
-<section id="role-based-access-control">
+</div>
+<div class="section" id="role-based-access-control">
 <h3>Role-Based Access Control<a class="headerlink" href="#role-based-access-control" title="Permalink to this headline">#</a></h3>
 <p>All approval, rejection, and reset actions are protected by specific user roles and permissions. This ensures that only designated personnel, such as data validators or program administrators, can modify a registrant's approval status, maintaining data integrity and accountability within the system.</p>
-</section>
-</section>
-<section id="conclusion">
+</div>
+</div>
+<div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">spp_registry_approval</span></code> module is vital for maintaining data integrity and compliance by providing a structured approval workflow for all individuals and groups within OpenSPP's social protection and farmer registries.</p>
-</section>
-</section>
+</div>
+</div>
 
 
               </div>
