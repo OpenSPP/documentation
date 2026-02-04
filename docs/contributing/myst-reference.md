@@ -263,11 +263,40 @@ The above MyST markup renders as shown below.
     :width: 100%
 ```
 
-### Diagrams and graphs with Graphviz
+### Diagrams and graphs
 
-We use [Graphviz](https://graphviz.org/download/) and its Sphinx extension [`sphinx.ext.graphviz`](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html) to render diagrams and graph visualizations.
+OpenSPP documentation supports diagram rendering with Mermaid and Graphviz.
 
-The following MyST example will display as shown below.
+#### Mermaid diagrams (recommended)
+
+We use [Mermaid](https://mermaid.js.org/) for most diagrams. Mermaid diagrams render client-side
+and don't require additional software installation.
+
+````markdown
+```{mermaid}
+graph LR
+    A[ZCML] --> B[Python]
+    A --> C[Template]
+```
+````
+
+```{mermaid}
+graph LR
+    A[ZCML] --> B[Python]
+    A --> C[Template]
+```
+
+#### Graphviz diagrams
+
+For more complex graph visualizations, we support [Graphviz](https://graphviz.org/download/)
+via the [`sphinx.ext.graphviz`](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html) extension.
+
+```{note}
+Graphviz requires the `dot` command to be installed on your system.
+Install it via your package manager (e.g., `apt install graphviz` or `brew install graphviz`).
+```
+
+Example syntax:
 
 ````markdown
 ```{eval-rst}
@@ -282,18 +311,6 @@ The following MyST example will display as shown below.
     }
 ```
 ````
-
-```{eval-rst}
-.. graphviz::
-    :align: center
-
-    digraph viewstructure {
-      {
-        node [margin=5,shape=box]
-      }
-      ZCML -> {Python, Template};
-    }
-```
 
 ### Code block
 
