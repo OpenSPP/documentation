@@ -1,0 +1,199 @@
+name: Build and deploy multi-version OpenSPP documentation
+
+# This workflow builds and deploys multi-version documentation:
+# - v1.3 (stable) from stable branch -> root (/)
+# - v2.0 from v2-odoo19-doc-refresh branch -> /v2.0/
+
+on:
+  push:
+    branches:
+      - stable  # Only run on stable branch
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  build_multiversion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout stable branch
+        uses: actions/checkout@v3
+        with:
+          ref: stable
+          fetch-depth: 0  # Fetch all history for branch switching
+          submodules: true
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y graphviz libsasl2-dev libldap2-dev libssl-dev
+
+      # ============================================
+      # BUILD v1.3 (from stable branch) -> ROOT
+      # ============================================
+      - name: Install v1.3 dependencies (stable)
+        run: |
+          pip install -q -r requirements_frozen.txt
+
+      - name: Prepare v1.3 build
+        run: |
+          # Temporarily disable csvlexer import (not in requirements_frozen.txt)
+          sed -i 's/from csvlexer.csv import CsvLexer/# from csvlexer.csv import CsvLexer  # disabled for CI/' docs/conf.py
+          sed -i "s/lexers\['csv'\] = CsvLexer/# lexers['csv'] = CsvLexer  # disabled for CI/" docs/conf.py
+
+          # Save version_switcher.js for later (before switching branches)
+          cp docs/_static/version_switcher.js /tmp/version_switcher.js
+
+      - name: Build v1.3 documentation (root)
+        run: |
+          set -e
+          rm -rf _build/
+          export DOCS_VERSION=1.3
+          export DOCS_BASEURL=https://docs.openspp.org/
+          sphinx-build -b html docs _build/html
+          echo "v1.3 build complete"
+
+      # ============================================
+      # BUILD v2.0 (from v2-odoo19-doc-refresh branch) -> /v2.0/
+      # ============================================
+      - name: Checkout v2 docs
+        run: |
+          # Save v1.3 build
+          mv _build/html /tmp/v1.3-build
+
+          # Discard local changes to conf.py (csvlexer was disabled for v1.3 build)
+          git checkout docs/conf.py
+
+          # Checkout v2 branch
+          git checkout v2-odoo19-doc-refresh
+          git submodule update --init --recursive
+
+      - name: Install v2.0 dependencies
+        run: |
+          # Install any additional requirements for v2
+          pip install -q -r requirements_frozen.txt || pip install -q -r requirements.txt
+
+      - name: Build v2.0 documentation (/v2.0/)
+        run: |
+          set -e
+          rm -rf _build/
+          export DOCS_VERSION=2.0
+          export DOCS_BASEURL=https://docs.openspp.org/v2.0/
+          sphinx-build -b html docs _build/html/v2.0
+          echo "v2.0 build complete"
+
+      # ============================================
+      # COMBINE BUILDS & SETUP VERSION SWITCHER
+      # ============================================
+      - name: Combine builds
+        run: |
+          # Move v1.3 build back as root
+          mv /tmp/v1.3-build/* _build/html/
+          echo "Combined v1.3 (root) and v2.0 (/v2.0/)"
+
+      - name: Setup version switcher
+        run: |
+          set -e
+
+          # Create production switcher.json
+          cat > _build/html/_static/switcher.json << 'EOF'
+          [
+              {
+                  "name": "1.3 (stable)",
+                  "version": "1.3",
+                  "url": "https://docs.openspp.org/"
+              },
+              {
+                  "name": "2.0 (preview)",
+                  "version": "2.0",
+                  "url": "https://docs.openspp.org/v2.0/"
+              }
+          ]
+          EOF
+
+          # Copy to v2.0
+          cp _build/html/_static/switcher.json _build/html/v2.0/_static/
+
+          # Copy version_switcher.js from stable (saved earlier) to both builds
+          # This ensures we use the fixed version with proper regex
+          cp /tmp/version_switcher.js _build/html/_static/
+          cp /tmp/version_switcher.js _build/html/v2.0/_static/
+
+          echo "Version switcher configured"
+
+      - name: Inject version switcher script
+        run: |
+          # Inject script tag into all HTML files that don't already have it
+          find _build/html -name "*.html" -exec grep -L "version_switcher.js" {} \; | \
+            xargs -I {} sed -i 's|</body>|<script src="/_static/version_switcher.js"></script></body>|g' {}
+
+          echo "Version switcher script injected"
+
+      - name: Display build summary
+        run: |
+          echo "============================================"
+          echo "Multi-version documentation build complete"
+          echo "============================================"
+          echo ""
+          echo "v1.3 (root):"
+          ls -la _build/html/ | head -10
+          echo ""
+          echo "v2.0 (/v2.0/):"
+          ls -la _build/html/v2.0/ | head -10
+          echo ""
+          echo "Version switcher:"
+          cat _build/html/_static/switcher.json
+
+      # ============================================
+      # DEPLOY TO CF-PAGES
+      # ============================================
+      - name: Deploy to cf-pages branch
+        run: |
+          set -e
+
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Create a temporary directory for the deployment
+          DEPLOY_DIR=$(mktemp -d)
+          cp -r _build/html/* "$DEPLOY_DIR/"
+
+          # Fetch cf-pages branch
+          git fetch origin cf-pages:cf-pages || git checkout --orphan cf-pages
+          git checkout cf-pages
+
+          # Preserve preview deployments (keep_files equivalent)
+          if [ -d "previews" ]; then
+            cp -r previews "$DEPLOY_DIR/"
+          fi
+
+          # Clean current content except .git
+          find . -maxdepth 1 ! -name '.git' ! -name '.' -exec rm -rf {} +
+
+          # Copy new content
+          cp -r "$DEPLOY_DIR"/* .
+
+          # Add .nojekyll to prevent Jekyll processing
+          touch .nojekyll
+
+          # Commit and push
+          git add -A
+          git commit -m "Deploy multi-version documentation (v1.3 + v2.0)" || echo "No changes to commit"
+          git push origin cf-pages
+
+          # Clean up
+          rm -rf "$DEPLOY_DIR"
+
+      - name: Display deployment status
+        run: |
+          echo "============================================"
+          echo "Multi-version documentation deployed!"
+          echo "============================================"
+          echo ""
+          echo "URLs:"
+          echo "  - v1.3 (stable):  https://docs.openspp.org/"
+          echo "  - v2.0 (preview): https://docs.openspp.org/v2.0/"
