@@ -93,6 +93,44 @@ cd documentation
 make html
 ```
 
+### Docker (optional)
+
+If you prefer a reproducible build environment, you can build the documentation in a Docker container.
+The repository includes a `Dockerfile` with the required system dependencies.
+
+```shell
+# Build the image (includes a copy of the docs)
+docker build -t openspp-docs .
+
+# Build HTML docs
+docker run --rm -it openspp-docs make html
+```
+
+To extract the built HTML from the container:
+
+```shell
+docker run --name docs-build openspp-docs make html
+docker cp docs-build:/docs/docs/_build/html ./html-output
+docker rm docs-build
+```
+
+```{note}
+The Dockerfile copies the documentation into the image at build time.
+If you make changes to the source files, you must rebuild the image to include them.
+```
+
+For live-reload during development, use a bind mount instead:
+
+```shell
+docker run --rm -it -p 8050:8050 -v "$PWD":/docs:z openspp-docs make livehtml
+```
+
+Open http://0.0.0.0:8050/ in a web browser.
+
+```{note}
+The `:z` suffix is required on SELinux-enabled systems (Fedora, RHEL, CentOS) to set the correct security context for the mounted volume.
+```
+
 (setup-build-available-documentation-builds-label)=
 
 ## Available documentation builds

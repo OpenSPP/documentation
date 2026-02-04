@@ -177,6 +177,7 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 		--ignore "*/.git/*" \
 		--ignore "**/.DS_Store" \
 		--re-ignore "_build/.*" \
+		--host 0.0.0.0 \
 		--port 8050 \
 		-j auto \
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
