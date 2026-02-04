@@ -64,6 +64,9 @@ jobs:
           # Save v1.3 build
           mv _build/html /tmp/v1.3-build
 
+          # Discard local changes to conf.py (csvlexer was disabled for v1.3 build)
+          git checkout docs/conf.py
+
           # Checkout v2 branch
           git checkout v2-odoo19-doc-refresh
           git submodule update --init --recursive
