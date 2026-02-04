@@ -20,18 +20,16 @@ This guide covers deploying OpenSPP to various environments, from development se
 - **Container Deployment**: Docker and Kubernetes deployment strategies
 - **Configuration Management**: Environment variables, configuration files, and secrets
 
-<!--
 ```{toctree}
 :maxdepth: 2
+:hidden:
 
-architecture
-on-premise
-cloud
-single-node
-multi-node
-containers
-configuration
+production-hardening
 ```
+
+<!--
+Additional topics planned:
+architecture, on-premise, cloud, single-node, multi-node, containers, configuration
 -->
 
-**Note:** Content coming soon. This section is being developed as part of the V2 documentation restructure.
+**Note:** Additional deployment topics are being developed as part of the V2 documentation restructure. See {doc}`production-hardening` for the production Docker Compose hardening guide.

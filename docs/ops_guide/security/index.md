@@ -19,36 +19,21 @@ OpenSPP handles sensitive personal data for vulnerable populations. This section
 | {doc}`pii_encryption` | Field-level encryption for sensitive data |
 | {doc}`key_management` | Encryption keys, rotation, backup |
 | {doc}`audit` | Access logging, compliance reporting |
+| {doc}`scanning` | Security scanning (SAST, SCA, DAST) |
 
 ## Security Architecture Overview
 
 OpenSPP uses a layered security approach:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│ Layer 5: Audit & Compliance                                 │
-│   - Access logging, DSAR handling, compliance reports       │
-└─────────────────────────────────────────────────────────────┘
-                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│ Layer 4: Application Encryption                             │
-│   - AES-256-GCM field encryption, blind indexes             │
-└─────────────────────────────────────────────────────────────┘
-                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│ Layer 3: Access Control                                     │
-│   - RBAC, field-level permissions, record rules             │
-└─────────────────────────────────────────────────────────────┘
-                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│ Layer 2: Database Security                                  │
-│   - PostgreSQL TDE, connection encryption                   │
-└─────────────────────────────────────────────────────────────┘
-                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│ Layer 1: Infrastructure                                     │
-│   - Network security, firewalls, SSL/TLS                    │
-└─────────────────────────────────────────────────────────────┘
+```{mermaid}
+flowchart TB
+    L5["<b>Layer 5: Audit & Compliance</b><br/>Access logging, DSAR handling, compliance reports"]
+    L4["<b>Layer 4: Application Encryption</b><br/>AES-256-GCM field encryption, blind indexes"]
+    L3["<b>Layer 3: Access Control</b><br/>RBAC, field-level permissions, record rules"]
+    L2["<b>Layer 2: Database Security</b><br/>PostgreSQL TDE, connection encryption"]
+    L1["<b>Layer 1: Infrastructure</b><br/>Network security, firewalls, SSL/TLS"]
+
+    L5 --> L4 --> L3 --> L2 --> L1
 ```
 
 ## Quick Security Checklist
@@ -64,6 +49,7 @@ Before going to production:
 - [ ] Enable SSL/TLS for all connections
 - [ ] Set up backup encryption
 - [ ] Test DSAR export procedures
+- [ ] Run security scans ({doc}`scanning`)
 - [ ] Review security logs
 
 ## Deployment Tiers
@@ -84,6 +70,7 @@ data_classification
 pii_encryption
 key_management
 audit
+scanning
 ```
 
 ## Related Documentation
