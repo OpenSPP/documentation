@@ -38,9 +38,17 @@ Think of Studio like KoBoToolbox's form builder, but for configuring your entire
 2. Click **Studio** in the main menu
 3. You'll see the Studio Dashboard with quick access to Studio tools
 
-![Studio highlighted in the apps menu](/_images/en-us/config_guide/studio/overview/01-apps-menu-studio-highlighted.png)
+```{figure} ../../_images/en-us/config_guide/studio/overview/01-apps-menu-studio-highlighted.png
+:alt: Studio highlighted in the apps menu
 
-![Studio Dashboard showing the main tool cards](/_images/en-us/config_guide/studio/overview/02-studio-dashboard.png)
+Click **Studio** in the main menu to open it.
+```
+
+```{figure} ../../_images/en-us/config_guide/studio/overview/02-studio-dashboard.png
+:alt: Studio Dashboard showing the main tool cards
+
+The Studio Dashboard — your starting point for all Studio tools.
+```
 
 ## Studio Components
 
@@ -190,7 +198,11 @@ To assign Studio permissions to a user:
 Studio uses OpenSPP's privilege-based security system. Groups appear as "Studio / Viewer", "Studio / Editor", and "Studio / Manager" in the Groups list.
 ```
 
-![User settings showing Studio privilege options](/_images/en-us/config_guide/studio/overview/08-user-studio-privileges.png)
+```{figure} ../../_images/en-us/config_guide/studio/overview/08-user-studio-privileges.png
+:alt: User settings showing Studio privilege options
+
+Under **Privileges**, enable **Studio** and choose the permission level.
+```
 
 ## The 80/20 rule
 
@@ -235,8 +247,6 @@ What you can do:
 
 The Studio Dashboard is your starting point for configuring OpenSPP without code.
 
-![Studio Dashboard with main tool cards](/_images/en-us/config_guide/studio/overview/02-studio-dashboard.png)
-
 ### Dashboard cards
 
 The dashboard provides quick access to the main Studio tools:
@@ -253,9 +263,13 @@ Each card includes a brief description and a button to open that tool.
 
 ### Studio menu
 
-Besides the dashboard, you can access Studio features through the main Studio menu:
+Besides the dashboard, you can access Studio features through the top menu bar:
 
-![Studio menu sections in the sidebar](/_images/en-us/config_guide/studio/overview/03-studio-sidebar-menu.png)
+```{figure} ../../_images/en-us/config_guide/studio/overview/03-studio-top-menu.png
+:alt: Studio top menu bar highlighted
+
+Use the top menu bar to navigate between Studio sections.
+```
 
 - **Home** - Return to the dashboard
 - **Rules** - Work with expressions, variables, logic packs, and test personas
