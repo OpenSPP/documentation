@@ -28,8 +28,7 @@ Installation of OpenSPP Documentation includes pre-requisites and the repository
 
 ### Python
 
-Python 3.8 or later is required.
-A more recent Python is preferred.
+Python 3.11 is required.
 Use your system's package manager or [pyenv](https://github.com/pyenv/pyenv) to install an appropriate version of Python.
 
 

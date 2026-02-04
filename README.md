@@ -11,6 +11,11 @@ Browse the OpenSPP Documentation at https://docs.openspp.org/.
 
 Active development on the OpenSPP Documentation takes place on the branch [`main`](https://github.com/openspp/documentation/).
 
+## Building the documentation
+
+Python 3.11 is required to build the documentation. If you are using pyenv, create a `.python-version` to set the version before running any `make` commands.
+After installing library dependencies - see [docs/contributing/setup-build.md](docs/contributing/setup-build.md) for details - build the documentation using `make html`.
+
 ## Contribute
 
 - [Contributing to OpenSPP Documentation](https://docs.openspp.org/contributing/index.html)
