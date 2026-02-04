@@ -5,6 +5,7 @@ openspp:
 
 # Area Management
 
+**Module:** `spp_area`
 
 ## Overview
 
@@ -173,48 +174,3 @@ Area assignments for access control:
 | Version        | 19.0.1.3.1   |
 | License        | LGPL-3       |
 | Application    | Yes          |
-
-## Are you stuck?
-
-### Cannot assign area to registrant
-
-**Symptom:** Area dropdown shows no options or wrong areas.
-
-**Cause:** Area type validation may be restricting available areas.
-
-**Solution:** Check that:
-
-1. Areas exist at the expected level in the hierarchy
-2. The registrant type allows the area type being selected
-3. User has permission to view the areas
-
-### Area import failing
-
-**Symptom:** Excel import shows errors or incomplete data.
-
-**Cause:** Data may not match expected hierarchy or format.
-
-**Solution:**
-
-1. Verify Excel columns match expected format
-2. Ensure parent areas are imported before children
-3. Check for duplicate codes
-4. Review import log for specific errors
-
-### User cannot see registrants in their area
-
-**Symptom:** Local role user sees no data despite area assignment.
-
-**Cause:** Area assignment may not include child areas, or registrants not properly linked.
-
-**Solution:**
-
-1. Verify user's area assignment includes the correct hierarchy
-2. Check that registrants have area assignments
-3. Ensure area record rules are properly configured
-
-## See Also
-
-- {doc}`spp_registry` - Registrant models linked to areas
-- {doc}`spp_security` - Security groups for area management
-- {doc}`spp_programs` - Geographic targeting in programs

@@ -5,6 +5,7 @@ openspp:
 
 # Approval Workflows
 
+**Module:** `spp_approval`
 
 ## Overview
 
@@ -209,54 +210,3 @@ Approve multiple records at once:
 ```python
 MyModel.action_approve_batch(record_ids, comment="Batch approved")
 ```
-
-## Are you stuck?
-
-### Cannot submit for approval
-
-**Symptom:** "No approval workflow configured" error.
-
-**Cause:** No approval definition exists for the model, or conditions don't match.
-
-**Solution:**
-
-1. Navigate to **Settings > Approvals > Approval Definitions**
-2. Create a definition for the target model
-3. If using CEL conditions, verify the expression matches the record
-
-### Cannot approve record
-
-**Symptom:** "You are not authorized to approve" error.
-
-**Cause:** User is not in the approval group, or multi-tier sequence issue.
-
-**Solution:**
-
-1. Check which group is configured for approval
-2. Add user to the appropriate group
-3. For multi-tier, verify the current tier's group
-4. Check for pending reviews at earlier tiers
-
-### Approval state inconsistent
-
-**Symptom:** Record shows "pending" but no approval reviews exist.
-
-**Cause:** Data inconsistency from interrupted process.
-
-**Solution:**
-
-1. Reset the record to draft
-2. Re-submit for approval
-3. If issue persists, check audit logs for what happened
-
-### Activities not created
-
-**Symptom:** Approvers don't receive notification activities.
-
-**Cause:** "Notify on Submit" may be disabled, or activity type missing.
-
-**Solution:**
-
-1. Check approval definition has "Notify on Submit" enabled
-2. Verify mail.activity.type for approval exists
-3. Check that approver users have valid email addresses

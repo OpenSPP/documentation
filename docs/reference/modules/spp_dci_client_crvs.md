@@ -5,6 +5,7 @@ openspp:
 
 # DCI Client - CRVS
 
+**Module:** `spp_dci_client_crvs`
 This module is for **developers** and **sys admins** who need to integrate OpenSPP with Civil Registration and Vital Statistics (CRVS) systems. It enables your social protection programs to verify and receive vital events data (births, deaths, marriages) from external CRVS registries using the DCI API standard.
 
 ## Overview
@@ -181,59 +182,3 @@ failed_events.action_retry_processing()
 | Version | 19.0.1.0.0 |
 | License | LGPL-3 |
 | Development Status | Alpha |
-
-## Are you stuck?
-
-### No results returned from CRVS query
-
-**Symptom:** `verify_birth()` or `check_death()` returns `None`.
-
-**Cause:** The identifier does not match any record in the CRVS system, or the identifier type is incorrect.
-
-**Solution:**
-
-1. Verify the identifier type matches what the CRVS system expects (BRN, UIN, DRN)
-2. Check that the identifier value is formatted correctly
-3. Confirm the CRVS data source is properly configured and reachable
-
-### Signature verification failed
-
-**Symptom:** Incoming notifications are rejected with signature errors.
-
-**Cause:** The public key is missing, outdated, or the algorithm is incorrect.
-
-**Solution:**
-
-1. Navigate to **DCI > CRVS > Sender Registry**
-2. Click **Fetch Public Key** to retrieve the latest key
-3. Verify the algorithm matches the CRVS registry's configuration
-
-### Event processing shows "No matching person found"
-
-**Symptom:** CRVS event state is "error" with message about no matching person.
-
-**Cause:** The identifier from CRVS does not match any registrant in OpenSPP.
-
-**Solution:**
-
-1. Check that the identifier type exists in OpenSPP (Settings > Registry > ID Types)
-2. Verify the registrant has this identifier in their registry IDs
-3. Consider if the person needs to be registered first
-
-### Death event not disabling registrant
-
-**Symptom:** Death event is processed but registrant remains active.
-
-**Cause:** The registrant may already be disabled, or the `is_registrant` flag is not set.
-
-**Solution:**
-
-1. Verify the matched person has `is_registrant = True`
-2. Check if the person was already disabled before the event
-3. Review the event's raw data for any processing errors
-
-## See Also
-
-- {doc}`spp_dci_client` - Base DCI client infrastructure
-- {doc}`spp_registry` - Registrant data management
-- {doc}`spp_dci_server` - DCI server for incoming requests

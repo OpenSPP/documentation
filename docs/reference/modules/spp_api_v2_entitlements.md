@@ -5,6 +5,7 @@ openspp:
 
 # API V2 - Entitlements
 
+**Module:** `spp_api_v2_entitlements`
 
 ## Overview
 
@@ -122,29 +123,3 @@ Common integration patterns include:
 ### Auto-Installation
 
 This module auto-installs when both `spp_api_v2` and `spp_programs` are present, ensuring entitlement endpoints are available whenever the prerequisites exist.
-
-## Are you stuck?
-
-### Entitlement not found error
-
-**Symptom:** 404 error when requesting an entitlement
-**Cause:** Invalid entitlement code or entitlement does not exist
-**Solution:** Use the entitlement's exact UUID code, not a human-readable reference
-
-### Empty search results
-
-**Symptom:** Search returns no entitlements
-**Cause:** Filters exclude all entitlements or consent not granted
-**Solution:** Verify consent exists for the API client, adjust filter parameters
-
-### Missing beneficiary information
-
-**Symptom:** Entitlement returned but beneficiary field is empty
-**Cause:** Consent not granted for the beneficiary's data
-**Solution:** Ensure consent records allow the API client to access beneficiary details
-
-### Amount shows as zero
-
-**Symptom:** Cash entitlement amount is 0
-**Cause:** Entitlement not yet calculated or in draft state
-**Solution:** Verify entitlement state is approved and calculation has completed

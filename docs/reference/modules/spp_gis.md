@@ -5,6 +5,7 @@ openspp:
 
 # GIS
 
+**Module:** `spp_gis`
 
 ## Overview
 
@@ -130,43 +131,3 @@ Visualize program coverage geographically:
 - Map beneficiary locations by program
 - Show coverage gaps by area
 - Analyze geographic distribution of entitlements
-
-## Are you stuck?
-
-### PostGIS not installed
-
-**Symptom:** Module installation fails with "PostGIS extension not found" error.
-
-**Cause:** The PostgreSQL database does not have PostGIS extension installed.
-
-**Solution:**
-
-1. Install PostGIS on your PostgreSQL server
-2. Connect to your database as superuser
-3. Run: `CREATE EXTENSION postgis;`
-4. Retry module installation
-
-### Map not displaying
-
-**Symptom:** The GIS view shows a blank area instead of a map.
-
-**Cause:** Map tiles may not be loading, or JavaScript errors prevent rendering.
-
-**Solution:**
-
-1. Check browser console for JavaScript errors
-2. Verify internet connectivity (map tiles load from external servers)
-3. Check that raster layer configuration is correct
-4. Clear browser cache and reload
-
-### Coordinates appear wrong
-
-**Symptom:** Points or polygons display in unexpected locations.
-
-**Cause:** Coordinate system mismatch or longitude/latitude order reversed.
-
-**Solution:**
-
-1. Verify coordinate order: WKT uses (longitude, latitude) not (latitude, longitude)
-2. Check that source data uses WGS84 (EPSG:4326) coordinate system
-3. If importing from other systems, verify coordinate transformation

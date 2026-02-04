@@ -5,6 +5,7 @@ openspp:
 
 # Demo
 
+**Module:** `spp_demo`
 
 ## Overview
 
@@ -99,45 +100,3 @@ The Demo module provides the foundation for:
 - **spp_case_demo:** Case management demo data
 - **spp_grm_demo:** Grievance management demo data
 - **spp_event_demo:** Event tracking demo data
-
-## Are you stuck?
-
-### Demo data generation fails
-
-**Symptom:** Error when running the data generator
-
-**Cause:** The faker package may not be installed or there are memory issues with large batches
-
-**Solution:** Verify faker is installed with `pip install faker`. For large datasets, reduce the batch size or use queue jobs for background processing.
-
-### Names appear in wrong language
-
-**Symptom:** Generated names do not match the expected locale
-
-**Cause:** The locale provider may not be correctly configured
-
-**Solution:** Check that the desired locale is selected in the demo generator settings. Verify the locale code matches the supported options.
-
-### Demo users not created
-
-**Symptom:** Pre-configured demo users are not available after installation
-
-**Cause:** Demo data may not have been loaded during installation
-
-**Solution:** Check that the module was installed with demo data enabled. You can manually trigger demo user creation from the configuration.
-
-### Background generation stuck
-
-**Symptom:** Data generation started but records are not appearing
-
-**Cause:** Queue jobs may not be processing
-
-**Solution:** Verify that the queue_job module is properly configured and workers are running. Check the job queue for errors.
-
-### Cannot find demo generator
-
-**Symptom:** The demo data generator wizard is not visible
-
-**Cause:** User lacks administrator privileges
-
-**Solution:** Only administrators can access the demo data generator. Log in with an admin account to access this feature.

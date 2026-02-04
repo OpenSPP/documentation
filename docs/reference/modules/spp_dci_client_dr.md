@@ -5,6 +5,7 @@ openspp:
 
 # DCI Client - Disability Registry
 
+**Module:** `spp_dci_client_dr`
 This module is for **developers** and **sys admins** who need to integrate OpenSPP with external disability registries using the DCI API standard.
 
 ## Overview
@@ -134,47 +135,3 @@ Disability data supports program targeting:
 | License | LGPL-3 |
 | Application | No |
 | Development Status | Alpha |
-
-## Are you stuck?
-
-### Registration not found
-
-**Symptom:** Query returns "no registration found" for a known disabled person.
-
-**Cause:** The person may not be registered in the disability system, or they may be registered under a different ID.
-
-**Solution:**
-
-1. Verify the national ID matches registry records
-2. Check if the person is registered in the disability system
-3. Advise the person to register with the disability registry first if needed
-
-### Expired registration
-
-**Symptom:** Status shows as expired or invalid.
-
-**Cause:** Disability registration may require periodic reassessment.
-
-**Solution:**
-
-1. Check the expiry date in the retrieved data
-2. Advise the registrant to renew their disability registration
-3. Contact the disability registry for reassessment scheduling
-
-### Connection timeout
-
-**Symptom:** Query fails with timeout error.
-
-**Cause:** Network issues or the external registry is unavailable.
-
-**Solution:**
-
-1. Check network connectivity to the registry endpoint
-2. Verify the Base URL and Auth URL in the data source configuration
-3. Contact the registry administrator to confirm service availability
-
-## See Also
-
-- {doc}`spp_dci_client` - Base DCI client infrastructure
-- {doc}`spp_registry` - Registrant data management
-- {doc}`spp_programs` - Program eligibility and targeting

@@ -5,6 +5,7 @@ openspp:
 
 # Studio - Change Requests
 
+**Module:** `spp_studio_change_requests`
 
 ## Overview
 

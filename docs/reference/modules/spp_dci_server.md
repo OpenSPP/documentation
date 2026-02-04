@@ -5,6 +5,7 @@ openspp:
 
 # DCI Server
 
+**Module:** `spp_dci_server`
 This module is for **developers** and **sys admins** setting up OpenSPP as a data provider for DCI-compliant external systems.
 
 ## Overview
@@ -195,49 +196,3 @@ Create subscription for updates:
   }
 }
 ```
-
-## Are you stuck?
-
-### Requests being rejected
-
-**Symptom:** External system receiving 401 or 403 errors.
-
-**Cause:** Sender not registered or authentication failing.
-
-**Solution:**
-
-1. Verify sender is registered in Sender Registry
-2. Check sender's public key is correct
-3. Verify sender is active
-4. Check allowed operations include the requested operation
-
-### Transactions not appearing
-
-**Symptom:** API calls working but no transaction records.
-
-**Cause:** Transaction logging may be disabled or erroring.
-
-**Solution:**
-
-1. Check queue_job workers are running
-2. Verify database has sufficient space
-3. Check for errors in job queue
-
-### Notifications not being sent
-
-**Symptom:** Subscriptions exist but callbacks not triggered.
-
-**Cause:** Subscription inactive or callback URL unreachable.
-
-**Solution:**
-
-1. Verify subscription is active
-2. Test callback URL accessibility
-3. Check queue_job for failed notification jobs
-4. Review notification logs for errors
-
-## See Also
-
-- {doc}`spp_dci_client` - DCI client for outbound requests
-- {doc}`spp_api_v2` - API V2 framework
-- {doc}`spp_registry` - Registry data source

@@ -5,6 +5,7 @@ openspp:
 
 # API V2
 
+**Module:** `spp_api_v2`
 
 ## Overview
 
@@ -129,23 +130,3 @@ This module implements patterns defined in:
 - **ADR-007:** Namespace URIs for Identifiers
 - **ADR-008:** Source Tracking and Provenance
 - **ADR-009:** Terminology System
-
-## Are you stuck?
-
-### Authentication fails with 401 Unauthorized
-
-**Symptom:** API requests return 401 even with credentials
-**Cause:** Invalid credentials, expired token, or inactive client
-**Solution:** Verify client is active, regenerate credentials if needed, request new token
-
-### Data not returned despite valid request
-
-**Symptom:** Empty results for data you know exists
-**Cause:** Missing consent for the API client
-**Solution:** Ensure consent records exist linking the registrant to the API client's data access
-
-### Unknown namespace_uri error
-
-**Symptom:** 400 error mentioning namespace_uri
-**Cause:** Using a namespace URI not registered in the vocabulary system
-**Solution:** Check `spp.vocabulary` for valid namespace URIs, or add the required vocabulary

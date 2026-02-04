@@ -5,6 +5,7 @@ openspp:
 
 # CEL Expression Widget
 
+**Module:** `spp_cel_widget`
 
 ## Overview
 
@@ -109,41 +110,3 @@ editor.setValue("age_years(r.birthdate) >= 18");
 // Trigger validation
 const result = await editor.validate();
 ```
-
-## Are you stuck?
-
-### Autocomplete not showing
-
-**Symptom:** Pressing `Ctrl+Space` does nothing, or suggestions don't appear.
-
-**Cause:** The widget may not have loaded the symbol definitions yet, or the profile context is missing.
-
-**Solution:**
-
-1. Ensure the `profile` option is set in the widget configuration
-2. Wait for the page to fully load before using autocomplete
-3. Check browser console for JavaScript errors
-
-### Highlighting looks wrong
-
-**Symptom:** Colors don't match expected syntax categories.
-
-**Cause:** The CEL language mode may not be properly loaded.
-
-**Solution:**
-
-1. Clear browser cache and reload
-2. Check that `spp_cel_widget` module is installed
-3. Verify no JavaScript errors in browser console
-
-### Validation not working
-
-**Symptom:** Invalid expressions don't show error indicators.
-
-**Cause:** The linting service may not be connected to the backend.
-
-**Solution:**
-
-1. Check network tab for failed API calls
-2. Verify user has access to the CEL service
-3. Ensure the `spp_cel_domain` module is installed

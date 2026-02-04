@@ -5,6 +5,7 @@ openspp:
 
 # Source Tracking
 
+**Module:** `spp_source_tracking`
 
 ## Overview
 

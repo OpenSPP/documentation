@@ -5,6 +5,7 @@ openspp:
 
 # Key Management
 
+**Module:** `spp_key_management`
 
 ## Overview
 

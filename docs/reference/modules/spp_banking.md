@@ -5,6 +5,7 @@ openspp:
 
 # Banking / Bank Details
 
+**Module:** `spp_banking`
 
 ## Overview
 

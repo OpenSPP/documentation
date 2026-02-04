@@ -5,6 +5,7 @@ openspp:
 
 # GIS Reports
 
+**Module:** `spp_gis_report`
 
 ## Overview
 
@@ -129,44 +130,3 @@ Analyze program performance geographically:
 - Coverage rates by district
 - Entitlement distribution maps
 - Beneficiary density analysis
-
-## Are you stuck?
-
-### Report shows no data
-
-**Symptom:** The map displays but all areas show zero or no color.
-
-**Cause:** The filter expression may exclude all records, or area assignments are missing.
-
-**Solution:**
-
-1. Test the filter expression in the CEL editor to verify it returns records
-2. Check that source records have `area_id` assigned
-3. Verify the area level setting matches your area hierarchy
-4. Check that aggregation field contains valid values
-
-### Slow report loading
-
-**Symptom:** Reports take a long time to generate or time out.
-
-**Cause:** Large datasets or complex aggregations can be slow.
-
-**Solution:**
-
-1. Use scheduled refresh instead of real-time calculation
-2. Add indexes to frequently filtered fields
-3. Simplify the filter expression if possible
-4. Consider using queue_job for background processing
-
-### Colors don't reflect data range
-
-**Symptom:** All areas show the same color despite different values.
-
-**Cause:** The color scale may not match the data distribution.
-
-**Solution:**
-
-1. Check the color scheme configuration
-2. Verify min/max values are set appropriately
-3. For skewed data, consider using quantile breaks instead of linear
-4. Review the normalization method (raw values vs. per capita may need different scales)

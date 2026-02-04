@@ -5,6 +5,7 @@ openspp:
 
 # Registry
 
+**Module:** `spp_registry`
 
 ## Overview
 
@@ -166,38 +167,3 @@ The registry UI organizes information into logical tabs:
 | Package        | Purpose                                  |
 | -------------- | ---------------------------------------- |
 | `python-magic` | File type detection for document uploads |
-
-## Are you stuck?
-
-### Cannot create new registrant
-
-**Symptom:** "Access Denied" when trying to create an individual or group.
-
-**Cause:** User does not have Registry Officer or higher permissions.
-
-**Solution:** Assign the user to the Registry Officer or Registry Manager security group.
-
-### Group membership not showing
-
-**Symptom:** Individual added to group but does not appear in membership list.
-
-**Cause:** Membership record may not have been saved properly, or user lacks permission to view.
-
-**Solution:**
-
-1. Verify the membership was saved (check for any validation errors)
-2. Ensure user has at least Registry Viewer permissions
-
-### ID document validation failing
-
-**Symptom:** Cannot save ID document due to validation error.
-
-**Cause:** ID number format may not match expected pattern for the selected ID type.
-
-**Solution:** Check the ID type configuration for format requirements.
-
-## See Also
-
-- {doc}`spp_area` - Geographic area assignment for registrants
-- {doc}`spp_programs` - Program enrollment and entitlements
-- {doc}`spp_security` - Security groups for registry access

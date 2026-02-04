@@ -5,6 +5,7 @@ openspp:
 
 # Hide Menus Base
 
+**Module:** `spp_hide_menus_base`
 
 ## Overview
 
@@ -77,37 +78,3 @@ The Hide Menus Base module integrates with:
 - **ir.ui.menu:** Modifies Odoo's core menu visibility through group assignments
 - **spp_security:** Works within OpenSPP's security framework
 - **Other hide_menus modules:** Provides the base infrastructure for domain-specific menu hiding
-
-## Are you stuck?
-
-### Menu still visible after hiding
-
-**Symptom:** A menu remains visible even after setting it to "Hidden"
-
-**Cause:** The current user may be in the "Hide Menus User" group or have administrator privileges
-
-**Solution:** Check if the user belongs to the "Hide Menus User" group. Administrators typically see all menus regardless of visibility settings.
-
-### Cannot find the menu configuration
-
-**Symptom:** Unable to locate where to configure menu visibility
-
-**Cause:** Access is restricted to administrators
-
-**Solution:** Navigate to Settings and look for the Hide Menu Configuration section. You must have administrator privileges to access this feature.
-
-### Original permissions lost after unhiding
-
-**Symptom:** After showing a previously hidden menu, the wrong users can access it
-
-**Cause:** The original group assignments may have been corrupted or the menu was modified while hidden
-
-**Solution:** Manually reassign the correct security groups to the menu through Odoo's technical menu settings.
-
-### Hide menu option not working
-
-**Symptom:** Clicking "Hide" does not change the menu state
-
-**Cause:** The menu may already be hidden or there may be a permission issue
-
-**Solution:** Check the current state in the configuration. Ensure you have administrator privileges to modify menu visibility.

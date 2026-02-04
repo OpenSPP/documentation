@@ -5,6 +5,7 @@ openspp:
 
 # Audit
 
+**Module:** `spp_audit`
 
 ## Overview
 
@@ -149,55 +150,3 @@ Optionally post audit summaries to record chatter:
 | ------------------ | --------------------------------------- |
 | Enabled            | Low-volume, human-reviewed records only |
 | Disabled (default) | High-volume or automated processes      |
-
-## Are you stuck?
-
-### Audit logs not appearing
-
-**Symptom:** Changes are made but no audit logs are created.
-
-**Cause:** Audit rule may not be configured for the model, or logging flags are disabled.
-
-**Solution:**
-
-1. Navigate to **Settings > Technical > Audit > Audit Rules**
-2. Check that a rule exists for the target model
-3. Verify the appropriate logging flags are enabled (Log Creation, Log Update, etc.)
-4. Check that the database backend is enabled if viewing logs in UI
-
-### Missing field changes in logs
-
-**Symptom:** Audit log exists but doesn't show the changed field.
-
-**Cause:** The field may not be in the "Fields to Log" list.
-
-**Solution:**
-
-1. Edit the audit rule
-2. Add the missing field to "Fields to Log"
-3. Note: Future changes will be logged; this doesn't retroactively capture old changes
-
-### "View Logs" menu not showing
-
-**Symptom:** The action menu doesn't include "View Logs" option.
-
-**Cause:** The "View Logs Action Menu" flag is not enabled on the rule.
-
-**Solution:**
-
-1. Edit the audit rule for the model
-2. Enable "View Logs Action Menu"
-3. Refresh the page or clear browser cache
-
-### Performance impact concerns
-
-**Symptom:** System slowdown after enabling auditing.
-
-**Cause:** Auditing adds overhead to every tracked operation.
-
-**Solution:**
-
-1. Limit "Fields to Log" to essential fields only
-2. Disable "Post to Chatter" for high-volume models
-3. Consider async processing via queue_job for bulk operations
-4. Use file/syslog backends for high-volume logging

@@ -5,6 +5,7 @@ openspp:
 
 # CEL Domain Query Builder
 
+**Module:** `spp_cel_domain`
 
 ## Overview
 
@@ -133,42 +134,3 @@ validation = service.validate_expression(
 )
 # validation = {"valid": True, "error": None, "explain": "..."}
 ```
-
-## Are you stuck?
-
-### Expression returns no results
-
-**Symptom:** Your expression compiles successfully but returns 0 matching records.
-
-**Cause:** The expression logic may be too restrictive, or the field references may not match actual data.
-
-**Solution:**
-
-1. Test with a simpler expression first (e.g., just `true`)
-2. Check that field names match exactly (case-sensitive)
-3. Verify data exists in the referenced fields
-
-### Unknown symbol error
-
-**Symptom:** Error message "Unknown symbol: fieldname"
-
-**Cause:** The field or variable does not exist in the selected profile.
-
-**Solution:**
-
-1. Check the profile's available symbols
-2. Verify the field exists on the target model
-3. For variables, ensure they are defined in the variable configuration
-
-### Syntax error in expression
-
-**Symptom:** Error message "Syntax error: unexpected token"
-
-**Cause:** The expression contains invalid CEL syntax.
-
-**Solution:**
-
-1. Check operator syntax (`&&` not `and`, `||` not `or`)
-2. Ensure strings are quoted properly
-3. Verify parentheses are balanced
-4. Check function call syntax (parentheses required)

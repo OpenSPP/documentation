@@ -5,6 +5,7 @@ openspp:
 
 # CR Types - Advanced
 
+**Module:** `spp_cr_types_advanced`
 This module is for **implementers** who need to understand available change request types, and **developers** who need to extend or customize complex registry operations.
 
 ## Overview
@@ -232,43 +233,3 @@ class CustomAddMember(models.Model):
 | Version | 19.0.1.0.0 |
 | License | LGPL-3 |
 | Development Status | Beta |
-
-## Are you stuck?
-
-### Cannot edit advanced CR type in Studio
-
-**Symptom:** Type appears greyed out or locked in Studio.
-
-**Cause:** Advanced types have `is_studio_editable=False` by design because they require custom Python logic.
-
-**Solution:** To modify behavior, create a custom module that inherits from the apply model and overrides the `_apply()` method. See [Extending Advanced Types](#extending-advanced-types).
-
-### Type not appearing in CR type selection
-
-**Symptom:** Advanced types not available when creating change requests.
-
-**Cause:** Module may not be installed or type may be deactivated.
-
-**Solution:**
-
-1. Verify `spp_cr_types_advanced` is installed in Apps
-2. Check type is active in **Change Requests > Configuration > Types**
-3. Verify user has appropriate permissions for change requests
-
-### Change request stuck in pending state
-
-**Symptom:** Approved change request does not apply changes to registry.
-
-**Cause:** The apply model may have encountered an error during execution.
-
-**Solution:**
-
-1. Check the Odoo server logs for errors during the apply process
-2. Verify all required fields in the change request detail are filled
-3. Ensure the target registrant still exists and is active
-
-## See Also
-
-- {doc}`spp_change_request_v2` - Base change request infrastructure
-- {doc}`spp_cr_types_base` - Basic change request types (Studio-editable)
-- {doc}`spp_registry` - Registry for registrant data

@@ -5,6 +5,7 @@ openspp:
 
 # Studio - Events
 
+**Module:** `spp_studio_events`
 
 ## Overview
 

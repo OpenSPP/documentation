@@ -5,6 +5,7 @@ openspp:
 
 # Consent
 
+**Module:** `spp_consent`
 This reference is for **implementers** and **sys admins** who need to understand consent management capabilities and configuration options.
 
 ## Overview
@@ -170,35 +171,3 @@ consent_valid = registrant.check_consent(
 | Recording Wizard     | User-friendly consent recording with filtering |
 | Expired Consent View | Identify and manage expired consents           |
 | Bulk Recording       | Record consent for multiple registrants        |
-
-## Are you stuck?
-
-### Consent not recording
-
-**Symptom:** Error when attempting to record consent.
-
-**Cause:** Missing required fields or invalid registrant selection.
-
-**Solution:**
-
-1. Ensure a registrant is selected
-2. Verify all required fields are filled (purpose, data categories)
-3. Check user has Officer or Manager permissions
-
-### Expired consents not being marked
-
-**Symptom:** Consents past their validity date still showing as "Given".
-
-**Cause:** Scheduled action may not be running.
-
-**Solution:**
-
-1. Check scheduled actions in Settings > Technical > Automation
-2. Verify the consent expiry cron job is enabled
-3. Run the job manually if needed
-
-## See Also
-
-- {doc}`spp_registry` - Registrant data management
-- {doc}`spp_security` - Security groups and access control
-- {doc}`spp_audit` - Audit trail for operations

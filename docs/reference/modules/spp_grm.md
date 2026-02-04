@@ -5,6 +5,7 @@ openspp:
 
 # Grievance Redress Mechanism
 
+**Module:** `spp_grm`
 
 ## Overview
 
@@ -181,55 +182,3 @@ When `spp_grm_cel` module is installed:
 - Define escalation rules with CEL expressions
 - Automatic routing based on ticket attributes
 - Complex escalation workflows
-
-## Are you stuck?
-
-### Emails not creating tickets
-
-**Symptom:** Emails sent to the GRM alias don't create tickets.
-
-**Cause:** Mail alias may not be configured, or sender not recognized.
-
-**Solution:**
-
-1. Verify mail alias is configured in **Settings > Technical > Email > Aliases**
-2. Check that incoming mail server is configured
-3. Review mail logs for delivery issues
-4. Note: By default, emails from unknown addresses notify sender that no ticket was created
-
-### SLA showing wrong deadline
-
-**Symptom:** SLA deadline doesn't match expected category settings.
-
-**Cause:** Subcategory SLA overrides category SLA, or settings changed after ticket creation.
-
-**Solution:**
-
-1. Check subcategory SLA hours setting (takes precedence over category)
-2. Verify category default SLA hours
-3. Note: SLA is calculated at creation time; changes don't affect existing tickets
-
-### Cannot close ticket
-
-**Symptom:** Error when trying to move ticket to closed stage.
-
-**Cause:** Stage may require decision or approval.
-
-**Solution:**
-
-1. If "Requires Decision" is set, select a decision value first
-2. If "Requires Approval" is set, ensure you have supervisor permissions
-3. Check that your user is in the stage's allowed groups
-
-### Team assignment not working
-
-**Symptom:** Tickets not automatically assigned to expected team.
-
-**Cause:** Category-team mapping may be missing.
-
-**Solution:**
-
-1. Edit the ticket category
-2. Set the "Default Team" field
-3. New tickets will be assigned to this team
-4. Existing tickets need manual reassignment

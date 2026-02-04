@@ -5,6 +5,7 @@ openspp:
 
 # Document Management System
 
+**Module:** `spp_dms`
 
 ## Overview
 

@@ -5,6 +5,7 @@ openspp:
 
 # Programs
 
+**Module:** `spp_programs`
 
 ## Overview
 
@@ -250,60 +251,3 @@ Expression-based configuration:
 | Version        | 19.0.2.0.0     |
 | License        | LGPL-3         |
 | Application    | Yes            |
-
-## Are you stuck?
-
-### Eligibility criteria not matching expected beneficiaries
-
-**Symptom:** Fewer or more beneficiaries qualify than expected.
-
-**Cause:** CEL expression may have logic errors or variable references.
-
-**Solution:**
-
-1. Test the expression in Studio with sample data
-2. Verify variable names match exactly
-3. Check operator precedence (use parentheses)
-4. Review the expression context (Individual vs Group)
-
-### Entitlements showing zero amounts
-
-**Symptom:** Generated entitlements have zero or null amounts.
-
-**Cause:** Entitlement formula may reference missing data or have calculation errors.
-
-**Solution:**
-
-1. Verify the entitlement manager configuration
-2. Check that required fields have values on beneficiary records
-3. Test the calculation formula with sample data
-
-### Payment batch not processing
-
-**Symptom:** Payments stuck in pending state.
-
-**Cause:** Missing configuration or approval requirements.
-
-**Solution:**
-
-1. Check if approval workflow requires authorization
-2. Verify payment manager is properly configured
-3. Ensure beneficiaries have valid payment details (bank accounts, etc.)
-
-### Cannot enroll beneficiary
-
-**Symptom:** "Already enrolled" or validation error when enrolling.
-
-**Cause:** Deduplication rules or existing enrollment.
-
-**Solution:**
-
-1. Check if registrant already has program membership
-2. Review deduplication manager settings
-3. Verify the enrollment period is active
-
-## See Also
-
-- {doc}`spp_registry` - Beneficiary registry for enrollment
-- {doc}`spp_area` - Geographic targeting for programs
-- {doc}`spp_security` - Security groups for program access

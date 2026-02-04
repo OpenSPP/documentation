@@ -5,6 +5,7 @@ openspp:
 
 # DCI Client
 
+**Module:** `spp_dci_client`
 This module is for **developers** and **sys admins** who need to connect OpenSPP to external DCI-compliant registries.
 
 ## Overview
@@ -91,60 +92,3 @@ The module implements the OAuth2 client credentials flow:
 2. Receives access token with expiration
 3. Uses token for subsequent API calls
 4. Automatically refreshes expired tokens
-
-## Are you stuck?
-
-### Authentication failing
-
-**Symptom:** "Invalid credentials" or "Unauthorized" error when testing connection.
-
-**Cause:** Incorrect OAuth2 credentials or expired client secret.
-
-**Solution:**
-
-1. Verify client ID and secret with the external system administrator
-2. Check if credentials have expired and need renewal
-3. Confirm the auth URL is correct (including any path like `/token` or `/oauth/token`)
-
-### Connection timeout
-
-**Symptom:** Request times out when testing connection.
-
-**Cause:** Network issues or firewall blocking outbound connections.
-
-**Solution:**
-
-1. Verify the server can reach the external API endpoint:
-   ```bash
-   curl -I https://api.crvs.gov.example/v1
-   ```
-2. Check firewall rules for outbound HTTPS (port 443)
-3. Verify DNS resolution is working
-
-### Scope errors
-
-**Symptom:** "Insufficient scope" or "access_denied" error on API calls after successful authentication.
-
-**Cause:** OAuth2 token missing required scopes for the requested operation.
-
-**Solution:**
-
-1. Review required scopes in the external system's API documentation
-2. Update data source configuration with correct scopes (space-separated)
-3. Request scope authorization from external system administrator if needed
-
-### SSL certificate errors
-
-**Symptom:** "SSL certificate verify failed" or similar error.
-
-**Cause:** External system uses self-signed certificate or certificate chain is incomplete.
-
-**Solution:**
-
-1. Verify the external system's SSL certificate is valid
-2. For test environments with self-signed certificates, consult with your sys admin about certificate trust configuration
-
-## See Also
-
-- {doc}`spp_dci_server` - DCI server for receiving requests from external systems
-- {doc}`spp_registry` - Registry for storing retrieved data

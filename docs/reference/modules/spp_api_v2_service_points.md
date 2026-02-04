@@ -5,6 +5,7 @@ openspp:
 
 # API V2 - Service Points
 
+**Module:** `spp_api_v2_service_points`
 
 ## Overview
 
@@ -106,29 +107,3 @@ Common integration patterns include:
 ### Auto-Installation
 
 This module auto-installs when both `spp_api_v2` and `spp_service_points` are present, ensuring service point endpoints are available whenever the prerequisites exist.
-
-## Are you stuck?
-
-### Service point not found error
-
-**Symptom:** 404 error when requesting a service point
-**Cause:** Invalid service point name or service point does not exist
-**Solution:** Use the service point's exact name as configured in OpenSPP
-
-### Empty search results
-
-**Symptom:** Search returns no service points
-**Cause:** Filters exclude all service points or none exist
-**Solution:** Verify service points are configured, adjust filter parameters
-
-### Missing location coordinates
-
-**Symptom:** Service point returned but latitude/longitude are empty
-**Cause:** Geographic coordinates not configured for the service point
-**Solution:** Update service point configuration to include coordinates
-
-### Service point shows as inactive
-
-**Symptom:** Service point not returned in default searches
-**Cause:** Service point marked as inactive
-**Solution:** Include `active=false` parameter to find inactive service points, or reactivate the service point in OpenSPP

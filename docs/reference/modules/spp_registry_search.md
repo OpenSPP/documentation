@@ -5,6 +5,7 @@ openspp:
 
 # Registry Search Portal
 
+**Module:** `spp_registry_search`
 
 ## Overview
 
@@ -84,37 +85,3 @@ The Registry Search Portal integrates with:
 - **spp_registry:** Extends the core registry with search-first behavior
 - **spp_area:** Filters results by user's assigned geographic areas
 - **spp_security:** Respects role-based access controls
-
-## Are you stuck?
-
-### Search returns no results
-
-**Symptom:** Searching for a known registrant returns empty results
-
-**Cause:** Search requires at least 3 characters, or the registrant may be outside your assigned areas
-
-**Solution:** Ensure you enter at least 3 characters. If area restrictions apply, check with your administrator that you have access to the registrant's geographic area.
-
-### Cannot see recently viewed registrants
-
-**Symptom:** The "Recently Viewed" section is empty even after viewing records
-
-**Cause:** History may have been cleared, or an error occurred during recording
-
-**Solution:** View a registrant's profile to add them to your history. If the issue persists, contact your administrator.
-
-### Cannot browse all registrants
-
-**Symptom:** No option to view all records without searching
-
-**Cause:** This is intentional privacy protection. Only auditors can browse all records.
-
-**Solution:** If you need browse-all access for legitimate audit purposes, request the "Registry Auditor" role from your administrator.
-
-### Archive button not visible
-
-**Symptom:** Cannot archive or unarchive registrants
-
-**Cause:** Only officers, managers, and administrators can archive registrants
-
-**Solution:** If you need to archive a registrant, contact a user with the Registry Officer or Registry Manager role.

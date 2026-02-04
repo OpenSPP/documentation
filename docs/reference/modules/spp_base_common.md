@@ -5,6 +5,7 @@ openspp:
 
 # Base (Common)
 
+**Module:** `spp_base_common`
 
 ## Overview
 

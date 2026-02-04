@@ -5,6 +5,7 @@ openspp:
 
 # API V2 - Cycles
 
+**Module:** `spp_api_v2_cycles`
 
 ## Overview
 
@@ -88,23 +89,3 @@ Cycle data comes from `spp_programs`, including:
 ### Auto-Installation
 
 This module auto-installs when both `spp_api_v2` and `spp_programs` are present, ensuring cycle endpoints are available whenever the prerequisites exist.
-
-## Are you stuck?
-
-### Cycle not found error
-
-**Symptom:** 404 error when requesting a cycle
-**Cause:** Invalid cycle name or cycle does not exist
-**Solution:** Use the cycle's exact name as shown in the program management interface
-
-### Empty search results
-
-**Symptom:** Search returns no cycles
-**Cause:** Filters exclude all cycles or no cycles exist for the program
-**Solution:** Verify program has cycles defined, adjust filter parameters
-
-### Access denied to cycle
-
-**Symptom:** 403 error when accessing cycle
-**Cause:** API client lacks access to the associated program
-**Solution:** Configure the API client with access to the required program

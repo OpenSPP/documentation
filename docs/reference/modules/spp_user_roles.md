@@ -5,6 +5,7 @@ openspp:
 
 # User Roles
 
+**Module:** `spp_user_roles`
 
 ## Overview
 

@@ -5,6 +5,7 @@ openspp:
 
 # Change Request V2
 
+**Module:** `spp_change_request_v2`
 
 ## Overview
 

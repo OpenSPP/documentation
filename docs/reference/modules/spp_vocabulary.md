@@ -5,6 +5,7 @@ openspp:
 
 # Vocabulary
 
+**Module:** `spp_vocabulary`
 
 ## Overview
 
@@ -93,29 +94,3 @@ The Vocabulary module integrates with:
 - **spp_programs:** Supplies eligibility criteria options and program classifications
 - **spp_api_v2:** Exposes vocabularies via REST API for external system integration
 - **spp_dci_client:** Maps local codes to DCI-compliant standards for registry interoperability
-
-## Are you stuck?
-
-### Vocabulary namespace already exists
-
-**Symptom:** Error message "Namespace URI is already used by another vocabulary"
-
-**Cause:** Each vocabulary must have a globally unique namespace URI
-
-**Solution:** Use a different namespace URI or find and modify the existing vocabulary with that namespace
-
-### Cannot edit system vocabulary
-
-**Symptom:** Unable to modify codes in a vocabulary marked as "System Vocabulary"
-
-**Cause:** System vocabularies are protected from user modifications to ensure data consistency
-
-**Solution:** Create a custom vocabulary with your own namespace if you need different codes. Contact your administrator if the system vocabulary needs updates.
-
-### Missing vocabulary codes in forms
-
-**Symptom:** Expected options not appearing in dropdown fields
-
-**Cause:** The vocabulary code may be inactive or the vocabulary is not assigned to the deployment profile
-
-**Solution:** Check that both the vocabulary and the specific codes are marked as active. Verify the deployment profile configuration includes the required vocabulary.

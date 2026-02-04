@@ -5,6 +5,7 @@ openspp:
 
 # Branding Kit
 
+**Module:** `spp_branding_kit`
 This module is for **sys admins** and **developers** who need to customize OpenSPP's branding, URL routing, and telemetry settings.
 
 ## Overview
@@ -106,42 +107,3 @@ This module does not introduce new models. It extends existing Odoo models:
 | License | LGPL-3 |
 | Application | No |
 | Auto Install | Yes (with base, web) |
-
-## Are you stuck?
-
-### Branding not appearing after install
-
-**Symptom:** OpenSPP branding elements not visible after installation.
-
-**Cause:** Browser cache may contain old assets.
-
-**Solution:** Clear browser cache and reload, or hard refresh with Ctrl+Shift+R (Cmd+Shift+R on macOS).
-
-### URL routing not working
-
-**Symptom:** `/openspp/*` URLs return 404 errors.
-
-**Cause:** Router patch may not have loaded properly.
-
-**Solution:**
-
-1. Restart the Odoo server
-2. Clear browser cache
-3. Verify module is installed without errors in the module list
-
-### Custom branding not showing in reports
-
-**Symptom:** Reports still show default branding after configuration.
-
-**Cause:** Report templates may be cached or company settings not applied.
-
-**Solution:**
-
-1. Clear the report cache: **Settings > Technical > Actions > Report Layout**
-2. Verify company logo is uploaded in **Settings > Companies**
-3. Regenerate reports after changes
-
-## See Also
-
-- {doc}`theme_openspp_muk` - Visual theme styling for OpenSPP
-- {doc}`spp_security` - Security groups and access control

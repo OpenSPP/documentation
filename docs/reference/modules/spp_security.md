@@ -5,6 +5,7 @@ openspp:
 
 # Security
 
+**Module:** `spp_security`
 
 ## Overview
 
@@ -114,31 +115,3 @@ The security groups integrate with `spp_user_roles` for:
 | Version        | 19.0.1.0.0                 |
 | License        | LGPL-3                     |
 | Application    | No (infrastructure module) |
-
-## Are you stuck?
-
-### User cannot access expected menus
-
-**Symptom:** User has a role assigned but cannot see certain menus.
-
-**Cause:** The user may not have the correct security group, or the domain module is not installed.
-
-**Solution:** Check that:
-
-1. The user has the appropriate role assigned in Settings
-2. The relevant domain module is installed
-3. Empty categories are hidden by default - groups only appear when their module is installed
-
-### Administrator does not have full access
-
-**Symptom:** An admin user cannot access certain domain features.
-
-**Cause:** The domain module may not have correctly linked its manager group to `group_spp_admin`.
-
-**Solution:** Verify the domain module's `security/groups.xml` includes the link to `spp_security.group_spp_admin`.
-
-## See Also
-
-- {doc}`spp_registry` - Registry domain security implementation
-- {doc}`spp_programs` - Programs domain security implementation
-- {doc}`spp_area` - Area-based access control

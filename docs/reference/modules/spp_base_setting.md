@@ -5,6 +5,7 @@ openspp:
 
 # Base Settings
 
+**Module:** `spp_base_setting`
 
 ## Overview
 

@@ -5,6 +5,7 @@ openspp:
 
 # Starter: SP-MIS
 
+**Module:** `spp_starter_sp_mis`
 
 ## Overview
 
@@ -118,37 +119,3 @@ The SP-MIS Starter integrates with:
 | Social Assistance Programs | General welfare assistance               |
 | Food Distribution Programs | In-kind food aid management              |
 | In-Kind Transfer Programs  | Non-cash benefit distribution            |
-
-## Are you stuck?
-
-### Cannot create programs
-
-**Symptom:** Program menu is visible but cannot create new programs
-
-**Cause:** User may lack the required permissions
-
-**Solution:** Ensure you have the Program Manager or Administrator role. Contact your system administrator to assign appropriate permissions.
-
-### Eligibility criteria not evaluating
-
-**Symptom:** Beneficiaries not being correctly included or excluded from programs
-
-**Cause:** The eligibility expression may have syntax errors or reference undefined fields
-
-**Solution:** Test the eligibility expression in Logic Studio first. Verify all referenced fields exist on the target model.
-
-### Cycle not generating beneficiary list
-
-**Symptom:** Creating a cycle does not populate the beneficiary list
-
-**Cause:** No registrants match the program's eligibility criteria, or the cycle has not been processed
-
-**Solution:** Verify eligibility criteria match at least some registrants. Run the cycle processing action to generate the list.
-
-### Service points not appearing
-
-**Symptom:** Cannot assign service points to programs or cycles
-
-**Cause:** No service points have been created for the program's geographic areas
-
-**Solution:** Create service points in the areas where the program operates before attempting assignment.

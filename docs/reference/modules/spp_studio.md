@@ -5,6 +5,7 @@ openspp:
 
 # Studio
 
+**Module:** `spp_studio`
 
 ## Overview
 

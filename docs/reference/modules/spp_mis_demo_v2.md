@@ -5,6 +5,7 @@ openspp:
 
 # MIS Demo V2
 
+**Module:** `spp_mis_demo_v2`
 
 ## Overview
 
@@ -142,45 +143,3 @@ After installation, the module automatically:
 3. Configures approval definitions
 4. Creates sample programs with eligibility criteria
 5. Sets up event types and change request configurations
-
-## Are you stuck?
-
-### Demo programs not appearing
-
-**Symptom:** Sample programs are not visible after installation
-
-**Cause:** The post-init hook may not have completed, or user lacks program access
-
-**Solution:** Check the installation logs for errors during post_init_hook. Ensure your user has program viewer or manager role.
-
-### Volume generation times out
-
-**Symptom:** Generating large datasets fails or takes too long
-
-**Cause:** Large batch sizes can exhaust server resources
-
-**Solution:** Reduce the number of records per batch. Use queue jobs for background processing. Monitor server memory during generation.
-
-### Demo users cannot log in
-
-**Symptom:** Demo user credentials do not work
-
-**Cause:** Passwords may have been changed or users deactivated
-
-**Solution:** Reset demo user passwords through the Users menu. Verify demo users are active.
-
-### Change requests not processing
-
-**Symptom:** Submitted change requests stay in draft state
-
-**Cause:** Approval workflow may require specific approvers
-
-**Solution:** Log in as the approver_demo user to process pending approvals. Verify the approval definitions are correctly configured.
-
-### GIS reports empty
-
-**Symptom:** Geographic reports show no data
-
-**Cause:** Registrants may not have geographic coordinates or area assignments
-
-**Solution:** Ensure registrants have area_id assigned. The volume generator should populate areas automatically.

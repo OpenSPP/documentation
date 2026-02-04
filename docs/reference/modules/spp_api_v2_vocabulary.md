@@ -5,6 +5,7 @@ openspp:
 
 # API V2 - Vocabulary
 
+**Module:** `spp_api_v2_vocabulary`
 
 ## Overview
 
@@ -121,29 +122,3 @@ Common integration patterns include:
 ### Auto-Installation
 
 This module auto-installs when both `spp_api_v2` and `spp_vocabulary` are present, ensuring vocabulary endpoints are available whenever the prerequisites exist.
-
-## Are you stuck?
-
-### Vocabulary not found error
-
-**Symptom:** 404 error when requesting vocabulary codes
-**Cause:** Invalid namespace URI or vocabulary does not exist
-**Solution:** Use the exact namespace URI from the vocabulary list endpoint
-
-### Empty code list
-
-**Symptom:** Vocabulary exists but codes endpoint returns empty
-**Cause:** No codes defined for the vocabulary
-**Solution:** Configure codes for the vocabulary in OpenSPP
-
-### Namespace URI encoding issues
-
-**Symptom:** 400 error with namespace URI in path
-**Cause:** Special characters in URI not properly encoded
-**Solution:** URL-encode the namespace URI (colons, slashes)
-
-### Inactive codes not returned
-
-**Symptom:** Known codes missing from results
-**Cause:** Codes marked as inactive are filtered out by default
-**Solution:** Include parameter to retrieve inactive codes if needed

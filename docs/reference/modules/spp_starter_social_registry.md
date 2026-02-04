@@ -5,6 +5,7 @@ openspp:
 
 # Starter: Social Registry
 
+**Module:** `spp_starter_social_registry`
 
 ## Overview
 
@@ -123,45 +124,3 @@ The Social Registry Starter serves as the foundation for:
 | Humanitarian Registration  | Emergency response population tracking      |
 | Population Databases       | General demographic record keeping          |
 | ID Management Systems      | Identity document tracking without programs |
-
-## Are you stuck?
-
-### Module installation fails
-
-**Symptom:** Error during installation mentioning missing dependencies
-
-**Cause:** Some required modules may not be available or have issues
-
-**Solution:** Check that all OpenSPP modules are present in the addons path. Review the installation log for specific missing modules.
-
-### API not responding
-
-**Symptom:** REST API endpoints return errors or are not accessible
-
-**Cause:** API configuration may be incomplete or authentication is failing
-
-**Solution:** Verify API credentials and that the API user has appropriate permissions. Check that spp_api_v2 is properly configured.
-
-### DCI connections failing
-
-**Symptom:** Cannot connect to external registries
-
-**Cause:** Network configuration, credentials, or endpoint URLs may be incorrect
-
-**Solution:** Verify the DCI endpoint URLs are accessible from your server. Check authentication credentials in the DCI client configuration.
-
-### Change requests not visible
-
-**Symptom:** Cannot find submitted change requests
-
-**Cause:** User may lack permissions to view change requests
-
-**Solution:** Ensure you have the appropriate change request viewer or manager role. Check that spp_change_request_v2 is installed correctly.
-
-### CEL expressions not working
-
-**Symptom:** Logic Studio expressions return unexpected results
-
-**Cause:** Expression syntax may be incorrect or reference unavailable fields
-
-**Solution:** Use the test function in Logic Studio to validate expressions. Verify field names match the actual model fields.

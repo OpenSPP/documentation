@@ -5,6 +5,7 @@ openspp:
 
 # API V2 - Products
 
+**Module:** `spp_api_v2_products`
 
 ## Overview
 
@@ -129,29 +130,3 @@ Products exposed through this API are referenced in:
 ### Auto-Installation
 
 This module auto-installs when both `spp_api_v2` and `product` are present, ensuring product endpoints are available whenever the prerequisites exist.
-
-## Are you stuck?
-
-### Product not found error
-
-**Symptom:** 404 error when requesting a product
-**Cause:** Invalid product code/name or product does not exist
-**Solution:** Use the product's exact `default_code` or `name` as the identifier
-
-### Empty product search
-
-**Symptom:** Search returns no products
-**Cause:** No products match filters or no products defined
-**Solution:** Verify products exist in the catalog, adjust filter parameters
-
-### Missing unit of measure
-
-**Symptom:** Product UoM field is empty
-**Cause:** Product has no default unit of measure configured
-**Solution:** Configure the product's default unit of measure in Odoo
-
-### Category not showing full hierarchy
-
-**Symptom:** Category appears without parent information
-**Cause:** Top-level category has no parent
-**Solution:** This is expected behavior for root categories

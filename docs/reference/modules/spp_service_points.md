@@ -5,6 +5,7 @@ openspp:
 
 # Service Points
 
+**Module:** `spp_service_points`
 
 ## Overview
 

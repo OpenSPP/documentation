@@ -5,6 +5,7 @@ openspp:
 
 # API V2 - Data
 
+**Module:** `spp_api_v2_data`
 
 ## Overview
 
@@ -116,29 +117,3 @@ Common integration patterns include:
 | Can Push Data     | Allow this client to push variable values  |
 | Can Pull Data     | Allow this client to pull variable values  |
 | Allowed Variables | Restrict access to specific variable codes |
-
-## Are you stuck?
-
-### Push rejected with validation error
-
-**Symptom:** 400 error when pushing data
-**Cause:** Invalid variable code, data type mismatch, or missing required fields
-**Solution:** Verify variable code exists, check data type matches variable definition
-
-### Pull returns empty for known registrant
-
-**Symptom:** No variable values returned
-**Cause:** No values stored for requested variables, or consent missing
-**Solution:** Verify values exist in the system, check consent for the API client
-
-### Variable code not found
-
-**Symptom:** Error indicating unknown variable
-**Cause:** Variable not defined in CEL domain configuration
-**Solution:** Define the variable in CEL Domain settings before using in API calls
-
-### Unauthorized to push/pull
-
-**Symptom:** 403 Forbidden on data operations
-**Cause:** API client lacks push or pull permissions
-**Solution:** Update API client configuration to grant required data permissions

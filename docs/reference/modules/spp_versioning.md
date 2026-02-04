@@ -5,6 +5,7 @@ openspp:
 
 # Versioning
 
+**Module:** `spp_versioning`
 
 ## Overview
 
@@ -121,37 +122,3 @@ class MyModel(models.Model):
     def _get_test_records(self):
         return self.test_ids  # Return associated test records
 ```
-
-## Are you stuck?
-
-### Cannot publish version - tests failing
-
-**Symptom:** Error "X test(s) must pass before publishing"
-
-**Cause:** The artifact has test gate enabled and some tests are not passing
-
-**Solution:** Run the failing tests listed in the error message. Fix any issues and ensure all tests show "passed" status before attempting to publish.
-
-### Cannot archive artifact - in use
-
-**Symptom:** Error "Cannot archive: used by X program(s)"
-
-**Cause:** The artifact is referenced by active programs or other records
-
-**Solution:** Remove the artifact from all programs or records using it before archiving. Use the "View Usages" action to see where it is used.
-
-### Scheduled version did not activate
-
-**Symptom:** A version scheduled for a past date is still in "Scheduled" state
-
-**Cause:** The scheduled job may not have run, or there was an error during activation
-
-**Solution:** Check the scheduled actions in Odoo settings. Verify the cron job for version activation is active and running. Check system logs for any errors.
-
-### Version history not showing
-
-**Symptom:** No versions appear in the version history
-
-**Cause:** No versions have been created for this artifact yet
-
-**Solution:** Use the "Create Version" action to create a snapshot of the current state. This initializes the version history.

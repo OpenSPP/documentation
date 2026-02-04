@@ -5,6 +5,7 @@ openspp:
 
 # Event Data
 
+**Module:** `spp_event_data`
 
 ## Overview
 

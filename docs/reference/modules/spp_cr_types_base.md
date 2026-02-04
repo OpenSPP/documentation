@@ -5,6 +5,7 @@ openspp:
 
 # CR Types - Base
 
+**Module:** `spp_cr_types_base`
 
 ## Overview
 

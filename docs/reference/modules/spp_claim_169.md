@@ -5,6 +5,7 @@ openspp:
 
 # QR Credentials (Claim 169)
 
+**Module:** `spp_claim_169`
 This module is for **developers** and **sys admins** who need to generate and verify MOSIP Claim 169 QR code credentials for beneficiary identity verification.
 
 ## Overview
@@ -152,47 +153,3 @@ Go to **Claim 169 > Credentials** to:
 | Version | 19.0.1.1.0 |
 | License | LGPL-3 |
 | Development Status | Beta |
-
-## Are you stuck?
-
-### QR code not generating
-
-**Symptom:** Error when attempting to generate QR credentials.
-
-**Cause:** Missing signing key or invalid issuer configuration.
-
-**Solution:**
-
-1. Verify a signing key exists in Key Management
-2. Check issuer configuration has a valid key selected
-3. Ensure all required attribute mappings are configured
-
-### Credential verification failing
-
-**Symptom:** Verification returns invalid for a valid-looking credential.
-
-**Cause:** Wrong public key or expired credential.
-
-**Solution:**
-
-1. Verify the correct public key is being used for verification
-2. Check if the credential has expired
-3. Ensure the credential has not been revoked
-
-### Missing Python dependencies
-
-**Symptom:** Module fails to install with import errors.
-
-**Cause:** Required Python packages not installed.
-
-**Solution:**
-
-```bash
-pip install qrcode Pillow claim169
-```
-
-## See Also
-
-- {doc}`spp_registry` - Registrant data source
-- {doc}`spp_key_management` - Cryptographic key management
-- {doc}`spp_audit` - Audit trail for operations

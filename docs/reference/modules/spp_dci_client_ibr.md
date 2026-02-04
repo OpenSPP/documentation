@@ -5,6 +5,7 @@ openspp:
 
 # DCI Client - IBR
 
+**Module:** `spp_dci_client_ibr`
 This module is for **developers** and **system administrators** who need to integrate OpenSPP with an Integrated Beneficiary Registry (IBR) for duplication checks via the DCI API standard.
 
 ## Overview
@@ -157,62 +158,3 @@ if status["enrolled"]:
 | License        | LGPL-3               |
 | Application    | No                   |
 | Status         | Alpha                |
-
-## Are you stuck?
-
-### No active IBR data source found
-
-**Symptom:** Error message when running a duplication check.
-
-**Cause:** No DCI data source is configured with `registry_type = "ibr"`.
-
-**Solution:**
-
-1. Navigate to **DCI > Configuration > Data Sources**
-2. Create a new data source or edit an existing one
-3. Set Registry Type to **IBR**
-4. Ensure the data source is marked as Active
-
-### Partner has no identifiers configured
-
-**Symptom:** Error when checking a registrant for duplicates.
-
-**Cause:** The registrant has no ID documents in their registry record.
-
-**Solution:**
-
-1. Navigate to the registrant's record
-2. Add at least one identifier (UIN, BRN, MRN, DRN, etc.)
-3. Retry the duplication check
-
-### Failed to fetch public key from JWKS URL
-
-**Symptom:** Error when clicking Fetch Public Key on an IBR sender.
-
-**Cause:** Network issues or invalid JWKS URL.
-
-**Solution:**
-
-1. Verify the JWKS URL is correct and accessible
-2. Check that the URL returns valid JSON with a `keys` array
-3. Ensure the `kid` (key ID) starts with the sender_id followed by a pipe character
-4. Check server logs for detailed error messages
-
-### Duplication check timing out
-
-**Symptom:** Check stays in "checking" state or fails with timeout error.
-
-**Cause:** Slow response from the external IBR or network issues.
-
-**Solution:**
-
-1. Check the IBR service status
-2. Verify network connectivity to the IBR endpoint
-3. Review Odoo server logs for connection errors
-4. Consider implementing retry logic for batch operations
-
-## See Also
-
-- {doc}`spp_dci_client` - Base DCI client infrastructure
-- {doc}`spp_dci_server` - DCI server for receiving requests
-- {doc}`spp_registry` - Registrant data management

@@ -5,6 +5,7 @@ openspp:
 
 # Theme
 
+**Module:** `theme_openspp_muk`
 
 ## Overview
 
@@ -79,45 +80,3 @@ The OpenSPP Theme integrates with:
 - **muk_web_theme:** Extends MuK's theme infrastructure
 - **web.assets_backend:** Loads into Odoo's backend interface
 - **All OpenSPP modules:** Provides consistent styling across the platform
-
-## Are you stuck?
-
-### Theme not applying
-
-**Symptom:** The interface shows default Odoo styling instead of OpenSPP colors
-
-**Cause:** The theme module may not be installed or assets not compiled
-
-**Solution:** Verify theme_openspp_muk is installed. Clear browser cache and reload. If using development mode, regenerate assets with `odoo-bin -u theme_openspp_muk`.
-
-### Dark mode not working
-
-**Symptom:** Cannot switch to dark mode or dark colors not appearing
-
-**Cause:** The MuK theme dark mode toggle may not be enabled
-
-**Solution:** Check the MuK theme settings for dark mode toggle. Ensure muk_web_theme is properly installed and configured.
-
-### Navbar looks wrong
-
-**Symptom:** Navigation bar has incorrect colors or layout
-
-**Cause:** CSS conflicts with other modules or browser caching
-
-**Solution:** Clear browser cache completely. Check for conflicting theme modules. Verify navbar.scss is being loaded.
-
-### Colors inconsistent
-
-**Symptom:** Some screens show OpenSPP colors, others show default
-
-**Cause:** Some views may override theme variables
-
-**Solution:** This is usually a module-specific issue. Check if the problem occurs in a specific module's views and report it for investigation.
-
-### MuK theme dependency error
-
-**Symptom:** Installation fails with missing muk_web_theme
-
-**Cause:** The MuK Web Theme module is not in the addons path
-
-**Solution:** Install muk_web_theme from the Odoo App Store or ensure it is included in your OpenSPP deployment. This is a required dependency.
