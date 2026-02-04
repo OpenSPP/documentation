@@ -25,9 +25,10 @@ Geographic targeting restricts program eligibility to registrants in specific ad
 
 The Eligibility Manager has a **Target Areas** section where you select administrative areas:
 
-```{image} /_images/en-us/config_guide/eligibility/06-geographic-targeting-section.png
+```{figure} ../../_images/en-us/config_guide/eligibility/06-geographic-targeting-section.png
 :alt: Target Areas section in eligibility manager
-:class: img-fluid
+
+The **Target Areas** section in the eligibility manager settings.
 ```
 
 When geographic targeting is configured:
@@ -63,9 +64,10 @@ In the **Target Areas** field:
 3. Select one or more areas
 4. Areas can be at any level (region, district, village)
 
-```{image} /_images/en-us/config_guide/eligibility/07-area-selection-dropdown.png
+```{figure} ../../_images/en-us/config_guide/eligibility/07-area-selection-dropdown.png
 :alt: Area selection dropdown with search
-:class: img-fluid
+
+Click the **Target Areas** field to search and select administrative areas.
 ```
 
 ### Step 3: Save configuration
@@ -164,9 +166,10 @@ To see which areas are configured:
 2. Find the **Eligibility Manager** section
 3. Look for the **Target Areas** field
 
-```{image} /_images/en-us/config_guide/eligibility/08-configured-target-areas.png
-:alt: Configured target areas showing selected districts
-:class: img-fluid
+```{figure} ../../_images/en-us/config_guide/eligibility/08-configured-target-areas.png
+:alt: Target Areas field in eligibility manager settings
+
+The **Target Areas** field where selected administrative areas appear.
 ```
 
 ## Are you stuck?
