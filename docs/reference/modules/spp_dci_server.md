@@ -6,9 +6,10 @@ openspp:
 # DCI Server
 
 **Module:** `spp_dci_server`
-This module is for **developers** and **sys admins** setting up OpenSPP as a data provider for DCI-compliant external systems.
 
 ## Overview
+
+This module is for **developers** and **sys admins** setting up OpenSPP as a data provider for DCI-compliant external systems.
 
 DCI Server provides the infrastructure for receiving and processing incoming DCI API requests from external systems. It enables OpenSPP to act as a data provider, responding to queries from other social protection systems and identity registries.
 

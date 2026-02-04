@@ -108,4 +108,3 @@ You can reference glossary terms from anywhere in the documentation using the `:
 
 - {doc}`/user_guide/drims/index` - DRIMS user guide
 - {doc}`/config_guide/drims/index` - DRIMS configuration guide
-- {doc}`/developer_guide/drims/index` - DRIMS developer guide

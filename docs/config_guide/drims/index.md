@@ -117,5 +117,3 @@ Most DRIMS configuration can be done through the interface. You only need custom
 - Integration with external systems (3PL, OCHA HDX, etc.)
 - Custom entitlement calculations for beneficiary-based distribution
 - Advanced reporting beyond 4W reports and dashboards
-
-For these cases, see the [DRIMS Developer Guide](../../developer_guide/drims/index.md).

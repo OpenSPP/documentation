@@ -34,7 +34,6 @@ The Technical Reference is a detailed document outlining the system's architectu
 
 - {doc}`integrations`
 - {doc}`apis`
-- {doc}`API v2 (REST) </developer_guide/api_v2/index>` (moved to Developer Guide)
 - {doc}`external_api`
 
 **Other**
@@ -98,7 +97,6 @@ programs/dashboards
 
 integrations
 apis
-/developer_guide/api_v2/index
 dci
 external_api
 ```

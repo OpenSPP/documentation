@@ -101,10 +101,6 @@ Track deployed disaster response staff by:
 - {doc}`/config_guide/drims/approval_chains` - Set up multi-tier request approval
 - {doc}`/config_guide/drims/alerts` - Configure low stock and expiry alerts
 
-**For developers extending DRIMS:**
-- {doc}`/developer_guide/drims/architecture` - DRIMS data model and workflows
-- {doc}`/developer_guide/drims/extending` - Extend with custom functionality
-
 ## How it works
 
 ```{mermaid}

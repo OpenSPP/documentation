@@ -6,9 +6,10 @@ openspp:
 # Branding Kit
 
 **Module:** `spp_branding_kit`
-This module is for **sys admins** and **developers** who need to customize OpenSPP's branding, URL routing, and telemetry settings.
 
 ## Overview
+
+This module is for **sys admins** and **developers** who need to customize OpenSPP's branding, URL routing, and telemetry settings.
 
 Branding Kit provides comprehensive branding customization for OpenSPP deployments. It replaces Odoo branding with OpenSPP branding across the platform, adds URL routing aliases, and manages telemetry configuration.
 

@@ -6,9 +6,10 @@ openspp:
 # QR Credentials (Claim 169)
 
 **Module:** `spp_claim_169`
-This module is for **developers** and **sys admins** who need to generate and verify MOSIP Claim 169 QR code credentials for beneficiary identity verification.
 
 ## Overview
+
+This module is for **developers** and **sys admins** who need to generate and verify MOSIP Claim 169 QR code credentials for beneficiary identity verification.
 
 QR Credentials implements the MOSIP Claim 169 specification for generating verifiable digital identity credentials. It enables social protection programs to issue QR code-based credentials that can be scanned and verified offline, useful for field verification where internet connectivity is limited.
 

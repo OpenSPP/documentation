@@ -6,9 +6,10 @@ openspp:
 # DCI Client
 
 **Module:** `spp_dci_client`
-This module is for **developers** and **sys admins** who need to connect OpenSPP to external DCI-compliant registries.
 
 ## Overview
+
+This module is for **developers** and **sys admins** who need to connect OpenSPP to external DCI-compliant registries.
 
 DCI Client provides the base infrastructure for connecting to external registries and data sources using Digital Convergence Initiative (DCI) API standards. It handles OAuth2 authentication and data source management, enabling interoperability with civil registration systems, disability registries, and identity bureaus.
 

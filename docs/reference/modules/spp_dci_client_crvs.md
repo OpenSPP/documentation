@@ -6,9 +6,10 @@ openspp:
 # DCI Client - CRVS
 
 **Module:** `spp_dci_client_crvs`
-This module is for **developers** and **sys admins** who need to integrate OpenSPP with Civil Registration and Vital Statistics (CRVS) systems. It enables your social protection programs to verify and receive vital events data (births, deaths, marriages) from external CRVS registries using the DCI API standard.
 
 ## Overview
+
+This module is for **developers** and **sys admins** who need to integrate OpenSPP with Civil Registration and Vital Statistics (CRVS) systems. It enables your social protection programs to verify and receive vital events data (births, deaths, marriages) from external CRVS registries using the DCI API standard.
 
 The DCI Client - CRVS module connects OpenSPP to government CRVS systems, allowing automatic verification of birth records, death status checks, and real-time event notifications. When a death is recorded in the national CRVS system, OpenSPP can automatically receive the notification and update beneficiary status.
 

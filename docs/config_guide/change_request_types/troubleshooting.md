@@ -229,4 +229,3 @@ Adjust the configuration:
 - {doc}`conflict_detection` - Conflict and duplicate detection
 - {doc}`patterns` - Common configuration patterns
 - {doc}`../event_data/index` - Integrate with event data collection
-- {doc}`../../developer_guide/api_v2/index` - Create change requests via REST API

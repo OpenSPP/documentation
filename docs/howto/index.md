@@ -59,8 +59,6 @@ developer_guides/setting_up_using_pypi
 developer_guides/troubleshooting
 developer_guides/cel
 developer_guides/module
-../developer_guide/extending/cycle_manager
-../developer_guide/extending/custom_modules
 ../config_guide/scoring/pmt
 
 developer_guides/custom_areas

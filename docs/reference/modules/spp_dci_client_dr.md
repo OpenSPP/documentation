@@ -6,9 +6,10 @@ openspp:
 # DCI Client - Disability Registry
 
 **Module:** `spp_dci_client_dr`
-This module is for **developers** and **sys admins** who need to integrate OpenSPP with external disability registries using the DCI API standard.
 
 ## Overview
+
+This module is for **developers** and **sys admins** who need to integrate OpenSPP with external disability registries using the DCI API standard.
 
 The DCI Client - Disability Registry module enables connection to disability registries via the DCI API standard. It allows social protection programs to verify disability status and retrieve disability assessment data for eligibility determination and targeted assistance.
 

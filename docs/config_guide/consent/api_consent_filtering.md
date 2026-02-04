@@ -177,4 +177,3 @@ The most permissive active consent applies. The `consent_summary` aggregates all
 
 - {doc}`overview` - Consent concepts and lifecycle
 - {doc}`recording_consent` - How to record consent
-- {doc}`/developer_guide/api_v2/index` - API V2 documentation

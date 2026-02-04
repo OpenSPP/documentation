@@ -6,9 +6,10 @@ openspp:
 # Consent
 
 **Module:** `spp_consent`
-This reference is for **implementers** and **sys admins** who need to understand consent management capabilities and configuration options.
 
 ## Overview
+
+This reference is for **implementers** and **sys admins** who need to understand consent management capabilities and configuration options.
 
 The Consent module provides standards-compliant consent management for social protection programs. It tracks explicit consent from individuals and groups, supporting both GDPR compliance and international data privacy standards.
 

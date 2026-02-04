@@ -32,8 +32,6 @@ To configure a basic change request type:
 6. Set approval workflow in the **Approval** tab
 7. Click **Save** then **Activate**
 
-See {doc}`creating_types` for detailed instructions.
-
 ```{toctree}
 :hidden:
 :maxdepth: 1
@@ -51,4 +49,3 @@ troubleshooting
 
 - {doc}`../studio/change_request_builder` - Build change request types in Studio
 - {doc}`../event_data/index` - Integrate with event data collection
-- {doc}`../../developer_guide/api_v2/index` - Create change requests via REST API

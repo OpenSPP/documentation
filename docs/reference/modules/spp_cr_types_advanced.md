@@ -6,9 +6,10 @@ openspp:
 # CR Types - Advanced
 
 **Module:** `spp_cr_types_advanced`
-This module is for **implementers** who need to understand available change request types, and **developers** who need to extend or customize complex registry operations.
 
 ## Overview
+
+This module is for **implementers** who need to understand available change request types, and **developers** who need to extend or customize complex registry operations.
 
 CR Types - Advanced provides pre-built change request types that require custom Python logic for complex registry operations. These types handle membership changes, registrant lifecycle events, group operations, and data quality tasks that cannot be implemented through Studio configuration alone.
 

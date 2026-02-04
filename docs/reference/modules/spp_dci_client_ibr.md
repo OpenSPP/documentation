@@ -6,9 +6,10 @@ openspp:
 # DCI Client - IBR
 
 **Module:** `spp_dci_client_ibr`
-This module is for **developers** and **system administrators** who need to integrate OpenSPP with an Integrated Beneficiary Registry (IBR) for duplication checks via the DCI API standard.
 
 ## Overview
+
+This module is for **developers** and **system administrators** who need to integrate OpenSPP with an Integrated Beneficiary Registry (IBR) for duplication checks via the DCI API standard.
 
 The DCI Client - IBR module enables OpenSPP to connect to external identity bureaus and beneficiary registries to detect and prevent duplicate enrollments across social protection programs. It implements the Digital Convergence Initiative (DCI) API standard for cross-registry communication.
 

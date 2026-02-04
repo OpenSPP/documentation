@@ -120,17 +120,17 @@ Learn how to use OpenSPP for registry and program management.
 :::{grid-item-card}
 :img-top: images/03-Dev_Guide-Icon.png
 
-**{doc}`Developer guide <developer_guide/index>`**
+**{doc}`Configuration guide <config_guide/index>`**
 ^^^
-Customize and extend OpenSPP with our technical documentation.
+Configure and customize OpenSPP for your organization's needs.
 :::
 
 :::{grid-item-card}
 :img-top: images/04-Architecture-Icon.png
 
-**{doc}`Architecture <developer_guide/architecture/index>`**
+**{doc}`Reference <reference/index>`**
 ^^^
-Explore platform architecture patterns and deployment guidance.
+Module documentation, vocabularies, and technical references.
 :::
 ::::
 
@@ -179,9 +179,8 @@ Our guiding principles are informed by the Digital Public Goods Standard and the
 ## Common tasks
 
 - **[Install OpenSPP](get_started/installation/docker.md)** - Set up your development or production environment
-- **[Create a program](user_guide/programs/index.md)** - Design and launch social protection programs  
+- **[Create a program](user_guide/programs/index.md)** - Design and launch social protection programs
 - **[Manage registrants](user_guide/registry/index.md)** - Add and manage beneficiary data
-- **[Configure integrations](developer_guide/integrations/index.md)** - Connect with external systems
 
 ## Digital Public Good & Open Source Foundation
 
@@ -220,8 +219,8 @@ OpenSPP is recognized as a [Digital Public Good](https://digitalpublicgoods.net/
 
 ::::{grid-item}
 **Learn More**
-- [API Reference](developer_guide/api_v2/index.md)
 - [Glossary](glossary.md)
+- [Module Reference](reference/modules/index.md)
 ::::
 :::::
 
@@ -234,7 +233,6 @@ learn/index
 get_started/index
 user_guide/index
 config_guide/index
-developer_guide/index
 ops_guide/index
 reference/index
 community_and_support/index
