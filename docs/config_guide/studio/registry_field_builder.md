@@ -75,7 +75,11 @@ Custom fields are created directly in an inline editing list. You can configure 
 2. Click **Custom Fields** card on the dashboard
 3. Click **New** to create a new field
 
-![Custom Fields list in Studio](/_images/en-us/config_guide/studio/registry_field_builder/01-custom-fields-list.png)
+```{figure} ../../_images/en-us/config_guide/studio/registry_field_builder/01-custom-fields-list.png
+:alt: Custom Fields list in Studio
+
+Click **New** to create a new custom field.
+```
 
 ### Step 2: Enter field details
 
@@ -85,12 +89,16 @@ When you click **New**, a new row appears for inline editing. Fill in the field 
 |--------|---------------|---------|
 | **Label** | What users see | "Disability Type" |
 | **Target Registry** | Individual or Group | Individual |
-| **Field Type** | Type of data to collect | Selection |
+| **Field Type** | Type of data to collect | Text |
 | **Placement Zone** | Where field appears | Individual - Demographics |
 | **Required** | Must users fill this? | ☐ (unchecked) |
 | **Searchable** | Include in search filters? | ☐ (unchecked) |
 
-![Entering field details in inline editor](/_images/en-us/config_guide/studio/registry_field_builder/02-wizard-step1-basic.png)
+```{figure} ../../_images/en-us/config_guide/studio/registry_field_builder/02-wizard-step1-basic.png
+:alt: Entering field details in inline editor
+
+Enter the field label and select the target registry.
+```
 
 #### Target registry options
 
@@ -103,7 +111,11 @@ When you click **New**, a new row appears for inline editing. Fill in the field 
 
 Click on the **Field Type** column to see available options:
 
-![Field type dropdown showing available options](/_images/en-us/config_guide/studio/registry_field_builder/03-wizard-step2-config.png)
+```{figure} ../../_images/en-us/config_guide/studio/registry_field_builder/03-wizard-step2-config.png
+:alt: Field type dropdown showing available options
+
+Select the field type from the dropdown.
+```
 
 #### Field type options
 
@@ -124,7 +136,11 @@ Click on the **Field Type** column to see available options:
 
 Click on the **Placement Zone** column and search for the appropriate zone:
 
-![Selecting placement zone](/_images/en-us/config_guide/studio/registry_field_builder/04-wizard-selection-options.png)
+```{figure} ../../_images/en-us/config_guide/studio/registry_field_builder/04-wizard-selection-options.png
+:alt: Selecting placement zone
+
+Choose a placement zone from the dropdown to set where the field appears.
+```
 
 #### Placement zones
 
@@ -155,7 +171,11 @@ Select where the field appears in the registry form:
 
 Click **Save** or press Enter to save the field. The field is created in **Draft** status.
 
-![Field saved in Draft status](/_images/en-us/config_guide/studio/registry_field_builder/05-wizard-step3-review.png)
+```{figure} ../../_images/en-us/config_guide/studio/registry_field_builder/05-wizard-step3-review.png
+:alt: Save button highlighted
+
+Click **Save** to save the field in Draft status.
+```
 
 ```{note}
 Fields are created as **Draft** by default. Draft fields can be edited freely but are not visible in registry forms until activated.
@@ -224,7 +244,11 @@ Draft fields must be activated before they appear in registry forms.
 1. Double-click the field row to open details
 2. Click **Activate** in the header
 
-![Field with Activate button](/_images/en-us/config_guide/studio/registry_field_builder/07-field-activate.png)
+```{figure} ../../_images/en-us/config_guide/studio/registry_field_builder/07-field-activate.png
+:alt: Field form view with Activate button
+
+Click **Activate** to make the draft field live in registry forms.
+```
 
 - Activating a field makes it visible to all users immediately
 - Once activated, the field cannot be edited directly (must deactivate first)
@@ -245,7 +269,11 @@ After activating a field:
 3. Find your custom field in the placement zone you selected
 4. Test entering and saving data
 
-![Registry search portal](/_images/en-us/config_guide/studio/registry_field_builder/06-field-in-registry.png)
+```{figure} ../../_images/en-us/config_guide/studio/registry_field_builder/06-field-in-registry.png
+:alt: Custom field visible in the registry form
+
+Verify the custom field appears in the correct placement zone.
+```
 
 ## Managing existing fields
 
@@ -263,7 +291,11 @@ After activating a field:
 | **Searchable** | Whether field appears in search filters |
 | **Status** | Draft, Active, or Inactive |
 
-![Custom Fields list with active field](/_images/en-us/config_guide/studio/registry_field_builder/08-custom-fields-list.png)
+```{figure} ../../_images/en-us/config_guide/studio/registry_field_builder/08-custom-fields-list.png
+:alt: Custom Fields list with active field
+
+The field now shows **Active** status in the Custom Fields list.
+```
 
 ### Edit a field
 
@@ -293,7 +325,11 @@ Deactivating hides the field from forms, but existing data is preserved in the d
 3. If data exists, system shows impact warning: "This field contains data in X records"
 4. Confirm deactivation
 
-![Field deactivated](/_images/en-us/config_guide/studio/registry_field_builder/09-deactivate-warning.png)
+```{figure} ../../_images/en-us/config_guide/studio/registry_field_builder/09-deactivate-warning.png
+:alt: Deactivate button highlighted on active field
+
+Click **Deactivate** to disable the field from registry forms.
+```
 
 ### Delete a field
 
