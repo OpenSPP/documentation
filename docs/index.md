@@ -13,7 +13,7 @@ myst:
 
 OpenSPP empowers governments and humanitarian organizations to deliver effective social protection and agricultural support programs through open-source digital infrastructure. By bridging social welfare with agricultural development, OpenSPP enables coordinated assistance to vulnerable populations, from urban cash transfers to rural farming subsidies.
 
-The platform's modular architecture offers three integrated products: **SP-MIS** for comprehensive program management, **Social Registry** for beneficiary data coordination, and **Farmer Registry** for agricultural-social protection convergence. Organizations can deploy specific modules that match their needs while maintaining interoperability with existing systems.
+The platform's modular architecture offers four integrated products: **SP-MIS** for comprehensive program management, **Social Registry** for beneficiary data coordination, **Farmer Registry** for agricultural–social protection convergence, and **DRIMS** for disaster response inventory management. Organizations can deploy specific modules that match their operational needs—whether for routine social protection delivery or emergency response—while maintaining interoperability with existing systems.
 
 
 ## Key features
@@ -156,16 +156,15 @@ The Social Registry is a repository for the storage and management of data for p
 
 ### Farmer Registry
 
-The Farmer Registry bridges social protection with agricultural development, storing and managing comprehensive farm and farmer data. Key capabilities include:
-- **Farm holding mapping** with GIS integration for land parcels and crop data
-- **Agricultural subsidy management** for input distribution and support programs  
-- **Climate resilience programs** targeting vulnerable farming communities
-- **Integration with agricultural extension services** and market information systems
-- **Seasonal support cycles** aligned with planting and harvest periods
-
-This enables coordinated delivery of both social protection and agricultural support to rural communities. 
+The Farmer Registry connects social protection with agricultural development by storing and managing essential farm and farmer data. It supports farm holding mapping with GIS integration, agricultural subsidy management, and climate resilience initiatives for vulnerable farming communities, while enabling coordination with extension services and seasonal support cycles to ensure effective delivery of assistance to rural households.
 
 [Learn more →](products/farmer_registry.md)
+
+### DRIMS – Disaster Response Inventory Management
+
+DRIMS manages the complete lifecycle of emergency supplies, from donation pledges and warehouse storage to dispatch, delivery, and returns. It provides real-time inventory visibility, multi-tier request approval, and coordinated distribution workflows to support humanitarian organizations and government agencies in responding effectively to disaster incidents.
+
+[Learn more →](products/drims.md)
 
 ## Guiding principles
 

@@ -203,4 +203,4 @@ See {doc}`/get_started/index` to begin.
 
 - {doc}`/get_started/index` - Install and set up your first program
 - {doc}`/config_guide/index` - Configure OpenSPP for your needs
-- {doc}`/learn/concepts/index` - Understand core concepts
+- {doc}`/learn/index` - Understand core concepts
