@@ -81,17 +81,22 @@ Decide:
 ### Step 1: Open Change Request Builder
 
 1. Click **Studio** in the main menu
-
-![Studio Dashboard](/_images/en-us/config_guide/studio/change_request_builder/01-studio-dashboard.png)
-
 2. Click **Change Requests** (under Forms & Fields)
 3. Click the **New** button
 
-![Change Request Types list view](/_images/en-us/config_guide/studio/change_request_builder/02-cr-types-list.png)
+```{figure} ../../_images/en-us/config_guide/studio/change_request_builder/01-cr-types-list.png
+:alt: Change Request Types list view with New button highlighted
+
+Click **New** to create a new change request type.
+```
 
 ### Step 2: Enter basic information
 
-![CR type form empty](/_images/en-us/config_guide/studio/change_request_builder/03-cr-type-form-empty.png)
+```{figure} ../../_images/en-us/config_guide/studio/change_request_builder/02-cr-type-form-empty.png
+:alt: Empty change request type form with basic information section highlighted
+
+The change request type form with **Basic Information** and **Configuration** sections.
+```
 
 | Field | What to enter | Example |
 |-------|---------------|---------|
@@ -110,17 +115,29 @@ Decide:
 
 **Tip**: If approval is not required, changes can be applied immediately when the request is submitted.
 
-![CR type form filled](/_images/en-us/config_guide/studio/change_request_builder/04-cr-type-form-filled.png)
+```{figure} ../../_images/en-us/config_guide/studio/change_request_builder/03-cr-type-form-filled.png
+:alt: Change request type form filled with name, description, and approval settings
+
+Enter the change request type name, target registry, description, and approval settings.
+```
 
 ### Step 4: Define field mappings
 
 Click the **Field Mappings** tab to specify which registry fields can be updated.
 
-![Field Mappings tab empty](/_images/en-us/config_guide/studio/change_request_builder/05-field-mappings-tab-empty.png)
+```{figure} ../../_images/en-us/config_guide/studio/change_request_builder/04-field-mappings-tab-empty.png
+:alt: Empty Field Mappings tab with Add a line link highlighted
+
+Click **Add a line** to start adding field mappings.
+```
 
 Click **Add a line** to add each field:
 
-![Add field mapping](/_images/en-us/config_guide/studio/change_request_builder/06-add-field-mapping.png)
+```{figure} ../../_images/en-us/config_guide/studio/change_request_builder/05-add-field-mapping.png
+:alt: Field selection dropdown showing available registry fields
+
+Search and select from existing registry fields to map.
+```
 
 | Setting | What to enter |
 |---------|---------------|
@@ -150,7 +167,11 @@ For an "Update Phone Number" change request:
 |-------|-------|----------|-----------|
 | `phone` | New Phone Number | Yes | No |
 
-![Field mapping filled](/_images/en-us/config_guide/studio/change_request_builder/07-field-mapping-filled.png)
+```{figure} ../../_images/en-us/config_guide/studio/change_request_builder/06-field-mapping-filled.png
+:alt: Field mapping filled with phone field mapped to New Phone Number
+
+Field mapping configured with the phone field, label, and required setting.
+```
 
 #### Field mapping options (advanced)
 
@@ -166,7 +187,15 @@ Click on a field row to open detailed configuration:
 
 Click **Save** to create the change request type in Draft state.
 
-![Draft state with Activate button](/_images/en-us/config_guide/studio/change_request_builder/09-draft-state-activate-button.png)
+```{figure} ../../_images/en-us/config_guide/studio/change_request_builder/08-draft-activate-button.png
+:alt: Draft change request type with Activate button highlighted
+
+Click **Activate** to make the change request type available for use.
+```
+
+```{note}
+Change request types are created in **Draft** status by default. Draft types can be edited freely but are not available for submitting requests until activated.
+```
 
 ## Change request type lifecycle
 
@@ -228,7 +257,11 @@ From a change request type:
 - Click **View Requests** to see all requests of this type
 - The **Audit Trail** tab shows creation, activation, and modification history
 
-![Audit Trail tab](/_images/en-us/config_guide/studio/change_request_builder/08-audit-trail-tab.png)
+```{figure} ../../_images/en-us/config_guide/studio/change_request_builder/07-audit-trail-tab.png
+:alt: Audit Trail tab showing creation and activation history
+
+The **Audit Trail** tab shows who created, activated, and modified the change request type.
+```
 
 ## Managing change request types
 
@@ -244,7 +277,11 @@ From a change request type:
 | **Fields** | Number of field mappings |
 | **State** | Draft, Active, or Inactive |
 
-![List view with data](/_images/en-us/config_guide/studio/change_request_builder/10-list-view-with-data.png)
+```{figure} ../../_images/en-us/config_guide/studio/change_request_builder/09-cr-types-list-active.png
+:alt: Change Request Types list showing active type
+
+The change request type now shows **Active** status in the Change Request Types list.
+```
 
 ### Filtering change request types
 
