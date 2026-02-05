@@ -28,7 +28,7 @@ Cash entitlements are monetary payments calculated for each beneficiary. The cal
 ```{figure} /_images/en-us/config_guide/entitlement_formulas/02-cash-entitlement-manager-form.png
 :alt: Cash entitlement manager configuration form
 
-The cash entitlement manager form showing manager-level settings.
+The Cash entitlement manager form showing **Evaluate one item**, **Maximum Amount**, and the **Entitlement Items** list.
 ```
 
 ### Manager-level settings
@@ -53,7 +53,7 @@ Each cash entitlement manager has one or more **items**. Items are evaluated in 
 ```{figure} /_images/en-us/config_guide/entitlement_formulas/03-entitlement-item-form.png
 :alt: Entitlement item configuration form
 
-Click on an entitlement item row to view its configuration fields.
+The entitlement item form with **Amount**, **Condition Domain**, **Multiplier**, and **Maximum number** fields.
 ```
 
 ### Item configuration fields
@@ -148,9 +148,9 @@ Combine multiple items for complex calculations:
 - Total: $450
 
 ```{figure} /_images/en-us/config_guide/entitlement_formulas/04-multiple-entitlement-items.png
-:alt: Multiple entitlement items configured
+:alt: Multiple entitlement items configured in the Cash manager
 
-Multiple entitlement items configured for a base amount plus child supplement.
+Multiple entitlement items configured with different amounts, multipliers, and conditions for complex calculations.
 ```
 
 ## Formula-based calculations
@@ -192,12 +192,6 @@ min(base_amount * me.household_size, 1000)
 base_amount + (100 if me.has_disability else 0)
 ```
 
-```{figure} /_images/en-us/config_guide/entitlement_formulas/05-formula-field-example.png
-:alt: Formula field with CEL expression
-
-The **Formula** field with a CEL expression for complex amount calculations.
-```
-
 ## Formula validation
 
 When you enter a formula, OpenSPP validates it:
@@ -207,12 +201,6 @@ When you enter a formula, OpenSPP validates it:
 | No error | Formula syntax is valid |
 | Error message | Syntax error or invalid field |
 | Sample calculation | Shows result for a sample beneficiary |
-
-```{figure} /_images/en-us/config_guide/entitlement_formulas/06-formula-validation.png
-:alt: Formula validation showing success
-
-Formula validation feedback confirms the expression syntax is valid.
-```
 
 ## Built-in functions
 
