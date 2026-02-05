@@ -1,13 +1,14 @@
 name: Build and deploy OpenSPP documentation (previews only)
 
-# NOTE: stable branch is now handled by build_deploy_multiversion.yml
+# NOTE: stable and v2-odoo19-doc-refresh are handled by build_deploy_multiversion.yml
 # This workflow only handles preview deployments for other branches
 
 on:
   push:
     branches-ignore:
       - cf-pages
-      - stable  # stable is handled by multiversion workflow
+      - stable
+      - v2-odoo19-doc-refresh
 
 jobs:
   build_deploy:
