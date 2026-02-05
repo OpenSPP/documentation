@@ -35,9 +35,10 @@ In-kind entitlements distribute physical goods instead of cash. Common examples:
 3. Select **In-Kind** as the manager type
 4. Configure the in-kind items
 
-```{image} /_images/en-us/config_guide/entitlement_formulas/07-inkind-entitlement-manager.png
+```{figure} /_images/en-us/config_guide/entitlement_formulas/07-inkind-entitlement-manager.png
 :alt: In-kind entitlement manager configuration
-:class: img-fluid
+
+Select **In-Kind** as the manager type in the program's **Configuration** tab.
 ```
 
 ### In-kind manager settings
@@ -59,9 +60,10 @@ Each item specifies a product and quantity:
 | **Unit of Measure** | How quantity is measured | Bags, kg, pieces |
 | **Condition** | Who receives this item | (optional CEL) |
 
-```{image} /_images/en-us/config_guide/entitlement_formulas/08-inkind-item-configuration.png
+```{figure} /_images/en-us/config_guide/entitlement_formulas/08-inkind-item-configuration.png
 :alt: In-kind item configuration with product and quantity
-:class: img-fluid
+
+Each in-kind item specifies a **Product** and **Quantity** per beneficiary.
 ```
 
 ## Product configuration
@@ -126,9 +128,10 @@ Baskets bundle multiple products into a single entitlement.
 2. Click **Create**
 3. Add products to the basket
 
-```{image} /_images/en-us/config_guide/entitlement_formulas/09-basket-configuration.png
+```{figure} /_images/en-us/config_guide/entitlement_formulas/09-basket-configuration.png
 :alt: Basket configuration with multiple products
-:class: img-fluid
+
+A basket bundles multiple products into a single entitlement package.
 ```
 
 ### Basket configuration
