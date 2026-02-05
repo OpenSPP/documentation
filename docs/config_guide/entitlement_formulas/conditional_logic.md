@@ -76,9 +76,9 @@ Add conditions to entitlement items to control who receives each component.
 | Condition | `age_years(r.birthdate) >= 60` |
 
 ```{figure} /_images/en-us/config_guide/entitlement_formulas/12-conditional-items-by-age.png
-:alt: Entitlement items with age-based conditions
+:alt: Entitlement item form showing a Condition Domain filter
 
-Entitlement items with age-based **Condition** expressions for different benefit amounts.
+The **Condition Domain** filter and **Amount** restrict this entitlement item to matching beneficiaries.
 ```
 
 ### Example: Supplement for special groups
