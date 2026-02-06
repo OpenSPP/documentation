@@ -48,7 +48,11 @@ Reference an existing field on an Odoo model.
 | Source Field | `x_studio_monthly_income` |
 | Value Type | Money |
 
-![Model Field source type configuration](/_images/en-us/config_guide/variables/05-source-type-field.png)
+```{figure} /_images/en-us/config_guide/variables/05-source-type-field.png
+:alt: Variable form with Source Type set to Model Field and source configuration highlighted
+
+Set **Source Type** to Model Field, then specify the **Source Model** and **Source Field**.
+```
 
 **CEL Usage:** `income > 5000`
 
@@ -90,7 +94,11 @@ Calculate values using CEL expressions.
 | Value Type | Number |
 | Unit | years |
 
-![Computed CEL source type configuration](/_images/en-us/config_guide/variables/08-source-type-computed.png)
+```{figure} /_images/en-us/config_guide/variables/08-source-type-computed.png
+:alt: Variable form with Source Type set to Computed CEL and expression field highlighted
+
+Set **Source Type** to Computed (CEL), then enter the **CEL Expression** to calculate.
+```
 
 **CEL Usage:** `age >= 18 && age <= 65`
 
@@ -140,7 +148,11 @@ Compute values over household members, enrollments, entitlements, or events.
 | **Maximum** | Number | Largest value |
 | **Exists** | Yes/No | True if any member matches |
 
-![Aggregate types dropdown](/_images/en-us/config_guide/variables/07-aggregate-types-dropdown.png)
+```{figure} /_images/en-us/config_guide/variables/07-aggregate-types-dropdown.png
+:alt: Aggregate Type dropdown showing Count, Sum, Average, Minimum, Maximum, and Exists options
+
+Select an **Aggregate Type** to define how member values are combined.
+```
 
 ### Aggregate Targets
 
@@ -275,7 +287,11 @@ Fixed values that can optionally be overridden per program.
 | Value Type | Money |
 | Unit | USD |
 
-![Constant source type configuration](/_images/en-us/config_guide/variables/09-source-type-constant.png)
+```{figure} /_images/en-us/config_guide/variables/09-source-type-constant.png
+:alt: Variable form with Source Type set to Constant and default value configuration highlighted
+
+Set **Source Type** to Constant/Parameter, then enter the **Default Value** and enable **Program Configurable** if needed.
+```
 
 **CEL Usage:** `income < poverty_line`
 

@@ -113,7 +113,11 @@ Cache TTL: 3600 seconds (1 hour)
 
 The variable value is computed once and reused for 1 hour before refreshing.
 
-![Caching configuration with TTL settings](/_images/en-us/config_guide/variables/10-caching-configuration.png)
+```{figure} /_images/en-us/config_guide/variables/10-caching-configuration.png
+:alt: Variable form with Cache Strategy and TTL fields highlighted
+
+Set the **Cache Strategy** and **Cache TTL** to control how long computed values are reused.
+```
 
 ## Period Granularity
 
@@ -128,7 +132,11 @@ Variables can track values over time:
 | **Yearly** | Value per year | Annual income |
 | **Snapshot** | Point-in-time freeze | Income at enrollment |
 
-![Period granularity configuration](/_images/en-us/config_guide/variables/11-period-granularity.png)
+```{figure} /_images/en-us/config_guide/variables/11-period-granularity.png
+:alt: Variable form with Period Granularity field highlighted
+
+Choose the **Period Granularity** to track variable values over time.
+```
 
 **Snapshot Example:** Capture household income at the moment of program enrollment, even if it changes later.
 
@@ -222,14 +230,22 @@ Define a threshold that programs can override.
 
 Variables are configured in **Studio → Variables**.
 
-![Studio dashboard with Variables card highlighted](/_images/en-us/config_guide/variables/01-studio-variables-card.png)
+```{figure} /_images/en-us/config_guide/variables/01-studio-variables-card.png
+:alt: Studio Dashboard with the Variables card highlighted
+
+Click **Open Variables** on the Studio Dashboard to manage variable definitions.
+```
 
 | Menu | Purpose |
 |------|---------|
 | **All Variables** | View, create, and manage variables |
 | **Categories** | Create and organize variable categories |
 
-![Variables list view](/_images/en-us/config_guide/variables/02-variables-list.png)
+```{figure} /_images/en-us/config_guide/variables/02-variables-list.png
+:alt: Variables list view showing configured variables
+
+The **Variables** list displays all defined variables with their status and source type.
+```
 
 ## Are You Stuck?
 

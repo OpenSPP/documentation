@@ -18,13 +18,21 @@ This guide walks through creating a new change request type using the OpenSPP co
 
 Navigate to **Change Requests → Configuration → Change Request Types** and click **New**.
 
-![Change Request Types list](/_images/en-us/config_guide/change_request_types/01-cr-types-list.png)
+```{figure} /_images/en-us/config_guide/change_request_types/01-cr-types-list.png
+:alt: Change Request Types list showing all configured types
+
+The **Change Request Types** list — click **New** to create a type.
+```
 
 ### Header
 
 Enter the type name in the header field (placeholder shows "Type Name").
 
-![New Change Request Type form](/_images/en-us/config_guide/change_request_types/02-cr-type-form-new.png)
+```{figure} /_images/en-us/config_guide/change_request_types/02-cr-type-form-new.png
+:alt: New Change Request Type form with Name field highlighted
+
+Enter the type name in the **Name** field at the top of the form.
+```
 
 ### Basic info section
 
@@ -46,7 +54,11 @@ Enter the type name in the header field (placeholder shows "Type Name").
 
 Enter a description at the bottom of the form to help users understand when to use this type.
 
-![Basic Info section filled](/_images/en-us/config_guide/change_request_types/03-basic-info-filled.png)
+```{figure} /_images/en-us/config_guide/change_request_types/03-basic-info-filled.png
+:alt: Basic info section with Code, Sequence, Icon, and Target Type fields highlighted
+
+Configure the **Code**, **Sequence**, **Icon**, and **Target Type** fields.
+```
 
 ## Step 2: Link to detail model
 
@@ -57,7 +69,11 @@ Navigate to the **Detail Model** tab.
 | Detail Model | `spp.cr.detail.edit_individual` | Technical model name (pre-created, required) |
 | Detail Form View | (leave blank) | Auto-selects default view |
 
-![Detail Model tab](/_images/en-us/config_guide/change_request_types/04-detail-model-tab.png)
+```{figure} /_images/en-us/config_guide/change_request_types/04-detail-model-tab.png
+:alt: Detail Model tab with Detail Model and Detail Form View fields highlighted
+
+Set the **Detail Model** and optionally the **Detail Form View** on the **Detail Model** tab.
+```
 
 ```{note}
 For basic configurations, use existing detail models. See {doc}`overview` for the complete list of available models.
@@ -72,7 +88,11 @@ Navigate to the **Approval** tab.
 | Approval Workflow | Select from dropdown | Choose existing approval definition |
 | Auto Approve From Event | No | If yes, requests from event data are auto-approved |
 
-![Approval tab](/_images/en-us/config_guide/change_request_types/07-approval-tab.png)
+```{figure} /_images/en-us/config_guide/change_request_types/07-approval-tab.png
+:alt: Approval tab with Approval Workflow and Auto Approve From Event fields highlighted
+
+Select an **Approval Workflow** and configure **Auto Approve From Event** on the **Approval** tab.
+```
 
 ```{note}
 The **Auto Apply On Approve** field is located in the **Apply Configuration** tab (see Step 4).
@@ -96,7 +116,11 @@ Example: Two-level approval for sensitive changes
 
 Navigate to the **Apply Configuration** tab.
 
-![Apply Configuration tab](/_images/en-us/config_guide/change_request_types/05-apply-config-tab.png)
+```{figure} /_images/en-us/config_guide/change_request_types/05-apply-config-tab.png
+:alt: Apply Configuration tab with Apply Strategy and Auto Apply On Approve fields highlighted
+
+Choose the **Apply Strategy** and enable **Auto Apply On Approve** on the **Apply Configuration** tab.
+```
 
 ### For simple field mapping
 
@@ -118,7 +142,11 @@ In the **Field Mappings** section below, add your mappings:
 | `birthdate` | `birthdate` | Direct Copy |
 | `gender_id` | `gender` | Direct Copy |
 
-![Field mapping added](/_images/en-us/config_guide/change_request_types/06-field-mapping-added.png)
+```{figure} /_images/en-us/config_guide/change_request_types/06-field-mapping-added.png
+:alt: Field Mappings section with a phone field mapping added
+
+Add **Field Mappings** to define how change request fields map to registrant fields.
+```
 
 ### For custom logic
 
@@ -140,7 +168,11 @@ Navigate to the **Documents** tab.
 | Available Documents | (select document types) | Document types that can be attached |
 | Required Documents | (select document types) | Use Ctrl/Cmd+Click for multiple |
 
-![Documents tab](/_images/en-us/config_guide/change_request_types/08-documents-tab.png)
+```{figure} /_images/en-us/config_guide/change_request_types/08-documents-tab.png
+:alt: Documents tab with Document Validation Mode field highlighted
+
+Set the **Document Validation Mode** and select **Available Documents** and **Required Documents**.
+```
 
 ### Document validation modes
 

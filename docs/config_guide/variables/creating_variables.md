@@ -12,11 +12,19 @@ This guide is for **implementers** creating and configuring variables in OpenSPP
 
 Go to **Studio → Variables → All Variables**.
 
-![Variables list view](/_images/en-us/config_guide/variables/02-variables-list.png)
+```{figure} /_images/en-us/config_guide/variables/02-variables-list.png
+:alt: Variables list view grouped by category
+
+The **Variables** list displays all defined variables grouped by category.
+```
 
 Click **New** to create a variable.
 
-![New variable form empty](/_images/en-us/config_guide/variables/03-variable-form-empty.png)
+```{figure} /_images/en-us/config_guide/variables/03-variable-form-empty.png
+:alt: New variable form with Variable Name field highlighted
+
+The new variable form with the **Variable Name** field ready for input.
+```
 
 ## Basic Configuration
 
@@ -122,7 +130,11 @@ Categories help organize variables in the picker.
 
 Click **Save**. The variable is created in Draft state.
 
-![Variable form with basic info](/_images/en-us/config_guide/variables/04-variable-basic-info.png)
+```{figure} /_images/en-us/config_guide/variables/04-variable-basic-info.png
+:alt: Variable form with basic info fields highlighted
+
+Fill in the **Variable Name**, **Label**, **CEL Accessor**, **Applies To**, and **Value Type** fields.
+```
 
 ## Advanced Configuration
 
@@ -191,7 +203,11 @@ Ensure all required fields are set correctly.
 
 Click the **Activate** button or change **Status** to "Active".
 
-![Variable in draft state with Activate button](/_images/en-us/config_guide/variables/14-variable-draft-state.png)
+```{figure} /_images/en-us/config_guide/variables/14-variable-draft-state.png
+:alt: Variable form in Draft state with Activate button highlighted
+
+Click **Activate** to make the variable available in CEL expressions.
+```
 
 ### Step 3: Test in CEL Builder
 
@@ -214,7 +230,11 @@ Aggregates compute values over household members, enrollments, or events.
 | Value Type | Number |
 | Applies To | Group/Household |
 
-![Aggregate variable configuration](/_images/en-us/config_guide/variables/06-source-type-aggregate.png)
+```{figure} /_images/en-us/config_guide/variables/06-source-type-aggregate.png
+:alt: Variable form configured as Member Aggregate with source fields highlighted
+
+Set **Source Type** to Member Aggregate, then configure the **Aggregate Type**, **Target**, and **Filter**.
+```
 
 ### Example: Sum of Member Incomes
 
@@ -305,7 +325,11 @@ When **Program Configurable** is enabled, each program can set its own value for
 
 Go to **Studio → Variables → Categories** and click **New**.
 
-![Variable categories list](/_images/en-us/config_guide/variables/12-categories-list.png)
+```{figure} /_images/en-us/config_guide/variables/12-categories-list.png
+:alt: Variables list grouped by category showing category names and counts
+
+The **Variables** list grouped by category shows how variables are organized.
+```
 
 | Field | Value |
 |-------|-------|
@@ -315,7 +339,11 @@ Go to **Studio → Variables → Categories** and click **New**.
 | Color | #3498db |
 | Sequence | 10 |
 
-![New category form](/_images/en-us/config_guide/variables/13-category-form.png)
+```{figure} /_images/en-us/config_guide/variables/13-category-form.png
+:alt: New category form with Name field
+
+Enter the category **Name** and optional settings to organize your variables.
+```
 
 ### Assigning Variables to Categories
 
