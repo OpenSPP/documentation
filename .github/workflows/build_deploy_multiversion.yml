@@ -102,12 +102,12 @@ jobs:
           cat > _build/html/_static/switcher.json << 'EOF'
           [
               {
-                  "name": "1.3 (stable)",
+                  "name": "1.3",
                   "version": "1.3",
                   "url": "https://docs.openspp.org/"
               },
               {
-                  "name": "2.0 (preview)",
+                  "name": "2.0",
                   "version": "2.0",
                   "url": "https://docs.openspp.org/v2.0/"
               }
@@ -195,5 +195,5 @@ jobs:
           echo "============================================"
           echo ""
           echo "URLs:"
-          echo "  - v1.3 (stable):  https://docs.openspp.org/"
-          echo "  - v2.0 (preview): https://docs.openspp.org/v2.0/"
+          echo "  - v1.3: https://docs.openspp.org/"
+          echo "  - v2.0: https://docs.openspp.org/v2.0/"
