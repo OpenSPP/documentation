@@ -88,6 +88,6 @@ The OpenSPP-based SPMIS contains everything that is necessary to set up a founda
 *Read more about {doc}`Geospatial (GIS) and land management <features/gis_land_management>`.*
 -->
 
-## Next Step
+## Next step
 
 The OpenSPP SP-MIS is an open-source product, built and supported by the OpenSPP community. Read more about {doc}`installing OpenSPP SP-MIS <../get_started/modules/spmis_installation>`.
