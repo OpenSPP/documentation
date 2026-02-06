@@ -41,7 +41,7 @@ The **OpenSPP Farmer Registry** is a modular digital platform designed to be a s
 
 **NGOs** working on rural development and food security
 
-## Next Step
+## Next step
 
 The OpenSPP Farmer Registry is an open-source product, built and supported by the OpenSPP community. Read more about {doc}`installing OpenSPP Farmer Registry <../get_started/modules/farmer_installation>`.
 <!--
