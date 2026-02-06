@@ -164,32 +164,7 @@ Extensible via UI, multi-language, hierarchical. See {doc}`/config_guide/vocabul
 - Python 3.11+ (was 3.10+)
 - PostgreSQL 12+ (17/18 recommended)
 
-## Migration path
-
-### Existing V1 Deployments
-
-**Preparation:**
-1. Document current customizations and dependencies
-2. Upgrade to latest V1 minor version
-3. Backup database and filestore
-
-**Database Migration:**
-1. Run namespace migration scripts (`g2p.*` → `spp.*`)
-2. Migrate change request data to V2 format
-3. Classify existing PII fields
-4. Verify data integrity
-
-**Configuration:**
-1. Update external integrations to API V2
-2. Review and update security groups
-3. Update custom reports and dashboards
-
-**Deployment:**
-1. Test critical workflows in staging
-2. Train users on new features
-3. Deploy with rollback plan
-
-### New deployments
+## New deployments
 
 1. Choose deployment profile (Agriculture, Social Protection, etc.)
 2. Install core modules (typically 10-15)

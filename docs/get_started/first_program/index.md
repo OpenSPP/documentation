@@ -39,7 +39,7 @@ This tutorial covers the following steps:
 Before starting this tutorial:
 
 - OpenSPP should be installed and running (see {doc}`../installation/index`)
-- OpenSPP SP-MIS Demo V2 `spp_mis_demo_v2` should be installed (see {doc}`Install a module in Odoo <../installation/modules>`)
+- OpenSPP SP-MIS Demo V2 `spp_mis_demo_v2` should be installed (see {doc}`Install a module in Odoo <../modules/index>`)
 - Sample data loaded for exploration (see {doc}`../explore/index`)
 - Basic familiarity with {doc}`/learn/index`
 - Access to OpenSPP with administrator privileges
