@@ -72,7 +72,7 @@ The following modules are included in the OpenSPP SP-MIS product:
 - **{doc}`OpenSPP DCI Client - Disability Registry <../../reference/modules/spp_dci_client_dr>`**: Connect to Disability Registry via DCI API.
 - **{doc}`OpenSPP Programs <../../reference/modules/spp_programs>`**: Manage cash and in-kind entitlements, integrate with inventory, and enhance program management features.
 - **{doc}`OpenSPP Approval <../../reference/modules/spp_approval>`**: Standardized approval workflows with multi-tier sequencing and CEL rules.
-- **{doc}`OpenSPP Event Data <../../reference/modules/spp_event_data>`**: Records and tracks events related to individual and group registrants."
+- **{doc}`OpenSPP Event Data <../../reference/modules/spp_event_data>`**: Records and tracks events related to individual and group registrants.
 - **{doc}`OpenSPP Service Points Management <../../reference/modules/spp_service_points>`**: Manages physical or virtual locations for social protection service delivery.
 - **{doc}`OpenSPP User Roles <../../reference/modules/spp_user_roles>`**: Defines and manages distinct user roles to implement area-based access control.
 
