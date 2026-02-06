@@ -54,7 +54,7 @@ The following modules are included in the OpenSPP Social Registry product:
 - **{doc}`OpenSPP Vocabulary <../../reference/modules/spp_vocabulary>`**: Standardized code list management system for OpenSPP.
 - **{doc}`OpenSPP Consent <../../reference/modules/spp_consent>`**: DPV-aligned consent management for social protection programs.
 - **{doc}`OpenSPP Source Tracking <../../reference/modules/spp_source_tracking>`**: Track data provenance and source information for registrants.
-- **{doc}`OpenSPP Change Request V2 <../../reference/modules/spp_change_request_v2>`**: Configuration-driven change request system with UX improvements, conflict detection and duplicate prevention".
+- **{doc}`OpenSPP Change Request V2 <../../reference/modules/spp_change_request_v2>`**: Configuration-driven change request system with UX improvements, conflict detection and duplicate prevention.
 - **{doc}`OpenSPP CR Types - Base <../../reference/modules/spp_cr_types_base>`**: Basic change request types with field mapping strategy.
 - **{doc}`OpenSPP CEL Domain Query Builder <../../reference/modules/spp_cel_domain>`**: Write simple CEL-like expressions to filter records.
 - **{doc}`OpenSPP Studio <../../reference/modules/spp_studio>`**: No-code customization interface for OpenSPP.
