@@ -17,7 +17,7 @@ To utilise this feature, you need the following:
 - Make sure that both modules **OpenSPP POS: ID Redemption** and **OpenSPP POS** are installed and activated.
 - Have existing individual records in your registry, either by creating records manually or importing records into OpenSPP.
 - Have an access role either as **Operations Admin** or **POS operator** to perform tasks in the POS Application.
-- Have an access role as an **Operations Admin** or **Administrator** to perform tasks in OpenSPP. Learn more about this in the guide [Administrating role-based access](https://docs.openspp.org/tutorial/user_guides/administrating_role_based_access.html)
+- Have an access role as an **Operations Admin** or **Administrator** to perform tasks in OpenSPP. Learn more about this in the guide [Administrating role-based access](https://docs.openspp.org/user_guide/getting_started/administrating_role_based_access.html)
 - Have an existing cycle with beneficiaries and entitlements generated on a program. Learn more about this in the guide. [Create a social protection program](https://docs.openspp.org/tutorial/user_guides/create_social_protection_program.html)
 
 ## Objective

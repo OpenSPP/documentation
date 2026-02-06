@@ -37,9 +37,10 @@ The simplest approach uses a multiplier field:
 | Amount | `100` |
 | Multiplier Field | `z_ind_grp_num_individuals` |
 
-```{image} /_images/en-us/config_guide/entitlement_formulas/10-multiplier-field-configuration.png
+```{figure} /_images/en-us/config_guide/entitlement_formulas/10-multiplier-field-configuration.png
 :alt: Multiplier field configuration in entitlement item
-:class: img-fluid
+
+Set the **Multiplier Field** to scale the amount by a beneficiary attribute.
 ```
 
 ### Common multiplier fields
@@ -110,9 +111,10 @@ Combine multiple entitlement items for complex calculations:
 - Amount: `75`
 - Condition: `me.is_female_headed`
 
-```{image} /_images/en-us/config_guide/entitlement_formulas/11-multiple-dynamic-items.png
+```{figure} /_images/en-us/config_guide/entitlement_formulas/11-multiple-dynamic-items.png
 :alt: Multiple entitlement items for dynamic calculation
-:class: img-fluid
+
+Multiple entitlement items with different amounts, multipliers, and conditions.
 ```
 
 ## Formula-based dynamic calculations

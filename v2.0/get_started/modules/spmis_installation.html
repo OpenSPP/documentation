@@ -19,7 +19,7 @@
 <meta content="website" property="og:type"/>
 <meta content="https://docs.openspp.org/get_started/modules/spmis_installation.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="OpenSPP SPMIS Base / spp_base_spmis (available from 17.0.1.4) The OpenSPP Social Protection Management Information System ( OpenSPP SP-MIS) configuration provides comprehensive functionality for ma..." property="og:description"/>
+<meta content="OpenSPP Starter: SP-MIS / spp_starter_sp_mis The OpenSPP Social Protection Management Information System ( OpenSPP SP-MIS) configuration provides comprehensive functionality for managing social pro..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
 <meta content="en_US" property="og:locale"/>
@@ -434,6 +434,11 @@ document.addEventListener('DOMContentLoaded', function() {
        Navigating the OpenSPP interface
       </a>
 </li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/administrating_role_based_access.html">
+       Administrating role-based access
+      </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 has-children">
@@ -513,6 +518,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <li class="toctree-l3">
 <a class="reference internal" href="../../user_guide/programs/create_programs.html">
        Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/in_kind_products.html">
+       Manage in-kind products
       </a>
 </li>
 <li class="toctree-l3">
@@ -1500,8 +1510,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <div>
 <div class="section" id="sp-mis-installation">
 <h1>SP-MIS installation<a class="headerlink" href="#sp-mis-installation" title="Permalink to this headline">#</a></h1>
-<p><strong>OpenSPP SPMIS Base / spp_base_spmis (available from 17.0.1.4)</strong></p>
-<p>The OpenSPP Social Protection Management Information System (<span class="xref std std-doc">OpenSPP SP-MIS</span>) configuration provides comprehensive functionality for managing social protection programs. This setup is ideal for organizations running cash transfers, social assistance programs, or humanitarian interventions.</p>
+<p><strong>OpenSPP Starter: SP-MIS / spp_starter_sp_mis</strong></p>
+<p>The OpenSPP Social Protection Management Information System (<a class="reference internal" href="../../products/sp_mis.html"><span class="doc">OpenSPP SP-MIS</span></a>) configuration provides comprehensive functionality for managing social protection programs. This setup is ideal for organizations running cash transfers, social assistance programs, or humanitarian interventions.</p>
 <p><strong>What's included:</strong></p>
 <ul class="simple">
 <li><p>Registry management for individuals and groups</p></li>
@@ -1513,13 +1523,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <p><strong>Installation steps:</strong></p>
 <ol class="arabic simple">
 <li><p>Navigate to the <strong>Apps</strong> menu.</p></li>
-<li><p>In the Apps menu, search for <span class="xref std std-doc">spp_base_spmis</span> or "OpenSPP SPMIS Base"</p></li>
+<li><p>In the Apps menu, search for <a class="reference internal" href="../../reference/modules/spp_starter_sp_mis.html"><span class="doc">spp_starter_sp_mis</span></a> or "OpenSPP Starter: SP-MIS"</p></li>
 </ol>
-<p><img alt="Searching for SPP Base module in Apps" src="../../_images/02-spp_base01.jpg"/></p>
+<p><img alt="Searching for SPP Base module in Apps" src="../../_images/02-spp_base01.png"/></p>
 <ol class="arabic simple" start="3">
 <li><p>Click the <strong>Activate</strong> button to install the module. This will also install all its dependencies, providing a complete SP-MIS foundation.</p></li>
 </ol>
-<p><img alt="SPP Base module installation screen" src="../../_images/03-spp_base2.jpg"/></p>
+<p><img alt="SPP Base module installation screen" src="../../_images/03-spp_base2.png"/></p>
 <ol class="arabic" start="4">
 <li><p>Restart OpenSPP after installing the module:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>openspp
@@ -1529,7 +1539,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </ol>
 <p><strong>Note</strong>: The <code class="docutils literal notranslate"><span class="pre">queue_job</span></code> module, which is essential for asynchronous background tasks, is automatically installed as a dependency of the main OpenSPP modules. It is also pre-configured as a <code class="docutils literal notranslate"><span class="pre">server_wide_module</span></code>, ensuring that background workers can process jobs correctly after a service restart.</p>
 <p>Once installed, you will see the "Registry" application in your Odoo dashboard, which is the main entry point for the OpenSPP system.</p>
-<p><img alt="SPP Base module successfully installed" src="../../_images/04-spp_base3.jpg"/></p>
+<p><img alt="SPP Base module successfully installed" src="../../_images/04-spp_base3.png"/></p>
 </div>
 </div>
 </main>

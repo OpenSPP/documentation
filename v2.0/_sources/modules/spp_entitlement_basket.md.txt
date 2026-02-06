@@ -50,4 +50,9 @@ The **OpenSPP Entitlement Basket** module aims to:
 
 ## Conclusion
 
-The **OpenSPP Entitlement Basket** module simplifies the management and distribution of complex in-kind entitlements. By bundling products into predefined baskets, it streamlines program configuration, improves efficiency, and enhances transparency for both program administrators and beneficiaries. The integration with existing OpenSPP modules ensures a cohesive and robust system for managing diverse social protection programs. 
+The **OpenSPP Entitlement Basket** module simplifies the management and distribution of complex in-kind entitlements. By bundling products into predefined baskets, it streamlines program configuration, improves efficiency, and enhances transparency for both program administrators and beneficiaries. The integration with existing OpenSPP modules ensures a cohesive and robust system for managing diverse social protection programs.
+
+## See also
+
+- {doc}`Manage in-kind products </user_guide/programs/in_kind_products>` – Create and manage the product catalog used in in-kind programs
+- {doc}`Create programs </user_guide/programs/create_programs>` – Create a program and configure In-Kind benefit items 

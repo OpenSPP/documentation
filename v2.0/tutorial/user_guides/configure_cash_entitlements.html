@@ -431,6 +431,11 @@ document.addEventListener('DOMContentLoaded', function() {
        Navigating the OpenSPP interface
       </a>
 </li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/administrating_role_based_access.html">
+       Administrating role-based access
+      </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 has-children">
@@ -510,6 +515,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <li class="toctree-l3">
 <a class="reference internal" href="../../user_guide/programs/create_programs.html">
        Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/in_kind_products.html">
+       Manage in-kind products
       </a>
 </li>
 <li class="toctree-l3">
@@ -1645,7 +1655,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Have an access role as an <strong>Operations Admin</strong> or <strong>Administrator</strong>. Learn more about this in the guide <a class="reference external" href="https://docs.openspp.org/tutorial/user_guides/administrating_role_based_access.html#">Administrating role-based access</a></p></li>
+<li><p>Have an access role as an <strong>Operations Admin</strong> or <strong>Administrator</strong>. Learn more about this in the guide <a class="reference external" href="https://docs.openspp.org/user_guide/getting_started/administrating_role_based_access.html">Administrating role-based access</a></p></li>
 <li><p>Install and activate the module: <strong>OpenSPP Cash Entitlement</strong> on your OpenSPP instance as <strong>Administrator</strong>.</p></li>
 <li><p>Create a Program or have an already existing program. Learn more about this in the guide <a class="reference external" href="https://docs.openspp.org/tutorial/user_guides/create_social_protection_program.html">Create a social protection program</a></p></li>
 </ul>
@@ -1659,7 +1669,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="section" id="verify-installed-module">
 <h3>Verify installed module<a class="headerlink" href="#verify-installed-module" title="Permalink to this headline">#</a></h3>
 <p>To be able to configure cash entitlements, you have to make sure the necessary module is installed and activated on your OpenSPP instance, you can verify this by logging in to your OpenSPP instance as Administrator, go to <strong>Apps</strong> and search for <strong>OpenSPP Cash Entitlement</strong>.</p>
-<p><img alt="" src="../../_images/117.png"/></p>
+<p><img alt="" src="../../_images/113.png"/></p>
 <p>After successfully activating, the <strong>Activate</strong> button should disappear and it should display <strong>Learn more</strong> as the remaining button.</p>
 </div>
 <div class="section" id="configure-the-entitlement-manager">
@@ -1668,31 +1678,31 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="section" id="configure-cash-entitlements-during-program-creation">
 <h4>Configure cash entitlements during program creation<a class="headerlink" href="#configure-cash-entitlements-during-program-creation" title="Permalink to this headline">#</a></h4>
 <p>When Creating a program, the tab <strong>Configure the Entitlement manager</strong> is available from the pop-up modal. Click on it to start setting it up.</p>
-<p><img alt="" src="../../_images/212.png"/></p>
+<p><img alt="" src="../../_images/210.png"/></p>
 <p>Depending on installed modules there may be different options, or none, displayed. If there are options displayed, click on <strong>Cash</strong> as <strong>Entitlement Manager</strong>.</p>
-<p><img alt="" src="../../_images/310.png"/></p>
+<p><img alt="" src="../../_images/38.png"/></p>
 <p>Click on <strong>Add a line</strong> to add an amount for your entitlement. Define the amount under <strong>Amount per cycle</strong>.</p>
-<p><img alt="" src="../../_images/46.png"/></p>
+<p><img alt="" src="../../_images/44.png"/></p>
 <p><strong>Multiplier:</strong> this dropdown field defines how many times the <strong>Amount per cycle</strong> will be multiplied. For example, if the indicator is set to <strong>Number of adults</strong> it would multiply the <strong>Amount per cycle</strong> by the number of adults in this group. The total amount will be the registrant’s entitlement.</p>
-<p><img alt="" src="../../_images/54.png"/></p>
+<p><img alt="" src="../../_images/52.png"/></p>
 <p><strong>Maximum number:</strong> this input field defines the maximum count for the multiplier. If, for example “Number of adults = 5” and “Maximum number= 3”, the <strong>Amount</strong> will be multiplied by 3 instead of 5.</p>
 <p>In order to not have any limitations this field should be set to zero(0).</p>
 </div>
 <div class="section" id="edit-after-program-creation">
 <h4>Edit after program creation<a class="headerlink" href="#edit-after-program-creation" title="Permalink to this headline">#</a></h4>
 <p>Once a program is created, you are still able to configure its settings by selecting the program and clicking on the tab <strong>Configuration</strong>.</p>
-<p><img alt="" src="../../_images/64.png"/></p>
+<p><img alt="" src="../../_images/62.png"/></p>
 <p>Scroll down to the section <strong>Entitlement manager</strong>. Click on the green box to expand.</p>
-<p><img alt="" src="../../_images/73.png"/></p>
+<p><img alt="" src="../../_images/71.png"/></p>
 <div class="section" id="deleting-an-entitlement-item">
 <h5>Deleting an Entitlement item<a class="headerlink" href="#deleting-an-entitlement-item" title="Permalink to this headline">#</a></h5>
 <p>Click on the trash icon on the far right corner.</p>
-<p><img alt="" src="../../_images/83.png"/></p>
+<p><img alt="" src="../../_images/81.png"/></p>
 </div>
 <div class="section" id="modifying-amount-per-cycle">
 <h5>Modifying amount per cycle<a class="headerlink" href="#modifying-amount-per-cycle" title="Permalink to this headline">#</a></h5>
 <p>Click on the Entitlement item to display another modal pop-up. Edit amount by replacing value under <strong>Amount per cycle</strong>.</p>
-<p><img alt="" src="../../_images/93.png"/></p>
+<p><img alt="" src="../../_images/91.png"/></p>
 <p><strong>Multiplier:</strong> this dropdown field defines how many times the <strong>Amount per cycle</strong> will be multiplied. For example, if the indicator is set to <strong>Number of adults</strong> it would multiply the <strong>Amount per cycle</strong> by the number of adults in this group. The total amount will be the registrant’s entitlement.</p>
 <p><strong>Maximum number:</strong> this input field defines the maximum count for the multiplier. If, for example “Number of adults = 5” and “Maximum number= 3”, the <strong>Amount</strong> will be multiplied by 3 instead of 5.</p>
 <p>In order to not have any limitations this field should be set to zero(0).</p>
@@ -1700,7 +1710,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="section" id="adding-a-cash-entitlement">
 <h5>Adding a cash entitlement<a class="headerlink" href="#adding-a-cash-entitlement" title="Permalink to this headline">#</a></h5>
 <p>Click on <strong>Add</strong> a line and input the amount under <strong>Amount per cycle</strong>.</p>
-<p><img alt="" src="../../_images/103.png"/></p>
+<p><img alt="" src="../../_images/101.png"/></p>
 <p><strong>Multiplier:</strong> this dropdown field defines how many times the <strong>Amount per cycle</strong> will be multiplied. For example, if the indicator is set to <strong>Number of adults</strong> it would multiply the <strong>Amount per cycle</strong> by the number of adults in this group. The total amount will be the registrant’s entitlement.</p>
 <p><strong>Maximum number:</strong> this input field defines the maximum count for the multiplier. If, for example “Number of adults = 5” and “Maximum number= 3”, the <strong>Amount</strong> will be multiplied by 3 instead of 5.</p>
 <p>In order to not have any limitations this field should be set to zero(0).</p>

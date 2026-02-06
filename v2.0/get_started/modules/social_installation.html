@@ -19,7 +19,7 @@
 <meta content="website" property="og:type"/>
 <meta content="https://docs.openspp.org/get_started/modules/social_installation.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="OpenSPP Social Registry Base / spp_base_social_registry (available from 17.0.1.4) The OpenSPP Social Registry configuration provides a centralized repository for beneficiary data that can be shared..." property="og:description"/>
+<meta content="OpenSPP Starter: Social Registry / spp_starter_social_registry The OpenSPP Social Registry configuration provides a centralized repository for beneficiary data that can be shared across multiple so..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
 <meta content="en_US" property="og:locale"/>
@@ -434,6 +434,11 @@ document.addEventListener('DOMContentLoaded', function() {
        Navigating the OpenSPP interface
       </a>
 </li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/administrating_role_based_access.html">
+       Administrating role-based access
+      </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 has-children">
@@ -513,6 +518,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <li class="toctree-l3">
 <a class="reference internal" href="../../user_guide/programs/create_programs.html">
        Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/in_kind_products.html">
+       Manage in-kind products
       </a>
 </li>
 <li class="toctree-l3">
@@ -1500,8 +1510,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <div>
 <div class="section" id="social-registry-installation">
 <h1>Social Registry installation<a class="headerlink" href="#social-registry-installation" title="Permalink to this headline">#</a></h1>
-<p><strong>OpenSPP Social Registry Base / spp_base_social_registry (available from 17.0.1.4)</strong></p>
-<p>The <span class="xref std std-doc">OpenSPP Social Registry</span> configuration provides a centralized repository for beneficiary data that can be shared across multiple social protection programs. This setup is ideal for governments and organizations coordinating multiple interventions and requiring a single source of truth for beneficiary information.</p>
+<p><strong>OpenSPP Starter: Social Registry / spp_starter_social_registry</strong></p>
+<p>The <a class="reference internal" href="../../products/social_registry.html"><span class="doc">OpenSPP Social Registry</span></a> configuration provides a centralized repository for beneficiary data that can be shared across multiple social protection programs. This setup is ideal for governments and organizations coordinating multiple interventions and requiring a single source of truth for beneficiary information.</p>
 <p><strong>What's included:</strong></p>
 <ul class="simple">
 <li><p>Unified beneficiary database across programs</p></li>
@@ -1515,13 +1525,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <p><strong>Installation steps:</strong></p>
 <ol class="arabic simple">
 <li><p>Navigate to the <strong>Apps</strong> menu.</p></li>
-<li><p>In the Apps menu, search for <span class="xref std std-doc">spp_base_social_registry</span> or "OpenSPP Social Registry Base"</p></li>
+<li><p>In the Apps menu, search for <a class="reference internal" href="../../reference/modules/spp_starter_social_registry.html"><span class="doc">spp_starter_social_registry</span></a> or "OpenSPP Starter: Social Registry"</p></li>
 </ol>
-<p><img alt="Searching for SPP Base module in Apps" src="../../_images/12-social_inst_base01.jpg"/></p>
+<p><img alt="Searching for SPP Base module in Apps" src="../../_images/12-social_inst_base01.png"/></p>
 <ol class="arabic simple" start="3">
 <li><p>Click the <strong>Activate</strong> button to install the module and its dependencies</p></li>
 </ol>
-<p><img alt="SPP Base module installation screen" src="../../_images/13-social_inst_base2.jpg"/></p>
+<p><img alt="SPP Base module installation screen" src="../../_images/13-social_inst_base2.png"/></p>
 <ol class="arabic" start="4">
 <li><p>Restart OpenSPP after installing the module:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>openspp

@@ -25,9 +25,10 @@ Cash entitlements are monetary payments calculated for each beneficiary. The cal
 2. Find the **Entitlement Manager** section
 3. Click the gear icon on the cash entitlement manager
 
-```{image} /_images/en-us/config_guide/entitlement_formulas/02-cash-entitlement-manager-form.png
+```{figure} /_images/en-us/config_guide/entitlement_formulas/02-cash-entitlement-manager-form.png
 :alt: Cash entitlement manager configuration form
-:class: img-fluid
+
+The Cash entitlement manager form showing **Evaluate one item**, **Maximum Amount**, and the **Entitlement Items** list.
 ```
 
 ### Manager-level settings
@@ -49,9 +50,10 @@ Each cash entitlement manager has one or more **items**. Items are evaluated in 
 2. Configure the item fields
 3. Save the configuration
 
-```{image} /_images/en-us/config_guide/entitlement_formulas/03-entitlement-item-form.png
+```{figure} /_images/en-us/config_guide/entitlement_formulas/03-entitlement-item-form.png
 :alt: Entitlement item configuration form
-:class: img-fluid
+
+The entitlement item form with **Amount**, **Condition Domain**, **Multiplier**, and **Maximum number** fields.
 ```
 
 ### Item configuration fields
@@ -145,9 +147,10 @@ Combine multiple items for complex calculations:
 - Children: 3 × $50 = $150
 - Total: $450
 
-```{image} /_images/en-us/config_guide/entitlement_formulas/04-multiple-entitlement-items.png
-:alt: Multiple entitlement items configured
-:class: img-fluid
+```{figure} /_images/en-us/config_guide/entitlement_formulas/04-multiple-entitlement-items.png
+:alt: Multiple entitlement items configured in the Cash manager
+
+Multiple entitlement items configured with different amounts, multipliers, and conditions for complex calculations.
 ```
 
 ## Formula-based calculations
@@ -189,11 +192,6 @@ min(base_amount * me.household_size, 1000)
 base_amount + (100 if me.has_disability else 0)
 ```
 
-```{image} /_images/en-us/config_guide/entitlement_formulas/05-formula-field-example.png
-:alt: Formula field with CEL expression
-:class: img-fluid
-```
-
 ## Formula validation
 
 When you enter a formula, OpenSPP validates it:
@@ -203,11 +201,6 @@ When you enter a formula, OpenSPP validates it:
 | No error | Formula syntax is valid |
 | Error message | Syntax error or invalid field |
 | Sample calculation | Shows result for a sample beneficiary |
-
-```{image} /_images/en-us/config_guide/entitlement_formulas/06-formula-validation.png
-:alt: Formula validation showing success
-:class: img-fluid
-```
 
 ## Built-in functions
 

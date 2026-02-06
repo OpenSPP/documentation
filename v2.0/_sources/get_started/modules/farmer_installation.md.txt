@@ -8,7 +8,7 @@ myst:
 
 # Farmer Registry installation
 
-**OpenSPP Farmer Registry Base / spp_base_farmer_registry (available from 17.0.1.4)**
+**OpenSPP Starter: Farmer Registry / spp_starter_farmer_registry**
 
 The {doc}`OpenSPP Farmer Registry <../../products/farmer_registry>` configuration enables convergence between social protection and agricultural development programs. This setup is designed for organizations supporting smallholder farmers, managing agricultural subsidies, or implementing climate-smart agriculture initiatives.
 
@@ -23,13 +23,13 @@ The {doc}`OpenSPP Farmer Registry <../../products/farmer_registry>` configuratio
 **Installation steps:**
 
 1.  Navigate to the **Apps** menu.
-2.  In the Apps menu, search for {doc}`spp_base_farmer_registry </reference/modules/spp_base_farmer_registry>` or "OpenSPP Farmer Registry Base"
+2.  In the Apps menu, search for {doc}`spp_base_farmer_registry </reference/modules/spp_base_farmer_registry>` or "OpenSPP Starter: Farmer Registry"
 
-![Searching for SPP Farmer Registry module](/_images/en-us/get_started/modules/05-spp_farmer1.jpg)
+![Searching for SPP Farmer Registry module](/_images/en-us/get_started/modules/12-social_inst_base01.png)
 
 3.  Click the **Activate** button to install the module and its dependencies.
 
-![SPP Farmer Registry module installation complete](/_images/en-us/get_started/modules/06-spp_farmer2.jpg)
+![SPP Farmer Registry module installation complete](/_images/en-us/get_started/modules/13-social_inst_base2.png)
 
 4. Restart OpenSPP after installing the module:
    ```bash

@@ -434,6 +434,11 @@ document.addEventListener('DOMContentLoaded', function() {
        Navigating the OpenSPP interface
       </a>
 </li>
+<li class="toctree-l3">
+<a class="reference internal" href="../user_guide/getting_started/administrating_role_based_access.html">
+       Administrating role-based access
+      </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 has-children">
@@ -513,6 +518,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <li class="toctree-l3">
 <a class="reference internal" href="../user_guide/programs/create_programs.html">
        Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../user_guide/programs/in_kind_products.html">
+       Manage in-kind products
       </a>
 </li>
 <li class="toctree-l3">
@@ -1504,13 +1514,18 @@ document.addEventListener('DOMContentLoaded', function() {
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#next-step">
-   Next Step
+<a class="reference internal nav-link" href="#openspp-modules-included">
+   OpenSPP modules included
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#expanding-the-social-registry">
    Expanding the Social Registry
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#next-step">
+   Next step
   </a>
 </li>
 </ul>
@@ -1541,13 +1556,18 @@ document.addEventListener('DOMContentLoaded', function() {
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#next-step">
-   Next Step
+<a class="reference internal nav-link" href="#openspp-modules-included">
+   OpenSPP modules included
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#expanding-the-social-registry">
    Expanding the Social Registry
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#next-step">
+   Next step
   </a>
 </li>
 </ul>
@@ -1565,6 +1585,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <h2>Key features<a class="headerlink" href="#key-features" title="Permalink to this headline">#</a></h2>
 <p><strong>Easy registration and data collection –</strong> Prepare the registry with all the fields needed. Collect information through bulk upload, direct entry in the UI, or secure connections with existing systems.</p>
 <p><em>Read more about <a class="reference internal" href="features/unified_registry.html"><span class="doc">Unified and hierarchical beneficiary registry</span></a>.</em></p>
+<p><strong>Change management through formal change requests –</strong> Route sensitive updates through configurable approval workflows with role-based controls and full audit trails. Track what changed, who made the change, and why, ensuring data integrity, accountability, and trust in program decisions.</p>
+<p><em>Read more about <a class="reference internal" href="features/change_management.html"><span class="doc">Auditable change management</span></a>.</em></p>
 <p><strong>Targeting and integrated service delivery –</strong> Flexible approach to eligibility and targeting - identify eligible beneficiaries based on simple criteria such as age or complex combinations of factors.</p>
 <p><em>Read more about <a class="reference internal" href="features/eligibility_targeting.html"><span class="doc">Eligibility and targeting</span></a>.</em></p>
 <p><strong>Monitoring and accountability –</strong> Track changes and manage user permissions to ensure data security and integrity. Access dashboards for decision-making, transparency and long term monitoring.</p>
@@ -1578,28 +1600,37 @@ document.addEventListener('DOMContentLoaded', function() {
 <p><strong>NGOs</strong> delivering services at national or local level</p>
 <p><strong>Policy makers</strong> needing reliable data for planning and resource allocation</p>
 </div>
-<div class="section" id="next-step">
-<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">#</a></h2>
-<p>The OpenSPP Social Registry is an open-source product, built and supported by the OpenSPP community. Read more about <a class="reference internal" href="../get_started/modules/social_installation.html"><span class="doc">installing OpenSPP Social Registry</span></a>.</p>
-<!--
-## OpenSPP modules included in the OpenSPP Social Registry
-
-The preconfigured OpenSPP Social Registry product is intended to provide support for the fundamental use cases of a social registry.
-
-The following modules are included in the OpenSPP Social Registry product:
-
-- **{doc}`OpenSPP Base <../../reference/modules/spp_base>`**: Provides the fundamental core structure for all registrant profiles.
-- **{doc}`OpenSPP Base Settings <../../reference/modules/spp_base_setting>`**: Provides essential settings and customizations.
-- **{doc}`OpenSPP Custom Fields <../../reference/modules/spp_custom_field>`**: Allows for tailoring data collection to specific local needs.
-- **{doc}`OpenSPP Area Management <../../reference/modules/spp_area>`**: Includes additional features for managing and organizing geographical areas within the system
-- **{doc}`OpenSPP OpenID VCI Individual <../../reference/modules/spp_openid_vci_individual>`**: Enables the issuance of Verifiable Credentials (VCs) for individual registrants.
-- **{doc}`OpenSPP Custom Filter <../../reference/modules/spp_custom_filter>`**: Allows control over fields displayed in filter dropdowns.
-- **{doc}`OpenSPP User Roles <../../reference/modules/spp_user_roles>`**: Manages user access and permissions to the registry data, ensuring data security and integrity.
--->
+<div class="section" id="openspp-modules-included">
+<h2>OpenSPP modules included<a class="headerlink" href="#openspp-modules-included" title="Permalink to this headline">#</a></h2>
+<p>The preconfigured OpenSPP Social Registry product is intended to provide support for the fundamental use cases of a social registry.</p>
+<p>The following modules are included in the OpenSPP Social Registry product:</p>
+<ul class="simple">
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_registry.html"><span class="doc">OpenSPP Registry</span></a></strong>: Consolidated registry management for individuals, groups, and membership.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_registry_search.html"><span class="doc">OpenSPP Registry Search Portal</span></a></strong>: Search-first registry interface for privacy protection.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_security.html"><span class="doc">OpenSPP Security</span></a></strong>: Central security definitions for OpenSPP modules.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_area.html"><span class="doc">OpenSPP Area Management</span></a></strong>: Establishes direct associations between OpenSPP registrants, beneficiary groups, and their corresponding geographical administrative areas.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_vocabulary.html"><span class="doc">OpenSPP Vocabulary</span></a></strong>: Standardized code list management system for OpenSPP.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_consent.html"><span class="doc">OpenSPP Consent</span></a></strong>: DPV-aligned consent management for social protection programs.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_source_tracking.html"><span class="doc">OpenSPP Source Tracking</span></a></strong>: Track data provenance and source information for registrants.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_change_request_v2.html"><span class="doc">OpenSPP Change Request V2</span></a></strong>: Configuration-driven change request system with UX improvements, conflict detection and duplicate prevention.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_cr_types_base.html"><span class="doc">OpenSPP CR Types - Base</span></a></strong>: Basic change request types with field mapping strategy.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_cel_domain.html"><span class="doc">OpenSPP CEL Domain Query Builder</span></a></strong>: Write simple CEL-like expressions to filter records.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_studio.html"><span class="doc">OpenSPP Studio</span></a></strong>: No-code customization interface for OpenSPP.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_api_v2.html"><span class="doc">OpenSPP API V2</span></a></strong>: Standards-aligned, consent-respecting API for social protection data exchange.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_api_v2_data.html"><span class="doc">OpenSPP API V2 - Data</span></a></strong>: REST API endpoints for Variable Data push/pull.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_dci_client.html"><span class="doc">OpenSPP DCI Client</span></a></strong>: Base DCI client infrastructure with OAuth2 and data source management</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_dci_client_crvs.html"><span class="doc">OpenSPP DCI Client - CRVS</span></a></strong>: Connect to CRVS registries via DCI API.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_dci_client_ibr.html"><span class="doc">OpenSPP DCI Client - IBR</span></a></strong>: Connect to IBR for duplication checks via DCI API.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_dci_client_dr.html"><span class="doc">OpenSPP DCI Client - Disability Registry</span></a></strong>: Connect to Disability Registry via DCI API.</p></li>
+</ul>
 </div>
 <div class="section" id="expanding-the-social-registry">
 <h2>Expanding the Social Registry<a class="headerlink" href="#expanding-the-social-registry" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP-based Social Registry contains everything that is necessary to set up a foundational Social Registry. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more about <a class="reference internal" href="../get_started/modules/"><span class="doc">module installation</span></a>.</p>
+</div>
+<div class="section" id="next-step">
+<h2>Next step<a class="headerlink" href="#next-step" title="Permalink to this headline">#</a></h2>
+<p>The OpenSPP Social Registry is an open-source product, built and supported by the OpenSPP community. Read more about <a class="reference internal" href="../get_started/modules/social_installation.html"><span class="doc">installing OpenSPP Social Registry</span></a>.</p>
 </div>
 </div>
 </div>

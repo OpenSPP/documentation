@@ -434,6 +434,11 @@ document.addEventListener('DOMContentLoaded', function() {
        Navigating the OpenSPP interface
       </a>
 </li>
+<li class="toctree-l3">
+<a class="reference internal" href="../user_guide/getting_started/administrating_role_based_access.html">
+       Administrating role-based access
+      </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 has-children">
@@ -513,6 +518,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <li class="toctree-l3">
 <a class="reference internal" href="../user_guide/programs/create_programs.html">
        Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../user_guide/programs/in_kind_products.html">
+       Manage in-kind products
       </a>
 </li>
 <li class="toctree-l3">
@@ -1504,13 +1514,18 @@ document.addEventListener('DOMContentLoaded', function() {
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#next-step">
-   Next Step
+<a class="reference internal nav-link" href="#openspp-modules-included">
+   OpenSPP modules included
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#expanding-the-spmis">
    Expanding the SPMIS
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#next-step">
+   Next step
   </a>
 </li>
 </ul>
@@ -1541,13 +1556,18 @@ document.addEventListener('DOMContentLoaded', function() {
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#next-step">
-   Next Step
+<a class="reference internal nav-link" href="#openspp-modules-included">
+   OpenSPP modules included
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#expanding-the-spmis">
    Expanding the SPMIS
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#next-step">
+   Next step
   </a>
 </li>
 </ul>
@@ -1565,17 +1585,18 @@ document.addEventListener('DOMContentLoaded', function() {
 <h2>Key features<a class="headerlink" href="#key-features" title="Permalink to this headline">#</a></h2>
 <p><strong>Easy registration and data collection –</strong> Build and maintain a continuously updated database through imports, system integrations, or direct registration. Structured workflows support reliable updates, whether initiated by the citizens or registrars.</p>
 <p><em>Read more about <a class="reference internal" href="features/unified_registry.html"><span class="doc">Unified and hierarchical beneficiary registry</span></a>.</em></p>
-<p><strong>Verifiable Credentials –</strong> Issue unique IDs and documents with QR codes through secure and streamlined processes to attest to program eligibility.</p>
+<!--**Verifiable Credentials –** Issue unique IDs and documents with QR codes through secure and streamlined processes to attest to program eligibility. -->
 <p><strong>Targeting and integrated service delivery –</strong> With a flexible approach to eligibility and targeting, the OpenSPP SP-MIS can serve as a central data repository to support a wide array of programs.</p>
 <p><em>Read more about <a class="reference internal" href="features/eligibility_targeting.html"><span class="doc">Eligibility and targeting</span></a>.</em></p>
 <p><strong>Program and Distribution Management –</strong> A core feature in OpenSPP SP-MIS is its ability to support the delivery of both cash and in-kind entitlements. Automate cash transfers via financial service providers, issue vouchers, or manage food and non-food item distribution, including stock and warehouse management.</p>
 <p><em>Read more about <a class="reference internal" href="features/program_management.html"><span class="doc">End-to-end program and entitlement management</span></a>, <a class="reference internal" href="features/payment_disbursement.html"><span class="doc">Pluggable payment and disbursement</span></a> and <a class="reference internal" href="features/in_kind_benefits.html"><span class="doc">In-kind benefits and inventory management (GRM)</span></a>.</em></p>
+<p><strong>Change management through formal change requests –</strong> Route sensitive updates through configurable approval workflows with role-based controls and full audit trails. Track what changed, who made the change, and why, ensuring data integrity, accountability, and trust in program decisions.</p>
+<p><em>Read more about <a class="reference internal" href="features/change_management.html"><span class="doc">Auditable change management</span></a>.</em></p>
+<!--TODO: EXPAND ON THIS **Approval Workflows**: Multi-level approval for sensitive operations-->
 <p><strong>Monitoring, reporting, and public accountability –</strong> Maintain full audit trails, track all user actions, and provide dashboards and analytics for evidence-based decision-making. This capability is crucial for tracking program performance, demonstrating effectiveness to donors, and building public trust.</p>
 <p><em>Read more about <a class="reference internal" href="features/change_management.html"><span class="doc">Auditable change management</span></a> and <a class="reference internal" href="features/grievance_redress.html"><span class="doc">Grievance Redress Mechanism (GRM)</span></a>.</em></p>
 <p><strong>Interoperability with other systems –</strong> Connect securely with other national databases (e.g., ID, health, civil registration) through RESTful APIs to pull information directly, ensuring that the information is up-to-date.</p>
 <p><em>Read more about <a class="reference internal" href="features/data_integration_apis.html"><span class="doc">Data integration and interoperability (APIs)</span></a>.</em></p>
-<p><strong>Geo-spatial analysis and shock response –</strong> Integrate GIS and external data (e.g., flood maps) with already known information to rapidly identify and assist affected households during crises without the need for time-consuming, emergency-specific registration and needs assessments.</p>
-<p><em>Read more about <a class="reference internal" href="features/gis_land_management.html"><span class="doc">Geospatial (GIS) and land management</span></a>.</em></p>
 </div>
 <div class="section" id="who-is-it-for">
 <h2>Who is it for?<a class="headerlink" href="#who-is-it-for" title="Permalink to this headline">#</a></h2>
@@ -1583,33 +1604,49 @@ document.addEventListener('DOMContentLoaded', function() {
 <p><strong>Social protection agencies</strong> delivering cash or in-kind programs</p>
 <p><strong>NGOs and development partners</strong> supporting vulnerable households</p>
 </div>
-<div class="section" id="next-step">
-<h2>Next Step<a class="headerlink" href="#next-step" title="Permalink to this headline">#</a></h2>
-<p>The OpenSPP SP-MIS is an open-source product, built and supported by the OpenSPP community. Read more about <a class="reference internal" href="../get_started/modules/spmis_installation.html"><span class="doc">installing OpenSPP SP-MIS</span></a>.</p>
-<!--
-## OpenSPP modules included in the OpenSPP SP-MIS:
-
-The preconfigured OpenSPP SP-MIS product is intended to provide the basic use cases of an SP-MIS.
-
-The following modules are included in the OpenSPP SP-MIS product:
-
-- **{doc}`OpenSPP Base <../../reference/modules/spp_base>`**: Provides the fundamental core structure for all registrant profiles.
-- **{doc}`OpenSPP Base Settings <../../reference/modules/spp_base_setting>`**: Provides essential settings and customizations.
-- **{doc}`OpenSPP Custom Fields <../../reference/modules/spp_custom_field>`**: Allows for tailoring data collection to specific local needs.
-- **{doc}`OpenSPP Area Management <../../reference/modules/spp_area>`**: Includes additional features for managing and organizing geographical areas within the system
-- **{doc}`OpenSPP OpenID VCI Individual <../../reference/modules/spp_openid_vci_individual>`**: Enables the issuance of Verifiable Credentials (VCs) for individual registrants.
-- **{doc}`OpenSPP Custom Filter <../../reference/modules/spp_custom_filter>`**: Allows control over fields displayed in filter dropdowns.
-- **{doc}`OpenSPP User Roles <../../reference/modules/spp_user_roles>`**: Manages user access and permissions to the registry data, ensuring data security and integrity.
-- **{doc}`OpenSPP Programs <../../reference/modules/spp_programs>`**: Manage cash and in-kind entitlements, integrate with inventory, and enhance program management features.
-- **{doc}`OpenSPP Program ID <../../reference/modules/spp_program_id>`**: Generates and manages unique IDs for social protection programs.
-- **{doc}`OpenSPP Cash Entitlement <../../reference/modules/spp_entitlement_cash>`**: Manage cash-based entitlements for beneficiaries within social protection programs, including defining calculation rules, automating disbursement, and tracking payments.
-- **{doc}`OpenSPP In-Kind Entitlement <../../reference/modules/spp_entitlement_in_kind>`**: Manages the distribution of in-kind entitlements within social protection programs, handling inventory, service points, and beneficiary redemption.
-- **{doc}`OpenSPP Entitlement Transactions <../../reference/modules/spp_ent_trans>`**: Records and manages transactions related to entitlement redemptions.
--->
+<div class="section" id="openspp-modules-included">
+<h2>OpenSPP modules included<a class="headerlink" href="#openspp-modules-included" title="Permalink to this headline">#</a></h2>
+<p>The preconfigured OpenSPP SP-MIS product is intended to provide the basic use cases of an SP-MIS.</p>
+<p>The following modules are included in the OpenSPP SP-MIS product:</p>
+<ul class="simple">
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_registry.html"><span class="doc">OpenSPP Registry</span></a></strong>: Consolidated registry management for individuals, groups, and membership.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_registry_search.html"><span class="doc">OpenSPP Registry Search Portal</span></a></strong>: Search-first registry interface for privacy protection.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_security.html"><span class="doc">OpenSPP Security</span></a></strong>: Central security definitions for OpenSPP modules.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_area.html"><span class="doc">OpenSPP Area Management</span></a></strong>: Establishes direct associations between OpenSPP registrants, beneficiary groups, and their corresponding geographical administrative areas.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_vocabulary.html"><span class="doc">OpenSPP Vocabulary</span></a></strong>: Standardized code list management system for OpenSPP.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_consent.html"><span class="doc">OpenSPP Consent</span></a></strong>: DPV-aligned consent management for social protection programs.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_source_tracking.html"><span class="doc">OpenSPP Source Tracking</span></a></strong>: Track data provenance and source information for registrants.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_change_request_v2.html"><span class="doc">OpenSPP Change Request V2</span></a></strong>: Configuration-driven change request system with UX improvements, conflict detection and duplicate prevention.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_cr_types_base.html"><span class="doc">OpenSPP CR Types - Base</span></a></strong>: Basic change request types with field mapping strategy.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_cel_domain.html"><span class="doc">OpenSPP CEL Domain Query Builder</span></a></strong>: Write simple CEL-like expressions to filter records.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_studio.html"><span class="doc">OpenSPP Studio</span></a></strong>: No-code customization interface for OpenSPP.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_api_v2.html"><span class="doc">OpenSPP API V2</span></a></strong>: Standards-aligned, consent-respecting API for social protection data exchange.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_api_v2_data.html"><span class="doc">OpenSPP API V2 - Data</span></a></strong>: REST API endpoints for Variable Data push/pull.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_dci_client.html"><span class="doc">OpenSPP DCI Client</span></a></strong>: Base DCI client infrastructure with OAuth2 and data source management</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_dci_client_crvs.html"><span class="doc">OpenSPP DCI Client - CRVS</span></a></strong>: Connect to CRVS registries via DCI API.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_dci_client_ibr.html"><span class="doc">OpenSPP DCI Client - IBR</span></a></strong>: Connect to IBR for duplication checks via DCI API.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_dci_client_dr.html"><span class="doc">OpenSPP DCI Client - Disability Registry</span></a></strong>: Connect to Disability Registry via DCI API.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_programs.html"><span class="doc">OpenSPP Programs</span></a></strong>: Manage cash and in-kind entitlements, integrate with inventory, and enhance program management features.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_approval.html"><span class="doc">OpenSPP Approval</span></a></strong>: Standardized approval workflows with multi-tier sequencing and CEL rules.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_event_data.html"><span class="doc">OpenSPP Event Data</span></a></strong>: Records and tracks events related to individual and group registrants.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_service_points.html"><span class="doc">OpenSPP Service Points Management</span></a></strong>: Manages physical or virtual locations for social protection service delivery.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_user_roles.html"><span class="doc">OpenSPP User Roles</span></a></strong>: Defines and manages distinct user roles to implement area-based access control.</p></li>
+</ul>
 </div>
 <div class="section" id="expanding-the-spmis">
 <h2>Expanding the SPMIS<a class="headerlink" href="#expanding-the-spmis" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP-based SPMIS contains everything that is necessary to set up a foundational SPMIS. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more about <a class="reference internal" href="../get_started/modules/"><span class="doc">module installation</span></a>.</p>
+<!--
+### Common features to expand with
+
+**Geo-spatial analysis and shock response –** Integrate GIS and external data (e.g., flood maps) with already known information to rapidly identify and assist affected households during crises without the need for time-consuming, emergency-specific registration and needs assessments.
+
+*Read more about {doc}`Geospatial (GIS) and land management <features/gis_land_management>`.*
+-->
+</div>
+<div class="section" id="next-step">
+<h2>Next step<a class="headerlink" href="#next-step" title="Permalink to this headline">#</a></h2>
+<p>The OpenSPP SP-MIS is an open-source product, built and supported by the OpenSPP community. Read more about <a class="reference internal" href="../get_started/modules/spmis_installation.html"><span class="doc">installing OpenSPP SP-MIS</span></a>.</p>
 </div>
 </div>
 </div>

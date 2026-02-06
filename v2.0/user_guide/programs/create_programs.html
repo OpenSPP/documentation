@@ -60,7 +60,7 @@
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
-<link href="program_cycles.html" rel="next" title="Work with program cycles"/>
+<link href="in_kind_products.html" rel="next" title="Manage in-kind products"/>
 <link href="index.html" rel="prev" title="Programs"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
@@ -433,6 +433,11 @@ document.addEventListener('DOMContentLoaded', function() {
        Navigating the OpenSPP interface
       </a>
 </li>
+<li class="toctree-l3">
+<a class="reference internal" href="../getting_started/administrating_role_based_access.html">
+       Administrating role-based access
+      </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 has-children">
@@ -512,6 +517,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <li class="toctree-l3 current active">
 <a class="current reference internal" href="#">
        Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="in_kind_products.html">
+       Manage in-kind products
       </a>
 </li>
 <li class="toctree-l3">
@@ -1574,6 +1584,28 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-3-continued-in-kind-programs-configuring-items">
+     Step 3 (continued): In-kind programs — configuring items
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#in-kind-settings">
+       In-Kind Settings
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#items-tab">
+       Items tab
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#inventory-settings-tab-when-manage-stock-movements-is-enabled">
+       Inventory Settings tab (when "Manage stock movements" is enabled)
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry">
 <a class="reference internal nav-link" href="#step-4-configure-distribution-schedule">
      Step 4: Configure distribution schedule
     </a>
@@ -1738,6 +1770,28 @@ document.addEventListener('DOMContentLoaded', function() {
 <li class="toc-h4 nav-item toc-entry">
 <a class="reference internal nav-link" href="#configuring-approval-workflow">
        Configuring approval workflow
+      </a>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-3-continued-in-kind-programs-configuring-items">
+     Step 3 (continued): In-kind programs — configuring items
+    </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#in-kind-settings">
+       In-Kind Settings
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#items-tab">
+       Items tab
+      </a>
+</li>
+<li class="toc-h4 nav-item toc-entry">
+<a class="reference internal nav-link" href="#inventory-settings-tab-when-manage-stock-movements-is-enabled">
+       Inventory Settings tab (when "Manage stock movements" is enabled)
       </a>
 </li>
 </ul>
@@ -1989,21 +2043,29 @@ document.addEventListener('DOMContentLoaded', function() {
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Benefit Type</strong></p></td>
-<td><p>Type of benefit to be distributed (typically <strong>Cash</strong> for monetary programs)</p></td>
+<td><p>Type of benefit to be distributed: <strong>Cash</strong> for monetary programs, or <strong>In-Kind</strong> for goods or services (e.g., food rations, hygiene kits)</p></td>
 <td><p>Yes</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>Currency</strong></p></td>
-<td><p>The currency used for this program (e.g., USD, PHP, EUR)</p></td>
-<td><p>Yes</p></td>
+<td><p>The currency used for this program (e.g., USD, PHP, EUR). Required for Cash programs; not used for In-Kind.</p></td>
+<td><p>Yes (for Cash)</p></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Example:</strong></p>
+<p>When you choose <strong>In-Kind</strong>, you will define which products and quantities beneficiaries receive in the <strong>Items</strong> step. Those products must be created first under <strong>Programs &gt; In-Kind &gt; Products</strong> (see <a class="reference internal" href="in_kind_products.html"><span class="doc">Manage in-kind products</span></a>).</p>
+<p><strong>Example (Cash):</strong></p>
 <ul class="simple">
 <li><p><strong>Program Name</strong>: "Monthly Food Assistance Program"</p></li>
 <li><p><strong>Target Type</strong>: Group (households)</p></li>
 <li><p><strong>Benefit Type</strong>: Cash</p></li>
 <li><p><strong>Currency</strong>: USD</p></li>
+</ul>
+<p><strong>Example (In-Kind):</strong></p>
+<ul class="simple">
+<li><p><strong>Program Name</strong>: "Emergency Food Ration Program"</p></li>
+<li><p><strong>Target Type</strong>: Group (households)</p></li>
+<li><p><strong>Benefit Type</strong>: In-Kind</p></li>
+<li><p><strong>Currency</strong>: (optional for in-kind)</p></li>
 </ul>
 <p><img alt="Program creation wizard - Step 1: Basic information form" src="../../_images/05-program-wizard-step1-basic-information.png"/></p>
 <p>After filling in these fields, click <strong>Next: Configure Program</strong> to proceed.</p>
@@ -2103,6 +2165,73 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><p><strong>Approver Group</strong>: Program Cycle Approvers</p></li>
 <li><p>Only users assigned the "Program Cycle Approvers" role can approve entitlements for this program.</p></li>
 </ul>
+</div>
+</div>
+<div class="section" id="step-3-continued-in-kind-programs-configuring-items">
+<h3>Step 3 (continued): In-kind programs — configuring items<a class="headerlink" href="#step-3-continued-in-kind-programs-configuring-items" title="Permalink to this headline">#</a></h3>
+<p>If you selected <strong>Benefit Type: In-Kind</strong> in Step 1, the wizard shows additional <strong>In-Kind Settings</strong> and an <strong>Items</strong> tab. Use these to define which products beneficiaries receive and in what quantity.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Prerequisite</strong>: Before creating an in-kind program, an administrator (or user with Stock Manager access) must create the products under <strong>Programs &gt; In-Kind &gt; Products</strong>. Those products appear in the <strong>Product</strong> dropdown when you add lines in the <strong>Items</strong> tab. See <a class="reference internal" href="in_kind_products.html"><span class="doc">Manage in-kind products</span></a>.</p>
+</div>
+<div class="section" id="in-kind-settings">
+<h4>In-Kind Settings<a class="headerlink" href="#in-kind-settings" title="Permalink to this headline">#</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Manage stock movements (inventory)</strong></p></td>
+<td><p>When enabled, the system tracks inventory and can trigger stock movements when entitlements are approved. An <strong>Inventory Settings</strong> tab appears where you select a warehouse.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Evaluate one item</strong></p></td>
+<td><p>When enabled, entitlement rules are evaluated per item (e.g., for conditional quantities).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="items-tab">
+<h4>Items tab<a class="headerlink" href="#items-tab" title="Permalink to this headline">#</a></h4>
+<p>In the <strong>Items</strong> tab, add one or more lines that define what each beneficiary receives:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Product</strong></p></td>
+<td><p>Select a product from the in-kind product catalog (the same list as <strong>Programs &gt; In-Kind &gt; Products</strong>). You cannot create new products here; they must exist in the catalog first.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Quantity</strong></p></td>
+<td><p>Number of units per beneficiary (e.g., 2 boxes, 5 kg).</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>UoM</strong></p></td>
+<td><p>Unit of measure (usually filled from the product).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Multiplier field</strong> (optional)</p></td>
+<td><p>Registry field used to multiply quantity (e.g., number of household members).</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Max multiplier</strong> (optional)</p></td>
+<td><p>Cap on the multiplier value.</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple">
+<li><p>Click <strong>Add a line</strong> in the Items list.</p></li>
+<li><p>Choose a <strong>Product</strong> from the dropdown.</p></li>
+<li><p>Enter <strong>Quantity</strong> and confirm <strong>UoM</strong>.</p></li>
+<li><p>Optionally set <strong>Multiplier field</strong> and <strong>Max multiplier</strong> if quantities depend on beneficiary attributes.</p></li>
+<li><p>Save the line. Add more lines as needed for multiple products per beneficiary.</p></li>
+</ol>
+<p><img alt="Program wizard - In-Kind Items tab with product lines" src="_images/en-us/programs/understanding/22-inkind-items-tab.png"/></p>
+</div>
+<div class="section" id="inventory-settings-tab-when-manage-stock-movements-is-enabled">
+<h4>Inventory Settings tab (when "Manage stock movements" is enabled)<a class="headerlink" href="#inventory-settings-tab-when-manage-stock-movements-is-enabled" title="Permalink to this headline">#</a></h4>
+<p>If you enabled <strong>Manage stock movements (inventory)</strong> in In-Kind Settings, an <strong>Inventory Settings</strong> tab appears. Select the <strong>Warehouse</strong> from which stock will be reserved or moved when in-kind entitlements are approved.</p>
+<p><img alt="Program wizard - In-Kind Inventory Settings tab" src="_images/en-us/programs/understanding/23-inkind-inventory-settings-tab.png"/></p>
 </div>
 </div>
 <div class="section" id="step-4-configure-distribution-schedule">
@@ -2362,10 +2491,10 @@ This is an accounting configuration issue. Contact your Program Manager or Admin
 <p class="prev-next-title">Programs</p>
 </div>
 </a>
-<a class="right-next" href="program_cycles.html" id="next-link" title="next page">
+<a class="right-next" href="in_kind_products.html" id="next-link" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Work with program cycles</p>
+<p class="prev-next-title">Manage in-kind products</p>
 </div>
 <i class="fas fa-angle-right"></i>
 </a>

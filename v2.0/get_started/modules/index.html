@@ -19,7 +19,7 @@
 <meta content="website" property="og:type"/>
 <meta content="https://docs.openspp.org/get_started/modules/index.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="OpenSPP's modular architecture allows organizations to deploy only the features they need. Built on Odoo 17, the platform extends functionality through specialized modules that can be mixed and mat..." property="og:description"/>
+<meta content="OpenSPP's modular architecture allows organizations to deploy only the features they need. Built on Odoo 19, the platform extends functionality through specialized modules that can be mixed and mat..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
 <meta content="en_US" property="og:locale"/>
@@ -434,6 +434,11 @@ document.addEventListener('DOMContentLoaded', function() {
        Navigating the OpenSPP interface
       </a>
 </li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/administrating_role_based_access.html">
+       Administrating role-based access
+      </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 has-children">
@@ -513,6 +518,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <li class="toctree-l3">
 <a class="reference internal" href="../../user_guide/programs/create_programs.html">
        Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/in_kind_products.html">
+       Manage in-kind products
       </a>
 </li>
 <li class="toctree-l3">
@@ -1579,7 +1589,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div>
 <div class="section" id="module-installation">
 <h1>Module installation<a class="headerlink" href="#module-installation" title="Permalink to this headline">#</a></h1>
-<p>OpenSPP's modular architecture allows organizations to deploy only the features they need. Built on Odoo 17, the platform extends functionality through specialized modules that can be mixed and matched to create tailored social protection solutions. This guide covers installing OpenSPP modules for different use cases.</p>
+<p>OpenSPP's modular architecture allows organizations to deploy only the features they need. Built on Odoo 19, the platform extends functionality through specialized modules that can be mixed and matched to create tailored social protection solutions. This guide covers installing OpenSPP modules for different use cases.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Before installing OpenSPP modules, ensure you have an <strong>Odoo 19 instance</strong> running and accessible. If not, follow the <a class="reference internal" href="../installation/docker.html"><span class="doc">Installation guide</span></a> in order to install it.</p>
@@ -1589,7 +1599,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>OpenSPP comes with three configured base modules depending on your needs. The steps on how to install these can be found in <a class="reference internal" href="social_installation.html"><span class="doc">Installation of OpenSPP Social Registry</span></a>, <a class="reference internal" href="spmis_installation.html"><span class="doc">Installation of OpenSPP SP-MIS</span></a> and <a class="reference internal" href="farmer_installation.html"><span class="doc">Installation of OpenSPP Farmer Registry</span></a>.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>The <strong>SP-MIS</strong> (<span class="xref std std-doc">spp_base_spmis</span>), <strong>Farmer Registry</strong> (<span class="xref std std-doc">spp_base_farmer_registry</span>) and <strong>Social Registry</strong> (<span class="xref std std-doc">spp_base_social_registry</span>) modules are mutually exclusive. You can only have one of them installed in a single Odoo database. Attempting to install multiple base modules will result in an error.</p>
+<p>The <strong>SP-MIS</strong> (<a class="reference internal" href="../../reference/modules/spp_starter_sp_mis.html"><span class="doc">spp_starter_sp_mis</span></a>), <strong>Farmer Registry</strong> (<span class="xref std std-doc">spp_starter_farmer_registry</span>) and <strong>Social Registry</strong> (<a class="reference internal" href="../../reference/modules/spp_starter_social_registry.html"><span class="doc">spp_starter_social_registry</span></a>) modules are mutually exclusive. You can only have one of them installed in a single Odoo database. Attempting to install multiple base modules will result in an error.</p>
 </div>
 </div>
 <div class="section" id="installing-additional-modules">
@@ -1608,7 +1618,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><p>Search for the desired module by its technical name or title. If the module does not show up, clear the default "Apps" filter from the search bar.</p></li>
 <li><p>Click the <strong>Activate</strong> button on the module's card to begin the installation.</p></li>
 </ol>
-<p><img alt="OpenSPP Apps menu interface" src="../../_images/01-apps-ui.jpg"/></p>
+<p><img alt="OpenSPP Apps menu interface" src="../../_images/01-apps-ui.png"/></p>
 <ol class="arabic" start="4">
 <li><p>Restart OpenSPP after installing the modules:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>openspp
@@ -1640,7 +1650,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <h2>Module dependencies<a class="headerlink" href="#module-dependencies" title="Permalink to this headline">#</a></h2>
 <p>OpenSPP modules often have dependencies that are automatically installed. Understanding these relationships helps with troubleshooting:</p>
 <ul class="simple">
-<li><p><strong>Core dependencies</strong> are always installed (e.g., <span class="xref std std-doc">spp_base_spmis</span> installs registry modules)</p></li>
+<li><p><strong>Core dependencies</strong> are always installed (e.g., <a class="reference internal" href="../../reference/modules/spp_starter_sp_mis.html"><span class="doc">spp_starter_sp_mis</span></a> installs registry modules)</p></li>
 <li><p><strong>Optional dependencies</strong> can be manually selected based on your needs</p></li>
 <li><p><strong>Conflicting modules</strong> will show warnings during installation attempts</p></li>
 </ul>
@@ -1662,7 +1672,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><p>Check Odoo logs for specific error messages</p></li>
 <li><p>Verify all dependencies are available</p></li>
 <li><p>Ensure no conflicting modules are installed</p></li>
-<li><p>Confirm Odoo version compatibility (17.0)</p></li>
+<li><p>Confirm Odoo version compatibility (19.0)</p></li>
 </ul>
 <p><strong>After installation issues:</strong></p>
 <ul class="simple">
@@ -1680,7 +1690,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><p><strong>Import initial data</strong> - Use data import modules or APIs to populate your system</p></li>
 <li><p><strong>Test workflows</strong> - Verify the installed features work as expected</p></li>
 </ol>
-<p>For detailed configuration guides for specific modules, see the <span class="xref std std-doc">../user_guide/index</span> and <span class="xref std std-doc">../reference/modules/index</span>.</p>
+<p>For detailed configuration guides for specific modules, see the <a class="reference internal" href="../../user_guide/"><span class="doc">User guide</span></a> and <a class="reference internal" href="../../reference/modules/"><span class="doc">Modules Reference</span></a>.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>

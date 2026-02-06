@@ -37,4 +37,4 @@ To configure role-based access:
 4. Add role lines with optional date bounds
 5. For local roles, assign **Center Areas** to restrict data access
 
-For a fully illustrated walkthrough with step-by-step screenshots, see {doc}`/tutorial/user_guides/administrating_role_based_access`.
+For a fully illustrated walkthrough with step-by-step screenshots, see {doc}`/user_guide/getting_started/administrating_role_based_access`.

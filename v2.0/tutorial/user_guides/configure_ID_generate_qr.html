@@ -431,6 +431,11 @@ document.addEventListener('DOMContentLoaded', function() {
        Navigating the OpenSPP interface
       </a>
 </li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/administrating_role_based_access.html">
+       Administrating role-based access
+      </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 has-children">
@@ -510,6 +515,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <li class="toctree-l3">
 <a class="reference internal" href="../../user_guide/programs/create_programs.html">
        Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/in_kind_products.html">
+       Manage in-kind products
       </a>
 </li>
 <li class="toctree-l3">
@@ -1667,7 +1677,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>To configure ID and generate QR code, you need to:</p>
 <ul class="simple">
 <li><p>Have existing individual records in your registry, either by creating records manually or importing records into OpenSPP.</p></li>
-<li><p>Have an access role as an <strong>Operations Admin</strong> or <strong>Administrator</strong>. Learn more about this in the guide <a class="reference external" href="https://docs.openspp.org/tutorial/user_guides/administrating_role_based_access.html">Administrating role-based access</a></p></li>
+<li><p>Have an access role as an <strong>Operations Admin</strong> or <strong>Administrator</strong>. Learn more about this in the guide <a class="reference external" href="https://docs.openspp.org/user_guide/getting_started/administrating_role_based_access.html">Administrating role-based access</a></p></li>
 <li><p>Make sure that the module <strong>OpenSPP POS: ID Redemption</strong> is installed and activated.</p></li>
 </ul>
 </div>
@@ -1680,34 +1690,34 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="section" id="configure-id-type">
 <h3>Configure ID type<a class="headerlink" href="#configure-id-type" title="Permalink to this headline">#</a></h3>
 <p>To be able to create IDs, you must first configure the ID types. Login to OpenSPP as administrator, click on the square tile icon beside <strong>Registry</strong>, then click on <strong>Registry</strong> from the menu.</p>
-<p><img alt="" src="../../_images/115.png"/></p>
+<p><img alt="" src="../../_images/111.png"/></p>
 <p>Click the button <strong>Configuration</strong> in the top menu bar and select <strong>ID Type</strong>.</p>
-<p><img alt="" src="../../_images/211.png"/></p>
+<p><img alt="" src="../../_images/29.png"/></p>
 <p>This will display the table view of all existing IDs where you can either View, Create, Edit or Delete IDs.</p>
 <div class="section" id="create-id-type">
 <h4>Create ID type<a class="headerlink" href="#create-id-type" title="Permalink to this headline">#</a></h4>
 <p>To create a new ID type, click on <strong>New</strong>.</p>
-<p><img alt="" src="../../_images/39.png"/></p>
+<p><img alt="" src="../../_images/37.png"/></p>
 <p><strong>Name</strong> - (Required) The name of the ID type<br/>
 <strong>Target Type</strong> - (Required) Define whether this ID is used for individuals or groups only, or both.<br/>
 <strong>ID Type Validation</strong> - (Optional) Define a required prefix for the ID. For example, if inputting ‘022’ , then all IDs must start with 022, otherwise an error message will appear.</p>
-<p><img alt="" src="../../_images/45.png"/></p>
+<p><img alt="" src="../../_images/43.png"/></p>
 </div>
 <div class="section" id="edit-id-type">
 <h4>Edit ID type<a class="headerlink" href="#edit-id-type" title="Permalink to this headline">#</a></h4>
 <p>To Edit an existing ID Type, redirect back to ID type table view by clicking <strong>Configuration</strong> and selecting <strong>ID types</strong>. Click on the field you wish to modify and click <strong>Save</strong> to apply the changes.</p>
-<p><img alt="" src="../../_images/53.png"/></p>
+<p><img alt="" src="../../_images/51.png"/></p>
 </div>
 <div class="section" id="delete-id-type">
 <h4>Delete ID type<a class="headerlink" href="#delete-id-type" title="Permalink to this headline">#</a></h4>
 <p>To delete an ID type, select the ID type by clicking the checkbox and click on the <strong>Actions</strong> button. Click on <strong>Delete</strong>. Note that an ID type can only be removed if it is not in use.</p>
-<p><img alt="" src="../../_images/63.png"/></p>
+<p><img alt="" src="../../_images/61.png"/></p>
 </div>
 </div>
 <div class="section" id="manage-id-of-a-group-or-individual">
 <h3>Manage ID of a Group or Individual<a class="headerlink" href="#manage-id-of-a-group-or-individual" title="Permalink to this headline">#</a></h3>
 <p>Once the ID types are successfully configured you can add it to an Individual or Group by going to the <strong>Registry</strong>. Navigate to the desired Individual/Group and click on the <strong>ID</strong> tab.</p>
-<p><img alt="" src="../../_images/72.png"/></p>
+<p><img alt="" src="../../_images/7.png"/></p>
 <p><strong>ID type</strong> - Displays the type of ID.<br/>
 <strong>ID Number</strong> - Displays the value of the ID<br/>
 <strong>Expiry Date</strong> - Indicates when the ID will expire<br/>
@@ -1716,7 +1726,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="section" id="add-id">
 <h4>Add ID<a class="headerlink" href="#add-id" title="Permalink to this headline">#</a></h4>
 <p>To add an ID, click on <strong>Add a line</strong> under the ID tab and select the type of ID you desire to add.</p>
-<p><img alt="" src="../../_images/82.png"/></p>
+<p><img alt="" src="../../_images/8.png"/></p>
 <p>Alternatively, you can also add an ID by <strong>import to update an already existing individual or group</strong> along with its new ID details, Read <a class="reference external" href="https://docs.openspp.org/tutorial/user_guides/import_registrant_data.html">Import registrant data</a> to learn more. You would need the following column headers for the ID data.<br/>
 <strong>reg_ids/id_type</strong> - ID pass, UMID etc.. make sure that the id type you will import is already defined in OpenSPP.<br/>
 <strong>reg_ids/status</strong> - Valid or Invalid.<br/>
@@ -1725,20 +1735,20 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="section" id="edit-id">
 <h4>Edit ID<a class="headerlink" href="#edit-id" title="Permalink to this headline">#</a></h4>
 <p>To edit an ID, click on the field to edit it. Once done click the <strong>Save</strong> icon beside the Gear icon. You may also click on the <strong>Counterclockwise arrow</strong> icon to undo any changes.</p>
-<p><img alt="" src="../../_images/92.png"/></p>
+<p><img alt="" src="../../_images/9.png"/></p>
 </div>
 <div class="section" id="delete-id">
 <h4>Delete ID<a class="headerlink" href="#delete-id" title="Permalink to this headline">#</a></h4>
 <p>To delete an ID, click on the trashbin icon that corresponds to the ID you wish to delete.</p>
-<p><img alt="" src="../../_images/102.png"/></p>
+<p><img alt="" src="../../_images/10.png"/></p>
 </div>
 </div>
 <div class="section" id="generate-qr-code">
 <h3>Generate QR code<a class="headerlink" href="#generate-qr-code" title="Permalink to this headline">#</a></h3>
 <p>To generate QR code, make sure <strong>OpenSPP POS: ID Redemption</strong> is installed and activated on your OpenSPP instance. When installed, you should be able to see a <strong>green printer button</strong> beside the ID values from the ID tab of a Group or Individual.</p>
-<p><img alt="" src="../../_images/116.png"/></p>
+<p><img alt="" src="../../_images/112.png"/></p>
 <p>Once you click the green printer button, a download of a pdf will automatically start which contains the ID information and QR code.</p>
-<p><img alt="" src="../../_images/123.png"/></p>
+<p><img alt="" src="../../_images/121.png"/></p>
 </div>
 </div>
 </div>

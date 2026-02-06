@@ -41,7 +41,7 @@ The **OpenSPP Farmer Registry** is a modular digital platform designed to be a s
 
 **NGOs** working on rural development and food security
 
-## Next Step
+## Next step
 
 The OpenSPP Farmer Registry is an open-source product, built and supported by the OpenSPP community. Read more about {doc}`installing OpenSPP Farmer Registry <../get_started/modules/farmer_installation>`.
 <!--
@@ -65,7 +65,8 @@ The following modules are included in the OpenSPP Farmer Registry product:
 - **{doc}`OpenSPP Irrigation <../../reference/modules/spp_irrigation>`**: Provides tools for managing and visualizing irrigation infrastructure within OpenSPP, enabling efficient tracking, planning, and analysis of irrigation systems and their impact.
 - **{doc}`OpenSPP Land Record <../../reference/modules/spp_land_record>`**: Enables the management and geospatial visualization of land records within OpenSPP.
 - **{doc}`OpenSPP Registry Group Hierarchy <../../reference/modules/spp_registry_group_hierarchy>`**: Introduces hierarchical relationships between groups.
--->
+
 ## Expanding the Farmer Registry
 
 The OpenSPP-based Farmer Registry contains everything that is necessary to set up a foundational Farmer Registry. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more about {doc}`module installation <../get_started/modules/index>`.
+-->

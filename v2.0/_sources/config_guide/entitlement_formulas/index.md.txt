@@ -44,9 +44,10 @@ To configure entitlements for a program:
 5. Add entitlement items with amounts and conditions
 6. Save the configuration
 
-```{image} /_images/en-us/config_guide/entitlement_formulas/01-entitlement-manager-overview.png
+```{figure} /_images/en-us/config_guide/entitlement_formulas/01-entitlement-manager-overview.png
 :alt: Entitlement Manager section in program configuration
-:class: img-fluid
+
+The **Entitlement Manager** section in the program's **Configuration** tab.
 ```
 
 ## What you'll find here

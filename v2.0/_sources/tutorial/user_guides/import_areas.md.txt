@@ -24,7 +24,7 @@ By the end of this tutorial, you should understand the purpose and process of pr
 
 ## Process
 
-To access the area import feature, you must log in to OpenSPP with a user account with the **System Admin** role since the functionality is not included for other roles. Learn how to set up roles and accounts in [Administrating role-based access](https://docs.openspp.org/tutorial/user_guides/administrating_role_based_access.html).
+To access the area import feature, you must log in to OpenSPP with a user account with the **System Admin** role since the functionality is not included for other roles. Learn how to set up roles and accounts in [Administrating role-based access](https://docs.openspp.org/user_guide/getting_started/administrating_role_based_access.html).
 
 ### Understand the Data Structure
 

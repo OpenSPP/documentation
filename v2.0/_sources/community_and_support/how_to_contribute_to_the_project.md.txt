@@ -125,8 +125,6 @@ the next release of OpenSPP. Congratulations on your contribution!
 If you want to contribute to the [documentation](https://docs.openspp.org/), you can do so by following the
 steps below:
 
-- Fork the [documentation repository](https://github.com/OpenSPP/documentation).
-
 - Fork the project's [documentation repository](https://github.com/OpenSPP/documentation)
 - Make your changes in a new branch. It is recommended to name your branch something descriptive, such as
   "feature/new-section" or "bugfix/typo-correction".

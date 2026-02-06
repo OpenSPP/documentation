@@ -55,6 +55,7 @@ If you cannot see the **Programs** menu, contact your administrator.
 :maxdepth: 1
 
 create_programs
+in_kind_products
 program_cycles
 enroll_beneficiaries
 allocate_funds

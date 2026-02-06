@@ -22,8 +22,7 @@ OpenSPP's configurable approach recognizes that different programs require diffe
 * **Tag-based targeting**: Automatically enroll {term}`registrants <registrant>` marked with specific tags such as "vulnerable household," "displaced family", or custom program-specific categories
 * **Geographic targeting**: Define eligible areas at any administrative level from national to village, with support for complex boundary definitions
 * **Demographic and categorical filters**: Target based on age groups, gender, disability status, household composition, or any combination of demographic criteria
-* **SQL-based custom rules**: Create sophisticated eligibility rules using SQL queries for maximum flexibility in defining complex targeting logic
-* **Proxy Means Testing (PMT)**: Calculate poverty scores using weighted indicators with configurable formulas adapted to local contexts and data availability
+* **Common Expression Language (CEL) engine**: CEL enables configuration of business logic through more user friendly syntax<!--* **Proxy Means Testing (PMT)**: Calculate poverty scores using weighted indicators with configurable formulas adapted to local contexts and data availability-->
 * **Exclusion filters**: Define criteria to explicitly exclude certain populations, such as government employees or high-income earners, from program enrollment
 * **Dynamic re-assessment**: Continuously evaluate eligibility as registrant data changes, with automatic enrollment and graduation based on updated criteria
 
