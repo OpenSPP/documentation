@@ -22,7 +22,7 @@ If your deployment includes the Roles feature, OpenSPP shows a banner on the use
 
 ## Common admin workflows
 
-For a fully illustrated walkthrough (including screenshots), see {doc}`user_guides/administrating_role_based_access`. For implementer-focused role configuration, see {doc}`/config_guide/role_configuration/index`.
+For a fully illustrated walkthrough (including screenshots), see {doc}`/user_guide/getting_started/administrating_role_based_access`. For implementer-focused role configuration, see {doc}`/config_guide/role_configuration/index`.
 
 ### Create a user
 

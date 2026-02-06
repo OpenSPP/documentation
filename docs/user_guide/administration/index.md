@@ -21,6 +21,7 @@ Administration tools allow program managers to configure system settings, manage
 - **Data Security** - Manage data access and security policies
 - **User Permissions** - Define granular permissions for different roles
 - **Activity Monitoring** - Track user actions and system events
+- **In-kind products** - Create and manage products used in in-kind programs ({doc}`../programs/in_kind_products`)
 
 <!--
 ```{toctree}

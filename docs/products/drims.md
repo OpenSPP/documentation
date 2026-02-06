@@ -34,10 +34,11 @@ The **OpenSPP Disaster Response Inventory Management (DRIMS)** manages the compl
 
 **Warehouse and logistics teams** managing disaster inventory
 
-## Next Step
+## Next step
 
 The OpenSPP DRIMS is an open-source product, built and supported by the OpenSPP community. Read more about installing OpenSPP DRIMS.
 
+<!--
 ## OpenSPP modules included in the OpenSPP DRIMS
 
 The preconfigured OpenSPP DRIMS product is intended to provide the basic use cases of disaster response inventory and coordination management.
@@ -57,3 +58,4 @@ The following modules are included in the OpenSPP DRIMS product:
 ## Expanding DRIMS
 
 The OpenSPP-based DRIMS contains everything necessary to set up a foundational disaster response inventory and coordination system. It can, however, be expanded with additional functionalities to perfectly suit specific operational needs. Read more about module installation.
+-->

@@ -35,6 +35,7 @@ This Tutorials serve as a detailed manual for the utilization and navigation of 
 - [Import registrant data](../user_guide/registry/import_data) (moved to User Guide)
 - [Export Registrant Data](../user_guide/registry/export_data) (moved to User Guide)
 - [Access management](access_management)
+- [Administrating role-based access](../user_guide/getting_started/administrating_role_based_access) (moved to User Guide)
 - [Setting up service points](user_guides/setting_up_service_points)
 - [Allocate funds](user_guides/allocate_funds)
 - [Create a social protection program](user_guides/create_social_protection_program)
@@ -83,10 +84,10 @@ vulnerability_scoring
 social_welfare_development_index
 vouchers
 access_management
+../user_guide/getting_started/administrating_role_based_access
 ../user_guide/registry/register_individual
 ../user_guide/registry/import_data
 ../user_guide/registry/export_data
-user_guides/administrating_role_based_access
 user_guides/setting_up_service_points
 user_guides/allocate_funds
 user_guides/create_social_protection_program

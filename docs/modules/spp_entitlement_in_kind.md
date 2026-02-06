@@ -52,4 +52,9 @@ This module builds upon the foundation established by its dependencies, focusing
 
 ## Conclusion
 
-The **OpenSPP In-Kind Entitlement ([spp_entitlement_in_kind](spp_entitlement_in_kind))** module is a valuable addition to the OpenSPP platform, extending its capabilities to effectively manage and track the distribution of in-kind benefits. By integrating with core modules like **Stock** and **[spp_service_points](spp_service_points) (OpenSPP Service Points)**, it provides a comprehensive solution for organizations implementing programs that involve the delivery of goods or services to beneficiaries. 
+The **OpenSPP In-Kind Entitlement ([spp_entitlement_in_kind](spp_entitlement_in_kind))** module is a valuable addition to the OpenSPP platform, extending its capabilities to effectively manage and track the distribution of in-kind benefits. By integrating with core modules like **Stock** and **[spp_service_points](spp_service_points) (OpenSPP Service Points)**, it provides a comprehensive solution for organizations implementing programs that involve the delivery of goods or services to beneficiaries.
+
+## See also
+
+- {doc}`Manage in-kind products </user_guide/programs/in_kind_products>` – Create and manage the product catalog used in in-kind programs
+- {doc}`Create programs </user_guide/programs/create_programs>` – Create a program and configure In-Kind benefit items 

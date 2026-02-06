@@ -127,14 +127,22 @@ The first step collects essential details about your program:
 | **Target Type** | Choose who the program targets: | Yes |
 | | • **Group**: Evaluates entire families/households for eligibility | |
 | | • **Individual**: Evaluates individual people regardless of family | |
-| **Benefit Type** | Type of benefit to be distributed (typically **Cash** for monetary programs) | Yes |
-| **Currency** | The currency used for this program (e.g., USD, PHP, EUR) | Yes |
+| **Benefit Type** | Type of benefit to be distributed: **Cash** for monetary programs, or **In-Kind** for goods or services (e.g., food rations, hygiene kits) | Yes |
+| **Currency** | The currency used for this program (e.g., USD, PHP, EUR). Required for Cash programs; not used for In-Kind. | Yes (for Cash) |
 
-**Example:**
+When you choose **In-Kind**, you will define which products and quantities beneficiaries receive in the **Items** step. Those products must be created first under **Programs > In-Kind > Products** (see {doc}`in_kind_products`).
+
+**Example (Cash):**
 - **Program Name**: "Monthly Food Assistance Program"
 - **Target Type**: Group (households)
 - **Benefit Type**: Cash
 - **Currency**: USD
+
+**Example (In-Kind):**
+- **Program Name**: "Emergency Food Ration Program"
+- **Target Type**: Group (households)
+- **Benefit Type**: In-Kind
+- **Currency**: (optional for in-kind)
 
 ![Program creation wizard - Step 1: Basic information form](/_images/en-us/programs/understanding/05-program-wizard-step1-basic-information.png)
 
@@ -214,6 +222,47 @@ The approval workflow determines which user role can approve entitlements for th
 **Example:**
 - **Approver Group**: Program Cycle Approvers
 - Only users assigned the "Program Cycle Approvers" role can approve entitlements for this program.
+
+### Step 3 (continued): In-kind programs — configuring items
+
+If you selected **Benefit Type: In-Kind** in Step 1, the wizard shows additional **In-Kind Settings** and an **Items** tab. Use these to define which products beneficiaries receive and in what quantity.
+
+```{note}
+**Prerequisite**: Before creating an in-kind program, an administrator (or user with Stock Manager access) must create the products under **Programs > In-Kind > Products**. Those products appear in the **Product** dropdown when you add lines in the **Items** tab. See {doc}`in_kind_products`.
+```
+
+#### In-Kind Settings
+
+| Option | Description |
+|--------|-------------|
+| **Manage stock movements (inventory)** | When enabled, the system tracks inventory and can trigger stock movements when entitlements are approved. An **Inventory Settings** tab appears where you select a warehouse. |
+| **Evaluate one item** | When enabled, entitlement rules are evaluated per item (e.g., for conditional quantities). |
+
+#### Items tab
+
+In the **Items** tab, add one or more lines that define what each beneficiary receives:
+
+| Field | Description |
+|-------|-------------|
+| **Product** | Select a product from the in-kind product catalog (the same list as **Programs > In-Kind > Products**). You cannot create new products here; they must exist in the catalog first. |
+| **Quantity** | Number of units per beneficiary (e.g., 2 boxes, 5 kg). |
+| **UoM** | Unit of measure (usually filled from the product). |
+| **Multiplier field** (optional) | Registry field used to multiply quantity (e.g., number of household members). |
+| **Max multiplier** (optional) | Cap on the multiplier value. |
+
+1. Click **Add a line** in the Items list.
+2. Choose a **Product** from the dropdown.
+3. Enter **Quantity** and confirm **UoM**.
+4. Optionally set **Multiplier field** and **Max multiplier** if quantities depend on beneficiary attributes.
+5. Save the line. Add more lines as needed for multiple products per beneficiary.
+
+![Program wizard - In-Kind Items tab with product lines](/_images/en-us/programs/understanding/22-inkind-items-tab.png)
+
+#### Inventory Settings tab (when "Manage stock movements" is enabled)
+
+If you enabled **Manage stock movements (inventory)** in In-Kind Settings, an **Inventory Settings** tab appears. Select the **Warehouse** from which stock will be reserved or moved when in-kind entitlements are approved.
+
+![Program wizard - In-Kind Inventory Settings tab](/_images/en-us/programs/understanding/23-inkind-inventory-settings-tab.png)
 
 ### Step 4: Configure distribution schedule
 
