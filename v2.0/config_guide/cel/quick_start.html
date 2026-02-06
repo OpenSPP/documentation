@@ -1944,17 +1944,19 @@ document.addEventListener('DOMContentLoaded', function() {
 <p><strong>Option B - From Menu:</strong></p>
 <ol class="arabic simple">
 <li><p>Click <strong>Studio</strong> in the main menu</p></li>
-<li><p>Click <strong>Rules</strong> in the sidebar</p></li>
+<li><p>Click <strong>Rules</strong> in the top menu bar</p></li>
 <li><p>Click <strong>Variables</strong></p></li>
 </ol>
-<p><img alt="Studio Dashboard showing Variables card" src="../../_images/01-studio-dashboard.png"/></p>
 </div>
 <div class="section" id="step-2-create-a-new-variable">
 <h3>Step 2: Create a new variable<a class="headerlink" href="#step-2-create-a-new-variable" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
 <li><p>Click <strong>New</strong> to create a new variable</p></li>
 </ol>
-<p><img alt="Variables list view" src="../../_images/02-variables-list.png"/></p>
+<div class="figure align-default" id="id1">
+<img alt="Variables list view with New button highlighted" src="../../_images/01-variables-list.png"/>
+<p class="caption"><span class="caption-text">Click <strong>New</strong> to create a new variable.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</div>
 </div>
 <div class="section" id="step-3-configure-the-variable">
 <h3>Step 3: Configure the variable<a class="headerlink" href="#step-3-configure-the-variable" title="Permalink to this headline">#</a></h3>
@@ -1974,7 +1976,10 @@ document.addEventListener('DOMContentLoaded', function() {
 </tr>
 </tbody>
 </table>
-<p><img alt="Variable form - basic info" src="../../_images/03-variable-form-basic.png"/></p>
+<div class="figure align-default" id="id2">
+<img alt="Variable form showing name and CEL accessor fields" src="../../_images/02-variable-form-basic.png"/>
+<p class="caption"><span class="caption-text">Fill in the variable name and CEL accessor.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</div>
 </div>
 <div class="section" id="step-4-configure-the-source">
 <h3>Step 4: Configure the source<a class="headerlink" href="#step-4-configure-the-source" title="Permalink to this headline">#</a></h3>
@@ -2000,7 +2005,10 @@ document.addEventListener('DOMContentLoaded', function() {
 </tr>
 </tbody>
 </table>
-<p><img alt="Variable form - aggregate configuration" src="../../_images/04-variable-aggregate-config.png"/></p>
+<div class="figure align-default" id="id3">
+<img alt="Variable form showing aggregate configuration with filter" src="../../_images/03-variable-aggregate-config.png"/>
+<p class="caption"><span class="caption-text">Configure the aggregate source type, target, and filter expression.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In aggregate filters, use <code class="docutils literal notranslate"><span class="pre">m</span></code> to reference each member. The expression <code class="docutils literal notranslate"><span class="pre">age_years(m.birthdate)</span> <span class="pre">&lt;</span> <span class="pre">5</span></code> checks each member's age.</p>
@@ -2028,7 +2036,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p><strong>Option B - From Menu:</strong></p>
 <ol class="arabic simple">
 <li><p>Click <strong>Studio</strong> in the main menu</p></li>
-<li><p>Click <strong>Rules</strong> in the sidebar</p></li>
+<li><p>Click <strong>Rules</strong> in the top menu bar</p></li>
 <li><p>Click <strong>Expressions</strong></p></li>
 </ol>
 </div>
@@ -2037,7 +2045,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <ol class="arabic simple">
 <li><p>Click <strong>New</strong> to create a new expression</p></li>
 </ol>
-<p><img alt="Expressions list view" src="../../_images/05-expressions-list.png"/></p>
+<div class="figure align-default" id="id4">
+<img alt="Expressions list view with New button highlighted" src="../../_images/04-expressions-list.png"/>
+<p class="caption"><span class="caption-text">Click <strong>New</strong> to create a new expression.</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</div>
 </div>
 <div class="section" id="step-3-configure-the-expression">
 <h3>Step 3: Configure the expression<a class="headerlink" href="#step-3-configure-the-expression" title="Permalink to this headline">#</a></h3>
@@ -2063,7 +2074,10 @@ document.addEventListener('DOMContentLoaded', function() {
 </tr>
 </tbody>
 </table>
-<p><img alt="Expression form - basic info" src="../../_images/06-expression-form-basic.png"/></p>
+<div class="figure align-default" id="id5">
+<img alt="Expression form showing name, type, context, and output type fields" src="../../_images/05-expression-form-basic.png"/>
+<p class="caption"><span class="caption-text">Fill in the expression name, type, context, and output type.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</div>
 </div>
 <div class="section" id="step-4-enter-the-cel-expression">
 <h3>Step 4: Enter the CEL expression<a class="headerlink" href="#step-4-enter-the-cel-expression" title="Permalink to this headline">#</a></h3>
@@ -2071,7 +2085,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="highlight-cel notranslate"><div class="highlight"><pre><span></span><span class="nv">children_under_5_count</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span>
 </pre></div>
 </div>
-<p><img alt="CEL editor with expression" src="../../_images/07-cel-editor.png"/></p>
+<div class="figure align-default" id="id6">
+<img alt="CEL editor with expression entered" src="../../_images/06-cel-editor.png"/>
+<p class="caption"><span class="caption-text">Enter the CEL expression in the editor.</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</div>
 <p>The editor provides:</p>
 <ul class="simple">
 <li><p><strong>Autocomplete</strong>: Type <code class="docutils literal notranslate"><span class="pre">children</span></code> and press Ctrl+Space to see matching variables</p></li>
@@ -2088,7 +2105,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><p>Set the expected result (True or False)</p></li>
 <li><p>Click <strong>Run All Tests</strong> to verify</p></li>
 </ol>
-<p><img alt="Expression test tab" src="../../_images/08-expression-tests.png"/></p>
+<div class="figure align-default" id="id7">
+<img alt="Expression test tab showing test case configuration" src="../../_images/07-expression-tests.png"/>
+<p class="caption"><span class="caption-text">Add test cases and click <strong>Run All Tests</strong> to verify your expression.</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+</div>
 </div>
 <div class="section" id="step-6-save-and-publish">
 <h3>Step 6: Save and publish<a class="headerlink" href="#step-6-save-and-publish" title="Permalink to this headline">#</a></h3>
@@ -2114,7 +2134,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><p>Type a variable name to see matching variables</p></li>
 <li><p>Type a function name to see its signature</p></li>
 </ul>
-<p><img alt="CEL editor autocomplete" src="../../_images/09-autocomplete.png"/></p>
+<div class="figure align-default" id="id8">
+<img alt="CEL editor showing autocomplete suggestions" src="../../_images/08-autocomplete.png"/>
+<p class="caption"><span class="caption-text">Type <code class="docutils literal notranslate"><span class="pre">r.</span></code> and press <strong>Ctrl+Space</strong> to see available fields.</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+</div>
 </div>
 <div class="section" id="symbol-browser">
 <h3>Symbol browser<a class="headerlink" href="#symbol-browser" title="Permalink to this headline">#</a></h3>
@@ -2124,7 +2147,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><p>Active variables you can use</p></li>
 <li><p>Built-in functions with descriptions</p></li>
 </ul>
-<p><img alt="Symbol browser panel" src="../../_images/10-symbol-browser.png"/></p>
+<div class="figure align-default" id="id9">
+<img alt="Symbol browser panel showing available symbols and variables" src="../../_images/09-symbol-browser.png"/>
+<p class="caption"><span class="caption-text">Click <strong>Symbols</strong> to browse available fields, variables, and functions.</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+</div>
 </div>
 <div class="section" id="validation-feedback">
 <h3>Validation feedback<a class="headerlink" href="#validation-feedback" title="Permalink to this headline">#</a></h3>

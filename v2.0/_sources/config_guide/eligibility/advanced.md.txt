@@ -36,6 +36,12 @@ graph LR
 3. Configure each manager with its specific criteria
 4. Managers are evaluated in sequence (top to bottom)
 
+```{figure} /_images/en-us/config_guide/eligibility/01-eligibility-manager-overview.png
+:alt: Eligibility Manager section in program configuration
+
+The **Eligibility Manager** section in the program's **Configuration** tab. Click **Add a line** to add additional managers.
+```
+
 ### Evaluation order
 
 Managers are evaluated in display order. A registrant must pass all managers:
@@ -215,9 +221,10 @@ Before production deployment:
 
 Use locked templates for standardized criteria:
 
-```{image} /_images/en-us/config_guide/eligibility/15-locked-template-warning.png
+```{figure} /_images/en-us/config_guide/eligibility/15-locked-template-warning.png
 :alt: Locked template warning message
-:class: img-fluid
+
+A **locked template** displays a warning when you attempt to modify the expression, preventing unauthorized changes.
 ```
 
 | Feature | Purpose |
@@ -225,6 +232,12 @@ Use locked templates for standardized criteria:
 | **Locked templates** | Prevent unauthorized modifications |
 | **Template lineage** | Track which template was used |
 | **Drift detection** | Identify modified expressions |
+
+```{figure} /_images/en-us/config_guide/eligibility/11-template-lineage-indicators.png
+:alt: CEL Expression Examples list showing available templates with categories and expressions
+
+The **CEL Expression Examples** list where templates are managed. Each template has a category, name, expression, and target type for governance tracking.
+```
 
 ### Audit trail
 

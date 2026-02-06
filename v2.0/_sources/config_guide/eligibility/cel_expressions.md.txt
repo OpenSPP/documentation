@@ -201,9 +201,10 @@ hh_size >= 5 and members.exists(m, age_years(m.birthdate) < 5)
 
 The eligibility manager includes a CEL editor with:
 
-```{image} /_images/en-us/config_guide/eligibility/02-cel-editor-with-expression.png
+```{figure} ../../_images/en-us/config_guide/eligibility/02-cel-editor-with-expression.png
 :alt: CEL editor showing expression with validation
-:class: img-fluid
+
+The CEL expression editor with syntax highlighting and live validation.
 ```
 
 | Feature | Description |
@@ -223,9 +224,10 @@ The editor shows real-time feedback:
 | Match count | Number of matching beneficiaries |
 | Red error | Syntax error with description |
 
-```{image} /_images/en-us/config_guide/eligibility/03-cel-validation-success.png
+```{figure} ../../_images/en-us/config_guide/eligibility/03-cel-validation-success.png
 :alt: CEL validation showing success with match count
-:class: img-fluid
+
+A valid expression shows a green checkmark and the number of matching registrants.
 ```
 
 ### Symbol browser
@@ -236,18 +238,20 @@ Click the symbol browser to see all available:
 - Functions (age_years, is_female, etc.)
 - Collection operations (exists, count, filter)
 
-```{image} /_images/en-us/config_guide/eligibility/04-cel-symbol-browser.png
+```{figure} ../../_images/en-us/config_guide/eligibility/04-cel-symbol-browser.png
 :alt: Symbol browser showing available functions
-:class: img-fluid
+
+Click **Symbols** to browse available variables, functions, and collection operations.
 ```
 
 ## Advanced builder
 
 For complex expressions, use the **Advanced Builder** button:
 
-```{image} /_images/en-us/config_guide/eligibility/05-advanced-builder-wizard.png
+```{figure} ../../_images/en-us/config_guide/eligibility/05-advanced-builder-wizard.png
 :alt: Advanced CEL builder wizard
-:class: img-fluid
+
+The advanced builder provides a larger editing area with target type selection and template insertion.
 ```
 
 The advanced builder provides:

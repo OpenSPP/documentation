@@ -86,16 +86,18 @@ There are two ways to access Variables:
 
 **Option B - From Menu:**
 1. Click **Studio** in the main menu
-2. Click **Rules** in the sidebar
+2. Click **Rules** in the top menu bar
 3. Click **Variables**
-
-![Studio Dashboard showing Variables card](/_images/en-us/config_guide/cel/quick_start/01-studio-dashboard.png)
 
 ### Step 2: Create a new variable
 
 1. Click **New** to create a new variable
 
-![Variables list view](/_images/en-us/config_guide/cel/quick_start/02-variables-list.png)
+```{figure} ../../_images/en-us/config_guide/cel/quick_start/01-variables-list.png
+:alt: Variables list view with New button highlighted
+
+Click **New** to create a new variable.
+```
 
 ### Step 3: Configure the variable
 
@@ -106,7 +108,11 @@ Fill in the basic information:
 | **Variable Name** | Children Under 5 Count |
 | **CEL Accessor** | `children_under_5_count` |
 
-![Variable form - basic info](/_images/en-us/config_guide/cel/quick_start/03-variable-form-basic.png)
+```{figure} ../../_images/en-us/config_guide/cel/quick_start/02-variable-form-basic.png
+:alt: Variable form showing name and CEL accessor fields
+
+Fill in the variable name and CEL accessor.
+```
 
 ### Step 4: Configure the source
 
@@ -119,7 +125,11 @@ Select **Member Aggregate** as the Source Type, then configure:
 | **Aggregate Type** | Count |
 | **Filter (optional)** | `age_years(m.birthdate) < 5` |
 
-![Variable form - aggregate configuration](/_images/en-us/config_guide/cel/quick_start/04-variable-aggregate-config.png)
+```{figure} ../../_images/en-us/config_guide/cel/quick_start/03-variable-aggregate-config.png
+:alt: Variable form showing aggregate configuration with filter
+
+Configure the aggregate source type, target, and filter expression.
+```
 
 ```{note}
 In aggregate filters, use `m` to reference each member. The expression `age_years(m.birthdate) < 5` checks each member's age.
@@ -144,14 +154,18 @@ Now you can use `children_under_5_count` in any expression that applies to group
 
 **Option B - From Menu:**
 1. Click **Studio** in the main menu
-2. Click **Rules** in the sidebar
+2. Click **Rules** in the top menu bar
 3. Click **Expressions**
 
 ### Step 2: Create a new expression
 
 1. Click **New** to create a new expression
 
-![Expressions list view](/_images/en-us/config_guide/cel/quick_start/05-expressions-list.png)
+```{figure} ../../_images/en-us/config_guide/cel/quick_start/04-expressions-list.png
+:alt: Expressions list view with New button highlighted
+
+Click **New** to create a new expression.
+```
 
 ### Step 3: Configure the expression
 
@@ -164,7 +178,11 @@ Fill in the basic information:
 | **Context** | Group/Household |
 | **Output Type** | Yes/No (Boolean) |
 
-![Expression form - basic info](/_images/en-us/config_guide/cel/quick_start/06-expression-form-basic.png)
+```{figure} ../../_images/en-us/config_guide/cel/quick_start/05-expression-form-basic.png
+:alt: Expression form showing name, type, context, and output type fields
+
+Fill in the expression name, type, context, and output type.
+```
 
 ### Step 4: Enter the CEL expression
 
@@ -174,7 +192,11 @@ In the CEL editor, enter:
 children_under_5_count >= 1
 ```
 
-![CEL editor with expression](/_images/en-us/config_guide/cel/quick_start/07-cel-editor.png)
+```{figure} ../../_images/en-us/config_guide/cel/quick_start/06-cel-editor.png
+:alt: CEL editor with expression entered
+
+Enter the CEL expression in the editor.
+```
 
 The editor provides:
 - **Autocomplete**: Type `children` and press Ctrl+Space to see matching variables
@@ -189,7 +211,11 @@ The editor provides:
 4. Set the expected result (True or False)
 5. Click **Run All Tests** to verify
 
-![Expression test tab](/_images/en-us/config_guide/cel/quick_start/08-expression-tests.png)
+```{figure} ../../_images/en-us/config_guide/cel/quick_start/07-expression-tests.png
+:alt: Expression test tab showing test case configuration
+
+Add test cases and click **Run All Tests** to verify your expression.
+```
 
 ### Step 6: Save and publish
 
@@ -212,7 +238,11 @@ Type in the editor and press **Ctrl+Space** to see suggestions:
 - Type a variable name to see matching variables
 - Type a function name to see its signature
 
-![CEL editor autocomplete](/_images/en-us/config_guide/cel/quick_start/09-autocomplete.png)
+```{figure} ../../_images/en-us/config_guide/cel/quick_start/08-autocomplete.png
+:alt: CEL editor showing autocomplete suggestions
+
+Type `r.` and press **Ctrl+Space** to see available fields.
+```
 
 ### Symbol browser
 
@@ -221,7 +251,11 @@ Click the **Symbols** button above the CEL editor to browse:
 - Active variables you can use
 - Built-in functions with descriptions
 
-![Symbol browser panel](/_images/en-us/config_guide/cel/quick_start/10-symbol-browser.png)
+```{figure} ../../_images/en-us/config_guide/cel/quick_start/09-symbol-browser.png
+:alt: Symbol browser panel showing available symbols and variables
+
+Click **Symbols** to browse available fields, variables, and functions.
+```
 
 ### Validation feedback
 

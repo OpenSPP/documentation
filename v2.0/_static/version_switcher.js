@@ -24,20 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Handle version change
                 document.getElementById('version-select').addEventListener('change', function(e) {
-                    const newUrl = e.target.value;
-                    // Get current page path, removing any version prefix
-                    let currentPath = window.location.pathname;
-                    
-                    // Remove version prefixes: /previews/branch-name/ or /v1.3/ or /1.3/
-                    // This regex matches /previews/anything/ at the start
-                    currentPath = currentPath.replace(/^\/previews\/[^\/]+\//, '/');
-                    // This regex matches /v1.3/ or /1.3/ patterns at the start (with optional 'v' prefix)
-                    currentPath = currentPath.replace(/^\/v?[0-9.]+\//, '/');
-                    // Remove leading slash since newUrl already has trailing slash
-                    currentPath = currentPath.replace(/^\/+/, '');
-                    
-                    // Navigate to same page in new version
-                    window.location.href = newUrl + currentPath;
+                    // Navigate to the landing page of the selected version
+                    window.location.href = e.target.value;
                 });
             }
         })

@@ -34,9 +34,10 @@ graph LR
 
 The CEL editor validates expressions as you type:
 
-```{image} /_images/en-us/config_guide/eligibility/03-cel-validation-success.png
-:alt: CEL validation showing success
-:class: img-fluid
+```{figure} ../../_images/en-us/config_guide/eligibility/03-cel-validation-success.png
+:alt: CEL validation showing success with green checkmark and match count
+
+The CEL editor showing a valid expression with the green **18 matches** indicator.
 ```
 
 ### Validation indicators
@@ -60,9 +61,10 @@ The CEL editor validates expressions as you type:
 
 After validation passes, the editor shows how many registrants match:
 
-```{image} /_images/en-us/config_guide/eligibility/12-preview-count-display.png
-:alt: Match count showing number of eligible registrants
-:class: img-fluid
+```{figure} ../../_images/en-us/config_guide/eligibility/12-preview-count-display.png
+:alt: Validation success showing match count in the eligibility manager
+
+The validation success message showing **18 beneficiaries match this criteria** in the eligibility manager.
 ```
 
 ### Interpreting the count
@@ -102,16 +104,18 @@ age_years(r.birthdate) >= 65 and is_female(r.gender_id)
 
 Use the **Preview Beneficiaries** button to review matching registrants:
 
-```{image} /_images/en-us/config_guide/eligibility/13-preview-beneficiaries-button.png
-:alt: Preview Beneficiaries button in eligibility manager
-:class: img-fluid
+```{figure} ../../_images/en-us/config_guide/eligibility/13-preview-beneficiaries-button.png
+:alt: Preview Beneficiaries button highlighted in the eligibility manager
+
+The **Preview Beneficiaries** button appears after the expression passes validation.
 ```
 
 This opens a list of matching registrants:
 
-```{image} /_images/en-us/config_guide/eligibility/14-preview-beneficiaries-list.png
-:alt: List of matching beneficiaries from preview
-:class: img-fluid
+```{figure} ../../_images/en-us/config_guide/eligibility/14-preview-beneficiaries-list.png
+:alt: List of matching beneficiaries from the preview action
+
+The list of matching beneficiaries showing registrant details for review.
 ```
 
 ### What to check
