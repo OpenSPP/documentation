@@ -427,6 +427,8 @@ redirects = {
     "tutorial/user_guides/export_registrant_data/index.html": "user_guide/registry/export_data.html",
     "howto/user_guides/export_registrant_data.html": "user_guide/registry/export_data.html",
     "howto/user_guides/export_registrant_data/index.html": "user_guide/registry/export_data.html",
+    "tutorial/user_guides/administrating_role_based_access.html": "user_guide/getting_started/administrating_role_based_access.html",
+    "howto/user_guides/administrating_role_based_access.html": "user_guide/getting_started/administrating_role_based_access.html",
 
     # Phase 3: Orphan Resolution redirects - ACTIVE
     "tutorial/managing_social_protection_programs.html": "learn/concepts/programs.html",

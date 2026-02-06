@@ -46,7 +46,7 @@ Here you’ll find articles on “How do I….?” types of questions. It addres
 - {doc}`../user_guide/registry/register_individual` (moved to User Guide)
 - {doc}`../user_guide/registry/import_data` (moved to User Guide)
 - {doc}`../user_guide/registry/export_data` (moved to User Guide)
-- {doc}`user_guides/administrating_role_based_access`
+- {doc}`../user_guide/getting_started/administrating_role_based_access`
 - {doc}`user_guides/setting_up_service_points`
 
 ```{toctree}
@@ -81,7 +81,7 @@ user_guides/setting_up_farmer_registry
 ../user_guide/registry/register_individual
 ../user_guide/registry/import_data
 ../user_guide/registry/export_data
-user_guides/administrating_role_based_access
+../user_guide/getting_started/administrating_role_based_access
 user_guides/setting_up_service_points
 user_guides/implementing_pmt
 ```

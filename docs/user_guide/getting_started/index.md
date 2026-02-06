@@ -21,6 +21,7 @@ This section is for **users** who are new to OpenSPP. Whether you manage benefic
 | Guide | What it covers |
 |-------|----------------|
 | {doc}`navigation` | Logging in, finding menus, understanding the interface |
+| {doc}`administrating_role_based_access` | Assigning and configuring roles, users, and passwords |
 
 By the end of this section, you will be able to:
 
@@ -69,4 +70,5 @@ Start with {doc}`navigation` to learn how to log in and find your way around the
 :maxdepth: 1
 
 navigation
+administrating_role_based_access
 ```

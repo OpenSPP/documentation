@@ -16,7 +16,7 @@ To create a social protection program using OpenSPP, you need to:
 
 - Have a clear understanding of the goals and objectives of your social protection program.
 - Prepare the details of your program in advance. This includes deciding on the program name, the target beneficiary types, and the specific benefits that will be offered.
-- Have an access role as a system administrator or global program manager to perform tasks in this tutorial. Learn more about this in the documentation [Administrating role-based access](https://docs.openspp.org/tutorial/user_guides/administrating_role_based_access.html)
+- Have an access role as a system administrator or global program manager to perform tasks in this tutorial. Learn more about this in the documentation [Administrating role-based access](https://docs.openspp.org/user_guide/getting_started/administrating_role_based_access.html)
 - Have existing groups or individuals in your registry either through manual creation or through import. Learn more about this in the documentation [Import registrant data](https://docs.openspp.org/tutorial/user_guides/import_registrant_data.html)
 
 ## Objective

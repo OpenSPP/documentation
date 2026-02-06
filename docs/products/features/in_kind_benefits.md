@@ -36,3 +36,5 @@ The in-kind benefits functionality is implemented through specialized modules:
 * **[spp_pos_id_redemption](/reference/modules/spp_pos_id_redemption.md)**: ID-based redemption system for in-kind benefit collection
 * **[spp_service_points](/reference/modules/spp_service_points.md)**: Distribution center management and coordination
 * **[spp_dms](/reference/modules/spp_dms.md)**: Document management for procurement records, quality certificates, and distribution documentation
+
+For step-by-step management of in-kind products and creating in-kind programs, see the user guide: {doc}`Manage in-kind products </user_guide/programs/in_kind_products>`, {doc}`Create programs </user_guide/programs/create_programs>`.

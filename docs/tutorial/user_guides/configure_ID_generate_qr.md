@@ -15,7 +15,7 @@ In this Tutorial you will learn how to configure the ID of a registrant and how 
 To configure ID and generate QR code, you need to:
 
 - Have existing individual records in your registry, either by creating records manually or importing records into OpenSPP.
-- Have an access role as an **Operations Admin** or **Administrator**. Learn more about this in the guide [Administrating role-based access](https://docs.openspp.org/tutorial/user_guides/administrating_role_based_access.html)
+- Have an access role as an **Operations Admin** or **Administrator**. Learn more about this in the guide [Administrating role-based access](https://docs.openspp.org/user_guide/getting_started/administrating_role_based_access.html)
 - Make sure that the module **OpenSPP POS: ID Redemption** is installed and activated.
 
 ## Objective
