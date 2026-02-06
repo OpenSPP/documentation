@@ -7,6 +7,8 @@ OpenSPP is an open-source project that aims to streamline the management of soci
 
 Browse the published documentation at **https://docs.openspp.org/**.
 
+Note: the latest documentation may not yet be merged to this [main](https://github.com/OpenSPP/documentation/tree/main) repository.
+
 ## Building the documentation
 
 Python 3.11 is required to build the documentation. If you are using pyenv, create a `.python-version` to set the version before running any `make` commands.
