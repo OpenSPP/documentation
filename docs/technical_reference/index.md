@@ -1,10 +1,13 @@
 # Technical Reference
 
-The Technical Reference is a detailed document outlining the system's architecture and technical specifications. It serves as a resource for architects and developers to understand the system's functionalities and operations.
+The Technical Reference is a detailed document outlining the system's technical specifications. It serves as a resource for architects and developers to understand the system's functionalities and operations.
 
-**Configuration and Architecture**
+```{note}
+Architecture documentation has moved to the {doc}`../operations_guide/index`.
+```
 
-- {doc}`architecture`
+**Configuration**
+
 - {doc}`extensibility`
 
 **Security and Compliance**
@@ -45,8 +48,7 @@ The Technical Reference is a detailed document outlining the system's architectu
 :maxdepth: 3
 :hidden: true
 
-# Configuration and Architecture
-architecture
+# Configuration
 extensibility
 
 # Security and Compliance
@@ -64,7 +66,6 @@ programs/dashboards
 
 # Integrations
 integrations
-dci
 external_api
 
 # Other

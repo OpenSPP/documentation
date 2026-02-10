@@ -1,0 +1,104 @@
+{
+  "info": {
+    "name": "OpenSPP API V2",
+    "description": "Complete collection for the OpenSPP REST API V2.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:8069/api/v2/spp" },
+    { "key": "client_id", "value": "your-client-id" },
+    { "key": "client_secret", "value": "your-client-secret" },
+    { "key": "access_token", "value": "" }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [{ "key": "token", "value": "{{access_token}}" }]
+  },
+  "item": [
+    {
+      "name": "1. Authentication",
+      "item": [
+        {
+          "name": "Get Access Token",
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["if(pm.response.code===200){var d=pm.response.json();pm.collectionVariables.set('access_token',d.access_token);pm.test('Token received',function(){pm.expect(d.access_token).to.be.a('string')});}"] } }],
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\"grant_type\":\"client_credentials\",\"client_id\":\"{{client_id}}\",\"client_secret\":\"{{client_secret}}\"}" },
+            "url": { "raw": "{{base_url}}/oauth/token", "host": ["{{base_url}}"], "path": ["oauth","token"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Individuals",
+      "item": [
+        {
+          "name": "Search Individuals",
+          "request": { "method": "GET", "url": { "raw": "{{base_url}}/Individual?name=Santos&_count=20", "host": ["{{base_url}}"], "path": ["Individual"], "query": [{"key":"name","value":"Santos"},{"key":"_count","value":"20"}] } }
+        },
+        {
+          "name": "Read Individual",
+          "request": { "method": "GET", "url": { "raw": "{{base_url}}/Individual/urn:gov:ph:psa:national-id|PH-123456789", "host": ["{{base_url}}"], "path": ["Individual","urn:gov:ph:psa:national-id|PH-123456789"] } }
+        },
+        {
+          "name": "Create Individual",
+          "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": { "mode": "raw", "raw": "{\n  \"type\": \"Individual\",\n  \"identifier\": [{\"system\": \"urn:gov:ph:psa:national-id\", \"value\": \"PH-NEW-001\"}],\n  \"name\": {\"family\": \"REYES\", \"given\": \"Ana\"},\n  \"birthDate\": \"1990-05-20\",\n  \"gender\": {\"coding\": [{\"system\": \"urn:iso:std:iso:5218\", \"code\": \"2\"}]},\n  \"telecom\": [{\"system\": \"phone\", \"value\": \"+639171234567\", \"use\": \"mobile\"}]\n}" }, "url": { "raw": "{{base_url}}/Individual", "host": ["{{base_url}}"], "path": ["Individual"] } }
+        },
+        {
+          "name": "Partial Update (PATCH)",
+          "request": { "method": "PATCH", "header": [{"key":"Content-Type","value":"application/json"},{"key":"If-Match","value":"\"1\""}], "body": { "mode": "raw", "raw": "{\n  \"name\": {\"given\": \"Maria Elena\"},\n  \"telecom\": [{\"system\": \"phone\", \"value\": \"+639179999999\", \"use\": \"mobile\"}]\n}" }, "url": { "raw": "{{base_url}}/Individual/urn:gov:ph:psa:national-id|PH-123", "host": ["{{base_url}}"], "path": ["Individual","urn:gov:ph:psa:national-id|PH-123"] } }
+        }
+      ]
+    },
+    {
+      "name": "3. Groups",
+      "item": [
+        {
+          "name": "Search Groups",
+          "request": { "method": "GET", "url": { "raw": "{{base_url}}/Group?type=household&_count=20", "host": ["{{base_url}}"], "path": ["Group"], "query": [{"key":"type","value":"household"},{"key":"_count","value":"20"}] } }
+        },
+        {
+          "name": "Create Group",
+          "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": { "mode": "raw", "raw": "{\n  \"type\": \"Group\",\n  \"identifier\": [{\"system\": \"urn:openspp:group\", \"value\": \"HH-2024-NEW\"}],\n  \"groupType\": \"household\",\n  \"name\": \"Dela Cruz Household\",\n  \"member\": [{\"entity\": {\"reference\": \"Individual/urn:gov:ph:psa:national-id|PH-001\"}, \"role\": {\"coding\": [{\"system\": \"urn:openspp:vocab:relationship\", \"code\": \"head\"}]}}]\n}" }, "url": { "raw": "{{base_url}}/Group", "host": ["{{base_url}}"], "path": ["Group"] } }
+        },
+        {
+          "name": "Add Member to Group",
+          "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": { "mode": "raw", "raw": "{\n  \"entity\": {\"reference\": \"Individual/urn:gov:ph:psa:national-id|PH-789\"},\n  \"role\": {\"coding\": [{\"system\": \"urn:openspp:vocab:relationship\", \"code\": \"child\"}]},\n  \"startDate\": \"2024-06-01\"\n}" }, "url": { "raw": "{{base_url}}/Group/urn:openspp:group|HH-2024-001/$add-member", "host": ["{{base_url}}"], "path": ["Group","urn:openspp:group|HH-2024-001","$add-member"] } }
+        }
+      ]
+    },
+    {
+      "name": "4. Programs",
+      "item": [
+        {
+          "name": "Search Programs",
+          "request": { "method": "GET", "url": { "raw": "{{base_url}}/Program?status=active", "host": ["{{base_url}}"], "path": ["Program"], "query": [{"key":"status","value":"active"}] } }
+        },
+        {
+          "name": "Create Enrollment",
+          "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": { "mode": "raw", "raw": "{\n  \"type\": \"ProgramMembership\",\n  \"program\": {\"reference\": \"Program/urn:openspp:program|4Ps\"},\n  \"beneficiary\": {\"reference\": \"Group/urn:openspp:group|HH-2024-001\"},\n  \"status\": \"enrolled\",\n  \"enrollmentDate\": \"2024-11-28\"\n}" }, "url": { "raw": "{{base_url}}/ProgramMembership", "host": ["{{base_url}}"], "path": ["ProgramMembership"] } }
+        }
+      ]
+    },
+    {
+      "name": "5. Batch Operations",
+      "item": [
+        {
+          "name": "Transaction: Create Household",
+          "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": { "mode": "raw", "raw": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"transaction\",\n  \"entry\": [\n    {\"fullUrl\": \"urn:uuid:head\", \"request\": {\"method\": \"POST\", \"url\": \"Individual\"}, \"resource\": {\"type\": \"Individual\", \"identifier\": [{\"system\": \"urn:gov:ph:psa:national-id\", \"value\": \"PH-HEAD-001\"}], \"name\": {\"family\": \"SANTOS\", \"given\": \"Juan\"}}},\n    {\"fullUrl\": \"urn:uuid:household\", \"request\": {\"method\": \"POST\", \"url\": \"Group\"}, \"resource\": {\"type\": \"Group\", \"identifier\": [{\"system\": \"urn:openspp:group\", \"value\": \"HH-BATCH\"}], \"groupType\": \"household\", \"name\": \"Santos Household\", \"member\": [{\"entity\": {\"reference\": \"urn:uuid:head\"}, \"role\": {\"coding\": [{\"system\": \"urn:openspp:vocab:relationship\", \"code\": \"head\"}]}}]}}\n  ]\n}" }, "url": { "raw": "{{base_url}}/$batch", "host": ["{{base_url}}"], "path": ["$batch"] } }
+        }
+      ]
+    },
+    {
+      "name": "6. Bulk Export",
+      "item": [
+        {
+          "name": "Bulk Export Individuals",
+          "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": { "mode": "raw", "raw": "{\n  \"type\": \"Individual\",\n  \"identifiers\": [\n    \"urn:gov:ph:psa:national-id|PH-123456789\",\n    \"urn:gov:ph:psa:national-id|PH-987654321\"\n  ],\n  \"_elements\": \"name,birthDate,gender\"\n}" }, "url": { "raw": "{{base_url}}/$bulk/export", "host": ["{{base_url}}"], "path": ["$bulk","export"] } }
+        }
+      ]
+    }
+  ]
+}

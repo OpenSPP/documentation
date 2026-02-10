@@ -56,6 +56,8 @@ OpenSPP is currently in development, and everything is evolving rapidly thanks t
 getting_started/index
 tutorial/index
 howto/index
+developer_guide/index
+operations_guide/index
 technical_reference/index
 explanation/index
 modules/index
