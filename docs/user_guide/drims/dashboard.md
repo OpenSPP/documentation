@@ -145,15 +145,15 @@ Acknowledge an alert when you've seen it and are taking action.
 
 1. Click **DRIMS** in the sidebar, then select **Operations → Alerts**
 
-   ![Screenshot: Navigate to alerts menu](/_images/en-us/drims/dashboard/navigate_alerts.png)
+![Screenshot: Navigate to alerts menu](/_images/en-us/drims/dashboard/navigate_alerts.png)
 
 2. Click on the alert you want to acknowledge
 
-   ![Screenshot: Alerts list](/_images/en-us/drims/dashboard/alerts_list.png)
+![Screenshot: Alerts list](/_images/en-us/drims/dashboard/alerts_list.png)
 
 3. Click the **Acknowledge** button at the top of the form
 
-   ![Screenshot: Acknowledge button](/_images/en-us/drims/dashboard/acknowledge_button.png)
+![Screenshot: Acknowledge button](/_images/en-us/drims/dashboard/acknowledge_button.png)
 
 The alert badge changes to orange, showing others that someone is handling it.
 
@@ -172,7 +172,7 @@ Resolve an alert after you've fixed the underlying problem.
 
 3. Click the **Resolve** button at the top of the form
 
-   ![Screenshot: Resolve button](/_images/en-us/drims/dashboard/resolve_button.png)
+![Screenshot: Resolve button](/_images/en-us/drims/dashboard/resolve_button.png)
 
 The alert is marked resolved and no longer appears in active counts.
 

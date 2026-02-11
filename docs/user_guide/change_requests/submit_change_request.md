@@ -130,15 +130,15 @@ If your request type requires supporting documents:
 
 1. On the change request form, click the **Documents** tab.
 
-   ![Documents tab](/_images/en-us/change-requests/submit/09-documents-tab-for-uploading-supporting-documents.png)
+![Documents tab](/_images/en-us/change-requests/submit/09-documents-tab-for-uploading-supporting-documents.png)
 
 2. Click **Upload Document**.
 
-   ![Upload Document button](/_images/en-us/change-requests/submit/10-upload-document-button-in-documents-tab.png)
+![Upload Document button](/_images/en-us/change-requests/submit/10-upload-document-button-in-documents-tab.png)
 
 3. Select the document type and attach the file.
 
-   ![Document upload form](/_images/en-us/change-requests/submit/11-document-upload-form-with-type-selection-and-file.png)
+![Document upload form](/_images/en-us/change-requests/submit/11-document-upload-form-with-type-selection-and-file.png)
 
 4. Click **Upload**.
 

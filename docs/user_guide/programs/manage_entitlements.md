@@ -65,7 +65,7 @@ Entitlements progress through these states:
 
 3. Click the **Entitlements** smart button.
 
-   ![Cycle entitlements](/_images/en-us/programs/entitlements/01-cycle-entitlements-view-showing-entitlements-tab.png)
+![Cycle entitlements](/_images/en-us/programs/entitlements/01-cycle-entitlements-view-showing-entitlements-tab.png)
 
 ### From the In-Kind Menu
 
@@ -73,7 +73,7 @@ For in-kind entitlements:
 
 1. Click **Programs** > **In-Kind** > **Entitlements**.
 
-   ![In-kind menu](/_images/en-us/programs/entitlements/02-in-kind-menu-under-programs.png)
+![In-kind menu](/_images/en-us/programs/entitlements/02-in-kind-menu-under-programs.png)
 
 2. The entitlements list shows all in-kind entitlements.
 
@@ -149,7 +149,7 @@ To approve all entitlements in a cycle at once:
 
 2. Click **Validate Entitlements**.
 
-   ![Validate entitlements button](/_images/en-us/programs/entitlements/05-validate-entitlements-button-on-cycle-form.png)
+![Validate entitlements button](/_images/en-us/programs/entitlements/05-validate-entitlements-button-on-cycle-form.png)
 
 3. All pending entitlements in the cycle are approved.
 
@@ -163,7 +163,7 @@ To approve a single entitlement:
 
 2. Click **Approve Entitlement**.
 
-   ![Approve entitlement button](/_images/en-us/programs/entitlements/06-approve-entitlement-button-on-individual.png)
+![Approve entitlement button](/_images/en-us/programs/entitlements/06-approve-entitlement-button-on-individual.png)
 
 3. The entitlement state changes to **Approved**.
 
@@ -173,7 +173,7 @@ To approve multiple entitlements at once:
 
 1. Open the cycle and click the expand button to view entitlements.
    
-   ![Expand cycle button](/_images/en-us/programs/entitlements/07-expand-cycle-button.png)
+![Expand cycle button](/_images/en-us/programs/entitlements/07-expand-cycle-button.png)
 
 2. Click the **Entitlements** smart button from the cycle form page.
 
@@ -181,7 +181,7 @@ To approve multiple entitlements at once:
 
 4. Click **Action** > **Approve**.
 
-   ![Batch approve](/_images/en-us/programs/entitlements/08-batch-approve.png)
+![Batch approve](/_images/en-us/programs/entitlements/08-batch-approve.png)
 
 5. Confirm the approval.
 

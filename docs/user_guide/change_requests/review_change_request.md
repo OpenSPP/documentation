@@ -117,11 +117,11 @@ If everything is correct and properly documented:
 
 1. Click **Approve** in the header
 
-   ![Approve button](/_images/en-us/change-requests/review/08-approve-button-location-in-request-header.png)
+![Approve button](/_images/en-us/change-requests/review/08-approve-button-location-in-request-header.png)
 
 2. Confirm by clicking **OK** in the dialog.
 
-   ![Confirmation dialog](/_images/en-us/change-requests/review/09-approval-confirmation-dialog.png)
+![Confirmation dialog](/_images/en-us/change-requests/review/09-approval-confirmation-dialog.png)
 
 The status changes to **Approved**.
 
@@ -139,11 +139,11 @@ If the submitter needs to fix something:
 
 1. Click **Request Changes** in the header
 
-   ![Request Changes button](/_images/en-us/change-requests/review/11-request-changes-button-to-send-back-for-correction.png)
+![Request Changes button](/_images/en-us/change-requests/review/11-request-changes-button-to-send-back-for-correction.png)
 
 2. In the dialog, explain what needs to be corrected
 
-   ![Request Changes dialog](/_images/en-us/change-requests/review/12-request-changes-dialog-with-explanation-field.png)
+![Request Changes dialog](/_images/en-us/change-requests/review/12-request-changes-dialog-with-explanation-field.png)
 
 3. Click **Confirm**.
 
@@ -164,11 +164,11 @@ If the request should not be processed:
 
 1. Click **Reject** in the header
 
-   ![Reject button](/_images/en-us/change-requests/review/13-reject-button-to-decline-the-request.png)
+![Reject button](/_images/en-us/change-requests/review/13-reject-button-to-decline-the-request.png)
 
 2. In the dialog, explain why the request was declined
 
-   ![Reject dialog](/_images/en-us/change-requests/review/14-reject-dialog-with-reason-field.png)
+![Reject dialog](/_images/en-us/change-requests/review/14-reject-dialog-with-reason-field.png)
 
 3. Click **Confirm**.
 
@@ -191,11 +191,11 @@ To see all requests (not just pending):
    | **Completed** | Changes have been recorded |
    | **Declined** | Rejected requests |
 
-   ![Filter options](/_images/en-us/change-requests/review/16-filter-options-for-request-status.png)
+![Filter options](/_images/en-us/change-requests/review/16-filter-options-for-request-status.png)
 
 3. Use **Group By** to organize by Type, Status, or Creator.
 
-   ![Group By options](/_images/en-us/change-requests/review/17-group-by-options-for-organizing-requests.png)
+![Group By options](/_images/en-us/change-requests/review/17-group-by-options-for-organizing-requests.png)
 
 ## Reviewing multiple requests
 
@@ -203,7 +203,7 @@ For efficient batch processing:
 
 1. Use the kanban view (click the kanban icon)
 
-   ![Kanban view](/_images/en-us/change-requests/review/18-kanban-view-showing-requests-grouped-by-status.png)
+![Kanban view](/_images/en-us/change-requests/review/18-kanban-view-showing-requests-grouped-by-status.png)
 
 2. Requests are grouped by status.
 3. Click a card to open the full request.
@@ -222,7 +222,7 @@ After approving and finalizing a request:
 
 1. Click **View Registrant** in the button box
 
-   ![View Registrant button](/_images/en-us/change-requests/review/19-view-registrant-button-to-verify-applied-changes.png)
+![View Registrant button](/_images/en-us/change-requests/review/19-view-registrant-button-to-verify-applied-changes.png)
 
 2. Verify the changes appear correctly in the registrant's profile.
 

@@ -60,11 +60,11 @@ This is the standard workflow for enrolling multiple registrants.
 
 1. Click the **Import Eligible** button.
 
-   ![Import eligible button](/_images/en-us/programs/enroll/01-import-eligible-button-highlighted-on-program-form.png)
+![Import eligible button](/_images/en-us/programs/enroll/01-import-eligible-button-highlighted-on-program-form.png)
 
 2. Wait for the import to complete. A notification shows how many registrants were found.
 
-   ![Import notification](/_images/en-us/programs/enroll/02-import-notification-showing-registrants-found.png)
+![Import notification](/_images/en-us/programs/enroll/02-import-notification-showing-registrants-found.png)
 
    ```{note}
    **Large-scale imports**: If importing 1,000 or more beneficiaries, the system processes the import in the background. You'll see a warning notification saying "Started importing X beneficiaries" instead of an immediate success message. The program will be locked during the import process, and you'll receive a notification when the import completes.
@@ -72,13 +72,13 @@ This is the standard workflow for enrolling multiple registrants.
 
 3. The imported registrants appear in the **Beneficiaries** tab with **Draft** status.
 
-   ![Draft beneficiaries](/_images/en-us/programs/enroll/03-beneficiaries-tab.png)
+![Draft beneficiaries](/_images/en-us/programs/enroll/03-beneficiaries-tab.png)
 
 ### Step 3: Enroll eligible registrants
 
 1. Click the **Enroll Eligible** button.
 
-   ![Enroll eligible button](/_images/en-us/programs/enroll/04-enroll-eligible-button-highlighted.png)
+![Enroll eligible button](/_images/en-us/programs/enroll/04-enroll-eligible-button-highlighted.png)
 
 2. The system verifies each registrant against the eligibility rules.
 
@@ -87,7 +87,7 @@ This is the standard workflow for enrolling multiple registrants.
    - **Small batches** (< 1,000 beneficiaries): Immediate success notification showing "Enrolled Beneficiaries: X successfully and Y unsuccessfully"
    - **Large batches** (≥ 1,000 beneficiaries): Warning notification saying "Eligibility check of X beneficiaries started" - the process runs in the background
 
-   ![Enrollment notification](/_images/en-us/programs/enroll/05-enrollment-notification.png)
+![Enrollment notification](/_images/en-us/programs/enroll/05-enrollment-notification.png)
 
    ```{important}
    **Background processing**: For large-scale enrollment (1,000+ beneficiaries), the program will be locked during processing. You'll see a lock indicator and the reason "Eligibility check of beneficiaries". Wait for the process to complete - you'll receive a notification when finished.
@@ -95,7 +95,7 @@ This is the standard workflow for enrolling multiple registrants.
 
 4. Successfully enrolled registrants now show **Enrolled** status.
 
-   ![Enrolled beneficiaries](/_images/en-us/programs/enroll/06-beneficiaries-tab-showing-enrolled-status.png)
+![Enrolled beneficiaries](/_images/en-us/programs/enroll/06-beneficiaries-tab-showing-enrolled-status.png)
 
 ### Step 4: Review results
 
@@ -119,7 +119,7 @@ Enroll a single registrant directly from their profile.
 
 1. In the **Participation** section, click **Enroll in Program**.
 
-   ![Enroll in program button](/_images/en-us/programs/enroll/07-enroll-in-program-button-on-registrant.png)
+![Enroll in program button](/_images/en-us/programs/enroll/07-enroll-in-program-button-on-registrant.png)
 
 2. A wizard opens.
 
@@ -127,7 +127,7 @@ Enroll a single registrant directly from their profile.
 
 1. Select the program from the dropdown.
 
-   ![Program selection](/_images/en-us/programs/enroll/08-program-selection-wizard-for-individual-enrollment.png)
+![Program selection](/_images/en-us/programs/enroll/08-program-selection-wizard-for-individual-enrollment.png)
 
    Only programs matching the registrant type (individual or group) are shown.
 
@@ -137,7 +137,7 @@ Enroll a single registrant directly from their profile.
 
 1. A notification confirms the enrollment.
 
-   ![Enrollment confirmation](/_images/en-us/programs/enroll/09-individual-enrollment-confirmation-notification.png)
+![Enrollment confirmation](/_images/en-us/programs/enroll/09-individual-enrollment-confirmation-notification.png)
 
 2. The enrollment appears in the registrant's **Program Enrollments** section.
 
@@ -149,7 +149,7 @@ Re-check eligibility for beneficiaries who are currently **Enrolled** or **Not E
 
 2. Click **Verify Eligibility**.
 
-   ![Verify eligibility button](/_images/en-us/programs/enroll/10-verify-eligibility-button-highlighted.png)
+![Verify eligibility button](/_images/en-us/programs/enroll/10-verify-eligibility-button-highlighted.png)
 
 3. The system re-evaluates beneficiaries in **Enrolled** and **Not Eligible** states against the current eligibility rules.
 
@@ -169,7 +169,7 @@ Re-check eligibility for beneficiaries who are currently **Enrolled** or **Not E
 
 3. Click on a beneficiary row to see their details.
 
-   ![Beneficiaries view](/_images/en-us/programs/enroll/11-beneficiaries-view-from-smart-button-or-tab.png)
+![Beneficiaries view](/_images/en-us/programs/enroll/11-beneficiaries-view-from-smart-button-or-tab.png)
 
 ### Beneficiary information
 
@@ -181,7 +181,7 @@ Re-check eligibility for beneficiaries who are currently **Enrolled** or **Not E
 | **Enrollment Date** | When they were enrolled |
 | **Exit Date** | When they exited (if applicable) |
 
-   ![Beneficiaries view](/_images/en-us/programs/enroll/16-beneficiary-details.png)
+![Beneficiaries view](/_images/en-us/programs/enroll/16-beneficiary-details.png)
 
 ## Manage beneficiary status
 
@@ -193,7 +193,7 @@ Temporarily suspend a beneficiary without removing them:
 
 2. Click **Pause**.
 
-   ![Pause button](/_images/en-us/programs/enroll/12-pause-button-on-beneficiary-record.png)
+![Pause button](/_images/en-us/programs/enroll/12-pause-button-on-beneficiary-record.png)
 
 3. The status changes to **Paused**. They will not receive benefits until resumed.
 
@@ -215,7 +215,7 @@ Permanently remove a beneficiary from the program:
 
 2. Click **Exit**.
 
-   ![Exit button](/_images/en-us/programs/enroll/13-exit-button-on-beneficiary-record.png)
+![Exit button](/_images/en-us/programs/enroll/13-exit-button-on-beneficiary-record.png)
 
 3. The status changes to **Exited** and the exit date is recorded.
 
@@ -229,7 +229,7 @@ Find and flag potential duplicate enrollments:
 
 2. Click **Deduplicate**.
 
-   ![Deduplicate button](/_images/en-us/programs/enroll/14-deduplicate-button-on-program-form.png)
+![Deduplicate button](/_images/en-us/programs/enroll/14-deduplicate-button-on-program-form.png)
 
 3. The system checks for duplicates based on configured rules.
 
@@ -237,7 +237,7 @@ Find and flag potential duplicate enrollments:
 
 5. View duplicates using the **Duplicates** smart button.
 
-   ![Duplicates button](/_images/en-us/programs/enroll/15-duplicates-smart-button-for-viewing-duplicate.png)
+![Duplicates button](/_images/en-us/programs/enroll/15-duplicates-smart-button-for-viewing-duplicate.png)
 
 ## Are you stuck?
 

@@ -167,7 +167,7 @@ To remove filters, click the **X Clear Filters** button.
 
 2. Click the **New** button in the top left corner.
 
-   ![New button location](/_images/en-us/user_guide/getting_started/navigation/new-button.png)
+![New button location](/_images/en-us/user_guide/getting_started/navigation/new-button.png)
 
 3. A blank form opens. Fill in the required fields (marked with a bold label or asterisk).
 
@@ -202,7 +202,7 @@ If you made changes you do not want to keep:
 
 1. Click the **Discard** button before saving.
 
-   ![Discard button location](/_images/en-us/user_guide/getting_started/navigation/discard-button.png)
+![Discard button location](/_images/en-us/user_guide/getting_started/navigation/discard-button.png)
 
 2. The record returns to its previous state.
 
@@ -216,7 +216,7 @@ Deleting records is permanent. Make sure you really want to remove the record be
 
 2. Click the **Action** menu (Gear icon).
 
-   ![Action menu location](/_images/en-us/user_guide/getting_started/navigation/action-menu.png)
+![Action menu location](/_images/en-us/user_guide/getting_started/navigation/action-menu.png)
 
 3. Select **Delete**.
 
