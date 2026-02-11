@@ -46,7 +46,7 @@ git --version             # Expected: 2.30+
 
 ```shell
 # Clone the repository
-git clone https://github.com/OpenSPP/openspp-modules-v2.git
+git clone https://github.com/OpenSPP/OpenSPP2.git
 cd openspp-modules-v2
 
 # Start OpenSPP
