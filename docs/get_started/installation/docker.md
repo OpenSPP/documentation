@@ -64,6 +64,15 @@ docker compose --profile ui logs -f openspp
 ```
 
 :::{tip}
+If port 8069 is already in use, Docker may assign a different port.
+Find the assigned port by running:
+
+```shell
+docker compose --profile ui port openspp 8069
+```
+:::
+
+:::{tip}
 Add `--build` to the `up` command to force a rebuild when code or dependencies have changed:
 `docker compose --profile ui up -d --build`
 :::
