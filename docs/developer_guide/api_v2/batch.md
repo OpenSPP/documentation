@@ -39,6 +39,9 @@ Transaction bundles process operations atomically. If any operation fails, all c
 
 ### Basic Structure
 
+`````{tab-set}
+
+````{tab-item} HTTP
 ```http
 POST /api/v2/spp/$batch
 Authorization: Bearer TOKEN
@@ -65,6 +68,91 @@ Content-Type: application/json
   ]
 }
 ```
+````
+
+````{tab-item} cURL
+```bash
+curl -X POST https://api.openspp.org/api/v2/spp/\$batch \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "resourceType": "Bundle",
+    "type": "transaction",
+    "entry": [
+      {
+        "request": {"method": "POST", "url": "Individual"},
+        "resource": { ... }
+      },
+      {
+        "request": {"method": "POST", "url": "Group"},
+        "resource": { ... }
+      }
+    ]
+  }'
+```
+````
+
+````{tab-item} Python
+```python
+import requests
+
+headers = {
+    "Authorization": f"Bearer {token}",
+    "Content-Type": "application/json"
+}
+bundle = {
+    "resourceType": "Bundle",
+    "type": "transaction",
+    "entry": [
+        {
+            "request": {"method": "POST", "url": "Individual"},
+            "resource": { ... }
+        },
+        {
+            "request": {"method": "POST", "url": "Group"},
+            "resource": { ... }
+        }
+    ]
+}
+response = requests.post(
+    f"{base_url}/$batch",
+    headers=headers,
+    json=bundle
+)
+response.raise_for_status()
+result = response.json()
+```
+````
+
+````{tab-item} JavaScript
+```javascript
+const bundle = {
+  resourceType: "Bundle",
+  type: "transaction",
+  entry: [
+    {
+      request: { method: "POST", url: "Individual" },
+      resource: { /* ... */ }
+    },
+    {
+      request: { method: "POST", url: "Group" },
+      resource: { /* ... */ }
+    }
+  ]
+};
+const response = await fetch(`${baseUrl}/$batch`, {
+  method: "POST",
+  headers: {
+    "Authorization": `Bearer ${token}`,
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(bundle)
+});
+const result = await response.json();
+```
+````
+
+`````
 
 ### Example: Register Household
 

@@ -67,8 +67,11 @@ Content-Type: application/json
 | `expires_in` | integer | Token lifetime in seconds (3600 = 1 hour) |
 | `scope` | string | Space-separated list of granted scopes |
 
-### Example: curl
+### Examples
 
+`````{tab-set}
+
+````{tab-item} cURL
 ```bash
 curl -X POST https://api.openspp.org/api/v2/spp/oauth/token \
   -H "Content-Type: application/json" \
@@ -78,9 +81,9 @@ curl -X POST https://api.openspp.org/api/v2/spp/oauth/token \
     "client_secret": "your-secret-key-here"
   }'
 ```
+````
 
-### Example: Python (requests)
-
+````{tab-item} Python
 ```python
 import requests
 
@@ -105,9 +108,9 @@ token = get_access_token(
 )
 print(f"Token: {token}")
 ```
+````
 
-### Example: JavaScript (fetch)
-
+````{tab-item} JavaScript
 ```javascript
 async function getAccessToken(clientId, clientSecret, baseUrl) {
   const response = await fetch(`${baseUrl}/oauth/token`, {
@@ -138,6 +141,9 @@ const token = await getAccessToken(
 );
 console.log('Token:', token);
 ```
+````
+
+`````
 
 ## Using the Access Token
 
@@ -148,15 +154,18 @@ GET /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789
 Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...
 ```
 
-### Example: curl
+### Examples
 
+`````{tab-set}
+
+````{tab-item} cURL
 ```bash
 curl https://api.openspp.org/api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789 \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
+````
 
-### Example: Python
-
+````{tab-item} Python
 ```python
 import requests
 
@@ -178,9 +187,9 @@ individual = get_individual(
 )
 print(individual)
 ```
+````
 
-### Example: JavaScript
-
+````{tab-item} JavaScript
 ```javascript
 async function getIndividual(identifier, token, baseUrl) {
   const response = await fetch(`${baseUrl}/Individual/${identifier}`, {
@@ -204,6 +213,9 @@ const individual = await getIndividual(
 );
 console.log(individual);
 ```
+````
+
+`````
 
 ## Token Management
 

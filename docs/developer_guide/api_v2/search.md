@@ -50,75 +50,93 @@ All searches return a **Bundle** with `type: searchset`:
 
 ### By Identifier
 
-```http
-GET /api/v2/spp/Individual?identifier=urn:gov:ph:psa:national-id|PH-123456789
-```
-
 **Format:** `system|value` or just `value` (searches all systems)
 
-**Example: Python**
+`````{tab-set}
 
-```python
-def search_by_identifier(system, value, token, base_url):
-    """Search for individuals by identifier."""
-    params = {"identifier": f"{system}|{value}"}
-    headers = {"Authorization": f"Bearer {token}"}
-
-    response = requests.get(
-        f"{base_url}/Individual",
-        headers=headers,
-        params=params
-    )
-    response.raise_for_status()
-    return response.json()
-
-# Usage
-results = search_by_identifier(
-    system="urn:gov:ph:psa:national-id",
-    value="PH-123456789",
-    token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
-)
+````{tab-item} cURL
+```bash
+curl "https://api.openspp.org/api/v2/spp/Individual?identifier=urn:gov:ph:psa:national-id|PH-123456789" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
+````
+
+````{tab-item} Python
+```python
+import requests
+
+params = {"identifier": "urn:gov:ph:psa:national-id|PH-123456789"}
+headers = {"Authorization": f"Bearer {token}"}
+
+response = requests.get(
+    f"{base_url}/Individual",
+    headers=headers,
+    params=params
+)
+response.raise_for_status()
+results = response.json()
+```
+````
+
+````{tab-item} JavaScript
+```javascript
+const params = new URLSearchParams({
+  identifier: "urn:gov:ph:psa:national-id|PH-123456789"
+});
+const response = await fetch(
+  `${baseUrl}/Individual?${params}`,
+  { headers: { "Authorization": `Bearer ${token}` } }
+);
+const results = await response.json();
+```
+````
+
+`````
 
 ### By Name
 
-```http
-# Contains search (case-insensitive)
-GET /api/v2/spp/Individual?name=Santos
-```
-
 Name search uses case-insensitive substring matching.
 
-**Example: Python**
+`````{tab-set}
 
-```python
-def search_by_name(name, token, base_url):
-    """Search for individuals by name."""
-    params = {"name": name}
-    headers = {"Authorization": f"Bearer {token}"}
-
-    response = requests.get(
-        f"{base_url}/Individual",
-        headers=headers,
-        params=params
-    )
-    response.raise_for_status()
-    return response.json()
-
-# Search by family name
-results = search_by_name("Santos", token=token, base_url=base_url)
+````{tab-item} cURL
+```bash
+# Contains search (case-insensitive)
+curl "https://api.openspp.org/api/v2/spp/Individual?name=Santos" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
+````
+
+````{tab-item} Python
+```python
+import requests
+
+params = {"name": "Santos"}
+headers = {"Authorization": f"Bearer {token}"}
+
+response = requests.get(
+    f"{base_url}/Individual",
+    headers=headers,
+    params=params
+)
+response.raise_for_status()
+results = response.json()
+```
+````
+
+````{tab-item} JavaScript
+```javascript
+const response = await fetch(
+  `${baseUrl}/Individual?name=Santos`,
+  { headers: { "Authorization": `Bearer ${token}` } }
+);
+const results = await response.json();
+```
+````
+
+`````
 
 ### By Birth Date
-
-```http
-# Exact date
-GET /api/v2/spp/Individual?birthdate=1985-03-15
-
-# Date range
-GET /api/v2/spp/Individual?birthdate=ge1980-01-01&birthdate=le1990-12-31
-```
 
 **Date Prefixes:**
 
@@ -131,41 +149,61 @@ GET /api/v2/spp/Individual?birthdate=ge1980-01-01&birthdate=le1990-12-31
 | `gt` | Greater than | `gt1990-01-01` |
 | `ge` | Greater than or equal | `ge1990-01-01` |
 
-**Example: Python**
+`````{tab-set}
 
-```python
-def search_by_birth_date_range(start_date, end_date, token, base_url):
-    """Search for individuals by birth date range."""
-    params = {
-        "birthdate": [
-            f"ge{start_date}",
-            f"le{end_date}"
-        ]
-    }
-    headers = {"Authorization": f"Bearer {token}"}
+````{tab-item} cURL
+```bash
+# Exact date
+curl "https://api.openspp.org/api/v2/spp/Individual?birthdate=1985-03-15" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 
-    response = requests.get(
-        f"{base_url}/Individual",
-        headers=headers,
-        params=params
-    )
-    response.raise_for_status()
-    return response.json()
-
-# Find individuals born in the 1980s
-results = search_by_birth_date_range(
-    start_date="1980-01-01",
-    end_date="1989-12-31",
-    token=token,
-    base_url=base_url
-)
+# Date range
+curl "https://api.openspp.org/api/v2/spp/Individual?birthdate=ge1980-01-01&birthdate=le1990-12-31" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
+````
+
+````{tab-item} Python
+```python
+import requests
+
+# Date range search
+params = {
+    "birthdate": [
+        "ge1980-01-01",
+        "le1989-12-31"
+    ]
+}
+headers = {"Authorization": f"Bearer {token}"}
+
+response = requests.get(
+    f"{base_url}/Individual",
+    headers=headers,
+    params=params
+)
+response.raise_for_status()
+results = response.json()
+```
+````
+
+````{tab-item} JavaScript
+```javascript
+// Date range search
+const params = new URLSearchParams();
+params.append("birthdate", "ge1980-01-01");
+params.append("birthdate", "le1989-12-31");
+
+const response = await fetch(
+  `${baseUrl}/Individual?${params}`,
+  { headers: { "Authorization": `Bearer ${token}` } }
+);
+const results = await response.json();
+```
+````
+
+`````
 
 ### By Gender
-
-```http
-GET /api/v2/spp/Individual?gender=urn:iso:std:iso:5218|2
-```
 
 **ISO 5218 Gender Codes:**
 
@@ -176,124 +214,192 @@ GET /api/v2/spp/Individual?gender=urn:iso:std:iso:5218|2
 | `2` | Female |
 | `9` | Not applicable |
 
-**Example: Python**
+`````{tab-set}
 
-```python
-def search_by_gender(gender_code, token, base_url):
-    """Search for individuals by gender."""
-    params = {"gender": f"urn:iso:std:iso:5218|{gender_code}"}
-    headers = {"Authorization": f"Bearer {token}"}
-
-    response = requests.get(
-        f"{base_url}/Individual",
-        headers=headers,
-        params=params
-    )
-    response.raise_for_status()
-    return response.json()
-
-# Find all females
-results = search_by_gender("2", token=token, base_url=base_url)
+````{tab-item} cURL
+```bash
+curl "https://api.openspp.org/api/v2/spp/Individual?gender=urn:iso:std:iso:5218|2" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
+````
+
+````{tab-item} Python
+```python
+import requests
+
+params = {"gender": "urn:iso:std:iso:5218|2"}
+headers = {"Authorization": f"Bearer {token}"}
+
+response = requests.get(
+    f"{base_url}/Individual",
+    headers=headers,
+    params=params
+)
+response.raise_for_status()
+results = response.json()
+```
+````
+
+````{tab-item} JavaScript
+```javascript
+const response = await fetch(
+  `${baseUrl}/Individual?gender=urn:iso:std:iso:5218|2`,
+  { headers: { "Authorization": `Bearer ${token}` } }
+);
+const results = await response.json();
+```
+````
+
+`````
 
 ### By Address
 
-```http
-GET /api/v2/spp/Individual?address=Manila
-```
-
 Searches across all address fields (city, state, text, etc.)
 
-**Example: Python**
+`````{tab-set}
 
-```python
-def search_by_address(location, token, base_url):
-    """Search for individuals by address."""
-    params = {"address": location}
-    headers = {"Authorization": f"Bearer {token}"}
-
-    response = requests.get(
-        f"{base_url}/Individual",
-        headers=headers,
-        params=params
-    )
-    response.raise_for_status()
-    return response.json()
-
-# Find all individuals in Manila
-results = search_by_address("Manila", token=token, base_url=base_url)
+````{tab-item} cURL
+```bash
+curl "https://api.openspp.org/api/v2/spp/Individual?address=Manila" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
+````
+
+````{tab-item} Python
+```python
+import requests
+
+params = {"address": "Manila"}
+headers = {"Authorization": f"Bearer {token}"}
+
+response = requests.get(
+    f"{base_url}/Individual",
+    headers=headers,
+    params=params
+)
+response.raise_for_status()
+results = response.json()
+```
+````
+
+````{tab-item} JavaScript
+```javascript
+const response = await fetch(
+  `${baseUrl}/Individual?address=Manila`,
+  { headers: { "Authorization": `Bearer ${token}` } }
+);
+const results = await response.json();
+```
+````
+
+`````
 
 ### By Last Updated
 
-```http
+`````{tab-set}
+
+````{tab-item} cURL
+```bash
 # Modified since date
-GET /api/v2/spp/Individual?_lastUpdated=ge2024-01-01
+curl "https://api.openspp.org/api/v2/spp/Individual?_lastUpdated=ge2024-01-01" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 
 # Modified in date range
-GET /api/v2/spp/Individual?_lastUpdated=ge2024-01-01&_lastUpdated=lt2024-02-01
+curl "https://api.openspp.org/api/v2/spp/Individual?_lastUpdated=ge2024-01-01&_lastUpdated=lt2024-02-01" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
+````
 
-**Example: Python**
-
+````{tab-item} Python
 ```python
 from datetime import datetime, timedelta
-
-def search_recently_updated(days, token, base_url):
-    """Search for individuals updated in the last N days."""
-    since_date = (datetime.now() - timedelta(days=days)).strftime("%Y-%m-%d")
-    params = {"_lastUpdated": f"ge{since_date}"}
-    headers = {"Authorization": f"Bearer {token}"}
-
-    response = requests.get(
-        f"{base_url}/Individual",
-        headers=headers,
-        params=params
-    )
-    response.raise_for_status()
-    return response.json()
+import requests
 
 # Find individuals updated in last 7 days
-results = search_recently_updated(7, token=token, base_url=base_url)
+since_date = (datetime.now() - timedelta(days=7)).strftime("%Y-%m-%d")
+params = {"_lastUpdated": f"ge{since_date}"}
+headers = {"Authorization": f"Bearer {token}"}
+
+response = requests.get(
+    f"{base_url}/Individual",
+    headers=headers,
+    params=params
+)
+response.raise_for_status()
+results = response.json()
 ```
+````
+
+````{tab-item} JavaScript
+```javascript
+// Find individuals updated in last 7 days
+const since = new Date();
+since.setDate(since.getDate() - 7);
+const sinceDate = since.toISOString().split("T")[0];
+
+const response = await fetch(
+  `${baseUrl}/Individual?_lastUpdated=ge${sinceDate}`,
+  { headers: { "Authorization": `Bearer ${token}` } }
+);
+const results = await response.json();
+```
+````
+
+`````
 
 ## Group Search Parameters
 
 ### By Member
 
-```http
-GET /api/v2/spp/Group?member=Individual/urn:gov:ph:psa:national-id|PH-123456789
-```
-
 Find all groups containing a specific individual.
 
-**Example: Python**
+`````{tab-set}
 
+````{tab-item} cURL
+```bash
+curl "https://api.openspp.org/api/v2/spp/Group?member=Individual/urn:gov:ph:psa:national-id|PH-123456789" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+```
+````
+
+````{tab-item} Python
 ```python
-def find_groups_for_individual(individual_ref, token, base_url):
-    """Find all groups an individual belongs to."""
-    params = {"member": individual_ref}
-    headers = {"Authorization": f"Bearer {token}"}
+import requests
 
-    response = requests.get(
-        f"{base_url}/Group",
-        headers=headers,
-        params=params
-    )
-    response.raise_for_status()
-    return response.json()
+params = {"member": "Individual/urn:gov:ph:psa:national-id|PH-123456789"}
+headers = {"Authorization": f"Bearer {token}"}
 
-# Usage
-groups = find_groups_for_individual(
-    individual_ref="Individual/urn:gov:ph:psa:national-id|PH-123456789",
-    token=token,
-    base_url=base_url
+response = requests.get(
+    f"{base_url}/Group",
+    headers=headers,
+    params=params
 )
+response.raise_for_status()
+groups = response.json()
 
 for entry in groups["entry"]:
     group = entry["resource"]
     print(f"Member of: {group['name']}")
 ```
+````
+
+````{tab-item} JavaScript
+```javascript
+const params = new URLSearchParams({
+  member: "Individual/urn:gov:ph:psa:national-id|PH-123456789"
+});
+const response = await fetch(
+  `${baseUrl}/Group?${params}`,
+  { headers: { "Authorization": `Bearer ${token}` } }
+);
+const groups = await response.json();
+groups.entry.forEach(entry => {
+  console.log(`Member of: ${entry.resource.name}`);
+});
+```
+````
+
+`````
 
 ## Pagination
 
@@ -454,39 +560,62 @@ results = search_with_fields(
 
 Combine multiple search parameters (AND logic):
 
-```http
-GET /api/v2/spp/Individual?name=Santos&birthdate=ge1980-01-01&address=Manila
+`````{tab-set}
+
+````{tab-item} cURL
+```bash
+curl "https://api.openspp.org/api/v2/spp/Individual?name=Santos&birthdate=ge1980-01-01&address=Manila&_count=100&_sort=-birthdate" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
+````
 
-**Example: Python**
-
+````{tab-item} Python
 ```python
-def advanced_search(token, base_url, **criteria):
-    """Perform advanced search with multiple criteria."""
-    headers = {"Authorization": f"Bearer {token}"}
+import requests
 
-    response = requests.get(
-        f"{base_url}/Individual",
-        headers=headers,
-        params=criteria
-    )
-    response.raise_for_status()
-    return response.json()
+headers = {"Authorization": f"Bearer {token}"}
+params = {
+    "name": "Santos",
+    "birthdate": ["ge1980-01-01", "le1990-12-31"],
+    "address": "Manila",
+    "gender": "urn:iso:std:iso:5218|2",
+    "_count": 100,
+    "_sort": "-birthdate"
+}
 
-# Complex search
-results = advanced_search(
-    token=token,
-    base_url=base_url,
-    name="Santos",
-    birthdate=["ge1980-01-01", "le1990-12-31"],
-    address="Manila",
-    gender="urn:iso:std:iso:5218|2",
-    _count=100,
-    _sort="-birthdate"
+response = requests.get(
+    f"{base_url}/Individual",
+    headers=headers,
+    params=params
 )
-
+response.raise_for_status()
+results = response.json()
 print(f"Found {results['total']} matching individuals")
 ```
+````
+
+````{tab-item} JavaScript
+```javascript
+const params = new URLSearchParams({
+  name: "Santos",
+  address: "Manila",
+  gender: "urn:iso:std:iso:5218|2",
+  _count: "100",
+  _sort: "-birthdate"
+});
+params.append("birthdate", "ge1980-01-01");
+params.append("birthdate", "le1990-12-31");
+
+const response = await fetch(
+  `${baseUrl}/Individual?${params}`,
+  { headers: { "Authorization": `Bearer ${token}` } }
+);
+const results = await response.json();
+console.log(`Found ${results.total} matching individuals`);
+```
+````
+
+`````
 
 ## Search Score
 
@@ -510,51 +639,71 @@ Higher scores indicate better matches (used for name/text searches).
 
 ## ProgramMembership Search
 
-```http
+`````{tab-set}
+
+````{tab-item} cURL
+```bash
 # By beneficiary
-GET /api/v2/spp/ProgramMembership?beneficiary=Individual/urn:gov:ph:psa:national-id|PH-123
+curl "https://api.openspp.org/api/v2/spp/ProgramMembership?beneficiary=Individual/urn:gov:ph:psa:national-id|PH-123" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 
 # By program
-GET /api/v2/spp/ProgramMembership?program=Program/urn:openspp:program|4Ps
+curl "https://api.openspp.org/api/v2/spp/ProgramMembership?program=Program/urn:openspp:program|4Ps" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 
-# By status
-GET /api/v2/spp/ProgramMembership?status=active
-
-# Combined
-GET /api/v2/spp/ProgramMembership?beneficiary=Group/urn:openspp:group|HH-001&status=active
+# Combined: active enrollments for a group
+curl "https://api.openspp.org/api/v2/spp/ProgramMembership?beneficiary=Group/urn:openspp:group|HH-001&status=active" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
+````
 
-**Example: Python**
-
+````{tab-item} Python
 ```python
-def get_active_enrollments(beneficiary_ref, token, base_url):
-    """Get active program enrollments for a beneficiary."""
-    params = {
-        "beneficiary": beneficiary_ref,
-        "status": "active"
-    }
-    headers = {"Authorization": f"Bearer {token}"}
+import requests
 
-    response = requests.get(
-        f"{base_url}/ProgramMembership",
-        headers=headers,
-        params=params
-    )
-    response.raise_for_status()
-    return response.json()
+# Get active enrollments for a beneficiary
+params = {
+    "beneficiary": "Individual/urn:gov:ph:psa:national-id|PH-123456789",
+    "status": "active"
+}
+headers = {"Authorization": f"Bearer {token}"}
 
-# Usage
-enrollments = get_active_enrollments(
-    beneficiary_ref="Individual/urn:gov:ph:psa:national-id|PH-123456789",
-    token=token,
-    base_url=base_url
+response = requests.get(
+    f"{base_url}/ProgramMembership",
+    headers=headers,
+    params=params
 )
+response.raise_for_status()
+enrollments = response.json()
 
 for entry in enrollments["entry"]:
     membership = entry["resource"]
     print(f"Enrolled in: {membership['program']['display']}")
     print(f"Since: {membership['enrollmentDate']}")
 ```
+````
+
+````{tab-item} JavaScript
+```javascript
+// Get active enrollments for a beneficiary
+const params = new URLSearchParams({
+  beneficiary: "Individual/urn:gov:ph:psa:national-id|PH-123456789",
+  status: "active"
+});
+const response = await fetch(
+  `${baseUrl}/ProgramMembership?${params}`,
+  { headers: { "Authorization": `Bearer ${token}` } }
+);
+const enrollments = await response.json();
+enrollments.entry.forEach(entry => {
+  const m = entry.resource;
+  console.log(`Enrolled in: ${m.program.display}`);
+  console.log(`Since: ${m.enrollmentDate}`);
+});
+```
+````
+
+`````
 
 ## Error Handling
 
