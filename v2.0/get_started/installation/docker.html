@@ -1743,8 +1743,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://get.docker.com<span class="w"> </span>-o<span class="w"> </span>get-docker.sh
 sudo<span class="w"> </span>sh<span class="w"> </span>get-docker.sh
 sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="nv">$USER</span>
-<span class="c1"># Logout and login for group changes to take effect</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must log out and log back in for the group changes to take effect.</p>
 </div>
 <p><strong>macOS:</strong> Download and install <a class="reference external" href="https://docs.docker.com/desktop/install/mac-install/">Docker Desktop for Mac</a>.</p>
 <p><strong>Windows:</strong> Install <a class="reference external" href="https://docs.docker.com/desktop/install/windows-install/">Docker Desktop for Windows</a> with WSL2 backend.</p>
@@ -1771,23 +1774,37 @@ git<span class="w"> </span>--version<span class="w">             </span><span cl
 <div class="section" id="quick-start">
 <h2>Quick start<a class="headerlink" href="#quick-start" title="Permalink to this headline">#</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/OpenSPP/openspp-modules-v2.git
-<span class="nb">cd</span><span class="w"> </span>openspp-modules-v2
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/OpenSPP/OpenSPP2.git
+<span class="nb">cd</span><span class="w"> </span>OpenSPP2
 
 <span class="c1"># Start OpenSPP</span>
 docker<span class="w"> </span>compose<span class="w"> </span>--profile<span class="w"> </span>ui<span class="w"> </span>up<span class="w"> </span>-d
 
 <span class="c1"># Wait for initialization (~60-90 seconds on first run)</span>
-docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>odoo
-<span class="c1"># Look for: "registry: X modules loaded in Y.ZZs"</span>
+docker<span class="w"> </span>compose<span class="w"> </span>--profile<span class="w"> </span>ui<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>openspp
+<span class="c1"># Look for: "Registry loaded in X.XXXs"</span>
 <span class="c1"># Press Ctrl+C to exit logs</span>
 
-<span class="c1"># Find the port</span>
-docker<span class="w"> </span>compose<span class="w"> </span>port<span class="w"> </span>odoo<span class="w"> </span><span class="m">8069</span>
-<span class="c1"># Output: 0.0.0.0:XXXXX -&gt; open http://localhost:XXXXX</span>
+<span class="c1"># Open http://localhost:8069 in your browser</span>
 </pre></div>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If port 8069 is already in use, Docker may assign a different port.
+Find the assigned port by running:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>--profile<span class="w"> </span>ui<span class="w"> </span>port<span class="w"> </span>openspp<span class="w"> </span><span class="m">8069</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Add <code class="docutils literal notranslate"><span class="pre">--build</span></code> to the <code class="docutils literal notranslate"><span class="pre">up</span></code> command to force a rebuild when code or dependencies have changed:
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">--profile</span> <span class="pre">ui</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">--build</span></code></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p><strong>Default credentials:</strong> <code class="docutils literal notranslate"><span class="pre">admin</span></code> / <code class="docutils literal notranslate"><span class="pre">admin</span></code></p>
+</div>
 </div>
 <div class="section" id="what-just-happened">
 <h2>What just happened?<a class="headerlink" href="#what-just-happened" title="Permalink to this headline">#</a></h2>
@@ -1802,7 +1819,7 @@ docker<span class="w"> </span>compose<span class="w"> </span>port<span class="w"
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">db</span></code></p></td>
 <td><p>PostgreSQL 18 with PostGIS 3.6 (spatial extensions)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">odoo</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">openspp</span></code></p></td>
 <td><p>Odoo 19 with OpenSPP modules</p></td>
 </tr>
 </tbody>
@@ -1888,16 +1905,13 @@ docker<span class="w"> </span>compose<span class="w"> </span>port<span class="w"
 <td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">--profile</span> <span class="pre">ui</span> <span class="pre">down</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>View logs</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">logs</span> <span class="pre">-f</span> <span class="pre">odoo</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">--profile</span> <span class="pre">ui</span> <span class="pre">logs</span> <span class="pre">-f</span> <span class="pre">openspp</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>Restart Odoo</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">--profile</span> <span class="pre">ui</span> <span class="pre">restart</span> <span class="pre">odoo</span></code></p></td>
+<tr class="row-odd"><td><p>Restart OpenSPP</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">--profile</span> <span class="pre">ui</span> <span class="pre">restart</span> <span class="pre">openspp</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>Find port</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">port</span> <span class="pre">odoo</span> <span class="pre">8069</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>Shell into container</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">exec</span> <span class="pre">odoo</span> <span class="pre">bash</span></code></p></td>
+<tr class="row-even"><td><p>Shell into container</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">--profile</span> <span class="pre">ui</span> <span class="pre">exec</span> <span class="pre">openspp</span> <span class="pre">bash</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -1930,8 +1944,8 @@ docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">ex
 </div>
 <div class="section" id="restore">
 <h3>Restore<a class="headerlink" href="#restore" title="Permalink to this headline">#</a></h3>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Stop Odoo first</span>
-docker<span class="w"> </span>compose<span class="w"> </span>--profile<span class="w"> </span>ui<span class="w"> </span>stop<span class="w"> </span>odoo
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Stop OpenSPP first</span>
+docker<span class="w"> </span>compose<span class="w"> </span>--profile<span class="w"> </span>ui<span class="w"> </span>stop<span class="w"> </span>openspp
 
 <span class="c1"># Drop and recreate database</span>
 docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>db<span class="w"> </span>dropdb<span class="w"> </span>-U<span class="w"> </span>odoo<span class="w"> </span>openspp
@@ -1940,8 +1954,8 @@ docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">ex
 <span class="c1"># Restore backup</span>
 gunzip<span class="w"> </span>-c<span class="w"> </span>backup_20250108.sql.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-T<span class="w"> </span>db<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>odoo<span class="w"> </span>openspp
 
-<span class="c1"># Start Odoo</span>
-docker<span class="w"> </span>compose<span class="w"> </span>--profile<span class="w"> </span>ui<span class="w"> </span>start<span class="w"> </span>odoo
+<span class="c1"># Start OpenSPP</span>
+docker<span class="w"> </span>compose<span class="w"> </span>--profile<span class="w"> </span>ui<span class="w"> </span>start<span class="w"> </span>openspp
 </pre></div>
 </div>
 </div>
@@ -1961,13 +1975,14 @@ docker<span class="w"> </span>compose<span class="w"> </span>--profile<span clas
 <h2>Are you stuck?<a class="headerlink" href="#are-you-stuck" title="Permalink to this headline">#</a></h2>
 <p><strong>Container won't start</strong></p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check container logs</span>
-docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>odoo
+docker<span class="w"> </span>compose<span class="w"> </span>--profile<span class="w"> </span>ui<span class="w"> </span>logs<span class="w"> </span>openspp
 docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>db
-
-<span class="c1"># Common issue: port conflict</span>
-docker<span class="w"> </span>compose<span class="w"> </span>port<span class="w"> </span>odoo<span class="w"> </span><span class="m">8069</span>
-<span class="c1"># If empty, check if port 8069 is in use: sudo lsof -i :8069</span>
 </pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>A common cause is a port conflict on 8069. Check if another process is using it:
+<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">lsof</span> <span class="pre">-i</span> <span class="pre">:8069</span></code></p>
 </div>
 <p><strong>Can't login with admin/admin</strong>
 The admin password is set during first database initialization. If you've changed it or can't remember:</p>
@@ -1977,17 +1992,17 @@ docker<span class="w"> </span>compose<span class="w"> </span>--profile<span clas
 </pre></div>
 </div>
 <p><strong>Database connection refused</strong></p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if database is healthy</span>
-docker<span class="w"> </span>compose<span class="w"> </span>ps
-<span class="c1"># db should show "healthy" status</span>
-
-<span class="c1"># If not, check db logs</span>
-docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>db
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>ps
 </pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">db</span></code> container should show <code class="docutils literal notranslate"><span class="pre">healthy</span></code> status. If it does not, check the database logs:
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">logs</span> <span class="pre">db</span></code></p>
 </div>
 <p><strong>Modules not loading</strong></p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check ODOO_INIT_MODULES is set correctly</span>
-docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>odoo<span class="w"> </span>printenv<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ODOO
+docker<span class="w"> </span>compose<span class="w"> </span>--profile<span class="w"> </span>ui<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>openspp<span class="w"> </span>printenv<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ODOO
 
 <span class="c1"># Force reinstall</span>
 docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>-v
@@ -2011,7 +2026,9 @@ docker<span class="w"> </span>system<span class="w"> </span>prune<span class="w"
 </div>
 <div class="section" id="production-considerations">
 <h2>Production considerations<a class="headerlink" href="#production-considerations" title="Permalink to this headline">#</a></h2>
-<p>This Docker setup is designed for <strong>evaluation and development</strong>. For production deployments, consider:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This Docker setup is designed for <strong>evaluation and development only</strong>. For production deployments, consider:</p>
 <ul class="simple">
 <li><p>Use a managed PostgreSQL service (AWS RDS, Azure Database, GCP Cloud SQL)</p></li>
 <li><p>Set strong passwords for database and admin accounts</p></li>
@@ -2020,6 +2037,7 @@ docker<span class="w"> </span>system<span class="w"> </span>prune<span class="w"
 <li><p>Configure monitoring and alerting</p></li>
 <li><p>Review the <a class="reference internal" href="../../ops_guide/"><span class="doc">Operations guide</span></a> for operational guidance</p></li>
 </ul>
+</div>
 </div>
 </div>
 </div>
