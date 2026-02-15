@@ -514,6 +514,11 @@ html_theme_options = {
     """,
 }
 
+# Custom version switcher JS
+html_js_files = [
+    'version_switcher.js',
+]
+
 googleanalytics_id = 'G-RS4T4ZPG52'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
