@@ -23,13 +23,13 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency        | Description                                     |
-| ----------------- | ----------------------------------------------- |
-| `base`            | Odoo core framework                             |
-| `mail`            | Mail thread and activities for notifications    |
-| `spp_base_common` | Common OpenSPP utilities                        |
-| `spp_cel_domain`  | CEL expression evaluation for conditional rules |
-| `spp_security`    | Security groups and access control              |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `mail` | Communication and activity tracking |
+| `spp_base_common` | The OpenSPP base module that provides the main menu, gene... |
+| `spp_cel_domain` | Write simple CEL-like expressions to filter records (Open... |
+| `spp_security` | Central security definitions for OpenSPP modules |
 
 ## Key Features
 

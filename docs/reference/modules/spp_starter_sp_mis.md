@@ -22,23 +22,12 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency                      | Description                                        |
-| ------------------------------- | -------------------------------------------------- |
-| **spp_starter_social_registry** | Complete Social Registry foundation                |
-| **spp_programs**                | Program management with eligibility and enrollment |
-| **spp_approval**                | Multi-level approval workflows                     |
-| **spp_event_data**              | Audit trail for program activities                 |
-
-### Included from Social Registry
-
-Everything in `spp_starter_social_registry`:
-
-- Registry management for individuals and groups
-- Change request system for data maintenance
-- API V2 with consent-based access
-- DCI integration for external registries
-- Logic Studio for no-code expressions
-- Standardized vocabularies
+| Dependency | Purpose |
+| --- | --- |
+| `spp_starter_social_registry` | Complete Social Registry bundle with API, DCI, and Change... |
+| `spp_programs` | Manage cash and in-kind entitlements, integrate with inve... |
+| `spp_approval` | Standardized approval workflows with multi-tier sequencin... |
+| `spp_event_data` | Records and tracks events related to individual and group... |
 
 ## Key Features
 

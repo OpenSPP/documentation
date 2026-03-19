@@ -22,14 +22,14 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency          | Description                                |
-| ------------------- | ------------------------------------------ |
-| **base**            | Core Odoo framework                        |
-| **mail**            | Messaging and activity tracking            |
-| **spp_registry**    | OpenSPP registry for registrant management |
-| **spp_base_common** | Common OpenSPP utilities                   |
-| **spp_security**    | OpenSPP security framework                 |
-| **spp_approval**    | Approval workflow support                  |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `mail` | Communication and activity tracking |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `spp_base_common` | The OpenSPP base module that provides the main menu, gene... |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `spp_approval` | Standardized approval workflows with multi-tier sequencin... |
 
 ## Key Features
 
@@ -186,12 +186,3 @@ Use the "Create Event" wizard to record events:
 | Cron Job      | Description                                                |
 | ------------- | ---------------------------------------------------------- |
 | Expire Events | Automatically expires active events past their expiry date |
-
-## Technical Details
-
-### Hooks
-
-The module provides installation hooks:
-
-- `post_init_hook`: Runs after module installation
-- `uninstall_hook`: Cleanup when module is removed

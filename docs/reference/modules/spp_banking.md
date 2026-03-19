@@ -22,19 +22,19 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency       | Description                                |
-| ---------------- | ------------------------------------------ |
-| **spp_security** | OpenSPP security framework                 |
-| **base**         | Core Odoo framework                        |
-| **mail**         | Messaging support                          |
-| **contacts**     | Contact management                         |
-| **spp_registry** | OpenSPP registry for registrant management |
+| Dependency | Purpose |
+| --- | --- |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `base` | Odoo core framework |
+| `mail` | Communication and activity tracking |
+| `contacts` | Base contact model extension |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
 
-### External Python Dependencies
+### External Dependencies
 
-| Package      | Description                                |
-| ------------ | ------------------------------------------ |
-| **schwifty** | IBAN/BIC validation and generation library |
+| Package | Purpose |
+| --- | --- |
+| `schwifty` | |
 
 ## Key Features
 
@@ -122,25 +122,3 @@ The module adds bank details views for:
 - Group registrants
 
 These views integrate with the standard registrant forms.
-
-## Technical Details
-
-### IBAN Computation
-
-```
-IBAN = Country Code + Check Digits + Bank Code + Account Number
-```
-
-The `schwifty` library handles:
-
-- Country-specific formatting rules
-- Check digit calculation
-- Validation of the generated IBAN
-
-### Error Handling
-
-If IBAN generation fails (invalid data), the field remains empty and a warning is logged. This prevents blocking record saves due to incomplete bank data.
-
-### Migration Support
-
-The module includes pre-migration scripts (`19.0.1.0.0`) to handle upgrades from previous versions.

@@ -22,13 +22,13 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency         | Description                                |
-| ------------------ | ------------------------------------------ |
-| **base**           | Core Odoo framework                        |
-| **mail**           | Messaging and notification support         |
-| **spp_registry**   | OpenSPP registry for registrant management |
-| **base_user_role** | Base user role management from OCA         |
-| **spp_security**   | OpenSPP security framework                 |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `mail` | Communication and activity tracking |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `base_user_role` | User role management (OCA) |
+| `spp_security` | Central security definitions for OpenSPP modules |
 
 ## Key Features
 
@@ -98,13 +98,3 @@ Roles are assigned through role lines on the user record:
 | Date From  | Optional start date for the assignment |
 | Date To    | Optional end date for the assignment   |
 | Is Enabled | Toggle to enable/disable the role line |
-
-## Technical Details
-
-### Auto-Install Behavior
-
-This module auto-installs when both `spp_registry` and `base_user_role` are installed, ensuring role management is available whenever the registry is in use.
-
-### Scheduled Actions
-
-The module includes scheduled actions (cron jobs) for maintaining role synchronization across users.

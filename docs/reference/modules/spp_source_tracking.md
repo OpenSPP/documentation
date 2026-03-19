@@ -22,12 +22,12 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency       | Description                                |
-| ---------------- | ------------------------------------------ |
-| **base**         | Core Odoo framework                        |
-| **spp_security** | OpenSPP security framework                 |
-| **spp_registry** | OpenSPP registry for registrant management |
-| **spp_programs** | Program management                         |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `spp_programs` | Manage cash and in-kind entitlements, integrate with inve... |
 
 ## Key Features
 
@@ -171,27 +171,3 @@ Source tracking supports:
 - Data lineage documentation
 - Collection method verification
 - System integration auditing
-
-## Technical Details
-
-### Protected Fields
-
-Original provenance fields are immutable after creation:
-
-- `source_system`
-- `source_reference`
-- `collection_method`
-- `collection_date`
-
-These cannot be modified by `write()` operations.
-
-### Update Tracking
-
-Update provenance is automatically set on every write (unless `skip_source_tracking` context is set).
-
-### Migration Support
-
-The module includes post-migration scripts to:
-
-- Backfill source tracking on existing records
-- Handle schema changes during upgrades

@@ -23,15 +23,15 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency       | Description                             |
-| ---------------- | --------------------------------------- |
-| `base`           | Odoo core framework                     |
-| `mail`           | Email integration and chatter           |
-| `portal`         | Beneficiary self-service portal         |
-| `spp_registry`   | Registrant records for linking          |
-| `spp_area`       | Administrative areas for ticket routing |
-| `spp_user_roles` | Role-based access for GRM teams         |
-| `spp_security`   | Security groups and access control      |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `mail` | Communication and activity tracking |
+| `portal` | Portal access capabilities |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `spp_area` | Establishes direct associations between OpenSPP registran... |
+| `spp_user_roles` | The OpenSPP User Roles module defines and manages distinc... |
+| `spp_security` | Central security definitions for OpenSPP modules |
 
 ## Key Features
 
@@ -182,3 +182,14 @@ When `spp_grm_cel` module is installed:
 - Define escalation rules with CEL expressions
 - Automatic routing based on ticket attributes
 - Complex escalation workflows
+
+```{toctree}
+:maxdepth: 1
+:hidden:
+
+spp_grm_case_link
+spp_grm_cel
+spp_grm_demo
+spp_grm_programs
+spp_grm_registry
+```

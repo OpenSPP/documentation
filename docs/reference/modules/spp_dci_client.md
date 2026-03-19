@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# DCI Client
+# Client
 
 **Module:** `spp_dci_client`
 
@@ -32,18 +32,18 @@ This is a foundation module. Install specialized client modules for specific reg
 | Application | No |
 | Status | Alpha |
 
-### Dependencies
+### Module Dependencies
 
-| Module | Purpose |
-|--------|---------|
+| Dependency | Purpose |
+| --- | --- |
 | `base` | Odoo core framework |
-| `spp_dci` | DCI standards and schemas |
+| `spp_dci` | Core DCI (Digital Convergence Initiative) API components |
 
-### External Python Dependencies
+### External Dependencies
 
 | Package | Purpose |
-|---------|---------|
-| `httpx` | Async HTTP client for API calls |
+| --- | --- |
+| `httpx` | |
 
 ## Data Models
 

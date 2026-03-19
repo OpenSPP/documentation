@@ -22,16 +22,17 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency       | Description                |
-| ---------------- | -------------------------- |
-| **base**         | Core Odoo framework        |
-| **spp_security** | OpenSPP security framework |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `spp_security` | Central security definitions for OpenSPP modules |
 
-### External Python Dependencies
+### External Dependencies
 
-| Package          | Description                          |
-| ---------------- | ------------------------------------ |
-| **cryptography** | Cryptographic primitives and recipes |
+| Package | Purpose |
+| --- | --- |
+| `cryptography` | |
+| `jwcrypto` | |
 
 ## Key Features
 
@@ -138,25 +139,3 @@ Use the "Test Connection" action on the provider registry to verify:
 - Key material is never logged or exposed in error messages
 - Access to key management is restricted to system administrators
 - Connection status helps identify configuration issues
-
-## Technical Details
-
-### Abstract Provider Interface
-
-All providers implement the `spp.key.provider` abstract model with:
-
-| Method                          | Description                          |
-| ------------------------------- | ------------------------------------ |
-| `get_data_key(key_id, version)` | Retrieve encryption key material     |
-| `get_index_salt(purpose)`       | Get salt for blind index computation |
-| `rotate_key(key_id)`            | Create new key version               |
-| `list_key_versions(key_id)`     | List available versions              |
-| `test_connection()`             | Verify backend connectivity          |
-
-### Signature Utilities
-
-The module includes utilities for digital signatures in `utils/signature.py`, supporting:
-
-- Key pair generation
-- Message signing
-- Signature verification

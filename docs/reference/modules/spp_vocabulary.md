@@ -22,11 +22,11 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency       | Description                            |
-| ---------------- | -------------------------------------- |
-| **base**         | Odoo core functionality                |
-| **mail**         | Messaging and activity tracking        |
-| **spp_security** | OpenSPP security groups and privileges |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `mail` | Communication and activity tracking |
+| `spp_security` | Central security definitions for OpenSPP modules |
 
 ## Key Features
 

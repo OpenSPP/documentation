@@ -23,26 +23,26 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Category              | Modules                                                                    | Description                                               |
-| --------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------- |
-| **Core Registry**     | spp_registry, spp_registry_search                                          | Individual and group management with search-first privacy |
-| **Security**          | spp_security                                                               | Role-based access control                                 |
-| **Geographic**        | spp_area                                                                   | Administrative boundary management                        |
-| **Vocabulary**        | spp_vocabulary                                                             | Standardized code lists                                   |
-| **Data Management**   | spp_consent, spp_source_tracking                                           | Consent management and data provenance                    |
-| **Async Processing**  | queue_job                                                                  | Background job processing                                 |
-| **Change Requests**   | spp_change_request_v2, spp_cr_types_base                                   | Data change workflows                                     |
-| **Expression Engine** | spp_cel_domain                                                             | CEL-based expressions                                     |
-| **No-Code UI**        | spp_studio                                                                 | Visual configuration tools                                |
-| **API**               | spp_api_v2, spp_api_v2_data                                                | REST API with consent-based access                        |
-| **DCI Integration**   | spp_dci_client, spp_dci_client_crvs, spp_dci_client_ibr, spp_dci_client_dr | External registry connections                             |
-
-### Auto-Installing Modules
-
-These modules install automatically when dependencies are met:
-
-- **spp_api_v2_vocabulary:** API endpoints for vocabularies (with spp_api_v2 + spp_vocabulary)
-- **spp_api_v2_change_request:** API endpoints for change requests (with spp_api_v2 + spp_change_request_v2)
+| Dependency | Purpose |
+| --- | --- |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `spp_registry_search` | Search-first registry interface for privacy protection |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `spp_area` | Establishes direct associations between OpenSPP registran... |
+| `spp_vocabulary` | OpenSPP: Vocabulary |
+| `spp_consent` | DPV-aligned consent management for social protection prog... |
+| `spp_source_tracking` | Track data provenance and source information for registrants |
+| `job_worker` | Background job worker |
+| `spp_change_request_v2` | Configuration-driven change request system with UX improv... |
+| `spp_cr_types_base` | Basic change request types with field mapping strategy |
+| `spp_cel_domain` | Write simple CEL-like expressions to filter records (Open... |
+| `spp_studio` | No-code customization interface for OpenSPP |
+| `spp_api_v2` | OpenSPP API V2 - Standards-aligned, consent-respecting AP... |
+| `spp_api_v2_data` | REST API endpoints for Variable Data push/pull. |
+| `spp_dci_client` | Base DCI client infrastructure with OAuth2 and data sourc... |
+| `spp_dci_client_crvs` | Connect to CRVS registries via DCI API |
+| `spp_dci_client_ibr` | Connect to IBR for duplication checks via DCI API |
+| `spp_dci_client_dr` | Connect to Disability Registry via DCI API |
 
 ## Key Features
 
