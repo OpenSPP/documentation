@@ -38,24 +38,25 @@ The **OpenSPP Disaster Response Inventory Management (DRIMS)** manages the compl
 
 The OpenSPP DRIMS is an open-source product, built and supported by the OpenSPP community. Read more about installing OpenSPP DRIMS.
 
-<!--
 ## OpenSPP modules included in the OpenSPP DRIMS
 
 The preconfigured OpenSPP DRIMS product is intended to provide the basic use cases of disaster response inventory and coordination management.
 
 The following modules are included in the OpenSPP DRIMS product:
 
-- OpenSPP Base: Provides the fundamental core structure for all profiles and system entities.
-- OpenSPP Base Settings: Provides essential settings and customizations.
-- OpenSPP Area Management: Includes additional features for managing and organizing geographical areas within the system.
-- OpenSPP Approval: Enables multi-tier request approval workflows.
-- OpenSPP Alerts: Manages automated alerts and notifications for stock thresholds and expirations.
-- OpenSPP Audit: Maintains a complete audit trail of all DRIMS operations.
-- OpenSPP Hazard: Supports disaster incident management and incident-based reporting.
-- OpenSPP Inventory Management: Manages warehouses, stock levels, lot tracking, and dispatch operations.
-- OpenSPP User Roles: Manages user access and permissions to ensure secure and role-based operations.
+- **{doc}`OpenSPP Alerts <../../reference/modules/spp_alerts>`**: Manages and dispatches emergency alerts and notifications.
+- **{doc}`OpenSPP Hazard <../../reference/modules/spp_hazard>`**: Records and tracks hazard events and affected areas.
+- **{doc}`OpenSPP GIS <../../reference/modules/spp_gis>`**: Geospatial mapping and geographic analysis for response operations.
+- **{doc}`OpenSPP GIS Reports <../../reference/modules/spp_gis_report>`**: GIS-based spatial reports for disaster response analysis.
+- **{doc}`OpenSPP Security <../../reference/modules/spp_security>`**: Central security definitions for OpenSPP modules.
+- **{doc}`OpenSPP Vocabulary <../../reference/modules/spp_vocabulary>`**: Standardized code list management system for OpenSPP.
+- **{doc}`OpenSPP Area Management <../../reference/modules/spp_area>`**: Establishes direct associations between OpenSPP registrants, beneficiary groups, and their corresponding geographical administrative areas.
+- **{doc}`OpenSPP User Roles <../../reference/modules/spp_user_roles>`**: Defines and manages distinct user roles for area-based access control.
+- **{doc}`OpenSPP Service Points Management <../../reference/modules/spp_service_points>`**: Manages physical or virtual locations for social protection service delivery.
+- **{doc}`OpenSPP Approval <../../reference/modules/spp_approval>`**: Standardized approval workflows with multi-tier sequencing and CEL rules.
+- **{doc}`OpenSPP CEL Domain Query Builder <../../reference/modules/spp_cel_domain>`**: Write simple CEL-like expressions to filter records.
+- **{doc}`OpenSPP Audit <../../reference/modules/spp_audit>`**: Audit logging of user actions and data changes.
 
 ## Expanding DRIMS
 
 The OpenSPP-based DRIMS contains everything necessary to set up a foundational disaster response inventory and coordination system. It can, however, be expanded with additional functionalities to perfectly suit specific operational needs. Read more about module installation.
--->
