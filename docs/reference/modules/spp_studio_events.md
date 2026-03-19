@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# Studio - Events
+# Events
 
 **Module:** `spp_studio_events`
 
@@ -24,10 +24,10 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Module             | Description                                   |
-| ------------------ | --------------------------------------------- |
-| **spp_studio**     | Core Studio interface and mixin functionality |
-| **spp_event_data** | Event data infrastructure and storage         |
+| Dependency | Purpose |
+| --- | --- |
+| `spp_studio` | No-code customization interface for OpenSPP |
+| `spp_event_data` | Records and tracks events related to individual and group... |
 
 ## Key Features
 

@@ -23,31 +23,32 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency           | Purpose                                       |
-| -------------------- | --------------------------------------------- |
-| `account`            | Accounting and fund management                |
-| `web`                | Web interface components                      |
-| `base`               | Odoo core framework                           |
-| `mail`               | Communication and notifications               |
-| `spp_registry`       | Beneficiary registry for enrollment           |
-| `spp_banking`        | Bank account management for payments          |
-| `calendar`           | Scheduling capabilities                       |
-| `product`            | Product catalog for in-kind items             |
-| `stock`              | Inventory management for in-kind distribution |
-| `spp_security`       | Security groups and access control            |
-| `spp_area`           | Geographic targeting                          |
-| `spp_service_points` | Distribution point management                 |
-| `spp_user_roles`     | Role-based access control                     |
-| `spp_base_common`    | OpenSPP main menu integration                 |
-| `spp_approval`       | Approval workflow management                  |
-| `spp_cel_domain`     | CEL expression for eligibility rules          |
-| `spp_cel_widget`     | CEL expression editor UI                      |
+| Dependency | Purpose |
+| --- | --- |
+| `account` | Accounting and invoicing |
+| `web` | Web interface components |
+| `base` | Odoo core framework |
+| `mail` | Communication and activity tracking |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `spp_banking` | OpenSPP Banking: Bank Details |
+| `calendar` | Calendar and scheduling |
+| `product` | Product catalog management |
+| `stock` | Inventory and warehouse management |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `spp_area` | Establishes direct associations between OpenSPP registran... |
+| `spp_service_points` | The OpenSPP Service Points module manages physical or vir... |
+| `spp_user_roles` | The OpenSPP User Roles module defines and manages distinc... |
+| `spp_base_common` | The OpenSPP base module that provides the main menu, gene... |
+| `spp_approval` | Standardized approval workflows with multi-tier sequencin... |
+| `spp_cel_domain` | Write simple CEL-like expressions to filter records (Open... |
+| `spp_cel_widget` | Reusable CEL expression editor with syntax highlighting a... |
+| `job_worker` | Background job worker |
 
 ### External Dependencies
 
-| Package           | Purpose                       |
-| ----------------- | ----------------------------- |
-| `python-dateutil` | Date calculations and parsing |
+| Package | Purpose |
+| --- | --- |
+| `python-dateutil` | |
 
 ## Key Features
 
@@ -241,13 +242,3 @@ Expression-based configuration:
 | Assign       | Link to payment method/service point |
 | Disburse     | Execute payments                     |
 | Reconcile    | Record actual disbursements          |
-
-## Technical Details
-
-| Property       | Value          |
-| -------------- | -------------- |
-| Technical Name | `spp_programs` |
-| Category       | OpenSPP/Core   |
-| Version        | 19.0.2.0.0     |
-| License        | LGPL-3         |
-| Application    | Yes            |

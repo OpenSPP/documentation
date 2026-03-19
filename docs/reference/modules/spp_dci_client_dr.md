@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# DCI Client - Disability Registry
+# Client - Disability
 
 **Module:** `spp_dci_client_dr`
 
@@ -23,10 +23,10 @@ Use this module when your program needs to:
 ## Module Dependencies
 
 | Dependency | Purpose |
-|------------|---------|
-| `spp_dci_client` | Base DCI client infrastructure |
-| `spp_dci_server` | DCI server for bidirectional exchange |
-| `spp_registry` | Registrant data for updates |
+| --- | --- |
+| `spp_dci_client` | Base DCI client infrastructure with OAuth2 and data sourc... |
+| `spp_dci_server` | DCI API server infrastructure with FastAPI routers |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
 
 ## Data Models
 
@@ -125,14 +125,3 @@ Disability data supports program targeting:
 - Eligibility criteria can include disability status
 - Benefit amounts may vary by disability severity
 - Special assistance flags for service delivery
-
-## Technical Details
-
-| Property | Value |
-|----------|-------|
-| Technical Name | `spp_dci_client_dr` |
-| Category | OpenSPP/Integration |
-| Version | 19.0.1.0.0 |
-| License | LGPL-3 |
-| Application | No |
-| Development Status | Alpha |

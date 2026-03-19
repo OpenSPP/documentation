@@ -23,20 +23,20 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency        | Purpose                                   |
-| ----------------- | ----------------------------------------- |
-| `base`            | Odoo core framework                       |
-| `spp_base_common` | OpenSPP main menu and configuration       |
-| `spp_user_roles`  | Area-based role assignments               |
-| `spp_registry`    | Registrant models for area linking        |
-| `queue_job`       | Background processing for bulk operations |
-| `spp_security`    | Security groups and access control        |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `spp_base_common` | The OpenSPP base module that provides the main menu, gene... |
+| `spp_user_roles` | The OpenSPP User Roles module defines and manages distinc... |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `job_worker` | Background job worker |
+| `spp_security` | Central security definitions for OpenSPP modules |
 
 ### External Dependencies
 
-| Package    | Purpose                                 |
-| ---------- | --------------------------------------- |
-| `openpyxl` | Excel file support for area data import |
+| Package | Purpose |
+| --- | --- |
+| `openpyxl` | |
 
 ## Key Features
 
@@ -164,13 +164,3 @@ Area assignments for access control:
 | Field          | Purpose                                     |
 | -------------- | ------------------------------------------- |
 | Assigned Areas | Areas the user can access (for local roles) |
-
-## Technical Details
-
-| Property       | Value        |
-| -------------- | ------------ |
-| Technical Name | `spp_area`   |
-| Category       | OpenSPP/Core |
-| Version        | 19.0.1.3.1   |
-| License        | LGPL-3       |
-| Application    | Yes          |

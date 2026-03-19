@@ -22,13 +22,13 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency           | Description                                |
-| -------------------- | ------------------------------------------ |
-| **spp_registry**     | OpenSPP registry for registrant management |
-| **phone_validation** | Phone number formatting and validation     |
-| **spp_area**         | Geographical area hierarchy                |
-| **spp_security**     | OpenSPP security framework                 |
-| **spp_vocabulary**   | Controlled vocabulary management           |
+| Dependency | Purpose |
+| --- | --- |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `phone_validation` | Phone number validation and formatting |
+| `spp_area` | Establishes direct associations between OpenSPP registran... |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `spp_vocabulary` | OpenSPP: Vocabulary |
 
 ## Key Features
 
@@ -147,13 +147,3 @@ The module defines a dedicated security group for service point users:
 ### Record Rules
 
 Access rules ensure users can only view and manage service points within their authorized scope based on area assignments.
-
-## Technical Details
-
-### Application Module
-
-This module is marked as an Odoo application (`application: True`), meaning it appears in the Apps menu and can be installed independently.
-
-### Registrant Service Point Computation
-
-When a registrant's parent (group/household) changes, the system automatically recomputes their service point associations based on the new parent's linked service points.

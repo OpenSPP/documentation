@@ -22,11 +22,11 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Module           | Description                              |
-| ---------------- | ---------------------------------------- |
-| **base**         | Odoo core functionality                  |
-| **spp_registry** | Core registry for individuals and groups |
-| **spp_security** | Security group management                |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `spp_security` | Central security definitions for OpenSPP modules |
 
 ## Key Features
 

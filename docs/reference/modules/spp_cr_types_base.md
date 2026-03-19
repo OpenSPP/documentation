@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# CR Types - Base
+# Base Types
 
 **Module:** `spp_cr_types_base`
 
@@ -22,9 +22,9 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Module                    | Description                                  |
-| ------------------------- | -------------------------------------------- |
-| **spp_change_request_v2** | Change request infrastructure and processing |
+| Dependency | Purpose |
+| --- | --- |
+| `spp_change_request_v2` | Configuration-driven change request system with UX improv... |
 
 ## Included Change Request Types
 

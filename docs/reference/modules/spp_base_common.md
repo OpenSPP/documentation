@@ -23,14 +23,14 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency            | Purpose                                                          |
-| --------------------- | ---------------------------------------------------------------- |
-| `base`                | Odoo core framework                                              |
-| `spp_user_roles`      | Role-based access control with global and local role definitions |
-| `spp_hide_menus_base` | Menu visibility management for cleaner UI                        |
-| `spp_base_setting`    | Country office and organizational configuration                  |
-| `spp_registry`        | Core beneficiary and group registry                              |
-| `spp_security`        | Central security group and privilege definitions                 |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `spp_user_roles` | The OpenSPP User Roles module defines and manages distinc... |
+| `spp_hide_menus_base` | Administrators can manage the visibility of OpenSPP navig... |
+| `spp_base_setting` | OpenSPP Base Setting provides fundamental configurations ... |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `spp_security` | Central security definitions for OpenSPP modules |
 
 ## Key Features
 
@@ -80,16 +80,6 @@ Implementation-specific modules (e.g., for a specific country deployment) should
     # Implementation-specific dependencies
 ]
 ```
-
-## Technical Details
-
-| Property       | Value                      |
-| -------------- | -------------------------- |
-| Technical Name | `spp_base_common`          |
-| Category       | OpenSPP/Core               |
-| Version        | 19.0.1.3.0                 |
-| License        | LGPL-3                     |
-| Application    | No (infrastructure module) |
 
 ## See Also
 

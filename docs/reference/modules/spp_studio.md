@@ -24,19 +24,22 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Module               | Description                                           |
-| -------------------- | ----------------------------------------------------- |
-| **spp_registry**     | Core registry for individuals and groups              |
-| **spp_programs**     | Program management functionality                      |
-| **spp_custom_field** | Foundation for custom field definitions               |
-| **spp_cel_domain**   | Unified variable system and CEL expression evaluation |
-| **spp_cel_widget**   | CEL expression editor widget                          |
-| **spp_vocabulary**   | Controlled vocabularies for tags and categories       |
-| **spp_approval**     | Approval workflow integration                         |
-| **spp_versioning**   | Version history with scheduled activation             |
-| **spp_audit**        | Audit trail logging                                   |
-| **spp_security**     | Security group management                             |
-| **spp_user_roles**   | User role definitions                                 |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `mail` | Communication and activity tracking |
+| `spp_audit` | Comprehensively tracks all data modifications and user ac... |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `spp_base_common` | The OpenSPP base module that provides the main menu, gene... |
+| `spp_programs` | Manage cash and in-kind entitlements, integrate with inve... |
+| `spp_user_roles` | The OpenSPP User Roles module defines and manages distinc... |
+| `spp_custom_field` | The module enables administrators to define and add custo... |
+| `spp_cel_domain` | Write simple CEL-like expressions to filter records (Open... |
+| `spp_cel_widget` | Reusable CEL expression editor with syntax highlighting a... |
+| `spp_vocabulary` | OpenSPP: Vocabulary |
+| `spp_approval` | Standardized approval workflows with multi-tier sequencin... |
+| `spp_versioning` | Artifact versioning with scheduled activation |
 
 ## Key Features
 
@@ -140,3 +143,12 @@ Logic can be used in event-triggered calculations:
 - {doc}`spp_studio_events` - No-code event type designer
 - {doc}`spp_studio_change_requests` - No-code change request type builder
 - {doc}`spp_custom_field` - Foundation for custom fields
+
+```{toctree}
+:maxdepth: 1
+:hidden:
+
+spp_studio_api_v2
+spp_studio_change_requests
+spp_studio_events
+```

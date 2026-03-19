@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# DCI Client - CRVS
+# Client - CRVS
 
 **Module:** `spp_dci_client_crvs`
 
@@ -24,12 +24,12 @@ Use this module if you need to:
 
 If you only need basic registry management without external CRVS integration, see {doc}`spp_registry` instead.
 
-## Dependencies
+## Module Dependencies
 
-| Module | Purpose |
-|--------|---------|
-| `spp_dci_client` | Base DCI client infrastructure |
-| `spp_registry` | Registrant data for matching and updates |
+| Dependency | Purpose |
+| --- | --- |
+| `spp_dci_client` | Base DCI client infrastructure with OAuth2 and data sourc... |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
 
 ## Key Features
 
@@ -173,13 +173,3 @@ failed_events = env["spp.dci.crvs.event"].search([("state", "=", "error")])
 # Retry processing
 failed_events.action_retry_processing()
 ```
-
-## Technical Details
-
-| Property | Value |
-|----------|-------|
-| Technical Name | `spp_dci_client_crvs` |
-| Category | OpenSPP/Integration |
-| Version | 19.0.1.0.0 |
-| License | LGPL-3 |
-| Development Status | Alpha |

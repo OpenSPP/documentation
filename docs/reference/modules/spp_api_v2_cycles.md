@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# API V2 - Cycles
+# Cycles
 
 **Module:** `spp_api_v2_cycles`
 
@@ -21,10 +21,10 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency       | Description                                                   |
-| ---------------- | ------------------------------------------------------------- |
-| **spp_api_v2**   | Core API V2 module providing authentication and base patterns |
-| **spp_programs** | Program and cycle management models                           |
+| Dependency | Purpose |
+| --- | --- |
+| `spp_api_v2` | OpenSPP API V2 - Standards-aligned, consent-respecting AP... |
+| `spp_programs` | Manage cash and in-kind entitlements, integrate with inve... |
 
 ## Key Features
 

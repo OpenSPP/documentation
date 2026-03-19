@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# CEL Expression Widget
+# Expression Widget
 
 **Module:** `spp_cel_widget`
 
@@ -22,10 +22,10 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency       | Description                                   |
-| ---------------- | --------------------------------------------- |
-| `web`            | Odoo web framework for frontend components    |
-| `spp_cel_domain` | CEL expression parsing and compilation engine |
+| Dependency | Purpose |
+| --- | --- |
+| `web` | Web interface components |
+| `spp_cel_domain` | Write simple CEL-like expressions to filter records (Open... |
 
 ## Key Features
 
