@@ -1,8 +1,8 @@
 name: Build and deploy multi-version OpenSPP documentation
 
 # This workflow builds and deploys multi-version documentation:
-# - v1.3 (stable) from stable branch -> root (/)
-# - v2.0 from v2-odoo19-doc-refresh branch -> /v2.0/
+# - v2.0 from v2-odoo19-doc-refresh branch -> root (/)
+# - v1.3 (stable) from stable branch -> /v1.3/
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
           sudo apt-get install -y graphviz libsasl2-dev libldap2-dev libssl-dev
 
       # ============================================
-      # BUILD v1.3 (from stable branch) -> ROOT
+      # BUILD v1.3 (from stable branch) -> /v1.3/
       # ============================================
       - name: Install v1.3 dependencies (stable)
         run: |
@@ -47,17 +47,17 @@ jobs:
           # Save version_switcher.js for later (before switching branches)
           cp docs/_static/version_switcher.js /tmp/version_switcher.js
 
-      - name: Build v1.3 documentation (root)
+      - name: Build v1.3 documentation (/v1.3/)
         run: |
           set -e
           rm -rf _build/
           export DOCS_VERSION=1.3
-          export DOCS_BASEURL=https://docs.openspp.org/
-          sphinx-build -b html docs _build/html
+          export DOCS_BASEURL=https://docs.openspp.org/v1.3/
+          sphinx-build -b html docs _build/html/v1.3
           echo "v1.3 build complete"
 
       # ============================================
-      # BUILD v2.0 (from v2-odoo19-doc-refresh branch) -> /v2.0/
+      # BUILD v2.0 (from v2-odoo19-doc-refresh branch) -> ROOT
       # ============================================
       - name: Checkout v2 docs
         run: |
@@ -76,13 +76,13 @@ jobs:
           # Install any additional requirements for v2
           pip install -q -r requirements_frozen.txt || pip install -q -r requirements.txt
 
-      - name: Build v2.0 documentation (/v2.0/)
+      - name: Build v2.0 documentation (root)
         run: |
           set -e
           rm -rf _build/
           export DOCS_VERSION=2.0
-          export DOCS_BASEURL=https://docs.openspp.org/v2.0/
-          sphinx-build -b html docs _build/html/v2.0
+          export DOCS_BASEURL=https://docs.openspp.org/
+          sphinx-build -b html docs _build/html
           echo "v2.0 build complete"
 
       # ============================================
@@ -90,9 +90,10 @@ jobs:
       # ============================================
       - name: Combine builds
         run: |
-          # Move v1.3 build back as root
-          mv /tmp/v1.3-build/* _build/html/
-          echo "Combined v1.3 (root) and v2.0 (/v2.0/)"
+          # v1.3 was built to _build/html/v1.3, saved as /tmp/v1.3-build (contains v1.3/ subdir)
+          # v2.0 is at _build/html (root) — move v1.3 build back under it
+          mv /tmp/v1.3-build/v1.3 _build/html/v1.3
+          echo "Combined v2.0 (root) and v1.3 (/v1.3/)"
 
       - name: Setup version switcher
         run: |
@@ -102,25 +103,25 @@ jobs:
           cat > _build/html/_static/switcher.json << 'EOF'
           [
               {
-                  "name": "1.3",
-                  "version": "1.3",
+                  "name": "2.0",
+                  "version": "2.0",
                   "url": "https://docs.openspp.org/"
               },
               {
-                  "name": "2.0",
-                  "version": "2.0",
-                  "url": "https://docs.openspp.org/v2.0/"
+                  "name": "1.3",
+                  "version": "1.3",
+                  "url": "https://docs.openspp.org/v1.3/"
               }
           ]
           EOF
 
-          # Copy to v2.0
-          cp _build/html/_static/switcher.json _build/html/v2.0/_static/
+          # Copy to v1.3
+          cp _build/html/_static/switcher.json _build/html/v1.3/_static/
 
           # Copy version_switcher.js from stable (saved earlier) to both builds
           # This ensures we use the fixed version with proper regex
           cp /tmp/version_switcher.js _build/html/_static/
-          cp /tmp/version_switcher.js _build/html/v2.0/_static/
+          cp /tmp/version_switcher.js _build/html/v1.3/_static/
 
           echo "Version switcher configured"
 
@@ -138,11 +139,11 @@ jobs:
           echo "Multi-version documentation build complete"
           echo "============================================"
           echo ""
-          echo "v1.3 (root):"
+          echo "v2.0 (root):"
           ls -la _build/html/ | head -10
           echo ""
-          echo "v2.0 (/v2.0/):"
-          ls -la _build/html/v2.0/ | head -10
+          echo "v1.3 (/v1.3/):"
+          ls -la _build/html/v1.3/ | head -10
           echo ""
           echo "Version switcher:"
           cat _build/html/_static/switcher.json
@@ -182,7 +183,7 @@ jobs:
 
           # Commit and push
           git add -A
-          git commit -m "Deploy multi-version documentation (v1.3 + v2.0)" || echo "No changes to commit"
+          git commit -m "Deploy multi-version documentation (v2.0 + v1.3)" || echo "No changes to commit"
           git push origin cf-pages
 
           # Clean up
@@ -195,5 +196,5 @@ jobs:
           echo "============================================"
           echo ""
           echo "URLs:"
-          echo "  - v1.3: https://docs.openspp.org/"
-          echo "  - v2.0: https://docs.openspp.org/v2.0/"
+          echo "  - v2.0: https://docs.openspp.org/"
+          echo "  - v1.3: https://docs.openspp.org/v1.3/"
