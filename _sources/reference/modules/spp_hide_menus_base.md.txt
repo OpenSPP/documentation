@@ -1,41 +1,80 @@
 ---
-orphan: true
+openspp:
+  doc_status: draft
 ---
 
-# Hide Non-OpenSPP Menus: Base
+# Hide Menus Base
 
-The OpenSPP Hide Menus Base module provides a robust mechanism for administrators to control the visibility of menu items within the OpenSPP platform. It enables precise customization of the user interface, ensuring that different user roles encounter a streamlined and relevant set of functionalities.
+**Module:** `spp_hide_menus_base`
+
+## Overview
+
+The Hide Menus Base module allows administrators to control the visibility of navigation menus in OpenSPP. This streamlines the user interface by hiding non-essential menus for specific user groups, reducing complexity and focusing users on relevant functionality.
 
 ## Purpose
 
-This module empowers administrators to tailor the OpenSPP user experience by managing menu visibility. It simplifies navigation and enhances security by ensuring users only see the options pertinent to their roles and responsibilities.
+This module is designed to:
 
-*   **Customize User Interface:** Tailor the OpenSPP navigation menu to match specific program requirements or user roles. For instance, hide complex administrative menus from field agents.
-*   **Streamline Navigation:** Reduce menu clutter for users by showing only relevant options, improving efficiency and reducing cognitive load.
-*   **Enforce Access Control:** Complement existing security settings by visually hiding menus from unauthorized user groups, reinforcing data security.
-*   **Flexible Visibility Management:** Easily hide or restore menu items as program needs evolve, without requiring complex technical adjustments.
+- **Simplify navigation:** Hide menus that are not relevant to specific user roles
+- **Reduce interface clutter:** Remove non-OpenSPP menus from the navigation for focused workflows
+- **Maintain flexibility:** Allow administrators to show or hide menus as needed
+- **Support extensibility:** Provide a foundation for other modules to control menu visibility
 
-## Dependencies and Integration
+## Module Dependencies
 
-The `spp_hide_menus_base` module integrates directly with the core OpenSPP framework to manage interface elements.
+| Dependency       | Description                            |
+| ---------------- | -------------------------------------- |
+| **base**         | Odoo core menu system                  |
+| **spp_security** | OpenSPP security groups and privileges |
 
-*   This module depends on the fundamental Base module, which provides the core Odoo framework. This includes essential components like `ir.ui.menu` (menu items) and `res.groups` (user groups), which `spp_hide_menus_base` directly manipulates to control visibility.
-*   `spp_hide_menus_base` acts as a foundational tool for user interface customization. Other OpenSPP modules can leverage its capabilities to provide a cleaner, more focused experience for users engaged in specific program workflows, by allowing administrators to hide irrelevant options.
+## Key Features
 
-## Additional Functionality
+### Menu Visibility Configuration
 
-### Configure Menu Visibility
+Administrators can configure which menus are visible or hidden:
 
-Administrators can select any existing menu item within OpenSPP and define its visibility state. By setting a menu to "Hide," the module automatically restricts its access to a specific "Show Non-OpenSPP Menus" group, effectively making it invisible to most users. This allows for precise control over which functionalities are exposed to different user populations, such as hiding advanced reporting from data entry clerks.
+| Field          | Description                                      |
+| -------------- | ------------------------------------------------ |
+| Menu           | The Odoo menu item to control                    |
+| State          | Show or Hidden                                   |
+| Default Groups | Original security groups (preserved when hiding) |
+| XML ID         | Technical identifier for the menu                |
 
-### Restore Hidden Menus
+### Hide and Show Operations
 
-The module provides a straightforward way to revert hidden menus to their original visibility settings. When a menu's state is changed back to "Show," the module restores its previous access groups, making it visible again. This ensures that administrators can easily manage and unhide menus without manually reconfiguring complex access rights.
+The module provides two main operations:
 
-### Enhanced Role-Based Access
+**Hide Menu:**
 
-By linking menu visibility to specific user groups, this module enhances OpenSPP's role-based access control. For example, program managers might see a comprehensive set of menus, while field agents are presented only with menus essential for their data collection and beneficiary registration tasks. This targeted approach reduces clutter and prevents users from seeing irrelevant options.
+1. Stores the menu's current group assignments
+2. Replaces groups with the "Hide Menus User" group
+3. Updates state to "Hidden"
 
-## Conclusion
+**Show Menu:**
 
-The `spp_hide_menus_base` module is a crucial tool for customizing the OpenSPP user interface, ensuring that users encounter a streamlined, role-specific experience tailored to their program responsibilities.
+1. Restores the original group assignments
+2. Updates state to "Show"
+
+### Security Group
+
+| Group           | Description                              |
+| --------------- | ---------------------------------------- |
+| Hide Menus User | Users in this group can see hidden menus |
+
+By default, only users explicitly added to this group will see menus that have been hidden.
+
+### Non-Destructive Changes
+
+Menu visibility changes are reversible:
+
+- Original group assignments are preserved
+- Showing a hidden menu restores original permissions
+- No menu records are deleted
+
+## Integration
+
+The Hide Menus Base module integrates with:
+
+- **ir.ui.menu:** Modifies Odoo's core menu visibility through group assignments
+- **spp_security:** Works within OpenSPP's security framework
+- **Other hide_menus modules:** Provides the base infrastructure for domain-specific menu hiding

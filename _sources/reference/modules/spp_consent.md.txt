@@ -1,41 +1,174 @@
 ---
-orphan: true
+openspp:
+  doc_status: draft
 ---
 
 # Consent
 
-The OpenSPP Consent module provides a comprehensive system for managing and tracking explicit consent from individuals and groups within social protection programs and farmer registries. It ensures that all necessary permissions, such as for data collection, program participation, or data sharing, are properly recorded and monitored.
+**Module:** `spp_consent`
 
-## Purpose
+## Overview
 
-The OpenSPP Consent module enables organizations to effectively manage participant consent, addressing critical requirements for data privacy, program compliance, and ethical data handling. It achieves this by:
+This reference is for **implementers** and **sys admins** who need to understand consent management capabilities and configuration options.
 
-*   **Recording Explicit Consent:** Captures and stores specific consent agreements from individuals or groups, detailing what they have consented to.
-*   **Associating Consent with Registrants:** Links consent records directly to individual registrants or groups, ensuring clear accountability.
-*   **Tracking Consent Validity:** Manages consent records with defined expiry dates, allowing for proactive monitoring and renewal.
-*   **Configuring Consent Types:** Allows administrators to define various types of consent, such as "Data Sharing Consent" or "Program Participation Consent," to suit diverse program needs.
-*   **Ensuring Compliance:** Provides a structured framework to meet regulatory and ethical requirements for data protection and participant engagement.
+The Consent module provides standards-compliant consent management for social protection programs. It tracks explicit consent from individuals and groups, supporting both GDPR compliance and international data privacy standards.
 
-## Dependencies and Integration
+Use this module when your program needs to:
 
-The OpenSPP Consent module integrates deeply with the core OpenSPP registry modules, leveraging existing registrant structures and extending their capabilities.
+- Record and track beneficiary consent for data collection and sharing
+- Support category-based consent (e.g., "share with all NGOs")
+- Maintain audit trails for accountability requirements
+- Export consent records in interoperable formats
 
-*   **[G2P Registry Base](g2p_registry_base)**: This module extends the foundational `res.partner` model, which is used by G2P Registry Base to represent all registrants. Consent records are directly linked to these registrant entities, whether they are individuals or groups.
-*   **[G2P Registry Individual](g2p_registry_individual)**: It allows for the recording of consent specifically from individual registrants managed within this module, ensuring that personal data handling is transparent and authorized.
-*   **[G2P Registry Group](g2p_registry_group)**: The module supports obtaining and tracking consent from groups, such as households or farmer cooperatives, managed through the G2P Registry Group module. This is vital for programs that operate at a collective level.
-*   **[G2P Registry Membership](g2p_registry_membership)**: While not a direct dependency for core functionality, the consent module implicitly supports scenarios where consent might be required for an individual's membership within a group, or for a group's participation in a program.
+## Standards Compliance
 
-This module primarily serves other OpenSPP modules by providing a standardized and auditable mechanism for consent management. Any module that collects or processes registrant data can rely on `spp_consent` to ensure that the necessary permissions are in place.
+| Standard              | Description                           |
+| --------------------- | ------------------------------------- |
+| ISO/IEC TS 27560:2023 | Consent record information structure  |
+| ISO/IEC 29184:2020    | Online privacy notices and consent    |
+| W3C DPV v2            | Data Privacy Vocabulary for semantics |
+| GDPR                  | Articles 6, 7, and 9 compliance       |
 
-## Additional Functionality
+## Module Dependencies
 
-The OpenSPP Consent module offers key features to streamline consent management:
+| Dependency     | Purpose                              |
+| -------------- | ------------------------------------ |
+| `base`         | Odoo core framework                  |
+| `mail`         | Communication and activity tracking  |
+| `spp_registry` | Registrant data for consent subjects |
+| `spp_security` | Security groups and access control   |
 
-*   **Recording and Tracking Consent**: Users can record new consent agreements for any individual registrant or group. Each consent record captures the specific agreement (e.g., "Consent to share health data") and a mandatory expiry date. This ensures that consent is always time-bound and subject to review or renewal.
-*   **Configuring Consent Types**: The module allows administrators to define different types of consent through the 'Consent Configuration' model. This enables flexible categorization of consent requirements, such as "Data Collection Consent" or "Program Benefit Consent," aligning with specific program policies.
-*   **Monitoring Expired Consents**: The system provides dedicated views to identify and manage consent records that have expired. This proactive monitoring helps programs ensure ongoing compliance and facilitates timely re-consent processes with registrants.
-*   **Integrated Consent Management Workflow**: A user-friendly wizard facilitates the process of recording consent, whether from an individual signatory or on behalf of a group. This ensures consistency and simplifies the data entry process for program staff.
+## Key Features
 
-## Conclusion
+### Consent Record Structure
 
-The OpenSPP Consent module is an essential component of the OpenSPP platform, providing a robust and flexible framework for managing and tracking participant consent. It underpins ethical data practices and ensures program compliance by making consent an integral part of registrant management.
+Implements ISO 27560's four-section structure:
+
+| Section           | Contents                                           |
+| ----------------- | -------------------------------------------------- |
+| Header/Metadata   | External ID, schema version, timestamps            |
+| Parties           | Data subject, controller, recipients, delegation   |
+| Processing        | Purposes, legal basis, data categories, operations |
+| Consent Specifics | Status, validity period, withdrawal mechanism      |
+
+### Consent Status Lifecycle
+
+| Status      | Description                           |
+| ----------- | ------------------------------------- |
+| Requested   | Consent has been requested            |
+| Given       | Consent actively granted              |
+| Renewed     | Consent renewed after expiry          |
+| Refused     | Consent explicitly refused            |
+| Withdrawn   | Previously given consent withdrawn    |
+| Expired     | Consent validity period has ended     |
+| Invalidated | Consent invalidated for other reasons |
+
+### Two-Mode Consent Matching
+
+**Specific Organization Mode:**
+Traditional consent where beneficiaries explicitly consent to named organizations.
+
+**Category-Based Mode:**
+Flexible consent where beneficiaries consent to organization categories:
+
+| Example                                                              |
+| -------------------------------------------------------------------- |
+| "I consent to share with all NGOs and UN agencies"                   |
+| "I consent to share with government agencies but not private sector" |
+
+### DPV Taxonomies
+
+**Purpose Hierarchy:**
+
+| Category          | Examples                     |
+| ----------------- | ---------------------------- |
+| Service Provision | Enrollment, benefit delivery |
+| Personalisation   | Targeting, recommendations   |
+| Research          | Analytics, impact evaluation |
+
+**Personal Data Categories:**
+
+| Type              | Examples                              |
+| ----------------- | ------------------------------------- |
+| Regular           | Name, address, phone                  |
+| Sensitive (Art.9) | Health, biometric, racial/ethnic data |
+
+**Processing Operations:**
+
+| Operation | Risk Level |
+| --------- | ---------- |
+| Collect   | Low        |
+| Store     | Low        |
+| Use       | Medium     |
+| Share     | High       |
+| Delete    | Low        |
+
+### Collection Methods
+
+| Method           | Description                    |
+| ---------------- | ------------------------------ |
+| Written          | Signed paper form              |
+| Verbal Witnessed | Verbal consent with witness    |
+| Electronic       | Digital consent via system     |
+| Biometric        | Fingerprint or other biometric |
+
+## Data Models
+
+| Model                       | Purpose                                 |
+| --------------------------- | --------------------------------------- |
+| `spp.consent`               | Main consent record (ISO 27560)         |
+| `spp.consent.history`       | Version history for audit trail         |
+| `spp.consent.purpose`       | DPV-aligned purpose taxonomy            |
+| `spp.consent.personal.data` | DPV-aligned data categories             |
+| `spp.consent.processing`    | DPV-aligned processing operations       |
+| `spp.consent.notice`        | ISO 29184 privacy notices               |
+| `spp.consent.org.type`      | Organization type categories            |
+| `spp.consent.mixin`         | Mixin to add consent tracking to models |
+
+## Security Model
+
+Follows the three-tier access control pattern:
+
+| Role    | Permissions                                |
+| ------- | ------------------------------------------ |
+| Viewer  | Read-only access to consent records        |
+| Officer | Create and modify consent records          |
+| Manager | Full CRUD including taxonomy configuration |
+
+## Technical Details
+
+| Property       | Value         |
+| -------------- | ------------- |
+| Technical Name | `spp_consent` |
+| Category       | OpenSPP       |
+| Version        | 19.0.2.0.0    |
+| License        | LGPL-3        |
+| Application    | No            |
+
+## Integration
+
+### Checking Consent Programmatically
+
+Use the `check_consent()` method to validate consent before data sharing:
+
+```python
+consent_valid = registrant.check_consent(
+    purpose='service_provision',
+    recipient_org_type='ngo'
+)
+```
+
+### Export Formats
+
+| Format          | Description                      |
+| --------------- | -------------------------------- |
+| JSON-LD         | W3C standard with DPV vocabulary |
+| Consent Receipt | ISO 27560 standardized receipt   |
+
+## User Interface
+
+| Feature              | Description                                    |
+| -------------------- | ---------------------------------------------- |
+| Recording Wizard     | User-friendly consent recording with filtering |
+| Expired Consent View | Identify and manage expired consents           |
+| Bulk Recording       | Record consent for multiple registrants        |

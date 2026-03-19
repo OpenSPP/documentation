@@ -1,57 +1,184 @@
 ---
-orphan: true
+openspp:
+  doc_status: draft
 ---
 
 # Grievance Redress Mechanism
 
-The OpenSPP Grm module provides a robust Grievance Redress Mechanism (GRM) for managing and resolving complaints and feedback within social protection programs and farmer registries. It offers a structured way to receive, track, and address issues raised by registrants.
+**Module:** `spp_grm`
+
+## Overview
+
+The Grievance Redress Mechanism module (`spp_grm`) provides a centralized system for receiving, tracking, and resolving beneficiary complaints and feedback. It supports multi-channel submission, manages resolution workflows through customizable stages, and links grievances directly to individual or group registrants.
 
 ## Purpose
 
-The OpenSPP Grm module enables organizations to manage grievances effectively, fostering accountability and transparency. It ensures that feedback from beneficiaries and stakeholders is systematically captured and addressed.
+This module is designed to:
 
-Key capabilities include:
+- **Centralize complaint management:** Single system for all grievance channels
+- **Track resolution progress:** Stage-based workflow with SLA monitoring
+- **Link to registrants:** Connect complaints to existing beneficiary records
+- **Support accountability:** Full audit trail of ticket handling
+- **Enable escalation:** Automatic and manual escalation for overdue tickets
 
-*   **Centralized Grievance Management**: Provides a single system for logging, tracking, and resolving all incoming grievances, ensuring no issue is overlooked.
-*   **Multi-Channel Intake**: Supports grievance submission through various channels, including direct entry by staff, automated creation from emails, and registrant self-service via a dedicated portal.
-*   **Structured Workflow**: Defines clear, customizable stages for each grievance, guiding staff through the resolution process from initial receipt to closure.
-*   **Enhanced Communication**: Facilitates timely and transparent communication with registrants, including automated notifications on status changes and a dedicated portal for tracking.
-*   **Performance Monitoring**: Allows for categorization, prioritization, and assignment of grievances, providing insights into common issues and team performance.
+## Module Dependencies
 
-This module ensures that registrants have a clear avenue to voice concerns and receive timely responses, improving program trust and effectiveness.
+| Dependency       | Description                             |
+| ---------------- | --------------------------------------- |
+| `base`           | Odoo core framework                     |
+| `mail`           | Email integration and chatter           |
+| `portal`         | Beneficiary self-service portal         |
+| `spp_registry`   | Registrant records for linking          |
+| `spp_area`       | Administrative areas for ticket routing |
+| `spp_user_roles` | Role-based access for GRM teams         |
+| `spp_security`   | Security groups and access control      |
 
-## Dependencies and Integration
+## Key Features
 
-The spp_grm module integrates with core OpenSPP components to provide a comprehensive grievance management solution:
+### Ticket Management
 
-*   **Portal**: Enables registrants to submit new grievances and track the status of their existing tickets through a secure online portal.
-*   **Mail (mail)**: Leverages Odoo's mail system to automatically create grievance tickets from incoming emails and send automated notifications to registrants when a ticket's status changes.
-*   **[G2P Registry: Base](g2p_registry_base)**, **[G2P Registry: Individual](g2p_registry_individual)**, and **[G2P Registry: Group](g2p_registry_group)**: Links grievances directly to specific registrants, whether individuals or groups, ensuring all communication and history are tied to the correct profile. This provides a complete view of a registrant's interactions.
-*   **[OpenSPP Area](spp_area)**: While spp_grm does not directly manage geographical areas, it works with registrants who are associated with specific areas via the spp_area module. This allows for location-aware grievance management and reporting.
-*   **[OpenSPP User Roles](spp_user_roles)**: Integrates with user role management to assign grievances to appropriate staff based on their roles and potentially restrict access to tickets based on assigned areas, ensuring staff manage only relevant grievances.
+Core ticket fields:
 
-## Additional Functionality
+| Field       | Description                             |
+| ----------- | --------------------------------------- |
+| Number      | Auto-generated unique identifier        |
+| Title       | Brief description of the complaint      |
+| Description | Detailed complaint text                 |
+| Contact     | Linked registrant (individual or group) |
+| Category    | Primary classification                  |
+| Subcategory | Secondary classification                |
+| Priority    | Low, Medium, High, Very High            |
+| Severity    | Low, Medium, High, Critical             |
 
-The spp_grm module offers a range of features to streamline grievance management:
+### Multi-Channel Intake
 
-### Grievance Intake and Creation
-Users can create new grievance tickets manually within the system, or tickets can be automatically generated from incoming emails. Registrants can also submit grievances directly through the OpenSPP portal, which automatically creates a new ticket. Each ticket receives a unique identifier for easy tracking.
+| Channel   | Description                                   |
+| --------- | --------------------------------------------- |
+| Email     | Automatic ticket creation from incoming email |
+| Portal    | Beneficiary self-service submission           |
+| Phone     | Manual entry by call center staff             |
+| In-person | Manual entry at service points                |
+| SMS       | Integration with SMS gateway (optional)       |
 
-### Structured Workflow and Stages
-Grievances progress through customizable stages, such as 'New', 'In Progress', 'Resolved', and 'Closed'. Each stage can trigger automated email notifications to the registrant, keeping them informed of the ticket's progress. The system also supports a Kanban view for visual workflow management, allowing stages to be folded when empty.
+### Stage-Based Workflow
 
-### Categorization, Channels, and Prioritization
-Staff can categorize grievances (e.g., "Payment Issue," "Data Correction"), assign a channel through which the grievance was received (e.g., "Email," "Phone Call," "In-Person"), and apply descriptive tags. Each grievance can also be assigned a priority level (Low, Medium, High, Very High) to help manage workload and ensure urgent issues are addressed promptly.
+Configure customizable stages:
 
-### Registrant-Centric Tracking
-Every grievance ticket is linked directly to the relevant registrant (individual or group). This allows staff to view all past and active grievances associated with a specific registrant from their profile, providing a comprehensive history of interactions.
+| Stage Type       | Description                        |
+| ---------------- | ---------------------------------- |
+| Open             | Initial state, awaiting assignment |
+| In Progress      | Under investigation                |
+| Pending Response | Awaiting complainant input         |
+| Resolved         | Solution implemented               |
+| Closed           | Ticket completed                   |
 
-### Communication and Attachments
-The module includes an integrated messaging thread for internal and external communication related to each grievance. Email replies are automatically added to the ticket's history. Users can also attach relevant documents and media to tickets, such as photos or supporting evidence.
+Stage features:
 
-### Portal Access for Registrants
-Registrants who have submitted grievances can log into the OpenSPP portal to view the status, history, and details of their submitted tickets. This self-service capability reduces the burden on staff and increases transparency for beneficiaries.
+- Allowed groups (who can move to this stage)
+- Requires approval flag
+- Requires decision flag (must record outcome)
+- Is closed flag (marks ticket as done)
 
-## Conclusion
+### SLA Tracking
 
-The OpenSPP Grm module is essential for establishing an accountable and responsive social protection program by providing a comprehensive system for managing and resolving grievances efficiently.
+| Feature         | Description                                   |
+| --------------- | --------------------------------------------- |
+| SLA Deadline    | Calculated from category/subcategory settings |
+| SLA Status      | On Track, At Risk (< 25% time left), Breached |
+| Auto-escalation | Trigger rules when SLA is breached            |
+
+### Classification
+
+**Categories and Subcategories:**
+
+| Configuration       | Description                 |
+| ------------------- | --------------------------- |
+| Default SLA Hours   | Time allowed for resolution |
+| Default Severity    | Initial severity assignment |
+| Default Sensitivity | Data handling requirements  |
+| Default Team        | Initial team assignment     |
+
+**Sensitivity Levels:**
+
+| Level            | Description                         |
+| ---------------- | ----------------------------------- |
+| Standard         | Normal handling procedures          |
+| Sensitive        | Restricted access, careful handling |
+| Highly Sensitive | Maximum privacy protection          |
+
+### Decision and Resolution
+
+| Decision         | Description                    |
+| ---------------- | ------------------------------ |
+| Upheld           | Complaint valid, action taken  |
+| Partially Upheld | Some aspects valid             |
+| Rejected         | Complaint not valid            |
+| Withdrawn        | Complainant withdrew complaint |
+| Redirected       | Sent to appropriate authority  |
+| Referred to Case | Escalated for case management  |
+
+### Team Assignment
+
+- Configure GRM teams with managers and members
+- Auto-assign based on category/team mapping
+- Manual reassignment by supervisors
+
+### Appeals
+
+Tickets can be linked as appeals:
+
+| Field           | Description                   |
+| --------------- | ----------------------------- |
+| Is Appeal       | Flag indicating appeal status |
+| Original Ticket | Link to the appealed ticket   |
+| Appeal Tickets  | List of appeals for a ticket  |
+
+### Anonymous Complaints
+
+For complaints without registered contact:
+
+| Field            | Description                                           |
+| ---------------- | ----------------------------------------------------- |
+| Complainant Type | Beneficiary, Non-beneficiary, Staff, Anonymous, Other |
+| Contact Name     | Alternative contact name                              |
+| Contact Phone    | Alternative phone                                     |
+| Contact Email    | Alternative email                                     |
+
+## Integration
+
+### Email Integration
+
+Incoming emails automatically create tickets:
+
+```
+# Configuration via mail alias
+Alias: complaints@yourdomain.org
+Model: spp.grm.ticket
+```
+
+Replies to ticket notifications update the ticket.
+
+### Portal Access
+
+Beneficiaries can:
+
+1. Submit new complaints
+2. View their ticket status
+3. Add comments to existing tickets
+4. Receive status notifications
+
+### With Programs
+
+Link complaints to program participation:
+
+- Complaints about entitlement amounts
+- Service delivery issues
+- Enrollment problems
+
+### CEL-Based Escalation
+
+When `spp_grm_cel` module is installed:
+
+- Define escalation rules with CEL expressions
+- Automatic routing based on ticket attributes
+- Complex escalation workflows

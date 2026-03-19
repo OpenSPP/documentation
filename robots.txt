@@ -1,12 +1,7 @@
-# Robots.txt for OpenSPP Documentation
-# Allow indexing of stable documentation, block preview versions
-
+# Disallow all user agents from the following directories and files
 User-agent: *
-# Block preview documentation branches
-Disallow: /previews/
-
-# Allow stable and versioned releases
-Allow: /
-
-# Sitemap location
-Sitemap: https://docs.openspp.org/sitemap.xml
+Disallow: /_sources/
+Disallow: /.doctrees/
+Disallow: /*.txt$
+Disallow: /.buildinfo$
+Disallow: /objects.inv$

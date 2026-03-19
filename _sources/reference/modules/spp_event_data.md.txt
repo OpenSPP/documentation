@@ -1,45 +1,197 @@
 ---
-orphan: true
+openspp:
+  doc_status: draft
 ---
 
 # Event Data
 
-The OpenSPP Event Data module is a core component for maintaining a comprehensive and chronological history of all significant actions and changes related to individual and group registrants within the OpenSPP system. It serves as an auditable log, tracking when and how key registrant information evolves.
+**Module:** `spp_event_data`
+
+## Overview
+
+The OpenSPP Event Data module records and tracks events related to individual and group registrants. It captures data from surveys, field visits, manual entries, and external systems like ODK Central and KoBoToolbox, providing a flexible framework for managing time-sensitive registrant information.
 
 ## Purpose
 
-The OpenSPP Event Data module provides essential capabilities for managing registrant data history:
+This module is designed to:
 
-*   **Centralized History**: Establishes a single, organized source for tracking all events associated with individual and group registrants. This ensures a complete timeline of their engagement with social protection programs.
-*   **Data Versioning**: Manages the active status of registrant-related records, ensuring that OpenSPP always refers to the most current version of specific data (e.g., an ID, a phone number, or an enrollment status) at any given time.
-*   **Auditability and Accountability**: Provides a clear, time-stamped record of changes, crucial for program transparency, compliance with regulations, and resolving data-related inquiries.
-*   **Contextual Detail**: Links each event directly to the specific data record that was created or modified, offering immediate access to the full context of the change. This allows users to quickly understand the "what" and "why" behind an event.
-*   **Operational Oversight**: Supports program managers and field agents in understanding the historical journey of each registrant, from initial registration to various program interventions or data updates, enabling informed decision-making.
+- **Record registrant events:** Capture surveys, assessments, field visits, and other data collection activities
+- **Integrate external sources:** Pull data from ODK Central, KoBoToolbox, and other external systems
+- **Manage event lifecycle:** Handle event states including approval workflows, expiration, and supersession
+- **Support flexible data storage:** Store event data in JSON format, dedicated models, or custom fields
 
-## Dependencies and Integration
+## Module Dependencies
 
-The OpenSPP Event Data module integrates deeply with the core registry modules to track changes to registrant profiles:
+| Dependency          | Description                                |
+| ------------------- | ------------------------------------------ |
+| **base**            | Core Odoo framework                        |
+| **mail**            | Messaging and activity tracking            |
+| **spp_registry**    | OpenSPP registry for registrant management |
+| **spp_base_common** | Common OpenSPP utilities                   |
+| **spp_security**    | OpenSPP security framework                 |
+| **spp_approval**    | Approval workflow support                  |
 
-*   **[G2P Registry: Base](g2p_registry_base)**: This foundational module provides the `res.partner` model, which represents all registrants (individuals and groups). The Event Data module records events directly linked to these registrant records and other base components like identification documents, phone numbers, and relationships.
-*   **[G2P Registry: Individual](g2p_registry_individual)**: When data specific to individual registrants (e.g., birthdate changes, gender updates, or new personal identifiers) is created or modified, the Event Data module tracks these events, linking them to the individual's profile.
-*   **[G2P Registry: Group](g2p_registry_group)**: Similarly, for group registrants, the module logs events related to group types, membership changes, or other group-specific data, ensuring a complete history for collective entities.
+## Key Features
 
-This module acts as a historical ledger, receiving event notifications from these registry modules to build a comprehensive timeline of registrant data evolution.
+### Event Types
 
-## Additional Functionality
+Event types define the structure and behavior of events:
 
-### Comprehensive Event Logging
-The module automatically records a wide array of events, capturing significant actions taken on a registrant's profile. For instance, when a new identification document is added, a phone number is updated, or a relationship is established, the system logs a corresponding event. Each event includes the date of collection, the registrar who made the change, and its current state (active or inactive).
+| Field       | Description                     |
+| ----------- | ------------------------------- |
+| Name        | Display name for the event type |
+| Code        | Unique identifier code          |
+| Category    | survey, visit, sync, or manual  |
+| Target Type | individual, group, or both      |
+| Source Type | internal, odk, kobo, or api     |
 
-### Active Record Management
-A key feature is its ability to manage the "active" state of various registrant-related data. When a new record of a certain type (e.g., a new primary ID) is created for a registrant, the system automatically sets any previously active record of that same type to "inactive." This ensures that OpenSPP always refers to the most current and relevant data for a registrant without losing the historical context. For example, if a registrant receives a new National ID, the old ID record can be automatically marked as inactive while still being part of the historical record.
+### Event Categories
 
-### Direct Access to Event Details
-Users can directly view the specific data record associated with any recorded event. From an event log entry, a user can click to open the full details of the linked record, such as the specific ID card, phone number, or relationship record that the event pertains to. This provides immediate context and allows for thorough investigation of historical data.
+| Category              | Description                             |
+| --------------------- | --------------------------------------- |
+| **Survey/Assessment** | Structured data collection forms        |
+| **Field Visit**       | In-person visits and observations       |
+| **External Sync**     | Data synchronized from external systems |
+| **Manual Entry**      | Ad-hoc data entered by users            |
 
-### Streamlined Event Creation
-The module provides a user-friendly wizard directly accessible from a registrant's profile to create new events. This streamlines the process of adding new data points or marking significant changes, ensuring that all actions are properly logged and associated with the correct registrant.
+### Data Storage Modes
 
-## Conclusion
+Event data can be stored in three ways:
 
-The OpenSPP Event Data module is indispensable for maintaining a transparent, auditable, and comprehensive historical record of all registrant-related data, ensuring data integrity and supporting robust program management within OpenSPP.
+| Mode                | Use Case          | Description                                  |
+| ------------------- | ----------------- | -------------------------------------------- |
+| **Dedicated Model** | Structured data   | Links to a specific Odoo model               |
+| **JSON Storage**    | Flexible data     | Stores data as JSON in `data_json` field     |
+| **Custom Fields**   | Configured fields | Uses field definitions from the Configurator |
+
+### Event State Machine
+
+| State          | Description                   |
+| -------------- | ----------------------------- |
+| **Draft**      | Initial state, not yet active |
+| **Pending**    | Awaiting approval             |
+| **Active**     | Current valid event           |
+| **Superseded** | Replaced by a newer event     |
+| **Expired**    | Past expiration date          |
+| **Cancelled**  | Manually cancelled            |
+
+### Lifecycle Rules
+
+Event types can define automatic lifecycle behavior:
+
+| Rule                      | Description                                               |
+| ------------------------- | --------------------------------------------------------- |
+| One Active Per Registrant | New events automatically supersede previous active events |
+| Auto-Expire Days          | Events expire after N days (0 = never)                    |
+| Requires Approval         | Events must go through approval workflow                  |
+
+### External Source Configuration
+
+For ODK/KoBoToolbox integration:
+
+| Field               | Description                            |
+| ------------------- | -------------------------------------- |
+| Form ID             | External form identifier               |
+| Server URL          | ODK/Kobo server address                |
+| Project ID          | Project identifier                     |
+| Registrant ID Field | Field containing registrant identifier |
+| ID Type             | How to match registrant (ID type)      |
+
+### Field Mapping
+
+Map external fields to internal event data:
+
+| Transform           | Description                 |
+| ------------------- | --------------------------- |
+| Direct Copy         | Use value as-is             |
+| Parse Date          | Convert to date format      |
+| Parse Datetime      | Convert to datetime format  |
+| Parse Integer/Float | Convert to number           |
+| Parse Boolean       | Convert to true/false       |
+| Lookup Reference    | Find related record         |
+| CEL Expression      | Apply custom transformation |
+
+## Integration
+
+### With spp_approval
+
+Events requiring approval use the approval mixin:
+
+1. Event type configures approval definition
+2. New events are submitted for approval
+3. Approved events are activated
+4. Rejected events are cancelled
+
+### With spp_change_request (optional)
+
+When installed, events can automatically create change requests:
+
+- Configure field mappings between event data and registrant fields
+- Compare modes: always, different, or empty
+- Change requests capture proposed updates for review
+
+### With External Systems
+
+The module provides connector interfaces for:
+
+- ODK Central form submissions
+- KoBoToolbox survey responses
+- Generic API endpoints
+
+## Event Data Record
+
+Each event data record contains:
+
+| Section        | Fields                                  |
+| -------------- | --------------------------------------- |
+| **Core**       | Event type, Registrant, Name            |
+| **Collection** | Date, Collector (user or name)          |
+| **State**      | Current state, Supersedes/Superseded by |
+| **Data**       | JSON data, Data record reference        |
+| **Source**     | Source type, Reference, URL, Raw data   |
+| **Expiry**     | Expiry date, Is expired flag            |
+
+### Data Display
+
+Event data is rendered as formatted HTML in the UI:
+
+- Nested JSON is displayed hierarchically
+- Values are formatted by type (boolean badges, numbers highlighted)
+- Labels are converted from `snake_case` to Title Case
+
+## Configuration
+
+### Creating an Event Type
+
+| Field       | Required | Default  |
+| ----------- | -------- | -------- |
+| Name        | Yes      | -        |
+| Code        | Yes      | -        |
+| Category    | Yes      | survey   |
+| Target Type | Yes      | both     |
+| Source Type | Yes      | internal |
+
+### Recording an Event
+
+Use the "Create Event" wizard to record events:
+
+1. Select the registrant
+2. Choose the event type
+3. Enter collection date and collector
+4. Fill in event data
+5. Save (goes to draft) or submit for approval
+
+## Scheduled Actions
+
+| Cron Job      | Description                                                |
+| ------------- | ---------------------------------------------------------- |
+| Expire Events | Automatically expires active events past their expiry date |
+
+## Technical Details
+
+### Hooks
+
+The module provides installation hooks:
+
+- `post_init_hook`: Runs after module installation
+- `uninstall_hook`: Cleanup when module is removed

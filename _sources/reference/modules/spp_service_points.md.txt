@@ -1,55 +1,159 @@
 ---
-orphan: true
+openspp:
+  doc_status: draft
 ---
 
-# Service Points Management
+# Service Points
 
-The OpenSPP Service Points module streamlines the management of physical or virtual locations where social protection services are delivered. It links these service points to geographical areas, company entities, and user accounts, ensuring efficient and localized program implementation.
+**Module:** `spp_service_points`
+
+## Overview
+
+The OpenSPP Service Points module manages physical or virtual locations where social protection services are delivered. It enables organizations to define, categorize, and manage service delivery points while linking them to geographical areas, company entities, and user accounts.
 
 ## Purpose
 
-The OpenSPP Service Points module facilitates the organized delivery of services by:
+This module is designed to:
 
-*   **Establishing Service Point Locations**: Defines and manages all operational service points, which can be physical offices, mobile units, or virtual hubs, ensuring beneficiaries can access support.
-*   **Categorizing Service Offerings**: Associates each service point with specific types of services it provides, such as registration, payments, or information dissemination, to guide beneficiaries and staff.
-*   **Geographical Alignment**: Links service points to specific administrative areas (e.g., country > province > district > village), enabling targeted service delivery and localized program oversight.
-*   **Organizational Integration**: Connects service points with the company entities or organizations responsible for their operation, clarifying administrative structures and accountability.
-*   **User Access Management**: Assigns authorized users (agents) to specific service points, granting them the necessary access to manage and deliver services effectively.
+- **Manage service delivery locations:** Define and track physical or virtual service points
+- **Link to geographical areas:** Associate service points with the area hierarchy for location-based management
+- **Support agent management:** Create and manage user accounts for service point staff
+- **Track service point status:** Monitor active/disabled status and contract information
 
-## Dependencies and Integration
+## Module Dependencies
 
-The OpenSPP Service Points module integrates seamlessly with other core OpenSPP components to provide comprehensive functionality:
+| Dependency           | Description                                |
+| -------------------- | ------------------------------------------ |
+| **spp_registry**     | OpenSPP registry for registrant management |
+| **phone_validation** | Phone number formatting and validation     |
+| **spp_area**         | Geographical area hierarchy                |
+| **spp_security**     | OpenSPP security framework                 |
+| **spp_vocabulary**   | Controlled vocabulary management           |
 
-*   **G2P Registry Base** (`g2p_registry_base`): This module extends the foundational registrant management capabilities by allowing service points to be associated with individuals and companies (`res.partner`). It leverages the base contact system for organizational linking.
-*   **Phone Validation** (`phone_validation`): Ensures that all phone numbers recorded for service points are correctly formatted and validated according to international standards, improving communication reliability.
-*   **OpenSPP Area** (`spp_area`): This module is crucial for defining the geographical context of service points. It allows service points to be linked to the hierarchical administrative areas managed by the [OpenSPP Area](spp_area) module, facilitating location-based service planning and reporting.
+## Key Features
 
-This module also extends the `res.users` model, allowing user accounts to be directly associated with one or more service points. This ensures that users, such as service agents, only access and manage data relevant to their assigned service delivery locations.
+### Service Point Management
 
-## Additional Functionality
+Each service point record contains:
 
-The OpenSPP Service Points module provides robust features for managing service delivery operations:
-
-### Service Point Definition and Management
-
-Users can create and manage individual service points, defining key attributes such as the agent's name, physical address, and assigned geographical area. Each service point can be linked to a specific company entity responsible for its operations. This structured approach ensures clear accountability and an organized overview of all service delivery locations.
+| Field           | Description                                       |
+| --------------- | ------------------------------------------------- |
+| Name            | Agent or service point name                       |
+| Area            | Linked geographical area                          |
+| Service Types   | Categories of services offered (vocabulary-based) |
+| Phone Number    | Contact phone with international formatting       |
+| Address         | Physical location address                         |
+| Country         | Country for phone validation                      |
+| Company         | Linked company entity (res.partner)               |
+| Active Contract | Contract status indicator                         |
+| Disabled        | Service point enabled/disabled state              |
+| Disabled Date   | When the service point was disabled               |
+| Disabled Reason | Explanation for disabling                         |
 
 ### Service Type Classification
 
-The module allows for the creation and assignment of various service types (e.g., "Cash Transfer Enrollment," "Grievance Redress," "Information Desk"). Users can associate multiple service types with a single service point, clearly indicating the range of services available at each location and facilitating specialized service delivery.
+Service types are managed through the vocabulary system using the namespace `urn:openspp:vocab:service-types`. This allows organizations to define their own service categories.
 
-### Status and Availability Control
+### Phone Number Handling
 
-Service points can be actively managed by enabling or disabling them as needed. This feature includes recording the date a service point was disabled and the reason, providing a clear audit trail and allowing for temporary or permanent suspension of services. This is critical for managing operational changes or temporary closures.
+The module provides:
 
-### User and Registrant Association
+- Automatic phone number sanitization
+- International format validation
+- Country-aware formatting
+- Computed sanitized phone field for consistent storage
 
-Service points are directly linked to OpenSPP users (service agents) and registrant records. This allows the system to automatically assign individuals and companies to relevant service points, ensuring that beneficiaries are directed to appropriate locations and that agents only have access to data pertinent to their operational scope. The module also supports the creation of user accounts for contacts associated with a service point's company.
+### Company and Individual Linking
 
-```{note}
-When creating users for a service point's company contacts, the system automatically assigns them to the "Service Point Users" group, ensuring appropriate access rights.
+Service points can be linked to company entities, automatically associating all individuals (contacts) under that company with the service point:
+
+```
+Service Point
+    └── Company (res.partner with is_company=True)
+        ├── Individual 1 (contact)
+        ├── Individual 2 (contact)
+        └── Individual 3 (contact)
 ```
 
-## Conclusion
+### User Account Creation
 
-The OpenSPP Service Points module is essential for organizing, managing, and delivering social protection services efficiently by linking service locations with geographical areas, organizations, and personnel.
+The module can automatically create user accounts for company contacts:
+
+| Action              | Description                                                      |
+| ------------------- | ---------------------------------------------------------------- |
+| Create Users        | Creates Odoo user accounts for all contacts with email addresses |
+| Auto-assigns        | Adds users to the service point users group                      |
+| Links Service Point | Associates users with their service point                        |
+
+## Integration
+
+### With spp_area
+
+Service points are linked to the geographical area hierarchy, enabling:
+
+- Area-based filtering and reporting
+- Location-aware access control
+- Regional service point management
+
+### With spp_registry
+
+The module extends `res.partner` to:
+
+- Add service point relationships to registrants
+- Compute individual service points based on group membership
+- Maintain service point associations when registrants move between groups
+
+### With spp_vocabulary
+
+Service types are managed through controlled vocabularies, ensuring consistent categorization across the system.
+
+## Configuration
+
+### Creating a Service Point
+
+| Field         | Required | Description                                        |
+| ------------- | -------- | -------------------------------------------------- |
+| Name          | Yes      | Service point identifier                           |
+| Area          | No       | Geographical area link                             |
+| Service Types | No       | Categories from vocabulary                         |
+| Phone Number  | No       | Contact phone                                      |
+| Address       | No       | Physical location                                  |
+| Country       | No       | For phone formatting (defaults to company country) |
+| Company       | No       | Associated company entity                          |
+
+### Managing Service Point Status
+
+To disable a service point:
+
+1. Click the "Disable" button
+2. The system automatically records the disable date
+3. Optionally provide a reason for disabling
+
+To re-enable:
+
+1. Click the "Enable" button
+2. Disabled date and reason are cleared
+
+## Security
+
+### Security Groups
+
+The module defines a dedicated security group for service point users:
+
+| Group                                    | Description                       |
+| ---------------------------------------- | --------------------------------- |
+| `spp_service_points.service_point_users` | Users operating at service points |
+
+### Record Rules
+
+Access rules ensure users can only view and manage service points within their authorized scope based on area assignments.
+
+## Technical Details
+
+### Application Module
+
+This module is marked as an Odoo application (`application: True`), meaning it appears in the Apps menu and can be installed independently.
+
+### Registrant Service Point Computation
+
+When a registrant's parent (group/household) changes, the system automatically recomputes their service point associations based on the new parent's linked service points.

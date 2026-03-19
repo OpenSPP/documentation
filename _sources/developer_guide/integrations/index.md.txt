@@ -1,31 +1,46 @@
 ---
-myst:
-  html_meta:
-    "title": "OpenSPP Integrations Overview"
-    "description": "Comprehensive guides for integrating OpenSPP with external systems, identity providers, and digital public infrastructure components."
-    "keywords": "OpenSPP, integrations, external systems, identity providers, DCI, eSignet, OIDC, interoperability"
+openspp:
+  doc_status: draft
+  products: [core]
 ---
 
-# Integrations
+# Other Integrations
 
-This section provides guides for connecting OpenSPP with external systems, identity providers, and other digital public infrastructure components. These integrations are key to building a robust and interoperable social protection ecosystem.
+**For: Developers**
 
-In addition to the ones listed below, we also have integration with OpenCRVS and OpenFN.
+Learn how to integrate OpenSPP with external systems and identity providers. This section covers OIDC authentication, Keycloak integration, and patterns for connecting to external APIs.
 
-Here, you will find detailed instructions and best practices for:
+## Topics Covered
 
-- {doc}`dci`: Learn how to implement the DCI specification to enable seamless data exchange between OpenSPP and other registries, such as a Civil Registration and Vital Statistics (CRVS) system.
+- **OIDC and eSignet**: Integrating with OpenID Connect providers for authentication
+  - eSignet integration for national identity systems
+  - OIDC client configuration
+  - User provisioning and attribute mapping
+- **Keycloak**: Using Keycloak as an identity and access management solution
+  - Keycloak setup and configuration
+  - Realm management
+  - Role-based access control (RBAC)
+- **External APIs**: Patterns for integrating with third-party systems
+  - REST API integration
+  - Webhooks and callbacks
+  - Data synchronization strategies
+- **Payment Gateways**: Connecting to payment and disbursement systems
+- **SMS and Notification Services**: Integrating external notification providers
+- **Biometric Systems**: Connecting to biometric authentication and deduplication services
 
-- {doc}`esignet`: Discover how to integrate eSignet as an identity provider, allowing users to authenticate into OpenSPP using their MOSIP-based digital identity.
-
-- {doc}`oidc`: Follow our guide to configure Keycloak as an {term}`OIDC` provider for OpenSPP, enabling single sign-on (SSO) for a secure and streamlined user authentication experience.
-
+<!--
 ```{toctree}
 :maxdepth: 2
-:caption: Contents
-:hidden:
 
-dci
-esignet
-oidc
+oidc_esignet
+keycloak
+external_apis
+payment_gateways
+notification_services
+biometric_systems
 ```
+-->
+
+---
+
+**Note**: Content coming soon. This will include integration guides and code examples for each system.

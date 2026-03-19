@@ -1,57 +1,44 @@
+---
+orphan: true
+openspp:
+  doc_status: draft
+  products: [core]
+---
 
 # Administration
 
-This section provides guides for a variety of administrative tasks and system management functions within OpenSPP. From managing user access and configuring system settings to importing data and setting up hardware, these documents cover the essential back-end operations that ensure the platform runs smoothly and securely.
+**For:** Users (program staff, operators)
 
-- {doc}`user_access`: Learn how to manage user accounts, assign roles, and configure access rights to control what users can see and do within OpenSPP.
+Administration tools allow program managers to configure system settings, manage users and access permissions, and monitor system activity. V2 introduces a 3-tier access management system for enhanced security.
 
-- {doc}`custom_fields`: A step-by-step guide on how to add new data fields to registrant profiles without needing to write any code.
+## Topics Covered
 
-- {doc}`indicator_fields`: Learn how to create dynamic data fields that automatically calculate values based on other information in the registry.
+- **Users and Roles** - Create and manage user accounts and roles
+- **Access Management (3-tier V2)** - Configure the three-tier access control system (program, area, individual)
+- **Audit Logs** - Review system activity and changes
+- **Consent Management** - Manage data consent and privacy settings
+- **System Configuration** - Configure system-wide settings
+- **Data Security** - Manage data access and security policies
+- **User Permissions** - Define granular permissions for different roles
+- **Activity Monitoring** - Track user actions and system events
+- **In-kind products** - Create and manage products used in in-kind programs ({doc}`../programs/in_kind_products`)
 
-- {doc}`import_areas`: This document provides instructions on how to prepare and import geographical area data into OpenSPP.
-
-- {doc}`service_points`: This guide explains how to set up and manage service points, which are the locations where beneficiaries can access services and benefits.
-
-- {doc}`inventory_configuration`: Learn how to configure the necessary inventory settings to support in-kind and basket entitlements.
-
-- {doc}`farmer_geolocation`: Guide to enabling geolocation integration in the OpenSPP Farmer Registry to improve area-based operations.
-
-- {doc}`incoming_email_configuration`: A guide to setting up automatic email retrieval and processing from a designated incoming mailbox.
-
-- {doc}`outgoing_email_configuration`: A guide to setting up outgoing email servers for automated messaging and data integration.
-
-- {doc}`database_management`: This document explains how to manage your OpenSPP database, including how to reset the database, and how to back up your data before making major changes.
-
-- {doc}`security_tuning`: This guide provides essential recommendations for securing your OpenSPP instance and tuning its performance for production environments.
-
-- {doc}`monitoring_maintenance`: This document provides basic instructions for monitoring your OpenSPP system, viewing logs, managing services, and performing updates.
-
-- {doc}`uninstalling`: This guide provides detailed instructions for uninstalling OpenSPP from your system.
-
-- {doc}`hardware_integration`: This document provides an overview of how to integrate hardware devices, such as document scanners, with OpenSPP.
-
-- {doc}`troubleshooting`: This guide provides solutions to common problems encountered while running OpenSPP.
-
-
+<!--
 ```{toctree}
 :maxdepth: 2
-:caption: Contents
 :hidden:
 
-User access <user_access>
-Custom fields <custom_fields>
-Indicator fields <indicator_fields>
-Import areas <import_areas>
-Integrate geolocation <farmer_geolocation>
-Service points <service_points>
-Inventory setup <inventory_configuration>
-Incoming email setup <incoming_email_configuration>
-Outgoing email setup <outgoing_email_configuration>
-Database management <database_management>
-Security & tuning <security_tuning>
-Monitoring <monitoring_maintenance>
-Uninstalling <uninstalling>
-Hardware setup <hardware_integration>
-Troubleshooting <troubleshooting>
+users_roles
+access_management
+audit_logs
+consent_management
+system_configuration
+data_security
+user_permissions
+activity_monitoring
+```
+-->
+
+```{note}
+Content coming soon. This section will provide detailed guidance on system administration and access management in OpenSPP V2.
 ```

@@ -1,44 +1,134 @@
 ---
-orphan: true
+openspp:
+  doc_status: draft
 ---
 
 # Custom Fields
 
-The OpenSPP Custom Field module enhances the platform's flexibility by allowing administrators to define and add custom data fields directly to registrant profiles. This capability ensures that OpenSPP can capture highly specific information tailored to the unique needs of various social protection programs and farmer registries.
+**Module:** `spp_custom_field`
+
+## Overview
+
+OpenSPP Custom Fields enables administrators to define and add custom data fields directly to registrant profiles. This module supports tailoring data collection for specific social protection programs by allowing field differentiation by registrant type and providing dedicated sections for program-specific indicators.
 
 ## Purpose
 
-The OpenSPP Custom Field module enables programs to adapt the platform's data collection capabilities to their precise requirements. It accomplishes this by:
+This module is designed to:
 
-*   **Tailoring Data Collection**: Allows programs to define and add specific data fields to registrant profiles beyond OpenSPP's standard fields.
-*   **Enhancing Program Adaptability**: Enables OpenSPP to adapt to the unique data requirements of diverse social protection programs and farmer registries.
-*   **Differentiating Data by Registrant Type**: Supports custom fields that are relevant only to individuals or only to groups, ensuring data accuracy. For example, a field for "Primary Crop Type" might only be relevant for a farmer group, while "Marital Status" is for individuals.
-*   **Managing Program Indicators**: Provides dedicated sections for displaying read-only indicators, crucial for monitoring and evaluation.
-*   **Streamlining Profile Management**: Automatically integrates these custom fields into registrant profiles, creating a comprehensive and program-specific data view.
+- **Extend registrant profiles:** Add custom data fields beyond the standard registry fields
+- **Differentiate by type:** Configure separate custom fields for individuals versus groups
+- **Organize fields into groups:** Create logical groupings for better form organization
+- **Support program-specific data:** Capture program indicators and specialized data points
 
-## Dependencies and Integration
+## Module Dependencies
 
-The `spp_custom_field` module integrates seamlessly into the OpenSPP ecosystem, extending core functionalities to provide enhanced data management.
+| Module           | Description                              |
+| ---------------- | ---------------------------------------- |
+| **base**         | Odoo core functionality                  |
+| **spp_registry** | Core registry for individuals and groups |
+| **spp_security** | Security group management                |
 
-*   **Base (`base`)**: As a fundamental module, `spp_custom_field` relies on the core Odoo framework provided by the `base` module for its underlying data structures and user interface elements.
-*   **G2P Registry Base (`g2p_registry_base`)**: This module is a direct extension of the [G2P Registry Base](g2p_registry_base) module. While `g2p_registry_base` establishes the foundational registrant profile, `spp_custom_field` dynamically adds customizable data fields to these profiles, making them more versatile for specific program needs. It leverages the `res.partner` model, which is extended by `g2p_registry_base`, to embed new data points directly within the registrant's record.
+## Key Features
 
-## Additional Functionality
+### Custom Field Groups
 
-The `spp_custom_field` module introduces powerful features for customizing registrant profiles:
+Organize custom fields into named groups:
 
-### Configurable Registrant Profile Fields
+| Field       | Description                                     |
+| ----------- | ----------------------------------------------- |
+| Group Name  | Display name for the field group (translatable) |
+| Target Type | Individual or Group fields                      |
+| Sequence    | Display order among groups                      |
+| Description | Optional description of the group purpose       |
+| Active      | Enable/disable the group                        |
 
-Users can define new data fields, such as text inputs, numerical values, dates, or checkboxes, which then appear on registrant profiles. These fields are intelligently categorized and displayed under a dedicated "Additional Details" tab. This allows programs to capture highly specific information, for instance, "Household Water Source" for social protection programs or "Type of Agricultural Land" for farmer registries. The module also supports creating fields that are specific to either individual registrants or group registrants, ensuring data relevance.
+### Target Type Configuration
 
-### Dedicated Indicator Section
+Custom field groups are designated for specific registrant types:
 
-The module creates a separate "Indicators" tab on registrant profiles. This section is designed to display read-only fields that typically represent program-specific metrics, calculated values, or monitoring data. For example, it could show "Total Benefits Received" or "Number of Dependents Calculated." These fields are for viewing and analysis, providing a quick overview of key performance indicators without allowing direct user input.
+| Target Type | Description                                  |
+| ----------- | -------------------------------------------- |
+| Individual  | Fields appear on individual registrant forms |
+| Group       | Fields appear on group/household forms       |
 
-### Dynamic Profile Extension
+### Field Group Ordering
 
-A key capability of this module is its ability to automatically integrate custom and indicator fields into the registrant's profile form. This dynamic integration eliminates the need for manual view modifications whenever new fields are added, significantly simplifying system configuration and maintenance. New fields are immediately accessible and properly categorized within the "Additional Details" or "Indicators" tabs, ensuring a consistent and user-friendly experience.
+Use sequence numbers to control display order:
 
-## Conclusion
+- Lower sequence numbers appear first
+- Groups with the same sequence are sorted by name
+- Fields within groups follow their own sequence
 
-The OpenSPP Custom Field module is essential for making OpenSPP a highly adaptable platform, enabling programs to tailor registrant data collection to their precise operational and reporting requirements.
+## Integration
+
+### With Registry Module
+
+Custom field groups integrate with the registry:
+
+- Groups appear as sections on registrant forms
+- Fields are displayed within their designated groups
+- Target type filtering ensures correct form display
+
+### With Studio Module
+
+The `spp_studio` module extends custom field capabilities:
+
+- Visual field builder wizard
+- CEL expression support for computed fields
+- Enhanced field type options
+- Logic-based field visibility
+
+### With Programs Module
+
+Custom fields can capture program-specific data:
+
+- Program eligibility indicators
+- Benefit calculation inputs
+- Compliance tracking fields
+- Monitoring and evaluation data
+
+## Data Model
+
+### spp.custom.field.group
+
+| Field       | Type      | Description                                 |
+| ----------- | --------- | ------------------------------------------- |
+| name        | Char      | Group display name (required, translatable) |
+| target_type | Selection | "grp" for Group, "indv" for Individual      |
+| sequence    | Integer   | Display order (default: 10)                 |
+| description | Text      | Optional description (translatable)         |
+| active      | Boolean   | Enable/disable the group                    |
+
+## Use Cases
+
+### Program-Specific Data Collection
+
+| Example               | Custom Fields                             |
+| --------------------- | ----------------------------------------- |
+| Cash Transfer Program | Bank account details, payment preferences |
+| Health Program        | Medical conditions, vaccination status    |
+| Education Program     | School enrollment, grade level            |
+| Agriculture Program   | Land size, crop types, livestock count    |
+
+### Localization Requirements
+
+Different country deployments may need:
+
+- National ID formats and fields
+- Local administrative divisions
+- Country-specific demographic data
+- Regional program requirements
+
+### Monitoring and Evaluation
+
+Custom fields for M&E purposes:
+
+- Baseline indicator values
+- Follow-up assessment data
+- Program outcome measurements
+- Impact evaluation metrics
+
+## Related Modules
+
+- {doc}`spp_studio` - Visual custom field builder and logic integration
+- {doc}`spp_registry` - Core registry functionality
