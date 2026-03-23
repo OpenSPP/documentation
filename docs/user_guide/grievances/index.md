@@ -25,9 +25,6 @@ The GRM handles **short-term issues** (complaints about payments, eligibility, s
 This section covers:
 
 1. **{doc}`grm`** - Full end-to-end workflow for managing grievances
-2. **{doc}`submit`** - How to log complaints from beneficiaries
-3. **{doc}`case_management`** - How to investigate and resolve grievances
-4. **{doc}`sla`** - How to track deadlines and escalate urgent cases
 
 ## Before You Start
 
@@ -78,9 +75,7 @@ If you can't access the GRM menu in the sidebar, contact your system administrat
 :hidden:
 
 grm
-submit
-case_management
-sla
+<!-- sla commented out to hide for now -->
 ```
 
 ## Are You Stuck?

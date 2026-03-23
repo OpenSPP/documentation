@@ -39,9 +39,9 @@ Go to **Helpdesk > Configuration > Channels**. Define how complaints come in —
 
 Go to **Helpdesk > Configuration > Teams**. Create teams of handlers. Assign a manager, members, and optionally the geographic areas each team covers.
 
-**SLA rules** (optional)
+<!-- **SLA rules** (optional) commented out to hide for now
 
-Go to **Helpdesk > Configuration > SLA Rules**. Set deadlines per category — for example, payment complaints must be resolved within 5 days. The system flags tickets that breach their SLA.
+Go to **Helpdesk > Configuration > SLA Rules**. Set deadlines per category — for example, payment complaints must be resolved within 5 days. The system flags tickets that breach their SLA. -->
 
 ![GRM configuration menu showing categories, channels, teams, and SLA options](/_images/en-us/grievances/grm/01-grm-configuration-menu.png)
 
@@ -139,11 +139,11 @@ Use this step when the complaint reveals a need for longer-term support (for exa
 - Automatic routing requires CEL routing rules to be configured.
 - If you are assigning manually, make sure the team is set up in **Configuration > Teams** with the correct areas and members.
 
-**SLA deadline notifications are not arriving.**
+<!-- **SLA deadline notifications are not arriving.** commented out to hide for now
 
 - Email notifications depend on the outgoing mail server being configured.
 - Ask your administrator to check **Settings > Technical > Outgoing Mail Servers**.
-- Confirm the SLA rule is active and the ticket's category matches the rule.
+- Confirm the SLA rule is active and the ticket's category matches the rule. -->
 
 **The Escalate button is missing.**
 
