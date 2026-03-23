@@ -23,16 +23,22 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency              | Description                                               |
-| ----------------------- | --------------------------------------------------------- |
-| **base**                | Odoo base module                                          |
-| **fastapi**             | FastAPI integration for Odoo                              |
-| **spp_security**        | Central security definitions for access control           |
-| **spp_registry**        | Registry models for individuals and groups                |
-| **spp_consent**         | Consent management for data access authorization          |
-| **spp_vocabulary**      | Standardized vocabularies for gender, relationships, etc. |
-| **spp_programs**        | Program and membership management                         |
-| **spp_source_tracking** | Data provenance tracking                                  |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `fastapi` | FastAPI integration for Odoo |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `spp_consent` | DPV-aligned consent management for social protection prog... |
+| `spp_vocabulary` | OpenSPP: Vocabulary |
+| `spp_programs` | Manage cash and in-kind entitlements, integrate with inve... |
+| `spp_source_tracking` | Track data provenance and source information for registrants |
+
+### External Dependencies
+
+| Package | Purpose |
+| --- | --- |
+| `pyjwt` | |
 
 ## Key Features
 
@@ -130,3 +136,18 @@ This module implements patterns defined in:
 - **ADR-007:** Namespace URIs for Identifiers
 - **ADR-008:** Source Tracking and Provenance
 - **ADR-009:** Terminology System
+
+```{toctree}
+:maxdepth: 1
+:hidden:
+
+spp_api_v2_change_request
+spp_api_v2_cycles
+spp_api_v2_data
+spp_api_v2_entitlements
+spp_api_v2_gis
+spp_api_v2_products
+spp_api_v2_service_points
+spp_api_v2_simulation
+spp_api_v2_vocabulary
+```

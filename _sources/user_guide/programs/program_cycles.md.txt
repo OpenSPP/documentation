@@ -119,7 +119,7 @@ When a cycle is first created, it automatically copies all currently enrolled be
 
 2. Click **Copy Beneficiaries** to add the newly enrolled beneficiaries to the cycle.
 
-   ![Copy beneficiaries button](/_images/en-us/programs/cycles/09-copy-beneficiaries-button-on-cycle-form.png)
+![Copy beneficiaries button](/_images/en-us/programs/cycles/09-copy-beneficiaries-button-on-cycle-form.png)
 
 ```{note}
 This function only adds newly enrolled beneficiaries. It does not remove beneficiaries who no longer meet eligibility criteria.
@@ -131,7 +131,7 @@ Generate entitlements for all beneficiaries in the cycle:
 
 1. Click **Prepare Entitlements**.
 
-   ![Prepare entitlements button](/_images/en-us/programs/cycles/10-prepare-entitlements-button-on-cycle-form.png)
+![Prepare entitlements button](/_images/en-us/programs/cycles/10-prepare-entitlements-button-on-cycle-form.png)
 
 2. The system calculates benefit amounts based on the program rules.
 
@@ -145,7 +145,7 @@ When entitlements are ready:
 
 2. Click **Submit for Approval**.
 
-   ![Submit for approval button](/_images/en-us/programs/cycles/11-submit-for-approval-button-on-cycle-form.png)
+![Submit for approval button](/_images/en-us/programs/cycles/11-submit-for-approval-button-on-cycle-form.png)
 
 3. The cycle state changes to **To Approve**.
 
@@ -161,7 +161,7 @@ Only users who belong to the **group configured as Cycle Approver** in the progr
 
 3. Click **Approve Cycle** to approve the entire cycle.
 
-   ![Approve cycle button](/_images/en-us/programs/cycles/12-approve-cycle-button.png)
+![Approve cycle button](/_images/en-us/programs/cycles/12-approve-cycle-button.png)
 
 4. The cycle state changes to **Approved** and is ready for distribution.
 

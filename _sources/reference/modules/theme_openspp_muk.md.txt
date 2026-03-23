@@ -22,11 +22,11 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency        | Description                                    |
-| ----------------- | ---------------------------------------------- |
-| **base**          | Odoo core functionality                        |
-| **web**           | Odoo web client assets                         |
-| **muk_web_theme** | MuK Hacker theme as the base styling framework |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `web` | Web interface components |
+| `muk_web_theme` | MuK web theme framework |
 
 ## Key Features
 

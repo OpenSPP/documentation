@@ -233,6 +233,7 @@ learn/index
 get_started/index
 user_guide/index
 config_guide/index
+developer_guide/index
 ops_guide/index
 reference/index
 community_and_support/index

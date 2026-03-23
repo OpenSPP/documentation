@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# API V2 - Products
+# Products
 
 **Module:** `spp_api_v2_products`
 
@@ -22,11 +22,11 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency     | Description                                                   |
-| -------------- | ------------------------------------------------------------- |
-| **spp_api_v2** | Core API V2 module providing authentication and base patterns |
-| **product**    | Odoo product management module                                |
-| **uom**        | Odoo unit of measure module                                   |
+| Dependency | Purpose |
+| --- | --- |
+| `spp_api_v2` | OpenSPP API V2 - Standards-aligned, consent-respecting AP... |
+| `product` | Product catalog management |
+| `uom` | Units of measure |
 
 ## Key Features
 

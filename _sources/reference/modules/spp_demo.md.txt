@@ -22,20 +22,21 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency          | Description                                         |
-| ------------------- | --------------------------------------------------- |
-| **base**            | Odoo core functionality                             |
-| **spp_base_common** | OpenSPP common utilities                            |
-| **spp_registry**    | Registry for individuals and groups                 |
-| **spp_vocabulary**  | Standardized code lists                             |
-| **queue_job**       | Background job processing for large data generation |
-| **spp_security**    | Security groups for demo users                      |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `spp_base_common` | The OpenSPP base module that provides the main menu, gene... |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `spp_vocabulary` | OpenSPP: Vocabulary |
+| `job_worker` | Background job worker |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `spp_area` | Establishes direct associations between OpenSPP registran... |
 
-### External Python Dependencies
+### External Dependencies
 
-| Package   | Description                       |
-| --------- | --------------------------------- |
-| **faker** | Generates fake but realistic data |
+| Package | Purpose |
+| --- | --- |
+| `faker` | |
 
 ## Key Features
 

@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# API V2 - Vocabulary
+# Vocabulary
 
 **Module:** `spp_api_v2_vocabulary`
 
@@ -22,10 +22,10 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency         | Description                                                   |
-| ------------------ | ------------------------------------------------------------- |
-| **spp_api_v2**     | Core API V2 module providing authentication and base patterns |
-| **spp_vocabulary** | Centralized vocabulary and lookup value management            |
+| Dependency | Purpose |
+| --- | --- |
+| `spp_api_v2` | OpenSPP API V2 - Standards-aligned, consent-respecting AP... |
+| `spp_vocabulary` | OpenSPP: Vocabulary |
 
 ## Key Features
 

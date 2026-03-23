@@ -24,16 +24,17 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Module              | Description                                |
-| ------------------- | ------------------------------------------ |
-| **spp_base_common** | Common utilities and base functionality    |
-| **spp_registry**    | Core registry for individuals and groups   |
-| **spp_security**    | Security groups and privileges             |
-| **spp_approval**    | Approval workflow infrastructure           |
-| **spp_event_data**  | Event data integration                     |
-| **spp_dms**         | Document management for attachments        |
-| **spp_vocabulary**  | Controlled vocabularies for document types |
-| **mail**            | Messaging and activity tracking            |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `mail` | Communication and activity tracking |
+| `spp_base_common` | The OpenSPP base module that provides the main menu, gene... |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `spp_approval` | Standardized approval workflows with multi-tier sequencin... |
+| `spp_event_data` | Records and tracks events related to individual and group... |
+| `spp_dms` | The OpenSPP Dms module provides a centralized system for ... |
+| `spp_vocabulary` | OpenSPP: Vocabulary |
 
 ## Key Features
 
@@ -196,3 +197,11 @@ Enhanced user experience features:
 - {doc}`spp_cr_types_base` - Basic change request types
 - {doc}`spp_studio_change_requests` - No-code CR type builder
 - {doc}`spp_approval` - Approval workflow infrastructure
+
+```{toctree}
+:maxdepth: 1
+:hidden:
+
+spp_cr_types_advanced
+spp_cr_types_base
+```

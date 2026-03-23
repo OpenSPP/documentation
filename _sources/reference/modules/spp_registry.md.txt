@@ -23,17 +23,23 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency         | Purpose                                |
-| ------------------ | -------------------------------------- |
-| `base`             | Odoo core framework                    |
-| `mail`             | Communication and activity tracking    |
-| `contacts`         | Base contact model extension           |
-| `web`              | Web interface components               |
-| `portal`           | Portal access capabilities             |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `mail` | Communication and activity tracking |
+| `contacts` | Base contact model extension |
+| `web` | Web interface components |
+| `portal` | Portal access capabilities |
 | `phone_validation` | Phone number validation and formatting |
-| `spp_security`     | Security groups and access control     |
-| `spp_vocabulary`   | Vocabulary/lookup value management     |
-| `muk_web_chatter`  | Enhanced chatter positioning           |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `spp_vocabulary` | OpenSPP: Vocabulary |
+| `muk_web_chatter` | Enhanced chatter positioning |
+
+### External Dependencies
+
+| Package | Purpose |
+| --- | --- |
+| `python-magic` | |
 
 ## Key Features
 
@@ -151,19 +157,3 @@ The registry UI organizes information into logical tabs:
 | **Identity**      | ID documents, verification status      |
 | **Participation** | Group memberships, program enrollments |
 | **History**       | Activity log, change history           |
-
-## Technical Details
-
-| Property       | Value          |
-| -------------- | -------------- |
-| Technical Name | `spp_registry` |
-| Category       | OpenSPP/Core   |
-| Version        | 19.0.2.2.0     |
-| License        | LGPL-3         |
-| Application    | Yes            |
-
-### External Dependencies
-
-| Package        | Purpose                                  |
-| -------------- | ---------------------------------------- |
-| `python-magic` | File type detection for document uploads |

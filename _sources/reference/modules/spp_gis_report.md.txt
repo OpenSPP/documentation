@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# GIS Reports
+# Reports
 
 **Module:** `spp_gis_report`
 
@@ -22,21 +22,21 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency       | Description                                  |
-| ---------------- | -------------------------------------------- |
-| `spp_area`       | Administrative area hierarchy                |
-| `spp_gis`        | Core GIS functionality and geometry fields   |
-| `spp_registry`   | Registry data for aggregation                |
-| `spp_vocabulary` | Vocabulary terms for categorization          |
-| `spp_cel_domain` | CEL expressions for data filtering           |
-| `queue_job`      | Background job processing for large datasets |
+| Dependency | Purpose |
+| --- | --- |
+| `spp_area` | Establishes direct associations between OpenSPP registran... |
+| `spp_gis` | GIS core plus area geo fields and importer extensions (po... |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `spp_vocabulary` | OpenSPP: Vocabulary |
+| `spp_cel_domain` | Write simple CEL-like expressions to filter records (Open... |
+| `job_worker` | Background job worker |
 
-### External Python Dependencies
+### External Dependencies
 
-| Package   | Description                           |
-| --------- | ------------------------------------- |
-| `numpy`   | Numerical computations for statistics |
-| `shapely` | Geometric operations                  |
+| Package | Purpose |
+| --- | --- |
+| `numpy>=1.22.2` | |
+| `shapely` | |
 
 ## Key Features
 

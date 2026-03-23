@@ -22,10 +22,10 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency       | Description                            |
-| ---------------- | -------------------------------------- |
-| **spp_security** | OpenSPP security groups and privileges |
-| **mail**         | Activity tracking and notifications    |
+| Dependency | Purpose |
+| --- | --- |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `mail` | Communication and activity tracking |
 
 ## Key Features
 

@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# Studio - Change Requests
+# Change Requests
 
 **Module:** `spp_studio_change_requests`
 
@@ -23,12 +23,12 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Module                    | Description                                   |
-| ------------------------- | --------------------------------------------- |
-| **spp_studio**            | Core Studio interface and mixin functionality |
-| **spp_change_request_v2** | Change request infrastructure and processing  |
-| **spp_registry**          | Registry models for field mapping             |
-| **spp_audit**             | Audit trail logging                           |
+| Dependency | Purpose |
+| --- | --- |
+| `spp_studio` | No-code customization interface for OpenSPP |
+| `spp_change_request_v2` | Configuration-driven change request system with UX improv... |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `spp_audit` | Comprehensively tracks all data modifications and user ac... |
 
 ## Key Features
 

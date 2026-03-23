@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# CR Types - Advanced
+# Advanced Types
 
 **Module:** `spp_cr_types_advanced`
 
@@ -19,8 +19,8 @@ These types have `is_studio_editable=False` by design. If you need to modify the
 ## Module Dependencies
 
 | Dependency | Purpose |
-|------------|---------|
-| `spp_change_request_v2` | Base change request infrastructure |
+| --- | --- |
+| `spp_change_request_v2` | Configuration-driven change request system with UX improv... |
 
 ## Available Change Request Types
 
@@ -210,7 +210,6 @@ To modify the behavior of an advanced type, create a custom module that inherits
 
 from odoo import models
 
-
 class CustomAddMember(models.Model):
     _inherit = "spp.cr.apply.add_member"
 
@@ -224,13 +223,3 @@ class CustomAddMember(models.Model):
 
         return result
 ```
-
-## Technical Details
-
-| Property | Value |
-|----------|-------|
-| Technical Name | `spp_cr_types_advanced` |
-| Category | OpenSPP |
-| Version | 19.0.1.0.0 |
-| License | LGPL-3 |
-| Development Status | Beta |

@@ -23,12 +23,12 @@ Use this module when you need to:
 ## Module Dependencies
 
 | Dependency | Purpose |
-|------------|---------|
+| --- | --- |
+| `spp_security` | Central security definitions for OpenSPP modules |
 | `base` | Odoo core framework |
 | `web` | Web interface components |
-| `base_setup` | Configuration settings framework |
-| `spp_security` | Security groups and access control |
-| `theme_openspp_muk` | OpenSPP visual theme styling |
+| `base_setup` | Base setup wizard |
+| `theme_openspp_muk` | OpenSPP Theme |
 
 ## Key Features
 
@@ -97,14 +97,3 @@ This module does not introduce new models. It extends existing Odoo models:
 | `res.config.settings` | Branding and telemetry configuration fields |
 | `ir.http` | Injects OpenSPP branding into session info |
 | `ir.module.module` | Utility to count paid/proprietary apps |
-
-## Technical Details
-
-| Property | Value |
-|----------|-------|
-| Technical Name | `spp_branding_kit` |
-| Category | Theme/Backend |
-| Version | 19.0.1.4.0 |
-| License | LGPL-3 |
-| Application | No |
-| Auto Install | Yes (with base, web) |

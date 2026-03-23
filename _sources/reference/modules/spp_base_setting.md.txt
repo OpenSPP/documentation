@@ -22,11 +22,11 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency     | Purpose                                                |
-| -------------- | ------------------------------------------------------ |
-| `base`         | Odoo core framework                                    |
-| `spp_security` | Security groups and access control definitions         |
-| `spp_registry` | Registry model integration for user-registrant linking |
+| Dependency | Purpose |
+| --- | --- |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `base` | Odoo core framework |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
 
 ## Key Features
 
@@ -81,16 +81,6 @@ Together, these determine what a user can do and which data they can access.
 2. Assign users to their appropriate office
 3. Configure area assignments for geographic access control
 4. Apply role-based permissions for functionality access
-
-## Technical Details
-
-| Property       | Value                     |
-| -------------- | ------------------------- |
-| Technical Name | `spp_base_setting`        |
-| Category       | OpenSPP/Core              |
-| Version        | 19.0.1.3.1                |
-| License        | LGPL-3                    |
-| Application    | No (configuration module) |
 
 ## See Also
 

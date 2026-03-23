@@ -22,25 +22,23 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency     | Description                                |
-| -------------- | ------------------------------------------ |
-| `base`         | Odoo core framework                        |
-| `web`          | Odoo web framework for map views           |
-| `contacts`     | Contact/partner management                 |
-| `spp_security` | OpenSPP security groups and access control |
-| `spp_area`     | Administrative area hierarchy              |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `web` | Web interface components |
+| `contacts` | Base contact model extension |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `spp_area` | Establishes direct associations between OpenSPP registran... |
+| `spp_vocabulary` | OpenSPP: Vocabulary |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
 
-### External Python Dependencies
+### External Dependencies
 
-| Package   | Description                               |
-| --------- | ----------------------------------------- |
-| `shapely` | Geometric operations and spatial analysis |
-| `pyproj`  | Coordinate system transformations         |
-| `geojson` | GeoJSON format handling                   |
-
-### Database Requirements
-
-This module requires PostGIS extension for PostgreSQL. The `pre_init_hook` automatically initializes PostGIS when the module is installed.
+| Package | Purpose |
+| --- | --- |
+| `shapely` | |
+| `pyproj` | |
+| `geojson` | |
 
 ## Key Features
 
@@ -131,3 +129,13 @@ Visualize program coverage geographically:
 - Map beneficiary locations by program
 - Show coverage gaps by area
 - Analyze geographic distribution of entitlements
+
+```{toctree}
+:maxdepth: 1
+:hidden:
+
+spp_gis_indicators
+spp_gis_report
+spp_gis_report_programs
+spp_registrant_gis
+```
