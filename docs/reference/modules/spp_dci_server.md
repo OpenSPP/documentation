@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# DCI Server
+# Server
 
 **Module:** `spp_dci_server`
 
@@ -23,24 +23,13 @@ Use this module when you need to:
 ## Module Dependencies
 
 | Dependency | Purpose |
-|------------|---------|
+| --- | --- |
 | `base` | Odoo core framework |
-| `fastapi` | FastAPI framework for API endpoints |
-| `queue_job` | Background job processing |
-| `spp_dci` | DCI standards and schemas |
-| `spp_dci_client` | Shared DCI infrastructure |
-| `spp_api_v2` | API V2 framework |
-
-## Technical Details
-
-| Property | Value |
-|----------|-------|
-| Technical Name | `spp_dci_server` |
-| Category | OpenSPP/Integration |
-| Version | 19.0.1.0.0 |
-| License | LGPL-3 |
-| Application | No |
-| Status | Alpha |
+| `fastapi` | FastAPI integration for Odoo |
+| `job_worker` | Background job worker |
+| `spp_dci` | Core DCI (Digital Convergence Initiative) API components |
+| `spp_dci_client` | Base DCI client infrastructure with OAuth2 and data sourc... |
+| `spp_api_v2` | OpenSPP API V2 - Standards-aligned, consent-respecting AP... |
 
 ## Data Models
 

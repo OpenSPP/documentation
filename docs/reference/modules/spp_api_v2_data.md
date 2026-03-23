@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# API V2 - Data
+# Data
 
 **Module:** `spp_api_v2_data`
 
@@ -22,10 +22,10 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency         | Description                                                   |
-| ------------------ | ------------------------------------------------------------- |
-| **spp_api_v2**     | Core API V2 module providing authentication and base patterns |
-| **spp_cel_domain** | CEL domain query builder for variable definitions             |
+| Dependency | Purpose |
+| --- | --- |
+| `spp_api_v2` | OpenSPP API V2 - Standards-aligned, consent-respecting AP... |
+| `spp_cel_domain` | Write simple CEL-like expressions to filter records (Open... |
 
 ## Key Features
 

@@ -22,10 +22,10 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency       | Description                            |
-| ---------------- | -------------------------------------- |
-| **base**         | Odoo core menu system                  |
-| **spp_security** | OpenSPP security groups and privileges |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `spp_security` | Central security definitions for OpenSPP modules |
 
 ## Key Features
 

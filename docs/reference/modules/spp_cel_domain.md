@@ -22,12 +22,12 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency        | Description                                                                  |
-| ----------------- | ---------------------------------------------------------------------------- |
-| `base`            | Odoo core framework                                                          |
-| `spp_base_common` | Common OpenSPP utilities and base models                                     |
-| `spp_security`    | OpenSPP security groups and access control                                   |
-| `spp_registry`    | Registry models for individuals and groups (required for member aggregation) |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `spp_base_common` | The OpenSPP base module that provides the main menu, gene... |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
 
 ## Key Features
 
@@ -133,4 +133,14 @@ validation = service.validate_expression(
     profile="registry_individuals"
 )
 # validation = {"valid": True, "error": None, "explain": "..."}
+```
+
+```{toctree}
+:maxdepth: 1
+:hidden:
+
+spp_cel_event
+spp_cel_registry_search
+spp_cel_vocabulary
+spp_cel_widget
 ```

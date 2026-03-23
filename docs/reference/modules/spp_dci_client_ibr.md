@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# DCI Client - IBR
+# Client - IBR
 
 **Module:** `spp_dci_client_ibr`
 
@@ -22,11 +22,11 @@ Use this module when you need to:
 
 ## Module Dependencies
 
-| Dependency       | Purpose                                      |
-| ---------------- | -------------------------------------------- |
-| `spp_dci_client` | Base DCI client infrastructure and API layer |
-| `spp_dci_server` | DCI server for bidirectional data exchange   |
-| `spp_registry`   | Registrant data and identifier management    |
+| Dependency | Purpose |
+| --- | --- |
+| `spp_dci_client` | Base DCI client infrastructure with OAuth2 and data sourc... |
+| `spp_dci_server` | DCI API server infrastructure with FastAPI routers |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
 
 ## Data Models
 
@@ -148,14 +148,3 @@ if status["enrolled"]:
 | `no_match`       | No duplicates found in the IBR                   |
 | `possible_match` | Potential match found, requires manual review    |
 | `confirmed_match`| Confirmed duplicate exists in another program    |
-
-## Technical Details
-
-| Property       | Value                |
-| -------------- | -------------------- |
-| Technical Name | `spp_dci_client_ibr` |
-| Category       | OpenSPP/Integration  |
-| Version        | 19.0.1.0.0           |
-| License        | LGPL-3               |
-| Application    | No                   |
-| Status         | Alpha                |

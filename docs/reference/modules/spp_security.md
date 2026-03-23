@@ -22,9 +22,9 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency | Purpose                                         |
-| ---------- | ----------------------------------------------- |
-| `base`     | Odoo core framework and security infrastructure |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
 
 ## Key Features
 
@@ -105,13 +105,3 @@ The security groups integrate with `spp_user_roles` for:
 - Role-based group assignment
 - Area-based access restrictions
 - Automated permission management
-
-## Technical Details
-
-| Property       | Value                      |
-| -------------- | -------------------------- |
-| Technical Name | `spp_security`             |
-| Category       | OpenSPP/Core               |
-| Version        | 19.0.1.0.0                 |
-| License        | LGPL-3                     |
-| Application    | No (infrastructure module) |

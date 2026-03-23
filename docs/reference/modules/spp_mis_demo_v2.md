@@ -22,20 +22,24 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency                | Description                                                           |
-| ------------------------- | --------------------------------------------------------------------- |
-| **spp_starter_sp_mis**    | Complete SP-MIS bundle with programs and service points               |
-| **spp_cr_types_advanced** | Advanced change request types (Add/Remove Member, Exit, Split, Merge) |
-| **spp_demo**              | Core demo data generator                                              |
-| **spp_gis_report**        | Geographic visualization for reports                                  |
-| **spp_claim_169**         | QR credentials for beneficiary verification                           |
+| Dependency | Purpose |
+| --- | --- |
+| `spp_starter_sp_mis` | Complete SP-MIS bundle with Social Registry, Programs, an... |
+| `spp_cr_types_advanced` | Advanced change request types with custom Python strategies |
+| `spp_demo` | Core demo module with data generator and sample data for ... |
+| `spp_gis_report` | Geographic visualization and reporting for social protect... |
+| `spp_registrant_gis` | Adds GPS coordinates to registrants for spatial queries |
+| `spp_indicator` | Publishable indicators based on CEL variables for dashboa... |
+| `spp_analytics` | Query engine for indicators, simulations, and GIS analytics |
+| `spp_studio` | No-code customization interface for OpenSPP |
+| `spp_api_v2_gis` | OGC API - Features compliant GIS endpoints for QGIS and G... |
+| `spp_claim_169` | MOSIP Claim 169 QR code identity credentials for registrants |
 
-### External Python Dependencies
+### External Dependencies
 
-| Package      | Description                           |
-| ------------ | ------------------------------------- |
-| **faker**    | Generates fake but realistic data     |
-| **requests** | HTTP client for external integrations |
+| Package | Purpose |
+| --- | --- |
+| `requests` | |
 
 ## Key Features
 

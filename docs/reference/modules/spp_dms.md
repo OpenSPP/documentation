@@ -22,17 +22,17 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency       | Description                |
-| ---------------- | -------------------------- |
-| **base**         | Core Odoo framework        |
-| **web**          | Web client assets          |
-| **spp_security** | OpenSPP security framework |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `web` | Web interface components |
+| `spp_security` | Central security definitions for OpenSPP modules |
 
-### External Python Dependencies
+### External Dependencies
 
-| Package    | Description                               |
-| ---------- | ----------------------------------------- |
-| **Pillow** | Image processing for thumbnails (>=9.0.1) |
+| Package | Purpose |
+| --- | --- |
+| `Pillow>=9.0.1` | |
 
 ## Key Features
 
@@ -182,21 +182,3 @@ The restore process:
 1. Open the file record
 2. Click "Enable Versioning"
 3. Initial version is created automatically
-
-## Technical Details
-
-### Checksum Computation
-
-Files use SHA-512 checksums for:
-
-- Data integrity verification
-- Duplicate detection
-- Version comparison
-
-### Concurrent Version Handling
-
-Version creation uses atomic SQL operations with retry logic to handle race conditions when multiple users modify the same file.
-
-### Storage
-
-File content is stored as Odoo attachments (`content_file` field), allowing standard Odoo file storage configuration (database or filestore).

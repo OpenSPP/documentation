@@ -23,20 +23,20 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency           | Description                         |
-| -------------------- | ----------------------------------- |
-| `base`               | Odoo core framework                 |
-| `mail`               | Mail thread for audit notifications |
-| `spp_registry`       | Registry models to audit            |
-| `spp_security`       | Security groups and access control  |
-| `spp_programs`       | Program models to audit             |
-| `spp_service_points` | Service point models to audit       |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `mail` | Communication and activity tracking |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `spp_programs` | Manage cash and in-kind entitlements, integrate with inve... |
+| `spp_service_points` | The OpenSPP Service Points module manages physical or vir... |
 
-### External Python Dependencies
+### External Dependencies
 
-| Package    | Description                             |
-| ---------- | --------------------------------------- |
-| `requests` | HTTP backend for external audit logging |
+| Package | Purpose |
+| --- | --- |
+| `requests` | |
 
 ## Key Features
 

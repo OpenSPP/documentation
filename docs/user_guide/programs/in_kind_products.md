@@ -37,13 +37,13 @@ If you do not see the **New** button on the Products screen, you do not have per
 
 2. Click **In-Kind** in the submenu.
 
-   ![Programs menu with In-Kind submenu](/_images/en-us/programs/in_kind/01-programs-menu-inkind-submenu.png)
+![Programs menu with In-Kind submenu](/_images/en-us/programs/in_kind/01-programs-menu-inkind-submenu.png)
 
 3. Click **Products**.
 
 4. The Products list shows all products available for in-kind programs. You can search, filter, and open any product to view or edit (if you have permission).
 
-   ![Products list view](/_images/en-us/programs/in_kind/02-products-list-view.png)
+![Products list view](/_images/en-us/programs/in_kind/02-products-list-view.png)
 
 ## Create a new in-kind product
 
@@ -55,7 +55,7 @@ If you do not see the **New** button on the Products screen, you do not have per
    **Unit of Measure**: To use different units (e.g., Kilogram, Box) on products, enable **Unit of measure & packaging** first: go to **Settings** > **Inventory** and tick **Unit of measure & packaging**. If this is not enabled, the product form may not show the Unit of Measure field or may use a single default unit. **Settings** > **Inventory** is accessible by the **Administrator** role only; contact your administrator if you need this enabled.
    ```
 
-   ![Settings > Inventory with Unit of measure and packaging enabled](/_images/en-us/programs/in_kind/03-settings-inventory-unit-of-measure.png)
+![Settings > Inventory with Unit of measure and packaging enabled](/_images/en-us/programs/in_kind/03-settings-inventory-unit-of-measure.png)
 
    | Field | Description | Required |
    |-------|-------------|----------|
@@ -66,7 +66,7 @@ If you do not see the **New** button on the Products screen, you do not have per
 
 3. Save the product. It will now appear in the product catalog and can be selected when configuring an in-kind program's **Items** in the program creation wizard.
 
-   ![New product form with key fields](/_images/en-us/programs/in_kind/04-new-product-form.png)
+![New product form with key fields](/_images/en-us/programs/in_kind/04-new-product-form.png)
 
    ```{note}
    Products created here are used when creating a program with **Benefit Type: In-Kind**. In the program wizard, the **Items** tab lets you add lines with **Product** (dropdown), **Quantity**, and **Unit of Measure**. Only products from this catalog appear in that dropdown.

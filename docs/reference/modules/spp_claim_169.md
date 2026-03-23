@@ -21,25 +21,26 @@ QR Credentials implements the MOSIP Claim 169 specification for generating verif
 - Provides APIs for offline credential verification
 - Supports multiple credential issuers for different programs
 
-## Dependencies
+## Module Dependencies
 
-| Module | Purpose |
-|--------|---------|
+| Dependency | Purpose |
+| --- | --- |
 | `base` | Odoo core framework |
-| `mail` | Communication and notifications |
-| `spp_security` | Security groups and access control |
-| `spp_registry` | Registrant data source |
-| `spp_key_management` | Cryptographic key storage |
-| `spp_audit` | Audit trail for credential operations |
-| `spp_cel_domain` | CEL expressions for transformations |
+| `mail` | Communication and activity tracking |
+| `spp_security` | Central security definitions for OpenSPP modules |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `spp_key_management` | Centralized cryptographic key management with pluggable p... |
+| `spp_audit` | Comprehensively tracks all data modifications and user ac... |
+| `spp_cel_domain` | Write simple CEL-like expressions to filter records (Open... |
 
-### External Python Packages
+### External Dependencies
 
 | Package | Purpose |
-|---------|---------|
-| `qrcode` | QR code generation |
-| `Pillow` | Image processing |
-| `claim169` | Claim 169 encoding/decoding |
+| --- | --- |
+| `qrcode` | |
+| `Pillow` | |
+| `claim169` | |
+| `jwcrypto` | |
 
 ## Claim 169 Attribute Specification
 
@@ -144,13 +145,3 @@ Go to **Claim 169 > Credentials** to:
 - Download CWT data
 - Check expiration status
 - Revoke credentials
-
-## Technical Details
-
-| Property | Value |
-|----------|-------|
-| Technical Name | `spp_claim_169` |
-| Category | OpenSPP/Identity |
-| Version | 19.0.1.1.0 |
-| License | LGPL-3 |
-| Development Status | Beta |

@@ -389,7 +389,7 @@ These types involve more complex operations that create, modify, or link records
 | Split Household | Group | Advanced |
 | Merge Registrants | Both | Advanced |
 
-## Choosing the right Type
+## Choosing the right type
 
 ```
 What do you need to do?

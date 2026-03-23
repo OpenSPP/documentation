@@ -77,11 +77,11 @@ Program
 
 1. Click **Programs** in the main menu.
 
-   ![Programs menu](/_images/en-us/programs/understanding/02-main-menu-programs-option-highlighted.png)
+![Programs menu](/_images/en-us/programs/understanding/02-main-menu-programs-option-highlighted.png)
 
 2. Click **Programs** in the submenu.
 
-   ![Programs submenu](/_images/en-us/programs/understanding/03-programs-submenu-programs-link.png)
+![Programs submenu](/_images/en-us/programs/understanding/03-programs-submenu-programs-link.png)
 
 3. The program list shows all programs you have access to.
 
@@ -165,14 +165,14 @@ You can configure eligibility in two ways:
      - "Single Parent Households"
      - And other predefined options
 
-   ![Eligibility criteria dropdown showing predefined options](/_images/en-us/programs/understanding/07-eligibility-criteria-dropdown.png)
+![Eligibility criteria dropdown showing predefined options](/_images/en-us/programs/understanding/07-eligibility-criteria-dropdown.png)
 
 2. **Advanced criteria** (Custom expressions):
    - Click **Advanced** to reveal a text field
    - Enter custom eligibility expressions using registry field names
    - Example: `members.exists(m, m.income < 10000)` (Groups with at least one member that has income < 10000)
 
-   ![Advanced eligibility criteria field with custom expression](/_images/en-us/programs/understanding/08-eligibility-advanced-criteria.png)
+![Advanced eligibility criteria field with custom expression](/_images/en-us/programs/understanding/08-eligibility-advanced-criteria.png)
 
 
 ### Step 3: Configure entitlements
@@ -183,7 +183,7 @@ Click the **Entitlements** tab to define what beneficiaries will receive.
 
 1. Click **Add a line** at the bottom of the entitlements section.
 
-   ![Entitlements tab with Add a line button](/_images/en-us/programs/understanding/09-entitlements-tab-add-line-button.png)
+![Entitlements tab with Add a line button](/_images/en-us/programs/understanding/09-entitlements-tab-add-line-button.png)
 
 2. A popup window appears with the following fields:
 
@@ -315,12 +315,12 @@ When you enable the **One-time Distribution** slider, the program will automatic
 1. Review all your settings in the wizard.
 2. Click **Create Program** at the bottom of the wizard.
 
-   ![Create Program button at bottom of wizard](/_images/en-us/programs/understanding/12-create-program-button.png)
+![Create Program button at bottom of wizard](/_images/en-us/programs/understanding/12-create-program-button.png)
 
 3. The program will be created and you'll be taken to the program form.
 4. The program status will show as **Active**.
 
-   ![Newly created program showing Active status](/_images/en-us/programs/understanding/13-newly-created-program-active-status.png)
+![Newly created program showing Active status](/_images/en-us/programs/understanding/13-newly-created-program-active-status.png)
 
 ### What happens after creation?
 

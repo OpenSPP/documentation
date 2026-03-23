@@ -31,12 +31,12 @@ Use this module when your program needs to:
 
 ## Module Dependencies
 
-| Dependency     | Purpose                              |
-| -------------- | ------------------------------------ |
-| `base`         | Odoo core framework                  |
-| `mail`         | Communication and activity tracking  |
-| `spp_registry` | Registrant data for consent subjects |
-| `spp_security` | Security groups and access control   |
+| Dependency | Purpose |
+| --- | --- |
+| `base` | Odoo core framework |
+| `mail` | Communication and activity tracking |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
+| `spp_security` | Central security definitions for OpenSPP modules |
 
 ## Key Features
 
@@ -134,16 +134,6 @@ Follows the three-tier access control pattern:
 | Viewer  | Read-only access to consent records        |
 | Officer | Create and modify consent records          |
 | Manager | Full CRUD including taxonomy configuration |
-
-## Technical Details
-
-| Property       | Value         |
-| -------------- | ------------- |
-| Technical Name | `spp_consent` |
-| Category       | OpenSPP       |
-| Version        | 19.0.2.0.0    |
-| License        | LGPL-3        |
-| Application    | No            |
 
 ## Integration
 

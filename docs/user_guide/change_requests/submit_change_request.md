@@ -33,11 +33,11 @@ Click **Change Requests** in the main menu.
 
 ### Step 2. Start a new request
 
-Click **New Request** in the sidebar menu.
+Click the button **New Request**.
 
 ![New Request menu item](/_images/en-us/change-requests/submit/02-new-request-menu-item-in-change-requests-sidebar.png)
 
-This opens the create change request wizard.
+This opens the new change request wizard.
 
 ### Step 3. Select the request type
 
@@ -62,16 +62,16 @@ Click on the request type you need.
 
 ### Step 4. Select the registrant
 
-In the **Registrant** field, search for the person or household you are updating.
+In the **Search Registrant** field, search for the person or household you are updating.
 
-Type part of their name or ID number to search.
+Type part of their name to search.
 
 ![Registrant search](/_images/en-us/change-requests/submit/04-registrant-search-field-with-autocomplete-dropdown.png)
 
-Select the correct registrant from the dropdown.
+Select the correct registrant from the list.
 
 ```{note}
-Some request types only work with individuals, others only with groups. The system filters the registrant list based on your selected request type.
+Some request types only work with individuals, others only with groups. The system displays a banner to inform which can be selected and also filters the registrant list based on your selected request type.
 ```
 
 ### Step 5. Click create
@@ -82,17 +82,13 @@ Click **Create** to create the change request.
 
 The system creates the request and automatically opens the detail form for editing.
 
-```{note}
-**Automatic Detail Form**: After clicking Create, the detail form opens automatically. If you navigate back to the main change request form, you can use the **Edit Details** smart button or the **Continue Editing** button in the Details tab to return to editing.
-```
-
 ### Step 6. Fill in the change details
 
 The form shows fields specific to your request type. Fill in the information you want to change.
 
 **For Edit Individual Information:**
 
-| Field | What to enter |
+| Field | Fields that can be edited |
 |-------|---------------|
 | Given Name | Person's first name |
 | Family Name | Person's surname |
@@ -104,64 +100,40 @@ The form shows fields specific to your request type. Fill in the information you
 
 ![Edit Individual form](/_images/en-us/change-requests/submit/06-edit-individual-information.png)
 
-**For Add Group Member:**
+### Step 7. Proceed to next step
 
-| Field | What to enter |
-|-------|---------------|
-| Given Name | New member's first name |
-| Family Name | New member's surname |
-| Date of Birth | Use the calendar picker |
-| Gender | Select from dropdown |
-| Relationship to Head | Their role in the household (child, spouse, etc.) |
-
-![Add Member form](/_images/en-us/change-requests/submit/07-add-group-member.png)
-
-### Step 7. Save the details
-
-Click **Save** to save your changes to the detail form.
+Click **Next: Upload Documents** in order to upload documents or **Review & Submit** to go straight to the review page. Note that if the change request requires documents it will not allow submission without the uploaded document
 
 ![Save button](/_images/en-us/change-requests/submit/08-save-button-to-save-changes-to-the-detail-form.png)
 
-The detail form remains open after saving. To submit the change request, navigate to the main change request form using the breadcrumb navigation or by opening the change request from the list.
-
 ### Step 8. Upload documents (if required)
 
-If your request type requires supporting documents:
+When clicking **Next: Upload Documents** you will be taken to the upload page. A banner will display information on what, if any, documents are required for this type of change request.
 
-1. On the change request form, click the **Documents** tab.
+![Upload Document button](/_images/en-us/change-requests/submit/10-upload-document-button-in-documents-tab.png)
 
-   ![Documents tab](/_images/en-us/change-requests/submit/09-documents-tab-for-uploading-supporting-documents.png)
+1. Click **Upload Document**.
 
-2. Click **Upload Document**.
+![Upload Document button](/_images/en-us/change-requests/submit/10b-upload-document-button-in-documents-tab.png)
 
-   ![Upload Document button](/_images/en-us/change-requests/submit/10-upload-document-button-in-documents-tab.png)
+2. Select the document type and attach the file.
 
-3. Select the document type and attach the file.
+![Document upload form](/_images/en-us/change-requests/submit/11-document-upload-form-with-type-selection-and-file.png)
 
-   ![Document upload form](/_images/en-us/change-requests/submit/11-document-upload-form-with-type-selection-and-file.png)
+3. Click **Upload**.
 
-4. Click **Upload**.
+### Step 9. Proceed to review
 
-### Step 9. Add notes (optional)
-
-Click the **Notes** tab to add:
-
-- **Description** - Explain why this change is needed.
-- **Internal Notes** - Notes for reviewers (not visible to the registrant).
+Click the button **Next: Review and Submit**
 
 ![Notes tab](/_images/en-us/change-requests/submit/12-notes-tab-with-description.png)
 
 ### Step 10. Review your changes
 
-Before submitting, open the main change request form and review the **Details** tab to see a preview of the proposed changes.
-
-The preview shows:
-- **Current Data** - What the registrant record looks like now.
+Before submitting, verify that the submitted information is correct. The exact display will differ depending on which type of change request is created but for all change requests there will be three tabs showing:
 - **Proposed Changes** - What will change if approved.
-
-```{note}
-**Preview availability**: The preview is only visible in the main change request form, not in the detail form. Make sure you've saved the detail form and navigated to the main change request form to see the preview.
-```
+- **Attached Documents** - List of the supporting documents provided.
+- **Request Log** - The actions taken on the Change Request
 
 ![Preview of changes](/_images/en-us/change-requests/submit/13-preview-of-changes.png)
 
@@ -188,7 +160,7 @@ After you submit:
 4. You can track the status in the **All Requests** view.
 
 ```{note}
-**Approval vs. finalization**: When a validator approves your request, it moves to **Approved** status. However, the changes are not yet applied to the registrant's record. A separate "Finalize & Record Changes" action must be performed to actually record the changes. This provides an additional safety check before making permanent changes.
+**Approval vs. finalization**: When a validator approves your request, it moves to **Approved** status. However, depending on the configuration, the changes may not yet be applied to the registrant's record. A separate "Finalize & Record Changes" action can be configured to be required to actually record the changes. This provides an additional safety check before making permanent changes.
 ```
 
 ## Are you stuck?

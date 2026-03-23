@@ -22,9 +22,9 @@ This module is designed to:
 
 ## Module Dependencies
 
-| Dependency       | Description                                            |
-| ---------------- | ------------------------------------------------------ |
-| **spp_registry** | Core registry functionality for individuals and groups |
+| Dependency | Purpose |
+| --- | --- |
+| `spp_registry` | Consolidated registry management for individuals, groups,... |
 
 ## Key Features
 
