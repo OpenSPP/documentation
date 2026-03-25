@@ -25,15 +25,13 @@ The {doc}`OpenSPP Farmer Registry <../../products/farmer_registry>` configuratio
 1.  Navigate to the **Apps** menu.
 2.  In the Apps menu, search for {doc}`spp_base_farmer_registry </reference/modules/spp_base_farmer_registry>` or "OpenSPP Starter: Farmer Registry"
 
-![Searching for SPP Farmer Registry module](/_images/en-us/get_started/modules/12-social_inst_base01.png)
+![Searching for SPP Farmer Registry module](/_images/en-us/get_started/modules/14-farmer_inst_base01.png)
 
 3.  Click the **Activate** button to install the module and its dependencies.
 
-![SPP Farmer Registry module installation complete](/_images/en-us/get_started/modules/13-social_inst_base2.png)
+![Activating SPP Farmer Registry module](/_images/en-us/get_started/modules/15-farmer_inst_base02.png)
 
-4. Restart OpenSPP after installing the module:
-   ```bash
-   sudo systemctl restart openspp
-   ```
+Once installed, you will be redirected to the Farmer Registry landing page as shown below.
 
-**Note**: The `queue_job` module, which is essential for asynchronous background tasks, is automatically installed as a dependency of the main OpenSPP modules. It is also pre-configured as a `server_wide_module`, ensuring that background workers can process jobs correctly after a service restart.
+![SPP Farmer Registry module installation complete](/_images/en-us/get_started/modules/16-farmer_inst_base03.png)
+

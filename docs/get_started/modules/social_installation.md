@@ -32,11 +32,6 @@ The {doc}`OpenSPP Social Registry <../../products/social_registry>` configuratio
 
 ![SPP Base module installation screen](/_images/en-us/get_started/modules/13-social_inst_base2.png)
 
-4. Restart OpenSPP after installing the module:
-   ```bash
-   sudo systemctl restart openspp
-   ```
-
-**Note**: The `queue_job` module, which is essential for asynchronous background tasks, is automatically installed as a dependency of the main OpenSPP modules. It is also pre-configured as a `server_wide_module`, ensuring that background workers can process jobs correctly after a service restart.
-
 Once installed, the Social Registry becomes the central hub for managing beneficiary data that can be accessed by various social protection programs.
+
+![SPP_starter_social_registry landing page](/_images/en-us/get_started/modules/14-social_inst_base03.png)

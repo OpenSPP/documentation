@@ -30,13 +30,6 @@ The OpenSPP Social Protection Management Information System ({doc}`OpenSPP SP-MI
 
 ![SPP Base module installation screen](/_images/en-us/get_started/modules/03-spp_base2.png)
 
-4. Restart OpenSPP after installing the module:
-   ```bash
-   sudo systemctl restart openspp
-   ```
-
-**Note**: The `queue_job` module, which is essential for asynchronous background tasks, is automatically installed as a dependency of the main OpenSPP modules. It is also pre-configured as a `server_wide_module`, ensuring that background workers can process jobs correctly after a service restart.
-
 Once installed, you will see the "Registry" application in your Odoo dashboard, which is the main entry point for the OpenSPP system.
 
 ![SPP Base module successfully installed](/_images/en-us/get_started/modules/04-spp_base3.png)
