@@ -44,6 +44,11 @@ The digest lists all items pending the recipient's approval, helping approvers s
 
 ## Freeze periods
 
+```{figure} /_images/en-us/config_guide/approval_workflows/03-approval-freeze-periods.png
+:alt: Approval freeze periods list showing scheduled freeze windows
+Approval freeze periods list showing scheduled freeze windows.
+```
+
 Freeze periods block all approvals system-wide during critical operational windows.
 
 ### When to use freezes

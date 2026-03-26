@@ -34,6 +34,16 @@ Organize templates by purpose:
 | Disaster | Affected areas, impact severity |
 | Performance | Enrollment rates, payment completion |
 
+```{figure} /_images/en-us/config_guide/gis/04-gis-report-templates.png
+:alt: GIS report templates list showing pre-built map configurations
+GIS report templates list showing pre-built map configurations.
+```
+
+```{figure} /_images/en-us/config_guide/gis/05-gis-reports-list.png
+:alt: GIS reports list showing generated reports
+GIS reports list showing generated reports.
+```
+
 ### Creating a report from a template
 
 1. Navigate to **GIS Reports**

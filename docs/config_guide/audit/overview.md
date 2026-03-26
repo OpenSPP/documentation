@@ -68,6 +68,11 @@ These track status changes:
 
 ### Field-level tracking
 
+```{figure} /_images/en-us/config_guide/audit/02-audit-rule-form.png
+:alt: Audit rule form showing standard actions, lifecycle actions, and file access logging options
+Audit rule form showing standard actions, lifecycle actions, and file access logging options.
+```
+
 For sensitive fields, you can create child rules under a model rule:
 
 1. Open the model-level audit rule
@@ -132,6 +137,11 @@ Audit logs are tamper-resistant. Once a log entry is created, it cannot be modif
 |------|---------|
 | **Audit Rules** | Create and manage audit rules |
 | **Audit Logs** | View and search audit log entries |
+
+```{figure} /_images/en-us/config_guide/audit/01-audit-rules-list.png
+:alt: Audit rules list showing models being audited and enabled action types
+Audit rules list showing models being audited and enabled action types.
+```
 
 ## Common use cases
 

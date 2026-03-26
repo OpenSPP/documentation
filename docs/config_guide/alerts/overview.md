@@ -52,6 +52,11 @@ Available operators:
 
 ### Date/deadline rules
 
+```{figure} /_images/en-us/config_guide/alerts/02-alert-rule-form.png
+:alt: Alert rule form showing threshold configuration with monitored field and comparison operator
+Alert rule form showing threshold configuration with monitored field and comparison operator.
+```
+
 Monitor a date field for approaching deadlines:
 
 | Field | What it means |
@@ -135,6 +140,11 @@ When a rule evaluates:
 |------|---------|
 | **Alert Rules** | Create and manage monitoring rules |
 | **Alerts** | View generated alerts |
+
+```{figure} /_images/en-us/config_guide/alerts/01-alert-rules-list.png
+:alt: Alert rules list showing rule type, priority, and monitored model
+Alert rules list showing rule type, priority, and monitored model.
+```
 
 ## Common use cases
 

@@ -16,69 +16,69 @@ The Configuration Guide is designed for implementers who need to customize OpenS
 
 ## Topics covered
 
-- **[OpenSPP Studio](studio/index.md)** - No-code configuration tool (NEW V2)
-- **[CEL Expressions](cel/index.md)** - Common Expression Language for rules and formulas
-- **[Eligibility rules](eligibility/index.md)** - Configuring who qualifies for programs
-- **[Entitlement formulas](entitlement_formulas/index.md)** - Calculating benefit amounts
-- **[Vocabulary system](vocabulary/index.md)** - Standardized codes and terminologies (NEW V2)
-- **[Variables and indicators](variables/index.md)** - Unified variable system (NEW V2)
-- **[Event data](event_data/index.md)** - Capturing external data from surveys and forms (V2 enhanced)
-- **[Change request types](change_request_types/index.md)** - Configuring change request workflows (NEW V2)
-- **[Consent configuration](consent/index.md)** - Managing data sharing consent (NEW V2)
-- **[Role configuration](role_configuration/index.md)** - Configuring users, roles, and role-based access (global and local roles)
-- **[Scoring & assessment](scoring/index.md)** - Beneficiary scoring frameworks
-- **[DRIMS](drims/index.md)** - Disaster response inventory management
-- **[Area management](area_management/index.md)** - Geographic area hierarchy and boundaries
-- **[Service points](service_points/index.md)** - Service delivery locations
-- **[Approval workflows](approval_workflows/index.md)** - Multi-tier approval definitions
-- **[Case management](case_management/index.md)** - Case lifecycle configuration
-- **[Grievance redress](grievance_redress/index.md)** - Helpdesk and complaint handling
-- **[Audit configuration](audit/index.md)** - Audit trail setup
 - **[Alerts](alerts/index.md)** - Threshold and deadline monitoring
-- **[GIS configuration](gis/index.md)** - Map visualization setup
-- **[Hazard management](hazard_management/index.md)** - Disaster and hazard response
-- **[Farmer registry](farmer_registry/index.md)** - Farm entity configuration
-- **[Graduation](graduation/index.md)** - Program exit pathways
-- **[Simulation](simulation/index.md)** - Targeting scenario modeling
-- **[Import matching](import_matching/index.md)** - Deduplication during import
-- **[Session tracking](session_tracking/index.md)** - Attendance and session configuration
+- **[Approval workflows](approval_workflows/index.md)** - Multi-tier approval definitions
+- **[Area management](area_management/index.md)** - Geographic area hierarchy and boundaries
+- **[Audit configuration](audit/index.md)** - Audit trail setup
+- **[Banking](banking/index.md)** - Beneficiary bank details
+- **[Case management](case_management/index.md)** - Case lifecycle configuration
+- **[CEL Expressions](cel/index.md)** - Common Expression Language for rules and formulas
+- **[Change request types](change_request_types/index.md)** - Configuring change request workflows
+- **[Consent configuration](consent/index.md)** - Managing data sharing consent
 - **[Custom fields](custom_fields/index.md)** - Registrant field groups
 - **[Document management](document_management/index.md)** - File directories and categories
+- **[DRIMS](drims/index.md)** - Disaster response inventory management
+- **[Eligibility rules](eligibility/index.md)** - Configuring who qualifies for programs
+- **[Entitlement formulas](entitlement_formulas/index.md)** - Calculating benefit amounts
+- **[Event data](event_data/index.md)** - Capturing external data from surveys and forms
+- **[Farmer registry](farmer_registry/index.md)** - Farm entity configuration
+- **[GIS configuration](gis/index.md)** - Map visualization setup
+- **[Graduation](graduation/index.md)** - Program exit pathways
+- **[Grievance redress](grievance_redress/index.md)** - Helpdesk and complaint handling
+- **[Hazard management](hazard_management/index.md)** - Disaster and hazard response
+- **[Import matching](import_matching/index.md)** - Deduplication during import
+- **[OpenSPP Studio](studio/index.md)** - No-code configuration tool
+- **[Role configuration](role_configuration/index.md)** - Users, roles, and role-based access
+- **[Scoring & assessment](scoring/index.md)** - Beneficiary scoring frameworks
+- **[Service points](service_points/index.md)** - Service delivery locations
+- **[Session tracking](session_tracking/index.md)** - Attendance and session configuration
+- **[Simulation](simulation/index.md)** - Targeting scenario modeling
 - **[Storage backend](storage_backend/index.md)** - File storage configuration
-- **[Banking](banking/index.md)** - Beneficiary bank details
+- **[Variables and indicators](variables/index.md)** - Unified variable system
+- **[Vocabulary system](vocabulary/index.md)** - Standardized codes and terminologies
 
 ```{toctree}
 :maxdepth: 2
 :hidden:
 
-studio/index
+alerts/index
+approval_workflows/index
+area_management/index
+audit/index
+banking/index
+case_management/index
 cel/index
-eligibility/index
-entitlement_formulas/index
-vocabulary/index
-variables/index
-event_data/index
 change_request_types/index
 consent/index
-role_configuration/index
-scoring/index
-drims/index
-area_management/index
-service_points/index
-approval_workflows/index
-case_management/index
-grievance_redress/index
-audit/index
-alerts/index
-gis/index
-hazard_management/index
-farmer_registry/index
-graduation/index
-simulation/index
-import_matching/index
-session_tracking/index
 custom_fields/index
 document_management/index
+drims/index
+eligibility/index
+entitlement_formulas/index
+event_data/index
+farmer_registry/index
+gis/index
+graduation/index
+grievance_redress/index
+hazard_management/index
+import_matching/index
+studio/index
+role_configuration/index
+scoring/index
+service_points/index
+session_tracking/index
+simulation/index
 storage_backend/index
-banking/index
+variables/index
+vocabulary/index
 ```

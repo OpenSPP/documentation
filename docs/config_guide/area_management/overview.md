@@ -26,6 +26,11 @@ Think of it like a filing cabinet: **area types** are the drawer labels (fixed s
 
 Each area can have one parent and many children. The hierarchy depth is limited to 10 levels.
 
+```{figure} /_images/en-us/config_guide/area_management/02-area-form.png
+:alt: Area form showing details for a municipality including parent hierarchy and classification
+Area form showing details for a municipality including parent hierarchy and classification.
+```
+
 | Field | What it means |
 |-------|---------------|
 | **Draft Name** | Display name (translatable) |
@@ -81,6 +86,11 @@ New → Uploaded → Parsed → Imported → Validated → Done
 | **Area > Areas > Area Types** | Define area classifications |
 | **Area > Areas > Area Tags** | Manage area tags |
 | **Area > Areas > Area Import** | Bulk import from Excel |
+
+```{figure} /_images/en-us/config_guide/area_management/01-area-list-view.png
+:alt: Area list view showing hierarchical records with name, code, parent, and area type columns
+Area list view showing hierarchical records with name, code, parent, and area type columns.
+```
 
 ## Common use cases
 

@@ -53,6 +53,16 @@ Stage configuration:
 
 ### Ticket categories
 
+```{figure} /_images/en-us/config_guide/grievance_redress/02-grm-categories-list.png
+:alt: Ticket categories list showing severity, sensitivity, and SLA settings
+Ticket categories list showing severity, sensitivity, and SLA settings.
+```
+
+```{figure} /_images/en-us/config_guide/grievance_redress/03-grm-category-form.png
+:alt: Ticket category form with severity, SLA hours, and subcategories
+Ticket category form with severity, SLA hours, and subcategories.
+```
+
 Categories classify complaints in a hierarchy (parent → child):
 
 | Field | What it means |
@@ -104,6 +114,11 @@ Channels track how complaints are received:
 | **Configuration > SLA Rules** | Set service level agreements |
 | **Configuration > Teams** | Manage GRM teams |
 | **Configuration > Tags** | Create ticket tags |
+
+```{figure} /_images/en-us/config_guide/grievance_redress/01-grm-tickets-view.png
+:alt: GRM tickets view showing the helpdesk interface
+GRM tickets view showing the helpdesk interface.
+```
 
 ## Common use cases
 

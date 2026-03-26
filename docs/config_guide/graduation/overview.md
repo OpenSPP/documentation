@@ -41,6 +41,11 @@ Think of it like a school graduation: **pathways** are the degree programs (with
 
 ### Pre-configured pathways
 
+```{figure} /_images/en-us/config_guide/graduation/02-graduation-pathway-form.png
+:alt: Graduation pathway form showing criteria, assessment methods, and weights
+Graduation pathway form showing criteria, assessment methods, and weights.
+```
+
 OpenSPP includes three default pathways:
 
 | Pathway | Exit Type | Assessment | Approval |
@@ -56,6 +61,11 @@ OpenSPP includes three default pathways:
 | **Graduation > Graduation Pathways** | Define exit pathways |
 | **Graduation > Graduation Criteria** | Configure assessment criteria |
 | **Graduation > Assessments** | View individual assessments |
+
+```{figure} /_images/en-us/config_guide/graduation/01-graduation-pathways-list.png
+:alt: Graduation pathways list showing exit type and assessment requirements
+Graduation pathways list showing exit type and assessment requirements.
+```
 
 ## Common use cases
 

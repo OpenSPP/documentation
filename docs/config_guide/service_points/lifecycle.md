@@ -20,6 +20,11 @@ A service point moves through lifecycle states based on its operational status:
 
 Think of it like a store: it can be **open** (active), **open but license expired** (no contract), or **closed** (disabled).
 
+```{figure} /_images/en-us/config_guide/service_points/03-service-point-form-detail.png
+:alt: Service point form showing agent details, area, and contract status
+Service point form showing agent details, area, and contract status.
+```
+
 ## Disabling a service point
 
 When a service point stops operating:

@@ -23,6 +23,11 @@ The system tracks per team:
 - **Ticket Count** - Total tickets assigned
 - **Open Tickets** - Currently unresolved tickets
 
+```{figure} /_images/en-us/config_guide/grievance_redress/05-grm-teams-list.png
+:alt: GRM teams list showing team name and manager
+GRM teams list showing team name and manager.
+```
+
 ### Setting up teams
 
 1. Navigate to **Helpdesk > Configuration > Teams**
@@ -50,6 +55,11 @@ Tags provide flexible, cross-cutting labels for tickets beyond the category hier
 |-------|---------------|
 | **Name** | Tag label (e.g., "Urgent follow-up", "Repeat complaint") |
 | **Color** | Visual color in the UI |
+
+```{figure} /_images/en-us/config_guide/grievance_redress/06-grm-tags-list.png
+:alt: GRM ticket tags list showing tag names and colors
+GRM ticket tags list showing tag names and colors.
+```
 
 ### Setting up tags
 

@@ -80,6 +80,11 @@ Centralized palettes for consistent visualization across all maps:
 | **Settings > GIS Configuration > Raster Layers** | Configure base maps |
 | **Settings > GIS Configuration > Data Layers** | Create data overlays |
 
+```{figure} /_images/en-us/config_guide/gis/01-gis-color-schemes.png
+:alt: GIS color schemes list showing available palettes
+GIS color schemes list showing available palettes.
+```
+
 ## Common use cases
 
 ### Use case 1: Basic area map

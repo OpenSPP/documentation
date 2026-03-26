@@ -23,6 +23,11 @@ Think of it like a phone book lookup: the **rule** says "look up by name", and t
 
 ### Matching rules
 
+```{figure} /_images/en-us/config_guide/import_matching/01-import-match-rules.png
+:alt: Import matching rules list showing model and field configurations
+Import matching rules list showing model and field configurations.
+```
+
 | Field | What it means |
 |-------|---------------|
 | **Model** | The type of record to match against (e.g., Registrants, Programs) |
@@ -42,6 +47,11 @@ Each field in a rule defines one matching criterion:
 | **Condition Value** | The value the condition field must have |
 
 ### Matching behavior
+
+```{figure} /_images/en-us/config_guide/import_matching/02-import-match-rule-form.png
+:alt: Import matching rule form showing fields and overwrite settings
+Import matching rule form showing fields and overwrite settings.
+```
 
 When importing data:
 

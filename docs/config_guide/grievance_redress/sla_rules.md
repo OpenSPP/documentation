@@ -34,6 +34,11 @@ SLA rules define your service promises:
 | **Categories** | Specific categories this rule covers (blank = all) |
 | **Teams** | Specific teams this rule covers (blank = all) |
 
+```{figure} /_images/en-us/config_guide/grievance_redress/04-grm-sla-rules-list.png
+:alt: SLA rules list showing response and resolution time targets
+SLA rules list showing response and resolution time targets.
+```
+
 ## Setting up SLA rules
 
 ### Step 1: Define your service standards

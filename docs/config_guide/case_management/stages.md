@@ -33,6 +33,11 @@ Each stage can enforce requirements before a case can enter it, ensuring proper 
 | **Folded in Board View** | Collapse this column in the card board view |
 | **Color** | Visual color indicator |
 
+```{figure} /_images/en-us/config_guide/case_management/03-case-stages-list.png
+:alt: Case stages list showing phase, sequence, and requirements
+Case stages list showing phase, sequence, and requirements.
+```
+
 ### Phase classifications
 
 Each stage maps to one of seven phases:

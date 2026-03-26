@@ -51,6 +51,16 @@ When a file is re-uploaded, the system:
 2. Sets the new upload as the current version
 3. Allows reverting to any previous version
 
+```{figure} /_images/en-us/config_guide/document_management/01-dms-directories.png
+:alt: Document management directories view
+Document management directories view.
+```
+
+```{figure} /_images/en-us/config_guide/document_management/02-dms-categories.png
+:alt: Document categories list showing file type restrictions
+Document categories list showing file type restrictions.
+```
+
 ## Setting up document management
 
 ### Step 1: Plan your directory structure

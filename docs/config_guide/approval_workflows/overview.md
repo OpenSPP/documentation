@@ -64,6 +64,11 @@ Each definition has three notification toggles:
 | **Emergency Bypass** | Allow bypassing approval in emergencies |
 | **Respect Freeze Periods** | Block approvals during system freeze |
 
+```{figure} /_images/en-us/config_guide/approval_workflows/02-approval-definition-form.png
+:alt: Approval definition form showing model, type, and notification settings
+Approval definition form showing model, type, and notification settings.
+```
+
 ## Navigation
 
 | Menu | Purpose |
@@ -72,6 +77,11 @@ Each definition has three notification toggles:
 | **All Reviews** | All approval activity (managers only) |
 | **Configuration > Approval Definitions** | Create and manage workflows |
 | **Configuration > Freeze Periods** | Define system-wide approval freezes |
+
+```{figure} /_images/en-us/config_guide/approval_workflows/01-approval-definitions-list.png
+:alt: Approval definitions list showing configured workflows
+Approval definitions list showing configured workflows.
+```
 
 ## Common use cases
 

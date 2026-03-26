@@ -29,6 +29,11 @@ Teams organize who handles cases:
 | **Case Types** | Which case types this team handles |
 | **Company** | Organization the team belongs to |
 
+```{figure} /_images/en-us/config_guide/case_management/02-case-type-form.png
+:alt: Case type form showing domain, intensity, caseload limits, and available stages
+Case type form showing domain, intensity, caseload limits, and available stages.
+```
+
 The system tracks per team:
 - **Active Cases** - Number of currently open cases
 - **Total Cases** - All cases ever handled

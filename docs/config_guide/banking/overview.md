@@ -49,6 +49,11 @@ For programs using mobile money:
 - Use the phone number as the account number
 - Set account type to "Mobile Money"
 
+```{figure} /_images/en-us/config_guide/banking/01-banks-list.png
+:alt: Banks list showing configured financial institutions
+Banks list showing configured financial institutions.
+```
+
 ## Setting up banking
 
 ### Step 1: Configure banks

@@ -118,6 +118,16 @@ For each affected registrant:
 | **Hazard Impacts** | View individual impact records |
 | **Geofences** | Define geographic response areas |
 
+```{figure} /_images/en-us/config_guide/hazard_management/01-hazard-categories.png
+:alt: Hazard categories showing hierarchical classification
+Hazard categories showing hierarchical classification.
+```
+
+```{figure} /_images/en-us/config_guide/hazard_management/02-hazard-incidents.png
+:alt: Hazard incidents list showing status and severity
+Hazard incidents list showing status and severity.
+```
+
 ## Common use cases
 
 ### Use case 1: Typhoon response

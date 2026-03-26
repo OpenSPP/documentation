@@ -19,6 +19,11 @@ Data layers come in two modes:
 
 ## Data layer configuration
 
+```{figure} /_images/en-us/config_guide/gis/02-gis-data-layers.png
+:alt: GIS data layers list showing geo field and representation mode
+GIS data layers list showing geo field and representation mode.
+```
+
 ### Common fields
 
 | Field | What it means |
@@ -37,6 +42,11 @@ Data layers come in two modes:
 | **Data Color** | Single color for all features (selected via color picker) |
 
 ### Choropleth mode
+
+```{figure} /_images/en-us/config_guide/gis/03-gis-data-layer-form.png
+:alt: Data layer form showing choropleth configuration options
+Data layer form showing choropleth configuration options.
+```
 
 | Field | What it means |
 |-------|---------------|

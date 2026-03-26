@@ -24,6 +24,11 @@ Think of it like a class schedule: the **session type** is the course (with freq
 
 ### Session types
 
+```{figure} /_images/en-us/config_guide/session_tracking/01-session-types-list.png
+:alt: Session types list showing frequency, duration, and attendance threshold
+Session types list showing frequency, duration, and attendance threshold.
+```
+
 | Field | What it means |
 |-------|---------------|
 | **Name** | Type label (e.g., "Family Development Session") |
@@ -44,6 +49,11 @@ Think of it like a class schedule: the **session type** is the course (with freq
 | **One-time** | Single session, no recurrence |
 
 ### Pre-configured session types
+
+```{figure} /_images/en-us/config_guide/session_tracking/02-session-type-form.png
+:alt: Session type form showing frequency, topics, and required attendance percentage
+Session type form showing frequency, topics, and required attendance percentage.
+```
 
 | Type | Frequency | Duration | Description |
 |------|-----------|----------|-------------|

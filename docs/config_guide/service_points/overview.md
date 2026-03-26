@@ -35,6 +35,11 @@ Think of it like a franchise: the **location** is the store, the **agent** is th
 | **Company** | Managing organization | No |
 | **Active Contract** | Whether the point has a current operating agreement | No |
 
+```{figure} /_images/en-us/config_guide/service_points/02-service-point-form.png
+:alt: Service point form with agent name, area, phone, and address fields
+Service point form with agent name, area, phone, and address fields.
+```
+
 ### Service types
 
 Service types come from the **vocabulary system** (a managed list of pre-defined options). Common examples:
@@ -66,6 +71,11 @@ The **Company** field links the service point to a registered organization in th
 |------|---------|
 | **Service Points** | View and manage all service points |
 | **Service Points > Configuration** | Service point settings (managers only) |
+
+```{figure} /_images/en-us/config_guide/service_points/01-service-point-list.png
+:alt: Service points list view showing agent names, areas, and contract status
+Service points list view showing agent names, areas, and contract status.
+```
 
 ## Common use cases
 

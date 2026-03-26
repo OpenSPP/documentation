@@ -76,6 +76,16 @@ Cases have three intensity levels that affect workload calculation:
 | **Cases > Configuration > Vulnerabilities** | Define vulnerability categories |
 | **Cases > Configuration > Closure Reasons** | Configure case closure outcomes |
 
+```{figure} /_images/en-us/config_guide/case_management/01-case-types-list.png
+:alt: Case types list showing domain, intensity level, and caseload limits
+Case types list showing domain, intensity level, and caseload limits.
+```
+
+```{figure} /_images/en-us/config_guide/case_management/04-cases-kanban.png
+:alt: Cases board view showing cases organized by stage columns
+Cases board view showing cases organized by stage columns.
+```
+
 ## Common use cases
 
 ### Use case 1: Child protection program

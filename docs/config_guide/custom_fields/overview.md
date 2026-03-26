@@ -39,6 +39,16 @@ Think of it like form sections: **field groups** are the section headers on a pa
 
 A field group is shown only on the registrant type it targets. This keeps forms clean by showing only relevant fields.
 
+```{figure} /_images/en-us/config_guide/custom_fields/01-field-groups-list.png
+:alt: Custom field groups list showing target type and sequence
+Custom field groups list showing target type and sequence.
+```
+
+```{figure} /_images/en-us/config_guide/custom_fields/02-field-group-form.png
+:alt: Custom field group form showing name, target type, and sequence
+Custom field group form showing name, target type, and sequence.
+```
+
 ## Setting up field groups
 
 ### Step 1: Create a field group
