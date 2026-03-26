@@ -26,6 +26,26 @@ The Configuration Guide is designed for implementers who need to customize OpenS
 - **[Change request types](change_request_types/index.md)** - Configuring change request workflows (NEW V2)
 - **[Consent configuration](consent/index.md)** - Managing data sharing consent (NEW V2)
 - **[Role configuration](role_configuration/index.md)** - Configuring users, roles, and role-based access (global and local roles)
+- **[Scoring & assessment](scoring/index.md)** - Beneficiary scoring frameworks
+- **[DRIMS](drims/index.md)** - Disaster response inventory management
+- **[Area management](area_management/index.md)** - Geographic area hierarchy and boundaries
+- **[Service points](service_points/index.md)** - Service delivery locations
+- **[Approval workflows](approval_workflows/index.md)** - Multi-tier approval definitions
+- **[Case management](case_management/index.md)** - Case lifecycle configuration
+- **[Grievance redress](grievance_redress/index.md)** - Helpdesk and complaint handling
+- **[Audit configuration](audit/index.md)** - Audit trail setup
+- **[Alerts](alerts/index.md)** - Threshold and deadline monitoring
+- **[GIS configuration](gis/index.md)** - Map visualization setup
+- **[Hazard management](hazard_management/index.md)** - Disaster and hazard response
+- **[Farmer registry](farmer_registry/index.md)** - Farm entity configuration
+- **[Graduation](graduation/index.md)** - Program exit pathways
+- **[Simulation](simulation/index.md)** - Targeting scenario modeling
+- **[Import matching](import_matching/index.md)** - Deduplication during import
+- **[Session tracking](session_tracking/index.md)** - Attendance and session configuration
+- **[Custom fields](custom_fields/index.md)** - Registrant field groups
+- **[Document management](document_management/index.md)** - File directories and categories
+- **[Storage backend](storage_backend/index.md)** - File storage configuration
+- **[Banking](banking/index.md)** - Beneficiary bank details
 
 ```{toctree}
 :maxdepth: 2
@@ -41,6 +61,24 @@ event_data/index
 change_request_types/index
 consent/index
 role_configuration/index
+scoring/index
+drims/index
+area_management/index
+service_points/index
+approval_workflows/index
+case_management/index
+grievance_redress/index
+audit/index
+alerts/index
+gis/index
+hazard_management/index
+farmer_registry/index
+graduation/index
+simulation/index
+import_matching/index
+session_tracking/index
+custom_fields/index
+document_management/index
+storage_backend/index
+banking/index
 ```
-
-<!-- Hidden until ready: drims/index -->
