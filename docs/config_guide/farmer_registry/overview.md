@@ -51,6 +51,16 @@ Farm fields use the vocabulary system for standardized values aligned with FAO s
 | Farm classification | Farm type categories |
 | Land use types | Land use classification |
 
+```{figure} /_images/en-us/config_guide/farmer_registry/01-farm-groups-list.png
+:alt: Farm groups list showing registered farm entities
+Farm groups list showing registered farm entities.
+```
+
+```{figure} /_images/en-us/config_guide/farmer_registry/02-farm-registrant-form.png
+:alt: Farm registrant form showing profile with tabs for Farm Details, Crop, Livestock, and Aquaculture Activities
+Farm registrant form showing profile with tabs for Farm Details, Crop, Livestock, and Aquaculture Activities.
+```
+
 ## Navigation
 
 | Menu | Purpose |

@@ -8,6 +8,16 @@ openspp:
 
 This guide is for **implementers** configuring farm activity tracking, seasonal records, and asset management.
 
+```{figure} /_images/en-us/config_guide/farmer_registry/03-farm-details-tab.png
+:alt: Farm Details tab showing classification, size, holder type, land tenure, and acreage breakdown
+Farm Details tab showing classification, size, holder type, land tenure, and acreage breakdown.
+```
+
+```{figure} /_images/en-us/config_guide/farmer_registry/04-farm-seasons-list.png
+:alt: Agricultural seasons list showing season name, dates, and status
+Agricultural seasons list showing season name, dates, and status.
+```
+
 ## Seasons
 
 Seasons define time periods for agricultural activity tracking:
