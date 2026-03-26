@@ -33,6 +33,16 @@ Think of it like choosing where to save photos: **database** is your phone's int
 | **Endpoint URL** | For S3: the service endpoint |
 | **Access Key / Secret Key** | For S3: authentication credentials |
 
+```{figure} /_images/en-us/config_guide/storage_backend/01-storage-backends-list.png
+:alt: Storage backends list showing configured storage options
+Storage backends list showing configured storage options.
+```
+
+```{figure} /_images/en-us/config_guide/storage_backend/02-storage-backend-form.png
+:alt: Storage backend form showing backend type and connection settings
+Storage backend form showing backend type and connection settings.
+```
+
 ### Choosing a backend
 
 | Factor | Database | Filesystem | Cloud Storage |

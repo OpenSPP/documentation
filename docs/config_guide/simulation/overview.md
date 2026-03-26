@@ -34,6 +34,11 @@ Templates are pre-built targeting patterns:
 | **Default Amount** | Default benefit per beneficiary |
 | **Target Population** | Expression for ideal population (for accuracy metrics) |
 
+```{figure} /_images/en-us/config_guide/simulation/01-scenario-templates-list.png
+:alt: Simulation scenario templates list showing categories and targeting formulas
+Simulation scenario templates list showing categories and targeting formulas.
+```
+
 Pre-built template categories:
 
 | Category | Example Templates |
@@ -54,6 +59,11 @@ A scenario is an instance of a template with specific parameters:
 | **Benefit Amount** | Amount per qualifying beneficiary |
 | **Budget Limit** | Total available budget |
 | **Area Scope** | Geographic restriction |
+
+```{figure} /_images/en-us/config_guide/simulation/02-scenario-template-form.png
+:alt: Scenario template form showing targeting formula and default parameters
+Scenario template form showing targeting formula and default parameters.
+```
 
 ### Simulation runs
 
