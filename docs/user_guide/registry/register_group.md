@@ -5,11 +5,12 @@ openspp:
   applies_to:
     - social_registry
     - sp_mis
+    - farner_registry
 ---
 
 # Register a group
 
-**Applies to:** Social Registry, SP-MIS
+**Applies to:** Social Registry, SP-MIS, Farmer Registry
 
 ## What you will do
 
@@ -136,6 +137,10 @@ Only one member can be the Head per group. If you try to set a second Head, you 
 ### Step 9. Verify the group
 
 Search for the group in the Registry Search Portal to confirm it was created with all members.
+
+```{note}
+If you are registering a farm household, there are additional tabs to complete on the group record. See {doc}`farmer_registry` for details.
+```
 
 ![Search results showing new group](/_images/en-us/registry/register-group/12-search-results-showing-newly-created-group.png)
 
