@@ -16,4 +16,12 @@ Learn how OpenSPP uses the Common Expression Language (CEL) as its core expressi
 - **Variables and providers**: The unified variable system and value providers
 - **Domain queries**: Building dynamic filter expressions with CEL
 - **CEL widgets**: Frontend components for CEL expression editing
+- **[Internals](internals.md)**: CEL caching, the unified value store, and performance optimization
+
+```{toctree}
+:maxdepth: 2
+:hidden:
+
+internals
+```
 

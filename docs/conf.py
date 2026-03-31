@@ -408,7 +408,9 @@ redirects = {
     "technical_reference/cel/expressions.html": "config_guide/cel/syntax.html",
     "technical_reference/cel/events.html": "config_guide/cel/variables.html",
     "technical_reference/cel/widget_and_validation.html": "config_guide/cel/syntax.html",
-    "technical_reference/cel/caching_and_metric.html": "developer_guide/architecture/cel_internals.html",
+    "technical_reference/cel/caching_and_metric.html": "developer_guide/cel/internals.html",
+    "developer_guide/architecture/cel_internals.html": "developer_guide/cel/internals.html",
+    "developer_guide/architecture/manager_pattern.html": "developer_guide/custom_managers/manager_pattern.html",
 
     # Phase 3: User Guide Deduplication redirects - ACTIVE
     "tutorial/user_guides/register_new_individual.html": "user_guide/registry/register_individual.html",
