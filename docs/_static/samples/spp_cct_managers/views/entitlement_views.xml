@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_entitlement_manager_cct_form" model="ir.ui.view">
+        <field name="name">spp.program.entitlement.manager.cct.form</field>
+        <field name="model">spp.program.entitlement.manager.cct</field>
+        <field name="arch" type="xml">
+            <form string="CCT Entitlement Manager">
+                <sheet>
+                    <group>
+                        <group string="Configuration">
+                            <field name="name" />
+                            <field name="program_id" readonly="1" />
+                        </group>
+                        <group string="Amounts">
+                            <field name="base_amount" />
+                            <field name="per_child_amount" />
+                            <field name="max_children" />
+                            <field name="child_max_age" />
+                            <field name="currency_id" invisible="1" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
