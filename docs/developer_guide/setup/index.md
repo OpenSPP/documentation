@@ -42,7 +42,27 @@ This adds `spp` to your PATH and enables tab completion (bash/zsh). You can veri
 spp doctor
 ```
 
-You can also create a `~/.spp.toml` file to set your defaults:
+### Command reference
+
+| Command       | Alias | Purpose                          |
+| ------------- | ----- | -------------------------------- |
+| `spp start`   | `s`   | Start the development server     |
+| `spp stop`    | —     | Stop all services                |
+| `spp restart` | `r`   | Restart the Odoo container       |
+| `spp test`    | `t`   | Run module tests                 |
+| `spp update`  | `u`   | Update changed modules           |
+| `spp logs`    | `l`   | View container logs              |
+| `spp shell`   | `sh`  | Open Odoo interactive shell      |
+| `spp sql`     | —     | Open PostgreSQL shell or run SQL |
+| `spp url`     | —     | Show or open the dev server URL  |
+| `spp lint`    | —     | Run linters on files             |
+| `spp build`   | `b`   | Build Docker images              |
+| `spp status`  | `st`  | Show service status              |
+| `spp doctor`  | —     | Check prerequisites              |
+
+### Configuration
+
+You can create a `~/.spp.toml` file to set your defaults:
 
 ```toml
 default_demo = "mis"
@@ -133,9 +153,19 @@ spp logs                        # All services
 spp logs openspp -f --tail=100  # Follow Odoo logs
 ```
 
+### Auto-reload
+
+The `dev` profile enables auto-reload by default (`--dev=reload,qweb,xml`). This means most Python code changes are picked up automatically without restarting the container. You will see a "Watching for file changes" message in the logs.
+
+To disable auto-reload:
+
+```bash
+spp start --demo mis --no-watch
+```
+
 ### Restart Odoo
 
-After making Python code changes, restart the Odoo container to pick them up:
+Some changes require a manual restart (e.g., adding new files, changing `__init__.py` imports, modifying `__manifest__.py` dependencies):
 
 ```bash
 spp restart
@@ -159,6 +189,19 @@ spp sql          # PostgreSQL shell (psql)
 spp sql "SELECT id, name FROM spp_program LIMIT 5;"
 ```
 
+### Install a new module
+
+If you're developing a new module and want to install it, you can either:
+
+- **Via the CLI** — restart with the module specified:
+
+  ```bash
+  spp stop
+  ODOO_INIT_MODULES=spp_my_module spp start
+  ```
+
+- **Via the Odoo UI** — go to **Apps**, click **Update Apps List**, search for your module, and click **Install**.
+
 ### Reset the database
 
 ```bash
@@ -166,6 +209,12 @@ spp resetdb --demo mis
 ```
 
 This drops the current database and recreates it with the specified demo data. You will be prompted to confirm.
+
+Alternatively, you can wipe everything and start fresh in one step:
+
+```bash
+spp start --demo mis --wipe
+```
 
 ### Stop the environment
 
