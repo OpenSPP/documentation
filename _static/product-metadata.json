@@ -1,769 +1,11 @@
 {
   "documents": {
-    "config_guide/drims/vocabularies": {
+    "reference/modules/spp_grm_registry": {
       "products": [
-        "drims"
-      ],
-      "title": "Configuring Vocabularies",
-      "path": "config_guide/drims/vocabularies"
-    },
-    "reference/modules/spp_farmer_registry_cr": {
-      "products": [
-        "core"
-      ],
-      "title": "Change Request Types",
-      "path": "reference/modules/spp_farmer_registry_cr"
-    },
-    "reference/modules/spp_hazard": {
-      "products": [
-        "core"
-      ],
-      "title": "Hazard & Emergency Management",
-      "path": "reference/modules/spp_hazard"
-    },
-    "community_and_support/i18n_l10n": {
-      "products": [
-        "core"
-      ],
-      "title": "Internationalization and Localization",
-      "path": "community_and_support/i18n_l10n"
-    },
-    "user_guide/case_management/core_workflow": {
-      "products": [
-        "core"
-      ],
-      "title": "Core case management workflow",
-      "path": "user_guide/case_management/core_workflow"
-    },
-    "reference/modules/spp_dci_client": {
-      "products": [
-        "core"
-      ],
-      "title": "Client",
-      "path": "reference/modules/spp_dci_client"
-    },
-    "reference/modules/spp_drims": {
-      "products": [
-        "core"
-      ],
-      "title": "DRIMS - Disaster Response Inventory Management",
-      "path": "reference/modules/spp_drims"
-    },
-    "contributing/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Contributing to documentation",
-      "path": "contributing/index"
-    },
-    "modules/spp_program_id": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Program ID",
-      "path": "modules/spp_program_id"
-    },
-    "modules/spp_programs_sp": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Programs: Service Points Integration",
-      "path": "modules/spp_programs_sp"
-    },
-    "config_guide/vocabulary/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Vocabulary System",
-      "path": "config_guide/vocabulary/index"
-    },
-    "reference/modules/spp_studio_api_v2": {
-      "products": [
-        "core"
-      ],
-      "title": "API v2 Integration",
-      "path": "reference/modules/spp_studio_api_v2"
-    },
-    "ops_guide/security/access_control": {
-      "products": [
-        "core"
-      ],
-      "title": "Access Control",
-      "path": "ops_guide/security/access_control"
-    },
-    "reference/modules/theme_openspp_muk": {
-      "products": [
-        "core"
-      ],
-      "title": "Theme",
-      "path": "reference/modules/theme_openspp_muk"
-    },
-    "learn/products/sp_mis": {
-      "products": [
-        "core"
-      ],
-      "title": "SP-MIS - Social Protection Management Information System",
-      "path": "learn/products/sp_mis"
-    },
-    "technical_reference/performance_optimization": {
-      "products": [
-        "core"
-      ],
-      "title": "Performance Optimization",
-      "path": "technical_reference/performance_optimization"
-    },
-    "howto/developer_guides/esignet": {
-      "products": [
-        "core"
-      ],
-      "title": "eSignate Integration",
-      "path": "howto/developer_guides/esignet"
-    },
-    "ops_guide/security/key_management": {
-      "products": [
-        "core"
-      ],
-      "title": "Key Management",
-      "path": "ops_guide/security/key_management"
-    },
-    "technical_reference/monitoring": {
-      "products": [
-        "core"
-      ],
-      "title": "Monitoring",
-      "path": "technical_reference/monitoring"
-    },
-    "user_guide/registry/export_data": {
-      "products": [
-        "registry"
-      ],
-      "title": "Export registrant data",
-      "path": "user_guide/registry/export_data"
-    },
-    "reference/modules/spp_grm_cel": {
-      "products": [
-        "core"
-      ],
-      "title": "CEL Rules",
-      "path": "reference/modules/spp_grm_cel"
-    },
-    "config_guide/role_configuration/assigning_roles": {
-      "products": [
-        "core"
-      ],
-      "title": "Assigning roles to users",
-      "path": "config_guide/role_configuration/assigning_roles"
-    },
-    "reference/modules/spp_programs": {
-      "products": [
-        "core"
-      ],
-      "title": "Programs",
-      "path": "reference/modules/spp_programs"
-    },
-    "explanation/integrated_beneficiary_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "Integrated Beneficiary Registry",
-      "path": "explanation/integrated_beneficiary_registry"
-    },
-    "config_guide/drims/index": {
-      "products": [
-        "drims"
-      ],
-      "title": "DRIMS Configuration Guide",
-      "path": "config_guide/drims/index"
-    },
-    "modules/spp_api": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP API",
-      "path": "modules/spp_api"
-    },
-    "reference/modules/spp_farmer_registry_vocabularies": {
-      "products": [
-        "core"
-      ],
-      "title": "Vocabularies",
-      "path": "reference/modules/spp_farmer_registry_vocabularies"
-    },
-    "config_guide/variables/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Variables & Indicators",
-      "path": "config_guide/variables/index"
-    },
-    "tutorial/access_management": {
-      "products": [
-        "core"
-      ],
-      "title": "Access management",
-      "path": "tutorial/access_management"
-    },
-    "config_guide/vocabulary/profiles": {
-      "products": [
-        "core"
-      ],
-      "title": "Vocabulary Profiles",
-      "path": "config_guide/vocabulary/profiles"
-    },
-    "user_guide/reference/vocabularies": {
-      "products": [
-        "core"
-      ],
-      "title": "Vocabularies (Code Lists)",
-      "path": "user_guide/reference/vocabularies"
-    },
-    "reference/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Reference",
-      "path": "reference/index"
-    },
-    "reference/modules/spp_import_match": {
-      "products": [
-        "core"
-      ],
-      "title": "Import Match",
-      "path": "reference/modules/spp_import_match"
-    },
-    "reference/modules/spp_farmer_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "Farmer Registry",
-      "path": "reference/modules/spp_farmer_registry"
-    },
-    "user_guide/programs/in_kind_products": {
-      "products": [
-        "programs"
-      ],
-      "title": "Manage in-kind products",
-      "path": "user_guide/programs/in_kind_products"
-    },
-    "modules/spp_audit_config": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Audit Config",
-      "path": "modules/spp_audit_config"
-    },
-    "modules/spp_oauth": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP API: Oauth",
-      "path": "modules/spp_oauth"
-    },
-    "best_practices/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Best Practices",
-      "path": "best_practices/index"
-    },
-    "howto/developer_guides/custom_service_points": {
-      "products": [
-        "core"
-      ],
-      "title": "Customize Service Points",
-      "path": "howto/developer_guides/custom_service_points"
-    },
-    "glossary": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Glossary",
-      "path": "glossary"
-    },
-    "tutorial/user_guides/create_program_cycle_prepare_entitlements": {
-      "products": [
-        "core"
-      ],
-      "title": "Create a program cycle & prepare entitlements",
-      "path": "tutorial/user_guides/create_program_cycle_prepare_entitlements"
-    },
-    "user_guide/drims/index": {
-      "products": [
-        "drims"
-      ],
-      "title": "DRIMS User Guide",
-      "path": "user_guide/drims/index"
-    },
-    "reference/modules/spp_approval": {
-      "products": [
-        "core"
-      ],
-      "title": "Approval Workflows",
-      "path": "reference/modules/spp_approval"
-    },
-    "howto/developer_guides/custom_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "Customize Registry",
-      "path": "howto/developer_guides/custom_registry"
-    },
-    "reference/modules/spp_gis_report": {
-      "products": [
-        "core"
-      ],
-      "title": "Reports",
-      "path": "reference/modules/spp_gis_report"
-    },
-    "tutorial/user_guides/configure_cash_entitlements": {
-      "products": [
-        "core"
-      ],
-      "title": "Configure cash entitlements",
-      "path": "tutorial/user_guides/configure_cash_entitlements"
-    },
-    "modules/spp_idqueue": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP ID Queue",
-      "path": "modules/spp_idqueue"
-    },
-    "explanation/farmer_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "Farmer Registry",
-      "path": "explanation/farmer_registry"
-    },
-    "get_started/first_program/02_create_program": {
-      "products": [
-        "registry",
-        "programs"
-      ],
-      "title": "Step 2: Create your first social protection program",
-      "path": "get_started/first_program/02_create_program"
-    },
-    "developer_guide/migration/api_changes": {
-      "products": [
-        "core"
-      ],
-      "title": "API Changes",
-      "path": "developer_guide/migration/api_changes"
-    },
-    "reference/modules/spp_scoring": {
-      "products": [
-        "core"
-      ],
-      "title": "Scoring",
-      "path": "reference/modules/spp_scoring"
-    },
-    "config_guide/entitlement_formulas/conditional_logic": {
-      "products": [
-        "core"
-      ],
-      "title": "Conditional logic",
-      "path": "config_guide/entitlement_formulas/conditional_logic"
-    },
-    "contributing/sphinx-extensions": {
-      "products": [
-        "core"
-      ],
-      "title": "Sphinx extensions",
-      "path": "contributing/sphinx-extensions"
-    },
-    "user_guide/programs/index": {
-      "products": [
-        "programs"
-      ],
-      "title": "Programs",
-      "path": "user_guide/programs/index"
-    },
-    "developer_guide/drims/architecture": {
-      "products": [
-        "core"
-      ],
-      "title": "DRIMS Architecture",
-      "path": "developer_guide/drims/architecture"
-    },
-    "config_guide/entitlement_formulas/dynamic_entitlements": {
-      "products": [
-        "core"
-      ],
-      "title": "Dynamic entitlements",
-      "path": "config_guide/entitlement_formulas/dynamic_entitlements"
-    },
-    "reference/modules/spp_farmer_registry_demo": {
-      "products": [
-        "core"
-      ],
-      "title": "Demo",
-      "path": "reference/modules/spp_farmer_registry_demo"
-    },
-    "learn/products/index": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Products",
-      "path": "learn/products/index"
-    },
-    "technical_reference/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Technical Reference",
-      "path": "technical_reference/index"
-    },
-    "howto/developer_guides/custom_audit": {
-      "products": [
-        "core"
-      ],
-      "title": "Customize Audit Logs",
-      "path": "howto/developer_guides/custom_audit"
-    },
-    "config_guide/change_request_types/field_mappings": {
-      "products": [
-        "core"
-      ],
-      "title": "Field mappings",
-      "path": "config_guide/change_request_types/field_mappings"
-    },
-    "technical_reference/code": {
-      "products": [
-        "core"
-      ],
-      "title": "Code & Repository Management",
-      "path": "technical_reference/code"
-    },
-    "community_and_support/module_lifecycle_development_status": {
-      "products": [
-        "core"
-      ],
-      "title": "Modules Maturity Levels and Development Status Policy",
-      "path": "community_and_support/module_lifecycle_development_status"
-    },
-    "user_guide/drims/returns": {
-      "products": [
-        "drims"
-      ],
-      "title": "Handle Returns",
-      "path": "user_guide/drims/returns"
-    },
-    "user_guide/grievances/grm": {
-      "products": [
-        "core"
-      ],
-      "title": "Manage grievances",
-      "path": "user_guide/grievances/grm"
-    },
-    "products/features/in_kind_benefits": {
-      "products": [
-        "core"
-      ],
-      "title": "In-kind benefits and inventory management",
-      "path": "products/features/in_kind_benefits"
-    },
-    "tutorial/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Tutorial",
-      "path": "tutorial/index"
-    },
-    "get_started/installation/docker": {
-      "products": [
-        "registry",
-        "programs"
-      ],
-      "title": "Docker installation",
-      "path": "get_started/installation/docker"
-    },
-    "user_guide/registry/register_individual": {
-      "products": [
-        "registry"
-      ],
-      "title": "Register an individual",
-      "path": "user_guide/registry/register_individual"
-    },
-    "reference/modules/spp_session_tracking": {
-      "products": [
-        "core"
-      ],
-      "title": "Session Tracking",
-      "path": "reference/modules/spp_session_tracking"
-    },
-    "products/farmer_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Farmer Registry",
-      "path": "products/farmer_registry"
-    },
-    "reference/modules/spp_cel_vocabulary": {
-      "products": [
-        "core"
-      ],
-      "title": "Vocabulary Integration",
-      "path": "reference/modules/spp_cel_vocabulary"
-    },
-    "technical_reference/programs/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Managers",
-      "path": "technical_reference/programs/index"
-    },
-    "modules/spp_land_record": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Land Record",
-      "path": "modules/spp_land_record"
-    },
-    "reference/modules/spp_hide_menus_base": {
-      "products": [
-        "core"
-      ],
-      "title": "Hide Menus Base",
-      "path": "reference/modules/spp_hide_menus_base"
-    },
-    "technical_reference/backup": {
-      "products": [
-        "core"
-      ],
-      "title": "Backup and Recovery",
-      "path": "technical_reference/backup"
-    },
-    "reference/modules/spp_hxl_area": {
-      "products": [
-        "core"
-      ],
-      "title": "Area Integration",
-      "path": "reference/modules/spp_hxl_area"
-    },
-    "developer_guide/api_v2/resources": {
-      "products": [
-        "core"
-      ],
-      "title": "API Resources",
-      "path": "developer_guide/api_v2/resources"
-    },
-    "reference/modules/spp_api_v2_gis": {
-      "products": [
-        "core"
-      ],
-      "title": "GIS API",
-      "path": "reference/modules/spp_api_v2_gis"
-    },
-    "products/sp_mis": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP SP-MIS",
-      "path": "products/sp_mis"
-    },
-    "developer_guide/dci/server_role": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP as DCI Server",
-      "path": "developer_guide/dci/server_role"
-    },
-    "user_guide/approvals/manage_approvals": {
-      "products": [
-        "core"
-      ],
-      "title": "Review and Approve Requests",
-      "path": "user_guide/approvals/manage_approvals"
-    },
-    "products/whats_new_v2": {
-      "products": [
-        "core"
-      ],
-      "title": "What's new in OpenSPP v2",
-      "path": "products/whats_new_v2"
-    },
-    "user_guide/drims/dashboard": {
-      "products": [
-        "drims"
-      ],
-      "title": "Understand the Dashboard",
-      "path": "user_guide/drims/dashboard"
-    },
-    "config_guide/variables/using_variables": {
-      "products": [
-        "core"
-      ],
-      "title": "Using Variables in CEL",
-      "path": "config_guide/variables/using_variables"
-    },
-    "ops_guide/backup/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Backup & Recovery",
-      "path": "ops_guide/backup/index"
-    },
-    "get_started/modules/spmis_installation": {
-      "products": [
-        "core"
-      ],
-      "title": "SP-MIS installation",
-      "path": "get_started/modules/spmis_installation"
-    },
-    "reference/modules/spp_indicator_studio": {
-      "products": [
-        "core"
-      ],
-      "title": "Indicator Studio",
-      "path": "reference/modules/spp_indicator_studio"
-    },
-    "ops_guide/security/audit": {
-      "products": [
-        "core"
-      ],
-      "title": "Audit Logging",
-      "path": "ops_guide/security/audit"
-    },
-    "reference/modules/spp_starter_social_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "Starter: Social Registry",
-      "path": "reference/modules/spp_starter_social_registry"
-    },
-    "tutorial/dashboards_and_reports": {
-      "products": [
-        "core"
-      ],
-      "title": "Dashboards and reports",
-      "path": "tutorial/dashboards_and_reports"
-    },
-    "config_guide/change_request_types/creating_types": {
-      "products": [
-        "core"
-      ],
-      "title": "Creating change request types",
-      "path": "config_guide/change_request_types/creating_types"
-    },
-    "explanation/user_mgt": {
-      "products": [
-        "core"
-      ],
-      "title": "User Management",
-      "path": "explanation/user_mgt"
-    },
-    "products/features/unified_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "Unified and hierarchical beneficiary registry",
-      "path": "products/features/unified_registry"
-    },
-    "modules/spp_farmer_registry_demo": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Farmer Registry Demo",
-      "path": "modules/spp_farmer_registry_demo"
-    },
-    "learn/products/drims": {
-      "products": [
-        "core"
-      ],
-      "title": "DRIMS - Disaster Response Inventory Management",
-      "path": "learn/products/drims"
-    },
-    "user_guide/change_requests/submit_change_request": {
-      "products": [
-        "core"
-      ],
-      "title": "Submit a change request",
-      "path": "user_guide/change_requests/submit_change_request"
-    },
-    "products/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Products",
-      "path": "products/index"
-    },
-    "reference/modules/spp_drims_sl": {
-      "products": [
-        "core"
-      ],
-      "title": "Sri Lanka Configuration",
-      "path": "reference/modules/spp_drims_sl"
-    },
-    "config_guide/event_data/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Event Data",
-      "path": "config_guide/event_data/index"
-    },
-    "modules/spp_auto_update_entitlements": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Auto-Update Entitlements",
-      "path": "modules/spp_auto_update_entitlements"
-    },
-    "howto/developer_guides/custom_fields": {
-      "products": [
-        "core"
-      ],
-      "title": "Adding custom fields and using them in variables/expressions",
-      "path": "howto/developer_guides/custom_fields"
-    },
-    "config_guide/drims/alerts": {
-      "products": [
-        "drims"
-      ],
-      "title": "Configuring Alerts and Thresholds",
-      "path": "config_guide/drims/alerts"
-    },
-    "explanation/data_collection_validation": {
-      "products": [
-        "core"
-      ],
-      "title": "Data Collection and Validation",
-      "path": "explanation/data_collection_validation"
-    },
-    "reference/modules/spp_audit": {
-      "products": [
-        "core"
-      ],
-      "title": "Audit",
-      "path": "reference/modules/spp_audit"
-    },
-    "technical_reference/dci": {
-      "products": [
-        "core"
-      ],
-      "title": "DCI Integration",
-      "path": "technical_reference/dci"
-    },
-    "explanation/social_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "Social Registry",
-      "path": "explanation/social_registry"
-    },
-    "user_guide/grievances/sla": {
-      "products": [
-        "grievances"
-      ],
-      "title": "SLA Tracking and Escalation",
-      "path": "user_guide/grievances/sla"
-    },
-    "reference/modules/spp_cel_widget": {
-      "products": [
         "core"
       ],
-      "title": "Expression Widget",
-      "path": "reference/modules/spp_cel_widget"
+      "title": "Registry Integration",
+      "path": "reference/modules/spp_grm_registry"
     },
     "get_started/first_program/05_distribute_entitlements": {
       "products": [
@@ -773,482 +15,40 @@
       "title": "Step 5: Distribute entitlements",
       "path": "get_started/first_program/05_distribute_entitlements"
     },
-    "modules/spp_registry_group_hierarchy": {
+    "reference/modules/spp_grm_programs": {
       "products": [
         "core"
       ],
-      "title": "OpenSPP Registry Group Hierarchy",
-      "path": "modules/spp_registry_group_hierarchy"
+      "title": "Programs Integration",
+      "path": "reference/modules/spp_grm_programs"
     },
-    "modules/spp_programs_compliance_criteria": {
+    "user_guide/drims/dashboard": {
       "products": [
-        "core"
-      ],
-      "title": "OpenSPP Programs: Compliance Criteria",
-      "path": "modules/spp_programs_compliance_criteria"
-    },
-    "tutorial/consent_management": {
-      "products": [
-        "core"
-      ],
-      "title": "Consent management",
-      "path": "tutorial/consent_management"
-    },
-    "reference/glossary/humanitarian": {
-      "products": [
-        "core"
-      ],
-      "title": "Humanitarian Terms Glossary",
-      "path": "reference/glossary/humanitarian"
-    },
-    "tutorial/hardware_integration": {
-      "products": [
-        "core"
-      ],
-      "title": "Hardware integration",
-      "path": "tutorial/hardware_integration"
-    },
-    "reference/modules/spp_case_graduation": {
-      "products": [
-        "core"
-      ],
-      "title": "Graduation Integration",
-      "path": "reference/modules/spp_case_graduation"
-    },
-    "config_guide/scoring/overview": {
-      "products": [
-        "core"
-      ],
-      "title": "Scoring Framework Overview",
-      "path": "config_guide/scoring/overview"
-    },
-    "modules/index": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Modules Index",
-      "path": "modules/index"
-    },
-    "explanation/registry_key_concepts": {
-      "products": [
-        "core"
-      ],
-      "title": "Organizing Data in the Registry",
-      "path": "explanation/registry_key_concepts"
-    },
-    "tutorial/programs_and_cycles": {
-      "products": [
-        "core"
-      ],
-      "title": "Programs and cycles",
-      "path": "tutorial/programs_and_cycles"
-    },
-    "modules/spp_import_dci_api": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Import: DCI API",
-      "path": "modules/spp_import_dci_api"
-    },
-    "config_guide/change_request_types/overview": {
-      "products": [
-        "core"
-      ],
-      "title": "Overview",
-      "path": "config_guide/change_request_types/overview"
-    },
-    "reference/modules/spp_area": {
-      "products": [
-        "core"
-      ],
-      "title": "Area Management",
-      "path": "reference/modules/spp_area"
-    },
-    "howto/developer_guides/custom_cr": {
-      "products": [
-        "core"
-      ],
-      "title": "Customize Change Request",
-      "path": "howto/developer_guides/custom_cr"
-    },
-    "config_guide/studio/index": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Studio",
-      "path": "config_guide/studio/index"
-    },
-    "config_guide/role_configuration/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Role configuration",
-      "path": "config_guide/role_configuration/index"
-    },
-    "config_guide/consent/overview": {
-      "products": [
-        "core"
-      ],
-      "title": "Consent management overview",
-      "path": "config_guide/consent/overview"
-    },
-    "config_guide/event_data/overview": {
-      "products": [
-        "core"
-      ],
-      "title": "Event Data Overview",
-      "path": "config_guide/event_data/overview"
-    },
-    "reference/modules/spp_indicator": {
-      "products": [
-        "core"
-      ],
-      "title": "Indicator",
-      "path": "reference/modules/spp_indicator"
-    },
-    "developer_guide/api_v2/index": {
-      "products": [
-        "core"
-      ],
-      "title": "API V2",
-      "path": "developer_guide/api_v2/index"
-    },
-    "reference/modules/spp_registry_group_hierarchy": {
-      "products": [
-        "core"
-      ],
-      "title": "Registry Group Hierarchy",
-      "path": "reference/modules/spp_registry_group_hierarchy"
-    },
-    "reference/modules/spp_dci_demo": {
-      "products": [
-        "core"
-      ],
-      "title": "Demo",
-      "path": "reference/modules/spp_dci_demo"
-    },
-    "learn/concepts/eligibility": {
-      "products": [
-        "core"
-      ],
-      "title": "Eligibility",
-      "path": "learn/concepts/eligibility"
-    },
-    "developer_guide/api_v2/search": {
-      "products": [
-        "core"
-      ],
-      "title": "Search and Filtering",
-      "path": "developer_guide/api_v2/search"
-    },
-    "modules/spp_event_data_program_membership": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Event Data Program Membership",
-      "path": "modules/spp_event_data_program_membership"
-    },
-    "technical_reference/release_management": {
-      "products": [
-        "core"
-      ],
-      "title": "Release Management",
-      "path": "technical_reference/release_management"
-    },
-    "developer_guide/verifiable_credentials/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Verifiable Credentials",
-      "path": "developer_guide/verifiable_credentials/index"
-    },
-    "howto/developer_guides/troubleshooting": {
-      "products": [
-        "core"
-      ],
-      "title": "Troubleshooting",
-      "path": "howto/developer_guides/troubleshooting"
-    },
-    "reference/modules/spp_gis": {
-      "products": [
-        "core"
-      ],
-      "title": "GIS",
-      "path": "reference/modules/spp_gis"
-    },
-    "user_guide/dashboards/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Dashboards & Reports",
-      "path": "user_guide/dashboards/index"
-    },
-    "developer_guide/migration/model_renames": {
-      "products": [
-        "core"
-      ],
-      "title": "Model and Field Renames",
-      "path": "developer_guide/migration/model_renames"
-    },
-    "reference/modules/spp_graduation": {
-      "products": [
-        "core"
-      ],
-      "title": "Graduation Management",
-      "path": "reference/modules/spp_graduation"
-    },
-    "config_guide/change_request_types/patterns": {
-      "products": [
-        "core"
-      ],
-      "title": "Common configuration patterns",
-      "path": "config_guide/change_request_types/patterns"
-    },
-    "developer_guide/verifiable_credentials/oidc4vci": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenID for Verifiable Credential Issuance",
-      "path": "developer_guide/verifiable_credentials/oidc4vci"
-    },
-    "technical_reference/programs/notification_manager": {
-      "products": [
-        "core"
-      ],
-      "title": "Notification Manager",
-      "path": "technical_reference/programs/notification_manager"
-    },
-    "reference/modules/spp_case_base": {
-      "products": [
-        "core"
-      ],
-      "title": "Case Management Base",
-      "path": "reference/modules/spp_case_base"
-    },
-    "explanation/data_protection": {
-      "products": [
-        "core"
-      ],
-      "title": "Data Protection",
-      "path": "explanation/data_protection"
-    },
-    "developer_guide/api_v2/authentication": {
-      "products": [
-        "core"
-      ],
-      "title": "Authentication",
-      "path": "developer_guide/api_v2/authentication"
-    },
-    "products/features/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Features",
-      "path": "products/features/index"
-    },
-    "reference/modules/spp_case_entitlements": {
-      "products": [
-        "core"
-      ],
-      "title": "Entitlements Integration",
-      "path": "reference/modules/spp_case_entitlements"
-    },
-    "products/social_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Social Registry",
-      "path": "products/social_registry"
-    },
-    "reference/modules/spp_drims_sl_demo": {
-      "products": [
-        "core"
-      ],
-      "title": "Sri Lanka Demo",
-      "path": "reference/modules/spp_drims_sl_demo"
-    },
-    "config_guide/cel/index": {
-      "products": [
-        "core"
-      ],
-      "title": "CEL expressions",
-      "path": "config_guide/cel/index"
-    },
-    "modules/spp_audit_log": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Audit Log",
-      "path": "modules/spp_audit_log"
-    },
-    "reference/modules/spp_user_roles": {
-      "products": [
-        "core"
-      ],
-      "title": "User Roles",
-      "path": "reference/modules/spp_user_roles"
-    },
-    "reference/modules/spp_dms": {
-      "products": [
-        "core"
-      ],
-      "title": "Document Management System",
-      "path": "reference/modules/spp_dms"
-    },
-    "reference/modules/spp_studio": {
-      "products": [
-        "core"
-      ],
-      "title": "Studio",
-      "path": "reference/modules/spp_studio"
-    },
-    "reference/modules/spp_gis_indicators": {
-      "products": [
-        "core"
-      ],
-      "title": "Indicators",
-      "path": "reference/modules/spp_gis_indicators"
-    },
-    "developer_guide/api_v2/consent": {
-      "products": [
-        "core"
-      ],
-      "title": "Consent Management",
-      "path": "developer_guide/api_v2/consent"
-    },
-    "tutorial/user_guides/setting_up_service_points": {
-      "products": [
-        "core"
-      ],
-      "title": "Setting up service points",
-      "path": "tutorial/user_guides/setting_up_service_points"
-    },
-    "config_guide/studio/event_type_designer": {
-      "products": [
-        "core"
-      ],
-      "title": "Event Type Designer",
-      "path": "config_guide/studio/event_type_designer"
-    },
-    "config_guide/cel/quick_start": {
-      "products": [
-        "core"
-      ],
-      "title": "CEL quick start",
-      "path": "config_guide/cel/quick_start"
-    },
-    "tutorial/change_requests": {
-      "products": [
-        "core"
-      ],
-      "title": "Change Requests",
-      "path": "tutorial/change_requests"
-    },
-    "learn/concepts/compliance": {
-      "products": [
-        "core"
-      ],
-      "title": "Compliance",
-      "path": "learn/concepts/compliance"
-    },
-    "tutorial/vouchers": {
-      "products": [
-        "core"
-      ],
-      "title": "Vouchers",
-      "path": "tutorial/vouchers"
-    },
-    "reference/modules/spp_encryption": {
-      "products": [
-        "core"
-      ],
-      "title": "Encryption: Base",
-      "path": "reference/modules/spp_encryption"
-    },
-    "user_guide/getting_started/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Getting started",
-      "path": "user_guide/getting_started/index"
-    },
-    "modules/spp_base_gis": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Base GIS",
-      "path": "modules/spp_base_gis"
-    },
-    "developer_guide/api_v2/external_identifiers": {
-      "products": [
-        "core"
-      ],
-      "title": "External Identifiers",
-      "path": "developer_guide/api_v2/external_identifiers"
-    },
-    "howto/index": {
-      "products": [
-        "core"
-      ],
-      "title": "How To",
-      "path": "howto/index"
-    },
-    "config_guide/scoring/custom": {
-      "products": [
-        "core"
-      ],
-      "title": "Creating Custom Scoring Formulas",
-      "path": "config_guide/scoring/custom"
-    },
-    "technical_reference/programs/entitlement_manager": {
-      "products": [
-        "core"
-      ],
-      "title": "Entitlement Manager",
-      "path": "technical_reference/programs/entitlement_manager"
-    },
-    "get_started/first_household/01_access_registry": {
-      "products": [
-        "registry",
-        "programs"
-      ],
-      "title": "Step 1: Access the Registry",
-      "path": "get_started/first_household/01_access_registry"
-    },
-    "tutorial/user_guides/create_social_protection_program": {
-      "products": [
-        "core"
-      ],
-      "title": "Create a social protection program",
-      "path": "tutorial/user_guides/create_social_protection_program"
-    },
-    "reference/modules/spp_metric_service": {
-      "products": [
-        "core"
+        "drims"
       ],
-      "title": "Metric Service",
-      "path": "reference/modules/spp_metric_service"
+      "title": "Understand the Dashboard",
+      "path": "user_guide/drims/dashboard"
     },
-    "config_guide/cel/variables": {
+    "reference/modules/spp_land_record": {
       "products": [
         "core"
       ],
-      "title": "Variables",
-      "path": "config_guide/cel/variables"
+      "title": "Land Record",
+      "path": "reference/modules/spp_land_record"
     },
-    "modules/spp_custom_filter": {
+    "tutorial/vulnerability_scoring": {
       "products": [
         "core"
       ],
-      "title": "OpenSPP Custom Filter",
-      "path": "modules/spp_custom_filter"
+      "title": "Vulnerability scoring",
+      "path": "tutorial/vulnerability_scoring"
     },
-    "developer_guide/extending/index": {
+    "tutorial/user_guides/create_program_cycle_prepare_entitlements": {
       "products": [
         "core"
       ],
-      "title": "Extending OpenSPP",
-      "path": "developer_guide/extending/index"
+      "title": "Create a program cycle & prepare entitlements",
+      "path": "tutorial/user_guides/create_program_cycle_prepare_entitlements"
     },
     "modules/spp_user_roles": {
       "products": [
@@ -1257,54 +57,103 @@
       "title": "OpenSPP User Roles",
       "path": "modules/spp_user_roles"
     },
-    "modules/spp_programs": {
+    "user_guide/reference/vocabularies": {
       "products": [
         "core"
       ],
-      "title": "OpenSPP Programs",
-      "path": "modules/spp_programs"
+      "title": "Vocabularies (Code Lists)",
+      "path": "user_guide/reference/vocabularies"
     },
-    "modules/spp_openid_vci": {
+    "modules/spp_program_id": {
       "products": [
         "core"
       ],
-      "title": "OpenSPP OpenID VCI",
-      "path": "modules/spp_openid_vci"
+      "title": "OpenSPP Program ID",
+      "path": "modules/spp_program_id"
     },
-    "get_started/modules/farmer_installation": {
+    "tutorial/social_welfare_development_index": {
       "products": [
         "core"
       ],
-      "title": "Farmer Registry installation",
-      "path": "get_started/modules/farmer_installation"
+      "title": "Social Welfare Development Index (SWDI)",
+      "path": "tutorial/social_welfare_development_index"
     },
-    "explanation/social_protection_management_information_systems": {
+    "reference/modules/spp_disability_registry": {
       "products": [
         "core"
       ],
-      "title": "Social Protection Management Information Systems",
-      "path": "explanation/social_protection_management_information_systems"
+      "title": "Disability Registry",
+      "path": "reference/modules/spp_disability_registry"
     },
-    "contributing/myst-reference": {
+    "developer_guide/setup/index": {
       "products": [
         "core"
       ],
-      "title": "MyST reference",
-      "path": "contributing/myst-reference"
+      "title": "Development Setup",
+      "path": "developer_guide/setup/index"
     },
-    "reference/modules/spp_custom_field": {
+    "learn/concepts/registry": {
       "products": [
         "core"
       ],
-      "title": "Custom Fields",
-      "path": "reference/modules/spp_custom_field"
+      "title": "Registry",
+      "path": "learn/concepts/registry"
     },
-    "developer_guide/architecture/cel_internals": {
+    "reference/modules/spp_gis_indicators": {
       "products": [
         "core"
       ],
-      "title": "CEL Internals",
-      "path": "developer_guide/architecture/cel_internals"
+      "title": "Indicators",
+      "path": "reference/modules/spp_gis_indicators"
+    },
+    "reference/modules/spp_farmer_registry_dashboard": {
+      "products": [
+        "core"
+      ],
+      "title": "Dashboard",
+      "path": "reference/modules/spp_farmer_registry_dashboard"
+    },
+    "developer_guide/api_v2/consent": {
+      "products": [
+        "core"
+      ],
+      "title": "Consent Management",
+      "path": "developer_guide/api_v2/consent"
+    },
+    "config_guide/role_configuration/creating_roles": {
+      "products": [
+        "core"
+      ],
+      "title": "Creating custom roles",
+      "path": "config_guide/role_configuration/creating_roles"
+    },
+    "modules/spp_starter": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Starter Module",
+      "path": "modules/spp_starter"
+    },
+    "tutorial/custom_fields": {
+      "products": [
+        "core"
+      ],
+      "title": "Custom fields",
+      "path": "tutorial/custom_fields"
+    },
+    "user_guide/registry/index": {
+      "products": [
+        "registry"
+      ],
+      "title": "Registry",
+      "path": "user_guide/registry/index"
+    },
+    "howto/developer_guides/custom_registry": {
+      "products": [
+        "core"
+      ],
+      "title": "Customize Registry",
+      "path": "howto/developer_guides/custom_registry"
     },
     "get_started/poc_and_pilot": {
       "products": [
@@ -1314,1600 +163,12 @@
       "title": "From Proof of Concept to Pilot",
       "path": "get_started/poc_and_pilot"
     },
-    "ops_guide/security/data_classification": {
+    "tutorial/programs/eligibility_and_compliance": {
       "products": [
         "core"
       ],
-      "title": "Data Classification",
-      "path": "ops_guide/security/data_classification"
-    },
-    "config_guide/eligibility/advanced": {
-      "products": [
-        "core"
-      ],
-      "title": "Advanced eligibility configuration",
-      "path": "config_guide/eligibility/advanced"
-    },
-    "howto/developer_guides/custom_registry_tab_fields": {
-      "products": [
-        "core"
-      ],
-      "title": "Customize Registry's Tabs/Fields",
-      "path": "howto/developer_guides/custom_registry_tab_fields"
-    },
-    "explanation/digital_public_infrastructure": {
-      "products": [
-        "core"
-      ],
-      "title": "Digital Public Infrastructure",
-      "path": "explanation/digital_public_infrastructure"
-    },
-    "learn/concepts/cycles": {
-      "products": [
-        "core"
-      ],
-      "title": "Cycles",
-      "path": "learn/concepts/cycles"
-    },
-    "modules/spp_api_records": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP API Records",
-      "path": "modules/spp_api_records"
-    },
-    "products/features/payment_disbursement": {
-      "products": [
-        "core"
-      ],
-      "title": "Pluggable payment and disbursement",
-      "path": "products/features/payment_disbursement"
-    },
-    "ops_guide/storage/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Storage",
-      "path": "ops_guide/storage/index"
-    },
-    "user_guide/entitlements/index": {
-      "products": [
-        "programs"
-      ],
-      "title": "Entitlements",
-      "path": "user_guide/entitlements/index"
-    },
-    "technical_reference/architecture": {
-      "products": [
-        "core"
-      ],
-      "title": "Architecture",
-      "path": "technical_reference/architecture"
-    },
-    "reference/modules/spp_grm_programs": {
-      "products": [
-        "core"
-      ],
-      "title": "Programs Integration",
-      "path": "reference/modules/spp_grm_programs"
-    },
-    "reference/modules/spp_scoring_programs": {
-      "products": [
-        "core"
-      ],
-      "title": "Programs Bridge",
-      "path": "reference/modules/spp_scoring_programs"
-    },
-    "modules/spp_encryption": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Encryption Module",
-      "path": "modules/spp_encryption"
-    },
-    "learn/concepts/change-requests": {
-      "products": [
-        "core"
-      ],
-      "title": "Change requests",
-      "path": "learn/concepts/change-requests"
-    },
-    "reference/modules/spp_oauth": {
-      "products": [
-        "core"
-      ],
-      "title": "API: Oauth",
-      "path": "reference/modules/spp_oauth"
-    },
-    "user_guide/programs/manage_entitlements": {
-      "products": [
-        "programs"
-      ],
-      "title": "Manage entitlements",
-      "path": "user_guide/programs/manage_entitlements"
-    },
-    "reference/modules/spp_simulation": {
-      "products": [
-        "core"
-      ],
-      "title": "Targeting Simulation",
-      "path": "reference/modules/spp_simulation"
-    },
-    "modules/spp_custom_field_custom_filter": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Custom Field Custom Filter",
-      "path": "modules/spp_custom_field_custom_filter"
-    },
-    "tutorial/user_guides/allocate_funds": {
-      "products": [
-        "core"
-      ],
-      "title": "Allocate funds",
-      "path": "tutorial/user_guides/allocate_funds"
-    },
-    "technical_reference/audit_logs": {
-      "products": [
-        "core"
-      ],
-      "title": "Audit Logs",
-      "path": "technical_reference/audit_logs"
-    },
-    "learn/concepts/programs": {
-      "products": [
-        "core"
-      ],
-      "title": "Programs",
-      "path": "learn/concepts/programs"
-    },
-    "modules/spp_openid_vci_group": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP OpenID VCI Group",
-      "path": "modules/spp_openid_vci_group"
-    },
-    "reference/modules/spp_cel_registry_search": {
-      "products": [
-        "core"
-      ],
-      "title": "Registry Search",
-      "path": "reference/modules/spp_cel_registry_search"
-    },
-    "developer_guide/api_v2/studio_integration": {
-      "products": [
-        "core"
-      ],
-      "title": "Studio API Integration",
-      "path": "developer_guide/api_v2/studio_integration"
-    },
-    "config_guide/consent/api_consent_filtering": {
-      "products": [
-        "core"
-      ],
-      "title": "API consent filtering",
-      "path": "config_guide/consent/api_consent_filtering"
-    },
-    "learn/products/social_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "Social Registry",
-      "path": "learn/products/social_registry"
-    },
-    "user_guide/programs/program_cycles": {
-      "products": [
-        "programs"
-      ],
-      "title": "Work with program cycles",
-      "path": "user_guide/programs/program_cycles"
-    },
-    "config_guide/vocabulary/custom": {
-      "products": [
-        "core"
-      ],
-      "title": "Custom Vocabularies",
-      "path": "config_guide/vocabulary/custom"
-    },
-    "modules/spp_pos": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP POS",
-      "path": "modules/spp_pos"
-    },
-    "ops_guide/deployment/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Deployment",
-      "path": "ops_guide/deployment/index"
-    },
-    "config_guide/event_data/event_types": {
-      "products": [
-        "core"
-      ],
-      "title": "Configuring Event Types",
-      "path": "config_guide/event_data/event_types"
-    },
-    "modules/spp_service_points": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Service Points",
-      "path": "modules/spp_service_points"
-    },
-    "developer_guide/dci/overview": {
-      "products": [
-        "core"
-      ],
-      "title": "DCI Overview",
-      "path": "developer_guide/dci/overview"
-    },
-    "contributing/admins": {
-      "products": [
-        "core"
-      ],
-      "title": "Administrators Guide",
-      "path": "contributing/admins"
-    },
-    "reference/modules/spp_hxl": {
-      "products": [
-        "core"
-      ],
-      "title": "HXL Integration",
-      "path": "reference/modules/spp_hxl"
-    },
-    "technical_reference/programs/deduplication_manager": {
-      "products": [
-        "core"
-      ],
-      "title": "Deduplication Manager",
-      "path": "technical_reference/programs/deduplication_manager"
-    },
-    "ops_guide/monitoring/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Monitoring & Alerts",
-      "path": "ops_guide/monitoring/index"
-    },
-    "learn/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Learn",
-      "path": "learn/index"
-    },
-    "user_guide/getting_started/navigation": {
-      "products": [
-        "core"
-      ],
-      "title": "Navigating the OpenSPP interface",
-      "path": "user_guide/getting_started/navigation"
-    },
-    "explanation/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Explanation",
-      "path": "explanation/index"
-    },
-    "reference/modules/spp_dci_client_ibr": {
-      "products": [
-        "core"
-      ],
-      "title": "Client - IBR",
-      "path": "reference/modules/spp_dci_client_ibr"
-    },
-    "modules/spp_area": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Area",
-      "path": "modules/spp_area"
-    },
-    "modules/spp_base_demo": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Base Demo",
-      "path": "modules/spp_base_demo"
-    },
-    "learn/products/farmer_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "Farmer Registry",
-      "path": "learn/products/farmer_registry"
-    },
-    "technical_reference/external_api": {
-      "products": [
-        "core"
-      ],
-      "title": "External API",
-      "path": "technical_reference/external_api"
-    },
-    "howto/developer_guides/development_setup": {
-      "products": [
-        "core"
-      ],
-      "title": "Development Setup",
-      "path": "howto/developer_guides/development_setup"
-    },
-    "modules/spp_area_gis": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Area GIS",
-      "path": "modules/spp_area_gis"
-    },
-    "howto/developer_guides/beneficiary_keycloak": {
-      "products": [
-        "core"
-      ],
-      "title": "Beneficiary portal authentication",
-      "path": "howto/developer_guides/beneficiary_keycloak"
-    },
-    "config_guide/event_data/field_definitions": {
-      "products": [
-        "core"
-      ],
-      "title": "Defining Event Fields",
-      "path": "config_guide/event_data/field_definitions"
-    },
-    "reference/modules/spp_gis_report_programs": {
-      "products": [
-        "core"
-      ],
-      "title": "Reports - Programs",
-      "path": "reference/modules/spp_gis_report_programs"
-    },
-    "modules/spp_entitlement_in_kind": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP In-Kind Entitlement",
-      "path": "modules/spp_entitlement_in_kind"
-    },
-    "tutorial/grievance_redressal_management": {
-      "products": [
-        "core"
-      ],
-      "title": "Grievance Redressal Management",
-      "path": "tutorial/grievance_redressal_management"
-    },
-    "modules/spp_custom_filter_ui": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Custom Filter UI",
-      "path": "modules/spp_custom_filter_ui"
-    },
-    "modules/spp_audit_post": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Audit Post",
-      "path": "modules/spp_audit_post"
-    },
-    "modules/spp_eligibility_tags": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Tag Based Eligibility Manager",
-      "path": "modules/spp_eligibility_tags"
-    },
-    "user_guide/registry/register_group": {
-      "products": [
-        "registry"
-      ],
-      "title": "Register a group",
-      "path": "user_guide/registry/register_group"
-    },
-    "modules/spp_change_request": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Change Request",
-      "path": "modules/spp_change_request"
-    },
-    "config_guide/change_request_types/troubleshooting": {
-      "products": [
-        "core"
-      ],
-      "title": "Troubleshooting",
-      "path": "config_guide/change_request_types/troubleshooting"
-    },
-    "learn/concepts/payments": {
-      "products": [
-        "core"
-      ],
-      "title": "Payments",
-      "path": "learn/concepts/payments"
-    },
-    "reference/modules/spp_case_programs": {
-      "products": [
-        "core"
-      ],
-      "title": "Programs Integration",
-      "path": "reference/modules/spp_case_programs"
-    },
-    "user_guide/drims/manage_inventory": {
-      "products": [
-        "drims"
-      ],
-      "title": "Manage Inventory",
-      "path": "user_guide/drims/manage_inventory"
-    },
-    "technical_reference/integrations": {
-      "products": [
-        "core"
-      ],
-      "title": "Integrations",
-      "path": "technical_reference/integrations"
-    },
-    "reference/modules/spp_mis_demo_v2": {
-      "products": [
-        "core"
-      ],
-      "title": "MIS Demo V2",
-      "path": "reference/modules/spp_mis_demo_v2"
-    },
-    "developer_guide/verifiable_credentials/w3c_vc": {
-      "products": [
-        "core"
-      ],
-      "title": "W3C Verifiable Credentials Data Model",
-      "path": "developer_guide/verifiable_credentials/w3c_vc"
-    },
-    "developer_guide/verifiable_credentials/overview": {
-      "products": [
-        "core"
-      ],
-      "title": "Verifiable Credentials Overview",
-      "path": "developer_guide/verifiable_credentials/overview"
-    },
-    "products/features/gis_land_management": {
-      "products": [
-        "core"
-      ],
-      "title": "Geospatial (GIS) and land management",
-      "path": "products/features/gis_land_management"
-    },
-    "reference/modules/spp_source_tracking": {
-      "products": [
-        "core"
-      ],
-      "title": "Source Tracking",
-      "path": "reference/modules/spp_source_tracking"
-    },
-    "developer_guide/migration/namespace_changes": {
-      "products": [
-        "core"
-      ],
-      "title": "Namespace Changes (g2p.* \u2192 spp.*)",
-      "path": "developer_guide/migration/namespace_changes"
-    },
-    "reference/modules/spp_cr_types_advanced": {
-      "products": [
-        "core"
-      ],
-      "title": "Advanced Types",
-      "path": "reference/modules/spp_cr_types_advanced"
-    },
-    "howto/developer_guides/custom_areas": {
-      "products": [
-        "core"
-      ],
-      "title": "Customize Areas",
-      "path": "howto/developer_guides/custom_areas"
-    },
-    "reference/modules/spp_case_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "Registry Integration",
-      "path": "reference/modules/spp_case_registry"
-    },
-    "modules/spp_exclusion_filter": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Exclusion Filter",
-      "path": "modules/spp_exclusion_filter"
-    },
-    "config_guide/role_configuration/predefined_roles": {
-      "products": [
-        "core"
-      ],
-      "title": "Predefined roles",
-      "path": "config_guide/role_configuration/predefined_roles"
-    },
-    "modules/spp_base_gis_demo": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Base Demo",
-      "path": "modules/spp_base_gis_demo"
-    },
-    "get_started/installation/index": {
-      "products": [
-        "registry",
-        "programs"
-      ],
-      "title": "Installing OpenSPP",
-      "path": "get_started/installation/index"
-    },
-    "reference/modules/spp_versioning": {
-      "products": [
-        "core"
-      ],
-      "title": "Versioning",
-      "path": "reference/modules/spp_versioning"
-    },
-    "reference/modules/spp_area_hdx": {
-      "products": [
-        "core"
-      ],
-      "title": "HDX COD Integration",
-      "path": "reference/modules/spp_area_hdx"
-    },
-    "reference/modules/spp_api_v2_simulation": {
-      "products": [
-        "core"
-      ],
-      "title": "Simulation API",
-      "path": "reference/modules/spp_api_v2_simulation"
-    },
-    "modules/spp_manual_entitlement": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Manual Entitlement",
-      "path": "modules/spp_manual_entitlement"
-    },
-    "config_guide/cel/syntax": {
-      "products": [
-        "core"
-      ],
-      "title": "CEL syntax reference",
-      "path": "config_guide/cel/syntax"
-    },
-    "reference/modules/spp_event_data": {
-      "products": [
-        "core"
-      ],
-      "title": "Event Data",
-      "path": "reference/modules/spp_event_data"
-    },
-    "modules/spp_base_gis_rest": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Base GIS REST",
-      "path": "modules/spp_base_gis_rest"
-    },
-    "contributing/setup-build": {
-      "products": [
-        "core"
-      ],
-      "title": "Building and checking the quality of documentation",
-      "path": "contributing/setup-build"
-    },
-    "modules/spp_data_export": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Data Export",
-      "path": "modules/spp_data_export"
-    },
-    "config_guide/studio/overview": {
-      "products": [
-        "core"
-      ],
-      "title": "Studio Overview",
-      "path": "config_guide/studio/overview"
-    },
-    "config_guide/eligibility/testing": {
-      "products": [
-        "core"
-      ],
-      "title": "Testing eligibility rules",
-      "path": "config_guide/eligibility/testing"
-    },
-    "reference/modules/spp_api_v2_cycles": {
-      "products": [
-        "core"
-      ],
-      "title": "Cycles",
-      "path": "reference/modules/spp_api_v2_cycles"
-    },
-    "user_guide/approvals/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Approvals",
-      "path": "user_guide/approvals/index"
-    },
-    "technical_reference/security": {
-      "products": [
-        "core"
-      ],
-      "title": "Security Implementations & Practices",
-      "path": "technical_reference/security"
-    },
-    "reference/modules/spp_analytics": {
-      "products": [
-        "core"
-      ],
-      "title": "Analytics",
-      "path": "reference/modules/spp_analytics"
-    },
-    "config_guide/scoring/swdi": {
-      "products": [
-        "core"
-      ],
-      "title": "Social Welfare Development Index (SWDI)",
-      "path": "config_guide/scoring/swdi"
-    },
-    "user_guide/drims/donations": {
-      "products": [
-        "drims"
-      ],
-      "title": "Receive a Donation",
-      "path": "user_guide/drims/donations"
-    },
-    "config_guide/variables/variable_types": {
-      "products": [
-        "core"
-      ],
-      "title": "Variable Types",
-      "path": "config_guide/variables/variable_types"
-    },
-    "modules/spp_change_request_add_children_demo": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Change Request Demo: Add Child/Member",
-      "path": "modules/spp_change_request_add_children_demo"
-    },
-    "reference/modules/spp_registry_search": {
-      "products": [
-        "core"
-      ],
-      "title": "Registry Search Portal",
-      "path": "reference/modules/spp_registry_search"
-    },
-    "howto/developer_guides/setting_up_using_pypi": {
-      "products": [
-        "core"
-      ],
-      "title": "Setting Up Using Python Package Manager",
-      "path": "howto/developer_guides/setting_up_using_pypi"
-    },
-    "reference/modules/spp_api_v2_service_points": {
-      "products": [
-        "core"
-      ],
-      "title": "Service Points",
-      "path": "reference/modules/spp_api_v2_service_points"
-    },
-    "community_and_support/security_report": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Vulnerability Disclosure Policy",
-      "path": "community_and_support/security_report"
-    },
-    "get_started/first_program/03_enroll_beneficiaries": {
-      "products": [
-        "registry",
-        "programs"
-      ],
-      "title": "Step 3: Import and enroll beneficiaries",
-      "path": "get_started/first_program/03_enroll_beneficiaries"
-    },
-    "modules/spp_import_match": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Import Match",
-      "path": "modules/spp_import_match"
-    },
-    "technical_reference/programs/dashboards": {
-      "products": [
-        "core"
-      ],
-      "title": "Dashboards",
-      "path": "technical_reference/programs/dashboards"
-    },
-    "community_and_support/module_lifecycle_maintainer_role": {
-      "products": [
-        "core"
-      ],
-      "title": "Module Lifecycle - Maintainer Role Policy",
-      "path": "community_and_support/module_lifecycle_maintainer_role"
-    },
-    "reference/modules/spp_alerts": {
-      "products": [
-        "core"
-      ],
-      "title": "Alerts",
-      "path": "reference/modules/spp_alerts"
-    },
-    "tutorial/user_guides/import_areas": {
-      "products": [
-        "core"
-      ],
-      "title": "Import area",
-      "path": "tutorial/user_guides/import_areas"
-    },
-    "config_guide/studio/change_request_builder": {
-      "products": [
-        "core"
-      ],
-      "title": "Change Request Builder",
-      "path": "config_guide/studio/change_request_builder"
-    },
-    "user_guide/case_management/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Case management",
-      "path": "user_guide/case_management/index"
-    },
-    "get_started/first_household/index": {
-      "products": [
-        "registry",
-        "programs"
-      ],
-      "title": "Your first household",
-      "path": "get_started/first_household/index"
-    },
-    "howto/user_guides/setting_up_service_points": {
-      "products": [
-        "core"
-      ],
-      "title": "Setting up service points",
-      "path": "howto/user_guides/setting_up_service_points"
-    },
-    "config_guide/eligibility/templates": {
-      "products": [
-        "core"
-      ],
-      "title": "Expression templates",
-      "path": "config_guide/eligibility/templates"
-    },
-    "config_guide/consent/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Consent configuration",
-      "path": "config_guide/consent/index"
-    },
-    "developer_guide/architecture/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Architecture",
-      "path": "developer_guide/architecture/index"
-    },
-    "modules/spp_custom_field": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Custom Field",
-      "path": "modules/spp_custom_field"
-    },
-    "config_guide/eligibility/cel_expressions": {
-      "products": [
-        "core"
-      ],
-      "title": "CEL expressions for eligibility",
-      "path": "config_guide/eligibility/cel_expressions"
-    },
-    "config_guide/variables/creating_variables": {
-      "products": [
-        "core"
-      ],
-      "title": "Creating Variables",
-      "path": "config_guide/variables/creating_variables"
-    },
-    "reference/modules/spp_cel_domain": {
-      "products": [
-        "core"
-      ],
-      "title": "CEL Domain Query Builder",
-      "path": "reference/modules/spp_cel_domain"
-    },
-    "reference/modules/spp_branding_kit": {
-      "products": [
-        "core"
-      ],
-      "title": "Branding Kit",
-      "path": "reference/modules/spp_branding_kit"
-    },
-    "config_guide/scoring/pmt": {
-      "products": [
-        "core"
-      ],
-      "title": "Proxy Means Test (PMT) Configuration",
-      "path": "config_guide/scoring/pmt"
-    },
-    "modules/spp_base": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Base",
-      "path": "modules/spp_base"
-    },
-    "reference/modules/spp_case_session": {
-      "products": [
-        "core"
-      ],
-      "title": "Session Integration",
-      "path": "reference/modules/spp_case_session"
-    },
-    "config_guide/vocabulary/overview": {
-      "products": [
-        "core"
-      ],
-      "title": "Vocabulary Overview",
-      "path": "config_guide/vocabulary/overview"
-    },
-    "modules/spp_farmer_registry_base": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Farmer Registry Base",
-      "path": "modules/spp_farmer_registry_base"
-    },
-    "learn/concepts/registry": {
-      "products": [
-        "core"
-      ],
-      "title": "Registry",
-      "path": "learn/concepts/registry"
-    },
-    "ops_guide/security/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Security",
-      "path": "ops_guide/security/index"
-    },
-    "developer_guide/api_v2/batch": {
-      "products": [
-        "core"
-      ],
-      "title": "Batch Operations",
-      "path": "developer_guide/api_v2/batch"
-    },
-    "products/features/program_management": {
-      "products": [
-        "core"
-      ],
-      "title": "End-to-end program and entitlement management",
-      "path": "products/features/program_management"
-    },
-    "config_guide/drims/approval_chains": {
-      "products": [
-        "drims"
-      ],
-      "title": "Configuring Approval Workflows",
-      "path": "config_guide/drims/approval_chains"
-    },
-    "config_guide/entitlement_formulas/formula_library": {
-      "products": [
-        "core"
-      ],
-      "title": "Formula library",
-      "path": "config_guide/entitlement_formulas/formula_library"
-    },
-    "user_guide/getting_started/administrating_role_based_access": {
-      "products": [
-        "core"
-      ],
-      "title": "Administrating role-based access",
-      "path": "user_guide/getting_started/administrating_role_based_access"
-    },
-    "get_started/first_program/04_run_cycle": {
-      "products": [
-        "registry",
-        "programs"
-      ],
-      "title": "Step 4: Understanding program cycles",
-      "path": "get_started/first_program/04_run_cycle"
-    },
-    "modules/spp_farmer_registry_dashboard": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Farmer Registry Dashboard",
-      "path": "modules/spp_farmer_registry_dashboard"
-    },
-    "get_started/first_program/index": {
-      "products": [
-        "registry",
-        "programs"
-      ],
-      "title": "Your first program",
-      "path": "get_started/first_program/index"
-    },
-    "user_guide/index": {
-      "products": [
-        "core"
-      ],
-      "title": "User guide",
-      "path": "user_guide/index"
-    },
-    "modules/spp_irrigation": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Irrigation",
-      "path": "modules/spp_irrigation"
-    },
-    "get_started/modules/social_installation": {
-      "products": [
-        "core"
-      ],
-      "title": "Social Registry installation",
-      "path": "get_started/modules/social_installation"
-    },
-    "howto/developer_guides/dci": {
-      "products": [
-        "core"
-      ],
-      "title": "Implementation of DCI Specification",
-      "path": "howto/developer_guides/dci"
-    },
-    "reference/modules/spp_security": {
-      "products": [
-        "core"
-      ],
-      "title": "Security",
-      "path": "reference/modules/spp_security"
-    },
-    "reference/modules/spp_grm": {
-      "products": [
-        "core"
-      ],
-      "title": "Grievance Redress Mechanism",
-      "path": "reference/modules/spp_grm"
-    },
-    "config_guide/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Configuration guide",
-      "path": "config_guide/index"
-    },
-    "modules/spp_service_point_device": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Service Point Device",
-      "path": "modules/spp_service_point_device"
-    },
-    "reference/modules/spp_change_request_v2": {
-      "products": [
-        "core"
-      ],
-      "title": "Change Request V2",
-      "path": "reference/modules/spp_change_request_v2"
-    },
-    "reference/modules/spp_case_cel": {
-      "products": [
-        "core"
-      ],
-      "title": "CEL Rules",
-      "path": "reference/modules/spp_case_cel"
-    },
-    "reference/modules/spp_case_demo": {
-      "products": [
-        "core"
-      ],
-      "title": "Demo Data",
-      "path": "reference/modules/spp_case_demo"
-    },
-    "index": {
-      "products": [
-        "core"
-      ],
-      "title": "Welcome to OpenSPP!",
-      "path": "index"
-    },
-    "user_guide/registry/search_filter": {
-      "products": [
-        "registry"
-      ],
-      "title": "Search and filter registrants",
-      "path": "user_guide/registry/search_filter"
-    },
-    "modules/spp_registrant_tag": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Registrant Tags",
-      "path": "modules/spp_registrant_tag"
-    },
-    "user_guide/registry/index": {
-      "products": [
-        "registry"
-      ],
-      "title": "Registry",
-      "path": "user_guide/registry/index"
-    },
-    "community_and_support/code_of_conduct": {
-      "products": [
-        "core"
-      ],
-      "title": "Contributor Covenant Code of Conduct",
-      "path": "community_and_support/code_of_conduct"
-    },
-    "reference/modules/spp_farmer_registry_dashboard": {
-      "products": [
-        "core"
-      ],
-      "title": "Dashboard",
-      "path": "reference/modules/spp_farmer_registry_dashboard"
-    },
-    "technical_reference/module": {
-      "products": [
-        "core"
-      ],
-      "title": "Modules",
-      "path": "technical_reference/module"
-    },
-    "ops_guide/security/scanning": {
-      "products": [
-        "core"
-      ],
-      "title": "Security Scanning",
-      "path": "ops_guide/security/scanning"
-    },
-    "howto/user_guides/setting_up_farmer_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "Setting up Farmer Registry",
-      "path": "howto/user_guides/setting_up_farmer_registry"
-    },
-    "reference/modules/spp_cel_event": {
-      "products": [
-        "core"
-      ],
-      "title": "Event Data Integration",
-      "path": "reference/modules/spp_cel_event"
-    },
-    "config_guide/role_configuration/troubleshooting": {
-      "products": [
-        "core"
-      ],
-      "title": "Troubleshooting",
-      "path": "config_guide/role_configuration/troubleshooting"
-    },
-    "reference/modules/spp_service_points": {
-      "products": [
-        "core"
-      ],
-      "title": "Service Points",
-      "path": "reference/modules/spp_service_points"
-    },
-    "reference/modules/spp_dci_server": {
-      "products": [
-        "core"
-      ],
-      "title": "Server",
-      "path": "reference/modules/spp_dci_server"
-    },
-    "reference/modules/spp_land_record": {
-      "products": [
-        "core"
-      ],
-      "title": "Land Record",
-      "path": "reference/modules/spp_land_record"
-    },
-    "config_guide/eligibility/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Eligibility rules",
-      "path": "config_guide/eligibility/index"
-    },
-    "user_guide/grievances/index": {
-      "products": [
-        "grievances"
-      ],
-      "title": "Grievance Redress Mechanism (GRM)",
-      "path": "user_guide/grievances/index"
-    },
-    "developer_guide/drims/index": {
-      "products": [
-        "core"
-      ],
-      "title": "DRIMS Developer Guide",
-      "path": "developer_guide/drims/index"
-    },
-    "developer_guide/api_v2/overview": {
-      "products": [
-        "core"
-      ],
-      "title": "API V2 Overview",
-      "path": "developer_guide/api_v2/overview"
-    },
-    "developer_guide/extending/cycle_manager": {
-      "products": [
-        "core"
-      ],
-      "title": "Customize Cycle",
-      "path": "developer_guide/extending/cycle_manager"
-    },
-    "tutorial/audit_log": {
-      "products": [
-        "core"
-      ],
-      "title": "Audit log",
-      "path": "tutorial/audit_log"
-    },
-    "user_guide/reference/areas_geography": {
-      "products": [
-        "core"
-      ],
-      "title": "Geographic Areas",
-      "path": "user_guide/reference/areas_geography"
-    },
-    "learn/concepts/entitlements": {
-      "products": [
-        "core"
-      ],
-      "title": "Entitlements",
-      "path": "learn/concepts/entitlements"
-    },
-    "config_guide/entitlement_formulas/cash_calculations": {
-      "products": [
-        "core"
-      ],
-      "title": "Cash calculations",
-      "path": "config_guide/entitlement_formulas/cash_calculations"
-    },
-    "community_and_support/how_to_contribute_to_the_project": {
-      "products": [
-        "core"
-      ],
-      "title": "Contributing",
-      "path": "community_and_support/how_to_contribute_to_the_project"
-    },
-    "modules/spp_pmt": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Proxy Means Testing",
-      "path": "modules/spp_pmt"
-    },
-    "config_guide/vocabulary/standard_vocabularies": {
-      "products": [
-        "core"
-      ],
-      "title": "Standard Vocabularies",
-      "path": "config_guide/vocabulary/standard_vocabularies"
-    },
-    "config_guide/change_request_types/custom_detail_models": {
-      "products": [
-        "core"
-      ],
-      "title": "Custom detail models",
-      "path": "config_guide/change_request_types/custom_detail_models"
-    },
-    "modules/spp_event_data": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Event Data",
-      "path": "modules/spp_event_data"
-    },
-    "config_guide/consent/privacy_notices": {
-      "products": [
-        "core"
-      ],
-      "title": "Configuring privacy notices",
-      "path": "config_guide/consent/privacy_notices"
-    },
-    "config_guide/drims/warehouses": {
-      "products": [
-        "drims"
-      ],
-      "title": "Configuring Warehouses",
-      "path": "config_guide/drims/warehouses"
-    },
-    "get_started/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Get started",
-      "path": "get_started/index"
-    },
-    "developer_guide/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Developer guide",
-      "path": "developer_guide/index"
-    },
-    "reference/modules/spp_api_v2": {
-      "products": [
-        "core"
-      ],
-      "title": "API V2",
-      "path": "reference/modules/spp_api_v2"
-    },
-    "user_guide/programs/create_programs": {
-      "products": [
-        "programs"
-      ],
-      "title": "Create programs",
-      "path": "user_guide/programs/create_programs"
-    },
-    "modules/spp_registrant_import": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Registrant Import",
-      "path": "modules/spp_registrant_import"
-    },
-    "reference/modules/spp_metric": {
-      "products": [
-        "core"
-      ],
-      "title": "Metric",
-      "path": "reference/modules/spp_metric"
-    },
-    "config_guide/eligibility/geographic_targeting": {
-      "products": [
-        "core"
-      ],
-      "title": "Geographic targeting",
-      "path": "config_guide/eligibility/geographic_targeting"
-    },
-    "modules/spp_event_demo": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Event Demo",
-      "path": "modules/spp_event_demo"
-    },
-    "reference/modules/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Modules Reference",
-      "path": "reference/modules/index"
-    },
-    "reference/modules/spp_banking": {
-      "products": [
-        "core"
-      ],
-      "title": "Banking / Bank Details",
-      "path": "reference/modules/spp_banking"
-    },
-    "ops_guide/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Operations guide",
-      "path": "ops_guide/index"
-    },
-    "user_guide/drims/requests": {
-      "products": [
-        "drims"
-      ],
-      "title": "Submit a Relief Request",
-      "path": "user_guide/drims/requests"
-    },
-    "modules/spp_entitlement_basket": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Entitlement Basket",
-      "path": "modules/spp_entitlement_basket"
-    },
-    "tutorial/user_guides/configure_ID_generate_qr": {
-      "products": [
-        "core"
-      ],
-      "title": "Configure ID and generate QR code",
-      "path": "tutorial/user_guides/configure_ID_generate_qr"
-    },
-    "reference/modules/spp_irrigation": {
-      "products": [
-        "core"
-      ],
-      "title": "Irrigation",
-      "path": "reference/modules/spp_irrigation"
-    },
-    "developer_guide/dci/index": {
-      "products": [
-        "core"
-      ],
-      "title": "DCI Integration",
-      "path": "developer_guide/dci/index"
-    },
-    "developer_guide/dci/client_role": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP as DCI Client",
-      "path": "developer_guide/dci/client_role"
-    },
-    "modules/spp_openid_vci_individual": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP OpenID VCI Individual",
-      "path": "modules/spp_openid_vci_individual"
-    },
-    "user_guide/payments/service_points": {
-      "products": [
-        "payments"
-      ],
-      "title": "View Service Points",
-      "path": "user_guide/payments/service_points"
-    },
-    "user_guide/programs/allocate_funds": {
-      "products": [
-        "programs"
-      ],
-      "title": "Allocate funds to programs",
-      "path": "user_guide/programs/allocate_funds"
-    },
-    "technical_reference/extensibility": {
-      "products": [
-        "core"
-      ],
-      "title": "Customisable, Configurable, and Extensible",
-      "path": "technical_reference/extensibility"
-    },
-    "learn/concepts/deduplication": {
-      "products": [
-        "core"
-      ],
-      "title": "Deduplication",
-      "path": "learn/concepts/deduplication"
-    },
-    "products/features/change_management": {
-      "products": [
-        "core"
-      ],
-      "title": "Auditable change management",
-      "path": "products/features/change_management"
-    },
-    "reference/modules/spp_hazard_programs": {
-      "products": [
-        "core"
-      ],
-      "title": "Programs Integration",
-      "path": "reference/modules/spp_hazard_programs"
-    },
-    "config_guide/role_configuration/overview": {
-      "products": [
-        "core"
-      ],
-      "title": "Access control overview",
-      "path": "config_guide/role_configuration/overview"
-    },
-    "explanation/Registering_individuals_and_groups": {
-      "products": [
-        "core"
-      ],
-      "title": "Key Terminology",
-      "path": "explanation/Registering_individuals_and_groups"
-    },
-    "modules/spp_base_api": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Base API",
-      "path": "modules/spp_base_api"
-    },
-    "developer_guide/dci/protocol": {
-      "products": [
-        "core"
-      ],
-      "title": "DCI Protocol Details",
-      "path": "developer_guide/dci/protocol"
-    },
-    "reference/modules/spp_grm_case_link": {
-      "products": [
-        "core"
-      ],
-      "title": "Case Link",
-      "path": "reference/modules/spp_grm_case_link"
-    },
-    "modules/spp_custom_fields_ui": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Custom Filter UI",
-      "path": "modules/spp_custom_fields_ui"
-    },
-    "reference/modules/spp_vocabulary": {
-      "products": [
-        "core"
-      ],
-      "title": "Vocabulary",
-      "path": "reference/modules/spp_vocabulary"
-    },
-    "config_guide/entitlement_formulas/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Entitlement formulas",
-      "path": "config_guide/entitlement_formulas/index"
-    },
-    "developer_guide/extending/custom_modules": {
-      "products": [
-        "core"
-      ],
-      "title": "Customize Program",
-      "path": "developer_guide/extending/custom_modules"
-    },
-    "config_guide/role_configuration/creating_roles": {
-      "products": [
-        "core"
-      ],
-      "title": "Creating custom roles",
-      "path": "config_guide/role_configuration/creating_roles"
-    },
-    "user_guide/programs/enroll_beneficiaries": {
-      "products": [
-        "programs"
-      ],
-      "title": "Enroll beneficiaries",
-      "path": "user_guide/programs/enroll_beneficiaries"
-    },
-    "howto/developer_guides/custom_entitlement": {
-      "products": [
-        "core"
-      ],
-      "title": "Customize Entitlement",
-      "path": "howto/developer_guides/custom_entitlement"
-    },
-    "config_guide/cel/cookbook": {
-      "products": [
-        "core"
-      ],
-      "title": "CEL cookbook",
-      "path": "config_guide/cel/cookbook"
-    },
-    "tutorial/geotargeting": {
-      "products": [
-        "core"
-      ],
-      "title": "Geotargeting",
-      "path": "tutorial/geotargeting"
-    },
-    "community_and_support/license": {
-      "products": [
-        "core"
-      ],
-      "title": "Licensing",
-      "path": "community_and_support/license"
-    },
-    "reference/modules/spp_base_common": {
-      "products": [
-        "core"
-      ],
-      "title": "Base (Common)",
-      "path": "reference/modules/spp_base_common"
-    },
-    "products/drims": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP DRIMS",
-      "path": "products/drims"
-    },
-    "reference/modules/spp_api_v2_data": {
-      "products": [
-        "core"
-      ],
-      "title": "Data",
-      "path": "reference/modules/spp_api_v2_data"
-    },
-    "modules/spp_entitlement_cash": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Cash Entitlement",
-      "path": "modules/spp_entitlement_cash"
-    },
-    "tutorial/programs/entitlement_amount_formulas": {
-      "products": [
-        "core"
-      ],
-      "title": "Entitlement amount formulas (CEL)",
-      "path": "tutorial/programs/entitlement_amount_formulas"
-    },
-    "modules/spp_starter": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Starter Module",
-      "path": "modules/spp_starter"
-    },
-    "technical_reference/programs/cycle_manager": {
-      "products": [
-        "core"
-      ],
-      "title": "Cycle Manager",
-      "path": "technical_reference/programs/cycle_manager"
-    },
-    "modules/spp_demo": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Demo",
-      "path": "modules/spp_demo"
-    },
-    "reference/vocabularies/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Vocabulary Reference",
-      "path": "reference/vocabularies/index"
-    },
-    "get_started/first_program/01_access_program": {
-      "products": [
-        "registry",
-        "programs"
-      ],
-      "title": "Step 1: Access the program section",
-      "path": "get_started/first_program/01_access_program"
-    },
-    "reference/modules/spp_api_v2_change_request": {
-      "products": [
-        "core"
-      ],
-      "title": "Change Request",
-      "path": "reference/modules/spp_api_v2_change_request"
-    },
-    "ops_guide/security/pii_encryption": {
-      "products": [
-        "core"
-      ],
-      "title": "PII Encryption",
-      "path": "ops_guide/security/pii_encryption"
-    },
-    "user_guide/administration/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Administration",
-      "path": "user_guide/administration/index"
-    },
-    "reference/modules/spp_grm_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "Registry Integration",
-      "path": "reference/modules/spp_grm_registry"
-    },
-    "reference/modules/spp_dci": {
-      "products": [
-        "core"
-      ],
-      "title": "DCI Core",
-      "path": "reference/modules/spp_dci"
-    },
-    "user_guide/change_requests/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Change Requests",
-      "path": "user_guide/change_requests/index"
+      "title": "Program eligibility and compliance rules (CEL)",
+      "path": "tutorial/programs/eligibility_and_compliance"
     },
     "howto/developer_mode": {
       "products": [
@@ -2916,110 +177,117 @@
       "title": "Developer mode (debug mode)",
       "path": "howto/developer_mode"
     },
-    "tutorial/custom_fields": {
+    "config_guide/vocabulary/index": {
       "products": [
         "core"
       ],
-      "title": "Custom fields",
-      "path": "tutorial/custom_fields"
+      "title": "Vocabulary System",
+      "path": "config_guide/vocabulary/index"
     },
-    "user_guide/reference/index": {
+    "technical_reference/programs/entitlement_manager": {
       "products": [
         "core"
       ],
-      "title": "Reference",
-      "path": "user_guide/reference/index"
+      "title": "Entitlement Manager",
+      "path": "technical_reference/programs/entitlement_manager"
     },
-    "reference/modules/spp_api_v2_vocabulary": {
+    "user_guide/registry/register_group": {
       "products": [
-        "core"
+        "registry"
       ],
-      "title": "Vocabulary",
-      "path": "reference/modules/spp_api_v2_vocabulary"
+      "title": "Register a group",
+      "path": "user_guide/registry/register_group"
     },
-    "technical_reference/programs/eligibility_manager": {
+    "config_guide/consent/privacy_notices": {
       "products": [
         "core"
       ],
-      "title": "Eligibility Manager",
-      "path": "technical_reference/programs/eligibility_manager"
+      "title": "Configuring privacy notices",
+      "path": "config_guide/consent/privacy_notices"
     },
-    "developer_guide/migration/breaking_changes": {
+    "developer_guide/extending/custom_modules": {
       "products": [
         "core"
       ],
-      "title": "Breaking Changes",
-      "path": "developer_guide/migration/breaking_changes"
+      "title": "Customize Program",
+      "path": "developer_guide/extending/custom_modules"
     },
-    "config_guide/scoring/index": {
+    "config_guide/scoring/custom": {
       "products": [
         "core"
       ],
-      "title": "Scoring & Assessment",
-      "path": "config_guide/scoring/index"
+      "title": "Creating Custom Scoring Formulas",
+      "path": "config_guide/scoring/custom"
     },
-    "reference/modules/spp_base_setting": {
+    "contributing/index": {
       "products": [
         "core"
       ],
-      "title": "Base Settings",
-      "path": "reference/modules/spp_base_setting"
+      "title": "Contributing to documentation",
+      "path": "contributing/index"
     },
-    "reference/modules/spp_storage_backend": {
+    "developer_guide/dci/index": {
       "products": [
         "core"
       ],
-      "title": "Storage Backend",
-      "path": "reference/modules/spp_storage_backend"
+      "title": "DCI Integration",
+      "path": "developer_guide/dci/index"
     },
-    "howto/developer_guides/cel": {
+    "reference/modules/spp_indicator": {
       "products": [
         "core"
       ],
-      "title": "Variables and expressions (CEL) for developers",
-      "path": "howto/developer_guides/cel"
+      "title": "Indicator",
+      "path": "reference/modules/spp_indicator"
     },
-    "reference/modules/spp_api_v2_entitlements": {
+    "modules/spp_entitlement_cash": {
       "products": [
         "core"
       ],
-      "title": "Entitlements",
-      "path": "reference/modules/spp_api_v2_entitlements"
+      "title": "OpenSPP Cash Entitlement",
+      "path": "modules/spp_entitlement_cash"
     },
-    "tutorial/user_guides/point_of_sales": {
+    "modules/spp_ent_trans": {
       "products": [
         "core"
       ],
-      "title": "Point of Sales",
-      "path": "tutorial/user_guides/point_of_sales"
+      "title": "OpenSPP Entitlement Transactions",
+      "path": "modules/spp_ent_trans"
     },
-    "reference/api/index": {
+    "config_guide/change_request_types/field_mappings": {
       "products": [
         "core"
       ],
-      "title": "API Reference",
-      "path": "reference/api/index"
+      "title": "Field mappings",
+      "path": "config_guide/change_request_types/field_mappings"
     },
-    "config_guide/variables/overview": {
+    "reference/modules/spp_studio_change_requests": {
       "products": [
         "core"
       ],
-      "title": "Variables Overview",
-      "path": "config_guide/variables/overview"
+      "title": "Change Requests",
+      "path": "reference/modules/spp_studio_change_requests"
     },
-    "modules/spp_dci_api_server": {
+    "howto/developer_guides/esignet": {
       "products": [
         "core"
       ],
-      "title": "OpenSPP DCI API Server",
-      "path": "modules/spp_dci_api_server"
+      "title": "eSignate Integration",
+      "path": "howto/developer_guides/esignet"
     },
-    "config_guide/consent/recording_consent": {
+    "reference/modules/spp_session_tracking": {
       "products": [
         "core"
       ],
-      "title": "Recording consent",
-      "path": "config_guide/consent/recording_consent"
+      "title": "Session Tracking",
+      "path": "reference/modules/spp_session_tracking"
+    },
+    "best_practices/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Best Practices",
+      "path": "best_practices/index"
     },
     "developer_guide/integrations/index": {
       "products": [
@@ -3028,146 +296,47 @@
       "title": "Other Integrations",
       "path": "developer_guide/integrations/index"
     },
-    "get_started/explore/index": {
-      "products": [
-        "registry",
-        "programs"
-      ],
-      "title": "Explore OpenSPP",
-      "path": "get_started/explore/index"
-    },
-    "community_and_support/index": {
+    "config_guide/consent/index": {
       "products": [
         "core"
       ],
-      "title": "Community and support",
-      "path": "community_and_support/index"
+      "title": "Consent configuration",
+      "path": "config_guide/consent/index"
     },
-    "modules/spp_dms": {
+    "learn/concepts/eligibility": {
       "products": [
         "core"
       ],
-      "title": "OpenSPP Document Management System",
-      "path": "modules/spp_dms"
+      "title": "Eligibility",
+      "path": "learn/concepts/eligibility"
     },
-    "modules/spp_consent": {
+    "modules/spp_entitlement_in_kind": {
       "products": [
         "core"
       ],
-      "title": "OpenSPP Consent Module",
-      "path": "modules/spp_consent"
+      "title": "OpenSPP In-Kind Entitlement",
+      "path": "modules/spp_entitlement_in_kind"
     },
-    "reference/modules/spp_api_v2_products": {
+    "modules/spp_data_export": {
       "products": [
         "core"
       ],
-      "title": "Products",
-      "path": "reference/modules/spp_api_v2_products"
+      "title": "OpenSPP Data Export",
+      "path": "modules/spp_data_export"
     },
-    "user_guide/registry/import_data": {
-      "products": [
-        "registry"
-      ],
-      "title": "Import registrant data",
-      "path": "user_guide/registry/import_data"
-    },
-    "reference/modules/spp_key_management": {
+    "technical_reference/programs/cycle_manager": {
       "products": [
         "core"
       ],
-      "title": "Key Management",
-      "path": "reference/modules/spp_key_management"
+      "title": "Cycle Manager",
+      "path": "technical_reference/programs/cycle_manager"
     },
-    "modules/spp_idpass": {
-      "products": [
-        "core"
-      ],
-      "title": "spp_idpass Module",
-      "path": "modules/spp_idpass"
-    },
-    "reference/modules/spp_studio_events": {
-      "products": [
-        "core"
-      ],
-      "title": "Events",
-      "path": "reference/modules/spp_studio_events"
-    },
-    "products/features/data_integration_apis": {
-      "products": [
-        "core"
-      ],
-      "title": "Data integration and interoperability (APIs)",
-      "path": "products/features/data_integration_apis"
-    },
-    "modules/spp_change_request_add_farmer": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Change Request: Add Farmer",
-      "path": "modules/spp_change_request_add_farmer"
-    },
-    "reference/modules/spp_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "Registry",
-      "path": "reference/modules/spp_registry"
-    },
-    "ops_guide/deployment/production-hardening": {
-      "products": [
-        "core"
-      ],
-      "title": "Production Hardening",
-      "path": "ops_guide/deployment/production-hardening"
-    },
-    "products/features/eligibility_targeting": {
-      "products": [
-        "core"
-      ],
-      "title": "Configurable eligibility and targeting",
-      "path": "products/features/eligibility_targeting"
-    },
-    "reference/modules/spp_claim_169": {
-      "products": [
-        "core"
-      ],
-      "title": "QR Credentials (Claim 169)",
-      "path": "reference/modules/spp_claim_169"
-    },
-    "modules/spp_registry_data_source": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Data Source",
-      "path": "modules/spp_registry_data_source"
-    },
-    "developer_guide/setup/index": {
+    "howto/developer_guides/development_setup": {
       "products": [
         "core"
       ],
       "title": "Development Setup",
-      "path": "developer_guide/setup/index"
-    },
-    "reference/modules/spp_starter_sp_mis": {
-      "products": [
-        "core"
-      ],
-      "title": "Starter: SP-MIS",
-      "path": "reference/modules/spp_starter_sp_mis"
-    },
-    "technical_reference/apis": {
-      "products": [
-        "core"
-      ],
-      "title": "APIs",
-      "path": "technical_reference/apis"
-    },
-    "reference/modules/spp_dci_client_crvs": {
-      "products": [
-        "core"
-      ],
-      "title": "Client - CRVS",
-      "path": "reference/modules/spp_dci_client_crvs"
+      "path": "howto/developer_guides/development_setup"
     },
     "products/features/grievance_redress": {
       "products": [
@@ -3176,236 +345,26 @@
       "title": "Grievance Redress Mechanism (GRM)",
       "path": "products/features/grievance_redress"
     },
-    "contributing/authors": {
+    "learn/products/farmer_registry": {
       "products": [
         "core"
       ],
-      "title": "Authors guide",
-      "path": "contributing/authors"
+      "title": "Farmer Registry",
+      "path": "learn/products/farmer_registry"
     },
-    "config_guide/studio/registry_field_builder": {
+    "howto/developer_guides/setting_up_using_pypi": {
       "products": [
         "core"
       ],
-      "title": "Custom Fields (Registry Field Builder)",
-      "path": "config_guide/studio/registry_field_builder"
+      "title": "Setting Up Using Python Package Manager",
+      "path": "howto/developer_guides/setting_up_using_pypi"
     },
-    "developer_guide/api_v2/errors": {
+    "reference/modules/spp_metric_service": {
       "products": [
         "core"
       ],
-      "title": "Error Handling",
-      "path": "developer_guide/api_v2/errors"
-    },
-    "explanation/security_archi": {
-      "products": [
-        "core"
-      ],
-      "title": "Security Architecture",
-      "path": "explanation/security_archi"
-    },
-    "modules/spp_base_setting": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Base Settings",
-      "path": "modules/spp_base_setting"
-    },
-    "reference/modules/spp_demo": {
-      "products": [
-        "core"
-      ],
-      "title": "Demo",
-      "path": "reference/modules/spp_demo"
-    },
-    "user_guide/change_requests/review_change_request": {
-      "products": [
-        "core"
-      ],
-      "title": "Review a change request",
-      "path": "user_guide/change_requests/review_change_request"
-    },
-    "reference/modules/spp_starter_farmer_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "Starter: Farmer Registry",
-      "path": "reference/modules/spp_starter_farmer_registry"
-    },
-    "config_guide/scoring/vulnerability": {
-      "products": [
-        "core"
-      ],
-      "title": "Vulnerability Scoring Configuration",
-      "path": "config_guide/scoring/vulnerability"
-    },
-    "user_guide/payments/index": {
-      "products": [
-        "payments"
-      ],
-      "title": "Payments",
-      "path": "user_guide/payments/index"
-    },
-    "howto/developer_guides/module": {
-      "products": [
-        "core"
-      ],
-      "title": "Module Development",
-      "path": "howto/developer_guides/module"
-    },
-    "howto/user_guides/implementing_pmt": {
-      "products": [
-        "core"
-      ],
-      "title": "PMT via the UI",
-      "path": "howto/user_guides/implementing_pmt"
-    },
-    "config_guide/event_data/odk_kobo": {
-      "products": [
-        "core"
-      ],
-      "title": "ODK/KoboToolbox Integration",
-      "path": "config_guide/event_data/odk_kobo"
-    },
-    "config_guide/entitlement_formulas/inkind_baskets": {
-      "products": [
-        "core"
-      ],
-      "title": "In-kind and basket entitlements",
-      "path": "config_guide/entitlement_formulas/inkind_baskets"
-    },
-    "technical_reference/programs/concepts": {
-      "products": [
-        "core"
-      ],
-      "title": "Manager Overview",
-      "path": "technical_reference/programs/concepts"
-    },
-    "user_guide/drims/dispatches": {
-      "products": [
-        "drims"
-      ],
-      "title": "Process a Dispatch",
-      "path": "user_guide/drims/dispatches"
-    },
-    "tutorial/programs/eligibility_and_compliance": {
-      "products": [
-        "core"
-      ],
-      "title": "Program eligibility and compliance rules (CEL)",
-      "path": "tutorial/programs/eligibility_and_compliance"
-    },
-    "developer_guide/drims/extending": {
-      "products": [
-        "core"
-      ],
-      "title": "Extending DRIMS",
-      "path": "developer_guide/drims/extending"
-    },
-    "get_started/modules/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Module installation",
-      "path": "get_started/modules/index"
-    },
-    "tutorial/vulnerability_scoring": {
-      "products": [
-        "core"
-      ],
-      "title": "Vulnerability scoring",
-      "path": "tutorial/vulnerability_scoring"
-    },
-    "config_guide/cel/troubleshooting": {
-      "products": [
-        "core"
-      ],
-      "title": "CEL troubleshooting",
-      "path": "config_guide/cel/troubleshooting"
-    },
-    "technical_reference/programs/program_manager": {
-      "products": [
-        "core"
-      ],
-      "title": "Program Manager",
-      "path": "technical_reference/programs/program_manager"
-    },
-    "modules/spp_scan_id_document": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Registry: Scan ID Document",
-      "path": "modules/spp_scan_id_document"
-    },
-    "reference/modules/spp_attachment_av_scan": {
-      "products": [
-        "core"
-      ],
-      "title": "Attachment Antivirus Scan",
-      "path": "reference/modules/spp_attachment_av_scan"
-    },
-    "user_guide/gis/index": {
-      "products": [
-        "core"
-      ],
-      "title": "Geographic Information System (GIS)",
-      "path": "user_guide/gis/index"
-    },
-    "reference/modules/spp_dci_client_dr": {
-      "products": [
-        "core"
-      ],
-      "title": "Client - Disability",
-      "path": "reference/modules/spp_dci_client_dr"
-    },
-    "reference/modules/spp_disability_registry": {
-      "products": [
-        "core"
-      ],
-      "title": "Disability Registry",
-      "path": "reference/modules/spp_disability_registry"
-    },
-    "tutorial/social_welfare_development_index": {
-      "products": [
-        "core"
-      ],
-      "title": "Social Welfare Development Index (SWDI)",
-      "path": "tutorial/social_welfare_development_index"
-    },
-    "modules/spp_custom_field_recompute_daily": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Custom Field Recompute Daily",
-      "path": "modules/spp_custom_field_recompute_daily"
-    },
-    "modules/spp_basic_cash_entitlement_spent": {
-      "products": [
-        "core"
-      ],
-      "title": "OpenSPP Program Entitlement Basic Cash Spent",
-      "path": "modules/spp_basic_cash_entitlement_spent"
-    },
-    "user_guide/gis/maps_and_reports": {
-      "products": [
-        "core"
-      ],
-      "title": "View maps and generate reports",
-      "path": "user_guide/gis/maps_and_reports"
-    },
-    "config_guide/change_request_types/conflict_detection": {
-      "products": [
-        "core"
-      ],
-      "title": "Conflict and duplicate detection",
-      "path": "config_guide/change_request_types/conflict_detection"
-    },
-    "howto/developer_guides/oidc": {
-      "products": [
-        "core"
-      ],
-      "title": "Configuring Keycloak for OAuth",
-      "path": "howto/developer_guides/oidc"
+      "title": "Metric Service",
+      "path": "reference/modules/spp_metric_service"
     },
     "get_started/first_household/03_add_members": {
       "products": [
@@ -3415,26 +374,173 @@
       "title": "Step 3: Add members",
       "path": "get_started/first_household/03_add_members"
     },
-    "user_guide/change_requests/change_request_types": {
+    "howto/developer_guides/custom_service_points": {
       "products": [
         "core"
       ],
-      "title": "Change request types",
-      "path": "user_guide/change_requests/change_request_types"
+      "title": "Customize Service Points",
+      "path": "howto/developer_guides/custom_service_points"
     },
-    "howto/developer_guides/rest_api": {
+    "howto/developer_guides/troubleshooting": {
       "products": [
         "core"
       ],
-      "title": "Extend API v2 (REST)",
-      "path": "howto/developer_guides/rest_api"
+      "title": "Troubleshooting",
+      "path": "howto/developer_guides/troubleshooting"
     },
-    "modules/spp_ent_trans": {
+    "modules/spp_manual_entitlement": {
       "products": [
         "core"
       ],
-      "title": "OpenSPP Entitlement Transactions",
-      "path": "modules/spp_ent_trans"
+      "title": "OpenSPP Manual Entitlement",
+      "path": "modules/spp_manual_entitlement"
+    },
+    "ops_guide/storage/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Storage",
+      "path": "ops_guide/storage/index"
+    },
+    "config_guide/cel/syntax": {
+      "products": [
+        "core"
+      ],
+      "title": "CEL syntax reference",
+      "path": "config_guide/cel/syntax"
+    },
+    "reference/modules/spp_irrigation": {
+      "products": [
+        "core"
+      ],
+      "title": "Irrigation",
+      "path": "reference/modules/spp_irrigation"
+    },
+    "modules/spp_base_demo": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Base Demo",
+      "path": "modules/spp_base_demo"
+    },
+    "modules/spp_programs_compliance_criteria": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Programs: Compliance Criteria",
+      "path": "modules/spp_programs_compliance_criteria"
+    },
+    "reference/modules/spp_base_setting": {
+      "products": [
+        "core"
+      ],
+      "title": "Base Settings",
+      "path": "reference/modules/spp_base_setting"
+    },
+    "modules/spp_base_gis": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Base GIS",
+      "path": "modules/spp_base_gis"
+    },
+    "developer_guide/dci/overview": {
+      "products": [
+        "core"
+      ],
+      "title": "DCI Overview",
+      "path": "developer_guide/dci/overview"
+    },
+    "reference/modules/spp_api_v2_simulation": {
+      "products": [
+        "core"
+      ],
+      "title": "Simulation API",
+      "path": "reference/modules/spp_api_v2_simulation"
+    },
+    "user_guide/drims/manage_inventory": {
+      "products": [
+        "drims"
+      ],
+      "title": "Manage Inventory",
+      "path": "user_guide/drims/manage_inventory"
+    },
+    "modules/spp_import_dci_api": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Import: DCI API",
+      "path": "modules/spp_import_dci_api"
+    },
+    "developer_guide/verifiable_credentials/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Verifiable Credentials",
+      "path": "developer_guide/verifiable_credentials/index"
+    },
+    "modules/spp_farmer_registry_demo": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Farmer Registry Demo",
+      "path": "modules/spp_farmer_registry_demo"
+    },
+    "user_guide/change_requests/submit_change_request": {
+      "products": [
+        "core"
+      ],
+      "title": "Submit a change request",
+      "path": "user_guide/change_requests/submit_change_request"
+    },
+    "modules/spp_consent": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Consent Module",
+      "path": "modules/spp_consent"
+    },
+    "developer_guide/api_v2/external_identifiers": {
+      "products": [
+        "core"
+      ],
+      "title": "External Identifiers",
+      "path": "developer_guide/api_v2/external_identifiers"
+    },
+    "reference/modules/spp_case_graduation": {
+      "products": [
+        "core"
+      ],
+      "title": "Graduation Integration",
+      "path": "reference/modules/spp_case_graduation"
+    },
+    "tutorial/audit_log": {
+      "products": [
+        "core"
+      ],
+      "title": "Audit log",
+      "path": "tutorial/audit_log"
+    },
+    "developer_guide/extending/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Extending OpenSPP",
+      "path": "developer_guide/extending/index"
+    },
+    "user_guide/entitlements/index": {
+      "products": [
+        "programs"
+      ],
+      "title": "Entitlements",
+      "path": "user_guide/entitlements/index"
+    },
+    "howto/user_guides/setting_up_farmer_registry": {
+      "products": [
+        "core"
+      ],
+      "title": "Setting up Farmer Registry",
+      "path": "howto/user_guides/setting_up_farmer_registry"
     },
     "technical_reference/oidc": {
       "products": [
@@ -3443,12 +549,1733 @@
       "title": "OAuth 2.0 / OIDC",
       "path": "technical_reference/oidc"
     },
-    "developer_guide/verifiable_credentials/implementation": {
+    "get_started/first_program/02_create_program": {
+      "products": [
+        "registry",
+        "programs"
+      ],
+      "title": "Step 2: Create your first social protection program",
+      "path": "get_started/first_program/02_create_program"
+    },
+    "tutorial/programs/entitlement_amount_formulas": {
       "products": [
         "core"
       ],
-      "title": "Verifiable Credentials Implementation Guide",
-      "path": "developer_guide/verifiable_credentials/implementation"
+      "title": "Entitlement amount formulas (CEL)",
+      "path": "tutorial/programs/entitlement_amount_formulas"
+    },
+    "modules/spp_irrigation": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Irrigation",
+      "path": "modules/spp_irrigation"
+    },
+    "user_guide/registry/register_individual": {
+      "products": [
+        "registry"
+      ],
+      "title": "Register an individual",
+      "path": "user_guide/registry/register_individual"
+    },
+    "user_guide/registry/import_data": {
+      "products": [
+        "registry"
+      ],
+      "title": "Import registrant data",
+      "path": "user_guide/registry/import_data"
+    },
+    "community_and_support/security_report": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Vulnerability Disclosure Policy",
+      "path": "community_and_support/security_report"
+    },
+    "explanation/social_registry": {
+      "products": [
+        "core"
+      ],
+      "title": "Social Registry",
+      "path": "explanation/social_registry"
+    },
+    "developer_guide/verifiable_credentials/oidc4vci": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenID for Verifiable Credential Issuance",
+      "path": "developer_guide/verifiable_credentials/oidc4vci"
+    },
+    "modules/spp_change_request": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Change Request",
+      "path": "modules/spp_change_request"
+    },
+    "config_guide/role_configuration/overview": {
+      "products": [
+        "core"
+      ],
+      "title": "Access control overview",
+      "path": "config_guide/role_configuration/overview"
+    },
+    "howto/developer_guides/rest_api": {
+      "products": [
+        "core"
+      ],
+      "title": "Extend API v2 (REST)",
+      "path": "howto/developer_guides/rest_api"
+    },
+    "get_started/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Get started",
+      "path": "get_started/index"
+    },
+    "reference/modules/spp_simulation": {
+      "products": [
+        "core"
+      ],
+      "title": "Targeting Simulation",
+      "path": "reference/modules/spp_simulation"
+    },
+    "modules/spp_api_records": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP API Records",
+      "path": "modules/spp_api_records"
+    },
+    "reference/modules/spp_cel_widget": {
+      "products": [
+        "core"
+      ],
+      "title": "Expression Widget",
+      "path": "reference/modules/spp_cel_widget"
+    },
+    "developer_guide/api_v2/overview": {
+      "products": [
+        "core"
+      ],
+      "title": "API V2 Overview",
+      "path": "developer_guide/api_v2/overview"
+    },
+    "tutorial/user_guides/import_areas": {
+      "products": [
+        "core"
+      ],
+      "title": "Import area",
+      "path": "tutorial/user_guides/import_areas"
+    },
+    "reference/modules/spp_case_entitlements": {
+      "products": [
+        "core"
+      ],
+      "title": "Entitlements Integration",
+      "path": "reference/modules/spp_case_entitlements"
+    },
+    "developer_guide/dci/server_role": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP as DCI Server",
+      "path": "developer_guide/dci/server_role"
+    },
+    "reference/modules/spp_dci": {
+      "products": [
+        "core"
+      ],
+      "title": "DCI Core",
+      "path": "reference/modules/spp_dci"
+    },
+    "user_guide/approvals/manage_approvals": {
+      "products": [
+        "core"
+      ],
+      "title": "Review and Approve Requests",
+      "path": "user_guide/approvals/manage_approvals"
+    },
+    "products/features/gis_land_management": {
+      "products": [
+        "core"
+      ],
+      "title": "Geospatial (GIS) and land management",
+      "path": "products/features/gis_land_management"
+    },
+    "modules/spp_import_match": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Import Match",
+      "path": "modules/spp_import_match"
+    },
+    "get_started/modules/social_installation": {
+      "products": [
+        "core"
+      ],
+      "title": "Social Registry installation",
+      "path": "get_started/modules/social_installation"
+    },
+    "technical_reference/programs/dashboards": {
+      "products": [
+        "core"
+      ],
+      "title": "Dashboards",
+      "path": "technical_reference/programs/dashboards"
+    },
+    "config_guide/event_data/odk_kobo": {
+      "products": [
+        "core"
+      ],
+      "title": "ODK/KoboToolbox Integration",
+      "path": "config_guide/event_data/odk_kobo"
+    },
+    "user_guide/case_management/core_workflow": {
+      "products": [
+        "core"
+      ],
+      "title": "Core case management workflow",
+      "path": "user_guide/case_management/core_workflow"
+    },
+    "user_guide/registry/export_data": {
+      "products": [
+        "registry"
+      ],
+      "title": "Export registrant data",
+      "path": "user_guide/registry/export_data"
+    },
+    "reference/modules/spp_api_v2_cycles": {
+      "products": [
+        "core"
+      ],
+      "title": "Cycles",
+      "path": "reference/modules/spp_api_v2_cycles"
+    },
+    "reference/modules/spp_dci_client_crvs": {
+      "products": [
+        "core"
+      ],
+      "title": "Client - CRVS",
+      "path": "reference/modules/spp_dci_client_crvs"
+    },
+    "reference/modules/spp_scoring": {
+      "products": [
+        "core"
+      ],
+      "title": "Scoring",
+      "path": "reference/modules/spp_scoring"
+    },
+    "reference/modules/spp_cel_event": {
+      "products": [
+        "core"
+      ],
+      "title": "Event Data Integration",
+      "path": "reference/modules/spp_cel_event"
+    },
+    "modules/spp_openid_vci_group": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP OpenID VCI Group",
+      "path": "modules/spp_openid_vci_group"
+    },
+    "products/features/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Features",
+      "path": "products/features/index"
+    },
+    "ops_guide/security/scanning": {
+      "products": [
+        "core"
+      ],
+      "title": "Security Scanning",
+      "path": "ops_guide/security/scanning"
+    },
+    "modules/spp_demo": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Demo",
+      "path": "modules/spp_demo"
+    },
+    "reference/modules/spp_cr_types_advanced": {
+      "products": [
+        "core"
+      ],
+      "title": "Advanced Types",
+      "path": "reference/modules/spp_cr_types_advanced"
+    },
+    "technical_reference/programs/deduplication_manager": {
+      "products": [
+        "core"
+      ],
+      "title": "Deduplication Manager",
+      "path": "technical_reference/programs/deduplication_manager"
+    },
+    "learn/products/social_registry": {
+      "products": [
+        "core"
+      ],
+      "title": "Social Registry",
+      "path": "learn/products/social_registry"
+    },
+    "user_guide/programs/allocate_funds": {
+      "products": [
+        "programs"
+      ],
+      "title": "Allocate funds to programs",
+      "path": "user_guide/programs/allocate_funds"
+    },
+    "user_guide/payments/index": {
+      "products": [
+        "payments"
+      ],
+      "title": "Payments",
+      "path": "user_guide/payments/index"
+    },
+    "tutorial/user_guides/setting_up_service_points": {
+      "products": [
+        "core"
+      ],
+      "title": "Setting up service points",
+      "path": "tutorial/user_guides/setting_up_service_points"
+    },
+    "developer_guide/api_v2/index": {
+      "products": [
+        "core"
+      ],
+      "title": "API V2",
+      "path": "developer_guide/api_v2/index"
+    },
+    "modules/spp_pos": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP POS",
+      "path": "modules/spp_pos"
+    },
+    "learn/concepts/cycles": {
+      "products": [
+        "core"
+      ],
+      "title": "Cycles",
+      "path": "learn/concepts/cycles"
+    },
+    "technical_reference/architecture": {
+      "products": [
+        "core"
+      ],
+      "title": "Architecture",
+      "path": "technical_reference/architecture"
+    },
+    "modules/spp_eligibility_sql": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP SQL Query Eligibility Manager",
+      "path": "modules/spp_eligibility_sql"
+    },
+    "user_guide/payments/service_points": {
+      "products": [
+        "payments"
+      ],
+      "title": "View Service Points",
+      "path": "user_guide/payments/service_points"
+    },
+    "reference/modules/spp_dci_server": {
+      "products": [
+        "core"
+      ],
+      "title": "Server",
+      "path": "reference/modules/spp_dci_server"
+    },
+    "config_guide/event_data/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Event Data",
+      "path": "config_guide/event_data/index"
+    },
+    "reference/modules/spp_dci_client_dr": {
+      "products": [
+        "core"
+      ],
+      "title": "Client - Disability",
+      "path": "reference/modules/spp_dci_client_dr"
+    },
+    "developer_guide/migration/breaking_changes": {
+      "products": [
+        "core"
+      ],
+      "title": "Breaking Changes",
+      "path": "developer_guide/migration/breaking_changes"
+    },
+    "config_guide/studio/event_type_designer": {
+      "products": [
+        "core"
+      ],
+      "title": "Event Type Designer",
+      "path": "config_guide/studio/event_type_designer"
+    },
+    "reference/modules/spp_key_management": {
+      "products": [
+        "core"
+      ],
+      "title": "Key Management",
+      "path": "reference/modules/spp_key_management"
+    },
+    "modules/spp_event_data": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Event Data",
+      "path": "modules/spp_event_data"
+    },
+    "reference/modules/spp_case_registry": {
+      "products": [
+        "core"
+      ],
+      "title": "Registry Integration",
+      "path": "reference/modules/spp_case_registry"
+    },
+    "user_guide/programs/manage_entitlements": {
+      "products": [
+        "programs"
+      ],
+      "title": "Manage entitlements",
+      "path": "user_guide/programs/manage_entitlements"
+    },
+    "reference/modules/spp_dci_demo": {
+      "products": [
+        "core"
+      ],
+      "title": "Demo",
+      "path": "reference/modules/spp_dci_demo"
+    },
+    "config_guide/role_configuration/predefined_roles": {
+      "products": [
+        "core"
+      ],
+      "title": "Predefined roles",
+      "path": "config_guide/role_configuration/predefined_roles"
+    },
+    "modules/spp_event_data_program_membership": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Event Data Program Membership",
+      "path": "modules/spp_event_data_program_membership"
+    },
+    "reference/modules/spp_api_v2_gis": {
+      "products": [
+        "core"
+      ],
+      "title": "GIS API",
+      "path": "reference/modules/spp_api_v2_gis"
+    },
+    "user_guide/programs/program_cycles": {
+      "products": [
+        "programs"
+      ],
+      "title": "Work with program cycles",
+      "path": "user_guide/programs/program_cycles"
+    },
+    "modules/spp_base_api": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Base API",
+      "path": "modules/spp_base_api"
+    },
+    "developer_guide/api_v2/search": {
+      "products": [
+        "core"
+      ],
+      "title": "Search and Filtering",
+      "path": "developer_guide/api_v2/search"
+    },
+    "developer_guide/architecture/cel_internals": {
+      "products": [
+        "core"
+      ],
+      "title": "CEL Internals",
+      "path": "developer_guide/architecture/cel_internals"
+    },
+    "developer_guide/verifiable_credentials/overview": {
+      "products": [
+        "core"
+      ],
+      "title": "Verifiable Credentials Overview",
+      "path": "developer_guide/verifiable_credentials/overview"
+    },
+    "community_and_support/license": {
+      "products": [
+        "core"
+      ],
+      "title": "Licensing",
+      "path": "community_and_support/license"
+    },
+    "modules/spp_custom_field": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Custom Field",
+      "path": "modules/spp_custom_field"
+    },
+    "reference/modules/spp_hazard": {
+      "products": [
+        "core"
+      ],
+      "title": "Hazard & Emergency Management",
+      "path": "reference/modules/spp_hazard"
+    },
+    "config_guide/cel/troubleshooting": {
+      "products": [
+        "core"
+      ],
+      "title": "CEL troubleshooting",
+      "path": "config_guide/cel/troubleshooting"
+    },
+    "developer_guide/migration/namespace_changes": {
+      "products": [
+        "core"
+      ],
+      "title": "Namespace Changes (g2p.* \u2192 spp.*)",
+      "path": "developer_guide/migration/namespace_changes"
+    },
+    "reference/api/index": {
+      "products": [
+        "core"
+      ],
+      "title": "API Reference",
+      "path": "reference/api/index"
+    },
+    "user_guide/approvals/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Approvals",
+      "path": "user_guide/approvals/index"
+    },
+    "reference/modules/spp_case_demo": {
+      "products": [
+        "core"
+      ],
+      "title": "Demo Data",
+      "path": "reference/modules/spp_case_demo"
+    },
+    "get_started/first_household/01_access_registry": {
+      "products": [
+        "registry",
+        "programs"
+      ],
+      "title": "Step 1: Access the Registry",
+      "path": "get_started/first_household/01_access_registry"
+    },
+    "config_guide/eligibility/templates": {
+      "products": [
+        "core"
+      ],
+      "title": "Expression templates",
+      "path": "config_guide/eligibility/templates"
+    },
+    "learn/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Learn",
+      "path": "learn/index"
+    },
+    "reference/modules/spp_farmer_registry_vocabularies": {
+      "products": [
+        "core"
+      ],
+      "title": "Vocabularies",
+      "path": "reference/modules/spp_farmer_registry_vocabularies"
+    },
+    "config_guide/entitlement_formulas/formula_library": {
+      "products": [
+        "core"
+      ],
+      "title": "Formula library",
+      "path": "config_guide/entitlement_formulas/formula_library"
+    },
+    "developer_guide/api_v2/studio_integration": {
+      "products": [
+        "core"
+      ],
+      "title": "Studio API Integration",
+      "path": "developer_guide/api_v2/studio_integration"
+    },
+    "config_guide/change_request_types/custom_detail_models": {
+      "products": [
+        "core"
+      ],
+      "title": "Custom detail models",
+      "path": "config_guide/change_request_types/custom_detail_models"
+    },
+    "reference/modules/spp_security": {
+      "products": [
+        "core"
+      ],
+      "title": "Security",
+      "path": "reference/modules/spp_security"
+    },
+    "explanation/registry_key_concepts": {
+      "products": [
+        "core"
+      ],
+      "title": "Organizing Data in the Registry",
+      "path": "explanation/registry_key_concepts"
+    },
+    "user_guide/getting_started/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Getting started",
+      "path": "user_guide/getting_started/index"
+    },
+    "user_guide/case_management/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Case management",
+      "path": "user_guide/case_management/index"
+    },
+    "developer_guide/extending/cycle_manager": {
+      "products": [
+        "core"
+      ],
+      "title": "Customize Cycle",
+      "path": "developer_guide/extending/cycle_manager"
+    },
+    "user_guide/drims/dispatches": {
+      "products": [
+        "drims"
+      ],
+      "title": "Process a Dispatch",
+      "path": "user_guide/drims/dispatches"
+    },
+    "howto/developer_guides/custom_cr": {
+      "products": [
+        "core"
+      ],
+      "title": "Customize Change Request",
+      "path": "howto/developer_guides/custom_cr"
+    },
+    "get_started/modules/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Module installation",
+      "path": "get_started/modules/index"
+    },
+    "modules/spp_farmer_registry_dashboard": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Farmer Registry Dashboard",
+      "path": "modules/spp_farmer_registry_dashboard"
+    },
+    "user_guide/grievances/index": {
+      "products": [
+        "grievances"
+      ],
+      "title": "Grievance Redress Mechanism (GRM)",
+      "path": "user_guide/grievances/index"
+    },
+    "contributing/admins": {
+      "products": [
+        "core"
+      ],
+      "title": "Administrators Guide",
+      "path": "contributing/admins"
+    },
+    "get_started/installation/docker": {
+      "products": [
+        "registry",
+        "programs"
+      ],
+      "title": "Docker installation",
+      "path": "get_started/installation/docker"
+    },
+    "howto/developer_guides/oidc": {
+      "products": [
+        "core"
+      ],
+      "title": "Configuring Keycloak for OAuth",
+      "path": "howto/developer_guides/oidc"
+    },
+    "explanation/digital_public_infrastructure": {
+      "products": [
+        "core"
+      ],
+      "title": "Digital Public Infrastructure",
+      "path": "explanation/digital_public_infrastructure"
+    },
+    "learn/concepts/change-requests": {
+      "products": [
+        "core"
+      ],
+      "title": "Change requests",
+      "path": "learn/concepts/change-requests"
+    },
+    "reference/modules/spp_grm": {
+      "products": [
+        "core"
+      ],
+      "title": "Grievance Redress Mechanism",
+      "path": "reference/modules/spp_grm"
+    },
+    "howto/developer_guides/cel": {
+      "products": [
+        "core"
+      ],
+      "title": "Variables and expressions (CEL) for developers",
+      "path": "howto/developer_guides/cel"
+    },
+    "explanation/data_collection_validation": {
+      "products": [
+        "core"
+      ],
+      "title": "Data Collection and Validation",
+      "path": "explanation/data_collection_validation"
+    },
+    "tutorial/consent_management": {
+      "products": [
+        "core"
+      ],
+      "title": "Consent management",
+      "path": "tutorial/consent_management"
+    },
+    "modules/spp_openid_vci_individual": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP OpenID VCI Individual",
+      "path": "modules/spp_openid_vci_individual"
+    },
+    "config_guide/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Configuration guide",
+      "path": "config_guide/index"
+    },
+    "tutorial/scoring_framework": {
+      "products": [
+        "core"
+      ],
+      "title": "Scoring framework",
+      "path": "tutorial/scoring_framework"
+    },
+    "reference/modules/spp_approval": {
+      "products": [
+        "core"
+      ],
+      "title": "Approval Workflows",
+      "path": "reference/modules/spp_approval"
+    },
+    "user_guide/getting_started/administrating_role_based_access": {
+      "products": [
+        "core"
+      ],
+      "title": "Administrating role-based access",
+      "path": "user_guide/getting_started/administrating_role_based_access"
+    },
+    "ops_guide/security/data_classification": {
+      "products": [
+        "core"
+      ],
+      "title": "Data Classification",
+      "path": "ops_guide/security/data_classification"
+    },
+    "reference/modules/spp_case_base": {
+      "products": [
+        "core"
+      ],
+      "title": "Case Management Base",
+      "path": "reference/modules/spp_case_base"
+    },
+    "reference/modules/spp_case_session": {
+      "products": [
+        "core"
+      ],
+      "title": "Session Integration",
+      "path": "reference/modules/spp_case_session"
+    },
+    "config_guide/scoring/overview": {
+      "products": [
+        "core"
+      ],
+      "title": "Scoring Framework Overview",
+      "path": "config_guide/scoring/overview"
+    },
+    "explanation/Registering_individuals_and_groups": {
+      "products": [
+        "core"
+      ],
+      "title": "Key Terminology",
+      "path": "explanation/Registering_individuals_and_groups"
+    },
+    "reference/modules/spp_api_v2_vocabulary": {
+      "products": [
+        "core"
+      ],
+      "title": "Vocabulary",
+      "path": "reference/modules/spp_api_v2_vocabulary"
+    },
+    "technical_reference/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Technical Reference",
+      "path": "technical_reference/index"
+    },
+    "reference/glossary/humanitarian": {
+      "products": [
+        "core"
+      ],
+      "title": "Humanitarian Terms Glossary",
+      "path": "reference/glossary/humanitarian"
+    },
+    "community_and_support/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Community and support",
+      "path": "community_and_support/index"
+    },
+    "tutorial/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Tutorial",
+      "path": "tutorial/index"
+    },
+    "reference/modules/spp_custom_field": {
+      "products": [
+        "core"
+      ],
+      "title": "Custom Fields",
+      "path": "reference/modules/spp_custom_field"
+    },
+    "modules/spp_entitlement_basket": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Entitlement Basket",
+      "path": "modules/spp_entitlement_basket"
+    },
+    "user_guide/drims/index": {
+      "products": [
+        "drims"
+      ],
+      "title": "DRIMS User Guide",
+      "path": "user_guide/drims/index"
+    },
+    "config_guide/cel/cookbook": {
+      "products": [
+        "core"
+      ],
+      "title": "CEL cookbook",
+      "path": "config_guide/cel/cookbook"
+    },
+    "modules/index": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Modules Index",
+      "path": "modules/index"
+    },
+    "reference/modules/spp_api_v2_products": {
+      "products": [
+        "core"
+      ],
+      "title": "Products",
+      "path": "reference/modules/spp_api_v2_products"
+    },
+    "reference/modules/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Modules Reference",
+      "path": "reference/modules/index"
+    },
+    "developer_guide/verifiable_credentials/w3c_vc": {
+      "products": [
+        "core"
+      ],
+      "title": "W3C Verifiable Credentials Data Model",
+      "path": "developer_guide/verifiable_credentials/w3c_vc"
+    },
+    "ops_guide/security/audit": {
+      "products": [
+        "core"
+      ],
+      "title": "Audit Logging",
+      "path": "ops_guide/security/audit"
+    },
+    "reference/modules/spp_claim_169": {
+      "products": [
+        "core"
+      ],
+      "title": "QR Credentials (Claim 169)",
+      "path": "reference/modules/spp_claim_169"
+    },
+    "tutorial/user_guides/configure_cash_entitlements": {
+      "products": [
+        "core"
+      ],
+      "title": "Configure cash entitlements",
+      "path": "tutorial/user_guides/configure_cash_entitlements"
+    },
+    "products/features/payment_disbursement": {
+      "products": [
+        "core"
+      ],
+      "title": "Pluggable payment and disbursement",
+      "path": "products/features/payment_disbursement"
+    },
+    "tutorial/change_requests": {
+      "products": [
+        "core"
+      ],
+      "title": "Change Requests",
+      "path": "tutorial/change_requests"
+    },
+    "developer_guide/api_v2/errors": {
+      "products": [
+        "core"
+      ],
+      "title": "Error Handling",
+      "path": "developer_guide/api_v2/errors"
+    },
+    "reference/modules/spp_api_v2_change_request": {
+      "products": [
+        "core"
+      ],
+      "title": "Change Request",
+      "path": "reference/modules/spp_api_v2_change_request"
+    },
+    "technical_reference/programs/notification_manager": {
+      "products": [
+        "core"
+      ],
+      "title": "Notification Manager",
+      "path": "technical_reference/programs/notification_manager"
+    },
+    "glossary": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Glossary",
+      "path": "glossary"
+    },
+    "howto/developer_guides/module": {
+      "products": [
+        "core"
+      ],
+      "title": "Module Development",
+      "path": "howto/developer_guides/module"
+    },
+    "config_guide/variables/overview": {
+      "products": [
+        "core"
+      ],
+      "title": "Variables Overview",
+      "path": "config_guide/variables/overview"
+    },
+    "contributing/myst-reference": {
+      "products": [
+        "core"
+      ],
+      "title": "MyST reference",
+      "path": "contributing/myst-reference"
+    },
+    "modules/spp_eligibility_tags": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Tag Based Eligibility Manager",
+      "path": "modules/spp_eligibility_tags"
+    },
+    "explanation/integrated_beneficiary_registry": {
+      "products": [
+        "core"
+      ],
+      "title": "Integrated Beneficiary Registry",
+      "path": "explanation/integrated_beneficiary_registry"
+    },
+    "developer_guide/api_v2/resources": {
+      "products": [
+        "core"
+      ],
+      "title": "API Resources",
+      "path": "developer_guide/api_v2/resources"
+    },
+    "reference/modules/spp_alerts": {
+      "products": [
+        "core"
+      ],
+      "title": "Alerts",
+      "path": "reference/modules/spp_alerts"
+    },
+    "contributing/sphinx-extensions": {
+      "products": [
+        "core"
+      ],
+      "title": "Sphinx extensions",
+      "path": "contributing/sphinx-extensions"
+    },
+    "config_guide/entitlement_formulas/conditional_logic": {
+      "products": [
+        "core"
+      ],
+      "title": "Conditional logic",
+      "path": "config_guide/entitlement_formulas/conditional_logic"
+    },
+    "reference/modules/spp_audit": {
+      "products": [
+        "core"
+      ],
+      "title": "Audit",
+      "path": "reference/modules/spp_audit"
+    },
+    "reference/modules/spp_farmer_registry_cr": {
+      "products": [
+        "core"
+      ],
+      "title": "Change Request Types",
+      "path": "reference/modules/spp_farmer_registry_cr"
+    },
+    "config_guide/eligibility/geographic_targeting": {
+      "products": [
+        "core"
+      ],
+      "title": "Geographic targeting",
+      "path": "config_guide/eligibility/geographic_targeting"
+    },
+    "reference/modules/spp_vocabulary": {
+      "products": [
+        "core"
+      ],
+      "title": "Vocabulary",
+      "path": "reference/modules/spp_vocabulary"
+    },
+    "config_guide/variables/variable_types": {
+      "products": [
+        "core"
+      ],
+      "title": "Variable Types",
+      "path": "config_guide/variables/variable_types"
+    },
+    "reference/modules/spp_dms": {
+      "products": [
+        "core"
+      ],
+      "title": "Document Management System",
+      "path": "reference/modules/spp_dms"
+    },
+    "reference/modules/spp_encryption": {
+      "products": [
+        "core"
+      ],
+      "title": "Encryption: Base",
+      "path": "reference/modules/spp_encryption"
+    },
+    "config_guide/consent/overview": {
+      "products": [
+        "core"
+      ],
+      "title": "Consent management overview",
+      "path": "config_guide/consent/overview"
+    },
+    "reference/modules/spp_change_request_v2": {
+      "products": [
+        "core"
+      ],
+      "title": "Change Request V2",
+      "path": "reference/modules/spp_change_request_v2"
+    },
+    "config_guide/eligibility/advanced": {
+      "products": [
+        "core"
+      ],
+      "title": "Advanced eligibility configuration",
+      "path": "config_guide/eligibility/advanced"
+    },
+    "reference/modules/spp_demo": {
+      "products": [
+        "core"
+      ],
+      "title": "Demo",
+      "path": "reference/modules/spp_demo"
+    },
+    "reference/modules/spp_programs": {
+      "products": [
+        "core"
+      ],
+      "title": "Programs",
+      "path": "reference/modules/spp_programs"
+    },
+    "config_guide/change_request_types/overview": {
+      "products": [
+        "core"
+      ],
+      "title": "Overview",
+      "path": "config_guide/change_request_types/overview"
+    },
+    "get_started/first_program/03_enroll_beneficiaries": {
+      "products": [
+        "registry",
+        "programs"
+      ],
+      "title": "Step 3: Import and enroll beneficiaries",
+      "path": "get_started/first_program/03_enroll_beneficiaries"
+    },
+    "howto/developer_guides/custom_registry_tab_fields": {
+      "products": [
+        "core"
+      ],
+      "title": "Customize Registry's Tabs/Fields",
+      "path": "howto/developer_guides/custom_registry_tab_fields"
+    },
+    "products/features/change_management": {
+      "products": [
+        "core"
+      ],
+      "title": "Auditable change management",
+      "path": "products/features/change_management"
+    },
+    "user_guide/registry/search_filter": {
+      "products": [
+        "registry"
+      ],
+      "title": "Search and filter registrants",
+      "path": "user_guide/registry/search_filter"
+    },
+    "howto/developer_guides/beneficiary_keycloak": {
+      "products": [
+        "core"
+      ],
+      "title": "Beneficiary portal authentication",
+      "path": "howto/developer_guides/beneficiary_keycloak"
+    },
+    "reference/modules/spp_metric": {
+      "products": [
+        "core"
+      ],
+      "title": "Metric",
+      "path": "reference/modules/spp_metric"
+    },
+    "config_guide/change_request_types/troubleshooting": {
+      "products": [
+        "core"
+      ],
+      "title": "Troubleshooting",
+      "path": "config_guide/change_request_types/troubleshooting"
+    },
+    "reference/modules/spp_registry_group_hierarchy": {
+      "products": [
+        "core"
+      ],
+      "title": "Registry Group Hierarchy",
+      "path": "reference/modules/spp_registry_group_hierarchy"
+    },
+    "modules/spp_base": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Base",
+      "path": "modules/spp_base"
+    },
+    "modules/spp_custom_filter": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Custom Filter",
+      "path": "modules/spp_custom_filter"
+    },
+    "config_guide/change_request_types/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Change request types",
+      "path": "config_guide/change_request_types/index"
+    },
+    "reference/modules/spp_attachment_av_scan": {
+      "products": [
+        "core"
+      ],
+      "title": "Attachment Antivirus Scan",
+      "path": "reference/modules/spp_attachment_av_scan"
+    },
+    "reference/modules/spp_gis": {
+      "products": [
+        "core"
+      ],
+      "title": "GIS",
+      "path": "reference/modules/spp_gis"
+    },
+    "user_guide/index": {
+      "products": [
+        "core"
+      ],
+      "title": "User guide",
+      "path": "user_guide/index"
+    },
+    "modules/spp_area_gis": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Area GIS",
+      "path": "modules/spp_area_gis"
+    },
+    "user_guide/grievances/grm": {
+      "products": [
+        "core"
+      ],
+      "title": "Manage grievances",
+      "path": "user_guide/grievances/grm"
+    },
+    "explanation/farmer_registry": {
+      "products": [
+        "core"
+      ],
+      "title": "Farmer Registry",
+      "path": "explanation/farmer_registry"
+    },
+    "config_guide/drims/warehouses": {
+      "products": [
+        "drims"
+      ],
+      "title": "Configuring Warehouses",
+      "path": "config_guide/drims/warehouses"
+    },
+    "developer_guide/dci/protocol": {
+      "products": [
+        "core"
+      ],
+      "title": "DCI Protocol Details",
+      "path": "developer_guide/dci/protocol"
+    },
+    "ops_guide/deployment/production-hardening": {
+      "products": [
+        "core"
+      ],
+      "title": "Production Hardening",
+      "path": "ops_guide/deployment/production-hardening"
+    },
+    "learn/products/sp_mis": {
+      "products": [
+        "core"
+      ],
+      "title": "SP-MIS - Social Protection Management Information System",
+      "path": "learn/products/sp_mis"
+    },
+    "learn/concepts/entitlements": {
+      "products": [
+        "core"
+      ],
+      "title": "Entitlements",
+      "path": "learn/concepts/entitlements"
+    },
+    "products/whats_new_v2": {
+      "products": [
+        "core"
+      ],
+      "title": "What's new in OpenSPP v2",
+      "path": "products/whats_new_v2"
+    },
+    "config_guide/scoring/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Scoring & Assessment",
+      "path": "config_guide/scoring/index"
+    },
+    "developer_guide/migration/model_renames": {
+      "products": [
+        "core"
+      ],
+      "title": "Model and Field Renames",
+      "path": "developer_guide/migration/model_renames"
+    },
+    "config_guide/change_request_types/conflict_detection": {
+      "products": [
+        "core"
+      ],
+      "title": "Conflict and duplicate detection",
+      "path": "config_guide/change_request_types/conflict_detection"
+    },
+    "config_guide/eligibility/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Eligibility rules",
+      "path": "config_guide/eligibility/index"
+    },
+    "user_guide/gis/maps_and_reports": {
+      "products": [
+        "core"
+      ],
+      "title": "View maps and generate reports",
+      "path": "user_guide/gis/maps_and_reports"
+    },
+    "modules/spp_change_request_add_children_demo": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Change Request Demo: Add Child/Member",
+      "path": "modules/spp_change_request_add_children_demo"
+    },
+    "reference/modules/spp_starter_farmer_registry": {
+      "products": [
+        "core"
+      ],
+      "title": "Starter: Farmer Registry",
+      "path": "reference/modules/spp_starter_farmer_registry"
+    },
+    "developer_guide/dci/client_role": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP as DCI Client",
+      "path": "developer_guide/dci/client_role"
+    },
+    "config_guide/event_data/field_definitions": {
+      "products": [
+        "core"
+      ],
+      "title": "Defining Event Fields",
+      "path": "config_guide/event_data/field_definitions"
+    },
+    "config_guide/change_request_types/patterns": {
+      "products": [
+        "core"
+      ],
+      "title": "Common configuration patterns",
+      "path": "config_guide/change_request_types/patterns"
+    },
+    "config_guide/vocabulary/overview": {
+      "products": [
+        "core"
+      ],
+      "title": "Vocabulary Overview",
+      "path": "config_guide/vocabulary/overview"
+    },
+    "technical_reference/programs/eligibility_manager": {
+      "products": [
+        "core"
+      ],
+      "title": "Eligibility Manager",
+      "path": "technical_reference/programs/eligibility_manager"
+    },
+    "technical_reference/audit_logs": {
+      "products": [
+        "core"
+      ],
+      "title": "Audit Logs",
+      "path": "technical_reference/audit_logs"
+    },
+    "reference/modules/spp_analytics": {
+      "products": [
+        "core"
+      ],
+      "title": "Analytics",
+      "path": "reference/modules/spp_analytics"
+    },
+    "tutorial/user_guides/allocate_funds": {
+      "products": [
+        "core"
+      ],
+      "title": "Allocate funds",
+      "path": "tutorial/user_guides/allocate_funds"
+    },
+    "config_guide/studio/overview": {
+      "products": [
+        "core"
+      ],
+      "title": "Studio Overview",
+      "path": "config_guide/studio/overview"
+    },
+    "reference/modules/spp_api_v2_entitlements": {
+      "products": [
+        "core"
+      ],
+      "title": "Entitlements",
+      "path": "reference/modules/spp_api_v2_entitlements"
+    },
+    "howto/developer_guides/dci": {
+      "products": [
+        "core"
+      ],
+      "title": "Implementation of DCI Specification",
+      "path": "howto/developer_guides/dci"
+    },
+    "explanation/user_mgt": {
+      "products": [
+        "core"
+      ],
+      "title": "User Management",
+      "path": "explanation/user_mgt"
+    },
+    "tutorial/programs_and_cycles": {
+      "products": [
+        "core"
+      ],
+      "title": "Programs and cycles",
+      "path": "tutorial/programs_and_cycles"
+    },
+    "user_guide/dashboards/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Dashboards & Reports",
+      "path": "user_guide/dashboards/index"
+    },
+    "howto/developer_guides/custom_fields": {
+      "products": [
+        "core"
+      ],
+      "title": "Adding custom fields and using them in variables/expressions",
+      "path": "howto/developer_guides/custom_fields"
+    },
+    "config_guide/entitlement_formulas/inkind_baskets": {
+      "products": [
+        "core"
+      ],
+      "title": "In-kind and basket entitlements",
+      "path": "config_guide/entitlement_formulas/inkind_baskets"
+    },
+    "config_guide/variables/creating_variables": {
+      "products": [
+        "core"
+      ],
+      "title": "Creating Variables",
+      "path": "config_guide/variables/creating_variables"
+    },
+    "user_guide/drims/returns": {
+      "products": [
+        "drims"
+      ],
+      "title": "Handle Returns",
+      "path": "user_guide/drims/returns"
+    },
+    "reference/modules/spp_hide_menus_base": {
+      "products": [
+        "core"
+      ],
+      "title": "Hide Menus Base",
+      "path": "reference/modules/spp_hide_menus_base"
+    },
+    "reference/modules/spp_hxl_area": {
+      "products": [
+        "core"
+      ],
+      "title": "Area Integration",
+      "path": "reference/modules/spp_hxl_area"
+    },
+    "user_guide/administration/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Administration",
+      "path": "user_guide/administration/index"
+    },
+    "config_guide/role_configuration/assigning_roles": {
+      "products": [
+        "core"
+      ],
+      "title": "Assigning roles to users",
+      "path": "config_guide/role_configuration/assigning_roles"
+    },
+    "community_and_support/how_to_contribute_to_the_project": {
+      "products": [
+        "core"
+      ],
+      "title": "Contributing",
+      "path": "community_and_support/how_to_contribute_to_the_project"
+    },
+    "user_guide/drims/requests": {
+      "products": [
+        "drims"
+      ],
+      "title": "Submit a Relief Request",
+      "path": "user_guide/drims/requests"
+    },
+    "developer_guide/api_v2/authentication": {
+      "products": [
+        "core"
+      ],
+      "title": "Authentication",
+      "path": "developer_guide/api_v2/authentication"
+    },
+    "config_guide/role_configuration/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Role configuration",
+      "path": "config_guide/role_configuration/index"
+    },
+    "modules/spp_oauth": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP API: Oauth",
+      "path": "modules/spp_oauth"
+    },
+    "tutorial/user_guides/point_of_sales": {
+      "products": [
+        "core"
+      ],
+      "title": "Point of Sales",
+      "path": "tutorial/user_guides/point_of_sales"
+    },
+    "products/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Products",
+      "path": "products/index"
+    },
+    "modules/spp_service_points": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Service Points",
+      "path": "modules/spp_service_points"
+    },
+    "ops_guide/security/pii_encryption": {
+      "products": [
+        "core"
+      ],
+      "title": "PII Encryption",
+      "path": "ops_guide/security/pii_encryption"
+    },
+    "get_started/first_program/01_access_program": {
+      "products": [
+        "registry",
+        "programs"
+      ],
+      "title": "Step 1: Access the program section",
+      "path": "get_started/first_program/01_access_program"
+    },
+    "howto/user_guides/implementing_pmt": {
+      "products": [
+        "core"
+      ],
+      "title": "PMT via the UI",
+      "path": "howto/user_guides/implementing_pmt"
+    },
+    "learn/products/drims": {
+      "products": [
+        "core"
+      ],
+      "title": "DRIMS - Disaster Response Inventory Management",
+      "path": "learn/products/drims"
+    },
+    "contributing/setup-build": {
+      "products": [
+        "core"
+      ],
+      "title": "Building and checking the quality of documentation",
+      "path": "contributing/setup-build"
+    },
+    "reference/modules/spp_area": {
+      "products": [
+        "core"
+      ],
+      "title": "Area Management",
+      "path": "reference/modules/spp_area"
+    },
+    "modules/spp_audit_post": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Audit Post",
+      "path": "modules/spp_audit_post"
+    },
+    "technical_reference/backup": {
+      "products": [
+        "core"
+      ],
+      "title": "Backup and Recovery",
+      "path": "technical_reference/backup"
+    },
+    "reference/modules/spp_graduation": {
+      "products": [
+        "core"
+      ],
+      "title": "Graduation Management",
+      "path": "reference/modules/spp_graduation"
+    },
+    "modules/spp_base_gis_rest": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Base GIS REST",
+      "path": "modules/spp_base_gis_rest"
+    },
+    "products/sp_mis": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP SP-MIS",
+      "path": "products/sp_mis"
+    },
+    "modules/spp_base_gis_demo": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Base Demo",
+      "path": "modules/spp_base_gis_demo"
+    },
+    "reference/modules/spp_farmer_registry": {
+      "products": [
+        "core"
+      ],
+      "title": "Farmer Registry",
+      "path": "reference/modules/spp_farmer_registry"
+    },
+    "contributing/authors": {
+      "products": [
+        "core"
+      ],
+      "title": "Authors guide",
+      "path": "contributing/authors"
+    },
+    "community_and_support/module_lifecycle_development_status": {
+      "products": [
+        "core"
+      ],
+      "title": "Modules Maturity Levels and Development Status Policy",
+      "path": "community_and_support/module_lifecycle_development_status"
+    },
+    "reference/modules/spp_grm_cel": {
+      "products": [
+        "core"
+      ],
+      "title": "CEL Rules",
+      "path": "reference/modules/spp_grm_cel"
+    },
+    "modules/spp_event_demo": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Event Demo",
+      "path": "modules/spp_event_demo"
+    },
+    "config_guide/vocabulary/profiles": {
+      "products": [
+        "core"
+      ],
+      "title": "Vocabulary Profiles",
+      "path": "config_guide/vocabulary/profiles"
+    },
+    "get_started/first_program/04_run_cycle": {
+      "products": [
+        "registry",
+        "programs"
+      ],
+      "title": "Step 4: Understanding program cycles",
+      "path": "get_started/first_program/04_run_cycle"
+    },
+    "config_guide/variables/using_variables": {
+      "products": [
+        "core"
+      ],
+      "title": "Using Variables in CEL",
+      "path": "config_guide/variables/using_variables"
+    },
+    "technical_reference/programs/concepts": {
+      "products": [
+        "core"
+      ],
+      "title": "Manager Overview",
+      "path": "technical_reference/programs/concepts"
+    },
+    "technical_reference/module": {
+      "products": [
+        "core"
+      ],
+      "title": "Modules",
+      "path": "technical_reference/module"
+    },
+    "reference/modules/spp_grm_case_link": {
+      "products": [
+        "core"
+      ],
+      "title": "Case Link",
+      "path": "reference/modules/spp_grm_case_link"
+    },
+    "howto/developer_guides/custom_entitlement": {
+      "products": [
+        "core"
+      ],
+      "title": "Customize Entitlement",
+      "path": "howto/developer_guides/custom_entitlement"
+    },
+    "products/drims": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP DRIMS",
+      "path": "products/drims"
+    },
+    "reference/modules/spp_banking": {
+      "products": [
+        "core"
+      ],
+      "title": "Banking / Bank Details",
+      "path": "reference/modules/spp_banking"
+    },
+    "modules/spp_custom_field_custom_filter": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Custom Field Custom Filter",
+      "path": "modules/spp_custom_field_custom_filter"
+    },
+    "modules/spp_programs": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Programs",
+      "path": "modules/spp_programs"
+    },
+    "community_and_support/code_of_conduct": {
+      "products": [
+        "core"
+      ],
+      "title": "Contributor Covenant Code of Conduct",
+      "path": "community_and_support/code_of_conduct"
+    },
+    "user_guide/programs/create_programs": {
+      "products": [
+        "programs"
+      ],
+      "title": "Create programs",
+      "path": "user_guide/programs/create_programs"
+    },
+    "reference/modules/spp_registry_search": {
+      "products": [
+        "core"
+      ],
+      "title": "Registry Search Portal",
+      "path": "reference/modules/spp_registry_search"
+    },
+    "reference/modules/spp_drims": {
+      "products": [
+        "core"
+      ],
+      "title": "DRIMS - Disaster Response Inventory Management",
+      "path": "reference/modules/spp_drims"
     },
     "reference/modules/spp_cr_types_base": {
       "products": [
@@ -3457,12 +2284,1086 @@
       "title": "Base Types",
       "path": "reference/modules/spp_cr_types_base"
     },
-    "config_guide/change_request_types/index": {
+    "user_guide/reference/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Reference",
+      "path": "user_guide/reference/index"
+    },
+    "ops_guide/security/access_control": {
+      "products": [
+        "core"
+      ],
+      "title": "Access Control",
+      "path": "ops_guide/security/access_control"
+    },
+    "reference/modules/spp_drims_sl": {
+      "products": [
+        "core"
+      ],
+      "title": "Sri Lanka Configuration",
+      "path": "reference/modules/spp_drims_sl"
+    },
+    "ops_guide/security/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Security",
+      "path": "ops_guide/security/index"
+    },
+    "config_guide/drims/alerts": {
+      "products": [
+        "drims"
+      ],
+      "title": "Configuring Alerts and Thresholds",
+      "path": "config_guide/drims/alerts"
+    },
+    "config_guide/event_data/event_types": {
+      "products": [
+        "core"
+      ],
+      "title": "Configuring Event Types",
+      "path": "config_guide/event_data/event_types"
+    },
+    "reference/modules/spp_grm_demo": {
+      "products": [
+        "core"
+      ],
+      "title": "Demo Data",
+      "path": "reference/modules/spp_grm_demo"
+    },
+    "modules/spp_programs_sp": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Programs: Service Points Integration",
+      "path": "modules/spp_programs_sp"
+    },
+    "tutorial/dashboards_and_reports": {
+      "products": [
+        "core"
+      ],
+      "title": "Dashboards and reports",
+      "path": "tutorial/dashboards_and_reports"
+    },
+    "explanation/security_archi": {
+      "products": [
+        "core"
+      ],
+      "title": "Security Architecture",
+      "path": "explanation/security_archi"
+    },
+    "user_guide/grievances/sla": {
+      "products": [
+        "grievances"
+      ],
+      "title": "SLA tracking and escalation",
+      "path": "user_guide/grievances/sla"
+    },
+    "modules/spp_auto_update_entitlements": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Auto-Update Entitlements",
+      "path": "modules/spp_auto_update_entitlements"
+    },
+    "modules/spp_openid_vci": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP OpenID VCI",
+      "path": "modules/spp_openid_vci"
+    },
+    "reference/modules/spp_dci_client": {
+      "products": [
+        "core"
+      ],
+      "title": "Client",
+      "path": "reference/modules/spp_dci_client"
+    },
+    "reference/modules/spp_farmer_registry_demo": {
+      "products": [
+        "core"
+      ],
+      "title": "Demo",
+      "path": "reference/modules/spp_farmer_registry_demo"
+    },
+    "reference/modules/theme_openspp_muk": {
+      "products": [
+        "core"
+      ],
+      "title": "Theme",
+      "path": "reference/modules/theme_openspp_muk"
+    },
+    "products/social_registry": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Social Registry",
+      "path": "products/social_registry"
+    },
+    "reference/modules/spp_registrant_gis": {
+      "products": [
+        "core"
+      ],
+      "title": "Registrant GIS",
+      "path": "reference/modules/spp_registrant_gis"
+    },
+    "howto/developer_guides/custom_audit": {
+      "products": [
+        "core"
+      ],
+      "title": "Customize Audit Logs",
+      "path": "howto/developer_guides/custom_audit"
+    },
+    "reference/modules/spp_import_match": {
+      "products": [
+        "core"
+      ],
+      "title": "Import Match",
+      "path": "reference/modules/spp_import_match"
+    },
+    "technical_reference/security": {
+      "products": [
+        "core"
+      ],
+      "title": "Security Implementations & Practices",
+      "path": "technical_reference/security"
+    },
+    "reference/modules/spp_cel_registry_search": {
+      "products": [
+        "core"
+      ],
+      "title": "Registry Search",
+      "path": "reference/modules/spp_cel_registry_search"
+    },
+    "developer_guide/api_v2/batch": {
+      "products": [
+        "core"
+      ],
+      "title": "Batch Operations",
+      "path": "developer_guide/api_v2/batch"
+    },
+    "modules/spp_custom_fields_ui": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Custom Filter UI",
+      "path": "modules/spp_custom_fields_ui"
+    },
+    "reference/modules/spp_event_data": {
+      "products": [
+        "core"
+      ],
+      "title": "Event Data",
+      "path": "reference/modules/spp_event_data"
+    },
+    "reference/modules/spp_api_v2": {
+      "products": [
+        "core"
+      ],
+      "title": "API V2",
+      "path": "reference/modules/spp_api_v2"
+    },
+    "config_guide/consent/api_consent_filtering": {
+      "products": [
+        "core"
+      ],
+      "title": "API consent filtering",
+      "path": "config_guide/consent/api_consent_filtering"
+    },
+    "ops_guide/deployment/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Deployment",
+      "path": "ops_guide/deployment/index"
+    },
+    "config_guide/eligibility/testing": {
+      "products": [
+        "core"
+      ],
+      "title": "Testing eligibility rules",
+      "path": "config_guide/eligibility/testing"
+    },
+    "reference/modules/spp_base_common": {
+      "products": [
+        "core"
+      ],
+      "title": "Base (Common)",
+      "path": "reference/modules/spp_base_common"
+    },
+    "modules/spp_custom_filter_ui": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Custom Filter UI",
+      "path": "modules/spp_custom_filter_ui"
+    },
+    "tutorial/hardware_integration": {
+      "products": [
+        "core"
+      ],
+      "title": "Hardware integration",
+      "path": "tutorial/hardware_integration"
+    },
+    "products/features/data_integration_apis": {
+      "products": [
+        "core"
+      ],
+      "title": "Data integration and interoperability (APIs)",
+      "path": "products/features/data_integration_apis"
+    },
+    "modules/spp_base_setting": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Base Settings",
+      "path": "modules/spp_base_setting"
+    },
+    "config_guide/entitlement_formulas/cash_calculations": {
+      "products": [
+        "core"
+      ],
+      "title": "Cash calculations",
+      "path": "config_guide/entitlement_formulas/cash_calculations"
+    },
+    "reference/modules/spp_source_tracking": {
+      "products": [
+        "core"
+      ],
+      "title": "Source Tracking",
+      "path": "reference/modules/spp_source_tracking"
+    },
+    "developer_guide/migration/api_changes": {
+      "products": [
+        "core"
+      ],
+      "title": "API Changes",
+      "path": "developer_guide/migration/api_changes"
+    },
+    "technical_reference/performance_optimization": {
+      "products": [
+        "core"
+      ],
+      "title": "Performance Optimization",
+      "path": "technical_reference/performance_optimization"
+    },
+    "get_started/first_program/index": {
+      "products": [
+        "registry",
+        "programs"
+      ],
+      "title": "Your first program",
+      "path": "get_started/first_program/index"
+    },
+    "modules/spp_area": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Area",
+      "path": "modules/spp_area"
+    },
+    "reference/modules/spp_mis_demo_v2": {
+      "products": [
+        "core"
+      ],
+      "title": "MIS Demo V2",
+      "path": "reference/modules/spp_mis_demo_v2"
+    },
+    "config_guide/scoring/swdi": {
+      "products": [
+        "core"
+      ],
+      "title": "Social Welfare Development Index (SWDI)",
+      "path": "config_guide/scoring/swdi"
+    },
+    "howto/index": {
+      "products": [
+        "core"
+      ],
+      "title": "How To",
+      "path": "howto/index"
+    },
+    "community_and_support/i18n_l10n": {
+      "products": [
+        "core"
+      ],
+      "title": "Internationalization and Localization",
+      "path": "community_and_support/i18n_l10n"
+    },
+    "modules/spp_audit_log": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Audit Log",
+      "path": "modules/spp_audit_log"
+    },
+    "reference/modules/spp_studio": {
+      "products": [
+        "core"
+      ],
+      "title": "Studio",
+      "path": "reference/modules/spp_studio"
+    },
+    "howto/user_guides/setting_up_service_points": {
+      "products": [
+        "core"
+      ],
+      "title": "Setting up service points",
+      "path": "howto/user_guides/setting_up_service_points"
+    },
+    "tutorial/grievance_redressal_management": {
+      "products": [
+        "core"
+      ],
+      "title": "Grievance Redressal Management",
+      "path": "tutorial/grievance_redressal_management"
+    },
+    "developer_guide/architecture/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Architecture",
+      "path": "developer_guide/architecture/index"
+    },
+    "reference/modules/spp_case_cel": {
+      "products": [
+        "core"
+      ],
+      "title": "CEL Rules",
+      "path": "reference/modules/spp_case_cel"
+    },
+    "tutorial/geotargeting": {
+      "products": [
+        "core"
+      ],
+      "title": "Geotargeting",
+      "path": "tutorial/geotargeting"
+    },
+    "config_guide/scoring/pmt": {
+      "products": [
+        "core"
+      ],
+      "title": "Proxy Means Test (PMT) Configuration",
+      "path": "config_guide/scoring/pmt"
+    },
+    "products/features/eligibility_targeting": {
+      "products": [
+        "core"
+      ],
+      "title": "Configurable eligibility and targeting",
+      "path": "products/features/eligibility_targeting"
+    },
+    "learn/concepts/compliance": {
+      "products": [
+        "core"
+      ],
+      "title": "Compliance",
+      "path": "learn/concepts/compliance"
+    },
+    "modules/spp_scan_id_document": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Registry: Scan ID Document",
+      "path": "modules/spp_scan_id_document"
+    },
+    "technical_reference/dci": {
+      "products": [
+        "core"
+      ],
+      "title": "DCI Integration",
+      "path": "technical_reference/dci"
+    },
+    "config_guide/vocabulary/standard_vocabularies": {
+      "products": [
+        "core"
+      ],
+      "title": "Standard Vocabularies",
+      "path": "config_guide/vocabulary/standard_vocabularies"
+    },
+    "ops_guide/monitoring/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Monitoring & Alerts",
+      "path": "ops_guide/monitoring/index"
+    },
+    "config_guide/variables/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Variables & Indicators",
+      "path": "config_guide/variables/index"
+    },
+    "modules/spp_registrant_import": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Registrant Import",
+      "path": "modules/spp_registrant_import"
+    },
+    "reference/modules/spp_cel_domain": {
+      "products": [
+        "core"
+      ],
+      "title": "CEL Domain Query Builder",
+      "path": "reference/modules/spp_cel_domain"
+    },
+    "explanation/data_protection": {
+      "products": [
+        "core"
+      ],
+      "title": "Data Protection",
+      "path": "explanation/data_protection"
+    },
+    "reference/modules/spp_dci_client_ibr": {
+      "products": [
+        "core"
+      ],
+      "title": "Client - IBR",
+      "path": "reference/modules/spp_dci_client_ibr"
+    },
+    "config_guide/drims/vocabularies": {
+      "products": [
+        "drims"
+      ],
+      "title": "Configuring Vocabularies",
+      "path": "config_guide/drims/vocabularies"
+    },
+    "config_guide/studio/index": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Studio",
+      "path": "config_guide/studio/index"
+    },
+    "modules/spp_change_request_add_farmer": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Change Request: Add Farmer",
+      "path": "modules/spp_change_request_add_farmer"
+    },
+    "learn/concepts/programs": {
+      "products": [
+        "core"
+      ],
+      "title": "Programs",
+      "path": "learn/concepts/programs"
+    },
+    "config_guide/drims/approval_chains": {
+      "products": [
+        "drims"
+      ],
+      "title": "Configuring Approval Workflows",
+      "path": "config_guide/drims/approval_chains"
+    },
+    "modules/spp_dci_api_server": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP DCI API Server",
+      "path": "modules/spp_dci_api_server"
+    },
+    "user_guide/programs/in_kind_products": {
+      "products": [
+        "programs"
+      ],
+      "title": "Manage in-kind products",
+      "path": "user_guide/programs/in_kind_products"
+    },
+    "modules/spp_land_record": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Land Record",
+      "path": "modules/spp_land_record"
+    },
+    "modules/spp_farmer_registry_base": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Farmer Registry Base",
+      "path": "modules/spp_farmer_registry_base"
+    },
+    "modules/spp_idqueue": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP ID Queue",
+      "path": "modules/spp_idqueue"
+    },
+    "reference/modules/spp_studio_api_v2": {
+      "products": [
+        "core"
+      ],
+      "title": "API v2 Integration",
+      "path": "reference/modules/spp_studio_api_v2"
+    },
+    "reference/modules/spp_studio_events": {
+      "products": [
+        "core"
+      ],
+      "title": "Events",
+      "path": "reference/modules/spp_studio_events"
+    },
+    "user_guide/reference/areas_geography": {
+      "products": [
+        "core"
+      ],
+      "title": "Geographic Areas",
+      "path": "user_guide/reference/areas_geography"
+    },
+    "tutorial/vouchers": {
+      "products": [
+        "core"
+      ],
+      "title": "Vouchers",
+      "path": "tutorial/vouchers"
+    },
+    "modules/spp_registry_group_hierarchy": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Registry Group Hierarchy",
+      "path": "modules/spp_registry_group_hierarchy"
+    },
+    "technical_reference/extensibility": {
+      "products": [
+        "core"
+      ],
+      "title": "Customisable, Configurable, and Extensible",
+      "path": "technical_reference/extensibility"
+    },
+    "config_guide/entitlement_formulas/dynamic_entitlements": {
+      "products": [
+        "core"
+      ],
+      "title": "Dynamic entitlements",
+      "path": "config_guide/entitlement_formulas/dynamic_entitlements"
+    },
+    "technical_reference/external_api": {
+      "products": [
+        "core"
+      ],
+      "title": "External API",
+      "path": "technical_reference/external_api"
+    },
+    "modules/spp_custom_field_recompute_daily": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Custom Field Recompute Daily",
+      "path": "modules/spp_custom_field_recompute_daily"
+    },
+    "reference/modules/spp_indicator_studio": {
+      "products": [
+        "core"
+      ],
+      "title": "Indicator Studio",
+      "path": "reference/modules/spp_indicator_studio"
+    },
+    "tutorial/user_guides/create_social_protection_program": {
+      "products": [
+        "core"
+      ],
+      "title": "Create a social protection program",
+      "path": "tutorial/user_guides/create_social_protection_program"
+    },
+    "user_guide/programs/enroll_beneficiaries": {
+      "products": [
+        "programs"
+      ],
+      "title": "Enroll beneficiaries",
+      "path": "user_guide/programs/enroll_beneficiaries"
+    },
+    "config_guide/event_data/overview": {
+      "products": [
+        "core"
+      ],
+      "title": "Event Data Overview",
+      "path": "config_guide/event_data/overview"
+    },
+    "modules/spp_pmt": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Proxy Means Testing",
+      "path": "modules/spp_pmt"
+    },
+    "config_guide/studio/registry_field_builder": {
+      "products": [
+        "core"
+      ],
+      "title": "Custom Fields (Registry Field Builder)",
+      "path": "config_guide/studio/registry_field_builder"
+    },
+    "modules/spp_basic_cash_entitlement_spent": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Program Entitlement Basic Cash Spent",
+      "path": "modules/spp_basic_cash_entitlement_spent"
+    },
+    "user_guide/change_requests/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Change Requests",
+      "path": "user_guide/change_requests/index"
+    },
+    "reference/modules/spp_hxl": {
+      "products": [
+        "core"
+      ],
+      "title": "HXL Integration",
+      "path": "reference/modules/spp_hxl"
+    },
+    "developer_guide/drims/extending": {
+      "products": [
+        "core"
+      ],
+      "title": "Extending DRIMS",
+      "path": "developer_guide/drims/extending"
+    },
+    "technical_reference/programs/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Managers",
+      "path": "technical_reference/programs/index"
+    },
+    "modules/spp_registry_data_source": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Data Source",
+      "path": "modules/spp_registry_data_source"
+    },
+    "get_started/modules/farmer_installation": {
+      "products": [
+        "core"
+      ],
+      "title": "Farmer Registry installation",
+      "path": "get_started/modules/farmer_installation"
+    },
+    "technical_reference/apis": {
+      "products": [
+        "core"
+      ],
+      "title": "APIs",
+      "path": "technical_reference/apis"
+    },
+    "reference/modules/spp_gis_report": {
+      "products": [
+        "core"
+      ],
+      "title": "Reports",
+      "path": "reference/modules/spp_gis_report"
+    },
+    "reference/modules/spp_consent": {
+      "products": [
+        "core"
+      ],
+      "title": "Consent",
+      "path": "reference/modules/spp_consent"
+    },
+    "get_started/installation/index": {
+      "products": [
+        "registry",
+        "programs"
+      ],
+      "title": "Installing OpenSPP",
+      "path": "get_started/installation/index"
+    },
+    "technical_reference/code": {
+      "products": [
+        "core"
+      ],
+      "title": "Code & Repository Management",
+      "path": "technical_reference/code"
+    },
+    "developer_guide/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Developer guide",
+      "path": "developer_guide/index"
+    },
+    "explanation/social_protection_management_information_systems": {
+      "products": [
+        "core"
+      ],
+      "title": "Social Protection Management Information Systems",
+      "path": "explanation/social_protection_management_information_systems"
+    },
+    "user_guide/drims/donations": {
+      "products": [
+        "drims"
+      ],
+      "title": "Receive a Donation",
+      "path": "user_guide/drims/donations"
+    },
+    "modules/spp_audit_config": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Audit Config",
+      "path": "modules/spp_audit_config"
+    },
+    "tutorial/user_guides/configure_ID_generate_qr": {
+      "products": [
+        "core"
+      ],
+      "title": "Configure ID and generate QR code",
+      "path": "tutorial/user_guides/configure_ID_generate_qr"
+    },
+    "ops_guide/backup/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Backup & Recovery",
+      "path": "ops_guide/backup/index"
+    },
+    "reference/modules/spp_area_hdx": {
+      "products": [
+        "core"
+      ],
+      "title": "HDX COD Integration",
+      "path": "reference/modules/spp_area_hdx"
+    },
+    "products/features/program_management": {
+      "products": [
+        "core"
+      ],
+      "title": "End-to-end program and entitlement management",
+      "path": "products/features/program_management"
+    },
+    "developer_guide/migration/index": {
+      "products": [
+        "core"
+      ],
+      "title": "V1 to V2 Migration Guide",
+      "path": "developer_guide/migration/index"
+    },
+    "ops_guide/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Operations guide",
+      "path": "ops_guide/index"
+    },
+    "reference/modules/spp_case_programs": {
+      "products": [
+        "core"
+      ],
+      "title": "Programs Integration",
+      "path": "reference/modules/spp_case_programs"
+    },
+    "reference/modules/spp_gis_report_programs": {
+      "products": [
+        "core"
+      ],
+      "title": "Reports - Programs",
+      "path": "reference/modules/spp_gis_report_programs"
+    },
+    "config_guide/drims/index": {
+      "products": [
+        "drims"
+      ],
+      "title": "DRIMS Configuration Guide",
+      "path": "config_guide/drims/index"
+    },
+    "reference/modules/spp_drims_sl_demo": {
+      "products": [
+        "core"
+      ],
+      "title": "Sri Lanka Demo",
+      "path": "reference/modules/spp_drims_sl_demo"
+    },
+    "config_guide/cel/variables": {
+      "products": [
+        "core"
+      ],
+      "title": "Variables",
+      "path": "config_guide/cel/variables"
+    },
+    "user_guide/programs/index": {
+      "products": [
+        "programs"
+      ],
+      "title": "Programs",
+      "path": "user_guide/programs/index"
+    },
+    "learn/concepts/payments": {
+      "products": [
+        "core"
+      ],
+      "title": "Payments",
+      "path": "learn/concepts/payments"
+    },
+    "products/features/unified_registry": {
+      "products": [
+        "core"
+      ],
+      "title": "Unified and hierarchical beneficiary registry",
+      "path": "products/features/unified_registry"
+    },
+    "modules/spp_service_point_device": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Service Point Device",
+      "path": "modules/spp_service_point_device"
+    },
+    "reference/modules/spp_branding_kit": {
+      "products": [
+        "core"
+      ],
+      "title": "Branding Kit",
+      "path": "reference/modules/spp_branding_kit"
+    },
+    "get_started/modules/spmis_installation": {
+      "products": [
+        "core"
+      ],
+      "title": "SP-MIS installation",
+      "path": "get_started/modules/spmis_installation"
+    },
+    "reference/modules/spp_oauth": {
+      "products": [
+        "core"
+      ],
+      "title": "API: Oauth",
+      "path": "reference/modules/spp_oauth"
+    },
+    "explanation/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Explanation",
+      "path": "explanation/index"
+    },
+    "config_guide/scoring/vulnerability": {
+      "products": [
+        "core"
+      ],
+      "title": "Vulnerability Scoring Configuration",
+      "path": "config_guide/scoring/vulnerability"
+    },
+    "config_guide/consent/recording_consent": {
+      "products": [
+        "core"
+      ],
+      "title": "Recording consent",
+      "path": "config_guide/consent/recording_consent"
+    },
+    "tutorial/access_management": {
+      "products": [
+        "core"
+      ],
+      "title": "Access management",
+      "path": "tutorial/access_management"
+    },
+    "reference/modules/spp_versioning": {
+      "products": [
+        "core"
+      ],
+      "title": "Versioning",
+      "path": "reference/modules/spp_versioning"
+    },
+    "developer_guide/verifiable_credentials/implementation": {
+      "products": [
+        "core"
+      ],
+      "title": "Verifiable Credentials Implementation Guide",
+      "path": "developer_guide/verifiable_credentials/implementation"
+    },
+    "reference/vocabularies/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Vocabulary Reference",
+      "path": "reference/vocabularies/index"
+    },
+    "config_guide/entitlement_formulas/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Entitlement formulas",
+      "path": "config_guide/entitlement_formulas/index"
+    },
+    "modules/spp_registrant_tag": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Registrant Tags",
+      "path": "modules/spp_registrant_tag"
+    },
+    "products/features/in_kind_benefits": {
+      "products": [
+        "core"
+      ],
+      "title": "In-kind benefits and inventory management",
+      "path": "products/features/in_kind_benefits"
+    },
+    "config_guide/change_request_types/creating_types": {
+      "products": [
+        "core"
+      ],
+      "title": "Creating change request types",
+      "path": "config_guide/change_request_types/creating_types"
+    },
+    "get_started/first_household/index": {
+      "products": [
+        "registry",
+        "programs"
+      ],
+      "title": "Your first household",
+      "path": "get_started/first_household/index"
+    },
+    "reference/modules/spp_service_points": {
+      "products": [
+        "core"
+      ],
+      "title": "Service Points",
+      "path": "reference/modules/spp_service_points"
+    },
+    "developer_guide/drims/index": {
+      "products": [
+        "core"
+      ],
+      "title": "DRIMS Developer Guide",
+      "path": "developer_guide/drims/index"
+    },
+    "reference/modules/spp_cel_vocabulary": {
+      "products": [
+        "core"
+      ],
+      "title": "Vocabulary Integration",
+      "path": "reference/modules/spp_cel_vocabulary"
+    },
+    "reference/modules/spp_hazard_programs": {
+      "products": [
+        "core"
+      ],
+      "title": "Programs Integration",
+      "path": "reference/modules/spp_hazard_programs"
+    },
+    "reference/modules/spp_scoring_programs": {
+      "products": [
+        "core"
+      ],
+      "title": "Programs Bridge",
+      "path": "reference/modules/spp_scoring_programs"
+    },
+    "user_guide/change_requests/change_request_types": {
       "products": [
         "core"
       ],
       "title": "Change request types",
-      "path": "config_guide/change_request_types/index"
+      "path": "user_guide/change_requests/change_request_types"
+    },
+    "technical_reference/monitoring": {
+      "products": [
+        "core"
+      ],
+      "title": "Monitoring",
+      "path": "technical_reference/monitoring"
+    },
+    "config_guide/role_configuration/troubleshooting": {
+      "products": [
+        "core"
+      ],
+      "title": "Troubleshooting",
+      "path": "config_guide/role_configuration/troubleshooting"
+    },
+    "reference/index": {
+      "products": [
+        "core"
+      ],
+      "title": "Reference",
+      "path": "reference/index"
+    },
+    "learn/products/index": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Products",
+      "path": "learn/products/index"
+    },
+    "technical_reference/release_management": {
+      "products": [
+        "core"
+      ],
+      "title": "Release Management",
+      "path": "technical_reference/release_management"
+    },
+    "reference/modules/spp_api_v2_service_points": {
+      "products": [
+        "core"
+      ],
+      "title": "Service Points",
+      "path": "reference/modules/spp_api_v2_service_points"
+    },
+    "developer_guide/drims/architecture": {
+      "products": [
+        "core"
+      ],
+      "title": "DRIMS Architecture",
+      "path": "developer_guide/drims/architecture"
+    },
+    "modules/spp_encryption": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Encryption Module",
+      "path": "modules/spp_encryption"
+    },
+    "reference/modules/spp_starter_social_registry": {
+      "products": [
+        "core"
+      ],
+      "title": "Starter: Social Registry",
+      "path": "reference/modules/spp_starter_social_registry"
+    },
+    "config_guide/cel/index": {
+      "products": [
+        "core"
+      ],
+      "title": "CEL expressions",
+      "path": "config_guide/cel/index"
+    },
+    "learn/concepts/deduplication": {
+      "products": [
+        "core"
+      ],
+      "title": "Deduplication",
+      "path": "learn/concepts/deduplication"
+    },
+    "modules/spp_dms": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Document Management System",
+      "path": "modules/spp_dms"
+    },
+    "reference/modules/spp_user_roles": {
+      "products": [
+        "core"
+      ],
+      "title": "User Roles",
+      "path": "reference/modules/spp_user_roles"
+    },
+    "config_guide/vocabulary/custom": {
+      "products": [
+        "core"
+      ],
+      "title": "Custom Vocabularies",
+      "path": "config_guide/vocabulary/custom"
     },
     "get_started/first_household/02_create_household": {
       "products": [
@@ -3472,54 +3373,153 @@
       "title": "Step 2: Create a Household",
       "path": "get_started/first_household/02_create_household"
     },
-    "developer_guide/migration/index": {
+    "config_guide/eligibility/cel_expressions": {
       "products": [
         "core"
       ],
-      "title": "V1 to V2 Migration Guide",
-      "path": "developer_guide/migration/index"
+      "title": "CEL expressions for eligibility",
+      "path": "config_guide/eligibility/cel_expressions"
     },
-    "reference/modules/spp_consent": {
+    "user_guide/change_requests/review_change_request": {
       "products": [
         "core"
       ],
-      "title": "Consent",
-      "path": "reference/modules/spp_consent"
+      "title": "Review a change request",
+      "path": "user_guide/change_requests/review_change_request"
     },
-    "modules/spp_eligibility_sql": {
+    "user_guide/gis/index": {
       "products": [
         "core"
       ],
-      "title": "OpenSPP SQL Query Eligibility Manager",
-      "path": "modules/spp_eligibility_sql"
+      "title": "Geographic Information System (GIS)",
+      "path": "user_guide/gis/index"
     },
-    "tutorial/scoring_framework": {
+    "config_guide/studio/change_request_builder": {
       "products": [
         "core"
       ],
-      "title": "Scoring framework",
-      "path": "tutorial/scoring_framework"
+      "title": "Change Request Builder",
+      "path": "config_guide/studio/change_request_builder"
     },
-    "reference/modules/spp_grm_demo": {
+    "modules/spp_idpass": {
       "products": [
         "core"
       ],
-      "title": "Demo Data",
-      "path": "reference/modules/spp_grm_demo"
+      "title": "spp_idpass Module",
+      "path": "modules/spp_idpass"
     },
-    "reference/modules/spp_studio_change_requests": {
+    "reference/modules/spp_api_v2_data": {
       "products": [
         "core"
       ],
-      "title": "Change Requests",
-      "path": "reference/modules/spp_studio_change_requests"
+      "title": "Data",
+      "path": "reference/modules/spp_api_v2_data"
     },
-    "reference/modules/spp_registrant_gis": {
+    "community_and_support/module_lifecycle_maintainer_role": {
       "products": [
         "core"
       ],
-      "title": "Registrant GIS",
-      "path": "reference/modules/spp_registrant_gis"
+      "title": "Module Lifecycle - Maintainer Role Policy",
+      "path": "community_and_support/module_lifecycle_maintainer_role"
+    },
+    "products/farmer_registry": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Farmer Registry",
+      "path": "products/farmer_registry"
+    },
+    "modules/spp_api": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP API",
+      "path": "modules/spp_api"
+    },
+    "index": {
+      "products": [
+        "core"
+      ],
+      "title": "Welcome to OpenSPP!",
+      "path": "index"
+    },
+    "modules/spp_exclusion_filter": {
+      "products": [
+        "core"
+      ],
+      "title": "OpenSPP Exclusion Filter",
+      "path": "modules/spp_exclusion_filter"
+    },
+    "ops_guide/security/key_management": {
+      "products": [
+        "core"
+      ],
+      "title": "Key Management",
+      "path": "ops_guide/security/key_management"
+    },
+    "reference/modules/spp_storage_backend": {
+      "products": [
+        "core"
+      ],
+      "title": "Storage Backend",
+      "path": "reference/modules/spp_storage_backend"
+    },
+    "technical_reference/integrations": {
+      "products": [
+        "core"
+      ],
+      "title": "Integrations",
+      "path": "technical_reference/integrations"
+    },
+    "user_guide/getting_started/navigation": {
+      "products": [
+        "core"
+      ],
+      "title": "Navigating the OpenSPP interface",
+      "path": "user_guide/getting_started/navigation"
+    },
+    "get_started/explore/index": {
+      "products": [
+        "registry",
+        "programs"
+      ],
+      "title": "Explore OpenSPP",
+      "path": "get_started/explore/index"
+    },
+    "config_guide/cel/quick_start": {
+      "products": [
+        "core"
+      ],
+      "title": "CEL quick start",
+      "path": "config_guide/cel/quick_start"
+    },
+    "howto/developer_guides/custom_areas": {
+      "products": [
+        "core"
+      ],
+      "title": "Customize Areas",
+      "path": "howto/developer_guides/custom_areas"
+    },
+    "reference/modules/spp_registry": {
+      "products": [
+        "core"
+      ],
+      "title": "Registry",
+      "path": "reference/modules/spp_registry"
+    },
+    "reference/modules/spp_starter_sp_mis": {
+      "products": [
+        "core"
+      ],
+      "title": "Starter: SP-MIS",
+      "path": "reference/modules/spp_starter_sp_mis"
+    },
+    "technical_reference/programs/program_manager": {
+      "products": [
+        "core"
+      ],
+      "title": "Program Manager",
+      "path": "technical_reference/programs/program_manager"
     }
   },
   "all_products": [

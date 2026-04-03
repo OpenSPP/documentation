@@ -2142,6 +2142,16 @@ document.addEventListener('DOMContentLoaded', function() {
    Next step
   </a>
 </li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#openspp-modules-included-in-the-openspp-farmer-registry">
+   OpenSPP modules included in the OpenSPP Farmer Registry
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#expanding-the-farmer-registry">
+   Expanding the Farmer Registry
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -2172,6 +2182,16 @@ document.addEventListener('DOMContentLoaded', function() {
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#next-step">
    Next step
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#openspp-modules-included-in-the-openspp-farmer-registry">
+   OpenSPP modules included in the OpenSPP Farmer Registry
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#expanding-the-farmer-registry">
+   Expanding the Farmer Registry
   </a>
 </li>
 </ul>
@@ -2207,32 +2227,52 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="section" id="next-step">
 <h2>Next step<a class="headerlink" href="#next-step" title="Permalink to this headline">#</a></h2>
 <p>The OpenSPP Farmer Registry is an open-source product, built and supported by the OpenSPP community. Read more about <a class="reference internal" href="../get_started/modules/farmer_installation.html"><span class="doc">installing OpenSPP Farmer Registry</span></a>.</p>
-<!--
-## OpenSPP modules included in the OpenSPP Farmer Registry
-
-The preconfigured OpenSPP Farmer Registry product is intended to provide the basic use cases of a farmer registry.
-
-The following modules are included in the OpenSPP Farmer Registry product:
-
-- **{doc}`OpenSPP Base <../../reference/modules/spp_base>`**: Provides the fundamental core structure for all registrant profiles.
-- **{doc}`OpenSPP Base Settings <../../reference/modules/spp_base_setting>`**: Provides essential settings and customizations.
-- **{doc}`OpenSPP Custom Fields <../../reference/modules/spp_custom_field>`**: Allows for tailoring data collection to specific local needs.
-- **{doc}`OpenSPP Area Management <../../reference/modules/spp_area>`**: Includes additional features for managing and organizing geographical areas within the system
-- **{doc}`OpenSPP OpenID VCI Individual <../../reference/modules/spp_openid_vci_individual>`**: Enables the issuance of Verifiable Credentials (VCs) for individual registrants.
-- **{doc}`OpenSPP Custom Filter <../../reference/modules/spp_custom_filter>`**: Allows control over fields displayed in filter dropdowns.
-- **{doc}`OpenSPP User Roles <../../reference/modules/spp_user_roles>`**: Manages user access and permissions to the registry data, ensuring data security and integrity.
-- **{doc}`OpenSPP Area GIS <../../reference/modules/spp_area_gis>`**: Integrates GIS capabilities to enable visualization on maps.
-- **{doc}`OpenSPP Base GIS <../../reference/modules/spp_base_gis>`**: Provides Geographical Information System (GIS) capabilities to OpenSPP.
-- **{doc}`OpenSPP Farmer Registry Base <../../reference/modules/spp_farmer_registry_base>`**: Base module for managing farmer registries, linking farmers to farms, land, and agricultural activities.
-- **{doc}`OpenSPP Farmer Registry Default UI <../../reference/modules/spp_farmer_registry_default_ui>`**: Default UI for Farmer Registry Base.
-- **{doc}`OpenSPP Irrigation <../../reference/modules/spp_irrigation>`**: Provides tools for managing and visualizing irrigation infrastructure within OpenSPP, enabling efficient tracking, planning, and analysis of irrigation systems and their impact.
-- **{doc}`OpenSPP Land Record <../../reference/modules/spp_land_record>`**: Enables the management and geospatial visualization of land records within OpenSPP.
-- **{doc}`OpenSPP Registry Group Hierarchy <../../reference/modules/spp_registry_group_hierarchy>`**: Introduces hierarchical relationships between groups.
-
-## Expanding the Farmer Registry
-
-The OpenSPP-based Farmer Registry contains everything that is necessary to set up a foundational Farmer Registry. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more about {doc}`module installation <../get_started/modules/index>`.
---></div>
+</div>
+<div class="section" id="openspp-modules-included-in-the-openspp-farmer-registry">
+<h2>OpenSPP modules included in the OpenSPP Farmer Registry<a class="headerlink" href="#openspp-modules-included-in-the-openspp-farmer-registry" title="Permalink to this headline">#</a></h2>
+<p>The preconfigured OpenSPP Farmer Registry product is intended to provide the basic use cases of a farmer registry.</p>
+<p>The following modules are included in the OpenSPP Farmer Registry product:</p>
+<ul class="simple">
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_registry.html"><span class="doc">OpenSPP Registry</span></a></strong>: Consolidated registry management for individuals, groups, and membership.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_registry_search.html"><span class="doc">OpenSPP Registry Search Portal</span></a></strong>: Search-first registry interface for privacy protection.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_security.html"><span class="doc">OpenSPP Security</span></a></strong>: Central security definitions for OpenSPP modules.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_user_roles.html"><span class="doc">OpenSPP User Roles</span></a></strong>: Defines and manages distinct user roles for area-based access control.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_area.html"><span class="doc">OpenSPP Area Management</span></a></strong>: Establishes direct associations between OpenSPP registrants, beneficiary groups, and their corresponding geographical administrative areas.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_vocabulary.html"><span class="doc">OpenSPP Vocabulary</span></a></strong>: Standardized code list management system for OpenSPP.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_farmer_registry.html"><span class="doc">OpenSPP Farmer Registry</span></a></strong>: Core farmer and farm registration data model.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_farmer_registry_vocabularies.html"><span class="doc">OpenSPP Farmer Registry Vocabularies</span></a></strong>: Agricultural vocabulary for crops, livestock and farming practices.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_land_record.html"><span class="doc">OpenSPP Land Record</span></a></strong>: Records and manages land parcels linked to farmers.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_irrigation.html"><span class="doc">OpenSPP Irrigation</span></a></strong>: Tracks irrigation infrastructure and water source data.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_gis.html"><span class="doc">OpenSPP GIS</span></a></strong>: Geospatial mapping and geographic analysis for registry data.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_consent.html"><span class="doc">OpenSPP Consent</span></a></strong>: DPV-aligned consent management for social protection programs.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_source_tracking.html"><span class="doc">OpenSPP Source Tracking</span></a></strong>: Track data provenance and source information for registrants.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_banking.html"><span class="doc">OpenSPP Banking / Bank Details</span></a></strong>: Financial account and mobile money details for beneficiaries.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_custom_field.html"><span class="doc">OpenSPP Custom Fields</span></a></strong>: Configurable custom fields for programme-specific registry data.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_programs.html"><span class="doc">OpenSPP Programs</span></a></strong>: Manages cash and in-kind entitlements and programme delivery.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_change_request_v2.html"><span class="doc">OpenSPP Change Request V2</span></a></strong>: Configuration-driven change request system with UX improvements, conflict detection and duplicate prevention.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_cr_types_base.html"><span class="doc">OpenSPP CR Types - Base</span></a></strong>: Basic change request types with field mapping strategy.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_dms.html"><span class="doc">OpenSPP Document Management System</span></a></strong>: Attaches and manages documents against registry and programme records.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_cel_domain.html"><span class="doc">OpenSPP CEL Domain Query Builder</span></a></strong>: Write simple CEL-like expressions to filter records.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_cel_widget.html"><span class="doc">OpenSPP CEL Expression Widget</span></a></strong>: UI widget for composing CEL expressions within OpenSPP forms.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_studio.html"><span class="doc">OpenSPP Studio</span></a></strong>: No-code customization interface for OpenSPP.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_audit.html"><span class="doc">OpenSPP Audit</span></a></strong>: Audit logging of user actions and data changes.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_versioning.html"><span class="doc">OpenSPP Versioning</span></a></strong>: Point-in-time versioning of registry and programme records.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_api_v2.html"><span class="doc">OpenSPP API V2</span></a></strong>: Standards-aligned, consent-respecting API for social protection data exchange.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_api_v2_data.html"><span class="doc">OpenSPP API V2 - Data</span></a></strong>: REST API endpoints for Variable Data push/pull.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_api_v2_vocabulary.html"><span class="doc">OpenSPP API V2 - Vocabulary</span></a></strong>: API V2 vocabulary endpoints; auto-activates with <code class="docutils literal notranslate"><span class="pre">spp_vocabulary</span></code>.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_api_v2_change_request.html"><span class="doc">OpenSPP API V2 - Change Request</span></a></strong>: API V2 change request endpoints; auto-activates with <code class="docutils literal notranslate"><span class="pre">spp_change_request_v2</span></code>.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_api_v2_cycles.html"><span class="doc">OpenSPP API V2 - Cycles</span></a></strong>: API V2 cycle endpoints; auto-activates with <code class="docutils literal notranslate"><span class="pre">spp_programs</span></code>.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_dci_client.html"><span class="doc">OpenSPP DCI Client</span></a></strong>: Base DCI client infrastructure with OAuth2 and data source management.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_dci_client_crvs.html"><span class="doc">OpenSPP DCI Client - CRVS</span></a></strong>: Connect to CRVS registries via DCI API.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_dci_client_ibr.html"><span class="doc">OpenSPP DCI Client - IBR</span></a></strong>: Connect to IBR for duplication checks via DCI API.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_dci_client_dr.html"><span class="doc">OpenSPP DCI Client - Disability Registry</span></a></strong>: Connect to Disability Registry via DCI API.</p></li>
+<li><p><strong><a class="reference internal" href="../reference/modules/spp_dci_server.html"><span class="doc">OpenSPP DCI Server</span></a></strong>: Exposes the Farmer Registry as a DCI-compliant queryable endpoint.</p></li>
+</ul>
+</div>
+<div class="section" id="expanding-the-farmer-registry">
+<h2>Expanding the Farmer Registry<a class="headerlink" href="#expanding-the-farmer-registry" title="Permalink to this headline">#</a></h2>
+<p>The OpenSPP-based Farmer Registry contains everything that is necessary to set up a foundational Farmer Registry. It can however be expanded with additional functionalities to perfectly suit the specific needs, read more about <a class="reference internal" href="../get_started/modules/"><span class="doc">module installation</span></a>.</p>
+</div>
 </div>
 </div>
 </main>
