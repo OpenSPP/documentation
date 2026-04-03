@@ -18,15 +18,20 @@ The Grievance Redress Mechanism (GRM) helps you manage complaints, appeals, and 
 - Meeting response time targets (SLAs)
 - Escalating complex issues when needed
 
-The GRM handles **short-term issues** (complaints about payments, eligibility, service quality). For **long-term support needs**, see Case Management (a separate system that works alongside GRM).
+```{note}
+The GRM handles **short-term issues** (complaints about payments, eligibility, service quality). For **long-term support needs**, see the separate system {doc}`Case Management <../case_management>` that works alongside GRM.
+```
 
-## What You'll Learn
+## What you'll learn
 
 This section covers:
 
 1. **{doc}`grm`** - Full end-to-end workflow for managing grievances
+2. **Submit grievances** - How to log complaints from beneficiaries
+3. **Analyse grievances** - How to investigate and resolve grievances
+4. **{doc}`sla`** - How to track deadlines and escalate urgent cases
 
-## Before You Start
+## Before you start
 
 You need one of these access levels:
 - **GRM Officer** - Create and manage grievances assigned to you
@@ -36,7 +41,7 @@ You need one of these access levels:
 
 If you can't access the GRM menu in the sidebar, contact your system administrator.
 
-## Key Concepts
+## Key concepts
 
 | Term | What It Means |
 |------|---------------|
@@ -47,23 +52,23 @@ If you can't access the GRM menu in the sidebar, contact your system administrat
 | **Escalation** | Moving a complaint to a supervisor or specialist team |
 | **Resolution** | The final decision and actions taken to address the complaint |
 
-## Common Workflows
+## Common workflows
 
-### As a Call Centre Operator
+### As a Call centre operator
 1. Receive call from beneficiary
 2. Record complaint details in GRM
 3. Assign category and severity
 4. Provide ticket number to caller
 5. System automatically routes to appropriate officer
 
-### As a GRM Officer
+### As a GRM officer
 1. Review assigned tickets in your dashboard
 2. Investigate by checking records and contacting parties
 3. Request additional information if needed
 4. Make a decision (Upheld, Rejected, etc.)
 5. Record resolution and close ticket
 
-### As a GRM Supervisor
+### As a GRM supervisor
 1. Monitor team performance and SLA compliance
 2. Review escalated tickets
 3. Approve or reject decisions requiring oversight
@@ -78,7 +83,7 @@ grm
 <!-- sla commented out to hide for now -->
 ```
 
-## Are You Stuck?
+## Are you stuck?
 
 **Can't find the GRM menu?**
 You may not have the right permissions. Ask your administrator to add you to the appropriate GRM security group.
