@@ -86,7 +86,7 @@ There are two ways to access Variables:
 
 **Option B - From Menu:**
 1. Click **Studio** in the main menu
-2. Click **Rules** in the top menu bar
+2. Click **Logic Design** in the top menu bar
 3. Click **Variables**
 
 ### Step 2: Create a new variable
@@ -154,7 +154,7 @@ Now you can use `children_under_5_count` in any expression that applies to group
 
 **Option B - From Menu:**
 1. Click **Studio** in the main menu
-2. Click **Rules** in the top menu bar
+2. Click **Logic Design** in the top menu bar
 3. Click **Expressions**
 
 ### Step 2: Create a new expression
@@ -217,14 +217,13 @@ The editor provides:
 Add test cases and click **Run All Tests** to verify your expression.
 ```
 
-### Step 6: Save and publish
+### Step 6: Save and activate
 
 1. Click **Save** to create the expression in Draft state
-2. Click **Submit for Approval** to request publication
-3. Once approved, the expression will be **Published** and available for use
+2. Click **Activate** to make it available for use
 
 ```{note}
-Expressions follow a workflow: Draft → Pending Approval → Published → Archived. Only users with approval permissions can publish expressions.
+Expressions follow the same workflow as variables: Draft → Active → Inactive.
 ```
 
 ## How to know what data is available
@@ -295,9 +294,8 @@ The editor shows real-time validation:
 - Check that referenced variables are Active
 - Verify the context matches (individual vs group profiles have different symbols)
 
-**Can't activate a variable or publish an expression?**
-- Variables: You need **Studio Manager** permission to activate
-- Expressions: You need approval permissions to publish (expressions go through an approval workflow)
+**Can't activate a variable or expression?**
+- You need **Studio Manager** permission to activate variables and expressions
 - Check that all required fields are filled
 - For aggregates, verify the filter expression is valid
 

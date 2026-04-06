@@ -58,9 +58,9 @@ Match variable types with appropriate operators:
 | Number | `>`, `<`, `>=`, `<=`, `==`, `!=`, `+`, `-`, `*`, `/` |
 | Money | Same as Number |
 | Yes/No | `==`, `!=`, `&&`, `\|\|`, `!` |
-| Text | `==`, `!=`, `contains()`, `startsWith()` |
-| Date | `==`, `!=`, `>`, `<`, `before()`, `after()` |
-| List | `in`, `size()`, `contains()` |
+| Text | `==`, `!=`, `matches()` |
+| Date | `==`, `!=`, `>`, `<`, `>=`, `<=` |
+| List | `size()` |
 
 ## Common Patterns
 
@@ -355,7 +355,7 @@ Break complex logic into multiple variables or eligibility rules.
 **Aggregate seems wrong?**
 
 - Verify filter expression
-- Check aggregate target (members vs events)
+- Check aggregate target (members, enrollments, or entitlements)
 - Test filter separately first
 
 ## Next Steps

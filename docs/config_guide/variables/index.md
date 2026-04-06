@@ -4,7 +4,7 @@ openspp:
   products: [core]
 ---
 
-# Variables & Indicators
+# Variables
 
 This guide is for **implementers** configuring variables to define, cache, and reference data points in CEL expressions.
 
