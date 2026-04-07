@@ -4,7 +4,7 @@ openspp:
   products: [core]
 ---
 
-# Example: CCT program managers
+# Tutorial: build CCT program managers
 
 **For: developers**
 
@@ -24,7 +24,7 @@ Want to skip ahead? Download the complete module: {download}`spp_cct_managers.zi
 
 ### How they work together
 
-```
+```text
 1. Admin creates a CCT program and selects these managers
 2. Eligibility manager imports households matching income + children criteria
 3. Admin enrolls eligible households
@@ -40,9 +40,92 @@ Want to skip ahead? Download the complete module: {download}`spp_cct_managers.zi
 - Understanding of the {doc}`manager_pattern`
 - The `spp_programs` module installed (included in the `mis` demo profile)
 
-## Eligibility manager
+## Step 1: module scaffold
 
-The CCT eligibility manager filters households based on income and whether they have children under a certain age.
+Create the following directory structure:
+
+```text
+spp_cct_managers/
+├── __init__.py
+├── __manifest__.py
+├── pyproject.toml
+├── models/
+│   ├── __init__.py
+│   ├── eligibility_manager_cct.py
+│   ├── eligibility_manager.py
+│   ├── entitlement_manager_cct.py
+│   ├── entitlement_manager.py
+│   ├── cycle_manager_cct.py
+│   └── cycle_manager.py
+├── views/
+│   ├── eligibility_views.xml
+│   ├── entitlement_views.xml
+│   └── cycle_views.xml
+├── security/
+│   └── ir.model.access.csv
+└── tests/
+    ├── __init__.py
+    └── test_cct_managers.py
+```
+
+Notice the pattern: each manager type has an **implementation file** (the actual logic) and a **registration file** (extends the wrapper's selection). This keeps responsibilities separate.
+
+### `__manifest__.py`
+
+```python
+{
+    "name": "OpenSPP CCT Program Managers",
+    "summary": "Custom managers for conditional cash transfer programs: "
+    "income-based eligibility, per-child entitlements, and quarterly cycles.",
+    "category": "OpenSPP",
+    "version": "17.0.1.0.0",
+    "author": "OpenSPP",
+    "website": "https://openspp.org",
+    "license": "LGPL-3",
+    "depends": [
+        "spp_programs",
+        "spp_security",
+    ],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/eligibility_views.xml",
+        "views/entitlement_views.xml",
+        "views/cycle_views.xml",
+    ],
+    "installable": True,
+}
+```
+
+The module depends on `spp_programs` (for the base manager models) and `spp_security` (for the admin group used in access rules).
+
+### `__init__.py` files
+
+Root `__init__.py`:
+
+```python
+from . import models
+```
+
+`models/__init__.py`:
+
+```python
+from . import eligibility_manager_cct
+from . import eligibility_manager
+from . import entitlement_manager_cct
+from . import entitlement_manager
+from . import cycle_manager_cct
+from . import cycle_manager
+```
+
+`tests/__init__.py`:
+
+```python
+from . import test_cct_managers
+```
+
+## Step 2: eligibility manager
+
+The eligibility manager filters households based on two criteria: income at or below a threshold, and at least one child under a configurable age.
 
 ### `models/eligibility_manager_cct.py`
 
@@ -151,19 +234,18 @@ class CCTEligibilityManager(models.Model):
         return len(vals_list)
 ```
 
-Key points:
+**Key patterns to notice:**
 
 - The private method `_get_eligible_group_ids()` contains the core logic, reused by all three interface methods
 - It searches for groups (households) where `income <= max_income`
 - Then filters to those with at least one member whose `birthdate` makes them younger than `child_max_age`
 - The `import_eligible_registrants` method avoids creating duplicate memberships
 
-### Registration
+### `models/eligibility_manager.py`
 
-A separate file extends the wrapper model's selection dropdown:
+Each manager needs a registration file that adds it to the wrapper model's selection dropdown:
 
 ```python
-# models/eligibility_manager.py
 from odoo import api, models
 
 
@@ -182,9 +264,9 @@ class EligibilityManagerRegistration(models.Model):
         return selection
 ```
 
-## Entitlement manager
+## Step 3: entitlement manager
 
-The CCT entitlement manager calculates transfer amounts based on household composition.
+The entitlement manager calculates transfer amounts based on household composition: a base amount per household plus a per-child top-up, capped at a configurable maximum.
 
 ### `models/entitlement_manager_cct.py`
 
@@ -330,16 +412,37 @@ class CCTEntitlementManager(models.Model):
             entitlements.write({"state": "cancelled"})
 ```
 
-Key points:
+**Key patterns to notice:**
 
 - `prepare_entitlements` is the core method — it creates one `spp.entitlement` record per beneficiary household
 - The amount formula is `base_amount + (per_child_amount × min(eligible_children, max_children))`
 - The other methods (`set_pending_validation_entitlements`, `validate_entitlements`, `approve_entitlements`, `cancel_entitlements`) handle the entitlement state machine
 - `IS_CASH_ENTITLEMENT = True` tells the system this is a cash-type entitlement
 
-## Cycle manager
+### `models/entitlement_manager.py`
 
-The CCT cycle manager creates quarterly cycles aligned to calendar quarters.
+```python
+from odoo import api, models
+
+
+class EntitlementManagerRegistration(models.Model):
+    _inherit = "spp.entitlement.manager"
+
+    @api.model
+    def _selection_manager_ref_id(self):
+        selection = super()._selection_manager_ref_id()
+        new_manager = (
+            "spp.program.entitlement.manager.cct",
+            "CCT Entitlement (Base + Per-Child)",
+        )
+        if new_manager not in selection:
+            selection.append(new_manager)
+        return selection
+```
+
+## Step 4: cycle manager
+
+The cycle manager creates quarterly cycles aligned to calendar quarters, optionally auto-copying enrolled beneficiaries into each new cycle.
 
 ### `models/cycle_manager_cct.py`
 
@@ -405,40 +508,298 @@ class CCTCycleManager(models.Model):
         return cycle
 ```
 
-Key points:
+**Key patterns to notice:**
 
 - `new_cycle` overrides the default date calculation — instead of using recurrence rules, it snaps to calendar quarters
 - When `is_auto_copy_beneficiaries` is enabled, enrolled beneficiaries are automatically added to the cycle on creation
-- The remaining methods (`check_eligibility`, `prepare_entitlements`, `approve_cycle`, etc.) delegate to the program's other managers — see the full source in the download for all implementations
+- The remaining methods (`check_eligibility`, `prepare_entitlements`, `approve_cycle`, etc.) delegate to the program's other managers — see the full source in the download
 
-## Module structure
+### `models/cycle_manager.py`
 
-```
-spp_cct_managers/
-├── __init__.py
-├── __manifest__.py
-├── pyproject.toml
-├── models/
-│   ├── __init__.py
-│   ├── eligibility_manager_cct.py    # CCT eligibility implementation
-│   ├── eligibility_manager.py         # Registration in wrapper selection
-│   ├── entitlement_manager_cct.py    # CCT entitlement implementation
-│   ├── entitlement_manager.py         # Registration in wrapper selection
-│   ├── cycle_manager_cct.py          # CCT cycle implementation
-│   └── cycle_manager.py              # Registration in wrapper selection
-├── views/
-│   ├── eligibility_views.xml          # Eligibility config form
-│   ├── entitlement_views.xml          # Entitlement config form
-│   └── cycle_views.xml                # Cycle config form
-├── security/
-│   └── ir.model.access.csv
-└── readme/
-    └── DESCRIPTION.md
+```python
+from odoo import api, models
+
+
+class CycleManagerRegistration(models.Model):
+    _inherit = "spp.cycle.manager"
+
+    @api.model
+    def _selection_manager_ref_id(self):
+        selection = super()._selection_manager_ref_id()
+        new_manager = (
+            "spp.cycle.manager.cct",
+            "CCT Quarterly Cycle",
+        )
+        if new_manager not in selection:
+            selection.append(new_manager)
+        return selection
 ```
 
-Notice the pattern: each manager type has an **implementation file** (the actual logic) and a **registration file** (extends the wrapper's selection). This keeps responsibilities separate and makes the code easier to navigate.
+## Step 5: views
 
-## Install and verify
+Each manager needs a form view so administrators can configure it. These are simple forms with grouped fields.
+
+### `views/eligibility_views.xml`
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_eligibility_manager_cct_form" model="ir.ui.view">
+        <field name="name">spp.program.membership.manager.cct.form</field>
+        <field name="model">spp.program.membership.manager.cct</field>
+        <field name="arch" type="xml">
+            <form string="CCT Eligibility Manager">
+                <sheet>
+                    <group>
+                        <group string="Configuration">
+                            <field name="name" />
+                            <field name="program_id" readonly="1" />
+                        </group>
+                        <group string="Eligibility Criteria">
+                            <field name="max_income" />
+                            <field name="child_max_age" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
+```
+
+### `views/entitlement_views.xml`
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_entitlement_manager_cct_form" model="ir.ui.view">
+        <field name="name">spp.program.entitlement.manager.cct.form</field>
+        <field name="model">spp.program.entitlement.manager.cct</field>
+        <field name="arch" type="xml">
+            <form string="CCT Entitlement Manager">
+                <sheet>
+                    <group>
+                        <group string="Configuration">
+                            <field name="name" />
+                            <field name="program_id" readonly="1" />
+                        </group>
+                        <group string="Amounts">
+                            <field name="base_amount" />
+                            <field name="per_child_amount" />
+                            <field name="max_children" />
+                            <field name="child_max_age" />
+                            <field name="currency_id" invisible="1" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
+```
+
+### `views/cycle_views.xml`
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_cycle_manager_cct_form" model="ir.ui.view">
+        <field name="name">spp.cycle.manager.cct.form</field>
+        <field name="model">spp.cycle.manager.cct</field>
+        <field name="arch" type="xml">
+            <form string="CCT Cycle Manager">
+                <sheet>
+                    <group>
+                        <group string="Configuration">
+                            <field name="name" />
+                            <field name="program_id" readonly="1" />
+                        </group>
+                        <group string="Cycle Behavior">
+                            <field name="is_auto_copy_beneficiaries" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
+```
+
+## Step 6: security
+
+Each manager model needs access rules. The CCT managers are configured by program administrators:
+
+### `security/ir.model.access.csv`
+
+```text
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_spp_eligibility_cct_system,CCT Eligibility System,model_spp_program_membership_manager_cct,base.group_system,1,1,1,1
+access_spp_eligibility_cct_admin,CCT Eligibility Admin,model_spp_program_membership_manager_cct,spp_security.group_spp_admin,1,1,1,1
+access_spp_entitlement_cct_system,CCT Entitlement System,model_spp_program_entitlement_manager_cct,base.group_system,1,1,1,1
+access_spp_entitlement_cct_admin,CCT Entitlement Admin,model_spp_program_entitlement_manager_cct,spp_security.group_spp_admin,1,1,1,1
+access_spp_cycle_cct_system,CCT Cycle System,model_spp_cycle_manager_cct,base.group_system,1,1,1,1
+access_spp_cycle_cct_admin,CCT Cycle Admin,model_spp_cycle_manager_cct,spp_security.group_spp_admin,1,1,1,1
+```
+
+## Step 7: tests
+
+Tests verify that the eligibility logic filters correctly and the entitlement calculation produces expected amounts.
+
+### `tests/test_cct_managers.py`
+
+```python
+"""Tests for CCT program managers."""
+
+from datetime import date
+
+from dateutil.relativedelta import relativedelta
+
+from odoo import fields
+from odoo.tests import TransactionCase
+
+
+class TestCCTEligibility(TransactionCase):
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+
+        Partner = cls.env["res.partner"]
+
+        # Create a household with one adult and one child
+        cls.household = Partner.create({
+            "name": "Test Household",
+            "is_registrant": True,
+            "is_group": True,
+            "income": 5000.0,
+        })
+        cls.adult = Partner.create({
+            "name": "Adult Member",
+            "is_registrant": True,
+            "is_group": False,
+            "birthdate": date.today() - relativedelta(years=30),
+        })
+        cls.child = Partner.create({
+            "name": "Child Member",
+            "is_registrant": True,
+            "is_group": False,
+            "birthdate": date.today() - relativedelta(years=5),
+        })
+        cls.env["spp.group.membership"].create({
+            "group": cls.household.id,
+            "individual": cls.adult.id,
+            "start_date": fields.Datetime.now(),
+        })
+        cls.env["spp.group.membership"].create({
+            "group": cls.household.id,
+            "individual": cls.child.id,
+            "start_date": fields.Datetime.now(),
+        })
+
+        # Create eligibility manager
+        cls.program = cls.env["spp.program"].create({
+            "name": "Test CCT Program",
+        })
+        cls.eligibility = cls.env[
+            "spp.program.membership.manager.cct"
+        ].create({
+            "name": "Test CCT Eligibility",
+            "program_id": cls.program.id,
+            "max_income": 10000.0,
+            "child_max_age": 18,
+        })
+
+    def test_eligible_household_found(self):
+        """Household with income under threshold and a child is eligible."""
+        eligible_ids = self.eligibility._get_eligible_group_ids()
+        self.assertIn(self.household.id, eligible_ids)
+
+    def test_high_income_excluded(self):
+        """Household with income above threshold is not eligible."""
+        self.household.write({"income": 20000.0})
+        eligible_ids = self.eligibility._get_eligible_group_ids()
+        self.assertNotIn(self.household.id, eligible_ids)
+
+    def test_no_children_excluded(self):
+        """Household with only adults is not eligible."""
+        # Age the child past the threshold
+        self.child.write({
+            "birthdate": date.today() - relativedelta(years=25),
+        })
+        eligible_ids = self.eligibility._get_eligible_group_ids()
+        self.assertNotIn(self.household.id, eligible_ids)
+
+
+class TestCCTEntitlement(TransactionCase):
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+
+        Partner = cls.env["res.partner"]
+
+        cls.household = Partner.create({
+            "name": "Entitlement Household",
+            "is_registrant": True,
+            "is_group": True,
+        })
+        # Create 3 children
+        for i in range(3):
+            child = Partner.create({
+                "name": f"Child {i+1}",
+                "is_registrant": True,
+                "is_group": False,
+                "birthdate": date.today() - relativedelta(years=5 + i),
+            })
+            cls.env["spp.group.membership"].create({
+                "group": cls.household.id,
+                "individual": child.id,
+                "start_date": fields.Datetime.now(),
+            })
+
+        cls.program = cls.env["spp.program"].create({
+            "name": "Test CCT Program",
+        })
+        cls.entitlement_mgr = cls.env[
+            "spp.program.entitlement.manager.cct"
+        ].create({
+            "name": "Test CCT Entitlement",
+            "program_id": cls.program.id,
+            "base_amount": 1000.0,
+            "per_child_amount": 500.0,
+            "max_children": 5,
+            "child_max_age": 18,
+        })
+
+    def test_amount_calculation(self):
+        """Amount = base + (per_child * children)."""
+        amount = self.entitlement_mgr._calculate_amount(self.household)
+        # 1000 + (500 * 3 children) = 2500
+        self.assertEqual(amount, 2500.0)
+
+    def test_max_children_cap(self):
+        """Per-child top-up is capped at max_children."""
+        self.entitlement_mgr.write({"max_children": 2})
+        amount = self.entitlement_mgr._calculate_amount(self.household)
+        # 1000 + (500 * 2 capped) = 2000
+        self.assertEqual(amount, 2000.0)
+
+    def test_no_cap_when_zero(self):
+        """max_children=0 means no cap."""
+        self.entitlement_mgr.write({"max_children": 0})
+        amount = self.entitlement_mgr._calculate_amount(self.household)
+        # 1000 + (500 * 3 children) = 2500
+        self.assertEqual(amount, 2500.0)
+```
+
+**Key patterns to notice:**
+
+- `setUpClass` creates shared test data (households, members, managers)
+- Eligibility tests verify both inclusion and exclusion criteria
+- Entitlement tests verify the amount formula, the cap, and the no-cap edge case
+- Each test is independent — modifying data in one test does not affect others
+
+## Verify it works
 
 ```bash
 spp stop
@@ -455,5 +816,16 @@ Once running:
 3. Configure each manager with your desired thresholds
 4. Import and enroll beneficiaries
 5. Create a cycle — it will auto-create a Q1/Q2/Q3/Q4 cycle based on the current date
+
+## What's next
+
+You now have a working set of custom managers. To go further:
+
+- {doc}`manager_pattern` — understand the wrapper/implementation architecture in depth
+- {doc}`building_managers` — reference for the base class methods and registration patterns
+
+## See also
+
+- {doc}`/developer_guide/change_request_types/index` — building custom change request types (similar tutorial pattern)
 
 {download}`Download the complete module </_static/samples/spp_cct_managers.zip>`

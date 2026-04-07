@@ -347,3 +347,24 @@ The `spp.manager.source.mixin` handles:
 - Updating the reference on the parent wrapper model when the implementation is created
 - Cleaning up wrapper records when the implementation is deleted
 - Providing `get_manager_view_id()` for the form view lookup
+
+## Common mistakes
+
+**Forgetting `spp.manager.source.mixin`** — If you only inherit from the base class and omit the source mixin, the wrapper model will not automatically link to your implementation when it is created. The manager will appear in the selection but fail to open.
+
+**Using `(4, id)` instead of `(6, 0, [id])` for Many2many manager slots** — Most manager slots on programs are constrained to a single manager. Using the append command `(4, id)` can violate this constraint. Use `(6, 0, [id])` to replace the entire set.
+
+**Not registering in the wrapper's selection** — Your manager will not appear in the dropdown unless you override `_selection_manager_ref_id()` on the wrapper model. This is a separate file from the implementation — see the registration pattern above.
+
+**Returning the wrong type from `prepare_entitlements`** — The method must return an `spp.entitlement` recordset (even if empty), not a list or count. Returning the wrong type causes downstream failures in the cycle workflow.
+
+**Skipping `existing_partner_ids` check in `prepare_entitlements`** — If you do not check for existing entitlements before creating new ones, running the preparation step twice will create duplicate entitlements. Always filter out already-processed partners.
+
+## What's next
+
+- {doc}`tutorial` — build a complete CCT program module that uses all three manager types together
+
+## See also
+
+- {doc}`manager_pattern` — the wrapper/implementation architecture in depth
+- {doc}`/developer_guide/change_request_types/index` — building custom change request types (similar extension pattern)

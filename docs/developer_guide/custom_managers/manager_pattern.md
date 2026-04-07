@@ -153,3 +153,8 @@ All manager models are in `spp_programs/models/managers/`:
 | `compliance_manager.py` | Compliance checking |
 | `recurrence_mixin.py` | Recurrence scheduling mixin |
 | `source_mixin.py` | Source tracking mixin for managers |
+
+## What's next
+
+- {doc}`building_managers` — step-by-step guide to creating a custom manager, with method references for all manager types
+- {doc}`tutorial` — build a complete CCT program module with eligibility, entitlement, and cycle managers

@@ -6,7 +6,18 @@ openspp:
 
 # Custom change request types
 
-This guide is for **developers** who need to build change request (CR) types that go beyond what Studio and UI configuration support.
+**For: developers**
+
+Build change request (CR) types that go beyond what Studio and UI configuration support.
+
+## How to use this section
+
+1. Read {doc}`tutorial` first — build a complete CR type end-to-end
+2. Use the reference pages when building your own types:
+   - {doc}`detail_models` for field patterns and validation
+   - {doc}`apply_strategies` for custom apply logic
+   - {doc}`approval_hooks` for lifecycle customization
+   - {doc}`testing` for test patterns
 
 ## Prerequisites
 
