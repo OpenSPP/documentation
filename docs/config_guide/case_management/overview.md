@@ -25,7 +25,7 @@ Think of it like a hospital: **case types** are medical specialties, **stages** 
 
 ### Case types
 
-Case types define the program domain for each case. OpenSPP supports nine domains:
+Case types define the program domain for each case. OpenSPP supports these domains:
 
 | Domain | Description |
 |--------|-------------|
@@ -38,6 +38,7 @@ Case types define the program domain for each case. OpenSPP supports nine domain
 | **Agriculture** | Agricultural extension and support |
 | **Health** | Health interventions |
 | **Education** | Education support programs |
+| **Other** | Custom or cross-cutting domains |
 
 Each case type also defines:
 

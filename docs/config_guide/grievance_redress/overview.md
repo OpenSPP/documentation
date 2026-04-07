@@ -16,7 +16,7 @@ The GRM in OpenSPP has four layers:
 |-------|--------------|---------|
 | **Category** | Classifies the type of complaint or request | "Payment delay", "Enrollment error" |
 | **Stage** | Tracks where a ticket is in the resolution process | "New", "In Progress", "Resolved" |
-| **Channel** | How the complaint was submitted | "Phone", "In-person", "SMS" |
+| **Channel** | How the complaint was submitted | "Phone", "Email", "Web" |
 | **SLA** | Defines response and resolution time targets | "Respond within 24 hours, resolve within 5 days" |
 
 Think of it like a customer service system: **categories** are the issue types in a support ticket, **stages** track the ticket status, **channels** are how the customer reached you, and **SLAs** are your service guarantees.
@@ -89,16 +89,16 @@ Second-level categories for finer classification:
 
 ### Submission channels
 
-Channels track how complaints are received:
+Channels track how complaints are received. Channels are configurable records — you can create as many as you need. The system ships with these defaults:
 
 | Channel | Description |
 |---------|-------------|
-| Phone | Hotline or call center |
-| In-person | Walk-in at office or service point |
-| SMS | Text message |
+| Web | Online submission |
 | Email | Electronic mail |
-| Portal | Online self-service |
-| Field visit | Collected during household visit |
+| Phone | Hotline or call center |
+| Other | Any other channel |
+
+You can add additional channels (e.g., In-person, SMS, Field visit) through **Configuration > Channels**.
 
 ## Navigation
 
