@@ -8,6 +8,10 @@ openspp:
 
 This tutorial walks you through building a complete change request type from scratch. By the end, you will have a working Odoo module that lets users request transferring a person from one household to another, with approval workflow, validation, and tests.
 
+```{tip}
+Want to skip ahead? Download the complete module: {download}`spp_cr_transfer_member.zip </_static/samples/spp_cr_transfer_member.zip>`
+```
+
 ## Prerequisites
 
 - Python and Odoo model inheritance
@@ -769,3 +773,5 @@ You now have a working CR type. To go further:
 - {doc}`/config_guide/change_request_types/index` — configuring CR types through the UI (no code required)
 - {doc}`/config_guide/change_request_types/field_mappings` — the field mapping apply strategy (for simple field-copy CR types)
 - {doc}`/config_guide/change_request_types/conflict_detection` — configuring conflict and duplicate detection rules
+
+{download}`Download the complete module </_static/samples/spp_cr_transfer_member.zip>`
