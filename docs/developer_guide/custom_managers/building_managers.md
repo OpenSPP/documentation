@@ -284,7 +284,8 @@ Base class: `spp.base.cycle.manager`
 | `check_eligibility` | `cycle`, `beneficiaries=None` | Action dict | Check beneficiary eligibility for cycle |
 | `prepare_entitlements` | `cycle` | Action dict or None | Delegate to entitlement manager |
 | `validate_entitlements` | `cycle`, `cycle_memberships` | Error dict or None | Validate cycle entitlements |
-| `approve_cycle` | `cycle`, `auto_approve=False`, `entitlement_manager=None` | Action dict or None | Approve cycle and optionally auto-approve entitlements |
+| `approve_cycle` | `cycle`, `auto_approve=False`, `entitlement_manager=None` | Action dict or None | Approve cycle and optionally auto-approve entitlements (see [Approval integration](#approval-integration)) |
+| `on_state_change` | `cycle` | None | Hook called after cycle state transitions (e.g., validate approver group membership) |
 | `copy_beneficiaries_from_program` | `cycle`, `state="enrolled"` | Action dict | Copy enrolled members into cycle |
 | `add_beneficiaries` | `cycle`, `beneficiaries`, `state="draft"` | Action dict | Add specific beneficiaries to cycle |
 | `issue_payments` | `cycle` | None | Delegate to payment manager |
@@ -330,6 +331,56 @@ def prepare_entitlements(self, cycle, beneficiaries):
 ```
 
 The threshold constants `MIN_ROW_JOB_QUEUE` (200) and `MAX_ROW_JOB_QUEUE` (2000) are defined on the base classes.
+
+## Approval integration
+
+Cycles and entitlements use the `spp.approval.mixin` for approval workflows. Managers do not inherit the mixin themselves — instead, they are **called by** the cycle and entitlement models during approval transitions.
+
+### How the approval flow calls your managers
+
+```text
+User clicks [Submit for Approval] on a cycle
+  → cycle._on_submit()
+  → entitlement_manager.set_pending_validation_entitlements(cycle)
+     (moves entitlements from draft to pending_validation)
+
+User clicks [Approve] on a cycle
+  → cycle._on_approve()
+  → cycle_manager.approve_cycle(cycle, auto_approve, entitlement_manager)
+     → if auto_approve:
+         cycle_manager.auto_approve_entitlements_update_reviews()
+         entitlement_manager.validate_entitlements(cycle)
+           (approves all pending entitlements)
+```
+
+### Configuration fields on managers
+
+Cycle and entitlement managers each hold a reference to an approval definition:
+
+| Manager type | Field | Purpose |
+|-------------|-------|---------|
+| Cycle manager | `approval_definition_id` | Approval workflow for cycle approval |
+| Cycle manager | `auto_approve_entitlements` | When `True`, entitlements are auto-approved with the cycle |
+| Entitlement manager | `approval_definition_id` | Approval workflow for individual entitlement approval |
+
+These fields are configured through the manager's form view. When the cycle is submitted, the system uses the cycle manager's `approval_definition_id` to determine who can approve it.
+
+### What this means for custom managers
+
+**Cycle managers:** Your `approve_cycle()` method is called automatically when the cycle is approved. If you override it, call `super()` to preserve the approval review updates and entitlement auto-approval:
+
+```python
+def approve_cycle(self, cycle, auto_approve=False, entitlement_manager=None):
+    # Custom pre-approval logic (e.g., validate fund availability)
+    self._check_program_budget(cycle)
+
+    # Call the default implementation
+    return super().approve_cycle(cycle, auto_approve, entitlement_manager)
+```
+
+**Entitlement managers:** Your `set_pending_validation_entitlements()` is called when the cycle is submitted, and `validate_entitlements()` is called when the cycle is approved (if `auto_approve_entitlements` is enabled). Both methods are already defined on the base class — override them only if you need custom state transition logic.
+
+**Eligibility and payment managers** are not directly involved in the approval flow.
 
 ## Inheritance checklist
 

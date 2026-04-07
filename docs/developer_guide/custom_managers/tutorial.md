@@ -520,6 +520,7 @@ class CCTCycleManager(models.Model):
 - `new_cycle` overrides the default date calculation — instead of using recurrence rules, it snaps to calendar quarters
 - When `is_auto_copy_beneficiaries` is enabled, enrolled beneficiaries are automatically added to the cycle on creation
 - The cycle manager base class requires you to implement several workflow methods. For most CCT programs, these delegate to the program's other managers. The complete set is in the downloadable module — the key ones are `check_eligibility`, `prepare_entitlements`, `validate_entitlements`, and `approve_cycle`
+- The `approve_cycle()` method is called automatically when a cycle is approved through the approval workflow. If the cycle manager's `auto_approve_entitlements` flag is enabled, it also triggers auto-approval of all pending entitlements. See the {doc}`building_managers` page for the full approval flow
 
 ### `models/cycle_manager.py`
 
