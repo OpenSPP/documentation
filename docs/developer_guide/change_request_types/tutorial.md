@@ -54,7 +54,7 @@ spp_cr_transfer_member/
 ```python
 {
     "name": "CR Type: Transfer Member",
-    "version": "17.0.1.0.0",
+    "version": "19.0.1.0.0",
     "category": "OpenSPP",
     "depends": ["spp_change_request_v2"],
     "data": [
@@ -68,6 +68,8 @@ spp_cr_transfer_member/
 ```
 
 The only required dependency is `spp_change_request_v2`, which provides the base models, approval mixin, and CR infrastructure.
+
+The `details/` and `strategies/` directory structure follows the convention used in `spp_change_request_v2`. For simpler modules, a flat `models/` directory works too.
 
 ### `__init__.py` files
 
@@ -95,6 +97,8 @@ from . import transfer_member
 ```python
 from . import test_transfer_member
 ```
+
+Odoo auto-discovers the `tests/` directory — no import is needed in the root `__init__.py`.
 
 ## Step 1: define the detail model
 
@@ -723,6 +727,32 @@ class TestTransferMember(TransactionCase):
         with self.assertRaises(UserError):
             cr.action_apply()
 
+    def test_available_individuals_excludes_head(self):
+        """Head of household is not in the available individuals list."""
+        head_kind = self.env["spp.vocabulary.code"].search([
+            ("vocabulary_id.namespace_uri", "=",
+             "urn:openspp:vocab:group-membership-type"),
+            ("code", "=", "head"),
+        ], limit=1)
+        if not head_kind:
+            return  # Skip if vocabulary not installed
+
+        # Make the individual the head of household
+        self.membership.write({
+            "membership_type_ids": [(4, head_kind.id)],
+        })
+
+        cr = self.env["spp.change.request"].create({
+            "request_type_id": self.cr_type.id,
+            "registrant_id": self.source_group.id,
+        })
+        detail = cr.get_detail()
+
+        self.assertNotIn(
+            self.individual, detail.available_individual_ids,
+            "Head of household should be excluded from available individuals",
+        )
+
     def test_preview_returns_expected_structure(self):
         """Preview returns a dict describing the planned changes."""
         cr = self._create_cr(
@@ -743,6 +773,7 @@ class TestTransferMember(TransactionCase):
 
 - **`setUpClass`** creates all shared test data once. Each test method creates its own CR so tests are independent.
 - **`_create_cr` helper** reduces boilerplate — create the CR and populate the detail in one call.
+- **`TransactionCase` rolls back after each test method**, so shared data like `self.membership` is restored between tests.
 - **Happy path tests** verify the end state (membership ended, new membership created), not just that no error was raised.
 - **Error case tests** use `assertRaises` and verify the specific exception type (`ValidationError` for constraint violations, `UserError` for strategy failures).
 - The CR type is looked up first and only created if not found, so the tests work whether or not the XML data has been loaded.

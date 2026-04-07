@@ -303,6 +303,8 @@ Base class: `spp.base.program.payment.manager`
 | `send_payments` | `batches` (recordset) | Action dict or None | Process/export payment batches |
 | `validate_accounts` | `entitlements` (recordset) | List of errors | Verify beneficiary payment accounts |
 
+Notification, compliance, and deduplication managers are less commonly extended. See their source files in `spp_programs/models/managers/` for method signatures.
+
 ## Async processing
 
 For large batches, managers should use async processing via `delayable()`:

@@ -73,7 +73,7 @@ By the end of the tutorial, you will have a working Odoo module with:
 
 After the tutorial, use these references when building your own CR types:
 
-- {doc}`detail_models` — base class API, field patterns, validation, and the 12 built-in detail models
+- {doc}`detail_models` — base class API, field patterns, validation, and the built-in detail models
 - {doc}`apply_strategies` — when to use field mapping vs. custom strategies, and how to build each
 - {doc}`approval_hooks` — lifecycle hooks, dynamic approval, conflict detection, and audit events
 - {doc}`testing` — test setup patterns, what to test, and common pitfalls

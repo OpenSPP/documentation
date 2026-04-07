@@ -62,7 +62,7 @@ OpenSPP uses `spp.vocabulary.code` for controlled vocabularies (gender, relation
 gender_id = fields.Many2one(
     "spp.vocabulary.code",
     string="Gender",
-    domain="[('namespace_uri', '=', 'urn:iso:std:iso:5218')]",
+    domain="[('vocabulary_id.namespace_uri', '=', 'urn:iso:std:iso:5218')]",
     tracking=True,
 )
 
@@ -185,11 +185,11 @@ def _get_prefill_mapping(self):
     }
 ```
 
-The base class reads this mapping when the detail record is created and copies the registrant's values into the corresponding detail fields.
+The base class provides a `prefill_from_registrant()` method that reads this mapping and copies the registrant's values into the corresponding detail fields. This method is called during the CR creation workflow — you do not need to call it manually.
 
 ## Built-in detail models
 
-The following detail models ship with `spp_change_request_v2`. Study them for patterns that match your use case:
+The following 11 detail models ship with `spp_change_request_v2`. Study them for patterns that match your use case:
 
 | Model | Purpose | Complexity | What makes it instructive |
 |-------|---------|:----------:|---------------------------|

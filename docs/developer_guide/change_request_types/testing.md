@@ -148,7 +148,7 @@ def test_preview_structure(self):
 
 ### Full workflow
 
-Test the complete lifecycle from draft to applied:
+Test the complete lifecycle from draft to applied. Note that directly setting `approval_state = "approved"` bypasses the submit/conflict-check path — use this for focused apply tests. For a true end-to-end test, call the submission action:
 
 ```python
 def test_full_workflow(self):
@@ -160,10 +160,8 @@ def test_full_workflow(self):
     # Verify initial state
     self.assertEqual(cr.approval_state, "draft")
 
-    # Submit
+    # Approve and apply
     cr.approval_state = "approved"
-
-    # Apply
     cr.action_apply()
 
     # Verify end state
@@ -206,6 +204,12 @@ def test_conflict_detected_for_same_registrant(self):
 ```
 
 This requires conflict rules to be configured for your CR type. Create them in `setUpClass` if they are not part of your module's XML data.
+
+## A note on `sudo()` in tests
+
+Apply strategies run with `sudo()` in production (the CR framework calls them that way). In tests, `action_apply()` also uses `sudo()` internally, so your tests exercise the same code path. You do not need to call `sudo()` explicitly in test code.
+
+If you need to test that non-privileged users cannot bypass the approval workflow, create a test user with limited groups and call actions using `cr.with_user(test_user).action_apply()`.
 
 ## Checklist
 

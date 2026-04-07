@@ -53,7 +53,11 @@ Determine which registrants qualify for a program.
 | `spp.program.membership.manager` | Base abstract model |
 | `spp.program.membership.manager.default` | Default CEL-based eligibility |
 
-**Key method:** `verify_eligibility(program_membership)` — Evaluates whether a registrant meets the program's eligibility criteria.
+**Key methods:**
+
+- `enroll_eligible_registrants(program_memberships)` — filters program memberships to those meeting the criteria
+- `verify_cycle_eligibility(cycle, membership)` — re-checks eligibility for cycle members
+- `import_eligible_registrants(state=None)` — imports qualifying registrants into the program
 
 ### Entitlement managers
 
@@ -107,15 +111,22 @@ Handle payment processing for approved entitlements.
 | Notification | `spp.program.notification.manager` | Beneficiary communications |
 | Compliance | `spp.compliance.manager` | Compliance checking |
 
-## Base manager class
+## Base classes
 
-All managers inherit from `spp.base.programs.manager`, which provides:
+Each manager type has its own base class:
 
-- `name` field for identification
-- `program_id` field linking back to the program
-- Common utility methods
+| Manager type | Base class |
+|-------------|------------|
+| Eligibility | `spp.program.membership.manager` |
+| Entitlement | `spp.base.program.entitlement.manager` |
+| Cycle | `spp.base.cycle.manager` |
+| Payment | `spp.base.program.payment.manager` |
 
-The mixin `spp.manager.mixin` provides the `manager_ref_id` Reference field and display name computation for wrapper models.
+Eligibility and entitlement base classes also inherit from `spp.base.programs.manager`, which provides common utility methods like `_safe_eval()` for CEL expression evaluation. Cycle managers define their own standalone base.
+
+Each base class provides `name` and `program_id` fields. The mixin `spp.manager.mixin` provides the `manager_ref_id` Reference field and display name computation for wrapper models.
+
+When you select a manager implementation from the dropdown (e.g., "CCT Eligibility"), the wrapper's `manager_ref_id` stores a reference string like `spp.program.membership.manager.cct,42`. The wrapper then delegates method calls to this implementation record.
 
 ## Linking managers to programs
 

@@ -78,7 +78,7 @@ Notice the pattern: each manager type has an **implementation file** (the actual
     "summary": "Custom managers for conditional cash transfer programs: "
     "income-based eligibility, per-child entitlements, and quarterly cycles.",
     "category": "OpenSPP",
-    "version": "17.0.1.0.0",
+    "version": "19.0.1.0.0",
     "author": "OpenSPP",
     "website": "https://openspp.org",
     "license": "LGPL-3",
@@ -104,6 +104,13 @@ Root `__init__.py`:
 
 ```python
 from . import models
+```
+
+### `pyproject.toml`
+
+```toml
+[project]
+name = "odoo-addon-spp_cct_managers"
 ```
 
 `models/__init__.py`:
@@ -512,7 +519,7 @@ class CCTCycleManager(models.Model):
 
 - `new_cycle` overrides the default date calculation — instead of using recurrence rules, it snaps to calendar quarters
 - When `is_auto_copy_beneficiaries` is enabled, enrolled beneficiaries are automatically added to the cycle on creation
-- The remaining methods (`check_eligibility`, `prepare_entitlements`, `approve_cycle`, etc.) delegate to the program's other managers — see the full source in the download
+- The cycle manager base class requires you to implement several workflow methods. For most CCT programs, these delegate to the program's other managers. The complete set is in the downloadable module — the key ones are `check_eligibility`, `prepare_entitlements`, `validate_entitlements`, and `approve_cycle`
 
 ### `models/cycle_manager.py`
 
@@ -729,6 +736,13 @@ class TestCCTEligibility(TransactionCase):
         eligible_ids = self.eligibility._get_eligible_group_ids()
         self.assertNotIn(self.household.id, eligible_ids)
 
+    def test_import_no_duplicates(self):
+        """Importing twice does not create duplicate memberships."""
+        count_1 = self.eligibility.import_eligible_registrants()
+        count_2 = self.eligibility.import_eligible_registrants()
+        self.assertGreater(count_1, 0)
+        self.assertEqual(count_2, 0, "Second import should find no new registrants")
+
 
 class TestCCTEntitlement(TransactionCase):
 
@@ -800,6 +814,18 @@ class TestCCTEntitlement(TransactionCase):
 - Each test is independent — modifying data in one test does not affect others
 
 ## Verify it works
+
+### Run the tests
+
+```bash
+odoo-bin --test-enable --stop-after-init -i spp_cct_managers -d openspp
+```
+
+This installs the module, runs the test suite, and exits. All tests should pass.
+
+### Manual verification
+
+Start the environment (the `spp` CLI is installed as part of the development environment — see {doc}`../setup/index`):
 
 ```bash
 spp stop

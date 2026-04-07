@@ -143,9 +143,9 @@ class SPPCRApplyAddMember(models.AbstractModel):
 4. **Store results** — write back to the detail record (e.g., `created_individual_id`) so the UI can display what was created
 5. **Log** — use `_logger.info()` for audit trail in the server log
 
-### Important: strategies run with `sudo()`
-
-The CR framework calls `strategy.apply()` using `sudo()` — the strategy has full system privileges. This is by design: the approval workflow is the security gate. Do not add permission checks inside the strategy itself.
+```{warning}
+Strategies run with `sudo()`. The CR framework calls `strategy.apply()` with full system privileges. This is by design: the approval workflow is the security gate, not the strategy. Do not add permission checks inside your strategy — they would be redundant and could prevent legitimate applies.
+```
 
 ## Preview pattern
 
@@ -191,7 +191,7 @@ The two key fields:
 
 ## Built-in strategies by pattern
 
-The 12 built-in strategies fall into four categories:
+The built-in strategies fall into four categories:
 
 ### Field copy (no custom code)
 

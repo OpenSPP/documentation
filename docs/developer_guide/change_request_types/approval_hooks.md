@@ -15,17 +15,18 @@ If you have not built a CR type before, start with the {doc}`tutorial`.
 A change request moves through these states:
 
 ```text
-           ┌─────────────────────────────────────┐
-           │                                     │
-           ▼                                     │
-Draft ──► Submit ──► Pending ──► Approve ──► Apply
-                       │                         
-                       ├──► Reject                
-                       │                         
-                       └──► Request Revision ──► Revision ──► Resubmit ──► Pending
-                                                                              │
-                                                                              └─►...
+                 action          state           action          action
+           ┌──────────────────────────────────────────────────────────┐
+           │                                                         │
+           ▼                                                         │
+Draft ──► [Submit] ──► Pending ──► [Approve] ──► Approved ──► [Apply]
+                         │                         
+                         ├──► [Reject] ──► Rejected
+                         │                         
+                         └──► [Request Revision] ──► Revision ──► [Resubmit] ──► Pending
 ```
+
+Square brackets denote **actions** (button clicks); unbracketed words are **states**. "Submit" moves the CR from Draft to Pending — it is not a state itself.
 
 Each transition triggers a hook method on the `spp.change.request` model.
 
@@ -159,7 +160,7 @@ class ChangeRequestCustomConflicts(models.Model):
         return conflicting
 ```
 
-This hook is called when a conflict rule has `scope = "custom"`. For configuring conflict rules through the UI, see {doc}`/config_guide/change_request_types/conflict_detection`.
+This hook is called when a conflict rule has `scope = "custom"`. The default implementation returns all candidates unfiltered — your override narrows the match to only those that actually conflict. For configuring conflict rules through the UI, see {doc}`/config_guide/change_request_types/conflict_detection`.
 
 ### Conflict actions
 
