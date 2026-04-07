@@ -17,7 +17,6 @@ Build change request (CR) types that go beyond what Studio and UI configuration 
    - {doc}`detail_models` for field patterns and validation
    - {doc}`apply_strategies` for custom apply logic
    - {doc}`approval_hooks` for lifecycle customization
-   - {doc}`testing` for test patterns
 
 ## Prerequisites
 
@@ -76,7 +75,6 @@ After the tutorial, use these references when building your own CR types:
 - {doc}`detail_models` — base class API, field patterns, validation, and the built-in detail models
 - {doc}`apply_strategies` — when to use field mapping vs. custom strategies, and how to build each
 - {doc}`approval_hooks` — lifecycle hooks, dynamic approval, conflict detection, and audit events
-- {doc}`testing` — test setup patterns, what to test, and common pitfalls
 
 ```{toctree}
 :maxdepth: 2
@@ -86,5 +84,4 @@ tutorial
 detail_models
 apply_strategies
 approval_hooks
-testing
 ```

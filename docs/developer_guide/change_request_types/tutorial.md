@@ -778,6 +778,78 @@ class TestTransferMember(TransactionCase):
 - **Error case tests** use `assertRaises` and verify the specific exception type (`ValidationError` for constraint violations, `UserError` for strategy failures).
 - The CR type is looked up first and only created if not found, so the tests work whether or not the XML data has been loaded.
 
+### Testing approval hooks and conflict detection
+
+If you override approval hooks (see {doc}`approval_hooks`), test that your custom logic runs:
+
+```python
+def test_on_approve_triggers_custom_logic(self):
+    cr = self._create_cr(field_a=value_a)
+    cr.approval_state = "approved"
+    # Verify your custom side effect occurred
+```
+
+To test conflict detection, create two CRs for the same registrant and verify the conflict is detected:
+
+```python
+def test_conflict_detected(self):
+    cr1 = self._create_cr(field_a=value_a)
+    cr1.approval_state = "pending"
+
+    cr2 = self._create_cr(field_a=value_b)
+    result = cr2._run_conflict_checks()
+
+    self.assertTrue(result.get("needs_override") or result.get("has_warning"))
+```
+
+```{note}
+Apply strategies run with `sudo()` in production — the CR framework calls them that way. In tests, `action_apply()` also uses `sudo()` internally, so your tests exercise the same code path. You do not need to call `sudo()` explicitly.
+```
+
+### Test checklist
+
+Use this checklist when writing tests for a custom CR type:
+
+- [ ] Detail model creation succeeds with valid data
+- [ ] Each `@api.constrains` raises `ValidationError` for invalid data
+- [ ] Apply strategy succeeds with valid, approved CR
+- [ ] Apply strategy raises `UserError` for each invalid state (one test per validation)
+- [ ] Applied CR has `is_applied = True` and `applied_date` set
+- [ ] The registrant is actually modified as expected after apply
+- [ ] Preview returns the expected dict structure
+- [ ] Each selection value works (e.g., transfer reasons)
+- [ ] Conflict detection finds conflicting CRs (if conflict rules are configured)
+
+### Common test pitfalls
+
+**Forgetting to set `approval_state = "approved"`** — `action_apply()` only works on approved CRs. If you skip this step, the apply will fail with an unclear error.
+
+**Creating duplicate CR types** — If your module's XML data creates the CR type and your test also creates it, you get a unique constraint error on the `code` field. Always search before creating in `setUpClass`.
+
+**Testing onchange in unit tests** — `@api.onchange` handlers do not run during `write()` calls in tests. If your test depends on onchange behavior, call the onchange method directly or test the constraint that backs it up instead.
+
+**Missing vocabulary codes** — Some detail models depend on vocabulary codes (e.g., gender, relationship types) that might not exist in the test database. Use a helper that looks up or creates the vocabulary code:
+
+```python
+@classmethod
+def _get_or_create_vocab_code(cls, namespace_uri, code, display):
+    """Get a vocabulary code, creating it if not found."""
+    existing = cls.env["spp.vocabulary.code"].get_code(
+        namespace_uri, code
+    )
+    if existing:
+        return existing
+    vocab = cls.env["spp.vocabulary"].search(
+        [("namespace_uri", "=", namespace_uri)], limit=1
+    )
+    return cls.env["spp.vocabulary.code"].create({
+        "vocabulary_id": vocab.id,
+        "code": code,
+        "display": display,
+        "is_local": True,
+    })
+```
+
 ## Verify it works
 
 Install the module and test it manually:
@@ -797,7 +869,6 @@ You now have a working CR type. To go further:
 - {doc}`detail_models` — learn about pre-filling from the registrant, additional validation patterns, and the full base class API
 - {doc}`apply_strategies` — understand when to use field mapping vs. custom strategies, and see how other built-in strategies handle record creation and relationship changes
 - {doc}`approval_hooks` — hook into the approval lifecycle to add custom behavior on submit, approve, or reject
-- {doc}`testing` — patterns for testing approval workflows, conflict detection, and common pitfalls
 
 ## See also
 
