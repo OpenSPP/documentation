@@ -10,27 +10,19 @@ This guide is for **developers** implementing robust error handling for OpenSPP 
 
 ## Error Response Format
 
-All errors return an `OperationOutcome` resource:
+Standard API errors use **RFC 9457 Problem Detail** format:
 
 ```json
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
+  "type": "urn:openspp:error:validation",
+  "title": "Validation Error",
+  "status": 422,
+  "detail": "Identifier value contains invalid characters",
+  "instance": "/api/v2/spp/Individual",
+  "errors": [
     {
-      "severity": "error",
-      "code": "invalid",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "INVALID_IDENTIFIER",
-            "display": "Invalid identifier format"
-          }
-        ],
-        "text": "Identifier value contains invalid characters"
-      },
-      "diagnostics": "identifier[0].value: expected pattern ^[A-Z0-9-]+$",
-      "location": ["Individual.identifier[0].value"]
+      "field": "identifier[0].value",
+      "message": "expected pattern ^[A-Z0-9-]+$"
     }
   ]
 }
@@ -38,14 +30,29 @@ All errors return an `OperationOutcome` resource:
 
 ### Field Reference
 
-| Field | Description |
-|-------|-------------|
-| `severity` | `error`, `warning`, `information` |
-| `code` | FHIR issue type code |
-| `details.coding` | Structured error code |
-| `details.text` | Human-readable error message |
-| `diagnostics` | Technical details for debugging |
-| `location` | JSON path to the problematic field |
+| Field | Type | Description |
+|-------|------|-------------|
+| `type` | string | Error category URN (e.g., `urn:openspp:error:validation`) |
+| `title` | string | Short human-readable summary |
+| `status` | integer | HTTP status code |
+| `detail` | string | Explanation specific to this occurrence |
+| `instance` | string | URI of the specific problem occurrence |
+| `errors` | array | Field-level validation errors (for 422 responses) |
+
+### Error Categories
+
+| Type URN | Meaning |
+|----------|---------|
+| `urn:openspp:error:not-found` | Resource not found (404) |
+| `urn:openspp:error:validation` | Validation failure (422) |
+| `urn:openspp:error:authentication` | Authentication failure (401) |
+| `urn:openspp:error:authorization` | Insufficient permissions (403) |
+| `urn:openspp:error:conflict` | Version conflict (409) |
+| `urn:openspp:error:server-error` | Internal server error (500) |
+
+```{note}
+Batch and transaction error responses use a different format — see {doc}`batch` for `OperationOutcome` details in bundle responses.
+```
 
 ## HTTP Status Codes
 
@@ -70,19 +77,11 @@ All errors return an `OperationOutcome` resource:
 Invalid request syntax or structure:
 
 ```json
-HTTP/1.1 400 Bad Request
-
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "invalid",
-      "details": {
-        "text": "Invalid JSON: Unexpected token at line 5"
-      }
-    }
-  ]
+  "type": "urn:openspp:error:validation",
+  "title": "Bad Request",
+  "status": 400,
+  "detail": "Invalid JSON: Unexpected token at line 5"
 }
 ```
 
@@ -108,24 +107,16 @@ except json.JSONDecodeError as e:
 Missing or invalid access token:
 
 ```json
-HTTP/1.1 401 Unauthorized
-
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "unauthorized",
-      "details": {
-        "text": "Invalid or expired access token"
-      }
-    }
-  ]
+  "type": "urn:openspp:error:authentication",
+  "title": "Unauthorized",
+  "status": 401,
+  "detail": "Invalid or expired access token"
 }
 ```
 
 **Causes:**
-- Token expired (tokens last 1 hour)
+- Token expired (tokens last 24 hours by default)
 - Token not provided
 - Invalid token format
 
@@ -154,53 +145,35 @@ def api_request_with_token_refresh(url, token_manager):
 Insufficient permissions or consent:
 
 ```json
-HTTP/1.1 403 Forbidden
-
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "forbidden",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "CONSENT_REQUIRED"
-          }
-        ],
-        "text": "No active consent for this data access"
-      }
-    }
-  ]
+  "type": "urn:openspp:error:authorization",
+  "title": "Forbidden",
+  "status": 403,
+  "detail": "No active consent for this data access"
 }
 ```
 
-**Error Codes:**
+**Common Causes:**
 
-| Code | Description |
-|------|-------------|
-| `CONSENT_REQUIRED` | No consent from registrant |
-| `CONSENT_EXPIRED` | Consent has expired |
-| `SCOPE_INSUFFICIENT` | API client lacks required scope |
+| Cause | Description |
+|-------|-------------|
+| No consent | Registrant hasn't consented to data sharing |
+| Expired consent | Consent has expired |
+| Insufficient scope | API client lacks the required scope |
 
 **Solution:**
 ```python
 def handle_forbidden_error(response):
     """Handle 403 Forbidden errors."""
-    outcome = response.json()
-    issue = outcome["issue"][0]
-    error_code = issue["details"]["coding"][0]["code"]
+    error = response.json()
+    detail = error.get("detail", "")
 
-    if error_code == "CONSENT_REQUIRED":
+    if "consent" in detail.lower():
         print("No consent on file. Contact registrant for consent.")
-        # Initiate consent request workflow
-    elif error_code == "CONSENT_EXPIRED":
-        print("Consent expired. Request renewal.")
-        # Trigger consent renewal
-    elif error_code == "SCOPE_INSUFFICIENT":
+    elif "scope" in detail.lower():
         print("Insufficient scope. Contact administrator.")
-        # Log scope issue for admin review
+    else:
+        print(f"Access denied: {detail}")
 ```
 
 ### 404 Not Found
@@ -208,25 +181,11 @@ def handle_forbidden_error(response):
 Resource doesn't exist:
 
 ```json
-HTTP/1.1 404 Not Found
-
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "not-found",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "RESOURCE_NOT_FOUND"
-          }
-        ],
-        "text": "Individual with identifier urn:gov:ph:psa:national-id|PH-999 not found"
-      }
-    }
-  ]
+  "type": "urn:openspp:error:not-found",
+  "title": "Not Found",
+  "status": 404,
+  "detail": "Individual with identifier urn:gov:ph:psa:national-id|PH-999 not found"
 }
 ```
 
@@ -259,25 +218,11 @@ def get_individual_safe(identifier, token, base_url):
 Version conflict during update:
 
 ```json
-HTTP/1.1 409 Conflict
-
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "conflict",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "VERSION_CONFLICT"
-          }
-        ],
-        "text": "Resource version mismatch. Expected: 3, Current: 5"
-      }
-    }
-  ]
+  "type": "urn:openspp:error:conflict",
+  "title": "Conflict",
+  "status": 409,
+  "detail": "Resource version mismatch. Expected: 3, Current: 5"
 }
 ```
 
@@ -329,34 +274,19 @@ def update_with_conflict_resolution(identifier, updates, token, base_url, max_re
 Validation error:
 
 ```json
-HTTP/1.1 422 Unprocessable Entity
-
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
+  "type": "urn:openspp:error:validation",
+  "title": "Unprocessable Entity",
+  "status": 422,
+  "detail": "Validation failed",
+  "errors": [
     {
-      "severity": "error",
-      "code": "invalid",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "VALIDATION_ERROR"
-          }
-        ],
-        "text": "Validation failed"
-      },
-      "diagnostics": "birthDate: date must be in the past",
-      "location": ["Individual.birthDate"]
+      "field": "birthDate",
+      "message": "date must be in the past"
     },
     {
-      "severity": "error",
-      "code": "required",
-      "details": {
-        "text": "Missing required field"
-      },
-      "diagnostics": "name: field is required",
-      "location": ["Individual.name"]
+      "field": "name",
+      "message": "field is required"
     }
   ]
 }
@@ -364,29 +294,24 @@ HTTP/1.1 422 Unprocessable Entity
 
 **Common Validation Errors:**
 
-| Code | Description |
-|------|-------------|
-| `VALIDATION_ERROR` | General validation failure |
-| `INVALID_IDENTIFIER` | Identifier format invalid |
-| `DUPLICATE_IDENTIFIER` | Identifier already exists |
-| `INVALID_REFERENCE` | Referenced resource doesn't exist |
+| Error | Description |
+|-------|-------------|
+| Missing required field | A required field was not provided |
+| Invalid identifier format | Identifier doesn't match expected pattern |
+| Duplicate identifier | Identifier already exists in the system |
+| Invalid reference | Referenced resource doesn't exist |
 
 **Solution:**
 ```python
 def handle_validation_errors(response):
     """Parse and handle validation errors."""
-    outcome = response.json()
+    error = response.json()
     errors = []
 
-    for issue in outcome["issue"]:
-        location = issue.get("location", ["unknown"])[0]
-        message = issue["details"]["text"]
-        diagnostics = issue.get("diagnostics", "")
-
+    for field_error in error.get("errors", []):
         errors.append({
-            "field": location,
-            "message": message,
-            "details": diagnostics
+            "field": field_error.get("field", "unknown"),
+            "message": field_error.get("message", "")
         })
 
     return errors
@@ -409,30 +334,18 @@ except requests.HTTPError as e:
 
 Rate limit exceeded:
 
-```json
+```http
 HTTP/1.1 429 Too Many Requests
-X-RateLimit-Limit: 1000
+X-RateLimit-Limit: 30
 X-RateLimit-Remaining: 0
-X-RateLimit-Reset: 60
-Retry-After: 60
+X-RateLimit-Reset: 45
+Retry-After: 45
 
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "throttled",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "RATE_LIMIT_EXCEEDED"
-          }
-        ],
-        "text": "Rate limit exceeded. Retry after 60 seconds."
-      }
-    }
-  ]
+  "type": "urn:openspp:error:server-error",
+  "title": "Too Many Requests",
+  "status": 429,
+  "detail": "Rate limit exceeded. Retry after 45 seconds."
 }
 ```
 
@@ -440,10 +353,19 @@ Retry-After: 60
 
 | Header | Description |
 |--------|-------------|
-| `X-RateLimit-Limit` | Requests allowed per period |
-| `X-RateLimit-Remaining` | Requests remaining |
-| `X-RateLimit-Reset` | Seconds until limit resets |
-| `Retry-After` | Seconds to wait before retry |
+| `X-RateLimit-Limit` | Requests allowed per minute (default: 30) |
+| `X-RateLimit-Remaining` | Requests remaining in current window |
+| `X-RateLimit-Reset` | Seconds until the limit resets |
+| `Retry-After` | Seconds to wait before retrying |
+
+**Default Rate Limits:**
+
+| Endpoint | Per Minute | Per Day |
+|----------|-----------|---------|
+| General API | 30 | 5,000 |
+| OAuth token (`/oauth/token`) | 5 | 50 |
+
+Rate limits are configurable per API client. Contact your administrator for higher limits.
 
 **Solution:**
 ```python
@@ -471,20 +393,11 @@ def api_request_with_rate_limit_handling(url, headers, max_retries=3):
 Server-side error:
 
 ```json
-HTTP/1.1 500 Internal Server Error
-
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "exception",
-      "details": {
-        "text": "Internal server error. Please contact support."
-      },
-      "diagnostics": "Error ID: abc123-def456"
-    }
-  ]
+  "type": "urn:openspp:error:server-error",
+  "title": "Internal Server Error",
+  "status": 500,
+  "detail": "Internal server error. Please contact support."
 }
 ```
 
@@ -532,23 +445,22 @@ response = requests.get(url, headers=headers)
 data = response.json()  # Crashes on error
 ```
 
-### 2. Parse OperationOutcome
+### 2. Parse Error Responses
 
 ```python
-def parse_operation_outcome(response):
-    """Extract error details from OperationOutcome."""
+def parse_error_response(response):
+    """Extract error details from ProblemDetail response."""
     if not response.ok:
         try:
-            outcome = response.json()
-            if outcome.get("resourceType") == "OperationOutcome":
-                issues = outcome.get("issue", [])
-                for issue in issues:
-                    severity = issue.get("severity")
-                    text = issue.get("details", {}).get("text", "Unknown error")
-                    location = issue.get("location", [])
-                    print(f"[{severity.upper()}] {text}")
-                    if location:
-                        print(f"  Location: {', '.join(location)}")
+            error = response.json()
+            error_type = error.get("type", "unknown")
+            title = error.get("title", "Error")
+            detail = error.get("detail", "Unknown error")
+            print(f"[{title}] {detail}")
+
+            # Print field-level errors if present (422 responses)
+            for field_error in error.get("errors", []):
+                print(f"  {field_error['field']}: {field_error['message']}")
         except Exception:
             print(f"HTTP {response.status_code}: {response.text}")
 ```
@@ -736,31 +648,17 @@ class APIErrorHandler:
     def _handle_error(self, response):
         """Handle error responses."""
         try:
-            outcome = response.json()
-            if outcome.get("resourceType") == "OperationOutcome":
-                issues = outcome.get("issue", [])
-                error_messages = []
+            error = response.json()
+            error_type = error.get("type", "unknown")
+            title = error.get("title", "Error")
+            detail = error.get("detail", "Unknown error")
 
-                for issue in issues:
-                    severity = issue.get("severity", "error")
-                    details = issue.get("details", {})
-                    text = details.get("text", "Unknown error")
-                    location = issue.get("location", [])
+            logger.error(f"API error {response.status_code} ({error_type}):")
+            logger.error(f"  {title}: {detail}")
 
-                    error_messages.append({
-                        "severity": severity,
-                        "text": text,
-                        "location": location,
-                        "diagnostics": issue.get("diagnostics")
-                    })
-
-                logger.error(f"API error {response.status_code}:")
-                for error in error_messages:
-                    logger.error(f"  [{error['severity'].upper()}] {error['text']}")
-                    if error['location']:
-                        logger.error(f"    Location: {', '.join(error['location'])}")
-                    if error['diagnostics']:
-                        logger.error(f"    Diagnostics: {error['diagnostics']}")
+            # Log field-level errors if present
+            for field_error in error.get("errors", []):
+                logger.error(f"  Field '{field_error['field']}': {field_error['message']}")
 
         except Exception:
             logger.error(f"HTTP {response.status_code}: {response.text}")
@@ -773,7 +671,7 @@ handler = APIErrorHandler(max_retries=3)
 try:
     result = handler.make_request(
         method="GET",
-        url="https://api.openspp.org/api/v2/spp/Individual/...",
+        url="https://{your-domain}/api/v2/spp/Individual/...",
         headers={"Authorization": f"Bearer {token}"}
     )
     print("Success:", result)
@@ -813,5 +711,4 @@ Transaction bundles should rollback fully. If not, report as a bug. Check that y
 ## See Also
 
 - [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) - HTTP status reference
-- [FHIR OperationOutcome](https://www.hl7.org/fhir/operationoutcome.html) - OperationOutcome structure
-- [REST API Error Handling](https://www.rfc-editor.org/rfc/rfc7807) - Problem Details for HTTP APIs
+- [RFC 9457: Problem Details for HTTP APIs](https://www.rfc-editor.org/rfc/rfc9457) - Error response format standard

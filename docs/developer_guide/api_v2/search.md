@@ -17,32 +17,23 @@ GET /api/v2/spp/{ResourceType}?parameter=value
 Authorization: Bearer TOKEN
 ```
 
-All searches return a **Bundle** with `type: searchset`:
+All searches return a **SearchResult** response:
 
 ```json
 {
-  "resourceType": "Bundle",
-  "type": "searchset",
-  "total": 1523,
-  "link": [
-    {
-      "relation": "self",
-      "url": "/api/v2/spp/Individual?name=Santos&_count=50"
-    },
-    {
-      "relation": "next",
-      "url": "/api/v2/spp/Individual?name=Santos&_count=50&_offset=50"
-    }
+  "data": [
+    { /* Individual */ }
   ],
-  "entry": [
-    {
-      "resource": { /* Individual */ },
-      "search": {
-        "mode": "match",
-        "score": 0.95
-      }
-    }
-  ]
+  "meta": {
+    "total": 1523,
+    "count": 50,
+    "offset": 0
+  },
+  "links": {
+    "self": "/api/v2/spp/Individual?name=Santos&_count=50",
+    "next": "/api/v2/spp/Individual?name=Santos&_count=50&_offset=50",
+    "prev": null
+  }
 }
 ```
 
@@ -77,7 +68,7 @@ results = search_by_identifier(
     system="urn:gov:ph:psa:national-id",
     value="PH-123456789",
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 ```
 
@@ -290,8 +281,7 @@ groups = find_groups_for_individual(
     base_url=base_url
 )
 
-for entry in groups["entry"]:
-    group = entry["resource"]
+for group in groups["data"]:
     print(f"Member of: {group['name']}")
 ```
 
@@ -310,26 +300,20 @@ GET /api/v2/spp/Individual?name=Santos&_count=50&_offset=100
 
 ### Following Links
 
-Use the `link` array in the response:
+Use the `links` object in the response:
 
 ```json
 {
-  "resourceType": "Bundle",
-  "total": 1523,
-  "link": [
-    {
-      "relation": "self",
-      "url": "/api/v2/spp/Individual?name=Santos&_count=20&_offset=0"
-    },
-    {
-      "relation": "next",
-      "url": "/api/v2/spp/Individual?name=Santos&_count=20&_offset=20"
-    },
-    {
-      "relation": "previous",
-      "url": "/api/v2/spp/Individual?name=Santos&_count=20&_offset=0"
-    }
-  ]
+  "meta": {
+    "total": 1523,
+    "count": 20,
+    "offset": 0
+  },
+  "links": {
+    "self": "/api/v2/spp/Individual?name=Santos&_count=20&_offset=0",
+    "next": "/api/v2/spp/Individual?name=Santos&_count=20&_offset=20",
+    "prev": null
+  }
 }
 ```
 
@@ -348,17 +332,13 @@ def paginate_search(initial_url, token, base_url):
             headers=headers
         )
         response.raise_for_status()
-        bundle = response.json()
+        result = response.json()
 
         # Add results
-        all_results.extend(bundle.get("entry", []))
+        all_results.extend(result.get("data", []))
 
-        # Find next link
-        next_link = next(
-            (link for link in bundle.get("link", []) if link["relation"] == "next"),
-            None
-        )
-        current_url = next_link["url"] if next_link else None
+        # Follow next link
+        current_url = result.get("links", {}).get("next")
 
     return all_results
 
@@ -485,28 +465,91 @@ results = advanced_search(
     _sort="-birthdate"
 )
 
-print(f"Found {results['total']} matching individuals")
+print(f"Found {results['meta']['total']} matching individuals")
+```
+
+## Advanced Search
+
+For complex queries with AND/OR logic, use the advanced search endpoint:
+
+### Discover Available Filters
+
+```http
+GET /api/v2/spp/Individual/_filters
+Authorization: Bearer TOKEN
+```
+
+Returns filterable fields, supported operators, and saved filter presets for the resource type.
+
+### Complex Filter Queries
+
+```http
+POST /api/v2/spp/Individual/_search
+Authorization: Bearer TOKEN
+Content-Type: application/json
+
+{
+  "filters": [
+    {"field": "age", "operator": ">=", "value": 18},
+    {"field": "gender", "operator": "==", "value": "F"}
+  ],
+  "filter_logic": "AND",
+  "sort": [
+    {"field": "name", "direction": "ASC"}
+  ],
+  "pagination": {
+    "count": 50,
+    "last_id": null
+  }
+}
+```
+
+**Supported filter logic:** `"AND"` (default) or `"OR"`
+
+**Pagination:** Uses cursor-based pagination with `last_id` (the internal ID from the last entry of the previous page). Use `null` for the first page, then pass the `last_id` from the response for subsequent pages.
+
+**Example: Python**
+
+```python
+def advanced_filter_search(filters, token, base_url, filter_logic="AND", count=50):
+    """Search with complex filter conditions."""
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json"
+    }
+    body = {
+        "filters": filters,
+        "filter_logic": filter_logic,
+        "pagination": {"count": count, "last_id": None}
+    }
+
+    response = requests.post(
+        f"{base_url}/Individual/_search",
+        headers=headers,
+        json=body
+    )
+    response.raise_for_status()
+    return response.json()
+
+# Find females aged 18+ OR males aged 65+
+results = advanced_filter_search(
+    filters=[
+        {"field": "age", "operator": ">=", "value": 18},
+        {"field": "address", "operator": "contains", "value": "Manila"}
+    ],
+    filter_logic="AND",
+    token=token,
+    base_url=base_url
+)
+```
+
+```{note}
+Advanced search is available for Individual, Group, Program, and ProgramMembership resources.
 ```
 
 ## Search Score
 
-Results include a relevance score (0.0 to 1.0):
-
-```json
-{
-  "entry": [
-    {
-      "resource": { /* Individual */ },
-      "search": {
-        "mode": "match",
-        "score": 0.95
-      }
-    }
-  ]
-}
-```
-
-Higher scores indicate better matches (used for name/text searches).
+For name and text searches, results are sorted by relevance. The API returns the best matches first based on how closely the result matches the search terms.
 
 ## ProgramMembership Search
 
@@ -550,8 +593,7 @@ enrollments = get_active_enrollments(
     base_url=base_url
 )
 
-for entry in enrollments["entry"]:
-    membership = entry["resource"]
+for membership in enrollments["data"]:
     print(f"Enrolled in: {membership['program']['display']}")
     print(f"Since: {membership['enrollmentDate']}")
 ```
@@ -560,14 +602,21 @@ for entry in enrollments["entry"]:
 
 ### No Results
 
-Empty results return `total: 0` with empty `entry` array:
+Empty results return `total: 0` with empty `data` array:
 
 ```json
 {
-  "resourceType": "Bundle",
-  "type": "searchset",
-  "total": 0,
-  "entry": []
+  "data": [],
+  "meta": {
+    "total": 0,
+    "count": 0,
+    "offset": 0
+  },
+  "links": {
+    "self": "/api/v2/spp/Individual?name=NonexistentName",
+    "next": null,
+    "prev": null
+  }
 }
 ```
 
@@ -577,36 +626,19 @@ Empty results return `total: 0` with empty `entry` array:
 HTTP/1.1 400 Bad Request
 
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "invalid",
-      "details": {
-        "text": "Invalid search parameter: 'foo' is not a supported parameter"
-      }
-    }
-  ]
+  "type": "urn:openspp:error:validation",
+  "title": "Bad Request",
+  "status": 400,
+  "detail": "Invalid search parameter: 'foo' is not a supported parameter"
 }
 ```
 
 ### Too Many Results
 
-If results exceed reasonable limits (e.g., >10,000), the API may return an error:
+If results exceed reasonable limits, use pagination. Add filters or use `_count` and `_offset` to page through results:
 
-```json
-{
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "warning",
-      "code": "too-many",
-      "details": {
-        "text": "Search returned >10,000 results. Please refine your search criteria."
-      }
-    }
-  ]
-}
+```http
+GET /api/v2/spp/Individual?name=Santos&_count=100&_offset=0
 ```
 
 ## Performance Tips
@@ -782,18 +814,18 @@ class OpenSPPSearch:
         count = 50
 
         while True:
-            bundle = initial_search_fn(
+            result = initial_search_fn(
                 **search_params,
                 count=count,
                 offset=offset
             )
 
-            entries = bundle.get("entry", [])
-            all_results.extend(entries)
+            items = result.get("data", [])
+            all_results.extend(items)
 
             # Check if there are more results
-            total = bundle.get("total", 0)
-            if offset + len(entries) >= total:
+            total = result.get("meta", {}).get("total", 0)
+            if offset + len(items) >= total:
                 break
 
             offset += count
@@ -802,7 +834,7 @@ class OpenSPPSearch:
 
 # Usage
 searcher = OpenSPPSearch(
-    base_url="https://api.openspp.org/api/v2/spp",
+    base_url="https://{your-domain}/api/v2/spp",
     token=token
 )
 
@@ -812,7 +844,7 @@ results = searcher.search_individuals(
     address="Manila",
     count=50
 )
-print(f"Found {results['total']} individuals")
+print(f"Found {results['meta']['total']} individuals")
 
 # Advanced search
 results = searcher.search_individuals(
@@ -864,5 +896,4 @@ Use `_elements` to request only needed fields. Filter by `_lastUpdated` if you'r
 
 ## See Also
 
-- [FHIR Search](https://www.hl7.org/fhir/search.html) - FHIR search patterns
 - [REST API Best Practices](https://restfulapi.net/) - REST design principles

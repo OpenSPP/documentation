@@ -30,7 +30,11 @@ All resources follow consistent REST patterns:
 | Search           | GET         | `/{Resource}?parameter=value` | All                                  |
 | Create           | POST        | `/{Resource}`                 | Individual, Group, ProgramMembership |
 | Update (full)    | PUT         | `/{Resource}/{identifier}`    | Individual, Group                    |
-| Update member    | PATCH       | `/Group/{id}/member/{ind_id}` | Group members only                   |
+| Update (partial) | PATCH       | `/{Resource}/{identifier}`    | Individual, Group                    |
+
+```{note}
+PUT replaces the entire resource — you must send all fields. PATCH uses [JSON Merge Patch (RFC 7396)](https://datatracker.ietf.org/doc/html/rfc7396) — only send the fields you want to change. Both support optimistic locking via the `If-Match` header.
+```
 
 ## Individual Resource
 
@@ -186,7 +190,7 @@ def get_individual(identifier, token, base_url):
 individual = get_individual(
     identifier="urn:gov:ph:psa:national-id|PH-123456789",
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 ```
 
@@ -264,6 +268,57 @@ If-Match: "3"
 ```
 
 **Note:** Requires `If-Match` header with current version ID for optimistic locking.
+
+#### Partial Update Individual (PATCH)
+
+Use PATCH to update specific fields without sending the entire resource:
+
+```http
+PATCH /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789
+Authorization: Bearer TOKEN
+Content-Type: application/merge-patch+json
+If-Match: "3"
+
+{
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+639179876543",
+      "use": "mobile"
+    }
+  ]
+}
+```
+
+Only the specified fields are updated. Omitted fields remain unchanged. Use `null` to clear a field's value.
+
+**Example: Python**
+
+```python
+def patch_individual(identifier, updates, version_id, token, base_url):
+    """Partially update an individual."""
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/merge-patch+json",
+        "If-Match": f'"{version_id}"'
+    }
+    response = requests.patch(
+        f"{base_url}/Individual/{identifier}",
+        headers=headers,
+        json=updates
+    )
+    response.raise_for_status()
+    return response.json()
+
+# Update only the phone number
+updated = patch_individual(
+    identifier="urn:gov:ph:psa:national-id|PH-123456789",
+    updates={"telecom": [{"system": "phone", "value": "+639179876543", "use": "mobile"}]},
+    version_id="3",
+    token=token,
+    base_url=base_url
+)
+```
 
 ## Group Resource
 
@@ -373,7 +428,7 @@ def search_groups(params, token, base_url):
 results = search_groups(
     params={"type": "household", "name": "Santos"},
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 ```
 
@@ -554,11 +609,10 @@ def get_program_memberships(beneficiary_ref, token, base_url):
 memberships = get_program_memberships(
     beneficiary_ref="Individual/urn:gov:ph:psa:national-id|PH-123456789",
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 
-for entry in memberships["entry"]:
-    membership = entry["resource"]
+for membership in memberships["data"]:
     print(f"Enrolled in: {membership['program']['display']}")
     print(f"Status: {membership['status']}")
 ```
@@ -641,7 +695,7 @@ individual = get_individual_with_extensions(
     identifier="urn:gov:ph:psa:national-id|PH-123456789",
     extensions=["farmer"],
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 
 if "extension" in individual and "farmer" in individual["extension"]:
@@ -682,22 +736,10 @@ If another client modified the resource, you'll get a 409 Conflict:
 
 ```json
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "conflict",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "VERSION_CONFLICT"
-          }
-        ],
-        "text": "Resource version mismatch. Expected: 3, Current: 5"
-      }
-    }
-  ]
+  "type": "urn:openspp:error:conflict",
+  "title": "Conflict",
+  "status": 409,
+  "detail": "Resource version mismatch. Expected: 3, Current: 5"
 }
 ```
 
@@ -721,7 +763,7 @@ Another client modified the resource. Fetch the latest version, merge your chang
 
 **What's the difference between PUT and PATCH?**
 
-PUT replaces the entire resource. PATCH is only available for updating group member relationships at `/Group/{id}/member/{individual_id}`.
+PUT replaces the entire resource — you must send all fields. PATCH (JSON Merge Patch, RFC 7396) updates only the fields you send, leaving others unchanged. Both are available for Individual and Group resources.
 
 ## Complete Example: Full Workflow
 
@@ -788,7 +830,7 @@ class OpenSPPAPI:
 
 # Usage
 api = OpenSPPAPI(
-    base_url="https://api.openspp.org/api/v2/spp",
+    base_url="https://{your-domain}/api/v2/spp",
     token="YOUR_TOKEN"
 )
 

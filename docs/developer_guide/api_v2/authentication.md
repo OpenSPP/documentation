@@ -38,6 +38,29 @@ Contact your OpenSPP administrator to register your application.
 
 ### Request
 
+The token endpoint supports three authentication methods:
+
+**Method 1: HTTP Basic Auth (recommended per RFC 6749)**
+
+```http
+POST /api/v2/spp/oauth/token
+Authorization: Basic base64(client_id:client_secret)
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials
+```
+
+**Method 2: Form-encoded body**
+
+```http
+POST /api/v2/spp/oauth/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials&client_id=ministry-of-agriculture&client_secret=your-secret-key-here
+```
+
+**Method 3: JSON body**
+
 ```http
 POST /api/v2/spp/oauth/token
 Content-Type: application/json
@@ -53,9 +76,9 @@ Content-Type: application/json
 
 ```json
 {
-  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
   "token_type": "Bearer",
-  "expires_in": 3600,
+  "expires_in": 86400,
   "scope": "individual:read individual:search group:read"
 }
 ```
@@ -64,13 +87,13 @@ Content-Type: application/json
 |-------|------|-------------|
 | `access_token` | string | JWT token for API requests |
 | `token_type` | string | Always "Bearer" |
-| `expires_in` | integer | Token lifetime in seconds (3600 = 1 hour) |
+| `expires_in` | integer | Token lifetime in seconds (default: 86400 = 24 hours) |
 | `scope` | string | Space-separated list of granted scopes |
 
 ### Example: curl
 
 ```bash
-curl -X POST https://api.openspp.org/api/v2/spp/oauth/token \
+curl -X POST https://{your-domain}/api/v2/spp/oauth/token \
   -H "Content-Type: application/json" \
   -d '{
     "grant_type": "client_credentials",
@@ -101,7 +124,7 @@ def get_access_token(client_id, client_secret, base_url):
 token = get_access_token(
     client_id="ministry-of-agriculture",
     client_secret="your-secret-key-here",
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 print(f"Token: {token}")
 ```
@@ -134,7 +157,7 @@ async function getAccessToken(clientId, clientSecret, baseUrl) {
 const token = await getAccessToken(
   'ministry-of-agriculture',
   'your-secret-key-here',
-  'https://api.openspp.org/api/v2/spp'
+  'https://{your-domain}/api/v2/spp'
 );
 console.log('Token:', token);
 ```
@@ -151,7 +174,7 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...
 ### Example: curl
 
 ```bash
-curl https://api.openspp.org/api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789 \
+curl https://{your-domain}/api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789 \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -174,7 +197,7 @@ def get_individual(identifier, token, base_url):
 individual = get_individual(
     identifier="urn:gov:ph:psa:national-id|PH-123456789",
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 print(individual)
 ```
@@ -200,7 +223,7 @@ async function getIndividual(identifier, token, baseUrl) {
 const individual = await getIndividual(
   'urn:gov:ph:psa:national-id|PH-123456789',
   token,
-  'https://api.openspp.org/api/v2/spp'
+  'https://{your-domain}/api/v2/spp'
 );
 console.log(individual);
 ```
@@ -209,11 +232,15 @@ console.log(individual);
 
 ### Token Expiration
 
-Access tokens expire after **1 hour** (3600 seconds). You must request a new token when the current one expires.
+Access tokens expire after **24 hours** (86400 seconds) by default. The lifetime is configurable per deployment. You must request a new token when the current one expires.
 
-### Token Refresh Strategy
+```{note}
+The client credentials flow does not use refresh tokens. Instead, request a new token before the current one expires.
+```
 
-Since client credentials don't support refresh tokens, implement a proactive refresh strategy:
+### Token Renewal Strategy
+
+Implement a proactive renewal strategy that requests a new token before the current one expires:
 
 ```python
 import requests
@@ -230,9 +257,9 @@ class TokenManager:
         self.expires_at = None
 
     def get_token(self):
-        """Get a valid access token, refreshing if necessary."""
+        """Get a valid access token, requesting a new one if necessary."""
         if self.token is None or self._is_expired():
-            self._refresh_token()
+            self._request_new_token()
         return self.token
 
     def _is_expired(self):
@@ -241,7 +268,7 @@ class TokenManager:
             return True
         return datetime.now() >= self.expires_at - timedelta(minutes=5)
 
-    def _refresh_token(self):
+    def _request_new_token(self):
         """Request a new access token."""
         response = requests.post(
             f"{self.base_url}/oauth/token",
@@ -262,7 +289,7 @@ class TokenManager:
 token_manager = TokenManager(
     client_id="ministry-of-agriculture",
     client_secret="your-secret-key-here",
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 
 # Always get fresh token
@@ -283,7 +310,7 @@ def api_request_with_retry(url, token_manager):
 
     if response.status_code == 401:
         # Token expired, force refresh
-        token_manager._refresh_token()
+        token_manager._request_new_token()
         token = token_manager.get_token()
         headers = {"Authorization": f"Bearer {token}"}
         response = requests.get(url, headers=headers)
@@ -294,21 +321,30 @@ def api_request_with_retry(url, token_manager):
 
 ## Scopes
 
-Scopes define what your API client can access. Common scopes:
+Scopes define what your API client can access. Scopes follow the `resource:action` format.
 
-| Scope | Description |
-|-------|-------------|
-| `individual:read` | Read individual registrants |
-| `individual:search` | Search individuals |
-| `individual:create` | Create new individuals |
-| `individual:update` | Update existing individuals |
-| `group:read` | Read groups/households |
-| `group:search` | Search groups |
-| `program:read` | Read program definitions |
-| `program_membership:read` | Read program enrollments |
-| `program_membership:create` | Enroll beneficiaries |
+**Available Actions:**
 
-Your administrator configures which scopes your client receives.
+| Action | Description |
+|--------|-------------|
+| `read` | Read a single resource by identifier |
+| `search` | Search/list resources with filters |
+| `create` | Create a new resource |
+| `update` | Update an existing resource |
+| `delete` | Delete a resource |
+| `all` | All of the above (wildcard) |
+
+**Available Resources:**
+
+| Resource | Example Scopes |
+|----------|---------------|
+| `individual` | `individual:read`, `individual:search`, `individual:create`, `individual:update`, `individual:delete` |
+| `group` | `group:read`, `group:search`, `group:create`, `group:update`, `group:delete` |
+| `program` | `program:read`, `program:search` |
+| `program_membership` | `program_membership:read`, `program_membership:search`, `program_membership:create`, `program_membership:update` |
+| `identifier` | `identifier:read`, `identifier:search` |
+
+Your administrator configures which scopes your client receives. Scopes can also include field-level restrictions to limit which fields are returned.
 
 ### Checking Your Scopes
 
@@ -330,23 +366,10 @@ HTTP/1.1 403 Forbidden
 Content-Type: application/json
 
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "forbidden",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "SCOPE_INSUFFICIENT",
-            "display": "Insufficient scope"
-          }
-        ],
-        "text": "Required scope: individual:create. Granted: individual:read, individual:search"
-      }
-    }
-  ]
+  "type": "urn:openspp:error:authorization",
+  "title": "Forbidden",
+  "status": 403,
+  "detail": "Required scope: individual:create. Granted: individual:read, individual:search"
 }
 ```
 
@@ -385,7 +408,7 @@ Contact your administrator to rotate your client secret periodically (e.g., ever
 
 ```python
 # ✅ Good
-base_url = "https://api.openspp.org/api/v2/spp"
+base_url = "https://{your-domain}/api/v2/spp"
 
 # ❌ Bad (development only)
 base_url = "http://localhost:8069/api/v2/spp"
@@ -393,7 +416,7 @@ base_url = "http://localhost:8069/api/v2/spp"
 
 ### Limit Token Lifetime
 
-Tokens expire after 1 hour. This limits the exposure window if a token is compromised.
+Tokens expire after 24 hours by default. This limits the exposure window if a token is compromised.
 
 ### Monitor for Unauthorized Usage
 
@@ -401,6 +424,42 @@ Check API logs regularly for:
 - Failed authentication attempts
 - Access from unexpected IP addresses
 - Unusual request patterns
+
+## JWT Token Details
+
+Access tokens are JSON Web Tokens (JWT) signed with HS256:
+
+| Field | Value |
+|-------|-------|
+| Algorithm | HS256 (HMAC-SHA256) |
+| Issuer (`iss`) | `openspp-api-v2` |
+| Audience (`aud`) | `openspp` |
+| Default lifetime | 24 hours (configurable) |
+
+**JWT Payload:**
+
+```json
+{
+  "iss": "openspp-api-v2",
+  "sub": "ministry-of-agriculture",
+  "aud": "openspp",
+  "exp": 1732867200,
+  "iat": 1732780800,
+  "client_id": "ministry-of-agriculture",
+  "scopes": ["individual:read", "individual:search", "group:read"]
+}
+```
+
+## Rate Limiting
+
+The token endpoint is rate-limited to prevent brute force attacks:
+
+| Endpoint | Per Minute | Per Day |
+|----------|-----------|---------|
+| `/oauth/token` | 5 per IP | 50 per IP |
+| General API | 30 (configurable per client) | 5,000 (configurable per client) |
+
+When rate-limited, responses include `Retry-After` and `X-RateLimit-*` headers. See {doc}`errors` for details.
 
 ## Error Responses
 
@@ -410,16 +469,10 @@ Token is missing, invalid, or expired:
 
 ```json
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "unauthorized",
-      "details": {
-        "text": "Invalid or expired access token"
-      }
-    }
-  ]
+  "type": "urn:openspp:error:authentication",
+  "title": "Unauthorized",
+  "status": 401,
+  "detail": "Invalid or expired access token"
 }
 ```
 
@@ -431,8 +484,10 @@ Invalid token request:
 
 ```json
 {
-  "error": "invalid_client",
-  "error_description": "Invalid client credentials"
+  "type": "urn:openspp:error:validation",
+  "title": "Bad Request",
+  "status": 400,
+  "detail": "Invalid client credentials"
 }
 ```
 
@@ -444,21 +499,10 @@ Valid token, but insufficient permissions:
 
 ```json
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "forbidden",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "SCOPE_INSUFFICIENT"
-          }
-        ]
-      }
-    }
-  ]
+  "type": "urn:openspp:error:authorization",
+  "title": "Forbidden",
+  "status": 403,
+  "detail": "Missing required scope 'individual:create'"
 }
 ```
 
@@ -468,7 +512,7 @@ Valid token, but insufficient permissions:
 
 **Getting "invalid_client" error?**
 
-Double-check your client ID and secret. Ensure there are no extra spaces or line breaks when copying credentials.
+Double-check your client ID and secret. Ensure there are no extra spaces or line breaks when copying credentials. The token endpoint supports HTTP Basic Auth, form-encoded body, and JSON body — try a different method if one isn't working.
 
 **Token request hangs or times out?**
 
@@ -501,7 +545,7 @@ class OpenSPPClient:
     def _get_token(self):
         """Get a valid access token."""
         if self.token is None or self._is_expired():
-            self._refresh_token()
+            self._request_new_token()
         return self.token
 
     def _is_expired(self):
@@ -510,7 +554,7 @@ class OpenSPPClient:
             return True
         return datetime.now() >= self.expires_at - timedelta(minutes=5)
 
-    def _refresh_token(self):
+    def _request_new_token(self):
         """Request new access token."""
         response = requests.post(
             f"{self.base_url}/oauth/token",
@@ -541,7 +585,7 @@ class OpenSPPClient:
 
         # Retry once on 401
         if response.status_code == 401:
-            self._refresh_token()
+            self._request_new_token()
             token = self._get_token()
             headers["Authorization"] = f"Bearer {token}"
             response = requests.request(
@@ -570,7 +614,7 @@ class OpenSPPClient:
 client = OpenSPPClient(
     client_id="ministry-of-agriculture",
     client_secret="your-secret-key-here",
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 
 # Fetch individual

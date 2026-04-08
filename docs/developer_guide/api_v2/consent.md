@@ -185,15 +185,17 @@ If consent doesn't include the `farmer` extension:
 
 Some API clients operate under **legal basis** that doesn't require individual consent:
 
-| Legal Basis        | Example                       | Consent Required |
-| ------------------ | ----------------------------- | ---------------- |
-| `consent`          | Mobile app for beneficiaries  | Yes              |
-| `legal_obligation` | Tax authority audit           | No               |
-| `vital_interest`   | Emergency health services     | No               |
-| `public_task`      | Government statistical office | No               |
-| `contract`         | Payment processor             | No               |
+| Legal Basis            | Example                       | Consent Required |
+| ---------------------- | ----------------------------- | ---------------- |
+| `consent`              | Mobile app for beneficiaries  | Yes              |
+| `legal_obligation`     | Tax authority audit           | No               |
+| `vital_interest`       | Emergency health services     | No               |
+| `public_interest`      | Public health monitoring      | No               |
+| `public_task`          | Government statistical office | No               |
+| `contract`             | Payment processor             | No               |
+| `legitimate_interest`  | Fraud detection               | No               |
 
-API clients with legal basis bypass consent checks but still respect scope restrictions.
+These align with GDPR Article 6 lawful bases. API clients with a legal basis bypass individual consent checks but still respect scope and field-level restrictions.
 
 ## Checking Consent Programmatically
 
@@ -223,7 +225,7 @@ def check_consent_status(identifier, token, base_url):
 result = check_consent_status(
     identifier="urn:gov:ph:psa:national-id|PH-123456789",
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 
 if result["status"] == "active":
@@ -261,7 +263,7 @@ async function checkConsentStatus(identifier, token, baseUrl) {
 const result = await checkConsentStatus(
   "urn:gov:ph:psa:national-id|PH-123456789",
   token,
-  "https://api.openspp.org/api/v2/spp",
+  "https://{your-domain}/api/v2/spp",
 );
 
 if (result.status === "active") {
@@ -273,8 +275,9 @@ if (result.status === "active") {
 
 ## Consent API Endpoints
 
-{note}
+```{note}
 Consent records are created and managed through the OpenSPP user interface, not via the API. The API provides read-only access to consent status and supports consent revocation.
+```
 
 ### Available Operations
 
@@ -367,6 +370,19 @@ Consent is purpose-specific. When created through the UI, administrators specify
 | `research`                 | Academic research            |
 | `audit`                    | Compliance audits            |
 
+## Security Design
+
+### Consent Matching
+
+Consent can be granted in two ways:
+
+- **Specific recipient:** The registrant names your organization in the consent record
+- **Category-based:** The registrant consents to a category of organizations (e.g., "government health agencies"), and your API client's verified organization type matches
+
+### Enumeration Prevention
+
+The API applies random timing jitter (50-70ms) when returning consent-restricted responses. This prevents attackers from distinguishing between "resource not found" and "resource exists but no consent" based on response timing. Both cases return the same response structure with minimal data.
+
 ## Handling Consent Errors
 
 ### 403 Forbidden: Insufficient Consent
@@ -375,23 +391,10 @@ Consent is purpose-specific. When created through the UI, administrators specify
 HTTP/1.1 403 Forbidden
 
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "forbidden",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "CONSENT_REQUIRED"
-          }
-        ],
-        "text": "No active consent for this data access"
-      },
-      "diagnostics": "Registrant has not consented to data sharing with your organization"
-    }
-  ]
+  "type": "urn:openspp:error:authorization",
+  "title": "Forbidden",
+  "status": 403,
+  "detail": "No active consent for this data access"
 }
 ```
 
@@ -558,7 +561,7 @@ class ConsentAwareClient:
 client = ConsentAwareClient(
     client_id="ministry-of-agriculture",
     client_secret="your-secret",
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 
 # Fetch with consent checking

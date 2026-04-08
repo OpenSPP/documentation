@@ -342,7 +342,7 @@ When creating or updating records via API, include extension data in the `extens
 ```python
 import requests
 
-BASE_URL = "https://api.openspp.org/api/v2/spp"
+BASE_URL = "https://{your-domain}/api/v2/spp"  # Replace with your deployment URL
 TOKEN = "your_access_token"
 
 headers = {
@@ -386,7 +386,7 @@ for var_name, var_info in data["variables"].items():
 
 ```bash
 curl -X GET \
-  "https://api.openspp.org/api/v2/spp/Studio/variables?category=Economic&applies_to=group" \
+  "https://{your-domain}/api/v2/spp/Studio/variables?category=Economic&applies_to=group" \
   -H "Authorization: Bearer ${TOKEN}" \
   -H "Content-Type: application/json"
 ```
@@ -395,7 +395,7 @@ curl -X GET \
 
 ```bash
 curl -X POST \
-  "https://api.openspp.org/api/v2/spp/Individual" \
+  "https://{your-domain}/api/v2/spp/Individual" \
   -H "Authorization: Bearer ${TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{

@@ -838,7 +838,7 @@ class BulkImporter:
 
 # Usage
 importer = BulkImporter(
-    base_url="https://api.openspp.org/api/v2/spp",
+    base_url="https://{your-domain}/api/v2/spp",
     token=token
 )
 
@@ -854,6 +854,93 @@ if result["errors"] > 0:
     print("\nErrors occurred:")
     for error in result["error_details"][:10]:  # Show first 10
         print(f"  Batch {error.get('batch')}, Index {error.get('index')}: {error['error']}")
+```
+
+## Bulk Export
+
+For exporting multiple resources by identifier (without creating or modifying), use the bulk export endpoint:
+
+```http
+POST /api/v2/spp/$bulk/export
+Authorization: Bearer TOKEN
+Content-Type: application/json
+
+{
+  "type": "Individual",
+  "identifiers": [
+    "urn:gov:ph:psa:national-id|PH-001",
+    "urn:gov:ph:psa:national-id|PH-002",
+    "urn:gov:ph:psa:national-id|PH-003"
+  ]
+}
+```
+
+**Limits:** 1 to 100 identifiers per request.
+
+### Response
+
+```json
+{
+  "total": 3,
+  "successful": 2,
+  "failed": 1,
+  "items": [
+    {
+      "identifier": "urn:gov:ph:psa:national-id|PH-001",
+      "status": "success",
+      "resource": { /* Individual */ }
+    },
+    {
+      "identifier": "urn:gov:ph:psa:national-id|PH-002",
+      "status": "success",
+      "resource": { /* Individual */ }
+    },
+    {
+      "identifier": "urn:gov:ph:psa:national-id|PH-003",
+      "status": "not_found",
+      "resource": null
+    }
+  ]
+}
+```
+
+**Status Values:**
+
+| Status | Description |
+|--------|-------------|
+| `success` | Resource exported successfully |
+| `not_found` | Resource does not exist |
+| `access_denied` | Consent denied for this resource |
+| `error` | Invalid identifier format or other error |
+
+Consent filtering applies per resource, the same as individual read requests. Supports `_elements` and `_extensions` query parameters for sparse fieldsets.
+
+### Example: Python
+
+```python
+def bulk_export(resource_type, identifiers, token, base_url):
+    """Export multiple resources by identifier."""
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json"
+    }
+    response = requests.post(
+        f"{base_url}/$bulk/export",
+        headers=headers,
+        json={"type": resource_type, "identifiers": identifiers}
+    )
+    response.raise_for_status()
+    return response.json()
+
+# Export 50 individuals
+result = bulk_export(
+    resource_type="Individual",
+    identifiers=["urn:gov:ph:psa:national-id|PH-001", "urn:gov:ph:psa:national-id|PH-002"],
+    token=token,
+    base_url=base_url
+)
+
+print(f"Exported: {result['successful']}, Failed: {result['failed']}")
 ```
 
 ## Are You Stuck?

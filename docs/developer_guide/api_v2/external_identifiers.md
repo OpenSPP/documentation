@@ -157,7 +157,7 @@ urn%3Agov%3Aph%3Apsa%3Anational-id|PH-123456789
 ### Example: curl
 
 ```bash
-curl "https://api.openspp.org/api/v2/spp/Individual/urn%3Agov%3Aph%3Apsa%3Anational-id|PH-123456789" \
+curl "https://{your-domain}/api/v2/spp/Individual/urn%3Agov%3Aph%3Apsa%3Anational-id|PH-123456789" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
@@ -186,7 +186,7 @@ individual = get_individual_by_identifier(
     system="urn:gov:ph:psa:national-id",
     value="PH-123456789",
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 ```
 
@@ -215,7 +215,7 @@ const individual = await getIndividualByIdentifier(
   'urn:gov:ph:psa:national-id',
   'PH-123456789',
   token,
-  'https://api.openspp.org/api/v2/spp'
+  'https://{your-domain}/api/v2/spp'
 );
 ```
 
@@ -250,11 +250,11 @@ results = search_by_identifier(
     system="urn:gov:ph:philhealth",
     value="12-345678901-2",
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 
-if results["total"] > 0:
-    print(f"Found {results['total']} matching individuals")
+if results["meta"]["total"] > 0:
+    print(f"Found {results['meta']['total']} matching individuals")
 ```
 
 ### Searching Without System
@@ -332,7 +332,7 @@ individual = create_individual(
     name={"given": "Juan", "family": "Dela Cruz"},
     birth_date="1990-05-15",
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 
 print(f"Created individual: {individual['identifier'][0]['value']}")
@@ -424,6 +424,16 @@ Use identifiers to reference other resources:
 | Group Registry | `urn:openspp:registry:group` | UUID v4 |
 | Program | `urn:openspp:program` | Program code |
 
+## Source Tracking
+
+When you create or update a resource via the API, OpenSPP automatically records the source as:
+
+```
+urn:openspp:api-client:{client_id}
+```
+
+This appears in the resource's `meta.source` field and provides an audit trail of which API client created or last modified each record.
+
 ## Identifier Validation
 
 The API validates identifiers on create/update:
@@ -433,24 +443,15 @@ The API validates identifiers on create/update:
 Creating a resource with an existing identifier fails:
 
 ```json
-HTTP/1.1 422 Unprocessable Entity
-
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
+  "type": "urn:openspp:error:validation",
+  "title": "Unprocessable Entity",
+  "status": 422,
+  "detail": "Identifier urn:gov:ph:psa:national-id|PH-123456789 already exists",
+  "errors": [
     {
-      "severity": "error",
-      "code": "invalid",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "DUPLICATE_IDENTIFIER"
-          }
-        ],
-        "text": "Identifier urn:gov:ph:psa:national-id|PH-123456789 already exists"
-      },
-      "location": ["Individual.identifier[0]"]
+      "field": "identifier[0]",
+      "message": "Duplicate identifier"
     }
   ]
 }
@@ -472,22 +473,14 @@ Invalid formats trigger validation errors:
 
 ```json
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
+  "type": "urn:openspp:error:validation",
+  "title": "Unprocessable Entity",
+  "status": 422,
+  "detail": "Invalid PhilSys ID format. Expected: PH-NNNN-NNNN-NNNN",
+  "errors": [
     {
-      "severity": "error",
-      "code": "invalid",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "INVALID_IDENTIFIER"
-          }
-        ],
-        "text": "Invalid PhilSys ID format. Expected: PH-NNNN-NNNN-NNNN"
-      },
-      "diagnostics": "identifier[0].value: expected pattern ^PH-\\d{4}-\\d{4}-\\d{4}$",
-      "location": ["Individual.identifier[0].value"]
+      "field": "identifier[0].value",
+      "message": "expected pattern ^PH-\\d{4}-\\d{4}-\\d{4}$"
     }
   ]
 }
@@ -544,13 +537,13 @@ When searching by identifier, check if multiple records match:
 ```python
 results = search_by_identifier(system, value, token, base_url)
 
-if results["total"] == 0:
+if results["meta"]["total"] == 0:
     print("No match found")
-elif results["total"] == 1:
-    individual = results["entry"][0]["resource"]
+elif results["meta"]["total"] == 1:
+    individual = results["data"][0]
     print(f"Found: {individual['name']['text']}")
 else:
-    print(f"Warning: Multiple matches ({results['total']})")
+    print(f"Warning: Multiple matches ({results['meta']['total']})")
     # Decide how to handle duplicates
 ```
 
@@ -590,7 +583,7 @@ OpenSPP can generate a UUID-based identifier:
 Check the capability statement:
 
 ```bash
-curl https://api.openspp.org/api/v2/spp/metadata
+curl https://{your-domain}/api/v2/spp/metadata
 ```
 
 Look for `identifierSystems` in the response.
@@ -632,7 +625,7 @@ path = helper.format_identifier_path(
     "PH-123456789"
 )
 individual = requests.get(
-    f"https://api.openspp.org/api/v2/spp/Individual/{path}",
+    f"https://{your-domain}/api/v2/spp/Individual/{path}",
     headers={"Authorization": f"Bearer {token}"}
 ).json()
 
