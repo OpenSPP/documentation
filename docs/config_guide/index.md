@@ -26,6 +26,9 @@ The Configuration Guide is designed for implementers who need to customize OpenS
 - **[Change request types](change_request_types/index.md)** - Configuring change request workflows (NEW V2)
 - **[Consent configuration](consent/index.md)** - Managing data sharing consent (NEW V2)
 - **[Role configuration](role_configuration/index.md)** - Configuring users, roles, and role-based access (global and local roles)
+- **[Custom fields](custom_fields/index.md)** - Registrant field groups
+- **[Import matching](import_matching/index.md)** - Deduplication during import
+- **[Farmer registry](farmer_registry/index.md)** - Farm entity configuration
 
 ```{toctree}
 :maxdepth: 2
@@ -41,6 +44,9 @@ event_data/index
 change_request_types/index
 consent/index
 role_configuration/index
+custom_fields/index
+import_matching/index
+farmer_registry/index
 ```
 
 <!-- Hidden until ready: drims/index -->
