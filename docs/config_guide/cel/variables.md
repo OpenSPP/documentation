@@ -8,7 +8,7 @@ openspp:
 
 This guide is for **implementers** configuring CEL variables in OpenSPP.
 
-Variables (`spp.cel.variable`) define named data points that can be reused across expressions and features. Define them once, use them everywhere.
+Variables define named data points that can be reused across expressions and features. Define them once, use them everywhere.
 
 ## Why use variables?
 
@@ -64,7 +64,7 @@ Calculated from a CEL expression.
 
 ### Aggregate
 
-Computes over related records (members, enrollments, entitlements, events).
+Computes over related records (members, enrollments, entitlements).
 
 | Field | Value |
 |-------|-------|
@@ -101,7 +101,10 @@ Aggregates are the most powerful variable type. They compute values across colle
 | Members | Household members | `m` |
 | Enrollments | Program memberships | `e` |
 | Entitlements | Entitlement records | `ent` |
-| Events | Event data records | `evt` |
+
+```{note}
+Event data is not an aggregate target. To work with events, use the dedicated event functions (`has_event`, `events_count`, etc.) described below.
+```
 
 ### Aggregate types
 

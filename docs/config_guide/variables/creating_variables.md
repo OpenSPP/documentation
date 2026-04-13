@@ -199,7 +199,7 @@ Go to **Studio → Expressions** and verify the variable appears in autocomplete
 
 ## Creating Aggregate Variables
 
-Aggregates compute values over household members, enrollments, or events.
+Aggregates compute values over household members, enrollments, or entitlements.
 
 ### Example: Count Children Under 5
 
@@ -253,9 +253,9 @@ Use `m.` prefix to reference member fields:
 | `age_years(m.birthdate) < 18` | Member is under 18 |
 | `m.is_head_of_household == true` | Member is HOH |
 
-## Creating Event Aggregates
+## Creating Event-Based Variables
 
-Aggregate over event data with time filtering.
+Event data is accessed through dedicated event functions, not the aggregate system. Use a **Computed (CEL)** variable with event functions.
 
 ### Example: Count Health Visits This Year
 
@@ -263,23 +263,14 @@ Aggregate over event data with time filtering.
 |-------|-------|
 | Name | `health_visits_this_year` |
 | Label | Health Visits This Year |
-| Source Type | Member Aggregate |
-| Aggregate Type | Count |
-| Aggregate Target | Events |
-| Event Type | Health Visit |
-| Time Range | This Year |
+| Source Type | Computed (CEL) |
+| CEL Expression | `events_count("health_visit", within_months=12)` |
 | Value Type | Number |
+| Applies To | Individual |
 
-### Event Time Range Options
-
-| Option | Description |
-|--------|-------------|
-| All Time | All events ever |
-| This Year | Current calendar year |
-| This Quarter | Current quarter |
-| This Month | Current month |
-| Within N Days | Last N days |
-| Within N Months | Last N months |
+```{note}
+Event functions require the `spp_cel_event` module. See the {doc}`/config_guide/cel/variables` guide for the full list of event functions and time range parameters (`within_days`, `within_months`, `period`).
+```
 
 ## Creating Program Constants
 

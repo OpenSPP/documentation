@@ -195,7 +195,6 @@ The expression is syntactically correct but finds no matches.
 
 - Expression takes long to validate
 - Eligibility check times out
-- "Python fallback" warnings
 
 ### Causes and solutions
 
@@ -217,13 +216,10 @@ For expensive computations:
 
 ### Simplify event queries
 
-Instead of complex `where` predicates:
+Use specific event type codes rather than filtering broadly:
 
 ```cel
-# May fall back to Python
-events_count("visit", where="data->>'type' == 'home'", within_days=90)
-
-# Prefer simpler form
+# Prefer specific event types
 events_count("home_visit", within_days=90)
 ```
 
