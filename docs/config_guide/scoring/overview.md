@@ -26,6 +26,11 @@ When you score a household, OpenSPP:
 
 ### Step 1: Create a Scoring Model
 
+```{figure} /_images/en-us/config_guide/scoring/01-scoring-models-list.png
+:alt: Scoring models list showing model name, category, and calculation method
+Scoring models list showing model name, category, and calculation method.
+```
+
 A scoring model is your methodology container. It includes:
 
 | Field | What It Means |
@@ -35,6 +40,11 @@ A scoring model is your methodology container. It includes:
 | **Category** | Purpose (poverty, vulnerability, eligibility) |
 | **Calculation Method** | How to combine indicators (weighted_sum, cel_formula) |
 | **Active** | Only active models can score households |
+
+```{figure} /_images/en-us/config_guide/scoring/02-scoring-model-form.png
+:alt: Scoring model form showing code, category, calculation method, and validity period
+Scoring model form showing code, category, calculation method, and validity period.
+```
 
 **Location:** Go to **Scoring → Scoring Models** to create one.
 
