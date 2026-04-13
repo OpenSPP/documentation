@@ -37,37 +37,43 @@ Using a formula for documentation clarity:
 
 ### Per household member
 
-Amount scales with household size.
+Amount scales with household size. You can use either a multiplier field or a formula.
+
+**Using multiplier field:**
 
 | Field | Value |
 |-------|-------|
 | Amount | `100` |
-| Multiplier Field | `z_ind_grp_num_individuals` |
+| Multiplier Field | (select household member count field) |
 
-**Or using formula:**
+**Using formula (with CEL variables):**
 
 ```cel
-100 * me.z_ind_grp_num_individuals
+100 * household_size
 ```
 
 **Example:** 5-member household = $500
 
+```{note}
+The formula examples below use CEL variables like `household_size`, `adult_count`, `child_count`, `elderly_count`. These must be defined and activated in **Studio → Variables** before use. See the {doc}`/config_guide/variables/index` guide.
+```
+
 ### Per adult member
 
 ```cel
-base_amount * me.z_ind_grp_num_adults
+base_amount * adult_count
 ```
 
 ### Per child
 
 ```cel
-base_amount * me.z_ind_grp_num_children
+base_amount * child_count
 ```
 
 ### Per elderly member
 
 ```cel
-base_amount * me.z_ind_grp_num_elderly
+base_amount * elderly_count
 ```
 
 ## Capped calculations
