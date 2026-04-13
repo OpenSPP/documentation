@@ -79,7 +79,7 @@ Click **Save**. The role is now available for assignment.
 |-------|-------|
 | Name | Case Manager |
 | Role Type | Local |
-| Implied Groups | `base.group_user`, `spp_registry.group_registry_viewer`, `spp_case_management.group_case_manager` |
+| Implied Groups | `base.group_user`, `spp_registry.group_registry_viewer`, `spp_case_base.group_case_manager` |
 
 ## Viewing role permissions
 
