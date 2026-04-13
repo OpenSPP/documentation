@@ -50,7 +50,6 @@ DRIMS defines 15+ vocabularies for different classification needs:
 | `urn:ocha:iasc:clusters` | UN humanitarian sectors | Requests, Personnel |
 | `urn:openspp:vocab:drims:personnel-roles` | Staff role types | Personnel |
 | `urn:openspp:vocab:drims:return-reasons` | Why items are returned | Returns |
-| `urn:openspp:vocab:drims:warehouse-tiers` | Warehouse classification | Warehouses |
 | `urn:openspp:vocab:drims:organization-roles` | Partner agency roles | Organizations |
 
 ```{important}
@@ -116,9 +115,8 @@ Priority levels classify the urgency of relief requests. DRIMS includes four sta
 | Code | Display Name | Use Case |
 |------|--------------|----------|
 | `critical` | Critical | Life-threatening situations requiring immediate response (< 24 hours) |
-| `high` | High | Urgent needs requiring response within 2-3 days |
-| `medium` | Medium | Important needs requiring response within 1 week |
-| `low` | Low | Non-urgent needs that can wait beyond 1 week |
+| `urgent` | Urgent | Urgent needs requiring response within 2-3 days |
+| `routine` | Routine | Standard needs that can be scheduled normally |
 
 ### Priority in Workflows
 
@@ -130,7 +128,7 @@ Priority affects:
 ![Priority field on request](vocabularies/priority_field.png)
 
 ```{tip}
-You can add custom priority levels (e.g., `routine` for regular stock replenishment) by adding vocabulary codes. See "Adding Custom Vocabulary Codes" below.
+You can add custom priority levels by adding vocabulary codes. See "Adding Custom Vocabulary Codes" below.
 ```
 
 ## Item Conditions
@@ -140,9 +138,7 @@ Item condition codes track the quality state of donated goods during inspection:
 | Code | Display Name | Description |
 |------|--------------|-------------|
 | `new` | New | Brand new, unopened items |
-| `good` | Good | Used but fully functional, clean, no damage |
-| `fair` | Fair | Functional with minor wear or cosmetic damage |
-| `poor` | Poor | Functional but significant wear or damage |
+| `used_good` | Used - Good Condition | Used but fully functional, clean, no damage |
 | `damaged` | Damaged | Non-functional, broken, or unusable |
 | `expired` | Expired | Past expiration or best-before date |
 
@@ -276,9 +272,8 @@ Transport modes classify how relief items are shipped:
 |------|--------------|-------------|
 | `road` | Road Transport | Trucks, vans for accessible areas |
 | `air` | Air Transport | Helicopters, planes for remote or emergency deliveries |
-| `water` | Water Transport | Boats for island or flood-affected areas |
-| `rail` | Rail Transport | Trains for long-distance bulk shipments |
-| `hand` | Hand Carry | Walking delivery for very remote locations |
+| `sea` | Sea Transport | Boats for island or coastal areas |
+| `foot` | On Foot | Walking delivery for very remote locations |
 
 Set transport mode on **dispatch records** for tracking and reporting.
 

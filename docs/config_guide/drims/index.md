@@ -76,8 +76,8 @@ Alerts (automated monitoring)
 
 | Area | What You Configure | Where |
 |------|-------------------|-------|
-| **Warehouses** | Enable for DRIMS, set tier, assign geographic area | DRIMS → Inventory → Warehouses |
-| **Approval Chains** | Define who approves requests, set approval levels | DRIMS → Configuration → Approval Rules |
+| **Warehouses** | Enable for DRIMS, assign geographic area | DRIMS → Inventory → Warehouses |
+| **Approval Chains** | Define who approves requests, set approval levels | Configured via user groups and approval mixin |
 | **Alert Thresholds** | Low stock %, SLA warning days, expiry warning days | Settings → DRIMS or per-incident overrides |
 | **Vocabularies** | Donor types, priorities, transport modes, item conditions | Studio → Vocabularies |
 | **User Roles** | Assign security groups, geographic areas, warehouses | Settings → Users & Companies → Users |
@@ -103,7 +103,7 @@ Check that you have the **DRIMS Manager** or **DRIMS Officer** security group. C
 You must enable the "DRIMS Warehouse" checkbox on each warehouse. Go to **DRIMS → Inventory → Warehouses**, open the warehouse, and check the "DRIMS Warehouse" field.
 
 **Geographic areas not loading?**
-DRIMS requires the `spp_area` module with configured area hierarchy. Check **DRIMS → Configuration → Areas** to verify areas exist.
+DRIMS requires the `spp_area` module with configured area hierarchy. Check **Area → Areas** to verify areas exist.
 
 **Alert thresholds not triggering?**
 Alert jobs run on schedule (low stock every 4 hours, SLA every 2 hours, expiry daily). Check that scheduled actions are enabled in **Settings → Technical → Automation → Scheduled Actions**.
