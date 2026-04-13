@@ -37,7 +37,7 @@ For Many2one fields, map the ID field:
 
 | Source Field | Target Field | Transform |
 |--------------|--------------|-----------|
-| `gender_id` | `gender` | Direct Copy |
+| `gender_id` | `gender_id` | Direct Copy |
 | `area_id` | `area_id` | Direct Copy |
 | `country_id` | `country_id` | Direct Copy |
 
