@@ -25,17 +25,17 @@ When `spp_hazard_programs` is installed, programs gain these fields:
 | Field | What it means |
 |-------|---------------|
 | **Target Incident** | The hazard incident this program responds to |
-| **Damage Level Threshold** | Minimum damage for eligibility: Any, Moderate+, Severe+, Critical |
+| **Damage Level Threshold** | Minimum damage for eligibility: Any Damage Level, Moderate and Above, Severe and Above, Critical/Totally Damaged Only |
 | **Emergency Mode** | Enable relaxed compliance (e.g., skip training attendance) |
 
 ### Damage thresholds
 
 | Threshold | Who qualifies |
 |-----------|--------------|
-| **Any** | All registrants with any recorded impact |
-| **Moderate+** | Registrants with moderate, severe, or critical damage |
-| **Severe+** | Only registrants with severe or critical damage |
-| **Critical** | Only registrants with critical-level damage |
+| **Any Damage Level** | All registrants with any recorded impact |
+| **Moderate and Above** | Registrants with moderate, severe, or critical damage |
+| **Severe and Above** | Only registrants with severe or critical damage |
+| **Critical/Totally Damaged Only** | Only registrants with critical-level or totally damaged records |
 
 ## Setting up emergency program targeting
 
@@ -66,7 +66,7 @@ When the program runs eligibility checks, it automatically:
 
 **Setup:**
 1. Link program to the incident
-2. Set threshold to "Severe+"
+2. Set threshold to "Severe and Above"
 3. Enable emergency mode
 4. Run eligibility to identify qualifying households
 
@@ -75,9 +75,9 @@ When the program runs eligibility checks, it automatically:
 **Goal:** Different programs for different damage levels.
 
 **Setup:**
-1. Program A (food packs): threshold = "Any"
-2. Program B (shelter kits): threshold = "Moderate+"
-3. Program C (rebuilding grant): threshold = "Severe+"
+1. Program A (food packs): threshold = "Any Damage Level"
+2. Program B (shelter kits): threshold = "Moderate and Above"
+3. Program C (rebuilding grant): threshold = "Severe and Above"
 4. Each program targets the same incident but different damage levels
 
 ## Are You Stuck?

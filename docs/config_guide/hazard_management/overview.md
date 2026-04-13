@@ -82,8 +82,8 @@ Alert → Active → Recovery → Closed
 |-------|-------|-------------|
 | 1 | Minor | Localized damage, few affected |
 | 2 | Moderate | Significant damage, hundreds affected |
-| 3 | Severe | Widespread damage, thousands affected |
-| 4 | Major | Regional impact, tens of thousands affected |
+| 3 | Significant | Widespread damage, thousands affected |
+| 4 | Severe | Regional impact, tens of thousands affected |
 | 5 | Catastrophic | National impact, mass displacement |
 
 ### Impact types
