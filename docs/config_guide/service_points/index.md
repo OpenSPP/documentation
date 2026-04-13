@@ -25,6 +25,6 @@ lifecycle
 
 1. Navigate to **Service Points** in the main menu
 2. Click **Create** to add a new service point
-3. Enter the **Agent Name** and assign an **Area**
+3. Enter the **Agent** name and assign an **Area**
 4. Select **Service Types** from the vocabulary (e.g., "Cash-out point", "Distribution center")
 5. Optionally link a **Company** for the managing organization

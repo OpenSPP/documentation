@@ -26,7 +26,7 @@ Think of it like a franchise: the **location** is the store, the **agent** is th
 
 | Field | What it means | Required |
 |-------|---------------|----------|
-| **Agent Name** | Name of the person or entity operating the point | Yes |
+| **Agent** | Name of the person or entity operating the point | Yes |
 | **Area** | Geographic area where the point is located | No |
 | **Service Types** | Types of services offered (from vocabulary) | No |
 | **Phone Number** | Contact number (auto-validated) | No |
