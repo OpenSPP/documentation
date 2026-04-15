@@ -106,10 +106,12 @@ has(r.birthdate) and age_years(r.birthdate) >= 18
 
 | Function | Example | Description |
 |----------|---------|-------------|
-| `startswith(field, prefix)` | `startswith(r.id, "PH-")` | Check prefix |
-| `contains(field, text)` | `contains(r.name, "Jr")` | Check substring |
 | `matches(field, pattern)` | `matches(r.id, "^PH-[0-9]+$")` | Regex match |
 | `size(s)` | `size(r.name)` | String/collection length |
+
+```{note}
+Use `matches()` with regex patterns for prefix or substring checks. For example, `matches(r.id, "^PH-")` checks for a prefix, and `matches(r.name, "Jr")` checks for a substring.
+```
 
 ### Utility functions
 
@@ -149,9 +151,9 @@ enrollments.exists(e, e.state == "enrolled")
 The loop variable (`m`, `e`, etc.) represents each item in the collection.
 
 ```{note}
-Newer syntax may omit the explicit loop variable:
-`members.count(age_years(m.birthdate) < 5)`
-Both forms are supported.
+The loop variable declaration can be omitted from the first argument position:
+`members.count(age_years(m.birthdate) < 5)` is equivalent to `members.count(m, age_years(m.birthdate) < 5)`.
+In both forms, `m` is still used inside the predicate to reference each member.
 ```
 
 ## Profiles and symbols
@@ -165,13 +167,13 @@ Profiles define what data is available in a given context:
 
 ### Default profiles
 
-| Profile | Root Model | Available Relations |
-|---------|-----------|---------------------|
-| `registry_individuals` | `res.partner` (individual) | `groups`, `enrollments`, `entitlements`, `events` |
-| `registry_groups` | `res.partner` (group) | `members`, `enrollments`, `entitlements`, `events` |
-| `program_memberships` | `spp.program.membership` | - |
-| `entitlements` | `spp.entitlement` | - |
-| `grm_tickets` | `spp.grm.ticket` | - |
+| Profile | Root Record | Available Relations |
+|---------|------------|---------------------|
+| `registry_individuals` | Individual registrant | `groups`, `enrollments`, `entitlements`, `events` |
+| `registry_groups` | Group/household | `members`, `enrollments`, `entitlements`, `events` |
+| `program_memberships` | Program membership | - |
+| `entitlements` | Entitlement record | - |
+| `grm_tickets` | GRM ticket | - |
 
 ### Root record symbol
 

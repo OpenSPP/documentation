@@ -220,6 +220,10 @@ has_event("health_check", within_months=6)
 
 ## Eligibility rules
 
+```{note}
+The examples below use variables like `household_income`, `poverty_line`, `children_under_5_count`, etc. These must be defined and activated in **Studio → Variables** before they can be used in expressions. See {doc}`variables` for how to create them.
+```
+
 ### Income-based
 
 Household income under threshold:
@@ -346,9 +350,9 @@ has(r.birthdate) and between(age_years(r.birthdate), 0, 120)
 
 ### Format check
 
-Phone number prefix:
+Phone number prefix (using regex):
 ```cel
-startswith(r.phone, "+63")
+matches(r.phone, "^\\+63")
 ```
 
 ID format with regex:
@@ -391,7 +395,7 @@ r.area_id.name == "NCR" ? "ncr_team" : "regional_team"
 2. **Verify context**: Individual vs group expressions need different symbols
 3. **Test incrementally**: Start simple, add complexity
 4. **Use variables**: Extract repeated logic into variables
-5. **Add tests**: Create test cases in Studio before publishing
+5. **Add tests**: Create test cases in Studio before activating
 
 ## Are you stuck?
 
