@@ -71,21 +71,11 @@ Once a warehouse is DRIMS-enabled, configure these fields:
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | **DRIMS Warehouse** | Checkbox | Yes | Enables the warehouse for DRIMS operations |
-| **Warehouse Tier** | Selection | Yes | Role in distribution hierarchy (Central/Regional/Mobile) |
 | **Area** | Dropdown | Recommended | Geographic location from the area hierarchy |
-| **Linked Incidents** | Multi-select | Optional | Specific disasters this warehouse serves |
-
-![Screenshot placeholder: DRIMS warehouse configuration form](warehouses/config_form.png)
+| **Storage Capacity (m³)** | Number | Optional | Maximum storage volume |
+| **Active Incidents** | Multi-select | Optional | Hazard incidents this warehouse is responding to |
 
 ### Field Details
-
-**Warehouse Tier**
-
-Choose based on the warehouse's role:
-
-- `Central` - National or main stockpile that receives bulk donations
-- `Regional` - Provincial/district hub serving multiple areas
-- `Mobile` - Temporary field location for direct distribution
 
 **Area**
 
@@ -138,122 +128,19 @@ You can associate warehouses with specific disaster incidents in two ways:
 - Permanent infrastructure: Regional hubs that handle all disasters in their area
 - Flexible allocation: You want to reassign warehouse capacity as incidents evolve
 
-## Setting Up Warehouse Tiers
+## Common Deployment Patterns
 
-### Central Warehouse Setup
+### Pattern 1: Single Warehouse (Small-Scale)
 
-**Use case:** National or main stockpile receiving bulk donations from international agencies.
+For pilot programs or single-district responses — one warehouse handles all donations and distribution.
 
-| Field | Recommended Value |
-|-------|-------------------|
-| Warehouse Tier | Central |
-| Area | Leave empty or set to country level |
-| Linked Incidents | Leave empty (serves all) |
+### Pattern 2: Hub and Spoke (Provincial)
 
-**Typical configuration:**
-- High storage capacity
-- Located near international ports/airports
-- Receives donations in large quantities
-- Distributes to regional warehouses
+For province-wide disasters — a central hub in the provincial capital supplies field locations in affected districts.
 
-### Regional Warehouse Setup
+### Pattern 3: Multi-Incident Shared Infrastructure
 
-**Use case:** Provincial or district hub coordinating local distribution.
-
-| Field | Recommended Value |
-|-------|-------------------|
-| Warehouse Tier | Regional |
-| Area | Set to province or district |
-| Linked Incidents | Leave empty or link to regional disasters |
-
-**Typical configuration:**
-- Medium storage capacity
-- Strategically located within the region
-- Receives stock from central warehouse
-- Distributes to mobile units and distribution points
-
-### Mobile Warehouse Setup
-
-**Use case:** Temporary field location for rapid deployment and direct beneficiary access.
-
-| Field | Recommended Value |
-|-------|-------------------|
-| Warehouse Tier | Mobile |
-| Area | Set to district or division |
-| Linked Incidents | Link to specific incident |
-
-**Typical configuration:**
-- Temporary/portable infrastructure
-- Located close to affected populations
-- Minimal storage capacity
-- Direct distribution to beneficiaries
-
-## Common Patterns
-
-### Pattern 1: Single-Tier Deployment (Small-Scale)
-
-For pilot programs or single-district responses:
-
-```
-Mobile Warehouse
-├─ Area: Target District
-├─ Tier: Mobile
-└─ Incidents: Single active disaster
-```
-
-All donations received and distributed from one location.
-
-### Pattern 2: Two-Tier Deployment (Provincial)
-
-For province-wide disasters:
-
-```
-Regional Warehouse (Provincial Capital)
-├─ Area: Province
-├─ Tier: Regional
-└─ Serves
-    ├─ Mobile Warehouse (District A)
-    ├─ Mobile Warehouse (District B)
-    └─ Mobile Warehouse (District C)
-```
-
-Regional hub supplies multiple field locations.
-
-### Pattern 3: Three-Tier Deployment (National)
-
-For major national disasters:
-
-```
-Central Warehouse (Capital)
-├─ Area: Country
-├─ Tier: Central
-└─ Serves
-    ├─ Regional Warehouse (Province 1)
-    │   └─ Mobile units in Districts 1A, 1B
-    ├─ Regional Warehouse (Province 2)
-    │   └─ Mobile units in Districts 2A, 2B
-    └─ Regional Warehouse (Province 3)
-        └─ Mobile units in Districts 3A, 3B
-```
-
-Full cascading distribution from national stockpile to field.
-
-### Pattern 4: Multi-Incident Shared Infrastructure
-
-For regions with concurrent disasters:
-
-```
-Regional Warehouse (Shared)
-├─ Area: Province
-├─ Tier: Regional
-├─ Incidents: [Empty - serves all]
-└─ Handles
-    ├─ Flood 2024 (Incident A)
-    ├─ Drought 2024 (Incident B)
-    └─ Landslide 2024 (Incident C)
-```
-
-One warehouse tracks inventory separately per incident but shares physical space.
+For regions with concurrent disasters — one warehouse serves multiple active incidents, tracking inventory per incident.
 
 ## Stock Health Indicators
 
@@ -290,30 +177,7 @@ You cannot set health status manually - it reflects the current alert state.
 
 2. **Area permissions:** Your user account may not have access to the warehouse's assigned area. Contact your administrator to verify your area assignments in **Settings → Users → [Your User] → DRIMS Area Access**.
 
-3. **Warehouse tier mismatch:** Some transaction types have tier restrictions. For example, bulk donations may be configured to only accept central warehouses.
-
-### How do I know which tier to assign?
-
-**Question:** I'm not sure whether to make this warehouse Central, Regional, or Mobile.
-
-**Answer:** Ask these questions:
-
-- **Where does it receive stock from?** If from international donors → Central. If from another warehouse in-country → Regional or Mobile.
-- **What's its capacity?** High-capacity → Central. Medium → Regional. Temporary/low → Mobile.
-- **How permanent is it?** Permanent infrastructure → Central or Regional. Temporary field deployment → Mobile.
-- **Who does it serve?** Other warehouses → Central or Regional. Direct beneficiaries → Mobile.
-
-If still uncertain, start with `Regional` - you can change it later without affecting historical data.
-
-### Can I change warehouse tier after transactions exist?
-
-**Yes.** The tier field can be changed at any time. Historical transactions (donations, requests, dispatches) are not affected. The tier only influences:
-
-- How the warehouse appears in reports and organizational charts
-- Default routing suggestions for new requests
-- Dashboard grouping and metrics
-
-Changing tier does not move or modify existing inventory.
+3. **Area permissions:** Verify the warehouse's area is accessible to your user account.
 
 ### Should I create one warehouse per incident or share warehouses?
 
