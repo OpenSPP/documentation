@@ -123,8 +123,8 @@ Select the field type from the dropdown.
 |------|---------|---------|
 | **Text** | Short text up to 256 characters | "Pantawid ID", "WhatsApp Number" |
 | **Long Text** | Multi-line notes or descriptions | "Special Needs Notes" |
-| **Number (whole)** | Counting numbers | "Number of Dependents" |
-| **Number (decimal)** | Amounts with decimals | "Vulnerability Score" |
+| **Whole Number** | Counting numbers | "Number of Dependents" |
+| **Decimal Number** | Amounts with decimals | "Vulnerability Score" |
 | **Date** | Calendar dates | "Last Assessment Date" |
 | **Date & Time** | Date with time | "Appointment DateTime" |
 | **Yes/No** | Checkbox for true/false | "Has Disability" |
@@ -508,7 +508,7 @@ Required: No
 
 ```
 Label: Vulnerability Score
-Type: Number (decimal)
+Type: Decimal Number
 Target: Individual
 Location: Profile > Financial
 Required: No

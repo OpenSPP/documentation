@@ -72,6 +72,10 @@ Financial operations access:
 **Implied groups:**
 - `base.group_user` (Internal User)
 
+```{note}
+This role ships with basic internal user access only. Your administrator should add deployment-specific finance groups (e.g., program payment viewer, entitlement manager) based on your organization's requirements.
+```
+
 ### Global Program Manager
 
 Program coordination and oversight:
@@ -82,6 +86,10 @@ Program coordination and oversight:
 
 **Implied groups:**
 - `base.group_user` (Internal User)
+
+```{note}
+This role ships with basic internal user access only. Your administrator should add deployment-specific program groups (e.g., program viewer, program officer) based on your organization's requirements.
+```
 
 ### Global Support
 
@@ -94,6 +102,10 @@ Support request handling:
 **Implied groups:**
 - `base.group_user` (Internal User)
 
+```{note}
+This role ships with basic internal user access only. Your administrator should add deployment-specific support groups (e.g., GRM user, case management viewer) based on your organization's requirements.
+```
+
 ### Global Support Manager
 
 Support team oversight:
@@ -104,6 +116,10 @@ Support team oversight:
 
 **Implied groups:**
 - `base.group_user` (Internal User)
+
+```{note}
+This role ships with basic internal user access only. Your administrator should add deployment-specific support management groups based on your organization's requirements.
+```
 
 ## Local roles
 

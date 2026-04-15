@@ -27,8 +27,8 @@ Event fields work like form questions:
 |------|-------------|-------------|---------|
 | **Text** | Short text (up to 255 chars) | Names, IDs, short notes | "Employment type" |
 | **Long Text** | Multi-line text | Comments, descriptions | "Assessment notes" |
-| **Integer** | Whole numbers | Counts, ages | Household size: `5` |
-| **Decimal** | Numbers with decimals | Money, measurements | Income: `4500.50` |
+| **Whole Number** | Whole numbers | Counts, ages | Household size: `5` |
+| **Decimal Number** | Numbers with decimals | Money, measurements | Income: `4500.50` |
 | **Date** | Calendar date (YYYY-MM-DD) | Birthdates, verification dates | `2024-03-15` |
 | **Date & Time** | Date + time | Timestamps | `2024-03-15 14:30:00` |
 | **Yes/No** | True/False | Yes/No questions | Is employed: `true` |
@@ -56,7 +56,7 @@ Click **Add Field** in the Fields tab.
 |----------|-------------|---------|
 | **Label** | User-facing question text | "Monthly Income (USD)" |
 | **Technical Name** | Internal field name (no spaces) | `monthly_income` |
-| **Type** | Field type from list above | Decimal |
+| **Type** | Field type from list above | Decimal Number |
 | **Required** | Must be filled? | Yes |
 | **Help Text** | Guidance for data collectors | "Enter total monthly income from all sources" |
 | **Sequence** | Display order (10, 20, 30...) | 10 |
@@ -99,7 +99,7 @@ Validation rules ensure data quality before events are saved.
 
 #### Range validation (numbers and dates)
 
-**For Integer/Decimal fields:**
+**For Whole Number/Decimal Number fields:**
 
 | Setting | Value | Effect |
 |---------|-------|--------|
@@ -196,8 +196,8 @@ Show or hide fields based on other field values (like skip logic in surveys).
 
 | Label | Technical Name | Type | Required | Validation |
 |-------|---------------|------|----------|------------|
-| Monthly Income (USD) | `monthly_income` | Decimal | Yes | Range: 0 - 100,000 |
-| Household Size | `household_size` | Integer | Yes | Range: 1 - 50 |
+| Monthly Income (USD) | `monthly_income` | Decimal Number | Yes | Range: 0 - 100,000 |
+| Household Size | `household_size` | Whole Number | Yes | Range: 1 - 50 |
 | Employment Status | `employment_status` | Selection | Yes | Employed / Unemployed / Self-employed |
 | Income Source | `income_source` | Text | No | Visible if employed |
 | Verification Date | `verification_date` | Date | Yes | Range: 2020-01-01 to today |
@@ -210,7 +210,7 @@ Show or hide fields based on other field values (like skip logic in surveys).
 | Disability Type | `disability_type` | Multi-Select | Conditional | Visible if has_disability |
 | Severity Level | `severity_level` | Selection | Conditional | Low / Medium / High / Severe |
 | Support Needed | `support_needed` | Long Text | No | - |
-| Assessment Score | `assessment_score` | Integer | Yes | Range: 0 - 100 |
+| Assessment Score | `assessment_score` | Whole Number | Yes | Range: 0 - 100 |
 
 Disability Type options:
 ```
@@ -226,10 +226,10 @@ Multiple
 
 | Label | Technical Name | Type | Required | Validation |
 |-------|---------------|------|----------|------------|
-| Farm Size (hectares) | `hectares` | Decimal | Yes | Range: 0.1 - 1000 |
+| Farm Size (hectares) | `hectares` | Decimal Number | Yes | Range: 0.1 - 1000 |
 | Certified Farmer | `certified` | Yes/No | Yes | - |
 | Crops Grown | `crops` | Multi-Select | Yes | Maize / Rice / Beans / Vegetables |
-| Livestock Count | `livestock_count` | Integer | No | Range: 0 - 10000 |
+| Livestock Count | `livestock_count` | Whole Number | No | Range: 0 - 10000 |
 | Pest Infestation | `pest_infestation` | Yes/No | Yes | - |
 | Inspector Notes | `inspector_notes` | Long Text | No | - |
 
@@ -290,7 +290,7 @@ Field 2:
 ```
 Field:
   Label: Household size
-  Type: Integer
+  Type: Whole Number
   Required: Yes
   Validation: Range (1 to 50)
   Error: "Household size must be between 1 and 50"
@@ -353,7 +353,7 @@ Some fields support default values configured in the field settings:
 |------|----------------|
 | **Date** | Today, Custom date |
 | **Yes/No** | True, False |
-| **Integer/Decimal** | Numeric value |
+| **Whole Number/Decimal Number** | Numeric value |
 | **Selection** | One of the options |
 
 ## Copying fields from templates
