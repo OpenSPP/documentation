@@ -22,7 +22,7 @@ Change request types define the different kinds of modifications that can be mad
 Change requests in OpenSPP V2 follow a configuration-driven architecture with three layers:
 
 1. **Request Type** - Defines what kind of change can be made (e.g., "Add Member", "Edit Individual")
-2. **Detail Model** - Stores the specific fields for this request type (real Odoo fields, not JSON)
+2. **Detail Model** - Stores the specific fields for this request type as structured, queryable fields (not packed into a single free-form blob)
 3. **Apply Strategy** - Controls how approved changes are written to the registrant record
 
 ```

@@ -316,7 +316,7 @@ Edit a variable and set the **Category** field.
 
 **Can't find Source Field in dropdown?**
 
-The Source Model must be set first. If the field still doesn't appear, it may not be accessible via the ORM.
+The Source Model must be set first. If the field still doesn't appear, it may be a computed field that OpenSPP cannot use as a variable source — ask your administrator.
 
 **Aggregate Filter not working?**
 
