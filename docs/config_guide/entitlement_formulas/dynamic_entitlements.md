@@ -30,12 +30,12 @@ Dynamic entitlements adjust benefit amounts based on beneficiary characteristics
 
 ### Using multiplier fields
 
-The simplest approach uses a multiplier field:
+The simplest approach uses a multiplier field — any integer field on the registrant model:
 
 | Field | Value |
 |-------|-------|
 | Amount | `100` |
-| Multiplier Field | `z_ind_grp_num_individuals` |
+| Multiplier Field | (select an integer field, e.g., household member count) |
 
 ```{figure} /_images/en-us/config_guide/entitlement_formulas/10-multiplier-field-configuration.png
 :alt: Multiplier field configuration in entitlement item
@@ -43,15 +43,13 @@ The simplest approach uses a multiplier field:
 Set the **Multiplier Field** to scale the amount by a beneficiary attribute.
 ```
 
-### Common multiplier fields
+### About multiplier fields
 
-| Field | Description | Typical use |
-|-------|-------------|-------------|
-| `z_ind_grp_num_individuals` | Total household members | Per-capita benefits |
-| `z_ind_grp_num_children` | Number of children | Child grants |
-| `z_ind_grp_num_children_under_5` | Children under 5 | Early childhood programs |
-| `z_ind_grp_num_adults` | Adult members | Labor programs |
-| `z_ind_grp_num_elderly` | Elderly members (60+) | Pension supplements |
+The **Multiplier Field** dropdown shows all integer fields available on the registrant model. Typical deployments create computed fields for member counts by category (e.g., total members, children, adults, elderly). The specific fields available depend on your deployment's configuration.
+
+```{note}
+If you don't see the fields you need, ask your administrator to create computed integer fields on the registrant model via Studio or a custom module.
+```
 
 ### Capping multipliers
 
@@ -60,7 +58,7 @@ Prevent excessive amounts with **Max Multiplier**:
 | Field | Value |
 |-------|-------|
 | Amount | `100` |
-| Multiplier Field | `z_ind_grp_num_individuals` |
+| Multiplier Field | (select household member count field) |
 | Max Multiplier | `8` |
 
 **Result:** Maximum 8 × $100 = $800, even for larger households
@@ -83,7 +81,7 @@ Combine multiple entitlement items for complex calculations:
 | Field | Value |
 |-------|-------|
 | Amount | `50` |
-| Multiplier Field | `z_ind_grp_num_children_under_5` |
+| Multiplier Field | (select children under 5 count field) |
 | Max Multiplier | `5` |
 
 **Result for household with 3 children under 5:**

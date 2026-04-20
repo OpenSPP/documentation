@@ -1,5 +1,4 @@
 ---
-orphan: true
 openspp:
   doc_status: draft
   products: [core]
