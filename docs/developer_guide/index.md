@@ -19,7 +19,6 @@ This guide is for developers who want to extend OpenSPP, integrate it with other
 - **[Custom change request types](change_request_types/index.md)**: Building complex CR types that go beyond Studio's basic support
 - **[API V2](api_v2/index.md)**: Using the official REST API with OAuth 2.0 and consent-based access
 - **[DCI integration](dci/index.md)**: Implementing Digital Convergence Initiative protocols
-- **[Verifiable credentials](verifiable_credentials/index.md)**: W3C Verifiable Credentials and OIDC4VCI support
 - **[Other integrations](integrations/index.md)**: Connecting to OIDC/eSignet, Keycloak, and external APIs
 - **[Security and encryption](security/index.md)**: PII encryption, key management, and security scanning
 - **[CEL](cel/index.md)**: Common Expression Language for scoring, eligibility, and dynamic queries
@@ -39,7 +38,6 @@ custom_managers/index
 change_request_types/index
 api_v2/index
 dci/index
-verifiable_credentials/index
 integrations/index
 security/index
 cel/index
@@ -49,4 +47,4 @@ contributing/index
 testing/index
 ```
 
-<!-- Hidden until ready: drims/index, migration/index -->
+<!-- Hidden until ready: drims/index, migration/index, verifiable_credentials/index -->

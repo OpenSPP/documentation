@@ -77,7 +77,6 @@ API V2 completely replaces the legacy XML-RPC API. New integrations should use A
 ## See also
 
 - {doc}`/developer_guide/dci/index` — DCI protocol integration
-- {doc}`/developer_guide/verifiable_credentials/index` — W3C Verifiable Credentials
 - {doc}`/developer_guide/custom_modules/index` — building custom Odoo modules
 
 ```{toctree}
