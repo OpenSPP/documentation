@@ -11,17 +11,31 @@ openspp:
 Query external DCI-compliant registries from OpenSPP — import births/deaths from a national CRVS, check for duplicate enrollments in an IBR, or look up disability status for eligibility targeting.
 
 ```{warning}
-**Code examples illustrate patterns; class and method names in the actual modules differ from the simplified names used here.** Before copying code, verify against the current source:
+**This page contains significant inaccuracies and is scheduled for a full rewrite.** Specific problems include:
 
-| Module | Actual main service class | File |
-|--------|---------------------------|------|
-| `spp_dci_client` | `DCIClient` | `services/client.py` |
-| `spp_dci_client_crvs` | `CRVSService` with `verify_birth()` | `services/crvs_service.py` |
-| `spp_dci_client_ibr` | `IBRService` with `check_duplication()` | `services/ibr_service.py` |
-| `spp_dci_client_dr` | `DRService` with `get_disability_status()`, `is_pwd()` | `services/dr_service.py` |
+- **Fictional class names** throughout — the doc says `CRVSClient`, `IBRClient`, `DRClient`; the real classes are `CRVSService`, `IBRService`, `DRService`. Every `X = CRVSClient(...)` example will raise `ImportError`.
+- **Wrong `DCIClient` constructor signature** — examples show `DCIClient(data_source)`; the real signature is `DCIClient(data_source, env)`. Missing the `env` argument raises `TypeError`.
+- **Methods claimed that don't exist** — `CRVSService` has `verify_birth()`, not `search_births()`/`search_deaths()`/`import_person()`. `IBRService` has `check_duplication()`, not `check_enrollment()`. `DRService` has `get_disability_status()` and `is_pwd()`, not `has_severe_disability()` or `get_disability_types()`. There is no `authenticate()` method on any client — OAuth happens inside `_make_request()` automatically.
+- **Client is synchronous, not async** — every `async def` / `await` in client examples is wrong. The real `DCIClient` uses plain `httpx.Client` with synchronous method calls. `search_async()` is the DCI-protocol-async endpoint selector; the Python call is still synchronous.
+- **Fictional `spp_dci_indicators` module** — this module does not exist. The entire "DCI-Indicators Integration" section is speculative.
+- **Fictional fields** — the `ProgramMembershipIBRCheck` example with `ibr_checked`, `ibr_duplicate_warning`, etc. is not shipped code.
+- **Wrong `reg_ids` field name** — examples use `partner.registry_id_ids`; the real field is `partner.reg_ids`.
 
-The module-specific client classes (e.g., `CRVSService`) are thin wrappers over the generic `DCIClient`. They don't have an explicit `authenticate()` method — OAuth token acquisition happens internally on each request. Use `spp_dci_indicators` to expose DCI data to CEL expressions once it's installed in your deployment.
+**Until rewritten, use this page only for the high-level pattern. For actual class/method names, constructors, and available operations, read the source in `openspp-modules-v2/spp_dci_client*/services/` directly.**
 ```
+
+## Actual class cheat sheet
+
+The correct classes and methods in the current code:
+
+| Module | Class | Constructor | Key methods |
+|--------|-------|-------------|-------------|
+| `spp_dci_client` | `DCIClient` | `DCIClient(data_source, env)` | `search`, `search_async`, `search_by_id`, `search_by_expression`, `search_by_predicate`, `subscribe`, `unsubscribe`, `txn_status` |
+| `spp_dci_client_crvs` | `CRVSService` | `CRVSService(env, data_source_code="crvs_main")` | `verify_birth(id_type, id_value)`, `check_death(...)`, `subscribe_events(...)`, `process_notification(...)` |
+| `spp_dci_client_ibr` | `IBRService` | `IBRService(data_source, env)` — note reversed order | `check_duplication(partner)`, `search_beneficiary(id_type, id_value)`, `get_enrollment_status(id_type, id_value)` |
+| `spp_dci_client_dr` | `DRService` | `DRService(env, data_source_code="dr_main")` | `get_disability_status(partner)`, `get_functional_assessment(id_type, id_value)`, `is_pwd(partner)`, `sync_disability_data(partner)` |
+
+Note the asymmetry: CRVS and DR services take `(env, code)`; IBR takes `(data_source, env)`. This is a known footgun.
 
 ## Prerequisites
 

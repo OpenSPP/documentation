@@ -11,12 +11,21 @@ openspp:
 Expose OpenSPP registry data to external DCI-compliant systems — a national MIS querying beneficiary data, other programs checking for duplicates, or research platforms pulling anonymized records.
 
 ```{warning}
-**Code examples below illustrate patterns, not exact drop-in implementations.** The actual server is assembled across several modules (`spp_dci`, `spp_dci_server`, `spp_dci_server_social`). The concrete search implementation lives in `spp_dci_server_social.services.search_service.DCISocialSearchService`, not the simplified `SearchService` shown in code examples. Before copying code, check current class names and method signatures against the source modules.
+**This page contains significant inaccuracies and is scheduled for a full rewrite.** Specific problems include:
+
+- **Fictional modules** referenced as real (`spp_dci_server_social`, `spp_dci_api_server`) — the actual search implementation is a stub that returns `501` when the optional `spp_dci_server_social` module is missing
+- **Wrong authentication model** — this page describes OAuth 2.0 client-credentials; the real server uses Bearer token (validated against the `dci.api_tokens` system parameter allowlist) + HTTP Message Signature (draft-cavage), with no OAuth2 token endpoint on the DCI server
+- **Wrong base URL** — code examples show `/api/v2/dci/...`; the real root path is `/dci_api/v1/...` (set in `spp_dci_server/data/fastapi_endpoint_data.xml`)
+- **Wrong endpoint paths** — real endpoints are nested under `/social/registry/` (e.g., `/dci_api/v1/social/registry/sync/search`), not `/registry/`
+- **Class names drift** — the `SearchService` shown is fictional; the real implementation is `DCISocialSearchService` in a separate `spp_dci_server_social` module that isn't present in the current repo
+- **Signing string format is wrong** in multiple places (see {doc}`protocol` for details)
+
+**Until rewritten, use this page only as a high-level conceptual guide.** For actual implementation, read the source in `openspp-modules-v2/spp_dci_server/` directly.
 ```
 
 ## Prerequisites
 
-- The core DCI modules installed: `spp_dci`, `spp_dci_server`, `spp_dci_server_social`
+- The core DCI modules installed: `spp_dci`, `spp_dci_server`
 - A registered signing key (`spp.dci.signing.key`) and sender registry entry (`spp.dci.sender.registry`)
 - Familiarity with FastAPI routers and Odoo's `fastapi` module integration
 - Understanding of {doc}`protocol` — message envelope, HTTP Signature, endpoints

@@ -10,6 +10,20 @@ openspp:
 
 Detailed specifications of the DCI protocol — the three-part message envelope, HTTP Signature format, endpoint paths, query types, data schemas, and field mappings between DCI resources and OpenSPP models.
 
+```{warning}
+**This page contains significant inaccuracies and is scheduled for a full rewrite.** Specific problems include:
+
+- **Wrong base URL and endpoint paths** — docs show `/api/v2/dci/registry/...`; the real paths are `/dci_api/v1/social/registry/...`. The `/.well-known/locations.json` endpoint does not exist.
+- **Fictional OAuth 2.0 token endpoint** on the DCI server — the DCI server uses Bearer token (`dci.api_tokens` allowlist) + HTTP Message Signature, not OAuth2 client credentials.
+- **Wrong signing string format** — docs show `digest: SHA-256=<digest>`; the real signing string is `digest: <digest>` (no `SHA-256=` prefix). Token expires in 5 minutes (`created + 300`), not 1 hour. Digest uses compact JSON (`separators=(",", ":")`), not default whitespace.
+- **Wrong registry type values** — docs show `"SOCIAL_REGISTRY"`; the real wire value is `"ns:org:RegistryType:Social"` (namespaced URI, from `spp_dci/schemas/constants.py:RegistryType`).
+- **Wrong error codes** — docs show uppercase `ERR_INVALID_QUERY`, `ERR_INVALID_SIGNATURE`; the real codes are dotted lowercase (`rjct.search_criteria.invalid`, `err.signature.invalid`, etc.) from the `SearchStatusReasonCode`, `MsgHeaderStatusReasonCode` enums.
+- **Fictional `DCIClient` Python example** — the hand-rolled class at the bottom of this page differs from the real `odoo.addons.spp_dci_client.services.client.DCIClient` (different constructor, different methods, synchronous vs async).
+- **Receipt and bulk-upload endpoints missing** — real endpoints `/social/registry/receipt` and `/social/registry/upload/search` are not documented.
+
+**Until rewritten, treat the conceptual sections (message envelope structure, HTTP Signature concept, interaction patterns) as correct, but verify every field name, URL, and code value against the source in `openspp-modules-v2/spp_dci/` and `openspp-modules-v2/spp_dci_server/`.**
+```
+
 ## Prerequisites
 
 - Familiarity with OAuth 2.0 client credentials flow

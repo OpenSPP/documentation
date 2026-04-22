@@ -304,45 +304,56 @@ DCI uses JSON-LD schemas for data exchange:
 
 ## Authentication and Security
 
-DCI supports two authentication methods:
+OpenSPP's DCI server uses **two complementary authentication mechanisms** on every request:
 
-### OAuth 2.0 Client Credentials
+### 1. Bearer token (allowlist)
 
-Used for bearer token authentication:
+Every request must carry `Authorization: Bearer <token>`. The server validates the token against an allowlist configured in the `dci.api_tokens` Odoo system parameter (comma-separated values). This is a pre-shared token scheme, not an OAuth 2.0 flow — there is no `/oauth/token` endpoint on the DCI server that issues tokens dynamically. Administrators rotate tokens by updating the system parameter.
+
+### 2. HTTP Message Signature (draft-cavage)
+
+Every request must also carry a signed DCI message envelope. The `signature` field in the envelope is an HTTP Message Signatures–style parameter string:
+
+```
+namespace="dci", kidId="<sender_id>|<key_id>|<algorithm>",
+algorithm="ed25519", created="<unix_ts>", expires="<unix_ts>",
+headers="(created) (expires) digest", signature="<base64>"
+```
+
+The signing string covers `(created)`, `(expires)`, and the SHA-256 `digest` of the compact-JSON-serialized `{header, message}` pair. The server verifies the signature using the sender's registered public key (from `spp.dci.sender.registry`) or by fetching the sender's JWKS.
+
+For the exact signing string format, digest computation, and signature-header grammar, see {doc}`protocol`.
+
+### Clients may use OAuth 2.0 to authenticate to external registries
+
+When **OpenSPP acts as a DCI client** (querying an external registry), the `spp.dci.data.source` record may be configured to use OAuth 2.0 client-credentials to obtain a bearer token from the external registry's authorization server, then include that token on outbound DCI requests. This is the external registry's choice, not a DCI-spec requirement. See {doc}`client_role`.
+
+### Base URL and endpoint prefix
+
+The DCI server mounts under the FastAPI `root_path` `/dci_api/v1` (configured in `spp_dci_server/data/fastapi_endpoint_data.xml`). Registry endpoints are then nested under `/social/registry/`, giving full URLs like:
+
+- `POST https://openspp.example.org/dci_api/v1/social/registry/sync/search`
+- `GET https://openspp.example.org/dci_api/v1/.well-known/jwks.json`
+
+### Illustrative request
 
 ```bash
-# Get access token
-curl -X POST https://openspp.example.org/api/v2/dci/oauth2/client/token \
-  -d "grant_type=client_credentials" \
-  -d "client_id=external_system" \
-  -d "client_secret=secret"
-
-# Use token for API calls
-curl -X POST https://openspp.example.org/api/v2/dci/registry/sync/search \
-  -H "Authorization: Bearer {token}" \
-  -d @search_request.json
+# NOTE: requires a signed DCI envelope body; this is a simplified example
+curl -X POST https://openspp.example.org/dci_api/v1/social/registry/sync/search \
+  -H "Authorization: Bearer <your-allowlisted-token>" \
+  -H "Content-Type: application/json" \
+  -d @signed_search_request.json
 ```
 
-### HTTP Signatures
+For the complete signed-envelope structure, see {doc}`protocol`.
 
-Used for message-level signing:
+## What's next
 
-```python
-# Messages are signed with sender's private key
-signature = sign_message(header, message, private_key)
+- {doc}`server_role` — implement OpenSPP as a DCI server (note: that page has accuracy issues; see its banner)
+- {doc}`client_role` — integrate with external DCI registries (note: that page has accuracy issues; see its banner)
+- {doc}`protocol` — detailed protocol specifications
 
-# Receiver verifies using sender's public key from JWKS
-public_key = fetch_jwks(sender_id)
-verify_signature(signature, header, message, public_key)
-```
-
-## Next Steps
-
-- **{doc}`server_role`** - Implement OpenSPP as a DCI server
-- **{doc}`client_role`** - Integrate with external DCI registries
-- **{doc}`protocol`** - Detailed protocol specifications
-
-## References
+## See also
 
 - [DCI API Standards](https://github.com/spdci/api-standards)
 - [G2P Connect Specifications](https://g2pconnect.cdpi.dev)
