@@ -6,7 +6,20 @@ openspp:
 
 # OpenSPP as DCI Server
 
-This guide is for **developers** implementing OpenSPP as a DCI server to expose registry data to external systems.
+**For: developers**
+
+Expose OpenSPP registry data to external DCI-compliant systems — a national MIS querying beneficiary data, other programs checking for duplicates, or research platforms pulling anonymized records.
+
+```{warning}
+**Code examples below illustrate patterns, not exact drop-in implementations.** The actual server is assembled across several modules (`spp_dci`, `spp_dci_server`, `spp_dci_server_social`). The concrete search implementation lives in `spp_dci_server_social.services.search_service.DCISocialSearchService`, not the simplified `SearchService` shown in code examples. Before copying code, check current class names and method signatures against the source modules.
+```
+
+## Prerequisites
+
+- The core DCI modules installed: `spp_dci`, `spp_dci_server`, `spp_dci_server_social`
+- A registered signing key (`spp.dci.signing.key`) and sender registry entry (`spp.dci.sender.registry`)
+- Familiarity with FastAPI routers and Odoo's `fastapi` module integration
+- Understanding of {doc}`protocol` — message envelope, HTTP Signature, endpoints
 
 ## Overview
 
@@ -642,8 +655,22 @@ dci.callback_base_url = https://openspp.example.org/api/v2/dci
 </odoo>
 ```
 
-## See Also
+## Common mistakes
 
-- {doc}`client_role` - OpenSPP as DCI client
-- {doc}`protocol` - DCI protocol details
+**Forgetting to verify the incoming HTTP Signature.** Every DCI request includes a signature covering `(created) (expires) digest`. If you skip verification (or trust only the OAuth token), the server accepts forged or replayed messages. The signature middleware in `spp_dci_server/middleware/signature.py` handles this — don't bypass it.
+
+**Using OAuth token alone for authorization.** OAuth 2.0 verifies the caller is an authenticated client, but DCI requires per-sender verification via the sender registry (`spp.dci.sender.registry`). The `sender_id` in the header must match a registered sender with an active public key.
+
+**Returning unfiltered registry data.** Use `DCIConsentAdapter` (`spp_dci_server/services/consent_adapter.py`) to filter responses based on consent and the sender's legal basis. Returning the raw `res.partner` fields bypasses privacy controls.
+
+**Treating async search as sync.** The `/registry/search` endpoint returns `202 Accepted` with a transaction ID. The caller polls `/registry/txn/status` or waits for a callback to `sender_uri`. Do not block the request thread waiting for results.
+
+**Storing signing key private material in cleartext.** Signing keys should be stored encrypted at rest or in a secrets manager. The `spp.dci.signing.key` model has hooks for this — follow the existing pattern in `spp_dci/models/signing_key.py`.
+
+**Hardcoding `sender_id` or endpoint URLs.** Use Odoo system parameters (`dci.sender_id`, `dci.callback_base_url`) so deployments can override them per environment.
+
+## See also
+
+- {doc}`client_role` — OpenSPP as DCI client
+- {doc}`protocol` — DCI protocol details (message envelope, endpoints, signatures)
 - [DCI API Standards](https://github.com/spdci/api-standards)

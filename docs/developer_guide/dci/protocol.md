@@ -6,7 +6,15 @@ openspp:
 
 # DCI Protocol Details
 
-This guide is for **developers** who need detailed specifications of the DCI protocol, message formats, endpoints, and authentication.
+**For: developers**
+
+Detailed specifications of the DCI protocol — the three-part message envelope, HTTP Signature format, endpoint paths, query types, data schemas, and field mappings between DCI resources and OpenSPP models.
+
+## Prerequisites
+
+- Familiarity with OAuth 2.0 client credentials flow
+- Basic understanding of HTTP message signatures (RFC 9421 / draft-cavage)
+- Familiarity with JSON-LD (DCI data schemas use JSON-LD)
 
 ## Message Envelope Structure
 
@@ -569,8 +577,8 @@ Response (200 OK):
 | `identifier[].identifier_value` | `registry_id_ids.value` | Direct mapping |
 | `name.given_name` | `given_name` | Direct mapping |
 | `name.surname` | `family_name` | Direct mapping |
-| `name.prefix` | `name_prefix` | May need to add field |
-| `name.suffix` | `name_suffix` | May need to add field |
+| `name.prefix` | — | Not mapped; `res.partner` has no prefix field. Store in `addl_name` or extend the model if needed. |
+| `name.suffix` | — | Not mapped; `res.partner` has no suffix field. Store in `addl_name` or extend the model if needed. |
 | `sex` | `gender_id.code` | Vocabulary mapping |
 | `birth_date` | `birthdate` | Date format conversion |
 | `death_date` | `deathdate` | Date format conversion |
@@ -783,6 +791,22 @@ persons = result["message"]["search_response"][0]["data"]["reg_records"]
 print(f"Found {len(persons)} persons")
 ```
 
+## Common mistakes
+
+**Wrong signing string format.** The HTTP Signature signs `(created): <ts>\n(expires): <ts>\ndigest: SHA-256=<digest>` — newline-separated, with the exact `(created)`, `(expires)`, and `digest` header labels. Getting this wrong produces signatures the receiver rejects. Always build the signing string using the same helper that the receiver uses for verification.
+
+**Using `iat` or `nbf` claims instead of `created`/`expires`.** DCI uses HTTP Message Signatures, not JWT. The timestamps are `created` and `expires` on the Signature header, not JWT `iat`/`nbf`. Do not confuse the two.
+
+**Mixing up `sender_id` and `receiver_id` in responses.** In a response, the original `sender_id` and `receiver_id` are **swapped** — your server's ID becomes the sender, the original caller becomes the receiver. Copying the request header verbatim is wrong.
+
+**Using sync search for large result sets.** Synchronous search (`POST /registry/sync/search`) is meant for quick lookups (a few records). For large result sets, use async search (`POST /registry/search`) which returns 202 Accepted and delivers results via a callback.
+
+**Forgetting to include `transaction_id`.** Every message body includes a `transaction_id` that ties request and response together (and is needed for async status lookups). Generate a fresh UUID per request.
+
+**Sending unsigned requests to DCI servers.** A DCI-compliant server rejects unsigned requests with 401. Even if your deployment also supports bearer-token-only auth, DCI requires the HTTP Signature for interoperability.
+
+**Not caching JWKS keys with a sensible TTL.** External JWKS endpoints may enforce rate limits. Cache fetched keys (minutes to hours), but honor key rotation — listen for `kid` values you don't recognize and re-fetch.
+
 ## References
 
 - [DCI API Standards Repository](https://github.com/spdci/api-standards)
@@ -791,8 +815,8 @@ print(f"Found {len(persons)} persons")
 - [HTTP Signature Specification](https://datatracker.ietf.org/doc/html/draft-cavage-http-signatures)
 - [JSON-LD Specification](https://json-ld.org/)
 
-## See Also
+## See also
 
-- {doc}`overview` - DCI overview and architecture
-- {doc}`server_role` - OpenSPP as DCI server
-- {doc}`client_role` - OpenSPP as DCI client
+- {doc}`overview` — DCI overview and architecture
+- {doc}`server_role` — OpenSPP as DCI server
+- {doc}`client_role` — OpenSPP as DCI client

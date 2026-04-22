@@ -6,7 +6,15 @@ openspp:
 
 # DCI Overview
 
-This guide is for **developers** who need to understand the Digital Convergence Initiative (DCI) architecture and how OpenSPP implements it.
+**For: developers**
+
+Understand the Digital Convergence Initiative (DCI) architecture and how OpenSPP implements it — the three-part message envelope, HTTP Signature authentication, registry types, and interaction patterns (sync/async search, subscribe/notify).
+
+## Prerequisites
+
+- Familiarity with REST APIs and JSON
+- Basic understanding of OAuth 2.0 client credentials flow
+- Optional: familiarity with HTTP Message Signatures (RFC 9421 / draft-cavage)
 
 ## What is DCI?
 

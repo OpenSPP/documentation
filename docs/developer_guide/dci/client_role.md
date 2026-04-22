@@ -6,7 +6,29 @@ openspp:
 
 # OpenSPP as DCI Client
 
-This guide is for **developers** implementing OpenSPP as a DCI client to consume data from external registries.
+**For: developers**
+
+Query external DCI-compliant registries from OpenSPP — import births/deaths from a national CRVS, check for duplicate enrollments in an IBR, or look up disability status for eligibility targeting.
+
+```{warning}
+**Code examples illustrate patterns; class and method names in the actual modules differ from the simplified names used here.** Before copying code, verify against the current source:
+
+| Module | Actual main service class | File |
+|--------|---------------------------|------|
+| `spp_dci_client` | `DCIClient` | `services/client.py` |
+| `spp_dci_client_crvs` | `CRVSService` with `verify_birth()` | `services/crvs_service.py` |
+| `spp_dci_client_ibr` | `IBRService` with `check_duplication()` | `services/ibr_service.py` |
+| `spp_dci_client_dr` | `DRService` with `get_disability_status()`, `is_pwd()` | `services/dr_service.py` |
+
+The module-specific client classes (e.g., `CRVSService`) are thin wrappers over the generic `DCIClient`. They don't have an explicit `authenticate()` method — OAuth token acquisition happens internally on each request. Use `spp_dci_indicators` to expose DCI data to CEL expressions once it's installed in your deployment.
+```
+
+## Prerequisites
+
+- The relevant client modules installed for the registry type you're integrating with (e.g., `spp_dci_client_crvs` for CRVS)
+- A configured `spp.dci.data.source` record for each external registry (connection URL, OAuth credentials, signing key)
+- A registered signing key (`spp.dci.signing.key`) — required for outbound message signing
+- Familiarity with {doc}`protocol` — message envelope, HTTP Signature, query types
 
 ## Overview
 
@@ -622,65 +644,51 @@ is_eligible = client.has_severe_disability(disability_info)
 
 ## DCI-Indicators Integration
 
-Integrate DCI data with OpenSPP's indicator system for CEL-based eligibility.
-
-### Available Metrics
-
-```python
-# spp_dci_indicators/services/dci_metrics.py
-
-# Register DCI metrics for CEL expressions
-METRICS = {
-    'dci.crvs.is_alive': {
-        'source': 'crvs',
-        'type': 'boolean',
-        'description': 'Person is alive per CRVS',
-        'ttl': 86400  # 24 hours
-    },
-    'dci.ibr.is_enrolled': {
-        'source': 'ibr',
-        'type': 'boolean',
-        'description': 'Enrolled in any IBR program',
-        'ttl': 3600  # 1 hour
-    },
-    'dci.ibr.program_count': {
-        'source': 'ibr',
-        'type': 'number',
-        'description': 'Number of active enrollments',
-        'ttl': 3600
-    },
-    'dci.dr.has_disability': {
-        'source': 'dr',
-        'type': 'boolean',
-        'description': 'Has any registered disability',
-        'ttl': 86400
-    },
-    'dci.dr.disability_level': {
-        'source': 'dr',
-        'type': 'number',
-        'description': 'Highest disability severity level (1-4)',
-        'ttl': 86400
-    }
-}
+```{note}
+**This section describes the design pattern for exposing DCI data through CEL expressions.** The specific metric names below (`dci.crvs.is_alive`, `dci.ibr.is_enrolled`, etc.) are illustrative — they are not currently registered as CEL variables in the `spp_dci_indicators` module at the time of writing. Check the current module for the actual registered variable names before using them in eligibility expressions.
 ```
 
-### CEL Expressions with DCI Data
+A common pattern for integrating DCI data with OpenSPP's eligibility system is to register CEL variables that lazily query external registries. The variable compute function would:
+
+1. Look up the registrant's external identifier (e.g., national ID)
+2. Query the external registry via the appropriate client service (`CRVSService`, `IBRService`, `DRService`)
+3. Cache the result with a TTL appropriate for the data freshness requirement
+
+### Example pattern
 
 ```python
-# Example eligibility expressions using DCI metrics
+# Illustrative — check actual spp_dci_indicators for the real implementation
+
+# A variable compute function might look like:
+def compute_ibr_is_enrolled(partner, env):
+    """Check if partner is enrolled in any IBR program."""
+    data_source = env["spp.dci.data.source"].search(
+        [("registry_type", "=", "ibr")], limit=1
+    )
+    if not data_source:
+        return False
+    result = IBRService(data_source, env).check_duplication(partner)
+    return bool(result.get("enrollments"))
+```
+
+### CEL expression shape (illustrative)
+
+Once variables are registered, program eligibility can reference them. The exact variable names depend on the registration:
+
+```python
+# Example eligibility expressions (variable names are illustrative)
 
 # PWD Cash Transfer Program
-"dci.dr.has_disability == true and dci.dr.disability_level >= 3 and dci.ibr.is_enrolled == false"
+# "<dci-disability-variable> == true AND <dci-severity-variable> >= 3 AND <ibr-enrolled-variable> == false"
 
 # Senior Citizen Allowance
-"dci.crvs.is_alive == true and age_years(r.birthdate) >= 60"
+# "age_years(r.birthdate) >= 60"  # + any required CRVS verification variable
 
 # Poverty-targeted (exclude already enrolled)
-"poverty_score >= 0.7 and dci.ibr.program_count == 0"
-
-# Household with disabled member
-"members.exists(m, m.dci.dr.has_disability == true)"
+# "poverty_score >= 0.7 AND <ibr-program-count-variable> == 0"
 ```
+
+For the canonical CEL variable mechanism and naming conventions, see {doc}`/developer_guide/cel/index`.
 
 ## Testing
 
@@ -737,8 +745,28 @@ class TestCRVSClient(TransactionCase):
         self.assertEqual(births[0]['name']['given_name'], 'John')
 ```
 
-## See Also
+## Common mistakes
 
-- {doc}`server_role` - OpenSPP as DCI server
-- {doc}`protocol` - DCI protocol details
+**Expecting `authenticate()` on client classes.** Neither `DCIClient` nor the module-specific service classes (`CRVSService`, `IBRService`, `DRService`) expose an explicit `authenticate()` method. OAuth token acquisition happens inside `_make_request()` on each call and is cached. You do not need to call authenticate manually.
+
+**Using wrong method names on service classes.** The service classes have domain-specific methods that differ from the generic client:
+
+- `CRVSService.verify_birth(identifier_type, identifier_value)` — not `search_births()`
+- `IBRService.check_duplication(partner)` — not `check_enrollment()`
+- `IBRService.search_beneficiary(identifier_type, identifier_value)` and `get_enrollment_status(...)` for richer lookups
+- `DRService.get_disability_status(partner)` and `is_pwd(partner)` — not `has_severe_disability()` or `get_disability_types()`
+
+**Hardcoding data source codes.** The service classes default to well-known codes like `crvs_main` and `dr_main`. For multi-registry deployments, pass the explicit `data_source_code` parameter so the service looks up the correct `spp.dci.data.source` record.
+
+**Ignoring OAuth token expiry across processes.** Tokens are cached per-process. If you're calling the client from a long-running queue job or a worker pool, each process will refresh its own token. For high-volume operations, consider a shared token cache (Redis or similar) rather than naive per-process caching.
+
+**Processing DCI responses synchronously in request handlers.** Async search returns 202 Accepted and delivers results via a callback. Don't block a user-facing request while waiting for an async DCI response — enqueue a job and notify the user when the callback arrives.
+
+**Not validating the response signature.** External registries sign their responses the same way you sign outgoing requests. Your client must verify the signature against the registry's JWKS. The `DCIClient` base class handles this by default — don't bypass it.
+
+## See also
+
+- {doc}`server_role` — OpenSPP as DCI server
+- {doc}`protocol` — DCI protocol details (message envelope, endpoints, signatures)
+- {doc}`/developer_guide/cel/index` — CEL expressions for program eligibility
 - [DCI API Standards](https://github.com/spdci/api-standards)
