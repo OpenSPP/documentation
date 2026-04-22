@@ -79,22 +79,37 @@ Every identifier has two required fields:
 
 ### Namespace URI Format
 
-Namespaces use URN (Uniform Resource Name) format:
+```{important}
+**OpenSPP-specific format:** identifier system URIs in OpenSPP use the format `urn:openspp:vocab:id-type#<code>`, where `<code>` is a registered vocabulary code (e.g., `national_id`, `passport`, `refugee_id`). The `<code>` part determines what kind of identifier this is. The full URI must match a row in the `spp.vocabulary.code` table — otherwise the API returns 422.
+
+The conceptual examples below (`urn:gov:ph:psa:national-id`, etc.) illustrate the *idea* of namespaced identifiers as you'd find in FHIR or G2P Connect documentation. **In an actual OpenSPP API request, replace these with `urn:openspp:vocab:id-type#<code>`** for the `<code>` your administrator has registered.
+
+When constructing URLs, the `#` character MUST be URL-encoded as `%23` — it is the URL fragment delimiter, and unencoded `#` will be silently stripped.
+```
+
+The conceptual URN form for namespaced identifiers is:
 
 ```
 urn:{authority}:{path}
 ```
 
-**Examples:**
+**Conceptual examples** (illustrative — not the actual OpenSPP format):
 
-| Type | Namespace URI |
+| Type | Conceptual namespace URI |
 |------|---------------|
 | Philippine National ID | `urn:gov:ph:psa:national-id` |
 | Philippine PhilHealth | `urn:gov:ph:philhealth` |
 | Kenya National ID | `urn:gov:ke:nira:national-id` |
-| OpenSPP Internal | `urn:openspp:registry:individual` |
 | ISO Gender Code | `urn:iso:std:iso:5218` |
 | FAO Crop Vocabulary | `urn:fao:agrovoc` |
+
+**Actual OpenSPP system URIs** (use these in requests):
+
+| Type | Actual OpenSPP system URI |
+|------|---------------------------|
+| National ID (default seed) | `urn:openspp:vocab:id-type#national_id` |
+| Passport | `urn:openspp:vocab:id-type#passport` |
+| ID type configured by your admin | `urn:openspp:vocab:id-type#<code>` |
 
 ### Multiple Identifiers
 
@@ -151,10 +166,16 @@ Use the pipe (`|`) separator in the URL:
 GET /api/v2/spp/Individual/{system}|{value}
 ```
 
-**URL-encode the system** if it contains special characters:
+**URL-encode the system** if it contains special characters. For OpenSPP URIs, the `#` MUST be encoded as `%23`:
 
 ```bash
-# Original
+# Actual OpenSPP format (the # is the critical character)
+urn:openspp:vocab:id-type#national_id|IND-001
+
+# URL-encoded (use this in requests)
+urn:openspp:vocab:id-type%23national_id|IND-001
+
+# Conceptual / FHIR-style (illustrative only)
 urn:gov:ph:psa:national-id|PH-123456789
 
 # URL-encoded

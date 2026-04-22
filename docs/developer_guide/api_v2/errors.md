@@ -8,16 +8,30 @@ openspp:
 
 **For: developers**
 
-The RFC 9457 Problem Detail format used for all API errors, HTTP status codes, and patterns for building resilient clients.
+HTTP status codes returned by API V2, the response body shape for errors, and patterns for building resilient clients.
 
 ## Prerequisites
 
 - Familiarity with HTTP status codes
-- Understanding of [RFC 9457 Problem Details for HTTP APIs](https://www.rfc-editor.org/rfc/rfc9457.html)
+- Familiarity with `requests` (Python) or equivalent HTTP library
 
 ## Error Response Format
 
-Standard API errors use **RFC 9457 Problem Detail** format:
+```{important}
+**Current implementation:** error responses contain a single `detail` field with a human-readable message — the standard FastAPI `HTTPException` format. Always rely on the HTTP status code and the `detail` string.
+
+**Future:** the codebase contains a `ProblemDetail` schema aligned with [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457.html) that will replace this when an exception handler is wired in. The richer examples below (with `type`, `title`, `errors` fields) describe the planned format. Write your client to handle the current `{detail}` shape — the planned format is backward-compatible (`detail` will still be present).
+```
+
+What you actually get today:
+
+```json
+{
+  "detail": "Individual not found"
+}
+```
+
+The planned RFC 9457 Problem Detail format will look like:
 
 ```json
 {

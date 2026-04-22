@@ -68,21 +68,19 @@ import requests
 
 
 class OpenSPPAPIError(Exception):
-    """Raised when the API returns an RFC 9457 Problem Detail error."""
+    """Raised when the API returns a 4xx/5xx response."""
 
-    def __init__(self, problem: dict, status_code: int):
-        self.type = problem.get("type")
-        self.title = problem.get("title")
-        self.status = problem.get("status", status_code)
-        self.detail = problem.get("detail")
-        self.errors = problem.get("errors", [])
-        super().__init__(f"{self.title}: {self.detail}")
+    def __init__(self, status: int, detail: str, body: dict | None = None):
+        self.status = status
+        self.detail = detail
+        self.body = body or {}
+        super().__init__(f"HTTP {status}: {detail}")
 ```
 
 **Key patterns to notice:**
 
-- The exception stores the full Problem Detail (`type`, `title`, `status`, `detail`, `errors`) so callers can inspect individual field errors — see {doc}`errors` for the format.
-- `urllib.parse.quote` is imported for URL-encoding namespace URIs like `urn:gov:ph:psa:national-id` (the `:` characters must be encoded).
+- API V2 currently returns errors in FastAPI's default shape: `{"detail": "..."}`. The exception captures the HTTP status and the detail message — that's what every error response gives you today. See {doc}`errors` for the planned richer Problem Detail format.
+- `urllib.parse.quote` is imported for URL-encoding namespace URIs. Real OpenSPP identifier systems contain `#` (e.g., `urn:openspp:vocab:id-type#national_id`), and `#` is the URL fragment delimiter — it MUST be encoded as `%23` or the server only sees the part before it.
 
 ## Step 2: token acquisition and caching
 
@@ -133,6 +131,7 @@ class OpenSPPClient:
 - The token is cached in memory and only refreshed when it's within 60 seconds of expiring. Production clients may want a more sophisticated strategy (e.g., refresh on 401, share tokens across workers).
 - `timeout=30` is essential — never make requests without a timeout, or a stalled server can hang your client indefinitely.
 - Each HTTP call fetches fresh headers via `_headers()`, which transparently refreshes the token if needed.
+- The OAuth endpoint accepts JSON body, form-encoded body, or HTTP Basic auth (per RFC 6749, form-encoded is the standard). JSON works for OpenSPP — we use it for simplicity. Default token lifetime is 24 hours (configurable per deployment).
 
 ## Step 3: generic request helper with error handling
 
@@ -148,7 +147,7 @@ Add a helper that routes every request through a single code path for error hand
     ) -> tuple[dict, dict]:
         """Issue an authenticated request. Returns (body, headers).
 
-        Raises OpenSPPAPIError for 4xx/5xx responses with RFC 9457 bodies.
+        Raises OpenSPPAPIError for 4xx/5xx responses.
         """
         response = requests.request(
             method,
@@ -161,10 +160,12 @@ Add a helper that routes every request through a single code path for error hand
 
         if response.status_code >= 400:
             try:
-                problem = response.json()
+                body = response.json()
+                detail = body.get("detail", str(body))
             except ValueError:
-                problem = {"title": "HTTP Error", "detail": response.text}
-            raise OpenSPPAPIError(problem, response.status_code)
+                body = None
+                detail = response.text or response.reason
+            raise OpenSPPAPIError(response.status_code, detail, body)
 
         return response.json(), dict(response.headers)
 ```
@@ -172,7 +173,7 @@ Add a helper that routes every request through a single code path for error hand
 **Key patterns to notice:**
 
 - The helper returns `(body, headers)` as a tuple — consent information is only in headers (`X-Consent-Status`, `X-Consent-Scope`), so callers need access to both.
-- On failure, we try to parse the body as a Problem Detail JSON and raise `OpenSPPAPIError`. If the body isn't JSON (e.g., a 502 from a proxy), we wrap the text in a synthetic problem.
+- On failure, we extract `detail` from the JSON body (FastAPI's standard error key) and raise `OpenSPPAPIError`. If the body isn't JSON (e.g., a 502 from a proxy), we fall back to the response text.
 
 ## Step 4: read by external identifier
 
@@ -183,8 +184,8 @@ Now the first real endpoint. External identifiers use `system|value` format, wit
         """Fetch an Individual by external identifier.
 
         Args:
-            system: Namespace URI, e.g., "urn:gov:ph:psa:national-id"
-            value: Identifier value, e.g., "PH-123456789"
+            system: Namespace URI, e.g., "urn:openspp:vocab:id-type#national_id"
+            value: Identifier value, e.g., "IND-001"
 
         Returns:
             The Individual resource. Check ``_consent`` key for consent status.
@@ -233,17 +234,22 @@ Searches use query parameters and return a `SearchResult` envelope:
         return body
 
     def iter_search_individuals(self, **kwargs) -> "list[dict]":
-        """Iterate all pages of a search, collecting results."""
+        """Iterate all pages of a search by following ``links.next``."""
         results = []
-        offset = 0
-        count = kwargs.pop("count", 50)
+        page = self.search_individuals(**kwargs)
 
         while True:
-            page = self.search_individuals(count=count, offset=offset, **kwargs)
             results.extend(page["data"])
-            if len(page["data"]) < count or page["meta"]["total"] <= offset + count:
+
+            next_url = page.get("links", {}).get("next")
+            if not next_url:
                 break
-            offset += count
+
+            # Follow the absolute path the server returned (it includes
+            # the correct _offset, which may differ from a naive +count
+            # when consent filtering is applied).
+            path = next_url.split(self.base_url, 1)[-1]
+            page, _ = self._request("GET", path)
 
         return results
 ```
@@ -251,7 +257,8 @@ Searches use query parameters and return a `SearchResult` envelope:
 **Key patterns to notice:**
 
 - The `_count` and `_offset` parameters are prefixed with underscore per FHIR convention; resource-specific filters like `name` and `birthdate` are not.
-- `iter_search_individuals` demonstrates safe pagination. Stop when you've either received fewer results than requested (last page) or reached the reported total.
+- The Individual search endpoint requires the `individual:read` scope (not a separate `individual:search`). See {doc}`authentication` for the full scope matrix.
+- `iter_search_individuals` follows `links.next` rather than incrementing offset locally. This matters when consent filtering is active: the server may skip records the client cannot see, and only the returned `next` URL has the correct offset.
 
 ## Step 6: create an individual
 
@@ -284,7 +291,8 @@ Creates use `POST` with the resource body. On success, the response is the creat
 **Key patterns to notice:**
 
 - The request body uses `"type": "Individual"` (not `"resourceType"`) — API V2 uses the simpler modernized format (see {doc}`overview`).
-- At least one identifier is required to create an Individual. Provide the strongest identifier you have (e.g., national ID) — additional identifiers can be added later via PATCH.
+- The server responds with `201 Created` and a `Location` header pointing to the new resource (e.g., `/api/v2/spp/Individual/urn:openspp:vocab:id-type%23national_id|IND-001`). For a richer client, capture the `Location` header from the response — it gives you the canonical URL of the resource you just created.
+- At least one identifier is required, and its `system` URI must already exist as a vocabulary code in the deployment. Otherwise you'll get a 422 with a message like `Invalid identifier type: system='...'`.
 
 ## Step 7: test the client
 
@@ -330,13 +338,22 @@ class OpenSPPClientTest(unittest.TestCase):
         second = self.client._get_token()
         self.assertEqual(first, second)
 
-    def test_get_individual_not_found_raises(self):
-        """Looking up a non-existent identifier raises OpenSPPAPIError(404)."""
+    # Use a vocabulary code that exists in your deployment.
+    # The default seeds include "national_id" — adjust if your deployment uses a different code.
+    ID_SYSTEM = "urn:openspp:vocab:id-type#national_id"
+
+    def test_get_individual_missing_raises(self):
+        """A missing identifier raises OpenSPPAPIError.
+
+        The status will be 404 if the API client has require_consent=False,
+        or 403 if require_consent=True (the default — masks 404 to prevent
+        enumeration attacks). Both indicate "no accessible record."
+        """
         with self.assertRaises(OpenSPPAPIError) as ctx:
             self.client.get_individual(
-                "urn:openspp:test", f"nonexistent-{uuid.uuid4()}"
+                self.ID_SYSTEM, f"nonexistent-{uuid.uuid4()}"
             )
-        self.assertEqual(ctx.exception.status, 404)
+        self.assertIn(ctx.exception.status, (403, 404))
 
     def test_search_returns_envelope(self):
         """Search returns a SearchResult envelope with data/meta/links."""
@@ -347,12 +364,16 @@ class OpenSPPClientTest(unittest.TestCase):
         self.assertIn("total", result["meta"])
 
     def test_create_and_read_round_trip(self):
-        """Created resource can be read back by identifier."""
-        system = "urn:openspp:test:tutorial"
-        value = f"tutorial-{uuid.uuid4()}"
+        """Created resource can be read back by identifier.
+
+        Requires the vocabulary code in ID_SYSTEM to exist in the deployment
+        AND the API client to have ``individual:create`` and ``individual:read``
+        scopes. See {doc}`authentication` for scope setup.
+        """
+        value = f"tutorial-{uuid.uuid4().hex[:12]}"
 
         created = self.client.create_individual(
-            identifier_system=system,
+            identifier_system=self.ID_SYSTEM,
             identifier_value=value,
             given_name="Tutorial",
             family_name="Example",
@@ -360,7 +381,7 @@ class OpenSPPClientTest(unittest.TestCase):
         )
         self.assertEqual(created["type"], "Individual")
 
-        fetched = self.client.get_individual(system, value)
+        fetched = self.client.get_individual(self.ID_SYSTEM, value)
         self.assertEqual(fetched["name"]["given"], "Tutorial")
 
 
@@ -401,11 +422,16 @@ client = OpenSPPClient(
 results = client.search_individuals(name="Santos", count=10)
 print(f"Found {results['meta']['total']} matches")
 
-# Read
+# Read by external identifier — the system URI must match a vocabulary code
+# registered in your deployment. The default seeds include "national_id".
 individual = client.get_individual(
-    "urn:gov:ph:psa:national-id", "PH-123456789"
+    "urn:openspp:vocab:id-type#national_id", "IND-001"
 )
 print(individual["name"])
+```
+
+```{tip}
+Identifier system URIs in OpenSPP follow the format `urn:openspp:vocab:id-type#<code>`, where `<code>` matches a registered vocabulary code (see `spp.vocabulary.code` in your deployment). Ask your administrator which codes are available, or query the vocabulary endpoint if `spp_api_v2_vocabulary` is installed.
 ```
 
 ## What's next
