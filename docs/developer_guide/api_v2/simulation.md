@@ -10,6 +10,10 @@ openspp:
 
 Run and analyze scenario-based program simulations through the API.
 
+```{warning}
+**Known issue:** The `simulation:write` scope is checked by every create/update/archive endpoint but cannot be granted — `write` is not a valid scope action in OpenSPP (the standard set is `read`, `search`, `create`, `update`, `delete`, `all`). Until the module is fixed, all create/update/archive operations on scenarios will return 403. Read-only operations (`simulation:read`) and execution (`simulation:execute`) work normally. Track this in the OpenSPP modules repo.
+```
+
 ## Overview
 
 The Simulation API (`spp_api_v2_simulation`) enables scenario-based testing of program designs before implementation. You can:

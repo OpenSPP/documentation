@@ -10,6 +10,10 @@ openspp:
 
 Push and pull external data for OpenSPP's variable caching system through the Data API extension.
 
+```{warning}
+**Known issue:** The `data:write` scope is checked by `POST /Data/push` and `POST /Data/invalidate` but cannot be granted — `write` is not a valid scope action in OpenSPP (the standard set is `read`, `search`, `create`, `update`, `delete`, `all`). Until the module is fixed, push and invalidate operations will return 403. Pull operations (`data:read`) work normally. Track this in the OpenSPP modules repo.
+```
+
 ## Overview
 
 The Data API (`spp_api_v2_data`) enables external systems to push and pull variable values into OpenSPP's variable cache. This is used for:

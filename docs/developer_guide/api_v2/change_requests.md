@@ -10,6 +10,10 @@ openspp:
 
 Create, review, and apply change requests via the API — including approval actions (approve, reject, revise).
 
+```{warning}
+**Known issue:** The `change_request:approve` and `change_request:apply` scopes are checked by the router but cannot be granted through the standard scope UI — the action selection in `spp_api_v2_change_request` does not include `approve` or `apply` as valid actions. Until this is fixed in the module code, calls to `$approve`, `$reject`, `$request-revision`, and `$apply` will return 403 even with seemingly correct scopes. Track this in the OpenSPP modules repo.
+```
+
 ## Overview
 
 The Change Request API (`spp_api_v2_change_request`) enables external systems to submit and manage data change requests with approval workflows. This is used for:

@@ -10,6 +10,10 @@ openspp:
 
 Run spatial queries, define geofences, and export geographic features through the OGC-compliant GIS API.
 
+```{warning}
+**Known issue:** The `gis:geofence` scope is checked by `POST /gis/geofences` and `DELETE /gis/geofences/{id}` but cannot be granted — `geofence` is not a valid scope action in OpenSPP (the standard set is `read`, `search`, `create`, `update`, `delete`, `all`). Until the module is fixed, geofence create and delete will return 403. Read operations (`gis:read`) and statistics queries (`statistics:read`) work normally. Track this in the OpenSPP modules repo.
+```
+
 ## Overview
 
 The GIS API (`spp_api_v2_gis`) provides spatial analysis capabilities:

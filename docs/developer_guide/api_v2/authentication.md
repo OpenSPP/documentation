@@ -170,7 +170,7 @@ Include the token in the `Authorization` header of all API requests:
 
 ```http
 GET /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789
-Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 ```
 
 ### Example: curl
@@ -336,17 +336,25 @@ Scopes define what your API client can access. Scopes follow the `resource:actio
 | `delete` | Delete a resource |
 | `all` | All of the above (wildcard) |
 
-**Available Resources:**
+**Available Resources and Required Scopes:**
 
-| Resource | Example Scopes |
-|----------|---------------|
-| `individual` | `individual:read`, `individual:search`, `individual:create`, `individual:update`, `individual:delete` |
-| `group` | `group:read`, `group:search`, `group:create`, `group:update`, `group:delete` |
-| `program` | `program:read`, `program:search` |
-| `program_membership` | `program_membership:read`, `program_membership:search`, `program_membership:create`, `program_membership:update` |
-| `identifier` | `identifier:read`, `identifier:search` |
+| Resource | Read single | List/search | Create | Update | Delete |
+|----------|-------------|-------------|--------|--------|--------|
+| `individual` | `individual:read` | `individual:read` ¹ | `individual:create` | `individual:update` | not supported |
+| `group` | `group:read` | `group:read` ¹ | `group:create` | `group:update` | not supported |
+| `program` | `program:read` | `program:search` or `program:read` | not supported | not supported | not supported |
+| `program_membership` | `program_membership:read` | `program_membership:search` or `program_membership:read` | `program_membership:create` | `program_membership:update` | not supported |
+| `consent` | `consent:read` | not applicable ² | not via this resource | not via this resource | `consent:delete` |
+
+¹ Individual and Group search endpoints currently accept only `:read`; granting `:search` alone will produce 403. This will likely change in a future release to also accept `:search`.
+
+² Consent records are read individually only. Listing all consents is not supported.
 
 Your administrator configures which scopes your client receives. Scopes can also include field-level restrictions to limit which fields are returned.
+
+```{note}
+The `identifier` resource appears in the API client UI but is not currently checked by any endpoint. Granting `identifier:*` scopes has no effect.
+```
 
 ### Checking Your Scopes
 
@@ -368,10 +376,7 @@ HTTP/1.1 403 Forbidden
 Content-Type: application/json
 
 {
-  "type": "urn:openspp:error:authorization",
-  "title": "Forbidden",
-  "status": 403,
-  "detail": "Required scope: individual:create. Granted: individual:read, individual:search"
+  "detail": "Required scope: individual:create. Granted: individual:read"
 }
 ```
 
@@ -454,12 +459,11 @@ Access tokens are JSON Web Tokens (JWT) signed with HS256:
 
 ## Rate Limiting
 
-The token endpoint is rate-limited to prevent brute force attacks:
-
-| Endpoint | Per Minute | Per Day |
-|----------|-----------|---------|
-| `/oauth/token` | 5 per IP | 50 per IP |
-| General API | 30 (configurable per client) | 5,000 (configurable per client) |
+| Bucket | Per Minute | Per Day | Notes |
+|--------|-----------|---------|-------|
+| `/oauth/token` (per IP) | 5 | 50 | Hard-coded brute-force protection |
+| Authenticated API (per client) | 60 (default) | 10,000 (default) | Configurable per client via `rate_limit_per_minute` and `rate_limit_per_day` |
+| Unauthenticated API (per IP fallback) | 30 | 5,000 | Hard-coded fallback when no client is identified |
 
 When rate-limited, responses include `Retry-After` and `X-RateLimit-*` headers. See {doc}`errors` for details.
 
@@ -467,33 +471,29 @@ When rate-limited, responses include `Retry-After` and `X-RateLimit-*` headers. 
 
 ### 401 Unauthorized
 
-Token is missing, invalid, or expired:
+Returned when:
+- The access token is missing, malformed, or expired
+- Client credentials in the token request are invalid
 
 ```json
 {
-  "type": "urn:openspp:error:authentication",
-  "title": "Unauthorized",
-  "status": 401,
-  "detail": "Invalid or expired access token"
-}
-```
-
-**Solution:** Request a new access token.
-
-### 400 Bad Request
-
-Invalid token request:
-
-```json
-{
-  "type": "urn:openspp:error:validation",
-  "title": "Bad Request",
-  "status": 400,
   "detail": "Invalid client credentials"
 }
 ```
 
-**Solution:** Verify your client ID and secret are correct.
+**Solution:** Verify your client ID and secret. For expired access tokens, request a new one.
+
+### 400 Bad Request
+
+Returned when the token request itself is malformed — e.g., unsupported `grant_type` or unparseable body:
+
+```json
+{
+  "detail": "Unsupported grant_type. Only 'client_credentials' is supported."
+}
+```
+
+**Solution:** Check your request body. Only `grant_type=client_credentials` is supported.
 
 ### 403 Forbidden
 
@@ -501,9 +501,6 @@ Valid token, but insufficient permissions:
 
 ```json
 {
-  "type": "urn:openspp:error:authorization",
-  "title": "Forbidden",
-  "status": 403,
   "detail": "Missing required scope 'individual:create'"
 }
 ```
