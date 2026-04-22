@@ -19,7 +19,6 @@ This guide is for developers who want to extend OpenSPP, integrate it with other
 - **[Custom change request types](change_request_types/index.md)**: Building complex CR types that go beyond Studio's basic support
 - **[API V2](api_v2/index.md)**: Using the official REST API with OAuth 2.0 and consent-based access
 - **[DCI integration](dci/index.md)**: Implementing Digital Convergence Initiative protocols
-- **[Other integrations](integrations/index.md)**: Connecting to OIDC/eSignet, Keycloak, and external APIs
 - **[Security and encryption](security/index.md)**: PII encryption, key management, and security scanning
 - **[CEL](cel/index.md)**: Common Expression Language for scoring, eligibility, and dynamic queries
 - **[Studio](studio/index.md)**: No-code configuration and making modules Studio-aware
@@ -37,7 +36,6 @@ custom_managers/index
 change_request_types/index
 api_v2/index
 dci/index
-integrations/index
 security/index
 cel/index
 studio/index
