@@ -123,6 +123,174 @@ class ProgramPolicy(models.Model):
 
 Hooks are synchronous — they run inside the transaction that triggered the state change. If `_pre_activate()` raises, the state change rolls back.
 
+All action methods (`action_activate`, `action_deactivate`, `action_reactivate`, `action_set_draft`) use `ensure_one()` — they must be called on a single record, not a recordset. Calling `action_deactivate` while already in `draft` state raises a `UserError` (not a no-op) — the mixin treats this as a user error because the admin probably meant to delete the draft, not deactivate it.
+
+On every state change, the mixin also writes an audit log entry via `_create_audit_log()` (integrated with `spp_audit`), so who activated/deactivated what and when is queryable without you doing anything.
+
+### Form view for a Studio-aware model
+
+Studio configurations need a form view with the lifecycle buttons and a statusbar. The pattern matches the one used by `spp.studio.field` itself. Replace `myorg.program.policy` and `myorg.group_policy_manager` with your own:
+
+```xml
+<record id="view_program_policy_form" model="ir.ui.view">
+    <field name="name">myorg.program.policy.form</field>
+    <field name="model">myorg.program.policy</field>
+    <field name="arch" type="xml">
+        <form string="Program Policy">
+            <header>
+                <button
+                    name="action_activate"
+                    string="Activate"
+                    type="object"
+                    class="btn-primary"
+                    invisible="state != 'draft'"
+                    groups="myorg.group_policy_manager"
+                />
+                <button
+                    name="action_deactivate"
+                    string="Deactivate"
+                    type="object"
+                    class="btn-warning"
+                    invisible="state != 'active'"
+                    groups="myorg.group_policy_manager"
+                />
+                <button
+                    name="action_reactivate"
+                    string="Reactivate"
+                    type="object"
+                    class="btn-primary"
+                    invisible="state != 'inactive'"
+                    groups="myorg.group_policy_manager"
+                />
+                <button
+                    name="action_set_draft"
+                    string="Set to Draft"
+                    type="object"
+                    class="btn-secondary"
+                    invisible="state != 'inactive'"
+                    groups="myorg.group_policy_manager"
+                />
+                <field
+                    name="state"
+                    widget="statusbar"
+                    statusbar_visible="draft,active,inactive"
+                />
+            </header>
+            <sheet>
+                <group>
+                    <field name="name" readonly="state != 'draft'" />
+                    <field name="program_id" readonly="state != 'draft'" />
+                    <field name="threshold" readonly="state != 'draft'" />
+                </group>
+            </sheet>
+            <chatter />
+        </form>
+    </record>
+</record>
+```
+
+**Key patterns to notice:**
+
+- The four lifecycle buttons map 1-to-1 to the mixin's action methods (`action_activate`, `action_deactivate`, `action_reactivate`, `action_set_draft`) and each has a state-specific `invisible` condition.
+- `statusbar_visible="draft,active,inactive"` shows all three states on the bar so users see their position in the lifecycle.
+- Data fields use `readonly="state != 'draft'"` so the record becomes read-only once activated. This is a convention — enforce it in form views, not via Python constraints, so administrators can still correct data after reverting to `draft` via `action_set_draft`.
+- `action_deactivate()` may open the deactivation-confirmation wizard if `_get_deactivation_impact()` returns a non-empty string. The wizard renders the string and asks for confirmation before completing the state change.
+
+### Testing a Studio-aware model
+
+Three kinds of tests cover the lifecycle safely: hook validation, state transitions, and deactivation impact.
+
+```python
+"""Tests for the Studio-aware ProgramPolicy model."""
+
+from odoo.exceptions import UserError
+from odoo.tests import TransactionCase, tagged
+
+
+@tagged("post_install", "-at_install")
+class TestProgramPolicyLifecycle(TransactionCase):
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.Policy = cls.env["myorg.program.policy"]
+        cls.program = cls.env["spp.program"].create({"name": "Test Program"})
+
+    def _make_policy(self, **overrides):
+        vals = {
+            "name": "Test Policy",
+            "program_id": self.program.id,
+            "threshold": 100.0,
+        }
+        vals.update(overrides)
+        return self.Policy.create(vals)
+
+    # --- Hook validation ---
+
+    def test_pre_activate_blocks_without_threshold(self):
+        """_pre_activate() raises UserError if threshold is missing."""
+        policy = self._make_policy(threshold=0.0)
+        with self.assertRaises(UserError):
+            policy.action_activate()
+        self.assertEqual(policy.state, "draft")
+
+    # --- State transitions ---
+
+    def test_activation_flow(self):
+        """draft → active → inactive → active (via reactivate)."""
+        policy = self._make_policy()
+        self.assertEqual(policy.state, "draft")
+
+        policy.action_activate()
+        self.assertEqual(policy.state, "active")
+        self.assertTrue(policy.activated_date)
+        self.assertEqual(policy.activated_by_id, self.env.user)
+
+        # Deactivate may return an action if _get_deactivation_impact() is
+        # truthy; in that case we'd open the wizard. For a policy with no
+        # dependent records, deactivation completes directly.
+        policy.action_deactivate()
+        self.assertEqual(policy.state, "inactive")
+
+        policy.action_reactivate()
+        self.assertEqual(policy.state, "active")
+
+    def test_set_draft_from_inactive(self):
+        """An inactive policy can be returned to draft for editing."""
+        policy = self._make_policy()
+        policy.action_activate()
+        policy.action_deactivate()
+
+        policy.action_set_draft()
+        self.assertEqual(policy.state, "draft")
+
+    # --- Deactivation impact ---
+
+    def test_deactivation_impact_empty_for_unused_policy(self):
+        """_get_deactivation_impact() returns None when nothing depends on the policy."""
+        policy = self._make_policy()
+        policy.action_activate()
+        self.assertIsNone(policy._get_deactivation_impact())
+
+    def test_deactivation_impact_mentions_affected_count(self):
+        """Impact message mentions the number of affected records."""
+        policy = self._make_policy()
+        policy.action_activate()
+        # Create a dependent record — implementation-specific.
+        self.env["myorg.thing"].create({"policy_id": policy.id, "name": "A"})
+
+        impact = policy._get_deactivation_impact()
+        self.assertIsNotNone(impact)
+        self.assertIn("1", impact)
+```
+
+**Key patterns to notice:**
+
+- Tests call the action methods (`action_activate`, `action_deactivate`, etc.) directly rather than going through the wizard. This keeps tests fast and focused on the lifecycle contract.
+- `_pre_activate()` raising is the right way to block invalid activation — the test asserts the exception AND that the state didn't change.
+- The `activated_date` and `activated_by_id` audit fields are populated automatically by the mixin — tests can assert them without any extra setup.
+- `_get_deactivation_impact()` is a plain Python method — test it independently of the wizard by calling it directly.
+
 ## Custom fields
 
 Studio custom fields are a three-layer structure:
@@ -227,21 +395,45 @@ On activation, the module creates an `spp.event.type` record and a generated for
 
 ## Shipping Studio configurations with your module
 
-Because Studio configurations are ORM records, you can pre-seed them with XML data the same way you seed any other records:
+Because Studio configurations are ORM records, you can pre-seed them with XML data the same way you seed any other records. Wrap the records in `<data noupdate="1">`:
 
 ```xml
-<record id="studio_field_farm_size" model="spp.studio.field">
-    <field name="label">Farm Size (hectares)</field>
-    <field name="technical_name">x_farm_size</field>
-    <field name="target_type">individual</field>
-    <field name="field_type">decimal</field>
-    <field name="placement_zone_id" ref="spp_studio.zone_registrant_extras" />
-    <field name="is_required" eval="False" />
-    <field name="state">draft</field>
-</record>
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="studio_field_farm_size" model="spp.studio.field">
+            <field name="label">Farm Size (hectares)</field>
+            <field name="technical_name">x_farm_size</field>
+            <field name="target_type">individual</field>
+            <field name="field_type">decimal</field>
+            <field name="placement_zone_id" ref="spp_studio.zone_registrant_extras" />
+            <field name="is_required" eval="False" />
+            <field name="state">draft</field>
+        </record>
+
+    </data>
+</odoo>
 ```
 
-Ship records with `state="draft"` so administrators choose when to activate them. Do not ship `state="active"` — activation creates `ir.model.fields` and `ir.ui.view` records that should be triggered by the user's decision, not by a module install.
+### Why `noupdate="1"` matters
+
+Without `noupdate="1"`, every module upgrade re-applies the XML record — overwriting any edits the administrator made. A Studio field shipped without `noupdate` that the admin renames from "Farm Size (hectares)" to "Farm Area (ha)" will silently revert on the next upgrade. With `noupdate="1"`, the record is created on first install and never touched again by module upgrades.
+
+### Ship as `state="draft"`, not `state="active"`
+
+Activation is a deliberate administrator action — it creates `ir.model.fields` and `ir.ui.view` records owned by your module's XML ID. Shipping `state="active"` does two things you don't want:
+
+1. **It runs `_pre_activate()` during module install**, creating an actual database column immediately. If the field has defaults that assume existing data, or if the model has millions of rows, install time can spike.
+2. **Module uninstall can silently drop the column.** Because the underlying `ir.model.fields` record is owned by your module's XML ID, uninstalling the module removes it — along with any user data in that column. Shipping as `draft` and letting an admin activate breaks that ownership chain: activation creates new records that are *not* owned by your module's XML ID.
+
+### What happens on uninstall
+
+With `noupdate="1"` and `state="draft"`:
+
+- Uninstall removes the `spp.studio.field` record (your XML-owned record)
+- If the admin had activated it, the `ir.model.fields` and `ir.ui.view` records remain (they aren't owned by your module), so the database column and user data survive
+- An admin who reinstalls your module gets a fresh Studio field record in `draft` state and can re-activate if they want the old view extension back (though the existing column is already usable)
 
 ## API V2 bridge
 
