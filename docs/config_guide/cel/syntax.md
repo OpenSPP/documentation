@@ -246,7 +246,7 @@ Used for record selection (eligibility, search):
 Used for value computation (amounts, routing):
 - Works with provided context dictionary
 - Supports arithmetic and comparisons
-- No ORM access
+- Cannot read records directly from the database (use compile-to-domain mode for that)
 
 | Feature | Compile-to-Domain | Runtime |
 |---------|-------------------|---------|

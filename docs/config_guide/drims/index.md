@@ -113,6 +113,6 @@ Alert jobs run on schedule (low stock every 4 hours, SLA every 2 hours, expiry d
 Most DRIMS configuration can be done through the interface. You only need custom development for:
 
 - Custom alert types beyond low stock/SLA/expiry
-- Integration with external systems (3PL, OCHA HDX, etc.)
+- Integration with external systems (third-party logistics providers, humanitarian data exchanges, etc.)
 - Custom entitlement calculations for beneficiary-based distribution
-- Advanced reporting beyond 4W reports and dashboards
+- Advanced reporting beyond standard "Who, What, Where, When" (4W) reports and dashboards

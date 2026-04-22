@@ -103,4 +103,4 @@ When roles are active, changes made directly in the user's "Access Rights" tab a
 
 - {doc}`assigning_roles` - Step-by-step role assignment
 - {doc}`predefined_roles` - List of default roles
-- {doc}`/tutorial/user_guides/administrating_role_based_access` - Illustrated tutorial
+- {doc}`/user_guide/getting_started/administrating_role_based_access` - Illustrated tutorial
