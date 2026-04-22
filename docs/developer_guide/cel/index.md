@@ -207,6 +207,66 @@ class YourModuleCelFunctions(models.AbstractModel):
 
 Functions receive plain Python arguments already unwrapped from CEL; returning primitives, recordsets, or vocabulary codes is fine. The registry is per-process; you do not need to persist anything to the database.
 
+## Testing custom CEL functions
+
+Tests should cover three things: the function's own logic, that it actually ends up in the registry after `_register_hook` runs, and that it works inside a real CEL expression.
+
+### `your_module/tests/test_cel_functions.py`
+
+```python
+"""Tests for custom CEL functions."""
+
+from odoo.tests import TransactionCase, tagged
+
+from odoo.addons.spp_cel_domain.services import cel_parser as P
+
+from ..services.cel_functions import distance_km, is_in_buffer_zone
+
+
+@tagged("post_install", "-at_install")
+class TestDistanceFunction(TransactionCase):
+
+    # Unit tests: call the function directly, no CEL involved.
+
+    def test_distance_km_same_point(self):
+        """Distance between identical points is zero."""
+        self.assertAlmostEqual(distance_km(14.6, 121.0, 14.6, 121.0), 0.0, places=3)
+
+    def test_distance_km_known_values(self):
+        """Manila to Cebu is roughly 570 km."""
+        result = distance_km(14.5995, 120.9842, 10.3157, 123.8854)
+        self.assertGreater(result, 560)
+        self.assertLess(result, 580)
+
+    # Registry test: confirm _register_hook actually ran.
+
+    def test_distance_km_registered(self):
+        """The function is registered on spp.cel.function.registry."""
+        registry = self.env["spp.cel.function.registry"]
+        self.assertTrue(registry.is_registered("distance_km"))
+        self.assertTrue(registry.is_registered("is_in_buffer_zone"))
+
+    # Integration test: use the function inside a CEL expression.
+
+    def test_distance_km_in_expression(self):
+        """distance_km can be called from a CEL expression."""
+        context = {
+            "distance_km": distance_km,
+            "home_lat": 14.5995,
+            "home_lon": 120.9842,
+            "office_lat": 14.5547,
+            "office_lon": 121.0244,
+        }
+        ast = P.parse("distance_km(home_lat, home_lon, office_lat, office_lon) < 10")
+        self.assertTrue(P.evaluate(ast, context))
+```
+
+### What each test covers
+
+- **Unit tests** verify the function's internal logic in isolation. They do not depend on Odoo state and are fast.
+- **Registry tests** confirm your `_register_hook` actually registered the function. This catches the common bug where a developer adds a function but forgets to add an `AbstractModel` for it, so `_register_hook` never runs and the function is silently missing from the registry after a server restart.
+- **Integration tests** verify the function works end-to-end inside a CEL expression using `cel_parser.parse()` and `cel_parser.evaluate()`. The test injects the function into the evaluator context the same way `spp.cel.service` does at runtime.
+
 ## Registering a variable
 
 Variables are records on `spp.cel.variable`. You can create them through the UI, but modules usually ship them as XML data.
