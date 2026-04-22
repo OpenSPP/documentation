@@ -13,13 +13,12 @@ The official OpenSPP REST API (V2) provides a modern, secure, and standards-comp
 ## How to use this section
 
 1. Read {doc}`overview` for the design philosophy and core concepts
-2. Follow the {doc}`tutorial` to build a working Python client end-to-end
-3. Use the reference pages when integrating specific features:
+2. Read the reference pages for the features you need:
    - {doc}`authentication` for OAuth 2.0 and scopes
-   - {doc}`resources`, {doc}`search`, {doc}`batch` for core operations
    - {doc}`external_identifiers`, {doc}`consent`, {doc}`errors` for cross-cutting concerns
-   - {doc}`studio_integration` for custom fields and CEL variables
-4. Install the relevant extension module when you need domain-specific endpoints (see [Extension APIs](#extension-apis) below)
+   - {doc}`resources`, {doc}`search`, {doc}`batch` for core operations
+3. Follow the {doc}`tutorial` to tie everything together in a working Python client
+4. Consult {doc}`studio_integration` and the extension APIs as you need them
 
 ## Prerequisites
 
@@ -48,7 +47,6 @@ The API is the primary integration surface between OpenSPP and external systems.
 | Topic | Description |
 |-------|-------------|
 | {doc}`overview` | Design philosophy, base URL, core principles, FHIR-inspired patterns |
-| {doc}`tutorial` | Build a working Python API client from scratch |
 | {doc}`authentication` | OAuth 2.0, JWT tokens, scopes, and rate limiting |
 | {doc}`external_identifiers` | Namespaced external IDs instead of database IDs |
 | {doc}`consent` | Privacy-first consent mechanisms and field-level access |
@@ -56,6 +54,7 @@ The API is the primary integration surface between OpenSPP and external systems.
 | {doc}`search` | Query parameters, pagination, sorting, and advanced filters |
 | {doc}`batch` | Transaction bundles, batch operations, and bulk export |
 | {doc}`errors` | Error responses (RFC 9457) and status codes |
+| {doc}`tutorial` | Build a working Python API client end-to-end |
 | {doc}`studio_integration` | Studio custom fields and CEL variables via API |
 
 ## Extension APIs
@@ -86,7 +85,6 @@ API V2 completely replaces the legacy XML-RPC API. New integrations should use A
 :hidden:
 
 overview
-tutorial
 authentication
 external_identifiers
 consent
@@ -94,6 +92,7 @@ resources
 search
 batch
 errors
+tutorial
 studio_integration
 entitlements_cycles
 products_service_points
