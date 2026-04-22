@@ -10,12 +10,6 @@ openspp:
 
 Integrate OpenSPP with Digital Convergence Initiative (DCI)-compliant social protection systems — either by exposing OpenSPP registry data through DCI endpoints or by consuming data from external DCI registries (CRVS, IBR, disability registries, etc.).
 
-```{note}
-**The reference pages ({doc}`server_role`, {doc}`client_role`, {doc}`protocol`) contain known inaccuracies and are scheduled for a full rewrite.** Each page carries a banner at the top listing the specific issues. Use those pages as high-level conceptual guides; verify every class name, endpoint, field name, and URL against the source code in `openspp-modules-v2/spp_dci/`, `spp_dci_server/`, and `spp_dci_client*/` before writing integration code.
-
-This `index.md` and {doc}`overview` are accurate.
-```
-
 ## How to use this section
 
 1. Read {doc}`overview` to understand DCI architecture and the interaction patterns (sync/async search, subscribe/notify)
@@ -44,13 +38,7 @@ This `index.md` and {doc}`overview` are accurate.
 | Understand DCI message formats / protocol details | `spp_dci` (core) | Either | {doc}`protocol` |
 | Build a custom OpenSPP endpoint that isn't DCI-compliant | — | N/A | Use {doc}`/developer_guide/api_v2/index` instead |
 
-```{note}
-**Server-side registry search is a two-part system.** `spp_dci_server` provides the infrastructure (routers, middleware, transaction model), but the actual search implementation for a given registry type (Social, CRVS, Disability, etc.) is loaded dynamically from an optional module such as `spp_dci_server_social`. If the optional module is not installed, the search endpoint returns a `501`-style rejection. At the time of writing, no such registry-type module ships in the current `openspp-modules-v2/` tree — treat server-side DCI as "infrastructure present, search implementation pending."
-```
-
 ## OpenSPP DCI modules
-
-These are the DCI modules that currently exist in `openspp-modules-v2/`:
 
 | Module | Purpose | Role |
 |--------|---------|------|
@@ -63,7 +51,7 @@ These are the DCI modules that currently exist in `openspp-modules-v2/`:
 | `spp_dci_demo` | End-to-end demo layered on `spp_mis_demo_v2` — birth verification for child benefit enrollment | Demo |
 
 ```{note}
-The reference pages mention additional modules (`spp_dci_server_social`, `spp_dci_api_server`, `spp_dci_indicators`) that **do not exist in the current `openspp-modules-v2/` tree**. They may be planned, shipped separately, or renamed. Before relying on them, verify they're present in your deployment.
+**Server-side registry search needs an implementation module.** `spp_dci_server` provides the infrastructure (routers, middleware, models), but the actual search implementation for a given registry type is loaded dynamically. Until an implementation module is installed, search requests receive a rejection response. See {doc}`server_role` for details.
 ```
 
 ## Common integration scenarios

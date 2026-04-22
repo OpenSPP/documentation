@@ -349,8 +349,8 @@ For the complete signed-envelope structure, see {doc}`protocol`.
 
 ## What's next
 
-- {doc}`server_role` — implement OpenSPP as a DCI server (note: that page has accuracy issues; see its banner)
-- {doc}`client_role` — integrate with external DCI registries (note: that page has accuracy issues; see its banner)
+- {doc}`server_role` — implement OpenSPP as a DCI server
+- {doc}`client_role` — integrate with external DCI registries
 - {doc}`protocol` — detailed protocol specifications
 
 ## See also
