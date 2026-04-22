@@ -25,7 +25,6 @@ This guide is for developers who want to extend OpenSPP, integrate it with other
 - **[Studio](studio/index.md)**: No-code configuration and making modules Studio-aware
 - **[Audit and versioning](audit/index.md)**: Audit logging, record versioning, and data provenance
 - **[Contributing](contributing/index.md)**: Code style, pre-commit hooks, and pull request workflow
-- **[Testing](testing/index.md)**: Writing and running unit, integration, and end-to-end tests
 
 ```{toctree}
 :maxdepth: 2
@@ -44,7 +43,6 @@ cel/index
 studio/index
 audit/index
 contributing/index
-testing/index
 ```
 
 <!-- Hidden until ready: drims/index, migration/index, verifiable_credentials/index -->
