@@ -104,15 +104,173 @@ Three index types are supported (`spp_key_management/models/key_manager.py`):
 
 | Index type | Method | Use case |
 |------------|--------|----------|
-| `exact` | Full HMAC-SHA256 of the value | Exact match (email, national ID) |
-| `partial` | HMAC of the last N characters | Prefix/suffix search |
-| `phonetic` | Soundex + HMAC | Fuzzy name search |
+| `exact` | Full HMAC-SHA256, hex-encoded | Exact match (email, national ID) |
+| `partial` | HMAC-SHA256 of the last 4 characters, truncated to 16 hex chars | Suffix search |
+| `phonetic` | Soundex code + HMAC, truncated to 16 hex chars | Fuzzy name search |
 
-Blind indexes use per-purpose salts — call `key_mgr.get_salt(purpose, salt_id)` to retrieve the salt if you need to verify an index manually.
+All three index types **lowercase the input** before hashing, so queries must also lowercase before calling `compute_blind_index`. Blind indexes use per-purpose salts; `key_mgr.get_salt(purpose, salt_id)` returns the raw salt bytes but is rarely needed — always call `compute_blind_index` instead. Salt bytes are sensitive material; do not log them or surface them in API responses.
+
+### Recipe: an encrypted, searchable field on your model
+
+Putting the pieces together, here's the pattern for adding a searchable encrypted field (e.g., a national ID) to a custom model:
+
+```python
+from odoo import api, fields, models
+
+
+class Applicant(models.Model):
+    _name = "myorg.applicant"
+    _description = "Benefits applicant"
+
+    name = fields.Char(required=True)
+
+    # The ciphertext column — base64 bytes of the AES-256-GCM output.
+    national_id_cipher = fields.Char(string="National ID (encrypted)", groups="myorg.group_pii_reader")
+
+    # The blind index column — searchable deterministic hash.
+    national_id_index = fields.Char(string="National ID (index)", index=True)
+
+    # A transient view field for writing. Data only lives here during a write;
+    # it is never stored. Users fill this in the form, the ORM writes it out
+    # encrypted + indexed, and the field is cleared on read.
+    national_id_input = fields.Char(string="National ID", store=False)
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            self._apply_pii_fields(vals)
+        return super().create(vals_list)
+
+    def write(self, vals):
+        self._apply_pii_fields(vals)
+        return super().write(vals)
+
+    def _apply_pii_fields(self, vals):
+        plain = vals.pop("national_id_input", None)
+        if plain is None:
+            return
+        key_mgr = self.env["spp.key.manager"]
+        vals["national_id_cipher"] = key_mgr.encrypt(
+            plaintext=plain,
+            purpose="pii",
+            key_id="national_id",
+        )
+        vals["national_id_index"] = key_mgr.compute_blind_index(
+            value=plain,
+            purpose="pii",
+            salt_id="national_id",
+            index_type="exact",
+        )
+
+    def read_national_id(self):
+        """Return the decrypted national ID. Requires PII reader permission."""
+        self.ensure_one()
+        if not self.national_id_cipher:
+            return ""
+        return self.env["spp.key.manager"].decrypt(
+            ciphertext_b64=self.national_id_cipher,
+            purpose="pii",
+            key_id="national_id",
+        )
+
+    @api.model
+    def find_by_national_id(self, national_id):
+        """Lookup by national ID — hits the blind index, not the ciphertext."""
+        key_mgr = self.env["spp.key.manager"]
+        index = key_mgr.compute_blind_index(
+            value=national_id,
+            purpose="pii",
+            salt_id="national_id",
+            index_type="exact",
+        )
+        return self.search([("national_id_index", "=", index)])
+```
+
+**Key patterns:**
+
+- **Input via a `store=False` field.** The user-facing `national_id_input` never hits the database. `create()` / `write()` intercept it, encrypt, compute the index, and persist only the derived values.
+- **Two columns, not one.** The ciphertext and the index serve different purposes (display + search).
+- **Access control on the ciphertext column.** `groups="..."` restricts read access at the ORM level, adding defense in depth — most users shouldn't even see the ciphertext column exists.
+- **A dedicated read method.** `read_national_id()` is the explicit decrypt path. A ribbon of `ensure_one()` + group check makes every decrypt intentional.
+- **Search via a classmethod that hashes the query.** `find_by_national_id()` does the same lowercasing (via `compute_blind_index`) that was done on write, so user input and stored hash match.
+
+### Exceptions to catch
+
+Security operations raise a small set of exceptions. Handle them explicitly:
+
+| Operation | Exception | When |
+|-----------|-----------|------|
+| `encrypt()`, `decrypt()`, `get_key()`, `get_salt()` | `AccessError` | User lacks key-management group membership |
+| `decrypt()` | `ValueError` | Wrong key, wrong AAD, or corrupted ciphertext |
+| `rotate_key()` | `NotImplementedError` | Provider doesn't support rotation (e.g., `config` provider) |
+| `rotate_key()` | `AccessError` | User lacks `group_key_admin` |
+| `check_consent()` | returns empty recordset | No valid consent — don't catch an exception, check the result |
+| `spp.encryption.provider.jwt_sign()` | `ValueError` | Missing or invalid key on the provider record |
+
+A generic `except Exception` around encryption code is an anti-pattern — each exception tells you something specific. Let unexpected ones propagate.
+
+### Testing encryption
+
+Unit tests should exercise the encrypt → decrypt round trip plus the search path. The simplest setup uses the `config` provider, which reads keys from `odoo.conf` parameters — in tests, set the parameters directly on the env:
+
+```python
+from odoo.tests import TransactionCase
+from odoo.tools import config
+
+
+class TestApplicantPII(TransactionCase):
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        # In real deployments, keys come from the configured provider.
+        # For tests, the default `database` provider works with auto-generated
+        # keys — or you can seed a known key for deterministic assertions.
+        cls.Applicant = cls.env["myorg.applicant"]
+
+    def test_round_trip(self):
+        applicant = self.Applicant.create({
+            "name": "Jane Doe",
+            "national_id_input": "PH-123456789",
+        })
+        # Ciphertext stored, plaintext input discarded
+        self.assertTrue(applicant.national_id_cipher)
+        self.assertFalse(hasattr(applicant, "_national_id_input_stored"))
+
+        # Round trip works
+        self.assertEqual(applicant.read_national_id(), "PH-123456789")
+
+    def test_search_by_blind_index(self):
+        applicant = self.Applicant.create({
+            "name": "Jane Doe",
+            "national_id_input": "PH-123456789",
+        })
+        found = self.Applicant.find_by_national_id("PH-123456789")
+        self.assertEqual(found, applicant)
+
+    def test_search_is_case_insensitive(self):
+        """Blind indexes lowercase the input — queries must too, and this is built in."""
+        applicant = self.Applicant.create({
+            "name": "Jane Doe",
+            "national_id_input": "PH-123456789",
+        })
+        # compute_blind_index lowercases both — the search works either way
+        self.assertEqual(self.Applicant.find_by_national_id("ph-123456789"), applicant)
+```
 
 ### Data classification
 
-The ops-side convention divides data into four levels: **PUBLIC**, **INTERNAL**, **CONFIDENTIAL**, **RESTRICTED**. Only `RESTRICTED` requires encryption; `CONFIDENTIAL` is optional. These levels are documented in the ops guide — there is no classification model in code. As a developer, decide per-field whether to encrypt, and be consistent across modules that handle the same data type.
+The ops-side convention divides data into four levels: **PUBLIC**, **INTERNAL**, **CONFIDENTIAL**, **RESTRICTED**. Only `RESTRICTED` requires encryption; `CONFIDENTIAL` is optional. There is no classification model in code — decide per-field whether to encrypt, and be consistent across modules that handle the same data type.
+
+### Trust model
+
+Encryption with `spp_key_management` protects against threats like database theft, DB-only access (e.g., a read-only replica leak), or an operator with PostgreSQL access but no Odoo login. It **does not** protect against:
+
+- A compromised Odoo process (plaintext is in memory during every encrypt/decrypt call)
+- An administrator with `group_key_admin` who can call `decrypt()` directly
+- Keys stored via the `config` provider when the `odoo.conf` file is readable to the attacker
+
+For stronger threat models, use a cloud KMS or HSM-backed provider and restrict who holds the key-management groups.
 
 ## Key management
 
@@ -131,7 +289,7 @@ The ops-side convention divides data into four levels: **PUBLIC**, **INTERNAL**,
 | `decrypt(ciphertext_b64, purpose, key_id, aad=None)` | AES-256-GCM decrypt |
 | `compute_blind_index(value, purpose, salt_id, index_type="exact")` | HMAC-based searchable hash; returns `None` when `value` is empty |
 
-All methods check access via `_check_key_access()` — non-admin users get `AccessError`. The service uses `@ormcache` for hot keys so repeated calls don't thrash the provider.
+All methods check access via `_check_key_access()` — non-privileged users get `AccessError`. Read access is granted to `spp_key_management.group_key_operator_officer` and `spp_key_management.group_key_admin`; rotation requires `group_key_admin`; system/sudo always passes. The service uses `@ormcache` on its internal `_get_key_cached` and `_get_salt_cached` helpers so repeated calls don't thrash the provider.
 
 ### Key providers (pluggable backends)
 
@@ -146,7 +304,32 @@ The module ships six provider implementations via `spp.key.provider.registry`:
 | `gcp_kms` | Google Cloud KMS | GCP deployments |
 | `azure_keyvault` | Azure Key Vault | Azure deployments |
 
-The registry routes each `purpose` to a provider (e.g., `pii` → `aws_kms`, while `blind_index_salt` → `config` for deterministic salts). Administrators configure this mapping; developers don't need to know which provider their code hits at runtime.
+The registry routes each `purpose` to a provider (e.g., `pii` → `database`, `financial` → `aws_kms`). Administrators configure this mapping; developers don't need to know which provider their code hits at runtime.
+
+### Purposes (controlled vocabulary)
+
+`purpose` is **not** an arbitrary string — it's a record code on `spp.key.purpose`. The module ships five default purposes in `data/key_purposes.xml`:
+
+| Code | Name | Rotation | Hardware key required |
+|------|------|:-------:|:---------------------:|
+| `pii` | PII Data | 365 days | No |
+| `financial` | Financial Data | 180 days | Yes |
+| `credentials` | Credentials (VCs, certificates) | 365 days | Yes |
+| `api` | API Security (JWT signing, tokens) | 90 days | No |
+| `backup` | Backup Encryption | 365 days | No |
+
+Pass the `code` to `encrypt()`/`decrypt()`/`get_key()` (e.g., `purpose="pii"`). If you pass a code that doesn't exist, the registry **silently falls back to the default provider** — so a typo like `purpose="pii_data"` won't raise; it will just use whichever provider is marked `is_default=True`. Watch for this when writing tests.
+
+Custom purposes can be added as XML records:
+
+```xml
+<record id="purpose_biometric" model="spp.key.purpose">
+    <field name="name">Biometric Templates</field>
+    <field name="code">biometric</field>
+    <field name="key_rotation_days">730</field>
+    <field name="require_hardware_key" eval="True" />
+</record>
+```
 
 ### Registering a custom provider
 
@@ -176,9 +359,12 @@ class MyHSMProvider(models.AbstractModel):
         return rotate_key_on_hsm(key_id)
 ```
 
-**2. Extend the registry's `provider_type` Selection** so administrators can choose your provider:
+**2. Extend the registry's `provider_type` Selection** and its model lookup:
 
 ```python
+from odoo import fields, models
+
+
 class KeyProviderRegistry(models.Model):
     _inherit = "spp.key.provider.registry"
 
@@ -187,19 +373,22 @@ class KeyProviderRegistry(models.Model):
         ondelete={"myhsm": "cascade"},
     )
 
-    def _get_provider_model(self, provider_type):
-        """Map the new provider_type to its abstract model name."""
-        if provider_type == "myhsm":
-            return "spp.key.provider.myhsm"
-        return super()._get_provider_model(provider_type)
+    def _get_provider_model(self):
+        """Override: return the env model for our custom provider_type."""
+        if self.provider_type == "myhsm":
+            return self.env["spp.key.provider.myhsm"]
+        return super()._get_provider_model()
 ```
 
-**3. Create a registry record** (XML data) mapping one or more purposes to your provider. Administrators can do this in the UI, but a shipped record looks like:
+Notice `_get_provider_model` takes **no argument** (it reads `self.provider_type`) and returns an **env proxy**, not a string. Matching the real signature is important — the base returns `self.env[...]`, and callers use it as a recordset.
+
+**3. Create a registry record** (XML data) mapping one or more purposes to your provider. `spp.key.provider.registry` has a required `name` field and a `purpose_ids` Many2many (not a `purpose` Char) pointing at `spp.key.purpose` records:
 
 ```xml
 <record id="key_provider_myhsm_pii" model="spp.key.provider.registry">
-    <field name="purpose">pii</field>
+    <field name="name">My HSM (PII)</field>
     <field name="provider_type">myhsm</field>
+    <field name="purpose_ids" eval="[(4, ref('spp_key_management.purpose_pii'))]" />
 </record>
 ```
 
@@ -207,7 +396,27 @@ The `spp.key.manager` routes each `purpose` through its registry entry, so the s
 
 ### Asymmetric keys
 
-For JWT signing, JSON-LD credential signing, and JWKS publishing, use `spp.asymmetric.key` via `spp.encryption.provider`. The provider supports RSA (2048/3072/4096), EC (P-256/P-384/P-521/secp256k1), and Ed25519. Generate keys with `provider.generate_key(key_type="rsa", key_size=2048)`; sign JWTs with `provider.jwt_sign(payload)`; publish public keys via `provider.get_jwks()`.
+For JWT signing, JSON-LD credential signing, and JWKS publishing, use `spp.asymmetric.key` via `spp.encryption.provider`. The provider supports RSA (2048/3072/4096), EC (P-256/P-384/P-521/secp256k1), and Ed25519.
+
+Call these methods on a specific provider **record**, not on the model directly — `provider.ensure_one()` is enforced:
+
+```python
+provider = self.env["spp.encryption.provider"].browse(provider_id)
+
+# Generate a new key (creates a spp.asymmetric.key record)
+provider.generate_key(key_type="rsa", key_size=2048)
+
+# Sign a claims dict as a JWT — returns a compact JWT string
+token = provider.jwt_sign(
+    data={"sub": partner.id, "exp": exp_timestamp, "iat": iat_timestamp},
+    include_payload=True,        # Pass the payload inside the JWT (vs signing only)
+    include_certificate=False,   # Set True to embed the signing cert in the JWS header (x5c)
+    include_cert_hash=False,     # Set True to embed a cert hash instead (x5t#S256)
+)
+
+# Publish public keys as JWKS — returns {"keys": [...]}
+jwks = provider.get_jwks()
+```
 
 ## Consent
 
@@ -254,7 +463,7 @@ else:
     raise UserError(_("No valid consent for this operation."))
 ```
 
-`check_consent()` verifies `status in ('given', 'renewed')`, the effective/expiry date window, and purpose/recipient match (including category-based matching via `allowed_recipient_types`). It returns a recordset — either the matching consent records or empty.
+`check_consent()` verifies `status in ('given', 'renewed')`, the effective/expiry date window, and purpose/recipient match (including category-based matching via `allowed_recipient_types`). It returns a recordset — either the matching consent records or empty. The function **fails closed** if you supply neither `recipient_id` nor `recipient_org_type` — it returns empty with a logged warning rather than matching any consent. This is intentional; don't pattern-match around it.
 
 The `spp.consent.mixin` adds a `consent_ids` Many2many and an `open_record_consent_wizard()` action; inherit it on any model that needs to present its consent records to users.
 
@@ -266,11 +475,13 @@ For the API V2 side — how consent filters response payloads and how `require_c
 
 ### What happens on detection
 
-The attachment's `scan_status` becomes `infected`, the `threat_name` is populated, `is_quarantined` goes to `True`, and an encrypted copy of the original file is stored in `quarantine_data` (using `spp.encryption.provider`). The SHA-256 of the original is stored in `quarantine_hash` for chain-of-custody. The original attachment is **not deleted** — it remains accessible to administrators for forensic review, and every download of a quarantined file sets `is_forensic_download=True` on a generated audit attachment.
+The attachment's `scan_status` becomes `infected`, the `threat_name` is populated, `is_quarantined` goes to `True`, and an encrypted copy of the original file is stored in `quarantine_data` (using `spp.encryption.provider`). The SHA-256 of the original is stored in `quarantine_hash` for chain-of-custody. The original attachment is **not deleted** — it remains accessible to administrators for forensic review. When an administrator downloads a quarantined file for analysis, the module creates a **separate temporary `ir.attachment`** with `is_forensic_download=True` holding the decrypted binary; a cron job (`_cron_cleanup_forensic_downloads`) purges these after 24 hours.
 
 ### Controlling scanning from code
 
-If you create attachments programmatically and know they're safe (e.g., generated reports), set `scan_status='skipped'` at create time to bypass the queue. Otherwise, leave the scanner alone — it is designed to be invisible to application code.
+There is no supported developer-facing opt-out for scanning at create time — the `create()` override queues a scan for every binary attachment regardless of `scan_status` or context flags. In practice, scans are fast (the backend returns `clean` for known-good content), so treat scanning as invisible.
+
+If you have a legitimate need to bypass scanning on a specific `write()` (e.g., restoring from quarantine), pass `skip_av_scan_queue=True` in the context — this is used internally by the quarantine-restore path and is not a general-purpose developer API.
 
 ### Backend configuration
 
@@ -291,30 +502,29 @@ Every pull request runs a pre-commit pipeline (`.pre-commit-config.yaml`) that i
 | **Gitleaks** | Hardcoded secrets (API keys, passwords, private keys) in source or history |
 | **Bandit** (`-ll`) | High-confidence Python security issues (eval, exec, `shell=True`, weak crypto) |
 | **Semgrep** | Pattern-based issues using `.semgrep/` rules |
-| No-PII-in-logs check | Blocks logging of `national_id`, `phone`, `email`, `birthdate`, and similar fields |
+| No-PII-in-logs check | Blocks logging of `name`, `national_id`, `phone`, `mobile`, `email`, `address`, `birth_date`, `tax_id`, `bank_account` via `_logger.*` calls |
 | Naming convention check | Enforces `is_`/`has_`/`can_` prefixes on booleans and other naming rules |
 | ACL check | Validates `ir.model.access.csv` rows reference real models and groups |
 | Compliance check | Validates modules against their `security/compliance.yaml` declaration |
-| API-auth check | All API V2 endpoints must require authentication (with an explicit allowlist for genuinely public endpoints like `/metadata`) |
-| Performance anti-patterns | N+1 queries, `cr.commit()` in loops, unbounded list views |
+| API-auth check | All FastAPI router endpoints must depend on a known auth dependency (bearer, signature, authenticated client) with an allowlist for genuinely public endpoints (`/metadata`, DCI JWKS, OAuth token) |
+| Performance anti-patterns | N+1 query patterns, `cr.commit()` in loops, offset-based pagination (prefer cursors) |
+| UI-patterns check | List view limits, sample data, XPath syntax, statusbar/extension points |
 
 Running pre-commit locally before pushing catches nearly all these. See `.pre-commit-config.yaml` for the complete rule set.
 
 ## Common mistakes
 
-**Assuming encryption is transparent at the ORM level.** It isn't — `spp_key_management.encrypt()` and `decrypt()` are explicit calls. A developer who adds a Char field called `national_id_encrypted` and assigns `partner.national_id_encrypted = "raw value"` has stored plaintext with a misleading column name. If you want encryption, call `encrypt()` before assignment. Consider writing a small mixin if you have many fields with the same pattern.
+**Losing track of `purpose` / `key_id` pairs.** You must decrypt with the same pair you used to encrypt. If code encrypts with `purpose="pii"`, `key_id="national_id"` but stores only the ciphertext, a later refactor that changes the key_id orphans the data. Either record the `purpose` / `key_id` alongside each encrypted value (for encrypt-once-decrypt-later workflows) or document the invariant explicitly.
 
-**Losing track of `purpose` / `key_id` pairs.** Encryption is deterministic per `(purpose, key_id)`: you must decrypt with the same pair you used to encrypt. If your code encrypts with `purpose="pii"`, `key_id="national_id"` but stores only the ciphertext, a later refactor that changes the key_id orphans the data. Either record the `purpose` and `key_id` alongside each encrypted value (for encrypt-once, decrypt-later workflows) or document the invariant explicitly.
+**Typoing a purpose code.** `purpose="pii_data"` (typo) does not raise — the registry silently falls back to the default provider. Your data encrypts successfully under the wrong key and decrypts with the wrong key going forward. Treat purpose codes like any other identifier: store them as module constants, not string literals scattered through the code.
 
-**Using blind-index type `exact` when the data is high-cardinality and long.** Every search becomes a deterministic hash lookup — fine for exact equality, bad for fuzzy/substring search. If users will search by prefix, use `partial`. If by fuzzy name, use `phonetic`. Plan the access pattern before choosing the index type.
+**Choosing `exact` for every blind index.** `exact` only matches whole values. For prefix or fuzzy searches, use `partial` or `phonetic`. For free-text or multi-word search, blind indexing isn't the right tool — consider a separate tokenized search index instead.
 
-**Checking consent once at login and caching the result.** Consent can be withdrawn at any time. Always call `check_consent()` at the moment of processing, not at session start. `spp.consent` updates trigger cache invalidation in the downstream API consent service but not in your ad-hoc caches.
+**Forgetting that blind indexes lowercase input.** The hash is over the lowercased value. Queries must also lowercase: `compute_blind_index("JOHN@EXAMPLE.COM", ...)` and `compute_blind_index("john@example.com", ...)` produce the same hash, but `WHERE blind_index = 'hash_of_lowercased'` means your query code must lowercase the search term too.
+
+**Checking consent once at session start.** Consent can be withdrawn at any time. Always call `check_consent()` at the moment of processing, not when the user logs in.
 
 **Storing plaintext PII for "just this one case".** The CI no-PII-in-logs check catches logging, but nothing catches a plaintext database column created by a module that forgot to encrypt. Code review is the only defense — flag any field whose name ends in `_id`, `_number`, `_phone`, `_email`, or similar.
-
-**Creating custom `ir.attachment` records that bypass AV scanning.** The scanner hooks `create()` and `write()` on the Odoo model, but if you insert directly via SQL or through `sudo()` with `scan_status="skipped"`, you bypass detection. Only skip scanning when you generated the file yourself and trust the pipeline that produced it.
-
-**Using `spp_oauth` when you mean API V2 authentication.** `spp_oauth` provides a system-wide JWT key configuration for generic OAuth integrations. The API V2 bearer/signature authentication is separate and documented in {doc}`/developer_guide/api_v2/authentication`. New API clients should follow the API V2 pattern; `spp_oauth` is foundation infrastructure.
 
 ## See also
 
