@@ -87,6 +87,8 @@ result = service.compile_expression(
 #     "preview_records": [...],
 #     "valid": bool,
 #     "error": str | None,
+#     "explain": str,          # Human-readable summary
+#     "path": str,             # Compilation strategy taken
 # }
 ```
 
@@ -118,20 +120,25 @@ Inside the expression, `m` is each member. The return type depends on the aggreg
 
 ## Built-in functions
 
-Registered in `spp_cel_domain` (`services/cel_functions.py`) and activated via `post_init_hook`:
+All of the functions below are defined in `spp_cel_domain/services/cel_functions.py` and available in every CEL evaluation. They reach expressions through two different paths:
+
+- **Via `spp.cel.function.registry`** (appear in `registry.list_functions()`): `age_years`, `years_ago`, `between`
+- **Injected directly into the evaluator context** (not in the registry): `today`, `now`, `days_ago`, `months_ago`, `size`, `has`, `matches`
+
+Both paths work identically inside expressions — the distinction only matters if you introspect the registry programmatically.
 
 | Function | Signature | Purpose |
 |----------|-----------|---------|
-| `age_years(date)` | `date` → `int` | Age in years from a date (typically `birthdate`) |
+| `age_years(date)` | `date` → `int` | Age in years from a date (typically `birthdate`); returns `None` for null input |
 | `today()` | `() → date` | Current date |
 | `now()` | `() → datetime` | Current datetime |
 | `days_ago(n)` | `int → date` | Date `n` days in the past |
 | `months_ago(n)` | `int → date` | Date `n` months in the past |
 | `years_ago(n)` | `int → date` | Date `n` years in the past |
 | `between(x, a, b)` | `(num, num, num) → bool` | True if `a ≤ x ≤ b` |
-| `size(coll)` | `collection → int` | Size of a collection (list, recordset, string) |
+| `size(collection)` | `collection → int` | Size of a collection (list, recordset, string) |
 | `has(obj, field=None)` | `(obj, str?) → bool` | True if `obj.field` has a non-empty value (or `obj` itself if `field` omitted) |
-| `matches(s, pattern)` | `(str, regex) → bool` | Regex match |
+| `matches(string, pattern)` | `(str, regex) → bool` | Regex match |
 
 Additional functions from `spp_cel_vocabulary`:
 
@@ -142,33 +149,16 @@ Additional functions from `spp_cel_vocabulary`:
 
 ## Registering a custom CEL function
 
-Register via `spp.cel.function.registry`. Do this in a post-init hook so the function is available as soon as the module is loaded.
-
-### `your_module/__init__.py`
-
-```python
-from odoo import api, SUPERUSER_ID
-
-
-def post_init_hook(env):
-    _register_custom_functions(env)
-
-
-def _register_custom_functions(env):
-    from .services.cel_functions import distance_km, is_in_buffer_zone
-
-    registry = env["spp.cel.function.registry"]
-    registry.register("distance_km", distance_km)
-    registry.register("is_in_buffer_zone", is_in_buffer_zone)
-```
+Register your function(s) via `spp.cel.function.registry`. Because the registry lives in process memory, registration must run on **every server start** — not just at install time. The cleanest pattern is an `_register_hook` classmethod on a tiny `AbstractModel`.
 
 ### `your_module/services/cel_functions.py`
 
 ```python
+import math
+
+
 def distance_km(lat1, lon1, lat2, lon2):
     """Great-circle distance in kilometers between two lat/lon pairs."""
-    import math
-    # Haversine formula
     r = 6371.0
     lat1, lat2 = map(math.radians, (lat1, lat2))
     dlat = lat2 - lat1
@@ -185,17 +175,37 @@ def is_in_buffer_zone(partner, zone_name, radius_km):
     return distance_km(partner.latitude, partner.longitude, zone.lat, zone.lon) <= radius_km
 ```
 
+### `your_module/models/cel_functions.py`
+
+```python
+from odoo import api, models
+
+from ..services.cel_functions import distance_km, is_in_buffer_zone
+
+
+class YourModuleCelFunctions(models.AbstractModel):
+    _name = "your_module.cel.functions"
+    _description = "Custom CEL function registrations for your_module"
+
+    @api.model
+    def _register_hook(self):
+        # Called by Odoo on every server start / worker spawn.
+        registry = self.env["spp.cel.function.registry"]
+        registry.register("distance_km", distance_km)
+        registry.register("is_in_buffer_zone", is_in_buffer_zone)
+        return super()._register_hook()
+```
+
 ### `your_module/__manifest__.py`
 
 ```python
 {
     # ...
     "depends": ["spp_cel_domain"],
-    "post_init_hook": "post_init_hook",
 }
 ```
 
-Functions receive plain Python arguments already unwrapped from CEL; returning primitives, recordsets, or vocabulary codes is fine.
+Functions receive plain Python arguments already unwrapped from CEL; returning primitives, recordsets, or vocabulary codes is fine. The registry is per-process; you do not need to persist anything to the database.
 
 ## Registering a variable
 
@@ -281,7 +291,7 @@ All inherit from `CELError`, so you can catch the base class to handle any CEL f
 
 ## Common mistakes
 
-**Forgetting the post-init hook when registering functions.** Functions registered at import time don't survive server restarts — Odoo only re-imports modules on upgrade. Registration must happen in `post_init_hook` (or a cron/load-registry hook), which Odoo calls on every server start.
+**Forgetting to re-register functions on every server start.** The CEL function registry is stored on the Odoo registry (per-process memory), not in the database — so every new Python process starts with an empty registry. Registering only in `post_init_hook` (which fires on install/upgrade) leaves your function missing after a plain server restart. The correct pattern is to also define an `_register_hook()` classmethod on an `AbstractModel` — Odoo calls `_register_hook` every time the registry is built (server start, worker spawn, module update). This is exactly how `spp.cel.function.registry` registers its own core functions; inherit the pattern for your own.
 
 **Using `cache_strategy="ttl"` without setting `invalidate_on_member_change`.** For group aggregates, the cache doesn't know to refresh when members come and go. The result: yesterday's member count on a household that had a new baby this morning.
 
