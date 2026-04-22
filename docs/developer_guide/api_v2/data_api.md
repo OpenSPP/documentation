@@ -6,7 +6,9 @@ openspp:
 
 # Data API
 
-This guide is for **developers** integrating external data sources with OpenSPP variable caching through the API V2 Data extension.
+**For: developers**
+
+Push and pull external data for OpenSPP's variable caching system through the Data API extension.
 
 ## Overview
 
@@ -234,7 +236,7 @@ Authorization: Bearer TOKEN
 }
 ```
 
-## Are You Stuck?
+## Common mistakes
 
 **Push returns "variable not owned by provider"?**
 
@@ -252,13 +254,13 @@ The cached value has expired based on the provider's TTL setting. Push fresh dat
 
 Use `GET /Data/variables?provider_code=your_code` to list variables your provider owns.
 
-## Next Steps
+## What's next
 
 - {doc}`studio_integration` - Studio variables and CEL expressions
 - {doc}`resources` - Core API resources
 - {doc}`authentication` - OAuth 2.0 setup and scopes
 
-## See Also
+## See also
 
 - {doc}`overview` - API V2 design principles
 - {doc}`external_identifiers` - Identifier format for subject resolution

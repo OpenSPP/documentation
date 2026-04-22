@@ -6,7 +6,9 @@ openspp:
 
 # Products and Service Points
 
-This guide is for **developers** working with product catalog and service point data through the OpenSPP API V2 extensions.
+**For: developers**
+
+Work with the product catalog (entitlement items) and service points (distribution locations) through the API.
 
 ## Overview
 
@@ -165,7 +167,7 @@ def find_active_service_points(area, token, base_url):
 result = find_active_service_points("Metro Manila", token=token, base_url=base_url)
 ```
 
-## Are You Stuck?
+## Common mistakes
 
 **Getting 404 on product/service point endpoints?**
 
@@ -179,13 +181,13 @@ Product search uses substring matching on the name. Try a shorter search term. U
 
 Not all service points have GPS coordinates. Coordinates are optional and depend on data entry.
 
-## Next Steps
+## What's next
 
 - {doc}`entitlements_cycles` - Entitlements reference products for in-kind distributions
 - {doc}`resources` - Core API resources
 - {doc}`search` - Search and filtering patterns
 
-## See Also
+## See also
 
 - {doc}`overview` - API V2 design principles
 - {doc}`authentication` - OAuth 2.0 setup and scopes

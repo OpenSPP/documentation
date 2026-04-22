@@ -6,7 +6,9 @@ openspp:
 
 # Entitlements and Cycles
 
-This guide is for **developers** working with entitlement and cycle data through the OpenSPP API V2 extensions.
+**For: developers**
+
+Read and manage entitlements (cash and in-kind) and the distribution cycles that group them.
 
 ## Overview
 
@@ -218,7 +220,7 @@ for entry in result.get("entry", []):
           f"{stats.get('totalAmount', 0)} {stats.get('currency', '')}")
 ```
 
-## Are You Stuck?
+## Common mistakes
 
 **Getting 403 on entitlement/cycle endpoints?**
 
@@ -236,14 +238,14 @@ Entitlement codes are UUIDs assigned when the entitlement is created. Search by 
 
 Statistics are computed when the cycle is processed. Draft cycles may not have statistics yet.
 
-## Next Steps
+## What's next
 
 - {doc}`resources` - Core Individual, Group, and Program resources
 - {doc}`search` - Search and filtering patterns
 - {doc}`batch` - Bulk export for multiple entitlements
 - {doc}`errors` - Error handling
 
-## See Also
+## See also
 
 - {doc}`overview` - API V2 design principles
 - {doc}`authentication` - OAuth 2.0 setup and scopes

@@ -6,7 +6,9 @@ openspp:
 
 # GIS and Geospatial
 
-This guide is for **developers** working with geospatial queries, geofences, and map data through the OpenSPP API V2 GIS extension.
+**For: developers**
+
+Run spatial queries, define geofences, and export geographic features through the OGC-compliant GIS API.
 
 ## Overview
 
@@ -385,7 +387,7 @@ geofence = gis.create_geofence(
 print(f"Created geofence: {geofence['name']} ({geofence['area_sqkm']} sq km)")
 ```
 
-## Are You Stuck?
+## Common mistakes
 
 **Spatial query returns zero results?**
 
@@ -407,13 +409,13 @@ GeoPackage format requires the `fiona` Python library. If unavailable, the API f
 
 Use the OGC API endpoints as a WFS data source in QGIS. The QML endpoint provides automatic layer styling.
 
-## Next Steps
+## What's next
 
 - {doc}`simulation` - Simulation scenarios use spatial data
 - {doc}`resources` - Core API resources
 - {doc}`data_api` - Variable data used in spatial queries
 
-## See Also
+## See also
 
 - {doc}`overview` - API V2 design principles
 - {doc}`authentication` - OAuth 2.0 setup and scopes

@@ -6,7 +6,14 @@ openspp:
 
 # Batch Operations
 
-This guide is for **developers** implementing batch and transaction operations with OpenSPP API V2.
+**For: developers**
+
+Execute multiple operations in a single request using transaction bundles (all-or-nothing) or batch bundles (independent operations).
+
+## Prerequisites
+
+- A working API client and OAuth token (see {doc}`authentication`)
+- Familiarity with {doc}`resources` for the resource types you are batching
 
 ## Why Use Batch Operations?
 
@@ -943,7 +950,7 @@ result = bulk_export(
 print(f"Exported: {result['successful']}, Failed: {result['failed']}")
 ```
 
-## Are You Stuck?
+## Common mistakes
 
 **Transaction failing with "reference not found"?**
 
@@ -965,14 +972,14 @@ Use a transaction bundle with `PUT` requests. Include `If-Match` headers with ve
 
 Yes. Use `POST` for creates, `PUT` for updates in the same transaction.
 
-## Next Steps
+## What's next
 
 - {doc}`resources` - Learn about available resources
 - {doc}`errors` - Complete error handling guide
 - {doc}`search` - Finding existing resources
 - {doc}`authentication` - OAuth 2.0 setup
 
-## See Also
+## See also
 
 - [FHIR Bundle](https://www.hl7.org/fhir/bundle.html) - FHIR bundle specification
 - [HTTP Batch Processing](https://datatracker.ietf.org/doc/html/rfc7233) - HTTP batch patterns

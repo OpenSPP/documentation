@@ -6,7 +6,9 @@ openspp:
 
 # Change Requests
 
-This guide is for **developers** integrating with the OpenSPP change request workflow through API V2.
+**For: developers**
+
+Create, review, and apply change requests via the API — including approval actions (approve, reject, revise).
 
 ## Overview
 
@@ -376,7 +378,7 @@ cr = client.apply(ref)
 print(f"Applied: {cr['approvalState']}")
 ```
 
-## Are You Stuck?
+## Common mistakes
 
 **Getting 409 Conflict on submit?**
 
@@ -398,13 +400,13 @@ References use the format `CR/YYYY/NNNNN` (e.g., `CR/2024/00001`). Include all t
 
 Only API clients with the `change_request:approve` scope. Typically a different client than the one that created the CR.
 
-## Next Steps
+## What's next
 
 - {doc}`resources` - Core API resources
 - {doc}`batch` - Batch operations for bulk CR creation
 - {doc}`errors` - Error handling
 
-## See Also
+## See also
 
 - {doc}`overview` - API V2 design principles
 - {doc}`authentication` - OAuth 2.0 setup and scopes

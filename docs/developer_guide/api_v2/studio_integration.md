@@ -6,7 +6,9 @@ openspp:
 
 # Studio API Integration
 
-This guide is for **developers** integrating with OpenSPP's Studio custom fields via API V2.
+**For: developers**
+
+Expose Studio-defined custom fields and CEL variables through the REST API.
 
 ## Overview
 
@@ -315,7 +317,7 @@ When creating or updating records via API, include extension data in the `extens
 
 ```json
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [...],
   "name": {...},
   "extension": {
@@ -399,7 +401,7 @@ curl -X POST \
   -H "Authorization: Bearer ${TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{
-    "resourceType": "Individual",
+    "type": "Individual",
     "identifier": [
       {
         "system": "urn:gov:ph:psa:national-id",
@@ -465,7 +467,7 @@ On-demand variable computation is restricted to safe source models:
 - `spp.program.membership`
 - `spp.entitlement`
 
-## Are you stuck?
+## Common mistakes
 
 ### Field not appearing in API response
 
@@ -533,9 +535,13 @@ if data["nextPageId"]:
     )
 ```
 
-## See Also
+## What's next
 
-- {doc}`overview` - API V2 design principles
-- {doc}`authentication` - OAuth 2.0 setup and scopes
-- {doc}`resources` - Individual and Group resource operations
-- {doc}`external_identifiers` - Identifier format and usage
+- {doc}`resources` — read and update Individual/Group records with the Studio-extended fields
+- {doc}`external_identifiers` — reference Studio-exposed fields from external systems via namespace URIs
+
+## See also
+
+- {doc}`overview` — API V2 design principles
+- {doc}`authentication` — OAuth 2.0 setup and scopes
+- {doc}`/developer_guide/cel/index` — writing CEL expressions that Studio exposes via the API

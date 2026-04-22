@@ -6,7 +6,9 @@ openspp:
 
 # Authentication
 
-This guide is for **developers** implementing OAuth 2.0 authentication for OpenSPP API V2.
+**For: developers**
+
+OAuth 2.0 client credentials flow, JWT tokens, scopes, and rate limiting for OpenSPP API V2.
 
 ## Authentication Flow
 
@@ -508,7 +510,7 @@ Valid token, but insufficient permissions:
 
 **Solution:** Request additional scopes from your administrator.
 
-## Are You Stuck?
+## Common mistakes
 
 **Getting "invalid_client" error?**
 
@@ -626,14 +628,14 @@ results = client.search_individuals(name="Santos")
 print(f"Found {results['total']} individuals")
 ```
 
-## Next Steps
+## What's next
 
 - {doc}`resources` - Learn about available API resources
 - {doc}`search` - Advanced search and filtering
 - {doc}`consent` - Understanding consent-based access control
 - {doc}`errors` - Complete error handling guide
 
-## See Also
+## See also
 
 - [OAuth 2.0 RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749) - OAuth standard
 - [JWT RFC 7519](https://datatracker.ietf.org/doc/html/rfc7519) - JSON Web Tokens

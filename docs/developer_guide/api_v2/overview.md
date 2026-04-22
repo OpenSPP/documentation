@@ -6,7 +6,15 @@ openspp:
 
 # API V2 Overview
 
-This guide is for **developers** integrating external applications with OpenSPP using the REST API V2.
+**For: developers**
+
+An introduction to OpenSPP's REST API — its design philosophy, base URL, and the core principles that shape every endpoint.
+
+## Prerequisites
+
+- Familiarity with REST APIs and HTTP
+- Ability to issue HTTP requests (curl, Python `requests`, JavaScript `fetch`, etc.)
+- An OpenSPP deployment with `spp_api_v2` installed
 
 ## What is API V2?
 
@@ -95,6 +103,16 @@ See {doc}`consent` for details.
 ### 4. Fail Closed
 
 When in doubt (missing consent, ambiguous permissions), the API denies access and returns minimal data.
+
+### Authorization stack
+
+Every request passes through three layers in order (see ADR-022):
+
+1. **Authentication** — JWT token validated against the API client record
+2. **Scope enforcement** — endpoint checks that the client has the required `resource:action` scope (e.g., `individual:read`)
+3. **Consent filtering** — response fields are filtered based on registrant consent and the client's legal basis
+
+Authorization is enforced at the application layer, not through Odoo record rules — API clients are not Odoo users. See {doc}`authentication` for scope details and {doc}`consent` for the filtering rules.
 
 ## FHIR-Inspired Patterns
 
@@ -250,7 +268,7 @@ curl https://{your-domain}/api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-1
 Response:
 ```json
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [
     {
       "system": "urn:gov:ph:psa:national-id",
@@ -324,7 +342,7 @@ Response headers indicate the exact API version:
 X-API-Version: 2.0.0
 ```
 
-## Are You Stuck?
+## Common mistakes
 
 **Getting 401 Unauthorized?**
 
@@ -353,7 +371,7 @@ X-RateLimit-Reset: 45
 Retry-After: 45
 ```
 
-## Next Steps
+## What's next
 
 - {doc}`authentication` - OAuth 2.0 setup and token management
 - {doc}`external_identifiers` - Working with external IDs
@@ -361,7 +379,7 @@ Retry-After: 45
 - {doc}`search` - Advanced search and filtering
 - {doc}`batch` - Batch and transaction operations
 
-## See Also
+## See also
 
 - [G2P Connect Protocol](https://g2pconnect.cdpi.dev/) - Social protection interoperability
 - [FHIR HTTP Interactions](https://www.hl7.org/fhir/http.html) - HTTP patterns we adopt

@@ -6,7 +6,9 @@ openspp:
 
 # Simulation
 
-This guide is for **developers** working with the OpenSPP program simulation engine through API V2.
+**For: developers**
+
+Run and analyze scenario-based program simulations through the API.
 
 ## Overview
 
@@ -281,7 +283,7 @@ Content-Type: application/json
 
 Requires `simulation:write` and `simulation:convert` scopes. Only ready scenarios with entitlement rules can be converted. Program name must be unique.
 
-## Are You Stuck?
+## Common mistakes
 
 **Scenario won't transition to "ready"?**
 
@@ -303,13 +305,13 @@ Yes. You can run a ready scenario multiple times. Each run creates a separate re
 
 Check that the scenario is in "ready" state, has entitlement rules, and the program name is unique.
 
-## Next Steps
+## What's next
 
 - {doc}`resources` - Core program and membership resources
 - {doc}`entitlements_cycles` - Entitlements created by programs
 - {doc}`data_api` - Variable data for targeting expressions
 
-## See Also
+## See also
 
 - {doc}`overview` - API V2 design principles
 - {doc}`authentication` - OAuth 2.0 setup and scopes

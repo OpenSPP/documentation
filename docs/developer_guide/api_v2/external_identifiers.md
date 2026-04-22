@@ -6,7 +6,14 @@ openspp:
 
 # External Identifiers
 
-This guide is for **developers** working with OpenSPP's external identifier system.
+**For: developers**
+
+How OpenSPP API V2 uses namespaced external identifiers (URNs) instead of database IDs, and how to construct, send, and look up records by them.
+
+## Prerequisites
+
+- A working API client and OAuth token (see {doc}`authentication`)
+- Familiarity with URN syntax and URL-encoded query parameters
 
 ## Why External Identifiers?
 
@@ -95,7 +102,7 @@ A person typically has multiple identifiers:
 
 ```json
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [
     {
       "system": "urn:gov:ph:psa:national-id",
@@ -277,7 +284,7 @@ Authorization: Bearer YOUR_TOKEN
 Content-Type: application/json
 
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [
     {
       "system": "urn:gov:ph:psa:national-id",
@@ -298,7 +305,7 @@ Content-Type: application/json
 def create_individual(identifier_system, identifier_value, name, birth_date, token, base_url):
     """Create a new individual with an identifier."""
     data = {
-        "resourceType": "Individual",
+        "type": "Individual",
         "identifier": [
             {
                 "system": identifier_system,
@@ -351,7 +358,7 @@ Content-Type: application/json
 If-Match: "3"
 
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [
     {
       "system": "urn:gov:ph:psa:national-id",
@@ -377,7 +384,7 @@ Use identifiers to reference other resources:
 
 ```json
 {
-  "resourceType": "ProgramMembership",
+  "type": "ProgramMembership",
   "program": {
     "reference": "Program/urn:openspp:program|4Ps",
     "display": "Pantawid Pamilyang Pilipino Program"
@@ -547,7 +554,7 @@ else:
     # Decide how to handle duplicates
 ```
 
-## Are You Stuck?
+## Common mistakes
 
 **Getting 404 Not Found?**
 
@@ -641,14 +648,14 @@ else:
     print("No PhilHealth ID on file")
 ```
 
-## Next Steps
+## What's next
 
 - {doc}`resources` - Learn about available API resources
 - {doc}`search` - Advanced search capabilities
 - {doc}`consent` - Consent-based access control
 - {doc}`batch` - Creating multiple resources with identifiers
 
-## See Also
+## See also
 
 - [ADR-007: Namespace URIs for Identifiers](https://github.com/OpenSPP/openspp-docs/blob/main/docs/architecture/decisions/ADR-007-namespace-uris.md)
 - [G2P Connect: Identifier Systems](https://g2pconnect.cdpi.dev/protocol/resources/identifier)

@@ -6,7 +6,15 @@ openspp:
 
 # API Resources
 
-This guide is for **developers** working with OpenSPP API V2 resources.
+**For: developers**
+
+The core resource types exposed by API V2 (Individual, Group, Program, ProgramMembership, Consent) with their fields, relationships, and CRUD operations.
+
+## Prerequisites
+
+- A working API client and OAuth token (see {doc}`authentication`)
+- Understanding of {doc}`external_identifiers` — every resource is addressed by `system|value`
+- Awareness of {doc}`consent` — responses are filtered based on consent scope
 
 ## Available Resources
 
@@ -44,7 +52,7 @@ Represents a person in the social protection registry.
 
 ```json
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [
     {
       "system": "urn:gov:ph:psa:national-id",
@@ -143,7 +151,7 @@ Represents a person in the social protection registry.
 
 | Field                | Type            | Required | Description                              |
 | -------------------- | --------------- | -------- | ---------------------------------------- |
-| `resourceType`       | string          | Yes      | Always "Individual"                      |
+| `type`               | string          | Yes      | Always "Individual"                      |
 | `identifier`         | array           | Yes      | External identifiers (at least one)      |
 | `active`             | boolean         | No       | Whether record is active (default: true) |
 | `name`               | object          | Yes      | Human name                               |
@@ -202,7 +210,7 @@ Authorization: Bearer TOKEN
 Content-Type: application/json
 
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [
     {
       "system": "urn:gov:ph:psa:national-id",
@@ -260,7 +268,7 @@ Content-Type: application/json
 If-Match: "3"
 
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [...],
   "name": {...},
   ...
@@ -328,7 +336,7 @@ Represents a household or other group of individuals.
 
 ```json
 {
-  "resourceType": "Group",
+  "type": "Group",
   "identifier": [
     {
       "system": "urn:openspp:group",
@@ -440,7 +448,7 @@ Authorization: Bearer TOKEN
 Content-Type: application/json
 
 {
-  "resourceType": "Group",
+  "type": "Group",
   "identifier": [
     {
       "system": "urn:openspp:group",
@@ -475,7 +483,7 @@ Represents a social protection program.
 
 ```json
 {
-  "resourceType": "Program",
+  "type": "Program",
   "identifier": [
     {
       "system": "urn:openspp:program",
@@ -538,7 +546,7 @@ Represents enrollment of a beneficiary in a program.
 
 ```json
 {
-  "resourceType": "ProgramMembership",
+  "type": "ProgramMembership",
   "identifier": [
     {
       "system": "urn:openspp:program-membership",
@@ -625,7 +633,7 @@ Authorization: Bearer TOKEN
 Content-Type: application/json
 
 {
-  "resourceType": "ProgramMembership",
+  "type": "ProgramMembership",
   "program": {
     "reference": "Program/urn:openspp:program|4Ps"
   },
@@ -743,7 +751,7 @@ If another client modified the resource, you'll get a 409 Conflict:
 }
 ```
 
-## Are You Stuck?
+## Common mistakes
 
 **Which resource should I use for households?**
 
@@ -781,7 +789,7 @@ class OpenSPPAPI:
     def create_individual(self, identifier, name, birth_date):
         """Create a new individual."""
         data = {
-            "resourceType": "Individual",
+            "type": "Individual",
             "identifier": [identifier],
             "name": name,
             "birthDate": birth_date
@@ -797,7 +805,7 @@ class OpenSPPAPI:
     def create_group(self, identifier, name, members):
         """Create a new group."""
         data = {
-            "resourceType": "Group",
+            "type": "Group",
             "identifier": [identifier],
             "type": "household",
             "name": name,
@@ -814,7 +822,7 @@ class OpenSPPAPI:
     def enroll_in_program(self, program_ref, beneficiary_ref):
         """Enroll a beneficiary in a program."""
         data = {
-            "resourceType": "ProgramMembership",
+            "type": "ProgramMembership",
             "program": {"reference": program_ref},
             "beneficiary": {"reference": beneficiary_ref},
             "status": "enrolled",
@@ -869,14 +877,14 @@ membership = api.enroll_in_program(
 print(f"Enrolled in program: {membership['program']['display']}")
 ```
 
-## Next Steps
+## What's next
 
 - {doc}`search` - Advanced search and filtering
 - {doc}`batch` - Create multiple resources atomically
 - {doc}`consent` - Understanding consent-based access
 - {doc}`errors` - Error handling
 
-## See Also
+## See also
 
 - [FHIR Resource Types](https://www.hl7.org/fhir/resourcelist.html) - FHIR resource patterns
 - [G2P Connect Resources](https://g2pconnect.cdpi.dev/protocol/resources) - G2P resource definitions

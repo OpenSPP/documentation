@@ -6,7 +6,14 @@ openspp:
 
 # Error Handling
 
-This guide is for **developers** implementing robust error handling for OpenSPP API V2 integrations.
+**For: developers**
+
+The RFC 9457 Problem Detail format used for all API errors, HTTP status codes, and patterns for building resilient clients.
+
+## Prerequisites
+
+- Familiarity with HTTP status codes
+- Understanding of [RFC 9457 Problem Details for HTTP APIs](https://www.rfc-editor.org/rfc/rfc9457.html)
 
 ## Error Response Format
 
@@ -679,7 +686,7 @@ except requests.HTTPError as e:
     print(f"Request failed: {e}")
 ```
 
-## Are You Stuck?
+## Common mistakes
 
 **Getting errors you don't understand?**
 
@@ -701,14 +708,14 @@ Check if production has different rate limits, timeouts, or network conditions. 
 
 Transaction bundles should rollback fully. If not, report as a bug. Check that you're using `type: "transaction"`, not `"batch"`.
 
-## Next Steps
+## What's next
 
 - {doc}`authentication` - OAuth 2.0 setup
 - {doc}`resources` - Available resources
 - {doc}`batch` - Batch operations
 - {doc}`consent` - Consent-based access
 
-## See Also
+## See also
 
 - [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) - HTTP status reference
 - [RFC 9457: Problem Details for HTTP APIs](https://www.rfc-editor.org/rfc/rfc9457) - Error response format standard

@@ -6,7 +6,14 @@ openspp:
 
 # Consent Management
 
-This guide is for **developers** implementing consent-based data access in OpenSPP API V2 integrations.
+**For: developers**
+
+How API V2 applies consent rules to every response — response headers, field filtering, and consent-aware client patterns.
+
+## Prerequisites
+
+- A working API client and OAuth token (see {doc}`authentication`)
+- Awareness that responses may be filtered — your client should never assume full data is returned
 
 ## Why Consent Matters
 
@@ -76,7 +83,7 @@ X-Consent-Status: active
 X-Consent-Scope: individual
 
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [...],
   "name": {"given": "Maria", "family": "Santos"},
   "birthDate": "1985-03-15",
@@ -96,7 +103,7 @@ X-Consent-Status: active
 X-Consent-Scope: individual
 
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [...],
   "name": {"given": "Maria", "family": "Santos"},
   "active": true
@@ -114,7 +121,7 @@ HTTP/1.1 200 OK
 X-Consent-Status: no_consent
 
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [
     {
       "system": "urn:gov:ph:psa:national-id",
@@ -137,7 +144,7 @@ HTTP/1.1 200 OK
 X-Consent-Status: expired
 
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [...],
   "_consent": {
     "status": "expired",
@@ -170,7 +177,7 @@ If consent doesn't include the `farmer` extension:
 
 ```json
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [...],
   "name": {...},
   "_consent": {
@@ -336,7 +343,7 @@ Response:
 HTTP/1.1 200 OK
 
 {
-  "resourceType": "Consent",
+  "type": "Consent",
   "status": "revoked",
   "revokedDate": "2024-11-28T14:30:00Z",
   "revokedBy": {
@@ -410,7 +417,7 @@ With consent only for `basic` scope (identifier, name):
 
 ```json
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [...],
   "name": {...},
   "_consent": {
@@ -575,7 +582,7 @@ elif individual["_consentInfo"]["status"] == "no_consent":
     print("Limited data. Consent must be obtained through OpenSPP UI.")
 ```
 
-## Are You Stuck?
+## Common mistakes
 
 **Getting only identifiers in responses?**
 
@@ -597,14 +604,14 @@ The registrant must renew consent through the OpenSPP user interface. Contact yo
 
 Yes, through the beneficiary portal or mobile app. Your integration should handle revoked consent gracefully (you'll receive limited data).
 
-## Next Steps
+## What's next
 
 - {doc}`resources` - Learn about available API resources
 - {doc}`search` - Advanced search capabilities
 - {doc}`errors` - Error handling
 - {doc}`authentication` - OAuth 2.0 setup
 
-## See Also
+## See also
 
 - [GDPR Principles](https://gdpr-info.eu/art-5-gdpr/) - Data protection principles
 - [G2P Connect: Consent](https://g2pconnect.cdpi.dev/protocol/consent) - Consent in social protection

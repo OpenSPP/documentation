@@ -6,7 +6,15 @@ openspp:
 
 # Search and Filtering
 
-This guide is for **developers** implementing search functionality with OpenSPP API V2.
+**For: developers**
+
+Query parameters, pagination, sorting, sparse fieldsets, and advanced filter expressions for API V2 search endpoints.
+
+## Prerequisites
+
+- A working API client and OAuth token (see {doc}`authentication`)
+- Scope that includes `{resource}:search` (e.g., `individual:search`)
+- Familiarity with {doc}`resources` for the resource you want to search
 
 ## Search Basics
 
@@ -865,7 +873,7 @@ all_results = searcher.get_all_results(
 print(f"Retrieved {len(all_results)} total results")
 ```
 
-## Are You Stuck?
+## Common mistakes
 
 **Search returns too many results?**
 
@@ -887,13 +895,13 @@ Use the full URL from the `link` array. Don't manually construct pagination URLs
 
 Use `_elements` to request only needed fields. Filter by `_lastUpdated` if you're syncing data.
 
-## Next Steps
+## What's next
 
 - {doc}`batch` - Creating multiple resources efficiently
 - {doc}`resources` - Available resources and their fields
 - {doc}`consent` - Understanding consent-based filtering
 - {doc}`errors` - Error handling
 
-## See Also
+## See also
 
 - [REST API Best Practices](https://restfulapi.net/) - REST design principles
