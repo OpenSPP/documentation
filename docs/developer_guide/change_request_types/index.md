@@ -12,11 +12,11 @@ Build change request (CR) types that go beyond what Studio and UI configuration 
 
 ## How to use this section
 
-1. Read {doc}`tutorial` first — build a complete CR type end-to-end
-2. Use the reference pages when building your own types:
+1. Read the reference pages for the concepts you will use:
    - {doc}`detail_models` for field patterns and validation
    - {doc}`apply_strategies` for custom apply logic
    - {doc}`approval_hooks` for lifecycle customization
+2. Follow the {doc}`tutorial` to tie everything together in a complete working module
 
 ## Prerequisites
 
@@ -56,32 +56,26 @@ Every CR type has three layers:
 
 For a full explanation of this architecture, see {doc}`/config_guide/change_request_types/overview`.
 
-## What you will build
-
-The {doc}`tutorial` walks you through building a **Transfer Member** CR type — a request to move an individual from one household to another. This type requires a custom apply strategy because it must end the source membership and create a new one in the target group, which field mapping alone cannot do.
-
-By the end of the tutorial, you will have a working Odoo module with:
-
-- A detail model with computed fields and validation
-- A form view with dynamic field filtering
-- A custom apply strategy that modifies group memberships
-- Security rules and access control
-- A test suite covering happy paths and error cases
-
 ## Reference guides
 
-After the tutorial, use these references when building your own CR types:
+Start with the reference pages for the layer you need to customize:
 
 - {doc}`detail_models` — base class API, field patterns, validation, and the built-in detail models
 - {doc}`apply_strategies` — when to use field mapping vs. custom strategies, and how to build each
 - {doc}`approval_hooks` — lifecycle hooks, dynamic approval, conflict detection, and audit events
 
+## Capstone tutorial
+
+The {doc}`tutorial` walks you through building a **Transfer Member** CR type end-to-end — a request to move an individual from one household to another. The tutorial ties together all the reference concepts (detail models, custom apply strategy, form views, security, tests) in one working module you can install and run.
+
+By the end, you will have a working Odoo module with a detail model, form view, custom apply strategy that modifies group memberships, security rules, and a test suite covering happy paths and error cases.
+
 ```{toctree}
 :maxdepth: 2
 :hidden:
 
-tutorial
 detail_models
 apply_strategies
 approval_hooks
+tutorial
 ```
