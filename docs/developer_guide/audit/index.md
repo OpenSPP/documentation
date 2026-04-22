@@ -23,15 +23,30 @@ How OpenSPP records who changed what (audit logging) and how configuration artif
 - For versioning: understanding of JSON snapshots and polymorphic references
 - For event data: basic familiarity with {doc}`/developer_guide/cel/index` (CEL aggregation is the most common consumer)
 
+## When do you need this?
+
+| Requirement                                                     | Approach                                                                                |
+| --------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Record who changed what on a model                              | Configure an `spp.audit.rule` — no code change                                          |
+| Log an approval / export / download / state change from code    | Call `log_lifecycle_action()` (requires a matching rule)                                |
+| Ship configuration artifacts that need review before going live | Inherit `spp.versioned.mixin`, use `action_schedule()` / `action_activate_now()`        |
+| Enforce a separate approver before a version activates          | Enable approval (system param or `is_approval_required` field)                          |
+| Roll back to a previous version                                 | Call `action_restore_as_new()` on the superseded version                                |
+| Record registrant-centric events that CEL rules aggregate       | Create `spp.event.data` records against an `spp.event.type`                             |
+| Track beneficiary attendance at meetings or trainings           | Use `spp.session` and `spp.session.attendance`                                          |
+| Stamp records with source-system provenance                     | Inherit `spp.mixin.source.tracking` — see {doc}`/developer_guide/custom_modules/mixins` |
+| Track who logged in when                                        | **Not here** — use Odoo `res.users.login_date` + an audit rule on `res.users`           |
+| Audit API V2 calls                                              | **Not here** — per-client logging lives in `spp_api_v2`                                 |
+
 ## The modules at a glance
 
-| Module | Purpose | Developer entry point |
-|--------|---------|-----------------------|
-| `spp_audit` | Immutable audit log with 4 backends (DB, file, syslog, HTTP) | Configure an `spp.audit.rule`, or call `log_lifecycle_action()` |
-| `spp_versioning` | Snapshot-based versioning with scheduled activation via cron | Inherit `spp.versioned.mixin` |
-| `spp_event_data` | Registrant-centric event store (surveys, visits, syncs) | `env["spp.event.data"].create(...)` |
-| `spp_session_tracking` | **Training attendance** — not login/API tracking | `spp.session` and `spp.session.attendance` records |
-| `spp_source_tracking` | Data provenance mixin (source system, collection method) | Inherit `spp.mixin.source.tracking` — see {doc}`/developer_guide/custom_modules/mixins` |
+| Module                 | Purpose                                                      | Developer entry point                                                                   |
+| ---------------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
+| `spp_audit`            | Immutable audit log with 4 backends (DB, file, syslog, HTTP) | Configure an `spp.audit.rule`, or call `log_lifecycle_action()`                         |
+| `spp_versioning`       | Snapshot-based versioning with scheduled activation via cron | Inherit `spp.versioned.mixin`                                                           |
+| `spp_event_data`       | Registrant-centric event store (surveys, visits, syncs)      | `env["spp.event.data"].create(...)`                                                     |
+| `spp_session_tracking` | **Training attendance** — not login/API tracking             | `spp.session` and `spp.session.attendance` records                                      |
+| `spp_source_tracking`  | Data provenance mixin (source system, collection method)     | Inherit `spp.mixin.source.tracking` — see {doc}`/developer_guide/custom_modules/mixins` |
 
 ## Audit logging
 
@@ -137,7 +152,7 @@ class ProgramPolicy(models.Model):
         ]
 ```
 
-The mixin provides helper methods that avoid computed fields (computed fields interact badly with the audit decorator): `get_version_count()`, `get_current_version()`, `get_usage_count()`, `get_is_in_use()`. Call these explicitly instead of relying on `@api.depends`.
+The mixin provides explicit helper methods (`get_current_version()`, `get_version_ids()`, `get_version_count()`, `get_usage_count()`, `get_is_in_use()`) instead of computed fields — the audit decorator doesn't play well with `@api.depends`. See [Querying versions](#querying-versions) below.
 
 ### Creating and scheduling a version
 
@@ -161,20 +176,26 @@ version = self.env["spp.artifact.version"].create_version(
 
 Both paths serialize the fields returned by `_get_version_snapshot_fields()` into `data_snapshot` for you — you don't build the snapshot by hand. The returned record is in `state="draft"`.
 
-Move it through the lifecycle:
+Move it through the lifecycle using the action methods — do not assign to `state` directly:
 
 ```python
-# After review and approval:
-version.state = "approved"
+from datetime import timedelta
+from odoo import fields
 
-# Schedule for activation next Monday
-version.write({
-    "state": "scheduled",
-    "effective_date": next_monday,
-})
+# Schedule for activation next Monday (approval off — the default)
+next_monday = fields.Date.today() + timedelta(days=(7 - fields.Date.today().weekday()))
+version.action_schedule(next_monday)
+
+# Or activate immediately (bypasses scheduling)
+version.action_activate_now()
+
+# Cancel a scheduled version before it activates
+version.action_cancel_scheduled()
 ```
 
-On `effective_date`, the cron transitions `version.state` to `current` and the previous current version to `superseded`. If your model needs to apply the snapshot back onto the parent artifact at activation time (so live reads reflect the scheduled values), define an **`_apply_version_snapshot(snapshot)` method on your versioned model** — `spp.artifact.version._apply_snapshot_to_artifact()` internally calls it if present:
+The action methods enforce state-transition rules (`action_schedule` refuses non-draft unless approved; `action_cancel_scheduled` requires `state == "scheduled"`) and emit chatter messages on every transition. They also check the approval gate — see [Approval workflow](#approval-workflow) below.
+
+On `effective_date`, the daily `_cron_activate_scheduled_versions` cron transitions the version from `scheduled` to `current` and the previous current version to `superseded`. If your model needs to apply the snapshot back onto the parent artifact at activation time (so live reads reflect the scheduled values), define an **`_apply_version_snapshot(snapshot)` method on your versioned model** — `spp.artifact.version._apply_snapshot_to_artifact()` internally calls it if present:
 
 ```python
 class ProgramPolicy(models.Model):
@@ -189,9 +210,135 @@ class ProgramPolicy(models.Model):
         })
 ```
 
+### Querying versions
+
+The mixin provides explicit helpers instead of computed fields (which can recurse with the audit decorator). Call them directly:
+
+```python
+# The current version (state="current"), or empty recordset if none
+current = policy.get_current_version()
+
+# All versions for this artifact, ordered by version desc
+history = policy.get_version_ids()
+
+# Total version count (draft/pending/approved/scheduled/current/superseded/cancelled/archived)
+count = policy.get_version_count()
+
+# Is this artifact referenced by anything? (spp.artifact.usage rows)
+if policy.get_is_in_use():
+    n = policy.get_usage_count()
+    # Block destructive operations, or warn the user
+```
+
+Filter the search by state for specific lifecycle queries:
+
+```python
+Version = self.env["spp.artifact.version"]
+
+scheduled = Version.search([
+    ("model", "=", "myorg.program.policy"),
+    ("res_id", "=", policy.id),
+    ("state", "=", "scheduled"),
+], order="effective_date asc")
+```
+
+### Rolling back to a previous version
+
+`action_restore_as_new()` creates a **new draft** with the old snapshot data — the audit trail is preserved, and the rollback itself goes through the normal lifecycle (draft → optional approval → schedule/activate):
+
+```python
+superseded = policy.get_version_ids().filtered(lambda v: v.state == "superseded")[:1]
+action = superseded.action_restore_as_new()
+# Returns a window action opening the schedule wizard for the new draft;
+# the new draft has data_snapshot copied from the superseded version.
+```
+
+Do not flip a superseded version's state back to `current` manually — the one-current constraint will reject it, and even if it didn't, you'd lose the lineage that `supersedes_id` records.
+
+### Approval workflow
+
+Approval is **off by default**. When enabled, `action_schedule()` and `action_activate_now()` refuse to transition a draft directly — it must go through `pending` → `approved` first.
+
+Two ways to enable:
+
+```python
+# Global (applies to every versioned artifact)
+self.env["ir.config_parameter"].sudo().set_param("spp_versioning.require_approval", "True")
+
+# Per-artifact (the artifact model must declare the field — the mixin provides it)
+policy.is_approval_required = True
+```
+
+With approval on, the flow is:
+
+```python
+version = policy.action_create_version(change_summary="Raise threshold")
+
+# Reviewer actions
+version.action_submit_for_approval()   # draft → pending
+version.action_approve()               # pending → approved
+# Or: version.action_reject()          # pending → draft (for rework)
+
+# Now scheduling/activation are allowed
+version.action_schedule(next_monday)
+```
+
+Use separate record rules or group-based ACLs to enforce that the approver is not the author — the versioning module does not check that itself. See {doc}`/developer_guide/security/index` for the group and ACL pattern.
+
 ### Using versioning with Studio
 
 `spp.studio.mixin` already integrates with versioning — Studio-configured logic expressions and variable definitions can be versioned by inheriting `spp.versioned.mixin` alongside `spp.studio.mixin`. The two mixins compose cleanly because they target different lifecycles (Studio's is active/inactive; versioning's is the approval pipeline leading up to active).
+
+### Testing versioned models
+
+Use `TransactionCase` with `@tagged("post_install", "-at_install")` so the audit decorators are fully applied. The test below covers the full lifecycle:
+
+```python
+from datetime import timedelta
+from odoo import fields
+from odoo.exceptions import ValidationError
+from odoo.tests import TransactionCase, tagged
+
+
+@tagged("post_install", "-at_install")
+class TestPolicyVersioning(TransactionCase):
+    def setUp(self):
+        super().setUp()
+        self.policy = self.env["myorg.program.policy"].create({
+            "name": "Test policy",
+            "threshold": 1000,
+        })
+
+    def test_schedule_and_activate(self):
+        version = self.policy.action_create_version(change_summary="v1")
+        self.assertEqual(version.state, "draft")
+
+        future = fields.Date.today() + timedelta(days=7)
+        version.action_schedule(future)
+        self.assertEqual(version.state, "scheduled")
+
+        # Simulate the cron firing on the effective date
+        version.effective_date = fields.Date.today()
+        self.env["spp.artifact.version"]._cron_activate_scheduled_versions()
+
+        version.invalidate_recordset()
+        self.assertEqual(version.state, "current")
+
+    def test_approval_gate_blocks_direct_scheduling(self):
+        self.env["ir.config_parameter"].sudo().set_param(
+            "spp_versioning.require_approval", "True",
+        )
+        self.addCleanup(
+            self.env["ir.config_parameter"].sudo().set_param,
+            "spp_versioning.require_approval", "False",
+        )
+        version = self.policy.action_create_version(change_summary="v1")
+        future = fields.Date.today() + timedelta(days=7)
+        with self.assertRaises(ValidationError):
+            version.action_schedule(future)
+```
+
+To test audit logging for a model, create an `spp.audit.rule` in `setUp()` before the operation under test, then search `spp.audit.log` for the expected entry — e.g. `self.env["spp.audit.log"].search([("model_id.model", "=", "myorg.program.policy"), ("method", "=", "write")])`.
 
 ## Event data
 
@@ -202,7 +349,7 @@ class ProgramPolicy(models.Model):
 - Data sync events from external systems (CRVS births, IBR enrollments)
 - Any "something happened to this registrant at this time" data that downstream logic needs to aggregate or filter
 
-It overlaps with audit in one place: `spp_change_request_v2` writes `cr_audit` events to `spp.event.data` on every CR state transition, giving CEL rules a way to count "how many CRs did this registrant have in the last 30 days" without querying the audit log. Treat that as a domain-specific dual use — don't replace `spp_audit` with `spp_event_data` as a general audit mechanism.
+It overlaps with audit in one place: the change-request module ({doc}`/developer_guide/change_request_types/index`) writes `cr_audit` events to `spp.event.data` on every CR state transition, giving CEL rules a way to count "how many CRs did this registrant have in the last 30 days" without querying the audit log. Treat that as a domain-specific dual use — don't replace `spp_audit` with `spp_event_data` as a general audit mechanism.
 
 ### Core models
 
@@ -212,20 +359,26 @@ It overlaps with audit in one place: `spp_change_request_v2` writes `cr_audit` e
 ### Recording an event
 
 ```python
-event_type = self.env.ref("myorg.event_type_health_screening")
+from odoo import fields, models
 
-self.env["spp.event.data"].sudo().create({
-    "event_type_id": event_type.id,
-    "partner_id": registrant.id,
-    "collection_date": fields.Date.today(),
-    "state": "active",
-    "data_json": {
-        "bmi": 22.3,
-        "bp_systolic": 120,
-        "bp_diastolic": 80,
-        "notes": "Routine check",
-    },
-})
+
+class MyService(models.Model):
+    _inherit = "myorg.service"
+
+    def record_health_screening(self, registrant, payload):
+        event_type = self.env.ref("myorg.event_type_health_screening")
+        return self.env["spp.event.data"].sudo().create({
+            "event_type_id": event_type.id,
+            "partner_id": registrant.id,
+            "collection_date": fields.Date.today(),
+            "state": "active",
+            "data_json": {
+                "bmi": payload["bmi"],
+                "bp_systolic": payload["bp_systolic"],
+                "bp_diastolic": payload["bp_diastolic"],
+                "notes": payload.get("notes", ""),
+            },
+        })
 ```
 
 ### Integration with CEL
@@ -261,11 +414,13 @@ This is a business-domain model, not infrastructure. A program with conditionali
 
 **Using `@api.depends` on a versioned model.** The audit decorator wraps `write`, which triggers computed-field recomputation, which triggers `write` again, which the audit decorator wraps. This can produce infinite recursion or phantom audit entries. The versioned mixin provides explicit helper methods (`get_version_count()`, `get_current_version()`) for this reason — use them instead of declaring computed fields that look at version history.
 
-**Using `spp.event.data` as a general audit log.** Event data is for registrant-centric business events that CEL aggregates over. Use `spp_audit` for change tracking, not `spp_event_data`. The only reason `spp_change_request_v2` writes CR state transitions to `spp.event.data` is because CEL rules need to count them — if that's your use case, great; otherwise, use audit.
+**Using `spp.event.data` as a general audit log.** Event data is for registrant-centric business events that CEL aggregates over. Use `spp_audit` for change tracking, not `spp_event_data`. The only reason the change-request module writes CR state transitions to `spp.event.data` is because CEL rules need to count them — if that's your use case, great; otherwise, use audit.
 
 **Confusing `spp_session_tracking` with login tracking.** If someone asks "who's been logging into the system?", don't look here — this module tracks beneficiary attendance at meetings. User login tracking comes from Odoo core plus an audit rule on `res.users`.
 
-**Forgetting that scheduled versions activate at 00:00 deployment-time.** The cron runs daily, not hourly. A version scheduled for today only activates on the next cron tick, which (by default) is midnight. If you need intra-day activation, shorten the cron interval — but consider whether you actually need it: scheduled versioning is for deliberate, reviewable configuration rollouts, not real-time changes.
+**Forgetting that scheduled versions activate only on the next cron tick.** The `Activate Scheduled Artifact Versions` cron runs once per day (default: midnight server time). A version scheduled for today won't activate the instant you schedule it — it waits for the next tick. If you need intra-day activation, either call `action_activate_now()` explicitly or shorten the cron interval. For most use cases (deliberate, reviewable configuration rollouts), the daily cadence is correct.
+
+**Writing to `version.state` directly.** The action methods (`action_schedule`, `action_activate_now`, `action_submit_for_approval`, `action_approve`, `action_reject`, `action_cancel_scheduled`) enforce transition rules, check approval gates, and post chatter messages. Assigning to `state` skips all of that, which is how invalid states and unchecked approval bypasses sneak into the system.
 
 ## See also
 
