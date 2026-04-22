@@ -433,7 +433,7 @@ from odoo import api, models
 
 
 class EntitlementManagerRegistration(models.Model):
-    _inherit = "spp.entitlement.manager"
+    _inherit = "spp.program.entitlement.manager"
 
     @api.model
     def _selection_manager_ref_id(self):
@@ -475,7 +475,11 @@ class CCTCycleManager(models.Model):
     """Cycle manager that creates quarterly cycles aligned to Q1-Q4."""
 
     _name = "spp.cycle.manager.cct"
-    _inherit = ["spp.base.cycle.manager", "spp.manager.source.mixin"]
+    # Inherit from the default cycle manager implementation to get the
+    # full workflow surface (copy_beneficiaries_from_program, approval_definition_id,
+    # check_eligibility, approve_cycle, etc.). The abstract base class alone does
+    # not provide these — the framework expects them.
+    _inherit = ["spp.cycle.manager.default", "spp.manager.source.mixin"]
     _description = "CCT Cycle Manager (Quarterly)"
 
     is_auto_copy_beneficiaries = fields.Boolean(
@@ -517,10 +521,9 @@ class CCTCycleManager(models.Model):
 
 **Key patterns to notice:**
 
-- `new_cycle` overrides the default date calculation — instead of using recurrence rules, it snaps to calendar quarters
-- When `is_auto_copy_beneficiaries` is enabled, enrolled beneficiaries are automatically added to the cycle on creation
-- The cycle manager base class requires you to implement several workflow methods. For most CCT programs, these delegate to the program's other managers. The complete set is in the downloadable module — the key ones are `check_eligibility`, `prepare_entitlements`, `validate_entitlements`, and `approve_cycle`
-- The `approve_cycle()` method is called automatically when a cycle is approved through the approval workflow. If the cycle manager's `auto_approve_entitlements` flag is enabled, it also triggers auto-approval of all pending entitlements. See the {doc}`building_managers` page for the full approval flow
+- Inheriting from `spp.cycle.manager.default` (rather than `spp.base.cycle.manager`) gives us the full cycle-manager surface for free — `copy_beneficiaries_from_program`, `approval_definition_id`, `on_state_change`, `check_eligibility`, `prepare_entitlements`, `validate_entitlements`, `approve_cycle`, and more. We only override `new_cycle` because we want calendar-quarter semantics instead of recurrence-based dates.
+- When `is_auto_copy_beneficiaries` is enabled, enrolled beneficiaries are automatically added to the cycle on creation (using the inherited `copy_beneficiaries_from_program`).
+- The inherited `approve_cycle()` is called automatically when a cycle is approved. If the program has `auto_approve_entitlements` enabled, entitlements are auto-approved with the cycle. See the {doc}`building_managers` page for the full approval flow.
 
 ### `models/cycle_manager.py`
 

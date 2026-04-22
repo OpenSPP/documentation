@@ -34,12 +34,17 @@ Each transition triggers a hook method on the `spp.change.request` model.
 
 | Hook | When it runs | What it does by default |
 |------|-------------|------------------------|
-| `_on_submit()` | User submits CR from draft or revision | Runs conflict checks, creates audit event |
-| `_on_approve()` | Approver approves the CR | Re-checks conflicts, triggers auto-apply if configured, creates audit event |
+| `_on_submit()` | User submits CR from draft or revision | Runs conflict checks (raises `UserError` on blocking conflicts), creates audit event |
+| `_after_submit()` | After `_on_submit()` completes successfully | No-op by default — override to run post-submit side effects |
+| `_on_approve()` | Approver approves the CR | Creates audit event, triggers auto-apply if `auto_apply_on_approve` is set |
 | `_on_reject(reason)` | Approver rejects the CR | Logs rejection with the reason, creates audit event |
-| `_on_request_revision(notes)` | Approver requests changes | Sets stage back to "review", creates audit event |
-| `_on_reset_to_draft()` | Manager resets CR to draft | Sets stage back to "details", creates audit event |
+| `_on_request_revision(notes)` | Approver requests changes | Sets stage to "review", creates audit event |
+| `_on_reset_to_draft()` | Manager resets CR to draft | Sets stage to "details", creates audit event |
 | `_check_can_submit()` | Before `_on_submit()` | Validates the CR is in a submittable state (draft or revision) |
+
+```{note}
+`_on_approve()` does **not** re-run conflict checks. Conflict checking happens only at submit time via `_on_submit()` → `_run_conflict_checks()`. If you need a safety net that re-checks conflicts at approval time, override `_on_approve()` and call `self._run_conflict_checks()` before `super()._on_approve()`.
+```
 
 ## Extending a hook
 
@@ -72,14 +77,15 @@ class ChangeRequestCustom(models.Model):
 
 ### Hook execution order
 
-When a CR is submitted, the system calls:
+When a CR is submitted, the system calls (in order):
 
-1. `_check_can_submit()` — validates the CR can be submitted
-2. `_on_submit()` — which internally calls `_run_conflict_checks()`
+1. `_check_can_submit()` — validates the CR can be submitted (raises `UserError` if not)
+2. `_on_submit()` — which internally calls `_run_conflict_checks()` **before** `super()._on_submit()` creates the audit event. If you override `_on_submit()` and want custom logic to run before conflict checks, place it before `super()._on_submit()`.
+3. `_after_submit()` — runs after submission completes
 
 When a CR is approved:
 
-1. `_on_approve()` — which internally calls `_run_conflict_checks()` again (to catch conflicts that appeared after submission)
+1. `_on_approve()` — creates audit event, triggers auto-apply if `auto_apply_on_approve` is `True`
 2. If `auto_apply_on_approve` is enabled on the CR type, `action_apply()` is called automatically
 
 ## Auto-apply
@@ -176,15 +182,22 @@ If a blocking conflict exists, the user must either resolve the conflicting CR o
 
 ## Audit events
 
-The CR system automatically creates `spp.event.data` records for every state transition. Each audit event captures:
+The CR system automatically creates `spp.event.data` records for every state transition. Each event's top-level columns are standard `spp.event.data` fields (`event_type_id`, `partner_id`, `res_id`, `model`, `create_date`, etc.). The CR-specific details are stored inside the record's `data_json` JSON column:
 
-| Field | Content |
-|-------|---------|
-| `action` | `created`, `submitted`, `approved`, `rejected`, `applied` |
-| `old_state` / `new_state` | The state before and after the transition |
-| `user_id` / `user_name` | Who performed the action |
-| `change_request_id` | Link to the CR |
-| `create_date` | When the transition occurred |
+| Location | Field | Content |
+|----------|-------|---------|
+| Top-level column | `event_type_id` | Link to the event type (e.g., `cr_audit`) |
+| Top-level column | `partner_id` | The registrant |
+| Top-level column | `res_id`, `model` | Points to the CR record |
+| Top-level column | `create_date` | When the event occurred |
+| Inside `data_json` | `action` | `created`, `submitted`, `approved`, `rejected`, `applied`, etc. |
+| Inside `data_json` | `old_state` / `new_state` | State before and after the transition |
+| Inside `data_json` | `user_id` / `user_name` | Who performed the action |
+| Inside `data_json` | `change_request_id` | CR ID (also available via `res_id`) |
+
+```{important}
+Because `action`, `old_state`, etc. live inside the JSON column, querying by them requires JSON operators. For example, to find all audit events with `action = "approved"`, use a JSON path expression against `data_json` rather than a direct `[("action", "=", "approved")]` domain.
+```
 
 To create a custom audit event from within a hook override:
 
@@ -200,4 +213,4 @@ def _on_approve(self):
             )
 ```
 
-The `_create_audit_event()` method is provided by the base CR model and handles event creation with the current user and timestamp.
+The `_create_audit_event()` method is provided by the base CR model. It wraps the `action`, `old_state`, `new_state`, and current user into `data_json` automatically.

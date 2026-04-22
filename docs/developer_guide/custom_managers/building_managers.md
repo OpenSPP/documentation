@@ -339,35 +339,33 @@ Cycles and entitlements use the `spp.approval.mixin` for approval workflows. Man
 ### How the approval flow calls your managers
 
 ```text
-User clicks [Submit for Approval] on a cycle
-  → cycle._on_submit()
+User calls spp.cycle.action_submit_for_approval()
   → entitlement_manager.set_pending_validation_entitlements(cycle)
      (moves entitlements from draft to pending_validation)
 
-User clicks [Approve] on a cycle
-  → cycle._on_approve()
-  → cycle_manager.approve_cycle(cycle, auto_approve, entitlement_manager)
-     → if auto_approve:
-         cycle_manager.auto_approve_entitlements_update_reviews()
+User calls spp.cycle.action_approve()
+  → cycle_manager.approve_cycle(cycle, auto_approve=False, entitlement_manager=None)
+     → if auto_approve is True:
+         cycle_manager.auto_approve_entitlements_update_reviews(entitlements)
          entitlement_manager.validate_entitlements(cycle)
            (approves all pending entitlements)
 ```
 
 ### Configuration fields on managers
 
-Cycle and entitlement managers each hold a reference to an approval definition:
+Cycle and entitlement managers hold references to approval definitions. Note that `approval_definition_id` is defined on the **concrete default implementation** (`spp.cycle.manager.default`), not on the abstract base (`spp.base.cycle.manager`). Custom cycle managers should inherit from `spp.cycle.manager.default` to pick it up (or define it explicitly).
 
-| Manager type | Field | Purpose |
-|-------------|-------|---------|
-| Cycle manager | `approval_definition_id` | Approval workflow for cycle approval |
-| Cycle manager | `auto_approve_entitlements` | When `True`, entitlements are auto-approved with the cycle |
-| Entitlement manager | `approval_definition_id` | Approval workflow for individual entitlement approval |
-
-These fields are configured through the manager's form view. When the cycle is submitted, the system uses the cycle manager's `approval_definition_id` to determine who can approve it.
+| Manager type | Field | Defined on | Purpose |
+|-------------|-------|------------|---------|
+| Cycle manager | `approval_definition_id` | `spp.cycle.manager.default` | Approval workflow for cycle approval |
+| Cycle manager | `auto_approve_entitlements` | `spp.base.cycle.manager` | When `True`, entitlements are auto-approved with the cycle |
+| Entitlement manager | `approval_definition_id` | `spp.base.program.entitlement.manager` | Approval workflow for individual entitlement approval |
 
 ### What this means for custom managers
 
-**Cycle managers:** Your `approve_cycle()` method is called automatically when the cycle is approved. If you override it, call `super()` to preserve the approval review updates and entitlement auto-approval:
+**Cycle managers:** Inherit from `spp.cycle.manager.default` rather than `spp.base.cycle.manager` — the default class provides the full workflow surface (`copy_beneficiaries_from_program`, `approval_definition_id`, `on_state_change`, and implementations for `check_eligibility`, `approve_cycle`, etc.). The abstract base only defines method signatures; most raise `NotImplementedError`.
+
+Your `approve_cycle()` method is called automatically when the cycle is approved. If you override it, call `super()` to preserve the approval review updates and entitlement auto-approval:
 
 ```python
 def approve_cycle(self, cycle, auto_approve=False, entitlement_manager=None):
@@ -384,13 +382,27 @@ def approve_cycle(self, cycle, auto_approve=False, entitlement_manager=None):
 
 ## Inheritance checklist
 
-When creating a custom manager, always inherit from both the base class and the source mixin:
+When creating a custom manager, inherit from the appropriate base class and the source mixin:
+
+| Manager type | Recommended inheritance | Notes |
+|-------------|--------------------------|-------|
+| Eligibility | `["spp.program.membership.manager", "spp.manager.source.mixin"]` | The base class is concrete and has a default implementation |
+| Entitlement | `["spp.base.program.entitlement.manager", "spp.manager.source.mixin"]` | Abstract base; implement the required methods |
+| Cycle | `["spp.cycle.manager.default", "spp.manager.source.mixin"]` | **Inherit from the default, not the abstract base** — the abstract base lacks `copy_beneficiaries_from_program`, `approval_definition_id`, and several other required pieces |
+| Payment | `["spp.base.program.payment.manager", "spp.manager.source.mixin"]` | Abstract base; implement the required methods |
 
 ```python
-class MyManager(models.Model):
+class MyEntitlementManager(models.Model):
     _name = "spp.program.entitlement.manager.custom"
     _inherit = [
         "spp.base.program.entitlement.manager",  # Base class
+        "spp.manager.source.mixin",               # Lifecycle management
+    ]
+
+class MyCycleManager(models.Model):
+    _name = "spp.cycle.manager.custom"
+    _inherit = [
+        "spp.cycle.manager.default",              # Default implementation
         "spp.manager.source.mixin",               # Lifecycle management
     ]
 ```
@@ -412,6 +424,8 @@ The `spp.manager.source.mixin` handles:
 **Returning the wrong type from `prepare_entitlements`** — The method must return an `spp.entitlement` recordset (even if empty), not a list or count. Returning the wrong type causes downstream failures in the cycle workflow.
 
 **Skipping `existing_partner_ids` check in `prepare_entitlements`** — If you do not check for existing entitlements before creating new ones, running the preparation step twice will create duplicate entitlements. Always filter out already-processed partners.
+
+**Custom cycle manager inheriting from `spp.base.cycle.manager`** — The abstract base lacks `copy_beneficiaries_from_program()`, `approval_definition_id`, and other members the framework expects. Calling `approve_cycle()` on such a manager raises `AttributeError` when `on_state_change` tries to read `approval_definition_id`. Inherit from `spp.cycle.manager.default` instead, or explicitly define these members.
 
 ## What's next
 

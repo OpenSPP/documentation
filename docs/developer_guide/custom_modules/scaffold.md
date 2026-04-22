@@ -26,9 +26,11 @@ spp_my_module/
 │   ├── my_model_views.xml
 │   └── menus.xml
 ├── security/
+│   ├── privileges.xml
 │   ├── groups.xml
 │   ├── ir.model.access.csv
-│   └── rules.xml
+│   ├── rules.xml
+│   └── compliance.yaml
 ├── data/
 │   └── (sequences, vocabularies, cron jobs, etc.)
 ├── tests/
@@ -61,10 +63,11 @@ Every module needs an `__manifest__.py` file. OpenSPP enforces specific fields v
         "spp_security",
     ],
     "data": [
-        # Security files MUST be loaded first
-        "security/groups.xml",
-        "security/ir.model.access.csv",
-        "security/rules.xml",
+        # Security files MUST be loaded first, in this order:
+        "security/privileges.xml",      # res.groups.privilege records (before groups)
+        "security/groups.xml",          # res.groups records referencing privileges
+        "security/ir.model.access.csv", # ACLs referencing groups
+        "security/rules.xml",           # Record rules
         # Data files
         # Views and menus last
         "views/my_model_views.xml",
@@ -91,12 +94,13 @@ These are enforced by the `.pylintrc-mandatory` checks and will fail CI if missi
 
 The order of files in the `data` list matters. Security files must come first because views and menus reference security groups:
 
-1. `security/groups.xml` — Group definitions
-2. `security/ir.model.access.csv` — Model access rules
-3. `security/rules.xml` — Record rules
-4. `data/*.xml` — Sequences, vocabularies, cron jobs
-5. `views/*.xml` — Form, list, search views
-6. `views/menus.xml` — Menu items (last, since they reference actions)
+1. `security/privileges.xml` — `res.groups.privilege` records (referenced by groups)
+2. `security/groups.xml` — `res.groups` records
+3. `security/ir.model.access.csv` — Model access rules
+4. `security/rules.xml` — Record rules
+5. `data/*.xml` — Sequences, vocabularies, cron jobs
+6. `views/*.xml` — Form, list, search views
+7. `views/menus.xml` — Menu items (last, since they reference actions)
 
 ### Module categories
 

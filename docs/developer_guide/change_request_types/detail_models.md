@@ -18,9 +18,14 @@ Every detail model inherits from `spp.cr.detail.base`. This abstract model provi
 |-------|------|-------------|
 | `change_request_id` | Many2one | Link to the parent `spp.change.request` (cascade delete) |
 | `registrant_id` | Many2one | Related field — the CR's registrant (`res.partner`) |
-| `approval_state` | Selection | Related field — the CR's approval state (draft, pending, approved, etc.) |
+| `approval_state` | Selection | Related field — the CR's approval state (draft, pending, approved, revision, rejected) |
 | `stage` | Selection | Related field — the CR's current stage (details, documents, review) |
+| `is_applied` | Boolean | Related field — whether the CR has been applied |
 | `is_cr_manager` | Boolean | Computed — whether the current user has CR manager permissions |
+| `use_dynamic_approval` | Boolean | Related field — whether the CR type uses dynamic (field-based) approval routing |
+| `field_to_modify` | Selection | Selection of which detail field the user is modifying (used with dynamic approval). Override `_get_field_to_modify_selection()` to narrow the options. |
+
+Do not shadow these fields in your subclass — they're `related` fields backed by the parent CR, and redefining them breaks the sync.
 
 ### Methods provided by the base class
 
@@ -30,9 +35,19 @@ Every detail model inherits from `spp.cr.detail.base`. This abstract model provi
 | `action_next_documents()` | Advance the CR stage to "documents" |
 | `action_skip_to_review()` | Advance the CR stage to "review" |
 | `action_save_and_go_to_list()` | Save the CR and return to the CR list view |
-| `_get_prefill_mapping()` | Override to define which detail fields should be pre-filled from the registrant (see [Pre-filling from the registrant](#pre-filling-from-the-registrant)) |
+| `action_submit_for_approval()` | Delegate to the parent CR's submission action (usable from detail form buttons) |
+| `action_approve()` | Delegate to the parent CR's approve action |
+| `action_reject()` | Delegate to the parent CR's reject action |
+| `action_request_revision()` | Delegate to the parent CR's request-revision action |
+| `prefill_from_registrant()` | Copy current registrant values into detail fields using `_get_prefill_mapping()` |
+| `_get_prefill_mapping()` | Override to define which detail fields get pre-filled from the registrant (see [Pre-filling from the registrant](#pre-filling-from-the-registrant)) |
+| `_get_field_to_modify_selection()` | Override for dynamic approval — return the list of field names the user can modify |
 
 You do not need to implement these methods — they are inherited. The form view buttons in the {doc}`tutorial` call them directly.
+
+```{note}
+`action_proceed_to_cr()`, `action_next_documents()`, and `action_skip_to_review()` raise `UserError("No proposed changes detected")` if the detail record has no modified fields yet (i.e., `change_request_id.has_proposed_changes` is False). Make sure the user has entered something before these actions fire.
+```
 
 ## Field patterns
 

@@ -124,7 +124,7 @@ class ResPartnerCustomFields(models.Model):
     education_level_id = fields.Many2one(
         "spp.vocabulary.code",
         string="Education Level",
-        domain="[('vocabulary_id.name', '=', 'Education Level')]",
+        domain="[('namespace_uri', '=', 'urn:openspp:vocab:education-level')]",
         help="Highest level of education completed.",
     )
 
@@ -212,11 +212,11 @@ Since we are extending `res.partner` (not creating a new model), the ACL grants 
 
 ```text
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_res_partner_custom_fields_viewer,Partner Custom Fields Viewer,spp_registry.model_res_partner,group_custom_fields_viewer,1,0,0,0
-access_res_partner_custom_fields_manager,Partner Custom Fields Manager,spp_registry.model_res_partner,group_custom_fields_manager,1,1,0,0
+access_res_partner_custom_fields_viewer,Partner Custom Fields Viewer,base.model_res_partner,group_custom_fields_viewer,1,0,0,0
+access_res_partner_custom_fields_manager,Partner Custom Fields Manager,base.model_res_partner,group_custom_fields_manager,1,1,0,0
 ```
 
-Note that we reference `spp_registry.model_res_partner` (the model ID defined by the registry module) rather than `base.model_res_partner`.
+`res.partner` is defined by the `base` module, so the `model_id` reference is always `base.model_res_partner` — even when `spp_registry` has extended it with additional fields. Using `spp_registry.model_res_partner` would fail at install time because that external ID does not exist.
 
 ## Step 4: Create the view
 

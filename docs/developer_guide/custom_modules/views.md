@@ -97,7 +97,7 @@ This page covers the XML ID naming conventions and common view patterns for Open
 ### Key patterns
 
 - Use `<header>` for status bar and action buttons
-- Use `invisible` attribute (not `attrs`) for conditional visibility (Odoo 19 change)
+- Use `invisible` attribute (not `attrs`) for conditional visibility (`attrs` was removed in Odoo 17+)
 - Include `<chatter />` if your model inherits `mail.thread`
 - Use `groups="base.group_multi_company"` on `company_id` to only show it in multi-company setups
 

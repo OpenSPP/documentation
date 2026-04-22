@@ -49,7 +49,7 @@ active_flag = fields.Boolean()    # No recognized prefix
 approved = fields.Boolean()       # No recognized prefix
 ```
 
-Recognized prefixes: `is_`, `has_`, `can_`, `enable_`, `show_`, `notify_on_`, `allow_`, `require_`, `auto_`.
+Recognized prefixes include (non-exhaustive): `is_`, `has_`, `can_`, `allow_`, `enable_`, `disable_`, `show_`, `hide_`, `include_`, `exclude_`, `skip_`, `auto_`, `force_`, `use_`, `apply_`, `check_`, `notify_on_`, `send_`, `create_`, `copy_`, `close_`, `assign_`, `link_to_`, `manage_`, `validate_`, `store_`, `track_`. The canonical list is in `scripts/lint/check_naming.py` — consult it if the lint hook rejects a name you think should be valid.
 
 ### Many2one fields
 
@@ -118,7 +118,10 @@ class MyFeature(models.Model):
     feature_type_id = fields.Many2one(
         "spp.vocabulary.code",
         string="Type",
-        domain="[('vocabulary_id.name', '=', 'Feature Types')]",
+        # Filter by namespace_uri (stored on the code itself) rather than
+        # vocabulary name — names are translated and break in non-English
+        # locales. namespace_uri is the stable filter key.
+        domain="[('namespace_uri', '=', 'urn:openspp:vocab:feature-type')]",
     )
 
     # === STATE ===

@@ -799,7 +799,9 @@ def test_conflict_detected(self):
     cr2 = self._create_cr(field_a=value_b)
     result = cr2._run_conflict_checks()
 
-    self.assertTrue(result.get("needs_override") or result.get("has_warning"))
+    # Note: has_warning is inside result["conflict_result"], not top-level.
+    conflict = result.get("conflict_result") or {}
+    self.assertTrue(result.get("needs_override") or conflict.get("has_warning"))
 ```
 
 ```{note}
@@ -859,8 +861,12 @@ Install the module and test it manually:
 3. Pick a source group (household) as the registrant
 4. Select a member to transfer and a target group
 5. Submit the CR for approval
-6. Approve and apply it
+6. Approve the CR — the transfer applies automatically
 7. Verify the member now appears in the target group's member list
+
+```{note}
+The `auto_apply_on_approve` field on `spp.change.request.type` defaults to **True**. With the CR type XML shown above (which doesn't override it), approving the CR will automatically call `action_apply()` — no separate Apply click needed. To require a manual apply step, add `<field name="auto_apply_on_approve" eval="False" />` to the CR type record.
+```
 
 ## What's next
 

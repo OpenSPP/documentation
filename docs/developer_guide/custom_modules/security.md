@@ -34,21 +34,29 @@ These are internal groups used only in ACL (`ir.model.access.csv`) definitions. 
 <record id="group_myfeature_create" model="res.groups">
     <field name="name">My Feature: Create</field>
     <field name="comment">Technical group for create access.</field>
-    <field name="implied_ids" eval="[Command.link(ref('group_myfeature_write'))]" />
+    <field name="implied_ids" eval="[Command.link(ref('group_myfeature_read'))]" />
 </record>
 ```
 
-Note the inheritance chain: create implies write, write implies read.
+Note the inheritance chain: both `write` and `create` are siblings that each imply `read`. The user-facing (Tier 2) groups explicitly compose the technical groups they need (e.g., an Officer gets both `create` and `write` via the Tier 2 record).
 
 ### Tier 2 — User-facing groups
 
-These are the groups that administrators assign to users. Each is linked to a `res.groups.privilege` record (an Odoo 19 feature) and composed from Tier 3 technical groups:
+These are the groups that administrators assign to users. Each is linked to a `res.groups.privilege` record (an Odoo 17+ feature) and composed from Tier 3 technical groups.
+
+```{note}
+By convention, OpenSPP modules split security records across two files: `security/privileges.xml` (the `res.groups.privilege` records) and `security/groups.xml` (the `res.groups` and admin linkage). `privileges.xml` is loaded **before** `groups.xml` so the groups can reference the privileges. Make sure your `__manifest__.py` lists them in that order.
+```
+
+```{note}
+Pick a domain-specific category (from `spp_security`) rather than `category_spp_admin`. Examples: `category_spp_registry`, `category_spp_programs`, `category_spp_grm`. The category controls where your groups appear in the user permissions UI — putting everything under Administration buries them. See `spp_security/README.rst` for the full list.
+```
 
 ```xml
-<!-- Viewer: read-only -->
+<!-- security/privileges.xml -->
 <record id="privilege_myfeature_viewer" model="res.groups.privilege">
     <field name="name">Viewer</field>
-    <field name="category_id" ref="spp_security.category_spp_admin" />
+    <field name="category_id" ref="spp_security.category_spp_registry" />
     <field name="sequence">200</field>
 </record>
 
@@ -62,7 +70,7 @@ These are the groups that administrators assign to users. Each is linked to a `r
 <!-- Officer: read + write + create -->
 <record id="privilege_myfeature_officer" model="res.groups.privilege">
     <field name="name">Officer</field>
-    <field name="category_id" ref="spp_security.category_spp_admin" />
+    <field name="category_id" ref="spp_security.category_spp_registry" />
     <field name="sequence">210</field>
 </record>
 
@@ -71,15 +79,16 @@ These are the groups that administrators assign to users. Each is linked to a `r
     <field name="privilege_id" ref="privilege_myfeature_officer" />
     <field name="comment">Can create and modify records.</field>
     <field name="implied_ids" eval="[
+        Command.link(ref('group_myfeature_read')),
+        Command.link(ref('group_myfeature_write')),
         Command.link(ref('group_myfeature_create')),
-        Command.link(ref('group_myfeature_viewer')),
     ]" />
 </record>
 
 <!-- Manager: full CRUD including delete -->
 <record id="privilege_myfeature_manager" model="res.groups.privilege">
     <field name="name">Manager</field>
-    <field name="category_id" ref="spp_security.category_spp_admin" />
+    <field name="category_id" ref="spp_security.category_spp_registry" />
     <field name="sequence">220</field>
 </record>
 
@@ -106,13 +115,16 @@ The SPP admin group automatically gets full access to your module:
 
 ```
 spp_security.group_spp_admin
-    └── group_myfeature_manager (delete + all below)
-            └── group_myfeature_officer (create + all below)
-                    └── group_myfeature_viewer (read only)
-                            └── group_myfeature_create (technical)
-                                    └── group_myfeature_write (technical)
-                                            └── group_myfeature_read (technical)
+    └── group_myfeature_manager (Tier 2: full CRUD)
+            └── group_myfeature_officer (Tier 2: read + write + create)
+            │       ├── group_myfeature_read   (Tier 3)
+            │       ├── group_myfeature_write  (Tier 3) → implies read
+            │       └── group_myfeature_create (Tier 3) → implies read
+            └── group_myfeature_viewer (Tier 2: read only)
+                    └── group_myfeature_read   (Tier 3)
 ```
+
+Tier 3 groups `write` and `create` are **siblings** — both imply `read` directly. They do not imply each other. Tier 2 user-facing groups compose whichever Tier 3 groups they need.
 
 ## Model access rules (ACL)
 
@@ -193,3 +205,7 @@ Use the `groups` attribute on menu items to control visibility:
 ```
 
 Using the viewer group ensures anyone with viewer, officer, or manager access can see the menu (since officer and manager inherit from viewer).
+
+## Compliance check
+
+Each OpenSPP module ships a `security/compliance.yaml` that declares the security posture of the module (which models are secured, which audit logs are produced, etc.). The `openspp-compliance-check` pre-commit hook validates modules against it. New custom modules should include a minimal `compliance.yaml` — see an existing module's copy for the format.

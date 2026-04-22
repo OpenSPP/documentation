@@ -42,9 +42,10 @@ class MyModel(models.Model):
 
 ### What it provides
 
-- `approval_state` field (`pending`, `approved`, `rejected`)
+- `approval_state` field with five values: `draft` (initial), `pending` (submitted), `revision` (changes requested), `approved`, `rejected`
 - `approval_review_ids` — linked approval review records
-- Methods for submitting, approving, and rejecting
+- Action methods: `action_submit_for_approval()`, `action_approve()`, `action_reject()`, `action_request_revision()`, `action_reset_to_draft()`
+- Hook methods to override: `_on_submit()`, `_after_submit()`, `_on_approve()`, `_on_reject(reason)`, `_on_request_revision(notes)`, `_on_reset_to_draft()`
 - Integration with `spp.approval.definition` for configuring who can approve
 
 ### Adding to your module
@@ -72,7 +73,7 @@ class MyModel(models.Model):
 | ----------------------- | --------- | ------------------------------------------------------------------------- |
 | `source_system`         | Char      | Original source (immutable after create)                                  |
 | `source_reference`      | Char      | External reference ID (immutable after create)                            |
-| `collection_method`     | Selection | How data was collected (`manual`, `import`, `api`, `survey`, `migration`) |
+| `collection_method`     | Selection | How data was collected (`manual`, `import`, `api`, `mobile`, `migration`, `merge`) |
 | `collection_date`       | Datetime  | When data was collected                                                   |
 | `last_update_system`    | Char      | System that last updated the record                                       |
 | `last_update_reference` | Char      | External reference of the update                                          |

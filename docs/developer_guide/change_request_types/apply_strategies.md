@@ -66,7 +66,7 @@ class SPPCRStrategyBase(models.AbstractModel):
         pass
 ```
 
-Only `apply()` is required. The framework calls these methods in order: `validate()` → `apply()`, with `preview()` called separately when a reviewer requests a preview.
+Only `apply()` is required. The framework calls `apply()` when the CR is applied and `preview()` when a reviewer requests a preview. `validate()` is a hook provided for your convenience — **the framework does not call it automatically**. If you want pre-apply validation, either call `self.validate(change_request)` at the top of your own `apply()` method, or put the validation checks directly in `apply()`.
 
 ## Anatomy of a custom strategy
 
@@ -158,7 +158,7 @@ def preview(self, change_request):
         return {}
 
     return {
-        "_action": "add_member",
+        "_action": "create_member",
         "member_name": detail.member_name,
         "group": change_request.registrant_id.name,
         "relationship": (
@@ -168,7 +168,14 @@ def preview(self, change_request):
     }
 ```
 
-For the field mapping strategy, `preview()` automatically computes a diff of old vs. new values for each mapped field.
+### Two valid preview shapes
+
+The `preview()` method can return either shape, and the CR UI picks the appropriate renderer:
+
+- **Action shape** (shown above, with `_action` key) — the UI renders an action summary. Best for strategies that don't map cleanly to field-by-field comparisons (create_member, split_household, etc.).
+- **Field-diff shape** — `{field_name: {"old": current_value, "new": new_value}, ...}` — the UI renders a side-by-side comparison table. Best for field-mapping-like strategies.
+
+The field mapping strategy uses the field-diff shape automatically, computing old/new values from the registered mappings.
 
 ## Registering a strategy
 

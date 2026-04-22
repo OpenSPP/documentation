@@ -90,7 +90,7 @@ Control how program cycles are created and processed.
 | `spp.base.cycle.manager` | Base abstract model |
 | `spp.cycle.manager.default` | Default with recurrence support |
 
-**Key method:** `new_cycle(program)` — Creates the next cycle based on recurrence settings.
+**Key method:** `new_cycle(name, new_start_date, sequence)` — Creates the next cycle. The manager already knows its own `program_id`, so it is not passed as an argument.
 
 ### Payment managers
 
