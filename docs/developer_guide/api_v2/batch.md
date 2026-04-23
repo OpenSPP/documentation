@@ -46,7 +46,7 @@ Transaction bundles process operations atomically. If any operation fails, all c
 
 ### Basic Structure
 
-```http
+```text
 POST /api/v2/spp/$batch
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -77,7 +77,7 @@ Content-Type: application/json
 
 Create an individual, add them to a household, and enroll in a program:
 
-```http
+```text
 POST /api/v2/spp/$batch
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -93,7 +93,7 @@ Content-Type: application/json
         "url": "Individual"
       },
       "resource": {
-        "resourceType": "Individual",
+        "type": "Individual",
         "identifier": [
           {
             "system": "urn:gov:ph:psa:national-id",
@@ -122,14 +122,14 @@ Content-Type: application/json
         "url": "Group"
       },
       "resource": {
-        "resourceType": "Group",
+        "type": "Group",
         "identifier": [
           {
             "system": "urn:openspp:group",
             "value": "HH-NEW-001"
           }
         ],
-        "type": "household",
+        "groupType": "household",
         "name": "Santos Household",
         "member": [
           {
@@ -154,7 +154,7 @@ Content-Type: application/json
         "url": "ProgramMembership"
       },
       "resource": {
-        "resourceType": "ProgramMembership",
+        "type": "ProgramMembership",
         "program": {
           "reference": "Program/urn:openspp:program|4Ps"
         },
@@ -208,11 +208,11 @@ Content-Type: application/json
 
 Use `fullUrl` with `urn:uuid:*` to create temporary IDs for cross-references:
 
-```json
+```text
 {
   "fullUrl": "urn:uuid:temp-individual",
   "resource": {
-    "resourceType": "Individual",
+    "type": "Individual",
     ...
   }
 }
@@ -223,7 +223,7 @@ Reference the placeholder in subsequent entries:
 ```json
 {
   "resource": {
-    "resourceType": "Group",
+    "type": "Group",
     "member": [
       {
         "entity": {
@@ -274,7 +274,7 @@ entries = [
         "fullUrl": "urn:uuid:ind-1",
         "request": {"method": "POST", "url": "Individual"},
         "resource": {
-            "resourceType": "Individual",
+            "type": "Individual",
             "identifier": [{"system": "urn:gov:ph:psa:national-id", "value": "PH-001"}],
             "name": {"given": "Maria", "family": "Santos"}
         }
@@ -282,9 +282,9 @@ entries = [
     {
         "request": {"method": "POST", "url": "Group"},
         "resource": {
-            "resourceType": "Group",
+            "type": "Group",
             "identifier": [{"system": "urn:openspp:group", "value": "HH-001"}],
-            "type": "household",
+            "groupType": "household",
             "name": "Santos Household",
             "member": [
                 {
@@ -340,7 +340,7 @@ class TransactionBuilder:
             placeholder = f"urn:uuid:{uuid.uuid4()}"
 
         resource = {
-            "resourceType": "Individual",
+            "type": "Individual",
             "identifier": [identifier],
             "name": name
         }
@@ -382,9 +382,9 @@ class TransactionBuilder:
             placeholder = f"urn:uuid:{uuid.uuid4()}"
 
         resource = {
-            "resourceType": "Group",
+            "type": "Group",
             "identifier": [identifier],
-            "type": "household",
+            "groupType": "household",
             "name": name,
             "member": members
         }
@@ -406,7 +406,7 @@ class TransactionBuilder:
     ):
         """Add a program membership to the transaction."""
         resource = {
-            "resourceType": "ProgramMembership",
+            "type": "ProgramMembership",
             "program": {"reference": program_ref},
             "beneficiary": {"reference": beneficiary_ref},
             "status": status
@@ -547,7 +547,7 @@ def create_batch_bundle(resources: List[Dict]) -> Dict:
 
     for resource in resources:
         entries.append({
-            "request": {"method": "POST", "url": resource["resourceType"]},
+            "request": {"method": "POST", "url": resource["type"]},
             "resource": resource
         })
 
@@ -575,7 +575,7 @@ def submit_batch(bundle: Dict, token: str, base_url: str) -> Dict:
 # Usage: Bulk import individuals
 individuals = [
     {
-        "resourceType": "Individual",
+        "type": "Individual",
         "identifier": [{"system": "urn:gov:ph:psa:national-id", "value": f"PH-{i:06d}"}],
         "name": {"given": f"Person{i}", "family": "Test"}
     }
@@ -756,7 +756,7 @@ class BulkImporter:
             reader = csv.DictReader(f)
             for row in reader:
                 individuals.append({
-                    "resourceType": "Individual",
+                    "type": "Individual",
                     "identifier": [
                         {
                             "system": "urn:gov:ph:psa:national-id",
@@ -867,7 +867,7 @@ if result["errors"] > 0:
 
 For exporting multiple resources by identifier (without creating or modifying), use the bulk export endpoint:
 
-```http
+```text
 POST /api/v2/spp/$bulk/export
 Authorization: Bearer TOKEN
 Content-Type: application/json

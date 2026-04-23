@@ -30,7 +30,7 @@ OpenSPP uses Common Expression Language (CEL) as its core expression system for 
 | Call CEL from Python code | Use `env["spp.cel.service"]` entry points |
 | Add a new built-in function (e.g., `distance_km()`) | Register via `spp.cel.function.registry` |
 | Define a new data-source variable | Create `spp.cel.variable` records in your module's XML data |
-| Aggregate over events (visits, interactions) | Use `spp_cel_event` with `spp.cel.variable.event.agg` |
+| Aggregate over events (visits, interactions) | Install `spp_cel_event` — it extends `spp.cel.variable` with an `events` aggregate target |
 | Look up vocabulary codes in expressions | Use `spp_cel_vocabulary`'s `code()` and `in_group()` |
 | Render a CEL editor in a form view | Use the `cel_expression` widget from `spp_cel_widget` |
 

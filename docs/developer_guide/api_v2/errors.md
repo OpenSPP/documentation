@@ -355,7 +355,7 @@ except requests.HTTPError as e:
 
 Rate limit exceeded:
 
-```http
+```text
 HTTP/1.1 429 Too Many Requests
 X-RateLimit-Limit: 30
 X-RateLimit-Remaining: 0

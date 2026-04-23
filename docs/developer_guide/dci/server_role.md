@@ -26,7 +26,7 @@ sequenceDiagram
     participant SearchSvc as Registry search<br/>implementation
     participant DB as res.partner
 
-    External->>Middleware: POST /dci_api/v1/registry/sync/search<br/>Bearer + signed envelope
+    External->>Middleware: POST /dci_api/v1/social/registry/sync/search<br/>Bearer + signed envelope
     Middleware->>Middleware: Validate token + signature
     Middleware->>Router: Authorized request
     Router->>SearchSvc: execute search
@@ -133,12 +133,12 @@ The full endpoint inventory is in {doc}`protocol`. Summary:
 
 | Method | Path | Router file |
 |--------|------|-------------|
-| POST | `/dci_api/v1/registry/sync/search` | `routers/search.py` |
-| POST | `/dci_api/v1/registry/search` (async) | `routers/async_router.py` |
-| POST | `/dci_api/v1/registry/subscribe` | `routers/async_router.py` |
-| POST | `/dci_api/v1/registry/unsubscribe` | `routers/async_router.py` |
-| POST | `/dci_api/v1/registry/sync/txn/status` | `routers/async_router.py` |
-| POST | `/dci_api/v1/receipt` | `routers/receipt.py` |
+| POST | `/dci_api/v1/social/registry/sync/search` | `routers/search.py` |
+| POST | `/dci_api/v1/social/registry/search` (async) | `routers/async_router.py` |
+| POST | `/dci_api/v1/social/registry/subscribe` | `routers/async_router.py` |
+| POST | `/dci_api/v1/social/registry/unsubscribe` | `routers/async_router.py` |
+| POST | `/dci_api/v1/social/registry/sync/txn/status` | `routers/async_router.py` |
+| POST | `/dci_api/v1/social/registry/receipt` | `routers/receipt.py` |
 | GET  | `/dci_api/v1/.well-known/jwks.json` | `routers/jwks.py` |
 
 All POST endpoints run through the Bearer + HTTP Signature middleware. The JWKS endpoint is public.
@@ -162,10 +162,10 @@ A search implementation should call these before returning records.
 
 For long-running searches or event subscriptions, use the async endpoints. The response pattern:
 
-1. Client POSTs to `/dci_api/v1/registry/search` with a signed envelope containing `sender_uri` in the header
+1. Client POSTs to `/dci_api/v1/social/registry/search` with a signed envelope containing `sender_uri` in the header
 2. Server validates and enqueues the work via `queue_job`, returns `202 Accepted` with a correlation ID
 3. When processing completes, the server POSTs the result envelope to the client's `sender_uri`
-4. Client may poll `/dci_api/v1/registry/sync/txn/status` with the correlation ID for status
+4. Client may poll `/dci_api/v1/social/registry/sync/txn/status` with the correlation ID for status
 
 Transactions are tracked in `spp.dci.transaction`. Subscriptions are tracked in `spp.dci.subscription` with states `pending` → `active` (on auto-approve or manual confirm) → `cancelled`.
 

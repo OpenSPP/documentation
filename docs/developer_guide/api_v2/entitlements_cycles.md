@@ -28,7 +28,7 @@ Both modules provide read-only search access. Entitlements and cycles are create
 
 ### Read Entitlement
 
-```http
+```text
 GET /api/v2/spp/Entitlement/{identifier}
 Authorization: Bearer TOKEN
 ```
@@ -73,7 +73,7 @@ The identifier is the entitlement code (UUID format).
 
 ### Search Entitlements
 
-```http
+```text
 GET /api/v2/spp/Entitlement?beneficiary=urn:gov:ph:psa:national-id|PH-123456789&state=approved
 Authorization: Bearer TOKEN
 ```
@@ -128,7 +128,7 @@ for entry in result.get("entry", []):
 
 ### Read Cycle
 
-```http
+```text
 GET /api/v2/spp/Cycle/{identifier}
 Authorization: Bearer TOKEN
 ```
@@ -175,7 +175,7 @@ The identifier is the cycle name (URL-encoded).
 
 ### Search Cycles
 
-```http
+```text
 GET /api/v2/spp/Cycle?program=4Ps&state=active
 Authorization: Bearer TOKEN
 ```

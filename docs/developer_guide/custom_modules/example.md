@@ -57,7 +57,8 @@ mkdir -p spp_custom_registry_fields/{models,views,security,tests,readme}
         "spp_vocabulary",
     ],
     "data": [
-        # Security (must be first)
+        # Security (privileges before groups, both before ACLs)
+        "security/privileges.xml",
         "security/groups.xml",
         "security/ir.model.access.csv",
         # Views
@@ -145,15 +146,36 @@ Key points:
 
 ## Step 3: Set up security
 
-### `security/groups.xml`
+This follows the three-tier pattern from {doc}`security`. Since our module only adds fields to an existing model (not a new model), we use a simplified two-role variant (viewer + manager). Convention: privileges in `security/privileges.xml`, groups in `security/groups.xml`, with `privileges.xml` loaded first so `groups.xml` can reference them.
 
-This follows the three-tier pattern. Since our module only adds fields to an existing model (not a new model), we use a simplified version with viewer and manager roles:
+### `security/privileges.xml`
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <!-- Custom Registry Fields Security Groups -->
+    <!-- Viewer: read-only access to custom fields -->
+    <record id="privilege_custom_fields_viewer" model="res.groups.privilege">
+        <field name="name">Viewer</field>
+        <field name="category_id" ref="spp_security.category_spp_registry" />
+        <field name="sequence">200</field>
+    </record>
 
+    <!-- Manager: can edit custom fields on registrants -->
+    <record id="privilege_custom_fields_manager" model="res.groups.privilege">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="spp_security.category_spp_registry" />
+        <field name="sequence">210</field>
+    </record>
+</odoo>
+```
+
+We use `category_spp_registry` because this module extends the registry. Picking a domain-specific category puts the groups in the right place in the user-permissions UI (see `spp_security/README.rst` for the full category list).
+
+### `security/groups.xml`
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
     <!-- Technical Groups (Tier 3) -->
     <record id="group_custom_fields_read" model="res.groups">
         <field name="name">Custom Registry Fields: Read</field>
@@ -167,26 +189,11 @@ This follows the three-tier pattern. Since our module only adds fields to an exi
     </record>
 
     <!-- User-Facing Groups (Tier 2) -->
-
-    <!-- Viewer: read-only access to custom fields -->
-    <record id="privilege_custom_fields_viewer" model="res.groups.privilege">
-        <field name="name">Viewer</field>
-        <field name="category_id" ref="spp_security.category_spp_admin" />
-        <field name="sequence">200</field>
-    </record>
-
     <record id="group_custom_fields_viewer" model="res.groups">
         <field name="name">Custom Registry Fields Viewer</field>
         <field name="privilege_id" ref="privilege_custom_fields_viewer" />
         <field name="comment">Can view custom registry fields but cannot modify them.</field>
         <field name="implied_ids" eval="[Command.link(ref('group_custom_fields_read'))]" />
-    </record>
-
-    <!-- Manager: can edit custom fields on registrants -->
-    <record id="privilege_custom_fields_manager" model="res.groups.privilege">
-        <field name="name">Manager</field>
-        <field name="category_id" ref="spp_security.category_spp_admin" />
-        <field name="sequence">210</field>
     </record>
 
     <record id="group_custom_fields_manager" model="res.groups">
@@ -435,6 +442,7 @@ spp_custom_registry_fields/
 ├── views/
 │   └── individual_views.xml
 ├── security/
+│   ├── privileges.xml
 │   ├── groups.xml
 │   └── ir.model.access.csv
 ├── tests/

@@ -51,7 +51,7 @@ This is used for program design, impact analysis, and budget planning.
 
 List pre-built scenario templates for common program designs.
 
-```http
+```text
 GET /api/v2/spp/simulation/templates
 Authorization: Bearer TOKEN
 ```
@@ -60,7 +60,7 @@ Authorization: Bearer TOKEN
 
 ### List Scenarios
 
-```http
+```text
 GET /api/v2/spp/simulation/scenarios?state=ready&limit=50
 Authorization: Bearer TOKEN
 ```
@@ -76,7 +76,7 @@ Authorization: Bearer TOKEN
 
 ### Create Scenario
 
-```http
+```text
 POST /api/v2/spp/simulation/scenarios
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -117,7 +117,7 @@ Content-Type: application/json
 
 ### Get Scenario
 
-```http
+```text
 GET /api/v2/spp/simulation/scenarios/{scenario_id}
 Authorization: Bearer TOKEN
 ```
@@ -126,7 +126,7 @@ Authorization: Bearer TOKEN
 
 Only draft scenarios can be updated.
 
-```http
+```text
 PUT /api/v2/spp/simulation/scenarios/{scenario_id}
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -141,7 +141,7 @@ Content-Type: application/json
 
 ### Archive Scenario
 
-```http
+```text
 DELETE /api/v2/spp/simulation/scenarios/{scenario_id}
 Authorization: Bearer TOKEN
 ```
@@ -152,7 +152,7 @@ Returns 204 No Content. This is a soft delete (archive).
 
 Transition from draft to ready (enables running simulations).
 
-```http
+```text
 POST /api/v2/spp/simulation/scenarios/{scenario_id}/ready
 Authorization: Bearer TOKEN
 ```
@@ -161,7 +161,7 @@ Authorization: Bearer TOKEN
 
 ### Execute Simulation
 
-```http
+```text
 POST /api/v2/spp/simulation/scenarios/{scenario_id}/run
 Authorization: Bearer TOKEN
 ```
@@ -179,7 +179,7 @@ Authorization: Bearer TOKEN
 
 ### List Runs
 
-```http
+```text
 GET /api/v2/spp/simulation/runs?scenario_id=5&state=completed
 Authorization: Bearer TOKEN
 ```
@@ -188,7 +188,7 @@ Authorization: Bearer TOKEN
 
 ### Get Run Results
 
-```http
+```text
 GET /api/v2/spp/simulation/runs/{run_id}?include_details=true
 Authorization: Bearer TOKEN
 ```
@@ -234,7 +234,7 @@ Compare results across multiple simulation runs.
 
 ### Create Comparison
 
-```http
+```text
 POST /api/v2/spp/simulation/comparisons
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -249,7 +249,7 @@ Minimum 2 runs required. Returns overlap data (Jaccard similarity between benefi
 
 ### Get Comparison
 
-```http
+```text
 GET /api/v2/spp/simulation/comparisons/{comparison_id}
 Authorization: Bearer TOKEN
 ```
@@ -258,7 +258,7 @@ Authorization: Bearer TOKEN
 
 Convert a ready scenario into a production program with CEL eligibility criteria and cash entitlement managers.
 
-```http
+```text
 POST /api/v2/spp/simulation/scenarios/{scenario_id}/convert-to-program
 Authorization: Bearer TOKEN
 Content-Type: application/json

@@ -35,7 +35,7 @@ Data providers are configured in the OpenSPP admin interface with ownership rule
 
 Send variable values from an external system into OpenSPP's cache.
 
-```http
+```text
 POST /api/v2/spp/Data/push
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -141,7 +141,7 @@ print(f"Inserted: {result['inserted']}, Updated: {result['updated']}, Errors: {l
 
 Read cached variable values for specific subjects.
 
-```http
+```text
 GET /api/v2/spp/Data/pull?variable=enrollment_status&subject_external_ids=urn:gov:ph:psa:national-id|PH-123456789&period_key=current
 Authorization: Bearer TOKEN
 ```
@@ -179,7 +179,7 @@ Authorization: Bearer TOKEN
 
 Mark cached values as stale to trigger a refresh.
 
-```http
+```text
 POST /api/v2/spp/Data/invalidate
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -205,7 +205,7 @@ Content-Type: application/json
 
 Discover which variables are configured for external data.
 
-```http
+```text
 GET /api/v2/spp/Data/variables?provider_code=edu_ministry
 Authorization: Bearer TOKEN
 ```

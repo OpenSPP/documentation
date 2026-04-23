@@ -20,7 +20,7 @@ Query parameters, pagination, sorting, sparse fieldsets, and advanced filter exp
 
 Search for resources using GET with query parameters:
 
-```http
+```text
 GET /api/v2/spp/{ResourceType}?parameter=value
 Authorization: Bearer TOKEN
 ```
@@ -49,7 +49,7 @@ All searches return a **SearchResult** response:
 
 ### By Identifier
 
-```http
+```text
 GET /api/v2/spp/Individual?identifier=urn:gov:ph:psa:national-id|PH-123456789
 ```
 
@@ -82,7 +82,7 @@ results = search_by_identifier(
 
 ### By Name
 
-```http
+```text
 # Contains search (case-insensitive)
 GET /api/v2/spp/Individual?name=Santos
 ```
@@ -111,7 +111,7 @@ results = search_by_name("Santos", token=token, base_url=base_url)
 
 ### By Birth Date
 
-```http
+```text
 # Exact date
 GET /api/v2/spp/Individual?birthdate=1985-03-15
 
@@ -162,7 +162,7 @@ results = search_by_birth_date_range(
 
 ### By Gender
 
-```http
+```text
 GET /api/v2/spp/Individual?gender=urn:iso:std:iso:5218|2
 ```
 
@@ -197,7 +197,7 @@ results = search_by_gender("2", token=token, base_url=base_url)
 
 ### By Address
 
-```http
+```text
 GET /api/v2/spp/Individual?address=Manila
 ```
 
@@ -225,7 +225,7 @@ results = search_by_address("Manila", token=token, base_url=base_url)
 
 ### By Last Updated
 
-```http
+```text
 # Modified since date
 GET /api/v2/spp/Individual?_lastUpdated=ge2024-01-01
 
@@ -260,7 +260,7 @@ results = search_recently_updated(7, token=token, base_url=base_url)
 
 ### By Member
 
-```http
+```text
 GET /api/v2/spp/Group?member=Individual/urn:gov:ph:psa:national-id|PH-123456789
 ```
 
@@ -297,7 +297,7 @@ for group in groups["data"]:
 
 Control result pagination with `_count` and `_offset`:
 
-```http
+```text
 GET /api/v2/spp/Individual?name=Santos&_count=50&_offset=100
 ```
 
@@ -363,7 +363,7 @@ print(f"Found {len(all_individuals)} total results")
 
 Sort results with `_sort`:
 
-```http
+```text
 # Sort by name (ascending)
 GET /api/v2/spp/Individual?_sort=name
 
@@ -407,7 +407,7 @@ results = search_sorted(
 
 Request only specific fields with `_elements`:
 
-```http
+```text
 GET /api/v2/spp/Individual?_elements=identifier,name,birthDate
 ```
 
@@ -442,7 +442,7 @@ results = search_with_fields(
 
 Combine multiple search parameters (AND logic):
 
-```http
+```text
 GET /api/v2/spp/Individual?name=Santos&birthdate=ge1980-01-01&address=Manila
 ```
 
@@ -482,7 +482,7 @@ For complex queries with AND/OR logic, use the advanced search endpoint:
 
 ### Discover Available Filters
 
-```http
+```text
 GET /api/v2/spp/Individual/_filters
 Authorization: Bearer TOKEN
 ```
@@ -491,7 +491,7 @@ Returns filterable fields, supported operators, and saved filter presets for the
 
 ### Complex Filter Queries
 
-```http
+```text
 POST /api/v2/spp/Individual/_search
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -561,7 +561,7 @@ For name and text searches, results are sorted by relevance. The API returns the
 
 ## ProgramMembership Search
 
-```http
+```text
 # By beneficiary
 GET /api/v2/spp/ProgramMembership?beneficiary=Individual/urn:gov:ph:psa:national-id|PH-123
 
@@ -630,7 +630,7 @@ Empty results return `total: 0` with empty `data` array:
 
 ### Invalid Parameters
 
-```http
+```text
 HTTP/1.1 400 Bad Request
 
 {
@@ -645,7 +645,7 @@ HTTP/1.1 400 Bad Request
 
 If results exceed reasonable limits, use pagination. Add filters or use `_count` and `_offset` to page through results:
 
-```http
+```text
 GET /api/v2/spp/Individual?name=Santos&_count=100&_offset=0
 ```
 

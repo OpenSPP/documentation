@@ -79,7 +79,7 @@ Notice the pattern: each manager type has an **implementation file** (the actual
     "income-based eligibility, per-child entitlements, and quarterly cycles.",
     "category": "OpenSPP",
     "version": "19.0.1.0.0",
-    "author": "OpenSPP",
+    "author": "OpenSPP.org",
     "website": "https://openspp.org",
     "license": "LGPL-3",
     "depends": [

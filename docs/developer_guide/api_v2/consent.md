@@ -54,7 +54,7 @@ When you request a registrant's data:
 
 API responses include consent status headers:
 
-```http
+```text
 X-Consent-Status: active
 X-Consent-Scope: individual
 ```
@@ -70,14 +70,14 @@ X-Consent-Scope: individual
 
 When consent is active and covers the requested data:
 
-```http
+```text
 GET /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789
 Authorization: Bearer TOKEN
 ```
 
 Response:
 
-```http
+```text
 HTTP/1.1 200 OK
 X-Consent-Status: active
 X-Consent-Scope: individual
@@ -97,7 +97,7 @@ X-Consent-Scope: individual
 
 When consent allows only basic information:
 
-```http
+```text
 HTTP/1.1 200 OK
 X-Consent-Status: active
 X-Consent-Scope: individual
@@ -116,7 +116,7 @@ X-Consent-Scope: individual
 
 When no consent exists:
 
-```http
+```text
 HTTP/1.1 200 OK
 X-Consent-Status: no_consent
 
@@ -139,7 +139,7 @@ X-Consent-Status: no_consent
 
 ### Consent Expired
 
-```http
+```text
 HTTP/1.1 200 OK
 X-Consent-Status: expired
 
@@ -169,13 +169,13 @@ Consent is granted at different levels:
 
 Module extensions require explicit consent:
 
-```http
+```text
 GET /api/v2/spp/Individual/...?_extensions=farmer
 ```
 
 If consent doesn't include the `farmer` extension:
 
-```json
+```text
 {
   "type": "Individual",
   "identifier": [...],
@@ -299,7 +299,7 @@ Consent records are created and managed through the OpenSPP user interface, not 
 
 ### Get Consent Status
 
-```http
+```text
 GET /api/v2/spp/Consent/{consent-id}
 Authorization: Bearer TOKEN
 ```
@@ -327,7 +327,7 @@ Response:
 
 ### Revoke Consent
 
-```http
+```text
 POST /api/v2/spp/Consent/{consent-id}/$revoke
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -339,7 +339,7 @@ Content-Type: application/json
 
 Response:
 
-```http
+```text
 HTTP/1.1 200 OK
 
 {
@@ -394,7 +394,7 @@ The API applies random timing jitter (50-70ms) when returning consent-restricted
 
 ### 403 Forbidden: Insufficient Consent
 
-```http
+```text
 HTTP/1.1 403 Forbidden
 
 {
@@ -409,13 +409,13 @@ HTTP/1.1 403 Forbidden
 
 Requesting fields not covered by consent:
 
-```http
+```text
 GET /api/v2/spp/Individual/...?_elements=identifier,name,telecom,address
 ```
 
 With consent only for `basic` scope (identifier, name):
 
-```json
+```text
 {
   "type": "Individual",
   "identifier": [...],
@@ -455,7 +455,7 @@ def fetch_with_consent_check(url, token):
 
 Don't request all fields if you only need basic info:
 
-```http
+```text
 # ✅ Good - Request only needed fields
 GET /api/v2/spp/Individual/...?_elements=identifier,name
 

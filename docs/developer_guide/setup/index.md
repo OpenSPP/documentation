@@ -8,7 +8,7 @@ openspp:
 
 **For: developers**
 
-This guide walks you through setting up a local OpenSPP development environment. OpenSPP V2 runs on **Odoo 19** (OCA/OCB) with **Python 3.13** and uses **Docker** for local development.
+This guide walks you through setting up a local OpenSPP development environment. OpenSPP V2 runs on **Odoo 19** (OCA/OCB) inside Docker — the container ships with **Python 3.13**. The only Python you install on your host is for the `spp` CLI (3.12+).
 
 ## Prerequisites
 

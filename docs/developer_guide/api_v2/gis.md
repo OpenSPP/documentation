@@ -43,7 +43,7 @@ Spatial computations use PostGIS for efficient processing.
 
 ### Query Statistics Within a Polygon
 
-```http
+```text
 POST /api/v2/spp/gis/query/statistics
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -90,7 +90,7 @@ Content-Type: application/json
 
 Query statistics for multiple polygons at once.
 
-```http
+```text
 POST /api/v2/spp/gis/query/statistics/batch
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -125,7 +125,7 @@ The `summary.total_unique_count` is deduplicated — registrants in overlapping 
 
 Find registrants within a radius of reference points.
 
-```http
+```text
 POST /api/v2/spp/gis/query/proximity
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -149,7 +149,7 @@ Save areas of interest for reuse.
 
 ### Create Geofence
 
-```http
+```text
 POST /api/v2/spp/gis/geofences
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -182,7 +182,7 @@ Content-Type: application/json
 
 ### List Geofences
 
-```http
+```text
 GET /api/v2/spp/gis/geofences?geofence_type=hazard_zone&active=true
 Authorization: Bearer TOKEN
 ```
@@ -191,7 +191,7 @@ Authorization: Bearer TOKEN
 
 ### Get Geofence
 
-```http
+```text
 GET /api/v2/spp/gis/geofences/{geofence_id}
 Authorization: Bearer TOKEN
 ```
@@ -200,7 +200,7 @@ Returns full GeoJSON Feature with geometry and properties.
 
 ### Delete Geofence
 
-```http
+```text
 DELETE /api/v2/spp/gis/geofences/{geofence_id}
 Authorization: Bearer TOKEN
 ```
@@ -211,7 +211,7 @@ Returns 204 No Content (soft delete/archive).
 
 Browse available GIS indicators grouped by category.
 
-```http
+```text
 GET /api/v2/spp/gis/statistics
 Authorization: Bearer TOKEN
 ```
@@ -244,14 +244,14 @@ Standards-compliant feature access for GIS tools like QGIS.
 
 ### Landing Page
 
-```http
+```text
 GET /api/v2/spp/gis/ogc
 Authorization: Bearer TOKEN
 ```
 
 ### Collections
 
-```http
+```text
 GET /api/v2/spp/gis/ogc/collections
 Authorization: Bearer TOKEN
 ```
@@ -260,7 +260,7 @@ Lists all available feature collections (derived from GIS reports and data layer
 
 ### Get Features
 
-```http
+```text
 GET /api/v2/spp/gis/ogc/collections/{collection_id}/items?limit=1000&bbox=120.9,14.5,121.1,14.7
 Authorization: Bearer TOKEN
 ```
@@ -277,7 +277,7 @@ Authorization: Bearer TOKEN
 
 ### Get Single Feature
 
-```http
+```text
 GET /api/v2/spp/gis/ogc/collections/{collection_id}/items/{feature_id}
 Authorization: Bearer TOKEN
 ```
@@ -286,7 +286,7 @@ Authorization: Bearer TOKEN
 
 Get a QGIS style file (QML) for a collection.
 
-```http
+```text
 GET /api/v2/spp/gis/ogc/collections/{collection_id}/qml?field_name=poverty_score&opacity=0.7
 Authorization: Bearer TOKEN
 ```
@@ -297,7 +297,7 @@ Returns XML style file. Available for report-based collections only.
 
 Download layers as GeoPackage or ZIP of GeoJSON for offline use.
 
-```http
+```text
 GET /api/v2/spp/gis/export/geopackage?layer_ids=health,poverty&include_geofences=true&admin_level=2
 Authorization: Bearer TOKEN
 ```

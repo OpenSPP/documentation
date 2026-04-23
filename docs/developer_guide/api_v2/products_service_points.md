@@ -28,7 +28,7 @@ Both provide read-only search access. Products and service points are managed th
 
 ### Read Product
 
-```http
+```text
 GET /api/v2/spp/Product/{identifier}
 Authorization: Bearer TOKEN
 ```
@@ -37,7 +37,7 @@ The identifier is the product SKU (`default_code`) or name (URL-encoded).
 
 ### Search Products
 
-```http
+```text
 GET /api/v2/spp/Product?name=rice&category=food
 Authorization: Bearer TOKEN
 ```
@@ -79,7 +79,7 @@ result = search_products(token=token, base_url=base_url, category="food")
 
 ### Product Categories
 
-```http
+```text
 GET /api/v2/spp/ProductCategory
 GET /api/v2/spp/ProductCategory/{identifier}
 Authorization: Bearer TOKEN
@@ -89,7 +89,7 @@ Authorization: Bearer TOKEN
 
 ### Units of Measure
 
-```http
+```text
 GET /api/v2/spp/UnitOfMeasure
 GET /api/v2/spp/UnitOfMeasure/{identifier}
 Authorization: Bearer TOKEN
@@ -101,7 +101,7 @@ Authorization: Bearer TOKEN
 
 ### Read Service Point
 
-```http
+```text
 GET /api/v2/spp/ServicePoint/{identifier}
 Authorization: Bearer TOKEN
 ```
@@ -130,7 +130,7 @@ The identifier is the service point name (URL-encoded).
 
 ### Search Service Points
 
-```http
+```text
 GET /api/v2/spp/ServicePoint?area=Metro+Manila&contractActive=true
 Authorization: Bearer TOKEN
 ```

@@ -54,7 +54,7 @@ Change requests go through a defined workflow: draft → pending → approved �
 
 Discover what types of change requests are available.
 
-```http
+```text
 GET /api/v2/spp/ChangeRequest/$types
 Authorization: Bearer TOKEN
 ```
@@ -82,7 +82,7 @@ Authorization: Bearer TOKEN
 
 Get the field schema for a specific CR type to know what data to include.
 
-```http
+```text
 GET /api/v2/spp/ChangeRequest/$types/edit_individual
 Authorization: Bearer TOKEN
 ```
@@ -91,7 +91,7 @@ Returns field definitions with types, required flags, and constraints.
 
 ## Create Change Request
 
-```http
+```text
 POST /api/v2/spp/ChangeRequest
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -190,7 +190,7 @@ print(f"Created CR: {cr['reference']} (state: {cr['approvalState']})")
 
 ## Read Change Request
 
-```http
+```text
 GET /api/v2/spp/ChangeRequest/CR/2024/00001
 Authorization: Bearer TOKEN
 ```
@@ -199,7 +199,7 @@ Authorization: Bearer TOKEN
 
 ## Search Change Requests
 
-```http
+```text
 GET /api/v2/spp/ChangeRequest?registrant=urn:gov:ph:psa:national-id|PH-123456789&status=pending
 Authorization: Bearer TOKEN
 ```
@@ -220,7 +220,7 @@ Authorization: Bearer TOKEN
 
 Update the detail fields of a draft CR.
 
-```http
+```text
 PUT /api/v2/spp/ChangeRequest/CR/2024/00001
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -243,7 +243,7 @@ Only draft CRs can be updated. Returns 409 Conflict if the CR is not in draft st
 
 Move a draft CR to pending review.
 
-```http
+```text
 POST /api/v2/spp/ChangeRequest/CR/2024/00001/$submit
 Authorization: Bearer TOKEN
 ```
@@ -252,7 +252,7 @@ Authorization: Bearer TOKEN
 
 Approve a pending CR.
 
-```http
+```text
 POST /api/v2/spp/ChangeRequest/CR/2024/00001/$approve
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -266,7 +266,7 @@ Content-Type: application/json
 
 Reject a pending CR with a reason.
 
-```http
+```text
 POST /api/v2/spp/ChangeRequest/CR/2024/00001/$reject
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -280,7 +280,7 @@ Content-Type: application/json
 
 Send a pending CR back for revision.
 
-```http
+```text
 POST /api/v2/spp/ChangeRequest/CR/2024/00001/$request-revision
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -294,7 +294,7 @@ Content-Type: application/json
 
 Execute an approved CR — applies the changes to the registrant record.
 
-```http
+```text
 POST /api/v2/spp/ChangeRequest/CR/2024/00001/$apply
 Authorization: Bearer TOKEN
 ```
@@ -303,7 +303,7 @@ Authorization: Bearer TOKEN
 
 Reset a rejected or revision CR back to draft.
 
-```http
+```text
 POST /api/v2/spp/ChangeRequest/CR/2024/00001/$reset
 Authorization: Bearer TOKEN
 ```

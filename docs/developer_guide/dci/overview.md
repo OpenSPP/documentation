@@ -63,7 +63,7 @@ graph TB
 
 Every DCI message has three parts:
 
-```json
+```text
 {
   "signature": "Signature: namespace=\"dci\", kidId=\"...\", ...",
   "header": {
@@ -203,23 +203,20 @@ response = await ibr_client.check_enrollment(
 
 ### Client Use Cases
 
-**1. CRVS Birth Import**
+**1. CRVS Birth Verification**
 
-Automatically import birth registrations from national CRVS:
+Verify a registrant's birth against the national CRVS before activation:
 
 ```python
-# Query CRVS for recent births
-from odoo.addons.spp_dci_client_crvs.services.crvs_client import CRVSClient
+from odoo.addons.spp_dci_client_crvs.services.crvs_service import CRVSService
 
-crvs_client = CRVSClient(env['spp.dci.data.source'].browse(1))
-births = await crvs_client.search_births(
-    date_from=date(2024, 1, 1),
-    date_to=date(2024, 12, 31)
+crvs = CRVSService(self.env, data_source_code="crvs_main")
+birth = crvs.verify_birth(
+    identifier_type="urn:gov:national-id",
+    identifier_value=partner.registry_id_ids[0].value,
 )
-
-# Import into OpenSPP registry
-for birth in births:
-    partner_id = crvs_client.import_person(birth, env)
+if birth:
+    partner.write({"birth_date": birth["date"], "verified_by_crvs": True})
 ```
 
 **2. Duplication Prevention**
@@ -227,36 +224,29 @@ for birth in births:
 Before enrolling in a cash transfer program, check IBR for existing enrollments:
 
 ```python
-# Check if person is already enrolled elsewhere
-from odoo.addons.spp_dci_client_ibr.services.ibr_client import IBRClient
+from odoo.addons.spp_dci_client_ibr.services.ibr_service import IBRService
 
-ibr_client = IBRClient(env['spp.dci.data.source'].browse(2))
-enrollments = await ibr_client.check_enrollment(
-    identifier_type="urn:gov:national-id",
-    identifier_value=partner.registry_id_ids[0].value
+data_source = self.env["spp.dci.data.source"].search(
+    [("code", "=", "ibr_main")], limit=1,
 )
-
-if enrollments:
-    # Show warning or block enrollment
-    raise UserError(f"Already enrolled in: {enrollments[0].programme_name}")
+ibr = IBRService(data_source, self.env)
+result = ibr.check_duplication(partner)
+if result.get("is_duplicate"):
+    raise UserError(_("Already enrolled in: %s") % result["programs"])
 ```
 
 **3. Disability Targeting**
 
-Query disability registry for PWD status to determine eligibility:
+Query the disability registry for PWD status to determine eligibility:
 
 ```python
-# Check disability status from external DR
-from odoo.addons.spp_dci_client_dr.services.dr_client import DRClient
+from odoo.addons.spp_dci_client_dr.services.dr_service import DRService
 
-dr_client = DRClient(env['spp.dci.data.source'].browse(3))
-response = await dr_client.search_by_identifier(
-    identifier_type="urn:gov:national-id",
-    identifier_value=partner.registry_id_ids[0].value
+dr = DRService(self.env, data_source_code="dr_main")
+status = dr.get_disability_status(partner)
+has_severe_disability = status and any(
+    score >= 3 for score in status.get("functional_scores", {}).values()
 )
-
-disability_info = response.message.search_response[0].data['reg_records'][0].get('disability_info', [])
-has_severe_disability = any(d['functional_severity'] >= 3 for d in disability_info)
 ```
 
 ## Data Schemas
@@ -265,7 +255,7 @@ DCI uses JSON-LD schemas for data exchange:
 
 ### Person Schema
 
-```json
+```text
 {
   "@context": "https://schema.spdci.org/core/v1",
   "@type": "Person",
@@ -289,7 +279,7 @@ DCI uses JSON-LD schemas for data exchange:
 
 ### Group/Household Schema
 
-```json
+```text
 {
   "@context": "https://schema.spdci.org/core/v1",
   "@type": "Group",

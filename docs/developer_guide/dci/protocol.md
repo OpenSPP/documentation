@@ -20,7 +20,7 @@ The wire-level details of the DCI protocol as implemented in OpenSPP — message
 
 Every DCI message uses a three-part envelope — a signature header string, a message header object, and a message body object. The schema is defined in `spp_dci/schemas/envelope.py`.
 
-```json
+```text
 {
   "signature": "namespace=\"dci\", kidId=\"openspp|key1|ed25519\", algorithm=\"ed25519\", created=\"1705315800\", expires=\"1705316100\", headers=\"(created) (expires) digest\", signature=\"<base64>\"",
   "header": {
@@ -156,12 +156,12 @@ https://<host>/dci_api/v1/<path>
 
 | Method | Path | Purpose |
 |--------|------|---------|
-| POST | `/dci_api/v1/registry/sync/search` | Synchronous search — returns results immediately |
-| POST | `/dci_api/v1/registry/search` | Asynchronous search — returns `202 Accepted` with a correlation ID; results delivered via callback |
-| POST | `/dci_api/v1/registry/subscribe` | Subscribe to registry events |
-| POST | `/dci_api/v1/registry/unsubscribe` | Cancel subscriptions by code |
-| POST | `/dci_api/v1/registry/sync/txn/status` | Poll transaction status for an async operation |
-| POST | `/dci_api/v1/receipt` | Send a receipt for a prior operation (e.g., after processing a notification) |
+| POST | `/dci_api/v1/social/registry/sync/search` | Synchronous search — returns results immediately |
+| POST | `/dci_api/v1/social/registry/search` | Asynchronous search — returns `202 Accepted` with a correlation ID; results delivered via callback |
+| POST | `/dci_api/v1/social/registry/subscribe` | Subscribe to registry events |
+| POST | `/dci_api/v1/social/registry/unsubscribe` | Cancel subscriptions by code |
+| POST | `/dci_api/v1/social/registry/sync/txn/status` | Poll transaction status for an async operation |
+| POST | `/dci_api/v1/social/registry/receipt` | Send a receipt for a prior operation (e.g., after processing a notification) |
 | GET  | `/dci_api/v1/.well-known/jwks.json` | Public signing keys (no auth) |
 
 All `POST` endpoints require Bearer + HTTP Signature auth. The `GET` JWKS endpoint is public.

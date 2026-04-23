@@ -44,7 +44,7 @@ The token endpoint supports three authentication methods:
 
 **Method 1: HTTP Basic Auth (recommended per RFC 6749)**
 
-```http
+```text
 POST /api/v2/spp/oauth/token
 Authorization: Basic base64(client_id:client_secret)
 Content-Type: application/x-www-form-urlencoded
@@ -54,7 +54,7 @@ grant_type=client_credentials
 
 **Method 2: Form-encoded body**
 
-```http
+```text
 POST /api/v2/spp/oauth/token
 Content-Type: application/x-www-form-urlencoded
 
@@ -63,7 +63,7 @@ grant_type=client_credentials&client_id=ministry-of-agriculture&client_secret=yo
 
 **Method 3: JSON body**
 
-```http
+```text
 POST /api/v2/spp/oauth/token
 Content-Type: application/json
 
@@ -168,7 +168,7 @@ console.log('Token:', token);
 
 Include the token in the `Authorization` header of all API requests:
 
-```http
+```text
 GET /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 ```
@@ -371,7 +371,7 @@ The token response includes granted scopes:
 
 If you attempt an operation without the required scope:
 
-```http
+```text
 HTTP/1.1 403 Forbidden
 Content-Type: application/json
 
