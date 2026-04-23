@@ -6,7 +6,15 @@ openspp:
 
 # API Resources
 
-This guide is for **developers** working with OpenSPP API V2 resources.
+**For: developers**
+
+The core resource types exposed by API V2 (Individual, Group, Program, ProgramMembership, Consent) with their fields, relationships, and CRUD operations.
+
+## Prerequisites
+
+- A working API client and OAuth token (see {doc}`authentication`)
+- Understanding of {doc}`external_identifiers` — every resource is addressed by `system|value`
+- Awareness of {doc}`consent` — responses are filtered based on consent scope
 
 ## Available Resources
 
@@ -18,7 +26,11 @@ OpenSPP API V2 provides five core resources:
 | Group             | Household or other group  | `/Group`             |
 | Program           | Social protection program | `/Program`           |
 | ProgramMembership | Enrollment in a program   | `/ProgramMembership` |
-| Consent           | Data sharing consent      | `/Consent`           |
+| Consent           | Data sharing consent      | `/Consent/{id}` only |
+
+```{note}
+Consent records do not follow the standard CRUD pattern. They are only readable individually (`GET /Consent/{id}`), revocable (`POST /Consent/{id}/$revoke`), and deletable (`DELETE /Consent/{id}`). There is no list endpoint or POST `/Consent` create operation — consents are created through separate grant flows. See {doc}`consent` for details.
+```
 
 ## Common Patterns
 
@@ -26,11 +38,18 @@ All resources follow consistent REST patterns:
 
 | Operation        | HTTP Method | Endpoint                      | Supported Resources                  |
 | ---------------- | ----------- | ----------------------------- | ------------------------------------ |
-| Read             | GET         | `/{Resource}/{identifier}`    | All                                  |
-| Search           | GET         | `/{Resource}?parameter=value` | All                                  |
+| Read             | GET         | `/{Resource}/{identifier}`    | Individual, Group, Program, ProgramMembership |
+| Search           | GET         | `/{Resource}?parameter=value` | Individual, Group, Program, ProgramMembership |
 | Create           | POST        | `/{Resource}`                 | Individual, Group, ProgramMembership |
-| Update (full)    | PUT         | `/{Resource}/{identifier}`    | Individual, Group                    |
-| Update member    | PATCH       | `/Group/{id}/member/{ind_id}` | Group members only                   |
+| Update (full)    | PUT         | `/{Resource}/{identifier}`    | Individual, Group, ProgramMembership |
+| Update (partial) | PATCH       | `/{Resource}/{identifier}`    | Individual, Group                    |
+| Delete           | DELETE      | `/{Resource}/{identifier}`    | Consent only                         |
+
+```{note}
+PUT replaces the entire resource — you must send all fields. PATCH uses [JSON Merge Patch (RFC 7396)](https://datatracker.ietf.org/doc/html/rfc7396) — only send the fields you want to change. Both support optimistic locking via the `If-Match` header.
+
+DELETE is **not** supported for Individual, Group, Program, or ProgramMembership. To remove a person or membership from active use, set `active: false` via PATCH instead.
+```
 
 ## Individual Resource
 
@@ -40,7 +59,7 @@ Represents a person in the social protection registry.
 
 ```json
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [
     {
       "system": "urn:gov:ph:psa:national-id",
@@ -139,7 +158,7 @@ Represents a person in the social protection registry.
 
 | Field                | Type            | Required | Description                              |
 | -------------------- | --------------- | -------- | ---------------------------------------- |
-| `resourceType`       | string          | Yes      | Always "Individual"                      |
+| `type`               | string          | Yes      | Always "Individual"                      |
 | `identifier`         | array           | Yes      | External identifiers (at least one)      |
 | `active`             | boolean         | No       | Whether record is active (default: true) |
 | `name`               | object          | Yes      | Human name                               |
@@ -157,7 +176,7 @@ Represents a person in the social protection registry.
 
 #### Read Individual
 
-```http
+```text
 GET /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789
 Authorization: Bearer TOKEN
 ```
@@ -186,19 +205,19 @@ def get_individual(identifier, token, base_url):
 individual = get_individual(
     identifier="urn:gov:ph:psa:national-id|PH-123456789",
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 ```
 
 #### Create Individual
 
-```http
+```text
 POST /api/v2/spp/Individual
 Authorization: Bearer TOKEN
 Content-Type: application/json
 
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [
     {
       "system": "urn:gov:ph:psa:national-id",
@@ -224,7 +243,7 @@ Content-Type: application/json
 
 **Response:**
 
-```http
+```text
 HTTP/1.1 201 Created
 Location: /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-987654321
 ```
@@ -249,14 +268,14 @@ def create_individual(data, token, base_url):
 
 #### Update Individual
 
-```http
+```text
 PUT /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789
 Authorization: Bearer TOKEN
 Content-Type: application/json
 If-Match: "3"
 
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [...],
   "name": {...},
   ...
@@ -264,6 +283,57 @@ If-Match: "3"
 ```
 
 **Note:** Requires `If-Match` header with current version ID for optimistic locking.
+
+#### Partial Update Individual (PATCH)
+
+Use PATCH to update specific fields without sending the entire resource:
+
+```text
+PATCH /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789
+Authorization: Bearer TOKEN
+Content-Type: application/merge-patch+json
+If-Match: "3"
+
+{
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+639179876543",
+      "use": "mobile"
+    }
+  ]
+}
+```
+
+Only the specified fields are updated. Omitted fields remain unchanged. Use `null` to clear a field's value.
+
+**Example: Python**
+
+```python
+def patch_individual(identifier, updates, version_id, token, base_url):
+    """Partially update an individual."""
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/merge-patch+json",
+        "If-Match": f'"{version_id}"'
+    }
+    response = requests.patch(
+        f"{base_url}/Individual/{identifier}",
+        headers=headers,
+        json=updates
+    )
+    response.raise_for_status()
+    return response.json()
+
+# Update only the phone number
+updated = patch_individual(
+    identifier="urn:gov:ph:psa:national-id|PH-123456789",
+    updates={"telecom": [{"system": "phone", "value": "+639179876543", "use": "mobile"}]},
+    version_id="3",
+    token=token,
+    base_url=base_url
+)
+```
 
 ## Group Resource
 
@@ -273,7 +343,7 @@ Represents a household or other group of individuals.
 
 ```json
 {
-  "resourceType": "Group",
+  "type": "Group",
   "identifier": [
     {
       "system": "urn:openspp:group",
@@ -281,7 +351,7 @@ Represents a household or other group of individuals.
     }
   ],
   "active": true,
-  "type": "household",
+  "groupType": "household",
   "name": "Santos Household",
   "quantity": 4,
   "member": [
@@ -314,21 +384,6 @@ Represents a household or other group of individuals.
       "country": "PH"
     }
   ],
-  "characteristic": [
-    {
-      "code": {
-        "coding": [
-          {
-            "system": "urn:openspp:vocab:household-char",
-            "code": "children_under_5",
-            "display": "Children Under 5"
-          }
-        ]
-      },
-      "value": 2,
-      "exclude": false
-    }
-  ],
   "meta": {
     "versionId": "5",
     "lastUpdated": "2024-11-28T10:30:00Z"
@@ -336,12 +391,16 @@ Represents a household or other group of individuals.
 }
 ```
 
+```{note}
+Module-specific Group fields (e.g., household characteristics like `children_under_5`) are exposed via the `extension` mechanism rather than core schema fields. Request them with `?_extensions=<extension-name>`.
+```
+
 ### Operations
 
 #### Search Groups
 
-```http
-GET /api/v2/spp/Group?type=household&name=Santos
+```text
+GET /api/v2/spp/Group?groupType=household&name=Santos
 Authorization: Bearer TOKEN
 ```
 
@@ -350,7 +409,7 @@ Authorization: Bearer TOKEN
 | Parameter      | Type      | Description                                       |
 | -------------- | --------- | ------------------------------------------------- |
 | `identifier`   | token     | System\|value                                     |
-| `type`         | token     | Group type: `household`, `family`, `organization` |
+| `groupType`    | token     | Group type: `household`, `family`, `organization`, `other` |
 | `name`         | string    | Group name (contains)                             |
 | `member`       | reference | Has member: `Individual/{identifier}`             |
 | `_lastUpdated` | date      | Modified since: `ge2024-01-01`                    |
@@ -371,28 +430,28 @@ def search_groups(params, token, base_url):
 
 # Usage
 results = search_groups(
-    params={"type": "household", "name": "Santos"},
+    params={"groupType": "household", "name": "Santos"},
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 ```
 
 #### Create Group
 
-```http
+```text
 POST /api/v2/spp/Group
 Authorization: Bearer TOKEN
 Content-Type: application/json
 
 {
-  "resourceType": "Group",
+  "type": "Group",
   "identifier": [
     {
       "system": "urn:openspp:group",
       "value": "HH-2024-NEW"
     }
   ],
-  "type": "household",
+  "groupType": "household",
   "name": "Dela Cruz Household",
   "member": [
     {
@@ -420,7 +479,7 @@ Represents a social protection program.
 
 ```json
 {
-  "resourceType": "Program",
+  "type": "Program",
   "identifier": [
     {
       "system": "urn:openspp:program",
@@ -430,7 +489,7 @@ Represents a social protection program.
   "active": true,
   "name": "Pantawid Pamilyang Pilipino Program",
   "description": "Conditional cash transfer program for poor families",
-  "type": {
+  "programType": {
     "coding": [
       {
         "system": "urn:openspp:vocab:program-type",
@@ -455,7 +514,7 @@ Represents a social protection program.
 
 #### List Programs
 
-```http
+```text
 GET /api/v2/spp/Program?status=active
 Authorization: Bearer TOKEN
 ```
@@ -483,7 +542,7 @@ Represents enrollment of a beneficiary in a program.
 
 ```json
 {
-  "resourceType": "ProgramMembership",
+  "type": "ProgramMembership",
   "identifier": [
     {
       "system": "urn:openspp:program-membership",
@@ -498,7 +557,7 @@ Represents enrollment of a beneficiary in a program.
     "reference": "Group/urn:openspp:group|HH-2024-001",
     "display": "Santos Household"
   },
-  "status": "active",
+  "status": "enrolled",
   "enrollmentDate": "2024-01-15",
   "exitDate": null,
   "exitReason": null,
@@ -511,20 +570,21 @@ Represents enrollment of a beneficiary in a program.
 
 ### Status Values
 
-| Status      | Description                    |
-| ----------- | ------------------------------ |
-| `enrolled`  | Enrolled but not yet active    |
-| `active`    | Actively receiving benefits    |
-| `suspended` | Temporarily suspended          |
-| `graduated` | Successfully completed program |
-| `exited`    | Left program (see exitReason)  |
+| Status          | Description                                                |
+| --------------- | ---------------------------------------------------------- |
+| `draft`         | Initial state — record created but not yet enrolled        |
+| `enrolled`      | Enrolled in the program (active beneficiary)               |
+| `paused`        | Temporarily paused (eligibility suspended, may resume)     |
+| `exited`        | Left the program (see `exitReason`)                        |
+| `not_eligible`  | Determined ineligible after evaluation                     |
+| `duplicated`    | Marked as duplicate of another membership                  |
 
 ### Operations
 
 #### Search Enrollments
 
-```http
-GET /api/v2/spp/ProgramMembership?beneficiary=Individual/urn:gov:ph:psa:national-id|PH-123456789&status=active
+```text
+GET /api/v2/spp/ProgramMembership?beneficiary=Individual/urn:openspp:vocab:id-type%23national_id|IND-001&status=enrolled
 Authorization: Bearer TOKEN
 ```
 
@@ -545,7 +605,7 @@ def get_program_memberships(beneficiary_ref, token, base_url):
     response = requests.get(
         f"{base_url}/ProgramMembership",
         headers=headers,
-        params={"beneficiary": beneficiary_ref, "status": "active"}
+        params={"beneficiary": beneficiary_ref, "status": "enrolled"}
     )
     response.raise_for_status()
     return response.json()
@@ -554,24 +614,23 @@ def get_program_memberships(beneficiary_ref, token, base_url):
 memberships = get_program_memberships(
     beneficiary_ref="Individual/urn:gov:ph:psa:national-id|PH-123456789",
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 
-for entry in memberships["entry"]:
-    membership = entry["resource"]
+for membership in memberships["data"]:
     print(f"Enrolled in: {membership['program']['display']}")
     print(f"Status: {membership['status']}")
 ```
 
 #### Enroll Beneficiary
 
-```http
+```text
 POST /api/v2/spp/ProgramMembership
 Authorization: Bearer TOKEN
 Content-Type: application/json
 
 {
-  "resourceType": "ProgramMembership",
+  "type": "ProgramMembership",
   "program": {
     "reference": "Program/urn:openspp:program|4Ps"
   },
@@ -587,7 +646,7 @@ Content-Type: application/json
 
 Modules can add custom fields via extensions. Request extensions using the `_extensions` parameter:
 
-```http
+```text
 GET /api/v2/spp/Individual/...?_extensions=farmer,disability
 ```
 
@@ -595,7 +654,7 @@ GET /api/v2/spp/Individual/...?_extensions=farmer,disability
 
 Check the capability statement for available extensions:
 
-```http
+```text
 GET /api/v2/spp/metadata
 ```
 
@@ -641,7 +700,7 @@ individual = get_individual_with_extensions(
     identifier="urn:gov:ph:psa:national-id|PH-123456789",
     extensions=["farmer"],
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 
 if "extension" in individual and "farmer" in individual["extension"]:
@@ -673,7 +732,7 @@ All resources include metadata:
 
 Use the `versionId` for optimistic locking:
 
-```http
+```text
 PUT /api/v2/spp/Individual/...
 If-Match: "3"
 ```
@@ -682,26 +741,14 @@ If another client modified the resource, you'll get a 409 Conflict:
 
 ```json
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "conflict",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "VERSION_CONFLICT"
-          }
-        ],
-        "text": "Resource version mismatch. Expected: 3, Current: 5"
-      }
-    }
-  ]
+  "type": "urn:openspp:error:conflict",
+  "title": "Conflict",
+  "status": 409,
+  "detail": "Resource version mismatch. Expected: 3, Current: 5"
 }
 ```
 
-## Are You Stuck?
+## Common mistakes
 
 **Which resource should I use for households?**
 
@@ -721,7 +768,7 @@ Another client modified the resource. Fetch the latest version, merge your chang
 
 **What's the difference between PUT and PATCH?**
 
-PUT replaces the entire resource. PATCH is only available for updating group member relationships at `/Group/{id}/member/{individual_id}`.
+PUT replaces the entire resource — you must send all fields. PATCH (JSON Merge Patch, RFC 7396) updates only the fields you send, leaving others unchanged. Both are available for Individual and Group resources.
 
 ## Complete Example: Full Workflow
 
@@ -739,7 +786,7 @@ class OpenSPPAPI:
     def create_individual(self, identifier, name, birth_date):
         """Create a new individual."""
         data = {
-            "resourceType": "Individual",
+            "type": "Individual",
             "identifier": [identifier],
             "name": name,
             "birthDate": birth_date
@@ -755,9 +802,9 @@ class OpenSPPAPI:
     def create_group(self, identifier, name, members):
         """Create a new group."""
         data = {
-            "resourceType": "Group",
+            "type": "Group",
             "identifier": [identifier],
-            "type": "household",
+            "groupType": "household",
             "name": name,
             "member": members
         }
@@ -772,7 +819,7 @@ class OpenSPPAPI:
     def enroll_in_program(self, program_ref, beneficiary_ref):
         """Enroll a beneficiary in a program."""
         data = {
-            "resourceType": "ProgramMembership",
+            "type": "ProgramMembership",
             "program": {"reference": program_ref},
             "beneficiary": {"reference": beneficiary_ref},
             "status": "enrolled",
@@ -788,7 +835,7 @@ class OpenSPPAPI:
 
 # Usage
 api = OpenSPPAPI(
-    base_url="https://api.openspp.org/api/v2/spp",
+    base_url="https://{your-domain}/api/v2/spp",
     token="YOUR_TOKEN"
 )
 
@@ -827,14 +874,14 @@ membership = api.enroll_in_program(
 print(f"Enrolled in program: {membership['program']['display']}")
 ```
 
-## Next Steps
+## What's next
 
 - {doc}`search` - Advanced search and filtering
 - {doc}`batch` - Create multiple resources atomically
 - {doc}`consent` - Understanding consent-based access
 - {doc}`errors` - Error handling
 
-## See Also
+## See also
 
 - [FHIR Resource Types](https://www.hl7.org/fhir/resourcelist.html) - FHIR resource patterns
 - [G2P Connect Resources](https://g2pconnect.cdpi.dev/protocol/resources) - G2P resource definitions

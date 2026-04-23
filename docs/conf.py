@@ -408,7 +408,9 @@ redirects = {
     "technical_reference/cel/expressions.html": "config_guide/cel/syntax.html",
     "technical_reference/cel/events.html": "config_guide/cel/variables.html",
     "technical_reference/cel/widget_and_validation.html": "config_guide/cel/syntax.html",
-    "technical_reference/cel/caching_and_metric.html": "developer_guide/architecture/cel_internals.html",
+    "technical_reference/cel/caching_and_metric.html": "developer_guide/cel/internals.html",
+    "developer_guide/architecture/cel_internals.html": "developer_guide/cel/internals.html",
+    "developer_guide/architecture/manager_pattern.html": "developer_guide/custom_managers/manager_pattern.html",
 
     # Phase 3: User Guide Deduplication redirects - ACTIVE
     "tutorial/user_guides/register_new_individual.html": "user_guide/registry/register_individual.html",
@@ -433,10 +435,10 @@ redirects = {
     # Phase 3: Orphan Resolution redirects - ACTIVE
     "tutorial/managing_social_protection_programs.html": "learn/concepts/programs.html",
     "tutorial/managing_social_protection_programs/index.html": "learn/concepts/programs.html",
-    "howto/developer_guides/custom_cycle.html": "developer_guide/extending/cycle_manager.html",
-    "howto/developer_guides/custom_cycle/index.html": "developer_guide/extending/cycle_manager.html",
-    "howto/developer_guides/custom_program.html": "developer_guide/extending/custom_modules.html",
-    "howto/developer_guides/custom_program/index.html": "developer_guide/extending/custom_modules.html",
+    "howto/developer_guides/custom_cycle.html": "developer_guide/custom_managers/index.html",
+    "howto/developer_guides/custom_cycle/index.html": "developer_guide/custom_managers/index.html",
+    "howto/developer_guides/custom_program.html": "developer_guide/custom_modules/index.html",
+    "howto/developer_guides/custom_program/index.html": "developer_guide/custom_modules/index.html",
     "howto/developer_guides/implmenting_pmt.html": "config_guide/scoring/pmt.html",
     "howto/developer_guides/implmenting_pmt/index.html": "config_guide/scoring/pmt.html",
     "howto/translation.html": "index.html",

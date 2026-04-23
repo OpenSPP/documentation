@@ -6,7 +6,15 @@ openspp:
 
 # API V2 Overview
 
-This guide is for **developers** integrating external applications with OpenSPP using the REST API V2.
+**For: developers**
+
+An introduction to OpenSPP's REST API — its design philosophy, base URL, and the core principles that shape every endpoint.
+
+## Prerequisites
+
+- Familiarity with REST APIs and HTTP
+- Ability to issue HTTP requests (curl, Python `requests`, JavaScript `fetch`, etc.)
+- An OpenSPP deployment with `spp_api_v2` installed
 
 ## What is API V2?
 
@@ -33,10 +41,16 @@ API V2 completely replaces the legacy XML-RPC API with modern standards:
 
 ## Base URL
 
+The API base URL depends on your deployment:
+
 ```
-Production:  https://api.openspp.org/api/v2/spp
-Staging:     https://staging-api.openspp.org/api/v2/spp
-Development: http://localhost:8069/api/v2/spp
+https://{your-domain}/api/v2/spp
+```
+
+For local development, the default is:
+
+```
+http://localhost:8069/api/v2/spp
 ```
 
 ## Core Principles
@@ -90,25 +104,76 @@ See {doc}`consent` for details.
 
 When in doubt (missing consent, ambiguous permissions), the API denies access and returns minimal data.
 
+### Authorization stack
+
+Every request passes through three layers in order (see ADR-022):
+
+1. **Authentication** — JWT token validated against the API client record
+2. **Scope enforcement** — endpoint checks that the client has the required `resource:action` scope (e.g., `individual:read`)
+3. **Consent filtering** — response fields are filtered based on registrant consent and the client's legal basis
+
+Authorization is enforced at the application layer, not through Odoo record rules — API clients are not Odoo users. See {doc}`authentication` for scope details and {doc}`consent` for the filtering rules.
+
 ## FHIR-Inspired Patterns
 
 OpenSPP API V2 adopts these patterns from FHIR without full compliance:
 
-### Capability Statement
+### Capability Statement (Metadata)
 
-Discover what the API supports:
+Discover what the API supports (no authentication required):
 
-```http
+```text
 GET /api/v2/spp/metadata
 ```
 
-Returns available resources, operations, search parameters, and installed extensions.
+**Response:**
+
+```json
+{
+  "name": "OpenSPP API",
+  "version": "2.0.0",
+  "resources": {
+    "Individual": {
+      "operations": ["read", "search", "create", "update", "patch"],
+      "search_params": ["identifier", "name", "birthdate", "gender", "address", "group"]
+    },
+    "Group": {
+      "operations": ["read", "search", "create", "update", "patch"],
+      "search_params": ["identifier", "name", "type", "member"]
+    },
+    "Program": {
+      "operations": ["read", "search"],
+      "search_params": ["identifier", "name", "status", "type", "targetType"]
+    },
+    "ProgramMembership": {
+      "operations": ["read", "search", "create", "update"],
+      "search_params": ["beneficiary", "program", "status"]
+    }
+  },
+  "extensions": [
+    {
+      "url": "urn:openspp:extension:farmer",
+      "module": "spp_farmer_registry",
+      "applies_to": ["Individual"],
+      "fields": ["farmSize", "farmSizeUnit", "primaryCrop"]
+    }
+  ],
+  "authentication": {
+    "type": "oauth2",
+    "token_endpoint": "/api/v2/spp/oauth/token",
+    "grant_types": ["client_credentials"]
+  },
+  "docs": "/api/v2/spp/docs"
+}
+```
+
+Extension modules (Entitlement, Cycle, GIS, etc.) add their resources to this response when installed.
 
 ### Bundle Transactions
 
 Create multiple related resources atomically:
 
-```http
+```text
 POST /api/v2/spp/$batch
 ```
 
@@ -145,6 +210,23 @@ Represent coded values with their vocabulary:
 
 See {doc}`resources` for complete documentation.
 
+### Extension Resources
+
+Additional resources are available through extension modules:
+
+| Resource | Module | Description |
+|----------|--------|-------------|
+| Entitlement | `spp_api_v2_entitlements` | Cash and in-kind entitlements |
+| Cycle | `spp_api_v2_cycles` | Program cycle management |
+| Product | `spp_api_v2_products` | Product catalog |
+| ServicePoint | `spp_api_v2_service_points` | Service point registry |
+| ChangeRequest | `spp_api_v2_change_request` | Change request workflow |
+| Simulation | `spp_api_v2_simulation` | Program simulation and scenarios |
+| GIS | `spp_api_v2_gis` | Geospatial queries |
+| Data | `spp_api_v2_data` | Variable value push/pull |
+
+Install the corresponding module to enable each resource.
+
 ## Quick Start
 
 ### 1. Register Your Application
@@ -157,7 +239,7 @@ Contact your OpenSPP administrator to register your application and receive:
 ### 2. Get an Access Token
 
 ```bash
-curl -X POST https://api.openspp.org/api/v2/spp/oauth/token \
+curl -X POST https://{your-domain}/api/v2/spp/oauth/token \
   -H "Content-Type: application/json" \
   -d '{
     "grant_type": "client_credentials",
@@ -169,9 +251,9 @@ curl -X POST https://api.openspp.org/api/v2/spp/oauth/token \
 Response:
 ```json
 {
-  "access_token": "eyJhbGciOiJSUzI1NiIs...",
+  "access_token": "eyJhbGciOiJIUzI1NiIs...",
   "token_type": "Bearer",
-  "expires_in": 3600,
+  "expires_in": 86400,
   "scope": "individual:read individual:search"
 }
 ```
@@ -179,14 +261,14 @@ Response:
 ### 3. Make Your First Request
 
 ```bash
-curl https://api.openspp.org/api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789 \
+curl https://{your-domain}/api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789 \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
 Response:
 ```json
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [
     {
       "system": "urn:gov:ph:psa:national-id",
@@ -215,9 +297,11 @@ Response:
 ```python
 import requests
 
+BASE_URL = "https://{your-domain}/api/v2/spp"  # Replace with your deployment URL
+
 # Get token
 token_response = requests.post(
-    "https://api.openspp.org/api/v2/spp/oauth/token",
+    f"{BASE_URL}/oauth/token",
     json={
         "grant_type": "client_credentials",
         "client_id": "your-client-id",
@@ -229,20 +313,22 @@ token = token_response.json()["access_token"]
 # Fetch individual
 headers = {"Authorization": f"Bearer {token}"}
 individual = requests.get(
-    "https://api.openspp.org/api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789",
+    f"{BASE_URL}/Individual/urn:gov:ph:psa:national-id|PH-123456789",
     headers=headers
 )
 print(individual.json())
 ```
 
-## Performance Characteristics
+## Rate Limiting
 
-| Operation | P95 Latency | Throughput |
-|-----------|-------------|------------|
-| Read single resource | 100ms | 1000 req/s |
-| Search (≤100 results) | 500ms | 200 req/s |
-| Create single | 200ms | 100 req/s |
-| Batch (100 operations) | 2s | 20 req/s |
+API requests are rate-limited per client:
+
+| Endpoint | Default per minute | Default per day |
+|----------|-------------------|----------------|
+| General API | 30 | 5,000 |
+| OAuth token | 5 per IP | 50 per IP |
+
+Rate limits are configurable per API client. When exceeded, the API returns `429 Too Many Requests` with `Retry-After` and `X-RateLimit-*` headers.
 
 ## API Versioning
 
@@ -252,21 +338,21 @@ Major version changes indicate breaking changes. Minor updates are backward-comp
 
 Response headers indicate the exact API version:
 
-```http
+```text
 X-API-Version: 2.0.0
 ```
 
-## Are You Stuck?
+## Common mistakes
 
 **Getting 401 Unauthorized?**
 
-Check that your access token hasn't expired (tokens last 1 hour). Request a new token.
+Check that your access token hasn't expired (tokens last 24 hours by default). Request a new token.
 
 **Getting 403 Forbidden?**
 
 Your API client may not have the required scopes, or the registrant hasn't consented to data sharing. Check consent status in response headers:
 
-```http
+```text
 X-Consent-Status: no_consent
 ```
 
@@ -278,13 +364,14 @@ The API may be filtering fields due to consent restrictions. Use the `X-Consent-
 
 Your client has exceeded rate limits. Check headers:
 
-```http
-X-RateLimit-Limit: 1000
+```text
+X-RateLimit-Limit: 30
 X-RateLimit-Remaining: 0
-X-RateLimit-Reset: 60
+X-RateLimit-Reset: 45
+Retry-After: 45
 ```
 
-## Next Steps
+## What's next
 
 - {doc}`authentication` - OAuth 2.0 setup and token management
 - {doc}`external_identifiers` - Working with external IDs
@@ -292,7 +379,7 @@ X-RateLimit-Reset: 60
 - {doc}`search` - Advanced search and filtering
 - {doc}`batch` - Batch and transaction operations
 
-## See Also
+## See also
 
 - [G2P Connect Protocol](https://g2pconnect.cdpi.dev/) - Social protection interoperability
 - [FHIR HTTP Interactions](https://www.hl7.org/fhir/http.html) - HTTP patterns we adopt

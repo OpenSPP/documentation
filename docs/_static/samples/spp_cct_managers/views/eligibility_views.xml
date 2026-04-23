@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_eligibility_manager_cct_form" model="ir.ui.view">
+        <field name="name">spp.program.membership.manager.cct.form</field>
+        <field name="model">spp.program.membership.manager.cct</field>
+        <field name="arch" type="xml">
+            <form string="CCT Eligibility Manager">
+                <sheet>
+                    <group>
+                        <group string="Configuration">
+                            <field name="name" />
+                            <field name="program_id" readonly="1" />
+                        </group>
+                        <group string="Eligibility Criteria">
+                            <field name="max_income" />
+                            <field name="child_max_age" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
