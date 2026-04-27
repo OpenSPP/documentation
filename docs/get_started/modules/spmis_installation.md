@@ -33,3 +33,11 @@ The OpenSPP Social Protection Management Information System ({doc}`OpenSPP SP-MI
 Once installed, you will see the "Registry" application in your Odoo dashboard, which is the main entry point for the OpenSPP system.
 
 ![SPP Base module successfully installed](/_images/en-us/get_started/modules/04-spp_base3.png)
+
+## Next steps
+
+Now that you have installed OpenSPP SP-MIS, you have three options forward:
+
+- {doc}`../try_spmis/index` - Load demo data into the configuration and understand more about the functionalities
+- {doc}`../../user_guide/index` - Start using OpenSPP without adding any demo data
+- {doc}`../../config_guide/index` - Use the studio to perform configurations to match SP-MIS to your use case

@@ -117,7 +117,6 @@ ODOO_INIT_MODULES=spp_mis_demo_v2 docker compose --profile ui up -d
 
 | Module | Description |
 |--------|-------------|
-| `spp_demo` | Minimal installation (default) |
 | `spp_mis_demo_v2` | Sample registry with programs and beneficiaries |
 | `spp_drims_sl_demo` | DRIMS disaster response demo |
 

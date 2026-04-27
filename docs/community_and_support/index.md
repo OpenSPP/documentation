@@ -16,6 +16,7 @@ This section encompasses essential information and guidelines pertinent to OpenS
 - **{doc}`module_lifecycle_maintainer_role`**
 - **{doc}`code_of_conduct`**
 - **{doc}`security_report`**
+- **{doc}`openspp_odoo`**
 - **{doc}`license`**
 
 ```{toctree}
@@ -28,5 +29,6 @@ module_lifecycle_development_status
 module_lifecycle_maintainer_role
 code_of_conduct
 security_report
+openspp_odoo
 license
 ```
