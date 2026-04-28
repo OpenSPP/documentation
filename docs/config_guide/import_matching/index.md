@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring deduplication rules that prevent duplicate records during bulk data imports.
 
+## Prerequisites
+
+```{important}
+The `spp_import_match` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **{doc}`overview`** - Import matching concepts, rules, field selection, and conditional logic

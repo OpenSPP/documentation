@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring DRIMS for disaster response operations. You should be comfortable with logic builders like Kobo or CommCare, but you don't need Python skills.
 
+## Prerequisites
+
+```{important}
+The `spp_drims` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What You'll Find Here
 
 - **Warehouses** - Enable warehouses for DRIMS, set tiers, assign to areas

@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring OpenSPP rules and formulas using CEL (Common Expression Language).
 
+## Prerequisites
+
+```{important}
+The `spp_cel_domain` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **Quick Start** - Get started with CEL expressions

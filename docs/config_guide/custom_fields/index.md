@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** organizing custom data fields into groups for registrant profiles.
 
+## Prerequisites
+
+```{important}
+The `spp_custom_field` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **{doc}`overview`** - Field groups, registrant targeting, and display ordering

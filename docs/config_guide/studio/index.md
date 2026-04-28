@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** who want to customize OpenSPP through a visual, no-code interface. If you can build a KoBoToolbox form, you can configure OpenSPP Studio.
 
+## Prerequisites
+
+```{important}
+The `spp_studio` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **Overview** - Studio interface and capabilities

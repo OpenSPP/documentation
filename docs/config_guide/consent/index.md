@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring data sharing permissions and consent management for regulatory compliance.
 
+## Prerequisites
+
+```{important}
+The `spp_consent` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **{doc}`overview`** - Consent concepts, legal basis, and status lifecycle

@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring beneficiary banking information for cash transfer programs.
 
+## Prerequisites
+
+```{important}
+The `spp_banking` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **{doc}`overview`** - Bank configuration, account fields, and registrant linkage

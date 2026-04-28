@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring map-based visualization for geographic analysis, coverage mapping, and spatial reporting.
 
+## Prerequisites
+
+```{important}
+The `spp_gis` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **{doc}`overview`** - GIS concepts, raster layers (base maps), and color schemes

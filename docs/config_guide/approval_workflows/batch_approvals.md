@@ -63,7 +63,7 @@ Freeze periods block all approvals system-wide during critical operational windo
 ### Setting up a freeze period
 
 1. Navigate to **Configuration > Freeze Periods**
-2. Click **Create**
+2. Click **New**
 3. Set the **Start Date** and **End Date**
 4. Add a **Reason** for the freeze
 5. Save and activate

@@ -8,6 +8,16 @@ openspp:
 
 This guide is for **implementers** configuring scoring frameworks to assess and rank beneficiaries for program targeting. No code required.
 
+## Prerequisites
+
+```{important}
+The following modules must be installed:
+- `spp_scoring`
+- `spp_pmt`
+
+See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What You'll Find Here
 
 - **Overview** - Scoring concepts and fundamentals

@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring program exit pathways, graduation criteria, and assessment processes for time-bound social protection programs.
 
+## Prerequisites
+
+```{important}
+The `spp_graduation` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **{doc}`overview`** - Graduation concepts, pathways, and navigation

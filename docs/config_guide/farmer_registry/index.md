@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring the farmer registry module for agricultural program management, farm entity tracking, and activity monitoring.
 
+## Prerequisites
+
+```{important}
+The `spp_farmer_registry` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **{doc}`overview`** - Farmer registry concepts, farm entities, vocabulary-based fields, and access control

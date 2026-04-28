@@ -8,6 +8,17 @@ openspp:
 
 This guide is for **implementers** configuring entitlement formulas to calculate benefit amounts for qualified registrants.
 
+## Prerequisites
+
+```{important}
+The following modules must be installed:
+- `spp_entitlement_cash`
+- `spp_entitlement_in_kind`
+- `spp_entitlement_basket`
+
+See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What are entitlement formulas?
 
 Entitlement formulas define how much each beneficiary receives. They translate policy rules (e.g., "$50 base plus $10 per child") into calculations that OpenSPP applies automatically when preparing entitlements.

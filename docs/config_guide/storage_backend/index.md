@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring where OpenSPP stores uploaded files and attachments.
 
+## Prerequisites
+
+```{important}
+The `spp_storage_backend` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **{doc}`overview`** - Backend types, connection settings, and file storage policies

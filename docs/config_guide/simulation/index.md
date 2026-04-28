@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring targeting simulations to model and compare program scenarios before rollout.
 
+## Prerequisites
+
+```{important}
+The `spp_simulation` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **{doc}`overview`** - Simulation concepts, scenario templates, comparison runs, and fairness metrics

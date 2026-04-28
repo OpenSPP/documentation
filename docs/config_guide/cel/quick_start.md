@@ -72,9 +72,13 @@ Expressions have different types based on their purpose:
 | **Scoring** | Number | Compute indicator scores |
 | **Validation** | Boolean | Data validation rules |
 
-## Example A: Create a variable
+## Example A: Create a variable (do this first)
 
 **Goal**: Create a variable that counts children under 5 in a household.
+
+```{important}
+Complete Example A before Example B. Example B uses the `children_under_5_count` variable created here.
+```
 
 ### Step 1: Navigate to variables
 
@@ -86,8 +90,8 @@ There are two ways to access Variables:
 
 **Option B - From Menu:**
 1. Click **Studio** in the main menu
-2. Click **Logic Design** in the top menu bar
-3. Click **Variables**
+2. Click **Rules**
+3. Under **Variables**, click **All Variables**
 
 ### Step 2: Create a new variable
 
@@ -142,7 +146,11 @@ In aggregate filters, use `m` to reference each member. The expression `age_year
 
 Now you can use `children_under_5_count` in any expression that applies to groups/households.
 
-## Example B: Create an expression
+## Example B: Create an expression (requires Example A)
+
+```{important}
+You must complete Example A first. This example uses the `children_under_5_count` variable you created there.
+```
 
 **Goal**: Create an expression that identifies "priority households" (those with children under 5).
 
@@ -154,8 +162,8 @@ Now you can use `children_under_5_count` in any expression that applies to group
 
 **Option B - From Menu:**
 1. Click **Studio** in the main menu
-2. Click **Logic Design** in the top menu bar
-3. Click **Expressions**
+2. Click **Rules**
+3. Under **Rules**, click **Expressions**
 
 ### Step 2: Create a new expression
 

@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring session types, attendance tracking, and compliance requirements for training programs and support groups.
 
+## Prerequisites
+
+```{important}
+The `spp_session_tracking` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **{doc}`overview`** - Session concepts, types, frequency, topics, and attendance thresholds

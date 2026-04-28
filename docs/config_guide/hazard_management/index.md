@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring disaster and hazard classification, incident tracking, and impact assessment for emergency response programs.
 
+## Prerequisites
+
+```{important}
+The `spp_hazard` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **{doc}`overview`** - Hazard categories, incident lifecycle, impact types, and severity levels

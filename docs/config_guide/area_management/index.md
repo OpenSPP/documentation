@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** setting up geographic area hierarchies for program targeting, service delivery, and reporting.
 
+## Prerequisites
+
+```{important}
+The `spp_area` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **{doc}`overview`** - Area concepts, hierarchy configuration, types, tags, and bulk import

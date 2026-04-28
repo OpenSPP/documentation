@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring physical or virtual locations where beneficiaries receive services or collect benefits.
 
+## Prerequisites
+
+```{important}
+The `spp_service_points` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **{doc}`overview`** - Service point concepts, creation, area assignment, and service types

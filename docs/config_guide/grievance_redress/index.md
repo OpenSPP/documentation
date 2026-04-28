@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring the Grievance Redress Mechanism (GRM) for managing beneficiary complaints, feedback, and service requests.
 
+## Prerequisites
+
+```{important}
+The `spp_grm` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **{doc}`overview`** - GRM concepts, ticket stages, categories, and submission channels

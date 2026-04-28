@@ -23,7 +23,7 @@ The {doc}`OpenSPP Farmer Registry <../../products/farmer_registry>` configuratio
 **Installation steps:**
 
 1.  Navigate to the **Apps** menu.
-2.  In the Apps menu, search for {doc}`spp_base_farmer_registry </reference/modules/spp_base_farmer_registry>` or "OpenSPP Starter: Farmer Registry"
+2.  In the Apps menu, search for {doc}`spp_farmer_registry </reference/modules/spp_base_farmer_registry>` or "OpenSPP Starter: Farmer Registry"
 
 ![Searching for SPP Farmer Registry module](/_images/en-us/get_started/modules/14-farmer_inst_base01.png)
 
