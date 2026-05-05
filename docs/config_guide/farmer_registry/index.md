@@ -31,6 +31,6 @@ farm_details
 
 1. Install the `spp_farmer_registry` module
 2. Navigate to **Settings > Farmer Registry Settings** to configure access control
-3. Register **Farms** as group-type registrants with farm classification details
+3. Register farms under **Groups** and assign them as **Farm** type registrants
 4. Configure **Seasons** for agricultural activity tracking
 5. Record **Activities** (crops, livestock) and **Assets** (equipment, machinery) per farm

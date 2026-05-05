@@ -53,7 +53,7 @@ Custom field group form showing name, target type, and sequence.
 
 ### Step 1: Create a field group
 
-1. Navigate to **Configuration > Field Groups**
+1. Navigate to **SPP Studio → Forms and Fields → Custom Fields**
 2. Click **Create**
 3. Enter the **Name**
 4. Select the **Target Type** (Group or Individual)

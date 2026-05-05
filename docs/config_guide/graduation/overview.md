@@ -58,7 +58,7 @@ OpenSPP includes three default pathways:
 
 | Menu | Purpose |
 |------|---------|
-| **Graduation > Graduation Pathways** | Define exit pathways |
+| **Graduation → Configuration → Pathways** | Define exit pathways |
 | **Graduation > Graduation Criteria** | Configure assessment criteria |
 | **Graduation > Assessments** | View individual assessments |
 

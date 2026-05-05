@@ -27,7 +27,7 @@ overview
 
 ## Quick start
 
-1. Navigate to **Configuration > Field Groups**
+1. Navigate to **SPP Studio → Forms and Fields → Custom Fields**
 2. Create a **Field Group** (e.g., "Disability Information", "Education Data")
 3. Set the **Target Type** (Group or Individual registrants)
 4. Set the **Sequence** for display order

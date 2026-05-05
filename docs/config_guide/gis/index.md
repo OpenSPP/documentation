@@ -11,7 +11,11 @@ This guide is for **implementers** configuring map-based visualization for geogr
 ## Prerequisites
 
 ```{important}
-The `spp_gis` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+The following modules must be installed:
+- `spp_gis`
+- `spp_gis_indicator`
+
+See {doc}`/get_started/modules/index` for module installation instructions.
 ```
 
 ## What you'll find here

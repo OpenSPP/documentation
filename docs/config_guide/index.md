@@ -10,6 +10,10 @@ openspp:
 
 This guide covers configuring OpenSPP without code — setting up eligibility rules, formulas, workflows, and system behavior through the OpenSPP Studio interface and configuration screens.
 
+```{note}
+These modules are usually installed on top of starter kits. Each section has a **Prerequisites** block listing the specific modules it requires. See {doc}`/get_started/modules/index` for starter kits and module installation instructions.
+```
+
 ## Overview
 
 The Configuration Guide is designed for implementers who need to customize OpenSPP for their specific program requirements. No programming knowledge is required — configuration uses visual tools and simple expression languages.

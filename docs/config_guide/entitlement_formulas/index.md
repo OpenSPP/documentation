@@ -14,7 +14,6 @@ This guide is for **implementers** configuring entitlement formulas to calculate
 The following modules must be installed:
 - `spp_entitlement_cash`
 - `spp_entitlement_in_kind`
-- `spp_entitlement_basket`
 
 See {doc}`/get_started/modules/index` for module installation instructions.
 ```
@@ -68,7 +67,6 @@ The **Entitlement Manager** section in the program's **Configuration** tab.
 :hidden:
 
 cash_calculations
-inkind_baskets
 formula_library
 dynamic_entitlements
 conditional_logic
@@ -77,7 +75,6 @@ conditional_logic
 | Guide | Description |
 |-------|-------------|
 | {doc}`cash_calculations` | Configure cash entitlement amounts and multipliers |
-| {doc}`inkind_baskets` | Set up in-kind products and baskets |
 | {doc}`formula_library` | Pre-built formulas for common scenarios |
 | {doc}`dynamic_entitlements` | Variable amounts based on household composition |
 | {doc}`conditional_logic` | Different formulas for different beneficiary types |
@@ -90,7 +87,6 @@ OpenSPP supports different entitlement types:
 |------|-------------|----------|
 | **Cash** | Monetary payments | Cash transfer programs |
 | **In-Kind** | Physical goods | Food distribution, supplies |
-| **Basket** | Predefined product bundles | Standardized aid packages |
 
 ## Common calculation patterns
 

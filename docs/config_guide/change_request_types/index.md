@@ -14,6 +14,7 @@ This guide is for **implementers** configuring change request workflows for modi
 The following modules must be installed:
 - `spp_change_request_v2`
 - `spp_cr_types_base`
+- `spp_cr_types_advanced`
 
 See {doc}`/get_started/modules/index` for module installation instructions.
 ```

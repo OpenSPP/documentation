@@ -29,7 +29,8 @@ program_linking
 
 ## Quick start
 
-1. Define **Hazard Categories** in a hierarchy (e.g., Natural → Storm → Typhoon)
-2. When a disaster occurs, create a **Hazard Incident** with severity and affected areas
-3. Record **Impacts** on affected registrants
-4. Link emergency **Programs** to the incident for targeted response
+1. From the main menu, click **Hazard and Emergency**, then click **Configuration → Hazard Categories**
+2. Define **Hazard Categories** in a hierarchy (e.g., Natural → Storm → Typhoon)
+3. When a disaster occurs, create a **Hazard Incident** with severity and affected areas
+4. Record **Impacts** on affected registrants
+5. Link emergency **Programs** to the incident for targeted response

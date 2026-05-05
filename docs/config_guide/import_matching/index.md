@@ -27,8 +27,8 @@ overview
 
 ## Quick start
 
-1. Navigate to **Configuration > Import Match**
-2. Create a **Matching Rule** for the target model (e.g., registrants)
+1. From the main menu, click **Registry**, then click **Configuration** and scroll down to **Import Match**
+2. Create a **Matching Rule** for the target model (e.g., Contacts)
 3. Select the **Fields** to match on (e.g., national ID, phone number)
 4. Optionally add **Conditional Logic** (e.g., only match if status = active)
 5. Set **Overwrite** behavior for matched records

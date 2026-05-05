@@ -36,7 +36,7 @@ api_consent_filtering
 To configure consent management:
 
 1. Navigate to **Registry → Configuration → Consent Management**
-2. Create a **Privacy Notice** under Configuration → Privacy Notices
+2. Create a **Privacy Notice** under **Consent Management → Configuration → Privacy Notices**
 3. Configure **Purposes** and **Personal Data Categories** (pre-loaded with DPV defaults)
 4. Record consent from beneficiaries using the wizard or bulk import
 5. Consent summary is automatically cached on registrants for API filtering
