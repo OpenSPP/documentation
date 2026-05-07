@@ -237,4 +237,3 @@ After creating your custom detail model:
 
 - {doc}`creating_types` - Basic configuration steps
 - {doc}`field_mappings` - Configure how fields are applied
-- {doc}`../studio/change_request_builder` - Studio interface for creating CR types

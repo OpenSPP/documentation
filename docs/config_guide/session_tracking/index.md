@@ -27,7 +27,7 @@ overview
 
 ## Quick start
 
-1. Navigate to **Configuration > Session Types**
+1. From **Session Tracking**, navigate to **Configuration → Session Types**
 2. Create **Session Types** with frequency and duration (e.g., "Monthly Training", "Bi-weekly Group Meeting")
 3. Optionally define **Topics** for each session type
 4. Set **Attendance Thresholds** for compliance tracking

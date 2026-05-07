@@ -563,6 +563,5 @@ Yes, select multiple fields in the list view and use the **Activate** action fro
 ## Next steps
 
 - **Create event types from surveys**: {doc}`event_type_designer`
-- **Build change request workflows**: {doc}`change_request_builder`
 - **Define eligibility rules**: {doc}`/config_guide/cel/index`
 - **Return to Studio overview**: {doc}`overview`

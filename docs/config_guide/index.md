@@ -30,14 +30,12 @@ The Configuration Guide is designed for implementers who need to customize OpenS
 - **[Change request types](change_request_types/index.md)** — Configuring change request workflows (NEW V2)
 - **[Consent configuration](consent/index.md)** — Managing data sharing consent (NEW V2)
 - **[Custom fields](custom_fields/index.md)** — Registrant field groups
-- **[Document management](document_management/index.md)** — Document directories, categories, and retention
 - **[DRIMS configuration](drims/index.md)** — Disaster-responsive and shock-responsive settings
 - **[Eligibility rules](eligibility/index.md)** — Configuring who qualifies for programs
 - **[Entitlement formulas](entitlement_formulas/index.md)** — Calculating benefit amounts
 - **[Event data](event_data/index.md)** — Capturing external data from surveys and forms (V2 enhanced)
 - **[Farmer registry](farmer_registry/index.md)** — Farm entity configuration
 - **[GIS configuration](gis/index.md)** — Spatial data layers, color schemes, and map reports
-- **[Graduation](graduation/index.md)** — Exit pathways and criteria for program beneficiaries
 - **[Grievance redress](grievance_redress/index.md)** — Ticket categories, service-level rules, teams, and tags
 - **[Hazard management](hazard_management/index.md)** — Hazard categories, incidents, and program linking
 - **[Import matching](import_matching/index.md)** — Deduplication during import
@@ -65,14 +63,12 @@ cel/index
 change_request_types/index
 consent/index
 custom_fields/index
-document_management/index
 drims/index
 eligibility/index
 entitlement_formulas/index
 event_data/index
 farmer_registry/index
 gis/index
-graduation/index
 grievance_redress/index
 hazard_management/index
 import_matching/index

@@ -58,5 +58,4 @@ troubleshooting
 
 ## Related guides
 
-- {doc}`../studio/change_request_builder` - Build change request types in Studio
 - {doc}`../event_data/index` - Integrate with event data collection

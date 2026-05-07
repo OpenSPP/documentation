@@ -11,11 +11,7 @@ This guide is for **implementers** configuring scoring frameworks to assess and 
 ## Prerequisites
 
 ```{important}
-The following modules must be installed:
-- `spp_scoring`
-- `spp_pmt`
-
-See {doc}`/get_started/modules/index` for module installation instructions.
+The `spp_scoring` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
 ```
 
 ## What You'll Find Here

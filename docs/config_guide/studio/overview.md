@@ -116,7 +116,6 @@ The Studio Dashboard — your starting point for all Studio tools.
 - Custom approval logic beyond standard workflows
 - Multi-record operations
 
-→ See {doc}`change_request_builder` for detailed instructions.
 
 ### 4. Eligibility Rules (CEL Expressions)
 
@@ -368,5 +367,4 @@ Now that you understand Studio's capabilities:
 
 1. **To add custom fields**: Continue to {doc}`registry_field_builder`
 2. **To create event types**: Continue to {doc}`event_type_designer`
-3. **To build change workflows**: Continue to {doc}`change_request_builder`
 4. **To define eligibility rules**: Continue to {doc}`/config_guide/cel/index`

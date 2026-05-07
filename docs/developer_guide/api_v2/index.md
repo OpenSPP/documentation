@@ -65,10 +65,6 @@ These modules add domain-specific endpoints when installed alongside the core `s
 |-------|--------|-------------|
 | {doc}`entitlements_cycles` | `spp_api_v2_entitlements`, `spp_api_v2_cycles` | Cash/in-kind entitlements and distribution cycles |
 | {doc}`products_service_points` | `spp_api_v2_products`, `spp_api_v2_service_points` | Product catalog and distribution locations |
-| {doc}`change_requests` | `spp_api_v2_change_request` | Data change request workflow with approvals |
-| {doc}`data_api` | `spp_api_v2_data` | External data push/pull for variable caching |
-| {doc}`simulation` | `spp_api_v2_simulation` | Scenario-based program simulation and analysis |
-| {doc}`gis` | `spp_api_v2_gis` | Spatial queries, geofences, and OGC Features |
 
 ```{note}
 API V2 completely replaces the legacy XML-RPC API. New integrations should use API V2.
@@ -95,8 +91,4 @@ tutorial
 studio_integration
 entitlements_cycles
 products_service_points
-change_requests
-data_api
-simulation
-gis
 ```
