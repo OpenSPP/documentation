@@ -187,6 +187,9 @@ if not os.environ.get("SPHINX_DEV_BUILD"):
         "sphinx_reredirects",  # URL redirects for documentation restructure
     ]
 
+autodoc_mock_imports = ["odoo"]
+suppress_warnings = ["autodoc", "misc.highlighting_failure"]
+
 # Mermaid configuration
 # For offline/air-gapped builds, set MERMAID_OFFLINE=svg and install mermaid-cli:
 #   npm install -g @mermaid-js/mermaid-cli
@@ -195,7 +198,7 @@ _mermaid_offline = os.environ.get("MERMAID_OFFLINE", "") == "svg"
 mermaid_output_format = "svg" if _mermaid_offline else "raw"
 mermaid_version = "11.4.0"  # Pin mermaid version for stability
 # Use puppeteer config for no-sandbox mode (required on Ubuntu 23.10+)
-mermaid_cmd = ["mmdc", "--puppeteerConfigFile", os.path.join(os.path.dirname(__file__), "_static/puppeteer-config.json")]
+mermaid_cmd = "mmdc --puppeteerConfigFile " + os.path.join(os.path.dirname(__file__), "_static/puppeteer-config.json")
 mermaid_include_elk = False  # Disable ELK layout to reduce dependencies
 mermaid_init_js = "" if _mermaid_offline else "mermaid.initialize({startOnLoad:true});"
 
@@ -442,7 +445,6 @@ redirects = {
     "howto/developer_guides/implmenting_pmt.html": "config_guide/scoring/pmt.html",
     "howto/developer_guides/implmenting_pmt/index.html": "config_guide/scoring/pmt.html",
     "howto/translation.html": "index.html",
-    "getting_started/creating_a_program.html": "get_started/first_program/index.html",
     "tutorial/programs/export_beneficiaries.html": "user_guide/registry/export_data.html",
 
     # Phase 3: Partial Content Migration redirects - ACTIVE

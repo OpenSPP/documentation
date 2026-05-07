@@ -67,6 +67,7 @@ The **Entitlement Manager** section in the program's **Configuration** tab.
 :hidden:
 
 cash_calculations
+inkind_entitlements
 formula_library
 dynamic_entitlements
 conditional_logic
@@ -75,6 +76,7 @@ conditional_logic
 | Guide | Description |
 |-------|-------------|
 | {doc}`cash_calculations` | Configure cash entitlement amounts and multipliers |
+| {doc}`inkind_entitlements` | Configure in-kind (physical goods) entitlements |
 | {doc}`formula_library` | Pre-built formulas for common scenarios |
 | {doc}`dynamic_entitlements` | Variable amounts based on household composition |
 | {doc}`conditional_logic` | Different formulas for different beneficiary types |

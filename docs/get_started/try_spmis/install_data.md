@@ -122,5 +122,3 @@ Check the browser console for errors. Try refreshing the page and running the wi
 
 Now that you have sample data, you're ready to start exploring:
 
-- {doc}`../stories` - Look at how households included in the demo data are displayed in OpenSPP
-- {doc}`../demo_scenarios` - Follow a number of prepared steps to demonstrate or try out the functionality

@@ -236,4 +236,3 @@ beneficiary receiving both cash (pension) and in-kind (food).
 - **Demo point:** Displaced person receiving household emergency aid + individual food
   support
 
----

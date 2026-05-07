@@ -19,7 +19,7 @@ API v2 is implemented by the Odoo module `spp_api_v2`.
 
 Start here:
 
-- {doc}`API v2 reference <api_v2/index>`
+- {doc}`API v2 reference </developer_guide/api_v2/index>`
 
 ## XML-RPC (advanced / legacy)
 

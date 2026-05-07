@@ -239,7 +239,6 @@ docker system prune -a
 ## Next steps
 
 - {doc}`../modules/index` - Install modules
-- {doc}`../first_program/index` - Create your first social protection program
 - {doc}`/user_guide/index` - Learn the OpenSPP interface
 - {doc}`/config_guide/index` - Configure eligibility rules and expressions
 

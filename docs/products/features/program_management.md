@@ -32,4 +32,4 @@ The platform's flexibility in supporting different program models is crucial for
 The program management functionality is delivered through specialized modules:
 
 * **[spp_programs](/reference/modules/spp_programs.md)**: Core program framework providing program definition, cycle management, and beneficiary enrollment
-* **[spp_entitlement_basket](/reference/modules/spp_entitlement_basket.md)**: Mixed basket entitlements combining multiple benefit types
+* **[spp_entitlement_basket](/modules/spp_entitlement_basket.md)**: Mixed basket entitlements combining multiple benefit types

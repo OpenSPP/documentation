@@ -86,4 +86,3 @@ For single-server deployments, filesystem is recommended. For multi-server or cl
 
 ## Next steps
 
-- {doc}`/config_guide/document_management/overview` - Organize stored documents

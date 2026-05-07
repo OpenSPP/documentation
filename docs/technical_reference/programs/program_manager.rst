@@ -11,6 +11,3 @@ the interface for this manager. :class:`DefaultProgramManager` is the default im
 
 .. autoclass:: BaseProgramManager
     :members:
-
-.. autoclass:: BaseProgramManager
-    :members:

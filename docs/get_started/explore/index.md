@@ -1,4 +1,5 @@
 ---
+orphan: true
 openspp:
   doc_status: draft
   products: [registry, programs]
@@ -126,5 +127,3 @@ Check the browser console for errors. Try refreshing the page and running the wi
 
 Now that you have sample data, you're ready to start exploring:
 
-- {doc}`../first_household/index` - Register your first household
-- {doc}`../first_program/index` - Create your first social protection program

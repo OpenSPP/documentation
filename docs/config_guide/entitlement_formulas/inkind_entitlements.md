@@ -4,9 +4,9 @@ openspp:
   products: [core]
 ---
 
-# In-kind and basket entitlements
+# In-kind entitlements
 
-This guide is for **implementers** configuring in-kind (physical goods) entitlements and predefined product baskets.
+This guide is for **implementers** configuring in-kind (physical goods) entitlements for social protection programs.
 
 ## Understanding in-kind entitlements
 
@@ -18,13 +18,6 @@ In-kind entitlements distribute physical goods instead of cash. Common examples:
 | Agricultural support | Seeds, fertilizer, tools |
 | School supplies | Books, uniforms, materials |
 | Emergency relief | Blankets, tarps, hygiene kits |
-
-## In-kind vs basket entitlements
-
-| Type | Description | Use case |
-|------|-------------|----------|
-| **In-Kind** | Single product per item | Simple distributions |
-| **Basket** | Multiple products bundled | Standardized aid packages |
 
 ## Configuring in-kind entitlements
 
@@ -117,46 +110,6 @@ When entitlements are prepared:
 ```{note}
 Ensure sufficient stock exists before preparing entitlements. Low stock warnings appear if inventory is insufficient.
 ```
-
-## Basket entitlements
-
-Baskets bundle multiple products into a single entitlement.
-
-### Creating a basket
-
-1. Go to **Programs → Configuration → Entitlement Baskets**
-2. Click **Create**
-3. Add products to the basket
-
-```{figure} /_images/en-us/config_guide/entitlement_formulas/09-basket-configuration.png
-:alt: In-kind items list with multiple products configured
-
-Multiple items configured with different products, quantities, and conditions for distribution.
-```
-
-### Basket configuration
-
-| Field | Description |
-|-------|-------------|
-| **Name** | Basket display name |
-| **Products** | List of included products |
-| **Quantities** | Amount of each product |
-
-### Example: Emergency relief basket
-
-| Product | Quantity | Unit |
-|---------|----------|------|
-| Blanket | 2 | pieces |
-| Tarpaulin | 1 | piece |
-| Water container | 2 | pieces |
-| Hygiene kit | 1 | kit |
-| Rice | 10 | kg |
-
-### Using baskets in entitlement managers
-
-1. Create a basket entitlement manager
-2. Select the predefined basket
-3. Configure conditions if needed
 
 ## Quantity multipliers
 
@@ -251,8 +204,6 @@ Configure where beneficiaries collect in-kind items:
 
 ## Tracking redemption
 
-For in-kind entitlements:
-
 | State | Description |
 |-------|-------------|
 | **Draft** | Entitlement created |
@@ -282,7 +233,6 @@ For in-kind entitlements:
 
 | Practice | Benefit |
 |----------|---------|
-| Use baskets for standard packages | Faster distribution |
 | Pre-pack items where possible | Reduce wait times |
 | Track redemption rates | Identify issues |
 
@@ -302,11 +252,6 @@ For in-kind entitlements:
 - Review multiplier field configuration
 - Check max multiplier setting
 - Verify beneficiary data has values
-
-**Basket products missing?**
-- Ensure basket is properly configured
-- Check all products in basket are active
-- Verify product stock availability
 
 ## Next steps
 

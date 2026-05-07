@@ -25,7 +25,7 @@ The module relies heavily on the following modules:
 * **[spp_change_request](spp_change_request)**: Inherits the core change request functionality, including the request workflow, validation processes, approval mechanisms, and integration with the Document Management System ([spp_dms](spp_dms)).
 * **[spp_farmer_registry_base](spp_farmer_registry_base)**: Leverages the farmer-specific data models and attributes to capture and store information about the new farmer.
 * ****spp_registry****: Integrates with the membership management system to create the appropriate group membership record for the new farmer upon change request approval. 
-* **[phone_validation](phone_validation)**: Utilizes the phone validation module to ensure phone number entries for the new farmer adhere to correct formatting.
+* **`phone_validation`**: Utilizes the phone validation module to ensure phone number entries for the new farmer adhere to correct formatting.
 * ****spp_registry****:  Accesses group information and functionality to display details about the target group for the new farmer.
 * ****spp_registry****: Leverages individual registrant management features, inheriting from the individual registrant model.
 * **[spp_service_points](spp_service_points)**:  Integrates with service points, allowing change requests to be initiated and managed through designated service points. 
