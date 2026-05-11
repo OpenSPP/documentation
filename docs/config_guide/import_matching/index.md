@@ -16,7 +16,7 @@ The `spp_import_match` module must be installed. See {doc}`/get_started/modules/
 
 ## What you'll find here
 
-- **{doc}`overview`** - Import matching concepts, rules, field selection, and conditional logic
+- **{doc}`overview`** - Import matching concepts, rules, and field selection
 
 ```{toctree}
 :hidden:
@@ -30,5 +30,4 @@ overview
 1. From the main menu, click **Registry**, then click **Configuration** and scroll down to **Import Match**
 2. Create a **Matching Rule** for the target model (e.g., Contacts)
 3. Select the **Fields** to match on (e.g., national ID, phone number)
-4. Optionally add **Conditional Logic** (e.g., only match if status = active)
-5. Set **Overwrite** behavior for matched records
+4. Set **Overwrite** behavior for matched records

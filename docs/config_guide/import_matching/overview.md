@@ -42,9 +42,6 @@ Each field in a rule defines one matching criterion:
 |-------|---------------|
 | **Field Name** | The field to compare |
 | **Sub-field** | For linked fields, which specific value to compare (e.g., the bank's name rather than its ID) |
-| **Conditional** | Only match when a specific condition is true |
-| **Condition Field** | The field to check for the condition |
-| **Condition Value** | The value the condition field must have |
 
 ### Matching behavior
 
@@ -62,16 +59,6 @@ When importing data:
    - **Overwrite disabled:** Skip the incoming record
 4. If no match: create a new record
 
-### Conditional matching
-
-Conditions add context to matching. For example:
-
-| Scenario | Condition Field | Condition Value | Effect |
-|----------|----------------|-----------------|--------|
-| Match only active records | active | True | Ignores archived records |
-| Match by program | program_id | specific ID | Only matches within one program |
-| Match by ID type | id_type | national_id | Uses national ID for matching |
-
 ## Setting up matching rules
 
 ### Step 1: Create a rule
@@ -86,7 +73,6 @@ Conditions add context to matching. For example:
 2. For each field:
    - Select the field name
    - Optionally set a sub-field for relational fields
-   - Optionally add a condition
 
 ### Step 3: Configure overwrite behavior
 
@@ -99,9 +85,9 @@ Conditions add context to matching. For example:
 
 Match registrants by their unique national ID:
 
-| Field | Sub-field | Conditional |
-|-------|-----------|-------------|
-| national_id | - | No |
+| Field | Sub-field |
+|-------|-----------|
+| national_id | - |
 
 Simple and reliable when national IDs are consistently formatted.
 
@@ -109,22 +95,12 @@ Simple and reliable when national IDs are consistently formatted.
 
 Match when both name and phone number match:
 
-| Field | Sub-field | Conditional |
-|-------|-----------|-------------|
-| name | - | No |
-| phone | - | No |
+| Field | Sub-field |
+|-------|-----------|
+| name | - |
+| phone | - |
 
 Reduces false matches compared to single-field matching.
-
-### Pattern 3: Conditional ID match
-
-Match by national ID only for records of a specific type:
-
-| Field | Sub-field | Conditional | Condition Field | Condition Value |
-|-------|-----------|-------------|----------------|-----------------|
-| national_id | - | Yes | id_type_id | national_id |
-
-Useful when multiple ID types exist (national ID, passport, voter ID).
 
 ## Are You Stuck?
 
