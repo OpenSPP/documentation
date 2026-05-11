@@ -59,20 +59,24 @@ Global defaults apply to all incidents unless overridden. These control when ale
 
 ### Accessing Global Settings
 
-1. Go to **Settings** (top menu)
-2. Scroll to **DRIMS** section
-3. Configure default thresholds
+DRIMS global thresholds are stored as system parameters. There is no dedicated **Settings → DRIMS** page — the values live in `ir.config_parameter` and are edited through the System Parameters list.
 
-<!-- ![Screenshot: DRIMS settings section](screenshots/drims_settings_defaults.png) -->
+1. Activate **Developer Mode** (Settings → General Settings → scroll to the bottom → **Activate the developer mode**)
+2. Go to **Settings → Technical → System Parameters**
+3. Filter by `drims.` to see all DRIMS keys
+4. Edit the value of the key you want to change
+
+![Screenshot: DRIMS settings section](screenshots/drims_settings_defaults.png)
 
 ### Global Threshold Configuration
 
-| Setting | Default Value | What It Means |
-|---------|---------------|---------------|
-| Low Stock Threshold | 50% | Alert when available stock is below 50% of pending request quantity |
-| SLA Warning Days | 2 days | Alert when request due date is within 2 days |
-| Expiry Warning Days | 30 days | Alert when items expire within 30 days |
-| Expiry Critical Days | 7 days | Escalate to critical priority when items expire within 7 days |
+| Key | Default Value | What It Means |
+|-----|---------------|---------------|
+| `drims.alerts.low_stock_threshold_pct` | 50 | Alert when available stock is below this percent of pending request quantity |
+| `drims.delivery_sla.warning_days` | 2 | Alert when request due date is within this many days |
+| `drims.alerts.expiry_warning_days` | 30 | Alert when items expire within this many days |
+| `drims.alerts.expiry_high_days` | 14 | Escalate to high priority when items expire within this many days |
+| `drims.alerts.expiry_critical_days` | 7 | Escalate to critical priority when items expire within this many days |
 
 ```{important}
 Changes to global defaults only affect NEW alerts. Existing alerts retain the thresholds they were created with.
@@ -93,11 +97,11 @@ Use incident-level overrides when:
 ### Configuring Incident Overrides
 
 1. Open the **Hazard Incident** record
-2. Go to the **Alert Configuration** tab
-3. Enable **Override Global Thresholds**
-4. Set custom values
+2. Go to the **Alert Thresholds** tab
+3. Fill in any override values — leave a field blank to keep using the global default for that threshold
+4. Save the incident
 
-<!-- ![Screenshot: Incident alert configuration tab](screenshots/incident_alert_overrides.png) -->
+![Screenshot: Incident alert thresholds tab](screenshots/incident_alert_overrides.png)
 
 | Field | Description | Example Use Case |
 |-------|-------------|------------------|
@@ -195,7 +199,7 @@ Items with lot expiration dates within the warning period (default: 30 days).
 3. Lots must have **Expiration Date** set
 4. Stock must be in a **DRIMS warehouse**
 
-<!-- ![Screenshot: Product expiry configuration](screenshots/product_expiry_config.png) -->
+![Screenshot: Product expiry configuration](screenshots/product_expiry_config.png)
 
 **Example Scenario:**
 
@@ -280,11 +284,11 @@ Warehouses automatically calculate health status based on active alerts:
 | **Warning** | 1-2 active alerts OR capacity <30% | Orange |
 | **Good** | No active alerts, adequate stock | Green |
 
-<!-- ![Screenshot: Warehouse health dashboard](screenshots/warehouse_health_status.png) -->
+![Screenshot: Warehouse health dashboard](screenshots/warehouse_health_status.png)
 
 ### Alert Dashboard
 
-View all active alerts in **DRIMS > Operations > Alerts**.
+View all active alerts in **DRIMS > Monitoring > Alerts**.
 
 Filter by:
 - **Priority** (Critical, High, Medium, Low)
@@ -293,7 +297,7 @@ Filter by:
 - **Warehouse**
 - **Incident**
 
-<!-- ![Screenshot: Alert dashboard with filters](screenshots/alert_dashboard.png) -->
+![Screenshot: Alert dashboard with filters](screenshots/alert_dashboard.png)
 
 ## Responding to Alerts
 
@@ -307,7 +311,7 @@ When you start investigating an alert:
 
 This removes the alert from "urgent" views but keeps it tracked.
 
-<!-- ![Screenshot: Acknowledge alert button](screenshots/alert_acknowledge.png) -->
+![Screenshot: Acknowledge alert button](screenshots/alert_acknowledge.png)
 
 ### Resolving Alerts
 
@@ -320,7 +324,7 @@ When the underlying issue is fixed:
 
 Resolved alerts are archived but remain in reporting for analysis.
 
-<!-- ![Screenshot: Resolve alert button](screenshots/alert_resolve.png) -->
+![Screenshot: Resolve alert button](screenshots/alert_resolve.png)
 
 ### Alert Activity Feed
 
@@ -373,7 +377,7 @@ You cannot manually change priority. To get different priority:
 3. **Resolve stale alerts** - Clean up alerts for issues that were fixed but not marked resolved
 4. **Filter dashboards** - Use priority filters to focus on Critical and High alerts only
 
-<!-- ![Screenshot: Alert filters set to Critical and High](screenshots/alert_priority_filter.png) -->
+![Screenshot: Alert filters set to Critical and High](screenshots/alert_priority_filter.png)
 
 ### Alert Created But Condition Resolved
 
@@ -387,7 +391,7 @@ Alerts are **not** automatically resolved. The cron jobs only create new alerts,
 
 Manually resolve the alert:
 
-1. Go to **DRIMS > Operations > Alerts**
+1. Go to **DRIMS > Monitoring > Alerts**
 2. Find the alert
 3. Click **Resolve**
 4. Add note: "Stock replenished" or "Request delivered"

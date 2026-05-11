@@ -52,13 +52,13 @@ Before a warehouse can be used for disaster response operations, it must be enab
 
 1. Navigate to **DRIMS → Inventory → Warehouses**
 
-<!--    ![Screenshot placeholder: DRIMS inventory menu](warehouses/nav_warehouses.png) -->
+   ![DRIMS Warehouses list view](warehouses/nav_warehouses.png)
 
 2. Select an existing warehouse or create a new one using the **New** button
 
 3. In the warehouse form, check the **DRIMS Warehouse** checkbox
 
-<!--    ![Screenshot placeholder: DRIMS warehouse checkbox](warehouses/enable_drims.png) -->
+   ![DRIMS Warehouse checkbox on the warehouse form](warehouses/enable_drims.png)
 
 4. Configure the DRIMS-specific fields (see next section)
 
@@ -97,24 +97,18 @@ Leave empty to allow the warehouse to serve all incidents.
 
 ## Linking Warehouses to Incidents
 
-You can associate warehouses with specific disaster incidents in two ways:
-
-### Option 1: From the Warehouse Form
+Warehouse–incident linkage is configured from the **warehouse** form. There is no equivalent flow on the incident form.
 
 1. Open the warehouse in **DRIMS → Inventory → Warehouses**
-2. Scroll to the **Linked Incidents** field
-3. Click to select one or more incidents
+2. Open the **DRIMS Configuration** tab
+3. Under **Active Response**, set one or more incidents in the **Active Incidents** field
 4. Save the warehouse
 
-### Option 2: From the Incident Dashboard
+![DRIMS Configuration tab with Active Incidents](warehouses/incident_link.png)
 
-1. Open the incident in **DRIMS → Dashboard**
-2. Navigate to the **Warehouses** tab
-3. Click **Add** to link existing warehouses
-4. Select warehouses from the list
-5. Save the incident
-
-<!-- ![Screenshot placeholder: Incident warehouses tab](warehouses/incident_link.png) -->
+```{note}
+The **DRIMS Configuration** tab is only visible when the user belongs to **Storage Locations** (`stock.group_adv_location`) or **Multi-Warehouses** (`stock.group_stock_multi_warehouses`). Enable one in **Settings → Inventory** (or assign the group to the user) if the tab is missing.
+```
 
 **When to link warehouses to incidents:**
 

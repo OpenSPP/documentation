@@ -102,7 +102,7 @@ Cluster: Health
 Incident: 2025 Southwest Monsoon Floods
 ```
 
-<!-- ![Cluster selection on request form](vocabularies/cluster_selection.png) -->
+![Cluster selection on request form](vocabularies/cluster_selection.png)
 
 ```{note}
 The cluster codes follow UN OCHA standards and should not be modified. If your country uses different sector names, create custom translations in **Settings → Translations** rather than changing the codes.
@@ -110,7 +110,7 @@ The cluster codes follow UN OCHA standards and should not be modified. If your c
 
 ## Priority Levels
 
-Priority levels classify the urgency of relief requests. DRIMS includes four standard levels:
+Priority levels classify the urgency of relief requests. DRIMS includes three standard levels:
 
 | Code | Display Name | Use Case |
 |------|--------------|----------|
@@ -125,7 +125,7 @@ Priority affects:
 - **Alert generation** - Overdue critical requests trigger automatic alerts
 - **Approval routing** - Critical requests may bypass certain approval steps
 
-<!-- ![Priority field on request](vocabularies/priority_field.png) -->
+![Priority field on request](vocabularies/priority_field.png)
 
 ```{tip}
 You can add custom priority levels by adding vocabulary codes. See "Adding Custom Vocabulary Codes" below.
@@ -149,7 +149,7 @@ Condition is recorded:
 - **On distribution** - When dispatching to beneficiaries
 - **On return** - When items come back from field
 
-<!-- ![Item condition selection during inspection](vocabularies/condition_inspection.png) -->
+![Item condition selection during inspection](vocabularies/condition_inspection.png)
 
 ```{warning}
 Items marked `damaged` or `expired` should not be distributed. DRIMS can generate alerts when such items remain in inventory beyond a threshold period.
@@ -161,10 +161,11 @@ Coordination modes define how multi-agency disaster response is organized:
 
 | Code | Mode | Description |
 |------|------|-------------|
-| `lead_agency` | {term}`Lead Agency` | Single agency (usually government) coordinates all partners |
-| `cluster` | Cluster System | UN-led sector coordination with designated cluster leads |
-| `consortium` | Consortium | NGO-led coordination among partner organizations |
-| `bilateral` | Bilateral | Direct government-to-government or agency-to-agency |
+| `lead_agency` | {term}`Lead Agency` Model | Single agency (usually government) coordinates all partners |
+| `cluster` | Cluster Coordination | UN-led sector coordination with designated cluster leads |
+| `consortium` | Consortium Model | NGO-led coordination among partner organizations |
+| `bilateral` | Bilateral Coordination | Direct government-to-government or agency-to-agency |
+| `decentralized` | Decentralized Response | Local actors coordinate independently without a central lead |
 
 ### Using Coordination Modes
 
@@ -180,7 +181,7 @@ This helps DRIMS:
 - Route information to the right stakeholders
 - Track agency roles correctly
 
-<!-- ![Coordination mode on incident](vocabularies/coordination_mode.png) -->
+![Coordination mode on incident](vocabularies/coordination_mode.png)
 
 ## Organization Roles
 
@@ -188,66 +189,43 @@ Partner agencies can be assigned roles in disaster response:
 
 | Code | Role | Description |
 |------|------|-------------|
-| `lead` | {term}`Lead Agency` | Primary coordinating organization |
-| `co_lead` | {term}`Co-Lead` | Shares coordination responsibility |
-| `implementing` | {term}`Implementing Partner` | Delivers services on the ground |
-| `funding` | {term}`Funding Partner` | Provides financial resources |
-| `technical` | {term}`Technical Partner` | Provides expertise and guidance |
+| `lead_agency` | {term}`Lead Agency` | Primary coordinating organization |
+| `implementing_partner` | {term}`Implementing Partner` | Delivers services on the ground |
+| `donor` | Donor | Provides financial resources |
+| `coordinator` | Coordinator | Facilitates inter-agency coordination |
+| `technical_support` | Technical Support | Provides expertise and guidance |
+| `observer` | Observer | Monitors the response without operational responsibility |
 
 ### Example
 
 ```
 Organization: UNICEF
-Role: Co-Lead
+Role: Implementing Partner
 Incident: 2025 Southwest Monsoon Floods
 Cluster: WASH
 ```
 
 ## Adding Custom Vocabulary Codes
 
-You can extend vocabularies with country-specific or program-specific codes without writing Python.
+Every vocabulary listed above is a **system vocabulary** — its canonical codes are owned by the DRIMS module and the management UI locks the codes list (`Add a line` is hidden when `is_system = True`). You can browse the codes in **Settings → Vocabularies → Manage Vocabularies → [vocabulary name] → Codes**, but you cannot extend them through that screen.
 
-### Step 1: Navigate to Vocabulary Management
+To add a country-specific or program-specific code, the new row must be flagged as **Local Code** (`is_local = True`), which the system-vocabulary form does not expose. There are two supported paths:
 
-Go to **DRIMS → Configuration → Vocabularies**.
+1. **Developer-managed (recommended)** — A developer ships an XML data file in your custom module that creates the extension code. This keeps the extension version-controlled and reproducible across environments. Example record:
 
-<!-- ![Vocabularies menu](vocabularies/menu_vocabularies.png) -->
+   ```xml
+   <record id="priority_routine_local" model="spp.vocabulary.code">
+       <field name="vocabulary_id" ref="spp_drims.vocab_priority_levels"/>
+       <field name="code">routine</field>
+       <field name="display">Routine</field>
+       <field name="is_local" eval="True"/>
+   </record>
+   ```
 
-### Step 2: Select the Vocabulary
-
-Click on the vocabulary you want to extend (e.g., "Priority Levels").
-
-<!-- ![Select vocabulary](vocabularies/select_vocabulary.png) -->
-
-### Step 3: Add a New Code
-
-Click **Add a line** in the Codes section.
-
-| Field | Value | Notes |
-|-------|-------|-------|
-| **Code** | `routine` | Lowercase, no spaces, use underscores |
-| **Display Name (English)** | Routine | Human-readable label |
-| **URI** | (auto-generated) | Leave blank - system generates |
-| **Deprecated** | Unchecked | Check to hide from dropdowns |
-
-<!-- ![Add vocabulary code](vocabularies/add_code.png) -->
-
-### Step 4: Save
-
-Click **Save** to activate the new code.
-
-### Step 5: Verify
-
-Open a request form and check that the new priority level appears in the dropdown.
-
-<!-- ![New code in dropdown](vocabularies/verify_code.png) -->
+2. **API-managed** — A privileged integration writes the row through XML-RPC / JSON-RPC with `is_local=True`. Without that flag the server rejects the request with *"Cannot add codes to system vocabulary"*.
 
 ```{important}
-**Code naming rules:**
-- Use lowercase letters
-- Use underscores for spaces (e.g., `very_high` not `Very High`)
-- Keep codes short and memorable
-- Once saved, codes should not be changed (to preserve data integrity)
+Plain UI edits to system vocabularies are not supported. If your only need is to **deprecate** an existing canonical code, that toggle is editable from the vocabulary form even when `is_system = True`. For anything else (new codes, renames, reorders) coordinate with your developer.
 ```
 
 ### Translating Vocabulary Codes
@@ -283,16 +261,15 @@ Alert types classify automated monitoring alerts:
 
 | Code | Display Name | Triggers When |
 |------|--------------|---------------|
-| `stockout` | Stock Out | Product quantity reaches zero |
-| `low_stock` | Low Stock | Product quantity below minimum threshold |
-| `overstock` | Overstock | Product quantity above maximum threshold |
-| `expiry_warning` | Expiring Soon | Product expiry date within warning period |
-| `expired` | Expired | Product past expiration date |
-| `request_overdue` | Request Overdue | Request not fulfilled by needed date |
-| `dispatch_delayed` | Dispatch Delayed | Dispatch in transit beyond expected time |
+| `low_stock` | Low Stock | Available stock falls below a percentage of pending request quantity |
+| `expiry` | Expiring Items | Stock with an expiration date within the configured warning window |
+| `sla_warning` | SLA Warning | A request is approaching its due date without being fulfilled |
+| `sla_breach` | SLA Breach | A request has passed its due date without being fulfilled |
+| `critical_shortage` | Critical Shortage | Stock for an essential item is critically depleted |
+| `quality_issue` | Quality Issue | Items flagged as damaged or expired during inspection |
 
 ```{note}
-Alert thresholds can be configured per incident in **Incidents → Configuration → Alert Thresholds**.
+Alert thresholds are configured per incident on the **Alert Thresholds** tab of the hazard incident form. See {doc}`/config_guide/drims/alerts` for details.
 ```
 
 ## Transaction Types
@@ -303,20 +280,18 @@ Transaction types classify stock movements:
 |------|--------------|-------------|
 | `donation_receipt` | Donation Receipt | Incoming donation to warehouse |
 | `request_dispatch` | Request Dispatch | Outgoing shipment to fulfill request |
-| `return_receipt` | Return Receipt | Items returned from distribution point |
-| `adjustment` | Inventory Adjustment | Manual stock correction |
-| `transfer` | Warehouse Transfer | Movement between warehouses |
-| `write_off` | Write-off | Disposal of damaged/expired items |
+| `internal_transfer` | Internal Transfer | Movement between warehouses |
+| `return` | Return | Items returned from distribution point |
 
 ## Viewing All Vocabularies
 
 To see all vocabularies and their codes:
 
-1. Go to **DRIMS → Configuration → Vocabularies**
+1. Go to **Settings → Vocabularies → Manage Vocabularies**
 2. Use the search and filters to find specific vocabularies
 3. Click any vocabulary to view and edit its codes
 
-<!-- ![Vocabulary list](vocabularies/vocabulary_list.png) -->
+![Vocabulary list](vocabularies/vocabulary_list.png)
 
 ## Are You Stuck?
 
@@ -324,34 +299,35 @@ To see all vocabularies and their codes:
 
 You need **DRIMS Manager** or **Administrator** permissions. Contact your system administrator.
 
-### New vocabulary code not appearing in dropdowns?
+### New local code not appearing in dropdowns?
 
-1. Check that you saved the vocabulary record
+1. Confirm the new code was created with `is_local = True`; without it the server rejects the row on a system vocabulary
 2. Refresh your browser (Ctrl+F5 or Cmd+Shift+R)
-3. Verify the code is not marked as "Deprecated"
+3. Verify the code is not marked **Deprecated** or inactive
+4. Verify the code's `vocabulary_id` matches the vocabulary you expected
 
-### Getting "duplicate code" error?
+### "Cannot add codes to system vocabulary" error?
 
-Code values must be unique within each vocabulary. Use a different code name.
+You tried to add a code to a system vocabulary without the **Local Code** flag set. The UI does not expose this flag — coordinate with your developer to add the code as XML module data, or use the API path described in "Adding Custom Vocabulary Codes" above.
 
 ### Want to remove a vocabulary code?
 
-Instead of deleting (which can break historical data), mark the code as **Deprecated**. This hides it from dropdowns but preserves existing records.
+Don't delete it (deletion can break historical records that reference the code). Instead, mark the code as **Deprecated** on its form. This hides it from new dropdowns but preserves existing data.
 
 ### Need to change a code value?
 
-Changing code values breaks historical data. Instead:
-1. Mark the old code as deprecated
-2. Create a new code with the correct value
-3. Update active records to use the new code
+Changing the `code` value breaks historical data. Instead:
+1. Mark the old code as **Deprecated**
+2. Create a new code with the correct value (developer or API path)
+3. Migrate active records to use the new code
 
 ### Cluster codes don't match our country's terminology?
 
-Don't change the cluster codes (they follow UN standards). Instead, add translations in **Settings → Translations** to use your preferred terms.
+Don't change the cluster codes (they follow UN OCHA standards). Instead, add translations in **Settings → Translations** to use your preferred display terms.
 
 ### Want to add a completely new vocabulary?
 
-New vocabularies require Python code and module development. Contact your developer or OpenSPP support for assistance. For most use cases, extending existing vocabularies with custom codes is sufficient.
+New vocabularies require module development. Contact your developer or OpenSPP support — for most extensions, adding a local code to an existing vocabulary is enough.
 
 ## Related Documentation
 
