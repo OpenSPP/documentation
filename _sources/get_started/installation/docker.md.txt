@@ -117,7 +117,6 @@ ODOO_INIT_MODULES=spp_mis_demo_v2 docker compose --profile ui up -d
 
 | Module | Description |
 |--------|-------------|
-| `spp_base` | Minimal installation (default) |
 | `spp_mis_demo_v2` | Sample registry with programs and beneficiaries |
 | `spp_drims_sl_demo` | DRIMS disaster response demo |
 
@@ -240,7 +239,6 @@ docker system prune -a
 ## Next steps
 
 - {doc}`../modules/index` - Install modules
-- {doc}`../first_program/index` - Create your first social protection program
 - {doc}`/user_guide/index` - Learn the OpenSPP interface
 - {doc}`/config_guide/index` - Configure eligibility rules and expressions
 

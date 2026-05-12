@@ -256,13 +256,11 @@ In the **Items** tab, add one or more lines that define what each beneficiary re
 4. Optionally set **Multiplier field** and **Max multiplier** if quantities depend on beneficiary attributes.
 5. Save the line. Add more lines as needed for multiple products per beneficiary.
 
-![Program wizard - In-Kind Items tab with product lines](/_images/en-us/programs/understanding/22-inkind-items-tab.png)
 
 #### Inventory Settings tab (when "Manage stock movements" is enabled)
 
 If you enabled **Manage stock movements (inventory)** in In-Kind Settings, an **Inventory Settings** tab appears. Select the **Warehouse** from which stock will be reserved or moved when in-kind entitlements are approved.
 
-![Program wizard - In-Kind Inventory Settings tab](/_images/en-us/programs/understanding/23-inkind-inventory-settings-tab.png)
 
 ### Step 4: Configure distribution schedule
 

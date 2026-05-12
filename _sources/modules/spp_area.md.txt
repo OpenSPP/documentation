@@ -27,12 +27,12 @@ The **OpenSPP Area** module is designed to:
 
 ## Additional Functionality
 
-* **Hierarchical Area Structure ([spp.area](spp.area))**: 
+* **Hierarchical Area Structure (`spp.area`)**: 
     * Introduces a dedicated model for managing areas, allowing for the creation of multi-level administrative boundaries with parent-child relationships.
     * Computes and displays the complete area path (e.g., "Country > Province > District > Village") to provide clear context within the hierarchy.
     * Enforces unique codes for each area to ensure proper identification and prevent duplicates.
 
-* **Area Types ([spp.area.kind](spp.area.kind))**:
+* **Area Types (`spp.area.kind`)**:
     * Includes a model for defining and managing different types of areas (e.g., administrative regions, ecological zones, project implementation areas).
     * Allows for the creation of a hierarchy of area types, providing further categorization and flexibility.
 

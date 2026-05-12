@@ -275,6 +275,8 @@ spp_base_setting
 spp_branding_kit
 spp_case_base
 spp_cel_domain
+spp_cel_registry_search
+spp_cel_widget
 spp_change_request_v2
 spp_claim_169
 spp_consent
@@ -291,6 +293,7 @@ spp_gis
 spp_graduation
 spp_grm
 spp_hazard
+spp_hazard_programs
 spp_hide_menus_base
 spp_hxl
 spp_import_match

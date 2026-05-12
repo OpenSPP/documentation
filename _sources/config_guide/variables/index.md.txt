@@ -4,9 +4,15 @@ openspp:
   products: [core]
 ---
 
-# Variables & Indicators
+# Variables
 
 This guide is for **implementers** configuring variables to define, cache, and reference data points in CEL expressions.
+
+## Prerequisites
+
+```{important}
+The `spp_cel_domain` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
 
 ## What You'll Find Here
 

@@ -72,9 +72,13 @@ Expressions have different types based on their purpose:
 | **Scoring** | Number | Compute indicator scores |
 | **Validation** | Boolean | Data validation rules |
 
-## Example A: Create a variable
+## Example A: Create a variable (do this first)
 
 **Goal**: Create a variable that counts children under 5 in a household.
+
+```{important}
+Complete Example A before Example B. Example B uses the `children_under_5_count` variable created here.
+```
 
 ### Step 1: Navigate to variables
 
@@ -86,8 +90,8 @@ There are two ways to access Variables:
 
 **Option B - From Menu:**
 1. Click **Studio** in the main menu
-2. Click **Rules** in the top menu bar
-3. Click **Variables**
+2. Click **Rules**
+3. Under **Variables**, click **All Variables**
 
 ### Step 2: Create a new variable
 
@@ -142,7 +146,11 @@ In aggregate filters, use `m` to reference each member. The expression `age_year
 
 Now you can use `children_under_5_count` in any expression that applies to groups/households.
 
-## Example B: Create an expression
+## Example B: Create an expression (requires Example A)
+
+```{important}
+You must complete Example A first. This example uses the `children_under_5_count` variable you created there.
+```
 
 **Goal**: Create an expression that identifies "priority households" (those with children under 5).
 
@@ -154,8 +162,8 @@ Now you can use `children_under_5_count` in any expression that applies to group
 
 **Option B - From Menu:**
 1. Click **Studio** in the main menu
-2. Click **Rules** in the top menu bar
-3. Click **Expressions**
+2. Click **Rules**
+3. Under **Rules**, click **Expressions**
 
 ### Step 2: Create a new expression
 
@@ -217,14 +225,13 @@ The editor provides:
 Add test cases and click **Run All Tests** to verify your expression.
 ```
 
-### Step 6: Save and publish
+### Step 6: Save and activate
 
 1. Click **Save** to create the expression in Draft state
-2. Click **Submit for Approval** to request publication
-3. Once approved, the expression will be **Published** and available for use
+2. Click **Activate** to make it available for use
 
 ```{note}
-Expressions follow a workflow: Draft → Pending Approval → Published → Archived. Only users with approval permissions can publish expressions.
+Expressions follow the same workflow as variables: Draft → Active → Inactive.
 ```
 
 ## How to know what data is available
@@ -295,9 +302,8 @@ The editor shows real-time validation:
 - Check that referenced variables are Active
 - Verify the context matches (individual vs group profiles have different symbols)
 
-**Can't activate a variable or publish an expression?**
-- Variables: You need **Studio Manager** permission to activate
-- Expressions: You need approval permissions to publish (expressions go through an approval workflow)
+**Can't activate a variable or expression?**
+- You need **Studio Manager** permission to activate variables and expressions
 - Check that all required fields are filled
 - For aggregates, verify the filter expression is valid
 

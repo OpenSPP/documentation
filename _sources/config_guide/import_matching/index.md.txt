@@ -1,0 +1,33 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
+# Import matching
+
+This guide is for **implementers** configuring deduplication rules that prevent duplicate records during bulk data imports.
+
+## Prerequisites
+
+```{important}
+The `spp_import_match` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
+## What you'll find here
+
+- **{doc}`overview`** - Import matching concepts, rules, and field selection
+
+```{toctree}
+:hidden:
+:maxdepth: 1
+
+overview
+```
+
+## Quick start
+
+1. From the main menu, click **Registry**, then click **Configuration** and scroll down to **Import Match**
+2. Create a **Matching Rule** for the target model (e.g., Contacts)
+3. Select the **Fields** to match on (e.g., national ID, phone number)
+4. Set **Overwrite** behavior for matched records

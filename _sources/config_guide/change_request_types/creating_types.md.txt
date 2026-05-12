@@ -10,7 +10,7 @@ This guide walks through creating a new change request type using the OpenSPP co
 
 ## Prerequisites
 
-- Access to OpenSPP with administrator or Change Request Administrator permissions
+- Access to OpenSPP with administrator or Change Request Manager permissions
 - An existing detail model (see {doc}`overview` for available models)
 - An approval workflow configured (optional, but recommended)
 
@@ -116,7 +116,7 @@ In the **Field Mappings** section below, add your mappings:
 | `phone` | `phone` | Direct Copy |
 | `email` | `email` | Direct Copy |
 | `birthdate` | `birthdate` | Direct Copy |
-| `gender_id` | `gender` | Direct Copy |
+| `gender_id` | `gender_id` | Direct Copy |
 
 ![Field mapping added](/_images/en-us/config_guide/change_request_types/06-field-mapping-added.png)
 

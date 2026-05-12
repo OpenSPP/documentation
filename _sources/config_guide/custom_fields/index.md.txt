@@ -1,0 +1,34 @@
+---
+openspp:
+  doc_status: draft
+  products: [core]
+---
+
+# Custom fields
+
+This guide is for **implementers** organizing custom data fields into groups for registrant profiles.
+
+## Prerequisites
+
+```{important}
+The `spp_custom_field` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
+## What you'll find here
+
+- **{doc}`overview`** - Field groups, registrant targeting, and display ordering
+
+```{toctree}
+:hidden:
+:maxdepth: 1
+
+overview
+```
+
+## Quick start
+
+1. Navigate to **SPP Studio → Forms and Fields → Custom Fields**
+2. Create a **Field Group** (e.g., "Disability Information", "Education Data")
+3. Set the **Target Type** (Group or Individual registrants)
+4. Set the **Sequence** for display order
+5. Link custom fields to the group

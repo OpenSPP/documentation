@@ -14,19 +14,18 @@ Whether you're evaluating OpenSPP for your organization or ready to start implem
 
 ## What's in this section
 
-- **Installation** - How to install OpenSPP and activate modules
-- **Explore OpenSPP** - Load sample data to explore features
-- **Your first household** - Register your first household in the registry
-- **Your first program** - Step-by-step tutorial to create your first social protection program
+- **{doc}`installation/index`** - How to install OpenSPP for sys admins and evaluators
+- **{doc}`modules/index`** - How to activate modules, including the OpenSPP products
+- **{doc}`try_spmis/index`** - Information on how to install demo data for OpenSPP SP-MIS and familiarize yourself with the product
+- **{doc}`configuration_vs_customization`** - Understand the difference between configuration and customization
 - **{doc}`poc_and_pilot`** - Planning your Proof of Concept and Pilot phases
 
 ## Quick links
 
 - New to social protection systems? Start with **{doc}`../learn/index`**
 - Ready to install? See **{doc}`installation/index`**
-- Want to explore with sample data? See **{doc}`explore/index`**
-- Just need the registry? Try **{doc}`first_household/index`**
-- Ready to run programs? Try **{doc}`first_program/index`**
+- Want to explore SP-MIS with sample data? See **{doc}`try_spmis/index`**
+- Want to understand how to configure SP-MIS to your specific needs? See **{doc}`configuration_vs_customization`**
 
 ```{toctree}
 :maxdepth: 2
@@ -34,8 +33,7 @@ Whether you're evaluating OpenSPP for your organization or ready to start implem
 
 installation/index
 modules/index
-explore/index
-first_household/index
-first_program/index
+try_spmis/index
+configuration_vs_customization
 poc_and_pilot
 ```

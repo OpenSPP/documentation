@@ -6,7 +6,15 @@ openspp:
 
 # DCI Overview
 
-This guide is for **developers** who need to understand the Digital Convergence Initiative (DCI) architecture and how OpenSPP implements it.
+**For: developers**
+
+Understand the Digital Convergence Initiative (DCI) architecture and how OpenSPP implements it — the three-part message envelope, HTTP Signature authentication, registry types, and interaction patterns (sync/async search, subscribe/notify).
+
+## Prerequisites
+
+- Familiarity with REST APIs and JSON
+- Basic understanding of OAuth 2.0 client credentials flow
+- Optional: familiarity with HTTP Message Signatures (RFC 9421 / draft-cavage)
 
 ## What is DCI?
 
@@ -55,7 +63,7 @@ graph TB
 
 Every DCI message has three parts:
 
-```json
+```text
 {
   "signature": "Signature: namespace=\"dci\", kidId=\"...\", ...",
   "header": {
@@ -195,23 +203,20 @@ response = await ibr_client.check_enrollment(
 
 ### Client Use Cases
 
-**1. CRVS Birth Import**
+**1. CRVS Birth Verification**
 
-Automatically import birth registrations from national CRVS:
+Verify a registrant's birth against the national CRVS before activation:
 
 ```python
-# Query CRVS for recent births
-from odoo.addons.spp_dci_client_crvs.services.crvs_client import CRVSClient
+from odoo.addons.spp_dci_client_crvs.services.crvs_service import CRVSService
 
-crvs_client = CRVSClient(env['spp.dci.data.source'].browse(1))
-births = await crvs_client.search_births(
-    date_from=date(2024, 1, 1),
-    date_to=date(2024, 12, 31)
+crvs = CRVSService(self.env, data_source_code="crvs_main")
+birth = crvs.verify_birth(
+    identifier_type="urn:gov:national-id",
+    identifier_value=partner.registry_id_ids[0].value,
 )
-
-# Import into OpenSPP registry
-for birth in births:
-    partner_id = crvs_client.import_person(birth, env)
+if birth:
+    partner.write({"birth_date": birth["date"], "verified_by_crvs": True})
 ```
 
 **2. Duplication Prevention**
@@ -219,36 +224,29 @@ for birth in births:
 Before enrolling in a cash transfer program, check IBR for existing enrollments:
 
 ```python
-# Check if person is already enrolled elsewhere
-from odoo.addons.spp_dci_client_ibr.services.ibr_client import IBRClient
+from odoo.addons.spp_dci_client_ibr.services.ibr_service import IBRService
 
-ibr_client = IBRClient(env['spp.dci.data.source'].browse(2))
-enrollments = await ibr_client.check_enrollment(
-    identifier_type="urn:gov:national-id",
-    identifier_value=partner.registry_id_ids[0].value
+data_source = self.env["spp.dci.data.source"].search(
+    [("code", "=", "ibr_main")], limit=1,
 )
-
-if enrollments:
-    # Show warning or block enrollment
-    raise UserError(f"Already enrolled in: {enrollments[0].programme_name}")
+ibr = IBRService(data_source, self.env)
+result = ibr.check_duplication(partner)
+if result.get("is_duplicate"):
+    raise UserError(_("Already enrolled in: %s") % result["programs"])
 ```
 
 **3. Disability Targeting**
 
-Query disability registry for PWD status to determine eligibility:
+Query the disability registry for PWD status to determine eligibility:
 
 ```python
-# Check disability status from external DR
-from odoo.addons.spp_dci_client_dr.services.dr_client import DRClient
+from odoo.addons.spp_dci_client_dr.services.dr_service import DRService
 
-dr_client = DRClient(env['spp.dci.data.source'].browse(3))
-response = await dr_client.search_by_identifier(
-    identifier_type="urn:gov:national-id",
-    identifier_value=partner.registry_id_ids[0].value
+dr = DRService(self.env, data_source_code="dr_main")
+status = dr.get_disability_status(partner)
+has_severe_disability = status and any(
+    score >= 3 for score in status.get("functional_scores", {}).values()
 )
-
-disability_info = response.message.search_response[0].data['reg_records'][0].get('disability_info', [])
-has_severe_disability = any(d['functional_severity'] >= 3 for d in disability_info)
 ```
 
 ## Data Schemas
@@ -257,7 +255,7 @@ DCI uses JSON-LD schemas for data exchange:
 
 ### Person Schema
 
-```json
+```text
 {
   "@context": "https://schema.spdci.org/core/v1",
   "@type": "Person",
@@ -281,7 +279,7 @@ DCI uses JSON-LD schemas for data exchange:
 
 ### Group/Household Schema
 
-```json
+```text
 {
   "@context": "https://schema.spdci.org/core/v1",
   "@type": "Group",
@@ -296,45 +294,56 @@ DCI uses JSON-LD schemas for data exchange:
 
 ## Authentication and Security
 
-DCI supports two authentication methods:
+OpenSPP's DCI server uses **two complementary authentication mechanisms** on every request:
 
-### OAuth 2.0 Client Credentials
+### 1. Bearer token (allowlist)
 
-Used for bearer token authentication:
+Every request must carry `Authorization: Bearer <token>`. The server validates the token against an allowlist configured in the `dci.api_tokens` Odoo system parameter (comma-separated values). This is a pre-shared token scheme, not an OAuth 2.0 flow — there is no `/oauth/token` endpoint on the DCI server that issues tokens dynamically. Administrators rotate tokens by updating the system parameter.
+
+### 2. HTTP Message Signature (draft-cavage)
+
+Every request must also carry a signed DCI message envelope. The `signature` field in the envelope is an HTTP Message Signatures–style parameter string:
+
+```
+namespace="dci", kidId="<sender_id>|<key_id>|<algorithm>",
+algorithm="ed25519", created="<unix_ts>", expires="<unix_ts>",
+headers="(created) (expires) digest", signature="<base64>"
+```
+
+The signing string covers `(created)`, `(expires)`, and the SHA-256 `digest` of the compact-JSON-serialized `{header, message}` pair. The server verifies the signature using the sender's registered public key (from `spp.dci.sender.registry`) or by fetching the sender's JWKS.
+
+For the exact signing string format, digest computation, and signature-header grammar, see {doc}`protocol`.
+
+### Clients may use OAuth 2.0 to authenticate to external registries
+
+When **OpenSPP acts as a DCI client** (querying an external registry), the `spp.dci.data.source` record may be configured to use OAuth 2.0 client-credentials to obtain a bearer token from the external registry's authorization server, then include that token on outbound DCI requests. This is the external registry's choice, not a DCI-spec requirement. See {doc}`client_role`.
+
+### Base URL and endpoint prefix
+
+The DCI server mounts under the FastAPI `root_path` `/dci_api/v1` (configured in `spp_dci_server/data/fastapi_endpoint_data.xml`). Registry endpoints are then nested under `/social/registry/`, giving full URLs like:
+
+- `POST https://openspp.example.org/dci_api/v1/social/registry/sync/search`
+- `GET https://openspp.example.org/dci_api/v1/.well-known/jwks.json`
+
+### Illustrative request
 
 ```bash
-# Get access token
-curl -X POST https://openspp.example.org/api/v2/dci/oauth2/client/token \
-  -d "grant_type=client_credentials" \
-  -d "client_id=external_system" \
-  -d "client_secret=secret"
-
-# Use token for API calls
-curl -X POST https://openspp.example.org/api/v2/dci/registry/sync/search \
-  -H "Authorization: Bearer {token}" \
-  -d @search_request.json
+# NOTE: requires a signed DCI envelope body; this is a simplified example
+curl -X POST https://openspp.example.org/dci_api/v1/social/registry/sync/search \
+  -H "Authorization: Bearer <your-allowlisted-token>" \
+  -H "Content-Type: application/json" \
+  -d @signed_search_request.json
 ```
 
-### HTTP Signatures
+For the complete signed-envelope structure, see {doc}`protocol`.
 
-Used for message-level signing:
+## What's next
 
-```python
-# Messages are signed with sender's private key
-signature = sign_message(header, message, private_key)
+- {doc}`server_role` — implement OpenSPP as a DCI server
+- {doc}`client_role` — integrate with external DCI registries
+- {doc}`protocol` — detailed protocol specifications
 
-# Receiver verifies using sender's public key from JWKS
-public_key = fetch_jwks(sender_id)
-verify_signature(signature, header, message, public_key)
-```
-
-## Next Steps
-
-- **{doc}`server_role`** - Implement OpenSPP as a DCI server
-- **{doc}`client_role`** - Integrate with external DCI registries
-- **{doc}`protocol`** - Detailed protocol specifications
-
-## References
+## See also
 
 - [DCI API Standards](https://github.com/spdci/api-standards)
 - [G2P Connect Specifications](https://g2pconnect.cdpi.dev)

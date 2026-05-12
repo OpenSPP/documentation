@@ -373,5 +373,4 @@ Depends on the "Allow Multiple Events" setting:
 
 - **Define eligibility rules using event data**: {doc}`/config_guide/cel/index`
 - **Add custom registry fields**: {doc}`registry_field_builder`
-- **Build approval workflows**: {doc}`change_request_builder`
 - **Return to Studio overview**: {doc}`overview`

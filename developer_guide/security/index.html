@@ -1,0 +1,3692 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+<meta content="Security and Encryption" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://docs.openspp.org/developer_guide/security/index.html" property="og:url"/>
+<meta content="OpenSPP Documentation" property="og:site_name"/>
+<meta content="For: developers Services OpenSPP provides for securing data at rest, managing cryptographic keys, recording consent, and scanning uploads — plus the security checks that run in CI. How to use this ..." property="og:description"/>
+<meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
+<meta content="OpenSPP Documentation" property="og:image:alt"/>
+<meta content="For: developers Services OpenSPP provides for securing data at rest, managing cryptographic keys, recording consent, and scanning uploads — plus the security checks that run in CI. How to use this ..." name="description"/>
+<meta content="en_US" property="og:locale"/>
+<title>Security and Encryption – Developer guide — OpenSPP Documentation v2.0</title>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/sphinxcontrib-httpexample.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/custom.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/print.css" media="print" rel="stylesheet" type="text/css"/>
+<link href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script src="../../_static/sphinxcontrib-httpexample.js"></script>
+<script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+<script src="../../_static/search-utils.js"></script>
+<script src="../../_static/mermaid_init.js"></script>
+<script src="../../_static/patch_scrollToActive.js"></script>
+<script src="../../_static/search_shortcut.js"></script>
+<script src="../../_static/module-filter.js"></script>
+<script src="../../_static/design-tabs.js"></script>
+<link href="https://docs.openspp.org/developer_guide/security/" rel="canonical">
+<link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v2.0" type="application/opensearchdescription+xml"/>
+<link href="../../_static/icon_192.png" rel="shortcut icon"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="../cel/index.html" rel="next" title="CEL (Common Expression Language)"/>
+<link href="../dci/protocol.html" rel="prev" title="DCI Protocol Details"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../../_static/review_status.css" type="text/css" />
+<script src="../../_static/review_status_simple.js"></script>
+-->
+<script crossorigin="anonymous" integrity="sha384-vJ1NXwwlC62VkTLRHyzdAfyL4rQ8Z478DeHgamh37YzGJh3T6j223FC2yMRVriLl" src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+<!-- Mermaid Support -->
+<script crossorigin="anonymous" integrity="sha384-+NGfjU8KzpDLXRHduEqW+ZiJr2rIg+cidUVk7B51R5xK7cHwMKQfrdFwGdrq1Bcz" src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+</link></link></link></link></link></link></head>
+<body data-offset="100" data-spy="scroll" data-target="#bd-toc-nav">
+<!-- Checkboxes to toggle the left sidebar -->
+<input aria-label="Toggle navigation sidebar" class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<label class="overlay overlay-navbar" for="__navigation">
+<div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input aria-label="Toggle in-page Table of Contents" class="sidebar-toggle" id="__page-toc" name="__page-toc" type="checkbox"/>
+<label class="overlay overlay-pagetoc" for="__page-toc">
+<div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+<div class="container-fluid" id="banner"></div>
+<div class="container-xl">
+<div class="row">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+<div class="bd-sidebar__content">
+<div class="bd-sidebar__top"><div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../">
+<h1 class="site-logo" id="site-title">OpenSPP Documentation v2.0</h1>
+</a>
+</div><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<div class="input-group">
+<label class="sr-only" for="q">Search string
+    </label>
+<i aria-hidden="true" class="fa fa-search fa-lg search-icon"></i>
+<input aria-labelledby="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search" spellcheck="false" type="search" value="">
+<div class="input-group-append">
+<span class="input-group-text" id="shortcut">
+<kbd id="search-shortcut">⌘</kbd> <kbd>K</kbd>
+</span>
+</div>
+</input></div>
+</form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../products/">
+   Products
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/sp_mis.html">
+     OpenSPP SP-MIS
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/social_registry.html">
+     OpenSPP Social Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/farmer_registry.html">
+     OpenSPP Farmer Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/drims.html">
+     OpenSPP DRIMS
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../products/features/">
+     Features
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/unified_registry.html">
+       Unified registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/gis_land_management.html">
+       GIS &amp; land management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/program_management.html">
+       Program management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/eligibility_targeting.html">
+       Eligibility &amp; targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/payment_disbursement.html">
+       Payment &amp; disbursement
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/in_kind_benefits.html">
+       In-Kind benefits
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/data_integration_apis.html">
+       Data integration &amp; APIs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/change_management.html">
+       Change management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/grievance_redress.html">
+       Grievance redress
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/whats_new_v2.html">
+     What's new in OpenSPP v2
+    </a>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../learn/">
+   Learn
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/registry.html">
+     Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/programs.html">
+     Programs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/cycles.html">
+     Cycles
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/eligibility.html">
+     Eligibility
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/compliance.html">
+     Compliance
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/entitlements.html">
+     Entitlements
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/payments.html">
+     Payments
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/deduplication.html">
+     Deduplication
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/change-requests.html">
+     Change requests
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../get_started/">
+   Get started
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/installation/">
+     Installing OpenSPP
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+<label for="toctree-checkbox-5">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/installation/docker.html">
+       Docker installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/modules/">
+     Module installation
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+<label for="toctree-checkbox-6">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/spmis_installation.html">
+       SP-MIS installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/social_installation.html">
+       Social Registry installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/try_spmis/">
+     Try OpenSPP SP-MIS
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+<label for="toctree-checkbox-7">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/try_spmis/install_data.html">
+       Install SP-MIS demo data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/try_spmis/stories.html">
+       SP-MIS Stories
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/try_spmis/demo_scenarios.html">
+       SP-MIS Demo scenarios
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/configuration_vs_customization.html">
+     Configuration vs customization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/poc_and_pilot.html">
+     From Proof of Concept to Pilot
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../user_guide/">
+   User guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+<label for="toctree-checkbox-8">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/getting_started/">
+     Getting started
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+<label for="toctree-checkbox-9">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/navigation.html">
+       Navigating the OpenSPP interface
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/administrating_role_based_access.html">
+       Administrating role-based access
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/registry/">
+     Registry
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+<label for="toctree-checkbox-10">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_individual.html">
+       Register an individual
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_group.html">
+       Register a group
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/search_filter.html">
+       Search and filter registrants
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/import_data.html">
+       Import registrant data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/export_data.html">
+       Export registrant data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/farmer_registry.html">
+       Manage farm data
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/change_requests/">
+     Change Requests
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+<label for="toctree-checkbox-11">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/submit_change_request.html">
+       Submit a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/review_change_request.html">
+       Review a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/change_request_types.html">
+       Change request types
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/case_management/">
+     Case management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+<label for="toctree-checkbox-12">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/case_management/core_workflow.html">
+       Core case management workflow
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/programs/">
+     Programs
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+<label for="toctree-checkbox-13">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/create_programs.html">
+       Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/in_kind_products.html">
+       Manage in-kind products
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/program_cycles.html">
+       Work with program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/enroll_beneficiaries.html">
+       Enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/allocate_funds.html">
+       Allocate funds to programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/manage_entitlements.html">
+       Manage entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/payments/">
+     Payments
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+<label for="toctree-checkbox-14">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/payments/service_points.html">
+       View Service Points
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/approvals/">
+     Approvals
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+<label for="toctree-checkbox-15">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/approvals/manage_approvals.html">
+       Review and Approve Requests
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/grievances/">
+     Grievance Redress Mechanism (GRM)
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+<label for="toctree-checkbox-16">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/grievances/grm.html">
+       Manage grievances
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/gis/">
+     Geographic Information System (GIS)
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+<label for="toctree-checkbox-17">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/gis/maps_and_reports.html">
+       View maps and generate reports
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/reference/">
+     Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+<label for="toctree-checkbox-18">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/areas_geography.html">
+       Geographic Areas
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/vocabularies.html">
+       Vocabularies (Code Lists)
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../config_guide/">
+   Configuration guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+<label for="toctree-checkbox-19">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/alerts/">
+     Alerts
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+<label for="toctree-checkbox-20">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/alerts/overview.html">
+       Alerts overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/approval_workflows/">
+     Approval workflows
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+<label for="toctree-checkbox-21">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/approval_workflows/overview.html">
+       Approval workflows overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/approval_workflows/tiers.html">
+       Approval tiers
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/approval_workflows/batch_approvals.html">
+       Batch approvals and freeze periods
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/area_management/">
+     Area management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+<label for="toctree-checkbox-22">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/area_management/overview.html">
+       Area management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/area_management/hdx_integration.html">
+       HDX COD integration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/audit/">
+     Audit configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+<label for="toctree-checkbox-23">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/audit/overview.html">
+       Audit configuration overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/audit/backends.html">
+       Audit backends
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/banking/">
+     Banking
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+<label for="toctree-checkbox-24">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/banking/overview.html">
+       Banking overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/case_management/">
+     Case management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+<label for="toctree-checkbox-25">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/case_management/overview.html">
+       Case management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/case_management/stages.html">
+       Case stages
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/case_management/teams.html">
+       Case teams
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/cel/">
+     CEL expressions
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+<label for="toctree-checkbox-26">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/quick_start.html">
+       CEL quick start
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/syntax.html">
+       CEL syntax reference
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/variables.html">
+       Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/cookbook.html">
+       CEL cookbook
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/troubleshooting.html">
+       CEL troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/change_request_types/">
+     Change request types
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+<label for="toctree-checkbox-27">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/overview.html">
+       Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/creating_types.html">
+       Creating change request types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/field_mappings.html">
+       Field mappings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/conflict_detection.html">
+       Conflict and duplicate detection
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/patterns.html">
+       Common configuration patterns
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/custom_detail_models.html">
+       Custom detail models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/consent/">
+     Consent configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+<label for="toctree-checkbox-28">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/overview.html">
+       Consent management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/privacy_notices.html">
+       Configuring privacy notices
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/recording_consent.html">
+       Recording consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/api_consent_filtering.html">
+       API consent filtering
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/custom_fields/">
+     Custom fields
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+<label for="toctree-checkbox-29">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/custom_fields/overview.html">
+       Custom fields overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/drims/">
+     DRIMS Configuration Guide
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+<label for="toctree-checkbox-30">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/drims/warehouses.html">
+       Configuring Warehouses
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/drims/approval_chains.html">
+       Configuring Approval Workflows
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/drims/alerts.html">
+       Configuring Alerts and Thresholds
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/drims/vocabularies.html">
+       Configuring Vocabularies
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/eligibility/">
+     Eligibility rules
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+<label for="toctree-checkbox-31">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/cel_expressions.html">
+       CEL expressions for eligibility
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/geographic_targeting.html">
+       Geographic targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/templates.html">
+       Expression templates
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/testing.html">
+       Testing eligibility rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/advanced.html">
+       Advanced eligibility configuration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/">
+     Entitlement formulas
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+<label for="toctree-checkbox-32">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/cash_calculations.html">
+       Cash calculations
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/inkind_entitlements.html">
+       In-kind entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/formula_library.html">
+       Formula library
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/dynamic_entitlements.html">
+       Dynamic entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/conditional_logic.html">
+       Conditional logic
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/event_data/">
+     Event Data
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+<label for="toctree-checkbox-33">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/overview.html">
+       Event Data Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/event_types.html">
+       Configuring Event Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/field_definitions.html">
+       Defining Event Fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/farmer_registry/">
+     Farmer registry
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+<label for="toctree-checkbox-34">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/farmer_registry/overview.html">
+       Farmer registry overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/farmer_registry/farm_details.html">
+       Farm details, seasons, and activities
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/gis/">
+     GIS configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+<label for="toctree-checkbox-35">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/gis/overview.html">
+       GIS configuration overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/gis/report_templates.html">
+       GIS reports and indicator layers
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/grievance_redress/">
+     Grievance redress
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+<label for="toctree-checkbox-36">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/grievance_redress/overview.html">
+       Grievance redress overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/grievance_redress/sla_rules.html">
+       SLA rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/grievance_redress/teams_tags.html">
+       GRM teams and tags
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/hazard_management/">
+     Hazard management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+<label for="toctree-checkbox-37">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/hazard_management/overview.html">
+       Hazard management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/hazard_management/program_linking.html">
+       Linking programs to hazard incidents
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/import_matching/">
+     Import matching
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+<label for="toctree-checkbox-38">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/import_matching/overview.html">
+       Import matching overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/studio/">
+     OpenSPP Studio
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+<label for="toctree-checkbox-39">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/overview.html">
+       Studio Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/registry_field_builder.html">
+       Custom Fields (Registry Field Builder)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/event_type_designer.html">
+       Event Type Designer
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/role_configuration/">
+     Role configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+<label for="toctree-checkbox-40">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/overview.html">
+       Access control overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/assigning_roles.html">
+       Assigning roles to users
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/predefined_roles.html">
+       Predefined roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/creating_roles.html">
+       Creating custom roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/scoring/">
+     Scoring &amp; Assessment
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+<label for="toctree-checkbox-41">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/overview.html">
+       Scoring Framework Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/pmt.html">
+       Proxy Means Test (PMT) Configuration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/vulnerability.html">
+       Vulnerability Scoring Configuration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/swdi.html">
+       Social Welfare Development Index (SWDI)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/custom.html">
+       Creating Custom Scoring Formulas
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/service_points/">
+     Service points
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+<label for="toctree-checkbox-42">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/service_points/overview.html">
+       Service points overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/service_points/lifecycle.html">
+       Service point lifecycle
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/session_tracking/">
+     Session tracking
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+<label for="toctree-checkbox-43">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/session_tracking/overview.html">
+       Session tracking overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/simulation/">
+     Simulation
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+<label for="toctree-checkbox-44">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/simulation/overview.html">
+       Simulation overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/storage_backend/">
+     Storage backend
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+<label for="toctree-checkbox-45">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/storage_backend/overview.html">
+       Storage backend overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/variables/">
+     Variables
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+<label for="toctree-checkbox-46">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/overview.html">
+       Variables Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/creating_variables.html">
+       Creating Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/variable_types.html">
+       Variable Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/using_variables.html">
+       Using Variables in CEL
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/vocabulary/">
+     Vocabulary System
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+<label for="toctree-checkbox-47">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/overview.html">
+       Vocabulary Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/standard_vocabularies.html">
+       Standard Vocabularies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/profiles.html">
+       Vocabulary Profiles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/custom.html">
+       Custom Vocabularies
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children">
+<a class="reference internal" href="../">
+   Developer guide
+  </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+<label for="toctree-checkbox-48">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l2">
+<a class="reference internal" href="../setup/">
+     Development setup
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../architecture/">
+     Architecture
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+<label for="toctree-checkbox-49">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../architecture/module_organization.html">
+       Module organization
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../architecture/data_model.html">
+       Data model
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../custom_modules/">
+     Custom modules
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+<label for="toctree-checkbox-50">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/scaffold.html">
+       Module scaffold
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/models.html">
+       Models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/security.html">
+       Security
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/views.html">
+       Views and menus
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/mixins.html">
+       Mixins
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/testing.html">
+       Testing
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/example.html">
+       Example: custom registry fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../custom_managers/">
+     Custom program managers
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+<label for="toctree-checkbox-51">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_managers/manager_pattern.html">
+       Manager pattern
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_managers/building_managers.html">
+       Building a custom manager
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_managers/tutorial.html">
+       Tutorial: build CCT program managers
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../change_request_types/">
+     Custom change request types
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+<label for="toctree-checkbox-52">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/detail_models.html">
+       Detail models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/apply_strategies.html">
+       Apply strategies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/approval_hooks.html">
+       Approval hooks
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/tutorial.html">
+       Tutorial: build a transfer member CR type
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../api_v2/">
+     API V2
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+<label for="toctree-checkbox-53">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/overview.html">
+       API V2 Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/authentication.html">
+       Authentication
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/external_identifiers.html">
+       External Identifiers
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/consent.html">
+       Consent Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/resources.html">
+       API Resources
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/search.html">
+       Search and Filtering
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/batch.html">
+       Batch Operations
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/errors.html">
+       Error Handling
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/tutorial.html">
+       Tutorial: build a Python API client
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/studio_integration.html">
+       Studio API Integration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/entitlements_cycles.html">
+       Entitlements and Cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/products_service_points.html">
+       Products and Service Points
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../dci/">
+     DCI Integration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+<label for="toctree-checkbox-54">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../dci/overview.html">
+       DCI Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../dci/server_role.html">
+       OpenSPP as DCI Server
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../dci/client_role.html">
+       OpenSPP as DCI Client
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../dci/protocol.html">
+       DCI Protocol Details
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current active">
+<a class="current reference internal" href="#">
+     Security and Encryption
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../cel/">
+     CEL (Common Expression Language)
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+<label for="toctree-checkbox-55">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/internals.html">
+       CEL Internals
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../studio/">
+     Studio
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../audit/">
+     Audit and Versioning
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../contributing/">
+     Contributing
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../ops_guide/">
+   Operations guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+<label for="toctree-checkbox-56">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/deployment/">
+     Deployment
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+<label for="toctree-checkbox-57">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/deployment/production-hardening.html">
+       Production Hardening
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/security/">
+     Security
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+<label for="toctree-checkbox-58">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/access_control.html">
+       Access Control
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/data_classification.html">
+       Data Classification
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/pii_encryption.html">
+       PII Encryption
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/audit.html">
+       Audit Logging
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/scanning.html">
+       Security Scanning
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/storage/">
+     Storage
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/backup/">
+     Backup &amp; Recovery
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/monitoring/">
+     Monitoring &amp; Alerts
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../reference/">
+   Reference
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+<label for="toctree-checkbox-59">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../reference/modules/">
+     Modules Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+<label for="toctree-checkbox-60">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_alerts.html">
+       Alerts
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_analytics.html">
+       Analytics
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_api_v2.html">
+       API V2
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+<label for="toctree-checkbox-61">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_change_request.html">
+         Change Request
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_cycles.html">
+         Cycles
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_data.html">
+         Data
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_entitlements.html">
+         Entitlements
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_gis.html">
+         GIS API
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_products.html">
+         Products
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_service_points.html">
+         Service Points
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_simulation.html">
+         Simulation API
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_vocabulary.html">
+         Vocabulary
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_approval.html">
+       Approval Workflows
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_area.html">
+       Area Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_area_hdx.html">
+       HDX COD Integration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_attachment_av_scan.html">
+       Attachment Antivirus Scan
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_audit.html">
+       Audit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_banking.html">
+       Banking / Bank Details
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_common.html">
+       Base (Common)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_setting.html">
+       Base Settings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_branding_kit.html">
+       Branding Kit
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_case_base.html">
+       Case Management Base
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
+<label for="toctree-checkbox-62">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_case_cel.html">
+         CEL Rules
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_case_demo.html">
+         Demo Data
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_case_entitlements.html">
+         Entitlements Integration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_case_graduation.html">
+         Graduation Integration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_case_programs.html">
+         Programs Integration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_case_registry.html">
+         Registry Integration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_case_session.html">
+         Session Integration
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_cel_domain.html">
+       CEL Domain Query Builder
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-63" name="toctree-checkbox-63" type="checkbox"/>
+<label for="toctree-checkbox-63">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_cel_event.html">
+         Event Data Integration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_cel_registry_search.html">
+         Registry Search
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_cel_vocabulary.html">
+         Vocabulary Integration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_cel_widget.html">
+         Expression Widget
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_registry_search.html">
+       Registry Search
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_widget.html">
+       Expression Widget
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_change_request_v2.html">
+       Change Request V2
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-64" name="toctree-checkbox-64" type="checkbox"/>
+<label for="toctree-checkbox-64">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_advanced.html">
+         Advanced Types
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_base.html">
+         Base Types
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_claim_169.html">
+       QR Credentials (Claim 169)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_consent.html">
+       Consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_custom_field.html">
+       Custom Fields
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_dci.html">
+       DCI Core
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-65" name="toctree-checkbox-65" type="checkbox"/>
+<label for="toctree-checkbox-65">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_dci_client.html">
+         Client
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_crvs.html">
+         Client - CRVS
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_dr.html">
+         Client - Disability
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_ibr.html">
+         Client - IBR
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_dci_demo.html">
+         Demo
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_dci_server.html">
+         Server
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_demo.html">
+       Demo
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_disability_registry.html">
+       Disability Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dms.html">
+       Document Management System
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_drims.html">
+       DRIMS - Disaster Response Inventory Management
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-66" name="toctree-checkbox-66" type="checkbox"/>
+<label for="toctree-checkbox-66">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_drims_sl.html">
+         Sri Lanka Configuration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_drims_sl_demo.html">
+         Sri Lanka Demo
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_encryption.html">
+       Encryption: Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_event_data.html">
+       Event Data
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_farmer_registry.html">
+       Farmer Registry
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-67" name="toctree-checkbox-67" type="checkbox"/>
+<label for="toctree-checkbox-67">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_farmer_registry_cr.html">
+         Change Request Types
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_farmer_registry_dashboard.html">
+         Dashboard
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_farmer_registry_demo.html">
+         Demo
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_farmer_registry_vocabularies.html">
+         Vocabularies
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_gis.html">
+       GIS
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-68" name="toctree-checkbox-68" type="checkbox"/>
+<label for="toctree-checkbox-68">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_gis_indicators.html">
+         Indicators
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_gis_report.html">
+         Reports
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_gis_report_programs.html">
+         Reports - Programs
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_registrant_gis.html">
+         Registrant GIS
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_graduation.html">
+       Graduation Management
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_grm.html">
+       Grievance Redress Mechanism
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-69" name="toctree-checkbox-69" type="checkbox"/>
+<label for="toctree-checkbox-69">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_grm_case_link.html">
+         Case Link
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_grm_cel.html">
+         CEL Rules
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_grm_demo.html">
+         Demo Data
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_grm_programs.html">
+         Programs Integration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_grm_registry.html">
+         Registry Integration
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_hazard.html">
+       Hazard &amp; Emergency Management
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-70" name="toctree-checkbox-70" type="checkbox"/>
+<label for="toctree-checkbox-70">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_hazard_programs.html">
+         Programs Integration
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_hazard_programs.html">
+       Programs Integration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_hide_menus_base.html">
+       Hide Menus Base
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_hxl.html">
+       HXL Integration
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-71" name="toctree-checkbox-71" type="checkbox"/>
+<label for="toctree-checkbox-71">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_hxl_area.html">
+         Area Integration
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_import_match.html">
+       Import Match
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_indicator.html">
+       Indicator
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_indicator_studio.html">
+       Indicator Studio
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_irrigation.html">
+       Irrigation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_land_record.html">
+       Land Record
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_metric.html">
+       Metric
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_metric_service.html">
+       Metric Service
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_mis_demo_v2.html">
+       MIS Demo V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_oauth.html">
+       API: Oauth
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_programs.html">
+       Programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registrant_gis.html">
+       Registrant GIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry.html">
+       Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry_group_hierarchy.html">
+       Registry Group Hierarchy
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry_search.html">
+       Registry Search Portal
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_scoring.html">
+       Scoring
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-72" name="toctree-checkbox-72" type="checkbox"/>
+<label for="toctree-checkbox-72">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_scoring_programs.html">
+         Programs Bridge
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_security.html">
+       Security
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_service_points.html">
+       Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_session_tracking.html">
+       Session Tracking
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_simulation.html">
+       Targeting Simulation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_source_tracking.html">
+       Source Tracking
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_farmer_registry.html">
+       Starter: Farmer Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_social_registry.html">
+       Starter: Social Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_sp_mis.html">
+       Starter: SP-MIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_storage_backend.html">
+       Storage Backend
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_studio.html">
+       Studio
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-73" name="toctree-checkbox-73" type="checkbox"/>
+<label for="toctree-checkbox-73">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_studio_api_v2.html">
+         API v2 Integration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_studio_change_requests.html">
+         Change Requests
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_studio_events.html">
+         Events
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_user_roles.html">
+       User Roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_versioning.html">
+       Versioning
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_vocabulary.html">
+       Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/theme_openspp_muk.html">
+       Theme
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/vocabularies/">
+     Vocabulary Reference
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/glossary/humanitarian.html">
+     Humanitarian Terms Glossary
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../glossary.html">
+     OpenSPP Glossary
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../community_and_support/">
+   Community and support
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-74" name="toctree-checkbox-74" type="checkbox"/>
+<label for="toctree-checkbox-74">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/how_to_contribute_to_the_project.html">
+     Contributing
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/i18n_l10n.html">
+     Internationalization and Localization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/security_report.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/openspp_odoo.html">
+     Why OpenSPP is built on Odoo
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/license.html">
+     Licensing
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+<div class="bd-sidebar__bottom">
+<!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+<p class="openspporglink">
+<a href="https://openspp.org">
+<img alt="openspp.org" src="/_static/openspp_logo.png"/> openspp.org</a>
+</p>
+</div>
+</div>
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+<div class="header-article row sticky-top noprint">
+<div class="col py-1 d-flex header-article-main">
+<div class="header-article__left">
+<label class="headerbtn" data-placement="right" data-toggle="tooltip" for="__navigation" title="Toggle navigation">
+<span class="headerbtn__icon-container">
+<i class="fas fa-bars"></i>
+</span>
+</label>
+</div>
+<div class="header-article__label">
+<span>Security and Encryption – Developer guide</span>
+</div>
+<div class="header-article__right">
+<button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="headerbtn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+<button aria-label="Source repositories" class="headerbtn menu-dropdown__trigger">
+<i class="fab fa-github"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation" title="Source repository">
+<span class="headerbtn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fdeveloper_guide/security/index.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<span class="headerbtn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?developer_guide/security/index.md#making-contributions-on-github" title="Edit this page">
+<span class="headerbtn__icon-container">
+<i class="fas fa-pencil-alt"></i>
+</span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+<button aria-label="Download this page" class="headerbtn menu-dropdown__trigger">
+<i class="fas fa-download"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/developer_guide/security/index.md.txt" title="Download source file">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+</li>
+<li>
+<button class="headerbtn" data-placement="left" data-toggle="tooltip" onclick="printPdf(this)" title="Print to PDF">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
+</div>
+</div>
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#how-to-use-this-section">
+   How to use this section
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-s-in-scope-and-what-isn-t">
+   What's in scope (and what isn't)
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#the-security-modules">
+   The security modules
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pii-encryption">
+   PII encryption
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#encrypting-a-value">
+     Encrypting a value
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#searching-encrypted-fields">
+     Searching encrypted fields
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#recipe-an-encrypted-searchable-field-on-your-model">
+     Recipe: an encrypted, searchable field on your model
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#exceptions-to-catch">
+     Exceptions to catch
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#testing-encryption">
+     Testing encryption
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#data-classification">
+     Data classification
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#trust-model">
+     Trust model
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#key-management">
+   Key management
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#the-key-manager-service">
+     The key manager service
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#key-providers-pluggable-backends">
+     Key providers (pluggable backends)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#purposes-controlled-vocabulary">
+     Purposes (controlled vocabulary)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registering-a-custom-provider">
+     Registering a custom provider
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#asymmetric-keys">
+     Asymmetric keys
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#consent">
+   Consent
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#core-fields">
+     Core fields
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#checking-consent-from-code">
+     Checking consent from code
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#antivirus-scanning">
+   Antivirus scanning
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-happens-on-detection">
+     What happens on detection
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#controlling-scanning-from-code">
+     Controlling scanning from code
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#backend-configuration">
+     Backend configuration
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#user-roles-brief">
+   User roles (brief)
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#security-checks-in-ci">
+   Security checks in CI
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#common-mistakes">
+   Common mistakes
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#see-also">
+   See also
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="article row">
+<div class="col pl-md-3 pl-lg-5 content-container">
+<!-- Table of contents that is only displayed when printing the page -->
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>Security and Encryption</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#how-to-use-this-section">
+   How to use this section
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-s-in-scope-and-what-isn-t">
+   What's in scope (and what isn't)
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#the-security-modules">
+   The security modules
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#pii-encryption">
+   PII encryption
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#encrypting-a-value">
+     Encrypting a value
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#searching-encrypted-fields">
+     Searching encrypted fields
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#recipe-an-encrypted-searchable-field-on-your-model">
+     Recipe: an encrypted, searchable field on your model
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#exceptions-to-catch">
+     Exceptions to catch
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#testing-encryption">
+     Testing encryption
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#data-classification">
+     Data classification
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#trust-model">
+     Trust model
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#key-management">
+   Key management
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#the-key-manager-service">
+     The key manager service
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#key-providers-pluggable-backends">
+     Key providers (pluggable backends)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#purposes-controlled-vocabulary">
+     Purposes (controlled vocabulary)
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registering-a-custom-provider">
+     Registering a custom provider
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#asymmetric-keys">
+     Asymmetric keys
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#consent">
+   Consent
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#core-fields">
+     Core fields
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#checking-consent-from-code">
+     Checking consent from code
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#antivirus-scanning">
+   Antivirus scanning
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-happens-on-detection">
+     What happens on detection
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#controlling-scanning-from-code">
+     Controlling scanning from code
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#backend-configuration">
+     Backend configuration
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#user-roles-brief">
+   User roles (brief)
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#security-checks-in-ci">
+   Security checks in CI
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#common-mistakes">
+   Common mistakes
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#see-also">
+   See also
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<main id="main-content" role="main">
+<div>
+<div class="section" id="security-and-encryption">
+<h1>Security and Encryption<a class="headerlink" href="#security-and-encryption" title="Permalink to this headline">#</a></h1>
+<p><strong>For: developers</strong></p>
+<p>Services OpenSPP provides for securing data at rest, managing cryptographic keys, recording consent, and scanning uploads — plus the security checks that run in CI.</p>
+<div class="section" id="how-to-use-this-section">
+<h2>How to use this section<a class="headerlink" href="#how-to-use-this-section" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Read <strong>What's in scope</strong> first — several security topics live in other pages</p></li>
+<li><p>Read the feature section(s) you need: encryption, key management, consent, antivirus scanning, or CI security</p></li>
+<li><p>See <strong>Common mistakes</strong> before shipping</p></li>
+</ol>
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Familiarity with Odoo models and services (<code class="docutils literal notranslate"><span class="pre">self.env["..."]</span></code>)</p></li>
+<li><p>For key management: basic understanding of symmetric vs asymmetric cryptography</p></li>
+<li><p>For consent: awareness of GDPR Article 6 lawful bases (the model uses these labels directly)</p></li>
+</ul>
+</div>
+<div class="section" id="what-s-in-scope-and-what-isn-t">
+<h2>What's in scope (and what isn't)<a class="headerlink" href="#what-s-in-scope-and-what-isn-t" title="Permalink to this headline">#</a></h2>
+<p>This page covers:</p>
+<ul class="simple">
+<li><p><strong>PII encryption</strong> — encrypting sensitive field values with <code class="docutils literal notranslate"><span class="pre">spp_encryption</span></code> and <code class="docutils literal notranslate"><span class="pre">spp_key_management</span></code></p></li>
+<li><p><strong>Key management</strong> — the pluggable key provider system (local config, database, Vault, AWS/GCP/Azure KMS)</p></li>
+<li><p><strong>Consent</strong> — the <code class="docutils literal notranslate"><span class="pre">spp.consent</span></code> data model (ISO 27560 / DPV-aligned)</p></li>
+<li><p><strong>Antivirus scanning</strong> — <code class="docutils literal notranslate"><span class="pre">spp_attachment_av_scan</span></code> auto-scanning of uploads</p></li>
+<li><p><strong>Security checks in CI</strong> — the pre-commit hooks that block insecure code</p></li>
+</ul>
+<p>It does <strong>not</strong> cover:</p>
+<ul class="simple">
+<li><p>Security groups, privileges, and ACL patterns — see <a class="reference internal" href="../custom_modules/security.html"><span class="doc">Security</span></a></p></li>
+<li><p>API-level consent filtering and scope enforcement — see <a class="reference internal" href="../api_v2/consent.html"><span class="doc">Consent Management</span></a></p></li>
+<li><p>Audit logging — see the Audit section in the developer guide</p></li>
+<li><p>User roles (area-based access via <code class="docutils literal notranslate"><span class="pre">spp_user_roles</span></code>) — brief note below, but not the focus</p></li>
+</ul>
+</div>
+<div class="section" id="the-security-modules">
+<h2>The security modules<a class="headerlink" href="#the-security-modules" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">spp_security</span></code></p></td>
+<td><p>Foundation — security categories, the <code class="docutils literal notranslate"><span class="pre">spp_admin</span></code> group, shared privilege definitions referenced by every other module</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">spp_encryption</span></code></p></td>
+<td><p>Cryptographic provider (<code class="docutils literal notranslate"><span class="pre">spp.encryption.provider</span></code>) — JWCrypto-based encryption, JWT signing, JSON-LD credential signing, JWKS output</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">spp_key_management</span></code></p></td>
+<td><p>Key lifecycle (<code class="docutils literal notranslate"><span class="pre">spp.key.manager</span></code>) — pluggable providers (config / database / Vault / AWS KMS / GCP KMS / Azure KeyVault), rotation, blind-index salts</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">spp_consent</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">spp.consent</span></code> model — ISO 27560 / DPV-aligned consent records, GDPR Article 6 legal bases, lifecycle (requested → given / refused / withdrawn / expired)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">spp_attachment_av_scan</span></code></p></td>
+<td><p>ClamAV scanner for <code class="docutils literal notranslate"><span class="pre">ir.attachment</span></code> — auto-queued on upload, infected files encrypted and quarantined</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">spp_user_roles</span></code></p></td>
+<td><p>Area-based roles — extends <code class="docutils literal notranslate"><span class="pre">base_user_role</span></code> with <code class="docutils literal notranslate"><span class="pre">role_type</span></code> of <code class="docutils literal notranslate"><span class="pre">local</span></code> or <code class="docutils literal notranslate"><span class="pre">global</span></code>; local roles restrict access by geographic area via <code class="docutils literal notranslate"><span class="pre">spp_area</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">spp_oauth</span></code></p></td>
+<td><p>Odoo-wide OAuth 2.0 configuration (private/public keys in <code class="docutils literal notranslate"><span class="pre">res.config.settings</span></code>); the <strong>API V2</strong> bearer/signature auth (see <a class="reference internal" href="../api_v2/authentication.html"><span class="doc">Authentication</span></a>) is separate</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="pii-encryption">
+<h2>PII encryption<a class="headerlink" href="#pii-encryption" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">spp_encryption</span></code> + <code class="docutils literal notranslate"><span class="pre">spp_key_management</span></code> together provide application-layer encryption for sensitive fields. Encryption is <strong>not transparent at the ORM level</strong> — your code calls <code class="docutils literal notranslate"><span class="pre">encrypt()</span></code> and <code class="docutils literal notranslate"><span class="pre">decrypt()</span></code> explicitly. This is deliberate: it keeps the cryptographic boundary visible in code review and avoids the "I thought this column was encrypted" class of bugs.</p>
+<div class="section" id="encrypting-a-value">
+<h3>Encrypting a value<a class="headerlink" href="#encrypting-a-value" title="Permalink to this headline">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">key_mgr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">"spp.key.manager"</span><span class="p">]</span>
+
+<span class="c1"># Encrypt — returns a base64 string ready to store in a Char/Text column</span>
+<span class="n">national_id_plain</span> <span class="o">=</span> <span class="s2">"1234567890"</span>
+<span class="n">national_id_cipher</span> <span class="o">=</span> <span class="n">key_mgr</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span>
+    <span class="n">plaintext</span><span class="o">=</span><span class="n">national_id_plain</span><span class="p">,</span>
+    <span class="n">purpose</span><span class="o">=</span><span class="s2">"pii"</span><span class="p">,</span>           <span class="c1"># Which logical key to use (mapped to a provider)</span>
+    <span class="n">key_id</span><span class="o">=</span><span class="s2">"national_id"</span><span class="p">,</span>    <span class="c1"># Which concrete key within that purpose</span>
+    <span class="n">aad</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>                <span class="c1"># Optional additional authenticated data</span>
+<span class="p">)</span>
+
+<span class="c1"># Store national_id_cipher in your field</span>
+
+<span class="c1"># Decrypt later</span>
+<span class="n">recovered</span> <span class="o">=</span> <span class="n">key_mgr</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span>
+    <span class="n">ciphertext_b64</span><span class="o">=</span><span class="n">national_id_cipher</span><span class="p">,</span>
+    <span class="n">purpose</span><span class="o">=</span><span class="s2">"pii"</span><span class="p">,</span>
+    <span class="n">key_id</span><span class="o">=</span><span class="s2">"national_id"</span><span class="p">,</span>
+    <span class="n">aad</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Encryption uses <strong>AES-256-GCM</strong> under the hood. The <code class="docutils literal notranslate"><span class="pre">purpose</span></code> argument routes the operation to a key provider (see <a class="reference internal" href="#key-management"><span class="std std-doc">Key management</span></a> below) — so the same code works whether the key lives in <code class="docutils literal notranslate"><span class="pre">odoo.conf</span></code>, a database column, HashiCorp Vault, or a cloud KMS.</p>
+</div>
+<div class="section" id="searching-encrypted-fields">
+<h3>Searching encrypted fields<a class="headerlink" href="#searching-encrypted-fields" title="Permalink to this headline">#</a></h3>
+<p>Standard SQL <code class="docutils literal notranslate"><span class="pre">WHERE</span> <span class="pre">ciphertext</span> <span class="pre">=</span> <span class="pre">'...'</span></code> doesn't work against GCM-encrypted data — each encryption produces a different ciphertext because of the nonce. Use <strong>blind indexes</strong> to support equality and prefix search:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute a deterministic hash for indexing</span>
+<span class="n">blind_index</span> <span class="o">=</span> <span class="n">key_mgr</span><span class="o">.</span><span class="n">compute_blind_index</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="s2">"john@example.com"</span><span class="p">,</span>
+    <span class="n">purpose</span><span class="o">=</span><span class="s2">"pii"</span><span class="p">,</span>
+    <span class="n">salt_id</span><span class="o">=</span><span class="s2">"email"</span><span class="p">,</span>
+    <span class="n">index_type</span><span class="o">=</span><span class="s2">"exact"</span><span class="p">,</span>    <span class="c1"># or "partial" (last-4), "phonetic"</span>
+<span class="p">)</span>
+
+<span class="c1"># Store the blind index in a separate Char column (call it email_blind_index)</span>
+<span class="c1"># Search by that column, not by the encrypted value</span>
+<span class="n">matches</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">"res.partner"</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">([(</span><span class="s2">"email_blind_index"</span><span class="p">,</span> <span class="s2">"="</span><span class="p">,</span> <span class="n">blind_index</span><span class="p">)])</span>
+</pre></div>
+</div>
+<p>Three index types are supported (<code class="docutils literal notranslate"><span class="pre">spp_key_management/models/key_manager.py</span></code>):</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Index type</p></th>
+<th class="head"><p>Method</p></th>
+<th class="head"><p>Use case</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">exact</span></code></p></td>
+<td><p>Full HMAC-SHA256, hex-encoded</p></td>
+<td><p>Exact match (email, national ID)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">partial</span></code></p></td>
+<td><p>HMAC-SHA256 of the last 4 characters, truncated to 16 hex chars</p></td>
+<td><p>Suffix search</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">phonetic</span></code></p></td>
+<td><p>Soundex code + HMAC, truncated to 16 hex chars</p></td>
+<td><p>Fuzzy name search</p></td>
+</tr>
+</tbody>
+</table>
+<p>All three index types <strong>lowercase the input</strong> before hashing, so queries must also lowercase before calling <code class="docutils literal notranslate"><span class="pre">compute_blind_index</span></code>. Blind indexes use per-purpose salts; <code class="docutils literal notranslate"><span class="pre">key_mgr.get_salt(purpose,</span> <span class="pre">salt_id)</span></code> returns the raw salt bytes but is rarely needed — always call <code class="docutils literal notranslate"><span class="pre">compute_blind_index</span></code> instead. Salt bytes are sensitive material; do not log them or surface them in API responses.</p>
+</div>
+<div class="section" id="recipe-an-encrypted-searchable-field-on-your-model">
+<h3>Recipe: an encrypted, searchable field on your model<a class="headerlink" href="#recipe-an-encrypted-searchable-field-on-your-model" title="Permalink to this headline">#</a></h3>
+<p>Putting the pieces together, here's the pattern for adding a searchable encrypted field (e.g., a national ID) to a custom model:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
+
+
+<span class="k">class</span> <span class="nc">Applicant</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">"myorg.applicant"</span>
+    <span class="n">_description</span> <span class="o">=</span> <span class="s2">"Benefits applicant"</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># The ciphertext column — base64 bytes of the AES-256-GCM output.</span>
+    <span class="n">national_id_cipher</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s2">"National ID (encrypted)"</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="s2">"myorg.group_pii_reader"</span><span class="p">)</span>
+
+    <span class="c1"># The blind index column — searchable deterministic hash.</span>
+    <span class="n">national_id_index</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s2">"National ID (index)"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># A transient view field for writing. Data only lives here during a write;</span>
+    <span class="c1"># it is never stored. Users fill this in the form, the ORM writes it out</span>
+    <span class="c1"># encrypted + indexed, and the field is cleared on read.</span>
+    <span class="n">national_id_input</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s2">"National ID"</span><span class="p">,</span> <span class="n">store</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="nd">@api</span><span class="o">.</span><span class="n">model_create_multi</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vals_list</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">vals</span> <span class="ow">in</span> <span class="n">vals_list</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_apply_pii_fields</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">vals_list</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vals</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_apply_pii_fields</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_apply_pii_fields</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vals</span><span class="p">):</span>
+        <span class="n">plain</span> <span class="o">=</span> <span class="n">vals</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"national_id_input"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">plain</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">key_mgr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">"spp.key.manager"</span><span class="p">]</span>
+        <span class="n">vals</span><span class="p">[</span><span class="s2">"national_id_cipher"</span><span class="p">]</span> <span class="o">=</span> <span class="n">key_mgr</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span>
+            <span class="n">plaintext</span><span class="o">=</span><span class="n">plain</span><span class="p">,</span>
+            <span class="n">purpose</span><span class="o">=</span><span class="s2">"pii"</span><span class="p">,</span>
+            <span class="n">key_id</span><span class="o">=</span><span class="s2">"national_id"</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">vals</span><span class="p">[</span><span class="s2">"national_id_index"</span><span class="p">]</span> <span class="o">=</span> <span class="n">key_mgr</span><span class="o">.</span><span class="n">compute_blind_index</span><span class="p">(</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">plain</span><span class="p">,</span>
+            <span class="n">purpose</span><span class="o">=</span><span class="s2">"pii"</span><span class="p">,</span>
+            <span class="n">salt_id</span><span class="o">=</span><span class="s2">"national_id"</span><span class="p">,</span>
+            <span class="n">index_type</span><span class="o">=</span><span class="s2">"exact"</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">read_national_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Return the decrypted national ID. Requires PII reader permission."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ensure_one</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">national_id_cipher</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">"spp.key.manager"</span><span class="p">]</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span>
+            <span class="n">ciphertext_b64</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">national_id_cipher</span><span class="p">,</span>
+            <span class="n">purpose</span><span class="o">=</span><span class="s2">"pii"</span><span class="p">,</span>
+            <span class="n">key_id</span><span class="o">=</span><span class="s2">"national_id"</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
+    <span class="k">def</span> <span class="nf">find_by_national_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">national_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Lookup by national ID — hits the blind index, not the ciphertext."""</span>
+        <span class="n">key_mgr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">"spp.key.manager"</span><span class="p">]</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">key_mgr</span><span class="o">.</span><span class="n">compute_blind_index</span><span class="p">(</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">national_id</span><span class="p">,</span>
+            <span class="n">purpose</span><span class="o">=</span><span class="s2">"pii"</span><span class="p">,</span>
+            <span class="n">salt_id</span><span class="o">=</span><span class="s2">"national_id"</span><span class="p">,</span>
+            <span class="n">index_type</span><span class="o">=</span><span class="s2">"exact"</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">search</span><span class="p">([(</span><span class="s2">"national_id_index"</span><span class="p">,</span> <span class="s2">"="</span><span class="p">,</span> <span class="n">index</span><span class="p">)])</span>
+</pre></div>
+</div>
+<p><strong>Key patterns:</strong></p>
+<ul class="simple">
+<li><p><strong>Input via a <code class="docutils literal notranslate"><span class="pre">store=False</span></code> field.</strong> The user-facing <code class="docutils literal notranslate"><span class="pre">national_id_input</span></code> never hits the database. <code class="docutils literal notranslate"><span class="pre">create()</span></code> / <code class="docutils literal notranslate"><span class="pre">write()</span></code> intercept it, encrypt, compute the index, and persist only the derived values.</p></li>
+<li><p><strong>Two columns, not one.</strong> The ciphertext and the index serve different purposes (display + search).</p></li>
+<li><p><strong>Access control on the ciphertext column.</strong> <code class="docutils literal notranslate"><span class="pre">groups="..."</span></code> restricts read access at the ORM level, adding defense in depth — most users shouldn't even see the ciphertext column exists.</p></li>
+<li><p><strong>A dedicated read method.</strong> <code class="docutils literal notranslate"><span class="pre">read_national_id()</span></code> is the explicit decrypt path. A ribbon of <code class="docutils literal notranslate"><span class="pre">ensure_one()</span></code> + group check makes every decrypt intentional.</p></li>
+<li><p><strong>Search via a classmethod that hashes the query.</strong> <code class="docutils literal notranslate"><span class="pre">find_by_national_id()</span></code> does the same lowercasing (via <code class="docutils literal notranslate"><span class="pre">compute_blind_index</span></code>) that was done on write, so user input and stored hash match.</p></li>
+</ul>
+</div>
+<div class="section" id="exceptions-to-catch">
+<h3>Exceptions to catch<a class="headerlink" href="#exceptions-to-catch" title="Permalink to this headline">#</a></h3>
+<p>Security operations raise a small set of exceptions. Handle them explicitly:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operation</p></th>
+<th class="head"><p>Exception</p></th>
+<th class="head"><p>When</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">encrypt()</span></code>, <code class="docutils literal notranslate"><span class="pre">decrypt()</span></code>, <code class="docutils literal notranslate"><span class="pre">get_key()</span></code>, <code class="docutils literal notranslate"><span class="pre">get_salt()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AccessError</span></code></p></td>
+<td><p>User lacks key-management group membership</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">decrypt()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ValueError</span></code></p></td>
+<td><p>Wrong key, wrong AAD, or corrupted ciphertext</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">rotate_key()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NotImplementedError</span></code></p></td>
+<td><p>Provider doesn't support rotation (e.g., <code class="docutils literal notranslate"><span class="pre">config</span></code> provider)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rotate_key()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AccessError</span></code></p></td>
+<td><p>User lacks <code class="docutils literal notranslate"><span class="pre">group_key_admin</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">check_consent()</span></code></p></td>
+<td><p>returns empty recordset</p></td>
+<td><p>No valid consent — don't catch an exception, check the result</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">spp.encryption.provider.jwt_sign()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ValueError</span></code></p></td>
+<td><p>Missing or invalid key on the provider record</p></td>
+</tr>
+</tbody>
+</table>
+<p>A generic <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">Exception</span></code> around encryption code is an anti-pattern — each exception tells you something specific. Let unexpected ones propagate.</p>
+</div>
+<div class="section" id="testing-encryption">
+<h3>Testing encryption<a class="headerlink" href="#testing-encryption" title="Permalink to this headline">#</a></h3>
+<p>Unit tests should exercise the encrypt → decrypt round trip plus the search path. The simplest setup uses the <code class="docutils literal notranslate"><span class="pre">config</span></code> provider, which reads keys from <code class="docutils literal notranslate"><span class="pre">odoo.conf</span></code> parameters — in tests, set the parameters directly on the env:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo.tests</span> <span class="kn">import</span> <span class="n">TransactionCase</span>
+<span class="kn">from</span> <span class="nn">odoo.tools</span> <span class="kn">import</span> <span class="n">config</span>
+
+
+<span class="k">class</span> <span class="nc">TestApplicantPII</span><span class="p">(</span><span class="n">TransactionCase</span><span class="p">):</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">setUpClass</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setUpClass</span><span class="p">()</span>
+        <span class="c1"># In real deployments, keys come from the configured provider.</span>
+        <span class="c1"># For tests, the default `database` provider works with auto-generated</span>
+        <span class="c1"># keys — or you can seed a known key for deterministic assertions.</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">Applicant</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">"myorg.applicant"</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">test_round_trip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">applicant</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Applicant</span><span class="o">.</span><span class="n">create</span><span class="p">({</span>
+            <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jane Doe"</span><span class="p">,</span>
+            <span class="s2">"national_id_input"</span><span class="p">:</span> <span class="s2">"PH-123456789"</span><span class="p">,</span>
+        <span class="p">})</span>
+        <span class="c1"># Ciphertext stored, plaintext input discarded</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">applicant</span><span class="o">.</span><span class="n">national_id_cipher</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">applicant</span><span class="p">,</span> <span class="s2">"_national_id_input_stored"</span><span class="p">))</span>
+
+        <span class="c1"># Round trip works</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">applicant</span><span class="o">.</span><span class="n">read_national_id</span><span class="p">(),</span> <span class="s2">"PH-123456789"</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_search_by_blind_index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">applicant</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Applicant</span><span class="o">.</span><span class="n">create</span><span class="p">({</span>
+            <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jane Doe"</span><span class="p">,</span>
+            <span class="s2">"national_id_input"</span><span class="p">:</span> <span class="s2">"PH-123456789"</span><span class="p">,</span>
+        <span class="p">})</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Applicant</span><span class="o">.</span><span class="n">find_by_national_id</span><span class="p">(</span><span class="s2">"PH-123456789"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="n">applicant</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_search_is_case_insensitive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Blind indexes lowercase the input — queries must too, and this is built in."""</span>
+        <span class="n">applicant</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Applicant</span><span class="o">.</span><span class="n">create</span><span class="p">({</span>
+            <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Jane Doe"</span><span class="p">,</span>
+            <span class="s2">"national_id_input"</span><span class="p">:</span> <span class="s2">"PH-123456789"</span><span class="p">,</span>
+        <span class="p">})</span>
+        <span class="c1"># compute_blind_index lowercases both — the search works either way</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Applicant</span><span class="o">.</span><span class="n">find_by_national_id</span><span class="p">(</span><span class="s2">"ph-123456789"</span><span class="p">),</span> <span class="n">applicant</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="data-classification">
+<h3>Data classification<a class="headerlink" href="#data-classification" title="Permalink to this headline">#</a></h3>
+<p>The ops-side convention divides data into four levels: <strong>PUBLIC</strong>, <strong>INTERNAL</strong>, <strong>CONFIDENTIAL</strong>, <strong>RESTRICTED</strong>. Only <code class="docutils literal notranslate"><span class="pre">RESTRICTED</span></code> requires encryption; <code class="docutils literal notranslate"><span class="pre">CONFIDENTIAL</span></code> is optional. There is no classification model in code — decide per-field whether to encrypt, and be consistent across modules that handle the same data type.</p>
+</div>
+<div class="section" id="trust-model">
+<h3>Trust model<a class="headerlink" href="#trust-model" title="Permalink to this headline">#</a></h3>
+<p>Encryption with <code class="docutils literal notranslate"><span class="pre">spp_key_management</span></code> protects against threats like database theft, DB-only access (e.g., a read-only replica leak), or an operator with PostgreSQL access but no Odoo login. It <strong>does not</strong> protect against:</p>
+<ul class="simple">
+<li><p>A compromised Odoo process (plaintext is in memory during every encrypt/decrypt call)</p></li>
+<li><p>An administrator with <code class="docutils literal notranslate"><span class="pre">group_key_admin</span></code> who can call <code class="docutils literal notranslate"><span class="pre">decrypt()</span></code> directly</p></li>
+<li><p>Keys stored via the <code class="docutils literal notranslate"><span class="pre">config</span></code> provider when the <code class="docutils literal notranslate"><span class="pre">odoo.conf</span></code> file is readable to the attacker</p></li>
+</ul>
+<p>For stronger threat models, use a cloud KMS or HSM-backed provider and restrict who holds the key-management groups.</p>
+</div>
+</div>
+<div class="section" id="key-management">
+<h2>Key management<a class="headerlink" href="#key-management" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">spp_key_management</span></code> centralizes cryptographic key handling and provides a pluggable backend system.</p>
+<div class="section" id="the-key-manager-service">
+<h3>The key manager service<a class="headerlink" href="#the-key-manager-service" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">spp.key.manager</span></code> is the service developers use. Its public methods:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">get_key(purpose,</span> <span class="pre">key_id,</span> <span class="pre">version=None)</span></code></p></td>
+<td><p>Retrieve a data-encryption key as bytes</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">get_salt(purpose,</span> <span class="pre">salt_id)</span></code></p></td>
+<td><p>Retrieve a salt for blind indexing</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">rotate_key(purpose,</span> <span class="pre">key_id)</span></code></p></td>
+<td><p>Rotate to a new version; returns new version number</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">encrypt(plaintext,</span> <span class="pre">purpose,</span> <span class="pre">key_id,</span> <span class="pre">aad=None)</span></code></p></td>
+<td><p>AES-256-GCM encrypt; returns base64</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">decrypt(ciphertext_b64,</span> <span class="pre">purpose,</span> <span class="pre">key_id,</span> <span class="pre">aad=None)</span></code></p></td>
+<td><p>AES-256-GCM decrypt</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">compute_blind_index(value,</span> <span class="pre">purpose,</span> <span class="pre">salt_id,</span> <span class="pre">index_type="exact")</span></code></p></td>
+<td><p>HMAC-based searchable hash; returns <code class="docutils literal notranslate"><span class="pre">None</span></code> when <code class="docutils literal notranslate"><span class="pre">value</span></code> is empty</p></td>
+</tr>
+</tbody>
+</table>
+<p>All methods check access via <code class="docutils literal notranslate"><span class="pre">_check_key_access()</span></code> — non-privileged users get <code class="docutils literal notranslate"><span class="pre">AccessError</span></code>. Read access is granted to <code class="docutils literal notranslate"><span class="pre">spp_key_management.group_key_operator_officer</span></code> and <code class="docutils literal notranslate"><span class="pre">spp_key_management.group_key_admin</span></code>; rotation requires <code class="docutils literal notranslate"><span class="pre">group_key_admin</span></code>; system/sudo always passes. The service uses <code class="docutils literal notranslate"><span class="pre">@ormcache</span></code> on its internal <code class="docutils literal notranslate"><span class="pre">_get_key_cached</span></code> and <code class="docutils literal notranslate"><span class="pre">_get_salt_cached</span></code> helpers so repeated calls don't thrash the provider.</p>
+</div>
+<div class="section" id="key-providers-pluggable-backends">
+<h3>Key providers (pluggable backends)<a class="headerlink" href="#key-providers-pluggable-backends" title="Permalink to this headline">#</a></h3>
+<p>The module ships six provider implementations via <code class="docutils literal notranslate"><span class="pre">spp.key.provider.registry</span></code>:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Provider</p></th>
+<th class="head"><p>Storage</p></th>
+<th class="head"><p>Use case</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">config</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">odoo.conf</span></code> parameters</p></td>
+<td><p>Local development only</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">database</span></code></p></td>
+<td><p>Envelope-encrypted key rows</p></td>
+<td><p>Small production deployments</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">vault</span></code></p></td>
+<td><p>HashiCorp Vault</p></td>
+<td><p>Enterprise on-prem</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">aws_kms</span></code></p></td>
+<td><p>AWS KMS</p></td>
+<td><p>AWS deployments</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gcp_kms</span></code></p></td>
+<td><p>Google Cloud KMS</p></td>
+<td><p>GCP deployments</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">azure_keyvault</span></code></p></td>
+<td><p>Azure Key Vault</p></td>
+<td><p>Azure deployments</p></td>
+</tr>
+</tbody>
+</table>
+<p>The registry routes each <code class="docutils literal notranslate"><span class="pre">purpose</span></code> to a provider (e.g., <code class="docutils literal notranslate"><span class="pre">pii</span></code> → <code class="docutils literal notranslate"><span class="pre">database</span></code>, <code class="docutils literal notranslate"><span class="pre">financial</span></code> → <code class="docutils literal notranslate"><span class="pre">aws_kms</span></code>). Administrators configure this mapping; developers don't need to know which provider their code hits at runtime.</p>
+</div>
+<div class="section" id="purposes-controlled-vocabulary">
+<h3>Purposes (controlled vocabulary)<a class="headerlink" href="#purposes-controlled-vocabulary" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">purpose</span></code> is <strong>not</strong> an arbitrary string — it's a record code on <code class="docutils literal notranslate"><span class="pre">spp.key.purpose</span></code>. The module ships five default purposes in <code class="docutils literal notranslate"><span class="pre">data/key_purposes.xml</span></code>:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Name</p></th>
+<th class="text-center head"><p>Rotation</p></th>
+<th class="text-center head"><p>Hardware key required</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pii</span></code></p></td>
+<td><p>PII Data</p></td>
+<td class="text-center"><p>365 days</p></td>
+<td class="text-center"><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">financial</span></code></p></td>
+<td><p>Financial Data</p></td>
+<td class="text-center"><p>180 days</p></td>
+<td class="text-center"><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">credentials</span></code></p></td>
+<td><p>Credentials (VCs, certificates)</p></td>
+<td class="text-center"><p>365 days</p></td>
+<td class="text-center"><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">api</span></code></p></td>
+<td><p>API Security (JWT signing, tokens)</p></td>
+<td class="text-center"><p>90 days</p></td>
+<td class="text-center"><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">backup</span></code></p></td>
+<td><p>Backup Encryption</p></td>
+<td class="text-center"><p>365 days</p></td>
+<td class="text-center"><p>No</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pass the <code class="docutils literal notranslate"><span class="pre">code</span></code> to <code class="docutils literal notranslate"><span class="pre">encrypt()</span></code>/<code class="docutils literal notranslate"><span class="pre">decrypt()</span></code>/<code class="docutils literal notranslate"><span class="pre">get_key()</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">purpose="pii"</span></code>). If you pass a code that doesn't exist, the registry <strong>silently falls back to the default provider</strong> — so a typo like <code class="docutils literal notranslate"><span class="pre">purpose="pii_data"</span></code> won't raise; it will just use whichever provider is marked <code class="docutils literal notranslate"><span class="pre">is_default=True</span></code>. Watch for this when writing tests.</p>
+<p>Custom purposes can be added as XML records:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"purpose_biometric"</span><span class="w"> </span><span class="na">model=</span><span class="s">"spp.key.purpose"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>Biometric<span class="w"> </span>Templates<span class="nt">&lt;/field&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"code"</span><span class="nt">&gt;</span>biometric<span class="nt">&lt;/field&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"key_rotation_days"</span><span class="nt">&gt;</span>730<span class="nt">&lt;/field&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"require_hardware_key"</span><span class="w"> </span><span class="na">eval=</span><span class="s">"True"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="registering-a-custom-provider">
+<h3>Registering a custom provider<a class="headerlink" href="#registering-a-custom-provider" title="Permalink to this headline">#</a></h3>
+<p>To integrate a provider the module doesn't ship (e.g., an HSM-on-premises box), you need <strong>three pieces</strong> — the abstract model implementation, a Selection extension on the registry, and a patch to the registry's model lookup.</p>
+<p><strong>1. Implement the abstract model</strong> (<code class="docutils literal notranslate"><span class="pre">get_data_key</span></code> and <code class="docutils literal notranslate"><span class="pre">get_index_salt</span></code> are required; <code class="docutils literal notranslate"><span class="pre">rotate_key</span></code> is optional):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">models</span>
+
+
+<span class="k">class</span> <span class="nc">MyHSMProvider</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">AbstractModel</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">"spp.key.provider.myhsm"</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"spp.key.provider"</span>
+    <span class="n">_description</span> <span class="o">=</span> <span class="s2">"My on-prem HSM provider"</span>
+
+    <span class="k">def</span> <span class="nf">get_data_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key_id</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Return the data-encryption key for the given key_id as bytes (32 bytes for AES-256)."""</span>
+        <span class="k">return</span> <span class="n">fetch_key_from_hsm</span><span class="p">(</span><span class="n">key_id</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_index_salt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">purpose</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Return the blind-index salt for the given purpose (32 bytes)."""</span>
+        <span class="k">return</span> <span class="n">fetch_salt_from_hsm</span><span class="p">(</span><span class="n">purpose</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">rotate_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Optional. Rotate the key and return the new version number."""</span>
+        <span class="k">return</span> <span class="n">rotate_key_on_hsm</span><span class="p">(</span><span class="n">key_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>2. Extend the registry's <code class="docutils literal notranslate"><span class="pre">provider_type</span></code> Selection</strong> and its model lookup:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
+
+
+<span class="k">class</span> <span class="nc">KeyProviderRegistry</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"spp.key.provider.registry"</span>
+
+    <span class="n">provider_type</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Selection</span><span class="p">(</span>
+        <span class="n">selection_add</span><span class="o">=</span><span class="p">[(</span><span class="s2">"myhsm"</span><span class="p">,</span> <span class="s2">"My HSM"</span><span class="p">)],</span>
+        <span class="n">ondelete</span><span class="o">=</span><span class="p">{</span><span class="s2">"myhsm"</span><span class="p">:</span> <span class="s2">"cascade"</span><span class="p">},</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_provider_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Override: return the env model for our custom provider_type."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">provider_type</span> <span class="o">==</span> <span class="s2">"myhsm"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">"spp.key.provider.myhsm"</span><span class="p">]</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_get_provider_model</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Notice <code class="docutils literal notranslate"><span class="pre">_get_provider_model</span></code> takes <strong>no argument</strong> (it reads <code class="docutils literal notranslate"><span class="pre">self.provider_type</span></code>) and returns an <strong>env proxy</strong>, not a string. Matching the real signature is important — the base returns <code class="docutils literal notranslate"><span class="pre">self.env[...]</span></code>, and callers use it as a recordset.</p>
+<p><strong>3. Create a registry record</strong> (XML data) mapping one or more purposes to your provider. <code class="docutils literal notranslate"><span class="pre">spp.key.provider.registry</span></code> has a required <code class="docutils literal notranslate"><span class="pre">name</span></code> field and a <code class="docutils literal notranslate"><span class="pre">purpose_ids</span></code> Many2many (not a <code class="docutils literal notranslate"><span class="pre">purpose</span></code> Char) pointing at <code class="docutils literal notranslate"><span class="pre">spp.key.purpose</span></code> records:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"key_provider_myhsm_pii"</span><span class="w"> </span><span class="na">model=</span><span class="s">"spp.key.provider.registry"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>My<span class="w"> </span>HSM<span class="w"> </span>(PII)<span class="nt">&lt;/field&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"provider_type"</span><span class="nt">&gt;</span>myhsm<span class="nt">&lt;/field&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"purpose_ids"</span><span class="w"> </span><span class="na">eval=</span><span class="s">"[(4, ref('spp_key_management.purpose_pii'))]"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">spp.key.manager</span></code> routes each <code class="docutils literal notranslate"><span class="pre">purpose</span></code> through its registry entry, so the same <code class="docutils literal notranslate"><span class="pre">encrypt()</span></code> / <code class="docutils literal notranslate"><span class="pre">decrypt()</span></code> calls in application code work unchanged.</p>
+</div>
+<div class="section" id="asymmetric-keys">
+<h3>Asymmetric keys<a class="headerlink" href="#asymmetric-keys" title="Permalink to this headline">#</a></h3>
+<p>For JWT signing, JSON-LD credential signing, and JWKS publishing, use <code class="docutils literal notranslate"><span class="pre">spp.asymmetric.key</span></code> via <code class="docutils literal notranslate"><span class="pre">spp.encryption.provider</span></code>. The provider supports RSA (2048/3072/4096), EC (P-256/P-384/P-521/secp256k1), and Ed25519.</p>
+<p>Call these methods on a specific provider <strong>record</strong>, not on the model directly — <code class="docutils literal notranslate"><span class="pre">provider.ensure_one()</span></code> is enforced:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">provider</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">"spp.encryption.provider"</span><span class="p">]</span><span class="o">.</span><span class="n">browse</span><span class="p">(</span><span class="n">provider_id</span><span class="p">)</span>
+
+<span class="c1"># Generate a new key (creates a spp.asymmetric.key record)</span>
+<span class="n">provider</span><span class="o">.</span><span class="n">generate_key</span><span class="p">(</span><span class="n">key_type</span><span class="o">=</span><span class="s2">"rsa"</span><span class="p">,</span> <span class="n">key_size</span><span class="o">=</span><span class="mi">2048</span><span class="p">)</span>
+
+<span class="c1"># Sign a claims dict as a JWT — returns a compact JWT string</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">jwt_sign</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">"sub"</span><span class="p">:</span> <span class="n">partner</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s2">"exp"</span><span class="p">:</span> <span class="n">exp_timestamp</span><span class="p">,</span> <span class="s2">"iat"</span><span class="p">:</span> <span class="n">iat_timestamp</span><span class="p">},</span>
+    <span class="n">include_payload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>        <span class="c1"># Pass the payload inside the JWT (vs signing only)</span>
+    <span class="n">include_certificate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>   <span class="c1"># Set True to embed the signing cert in the JWS header (x5c)</span>
+    <span class="n">include_cert_hash</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>     <span class="c1"># Set True to embed a cert hash instead (x5t#S256)</span>
+<span class="p">)</span>
+
+<span class="c1"># Publish public keys as JWKS — returns {"keys": [...]}</span>
+<span class="n">jwks</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">get_jwks</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="consent">
+<h2>Consent<a class="headerlink" href="#consent" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">spp_consent</span></code> is the underlying consent data model. It's aligned with ISO/IEC TS 27560:2023 and the W3C Data Privacy Vocabulary (DPV). The <code class="docutils literal notranslate"><span class="pre">spp.consent</span></code> record captures who, what, why, when, and for how long.</p>
+<div class="section" id="core-fields">
+<h3>Core fields<a class="headerlink" href="#core-fields" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">signatory_id</span></code></p></td>
+<td><p>The data subject (a <code class="docutils literal notranslate"><span class="pre">res.partner</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">group_id</span></code></p></td>
+<td><p>Optional — if consent covers a household</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">controller_id</span></code></p></td>
+<td><p>The organization responsible for processing</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">recipient_mode</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">specific</span></code> (named recipients) or <code class="docutils literal notranslate"><span class="pre">category</span></code> (by organization type)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">recipient_ids</span></code> / <code class="docutils literal notranslate"><span class="pre">allowed_recipient_types</span></code></p></td>
+<td><p>Who may receive the data</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">purpose_ids</span></code></p></td>
+<td><p>What the data will be used for</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">personal_data_ids</span></code></p></td>
+<td><p>Which categories of data are covered</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">processing_ids</span></code></p></td>
+<td><p>What operations are permitted (read, export, match, etc.)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">legal_basis</span></code></p></td>
+<td><p>One of <code class="docutils literal notranslate"><span class="pre">consent</span></code>, <code class="docutils literal notranslate"><span class="pre">contract</span></code>, <code class="docutils literal notranslate"><span class="pre">legal_obligation</span></code>, <code class="docutils literal notranslate"><span class="pre">vital_interest</span></code>, <code class="docutils literal notranslate"><span class="pre">public_interest</span></code>, <code class="docutils literal notranslate"><span class="pre">legitimate_interest</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">status</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">requested</span></code>, <code class="docutils literal notranslate"><span class="pre">given</span></code>, <code class="docutils literal notranslate"><span class="pre">refused</span></code>, <code class="docutils literal notranslate"><span class="pre">renewed</span></code>, <code class="docutils literal notranslate"><span class="pre">withdrawn</span></code>, <code class="docutils literal notranslate"><span class="pre">expired</span></code>, <code class="docutils literal notranslate"><span class="pre">invalidated</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">effective_date</span></code>, <code class="docutils literal notranslate"><span class="pre">expiry</span></code></p></td>
+<td><p>Validity window</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">delegation_type</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">self</span></code>, <code class="docutils literal notranslate"><span class="pre">guardian</span></code>, <code class="docutils literal notranslate"><span class="pre">parent</span></code>, <code class="docutils literal notranslate"><span class="pre">poa</span></code>, <code class="docutils literal notranslate"><span class="pre">representative</span></code> — when consent is given on someone's behalf</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="checking-consent-from-code">
+<h3>Checking consent from code<a class="headerlink" href="#checking-consent-from-code" title="Permalink to this headline">#</a></h3>
+<p>Before processing a registrant's data for a new recipient, call <code class="docutils literal notranslate"><span class="pre">check_consent()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Consent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">"spp.consent"</span><span class="p">]</span>
+
+<span class="n">valid_consent</span> <span class="o">=</span> <span class="n">Consent</span><span class="o">.</span><span class="n">check_consent</span><span class="p">(</span>
+    <span class="n">registrant_id</span><span class="o">=</span><span class="n">partner</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+    <span class="n">recipient_id</span><span class="o">=</span><span class="n">sharing_org</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>       <span class="c1"># Specific recipient lookup</span>
+    <span class="c1"># OR category-based lookup — pass the code string, not an id:</span>
+    <span class="n">recipient_org_type</span><span class="o">=</span><span class="s2">"ngo"</span><span class="p">,</span>          <span class="c1"># e.g., "ngo", "government", "healthcare"</span>
+    <span class="n">controller_id</span><span class="o">=</span><span class="n">our_org</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+    <span class="n">purpose_code</span><span class="o">=</span><span class="s2">"service_delivery"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="k">if</span> <span class="n">valid_consent</span><span class="p">:</span>
+    <span class="c1"># Returns the matching spp.consent record(s) — proceed</span>
+    <span class="o">...</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Empty recordset — stop; no valid consent</span>
+    <span class="k">raise</span> <span class="n">UserError</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">"No valid consent for this operation."</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">check_consent()</span></code> verifies <code class="docutils literal notranslate"><span class="pre">status</span> <span class="pre">in</span> <span class="pre">('given',</span> <span class="pre">'renewed')</span></code>, the effective/expiry date window, and purpose/recipient match (including category-based matching via <code class="docutils literal notranslate"><span class="pre">allowed_recipient_types</span></code>). It returns a recordset — either the matching consent records or empty. The function <strong>fails closed</strong> if you supply neither <code class="docutils literal notranslate"><span class="pre">recipient_id</span></code> nor <code class="docutils literal notranslate"><span class="pre">recipient_org_type</span></code> — it returns empty with a logged warning rather than matching any consent. This is intentional; don't pattern-match around it.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">spp.consent.mixin</span></code> adds a <code class="docutils literal notranslate"><span class="pre">consent_ids</span></code> Many2many and an <code class="docutils literal notranslate"><span class="pre">open_record_consent_wizard()</span></code> action; inherit it on any model that needs to present its consent records to users.</p>
+<p>For the API V2 side — how consent filters response payloads and how <code class="docutils literal notranslate"><span class="pre">require_consent</span></code> on an API client interacts with per-registrant consent — see <a class="reference internal" href="../api_v2/consent.html"><span class="doc">Consent Management</span></a>.</p>
+</div>
+</div>
+<div class="section" id="antivirus-scanning">
+<h2>Antivirus scanning<a class="headerlink" href="#antivirus-scanning" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">spp_attachment_av_scan</span></code> automatically scans <code class="docutils literal notranslate"><span class="pre">ir.attachment</span></code> records with binary content using ClamAV. No developer code is required to opt in — the module patches <code class="docutils literal notranslate"><span class="pre">ir.attachment.create()</span></code> and <code class="docutils literal notranslate"><span class="pre">write()</span></code> to enqueue a scan job on the worker queue whenever binary data arrives.</p>
+<div class="section" id="what-happens-on-detection">
+<h3>What happens on detection<a class="headerlink" href="#what-happens-on-detection" title="Permalink to this headline">#</a></h3>
+<p>The attachment's <code class="docutils literal notranslate"><span class="pre">scan_status</span></code> becomes <code class="docutils literal notranslate"><span class="pre">infected</span></code>, the <code class="docutils literal notranslate"><span class="pre">threat_name</span></code> is populated, <code class="docutils literal notranslate"><span class="pre">is_quarantined</span></code> goes to <code class="docutils literal notranslate"><span class="pre">True</span></code>, and an encrypted copy of the original file is stored in <code class="docutils literal notranslate"><span class="pre">quarantine_data</span></code> (using <code class="docutils literal notranslate"><span class="pre">spp.encryption.provider</span></code>). The SHA-256 of the original is stored in <code class="docutils literal notranslate"><span class="pre">quarantine_hash</span></code> for chain-of-custody. The original attachment is <strong>not deleted</strong> — it remains accessible to administrators for forensic review. When an administrator downloads a quarantined file for analysis, the module creates a <strong>separate temporary <code class="docutils literal notranslate"><span class="pre">ir.attachment</span></code></strong> with <code class="docutils literal notranslate"><span class="pre">is_forensic_download=True</span></code> holding the decrypted binary; a cron job (<code class="docutils literal notranslate"><span class="pre">_cron_cleanup_forensic_downloads</span></code>) purges these after 24 hours.</p>
+</div>
+<div class="section" id="controlling-scanning-from-code">
+<h3>Controlling scanning from code<a class="headerlink" href="#controlling-scanning-from-code" title="Permalink to this headline">#</a></h3>
+<p>There is no supported developer-facing opt-out for scanning at create time — the <code class="docutils literal notranslate"><span class="pre">create()</span></code> override queues a scan for every binary attachment regardless of <code class="docutils literal notranslate"><span class="pre">scan_status</span></code> or context flags. In practice, scans are fast (the backend returns <code class="docutils literal notranslate"><span class="pre">clean</span></code> for known-good content), so treat scanning as invisible.</p>
+<p>If you have a legitimate need to bypass scanning on a specific <code class="docutils literal notranslate"><span class="pre">write()</span></code> (e.g., restoring from quarantine), pass <code class="docutils literal notranslate"><span class="pre">skip_av_scan_queue=True</span></code> in the context — this is used internally by the quarantine-restore path and is not a general-purpose developer API.</p>
+</div>
+<div class="section" id="backend-configuration">
+<h3>Backend configuration<a class="headerlink" href="#backend-configuration" title="Permalink to this headline">#</a></h3>
+<p>Administrators configure the <code class="docutils literal notranslate"><span class="pre">spp.av.scanner.backend</span></code> record (socket path or host/port for ClamAV, max file size, timeout). Only admin UI, no developer action required.</p>
+</div>
+</div>
+<div class="section" id="user-roles-brief">
+<h2>User roles (brief)<a class="headerlink" href="#user-roles-brief" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">spp_user_roles</span></code> extends Odoo's <code class="docutils literal notranslate"><span class="pre">base_user_role</span></code> with a <code class="docutils literal notranslate"><span class="pre">role_type</span></code> field (<code class="docutils literal notranslate"><span class="pre">local</span></code> or <code class="docutils literal notranslate"><span class="pre">global</span></code>). Local roles pair with <code class="docutils literal notranslate"><span class="pre">spp_area</span></code> to restrict data access by geographic area — a caseworker role scoped to "North Region" sees only registrants in that area, independent of any feature-level groups they have. Groups answer "can this user see the menu?"; roles answer "which records can this user see?"</p>
+<p>This is an administrator-facing concept more than a developer one. The relevant developer pattern (writing <code class="docutils literal notranslate"><span class="pre">ir.rule</span></code> records tied to area) is covered in <a class="reference internal" href="../custom_modules/security.html"><span class="doc">Security</span></a>.</p>
+</div>
+<div class="section" id="security-checks-in-ci">
+<h2>Security checks in CI<a class="headerlink" href="#security-checks-in-ci" title="Permalink to this headline">#</a></h2>
+<p>Every pull request runs a pre-commit pipeline (<code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code>) that includes security scanning. As a developer, your code must pass these checks:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool / check</p></th>
+<th class="head"><p>What it catches</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Gitleaks</strong></p></td>
+<td><p>Hardcoded secrets (API keys, passwords, private keys) in source or history</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Bandit</strong> (<code class="docutils literal notranslate"><span class="pre">-ll</span></code>)</p></td>
+<td><p>High-confidence Python security issues (eval, exec, <code class="docutils literal notranslate"><span class="pre">shell=True</span></code>, weak crypto)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Semgrep</strong></p></td>
+<td><p>Pattern-based issues using <code class="docutils literal notranslate"><span class="pre">.semgrep/</span></code> rules</p></td>
+</tr>
+<tr class="row-odd"><td><p>No-PII-in-logs check</p></td>
+<td><p>Blocks logging of <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">national_id</span></code>, <code class="docutils literal notranslate"><span class="pre">phone</span></code>, <code class="docutils literal notranslate"><span class="pre">mobile</span></code>, <code class="docutils literal notranslate"><span class="pre">email</span></code>, <code class="docutils literal notranslate"><span class="pre">address</span></code>, <code class="docutils literal notranslate"><span class="pre">birth_date</span></code>, <code class="docutils literal notranslate"><span class="pre">tax_id</span></code>, <code class="docutils literal notranslate"><span class="pre">bank_account</span></code> via <code class="docutils literal notranslate"><span class="pre">_logger.*</span></code> calls</p></td>
+</tr>
+<tr class="row-even"><td><p>Naming convention check</p></td>
+<td><p>Enforces <code class="docutils literal notranslate"><span class="pre">is_</span></code>/<code class="docutils literal notranslate"><span class="pre">has_</span></code>/<code class="docutils literal notranslate"><span class="pre">can_</span></code> prefixes on booleans and other naming rules</p></td>
+</tr>
+<tr class="row-odd"><td><p>ACL check</p></td>
+<td><p>Validates <code class="docutils literal notranslate"><span class="pre">ir.model.access.csv</span></code> rows reference real models and groups</p></td>
+</tr>
+<tr class="row-even"><td><p>Compliance check</p></td>
+<td><p>Validates modules against their <code class="docutils literal notranslate"><span class="pre">security/compliance.yaml</span></code> declaration</p></td>
+</tr>
+<tr class="row-odd"><td><p>API-auth check</p></td>
+<td><p>All FastAPI router endpoints must depend on a known auth dependency (bearer, signature, authenticated client) with an allowlist for genuinely public endpoints (<code class="docutils literal notranslate"><span class="pre">/metadata</span></code>, DCI JWKS, OAuth token)</p></td>
+</tr>
+<tr class="row-even"><td><p>Performance anti-patterns</p></td>
+<td><p>N+1 query patterns, <code class="docutils literal notranslate"><span class="pre">cr.commit()</span></code> in loops, offset-based pagination (prefer cursors)</p></td>
+</tr>
+<tr class="row-odd"><td><p>UI-patterns check</p></td>
+<td><p>List view limits, sample data, XPath syntax, statusbar/extension points</p></td>
+</tr>
+</tbody>
+</table>
+<p>Running pre-commit locally before pushing catches nearly all these. See <code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code> for the complete rule set.</p>
+</div>
+<div class="section" id="common-mistakes">
+<h2>Common mistakes<a class="headerlink" href="#common-mistakes" title="Permalink to this headline">#</a></h2>
+<p><strong>Losing track of <code class="docutils literal notranslate"><span class="pre">purpose</span></code> / <code class="docutils literal notranslate"><span class="pre">key_id</span></code> pairs.</strong> You must decrypt with the same pair you used to encrypt. If code encrypts with <code class="docutils literal notranslate"><span class="pre">purpose="pii"</span></code>, <code class="docutils literal notranslate"><span class="pre">key_id="national_id"</span></code> but stores only the ciphertext, a later refactor that changes the key_id orphans the data. Either record the <code class="docutils literal notranslate"><span class="pre">purpose</span></code> / <code class="docutils literal notranslate"><span class="pre">key_id</span></code> alongside each encrypted value (for encrypt-once-decrypt-later workflows) or document the invariant explicitly.</p>
+<p><strong>Typoing a purpose code.</strong> <code class="docutils literal notranslate"><span class="pre">purpose="pii_data"</span></code> (typo) does not raise — the registry silently falls back to the default provider. Your data encrypts successfully under the wrong key and decrypts with the wrong key going forward. Treat purpose codes like any other identifier: store them as module constants, not string literals scattered through the code.</p>
+<p><strong>Choosing <code class="docutils literal notranslate"><span class="pre">exact</span></code> for every blind index.</strong> <code class="docutils literal notranslate"><span class="pre">exact</span></code> only matches whole values. For prefix or fuzzy searches, use <code class="docutils literal notranslate"><span class="pre">partial</span></code> or <code class="docutils literal notranslate"><span class="pre">phonetic</span></code>. For free-text or multi-word search, blind indexing isn't the right tool — consider a separate tokenized search index instead.</p>
+<p><strong>Forgetting that blind indexes lowercase input.</strong> The hash is over the lowercased value. Queries must also lowercase: <code class="docutils literal notranslate"><span class="pre">compute_blind_index("JOHN@EXAMPLE.COM",</span> <span class="pre">...)</span></code> and <code class="docutils literal notranslate"><span class="pre">compute_blind_index("john@example.com",</span> <span class="pre">...)</span></code> produce the same hash, but <code class="docutils literal notranslate"><span class="pre">WHERE</span> <span class="pre">blind_index</span> <span class="pre">=</span> <span class="pre">'hash_of_lowercased'</span></code> means your query code must lowercase the search term too.</p>
+<p><strong>Checking consent once at session start.</strong> Consent can be withdrawn at any time. Always call <code class="docutils literal notranslate"><span class="pre">check_consent()</span></code> at the moment of processing, not when the user logs in.</p>
+<p><strong>Storing plaintext PII for "just this one case".</strong> The CI no-PII-in-logs check catches logging, but nothing catches a plaintext database column created by a module that forgot to encrypt. Code review is the only defense — flag any field whose name ends in <code class="docutils literal notranslate"><span class="pre">_id</span></code>, <code class="docutils literal notranslate"><span class="pre">_number</span></code>, <code class="docutils literal notranslate"><span class="pre">_phone</span></code>, <code class="docutils literal notranslate"><span class="pre">_email</span></code>, or similar.</p>
+</div>
+<div class="section" id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../custom_modules/security.html"><span class="doc">Security</span></a> — security groups, privileges, ACL patterns, compliance.yaml</p></li>
+<li><p><a class="reference internal" href="../api_v2/consent.html"><span class="doc">Consent Management</span></a> — how consent filters API V2 responses</p></li>
+<li><p><a class="reference internal" href="../api_v2/authentication.html"><span class="doc">Authentication</span></a> — API V2 bearer + signature authentication (different from <code class="docutils literal notranslate"><span class="pre">spp_oauth</span></code>)</p></li>
+<li><p><a class="reference external" href="https://www.iso.org/standard/82217.html">ISO/IEC TS 27560:2023</a> — consent record schema</p></li>
+<li><p><a class="reference external" href="https://www.w3.org/TR/dpv/">W3C Data Privacy Vocabulary</a> — DPV terms used by <code class="docutils literal notranslate"><span class="pre">spp_consent</span></code></p></li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer-article noprint">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="../dci/protocol.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">DCI Protocol Details</p>
+</div>
+</a>
+<a class="right-next" href="../cel/index.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">CEL (Common Expression Language)</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+</div>
+<div class="footer-content row">
+<footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      © Copyright OpenSPP.<br/>
+<div class="extra_footer">
+<p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+</div>
+</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            var lists = $("div.toctree-wrapper ul");
+            $.each(lists, function(index, list) {
+                if($(list).find("li").length == 0) {
+                    $(list).prev().hide();
+                    $(list).hide();
+                }
+            });
+        })
+    </script>
+<script src="/_static/version_switcher.js"></script></body>
+</html>

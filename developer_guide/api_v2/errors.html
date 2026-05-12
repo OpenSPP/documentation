@@ -17,10 +17,10 @@
 <meta content="website" property="og:type"/>
 <meta content="https://docs.openspp.org/developer_guide/api_v2/errors.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="This guide is for developers implementing robust error handling for OpenSPP API V2 integrations. Error Response Format: All errors return an OperationOutcome resource: Field Reference:,, Field, Des..." property="og:description"/>
+<meta content="For: developers HTTP status codes returned by API V2, the response body shape for errors, and patterns for building resilient clients. Prerequisites: Familiarity with HTTP status codes, Familiarity..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="This guide is for developers implementing robust error handling for OpenSPP API V2 integrations. Error Response Format: All errors return an OperationOutcome resource: Field Reference:,, Field, Des..." name="description"/>
+<meta content="For: developers HTTP status codes returned by API V2, the response body shape for errors, and patterns for building resilient clients. Prerequisites: Familiarity with HTTP status codes, Familiarity..." name="description"/>
 <meta content="en_US" property="og:locale"/>
 <title>Error Handling – Developer guide – API V2 — OpenSPP Documentation v2.0</title>
 <!-- Loaded before other Sphinx assets -->
@@ -60,7 +60,7 @@
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
-<link href="studio_integration.html" rel="next" title="Studio API Integration"/>
+<link href="tutorial.html" rel="next" title="Tutorial: build a Python API client"/>
 <link href="batch.html" rel="prev" title="Batch Operations"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
@@ -332,14 +332,9 @@ document.addEventListener('DOMContentLoaded', function() {
 </li>
 </ul>
 </li>
-<li class="toctree-l2">
-<a class="reference internal" href="../../get_started/explore/">
-     Explore OpenSPP
-    </a>
-</li>
 <li class="toctree-l2 has-children">
-<a class="reference internal" href="../../get_started/first_household/">
-     Your first household
+<a class="reference internal" href="../../get_started/try_spmis/">
+     Try OpenSPP SP-MIS
     </a>
 <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
 <label for="toctree-checkbox-7">
@@ -348,58 +343,26 @@ document.addEventListener('DOMContentLoaded', function() {
 </label>
 <ul>
 <li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_household/01_access_registry.html">
-       Step 1: Access the Registry
+<a class="reference internal" href="../../get_started/try_spmis/install_data.html">
+       Install SP-MIS demo data
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_household/02_create_household.html">
-       Step 2: Create a Household
+<a class="reference internal" href="../../get_started/try_spmis/stories.html">
+       SP-MIS Stories
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_household/03_add_members.html">
-       Step 3: Add members
+<a class="reference internal" href="../../get_started/try_spmis/demo_scenarios.html">
+       SP-MIS Demo scenarios
       </a>
 </li>
 </ul>
 </li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../../get_started/first_program/">
-     Your first program
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/configuration_vs_customization.html">
+     Configuration vs customization
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-<label for="toctree-checkbox-8">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_program/01_access_program.html">
-       Step 1: Access the program section
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_program/02_create_program.html">
-       Step 2: Create your first social protection program
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_program/03_enroll_beneficiaries.html">
-       Step 3: Import and enroll beneficiaries
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_program/04_run_cycle.html">
-       Step 4: Understanding program cycles
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_program/05_distribute_entitlements.html">
-       Step 5: Distribute entitlements
-      </a>
-</li>
-</ul>
 </li>
 <li class="toctree-l2">
 <a class="reference internal" href="../../get_started/poc_and_pilot.html">
@@ -412,8 +375,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/">
    User guide
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-<label for="toctree-checkbox-9">
+<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+<label for="toctree-checkbox-8">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -422,8 +385,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/getting_started/">
      Getting started
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-<label for="toctree-checkbox-10">
+<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+<label for="toctree-checkbox-9">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -444,8 +407,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/registry/">
      Registry
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-<label for="toctree-checkbox-11">
+<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+<label for="toctree-checkbox-10">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -475,14 +438,19 @@ document.addEventListener('DOMContentLoaded', function() {
        Export registrant data
       </a>
 </li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/farmer_registry.html">
+       Manage farm data
+      </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 has-children">
 <a class="reference internal" href="../../user_guide/change_requests/">
      Change Requests
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-<label for="toctree-checkbox-12">
+<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+<label for="toctree-checkbox-11">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -508,8 +476,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/case_management/">
      Case management
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-<label for="toctree-checkbox-13">
+<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+<label for="toctree-checkbox-12">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -525,8 +493,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/programs/">
      Programs
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-<label for="toctree-checkbox-14">
+<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+<label for="toctree-checkbox-13">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -567,8 +535,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/payments/">
      Payments
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-<label for="toctree-checkbox-15">
+<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+<label for="toctree-checkbox-14">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -584,8 +552,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/approvals/">
      Approvals
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-<label for="toctree-checkbox-16">
+<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+<label for="toctree-checkbox-15">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -601,8 +569,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/grievances/">
      Grievance Redress Mechanism (GRM)
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-<label for="toctree-checkbox-17">
+<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+<label for="toctree-checkbox-16">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -618,8 +586,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/gis/">
      Geographic Information System (GIS)
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-<label for="toctree-checkbox-18">
+<input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+<label for="toctree-checkbox-17">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -635,8 +603,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/reference/">
      Reference
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-<label for="toctree-checkbox-19">
+<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+<label for="toctree-checkbox-18">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -659,15 +627,32 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../config_guide/">
    Configuration guide
   </a>
+<input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+<label for="toctree-checkbox-19">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/alerts/">
+     Alerts
+    </a>
 <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
 <label for="toctree-checkbox-20">
 <i class="fas fa-chevron-down">
 </i>
 </label>
 <ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/alerts/overview.html">
+       Alerts overview
+      </a>
+</li>
+</ul>
+</li>
 <li class="toctree-l2 has-children">
-<a class="reference internal" href="../../config_guide/studio/">
-     OpenSPP Studio
+<a class="reference internal" href="../../config_guide/approval_workflows/">
+     Approval workflows
     </a>
 <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
 <label for="toctree-checkbox-21">
@@ -676,23 +661,106 @@ document.addEventListener('DOMContentLoaded', function() {
 </label>
 <ul>
 <li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/studio/overview.html">
-       Studio Overview
+<a class="reference internal" href="../../config_guide/approval_workflows/overview.html">
+       Approval workflows overview
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/studio/registry_field_builder.html">
-       Custom Fields (Registry Field Builder)
+<a class="reference internal" href="../../config_guide/approval_workflows/tiers.html">
+       Approval tiers
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/studio/event_type_designer.html">
-       Event Type Designer
+<a class="reference internal" href="../../config_guide/approval_workflows/batch_approvals.html">
+       Batch approvals and freeze periods
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/area_management/">
+     Area management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+<label for="toctree-checkbox-22">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/area_management/overview.html">
+       Area management overview
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/studio/change_request_builder.html">
-       Change Request Builder
+<a class="reference internal" href="../../config_guide/area_management/hdx_integration.html">
+       HDX COD integration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/audit/">
+     Audit configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+<label for="toctree-checkbox-23">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/audit/overview.html">
+       Audit configuration overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/audit/backends.html">
+       Audit backends
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/banking/">
+     Banking
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+<label for="toctree-checkbox-24">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/banking/overview.html">
+       Banking overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/case_management/">
+     Case management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+<label for="toctree-checkbox-25">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/case_management/overview.html">
+       Case management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/case_management/stages.html">
+       Case stages
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/case_management/teams.html">
+       Case teams
       </a>
 </li>
 </ul>
@@ -701,8 +769,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../config_guide/cel/">
      CEL expressions
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
-<label for="toctree-checkbox-22">
+<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+<label for="toctree-checkbox-26">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -735,176 +803,11 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 </li>
 <li class="toctree-l2 has-children">
-<a class="reference internal" href="../../config_guide/eligibility/">
-     Eligibility rules
-    </a>
-<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
-<label for="toctree-checkbox-23">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/eligibility/cel_expressions.html">
-       CEL expressions for eligibility
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/eligibility/geographic_targeting.html">
-       Geographic targeting
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/eligibility/templates.html">
-       Expression templates
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/eligibility/testing.html">
-       Testing eligibility rules
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/eligibility/advanced.html">
-       Advanced eligibility configuration
-      </a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../../config_guide/entitlement_formulas/">
-     Entitlement formulas
-    </a>
-<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
-<label for="toctree-checkbox-24">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/entitlement_formulas/cash_calculations.html">
-       Cash calculations
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/entitlement_formulas/inkind_baskets.html">
-       In-kind and basket entitlements
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/entitlement_formulas/formula_library.html">
-       Formula library
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/entitlement_formulas/dynamic_entitlements.html">
-       Dynamic entitlements
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/entitlement_formulas/conditional_logic.html">
-       Conditional logic
-      </a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../../config_guide/vocabulary/">
-     Vocabulary System
-    </a>
-<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
-<label for="toctree-checkbox-25">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/vocabulary/overview.html">
-       Vocabulary Overview
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/vocabulary/standard_vocabularies.html">
-       Standard Vocabularies
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/vocabulary/profiles.html">
-       Vocabulary Profiles
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/vocabulary/custom.html">
-       Custom Vocabularies
-      </a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../../config_guide/variables/">
-     Variables &amp; Indicators
-    </a>
-<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
-<label for="toctree-checkbox-26">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/variables/overview.html">
-       Variables Overview
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/variables/creating_variables.html">
-       Creating Variables
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/variables/variable_types.html">
-       Variable Types
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/variables/using_variables.html">
-       Using Variables in CEL
-      </a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../../config_guide/event_data/">
-     Event Data
-    </a>
-<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
-<label for="toctree-checkbox-27">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/event_data/overview.html">
-       Event Data Overview
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/event_data/event_types.html">
-       Configuring Event Types
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/event_data/field_definitions.html">
-       Defining Event Fields
-      </a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children">
 <a class="reference internal" href="../../config_guide/change_request_types/">
      Change request types
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
-<label for="toctree-checkbox-28">
+<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+<label for="toctree-checkbox-27">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -950,8 +853,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../config_guide/consent/">
      Consent configuration
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
-<label for="toctree-checkbox-29">
+<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+<label for="toctree-checkbox-28">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -979,11 +882,298 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 </li>
 <li class="toctree-l2 has-children">
-<a class="reference internal" href="../../config_guide/role_configuration/">
-     Role configuration
+<a class="reference internal" href="../../config_guide/custom_fields/">
+     Custom fields
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+<label for="toctree-checkbox-29">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/custom_fields/overview.html">
+       Custom fields overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/drims/">
+     DRIMS Configuration Guide
     </a>
 <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
 <label for="toctree-checkbox-30">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/drims/warehouses.html">
+       Configuring Warehouses
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/drims/approval_chains.html">
+       Configuring Approval Workflows
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/drims/alerts.html">
+       Configuring Alerts and Thresholds
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/drims/vocabularies.html">
+       Configuring Vocabularies
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/eligibility/">
+     Eligibility rules
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+<label for="toctree-checkbox-31">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/cel_expressions.html">
+       CEL expressions for eligibility
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/geographic_targeting.html">
+       Geographic targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/templates.html">
+       Expression templates
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/testing.html">
+       Testing eligibility rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/advanced.html">
+       Advanced eligibility configuration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/">
+     Entitlement formulas
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+<label for="toctree-checkbox-32">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/cash_calculations.html">
+       Cash calculations
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/inkind_entitlements.html">
+       In-kind entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/formula_library.html">
+       Formula library
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/dynamic_entitlements.html">
+       Dynamic entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/conditional_logic.html">
+       Conditional logic
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/event_data/">
+     Event Data
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+<label for="toctree-checkbox-33">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/overview.html">
+       Event Data Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/event_types.html">
+       Configuring Event Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/field_definitions.html">
+       Defining Event Fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/farmer_registry/">
+     Farmer registry
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+<label for="toctree-checkbox-34">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/farmer_registry/overview.html">
+       Farmer registry overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/farmer_registry/farm_details.html">
+       Farm details, seasons, and activities
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/gis/">
+     GIS configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+<label for="toctree-checkbox-35">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/gis/overview.html">
+       GIS configuration overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/gis/report_templates.html">
+       GIS reports and indicator layers
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/grievance_redress/">
+     Grievance redress
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+<label for="toctree-checkbox-36">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/grievance_redress/overview.html">
+       Grievance redress overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/grievance_redress/sla_rules.html">
+       SLA rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/grievance_redress/teams_tags.html">
+       GRM teams and tags
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/hazard_management/">
+     Hazard management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+<label for="toctree-checkbox-37">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/hazard_management/overview.html">
+       Hazard management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/hazard_management/program_linking.html">
+       Linking programs to hazard incidents
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/import_matching/">
+     Import matching
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+<label for="toctree-checkbox-38">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/import_matching/overview.html">
+       Import matching overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/studio/">
+     OpenSPP Studio
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+<label for="toctree-checkbox-39">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/overview.html">
+       Studio Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/registry_field_builder.html">
+       Custom Fields (Registry Field Builder)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/event_type_designer.html">
+       Event Type Designer
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/role_configuration/">
+     Role configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+<label for="toctree-checkbox-40">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1015,58 +1205,321 @@ document.addEventListener('DOMContentLoaded', function() {
 </li>
 </ul>
 </li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/scoring/">
+     Scoring &amp; Assessment
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+<label for="toctree-checkbox-41">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/overview.html">
+       Scoring Framework Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/pmt.html">
+       Proxy Means Test (PMT) Configuration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/vulnerability.html">
+       Vulnerability Scoring Configuration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/swdi.html">
+       Social Welfare Development Index (SWDI)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/custom.html">
+       Creating Custom Scoring Formulas
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/service_points/">
+     Service points
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+<label for="toctree-checkbox-42">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/service_points/overview.html">
+       Service points overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/service_points/lifecycle.html">
+       Service point lifecycle
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/session_tracking/">
+     Session tracking
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+<label for="toctree-checkbox-43">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/session_tracking/overview.html">
+       Session tracking overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/simulation/">
+     Simulation
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+<label for="toctree-checkbox-44">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/simulation/overview.html">
+       Simulation overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/storage_backend/">
+     Storage backend
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+<label for="toctree-checkbox-45">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/storage_backend/overview.html">
+       Storage backend overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/variables/">
+     Variables
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+<label for="toctree-checkbox-46">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/overview.html">
+       Variables Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/creating_variables.html">
+       Creating Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/variable_types.html">
+       Variable Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/using_variables.html">
+       Using Variables in CEL
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/vocabulary/">
+     Vocabulary System
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+<label for="toctree-checkbox-47">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/overview.html">
+       Vocabulary Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/standard_vocabularies.html">
+       Standard Vocabularies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/profiles.html">
+       Vocabulary Profiles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/custom.html">
+       Custom Vocabularies
+      </a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children">
 <a class="reference internal" href="../">
    Developer guide
   </a>
-<input checked="" class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-<label for="toctree-checkbox-31">
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+<label for="toctree-checkbox-48">
 <i class="fas fa-chevron-down">
 </i>
 </label>
 <ul class="current">
 <li class="toctree-l2">
 <a class="reference internal" href="../setup/">
-     Development Setup
+     Development setup
     </a>
 </li>
 <li class="toctree-l2 has-children">
 <a class="reference internal" href="../architecture/">
      Architecture
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-<label for="toctree-checkbox-32">
+<input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+<label for="toctree-checkbox-49">
 <i class="fas fa-chevron-down">
 </i>
 </label>
 <ul>
 <li class="toctree-l3">
-<a class="reference internal" href="../architecture/cel_internals.html">
-       CEL Internals
+<a class="reference internal" href="../architecture/module_organization.html">
+       Module organization
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../architecture/data_model.html">
+       Data model
       </a>
 </li>
 </ul>
 </li>
 <li class="toctree-l2 has-children">
-<a class="reference internal" href="../extending/">
-     Extending OpenSPP
+<a class="reference internal" href="../custom_modules/">
+     Custom modules
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
-<label for="toctree-checkbox-33">
+<input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+<label for="toctree-checkbox-50">
 <i class="fas fa-chevron-down">
 </i>
 </label>
 <ul>
 <li class="toctree-l3">
-<a class="reference internal" href="../extending/custom_modules.html">
-       Customize Program
+<a class="reference internal" href="../custom_modules/scaffold.html">
+       Module scaffold
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../extending/cycle_manager.html">
-       Customize Cycle
+<a class="reference internal" href="../custom_modules/models.html">
+       Models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/security.html">
+       Security
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/views.html">
+       Views and menus
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/mixins.html">
+       Mixins
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/testing.html">
+       Testing
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/example.html">
+       Example: custom registry fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../custom_managers/">
+     Custom program managers
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+<label for="toctree-checkbox-51">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_managers/manager_pattern.html">
+       Manager pattern
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_managers/building_managers.html">
+       Building a custom manager
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_managers/tutorial.html">
+       Tutorial: build CCT program managers
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../change_request_types/">
+     Custom change request types
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+<label for="toctree-checkbox-52">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/detail_models.html">
+       Detail models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/apply_strategies.html">
+       Apply strategies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/approval_hooks.html">
+       Approval hooks
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/tutorial.html">
+       Tutorial: build a transfer member CR type
       </a>
 </li>
 </ul>
@@ -1075,8 +1528,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="">
      API V2
     </a>
-<input checked="" class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
-<label for="toctree-checkbox-34">
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+<label for="toctree-checkbox-53">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1122,8 +1575,23 @@ document.addEventListener('DOMContentLoaded', function() {
       </a>
 </li>
 <li class="toctree-l3">
+<a class="reference internal" href="tutorial.html">
+       Tutorial: build a Python API client
+      </a>
+</li>
+<li class="toctree-l3">
 <a class="reference internal" href="studio_integration.html">
        Studio API Integration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="entitlements_cycles.html">
+       Entitlements and Cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="products_service_points.html">
+       Products and Service Points
       </a>
 </li>
 </ul>
@@ -1132,8 +1600,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../dci/">
      DCI Integration
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
-<label for="toctree-checkbox-35">
+<input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+<label for="toctree-checkbox-54">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1160,41 +1628,41 @@ document.addEventListener('DOMContentLoaded', function() {
 </li>
 </ul>
 </li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../verifiable_credentials/">
-     Verifiable Credentials
+<li class="toctree-l2">
+<a class="reference internal" href="../security/">
+     Security and Encryption
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
-<label for="toctree-checkbox-36">
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../cel/">
+     CEL (Common Expression Language)
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+<label for="toctree-checkbox-55">
 <i class="fas fa-chevron-down">
 </i>
 </label>
 <ul>
 <li class="toctree-l3">
-<a class="reference internal" href="../verifiable_credentials/overview.html">
-       Verifiable Credentials Overview
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../verifiable_credentials/w3c_vc.html">
-       W3C Verifiable Credentials Data Model
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../verifiable_credentials/oidc4vci.html">
-       OpenID for Verifiable Credential Issuance
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../verifiable_credentials/implementation.html">
-       Verifiable Credentials Implementation Guide
+<a class="reference internal" href="../cel/internals.html">
+       CEL Internals
       </a>
 </li>
 </ul>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../integrations/">
-     Other Integrations
+<a class="reference internal" href="../studio/">
+     Studio
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../audit/">
+     Audit and Versioning
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../contributing/">
+     Contributing
     </a>
 </li>
 </ul>
@@ -1203,8 +1671,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../ops_guide/">
    Operations guide
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
-<label for="toctree-checkbox-37">
+<input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+<label for="toctree-checkbox-56">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1213,8 +1681,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../ops_guide/deployment/">
      Deployment
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
-<label for="toctree-checkbox-38">
+<input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+<label for="toctree-checkbox-57">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1230,8 +1698,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../ops_guide/security/">
      Security
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
-<label for="toctree-checkbox-39">
+<input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+<label for="toctree-checkbox-58">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1289,8 +1757,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/">
    Reference
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
-<label for="toctree-checkbox-40">
+<input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+<label for="toctree-checkbox-59">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1299,8 +1767,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/">
      Modules Reference
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
-<label for="toctree-checkbox-41">
+<input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+<label for="toctree-checkbox-60">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1319,8 +1787,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_api_v2.html">
        API V2
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
-<label for="toctree-checkbox-42">
+<input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+<label for="toctree-checkbox-61">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1421,8 +1889,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_case_base.html">
        Case Management Base
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
-<label for="toctree-checkbox-43">
+<input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
+<label for="toctree-checkbox-62">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1468,8 +1936,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_cel_domain.html">
        CEL Domain Query Builder
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
-<label for="toctree-checkbox-44">
+<input class="toctree-checkbox" id="toctree-checkbox-63" name="toctree-checkbox-63" type="checkbox"/>
+<label for="toctree-checkbox-63">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1496,12 +1964,22 @@ document.addEventListener('DOMContentLoaded', function() {
 </li>
 </ul>
 </li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_registry_search.html">
+       Registry Search
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_widget.html">
+       Expression Widget
+      </a>
+</li>
 <li class="toctree-l3 has-children">
 <a class="reference internal" href="../../reference/modules/spp_change_request_v2.html">
        Change Request V2
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
-<label for="toctree-checkbox-45">
+<input class="toctree-checkbox" id="toctree-checkbox-64" name="toctree-checkbox-64" type="checkbox"/>
+<label for="toctree-checkbox-64">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1537,8 +2015,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_dci.html">
        DCI Core
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
-<label for="toctree-checkbox-46">
+<input class="toctree-checkbox" id="toctree-checkbox-65" name="toctree-checkbox-65" type="checkbox"/>
+<label for="toctree-checkbox-65">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1594,8 +2072,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_drims.html">
        DRIMS - Disaster Response Inventory Management
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
-<label for="toctree-checkbox-47">
+<input class="toctree-checkbox" id="toctree-checkbox-66" name="toctree-checkbox-66" type="checkbox"/>
+<label for="toctree-checkbox-66">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1626,8 +2104,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_farmer_registry.html">
        Farmer Registry
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
-<label for="toctree-checkbox-48">
+<input class="toctree-checkbox" id="toctree-checkbox-67" name="toctree-checkbox-67" type="checkbox"/>
+<label for="toctree-checkbox-67">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1658,8 +2136,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_gis.html">
        GIS
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
-<label for="toctree-checkbox-49">
+<input class="toctree-checkbox" id="toctree-checkbox-68" name="toctree-checkbox-68" type="checkbox"/>
+<label for="toctree-checkbox-68">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1695,8 +2173,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_grm.html">
        Grievance Redress Mechanism
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
-<label for="toctree-checkbox-50">
+<input class="toctree-checkbox" id="toctree-checkbox-69" name="toctree-checkbox-69" type="checkbox"/>
+<label for="toctree-checkbox-69">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1732,8 +2210,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_hazard.html">
        Hazard &amp; Emergency Management
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-<label for="toctree-checkbox-51">
+<input class="toctree-checkbox" id="toctree-checkbox-70" name="toctree-checkbox-70" type="checkbox"/>
+<label for="toctree-checkbox-70">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1746,6 +2224,11 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 </li>
 <li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_hazard_programs.html">
+       Programs Integration
+      </a>
+</li>
+<li class="toctree-l3">
 <a class="reference internal" href="../../reference/modules/spp_hide_menus_base.html">
        Hide Menus Base
       </a>
@@ -1754,8 +2237,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_hxl.html">
        HXL Integration
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-<label for="toctree-checkbox-52">
+<input class="toctree-checkbox" id="toctree-checkbox-71" name="toctree-checkbox-71" type="checkbox"/>
+<label for="toctree-checkbox-71">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1846,8 +2329,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_scoring.html">
        Scoring
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-<label for="toctree-checkbox-53">
+<input class="toctree-checkbox" id="toctree-checkbox-72" name="toctree-checkbox-72" type="checkbox"/>
+<label for="toctree-checkbox-72">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1908,8 +2391,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_studio.html">
        Studio
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
-<label for="toctree-checkbox-54">
+<input class="toctree-checkbox" id="toctree-checkbox-73" name="toctree-checkbox-73" type="checkbox"/>
+<label for="toctree-checkbox-73">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1974,8 +2457,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../community_and_support/">
    Community and support
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
-<label for="toctree-checkbox-55">
+<input class="toctree-checkbox" id="toctree-checkbox-74" name="toctree-checkbox-74" type="checkbox"/>
+<label for="toctree-checkbox-74">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -2008,6 +2491,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <li class="toctree-l2">
 <a class="reference internal" href="../../community_and_support/security_report.html">
      OpenSPP Vulnerability Disclosure Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/openspp_odoo.html">
+     Why OpenSPP is built on Odoo
     </a>
 </li>
 <li class="toctree-l2">
@@ -2127,6 +2615,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <nav aria-label="Page" id="bd-toc-nav">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#error-response-format">
    Error Response Format
   </a>
@@ -2134,6 +2627,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <li class="toc-h3 nav-item toc-entry">
 <a class="reference internal nav-link" href="#field-reference">
      Field Reference
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#error-categories">
+     Error Categories
     </a>
 </li>
 </ul>
@@ -2201,8 +2699,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </a>
 </li>
 <li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#parse-operationoutcome">
-     2. Parse OperationOutcome
+<a class="reference internal nav-link" href="#parse-error-responses">
+     2. Parse Error Responses
     </a>
 </li>
 <li class="toc-h3 nav-item toc-entry">
@@ -2228,18 +2726,18 @@ document.addEventListener('DOMContentLoaded', function() {
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#are-you-stuck">
-   Are You Stuck?
+<a class="reference internal nav-link" href="#common-mistakes">
+   Common mistakes
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#next-steps">
-   Next Steps
+<a class="reference internal nav-link" href="#what-s-next">
+   What's next
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#see-also">
-   See Also
+   See also
   </a>
 </li>
 </ul>
@@ -2260,6 +2758,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <nav aria-label="Page">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#error-response-format">
    Error Response Format
   </a>
@@ -2267,6 +2770,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <li class="toc-h3 nav-item toc-entry">
 <a class="reference internal nav-link" href="#field-reference">
      Field Reference
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#error-categories">
+     Error Categories
     </a>
 </li>
 </ul>
@@ -2334,8 +2842,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </a>
 </li>
 <li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#parse-operationoutcome">
-     2. Parse OperationOutcome
+<a class="reference internal nav-link" href="#parse-error-responses">
+     2. Parse Error Responses
     </a>
 </li>
 <li class="toc-h3 nav-item toc-entry">
@@ -2361,18 +2869,18 @@ document.addEventListener('DOMContentLoaded', function() {
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#are-you-stuck">
-   Are You Stuck?
+<a class="reference internal nav-link" href="#common-mistakes">
+   Common mistakes
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#next-steps">
-   Next Steps
+<a class="reference internal nav-link" href="#what-s-next">
+   What's next
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#see-also">
-   See Also
+   See also
   </a>
 </li>
 </ul>
@@ -2384,28 +2892,39 @@ document.addEventListener('DOMContentLoaded', function() {
 <div>
 <div class="section" id="error-handling">
 <h1>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">#</a></h1>
-<p>This guide is for <strong>developers</strong> implementing robust error handling for OpenSPP API V2 integrations.</p>
+<p><strong>For: developers</strong></p>
+<p>HTTP status codes returned by API V2, the response body shape for errors, and patterns for building resilient clients.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Familiarity with HTTP status codes</p></li>
+<li><p>Familiarity with <code class="docutils literal notranslate"><span class="pre">requests</span></code> (Python) or equivalent HTTP library</p></li>
+</ul>
+</div>
 <div class="section" id="error-response-format">
 <h2>Error Response Format<a class="headerlink" href="#error-response-format" title="Permalink to this headline">#</a></h2>
-<p>All errors return an <code class="docutils literal notranslate"><span class="pre">OperationOutcome</span></code> resource:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Current implementation:</strong> error responses contain a single <code class="docutils literal notranslate"><span class="pre">detail</span></code> field with a human-readable message — the standard FastAPI <code class="docutils literal notranslate"><span class="pre">HTTPException</span></code> format. Always rely on the HTTP status code and the <code class="docutils literal notranslate"><span class="pre">detail</span></code> string.</p>
+<p><strong>Future:</strong> the codebase contains a <code class="docutils literal notranslate"><span class="pre">ProblemDetail</span></code> schema aligned with <a class="reference external" href="https://www.rfc-editor.org/rfc/rfc9457.html">RFC 9457</a> that will replace this when an exception handler is wired in. The richer examples below (with <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">errors</span></code> fields) describe the planned format. Write your client to handle the current <code class="docutils literal notranslate"><span class="pre">{detail}</span></code> shape — the planned format is backward-compatible (<code class="docutils literal notranslate"><span class="pre">detail</span></code> will still be present).</p>
+</div>
+<p>What you actually get today:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OperationOutcome"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"issue"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="nt">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Individual not found"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The planned RFC 9457 Problem Detail format will look like:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:openspp:error:validation"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Validation Error"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">422</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Identifier value contains invalid characters"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"instance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/v2/spp/Individual"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"severity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">          </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:openspp:error"</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INVALID_IDENTIFIER"</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid identifier format"</span>
-<span class="w">          </span><span class="p">}</span>
-<span class="w">        </span><span class="p">],</span>
-<span class="w">        </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Identifier value contains invalid characters"</span>
-<span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">"diagnostics"</span><span class="p">:</span><span class="w"> </span><span class="s2">"identifier[0].value: expected pattern ^[A-Z0-9-]+$"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Individual.identifier[0].value"</span><span class="p">]</span>
+<span class="w">      </span><span class="nt">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"identifier[0].value"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expected pattern ^[A-Z0-9-]+$"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
@@ -2416,30 +2935,71 @@ document.addEventListener('DOMContentLoaded', function() {
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
 <th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">severity</span></code></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">error</span></code>, <code class="docutils literal notranslate"><span class="pre">warning</span></code>, <code class="docutils literal notranslate"><span class="pre">information</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Error category URN (e.g., <code class="docutils literal notranslate"><span class="pre">urn:openspp:error:validation</span></code>)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">code</span></code></p></td>
-<td><p>FHIR issue type code</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">title</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Short human-readable summary</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">details.coding</span></code></p></td>
-<td><p>Structured error code</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">status</span></code></p></td>
+<td><p>integer</p></td>
+<td><p>HTTP status code</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">details.text</span></code></p></td>
-<td><p>Human-readable error message</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">detail</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Explanation specific to this occurrence</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">diagnostics</span></code></p></td>
-<td><p>Technical details for debugging</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">instance</span></code></p></td>
+<td><p>string</p></td>
+<td><p>URI of the specific problem occurrence</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">location</span></code></p></td>
-<td><p>JSON path to the problematic field</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">errors</span></code></p></td>
+<td><p>array</p></td>
+<td><p>Field-level validation errors (for 422 responses)</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="error-categories">
+<h3>Error Categories<a class="headerlink" href="#error-categories" title="Permalink to this headline">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type URN</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:error:not-found</span></code></p></td>
+<td><p>Resource not found (404)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:error:validation</span></code></p></td>
+<td><p>Validation failure (422)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:error:authentication</span></code></p></td>
+<td><p>Authentication failure (401)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:error:authorization</span></code></p></td>
+<td><p>Insufficient permissions (403)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:error:conflict</span></code></p></td>
+<td><p>Version conflict (409)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:error:server-error</span></code></p></td>
+<td><p>Internal server error (500)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Batch and transaction error responses use a different format — see <a class="reference internal" href="batch.html"><span class="doc">Batch Operations</span></a> for <code class="docutils literal notranslate"><span class="pre">OperationOutcome</span></code> details in bundle responses.</p>
+</div>
 </div>
 </div>
 <div class="section" id="http-status-codes">
@@ -2504,20 +3064,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="section" id="bad-request">
 <h3>400 Bad Request<a class="headerlink" href="#bad-request" title="Permalink to this headline">#</a></h3>
 <p>Invalid request syntax or structure:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 400 Bad Request
-
-{
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "invalid",
-      "details": {
-        "text": "Invalid JSON: Unexpected token at line 5"
-      }
-    }
-  ]
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:openspp:error:validation"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Request"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid JSON: Unexpected token at line 5"</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>Causes:</strong></p>
@@ -2541,25 +3093,17 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="section" id="unauthorized">
 <h3>401 Unauthorized<a class="headerlink" href="#unauthorized" title="Permalink to this headline">#</a></h3>
 <p>Missing or invalid access token:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 401 Unauthorized
-
-{
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "unauthorized",
-      "details": {
-        "text": "Invalid or expired access token"
-      }
-    }
-  ]
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:openspp:error:authentication"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unauthorized"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">401</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid or expired access token"</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>Causes:</strong></p>
 <ul class="simple">
-<li><p>Token expired (tokens last 1 hour)</p></li>
+<li><p>Token expired (tokens last 24 hours by default)</p></li>
 <li><p>Token not provided</p></li>
 <li><p>Invalid token format</p></li>
 </ul>
@@ -2586,89 +3130,57 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="section" id="forbidden">
 <h3>403 Forbidden<a class="headerlink" href="#forbidden" title="Permalink to this headline">#</a></h3>
 <p>Insufficient permissions or consent:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 403 Forbidden
-
-{
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "forbidden",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "CONSENT_REQUIRED"
-          }
-        ],
-        "text": "No active consent for this data access"
-      }
-    }
-  ]
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:openspp:error:authorization"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Forbidden"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">403</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No active consent for this data access"</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p><strong>Error Codes:</strong></p>
+<p><strong>Common Causes:</strong></p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Code</p></th>
+<tr class="row-odd"><th class="head"><p>Cause</p></th>
 <th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CONSENT_REQUIRED</span></code></p></td>
-<td><p>No consent from registrant</p></td>
+<tr class="row-even"><td><p>No consent</p></td>
+<td><p>Registrant hasn't consented to data sharing</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CONSENT_EXPIRED</span></code></p></td>
+<tr class="row-odd"><td><p>Expired consent</p></td>
 <td><p>Consent has expired</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SCOPE_INSUFFICIENT</span></code></p></td>
-<td><p>API client lacks required scope</p></td>
+<tr class="row-even"><td><p>Insufficient scope</p></td>
+<td><p>API client lacks the required scope</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Solution:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">handle_forbidden_error</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Handle 403 Forbidden errors."""</span>
-    <span class="n">outcome</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-    <span class="n">issue</span> <span class="o">=</span> <span class="n">outcome</span><span class="p">[</span><span class="s2">"issue"</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">error_code</span> <span class="o">=</span> <span class="n">issue</span><span class="p">[</span><span class="s2">"details"</span><span class="p">][</span><span class="s2">"coding"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"code"</span><span class="p">]</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="n">detail</span> <span class="o">=</span> <span class="n">error</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"detail"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">error_code</span> <span class="o">==</span> <span class="s2">"CONSENT_REQUIRED"</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s2">"consent"</span> <span class="ow">in</span> <span class="n">detail</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"No consent on file. Contact registrant for consent."</span><span class="p">)</span>
-        <span class="c1"># Initiate consent request workflow</span>
-    <span class="k">elif</span> <span class="n">error_code</span> <span class="o">==</span> <span class="s2">"CONSENT_EXPIRED"</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Consent expired. Request renewal."</span><span class="p">)</span>
-        <span class="c1"># Trigger consent renewal</span>
-    <span class="k">elif</span> <span class="n">error_code</span> <span class="o">==</span> <span class="s2">"SCOPE_INSUFFICIENT"</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="s2">"scope"</span> <span class="ow">in</span> <span class="n">detail</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Insufficient scope. Contact administrator."</span><span class="p">)</span>
-        <span class="c1"># Log scope issue for admin review</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Access denied: </span><span class="si">{</span><span class="n">detail</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="not-found">
 <h3>404 Not Found<a class="headerlink" href="#not-found" title="Permalink to this headline">#</a></h3>
 <p>Resource doesn't exist:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 404 Not Found
-
-{
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "not-found",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "RESOURCE_NOT_FOUND"
-          }
-        ],
-        "text": "Individual with identifier urn:gov:ph:psa:national-id|PH-999 not found"
-      }
-    }
-  ]
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:openspp:error:not-found"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not Found"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Individual with identifier urn:gov:ph:psa:national-id|PH-999 not found"</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>Causes:</strong></p>
@@ -2699,26 +3211,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="section" id="conflict">
 <h3>409 Conflict<a class="headerlink" href="#conflict" title="Permalink to this headline">#</a></h3>
 <p>Version conflict during update:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 409 Conflict
-
-{
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "conflict",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "VERSION_CONFLICT"
-          }
-        ],
-        "text": "Resource version mismatch. Expected: 3, Current: 5"
-      }
-    }
-  ]
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:openspp:error:conflict"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Conflict"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">409</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Resource version mismatch. Expected: 3, Current: 5"</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>Cause:</strong> Another client modified the resource between your read and update.</p>
@@ -2766,57 +3264,42 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="section" id="unprocessable-entity">
 <h3>422 Unprocessable Entity<a class="headerlink" href="#unprocessable-entity" title="Permalink to this headline">#</a></h3>
 <p>Validation error:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 422 Unprocessable Entity
-
-{
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "invalid",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "VALIDATION_ERROR"
-          }
-        ],
-        "text": "Validation failed"
-      },
-      "diagnostics": "birthDate: date must be in the past",
-      "location": ["Individual.birthDate"]
-    },
-    {
-      "severity": "error",
-      "code": "required",
-      "details": {
-        "text": "Missing required field"
-      },
-      "diagnostics": "name: field is required",
-      "location": ["Individual.name"]
-    }
-  ]
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:openspp:error:validation"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unprocessable Entity"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">422</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Validation failed"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"birthDate"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date must be in the past"</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field is required"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>Common Validation Errors:</strong></p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Code</p></th>
+<tr class="row-odd"><th class="head"><p>Error</p></th>
 <th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">VALIDATION_ERROR</span></code></p></td>
-<td><p>General validation failure</p></td>
+<tr class="row-even"><td><p>Missing required field</p></td>
+<td><p>A required field was not provided</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">INVALID_IDENTIFIER</span></code></p></td>
-<td><p>Identifier format invalid</p></td>
+<tr class="row-odd"><td><p>Invalid identifier format</p></td>
+<td><p>Identifier doesn't match expected pattern</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DUPLICATE_IDENTIFIER</span></code></p></td>
-<td><p>Identifier already exists</p></td>
+<tr class="row-even"><td><p>Duplicate identifier</p></td>
+<td><p>Identifier already exists in the system</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">INVALID_REFERENCE</span></code></p></td>
+<tr class="row-odd"><td><p>Invalid reference</p></td>
 <td><p>Referenced resource doesn't exist</p></td>
 </tr>
 </tbody>
@@ -2824,18 +3307,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <p><strong>Solution:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">handle_validation_errors</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""Parse and handle validation errors."""</span>
-    <span class="n">outcome</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
     <span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">outcome</span><span class="p">[</span><span class="s2">"issue"</span><span class="p">]:</span>
-        <span class="n">location</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"location"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"unknown"</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">message</span> <span class="o">=</span> <span class="n">issue</span><span class="p">[</span><span class="s2">"details"</span><span class="p">][</span><span class="s2">"text"</span><span class="p">]</span>
-        <span class="n">diagnostics</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"diagnostics"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
-
+    <span class="k">for</span> <span class="n">field_error</span> <span class="ow">in</span> <span class="n">error</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"errors"</span><span class="p">,</span> <span class="p">[]):</span>
         <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
-            <span class="s2">"field"</span><span class="p">:</span> <span class="n">location</span><span class="p">,</span>
-            <span class="s2">"message"</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span>
-            <span class="s2">"details"</span><span class="p">:</span> <span class="n">diagnostics</span>
+            <span class="s2">"field"</span><span class="p">:</span> <span class="n">field_error</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"field"</span><span class="p">,</span> <span class="s2">"unknown"</span><span class="p">),</span>
+            <span class="s2">"message"</span><span class="p">:</span> <span class="n">field_error</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"message"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
         <span class="p">})</span>
 
     <span class="k">return</span> <span class="n">errors</span>
@@ -2858,29 +3336,17 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="section" id="too-many-requests">
 <h3>429 Too Many Requests<a class="headerlink" href="#too-many-requests" title="Permalink to this headline">#</a></h3>
 <p>Rate limit exceeded:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 429 Too Many Requests
-X-RateLimit-Limit: 1000
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 429 Too Many Requests
+X-RateLimit-Limit: 30
 X-RateLimit-Remaining: 0
-X-RateLimit-Reset: 60
-Retry-After: 60
+X-RateLimit-Reset: 45
+Retry-After: 45
 
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "throttled",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "RATE_LIMIT_EXCEEDED"
-          }
-        ],
-        "text": "Rate limit exceeded. Retry after 60 seconds."
-      }
-    }
-  ]
+  "type": "urn:openspp:error:server-error",
+  "title": "Too Many Requests",
+  "status": 429,
+  "detail": "Rate limit exceeded. Retry after 45 seconds."
 }
 </pre></div>
 </div>
@@ -2893,19 +3359,39 @@ Retry-After: 60
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">X-RateLimit-Limit</span></code></p></td>
-<td><p>Requests allowed per period</p></td>
+<td><p>Requests allowed per minute (default: 30)</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">X-RateLimit-Remaining</span></code></p></td>
-<td><p>Requests remaining</p></td>
+<td><p>Requests remaining in current window</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">X-RateLimit-Reset</span></code></p></td>
-<td><p>Seconds until limit resets</p></td>
+<td><p>Seconds until the limit resets</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Retry-After</span></code></p></td>
-<td><p>Seconds to wait before retry</p></td>
+<td><p>Seconds to wait before retrying</p></td>
 </tr>
 </tbody>
 </table>
+<p><strong>Default Rate Limits:</strong></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Endpoint</p></th>
+<th class="head"><p>Per Minute</p></th>
+<th class="head"><p>Per Day</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>General API</p></td>
+<td><p>30</p></td>
+<td><p>5,000</p></td>
+</tr>
+<tr class="row-odd"><td><p>OAuth token (<code class="docutils literal notranslate"><span class="pre">/oauth/token</span></code>)</p></td>
+<td><p>5</p></td>
+<td><p>50</p></td>
+</tr>
+</tbody>
+</table>
+<p>Rate limits are configurable per API client. Contact your administrator for higher limits.</p>
 <p><strong>Solution:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
@@ -2930,21 +3416,12 @@ Retry-After: 60
 <div class="section" id="internal-server-error">
 <h3>500 Internal Server Error<a class="headerlink" href="#internal-server-error" title="Permalink to this headline">#</a></h3>
 <p>Server-side error:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>HTTP/1.1 500 Internal Server Error
-
-{
-  "resourceType": "OperationOutcome",
-  "issue": [
-    {
-      "severity": "error",
-      "code": "exception",
-      "details": {
-        "text": "Internal server error. Please contact support."
-      },
-      "diagnostics": "Error ID: abc123-def456"
-    }
-  ]
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:openspp:error:server-error"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal server error. Please contact support."</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>Solution:</strong></p>
@@ -2992,22 +3469,21 @@ Retry-After: 60
 </pre></div>
 </div>
 </div>
-<div class="section" id="parse-operationoutcome">
-<h3>2. Parse OperationOutcome<a class="headerlink" href="#parse-operationoutcome" title="Permalink to this headline">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parse_operation_outcome</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Extract error details from OperationOutcome."""</span>
+<div class="section" id="parse-error-responses">
+<h3>2. Parse Error Responses<a class="headerlink" href="#parse-error-responses" title="Permalink to this headline">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parse_error_response</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Extract error details from ProblemDetail response."""</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">outcome</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">outcome</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"resourceType"</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"OperationOutcome"</span><span class="p">:</span>
-                <span class="n">issues</span> <span class="o">=</span> <span class="n">outcome</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"issue"</span><span class="p">,</span> <span class="p">[])</span>
-                <span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">issues</span><span class="p">:</span>
-                    <span class="n">severity</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"severity"</span><span class="p">)</span>
-                    <span class="n">text</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"details"</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"text"</span><span class="p">,</span> <span class="s2">"Unknown error"</span><span class="p">)</span>
-                    <span class="n">location</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"location"</span><span class="p">,</span> <span class="p">[])</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[</span><span class="si">{</span><span class="n">severity</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="n">location</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Location: </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">location</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="n">error</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+            <span class="n">error_type</span> <span class="o">=</span> <span class="n">error</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"type"</span><span class="p">,</span> <span class="s2">"unknown"</span><span class="p">)</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">error</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"title"</span><span class="p">,</span> <span class="s2">"Error"</span><span class="p">)</span>
+            <span class="n">detail</span> <span class="o">=</span> <span class="n">error</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"detail"</span><span class="p">,</span> <span class="s2">"Unknown error"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">detail</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+            <span class="c1"># Print field-level errors if present (422 responses)</span>
+            <span class="k">for</span> <span class="n">field_error</span> <span class="ow">in</span> <span class="n">error</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"errors"</span><span class="p">,</span> <span class="p">[]):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">field_error</span><span class="p">[</span><span class="s1">'field'</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">field_error</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"HTTP </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
@@ -3196,31 +3672,17 @@ Retry-After: 60
     <span class="k">def</span> <span class="nf">_handle_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">"""Handle error responses."""</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">outcome</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">outcome</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"resourceType"</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"OperationOutcome"</span><span class="p">:</span>
-                <span class="n">issues</span> <span class="o">=</span> <span class="n">outcome</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"issue"</span><span class="p">,</span> <span class="p">[])</span>
-                <span class="n">error_messages</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">error</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+            <span class="n">error_type</span> <span class="o">=</span> <span class="n">error</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"type"</span><span class="p">,</span> <span class="s2">"unknown"</span><span class="p">)</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">error</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"title"</span><span class="p">,</span> <span class="s2">"Error"</span><span class="p">)</span>
+            <span class="n">detail</span> <span class="o">=</span> <span class="n">error</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"detail"</span><span class="p">,</span> <span class="s2">"Unknown error"</span><span class="p">)</span>
 
-                <span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">issues</span><span class="p">:</span>
-                    <span class="n">severity</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"severity"</span><span class="p">,</span> <span class="s2">"error"</span><span class="p">)</span>
-                    <span class="n">details</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"details"</span><span class="p">,</span> <span class="p">{})</span>
-                    <span class="n">text</span> <span class="o">=</span> <span class="n">details</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"text"</span><span class="p">,</span> <span class="s2">"Unknown error"</span><span class="p">)</span>
-                    <span class="n">location</span> <span class="o">=</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"location"</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">"API error </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">error_type</span><span class="si">}</span><span class="s2">):"</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">detail</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
-                    <span class="n">error_messages</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
-                        <span class="s2">"severity"</span><span class="p">:</span> <span class="n">severity</span><span class="p">,</span>
-                        <span class="s2">"text"</span><span class="p">:</span> <span class="n">text</span><span class="p">,</span>
-                        <span class="s2">"location"</span><span class="p">:</span> <span class="n">location</span><span class="p">,</span>
-                        <span class="s2">"diagnostics"</span><span class="p">:</span> <span class="n">issue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"diagnostics"</span><span class="p">)</span>
-                    <span class="p">})</span>
-
-                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">"API error </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">error_messages</span><span class="p">:</span>
-                    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  [</span><span class="si">{</span><span class="n">error</span><span class="p">[</span><span class="s1">'severity'</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">error</span><span class="p">[</span><span class="s1">'text'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="n">error</span><span class="p">[</span><span class="s1">'location'</span><span class="p">]:</span>
-                        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">"    Location: </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">error</span><span class="p">[</span><span class="s1">'location'</span><span class="p">])</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="n">error</span><span class="p">[</span><span class="s1">'diagnostics'</span><span class="p">]:</span>
-                        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">"    Diagnostics: </span><span class="si">{</span><span class="n">error</span><span class="p">[</span><span class="s1">'diagnostics'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="c1"># Log field-level errors if present</span>
+            <span class="k">for</span> <span class="n">field_error</span> <span class="ow">in</span> <span class="n">error</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"errors"</span><span class="p">,</span> <span class="p">[]):</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Field '</span><span class="si">{</span><span class="n">field_error</span><span class="p">[</span><span class="s1">'field'</span><span class="p">]</span><span class="si">}</span><span class="s2">': </span><span class="si">{</span><span class="n">field_error</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">"HTTP </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -3233,7 +3695,7 @@ Retry-After: 60
 <span class="k">try</span><span class="p">:</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">handler</span><span class="o">.</span><span class="n">make_request</span><span class="p">(</span>
         <span class="n">method</span><span class="o">=</span><span class="s2">"GET"</span><span class="p">,</span>
-        <span class="n">url</span><span class="o">=</span><span class="s2">"https://api.openspp.org/api/v2/spp/Individual/..."</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="s2">"https://{your-domain}/api/v2/spp/Individual/..."</span><span class="p">,</span>
         <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">"Authorization"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">"</span><span class="p">}</span>
     <span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Success:"</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
@@ -3242,8 +3704,8 @@ Retry-After: 60
 </pre></div>
 </div>
 </div>
-<div class="section" id="are-you-stuck">
-<h2>Are You Stuck?<a class="headerlink" href="#are-you-stuck" title="Permalink to this headline">#</a></h2>
+<div class="section" id="common-mistakes">
+<h2>Common mistakes<a class="headerlink" href="#common-mistakes" title="Permalink to this headline">#</a></h2>
 <p><strong>Getting errors you don't understand?</strong></p>
 <p>Check the <code class="docutils literal notranslate"><span class="pre">diagnostics</span></code> field for technical details. Search the error code in the documentation.</p>
 <p><strong>Retries not working?</strong></p>
@@ -3255,8 +3717,8 @@ Retry-After: 60
 <p><strong>Transaction failing partway through?</strong></p>
 <p>Transaction bundles should rollback fully. If not, report as a bug. Check that you're using <code class="docutils literal notranslate"><span class="pre">type:</span> <span class="pre">"transaction"</span></code>, not <code class="docutils literal notranslate"><span class="pre">"batch"</span></code>.</p>
 </div>
-<div class="section" id="next-steps">
-<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+<div class="section" id="what-s-next">
+<h2>What's next<a class="headerlink" href="#what-s-next" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="authentication.html"><span class="doc">Authentication</span></a> - OAuth 2.0 setup</p></li>
 <li><p><a class="reference internal" href="resources.html"><span class="doc">API Resources</span></a> - Available resources</p></li>
@@ -3265,11 +3727,10 @@ Retry-After: 60
 </ul>
 </div>
 <div class="section" id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">#</a></h2>
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">HTTP Status Codes</a> - HTTP status reference</p></li>
-<li><p><a class="reference external" href="https://www.hl7.org/fhir/operationoutcome.html">FHIR OperationOutcome</a> - OperationOutcome structure</p></li>
-<li><p><a class="reference external" href="https://www.rfc-editor.org/rfc/rfc7807">REST API Error Handling</a> - Problem Details for HTTP APIs</p></li>
+<li><p><a class="reference external" href="https://www.rfc-editor.org/rfc/rfc9457">RFC 9457: Problem Details for HTTP APIs</a> - Error response format standard</p></li>
 </ul>
 </div>
 </div>
@@ -3285,10 +3746,10 @@ Retry-After: 60
 <p class="prev-next-title">Batch Operations</p>
 </div>
 </a>
-<a class="right-next" href="studio_integration.html" id="next-link" title="next page">
+<a class="right-next" href="tutorial.html" id="next-link" title="next page">
 <div class="prev-next-info">
 <p class="prev-next-subtitle">next</p>
-<p class="prev-next-title">Studio API Integration</p>
+<p class="prev-next-title">Tutorial: build a Python API client</p>
 </div>
 <i class="fas fa-angle-right"></i>
 </a>

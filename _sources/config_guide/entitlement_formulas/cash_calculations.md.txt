@@ -86,22 +86,17 @@ To scale the amount by a beneficiary field:
 | Field | Value |
 |-------|-------|
 | Amount | `100` |
-| Multiplier Field | `z_ind_grp_num_individuals` |
+| Multiplier Field | (select an integer field from the registrant model) |
 | Max Multiplier | `10` |
 
-**Result:** $100 per household member, maximum 10 members = $1,000 max.
+**Result:** $100 multiplied by the selected field value, maximum 10 = $1,000 max.
 
-### Common multiplier fields
+### How multiplier fields work
 
-| Field | Description |
-|-------|-------------|
-| `z_ind_grp_num_individuals` | Total household members |
-| `z_ind_grp_num_children` | Number of children |
-| `z_ind_grp_num_adults` | Number of adults |
-| `z_ind_grp_num_elderly` | Number of elderly members |
+The **Multiplier Field** dropdown shows all integer fields available on the registrant model (`res.partner`). Common examples include household member counts, but the specific fields available depend on your deployment's custom field configuration.
 
 ```{note}
-Field names depend on your registry configuration. Check your registrant model for available fields.
+If you don't see the fields you need in the dropdown, ask your administrator to create computed integer fields on the registrant model (e.g., via Studio or a custom module) that count household members by category.
 ```
 
 ## Maximum amount cap
@@ -139,7 +134,7 @@ Combine multiple items for complex calculations:
 | Field | Value |
 |-------|-------|
 | Amount | `50` |
-| Multiplier Field | `z_ind_grp_num_children_under_5` |
+| Multiplier Field | (select a field that counts children under 5) |
 | Max Multiplier | `5` |
 
 **Result for household with 3 children under 5:**

@@ -95,8 +95,5 @@ Screenshot placeholders:
 
 ## Related reading
 
-- CEL basics: {doc}`../cel_quickstart`
-- CEL patterns: {doc}`../cel_cookbook`
-- CEL debugging: {doc}`../cel_troubleshooting`
-- Technical reference: {doc}`../../technical_reference/cel/index`
+- CEL reference: {doc}`/config_guide/cel/index`
 

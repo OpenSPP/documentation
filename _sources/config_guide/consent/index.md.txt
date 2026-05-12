@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring data sharing permissions and consent management for regulatory compliance.
 
+## Prerequisites
+
+```{important}
+The `spp_consent` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **{doc}`overview`** - Consent concepts, legal basis, and status lifecycle
@@ -30,7 +36,7 @@ api_consent_filtering
 To configure consent management:
 
 1. Navigate to **Registry → Configuration → Consent Management**
-2. Create a **Privacy Notice** under Configuration → Privacy Notices
+2. Create a **Privacy Notice** under **Consent Management → Configuration → Privacy Notices**
 3. Configure **Purposes** and **Personal Data Categories** (pre-loaded with DPV defaults)
 4. Record consent from beneficiaries using the wizard or bulk import
 5. Consent summary is automatically cached on registrants for API filtering

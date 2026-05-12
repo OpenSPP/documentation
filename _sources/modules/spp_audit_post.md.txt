@@ -26,7 +26,7 @@ The module's primary goal is to provide a comprehensive overview of changes not 
     * Enables users to specify the relational field that connects the child model to the parent model within the audit rule configuration.
     * Ensures that the audit log messages are posted to the correct parent records based on the defined relationship.
 
-3. **Enhanced Audit Log Model ([spp.audit.log](spp.audit.log))**:
+3. **Enhanced Audit Log Model (`spp.audit.log`)**:
     * Introduces new fields to store information about the parent record:
         * **parent_model_id:** Stores the model ID of the parent record.
         * **parent_res_ids_str:** Stores a comma-separated string of IDs representing the parent records.

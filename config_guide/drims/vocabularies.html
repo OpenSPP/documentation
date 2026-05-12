@@ -22,7 +22,7 @@
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
 <meta content="This guide is for implementers customizing DRIMS controlled vocabularies. If you configure logic in tools like Kobo or CommCare, you have the skills to manage DRIMS vocabularies. You don't need Pyt..." name="description"/>
 <meta content="en_US" property="og:locale"/>
-<title>Configuring Vocabularies — OpenSPP Documentation v2.0</title>
+<title>Configuring Vocabularies – Configuration guide – DRIMS Configuration Guide — OpenSPP Documentation v2.0</title>
 <!-- Loaded before other Sphinx assets -->
 <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
@@ -60,6 +60,8 @@
 <link href="../../_static/icon_192.png" rel="shortcut icon"/>
 <link href="../../genindex.html" rel="index" title="Index"/>
 <link href="../../search.html" rel="search" title="Search"/>
+<link href="../eligibility/index.html" rel="next" title="Eligibility rules"/>
+<link href="alerts.html" rel="prev" title="Configuring Alerts and Thresholds"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="None" name="docsearch:language"/>
 <!-- Google Analytics -->
@@ -124,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </input></div>
 </form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
 <div class="bd-toc-item active">
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children">
 <a class="reference internal" href="../../products/">
    Products
@@ -330,14 +332,9 @@ document.addEventListener('DOMContentLoaded', function() {
 </li>
 </ul>
 </li>
-<li class="toctree-l2">
-<a class="reference internal" href="../../get_started/explore/">
-     Explore OpenSPP
-    </a>
-</li>
 <li class="toctree-l2 has-children">
-<a class="reference internal" href="../../get_started/first_household/">
-     Your first household
+<a class="reference internal" href="../../get_started/try_spmis/">
+     Try OpenSPP SP-MIS
     </a>
 <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
 <label for="toctree-checkbox-7">
@@ -346,58 +343,26 @@ document.addEventListener('DOMContentLoaded', function() {
 </label>
 <ul>
 <li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_household/01_access_registry.html">
-       Step 1: Access the Registry
+<a class="reference internal" href="../../get_started/try_spmis/install_data.html">
+       Install SP-MIS demo data
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_household/02_create_household.html">
-       Step 2: Create a Household
+<a class="reference internal" href="../../get_started/try_spmis/stories.html">
+       SP-MIS Stories
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_household/03_add_members.html">
-       Step 3: Add members
+<a class="reference internal" href="../../get_started/try_spmis/demo_scenarios.html">
+       SP-MIS Demo scenarios
       </a>
 </li>
 </ul>
 </li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../../get_started/first_program/">
-     Your first program
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/configuration_vs_customization.html">
+     Configuration vs customization
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-<label for="toctree-checkbox-8">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_program/01_access_program.html">
-       Step 1: Access the program section
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_program/02_create_program.html">
-       Step 2: Create your first social protection program
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_program/03_enroll_beneficiaries.html">
-       Step 3: Import and enroll beneficiaries
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_program/04_run_cycle.html">
-       Step 4: Understanding program cycles
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_program/05_distribute_entitlements.html">
-       Step 5: Distribute entitlements
-      </a>
-</li>
-</ul>
 </li>
 <li class="toctree-l2">
 <a class="reference internal" href="../../get_started/poc_and_pilot.html">
@@ -410,8 +375,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/">
    User guide
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-<label for="toctree-checkbox-9">
+<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+<label for="toctree-checkbox-8">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -420,8 +385,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/getting_started/">
      Getting started
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-<label for="toctree-checkbox-10">
+<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+<label for="toctree-checkbox-9">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -442,8 +407,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/registry/">
      Registry
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-<label for="toctree-checkbox-11">
+<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+<label for="toctree-checkbox-10">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -473,14 +438,19 @@ document.addEventListener('DOMContentLoaded', function() {
        Export registrant data
       </a>
 </li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/farmer_registry.html">
+       Manage farm data
+      </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 has-children">
 <a class="reference internal" href="../../user_guide/change_requests/">
      Change Requests
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-<label for="toctree-checkbox-12">
+<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+<label for="toctree-checkbox-11">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -506,8 +476,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/case_management/">
      Case management
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-<label for="toctree-checkbox-13">
+<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+<label for="toctree-checkbox-12">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -523,8 +493,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/programs/">
      Programs
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-<label for="toctree-checkbox-14">
+<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+<label for="toctree-checkbox-13">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -565,8 +535,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/payments/">
      Payments
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-<label for="toctree-checkbox-15">
+<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+<label for="toctree-checkbox-14">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -582,8 +552,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/approvals/">
      Approvals
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-<label for="toctree-checkbox-16">
+<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+<label for="toctree-checkbox-15">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -599,8 +569,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/grievances/">
      Grievance Redress Mechanism (GRM)
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-<label for="toctree-checkbox-17">
+<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+<label for="toctree-checkbox-16">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -616,8 +586,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/gis/">
      Geographic Information System (GIS)
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-<label for="toctree-checkbox-18">
+<input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+<label for="toctree-checkbox-17">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -633,8 +603,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/reference/">
      Reference
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-<label for="toctree-checkbox-19">
+<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+<label for="toctree-checkbox-18">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -653,19 +623,36 @@ document.addEventListener('DOMContentLoaded', function() {
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children">
+<li class="toctree-l1 current active has-children">
 <a class="reference internal" href="../">
    Configuration guide
   </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+<label for="toctree-checkbox-19">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../alerts/">
+     Alerts
+    </a>
 <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
 <label for="toctree-checkbox-20">
 <i class="fas fa-chevron-down">
 </i>
 </label>
 <ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../alerts/overview.html">
+       Alerts overview
+      </a>
+</li>
+</ul>
+</li>
 <li class="toctree-l2 has-children">
-<a class="reference internal" href="../studio/">
-     OpenSPP Studio
+<a class="reference internal" href="../approval_workflows/">
+     Approval workflows
     </a>
 <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
 <label for="toctree-checkbox-21">
@@ -674,23 +661,106 @@ document.addEventListener('DOMContentLoaded', function() {
 </label>
 <ul>
 <li class="toctree-l3">
-<a class="reference internal" href="../studio/overview.html">
-       Studio Overview
+<a class="reference internal" href="../approval_workflows/overview.html">
+       Approval workflows overview
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../studio/registry_field_builder.html">
-       Custom Fields (Registry Field Builder)
+<a class="reference internal" href="../approval_workflows/tiers.html">
+       Approval tiers
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../studio/event_type_designer.html">
-       Event Type Designer
+<a class="reference internal" href="../approval_workflows/batch_approvals.html">
+       Batch approvals and freeze periods
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../area_management/">
+     Area management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+<label for="toctree-checkbox-22">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../area_management/overview.html">
+       Area management overview
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../studio/change_request_builder.html">
-       Change Request Builder
+<a class="reference internal" href="../area_management/hdx_integration.html">
+       HDX COD integration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../audit/">
+     Audit configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+<label for="toctree-checkbox-23">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../audit/overview.html">
+       Audit configuration overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../audit/backends.html">
+       Audit backends
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../banking/">
+     Banking
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+<label for="toctree-checkbox-24">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../banking/overview.html">
+       Banking overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../case_management/">
+     Case management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+<label for="toctree-checkbox-25">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../case_management/overview.html">
+       Case management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../case_management/stages.html">
+       Case stages
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../case_management/teams.html">
+       Case teams
       </a>
 </li>
 </ul>
@@ -699,8 +769,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../cel/">
      CEL expressions
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
-<label for="toctree-checkbox-22">
+<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+<label for="toctree-checkbox-26">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -733,176 +803,11 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 </li>
 <li class="toctree-l2 has-children">
-<a class="reference internal" href="../eligibility/">
-     Eligibility rules
-    </a>
-<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
-<label for="toctree-checkbox-23">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../eligibility/cel_expressions.html">
-       CEL expressions for eligibility
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../eligibility/geographic_targeting.html">
-       Geographic targeting
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../eligibility/templates.html">
-       Expression templates
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../eligibility/testing.html">
-       Testing eligibility rules
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../eligibility/advanced.html">
-       Advanced eligibility configuration
-      </a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../entitlement_formulas/">
-     Entitlement formulas
-    </a>
-<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
-<label for="toctree-checkbox-24">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../entitlement_formulas/cash_calculations.html">
-       Cash calculations
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../entitlement_formulas/inkind_baskets.html">
-       In-kind and basket entitlements
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../entitlement_formulas/formula_library.html">
-       Formula library
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../entitlement_formulas/dynamic_entitlements.html">
-       Dynamic entitlements
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../entitlement_formulas/conditional_logic.html">
-       Conditional logic
-      </a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../vocabulary/">
-     Vocabulary System
-    </a>
-<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
-<label for="toctree-checkbox-25">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../vocabulary/overview.html">
-       Vocabulary Overview
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../vocabulary/standard_vocabularies.html">
-       Standard Vocabularies
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../vocabulary/profiles.html">
-       Vocabulary Profiles
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../vocabulary/custom.html">
-       Custom Vocabularies
-      </a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../variables/">
-     Variables &amp; Indicators
-    </a>
-<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
-<label for="toctree-checkbox-26">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../variables/overview.html">
-       Variables Overview
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../variables/creating_variables.html">
-       Creating Variables
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../variables/variable_types.html">
-       Variable Types
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../variables/using_variables.html">
-       Using Variables in CEL
-      </a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../event_data/">
-     Event Data
-    </a>
-<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
-<label for="toctree-checkbox-27">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../event_data/overview.html">
-       Event Data Overview
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../event_data/event_types.html">
-       Configuring Event Types
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../event_data/field_definitions.html">
-       Defining Event Fields
-      </a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children">
 <a class="reference internal" href="../change_request_types/">
      Change request types
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
-<label for="toctree-checkbox-28">
+<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+<label for="toctree-checkbox-27">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -948,8 +853,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../consent/">
      Consent configuration
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
-<label for="toctree-checkbox-29">
+<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+<label for="toctree-checkbox-28">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -977,11 +882,298 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 </li>
 <li class="toctree-l2 has-children">
+<a class="reference internal" href="../custom_fields/">
+     Custom fields
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+<label for="toctree-checkbox-29">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_fields/overview.html">
+       Custom fields overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children">
+<a class="reference internal" href="">
+     DRIMS Configuration Guide
+    </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+<label for="toctree-checkbox-30">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l3">
+<a class="reference internal" href="warehouses.html">
+       Configuring Warehouses
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="approval_chains.html">
+       Configuring Approval Workflows
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="alerts.html">
+       Configuring Alerts and Thresholds
+      </a>
+</li>
+<li class="toctree-l3 current active">
+<a class="current reference internal" href="#">
+       Configuring Vocabularies
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../eligibility/">
+     Eligibility rules
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+<label for="toctree-checkbox-31">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/cel_expressions.html">
+       CEL expressions for eligibility
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/geographic_targeting.html">
+       Geographic targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/templates.html">
+       Expression templates
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/testing.html">
+       Testing eligibility rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../eligibility/advanced.html">
+       Advanced eligibility configuration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../entitlement_formulas/">
+     Entitlement formulas
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+<label for="toctree-checkbox-32">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/cash_calculations.html">
+       Cash calculations
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/inkind_entitlements.html">
+       In-kind entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/formula_library.html">
+       Formula library
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/dynamic_entitlements.html">
+       Dynamic entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../entitlement_formulas/conditional_logic.html">
+       Conditional logic
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../event_data/">
+     Event Data
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+<label for="toctree-checkbox-33">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/overview.html">
+       Event Data Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/event_types.html">
+       Configuring Event Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../event_data/field_definitions.html">
+       Defining Event Fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../farmer_registry/">
+     Farmer registry
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+<label for="toctree-checkbox-34">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../farmer_registry/overview.html">
+       Farmer registry overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../farmer_registry/farm_details.html">
+       Farm details, seasons, and activities
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../gis/">
+     GIS configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+<label for="toctree-checkbox-35">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../gis/overview.html">
+       GIS configuration overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../gis/report_templates.html">
+       GIS reports and indicator layers
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../grievance_redress/">
+     Grievance redress
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+<label for="toctree-checkbox-36">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../grievance_redress/overview.html">
+       Grievance redress overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../grievance_redress/sla_rules.html">
+       SLA rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../grievance_redress/teams_tags.html">
+       GRM teams and tags
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../hazard_management/">
+     Hazard management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+<label for="toctree-checkbox-37">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../hazard_management/overview.html">
+       Hazard management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../hazard_management/program_linking.html">
+       Linking programs to hazard incidents
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../import_matching/">
+     Import matching
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+<label for="toctree-checkbox-38">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../import_matching/overview.html">
+       Import matching overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../studio/">
+     OpenSPP Studio
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+<label for="toctree-checkbox-39">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/overview.html">
+       Studio Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/registry_field_builder.html">
+       Custom Fields (Registry Field Builder)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../studio/event_type_designer.html">
+       Event Type Designer
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
 <a class="reference internal" href="../role_configuration/">
      Role configuration
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
-<label for="toctree-checkbox-30">
+<input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+<label for="toctree-checkbox-40">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1013,58 +1205,321 @@ document.addEventListener('DOMContentLoaded', function() {
 </li>
 </ul>
 </li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../scoring/">
+     Scoring &amp; Assessment
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+<label for="toctree-checkbox-41">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../scoring/overview.html">
+       Scoring Framework Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../scoring/pmt.html">
+       Proxy Means Test (PMT) Configuration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../scoring/vulnerability.html">
+       Vulnerability Scoring Configuration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../scoring/swdi.html">
+       Social Welfare Development Index (SWDI)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../scoring/custom.html">
+       Creating Custom Scoring Formulas
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../service_points/">
+     Service points
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+<label for="toctree-checkbox-42">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../service_points/overview.html">
+       Service points overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../service_points/lifecycle.html">
+       Service point lifecycle
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../session_tracking/">
+     Session tracking
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+<label for="toctree-checkbox-43">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../session_tracking/overview.html">
+       Session tracking overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../simulation/">
+     Simulation
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+<label for="toctree-checkbox-44">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../simulation/overview.html">
+       Simulation overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../storage_backend/">
+     Storage backend
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+<label for="toctree-checkbox-45">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../storage_backend/overview.html">
+       Storage backend overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../variables/">
+     Variables
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+<label for="toctree-checkbox-46">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/overview.html">
+       Variables Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/creating_variables.html">
+       Creating Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/variable_types.html">
+       Variable Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../variables/using_variables.html">
+       Using Variables in CEL
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../vocabulary/">
+     Vocabulary System
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+<label for="toctree-checkbox-47">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/overview.html">
+       Vocabulary Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/standard_vocabularies.html">
+       Standard Vocabularies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/profiles.html">
+       Vocabulary Profiles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../vocabulary/custom.html">
+       Custom Vocabularies
+      </a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 has-children">
 <a class="reference internal" href="../../developer_guide/">
    Developer guide
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-<label for="toctree-checkbox-31">
+<input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+<label for="toctree-checkbox-48">
 <i class="fas fa-chevron-down">
 </i>
 </label>
 <ul>
 <li class="toctree-l2">
 <a class="reference internal" href="../../developer_guide/setup/">
-     Development Setup
+     Development setup
     </a>
 </li>
 <li class="toctree-l2 has-children">
 <a class="reference internal" href="../../developer_guide/architecture/">
      Architecture
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-<label for="toctree-checkbox-32">
+<input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+<label for="toctree-checkbox-49">
 <i class="fas fa-chevron-down">
 </i>
 </label>
 <ul>
 <li class="toctree-l3">
-<a class="reference internal" href="../../developer_guide/architecture/cel_internals.html">
-       CEL Internals
+<a class="reference internal" href="../../developer_guide/architecture/module_organization.html">
+       Module organization
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../developer_guide/architecture/data_model.html">
+       Data model
       </a>
 </li>
 </ul>
 </li>
 <li class="toctree-l2 has-children">
-<a class="reference internal" href="../../developer_guide/extending/">
-     Extending OpenSPP
+<a class="reference internal" href="../../developer_guide/custom_modules/">
+     Custom modules
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
-<label for="toctree-checkbox-33">
+<input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+<label for="toctree-checkbox-50">
 <i class="fas fa-chevron-down">
 </i>
 </label>
 <ul>
 <li class="toctree-l3">
-<a class="reference internal" href="../../developer_guide/extending/custom_modules.html">
-       Customize Program
+<a class="reference internal" href="../../developer_guide/custom_modules/scaffold.html">
+       Module scaffold
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../../developer_guide/extending/cycle_manager.html">
-       Customize Cycle
+<a class="reference internal" href="../../developer_guide/custom_modules/models.html">
+       Models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../developer_guide/custom_modules/security.html">
+       Security
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../developer_guide/custom_modules/views.html">
+       Views and menus
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../developer_guide/custom_modules/mixins.html">
+       Mixins
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../developer_guide/custom_modules/testing.html">
+       Testing
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../developer_guide/custom_modules/example.html">
+       Example: custom registry fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../developer_guide/custom_managers/">
+     Custom program managers
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+<label for="toctree-checkbox-51">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../developer_guide/custom_managers/manager_pattern.html">
+       Manager pattern
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../developer_guide/custom_managers/building_managers.html">
+       Building a custom manager
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../developer_guide/custom_managers/tutorial.html">
+       Tutorial: build CCT program managers
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../developer_guide/change_request_types/">
+     Custom change request types
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+<label for="toctree-checkbox-52">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../developer_guide/change_request_types/detail_models.html">
+       Detail models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../developer_guide/change_request_types/apply_strategies.html">
+       Apply strategies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../developer_guide/change_request_types/approval_hooks.html">
+       Approval hooks
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../developer_guide/change_request_types/tutorial.html">
+       Tutorial: build a transfer member CR type
       </a>
 </li>
 </ul>
@@ -1073,8 +1528,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../developer_guide/api_v2/">
      API V2
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
-<label for="toctree-checkbox-34">
+<input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+<label for="toctree-checkbox-53">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1120,8 +1575,23 @@ document.addEventListener('DOMContentLoaded', function() {
       </a>
 </li>
 <li class="toctree-l3">
+<a class="reference internal" href="../../developer_guide/api_v2/tutorial.html">
+       Tutorial: build a Python API client
+      </a>
+</li>
+<li class="toctree-l3">
 <a class="reference internal" href="../../developer_guide/api_v2/studio_integration.html">
        Studio API Integration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../developer_guide/api_v2/entitlements_cycles.html">
+       Entitlements and Cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../developer_guide/api_v2/products_service_points.html">
+       Products and Service Points
       </a>
 </li>
 </ul>
@@ -1130,8 +1600,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../developer_guide/dci/">
      DCI Integration
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
-<label for="toctree-checkbox-35">
+<input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+<label for="toctree-checkbox-54">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1158,41 +1628,41 @@ document.addEventListener('DOMContentLoaded', function() {
 </li>
 </ul>
 </li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../../developer_guide/verifiable_credentials/">
-     Verifiable Credentials
+<li class="toctree-l2">
+<a class="reference internal" href="../../developer_guide/security/">
+     Security and Encryption
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
-<label for="toctree-checkbox-36">
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../developer_guide/cel/">
+     CEL (Common Expression Language)
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+<label for="toctree-checkbox-55">
 <i class="fas fa-chevron-down">
 </i>
 </label>
 <ul>
 <li class="toctree-l3">
-<a class="reference internal" href="../../developer_guide/verifiable_credentials/overview.html">
-       Verifiable Credentials Overview
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../developer_guide/verifiable_credentials/w3c_vc.html">
-       W3C Verifiable Credentials Data Model
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../developer_guide/verifiable_credentials/oidc4vci.html">
-       OpenID for Verifiable Credential Issuance
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../developer_guide/verifiable_credentials/implementation.html">
-       Verifiable Credentials Implementation Guide
+<a class="reference internal" href="../../developer_guide/cel/internals.html">
+       CEL Internals
       </a>
 </li>
 </ul>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../../developer_guide/integrations/">
-     Other Integrations
+<a class="reference internal" href="../../developer_guide/studio/">
+     Studio
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../developer_guide/audit/">
+     Audit and Versioning
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../developer_guide/contributing/">
+     Contributing
     </a>
 </li>
 </ul>
@@ -1201,8 +1671,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../ops_guide/">
    Operations guide
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
-<label for="toctree-checkbox-37">
+<input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+<label for="toctree-checkbox-56">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1211,8 +1681,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../ops_guide/deployment/">
      Deployment
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
-<label for="toctree-checkbox-38">
+<input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+<label for="toctree-checkbox-57">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1228,8 +1698,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../ops_guide/security/">
      Security
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
-<label for="toctree-checkbox-39">
+<input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+<label for="toctree-checkbox-58">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1287,8 +1757,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/">
    Reference
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
-<label for="toctree-checkbox-40">
+<input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+<label for="toctree-checkbox-59">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1297,8 +1767,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/">
      Modules Reference
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
-<label for="toctree-checkbox-41">
+<input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+<label for="toctree-checkbox-60">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1317,8 +1787,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_api_v2.html">
        API V2
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
-<label for="toctree-checkbox-42">
+<input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+<label for="toctree-checkbox-61">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1419,8 +1889,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_case_base.html">
        Case Management Base
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
-<label for="toctree-checkbox-43">
+<input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
+<label for="toctree-checkbox-62">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1466,8 +1936,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_cel_domain.html">
        CEL Domain Query Builder
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
-<label for="toctree-checkbox-44">
+<input class="toctree-checkbox" id="toctree-checkbox-63" name="toctree-checkbox-63" type="checkbox"/>
+<label for="toctree-checkbox-63">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1494,12 +1964,22 @@ document.addEventListener('DOMContentLoaded', function() {
 </li>
 </ul>
 </li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_registry_search.html">
+       Registry Search
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_widget.html">
+       Expression Widget
+      </a>
+</li>
 <li class="toctree-l3 has-children">
 <a class="reference internal" href="../../reference/modules/spp_change_request_v2.html">
        Change Request V2
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
-<label for="toctree-checkbox-45">
+<input class="toctree-checkbox" id="toctree-checkbox-64" name="toctree-checkbox-64" type="checkbox"/>
+<label for="toctree-checkbox-64">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1535,8 +2015,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_dci.html">
        DCI Core
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
-<label for="toctree-checkbox-46">
+<input class="toctree-checkbox" id="toctree-checkbox-65" name="toctree-checkbox-65" type="checkbox"/>
+<label for="toctree-checkbox-65">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1592,8 +2072,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_drims.html">
        DRIMS - Disaster Response Inventory Management
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
-<label for="toctree-checkbox-47">
+<input class="toctree-checkbox" id="toctree-checkbox-66" name="toctree-checkbox-66" type="checkbox"/>
+<label for="toctree-checkbox-66">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1624,8 +2104,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_farmer_registry.html">
        Farmer Registry
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
-<label for="toctree-checkbox-48">
+<input class="toctree-checkbox" id="toctree-checkbox-67" name="toctree-checkbox-67" type="checkbox"/>
+<label for="toctree-checkbox-67">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1656,8 +2136,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_gis.html">
        GIS
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
-<label for="toctree-checkbox-49">
+<input class="toctree-checkbox" id="toctree-checkbox-68" name="toctree-checkbox-68" type="checkbox"/>
+<label for="toctree-checkbox-68">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1693,8 +2173,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_grm.html">
        Grievance Redress Mechanism
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
-<label for="toctree-checkbox-50">
+<input class="toctree-checkbox" id="toctree-checkbox-69" name="toctree-checkbox-69" type="checkbox"/>
+<label for="toctree-checkbox-69">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1730,8 +2210,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_hazard.html">
        Hazard &amp; Emergency Management
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-<label for="toctree-checkbox-51">
+<input class="toctree-checkbox" id="toctree-checkbox-70" name="toctree-checkbox-70" type="checkbox"/>
+<label for="toctree-checkbox-70">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1744,6 +2224,11 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 </li>
 <li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_hazard_programs.html">
+       Programs Integration
+      </a>
+</li>
+<li class="toctree-l3">
 <a class="reference internal" href="../../reference/modules/spp_hide_menus_base.html">
        Hide Menus Base
       </a>
@@ -1752,8 +2237,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_hxl.html">
        HXL Integration
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-<label for="toctree-checkbox-52">
+<input class="toctree-checkbox" id="toctree-checkbox-71" name="toctree-checkbox-71" type="checkbox"/>
+<label for="toctree-checkbox-71">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1844,8 +2329,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_scoring.html">
        Scoring
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-<label for="toctree-checkbox-53">
+<input class="toctree-checkbox" id="toctree-checkbox-72" name="toctree-checkbox-72" type="checkbox"/>
+<label for="toctree-checkbox-72">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1906,8 +2391,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_studio.html">
        Studio
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
-<label for="toctree-checkbox-54">
+<input class="toctree-checkbox" id="toctree-checkbox-73" name="toctree-checkbox-73" type="checkbox"/>
+<label for="toctree-checkbox-73">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1972,8 +2457,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../community_and_support/">
    Community and support
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
-<label for="toctree-checkbox-55">
+<input class="toctree-checkbox" id="toctree-checkbox-74" name="toctree-checkbox-74" type="checkbox"/>
+<label for="toctree-checkbox-74">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -2006,6 +2491,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <li class="toctree-l2">
 <a class="reference internal" href="../../community_and_support/security_report.html">
      OpenSPP Vulnerability Disclosure Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/openspp_odoo.html">
+     Why OpenSPP is built on Odoo
     </a>
 </li>
 <li class="toctree-l2">
@@ -2044,7 +2534,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </label>
 </div>
 <div class="header-article__label">
-<span>Configuring Vocabularies</span>
+<span>Configuring Vocabularies – Configuration guide</span>
 </div>
 <div class="header-article__right">
 <button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
@@ -2212,31 +2702,6 @@ document.addEventListener('DOMContentLoaded', function() {
   </a>
 <ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#step-1-navigate-to-vocabulary-management">
-     Step 1: Navigate to Vocabulary Management
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#step-2-select-the-vocabulary">
-     Step 2: Select the Vocabulary
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#step-3-add-a-new-code">
-     Step 3: Add a New Code
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#step-4-save">
-     Step 4: Save
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#step-5-verify">
-     Step 5: Verify
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
 <a class="reference internal nav-link" href="#translating-vocabulary-codes">
      Translating Vocabulary Codes
     </a>
@@ -2274,13 +2739,13 @@ document.addEventListener('DOMContentLoaded', function() {
     </a>
 </li>
 <li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#new-vocabulary-code-not-appearing-in-dropdowns">
-     New vocabulary code not appearing in dropdowns?
+<a class="reference internal nav-link" href="#new-local-code-not-appearing-in-dropdowns">
+     New local code not appearing in dropdowns?
     </a>
 </li>
 <li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#getting-duplicate-code-error">
-     Getting "duplicate code" error?
+<a class="reference internal nav-link" href="#cannot-add-codes-to-system-vocabulary-error">
+     "Cannot add codes to system vocabulary" error?
     </a>
 </li>
 <li class="toc-h3 nav-item toc-entry">
@@ -2420,31 +2885,6 @@ document.addEventListener('DOMContentLoaded', function() {
   </a>
 <ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#step-1-navigate-to-vocabulary-management">
-     Step 1: Navigate to Vocabulary Management
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#step-2-select-the-vocabulary">
-     Step 2: Select the Vocabulary
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#step-3-add-a-new-code">
-     Step 3: Add a New Code
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#step-4-save">
-     Step 4: Save
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#step-5-verify">
-     Step 5: Verify
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
 <a class="reference internal nav-link" href="#translating-vocabulary-codes">
      Translating Vocabulary Codes
     </a>
@@ -2482,13 +2922,13 @@ document.addEventListener('DOMContentLoaded', function() {
     </a>
 </li>
 <li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#new-vocabulary-code-not-appearing-in-dropdowns">
-     New vocabulary code not appearing in dropdowns?
+<a class="reference internal nav-link" href="#new-local-code-not-appearing-in-dropdowns">
+     New local code not appearing in dropdowns?
     </a>
 </li>
 <li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#getting-duplicate-code-error">
-     Getting "duplicate code" error?
+<a class="reference internal nav-link" href="#cannot-add-codes-to-system-vocabulary-error">
+     "Cannot add codes to system vocabulary" error?
     </a>
 </li>
 <li class="toc-h3 nav-item toc-entry">
@@ -2617,11 +3057,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <td><p>Why items are returned</p></td>
 <td><p>Returns</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:drims:warehouse-tiers</span></code></p></td>
-<td><p>Warehouse classification</p></td>
-<td><p>Warehouses</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:drims:organization-roles</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">urn:openspp:vocab:drims:organization-roles</span></code></p></td>
 <td><p>Partner agency roles</p></td>
 <td><p>Organizations</p></td>
 </tr>
@@ -2728,7 +3164,7 @@ Assign deployed staff to clusters for coordination and <a class="reference inter
 <span class="n">Incident</span><span class="p">:</span> <span class="mi">2025</span> <span class="n">Southwest</span> <span class="n">Monsoon</span> <span class="n">Floods</span>
 </pre></div>
 </div>
-<p><img alt="Cluster selection on request form" src="config_guide/drims/vocabularies/cluster_selection.png"/></p>
+<p><img alt="Cluster selection on request form" src="../../_images/cluster_selection.png"/></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The cluster codes follow UN OCHA standards and should not be modified. If your country uses different sector names, create custom translations in <strong>Settings → Translations</strong> rather than changing the codes.</p>
@@ -2737,7 +3173,7 @@ Assign deployed staff to clusters for coordination and <a class="reference inter
 </div>
 <div class="section" id="priority-levels">
 <h2>Priority Levels<a class="headerlink" href="#priority-levels" title="Permalink to this headline">#</a></h2>
-<p>Priority levels classify the urgency of relief requests. DRIMS includes four standard levels:</p>
+<p>Priority levels classify the urgency of relief requests. DRIMS includes three standard levels:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Code</p></th>
@@ -2750,17 +3186,13 @@ Assign deployed staff to clusters for coordination and <a class="reference inter
 <td><p>Critical</p></td>
 <td><p>Life-threatening situations requiring immediate response (&lt; 24 hours)</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">high</span></code></p></td>
-<td><p>High</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">urgent</span></code></p></td>
+<td><p>Urgent</p></td>
 <td><p>Urgent needs requiring response within 2-3 days</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">medium</span></code></p></td>
-<td><p>Medium</p></td>
-<td><p>Important needs requiring response within 1 week</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">low</span></code></p></td>
-<td><p>Low</p></td>
-<td><p>Non-urgent needs that can wait beyond 1 week</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">routine</span></code></p></td>
+<td><p>Routine</p></td>
+<td><p>Standard needs that can be scheduled normally</p></td>
 </tr>
 </tbody>
 </table>
@@ -2772,10 +3204,10 @@ Assign deployed staff to clusters for coordination and <a class="reference inter
 <li><p><strong>Alert generation</strong> - Overdue critical requests trigger automatic alerts</p></li>
 <li><p><strong>Approval routing</strong> - Critical requests may bypass certain approval steps</p></li>
 </ul>
-<p><img alt="Priority field on request" src="config_guide/drims/vocabularies/priority_field.png"/></p>
+<p><img alt="Priority field on request" src="../../_images/priority_field.png"/></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You can add custom priority levels (e.g., <code class="docutils literal notranslate"><span class="pre">routine</span></code> for regular stock replenishment) by adding vocabulary codes. See "Adding Custom Vocabulary Codes" below.</p>
+<p>You can add custom priority levels by adding vocabulary codes. See "Adding Custom Vocabulary Codes" below.</p>
 </div>
 </div>
 </div>
@@ -2794,17 +3226,9 @@ Assign deployed staff to clusters for coordination and <a class="reference inter
 <td><p>New</p></td>
 <td><p>Brand new, unopened items</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">good</span></code></p></td>
-<td><p>Good</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">used_good</span></code></p></td>
+<td><p>Used - Good Condition</p></td>
 <td><p>Used but fully functional, clean, no damage</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fair</span></code></p></td>
-<td><p>Fair</p></td>
-<td><p>Functional with minor wear or cosmetic damage</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">poor</span></code></p></td>
-<td><p>Poor</p></td>
-<td><p>Functional but significant wear or damage</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">damaged</span></code></p></td>
 <td><p>Damaged</p></td>
@@ -2824,7 +3248,7 @@ Assign deployed staff to clusters for coordination and <a class="reference inter
 <li><p><strong>On distribution</strong> - When dispatching to beneficiaries</p></li>
 <li><p><strong>On return</strong> - When items come back from field</p></li>
 </ul>
-<p><img alt="Item condition selection during inspection" src="config_guide/drims/vocabularies/condition_inspection.png"/></p>
+<p><img alt="Item condition selection during inspection" src="../../_images/condition_inspection.png"/></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Items marked <code class="docutils literal notranslate"><span class="pre">damaged</span></code> or <code class="docutils literal notranslate"><span class="pre">expired</span></code> should not be distributed. DRIMS can generate alerts when such items remain in inventory beyond a threshold period.</p>
@@ -2843,20 +3267,24 @@ Assign deployed staff to clusters for coordination and <a class="reference inter
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">lead_agency</span></code></p></td>
-<td><p><a class="reference internal" href="../../reference/glossary/humanitarian.html#term-Lead-Agency"><span class="xref std std-term">Lead Agency</span></a></p></td>
+<td><p><a class="reference internal" href="../../reference/glossary/humanitarian.html#term-Lead-Agency"><span class="xref std std-term">Lead Agency</span></a> Model</p></td>
 <td><p>Single agency (usually government) coordinates all partners</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cluster</span></code></p></td>
-<td><p>Cluster System</p></td>
+<td><p>Cluster Coordination</p></td>
 <td><p>UN-led sector coordination with designated cluster leads</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">consortium</span></code></p></td>
-<td><p>Consortium</p></td>
+<td><p>Consortium Model</p></td>
 <td><p>NGO-led coordination among partner organizations</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bilateral</span></code></p></td>
-<td><p>Bilateral</p></td>
+<td><p>Bilateral Coordination</p></td>
 <td><p>Direct government-to-government or agency-to-agency</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">decentralized</span></code></p></td>
+<td><p>Decentralized Response</p></td>
+<td><p>Local actors coordinate independently without a central lead</p></td>
 </tr>
 </tbody>
 </table>
@@ -2884,7 +3312,7 @@ Assign deployed staff to clusters for coordination and <a class="reference inter
 <li><p>Route information to the right stakeholders</p></li>
 <li><p>Track agency roles correctly</p></li>
 </ul>
-<p><img alt="Coordination mode on incident" src="config_guide/drims/vocabularies/coordination_mode.png"/></p>
+<p><img alt="Coordination mode on incident" src="../../_images/coordination_mode.png"/></p>
 </div>
 </div>
 <div class="section" id="organization-roles">
@@ -2898,32 +3326,36 @@ Assign deployed staff to clusters for coordination and <a class="reference inter
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">lead</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">lead_agency</span></code></p></td>
 <td><p><a class="reference internal" href="../../reference/glossary/humanitarian.html#term-Lead-Agency"><span class="xref std std-term">Lead Agency</span></a></p></td>
 <td><p>Primary coordinating organization</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">co_lead</span></code></p></td>
-<td><p><a class="reference internal" href="../../reference/glossary/humanitarian.html#term-Co-Lead"><span class="xref std std-term">Co-Lead</span></a></p></td>
-<td><p>Shares coordination responsibility</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">implementing</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">implementing_partner</span></code></p></td>
 <td><p><a class="reference internal" href="../../reference/glossary/humanitarian.html#term-Implementing-Partner"><span class="xref std std-term">Implementing Partner</span></a></p></td>
 <td><p>Delivers services on the ground</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">funding</span></code></p></td>
-<td><p><a class="reference internal" href="../../reference/glossary/humanitarian.html#term-Funding-Partner"><span class="xref std std-term">Funding Partner</span></a></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">donor</span></code></p></td>
+<td><p>Donor</p></td>
 <td><p>Provides financial resources</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">technical</span></code></p></td>
-<td><p><a class="reference internal" href="../../reference/glossary/humanitarian.html#term-Technical-Partner"><span class="xref std std-term">Technical Partner</span></a></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">coordinator</span></code></p></td>
+<td><p>Coordinator</p></td>
+<td><p>Facilitates inter-agency coordination</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">technical_support</span></code></p></td>
+<td><p>Technical Support</p></td>
 <td><p>Provides expertise and guidance</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">observer</span></code></p></td>
+<td><p>Observer</p></td>
+<td><p>Monitors the response without operational responsibility</p></td>
 </tr>
 </tbody>
 </table>
 <div class="section" id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Organization</span><span class="p">:</span> <span class="n">UNICEF</span>
-<span class="n">Role</span><span class="p">:</span> <span class="n">Co</span><span class="o">-</span><span class="n">Lead</span>
+<span class="n">Role</span><span class="p">:</span> <span class="n">Implementing</span> <span class="n">Partner</span>
 <span class="n">Incident</span><span class="p">:</span> <span class="mi">2025</span> <span class="n">Southwest</span> <span class="n">Monsoon</span> <span class="n">Floods</span>
 <span class="n">Cluster</span><span class="p">:</span> <span class="n">WASH</span>
 </pre></div>
@@ -2932,66 +3364,24 @@ Assign deployed staff to clusters for coordination and <a class="reference inter
 </div>
 <div class="section" id="adding-custom-vocabulary-codes">
 <h2>Adding Custom Vocabulary Codes<a class="headerlink" href="#adding-custom-vocabulary-codes" title="Permalink to this headline">#</a></h2>
-<p>You can extend vocabularies with country-specific or program-specific codes without writing Python.</p>
-<div class="section" id="step-1-navigate-to-vocabulary-management">
-<h3>Step 1: Navigate to Vocabulary Management<a class="headerlink" href="#step-1-navigate-to-vocabulary-management" title="Permalink to this headline">#</a></h3>
-<p>Go to <strong>DRIMS → Configuration → Vocabularies</strong>.</p>
-<p><img alt="Vocabularies menu" src="config_guide/drims/vocabularies/menu_vocabularies.png"/></p>
+<p>Every vocabulary listed above is a <strong>system vocabulary</strong> — its canonical codes are owned by the DRIMS module and the management UI locks the codes list (<code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">a</span> <span class="pre">line</span></code> is hidden when <code class="docutils literal notranslate"><span class="pre">is_system</span> <span class="pre">=</span> <span class="pre">True</span></code>). You can browse the codes in <strong>Settings → Vocabularies → Manage Vocabularies → [vocabulary name] → Codes</strong>, but you cannot extend them through that screen.</p>
+<p>To add a country-specific or program-specific code, the new row must be flagged as <strong>Local Code</strong> (<code class="docutils literal notranslate"><span class="pre">is_local</span> <span class="pre">=</span> <span class="pre">True</span></code>), which the system-vocabulary form does not expose. There are two supported paths:</p>
+<ol class="arabic">
+<li><p><strong>Developer-managed (recommended)</strong> — A developer ships an XML data file in your custom module that creates the extension code. This keeps the extension version-controlled and reproducible across environments. Example record:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"priority_routine_local"</span><span class="w"> </span><span class="na">model=</span><span class="s">"spp.vocabulary.code"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"vocabulary_id"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"spp_drims.vocab_priority_levels"</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"code"</span><span class="nt">&gt;</span>routine<span class="nt">&lt;/field&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"display"</span><span class="nt">&gt;</span>Routine<span class="nt">&lt;/field&gt;</span>
+<span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"is_local"</span><span class="w"> </span><span class="na">eval=</span><span class="s">"True"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
 </div>
-<div class="section" id="step-2-select-the-vocabulary">
-<h3>Step 2: Select the Vocabulary<a class="headerlink" href="#step-2-select-the-vocabulary" title="Permalink to this headline">#</a></h3>
-<p>Click on the vocabulary you want to extend (e.g., "Priority Levels").</p>
-<p><img alt="Select vocabulary" src="config_guide/drims/vocabularies/select_vocabulary.png"/></p>
-</div>
-<div class="section" id="step-3-add-a-new-code">
-<h3>Step 3: Add a New Code<a class="headerlink" href="#step-3-add-a-new-code" title="Permalink to this headline">#</a></h3>
-<p>Click <strong>Add a line</strong> in the Codes section.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Field</p></th>
-<th class="head"><p>Value</p></th>
-<th class="head"><p>Notes</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong>Code</strong></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">routine</span></code></p></td>
-<td><p>Lowercase, no spaces, use underscores</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Display Name (English)</strong></p></td>
-<td><p>Routine</p></td>
-<td><p>Human-readable label</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>URI</strong></p></td>
-<td><p>(auto-generated)</p></td>
-<td><p>Leave blank - system generates</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Deprecated</strong></p></td>
-<td><p>Unchecked</p></td>
-<td><p>Check to hide from dropdowns</p></td>
-</tr>
-</tbody>
-</table>
-<p><img alt="Add vocabulary code" src="config_guide/drims/vocabularies/add_code.png"/></p>
-</div>
-<div class="section" id="step-4-save">
-<h3>Step 4: Save<a class="headerlink" href="#step-4-save" title="Permalink to this headline">#</a></h3>
-<p>Click <strong>Save</strong> to activate the new code.</p>
-</div>
-<div class="section" id="step-5-verify">
-<h3>Step 5: Verify<a class="headerlink" href="#step-5-verify" title="Permalink to this headline">#</a></h3>
-<p>Open a request form and check that the new priority level appears in the dropdown.</p>
-<p><img alt="New code in dropdown" src="config_guide/drims/vocabularies/verify_code.png"/></p>
+</li>
+<li><p><strong>API-managed</strong> — A privileged integration writes the row through XML-RPC / JSON-RPC with <code class="docutils literal notranslate"><span class="pre">is_local=True</span></code>. Without that flag the server rejects the request with <em>"Cannot add codes to system vocabulary"</em>.</p></li>
+</ol>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p><strong>Code naming rules:</strong></p>
-<ul class="simple">
-<li><p>Use lowercase letters</p></li>
-<li><p>Use underscores for spaces (e.g., <code class="docutils literal notranslate"><span class="pre">very_high</span></code> not <code class="docutils literal notranslate"><span class="pre">Very</span> <span class="pre">High</span></code>)</p></li>
-<li><p>Keep codes short and memorable</p></li>
-<li><p>Once saved, codes should not be changed (to preserve data integrity)</p></li>
-</ul>
-</div>
+<p>Plain UI edits to system vocabularies are not supported. If your only need is to <strong>deprecate</strong> an existing canonical code, that toggle is editable from the vocabulary form even when <code class="docutils literal notranslate"><span class="pre">is_system</span> <span class="pre">=</span> <span class="pre">True</span></code>. For anything else (new codes, renames, reorders) coordinate with your developer.</p>
 </div>
 <div class="section" id="translating-vocabulary-codes">
 <h3>Translating Vocabulary Codes<a class="headerlink" href="#translating-vocabulary-codes" title="Permalink to this headline">#</a></h3>
@@ -3040,16 +3430,12 @@ Assign deployed staff to clusters for coordination and <a class="reference inter
 <td><p>Air Transport</p></td>
 <td><p>Helicopters, planes for remote or emergency deliveries</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">water</span></code></p></td>
-<td><p>Water Transport</p></td>
-<td><p>Boats for island or flood-affected areas</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sea</span></code></p></td>
+<td><p>Sea Transport</p></td>
+<td><p>Boats for island or coastal areas</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rail</span></code></p></td>
-<td><p>Rail Transport</p></td>
-<td><p>Trains for long-distance bulk shipments</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hand</span></code></p></td>
-<td><p>Hand Carry</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">foot</span></code></p></td>
+<td><p>On Foot</p></td>
 <td><p>Walking delivery for very remote locations</p></td>
 </tr>
 </tbody>
@@ -3067,39 +3453,35 @@ Assign deployed staff to clusters for coordination and <a class="reference inter
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">stockout</span></code></p></td>
-<td><p>Stock Out</p></td>
-<td><p>Product quantity reaches zero</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">low_stock</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">low_stock</span></code></p></td>
 <td><p>Low Stock</p></td>
-<td><p>Product quantity below minimum threshold</p></td>
+<td><p>Available stock falls below a percentage of pending request quantity</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">overstock</span></code></p></td>
-<td><p>Overstock</p></td>
-<td><p>Product quantity above maximum threshold</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">expiry</span></code></p></td>
+<td><p>Expiring Items</p></td>
+<td><p>Stock with an expiration date within the configured warning window</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">expiry_warning</span></code></p></td>
-<td><p>Expiring Soon</p></td>
-<td><p>Product expiry date within warning period</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sla_warning</span></code></p></td>
+<td><p>SLA Warning</p></td>
+<td><p>A request is approaching its due date without being fulfilled</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">expired</span></code></p></td>
-<td><p>Expired</p></td>
-<td><p>Product past expiration date</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sla_breach</span></code></p></td>
+<td><p>SLA Breach</p></td>
+<td><p>A request has passed its due date without being fulfilled</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">request_overdue</span></code></p></td>
-<td><p>Request Overdue</p></td>
-<td><p>Request not fulfilled by needed date</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">critical_shortage</span></code></p></td>
+<td><p>Critical Shortage</p></td>
+<td><p>Stock for an essential item is critically depleted</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dispatch_delayed</span></code></p></td>
-<td><p>Dispatch Delayed</p></td>
-<td><p>Dispatch in transit beyond expected time</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">quality_issue</span></code></p></td>
+<td><p>Quality Issue</p></td>
+<td><p>Items flagged as damaged or expired during inspection</p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Alert thresholds can be configured per incident in <strong>Incidents → Configuration → Alert Thresholds</strong>.</p>
+<p>Alert thresholds are configured per incident on the <strong>Alert Thresholds</strong> tab of the hazard incident form. See <a class="reference internal" href="alerts.html"><span class="doc">Configuring Alerts and Thresholds</span></a> for details.</p>
 </div>
 </div>
 <div class="section" id="transaction-types">
@@ -3121,21 +3503,13 @@ Assign deployed staff to clusters for coordination and <a class="reference inter
 <td><p>Request Dispatch</p></td>
 <td><p>Outgoing shipment to fulfill request</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">return_receipt</span></code></p></td>
-<td><p>Return Receipt</p></td>
-<td><p>Items returned from distribution point</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">adjustment</span></code></p></td>
-<td><p>Inventory Adjustment</p></td>
-<td><p>Manual stock correction</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">transfer</span></code></p></td>
-<td><p>Warehouse Transfer</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">internal_transfer</span></code></p></td>
+<td><p>Internal Transfer</p></td>
 <td><p>Movement between warehouses</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">write_off</span></code></p></td>
-<td><p>Write-off</p></td>
-<td><p>Disposal of damaged/expired items</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">return</span></code></p></td>
+<td><p>Return</p></td>
+<td><p>Items returned from distribution point</p></td>
 </tr>
 </tbody>
 </table>
@@ -3144,11 +3518,11 @@ Assign deployed staff to clusters for coordination and <a class="reference inter
 <h2>Viewing All Vocabularies<a class="headerlink" href="#viewing-all-vocabularies" title="Permalink to this headline">#</a></h2>
 <p>To see all vocabularies and their codes:</p>
 <ol class="arabic simple">
-<li><p>Go to <strong>DRIMS → Configuration → Vocabularies</strong></p></li>
+<li><p>Go to <strong>Settings → Vocabularies → Manage Vocabularies</strong></p></li>
 <li><p>Use the search and filters to find specific vocabularies</p></li>
 <li><p>Click any vocabulary to view and edit its codes</p></li>
 </ol>
-<p><img alt="Vocabulary list" src="config_guide/drims/vocabularies/vocabulary_list.png"/></p>
+<p><img alt="Vocabulary list" src="../../_images/vocabulary_list.png"/></p>
 </div>
 <div class="section" id="are-you-stuck">
 <h2>Are You Stuck?<a class="headerlink" href="#are-you-stuck" title="Permalink to this headline">#</a></h2>
@@ -3156,38 +3530,39 @@ Assign deployed staff to clusters for coordination and <a class="reference inter
 <h3>Can't find the Vocabularies menu?<a class="headerlink" href="#can-t-find-the-vocabularies-menu" title="Permalink to this headline">#</a></h3>
 <p>You need <strong>DRIMS Manager</strong> or <strong>Administrator</strong> permissions. Contact your system administrator.</p>
 </div>
-<div class="section" id="new-vocabulary-code-not-appearing-in-dropdowns">
-<h3>New vocabulary code not appearing in dropdowns?<a class="headerlink" href="#new-vocabulary-code-not-appearing-in-dropdowns" title="Permalink to this headline">#</a></h3>
+<div class="section" id="new-local-code-not-appearing-in-dropdowns">
+<h3>New local code not appearing in dropdowns?<a class="headerlink" href="#new-local-code-not-appearing-in-dropdowns" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
-<li><p>Check that you saved the vocabulary record</p></li>
+<li><p>Confirm the new code was created with <code class="docutils literal notranslate"><span class="pre">is_local</span> <span class="pre">=</span> <span class="pre">True</span></code>; without it the server rejects the row on a system vocabulary</p></li>
 <li><p>Refresh your browser (Ctrl+F5 or Cmd+Shift+R)</p></li>
-<li><p>Verify the code is not marked as "Deprecated"</p></li>
+<li><p>Verify the code is not marked <strong>Deprecated</strong> or inactive</p></li>
+<li><p>Verify the code's <code class="docutils literal notranslate"><span class="pre">vocabulary_id</span></code> matches the vocabulary you expected</p></li>
 </ol>
 </div>
-<div class="section" id="getting-duplicate-code-error">
-<h3>Getting "duplicate code" error?<a class="headerlink" href="#getting-duplicate-code-error" title="Permalink to this headline">#</a></h3>
-<p>Code values must be unique within each vocabulary. Use a different code name.</p>
+<div class="section" id="cannot-add-codes-to-system-vocabulary-error">
+<h3>"Cannot add codes to system vocabulary" error?<a class="headerlink" href="#cannot-add-codes-to-system-vocabulary-error" title="Permalink to this headline">#</a></h3>
+<p>You tried to add a code to a system vocabulary without the <strong>Local Code</strong> flag set. The UI does not expose this flag — coordinate with your developer to add the code as XML module data, or use the API path described in "Adding Custom Vocabulary Codes" above.</p>
 </div>
 <div class="section" id="want-to-remove-a-vocabulary-code">
 <h3>Want to remove a vocabulary code?<a class="headerlink" href="#want-to-remove-a-vocabulary-code" title="Permalink to this headline">#</a></h3>
-<p>Instead of deleting (which can break historical data), mark the code as <strong>Deprecated</strong>. This hides it from dropdowns but preserves existing records.</p>
+<p>Don't delete it (deletion can break historical records that reference the code). Instead, mark the code as <strong>Deprecated</strong> on its form. This hides it from new dropdowns but preserves existing data.</p>
 </div>
 <div class="section" id="need-to-change-a-code-value">
 <h3>Need to change a code value?<a class="headerlink" href="#need-to-change-a-code-value" title="Permalink to this headline">#</a></h3>
-<p>Changing code values breaks historical data. Instead:</p>
+<p>Changing the <code class="docutils literal notranslate"><span class="pre">code</span></code> value breaks historical data. Instead:</p>
 <ol class="arabic simple">
-<li><p>Mark the old code as deprecated</p></li>
-<li><p>Create a new code with the correct value</p></li>
-<li><p>Update active records to use the new code</p></li>
+<li><p>Mark the old code as <strong>Deprecated</strong></p></li>
+<li><p>Create a new code with the correct value (developer or API path)</p></li>
+<li><p>Migrate active records to use the new code</p></li>
 </ol>
 </div>
 <div class="section" id="cluster-codes-don-t-match-our-country-s-terminology">
 <h3>Cluster codes don't match our country's terminology?<a class="headerlink" href="#cluster-codes-don-t-match-our-country-s-terminology" title="Permalink to this headline">#</a></h3>
-<p>Don't change the cluster codes (they follow UN standards). Instead, add translations in <strong>Settings → Translations</strong> to use your preferred terms.</p>
+<p>Don't change the cluster codes (they follow UN OCHA standards). Instead, add translations in <strong>Settings → Translations</strong> to use your preferred display terms.</p>
 </div>
 <div class="section" id="want-to-add-a-completely-new-vocabulary">
 <h3>Want to add a completely new vocabulary?<a class="headerlink" href="#want-to-add-a-completely-new-vocabulary" title="Permalink to this headline">#</a></h3>
-<p>New vocabularies require Python code and module development. Contact your developer or OpenSPP support for assistance. For most use cases, extending existing vocabularies with custom codes is sufficient.</p>
+<p>New vocabularies require module development. Contact your developer or OpenSPP support — for most extensions, adding a local code to an existing vocabulary is enough.</p>
 </div>
 </div>
 <div class="section" id="related-documentation">
@@ -3212,6 +3587,20 @@ Assign deployed staff to clusters for coordination and <a class="reference inter
 <footer class="footer-article noprint">
 <!-- Previous / next buttons -->
 <div class="prev-next-area">
+<a class="left-prev" href="alerts.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Configuring Alerts and Thresholds</p>
+</div>
+</a>
+<a class="right-next" href="../eligibility/index.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Eligibility rules</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
 </div>
 </footer>
 </div>

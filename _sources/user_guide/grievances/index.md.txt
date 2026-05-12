@@ -80,7 +80,6 @@ If you can't access the GRM menu in the sidebar, contact your system administrat
 :hidden:
 
 grm
-<!-- sla commented out to hide for now -->
 ```
 
 ## Are you stuck?

@@ -51,7 +51,7 @@ An **Indicator** reads one value from registrant data and turns it into an indic
   - **CEL Formula** (advanced)
 
 ```{note}
-If you need an intermediate computation (for example “children under 5”), prefer defining it once as a **variable** in Studio and then reusing it across scoring and other features. See {doc}`variables_and_expressions`.
+If you need an intermediate computation (for example “children under 5”), prefer defining it once as a **variable** in Studio and then reusing it across scoring and other features. See {doc}`/config_guide/variables/index`.
 ```
 
 ### Threshold

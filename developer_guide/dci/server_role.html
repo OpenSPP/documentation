@@ -17,10 +17,10 @@
 <meta content="website" property="og:type"/>
 <meta content="https://docs.openspp.org/developer_guide/dci/server_role.html" property="og:url"/>
 <meta content="OpenSPP Documentation" property="og:site_name"/>
-<meta content="This guide is for developers implementing OpenSPP as a DCI server to expose registry data to external systems. Overview: When acting as a DCI server, OpenSPP exposes its beneficiary registry to aut..." property="og:description"/>
+<meta content="For: developers Expose OpenSPP registry data to external DCI-compliant systems — national MIS dashboards querying beneficiary data, programs checking for duplicates, or research platforms pulling a..." property="og:description"/>
 <meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
 <meta content="OpenSPP Documentation" property="og:image:alt"/>
-<meta content="This guide is for developers implementing OpenSPP as a DCI server to expose registry data to external systems. Overview: When acting as a DCI server, OpenSPP exposes its beneficiary registry to aut..." name="description"/>
+<meta content="For: developers Expose OpenSPP registry data to external DCI-compliant systems — national MIS dashboards querying beneficiary data, programs checking for duplicates, or research platforms pulling a..." name="description"/>
 <meta content="en_US" property="og:locale"/>
 <title>OpenSPP as DCI Server – Developer guide – DCI Integration — OpenSPP Documentation v2.0</title>
 <!-- Loaded before other Sphinx assets -->
@@ -332,14 +332,9 @@ document.addEventListener('DOMContentLoaded', function() {
 </li>
 </ul>
 </li>
-<li class="toctree-l2">
-<a class="reference internal" href="../../get_started/explore/">
-     Explore OpenSPP
-    </a>
-</li>
 <li class="toctree-l2 has-children">
-<a class="reference internal" href="../../get_started/first_household/">
-     Your first household
+<a class="reference internal" href="../../get_started/try_spmis/">
+     Try OpenSPP SP-MIS
     </a>
 <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
 <label for="toctree-checkbox-7">
@@ -348,58 +343,26 @@ document.addEventListener('DOMContentLoaded', function() {
 </label>
 <ul>
 <li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_household/01_access_registry.html">
-       Step 1: Access the Registry
+<a class="reference internal" href="../../get_started/try_spmis/install_data.html">
+       Install SP-MIS demo data
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_household/02_create_household.html">
-       Step 2: Create a Household
+<a class="reference internal" href="../../get_started/try_spmis/stories.html">
+       SP-MIS Stories
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_household/03_add_members.html">
-       Step 3: Add members
+<a class="reference internal" href="../../get_started/try_spmis/demo_scenarios.html">
+       SP-MIS Demo scenarios
       </a>
 </li>
 </ul>
 </li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../../get_started/first_program/">
-     Your first program
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/configuration_vs_customization.html">
+     Configuration vs customization
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-<label for="toctree-checkbox-8">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_program/01_access_program.html">
-       Step 1: Access the program section
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_program/02_create_program.html">
-       Step 2: Create your first social protection program
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_program/03_enroll_beneficiaries.html">
-       Step 3: Import and enroll beneficiaries
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_program/04_run_cycle.html">
-       Step 4: Understanding program cycles
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../get_started/first_program/05_distribute_entitlements.html">
-       Step 5: Distribute entitlements
-      </a>
-</li>
-</ul>
 </li>
 <li class="toctree-l2">
 <a class="reference internal" href="../../get_started/poc_and_pilot.html">
@@ -412,8 +375,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/">
    User guide
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-<label for="toctree-checkbox-9">
+<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+<label for="toctree-checkbox-8">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -422,8 +385,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/getting_started/">
      Getting started
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-<label for="toctree-checkbox-10">
+<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+<label for="toctree-checkbox-9">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -444,8 +407,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/registry/">
      Registry
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-<label for="toctree-checkbox-11">
+<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+<label for="toctree-checkbox-10">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -475,14 +438,19 @@ document.addEventListener('DOMContentLoaded', function() {
        Export registrant data
       </a>
 </li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/farmer_registry.html">
+       Manage farm data
+      </a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 has-children">
 <a class="reference internal" href="../../user_guide/change_requests/">
      Change Requests
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-<label for="toctree-checkbox-12">
+<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+<label for="toctree-checkbox-11">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -508,8 +476,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/case_management/">
      Case management
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-<label for="toctree-checkbox-13">
+<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+<label for="toctree-checkbox-12">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -525,8 +493,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/programs/">
      Programs
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-<label for="toctree-checkbox-14">
+<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+<label for="toctree-checkbox-13">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -567,8 +535,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/payments/">
      Payments
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-<label for="toctree-checkbox-15">
+<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+<label for="toctree-checkbox-14">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -584,8 +552,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/approvals/">
      Approvals
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-<label for="toctree-checkbox-16">
+<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+<label for="toctree-checkbox-15">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -601,8 +569,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/grievances/">
      Grievance Redress Mechanism (GRM)
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-<label for="toctree-checkbox-17">
+<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+<label for="toctree-checkbox-16">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -618,8 +586,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/gis/">
      Geographic Information System (GIS)
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-<label for="toctree-checkbox-18">
+<input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+<label for="toctree-checkbox-17">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -635,8 +603,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../user_guide/reference/">
      Reference
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-<label for="toctree-checkbox-19">
+<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+<label for="toctree-checkbox-18">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -659,15 +627,32 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../config_guide/">
    Configuration guide
   </a>
+<input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+<label for="toctree-checkbox-19">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/alerts/">
+     Alerts
+    </a>
 <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
 <label for="toctree-checkbox-20">
 <i class="fas fa-chevron-down">
 </i>
 </label>
 <ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/alerts/overview.html">
+       Alerts overview
+      </a>
+</li>
+</ul>
+</li>
 <li class="toctree-l2 has-children">
-<a class="reference internal" href="../../config_guide/studio/">
-     OpenSPP Studio
+<a class="reference internal" href="../../config_guide/approval_workflows/">
+     Approval workflows
     </a>
 <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
 <label for="toctree-checkbox-21">
@@ -676,23 +661,106 @@ document.addEventListener('DOMContentLoaded', function() {
 </label>
 <ul>
 <li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/studio/overview.html">
-       Studio Overview
+<a class="reference internal" href="../../config_guide/approval_workflows/overview.html">
+       Approval workflows overview
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/studio/registry_field_builder.html">
-       Custom Fields (Registry Field Builder)
+<a class="reference internal" href="../../config_guide/approval_workflows/tiers.html">
+       Approval tiers
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/studio/event_type_designer.html">
-       Event Type Designer
+<a class="reference internal" href="../../config_guide/approval_workflows/batch_approvals.html">
+       Batch approvals and freeze periods
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/area_management/">
+     Area management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+<label for="toctree-checkbox-22">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/area_management/overview.html">
+       Area management overview
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/studio/change_request_builder.html">
-       Change Request Builder
+<a class="reference internal" href="../../config_guide/area_management/hdx_integration.html">
+       HDX COD integration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/audit/">
+     Audit configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+<label for="toctree-checkbox-23">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/audit/overview.html">
+       Audit configuration overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/audit/backends.html">
+       Audit backends
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/banking/">
+     Banking
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+<label for="toctree-checkbox-24">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/banking/overview.html">
+       Banking overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/case_management/">
+     Case management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+<label for="toctree-checkbox-25">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/case_management/overview.html">
+       Case management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/case_management/stages.html">
+       Case stages
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/case_management/teams.html">
+       Case teams
       </a>
 </li>
 </ul>
@@ -701,8 +769,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../config_guide/cel/">
      CEL expressions
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
-<label for="toctree-checkbox-22">
+<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+<label for="toctree-checkbox-26">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -735,176 +803,11 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 </li>
 <li class="toctree-l2 has-children">
-<a class="reference internal" href="../../config_guide/eligibility/">
-     Eligibility rules
-    </a>
-<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
-<label for="toctree-checkbox-23">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/eligibility/cel_expressions.html">
-       CEL expressions for eligibility
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/eligibility/geographic_targeting.html">
-       Geographic targeting
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/eligibility/templates.html">
-       Expression templates
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/eligibility/testing.html">
-       Testing eligibility rules
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/eligibility/advanced.html">
-       Advanced eligibility configuration
-      </a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../../config_guide/entitlement_formulas/">
-     Entitlement formulas
-    </a>
-<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
-<label for="toctree-checkbox-24">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/entitlement_formulas/cash_calculations.html">
-       Cash calculations
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/entitlement_formulas/inkind_baskets.html">
-       In-kind and basket entitlements
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/entitlement_formulas/formula_library.html">
-       Formula library
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/entitlement_formulas/dynamic_entitlements.html">
-       Dynamic entitlements
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/entitlement_formulas/conditional_logic.html">
-       Conditional logic
-      </a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../../config_guide/vocabulary/">
-     Vocabulary System
-    </a>
-<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
-<label for="toctree-checkbox-25">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/vocabulary/overview.html">
-       Vocabulary Overview
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/vocabulary/standard_vocabularies.html">
-       Standard Vocabularies
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/vocabulary/profiles.html">
-       Vocabulary Profiles
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/vocabulary/custom.html">
-       Custom Vocabularies
-      </a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../../config_guide/variables/">
-     Variables &amp; Indicators
-    </a>
-<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
-<label for="toctree-checkbox-26">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/variables/overview.html">
-       Variables Overview
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/variables/creating_variables.html">
-       Creating Variables
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/variables/variable_types.html">
-       Variable Types
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/variables/using_variables.html">
-       Using Variables in CEL
-      </a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../../config_guide/event_data/">
-     Event Data
-    </a>
-<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
-<label for="toctree-checkbox-27">
-<i class="fas fa-chevron-down">
-</i>
-</label>
-<ul>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/event_data/overview.html">
-       Event Data Overview
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/event_data/event_types.html">
-       Configuring Event Types
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../../config_guide/event_data/field_definitions.html">
-       Defining Event Fields
-      </a>
-</li>
-</ul>
-</li>
-<li class="toctree-l2 has-children">
 <a class="reference internal" href="../../config_guide/change_request_types/">
      Change request types
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
-<label for="toctree-checkbox-28">
+<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+<label for="toctree-checkbox-27">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -950,8 +853,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../config_guide/consent/">
      Consent configuration
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
-<label for="toctree-checkbox-29">
+<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+<label for="toctree-checkbox-28">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -979,11 +882,298 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 </li>
 <li class="toctree-l2 has-children">
-<a class="reference internal" href="../../config_guide/role_configuration/">
-     Role configuration
+<a class="reference internal" href="../../config_guide/custom_fields/">
+     Custom fields
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+<label for="toctree-checkbox-29">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/custom_fields/overview.html">
+       Custom fields overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/drims/">
+     DRIMS Configuration Guide
     </a>
 <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
 <label for="toctree-checkbox-30">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/drims/warehouses.html">
+       Configuring Warehouses
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/drims/approval_chains.html">
+       Configuring Approval Workflows
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/drims/alerts.html">
+       Configuring Alerts and Thresholds
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/drims/vocabularies.html">
+       Configuring Vocabularies
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/eligibility/">
+     Eligibility rules
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+<label for="toctree-checkbox-31">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/cel_expressions.html">
+       CEL expressions for eligibility
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/geographic_targeting.html">
+       Geographic targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/templates.html">
+       Expression templates
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/testing.html">
+       Testing eligibility rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/advanced.html">
+       Advanced eligibility configuration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/">
+     Entitlement formulas
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+<label for="toctree-checkbox-32">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/cash_calculations.html">
+       Cash calculations
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/inkind_entitlements.html">
+       In-kind entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/formula_library.html">
+       Formula library
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/dynamic_entitlements.html">
+       Dynamic entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/conditional_logic.html">
+       Conditional logic
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/event_data/">
+     Event Data
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+<label for="toctree-checkbox-33">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/overview.html">
+       Event Data Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/event_types.html">
+       Configuring Event Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/field_definitions.html">
+       Defining Event Fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/farmer_registry/">
+     Farmer registry
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+<label for="toctree-checkbox-34">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/farmer_registry/overview.html">
+       Farmer registry overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/farmer_registry/farm_details.html">
+       Farm details, seasons, and activities
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/gis/">
+     GIS configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+<label for="toctree-checkbox-35">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/gis/overview.html">
+       GIS configuration overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/gis/report_templates.html">
+       GIS reports and indicator layers
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/grievance_redress/">
+     Grievance redress
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+<label for="toctree-checkbox-36">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/grievance_redress/overview.html">
+       Grievance redress overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/grievance_redress/sla_rules.html">
+       SLA rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/grievance_redress/teams_tags.html">
+       GRM teams and tags
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/hazard_management/">
+     Hazard management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+<label for="toctree-checkbox-37">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/hazard_management/overview.html">
+       Hazard management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/hazard_management/program_linking.html">
+       Linking programs to hazard incidents
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/import_matching/">
+     Import matching
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+<label for="toctree-checkbox-38">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/import_matching/overview.html">
+       Import matching overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/studio/">
+     OpenSPP Studio
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+<label for="toctree-checkbox-39">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/overview.html">
+       Studio Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/registry_field_builder.html">
+       Custom Fields (Registry Field Builder)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/event_type_designer.html">
+       Event Type Designer
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/role_configuration/">
+     Role configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+<label for="toctree-checkbox-40">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1015,58 +1205,321 @@ document.addEventListener('DOMContentLoaded', function() {
 </li>
 </ul>
 </li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/scoring/">
+     Scoring &amp; Assessment
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+<label for="toctree-checkbox-41">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/overview.html">
+       Scoring Framework Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/pmt.html">
+       Proxy Means Test (PMT) Configuration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/vulnerability.html">
+       Vulnerability Scoring Configuration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/swdi.html">
+       Social Welfare Development Index (SWDI)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/custom.html">
+       Creating Custom Scoring Formulas
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/service_points/">
+     Service points
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+<label for="toctree-checkbox-42">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/service_points/overview.html">
+       Service points overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/service_points/lifecycle.html">
+       Service point lifecycle
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/session_tracking/">
+     Session tracking
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+<label for="toctree-checkbox-43">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/session_tracking/overview.html">
+       Session tracking overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/simulation/">
+     Simulation
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+<label for="toctree-checkbox-44">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/simulation/overview.html">
+       Simulation overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/storage_backend/">
+     Storage backend
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+<label for="toctree-checkbox-45">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/storage_backend/overview.html">
+       Storage backend overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/variables/">
+     Variables
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+<label for="toctree-checkbox-46">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/overview.html">
+       Variables Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/creating_variables.html">
+       Creating Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/variable_types.html">
+       Variable Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/using_variables.html">
+       Using Variables in CEL
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/vocabulary/">
+     Vocabulary System
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+<label for="toctree-checkbox-47">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/overview.html">
+       Vocabulary Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/standard_vocabularies.html">
+       Standard Vocabularies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/profiles.html">
+       Vocabulary Profiles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/custom.html">
+       Custom Vocabularies
+      </a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children">
 <a class="reference internal" href="../">
    Developer guide
   </a>
-<input checked="" class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-<label for="toctree-checkbox-31">
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+<label for="toctree-checkbox-48">
 <i class="fas fa-chevron-down">
 </i>
 </label>
 <ul class="current">
 <li class="toctree-l2">
 <a class="reference internal" href="../setup/">
-     Development Setup
+     Development setup
     </a>
 </li>
 <li class="toctree-l2 has-children">
 <a class="reference internal" href="../architecture/">
      Architecture
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-<label for="toctree-checkbox-32">
+<input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+<label for="toctree-checkbox-49">
 <i class="fas fa-chevron-down">
 </i>
 </label>
 <ul>
 <li class="toctree-l3">
-<a class="reference internal" href="../architecture/cel_internals.html">
-       CEL Internals
+<a class="reference internal" href="../architecture/module_organization.html">
+       Module organization
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../architecture/data_model.html">
+       Data model
       </a>
 </li>
 </ul>
 </li>
 <li class="toctree-l2 has-children">
-<a class="reference internal" href="../extending/">
-     Extending OpenSPP
+<a class="reference internal" href="../custom_modules/">
+     Custom modules
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
-<label for="toctree-checkbox-33">
+<input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+<label for="toctree-checkbox-50">
 <i class="fas fa-chevron-down">
 </i>
 </label>
 <ul>
 <li class="toctree-l3">
-<a class="reference internal" href="../extending/custom_modules.html">
-       Customize Program
+<a class="reference internal" href="../custom_modules/scaffold.html">
+       Module scaffold
       </a>
 </li>
 <li class="toctree-l3">
-<a class="reference internal" href="../extending/cycle_manager.html">
-       Customize Cycle
+<a class="reference internal" href="../custom_modules/models.html">
+       Models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/security.html">
+       Security
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/views.html">
+       Views and menus
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/mixins.html">
+       Mixins
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/testing.html">
+       Testing
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/example.html">
+       Example: custom registry fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../custom_managers/">
+     Custom program managers
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+<label for="toctree-checkbox-51">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_managers/manager_pattern.html">
+       Manager pattern
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_managers/building_managers.html">
+       Building a custom manager
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_managers/tutorial.html">
+       Tutorial: build CCT program managers
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../change_request_types/">
+     Custom change request types
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+<label for="toctree-checkbox-52">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/detail_models.html">
+       Detail models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/apply_strategies.html">
+       Apply strategies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/approval_hooks.html">
+       Approval hooks
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/tutorial.html">
+       Tutorial: build a transfer member CR type
       </a>
 </li>
 </ul>
@@ -1075,8 +1528,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../api_v2/">
      API V2
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
-<label for="toctree-checkbox-34">
+<input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+<label for="toctree-checkbox-53">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1122,8 +1575,23 @@ document.addEventListener('DOMContentLoaded', function() {
       </a>
 </li>
 <li class="toctree-l3">
+<a class="reference internal" href="../api_v2/tutorial.html">
+       Tutorial: build a Python API client
+      </a>
+</li>
+<li class="toctree-l3">
 <a class="reference internal" href="../api_v2/studio_integration.html">
        Studio API Integration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/entitlements_cycles.html">
+       Entitlements and Cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/products_service_points.html">
+       Products and Service Points
       </a>
 </li>
 </ul>
@@ -1132,8 +1600,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="">
      DCI Integration
     </a>
-<input checked="" class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
-<label for="toctree-checkbox-35">
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+<label for="toctree-checkbox-54">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1160,41 +1628,41 @@ document.addEventListener('DOMContentLoaded', function() {
 </li>
 </ul>
 </li>
-<li class="toctree-l2 has-children">
-<a class="reference internal" href="../verifiable_credentials/">
-     Verifiable Credentials
+<li class="toctree-l2">
+<a class="reference internal" href="../security/">
+     Security and Encryption
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
-<label for="toctree-checkbox-36">
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../cel/">
+     CEL (Common Expression Language)
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+<label for="toctree-checkbox-55">
 <i class="fas fa-chevron-down">
 </i>
 </label>
 <ul>
 <li class="toctree-l3">
-<a class="reference internal" href="../verifiable_credentials/overview.html">
-       Verifiable Credentials Overview
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../verifiable_credentials/w3c_vc.html">
-       W3C Verifiable Credentials Data Model
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../verifiable_credentials/oidc4vci.html">
-       OpenID for Verifiable Credential Issuance
-      </a>
-</li>
-<li class="toctree-l3">
-<a class="reference internal" href="../verifiable_credentials/implementation.html">
-       Verifiable Credentials Implementation Guide
+<a class="reference internal" href="../cel/internals.html">
+       CEL Internals
       </a>
 </li>
 </ul>
 </li>
 <li class="toctree-l2">
-<a class="reference internal" href="../integrations/">
-     Other Integrations
+<a class="reference internal" href="../studio/">
+     Studio
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../audit/">
+     Audit and Versioning
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../contributing/">
+     Contributing
     </a>
 </li>
 </ul>
@@ -1203,8 +1671,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../ops_guide/">
    Operations guide
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
-<label for="toctree-checkbox-37">
+<input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+<label for="toctree-checkbox-56">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1213,8 +1681,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../ops_guide/deployment/">
      Deployment
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
-<label for="toctree-checkbox-38">
+<input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+<label for="toctree-checkbox-57">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1230,8 +1698,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../ops_guide/security/">
      Security
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
-<label for="toctree-checkbox-39">
+<input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+<label for="toctree-checkbox-58">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1289,8 +1757,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/">
    Reference
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
-<label for="toctree-checkbox-40">
+<input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+<label for="toctree-checkbox-59">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1299,8 +1767,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/">
      Modules Reference
     </a>
-<input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
-<label for="toctree-checkbox-41">
+<input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+<label for="toctree-checkbox-60">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1319,8 +1787,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_api_v2.html">
        API V2
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
-<label for="toctree-checkbox-42">
+<input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+<label for="toctree-checkbox-61">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1421,8 +1889,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_case_base.html">
        Case Management Base
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
-<label for="toctree-checkbox-43">
+<input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
+<label for="toctree-checkbox-62">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1468,8 +1936,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_cel_domain.html">
        CEL Domain Query Builder
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
-<label for="toctree-checkbox-44">
+<input class="toctree-checkbox" id="toctree-checkbox-63" name="toctree-checkbox-63" type="checkbox"/>
+<label for="toctree-checkbox-63">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1496,12 +1964,22 @@ document.addEventListener('DOMContentLoaded', function() {
 </li>
 </ul>
 </li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_registry_search.html">
+       Registry Search
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_widget.html">
+       Expression Widget
+      </a>
+</li>
 <li class="toctree-l3 has-children">
 <a class="reference internal" href="../../reference/modules/spp_change_request_v2.html">
        Change Request V2
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
-<label for="toctree-checkbox-45">
+<input class="toctree-checkbox" id="toctree-checkbox-64" name="toctree-checkbox-64" type="checkbox"/>
+<label for="toctree-checkbox-64">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1537,8 +2015,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_dci.html">
        DCI Core
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
-<label for="toctree-checkbox-46">
+<input class="toctree-checkbox" id="toctree-checkbox-65" name="toctree-checkbox-65" type="checkbox"/>
+<label for="toctree-checkbox-65">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1594,8 +2072,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_drims.html">
        DRIMS - Disaster Response Inventory Management
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
-<label for="toctree-checkbox-47">
+<input class="toctree-checkbox" id="toctree-checkbox-66" name="toctree-checkbox-66" type="checkbox"/>
+<label for="toctree-checkbox-66">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1626,8 +2104,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_farmer_registry.html">
        Farmer Registry
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
-<label for="toctree-checkbox-48">
+<input class="toctree-checkbox" id="toctree-checkbox-67" name="toctree-checkbox-67" type="checkbox"/>
+<label for="toctree-checkbox-67">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1658,8 +2136,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_gis.html">
        GIS
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
-<label for="toctree-checkbox-49">
+<input class="toctree-checkbox" id="toctree-checkbox-68" name="toctree-checkbox-68" type="checkbox"/>
+<label for="toctree-checkbox-68">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1695,8 +2173,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_grm.html">
        Grievance Redress Mechanism
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
-<label for="toctree-checkbox-50">
+<input class="toctree-checkbox" id="toctree-checkbox-69" name="toctree-checkbox-69" type="checkbox"/>
+<label for="toctree-checkbox-69">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1732,8 +2210,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_hazard.html">
        Hazard &amp; Emergency Management
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-<label for="toctree-checkbox-51">
+<input class="toctree-checkbox" id="toctree-checkbox-70" name="toctree-checkbox-70" type="checkbox"/>
+<label for="toctree-checkbox-70">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1746,6 +2224,11 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 </li>
 <li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_hazard_programs.html">
+       Programs Integration
+      </a>
+</li>
+<li class="toctree-l3">
 <a class="reference internal" href="../../reference/modules/spp_hide_menus_base.html">
        Hide Menus Base
       </a>
@@ -1754,8 +2237,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_hxl.html">
        HXL Integration
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
-<label for="toctree-checkbox-52">
+<input class="toctree-checkbox" id="toctree-checkbox-71" name="toctree-checkbox-71" type="checkbox"/>
+<label for="toctree-checkbox-71">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1846,8 +2329,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_scoring.html">
        Scoring
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
-<label for="toctree-checkbox-53">
+<input class="toctree-checkbox" id="toctree-checkbox-72" name="toctree-checkbox-72" type="checkbox"/>
+<label for="toctree-checkbox-72">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1908,8 +2391,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../reference/modules/spp_studio.html">
        Studio
       </a>
-<input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
-<label for="toctree-checkbox-54">
+<input class="toctree-checkbox" id="toctree-checkbox-73" name="toctree-checkbox-73" type="checkbox"/>
+<label for="toctree-checkbox-73">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -1974,8 +2457,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <a class="reference internal" href="../../community_and_support/">
    Community and support
   </a>
-<input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
-<label for="toctree-checkbox-55">
+<input class="toctree-checkbox" id="toctree-checkbox-74" name="toctree-checkbox-74" type="checkbox"/>
+<label for="toctree-checkbox-74">
 <i class="fas fa-chevron-down">
 </i>
 </label>
@@ -2008,6 +2491,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <li class="toctree-l2">
 <a class="reference internal" href="../../community_and_support/security_report.html">
      OpenSPP Vulnerability Disclosure Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/openspp_odoo.html">
+     Why OpenSPP is built on Odoo
     </a>
 </li>
 <li class="toctree-l2">
@@ -2127,8 +2615,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <nav aria-label="Page" id="bd-toc-nav">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#overview">
-   Overview
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
@@ -2137,105 +2625,66 @@ document.addEventListener('DOMContentLoaded', function() {
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#module-structure">
-   Module Structure
+<a class="reference internal nav-link" href="#module-layout">
+   Module layout
   </a>
 <ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#core-server-modules">
-     Core Server Modules
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#key-components">
-     Key Components
+<a class="reference internal nav-link" href="#what-spp-dci-server-provides">
+     What
+     <code class="docutils literal notranslate">
+<span class="pre">
+       spp_dci_server
+      </span>
+</code>
+     provides
     </a>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#implementing-sync-search">
-   Implementing Sync Search
-  </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#define-the-router">
-     1. Define the Router
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#implement-search-service">
-     2. Implement Search Service
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#implement-data-mapper">
-     3. Implement Data Mapper
-    </a>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#implementing-async-search">
-   Implementing Async Search
-  </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#background-processing">
-     Background Processing
-    </a>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#implementing-subscriptions">
-   Implementing Subscriptions
-  </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#subscription-service">
-     Subscription Service
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#trigger-notifications">
-     Trigger Notifications
-    </a>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#testing">
-   Testing
-  </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#unit-test-search-service">
-     Unit Test: Search Service
-    </a>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#deployment">
-   Deployment
-  </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
 <a class="reference internal nav-link" href="#configuration">
-     Configuration
-    </a>
+   Configuration
+  </a>
 </li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#api-endpoint-registration">
-     API Endpoint Registration
-    </a>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#signing-keys">
+   Signing keys
+  </a>
 </li>
-</ul>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registering-external-senders">
+   Registering external senders
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#endpoints">
+   Endpoints
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#consent-filtering">
+   Consent filtering
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#async-search-and-subscriptions">
+   Async search and subscriptions
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#testing-locally">
+   Testing locally
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#common-mistakes">
+   Common mistakes
+  </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#see-also">
-   See Also
+   See also
   </a>
 </li>
 </ul>
@@ -2256,8 +2705,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <nav aria-label="Page">
 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#overview">
-   Overview
+<a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
@@ -2266,105 +2715,66 @@ document.addEventListener('DOMContentLoaded', function() {
   </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#module-structure">
-   Module Structure
+<a class="reference internal nav-link" href="#module-layout">
+   Module layout
   </a>
 <ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#core-server-modules">
-     Core Server Modules
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#key-components">
-     Key Components
+<a class="reference internal nav-link" href="#what-spp-dci-server-provides">
+     What
+     <code class="docutils literal notranslate">
+<span class="pre">
+       spp_dci_server
+      </span>
+</code>
+     provides
     </a>
 </li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#implementing-sync-search">
-   Implementing Sync Search
-  </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#define-the-router">
-     1. Define the Router
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#implement-search-service">
-     2. Implement Search Service
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#implement-data-mapper">
-     3. Implement Data Mapper
-    </a>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#implementing-async-search">
-   Implementing Async Search
-  </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#background-processing">
-     Background Processing
-    </a>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#implementing-subscriptions">
-   Implementing Subscriptions
-  </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#subscription-service">
-     Subscription Service
-    </a>
-</li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#trigger-notifications">
-     Trigger Notifications
-    </a>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#testing">
-   Testing
-  </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#unit-test-search-service">
-     Unit Test: Search Service
-    </a>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry">
-<a class="reference internal nav-link" href="#deployment">
-   Deployment
-  </a>
-<ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry">
 <a class="reference internal nav-link" href="#configuration">
-     Configuration
-    </a>
+   Configuration
+  </a>
 </li>
-<li class="toc-h3 nav-item toc-entry">
-<a class="reference internal nav-link" href="#api-endpoint-registration">
-     API Endpoint Registration
-    </a>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#signing-keys">
+   Signing keys
+  </a>
 </li>
-</ul>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registering-external-senders">
+   Registering external senders
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#endpoints">
+   Endpoints
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#consent-filtering">
+   Consent filtering
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#async-search-and-subscriptions">
+   Async search and subscriptions
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#testing-locally">
+   Testing locally
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#common-mistakes">
+   Common mistakes
+  </a>
 </li>
 <li class="toc-h2 nav-item toc-entry">
 <a class="reference internal nav-link" href="#see-also">
-   See Also
+   See also
   </a>
 </li>
 </ul>
@@ -2376,15 +2786,14 @@ document.addEventListener('DOMContentLoaded', function() {
 <div>
 <div class="section" id="openspp-as-dci-server">
 <h1>OpenSPP as DCI Server<a class="headerlink" href="#openspp-as-dci-server" title="Permalink to this headline">#</a></h1>
-<p>This guide is for <strong>developers</strong> implementing OpenSPP as a DCI server to expose registry data to external systems.</p>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
-<p>When acting as a DCI server, OpenSPP exposes its beneficiary registry to authorized external systems such as:</p>
+<p><strong>For: developers</strong></p>
+<p>Expose OpenSPP registry data to external DCI-compliant systems — national MIS dashboards querying beneficiary data, programs checking for duplicates, or research platforms pulling anonymized records.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>National MIS dashboards (reporting and analytics)</p></li>
-<li><p>Other social protection programs (coordination and deduplication)</p></li>
-<li><p>Research institutions (anonymized data for analysis)</p></li>
-<li><p>Audit systems (compliance verification)</p></li>
+<li><p>The core DCI modules installed: <code class="docutils literal notranslate"><span class="pre">spp_dci</span></code>, <code class="docutils literal notranslate"><span class="pre">spp_dci_server</span></code></p></li>
+<li><p>Familiarity with FastAPI routers and Odoo's <code class="docutils literal notranslate"><span class="pre">fastapi</span></code> module integration</p></li>
+<li><p>Understanding of <a class="reference internal" href="protocol.html"><span class="doc">DCI Protocol Details</span></a> — message envelope, HTTP Signature, endpoints</p></li>
 </ul>
 </div>
 <div class="section" id="architecture">
@@ -2392,26 +2801,29 @@ document.addEventListener('DOMContentLoaded', function() {
 <pre class="mermaid">
         sequenceDiagram
     participant External as External System
-    participant Auth as OAuth2 Endpoint
-    participant API as DCI Server
-    participant Service as Search Service
+    participant Middleware as Bearer + Signature&lt;br/&gt;middleware
+    participant Router as FastAPI router&lt;br/&gt;(spp_dci_server)
+    participant SearchSvc as Registry search&lt;br/&gt;implementation
     participant DB as res.partner
 
-    External-&gt;&gt;Auth: POST /oauth2/client/token
-    Auth--&gt;&gt;External: access_token
-
-    External-&gt;&gt;API: POST /registry/sync/search&lt;br/&gt;(Authorization: Bearer token)
-    API-&gt;&gt;Service: execute_search(request)
-    Service-&gt;&gt;DB: search([domain])
-    DB--&gt;&gt;Service: partners
-    Service-&gt;&gt;Service: map to DCI Person
-    Service--&gt;&gt;API: DCISearchResponse
-    API--&gt;&gt;External: 200 OK with results
-    </pre></div>
-<div class="section" id="module-structure">
-<h2>Module Structure<a class="headerlink" href="#module-structure" title="Permalink to this headline">#</a></h2>
-<div class="section" id="core-server-modules">
-<h3>Core Server Modules<a class="headerlink" href="#core-server-modules" title="Permalink to this headline">#</a></h3>
+    External-&gt;&gt;Middleware: POST /dci_api/v1/social/registry/sync/search&lt;br/&gt;Bearer + signed envelope
+    Middleware-&gt;&gt;Middleware: Validate token + signature
+    Middleware-&gt;&gt;Router: Authorized request
+    Router-&gt;&gt;SearchSvc: execute search
+    SearchSvc-&gt;&gt;DB: search(domain)
+    DB--&gt;&gt;SearchSvc: partners
+    SearchSvc-&gt;&gt;SearchSvc: map to DCI Person/Group
+    SearchSvc--&gt;&gt;Router: SearchResponse
+    Router--&gt;&gt;External: 200 OK signed envelope
+    </pre><p>The <code class="docutils literal notranslate"><span class="pre">spp_dci_server</span></code> module ships the FastAPI app, routers, and middleware. The actual search implementation for a given registry type (Social Registry, CRVS, Disability, etc.) is loaded dynamically at request time — if the implementation module for the requested <code class="docutils literal notranslate"><span class="pre">reg_type</span></code> is not installed, the router returns a rejection envelope with reason code <code class="docutils literal notranslate"><span class="pre">rjct.search.not_supported</span></code>.</p>
+</div>
+<div class="section" id="module-layout">
+<h2>Module layout<a class="headerlink" href="#module-layout" title="Permalink to this headline">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">spp_dci_server</span></code> provides the infrastructure only. A registry-type-specific implementation module is needed to actually serve search requests. At the time of writing, no such implementation module ships in <code class="docutils literal notranslate"><span class="pre">openspp-modules-v2/</span></code> — server-side DCI is "infrastructure present, registry search implementation pending." Until one is installed, search requests will receive a rejection response.</p>
+</div>
+<p>The modules relevant to the server role:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Module</p></th>
@@ -2419,617 +2831,240 @@ document.addEventListener('DOMContentLoaded', function() {
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">spp_dci_server</span></code></p></td>
-<td><p>Base server infrastructure with sync/async search endpoints</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">spp_dci</span></code></p></td>
+<td><p>Core: envelope schemas, signing service, shared enums</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">spp_dci_server_social</span></code></p></td>
-<td><p>Social Registry-specific implementation</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">spp_dci_server</span></code></p></td>
+<td><p>Server infrastructure: FastAPI app (<code class="docutils literal notranslate"><span class="pre">/dci_api/v1</span></code>), signature middleware, sender registry, subscription model, transaction model</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">spp_dci_api_server</span></code></p></td>
-<td><p>FastAPI endpoint registration</p></td>
+</tbody>
+</table>
+<div class="section" id="what-spp-dci-server-provides">
+<h3>What <code class="docutils literal notranslate"><span class="pre">spp_dci_server</span></code> provides<a class="headerlink" href="#what-spp-dci-server-provides" title="Permalink to this headline">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>spp_dci_server/
+├── data/fastapi_endpoint_data.xml    # Registers /dci_api/v1 FastAPI app
+├── middleware/
+│   ├── signature.py                  # Bearer + HTTP Signature verification
+│   └── rate_limit.py                 # Per-sender rate limiting
+├── routers/
+│   ├── search.py                     # POST /registry/sync/search
+│   ├── async_router.py               # POST /registry/search, subscribe, unsubscribe, txn/status
+│   ├── receipt.py                    # POST /receipt
+│   ├── callbacks.py                  # Callback response utilities
+│   └── jwks.py                       # GET /.well-known/jwks.json
+├── models/
+│   ├── sender_registry.py            # spp.dci.sender.registry
+│   ├── subscription.py               # spp.dci.subscription
+│   ├── transaction.py                # spp.dci.transaction (async tracking)
+│   ├── server_key.py                 # Server-side signing keys
+│   └── fastapi_endpoint_dci.py
+└── services/
+    ├── response_signer.py            # Signs outbound responses
+    ├── consent_adapter.py            # DCIConsentAdapter — consent filtering
+    └── vocabulary_adapter.py         # Vocabulary mapping
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">#</a></h2>
+<p>The DCI server reads its behavior from Odoo system parameters (<code class="docutils literal notranslate"><span class="pre">ir.config_parameter</span></code>).</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dci.api_tokens</span></code></p></td>
+<td><p><em>(none)</em></p></td>
+<td><p>Comma-separated allowlist of accepted Bearer tokens</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dci.bypass_bearer_auth</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+<td><p>Dev-mode: skip Bearer validation. Must be <code class="docutils literal notranslate"><span class="pre">false</span></code> in production.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dci.allow_unsigned_requests</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+<td><p>Dev-mode: accept unsigned envelopes. Must be <code class="docutils literal notranslate"><span class="pre">false</span></code> in production.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Set these in <strong>Settings → Technical → Parameters → System Parameters</strong>.</p>
+</div>
+<div class="section" id="signing-keys">
+<h2>Signing keys<a class="headerlink" href="#signing-keys" title="Permalink to this headline">#</a></h2>
+<p>The server needs at least one signing key to produce signed response envelopes.</p>
+<p><strong>Model:</strong> <code class="docutils literal notranslate"><span class="pre">spp.dci.signing.key</span></code> (from <code class="docutils literal notranslate"><span class="pre">spp_dci</span></code>)</p>
+<p>Each key record stores the algorithm (<code class="docutils literal notranslate"><span class="pre">ed25519</span></code> or <code class="docutils literal notranslate"><span class="pre">rs256</span></code>), the key ID, and the private-key material. Public keys are automatically exposed via <code class="docutils literal notranslate"><span class="pre">/dci_api/v1/.well-known/jwks.json</span></code> for external systems to fetch.</p>
+<p>The model provides an <code class="docutils literal notranslate"><span class="pre">action_generate_key</span></code> method — in the Odoo UI, create a new signing key, pick the algorithm, and click <strong>Generate</strong> to produce the key material.</p>
+</div>
+<div class="section" id="registering-external-senders">
+<h2>Registering external senders<a class="headerlink" href="#registering-external-senders" title="Permalink to this headline">#</a></h2>
+<p>Before an external system can call the DCI server, its sender identity must be registered so the server can verify its signatures.</p>
+<p><strong>Model:</strong> <code class="docutils literal notranslate"><span class="pre">spp.dci.sender.registry</span></code> (inherits <code class="docutils literal notranslate"><span class="pre">spp.api.client</span></code>)</p>
+<p>Key fields:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sender_id</span></code></p></td>
+<td><p>Unique identifier the external system uses in the <code class="docutils literal notranslate"><span class="pre">sender_id</span></code> header</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">public_key</span></code></p></td>
+<td><p>PEM-encoded public key used for signature verification</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">jwks_url</span></code></p></td>
+<td><p>Alternative to inline <code class="docutils literal notranslate"><span class="pre">public_key</span></code> — URL to fetch the sender's JWKS</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">algorithm</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ed25519</span></code> or <code class="docutils literal notranslate"><span class="pre">rs256</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">auto_approve</span></code></p></td>
+<td><p>If true, the sender's subscribe requests are auto-approved</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rate_limit_per_minute</span></code></p></td>
+<td><p>Per-sender per-minute rate limit</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">rate_limit_per_day</span></code></p></td>
+<td><p>Per-sender per-day rate limit</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">organization_type</span></code> / <code class="docutils literal notranslate"><span class="pre">legal_basis</span></code></p></td>
+<td><p>Inherited from <code class="docutils literal notranslate"><span class="pre">spp.api.client</span></code> for consent filtering</p></td>
+</tr>
+</tbody>
+</table>
+<p>Methods:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fetch_public_key()</span></code></p></td>
+<td><p>Fetches from <code class="docutils literal notranslate"><span class="pre">jwks_url</span></code> and caches into <code class="docutils literal notranslate"><span class="pre">public_key</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">get_verifier()</span></code></p></td>
+<td><p>Returns a <code class="docutils literal notranslate"><span class="pre">DCIVerifier</span></code> configured with this sender's key</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">get_by_sender_id(sender_id)</span></code></p></td>
+<td><p>Class method — look up the sender record by its DCI ID</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="key-components">
-<h3>Key Components<a class="headerlink" href="#key-components" title="Permalink to this headline">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>spp_dci_server/
-├── routers/
-│   ├── auth.py           # OAuth2 token endpoint
-│   ├── registry.py       # Search, subscribe, notify endpoints
-│   └── wellknown.py      # JWKS and location metadata
-├── services/
-│   ├── search_service.py         # Query execution and result mapping
-│   ├── subscription_service.py   # Event subscription management
-│   └── consent_adapter.py        # Privacy and consent checks
-├── models/
-│   ├── dci_client.py             # API client credentials
-│   ├── dci_transaction.py        # Async transaction tracking
-│   └── dci_subscription.py       # Event subscriptions
-└── schemas/
-    ├── envelope.py       # DCI message envelope
-    ├── search.py         # Search request/response schemas
-    └── person.py         # Person/Group data schemas
+<div class="section" id="endpoints">
+<h2>Endpoints<a class="headerlink" href="#endpoints" title="Permalink to this headline">#</a></h2>
+<p>The full endpoint inventory is in <a class="reference internal" href="protocol.html"><span class="doc">DCI Protocol Details</span></a>. Summary:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Path</p></th>
+<th class="head"><p>Router file</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>POST</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/dci_api/v1/social/registry/sync/search</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">routers/search.py</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>POST</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/dci_api/v1/social/registry/search</span></code> (async)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">routers/async_router.py</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>POST</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/dci_api/v1/social/registry/subscribe</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">routers/async_router.py</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>POST</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/dci_api/v1/social/registry/unsubscribe</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">routers/async_router.py</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>POST</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/dci_api/v1/social/registry/sync/txn/status</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">routers/async_router.py</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>POST</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/dci_api/v1/social/registry/receipt</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">routers/receipt.py</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>GET</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/dci_api/v1/.well-known/jwks.json</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">routers/jwks.py</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>All POST endpoints run through the Bearer + HTTP Signature middleware. The JWKS endpoint is public.</p>
+</div>
+<div class="section" id="consent-filtering">
+<h2>Consent filtering<a class="headerlink" href="#consent-filtering" title="Permalink to this headline">#</a></h2>
+<p>Responses should be filtered according to the sender's legal basis and per-registrant consent. The server provides a <code class="docutils literal notranslate"><span class="pre">DCIConsentAdapter</span></code> class in <code class="docutils literal notranslate"><span class="pre">spp_dci_server/services/consent_adapter.py</span></code> that wraps the <code class="docutils literal notranslate"><span class="pre">spp_api_v2</span></code> consent infrastructure for DCI use.</p>
+<p>Key methods on <code class="docutils literal notranslate"><span class="pre">DCIConsentAdapter</span></code>:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">can_access_registrant(registrant_id,</span> <span class="pre">resource_type)</span></code></p></td>
+<td><p>Returns bool — whether this sender can access this registrant</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">filter_dci_response(registrant_id,</span> <span class="pre">dci_data,</span> <span class="pre">resource_type,</span> <span class="pre">log_access)</span></code></p></td>
+<td><p>Strips unconsented fields from a response dict</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">build_consented_domain(base_domain)</span></code></p></td>
+<td><p>Augments an Odoo search domain with consent filters</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">log_dci_access(registrant_id,</span> <span class="pre">resource_type,</span> <span class="pre">action,</span> <span class="pre">fields_accessed)</span></code></p></td>
+<td><p>Records access for audit</p></td>
+</tr>
+</tbody>
+</table>
+<p>A search implementation should call these before returning records.</p>
+</div>
+<div class="section" id="async-search-and-subscriptions">
+<h2>Async search and subscriptions<a class="headerlink" href="#async-search-and-subscriptions" title="Permalink to this headline">#</a></h2>
+<p>For long-running searches or event subscriptions, use the async endpoints. The response pattern:</p>
+<ol class="arabic simple">
+<li><p>Client POSTs to <code class="docutils literal notranslate"><span class="pre">/dci_api/v1/social/registry/search</span></code> with a signed envelope containing <code class="docutils literal notranslate"><span class="pre">sender_uri</span></code> in the header</p></li>
+<li><p>Server validates and enqueues the work via <code class="docutils literal notranslate"><span class="pre">queue_job</span></code>, returns <code class="docutils literal notranslate"><span class="pre">202</span> <span class="pre">Accepted</span></code> with a correlation ID</p></li>
+<li><p>When processing completes, the server POSTs the result envelope to the client's <code class="docutils literal notranslate"><span class="pre">sender_uri</span></code></p></li>
+<li><p>Client may poll <code class="docutils literal notranslate"><span class="pre">/dci_api/v1/social/registry/sync/txn/status</span></code> with the correlation ID for status</p></li>
+</ol>
+<p>Transactions are tracked in <code class="docutils literal notranslate"><span class="pre">spp.dci.transaction</span></code>. Subscriptions are tracked in <code class="docutils literal notranslate"><span class="pre">spp.dci.subscription</span></code> with states <code class="docutils literal notranslate"><span class="pre">pending</span></code> → <code class="docutils literal notranslate"><span class="pre">active</span></code> (on auto-approve or manual confirm) → <code class="docutils literal notranslate"><span class="pre">cancelled</span></code>.</p>
+</div>
+<div class="section" id="testing-locally">
+<h2>Testing locally<a class="headerlink" href="#testing-locally" title="Permalink to this headline">#</a></h2>
+<p>During development you often need to call the DCI server without a full signed envelope. Set both bypass flags in system parameters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dci</span><span class="o">.</span><span class="n">bypass_bearer_auth</span> <span class="o">=</span> <span class="n">true</span>
+<span class="n">dci</span><span class="o">.</span><span class="n">allow_unsigned_requests</span> <span class="o">=</span> <span class="n">true</span>
 </pre></div>
 </div>
+<p>When either flag is true, the signature middleware logs a <code class="docutils literal notranslate"><span class="pre">CRITICAL</span></code> warning on every request. Do not ship these values to production.</p>
+<p>A simpler end-to-end local path: install the <code class="docutils literal notranslate"><span class="pre">spp_dci_demo</span></code> module, which seeds a working CRVS-integration flow you can exercise without any external systems.</p>
 </div>
-</div>
-<div class="section" id="implementing-sync-search">
-<h2>Implementing Sync Search<a class="headerlink" href="#implementing-sync-search" title="Permalink to this headline">#</a></h2>
-<div class="section" id="define-the-router">
-<h3>1. Define the Router<a class="headerlink" href="#define-the-router" title="Permalink to this headline">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># spp_dci_server/routers/registry.py</span>
-<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">APIRouter</span><span class="p">,</span> <span class="n">Depends</span><span class="p">,</span> <span class="n">HTTPException</span>
-<span class="kn">from</span> <span class="nn">..schemas.search</span> <span class="kn">import</span> <span class="n">DCISearchRequest</span><span class="p">,</span> <span class="n">DCISearchResponse</span>
-<span class="kn">from</span> <span class="nn">..services.search_service</span> <span class="kn">import</span> <span class="n">SearchService</span>
-<span class="kn">from</span> <span class="nn">..middleware.auth</span> <span class="kn">import</span> <span class="n">verify_token</span>
-<span class="kn">from</span> <span class="nn">..services.signature</span> <span class="kn">import</span> <span class="n">verify_signature</span><span class="p">,</span> <span class="n">sign_message</span>
-
-<span class="n">router</span> <span class="o">=</span> <span class="n">APIRouter</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s2">"/registry"</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">"Registry"</span><span class="p">])</span>
-
-<span class="nd">@router</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">"/sync/search"</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">DCISearchResponse</span><span class="p">)</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">sync_search</span><span class="p">(</span>
-    <span class="n">request</span><span class="p">:</span> <span class="n">DCISearchRequest</span><span class="p">,</span>
-    <span class="n">token</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">verify_token</span><span class="p">),</span>
-    <span class="n">env</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_env</span><span class="p">)</span>
-<span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Synchronous registry search.</span>
-
-<span class="sd">    Supports query types:</span>
-<span class="sd">    - idtype-value: Simple identifier lookup</span>
-<span class="sd">    - expression: Complex conditional queries</span>
-<span class="sd">    - predicate: Predicate-based filtering</span>
-<span class="sd">    """</span>
-    <span class="c1"># Verify signature if present</span>
-    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">signature</span><span class="p">:</span>
-        <span class="k">await</span> <span class="n">verify_signature</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
-
-    <span class="c1"># Execute search</span>
-    <span class="n">service</span> <span class="o">=</span> <span class="n">SearchService</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">token</span><span class="p">[</span><span class="s1">'client_id'</span><span class="p">])</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">service</span><span class="o">.</span><span class="n">execute_search</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-
-    <span class="c1"># Sign response</span>
-    <span class="n">response</span><span class="o">.</span><span class="n">signature</span> <span class="o">=</span> <span class="n">sign_message</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">header</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">message</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">response</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="implement-search-service">
-<h3>2. Implement Search Service<a class="headerlink" href="#implement-search-service" title="Permalink to this headline">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># spp_dci_server/services/search_service.py</span>
-<span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">api</span>
-<span class="kn">from</span> <span class="nn">..schemas.search</span> <span class="kn">import</span> <span class="n">DCISearchRequest</span><span class="p">,</span> <span class="n">DCISearchResponse</span>
-<span class="kn">from</span> <span class="nn">..services.mapper</span> <span class="kn">import</span> <span class="n">DCIPersonMapper</span>
-
-<span class="k">class</span> <span class="nc">SearchService</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Execute DCI search requests against OpenSPP registry"""</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">client_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">env</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">env</span><span class="p">[</span><span class="s1">'spp.api.client'</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">([(</span><span class="s1">'client_id'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="n">client_id</span><span class="p">)],</span> <span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">consent_adapter</span> <span class="o">=</span> <span class="n">DCIConsentAdapter</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mapper</span> <span class="o">=</span> <span class="n">DCIPersonMapper</span><span class="p">()</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">execute_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">DCISearchRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DCISearchResponse</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">"""Execute search and return DCI-formatted results"""</span>
-        <span class="n">responses</span> <span class="o">=</span> <span class="p">[]</span>
-
-        <span class="k">for</span> <span class="n">search_req</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">search_request</span><span class="p">:</span>
-            <span class="n">criteria</span> <span class="o">=</span> <span class="n">search_req</span><span class="o">.</span><span class="n">search_criteria</span>
-
-            <span class="c1"># Build Odoo domain from DCI query</span>
-            <span class="n">domain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_domain</span><span class="p">(</span><span class="n">criteria</span><span class="p">)</span>
-
-            <span class="c1"># Apply pagination</span>
-            <span class="n">page_size</span> <span class="o">=</span> <span class="n">criteria</span><span class="o">.</span><span class="n">pagination</span><span class="o">.</span><span class="n">page_size</span>
-            <span class="n">page_number</span> <span class="o">=</span> <span class="n">criteria</span><span class="o">.</span><span class="n">pagination</span><span class="o">.</span><span class="n">page_number</span>
-            <span class="n">offset</span> <span class="o">=</span> <span class="p">(</span><span class="n">page_number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">page_size</span>
-
-            <span class="c1"># Execute search</span>
-            <span class="n">partners</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">'res.partner'</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
-                <span class="n">domain</span><span class="p">,</span>
-                <span class="n">limit</span><span class="o">=</span><span class="n">page_size</span><span class="p">,</span>
-                <span class="n">offset</span><span class="o">=</span><span class="n">offset</span>
-            <span class="p">)</span>
-
-            <span class="c1"># Filter by consent</span>
-            <span class="n">allowed_partners</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">consent_adapter</span><span class="o">.</span><span class="n">filter_by_consent</span><span class="p">(</span><span class="n">partners</span><span class="p">)</span>
-
-            <span class="c1"># Convert to DCI format</span>
-            <span class="n">records</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">mapper</span><span class="o">.</span><span class="n">to_dci</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">allowed_partners</span>
-            <span class="p">]</span>
-
-            <span class="c1"># Apply field-level consent filtering</span>
-            <span class="n">records</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">consent_adapter</span><span class="o">.</span><span class="n">filter_dci_response</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">record</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">record</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">allowed_partners</span><span class="p">,</span> <span class="n">records</span><span class="p">)</span>
-            <span class="p">]</span>
-
-            <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
-                <span class="s2">"reference_id"</span><span class="p">:</span> <span class="n">search_req</span><span class="o">.</span><span class="n">reference_id</span><span class="p">,</span>
-                <span class="s2">"timestamp"</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
-                <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"succ"</span><span class="p">,</span>
-                <span class="s2">"data"</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="s2">"reg_type"</span><span class="p">:</span> <span class="n">criteria</span><span class="o">.</span><span class="n">reg_type</span><span class="p">,</span>
-                    <span class="s2">"reg_record_type"</span><span class="p">:</span> <span class="s2">"PERSON"</span><span class="p">,</span>
-                    <span class="s2">"reg_records"</span><span class="p">:</span> <span class="n">records</span>
-                <span class="p">},</span>
-                <span class="s2">"pagination"</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="s2">"page_size"</span><span class="p">:</span> <span class="n">page_size</span><span class="p">,</span>
-                    <span class="s2">"page_number"</span><span class="p">:</span> <span class="n">page_number</span><span class="p">,</span>
-                    <span class="s2">"total_count"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">allowed_partners</span><span class="p">)</span>
-                <span class="p">}</span>
-            <span class="p">})</span>
-
-        <span class="k">return</span> <span class="n">DCISearchResponse</span><span class="p">(</span>
-            <span class="n">signature</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>  <span class="c1"># Will be filled by router</span>
-            <span class="n">header</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_build_response_header</span><span class="p">(</span><span class="n">request</span><span class="p">),</span>
-            <span class="n">message</span><span class="o">=</span><span class="p">{</span>
-                <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">transaction_id</span><span class="p">,</span>
-                <span class="s2">"correlation_id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()),</span>
-                <span class="s2">"search_response"</span><span class="p">:</span> <span class="n">responses</span>
-            <span class="p">}</span>
-        <span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">_build_domain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">criteria</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">"""Convert DCI search criteria to Odoo domain"""</span>
-        <span class="n">domain</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">'is_registrant'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="kc">True</span><span class="p">)]</span>
-
-        <span class="k">if</span> <span class="n">criteria</span><span class="o">.</span><span class="n">query_type</span> <span class="o">==</span> <span class="s2">"idtype-value"</span><span class="p">:</span>
-            <span class="c1"># Simple identifier lookup</span>
-            <span class="n">query</span> <span class="o">=</span> <span class="n">criteria</span><span class="o">.</span><span class="n">query</span>
-            <span class="n">domain</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
-                <span class="p">(</span><span class="s1">'registry_id_ids.id_type_id.namespace_uri'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="n">query</span><span class="o">.</span><span class="n">type</span><span class="p">),</span>
-                <span class="p">(</span><span class="s1">'registry_id_ids.value'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="n">query</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-            <span class="p">])</span>
-
-        <span class="k">elif</span> <span class="n">criteria</span><span class="o">.</span><span class="n">query_type</span> <span class="o">==</span> <span class="s2">"expression"</span><span class="p">:</span>
-            <span class="c1"># Complex expression query</span>
-            <span class="n">expression</span> <span class="o">=</span> <span class="n">criteria</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">expression</span>
-
-            <span class="k">if</span> <span class="s1">'seq'</span> <span class="ow">in</span> <span class="n">expression</span><span class="p">:</span>
-                <span class="c1"># AND conditions</span>
-                <span class="k">for</span> <span class="n">condition</span> <span class="ow">in</span> <span class="n">expression</span><span class="p">[</span><span class="s1">'seq'</span><span class="p">]:</span>
-                    <span class="n">domain</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">_condition_to_domain</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
-                    <span class="p">)</span>
-
-            <span class="k">elif</span> <span class="s1">'or'</span> <span class="ow">in</span> <span class="n">expression</span><span class="p">:</span>
-                <span class="c1"># OR conditions</span>
-                <span class="n">or_domains</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="k">for</span> <span class="n">sub_expr</span> <span class="ow">in</span> <span class="n">expression</span><span class="p">[</span><span class="s1">'or'</span><span class="p">]:</span>
-                    <span class="k">for</span> <span class="n">condition</span> <span class="ow">in</span> <span class="n">sub_expr</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'seq'</span><span class="p">,</span> <span class="p">[]):</span>
-                        <span class="n">or_domains</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">_condition_to_domain</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
-                        <span class="p">)</span>
-                <span class="n">domain</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s1">'|'</span><span class="p">,)</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">or_domains</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
-                <span class="n">domain</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">or_domains</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">domain</span>
-
-    <span class="k">def</span> <span class="nf">_condition_to_domain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">condition</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">"""Convert DCI condition to Odoo domain clause"""</span>
-        <span class="n">attribute</span> <span class="o">=</span> <span class="n">condition</span><span class="p">[</span><span class="s1">'attribute'</span><span class="p">]</span>
-        <span class="n">operator</span> <span class="o">=</span> <span class="n">condition</span><span class="p">[</span><span class="s1">'operator'</span><span class="p">]</span>
-        <span class="n">value</span> <span class="o">=</span> <span class="n">condition</span><span class="p">[</span><span class="s1">'value'</span><span class="p">]</span>
-
-        <span class="c1"># Map DCI attributes to Odoo fields</span>
-        <span class="n">field_mapping</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">'birth_date'</span><span class="p">:</span> <span class="s1">'birthdate'</span><span class="p">,</span>
-            <span class="s1">'sex'</span><span class="p">:</span> <span class="s1">'gender_id.code'</span><span class="p">,</span>
-            <span class="s1">'given_name'</span><span class="p">:</span> <span class="s1">'given_name'</span><span class="p">,</span>
-            <span class="s1">'surname'</span><span class="p">:</span> <span class="s1">'family_name'</span><span class="p">,</span>
-        <span class="p">}</span>
-
-        <span class="n">field</span> <span class="o">=</span> <span class="n">field_mapping</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span> <span class="n">attribute</span><span class="p">)</span>
-
-        <span class="c1"># Map DCI operators to Odoo operators</span>
-        <span class="n">operator_mapping</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">'='</span><span class="p">:</span> <span class="s1">'='</span><span class="p">,</span>
-            <span class="s1">'&gt;'</span><span class="p">:</span> <span class="s1">'&gt;'</span><span class="p">,</span>
-            <span class="s1">'&lt;'</span><span class="p">:</span> <span class="s1">'&lt;'</span><span class="p">,</span>
-            <span class="s1">'&gt;='</span><span class="p">:</span> <span class="s1">'&gt;='</span><span class="p">,</span>
-            <span class="s1">'&lt;='</span><span class="p">:</span> <span class="s1">'&lt;='</span><span class="p">,</span>
-            <span class="s1">'in'</span><span class="p">:</span> <span class="s1">'in'</span><span class="p">,</span>
-            <span class="s1">'contains'</span><span class="p">:</span> <span class="s1">'ilike'</span>
-        <span class="p">}</span>
-
-        <span class="n">odoo_operator</span> <span class="o">=</span> <span class="n">operator_mapping</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">operator</span><span class="p">,</span> <span class="s1">'='</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">odoo_operator</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="implement-data-mapper">
-<h3>3. Implement Data Mapper<a class="headerlink" href="#implement-data-mapper" title="Permalink to this headline">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># spp_dci_server/services/mapper.py</span>
-<span class="k">class</span> <span class="nc">DCIPersonMapper</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Bidirectional mapping between DCI Person and res.partner"""</span>
-
-    <span class="k">def</span> <span class="nf">to_dci</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">partner</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">"""Convert Odoo partner to DCI Person schema"""</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="s2">"@context"</span><span class="p">:</span> <span class="s2">"https://schema.spdci.org/core/v1"</span><span class="p">,</span>
-            <span class="s2">"@type"</span><span class="p">:</span> <span class="s2">"Person"</span><span class="p">,</span>
-            <span class="s2">"identifier"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                    <span class="s2">"identifier_type"</span><span class="p">:</span> <span class="nb">id</span><span class="o">.</span><span class="n">id_type_id</span><span class="o">.</span><span class="n">namespace_uri</span> <span class="ow">or</span> <span class="nb">id</span><span class="o">.</span><span class="n">id_type_id</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-                    <span class="s2">"identifier_value"</span><span class="p">:</span> <span class="nb">id</span><span class="o">.</span><span class="n">value</span>
-                <span class="p">}</span>
-                <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">partner</span><span class="o">.</span><span class="n">registry_id_ids</span>
-            <span class="p">],</span>
-            <span class="s2">"name"</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s2">"given_name"</span><span class="p">:</span> <span class="n">partner</span><span class="o">.</span><span class="n">given_name</span><span class="p">,</span>
-                <span class="s2">"surname"</span><span class="p">:</span> <span class="n">partner</span><span class="o">.</span><span class="n">family_name</span><span class="p">,</span>
-                <span class="s2">"prefix"</span><span class="p">:</span> <span class="n">partner</span><span class="o">.</span><span class="n">name_prefix</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">,</span>
-                <span class="s2">"suffix"</span><span class="p">:</span> <span class="n">partner</span><span class="o">.</span><span class="n">name_suffix</span> <span class="ow">or</span> <span class="kc">None</span>
-            <span class="p">},</span>
-            <span class="s2">"sex"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_map_gender</span><span class="p">(</span><span class="n">partner</span><span class="o">.</span><span class="n">gender_id</span><span class="p">),</span>
-            <span class="s2">"birth_date"</span><span class="p">:</span> <span class="n">partner</span><span class="o">.</span><span class="n">birthdate</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span> <span class="k">if</span> <span class="n">partner</span><span class="o">.</span><span class="n">birthdate</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s2">"death_date"</span><span class="p">:</span> <span class="n">partner</span><span class="o">.</span><span class="n">deathdate</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span> <span class="k">if</span> <span class="n">partner</span><span class="o">.</span><span class="n">deathdate</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s2">"address"</span><span class="p">:</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_map_address</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">partner</span><span class="o">.</span><span class="n">address_ids</span><span class="p">],</span>
-            <span class="s2">"phone_number"</span><span class="p">:</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">partner</span><span class="o">.</span><span class="n">phone_ids</span><span class="p">],</span>
-            <span class="s2">"email"</span><span class="p">:</span> <span class="p">[</span><span class="n">partner</span><span class="o">.</span><span class="n">email</span><span class="p">]</span> <span class="k">if</span> <span class="n">partner</span><span class="o">.</span><span class="n">email</span> <span class="k">else</span> <span class="p">[],</span>
-            <span class="s2">"registration_date"</span><span class="p">:</span> <span class="n">partner</span><span class="o">.</span><span class="n">create_date</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
-            <span class="s2">"last_updated"</span><span class="p">:</span> <span class="n">partner</span><span class="o">.</span><span class="n">write_date</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
-        <span class="p">}</span>
-
-    <span class="k">def</span> <span class="nf">_map_gender</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gender</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">"""Map OpenSPP gender to DCI sex"""</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">gender</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s2">"unknown"</span>
-
-        <span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">"male"</span><span class="p">:</span> <span class="s2">"male"</span><span class="p">,</span>
-            <span class="s2">"female"</span><span class="p">:</span> <span class="s2">"female"</span><span class="p">,</span>
-            <span class="s2">"other"</span><span class="p">:</span> <span class="s2">"other"</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">mapping</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">gender</span><span class="o">.</span><span class="n">code</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="s2">"unknown"</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">_map_address</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">"""Convert Odoo address to DCI Address"""</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="s2">"address_line_1"</span><span class="p">:</span> <span class="n">address</span><span class="o">.</span><span class="n">street</span><span class="p">,</span>
-            <span class="s2">"address_line_2"</span><span class="p">:</span> <span class="n">address</span><span class="o">.</span><span class="n">street2</span><span class="p">,</span>
-            <span class="s2">"locality"</span><span class="p">:</span> <span class="n">address</span><span class="o">.</span><span class="n">city</span><span class="p">,</span>
-            <span class="s2">"sub_region_code"</span><span class="p">:</span> <span class="n">address</span><span class="o">.</span><span class="n">district_id</span><span class="o">.</span><span class="n">code</span> <span class="k">if</span> <span class="n">address</span><span class="o">.</span><span class="n">district_id</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s2">"region_code"</span><span class="p">:</span> <span class="n">address</span><span class="o">.</span><span class="n">state_id</span><span class="o">.</span><span class="n">code</span> <span class="k">if</span> <span class="n">address</span><span class="o">.</span><span class="n">state_id</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s2">"postal_code"</span><span class="p">:</span> <span class="n">address</span><span class="o">.</span><span class="n">zip</span><span class="p">,</span>
-            <span class="s2">"country_code"</span><span class="p">:</span> <span class="n">address</span><span class="o">.</span><span class="n">country_id</span><span class="o">.</span><span class="n">code</span> <span class="k">if</span> <span class="n">address</span><span class="o">.</span><span class="n">country_id</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s2">"geo_location"</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s2">"plus_code"</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="s2">"geometry"</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="s2">"location"</span><span class="p">:</span> <span class="p">{</span>
-                            <span class="s2">"latitude"</span><span class="p">:</span> <span class="n">address</span><span class="o">.</span><span class="n">partner_latitude</span><span class="p">,</span>
-                            <span class="s2">"longitude"</span><span class="p">:</span> <span class="n">address</span><span class="o">.</span><span class="n">partner_longitude</span>
-                        <span class="p">}</span>
-                    <span class="p">}</span>
-                <span class="p">}</span>
-            <span class="p">}</span> <span class="k">if</span> <span class="n">address</span><span class="o">.</span><span class="n">partner_latitude</span> <span class="ow">and</span> <span class="n">address</span><span class="o">.</span><span class="n">partner_longitude</span> <span class="k">else</span> <span class="kc">None</span>
-        <span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="implementing-async-search">
-<h2>Implementing Async Search<a class="headerlink" href="#implementing-async-search" title="Permalink to this headline">#</a></h2>
-<p>For large queries, use async search with background processing:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># spp_dci_server/routers/registry.py</span>
-<span class="nd">@router</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">"/search"</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="mi">202</span><span class="p">)</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">async_search</span><span class="p">(</span>
-    <span class="n">request</span><span class="p">:</span> <span class="n">DCISearchRequest</span><span class="p">,</span>
-    <span class="n">background_tasks</span><span class="p">:</span> <span class="n">BackgroundTasks</span><span class="p">,</span>
-    <span class="n">token</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">verify_token</span><span class="p">),</span>
-    <span class="n">env</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_env</span><span class="p">)</span>
-<span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Asynchronous search - returns 202 immediately.</span>
-
-<span class="sd">    Results sent to sender_uri callback endpoint.</span>
-<span class="sd">    """</span>
-    <span class="c1"># Create transaction record</span>
-    <span class="n">transaction</span> <span class="o">=</span> <span class="n">env</span><span class="p">[</span><span class="s1">'spp.dci.transaction'</span><span class="p">]</span><span class="o">.</span><span class="n">create</span><span class="p">({</span>
-        <span class="s1">'transaction_id'</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">transaction_id</span><span class="p">,</span>
-        <span class="s1">'message_id'</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">message_id</span><span class="p">,</span>
-        <span class="s1">'action'</span><span class="p">:</span> <span class="s1">'search'</span><span class="p">,</span>
-        <span class="s1">'sender_id'</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">sender_id</span><span class="p">,</span>
-        <span class="s1">'callback_uri'</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">sender_uri</span><span class="p">,</span>
-        <span class="s1">'request_payload'</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span><span class="p">(),</span>
-        <span class="s1">'state'</span><span class="p">:</span> <span class="s1">'received'</span>
-    <span class="p">})</span>
-
-    <span class="c1"># Queue background job</span>
-    <span class="n">transaction</span><span class="o">.</span><span class="n">with_delay</span><span class="p">(</span>
-        <span class="n">channel</span><span class="o">=</span><span class="s1">'root.dci'</span><span class="p">,</span>
-        <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">"DCI Search </span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">transaction_id</span><span class="si">}</span><span class="s2">"</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">process_async_search</span><span class="p">()</span>
-
-    <span class="c1"># Return immediate acknowledgment</span>
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="s2">"signature"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
-        <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1.0.0"</span><span class="p">,</span>
-            <span class="s2">"message_id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()),</span>
-            <span class="s2">"message_ts"</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
-            <span class="s2">"action"</span><span class="p">:</span> <span class="s2">"on-search"</span><span class="p">,</span>
-            <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"rcvd"</span><span class="p">,</span>
-            <span class="s2">"sender_id"</span><span class="p">:</span> <span class="n">env</span><span class="p">[</span><span class="s1">'ir.config_parameter'</span><span class="p">]</span><span class="o">.</span><span class="n">get_param</span><span class="p">(</span><span class="s1">'dci.sender_id'</span><span class="p">),</span>
-            <span class="s2">"receiver_id"</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">sender_id</span>
-        <span class="p">},</span>
-        <span class="s2">"message"</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"transaction_id"</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">transaction_id</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-</pre></div>
-</div>
-<div class="section" id="background-processing">
-<h3>Background Processing<a class="headerlink" href="#background-processing" title="Permalink to this headline">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># spp_dci_server/models/dci_transaction.py</span>
-<span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">models</span><span class="p">,</span> <span class="n">fields</span>
-<span class="kn">from</span> <span class="nn">odoo.addons.queue_job.job</span> <span class="kn">import</span> <span class="n">job</span>
-
-<span class="k">class</span> <span class="nc">DCITransaction</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="n">_name</span> <span class="o">=</span> <span class="s1">'spp.dci.transaction'</span>
-    <span class="n">_description</span> <span class="o">=</span> <span class="s1">'DCI Async Transaction'</span>
-
-    <span class="n">transaction_id</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">callback_uri</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">()</span>
-    <span class="n">request_payload</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Text</span><span class="p">()</span>
-    <span class="n">response_payload</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Text</span><span class="p">()</span>
-    <span class="n">state</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Selection</span><span class="p">([</span>
-        <span class="p">(</span><span class="s1">'received'</span><span class="p">,</span> <span class="s1">'Received'</span><span class="p">),</span>
-        <span class="p">(</span><span class="s1">'processing'</span><span class="p">,</span> <span class="s1">'Processing'</span><span class="p">),</span>
-        <span class="p">(</span><span class="s1">'success'</span><span class="p">,</span> <span class="s1">'Success'</span><span class="p">),</span>
-        <span class="p">(</span><span class="s1">'rejected'</span><span class="p">,</span> <span class="s1">'Rejected'</span><span class="p">),</span>
-        <span class="p">(</span><span class="s1">'callback_sent'</span><span class="p">,</span> <span class="s1">'Callback Sent'</span><span class="p">),</span>
-    <span class="p">],</span> <span class="n">default</span><span class="o">=</span><span class="s1">'received'</span><span class="p">)</span>
-
-    <span class="nd">@job</span><span class="p">(</span><span class="n">default_channel</span><span class="o">=</span><span class="s1">'root.dci'</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">process_async_search</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">"""Process search request asynchronously"""</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s1">'processing'</span>
-
-        <span class="k">try</span><span class="p">:</span>
-            <span class="c1"># Execute search</span>
-            <span class="n">service</span> <span class="o">=</span> <span class="n">SearchService</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sender_id</span><span class="o">.</span><span class="n">client_id</span><span class="p">)</span>
-            <span class="n">request</span> <span class="o">=</span> <span class="n">DCISearchRequest</span><span class="p">(</span><span class="o">**</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request_payload</span><span class="p">))</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">execute_search</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-
-            <span class="bp">self</span><span class="o">.</span><span class="n">response_payload</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s1">'success'</span>
-
-            <span class="c1"># Send callback</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_send_callback</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s1">'rejected'</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">error_message</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-            <span class="n">_logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">"DCI async search failed: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">transaction_id</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">_send_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">"""Send response to caller's callback URI"""</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">callback_uri</span><span class="p">:</span>
-            <span class="k">return</span>
-
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">callback_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_callback_envelope</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-
-            <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">callback_uri</span><span class="p">,</span>
-                <span class="n">json</span><span class="o">=</span><span class="n">callback_data</span><span class="p">,</span>
-                <span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
-                <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">}</span>
-            <span class="p">)</span>
-            <span class="n">resp</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s1">'callback_sent'</span>
-
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s1">'callback_failed'</span>
-            <span class="c1"># Retry with exponential backoff</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">with_delay</span><span class="p">(</span><span class="n">eta</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">max_retries</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">_send_callback</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="implementing-subscriptions">
-<h2>Implementing Subscriptions<a class="headerlink" href="#implementing-subscriptions" title="Permalink to this headline">#</a></h2>
-<p>Allow external systems to subscribe to registry events:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># spp_dci_server/routers/registry.py</span>
-<span class="nd">@router</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">"/subscribe"</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="mi">202</span><span class="p">)</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">subscribe</span><span class="p">(</span>
-    <span class="n">request</span><span class="p">:</span> <span class="n">DCISubscribeRequest</span><span class="p">,</span>
-    <span class="n">token</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">verify_token</span><span class="p">),</span>
-    <span class="n">env</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">(</span><span class="n">get_env</span><span class="p">)</span>
-<span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Subscribe to registry events"""</span>
-    <span class="n">service</span> <span class="o">=</span> <span class="n">SubscriptionService</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
-    <span class="n">subscription_code</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="s2">"signature"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
-        <span class="s2">"header"</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1.0.0"</span><span class="p">,</span>
-            <span class="s2">"message_id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()),</span>
-            <span class="s2">"message_ts"</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
-            <span class="s2">"action"</span><span class="p">:</span> <span class="s2">"on-subscribe"</span><span class="p">,</span>
-            <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"succ"</span><span class="p">,</span>
-            <span class="s2">"sender_id"</span><span class="p">:</span> <span class="n">env</span><span class="p">[</span><span class="s1">'ir.config_parameter'</span><span class="p">]</span><span class="o">.</span><span class="n">get_param</span><span class="p">(</span><span class="s1">'dci.sender_id'</span><span class="p">),</span>
-            <span class="s2">"receiver_id"</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">sender_id</span>
-        <span class="p">},</span>
-        <span class="s2">"message"</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"subscription_code"</span><span class="p">:</span> <span class="n">subscription_code</span><span class="p">,</span>
-            <span class="s2">"expires"</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">subscribe_criteria</span><span class="o">.</span><span class="n">frequency</span><span class="o">.</span><span class="n">end_time</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-</pre></div>
-</div>
-<div class="section" id="subscription-service">
-<h3>Subscription Service<a class="headerlink" href="#subscription-service" title="Permalink to this headline">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># spp_dci_server/services/subscription_service.py</span>
-<span class="k">class</span> <span class="nc">SubscriptionService</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Manage DCI event subscriptions"""</span>
-
-    <span class="k">def</span> <span class="nf">create_subscription</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">DCISubscribeRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">"""Create new subscription, return subscription_code"""</span>
-        <span class="n">subscription</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">'spp.dci.subscription'</span><span class="p">]</span><span class="o">.</span><span class="n">create</span><span class="p">({</span>
-            <span class="s1">'subscriber_id'</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">sender_id</span><span class="p">,</span>
-            <span class="s1">'callback_uri'</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">sender_uri</span><span class="p">,</span>
-            <span class="s1">'reg_type'</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">subscribe_criteria</span><span class="o">.</span><span class="n">reg_type</span><span class="p">,</span>
-            <span class="s1">'reg_event_type'</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">subscribe_criteria</span><span class="o">.</span><span class="n">reg_event_type</span><span class="p">,</span>
-            <span class="s1">'filter_expression'</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">subscribe_criteria</span><span class="o">.</span><span class="n">filter</span><span class="p">),</span>
-            <span class="s1">'start_time'</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">subscribe_criteria</span><span class="o">.</span><span class="n">frequency</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span>
-            <span class="s1">'end_time'</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">subscribe_criteria</span><span class="o">.</span><span class="n">frequency</span><span class="o">.</span><span class="n">end_time</span><span class="p">,</span>
-            <span class="s1">'state'</span><span class="p">:</span> <span class="s1">'active'</span>
-        <span class="p">})</span>
-        <span class="k">return</span> <span class="n">subscription</span><span class="o">.</span><span class="n">code</span>
-
-    <span class="k">def</span> <span class="nf">notify_subscribers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">records</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">"""Triggered by Odoo signals when records change"""</span>
-        <span class="n">subscriptions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">'spp.dci.subscription'</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">([</span>
-            <span class="p">(</span><span class="s1">'reg_event_type'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="n">event_type</span><span class="p">),</span>
-            <span class="p">(</span><span class="s1">'state'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="s1">'active'</span><span class="p">)</span>
-        <span class="p">])</span>
-
-        <span class="k">for</span> <span class="n">sub</span> <span class="ow">in</span> <span class="n">subscriptions</span><span class="p">:</span>
-            <span class="c1"># Queue notification job</span>
-            <span class="n">sub</span><span class="o">.</span><span class="n">with_delay</span><span class="p">(</span>
-                <span class="n">channel</span><span class="o">=</span><span class="s1">'root.dci'</span>
-            <span class="p">)</span><span class="o">.</span><span class="n">_send_notification</span><span class="p">(</span><span class="n">event_type</span><span class="p">,</span> <span class="n">records</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="trigger-notifications">
-<h3>Trigger Notifications<a class="headerlink" href="#trigger-notifications" title="Permalink to this headline">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># spp_dci_server/models/res_partner.py</span>
-<span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">models</span><span class="p">,</span> <span class="n">api</span>
-
-<span class="k">class</span> <span class="nc">ResPartnerDCI</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="n">_inherit</span> <span class="o">=</span> <span class="s1">'res.partner'</span>
-
-    <span class="nd">@api</span><span class="o">.</span><span class="n">model_create_multi</span>
-    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vals_list</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">"""Trigger DCI notifications on registrant creation"""</span>
-        <span class="n">records</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">vals_list</span><span class="p">)</span>
-        <span class="n">registrants</span> <span class="o">=</span> <span class="n">records</span><span class="o">.</span><span class="n">filtered</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">is_registrant</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">registrants</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">'spp.dci.subscription'</span><span class="p">]</span><span class="o">.</span><span class="n">_trigger_notifications</span><span class="p">(</span>
-                <span class="s1">'REGISTRATION'</span><span class="p">,</span> <span class="n">registrants</span>
-            <span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">records</span>
-
-    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vals</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">"""Trigger DCI notifications on registrant update"""</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">filtered</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">is_registrant</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">'spp.dci.subscription'</span><span class="p">]</span><span class="o">.</span><span class="n">_trigger_notifications</span><span class="p">(</span>
-                <span class="s1">'UPDATE'</span><span class="p">,</span> <span class="bp">self</span>
-            <span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">result</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="testing">
-<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">#</a></h2>
-<div class="section" id="unit-test-search-service">
-<h3>Unit Test: Search Service<a class="headerlink" href="#unit-test-search-service" title="Permalink to this headline">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># spp_dci_server/tests/test_search_service.py</span>
-<span class="kn">from</span> <span class="nn">odoo.tests.common</span> <span class="kn">import</span> <span class="n">TransactionCase</span>
-
-<span class="k">class</span> <span class="nc">TestSearchService</span><span class="p">(</span><span class="n">TransactionCase</span><span class="p">):</span>
-
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">setUpClass</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setUpClass</span><span class="p">()</span>
-        <span class="bp">cls</span><span class="o">.</span><span class="n">partner</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">'res.partner'</span><span class="p">]</span><span class="o">.</span><span class="n">create</span><span class="p">({</span>
-            <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Test Person'</span><span class="p">,</span>
-            <span class="s1">'given_name'</span><span class="p">:</span> <span class="s1">'John'</span><span class="p">,</span>
-            <span class="s1">'family_name'</span><span class="p">:</span> <span class="s1">'Doe'</span><span class="p">,</span>
-            <span class="s1">'birthdate'</span><span class="p">:</span> <span class="s1">'1990-01-15'</span><span class="p">,</span>
-            <span class="s1">'is_registrant'</span><span class="p">:</span> <span class="kc">True</span>
-        <span class="p">})</span>
-        <span class="bp">cls</span><span class="o">.</span><span class="n">id_type</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">'spp.id.type'</span><span class="p">]</span><span class="o">.</span><span class="n">create</span><span class="p">({</span>
-            <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'National ID'</span><span class="p">,</span>
-            <span class="s1">'namespace_uri'</span><span class="p">:</span> <span class="s1">'urn:gov:national-id'</span>
-        <span class="p">})</span>
-        <span class="bp">cls</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s1">'spp.registry.id'</span><span class="p">]</span><span class="o">.</span><span class="n">create</span><span class="p">({</span>
-            <span class="s1">'partner_id'</span><span class="p">:</span> <span class="bp">cls</span><span class="o">.</span><span class="n">partner</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
-            <span class="s1">'id_type_id'</span><span class="p">:</span> <span class="bp">cls</span><span class="o">.</span><span class="n">id_type</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
-            <span class="s1">'value'</span><span class="p">:</span> <span class="s1">'TEST-123456'</span>
-        <span class="p">})</span>
-
-    <span class="k">def</span> <span class="nf">test_search_by_identifier</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">"""Test idtype-value search"""</span>
-        <span class="n">service</span> <span class="o">=</span> <span class="n">SearchService</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">,</span> <span class="s1">'test_client'</span><span class="p">)</span>
-        <span class="n">request</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_search_request</span><span class="p">(</span>
-            <span class="n">query_type</span><span class="o">=</span><span class="s1">'idtype-value'</span><span class="p">,</span>
-            <span class="n">query</span><span class="o">=</span><span class="p">{</span>
-                <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'urn:gov:national-id'</span><span class="p">,</span>
-                <span class="s1">'value'</span><span class="p">:</span> <span class="s1">'TEST-123456'</span>
-            <span class="p">}</span>
-        <span class="p">)</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">execute_search</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">search_response</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">status</span><span class="p">,</span> <span class="s1">'succ'</span><span class="p">)</span>
-        <span class="n">records</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">search_response</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">'reg_records'</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">records</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'name'</span><span class="p">][</span><span class="s1">'given_name'</span><span class="p">],</span> <span class="s1">'John'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="deployment">
-<h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">#</a></h2>
-<div class="section" id="configuration">
-<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Environment variables</span>
-<span class="nv">DCI_SENDER_ID</span><span class="o">=</span>openspp.example.org
-<span class="nv">DCI_JWT_SECRET</span><span class="o">=</span>&lt;secure-random-string&gt;
-<span class="nv">DCI_SIGNING_KEY_PATH</span><span class="o">=</span>/etc/openspp/dci_key.pem
-
-<span class="c1"># System parameters (via Odoo UI or ir.config_parameter)</span>
-dci.sender_id<span class="w"> </span><span class="o">=</span><span class="w"> </span>openspp.example.org
-dci.callback_base_url<span class="w"> </span><span class="o">=</span><span class="w"> </span>https://openspp.example.org/api/v2/dci
-</pre></div>
-</div>
-</div>
-<div class="section" id="api-endpoint-registration">
-<h3>API Endpoint Registration<a class="headerlink" href="#api-endpoint-registration" title="Permalink to this headline">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># spp_dci_api_server/__manifest__.py</span>
-<span class="p">{</span>
-    <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'OpenSPP DCI API Server'</span><span class="p">,</span>
-    <span class="s1">'depends'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'spp_dci_server'</span><span class="p">,</span> <span class="s1">'fastapi'</span><span class="p">],</span>
-    <span class="s1">'data'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'data/fastapi_endpoint.xml'</span><span class="p">],</span>
-    <span class="s1">'auto_install'</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- spp_dci_api_server/data/fastapi_endpoint.xml --&gt;</span>
-<span class="nt">&lt;odoo&gt;</span>
-<span class="w">    </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"fastapi_endpoint_dci"</span><span class="w"> </span><span class="na">model=</span><span class="s">"fastapi.endpoint"</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>DCI<span class="w"> </span>Registry<span class="w"> </span>API<span class="nt">&lt;/field&gt;</span>
-<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"root_path"</span><span class="nt">&gt;</span>/api/v2/dci<span class="nt">&lt;/field&gt;</span>
-<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"app"</span><span class="nt">&gt;</span>spp_dci_server.app:app<span class="nt">&lt;/field&gt;</span>
-<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"user_id"</span><span class="w"> </span><span class="na">ref=</span><span class="s">"base.public_user"</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/record&gt;</span>
-<span class="nt">&lt;/odoo&gt;</span>
-</pre></div>
-</div>
-</div>
+<div class="section" id="common-mistakes">
+<h2>Common mistakes<a class="headerlink" href="#common-mistakes" title="Permalink to this headline">#</a></h2>
+<p><strong>Forgetting to populate <code class="docutils literal notranslate"><span class="pre">dci.api_tokens</span></code>.</strong> Without at least one token in the allowlist, every request with a <code class="docutils literal notranslate"><span class="pre">Bearer</span></code> header is rejected as invalid. Set the parameter before your first integration test.</p>
+<p><strong>Relying on Bearer alone.</strong> Bearer validation and signature verification are both enforced. A request with a valid Bearer token but an invalid or missing signature returns 401.</p>
+<p><strong>Treating <code class="docutils literal notranslate"><span class="pre">spp_dci_server</span></code> as a fully operational search server.</strong> The module ships the infrastructure; an implementation module for the registry type is required to actually answer searches. Without one, searches return a rejection.</p>
+<p><strong>Not activating signing keys.</strong> Keys must be in <code class="docutils literal notranslate"><span class="pre">state=active</span></code> to be included in the JWKS output. External systems that verify your responses fetch the JWKS; a newly created but inactive key won't appear there.</p>
+<p><strong>Returning unfiltered registry data.</strong> Use <code class="docutils literal notranslate"><span class="pre">DCIConsentAdapter</span></code> to filter responses. Returning raw <code class="docutils literal notranslate"><span class="pre">res.partner</span></code> fields bypasses consent and legal-basis controls.</p>
+<p><strong>Hardcoding the sender_id.</strong> The server's <code class="docutils literal notranslate"><span class="pre">sender_id</span></code> comes from system parameter <code class="docutils literal notranslate"><span class="pre">dci.sender_id</span></code>. Let deployments override it per environment rather than baking it into code.</p>
+<p><strong>Copying the request header verbatim in responses.</strong> Swap <code class="docutils literal notranslate"><span class="pre">sender_id</span></code> and <code class="docutils literal notranslate"><span class="pre">receiver_id</span></code> on the way back: your server's ID becomes the sender, the caller's ID becomes the receiver.</p>
 </div>
 <div class="section" id="see-also">
-<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">#</a></h2>
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="client_role.html"><span class="doc">OpenSPP as DCI Client</span></a> - OpenSPP as DCI client</p></li>
-<li><p><a class="reference internal" href="protocol.html"><span class="doc">DCI Protocol Details</span></a> - DCI protocol details</p></li>
+<li><p><a class="reference internal" href="client_role.html"><span class="doc">OpenSPP as DCI Client</span></a> — OpenSPP as DCI client</p></li>
+<li><p><a class="reference internal" href="protocol.html"><span class="doc">DCI Protocol Details</span></a> — message envelope, signatures, endpoints</p></li>
+<li><p><a class="reference internal" href="overview.html"><span class="doc">DCI Overview</span></a> — DCI architecture and use cases</p></li>
 <li><p><a class="reference external" href="https://github.com/spdci/api-standards">DCI API Standards</a></p></li>
 </ul>
 </div>

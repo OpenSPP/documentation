@@ -84,7 +84,7 @@ The server includes an `extension` object in the response when data exists for t
 
 ## Next steps
 
-- For the full API reference, see {doc}`API v2 <../../technical_reference/api_v2/index>`.
+- For the full API reference, see {doc}`API v2 </developer_guide/api_v2/index>`.
 - To manage extension registrations in the UI, use **Registry → Configuration → API V2 → API Extensions**.
 
 ## About older REST API modules

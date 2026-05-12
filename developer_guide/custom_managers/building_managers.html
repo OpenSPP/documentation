@@ -1,0 +1,3552 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RS4T4ZPG52"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RS4T4ZPG52');
+    </script>
+<meta content="Building a custom manager" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://docs.openspp.org/developer_guide/custom_managers/building_managers.html" property="og:url"/>
+<meta content="OpenSPP Documentation" property="og:site_name"/>
+<meta content="For: developers This page walks you through building a custom program manager. The process is the same for all manager types (eligibility, entitlement, cycle, payment) — you create a new model, inh..." property="og:description"/>
+<meta content="https://docs.openspp.org/_static/openspp_logo.png" property="og:image"/>
+<meta content="OpenSPP Documentation" property="og:image:alt"/>
+<meta content="For: developers This page walks you through building a custom program manager. The process is the same for all manager types (eligibility, entitlement, cycle, payment) — you create a new model, inh..." name="description"/>
+<meta content="en_US" property="og:locale"/>
+<title>Building a custom manager – Developer guide – Custom program managers — OpenSPP Documentation v2.0</title>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css" rel="stylesheet" type="text/css">
+<link href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" rel="stylesheet" type="text/css">
+<link href="../../_static/copybutton.css" rel="stylesheet" type="text/css">
+<link href="../../_static/sphinxcontrib-httpexample.css" rel="stylesheet" type="text/css">
+<link href="../../_static/graphviz.css" rel="stylesheet" type="text/css">
+<link href="../../_static/custom.css" rel="stylesheet" type="text/css"/>
+<link href="../../_static/print.css" media="print" rel="stylesheet" type="text/css"/>
+<link href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf" rel="preload"/>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+<script src="../../_static/jquery.js"></script>
+<script src="../../_static/underscore.js"></script>
+<script src="../../_static/doctools.js"></script>
+<script src="../../_static/clipboard.min.js"></script>
+<script src="../../_static/copybutton.js"></script>
+<script src="../../_static/sphinxcontrib-httpexample.js"></script>
+<script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+<script crossorigin="anonymous" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+<script src="../../_static/search-utils.js"></script>
+<script src="../../_static/mermaid_init.js"></script>
+<script src="../../_static/patch_scrollToActive.js"></script>
+<script src="../../_static/search_shortcut.js"></script>
+<script src="../../_static/module-filter.js"></script>
+<script src="../../_static/design-tabs.js"></script>
+<link href="https://docs.openspp.org/developer_guide/custom_managers/building_managers.html" rel="canonical">
+<link href="../../_static/opensearch.xml" rel="search" title="Search within OpenSPP Documentation v2.0" type="application/opensearchdescription+xml"/>
+<link href="../../_static/icon_192.png" rel="shortcut icon"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="tutorial.html" rel="next" title="Tutorial: build CCT program managers"/>
+<link href="manager_pattern.html" rel="prev" title="Manager pattern"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="None" name="docsearch:language"/>
+<!-- Google Analytics -->
+<!-- Review Status System - DISABLED
+<link rel="stylesheet" href="../../_static/review_status.css" type="text/css" />
+<script src="../../_static/review_status_simple.js"></script>
+-->
+<script crossorigin="anonymous" integrity="sha384-vJ1NXwwlC62VkTLRHyzdAfyL4rQ8Z478DeHgamh37YzGJh3T6j223FC2yMRVriLl" src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+<!-- Mermaid Support -->
+<script crossorigin="anonymous" integrity="sha384-+NGfjU8KzpDLXRHduEqW+ZiJr2rIg+cidUVk7B51R5xK7cHwMKQfrdFwGdrq1Bcz" src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+            primaryColor: '#0066cc',
+            primaryTextColor: '#000000',
+            primaryBorderColor: '#0066cc'
+        }
+    });
+});
+</script>
+<!-- Matomo Tag Manager -->
+<!-- End Matomo Tag Manager -->
+</link></link></link></link></link></link></head>
+<body data-offset="100" data-spy="scroll" data-target="#bd-toc-nav">
+<!-- Checkboxes to toggle the left sidebar -->
+<input aria-label="Toggle navigation sidebar" class="sidebar-toggle" id="__navigation" name="__navigation" type="checkbox"/>
+<label class="overlay overlay-navbar" for="__navigation">
+<div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input aria-label="Toggle in-page Table of Contents" class="sidebar-toggle" id="__page-toc" name="__page-toc" type="checkbox"/>
+<label class="overlay overlay-pagetoc" for="__page-toc">
+<div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+<div class="container-fluid" id="banner"></div>
+<div class="container-xl">
+<div class="row">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+<div class="bd-sidebar__content">
+<div class="bd-sidebar__top"><div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../">
+<h1 class="site-logo" id="site-title">OpenSPP Documentation v2.0</h1>
+</a>
+</div><form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<div class="input-group">
+<label class="sr-only" for="q">Search string
+    </label>
+<i aria-hidden="true" class="fa fa-search fa-lg search-icon"></i>
+<input aria-labelledby="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search" spellcheck="false" type="search" value="">
+<div class="input-group-append">
+<span class="input-group-text" id="shortcut">
+<kbd id="search-shortcut">⌘</kbd> <kbd>K</kbd>
+</span>
+</div>
+</input></div>
+</form><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../products/">
+   Products
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox">
+<label for="toctree-checkbox-1">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/sp_mis.html">
+     OpenSPP SP-MIS
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/social_registry.html">
+     OpenSPP Social Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/farmer_registry.html">
+     OpenSPP Farmer Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/drims.html">
+     OpenSPP DRIMS
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../products/features/">
+     Features
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+<label for="toctree-checkbox-2">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/unified_registry.html">
+       Unified registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/gis_land_management.html">
+       GIS &amp; land management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/program_management.html">
+       Program management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/eligibility_targeting.html">
+       Eligibility &amp; targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/payment_disbursement.html">
+       Payment &amp; disbursement
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/in_kind_benefits.html">
+       In-Kind benefits
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/data_integration_apis.html">
+       Data integration &amp; APIs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/change_management.html">
+       Change management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../products/features/grievance_redress.html">
+       Grievance redress
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../products/whats_new_v2.html">
+     What's new in OpenSPP v2
+    </a>
+</li>
+</ul>
+</input></li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../learn/">
+   Learn
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+<label for="toctree-checkbox-3">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/registry.html">
+     Registry
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/programs.html">
+     Programs
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/cycles.html">
+     Cycles
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/eligibility.html">
+     Eligibility
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/compliance.html">
+     Compliance
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/entitlements.html">
+     Entitlements
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/payments.html">
+     Payments
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/deduplication.html">
+     Deduplication
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../learn/concepts/change-requests.html">
+     Change requests
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../get_started/">
+   Get started
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+<label for="toctree-checkbox-4">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/installation/">
+     Installing OpenSPP
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+<label for="toctree-checkbox-5">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/installation/docker.html">
+       Docker installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/modules/">
+     Module installation
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+<label for="toctree-checkbox-6">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/spmis_installation.html">
+       SP-MIS installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/social_installation.html">
+       Social Registry installation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/modules/farmer_installation.html">
+       Farmer Registry installation
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../get_started/try_spmis/">
+     Try OpenSPP SP-MIS
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+<label for="toctree-checkbox-7">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/try_spmis/install_data.html">
+       Install SP-MIS demo data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/try_spmis/stories.html">
+       SP-MIS Stories
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../get_started/try_spmis/demo_scenarios.html">
+       SP-MIS Demo scenarios
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/configuration_vs_customization.html">
+     Configuration vs customization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../get_started/poc_and_pilot.html">
+     From Proof of Concept to Pilot
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../user_guide/">
+   User guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+<label for="toctree-checkbox-8">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/getting_started/">
+     Getting started
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+<label for="toctree-checkbox-9">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/navigation.html">
+       Navigating the OpenSPP interface
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/getting_started/administrating_role_based_access.html">
+       Administrating role-based access
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/registry/">
+     Registry
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+<label for="toctree-checkbox-10">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_individual.html">
+       Register an individual
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/register_group.html">
+       Register a group
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/search_filter.html">
+       Search and filter registrants
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/import_data.html">
+       Import registrant data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/export_data.html">
+       Export registrant data
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/registry/farmer_registry.html">
+       Manage farm data
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/change_requests/">
+     Change Requests
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+<label for="toctree-checkbox-11">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/submit_change_request.html">
+       Submit a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/review_change_request.html">
+       Review a change request
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/change_requests/change_request_types.html">
+       Change request types
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/case_management/">
+     Case management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+<label for="toctree-checkbox-12">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/case_management/core_workflow.html">
+       Core case management workflow
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/programs/">
+     Programs
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+<label for="toctree-checkbox-13">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/create_programs.html">
+       Create programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/in_kind_products.html">
+       Manage in-kind products
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/program_cycles.html">
+       Work with program cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/enroll_beneficiaries.html">
+       Enroll beneficiaries
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/allocate_funds.html">
+       Allocate funds to programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/programs/manage_entitlements.html">
+       Manage entitlements
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/payments/">
+     Payments
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+<label for="toctree-checkbox-14">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/payments/service_points.html">
+       View Service Points
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/approvals/">
+     Approvals
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+<label for="toctree-checkbox-15">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/approvals/manage_approvals.html">
+       Review and Approve Requests
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/grievances/">
+     Grievance Redress Mechanism (GRM)
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+<label for="toctree-checkbox-16">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/grievances/grm.html">
+       Manage grievances
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/gis/">
+     Geographic Information System (GIS)
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+<label for="toctree-checkbox-17">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/gis/maps_and_reports.html">
+       View maps and generate reports
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../user_guide/reference/">
+     Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+<label for="toctree-checkbox-18">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/areas_geography.html">
+       Geographic Areas
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../user_guide/reference/vocabularies.html">
+       Vocabularies (Code Lists)
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../config_guide/">
+   Configuration guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+<label for="toctree-checkbox-19">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/alerts/">
+     Alerts
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+<label for="toctree-checkbox-20">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/alerts/overview.html">
+       Alerts overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/approval_workflows/">
+     Approval workflows
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+<label for="toctree-checkbox-21">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/approval_workflows/overview.html">
+       Approval workflows overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/approval_workflows/tiers.html">
+       Approval tiers
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/approval_workflows/batch_approvals.html">
+       Batch approvals and freeze periods
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/area_management/">
+     Area management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+<label for="toctree-checkbox-22">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/area_management/overview.html">
+       Area management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/area_management/hdx_integration.html">
+       HDX COD integration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/audit/">
+     Audit configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+<label for="toctree-checkbox-23">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/audit/overview.html">
+       Audit configuration overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/audit/backends.html">
+       Audit backends
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/banking/">
+     Banking
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+<label for="toctree-checkbox-24">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/banking/overview.html">
+       Banking overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/case_management/">
+     Case management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+<label for="toctree-checkbox-25">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/case_management/overview.html">
+       Case management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/case_management/stages.html">
+       Case stages
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/case_management/teams.html">
+       Case teams
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/cel/">
+     CEL expressions
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+<label for="toctree-checkbox-26">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/quick_start.html">
+       CEL quick start
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/syntax.html">
+       CEL syntax reference
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/variables.html">
+       Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/cookbook.html">
+       CEL cookbook
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/cel/troubleshooting.html">
+       CEL troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/change_request_types/">
+     Change request types
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+<label for="toctree-checkbox-27">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/overview.html">
+       Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/creating_types.html">
+       Creating change request types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/field_mappings.html">
+       Field mappings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/conflict_detection.html">
+       Conflict and duplicate detection
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/patterns.html">
+       Common configuration patterns
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/custom_detail_models.html">
+       Custom detail models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/change_request_types/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/consent/">
+     Consent configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+<label for="toctree-checkbox-28">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/overview.html">
+       Consent management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/privacy_notices.html">
+       Configuring privacy notices
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/recording_consent.html">
+       Recording consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/consent/api_consent_filtering.html">
+       API consent filtering
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/custom_fields/">
+     Custom fields
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+<label for="toctree-checkbox-29">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/custom_fields/overview.html">
+       Custom fields overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/drims/">
+     DRIMS Configuration Guide
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+<label for="toctree-checkbox-30">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/drims/warehouses.html">
+       Configuring Warehouses
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/drims/approval_chains.html">
+       Configuring Approval Workflows
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/drims/alerts.html">
+       Configuring Alerts and Thresholds
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/drims/vocabularies.html">
+       Configuring Vocabularies
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/eligibility/">
+     Eligibility rules
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+<label for="toctree-checkbox-31">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/cel_expressions.html">
+       CEL expressions for eligibility
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/geographic_targeting.html">
+       Geographic targeting
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/templates.html">
+       Expression templates
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/testing.html">
+       Testing eligibility rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/eligibility/advanced.html">
+       Advanced eligibility configuration
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/">
+     Entitlement formulas
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+<label for="toctree-checkbox-32">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/cash_calculations.html">
+       Cash calculations
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/inkind_entitlements.html">
+       In-kind entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/formula_library.html">
+       Formula library
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/dynamic_entitlements.html">
+       Dynamic entitlements
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/entitlement_formulas/conditional_logic.html">
+       Conditional logic
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/event_data/">
+     Event Data
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+<label for="toctree-checkbox-33">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/overview.html">
+       Event Data Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/event_types.html">
+       Configuring Event Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/event_data/field_definitions.html">
+       Defining Event Fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/farmer_registry/">
+     Farmer registry
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+<label for="toctree-checkbox-34">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/farmer_registry/overview.html">
+       Farmer registry overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/farmer_registry/farm_details.html">
+       Farm details, seasons, and activities
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/gis/">
+     GIS configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+<label for="toctree-checkbox-35">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/gis/overview.html">
+       GIS configuration overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/gis/report_templates.html">
+       GIS reports and indicator layers
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/grievance_redress/">
+     Grievance redress
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+<label for="toctree-checkbox-36">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/grievance_redress/overview.html">
+       Grievance redress overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/grievance_redress/sla_rules.html">
+       SLA rules
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/grievance_redress/teams_tags.html">
+       GRM teams and tags
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/hazard_management/">
+     Hazard management
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+<label for="toctree-checkbox-37">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/hazard_management/overview.html">
+       Hazard management overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/hazard_management/program_linking.html">
+       Linking programs to hazard incidents
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/import_matching/">
+     Import matching
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+<label for="toctree-checkbox-38">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/import_matching/overview.html">
+       Import matching overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/studio/">
+     OpenSPP Studio
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+<label for="toctree-checkbox-39">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/overview.html">
+       Studio Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/registry_field_builder.html">
+       Custom Fields (Registry Field Builder)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/studio/event_type_designer.html">
+       Event Type Designer
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/role_configuration/">
+     Role configuration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+<label for="toctree-checkbox-40">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/overview.html">
+       Access control overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/assigning_roles.html">
+       Assigning roles to users
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/predefined_roles.html">
+       Predefined roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/creating_roles.html">
+       Creating custom roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/role_configuration/troubleshooting.html">
+       Troubleshooting
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/scoring/">
+     Scoring &amp; Assessment
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+<label for="toctree-checkbox-41">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/overview.html">
+       Scoring Framework Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/pmt.html">
+       Proxy Means Test (PMT) Configuration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/vulnerability.html">
+       Vulnerability Scoring Configuration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/swdi.html">
+       Social Welfare Development Index (SWDI)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/scoring/custom.html">
+       Creating Custom Scoring Formulas
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/service_points/">
+     Service points
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+<label for="toctree-checkbox-42">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/service_points/overview.html">
+       Service points overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/service_points/lifecycle.html">
+       Service point lifecycle
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/session_tracking/">
+     Session tracking
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+<label for="toctree-checkbox-43">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/session_tracking/overview.html">
+       Session tracking overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/simulation/">
+     Simulation
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+<label for="toctree-checkbox-44">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/simulation/overview.html">
+       Simulation overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/storage_backend/">
+     Storage backend
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+<label for="toctree-checkbox-45">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/storage_backend/overview.html">
+       Storage backend overview
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/variables/">
+     Variables
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+<label for="toctree-checkbox-46">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/overview.html">
+       Variables Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/creating_variables.html">
+       Creating Variables
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/variable_types.html">
+       Variable Types
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/variables/using_variables.html">
+       Using Variables in CEL
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../config_guide/vocabulary/">
+     Vocabulary System
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+<label for="toctree-checkbox-47">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/overview.html">
+       Vocabulary Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/standard_vocabularies.html">
+       Standard Vocabularies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/profiles.html">
+       Vocabulary Profiles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../config_guide/vocabulary/custom.html">
+       Custom Vocabularies
+      </a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children">
+<a class="reference internal" href="../">
+   Developer guide
+  </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+<label for="toctree-checkbox-48">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l2">
+<a class="reference internal" href="../setup/">
+     Development setup
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../architecture/">
+     Architecture
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+<label for="toctree-checkbox-49">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../architecture/module_organization.html">
+       Module organization
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../architecture/data_model.html">
+       Data model
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../custom_modules/">
+     Custom modules
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+<label for="toctree-checkbox-50">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/scaffold.html">
+       Module scaffold
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/models.html">
+       Models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/security.html">
+       Security
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/views.html">
+       Views and menus
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/mixins.html">
+       Mixins
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/testing.html">
+       Testing
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../custom_modules/example.html">
+       Example: custom registry fields
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children">
+<a class="reference internal" href="">
+     Custom program managers
+    </a>
+<input checked="" class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+<label for="toctree-checkbox-51">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul class="current">
+<li class="toctree-l3">
+<a class="reference internal" href="manager_pattern.html">
+       Manager pattern
+      </a>
+</li>
+<li class="toctree-l3 current active">
+<a class="current reference internal" href="#">
+       Building a custom manager
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="tutorial.html">
+       Tutorial: build CCT program managers
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../change_request_types/">
+     Custom change request types
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+<label for="toctree-checkbox-52">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/detail_models.html">
+       Detail models
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/apply_strategies.html">
+       Apply strategies
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/approval_hooks.html">
+       Approval hooks
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../change_request_types/tutorial.html">
+       Tutorial: build a transfer member CR type
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../api_v2/">
+     API V2
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+<label for="toctree-checkbox-53">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/overview.html">
+       API V2 Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/authentication.html">
+       Authentication
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/external_identifiers.html">
+       External Identifiers
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/consent.html">
+       Consent Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/resources.html">
+       API Resources
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/search.html">
+       Search and Filtering
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/batch.html">
+       Batch Operations
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/errors.html">
+       Error Handling
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/tutorial.html">
+       Tutorial: build a Python API client
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/studio_integration.html">
+       Studio API Integration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/entitlements_cycles.html">
+       Entitlements and Cycles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../api_v2/products_service_points.html">
+       Products and Service Points
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../dci/">
+     DCI Integration
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+<label for="toctree-checkbox-54">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../dci/overview.html">
+       DCI Overview
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../dci/server_role.html">
+       OpenSPP as DCI Server
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../dci/client_role.html">
+       OpenSPP as DCI Client
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../dci/protocol.html">
+       DCI Protocol Details
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../security/">
+     Security and Encryption
+    </a>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../cel/">
+     CEL (Common Expression Language)
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+<label for="toctree-checkbox-55">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../cel/internals.html">
+       CEL Internals
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../studio/">
+     Studio
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../audit/">
+     Audit and Versioning
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../contributing/">
+     Contributing
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../ops_guide/">
+   Operations guide
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+<label for="toctree-checkbox-56">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/deployment/">
+     Deployment
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+<label for="toctree-checkbox-57">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/deployment/production-hardening.html">
+       Production Hardening
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../ops_guide/security/">
+     Security
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+<label for="toctree-checkbox-58">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/access_control.html">
+       Access Control
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/data_classification.html">
+       Data Classification
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/pii_encryption.html">
+       PII Encryption
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/audit.html">
+       Audit Logging
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../ops_guide/security/scanning.html">
+       Security Scanning
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/storage/">
+     Storage
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/backup/">
+     Backup &amp; Recovery
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../ops_guide/monitoring/">
+     Monitoring &amp; Alerts
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../reference/">
+   Reference
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+<label for="toctree-checkbox-59">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2 has-children">
+<a class="reference internal" href="../../reference/modules/">
+     Modules Reference
+    </a>
+<input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+<label for="toctree-checkbox-60">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_alerts.html">
+       Alerts
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_analytics.html">
+       Analytics
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_api_v2.html">
+       API V2
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+<label for="toctree-checkbox-61">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_change_request.html">
+         Change Request
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_cycles.html">
+         Cycles
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_data.html">
+         Data
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_entitlements.html">
+         Entitlements
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_gis.html">
+         GIS API
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_products.html">
+         Products
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_service_points.html">
+         Service Points
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_simulation.html">
+         Simulation API
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_api_v2_vocabulary.html">
+         Vocabulary
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_approval.html">
+       Approval Workflows
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_area.html">
+       Area Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_area_hdx.html">
+       HDX COD Integration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_attachment_av_scan.html">
+       Attachment Antivirus Scan
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_audit.html">
+       Audit
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_banking.html">
+       Banking / Bank Details
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_common.html">
+       Base (Common)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_base_setting.html">
+       Base Settings
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_branding_kit.html">
+       Branding Kit
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_case_base.html">
+       Case Management Base
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
+<label for="toctree-checkbox-62">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_case_cel.html">
+         CEL Rules
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_case_demo.html">
+         Demo Data
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_case_entitlements.html">
+         Entitlements Integration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_case_graduation.html">
+         Graduation Integration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_case_programs.html">
+         Programs Integration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_case_registry.html">
+         Registry Integration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_case_session.html">
+         Session Integration
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_cel_domain.html">
+       CEL Domain Query Builder
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-63" name="toctree-checkbox-63" type="checkbox"/>
+<label for="toctree-checkbox-63">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_cel_event.html">
+         Event Data Integration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_cel_registry_search.html">
+         Registry Search
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_cel_vocabulary.html">
+         Vocabulary Integration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_cel_widget.html">
+         Expression Widget
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_registry_search.html">
+       Registry Search
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_cel_widget.html">
+       Expression Widget
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_change_request_v2.html">
+       Change Request V2
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-64" name="toctree-checkbox-64" type="checkbox"/>
+<label for="toctree-checkbox-64">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_advanced.html">
+         Advanced Types
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_cr_types_base.html">
+         Base Types
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_claim_169.html">
+       QR Credentials (Claim 169)
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_consent.html">
+       Consent
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_custom_field.html">
+       Custom Fields
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_dci.html">
+       DCI Core
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-65" name="toctree-checkbox-65" type="checkbox"/>
+<label for="toctree-checkbox-65">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_dci_client.html">
+         Client
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_crvs.html">
+         Client - CRVS
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_dr.html">
+         Client - Disability
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_dci_client_ibr.html">
+         Client - IBR
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_dci_demo.html">
+         Demo
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_dci_server.html">
+         Server
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_demo.html">
+       Demo
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_disability_registry.html">
+       Disability Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_dms.html">
+       Document Management System
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_drims.html">
+       DRIMS - Disaster Response Inventory Management
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-66" name="toctree-checkbox-66" type="checkbox"/>
+<label for="toctree-checkbox-66">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_drims_sl.html">
+         Sri Lanka Configuration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_drims_sl_demo.html">
+         Sri Lanka Demo
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_encryption.html">
+       Encryption: Base
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_event_data.html">
+       Event Data
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_farmer_registry.html">
+       Farmer Registry
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-67" name="toctree-checkbox-67" type="checkbox"/>
+<label for="toctree-checkbox-67">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_farmer_registry_cr.html">
+         Change Request Types
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_farmer_registry_dashboard.html">
+         Dashboard
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_farmer_registry_demo.html">
+         Demo
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_farmer_registry_vocabularies.html">
+         Vocabularies
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_gis.html">
+       GIS
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-68" name="toctree-checkbox-68" type="checkbox"/>
+<label for="toctree-checkbox-68">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_gis_indicators.html">
+         Indicators
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_gis_report.html">
+         Reports
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_gis_report_programs.html">
+         Reports - Programs
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_registrant_gis.html">
+         Registrant GIS
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_graduation.html">
+       Graduation Management
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_grm.html">
+       Grievance Redress Mechanism
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-69" name="toctree-checkbox-69" type="checkbox"/>
+<label for="toctree-checkbox-69">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_grm_case_link.html">
+         Case Link
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_grm_cel.html">
+         CEL Rules
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_grm_demo.html">
+         Demo Data
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_grm_programs.html">
+         Programs Integration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_grm_registry.html">
+         Registry Integration
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_hazard.html">
+       Hazard &amp; Emergency Management
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-70" name="toctree-checkbox-70" type="checkbox"/>
+<label for="toctree-checkbox-70">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_hazard_programs.html">
+         Programs Integration
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_hazard_programs.html">
+       Programs Integration
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_hide_menus_base.html">
+       Hide Menus Base
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_hxl.html">
+       HXL Integration
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-71" name="toctree-checkbox-71" type="checkbox"/>
+<label for="toctree-checkbox-71">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_hxl_area.html">
+         Area Integration
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_import_match.html">
+       Import Match
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_indicator.html">
+       Indicator
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_indicator_studio.html">
+       Indicator Studio
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_irrigation.html">
+       Irrigation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_key_management.html">
+       Key Management
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_land_record.html">
+       Land Record
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_metric.html">
+       Metric
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_metric_service.html">
+       Metric Service
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_mis_demo_v2.html">
+       MIS Demo V2
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_oauth.html">
+       API: Oauth
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_programs.html">
+       Programs
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registrant_gis.html">
+       Registrant GIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry.html">
+       Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry_group_hierarchy.html">
+       Registry Group Hierarchy
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_registry_search.html">
+       Registry Search Portal
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_scoring.html">
+       Scoring
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-72" name="toctree-checkbox-72" type="checkbox"/>
+<label for="toctree-checkbox-72">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_scoring_programs.html">
+         Programs Bridge
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_security.html">
+       Security
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_service_points.html">
+       Service Points
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_session_tracking.html">
+       Session Tracking
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_simulation.html">
+       Targeting Simulation
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_source_tracking.html">
+       Source Tracking
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_farmer_registry.html">
+       Starter: Farmer Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_social_registry.html">
+       Starter: Social Registry
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_starter_sp_mis.html">
+       Starter: SP-MIS
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_storage_backend.html">
+       Storage Backend
+      </a>
+</li>
+<li class="toctree-l3 has-children">
+<a class="reference internal" href="../../reference/modules/spp_studio.html">
+       Studio
+      </a>
+<input class="toctree-checkbox" id="toctree-checkbox-73" name="toctree-checkbox-73" type="checkbox"/>
+<label for="toctree-checkbox-73">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_studio_api_v2.html">
+         API v2 Integration
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_studio_change_requests.html">
+         Change Requests
+        </a>
+</li>
+<li class="toctree-l4">
+<a class="reference internal" href="../../reference/modules/spp_studio_events.html">
+         Events
+        </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_user_roles.html">
+       User Roles
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_versioning.html">
+       Versioning
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/spp_vocabulary.html">
+       Vocabulary
+      </a>
+</li>
+<li class="toctree-l3">
+<a class="reference internal" href="../../reference/modules/theme_openspp_muk.html">
+       Theme
+      </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/vocabularies/">
+     Vocabulary Reference
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../reference/glossary/humanitarian.html">
+     Humanitarian Terms Glossary
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../glossary.html">
+     OpenSPP Glossary
+    </a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children">
+<a class="reference internal" href="../../community_and_support/">
+   Community and support
+  </a>
+<input class="toctree-checkbox" id="toctree-checkbox-74" name="toctree-checkbox-74" type="checkbox"/>
+<label for="toctree-checkbox-74">
+<i class="fas fa-chevron-down">
+</i>
+</label>
+<ul>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/how_to_contribute_to_the_project.html">
+     Contributing
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/i18n_l10n.html">
+     Internationalization and Localization
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_development_status.html">
+     Modules Maturity Levels and Development Status Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/module_lifecycle_maintainer_role.html">
+     Module Lifecycle - Maintainer Role Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/code_of_conduct.html">
+     Contributor Covenant Code of Conduct
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/security_report.html">
+     OpenSPP Vulnerability Disclosure Policy
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/openspp_odoo.html">
+     Why OpenSPP is built on Odoo
+    </a>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="../../community_and_support/license.html">
+     Licensing
+    </a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+<div class="bd-sidebar__bottom">
+<!-- To handle the deprecated key -->
+<div class="navbar_extra_footer">
+<p class="openspporglink">
+<a href="https://openspp.org">
+<img alt="openspp.org" src="/_static/openspp_logo.png"/> openspp.org</a>
+</p>
+</div>
+</div>
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+<div class="header-article row sticky-top noprint">
+<div class="col py-1 d-flex header-article-main">
+<div class="header-article__left">
+<label class="headerbtn" data-placement="right" data-toggle="tooltip" for="__navigation" title="Toggle navigation">
+<span class="headerbtn__icon-container">
+<i class="fas fa-bars"></i>
+</span>
+</label>
+</div>
+<div class="header-article__label">
+<span>Building a custom manager – Developer guide</span>
+</div>
+<div class="header-article__right">
+<button class="headerbtn" data-placement="bottom" data-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="headerbtn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+<button aria-label="Source repositories" class="headerbtn menu-dropdown__trigger">
+<i class="fab fa-github"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation" title="Source repository">
+<span class="headerbtn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://github.com/openspp/documentation/issues/new?title=Issue%20on%20page%20%2Fdeveloper_guide/custom_managers/building_managers.html&amp;body=Your%20issue%20content%20here." title="Open an issue">
+<span class="headerbtn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+</li>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="https://docs.openspp.org/contributing/?developer_guide/custom_managers/building_managers.md#making-contributions-on-github" title="Edit this page">
+<span class="headerbtn__icon-container">
+<i class="fas fa-pencil-alt"></i>
+</span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="menu-dropdown menu-dropdown-download-buttons">
+<button aria-label="Download this page" class="headerbtn menu-dropdown__trigger">
+<i class="fas fa-download"></i>
+</button>
+<div class="menu-dropdown__content">
+<ul>
+<li>
+<a class="headerbtn" data-placement="left" data-toggle="tooltip" href="../../_sources/developer_guide/custom_managers/building_managers.md.txt" title="Download source file">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+</li>
+<li>
+<button class="headerbtn" data-placement="left" data-toggle="tooltip" onclick="printPdf(this)" title="Print to PDF">
+<span class="headerbtn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+<label class="headerbtn headerbtn-page-toc" for="__page-toc">
+<span class="headerbtn__icon-container">
+<i class="fas fa-list"></i>
+</span>
+</label>
+</div>
+</div>
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+<div class="tocsection onthispage pt-5 pb-3">
+<i class="fas fa-list"></i> Contents
+    </div>
+<nav aria-label="Page" id="bd-toc-nav">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#the-common-pattern">
+   The common pattern
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-by-step-custom-eligibility-manager">
+   Step-by-step: custom eligibility manager
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#module-manifest">
+     Module manifest
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#implementation-model">
+     Implementation model
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#register-the-manager">
+     Register the manager
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#create-a-form-view">
+     Create a form view
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#add-security">
+     Add security
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#result">
+     Result
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registration-reference">
+   Registration reference
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#method-reference-by-manager-type">
+   Method reference by manager type
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#eligibility-manager">
+     Eligibility manager
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#entitlement-manager">
+     Entitlement manager
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#cycle-manager">
+     Cycle manager
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#payment-manager">
+     Payment manager
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#async-processing">
+   Async processing
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#approval-integration">
+   Approval integration
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#how-the-approval-flow-calls-your-managers">
+     How the approval flow calls your managers
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#configuration-fields-on-managers">
+     Configuration fields on managers
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-this-means-for-custom-managers">
+     What this means for custom managers
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#inheritance-checklist">
+   Inheritance checklist
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#common-mistakes">
+   Common mistakes
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-s-next">
+   What's next
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#see-also">
+   See also
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="article row">
+<div class="col pl-md-3 pl-lg-5 content-container">
+<!-- Table of contents that is only displayed when printing the page -->
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>Building a custom manager</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#the-common-pattern">
+   The common pattern
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#step-by-step-custom-eligibility-manager">
+   Step-by-step: custom eligibility manager
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#module-manifest">
+     Module manifest
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#implementation-model">
+     Implementation model
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#register-the-manager">
+     Register the manager
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#create-a-form-view">
+     Create a form view
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#add-security">
+     Add security
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#result">
+     Result
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#registration-reference">
+   Registration reference
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#method-reference-by-manager-type">
+   Method reference by manager type
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#eligibility-manager">
+     Eligibility manager
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#entitlement-manager">
+     Entitlement manager
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#cycle-manager">
+     Cycle manager
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#payment-manager">
+     Payment manager
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#async-processing">
+   Async processing
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#approval-integration">
+   Approval integration
+  </a>
+<ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#how-the-approval-flow-calls-your-managers">
+     How the approval flow calls your managers
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#configuration-fields-on-managers">
+     Configuration fields on managers
+    </a>
+</li>
+<li class="toc-h3 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-this-means-for-custom-managers">
+     What this means for custom managers
+    </a>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#inheritance-checklist">
+   Inheritance checklist
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#common-mistakes">
+   Common mistakes
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#what-s-next">
+   What's next
+  </a>
+</li>
+<li class="toc-h2 nav-item toc-entry">
+<a class="reference internal nav-link" href="#see-also">
+   See also
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<main id="main-content" role="main">
+<div>
+<div class="section" id="building-a-custom-manager">
+<h1>Building a custom manager<a class="headerlink" href="#building-a-custom-manager" title="Permalink to this headline">#</a></h1>
+<p><strong>For: developers</strong></p>
+<p>This page walks you through building a custom program manager. The process is the same for all manager types (eligibility, entitlement, cycle, payment) — you create a new model, inherit from the base class, implement the required methods, and register it.</p>
+<p>Read the <a class="reference internal" href="manager_pattern.html"><span class="doc">Manager pattern</span></a> page first if you haven't already.</p>
+<div class="section" id="the-common-pattern">
+<h2>The common pattern<a class="headerlink" href="#the-common-pattern" title="Permalink to this headline">#</a></h2>
+<p>Every custom manager follows these steps:</p>
+<ol class="arabic simple">
+<li><p><strong>Create a module</strong> with a dependency on <code class="docutils literal notranslate"><span class="pre">spp_programs</span></code></p></li>
+<li><p><strong>Define the implementation model</strong> inheriting from the base class and <code class="docutils literal notranslate"><span class="pre">spp.manager.source.mixin</span></code></p></li>
+<li><p><strong>Override required methods</strong> with your custom logic</p></li>
+<li><p><strong>Register the manager</strong> by extending <code class="docutils literal notranslate"><span class="pre">_selection_manager_ref_id()</span></code> on the wrapper model</p></li>
+<li><p><strong>Create a form view</strong> so administrators can configure your manager</p></li>
+<li><p><strong>Add security</strong> (ACLs for the new model)</p></li>
+</ol>
+</div>
+<div class="section" id="step-by-step-custom-eligibility-manager">
+<h2>Step-by-step: custom eligibility manager<a class="headerlink" href="#step-by-step-custom-eligibility-manager" title="Permalink to this headline">#</a></h2>
+<p>This example creates an eligibility manager that filters registrants by age range.</p>
+<div class="section" id="module-manifest">
+<h3>Module manifest<a class="headerlink" href="#module-manifest" title="Permalink to this headline">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># spp_eligibility_age/__manifest__.py</span>
+<span class="p">{</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"OpenSPP Age-Based Eligibility"</span><span class="p">,</span>
+    <span class="s2">"summary"</span><span class="p">:</span> <span class="s2">"Eligibility manager that filters registrants by age range."</span><span class="p">,</span>
+    <span class="s2">"category"</span><span class="p">:</span> <span class="s2">"OpenSPP/Core"</span><span class="p">,</span>
+    <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"19.0.2.0.0"</span><span class="p">,</span>
+    <span class="s2">"author"</span><span class="p">:</span> <span class="s2">"OpenSPP.org"</span><span class="p">,</span>
+    <span class="s2">"website"</span><span class="p">:</span> <span class="s2">"https://github.com/OpenSPP/OpenSPP2"</span><span class="p">,</span>
+    <span class="s2">"license"</span><span class="p">:</span> <span class="s2">"LGPL-3"</span><span class="p">,</span>
+    <span class="s2">"depends"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"spp_programs"</span><span class="p">,</span>
+        <span class="s2">"spp_security"</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s2">"data"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"security/ir.model.access.csv"</span><span class="p">,</span>
+        <span class="s2">"views/eligibility_manager_views.xml"</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="s2">"installable"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">"auto_install"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="implementation-model">
+<h3>Implementation model<a class="headerlink" href="#implementation-model" title="Permalink to this headline">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># spp_eligibility_age/models/eligibility_manager_age.py</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+<span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="kn">import</span> <span class="n">relativedelta</span>
+
+<span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">_</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
+
+<span class="n">_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">AgeEligibilityManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Eligibility manager that filters registrants by age range."""</span>
+
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">"spp.program.membership.manager.age"</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"spp.program.membership.manager"</span><span class="p">,</span> <span class="s2">"spp.manager.source.mixin"</span><span class="p">]</span>
+    <span class="n">_description</span> <span class="o">=</span> <span class="s2">"Age-Based Eligibility Manager"</span>
+
+    <span class="c1"># Custom configuration fields</span>
+    <span class="n">min_age</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span>
+        <span class="n">string</span><span class="o">=</span><span class="s2">"Minimum Age"</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"Minimum age in years (inclusive)."</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">max_age</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span>
+        <span class="n">string</span><span class="o">=</span><span class="s2">"Maximum Age"</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"Maximum age in years (inclusive)."</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_get_eligible_partner_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Return partner IDs that match the age criteria."""</span>
+        <span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+        <span class="c1"># Born before this date = at least min_age years old</span>
+        <span class="n">max_birthdate</span> <span class="o">=</span> <span class="n">today</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">min_age</span><span class="p">)</span>
+        <span class="c1"># Born after this date = at most max_age years old</span>
+        <span class="n">min_birthdate</span> <span class="o">=</span> <span class="n">today</span> <span class="o">-</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_age</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="s2">"is_registrant"</span><span class="p">,</span> <span class="s2">"="</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">"is_group"</span><span class="p">,</span> <span class="s2">"="</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">"birthdate"</span><span class="p">,</span> <span class="s2">"&gt;="</span><span class="p">,</span> <span class="n">min_birthdate</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">"birthdate"</span><span class="p">,</span> <span class="s2">"&lt;="</span><span class="p">,</span> <span class="n">max_birthdate</span><span class="p">),</span>
+        <span class="p">]</span>
+
+        <span class="c1"># Apply target type filter from program</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">target_type</span> <span class="o">==</span> <span class="s2">"group"</span><span class="p">:</span>
+            <span class="n">domain</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="p">(</span><span class="s2">"is_registrant"</span><span class="p">,</span> <span class="s2">"="</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+                <span class="p">(</span><span class="s2">"is_group"</span><span class="p">,</span> <span class="s2">"="</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+            <span class="p">]</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">"res.partner"</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span><span class="o">.</span><span class="n">ids</span>
+
+    <span class="k">def</span> <span class="nf">enroll_eligible_registrants</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">program_memberships</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Validate which program members meet the age criteria."""</span>
+        <span class="n">eligible_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_eligible_partner_ids</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">program_memberships</span><span class="o">.</span><span class="n">filtered</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">partner_id</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="n">eligible_ids</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">verify_cycle_eligibility</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">membership</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Verify cycle members still meet the age criteria."""</span>
+        <span class="n">eligible_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_eligible_partner_ids</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">membership</span><span class="o">.</span><span class="n">filtered</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">partner_id</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="n">eligible_ids</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">import_eligible_registrants</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Import registrants matching the age criteria into the program."""</span>
+        <span class="n">eligible_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_eligible_partner_ids</span><span class="p">()</span>
+
+        <span class="c1"># Filter out already-enrolled registrants</span>
+        <span class="n">existing</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">"spp.program.membership"</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">([</span>
+            <span class="p">(</span><span class="s2">"program_id"</span><span class="p">,</span> <span class="s2">"="</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">id</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">"partner_id"</span><span class="p">,</span> <span class="s2">"in"</span><span class="p">,</span> <span class="n">eligible_ids</span><span class="p">),</span>
+        <span class="p">])</span><span class="o">.</span><span class="n">mapped</span><span class="p">(</span><span class="s2">"partner_id.id"</span><span class="p">)</span>
+
+        <span class="n">new_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">pid</span> <span class="k">for</span> <span class="n">pid</span> <span class="ow">in</span> <span class="n">eligible_ids</span> <span class="k">if</span> <span class="n">pid</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">existing</span><span class="p">]</span>
+
+        <span class="c1"># Create memberships</span>
+        <span class="n">vals_list</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">"program_id"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">program_id</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="s2">"partner_id"</span><span class="p">:</span> <span class="n">pid</span><span class="p">,</span>
+                <span class="s2">"state"</span><span class="p">:</span> <span class="n">state</span> <span class="ow">or</span> <span class="s2">"draft"</span><span class="p">,</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="n">pid</span> <span class="ow">in</span> <span class="n">new_ids</span>
+        <span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">vals_list</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">"spp.program.membership"</span><span class="p">]</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">vals_list</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">vals_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="register-the-manager">
+<h3>Register the manager<a class="headerlink" href="#register-the-manager" title="Permalink to this headline">#</a></h3>
+<p>Add a file that extends the wrapper model's selection:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># spp_eligibility_age/models/eligibility_manager.py</span>
+<span class="kn">from</span> <span class="nn">odoo</span> <span class="kn">import</span> <span class="n">api</span><span class="p">,</span> <span class="n">models</span>
+
+
+<span class="k">class</span> <span class="nc">EligibilityManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="s2">"spp.eligibility.manager"</span>
+
+    <span class="nd">@api</span><span class="o">.</span><span class="n">model</span>
+    <span class="k">def</span> <span class="nf">_selection_manager_ref_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">selection</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_selection_manager_ref_id</span><span class="p">()</span>
+        <span class="n">new_manager</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">"spp.program.membership.manager.age"</span><span class="p">,</span>
+            <span class="s2">"Age-Based Eligibility"</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">new_manager</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">selection</span><span class="p">:</span>
+            <span class="n">selection</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_manager</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">selection</span>
+</pre></div>
+</div>
+<p>Don't forget the <code class="docutils literal notranslate"><span class="pre">models/__init__.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">eligibility_manager</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">eligibility_manager_age</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-form-view">
+<h3>Create a form view<a class="headerlink" href="#create-a-form-view" title="Permalink to this headline">#</a></h3>
+<p>The form view is displayed when an administrator clicks the gear icon to configure the manager on a program:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- spp_eligibility_age/views/eligibility_manager_views.xml --&gt;</span>
+<span class="cp">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span>
+<span class="nt">&lt;odoo&gt;</span>
+<span class="w">    </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"view_eligibility_manager_age_form"</span><span class="w"> </span><span class="na">model=</span><span class="s">"ir.ui.view"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>spp.program.membership.manager.age.form<span class="nt">&lt;/field&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"model"</span><span class="nt">&gt;</span>spp.program.membership.manager.age<span class="nt">&lt;/field&gt;</span>
+<span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"arch"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xml"</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;form</span><span class="w"> </span><span class="na">string=</span><span class="s">"Age-Based Eligibility Manager"</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;sheet&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;group&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;group</span><span class="w"> </span><span class="na">string=</span><span class="s">"Age Range"</span><span class="nt">&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"min_age"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"max_age"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/group&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;group</span><span class="w"> </span><span class="na">string=</span><span class="s">"Program"</span><span class="nt">&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"program_id"</span><span class="w"> </span><span class="na">readonly=</span><span class="s">"1"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/group&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/group&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/sheet&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/form&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/field&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/record&gt;</span>
+<span class="nt">&lt;/odoo&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-security">
+<h3>Add security<a class="headerlink" href="#add-security" title="Permalink to this headline">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_spp_eligibility_age_system,Age Eligibility System,model_spp_program_membership_manager_age,base.group_system,1,1,1,1
+access_spp_eligibility_age_admin,Age Eligibility Admin,model_spp_program_membership_manager_age,spp_security.group_spp_admin,1,1,1,1
+</pre></div>
+</div>
+</div>
+<div class="section" id="result">
+<h3>Result<a class="headerlink" href="#result" title="Permalink to this headline">#</a></h3>
+<p>After installing this module, administrators will see "Age-Based Eligibility" as an option when configuring a program's eligibility manager. The form lets them set min/max age, and the program will only enroll registrants within that age range.</p>
+</div>
+</div>
+<div class="section" id="registration-reference">
+<h2>Registration reference<a class="headerlink" href="#registration-reference" title="Permalink to this headline">#</a></h2>
+<p>Each manager type has a wrapper model where you register your implementation:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Manager type</p></th>
+<th class="head"><p>Wrapper model</p></th>
+<th class="head"><p>Override method</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Eligibility</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">spp.eligibility.manager</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">_selection_manager_ref_id()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Entitlement</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">spp.program.entitlement.manager</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">_selection_manager_ref_id()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Cycle</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">spp.cycle.manager</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">_selection_manager_ref_id()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Payment</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">spp.program.payment.manager</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">_selection_manager_ref_id()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Program</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">spp.program.manager</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">_selection_manager_ref_id()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Deduplication</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">spp.deduplication.manager</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">_selection_manager_ref_id()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Notification</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">spp.program.notification.manager</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">_selection_manager_ref_id()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The selection tuple format is <code class="docutils literal notranslate"><span class="pre">("model_name",</span> <span class="pre">"Display</span> <span class="pre">Label")</span></code>.</p>
+</div>
+<div class="section" id="method-reference-by-manager-type">
+<h2>Method reference by manager type<a class="headerlink" href="#method-reference-by-manager-type" title="Permalink to this headline">#</a></h2>
+<div class="section" id="eligibility-manager">
+<h3>Eligibility manager<a class="headerlink" href="#eligibility-manager" title="Permalink to this headline">#</a></h3>
+<p>Base class: <code class="docutils literal notranslate"><span class="pre">spp.program.membership.manager</span></code></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Returns</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">enroll_eligible_registrants</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">program_memberships</span></code> (recordset)</p></td>
+<td><p>Filtered recordset of eligible memberships</p></td>
+<td><p>Validate which members meet criteria</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">verify_cycle_eligibility</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code>, <code class="docutils literal notranslate"><span class="pre">membership</span></code> (recordset)</p></td>
+<td><p>Filtered recordset of eligible cycle memberships</p></td>
+<td><p>Re-check eligibility for a cycle</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">import_eligible_registrants</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">state=None</span></code></p></td>
+<td><p>Integer count of imported registrants</p></td>
+<td><p>Import matching registrants into the program</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="entitlement-manager">
+<h3>Entitlement manager<a class="headerlink" href="#entitlement-manager" title="Permalink to this headline">#</a></h3>
+<p>Base class: <code class="docutils literal notranslate"><span class="pre">spp.base.program.entitlement.manager</span></code></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Returns</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">prepare_entitlements</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code>, <code class="docutils literal notranslate"><span class="pre">beneficiaries</span></code> (recordset)</p></td>
+<td><p>Created entitlement recordset</p></td>
+<td><p>Create entitlement records for beneficiaries</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">set_pending_validation_entitlements</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code></p></td>
+<td><p>None</p></td>
+<td><p>Move entitlements to pending approval</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">validate_entitlements</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code></p></td>
+<td><p>Action dict or None</p></td>
+<td><p>Validate and approve entitlements</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">approve_entitlements</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">entitlements</span></code> (recordset)</p></td>
+<td><p>Tuple <code class="docutils literal notranslate"><span class="pre">(error_count,</span> <span class="pre">error_message)</span></code></p></td>
+<td><p>Approve entitlements and create payments</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cancel_entitlements</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code></p></td>
+<td><p>None</p></td>
+<td><p>Cancel draft/pending entitlements</p></td>
+</tr>
+</tbody>
+</table>
+<p>Important class attributes:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">IS_CASH_ENTITLEMENT</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p>Set to <code class="docutils literal notranslate"><span class="pre">False</span></code> for in-kind entitlements</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MIN_ROW_JOB_QUEUE</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">200</span></code></p></td>
+<td><p>Threshold for async processing</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cycle-manager">
+<h3>Cycle manager<a class="headerlink" href="#cycle-manager" title="Permalink to this headline">#</a></h3>
+<p>Base class: <code class="docutils literal notranslate"><span class="pre">spp.base.cycle.manager</span></code></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Returns</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">new_cycle</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">new_start_date</span></code>, <code class="docutils literal notranslate"><span class="pre">sequence</span></code></p></td>
+<td><p>Created <code class="docutils literal notranslate"><span class="pre">spp.cycle</span></code> record</p></td>
+<td><p>Create a new cycle with dates</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">check_eligibility</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code>, <code class="docutils literal notranslate"><span class="pre">beneficiaries=None</span></code></p></td>
+<td><p>Action dict</p></td>
+<td><p>Check beneficiary eligibility for cycle</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">prepare_entitlements</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code></p></td>
+<td><p>Action dict or None</p></td>
+<td><p>Delegate to entitlement manager</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">validate_entitlements</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code>, <code class="docutils literal notranslate"><span class="pre">cycle_memberships</span></code></p></td>
+<td><p>Error dict or None</p></td>
+<td><p>Validate cycle entitlements</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">approve_cycle</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code>, <code class="docutils literal notranslate"><span class="pre">auto_approve=False</span></code>, <code class="docutils literal notranslate"><span class="pre">entitlement_manager=None</span></code></p></td>
+<td><p>Action dict or None</p></td>
+<td><p>Approve cycle and optionally auto-approve entitlements (see <a class="reference internal" href="#approval-integration"><span class="std std-doc">Approval integration</span></a>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">on_state_change</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code></p></td>
+<td><p>None</p></td>
+<td><p>Hook called after cycle state transitions (e.g., validate approver group membership)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">copy_beneficiaries_from_program</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code>, <code class="docutils literal notranslate"><span class="pre">state="enrolled"</span></code></p></td>
+<td><p>Action dict</p></td>
+<td><p>Copy enrolled members into cycle</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">add_beneficiaries</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code>, <code class="docutils literal notranslate"><span class="pre">beneficiaries</span></code>, <code class="docutils literal notranslate"><span class="pre">state="draft"</span></code></p></td>
+<td><p>Action dict</p></td>
+<td><p>Add specific beneficiaries to cycle</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">issue_payments</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code></p></td>
+<td><p>None</p></td>
+<td><p>Delegate to payment manager</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mark_distributed</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code></p></td>
+<td><p>None</p></td>
+<td><p>Set cycle state to distributed</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mark_ended</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code></p></td>
+<td><p>None</p></td>
+<td><p>Set cycle state to ended</p></td>
+</tr>
+</tbody>
+</table>
+<p>The default cycle manager (<code class="docutils literal notranslate"><span class="pre">spp.cycle.manager.default</span></code>) also inherits from <code class="docutils literal notranslate"><span class="pre">spp.cycle.recurrence.mixin</span></code>, which provides recurrence scheduling fields (frequency, interval, day of month, etc.).</p>
+</div>
+<div class="section" id="payment-manager">
+<h3>Payment manager<a class="headerlink" href="#payment-manager" title="Permalink to this headline">#</a></h3>
+<p>Base class: <code class="docutils literal notranslate"><span class="pre">spp.base.program.payment.manager</span></code></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Returns</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">prepare_payments</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cycle</span></code>, <code class="docutils literal notranslate"><span class="pre">entitlements=None</span></code></p></td>
+<td><p>Action dict</p></td>
+<td><p>Create payment records from entitlements</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">send_payments</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">batches</span></code> (recordset)</p></td>
+<td><p>Action dict or None</p></td>
+<td><p>Process/export payment batches</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">validate_accounts</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">entitlements</span></code> (recordset)</p></td>
+<td><p>List of errors</p></td>
+<td><p>Verify beneficiary payment accounts</p></td>
+</tr>
+</tbody>
+</table>
+<p>Notification, compliance, and deduplication managers are less commonly extended. See their source files in <code class="docutils literal notranslate"><span class="pre">spp_programs/models/managers/</span></code> for method signatures.</p>
+</div>
+</div>
+<div class="section" id="async-processing">
+<h2>Async processing<a class="headerlink" href="#async-processing" title="Permalink to this headline">#</a></h2>
+<p>For large batches, managers should use async processing via <code class="docutils literal notranslate"><span class="pre">delayable()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prepare_entitlements</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">beneficiaries</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">MIN_ROW_JOB_QUEUE</span><span class="p">:</span>
+        <span class="c1"># Process asynchronously</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delayable</span><span class="p">()</span><span class="o">.</span><span class="n">_prepare_entitlements_async</span><span class="p">(</span>
+            <span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"ir.actions.client"</span><span class="p">,</span>
+            <span class="s2">"tag"</span><span class="p">:</span> <span class="s2">"display_notification"</span><span class="p">,</span>
+            <span class="s2">"params"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"title"</span><span class="p">:</span> <span class="n">_</span><span class="p">(</span><span class="s2">"Processing"</span><span class="p">),</span>
+                <span class="s2">"message"</span><span class="p">:</span> <span class="n">_</span><span class="p">(</span><span class="s2">"Entitlements are being prepared in the background."</span><span class="p">),</span>
+                <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"info"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">}</span>
+    <span class="c1"># Process synchronously for small batches</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_entitlements_sync</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">beneficiaries</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The threshold constants <code class="docutils literal notranslate"><span class="pre">MIN_ROW_JOB_QUEUE</span></code> (200) and <code class="docutils literal notranslate"><span class="pre">MAX_ROW_JOB_QUEUE</span></code> (2000) are defined on the base classes.</p>
+</div>
+<div class="section" id="approval-integration">
+<h2>Approval integration<a class="headerlink" href="#approval-integration" title="Permalink to this headline">#</a></h2>
+<p>Cycles and entitlements use the <code class="docutils literal notranslate"><span class="pre">spp.approval.mixin</span></code> for approval workflows. Managers do not inherit the mixin themselves — instead, they are <strong>called by</strong> the cycle and entitlement models during approval transitions.</p>
+<div class="section" id="how-the-approval-flow-calls-your-managers">
+<h3>How the approval flow calls your managers<a class="headerlink" href="#how-the-approval-flow-calls-your-managers" title="Permalink to this headline">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>User calls spp.cycle.action_submit_for_approval()
+  → entitlement_manager.set_pending_validation_entitlements(cycle)
+     (moves entitlements from draft to pending_validation)
+
+User calls spp.cycle.action_approve()
+  → cycle_manager.approve_cycle(cycle, auto_approve=False, entitlement_manager=None)
+     → if auto_approve is True:
+         cycle_manager.auto_approve_entitlements_update_reviews(entitlements)
+         entitlement_manager.validate_entitlements(cycle)
+           (approves all pending entitlements)
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration-fields-on-managers">
+<h3>Configuration fields on managers<a class="headerlink" href="#configuration-fields-on-managers" title="Permalink to this headline">#</a></h3>
+<p>Cycle and entitlement managers hold references to approval definitions. Note that <code class="docutils literal notranslate"><span class="pre">approval_definition_id</span></code> is defined on the <strong>concrete default implementation</strong> (<code class="docutils literal notranslate"><span class="pre">spp.cycle.manager.default</span></code>), not on the abstract base (<code class="docutils literal notranslate"><span class="pre">spp.base.cycle.manager</span></code>). Custom cycle managers should inherit from <code class="docutils literal notranslate"><span class="pre">spp.cycle.manager.default</span></code> to pick it up (or define it explicitly).</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Manager type</p></th>
+<th class="head"><p>Field</p></th>
+<th class="head"><p>Defined on</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Cycle manager</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">approval_definition_id</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">spp.cycle.manager.default</span></code></p></td>
+<td><p>Approval workflow for cycle approval</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cycle manager</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">auto_approve_entitlements</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">spp.base.cycle.manager</span></code></p></td>
+<td><p>When <code class="docutils literal notranslate"><span class="pre">True</span></code>, entitlements are auto-approved with the cycle</p></td>
+</tr>
+<tr class="row-even"><td><p>Entitlement manager</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">approval_definition_id</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">spp.base.program.entitlement.manager</span></code></p></td>
+<td><p>Approval workflow for individual entitlement approval</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="what-this-means-for-custom-managers">
+<h3>What this means for custom managers<a class="headerlink" href="#what-this-means-for-custom-managers" title="Permalink to this headline">#</a></h3>
+<p><strong>Cycle managers:</strong> Inherit from <code class="docutils literal notranslate"><span class="pre">spp.cycle.manager.default</span></code> rather than <code class="docutils literal notranslate"><span class="pre">spp.base.cycle.manager</span></code> — the default class provides the full workflow surface (<code class="docutils literal notranslate"><span class="pre">copy_beneficiaries_from_program</span></code>, <code class="docutils literal notranslate"><span class="pre">approval_definition_id</span></code>, <code class="docutils literal notranslate"><span class="pre">on_state_change</span></code>, and implementations for <code class="docutils literal notranslate"><span class="pre">check_eligibility</span></code>, <code class="docutils literal notranslate"><span class="pre">approve_cycle</span></code>, etc.). The abstract base only defines method signatures; most raise <code class="docutils literal notranslate"><span class="pre">NotImplementedError</span></code>.</p>
+<p>Your <code class="docutils literal notranslate"><span class="pre">approve_cycle()</span></code> method is called automatically when the cycle is approved. If you override it, call <code class="docutils literal notranslate"><span class="pre">super()</span></code> to preserve the approval review updates and entitlement auto-approval:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">approve_cycle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">auto_approve</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">entitlement_manager</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="c1"># Custom pre-approval logic (e.g., validate fund availability)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_check_program_budget</span><span class="p">(</span><span class="n">cycle</span><span class="p">)</span>
+
+    <span class="c1"># Call the default implementation</span>
+    <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">approve_cycle</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">auto_approve</span><span class="p">,</span> <span class="n">entitlement_manager</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Entitlement managers:</strong> Your <code class="docutils literal notranslate"><span class="pre">set_pending_validation_entitlements()</span></code> is called when the cycle is submitted, and <code class="docutils literal notranslate"><span class="pre">validate_entitlements()</span></code> is called when the cycle is approved (if <code class="docutils literal notranslate"><span class="pre">auto_approve_entitlements</span></code> is enabled). Both methods are already defined on the base class — override them only if you need custom state transition logic.</p>
+<p><strong>Eligibility and payment managers</strong> are not directly involved in the approval flow.</p>
+</div>
+</div>
+<div class="section" id="inheritance-checklist">
+<h2>Inheritance checklist<a class="headerlink" href="#inheritance-checklist" title="Permalink to this headline">#</a></h2>
+<p>When creating a custom manager, inherit from the appropriate base class and the source mixin:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Manager type</p></th>
+<th class="head"><p>Recommended inheritance</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Eligibility</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">["spp.program.membership.manager",</span> <span class="pre">"spp.manager.source.mixin"]</span></code></p></td>
+<td><p>The base class is concrete and has a default implementation</p></td>
+</tr>
+<tr class="row-odd"><td><p>Entitlement</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">["spp.base.program.entitlement.manager",</span> <span class="pre">"spp.manager.source.mixin"]</span></code></p></td>
+<td><p>Abstract base; implement the required methods</p></td>
+</tr>
+<tr class="row-even"><td><p>Cycle</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">["spp.cycle.manager.default",</span> <span class="pre">"spp.manager.source.mixin"]</span></code></p></td>
+<td><p><strong>Inherit from the default, not the abstract base</strong> — the abstract base lacks <code class="docutils literal notranslate"><span class="pre">copy_beneficiaries_from_program</span></code>, <code class="docutils literal notranslate"><span class="pre">approval_definition_id</span></code>, and several other required pieces</p></td>
+</tr>
+<tr class="row-odd"><td><p>Payment</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">["spp.base.program.payment.manager",</span> <span class="pre">"spp.manager.source.mixin"]</span></code></p></td>
+<td><p>Abstract base; implement the required methods</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyEntitlementManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">"spp.program.entitlement.manager.custom"</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">"spp.base.program.entitlement.manager"</span><span class="p">,</span>  <span class="c1"># Base class</span>
+        <span class="s2">"spp.manager.source.mixin"</span><span class="p">,</span>               <span class="c1"># Lifecycle management</span>
+    <span class="p">]</span>
+
+<span class="k">class</span> <span class="nc">MyCycleManager</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="s2">"spp.cycle.manager.custom"</span>
+    <span class="n">_inherit</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">"spp.cycle.manager.default"</span><span class="p">,</span>              <span class="c1"># Default implementation</span>
+        <span class="s2">"spp.manager.source.mixin"</span><span class="p">,</span>               <span class="c1"># Lifecycle management</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">spp.manager.source.mixin</span></code> handles:</p>
+<ul class="simple">
+<li><p>Updating the reference on the parent wrapper model when the implementation is created</p></li>
+<li><p>Cleaning up wrapper records when the implementation is deleted</p></li>
+<li><p>Providing <code class="docutils literal notranslate"><span class="pre">get_manager_view_id()</span></code> for the form view lookup</p></li>
+</ul>
+</div>
+<div class="section" id="common-mistakes">
+<h2>Common mistakes<a class="headerlink" href="#common-mistakes" title="Permalink to this headline">#</a></h2>
+<p><strong>Forgetting <code class="docutils literal notranslate"><span class="pre">spp.manager.source.mixin</span></code></strong> — If you only inherit from the base class and omit the source mixin, the wrapper model will not automatically link to your implementation when it is created. The manager will appear in the selection but fail to open.</p>
+<p><strong>Using <code class="docutils literal notranslate"><span class="pre">(4,</span> <span class="pre">id)</span></code> instead of <code class="docutils literal notranslate"><span class="pre">(6,</span> <span class="pre">0,</span> <span class="pre">[id])</span></code> for Many2many manager slots</strong> — Most manager slots on programs are constrained to a single manager. Using the append command <code class="docutils literal notranslate"><span class="pre">(4,</span> <span class="pre">id)</span></code> can violate this constraint. Use <code class="docutils literal notranslate"><span class="pre">(6,</span> <span class="pre">0,</span> <span class="pre">[id])</span></code> to replace the entire set.</p>
+<p><strong>Not registering in the wrapper's selection</strong> — Your manager will not appear in the dropdown unless you override <code class="docutils literal notranslate"><span class="pre">_selection_manager_ref_id()</span></code> on the wrapper model. This is a separate file from the implementation — see the registration pattern above.</p>
+<p><strong>Returning the wrong type from <code class="docutils literal notranslate"><span class="pre">prepare_entitlements</span></code></strong> — The method must return an <code class="docutils literal notranslate"><span class="pre">spp.entitlement</span></code> recordset (even if empty), not a list or count. Returning the wrong type causes downstream failures in the cycle workflow.</p>
+<p><strong>Skipping <code class="docutils literal notranslate"><span class="pre">existing_partner_ids</span></code> check in <code class="docutils literal notranslate"><span class="pre">prepare_entitlements</span></code></strong> — If you do not check for existing entitlements before creating new ones, running the preparation step twice will create duplicate entitlements. Always filter out already-processed partners.</p>
+<p><strong>Custom cycle manager inheriting from <code class="docutils literal notranslate"><span class="pre">spp.base.cycle.manager</span></code></strong> — The abstract base lacks <code class="docutils literal notranslate"><span class="pre">copy_beneficiaries_from_program()</span></code>, <code class="docutils literal notranslate"><span class="pre">approval_definition_id</span></code>, and other members the framework expects. Calling <code class="docutils literal notranslate"><span class="pre">approve_cycle()</span></code> on such a manager raises <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code> when <code class="docutils literal notranslate"><span class="pre">on_state_change</span></code> tries to read <code class="docutils literal notranslate"><span class="pre">approval_definition_id</span></code>. Inherit from <code class="docutils literal notranslate"><span class="pre">spp.cycle.manager.default</span></code> instead, or explicitly define these members.</p>
+</div>
+<div class="section" id="what-s-next">
+<h2>What's next<a class="headerlink" href="#what-s-next" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="tutorial.html"><span class="doc">Tutorial: build CCT program managers</span></a> — build a complete CCT program module that uses all three manager types together</p></li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="manager_pattern.html"><span class="doc">Manager pattern</span></a> — the wrapper/implementation architecture in depth</p></li>
+<li><p><a class="reference internal" href="../change_request_types/"><span class="doc">Custom change request types</span></a> — building custom change request types (similar extension pattern)</p></li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer-article noprint">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="manager_pattern.html" id="prev-link" title="previous page">
+<i class="fas fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Manager pattern</p>
+</div>
+</a>
+<a class="right-next" href="tutorial.html" id="next-link" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Tutorial: build CCT program managers</p>
+</div>
+<i class="fas fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+</div>
+<div class="footer-content row">
+<footer class="col footer"><p>
+  
+    By The OpenSPP community<br/>
+  
+      © Copyright OpenSPP.<br/>
+<div class="extra_footer">
+<p>The text and illustrations in this website are licensed by the OpenSPP Project under a Creative Commons Attribution 4.0 International license. All other trademarks are owned by their respective owners.</p>
+</div>
+</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            var lists = $("div.toctree-wrapper ul");
+            $.each(lists, function(index, list) {
+                if($(list).find("li").length == 0) {
+                    $(list).prev().hide();
+                    $(list).hide();
+                }
+            });
+        })
+    </script>
+<script src="/_static/version_switcher.js"></script></body>
+</html>

@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring standardized codes and terminologies for consistent data collection and reporting.
 
+## Prerequisites
+
+```{important}
+The `spp_vocabulary` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What You'll Find Here
 
 - **Overview** - Vocabulary concepts and architecture
