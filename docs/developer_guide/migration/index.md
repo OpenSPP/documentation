@@ -246,4 +246,5 @@ If you encounter issues:
 ## See Also
 
 - [Odoo 19 Migration Guide](https://www.odoo.com/documentation/19.0/developer/howtos/upgrade.html)
-- [OpenSPP Module Development Guide](../development_setup.md)
+- {doc}`/developer_guide/setup/index` — development environment setup
+- {doc}`/developer_guide/custom_modules/index` — writing modules against V2

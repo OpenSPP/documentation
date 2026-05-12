@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_spp_eligibility_cct_system,CCT Eligibility System,model_spp_program_membership_manager_cct,base.group_system,1,1,1,1
+access_spp_eligibility_cct_admin,CCT Eligibility Admin,model_spp_program_membership_manager_cct,spp_security.group_spp_admin,1,1,1,1
+access_spp_entitlement_cct_system,CCT Entitlement System,model_spp_program_entitlement_manager_cct,base.group_system,1,1,1,1
+access_spp_entitlement_cct_admin,CCT Entitlement Admin,model_spp_program_entitlement_manager_cct,spp_security.group_spp_admin,1,1,1,1
+access_spp_cycle_cct_system,CCT Cycle System,model_spp_cycle_manager_cct,base.group_system,1,1,1,1
+access_spp_cycle_cct_admin,CCT Cycle Admin,model_spp_cycle_manager_cct,spp_security.group_spp_admin,1,1,1,1

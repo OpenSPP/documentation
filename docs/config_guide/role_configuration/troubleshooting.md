@@ -176,4 +176,4 @@ If issues persist after checking this guide:
 
 - {doc}`overview` - Understanding how access control works
 - {doc}`assigning_roles` - Correct role assignment procedures
-- {doc}`/tutorial/user_guides/administrating_role_based_access` - Illustrated tutorial
+- {doc}`/user_guide/getting_started/administrating_role_based_access` - Illustrated tutorial

@@ -6,7 +6,14 @@ openspp:
 
 # External Identifiers
 
-This guide is for **developers** working with OpenSPP's external identifier system.
+**For: developers**
+
+How OpenSPP API V2 uses namespaced external identifiers (URNs) instead of database IDs, and how to construct, send, and look up records by them.
+
+## Prerequisites
+
+- A working API client and OAuth token (see {doc}`authentication`)
+- Familiarity with URN syntax and URL-encoded query parameters
 
 ## Why External Identifiers?
 
@@ -72,22 +79,37 @@ Every identifier has two required fields:
 
 ### Namespace URI Format
 
-Namespaces use URN (Uniform Resource Name) format:
+```{important}
+**OpenSPP-specific format:** identifier system URIs in OpenSPP use the format `urn:openspp:vocab:id-type#<code>`, where `<code>` is a registered vocabulary code (e.g., `national_id`, `passport`, `refugee_id`). The `<code>` part determines what kind of identifier this is. The full URI must match a row in the `spp.vocabulary.code` table — otherwise the API returns 422.
+
+The conceptual examples below (`urn:gov:ph:psa:national-id`, etc.) illustrate the *idea* of namespaced identifiers as you'd find in FHIR or G2P Connect documentation. **In an actual OpenSPP API request, replace these with `urn:openspp:vocab:id-type#<code>`** for the `<code>` your administrator has registered.
+
+When constructing URLs, the `#` character MUST be URL-encoded as `%23` — it is the URL fragment delimiter, and unencoded `#` will be silently stripped.
+```
+
+The conceptual URN form for namespaced identifiers is:
 
 ```
 urn:{authority}:{path}
 ```
 
-**Examples:**
+**Conceptual examples** (illustrative — not the actual OpenSPP format):
 
-| Type | Namespace URI |
+| Type | Conceptual namespace URI |
 |------|---------------|
 | Philippine National ID | `urn:gov:ph:psa:national-id` |
 | Philippine PhilHealth | `urn:gov:ph:philhealth` |
 | Kenya National ID | `urn:gov:ke:nira:national-id` |
-| OpenSPP Internal | `urn:openspp:registry:individual` |
 | ISO Gender Code | `urn:iso:std:iso:5218` |
 | FAO Crop Vocabulary | `urn:fao:agrovoc` |
+
+**Actual OpenSPP system URIs** (use these in requests):
+
+| Type | Actual OpenSPP system URI |
+|------|---------------------------|
+| National ID (default seed) | `urn:openspp:vocab:id-type#national_id` |
+| Passport | `urn:openspp:vocab:id-type#passport` |
+| ID type configured by your admin | `urn:openspp:vocab:id-type#<code>` |
 
 ### Multiple Identifiers
 
@@ -95,7 +117,7 @@ A person typically has multiple identifiers:
 
 ```json
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [
     {
       "system": "urn:gov:ph:psa:national-id",
@@ -140,14 +162,20 @@ Some identifiers expire or change validity:
 
 Use the pipe (`|`) separator in the URL:
 
-```http
+```text
 GET /api/v2/spp/Individual/{system}|{value}
 ```
 
-**URL-encode the system** if it contains special characters:
+**URL-encode the system** if it contains special characters. For OpenSPP URIs, the `#` MUST be encoded as `%23`:
 
 ```bash
-# Original
+# Actual OpenSPP format (the # is the critical character)
+urn:openspp:vocab:id-type#national_id|IND-001
+
+# URL-encoded (use this in requests)
+urn:openspp:vocab:id-type%23national_id|IND-001
+
+# Conceptual / FHIR-style (illustrative only)
 urn:gov:ph:psa:national-id|PH-123456789
 
 # URL-encoded
@@ -157,7 +185,7 @@ urn%3Agov%3Aph%3Apsa%3Anational-id|PH-123456789
 ### Example: curl
 
 ```bash
-curl "https://api.openspp.org/api/v2/spp/Individual/urn%3Agov%3Aph%3Apsa%3Anational-id|PH-123456789" \
+curl "https://{your-domain}/api/v2/spp/Individual/urn%3Agov%3Aph%3Apsa%3Anational-id|PH-123456789" \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
@@ -186,7 +214,7 @@ individual = get_individual_by_identifier(
     system="urn:gov:ph:psa:national-id",
     value="PH-123456789",
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 ```
 
@@ -215,7 +243,7 @@ const individual = await getIndividualByIdentifier(
   'urn:gov:ph:psa:national-id',
   'PH-123456789',
   token,
-  'https://api.openspp.org/api/v2/spp'
+  'https://{your-domain}/api/v2/spp'
 );
 ```
 
@@ -223,7 +251,7 @@ const individual = await getIndividualByIdentifier(
 
 Use the `identifier` search parameter with the same `system|value` format:
 
-```http
+```text
 GET /api/v2/spp/Individual?identifier=urn:gov:ph:psa:national-id|PH-123456789
 ```
 
@@ -250,18 +278,18 @@ results = search_by_identifier(
     system="urn:gov:ph:philhealth",
     value="12-345678901-2",
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 
-if results["total"] > 0:
-    print(f"Found {results['total']} matching individuals")
+if results["meta"]["total"] > 0:
+    print(f"Found {results['meta']['total']} matching individuals")
 ```
 
 ### Searching Without System
 
 Search across all identifier systems:
 
-```http
+```text
 GET /api/v2/spp/Individual?identifier=PH-123456789
 ```
 
@@ -271,13 +299,13 @@ GET /api/v2/spp/Individual?identifier=PH-123456789
 
 When creating a resource, provide at least one identifier:
 
-```http
+```text
 POST /api/v2/spp/Individual
 Authorization: Bearer YOUR_TOKEN
 Content-Type: application/json
 
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [
     {
       "system": "urn:gov:ph:psa:national-id",
@@ -298,7 +326,7 @@ Content-Type: application/json
 def create_individual(identifier_system, identifier_value, name, birth_date, token, base_url):
     """Create a new individual with an identifier."""
     data = {
-        "resourceType": "Individual",
+        "type": "Individual",
         "identifier": [
             {
                 "system": identifier_system,
@@ -332,7 +360,7 @@ individual = create_individual(
     name={"given": "Juan", "family": "Dela Cruz"},
     birth_date="1990-05-15",
     token=token,
-    base_url="https://api.openspp.org/api/v2/spp"
+    base_url="https://{your-domain}/api/v2/spp"
 )
 
 print(f"Created individual: {individual['identifier'][0]['value']}")
@@ -344,14 +372,14 @@ To add or update identifiers, use PUT with the complete resource:
 
 ### Updating Identifiers (PUT)
 
-```http
+```text
 PUT /api/v2/spp/Individual/urn:gov:ph:psa:national-id|PH-123456789
 Authorization: Bearer YOUR_TOKEN
 Content-Type: application/json
 If-Match: "3"
 
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [
     {
       "system": "urn:gov:ph:psa:national-id",
@@ -377,7 +405,7 @@ Use identifiers to reference other resources:
 
 ```json
 {
-  "resourceType": "ProgramMembership",
+  "type": "ProgramMembership",
   "program": {
     "reference": "Program/urn:openspp:program|4Ps",
     "display": "Pantawid Pamilyang Pilipino Program"
@@ -424,6 +452,16 @@ Use identifiers to reference other resources:
 | Group Registry | `urn:openspp:registry:group` | UUID v4 |
 | Program | `urn:openspp:program` | Program code |
 
+## Source Tracking
+
+When you create or update a resource via the API, OpenSPP automatically records the source as:
+
+```
+urn:openspp:api-client:{client_id}
+```
+
+This appears in the resource's `meta.source` field and provides an audit trail of which API client created or last modified each record.
+
 ## Identifier Validation
 
 The API validates identifiers on create/update:
@@ -433,24 +471,15 @@ The API validates identifiers on create/update:
 Creating a resource with an existing identifier fails:
 
 ```json
-HTTP/1.1 422 Unprocessable Entity
-
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
+  "type": "urn:openspp:error:validation",
+  "title": "Unprocessable Entity",
+  "status": 422,
+  "detail": "Identifier urn:gov:ph:psa:national-id|PH-123456789 already exists",
+  "errors": [
     {
-      "severity": "error",
-      "code": "invalid",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "DUPLICATE_IDENTIFIER"
-          }
-        ],
-        "text": "Identifier urn:gov:ph:psa:national-id|PH-123456789 already exists"
-      },
-      "location": ["Individual.identifier[0]"]
+      "field": "identifier[0]",
+      "message": "Duplicate identifier"
     }
   ]
 }
@@ -472,22 +501,14 @@ Invalid formats trigger validation errors:
 
 ```json
 {
-  "resourceType": "OperationOutcome",
-  "issue": [
+  "type": "urn:openspp:error:validation",
+  "title": "Unprocessable Entity",
+  "status": 422,
+  "detail": "Invalid PhilSys ID format. Expected: PH-NNNN-NNNN-NNNN",
+  "errors": [
     {
-      "severity": "error",
-      "code": "invalid",
-      "details": {
-        "coding": [
-          {
-            "system": "urn:openspp:error",
-            "code": "INVALID_IDENTIFIER"
-          }
-        ],
-        "text": "Invalid PhilSys ID format. Expected: PH-NNNN-NNNN-NNNN"
-      },
-      "diagnostics": "identifier[0].value: expected pattern ^PH-\\d{4}-\\d{4}-\\d{4}$",
-      "location": ["Individual.identifier[0].value"]
+      "field": "identifier[0].value",
+      "message": "expected pattern ^PH-\\d{4}-\\d{4}-\\d{4}$"
     }
   ]
 }
@@ -544,17 +565,17 @@ When searching by identifier, check if multiple records match:
 ```python
 results = search_by_identifier(system, value, token, base_url)
 
-if results["total"] == 0:
+if results["meta"]["total"] == 0:
     print("No match found")
-elif results["total"] == 1:
-    individual = results["entry"][0]["resource"]
+elif results["meta"]["total"] == 1:
+    individual = results["data"][0]
     print(f"Found: {individual['name']['text']}")
 else:
-    print(f"Warning: Multiple matches ({results['total']})")
+    print(f"Warning: Multiple matches ({results['meta']['total']})")
     # Decide how to handle duplicates
 ```
 
-## Are You Stuck?
+## Common mistakes
 
 **Getting 404 Not Found?**
 
@@ -590,7 +611,7 @@ OpenSPP can generate a UUID-based identifier:
 Check the capability statement:
 
 ```bash
-curl https://api.openspp.org/api/v2/spp/metadata
+curl https://{your-domain}/api/v2/spp/metadata
 ```
 
 Look for `identifierSystems` in the response.
@@ -632,7 +653,7 @@ path = helper.format_identifier_path(
     "PH-123456789"
 )
 individual = requests.get(
-    f"https://api.openspp.org/api/v2/spp/Individual/{path}",
+    f"https://{your-domain}/api/v2/spp/Individual/{path}",
     headers={"Authorization": f"Bearer {token}"}
 ).json()
 
@@ -648,14 +669,14 @@ else:
     print("No PhilHealth ID on file")
 ```
 
-## Next Steps
+## What's next
 
 - {doc}`resources` - Learn about available API resources
 - {doc}`search` - Advanced search capabilities
 - {doc}`consent` - Consent-based access control
 - {doc}`batch` - Creating multiple resources with identifiers
 
-## See Also
+## See also
 
 - [ADR-007: Namespace URIs for Identifiers](https://github.com/OpenSPP/openspp-docs/blob/main/docs/architecture/decisions/ADR-007-namespace-uris.md)
 - [G2P Connect: Identifier Systems](https://g2pconnect.cdpi.dev/protocol/resources/identifier)

@@ -29,7 +29,7 @@ You can activate the debug mode by adding an extra query string to the database'
 ![Overview of a URL with the debug mode command added.](developer_mode/2.png "Overview of a URL with the debug mode command added.")
 
 ```{tip}
-Additional modes are available for developers: `?debug=assets` enables the [assets mode](#frontendframeworkassets_debug_mode), and `?debug=tests` enables the [tests mode](#frontendframeworktests_debug_mode).
+Additional modes are available for developers: `?debug=assets` enables assets mode, and `?debug=tests` enables tests mode.
 ```
 
 ## Locate the developer mode tools

@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring role-based access in OpenSPP: assigning roles to users, understanding global vs local roles, and managing access permissions.
 
+## Prerequisites
+
+```{important}
+The `spp_user_roles` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 - **{doc}`overview`** - Three-tier access control architecture (roles, privileges, groups)

@@ -1,5 +1,4 @@
 ---
-orphan: true
 openspp:
   doc_status: draft
   products: [drims]
@@ -8,6 +7,12 @@ openspp:
 # DRIMS Configuration Guide
 
 This guide is for **implementers** configuring DRIMS for disaster response operations. You should be comfortable with logic builders like Kobo or CommCare, but you don't need Python skills.
+
+## Prerequisites
+
+```{important}
+The `spp_drims` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
 
 ## What You'll Find Here
 
@@ -77,8 +82,8 @@ Alerts (automated monitoring)
 
 | Area | What You Configure | Where |
 |------|-------------------|-------|
-| **Warehouses** | Enable for DRIMS, set tier, assign geographic area | DRIMS → Inventory → Warehouses |
-| **Approval Chains** | Define who approves requests, set approval levels | DRIMS → Configuration → Approval Rules |
+| **Warehouses** | Enable for DRIMS, assign geographic area | DRIMS → Inventory → Warehouses |
+| **Approval Chains** | Define who approves requests, set approval levels | Configured via user groups and approval mixin |
 | **Alert Thresholds** | Low stock %, SLA warning days, expiry warning days | Settings → DRIMS or per-incident overrides |
 | **Vocabularies** | Donor types, priorities, transport modes, item conditions | Studio → Vocabularies |
 | **User Roles** | Assign security groups, geographic areas, warehouses | Settings → Users & Companies → Users |
@@ -104,7 +109,7 @@ Check that you have the **DRIMS Manager** or **DRIMS Officer** security group. C
 You must enable the "DRIMS Warehouse" checkbox on each warehouse. Go to **DRIMS → Inventory → Warehouses**, open the warehouse, and check the "DRIMS Warehouse" field.
 
 **Geographic areas not loading?**
-DRIMS requires the `spp_area` module with configured area hierarchy. Check **DRIMS → Configuration → Areas** to verify areas exist.
+DRIMS requires the `spp_area` module with configured area hierarchy. Check **Area → Areas** to verify areas exist.
 
 **Alert thresholds not triggering?**
 Alert jobs run on schedule (low stock every 4 hours, SLA every 2 hours, expiry daily). Check that scheduled actions are enabled in **Settings → Technical → Automation → Scheduled Actions**.
@@ -114,6 +119,6 @@ Alert jobs run on schedule (low stock every 4 hours, SLA every 2 hours, expiry d
 Most DRIMS configuration can be done through the interface. You only need custom development for:
 
 - Custom alert types beyond low stock/SLA/expiry
-- Integration with external systems (3PL, OCHA HDX, etc.)
+- Integration with external systems (third-party logistics providers, humanitarian data exchanges, etc.)
 - Custom entitlement calculations for beneficiary-based distribution
-- Advanced reporting beyond 4W reports and dashboards
+- Advanced reporting beyond standard "Who, What, Where, When" (4W) reports and dashboards

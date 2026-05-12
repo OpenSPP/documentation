@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_cycle_manager_cct_form" model="ir.ui.view">
+        <field name="name">spp.cycle.manager.cct.form</field>
+        <field name="model">spp.cycle.manager.cct</field>
+        <field name="arch" type="xml">
+            <form string="CCT Cycle Manager">
+                <sheet>
+                    <group>
+                        <group string="Configuration">
+                            <field name="name" />
+                            <field name="program_id" readonly="1" />
+                        </group>
+                        <group string="Cycle Behavior">
+                            <field name="is_auto_copy_beneficiaries" />
+                        </group>
+                    </group>
+                    <group string="How It Works">
+                        <div colspan="2">
+                            <p>This cycle manager creates quarterly cycles aligned to
+                            calendar quarters (Q1: Jan-Mar, Q2: Apr-Jun, Q3: Jul-Sep,
+                            Q4: Oct-Dec).</p>
+                        </div>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

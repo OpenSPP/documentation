@@ -14,7 +14,7 @@ Before deploying a new change request type, test the complete workflow.
 
 ### Step 1: Create test request
 
-1. Log in as a **Change Request Officer**
+1. Log in as a **Change Request User**
 2. Navigate to **Registry → Change Requests → New**
 3. Select your new request type
 4. Fill in all fields
@@ -22,7 +22,7 @@ Before deploying a new change request type, test the complete workflow.
 
 ### Step 2: Test approval
 
-1. Log in as a **Change Request Approver**
+1. Log in as a **Change Request Validator**
 2. Open the pending request
 3. Review the information
 4. Click **Approve**
@@ -45,17 +45,17 @@ Before deploying a new change request type, test the complete workflow.
 
 Change request types respect standard Odoo security:
 
-**Group: Change Request Officer**
+**Group: Change Request User**
 - Create change requests
 - Submit for approval
 - Edit draft requests
 
-**Group: Change Request Approver**
+**Group: Change Request Validator**
 - View pending requests
 - Approve/reject/request revision
 - View approval history
 
-**Group: Change Request Administrator**
+**Group: Change Request Manager**
 - Configure request types
 - View all requests
 - Manually apply requests
@@ -88,7 +88,7 @@ Configure record rules to restrict which requests users can see:
 
 **Checks:**
 - Has the request type been activated? (Click **Activate** button to change from Draft status)
-- Does the user have the **Change Request Officer** group?
+- Does the user have the **Change Request User** group?
 - Is **Target Type** compatible with the selected registrant (Individual vs Group/Household)?
 - Is there a domain filter on the request type field?
 

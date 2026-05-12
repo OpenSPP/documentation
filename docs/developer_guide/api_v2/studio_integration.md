@@ -6,7 +6,9 @@ openspp:
 
 # Studio API Integration
 
-This guide is for **developers** integrating with OpenSPP's Studio custom fields via API V2.
+**For: developers**
+
+Expose Studio-defined custom fields and CEL variables through the REST API.
 
 ## Overview
 
@@ -39,7 +41,7 @@ Studio fields are exposed through two API extensions, organized by target regist
 
 When requesting Individual or Group resources, include these extensions via the `_extensions` parameter:
 
-```http
+```text
 GET /api/v2/spp/Individual/{identifier}?_extensions=studio-individual
 ```
 
@@ -77,7 +79,7 @@ env["spp.studio.field"]._register_existing_fields()
 
 Retrieve metadata about all active Studio custom fields.
 
-```http
+```text
 GET /api/v2/spp/Studio/fields
 Authorization: Bearer {token}
 ```
@@ -136,7 +138,7 @@ Authorization: Bearer {token}
 
 Retrieve JSON Schema validation rules for a specific field.
 
-```http
+```text
 GET /api/v2/spp/Studio/fields/{technical_name}/schema
 Authorization: Bearer {token}
 ```
@@ -172,7 +174,7 @@ Authorization: Bearer {token}
 
 Retrieve metadata about available CEL variables.
 
-```http
+```text
 GET /api/v2/spp/Studio/variables
 Authorization: Bearer {token}
 ```
@@ -214,7 +216,7 @@ Authorization: Bearer {token}
 
 Retrieve cached variable values for a specific Individual or Group.
 
-```http
+```text
 GET /api/v2/spp/Studio/variables/{resource_type}/{identifier}
 Authorization: Bearer {token}
 ```
@@ -235,7 +237,7 @@ Authorization: Bearer {token}
 
 **Example:**
 
-```http
+```text
 GET /api/v2/spp/Studio/variables/Individual/urn:gov:ph:psa:national-id|PH-123456789?variables=household_income,children_count&period_key=current
 ```
 
@@ -313,9 +315,9 @@ x_primary_crop_id = Many2one("spp.vocabulary.code")
 
 When creating or updating records via API, include extension data in the `extension` object:
 
-```json
+```text
 {
-  "resourceType": "Individual",
+  "type": "Individual",
   "identifier": [...],
   "name": {...},
   "extension": {
@@ -342,7 +344,7 @@ When creating or updating records via API, include extension data in the `extens
 ```python
 import requests
 
-BASE_URL = "https://api.openspp.org/api/v2/spp"
+BASE_URL = "https://{your-domain}/api/v2/spp"  # Replace with your deployment URL
 TOKEN = "your_access_token"
 
 headers = {
@@ -386,7 +388,7 @@ for var_name, var_info in data["variables"].items():
 
 ```bash
 curl -X GET \
-  "https://api.openspp.org/api/v2/spp/Studio/variables?category=Economic&applies_to=group" \
+  "https://{your-domain}/api/v2/spp/Studio/variables?category=Economic&applies_to=group" \
   -H "Authorization: Bearer ${TOKEN}" \
   -H "Content-Type: application/json"
 ```
@@ -395,11 +397,11 @@ curl -X GET \
 
 ```bash
 curl -X POST \
-  "https://api.openspp.org/api/v2/spp/Individual" \
+  "https://{your-domain}/api/v2/spp/Individual" \
   -H "Authorization: Bearer ${TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{
-    "resourceType": "Individual",
+    "type": "Individual",
     "identifier": [
       {
         "system": "urn:gov:ph:psa:national-id",
@@ -465,7 +467,7 @@ On-demand variable computation is restricted to safe source models:
 - `spp.program.membership`
 - `spp.entitlement`
 
-## Are you stuck?
+## Common mistakes
 
 ### Field not appearing in API response
 
@@ -533,9 +535,13 @@ if data["nextPageId"]:
     )
 ```
 
-## See Also
+## What's next
 
-- {doc}`overview` - API V2 design principles
-- {doc}`authentication` - OAuth 2.0 setup and scopes
-- {doc}`resources` - Individual and Group resource operations
-- {doc}`external_identifiers` - Identifier format and usage
+- {doc}`resources` — read and update Individual/Group records with the Studio-extended fields
+- {doc}`external_identifiers` — reference Studio-exposed fields from external systems via namespace URIs
+
+## See also
+
+- {doc}`overview` — API V2 design principles
+- {doc}`authentication` — OAuth 2.0 setup and scopes
+- {doc}`/developer_guide/cel/index` — writing CEL expressions that Studio exposes via the API

@@ -159,6 +159,9 @@ docs_old
 # Downloaded submodules (fetched during build)
 /submodules/
 
+# Local setup notes (do not push)
+README.md
+
 # Setup scripts
 penn_setup-py311.sh
 setup-py311.sh

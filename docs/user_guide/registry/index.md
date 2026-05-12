@@ -51,6 +51,7 @@ register_group
 search_filter
 import_data
 export_data
+farmer_registry
 ```
 
 ### Registration
@@ -63,6 +64,10 @@ export_data
 - {doc}`search_filter` - Find and filter registrants
 - {doc}`import_data` - Bulk import registrants from CSV/Excel
 - {doc}`export_data` - Export registrant data
+
+### Farmer registry
+
+- {doc}`farmer_registry` - Record and update farm details, agricultural activities, and land parcels
 
 ## Key concepts
 

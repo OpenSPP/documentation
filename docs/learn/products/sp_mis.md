@@ -152,7 +152,6 @@ ODOO_INIT_MODULES=spp_mis_demo_v2 docker compose --profile ui up -d
 
 **New to SP-MIS?**
 - {doc}`/get_started/installation/docker` - Install with demo data
-- {doc}`/get_started/first_program/index` - Create your first program
 
 **Setting up for your organization?**
 - {doc}`/config_guide/index` - Configuration overview

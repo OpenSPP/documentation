@@ -8,6 +8,17 @@ openspp:
 
 This guide is for **implementers** configuring change request workflows for modifying registrant data.
 
+## Prerequisites
+
+```{important}
+The following modules must be installed:
+- `spp_change_request_v2`
+- `spp_cr_types_base`
+- `spp_cr_types_advanced`
+
+See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What you'll find here
 
 Change request types define the controlled workflows for modifying registrant records. Instead of allowing direct edits, change requests ensure all modifications go through approval processes with full audit trails.
@@ -47,5 +58,4 @@ troubleshooting
 
 ## Related guides
 
-- {doc}`../studio/change_request_builder` - Build change request types in Studio
 - {doc}`../event_data/index` - Integrate with event data collection

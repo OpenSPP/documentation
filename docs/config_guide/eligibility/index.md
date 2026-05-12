@@ -8,6 +8,12 @@ openspp:
 
 This guide is for **implementers** configuring eligibility rules to determine which registrants qualify for programs and benefits.
 
+## Prerequisites
+
+```{important}
+The `spp_programs` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
+
 ## What is eligibility?
 
 Eligibility rules define who qualifies for a program. They translate policy decisions (e.g., "elderly citizens over 65" or "households with children under 5") into criteria that OpenSPP evaluates automatically against registry data.

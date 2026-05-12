@@ -21,7 +21,7 @@ Partner API Request → Check consent_summary → Filter response → Return dat
 
 ## Consent summary cache
 
-Each registrant has a `consent_summary` JSON field that caches their active consents for fast API filtering. This enables O(1) consent checks instead of querying consent records on every request.
+Each registrant has a `consent_summary` field that caches their active consents for fast API filtering. The system reads this single cached value instead of looking up consent records one by one on every request.
 
 **Structure:**
 ```json

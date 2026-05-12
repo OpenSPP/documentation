@@ -111,7 +111,7 @@ Calculate values using CEL expressions.
 
 ## Member Aggregate Variables
 
-Compute values over household members, enrollments, entitlements, or events.
+Compute values over household members, enrollments, or entitlements.
 
 ### When to Use
 
@@ -149,7 +149,10 @@ Compute values over household members, enrollments, entitlements, or events.
 | Household Members | Members of the household |
 | Program Enrollments | Program membership records |
 | Entitlements | Entitlement records |
-| Events | Event data records |
+
+```{note}
+Event data is not available as an aggregate target. To work with event data, use the dedicated event functions (`has_event`, `events_count`, `events_sum`, etc.) described in the {doc}`/config_guide/cel/variables` guide.
+```
 
 ### Example: Count Children
 
@@ -198,40 +201,19 @@ m.is_disabled == true             # Disabled members
 age_years(m.birthdate) < 18 && m.is_enrolled_in_school == true
 ```
 
-## Event Aggregate Variables
+## Working with Event Data
 
-Aggregate over event data with time filtering.
+Event data is accessed through dedicated event functions in CEL expressions, not through the aggregate variable system.
 
-### Configuration
-
-| Field | Value | Notes |
-|-------|-------|-------|
-| Source Type | Member Aggregate | |
-| Aggregate Target | Events | |
-| Event Type | (select event type) | Which event type |
-| Time Range | This Year | Temporal filter |
-| Event Field | `amount` | For sum/avg (JSON field in event) |
-
-### Time Range Options
-
-| Option | Description |
-|--------|-------------|
-| All Time | All events |
-| This Year | Current calendar year |
-| This Quarter | Current quarter |
-| This Month | Current month |
-| Within N Days | Last N days (specify N) |
-| Within N Months | Last N months (specify N) |
+To work with events, use a **Computed (CEL)** variable with event functions:
 
 ### Example: Health Visits This Year
 
 | Setting | Value |
 |---------|-------|
 | Name | `health_visits_year` |
-| Aggregate Type | Count |
-| Aggregate Target | Events |
-| Event Type | Health Visit |
-| Time Range | This Year |
+| Source Type | Computed (CEL) |
+| CEL Expression | `events_count("health_visit", within_months=12)` |
 | Value Type | Number |
 
 ### Example: Total Training Hours
@@ -239,12 +221,13 @@ Aggregate over event data with time filtering.
 | Setting | Value |
 |---------|-------|
 | Name | `training_hours` |
-| Aggregate Type | Sum |
-| Aggregate Target | Events |
-| Event Type | Training Session |
-| Time Range | All Time |
-| Event Field | `duration_hours` |
+| Source Type | Computed (CEL) |
+| CEL Expression | `events_sum("training_session", "duration_hours")` |
 | Value Type | Number |
+
+```{note}
+Event functions require the `spp_cel_event` module to be installed. See the {doc}`/config_guide/cel/variables` guide for the full list of event functions and parameters.
+```
 
 ## Constant/Parameter Variables
 
@@ -332,7 +315,7 @@ Fetch data from external providers.
 | External Provider | (select provider) | Pre-configured data provider |
 
 ```{note}
-External providers must be configured separately in **Settings → Data Providers**.
+External providers must be configured separately by your administrator. Ask them to set up the data provider connection before using this source type.
 ```
 
 ### Caching Recommendation

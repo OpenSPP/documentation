@@ -25,9 +25,9 @@ The **OpenSPP Entitlement Basket** module aims to:
 
 4. **[spp_service_points](spp_service_points)**: Associates entitlement baskets with service points for beneficiary redemption.
 
-5. **[product](product)**:  Utilizes the product module to define the goods and services included within an entitlement basket.
+5. **`product`**:  Utilizes the product module to define the goods and services included within an entitlement basket.
 
-6. **[stock](stock)**:  Integrates with the stock module to manage inventory levels of basket products, generate procurement requests, and track stock movements upon entitlement approval. 
+6. **`stock`**:  Integrates with the stock module to manage inventory levels of basket products, generate procurement requests, and track stock movements upon entitlement approval. 
 
 ## Additional Functionality
 

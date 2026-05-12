@@ -1,5 +1,4 @@
 ---
-orphan: true
 openspp:
   doc_status: draft
   products: [core]
@@ -8,6 +7,12 @@ openspp:
 # Scoring & Assessment
 
 This guide is for **implementers** configuring scoring frameworks to assess and rank beneficiaries for program targeting. No code required.
+
+## Prerequisites
+
+```{important}
+The `spp_scoring` module must be installed. See {doc}`/get_started/modules/index` for module installation instructions.
+```
 
 ## What You'll Find Here
 

@@ -8,6 +8,20 @@ openspp:
 
 This guide is for **implementers** setting up Proxy Means Test scoring for poverty targeting. PMT uses observable household characteristics to estimate income or consumption levels without directly measuring them.
 
+## Quick start
+
+For a quick PMT targeting setup, you can use the sample configuration provided by the PMT targeting pack in SPP Studio:
+
+1. Go to **SPP Studio → Packages** and install the **PMT Targeting** pack
+2. Once installed, go to **Studio → Expressions** and click **Submit for Review** to activate it
+3. After activation, the PMT expression becomes available in CEL expression fields under **Library**
+
+```{note}
+The PMT targeting pack only appears under **Library** when targeting **Group** type criteria. This is because the pack is configured to target groups as an example — it will not show for Individual type targeting.
+```
+
+For manual configuration without the pack, follow the step-by-step guide below.
+
 ## What is PMT?
 
 Proxy Means Test (PMT) is a poverty targeting method that:

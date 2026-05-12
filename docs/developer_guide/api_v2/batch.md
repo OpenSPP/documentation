@@ -6,7 +6,14 @@ openspp:
 
 # Batch Operations
 
-This guide is for **developers** implementing batch and transaction operations with OpenSPP API V2.
+**For: developers**
+
+Execute multiple operations in a single request using transaction bundles (all-or-nothing) or batch bundles (independent operations).
+
+## Prerequisites
+
+- A working API client and OAuth token (see {doc}`authentication`)
+- Familiarity with {doc}`resources` for the resource types you are batching
 
 ## Why Use Batch Operations?
 
@@ -39,7 +46,7 @@ Transaction bundles process operations atomically. If any operation fails, all c
 
 ### Basic Structure
 
-```http
+```text
 POST /api/v2/spp/$batch
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -70,7 +77,7 @@ Content-Type: application/json
 
 Create an individual, add them to a household, and enroll in a program:
 
-```http
+```text
 POST /api/v2/spp/$batch
 Authorization: Bearer TOKEN
 Content-Type: application/json
@@ -86,7 +93,7 @@ Content-Type: application/json
         "url": "Individual"
       },
       "resource": {
-        "resourceType": "Individual",
+        "type": "Individual",
         "identifier": [
           {
             "system": "urn:gov:ph:psa:national-id",
@@ -115,14 +122,14 @@ Content-Type: application/json
         "url": "Group"
       },
       "resource": {
-        "resourceType": "Group",
+        "type": "Group",
         "identifier": [
           {
             "system": "urn:openspp:group",
             "value": "HH-NEW-001"
           }
         ],
-        "type": "household",
+        "groupType": "household",
         "name": "Santos Household",
         "member": [
           {
@@ -147,7 +154,7 @@ Content-Type: application/json
         "url": "ProgramMembership"
       },
       "resource": {
-        "resourceType": "ProgramMembership",
+        "type": "ProgramMembership",
         "program": {
           "reference": "Program/urn:openspp:program|4Ps"
         },
@@ -201,11 +208,11 @@ Content-Type: application/json
 
 Use `fullUrl` with `urn:uuid:*` to create temporary IDs for cross-references:
 
-```json
+```text
 {
   "fullUrl": "urn:uuid:temp-individual",
   "resource": {
-    "resourceType": "Individual",
+    "type": "Individual",
     ...
   }
 }
@@ -216,7 +223,7 @@ Reference the placeholder in subsequent entries:
 ```json
 {
   "resource": {
-    "resourceType": "Group",
+    "type": "Group",
     "member": [
       {
         "entity": {
@@ -267,7 +274,7 @@ entries = [
         "fullUrl": "urn:uuid:ind-1",
         "request": {"method": "POST", "url": "Individual"},
         "resource": {
-            "resourceType": "Individual",
+            "type": "Individual",
             "identifier": [{"system": "urn:gov:ph:psa:national-id", "value": "PH-001"}],
             "name": {"given": "Maria", "family": "Santos"}
         }
@@ -275,9 +282,9 @@ entries = [
     {
         "request": {"method": "POST", "url": "Group"},
         "resource": {
-            "resourceType": "Group",
+            "type": "Group",
             "identifier": [{"system": "urn:openspp:group", "value": "HH-001"}],
-            "type": "household",
+            "groupType": "household",
             "name": "Santos Household",
             "member": [
                 {
@@ -333,7 +340,7 @@ class TransactionBuilder:
             placeholder = f"urn:uuid:{uuid.uuid4()}"
 
         resource = {
-            "resourceType": "Individual",
+            "type": "Individual",
             "identifier": [identifier],
             "name": name
         }
@@ -375,9 +382,9 @@ class TransactionBuilder:
             placeholder = f"urn:uuid:{uuid.uuid4()}"
 
         resource = {
-            "resourceType": "Group",
+            "type": "Group",
             "identifier": [identifier],
-            "type": "household",
+            "groupType": "household",
             "name": name,
             "member": members
         }
@@ -399,7 +406,7 @@ class TransactionBuilder:
     ):
         """Add a program membership to the transaction."""
         resource = {
-            "resourceType": "ProgramMembership",
+            "type": "ProgramMembership",
             "program": {"reference": program_ref},
             "beneficiary": {"reference": beneficiary_ref},
             "status": status
@@ -540,7 +547,7 @@ def create_batch_bundle(resources: List[Dict]) -> Dict:
 
     for resource in resources:
         entries.append({
-            "request": {"method": "POST", "url": resource["resourceType"]},
+            "request": {"method": "POST", "url": resource["type"]},
             "resource": resource
         })
 
@@ -568,7 +575,7 @@ def submit_batch(bundle: Dict, token: str, base_url: str) -> Dict:
 # Usage: Bulk import individuals
 individuals = [
     {
-        "resourceType": "Individual",
+        "type": "Individual",
         "identifier": [{"system": "urn:gov:ph:psa:national-id", "value": f"PH-{i:06d}"}],
         "name": {"given": f"Person{i}", "family": "Test"}
     }
@@ -749,7 +756,7 @@ class BulkImporter:
             reader = csv.DictReader(f)
             for row in reader:
                 individuals.append({
-                    "resourceType": "Individual",
+                    "type": "Individual",
                     "identifier": [
                         {
                             "system": "urn:gov:ph:psa:national-id",
@@ -838,7 +845,7 @@ class BulkImporter:
 
 # Usage
 importer = BulkImporter(
-    base_url="https://api.openspp.org/api/v2/spp",
+    base_url="https://{your-domain}/api/v2/spp",
     token=token
 )
 
@@ -856,7 +863,94 @@ if result["errors"] > 0:
         print(f"  Batch {error.get('batch')}, Index {error.get('index')}: {error['error']}")
 ```
 
-## Are You Stuck?
+## Bulk Export
+
+For exporting multiple resources by identifier (without creating or modifying), use the bulk export endpoint:
+
+```text
+POST /api/v2/spp/$bulk/export
+Authorization: Bearer TOKEN
+Content-Type: application/json
+
+{
+  "type": "Individual",
+  "identifiers": [
+    "urn:gov:ph:psa:national-id|PH-001",
+    "urn:gov:ph:psa:national-id|PH-002",
+    "urn:gov:ph:psa:national-id|PH-003"
+  ]
+}
+```
+
+**Limits:** 1 to 100 identifiers per request.
+
+### Response
+
+```json
+{
+  "total": 3,
+  "successful": 2,
+  "failed": 1,
+  "items": [
+    {
+      "identifier": "urn:gov:ph:psa:national-id|PH-001",
+      "status": "success",
+      "resource": { /* Individual */ }
+    },
+    {
+      "identifier": "urn:gov:ph:psa:national-id|PH-002",
+      "status": "success",
+      "resource": { /* Individual */ }
+    },
+    {
+      "identifier": "urn:gov:ph:psa:national-id|PH-003",
+      "status": "not_found",
+      "resource": null
+    }
+  ]
+}
+```
+
+**Status Values:**
+
+| Status | Description |
+|--------|-------------|
+| `success` | Resource exported successfully |
+| `not_found` | Resource does not exist |
+| `access_denied` | Consent denied for this resource |
+| `error` | Invalid identifier format or other error |
+
+Consent filtering applies per resource, the same as individual read requests. Supports `_elements` and `_extensions` query parameters for sparse fieldsets.
+
+### Example: Python
+
+```python
+def bulk_export(resource_type, identifiers, token, base_url):
+    """Export multiple resources by identifier."""
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json"
+    }
+    response = requests.post(
+        f"{base_url}/$bulk/export",
+        headers=headers,
+        json={"type": resource_type, "identifiers": identifiers}
+    )
+    response.raise_for_status()
+    return response.json()
+
+# Export 50 individuals
+result = bulk_export(
+    resource_type="Individual",
+    identifiers=["urn:gov:ph:psa:national-id|PH-001", "urn:gov:ph:psa:national-id|PH-002"],
+    token=token,
+    base_url=base_url
+)
+
+print(f"Exported: {result['successful']}, Failed: {result['failed']}")
+```
+
+## Common mistakes
 
 **Transaction failing with "reference not found"?**
 
@@ -878,14 +972,14 @@ Use a transaction bundle with `PUT` requests. Include `If-Match` headers with ve
 
 Yes. Use `POST` for creates, `PUT` for updates in the same transaction.
 
-## Next Steps
+## What's next
 
 - {doc}`resources` - Learn about available resources
 - {doc}`errors` - Complete error handling guide
 - {doc}`search` - Finding existing resources
 - {doc}`authentication` - OAuth 2.0 setup
 
-## See Also
+## See also
 
 - [FHIR Bundle](https://www.hl7.org/fhir/bundle.html) - FHIR bundle specification
 - [HTTP Batch Processing](https://datatracker.ietf.org/doc/html/rfc7233) - HTTP batch patterns

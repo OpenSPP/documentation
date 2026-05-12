@@ -34,7 +34,7 @@ The Base GIS module introduces several key features:
 
 The Base GIS module seamlessly integrates with other OpenSPP modules by extending the core functionality with geospatial awareness. For instance:
 
-- **[Registries](Registries)**  The module allows for visualizing registry data on a map. This could include plotting the locations of farmers, beneficiaries, or other entities managed within a registry.
+- **Registries**  The module allows for visualizing registry data on a map. This could include plotting the locations of farmers, beneficiaries, or other entities managed within a registry.
 - **[Targeting and Eligibility](Targeting and Eligibility)** GIS data can be incorporated into targeting and eligibility rules. For example, a program might define eligibility based on a beneficiary's location within a specific geographical area.
 - **[Monitoring and Evaluation](Monitoring and Evaluation)**  The module facilitates spatial analysis for monitoring and evaluation purposes. Program implementers can visualize program coverage, identify geographic areas with high or low program participation, and track progress over time.
 

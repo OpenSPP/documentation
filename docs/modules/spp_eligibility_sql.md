@@ -30,7 +30,7 @@ The **OpenSPP SQL Query Eligibility Manager** module enables program administrat
 
 ## Additional Functionality
 
-* **[spp.program_membership.manager.sql](spp.program_membership.manager.sql)**: A new eligibility manager model specifically designed to store and execute SQL queries for eligibility determination. 
+* **`spp.program_membership.manager.sql`**: A new eligibility manager model specifically designed to store and execute SQL queries for eligibility determination. 
 
 * **SQL Query Validation**:  The module validates SQL queries for:
     * **Syntax Errors**: Checks for any syntax errors in the query.

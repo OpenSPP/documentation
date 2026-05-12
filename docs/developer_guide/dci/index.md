@@ -6,20 +6,89 @@ openspp:
 
 # DCI Integration
 
-This guide is for **developers** integrating OpenSPP with Digital Convergence Initiative (DCI)-compliant social protection systems.
+**For: developers**
 
-## What is DCI?
+Integrate OpenSPP with Digital Convergence Initiative (DCI)-compliant social protection systems — either by exposing OpenSPP registry data through DCI endpoints or by consuming data from external DCI registries (CRVS, IBR, disability registries, etc.).
 
-The Digital Convergence Initiative (DCI) provides API standards for interoperability between social protection systems, enabling seamless data exchange between registries, program management systems, and payment platforms.
+## How to use this section
 
-OpenSPP implements DCI standards to enable:
+1. Read {doc}`overview` to understand DCI architecture and the interaction patterns (sync/async search, subscribe/notify)
+2. Read the role-specific guide for your scenario:
+   - {doc}`server_role` — expose OpenSPP registry data to external DCI clients
+   - {doc}`client_role` — query external DCI registries from OpenSPP
+3. Consult {doc}`protocol` for message envelope, HTTP Signature, and endpoint reference
 
-- **Bidirectional Integration** - Act as both server (exposing data) and client (consuming data)
-- **Government Interoperability** - Connect with CRVS, IBR, and other national registries
-- **Standardized Data Exchange** - Use common schemas and protocols
-- **Asynchronous Operations** - Handle high-volume data transfers efficiently
+## Prerequisites
 
-## Documentation Structure
+- Familiarity with Odoo module structure and FastAPI
+- Understanding of HTTP Message Signatures (draft-cavage / RFC 9421)
+- Familiarity with Bearer token authentication patterns
+- Basic knowledge of async operations with `queue_job`
+- Familiarity with the OpenSPP registry structure (`res.partner`, `spp.registry.id`)
+
+## When do you need DCI?
+
+| Scenario | Module(s) to install | Role | Guide |
+|----------|---------------------|------|-------|
+| Expose OpenSPP as a DCI server for external MIS systems | `spp_dci`, `spp_dci_server` | Server | {doc}`server_role` |
+| Import births/deaths from a national CRVS | `spp_dci`, `spp_dci_client`, `spp_dci_client_crvs` | Client | {doc}`client_role` |
+| Check for duplicate enrollments in other programs (IBR) | `spp_dci`, `spp_dci_client`, `spp_dci_client_ibr` | Client | {doc}`client_role` |
+| Query a Disability Registry for eligibility targeting | `spp_dci`, `spp_dci_client`, `spp_dci_client_dr` | Client | {doc}`client_role` |
+| Try an end-to-end DCI example out of the box | `spp_dci_demo` | Demo | Install the module |
+| Understand DCI message formats / protocol details | `spp_dci` (core) | Either | {doc}`protocol` |
+| Build a custom OpenSPP endpoint that isn't DCI-compliant | — | N/A | Use {doc}`/developer_guide/api_v2/index` instead |
+
+## OpenSPP DCI modules
+
+| Module | Purpose | Role |
+|--------|---------|------|
+| `spp_dci` | Core DCI infrastructure — message envelope, HTTP Signature, JWKS, shared schemas | Foundation |
+| `spp_dci_server` | DCI server infrastructure — FastAPI app (`/dci_api/v1`), signature middleware, sender registry, subscriptions, transactions | Server |
+| `spp_dci_client` | Base DCI client (`DCIClient`) — synchronous HTTP client with OAuth 2.0 and outbound signature handling | Client |
+| `spp_dci_client_crvs` | CRVS client (`CRVSService`) for birth verification and death lookups | Client |
+| `spp_dci_client_ibr` | IBR client (`IBRService`) for duplicate enrollment checks | Client |
+| `spp_dci_client_dr` | Disability Registry client (`DRService`) for PWD status queries | Client |
+| `spp_dci_demo` | End-to-end demo layered on `spp_mis_demo_v2` — birth verification for child benefit enrollment | Demo |
+
+```{note}
+**Server-side registry search needs an implementation module.** `spp_dci_server` provides the infrastructure (routers, middleware, models), but the actual search implementation for a given registry type is loaded dynamically. Until an implementation module is installed, search requests receive a rejection response. See {doc}`server_role` for details.
+```
+
+## Common integration scenarios
+
+### As a DCI server
+
+**Example:** A national MIS queries OpenSPP's Social Registry for beneficiary data.
+
+```{mermaid}
+graph LR
+    A[External MIS] -->|DCI Search Request| B[OpenSPP DCI Server]
+    B -->|Query Registry| C[res.partner]
+    C -->|Results| B
+    B -->|Signed DCI Response| A
+```
+
+See {doc}`server_role` for implementation details.
+
+### As a DCI client
+
+**Example:** OpenSPP imports birth registrations from a national CRVS.
+
+```{mermaid}
+graph LR
+    A[OpenSPP DCI Client] -->|DCI Search Request| B[National CRVS]
+    B -->|Birth Records| A
+    A -->|Create Registrants| C[res.partner]
+```
+
+See {doc}`client_role` for implementation details.
+
+## See also
+
+- {doc}`/developer_guide/api_v2/index` — the general-purpose REST API (not DCI-specific)
+- [DCI API Standards](https://github.com/spdci/api-standards) — official DCI specifications
+- [G2P Connect](https://g2pconnect.cdpi.dev) — related protocol documentation
+- [ADR-015](https://github.com/OpenSPP/openspp-modules-v2/blob/main/docs/architecture/decisions/ADR-015-dci-api-integration.md) — OpenSPP DCI architecture decision
 
 ```{toctree}
 :maxdepth: 2
@@ -30,117 +99,3 @@ server_role
 client_role
 protocol
 ```
-
-### Getting Started
-
-1. **{doc}`overview`** - Understand DCI architecture and use cases
-2. **{doc}`server_role`** - Expose OpenSPP registry data to external systems
-3. **{doc}`client_role`** - Consume data from external DCI-compliant registries
-4. **{doc}`protocol`** - Deep dive into message structure, endpoints, and authentication
-
-## OpenSPP DCI Modules
-
-| Module | Purpose | Role |
-|--------|---------|------|
-| `spp_dci` | Core DCI infrastructure (message envelope, signing, JWKS) | Foundation |
-| `spp_dci_server` | Base DCI server with search/subscribe endpoints | Server |
-| `spp_dci_server_social` | Social Registry server implementation | Server |
-| `spp_dci_client` | Base DCI client with authentication | Client |
-| `spp_dci_client_crvs` | CRVS client for birth/death imports | Client |
-| `spp_dci_client_ibr` | IBR client for enrollment duplication checks | Client |
-| `spp_dci_client_dr` | Disability Registry client | Client |
-| `spp_dci_indicators` | DCI data integration with eligibility system | Both |
-
-## Common Integration Scenarios
-
-### As a DCI Server
-
-**Use Case:** National MIS needs to query beneficiary data from OpenSPP Social Registry.
-
-```{mermaid}
-graph LR
-    A[External MIS] -->|DCI Search Request| B[OpenSPP DCI Server]
-    B -->|Query Registry| C[res.partner]
-    C -->|Results| B
-    B -->|DCI Response| A
-```
-
-See {doc}`server_role` for implementation details.
-
-### As a DCI Client
-
-**Use Case:** Import birth registrations from national CRVS to create new registrants.
-
-```{mermaid}
-graph LR
-    A[OpenSPP DCI Client] -->|DCI Search Request| B[National CRVS]
-    B -->|Birth Records| A
-    A -->|Import| C[res.partner]
-```
-
-See {doc}`client_role` for implementation details.
-
-## Quick Examples
-
-### Server: Sync Search Endpoint
-
-```python
-# spp_dci_server/routers/registry.py
-from fastapi import APIRouter, Depends
-from ..schemas.search import DCISearchRequest, DCISearchResponse
-from ..services.search_service import SearchService
-
-router = APIRouter(prefix="/registry", tags=["Registry"])
-
-@router.post("/sync/search", response_model=DCISearchResponse)
-async def sync_search(
-    request: DCISearchRequest,
-    token: dict = Depends(verify_token),
-    env = Depends(get_env)
-):
-    """Synchronous registry search"""
-    service = SearchService(env)
-    response = await service.execute_search(request)
-    return response
-```
-
-### Client: Search by Identifier
-
-```python
-# Using the DCI client
-from odoo.addons.spp_dci_client.services.dci_client import DCIClient
-
-# Configure data source
-data_source = env['spp.dci.data.source'].browse(1)
-client = DCIClient(data_source)
-
-# Search by national ID
-response = await client.search_by_identifier(
-    identifier_type="urn:gov:national-id",
-    identifier_value="12345678"
-)
-
-# Results in DCI Person format
-persons = response.message.search_response[0].data['reg_records']
-```
-
-## Prerequisites
-
-Before implementing DCI integration:
-
-- Understanding of Odoo model patterns and FastAPI
-- Familiarity with OAuth 2.0 and API authentication
-- Knowledge of async operations with `queue_job`
-- Understanding of OpenSPP registry structure (`res.partner`, `spp.registry.id`)
-
-## References
-
-- [DCI API Standards](https://github.com/spdci/api-standards) - Official DCI specifications
-- [G2P Connect](https://g2pconnect.cdpi.dev) - Protocol documentation
-- [ADR-015](https://github.com/OpenSPP/openspp-modules-v2/blob/main/docs/architecture/decisions/ADR-015-dci-api-integration.md) - OpenSPP DCI architecture decision
-
-## See Also
-
-- {doc}`/developer_guide/fastapi/index` - FastAPI integration in OpenSPP
-- {doc}`/developer_guide/oauth/index` - OAuth2 authentication
-- {doc}`/developer_guide/queue_job/index` - Background job processing
