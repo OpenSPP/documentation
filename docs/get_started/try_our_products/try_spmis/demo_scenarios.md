@@ -10,7 +10,7 @@ You will here find a number of scenarios that can be used to demonstrate various
 
 ## Before you start
 
-- OpenSPP should be installed and running (see {doc}`../installation/index`)
+- OpenSPP should be installed and running (see {doc}`../../installation/index`)
 - OpenSPP SPMIS Demo should be installed and demo data should be generated (see {doc}`install_data`)
 - You need administrator access to OpenSPP
 

@@ -10,7 +10,7 @@ The OpenSPP SP-MIS demo module includes a number of fixed households that show v
 
 ## Before you start
 
-- OpenSPP should be installed and running (see {doc}`../installation/index`)
+- OpenSPP should be installed and running (see {doc}`../../installation/index`)
 - OpenSPP SPMIS Demo should be installed and demo data should be generated (see {doc}`install_data`)
 - You need administrator access to OpenSPP
 

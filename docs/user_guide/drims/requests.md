@@ -25,6 +25,7 @@ Create and submit a request for relief supplies to be delivered to a disaster-af
 - Know which incident you're responding to
 - Know the destination area where supplies are needed
 - Have information about what items are needed and how many people are affected
+- An implementer must configure approval workflows before requests can be routed for approval. See {doc}`/config_guide/approval_workflows/overview`.
 
 ## Steps
 

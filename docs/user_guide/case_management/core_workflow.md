@@ -23,6 +23,8 @@ You need one of these roles:
 
 If the **Case Management** menu is missing, ask your administrator to install `spp_case_base` and assign you a case management role.
 
+An implementer must configure approval workflows before cases requiring approval can be processed. See {doc}`/config_guide/approval_workflows/overview`.
+
 ## Initial setup (case managers only)
 
 A case manager or admin must complete this configuration before cases are created. If this has already been done, skip to [Step 1](#step-1-create-a-new-case).

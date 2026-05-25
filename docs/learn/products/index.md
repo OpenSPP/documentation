@@ -15,10 +15,10 @@ OpenSPP offers flexible products tailored to different social protection needs. 
 
 | Product | Description | Best For |
 |---------|-------------|----------|
-| {doc}`social_registry` | Registry for identifying and assessing vulnerable populations | National registries, humanitarian registration |
-| {doc}`sp_mis` | Full program management with eligibility, enrollment, and payments | Cash transfers, social assistance programs |
-| {doc}`farmer_registry` | Specialized registry for agricultural households with GIS integration | Agricultural support, rural development |
-| {doc}`drims` | Disaster response inventory and distribution management | Humanitarian organizations, emergency response |
+| {doc}`/products/social_registry/index` | Registry for identifying and assessing vulnerable populations | National registries, humanitarian registration |
+| {doc}`/products/spmis/index` | Full program management with eligibility, enrollment, and payments | Cash transfers, social assistance programs |
+| {doc}`/products/farmer_registry/index` | Specialized registry for agricultural households with GIS integration | Agricultural support, rural development |
+| {doc}`/products/drims/index` | Disaster response inventory and distribution management | Humanitarian organizations, emergency response |
 
 ## Product Architecture
 

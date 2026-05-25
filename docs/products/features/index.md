@@ -6,7 +6,7 @@ myst:
     "keywords": "OpenSPP, features, social protection, registry, eligibility, payments, GIS"
 ---
 
-# Features
+# Features in OpenSPP
 
 OpenSPP's features work together to deliver end-to-end social protection programs. Each component can be configured independently while maintaining seamless integration with others.
 

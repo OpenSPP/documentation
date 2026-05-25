@@ -6,7 +6,7 @@ openspp:
 
 # Try OpenSPP SP-MIS
 
-**{doc}`OpenSPP SP-MIS <../../products/sp_mis>`** is a Social Protection Management Information System for running complete social programs. It can manage the entire lifecycle from beneficiary enrollment through payment disbursement and is ideal for cash transfers, humanitarian aid, and social assistance programs.
+**{doc}`OpenSPP SP-MIS <../../../products/spmis/index>`** is a Social Protection Management Information System for running complete social programs. It can manage the entire lifecycle from beneficiary enrollment through payment disbursement and is ideal for cash transfers, humanitarian aid, and social assistance programs.
 
 In order for you to familiarize yourself with the functionalities included in the OpenSPP SP-MIS product, you can use the specific demo data module for SP-MIS, read more under {doc}`Install demo data <install_data>`. 
 

@@ -40,7 +40,7 @@ Installing an Odoo module, including those for OpenSPP, follows a standard proce
 
 3. Click the **Activate** button on the module's card to begin the installation.
 
-![OpenSPP Apps menu interface](/_images/en-us/get_started/modules/01-apps-ui.png)
+![OpenSPP Apps menu interface](/_images/en-us/get_started/module_installation/01-apps-ui.png)
 
 4. Restart OpenSPP after installing the modules:
    ```bash
@@ -116,4 +116,5 @@ hidden: true
 spmis_installation
 social_installation
 farmer_installation
+drims_installation
 ```
