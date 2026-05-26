@@ -10,7 +10,7 @@ myst:
 
 **OpenSPP Starter: Social Registry / spp_starter_social_registry**
 
-The {doc}`OpenSPP Social Registry <../../products/social_registry>` configuration provides a centralized repository for beneficiary data that can be shared across multiple social protection programs. This setup is ideal for governments and organizations coordinating multiple interventions and requiring a single source of truth for beneficiary information.
+The {doc}`OpenSPP Social Registry <../../products/social_registry/index>` configuration provides a centralized repository for beneficiary data that can be shared across multiple social protection programs. This setup is ideal for governments and organizations coordinating multiple interventions and requiring a single source of truth for beneficiary information.
 
 **What's included:**
 - Unified beneficiary database across programs
@@ -26,12 +26,19 @@ The {doc}`OpenSPP Social Registry <../../products/social_registry>` configuratio
 1.  Navigate to the **Apps** menu.
 2.  In the Apps menu, search for {doc}`spp_starter_social_registry </reference/modules/spp_starter_social_registry>` or "OpenSPP Starter: Social Registry"
 
-![Searching for SPP Base module in Apps](/_images/en-us/get_started/modules/12-social_inst_base01.png)
+![Searching for SPP Base module in Apps](/_images/en-us/get_started/module_installation/social_installation/01-social-apps-search.png)
 
 3.  Click the **Activate** button to install the module and its dependencies
 
-![SPP Base module installation screen](/_images/en-us/get_started/modules/13-social_inst_base2.png)
+![SPP Base module installation screen](/_images/en-us/get_started/module_installation/social_installation/02-social-activate.png)
 
 Once installed, the Social Registry becomes the central hub for managing beneficiary data that can be accessed by various social protection programs.
 
-![SPP_starter_social_registry landing page](/_images/en-us/get_started/modules/14-social_inst_base03.png)
+![SPP_starter_social_registry landing page](/_images/en-us/get_started/module_installation/social_installation/03-social-installed.png)
+
+## Next steps
+
+Now that you have installed OpenSPP Social Registry, you have three options forward:
+
+- {doc}`../../products/social_registry/user_guides` - Start using OpenSPP without adding any demo data
+- {doc}`../../products/social_registry/config_guides` - Use the studio to perform configurations to match Social Registry to your use case

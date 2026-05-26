@@ -1,12 +1,10 @@
 ---
-orphan: true
 openspp:
   doc_status: draft
   products: [drims]
   applies_to:
     - drims
 ---
-orphan: true
 
 # Receive a Donation
 
@@ -31,9 +29,11 @@ Record and process incoming relief supplies from donors through inspection and a
 
 Click **DRIMS** in the sidebar, then select **Donations**.
 
+<!-- ![Click DRIMS in the sidebar, then select Donations](/_images/en-us/user_guide/drims/donations/01-click-drims-donations.png) -->
 
 You'll see a list of all donations for your warehouses.
 
+<!-- ![Donations list showing all donations for your warehouses](/_images/en-us/user_guide/drims/donations/02-donations-list.png) -->
 
 ### 2. Find the Announced Donation
 
@@ -41,6 +41,7 @@ Look for the donation that was announced earlier. Donations waiting to be receiv
 
 Click on the donation row to open it.
 
+<!-- ![Find donations with Announced status and click to open](/_images/en-us/user_guide/drims/donations/03-find-announced-donation.png) -->
 
 You'll see the donation details including:
 
@@ -52,13 +53,17 @@ You'll see the donation details including:
 | **Source Type** | Type of donor (UN Agency, NGO, Private, Government) |
 | **Restriction** | Any limits on how items can be used |
 
+<!-- ![Donation detail view showing incident, warehouse, donor, and status](/_images/en-us/user_guide/drims/donations/04-donation-detail-view.png) -->
+
 ### 3. Mark as Received
 
 When the physical goods arrive at your warehouse, click the **Mark Received** button.
 
+<!-- ![Click Mark Received when physical goods arrive at your warehouse](/_images/en-us/user_guide/drims/donations/05-click-mark-received.png) -->
 
 A form will appear for you to confirm receipt.
 
+<!-- ![Fill in the received date and actual quantities](/_images/en-us/user_guide/drims/donations/06-fill-received-date-quantities.png) -->
 
 Fill in:
 
@@ -70,16 +75,21 @@ Fill in:
 
 Click **Confirm** to save.
 
+<!-- ![Click Confirm to save the received status](/_images/en-us/user_guide/drims/donations/07-click-confirm-received.png) -->
+
 The donation status changes to **Received**.
 
+<!-- ![The donation status changes to Received](/_images/en-us/user_guide/drims/donations/08-donation-status-received.png) -->
 
 ### 4. Inspect the Donation
 
 Now check the quality and condition of the items. Click the **Inspect** button.
 
+<!-- ![Click Inspect to check the quality and condition of items](/_images/en-us/user_guide/drims/donations/09-click-inspect-items.png) -->
 
 A checklist appears for you to record your inspection.
 
+<!-- ![Check each item condition, quantity match, and quality](/_images/en-us/user_guide/drims/donations/10-check-item-condition-quality.png) -->
 
 For each line item, check:
 
@@ -92,19 +102,23 @@ For each line item, check:
 
 Click **Complete Inspection** when done.
 
-The donation status changes to **Inspected**.
+<!-- ![Click Complete Inspection when done checking all items](/_images/en-us/user_guide/drims/donations/11-click-complete-inspection.png) -->
 
+The donation status changes to **Inspected**.
 
 ### 5. Stock the Items
 
 If items passed inspection, add them to inventory. Click the **Stock** button.
 
+<!-- ![Click Stock to add inspected items to your warehouse inventory](/_images/en-us/user_guide/drims/donations/12-click-stock-add-inventory.png) -->
 
 The system creates a stock receipt and asks you to confirm.
 
+<!-- ![Review the stock receipt showing items and quantities to add](/_images/en-us/user_guide/drims/donations/13-review-stock-receipt.png) -->
 
 Review the items and quantities, then click **Validate**.
 
+<!-- ![Click Validate to confirm adding items to inventory](/_images/en-us/user_guide/drims/donations/14-click-validate-inventory.png) -->
 
 For items that need tracking (like medicines with expiry dates or batch numbers), you'll see a screen to enter:
 
@@ -118,14 +132,15 @@ Enter the information and click **Confirm**.
 
 The donation status changes to **Stocked** and items are now in your inventory.
 
+<!-- ![The donation is now Stocked and items are in your inventory](/_images/en-us/user_guide/drims/donations/15-donation-stocked.png) -->
 
 ### 6. Verify Stock Added
 
 To confirm items are in inventory, click **Inventory** in the sidebar, then **Products**.
 
+<!-- ![Navigate to Inventory then Stock to verify items were added](/_images/en-us/user_guide/drims/donations/16-verify-inventory-stock.png) -->
 
 Search for the donated items and check the **On Hand** quantity increased.
-
 
 ## What If Items Are Damaged?
 

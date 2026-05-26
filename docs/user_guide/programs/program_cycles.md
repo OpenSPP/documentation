@@ -19,6 +19,7 @@ Learn how to navigate, understand, and manage program cycles in OpenSPP.
 - You need **Program Validator**, **Program Manager**, **Program Cycle Approver**, or **Administrator** roles assigned to your user account
 - The program must be in **Active** state
 - At least one beneficiary must be enrolled in the program
+- An implementer must configure approval workflows before cycles can be submitted for approval. See {doc}`/config_guide/approval_workflows/overview`.
 
 ## What is a cycle?
 
