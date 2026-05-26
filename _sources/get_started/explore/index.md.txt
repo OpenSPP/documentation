@@ -36,13 +36,13 @@ After loading the MIS demo data, you'll have:
 
 Log in to OpenSPP using administrator credentials (default: admin/admin).
 
-![Screenshot: Dashboard after login](/_images/en-us/get_started/explore/cle1_1.png)
+![Screenshot: Dashboard after login](/_images/en-us/get_started/try_openspp_sp_mis/install_sp_mis_demo_data/01-dashboard-after-login.png)
 
 ### 2: Open Settings
 
 Click **Settings** in the left sidebar.
 
-![Screenshot: Settings page](/_images/en-us/get_started/explore/cle1_2.png)
+![Screenshot: Settings page](/_images/en-us/get_started/try_openspp_sp_mis/install_sp_mis_demo_data/02-settings-page.png)
 
 *Note:* If your screen does not look like in the screenshot, it may be due to the **OpenSPP MIS Demo V2** module not being installed yet. Learn how to do this on {doc}`Module Installation <../modules/index>`.
 
@@ -50,7 +50,7 @@ Click **Settings** in the left sidebar.
 
 In the Settings top menu, click **Demo Data** > **Load MIS Demo**.
 
-![Screenshot: Settings with Demo Data menu](/_images/en-us/get_started/explore/cle1_3.png)
+![Screenshot: Settings with Demo Data menu](/_images/en-us/get_started/try_openspp_sp_mis/install_sp_mis_demo_data/03-settings-demo-data-menu.png)
 
 *Note:* If this option is not available, it may be due to the **OpenSPP MIS Demo V2** module not being installed yet. Learn how to do this on {doc}`Module Installation <../modules/index>`.
 
@@ -58,13 +58,13 @@ In the Settings top menu, click **Demo Data** > **Load MIS Demo**.
 
 The Load MIS Demo wizard opens in a dialog.
 
-![Screenshot: Wizard opening](/_images/en-us/get_started/explore/cle1_4.png)
+![Screenshot: Wizard opening](/_images/en-us/get_started/try_openspp_sp_mis/install_sp_mis_demo_data/04-load-mis-demo-wizard.png)
 
 ### 5: Generate demo data
 
 Click **Load Demo Data** to start.
 
-![Screenshot: Generate MIS Demo Data wizard](/_images/en-us/get_started/explore/cle1_5.png)
+![Screenshot: Generate MIS Demo Data wizard](/_images/en-us/get_started/try_openspp_sp_mis/install_sp_mis_demo_data/05-generate-demo-data.png)
 
 ```{note}
 Demo data generation takes 2-5 minutes depending on your system. The wizard will redirect you to the Programs page when complete.

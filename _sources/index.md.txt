@@ -144,7 +144,7 @@ Explore our complete product documentation to understand how each component addr
 
 OpenSPP's social protection management information system offers customizable building blocks for effective program implementation. Its modular design allows users to select only the components they need without an overhaul of existing systems. 
 
-[Learn more →](products/sp_mis.md)
+[Learn more →](products/spmis/index.md)
 
 
 
@@ -152,19 +152,19 @@ OpenSPP's social protection management information system offers customizable bu
 
 The Social Registry is a repository for the storage and management of data for planning and administering social protection. It supports intake, dynamic registration and needs assessment, and the efficient and secure sharing of data from the social registry with various social protection programs and services.
 
-[Learn more →](products/social_registry.md)
+[Learn more →](products/social_registry/index.md)
 
 ### Farmer Registry
 
 The Farmer Registry connects social protection with agricultural development by storing and managing essential farm and farmer data. It supports farm holding mapping with GIS integration, agricultural subsidy management, and climate resilience initiatives for vulnerable farming communities, while enabling coordination with extension services and seasonal support cycles to ensure effective delivery of assistance to rural households.
 
-[Learn more →](products/farmer_registry.md)
+[Learn more →](products/farmer_registry/index.md)
 
 ### DRIMS – Disaster Response Inventory Management
 
 DRIMS manages the complete lifecycle of emergency supplies, from donation pledges and warehouse storage to dispatch, delivery, and returns. It provides real-time inventory visibility, multi-tier request approval, and coordinated distribution workflows to support humanitarian organizations and government agencies in responding effectively to disaster incidents.
 
-[Learn more →](products/drims.md)
+[Learn more →](products/drims/index.md)
 
 ## Guiding principles
 

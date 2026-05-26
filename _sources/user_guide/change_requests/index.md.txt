@@ -45,6 +45,10 @@ Draft → Under Review → Approved → [Finalize] → Completed
 | **Completed** | Changes have been recorded to the registrant |
 | **Declined** | Request was rejected |
 
+## Before you start
+
+An implementer must configure approval workflows before change requests can be routed for approval. See {doc}`/config_guide/approval_workflows/overview`.
+
 ## Who can do what?
 
 | Role | Can do |

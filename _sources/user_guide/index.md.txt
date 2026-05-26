@@ -17,6 +17,7 @@ Welcome to the OpenSPP User Guide. This guide helps government employees and pro
 - **[Programs](programs/index.md)** - Program management, enrollment, and eligibility
 - **[Payments](payments/index.md)** - Payment distribution and service points
 - **[Approvals](approvals/index.md)** - Reviewing and approving requests and batches
+- **[DRIMS](drims/index.md)** - Managing disaster relief donations, requests, dispatches, and inventory
 - **[Grievances](grievances/index.md)** - Logging, investigating, and resolving beneficiary complaints
 - **[GIS](gis/index.md)** - Viewing registry data on maps and generating geographic reports
 - **[Reference](reference/index.md)** - Quick reference material and glossary
@@ -32,6 +33,7 @@ case_management/index
 programs/index
 payments/index
 approvals/index
+drims/index
 grievances/index
 gis/index
 reference/index
