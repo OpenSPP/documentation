@@ -1,6 +1,7 @@
 ---
 openspp:
   doc_status: draft
+orphan: true
 ---
 
 # Demo module

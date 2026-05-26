@@ -1,5 +1,4 @@
 ---
-orphan: true
 openspp:
   doc_status: draft
 myst:
@@ -14,16 +13,6 @@ myst:
 *A digital system to manage disaster response inventory and coordination*
 
 The **OpenSPP Disaster Response Inventory Management (DRIMS)** manages the complete lifecycle of emergency supplies, supporting donation tracking, request approvals, dispatch management, real-time inventory visibility, stock monitoring, and inter-agency coordination during disaster response.
-
-## Who is it for?
-
-**Government agencies** coordinating national emergency operations
-
-**Humanitarian organizations** managing relief coordination
-
-**NGOs and implementing partners** delivering emergency supplies
-
-**Warehouse and logistics teams** managing disaster inventory
 
 ## Key features
 
@@ -50,6 +39,16 @@ The **OpenSPP Disaster Response Inventory Management (DRIMS)** manages the compl
 ---
 
 **Personnel and role management –** Manage deployed disaster response staff by role, cluster assignment, organization, and location. Enforce role-based access control to protect sensitive data and operational integrity.
+
+## Who is it for?
+
+**Government agencies** coordinating national emergency operations
+
+**Humanitarian organizations** managing relief coordination
+
+**NGOs and implementing partners** delivering emergency supplies
+
+**Warehouse and logistics teams** managing disaster inventory
 
 ## Next step
 

@@ -1,12 +1,10 @@
 ---
-orphan: true
 openspp:
   doc_status: draft
   products: [drims]
   applies_to:
     - drims
 ---
-orphan: true
 
 # Handle Returns
 

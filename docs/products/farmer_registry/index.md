@@ -14,14 +14,6 @@ myst:
 
 The **OpenSPP Farmer Registry** is a modular digital platform designed to be a single, reliable source of truth for agricultural data. It helps governments, organizations, and partners move from guesswork to data-driven decision-making, ensuring that farmers and rural communities receive the right support at the right time.
 
-## Who is it for?
-
-**Governments** implementing national farmer registries
-
-**Agricultural ministries and agencies** designing support programs
-
-**NGOs** working on rural development and food security
-
 ## Key features
 
 **Farmer and farm registration –** The Farmer Registry is specifically designed with agricultural aspects in mind. It includes all common fields for farmers, crops, livestock, land parcels, and farming practices, enabling a comprehensive picture of each farm household.
@@ -52,6 +44,14 @@ The **OpenSPP Farmer Registry** is a modular digital platform designed to be a s
 
 *Read more: {doc}`Data integration and interoperability (APIs) <../features/data_integration_apis>`*
 
+## Who is it for?
+
+**Governments** implementing national farmer registries
+
+**Agricultural ministries and agencies** designing support programs
+
+**NGOs** working on rural development and food security
+
 ## Next step
 
 The OpenSPP Farmer Registry is an open-source product, built and supported by the OpenSPP community. Read more about {doc}`installing OpenSPP Farmer Registry </get_started/modules/farmer_installation>`.
@@ -64,5 +64,4 @@ The OpenSPP Farmer Registry is an open-source product, built and supported by th
 modules_included
 user_guides
 config_guides
-demo_module
 ```

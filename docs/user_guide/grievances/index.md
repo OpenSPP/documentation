@@ -19,7 +19,7 @@ The Grievance Redress Mechanism (GRM) helps you manage complaints, appeals, and 
 - Escalating complex issues when needed
 
 ```{note}
-The GRM handles **short-term issues** (complaints about payments, eligibility, service quality). For **long-term support needs**, see the separate system {doc}`Case Management <../case_management>` that works alongside GRM.
+The GRM handles **short-term issues** (complaints about payments, eligibility, service quality). For **long-term support needs**, see the separate system {doc}`Case Management <../case_management/index>` that works alongside GRM.
 ```
 
 ## What you'll learn

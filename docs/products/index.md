@@ -6,7 +6,7 @@ openspp:
 
 # Products
 
-OpenSPP offers four product configurations, each designed for specific social protection use cases. Choose the one that matches your program's needs.
+OpenSPP offers five product configurations, each designed for specific social protection use cases. Choose the one that matches your program's needs.
 
 ## Available configurations
 
@@ -18,6 +18,10 @@ It can provide a single source of truth across interventions, reducing duplicati
 
 **{doc}`OpenSPP Farmer Registry <farmer_registry/index>`**: A specialized registry for agricultural programs that bridges farming and social protection. It enables targeted agricultural interventions, input distribution, and climate-smart agriculture support for rural communities.
 
+**{doc}`OpenSPP DRIMS <drims/index>`**: A disaster response inventory management system for tracking emergency supplies, donations, requests, and dispatches across humanitarian operations.
+
+**{doc}`OpenSPP Disability Registry <disability_registry/index>`**: A standardized disability assessment and tracking system implementing the Washington Group Short Set (WG-SS) and UNICEF Child Functioning Module (CFM) for inclusive program targeting.
+
 ```{toctree}
 :maxdepth: 2
 :caption: Contents
@@ -26,6 +30,8 @@ It can provide a single source of truth across interventions, reducing duplicati
 spmis/index
 social_registry/index
 farmer_registry/index
-features/index
+drims/index
+disability_registry/index
 custom_solutions
+features/index
 ```

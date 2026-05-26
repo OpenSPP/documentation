@@ -26,15 +26,15 @@ The {doc}`OpenSPP Social Registry <../../products/social_registry/index>` config
 1.  Navigate to the **Apps** menu.
 2.  In the Apps menu, search for {doc}`spp_starter_social_registry </reference/modules/spp_starter_social_registry>` or "OpenSPP Starter: Social Registry"
 
-![Searching for SPP Base module in Apps](/_images/en-us/get_started/module_installation/social_installation/01-apps-search.png)
+![Searching for SPP Base module in Apps](/_images/en-us/get_started/module_installation/social_installation/01-social-apps-search.png)
 
 3.  Click the **Activate** button to install the module and its dependencies
 
-![SPP Base module installation screen](/_images/en-us/get_started/module_installation/social_installation/02-activate.png)
+![SPP Base module installation screen](/_images/en-us/get_started/module_installation/social_installation/02-social-activate.png)
 
 Once installed, the Social Registry becomes the central hub for managing beneficiary data that can be accessed by various social protection programs.
 
-![SPP_starter_social_registry landing page](/_images/en-us/get_started/module_installation/social_installation/03-installed.png)
+![SPP_starter_social_registry landing page](/_images/en-us/get_started/module_installation/social_installation/03-social-installed.png)
 
 ## Next steps
 

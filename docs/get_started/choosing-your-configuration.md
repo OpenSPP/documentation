@@ -14,7 +14,7 @@ myst:
 
 This guide helps you decide between using a standard OpenSPP product and building a custom module combination — and walks you through the selection process if you choose the custom route.
 
-## Step 1: Start with a standard product
+## Step 1: Review OpenSPP standard products
 
 Before considering a custom combination, check whether one of the five standard products covers your use case:
 
@@ -23,8 +23,8 @@ Before considering a custom combination, check whether one of the five standard 
 | {doc}`SP-MIS </products/spmis/index>` | Cash transfers, social assistance, full program lifecycle management |
 | {doc}`Social Registry </products/social_registry/index>` | Centralized beneficiary database serving multiple programs |
 | {doc}`Farmer Registry </products/farmer_registry/index>` | Agricultural household registration and targeted input distribution |
-| DRIMS | Disaster response inventory, donations, and dispatch management |
-| Disability Registry | Standardized disability assessment and targeting |
+| {doc}`DRIMS </products/drims/index>` | Disaster response inventory, donations, and dispatch management |
+| {doc}`Disability Registry </products/disability_registry/index>` | Standardized disability assessment and targeting |
 
 Standard products offer:
 - Proven configurations that have been tested together

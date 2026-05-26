@@ -29,13 +29,15 @@ The {doc}`OpenSPP Disaster Response Inventory Management System (DRIMS) <../../p
 1.  Navigate to the **Apps** menu.
 2.  In the Apps menu, search for `spp_drims` or "OpenSPP DRIMS"
 
-![Searching for the DRIMS module in the Apps menu](/_images/en-us/get_started/module_installation/drims_installation/01-apps-search.png)
+![Searching for the DRIMS module in the Apps menu](/_images/en-us/get_started/module_installation/drims_installation/01-drims-apps-search.png)
 
 3.  Click the **Activate** button to install the module. This will also install all its dependencies, including inventory management, GIS, approval workflows, and alert engine modules.
 
+![DRIMS module activation screen](/_images/en-us/get_started/module_installation/drims_installation/02-drims-activate.png)
+
 Once installed, you will see the **DRIMS** application in your Odoo dashboard as the main entry point for managing disaster response inventory.
 
-![DRIMS module successfully installed](/_images/en-us/get_started/module_installation/drims_installation/02-installed.png)
+![DRIMS module successfully installed](/_images/en-us/get_started/module_installation/drims_installation/03-drims-installed.png)
 
 ## Next steps
 

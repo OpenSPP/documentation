@@ -1,5 +1,4 @@
 ---
-orphan: true
 openspp:
   doc_status: draft
 myst:
@@ -14,16 +13,6 @@ myst:
 *A digital system for standardized disability assessment and inclusive program targeting*
 
 The **OpenSPP Disability Registry** provides structured disability assessment and tracking for social protection programs. It implements internationally recognized standards — the Washington Group Short Set (WG-SS) for adults and the UNICEF Child Functioning Module (CFM) for children — enabling programs to identify persons with disabilities, manage assistive device needs, and apply disability criteria in eligibility targeting.
-
-## Who is it for?
-
-**Government agencies** implementing inclusive social protection policies
-
-**Social protection programs** targeting persons with disabilities or households with disabled members
-
-**Health and welfare ministries** conducting population-level disability assessments
-
-**Program implementers** needing disability-aware eligibility and entitlement rules
 
 ## Key features
 
@@ -57,9 +46,19 @@ The **OpenSPP Disability Registry** provides structured disability assessment an
 
 **Eligibility targeting with CEL –** Use built-in CEL functions to apply disability criteria in program eligibility rules, including household-level checks such as whether any member has a disability or how many members need reassessment.
 
+## Who is it for?
+
+**Government agencies** implementing inclusive social protection policies
+
+**Social protection programs** targeting persons with disabilities or households with disabled members
+
+**Health and welfare ministries** conducting population-level disability assessments
+
+**Program implementers** needing disability-aware eligibility and entitlement rules
+
 ## Next step
 
-The OpenSPP Disability Registry is an open-source product, built and supported by the OpenSPP community. Read more about {doc}`module installation </get_started/modules/index>`.
+The OpenSPP Disability Registry is an open-source product, built and supported by the OpenSPP community. Read more about {doc}`installing OpenSPP Disability Registry </get_started/modules/disability_installation>`.
 
 ```{toctree}
 :maxdepth: 1

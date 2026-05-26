@@ -14,14 +14,6 @@ myst:
 
 The **OpenSPP Social Registry** is a digital platform that helps governments and organizations manage information about individuals and households. It provides a single, reliable source of data to improve targeting, reduce duplication, and coordinate services across programs.
 
-## Who is it for?
-
-**Government agencies** wanting a reliable, up-to-date registry that can act as a foundation for interventions
-
-**NGOs** delivering services at national or local level
-
-**Policy makers** needing reliable data for planning and resource allocation
-
 ## Key features
 
 **Registration and data collection –** Prepare the registry with all the fields needed. Collect information through bulk upload, direct entry in the UI, or secure connections with existing systems.
@@ -51,6 +43,14 @@ The **OpenSPP Social Registry** is a digital platform that helps governments and
 **Data integration and APIs –** Connect seamlessly with other national databases (ID, health, civil registry) via secure APIs to make updates or pull information directly, ensuring data is up-to-date and interoperable.
 
 *Read more: {doc}`Data integration and interoperability (APIs) <../features/data_integration_apis>`*
+
+## Who is it for?
+
+**Government agencies** wanting a reliable, up-to-date registry that can act as a foundation for interventions
+
+**NGOs** delivering services at national or local level
+
+**Policy makers** needing reliable data for planning and resource allocation
 
 ## Next step
 

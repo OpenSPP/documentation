@@ -14,14 +14,6 @@ myst:
 
 The **OpenSPP Social Protection Management Information System (SP-MIS)** is a comprehensive platform designed to manage the entire lifecycle of a social protection program. It supports both routine and emergency interventions, whether cash or in-kind, and empowers citizens through secure, verifiable credentials.
 
-## Who is it for?
-
-**Governments** managing national or local social protection systems
-
-**Social protection agencies** delivering cash or in-kind programs
-
-**NGOs and development partners** supporting vulnerable households
-
 ## Key features
 
 **Registration and data collection –** Build and maintain a continuously updated database through imports, system integrations, or direct registration. Structured workflows support reliable updates, whether initiated by citizens or registrars.
@@ -69,6 +61,14 @@ The **OpenSPP Social Protection Management Information System (SP-MIS)** is a co
 **Data integration and APIs –** Connect securely with other national databases (e.g., ID, health, civil registration) through RESTful APIs to pull information directly, ensuring data is up-to-date and interoperable.
 
 *Read more: {doc}`Data integration and interoperability (APIs) <../features/data_integration_apis>`*
+
+## Who is it for?
+
+**Governments** managing national or local social protection systems
+
+**Social protection agencies** delivering cash or in-kind programs
+
+**NGOs and development partners** supporting vulnerable households
 
 ## Next step
 

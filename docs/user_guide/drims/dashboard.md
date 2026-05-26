@@ -1,12 +1,10 @@
 ---
-orphan: true
 openspp:
   doc_status: draft
   products: [drims]
   applies_to:
     - drims
 ---
-orphan: true
 
 # Understand the Dashboard
 
@@ -35,8 +33,11 @@ Learn how to read the DRIMS dashboard to understand the current status of your d
 
 **Where to find it:** Click **DRIMS** in the sidebar, then select **Dashboard**.
 
+<!-- ![Click DRIMS in the sidebar, then select Dashboard](/_images/en-us/user_guide/drims/dashboard/01-click-drims-sidebar.png) -->
+
 The dashboard displays each active incident as a card. Cards are organized by status (Active, Pending, Closed) and show the most important information about each disaster response operation.
 
+<!-- ![DRIMS Dashboard showing incident cards with KPIs for each disaster](/_images/en-us/user_guide/drims/dashboard/02-incident-cards-kpis.png) -->
 
 Each incident card displays:
 
@@ -81,6 +82,10 @@ Each warehouse has a health status that tells you if it needs attention.
 | **Good** | Green | No active alerts, adequate stock levels | No action needed |
 
 **Where to find it:** Click **DRIMS** in the sidebar, then **Inventory → Warehouses**.
+
+<!-- ![Click Inventory then Warehouses to check warehouse health](/_images/en-us/user_guide/drims/dashboard/03-click-inventory-warehouses.png) -->
+
+<!-- ![DRIMS Warehouses list showing health status indicators for each warehouse](/_images/en-us/user_guide/drims/dashboard/04-warehouse-health-status.png) -->
 
 ## Understanding Alerts
 
@@ -144,12 +149,17 @@ Acknowledge an alert when you've seen it and are taking action.
 
 1. Click **DRIMS** in the sidebar, then select **Operations → Alerts**
 
+<!-- ![Click Operations then Alerts to see active alerts](/_images/en-us/user_guide/drims/dashboard/05-click-operations-alerts.png) -->
+
+<!-- ![Alerts list showing all active alerts by priority and status](/_images/en-us/user_guide/drims/dashboard/06-alerts-list-priority-status.png) -->
 
 2. Click on the alert you want to acknowledge
 
+<!-- ![Click on an alert to see its details](/_images/en-us/user_guide/drims/dashboard/07-alert-detail-view.png) -->
 
 3. Click the **Acknowledge** button at the top of the form
 
+<!-- ![Use Acknowledge and Resolve buttons to manage the alert status](/_images/en-us/user_guide/drims/dashboard/08-acknowledge-resolve-alert.png) -->
 
 The alert badge changes to orange, showing others that someone is handling it.
 

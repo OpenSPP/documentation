@@ -24,15 +24,15 @@ The OpenSPP Social Protection Management Information System ({doc}`OpenSPP SP-MI
 1.  Navigate to the **Apps** menu.
 2.  In the Apps menu, search for {doc}`spp_starter_sp_mis </reference/modules/spp_starter_sp_mis>` or "OpenSPP Starter: SP-MIS"
 
-![Searching for SPP Base module in Apps](/_images/en-us/get_started/module_installation/spmis_installation/01-apps-search.png)
+![Searching for SPP Base module in Apps](/_images/en-us/get_started/module_installation/spmis_installation/01-spmis-apps-search.png)
 
 3.  Click the **Activate** button to install the module. This will also install all its dependencies, providing a complete SP-MIS foundation.
 
-![SPP Base module installation screen](/_images/en-us/get_started/module_installation/spmis_installation/02-activate.png)
+![SPP Base module installation screen](/_images/en-us/get_started/module_installation/spmis_installation/02-spmis-activate.png)
 
 Once installed, you will see the "Registry" application in your Odoo dashboard, which is the main entry point for the OpenSPP system.
 
-![SPP Base module successfully installed](/_images/en-us/get_started/module_installation/spmis_installation/03-installed.png)
+![SPP Base module successfully installed](/_images/en-us/get_started/module_installation/spmis_installation/03-spmis-installed.png)
 
 ## Next steps
 

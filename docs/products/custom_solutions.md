@@ -3,12 +3,12 @@ openspp:
   doc_status: draft
 myst:
   html_meta:
-    "title": "Custom Module Combinations - OpenSPP"
+    "title": "Custom module combinations - OpenSPP"
     "description": "Guide to building custom OpenSPP solutions by combining modules beyond the standard product offerings"
     "keywords": "OpenSPP, custom modules, module combinations, modular architecture, social protection"
 ---
 
-# Custom Module Combinations
+# Custom module combinations
 
 *Flexible solutions tailored to your unique social protection needs*
 

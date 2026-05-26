@@ -1,12 +1,10 @@
 ---
-orphan: true
 openspp:
   doc_status: draft
   products: [drims]
   applies_to:
     - drims
 ---
-orphan: true
 
 # Submit a Relief Request
 
@@ -33,16 +31,21 @@ Create and submit a request for relief supplies to be delivered to a disaster-af
 
 Click **DRIMS** in the sidebar, then select **Requests**.
 
+<!-- ![Click DRIMS in the sidebar, then select Requests](/_images/en-us/user_guide/drims/requests/01-click-drims-requests.png) -->
+
+<!-- ![Requests list showing all active requests](/_images/en-us/user_guide/drims/requests/02-requests-list.png) -->
 
 ### 2. Create New Request
 
 Click the **New** button in the top left.
 
+<!-- ![Click the New button to create a request](/_images/en-us/user_guide/drims/requests/03-click-new-request.png) -->
 
 ### 3. Select the Incident
 
 In the **Incident** field, click the dropdown and choose the disaster incident you're responding to.
 
+<!-- ![Select the disaster incident you are responding to](/_images/en-us/user_guide/drims/requests/04-select-incident.png) -->
 
 **What this means:** Every request must be linked to a disaster incident (like "Flood 2025" or "Earthquake North Region"). This helps track what supplies are for which emergency.
 
@@ -50,6 +53,7 @@ In the **Incident** field, click the dropdown and choose the disaster incident y
 
 In the **Destination Area** field, select where the supplies need to be delivered.
 
+<!-- ![Choose the destination area and set the priority level](/_images/en-us/user_guide/drims/requests/05-choose-destination-area-priority.png) -->
 
 **What this means:** This is the specific geographic area (city, district, or zone) where {term}`Beneficiary`(ies) will receive the supplies.
 
@@ -69,6 +73,7 @@ If your organization uses humanitarian {term}`Cluster`s, select the relevant clu
 
 Click the **Date Needed** calendar and select when supplies must arrive.
 
+<!-- ![Set the date supplies are needed and explain why](/_images/en-us/user_guide/drims/requests/06-set-date-needed.png) -->
 
 **Important:** Be realistic. The date you choose affects how your request is prioritized.
 
@@ -83,17 +88,20 @@ In the **Justification** field, explain why these supplies are needed. Be specif
 
 In the **{term}`Affected Population`** field, enter the number of people who will benefit from these supplies.
 
+<!-- ![Enter the number of people who will receive supplies](/_images/en-us/user_guide/drims/requests/07-enter-affected-population.png) -->
 
 ### 10. Add Requested Items
 
 In the **Requested Items** section, click **Add a line**.
 
+<!-- ![Click Add a line to request specific items](/_images/en-us/user_guide/drims/requests/08-add-requested-items.png) -->
 
 For each item:
 - **Product:** Select the item from the dropdown (like "Water Purification Tablets" or "Emergency Blankets")
 - **Quantity:** Enter how many units you need
 - **UoM:** Confirm the unit of measure (boxes, pieces, liters, etc.)
 
+<!-- ![Select the product and enter the quantity needed](/_images/en-us/user_guide/drims/requests/09-select-product-quantity.png) -->
 
 Repeat this step for each type of supply needed.
 
@@ -108,14 +116,17 @@ If this request involves a life-threatening situation, check the **Life-Threaten
 
 Click **Save** to save your request as a draft. You can come back and edit it later.
 
+<!-- ![Click Save to save your request as a draft](/_images/en-us/user_guide/drims/requests/10-save-request-draft.png) -->
 
 ### 13. Submit for Approval
 
 When your request is ready, click **Submit** to send it for approval.
 
+<!-- ![Click Submit to send the request for approval](/_images/en-us/user_guide/drims/requests/11-submit-for-approval.png) -->
 
 The request status will change to **Pending** and go to your supervisor or logistics coordinator for review.
 
+<!-- ![The request is now pending approval](/_images/en-us/user_guide/drims/requests/12-request-pending-approval.png) -->
 
 ## Understanding Priority Levels
 
