@@ -56,17 +56,7 @@ Show Gutierrez (PH) / Deku (TG) / Kumara (LK) displaced family transitioning fro
 5. Show transition to Cash Transfer (30-day cycles, $150)
 6. Open Ramon Gutierrez (PH) / Kosi Deku (TG) / Asanka Kumara (LK) individually -> Food Assistance
 
-## Scenario 5: Disability support
-
-Show Martinez (PH) / Koudawo (TG) / Wickramasinghe (LK) family with disabled child and pending reassessment.
-
-1. Open Martinez (PH) / Koudawo (TG) / Wickramasinghe (LK) household -> 3 members
-2. Show Miguel Martinez's (PH) / Kofi Koudawo's (TG) / Charitha Wickramasinghe's (LK) disability status
-3. Show Disability Support Grant: $175 (base $100 + 1 member x $75)
-4. Show 3 payment records
-5. Show pending disability reassessment CR
-
-## Scenario 6: Eligibility enforcement
+## Scenario 5: Eligibility enforcement
 
 Show rejections working correctly.
 
@@ -74,7 +64,7 @@ Show rejections working correctly.
 2. Castillo (PH) / Agbodjan (TG) / Weerasinghe (LK) household -> rejected for Cash Transfer (income 12,000 > 5,000)
 3. Navarro (PH) / Gbeho (TG) / Amarasinghe (LK) household -> rejected for Child Grant (0 children)
 
-## Scenario 7: Dual enrollment
+## Scenario 6: Dual enrollment
 
 Show same person in individual + household programs.
 
@@ -82,7 +72,7 @@ Show same person in individual + household programs.
 2. Open Santos (PH) / Koffi (TG) / Perera (LK) household -> enrolled in Universal Child Grant, graduated from Cash Transfer
 3. Show both visible from Maria Santos's (PH) / Ama Koffi's (TG) / Kumari Perera's (LK) profile
 
-## Scenario 8: Change request lifecycle
+## Scenario 7: Change request lifecycle
 
 Show different CR types and states across 13 change requests.
 
@@ -99,7 +89,7 @@ Show different CR types and states across 13 change requests.
 11. Rejected: Bautista (PH) / Akakpo (TG) / Gunasekara (LK) `split_household` — incomplete documentation
 12. Revision: IND2 `merge_registrants` — duplicate data quality
 
-## Scenario 9: Compliance manager overview
+## Scenario 8: Compliance manager overview
 
 Show how compliance criteria work on Cash Transfer — contrasting a failure (Santos (PH) / Koffi (TG) / Perera (LK)) with a
 pass (Dela Cruz (PH) / Mensah (TG) / Bandara (LK)) on the same program.
