@@ -12,7 +12,7 @@ The SPMIS demo module (`spp_mis_demo_v2`) provides ready-to-use demonstration da
 | Item | Count |
 |------|-------|
 | Social protection programs | 6 |
-| Demo personas (registrants) | 8 |
+| Demo personas (registrants) | 7 |
 | Pre-configured enrollments | ~500 |
 | Program cycles with entitlements | Yes |
 | Pre-configured eligibility rules (Logic Packs) | Yes |
@@ -28,12 +28,12 @@ Six programs are pre-configured to demonstrate different program types and confi
 | Food Assistance | In-kind food distribution for food-insecure households |
 | Child Support | Benefits for families with children below a defined age |
 | Emergency Relief | Rapid-response assistance for households affected by shocks |
-| Disability Support | Benefits for households with members who have registered disabilities |
+| Conditional Child Grant | Monthly grant for households with children under 2 |
 | Pension | Regular payments for elderly household members |
 
 ## Demo personas
 
-Eight pre-created registrant stories illustrate realistic household situations and program journeys:
+Seven pre-created registrant stories illustrate realistic household situations and program journeys:
 
 | Name | Story |
 |------|-------|

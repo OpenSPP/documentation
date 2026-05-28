@@ -17,8 +17,8 @@ Before diving into the tutorials, you'll need sample data to work with. This gui
 
 After loading the MIS demo data, you'll have:
 
-- **6 social protection programs** - Child Grant, Pension, Emergency Relief, Cash Transfer, Disability Support, Food Assistance
-- **8 demo personas** - Sample registrants with complete stories and payment history
+- **6 social protection programs** - Universal Child Grant, Conditional Child Grant, Elderly Social Pension, Emergency Relief, Cash Transfer, Food Assistance
+- **7 demo personas** - Sample registrants with complete stories and payment history
 - **~500 enrollments** - Beneficiaries enrolled across programs
 - **Program cycles** - With generated entitlements
 - **Logic Packs** - Pre-configured eligibility rules
@@ -77,15 +77,15 @@ Demo data generation takes 2-5 minutes depending on your system. The wizard will
 | Program                  | Description                                      |
 | ------------------------ | ------------------------------------------------ |
 | Food Assistance          | Food voucher program                             |
-| Disability Support Grant | Assistance for persons with disabilities         |
 | Cash Transfer Program    | General cash transfer program                    |
 | Emergency Relief Fund    | One-time emergency assistance                    |
 | Elderly Social Pension   | Social pension for elderly citizens              |
+| Conditional Child Grant  | Monthly grant for households with children under 2 |
 | Universal Child Grant    | Monthly cash transfer for families with children |
 
 ### Demo personas
 
-The demo includes 8 complete registrant stories:
+The demo includes 7 complete registrant stories:
 
 - Individuals and households with full registration data
 - Program enrollments with eligibility determinations
