@@ -14,8 +14,8 @@ In order for you to familiarize yourself with the functionalities included in th
 
 After loading the MIS demo data, you'll have:
 
-- **6 social protection programs** - Child Grant, Pension, Emergency Relief, Cash Transfer, Disability Support, Food Assistance
-- **8 demo personas** - Sample registrants with complete stories and payment history
+- **6 social protection programs** - Universal Child Grant, Conditional Child Grant, Elderly Social Pension, Emergency Relief, Cash Transfer, Food Assistance
+- **7 demo personas** - Sample registrants with complete stories and payment history
 - **~500 enrollments** - Beneficiaries enrolled across programs
 - **Program cycles** - With generated entitlements
 - **Logic Packs** - Pre-configured eligibility rules

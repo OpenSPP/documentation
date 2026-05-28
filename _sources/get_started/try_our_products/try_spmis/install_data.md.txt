@@ -72,10 +72,10 @@ Demo data generation takes 2-5 minutes depending on your system. The wizard will
 | Program                  | Description                                      |
 | ------------------------ | ------------------------------------------------ |
 | Food Assistance          | Food voucher program                             |
-| Disability Support Grant | Assistance for persons with disabilities         |
 | Cash Transfer Program    | General cash transfer program                    |
 | Emergency Relief Fund    | One-time emergency assistance                    |
 | Elderly Social Pension   | Social pension for elderly citizens              |
+| Conditional Child Grant  | Monthly grant for households with children under 2 |
 | Universal Child Grant    | Monthly cash transfer for families with children |
 
 ### Demo personas

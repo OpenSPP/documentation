@@ -148,33 +148,7 @@ Ramon Gutierrez (PH) / Kosi Deku (TG) / Asanka Kumara (LK) receives food baskets
 
 ---
 
-## Story 5: Disability support
-
-**Demonstration purpose:** Disability-focused support with per-member benefit
-calculation. Demonstrates disability assessment and the pending reassessment workflow.
-
-**Program(s) that the household is enrolled in:**
-
-| Program            | Reason for eligibility                         | Status   |
-| ------------------ | ---------------------------------------------- | -------- |
-| Disability Support | has_disabled_member = true, disabled_count = 1 | Enrolled |
-
-**Household journey:**
-
-1. Enrolled 100 days ago
-2. Disability assessment completed for Miguel Martinez (PH) / Kofi Koudawo (TG) / Charitha Wickramasinghe (LK)
-3. 3 monthly payments of $175 each (base $100 + 1 disabled member x $75)
-
-**Existing change requests for the household:**
-
-- `edit_individual` (pending) — Disability reassessment for Miguel Martinez (PH) / Kofi Koudawo (TG) / Charitha Wickramasinghe (LK) (updated medical
-  documentation)
-
-**Geographical location:** Makati City (PH) / Lome Commune (TG) / Dehiwala Mount Lavinia (LK)
-
----
-
-## Story 6: Elder living alone
+## Story 5: Elder living alone
 
 **Demonstration purpose:** Individual-only enrollment with no household. Multi-program
 beneficiary receiving both cash (pension) and in-kind (food).
@@ -207,7 +181,7 @@ beneficiary receiving both cash (pension) and in-kind (food).
 
 ---
 
-## Story 7: Age rejection
+## Story 6: Age rejection
 
 **Name:** Lorna Pascual (PH) / Ablavi Gbeassor (TG) / Priyanka Mendis (LK)
 
@@ -219,7 +193,7 @@ beneficiary receiving both cash (pension) and in-kind (food).
 
 ---
 
-## Story 8: Dual enrollment (from Story 2)
+## Story 7: Dual enrollment (from Story 2)
 
 **Name:** Maria Santos (PH) / Ama Koffi (TG) / Kumari Perera (LK)
 
@@ -227,7 +201,7 @@ beneficiary receiving both cash (pension) and in-kind (food).
 - Individually enrolled in Food Assistance 120 days ago
 - **Demo point:** Same person visible in both individual and household program contexts
 
-## Story 9: Dual enrollment (from Story 4)
+## Story 8: Dual enrollment (from Story 4)
 
 **Name:** Ramon Gutierrez (PH) / Kosi Deku (TG) / Asanka Kumara (LK)
 
