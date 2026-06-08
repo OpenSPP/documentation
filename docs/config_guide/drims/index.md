@@ -26,6 +26,7 @@ The `spp_drims` module must be installed. See {doc}`/get_started/modules/index` 
 :maxdepth: 1
 
 warehouses
+products
 approval_chains
 alerts
 vocabularies
@@ -34,6 +35,7 @@ vocabularies
 ## Quick Links
 
 - {doc}`warehouses` - Set up warehouse tiers and geographic assignments
+- {doc}`products` - Define the relief product catalog and categories
 - {doc}`approval_chains` - Configure request approval workflows
 - {doc}`alerts` - Set alert thresholds for monitoring
 
@@ -83,6 +85,7 @@ Alerts (automated monitoring)
 | Area | What You Configure | Where |
 |------|-------------------|-------|
 | **Warehouses** | Enable for DRIMS, assign geographic area | DRIMS → Inventory → Warehouses |
+| **Products** | Define relief item catalog and categories | DRIMS → Inventory → Products |
 | **Approval Chains** | Define who approves requests, set approval levels | Configured via user groups and approval mixin |
 | **Alert Thresholds** | Low stock %, SLA warning days, expiry warning days | Settings → DRIMS or per-incident overrides |
 | **Vocabularies** | Donor types, priorities, transport modes, item conditions | Studio → Vocabularies |

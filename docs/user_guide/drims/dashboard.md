@@ -28,6 +28,7 @@ Learn how to read the DRIMS dashboard to understand the current status of your d
 
 - You need **DRIMS Viewer** or higher access to view the dashboard
 - You need **DRIMS Warehouse Staff** or **Manager** access to acknowledge and resolve alerts
+- At least one **hazard incident** must exist — every DRIMS operation (donation, request, dispatch) is linked to an incident, so the dashboard will be empty until one is created. Incidents are created by an implementer or administrator. See {doc}`/user_guide/hazards/index` for how to record and manage incidents.
 
 ## The Incident Dashboard
 

@@ -30,7 +30,7 @@ Learn how to view and manage relief supply inventory across your warehouses:
 - You need **DRIMS Warehouse Staff** or **Manager** access to view inventory
 - You need **Warehouse Officer** or higher to make stock adjustments
 
-## View Current Stock Levels
+## Stock on hand
 
 ### 1. Open the Inventory View
 
@@ -42,14 +42,17 @@ Click **DRIMS** in the sidebar, then select **Inventory** and **Stock**.
 The stock list shows all items currently in your warehouses:
 
 
-| Column | What It Shows |
+| Column | What it shows |
 |--------|---------------|
-| **Product** | Name of the relief item |
-| **Warehouse** | Which warehouse holds the stock |
 | **Location** | Specific storage location within the warehouse |
+| **Product** | Name of the relief item |
+| **Lot/Serial Number** | Batch or serial identifier if the product is lot-tracked |
 | **On Hand** | Total quantity physically in the warehouse |
-| **Reserved** | Quantity set aside for approved requests |
-| **Available** | Quantity that can be allocated to new requests (On Hand minus Reserved) |
+| **Reserved** | Quantity set aside for approved requests awaiting dispatch |
+
+```{tip}
+The **Available Quantity** column is not shown by default. To add it, click the column selector icon at the top-right of the list and check **Available Quantity**.
+```
 
 ### 3. Filter by Warehouse
 
@@ -231,6 +234,44 @@ For each item to adjust:
 
 Click **Validate** to apply the adjustment. The system will automatically calculate the difference and update stock levels.
 
+
+## Add a product
+
+Before donations or requests can reference a relief item, it must exist as a product in the system. This is a one-time setup task done by a manager.
+
+```{note}
+You need **DRIMS Manager** access to create or edit products.
+```
+
+### 1. Open the products list
+
+Click **DRIMS** in the sidebar, select **Inventory**, then click **Products**.
+
+### 2. Create a new product
+
+Click **New** and fill in the product form:
+
+| Field | What to enter |
+|-------|--------------|
+| **Product name** | A clear, descriptive name (e.g., "Rice – 50kg bag", "Blanket – adult") |
+| **Category** | Group the item under a category (Food, Shelter, Medical, etc.) — see tip below |
+| **Tracking** | Choose **By Lot** if you need to track expiry dates or donor batches; choose **No Tracking** for bulk items where individual batches don't matter |
+
+3. Click **Save**.
+
+The product is now available to select when creating donation lines, request templates, and dispatch orders.
+
+```{tip}
+If the category you need doesn't exist yet, go to **DRIMS > Inventory > Product Categories** and create it first. Categories like Food, Non-Food Items (NFI), Medical Supplies, and Shelter Materials help you filter and report on stock by type.
+```
+
+### Lot tracking vs. no tracking
+
+| Use **By Lot** when... | Use **No Tracking** when... |
+|------------------------|----------------------------|
+| Items have expiry dates (medicine, food) | Bulk commodities with no expiry (tarps, rope) |
+| You need to trace a specific donor batch | Quantities matter more than batch origin |
+| Inspection history per batch is required | Faster data entry is a priority |
 
 ## Are You Stuck?
 

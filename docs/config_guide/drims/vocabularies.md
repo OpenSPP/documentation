@@ -102,7 +102,7 @@ Cluster: Health
 Incident: 2025 Southwest Monsoon Floods
 ```
 
-![Cluster selection on request form](vocabularies/cluster_selection.png)
+![Cluster selection on request form](/_images/en-us/config_guide/drims_config_guide/vocabularies/cluster_selection.png)
 
 ```{note}
 The cluster codes follow UN OCHA standards and should not be modified. If your country uses different sector names, create custom translations in **Settings → Translations** rather than changing the codes.
@@ -125,7 +125,7 @@ Priority affects:
 - **Alert generation** - Overdue critical requests trigger automatic alerts
 - **Approval routing** - Critical requests may bypass certain approval steps
 
-![Priority field on request](vocabularies/priority_field.png)
+![Priority field on request](/_images/en-us/config_guide/drims_config_guide/vocabularies/priority_field.png)
 
 ```{tip}
 You can add custom priority levels by adding vocabulary codes. See "Adding Custom Vocabulary Codes" below.
@@ -149,7 +149,7 @@ Condition is recorded:
 - **On distribution** - When dispatching to beneficiaries
 - **On return** - When items come back from field
 
-![Item condition selection during inspection](vocabularies/condition_inspection.png)
+![Item condition selection during inspection](/_images/en-us/config_guide/drims_config_guide/vocabularies/condition_inspection.png)
 
 ```{warning}
 Items marked `damaged` or `expired` should not be distributed. DRIMS can generate alerts when such items remain in inventory beyond a threshold period.
@@ -181,7 +181,7 @@ This helps DRIMS:
 - Route information to the right stakeholders
 - Track agency roles correctly
 
-![Coordination mode on incident](vocabularies/coordination_mode.png)
+![Coordination mode on incident](/_images/en-us/config_guide/drims_config_guide/vocabularies/coordination_mode.png)
 
 ## Organization Roles
 
@@ -291,7 +291,7 @@ To see all vocabularies and their codes:
 2. Use the search and filters to find specific vocabularies
 3. Click any vocabulary to view and edit its codes
 
-![Vocabulary list](vocabularies/vocabulary_list.png)
+![Vocabulary list](/_images/en-us/config_guide/drims_config_guide/vocabularies/vocabulary_list.png)
 
 ## Are You Stuck?
 
