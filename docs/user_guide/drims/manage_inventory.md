@@ -34,30 +34,31 @@ Learn how to view and manage relief supply inventory across your warehouses:
 
 ### 1. Open the Inventory View
 
-Click **DRIMS** in the sidebar, then select **Inventory** and **Stock**.
+Click **DRIMS** in the sidebar, then select **Inventory** and **Stock on Hand**.
 
+![DRIMS sidebar showing Inventory > Stock navigation](/_images/en-us/user_guide/drims/manage_inventory/01-open-stock-on-hand.png)
 
 ### 2. Understand the Stock List
 
 The stock list shows all items currently in your warehouses:
-
 
 | Column | What it shows |
 |--------|---------------|
 | **Location** | Specific storage location within the warehouse |
 | **Product** | Name of the relief item |
 | **Lot/Serial Number** | Batch or serial identifier if the product is lot-tracked |
-| **On Hand** | Total quantity physically in the warehouse |
-| **Reserved** | Quantity set aside for approved requests awaiting dispatch |
+| **On Hand** | Total quantity physically on the shelf — everything in the location, including stock already committed to requests |
+| **Reserved** | Portion of On Hand already committed to approved requests but not yet dispatched — physically still in the warehouse but spoken for |
 
 ```{tip}
-The **Available Quantity** column is not shown by default. To add it, click the column selector icon at the top-right of the list and check **Available Quantity**.
+**Available Quantity** = On Hand minus Reserved. It tells you what is actually free to allocate to new requests. This column is hidden by default — click the column selector icon at the top-right of the list and check **Available Quantity** to show it.
 ```
 
 ### 3. Filter by Warehouse
 
 To see stock for a specific warehouse, click the **Filters** button and select your warehouse.
 
+![Stock list filtered to a single warehouse](/_images/en-us/user_guide/drims/manage_inventory/02-filter-by-warehouse.png)
 
 ### 4. Search for Specific Products
 
@@ -67,6 +68,7 @@ Use the search bar to find specific items. You can search by:
 - Product code (e.g., "NFI-001")
 - Category (e.g., "Medical Supplies")
 
+![Search bar with a product name entered and results filtered](/_images/en-us/user_guide/drims/manage_inventory/03-search-for-product.png)
 
 ## Understanding Stock Status
 
@@ -74,210 +76,174 @@ Items in your warehouse can have different status indicators:
 
 ### Stock Availability
 
-| Status | Color | What It Means |
-|--------|-------|---------------|
-| **Available** | Green | Ready to allocate to new requests |
-| **Reserved** | Orange | Allocated to approved requests, awaiting dispatch |
-| **Unavailable** | Gray | Out of stock, cannot fulfill requests |
+Check the **On Hand**, **Reserved**, and **Available Quantity** columns to understand what you can actually use:
 
-### Quality Status
+| Status | What It Means |
+|--------|---------------|
+| **Available > 0** | Stock is free to allocate to new requests |
+| **Reserved = On Hand** | All stock is committed — nothing available for new requests |
+| **On Hand = 0** | Out of stock, cannot fulfill requests |
 
-Some items may have quality flags based on inspection or expiry:
+### Quality status
 
-| Status | Icon | What It Means | Action Needed |
-|--------|------|---------------|---------------|
-| **Good** | Green checkmark | Passed inspection, safe to distribute | None |
-| **Expiring Soon** | Yellow warning | Will expire within 30 days | Prioritize for dispatch |
-| **Expired** | Red X | Past expiry date | Remove from inventory |
-| **Damaged** | Red exclamation | Failed inspection | Review for disposal |
+Quality is tracked at the lot level, not on the Stock On Hand list. To check expiry status, go to **DRIMS → Inventory → Lots & Batches** and look at the **Expiry Date** column. Items that passed inspection are in inventory; damaged or rejected items are excluded during the donation inspection step and never enter stock.
+
+| Situation | Where to check | Action |
+|-----------|---------------|--------|
+| Items approaching expiry | Lots & Batches → filter by expiry date | Prioritize for dispatch |
+| Items past expiry date | Lots & Batches → expiry date in the past | Create a stock adjustment to remove from inventory |
+| Damaged items in stock | Should not occur — rejected during donation inspection | If found, create a stock adjustment and investigate |
 
 ## Check Expiry Dates
 
 For items with shelf life tracking (like medical supplies, food items), you can view expiry information.
 
-### 1. Open Lot/Serial Number View
+### 1. Open Lots & Batches view
 
-Click **DRIMS** in the sidebar, then select **Inventory** and **Lots/Serial Numbers**.
+Click **DRIMS** in the sidebar, then select **Inventory** and **Lots & Batches**.
 
+![DRIMS sidebar showing Inventory > Lots & Batches navigation](/_images/en-us/user_guide/drims/manage_inventory/04-open-lots-batches.png)
 
 ### 2. View Expiry Information
 
 The lot list shows tracking details for each batch of items:
 
+![Lots & Batches list showing lot number, product, and created date](/_images/en-us/user_guide/drims/manage_inventory/05-lots-list-view.png)
+
+Default columns:
 
 | Column | What It Shows |
 |--------|---------------|
 | **Lot/Serial Number** | Batch identifier from the manufacturer or donor |
 | **Product** | Name of the item |
-| **Expiry Date** | When the item expires |
-| **On Hand Quantity** | How many units remain from this batch |
-| **Status** | Current quality status |
+| **Created on** | Date the lot was registered in the system |
+
+```{important}
+**Expiration Date** and **On Hand Quantity** are hidden by default but are essential for DRIMS operations. Click the column selector icon at the top-right of the list and enable both before using this view. Without Expiration Date visible, you cannot identify batches approaching expiry without opening each lot individually.
+```
 
 ### 3. Filter Expiring Items
 
 To find items expiring soon:
 
 1. Click **Filters**
-2. Select **Expiring in 30 days** or set a custom date range
+2. Select **Expiration Alerts** to show all lots whose Alert Date has been reached — these are lots that need attention now. For a custom date range, use **Expiration Date** instead
 3. Review the list and plan dispatches
 
+![Lots list filtered to items expiring within 30 days](/_images/en-us/user_guide/drims/manage_inventory/06-filter-expiring-items.png)
 
 ```{warning}
-Items with red expiry warnings should not be dispatched. Mark them for disposal through the appropriate inventory adjustment process.
+Lot records show a status badge in the top-right corner of the lot form:
+- **Expiring** (orange) — the Alert from date has been reached; the lot is still within its shelf life but action is needed soon
+- **Expired** (red) — the lot has passed its Expiration date and should not be dispatched
+
+The system does not block dispatch of expired lots — it is the warehouse staff's responsibility to check lot status before dispatching. Expired lots should be removed from inventory through a stock adjustment.
 ```
 
-## View Stock Movements
+## View stock movements
 
-Track how stock has moved in and out of your warehouses.
+Track how a specific lot has moved in and out of your warehouses using the Traceability Report.
 
-### 1. Open Stock Moves
+### 1. Open a lot record
 
-Click **DRIMS** in the sidebar, then select **Inventory** and **Stock Moves**.
+Go to **Inventory → Lots & Batches** and click the lot you want to trace.
 
+![Lots & Batches list with a lot row selected](/_images/en-us/user_guide/drims/manage_inventory/07-open-lot-for-traceability.png)
 
-### 2. Understand Movement Types
+### 2. Open the Traceability Report
 
-The stock moves list shows all inventory transactions:
+Click the **Traceability** button at the top of the lot form.
 
+![Lot form with the Traceability button highlighted](/_images/en-us/user_guide/drims/manage_inventory/08-traceability-button.png)
 
-| Move Type | Direction | What Triggered It |
-|-----------|-----------|-------------------|
-| **Donation Receipt** | In | Donation was stocked |
-| **Request Dispatch** | Out | Items sent for a request |
-| **Return Receipt** | In | Items returned from field |
-| **Internal Transfer** | In/Out | Moved between warehouses |
-| **Adjustment** | In/Out | Manual stock correction |
-| **Disposal** | Out | Damaged/expired items removed |
+### 3. Read the report
 
-### 3. Filter Movements
+The Traceability Report shows every movement for that lot:
 
-Filter by:
+![Traceability Report showing reference, product, date, lot, from, to, and quantity columns](/_images/en-us/user_guide/drims/manage_inventory/09-traceability-report.png)
 
-- **Date range** - See movements in a specific period
-- **Move type** - See only dispatches or receipts
-- **Product** - See all movements for a specific item
-- **Warehouse** - See movements for your warehouse only
-
-
-### 4. View Movement Details
-
-Click on any movement to see full details:
-
-
-| Field | What It Shows |
-|-------|---------------|
-| **Reference** | Linked document (donation, request, return) |
-| **Date** | When the movement occurred |
+| Column | What It Shows |
+|--------|---------------|
+| **Reference** | Linked document (donation receipt, dispatch, return) |
 | **Product** | Item that was moved |
+| **Date** | When the movement occurred |
+| **Lot/Serial #** | The lot number |
+| **From** | Source location |
+| **To** | Destination location |
 | **Quantity** | How many units moved |
-| **From Location** | Source location |
-| **To Location** | Destination location |
-| **Lot/Serial** | Tracking number if applicable |
 
-## Check Stock by Incident
+Click any **Reference** link to open the originating document (e.g., the donation or dispatch that created the movement).
 
-View inventory allocated to a specific disaster incident.
+## Check stock by incident
 
-### 1. Open Incident Stock View
+View inventory KPIs for a specific disaster incident.
+
+### 1. Open the incident record
 
 1. Click **DRIMS** in the sidebar
 2. Select **Dashboard**
-3. Click on the incident card
-4. Select the **Stock** tab
+3. Click on the incident card to open it
 
+![DRIMS Dashboard showing incident card](/_images/en-us/user_guide/drims/manage_inventory/10-incident-dashboard-card.png)
 
-### 2. Review Incident Inventory
+### 2. Open the DRIMS KPIs tab
 
-This view shows:
+Click the **DRIMS KPIs** tab on the incident form.
 
-- Total stock value for the incident
-- Stock breakdown by product category
-- Stock by warehouse serving the incident
-- Recent stock movements for the incident
+![Incident form with DRIMS KPIs tab selected](/_images/en-us/user_guide/drims/manage_inventory/11-incident-drims-kpis-tab.png)
 
-## Make Stock Adjustments
+The **Inventory** section shows a summary of stock for this incident:
 
-When physical counts don't match system records, you may need to adjust inventory.
+| Field | What it shows |
+|-------|--------------|
+| **Total Stock Units** | Total quantity of all items currently in stock for this incident |
+| **Stock Items** | Number of distinct product lines in stock |
+| **Stock Value** | Monetary value of current stock |
+| **Distributed Value** | Monetary value of items already dispatched |
 
-```{note}
-Stock adjustments require **Warehouse Officer** or **Manager** permissions. All adjustments are logged for audit purposes.
-```
+## Make stock adjustments
 
-### 1. Start an Inventory Adjustment
-
-1. Click **DRIMS** in the sidebar
-2. Select **Inventory** and **Adjustments**
-3. Click **New**
-
-
-### 2. Fill in Adjustment Details
-
-| Field | What to Enter |
-|-------|---------------|
-| **Warehouse** | The warehouse being adjusted |
-| **Reason** | Why the adjustment is needed (Physical Count, Damaged, Lost, etc.) |
-| **Notes** | Detailed explanation of the discrepancy |
-
-### 3. Add Adjustment Lines
-
-For each item to adjust:
-
-| Field | What to Enter |
-|-------|---------------|
-| **Product** | The item being adjusted |
-| **Lot/Serial** | Specific batch if tracked |
-| **Theoretical Quantity** | What the system shows |
-| **Counted Quantity** | What you physically counted |
-
-
-### 4. Validate the Adjustment
-
-Click **Validate** to apply the adjustment. The system will automatically calculate the difference and update stock levels.
-
-
-## Add a product
-
-Before donations or requests can reference a relief item, it must exist as a product in the system. This is a one-time setup task done by a manager.
+Use stock adjustments to record inventory losses, damaged goods, expired disposals, or counting errors. Adjustments are tied to a warehouse and incident for full audit traceability.
 
 ```{note}
-You need **DRIMS Manager** access to create or edit products.
+Stock adjustments require **Warehouse Officer** or **Manager** permissions. All adjustments are logged to the DRIMS activity feed.
 ```
 
-### 1. Open the products list
+### 1. Open the warehouse
 
-Click **DRIMS** in the sidebar, select **Inventory**, then click **Products**.
+Go to **DRIMS → Inventory → Warehouses** and open the warehouse where the adjustment is needed.
 
-### 2. Create a new product
+![DRIMS Warehouses list](/_images/en-us/user_guide/drims/manage_inventory/12-open-warehouse-for-adjustment.png)
 
-Click **New** and fill in the product form:
+### 2. Click Dispose Expired and fill in the form
+
+Click the **Dispose Expired** button in the warehouse form header. The stock adjustment wizard opens with the warehouse pre-filled.
+
+![Stock adjustment wizard showing Incident, Warehouse, Reason, Authorized By, and Products to Adjust fields](/_images/en-us/user_guide/drims/manage_inventory/13-stock-adjustment-wizard.png)
 
 | Field | What to enter |
 |-------|--------------|
-| **Product name** | A clear, descriptive name (e.g., "Rice – 50kg bag", "Blanket – adult") |
-| **Category** | Group the item under a category (Food, Shelter, Medical, etc.) — see tip below |
-| **Tracking** | Choose **By Lot** if you need to track expiry dates or donor batches; choose **No Tracking** for bulk items where individual batches don't matter |
+| **Warehouse** | Pre-filled from the warehouse you opened |
+| **Incident** | The incident this adjustment relates to |
+| **Reason** | Why stock is being adjusted — Expired, Damaged, Lost, Theft, Counting Error, or Other |
+| **Authorized by** | The person authorizing the adjustment |
+| **Notes** | Details about the discrepancy |
 
-3. Click **Save**.
+Add one line per product being adjusted, specifying the product, lot (if tracked), and quantity to remove.
 
-The product is now available to select when creating donation lines, request templates, and dispatch orders.
+### 3. Apply the adjustment
 
-```{tip}
-If the category you need doesn't exist yet, go to **DRIMS > Inventory > Product Categories** and create it first. Categories like Food, Non-Food Items (NFI), Medical Supplies, and Shelter Materials help you filter and report on stock by type.
-```
+Click **Apply Adjustment**. Stock levels update immediately and the adjustment is recorded in the activity feed.
 
-### Lot tracking vs. no tracking
+## Add a product
 
-| Use **By Lot** when... | Use **No Tracking** when... |
-|------------------------|----------------------------|
-| Items have expiry dates (medicine, food) | Bulk commodities with no expiry (tarps, rope) |
-| You need to trace a specific donor batch | Quantities matter more than batch origin |
-| Inspection history per batch is required | Faster data entry is a priority |
+If a product is missing from the catalog, ask your administrator to create it. For full instructions on setting up products, categories, lot tracking, and expiry dates, see {doc}`/config_guide/drims/products`.
 
 ## Are You Stuck?
 
 **Can't see inventory for a warehouse?**
 
-You may not have access to that warehouse. Contact your administrator to verify your warehouse assignments in **Settings** and **Users** and **[Your User]** and **DRIMS Warehouse Access**.
+You may not have access to that warehouse. Contact your administrator to verify your warehouse assignments in **Settings → Users → [Your User] → DRIMS Warehouse Access**.
 
 **Stock numbers look wrong?**
 

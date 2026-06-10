@@ -280,9 +280,9 @@ Warehouses automatically calculate health status based on active alerts:
 
 | Health Status | Condition | Dashboard Color |
 |---------------|-----------|-----------------|
-| **Critical** | 3+ active alerts OR capacity <10% | Red |
-| **Warning** | 1-2 active alerts OR capacity <30% | Orange |
-| **Good** | No active alerts, adequate stock | Green |
+| **Critical** | 3+ active alerts | Red |
+| **Warning** | 1–2 active alerts | Orange |
+| **Good** | No active alerts | Green |
 
 ![Screenshot: Warehouse health dashboard](/_images/en-us/config_guide/drims_config_guide/alerts/warehouse_health_status.png)
 

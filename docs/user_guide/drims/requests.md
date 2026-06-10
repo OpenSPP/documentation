@@ -53,7 +53,7 @@ A request moves through two parallel tracks:
 
 Both states are shown in the requests list. Use the **Ready for Allocation** and **Ready for Dispatch** quick filters to find requests that need action.
 
-<!-- ![Requests list showing Approval State and Fulfillment State columns with filter tabs](/_images/en-us/user_guide/drims/requests/01-requests-list-states.png) -->
+![Requests list showing Approval State and Fulfillment State columns with filter tabs](/_images/en-us/user_guide/drims/requests/01-requests-list-states.png)
 
 ---
 
@@ -63,13 +63,13 @@ Both states are shown in the requests list. Use the **Ready for Allocation** and
 
 Click **DRIMS** in the sidebar, then select **Requests**.
 
-<!-- ![DRIMS sidebar with Requests menu item highlighted](/_images/en-us/user_guide/drims/requests/02-open-drims-requests.png) -->
+![DRIMS sidebar with Requests menu item highlighted](/_images/en-us/user_guide/drims/requests/02-open-drims-requests.png)
 
 ### 2. Create a new request
 
 Click **New** in the top left.
 
-<!-- ![New button in the requests list toolbar](/_images/en-us/user_guide/drims/requests/03-click-new-request.png) -->
+![New button in the requests list toolbar](/_images/en-us/user_guide/drims/requests/03-click-new-request.png)
 
 ### 3. Fill in the request details
 
@@ -78,14 +78,14 @@ Complete the following fields:
 | Field | Instructions |
 |-------|--------------|
 | **Incident** | The disaster you're responding to (e.g., "Flood 2025 — Western Region") |
-| **Destination area** | The geographic area where supplies are needed |
+| **Destination Area** | The geographic area where supplies are needed |
 | **Priority** | How urgent the request is — see [Priority levels](#priority-levels) below |
-| **Cluster** | Humanitarian cluster, if your organization uses them (optional) |
+| **Humanitarian Cluster** | Humanitarian cluster, if your organization uses them (optional) |
 | **Date needed** | When supplies must arrive — be realistic |
 | **Justification** | Why the supplies are needed; be specific about the situation and number of people affected |
 | **Affected population** | Number of people who will benefit |
 
-<!-- ![Request form with incident, area, priority, and date fields filled in](/_images/en-us/user_guide/drims/requests/04-request-form-details.png) -->
+![Request form with incident, area, priority, and date fields filled in](/_images/en-us/user_guide/drims/requests/04-request-form-details.png)
 
 ### 4. Add requested items
 
@@ -97,18 +97,18 @@ For each item:
 |-------|---------------|
 | **Product** | The item needed (e.g., "Emergency Blankets", "Water Purification Tablets") |
 | **Quantity** | How many units are required |
-| **UoM** | Unit of measure (pieces, boxes, liters, etc.) |
+| **Unit** | Unit of measure (pieces, boxes, liters, etc.) |
 
-<!-- ![Requested items table with product, quantity, and UoM columns](/_images/en-us/user_guide/drims/requests/05-add-requested-items.png) -->
+![Requested items table with product, quantity, and unit columns](/_images/en-us/user_guide/drims/requests/05-add-requested-items.png)
 
 Repeat for each type of supply needed.
 
 ### 5. Mark as life-threatening (if needed)
 
-If this request involves a genuine life-threatening emergency, check the **Life-Threatening** box.
+If this request involves a genuine life-threatening emergency, check the **Life-Threatening Emergency** box.
 
 ```{important}
-Only use this for genuine emergencies where delays could result in loss of life. Misuse delays help for people in real emergencies.
+Only use this for genuine emergencies where delays could result in loss of life. Misuse delays critical help for people in real emergencies.
 ```
 
 ### 6. Save and submit
@@ -117,14 +117,14 @@ Click **Save** to save as a draft. You can come back and edit it.
 
 When ready, click **Submit for Approval**. The approval state changes to **Pending** and the request goes to your designated reviewer.
 
-<!-- ![Submit for Approval button in the request form header](/_images/en-us/user_guide/drims/requests/06-submit-for-approval.png) -->
+![Submit for Approval button in the request form header](/_images/en-us/user_guide/drims/requests/06-submit-for-approval.png)
 
 ### What happens after you submit
 
 | Stage | Who acts | What they do |
 |-------|----------|--------------|
 | **Pending** | Approver | Reviews the request and approves, requests changes, or rejects |
-| **Revision** | You | Makes the requested changes and clicks **Resubmit** |
+| **Revision** | You | Make the requested changes and click **Resubmit for Approval** |
 | **Ready for Allocation** | Coordinator | Allocates warehouse stock |
 | **Ready for Dispatch** | Warehouse staff | Picks and ships the items |
 | **Delivered** | Field officer | Confirms receipt |
@@ -137,9 +137,9 @@ You can track the current state at any time by opening the request from the list
 
 ### Find requests to review
 
-Use the **Pending** filter on the requests list to find requests waiting for your decision.
+Use the **Pending Approval** filter on the requests list to find requests waiting for your decision.
 
-<!-- ![Requests list filtered to Pending approval state](/_images/en-us/user_guide/drims/requests/07-pending-requests-filter.png) -->
+![Requests list filtered to Pending Approval state](/_images/en-us/user_guide/drims/requests/07-pending-requests-filter.png)
 
 Open a request, review the details, and choose:
 
@@ -149,7 +149,7 @@ Open a request, review the details, and choose:
 | **Request Changes** | Returns to the requester with notes |
 | **Reject** | Declines the request (requires a reason) |
 
-<!-- ![Approve, Request Changes, and Reject buttons on a pending request](/_images/en-us/user_guide/drims/requests/08-approver-action-buttons.png) -->
+![Approve, Request Changes, and Reject buttons on a pending request](/_images/en-us/user_guide/drims/requests/08-approver-action-buttons.png)
 
 ---
 
@@ -161,25 +161,27 @@ After a request is approved, a coordinator assigns warehouse stock to it.
 
 Use the **Ready for Allocation** quick filter on the requests list.
 
-<!-- ![Ready for Allocation filter tab highlighted in the requests list](/_images/en-us/user_guide/drims/requests/09-ready-for-allocation-filter.png) -->
+![Ready for Allocation filter tab highlighted in the requests list](/_images/en-us/user_guide/drims/requests/09-ready-for-allocation-filter.png)
 
 ### 2. Open the request and allocate
 
-Open the request. You'll see an **Approved — Ready to Allocate** banner confirming it's ready.
+Open the request. You'll see an **Approved** stamp in the top-right corner and the **Allocate Stock** button in the header.
 
-Click **Allocate Stock** to open the allocation preview.
+Before clicking **Allocate Stock**, scroll to the **Fulfillment** section and select a **Source Warehouse**. This field is required — the button will show a "Missing required fields" error if it's empty.
 
-<!-- ![Allocate Stock button and Ready to Allocate banner on an approved request](/_images/en-us/user_guide/drims/requests/10-allocate-stock-button.png) -->
+![Fulfillment section with Source Warehouse field selected](/_images/en-us/user_guide/drims/requests/11-source-warehouse-field.png)
+
+Once a warehouse is selected, click **Allocate Stock** to open the allocation preview.
+
+![Allocate Stock button and Ready to Allocate banner on an approved request](/_images/en-us/user_guide/drims/requests/10-allocate-stock-button.png)
 
 The allocation wizard shows available stock for each requested item, including quantities already reserved by other requests.
 
-<!-- ![Allocation preview wizard showing available stock per item](/_images/en-us/user_guide/drims/requests/11-allocation-preview-wizard.png) -->
+![Allocation preview wizard showing available stock per item](/_images/en-us/user_guide/drims/requests/12-allocation-preview-wizard.png)
 
-Review the available quantities and confirm. If stock is insufficient, you can allocate what's available and create a partial dispatch — see [Partial dispatches](#partial-dispatches) below.
+Review the available quantities. If stock is insufficient, you can allocate what's available and create a partial dispatch — see [Partial dispatches](#partial-dispatches) below.
 
-```{note}
-You must select a source warehouse before allocating. If the warehouse field is empty, the Allocate button will remain blocked with a clear error message.
-```
+When ready, click **Confirm Allocation**.
 
 Once confirmed, the fulfillment state changes to **Ready for Dispatch** and the **Create Dispatch** button appears.
 
@@ -187,7 +189,7 @@ Once confirmed, the fulfillment state changes to **Ready for Dispatch** and the 
 
 Click **Create Dispatch** to generate the dispatch picking for warehouse staff to process.
 
-<!-- ![Create Dispatch button visible after allocation](/_images/en-us/user_guide/drims/requests/12-create-dispatch-button.png) -->
+![Create Dispatch button visible after allocation](/_images/en-us/user_guide/drims/requests/13-create-dispatch-button.png)
 
 See {doc}`dispatches` for how warehouse staff process the dispatch.
 
@@ -195,11 +197,11 @@ See {doc}`dispatches` for how warehouse staff process the dispatch.
 
 You can dispatch a request in multiple shipments — for example, if not all items are currently in stock:
 
-1. Allocate the available stock and create a first dispatch
-2. The request stays in **Ready for Dispatch** state until every line is fully dispatched
-3. When new stock arrives (from a new donation), return to the request and click **Create Dispatch** again for the remaining balance
+1. Allocate the available stock and click **Create Dispatch** for what's available
+2. The request stays in **Ready for Dispatch** state while some quantity remains outstanding
+3. When new stock arrives (from a new donation), return to the request, click **Allocate Stock** again for the remaining balance, then click **Create Dispatch**
 
-<!-- ![Request showing first dispatch created with remaining quantity still outstanding](/_images/en-us/user_guide/drims/requests/13-partial-dispatch-example.png) -->
+![Request showing first dispatch created with remaining quantity still outstanding](/_images/en-us/user_guide/drims/requests/14-partial-dispatch-example.png)
 
 The request only advances to **Dispatched** once all lines have been fully dispatched.
 
@@ -212,15 +214,14 @@ Choose the right priority for your request:
 | Priority | When to use | Expected response |
 |----------|-------------|-------------------|
 | **Critical** | Immediate threat to life, injuries, imminent danger | Within hours |
-| **High** | Urgent needs, situation deteriorating rapidly | Within 24 hours |
-| **Medium** | Standard relief needs, stable situation | Within 48–72 hours |
-| **Low** | Non-urgent or supplementary supplies | When resources allow |
+| **Urgent** | Pressing needs, situation deteriorating or people at risk | Within 24 hours |
+| **Routine** | Standard relief needs, stable situation, supplementary supplies | When resources allow |
 
 **Example — Critical:** "50 people trapped in flooded area, rescue equipment and medical supplies needed immediately."
 
-**Example — High:** "Evacuation center has 200 people but food from yesterday is nearly exhausted."
+**Example — Urgent:** "Evacuation center has 200 people but food from yesterday is nearly exhausted."
 
-**Example — Medium:** "Community center housing 80 families needs additional blankets and cooking supplies."
+**Example — Routine:** "Community center housing 80 families needs additional blankets and cooking supplies."
 
 ---
 

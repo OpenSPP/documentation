@@ -138,20 +138,15 @@ For regions with concurrent disasters — one warehouse serves multiple active i
 
 ## Stock Health Indicators
 
-DRIMS automatically calculates warehouse health based on alerts:
+DRIMS automatically calculates warehouse health based on active alert count:
 
-| Health Status | Indicator | Meaning |
-|---------------|-----------|---------|
-| **Good** | Green | No critical alerts, adequate stock levels |
-| **Warning** | Yellow | Low stock alerts or items approaching expiry |
-| **Critical** | Red | Stock-outs, expired items, or SLA violations |
+| Health Status | Color | Condition |
+|---------------|-------|-----------|
+| **Good** | Green | No active alerts |
+| **Warning** | Orange | 1–2 active alerts |
+| **Critical** | Red | 3 or more active alerts |
 
-Health status is computed automatically based on:
-- Low stock alerts for essential items
-- Expiry warnings
-- Pending requests exceeding delivery deadlines
-
-You cannot set health status manually - it reflects the current alert state.
+You cannot set health status manually — it reflects the current alert state and updates automatically as alerts are created and resolved.
 
 ## Are You Stuck?
 

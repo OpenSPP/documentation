@@ -6,184 +6,186 @@ openspp:
     - drims
 ---
 
-# Handle Returns
+# Handle returns
 
 ```{admonition} Applies to: DRIMS
 :class: tip
 This feature is available in OpenSPP deployments with the DRIMS module installed.
 ```
 
-## What You'll Do
+This guide is for **warehouse officers** who process items sent back from distribution points.
 
-Create and process returns for items sent back from distribution points to the warehouse.
+## What you'll do
 
-## Before You Start
+Create a return record, confirm it, receive the physical items, record their condition and disposition, and restock them into the warehouse.
+
+## Before you start
 
 - You need **Warehouse Officer** or **Administrator** access
 - The original dispatch must be recorded in DRIMS
-- You should have documentation of why items are being returned
+- Have documentation of why items are being returned
 
-## Why Items Are Returned
+## Why items are returned
 
-Items come back to the warehouse for different reasons. The reason determines what happens to them next.
+Items come back for different reasons. Use the return reason to document why items are coming back.
 
-| Reason | When to Use | What Happens Next |
-|--------|-------------|-------------------|
-| **Excess** | More items delivered than needed | Usually restocked |
-| **Damaged** | Items damaged during transit or storage | Inspected, may be disposed |
-| **Expired** | Items past their expiration date | Disposed |
-| **Wrong Item** | Incorrect items were sent | Restocked, correct items dispatched |
-| **Cancelled** | Distribution was cancelled | Restocked |
+| Reason | When to use |
+|--------|-------------|
+| **Excess Quantity** | More items delivered than needed |
+| **Damaged in Transit** | Items damaged during shipping |
+| **Wrong Item Delivered** | Incorrect items were sent |
+| **No Longer Needed** | Distribution was cancelled or needs changed |
+| **Expired / Near Expiry** | Items past or approaching their expiration date |
 
-## Creating a Return
+---
 
-### 1. Open Returns
+## Creating a return
 
-Click **Warehouse** in the sidebar, then select **Returns**.
+### 1. Open returns
 
+Click **DRIMS** in the sidebar, then go to **Receive Supplies → Returns**.
 
-### 2. Create New Return
+![Returns menu item under Receive Supplies in the DRIMS sidebar](/_images/en-us/user_guide/drims/returns/01-open-returns-menu.png)
 
-Click the **New** button in the top left.
+### 2. Create a new return
 
+Click **New** in the top left.
 
-### 3. Fill in Return Details
+![New button in the returns list toolbar](/_images/en-us/user_guide/drims/returns/02-click-new-return.png)
 
-Enter the following information:
+### 3. Fill in the return details
 
-| Field | What to Enter |
+Complete the following fields:
+
+| Field | What to enter |
 |-------|---------------|
-| **Source Dispatch** | Select the original dispatch this return is for |
-| **Warehouse** | The warehouse receiving the returned items (auto-fills from dispatch) |
-| **Incident** | The disaster incident (auto-fills from dispatch) |
-| **Return Reason** | Why items are being returned (see table above) |
+| **Incident** | The disaster incident this return relates to |
+| **Original Dispatch** | The original dispatch the items came from |
+| **Original Request** | Auto-fills from the dispatch |
+| **Return To Warehouse** | The warehouse receiving the returned items |
 | **Return Date** | When items are expected back |
+| **Returned By** | Name of the person returning the items |
+| **Phone** | Contact phone number of the person returning the items |
+| **Return Reason** | Free-text explanation of why items are being returned |
 
+![Return details form with incident, original dispatch, return to warehouse, and date fields filled in](/_images/en-us/user_guide/drims/returns/03-return-form-details.png)
 
-### 4. Add Items Being Returned
+### 4. Add items being returned
 
-In the **Items** tab, click **Add a line** for each item type being returned.
+In the **Return Items** tab, click **Add a line** for each item type being returned.
 
 For each item, enter:
-- **Product:** The item being returned
-- **Quantity:** How many units are coming back
-- **Notes:** Any details about the item's condition
 
+| Field | What to enter |
+|-------|---------------|
+| **Product** | The item being returned |
+| **Quantity Returned** | How many units are coming back |
+| **Condition** | Item condition (set while in Draft): **Good (Restockable)**, **Damaged**, or **Unusable** |
+| **Disposition** | What to do with it (set while in Draft): **Restock**, **Send for Repair**, or **Dispose** |
+| **Notes** | Any details about the item's state |
 
-### 5. Save the Return
+```{important}
+**Condition** and **Disposition** can only be edited while the return is in **Draft** state. Set them now before confirming.
+```
 
-Click **Save** in the top left.
+![Return Items tab with product, quantity, condition, and disposition columns](/_images/en-us/user_guide/drims/returns/04-return-items-tab.png)
 
+### 5. Save the return
 
-The return is now in **Draft** status. It won't affect inventory until you confirm it.
+Click **Save**. The return is now in **Draft** status — it won't affect inventory until you confirm it.
 
-## Processing the Return
+---
 
-Returns go through several steps to ensure items are properly tracked and handled.
+## Processing the return
 
-### Step 1: Confirm the Return
+Returns go through four steps to ensure items are properly tracked.
 
-When you've verified the return details, click **Confirm**.
+### Step 1: Confirm the return
 
+When you've verified the details are correct, click **Confirm Return**.
 
-This authorizes the return and alerts warehouse staff to expect the items.
+![Confirm Return button in the return form header](/_images/en-us/user_guide/drims/returns/05-confirm-return-button.png)
+
+This creates an incoming stock receipt and alerts warehouse staff to expect the items.
 
 **Status:** Draft → **Confirmed**
 
-### Step 2: Receive the Items
+### Step 2: Mark as received
 
-When the physical items arrive at the warehouse, click **Receive**.
+When the physical items arrive at the warehouse, click **Mark Received**.
 
+![Mark Received button on a confirmed return](/_images/en-us/user_guide/drims/returns/06-mark-received-button.png)
 
-You may need to update quantities if the actual returned amount differs from what was expected.
+Update quantities on the **Return Items** tab if the actual amount differs from what was expected.
 
 **Status:** Confirmed → **Received**
 
-### Step 3: Inspect the Items
+### Step 3: Mark as inspected
 
-Warehouse staff checks each item's condition. Click **Inspect**.
+Once the physical items have been checked and condition/disposition were set in Draft, click **Mark Inspected**.
 
-
-For each line item, record:
-- **Condition:** Good, Damaged, Expired
-- **Inspection Notes:** Details about the item's state
-
+![Mark Inspected button on a received return](/_images/en-us/user_guide/drims/returns/07-mark-inspected-button.png)
 
 **Status:** Received → **Inspected**
 
-### Step 4: Restock or Dispose
+### Step 4: Restock items
 
-Based on the inspection, items are either returned to inventory or removed.
+Once inspection is complete, click **Restock Items** to finalise the return.
 
-#### For Good Items: Click **Restock**
+![Restock Items button on an inspected return](/_images/en-us/user_guide/drims/returns/08-restock-items-button.png)
 
+All items are processed through **Restock Items** and returned to warehouse inventory. The **Disposition** field records the intended outcome per line but does not currently route items to separate locations — separate disposal and return-to-donor paths are planned in a future release.
 
-This adds the items back to your warehouse inventory. They become available for future dispatches.
+```{note}
+If items should not re-enter warehouse stock (expired, damaged beyond use), remove them manually after processing and document the action in your warehouse records until the full disposal workflow is available.
+```
 
 **Status:** Inspected → **Restocked**
 
-#### For Damaged/Expired Items: Click **Dispose**
+![Return in Restocked state with green Restocked ribbon](/_images/en-us/user_guide/drims/returns/09-return-restocked-state.png)
 
+---
 
-This removes the items from inventory and records them as disposed.
+## Condition codes
 
-**Status:** Inspected → **Disposed**
+Choose the condition that best describes each returned item:
 
-## What Happens to Returned Items
+| Condition | When to use | Typical disposition |
+|-----------|-------------|---------------------|
+| **Good (Restockable)** | Original packaging intact, item usable | Restock |
+| **Damaged** | Packaging or item shows damage | Send for Repair or Dispose |
+| **Unusable** | Expired, contaminated, or beyond repair | Dispose |
 
-After inspection, the decision tree looks like this:
+---
 
-```
-Inspected Items
-    │
-    ├─→ Good condition → Restock → Back in inventory
-    │
-    └─→ Damaged/Expired → Dispose → Removed from inventory
-```
-
-**Restocked items:**
-- Added back to warehouse stock
-- Available for allocation to new requests
-- Tracked with same lot numbers (if applicable)
-
-**Disposed items:**
-- Removed from inventory
-- Documented for audit trail
-- May require disposal documentation per local regulations
-
-## Are You Stuck?
+## Are you stuck?
 
 **Can't find the original dispatch?**
 
-Use the search filter at the top of the Source Dispatch field. Search by dispatch reference number or destination area.
+Use the search on the **Original Dispatch** field. Search by dispatch reference number or destination area.
 
-**Return button is greyed out?**
+**Confirm Return button is greyed out?**
 
-You may not have warehouse permissions. Contact your administrator.
+All required fields must be filled: Incident, Return To Warehouse, and at least one item in the Return Items tab.
 
 **Quantities don't match what was dispatched?**
 
-This is normal. Only return what actually came back. The system tracks the difference.
+This is normal — only return what actually came back. The **Quantity Dispatched** column shows the original amount for reference.
 
-**Don't know whether to restock or dispose?**
+**Not sure whether to restock or dispose?**
 
-- **Excess items in good condition:** Restock
-- **Items with original packaging intact:** Restock
-- **Items past expiry date:** Dispose
-- **Items with damaged packaging:** Inspect contents, then decide
-- **Items exposed to contamination:** Dispose
-- **When in doubt:** Ask your warehouse supervisor
-
-**System says "Stock move already exists"?**
-
-The return may have been partially processed. Check the **Inventory Moves** tab at the bottom of the form to see what's already been recorded.
+- Good condition, original packaging intact → Restock
+- Past expiry date → Dispose
+- Damaged packaging, contents unknown → Inspect contents, then decide
+- Contamination suspected → Dispose
+- When in doubt → ask your warehouse supervisor
 
 **Need to cancel a return?**
 
-While the return is in **Draft** status, click **Cancel**. Once confirmed, contact your administrator to reverse the return.
+While in **Draft** or any state before **Restocked**, click **Cancel**. A cancelled return can be reset to Draft using **Reset to Draft** if needed.
 
-## Next Steps
+## Next steps
 
-- {doc}`manage_inventory` - Learn how to check updated stock levels
-- {doc}`dashboard` - Monitor warehouse health and alerts
-- {doc}`donations` - Learn how to receive new donations
+- {doc}`manage_inventory` - Check updated stock levels after restocking
+- {doc}`dashboard` - Monitor warehouse health and return alerts
+- {doc}`donations` - Receive new donations to replace disposed items

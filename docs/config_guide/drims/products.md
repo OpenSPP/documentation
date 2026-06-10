@@ -119,6 +119,62 @@ Changing the tracking setting on a product that already has stock movements will
 
 ---
 
+## Configuring expiry dates
+
+For lot-tracked products, you can enable expiry date tracking so warehouse staff can monitor batch shelf life and receive advance warnings before items expire.
+
+### Step 1. Enable expiry tracking on the product
+
+1. Open the product form (**DRIMS → Inventory → Products → [product name]**)
+2. Go to the **Inventory** tab
+3. Check the **Expiration Date** checkbox
+
+   ![Product Inventory tab showing the Expiration Date checkbox](/_images/en-us/config_guide/drims_config_guide/products/05-expiration-date-checkbox.png)
+
+4. Click **Save**
+
+Once enabled, every lot created for this product will have expiry date fields available.
+
+### Step 2. Set the date offsets
+
+After enabling the checkbox, configure the date offset fields under the **Dates** section on the same Inventory tab:
+   
+   ![Product Inventory tab showing the Dates section with offset fields](/_images/en-us/config_guide/drims_config_guide/products/06-expiry-date-offsets.png)
+
+| Field | What it controls | Example |
+|-------|-----------------|---------|
+| **Expiration Date** | How many days after receipt the lot expires | Rice – 365 days |
+| **Best Before Date** | How many days before expiration the item is past its best-before date | 30 days before expiration |
+| **Removal Date** | How many days before expiration the item should be removed from stock | 7 days before expiration |
+| **Alert Date** | How many days before expiration the lot appears in the **Expiration Alerts** filter | 30 days before expiration |
+
+```{important}
+The **Alert Date** offset is the most important field for warehouse operations. It controls how early a lot appears in the **Expiration Alerts** filter in Lots & Batches — giving staff advance notice to dispatch or dispose of items before they expire. A value of 0 means the alert only triggers on the expiration date itself, leaving no time to act.
+```
+
+If you leave all offsets at 0, DRIMS will not calculate dates automatically — warehouse staff must enter the expiration date manually on each lot when receiving a donation.
+
+```{note}
+Date offsets only apply to **new lots created after** expiry tracking is enabled. Existing lots already in inventory will have empty date fields and must be updated manually — open each lot record and fill in the **Expiration** date directly.
+```
+
+### How expiry dates appear on lots
+
+When a donation is received for a lot-tracked product with expiry enabled, the lot record shows:
+
+![Lot form showing the Dates section with Expiration, Alert from, Best before, and Removal Date fields](/_images/en-us/config_guide/drims_config_guide/products/07-lot-dates-fields.png)
+
+| Field on lot | Populated from |
+|---|---|
+| **Expiration** | Entered manually by warehouse staff, or calculated from receipt date + offset |
+| **Alert from** | Calculated as Expiration Date minus Alert Date offset |
+| **Best before** | Calculated as Expiration Date minus Best Before Date offset |
+| **Removal Date** | Calculated as Expiration Date minus Removal Date offset |
+
+Staff can always edit these dates manually on the lot record after it is created.
+
+---
+
 ## Naming conventions
 
 Consistent product names prevent duplicates and make catalog maintenance easier. Recommended format:
