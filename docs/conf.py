@@ -617,12 +617,9 @@ def update_html_files(app, exception):
                     for a_tag in soup.find_all('a', {'class': 'reference internal'}):
                         href = a_tag.get('href', '')
                         if href.endswith('index.html'):
-                            # A bare "index.html" (same-directory link, e.g. a
-                            # section page pointing back to its own index)
-                            # collapses to "", which the browser resolves to the
-                            # current page so the link does nothing. Use "./" so
-                            # it still points at the directory index.
-                            a_tag['href'] = href[:-len('index.html')] or './'
+                            # Only strip if it is a true directory index (to avoid mangling files like genindex.html)
+                            if href == 'index.html' or href.endswith('/index.html'):
+                                a_tag['href'] = href[:-10] or './'
 
                     # update home logo link
                     home_link = soup.find('a', {'class': 'navbar-brand text-wrap'})
