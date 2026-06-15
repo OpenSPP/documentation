@@ -616,8 +616,10 @@ def update_html_files(app, exception):
                     # Update internal reference links
                     for a_tag in soup.find_all('a', {'class': 'reference internal'}):
                         href = a_tag.get('href', '')
-                        if href.endswith('index.html'):
-                            a_tag['href'] = href[:-10]
+                        # Strip true directory indexes (avoid Sphinx's genindex.html)
+                        # and ensure links still resolve properly
+                        if href == 'index.html' or href.endswith('/index.html'):
+                            a_tag['href'] = href[:-10] or './'
 
                     # update home logo link
                     home_link = soup.find('a', {'class': 'navbar-brand text-wrap'})
