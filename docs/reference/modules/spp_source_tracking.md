@@ -170,3 +170,10 @@ Source tracking supports:
 - Data lineage documentation
 - Collection method verification
 - System integration auditing
+
+```{toctree}
+:maxdepth: 1
+:hidden:
+
+spp_source_tracking_programs
+```

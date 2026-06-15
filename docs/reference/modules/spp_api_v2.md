@@ -146,6 +146,7 @@ spp_api_v2_data
 spp_api_v2_entitlements
 spp_api_v2_gis
 spp_api_v2_products
+spp_api_v2_programs
 spp_api_v2_service_points
 spp_api_v2_simulation
 spp_api_v2_vocabulary

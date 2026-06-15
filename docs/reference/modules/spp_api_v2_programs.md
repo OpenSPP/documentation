@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP API V2 - Programs
+# Programs
 
 **Module:** `spp_api_v2_programs`
 

@@ -172,3 +172,10 @@ When a Studio event type is activated:
 
 - {doc}`spp_studio` - Core Studio interface
 - {doc}`spp_event_data` - Event data infrastructure
+
+```{toctree}
+:maxdepth: 1
+:hidden:
+
+spp_studio_events_programs
+```

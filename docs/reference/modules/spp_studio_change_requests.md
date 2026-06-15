@@ -140,3 +140,10 @@ Note: Detail records are created by the system (via sudo), so regular users do n
 - {doc}`spp_change_request_v2` - Change request infrastructure
 - {doc}`spp_studio` - Core Studio interface
 - {doc}`spp_cr_types_base` - Pre-built change request types
+
+```{toctree}
+:maxdepth: 1
+:hidden:
+
+spp_studio_change_requests_programs
+```

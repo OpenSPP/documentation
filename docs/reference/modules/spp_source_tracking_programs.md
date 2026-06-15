@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP Source Tracking - Programs
+# Programs
 
 **Module:** `spp_source_tracking_programs`
 

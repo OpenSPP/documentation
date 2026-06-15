@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP Studio Change Requests - Programs
+# Programs
 
 **Module:** `spp_studio_change_requests_programs`
 

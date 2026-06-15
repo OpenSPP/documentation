@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP Audit - Programs
+# Programs
 
 **Module:** `spp_audit_programs`
 

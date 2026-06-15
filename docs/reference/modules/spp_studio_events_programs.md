@@ -3,7 +3,7 @@ openspp:
   doc_status: draft
 ---
 
-# OpenSPP Studio Events - Programs
+# Programs
 
 **Module:** `spp_studio_events_programs`
 

@@ -150,4 +150,5 @@ Logic can be used in event-triggered calculations:
 spp_studio_api_v2
 spp_studio_change_requests
 spp_studio_events
+spp_studio_programs
 ```

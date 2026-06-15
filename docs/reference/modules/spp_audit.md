@@ -149,3 +149,10 @@ Optionally post audit summaries to record chatter:
 | ------------------ | --------------------------------------- |
 | Enabled            | Low-volume, human-reviewed records only |
 | Disabled (default) | High-volume or automated processes      |
+
+```{toctree}
+:maxdepth: 1
+:hidden:
+
+spp_audit_programs
+```
