@@ -32,7 +32,6 @@ This module is designed to:
 | `spp_security` | Central security definitions for OpenSPP modules |
 | `spp_registry` | Consolidated registry management for individuals, groups,... |
 | `spp_base_common` | The OpenSPP base module that provides the main menu, gene... |
-| `spp_programs` | Manage cash and in-kind entitlements, integrate with inve... |
 | `spp_user_roles` | The OpenSPP User Roles module defines and manages distinc... |
 | `spp_custom_field` | The module enables administrators to define and add custo... |
 | `spp_cel_domain` | Write simple CEL-like expressions to filter records (Open... |

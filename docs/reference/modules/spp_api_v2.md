@@ -31,7 +31,6 @@ This module is designed to:
 | `spp_registry` | Consolidated registry management for individuals, groups,... |
 | `spp_consent` | DPV-aligned consent management for social protection prog... |
 | `spp_vocabulary` | OpenSPP: Vocabulary |
-| `spp_programs` | Manage cash and in-kind entitlements, integrate with inve... |
 | `spp_source_tracking` | Track data provenance and source information for registrants |
 
 ### External Dependencies
