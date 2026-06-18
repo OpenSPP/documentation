@@ -18,7 +18,7 @@ The core resource types exposed by API V2 (Individual, Group, Program, ProgramMe
 
 ## Available Resources
 
-OpenSPP API V2 provides five core resources:
+OpenSPP API V2 exposes these core resources:
 
 | Resource          | Description               | Endpoint             |
 | ----------------- | ------------------------- | -------------------- |
@@ -27,6 +27,10 @@ OpenSPP API V2 provides five core resources:
 | Program           | Social protection program | `/Program`           |
 | ProgramMembership | Enrollment in a program   | `/ProgramMembership` |
 | Consent           | Data sharing consent      | `/Consent/{id}` only |
+
+```{note}
+**Program** and **ProgramMembership** are served by the `spp_api_v2_programs` companion module, which auto-installs when both `spp_api_v2` and `spp_programs` are present. An API deployment without the Programs stack exposes only Individual, Group, and Consent.
+```
 
 ```{note}
 Consent records do not follow the standard CRUD pattern. They are only readable individually (`GET /Consent/{id}`), revocable (`POST /Consent/{id}/$revoke`), and deletable (`DELETE /Consent/{id}`). There is no list endpoint or POST `/Consent` create operation — consents are created through separate grant flows. See {doc}`consent` for details.

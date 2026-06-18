@@ -208,6 +208,10 @@ Represent coded values with their vocabulary:
 | ProgramMembership | Enrollment in a program | `/ProgramMembership` |
 | Consent | Data sharing consent | `/Consent` |
 
+```{note}
+**Program** and **ProgramMembership** ship in the `spp_api_v2_programs` companion module (auto-installs with `spp_api_v2` + `spp_programs`), not the base `spp_api_v2` module. They are part of the standard API surface whenever the Programs stack is installed.
+```
+
 See {doc}`resources` for complete documentation.
 
 ### Extension Resources
@@ -216,6 +220,7 @@ Additional resources are available through extension modules:
 
 | Resource | Module | Description |
 |----------|--------|-------------|
+| Program / ProgramMembership | `spp_api_v2_programs` | Programs and beneficiary enrollment |
 | Entitlement | `spp_api_v2_entitlements` | Cash and in-kind entitlements |
 | Cycle | `spp_api_v2_cycles` | Program cycle management |
 | Product | `spp_api_v2_products` | Product catalog |

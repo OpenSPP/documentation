@@ -80,8 +80,10 @@ users without that group will not see that field’s values in the log display.
 
 ## Default rules (what you may see out of the box)
 
-The `spp_audit` module ships with a set of default rules to cover common OpenSPP flows (for example registry records,
-programs/cycles, and service points). Implementations should review these defaults and adjust them to local requirements.
+The `spp_audit` module ships default rules for core flows — registry records (`res.partner`) and service points. Program
+and cycle audit rules ship separately in the `spp_audit_programs` companion module, which auto-installs when both
+`spp_audit` and `spp_programs` are present. Implementations should review these defaults and adjust them to local
+requirements.
 
 ## Operational considerations
 

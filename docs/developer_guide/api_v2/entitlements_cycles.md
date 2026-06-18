@@ -19,6 +19,10 @@ These two extension modules expose program distribution data:
 
 Both modules provide read-only search access. Entitlements and cycles are created through the OpenSPP admin interface or program workflows, not via the API.
 
+```{note}
+Entitlement and cycle records reference **Program** resources, which are served by the `spp_api_v2_programs` companion module (auto-installs with `spp_api_v2` + `spp_programs`). Install it to resolve those `Program/...` references over the API.
+```
+
 ## Prerequisites
 
 - Install `spp_api_v2_entitlements` and/or `spp_api_v2_cycles` modules
