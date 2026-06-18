@@ -40,13 +40,13 @@ Eight named farmer personas cover realistic agricultural scenarios, plus three e
 | Name | Story |
 |------|-------|
 | Maria Santos | 2ha rice farmer; eligible for Input Subsidy (smallholder with productive land) |
-| Juan Dela Cruz | 3ha mixed farmer with crops and livestock; eligible for Input Subsidy and Equipment Grant |
+| Juan Dela Cruz | 3ha mixed farmer with crops and livestock; eligible for Input Subsidy and Livestock Support |
 | Rosa Garcia | Female-headed livestock farm with 20 goats; eligible for Livestock Support |
 | Amir Mangudadatu | 4ha drought-affected farm with 1ha idle land; eligible for Climate Resilience |
 | Sofia Martinez | Female smallholder transitioning to organic farming; 2ha of vegetables and maize |
 | Ramon dela Cruz | 0.5ha tilapia fishpond on leased land; eligible for Aquaculture Support |
 | Sittie Pangandaman | 1.5ha crop farm, experienced farmer (12 years); eligible for Input Subsidy and Equipment Grant |
-| Danilo Villanueva | 5ha mixed commercial farm at smallholder threshold; eligibility depends on threshold configuration |
+| Danilo Villanueva | 5ha mixed farm (3ha crops + 2ha livestock, 15 cattle + 30 goats) at the smallholder boundary; enrolled in Livestock Support |
 
 **Edge cases:**
 
@@ -65,12 +65,20 @@ Eight named farmer personas cover realistic agricultural scenarios, plus three e
 
 ## Demo users
 
-Two users are pre-configured for testing change request approval workflows:
+Eight user accounts are pre-configured. All passwords are `demo` unless noted.
 
-| Role | Username | Purpose |
-|------|----------|---------|
-| CR Local Validator | demo_cr_local_validator | Reviews change requests at the local level |
-| CR HQ Validator | demo_cr_hq_validator | Reviews and approves change requests at HQ level |
+| Login | Password | Role(s) | Used for |
+|-------|----------|---------|----------|
+| `admin` | `admin` | System Administrator | Full access — any scenario |
+| `manager` | `demo` | Farm Manager + CR Requestor | Program lifecycle, CR submission, dashboards |
+| `officer` | `demo` | Farm User + CR Requestor | Farm data entry, CR submission |
+| `supervisor` | `demo` | Farm Manager | Program manager view, approvals |
+| `viewer` | `demo` | Farm User | Read-only walkthroughs |
+| `program_manager` | `demo` | Program Manager + Farm User | Cycle and entitlement approval (Scenario 9) |
+| `cr_local_validator` | `demo` | CR Local Validator (Tier 1) | Local CR approval and revision-request scenarios |
+| `cr_hq_validator` | `demo` | CR HQ Validator (Tier 2) | HQ-tier CR approval scenarios |
+
+> Use `program_manager` for the cycle and entitlement approval walkthrough. This account holds the Program Manager role that the demo's approval definitions are assigned to, and carries queue-job manager rights required when approving a cycle.
 
 ## Change request types
 
@@ -78,8 +86,8 @@ Two users are pre-configured for testing change request approval workflows:
 |---------|-------------|
 | Update Farm Details | Modify core farm information |
 | Manage Farm Activity | Add, update, or remove crop and livestock activities |
-| Manage Farm Assets | Record or update machinery and equipment |
-| Manage Land Parcels | Add or modify land parcel records |
+| Manage Farm Asset | Record or update machinery and equipment |
+| Manage Land Parcels | Add or modify land parcel records (CR type is wired in the module but demo data is not seeded — no example requests exist in the demo install) |
 
 ## Geographic data
 
