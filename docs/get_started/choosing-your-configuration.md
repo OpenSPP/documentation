@@ -137,15 +137,15 @@ Most OpenSPP modules are additive — they extend core models without conflictin
 | `spp_disability_registry` | Extends `res.partner` non-destructively |
 | `spp_drims` | Operates independently on its own models |
 | `spp_gis` / `spp_area` | Geographic layer shared by all modules |
-| `spp_audit` | Transparent audit logging, no functional conflicts; program/cycle audit rules add automatically via `spp_audit_programs` when `spp_programs` is installed |
+| `spp_audit` | Transparent audit logging, no functional conflicts; program/cycle audit rules add automatically via `spp_audit_programs` when both `spp_audit` and `spp_programs` are present |
 | `spp_grm` | Standalone grievance system, linkable to registry |
 | `spp_case_base` | Case management layer independent of program modules |
 | `spp_scoring` | Scoring engine usable alongside any registry base |
 | `spp_approval` | Approval workflow mixin used across multiple modules |
 | `spp_vocabulary` | Shared code list system, no conflicts |
 | `spp_encryption` | Field-level encryption applicable to any base |
-| `spp_studio` | No-code customization layer, no functional conflicts; program scoping adds automatically via `spp_studio_programs` when `spp_programs` is installed |
-| `spp_api_v2` | REST API layer compatible with all configurations; Program/ProgramMembership endpoints add automatically via `spp_api_v2_programs` when `spp_programs` is installed |
+| `spp_studio` | No-code customization layer, no functional conflicts; program scoping adds automatically via `spp_studio_programs` when both `spp_studio` and `spp_programs` are present |
+| `spp_api_v2` | REST API layer compatible with all configurations; Program/ProgramMembership endpoints add automatically via `spp_api_v2_programs` when both `spp_api_v2` and `spp_programs` are present |
 
 **Mutually exclusive — install only one:**
 - `spp_starter_sp_mis`

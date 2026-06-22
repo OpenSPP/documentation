@@ -45,12 +45,14 @@ All resources follow consistent REST patterns:
 
 | Operation        | HTTP Method | Endpoint                      | Supported Resources                  |
 | ---------------- | ----------- | ----------------------------- | ------------------------------------ |
-| Read             | GET         | `/{Resource}/{identifier}`    | Individual, Group, Program, ProgramMembership |
-| Search           | GET         | `/{Resource}?parameter=value` | Individual, Group, Program, ProgramMembership |
-| Create           | POST        | `/{Resource}`                 | Individual, Group, ProgramMembership |
-| Update (full)    | PUT         | `/{Resource}/{identifier}`    | Individual, Group, ProgramMembership |
+| Read             | GET         | `/{Resource}/{identifier}`    | Individual, Group, Program†, ProgramMembership† |
+| Search           | GET         | `/{Resource}?parameter=value` | Individual, Group, Program†, ProgramMembership† |
+| Create           | POST        | `/{Resource}`                 | Individual, Group, ProgramMembership† |
+| Update (full)    | PUT         | `/{Resource}/{identifier}`    | Individual, Group, ProgramMembership† |
 | Update (partial) | PATCH       | `/{Resource}/{identifier}`    | Individual, Group                    |
 | Delete           | DELETE      | `/{Resource}/{identifier}`    | Consent only                         |
+
+† Requires the `spp_api_v2_programs` companion module (auto-installed when both `spp_api_v2` and `spp_programs` are present).
 
 ```{note}
 PUT replaces the entire resource — you must send all fields. PATCH uses [JSON Merge Patch (RFC 7396)](https://datatracker.ietf.org/doc/html/rfc7396) — only send the fields you want to change. Both support optimistic locking via the `If-Match` header.
