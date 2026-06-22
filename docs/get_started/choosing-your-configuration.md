@@ -144,6 +144,7 @@ Most OpenSPP modules are additive — they extend core models without conflictin
 | `spp_approval` | Approval workflow mixin used across multiple modules |
 | `spp_vocabulary` | Shared code list system, no conflicts |
 | `spp_encryption` | Field-level encryption applicable to any base |
+| `spp_studio` | No-code customization layer, no functional conflicts; program scoping adds automatically via `spp_studio_programs` when `spp_programs` is installed |
 | `spp_api_v2` | REST API layer compatible with all configurations; Program/ProgramMembership endpoints add automatically via `spp_api_v2_programs` when `spp_programs` is installed |
 
 **Mutually exclusive — install only one:**

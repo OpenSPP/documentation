@@ -5,7 +5,7 @@ openspp:
 
 # Modules included
 
-The OpenSPP Farmer Registry product includes the following 37 modules. Together they provide the foundational capabilities for managing agricultural data alongside social protection program delivery.
+The OpenSPP Farmer Registry product includes the following 38 modules. Together they provide the foundational capabilities for managing agricultural data alongside social protection program delivery.
 
 - **{doc}`OpenSPP Registry </reference/modules/spp_registry>`**: Consolidated registry management for individuals, groups, and membership.
 - **{doc}`OpenSPP Registry Search Portal </reference/modules/spp_registry_search>`**: Search-first registry interface for privacy protection.
