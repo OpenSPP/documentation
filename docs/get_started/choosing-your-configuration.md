@@ -137,14 +137,15 @@ Most OpenSPP modules are additive — they extend core models without conflictin
 | `spp_disability_registry` | Extends `res.partner` non-destructively |
 | `spp_drims` | Operates independently on its own models |
 | `spp_gis` / `spp_area` | Geographic layer shared by all modules |
-| `spp_audit` | Transparent audit logging, no functional conflicts |
+| `spp_audit` | Transparent audit logging, no functional conflicts; program/cycle audit rules add automatically via `spp_audit_programs` when both `spp_audit` and `spp_programs` are present |
 | `spp_grm` | Standalone grievance system, linkable to registry |
 | `spp_case_base` | Case management layer independent of program modules |
 | `spp_scoring` | Scoring engine usable alongside any registry base |
 | `spp_approval` | Approval workflow mixin used across multiple modules |
 | `spp_vocabulary` | Shared code list system, no conflicts |
 | `spp_encryption` | Field-level encryption applicable to any base |
-| `spp_api_v2` | REST API layer compatible with all configurations |
+| `spp_studio` | No-code customization layer, no functional conflicts; program scoping adds automatically via `spp_studio_programs` when both `spp_studio` and `spp_programs` are present |
+| `spp_api_v2` | REST API layer compatible with all configurations; Program/ProgramMembership endpoints add automatically via `spp_api_v2_programs` when both `spp_api_v2` and `spp_programs` are present |
 
 **Mutually exclusive — install only one:**
 - `spp_starter_sp_mis`
@@ -160,6 +161,19 @@ Most OpenSPP modules are additive — they extend core models without conflictin
 | `spp_farmer_registry_cr` | `spp_starter_farmer_registry` |
 | `spp_hazard_programs` | `spp_programs` and `spp_hazard` |
 | `spp_drims_sl` | `spp_drims` (country-specific configuration) |
+
+**Auto-installing program companions:**
+
+Several base modules ship a thin companion that carries their program-specific surface so the base can be installed without the Programs stack. You never add these to your module list manually — each installs (and uninstalls) automatically with its base + `spp_programs` pairing.
+
+| Companion | Auto-installs when present |
+|-----------|---------------------------|
+| `spp_api_v2_programs` | `spp_api_v2` + `spp_programs` |
+| `spp_audit_programs` | `spp_audit` + `spp_programs` |
+| `spp_source_tracking_programs` | `spp_source_tracking` + `spp_programs` |
+| `spp_studio_programs` | `spp_studio` + `spp_programs` |
+| `spp_studio_change_requests_programs` | `spp_studio_change_requests` + `spp_studio_programs` |
+| `spp_studio_events_programs` | `spp_studio_events` + `spp_studio_programs` |
 
 ## Step 5: Assemble your module list
 

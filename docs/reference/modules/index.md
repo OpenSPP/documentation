@@ -38,6 +38,7 @@ RESTful API modules built on FastAPI for external system integration.
 | [API V2 - Entitlements](spp_api_v2_entitlements) | API endpoints for entitlement management. |
 | [API V2 - GIS](spp_api_v2_gis) | OGC API - Features compliant GIS endpoints for QGIS and GovStack. |
 | [API V2 - Products](spp_api_v2_products) | API endpoints for product catalog management. |
+| [API V2 - Programs](spp_api_v2_programs) | API endpoints for programs and program memberships. |
 | [API V2 - Service Points](spp_api_v2_service_points) | API endpoints for service point management. |
 | [API V2 - Simulation](spp_api_v2_simulation) | REST API for simulation scenario management. |
 | [API V2 - Vocabulary](spp_api_v2_vocabulary) | API endpoints for vocabulary/lookup data. |
@@ -167,6 +168,7 @@ Modules for external system integration and data exchange.
 | [Import Match](spp_import_match) | Intelligent import matching to prevent duplication during bulk data onboarding. |
 | [Service Points](spp_service_points) | Manage physical or virtual service delivery locations with area linking. |
 | [Source Tracking](spp_source_tracking) | Track data provenance and source information for registrants. |
+| [Source Tracking - Programs](spp_source_tracking_programs) | Source tracking for program memberships. |
 | [Vocabulary](spp_vocabulary) | Centralized vocabulary and lookup value management. |
 
 ### Monitoring Modules
@@ -178,6 +180,7 @@ Modules for audit, compliance, and approval workflows.
 | [Alerts](spp_alerts) | Generic alert engine for threshold monitoring, expiry tracking, and deadlines. |
 | [Approval](spp_approval) | Standardized approval workflows with multi-tier sequencing and CEL rules. |
 | [Audit](spp_audit) | Immutable change history with multiple backends (database, file, syslog, HTTP). |
+| [Audit - Programs](spp_audit_programs) | Audit rules for program and cycle models. |
 
 ### Registry Extensions
 
@@ -224,7 +227,10 @@ No-code configuration tools for implementers.
 | [Studio](spp_studio) | No-code customization interface for OpenSPP. |
 | [Studio - API V2](spp_studio_api_v2) | Bridge Studio custom fields and variables with API v2. |
 | [Studio - Change Requests](spp_studio_change_requests) | No-code change request type builder. |
+| [Studio - Change Requests (Programs)](spp_studio_change_requests_programs) | Program scoping for Studio change request types. |
 | [Studio - Events](spp_studio_events) | No-code event type designer for data collection. |
+| [Studio - Events (Programs)](spp_studio_events_programs) | Program scoping for Studio event types. |
+| [Studio - Programs](spp_studio_programs) | Program scoping for Studio configurations (fields and logic variables). |
 
 ### Utility Modules
 

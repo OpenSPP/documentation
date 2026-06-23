@@ -27,7 +27,6 @@ This module is designed to:
 | `base` | Odoo core framework |
 | `spp_security` | Central security definitions for OpenSPP modules |
 | `spp_registry` | Consolidated registry management for individuals, groups,... |
-| `spp_programs` | Manage cash and in-kind entitlements, integrate with inve... |
 
 ## Key Features
 
@@ -171,3 +170,10 @@ Source tracking supports:
 - Data lineage documentation
 - Collection method verification
 - System integration auditing
+
+```{toctree}
+:maxdepth: 1
+:hidden:
+
+spp_source_tracking_programs
+```

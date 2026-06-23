@@ -18,15 +18,22 @@ The core resource types exposed by API V2 (Individual, Group, Program, ProgramMe
 
 ## Available Resources
 
-OpenSPP API V2 provides five core resources:
+The base `spp_api_v2` module exposes three resources:
+
+| Resource   | Description              | Endpoint             |
+| ---------- | ------------------------ | -------------------- |
+| Individual | Person in the registry   | `/Individual`        |
+| Group      | Household or other group | `/Group`             |
+| Consent    | Data sharing consent     | `/Consent/{id}` only |
+
+### Program resources (companion module)
+
+**Program** and **ProgramMembership** are served by the `spp_api_v2_programs` companion module, which auto-installs when both `spp_api_v2` and `spp_programs` are present. They are not exposed on an API deployment without the Programs stack.
 
 | Resource          | Description               | Endpoint             |
 | ----------------- | ------------------------- | -------------------- |
-| Individual        | Person in the registry    | `/Individual`        |
-| Group             | Household or other group  | `/Group`             |
 | Program           | Social protection program | `/Program`           |
 | ProgramMembership | Enrollment in a program   | `/ProgramMembership` |
-| Consent           | Data sharing consent      | `/Consent/{id}` only |
 
 ```{note}
 Consent records do not follow the standard CRUD pattern. They are only readable individually (`GET /Consent/{id}`), revocable (`POST /Consent/{id}/$revoke`), and deletable (`DELETE /Consent/{id}`). There is no list endpoint or POST `/Consent` create operation — consents are created through separate grant flows. See {doc}`consent` for details.
@@ -38,12 +45,14 @@ All resources follow consistent REST patterns:
 
 | Operation        | HTTP Method | Endpoint                      | Supported Resources                  |
 | ---------------- | ----------- | ----------------------------- | ------------------------------------ |
-| Read             | GET         | `/{Resource}/{identifier}`    | Individual, Group, Program, ProgramMembership |
-| Search           | GET         | `/{Resource}?parameter=value` | Individual, Group, Program, ProgramMembership |
-| Create           | POST        | `/{Resource}`                 | Individual, Group, ProgramMembership |
-| Update (full)    | PUT         | `/{Resource}/{identifier}`    | Individual, Group, ProgramMembership |
+| Read             | GET         | `/{Resource}/{identifier}`    | Individual, Group, Program†, ProgramMembership† |
+| Search           | GET         | `/{Resource}?parameter=value` | Individual, Group, Program†, ProgramMembership† |
+| Create           | POST        | `/{Resource}`                 | Individual, Group, ProgramMembership† |
+| Update (full)    | PUT         | `/{Resource}/{identifier}`    | Individual, Group, ProgramMembership† |
 | Update (partial) | PATCH       | `/{Resource}/{identifier}`    | Individual, Group                    |
 | Delete           | DELETE      | `/{Resource}/{identifier}`    | Consent only                         |
+
+† Requires the `spp_api_v2_programs` companion module (auto-installed when both `spp_api_v2` and `spp_programs` are present).
 
 ```{note}
 PUT replaces the entire resource — you must send all fields. PATCH uses [JSON Merge Patch (RFC 7396)](https://datatracker.ietf.org/doc/html/rfc7396) — only send the fields you want to change. Both support optimistic locking via the `If-Match` header.
