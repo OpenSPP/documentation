@@ -65,7 +65,7 @@ Eight named farmer personas cover realistic agricultural scenarios, plus three e
 
 ## Demo users
 
-Eight user accounts are pre-configured. All passwords are `demo` unless noted.
+Nine user accounts are pre-configured. All passwords are `demo` unless noted.
 
 | Login | Password | Role(s) | Used for |
 |-------|----------|---------|----------|
@@ -74,11 +74,12 @@ Eight user accounts are pre-configured. All passwords are `demo` unless noted.
 | `officer` | `demo` | Farm User + CR Requestor | Farm data entry, CR submission |
 | `supervisor` | `demo` | Farm Manager | Program manager view, approvals |
 | `viewer` | `demo` | Farm User | Read-only walkthroughs |
-| `program_manager` | `demo` | Program Manager + Farm User | Cycle and entitlement approval (Scenario 9) |
+| `program_manager` | `demo` | Program Manager + Farm User | Entitlement approval walkthroughs |
+| `cycle_approver` | `demo` | Program Cycle Approver + Farm User | Cycle approval walkthroughs |
 | `cr_local_validator` | `demo` | CR Local Validator (Tier 1) | Local CR approval and revision-request scenarios |
 | `cr_hq_validator` | `demo` | CR HQ Validator (Tier 2) | HQ-tier CR approval scenarios |
 
-> Use `program_manager` for the cycle and entitlement approval walkthrough. This account holds the Program Manager role that the demo's approval definitions are assigned to, and carries queue-job manager rights required when approving a cycle.
+> Use `cycle_approver` for cycle approval walkthroughs. The "Approve Cycle" button is gated to the Program Cycle Approver role — a Program Manager is intentionally not a Cycle Approver and cannot approve cycles. Use `program_manager` for entitlement approval walkthroughs.
 
 ## Change request types
 

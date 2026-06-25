@@ -64,4 +64,5 @@ The OpenSPP Farmer Registry is an open-source product, built and supported by th
 modules_included
 user_guides
 config_guides
+demo_module
 ```
