@@ -295,6 +295,7 @@ spp_drims
 spp_encryption
 spp_event_data
 spp_farmer_registry
+spp_farmer_registry_demo
 spp_gis
 spp_graduation
 spp_grm
