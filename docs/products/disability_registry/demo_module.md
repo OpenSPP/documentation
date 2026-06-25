@@ -1,19 +1,22 @@
 ---
-orphan: true
 openspp:
   doc_status: draft
 ---
 
 # Demo module
 
-:::{note}
-A dedicated demo module for the OpenSPP Disability Registry is not yet available. The following items are planned:
+The OpenSPP Disability Registry ships with built-in demo data that loads automatically when the module is installed on a demo database. It includes sample registrants, WG-SS assessments at different approval stages, and assistive device records.
 
-- **Demo assessments** — Pre-loaded WG-SS and CFM assessments at various approval stages
-- **Demo registrants** — Sample individuals with disability status, impairment classifications, and assistive device records
-- **Demo eligibility rules** — Example programs using disability CEL functions for targeting
-:::
+## What's included
+
+- **3 registrant stories** — An adult with an approved multi-impairment assessment, a child with a pending assessment answered by a proxy, and an adult with a draft assessment resulting in no disability
+- **3 assessments** — Covering all three workflow states: draft, pending, and approved
+- **3 assistive devices** — Covering all three device statuses: needed, requested, and provided
+
+## Try the demo
+
+See {doc}`/get_started/try_our_products/try_disability_registry/index` for a step-by-step guide to loading the demo data and exploring key workflows.
 
 ## Installing the module
 
-The Disability Registry is installed as a standard Odoo module (`spp_disability_registry`). Read more about {doc}`module installation </get_started/modules/index>`.
+Install the **OpenSPP Disability Registry Demo** module (`spp_disability_registry_demo`) from the Apps menu, then use the **Settings → Demo Data → Load Disability Registry Demo** wizard to generate the sample data. Read more about {doc}`module installation </get_started/modules/index>`.

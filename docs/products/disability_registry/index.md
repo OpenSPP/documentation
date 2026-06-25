@@ -56,9 +56,12 @@ The **OpenSPP Disability Registry** provides structured disability assessment an
 
 **Program implementers** needing disability-aware eligibility and entitlement rules
 
-## Next step
+## Next steps
 
-The OpenSPP Disability Registry is an open-source product, built and supported by the OpenSPP community. Read more about {doc}`installing OpenSPP Disability Registry </get_started/modules/disability_installation>`.
+The OpenSPP Disability Registry is an open-source product, built and supported by the OpenSPP community.
+
+- {doc}`Try the demo </get_started/try_our_products/try_disability_registry/index>` — Explore pre-loaded assessments, impairment records, and device management without any setup
+- Read more about {doc}`installing OpenSPP Disability Registry </get_started/modules/disability_installation>`
 
 ```{toctree}
 :maxdepth: 1
@@ -68,4 +71,5 @@ The OpenSPP Disability Registry is an open-source product, built and supported b
 modules_included
 user_guides
 config_guides
+demo_module
 ```
