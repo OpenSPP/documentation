@@ -20,6 +20,7 @@ Welcome to the OpenSPP User Guide. This guide helps government employees and pro
 - **[DRIMS](drims/index.md)** - Managing disaster relief donations, requests, dispatches, and inventory
 - **[Grievances](grievances/index.md)** - Logging, investigating, and resolving beneficiary complaints
 - **[GIS](gis/index.md)** - Viewing registry data on maps and generating geographic reports
+- **[Hazards and incidents](hazards/index.md)** - Recording disaster events, assessing impacts, and coordinating emergency response
 - **[Reference](reference/index.md)** - Quick reference material and glossary
 
 ```{toctree}
@@ -36,5 +37,6 @@ approvals/index
 drims/index
 grievances/index
 gis/index
+hazards/index
 reference/index
 ```

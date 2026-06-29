@@ -28,21 +28,26 @@ Learn how to read the DRIMS dashboard to understand the current status of your d
 
 - You need **DRIMS Viewer** or higher access to view the dashboard
 - You need **DRIMS Warehouse Staff** or **Manager** access to acknowledge and resolve alerts
+- At least one **hazard incident** must exist — every DRIMS operation (donation, request, dispatch) is linked to an incident, so the dashboard will be empty until one is created. Incidents are created by an implementer or administrator. See {doc}`/user_guide/hazards/index` for how to record and manage incidents.
 
 ## The Incident Dashboard
 
 **Where to find it:** Click **DRIMS** in the sidebar, then select **Dashboard**.
 
-<!-- ![Click DRIMS in the sidebar, then select Dashboard](/_images/en-us/user_guide/drims/dashboard/01-click-drims-sidebar.png) -->
+![Click DRIMS in the sidebar, then select Dashboard](/_images/en-us/user_guide/drims/dashboard/01-click-drims-sidebar.png)
 
-The dashboard displays each active incident as a card. Cards are organized by status (Active, Pending, Closed) and show the most important information about each disaster response operation.
+The dashboard displays each active incident as a card. Cards are organized by status (Alert, Active, Recovery, Closed) and show the most important information about each disaster response operation.
 
-<!-- ![DRIMS Dashboard showing incident cards with KPIs for each disaster](/_images/en-us/user_guide/drims/dashboard/02-incident-cards-kpis.png) -->
+```{note}
+New incidents default to **Active** status. The **Alert** status is for pre-disaster preparedness (e.g., a typhoon is approaching but hasn't hit yet) and can only be set by an administrator. The typical flow is: Active → Recovery → Closed.
+```
+
+![DRIMS Dashboard showing incident cards with KPIs for each disaster](/_images/en-us/user_guide/drims/dashboard/02-incident-cards-kpis.png)
 
 Each incident card displays:
 
 - **Incident name** - The disaster or emergency
-- **Status badge** - Current state (Active, Pending, Closed)
+- **Status badge** - Current state (Alert, Active, Recovery, Closed)
 - **KPI row** - Key metrics at a glance
 - **Alert indicators** - Warnings that need attention
 
@@ -57,79 +62,49 @@ Each incident card shows key performance indicators (KPIs) that help you underst
 |-----|---------------|---------|
 | **Donations** | Number of donations received and their total value | "5 donations, $25,000" |
 | **Requests** | Total requests and how many are pending approval | "12 requests, 3 pending" |
-| **Stock** | Current inventory value and number of different items | "$18,500 in stock, 45 items" |
-| **Distributed** | Value distributed and number of people helped (last 30 days) | "$15,000 distributed, 320 beneficiaries" |
-| **Alerts** | Number of active alerts and critical alerts | "2 alerts, 1 critical" |
+| **Stock** | Items currently on hand across warehouses assigned to this incident (not yet dispatched). Drops to zero once goods are sent out — does not reflect total received. | "176 units, 4 products" |
+| **Distributed** | Total value of goods dispatched (unit price × quantity), not a cash payment. Shows zero if products have no unit price set. | "$15,000 distributed" |
+| **Beneficiaries** | Number of beneficiaries served in the last 30 days from completed distributions | "234 beneficiaries (30d)" |
+| **Returns** | Number of processed return dispatches | "1 return processed" |
 
-### Understanding the Icons
+```{note}
+KPI numbers (stock, distributed value, beneficiaries) are cached for performance and may not reflect the latest changes immediately. If a number looks wrong — for example, stock shows zero when you know items exist — first check that the warehouse is linked to the incident under **Active Response** (DRIMS → Inventory → Warehouses). If the warehouse is correctly linked but the number is still wrong, contact your system administrator to refresh the cache.
+```
 
-- **Orange border** - You have pending requests waiting for review
-- **Red border** - You have critical alerts requiring immediate action
-- **Orange badge** - Active alerts need attention
-- **Gray text** - No stock currently available
+### Understanding the Badges
+
+- **Red badge** (⚠) - One or more critical priority alerts on this incident
+- **Orange badge** (🔔) - Active alerts present, none critical
+- **Orange "pending" indicator** on Requests - Requests waiting for approval
 
 ## Warehouse Health Indicators
 
-Each warehouse has a health status that tells you if it needs attention.
+Warehouses assigned to an incident display a health badge showing whether they need attention. For configuration details see {doc}`/config_guide/drims/warehouses`.
 
-
-### Health Status Colors
-
-| Status | Color | What It Means | What to Do |
-|--------|-------|---------------|------------|
-| **Critical** | Red | 3 or more active alerts, OR less than 10% stock capacity | Check alerts immediately, restock if needed |
-| **Warning** | Orange | 1-2 active alerts, OR less than 30% stock capacity | Review alerts, plan restocking soon |
-| **Good** | Green | No active alerts, adequate stock levels | No action needed |
+| Status | Color | What It Means |
+|--------|-------|---------------|
+| **Critical** | Red | 3 or more active alerts |
+| **Warning** | Orange | 1–2 active alerts |
+| **Good** | Green | No active alerts |
 
 **Where to find it:** Click **DRIMS** in the sidebar, then **Inventory → Warehouses**.
 
-<!-- ![Click Inventory then Warehouses to check warehouse health](/_images/en-us/user_guide/drims/dashboard/03-click-inventory-warehouses.png) -->
+![Click Inventory then Warehouses to check warehouse health](/_images/en-us/user_guide/drims/dashboard/03-click-inventory-warehouses.png)
 
-<!-- ![DRIMS Warehouses list showing health status indicators for each warehouse](/_images/en-us/user_guide/drims/dashboard/04-warehouse-health-status.png) -->
+![DRIMS Warehouses list showing health status indicators for each warehouse](/_images/en-us/user_guide/drims/dashboard/04-warehouse-health-status.png)
 
 ## Understanding Alerts
 
-DRIMS automatically monitors your operations and creates alerts when something needs your attention. There are three types of alerts:
+DRIMS automatically monitors your operations and creates alerts when something needs attention. For full configuration and threshold details see {doc}`/config_guide/drims/alerts`.
 
-### Alert Types
+| Alert Type | What It Means |
+|------------|---------------|
+| **Low Stock** | Available stock has dropped below 50% of pending request quantities |
+| **SLA Warning** | A request is approaching its due date (within 2 days) |
+| **SLA Breach** | A request is past its due date and has not been delivered |
+| **Expiry Warning** | Items in a DRIMS warehouse are approaching their expiration date |
 
-| Alert Type | When It Appears | Priority | Example |
-|------------|-----------------|----------|---------|
-| **Low Stock** | Available stock is less than 50% of what pending requests need | Medium or High | "Rice stock (50 bags) below 50% of pending requests (120 bags)" |
-| **SLA Breach** | A request is past its due date and hasn't been delivered | Critical or High | "Request #REQ-0045 is 3 days overdue" |
-| **SLA Warning** | A request is due within 2 days | Medium or High | "Request #REQ-0052 due tomorrow" |
-| **Expiry Warning** | Items in stock will expire soon (within 30 days) | Medium, High, or Critical | "Medical supplies lot #LOT-789 expires in 5 days" |
-
-### Alert Priorities
-
-| Priority | Color | When to Act |
-|----------|-------|-------------|
-| **Critical** | Red | Immediately - requires urgent action |
-| **High** | Orange | Within hours - needs prompt attention |
-| **Medium** | Yellow | Within 1-2 days - plan to address soon |
-| **Low** | Blue | Informational - review when convenient |
-
-### What Triggers Each Alert
-
-**Low Stock Alerts:**
-- Created every 4 hours
-- Triggers when available quantity is less than 50% of pending request needs
-- Priority is **High** if zero stock, **Medium** if some stock remains
-
-**SLA Breach Alerts:**
-- Created every 2 hours
-- Triggers when a request passes its due date without being delivered
-- Priority is **Critical** if more than 7 days overdue, **High** if 3-7 days, **Medium** if 1-3 days
-
-**SLA Warning Alerts:**
-- Created every 2 hours
-- Triggers when a request is due within 2 days
-- Priority is **High** if due today or tomorrow, **Medium** if due in 2 days
-
-**Expiry Warning Alerts:**
-- Created once daily
-- Triggers when items will expire within 30 days
-- Priority is **Critical** if expires within 7 days, **High** if within 14 days, **Medium** if within 30 days
+Alerts are assigned **Critical**, **High**, or **Medium** priority depending on how urgent the situation is. Check **DRIMS → Monitoring → Alerts** to see all active alerts filtered by priority, type, or warehouse.
 
 ## Acknowledging and Resolving Alerts
 
@@ -147,19 +122,15 @@ Acknowledge an alert when you've seen it and are taking action.
 
 **Steps:**
 
-1. Click **DRIMS** in the sidebar, then select **Operations → Alerts**
-
-<!-- ![Click Operations then Alerts to see active alerts](/_images/en-us/user_guide/drims/dashboard/05-click-operations-alerts.png) -->
-
-<!-- ![Alerts list showing all active alerts by priority and status](/_images/en-us/user_guide/drims/dashboard/06-alerts-list-priority-status.png) -->
+1. Click **DRIMS** in the sidebar, then select **Monitoring → Alerts**
 
 2. Click on the alert you want to acknowledge
 
-<!-- ![Click on an alert to see its details](/_images/en-us/user_guide/drims/dashboard/07-alert-detail-view.png) -->
+![Click on an alert to see its details](/_images/en-us/user_guide/drims/dashboard/05-alert-detail-view.png)
 
 3. Click the **Acknowledge** button at the top of the form
 
-<!-- ![Use Acknowledge and Resolve buttons to manage the alert status](/_images/en-us/user_guide/drims/dashboard/08-acknowledge-resolve-alert.png) -->
+![Use Acknowledge and Resolve buttons to manage the alert status](/_images/en-us/user_guide/drims/dashboard/06-acknowledge-resolve-alert.png)
 
 The alert badge changes to orange, showing others that someone is handling it.
 
@@ -193,12 +164,7 @@ You may not have the right permissions. Contact your DRIMS administrator and ask
 
 ### The KPI numbers look wrong
 
-KPIs are updated automatically, but some values are cached for performance:
-
-- **Donations, requests, stock items, beneficiaries** - Update in real time
-- **Stock value, distributed value** - Update every 15-30 minutes
-
-Wait a few minutes and refresh the page. If numbers still look wrong, contact your system administrator.
+KPIs are updated automatically, but stock, distributed value, and beneficiary counts are cached for performance and may lag behind recent changes. Wait a few minutes and refresh the page. If numbers still look wrong, check that the warehouse is linked to the incident — see the note in the KPI table above. If the issue persists, contact your system administrator.
 
 ### I resolved an alert but it came back
 
@@ -214,7 +180,7 @@ Pending requests are waiting for approval. They haven't been rejected, but they 
 
 ### Can I create alerts manually?
 
-Yes. Go to **DRIMS → Operations → Alerts** and click **New**. This is useful when you notice a problem that DRIMS didn't automatically detect.
+Yes. Go to **DRIMS → Monitoring → Alerts** and click **New**. This is useful when you notice a problem that DRIMS didn't automatically detect.
 
 ### How do I know which warehouse to restock?
 

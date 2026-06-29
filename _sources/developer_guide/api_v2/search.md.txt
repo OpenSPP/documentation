@@ -561,6 +561,10 @@ For name and text searches, results are sorted by relevance. The API returns the
 
 ## ProgramMembership Search
 
+```{note}
+Program and ProgramMembership search require the `spp_api_v2_programs` companion module, which auto-installs when both `spp_api_v2` and `spp_programs` are present. Without the Programs stack these endpoints are not exposed.
+```
+
 ```text
 # By beneficiary
 GET /api/v2/spp/ProgramMembership?beneficiary=Individual/urn:gov:ph:psa:national-id|PH-123

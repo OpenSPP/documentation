@@ -52,13 +52,13 @@ Before a warehouse can be used for disaster response operations, it must be enab
 
 1. Navigate to **DRIMS → Inventory → Warehouses**
 
-   ![DRIMS Warehouses list view](warehouses/nav_warehouses.png)
+   ![DRIMS Warehouses list view](/_images/en-us/config_guide/drims_config_guide/warehouses/nav_warehouses.png)
 
 2. Select an existing warehouse or create a new one using the **New** button
 
 3. In the warehouse form, check the **DRIMS Warehouse** checkbox
 
-   ![DRIMS Warehouse checkbox on the warehouse form](warehouses/enable_drims.png)
+   ![DRIMS Warehouse checkbox on the warehouse form](/_images/en-us/config_guide/drims_config_guide/warehouses/enable_drims.png)
 
 4. Configure the DRIMS-specific fields (see next section)
 
@@ -104,7 +104,7 @@ Warehouse–incident linkage is configured from the **warehouse** form. There is
 3. Under **Active Response**, set one or more incidents in the **Active Incidents** field
 4. Save the warehouse
 
-![DRIMS Configuration tab with Active Incidents](warehouses/incident_link.png)
+![DRIMS Configuration tab with Active Incidents](/_images/en-us/config_guide/drims_config_guide/warehouses/incident_link.png)
 
 ```{note}
 The **DRIMS Configuration** tab is only visible when the user belongs to **Storage Locations** (`stock.group_adv_location`) or **Multi-Warehouses** (`stock.group_stock_multi_warehouses`). Enable one in **Settings → Inventory** (or assign the group to the user) if the tab is missing.
@@ -138,20 +138,15 @@ For regions with concurrent disasters — one warehouse serves multiple active i
 
 ## Stock Health Indicators
 
-DRIMS automatically calculates warehouse health based on alerts:
+DRIMS automatically calculates warehouse health based on active alert count:
 
-| Health Status | Indicator | Meaning |
-|---------------|-----------|---------|
-| **Good** | Green | No critical alerts, adequate stock levels |
-| **Warning** | Yellow | Low stock alerts or items approaching expiry |
-| **Critical** | Red | Stock-outs, expired items, or SLA violations |
+| Health Status | Color | Condition |
+|---------------|-------|-----------|
+| **Good** | Green | No active alerts |
+| **Warning** | Orange | 1–2 active alerts |
+| **Critical** | Red | 3 or more active alerts |
 
-Health status is computed automatically based on:
-- Low stock alerts for essential items
-- Expiry warnings
-- Pending requests exceeding delivery deadlines
-
-You cannot set health status manually - it reflects the current alert state.
+You cannot set health status manually — it reflects the current alert state and updates automatically as alerts are created and resolved.
 
 ## Are You Stuck?
 

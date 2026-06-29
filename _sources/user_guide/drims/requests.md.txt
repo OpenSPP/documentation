@@ -6,218 +6,257 @@ openspp:
     - drims
 ---
 
-# Submit a Relief Request
+# Submit and manage relief requests
 
 ```{admonition} Applies to: DRIMS
 :class: tip
 This feature is available in OpenSPP deployments with the DRIMS module installed.
 ```
 
-## What You'll Do
+This guide is for **field officers** who submit requests for relief supplies and **coordinators** who allocate and dispatch those requests.
 
-Create and submit a request for relief supplies to be delivered to a disaster-affected area.
+## What you'll do
 
-## Before You Start
+Create a request for relief supplies, submit it for approval, and track it through allocation and dispatch to delivery.
 
-- You need **Field Officer** or **Officer** access
-- Know which incident you're responding to
-- Know the destination area where supplies are needed
-- Have information about what items are needed and how many people are affected
-- An implementer must configure approval workflows before requests can be routed for approval. See {doc}`/config_guide/approval_workflows/overview`.
+## Before you start
 
-## Steps
+- **Field officers** need **Field Officer** or **Officer** access to create requests
+- **Approvers** need the **DRIMS Approver** role
+- **Coordinators** need **DRIMS Coordinator** or **Manager** access to allocate and dispatch
+- A hazard incident must exist before you can submit a request — see {doc}`/user_guide/hazards/index`
+- Know which incident you're responding to and the destination area
+- An implementer must configure approval workflows before requests can be routed. See {doc}`/config_guide/approval_workflows/overview`
 
-### 1. Open Requests
+## Understanding request states
+
+A request moves through two parallel tracks:
+
+**Approval state** — tracks whether the request has been reviewed:
+
+| Approval state | Meaning |
+|----------------|---------|
+| **Draft** | Being written, not yet submitted |
+| **Pending** | Submitted, waiting for a reviewer to act |
+| **Revision** | Reviewer asked for changes |
+| **Approved** | Approved and ready for logistics |
+| **Rejected** | Declined |
+
+**Fulfillment state** — tracks logistics progress after approval:
+
+| Fulfillment state | Meaning |
+|-------------------|---------|
+| **Ready for Allocation** | Approved, waiting for a coordinator to assign warehouse stock |
+| **Ready for Dispatch** | Stock allocated, waiting for warehouse to ship |
+| **Dispatched** | All lines have been dispatched |
+| **Delivered** | Confirmed received at destination |
+
+Both states are shown in the requests list. Use the **Ready for Allocation** and **Ready for Dispatch** quick filters to find requests that need action.
+
+![Requests list showing Approval State and Fulfillment State columns with filter tabs](/_images/en-us/user_guide/drims/requests/01-requests-list-states.png)
+
+---
+
+## For field officers: submit a request
+
+### 1. Open requests
 
 Click **DRIMS** in the sidebar, then select **Requests**.
 
-<!-- ![Click DRIMS in the sidebar, then select Requests](/_images/en-us/user_guide/drims/requests/01-click-drims-requests.png) -->
+![DRIMS sidebar with Requests menu item highlighted](/_images/en-us/user_guide/drims/requests/02-open-drims-requests.png)
 
-<!-- ![Requests list showing all active requests](/_images/en-us/user_guide/drims/requests/02-requests-list.png) -->
+### 2. Create a new request
 
-### 2. Create New Request
+Click **New** in the top left.
 
-Click the **New** button in the top left.
+![New button in the requests list toolbar](/_images/en-us/user_guide/drims/requests/03-click-new-request.png)
 
-<!-- ![Click the New button to create a request](/_images/en-us/user_guide/drims/requests/03-click-new-request.png) -->
+### 3. Fill in the request details
 
-### 3. Select the Incident
+Complete the following fields:
 
-In the **Incident** field, click the dropdown and choose the disaster incident you're responding to.
+| Field | Instructions |
+|-------|--------------|
+| **Incident** | The disaster you're responding to (e.g., "Flood 2025 — Western Region") |
+| **Destination Area** | The geographic area where supplies are needed |
+| **Priority** | How urgent the request is — see [Priority levels](#priority-levels) below |
+| **Humanitarian Cluster** | Humanitarian cluster, if your organization uses them (optional) |
+| **Date needed** | When supplies must arrive — be realistic |
+| **Justification** | Why the supplies are needed; be specific about the situation and number of people affected |
+| **Affected population** | Number of people who will benefit |
 
-<!-- ![Select the disaster incident you are responding to](/_images/en-us/user_guide/drims/requests/04-select-incident.png) -->
+![Request form with incident, area, priority, and date fields filled in](/_images/en-us/user_guide/drims/requests/04-request-form-details.png)
 
-**What this means:** Every request must be linked to a disaster incident (like "Flood 2025" or "Earthquake North Region"). This helps track what supplies are for which emergency.
+### 4. Add requested items
 
-### 4. Choose Destination Area
-
-In the **Destination Area** field, select where the supplies need to be delivered.
-
-<!-- ![Choose the destination area and set the priority level](/_images/en-us/user_guide/drims/requests/05-choose-destination-area-priority.png) -->
-
-**What this means:** This is the specific geographic area (city, district, or zone) where {term}`Beneficiary`(ies) will receive the supplies.
-
-### 5. Set Priority Level
-
-In the **Priority** field, choose the urgency level. See [Understanding Priority Levels](#understanding-priority-levels) below for guidance.
-
-
-### 6. Select Cluster (Optional)
-
-If your organization uses humanitarian {term}`Cluster`s, select the relevant cluster (like Health, Shelter, Food Security).
-
-
-**What this means:** Clusters are coordination groups for different types of relief. This is optional but helps coordinate with other organizations.
-
-### 7. Set Date Needed
-
-Click the **Date Needed** calendar and select when supplies must arrive.
-
-<!-- ![Set the date supplies are needed and explain why](/_images/en-us/user_guide/drims/requests/06-set-date-needed.png) -->
-
-**Important:** Be realistic. The date you choose affects how your request is prioritized.
-
-### 8. Add Justification
-
-In the **Justification** field, explain why these supplies are needed. Be specific about the situation.
-
-
-**Example:** "Flash flooding has displaced 500 families. Temporary shelters need clean water and hygiene supplies. No clean water source available in evacuation center."
-
-### 9. Enter Affected Population
-
-In the **{term}`Affected Population`** field, enter the number of people who will benefit from these supplies.
-
-<!-- ![Enter the number of people who will receive supplies](/_images/en-us/user_guide/drims/requests/07-enter-affected-population.png) -->
-
-### 10. Add Requested Items
-
-In the **Requested Items** section, click **Add a line**.
-
-<!-- ![Click Add a line to request specific items](/_images/en-us/user_guide/drims/requests/08-add-requested-items.png) -->
+In the **Requested items** section, click **Add a line**.
 
 For each item:
-- **Product:** Select the item from the dropdown (like "Water Purification Tablets" or "Emergency Blankets")
-- **Quantity:** Enter how many units you need
-- **UoM:** Confirm the unit of measure (boxes, pieces, liters, etc.)
 
-<!-- ![Select the product and enter the quantity needed](/_images/en-us/user_guide/drims/requests/09-select-product-quantity.png) -->
+| Field | What to enter |
+|-------|---------------|
+| **Product** | The item needed (e.g., "Emergency Blankets", "Water Purification Tablets") |
+| **Quantity** | How many units are required |
+| **Unit** | Unit of measure (pieces, boxes, liters, etc.) |
 
-Repeat this step for each type of supply needed.
+![Requested items table with product, quantity, and unit columns](/_images/en-us/user_guide/drims/requests/05-add-requested-items.png)
 
-### 11. Mark as Life-Threatening (If Needed)
+Repeat for each type of supply needed.
 
-If this request involves a life-threatening situation, check the **Life-Threatening** box. See [Life-Threatening Requests](#life-threatening-requests) below.
+### 5. Mark as life-threatening (if needed)
 
+If this request involves a genuine life-threatening emergency, check the **Life-Threatening Emergency** box.
 
-**Important:** Only use this for genuine emergencies. It bypasses normal approval workflows.
+```{important}
+Only use this for genuine emergencies where delays could result in loss of life. Misuse delays critical help for people in real emergencies.
+```
 
-### 12. Save Draft
+### 6. Save and submit
 
-Click **Save** to save your request as a draft. You can come back and edit it later.
+Click **Save** to save as a draft. You can come back and edit it.
 
-<!-- ![Click Save to save your request as a draft](/_images/en-us/user_guide/drims/requests/10-save-request-draft.png) -->
+When ready, click **Submit for Approval**. The approval state changes to **Pending** and the request goes to your designated reviewer.
 
-### 13. Submit for Approval
+![Submit for Approval button in the request form header](/_images/en-us/user_guide/drims/requests/06-submit-for-approval.png)
 
-When your request is ready, click **Submit** to send it for approval.
+### What happens after you submit
 
-<!-- ![Click Submit to send the request for approval](/_images/en-us/user_guide/drims/requests/11-submit-for-approval.png) -->
+| Stage | Who acts | What they do |
+|-------|----------|--------------|
+| **Pending** | Approver | Reviews the request and approves, requests changes, or rejects |
+| **Revision** | You | Make the requested changes and click **Resubmit for Approval** |
+| **Ready for Allocation** | Coordinator | Allocates warehouse stock |
+| **Ready for Dispatch** | Warehouse staff | Picks and ships the items |
+| **Delivered** | Field officer | Confirms receipt |
 
-The request status will change to **Pending** and go to your supervisor or logistics coordinator for review.
+You can track the current state at any time by opening the request from the list.
 
-<!-- ![The request is now pending approval](/_images/en-us/user_guide/drims/requests/12-request-pending-approval.png) -->
+---
 
-## Understanding Priority Levels
+## For approvers: approve or return a request
 
-Choose the right {term}`Priority Level` for your request:
+### Find requests to review
 
-| Priority | When to Use | Expected Response Time |
-|----------|-------------|------------------------|
+Use the **Pending Approval** filter on the requests list to find requests waiting for your decision.
+
+![Requests list filtered to Pending Approval state](/_images/en-us/user_guide/drims/requests/07-pending-requests-filter.png)
+
+Open a request, review the details, and choose:
+
+| Button | What it does |
+|--------|--------------|
+| **Approve** | Moves to Ready for Allocation |
+| **Request Changes** | Returns to the requester with notes |
+| **Reject** | Declines the request (requires a reason) |
+
+![Approve, Request Changes, and Reject buttons on a pending request](/_images/en-us/user_guide/drims/requests/08-approver-action-buttons.png)
+
+---
+
+## For coordinators: allocate stock
+
+After a request is approved, a coordinator assigns warehouse stock to it.
+
+### 1. Find requests ready for allocation
+
+Use the **Ready for Allocation** quick filter on the requests list.
+
+![Ready for Allocation filter tab highlighted in the requests list](/_images/en-us/user_guide/drims/requests/09-ready-for-allocation-filter.png)
+
+### 2. Open the request and allocate
+
+Open the request. You'll see an **Approved** stamp in the top-right corner and the **Allocate Stock** button in the header.
+
+Before clicking **Allocate Stock**, scroll to the **Fulfillment** section and select a **Source Warehouse**. This field is required — the button will show a "Missing required fields" error if it's empty.
+
+![Fulfillment section with Source Warehouse field selected](/_images/en-us/user_guide/drims/requests/11-source-warehouse-field.png)
+
+Once a warehouse is selected, click **Allocate Stock** to open the allocation preview.
+
+![Allocate Stock button and Ready to Allocate banner on an approved request](/_images/en-us/user_guide/drims/requests/10-allocate-stock-button.png)
+
+The allocation wizard shows available stock for each requested item, including quantities already reserved by other requests.
+
+![Allocation preview wizard showing available stock per item](/_images/en-us/user_guide/drims/requests/12-allocation-preview-wizard.png)
+
+Review the available quantities. If stock is insufficient, you can allocate what's available and create a partial dispatch — see [Partial dispatches](#partial-dispatches) below.
+
+When ready, click **Confirm Allocation**.
+
+Once confirmed, the fulfillment state changes to **Ready for Dispatch** and the **Create Dispatch** button appears.
+
+### 3. Create a dispatch
+
+Click **Create Dispatch** to generate the dispatch picking for warehouse staff to process.
+
+![Create Dispatch button visible after allocation](/_images/en-us/user_guide/drims/requests/13-create-dispatch-button.png)
+
+See {doc}`dispatches` for how warehouse staff process the dispatch.
+
+### Partial dispatches
+
+You can dispatch a request in multiple shipments — for example, if not all items are currently in stock:
+
+1. Allocate the available stock and click **Create Dispatch** for what's available
+2. The request stays in **Ready for Dispatch** state while some quantity remains outstanding
+3. When new stock arrives (from a new donation), return to the request, click **Allocate Stock** again for the remaining balance, then click **Create Dispatch**
+
+![Request showing first dispatch created with remaining quantity still outstanding](/_images/en-us/user_guide/drims/requests/14-partial-dispatch-example.png)
+
+The request only advances to **Dispatched** once all lines have been fully dispatched.
+
+---
+
+## Priority levels
+
+Choose the right priority for your request:
+
+| Priority | When to use | Expected response |
+|----------|-------------|-------------------|
 | **Critical** | Immediate threat to life, injuries, imminent danger | Within hours |
-| **High** | Urgent needs, situation deteriorating rapidly | Within 24 hours |
-| **Medium** | Standard relief needs, stable situation | Within 48-72 hours |
-| **Low** | Non-urgent, supplementary supplies | When resources available |
+| **Urgent** | Pressing needs, situation deteriorating or people at risk | Within 24 hours |
+| **Routine** | Standard relief needs, stable situation, supplementary supplies | When resources allow |
 
-**Example - Critical:** "50 people trapped in flooded area, need rescue equipment and medical supplies now."
+**Example — Critical:** "50 people trapped in flooded area, rescue equipment and medical supplies needed immediately."
 
-**Example - High:** "Evacuation center has 200 people but no food. Supplies from yesterday running out."
+**Example — Urgent:** "Evacuation center has 200 people but food from yesterday is nearly exhausted."
 
-**Example - Medium:** "Community center housing 80 families needs additional blankets and cooking supplies."
+**Example — Routine:** "Community center housing 80 families needs additional blankets and cooking supplies."
 
-**Example - Low:** "Request recreational items for children in stable temporary housing."
+---
 
-## Life-Threatening Requests
-
-The **{term}`Life-Threatening`** flag is for genuine emergencies where delays could result in loss of life.
-
-**When to use it:**
-- Medical emergencies requiring immediate supplies
-- Rescue operations in progress
-- Situations with injured or critically ill people
-- Imminent danger to beneficiaries
-
-**What happens:**
-- Your request gets highest priority
-- Approval workflows are expedited
-- Notifications sent to emergency response team
-- May bypass normal approval thresholds
-
-**Important:** Misuse of this flag can delay genuine emergencies. Only check it when lives are truly at risk.
-
-## After You Submit
-
-Here's what happens to your request:
-
-1. **Pending Approval** - Your supervisor or logistics coordinator reviews the request
-2. **Approved** - If approved, warehouse staff begin preparing supplies
-3. **Allocated** - A warehouse is assigned to fulfill your request
-4. **Dispatched** - Supplies are picked, packed, and shipped
-5. **Delivered** - You'll confirm receipt when supplies arrive
-
-**You'll receive notifications** at each stage. Check the request status anytime by opening it from the Requests list.
-
-**If changes are requested:** Your supervisor may return the request with notes asking for more information or adjustments. You'll receive a notification. Open the request, make the changes, and click **Re-submit**.
-
-**If rejected:** You'll see the rejection reason. You can correct issues and reset the request to draft to try again, or create a new request.
-
-## Are You Stuck?
+## Are you stuck?
 
 **Can't find the incident in the dropdown?**
 
-The incident may not be created yet. Contact your supervisor or DRIMS administrator to create the incident record first.
-
-**Don't know which warehouse to request from?**
-
-You don't choose the warehouse. After approval, the logistics team assigns the best warehouse based on stock availability and location.
-
-**Can't find the product you need?**
-
-The product might not be in the system catalog. Contact your DRIMS administrator to add it, or choose the closest alternative and explain in the justification field.
+The incident may not exist yet. See {doc}`/user_guide/hazards/manage_hazards` to create one, or ask your supervisor or DRIMS administrator to create it.
 
 **Submit button is grayed out?**
 
-Make sure you've filled in all required fields:
-- Incident
-- Destination Area
-- Priority
-- Date Needed
-- At least one requested item
+All required fields must be filled: Incident, Destination Area, Priority, Date Needed, and at least one requested item.
 
 **Request stuck in Pending for days?**
 
-Contact your supervisor or logistics coordinator. They may not have seen the approval notification.
+Contact your approver — they may not have seen the notification. You can see who the approver is in the **Followers** section at the bottom of the form.
+
+**Request returned for revision?**
+
+Open the request, check the notes in the message thread at the bottom, make the requested changes, and click **Resubmit for Approval**.
+
+**Allocate Stock button is blocked with an error?**
+
+Make sure a **Source Warehouse** is selected on the request form. The allocation cannot proceed without a warehouse.
+
+**Nothing in stock to allocate?**
+
+You have two options: wait for a new donation to be stocked, or allocate a partial quantity now and create another dispatch later when stock arrives.
 
 **Need to cancel a submitted request?**
 
-You can't cancel a pending request yourself. Contact the person reviewing it and ask them to reject it, or create a new request with updated information.
+You can't cancel a pending request yourself. Ask your approver to reject it, or contact your DRIMS coordinator.
 
-**How do I track my request after submission?**
+## Next steps
 
-Open the request from the Requests list. The status field shows where it is in the process. You can also see notes from reviewers in the chatter (message section at the bottom).
-
-## Next Steps
-
-- {doc}`dispatches` - Learn how dispatches are processed for your requests
-- {doc}`returns` - Learn how to handle returned items
-- {doc}`dashboard` - Monitor the status of your requests
+- {doc}`dispatches` - How warehouse staff process the dispatch
+- {doc}`returns` - How to handle items returned from the field
+- {doc}`dashboard` - Monitor request status and alerts

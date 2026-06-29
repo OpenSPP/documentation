@@ -6,90 +6,58 @@ openspp:
     - drims
 ---
 
-
-# DRIMS User Guide
+# DRIMS user guide
 
 This guide is for **program staff, warehouse workers, and field officers** who use DRIMS to manage disaster relief supplies.
 
-## What Is DRIMS?
+## What is DRIMS?
 
-DRIMS (Disaster Response Inventory Management System) helps you track emergency supplies from when they arrive as donations all the way through to distribution to affected communities.
+DRIMS (Disaster Response Inventory Management System) helps you track emergency supplies from incoming donations through to delivery to affected communities.
 
-With DRIMS, you can:
+With DRIMS you can:
 
-- **Record donations** from organizations and track them into your warehouse
-- **Request relief supplies** for areas affected by disasters
-- **Prepare and dispatch** items from warehouses to distribution points
-- **Monitor stock levels** across all your warehouses in real-time
-- **Handle returns** when items come back damaged or unused
-- **Track everything** by specific disaster incidents
+- **Record donations** from organizations and inspect items into your warehouse
+- **Request relief supplies** for disaster-affected areas
+- **Allocate and dispatch** items from warehouses to distribution points
+- **Monitor stock levels** across all your warehouses in real time
+- **Handle returns** when items come back from the field
 
-## What You'll Find Here
+All operations are linked to a **disaster incident** (for example, "2025 Flooding — Western Region") so everything can be tracked by emergency.
 
-This guide covers the main tasks you'll do in DRIMS:
+## The relief supply workflow
 
-- **{doc}`dashboard`** - How to monitor stock levels and alerts
-- **{doc}`donations`** - How to receive and process incoming donations
-- **{doc}`manage_inventory`** - How to view and manage stock levels
-- **{doc}`requests`** - How to submit and approve requests for relief supplies
-- **{doc}`dispatches`** - How to prepare shipments and confirm deliveries
-- **{doc}`returns`** - How to handle items returned from the field
+```
+Donation → Receive → Inspect → Stock
+                                  ↓
+                           Request submitted
+                                  ↓
+                           Approved (Ready for Allocation)
+                                  ↓
+                           Stock allocated (Ready for Dispatch)
+                                  ↓
+                           Dispatch created → Picked → Departed
+                                  ↓
+                           Delivered (Proof of Delivery)
+```
 
-## Quick Start: Common Tasks
+A single approved request can have **multiple partial dispatches** — useful when only some stock is available now and more arrives later.
 
-Jump directly to these guides for step-by-step instructions:
+## User roles
 
-**If you work in a warehouse:**
-- {doc}`donations` - Record a donation that just arrived
-- {doc}`manage_inventory` - Check and manage stock levels
-- {doc}`dispatches` - Prepare items for shipment to a field location
-- Monitor alerts with the {doc}`dashboard`
+Your role determines what you can do in DRIMS:
 
-**If you work in the field:**
-- {doc}`requests` - Submit a request for relief supplies
-- {doc}`dispatches` - Confirm that items were delivered
-- {doc}`returns` - Send damaged or excess items back to the warehouse
-
-**If you approve requests:**
-- {doc}`requests` - Review and approve requests from field staff
-
-## Before You Start
-
-### Permissions You Need
-
-Your administrator assigns you one or more roles in DRIMS. What you can do depends on your role:
-
-| Your Role | What You Can Do |
-|-----------|-----------------|
-| **Viewer** | View all DRIMS information but cannot make changes |
-| **Field Officer** | Create requests for your assigned areas and confirm deliveries |
-| **Warehouse Staff** | Receive donations, manage stock, and prepare dispatches for your warehouse |
-| **Request Approver** | Approve or reject requests for relief supplies |
-| **District Coordinator** | Coordinate relief operations in your assigned districts |
+| Role | What you can do |
+|------|-----------------|
+| **Viewer** | View all DRIMS information; no changes |
+| **Field Officer** | Create and submit requests for your assigned areas; confirm deliveries |
+| **Warehouse Staff** | Receive donations, manage stock, validate dispatches |
+| **Approver** | Review and approve or reject requests |
+| **Coordinator** | Allocate stock to approved requests; create dispatches |
 | **Manager** | Full access to all DRIMS features and settings |
 
-If you try to do something and see a message saying you don't have permission, contact your system administrator.
+If you see a message saying you don't have permission, ask your system administrator to assign you the right role.
 
-### Disaster Incidents
-
-All DRIMS operations are linked to a specific **disaster incident** (for example, "2025 Flooding - Western Region"). Your manager or coordinator creates these incidents when a disaster occurs.
-
-When you create donations, requests, or dispatches, you'll always select which incident they relate to.
-
-## Are You Stuck?
-
-**Can't find the DRIMS menu?**
-You may not have DRIMS access. Ask your administrator to assign you a DRIMS role.
-
-**Don't see any warehouses or areas in the dropdown lists?**
-Your administrator needs to assign you to specific warehouses or geographic areas. Contact them to request access.
-
-**Need to do something not covered in this guide?**
-Ask your supervisor or system administrator for help.
-
-## Next Steps
-
-Choose a guide from the list below based on what you need to do:
+## Guides in this section
 
 ```{toctree}
 :maxdepth: 1
@@ -101,3 +69,32 @@ requests
 dispatches
 returns
 ```
+
+### Receiving supplies
+
+- {doc}`donations` - Receive an incoming donation, inspect items, and stock them
+
+### Managing stock
+
+- {doc}`manage_inventory` - View stock levels, expiry dates, movement history, and add products
+- {doc}`dashboard` - Monitor warehouse health and alerts at a glance
+
+### Requesting and delivering supplies
+
+- {doc}`requests` - Submit a request (field officers) or allocate and dispatch one (coordinators)
+- {doc}`dispatches` - Pick, pack, ship, and confirm delivery (warehouse staff)
+- {doc}`returns` - Handle items returned from distribution points
+
+## Are you stuck?
+
+**Can't find the DRIMS menu?**
+
+You may not have DRIMS access. Ask your administrator to assign you a DRIMS role.
+
+**Don't see any warehouses or areas in the dropdown lists?**
+
+Your administrator needs to assign you to specific warehouses or geographic areas.
+
+**Something not covered here?**
+
+Ask your supervisor or system administrator for help.

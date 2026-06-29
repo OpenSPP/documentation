@@ -29,7 +29,6 @@ This module is designed to:
 | `mail` | Communication and activity tracking |
 | `spp_registry` | Consolidated registry management for individuals, groups,... |
 | `spp_security` | Central security definitions for OpenSPP modules |
-| `spp_programs` | Manage cash and in-kind entitlements, integrate with inve... |
 | `spp_service_points` | The OpenSPP Service Points module manages physical or vir... |
 
 ### External Dependencies
@@ -150,3 +149,10 @@ Optionally post audit summaries to record chatter:
 | ------------------ | --------------------------------------- |
 | Enabled            | Low-volume, human-reviewed records only |
 | Disabled (default) | High-volume or automated processes      |
+
+```{toctree}
+:maxdepth: 1
+:hidden:
+
+spp_audit_programs
+```
