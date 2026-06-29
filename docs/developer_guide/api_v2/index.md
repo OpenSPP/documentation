@@ -63,6 +63,7 @@ These modules add domain-specific endpoints when installed alongside the core `s
 
 | Topic | Module | Description |
 |-------|--------|-------------|
+| {doc}`resources` (Program, ProgramMembership) | `spp_api_v2_programs` | Program and beneficiary enrollment endpoints; auto-installs with `spp_programs` |
 | {doc}`entitlements_cycles` | `spp_api_v2_entitlements`, `spp_api_v2_cycles` | Cash/in-kind entitlements and distribution cycles |
 | {doc}`products_service_points` | `spp_api_v2_products`, `spp_api_v2_service_points` | Product catalog and distribution locations |
 

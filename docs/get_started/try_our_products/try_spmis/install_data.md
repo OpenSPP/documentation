@@ -6,11 +6,11 @@ openspp:
 
 # Install SP-MIS demo data
 
-Load sample data to explore OpenSPP SP-MIS features.
+Install the module that contains the sample data needed to explore OpenSPP SP-MIS features.
 
 **For:** Evaluators, learners, and trainers
 
-Before trying out the SP-MIS use cases, you'll need sample data to work with. This guide walks you through loading demo data that includes sample households, individuals, and programs.
+Before trying out the SP-MIS use cases, you'll need sample data to work with. This guide walks you through installing and loading demo data that includes sample households, individuals, and programs.
 
 ## Before you start
 
@@ -27,39 +27,23 @@ Installing an Odoo module follows a standard procedure:
 
 3. Click the **Activate** button on the module's card to begin the installation.
 
-![OpenSPP Apps menu interface](/_images/en-us/get_started/module_installation/01-apps-ui.png)
-
 ## Load demo data
 
 ### 1: Log in as administrator
 
 Log in to OpenSPP using administrator credentials (default: admin/admin).
 
-![Screenshot: Dashboard after login](/_images/en-us/get_started/try_openspp_sp_mis/install_sp_mis_demo_data/01-dashboard-after-login.png)
+### 2: Open Settings and navigate to demo data
 
-### 2: Open Settings
+1. Click **Settings** in the left sidebar.
 
-Click **Settings** in the left sidebar.
+2. In the Settings top menu, click **Demo Data** > **Load MIS Demo**.
 
-![Screenshot: Settings page](/_images/en-us/get_started/try_openspp_sp_mis/install_sp_mis_demo_data/02-settings-page.png)
+  ![Screenshot: Settings with Demo Data menu](/_images/en-us/get_started/try_openspp_sp_mis/install_sp_mis_demo_data/01-settings-farmer-demo-data-menu.png)
 
-### 3: Navigate to demo data
+3. The Load MIS Demo wizard opens in a dialog. Click the button **Load Demo Data** to add the demo data to the system.
 
-In the Settings top menu, click **Demo Data** > **Load MIS Demo**.
-
-![Screenshot: Settings with Demo Data menu](/_images/en-us/get_started/try_openspp_sp_mis/install_sp_mis_demo_data/03-settings-demo-data-menu.png)
-
-### 4: Open the wizard
-
-The Load MIS Demo wizard opens in a dialog.
-
-![Screenshot: Wizard opening](/_images/en-us/get_started/try_openspp_sp_mis/install_sp_mis_demo_data/04-load-mis-demo-wizard.png)
-
-### 5: Generate demo data
-
-Click **Load Demo Data** to start.
-
-![Screenshot: Generate MIS Demo Data wizard](/_images/en-us/get_started/try_openspp_sp_mis/install_sp_mis_demo_data/05-generate-demo-data.png)
+  ![Screenshot: Wizard opening](/_images/en-us/get_started/try_openspp_sp_mis/install_sp_mis_demo_data/02-load-mis-demo-wizard.png)
 
 ```{note}
 Demo data generation takes 2-5 minutes depending on your system. The wizard will redirect you to the Programs page when complete.
@@ -121,4 +105,3 @@ Check the browser console for errors. Try refreshing the page and running the wi
 ## Next Steps
 
 Now that you have sample data, you're ready to start exploring:
-

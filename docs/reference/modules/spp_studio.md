@@ -32,7 +32,6 @@ This module is designed to:
 | `spp_security` | Central security definitions for OpenSPP modules |
 | `spp_registry` | Consolidated registry management for individuals, groups,... |
 | `spp_base_common` | The OpenSPP base module that provides the main menu, gene... |
-| `spp_programs` | Manage cash and in-kind entitlements, integrate with inve... |
 | `spp_user_roles` | The OpenSPP User Roles module defines and manages distinc... |
 | `spp_custom_field` | The module enables administrators to define and add custo... |
 | `spp_cel_domain` | Write simple CEL-like expressions to filter records (Open... |
@@ -150,5 +149,8 @@ Logic can be used in event-triggered calculations:
 
 spp_studio_api_v2
 spp_studio_change_requests
+spp_studio_change_requests_programs
 spp_studio_events
+spp_studio_events_programs
+spp_studio_programs
 ```

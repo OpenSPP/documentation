@@ -26,9 +26,9 @@ This module is designed to:
 | Dependency | Purpose |
 | --- | --- |
 | `spp_studio` | No-code customization interface for OpenSPP |
-| `spp_change_request_v2` | Configuration-driven change request system with UX improv... |
-| `spp_registry` | Consolidated registry management for individuals, groups,... |
-| `spp_audit` | Comprehensively tracks all data modifications and user ac... |
+| `spp_change_request_v2` | Configuration-driven change request system for managing registrant data updates with approval workflows, conflict detection, and audit trails |
+| `spp_registry` | Foundation registry module for managing individuals, groups, and their relationships with ID documents and memberships |
+| `spp_audit` | Comprehensive audit trail system that tracks all data modifications and user actions across the platform |
 
 ## Key Features
 
@@ -140,3 +140,5 @@ Note: Detail records are created by the system (via sudo), so regular users do n
 - {doc}`spp_change_request_v2` - Change request infrastructure
 - {doc}`spp_studio` - Core Studio interface
 - {doc}`spp_cr_types_base` - Pre-built change request types
+
+

@@ -6,7 +6,7 @@ openspp:
     - drims
 ---
 
-# Process a Dispatch
+# Process a dispatch
 
 ```{admonition} Applies to: DRIMS
 :class: tip
@@ -15,185 +15,201 @@ This feature is available in OpenSPP deployments with the DRIMS module installed
 
 This guide is for **warehouse staff** who pick, pack, and ship relief supplies to distribution points.
 
-## What You'll Do
+## What you'll do
 
-Process a dispatch from an approved request through packing, shipping, and {term}`Proof of Delivery` confirmation.
+Process a dispatch from an allocated request: pick and pack items, record departure, and confirm delivery with proof of delivery.
 
-## Before You Start
+## Before you start
 
 - You need **Warehouse Officer** or **DRIMS Manager** access
-- The dispatch must be created from an approved request
+- The dispatch must have been created by a coordinator from an approved, allocated request
 - Relief items must be in stock at your warehouse
 
-## Creating a Dispatch from a Request
+## How dispatches are created
 
-Dispatches are automatically created when a DRIMS coordinator allocates an approved request to your warehouse.
+Dispatches are created automatically when a DRIMS coordinator allocates an approved request and clicks **Create Dispatch**. See {doc}`requests` for how coordinators do this.
 
-You'll receive dispatches in the **Draft** state, ready to be processed.
+A single request can have **multiple dispatches** — for example, if only part of the stock is available now and the rest arrives later. Each dispatch covers the not-yet-dispatched balance at the time it was created.
 
-### To Find Your Dispatches
+You'll receive dispatches in the **Ready** state — stock is already reserved and items are ready to pick.
 
-1. Click **DRIMS** in the sidebar
-2. Select **Dispatches**
-3. Filter by **My Warehouse** to see only dispatches assigned to you
+## Finding your dispatches
 
+1. Click **DRIMS** in the top navigation bar
+2. Go to **Fulfill Requests → Dispatches**
+3. Use the **Request Dispatches** filter to see only request dispatches assigned to your warehouse
 
-## Processing the Dispatch
+![Dispatches list showing Ready dispatches](/_images/en-us/user_guide/drims/dispatches/01-dispatches-list.png)
 
-Dispatches move through these states as you process them:
+## Dispatch states
 
-| State | What It Means | What You Do |
+The dispatch status bar shows four states, but in normal DRIMS use you will only encounter the last two:
+
+| State | What it means | What you do |
 |-------|---------------|-------------|
-| **Draft** | Just created, not confirmed | Review items and confirm |
-| **Confirmed** | Ready to pick, waiting for stock | Reserve items from inventory |
-| **Assigned** | Stock reserved, ready to pack | Pick and pack items, validate |
-| **Done** | Items packed and validated | Record departure when truck leaves |
-| **Departed** | Shipment left warehouse | Wait for delivery confirmation |
-| **Arrived** | Shipment reached destination | Complete POD |
-| **POD Confirmed** | Delivery confirmed | (Finished) |
+| **Draft** | Not used in DRIMS — dispatches skip this automatically | — |
+| **Waiting** | Not used in DRIMS — allocation ensures stock is reserved before dispatch creation | — |
+| **Ready** | Stock reserved, ready to pick and pack | Pick, pack, then validate |
+| **Done** | Items validated and inventory updated | Record departure and confirm delivery via the DRIMS tab |
 
-### 1. Review and Confirm the Dispatch
+Departure, arrival, and proof of delivery are recorded separately in the **DRIMS tab** once the dispatch is in **Done** state — they don't change the status bar.
 
-Open the dispatch and review the items requested.
+## Processing a dispatch
 
-**Click Confirm** to move the dispatch to the next stage.
+DRIMS ensures that stock must be allocated before a dispatch can be created. Because of this, when you open a dispatch it will always be in **Ready** state — stock is already reserved and it is ready to pick.
 
+### 1. Review the dispatch
 
-### 2. Reserve Stock
+Open the dispatch and check that the product list and quantities match what you expect. The **Source Document** field shows the originating request reference.
 
-After confirming, click **Check Availability** to reserve the items from your warehouse inventory.
+![Dispatch form showing product list, demand, quantity, and Source Document](/_images/en-us/user_guide/drims/dispatches/02-review-dispatch.png)
 
-If items are available, the dispatch moves to the **Assigned** state.
+### 2. Fill in required dispatch details
 
+Before you can validate, open the **DRIMS** tab and fill in the required distribution fields:
 
-### 3. Pick and Pack Items
+| Field | What to enter |
+|-------|---------------|
+| **Distribution Area** | The geographic area receiving the supplies |
+| **Estimated Beneficiaries Reached** | Number of people who will benefit from this dispatch |
 
-Now you're ready to physically pick the items:
+```{important}
+Validation will fail if **Distribution Area** and **Estimated Beneficiaries Reached** are empty. Fill both in before clicking Validate.
+```
 
-1. Print the picking list by clicking **Print → Picking List**
+![DRIMS tab showing Distribution Area and Estimated Beneficiaries Reached fields](/_images/en-us/user_guide/drims/dispatches/03-drims-tab-beneficiary-fields.png)
+
+### 3. Pick and pack items
+
+1. Click **Print Waybill** to get the list of items to pick
 2. Go to your warehouse and collect the items on the list
-3. Check quantities match what's on the list
+3. Verify quantities match the waybill
 4. Pack items securely for transport
 
-
-### 4. Validate the Dispatch
+### 4. Validate the dispatch
 
 After packing, return to the dispatch and click **Validate**.
 
-This confirms you've physically picked the items and updates your inventory. The dispatch moves to the **Done** state.
+This confirms that the items have been physically picked and updates your inventory. The dispatch moves to **Done**.
 
+![Validate button on a Ready dispatch](/_images/en-us/user_guide/drims/dispatches/04-validate-dispatch.png)
 
-## Recording Departure
+```{note}
+If a validation error appears directing you to the **DRIMS tab**, open the DRIMS tab to see the specific issue — usually a missing **Distribution Area** or **Estimated Beneficiaries Reached**.
+```
 
-When the truck or vehicle leaves your warehouse with the shipment:
+## Partial quantities
 
-1. Open the dispatch
-2. Click **Record Departure**
-3. Enter the **Date and Time** the shipment left
-4. Click **Confirm**
+If you don't have all the requested quantities available:
 
-The dispatch moves to the **Departed** state.
+1. In the **Quantity** column under the **Operations** tab, enter the quantity you physically have (less than the Demand)
+2. Click **Validate**
+3. A **Create Backorder?** dialog appears — select **Create Backorder** to create a second dispatch for the outstanding balance, or **No Backorder** if the remaining items will not be sent
 
+![Create Backorder dialog asking whether to process remaining products later](/_images/en-us/user_guide/drims/dispatches/05-create-backorder-dialog.png)
 
-## Printing the Waybill
+The backorder dispatch is created automatically and goes straight to **Ready** state — it does not route back through the request allocation flow. This is a known gap (see ticket: Backorder dispatch bypasses DRIMS request allocation).
+
+## Printing the waybill
 
 The {term}`Waybill` is the official shipping document that travels with the goods.
 
-### To Print the Waybill
+Click **Print Waybill** in the dispatch form header, then give the printed copy to the driver.
 
-1. Open the dispatch
-2. Click **Print → Waybill**
-3. Give the printed waybill to the driver
+![Print Waybill button in the dispatch form header](/_images/en-us/user_guide/drims/dispatches/06-print-waybill.png)
 
-The waybill includes:
-- Dispatch reference number
-- Source warehouse details
-- Destination and contact information
-- Complete item list with quantities
-- Signature blocks for driver and receiver
-
+The waybill includes the dispatch reference, source and destination details, the full item list with quantities, and signature blocks for the driver and receiver.
 
 ```{important}
 The driver must get the waybill signed by the person receiving the goods at the destination.
 ```
 
-## Confirming Delivery (Proof of Delivery)
+## Recording departure
 
-After the shipment arrives at the destination, the field staff or receiver will record proof of delivery.
+When the vehicle leaves your warehouse with the shipment:
+
+1. Open the dispatch (now in **Done** state)
+2. Open the **DRIMS** tab
+3. In the **Departure & Arrival** section, click **Confirm Departure**
+
+The departure date and time are stamped on the record.
+
+![DRIMS tab showing Confirm Departure button in the Departure and Arrival section](/_images/en-us/user_guide/drims/dispatches/07-confirm-departure.png)
+
+## Confirming delivery (proof of delivery)
+
+After the shipment arrives, record proof of delivery (POD).
 
 ```{note}
-Usually field staff or the destination contact records this information, not warehouse staff. But you may need to enter it if they call or email you the details.
+Field staff at the destination usually record this. But if they contact you with the details, you can enter it on their behalf.
 ```
 
-### To Record Proof of Delivery
+### 1. Confirm arrival
 
-1. Open the dispatch
-2. Click **Record Arrival** to log when the shipment reached the destination
-3. Scroll to the **Proof of Delivery** section
-4. Fill in the following fields:
+When the shipment reaches the destination, open the dispatch and go to the **DRIMS** tab. In the **Departure & Arrival** section, click **Confirm Delivery** to log the arrival date and time.
 
-| Field | What to Enter |
+The arrival date and time are stamped on the record.
+
+![DRIMS tab showing Confirm Delivery button](/_images/en-us/user_guide/drims/dispatches/08-confirm-delivery.png)
+
+### 2. Complete the proof of delivery
+
+Scroll down in the **DRIMS** tab to the **Proof of Delivery (POD)** section and fill in:
+
+| Field | What to enter |
 |-------|---------------|
-| **Received By** | Full name of the person who received the goods |
-| **Receiver Title** | Their position or role (e.g., "Camp Coordinator", "Distribution Officer") |
-| **Receiver Phone** | Contact phone number |
-| **Signature** | Digital signature (if using tablet at destination) |
-| **Delivery Notes** | Any notes about condition, shortages, or issues |
+| **POD Status** | Overall delivery outcome: Complete, Partial Delivery, Damaged, or Not Received |
+| **Received by** | Full name of the person who received the goods |
+| **Receiver title** | Their position (e.g., "Camp Coordinator", "Distribution Officer") |
+| **Receiver ID number** | Their ID or reference number |
+| **Signature** | Digital signature if using a tablet at the destination |
+| **Delivery photos** | Photos of the delivered goods |
+| **POD notes** | Any notes about condition, shortages, or issues |
 
-5. Click **Confirm POD** to complete the delivery
+Check **POD Confirmed** when all details are filled in.
 
+![DRIMS tab POD section with receiver fields, signature, and POD Confirmed checkbox](/_images/en-us/user_guide/drims/dispatches/09-pod-section.png)
 
-The dispatch moves to the **POD Confirmed** state and the request is marked as delivered.
+The delivery is recorded and the linked request line is marked as delivered.
 
 ```{important}
-**About Signatures:** If the receiver signs a paper waybill, you can either:
-- Scan the signed waybill and attach it to the dispatch
-- Take a photo with your phone and upload it
-- Enter the receiver's details and note "Paper waybill on file"
+**If the receiver signed a paper waybill instead**, attach a scan or photo using the **Delivery photos** field, or note "Paper waybill on file" in **POD notes**.
 ```
 
-## Are You Stuck?
+---
 
-**Can't find the Confirm button?**
+## Are you stuck?
 
-You may not have Warehouse Officer permissions. Contact your DRIMS administrator.
+**Can't find the dispatch in the list?**
 
-**Check Availability button says "No Stock"?**
+Make sure you're under **Fulfill Requests → Dispatches** and have the **Request Dispatches** filter active. If it's still missing, the coordinator may not have created the dispatch yet — check with them.
 
-The requested items aren't available in your warehouse. Contact your DRIMS coordinator to either:
-- Allocate the request to a different warehouse
-- Wait for new donations or transfers
+**Check Availability says no stock?**
+
+The items aren't available at your warehouse. Contact your DRIMS coordinator to either allocate from a different warehouse or wait for new stock.
 
 **Validate button is grayed out?**
 
-Make sure you clicked **Check Availability** first to reserve the stock.
+Click **Check Availability** first to reserve the stock before validating.
 
-**Don't have all the quantities requested?**
+**Validation fails with an error about the DRIMS tab?**
 
-You can do a partial delivery:
-1. In the picking lines, change the **Done** quantity to what you actually have
-2. Click **Validate**
-3. The system will ask if you want to create a backorder for the remaining items
-
-**Receiver didn't sign the waybill?**
-
-This shouldn't happen, but if it does:
-1. Record the arrival and receiver details anyway
-2. In **Delivery Notes**, explain why there's no signature
-3. Follow up with your DRIMS coordinator
+Open the **DRIMS** tab on the dispatch form. Make sure **Distribution Area** and **Estimated Beneficiaries Reached** (must be greater than zero) are both filled in.
 
 **Shipment was damaged or items are missing?**
 
-1. In **Delivery Notes**, describe what happened
-2. Record the actual quantities received (not what was sent)
-3. Your DRIMS coordinator will handle the discrepancy report
+Record the arrival and use **POD Status: Damaged** or **Partial Delivery**. Describe what happened in **POD notes**. Your DRIMS coordinator will handle the follow-up.
+
+**Receiver didn't sign the waybill?**
+
+Record the arrival and enter the receiver's details. In **POD notes**, explain why there's no signature and follow up with your coordinator.
 
 **Need to cancel a dispatch?**
 
-If the dispatch is still in **Draft** or **Confirmed** state, you can click **Cancel**. If it's already **Assigned** or later, contact your DRIMS coordinator before canceling.
+Dispatches in **Waiting** state can be cancelled with the **Cancel** button. If the dispatch is already **Ready** or **Done**, contact your DRIMS coordinator before cancelling.
 
-## Next Steps
+## Next steps
 
-- {doc}`returns` - Learn how to handle returned items
-- {doc}`manage_inventory` - Learn how to check stock levels
-- {doc}`dashboard` - Monitor alerts and KPIs
+- {doc}`returns` - Handle items returned from the field
+- {doc}`manage_inventory` - Check updated stock levels after dispatch
+- {doc}`dashboard` - Monitor warehouse alerts and KPIs

@@ -77,6 +77,10 @@ Content-Type: application/json
 
 Create an individual, add them to a household, and enroll in a program:
 
+```{note}
+The `ProgramMembership` entry in this example requires the `spp_api_v2_programs` companion module (auto-installs with `spp_api_v2` + `spp_programs`). The Individual and Group entries work without the Programs stack.
+```
+
 ```text
 POST /api/v2/spp/$batch
 Authorization: Bearer TOKEN
