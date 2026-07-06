@@ -16,13 +16,21 @@ Conflict detection identifies when multiple change requests might affect the sam
 
 On the **Change Request Type** form, check **Enable Conflict Detection** to activate this feature. Then configure one or more conflict rules.
 
-![Enable Conflict Detection checkbox](/_images/en-us/config_guide/change_request_types/20-enable-conflict-detection.png)
+```{figure} /_images/en-us/config_guide/change_request_types/20-enable-conflict-detection.png
+:alt: Conflict Detection tab with Enable Conflict Detection checkbox highlighted
+
+Check **Enable Conflict Detection** on the **Conflict Detection** tab to activate this feature.
+```
 
 ### Conflict rules
 
 Each rule defines what constitutes a conflict and how to handle it.
 
-![Conflict Rules section](/_images/en-us/config_guide/change_request_types/21-conflict-rules-section.png)
+```{figure} /_images/en-us/config_guide/change_request_types/21-conflict-rules-section.png
+:alt: Conflict Rules table showing configured rules with Name, Scope, Action, and Conflict States columns
+
+The **Conflict Rules** table with columns for **Name**, **Scope**, **Action**, and **Conflict States**.
+```
 
 | Field | Description |
 |-------|-------------|
@@ -58,7 +66,11 @@ Each rule defines what constitutes a conflict and how to handle it.
 | Conflict Fields | Comma-separated list of fields to check (for field scope) |
 | Conflict Message | Custom message to display when conflict is detected |
 
-![Conflict Rule form](/_images/en-us/config_guide/change_request_types/22-conflict-rule-form.png)
+```{figure} /_images/en-us/config_guide/change_request_types/22-conflict-rule-form.png
+:alt: Conflict rule configured with scope, action, and conflict states
+
+A configured conflict rule showing **Scope**, **Action**, **Conflict States**, and **Time Window** settings.
+```
 
 ## Example: Prevent duplicate phone updates
 
@@ -106,7 +118,11 @@ Duplicate detection identifies when a change request is essentially the same as 
 
 Check **Enable Duplicate Detection** on the CR type form and configure the detection settings.
 
-![Enable Duplicate Detection checkbox](/_images/en-us/config_guide/change_request_types/23-enable-duplicate-detection.png)
+```{figure} /_images/en-us/config_guide/change_request_types/23-enable-duplicate-detection.png
+:alt: Duplicate Detection section with Enable Duplicate Detection checkbox highlighted
+
+Check **Enable Duplicate Detection** to identify and prevent duplicate change request submissions.
+```
 
 ### Configuration options
 

@@ -29,7 +29,11 @@ When source and target field names match exactly, use Direct Copy:
 | `given_name` | `given_name` | Direct Copy |
 | `family_name` | `family_name` | Direct Copy |
 
-![Configured field mappings](/_images/en-us/config_guide/change_request_types/11-configured-field-mappings.png)
+```{figure} /_images/en-us/config_guide/change_request_types/11-configured-field-mappings.png
+:alt: Field Mappings table showing Direct Copy mappings for the Edit Individual Information type
+
+The **Field Mappings** table with **Source Field**, **Target Field**, and **Transform** columns configured for direct field copying.
+```
 
 ## Relational field mapping
 

@@ -38,9 +38,9 @@ The simplest approach uses a multiplier field — any integer field on the regis
 | Multiplier Field | (select an integer field, e.g., household member count) |
 
 ```{figure} /_images/en-us/config_guide/entitlement_formulas/10-multiplier-field-configuration.png
-:alt: Multiplier field configuration in entitlement item
+:alt: Entitlement items list with Multiplier and Maximum columns highlighted
 
-Set the **Multiplier Field** to scale the amount by a beneficiary attribute.
+The **Multiplier** and **Maximum** columns scale the item amount by a beneficiary attribute.
 ```
 
 ### About multiplier fields
@@ -110,9 +110,9 @@ Combine multiple entitlement items for complex calculations:
 - Condition: `me.is_female_headed`
 
 ```{figure} /_images/en-us/config_guide/entitlement_formulas/11-multiple-dynamic-items.png
-:alt: Multiple entitlement items for dynamic calculation
+:alt: Three entitlement items with different amounts and multipliers
 
-Multiple entitlement items with different amounts, multipliers, and conditions.
+Three entitlement items — a base amount, a per-child supplement with multiplier, and a conditional add-on.
 ```
 
 ## Formula-based dynamic calculations
