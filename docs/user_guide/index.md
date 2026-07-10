@@ -18,6 +18,7 @@ Welcome to the OpenSPP User Guide. This guide helps government employees and pro
 - **[Payments](payments/index.md)** - Payment distribution and service points
 - **[Approvals](approvals/index.md)** - Reviewing and approving requests and batches
 - **[DRIMS](drims/index.md)** - Managing disaster relief donations, requests, dispatches, and inventory
+- **[Disability registry](disability_registry/index.md)** - Conducting disability assessments and managing assistive devices
 - **[Grievances](grievances/index.md)** - Logging, investigating, and resolving beneficiary complaints
 - **[GIS](gis/index.md)** - Viewing registry data on maps and generating geographic reports
 - **[Hazards and incidents](hazards/index.md)** - Recording disaster events, assessing impacts, and coordinating emergency response
@@ -35,6 +36,7 @@ programs/index
 payments/index
 approvals/index
 drims/index
+disability_registry/index
 grievances/index
 gis/index
 hazards/index
