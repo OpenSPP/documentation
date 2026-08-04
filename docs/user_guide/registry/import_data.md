@@ -75,7 +75,10 @@ For new individual records, these fields are required:
 |-------|-------------|
 | **family_name** | Last name / surname |
 | **given_name** | First name |
-| **name** | given name + family name |
+
+```{note}
+Don't include a **name** column for individuals. OpenSPP generates it automatically from **family_name** and **given_name** (plus **addl_name** if provided), in the format `FAMILY NAME, GIVEN NAME` (uppercase). A **name** value in your file overrides this auto-generated one.
+```
 
 
 For new group records, this field is required:
