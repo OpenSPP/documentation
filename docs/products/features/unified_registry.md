@@ -33,3 +33,4 @@ The registry functionality is implemented through several specialized modules:
 * **[spp_registry](/reference/modules/spp_registry.md)**: Core registry framework providing the foundational data models and business logic
 * **[spp_registry_group_hierarchy](/reference/modules/spp_registry_group_hierarchy.md)**: Advanced hierarchical group structures allowing groups within groups
 * **[spp_banking](/reference/modules/spp_banking.md)**: Banking information management and validation for payment processing
+* **[spp_custom_field](/reference/modules/spp_custom_field.md)**: Custom field extension enabling programs to capture additional registrant data without modifying core registry models

@@ -20,7 +20,6 @@ The platform's commitment to interoperability through standardized APIs and data
 
 * **RESTful API architecture**: Expose core functionality through well-documented REST APIs for {term}`registrant` management, program enrollment, and {term}`benefit <benefits>` processing
 * **OAuth 2.0 security**: Implement secure API {term}`authentication` using industry-standard OAuth 2.0 protocols with fine-grained access control
-* **ODK central integration**: Import data directly from ODK central mobile data collection platform for field-based {term}`registration` and surveys
 * **External MIS connectors**: Synchronize data with other Management Information Systems through configurable import/export mappings
 * **DCI compliance**: Support Data Convergence Initiative standards for cross-system data exchange and interoperability
 * **Bulk data operations**: Handle large-scale data imports and exports with validation, error handling, and transaction management
@@ -34,5 +33,4 @@ The API and integration capabilities are delivered through specialized modules:
 * **[spp_api_v2](/reference/modules/spp_api_v2.md)**: Core API framework with endpoint management
 * **`spp_registry_rest_api`**: REST API for registry operations
 * **[spp_oauth](/reference/modules/spp_oauth.md)**: OAuth 2.0 authentication implementation
-* **{doc}`spp_registry_data_source </modules/spp_registry_data_source>`**: External data source integration framework
 * **[spp_dci_server](/reference/modules/spp_dci_server.md)**: DCI-compliant API server implementation
