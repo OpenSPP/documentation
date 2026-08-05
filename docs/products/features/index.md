@@ -45,6 +45,17 @@ Tracks every change with complete before/after snapshots, approval chains, and j
 **{doc}`Grievance redress mechanism <grievance_redress>`**: Feedback system for managing beneficiary complaints and appeals transparently.
 Provides accessible pathways for issue resolution and links grievances to specific programs, payments, and eligibility decisions for context-aware resolution.
 
+## Configuration and extensibility
+
+**{doc}`Standardized vocabularies <vocabularies>`**: Configurable, hierarchical classification codes for genders, relationships, disability categories, and more.
+Ships with 19 pre-built vocabularies while remaining fully extensible, with cross-standard mapping and multi-language labels.
+
+**{doc}`Common Expression Language (CEL) <cel_expressions>`**: A lightweight, secure rules engine for eligibility criteria, entitlement formulas, and compliance checks.
+Compiles expressions to SQL for performance at scale, with built-in safeguards against unsafe or runaway expressions.
+
+**{doc}`OpenSPP Studio <openspp_studio>`**: No-code interface for adding custom fields, eligibility logic, change request types, and data collection forms.
+Lets program staff configure the platform themselves through guided wizards, without developer involvement for most changes.
+
 ```{toctree}
 :maxdepth: 2
 :caption: Contents
@@ -59,4 +70,7 @@ In-Kind benefits <in_kind_benefits>
 Data integration & APIs <data_integration_apis>
 Change management <change_management>
 Grievance redress <grievance_redress>
+Standardized vocabularies <vocabularies>
+Common Expression Language (CEL) <cel_expressions>
+OpenSPP Studio <openspp_studio>
 ```
