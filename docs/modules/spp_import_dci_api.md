@@ -42,11 +42,6 @@ This module streamlines the process of importing and synchronizing registrant da
     *   **ID Management:** Leverages `spp.reg.id` from spp_registry to store and manage DCI-provided identifiers.
     *   **Relationships:**  Potentially utilizes the `spp.reg.rel` model to establish relationships between imported registrants based on DCI data. 
 
-## 4. SPP Registry Data Source ([spp_registry_data_source](spp_registry_data_source.md))
-
-* **Integration:** Depends on [spp_registry_data_source](spp_registry_data_source.md) for:
-    * **Data Source Configuration:** Retrieves connection details and API specifications of the external DCI registry from data source configurations defined in this module. 
-
 ## 5. OpenSPP Registry (spp_registry)
 
 * **Integration:**  Extends the individual registrant model (`res.partner`) from spp_registry:

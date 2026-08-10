@@ -30,5 +30,7 @@ OpenSPP's configurable approach recognizes that different programs require diffe
 
 The eligibility and targeting system is implemented through specialized modules:
 
-* **`spp_manual_eligibility`**: Manual beneficiary selection with approval workflows and audit trails
-* **[spp_area](/reference/modules/spp_area.md)**: Geographic area management for location-based targeting
+* **[spp_programs](/reference/modules/spp_programs.md)**: Core eligibility manager framework supporting area/filter-based and CEL-expression-based targeting
+* **[spp_scoring](/reference/modules/spp_scoring.md)**: Proxy means testing and weighted scoring models for poverty-based targeting
+* **[spp_scoring_programs](/reference/modules/spp_scoring_programs.md)**: Score-based eligibility gating for program enrollment
+* **`spp_program_geofence`**: Geofence-based geographic eligibility targeting

@@ -19,7 +19,6 @@ orphan: true
 | [OpenSPP DCI API Server](spp_dci_api_server) | Provides a DCI-compliant RESTful API for secure data exchange with OpenSPP's registry. |
 | [OpenSPP In-Kind Entitlement](spp_entitlement_in_kind) | Manages the distribution of in-kind entitlements within social protection programs, handling inventory, service points, and beneficiary redemption. |
 | [OpenSPP Encryption Module](spp_encryption) | Provides secure encryption, decryption, signing, and verification of data within OpenSPP using JWCrypto. |
-| [OpenSPP Data Source](spp_registry_data_source) | Provides a framework for integrating external data sources into OpenSPP, enabling connection to and retrieval of data from external systems like farmer registries and social protection programs. |
 | [OpenSPP Farmer Registry Demo](spp_farmer_registry_demo) | Provides pre-populated demo data for the OpenSPP Farmer Registry, showcasing its features with realistic sample data. |
 | [OpenSPP Registrant Import](spp_registrant_import) | Streamlines the import of registrant data into OpenSPP, simplifies data mapping, and automates unique ID generation. |
 | [OpenSPP Data Export](spp_data_export) | Enables exporting large datasets to Excel by overriding the default export functionality and providing error handling for exceeding Excel row limits. |
@@ -72,7 +71,7 @@ orphan: true
 | [OpenSPP OpenID VCI Group](spp_openid_vci_group) | Enables the issuance of Verifiable Credentials (VCs) for groups of registrants, integrating with group management to represent group identity and attributes. |
 | [OpenSPP Registry: Audit Post](spp_audit_post) | Enables posting of audit log messages to related parent records, providing a centralized view of changes across interconnected data in social protection programs. |
 | [OpenSPP Exclusion Filter](spp_exclusion_filter) | This module enhances the OpenSPP program creation process by enabling the configuration and application of exclusion filters, ensuring that only eligible registrants are considered for enrollment in new programs. |
-| [OpenSPP Farmer Registry Base](spp_farmer_registry_base) | Base module for managing farmer registries, linking farmers to farms, land, and agricultural activities. |
+| [OpenSPP Farmer Registry](spp_farmer_registry) | Base module for managing farmer registries, linking farmers to farms, land, and agricultural activities. |
 | [OpenSPP Irrigation](spp_irrigation) | Provides tools for managing and visualizing irrigation infrastructure within OpenSPP, enabling efficient tracking, planning, and analysis of irrigation systems and their impact. |
 | [OpenSPP Custom Fields](spp_custom_field) | Adds customizable fields to registrant profiles for enhanced data collection and program management in OpenSPP. |
 | [OpenSPP Custom Filter](spp_custom_filter) | Enhances Odoo's filtering system by allowing administrators to control which fields are displayed in filter dropdowns, improving user experience and data management. |
@@ -129,7 +128,7 @@ spp_event_data
 spp_event_data_program_membership
 spp_event_demo
 spp_exclusion_filter
-spp_farmer_registry_base
+spp_farmer_registry
 spp_farmer_registry_dashboard
 spp_farmer_registry_demo
 spp_idpass
@@ -151,7 +150,6 @@ spp_programs_compliance_criteria
 spp_programs_sp
 spp_registrant_import
 spp_registrant_tag
-spp_registry_data_source
 spp_registry_group_hierarchy
 spp_scan_id_document
 spp_service_point_device

@@ -18,13 +18,12 @@ A well-functioning GRM does more than resolve individual complaints — it serve
 
 ## GRM features
 
-* **Multi-channel intake**: Accept grievances through various channels including web portals, mobile apps, SMS, hotlines, and in-person at service points
+* **Multi-channel intake**: Accept grievances through web and email channels, with additional intake channels configurable by administrators
 * **Self-service portal**: Enable {term}`registrants <registrant>` to submit and track their own grievances online with real-time status updates
 * **Categorization and routing**: Automatically classify grievances by type and route them to appropriate teams or departments for resolution
-* **Customizable workflow stages**: Define resolution workflows with specific stages, timelines, and escalation paths based on grievance types
+* **Customizable workflow stages**: Define resolution workflow stages with approval requirements, timelines, and escalation paths
 * **SLA management**: Set and monitor service level agreements for different grievance categories with automatic escalation for overdue cases
 * **Case documentation**: Maintain complete records of all communications, actions taken, and supporting documents for each grievance
-* **Analytics and reporting**: Generate insights from grievance data to identify trends, bottlenecks, and areas for program improvement
 * **Integration with program operations**: Link grievances to specific program cycles, payments, or {term}`eligibility` decisions for context-aware resolution
 
 ## System Ccmponents
@@ -37,5 +36,3 @@ This module integrates with other OpenSPP components to provide:
 - Direct linkage to {term}`beneficiary registry` for complainant verification
 - Connection to program management for investigating eligibility and {term}`entitlement <entitlements>` issues  
 - Integration with payment modules to track and resolve disbursement problems
-- Coordination with change request system for implementing approved corrections
-- API endpoints for external grievance submission and status checking
