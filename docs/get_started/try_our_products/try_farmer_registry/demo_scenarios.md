@@ -137,6 +137,11 @@ Show how `farm_size_idle` becomes a positive signal for climate-vulnerable house
 3. Open **Programs → Programs → Climate Resilience** — click the **Cycles** smart button
    — open each cycle and click the **Payments** smart button to verify Mangudadatu Farm
    received ₱200 in each cycle.
+4. Contrast with a large commercial farm: open **Registry → Browse All (Audit) → All
+   Groups** — click the **Search bar → Add Custom Filter** — set field **Total Farm Size
+   (hectares)**, operator **=**, value **50** — click **Search**. Open the matching farm
+   and check its **Participation** tab — it has no Climate Resilience enrollment, because
+   it fails `is_smallholder` even though its idle acreage is greater than 0.
 
 **Key messages:**
 
