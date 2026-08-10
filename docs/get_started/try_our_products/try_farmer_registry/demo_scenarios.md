@@ -224,39 +224,60 @@ name in the search bar) to see per-farm CRs.
 
 ---
 
-## Scenario 9: Approval workflow on cycles
+## Scenario 9: Approval workflow on cycles and entitlements
 
-Demonstrate that a program can require human sign-off before a cycle is finalized.
-
-```{note}
-This scenario requires one configuration step before starting: open the program's
-**Program Schedule** manager, set the **Approval Definition** field to
-**Farmer: Cycle Approval - Cycle Approver**, and save.
-```
+Demonstrate that both a cycle and its entitlements can require human sign-off before
+payments are prepared.
 
 1. Open **Programs → Programs → Input Subsidy** — click **New Cycle** in the header —
    the cycle is created in `draft` state.
 2. Open the new cycle — click **Prepare Entitlements** — entitlements are generated for
-   all enrolled beneficiaries.
+   all enrolled beneficiaries with status **Pending Approval**, not auto-approved. Input
+   Subsidy is the one demo program configured with **Auto-approve Entitlements**
+   unchecked on its Program Schedule. Who can approve is controlled separately, on the
+   entitlement rule itself: open the program's **Configuration** tab → **What Do They
+   Receive?** panel → **Approval Definition** field.
 3. Click **Apply Compliance Criteria** — the system evaluates each beneficiary against
    the program's compliance rules; non-compliant farms are marked and excluded from
    this cycle's payments.
-4. Click **Submit for Approval** — the cycle moves to `to_approve`.
+4. Click **Submit for Approval** — the cycle moves to **To Approve**.
 5. Log out and log in as `cycle_approver` (password: `demo`) — navigate to
    **Programs → Cycles** — find the pending cycle — click **Approve** — the cycle moves
    to `approved`.
-6. Log back in as admin — return to Input Subsidy — the approved cycle is now ready
-   for payment processing.
+6. Log back in as admin — return to Input Subsidy — open the cycle's **Cash
+   Entitlements** list — the entitlements are still **Pending Approval**. Select them
+   and approve them — only now can payments be prepared for this cycle. This completes
+   the full cycle → entitlement approval chain. (Admin can approve here regardless of
+   the configured Approval Definition — see key messages below.)
+7. Contrast with another program, e.g. **Livestock Support** — create a new cycle and
+   click **Prepare Entitlements** — its entitlements are approved automatically, because
+   that program's **Auto-approve Entitlements** setting is still on.
 
 **Key messages:**
 
 - Cycle approval is opt-in per program — set via the **Approval Definition** field on
   the Program Schedule manager
+- Entitlement approval is a separate, independently configurable gate — the
+  **Auto-approve Entitlements** toggle on the Program Schedule. Input Subsidy is the
+  one demo program set to manual entitlement approval; the other four demo programs
+  still auto-approve so their cycles flow straight through
+- Who is allowed to approve entitlements is its own setting too — the **Approval
+  Definition** field on the entitlement rule's **What Do They Receive?** panel (e.g.
+  **Entitlement Approval - Program Validator**), separate from the cycle's Approval
+  Definition on the Program Schedule
+- Admin can always approve a pending entitlement, even without being a member of the
+  configured approval group — this is a deliberate admin override, not the intended
+  approver workflow. A real program validator would need to be added to that group to
+  approve as themselves
 - Compliance criteria run inside the cycle, after entitlements are prepared — a farm
   can be enrolled but still excluded from a specific cycle if it fails compliance at
   that point in time
-- The approval gate separates cycle creation from cycle execution, allowing a supervisor
-  to review the compliant beneficiary list and amounts before funds are committed
+- The two approval gates are independent and stack: a cycle can be approved while its
+  entitlements are still pending, and payments cannot be prepared until both are cleared
+- Historical seeded cycles and payments on Input Subsidy remain paid/approved — the
+  demo generator force-approves the entitlements it creates during data generation so
+  the seeded narrative stays intact; the manual approval step only applies to new
+  cycles created live during the demo
 
 ---
 
