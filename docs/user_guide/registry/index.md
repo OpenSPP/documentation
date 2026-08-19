@@ -51,8 +51,8 @@ register_group
 search_filter
 import_data
 export_data
-farmer_registry
 configure_id_qr
+farmer_registry
 ```
 
 ### Registration

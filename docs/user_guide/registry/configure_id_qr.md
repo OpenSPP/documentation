@@ -46,7 +46,7 @@ Click **New** and give the key a **Name**.
 
 | Field | What to enter |
 |-------|----------------|
-| **Name** | A label to identify this key (for example, "National ID Signing Key") |
+| **Name** | A label to identify this key (for example, **"National ID Signing Key"**) |
 | **Key Type** | **RSA** or **EC (Elliptic Curve)** |
 | **Curve** | Shown only for EC keys — **P-256 (secp256r1)** is the standard choice |
 | **Purpose** | What the key will be used for, for example **Credentials** |
@@ -97,7 +97,7 @@ shown, along with a **Setup Guide** explaining the prerequisites and fields.
 
 | Field | Required | What to enter |
 |-------|----------|----------------|
-| **Issuer Name** | Yes | A human-readable name, for example "National ID Issuer" |
+| **Issuer Name** | Yes | A human-readable name, for example **"National ID Issuer"** |
 | **Issuer ID** | Yes | A DID or URI identifying your organization, for example `did:web:example.org` |
 | **Signing Key** | Yes | The key created in Step 1 |
 | **Default Validity (Days)** | No | How many days a generated credential stays valid (default: 365) |
@@ -153,21 +153,25 @@ Click the row to open the full credential record. From here you can **Download Q
 ## Are you stuck?
 
 **"Signing Key Required" warning won't go away?**
-Make sure the Asymmetric Key was actually generated (its form shows **Regenerate Key**
-instead of **Generate Key Pair** once done), then select it from the Issuer
-Configuration's **Signing Key** field.
+
+- Make sure the Asymmetric Key was actually generated (its form shows **Regenerate Key**
+  instead of **Generate Key Pair** once done)
+- Select the generated key from the Issuer Configuration's **Signing Key** field
 
 **Generate QR Credential doesn't produce a credential?**
-Confirm an Issuer Configuration exists with a signing key selected and is **Active** —
-check **Registry → Configuration → Issuer Configurations**.
+
+- Confirm an Issuer Configuration exists with a signing key selected and is **Active**
+- Check **Registry → Configuration → Issuer Configurations**
 
 **Credential data only shows the registrant's full name?**
-Configure **Registry → Configuration → QR Credentials → Attribute Mappings** to include
-additional registrant fields as claims.
+
+- Configure **Registry → Configuration → QR Credentials → Attribute Mappings** to
+  include additional registrant fields as claims
 
 **Need to invalidate a credential?**
-Open the credential's detail page and click **Revoke**. Its status moves from Active to
-Revoked and it can no longer be verified as valid.
+
+- Open the credential's detail page and click **Revoke**
+- Its status moves from Active to Revoked and it can no longer be verified as valid
 
 ## Next steps
 
