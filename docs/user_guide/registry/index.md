@@ -51,6 +51,7 @@ register_group
 search_filter
 import_data
 export_data
+configure_id_qr
 farmer_registry
 ```
 
@@ -64,6 +65,10 @@ farmer_registry
 - {doc}`search_filter` - Find and filter registrants
 - {doc}`import_data` - Bulk import registrants from CSV/Excel
 - {doc}`export_data` - Export registrant data
+
+### Identity and credentials
+
+- {doc}`configure_id_qr` - Set up signing keys and issuers, and generate QR credentials for registrants
 
 ### Farmer registry
 
